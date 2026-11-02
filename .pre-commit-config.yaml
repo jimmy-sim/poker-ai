@@ -1,0 +1,14 @@
+minimum_pre_commit_version: '4.0.0'
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff lint (locked project environment)
+        entry: uv run --locked ruff check
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: Ruff format check (locked project environment)
+        entry: uv run --locked ruff format --check
+        language: system
+        types_or: [python, pyi]

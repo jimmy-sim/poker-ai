@@ -1,0 +1,67 @@
+# Approved roadmap
+
+Phases run in order. Each phase begins with explicit acceptance criteria, proceeds
+in small tested commits, and ends with verification results and three interview
+questions with answers. Never advance with failing tests or unvalidated math.
+
+## Phase 0 — Setup
+
+Approved: repository structure, AGENTS.md, Makefile, and CI.
+
+Definition of done: a clean checkout installs from `uv.lock`; the installed package
+imports and includes its type marker; Ruff lint/format checks, strict mypy, and
+pytest pass; commit hooks work; CI invokes the same commands. Record local checks
+separately from hosted CI, which requires a remote repository and a workflow run.
+
+## Phase 1 — Poker fundamentals
+
+- Own card/deck/hand representation with bitmasks.
+- Own fast 5–7 card hand evaluator and Monte Carlo/exact equity calculations.
+- Validate against eval7/treys on millions of random hands with fixed seeds.
+- Full Texas Hold'em engine: state, legal actions, betting rounds, side pots,
+  showdown, and Hypothesis property tests. Default scope is 2–6 seat cash games;
+  research agents initially use heads-up play.
+- Begin with card encoding and deck invariants, then a transparent evaluator
+  reference path before profiling and optimization.
+
+## Phase 2 — Toy games and exact solvers
+
+- Kuhn poker and Leduc Hold'em.
+- Vanilla counterfactual regret minimization (CFR), then CFR+, Linear CFR,
+  and Discounted CFR.
+- Exact best response and exploitability, with documented normalization.
+- Plot exploitability versus iterations and compare with OpenSpiel.
+- Verify Kuhn's first-player value converges to -1/18 under the documented rules.
+
+## Phase 3 — Heads-up limit, then no-limit Hold'em
+
+- External-sampling and outcome-sampling Monte Carlo CFR.
+- Card abstraction: hand-strength distributions, expected hand strength, and
+  potential-aware clustering using k-means/earth mover's distance per street.
+  Report abstraction sizes and measured information loss.
+- No-limit action abstraction and translation of bets outside that abstraction.
+- Checkpointing, multiprocessing, memory profiling, and training compute reports.
+
+## Phase 4 — Evaluation
+
+- Random, always-call, always-raise, tight-aggressive, and equity-threshold bots.
+- Duplicate matches: replay deals with seats exchanged to reduce variance.
+- Win rate in milli-big-blinds per hand, confidence intervals, a significance
+  test, and AIVAT or a documented variance-reduction alternative.
+- Slumbot API benchmark only if its terms permit the intended usage and sample.
+- Compare with an OpenSpiel/RLCard baseline and document rule differences.
+
+## Phase 5 — Two quant extensions, chosen with the user
+
+Candidates: Bayesian opponent modeling and safe exploitation; subgame/depth-limited
+solving; bankroll paths, risk of ruin, Kelly fraction and rake sensitivity;
+or a small Deep CFR-style neural value approximation comparison.
+
+## Phase 6 — Packaging
+
+- README architecture diagram, real results table, convergence/exploitability
+  figures, reproduction commands, limitations, and future work.
+- 2–3 page technical writeup: methods, experiments, results, and failure analysis.
+- 3–4 resume bullets with verified numbers and an interview Q&A cheat sheet.
+
+Every number in published results must come from a rerunnable repository script.
