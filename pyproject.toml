@@ -33,7 +33,7 @@ line-length = 88
 select = ["E", "F", "I", "UP", "B"]
 
 [tool.mypy]
-python_version = "3.11"
+# Use the running interpreter; the Python 3.11 CI job enforces the baseline.
 strict = true
 files = ["src", "tests"]
 

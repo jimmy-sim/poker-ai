@@ -4,8 +4,9 @@ A poker AI research project built from first principles, emphasizing expected
 value, variance, statistical testing, and game-theoretic reasoning. Implementations
 will be validated independently before any performance claims are published.
 
-Current scope: Phase 0 development foundation. Poker mechanics, solvers, and
-playing-strength results will arrive in the approved phase order. The intended
+Current scope: Phase 1 has begun with card IDs, card-set bitmasks, and immutable
+decks. See [the encoding contract and phase acceptance gate](docs/phase1-cards.md).
+Hand evaluation, equity, and the game engine follow before solvers. The intended
 engine supports 2–6 seats and side pots; research agents initially play heads-up.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
