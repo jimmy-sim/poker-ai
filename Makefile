@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction
 
 setup:
 	$(UV) sync --locked --dev
@@ -56,3 +56,8 @@ train-mccfr-pilot:
 	$(UV) run --locked python scripts/train_mccfr_pilot.py \
 		--config configs/mccfr-pilot.json \
 		--output results/mccfr-pilot.json
+
+build-card-abstraction:
+	$(UV) run --locked --extra research python scripts/build_card_abstraction.py \
+		--config configs/card-abstraction.json \
+		--output results/card-abstraction.json

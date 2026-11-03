@@ -99,3 +99,16 @@ def test_invalid_cards_and_histogram_values_rejected() -> None:
         grid_histogram(np.array([1.1]), 9)
     with pytest.raises(ValueError):
         FeatureConfig(bins=1)
+
+
+def test_w1_median_and_euclidean_mean_have_distinct_analytical_centers() -> None:
+    values = np.array([[[1.0, 0, 0]], [[0.0, 1, 0]], [[0.0, 0, 1]]])
+    equity = np.array([0.0, 0.5, 1])
+    median = fit_clusters(
+        values, equity, clusters=1, metric="earth_mover", rng=Generator(PCG64(3))
+    )
+    mean = fit_clusters(
+        values, equity, clusters=1, metric="euclidean", rng=Generator(PCG64(3))
+    )
+    np.testing.assert_allclose(median.centers, [[[0, 1, 0]]])
+    np.testing.assert_allclose(mean.centers, [[[1 / 3, 1 / 3, 1 / 3]]])

@@ -153,10 +153,40 @@ reported separately from requested counts; empty clusters are not fabricated.
 A single seeded initialization is not guaranteed globally optimal.
 
 A distribution-aware final-street histogram is distinct from potential-aware
-trajectories through all future streets. The implementation preserves that
+marginal distributions through all future streets. The implementation preserves that
 distinction rather than calling mean equity or only final distributions fully
 potential aware. This is an original small implementation inspired by
 [Ganzfried and Sandholm (2014)](https://ojs.aaai.org/index.php/AAAI/article/view/8816),
 not a replication of its system or its reported playing strength. Our later key
 builder will retain past abstract buckets instead of deliberately introducing
 imperfect recall.
+
+These features concatenate current and future-street marginal distributions; they
+do not encode their full joint trajectory or the paper's recursive abstraction.
+That dependence is an additional approximation. No replication claim is made.
+
+## Predeclared card-abstraction experiment
+
+`make build-card-abstraction` fits 2/4/8 buckets per street, using 80 training and
+40 test states per street. Canonical train/test states are disjoint. States come
+from uniform physical draws with rejection of duplicate suit-canonical states;
+this is a finite coverage experiment, not uniform sampling of canonical classes
+or equilibrium-reach weighting. Seeds and all nested sample counts are fixed in
+`configs/card-abstraction.json` before the run.
+
+Compare fixed-width current-strength buckets, final-distribution histogram k-means,
+and all-future-marginal W1 k-medians. Keys keep every previous abstract bucket and
+public betting action. Exact hole/public board identities are intentionally
+projected into buckets; this loss is part of the restricted strategy class.
+
+Evaluate current-equity MSE and mean blockwise W1 reconstruction error on the test
+states against a separate, higher-budget OWN Monte Carlo feature measurement.
+The config calls this `reference_features`; it is not an external solver or an
+exact answer. Report low/high-budget input disagreement alongside quantized error.
+That disagreement is not a rigorous lower bound or confidence interval, and errors
+include measurement noise, finite fitting data, binning and quantization. More
+buckets need not improve every held-out metric. No exploitability guarantee follows.
+Model artifacts save own feature settings, centroids, occupied counts and source
+provenance. Tests cover format rejection, round trips, card symmetry, transport
+geometry and abstract recall. The experiment gate checks finite valid outputs;
+there is no pretense that this small pilot finds an optimal abstraction.
