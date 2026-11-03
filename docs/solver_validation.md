@@ -7,9 +7,10 @@ tables/plots, license records, verified claim drafts and interview answers.
 Prerequisites were met before execution: [Phase 2](phase2-solvers.md) results and
 [trained Phase 3 agents](phase3-verification.md). Tier A passed before Tier B began.
 
-The initial full pipeline passed from clean `0f6aa40` in 590.77 seconds. A
-second integrated run from clean `8c02d46` passed in 595.60 seconds on the recorded
-Apple M4/Python 3.11.17 environment; reference solving/comparisons used 296.32 seconds. Raw reports preserve exact revisions, dirty flags, source and
+The initial full pipeline passed from clean `0f6aa40` in 590.77 seconds. The
+complete run including every spot heatmap and hand-EV table passed from clean
+`be1badc` in 595.73 seconds on the recorded Apple M4/Python 3.11.17 environment;
+reference solving/comparisons used 294.88 seconds. Raw reports preserve exact revisions, dirty flags, source and
 input hashes, dependency lock hash, versions, runtime and hardware. Timings are
 observations on this machine, not general performance promises. A later rerun's
 manifest supersedes these timings without changing the protocol.
@@ -53,7 +54,7 @@ optional reference libraries.
   are listed with SHA256 in the reports/manifests. They are never agent inputs.
 
 A separate [numeric replay audit](../results/solver-validation/reproducibility.json)
-compares these two runs: all 135 profiles, 58,812 detailed decision rows and all
+compares the initial and final runs: all 135 profiles, 58,812 detailed decision rows and all
 Tier A rows reproduce exactly; all five reference-policy files are byte-identical.
 It excludes timing, provenance-bearing checkpoint hashes and figure styling.
 Re-run it with `uv run --locked python scripts/check_solver_reproduction.py

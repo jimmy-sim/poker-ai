@@ -13,8 +13,9 @@ are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-eng
 [Phase 1 verification](docs/phase1-verification.md) and
 [Phase 2 exact toy-game solvers](docs/phase2-solvers.md) are complete.
 [Phase 3 bounded sampled-CFR agents](docs/phase3-verification.md) are implemented
-and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is implemented
-and has measured substantial postflop strategy gaps. No competitive
+and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is
+[complete](docs/phase3.5-verification.md) and has measured substantial postflop
+strategy gaps. No competitive
 playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
