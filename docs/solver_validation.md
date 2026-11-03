@@ -56,7 +56,7 @@ The renderer generates the diagnostic/Tier A tables and claim drafts below from
 raw reports. The one command also replaces the marked README/writeup result
 blocks. Timing/provenance fields vary between runs; fixed-seed numerical results
 are the reproducibility target on the recorded locked environment. Hosted CI has
-not run. Local Python 3.11: **419 passed**; Python 3.12: **416 passed, 3 skipped**
+not run. Local Python 3.11: **421 passed**; Python 3.12: **418 passed, 3 skipped**
 (optional native-reference/evaluator dependencies absent). Ruff and strict mypy
 passed on both. Figures were visually inspected.
 
@@ -237,11 +237,31 @@ Fallback shares use the exact performance-difference identity, averaged across t
   experiment does not identify a pure irreducible abstraction-loss floor.
 - **Off-tree sizes:** not a cause within the matched grid; broader translation
   remains unvalidated strategically and is not included in these gap numbers.
-- **Reference convergence:** two converged checkpoints and at most 0.626 pp
+- **Reference convergence:** two converged checkpoints and below 0.627 pp
   reference-policy change are small beside 31–50 pp agent action gaps. With fixed
   final reach weights, the triangle inequality bounds action-gap sensitivity to
   the preceding reference policy by that reported policy change. Residual epsilon
   is still reported, not called exact GTO.
+
+A post-primary diagnostic also counts exact information sets that share an own
+abstract key. It was added after the primary run to investigate the already
+observed gaps; it did not select the primary configuration or change training.
+Both hands and revealed river boards can merge. In-spot collisions are small in
+reference reach for three primary spots, and substantial in the two medium-SPR
+spots. This does not rule out interference from other global training states,
+and a collision only costs EV if the required strategies differ materially.
+
+<!-- SOLVER_VALIDATION_ABSTRACTION_BEGIN -->
+| Spot | Merged ref. reach: 2 / 4 / 8 buckets | Exact infos → 8-bucket keys |
+| --- | ---: | ---: |
+| dry_high_oop | 0.005% / 0.005% / 0.004% | 9,240 → 890 |
+| wet_high_ip | 100.000% / 0.187% / 0.187% | 5,540 → 470 |
+| dry_low_oop | 0.014% / 0.014% / 0.014% | 376 → 42 |
+| wet_medium_oop | 69.151% / 36.769% / 36.562% | 3,336 → 312 |
+| dry_medium_ip | 99.999% / 99.608% / 99.608% | 1,112 → 60 |
+
+A merged group contains multiple exact information sets with the same own abstract key, including different revealed river boards. This measures representation collisions inside these spots, not EV loss or aliases with other global states.
+<!-- SOLVER_VALIDATION_ABSTRACTION_END -->
 
 ![Bucket and iteration ablations](../results/solver-validation/ablation-gaps.png)
 

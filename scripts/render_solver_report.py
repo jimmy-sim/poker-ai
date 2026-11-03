@@ -2,12 +2,17 @@
 
 import argparse
 import csv
+import gzip
 import hashlib
 import json
 import statistics
 from pathlib import Path
 from typing import Any
 
+from poker_ai.abstraction.model import CardAbstraction
+from poker_ai.solver_validation.abstraction_check import check_model
+from poker_ai.solver_validation.reference import SpotTree
+from poker_ai.solver_validation.spots import load_spot
 from poker_ai.validation.five_card import source_provenance
 
 
@@ -169,6 +174,72 @@ def main() -> int:
     tier_table = output / "tier-a-summary.md"
     tier_table.write_text("\n".join(table) + "\n")
     root = Path(__file__).resolve().parents[1]
+    training_path = output / "agent-training.json"
+    training = json.loads(training_path.read_text())
+    models = {}
+    for relative, expected in training["model_sha256"].items():
+        model_path = root / relative
+        if hashlib.sha256(model_path.read_bytes()).hexdigest() != expected:
+            raise ValueError("abstraction model changed since agent training")
+        models[relative] = CardAbstraction.load(model_path)
+    collision_rows = []
+    for spot in report["spots"]:
+        spot_path = root / "configs/spots" / (spot["name"] + ".json")
+        if hashlib.sha256(spot_path.read_bytes()).hexdigest() != spot["config_sha256"]:
+            raise ValueError("spot changed since the recorded comparison")
+        tree = SpotTree.build(load_spot(spot_path))
+        reference_path = output / spot["reference_file"]
+        if (
+            hashlib.sha256(reference_path.read_bytes()).hexdigest()
+            != report["artifacts_sha256"][reference_path.name]
+        ):
+            raise ValueError("reference policy changed since comparison")
+        reference = json.loads(gzip.decompress(reference_path.read_bytes()))
+        if (
+            reference["format"] != "poker-ai-reference-comparison-only-v1"
+            or tuple(reference["information_keys"]) != tree.keys
+        ):
+            raise ValueError("reference/abstraction diagnostic alignment failed")
+        policy = tuple(tuple(row) for row in reference["policy"])
+        tree.validate_policy(policy)
+        for relative, model in models.items():
+            collision_rows.append(
+                dict(
+                    spot=spot["name"],
+                    model=relative,
+                    **check_model(tree, model, policy),
+                )
+            )
+    collision_path = output / "abstraction-aliases.csv"
+    with collision_path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(collision_rows[0]))
+        writer.writeheader()
+        writer.writerows(collision_rows)
+    alias_lines = [
+        "| Spot | Merged ref. reach: 2 / 4 / 8 buckets | Exact infos → 8-bucket keys |",
+        "| --- | ---: | ---: |",
+    ]
+    for spot in report["spots"]:
+        selected = [r for r in collision_rows if r["spot"] == spot["name"]]
+        selected.sort(key=lambda r: int(Path(r["model"]).stem.rsplit("-", 1)[1]))
+        percentages = " / ".join(
+            f"{100 * r['reference_reach_in_merged_groups']:.3f}%" for r in selected
+        )
+        final = selected[-1]
+        alias_lines.append(
+            f"| {spot['name']} | {percentages} | "
+            f"{final['exact_information_sets']:,} → "
+            f"{final['abstract_information_sets']:,} |"
+        )
+    alias_lines += [
+        "",
+        "A merged group contains multiple exact information sets "
+        "with the same own abstract key, including different revealed "
+        "river boards. This measures representation collisions inside "
+        "these spots, not EV loss or aliases with other global states.",
+    ]
+    alias_markdown = output / "abstraction-aliases.md"
+    alias_markdown.write_text("\n".join(alias_lines) + "\n")
     manifest = {
         "status": "passed",
         "source": source_provenance(
@@ -178,11 +249,18 @@ def main() -> int:
         ),
         "inputs_sha256": {
             p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in (report_path, tier_path)
+            for p in (report_path, tier_path, training_path)
         },
         "artifacts_sha256": {
             p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in (csv_path, diagnosis, claims, tier_table)
+            for p in (
+                csv_path,
+                diagnosis,
+                claims,
+                tier_table,
+                collision_path,
+                alias_markdown,
+            )
         },
     }
     (output / "render-manifest.json").write_text(

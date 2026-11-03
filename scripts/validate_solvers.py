@@ -182,6 +182,7 @@ def main() -> int:
         ("TIER_A", "tier-a-summary.md"),
         ("DIAGNOSIS", "diagnosis.md"),
         ("CLAIMS", "verified-claims.md"),
+        ("ABSTRACTION", "abstraction-aliases.md"),
     ):
         update_block(
             root / "docs/solver_validation.md",

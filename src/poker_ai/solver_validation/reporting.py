@@ -155,6 +155,9 @@ def plot(report: dict[str, Any], output: Path) -> list[Path]:
             )
             if dimension == "iteration":
                 axis.set_xscale("log")
+            axis.set_xticks(x, [str(value) for value in x])
+            if row == 1:
+                axis.set_yscale("log")
             axis.grid(alpha=0.2)
     axes[0, 0].legend(fontsize=7)
     fig.suptitle("Global self-play ablations: mean and min–max of 3 fixed seeds")
