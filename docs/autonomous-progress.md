@@ -33,10 +33,15 @@ Completed and committed:
 - 18-run, three-seed multiprocessing pilot at clean 16c8554 with saved metrics,
   memory/runtime records and own checkpoints. Sparse exact-card limit coverage is
   explicitly not a playing-strength result.
-- Current gate: 353 fast tests, lint and strict types.
+- Current/future equity features, suit canonicalization, k-means/W1 k-medians,
+  and own card model formats. Abstract keys retain past buckets.
+- Disjoint-state 2/4/8-bucket loss experiment at clean 3e917b7; actual mixed
+  results, measurement disagreement, occupied counts and limitations recorded.
+- Abstract limit checkpoint resumes bit identically with an empty feature cache.
+- Current gate: 367 fast tests, lint and strict types.
 
-Next: card strength/potential abstractions and measured information loss, then
-no-limit action abstraction/translation and bounded abstracted training.
+Next: bounded abstracted fixed-limit training, then no-limit action abstraction/
+translation and training/compute reports.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,

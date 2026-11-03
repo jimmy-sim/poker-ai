@@ -190,3 +190,44 @@ Model artifacts save own feature settings, centroids, occupied counts and source
 provenance. Tests cover format rejection, round trips, card symmetry, transport
 geometry and abstract recall. The experiment gate checks finite valid outputs;
 there is no pretense that this small pilot finds an optimal abstraction.
+
+## Recorded card-abstraction pilot
+
+Clean source `3e917b7` generated 480 unique canonical states across four streets,
+with disjoint 80/40 train/test splits, nine own model artifacts and 36 metric rows
+in 3.00 seconds. Reproduce with `make build-card-abstraction`.
+[Report](../results/card-abstraction.json), [table](../results/card-abstraction.csv),
+[known-card/features dataset](../results/card-abstraction-dataset.json), and
+[model artifacts](../results/card-models/) retain the complete configs/provenance.
+
+At eight requested buckets, mean blockwise W1 reconstruction error was:
+
+| Street | Strength | Final distribution | Future potential | Input MC discrepancy |
+| --- | ---: | ---: | ---: | ---: |
+| Preflop | 0.077811 | 0.115520 | 0.094238 | 0.100732 |
+| Flop | 0.090586 | 0.128044 | 0.088281 | 0.086068 |
+| Turn | 0.085636 | 0.114125 | 0.074512 | 0.068164 |
+| River | 0.064092 | 0.091071 | 0.059375 | 0.056250 |
+
+![Held-out empirical card-feature reconstruction](../results/card-abstraction-loss.png)
+
+These are feature-space errors on this finite sample, not loss in game value.
+Final-distribution k-means optimizes squared histogram distance on its selected
+final-street feature; this table measures W1 across all included marginals. Its
+weaker score here is not proof it is a generally worse poker abstraction. The
+potential model does not beat strength buckets on every street. On the flop,
+eight potential buckets did not improve on four; no monotonicity is claimed.
+
+Only five of eight strength buckets were occupied in the preflop training set;
+all eight potential/distribution buckets were occupied. Do not equate requested
+counts with populated abstractions. Averaging prototypes can denoise noisy input,
+so a reconstruction score below the gray input-discrepancy line is possible; that
+line is not an irreducible error floor. Tiny fitting data, one initialization,
+finite nested samples, uniform-opponent assumptions, missing joint future-street
+dependence, and unweighted unique-state sampling limit the interpretation.
+
+No model was selected by poker win rate. Subsequent bounded training will compare
+strength and potential buckets before interpreting their effect on strategies.
+An integration test verifies bit-identical abstracted limit resumption with an
+empty rebuilt cache; deterministic feature seeds make cache contents irrelevant
+to strategy updates. Current local gate: 367 tests plus lint/strict typing.

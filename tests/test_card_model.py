@@ -75,3 +75,41 @@ def test_reference_artifact_is_not_a_card_model(tmp_path: Path) -> None:
     path.write_text('{"reference_strategy": [0.5,0.5]}')
     with pytest.raises(ValueError, match="own card"):
         CardAbstraction.load(path)
+
+
+def test_abstract_limit_resume_recomputes_feature_cache_identically(
+    tmp_path: Path,
+) -> None:
+    from functools import partial
+
+    from poker_ai.training.checkpoint import load_checkpoint, save_checkpoint
+    from poker_ai.training.holdem import LimitRules, sample_limit
+    from poker_ai.training.mccfr import MCCFR
+
+    model = tiny_model("potential")
+    artifact = tmp_path / "card-model.json"
+    model.save(artifact, provenance={})
+    fresh_model = CardAbstraction.load(artifact)
+    rules = LimitRules(bet_cap=2)
+    factory = partial(sample_limit, rules, information_builder=model.information)
+    fresh_factory = partial(
+        sample_limit, rules, information_builder=fresh_model.information
+    )
+    whole = MCCFR(factory, Generator(PCG64(33)))
+    split = MCCFR(factory, Generator(PCG64(33)))
+    whole.train(4)
+    split.train(2)
+    checkpoint = tmp_path / "own-training.json"
+    config = {"model": "test-potential", "cap": 2}
+    save_checkpoint(split, checkpoint, config=config, provenance={})
+    resumed = load_checkpoint(checkpoint, fresh_factory, expected_config=config)
+    resumed.train(2)
+    assert whole.rng.bit_generator.state == resumed.rng.bit_generator.state
+    assert whole.rows.keys() == resumed.rows.keys()
+    for key in whole.rows:
+        np.testing.assert_array_equal(
+            whole.rows[key].regrets, resumed.rows[key].regrets
+        )
+        np.testing.assert_array_equal(
+            whole.rows[key].strategy_sum, resumed.rows[key].strategy_sum
+        )
