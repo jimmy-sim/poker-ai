@@ -61,6 +61,12 @@ class ToyState:
         )
 
     @property
+    def chance_probabilities(self) -> tuple[float, ...]:
+        if not self.chance:
+            raise ValueError("chance probabilities require a chance node")
+        return (1 / len(self.actions),) * len(self.actions)
+
+    @property
     def information(self) -> str:
         if self.chance or self.terminal:
             raise ValueError("information key requires an acting player")
