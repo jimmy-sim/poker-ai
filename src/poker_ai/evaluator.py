@@ -97,7 +97,7 @@ def evaluate_five(cards: Iterable[int]) -> HandRank:
     return HandRank(HandCategory.HIGH_CARD, ranks)
 
 
-def evaluate_best(cards: Iterable[int]) -> HandRank:
+def evaluate_best_reference(cards: Iterable[int]) -> HandRank:
     """Return the strongest five-card rank from five to seven distinct cards.
 
     Inspect every five-card subset: C(5, 5)=1, C(6, 5)=6, C(7, 5)=21.
@@ -114,3 +114,98 @@ def evaluate_best(cards: Iterable[int]) -> HandRank:
         raise ValueError(f"expected five to seven cards, got {len(hand)}")
     cards_to_mask(hand)
     return max(evaluate_five(subset) for subset in combinations(hand, 5))
+
+
+_WHEEL_RANK_MASK = (1 << 14) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 2)
+
+
+def _straight_high(rank_mask: int) -> int:
+    """Find the highest five-rank run, then check the ace-low wheel.
+
+    Intersecting five shifted masks leaves each possible starting rank's bit.
+    Its highest set bit plus four is the straight's high card. Rank bits are
+    numbered 2 through 14, so bit_length() + 3 gives that high rank.
+    """
+    starts = (
+        rank_mask
+        & (rank_mask >> 1)
+        & (rank_mask >> 2)
+        & (rank_mask >> 3)
+        & (rank_mask >> 4)
+    )
+    if starts:
+        return starts.bit_length() + 3
+    return 5 if rank_mask & _WHEEL_RANK_MASK == _WHEEL_RANK_MASK else 0
+
+
+def _highest_ranks(rank_mask: int, count: int) -> tuple[int, ...]:
+    """Extract descending rank bits; category logic guarantees enough ranks."""
+    ranks = []
+    for _ in range(count):
+        rank = rank_mask.bit_length() - 1
+        ranks.append(rank)
+        rank_mask ^= 1 << rank
+    return tuple(ranks)
+
+
+def evaluate_best(cards: Iterable[int]) -> HandRank:
+    """Directly classify the best five of five through seven valid cards.
+
+    Preserve evaluate_five for five-card inputs. For six/seven cards, count each
+    rank once and collect a rank mask per suit. A single suit can contain five
+    cards at these input sizes. Test categories from strongest to weakest, with
+    the same comparison keys as the reference. No external table is used.
+    """
+    hand = tuple(cards)
+    if not 5 <= len(hand) <= 7:
+        raise ValueError(f"expected five to seven cards, got {len(hand)}")
+    if len(hand) == 5:
+        return evaluate_five(hand)
+    cards_to_mask(hand)
+    counts = [0] * 15
+    suit_masks = [0] * 4
+    rank_mask = 0
+    for card in hand:
+        rank = card // 4 + 2
+        bit = 1 << rank
+        counts[rank] += 1
+        suit_masks[card % 4] |= bit
+        rank_mask |= bit
+    flush_mask = next((mask for mask in suit_masks if mask.bit_count() >= 5), 0)
+    if flush_mask:
+        straight_flush = _straight_high(flush_mask)
+        if straight_flush:
+            return HandRank(HandCategory.STRAIGHT_FLUSH, (straight_flush,))
+    quads = [rank for rank in range(14, 1, -1) if counts[rank] == 4]
+    if quads:
+        return HandRank(
+            HandCategory.FOUR_OF_A_KIND,
+            (quads[0],) + _highest_ranks(rank_mask ^ (1 << quads[0]), 1),
+        )
+    trips = [rank for rank in range(14, 1, -1) if counts[rank] >= 3]
+    pairs = [rank for rank in range(14, 1, -1) if counts[rank] >= 2]
+    if trips:
+        other_pairs = [rank for rank in pairs if rank != trips[0]]
+        if other_pairs:
+            return HandRank(HandCategory.FULL_HOUSE, (trips[0], other_pairs[0]))
+    if flush_mask:
+        return HandRank(HandCategory.FLUSH, _highest_ranks(flush_mask, 5))
+    straight = _straight_high(rank_mask)
+    if straight:
+        return HandRank(HandCategory.STRAIGHT, (straight,))
+    if trips:
+        return HandRank(
+            HandCategory.THREE_OF_A_KIND,
+            (trips[0],) + _highest_ranks(rank_mask ^ (1 << trips[0]), 2),
+        )
+    if len(pairs) >= 2:
+        kickers = rank_mask ^ (1 << pairs[0]) ^ (1 << pairs[1])
+        return HandRank(
+            HandCategory.TWO_PAIR, tuple(pairs[:2]) + _highest_ranks(kickers, 1)
+        )
+    if pairs:
+        return HandRank(
+            HandCategory.ONE_PAIR,
+            (pairs[0],) + _highest_ranks(rank_mask ^ (1 << pairs[0]), 3),
+        )
+    return HandRank(HandCategory.HIGH_CARD, _highest_ranks(rank_mask, 5))

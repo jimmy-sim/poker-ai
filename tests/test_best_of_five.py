@@ -8,7 +8,13 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from poker_ai.cards import parse_card
-from poker_ai.evaluator import HandCategory, HandRank, evaluate_best, evaluate_five
+from poker_ai.evaluator import (
+    HandCategory,
+    HandRank,
+    evaluate_best,
+    evaluate_best_reference,
+    evaluate_five,
+)
 
 HANDS = st.lists(st.integers(0, 51), min_size=5, max_size=7, unique=True)
 SEVEN_CARDS = st.lists(st.integers(0, 51), min_size=7, max_size=7, unique=True)
@@ -114,3 +120,8 @@ def test_rejects_out_of_range_cards_even_when_a_royal_flush_exists(extra: int) -
 def test_rejects_invalid_card_types(extra: object) -> None:
     with pytest.raises(TypeError):
         evaluate_best(hand("Ac Kc Qc Jc Tc 2d") + (cast(int, extra),))
+
+
+@given(cards=HANDS)
+def test_direct_matches_preserved_subset_reference(cards: list[int]) -> None:
+    assert evaluate_best(cards) == evaluate_best_reference(cards)
