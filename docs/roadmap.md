@@ -42,6 +42,27 @@ separately from hosted CI, which requires a remote repository and a workflow run
 - No-limit action abstraction and translation of bets outside that abstraction.
 - Checkpointing, multiprocessing, memory profiling, and training compute reports.
 
+## Phase 3.5 — External solver validation (gated)
+
+Do not start until Phase 2 exploitability results and a trained Phase 3 agent
+exist. Record planning only before then. Full requirements and the eventual
+writeup live in [solver_validation.md](solver_validation.md).
+
+- Tier A: match against OpenSpiel CFR on Kuhn/Leduc at equal iterations; report
+  exploitability, average-strategy L1 distance, and game-value error. Declare
+  tolerances in configs in advance; debug failures before advancing.
+- Tier B: 5–10 fully specified postflop spots, permitted open-source reference
+  solvers, matched actions/ranges, documented convergence, reach-weighted action
+  gaps, node frequencies, cross-play EV gaps, and restricted-spot exploitability.
+- Diagnose gaps with controlled bucket-count/iteration ablations; produce tables
+  and hand-class heatmaps. Investigate widespread gaps as likely bugs first.
+- Read and record selected solver versions/licenses before use. Reference outputs
+  are comparison-only and never enter agent training, checkpoints, or strategy.
+  Never import, copy, or train on commercial solver outputs.
+- Deliver `make validate-solvers`, spot-loader/metric tests including self-gap zero,
+  a limitations-aware writeup, README summary, verified claim drafts, and three
+  interview Q&As. No validation command or results exist at planning time.
+
 ## Phase 4 — Evaluation
 
 - Random, always-call, always-raise, tight-aggressive, and equity-threshold bots.

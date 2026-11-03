@@ -18,6 +18,13 @@
 - Request approval before adding a C++ or Rust core. Discuss and select the two
   Phase 5 extensions with the user before implementation.
 
+- External solver validation is a gated Phase 3.5 milestone. Do not start it
+  before Phase 2 exploitability results and a trained Phase 3 agent exist; follow
+  `docs/solver_validation.md`. Read/record selected pinned solver licenses before
+  use. Never import/copy/train on commercial solver outputs. Open-source reference
+  outputs are comparison-only and must never enter the agent's strategy/training.
+  Declare Tier A tolerances before runs; debug failed gates before advancing.
+
 ## Code and mathematical conventions
 
 - Support Python 3.11+. Use explicit types, small functions, and clear names.
