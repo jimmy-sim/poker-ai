@@ -100,6 +100,11 @@ experiment was **1.39e-16**. These are toy-game results, not Hold’em win rates
 Run `make validate-cfr`; see [methodology and limits](docs/phase2-solvers.md),
 [raw evidence](results/cfr-validation.json), and [convergence plot](results/cfr-convergence.png).
 
+Phase 3 now has tested external/outcome sampling and exact checkpoint resumption.
+An [18-run compute pilot](docs/phase3-training.md) records toy-game convergence
+and small fixed-limit training runs; the latter have sparse exact-card coverage
+and make no playing-strength claim. Reproduce with `make train-mccfr-pilot`.
+
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.
 

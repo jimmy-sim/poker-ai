@@ -83,3 +83,45 @@ samples without changing their expectation. Public-only observation-to-key
 builders prevent access to opponent holes, burns and remaining deck. The exact
 initial key retains own cards and complete public action history. Card abstraction
 and no-limit action abstraction are separate subsequent steps.
+
+## Recorded compute pilot (partial Phase 3)
+
+`make train-mccfr-pilot` runs the committed config with three independent seeds
+per method/game and two spawned workers. Each worker trains its own table; there
+are no shared asynchronous regret updates. Reports: [JSON](../results/mccfr-pilot.json)
+and [CSV](../results/mccfr-pilot.csv). Clean source: `16c8554`.
+
+| Game | Method | Iterations per seed | Exact exploitability range | Training seconds range | Maximum traced peak MiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| kuhn | external | 10,000 | 0.00466966–0.00635913 | 3.408–3.700 | 0.449 |
+| kuhn | outcome | 10,000 | 0.0127924–0.0380382 | 3.197–3.265 | 0.019 |
+| leduc | external | 10,000 | 0.288315–0.300673 | 11.562–13.624 | 1.363 |
+| leduc | outcome | 10,000 | 1.14782–1.18485 | 5.343–5.640 | 0.896 |
+| limit | external | 100 | not measured | 4.007–4.208 | 8.643 |
+| limit | outcome | 100 | not measured | 0.242–0.249 | 0.547 |
+
+Exploitability uses the same ante-chip convention as Phase 2 for Kuhn/Leduc.
+Ranges describe these three seeds, not confidence intervals. Outcome sampling is
+cheaper per pass here but converges less at this iteration budget; no universal
+algorithm ranking follows. Leduc outcome tables still missed up to 26 of 936
+information sets; evaluation used uniform actions at unseen sets. Every pilot gate
+passed, but the limits were modest smoke targets, not a solved-game criterion.
+
+Total elapsed time was 43.88 seconds. Tracemalloc measures allocations during
+training, not entire-process RSS, and adds overhead. Worker timings include
+concurrent execution; they are not isolated throughput benchmarks. The raw report
+records environment, worker count, thread settings, counters and checkpoint sizes.
+
+Fixed-limit external runs created 10,953–11,248 information sets after only 100
+iterations; outcome runs created 801–876. Exact-card tables have sparse coverage.
+These checkpoints demonstrate training/resumption infrastructure, not a useful
+Hold'em strategy, a win rate, or full-game exploitability. Card abstraction and
+no-limit action abstraction remain to be implemented before the Phase 3 gate.
+
+Own checkpoints are retained under `results/runs/mccfr-pilot-checkpoints/` (ignored
+large artifacts); JSON/CSV record each path, byte size and SHA256. The command
+recreates them. They contain only own sampled training state. No reference solver
+artifacts are inputs. Existing resume tests verify the two methods bit for bit.
+
+Current fast gate: 353 tests, lint and strict types. Phase 3 is ongoing; the later
+external postflop solver milestone has not begun.

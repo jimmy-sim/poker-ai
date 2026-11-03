@@ -27,8 +27,16 @@ Completed and committed:
   comparison is retained with diagnosis and unchanged thresholds.
 - 338 tests and quality gates on Python 3.11/3.12; raw tables and plots committed.
 
-Next: sampled CFR with unbiasedness checks, then heads-up limit before no-limit,
-card/action abstractions, checkpointing and measured training/compute reports.
+- Phase 3 sampled CFR with exact uniform/nonuniform expectation checks.
+- Own-format atomic PCG64 checkpoints; both samplers resume bit identically.
+- Fully funded fixed-limit adapter and public-only information keys.
+- 18-run, three-seed multiprocessing pilot at clean 16c8554 with saved metrics,
+  memory/runtime records and own checkpoints. Sparse exact-card limit coverage is
+  explicitly not a playing-strength result.
+- Current gate: 353 fast tests, lint and strict types.
+
+Next: card strength/potential abstractions and measured information loss, then
+no-limit action abstraction/translation and bounded abstracted training.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,
