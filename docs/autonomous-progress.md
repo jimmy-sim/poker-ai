@@ -1,9 +1,10 @@
 # Autonomous progress
 
-The user authorized continuing in roadmap order until stopped. Phases 0–4 are
+The user authorized continuing in roadmap order until stopped. Phases 0–5 are
 complete within their documented bounded scopes; competitive poker strength has
-not been established. Current work: **Phase 5, Bayesian opponent modeling and
-bankroll/risk analysis**, explicitly selected by the user on November 2, 2026.
+not been established. The user requested a good stopping point; work stops at the verified Phase 5
+boundary. Bayesian opponent modeling and bankroll/risk analysis were explicitly
+selected by the user. Next milestone: Phase 6 final packaging.
 
 Acceptance records:
 
@@ -17,6 +18,10 @@ Acceptance records:
   spots expose a large strategy gap. Full command and numerical replay passed.
 - [Phase 4](phase4-verification.md): 36,000 local hands with 1,000 shared-deck
   clusters, honest significance limits and a completed 100-hand public pilot.
+
+- [Phase 5](phase5-verification.md): 72,000 censored toy observations, 360 exact
+  profiles, 120 conditional risk cells and 45 measured own-baseline cells;
+  security/prediction/risk limits are explicit.
 
 All learning in Phase 5 uses own simulated opponents. External reference and
 public-benchmark outputs remain comparison-only. Risk analysis uses conditional

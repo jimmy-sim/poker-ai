@@ -1,17 +1,19 @@
 {
-  "scope": "own toy learning and conditional risk only; no external outputs trained on",
+  "scope": "own toy learning and own-baseline conditional risk; no external outputs trained on",
   "source": {
     "dirty": false,
-    "git_commit": "54f3929466533578387fc0356de2b2dd6707dd7c",
+    "git_commit": "159185c24b0a44e7343578ea9ebe574ba5ca14a7",
     "git_status": [],
     "sha256": {
       "configs/opponent-modeling.json": "8bf87781e9691244f04b52c9d874bb1a62517564a597079bcac690e4b0b8c6ef",
       "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
       "scripts/analyze_bankroll.py": "4941b1516e49a9dfeaa8beb131988dea6ef6f2c14cc9971fe2d98dc0fea6c848",
-      "scripts/analyze_extensions.py": "a9f8e3d176dae0865c182fbee0bb6ba18545f1770500d9f526819de906d41e0a",
+      "scripts/analyze_empirical_bankroll.py": "629db74c4ef74ea2791e665a2f67ff86f4bf888a8825c661d15ce90a432cb553",
+      "scripts/analyze_extensions.py": "2c8f7b6ac387d212ff2c91d40eee7bab677226a622957c988d690b1a1553f4b4",
       "scripts/analyze_opponents.py": "f0605fc5ea12a2a838fc202792e1180fa6ba08730132be8dab06cda115355cec",
       "scripts/audit_opponent_records.py": "d257e223dee9493cd16cf6ae07d03720eedf6de51f6242c288bdc94c6fee338a",
-      "scripts/render_extensions.py": "d719e1dee1f15456b3650b2ec798211b20bbcc4733bbd4f35a67e6455c9eb567",
+      "scripts/render_empirical_bankroll.py": "0e77eb0c64bdaa24123b917d5d0dec565f94536a3e753d75271a8e389bacc1b1",
+      "scripts/render_extensions.py": "d7f88a0a41e7821ff7d62ce36dc7f54cd9b32a8d5609dcf8a69178fc09d6417c",
       "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
       "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
       "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
@@ -41,6 +43,7 @@
       "src/poker_ai/reproducibility.py": "4e2e6671b046b9f60f96f310a5b2e7cd07aa583187a322668e13b69d0dd45aea",
       "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
       "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
       "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
       "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
       "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
@@ -72,9 +75,11 @@
   "stages": [
     "analyze_opponents.py",
     "analyze_bankroll.py",
+    "analyze_empirical_bankroll.py",
     "audit_opponent_records.py",
-    "render_extensions.py"
+    "render_extensions.py",
+    "render_empirical_bankroll.py"
   ],
   "status": "passed",
-  "total_seconds": 47.133916416998545
+  "total_seconds": 64.43993512499583
 }

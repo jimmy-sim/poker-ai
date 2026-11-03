@@ -1,0 +1,2631 @@
+{
+  "config": {
+    "drawdown_threshold": 0.5,
+    "family_alpha": 0.05,
+    "fee_model": "constant chips per hand equivalent to the configured bb/100; illustrative sensitivity, not pot rake or an asserted realistic site schedule",
+    "flat_fee_bb_per_100_hands": [
+      0.0,
+      5.0,
+      10.0
+    ],
+    "horizon_blocks": 1000,
+    "independent_block": "all three frozen own policies in both seats on one shared deck; resample the entire six-hand block",
+    "kelly_cap": 0.95,
+    "limits": "conditional empirical block-resampling model, not out-of-sample validation; frozen strategies do not adapt to fees; no external reference/benchmark policy or outcomes used for learning",
+    "match_report": "results/evaluation/matches.json",
+    "opponents": [
+      "random",
+      "always_call",
+      "always_raise",
+      "tight_aggressive",
+      "equity"
+    ],
+    "paths": 10000,
+    "schema_version": 1,
+    "seed": 20261207,
+    "sizing": [
+      "half_plugin",
+      "full_plugin",
+      "confidence_robust"
+    ],
+    "threshold_initial_wealth_fraction": 0.2,
+    "uncertainty": "one-sided five-opponent Bonferroni-Hoeffding lower mean; worst-case bounded-return log growth from that lower mean"
+  },
+  "environment": {
+    "cpu": "Apple M4",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "input_match_report_sha256": "332bb8b6b0b117f4dab3fc7349aaaf9bf74eed967deeaa41428b79070561916e",
+  "limits": "conditional empirical resampling, not independent strength validation; fixed illustrative fees, not real-site pot rake; uncertainty fraction is separate from fitted-law optimum",
+  "measured": [
+    {
+      "hands_per_block": 6,
+      "independent_deals": 1000,
+      "mean_chips_per_hand": 4.801166666666666,
+      "opponent": "random",
+      "raw_sha256": "fc119ef91144f2f49692f2fa23cc494cf988434ea7c47dee42d0350ae4a22b9d",
+      "variance_of_block_mean_chips_squared": 1760.2505769936604
+    },
+    {
+      "hands_per_block": 6,
+      "independent_deals": 1000,
+      "mean_chips_per_hand": 3.907,
+      "opponent": "always_call",
+      "raw_sha256": "e9cde028e8734980d7eecacb15537ba1006baae3f8aa8d5f47e3b8202acc3ba8",
+      "variance_of_block_mean_chips_squared": 2145.8827337337334
+    },
+    {
+      "hands_per_block": 6,
+      "independent_deals": 1000,
+      "mean_chips_per_hand": 8.103166666666667,
+      "opponent": "always_raise",
+      "raw_sha256": "981ff280b989c1713e338ef13779b1d2c4fe30dd51cc0ef54c79e4934c9f5d34",
+      "variance_of_block_mean_chips_squared": 2932.6421376654434
+    },
+    {
+      "hands_per_block": 6,
+      "independent_deals": 1000,
+      "mean_chips_per_hand": -5.017166666666666,
+      "opponent": "tight_aggressive",
+      "raw_sha256": "6d9d4ec0db53122f934ad5f5f4bfe0efa465ab5ea1b70988a5765577379dad4f",
+      "variance_of_block_mean_chips_squared": 737.0526190357023
+    },
+    {
+      "hands_per_block": 6,
+      "independent_deals": 1000,
+      "mean_chips_per_hand": -18.402666666666665,
+      "opponent": "equity",
+      "raw_sha256": "9ded7a643869a11e4b6b4f56c431a7f157298292b023ffd321855baa4d008e1e",
+      "variance_of_block_mean_chips_squared": 1616.0256073851629
+    }
+  ],
+  "rows": [
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0048439828600608465,
+      "familywise_lower_net_mbb_per_hand": -7196.468491042829,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.2680430320345806,
+      "measured_net_mbb_per_hand": 2400.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5360860640691612,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9031,
+          "paths": 10000,
+          "probability": 0.9031,
+          "wilson_95": [
+            0.8971462614691222,
+            0.9087441590444382
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.46810521667350824,
+          0.6309500950565707,
+          0.8257198085696943
+        ],
+        "mean_terminal_log_wealth": 4.825676509814132,
+        "se_terminal_log_wealth": 0.017723089595716012,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          1.945637305454698,
+          4.822996395289829,
+          7.77787438980225
+        ],
+        "terminal_loss": {
+          "count": 36,
+          "paths": 10000,
+          "probability": 0.0036,
+          "wilson_95": [
+            0.0026016036387784434,
+            0.00497962994362928
+          ]
+        },
+        "threshold_crossing": {
+          "count": 69,
+          "paths": 10000,
+          "probability": 0.0069,
+          "wilson_95": [
+            0.005456205431184982,
+            0.008722493761976275
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.006486115272899795,
+      "familywise_lower_net_mbb_per_hand": -7196.468491042829,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.5360860640691612,
+      "measured_net_mbb_per_hand": 2400.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5360860640691612,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.7665370562691145,
+          0.909518197731157,
+          0.9881405643696455
+        ],
+        "mean_terminal_log_wealth": 6.45010242278027,
+        "se_terminal_log_wealth": 0.03568695759085606,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.6555861873576342,
+          6.453950549467071,
+          12.384724511529294
+        ],
+        "terminal_loss": {
+          "count": 343,
+          "paths": 10000,
+          "probability": 0.0343,
+          "wilson_95": [
+            0.03090792432655773,
+            0.03804973175589044
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1826,
+          "paths": 10000,
+          "probability": 0.1826,
+          "wilson_95": [
+            0.17515026355619157,
+            0.19029349860951394
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7196.468491042829,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 2400.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5360860640691612,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0046465714930253406,
+      "familywise_lower_net_mbb_per_hand": -7246.46849104283,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.26275130359243204,
+      "measured_net_mbb_per_hand": 2350.583333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5255026071848641,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 8808,
+          "paths": 10000,
+          "probability": 0.8808,
+          "wilson_95": [
+            0.8743025614583333,
+            0.8870049853825595
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.4600304483472848,
+          0.6245555171495789,
+          0.8267655716617072
+        ],
+        "mean_terminal_log_wealth": 4.655523382264774,
+        "se_terminal_log_wealth": 0.01752357936440104,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          1.7464933901289594,
+          4.670490227906589,
+          7.53129565409217
+        ],
+        "terminal_loss": {
+          "count": 36,
+          "paths": 10000,
+          "probability": 0.0036,
+          "wilson_95": [
+            0.0026016036387784434,
+            0.00497962994362928
+          ]
+        },
+        "threshold_crossing": {
+          "count": 82,
+          "paths": 10000,
+          "probability": 0.0082,
+          "wilson_95": [
+            0.006611596600786797,
+            0.010166104196610706
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.00622078298419459,
+      "familywise_lower_net_mbb_per_hand": -7246.46849104283,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.5255026071848641,
+      "measured_net_mbb_per_hand": 2350.583333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5255026071848641,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.7598041044400422,
+          0.9065129425001545,
+          0.9886177216846093
+        ],
+        "mean_terminal_log_wealth": 6.236974625928135,
+        "se_terminal_log_wealth": 0.03527408093389397,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.39541060714196885,
+          6.25773701388079,
+          12.04742643008962
+        ],
+        "terminal_loss": {
+          "count": 394,
+          "paths": 10000,
+          "probability": 0.0394,
+          "wilson_95": [
+            0.03576049506533982,
+            0.04339324423372744
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1824,
+          "paths": 10000,
+          "probability": 0.1824,
+          "wilson_95": [
+            0.1749535602381295,
+            0.1900903555269243
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7246.46849104283,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 2350.583333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5255026071848641,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.004453137234767378,
+      "familywise_lower_net_mbb_per_hand": -7296.46849104283,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.2574449116378641,
+      "measured_net_mbb_per_hand": 2300.5833333333326,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5148898232757282,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 8791,
+          "paths": 10000,
+          "probability": 0.8791,
+          "wilson_95": [
+            0.8725642960533988,
+            0.8853445563819542
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.4577579211199582,
+          0.6224452798917834,
+          0.8198226212620912
+        ],
+        "mean_terminal_log_wealth": 4.44179199464876,
+        "se_terminal_log_wealth": 0.01708388837304518,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          1.6304891741578633,
+          4.426400853023765,
+          7.248623850208433
+        ],
+        "terminal_loss": {
+          "count": 48,
+          "paths": 10000,
+          "probability": 0.0048,
+          "wilson_95": [
+            0.0036224922338521162,
+            0.0063578197524659825
+          ]
+        },
+        "threshold_crossing": {
+          "count": 68,
+          "paths": 10000,
+          "probability": 0.0068,
+          "wilson_95": [
+            0.005367876155841787,
+            0.008610899836993605
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.005960878362789025,
+      "familywise_lower_net_mbb_per_hand": -7296.46849104283,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.5148898232757282,
+      "measured_net_mbb_per_hand": 2300.5833333333326,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5148898232757282,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.7553785041118486,
+          0.9040681632812779,
+          0.9866473116625978
+        ],
+        "mean_terminal_log_wealth": 5.937989795235279,
+        "se_terminal_log_wealth": 0.03437753712668788,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.26220964111230094,
+          5.903733205561022,
+          11.581806809490692
+        ],
+        "terminal_loss": {
+          "count": 426,
+          "paths": 10000,
+          "probability": 0.0426,
+          "wilson_95": [
+            0.03881428812903491,
+            0.04673699358046003
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1801,
+          "paths": 10000,
+          "probability": 0.1801,
+          "wilson_95": [
+            0.1726917175571367,
+            0.1877539646004222
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7296.46849104283,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 2300.5833333333326,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "random",
+      "plugin_optimal_fraction": 0.5148898232757282,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0026475460303531156,
+      "familywise_lower_net_mbb_per_hand": -7643.551824376163,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.18034743604427633,
+      "measured_net_mbb_per_hand": 1953.5000000000005,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.36069487208855266,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 7323,
+          "paths": 10000,
+          "probability": 0.7323,
+          "wilson_95": [
+            0.7235340619413092,
+            0.7408875324156744
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.40335629166684456,
+          0.57040802720782,
+          0.789535726847403
+        ],
+        "mean_terminal_log_wealth": 2.652776047891671,
+        "se_terminal_log_wealth": 0.013219052990127204,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.45396813248918894,
+          2.6658372976966564,
+          4.798217245255007
+        ],
+        "terminal_loss": {
+          "count": 207,
+          "paths": 10000,
+          "probability": 0.0207,
+          "wilson_95": [
+            0.01808796362357549,
+            0.023680137214555093
+          ]
+        },
+        "threshold_crossing": {
+          "count": 79,
+          "paths": 10000,
+          "probability": 0.0079,
+          "wilson_95": [
+            0.006343878268779698,
+            0.00983405292764021
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0035375099305232248,
+      "familywise_lower_net_mbb_per_hand": -7643.551824376163,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.36069487208855266,
+      "measured_net_mbb_per_hand": 1953.5000000000005,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.36069487208855266,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.6870484717278073,
+          0.8613543462833222,
+          0.9780936345174673
+        ],
+        "mean_terminal_log_wealth": 3.5490617223968512,
+        "se_terminal_log_wealth": 0.026539869546547686,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          -0.8720626151784929,
+          3.57078153137593,
+          7.853574990802525
+        ],
+        "terminal_loss": {
+          "count": 911,
+          "paths": 10000,
+          "probability": 0.0911,
+          "wilson_95": [
+            0.08561609300517202,
+            0.09689794086236729
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1696,
+          "paths": 10000,
+          "probability": 0.1696,
+          "wilson_95": [
+            0.16237181834626338,
+            0.17708192777707968
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7643.551824376163,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 1953.5000000000005,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.36069487208855266,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.002514492953954061,
+      "familywise_lower_net_mbb_per_hand": -7693.551824376163,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.17588178897316203,
+      "measured_net_mbb_per_hand": 1903.5000000000002,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.35176357794632407,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 7173,
+          "paths": 10000,
+          "probability": 0.7173,
+          "wilson_95": [
+            0.7083919084384835,
+            0.7260412058696204
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.3984042662467403,
+          0.5652465858716871,
+          0.7834272371992
+        ],
+        "mean_terminal_log_wealth": 2.515376673436787,
+        "se_terminal_log_wealth": 0.01294263213199087,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.38405292952350745,
+          2.513382650722597,
+          4.651596523165535
+        ],
+        "terminal_loss": {
+          "count": 258,
+          "paths": 10000,
+          "probability": 0.0258,
+          "wilson_95": [
+            0.02287006522889889,
+            0.02909411882585079
+          ]
+        },
+        "threshold_crossing": {
+          "count": 53,
+          "paths": 10000,
+          "probability": 0.0053,
+          "wilson_95": [
+            0.0040545228877767025,
+            0.0069254051001707215
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.003359438928189263,
+      "familywise_lower_net_mbb_per_hand": -7693.551824376163,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.35176357794632407,
+      "measured_net_mbb_per_hand": 1903.5000000000002,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.35176357794632407,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9997,
+          "paths": 10000,
+          "probability": 0.9997,
+          "wilson_95": [
+            0.9991182642277636,
+            0.9998979678005822
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.6817155159961683,
+          0.8570649083428583,
+          0.9760243546447718
+        ],
+        "mean_terminal_log_wealth": 3.3610155912474524,
+        "se_terminal_log_wealth": 0.02596898908257694,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          -0.932273582555696,
+          3.3592922249274846,
+          7.628064217937584
+        ],
+        "terminal_loss": {
+          "count": 977,
+          "paths": 10000,
+          "probability": 0.0977,
+          "wilson_95": [
+            0.09203424802484701,
+            0.10367471706419935
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1697,
+          "paths": 10000,
+          "probability": 0.1697,
+          "wilson_95": [
+            0.16247005609396503,
+            0.17718361322970388
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7693.551824376163,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 1903.5000000000002,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.35176357794632407,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0023848226059469176,
+      "familywise_lower_net_mbb_per_hand": -7743.551824376162,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.17140755421626291,
+      "measured_net_mbb_per_hand": 1853.4999999999995,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.34281510843252583,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 6901,
+          "paths": 10000,
+          "probability": 0.6901,
+          "wilson_95": [
+            0.6809645527688655,
+            0.6990894510506034
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.3930645801002585,
+          0.5571944176744816,
+          0.7781491478762929
+        ],
+        "mean_terminal_log_wealth": 2.4090084150884117,
+        "se_terminal_log_wealth": 0.012502700851312134,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.3284834378225904,
+          2.414525131609672,
+          4.477153154801393
+        ],
+        "terminal_loss": {
+          "count": 276,
+          "paths": 10000,
+          "probability": 0.0276,
+          "wilson_95": [
+            0.024566008678008976,
+            0.03099679298260627
+          ]
+        },
+        "threshold_crossing": {
+          "count": 63,
+          "paths": 10000,
+          "probability": 0.0063,
+          "wilson_95": [
+            0.004927565458326495,
+            0.008051594532879576
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0031859234898415903,
+      "familywise_lower_net_mbb_per_hand": -7743.551824376162,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.34281510843252583,
+      "measured_net_mbb_per_hand": 1853.4999999999995,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.34281510843252583,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9998,
+          "paths": 10000,
+          "probability": 0.9998,
+          "wilson_95": [
+            0.9992710041559925,
+            0.9999451510726791
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.6712705983823457,
+          0.8500788070738653,
+          0.9743694274930726
+        ],
+        "mean_terminal_log_wealth": 3.2345584099871485,
+        "se_terminal_log_wealth": 0.025089616318828202,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          -0.9357019195068366,
+          3.2496336626468545,
+          7.374162344352
+        ],
+        "terminal_loss": {
+          "count": 991,
+          "paths": 10000,
+          "probability": 0.0991,
+          "wilson_95": [
+            0.09339674744783148,
+            0.105111142445777
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1638,
+          "paths": 10000,
+          "probability": 0.1638,
+          "wilson_95": [
+            0.1566756352355957,
+            0.17118256526884723
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -7743.551824376162,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 1853.4999999999995,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_call",
+      "plugin_optimal_fraction": 0.34281510843252583,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.008217415798585674,
+      "familywise_lower_net_mbb_per_hand": -5545.46849104283,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.26917921605483897,
+      "measured_net_mbb_per_hand": 4051.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5383584321096779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9755,
+          "paths": 10000,
+          "probability": 0.9755,
+          "wilson_95": [
+            0.9722824780316919,
+            0.9783523395177947
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.5251409162663209,
+          0.6767359115605349,
+          0.8528375234688313
+        ],
+        "mean_terminal_log_wealth": 8.218373841021762,
+        "se_terminal_log_wealth": 0.02272878781495061,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          4.489369586363661,
+          8.216053493036725,
+          12.000234430022093
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 67,
+          "paths": 10000,
+          "probability": 0.0067,
+          "wilson_95": [
+            0.005279633317541981,
+            0.008499219474967548
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.011018253829647748,
+      "familywise_lower_net_mbb_per_hand": -5545.46849104283,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.5383584321096779,
+      "measured_net_mbb_per_hand": 4051.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5383584321096779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.8296929805100809,
+          0.9391988871395298,
+          0.9929150323609597
+        ],
+        "mean_terminal_log_wealth": 11.019112331644243,
+        "se_terminal_log_wealth": 0.045913723054794575,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          3.491488480294673,
+          11.030602019491837,
+          18.654419903622173
+        ],
+        "terminal_loss": {
+          "count": 82,
+          "paths": 10000,
+          "probability": 0.0082,
+          "wilson_95": [
+            0.006611596600786797,
+            0.010166104196610706
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1808,
+          "paths": 10000,
+          "probability": 0.1808,
+          "wilson_95": [
+            0.17338005646074534,
+            0.18846508809909457
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -5545.46849104283,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 4051.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5383584321096779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.008018738460422134,
+      "familywise_lower_net_mbb_per_hand": -5595.468491042829,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.26610147757563896,
+      "measured_net_mbb_per_hand": 4001.5833333333344,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5322029551512779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9705,
+          "paths": 10000,
+          "probability": 0.9705,
+          "wilson_95": [
+            0.9669987234833,
+            0.9736399340498934
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.5186974487268945,
+          0.6729467853376234,
+          0.8521719207169972
+        ],
+        "mean_terminal_log_wealth": 8.01084072349898,
+        "se_terminal_log_wealth": 0.022719294842040497,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          4.295723731182112,
+          8.02282056778218,
+          11.755545127472585
+        ],
+        "terminal_loss": {
+          "count": 3,
+          "paths": 10000,
+          "probability": 0.0003,
+          "wilson_95": [
+            0.00010203219941781012,
+            0.0008817357722363793
+          ]
+        },
+        "threshold_crossing": {
+          "count": 60,
+          "paths": 10000,
+          "probability": 0.006,
+          "wilson_95": [
+            0.00466452289344972,
+            0.007714867496778756
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.01075067970505979,
+      "familywise_lower_net_mbb_per_hand": -5595.468491042829,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.5322029551512779,
+      "measured_net_mbb_per_hand": 4001.5833333333344,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5322029551512779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.8236560533807682,
+          0.9372695162666513,
+          0.9932071713168804
+        ],
+        "mean_terminal_log_wealth": 10.73470750767961,
+        "se_terminal_log_wealth": 0.04582675450001909,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          3.1906243716424347,
+          10.764402287792503,
+          18.292300297645465
+        ],
+        "terminal_loss": {
+          "count": 110,
+          "paths": 10000,
+          "probability": 0.011,
+          "wilson_95": [
+            0.009135269953194405,
+            0.013240280453327305
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1772,
+          "paths": 10000,
+          "probability": 0.1772,
+          "wilson_95": [
+            0.16984048030411053,
+            0.18480742904399827
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -5595.468491042829,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 4001.5833333333344,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5322029551512779,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.007822406196150298,
+      "familywise_lower_net_mbb_per_hand": -5645.468491042829,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.2630172934289211,
+      "measured_net_mbb_per_hand": 3951.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5260345868578422,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 9697,
+          "paths": 10000,
+          "probability": 0.9697,
+          "wilson_95": [
+            0.9661558379998407,
+            0.9728834339307457
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.5149762145972933,
+          0.6711318592703253,
+          0.8526728938614601
+        ],
+        "mean_terminal_log_wealth": 7.8411645689335625,
+        "se_terminal_log_wealth": 0.022629077645305144,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          4.077467337384754,
+          7.864340689439539,
+          11.53448017738996
+        ],
+        "terminal_loss": {
+          "count": 1,
+          "paths": 10000,
+          "probability": 0.0001,
+          "wilson_95": [
+            1.7652673601122363e-05,
+            0.0005662688974013379
+          ]
+        },
+        "threshold_crossing": {
+          "count": 80,
+          "paths": 10000,
+          "probability": 0.008,
+          "wilson_95": [
+            0.006433050051197009,
+            0.00994480434554876
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.010486317920229554,
+      "familywise_lower_net_mbb_per_hand": -5645.468491042829,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.5260345868578422,
+      "measured_net_mbb_per_hand": 3951.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5260345868578422,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 10000,
+          "paths": 10000,
+          "probability": 1.0,
+          "wilson_95": [
+            0.9996160016293234,
+            1.0
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.8201417504094063,
+          0.9362768681321807,
+          0.9930659308569953
+        ],
+        "mean_terminal_log_wealth": 10.520793563963087,
+        "se_terminal_log_wealth": 0.04566998175174703,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          2.932302003693778,
+          10.582448983843765,
+          17.97239617102152
+        ],
+        "terminal_loss": {
+          "count": 137,
+          "paths": 10000,
+          "probability": 0.0137,
+          "wilson_95": [
+            0.011601223967326633,
+            0.016172252847993424
+          ]
+        },
+        "threshold_crossing": {
+          "count": 1799,
+          "paths": 10000,
+          "probability": 0.1799,
+          "wilson_95": [
+            0.17249505705475324,
+            0.1875507787021539
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -5645.468491042829,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": 3951.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "always_raise",
+      "plugin_optimal_fraction": 0.5260345868578422,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12105.635157709496,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2508.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12105.635157709496,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2508.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12105.635157709496,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2508.583333333333,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12155.635157709496,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2558.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12155.635157709496,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2558.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12155.635157709496,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2558.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12205.635157709496,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2608.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12205.635157709496,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2608.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -12205.635157709496,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -2608.5833333333335,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "tight_aggressive",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18798.385157709497,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9201.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18798.385157709497,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9201.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18798.385157709497,
+      "fee_bb_per_100_hands": 0.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9201.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.0,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18848.385157709494,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9251.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18848.385157709494,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9251.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18848.385157709494,
+      "fee_bb_per_100_hands": 5.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9251.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.1,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18898.385157709494,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9301.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "half_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18898.385157709494,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9301.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "full_plugin"
+    },
+    {
+      "confidence_robust_fraction": 0.0,
+      "expected_log_growth_per_block": 0.0,
+      "familywise_lower_net_mbb_per_hand": -18898.385157709494,
+      "fee_bb_per_100_hands": 10.0,
+      "fraction": 0.0,
+      "measured_net_mbb_per_hand": -9301.333333333334,
+      "normalized_maximum_loss_unit_chips_per_hand": 200.2,
+      "opponent": "equity",
+      "plugin_optimal_fraction": 0.0,
+      "simulation": {
+        "drawdown_exceedance": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "independent_unit": "one complete path, not individual correlated steps",
+        "literal_bankruptcy": "impossible in this f<1 bounded fractional model",
+        "maximum_drawdown_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_terminal_log_wealth": 0.0,
+        "se_terminal_log_wealth": 0.0,
+        "terminal_log_wealth_quantiles_05_50_95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_loss": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        },
+        "threshold_crossing": {
+          "count": 0,
+          "paths": 10000,
+          "probability": 0.0,
+          "wilson_95": [
+            0.0,
+            0.00038399837067659546
+          ]
+        }
+      },
+      "sizing": "confidence_robust"
+    }
+  ],
+  "seconds": 23.08273016699968,
+  "source": {
+    "dirty": false,
+    "git_commit": "159185c24b0a44e7343578ea9ebe574ba5ca14a7",
+    "git_status": [],
+    "sha256": {
+      "configs/empirical-bankroll.json": "c0dba27b6ee05886206a4ca2d8920935fe27e98b8220f592e1902257a22c1255",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/analyze_empirical_bankroll.py": "629db74c4ef74ea2791e665a2f67ff86f4bf888a8825c661d15ce90a432cb553",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/opponent_modeling/__init__.py": "a58c5e8a282812b3efb575227a25e0c37872c0709aa80696008b7e404ced159b",
+      "src/poker_ai/opponent_modeling/bayes.py": "d67e382b0f4115f167965e74ca0ad3768078d8b6b4e887da002be9850d5a4419",
+      "src/poker_ai/opponent_modeling/experiment.py": "4a8876a6eb211828c81b89bce909785953aed76ba23c6ebbaab8b71cd28d1580",
+      "src/poker_ai/opponent_modeling/policies.py": "a3a8faa9c32960f9ecb1323f0d218c9768f1eef7bb8885490fe64e21b4b534b0",
+      "src/poker_ai/reproducibility.py": "4e2e6671b046b9f60f96f310a5b2e7cd07aa583187a322668e13b69d0dd45aea",
+      "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
+      "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
+      "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/reference.py": "ba174f3d93ce27f3de28edd61d1a5fdaac4a002aba5f749e35bf7cb6fb104c46",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/spots.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+    }
+  },
+  "status": "completed",
+  "units": "each synthetic bankroll step is a six-hand duplicate-deal block, not one hand"
+}
