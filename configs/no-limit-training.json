@@ -1,0 +1,47 @@
+{
+  "game": "no_limit",
+  "seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "methods": [
+    "external",
+    "outcome"
+  ],
+  "models": [
+    "results/card-models/strength-8.json",
+    "results/card-models/potential-8.json"
+  ],
+  "checkpoints": [
+    10,
+    100,
+    300
+  ],
+  "epsilon": 0.6,
+  "workers": 2,
+  "cache_size": 8192,
+  "rules": {
+    "stacks": [
+      200,
+      200
+    ],
+    "button": 1,
+    "fractions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "trace_memory": true,
+  "max_nodes_per_pass": 5000,
+  "max_training_seconds": 180,
+  "purpose": "bounded no-limit action/card abstraction experiment; no strength or full-game exploitability claim"
+}

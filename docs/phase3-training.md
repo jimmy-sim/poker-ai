@@ -309,3 +309,33 @@ playing strength. No full-Hold'em exploitability or win rate was measured.
 Fixed-limit implementation and bounded training now precede no-limit work. Phase 3
 remains incomplete: no-limit training, complete off-tree policy reconciliation and
 final acceptance reporting are still pending. Phase 3.5 remains gated.
+
+## No-limit adapter and bounded training protocol
+
+The no-limit adapter follows fixed-limit implementation/training. It delegates
+all accounting, reopening, all-ins and showdown to the own engine and exposes
+fold/check-call plus sorted legal discrete raise-to choices. A full uniform deck
+is sampled per target pass; policy keys see only own/public observations.
+
+`make train-no-limit` uses half-pot, full-pot and all-in raises, with no explicit
+minimum-raise option unless a fractional size clamps to it. Both samplers,
+strength/potential eight-bucket models and three seeds are configured. Save at
+10/100/300 iterations. A five-iteration cost pilot motivated a 300-iteration main
+budget instead of 500, before this main run. No convergence/strength threshold is
+claimed. The action grid and card approximation are explicit restrictions.
+
+Each target pass has a 5,000-node budget; each run has a 180-second session budget.
+Budget exhaustion aborts that run and returns a failed report, never a truncated
+value. An alternating iteration can already contain target-0 updates when a later
+pass aborts, so the partial solver is discarded and only prior completed checkpoint
+boundaries survive. Continue from the saved checkpoint/source/config, not the
+aborted in-memory object. CLI smoke checks verified expected failure and no partial
+checkpoint export. Budget failures must be investigated/rebudgeted before a
+successful main experiment can be claimed.
+
+The updated runner starts a fresh spawned process per run, improving RSS isolation
+relative to the earlier fixed-limit report's reused workers. Tracemalloc and RSS
+retain their separate meanings; tracing overhead remains. Bounded no-limit CLI
+training and abstracted game termination are tested. Full public shadow-state
+reconciliation for off-tree policy lookup is still pending; local size translation
+alone is not that adapter.

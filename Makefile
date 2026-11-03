@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit
 
 setup:
 	$(UV) sync --locked --dev
@@ -66,3 +66,8 @@ train-limit:
 	$(UV) run --locked python scripts/train_holdem.py \
 		--config configs/limit-training.json \
 		--output results/limit-training.json
+
+train-no-limit:
+	$(UV) run --locked python scripts/train_holdem.py \
+		--config configs/no-limit-training.json \
+		--output results/no-limit-training.json

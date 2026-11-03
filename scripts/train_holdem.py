@@ -19,10 +19,13 @@ from typing import Any, cast
 import numpy as np
 from numpy.random import PCG64, Generator
 
+from poker_ai.abstraction.actions import ActionAbstraction
 from poker_ai.abstraction.model import CardAbstraction
+from poker_ai.training.budget import NodeBudgetExceeded, bounded_sample
 from poker_ai.training.checkpoint import load_checkpoint, save_checkpoint
 from poker_ai.training.holdem import LimitRules, sample_limit
-from poker_ai.training.mccfr import MCCFR, Method
+from poker_ai.training.mccfr import MCCFR, Method, RootFactory
+from poker_ai.training.no_limit import NoLimitRules, sample_no_limit
 from poker_ai.validation.five_card import source_provenance
 
 
@@ -40,17 +43,35 @@ def implementation_hash(root: Path) -> str:
     return digest.hexdigest()
 
 
-def worker(task: dict[str, Any]) -> list[dict[str, Any]]:
+def worker(task: dict[str, Any]) -> dict[str, Any]:
     config = task["config"]
     model_path = Path(task["root"]) / task["model"]
     model = CardAbstraction.load(model_path, cache_size=config["cache_size"])
     raw_rules = config["rules"]
-    rules = LimitRules(
-        stacks=tuple(raw_rules["stacks"]),
-        button=raw_rules["button"],
-        bet_cap=raw_rules["bet_cap"],
-    )
-    factory = partial(sample_limit, rules, information_builder=model.information)
+    factory: RootFactory
+    if config["game"] == "limit":
+        rules = LimitRules(
+            stacks=tuple(raw_rules["stacks"]),
+            button=raw_rules["button"],
+            bet_cap=raw_rules["bet_cap"],
+        )
+        factory = partial(sample_limit, rules, information_builder=model.information)
+    else:
+        abstraction = ActionAbstraction(
+            fractions=tuple(tuple(pair) for pair in raw_rules["fractions"]),
+            include_minimum=raw_rules["include_minimum"],
+            include_all_in=raw_rules["include_all_in"],
+        )
+        nl_rules = NoLimitRules(
+            stacks=tuple(raw_rules["stacks"]),
+            button=raw_rules["button"],
+            action_abstraction=abstraction,
+        )
+        factory = partial(
+            sample_no_limit, nl_rules, information_builder=model.information
+        )
+    if config.get("max_nodes_per_pass") is not None:
+        factory = partial(bounded_sample, factory, config["max_nodes_per_pass"])
     run_config = {
         "training": config,
         "model": task["model"],
@@ -83,7 +104,7 @@ def worker(task: dict[str, Any]) -> list[dict[str, Any]]:
     if config["trace_memory"]:
         tracemalloc.start()
     started = time.perf_counter()
-    rows = []
+    rows: list[dict[str, Any]] = []
     training_seconds = 0.0
     training_peak = 0
     targets = [t for t in config["checkpoints"] if t > starting_iteration]
@@ -95,7 +116,33 @@ def worker(task: dict[str, Any]) -> list[dict[str, Any]]:
         if config["trace_memory"]:
             tracemalloc.reset_peak()
         tick = time.perf_counter()
-        solver.train(iteration - solver.iteration)
+        try:
+            while solver.iteration < iteration:
+                if (
+                    config.get("max_training_seconds") is not None
+                    and time.perf_counter() - started >= config["max_training_seconds"]
+                ):
+                    raise TimeoutError("run exceeded declared session time budget")
+                solver.train(1)
+        except (NodeBudgetExceeded, TimeoutError) as error:
+            if config["trace_memory"]:
+                tracemalloc.stop()
+            # A target-1 abort may follow target-0 updates. Never export or reuse
+            # that partially completed iteration; retain only prior checkpoints.
+            return {
+                "rows": rows,
+                "error": {
+                    "model": task["model"],
+                    "method": task["method"],
+                    "seed": task["seed"],
+                    "reason": str(error),
+                    "exception": type(error).__name__,
+                    "last_saved_iteration": rows[-1]["iteration"]
+                    if rows
+                    else starting_iteration,
+                    "last_checkpoint": rows[-1]["checkpoint"] if rows else resumed_from,
+                },
+            }
         training_seconds += time.perf_counter() - tick
         seconds = time.perf_counter() - started
         current, peak = (
@@ -149,7 +196,7 @@ def worker(task: dict[str, Any]) -> list[dict[str, Any]]:
         )
     if config["trace_memory"]:
         tracemalloc.stop()
-    return rows
+    return {"rows": rows, "error": None}
 
 
 def main() -> int:
@@ -173,13 +220,38 @@ def main() -> int:
         "purpose",
     }
     if (
-        set(config) != required
-        or config["game"] != "limit"
-        or config["methods"] != ["external", "outcome"]
+        not required <= set(config)
+        or set(config) - required - {"max_nodes_per_pass", "max_training_seconds"}
+        or config["game"] not in ("limit", "no_limit")
+        or not config["methods"]
+        or len(set(config["methods"])) != len(config["methods"])
+        or any(m not in ("external", "outcome") for m in config["methods"])
     ):
         raise ValueError("invalid Holdem training config")
-    if set(config["rules"]) != {"stacks", "button", "bet_cap"}:
-        raise ValueError("invalid fixed-limit rules config")
+    rule_fields = (
+        {"stacks", "button", "bet_cap"}
+        if config["game"] == "limit"
+        else {"stacks", "button", "fractions", "include_minimum", "include_all_in"}
+    )
+    if set(config["rules"]) != rule_fields:
+        raise ValueError("invalid betting rules config")
+    if config["game"] == "no_limit" and not {
+        "max_nodes_per_pass",
+        "max_training_seconds",
+    } <= set(config):
+        raise ValueError("no-limit experiments require node and time budgets")
+    node_limit = config.get("max_nodes_per_pass")
+    time_limit = config.get("max_training_seconds")
+    if config["game"] == "no_limit" and (node_limit is None or time_limit is None):
+        raise ValueError("no-limit node/time budgets cannot be null")
+    if node_limit is not None and (type(node_limit) is not int or node_limit < 1):
+        raise ValueError("invalid node limit")
+    if time_limit is not None and (
+        type(time_limit) not in (int, float)
+        or not np.isfinite(time_limit)
+        or time_limit <= 0
+    ):
+        raise ValueError("invalid time limit")
     for key in ("seeds", "checkpoints"):
         values = config[key]
         if (
@@ -234,12 +306,20 @@ def main() -> int:
     os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
     os.environ.setdefault("OMP_NUM_THREADS", "1")
     started = time.perf_counter()
-    rows = []
+    rows: list[dict[str, Any]] = []
+    failures = []
     with ProcessPoolExecutor(
-        max_workers=config["workers"], mp_context=multiprocessing.get_context("spawn")
+        max_workers=config["workers"],
+        mp_context=multiprocessing.get_context("spawn"),
+        max_tasks_per_child=1,
     ) as pool:
-        for batch in pool.map(worker, tasks):
+        for result in pool.map(worker, tasks):
+            batch = result["rows"]
             rows.extend(batch)
+            if result["error"] is not None:
+                failures.append(result["error"])
+                print(f"aborted: {result['error']}", flush=True)
+                continue
             last = batch[-1]
             print(
                 f"{Path(last['model']).stem}/{last['method']} seed={last['seed']}: "
@@ -258,12 +338,19 @@ def main() -> int:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     csv_path = args.output.with_suffix(".csv")
     with csv_path.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(
+            stream,
+            fieldnames=list(rows[0])
+            if rows
+            else ["model", "method", "seed", "iteration"],
+        )
         writer.writeheader()
         writer.writerows(rows)
     report = {
         "schema_version": 1,
-        "status": "completed",
+        "status": "failed" if failures else "completed",
+        "failures": failures,
+        "worker_reuse": "one spawned process per run",
         "config": config,
         "source": source,
         "rows": rows,
@@ -293,8 +380,8 @@ def main() -> int:
         ],
     }
     args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
-    print("completed", args.output)
-    return 0
+    print(report["status"], args.output)
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":
