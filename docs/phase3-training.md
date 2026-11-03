@@ -339,3 +339,22 @@ retain their separate meanings; tracing overhead remains. Bounded no-limit CLI
 training and abstracted game termination are tested. Full public shadow-state
 reconciliation for off-tree policy lookup is still pending; local size translation
 alone is not that adapter.
+
+## Public shadow reconciliation checkpoint
+
+`abstraction/shadow.py` now replays the actual public betting ledger unchanged
+using synthetic cards, then follows a separate translated virtual ledger. Real
+opponent holes, burns and future cards are never inputs. The lookup observation
+combines virtual public fields with the actual player's own cards/public board.
+Button rotation aligns player roles with the trained profile. Initial stack-depth
+mismatches are recorded; pot normalization does not make different depths equal.
+
+Mapping coins derive from an explicit episode seed and public action prefix, so
+an earlier translation remains fixed at later queries. On-grid histories reproduce
+the original observation exactly. Off-grid histories can instead make the virtual
+hand terminate early; this returns an explicit failure with mapping diagnostics.
+Invalid actual public histories raise errors. Actual stacks/history are never
+rewritten. Tests cover identity, separate ledgers, prefix consistency, role rotation,
+private-card independence of the mapping coin, and virtual-all-in failures.
+Mapped action-probability decoding and the own-checkpoint inference adapter remain
+pending before the full off-tree agent interface is complete.
