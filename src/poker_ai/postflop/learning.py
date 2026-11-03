@@ -2,10 +2,11 @@
 
 import gzip
 import hashlib
+import importlib
 import json
 import time
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, Protocol, cast
 
 import numpy as np
 from numpy.random import PCG64, Generator
@@ -19,15 +20,38 @@ from poker_ai.postflop.matrix import (
     MatrixTree,
     recall_violations,
 )
+from poker_ai.postflop.sampling import (
+    PostflopMCCFR,
+    Weighting,
+    exact_initial_expectation,
+    save_learning_checkpoint,
+)
 from poker_ai.postflop.tree import SpotTree
 from poker_ai.reproducibility import runtime_environment
 from poker_ai.toy.analysis import evaluate
 from poker_ai.toy.cfr import CFR
-from poker_ai.training.checkpoint import save_checkpoint
 from poker_ai.training.mccfr import MCCFR, RootFactory
 from poker_ai.validation.five_card import source_provenance
 
 POLICY_FORMAT = "poker-ai-own-postflop-policies-v1"
+
+
+class FullSolver(Protocol):
+    iteration: int
+    strategy_sum: FloatArray
+
+    @property
+    def average_policy(self) -> FloatArray: ...
+    def step(self) -> None: ...
+
+
+def full_solver(tree: MatrixTree, backend: str) -> FullSolver:
+    if backend == "numpy":
+        return CFR(tree, "cfr_plus")
+    if backend != "fused_numba":
+        raise ValueError("unknown full-tree arithmetic backend")
+    module = importlib.import_module("poker_ai.postflop.jit_cfr")
+    return cast(FullSolver, module.FusedCFRPlus(tree))
 
 
 def root_factory(tree: MatrixTree) -> RootFactory:
@@ -225,16 +249,28 @@ def run_training(
                 for method, seed in [("full_cfr_plus", None)] + [
                     ("external", s) for s in config["seeds"]
                 ]:
-                    full = CFR(tree, "cfr_plus") if method == "full_cfr_plus" else None
+                    full = (
+                        full_solver(tree, config.get("full_tree_backend", "numpy"))
+                        if method == "full_cfr_plus"
+                        else None
+                    )
+                    weighting = config.get("sampling_weighting", "uniform")
+                    if weighting not in ("uniform", "linear"):
+                        raise ValueError("invalid sampling weighting")
+                    warm = config.get("initial_exact_expectation", False)
+                    if type(warm) is not bool:
+                        raise ValueError("invalid initialization flag")
                     sampled = (
-                        MCCFR(
+                        PostflopMCCFR(
                             root_factory(tree),
                             Generator(PCG64(seed)),
-                            method="external",
+                            cast(Weighting, weighting),
                         )
                         if seed is not None
                         else None
                     )
+                    if sampled is not None and warm:
+                        exact_initial_expectation(sampled, tree)
                     checkpoints = config[
                         "full_tree_checkpoints"
                         if full is not None
@@ -272,10 +308,26 @@ def run_training(
                             "spot": spot.name,
                             "encoding": encoding,
                             "method": method,
+                            "sampling_weighting": None
+                            if sampled is None
+                            else sampled.weighting,
+                            "full_tree_backend": config.get(
+                                "full_tree_backend", "numpy"
+                            ),
                             "seed": seed,
                             "iteration": checkpoint,
                             "seconds": time.perf_counter() - run_started,
                             "nodes_visited_or_full_node_equivalent": nodes,
+                            "initial_exact_expectation": bool(sampled and warm),
+                            "warm_node_equivalent": 0
+                            if sampled is None
+                            else sampled.warm_node_equivalent,
+                            "subsequently_sampled_information_sets": None
+                            if sampled is None
+                            else len(sampled.sampled_keys),
+                            "initial_only_information_sets": 0
+                            if sampled is None
+                            else len(set(sampled.rows) - sampled.sampled_keys),
                             **score(exact, tree, policy, trained, uniform_mass),
                         }
                         rows.append(row)
@@ -294,7 +346,7 @@ def run_training(
                         snapshots[-1]["policy"] = tree.exact_policy(policy)
                         if sampled is not None:
                             name = f"{spot.name}-{encoding}-{seed}-{checkpoint}.json"
-                            save_checkpoint(
+                            save_learning_checkpoint(
                                 sampled,
                                 checkpoint_dir / name,
                                 config={

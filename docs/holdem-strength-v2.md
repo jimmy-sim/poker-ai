@@ -88,3 +88,37 @@ and independent checks. Additional full-tree initialization cost is reported.
 This experiment tests whether initial sampling noise and averaging/regret weighting
 explain the failure. It cannot establish that a full-tree initialization scales to
 global Hold'em, nor that public-board refinement improves a global sparse table.
+
+## Independent-check failure traced to fused arithmetic
+
+For all 36 frozen initial policies, native versus own value/BR/exploitability
+checks agree within 1e-9 chips. The initial *training trajectory* comparison fails
+on the medium game: policies first differ at iteration 3 after roughly 1e-16
+regrets at mathematical ties are normalized into pure actions. The initial failed
+comparison is retained alongside the failed learning gate.
+
+An independent own scalar control evaluates all eight combinations of fused
+value/regret/average arithmetic for three iterations. On this recorded ARM64
+wheel, fused value and average expressions with separately rounded regret
+increments reproduce the native trajectory. The compiler's fused multiply/add
+rounds once; this is not an engine payoff error or an invented regret-zero cutoff.
+No tolerance or original result is changed. A sequential NumPy summation alone
+did not resolve it and was discarded.
+
+The follow-up full-tree control uses an OPTIONAL Python/Numba kernel with explicit
+LLVM fma and fast-math disabled. It implements the same own CFR+ equations, imports
+no poker reference solver and requires no C++/Rust core. Original NumPy controls
+remain reproducible under their original config; follow-up configs record the
+arithmetic backend explicitly. Native trajectory matching depends on the pinned
+build/hardware's contraction behavior; fixed-policy value/BR checking is a
+separate criterion. The scalar control and all eight arithmetic modes test the
+kernel independently, including a known single-rounding fma example.
+
+Numba is introduced after traversal/scalar profiling, as allowed by the stack.
+Versions are pinned in the optional `jit` extra and lockfile (Numba 0.68.1,
+llvmlite 0.50.0); existing numerical dependency versions remain unchanged.
+References: [Numba extension API](https://numba.readthedocs.io/en/stable/extending/high-level.html),
+[llvmlite IR builder](https://llvmlite.readthedocs.io/en/latest/user-guide/ir/ir-builder.html),
+and [single-rounding fma definition](https://docs.python.org/3/library/math.html#math.fma).
+Performance comparisons use identical own scalar/JIT arithmetic and seeds, and
+report compilation/cache-load time separately from steady-state training.

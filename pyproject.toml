@@ -11,6 +11,7 @@ requires-python = ">=3.11"
 dependencies = ["numpy>=2.0,<3"]
 
 [project.optional-dependencies]
+jit = ["numba==0.68.1"]
 validation = ["treys==0.1.8"]
 engine-validation = ["pokerkit==0.7.7"]
 solver-validation = [
