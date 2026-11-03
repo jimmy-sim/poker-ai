@@ -7,6 +7,7 @@ full-tree CFR+ control. It is neither a best response nor full-game strength.
 import gzip
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -65,6 +66,37 @@ def checked_artifacts(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]
     return report, policies["policies"]
 
 
+def checked_comparisons(report: dict[str, Any], independent: dict[str, Any]) -> int:
+    """Reject truncated, duplicated or inconsistent recorded native checks."""
+    fields = ("spot", "encoding", "method", "seed", "iteration")
+    own = {tuple(r[f] for f in fields): r for r in report["rows"]}
+    comparisons = {tuple(r[f] for f in fields): r for r in independent["comparisons"]}
+    tolerance = report["config"]["independent_tolerance"]
+    if (
+        independent["status"] != "passed"
+        or own.keys() != comparisons.keys()
+        or len(comparisons) != len(independent["comparisons"])
+        or not 0 < tolerance <= 1e-8
+    ):
+        raise ArithmeticError("incomplete/invalid recorded independent checks")
+    for key, row in comparisons.items():
+        errors = [row["own_native_value_error"], row["own_native_exploitability_error"]]
+        if row["encoding"] == "exact" and row["method"] == "full_cfr_plus":
+            errors.append(row["matched_exploitability_error_chips"])
+            l1 = row["matched_policy_mean_row_l1"]
+            if not math.isfinite(l1) or not 0 <= l1 <= 2:
+                raise ArithmeticError("invalid recorded policy distance")
+        epsilon = row["native_exploitability_chips"]
+        if (
+            any(not math.isfinite(v) or not 0 <= v <= tolerance for v in errors)
+            or not math.isfinite(epsilon)
+            or epsilon < -tolerance
+            or abs(own[key]["exploitability_chips"] - epsilon) > tolerance
+        ):
+            raise ArithmeticError("recorded native checks do not satisfy tolerance")
+    return len(comparisons)
+
+
 def summarize(root: Path, manifest: dict[str, Any]) -> dict[str, Any]:
     """Re-evaluate every frozen policy, verify linked comparisons, retain gate fails."""
     inputs, summaries, crossplay, collisions = [], [], [], []
@@ -80,7 +112,7 @@ def summarize(root: Path, manifest: dict[str, Any]) -> dict[str, Any]:
             raise ArithmeticError(
                 "missing successful independent check for this exact report"
             )
-        independent_count += len(independent["comparisons"])
+        independent_count += checked_comparisons(report, independent)
         inputs.append(
             {
                 "experiment": entry["name"],

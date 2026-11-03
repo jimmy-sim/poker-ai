@@ -11,7 +11,12 @@ import pytest
 from poker_ai.postflop.game import load_spot
 from poker_ai.postflop.learning import POLICY_FORMAT
 from poker_ai.postflop.matrix import MatrixTree
-from poker_ai.postflop.report import checked_artifacts, crossplay_ev, weighted_gap
+from poker_ai.postflop.report import (
+    checked_artifacts,
+    checked_comparisons,
+    crossplay_ev,
+    weighted_gap,
+)
 from poker_ai.postflop.tree import SpotTree
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,3 +79,39 @@ def test_frozen_evidence_rejects_changes(tmp_path: Path, corruption: str) -> Non
     )
     with pytest.raises((ArithmeticError, ValueError)):
         checked_artifacts(path)
+
+
+@pytest.mark.parametrize("corruption", [None, "missing", "duplicate", "nan", "epsilon"])
+def test_native_comparison_records_require_complete_finite_checks(
+    corruption: str | None,
+) -> None:
+    row = {
+        "spot": "test",
+        "encoding": "exact",
+        "method": "external",
+        "seed": 1,
+        "iteration": 1,
+        "exploitability_chips": 0.5,
+    }
+    comparison = {
+        **row,
+        "own_native_value_error": 0.0,
+        "own_native_exploitability_error": 0.0,
+        "native_exploitability_chips": 0.5,
+    }
+    checks = [comparison]
+    if corruption == "missing":
+        checks = []
+    elif corruption == "duplicate":
+        checks = [comparison, comparison]
+    elif corruption == "nan":
+        comparison["own_native_value_error"] = float("nan")
+    elif corruption == "epsilon":
+        comparison["native_exploitability_chips"] = 1.0
+    report = {"rows": [row], "config": {"independent_tolerance": 1e-9}}
+    independent = {"status": "passed", "comparisons": checks}
+    if corruption is None:
+        assert checked_comparisons(report, independent) == 1
+    else:
+        with pytest.raises(ArithmeticError):
+            checked_comparisons(report, independent)
