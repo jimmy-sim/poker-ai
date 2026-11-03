@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "name": "wet_high_ip",
+  "board": [
+    "Jh",
+    "Th",
+    "8s",
+    "8h"
+  ],
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Ah",
+          "Kh"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Qc",
+          "9c"
+        ],
+        "weight": 1.0
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Jc",
+          "Jd"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Qh",
+          "Kd"
+        ],
+        "weight": 1.0
+      }
+    ]
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "button": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "prefix_actions": [
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "pot": 4,
+  "stacks": [
+    198,
+    198
+  ],
+  "actor": 1,
+  "hero": 1,
+  "texture": "wet",
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "max_tree_nodes": 200000,
+  "range_conditioning": "product_weights_conditioned_on_card_removal"
+}

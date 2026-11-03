@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "name": "wet_medium_oop",
+  "board": [
+    "Qs",
+    "Js",
+    "8d",
+    "3s"
+  ],
+  "ranges": [
+    [
+      {
+        "cards": [
+          "As",
+          "Ks"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Th",
+          "Td"
+        ],
+        "weight": 1.0
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Qh",
+          "Qd"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Kc",
+          "Tc"
+        ],
+        "weight": 1.0
+      }
+    ]
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "button": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "prefix_actions": [
+    {
+      "kind": "raise_to",
+      "amount": 6
+    },
+    {
+      "kind": "raise_to",
+      "amount": 18
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "pot": 36,
+  "stacks": [
+    182,
+    182
+  ],
+  "actor": 0,
+  "hero": 0,
+  "texture": "wet",
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "max_tree_nodes": 200000,
+  "range_conditioning": "product_weights_conditioned_on_card_removal"
+}

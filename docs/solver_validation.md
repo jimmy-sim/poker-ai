@@ -165,3 +165,55 @@ zero exploitability. The table below reports actual remaining exploitability.
 Ten independently seeded policy BR comparisons also passed. The underlying games
 were exhaustively checked for actions/chance/payoffs and information-set bijection.
 Tier B implementation may now begin. Historical Phase 2 data remain untouched.
+
+## Tier B design declared before main comparisons
+
+The first set is **five turn subgames**, each with two explicitly weighted physical
+combos per player, a known four-card board and all 44 possible legal rivers per
+private pair. This is intentionally narrow: not a full 169-hand grid, flop-wide
+solution, or unabstracted Hold'em benchmark. Dry/wet labels describe the configured
+flops; both acting positions and large/small SPR are included.
+
+| Spot | Pot | Remaining stacks | Actor/hero | Root SPR | Texture |
+| --- | ---: | --- | --- | ---: | --- |
+| dry_high_oop | 4 | 198/198 | OOP | 49.5 | dry |
+| wet_high_ip | 4 | 198/198 | IP, checked to | 49.5 | wet |
+| dry_low_oop | 324 | 38/38 | OOP | 38/324 | dry |
+| wet_medium_oop | 36 | 182/182 | OOP | 182/36 | wet |
+| dry_medium_ip | 108 | 146/146 | IP, checked to | 146/108 | dry |
+
+Versioned configs in `configs/spots/` specify boards, both weighted ranges, exact
+public betting prefixes, stacks/blinds/positions and action grids. The own engine
+replays each prefix to verify the declared root. Range product weights are
+conditioned on known-board/mutual card removal; prefix actions do not infer ranges.
+The provided ranges are fixed conditional inputs, not endogenous global-agent
+ranges. This distribution difference limits global-strength conclusions.
+
+Use a **matched full-pot/all-in grid**, without an explicit minimum-raise option
+unless a size clamps to it. There is no artificial raise cap; small grid/pot growth
+bounds the tree. The own agent ablation is global uniform-deal self-play with the
+same grid, potential buckets 2/4/8, three fixed seeds and 100/300/1,000 checkpoints.
+It receives no spot configs, reference policies, values, or gaps as training data.
+This avoids projecting the earlier half/pot agent in the primary comparison.
+`configs/solver-agent-ablation.json` fixes those inputs before comparison; primary
+is eight buckets at 1,000 iterations, not the best observed result. Iteration/bucket
+curves retain all seeds/results rather than selecting winners.
+
+`configs/solver-validation-postflop.json` declares independent native OpenSpiel
+CFR+ reference schedules/targets, primary selection, reach convention, numerical
+tolerances and plotting choice. Export the own exact spot tree to standard EFG
+and load it through OpenSpiel's independent native parser/solver/BR. Validate every
+chance probability, action, payoff and information-set bijection after parsing.
+The **mechanics/export are shared project code**, so this is an independent solver
+and BR check, not an independent postflop-engine implementation. Phase 1 checks and
+additional card-world controls address mechanics separately.
+
+Action gap is each information set's actionwise absolute difference divided by
+its own legal-action count, then weighted by the final reference joint reach
+(including chance). Padding is excluded. Report overall/per street and preserve
+node-level range frequencies. EV gaps use the same fixed opponent for each pair;
+values are exact enumerated expectations within this restricted game, up to
+floating error, not sampled win rates. Game payoff is net chips relative to the
+original hand start; fixed pre-root contributions cancel in strategy EV gaps.
+Reference exploitability is explicitly measured at the achieved iteration count;
+nonconverged targets must remain visible, not be called exact GTO.

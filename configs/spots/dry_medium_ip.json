@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "name": "dry_medium_ip",
+  "board": [
+    "Ad",
+    "9c",
+    "4s",
+    "6h"
+  ],
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Ah",
+          "Ac"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Kh",
+          "Qh"
+        ],
+        "weight": 1.0
+      }
+    ],
+    [
+      {
+        "cards": [
+          "As",
+          "Kd"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "9d",
+          "9h"
+        ],
+        "weight": 1.0
+      }
+    ]
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "button": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "prefix_actions": [
+    {
+      "kind": "raise_to",
+      "amount": 6
+    },
+    {
+      "kind": "raise_to",
+      "amount": 18
+    },
+    {
+      "kind": "raise_to",
+      "amount": 54
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "pot": 108,
+  "stacks": [
+    146,
+    146
+  ],
+  "actor": 1,
+  "hero": 1,
+  "texture": "dry",
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "max_tree_nodes": 200000,
+  "range_conditioning": "product_weights_conditioned_on_card_removal"
+}

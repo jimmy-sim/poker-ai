@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "name": "dry_high_oop",
+  "board": [
+    "As",
+    "7d",
+    "2c",
+    "9h"
+  ],
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Ah",
+          "Ad"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Kd",
+          "Qd"
+        ],
+        "weight": 1.0
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Ac",
+          "Kh"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Js",
+          "Ts"
+        ],
+        "weight": 1.0
+      }
+    ]
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "button": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "prefix_actions": [
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "pot": 4,
+  "stacks": [
+    198,
+    198
+  ],
+  "actor": 0,
+  "hero": 0,
+  "texture": "dry",
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "max_tree_nodes": 200000,
+  "range_conditioning": "product_weights_conditioned_on_card_removal"
+}

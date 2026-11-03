@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "spot_files": [
+    "configs/spots/dry_high_oop.json",
+    "configs/spots/wet_high_ip.json",
+    "configs/spots/dry_low_oop.json",
+    "configs/spots/wet_medium_oop.json",
+    "configs/spots/dry_medium_ip.json"
+  ],
+  "reference": {
+    "package": "open_spiel",
+    "version": "2.0.2",
+    "algorithm": "native CFRPlusSolver",
+    "iteration_schedule": [
+      64,
+      256,
+      1024,
+      4096,
+      16384
+    ],
+    "target_exploitability_pot_fraction": 0.001
+  },
+  "agent_training_config": "configs/solver-agent-ablation.json",
+  "primary_buckets": 8,
+  "primary_iteration": 1000,
+  "agent_seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "mapping_episode_seed": 20261125,
+  "reach_weights": "joint reach under the final reference average strategy, including chance; normalize across compared decision infosets",
+  "action_gap": "per-info legal-action MAE, then reference-reach weighted mean; report probability points and percentage points",
+  "ev_units": "net original-hand chips, same root prefix; gaps against the same fixed opponent; no Monte Carlo confidence interval",
+  "numerical_tolerance": 1e-09,
+  "primary_projection_mass_limit": 1e-12,
+  "heatmap_spot": "wet_high_ip",
+  "max_total_tree_nodes": 1000000,
+  "limitations": "five turn subgames; two physical combos per range; full-pot/all-in grid; shared own mechanics with independent reference solver/BR"
+}
