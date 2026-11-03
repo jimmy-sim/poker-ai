@@ -74,14 +74,15 @@ def markdown_table(rows: list[dict[str, Any]]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def plot(report: dict[str, Any], output: Path) -> list[Path]:
+def plot_strategy(
+    heatmap: dict[str, Any], output: Path, basename: str = "strategy-heatmap"
+) -> list[Path]:
     os.environ.setdefault("MPLCONFIGDIR", str(output / "runs/mpl-cache"))
     mpl = importlib.import_module("matplotlib")
     mpl.use("Agg")
     mpl.rcParams["svg.hashsalt"] = "poker-ai-solver-validation"
     plt = importlib.import_module("matplotlib.pyplot")
     paths = []
-    heatmap = report["heatmap"]
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.8), layout="constrained")
     image = None
     for axis, name in zip(axes, ("reference", "own"), strict=True):
@@ -106,11 +107,17 @@ def plot(report: dict[str, Any], output: Path) -> list[Path]:
     fig.colorbar(image, ax=axes, label="Action probability", shrink=0.8)
     fig.suptitle(f"{heatmap['spot']}: root hero decision, two configured hand classes")
     for suffix in ("png", "svg"):
-        path = output / f"strategy-heatmap.{suffix}"
+        path = output / f"{basename}.{suffix}"
         fig.savefig(path, dpi=160, metadata={"Date": None} if suffix == "svg" else None)
         paths.append(path)
     plt.close(fig)
 
+    return paths
+
+
+def plot(report: dict[str, Any], output: Path) -> list[Path]:
+    paths = plot_strategy(report["heatmap"], output)
+    plt = importlib.import_module("matplotlib.pyplot")
     config = report["config"]
     all_runs = [
         dict(r, pot=s["pot"], spot=s["name"])

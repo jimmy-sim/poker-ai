@@ -183,6 +183,7 @@ def main() -> int:
         ("DIAGNOSIS", "diagnosis.md"),
         ("CLAIMS", "verified-claims.md"),
         ("ABSTRACTION", "abstraction-aliases.md"),
+        ("HAND_EV", "hand-class-ev.md"),
     ):
         update_block(
             root / "docs/solver_validation.md",

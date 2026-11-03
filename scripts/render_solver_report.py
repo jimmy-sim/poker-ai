@@ -9,9 +9,12 @@ import statistics
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 from poker_ai.abstraction.model import CardAbstraction
 from poker_ai.solver_validation.abstraction_check import check_model
 from poker_ai.solver_validation.reference import SpotTree
+from poker_ai.solver_validation.reporting import plot_strategy
 from poker_ai.solver_validation.spots import load_spot
 from poker_ai.validation.five_card import source_provenance
 
@@ -215,6 +218,89 @@ def main() -> int:
         writer = csv.DictWriter(stream, fieldnames=list(collision_rows[0]))
         writer.writeheader()
         writer.writerows(collision_rows)
+    extra_plots = []
+    hand_rows = []
+    for spot in report["spots"]:
+        primary = [
+            r
+            for r in spot["comparisons"]
+            if r["buckets"] == report["config"]["primary_buckets"]
+            and r["iteration"] == report["config"]["primary_iteration"]
+        ]
+        roots = []
+        for run in primary:
+            details_path = output / run["details_file"]
+            if (
+                hashlib.sha256(details_path.read_bytes()).hexdigest()
+                != report["artifacts_sha256"][details_path.name]
+            ):
+                raise ValueError("node artifact changed since the recorded run")
+            details = json.loads(gzip.decompress(details_path.read_bytes()))
+            roots.append(
+                [
+                    r
+                    for r in details["decision_rows"]
+                    if r["owner"] == spot["config"]["hero"]
+                    and len(r["public_state"]["history"])
+                    == len(spot["config"]["prefix_actions"])
+                ]
+            )
+        first = roots[0]
+        if not first or any(
+            [r["hand_class"] for r in x] != [r["hand_class"] for r in first]
+            for x in roots
+        ):
+            raise ValueError("root heatmap alignment failed")
+        matrix = {
+            "spot": spot["name"],
+            "classes": [r["hand_class"] for r in first],
+            "actions": [
+                kind if amount is None else f"raise-to {amount}"
+                for kind, amount in first[0]["actions"]
+            ],
+            "reference": [r["reference_probabilities"] for r in first],
+            "own": np.mean(
+                [[r["own_probabilities"] for r in group] for group in roots], axis=0
+            ).tolist(),
+        }
+        extra_plots.extend(plot_strategy(matrix, output, spot["name"] + "-strategy"))
+        for label in sorted(primary[0]["hero_hand_class_ev_gaps"]):
+            row = {
+                "spot": spot["name"],
+                "hero": spot["config"]["hero"],
+                "hand_class": label,
+            }
+            for opponent in ("reference", "own"):
+                values = [
+                    r["hero_hand_class_ev_gaps"][label][
+                        "versus_" + opponent + "_opponent"
+                    ]
+                    for r in primary
+                ]
+                row["ev_gap_vs_" + opponent + "_opponent_chips"] = statistics.mean(
+                    values
+                )
+                row["ev_gap_vs_" + opponent + "_opponent_min"] = min(values)
+                row["ev_gap_vs_" + opponent + "_opponent_max"] = max(values)
+            hand_rows.append(row)
+    hand_csv = output / "hand-class-ev.csv"
+    with hand_csv.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(hand_rows[0]))
+        writer.writeheader()
+        writer.writerows(hand_rows)
+    hand_lines = [
+        "| Turn subgame | Hero hand class | EV gap vs ref. opponent (chips) | "
+        "EV gap vs own opponent (chips) |",
+        "| --- | --- | ---: | ---: |",
+    ]
+    for hand_row in hand_rows:
+        hand_lines.append(
+            f"| {hand_row['spot']} | {hand_row['hand_class']} | "
+            f"{hand_row['ev_gap_vs_reference_opponent_chips']:+.4f} | "
+            f"{hand_row['ev_gap_vs_own_opponent_chips']:+.4f} |"
+        )
+    hand_markdown = output / "hand-class-ev.md"
+    hand_markdown.write_text("\n".join(hand_lines) + "\n")
     alias_lines = [
         "| Spot | Merged ref. reach: 2 / 4 / 8 buckets | Exact infos → 8-bucket keys |",
         "| --- | ---: | ---: |",

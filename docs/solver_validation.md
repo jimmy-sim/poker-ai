@@ -7,9 +7,9 @@ tables/plots, license records, verified claim drafts and interview answers.
 Prerequisites were met before execution: [Phase 2](phase2-solvers.md) results and
 [trained Phase 3 agents](phase3-verification.md). Tier A passed before Tier B began.
 
-The full pipeline passed locally from clean `0f6aa40` in 590.77 seconds on the
-recorded Apple M4/Python 3.11.17 environment. Reference solving plus comparisons
-used 296.83 seconds. Raw reports preserve exact revisions, dirty flags, source and
+The initial full pipeline passed from clean `0f6aa40` in 590.77 seconds. A
+second integrated run from clean `8c02d46` passed in 595.60 seconds on the recorded
+Apple M4/Python 3.11.17 environment; reference solving/comparisons used 296.32 seconds. Raw reports preserve exact revisions, dirty flags, source and
 input hashes, dependency lock hash, versions, runtime and hardware. Timings are
 observations on this machine, not general performance promises. A later rerun's
 manifest supersedes these timings without changing the protocol.
@@ -51,6 +51,13 @@ optional reference libraries.
 - `*-reference.json.gz` contains tagged comparison-only final reference policies,
   keys, action menus, convergence and spot/EFG hashes. Reference and node artifacts
   are listed with SHA256 in the reports/manifests. They are never agent inputs.
+
+A separate [numeric replay audit](../results/solver-validation/reproducibility.json)
+compares these two runs: all 135 profiles, 58,812 detailed decision rows and all
+Tier A rows reproduce exactly; all five reference-policy files are byte-identical.
+It excludes timing, provenance-bearing checkpoint hashes and figure styling.
+Re-run it with `uv run --locked python scripts/check_solver_reproduction.py
+--reference-commit caf50a7 --output results/solver-validation/reproducibility.json`.
 
 The renderer generates the diagnostic/Tier A tables and claim drafts below from
 raw reports. The one command also replaces the marked README/writeup result
@@ -170,6 +177,15 @@ independent full postflop-engine implementation. Separate controls checked all
 independent PokerKit engine evidence with its documented exceptions. Own/native
 cross-play expectation error was at most 1.066e-13 chips across this run's profiles.
 
+Root strategy heatmaps are also available for
+[dry/high/OOP](../results/solver-validation/dry_high_oop-strategy.png),
+[wet/high/IP](../results/solver-validation/wet_high_ip-strategy.png),
+[dry/low/OOP](../results/solver-validation/dry_low_oop-strategy.png),
+[wet/medium/OOP](../results/solver-validation/wet_medium_oop-strategy.png), and
+[dry/medium/IP](../results/solver-validation/dry_medium_ip-strategy.png).
+All show both policies on the configured hero's two root hand classes, with own
+probabilities averaged across the three predeclared primary seeds.
+
 ## Metrics and EV conventions
 
 For each exact information set, action MAE is sum of absolute probability
@@ -197,6 +213,26 @@ covers every configured private pair/river, so these are exact restricted-game
 expectations up to rounding, not sampled win rates. Native best response measures
 own profile exploitability in this exact range/action game; both players' policies
 are included, not only the hero.
+
+The readable root-class table below averages the three primary seeds; signed
+gaps use chips, not root-pot units. [CSV](../results/solver-validation/hand-class-ev.csv)
+also retains seed minima/maxima. Node-level records contain the corresponding
+conditional continuation EVs at every decision, including later streets.
+
+<!-- SOLVER_VALIDATION_HAND_EV_BEGIN -->
+| Turn subgame | Hero hand class | EV gap vs ref. opponent (chips) | EV gap vs own opponent (chips) |
+| --- | --- | ---: | ---: |
+| dry_high_oop | AA | -1.1559 | -25.1154 |
+| dry_high_oop | KQs | -3.5430 | -6.4934 |
+| wet_high_ip | JJ | -0.0345 | -35.5587 |
+| wet_high_ip | KQo | -1.7758 | -23.4299 |
+| dry_low_oop | AQs | -5.8579 | -56.5299 |
+| dry_low_oop | KK | -54.3921 | -52.5154 |
+| wet_medium_oop | AKs | -15.6145 | -39.4593 |
+| wet_medium_oop | TT | -7.4871 | +13.6844 |
+| dry_medium_ip | 99 | -20.3893 | +15.2468 |
+| dry_medium_ip | AKo | -21.2903 | +17.6988 |
+<!-- SOLVER_VALIDATION_HAND_EV_END -->
 
 ## Diagnose before attributing to compute
 
