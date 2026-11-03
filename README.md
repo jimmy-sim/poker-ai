@@ -70,14 +70,18 @@ Six/seven-card best-five selection matched Treys on
 Reproduce with `make validate-best`; see
 [the protocol and limits](docs/phase1-best-five.md) and
 [raw report](results/best-five-validation.json). These are sampled checks,
-not exhaustive six/seven-card coverage. Profiling, equity, and engine validation
-remain subsequent steps.
+not exhaustive six/seven-card coverage. The game engine remains the next Phase 1 component.
 
 The current direct rank-mask evaluator preserves the subset implementation as
 `evaluate_best_reference`. It passed a separate two-million-hand revalidation;
 see [performance methodology and paired measurements](docs/evaluator-performance.md)
 and [direct validation evidence](results/best-five-direct-validation.json).
 `make validate-best` now targets that direct evaluator report.
+
+Exact and Monte Carlo [heads-up equity](docs/phase1-equity.md) passed five
+predeclared reference cases. Exact outcome counts matched Treys; each configured
+Monte Carlo interval covered its exact counterpart. Reproduce with
+`make validate-equity`; see [raw counts and intervals](results/equity-validation.json).
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.

@@ -80,6 +80,22 @@ and 3.12. The equity tests were added first and initially failed because the mod
 did not exist. Independent results will be added after a run from committed
 source. No strategic-strength claim is implied by an equity estimate.
 
+## Observed independent results
+
+All declared cases passed from clean source revision `22867401ee245a97a4d7e61601e42b4a280e07f5`.
+Exact counts equal Treys, and all five predeclared 99% Monte Carlo intervals contain
+the corresponding exact equity. These are conditional showdown checks, not agent
+win rates. The [raw report](../results/equity-validation.json) retains counts,
+seeds, intervals, errors, source hashes, environment, and timing.
+
+| Case | Exact states | Exact equity | MC equity | Absolute MC error |
+| --- | ---: | ---: | ---: | ---: |
+| board_royal_tie | 1 | 0.500000 | 0.500000 | 0.000000 |
+| turn_one_losing_out | 44 | 0.977273 | 0.977620 | 0.000347 |
+| flopped_royal | 990 | 1.000000 | 1.000000 | 0.000000 |
+| flop_pair_vs_overcards | 990 | 0.604040 | 0.605840 | 0.001800 |
+| turn_uniform_opponent | 45,540 | 0.864405 | 0.865300 | 0.000895 |
+
 ## Interview questions
 
 1. **How do ties enter equity?** A heads-up tie contributes half a pot share;

@@ -1,0 +1,406 @@
+{
+  "cases": [
+    {
+      "absolute_mc_error": 0.0,
+      "exact": {
+        "confidence_interval": null,
+        "confidence_level": null,
+        "equity": 0.5,
+        "losses": 0,
+        "method": "exact",
+        "outcome_variance": 0.0,
+        "standard_error": null,
+        "ties": 1,
+        "trials": 1,
+        "wins": 0
+      },
+      "exact_matches_reference": true,
+      "mc_interval_contains_exact": true,
+      "monte_carlo": {
+        "confidence_interval": [
+          0.4927210458398558,
+          0.5072789541601442
+        ],
+        "confidence_level": 0.99,
+        "equity": 0.5,
+        "losses": 0,
+        "method": "monte_carlo",
+        "outcome_variance": 0.0,
+        "standard_error": 0.0,
+        "ties": 50000,
+        "trials": 50000,
+        "wins": 0
+      },
+      "name": "board_royal_tie",
+      "reference_counts": [
+        0,
+        1,
+        0
+      ],
+      "seed": 20261106,
+      "settings": {
+        "board": [
+          "Tc",
+          "Jc",
+          "Qc",
+          "Kc",
+          "Ac"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "2d",
+          "3h"
+        ],
+        "name": "board_royal_tie",
+        "villain": [
+          "4d",
+          "5h"
+        ]
+      }
+    },
+    {
+      "absolute_mc_error": 0.0003472727272727516,
+      "exact": {
+        "confidence_interval": null,
+        "confidence_level": null,
+        "equity": 0.9772727272727273,
+        "losses": 1,
+        "method": "exact",
+        "outcome_variance": 0.022210743801652888,
+        "standard_error": null,
+        "ties": 0,
+        "trials": 44,
+        "wins": 43
+      },
+      "exact_matches_reference": true,
+      "mc_interval_contains_exact": true,
+      "monte_carlo": {
+        "confidence_interval": [
+          0.9703410458398558,
+          0.9848989541601443
+        ],
+        "confidence_level": 0.99,
+        "equity": 0.97762,
+        "losses": 1119,
+        "method": "monte_carlo",
+        "outcome_variance": 0.021879135599999988,
+        "standard_error": 0.0006615069643089756,
+        "ties": 0,
+        "trials": 50000,
+        "wins": 48881
+      },
+      "name": "turn_one_losing_out",
+      "reference_counts": [
+        43,
+        0,
+        1
+      ],
+      "seed": 20261107,
+      "settings": {
+        "board": [
+          "Ac",
+          "Kc",
+          "2c",
+          "3d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "Ah",
+          "Ad"
+        ],
+        "name": "turn_one_losing_out",
+        "villain": [
+          "Kh",
+          "Kd"
+        ]
+      }
+    },
+    {
+      "absolute_mc_error": 0.0,
+      "exact": {
+        "confidence_interval": null,
+        "confidence_level": null,
+        "equity": 1.0,
+        "losses": 0,
+        "method": "exact",
+        "outcome_variance": 0.0,
+        "standard_error": null,
+        "ties": 0,
+        "trials": 990,
+        "wins": 990
+      },
+      "exact_matches_reference": true,
+      "mc_interval_contains_exact": true,
+      "monte_carlo": {
+        "confidence_interval": [
+          0.9927210458398558,
+          1.0
+        ],
+        "confidence_level": 0.99,
+        "equity": 1.0,
+        "losses": 0,
+        "method": "monte_carlo",
+        "outcome_variance": 0.0,
+        "standard_error": 0.0,
+        "ties": 0,
+        "trials": 50000,
+        "wins": 50000
+      },
+      "name": "flopped_royal",
+      "reference_counts": [
+        990,
+        0,
+        0
+      ],
+      "seed": 20261108,
+      "settings": {
+        "board": [
+          "Qs",
+          "Js",
+          "Ts"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "As",
+          "Ks"
+        ],
+        "name": "flopped_royal",
+        "villain": [
+          "Qh",
+          "Qd"
+        ]
+      }
+    },
+    {
+      "absolute_mc_error": 0.001799595959596001,
+      "exact": {
+        "confidence_interval": null,
+        "confidence_level": null,
+        "equity": 0.604040404040404,
+        "losses": 392,
+        "method": "exact",
+        "outcome_variance": 0.2391755943271095,
+        "standard_error": null,
+        "ties": 0,
+        "trials": 990,
+        "wins": 598
+      },
+      "exact_matches_reference": true,
+      "mc_interval_contains_exact": true,
+      "monte_carlo": {
+        "confidence_interval": [
+          0.5985610458398558,
+          0.6131189541601443
+        ],
+        "confidence_level": 0.99,
+        "equity": 0.60584,
+        "losses": 19708,
+        "method": "monte_carlo",
+        "outcome_variance": 0.2387978944,
+        "standard_error": 0.00218541836019289,
+        "ties": 0,
+        "trials": 50000,
+        "wins": 30292
+      },
+      "name": "flop_pair_vs_overcards",
+      "reference_counts": [
+        598,
+        0,
+        392
+      ],
+      "seed": 20261109,
+      "settings": {
+        "board": [
+          "Tc",
+          "Jc",
+          "2d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "9s",
+          "9h"
+        ],
+        "name": "flop_pair_vs_overcards",
+        "villain": [
+          "As",
+          "Kh"
+        ]
+      }
+    },
+    {
+      "absolute_mc_error": 0.0008950812472551251,
+      "exact": {
+        "confidence_interval": null,
+        "confidence_level": null,
+        "equity": 0.8644049187527448,
+        "losses": 6175,
+        "method": "exact",
+        "outcome_variance": 0.11720905518880542,
+        "standard_error": null,
+        "ties": 0,
+        "trials": 45540,
+        "wins": 39365
+      },
+      "exact_matches_reference": true,
+      "mc_interval_contains_exact": true,
+      "monte_carlo": {
+        "confidence_interval": [
+          0.8580210458398557,
+          0.8725789541601442
+        ],
+        "confidence_level": 0.99,
+        "equity": 0.8653,
+        "losses": 6735,
+        "method": "monte_carlo",
+        "outcome_variance": 0.11655590999999998,
+        "standard_error": 0.0015268152551296,
+        "ties": 0,
+        "trials": 50000,
+        "wins": 43265
+      },
+      "name": "turn_uniform_opponent",
+      "reference_counts": [
+        39365,
+        0,
+        6175
+      ],
+      "seed": 20261110,
+      "settings": {
+        "board": [
+          "Ac",
+          "Kc",
+          "2c",
+          "3d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "Ah",
+          "Ad"
+        ],
+        "name": "turn_uniform_opponent",
+        "villain": null
+      }
+    }
+  ],
+  "config": {
+    "cases": [
+      {
+        "board": [
+          "Tc",
+          "Jc",
+          "Qc",
+          "Kc",
+          "Ac"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "2d",
+          "3h"
+        ],
+        "name": "board_royal_tie",
+        "villain": [
+          "4d",
+          "5h"
+        ]
+      },
+      {
+        "board": [
+          "Ac",
+          "Kc",
+          "2c",
+          "3d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "Ah",
+          "Ad"
+        ],
+        "name": "turn_one_losing_out",
+        "villain": [
+          "Kh",
+          "Kd"
+        ]
+      },
+      {
+        "board": [
+          "Qs",
+          "Js",
+          "Ts"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "As",
+          "Ks"
+        ],
+        "name": "flopped_royal",
+        "villain": [
+          "Qh",
+          "Qd"
+        ]
+      },
+      {
+        "board": [
+          "Tc",
+          "Jc",
+          "2d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "9s",
+          "9h"
+        ],
+        "name": "flop_pair_vs_overcards",
+        "villain": [
+          "As",
+          "Kh"
+        ]
+      },
+      {
+        "board": [
+          "Ac",
+          "Kc",
+          "2c",
+          "3d"
+        ],
+        "dead_cards": [],
+        "hero": [
+          "Ah",
+          "Ad"
+        ],
+        "name": "turn_uniform_opponent",
+        "villain": null
+      }
+    ],
+    "confidence_level": 0.99,
+    "max_states": 100000,
+    "samples": 50000,
+    "seed": 20261106
+  },
+  "environment": {
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17",
+    "treys": "0.1.8"
+  },
+  "schema_version": 1,
+  "source": {
+    "dirty": false,
+    "git_commit": "22867401ee245a97a4d7e61601e42b4a280e07f5",
+    "git_status": [],
+    "sha256": {
+      "configs/equity-validation.json": "4a6f77a83e001a5e5b9724737af1244f403a289acad70e3cf032fd944404784a",
+      "pyproject.toml": "16cc36a6ffe9d20f2ff0992a6722a104b149d5338e654155bc4844cb533622ac",
+      "scripts/validate_equity.py": "7f3ef9d6561a6a85b6249d95c030e013ed70a44b5654b989bffcaa26f3d82b2b",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "uv.lock": "b8d23fd3c798ee23c5278c631eec1e47658a12e2e2bb742e37978681e7ce89a9"
+    }
+  },
+  "status": "passed",
+  "validation_seconds": 13.542114791000131
+}
