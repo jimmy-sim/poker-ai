@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best
 
 setup:
 	$(UV) sync --locked --dev
@@ -29,3 +29,9 @@ validate-five:
 	$(UV) run --locked --extra validation python scripts/validate_five.py \
 		--config configs/five-card-exhaustive.json \
 		--output results/five-card-exhaustive.json
+
+# Fixed-seed million-hand checks for both six and seven cards.
+validate-best:
+	$(UV) run --locked --extra validation python scripts/validate_best.py \
+		--config configs/best-five-validation.json \
+		--output results/best-five-validation.json

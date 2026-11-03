@@ -1,4 +1,4 @@
-"""Transparent five-card high-poker evaluation with explicit tie-breakers.
+"""High-poker evaluation with explicit tie-breakers and best-five selection.
 
 Larger HandRank values mean stronger hands. Category takes precedence; equal
 categories compare rank tuples lexicographically. Suits never break ties. A royal
@@ -9,6 +9,7 @@ from collections import Counter
 from collections.abc import Iterable
 from dataclasses import dataclass
 from enum import IntEnum
+from itertools import combinations
 
 from poker_ai.cards import cards_to_mask
 
@@ -29,7 +30,7 @@ class HandCategory(IntEnum):
 
 @dataclass(frozen=True, order=True, slots=True)
 class HandRank:
-    """An immutable comparison key produced by evaluate_five.
+    """An immutable comparison key produced by the evaluators.
 
     Tie-breaker tuples, in comparison priority order:
       high card/flush: all five ranks, descending;
@@ -94,3 +95,22 @@ def evaluate_five(cards: Iterable[int]) -> HandRank:
     if pattern == (2, 1, 1, 1):
         return HandRank(HandCategory.ONE_PAIR, group_ranks)
     return HandRank(HandCategory.HIGH_CARD, ranks)
+
+
+def evaluate_best(cards: Iterable[int]) -> HandRank:
+    """Return the strongest five-card rank from five to seven distinct cards.
+
+    Inspect every five-card subset: C(5, 5)=1, C(6, 5)=6, C(7, 5)=21.
+    Any subset may win, including all five board cards in Hold'em. No rule here
+    forces use of a particular number of hole cards.
+
+    Validate all input cards before selection, including cards that would be
+    discarded. Reuse the independently validated five-card reference evaluator;
+    repeated subset validation is a deliberate correctness-first cost to profile
+    before introducing an optimized core. Consume iterables once without mutation.
+    """
+    hand = tuple(cards)
+    if not 5 <= len(hand) <= 7:
+        raise ValueError(f"expected five to seven cards, got {len(hand)}")
+    cards_to_mask(hand)
+    return max(evaluate_five(subset) for subset in combinations(hand, 5))

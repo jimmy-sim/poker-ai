@@ -146,14 +146,16 @@ def iter_hands(config: ValidationConfig) -> Iterable[tuple[int, ...]]:
             yield tuple(int(card) for card in rng.choice(DECK_SIZE, 5, replace=False))
 
 
-def source_provenance(root: Path, config_path: Path) -> dict[str, object]:
+def source_provenance(
+    root: Path,
+    config_path: Path,
+    *,
+    entrypoints: tuple[str, ...] = ("scripts/validate_five.py",),
+) -> dict[str, object]:
     """Capture revision, dirty state, and exact validation/source/config hashes."""
     paths = sorted((root / "src").rglob("*.py"))
-    paths += [
-        root / "scripts/validate_five.py",
-        root / "pyproject.toml",
-        root / "uv.lock",
-    ]
+    paths += [root / entrypoint for entrypoint in entrypoints]
+    paths += [root / "pyproject.toml", root / "uv.lock"]
     paths.append(config_path.resolve())
     hashes = {
         str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()

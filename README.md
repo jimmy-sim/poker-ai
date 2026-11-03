@@ -4,11 +4,12 @@ A poker AI research project built from first principles, emphasizing expected
 value, variance, statistical testing, and game-theoretic reasoning. Implementations
 will be validated independently before any performance claims are published.
 
-Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, and a
-[five-card reference evaluator](docs/phase1-five-card.md). See the
+Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, a
+[five-card evaluator](docs/phase1-five-card.md), and
+[six/seven-card best-five selection](docs/phase1-best-five.md). See the
 [encoding contract and full phase acceptance gate](docs/phase1-cards.md).
-Six/seven-card evaluation, equity, and the game engine follow before solvers. The intended
-engine supports 2–6 seats and side pots; research agents initially play heads-up.
+Profiling, equity, and the game engine follow before solvers. The intended engine
+supports 2–6 seats and side pots; research agents initially play heads-up.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
 ## Development
@@ -55,8 +56,9 @@ with **zero disagreements** across all **7,462 distinct ranks**. The category
 census also matches independent combinatorial formulas. Reproduce with
 `make validate-five`; see [the protocol](docs/phase1-five-card.md) and
 [raw validation report](results/five-card-exhaustive.json). Full enumeration is
-deterministic and uses no RNG. Six/seven-card evaluation and engine validation
-remain subsequent steps.
+deterministic and uses no RNG. Six/seven-card sampling has its
+[own protocol](docs/phase1-best-five.md); equity and engine validation remain
+subsequent steps.
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.

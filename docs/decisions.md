@@ -61,3 +61,21 @@ Details and review questions: [card representation](phase1-cards.md).
 - Type-check thin reproduction scripts alongside production code and tests.
 
 Protocol and review questions: [five-card evaluator](phase1-five-card.md).
+
+## 2026-11-02 — Six/seven-card evaluation
+
+- Add evaluate_best for five through seven cards, taking the strongest rank over
+  every five-card subset. Validate the entire input, including discarded cards.
+  Preserve evaluate_five's classification logic and comparison-key semantics.
+- Allow any five available cards, including an entire Hold'em board. Returning a
+  rank avoids selecting an arbitrary physical subset when several subsets tie.
+- Keep the readable subset baseline, including repeated validation, until measured
+  profiling justifies optimization. Six and seven cards require six and 21 subsets.
+- Calibrate all five-card rank classes against optional Treys, then compare exact
+  sampled best-five keys. Keep the map exclusively in validation code.
+- Declare one million draws per size and independent PCG64 seeds in configs.
+  Pilot runtime first; keep the full check outside fast CI and record provenance.
+- Generalize the provenance helper's entrypoint list so each runner hashes its
+  actual CLI script. Preserve the five-card runner's default entrypoint.
+
+Details and review questions: [best-five evaluation](phase1-best-five.md).

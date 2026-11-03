@@ -8,3 +8,10 @@ criteria, and evaluation budgets. Five-card validation configs:
 - `five-card-exhaustive.json`: complete lexicographic enumeration; no RNG.
 
 See [the protocol](../docs/phase1-five-card.md).
+
+Best-five validation configs:
+
+- `best-five-smoke.json`: seeded six/seven-card pilots.
+- `best-five-validation.json`: full predeclared per-size budgets and RNG seeds.
+
+See [best-five selection and calibration](../docs/phase1-best-five.md).
