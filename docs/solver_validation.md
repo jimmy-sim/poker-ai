@@ -1,12 +1,29 @@
-# External solver validation — planned, execution gated
+# External solver validation — Phase 3.5 in progress
 
-This file records the requested future milestone. It is not a results report.
-Do not start solver selection, license review, implementation, or solver runs until
-Phase 2 exploitability results and a trained Phase 3 agent both exist. Execute this
-milestone after Phase 3 and before Phase 4; maintain the original phase order.
+Execution is now eligible: Phase 2 exact exploitability results are committed, and
+[Phase 3 acceptance](phase3-verification.md) records trained own limit/no-limit
+agents and tested inference. This milestone begins after those gates. Tier A must
+pass before Tier B implementation/experiments advance. No Phase 3.5 comparison
+result or resume claim exists at this initial execution checkpoint.
 
-No reference solver or version is selected yet. No license has been reviewed for
-this milestone, and there are no comparison results or resume claims.
+## Selected reference and license inventory
+
+| Solver | Pinned version | License | Role |
+| --- | --- | --- | --- |
+| OpenSpiel | 2.0.2 | Apache License 2.0 | Independent exact-game CFR variants; native reference capabilities investigated for small postflop games |
+
+The complete versioned license was read for this milestone and checked against
+the installed wheel license; both SHA256 values are
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+[Official pinned license](https://github.com/google-deepmind/open_spiel/blob/v2.0.2/LICENSE).
+The license permits use/modification/distribution subject to its license/notice
+and applicable modification-attribution obligations, includes a patent grant and
+warranty disclaimer. The installed wheel preserves its license. Source headers
+attribute the implementation to DeepMind Technologies Limited. The project uses
+its API for comparison; no reference implementation is copied into the own core.
+The native reference library does not replace the own Python poker/training core.
+TexasSolver/postflop-solver have not been selected or used; no commercial outputs
+are used. Record any later additional solver here after reading its pinned license.
 
 ## Purpose and data boundary
 
@@ -105,3 +122,21 @@ access, and abstraction before attributing them to compute.
 - State what agreement does and does not prove: abstraction mismatch, single-spot
   scope, reference convergence uncertainty, and strategy non-uniqueness limit the
   interpretation. Action agreement alone is not a proof of equilibrium quality.
+
+## Tier A execution protocol declared before this run
+
+`configs/solver-validation-tier-a.json` preserves the already-declared Phase 2
+conventions/tolerances unchanged: alternating target 0 then 1, no averaging delay,
+all four direct variant matches, Kuhn through 10,000 iterations and Leduc through
+1,000. Exploitability is NashConv/2 in ante chips/hand; final strategy L1 is the
+unweighted mean of actionwise L1 across information sets. Kuhn error is measured
+against -1/18. Five seeded independent BR-policy checks per game supplement the
+deterministic solver trajectories (training seed=null).
+
+Acceptance: exploitability agreement within 1e-8, mean L1 within 1e-6, mapped-policy
+BR agreement within 1e-10, and the config's final convergence/value limits. Any
+failed gate requires diagnosis before Tier B. `make validate-solver-tier-a` writes
+a fresh gated report/CSV/plots under `results/solver-validation/`; it does not
+overwrite historical Phase 2 evidence. The prior pilot predicts minutes of local
+compute. A complete `make validate-solvers` command will be added only when all
+required stages are implemented; it is not fulfilled by Tier A alone.

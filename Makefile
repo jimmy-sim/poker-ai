@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a
 
 setup:
 	$(UV) sync --locked --dev
@@ -76,3 +76,8 @@ verify-agent:
 	$(UV) run --locked python scripts/verify_own_agent.py \
 		--config configs/agent-interface-validation.json \
 		--output results/agent-interface-validation.json
+
+validate-solver-tier-a:
+	$(UV) run --locked --extra solver-validation --extra research python scripts/validate_cfr.py \
+		--config configs/solver-validation-tier-a.json \
+		--output results/solver-validation/tier-a.json

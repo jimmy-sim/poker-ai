@@ -1,0 +1,40 @@
+{
+  "games": {
+    "kuhn": [
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "leduc": [
+      1,
+      10,
+      100,
+      500,
+      1000
+    ]
+  },
+  "variants": [
+    "cfr",
+    "cfr_plus",
+    "linear",
+    "discounted"
+  ],
+  "seed": null,
+  "exploitability_absolute_tolerance": 1e-08,
+  "strategy_mean_l1_tolerance": 1e-06,
+  "best_response_absolute_tolerance": 1e-10,
+  "kuhn_final_value_error_limit": 0.001,
+  "kuhn_final_exploitability_limit": 0.002,
+  "leduc_final_exploitability_limit": 0.05,
+  "units": "ante chips per hand; exploitability=NashConv/2",
+  "averaging": "own realization reach; alternating 0 then 1; no delay",
+  "best_response_seeds": [
+    20261108,
+    20261109,
+    20261110,
+    20261111,
+    20261112
+  ]
+}
