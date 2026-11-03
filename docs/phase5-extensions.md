@@ -100,6 +100,8 @@ come from the previous type. This deliberately exposes adaptation lag.
 Exact best response chooses one action per information set after summing over
 hidden states. A worst-case security value is not a realized per-hand floor or
 NashConv/2. Reported EV gains hold against the specified scripted opponent only.
+Gains against the CFR blueprint include exploitation already available from the
+prior; they do not isolate the incremental EV benefit of learning.
 The exploitation fraction is chosen using the lower bound in the acceptance
 criteria, then checked again against an exact opponent best response. The bound
 can be conservative; unrestricted response is retained as a diagnostic tradeoff.

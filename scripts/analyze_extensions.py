@@ -23,6 +23,8 @@ def main() -> int:
             "scripts/analyze_bankroll.py",
             "scripts/audit_opponent_records.py",
             "scripts/render_extensions.py",
+            "scripts/analyze_empirical_bankroll.py",
+            "scripts/render_empirical_bankroll.py",
         ),
     )
     directory = root / "results/extensions"
@@ -37,8 +39,14 @@ def main() -> int:
             "--output",
             str(stage / "bankroll.json"),
         ],
+        [
+            "analyze_empirical_bankroll.py",
+            "--output",
+            str(stage / "empirical-bankroll.json"),
+        ],
         ["audit_opponent_records.py", "--report", str(stage / "opponents.json")],
         ["render_extensions.py", "--directory", str(stage)],
+        ["render_empirical_bankroll.py", "--directory", str(stage)],
     ]
     for script, *args in steps:
         subprocess.run(
@@ -54,7 +62,7 @@ def main() -> int:
                 "total_seconds": time.perf_counter() - started,
                 "stages": [s[0] for s in steps],
                 "scope": (
-                    "own toy learning and conditional risk only; "
+                    "own toy learning and own-baseline conditional risk; "
                     "no external outputs trained on"
                 ),
             },

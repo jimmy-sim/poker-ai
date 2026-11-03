@@ -416,9 +416,9 @@ def render(directory: Path, root: Path) -> None:
         "improvement means better held-out public-transcript prediction under a fixed "
         "blueprint logging policy. EV gains are exact **ante chips/hand versus the "
         "same "
-        "own scripted opponent**, relative to the own CFR+ blueprint.\n\n"
-        + table
-        + "\n"
+        "own scripted opponent**, relative to the own CFR+ blueprint. "
+        "Those gains include exploitation already available from the prior; "
+        "they do not isolate the benefit of learning.\n\n" + table + "\n"
         "The model improves predictions on included stationary types but can worsen "
         "them "
         "under misspecification or drift. A root-level exploitation mixture is "
