@@ -231,3 +231,28 @@ strength and potential buckets before interpreting their effect on strategies.
 An integration test verifies bit-identical abstracted limit resumption with an
 empty rebuilt cache; deterministic feature seeds make cache contents irrelevant
 to strategy updates. Current local gate: 367 tests plus lint/strict typing.
+
+## Bounded abstracted fixed-limit training protocol
+
+`make train-limit` compares own strength/potential eight-bucket models, both
+sampling methods and three seeds, saving at iterations 10/100/500. The cost pilot
+supports a minutes-scale local budget including tracing. No strength threshold
+is declared for these small Hold'em runs; completion means valid finite own
+training/checkpoints, not convergence in the full game. The exact-card pilot and
+these runs have different policies/traversal patterns, so allocation differences
+are not a controlled causal estimate of memory saved by abstraction.
+
+`train_holdem.py --resume-dir PATH` resumes the newest own checkpoint for each
+configured run. Keep the same config and model artifacts; it rejects mismatched
+model SHA256 or core implementation hashes. The CLI was smoke-tested for both
+models/methods: resumed accumulators, counters and PCG64 state matched uninterrupted
+runs exactly. Source metadata is preserved at each checkpoint.
+
+Reports separate timed training calls from session elapsed time/checkpoint
+serialization. Tracemalloc starts after model loading; interval peaks reset before
+training, excluding transient checkpoint serialization peaks. Retained allocations
+are still included. Process-lifetime peak RSS includes imports, model loading and
+checkpoint work. Spawned workers train independent seed tables, never share
+asynchronous regret updates. CPU model, logical cores, thread settings, feature
+cache statistics, checkpoint hashes and source/config provenance are recorded.
+Entropy/nonuniform-row counts describe table updates and are not strength metrics.

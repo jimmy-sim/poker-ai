@@ -1,0 +1,13 @@
+{
+  "game": "limit",
+  "seeds": [20261115, 20261116, 20261117],
+  "methods": ["external", "outcome"],
+  "models": ["results/card-models/strength-8.json", "results/card-models/potential-8.json"],
+  "checkpoints": [10, 100, 500],
+  "epsilon": 0.6,
+  "workers": 2,
+  "cache_size": 8192,
+  "rules": {"stacks": [200, 200], "button": 1, "bet_cap": 4},
+  "trace_memory": true,
+  "purpose": "bounded abstracted fixed-limit training; no strength gate or full-game exploitability claim"
+}

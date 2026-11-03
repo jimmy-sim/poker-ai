@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit
 
 setup:
 	$(UV) sync --locked --dev
@@ -61,3 +61,8 @@ build-card-abstraction:
 	$(UV) run --locked --extra research python scripts/build_card_abstraction.py \
 		--config configs/card-abstraction.json \
 		--output results/card-abstraction.json
+
+train-limit:
+	$(UV) run --locked python scripts/train_holdem.py \
+		--config configs/limit-training.json \
+		--output results/limit-training.json
