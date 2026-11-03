@@ -13,7 +13,8 @@ are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-eng
 [Phase 1 verification](docs/phase1-verification.md) and
 [Phase 2 exact toy-game solvers](docs/phase2-solvers.md) are complete.
 [Phase 3 bounded sampled-CFR agents](docs/phase3-verification.md) are implemented
-and trained. External spot comparisons follow in Phase 3.5. No competitive
+and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is implemented
+and has measured substantial postflop strategy gaps. No competitive
 playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
@@ -117,3 +118,27 @@ enumeration, with saved reports, separately from fast CI checks.
 See [the roadmap](docs/roadmap.md), [design decisions](docs/decisions.md), and
 [contributor instructions](AGENTS.md). Local setup verification is recorded in
 [the Phase 0 report](docs/phase0-verification.md); hosted CI has not run yet.
+
+<!-- SOLVER_VALIDATION_RESULTS_BEGIN -->
+### Reproduced external-solver comparison
+
+Exact-game CFR variants matched OpenSpiel 2.0.2 within **1.39e-16 ante chips/hand** exploitability at matched iterations.
+
+Five **turn subgames**, two physical combos per player, matched full-pot/all-in actions. Primary own agent: eight potential buckets, 1,000 global self-play iterations, three fixed seeds. Entries below are seed means; raw reports include seed ranges, node frequencies, hand-class EVs and all ablations.
+
+| Turn subgame | Action gap (pp) | Turn / river (pp) | Own exploit. / pot | Hero EV gap vs ref. / pot | Trained-policy reach |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| dry_high_oop | 37.23 | 37.23 / 37.83 | 10.6715 | -0.5874 | 58.3% |
+| wet_high_ip | 34.64 | 34.64 / 37.24 | 11.0141 | -0.2263 | 58.3% |
+| dry_low_oop | 49.98 | 49.98 / 34.15 | 0.1650 | -0.0930 | 8.3% |
+| wet_medium_oop | 31.05 | 31.19 / 30.81 | 1.2075 | -0.3209 | 5.1% |
+| dry_medium_ip | 31.29 | 44.44 / 24.92 | 0.4896 | -0.1930 | 0.0% |
+
+Action gap is reference-reach-weighted per-node action MAE, in percentage points. Exploitability is NashConv/2; EV compares the hero policy against the same reference opponent. Pot-normalized EV gaps use root-pot units. These are exact restricted-game expectations, not measured full-game win rates.
+
+Own restricted exploitability exceeds the reference in 5/5 spots; hero EV against the same reference opponent is lower in 5/5. Trained-policy coverage spans 0.0–58.3% of reference decision reach; the rest uses explicit uniform fallbacks. Three training seeds do not establish a population confidence interval.
+
+![Root strategy by the two configured hand classes](results/solver-validation/strategy-heatmap.png)
+
+Reproduce: `make validate-solvers` (minutes on the recorded Mac; optional solver/evaluator/plot dependencies are installed from the lockfile). No commercial solver data are used. See [the technical writeup](docs/solver_validation.md) for methodology, licenses, convergence, diagnostics and limits.
+<!-- SOLVER_VALIDATION_RESULTS_END -->

@@ -1,157 +1,109 @@
-# External solver validation — Phase 3.5 in progress
+# External solver validation — Phase 3.5
 
-Execution is now eligible: Phase 2 exact exploitability results are committed, and
-[Phase 3 acceptance](phase3-verification.md) records trained own limit/no-limit
-agents and tested inference. This milestone begins after those gates. Tier A must
-pass before Tier B implementation/experiments advance. No Phase 3.5 comparison
-result or resume claim exists at this initial execution checkpoint.
+**Definition of done:** gated exact-game agreement, five fully specified postflop
+spots, independently solved reference policies and best responses, weighted action
+gaps/node frequencies/common-opponent EVs, bucket/iteration ablations, reproducible
+tables/plots, license records, verified claim drafts and interview answers.
+Prerequisites were met before execution: [Phase 2](phase2-solvers.md) results and
+[trained Phase 3 agents](phase3-verification.md). Tier A passed before Tier B began.
 
-## Selected reference and license inventory
+The full pipeline passed locally from clean `0f6aa40` in 590.77 seconds on the
+recorded Apple M4/Python 3.11.17 environment. Reference solving plus comparisons
+used 296.83 seconds. Raw reports preserve exact revisions, dirty flags, source and
+input hashes, dependency lock hash, versions, runtime and hardware. Timings are
+observations on this machine, not general performance promises. A later rerun's
+manifest supersedes these timings without changing the protocol.
 
-| Solver | Pinned version | License | Role |
-| --- | --- | --- | --- |
-| OpenSpiel | 2.0.2 | Apache License 2.0 | Independent exact-game CFR variants; native reference capabilities investigated for small postflop games |
+**Main finding:** toy-game implementation agreement is excellent; the bounded
+Hold'em agent remains far from the postflop reference. Read the generated results
+below together with the diagnosis and limitations. No competitive playing-strength
+claim follows from this milestone.
 
-The complete versioned license was read for this milestone and checked against
-the installed wheel license; both SHA256 values are
+## Reproduce and inspect
+
+```sh
+make validate-solvers
+make check
+```
+
+Install uv 0.13.5 as in the README. The command uses locked optional
+`solver-validation`, `validation` and `research` extras. It reruns Tier A first,
+then fresh **own global self-play**, then postflop controls/reference solves/all
+135 comparisons, followed by report rendering. Failed numerical/convergence gates
+abort before reviewed outputs are replaced. Work products/checkpoints stay under
+ignored `results/runs/solver-validation-build/`; small reviewed evidence lives in
+[`results/solver-validation/`](../results/solver-validation/manifest.json).
+The own checkpoints can be recreated by the command; no download or external
+solver output is needed for own training. `make setup` alone does not install
+optional reference libraries.
+
+- [Raw Tier A](../results/solver-validation/tier-a.json),
+  [raw Tier B](../results/solver-validation/postflop.json),
+  [own training](../results/solver-validation/agent-training.json).
+- [Per-spot summary CSV](../results/solver-validation/postflop-summary.csv),
+  [diagnosis CSV](../results/solver-validation/diagnosis.csv),
+  [ablation figure](../results/solver-validation/ablation-gaps.png).
+- Each `*-seed*-nodes.json.gz` contains every primary information set's private
+  combo/hand class, public node/state, legal concrete actions, both probability
+  vectors, reference reach, lookup status and continuation EV gaps against both
+  common opponents. Its `node_frequencies` groups bet/check/fold/call/raise by
+  public decision node. Zero-reach conditionals are `null`, not fabricated zeros.
+- `*-reference.json.gz` contains tagged comparison-only final reference policies,
+  keys, action menus, convergence and spot/EFG hashes. Reference and node artifacts
+  are listed with SHA256 in the reports/manifests. They are never agent inputs.
+
+The renderer generates the diagnostic/Tier A tables and claim drafts below from
+raw reports. The one command also replaces the marked README/writeup result
+blocks. Timing/provenance fields vary between runs; fixed-seed numerical results
+are the reproducibility target on the recorded locked environment. Hosted CI has
+not run. Local Python 3.11: **419 passed**; Python 3.12: **416 passed, 3 skipped**
+(optional native-reference/evaluator dependencies absent). Ruff and strict mypy
+passed on both. Figures were visually inspected.
+
+## Solvers, versions and licenses
+
+| Component | Version/license | Role and obligations |
+| --- | --- | --- |
+| OpenSpiel | 2.0.2, Apache License 2.0 | Independent CFR variants on toy games; native EFG parser, CFRPlusSolver, expected returns and best response on spots. License/notice and applicable modification attribution obligations; patent grant and warranty disclaimer. No source copied into own core. |
+| Treys | 0.1.8, MIT, copyright 2013 Will Drevo | Independent showdown rankings for card-world payout controls only. Preserve copyright/permission notice on redistribution; warranty disclaimer. |
+
+The complete pinned [OpenSpiel license](https://github.com/google-deepmind/open_spiel/blob/v2.0.2/LICENSE)
+was read and checked against the installed distribution's license. Both SHA256s:
 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
-[Official pinned license](https://github.com/google-deepmind/open_spiel/blob/v2.0.2/LICENSE).
-The license permits use/modification/distribution subject to its license/notice
-and applicable modification-attribution obligations, includes a patent grant and
-warranty disclaimer. The installed wheel preserves its license. Source headers
-attribute the implementation to DeepMind Technologies Limited. The project uses
-its API for comparison; no reference implementation is copied into the own core.
-The native reference library does not replace the own Python poker/training core.
-TexasSolver/postflop-solver have not been selected or used; no commercial outputs
-are used. Record any later additional solver here after reading its pinned license.
+The complete Treys installed `treys-0.1.8.dist-info/LICENSE` was also read before
+this milestone's card-world controls. Installed wheels retain their notices.
+OpenSpiel's native library is a comparison reference, not a replacement for the
+own Python mechanics/training core. TexasSolver and postflop-solver were not used.
+No Gambit implementation is used; EFG is the interchange format only.
 
-## Purpose and data boundary
+No PioSOLVER, GTO Wizard or other commercial solver data are imported, copied or
+used for training. Production `agents`, `training` and `abstraction` packages do
+not import the comparison package/OpenSpiel; an AST test enforces that import
+boundary. Agent loading requires the own MCCFR checkpoint format and compatible
+encoder/model fingerprints; reference artifacts have a different rejected format.
+These checks prevent accidental mixing, not maliciously forged file authentication.
+Reference probabilities/values/gaps never enter own strategy lookup or training.
 
-Measure agreement and disagreement with independent, rerunnable open-source
-solvers on exact toy games and fully specified postflop spots. Only use solvers
-whose licenses permit the intended use. Read the license for each selected pinned
-version and record its source, license text/link, obligations, and applicability
-here before using it. The selected reference is listed above; other solver names
-remain candidates and have not been used.
+## Tier A: exact-game credibility gate
 
-Never import, copy, or train on commercial solver outputs, including PioSOLVER or
-GTO Wizard. Reference outputs are comparison artifacts only: they must never be
-loaded into the agent's strategy, training data, checkpoints, or policy lookup
-path. Keep the reference-artifact path separate from agent inputs and test that
-boundary when implementing this milestone.
+[`solver-validation-tier-a.json`](../configs/solver-validation-tier-a.json)
+declares tolerances before execution: exploitability agreement 1e-8 ante chips,
+unweighted mean information-set strategy L1 1e-6, independent mapped-policy BR
+agreement 1e-10, plus final convergence and Kuhn value limits. All four variants
+use alternating updates, target 0 then 1, frozen pass, no averaging delay. Kuhn
+runs through 10,000 iterations; Leduc through 1,000. Exact full-tree CFR has no RNG;
+ten separate seeded policy/BR checks supplement the deterministic trajectories.
 
-Every reported quantity must come from scripts, versioned configs, explicit seeds,
-and recorded solver versions/settings. Do not fabricate or hand-tune results.
+Exploitability is **NashConv/2**, in ante chips/hand. Kuhn player-zero value error
+uses -1/18. Leduc has no asserted analytical game-value target here; both
+implementations' profile values are compared instead. Final strategy L1 averages
+information sets equally; checkpoint-level raw data include value and BR gaps.
+The initial gated run from `9245bf7` passed before Tier B; the complete pipeline
+reproduced the gate. Agreement near machine precision establishes implementation
+agreement on these exact games, not zero residual exploitability or Hold'em skill.
 
-## Prerequisites and advance declarations
-
-- Saved and validated Phase 2 exploitability results.
-- A trained Phase 3 agent with reproducible checkpoint provenance.
-- Declare metric conventions, convergence targets, iteration budgets, reach
-  weights, tolerances, and acceptance criteria in versioned configs before runs.
-- Resolve rule, payoff-unit, information-state, legal-action, and strategy-averaging
-  conventions before comparing implementations. Document unavoidable differences.
-- Estimate compute from pilot runs; flag work likely to exceed a few hours and
-  present cheaper alternatives before launching it.
-
-## Tier A — Exact-game validation
-
-Compare the project's CFR variants with OpenSpiel CFR on Kuhn and Leduc at matched
-iteration counts. Record which algorithm variants have direct reference matches.
-Report exploitability with an explicit normalization, final average-strategy L1
-distance with a defined information-state/action alignment and aggregation, and
-game-value error. Kuhn's first-player target is -1/18 under the approved rules.
-
-State pass criteria in advance in config, including documented tolerances for
-exploitability differences at equal iteration counts. Strategy-distance gaps need
-interpretation when different equilibrium strategies are possible. If Tier A
-fails, debug before advancing to Tier B.
-
-## Tier B — Single-spot postflop comparison
-
-Start with 5–10 versioned spot configs. Specify both players' preflop ranges,
-card-removal/weight conventions, flop and optional turn board, stack depth, pot,
-player positions, complete action tree/bet-size set, and payoff units. Include dry
-and wet flops, in-position and out-of-position decisions, and high/low stack-to-pot
-ratios. Define reach probabilities and legal continuation behavior explicitly.
-
-Solve each spot to a declared convergence criterion, recording achieved
-exploitability (where available) and iteration count. Restrict the project agent
-to the same ranges, cards, and actions. Prefer identical action abstractions;
-document and quantify action mapping if the abstractions differ.
-
-Report per hand class and decision node:
-
-1. Mean absolute action-probability difference, weighted by a declared reach
-   distribution, overall and per street. Define normalization and zero-reach
-   handling before examining results.
-2. Range-level bet/check/fold/call/raise frequencies at each node.
-3. EV differences by hand class, evaluating both strategies against the reference
-   opponent policy and against the project's opponent policy. State the two
-   cross-play comparisons and common payoff convention explicitly.
-4. Exploitability of the project's strategy restricted to the specified spot,
-   using a validated best-response calculator with documented range conditioning.
-
-Produce strategy heatmaps by hand class and per-spot tables of gap metrics. Label
-reach weighting, normalization, and probability units in tables and plots.
-
-## Diagnosis and ablations
-
-For each large gap, test card-abstraction bucket count, off-tree action sizes,
-training iterations, reference convergence, and implementation correctness as
-possible explanations. Vary bucket count and training iterations in preregistered
-ablations and plot each against the gap. Treat widespread large gaps as a likely
-bug first: check evaluator, engine, action legality, observations/private-card
-access, and abstraction before attributing them to compute.
-
-## Deliverables and definition of done
-
-- `make validate-solvers` reproduces all tables and plots from fixed configs and
-  seeds after prerequisites are satisfied. Do not add a placeholder success
-  command or claim this command works before implementation.
-- Tests cover spot loading and gap metrics, including strategy-to-itself zero-gap
-  checks, reach weighting, invalid probabilities, and action alignment.
-- This document becomes the technical writeup: methodology, exact solver
-  versions/licenses, spots, results, plots, failed checks, ablations, and limits.
-- README includes a one-page summary with a metrics table, one heatmap, and an
-  honest statement of where the agent is weaker than the reference.
-- Draft resume claims only from verified numbers, such as matched OpenSpiel
-  exploitability within a measured tolerance or a measured action-frequency gap
-  across a stated set of spots. No numeric claims exist at planning time.
-- Include three interview questions and answers grounded in the actual work.
-- State what agreement does and does not prove: abstraction mismatch, single-spot
-  scope, reference convergence uncertainty, and strategy non-uniqueness limit the
-  interpretation. Action agreement alone is not a proof of equilibrium quality.
-
-## Tier A execution protocol declared before this run
-
-`configs/solver-validation-tier-a.json` preserves the already-declared Phase 2
-conventions/tolerances unchanged: alternating target 0 then 1, no averaging delay,
-all four direct variant matches, Kuhn through 10,000 iterations and Leduc through
-1,000. Exploitability is NashConv/2 in ante chips/hand; final strategy L1 is the
-unweighted mean of actionwise L1 across information sets. Kuhn error is measured
-against -1/18. Five seeded independent BR-policy checks per game supplement the
-deterministic solver trajectories (training seed=null).
-
-Acceptance: exploitability agreement within 1e-8, mean L1 within 1e-6, mapped-policy
-BR agreement within 1e-10, and the config's final convergence/value limits. Any
-failed gate requires diagnosis before Tier B. `make validate-solver-tier-a` writes
-a fresh gated report/CSV/plots under `results/solver-validation/`; it does not
-overwrite historical Phase 2 evidence. The prior pilot predicts minutes of local
-compute. A complete `make validate-solvers` command will be added only when all
-required stages are implemented; it is not fulfilled by Tier A alone.
-
-## Tier A acceptance result
-
-The fresh gated run from clean `9245bf7` passed every
-predeclared criterion. [Raw Tier A report](../results/solver-validation/tier-a.json)
-and [CSV](../results/solver-validation/cfr-convergence.csv) preserve all checkpoints.
-Maximum exploitability disagreement: 1.3877788e-16 ante chips/hand; maximum mean
-information-set L1 distance: 1.4237625e-17; maximum profile-value difference from the
-reference: 2.220446e-16 chips/hand. These measure implementation agreement, not
-zero exploitability. The table below reports actual remaining exploitability.
-
-| Game | Variant | Iterations | Own exploitability | Reference exploitability | Mean strategy L1 | Kuhn value error |
+<!-- SOLVER_VALIDATION_TIER_A_BEGIN -->
+| Game | Variant | Iterations | Own exploitability | Ref. exploitability | Mean strategy L1 | Kuhn value error |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | kuhn | cfr | 10,000 | 0.00011332446 | 0.00011332446 | 0 | 7.9627065e-06 |
 | kuhn | cfr_plus | 10,000 | 9.632757e-06 | 9.632757e-06 | 0 | 3.5556146e-09 |
@@ -161,85 +113,206 @@ zero exploitability. The table below reports actual remaining exploitability.
 | leduc | cfr_plus | 1,000 | 0.00025715162 | 0.00025715162 | 0 | — |
 | leduc | linear | 1,000 | 0.0048261327 | 0.0048261327 | 1.1067718e-17 | — |
 | leduc | discounted | 1,000 | 0.00014346789 | 0.00014346789 | 9.5723021e-18 | — |
+<!-- SOLVER_VALIDATION_TIER_A_END -->
 
-Ten independently seeded policy BR comparisons also passed. The underlying games
-were exhaustively checked for actions/chance/payoffs and information-set bijection.
-Tier B implementation may now begin. Historical Phase 2 data remain untouched.
+## Tier B: fully specified restricted games
 
-## Tier B design declared before main comparisons
+Each versioned [`configs/spots/`](../configs/spots/dry_high_oop.json) file declares
+both weighted physical-combo ranges, board, 200/200 starting stacks, 1/2 blinds,
+button, exact public action prefix, remaining stacks/pot, actor/hero and bet grid.
+There are **five turn subgames**, each with two combos per player and all 44 legal
+rivers for each of four private pairs: 176 worlds/spot. Dry/wet describes the flop.
+This does not cover a full 169-class matrix or complete flop game.
 
-The first set is **five turn subgames**, each with two explicitly weighted physical
-combos per player, a known four-card board and all 44 possible legal rivers per
-private pair. This is intentionally narrow: not a full 169-hand grid, flop-wide
-solution, or unabstracted Hold'em benchmark. Dry/wet labels describe the configured
-flops; both acting positions and large/small SPR are included.
+| Spot | Board | P0 range | P1 range | Pot / remaining stacks | Hero / root SPR |
+| --- | --- | --- | --- | --- | --- |
+| dry_high_oop | As 7d 2c 9h | AhAd, KdQd | AcKh, JsTs | 4 / 198 each | P0 OOP / 49.5 |
+| wet_high_ip | Jh Th 8s 8h | AhKh, Qc9c | JcJd, QhKd | 4 / 198 each | P1 IP, checked to / 49.5 |
+| dry_low_oop | Ks 7d 2c 9h | KhKd, AhQh | KcQc, JsTs | 324 / 38 each | P0 OOP / 0.1173 |
+| wet_medium_oop | Qs Js 8d 3s | AsKs, ThTd | QhQd, KcTc | 36 / 182 each | P0 OOP / 5.0556 |
+| dry_medium_ip | Ad 9c 4s 6h | AhAc, KhQh | AsKd, 9d9h | 108 / 146 each | P1 IP, checked to / 1.3519 |
 
-| Spot | Pot | Remaining stacks | Actor/hero | Root SPR | Texture |
-| --- | ---: | --- | --- | ---: | --- |
-| dry_high_oop | 4 | 198/198 | OOP | 49.5 | dry |
-| wet_high_ip | 4 | 198/198 | IP, checked to | 49.5 | wet |
-| dry_low_oop | 324 | 38/38 | OOP | 38/324 | dry |
-| wet_medium_oop | 36 | 182/182 | OOP | 182/36 | wet |
-| dry_medium_ip | 108 | 146/146 | IP, checked to | 146/108 | dry |
+All listed combos have weight one. Product priors are conditioned on known-board
+and mutual card removal, then renormalized. Public prefix actions do **not** infer
+endogenous ranges. Future rivers and opponent cards stay hidden in decision keys.
+The engine replays every prefix and verifies its declared public root.
 
-Versioned configs in `configs/spots/` specify boards, both weighted ranges, exact
-public betting prefixes, stacks/blinds/positions and action grids. The own engine
-replays each prefix to verify the declared root. Range product weights are
-conditioned on known-board/mutual card removal; prefix actions do not infer ranges.
-The provided ranges are fixed conditional inputs, not endogenous global-agent
-ranges. This distribution difference limits global-strength conclusions.
+Both policies use a **full-pot/all-in grid**, plus legal passive/fold actions;
+there is no separately included minimum raise or arbitrary raise-count cap.
+Sizes may clamp/deduplicate at stack bounds. A full pot means raise increment
+above the call price equal to pot after calling. Concrete action menus are checked
+for identity, not silently projected. All 135 comparisons had zero projection
+mass and no changed shadow ledger. This excludes off-tree mapping as an explanation
+*inside these games*, not in arbitrary no-limit play. Phase 3's separate off-grid
+stress audit showed explicit fallback failures and remains a limitation.
 
-Use a **matched full-pot/all-in grid**, without an explicit minimum-raise option
-unless a size clamps to it. There is no artificial raise cap; small grid/pot growth
-bounds the tree. The own agent ablation is global uniform-deal self-play with the
-same grid, potential buckets 2/4/8, three fixed seeds and 100/300/1,000 checkpoints.
-It receives no spot configs, reference policies, values, or gaps as training data.
-This avoids projecting the earlier half/pot agent in the primary comparison.
-`configs/solver-agent-ablation.json` fixes those inputs before comparison; primary
-is eight buckets at 1,000 iterations, not the best observed result. Iteration/bucket
-curves retain all seeds/results rather than selecting winners.
+The own policy ablation is **global uniform-deal self-play**, not training on the
+spots or solver outputs. [`solver-agent-ablation.json`](../configs/solver-agent-ablation.json)
+fixes external sampling, potential buckets 2/4/8, seeds
+20261115/20261116/20261117 and checkpoints 100/300/1,000. Nine runs completed all
+27 checkpoints with node/time budgets and isolated worker processes. Primary is
+**8 buckets at 1,000 iterations**, declared before comparisons, not whichever
+configuration happened to look best. The three checkpoints share each run's
+trajectory; three seed ranges are descriptive, not confidence intervals.
 
-`configs/solver-validation-postflop.json` declares independent native OpenSpiel
-CFR+ reference schedules/targets, primary selection, reach convention, numerical
-tolerances and plotting choice. Export the own exact spot tree to standard EFG
-and load it through OpenSpiel's independent native parser/solver/BR. Validate every
-chance probability, action, payoff and information-set bijection after parsing.
-The **mechanics/export are shared project code**, so this is an independent solver
-and BR check, not an independent postflop-engine implementation. Phase 1 checks and
-additional card-world controls address mechanics separately.
+The reference uses OpenSpiel 2.0.2 native deterministic CFR+ on an exact exported
+spot tree. Configured iteration schedule: 64/256/1,024/4,096/16,384. Require
+exploitability at most **0.001 root pots** at **two successive scheduled
+checkpoints**; retain the latest policy. This strengthened stability control was
+declared after a reference-only cost pilot and before main agent comparisons.
+Final achieved iteration counts/convergence are in the raw report. Every parsed
+node's chance/actions/payoff and the information-set bijection are checked.
 
-Action gap is each information set's actionwise absolute difference divided by
-its own legal-action count, then weighted by the final reference joint reach
-(including chance). Padding is excluded. Report overall/per street and preserve
-node-level range frequencies. EV gaps use the same fixed opponent for each pair;
-values are exact enumerated expectations within this restricted game, up to
-floating error, not sampled win rates. Game payoff is net chips relative to the
-original hand start; fixed pre-root contributions cancel in strategy EV gaps.
-Reference exploitability is explicitly measured at the achieved iteration count;
-nonconverged targets must remain visible, not be called exact GTO.
+**Independence boundary:** the EFG mechanics/export are own project code. OpenSpiel
+independently parses, solves and best-responds to that game. It is not an
+independent full postflop-engine implementation. Separate controls checked all
+880 passive card worlds with Treys; Phase 1 supplies million-hand evaluator and
+independent PokerKit engine evidence with its documented exceptions. Own/native
+cross-play expectation error was at most 1.066e-13 chips across this run's profiles.
 
-The reference-only cost pilot reached the 0.001-pot exploitability target on all
-five trees within the declared schedule. Before main agent comparisons, require
-**two consecutive scheduled checkpoints** below that same target and retain their
-policy difference as a reference-stability diagnostic. This strengthens the
-convergence control; the pilot inspected reference convergence only. Profiling
-policy lookup identified repeated public-history reconciliation as its dominant
-cost. A tested prepared-context API reuses that deterministic work across frozen
-policies with identical betting rules and mapping scheme; private observations
-and model-specific abstraction/strategy lookup retain their original semantics.
+## Metrics and EV conventions
 
-Additional evaluator helper: **Treys 0.1.8**, MIT, copyright 2013 Will Drevo.
-The complete installed distribution's LICENSE was read again before the card-world
-controls. It permits use/modification/distribution with the copyright/permission
-notice preserved and disclaims warranty. This helper supplies showdown rankings
-only, never training inputs or reference betting strategies. It is not the
-postflop solver. Its separate optional `validation` extra remains isolated.
+For each exact information set, action MAE is sum of absolute probability
+differences divided by **that set's legal-action count**. Average using the final
+reference profile's joint reach, including chance; normalize across all compared
+decision information sets. Report overall and by street. Padding is excluded.
+Units are probability points (100 times this is percentage points), not L1 or
+necessarily total variation. Thus unlike branching factors affect normalization.
+Reference weighting can de-emphasize states the own policy reaches more often;
+restricted best response and the EV decomposition complement this metric.
 
-The comparison additionally verifies the exact performance-difference identity
-against each fixed opponent: candidate joint reach times policy difference times
-baseline continuation value, summed over hero decision histories. Contributions
-are grouped by trained/unseen/unaveraged lookup status. This is an exact accounting
-of the EV gap in the restricted game, not a causal estimate for changing training
-budgets. Per-node continuation EVs and range frequencies use the **same reference
-joint-reach conditional beliefs** for both policies, with zero-reach rows explicitly
-undefined. Root hand-class EVs condition on the declared private-range marginal.
+Range frequencies and per-node/per-class continuation EVs use the **same reference
+conditional range beliefs** for both policies. That isolates policy differences
+at the node; these are not each policy's endogenous realized node ranges. Node
+exports contain physical combos and hand classes; only configured combos are
+covered. Root class EVs instead condition on the declared range marginal.
+
+Four exact profiles are evaluated: (reference, reference), (own, own),
+(own P0, reference P1), and (reference P0, own P1). For each hero, compare own versus
+reference while fixing **the same opponent**, once reference and once own. Signed
+positive gap favors own; the two gaps can have opposite signs because an
+equilibrium policy need not maximally exploit the own opponent. Values are net
+original-hand chips; fixed prefix costs cancel in EV differences. Enumeration
+covers every configured private pair/river, so these are exact restricted-game
+expectations up to rounding, not sampled win rates. Native best response measures
+own profile exploitability in this exact range/action game; both players' policies
+are included, not only the hero.
+
+## Diagnose before attributing to compute
+
+Implementation controls passed: all 120,947 exported nodes aligned with the native
+parser, all 880 passive private-card/river controls matched Treys/expected payouts,
+hidden-card tests passed, concrete action grids/ledgers matched, common-opponent
+EVs matched native expectations, and self-comparisons gave zero gaps. Tests also
+verify that an exact performance-difference decomposition sums back to total EV.
+These checks substantially narrow bug hypotheses; they do not prove absence of
+all engine, abstraction or training defects outside this scope.
+
+<!-- SOLVER_VALIDATION_DIAGNOSIS_BEGIN -->
+| Turn subgame | Ref. policy change (pp) | EV deficit accounted for at fallback nodes | Action gap: 100 → 1,000 iters (pp) |
+| --- | ---: | ---: | ---: |
+| dry_high_oop | 0.021 | 92.9% | 32.19 → 37.23 |
+| wet_high_ip | 0.626 | 94.7% | 32.28 → 34.64 |
+| dry_low_oop | 0.222 | 69.9% | 49.98 → 49.98 |
+| wet_medium_oop | 0.120 | 99.7% | 31.05 → 31.05 |
+| dry_medium_ip | 0.140 | 100.0% | 31.29 → 31.29 |
+
+Fallback shares use the exact performance-difference identity, averaged across the three primary seeds. They are an EV accounting decomposition, not a causal estimate for extra training. Reference policy changes use the final reference reach weights.
+<!-- SOLVER_VALIDATION_DIAGNOSIS_END -->
+
+- **Sparse/unaveraged strategy:** fallback decisions account for about 70–100% of
+  the mean hero EV deficit, using candidate reach in the exact accounting identity.
+  This differs from their share of reference-reach action gaps. For example,
+  very low-reference-reach unseen decisions can still cost EV under own play.
+  `matched` only means a saved average row has positive mass; it can remain uniform.
+- **Iterations:** 100→1,000 iterations did not consistently improve spot action
+  gap/exploitability. Several curves stay flat; two high-SPR spot gaps increase.
+  The measurements support poor coverage/poor current policies, not a claim that
+  more compute alone would solve the gaps. Global training and conditional spot
+  solving optimize different range distributions, so spot improvement is not a
+  monotonic consequence of global self-play iterations.
+- **Buckets:** 2/4/8 changes coverage and the metrics, with no universal winner.
+  More buckets reduce these high-SPR restricted exploitabilities but do not yield
+  small gaps. The models are not nested and coverage changes with capacity; this
+  experiment does not identify a pure irreducible abstraction-loss floor.
+- **Off-tree sizes:** not a cause within the matched grid; broader translation
+  remains unvalidated strategically and is not included in these gap numbers.
+- **Reference convergence:** two converged checkpoints and at most 0.626 pp
+  reference-policy change are small beside 31–50 pp agent action gaps. With fixed
+  final reach weights, the triangle inequality bounds action-gap sensitivity to
+  the preceding reference policy by that reported policy change. Residual epsilon
+  is still reported, not called exact GTO.
+
+![Bucket and iteration ablations](../results/solver-validation/ablation-gaps.png)
+
+## Limitations and what the numbers prove
+
+This is a transfer comparison on five narrow turn games, not unrestricted
+Hold'em exploitability, general solver equivalence, a full preflop solution or a
+winning-agent result. The reference knows the declared fixed ranges; the frozen
+global own policy does not re-solve for them. They need not equal global self-play's
+endogenous conditional ranges. The agent's card abstraction, small iteration
+budget and explicit uniform fallbacks are material limitations. The action grid
+excludes many real bet sizes. Large SPR permits losses of many root pots; a value
+above one in the exploitability/pot column is possible and is not a win rate.
+
+Equilibria can differ in action probabilities while retaining similar EV; action
+agreement alone is neither necessary nor sufficient for good play. Native BR is
+independent of own solver updates, while mechanics/export remain shared. The
+passive Treys check does not independently validate all betting rules. Three
+fixed seeds and five selected spots do not support population confidence bounds.
+All seeds/configurations and non-improving results are retained without choosing
+the best seed or replacing the predeclared primary.
+
+## Resume-ready drafts generated from verified reports
+
+<!-- SOLVER_VALIDATION_CLAIMS_BEGIN -->
+# Verified claim drafts
+
+- Implemented four exact CFR variants for Kuhn and Leduc; matched OpenSpiel 2.0.2 exploitability within 1.39e-16 ante chips/hand at the tested equal iteration budgets. This is implementation agreement, not zero remaining exploitability.
+- Built a reproducible external-solver comparison across 5 restricted turn subgames; measured 36.84 percentage points mean action-frequency gap versus OpenSpiel CFR+ (equal spot weighting, three fixed agent seeds, reference-reach-weighted node MAE). The agent had higher restricted exploitability in 5/5 spots and lower hero EV versus the reference opponent in 5/5; this is not a full-game win-rate claim.
+- Verified every exported node in 120,947 restricted-game tree nodes against OpenSpiel's parser and 880 passive private-card/river worlds against independent Treys showdown ranks and expected payouts. The exported mechanics are project code, so parser/solver agreement alone is not an independent full-engine validation.
+<!-- SOLVER_VALIDATION_CLAIMS_END -->
+
+## Three interview questions
+
+**Why isn't matching action frequencies enough?** Equilibria can use different
+mixtures, and reference reach may hide own-reached mistakes. I also evaluate both
+policies against the same two opponents and compute independent restricted-game
+best responses. Those measure consequences rather than superficial agreement.
+
+**Why can exact CFR match while the Hold'em policy is weak?** The toy gate checks
+updates, averaging and BR on small exact games. The Hold'em policy is sampled,
+abstracted and sparsely trained under different global ranges. Its explicit
+fallbacks account for most of the measured EV deficit; tested bucket/iteration
+changes do not establish that extra compute alone fixes this.
+
+**How independent is this validation, and how did you avoid leakage?** OpenSpiel's
+parser/CFR+/BR are independent, but my EFG mechanics are shared and I disclose that.
+Treys and Phase 1 PokerKit controls address separate mechanics risks. Reference
+artifacts have a distinct format and remain inside comparison/reporting code;
+own self-play only consumes own configs/models/checkpoints, never solver outputs.
+
+<!-- SOLVER_VALIDATION_RESULTS_BEGIN -->
+### Reproduced external-solver comparison
+
+Exact-game CFR variants matched OpenSpiel 2.0.2 within **1.39e-16 ante chips/hand** exploitability at matched iterations.
+
+Five **turn subgames**, two physical combos per player, matched full-pot/all-in actions. Primary own agent: eight potential buckets, 1,000 global self-play iterations, three fixed seeds. Entries below are seed means; raw reports include seed ranges, node frequencies, hand-class EVs and all ablations.
+
+| Turn subgame | Action gap (pp) | Turn / river (pp) | Own exploit. / pot | Hero EV gap vs ref. / pot | Trained-policy reach |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| dry_high_oop | 37.23 | 37.23 / 37.83 | 10.6715 | -0.5874 | 58.3% |
+| wet_high_ip | 34.64 | 34.64 / 37.24 | 11.0141 | -0.2263 | 58.3% |
+| dry_low_oop | 49.98 | 49.98 / 34.15 | 0.1650 | -0.0930 | 8.3% |
+| wet_medium_oop | 31.05 | 31.19 / 30.81 | 1.2075 | -0.3209 | 5.1% |
+| dry_medium_ip | 31.29 | 44.44 / 24.92 | 0.4896 | -0.1930 | 0.0% |
+
+Action gap is reference-reach-weighted per-node action MAE, in percentage points. Exploitability is NashConv/2; EV compares the hero policy against the same reference opponent. Pot-normalized EV gaps use root-pot units. These are exact restricted-game expectations, not measured full-game win rates.
+
+Own restricted exploitability exceeds the reference in 5/5 spots; hero EV against the same reference opponent is lower in 5/5. Trained-policy coverage spans 0.0–58.3% of reference decision reach; the rest uses explicit uniform fallbacks. Three training seeds do not establish a population confidence interval.
+
+![Root strategy by the two configured hand classes](../results/solver-validation/strategy-heatmap.png)
+
+Reproduce: `make validate-solvers` (minutes on the recorded Mac; optional solver/evaluator/plot dependencies are installed from the lockfile). No commercial solver data are used. See this document for methodology, licenses, convergence, diagnostics and limits.
+<!-- SOLVER_VALIDATION_RESULTS_END -->

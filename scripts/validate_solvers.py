@@ -15,10 +15,10 @@ from poker_ai.solver_validation.reporting import markdown_table
 from poker_ai.validation.five_card import source_provenance
 
 
-def update_block(path: Path, body: str) -> None:
+def update_block(path: Path, body: str, name: str = "RESULTS") -> None:
     start, end = (
-        "<!-- SOLVER_VALIDATION_RESULTS_BEGIN -->",
-        "<!-- SOLVER_VALIDATION_RESULTS_END -->",
+        f"<!-- SOLVER_VALIDATION_{name}_BEGIN -->",
+        f"<!-- SOLVER_VALIDATION_{name}_END -->",
     )
     text = path.read_text()
     block = start + "\n" + body.strip() + "\n" + end
@@ -57,6 +57,7 @@ def main() -> int:
             "scripts/validate_cfr.py",
             "scripts/train_holdem.py",
             "scripts/validate_postflop.py",
+            "scripts/render_solver_report.py",
         ),
     )
     started = time.perf_counter()
@@ -85,12 +86,18 @@ def main() -> int:
             str(build / "postflop.json"),
         ],
     ]
+    commands.append(["scripts/render_solver_report.py", "--output-dir", str(build)])
     for command in commands:
         print("Running " + " ".join(command), flush=True)
         subprocess.run([sys.executable, *command], cwd=root, check=True)
     reports: dict[str, Any] = {
         name: json.loads((build / name).read_text())
-        for name in ("tier-a.json", "agent-training.json", "postflop.json")
+        for name in (
+            "tier-a.json",
+            "agent-training.json",
+            "postflop.json",
+            "render-manifest.json",
+        )
     }
     if any(
         reports[name]["status"] != status
@@ -98,13 +105,14 @@ def main() -> int:
             ("tier-a.json", "passed"),
             ("agent-training.json", "completed"),
             ("postflop.json", "passed"),
+            ("render-manifest.json", "passed"),
         )
     ):
         raise ArithmeticError(
             "a validation stage failed; reviewed outputs not replaced"
         )
     artifacts = set(reports)
-    for name in ("tier-a.json", "postflop.json"):
+    for name in ("tier-a.json", "postflop.json", "render-manifest.json"):
         for relative, expected in reports[name]["artifacts_sha256"].items():
             if Path(relative).name != relative:
                 raise ValueError("artifact must be a single filename")
@@ -170,6 +178,16 @@ def main() -> int:
             "HEATMAP_PATH", "../results/solver-validation/strategy-heatmap.png"
         ).replace("WRITEUP_PATH", "this document"),
     )
+    for name, filename in (
+        ("TIER_A", "tier-a-summary.md"),
+        ("DIAGNOSIS", "diagnosis.md"),
+        ("CLAIMS", "verified-claims.md"),
+    ):
+        update_block(
+            root / "docs/solver_validation.md",
+            (destination / filename).read_text(),
+            name,
+        )
     manifest = {
         "schema_version": 1,
         "status": "passed",
