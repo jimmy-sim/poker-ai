@@ -6,7 +6,8 @@ cluster-aware confidence intervals and a predeclared significance test; measured
 variance reduction (a documented alternative to AIVAT); independent reference-rule
 checks; reproducible configs/reports and three interview answers. Slumbot is a
 separate conditional public-benchmark step, with permission/protocol checked first.
-No Phase 4 match scores or playing-strength claims exist at this checkpoint.
+The timing pilot is now complete; its small-sample scores are retained for
+transparency and are not playing-strength claims. Main results are pending.
 
 ## Predeclared local experiment
 
@@ -134,3 +135,20 @@ abort keeps raw completed hands for diagnosis, does not infer from a partial
 prefix and does not replace reviewed results. Worker processes are fresh, with
 fixed RNG streams and no shared learning. Main data retain all per-hand profits,
 counts and deck hashes so interval calculations can be audited separately.
+
+
+## Timing pilot gate
+
+The separately seeded pilot completed all six opponents and its 1,000-hand native
+mechanics gate with zero payout disagreement. A second fresh-process run exactly
+replayed all raw hand records, inference outputs and own lookup counts. See the
+[retained pilot](../results/evaluation/pilot/pilot.json) and
+[replay audit](../results/evaluation/pilot/reproducibility.json). The pilot projects
+about seven minutes of serial worker time for the main budget; parallel wall time
+and cache/startup costs differ. This is below the few-hour compute warning gate.
+No pilot scores were used to change seeds, agents, sizes, thresholds or N.
+
+The two displayed 95% intervals are pointwise, not simultaneous family intervals.
+The predeclared family-adjusted test determines significance. Pilot intervals
+have particularly low power; only the fresh fixed-N main study will be summarized
+as evaluation evidence.

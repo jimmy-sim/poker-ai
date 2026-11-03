@@ -1,0 +1,724 @@
+{
+  "artifacts_sha256": {
+    "always_call-hands.csv.gz": "fd65f5177c61d3bf61751634200d7e752e2a8c0b9926cf76aedd853cc2b0c1dd",
+    "always_raise-hands.csv.gz": "1ed40f80eed47e4d8f7bb7de46f3da1b54522975107be575ba5e8b0bf16ba766",
+    "equity-hands.csv.gz": "6298a5e0485a86496fd291a1b7b60456c65e24b3da138e75b92372eb59617e3e",
+    "match-summary.csv": "0f8065eaacebe93a0fa59cabf9188db4396c2031e011185a78f26d08f90f3f0d",
+    "match-summary.md": "c169ef507a595fc35f43dadc292274874fff7c5fde7945821a739b6362ffac30",
+    "openspiel_ismcts-hands.csv.gz": "4fc3ba72d5364aac559f352106d2c853712f3451957b377bc02fb6b476a326f9",
+    "random-hands.csv.gz": "b096a74663745817fd3fe89e8720f98bf847d31f1dd0dab13e39a2fd2f59cfe5",
+    "tight_aggressive-hands.csv.gz": "64469aa266aceb95d5afca1151ae5fe9bfd7c8299d6be8356f757ec5f2a443f3",
+    "winrate-intervals.png": "91a81ba5a3632b17792f2ba8fdc7a7528804c9b875453772e5961888a88081d2",
+    "winrate-intervals.svg": "a7854e6e3041b9fef4abe3d228f07ef66273f753b7bb63d96be431714caffc1d"
+  },
+  "config": {
+    "action_seed": 20261130,
+    "agent_seeds": [
+      20261115,
+      20261116,
+      20261117
+    ],
+    "inference": {
+      "alpha": 0.05,
+      "ci": "paired-deal CLT approximate plus finite-sample Hoeffding; three fixed agents averaged within each deal, not separate independent samples",
+      "family_size": 6,
+      "primary_test": "two-sided bounded Hoeffding mean-zero test, Bonferroni over six pooled fixed-agent-policy opponents",
+      "variance_reduction": "duplicate-deal pairing; compare paired variance with covariance-omitted seat estimate; not AIVAT"
+    },
+    "iteration": 1000,
+    "limitations": "100bb matched-grid simulation; weak fixed heuristics and small ISMCTS budget; three fixed training policies, not population training-seed inference; no Slumbot data in local matches",
+    "main_deal_seed": 20261128,
+    "main_deals": 1000,
+    "mapping_episode_seed": 20261131,
+    "max_actions_per_hand": 256,
+    "max_seconds_per_opponent": 1800,
+    "method": "external",
+    "native_validation": {
+      "hands": 1000,
+      "payoff_tolerance": 1e-09,
+      "seed": 20261127
+    },
+    "opponents": [
+      {
+        "kind": "random",
+        "name": "random"
+      },
+      {
+        "kind": "always_call",
+        "name": "always_call"
+      },
+      {
+        "kind": "always_raise",
+        "name": "always_raise"
+      },
+      {
+        "call_margin": 0.1,
+        "equity_samples": 64,
+        "equity_seed": 20261129,
+        "kind": "tight_aggressive",
+        "name": "tight_aggressive",
+        "raise_equity": 0.7
+      },
+      {
+        "call_margin": 0.05,
+        "equity_samples": 64,
+        "equity_seed": 20261129,
+        "kind": "equity",
+        "name": "equity",
+        "raise_equity": 0.65
+      },
+      {
+        "implementation": "Python ISMCTS over native universal_poker; seeded public resampler hook",
+        "kind": "openspiel_ismcts",
+        "name": "openspiel_ismcts",
+        "rollouts": 1,
+        "simulations": 32,
+        "uct_c": 200.0,
+        "version": "2.0.2",
+        "world_samples": 16
+      }
+    ],
+    "pilot_deal_seed": 20261126,
+    "pilot_deals": 32,
+    "primary_model": "results/card-models/potential-8.json",
+    "primary_projection_mass_limit": 0.0,
+    "purpose": "fixed frozen-policy duplicate-deal evaluation; no opponent/ref outputs in training",
+    "rules": {
+      "big_blind": 2,
+      "button": 1,
+      "fractions": [
+        [
+          1,
+          1
+        ]
+      ],
+      "include_all_in": true,
+      "include_minimum": false,
+      "small_blind": 1,
+      "stacks": [
+        200,
+        200
+      ]
+    },
+    "schema_version": 1,
+    "training_report": "results/solver-validation/agent-training.json",
+    "workers": 2
+  },
+  "environment": {
+    "cpu_model": "Apple M4",
+    "logical_cpus": 10,
+    "matplotlib": "3.11.2",
+    "numpy": "2.4.6",
+    "open_spiel": "2.0.2",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "failures": [],
+  "frozen_agents": [
+    {
+      "checkpoint_sha256": "db90251cc2feec6fd0bfed3c4922fed542a5074f1812a71b28dc0ffc07cb2053",
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "seed": 20261115
+    },
+    {
+      "checkpoint_sha256": "46a190cd0196a66507d1af77b47c9e0c97149934634a15ee1a8cbd78e7d2ef29",
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "seed": 20261116
+    },
+    {
+      "checkpoint_sha256": "91eac9e92663bf270f4201badfd566d477684495076fe2108a82536849d68a54",
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "seed": 20261117
+    }
+  ],
+  "main_projected_serial_worker_seconds": 409.053179687362,
+  "mode": "pilot",
+  "native_controls": {
+    "actions": 2824,
+    "folds": 676,
+    "hands": 1000,
+    "max_payout_error": 0.0,
+    "scope": "matched full-pot/all-in HU 1/2, equal fully funded stacks; sampled traces",
+    "showdowns": 324
+  },
+  "projection_caveat": "linear extrapolation includes startup/cache effects; parallel wall time differs",
+  "results": [
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 79
+        },
+        "20261116": {
+          "matched": 87,
+          "unaveraged": 1
+        },
+        "20261117": {
+          "matched": 77,
+          "unaveraged": 1,
+          "unseen": 2
+        }
+      },
+      "mode": "pilot",
+      "opponent": "random",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            1444.8123384066082,
+            24867.687661593394
+          ],
+          "cluster_se_mbb_per_hand": 5975.333094879152,
+          "mbb_per_hand": 13156.25,
+          "mean_chips_per_hand": 26.3125,
+          "paired_to_unpaired_variance_ratio": 0.721202811744576,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -3456.253775732881,
+            20081.253775732883
+          ],
+          "cluster_se_mbb_per_hand": 6004.5765476117485,
+          "mbb_per_hand": 8312.5,
+          "mean_chips_per_hand": 16.625,
+          "paired_to_unpaired_variance_ratio": 0.6949734142739463,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -2162.6121376087326,
+            18225.112137608732
+          ],
+          "cluster_se_mbb_per_hand": 5201.045640642696,
+          "mbb_per_hand": 8031.25,
+          "mean_chips_per_hand": 16.0625,
+          "paired_to_unpaired_variance_ratio": 0.7332740064047037,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          2863.1465577344998,
+          16803.520108932167
+        ],
+        "cluster_se_mbb_per_hand": 3556.2830901887896,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -38182.8062326627,
+          57849.47289932937
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": 9833.333333333334,
+        "mean_chips_per_hand": 19.666666666666668,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.4312558438864444,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "random-hands.csv.gz",
+      "raw_sha256": "b096a74663745817fd3fe89e8720f98bf847d31f1dd0dab13e39a2fd2f59cfe5",
+      "seconds": 0.707587416000024,
+      "status": "completed"
+    },
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 115,
+          "unaveraged": 4,
+          "unseen": 30
+        },
+        "20261116": {
+          "matched": 113,
+          "unaveraged": 1,
+          "unseen": 25
+        },
+        "20261117": {
+          "matched": 106,
+          "unaveraged": 3,
+          "unseen": 19
+        }
+      },
+      "mode": "pilot",
+      "opponent": "always_call",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            549.7082378693942,
+            19622.166762130604
+          ],
+          "cluster_se_mbb_per_hand": 4865.5124978577,
+          "mbb_per_hand": 10085.9375,
+          "mean_chips_per_hand": 20.171875,
+          "paired_to_unpaired_variance_ratio": 0.22283318068792532,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -1245.2909747842132,
+            23120.290974784213
+          ],
+          "cluster_se_mbb_per_hand": 6215.82389823513,
+          "mbb_per_hand": 10937.5,
+          "mean_chips_per_hand": 21.875,
+          "paired_to_unpaired_variance_ratio": 0.43309511752944857,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            2679.960617369616,
+            29382.539382630384
+          ],
+          "cluster_se_mbb_per_hand": 6812.007510313279,
+          "mbb_per_hand": 16031.25,
+          "mean_chips_per_hand": 32.0625,
+          "paired_to_unpaired_variance_ratio": 0.5514975764381832,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          3381.798359809174,
+          21321.326640190826
+        ],
+        "cluster_se_mbb_per_hand": 4576.494369765559,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -35664.57706599603,
+          60367.70206599603
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": 12351.5625,
+        "mean_chips_per_hand": 24.703125,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.26562314532777465,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "always_call-hands.csv.gz",
+      "raw_sha256": "fd65f5177c61d3bf61751634200d7e752e2a8c0b9926cf76aedd853cc2b0c1dd",
+      "seconds": 0.9087717090005754,
+      "status": "completed"
+    },
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 80
+        },
+        "20261116": {
+          "matched": 73
+        },
+        "20261117": {
+          "matched": 77
+        }
+      },
+      "mode": "pilot",
+      "opponent": "always_raise",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            146.34407792233262,
+            26869.28092207767
+          ],
+          "cluster_se_mbb_per_hand": 6817.20099321785,
+          "mbb_per_hand": 13507.8125,
+          "mean_chips_per_hand": 27.015625,
+          "paired_to_unpaired_variance_ratio": 0.6628382706089614,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            5356.840447608791,
+            28002.53455239121
+          ],
+          "cluster_se_mbb_per_hand": 5777.068936829649,
+          "mbb_per_hand": 16679.6875,
+          "mean_chips_per_hand": 33.359375,
+          "paired_to_unpaired_variance_ratio": 0.6283895940563012,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -6047.083065188248,
+            16906.458065188246
+          ],
+          "cluster_se_mbb_per_hand": 5855.602784395813,
+          "mbb_per_hand": 5429.6875,
+          "mean_chips_per_hand": 10.859375,
+          "paired_to_unpaired_variance_ratio": 0.7738800338204281,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          2583.3328094188914,
+          21161.458857247773
+        ],
+        "cluster_se_mbb_per_hand": 4739.404957022368,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -36143.7437326627,
+          59888.53539932937
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": 11872.395833333332,
+        "mean_chips_per_hand": 23.744791666666664,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.5752869360432925,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "always_raise-hands.csv.gz",
+      "raw_sha256": "1ed40f80eed47e4d8f7bb7de46f3da1b54522975107be575ba5e8b0bf16ba766",
+      "seconds": 0.6323930839971581,
+      "status": "completed"
+    },
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 46,
+          "unseen": 2
+        },
+        "20261116": {
+          "matched": 43,
+          "unseen": 4
+        },
+        "20261117": {
+          "matched": 40,
+          "unseen": 2
+        }
+      },
+      "mode": "pilot",
+      "opponent": "tight_aggressive",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            -8734.944526062702,
+            875.5695260627024
+          ],
+          "cluster_se_mbb_per_hand": 2451.7067986789343,
+          "mbb_per_hand": -3929.6875,
+          "mean_chips_per_hand": -7.859375,
+          "paired_to_unpaired_variance_ratio": 0.9800216937774684,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -916.1262087579694,
+            7556.751208757969
+          ],
+          "cluster_se_mbb_per_hand": 2161.4880386448212,
+          "mbb_per_hand": 3320.3125,
+          "mean_chips_per_hand": 6.640625,
+          "paired_to_unpaired_variance_ratio": 0.9589636154887862,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -2560.030507356192,
+            9606.905507356192
+          ],
+          "cluster_se_mbb_per_hand": 3103.8672421237397,
+          "mbb_per_hand": 3523.4375,
+          "mean_chips_per_hand": 7.046875,
+          "paired_to_unpaired_variance_ratio": 0.9724641497547049,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          -1753.284965328322,
+          3695.993298661655
+        ],
+        "cluster_se_mbb_per_hand": 1390.1475504073521,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -47044.78539932937,
+          48987.4937326627
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": 971.3541666666666,
+        "mean_chips_per_hand": 1.9427083333333333,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.6269421329355356,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "tight_aggressive-hands.csv.gz",
+      "raw_sha256": "64469aa266aceb95d5afca1151ae5fe9bfd7c8299d6be8356f757ec5f2a443f3",
+      "seconds": 0.5871648749998712,
+      "status": "completed"
+    },
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 110,
+          "unaveraged": 1,
+          "unseen": 9
+        },
+        "20261116": {
+          "matched": 107,
+          "unseen": 9
+        },
+        "20261117": {
+          "matched": 100,
+          "unaveraged": 1,
+          "unseen": 14
+        }
+      },
+      "mode": "pilot",
+      "opponent": "equity",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            -11333.787139776394,
+            6302.537139776394
+          ],
+          "cluster_se_mbb_per_hand": 4499.1449890574195,
+          "mbb_per_hand": -2515.625,
+          "mean_chips_per_hand": -5.03125,
+          "paired_to_unpaired_variance_ratio": 0.5323538701636547,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -20792.88200869423,
+            -3222.7429913057736
+          ],
+          "cluster_se_mbb_per_hand": 4482.260683354254,
+          "mbb_per_hand": -12007.8125,
+          "mean_chips_per_hand": -24.015625,
+          "paired_to_unpaired_variance_ratio": 0.618509046855114,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -14158.083340916193,
+            4361.208340916192
+          ],
+          "cluster_se_mbb_per_hand": 4724.395914391847,
+          "mbb_per_hand": -4898.4375,
+          "mean_chips_per_hand": -9.796875,
+          "paired_to_unpaired_variance_ratio": 0.7694222987576914,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          -12963.68108755761,
+          15.764420890945985
+        ],
+        "cluster_se_mbb_per_hand": 3311.1438809153565,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -54490.09789932937,
+          41542.1812326627
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": -6473.958333333332,
+        "mean_chips_per_hand": -12.947916666666664,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.4950779320996496,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "equity-hands.csv.gz",
+      "raw_sha256": "6298a5e0485a86496fd291a1b7b60456c65e24b3da138e75b92372eb59617e3e",
+      "seconds": 0.8907557499987888,
+      "status": "completed"
+    },
+    {
+      "completed_deals": 32,
+      "failure": null,
+      "hands": 192,
+      "lookup_counts_by_seed": {
+        "20261115": {
+          "matched": 65,
+          "unseen": 2
+        },
+        "20261116": {
+          "matched": 77,
+          "unseen": 4
+        },
+        "20261117": {
+          "matched": 76,
+          "unseen": 1
+        }
+      },
+      "mode": "pilot",
+      "opponent": "openspiel_ismcts",
+      "per_seed": [
+        {
+          "clt_interval_mbb_per_hand": [
+            -11670.016113503978,
+            5748.141113503978
+          ],
+          "cluster_se_mbb_per_hand": 4443.489106024439,
+          "mbb_per_hand": -2960.9375,
+          "mean_chips_per_hand": -5.921875,
+          "paired_to_unpaired_variance_ratio": 0.9838643391082768,
+          "seed": 20261115
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            -10349.998661838807,
+            10959.373661838807
+          ],
+          "cluster_se_mbb_per_hand": 5436.164259079053,
+          "mbb_per_hand": 304.6875,
+          "mean_chips_per_hand": 0.609375,
+          "paired_to_unpaired_variance_ratio": 0.9982585450111645,
+          "seed": 20261116
+        },
+        {
+          "clt_interval_mbb_per_hand": [
+            435.8793264617731,
+            21501.620673538226
+          ],
+          "cluster_se_mbb_per_hand": 5374.012357686249,
+          "mbb_per_hand": 10968.75,
+          "mean_chips_per_hand": 21.9375,
+          "paired_to_unpaired_variance_ratio": 0.9371605507447567,
+          "seed": 20261117
+        }
+      ],
+      "primary_inference": {
+        "alpha": 0.05,
+        "clt_interval_mbb_per_hand": [
+          -3534.1262739145773,
+          9075.792940581245
+        ],
+        "cluster_se_mbb_per_hand": 3216.8752369842664,
+        "empirical_zero_variance": false,
+        "family_adjusted_two_sided_p_bound": 1.0,
+        "family_size": 6,
+        "hoeffding_interval_mbb_per_hand": [
+          -45245.3062326627,
+          50786.97289932937
+        ],
+        "independent_deals": 32,
+        "log_two_sided_p_bound": 0.0,
+        "mbb_per_hand": 2770.8333333333335,
+        "mean_chips_per_hand": 5.541666666666667,
+        "nonzero_mean_significant": false,
+        "paired_to_unpaired_variance_ratio": 0.7803836893599565,
+        "positive_mean_significant": false,
+        "two_sided_p_bound": 1.0,
+        "units": "milli-big-blinds per hand; each row is a duplicate-deal cluster"
+      },
+      "projected_decisions": 0,
+      "raw_file": "openspiel_ismcts-hands.csv.gz",
+      "raw_sha256": "4fc3ba72d5364aac559f352106d2c853712f3451957b377bc02fb6b476a326f9",
+      "seconds": 9.363028915999166,
+      "status": "completed"
+    }
+  ],
+  "schema_version": 1,
+  "seconds": 19.663031500000216,
+  "source": {
+    "dirty": false,
+    "git_commit": "9460226fd243f3f233f29db0122c4f3e4c8d3eb1",
+    "git_status": [],
+    "sha256": {
+      "configs/match-evaluation.json": "d56da674c15b8fe8bf982d8427303c7314b7cd23408be86d3953aba2b952e5b1",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/evaluate_agents.py": "c97ed0bfb1daeff6f275437fa040eaf9c9aa88c8dad8306dc6640ebaf1691067",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/reference.py": "ba174f3d93ce27f3de28edd61d1a5fdaac4a002aba5f749e35bf7cb6fb104c46",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/spots.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+    }
+  },
+  "status": "completed",
+  "training_report_sha256": "7807fd3f04afc49add48e323abad674272f66169ed198a9f82a21486b0985735"
+}
