@@ -217,3 +217,13 @@ floating error, not sampled win rates. Game payoff is net chips relative to the
 original hand start; fixed pre-root contributions cancel in strategy EV gaps.
 Reference exploitability is explicitly measured at the achieved iteration count;
 nonconverged targets must remain visible, not be called exact GTO.
+
+The reference-only cost pilot reached the 0.001-pot exploitability target on all
+five trees within the declared schedule. Before main agent comparisons, require
+**two consecutive scheduled checkpoints** below that same target and retain their
+policy difference as a reference-stability diagnostic. This strengthens the
+convergence control; the pilot inspected reference convergence only. Profiling
+policy lookup identified repeated public-history reconciliation as its dominant
+cost. A tested prepared-context API reuses that deterministic work across frozen
+policies with identical betting rules and mapping scheme; private observations
+and model-specific abstraction/strategy lookup retain their original semantics.

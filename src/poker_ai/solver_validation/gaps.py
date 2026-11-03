@@ -10,13 +10,15 @@ from poker_ai.toy.tree import FloatArray
 
 def normalized_weights(weights: FloatArray, count: int) -> FloatArray:
     if (
-        weights.shape != (count,)
+        count < 1
+        or weights.shape != (count,)
         or not np.all(np.isfinite(weights))
         or np.any(weights < 0)
-        or not float(weights.sum()) > 0
+        or not np.any(weights > 0)
     ):
         raise ValueError("reach weights need finite nonnegative positive total mass")
-    return np.asarray(weights / weights.sum(), dtype=np.float64)
+    scaled = weights / weights.max()
+    return np.asarray(scaled / scaled.sum(), dtype=np.float64)
 
 
 def validate_probabilities(probabilities: FloatArray, legal: NDArray[np.bool_]) -> None:

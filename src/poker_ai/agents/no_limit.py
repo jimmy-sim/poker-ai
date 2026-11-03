@@ -57,6 +57,14 @@ class Decision:
         return self.actions[int(rng.choice(len(self.actions), p=self.probabilities))]
 
 
+@dataclass(frozen=True)
+class InferenceContext:
+    observation: Observation
+    shadow: ShadowResult
+    rules: NoLimitRules
+    scheme: Scheme
+
+
 class OwnNoLimitAgent:
     def __init__(
         self,
@@ -132,13 +140,14 @@ class OwnNoLimitAgent:
             rows[key] = PolicyRow(row.actions, probabilities)
         return cls(model, rules, rows, scheme=scheme)
 
-    def distribution(
+    def prepare(
         self,
         observation: Observation,
         *,
         episode_seed: int,
         actual_blinds: tuple[int, int] = (1, 2),
-    ) -> Decision:
+    ) -> InferenceContext:
+        """Reuse public reconciliation across policies with identical rules."""
         shadow = reconcile(
             observation,
             self.rules,
@@ -146,6 +155,27 @@ class OwnNoLimitAgent:
             scheme=self.scheme,
             actual_blinds=actual_blinds,
         )
+        return InferenceContext(observation, shadow, self.rules, self.scheme)
+
+    def distribution(
+        self,
+        observation: Observation,
+        *,
+        episode_seed: int,
+        actual_blinds: tuple[int, int] = (1, 2),
+    ) -> Decision:
+        return self.distribution_prepared(
+            self.prepare(
+                observation, episode_seed=episode_seed, actual_blinds=actual_blinds
+            )
+        )
+
+    def distribution_prepared(self, context: InferenceContext) -> Decision:
+        if context.rules != self.rules or context.scheme != self.scheme:
+            raise ValueError(
+                "prepared public context has different betting rules or mapping scheme"
+            )
+        observation, shadow = context.observation, context.shadow
         _, actual_actions = legal_actions(observation, self.rules)
         fallback = (1 / len(actual_actions),) * len(actual_actions)
         if shadow.observation is None:

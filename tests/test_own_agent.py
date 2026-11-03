@@ -127,3 +127,34 @@ def test_reference_strategy_json_is_not_an_own_agent(tmp_path: Path) -> None:
     path.write_text('{"strategy":{"root":[0.2,0.8]}}')
     with pytest.raises(ValueError, match="own MCCFR"):
         OwnNoLimitAgent.load(path, tmp_path / "unused.json")
+
+
+def test_prepared_context_is_identical_and_checks_betting_rules(
+    card_model_factory: Callable[[Kind], CardAbstraction],
+) -> None:
+    model = card_model_factory("potential")
+    rules = NoLimitRules()
+    state = sample_no_limit(rules, Generator(PCG64(8)))
+    agent = OwnNoLimitAgent(model, rules, {})
+    obs = observation(state)
+    context = agent.prepare(obs, episode_seed=3)
+    assert agent.distribution_prepared(context) == agent.distribution(
+        obs, episode_seed=3
+    )
+    other = OwnNoLimitAgent(model, NoLimitRules(stacks=(100, 100)), {})
+    with pytest.raises(ValueError, match="different betting rules"):
+        other.distribution_prepared(context)
+
+
+def test_prepared_context_rejects_a_different_mapping_scheme(
+    card_model_factory: Callable[[Kind], CardAbstraction],
+) -> None:
+    model = card_model_factory("potential")
+    rules = NoLimitRules()
+    state = sample_no_limit(rules, Generator(PCG64(8)))
+    original = OwnNoLimitAgent(model, rules, {})
+    other = OwnNoLimitAgent(model, rules, {}, scheme="nearest")
+    with pytest.raises(ValueError, match="mapping scheme"):
+        other.distribution_prepared(
+            original.prepare(observation(state), episode_seed=3)
+        )
