@@ -70,7 +70,7 @@ than the last iterate, is the reported output.
 | Linear CFR | Add t times increments | t |
 | Discounted CFR | Add increments, then discount positive regrets by t^1.5/(1+t^1.5), negative by 1/2 | t^2 |
 
-There is no averaging delay or pruning. Linear's weighted regret sum is equivalent
+There is no averaging delay or pruning. Linear uses the recurrence `(R+delta)*t/(t+1)` in code. Its weighted regret sum is equivalent
 up to a positive scalar to discounting the cumulative sum by t/(t+1) after each
 iteration, as in the reference. Discounted parameters are alpha=1.5, beta=0,
 gamma=2; multiplication occurs after the target-player update. These conventions
@@ -114,3 +114,18 @@ Source revision/dirty status, config, dependency hashes and environment are save
 Plots have logarithmic iteration/exploitability axes. Small sampled checkpoints
 cannot establish monotone convergence between them. These are exact full-tree
 values up to floating-point error, with no Monte Carlo confidence intervals.
+
+## Numerical diagnosis: Linear CFR accumulation
+
+The first full comparison failed its original Leduc/Linear agreement gates at
+100, 500 and 1,000 iterations, despite satisfying final convergence limits. The
+complete failed report, plots and table are retained in
+`results/diagnostics/cfr-weighted-sum/`, generated from clean `ea0e998`.
+
+The initial implementation accumulated raw t-weighted regrets. In exact
+arithmetic, dividing that sum by t+1 yields the reference's discounted recurrence.
+Floating-point operation order differs; regret matching and later trajectories
+can amplify the difference. Other variants matched, and independent best response
+checks passed. The fix uses the equivalent recurrence, including operation order,
+with the original comparison tolerances unchanged. No strategy output is imported
+or used for training. A fresh committed-source rerun is required before advancing.

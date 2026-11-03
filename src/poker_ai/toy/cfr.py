@@ -19,7 +19,8 @@ class CFR:
     Alternate target 0 then 1, refreshing policy after each target update.
 
     Vanilla uses unit weights; CFR+ clips accumulated regrets and averages with
-    weight t; Linear uses weight t for regrets and averaging; Discounted uses
+    weight t; Linear uses the equivalent regret recurrence (R+delta)*t/(t+1)
+    and averaging weight t; Discounted uses
     alpha=1.5,beta=0,gamma=2, multiplying updated positive/negative regrets by
     t^alpha/(1+t^alpha) and t^beta/(1+t^beta), and averaging with weight t^gamma.
     No averaging delay. One iteration comprises both player traversals.
@@ -56,9 +57,7 @@ class CFR:
             advantage *= self.tree.valid[nodes] * (1 if target == 0 else -1)
             counterfactual = self.tree.chance_reach[nodes] * reach[nodes, 1 - target]
             delta = counterfactual[:, None] * advantage
-            np.add.at(
-                self.regrets, infos, delta * (t if self.variant == "linear" else 1)
-            )
+            np.add.at(self.regrets, infos, delta)
             weight = (
                 t**2
                 if self.variant == "discounted"
@@ -72,6 +71,11 @@ class CFR:
             owned = self.tree.owners == target
             if self.variant == "cfr_plus":
                 self.regrets[owned] = np.maximum(self.regrets[owned], 0)
+            elif self.variant == "linear":
+                # Positive rescaling preserves regret matching. This recurrence
+                # matches the reference arithmetic, avoiding amplified rounding
+                # differences in the equivalent raw t-weighted regret sum.
+                self.regrets[owned] *= t / (t + 1)
             elif self.variant == "discounted":
                 regret = self.regrets[owned]
                 self.regrets[owned] = regret * np.where(
