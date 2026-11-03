@@ -121,8 +121,32 @@ Ruff lint/format checks, and strict typing of implementation, tests, and scripts
 The initial evaluator test run failed because the module did not exist; tests
 were added first. Hosted Ubuntu CI has not been run for this step.
 
-The exhaustive run's observed results will be recorded here only after execution
-from a committed source revision.
+The exhaustive run **passed** on clean source revision `ff3302eb63e95874e242f14540f1c1325a6c4db4`.
+All **2,598,960** physical five-card hands agree with Treys on equality classes
+and rank ordering, covering **7,462** distinct ranks with zero failures.
+The complete category census also matches the independent combinatorial formulas.
+
+| Category | Observed physical hands | Combinatorial expectation |
+| --- | ---: | ---: |
+| High Card | 1,302,540 | 1,302,540 |
+| One Pair | 1,098,240 | 1,098,240 |
+| Two Pair | 123,552 | 123,552 |
+| Three Of A Kind | 54,912 | 54,912 |
+| Straight | 10,200 | 10,200 |
+| Flush | 5,108 | 5,108 |
+| Full House | 3,744 | 3,744 |
+| Four Of A Kind | 624 | 624 |
+| Straight Flush | 40 | 40 |
+
+The [raw report](../results/five-card-exhaustive.json) records exact source/config
+hashes, input digest, environment, and measured validation time. The report's
+revision precedes the documentation/results commit so that its source tree was
+clean when validation started. Reproduce its exact code with that revision and
+`make validate-five`; a new run will have its own provenance/timing fields.
+
+This establishes five-card reference agreement under the tested high-poker rules.
+It does not establish six/seven-card selection, equity estimates, legal betting,
+chip payouts, or playing strength. Those retain their own Phase 1 acceptance gates.
 
 ## Interview questions
 

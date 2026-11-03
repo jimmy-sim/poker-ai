@@ -50,8 +50,16 @@ implicitly importing source from the working directory.
 
 The Phase 0 smoke test checks distribution installation and inclusion of the
 `py.typed` marker. It makes no claim about poker correctness or playing strength.
-Long validation sweeps will use explicit configurations and seeds, with saved
-reports, separately from fast CI checks.
+The five-card evaluator has been checked against Treys over **2,598,960 hands**,
+with **zero disagreements** across all **7,462 distinct ranks**. The category
+census also matches independent combinatorial formulas. Reproduce with
+`make validate-five`; see [the protocol](docs/phase1-five-card.md) and
+[raw validation report](results/five-card-exhaustive.json). Full enumeration is
+deterministic and uses no RNG. Six/seven-card evaluation and engine validation
+remain subsequent steps.
+
+Long validation sweeps use explicit configurations/seeds or deterministic complete
+enumeration, with saved reports, separately from fast CI checks.
 
 See [the roadmap](docs/roadmap.md), [design decisions](docs/decisions.md), and
 [contributor instructions](AGENTS.md). Local setup verification is recorded in

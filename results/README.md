@@ -1,9 +1,13 @@
 # Verified results
 
-No poker results have been produced yet. Add reviewed metrics and figures only
-when a repository script can reproduce them. Record the script invocation,
-configuration, seeds, source revision/dirty status, lockfile hash, runtime,
-hardware, raw inputs/metrics, and statistical conventions.
+`five-card-exhaustive.json` records the complete five-card reference check against
+Treys, including raw counts, checks, source revision/dirty status, hashes, environment,
+input digest, and runtime. Reproduce with `make validate-five`; see
+[the protocol and interpretation](../docs/phase1-five-card.md).
 
-`results/runs/` is ignored for generated artifacts. Promote small reviewed evidence
+No playing-strength results have been produced yet. Every future published metric
+must trace to a rerunnable script and explicit config/seeds or complete enumeration.
+Record estimator conventions and uncertainty for statistical experiments.
+
+`results/runs/` is ignored for exploratory runs. Promote small reviewed evidence
 to tracked paths deliberately; document storage and retrieval for large artifacts.
