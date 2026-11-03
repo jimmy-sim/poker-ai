@@ -1,0 +1,194 @@
+{
+  "config": {
+    "cache_size": 8192,
+    "checkpoints": [
+      1000
+    ],
+    "epsilon": 0.6,
+    "game": "no_limit",
+    "max_nodes_per_pass": 20000,
+    "max_training_seconds": 600,
+    "methods": [
+      "external"
+    ],
+    "models": [
+      "results/card-models/potential-8.json"
+    ],
+    "purpose": "own-only global self-play at 200bb for a separate public Slumbot protocol pilot; no reference or server outputs in training",
+    "rules": {
+      "button": 1,
+      "fractions": [
+        [
+          1,
+          1
+        ]
+      ],
+      "include_all_in": true,
+      "include_minimum": false,
+      "stacks": [
+        400,
+        400
+      ]
+    },
+    "seeds": [
+      20261115,
+      20261116,
+      20261117
+    ],
+    "trace_memory": false,
+    "workers": 2
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "cpu_model": "Apple M4",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "failures": [],
+  "implementation_sha256": "1ef933ccc995903a12e12cb13de67ce141c3bbe9e8f931d7d179eed9bb193f15",
+  "limitations": [
+    "No win rate or full-game exploitability measured",
+    "Independent worker tables, not shared asynchronous training",
+    "Tracing/concurrent execution affects timings",
+    "Tracemalloc interval peaks exclude transient checkpoint serialization",
+    "Models load before tracing; RSS is process-lifetime peak",
+    "Entropy and nonuniform row counts are not strength metrics",
+    "Own checkpoints retained in ignored results/runs; command recreates them"
+  ],
+  "model_sha256": {
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55"
+  },
+  "rows": [
+    {
+      "average_entropy_sum_nats": 9190.807449066178,
+      "checkpoint": "/Users/jimmysim/Projects/poker-ai/results/slumbot/runs/own-training/checkpoints/potential-8-f13a72668b-external-20261115-t1000.json",
+      "checkpoint_bytes": 5768565,
+      "checkpoint_sha256": "ca04e89b3eab16b46bf2e0cf983e385559657a2d15aba9daf4b7c823b8fd5154",
+      "feature_cache_entries": 5867,
+      "feature_cache_hits": 73806,
+      "feature_cache_misses": 5867,
+      "information_sets": 16002,
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "nodes_visited": 55333,
+      "nonuniform_average_rows": 626,
+      "process_lifetime_peak_rss_bytes": 85622784,
+      "resumed_from": null,
+      "seed": 20261115,
+      "session_elapsed_seconds": 11.654265832999954,
+      "session_training_seconds": 11.654264916000102,
+      "starting_iteration": 0,
+      "traced_current_bytes": null,
+      "traced_peak_bytes": null
+    },
+    {
+      "average_entropy_sum_nats": 12053.771919954366,
+      "checkpoint": "/Users/jimmysim/Projects/poker-ai/results/slumbot/runs/own-training/checkpoints/potential-8-f13a72668b-external-20261116-t1000.json",
+      "checkpoint_bytes": 7788939,
+      "checkpoint_sha256": "8395676aa75bf8247c16aeb58f5cbae68bc33d293672b4a9b2922aeb793f382c",
+      "feature_cache_entries": 7418,
+      "feature_cache_hits": 101744,
+      "feature_cache_misses": 7418,
+      "information_sets": 21399,
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "nodes_visited": 75208,
+      "nonuniform_average_rows": 796,
+      "process_lifetime_peak_rss_bytes": 99762176,
+      "resumed_from": null,
+      "seed": 20261116,
+      "session_elapsed_seconds": 14.965087917000346,
+      "session_training_seconds": 14.965086917000008,
+      "starting_iteration": 0,
+      "traced_current_bytes": null,
+      "traced_peak_bytes": null
+    },
+    {
+      "average_entropy_sum_nats": 11131.474279754168,
+      "checkpoint": "/Users/jimmysim/Projects/poker-ai/results/slumbot/runs/own-training/checkpoints/potential-8-f13a72668b-external-20261117-t1000.json",
+      "checkpoint_bytes": 6994540,
+      "checkpoint_sha256": "896992bdf15d58354bbfd2a00be04901f0ef0665d3797282b9b229e07db87408",
+      "feature_cache_entries": 7245,
+      "feature_cache_hits": 89071,
+      "feature_cache_misses": 7245,
+      "information_sets": 19447,
+      "iteration": 1000,
+      "method": "external",
+      "model": "results/card-models/potential-8.json",
+      "nodes_visited": 68221,
+      "nonuniform_average_rows": 722,
+      "process_lifetime_peak_rss_bytes": 93880320,
+      "resumed_from": null,
+      "seed": 20261117,
+      "session_elapsed_seconds": 14.234508958998049,
+      "session_training_seconds": 14.234508083001856,
+      "starting_iteration": 0,
+      "traced_current_bytes": null,
+      "traced_peak_bytes": null
+    }
+  ],
+  "schema_version": 1,
+  "seconds": 26.27615591599897,
+  "source": {
+    "dirty": false,
+    "git_commit": "96cbe1f04b9b63dbd86e90bfa201a36e4babc48a",
+    "git_status": [],
+    "sha256": {
+      "configs/slumbot-own-training.json": "68be57d3cf04ec711395ce1c180f781251c6b9d2ffa1845700c36965d5a0a97c",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/train_holdem.py": "420051127998538a886d743b0490f6693f464de4445b87ce9258ad4cbbd22355",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/reference.py": "ba174f3d93ce27f3de28edd61d1a5fdaac4a002aba5f749e35bf7cb6fb104c46",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/spots.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+    }
+  },
+  "status": "completed",
+  "worker_reuse": "one spawned process per run"
+}
