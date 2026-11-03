@@ -48,3 +48,69 @@ and [Leduc implementation](https://github.com/google-deepmind/open_spiel/tree/v2
 
 Implementation and experimental results follow in tested commits; no solver
 convergence result is claimed at this initial rules checkpoint.
+
+## Regret, averaging and exploitability conventions
+
+One iteration updates player 0 then player 1. Each player traversal freezes the
+joint current strategy, aggregates across hidden histories in each information
+set, then updates regrets and refreshes policy. Regret matching normalizes the
+positive cumulative regrets; if none are positive it uses uniform legal actions.
+
+For player i, the information-set action regret increment is
+`sum_h chance(h) * opponent_reach(h) * (v_i(h,a) - v_i(h))`.
+The player's own reach is excluded from this counterfactual weight. Strategy
+averaging instead weights by own realization reach. This retains decisions at
+information sets the opponent might currently avoid. Average strategy, rather
+than the last iterate, is the reported output.
+
+| Variant | Regret update | Strategy averaging weight at iteration t |
+| --- | --- | --- |
+| CFR | Add counterfactual increments | 1 |
+| CFR+ | Add then clip aggregated cumulative regrets at zero | t |
+| Linear CFR | Add t times increments | t |
+| Discounted CFR | Add increments, then discount positive regrets by t^1.5/(1+t^1.5), negative by 1/2 | t^2 |
+
+There is no averaging delay or pruning. Linear's weighted regret sum is equivalent
+up to a positive scalar to discounting the cumulative sum by t/(t+1) after each
+iteration, as in the reference. Discounted parameters are alpha=1.5, beta=0,
+gamma=2; multiplication occurs after the target-player update. These conventions
+matter when comparing identical iteration counts.
+
+Sources: [original CFR](https://poker.cs.ualberta.ca/publications/NIPS07-cfr.pdf),
+[CFR+](https://poker.cs.ualberta.ca/publications/2015-ijcai-cfrplus.pdf), and
+[discounted/linear CFR](https://arxiv.org/abs/1809.04040).
+The OpenSpiel Python discounted implementation includes a warning that its paper
+results have not been verified by the OpenSpiel team; agreement is an independent
+implementation check, not a replication of every claim in that paper.
+
+Exact best response chooses one action per information set after summing
+chance/opponent-reach-weighted continuation values across hidden histories.
+The tree asserts equal information-set depth; these games have perfect recall.
+No responder maximizes independently after observing its opponent's private card.
+
+`NashConv = (BR_0-v_0)+(BR_1-v_1) = BR_0+BR_1` because the game is zero-sum.
+Reported exploitability is `NashConv/2`, in ante chips per hand. The first-player
+Kuhn value is -1/18; the profile's value alone does not establish equilibrium.
+Unit tests check a known equilibrium and compare best response against all pure
+strategies in Kuhn, independently of the optimized tree calculations.
+
+## Predeclared experiment
+
+`configs/cfr-validation.json` fixes checkpoints, algorithm order, comparison
+thresholds, final convergence limits and independent best-response policy seeds.
+Training has no sampling and records seed=null. Random BR sanity checks use
+explicit independent PCG64 seeds; they do not turn deterministic convergence into
+statistical estimates. The pilot estimated roughly 0.04–0.05 seconds per Leduc
+iteration including the reference, comfortably below an hours-long budget.
+
+`make validate-cfr` reproduces a JSON report, CSV table, and PNG/SVG convergence
+plots. Checks include exhaustive rules, matched average-policy mean L1 distance
+(unweighted mean across information sets of summed absolute action differences),
+matched exploitability, independent BR evaluation of the mapped own strategy, and
+final Kuhn value/convergence limits. It exits nonzero if any gate fails. Iteration
+counts and wall times are both recorded; equal iterations do not mean equal time.
+Source revision/dirty status, config, dependency hashes and environment are saved.
+
+Plots have logarithmic iteration/exploitability axes. Small sampled checkpoints
+cannot establish monotone convergence between them. These are exact full-tree
+values up to floating-point error, with no Monte Carlo confidence intervals.

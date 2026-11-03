@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr
 
 setup:
 	$(UV) sync --locked --dev
@@ -45,3 +45,9 @@ validate-engine:
 	$(UV) run --locked --extra engine-validation python scripts/validate_engine.py \
 		--config configs/engine-validation.json \
 		--output results/engine-validation.json
+
+# Original Phase 2 toy-game acceptance, separate from gated Phase 3.5.
+validate-cfr:
+	$(UV) run --locked --extra solver-validation --extra research python scripts/validate_cfr.py \
+		--config configs/cfr-validation.json \
+		--output results/cfr-validation.json
