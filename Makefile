@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot preflight-slumbot benchmark-slumbot
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot preflight-slumbot benchmark-slumbot analyze-extensions
 
 setup:
 	$(UV) sync --locked --dev
@@ -117,3 +117,7 @@ preflight-slumbot:
 benchmark-slumbot: preflight-slumbot
 	$(UV) run --locked python scripts/benchmark_slumbot.py \
 		--config configs/slumbot-pilot.json --live
+
+# Offline own-only learning, exact audits, conditional risk and all tables/figures.
+analyze-extensions:
+	$(UV) run --locked --extra research python scripts/analyze_extensions.py

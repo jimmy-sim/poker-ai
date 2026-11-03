@@ -1,9 +1,9 @@
 # Phase 5 — Bayesian opponents and conditional bankroll risk
 
 The user selected these two extensions on November 2, 2026. This definition of
- done and the versioned configs precede implementation and all extension results.
+done and the versioned configs precede implementation and all extension results.
 All learning uses own simulated policies; reference/benchmark outputs are excluded.
-No results exist at this planning commit.
+At preregistration, no extension results existed.
 
 ## Acceptance criteria
 
@@ -68,3 +68,97 @@ Read November 2, 2026, as mathematical background; no code/data copied:
 The exact-game scope makes the inference and safety arithmetic fully auditable.
 It does not attach an unvalidated model or bankroll recommendation to the sparse
 Hold'em prototype. Larger-game adaptation remains future work after these checks.
+
+## Implementation and mathematical conventions
+
+A categorical prior covers four explicitly scripted, full-support own policies.
+The simulator censors each completed hand before it reaches the learner. A record
+has observer seat/card, board and betting histories; no opponent card or payout.
+For a hypothesis h, sum chance(z) × opponent-own-reach_h(z) over every compatible
+terminal z. Observer action probabilities and own-card probability are common
+factors and cancel in posterior odds. Folded and showdown hands use the same
+censoring rule. Log-space updates avoid numerical underflow; impossible evidence
+raises an error rather than silently resetting the prior.
+
+The posterior is over a **single stationary type for the entire match**. At a
+specific information set, its behavioral prediction reweights types by their
+own action reach. For a single future hand this is the root-mixture conversion
+in `policies.py`; it includes within-hand action evidence without multiplying the
+same evidence twice. After the hand, the complete transcript updates the prior
+once. A finite stationary family is intentionally misspecified for the local
+calling/value mixture and for a value-to-aggressive switch after hand 500.
+No forgetting/change-point detector is added after seeing those outcomes.
+
+Own CFR+ blueprints train for the predeclared counts, without reference output.
+Collection uses the guarded response frozen between checkpoints. Predictive NLL
+is an exact expectation over the same blueprint-generated public-transcript law
+at every checkpoint, conditional on own card. Own actions remain in that law for
+normalization; their entropy is common to prior/posterior comparisons. At the
+switch checkpoint 500, evaluation uses the new type while observations still
+come from the previous type. This deliberately exposes adaptation lag.
+
+Exact best response chooses one action per information set after summing over
+hidden states. A worst-case security value is not a realized per-hand floor or
+NashConv/2. Reported EV gains hold against the specified scripted opponent only.
+The exploitation fraction is chosen using the lower bound in the acceptance
+criteria, then checked again against an exact opponent best response. The bound
+can be conservative; unrestricted response is retained as a diagnostic tradeoff.
+
+Risk uses net return X in [-1,1] per maximum-loss unit. Optimize E[ln(1+fX)] for
+0<=f<=0.95 by the monotone derivative E[X/(1+fX)]. Nonpositive mean selects f=0.
+Synthetic p=.55 sizing is held fixed while true p and return persistence vary.
+The sticky Markov process retains its previous outcome with probability rho,
+otherwise independently resamples; stationary marginal returns stay unchanged.
+Expected log growth per step stays the same while drawdown probabilities change.
+Independent **paths**, not steps or cells, are the interval unit. Fraction cells
+reuse paths; they cannot be pooled as independent observations.
+
+The toy risk input is selected in advance: first history seed, seat zero,
+aggressive opponent, final checkpoint, both games and all three policies. Exact
+terminal returns include optional winner-paid pot rake on **every** pot, including
+folds; ties share the fee. This uncapped toy schedule and continuous bankroll
+scaling are assumptions, not a live poker cash-game model. The own risk-profile
+format/provenance is checked, and a reference-strategy format is rejected.
+
+For fixed-stake ruin controls, exact finite-horizon absorbing-chain probabilities
+are compared with Monte Carlo at family alpha .001 (Hoeffding over three controls).
+Eventual ruin is reported separately; an unabsorbed path at the horizon is not a
+ruin. All Monte Carlo event probabilities include path-level Wilson 95% intervals,
+including zero observed events. Marginal expected terminal log wealth is also
+checked with a bounded independent-path Hoeffding tolerance at family alpha .001,
+using the full path range; this remains valid for dependent steps within a path.
+
+## Bayesian interview questions
+
+**Why can't I count observed raises as independent samples of an opponent's type?**
+Their chance to reach a node depends on earlier actions and hidden cards.
+I sum over compatible deals and the type's full action likelihood, then update
+once per completed transcript. Root mixtures use realization reach at each node.
+
+**What is actually safe about the exploitation?**
+Only a specified expected degradation relative to the own blueprint's worst-case
+value is certified in complete Kuhn/Leduc. An episode-level mixture gives a
+concavity bound, checked by exact best response. It can sacrifice up to 0.1 chip
+per hand, and it gives no safety guarantee for the abstracted Hold'em agent.
+
+**Why can more data hurt predictions?**
+A stationary finite family can confidently choose the wrong approximation to a
+misspecified or changing opponent. I predeclare these stress cases and keep their
+negative prediction gains; posterior confidence is conditional on the model.
+
+## Bankroll interview questions
+
+**Why doesn't optimal Kelly sizing guarantee a good bankroll path?**
+It optimizes expected log growth under an assumed law. Finite-horizon losses,
+drawdowns, parameter uncertainty and return dependence remain. I vary these
+assumptions and report threshold probabilities rather than recommending stakes.
+
+**How do fractional threshold crossing and risk of ruin differ?**
+With f<1 and X>=-1, every wealth multiplier is positive, so finite-horizon literal
+bankruptcy cannot occur. A 20%-of-initial threshold is a different event.
+Fixed-unit stakes can hit zero; their absorbing walk has separate exact controls.
+
+**Why use independent paths for intervals?**
+Returns within a sticky path are correlated, and fraction comparisons reuse
+randomness. Each cell's complete paths are independent. I compute event intervals
+at that level and never multiply the effective sample size by steps or cells.
