@@ -193,3 +193,29 @@ Conditional bankroll study: **120 cells**, 10,000 independent paths per cell, 1,
 
 `make analyze-extensions` reproduces both studies, posterior audit, tables and figures offline. No external solver or public benchmark outputs enter learning. See [methods, limitations and interview answers](phase5-extensions.md).
 <!-- EXTENSIONS_END -->
+
+## Measured-return follow-up, specified before its simulation
+
+The original risk scope also calls for measured returns. The separate versioned
+`configs/empirical-bankroll.json` specifies **all five own scripted baselines**,
+with no favorable-opponent selection. It excludes OpenSpiel and Slumbot outcomes.
+Use the original 1,000 shared-deck blocks per opponent, retaining all three frozen
+own policies and both seats inside each six-hand block. Resampling blocks retains
+within-deal dependence; simulated blocks are draws from this fitted empirical law,
+not a fresh independent validation of the mean or the original agent's strength.
+
+Report the measured cluster mean/variance, half/full plug-in Kelly and a separate
+confidence-robust fraction. For each opponent, a one-sided Bonferroni–Hoeffding
+lower mean uses alpha .05 over five opponents and cluster support [-200,200]
+chips per hand. Under normalized support [-1,1] and mean at least m, concavity
+bounds log growth below by the endpoint binary law with p=(1+m)/2. Optimize that
+worst law; when the lower mean is nonpositive the fraction is zero. This is a
+conditional confidence construction, not a recommendation or an inferred edge.
+
+Fees of 0/5/10 bb per 100 hands are **illustrative fixed-cost sensitivities**.
+They do not claim to reproduce a real site's pot-dependent rake schedule.
+Original gross returns, fee-adjusted means, uncertainty and adverse matchups all
+remain visible. Since no positive edge passed the primary evaluation test even
+before fees, a positive fitted return after these costs cannot establish that an
+edge survives realistic rake. Do not infer live poker profitability from these
+simulations. The toy pot-rake study is a separate specified fee experiment.

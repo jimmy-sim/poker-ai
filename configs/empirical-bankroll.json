@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "match_report": "results/evaluation/matches.json",
+  "opponents": ["random", "always_call", "always_raise", "tight_aggressive", "equity"],
+  "seed": 20261207,
+  "paths": 10000,
+  "horizon_blocks": 1000,
+  "flat_fee_bb_per_100_hands": [0.0, 5.0, 10.0],
+  "sizing": ["half_plugin", "full_plugin", "confidence_robust"],
+  "kelly_cap": 0.95,
+  "family_alpha": 0.05,
+  "threshold_initial_wealth_fraction": 0.2,
+  "drawdown_threshold": 0.5,
+  "independent_block": "all three frozen own policies in both seats on one shared deck; resample the entire six-hand block",
+  "fee_model": "constant chips per hand equivalent to the configured bb/100; illustrative sensitivity, not pot rake or an asserted realistic site schedule",
+  "uncertainty": "one-sided five-opponent Bonferroni-Hoeffding lower mean; worst-case bounded-return log growth from that lower mean",
+  "limits": "conditional empirical block-resampling model, not out-of-sample validation; frozen strategies do not adapt to fees; no external reference/benchmark policy or outcomes used for learning"
+}
