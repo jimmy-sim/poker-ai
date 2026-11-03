@@ -1,0 +1,443 @@
+{
+  "checkpoint_sha256": "0d7d2985fad935503928598fe475af17bdfc98303cd942fcd3f7488910046020",
+  "config": {
+    "deal_seeds": [
+      20261122,
+      20261123,
+      20261124
+    ],
+    "hands_per_seed": 10,
+    "iteration": 300,
+    "max_actions": 2000,
+    "method": "external",
+    "model": "results/card-models/potential-8.json",
+    "on_grid_fraction_error_tolerance": 1e-12,
+    "purpose": "own inference identity/legality audit; no competitive strength measurement",
+    "training_report": "results/no-limit-training.json",
+    "training_seed": 20261115
+  },
+  "environment": {
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "limitations": [
+    "small fixed-seed interface audit, not a win-rate experiment",
+    "lookup hit rate depends on the sampled hands/actions",
+    "uniform fallback is legal but not a strategic guarantee",
+    "source fingerprint checks do not replace locked environment reproduction"
+  ],
+  "off_grid_cases": [
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261122,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "nearest",
+      "seed": 20261122,
+      "shadow_failure": null,
+      "status": "unseen",
+      "virtual_pot": 12
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261123,
+      "shadow_failure": null,
+      "status": "unaveraged",
+      "virtual_pot": 12
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "nearest",
+      "seed": 20261123,
+      "shadow_failure": null,
+      "status": "unaveraged",
+      "virtual_pot": 12
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261124,
+      "shadow_failure": null,
+      "status": "unseen",
+      "virtual_pot": 12
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          7
+        ],
+        [
+          "raise_to",
+          14
+        ],
+        [
+          "raise_to",
+          193
+        ]
+      ],
+      "actual_pot": 14,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "raise_to": 7,
+      "scheme": "nearest",
+      "seed": 20261124,
+      "shadow_failure": null,
+      "status": "unseen",
+      "virtual_pot": 12
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261122,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "nearest",
+      "seed": 20261122,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261123,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "nearest",
+      "seed": 20261123,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "pseudo_harmonic",
+      "seed": 20261124,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    },
+    {
+      "actions": [
+        [
+          "check",
+          null
+        ],
+        [
+          "raise_to",
+          50
+        ]
+      ],
+      "actual_pot": 300,
+      "case": "off_grid_after_raise_call",
+      "clipped_raise_mass": null,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "raise_to": 150,
+      "scheme": "nearest",
+      "seed": 20261124,
+      "shadow_failure": "virtual hand terminated while actual hand still acts",
+      "status": "shadow_failure",
+      "virtual_pot": null
+    }
+  ],
+  "on_grid_decisions": 78,
+  "on_grid_hands": 30,
+  "on_grid_input_action_digest": "c91ce83de6ef02ff7a0e36abeb733015906cb44bdab53103cae392051ee14289",
+  "on_grid_lookup_counts": {
+    "matched": 69,
+    "unaveraged": 1,
+    "unseen": 8
+  },
+  "schema_version": 1,
+  "seconds": 0.4199168750019453,
+  "source": {
+    "dirty": false,
+    "git_commit": "4285f5358f964e63736ed2df6b685a0023e79e91",
+    "git_status": [],
+    "sha256": {
+      "configs/agent-interface-validation.json": "31f1f0b86ed69437d448675b52c4d5eeadc5ca87646ae8d34bd258883fc11033",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/verify_own_agent.py": "face3feffa284d00f38937eed7e2e6f86a2b427df78e0c7e59cf9df525989ac7",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "d93a8bff2a1d5c8b4ad9aa1077fcacb62b2e08499cfa3f62bce474d89f5bd4a3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+    }
+  },
+  "status": "passed",
+  "training_report_sha256": "ac1d75686a969f6d0d6ee1dd977f5c3bd462654d2a88150353911bafffb15dee"
+}

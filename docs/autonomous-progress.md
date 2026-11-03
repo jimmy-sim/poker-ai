@@ -4,7 +4,7 @@ The user authorized continued autonomous work on 2026-11-02, following the roadm
 in order until stopped. The active goal continues through Phase 4; Phase 5 choices
 and any C++/Rust core require the already-stated user decisions.
 
-## Current phase: 3
+## Current phase: 3.5
 
 Completed and committed:
 
@@ -46,10 +46,15 @@ Completed and committed:
   clean 62090b6; no budget aborts and no playing-strength claim.
 - Public shadow reconciliation tested, with stable mapping coins, role rotation
   and explicit failures; actual ledgers stay unchanged.
-- Current gate: 385 fast tests, lint and strict types.
+- Own-checkpoint inference with source/model compatibility checks, probability
+  decoding and explicit fallback statuses. Clean audit 4285f53: 30 on-grid hands,
+  78 decisions; off-grid stress limitations recorded without strength claims.
+- Phase 3 bounded gate complete: 392 tests, lint/strict types on 3.11/3.12,
+  acceptance writeup and three interview Q&As.
+- Phase 2 results and trained Phase 3 agents now exist; Phase 3.5 may begin.
 
-Next: mapped action-probability decoding and own-checkpoint inference, then the
-full Phase 3 acceptance report. Phase 3.5 remains gated until that gate passes.
+Next: begin Phase 3.5 with pinned-license inventory and predeclared Tier A gates;
+pass exact-game validation before postflop spot comparisons/diagnosis.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,

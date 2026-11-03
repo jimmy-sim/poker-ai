@@ -12,7 +12,9 @@ Profile-guided direct evaluation and [heads-up equity](docs/phase1-equity.md)
 are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-engine.md).
 [Phase 1 verification](docs/phase1-verification.md) and
 [Phase 2 exact toy-game solvers](docs/phase2-solvers.md) are complete.
-Sampled CFR and heads-up Hold’em agents follow in Phase 3.
+[Phase 3 bounded sampled-CFR agents](docs/phase3-verification.md) are implemented
+and trained. External spot comparisons follow in Phase 3.5. No competitive
+playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
 ## Development

@@ -1,5 +1,9 @@
 # Phase 3: sampled CFR and heads-up Hold'em
 
+Status: the bounded implementation/verification gate is complete. See
+[Phase 3 acceptance](phase3-verification.md). Earlier implementation checkpoints
+below record what was pending at those stages; no playing-strength claim is made.
+
 Acceptance gate, declared before implementation/training: external- and
 outcome-sampling MCCFR with unbiased-update sanity checks on exact toy games;
 heads-up fixed-limit before no-limit; hand-strength/expected-strength and
@@ -417,3 +421,41 @@ past mapping coins stay consistent across queries.
 on-grid hands, both button positions, and deliberate off-grid traces. It checks
 on-grid identity, legal outputs, separate chip ledgers and expected virtual-all-in
 failures. It measures interface behavior and lookup coverage, not a win rate.
+
+## Recorded own-agent interface audit
+
+Clean source `4285f53` passed `make verify-agent`: 30 on-grid hands and 78 decision
+queries, with 69 matched policy rows, one unaveraged row and eight unseen rows.
+On-grid mapping preserved identity, legal actions and chip conservation. The audit
+used independent fixed deal seeds and both button positions.
+[Raw report](../results/agent-interface-validation.json).
+
+All 12 deliberately off-grid audit cases used a fallback: seven shadow failures,
+three unseen rows and two unaveraged rows. These two constructed betting lines
+are stress cases, not a representative off-tree rate. They make the limitation
+visible: legal translation/fallback machinery is implemented, but these small
+trained tables do not supply learned responses for the tested off-grid contexts.
+No claim of strong off-tree behavior follows. A wrong action encoding raises an
+error rather than contributing to these fallback counts.
+
+Final local gate: 392 tests, Ruff and strict mypy passed on Python 3.11/3.12.
+Hosted CI has not run. See the acceptance report for scope and interview Q&As.
+
+## Recorded own-agent interface audit
+
+Clean source `4285f53` passed `make verify-agent`: 30 on-grid hands and 78 decision
+queries, with 69 matched policy rows, one unaveraged row and eight unseen rows.
+On-grid mapping preserved identity, legal actions and chip conservation. The audit
+used independent fixed deal seeds and both button positions.
+[Raw report](../results/agent-interface-validation.json).
+
+All 12 deliberately off-grid audit cases used a fallback: seven shadow failures,
+three unseen rows and two unaveraged rows. These two constructed betting lines
+are stress cases, not a representative off-tree rate. They make the limitation
+visible: legal translation/fallback machinery is implemented, but these small
+trained tables do not supply learned responses for the tested off-grid contexts.
+No claim of strong off-tree behavior follows. A wrong action encoding raises an
+error rather than contributing to these fallback counts.
+
+Final local gate: 392 tests, Ruff and strict mypy passed on Python 3.11/3.12.
+Hosted CI has not run. See the acceptance report for scope and interview Q&As.
