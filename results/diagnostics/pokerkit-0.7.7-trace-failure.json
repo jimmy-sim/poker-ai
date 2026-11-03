@@ -1,0 +1,167 @@
+{
+  "actions_checked": 579,
+  "config": {
+    "hands": 1000,
+    "max_actions": 2000,
+    "max_stack": 150,
+    "min_stack": 2,
+    "seed": 20261107
+  },
+  "documented_reference_differences": [
+    {
+      "button": 2,
+      "interpretation": "nominal-blind model differs from posted-blind reference behavior",
+      "own_call": 2,
+      "own_min_raise": 4,
+      "reference_call": 1,
+      "reference_min_raise": 3,
+      "scenario": "short_big_blind_bring_in",
+      "stacks": [
+        100,
+        1,
+        100
+      ]
+    },
+    {
+      "interpretation": "secured side pot retained while folding remaining main pot",
+      "own_final_stacks": [
+        15,
+        90,
+        100
+      ],
+      "reference_exception": "AssertionError",
+      "scenario": "free_fold_after_secured_side_pot"
+    }
+  ],
+  "environment": {
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "pokerkit": "0.7.7",
+    "python": "3.11.17"
+  },
+  "failures": [
+    {
+      "actions": [
+        {
+          "amount": null,
+          "kind": "call"
+        },
+        {
+          "amount": 3,
+          "kind": "raise_to"
+        },
+        {
+          "amount": null,
+          "kind": "call"
+        },
+        {
+          "amount": null,
+          "kind": "call"
+        }
+      ],
+      "button": 1,
+      "deck": [
+        50,
+        37,
+        10,
+        48,
+        32,
+        6,
+        42,
+        22,
+        26,
+        8,
+        17,
+        49,
+        24,
+        0,
+        28,
+        9,
+        7,
+        18,
+        46,
+        1,
+        41,
+        16,
+        11,
+        44,
+        30,
+        5,
+        3,
+        40,
+        31,
+        51,
+        15,
+        34,
+        39,
+        38,
+        2,
+        25,
+        13,
+        14,
+        47,
+        29,
+        4,
+        45,
+        23,
+        36,
+        21,
+        12,
+        33,
+        43,
+        27,
+        19,
+        35,
+        20
+      ],
+      "hand_index": 61,
+      "reason": "minimum raise differs",
+      "stacks": [
+        28,
+        3,
+        15,
+        48
+      ]
+    }
+  ],
+  "hands_completed": 61,
+  "input_and_trace_sha256": "2dfbbb097d335221986c45ee10b60abf615f3ae4b8f2edd30f9586cbd00a0da7",
+  "matched_domain": "two through six seats, starting stacks cover 1/2 blinds",
+  "reference": {
+    "license": "MIT",
+    "package": "pokerkit",
+    "role": "validation only"
+  },
+  "schema_version": 1,
+  "showdowns": 55,
+  "side_pot_hands": 31,
+  "source": {
+    "dirty": true,
+    "git_commit": "f8a1862dc3358b339b5bc0442d5af8c3d1fde652",
+    "git_status": [
+      " M pyproject.toml",
+      " M uv.lock",
+      "?? configs/engine-smoke.json",
+      "?? configs/engine-validation.json",
+      "?? scripts/validate_engine.py",
+      "?? src/poker_ai/engine.py",
+      "?? tests/test_engine.py"
+    ],
+    "sha256": {
+      "configs/engine-validation.json": "46d12a4f317a02d8abc518e7e67b3d7c6c55955d44b2cb9ac6e1f2cfd060370f",
+      "pyproject.toml": "7d911bccd7370b763b3dde9c59b0116a1627a694e132d909b1f151556d5b2c37",
+      "scripts/validate_engine.py": "2461073c4daf920c3435a1c0f074a27e954d3c522c646f8dad9f017a1f6270bd",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "e925b659ca9e5a7580439931b02829793632aa1d587a551c76f89a17a6f67074",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "uv.lock": "9ed0ba497e30d90855b73094ba392154fc7abe36d10a192a5e53e47a40a36a94"
+    }
+  },
+  "status": "failed",
+  "validation_seconds": 0.13432620899948233
+}

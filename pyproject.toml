@@ -12,6 +12,7 @@ dependencies = ["numpy>=2.0,<3"]
 
 [project.optional-dependencies]
 validation = ["treys==0.1.8"]
+engine-validation = ["pokerkit==0.7.7"]
 
 [dependency-groups]
 dev = [
@@ -46,3 +47,4 @@ addopts = "--import-mode=importlib --strict-config --strict-markers"
 markers = [
     "slow: long-running validation; select explicitly outside routine CI",
 ]
+

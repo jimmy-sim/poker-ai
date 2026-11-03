@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine
 
 setup:
 	$(UV) sync --locked --dev
@@ -40,3 +40,8 @@ validate-equity:
 	$(UV) run --locked --extra validation python scripts/validate_equity.py \
 		--config configs/equity-validation.json \
 		--output results/equity-validation.json
+
+validate-engine:
+	$(UV) run --locked --extra engine-validation python scripts/validate_engine.py \
+		--config configs/engine-validation.json \
+		--output results/engine-validation.json
