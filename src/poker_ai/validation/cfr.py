@@ -71,7 +71,7 @@ class OpenSpielReference:
         )
         return float(
             scoring.policy_value(
-                self.game.new_initial_state(), self.solver.average_policy()
+                self.game.new_initial_state(), [self.solver.average_policy()] * 2
             )[0]
         )
 
