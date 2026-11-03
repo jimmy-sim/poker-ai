@@ -122,3 +122,27 @@ References: [Numba extension API](https://numba.readthedocs.io/en/stable/extendi
 and [single-rounding fma definition](https://docs.python.org/3/library/math.html#math.fma).
 Performance comparisons use identical own scalar/JIT arithmetic and seeds, and
 report compilation/cache-load time separately from steady-state training.
+
+## Fixed budget extension after the 100k factorial
+
+All four original/follow-up cells completed at 100,000 iterations. The preselected
+linear+expectation candidate passes the low-SPR gate but misses the medium-SPR
+median threshold (0.01770 pots versus <=0.01); its worst seed is within 0.025.
+No candidate is retrospectively selected by the best observed score. Every cell
+and the candidate's successful independent recheck is retained in
+`results/holdem-learning/factorial-100k/`.
+
+Explicit arithmetic resolves the original independent trajectory discrepancy:
+all candidate full-tree checkpoints through 4,096 match native exploitability and
+mean row L1 exactly on the recorded build. The original failure remains visible.
+The compiled/scalar profile compares identical own policies; compilation/cache
+loading is separate. This is numerical/compute validation, not strength evidence.
+
+Before further outcomes, extend ALL FOUR cells to the same fixed 300,000 final
+iterations, using new `holdem-learning-extended-*.json` configs. Existing seeds,
+accuracy/coverage thresholds and preselected linear+expectation candidate stay
+unchanged. The observed medium-game learning curves support testing this larger
+budget. Runs finish their declared budgets, not the first favorable checkpoint.
+No held-out game runs until the preselected development candidate passes both
+learning and independent gates. The extension does not rewrite the failed 100k
+acceptance or establish that iteration increases always improve global play.
