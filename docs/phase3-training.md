@@ -66,3 +66,20 @@ invalid/nonfinite accumulators. Resumption tests for both methods reproduce all
 regrets, average masses, counters and random state bit for bit after split versus
 uninterrupted training. This prevents accidental reference artifact loading; it
 is not an authenticity guarantee against deliberately forged own-format files.
+
+## Fixed-limit adapter domain
+
+The first Hold'em adapter is heads-up fixed-limit: blinds 1/2, street bet sizes
+2/2/4/4, four-bet cap (including the preflop big blind), and player stacks 200/200.
+Stacks must exceed the maximum possible capped contribution (48 chips at these
+settings). This excludes short-limit-all-in completion/reopening rules rather
+than incorrectly applying no-limit rules to them. It is a fully funded capped
+limit model; no claim of support for arbitrary short-stack fixed-limit games.
+
+The adapter uses the own engine for all cards, transitions and payouts. A fresh
+uniform full deck is sampled per target pass; future cards remain inaccessible
+to policy keys. Sharing the sampled chance world across own branches correlates
+samples without changing their expectation. Public-only observation-to-key
+builders prevent access to opponent holes, burns and remaining deck. The exact
+initial key retains own cards and complete public action history. Card abstraction
+and no-limit action abstraction are separate subsequent steps.
