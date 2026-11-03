@@ -65,6 +65,7 @@
     "python": "3.11.17"
   },
   "failures": [],
+  "five_card_board_hands": 920,
   "hands_completed": 1000,
   "input_and_trace_sha256": "4548277d2b3a5d1ee50fe1c14476dcfbbff990825d4646527e82b4de91c9239e",
   "matched_domain": "two through six seats, starting stacks cover 1/2 blinds",
@@ -73,28 +74,35 @@
     "package": "pokerkit",
     "role": "validation only"
   },
-  "schema_version": 1,
-  "showdowns": 920,
+  "schema_version": 2,
+  "showdowns": 915,
   "side_pot_hands": 471,
   "source": {
     "dirty": false,
-    "git_commit": "23823abdb4806b4cbd561cbd3d8e5182fecf074b",
+    "git_commit": "e248fb954bcb2caf77e5ff694605dfa4935fffb0",
     "git_status": [],
     "sha256": {
       "configs/engine-validation.json": "46d12a4f317a02d8abc518e7e67b3d7c6c55955d44b2cb9ac6e1f2cfd060370f",
-      "pyproject.toml": "51b8c622352e4d0a22cbf49fc756747795c1e0fa7baea2c405f4b35aad0baff1",
-      "scripts/validate_engine.py": "cf9584ed84a31370326b8080865ad7bb16c0a942ba8fd3d966975c8000af8af4",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/validate_engine.py": "cafb0063ebbd750ef2602ebb73db5b92cbdcce19642f01269a01598ad8b401a8",
       "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
       "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
       "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
       "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
       "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "aceb70866ac3291b4b668c04aeaa47404de387ec7f03036c396e016ff69234c9",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
       "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
       "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
       "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
-      "uv.lock": "9ed0ba497e30d90855b73094ba392154fc7abe36d10a192a5e53e47a40a36a94"
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
     }
   },
   "status": "passed",
-  "validation_seconds": 2.3698452499993437
+  "validation_seconds": 2.397366207998857
 }
