@@ -2,9 +2,25 @@
 
 The user authorized continuing in roadmap order until stopped. Phases 0–5 are
 complete within their documented bounded scopes; competitive poker strength has
-not been established. The user requested a good stopping point; work stops at the verified Phase 5
-boundary. Bayesian opponent modeling and bankroll/risk analysis were explicitly
-selected by the user. Next milestone: Phase 6 final packaging.
+not been established. After the verified Phase 5 stopping point, the user
+authorized another autonomous work session. Bayesian opponent modeling and
+bankroll/risk analysis remain the selected extensions.
+
+The [new Hold'em learning diagnostic](holdem-strength-v2.md) now has own finite
+postflop training, exact/public/bucket controls, all four fixed 300k factorial
+cells, two held-out games, and 378 independently checked frozen policy records.
+Its preselected candidate passes development, but the medium-IP held-out median
+misses the unchanged 1% pot target (1.0153%). The learning gate remains failed;
+the proposed global training/match comparison has not run. Numerical checks and
+tests pass separately. See the new offline report command and retained failures
+in that document. Packaging records this bounded diagnostic, not stronger global
+play or successful acceptance.
+
+[Research packaging verification](phase6-verification.md) records the three-page
+brief, verified claims/interview guide, full reproduction and software checks.
+The full command reproduced all frozen own policies and the failed gate in
+27.8 minutes. This is the verified bounded stopping point for this work session;
+the next strength step requires a new experiment and fresh held-out games.
 
 Acceptance records:
 

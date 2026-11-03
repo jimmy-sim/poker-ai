@@ -18,9 +18,43 @@ and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is
 strategy gaps. [Phase 4 evaluation](docs/phase4-verification.md) is complete,
 including duplicate matches and a small public API pilot.
 [Phase 5 Bayesian and risk extensions](docs/phase5-verification.md) are complete
-within their declared scope. Final packaging is next. No competitive
-playing-strength result has been established.
+within their declared scope. A new [own postflop learning diagnostic](docs/holdem-strength-v2.md)
+identifies public-card aliasing, but its held-out performance gate narrowly fails.
+No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
+
+## Architecture and current strength work
+
+```mermaid
+flowchart LR
+    Cards[Own cards and evaluator] --> Engine[Own immutable Hold'em engine]
+    Engine --> Training[Own CFR and sampled CFR]
+    Abstraction[Card and action abstractions] --> Training
+    Training --> Checkpoint[Frozen own average strategies]
+    Checkpoint --> Evaluation[Duplicate matches and exact spot metrics]
+    Engine --> Export[Finite-game export]
+    Export --> Reference[OpenSpiel comparison only]
+    Reference --> Audit[Independent metric checks]
+    Evaluation --> Audit
+```
+
+The new bounded study uses four turn-river games, two physical combos per seat,
+three fixed seeds and all four weighting/initialization controls. Preserving the
+public board lowers median restricted exploitability from **16.43% to 0.30% of
+the pot** in one medium-SPR development game and **18.72% to 1.0153%** in the
+medium-SPR held-out game. The latter misses the preset **1%** median target.
+These are separate per-game self-play learners, not a measured upgrade to the
+global Hold'em agent. The preregistered global comparison has not run.
+
+All **378 frozen policy records** pass independent value/exploitability checks.
+`make report-holdem-learning` replays the committed policies and regenerates
+[tables](results/holdem-learning/report/tables.md) and plots without retraining.
+`make validate-holdem-learning` repeats the fixed experiment in ignored staging;
+it returns nonzero if the performance gate fails. See [methods and retained
+failures](docs/holdem-strength-v2.md), the [technical brief](docs/research-brief.pdf),
+and [verified resume claims and interview answers](docs/interview-guide.md).
+
+![Own postflop learning, all fixed seeds](results/holdem-learning/report/learning-curves.png)
 
 ## Development
 
@@ -202,7 +236,7 @@ Own finite-type Bayesian models: **72,000 censored toy hands**, **360 exact chec
 | leduc | misspecified | -0.0808 | +0.0333 | +0.6661 |
 | leduc | switching | -0.5055 | +0.0600 | +1.2003 |
 
-The model improves predictions on included stationary types but can worsen them under misspecification or drift. A root-level exploitation mixture is certified to lose at most **0.1 chip/hand of blueprint worst-case security in these exact games. This permits some degradation; it is not a Hold'em guarantee or a game-value safety claim.
+The model improves predictions on included stationary types but can worsen them under misspecification or drift. A root-level exploitation mixture is certified to lose at most **0.1 chip/hand** of blueprint worst-case security in these exact games. This permits some degradation; it is not a Hold'em guarantee or a game-value safety claim.
 
 ![Bayesian learning and security](results/extensions/bayesian-leduc.png)
 

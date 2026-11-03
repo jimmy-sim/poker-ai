@@ -1,5 +1,26 @@
 # Design decisions
 
+## 2026-11-03 — Bounded learning diagnostic and research packaging
+
+- Reuse an own finite-game array backend across toy and materialized postflop
+  games. Training imports no reference solver or comparison policies.
+- Preserve all initial, 100k and 300k outcomes. The preselected candidate's held-out
+  median misses its unchanged target; no gated global experiment is launched.
+- Public-board refinement is a local diagnostic only. Test global linear-weighted
+  checkpoint compatibility, but do not substitute an unvalidated global policy.
+- Use optional Numba only after paired profiling. Explicit FMA controls address
+  the measured numerical trajectory discrepancy; no own C++/Rust core is added.
+  Full installed LICENSE files were read: Numba 0.68.1 and llvmlite 0.50.0 use
+  BSD-2-Clause notices. Package versions and LICENSE hashes are recorded in
+  `results/holdem-learning/compiler-licenses.json`. These are compiler dependencies,
+  not poker teachers; OpenSpiel licensing remains in `solver_validation.md`.
+- Separate successful evidence audits from performance acceptance. The offline
+  report can audit successfully while stating a failed learning gate. The full
+  reproduction command returns nonzero for that failed gate and retains staging.
+- Package verified results and limitations, including negative results, in a
+  three-page technical snapshot and an interview guide. Preserve user-regenerated
+  Phase 5 reports and original metadata; do not recast reruns as independent data.
+
 ## 2026-11-02 — Phase 0 foundation
 
 - Use Python 3.11-compatible code and uv 0.13.5 with a committed lockfile.

@@ -177,3 +177,138 @@ No favorable-opponent/seed/checkpoint selection, no training from results and no
 claim that a local solver improvement guarantees a stronger global policy. Keep
 negative results. OpenSpiel/Slumbot outcomes are excluded from this own-baseline
 study; independent spot comparison remains a separate measurement.
+
+## Observed outcome: diagnostic complete, held-out performance gate failed
+
+The 300k extension completed every declared cell, including controls that failed.
+The preselected linear+expectation candidate passes both development games. It
+passes the low-SPR held-out game but misses the medium-IP median threshold:
+**0.01015285879237701 pots > 0.01**. The worst seed is 0.010664524586617995,
+inside its separate 0.025 limit. No rounding, threshold change or candidate switch
+turns that result into a pass. The preregistered global training/match comparison
+has **not run**. Generic linear-weighting support is implemented and tested, but
+the existing global checkpoint remains the earlier bounded prototype.
+
+All values below are final exact restricted-game exploitability (NashConv/2),
+normalized by the initial pot. Each median covers the same three configured
+seeds. The two held-out games each receive their own self-play training.
+
+| Game | Exact cards | Existing potential-8 | Potential-8 + observed public board |
+|---|---:|---:|---:|
+| Development low OOP | 7.98508e-11 | 5.58173e-11 | 5.58173e-11 |
+| Development medium OOP | 0.00300824 | 0.164301 | 0.00300824 |
+| Held-out low OOP | 1.05192e-8 | 6.93479e-9 | 1.05192e-8 |
+| Held-out medium IP | **0.0101528588 (fail)** | 0.187193 | **0.0101528588 (fail)** |
+
+The board-preserving encoding removes all public-board collisions here. It has
+exactly as many information sets as exact cards in both medium games (3,336 and
+1,112), so matching exact trajectories there is expected. This does not show
+that eight private buckets plus exact raw boards scales or generalizes globally.
+In the development low game, some private information still merges (364 versus
+376 exact rows). Existing buckets are not uniformly worse: two low-game seeds
+also approach an exact equilibrium. Neither a universal abstraction floor nor
+monotone improvement with iterations follows.
+
+The full 300k factorial is retained rather than selecting its best observed cell:
+
+| Weighting / initialization | Low median ε/pot | Low minimum coverage | Medium median ε/pot | Development gate |
+|---|---:|---:|---:|---|
+| Uniform / none | 5.75111e-6 | 76.88% | 0.00943260 | Fail: coverage |
+| Uniform / one expectation | 2.24058e-6 | 100% | 0.00852746 | Pass |
+| Linear / none | 4.43152e-9 | 82.44% | 0.00232078 | Fail: coverage |
+| Linear / one expectation (preselected) | 7.98508e-11 | 100% | 0.00300824 | Pass |
+
+Initialization supplies a real own-game update and positive average mass to every
+row. It is not evidence that sampling explored every row: up to **827** exact
+development-medium rows have only the initial update at the final checkpoint.
+The report separates these rows, subsequent sampled visits, and initialization
+work. Initializing all rows is an affordable finite-game control, not a solution
+to global Hold'em table coverage.
+
+![Fixed-seed learning curves](../results/holdem-learning/report/learning-curves.png)
+
+Blue is exact private/public information; orange is the existing potential-8
+encoding; green adds the observed public board. Each color has three seed lines;
+identical green/blue curves overlap. Lower is better. Both axes are logarithmic.
+These lines show separate self-play learners, not the global agent playing three
+opponents. The dashed 1% line is a median acceptance target; two of three final
+exact held-out medium values lie just above it. The initial and 100k failures
+remain in their original directories.
+
+![Four controls against actual work](../results/holdem-learning/report/factorial-work.png)
+
+Node counts include one initialization node equivalent where applicable. They
+measure traversal work rather than equal wall time; full-tree and sampled
+iterations are not equal-cost. Training run times include setup/checkpoint work
+and sometimes co-running checks, so they are not controlled throughput benchmarks.
+The separate paired menu-cache and scalar/JIT profiles preserve policies exactly.
+
+## Numerical checks and cross-play
+
+For **378 frozen policy records**, independent native value and exploitability
+errors are at most **1.14e-13** and **8.18e-14 chips**, below the declared 1e-9.
+All **60** matched exact/full-tree checkpoints have zero exploitability error and
+zero mean row L1 on the recorded pinned build. These counts include deterministic
+controls repeated across experiments; they are not 378 independent statistical
+samples. Offline own replay also agrees exactly with all stored own metrics.
+
+Cross-play uses the frozen **own** full-tree CFR+ control, never a reference
+strategy as training input. For tested policy C and own control B, the mean
+two-seat EV is [u(C0,B1)-u(B0,C1)]/2. Positive favors C. The weighted action gap
+is row L1 (range 0-2), averaged with uniform-policy decision reach. Full tables,
+per-seed EVs and collision counts are in the generated report.
+
+A fixed opponent need not expose every weakness. In development medium, the
+existing-bucket policies have substantially larger best-response exploitability,
+yet lose less against the particular own full-tree control than the exact sampled
+policies do. Cross-play and exploitability measure different things; neither
+equilibrium action distance nor one opponent's EV alone ranks general strength.
+The reference shares our mechanics/EFG export, so its numerical agreement is not
+an independent validation of every game rule. Earlier engine/evaluator checks
+remain the separate mechanics evidence.
+
+## Commands, retention and next experiment
+
+```sh
+make report-holdem-learning     # Offline replay of frozen policies, tables, plots
+make validate-holdem-learning   # Retrain every 300k control; native checks; held-out
+```
+
+The full command installs the optional jit/solver-validation/research extras from
+the lockfile. It takes tens of minutes on the recorded Mac, retains a timestamped
+directory under `results/holdem-learning/runs/`, and returns **nonzero** when a
+learning gate fails. That is the expected recorded outcome here; a completed run
+is not a successful performance gate. It never launches global training or live
+game requests. The faster report command returns success when its evidence audit
+passes, while prominently reporting the failed learning gate.
+
+Reviewed evidence is under `results/holdem-learning/extended/`, with input paths
+in `configs/holdem-learning-evidence.json`. Small frozen own policies are committed;
+large resumable checkpoints and interrupted/duplicate runs remain ignored under
+`runs/`. No favorable prefix or interrupted run enters the manifest. Config,
+source/dirty status, model/game/policy hashes, lockfile, environment and raw seeds
+are retained. Historical input metadata is not rewritten when files are reviewed.
+
+The next strength experiment should address sampling variance at a fixed node
+budget, for example integrating the small river chance distribution while sampling
+private worlds. Validate its expected regret/averaging updates first. All four
+games above are now known development evidence; preregister fresh hold-outs before
+testing any revised procedure. Keep the same accuracy limits, report every seed,
+and only then revisit global training. More global iterations alone are not yet
+an evidence-supported fix for the observed public-card aliasing.
+
+## Three interview questions
+
+1. **Why can board refinement help but still fail acceptance?** It removes a
+   representation error, while finite sampling and averaging still leave regret.
+   In the medium-IP hold-out the median is 1.0153% of the pot, above the fixed 1%
+   limit. I retain that miss and do not claim the procedure passed.
+2. **Did 100% coverage mean complete exploration?** No. A single exact uniform
+   expectation initialized all average rows. I track initial-only rows and sampled
+   visits separately; this finite full-tree operation does not scale globally.
+3. **Why did exact algorithms initially disagree?** Near-zero tied regrets changed
+   sign under fused versus separately rounded arithmetic. Scalar controls tested
+   all eight contraction modes; explicit FMA reproduced the pinned native build.
+   Fixed-policy value/BR checks already agreed. This is different from changing a
+   tolerance to hide a mechanics error, and does not guarantee cross-hardware
+   bit identity.
