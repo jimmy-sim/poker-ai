@@ -542,6 +542,11 @@ dependencies = [
     { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
 ]
 
+[package.optional-dependencies]
+validation = [
+    { name = "treys" },
+]
+
 [package.dev-dependencies]
 dev = [
     { name = "hypothesis" },
@@ -552,7 +557,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "numpy", specifier = ">=2.0,<3" }]
+requires-dist = [
+    { name = "numpy", specifier = ">=2.0,<3" },
+    { name = "treys", marker = "extra == 'validation'", specifier = "==0.1.8" },
+]
+provides-extras = ["validation"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -703,6 +712,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e8/c4/ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111/sortedcontainers-2.4.0.tar.gz", hash = "sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88", size = 30594, upload-time = "2021-05-16T22:03:42.897Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl", hash = "sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0", size = 29575, upload-time = "2021-05-16T22:03:41.177Z" },
+]
+
+[[package]]
+name = "treys"
+version = "0.1.8"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/3b/a6/1712340dc1ac96d40afe162d43ce146c7781ba59cde5efc988aaee35ada4/treys-0.1.8.tar.gz", hash = "sha256:a486a42b899e91985b4da4fdac9a30e638275648977104487acb90a2dd7cd73b", size = 12073, upload-time = "2022-06-21T16:02:44.976Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/46/df/e6b3b1cc98c3e00c5b146113f998dfe0de47358277648df235a6ae571143/treys-0.1.8-py3-none-any.whl", hash = "sha256:9ba3460ff2ed597510fb535af6280f115254b0b70699ea362f8f1ee067378063", size = 11897, upload-time = "2022-06-21T16:02:42.896Z" },
 ]
 
 [[package]]

@@ -1,0 +1,96 @@
+"""Transparent five-card high-poker evaluation with explicit tie-breakers.
+
+Larger HandRank values mean stronger hands. Category takes precedence; equal
+categories compare rank tuples lexicographically. Suits never break ties. A royal
+flush is an ace-high straight flush, not an additional category.
+"""
+
+from collections import Counter
+from collections.abc import Iterable
+from dataclasses import dataclass
+from enum import IntEnum
+
+from poker_ai.cards import cards_to_mask
+
+
+class HandCategory(IntEnum):
+    """Standard high-poker categories, weakest to strongest."""
+
+    HIGH_CARD = 0
+    ONE_PAIR = 1
+    TWO_PAIR = 2
+    THREE_OF_A_KIND = 3
+    STRAIGHT = 4
+    FLUSH = 5
+    FULL_HOUSE = 6
+    FOUR_OF_A_KIND = 7
+    STRAIGHT_FLUSH = 8
+
+
+@dataclass(frozen=True, order=True, slots=True)
+class HandRank:
+    """An immutable comparison key produced by evaluate_five.
+
+    Tie-breaker tuples, in comparison priority order:
+      high card/flush: all five ranks, descending;
+      one pair: pair rank, then three descending kickers;
+      two pair: higher pair, lower pair, kicker;
+      trips: trip rank, then two descending kickers;
+      straight/straight flush: highest rank, with the wheel encoded as 5;
+      full house: trip rank, pair rank;
+      quads: quad rank, kicker.
+
+    These are ordinal keys, not probabilities, equities, or a linear EV scale.
+    """
+
+    category: HandCategory
+    tiebreakers: tuple[int, ...]
+
+
+def evaluate_five(cards: Iterable[int]) -> HandRank:
+    """Rank exactly five distinct valid card IDs in standard high poker.
+
+    Validate through the shared bitmask boundary, then count ranks and inspect
+    suits. Sorting (multiplicity, rank) groups in descending order puts the
+    strategically important ranks first for every multiplicity-based category.
+
+    Ace is normally rank 14. Exactly A-2-3-4-5 is a five-high straight; it cannot
+    wrap in any other sequence. The input iterable is consumed once and not
+    mutated. This deliberately readable reference path has no poker-library or
+    lookup-table dependency; profile it before optimization.
+    """
+    hand = tuple(cards)
+    if len(hand) != 5:
+        raise ValueError(f"expected exactly five cards, got {len(hand)}")
+    cards_to_mask(hand)
+
+    counts = Counter(card // 4 + 2 for card in hand)
+    ranks = tuple(sorted(counts, reverse=True))
+    groups = sorted(((count, rank) for rank, count in counts.items()), reverse=True)
+    pattern = tuple(count for count, _ in groups)
+    group_ranks = tuple(rank for _, rank in groups)
+    flush = len({card % 4 for card in hand}) == 1
+
+    straight_high = 0
+    if ranks == (14, 5, 4, 3, 2):
+        straight_high = 5
+    elif len(ranks) == 5 and ranks[0] - ranks[-1] == 4:
+        straight_high = ranks[0]
+
+    if flush and straight_high:
+        return HandRank(HandCategory.STRAIGHT_FLUSH, (straight_high,))
+    if pattern == (4, 1):
+        return HandRank(HandCategory.FOUR_OF_A_KIND, group_ranks)
+    if pattern == (3, 2):
+        return HandRank(HandCategory.FULL_HOUSE, group_ranks)
+    if flush:
+        return HandRank(HandCategory.FLUSH, ranks)
+    if straight_high:
+        return HandRank(HandCategory.STRAIGHT, (straight_high,))
+    if pattern == (3, 1, 1):
+        return HandRank(HandCategory.THREE_OF_A_KIND, group_ranks)
+    if pattern == (2, 2, 1):
+        return HandRank(HandCategory.TWO_PAIR, group_ranks)
+    if pattern == (2, 1, 1, 1):
+        return HandRank(HandCategory.ONE_PAIR, group_ranks)
+    return HandRank(HandCategory.HIGH_CARD, ranks)

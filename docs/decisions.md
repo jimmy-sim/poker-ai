@@ -43,3 +43,21 @@ Tool documentation:
   No dependency versions change for this adjustment.
 
 Details and review questions: [card representation](phase1-cards.md).
+
+## 2026-11-02 — Five-card evaluation
+
+- Return an immutable, ordered HandRank with category then explicit tie-breakers.
+  Higher means stronger; suits never break ties. Encode the wheel straight as
+  five-high; a royal flush is an ace-high straight flush.
+- Use independent Python rank counts/group sorting for a readable correctness
+  baseline. Preserve input validation and defer optimization until profiling.
+- Pin Treys 0.1.8 as a validation-only optional dependency (MIT license inspected).
+  Production evaluation imports no reference library or reference output.
+- Validate equality classes in both directions, their total order, and the exact
+  category census. Use exhaustive enumeration for five cards and a seeded smoke
+  config to estimate costs; keep the full sweep outside routine CI.
+- Record source hashes, revision/dirty status, config, environment, input digest,
+  and runtime. Commit implementation before generating the published full report.
+- Type-check thin reproduction scripts alongside production code and tests.
+
+Protocol and review questions: [five-card evaluator](phase1-five-card.md).

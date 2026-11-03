@@ -61,6 +61,7 @@ make setup       # Install from the committed lockfile
 make check       # Lint, format check, strict typing, and fast tests
 make format      # Apply Ruff fixes and formatting; inspect the diff
 make hooks       # Install repository-local commit hooks
+make validate-five  # Exhaustive Treys hand-rank check; optional validation extra
 uv run --locked pre-commit run --all-files
 ```
 
