@@ -89,6 +89,7 @@ def test_weighted_initialized_resume_restores_all_semantics(
     )
     if warm:
         exact_initial_expectation(original, tree)
+    original.epsilon = 0.25
     original.train(20)
     path = tmp_path / "own.json"
     config = {"learning": {"sampling_weighting": weighting}}
@@ -98,6 +99,7 @@ def test_weighted_initialized_resume_restores_all_semantics(
     )
     original.train(10)
     restored.train(10)
+    assert original.epsilon == restored.epsilon
     assert original.iteration == restored.iteration
     assert original.rng.bit_generator.state == restored.rng.bit_generator.state
     assert original.sampled_keys == restored.sampled_keys

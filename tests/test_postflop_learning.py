@@ -243,3 +243,19 @@ def test_tiny_own_training_run_and_missing_seed_gate(
     missing = learning.acceptance(report["rows"][:2], config, ["dev_low_oop"])
     assert missing["passed"] is False
     assert missing["spots"][0]["reason"] == "missing exact final rows"
+
+
+def test_cli_cannot_start_heldout_without_both_development_gates() -> None:
+    import subprocess
+    import sys
+
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts/train_postflop.py"), "--phase", "heldout"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert result.returncode == 2
+    assert "requires development learning/independent gates" in result.stderr
+    assert "trained:" not in result.stdout

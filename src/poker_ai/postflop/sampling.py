@@ -157,6 +157,7 @@ def load_learning_checkpoint(
     if visits["weighting"] != expected_weighting:
         raise ValueError("learning checkpoint weighting mismatch")
     result = PostflopMCCFR(root_factory, core.rng, cast(Weighting, visits["weighting"]))
+    result.epsilon = core.epsilon
     result.rows, result.iteration, result.nodes_visited = (
         core.rows,
         core.iteration,
