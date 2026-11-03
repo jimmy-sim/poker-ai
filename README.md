@@ -15,7 +15,8 @@ are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-eng
 [Phase 3 bounded sampled-CFR agents](docs/phase3-verification.md) are implemented
 and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is
 [complete](docs/phase3.5-verification.md) and has measured substantial postflop
-strategy gaps. No competitive
+strategy gaps. [Phase 4 evaluation](docs/phase4-verification.md) is complete,
+including duplicate matches and a small public API pilot. No competitive
 playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
@@ -166,3 +167,15 @@ Estimated paired/covariance-omitted variance ratios: **0.192–0.729**. This is 
 
 Reproduce with `make evaluate-agents`; `make report-evaluation` re-audits and renders existing raw results without replaying matches. See [the evaluation writeup](docs/phase4-evaluation.md) for policy definitions, reference license/rule checks and limitations. No real-money client is used.
 <!-- EVALUATION_RESULTS_END -->
+
+<!-- PUBLIC_PILOT_BEGIN -->
+### Public Slumbot protocol pilot
+
+The predeclared **100-hand** anonymous 200bb pilot completed with **-345.50bb net** (**-3,455 mbb/hand**). The approximate IID 95% interval is [-11,315, 4,405] mbb/hand; the much wider conditional-IID Hoeffding interval is [-57,779, 50,869]. Both contain zero. Server independence is unverified: this is an API and translation pilot, not evidence of a winning agent.
+
+All 100 settlements replay offline, including 95 independently checked fold settlements. The remaining showdown outcomes use server net winnings; no opponent-card showdown verification is claimed. Saved average rows were found at 141/155 decisions (91.0%); 11 unseen and 3 unaveraged rows used fallback. There were no shadow/depth failures, 0 decisions with clipped raises and 0 with unavailable raise mass. However, 73/155 decisions had nonzero history-size approximation, and 55/141 decoded distributions had nonzero output-grid approximation. Legal translation does not preserve strategy or EV.
+
+The server controls deals and its unreported policy version, so the live outcomes cannot be reproduced from client seeds. Sanitized logs reproduce recorded accounting and statistics. No API results train or update the agent; this pilot remains separate from open-source solver validation and the 100bb duplicate study.
+
+Recorded evidence: `results/slumbot/public-pilots/pilot-20261103T072514.940829Z.json`. Re-render and verify without network: `uv run --locked python scripts/render_public_pilot.py --report results/slumbot/public-pilots/pilot-20261103T072514.940829Z.json`.
+<!-- PUBLIC_PILOT_END -->

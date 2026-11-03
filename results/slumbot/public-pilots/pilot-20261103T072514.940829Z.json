@@ -1,0 +1,1642 @@
+{
+  "completed_hands": 100,
+  "config": {
+    "abort_ambiguous_post": true,
+    "action_seed": 20261201,
+    "agent_seed": 20261115,
+    "base_url": "https://slumbot.com/slumbot/api/",
+    "big_blind": 100,
+    "button": 1,
+    "error_cooldown_seconds": 5.0,
+    "hands": 100,
+    "http_timeout_seconds": 20.0,
+    "iteration": 1000,
+    "limitations": "server deals/version are not client-seeded; replay statistics from sanitized logs, not identical live deals; no training/adaptation from API outcomes; stop rather than hide incomplete hands",
+    "mapping_episode_seed": 20261202,
+    "maximum_elapsed_seconds": 1800.0,
+    "maximum_requests": 1000,
+    "method": "external",
+    "minimum_request_interval_seconds": 1.0,
+    "model": "results/card-models/potential-8.json",
+    "permission_source": "https://github.com/ericgjackson/slumbot2019/issues/49",
+    "protocol_source": "https://slumbot.com/sample_api.py",
+    "purpose": "fixed 100-hand anonymous public API protocol pilot, not a competitive strength claim",
+    "schema_version": 1,
+    "small_blind": 50,
+    "starting_stacks": [
+      20000,
+      20000
+    ],
+    "training_report": "results/slumbot/own-training.json"
+  },
+  "confirmed_hand_responses": 100,
+  "ended_utc": "2026-11-03T07:29:39.825874+00:00",
+  "environment": {
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "events_file": "pilot-20261103T072514.940829Z-events.json.gz",
+  "events_sha256": "80a33a7ae03bdce5344728e9b1f6f04fefb7c7325b28393517caacabb57c9953",
+  "failure": null,
+  "lookup_counts": {
+    "matched": 141,
+    "unaveraged": 3,
+    "unseen": 11
+  },
+  "new_hand_requests_attempted": 100,
+  "own_policy": {
+    "checkpoint_sha256": "ca04e89b3eab16b46bf2e0cf983e385559657a2d15aba9daf4b7c823b8fd5154",
+    "model_sha256": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "training_source": {
+      "dirty": false,
+      "git_commit": "96cbe1f04b9b63dbd86e90bfa201a36e4babc48a",
+      "git_status": [],
+      "sha256": {
+        "configs/slumbot-own-training.json": "68be57d3cf04ec711395ce1c180f781251c6b9d2ffa1845700c36965d5a0a97c",
+        "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+        "scripts/train_holdem.py": "420051127998538a886d743b0490f6693f464de4445b87ce9258ad4cbbd22355",
+        "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+        "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+        "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+        "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+        "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+        "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+        "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+        "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+        "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+        "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+        "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+        "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+        "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+        "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+        "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+        "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+        "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+        "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+        "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+        "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+        "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+        "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+        "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+        "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+        "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+        "src/poker_ai/solver_validation/reference.py": "ba174f3d93ce27f3de28edd61d1a5fdaac4a002aba5f749e35bf7cb6fb104c46",
+        "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+        "src/poker_ai/solver_validation/spots.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+        "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+        "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+        "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+        "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+        "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+        "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+        "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+        "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+        "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+        "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+        "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+        "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+        "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+        "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+        "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+        "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+        "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+      }
+    }
+  },
+  "pilot_summary": {
+    "approximate_iid_95_interval_mbb_per_hand": [
+      -11315.320935506988,
+      4405.3209355069885
+    ],
+    "assumptions": "server hands independent; not verified from opaque API; no familywise or competitive-strength claim",
+    "conditional_iid_hoeffding_95_interval_mbb_per_hand": [
+      -57779.060629624786,
+      50869.060629624786
+    ],
+    "duplicate_deals": false,
+    "hands": 100,
+    "mean_mbb_per_hand": -3455.0
+  },
+  "records": [
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 0,
+      "hole_cards": [
+        "Kh",
+        "3s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 1,
+      "hole_cards": [
+        "Jc",
+        "4c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 2,
+      "hole_cards": [
+        "8c",
+        "2d"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/kb200c/kk/kb600f",
+      "board": [
+        "Ac",
+        "9d",
+        "6h",
+        "Qh",
+        "7h"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 3,
+      "hole_cards": [
+        "4s",
+        "3d"
+      ],
+      "own_decisions": 4,
+      "winnings": 300
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 4,
+      "hole_cards": [
+        "4c",
+        "3h"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 5,
+      "hole_cards": [
+        "Ts",
+        "7c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "Kd",
+        "Qd",
+        "5h"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 6,
+      "hole_cards": [
+        "As",
+        "8c"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 7,
+      "hole_cards": [
+        "Ad",
+        "6d"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 8,
+      "hole_cards": [
+        "9s",
+        "6c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 9,
+      "hole_cards": [
+        "Tc",
+        "4h"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 10,
+      "hole_cards": [
+        "6c",
+        "5s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 11,
+      "hole_cards": [
+        "Qs",
+        "3d"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200b600f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 12,
+      "hole_cards": [
+        "Ah",
+        "4c"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kb200f",
+      "board": [
+        "Kc",
+        "3h",
+        "2s"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 13,
+      "hole_cards": [
+        "8h",
+        "2d"
+      ],
+      "own_decisions": 2,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 14,
+      "hole_cards": [
+        "9h",
+        "5h"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kk/b100c/kb400f",
+      "board": [
+        "Jh",
+        "7c",
+        "6h",
+        "8h",
+        "Th"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 15,
+      "hole_cards": [
+        "Ah",
+        "Qc"
+      ],
+      "own_decisions": 4,
+      "winnings": 200
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 16,
+      "hole_cards": [
+        "Kh",
+        "3c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 17,
+      "hole_cards": [
+        "5s",
+        "4d"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 18,
+      "hole_cards": [
+        "Kd",
+        "2c"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "b300c/kb19700f",
+      "board": [
+        "As",
+        "5s",
+        "3s"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 19,
+      "hole_cards": [
+        "Jd",
+        "8s"
+      ],
+      "own_decisions": 2,
+      "winnings": 300
+    },
+    {
+      "action": "b200c/b400f",
+      "board": [
+        "As",
+        "Qc",
+        "5c"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 20,
+      "hole_cards": [
+        "Ks",
+        "Kc"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "b300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 21,
+      "hole_cards": [
+        "Ad",
+        "4c"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "Ad",
+        "6h",
+        "4d"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 22,
+      "hole_cards": [
+        "3h",
+        "2d"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 23,
+      "hole_cards": [
+        "8c",
+        "6h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 24,
+      "hole_cards": [
+        "Ks",
+        "3d"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300c/b300f",
+      "board": [
+        "8d",
+        "5c",
+        "3c"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 25,
+      "hole_cards": [
+        "As",
+        "2s"
+      ],
+      "own_decisions": 3,
+      "winnings": -300
+    },
+    {
+      "action": "b200b600b1800f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 26,
+      "hole_cards": [
+        "Jc",
+        "6s"
+      ],
+      "own_decisions": 2,
+      "winnings": -600
+    },
+    {
+      "action": "cb300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 27,
+      "hole_cards": [
+        "8h",
+        "4s"
+      ],
+      "own_decisions": 2,
+      "winnings": -100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 28,
+      "hole_cards": [
+        "7d",
+        "5s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 29,
+      "hole_cards": [
+        "Ks",
+        "Js"
+      ],
+      "own_decisions": 2,
+      "winnings": -100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 30,
+      "hole_cards": [
+        "Kh",
+        "5s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 31,
+      "hole_cards": [
+        "4s",
+        "3d"
+      ],
+      "own_decisions": 2,
+      "winnings": -100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 32,
+      "hole_cards": [
+        "4c",
+        "2c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 33,
+      "hole_cards": [
+        "4c",
+        "3c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 34,
+      "hole_cards": [
+        "8c",
+        "3s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 35,
+      "hole_cards": [
+        "Qd",
+        "9c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 36,
+      "hole_cards": [
+        "Ac",
+        "Jh"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 37,
+      "hole_cards": [
+        "As",
+        "4h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 38,
+      "hole_cards": [
+        "5c",
+        "3h"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/kk/b100c/kk",
+      "board": [
+        "Ks",
+        "Jd",
+        "4s",
+        "3d",
+        "8c"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": false,
+      "hand": 39,
+      "hole_cards": [
+        "Ad",
+        "6c"
+      ],
+      "own_decisions": 4,
+      "winnings": 200
+    },
+    {
+      "action": "b200b20000c///",
+      "board": [
+        "Jc",
+        "8h",
+        "5h",
+        "5c",
+        "Qh"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": false,
+      "hand": 40,
+      "hole_cards": [
+        "As",
+        "Qc"
+      ],
+      "own_decisions": 1,
+      "winnings": 20000
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 41,
+      "hole_cards": [
+        "8h",
+        "7c"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000c///",
+      "board": [
+        "Qs",
+        "9c",
+        "2d",
+        "3d",
+        "2c"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": false,
+      "hand": 42,
+      "hole_cards": [
+        "9h",
+        "4d"
+      ],
+      "own_decisions": 1,
+      "winnings": -20000
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 43,
+      "hole_cards": [
+        "Td",
+        "3h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 44,
+      "hole_cards": [
+        "8h",
+        "2s"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 45,
+      "hole_cards": [
+        "Jc",
+        "8d"
+      ],
+      "own_decisions": 2,
+      "winnings": -100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 46,
+      "hole_cards": [
+        "Qd",
+        "2c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "b300c/kb19700f",
+      "board": [
+        "Qd",
+        "7s",
+        "5c"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 47,
+      "hole_cards": [
+        "Kh",
+        "9d"
+      ],
+      "own_decisions": 2,
+      "winnings": 300
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 48,
+      "hole_cards": [
+        "9h",
+        "3c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/kk/kb19900f",
+      "board": [
+        "Kd",
+        "Js",
+        "Ts",
+        "7h"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 49,
+      "hole_cards": [
+        "8s",
+        "4c"
+      ],
+      "own_decisions": 3,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 50,
+      "hole_cards": [
+        "Ad",
+        "7s"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kb19900f",
+      "board": [
+        "9c",
+        "8d",
+        "7d"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 51,
+      "hole_cards": [
+        "As",
+        "Tc"
+      ],
+      "own_decisions": 2,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 52,
+      "hole_cards": [
+        "Kc",
+        "9d"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "b300b900b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 53,
+      "hole_cards": [
+        "Qs",
+        "2s"
+      ],
+      "own_decisions": 2,
+      "winnings": 900
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "Qd",
+        "5c",
+        "4c"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 54,
+      "hole_cards": [
+        "Th",
+        "7s"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kk/kb200c/kb600f",
+      "board": [
+        "Ad",
+        "Jd",
+        "3s",
+        "9d",
+        "Jh"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 55,
+      "hole_cards": [
+        "Kh",
+        "6d"
+      ],
+      "own_decisions": 4,
+      "winnings": 300
+    },
+    {
+      "action": "b200c/kk/kk/b19800f",
+      "board": [
+        "Ah",
+        "Jd",
+        "5d",
+        "7h",
+        "4d"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 56,
+      "hole_cards": [
+        "Ks",
+        "2d"
+      ],
+      "own_decisions": 4,
+      "winnings": 200
+    },
+    {
+      "action": "cb300b900b2700b20000c///",
+      "board": [
+        "Kc",
+        "Qh",
+        "Jh",
+        "Jc",
+        "Ad"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": false,
+      "hand": 57,
+      "hole_cards": [
+        "6h",
+        "4h"
+      ],
+      "own_decisions": 3,
+      "winnings": -20000
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 58,
+      "hole_cards": [
+        "6s",
+        "5d"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 59,
+      "hole_cards": [
+        "Tc",
+        "7h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200b600c/b1200f",
+      "board": [
+        "8c",
+        "3c",
+        "2h"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 60,
+      "hole_cards": [
+        "6s",
+        "6c"
+      ],
+      "own_decisions": 2,
+      "winnings": 600
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 61,
+      "hole_cards": [
+        "9h",
+        "2d"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 62,
+      "hole_cards": [
+        "9c",
+        "6d"
+      ],
+      "own_decisions": 0,
+      "winnings": 50
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 63,
+      "hole_cards": [
+        "Th",
+        "9c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200b600c/b1200c/b3600c/b14600c",
+      "board": [
+        "Jc",
+        "Ts",
+        "8d",
+        "3c",
+        "Th"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": false,
+      "hand": 64,
+      "hole_cards": [
+        "Kc",
+        "4s"
+      ],
+      "own_decisions": 4,
+      "winnings": -20000
+    },
+    {
+      "action": "ck/kk/kk/kb200f",
+      "board": [
+        "9s",
+        "9c",
+        "5h",
+        "5c",
+        "5s"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 65,
+      "hole_cards": [
+        "6c",
+        "2d"
+      ],
+      "own_decisions": 4,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 66,
+      "hole_cards": [
+        "7d",
+        "3h"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 67,
+      "hole_cards": [
+        "Qd",
+        "4d"
+      ],
+      "own_decisions": 2,
+      "winnings": -100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 68,
+      "hole_cards": [
+        "Kc",
+        "7c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/b100b19900f",
+      "board": [
+        "Kc",
+        "Ts",
+        "7d"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 69,
+      "hole_cards": [
+        "Jc",
+        "3h"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 70,
+      "hole_cards": [
+        "Kd",
+        "3h"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "cb300c/b300b19700f",
+      "board": [
+        "Kh",
+        "9d",
+        "7d"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 71,
+      "hole_cards": [
+        "Ad",
+        "Ts"
+      ],
+      "own_decisions": 3,
+      "winnings": 600
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 72,
+      "hole_cards": [
+        "Jh",
+        "7c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "b300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 73,
+      "hole_cards": [
+        "3h",
+        "2s"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 74,
+      "hole_cards": [
+        "2s",
+        "2c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 75,
+      "hole_cards": [
+        "7d",
+        "4c"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200b600c/b1200f",
+      "board": [
+        "6c",
+        "4h",
+        "2d"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 76,
+      "hole_cards": [
+        "Js",
+        "4s"
+      ],
+      "own_decisions": 2,
+      "winnings": 600
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 77,
+      "hole_cards": [
+        "Kh",
+        "8h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "b200c/kb200b19800f",
+      "board": [
+        "7h",
+        "5s",
+        "4c"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 78,
+      "hole_cards": [
+        "Ks",
+        "Jh"
+      ],
+      "own_decisions": 3,
+      "winnings": 400
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 79,
+      "hole_cards": [
+        "Ad",
+        "9c"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 80,
+      "hole_cards": [
+        "5d",
+        "2d"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/kb200f",
+      "board": [
+        "Kc",
+        "6c",
+        "4h"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 81,
+      "hole_cards": [
+        "5c",
+        "3d"
+      ],
+      "own_decisions": 2,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 82,
+      "hole_cards": [
+        "Jh",
+        "5c"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 83,
+      "hole_cards": [
+        "Qs",
+        "8d"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 84,
+      "hole_cards": [
+        "Jd",
+        "4d"
+      ],
+      "own_decisions": 0,
+      "winnings": 50
+    },
+    {
+      "action": "b300c/kb19700f",
+      "board": [
+        "7c",
+        "3c",
+        "2c"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 85,
+      "hole_cards": [
+        "Jc",
+        "8d"
+      ],
+      "own_decisions": 2,
+      "winnings": 300
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "9d",
+        "9c",
+        "5s"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 86,
+      "hole_cards": [
+        "Qs",
+        "3h"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 87,
+      "hole_cards": [
+        "Jd",
+        "5s"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 88,
+      "hole_cards": [
+        "Ac",
+        "Jd"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "b300f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 89,
+      "hole_cards": [
+        "6d",
+        "5d"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "6h",
+        "3s",
+        "3d"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 90,
+      "hole_cards": [
+        "Qs",
+        "7h"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kb200f",
+      "board": [
+        "Th",
+        "7c",
+        "3c"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 91,
+      "hole_cards": [
+        "7d",
+        "2c"
+      ],
+      "own_decisions": 2,
+      "winnings": 100
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 92,
+      "hole_cards": [
+        "Kh",
+        "9c"
+      ],
+      "own_decisions": 0,
+      "winnings": 50
+    },
+    {
+      "action": "b20000f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 93,
+      "hole_cards": [
+        "Ks",
+        "Jd"
+      ],
+      "own_decisions": 1,
+      "winnings": 100
+    },
+    {
+      "action": "b200f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 94,
+      "hole_cards": [
+        "7s",
+        "3d"
+      ],
+      "own_decisions": 1,
+      "winnings": -100
+    },
+    {
+      "action": "ck/kb200f",
+      "board": [
+        "Th",
+        "6d",
+        "2s"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 95,
+      "hole_cards": [
+        "Tc",
+        "5h"
+      ],
+      "own_decisions": 2,
+      "winnings": 100
+    },
+    {
+      "action": "b200c/b19800f",
+      "board": [
+        "Ad",
+        "6s",
+        "2s"
+      ],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 96,
+      "hole_cards": [
+        "Qs",
+        "5s"
+      ],
+      "own_decisions": 2,
+      "winnings": 200
+    },
+    {
+      "action": "ck/kk/b100b19900f",
+      "board": [
+        "7c",
+        "5c",
+        "4c",
+        "Kd"
+      ],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 97,
+      "hole_cards": [
+        "Ac",
+        "6s"
+      ],
+      "own_decisions": 3,
+      "winnings": 200
+    },
+    {
+      "action": "b200b20000f",
+      "board": [],
+      "client_pos": 0,
+      "fold_settlement_checked": true,
+      "hand": 98,
+      "hole_cards": [
+        "Ah",
+        "Td"
+      ],
+      "own_decisions": 1,
+      "winnings": 200
+    },
+    {
+      "action": "f",
+      "board": [],
+      "client_pos": 1,
+      "fold_settlement_checked": true,
+      "hand": 99,
+      "hole_cards": [
+        "Tc",
+        "9h"
+      ],
+      "own_decisions": 1,
+      "winnings": -50
+    }
+  ],
+  "replay_limit": "client seeds fixed; server deals/opponent are not controlled or exactly live-replayable",
+  "requests_attempted": 255,
+  "schema_version": 1,
+  "seconds": 264.8752066659981,
+  "server_version": "not supplied/verified; configured from official public API documentation",
+  "source": {
+    "dirty": false,
+    "git_commit": "406b3de3e4490abad02c5cceb7e99c3e6a7a9a8c",
+    "git_status": [],
+    "sha256": {
+      "configs/slumbot-pilot.json": "91aa4d6f95581d84c66e8dccbfff45fd5e98a40b024587a61705371d35cbb82d",
+      "pyproject.toml": "0cdae4cb3b5d697bf54788e560c84e99b5f377669bb4ae0e9c78dc0bd210baf4",
+      "scripts/benchmark_slumbot.py": "906b22b5d42cead95dfb232a0a5138a5d9bec8772cd623349a0a3e3cc49bb4e2",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/reference.py": "ba174f3d93ce27f3de28edd61d1a5fdaac4a002aba5f749e35bf7cb6fb104c46",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/spots.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "f50a861856196d314c41edecfce342e64eeeeed2cd5243b1614c455e3290f732",
+      "src/poker_ai/toy/cfr.py": "e232aa0c599a70fa928c02d88a05fb58d61bacc49a2f0be7bc78aec3640282cb",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "a1b47ffeda5362bf1828c9d4e561e63555f9d2915d05d65ebc4f4b6537faa118",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "2443d57e01442804be3a7e6b1673e7fcd1d8d1c5c54bafa2dafe144d2bd07765"
+    }
+  },
+  "started_utc": "2026-11-03T07:25:14.949325+00:00",
+  "status": "completed",
+  "total_seconds": 264.91847116600184,
+  "unsettled_or_unconfirmed_hand_requests": 0
+}
