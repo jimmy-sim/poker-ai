@@ -31,8 +31,8 @@ Measure agreement and disagreement with independent, rerunnable open-source
 solvers on exact toy games and fully specified postflop spots. Only use solvers
 whose licenses permit the intended use. Read the license for each selected pinned
 version and record its source, license text/link, obligations, and applicability
-here before using it. Candidate examples supplied by the user are OpenSpiel,
-TexasSolver, and postflop-solver; these are candidates, not approved selections.
+here before using it. The selected reference is listed above; other solver names
+remain candidates and have not been used.
 
 Never import, copy, or train on commercial solver outputs, including PioSOLVER or
 GTO Wizard. Reference outputs are comparison artifacts only: they must never be
@@ -140,3 +140,28 @@ a fresh gated report/CSV/plots under `results/solver-validation/`; it does not
 overwrite historical Phase 2 evidence. The prior pilot predicts minutes of local
 compute. A complete `make validate-solvers` command will be added only when all
 required stages are implemented; it is not fulfilled by Tier A alone.
+
+## Tier A acceptance result
+
+The fresh gated run from clean `9245bf7` passed every
+predeclared criterion. [Raw Tier A report](../results/solver-validation/tier-a.json)
+and [CSV](../results/solver-validation/cfr-convergence.csv) preserve all checkpoints.
+Maximum exploitability disagreement: 1.3877788e-16 ante chips/hand; maximum mean
+information-set L1 distance: 1.4237625e-17; maximum profile-value difference from the
+reference: 2.220446e-16 chips/hand. These measure implementation agreement, not
+zero exploitability. The table below reports actual remaining exploitability.
+
+| Game | Variant | Iterations | Own exploitability | Reference exploitability | Mean strategy L1 | Kuhn value error |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| kuhn | cfr | 10,000 | 0.00011332446 | 0.00011332446 | 0 | 7.9627065e-06 |
+| kuhn | cfr_plus | 10,000 | 9.632757e-06 | 9.632757e-06 | 0 | 3.5556146e-09 |
+| kuhn | linear | 10,000 | 8.6115641e-06 | 8.6115641e-06 | 0 | 3.5976097e-09 |
+| kuhn | discounted | 10,000 | 2.3872325e-05 | 2.3872325e-05 | 0 | 4.2622052e-09 |
+| leduc | cfr | 1,000 | 0.01181781 | 0.01181781 | 0 | — |
+| leduc | cfr_plus | 1,000 | 0.00025715162 | 0.00025715162 | 0 | — |
+| leduc | linear | 1,000 | 0.0048261327 | 0.0048261327 | 1.1067718e-17 | — |
+| leduc | discounted | 1,000 | 0.00014346789 | 0.00014346789 | 9.5723021e-18 | — |
+
+Ten independently seeded policy BR comparisons also passed. The underlying games
+were exhaustively checked for actions/chance/payoffs and information-set bijection.
+Tier B implementation may now begin. Historical Phase 2 data remain untouched.

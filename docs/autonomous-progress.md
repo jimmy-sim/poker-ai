@@ -53,8 +53,14 @@ Completed and committed:
   acceptance writeup and three interview Q&As.
 - Phase 2 results and trained Phase 3 agents now exist; Phase 3.5 may begin.
 
-Next: begin Phase 3.5 with pinned-license inventory and predeclared Tier A gates;
-pass exact-game validation before postflop spot comparisons/diagnosis.
+- Phase 3.5 license inventory recorded: OpenSpiel 2.0.2, Apache 2.0, exact installed
+  and versioned license hashes match. No commercial/reference strategy training.
+- Fresh gated Tier A at clean 9245bf7 passed unchanged tolerances on all four
+  variants and both games; raw data committed separately from Phase 2.
+
+Next: small fully specified postflop spots, loader/metric tests, native independent
+reference solves, honest gap/coverage diagnosis and fixed ablations.
+Full make validate-solvers remains pending until all required stages exist.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,
