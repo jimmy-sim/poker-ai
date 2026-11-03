@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "games": ["kuhn", "leduc"],
+  "seats": [0, 1],
+  "seeds": [20261203, 20261204, 20261205],
+  "checkpoints": [0, 25, 100, 500, 1000],
+  "blueprint_iterations": {"kuhn": 10000, "leduc": 1000},
+  "blueprint_variant": "cfr_plus",
+  "hypotheses": ["uniform", "calling_station", "aggressive", "value"],
+  "prior": [0.25, 0.25, 0.25, 0.25],
+  "uniform_probability_floor_mass": 0.1,
+  "scenarios": ["uniform", "calling_station", "aggressive", "value", "misspecified", "switching"],
+  "misspecified_local_mix": {"calling_station": 0.35, "value": 0.65},
+  "switching": {"before": "value", "after": "aggressive", "after_hand": 500},
+  "security_degradation_budget_ante_chips": 0.1,
+  "security_tolerance": 1e-10,
+  "evidence": "own card, public board and all public actions; no opponent card or payoff",
+  "collection": "guarded posterior response, frozen between declared checkpoints",
+  "prediction_score": "exact next-public-transcript log score under fixed blueprint logging policy",
+  "maximum_seconds": 1800
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "seed": 20261206,
+  "paths": 10000,
+  "horizon": 1000,
+  "kelly_cap": 0.95,
+  "kelly_multipliers": [0.0, 0.25, 0.5, 1.0, 2.0],
+  "binary_estimated_win_probability": 0.55,
+  "binary_true_win_probabilities": [0.45, 0.5, 0.55],
+  "binary_persistence": [0.0, 0.8],
+  "threshold_initial_wealth_fraction": 0.2,
+  "drawdown_threshold": 0.5,
+  "uncertain_win_probability_interval": [0.45, 0.6],
+  "toy_scenario": "aggressive",
+  "toy_seat": 0,
+  "toy_training_history_seed": 20261203,
+  "toy_checkpoint": 1000,
+  "toy_policies": ["blueprint", "guarded", "unrestricted"],
+  "pot_rake_rates": [0.0, 0.01, 0.05],
+  "pot_rake_model": "uncapped fraction of resolved pot, including folds, paid by winner; ties split fee",
+  "ruin_control": {"start": 10, "target": 20, "win_probabilities": [0.45, 0.5, 0.55], "horizon": 500},
+  "interpretation": "conditional synthetic/own-toy simulations; no reference or public benchmark training; no measured real-world edge or sizing recommendation"
+}
