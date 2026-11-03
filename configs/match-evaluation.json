@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "purpose": "fixed frozen-policy duplicate-deal evaluation; no opponent/ref outputs in training",
+  "training_report": "results/solver-validation/agent-training.json",
+  "primary_model": "results/card-models/potential-8.json",
+  "method": "external",
+  "iteration": 1000,
+  "agent_seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "rules": {
+    "stacks": [
+      200,
+      200
+    ],
+    "button": 1,
+    "small_blind": 1,
+    "big_blind": 2,
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "opponents": [
+    {
+      "name": "random",
+      "kind": "random"
+    },
+    {
+      "name": "always_call",
+      "kind": "always_call"
+    },
+    {
+      "name": "always_raise",
+      "kind": "always_raise"
+    },
+    {
+      "name": "tight_aggressive",
+      "kind": "tight_aggressive",
+      "equity_samples": 64,
+      "equity_seed": 20261129,
+      "raise_equity": 0.7,
+      "call_margin": 0.1
+    },
+    {
+      "name": "equity",
+      "kind": "equity",
+      "equity_samples": 64,
+      "equity_seed": 20261129,
+      "raise_equity": 0.65,
+      "call_margin": 0.05
+    },
+    {
+      "name": "openspiel_ismcts",
+      "kind": "openspiel_ismcts",
+      "version": "2.0.2",
+      "implementation": "Python ISMCTS over native universal_poker; seeded public resampler hook",
+      "simulations": 32,
+      "world_samples": 16,
+      "uct_c": 200.0,
+      "rollouts": 1
+    }
+  ],
+  "pilot_deals": 32,
+  "pilot_deal_seed": 20261126,
+  "main_deals": 1000,
+  "main_deal_seed": 20261128,
+  "action_seed": 20261130,
+  "mapping_episode_seed": 20261131,
+  "workers": 2,
+  "max_actions_per_hand": 256,
+  "max_seconds_per_opponent": 1800,
+  "native_validation": {
+    "hands": 1000,
+    "seed": 20261127,
+    "payoff_tolerance": 1e-09
+  },
+  "inference": {
+    "alpha": 0.05,
+    "family_size": 6,
+    "primary_test": "two-sided bounded Hoeffding mean-zero test, Bonferroni over six pooled fixed-agent-policy opponents",
+    "ci": "paired-deal CLT approximate plus finite-sample Hoeffding; three fixed agents averaged within each deal, not separate independent samples",
+    "variance_reduction": "duplicate-deal pairing; compare paired variance with covariance-omitted seat estimate; not AIVAT"
+  },
+  "primary_projection_mass_limit": 0.0,
+  "limitations": "100bb matched-grid simulation; weak fixed heuristics and small ISMCTS budget; three fixed training policies, not population training-seed inference; no Slumbot data in local matches"
+}
