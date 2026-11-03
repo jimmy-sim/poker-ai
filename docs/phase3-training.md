@@ -256,3 +256,24 @@ checkpoint work. Spawned workers train independent seed tables, never share
 asynchronous regret updates. CPU model, logical cores, thread settings, feature
 cache statistics, checkpoint hashes and source/config provenance are recorded.
 Entropy/nonuniform-row counts describe table updates and are not strength metrics.
+
+## Local bet abstraction and translation
+
+`abstraction/actions.py` defines rational half/pot/double-pot raises, optionally
+including the minimum and all-in, with legal clamping/deduplication. Fractions
+apply to the pot after calling, as increments above the current price. Raise-to
+amounts remain total street commitments. Rounding is exact rational arithmetic,
+halves upward; a short posted big blind uses the nominal price from call cost.
+
+Local off-grid mapping accepts the public context BEFORE the proposed action.
+Nearest mapping breaks ties downward. The optional randomized pseudo-harmonic
+mapping uses explicit RNG and lower-neighbor probability
+`(B-x)*(1+A)/((B-A)*(1+x))` for pot-normalized raise increments. Analytical tests
+check endpoints, legality and the calling-frequency mixture identity. The formula
+comes from [Ganzfried and Sandholm (2013)](https://www.cs.cmu.edu/~sandholm/reverse%20mapping.ijcai13.pdf).
+This local implementation alone does not establish a full-game exploitability
+benefit. In particular, an already applied off-grid wager changes the public
+ledger; translating a number does not reconcile that history with a trained
+abstract tree. Public shadow-state reconciliation and mapped-policy decoding are
+still required before claiming a complete off-tree agent adapter. Real chip
+accounting must stay in the actual engine, with mapping failures/fallbacks explicit.
