@@ -239,3 +239,32 @@ def test_experiment_config_and_tiny_integration(
         path.write_text(json.dumps({**config, **mutation}))
         with pytest.raises(ValueError):
             experiment.load_config(path)
+
+
+def test_extension_learning_has_no_reference_or_benchmark_imports() -> None:
+    import ast
+
+    root = Path(__file__).resolve().parents[1] / "src/poker_ai"
+    for package in ("opponent_modeling", "risk"):
+        for path in (root / package).glob("*.py"):
+            for node in ast.walk(ast.parse(path.read_text())):
+                names = (
+                    [node.module or ""]
+                    if isinstance(node, ast.ImportFrom)
+                    else [a.name for a in node.names]
+                    if isinstance(node, ast.Import)
+                    else []
+                )
+                assert all(
+                    not any(
+                        forbidden in name
+                        for forbidden in (
+                            "open_spiel",
+                            "pyspiel",
+                            "solver_validation",
+                            "evaluation",
+                            "slumbot",
+                        )
+                    )
+                    for name in names
+                ), path

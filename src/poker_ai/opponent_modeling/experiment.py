@@ -3,7 +3,6 @@
 import gzip
 import hashlib
 import json
-import platform
 import time
 from pathlib import Path
 from typing import Any, cast
@@ -24,6 +23,7 @@ from poker_ai.opponent_modeling.policies import (
     scripted_policy,
     security,
 )
+from poker_ai.reproducibility import runtime_environment
 from poker_ai.toy.cfr import CFR
 from poker_ai.toy.games import GameName
 from poker_ai.toy.tree import FloatArray, Tree
@@ -266,10 +266,7 @@ def run_experiment(root: Path, config_path: Path, output: Path) -> dict[str, Any
         "status": "completed",
         "config": config,
         "source": source,
-        "environment": {
-            "python": platform.python_version(),
-            "platform": platform.platform(),
-        },
+        "environment": runtime_environment(),
         "seconds": time.perf_counter() - started,
         "rows": rows,
         "artifacts_sha256": artifacts,

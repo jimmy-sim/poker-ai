@@ -2,6 +2,8 @@
 
 import itertools
 import math
+from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pytest
@@ -113,3 +115,79 @@ def test_own_toy_return_law_exact_ev_and_rake(game: GameName, seat: int) -> None
     assert raked.mean < law.mean
     np.testing.assert_array_equal(law.probabilities, raked.probabilities)
     assert np.all(raked.outcomes <= law.outcomes)
+
+
+def test_tiny_risk_experiment_and_reference_format_rejection(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import gzip
+    import hashlib
+    import json
+
+    from poker_ai.risk import experiment
+
+    root = Path(__file__).resolve().parents[1]
+    config = json.loads((root / "configs/bankroll-risk.json").read_text())
+    config.update({"paths": 20, "horizon": 5, "kelly_multipliers": [0.0, 0.5]})
+    config["ruin_control"]["horizon"] = 5
+    config_path = tmp_path / "config.json"
+    config_path.write_text(json.dumps(config))
+    profile_path = tmp_path / "own-risk-profiles.json.gz"
+    profile: dict[str, Any] = {
+        "format": "poker-ai-own-bayesian-risk-profiles-v1",
+        "games": {},
+    }
+    for game in ("kuhn", "leduc"):
+        tree = Tree.build(game)
+        own, opponent = (
+            scripted_policy(tree, "value"),
+            scripted_policy(tree, "aggressive"),
+        )
+        profile["games"][game] = {
+            "keys": tree.keys,
+            "seat": 0,
+            "scenario": "aggressive",
+            "seed": 20261203,
+            "hands_observed": 1000,
+            "opponent": opponent.tolist(),
+            "policies": {name: own.tolist() for name in config["toy_policies"]},
+        }
+    profile_path.write_bytes(gzip.compress(json.dumps(profile).encode()))
+    (tmp_path / "opponents.json").write_text(
+        json.dumps(
+            {
+                "status": "completed",
+                "artifacts_sha256": {
+                    profile_path.name: hashlib.sha256(
+                        profile_path.read_bytes()
+                    ).hexdigest()
+                },
+            }
+        )
+    )
+    monkeypatch.setattr(
+        experiment, "source_provenance", lambda *args, **kwargs: {"test": True}
+    )
+    report = experiment.run_experiment(
+        root, config_path, profile_path, tmp_path / "risk.json"
+    )
+    assert report["status"] == "completed" and len(report["rows"]) == 48
+    assert report["robust_binary_fraction"] == 0
+    for mutation in (
+        {"paths": 1},
+        {"binary_persistence": [1.0]},
+        {"pot_rake_rates": [-0.1]},
+        {"toy_scenario": "best_observed"},
+    ):
+        config_path.write_text(json.dumps({**config, **mutation}))
+        with pytest.raises(ValueError):
+            experiment.load_config(config_path)
+    config_path.write_text(json.dumps(config))
+    profile_path.write_bytes(
+        gzip.compress(json.dumps({"format": "reference-comparison-only"}).encode())
+    )
+    with pytest.raises(ValueError, match="only own"):
+        experiment.run_experiment(
+            root, config_path, profile_path, tmp_path / "bad.json"
+        )
