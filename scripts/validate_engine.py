@@ -341,6 +341,7 @@ def main() -> int:
     rng = Generator(PCG64(config["seed"]))
     completed = actions_checked = showdowns = side_pot_hands = 0
     reference_raise_allowances = 0
+    board_runouts = 0
     failures: list[dict[str, object]] = []
     digest = hashlib.sha256()
     started = time.perf_counter()
@@ -365,7 +366,8 @@ def main() -> int:
                     reference_raise_allowances += (
                         reference.short_allin_reference_allowances
                     )
-                    showdowns += int(len(state.board) == 5)
+                    board_runouts += int(len(state.board) == 5)
+                    showdowns += int(sum(not flag for flag in state.folded) > 1)
                     side_pot_hands += int(
                         len([pot for pot in state.pots if not pot.uncalled]) > 1
                     )
@@ -404,7 +406,7 @@ def main() -> int:
         if completed % 100 == 0:
             print(f"Matched {completed}/{config['hands']} hands", flush=True)
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "passed"
         if not failures and completed == config["hands"]
         else "failed",
@@ -423,6 +425,7 @@ def main() -> int:
             "shared legal action traces and exact rational terminal payouts; "
             "integer rounding tested separately"
         ),
+        "five_card_board_hands": board_runouts,
         "showdowns": showdowns,
         "side_pot_hands": side_pot_hands,
         "failures": failures,

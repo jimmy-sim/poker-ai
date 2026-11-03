@@ -14,7 +14,10 @@ are correctness and throughput results, not evidence of a strong poker agent.
 | Hold'em engine | `results/engine-validation.json` | 1,000 hands, 10,039 actions, 920 board runouts, 471 side-pot hands |
 | Fast local quality gate | `make check`, Python 3.11.17 and 3.12 | 326 tests; Ruff lint/format and strict mypy passed |
 
-Engine evidence was generated from clean commit `23823ab`. Three instances of the
+Initial engine evidence was generated from clean commit `23823ab`. The current
+report records its own source revision; a later reporting correction separates
+five-card board completions from contested showdowns (a river fold is not a
+showdown). The transition corpus and comparison scope are unchanged. Three instances of the
 reference's additional short-all-in raise allowance were counted; other checks
 passed within the declared domain. Read [the engine contract](phase1-engine.md)
 before interpreting this as agreement: the reference has short-blind/free-fold
