@@ -42,5 +42,7 @@
   "maximum_nodes_per_pass": 200000,
   "comparison_use": "OpenSpiel validation only, never own training inputs",
   "heldout_use": "run only after exact development gates pass; own training per new game, not zero-shot generalization",
-  "scope": "bounded diagnostic; no full-game strength claim"
+  "scope": "bounded diagnostic; no full-game strength claim",
+  "profile_iterations": 1000,
+  "profile_repetitions": 3
 }

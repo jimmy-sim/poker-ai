@@ -149,3 +149,22 @@ def test_representations_preserve_own_abstract_recall(low_tree: SpotTree) -> Non
     model = CardAbstraction.load(ROOT / "results/card-models/potential-8.json")
     for encoding in ("exact", "legacy_b8", "public_b8"):
         assert recall_violations(MatrixTree.build(low_tree, encoding, model)) == 0
+
+
+def test_profiled_menu_cache_preserves_all_sampled_updates(low_tree: SpotTree) -> None:
+    tree = MatrixTree.build(low_tree)
+    cached = MCCFR(lambda rng: IndexedState(tree), Generator(PCG64(17)))
+    dynamic = MCCFR(
+        lambda rng: IndexedState(tree, cached_actions=False), Generator(PCG64(17))
+    )
+    cached.train(200)
+    dynamic.train(200)
+    assert cached.nodes_visited == dynamic.nodes_visited
+    assert cached.rows.keys() == dynamic.rows.keys()
+    for key in cached.rows:
+        np.testing.assert_array_equal(
+            cached.rows[key].regrets, dynamic.rows[key].regrets
+        )
+        np.testing.assert_array_equal(
+            cached.rows[key].strategy_sum, dynamic.rows[key].strategy_sum
+        )

@@ -36,6 +36,7 @@ class MatrixTree(ArrayTree):
     source: SpotTree
     exact_to_abstract: IntArray
     encoding: Encoding
+    node_actions: tuple[tuple[int, ...], ...]
 
     @classmethod
     def build(
@@ -97,21 +98,22 @@ class MatrixTree(ArrayTree):
             if len(set(depths[information == info].tolist())) != 1:
                 raise ValueError("information set merges different depths")
         return cls(
-            children,
-            valid,
-            players,
-            information,
-            tuple(keys),
-            tuple(menus),
-            np.array(owners, dtype=np.int64),
-            legal,
-            chance_edges,
-            chance_reach,
-            np.array(source.payoffs),
-            levels,
-            source,
-            mapping,
-            encoding,
+            children=children,
+            valid=valid,
+            player=players,
+            information=information,
+            keys=tuple(keys),
+            actions=tuple(menus),
+            owners=np.array(owners, dtype=np.int64),
+            legal=legal,
+            chance_edges=chance_edges,
+            chance_reach=chance_reach,
+            terminal_values=np.array(source.payoffs),
+            levels=levels,
+            source=source,
+            exact_to_abstract=mapping,
+            encoding=encoding,
+            node_actions=tuple(state.actions for state in source.states),
         )
 
     def exact_policy(self, policy: FloatArray) -> Policy:
@@ -138,6 +140,7 @@ class IndexedState:
 
     tree: MatrixTree
     node: int = 0
+    cached_actions: bool = True
 
     @property
     def terminal(self) -> bool:
@@ -153,7 +156,11 @@ class IndexedState:
 
     @property
     def actions(self) -> tuple[int, ...]:
-        return self.tree.source.states[self.node].actions
+        return (
+            self.tree.node_actions[self.node]
+            if self.cached_actions
+            else self.tree.source.states[self.node].actions
+        )
 
     @property
     def chance_probabilities(self) -> tuple[float, ...]:
@@ -177,7 +184,9 @@ class IndexedState:
         if type(action) is not int or action not in self.actions:
             raise ValueError("illegal indexed action")
         column = self.actions.index(action)
-        return IndexedState(self.tree, int(self.tree.children[self.node, column]))
+        return IndexedState(
+            self.tree, int(self.tree.children[self.node, column]), self.cached_actions
+        )
 
 
 def recall_violations(tree: MatrixTree) -> int:
@@ -193,7 +202,7 @@ def recall_violations(tree: MatrixTree) -> int:
             past = paths[node][actor]
             if signatures.setdefault(info, past) != past:
                 violated.add(info)
-        for column, action in enumerate(tree.source.states[node].actions):
+        for column, action in enumerate(tree.node_actions[node]):
             child = int(tree.children[node, column])
             first, second = paths[node]
             if actor == 0:
