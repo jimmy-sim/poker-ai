@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "name": "heldout_low_oop",
+  "board": [
+    "Js",
+    "6c",
+    "2d",
+    "8h"
+  ],
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Jh",
+          "Jd"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "Ac",
+          "Qc"
+        ],
+        "weight": 1.0
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Jc",
+          "Tc"
+        ],
+        "weight": 1.0
+      },
+      {
+        "cards": [
+          "7s",
+          "7d"
+        ],
+        "weight": 1.0
+      }
+    ]
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "button": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "prefix_actions": [
+    {
+      "kind": "raise_to",
+      "amount": 6
+    },
+    {
+      "kind": "raise_to",
+      "amount": 18
+    },
+    {
+      "kind": "raise_to",
+      "amount": 54
+    },
+    {
+      "kind": "raise_to",
+      "amount": 162
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "pot": 324,
+  "stacks": [
+    38,
+    38
+  ],
+  "actor": 0,
+  "hero": 0,
+  "texture": "dry",
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "max_tree_nodes": 200000,
+  "range_conditioning": "product_weights_conditioned_on_card_removal"
+}
