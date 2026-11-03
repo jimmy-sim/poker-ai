@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot preflight-slumbot benchmark-slumbot
 
 setup:
 	$(UV) sync --locked --dev
@@ -109,3 +109,11 @@ train-slumbot:
 	$(UV) run --locked python scripts/train_holdem.py \
 		--config configs/slumbot-own-training.json \
 		--output results/slumbot/own-training.json
+
+preflight-slumbot:
+	$(UV) run --locked python scripts/benchmark_slumbot.py --config configs/slumbot-pilot.json
+
+# Explicit live public simulation only; no API calls occur in setup/check/CI.
+benchmark-slumbot: preflight-slumbot
+	$(UV) run --locked python scripts/benchmark_slumbot.py \
+		--config configs/slumbot-pilot.json --live

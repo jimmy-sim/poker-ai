@@ -72,9 +72,14 @@ writeup live in [solver_validation.md](solver_validation.md).
 - Slumbot API benchmark only if its terms permit the intended usage and sample.
 - Compare with an OpenSpiel/RLCard baseline and document rule differences.
 
-## Phase 5 — Two quant extensions, chosen with the user
+## Phase 5 — Two quant extensions, selected with the user
 
-Candidates: Bayesian opponent modeling and safe exploitation; subgame/depth-limited
+Selected on November 2, 2026: **Bayesian opponent modeling and bankroll/risk
+analysis**. Begin after Phase 4. Opponent-model learning will use own simulated
+opponents, never the comparison-only OpenSpiel/Slumbot outputs. Risk results are
+conditional research simulations, not recommendations for real-money play.
+
+Original candidates: Bayesian opponent modeling and safe exploitation; subgame/depth-limited
 solving; bankroll paths, risk of ruin, Kelly fraction and rake sensitivity;
 or a small Deep CFR-style neural value approximation comparison.
 

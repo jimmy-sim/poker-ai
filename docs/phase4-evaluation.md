@@ -264,3 +264,31 @@ can use off-grid sizes, its current strategy/version/dealer are server controlle
 and the client cannot set deal seeds. Retained sanitized responses permit replay
 of accounting/statistics, while another live run need not reproduce the same
 cards/actions. Prefix failures do not receive a complete-sample inference claim.
+
+The matched-depth own training completed all three predeclared 1,000-iteration
+runs. Public primary remains the first seed, not a selected winner. The CLI dry
+preflight checks both positions with synthetic own deals, without consuming live
+RNG state or making a game request. Offline fake-server tests cover street-total
+bets, terminal/fold accounting, token sanitization, missing outcomes, no retries
+on ambiguous requests and no inference from a favorable but incomplete prefix.
+
+```sh
+make train-slumbot       # own-only 200bb self-play; no game requests
+make preflight-slumbot   # load/check matching-depth policy; no game requests
+make benchmark-slumbot   # explicit live, paced 100-hand public simulation pilot
+```
+
+Each live attempt receives a unique UTC-named report and sanitized event archive;
+prior failed attempts are not overwritten. Tokens stay out of persisted logs.
+Only confirmed server net winnings become outcomes. Fold settlements are checked
+independently from public chip flow; synthetic showdown results never replace
+server outcomes. Per-decision lookup/translation diagnostics are retained. Server
+version/deal independence are unverified, so pilot intervals are conditional on
+stated IID assumptions, not finite-sample guarantees about an opaque service.
+Recorded statistics/settlements can be checked without network access using
+`uv run --locked python scripts/benchmark_slumbot.py --replay-report REPORT.json`.
+
+The user selected **Bayesian opponent modeling and bankroll/risk analysis** for
+Phase 5. Those follow this evaluation step. Adaptive learning will use own
+simulated opponents, keeping all external reference/benchmark outputs out of
+strategy training.
