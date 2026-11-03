@@ -13,6 +13,9 @@ dependencies = ["numpy>=2.0,<3"]
 [project.optional-dependencies]
 validation = ["treys==0.1.8"]
 engine-validation = ["pokerkit==0.7.7"]
+solver-validation = [
+    "open-spiel==2.0.2",
+]
 
 [dependency-groups]
 dev = [
