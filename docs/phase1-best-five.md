@@ -8,7 +8,7 @@ the strongest five-card `HandRank`. Larger ranks are stronger, using the same
 input before selection, including cards that would be discarded. It accepts a
 one-pass iterable and does not mutate inputs.
 
-The method computes the maximum of `evaluate_five(subset)` over every five-card
+The preserved `evaluate_best_reference` computes the maximum of `evaluate_five(subset)` over every five-card
 subset. There is one subset for five cards, six for six cards, and 21 for seven
 cards. This reuses the exhaustively validated five-card implementation as a
 readable correctness baseline. It deliberately retains repeated subset validation
@@ -91,7 +91,10 @@ make validate-best
 ```
 
 The full command installs the declared optional extra and writes
-`results/best-five-validation.json`. The million-hand checks stay outside routine
+`results/best-five-direct-validation.json` for the current optimized implementation.
+The earlier baseline report remains versioned separately. See
+[the direct classifier and profiling evidence](evaluator-performance.md).
+The million-hand checks stay outside routine
 CI. To run the pilot separately:
 
 ```sh

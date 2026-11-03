@@ -42,3 +42,30 @@ Local checks pass on Python 3.11 and 3.12, including 274 tests and strict typing
 The direct classifier must also pass the declared two-million-hand Treys stream
 before equity calculations use it. Profile/validation timings describe different
 workloads and must not be mixed into a speedup claim.
+
+
+## Paired measurements and independent validation
+
+| Cards | Direct median microseconds/hand | Reference median microseconds/hand | Reference/direct ratio |
+| --- | ---: | ---: | ---: |
+| 5 | 8.258 | 9.525 | 1.15 |
+| 6 | 9.423 | 53.597 | 5.69 |
+| 7 | 10.467 | 208.784 | 19.95 |
+
+The [paired raw report](../results/evaluator-comparison.json) records the same
+input digest per hand size for both implementations, all six unprofiled timings,
+and balanced execution order. Ratios are reference median divided by direct
+median, not comparisons between the older baseline profile and this run.
+
+The direct classifier passed the same declared two-million-hand Treys stream:
+one million six-card and one million seven-card draws, zero disagreements.
+See [the raw direct validation report](../results/best-five-direct-validation.json).
+At its start the paired benchmark JSON was untracked, so the report honestly
+records a dirty working tree. Every hashed source/config/entrypoint byte was
+checked against the recorded committed revision and matches exactly; the dirty
+item is a generated report, not an implementation change. Both artifacts preserve
+that original provenance rather than rewriting it after the run.
+
+These are local fixed-workload timings with raw run-to-run variation retained.
+They do not predict end-to-end training speed. Equity/engine work may expose new
+bottlenecks and must be profiled separately.

@@ -72,6 +72,12 @@ Reproduce with `make validate-best`; see
 not exhaustive six/seven-card coverage. Profiling, equity, and engine validation
 remain subsequent steps.
 
+The current direct rank-mask evaluator preserves the subset implementation as
+`evaluate_best_reference`. It passed a separate two-million-hand revalidation;
+see [performance methodology and paired measurements](docs/evaluator-performance.md)
+and [direct validation evidence](results/best-five-direct-validation.json).
+`make validate-best` now targets that direct evaluator report.
+
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.
 

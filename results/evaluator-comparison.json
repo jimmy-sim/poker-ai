@@ -1,0 +1,132 @@
+{
+  "config": {
+    "implementations": [
+      "evaluate_best",
+      "evaluate_best_reference"
+    ],
+    "repeats": 6,
+    "samples": 10000,
+    "seed": 20261105
+  },
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17 (main, Oct 21 2026, 17:46:23) [Clang 23.1.3 ]"
+  },
+  "rows": [
+    {
+      "cards": 5,
+      "cprofile_cumulative_top20": "         513098 function calls in 0.263 seconds\n\n   Ordered by: cumulative time\n   List reduced from 22 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.004    0.004    0.263    0.263 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.011    0.000    0.258    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:151(evaluate_best)\n    10000    0.071    0.000    0.245    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:51(evaluate_five)\n    10000    0.020    0.000    0.060    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n    10000    0.014    0.000    0.051    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:587(__init__)\n    50000    0.021    0.000    0.040    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n    10000    0.006    0.000    0.037    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:660(update)\n    20000    0.019    0.000    0.029    0.000 {built-in method builtins.sorted}\n    10000    0.012    0.000    0.022    0.000 {built-in method _collections._count_elements}\n    50000    0.019    0.000    0.019    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n    54367    0.011    0.000    0.011    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:70(<genexpr>)\n    60000    0.010    0.000    0.010    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:68(<genexpr>)\n    10000    0.004    0.000    0.009    0.000 {built-in method builtins.isinstance}\n    54367    0.009    0.000    0.009    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:71(<genexpr>)\n    54367    0.009    0.000    0.009    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:72(<genexpr>)\n    10000    0.006    0.000    0.006    0.000 <string>:2(__init__)\n    10000    0.006    0.000    0.006    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:73(<setcomp>)\n    10000    0.003    0.000    0.005    0.000 <frozen abc>:117(__instancecheck__)\n    49995    0.005    0.000    0.005    0.000 {built-in method builtins.len}\n    10000    0.003    0.000    0.003    0.000 {built-in method _abc._abc_instancecheck}\n\n\n",
+      "implementation": "evaluate_best",
+      "input_sha256": "4b45d1d6f16d3954a2f3cd196a0feb41344132ba8a7efc5346c511abfd43a42d",
+      "median_seconds_per_hand": 8.25775835e-06,
+      "seed": 20261110,
+      "unprofiled_batch_seconds": [
+        0.084539,
+        0.080616167,
+        0.089406375,
+        0.0793525,
+        0.074066084,
+        0.101913333
+      ]
+    },
+    {
+      "cards": 5,
+      "cprofile_cumulative_top20": "         643098 function calls in 0.304 seconds\n\n   Ordered by: cumulative time\n   List reduced from 24 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.004    0.004    0.304    0.304 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.013    0.000    0.300    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:100(evaluate_best_reference)\n    10000    0.006    0.000    0.234    0.000 {built-in method builtins.max}\n    20000    0.007    0.000    0.228    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:116(<genexpr>)\n    10000    0.063    0.000    0.220    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:51(evaluate_five)\n    20000    0.038    0.000    0.102    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n   100000    0.040    0.000    0.064    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n    10000    0.008    0.000    0.046    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:587(__init__)\n    10000    0.006    0.000    0.038    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:660(update)\n    20000    0.017    0.000    0.028    0.000 {built-in method builtins.sorted}\n   100000    0.024    0.000    0.024    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n    10000    0.012    0.000    0.023    0.000 {built-in method _collections._count_elements}\n    54367    0.011    0.000    0.011    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:70(<genexpr>)\n    60000    0.011    0.000    0.011    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:68(<genexpr>)\n    10000    0.004    0.000    0.010    0.000 {built-in method builtins.isinstance}\n    54367    0.009    0.000    0.009    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:71(<genexpr>)\n    54367    0.009    0.000    0.009    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:72(<genexpr>)\n    10000    0.006    0.000    0.006    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:73(<setcomp>)\n    10000    0.003    0.000    0.006    0.000 <frozen abc>:117(__instancecheck__)\n    10000    0.005    0.000    0.005    0.000 <string>:2(__init__)\n\n\n",
+      "implementation": "evaluate_best_reference",
+      "input_sha256": "4b45d1d6f16d3954a2f3cd196a0feb41344132ba8a7efc5346c511abfd43a42d",
+      "median_seconds_per_hand": 9.5250375e-06,
+      "seed": 20261110,
+      "unprofiled_batch_seconds": [
+        0.107188417,
+        0.094867875,
+        0.099482417,
+        0.09308775,
+        0.094824833,
+        0.095632875
+      ]
+    },
+    {
+      "cards": 6,
+      "cprofile_cumulative_top20": "         355580 function calls in 0.250 seconds\n\n   Ordered by: cumulative time\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.006    0.006    0.250    0.250 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.081    0.000    0.244    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:151(evaluate_best)\n    10000    0.026    0.000    0.067    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n    60000    0.026    0.000    0.041    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n     9736    0.022    0.000    0.028    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:141(_highest_ranks)\n    10000    0.004    0.000    0.018    0.000 {built-in method builtins.next}\n    60000    0.016    0.000    0.016    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n    10088    0.011    0.000    0.014    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:174(<genexpr>)\n     9986    0.012    0.000    0.012    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:186(<listcomp>)\n     9999    0.012    0.000    0.012    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:179(<listcomp>)\n     9986    0.011    0.000    0.011    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:185(<listcomp>)\n     9906    0.006    0.000    0.006    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:122(_straight_high)\n    10000    0.006    0.000    0.006    0.000 <string>:2(__init__)\n    39877    0.004    0.000    0.004    0.000 {method 'bit_count' of 'int' objects}\n    33059    0.003    0.000    0.003    0.000 {method 'append' of 'list' objects}\n    33224    0.003    0.000    0.003    0.000 {method 'bit_length' of 'int' objects}\n    29297    0.003    0.000    0.003    0.000 {built-in method builtins.len}\n      420    0.000    0.000    0.000    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:188(<listcomp>)\n        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}\n\n\n",
+      "implementation": "evaluate_best",
+      "input_sha256": "450985896d89b7538d42edc705a9034c2d1dc3aa8be854bf9bd2e6b43f0a22b6",
+      "median_seconds_per_hand": 9.422543750000001e-06,
+      "seed": 20261111,
+      "unprofiled_batch_seconds": [
+        0.097820208,
+        0.088985875,
+        0.078226542,
+        0.090630667,
+        0.100214458,
+        0.1050545
+      ]
+    },
+    {
+      "cards": 6,
+      "cprofile_cumulative_top20": "         3178571 function calls in 1.674 seconds\n\n   Ordered by: cumulative time\n   List reduced from 25 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.005    0.005    1.674    1.674 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.015    0.000    1.669    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:100(evaluate_best_reference)\n    10000    0.033    0.000    1.582    0.000 {built-in method builtins.max}\n    70000    0.043    0.000    1.524    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:116(<genexpr>)\n    60000    0.421    0.000    1.480    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:51(evaluate_five)\n    70000    0.158    0.000    0.421    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n    60000    0.052    0.000    0.301    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:587(__init__)\n   360000    0.163    0.000    0.263    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n    60000    0.039    0.000    0.249    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:660(update)\n   120000    0.112    0.000    0.187    0.000 {built-in method builtins.sorted}\n    60000    0.079    0.000    0.150    0.000 {built-in method _collections._count_elements}\n   360000    0.100    0.000    0.100    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n   326198    0.075    0.000    0.075    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:70(<genexpr>)\n   360000    0.070    0.000    0.070    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:68(<genexpr>)\n   326198    0.062    0.000    0.062    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:71(<genexpr>)\n    60000    0.025    0.000    0.060    0.000 {built-in method builtins.isinstance}\n   326198    0.060    0.000    0.060    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:72(<genexpr>)\n    60000    0.038    0.000    0.038    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:73(<setcomp>)\n    60000    0.020    0.000    0.035    0.000 <frozen abc>:117(__instancecheck__)\n    60000    0.034    0.000    0.034    0.000 <string>:2(__init__)\n\n\n",
+      "implementation": "evaluate_best_reference",
+      "input_sha256": "450985896d89b7538d42edc705a9034c2d1dc3aa8be854bf9bd2e6b43f0a22b6",
+      "median_seconds_per_hand": 5.3597241699999996e-05,
+      "seed": 20261111,
+      "unprofiled_batch_seconds": [
+        0.525419625,
+        0.573773083,
+        0.5229875,
+        0.538645084,
+        0.673196,
+        0.53329975
+      ]
+    },
+    {
+      "cards": 7,
+      "cprofile_cumulative_top20": "         362006 function calls in 0.263 seconds\n\n   Ordered by: cumulative time\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.006    0.006    0.263    0.263 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.085    0.000    0.257    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:151(evaluate_best)\n    10000    0.029    0.000    0.078    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n    70000    0.030    0.000    0.049    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n     9286    0.019    0.000    0.024    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:141(_highest_ranks)\n    70000    0.019    0.000    0.019    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n    10000    0.004    0.000    0.018    0.000 {built-in method builtins.next}\n    10342    0.011    0.000    0.014    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:174(<genexpr>)\n     9977    0.012    0.000    0.012    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:186(<listcomp>)\n     9995    0.012    0.000    0.012    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:179(<listcomp>)\n     9977    0.012    0.000    0.012    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:185(<listcomp>)\n    10000    0.006    0.000    0.006    0.000 <string>:2(__init__)\n     9729    0.006    0.000    0.006    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:122(_straight_high)\n    39458    0.004    0.000    0.004    0.000 {method 'bit_count' of 'int' objects}\n    28447    0.003    0.000    0.003    0.000 {built-in method builtins.len}\n    26820    0.003    0.000    0.003    0.000 {method 'append' of 'list' objects}\n    27229    0.003    0.000    0.003    0.000 {method 'bit_length' of 'int' objects}\n      744    0.000    0.000    0.000    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:188(<listcomp>)\n        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}\n\n\n",
+      "implementation": "evaluate_best",
+      "input_sha256": "d318dbc49593a1381c387dbe995a7af0799f197ca001e162d6aaefa26f208293",
+      "median_seconds_per_hand": 1.04670625e-05,
+      "seed": 20261112,
+      "unprofiled_batch_seconds": [
+        0.110360458,
+        0.096716542,
+        0.098980792,
+        0.1538935,
+        0.095440166,
+        0.110646833
+      ]
+    },
+    {
+      "cards": 7,
+      "cprofile_cumulative_top20": "         10744249 function calls in 2.379 seconds\n\n   Ordered by: cumulative time\n   List reduced from 25 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.002    0.002    2.379    2.379 /Users/jimmysim/Projects/poker-ai/scripts/profile_evaluator.py:26(batch)\n    10000    0.007    0.000    2.377    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:100(evaluate_best_reference)\n    10000    0.045    0.000    2.335    0.000 {built-in method builtins.max}\n   220000    0.063    0.000    2.250    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:116(<genexpr>)\n   210000    0.662    0.000    2.187    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:51(evaluate_five)\n   220000    0.205    0.000    0.543    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:73(cards_to_mask)\n   210000    0.074    0.000    0.433    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:587(__init__)\n   210000    0.059    0.000    0.359    0.000 /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/collections/__init__.py:660(update)\n  1120000    0.209    0.000    0.338    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:67(card_bit)\n   420000    0.166    0.000    0.269    0.000 {built-in method builtins.sorted}\n   210000    0.112    0.000    0.212    0.000 {built-in method _collections._count_elements}\n  1120000    0.129    0.000    0.129    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/cards.py:21(_require_int_in_range)\n  1141446    0.103    0.000    0.103    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:70(<genexpr>)\n  1260000    0.101    0.000    0.101    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:68(<genexpr>)\n   210000    0.037    0.000    0.087    0.000 {built-in method builtins.isinstance}\n  1141446    0.087    0.000    0.087    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:71(<genexpr>)\n  1141446    0.083    0.000    0.083    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:72(<genexpr>)\n   210000    0.054    0.000    0.054    0.000 /Users/jimmysim/Projects/poker-ai/src/poker_ai/evaluator.py:73(<setcomp>)\n   210000    0.029    0.000    0.050    0.000 <frozen abc>:117(__instancecheck__)\n   210000    0.046    0.000    0.046    0.000 <string>:2(__init__)\n\n\n",
+      "implementation": "evaluate_best_reference",
+      "input_sha256": "d318dbc49593a1381c387dbe995a7af0799f197ca001e162d6aaefa26f208293",
+      "median_seconds_per_hand": 0.00020878355625,
+      "seed": 20261112,
+      "unprofiled_batch_seconds": [
+        2.279730917,
+        2.196286333,
+        1.970704209,
+        2.245363375,
+        1.948912,
+        1.979384792
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "dirty": false,
+    "git_commit": "594b3bc7da438febf8cd36175d985416a6cc5293",
+    "git_status": [],
+    "sha256": {
+      "configs/evaluator-comparison.json": "cb7f09e039301166afae37b728acf862f5948413d521ece09e28c31564d9eb43",
+      "pyproject.toml": "16cc36a6ffe9d20f2ff0992a6722a104b149d5338e654155bc4844cb533622ac",
+      "scripts/profile_evaluator.py": "2fd7d10aeffe939b772b7801b2fb0687ae61c6c550e7aa897bf6a2165c83d60f",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "uv.lock": "b8d23fd3c798ee23c5278c631eec1e47658a12e2e2bb742e37978681e7ce89a9"
+    }
+  }
+}

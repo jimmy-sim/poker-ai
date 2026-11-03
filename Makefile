@@ -34,4 +34,4 @@ validate-five:
 validate-best:
 	$(UV) run --locked --extra validation python scripts/validate_best.py \
 		--config configs/best-five-validation.json \
-		--output results/best-five-validation.json
+		--output results/best-five-direct-validation.json
