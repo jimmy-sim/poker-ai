@@ -125,3 +125,38 @@ artifacts are inputs. Existing resume tests verify the two methods bit for bit.
 
 Current fast gate: 353 tests, lint and strict types. Phase 3 is ongoing; the later
 external postflop solver milestone has not begun.
+
+## Card-feature and clustering contract (implementation checkpoint)
+
+`abstraction/potential.py` estimates current conditional showdown share against a
+uniform opponent and nested distributions of conditional equity at every future
+board length. Preflop includes current equity plus flop/turn/river distributions;
+flop includes current plus turn/river; turn includes current plus river; river
+has only a point estimate of current equity. Inner opponent/runout Monte Carlo
+adds measurement noise. In particular, river never turns repeated estimator noise
+into a fictitious distribution of future potential.
+
+The feature RNG is derived from explicit feature settings/seed and canonical own
+hole/public board cards via SHA256/PCG64. All 24 suit permutations are considered;
+preflop canonicalization produces 169 classes. The remaining dealer deck and
+actual opponent holes are never inputs. Known-card order is irrelevant for a
+conditional-equity feature; past bucket recall will use the original observed
+board prefixes. Features for bucket-count ablations share the same measurement
+seed and samples. This mapping is deterministic, but its equity estimates are not
+exact. Held-out empirical reconstruction error must report its measurement noise.
+
+`abstraction/clustering.py` implements Euclidean histogram k-means and grid W1
+(earth-mover) k-medians. For an equity grid from 0 to 1, W1 equals the sum of
+absolute CDF differences divided by bins-1. Coordinatewise median CDFs remain
+monotone and define valid representative histograms. Occupied clusters are
+reported separately from requested counts; empty clusters are not fabricated.
+A single seeded initialization is not guaranteed globally optimal.
+
+A distribution-aware final-street histogram is distinct from potential-aware
+trajectories through all future streets. The implementation preserves that
+distinction rather than calling mean equity or only final distributions fully
+potential aware. This is an original small implementation inspired by
+[Ganzfried and Sandholm (2014)](https://ojs.aaai.org/index.php/AAAI/article/view/8816),
+not a replication of its system or its reported playing strength. Our later key
+builder will retain past abstract buckets instead of deliberately introducing
+imperfect recall.
