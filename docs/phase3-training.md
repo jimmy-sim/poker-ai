@@ -54,3 +54,15 @@ match analytically derived regrets; the nonuniform cases check own-reach exclusi
 and behavior-policy importance corrections. Additional tests check exact seed
 reproduction and a modest learning improvement over uniform. These checks precede
 Hold'em training and do not constitute a trained Phase 3 Hold'em agent.
+
+## Checkpoint contract
+
+Own checkpoints use an explicit JSON format identifier, exact training config,
+source metadata, method/exploration settings, counters, accumulated regrets and
+average mass, and complete PCG64 state. Writes use a temporary file, fsync and
+atomic replacement. No pickle, solver-export converter, or reference strategy
+loader is used. The loader requires the own format and matching config and rejects
+invalid/nonfinite accumulators. Resumption tests for both methods reproduce all
+regrets, average masses, counters and random state bit for bit after split versus
+uninterrupted training. This prevents accidental reference artifact loading; it
+is not an authenticity guarantee against deliberately forged own-format files.
