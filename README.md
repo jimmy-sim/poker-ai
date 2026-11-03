@@ -9,8 +9,9 @@ Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, a
 [six/seven-card best-five selection](docs/phase1-best-five.md). See the
 [encoding contract and full phase acceptance gate](docs/phase1-cards.md).
 Profile-guided direct evaluation and [heads-up equity](docs/phase1-equity.md)
-are implemented; the game engine follows before solvers. The intended engine
-supports 2–6 seats and side pots; research agents initially play heads-up.
+are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-engine.md).
+[Phase 1 verification](docs/phase1-verification.md) is complete; Phase 2 toy games
+and exact solvers follow. Research agents initially play heads-up.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
 ## Development
@@ -70,7 +71,7 @@ Six/seven-card best-five selection matched Treys on
 Reproduce with `make validate-best`; see
 [the protocol and limits](docs/phase1-best-five.md) and
 [raw report](results/best-five-validation.json). These are sampled checks,
-not exhaustive six/seven-card coverage. The game engine remains the next Phase 1 component.
+not exhaustive six/seven-card coverage. Engine validation is recorded below.
 
 The current direct rank-mask evaluator preserves the subset implementation as
 `evaluate_best_reference`. It passed a separate two-million-hand revalidation;
@@ -82,6 +83,13 @@ Exact and Monte Carlo [heads-up equity](docs/phase1-equity.md) passed five
 predeclared reference cases. Exact outcome counts matched Treys; each configured
 Monte Carlo interval covered its exact counterpart. Reproduce with
 `make validate-equity`; see [raw counts and intervals](results/equity-validation.json).
+
+The engine completed **1,000 seeded independent traces / 10,039 actions**, including
+**471 side-pot hands**, with no unexplained mismatches in the declared comparison
+scope. This compares shared actions and rational terminal shares; short-blind,
+short-raise, free-fold, and integer-rounding differences are explicitly documented.
+See [rules and limitations](docs/phase1-engine.md) and
+[raw evidence](results/engine-validation.json). Run `make validate-engine`.
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.

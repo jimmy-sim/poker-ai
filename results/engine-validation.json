@@ -1,0 +1,100 @@
+{
+  "actions_checked": 10039,
+  "comparison_scope": "shared legal action traces and exact rational terminal payouts; integer rounding tested separately",
+  "config": {
+    "hands": 1000,
+    "max_actions": 2000,
+    "max_stack": 150,
+    "min_stack": 2,
+    "seed": 20261107
+  },
+  "documented_reference_differences": [
+    {
+      "button": 2,
+      "interpretation": "nominal-blind model differs from posted-blind reference behavior",
+      "own_call": 2,
+      "own_min_raise": 4,
+      "reference_call": 1,
+      "reference_min_raise": 3,
+      "scenario": "short_big_blind_bring_in",
+      "stacks": [
+        100,
+        1,
+        100
+      ]
+    },
+    {
+      "interpretation": "secured side pot retained while folding remaining main pot",
+      "own_final_stacks": [
+        15,
+        90,
+        100
+      ],
+      "reference_exception": "AssertionError",
+      "scenario": "free_fold_after_secured_side_pot"
+    },
+    {
+      "interpretation": "prior caller faces only one extra chip after a two-chip full wager",
+      "own_min_raise": null,
+      "reference_can_raise_to_5": true,
+      "reference_min_raise": 5,
+      "scenario": "prior_caller_after_short_all_in"
+    },
+    {
+      "interpretation": "ours spreads remainder one chip per winner clockwise",
+      "own_final_stacks": [
+        101,
+        98,
+        4,
+        100
+      ],
+      "reference_default_final_stacks": [
+        102,
+        98,
+        3,
+        100
+      ],
+      "scenario": "multiple_odd_chips_in_tied_pot"
+    }
+  ],
+  "documented_reference_short_allin_raise_allowances": 3,
+  "environment": {
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "pokerkit": "0.7.7",
+    "python": "3.11.17"
+  },
+  "failures": [],
+  "hands_completed": 1000,
+  "input_and_trace_sha256": "4548277d2b3a5d1ee50fe1c14476dcfbbff990825d4646527e82b4de91c9239e",
+  "matched_domain": "two through six seats, starting stacks cover 1/2 blinds",
+  "reference": {
+    "license": "MIT",
+    "package": "pokerkit",
+    "role": "validation only"
+  },
+  "schema_version": 1,
+  "showdowns": 920,
+  "side_pot_hands": 471,
+  "source": {
+    "dirty": false,
+    "git_commit": "23823abdb4806b4cbd561cbd3d8e5182fecf074b",
+    "git_status": [],
+    "sha256": {
+      "configs/engine-validation.json": "46d12a4f317a02d8abc518e7e67b3d7c6c55955d44b2cb9ac6e1f2cfd060370f",
+      "pyproject.toml": "51b8c622352e4d0a22cbf49fc756747795c1e0fa7baea2c405f4b35aad0baff1",
+      "scripts/validate_engine.py": "cf9584ed84a31370326b8080865ad7bb16c0a942ba8fd3d966975c8000af8af4",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "uv.lock": "9ed0ba497e30d90855b73094ba392154fc7abe36d10a192a5e53e47a40a36a94"
+    }
+  },
+  "status": "passed",
+  "validation_seconds": 2.3698452499993437
+}

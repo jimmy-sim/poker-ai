@@ -4,7 +4,7 @@ The user authorized continued autonomous work on 2026-11-02, following the roadm
 in order until stopped. The active goal continues through Phase 4; Phase 5 choices
 and any C++/Rust core require the already-stated user decisions.
 
-## Current phase: 1
+## Current phase: 2
 
 Completed and committed:
 
@@ -17,10 +17,12 @@ Completed and committed:
   fractional ties, descriptive variance, estimated SE, bounded confidence intervals.
 - Five exact-reference/Monte Carlo validation cases; raw evidence is in results/.
 
-Next: implement the own 2–6-seat no-limit Hold'em engine and test state transitions,
-legal betting/reopening, all-ins, side pots, showdown, chip conservation, and private
-player observations. Validate behavior against optional PokerKit. Do not advance
-to Phase 2 until the full Phase 1 gate passes. Phase 2 introduces toy games/CFR;
+- Own immutable 2–6-seat Hold’em engine; 26 engine tests and independent traces.
+- Full Phase 1 gate: 326 tests, Ruff, strict mypy on Python 3.11 and 3.12.
+
+Next: Kuhn and Leduc rules, full-tree CFR variants, exact information-set best
+response/exploitability, independent OpenSpiel comparisons, and convergence plots.
+See phase1-verification.md for the completed foundation and reference limitations.
 Phase 3.5 external strategy-solver validation remains gated after Phase 3 training.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,
