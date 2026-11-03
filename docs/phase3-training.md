@@ -389,3 +389,31 @@ that own no-limit training ran; they do not establish equilibrium convergence.
 Current local fast gate: 385 tests, lint and strict types. Phase 3 is still ongoing
 until mapped policy decoding/inference and the final acceptance report are done.
 The later external strategy-solver milestone remains gated.
+
+## Own-checkpoint inference and mapped probability decoding
+
+`agents/no_limit.py` accepts only the own MCCFR format and the recorded own card
+model SHA256. It checks current card/key/action/payout encoder source fingerprints
+against the producer metadata. Unrelated new analysis modules do not invalidate a
+frozen policy. Reproduction still needs the recorded locked environment; source
+checks alone do not guarantee library-version equivalence or artifact authenticity.
+Only read-only average-policy rows remain in the inference agent; no reference
+strategy/export converter or training call is exposed.
+
+The public shadow maps lookup history while retaining actual own cards/board.
+Virtual action probabilities are rescaled by pot-after-call into actual legal
+raises, rounded/clipped, translated onto the actual declared grid and merged.
+Clipped/unavailable raise mass and fraction error are explicit diagnostics.
+Unavailable raises become the actual passive action. Neither this projection nor
+a legal fallback preserves a virtual exploitability guarantee.
+
+Missing, unaveraged and irreconcilable-shadow rows have separate statuses and use
+uniform actions on the actual legal grid. A policy action-encoding mismatch raises
+an error instead of being hidden as a fallback. Inference receives an Observation,
+never a real dealer state. Mapping episode seeds and action RNGs are explicit;
+past mapping coins stay consistent across queries.
+
+`make verify-agent` audits a preselected own checkpoint across independent seeded
+on-grid hands, both button positions, and deliberate off-grid traces. It checks
+on-grid identity, legal outputs, separate chip ledgers and expected virtual-all-in
+failures. It measures interface behavior and lookup coverage, not a win rate.

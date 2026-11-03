@@ -1,0 +1,12 @@
+{
+  "training_report": "results/no-limit-training.json",
+  "model": "results/card-models/potential-8.json",
+  "method": "external",
+  "training_seed": 20261115,
+  "iteration": 300,
+  "deal_seeds": [20261122, 20261123, 20261124],
+  "hands_per_seed": 10,
+  "max_actions": 2000,
+  "on_grid_fraction_error_tolerance": 1e-12,
+  "purpose": "own inference identity/legality audit; no competitive strength measurement"
+}

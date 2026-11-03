@@ -207,3 +207,104 @@ def reconcile(
     return ShadowResult(
         translated, tuple(mapped), None, offset, mismatch, passive_changes
     )
+
+
+@dataclass(frozen=True)
+class DecodedPolicy:
+    actions: tuple[Action, ...]
+    probabilities: tuple[float, ...]
+    clipped_raise_mass: float
+    unavailable_raise_mass: float
+    mean_raise_fraction_error: float
+
+
+def legal_actions(
+    observation: Observation, rules: NoLimitRules
+) -> tuple[tuple[int, ...], tuple[Action, ...]]:
+    """Action IDs and concrete legal actions using own/public fields only."""
+    legal = observation.legal_actions
+    if legal is None or observation.actor != observation.seat or observation.terminal:
+        raise ValueError("need an acting observation")
+    passive = Action(ActionKind.CHECK if legal.can_check else ActionKind.CALL)
+    targets = rules.action_abstraction.raises(observation)
+    ids = (() if legal.can_check else (0,)) + (1,) + tuple(range(2, 2 + len(targets)))
+    actions = (() if legal.can_check else (Action(ActionKind.FOLD),)) + (passive,)
+    actions += tuple(Action(ActionKind.RAISE_TO, total) for total in targets)
+    return ids, actions
+
+
+def decode_policy(
+    actual: Observation,
+    virtual: Observation,
+    rules: NoLimitRules,
+    *,
+    action_ids: tuple[int, ...],
+    probabilities: tuple[float, ...],
+    scheme: Scheme = "pseudo_harmonic",
+) -> DecodedPolicy:
+    """Project a virtual distribution into actual legal actions, merging mass.
+
+    Normalize raise increments by pot-after-call, rescale to the actual ledger,
+    round halves upward and clip to actual legal bounds. Apply the declared local
+    translation to actual abstract sizes. Unavailable raises map to actual passive
+    actions; clipped/unavailable mass is reported. This approximation makes no
+    claim of preserving the virtual strategy's exploitability or expected value.
+    """
+    import math
+
+    expected_ids, virtual_actions = legal_actions(virtual, rules)
+    _, actual_actions = legal_actions(actual, rules)
+    if (
+        action_ids != expected_ids
+        or len(probabilities) != len(action_ids)
+        or any(not math.isfinite(p) or p < 0 for p in probabilities)
+        or abs(sum(probabilities) - 1) > 1e-12
+    ):
+        raise ValueError("policy action encoding/probabilities mismatch")
+    assert actual.legal_actions is not None and virtual.legal_actions is not None
+    actual_legal = actual.legal_actions
+    passive = Action(ActionKind.CHECK if actual_legal.can_check else ActionKind.CALL)
+    mass = {action: 0.0 for action in actual_actions}
+    clipped = unavailable = fraction_error = 0.0
+    actual_pot = actual.pot + actual_legal.call_amount
+    virtual_pot = virtual.pot + virtual.legal_actions.call_amount
+    for action, p in zip(virtual_actions, probabilities, strict=True):
+        if action.kind == ActionKind.FOLD:
+            mass[passive if actual_legal.can_check else action] += p
+        elif action.kind in (ActionKind.CALL, ActionKind.CHECK):
+            mass[passive] += p
+        elif actual_legal.min_raise_to is None or actual_legal.max_raise_to is None:
+            mass[passive] += p
+            unavailable += p
+        else:
+            assert action.amount is not None
+            increment = action.amount - _price(virtual)
+            desired = _price(actual) + (2 * increment * actual_pot + virtual_pot) // (
+                2 * virtual_pot
+            )
+            bounded = min(
+                actual_legal.max_raise_to, max(actual_legal.min_raise_to, desired)
+            )
+            clipped += p * int(desired != bounded)
+            distribution = rules.action_abstraction.translation(
+                actual, bounded, scheme=scheme
+            )
+            for total, weight in distribution:
+                mass[Action(ActionKind.RAISE_TO, total)] += p * weight
+                fraction_error += (
+                    p
+                    * weight
+                    * abs(
+                        (total - _price(actual)) / actual_pot - increment / virtual_pot
+                    )
+                )
+    total_mass = sum(mass.values())
+    if total_mass <= 0 or abs(total_mass - 1) > 1e-12:
+        raise ArithmeticError("mapped strategy lost probability mass")
+    return DecodedPolicy(
+        actual_actions,
+        tuple(mass[a] / total_mass for a in actual_actions),
+        clipped,
+        unavailable,
+        fraction_error,
+    )

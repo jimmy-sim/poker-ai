@@ -78,3 +78,59 @@ def test_inconsistent_public_action_cost_is_an_error() -> None:
     history = (replace(obs.history[0], chips_paid=999),)
     with pytest.raises(ValueError, match="chip cost"):
         reconcile(replace(obs, history=history), NoLimitRules(), episode_seed=5)
+
+
+def test_on_grid_policy_decoding_preserves_complete_distribution() -> None:
+    import numpy as np
+
+    from poker_ai.abstraction.shadow import decode_policy, legal_actions
+
+    rules = NoLimitRules()
+    obs = observed(raised(6))
+    ids, actions = legal_actions(obs, rules)
+    weights = np.arange(1, len(ids) + 1, dtype=float)
+    probabilities = tuple((weights / weights.sum()).tolist())
+    mapped = decode_policy(obs, obs, rules, action_ids=ids, probabilities=probabilities)
+    assert mapped.actions == actions
+    np.testing.assert_allclose(mapped.probabilities, probabilities, atol=1e-15)
+    assert mapped.clipped_raise_mass == mapped.unavailable_raise_mass == 0
+    assert mapped.mean_raise_fraction_error == 0
+
+
+def test_off_grid_decoding_clips_all_in_mass_without_illegal_actions() -> None:
+    from poker_ai.abstraction.shadow import decode_policy, legal_actions
+
+    rules = NoLimitRules()
+    obs = observed(raised(7))
+    shadow = reconcile(obs, rules, episode_seed=5, scheme="nearest")
+    assert shadow.observation is not None
+    ids, _ = legal_actions(shadow.observation, rules)
+    probabilities = (0.0,) * (len(ids) - 1) + (1.0,)
+    result = decode_policy(
+        obs, shadow.observation, rules, action_ids=ids, probabilities=probabilities
+    )
+    assert result.clipped_raise_mass == 1
+    assert sum(result.probabilities) == pytest.approx(1)
+    for action, p in zip(result.actions, result.probabilities, strict=True):
+        if p:
+            assert action == Action(ActionKind.RAISE_TO, 200)
+    assert not raised(7).apply(result.actions[-1]).terminal  # Opponent still may call.
+
+
+def test_unavailable_actual_raises_become_passive_and_are_reported() -> None:
+    from poker_ai.abstraction.shadow import decode_policy, legal_actions
+
+    rules = NoLimitRules()
+    actual = observed(raised(200))
+    virtual = observed(new_hand((200, 200), Deck(), button=1))
+    ids, _ = legal_actions(virtual, rules)
+    result = decode_policy(
+        actual,
+        virtual,
+        rules,
+        action_ids=ids,
+        probabilities=(0.0,) * (len(ids) - 1) + (1.0,),
+    )
+    assert result.unavailable_raise_mass == 1
+    assert result.actions == (Action(ActionKind.FOLD), Action(ActionKind.CALL))
+    assert result.probabilities == (0.0, 1.0)

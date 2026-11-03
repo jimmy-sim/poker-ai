@@ -1,39 +1,23 @@
 """Own card artifact round trips and retention of past abstract observations."""
 
 import json
+from collections.abc import Callable
 from pathlib import Path
 
 import numpy as np
 import pytest
 from numpy.random import PCG64, Generator
 
-from poker_ai.abstraction.model import CardAbstraction, Kind, fit_quantizer
-from poker_ai.abstraction.potential import FeatureConfig, Potential
+from poker_ai.abstraction.model import CardAbstraction, Kind
 from poker_ai.cards import Deck, parse_card
 from poker_ai.engine import Action, ActionKind, new_hand
 
 
-def tiny_model(kind: Kind) -> CardAbstraction:
-    models = {}
-    for length in (0, 3, 4, 5):
-        lengths = (length,) + tuple(t for t in (3, 4, 5) if t > length)
-        features = [
-            Potential(equity, lengths, np.tile(row, (len(lengths), 1)))
-            for equity, row in ((0.0, [1.0, 0, 0]), (1.0, [0.0, 0, 1]))
-        ]
-        models[length] = fit_quantizer(
-            features, kind=kind, buckets=2, rng=Generator(PCG64(31))
-        )
-    return CardAbstraction(
-        models, FeatureConfig(bins=3, current_samples=4, runouts=1, opponent_samples=2)
-    )
-
-
 @pytest.mark.parametrize("kind", ["strength", "distribution", "potential"])
 def test_own_model_roundtrip_preserves_bucket_and_cache(
-    tmp_path: Path, kind: Kind
+    tmp_path: Path, kind: Kind, card_model_factory: Callable[[Kind], CardAbstraction]
 ) -> None:
-    model = tiny_model(kind)
+    model = card_model_factory(kind)
     path = tmp_path / "own-card-model.json"
     model.save(path, provenance={"test": True})
     loaded = CardAbstraction.load(path)
@@ -46,8 +30,9 @@ def test_own_model_roundtrip_preserves_bucket_and_cache(
 
 def test_key_retains_every_past_bucket_and_public_history(
     monkeypatch: pytest.MonkeyPatch,
+    card_model_factory: Callable[[Kind], CardAbstraction],
 ) -> None:
-    model = tiny_model("strength")
+    model = card_model_factory("strength")
     state = new_hand((200, 200), Deck(), button=1)
     while not state.terminal and len(state.board) < 5:
         state = state.apply(
@@ -78,7 +63,7 @@ def test_reference_artifact_is_not_a_card_model(tmp_path: Path) -> None:
 
 
 def test_abstract_limit_resume_recomputes_feature_cache_identically(
-    tmp_path: Path,
+    tmp_path: Path, card_model_factory: Callable[[Kind], CardAbstraction]
 ) -> None:
     from functools import partial
 
@@ -86,7 +71,7 @@ def test_abstract_limit_resume_recomputes_feature_cache_identically(
     from poker_ai.training.holdem import LimitRules, sample_limit
     from poker_ai.training.mccfr import MCCFR
 
-    model = tiny_model("potential")
+    model = card_model_factory("potential")
     artifact = tmp_path / "card-model.json"
     model.save(artifact, provenance={})
     fresh_model = CardAbstraction.load(artifact)
