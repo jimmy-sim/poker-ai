@@ -129,3 +129,63 @@ can amplify the difference. Other variants matched, and independent best respons
 checks passed. The fix uses the equivalent recurrence, including operation order,
 with the original comparison tolerances unchanged. No strategy output is imported
 or used for training. A fresh committed-source rerun is required before advancing.
+
+## Interview questions
+
+**Why does CFR use counterfactual reach for regret but own reach for averaging?**
+Regret asks how an action would change the player's outcome if it reached the
+information set; multiplying by its own current reach would suppress learning in
+parts of the game it currently avoids. Averaging combines that player's realization
+plans, so its own reach determines how its successive local strategies combine.
+
+**Why isn't a best response allowed to pick the best action in each full state?**
+A full state includes hidden cards. The responder must choose the same action for
+all states it cannot distinguish. We weight and sum their continuation values,
+then maximize once for the information set. Exhaustive Kuhn pure-strategy search
+and independent OpenSpiel BR on seeded policies check that constraint.
+
+**Does a small strategy distance prove strong Hold'em play?**
+No. It verifies agreement on the specified tiny games, conventions and iteration
+budget. Different equilibria can also have different action probabilities. Exact
+exploitability certifies a toy-game profile against its worst-case opponent;
+full Hold'em abstractions and sampled training introduce additional error. This
+phase does not measure a real Hold'em win rate or satisfy the later postflop
+trained-agent validation milestone.
+
+## Recorded acceptance results
+
+The clean-source rerun at `e561a28` passed every predeclared gate.
+Raw results: [JSON](../results/cfr-validation.json),
+[CSV](../results/cfr-convergence.csv).
+
+| Game | Variant | Iterations | Exploitability (ante chips/hand) | Player-0 value | Kuhn value error |
+| --- | --- | ---: | ---: | ---: | ---: |
+| kuhn | cfr | 10,000 | 0.00011332446 | -0.05556351826 | 7.9627065e-06 |
+| kuhn | cfr_plus | 10,000 | 9.632757e-06 | -0.05555555911 | 3.5556146e-09 |
+| kuhn | linear | 10,000 | 8.6115641e-06 | -0.05555555196 | 3.5976097e-09 |
+| kuhn | discounted | 10,000 | 2.3872325e-05 | -0.05555555982 | 4.2622052e-09 |
+| leduc | cfr | 1,000 | 0.01181781 | -0.08722360295 | — |
+| leduc | cfr_plus | 1,000 | 0.00025715162 | -0.08559348546 | — |
+| leduc | linear | 1,000 | 0.0048261327 | -0.08590462534 | — |
+| leduc | discounted | 1,000 | 0.00014346789 | -0.08560719767 | — |
+
+![Exact average-strategy convergence](../results/cfr-convergence.png)
+
+Maximum exploitability disagreement across all checkpoints: 1.38778e-16 ante
+chips/hand. Maximum mean information-set L1 distance: 1.42376e-17. Ten seeded
+random-policy BR comparisons (five per game) had zero measured exploitability
+difference. These small discrepancies measure implementation agreement under the
+matched conventions, not closeness to an exact equilibrium. The nonzero final
+exploitabilities in the table measure the latter.
+
+The complete command took 218.46 seconds on the recorded Mac environment, including
+reference solvers, rule/BR checks, plotting and file output. Training timings by
+variant are in the raw report; no general hardware speed claim is made.
+
+Local quality gate: 338 tests, Ruff lint/format and strict mypy on Python 3.11 and
+3.12. Hosted CI has not run. The corrected Linear recurrence leaves its earlier
+failed comparison available for inspection. No threshold was relaxed.
+
+Phase 2 is complete. Phase 3 begins with sampled-update math checks before any
+Hold'em training. The larger trained-agent/postflop Phase 3.5 milestone remains
+gated. No results here establish full Hold'em exploitability or a winning agent.

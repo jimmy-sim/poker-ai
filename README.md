@@ -10,8 +10,9 @@ Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, a
 [encoding contract and full phase acceptance gate](docs/phase1-cards.md).
 Profile-guided direct evaluation and [heads-up equity](docs/phase1-equity.md)
 are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-engine.md).
-[Phase 1 verification](docs/phase1-verification.md) is complete; Phase 2 toy games
-and exact solvers follow. Research agents initially play heads-up.
+[Phase 1 verification](docs/phase1-verification.md) and
+[Phase 2 exact toy-game solvers](docs/phase2-solvers.md) are complete.
+Sampled CFR and heads-up Hold’em agents follow in Phase 3.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
 ## Development
@@ -90,6 +91,14 @@ scope. This compares shared actions and rational terminal shares; short-blind,
 short-raise, free-fold, and integer-rounding differences are explicitly documented.
 See [rules and limitations](docs/phase1-engine.md) and
 [raw evidence](results/engine-validation.json). Run `make validate-engine`.
+
+Exact CFR, CFR+, Linear and Discounted CFR passed matched OpenSpiel checks on
+Kuhn (10,000 iterations) and Leduc (1,000 iterations). Leduc final exploitability
+was **0.0118178 / 0.000257152 / 0.00482613 / 0.000143468** ante chips per hand,
+respectively. Maximum matched-iteration exploitability disagreement across the
+experiment was **1.39e-16**. These are toy-game results, not Hold’em win rates.
+Run `make validate-cfr`; see [methodology and limits](docs/phase2-solvers.md),
+[raw evidence](results/cfr-validation.json), and [convergence plot](results/cfr-convergence.png).
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.
