@@ -358,3 +358,34 @@ rewritten. Tests cover identity, separate ledgers, prefix consistency, role rota
 private-card independence of the mapping coin, and virtual-all-in failures.
 Mapped action-probability decoding and the own-checkpoint inference adapter remain
 pending before the full off-tree agent interface is complete.
+
+## Recorded bounded no-limit training
+
+Clean source `62090b6` completed all 12 runs and 36 checkpoints, with no node/time
+budget aborts. Total elapsed time was 265.98 seconds on Apple M4, using two spawned
+workers and a fresh process per run. Reproduce with `make train-no-limit`.
+[Raw report](../results/no-limit-training.json) and [table](../results/no-limit-training.csv).
+
+| Eight-bucket model | Sampler | Iterations per seed | Information-set range | Timed training seconds range | Maximum traced training peak MiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| strength-8 | external | 300 | 36,761–49,470 | 69.42–85.19 | 38.15 |
+| strength-8 | outcome | 300 | 490–665 | 9.71–11.89 | 1.40 |
+| potential-8 | external | 300 | 32,704–38,571 | 65.93–72.09 | 29.50 |
+| potential-8 | outcome | 300 | 576–695 | 9.43–10.64 | 1.42 |
+
+The 36 own checkpoints occupy 119.57 MiB under
+`results/runs/no-limit-training/checkpoints/` (ignored, reproducible). Checkpoint
+hashes, source/config/model hashes, thread settings, timing and both memory
+conventions are in the report. Inference must preserve the recorded card/action
+encoding semantics when reading these strategies.
+
+Different node/table counts reflect different sampled policies, methods and
+traversals; they are not causal estimates of strategic benefit from the card
+models. Large tables can still have sparse coverage. Outcome sampling's cheaper
+passes do not establish stronger play. No full-game exploitability, win rate or
+competitive benchmark was measured here. These bounded checkpoints establish
+that own no-limit training ran; they do not establish equilibrium convergence.
+
+Current local fast gate: 385 tests, lint and strict types. Phase 3 is still ongoing
+until mapped policy decoding/inference and the final acceptance report are done.
+The later external strategy-solver milestone remains gated.

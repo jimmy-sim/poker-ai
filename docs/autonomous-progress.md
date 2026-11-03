@@ -42,10 +42,14 @@ Completed and committed:
   36 own checkpoints through 500 iterations at clean 7cbfcad; no strength claim.
 - Legal pot-relative raise grids and local nearest/pseudo-harmonic translation
   tested; complete off-tree shadow-policy adapter remains pending.
-- Current gate: 374 fast tests, lint and strict types.
+- Bounded no-limit training: 12 runs, 36 checkpoints through 300 iterations at
+  clean 62090b6; no budget aborts and no playing-strength claim.
+- Public shadow reconciliation tested, with stable mapping coins, role rotation
+  and explicit failures; actual ledgers stay unchanged.
+- Current gate: 385 fast tests, lint and strict types.
 
-Next: no-limit training adapter and bounded compute guards; full off-tree public
-shadow-state reconciliation, mapped-policy decoding, and no-limit training.
+Next: mapped action-probability decoding and own-checkpoint inference, then the
+full Phase 3 acceptance report. Phase 3.5 remains gated until that gate passes.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,

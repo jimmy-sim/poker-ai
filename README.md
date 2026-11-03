@@ -103,9 +103,11 @@ Run `make validate-cfr`; see [methodology and limits](docs/phase2-solvers.md),
 Phase 3 now has tested external/outcome sampling and exact checkpoint resumption.
 An [18-run compute pilot](docs/phase3-training.md) records toy-game convergence
 and small fixed-limit runs. Card models now have [measured reconstruction errors](results/card-abstraction.json),
-and 12 abstracted fixed-limit runs produced 36 checkpoints through 500 iterations.
+12 abstracted fixed-limit runs produced 36 checkpoints through 500 iterations,
+and 12 bounded no-limit runs produced another 36 checkpoints through 300 iterations.
 These are bounded research runs with no playing-strength claim. Reproduce with
-`make train-mccfr-pilot`, `make build-card-abstraction`, and `make train-limit`.
+`make train-mccfr-pilot`, `make build-card-abstraction`, `make train-limit`, and
+`make train-no-limit`.
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.
