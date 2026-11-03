@@ -50,3 +50,41 @@ The original MCCFR methodology is described in
 [Lanctot et al. (2009)](https://www.cs.cmu.edu/~kwaugh/publications/nips09b.pdf).
 The experiment tests our implementation under these specific mechanics; no new
 algorithmic convergence theorem or competitive poker claim is intended.
+
+## Retained initial failure and follow-up hypotheses
+
+The initial exact-card run completed from clean `3be994c` in 121.50 seconds.
+Both development gates failed, so no held-out game was run. Full-tree CFR+ passes
+its accuracy threshold in both games. Sampled low-SPR accuracy is already below
+its threshold, but uniform-decision-reach average-row coverage stalls below 95%;
+on-policy coverage is nearly complete. Medium-SPR sampled exploitability improves
+substantially but remains above the unchanged threshold at 100,000 iterations.
+The reviewed initial report and all frozen policies are retained in
+`results/holdem-learning/initial/`. Independent checking follows separately.
+
+Before collecting any follow-up results, declare a 2×2 diagnostic of:
+
+- Uniform versus linear iteration weighting of BOTH sampled regrets and averaging.
+  Linear weighting uses raw cumulative sum(t*delta); regret matching is invariant
+  to the common positive normalization in the existing full-tree Linear CFR.
+  Conditional sampled updates retain their original expectations after multiplying
+  by deterministic iteration weights. No claim of exact sampled trajectory matching.
+- No initialization versus ONE full-tree expectation of the frozen uniform policy's
+  counterfactual-regret and chance-weighted averaging updates. Both players use
+  that same frozen policy for this initial simultaneous update; later sampled
+  iterations alternate normally. Every initialized row receives an actual own-game
+  regret/average calculation. Initial-only rows must be identified separately from
+  subsequently sampled rows: coverage must not be presented as evidence of extra
+  sampled experience. This is affordable only for the small finite games.
+
+The original no-initialization/uniform cell already exists. Run the three new
+versioned configs at the SAME seeds/checkpoints/accuracy/coverage thresholds.
+Preselect **linear + one exact initial expectation** as the follow-up candidate;
+retain every other cell regardless of outcome. This is an explicit new experiment
+after a failed gate, not a retroactive rewrite of that gate. Do not run held-out
+games until the selected candidate passes the unchanged development thresholds
+and independent checks. Additional full-tree initialization cost is reported.
+
+This experiment tests whether initial sampling noise and averaging/regret weighting
+explain the failure. It cannot establish that a full-tree initialization scales to
+global Hold'em, nor that public-board refinement improves a global sparse table.

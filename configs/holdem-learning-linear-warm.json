@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "development_spots": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "heldout_spots": [
+    "configs/learning-spots/heldout_low_oop.json",
+    "configs/learning-spots/heldout_medium_ip.json"
+  ],
+  "seeds": [
+    20261208,
+    20261209,
+    20261210
+  ],
+  "encodings": [
+    "exact",
+    "legacy_b8",
+    "public_b8"
+  ],
+  "model": "results/card-models/potential-8.json",
+  "full_tree_checkpoints": [
+    1,
+    16,
+    64,
+    256,
+    1024,
+    4096
+  ],
+  "sampled_checkpoints": [
+    100,
+    1000,
+    10000,
+    100000
+  ],
+  "full_tree_exploitability_pot_limit": 0.001,
+  "sampled_median_exploitability_pot_limit": 0.01,
+  "sampled_max_exploitability_pot_limit": 0.025,
+  "minimum_uniform_reach_average_row_coverage": 0.95,
+  "independent_tolerance": 1e-09,
+  "maximum_seconds": 7200,
+  "maximum_nodes_per_pass": 200000,
+  "comparison_use": "OpenSpiel validation only, never own training inputs",
+  "heldout_use": "run only after exact development gates pass; own training per new game, not zero-shot generalization",
+  "scope": "bounded diagnostic; no full-game strength claim",
+  "profile_iterations": 1000,
+  "profile_repetitions": 3,
+  "sampling_weighting": "linear",
+  "initial_exact_expectation": true,
+  "parent_initial_report_sha256": "d6899a6e8358abc14ce50674057078eceb032ba5f382ef187f33a516bba76424",
+  "variant": "post-failure diagnostic: linear-warm"
+}
