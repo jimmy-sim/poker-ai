@@ -277,3 +277,35 @@ ledger; translating a number does not reconcile that history with a trained
 abstract tree. Public shadow-state reconciliation and mapped-policy decoding are
 still required before claiming a complete off-tree agent adapter. Real chip
 accounting must stay in the actual engine, with mapping failures/fallbacks explicit.
+
+## Recorded abstracted fixed-limit training
+
+Clean source `7cbfcad` completed all 12 configured runs and 36 checkpoints. The
+full command took 536.76 seconds on Apple M4 with two independent spawned workers.
+[Raw report](../results/limit-training.json) and [table](../results/limit-training.csv)
+record the own model and implementation hashes and every checkpoint's SHA256.
+
+| Eight-bucket model | Sampler | Final iterations per seed | Information-set range | Timed training seconds range | Maximum traced training peak MiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| strength-8 | external | 500 | 70,511–72,120 | 134.23–140.57 | 56.51 |
+| strength-8 | outcome | 500 | 2,037–2,361 | 35.84–41.98 | 3.03 |
+| potential-8 | external | 500 | 67,671–71,964 | 133.27–139.09 | 56.18 |
+| potential-8 | outcome | 500 | 2,071–2,594 | 32.62–41.66 | 2.56 |
+
+The 36 own checkpoints occupy 213.63 MiB under
+`results/runs/limit-training/checkpoints/`; they remain outside git and are
+recreated by the command. Only completed iteration boundaries are saved. CLI
+resumption requires the recorded core implementation as well as config/model
+identity; use the report's source checkout for exact continuation after later
+core changes. There is no claim that these 500-iteration strategies converged.
+
+The report's process-lifetime RSS can include earlier jobs in the same reused
+worker, in addition to imports/model/checkpoint allocations. It must not be read
+as isolated per-run or per-method memory. The table uses traced training interval
+peaks instead. Timings include tracing and concurrent local work. Counts and
+nonuniform probabilities show that tables were updated; they do not measure
+playing strength. No full-Hold'em exploitability or win rate was measured.
+
+Fixed-limit implementation and bounded training now precede no-limit work. Phase 3
+remains incomplete: no-limit training, complete off-tree policy reconciliation and
+final acceptance reporting are still pending. Phase 3.5 remains gated.

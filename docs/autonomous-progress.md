@@ -38,10 +38,14 @@ Completed and committed:
 - Disjoint-state 2/4/8-bucket loss experiment at clean 3e917b7; actual mixed
   results, measurement disagreement, occupied counts and limitations recorded.
 - Abstract limit checkpoint resumes bit identically with an empty feature cache.
-- Current gate: 367 fast tests, lint and strict types.
+- Bounded abstracted limit training: 12 runs, three seeds/method/model combination,
+  36 own checkpoints through 500 iterations at clean 7cbfcad; no strength claim.
+- Legal pot-relative raise grids and local nearest/pseudo-harmonic translation
+  tested; complete off-tree shadow-policy adapter remains pending.
+- Current gate: 374 fast tests, lint and strict types.
 
-Next: bounded abstracted fixed-limit training, then no-limit action abstraction/
-translation and training/compute reports.
+Next: no-limit training adapter and bounded compute guards; full off-tree public
+shadow-state reconciliation, mapped-policy decoding, and no-limit training.
 Phase 3.5 remains gated until Phase 3 has a trained agent and its gate passes.
 
 Standard commands are in AGENTS.md. Every experiment must keep its real revision,
