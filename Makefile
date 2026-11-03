@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot
 
 setup:
 	$(UV) sync --locked --dev
@@ -51,3 +51,8 @@ validate-cfr:
 	$(UV) run --locked --extra solver-validation --extra research python scripts/validate_cfr.py \
 		--config configs/cfr-validation.json \
 		--output results/cfr-validation.json
+
+train-mccfr-pilot:
+	$(UV) run --locked python scripts/train_mccfr_pilot.py \
+		--config configs/mccfr-pilot.json \
+		--output results/mccfr-pilot.json

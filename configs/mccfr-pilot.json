@@ -1,0 +1,11 @@
+{
+  "seeds": [20261115, 20261116, 20261117],
+  "methods": ["external", "outcome"],
+  "iterations": {"kuhn": 10000, "leduc": 10000, "limit": 100},
+  "epsilon": 0.6,
+  "workers": 2,
+  "limit": {"stacks": [200, 200], "button": 1, "bet_cap": 4},
+  "kuhn_max_exploitability": 0.1,
+  "leduc_max_exploitability": 2.0,
+  "purpose": "sampling and compute pilot; exact-card limit checkpoint is not a strength result"
+}
