@@ -1,5 +1,15 @@
 UV ?= uv
 
+.PHONY: validate-holdem-learning report-holdem-learning
+
+# Bounded diagnostic; a missed performance gate returns nonzero and retains data.
+validate-holdem-learning:
+	$(UV) run --locked --extra jit --extra solver-validation --extra research python scripts/reproduce_postflop_learning.py
+
+# Fast offline replay of reviewed frozen policies; no training or network games.
+report-holdem-learning:
+	$(UV) run --locked --extra research python scripts/report_postflop_learning.py
+
 .PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot preflight-slumbot benchmark-slumbot analyze-extensions
 
 setup:
