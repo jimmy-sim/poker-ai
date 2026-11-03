@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "training_configs": {
+    "uniform": "configs/global-strength-uniform.json",
+    "linear": "configs/global-strength-linear.json"
+  },
+  "model": "results/card-models/potential-8.json",
+  "method": "external",
+  "iteration": 10000,
+  "agent_seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "opponents": [
+    {
+      "name": "random",
+      "kind": "random"
+    },
+    {
+      "name": "always_call",
+      "kind": "always_call"
+    },
+    {
+      "name": "always_raise",
+      "kind": "always_raise"
+    },
+    {
+      "name": "tight_aggressive",
+      "kind": "tight_aggressive",
+      "equity_samples": 64,
+      "equity_seed": 20261129,
+      "raise_equity": 0.7,
+      "call_margin": 0.1
+    },
+    {
+      "name": "equity",
+      "kind": "equity",
+      "equity_samples": 64,
+      "equity_seed": 20261129,
+      "raise_equity": 0.65,
+      "call_margin": 0.05
+    }
+  ],
+  "rules": {
+    "stacks": [
+      200,
+      200
+    ],
+    "button": 1,
+    "small_blind": 1,
+    "big_blind": 2,
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "deals": 1000,
+  "deal_seed": 20261211,
+  "action_seed": 20261212,
+  "mapping_episode_seed": 20261213,
+  "workers": 2,
+  "max_actions_per_hand": 256,
+  "max_seconds_per_opponent": 600,
+  "alpha": 0.05,
+  "primary_family_size": 5,
+  "primary": "paired linear-minus-uniform mean at matched 10000 iterations; two-sided bounded Hoeffding plus Bonferroni over five own opponents",
+  "secondary": "absolute returns and approximate paired-deal CLT intervals; no selecting favorable opponents/seeds",
+  "independent_unit": "one fresh shared deck; average fixed three policies within each deck/seat; same deck reused across algorithms and opponents",
+  "deployment": "both frozen before any matches, no adaptation or benchmark-output training",
+  "limitations": "100bb full-pot/all-in grid, five own scripted bots, three fixed training policies; no competitive-strength or full-game exploitability claim"
+}

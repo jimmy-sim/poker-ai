@@ -146,3 +146,34 @@ budget. Runs finish their declared budgets, not the first favorable checkpoint.
 No held-out game runs until the preselected development candidate passes both
 learning and independent gates. The extension does not rewrite the failed 100k
 acceptance or establish that iteration increases always improve global play.
+
+## Global follow-up specified before any new global outcomes
+
+After the local learning and held-out procedure gates pass, test the reusable
+linear-regret/average update in GLOBAL own self-play. Do not apply the finite
+full-tree initialization or exact public-board keys globally: their cost/sparsity
+would make that extrapolation unjustified. Keep the existing potential-8 model
+and full-pot/all-in action grid fixed.
+
+Two versioned training configs compare uniform versus linear external sampling
+at matched 1,000/10,000 iterations, all three original training seeds, two workers,
+20,000 nodes/pass and 600 seconds/run. Six runs imply at most about 30 minutes
+of worker training wall time at these caps. Actual short checkpoints profile cost;
+no experiment expected to exceed a few hours is launched without flagging it.
+The generic own trainer gains a checked optional weighting field; old configs
+retain their original behavior. Weighted resumes restore visit audit/weighting,
+and inference reads only frozen own average-strategy tables.
+
+`configs/global-strength-study.json` fixes five own opponents and 1,000 FRESH
+shared deck tapes. Both algorithms are frozen before play. Primary inference is
+linear-minus-uniform paired improvement, with maximum loss bound 400 chips and
+Bonferroni–Hoeffding control over five tests. Both seats and all three fixed
+policies are averaged within each deck; 60,000 played hands still provide N=1,000
+independent deck clusters per comparison. Same initial training seeds do not mean
+identical training trajectories. Evaluation deal tapes are explicitly shared.
+
+Absolute match means and approximate paired-deal CLT intervals are secondary.
+No favorable-opponent/seed/checkpoint selection, no training from results and no
+claim that a local solver improvement guarantees a stronger global policy. Keep
+negative results. OpenSpiel/Slumbot outcomes are excluded from this own-baseline
+study; independent spot comparison remains a separate measurement.

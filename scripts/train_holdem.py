@@ -21,6 +21,11 @@ from numpy.random import PCG64, Generator
 
 from poker_ai.abstraction.actions import ActionAbstraction
 from poker_ai.abstraction.model import CardAbstraction
+from poker_ai.postflop.sampling import (
+    PostflopMCCFR,
+    load_learning_checkpoint,
+    save_learning_checkpoint,
+)
 from poker_ai.training.budget import NodeBudgetExceeded, bounded_sample
 from poker_ai.training.checkpoint import load_checkpoint, save_checkpoint
 from poker_ai.training.holdem import LimitRules, sample_limit
@@ -36,6 +41,7 @@ def implementation_hash(root: Path) -> str:
         root / f"src/poker_ai/{name}.py"
         for name in ("cards", "engine", "equity", "evaluator")
     ]
+    files.append(root / "src/poker_ai/postflop/sampling.py")
     digest = hashlib.sha256()
     for path in files:
         digest.update(str(path.relative_to(root)).encode())
@@ -86,21 +92,37 @@ def worker(task: dict[str, Any]) -> dict[str, Any]:
     resumed_from = None
     if task["resume_dir"] is not None:
         candidates = sorted(
-            Path(task["resume_dir"]).glob(f"{run_name}-t*.json"),
+            (
+                p
+                for p in Path(task["resume_dir"]).glob(f"{run_name}-t*.json")
+                if not p.name.endswith(".visits.json")
+            ),
             key=lambda p: int(p.stem.rsplit("-t", 1)[1]),
         )
         if not candidates:
             raise ValueError(f"no own resume checkpoint for {run_name}")
         resumed_from = str(candidates[-1])
-        solver = load_checkpoint(candidates[-1], factory, expected_config=run_config)
+        solver = (
+            load_learning_checkpoint(
+                candidates[-1],
+                factory,
+                expected_config={**run_config, "learning": config},
+            )
+            if config.get("sampling_weighting", "uniform") == "linear"
+            else load_checkpoint(candidates[-1], factory, expected_config=run_config)
+        )
         starting_iteration = solver.iteration
     else:
-        solver = MCCFR(
-            factory,
-            Generator(PCG64(task["seed"])),
-            method=cast(Method, task["method"]),
-            epsilon=config["epsilon"],
-        )
+        if config.get("sampling_weighting", "uniform") == "linear":
+            solver = PostflopMCCFR(factory, Generator(PCG64(task["seed"])), "linear")
+            solver.epsilon = config["epsilon"]
+        else:
+            solver = MCCFR(
+                factory,
+                Generator(PCG64(task["seed"])),
+                method=cast(Method, task["method"]),
+                epsilon=config["epsilon"],
+            )
     if config["trace_memory"]:
         tracemalloc.start()
     started = time.perf_counter()
@@ -151,7 +173,15 @@ def worker(task: dict[str, Any]) -> dict[str, Any]:
         if peak is not None:
             training_peak = max(training_peak, peak)
         path = Path(task["checkpoint_dir"]) / f"{run_name}-t{iteration}.json"
-        save_checkpoint(solver, path, config=run_config, provenance=task["source"])
+        if isinstance(solver, PostflopMCCFR):
+            save_learning_checkpoint(
+                solver,
+                path,
+                config={**run_config, "learning": config},
+                provenance=task["source"],
+            )
+        else:
+            save_checkpoint(solver, path, config=run_config, provenance=task["source"])
         rss_native = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
         rss_bytes = int(
             rss_native if platform.system() == "Darwin" else rss_native * 1024
@@ -173,6 +203,7 @@ def worker(task: dict[str, Any]) -> dict[str, Any]:
             {
                 "model": task["model"],
                 "method": task["method"],
+                "sampling_weighting": config.get("sampling_weighting", "uniform"),
                 "seed": task["seed"],
                 "iteration": iteration,
                 "starting_iteration": starting_iteration,
@@ -221,13 +252,20 @@ def main() -> int:
     }
     if (
         not required <= set(config)
-        or set(config) - required - {"max_nodes_per_pass", "max_training_seconds"}
+        or set(config)
+        - required
+        - {"max_nodes_per_pass", "max_training_seconds", "sampling_weighting"}
         or config["game"] not in ("limit", "no_limit")
         or not config["methods"]
         or len(set(config["methods"])) != len(config["methods"])
         or any(m not in ("external", "outcome") for m in config["methods"])
     ):
         raise ValueError("invalid Holdem training config")
+    weighting = config.get("sampling_weighting", "uniform")
+    if weighting not in ("uniform", "linear") or (
+        weighting == "linear" and config["methods"] != ["external"]
+    ):
+        raise ValueError("linear weighting requires external sampling only")
     rule_fields = (
         {"stacks", "button", "bet_cap"}
         if config["game"] == "limit"
