@@ -227,3 +227,19 @@ policy lookup identified repeated public-history reconciliation as its dominant
 cost. A tested prepared-context API reuses that deterministic work across frozen
 policies with identical betting rules and mapping scheme; private observations
 and model-specific abstraction/strategy lookup retain their original semantics.
+
+Additional evaluator helper: **Treys 0.1.8**, MIT, copyright 2013 Will Drevo.
+The complete installed distribution's LICENSE was read again before the card-world
+controls. It permits use/modification/distribution with the copyright/permission
+notice preserved and disclaims warranty. This helper supplies showdown rankings
+only, never training inputs or reference betting strategies. It is not the
+postflop solver. Its separate optional `validation` extra remains isolated.
+
+The comparison additionally verifies the exact performance-difference identity
+against each fixed opponent: candidate joint reach times policy difference times
+baseline continuation value, summed over hero decision histories. Contributions
+are grouped by trained/unseen/unaveraged lookup status. This is an exact accounting
+of the EV gap in the restricted game, not a causal estimate for changing training
+budgets. Per-node continuation EVs and range frequencies use the **same reference
+joint-reach conditional beliefs** for both policies, with zero-reach rows explicitly
+undefined. Root hand-class EVs condition on the declared private-range marginal.

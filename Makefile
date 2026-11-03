@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers
 
 setup:
 	$(UV) sync --locked --dev
@@ -81,3 +81,7 @@ validate-solver-tier-a:
 	$(UV) run --locked --extra solver-validation --extra research python scripts/validate_cfr.py \
 		--config configs/solver-validation-tier-a.json \
 		--output results/solver-validation/tier-a.json
+
+# Gated full milestone: reference strategies remain comparison artifacts only.
+validate-solvers:
+	$(UV) run --locked --extra solver-validation --extra validation --extra research python scripts/validate_solvers.py

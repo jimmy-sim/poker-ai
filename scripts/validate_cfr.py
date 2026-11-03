@@ -1,7 +1,7 @@
 """Run deterministic exact CFR comparisons and reproduce tables/plots.
 
-This is the original Phase 2 toy-game acceptance command. The later trained-agent
-and postflop spot milestone remains gated and has no validation command yet.
+Used for the original Phase 2 acceptance and the separately configured Tier A
+gate in the trained-agent solver-validation pipeline.
 """
 
 import argparse
