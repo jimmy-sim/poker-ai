@@ -1,18 +1,14 @@
 """Replay frozen own policies and render strength diagnostics without training."""
 
 import argparse
+import importlib
 import json
 from pathlib import Path
 from typing import Any
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
-
-from poker_ai.postflop.report import summarize  # noqa: E402
-from poker_ai.reproducibility import runtime_environment  # noqa: E402
-from poker_ai.validation.five_card import source_provenance  # noqa: E402
+from poker_ai.postflop.report import summarize
+from poker_ai.reproducibility import runtime_environment
+from poker_ai.validation.five_card import source_provenance
 
 
 def render(
@@ -91,6 +87,11 @@ def render(
         ]
     )
     (output / "tables.md").write_text("\n".join(lines))
+
+    # Plotting is optional; baseline setup/type checks need no research extra.
+    matplotlib = importlib.import_module("matplotlib")
+    matplotlib.use("Agg")
+    plt = importlib.import_module("matplotlib.pyplot")
 
     entries = {
         e["name"]: json.loads((root / e["report"]).read_text())
