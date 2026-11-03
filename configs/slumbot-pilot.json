@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "purpose": "fixed 100-hand anonymous public API protocol pilot, not a competitive strength claim",
+  "base_url": "https://slumbot.com/slumbot/api/",
+  "training_report": "results/slumbot/own-training.json",
+  "model": "results/card-models/potential-8.json",
+  "method": "external",
+  "iteration": 1000,
+  "agent_seed": 20261115,
+  "hands": 100,
+  "action_seed": 20261201,
+  "mapping_episode_seed": 20261202,
+  "starting_stacks": [
+    20000,
+    20000
+  ],
+  "small_blind": 50,
+  "big_blind": 100,
+  "button": 1,
+  "minimum_request_interval_seconds": 1.0,
+  "http_timeout_seconds": 20.0,
+  "maximum_elapsed_seconds": 1800.0,
+  "maximum_requests": 1000,
+  "error_cooldown_seconds": 5.0,
+  "abort_ambiguous_post": true,
+  "permission_source": "https://github.com/ericgjackson/slumbot2019/issues/49",
+  "protocol_source": "https://slumbot.com/sample_api.py",
+  "limitations": "server deals/version are not client-seeded; replay statistics from sanitized logs, not identical live deals; no training/adaptation from API outcomes; stop rather than hide incomplete hands"
+}

@@ -1,0 +1,39 @@
+{
+  "game": "no_limit",
+  "seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "methods": [
+    "external"
+  ],
+  "models": [
+    "results/card-models/potential-8.json"
+  ],
+  "checkpoints": [
+    1000
+  ],
+  "epsilon": 0.6,
+  "workers": 2,
+  "cache_size": 8192,
+  "rules": {
+    "stacks": [
+      400,
+      400
+    ],
+    "button": 1,
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_minimum": false,
+    "include_all_in": true
+  },
+  "trace_memory": false,
+  "max_nodes_per_pass": 20000,
+  "max_training_seconds": 600,
+  "purpose": "own-only global self-play at 200bb for a separate public Slumbot protocol pilot; no reference or server outputs in training"
+}

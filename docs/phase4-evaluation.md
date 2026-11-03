@@ -240,3 +240,27 @@ invariance tests passed, while independent native action/ledger/payout traces
 matched. Its small search budget and uniform ranges make it a limited opponent;
 beating its point estimate would not establish equilibrium quality or competitive
 poker strength. No reference outputs enter own training or strategy weights.
+
+
+## Separate public-pilot design, declared before API outcomes
+
+`configs/slumbot-pilot.json` fixes **100 hands**, anonymous access, at least one
+second between sequential requests, a 30-minute/1,000-request technical cap and
+strict TLS. This is a small protocol/translation pilot, not a high-power strength
+benchmark. The sample size, first seed and thresholds are fixed before any game
+request; no outcome-based replacement or favorable-prefix stopping is allowed.
+A technical/ambiguous POST failure aborts the session and retains incomplete-hand
+status instead of silently dropping a possible loss or blindly replaying an action.
+
+`configs/slumbot-own-training.json` separately fixes own-only global 200bb self-play:
+potential-8, external sampling, three seeds and 1,000 iterations. Public primary
+is seed 20261115, chosen in advance, not the best observed seed. The production
+API has 20,000 chips with 50/100 blinds, exactly matching the trained 400 chips at
+1/2 in depth. The existing public-history translator handles actual chip sizes;
+o server/reference strategy probabilities or outcomes enter own training.
+
+These results must not be pooled with the 100bb matched-grid local study. Slumbot
+can use off-grid sizes, its current strategy/version/dealer are server controlled,
+and the client cannot set deal seeds. Retained sanitized responses permit replay
+of accounting/statistics, while another live run need not reproduce the same
+cards/actions. Prefix failures do not receive a complete-sample inference claim.

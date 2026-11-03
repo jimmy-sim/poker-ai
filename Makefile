@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation train-slumbot
 
 setup:
 	$(UV) sync --locked --dev
@@ -103,3 +103,9 @@ report-evaluation:
 		--report results/evaluation/matches.json --output results/evaluation/record-audit.json
 	$(UV) run --locked python scripts/render_evaluation_report.py \
 		--report results/evaluation/matches.json
+
+# Own-only matched-depth training; this target makes no network game requests.
+train-slumbot:
+	$(UV) run --locked python scripts/train_holdem.py \
+		--config configs/slumbot-own-training.json \
+		--output results/slumbot/own-training.json
