@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "experiments": [
+    {
+      "name": "uniform",
+      "report": "results/holdem-learning/extended/uniform/development-exact.json",
+      "independent": "results/holdem-learning/extended/uniform/independent.json",
+      "config": "configs/holdem-learning-extended-uniform.json"
+    },
+    {
+      "name": "warm",
+      "report": "results/holdem-learning/extended/warm/development-exact.json",
+      "independent": "results/holdem-learning/extended/warm/independent.json",
+      "config": "configs/holdem-learning-extended-warm.json"
+    },
+    {
+      "name": "linear",
+      "report": "results/holdem-learning/extended/linear/development-exact.json",
+      "independent": "results/holdem-learning/extended/linear/independent.json",
+      "config": "configs/holdem-learning-extended-linear.json"
+    },
+    {
+      "name": "linear-warm",
+      "report": "results/holdem-learning/extended/linear-warm/development-exact.json",
+      "independent": "results/holdem-learning/extended/linear-warm/independent.json",
+      "config": "configs/holdem-learning-extended-linear-warm.json"
+    },
+    {
+      "name": "representations",
+      "report": "results/holdem-learning/extended/representations/development-abstraction.json",
+      "independent": "results/holdem-learning/extended/representations/independent.json",
+      "exact_control": "results/holdem-learning/extended/linear-warm/development-exact.json",
+      "config": "configs/holdem-learning-extended-linear-warm.json"
+    },
+    {
+      "name": "heldout",
+      "report": "results/holdem-learning/extended/heldout/heldout.json",
+      "independent": "results/holdem-learning/extended/heldout/independent.json",
+      "config": "configs/holdem-learning-extended-linear-warm.json"
+    }
+  ]
+}
