@@ -4,7 +4,7 @@ from typing import Literal
 
 import numpy as np
 
-from poker_ai.toy.tree import FloatArray, Tree
+from poker_ai.finite import ArrayTree, FloatArray
 
 Variant = Literal["cfr", "cfr_plus", "linear", "discounted"]
 
@@ -26,7 +26,7 @@ class CFR:
     No averaging delay. One iteration comprises both player traversals.
     """
 
-    def __init__(self, tree: Tree, variant: Variant = "cfr") -> None:
+    def __init__(self, tree: ArrayTree, variant: Variant = "cfr") -> None:
         if variant not in ("cfr", "cfr_plus", "linear", "discounted"):
             raise ValueError("unknown CFR variant")
         self.tree = tree

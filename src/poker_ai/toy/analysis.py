@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from poker_ai.toy.tree import FloatArray, Tree
+from poker_ai.finite import ArrayTree, FloatArray
 
 
 @dataclass(frozen=True, slots=True)
@@ -16,7 +16,7 @@ class Metrics:
     exploitability: float
 
 
-def best_response(tree: Tree, policy: FloatArray, target: int) -> float:
+def best_response(tree: ArrayTree, policy: FloatArray, target: int) -> float:
     """Net chip value for target's exact best response to the other policy.
 
     Counterfactual weights exclude the responder's reach. At each information
@@ -53,7 +53,7 @@ def best_response(tree: Tree, policy: FloatArray, target: int) -> float:
     return float(values[0])
 
 
-def evaluate(tree: Tree, policy: FloatArray) -> Metrics:
+def evaluate(tree: ArrayTree, policy: FloatArray) -> Metrics:
     """Exploitability = NashConv/2 in ante chips per hand, NOT mbb/hand.
 
     NashConv = (BR_0 - v_0) + (BR_1 - v_1) = BR_0 + BR_1 since v_1=-v_0.
