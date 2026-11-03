@@ -56,9 +56,21 @@ with **zero disagreements** across all **7,462 distinct ranks**. The category
 census also matches independent combinatorial formulas. Reproduce with
 `make validate-five`; see [the protocol](docs/phase1-five-card.md) and
 [raw validation report](results/five-card-exhaustive.json). Full enumeration is
-deterministic and uses no RNG. Six/seven-card sampling has its
-[own protocol](docs/phase1-best-five.md); equity and engine validation remain
-subsequent steps.
+deterministic and uses no RNG.
+
+Six/seven-card best-five selection matched Treys on
+**2,000,000 seeded sampled hands** with **zero disagreements**:
+
+| Cards | Sampled hands | Seed | Disagreements |
+| --- | ---: | ---: | ---: |
+| 6 | 1,000,000 | 20261103 | 0 |
+| 7 | 1,000,000 | 20261104 | 0 |
+
+Reproduce with `make validate-best`; see
+[the protocol and limits](docs/phase1-best-five.md) and
+[raw report](results/best-five-validation.json). These are sampled checks,
+not exhaustive six/seven-card coverage. Profiling, equity, and engine validation
+remain subsequent steps.
 
 Long validation sweeps use explicit configurations/seeds or deterministic complete
 enumeration, with saved reports, separately from fast CI checks.

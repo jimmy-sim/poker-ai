@@ -113,9 +113,27 @@ Ruff lint/format, and strict typing of implementation, tests, and scripts.
 Tests were added before evaluate_best; the first focused run failed because that
 entry point did not exist. Hosted Ubuntu CI has not run for this step.
 
-Full sampled results will be added after execution from a committed clean source
-revision. The five-card classifier's AST was checked against the prior revision
-and is unchanged; only the new selection wrapper was added.
+The full comparison **passed** from clean revision
+`c4ce8630266c0843179972afac2418afa8cf73f1`. All **2,000,000 sampled
+hands** matched Treys on exact category and tie-breakers after calibration of all
+**7,462** five-card rank classes.
+
+| Cards | Actual sampled hands | PCG64 seed | Disagreements |
+| --- | ---: | ---: | ---: |
+| 6 | 1,000,000 | 20261103 | 0 |
+| 7 | 1,000,000 | 20261104 | 0 |
+
+The [raw report](../results/best-five-validation.json) records planned and actual
+runs, counts, input digests, source hashes, environment, and timings. The source
+revision precedes the results/documentation commit so the working tree was clean
+when sampling began. Source/config/entrypoint/lock hashes were checked again before
+publishing the report. A rerun retains exact samples under the recorded environment
+but has its own timing and revision metadata.
+
+The five-card classifier's AST was checked against the prior revision and is
+unchanged; only the new selection wrapper was added. Six/seven-card draws may
+repeat, and their observed category/rank-class counts are descriptive, not an
+exhaustive census or a claim of full six/seven-card coverage.
 
 ## Interpretation and next work
 
