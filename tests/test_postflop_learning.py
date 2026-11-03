@@ -168,3 +168,78 @@ def test_profiled_menu_cache_preserves_all_sampled_updates(low_tree: SpotTree) -
         np.testing.assert_array_equal(
             cached.rows[key].strategy_sum, dynamic.rows[key].strategy_sum
         )
+
+
+def test_export_keeps_uniform_fallback_distinct_from_trained_rows(
+    low_tree: SpotTree,
+) -> None:
+    from poker_ai.postflop.learning import sampled_average
+
+    tree = MatrixTree.build(low_tree)
+    solver = MCCFR(lambda rng: IndexedState(tree), Generator(PCG64(7)))
+    policy, active = sampled_average(solver, tree)
+    assert not solver.rows and active.sum() == 0
+    np.testing.assert_array_equal(policy, tree.normalize(tree.legal))
+    solver.train(10)
+    _, active = sampled_average(solver, tree)
+    assert 0 < active.sum() < len(tree.keys)
+
+
+def test_postflop_checkpoint_resume_is_bit_identical(
+    low_tree: SpotTree, tmp_path: Path
+) -> None:
+    from poker_ai.training.checkpoint import load_checkpoint, save_checkpoint
+
+    tree = MatrixTree.build(low_tree)
+    original = MCCFR(lambda rng: IndexedState(tree), Generator(PCG64(27)))
+    original.train(20)
+    path = tmp_path / "checkpoint.json"
+    save_checkpoint(
+        original, path, config={"spot": low_tree.spot.name}, provenance={"test": True}
+    )
+    resumed = load_checkpoint(
+        path,
+        lambda rng: IndexedState(tree),
+        expected_config={"spot": low_tree.spot.name},
+    )
+    original.train(10)
+    resumed.train(10)
+    assert original.nodes_visited == resumed.nodes_visited
+    assert original.rng.bit_generator.state == resumed.rng.bit_generator.state
+    for key in original.rows:
+        np.testing.assert_array_equal(
+            original.rows[key].regrets, resumed.rows[key].regrets
+        )
+        np.testing.assert_array_equal(
+            original.rows[key].strategy_sum, resumed.rows[key].strategy_sum
+        )
+
+
+def test_tiny_own_training_run_and_missing_seed_gate(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from poker_ai.postflop import learning
+
+    config = json.loads((ROOT / "configs/holdem-learning.json").read_text())
+    config.update(
+        {
+            "development_spots": [config["development_spots"][0]],
+            "seeds": [11],
+            "full_tree_checkpoints": [1, 2],
+            "sampled_checkpoints": [1, 2],
+        }
+    )
+    path = tmp_path / "config.json"
+    path.write_text(json.dumps(config))
+    monkeypatch.setattr(
+        learning, "source_provenance", lambda *args, **kwargs: {"test": True}
+    )
+    report = learning.run_training(
+        ROOT, path, tmp_path / "report.json", phase="development", encodings=("exact",)
+    )
+    assert report["status"] == "completed" and len(report["rows"]) == 4
+    assert report["exact_acceptance"]["passed"] is False
+    assert report["rows"][1]["uniform_reach_average_row_coverage"] == pytest.approx(1)
+    missing = learning.acceptance(report["rows"][:2], config, ["dev_low_oop"])
+    assert missing["passed"] is False
+    assert missing["spots"][0]["reason"] == "missing exact final rows"
