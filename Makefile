@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents report-evaluation
 
 setup:
 	$(UV) sync --locked --dev
@@ -96,3 +96,10 @@ evaluate-agents:
 	$(UV) run --locked --extra solver-validation --extra research python scripts/evaluate_agents.py \
 		--config configs/match-evaluation.json --mode main \
 		--output results/evaluation/matches.json
+	$(MAKE) report-evaluation
+
+report-evaluation:
+	$(UV) run --locked python scripts/audit_match_records.py \
+		--report results/evaluation/matches.json --output results/evaluation/record-audit.json
+	$(UV) run --locked python scripts/render_evaluation_report.py \
+		--report results/evaluation/matches.json

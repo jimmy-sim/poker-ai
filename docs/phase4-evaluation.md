@@ -6,8 +6,9 @@ cluster-aware confidence intervals and a predeclared significance test; measured
 variance reduction (a documented alternative to AIVAT); independent reference-rule
 checks; reproducible configs/reports and three interview answers. Slumbot is a
 separate conditional public-benchmark step, with permission/protocol checked first.
-The timing pilot is now complete; its small-sample scores are retained for
-transparency and are not playing-strength claims. Main results are pending.
+The timing pilot and local main study are complete and audited. Public API
+benchmark preparation remains separate. No competitive playing-strength claim
+has been established.
 
 ## Predeclared local experiment
 
@@ -24,7 +25,7 @@ the same physical seats, so each policy receives both card/position roles. This 
 simulation, with no real-money client or real-time assistance integration.
 
 The timing pilot uses 32 duplicate decks on its own seed. The main budget is 1,000
-fresh decks per opponent, three fixed agent policies and both seats. Pilot results
+fresh deck draws shared across opponents, three fixed agent policies and both seats. Pilot results
 will estimate runtime before launching main compute; no favorable-outcome stopping
 or seed replacement is allowed. Six opponent definitions are retained, including
 any losses or wide intervals. Own uniform fallbacks are counted explicitly.
@@ -150,5 +151,92 @@ No pilot scores were used to change seeds, agents, sizes, thresholds or N.
 
 The two displayed 95% intervals are pointwise, not simultaneous family intervals.
 The predeclared family-adjusted test determines significance. Pilot intervals
-have particularly low power; only the fresh fixed-N main study will be summarized
-as evaluation evidence.
+have particularly low power; the fresh fixed-N main study below is the local
+evaluation evidence.
+
+<!-- EVALUATION_RESULTS_BEGIN -->
+### Local duplicate-deal evaluation
+
+**36,000 simulated hands**, six fixed opponents, 3 frozen own training seeds. The same **1,000 independently drawn decks** are reused across both seats, fixed agents and opponents; each comparison has N=1,000 independent clusters. It does not have one independent sample per hand or per training seed. Stakes: 100bb; matched full-pot/all-in grid.
+
+| Opponent | mbb/hand | Approx. 95% CLT CI | Conservative 95% Hoeffding CI | Adjusted p bound | Paired variance ratio |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| random | +2400.6 | [+1100.4, +3700.8] | [-6188.8, +10990.0] | 1 | 0.505 |
+| always_call | +1953.5 | [+517.9, +3389.1] | [-6635.9, +10542.9] | 1 | 0.192 |
+| always_raise | +4051.6 | [+2373.4, +5729.8] | [-4537.8, +12641.0] | 1 | 0.418 |
+| tight_aggressive | -2508.6 | [-3349.9, -1667.3] | [-11098.0, +6080.8] | 1 | 0.729 |
+| equity | -9201.3 | [-10447.1, -7955.6] | [-17790.7, -611.9] | 0.174 | 0.511 |
+| openspiel_ismcts | +1206.8 | [+63.9, +2349.7] | [-7382.6, +9796.2] | 1 | 0.457 |
+
+Predeclared six-opponent family test: **0/6 positive advantages and 0/6 nonzero means pass** the conservative Bonferroni–Hoeffding criterion. Pointwise approximate CLT intervals suggest differences, but they are not the predeclared primary significance rule. Failure of that test does not establish zero advantage; its worst-case bound has low power at this N. Point-estimate losses occur against tight_aggressive, equity. The small ISMCTS opponent is a limited search baseline, not an equilibrium strategy or competitive poker benchmark.
+
+Estimated paired/covariance-omitted variance ratios: **0.192–0.729**. This is the documented variance-reduction alternative to AIVAT; no AIVAT estimator or independent unpaired-match experiment is claimed. All raw hand records, own fallback counts, seed results and failures are retained.
+
+![Win rates and pointwise intervals](../results/evaluation/winrate-intervals.png)
+
+Reproduce with `make evaluate-agents`; `make report-evaluation` re-audits and renders existing raw results without replaying matches. See this document for policy definitions, reference license/rule checks and limitations. No real-money client is used.
+<!-- EVALUATION_RESULTS_END -->
+
+
+## Local main acceptance and interpretation
+
+The match command completed from clean `7b076d2` in 353.92 seconds on the recorded
+Apple M4/Python 3.11.17 environment. All six opponents completed 1,000 shared decks
+and 6,000 hands each, with zero action projection/shadow failures. Independent
+native controls covered 1,000 hands / 2,824 actions, including 324 showdowns and
+676 folds, with zero payout discrepancy. These are sampled matched-grid traces,
+not exhaustive rules coverage.
+
+[Raw main report](../results/evaluation/matches.json) and
+[record audit](../results/evaluation/record-audit.json) retain source/config/dependency
+hashes and all 36,000 raw hand rows. The audit independently reconstructs deck
+hashes, verifies every deal/policy/seat combination, recomputes pooled inference
+exactly and reconciles lookup totals. The same 1,000 chance tapes are reused across
+opponents; no overall confidence calculation treats 36,000 hands as independent.
+
+[Actual lookup coverage](../results/evaluation/lookup-coverage.csv) is measured on
+the own policies' played decisions, not Phase 3.5 reference reach. A saved average
+row can still be uniform, so a match is not a quality certificate. Differences
+between global-deal evaluation and narrow conditional spot comparisons do not
+contradict each other.
+
+The positive approximate CLT intervals and the stricter nonsignificant primary
+results answer different inference questions. Hoeffding uses the entire known
+[-200,200] payoff support and ignores empirical variance reduction; its pointwise
+intervals are conservative, and Bonferroni further controls six comparisons. No
+opponent passes the predeclared corrected test. This does not establish equality
+of strategies or erase the observed unfavorable TAG/equity results. Do not swap
+the primary test after seeing this pattern.
+
+The OpenSpiel opponent uses just 32 simulations and uniform compatible-hand
+resampling on a 100bb full-pot/all-in abstraction. A positive point estimate
+against it is not a claim to beat OpenSpiel CFR, GTO Hold'em or professional bots.
+The local data do not measure unrestricted exploitability or real-money returns.
+
+Local code gate at this checkpoint: Python 3.11 **433 passed**; Python 3.12
+**427 passed, 6 optional-reference skips**. Ruff and strict mypy passed. Hosted CI
+has not run. Figures were inspected. Generated resume drafts are in
+[verified-claims.md](../results/evaluation/verified-claims.md); they describe the
+measurement system and preserve the unfavorable/nonsignificant outcomes.
+
+## Three interview questions
+
+**Why aren't 36,000 hands 36,000 independent samples?** Each of 1,000 decks is
+reused for two seats, three fixed agents and six opponents. I average within deck
+and calculate each matchup's uncertainty over those independent deck clusters.
+Bonferroni remains valid even though opponent comparisons share chance tapes.
+The training seeds define fixed policies, not a sampled training population.
+
+**Why can the approximate interval exclude zero while the primary test fails?**
+The CLT interval uses observed paired variance and an asymptotic approximation.
+The bounded Hoeffding test protects against worst-case payoff distributions,
+then controls six tests. It has less power here. I preregistered that criterion,
+report both and do not choose the more favorable inference after seeing results.
+
+**What makes the external baseline check credible, and what doesn't it prove?**
+The policy receives only own/public observations; synthetic opponent cards are
+resampled with an explicitly seeded callback. Fresh-process replay and private-card
+invariance tests passed, while independent native action/ledger/payout traces
+matched. Its small search budget and uniform ranges make it a limited opponent;
+beating its point estimate would not establish equilibrium quality or competitive
+poker strength. No reference outputs enter own training or strategy weights.
