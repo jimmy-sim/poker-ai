@@ -79,3 +79,18 @@ Protocol and review questions: [five-card evaluator](phase1-five-card.md).
   actual CLI script. Preserve the five-card runner's default entrypoint.
 
 Details and review questions: [best-five evaluation](phase1-best-five.md).
+
+## 2026-11-02 — Heads-up equity
+
+- Expose fixed-opponent and uniform-opponent conditional showdown equity. Validate
+  all known/dead cards jointly so card removal is shared across opponent/runout.
+- Count exact states before enumeration and impose an explicit budget. Prefer
+  bounded Monte Carlo for uniform-opponent preflop calculations.
+- Define tie payoff as half a pot share. Separate outcome variance, estimated
+  standard error, and fixed-budget confidence intervals.
+- Use conservative Hoeffding intervals for bounded fractional payoffs; retain
+  nonzero interval width at all-win/all-loss samples. No normal/binomial shortcut.
+- Independently enumerate tractable reference cases with Treys and record fixed
+  Monte Carlo seeds and simultaneous-coverage interpretation.
+
+Details: [heads-up equity](phase1-equity.md).

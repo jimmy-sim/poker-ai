@@ -8,7 +8,8 @@ Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, a
 [five-card evaluator](docs/phase1-five-card.md), and
 [six/seven-card best-five selection](docs/phase1-best-five.md). See the
 [encoding contract and full phase acceptance gate](docs/phase1-cards.md).
-Profiling, equity, and the game engine follow before solvers. The intended engine
+Profile-guided direct evaluation and [heads-up equity](docs/phase1-equity.md)
+are implemented; the game engine follows before solvers. The intended engine
 supports 2–6 seats and side pots; research agents initially play heads-up.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 

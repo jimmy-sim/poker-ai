@@ -1,0 +1,13 @@
+{
+  "samples": 50000,
+  "seed": 20261106,
+  "confidence_level": 0.99,
+  "max_states": 100000,
+  "cases": [
+    {"name": "board_royal_tie", "hero": ["2d", "3h"], "villain": ["4d", "5h"], "board": ["Tc", "Jc", "Qc", "Kc", "Ac"], "dead_cards": []},
+    {"name": "turn_one_losing_out", "hero": ["Ah", "Ad"], "villain": ["Kh", "Kd"], "board": ["Ac", "Kc", "2c", "3d"], "dead_cards": []},
+    {"name": "flopped_royal", "hero": ["As", "Ks"], "villain": ["Qh", "Qd"], "board": ["Qs", "Js", "Ts"], "dead_cards": []},
+    {"name": "flop_pair_vs_overcards", "hero": ["9s", "9h"], "villain": ["As", "Kh"], "board": ["Tc", "Jc", "2d"], "dead_cards": []},
+    {"name": "turn_uniform_opponent", "hero": ["Ah", "Ad"], "villain": null, "board": ["Ac", "Kc", "2c", "3d"], "dead_cards": []}
+  ]
+}

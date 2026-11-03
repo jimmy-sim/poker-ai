@@ -63,6 +63,7 @@ make format      # Apply Ruff fixes and formatting; inspect the diff
 make hooks       # Install repository-local commit hooks
 make validate-five  # Exhaustive Treys hand-rank check; optional validation extra
 make validate-best  # Seeded million-hand checks for six and seven cards
+make validate-equity  # Exact Treys counts and fixed-budget Monte Carlo checks
 uv run --locked pre-commit run --all-files
 ```
 
