@@ -116,3 +116,21 @@ verified first. Do not copy/import the example implementation, disable TLS check
 retry ambiguous non-idempotent actions blindly, hide incomplete hands or report a
 small connectivity pilot as a competitive win-rate result. External server deals
 are not client-seeded; retain sanitized raw responses and label live rerun limits.
+
+## Local commands
+
+Own checkpoints must exist (`make validate-solvers` recreates them from own
+self-play). The pilot/main commands install the pinned optional reference/plot
+extras and independently verify the configured 1,000 native-mechanics traces.
+
+```sh
+make check
+make pilot-evaluation  # 32 decks/opponent, separate chance seed; ignored outputs
+make evaluate-agents  # 1,000 fresh decks/opponent, all three fixed own policies
+```
+
+A failed rule/action/fingerprint check aborts scoring. A technical time-budget
+abort keeps raw completed hands for diagnosis, does not infer from a partial
+prefix and does not replace reviewed results. Worker processes are fresh, with
+fixed RNG streams and no shared learning. Main data retain all per-hand profits,
+counts and deck hashes so interval calculations can be audited separately.

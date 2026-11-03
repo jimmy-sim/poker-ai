@@ -1,6 +1,6 @@
 UV ?= uv
 
-.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers
+.PHONY: setup lint format typecheck test check hooks validate-five validate-best validate-equity validate-engine validate-cfr train-mccfr-pilot build-card-abstraction train-limit train-no-limit verify-agent validate-solver-tier-a validate-solvers pilot-evaluation evaluate-agents
 
 setup:
 	$(UV) sync --locked --dev
@@ -85,3 +85,14 @@ validate-solver-tier-a:
 # Gated full milestone: reference strategies remain comparison artifacts only.
 validate-solvers:
 	$(UV) run --locked --extra solver-validation --extra validation --extra research python scripts/validate_solvers.py
+
+# Fixed-policy duplicate matches; pilot/main chance seeds are distinct.
+pilot-evaluation:
+	$(UV) run --locked --extra solver-validation --extra research python scripts/evaluate_agents.py \
+		--config configs/match-evaluation.json --mode pilot \
+		--output results/runs/evaluation-pilot/pilot.json
+
+evaluate-agents:
+	$(UV) run --locked --extra solver-validation --extra research python scripts/evaluate_agents.py \
+		--config configs/match-evaluation.json --mode main \
+		--output results/evaluation/matches.json
