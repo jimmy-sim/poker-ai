@@ -164,7 +164,9 @@ enumeration, with saved reports, separately from fast CI checks.
 
 See [the roadmap](docs/roadmap.md), [design decisions](docs/decisions.md), and
 [contributor instructions](AGENTS.md). Local setup verification is recorded in
-[the Phase 0 report](docs/phase0-verification.md); hosted CI has not run yet.
+[the Phase 0 report](docs/phase0-verification.md). The first
+[hosted baseline CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41746694808)
+passed on Python 3.11 and 3.12; the badge above shows current default-branch CI.
 
 <!-- SOLVER_VALIDATION_RESULTS_BEGIN -->
 ### Reproduced external-solver comparison

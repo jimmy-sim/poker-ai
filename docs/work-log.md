@@ -24,7 +24,14 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 - **Hands-on time:** Not recorded.
 - **Validation:** Local `make check` passed lint, formatting, strict typing and
   525 tests (8 optional skips). Issue-form YAML and local document links checked.
-  Hosted CI and the PR will be linked when they actually exist.
+  Hosted Python 3.11/3.12 jobs passed for the
+  [published baseline](https://github.com/jimmy-sim/poker-ai/actions/runs/41746694808)
+  and the [initial PR head](https://github.com/jimmy-sim/poker-ai/actions/runs/41746822968).
+- **PR:** [#5 — visible development workflow](https://github.com/jimmy-sim/poker-ai/pull/5).
+  Later documentation commits receive their own CI; the links above identify
+  the exact runs observed when this entry was written.
+- **Next:** [Milestone: bounded strength-v3 validation](https://github.com/jimmy-sim/poker-ai/milestone/1)
+  contains the prospective estimator, fresh hold-out and abstraction tasks.
 
 ## Retrospective baseline: November 2–3, 2026
 
