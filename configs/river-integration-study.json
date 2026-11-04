@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "issue": 2,
+  "scope": "known-development turn-river diagnostic; no fresh hold-outs or global strength claim",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json",
+    "configs/learning-spots/heldout_low_oop.json",
+    "configs/learning-spots/heldout_medium_ip.json"
+  ],
+  "spot_role": "all four games are now known development evidence",
+  "encoding": "exact",
+  "variants": ["external", "river_integrated"],
+  "training_seeds": [20261208, 20261209, 20261210],
+  "sampling_weighting": "linear",
+  "initial_exact_expectation": true,
+  "total_node_thresholds": [100000, 1000000, 10000000],
+  "work_accounting": "actual recursive visits including terminals plus 2*N initial expectation node equivalents; stop after a complete iteration, report overshoot",
+  "maximum_tree_nodes": 200000,
+  "maximum_seconds_total": 7200,
+  "full_tree_backend": "fused_numba",
+  "full_tree_checkpoints": [256, 4096],
+  "frozen_panel": {
+    "policies": ["uniform", "own_full_cfr_plus_256"],
+    "seeds": [20261218, 20261219, 20261220],
+    "passes_per_seed_target_policy_variant": 256,
+    "targets": [0, 1],
+    "metrics": [
+      "regret_update_squared_l2_error_all_infos",
+      "regret_update_squared_l2_error_turn_infos",
+      "average_update_squared_l2_error_all_infos",
+      "mean_node_visits",
+      "mean_squared_error_times_mean_node_visits"
+    ]
+  },
+  "full_tree_exploitability_pot_limit": 0.001,
+  "sampled_median_exploitability_pot_limit": 0.01,
+  "sampled_max_exploitability_pot_limit": 0.025,
+  "minimum_uniform_reach_average_row_coverage": 0.95,
+  "independent_tolerance_chips": 1e-9,
+  "expected_update_test_absolute_tolerance": 1e-10,
+  "candidate_selected_before_results": "river_integrated",
+  "reporting": "retain every variant, seed, budget, failure, coverage and cost; no stop-at-first-pass or best-seed selection",
+  "next_gate": "fresh games require separate preregistration under issue 3; this study cannot satisfy that gate",
+  "reference_use": "independent frozen-policy comparison only; never training input"
+}
