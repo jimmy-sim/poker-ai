@@ -1,6 +1,5 @@
 """Post-training native value/BR audit; never feeds a strategy into training."""
 
-import gzip
 import json
 import math
 import time
@@ -9,37 +8,12 @@ from pathlib import Path
 from typing import Any
 
 from poker_ai.postflop.game import load_spot
-from poker_ai.postflop.river_study import FORMAT, POLICY_FORMAT, acceptance, digest
+from poker_ai.postflop.river_artifacts import IDENTITY, checked_artifacts
+from poker_ai.postflop.river_study import digest
 from poker_ai.postflop.tree import SpotTree
 from poker_ai.reproducibility import runtime_environment
 from poker_ai.solver_validation.reference import Reference
 from poker_ai.validation.five_card import source_provenance
-
-IDENTITY = ("spot_file", "method", "seed", "iteration", "node_threshold")
-
-
-def checked_artifacts(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    report: dict[str, Any] = json.loads(path.read_text())
-    if report["format"] != FORMAT or report["status"] != "completed":
-        raise ValueError(
-            "requires a complete river study, retaining partial data separately"
-        )
-    if (
-        report["acceptance"] != acceptance(report["rows"], report["config"])
-        or not report["acceptance"]["complete"]
-    ):
-        raise ArithmeticError("missing/duplicate or changed learning grid")
-    policy_path = path.parent / report["own_policies_file"]
-    if digest(policy_path) != report["own_policies_sha256"]:
-        raise ArithmeticError("own policy artifact hash mismatch")
-    frozen = json.loads(gzip.decompress(policy_path.read_bytes()))
-    if frozen["format"] != POLICY_FORMAT:
-        raise ValueError("expected own river policy artifact")
-    rows = {tuple(r[k] for k in IDENTITY) for r in report["rows"]}
-    policies = {tuple(r[k] for k in IDENTITY) for r in frozen["policies"]}
-    if rows != policies or len(policies) != len(frozen["policies"]):
-        raise ArithmeticError("missing/duplicate frozen own policy")
-    return report, frozen["policies"]
 
 
 def validate_study(root: Path, path: Path, output: Path) -> dict[str, Any]:

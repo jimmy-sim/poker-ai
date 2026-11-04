@@ -1,15 +1,20 @@
 UV ?= uv
 
-.PHONY: study-river-integration audit-river-integration
+.PHONY: study-river-integration audit-river-integration report-river-integration
 
 # Full prospective study; refuses to overwrite an existing report.
 study-river-integration:
 	$(UV) run --locked --extra jit python scripts/study_river_integration.py
 	$(MAKE) audit-river-integration
+	$(MAKE) report-river-integration
 
 # Post-training value/BR only; independent outputs never enter own training.
 audit-river-integration:
 	$(UV) run --locked --extra solver-validation python scripts/audit_river_study.py
+
+# Offline replay of reviewed policies/audit; a failed performance gate is retained.
+report-river-integration:
+	$(UV) run --locked --extra research python scripts/report_river_study.py
 
 .PHONY: test-river-sampling
 

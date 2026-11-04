@@ -187,3 +187,83 @@ def test_invalid_design_rejected_before_work(change: dict[str, Any]) -> None:
     config.update(change)
     with pytest.raises(ValueError):
         study.validate_config(config)
+
+
+def test_artifacts_and_summaries_require_every_panel_cell(
+    tiny_report: tuple[Path, dict[str, Any]], tmp_path: Path
+) -> None:
+    from poker_ai.postflop.river_artifacts import checked_artifacts
+    from poker_ai.postflop.river_report import learning_summary, panel_summary
+
+    path, report = tiny_report
+    checked, policies = checked_artifacts(path)
+    assert checked == report and len(policies) == 5
+    assert len(learning_summary(report)) == 4
+    assert len(panel_summary(report)) == 4
+    bad = json.loads(path.read_text())
+    bad["frozen_panel"].pop()
+    bad_path = path.with_name("missing-panel.json")
+    bad_path.write_text(json.dumps(bad))
+    with pytest.raises(ArithmeticError, match="panel"):
+        checked_artifacts(bad_path)
+    bad["frozen_panel"] = report["frozen_panel"] + [report["frozen_panel"][0]]
+    bad_path.write_text(json.dumps(bad))
+    with pytest.raises(ArithmeticError, match="panel"):
+        checked_artifacts(bad_path)
+    broken = tmp_path / "study.json"
+    broken.write_text(path.read_text())
+    (tmp_path / report["own_policies_file"]).write_bytes(b"changed")
+    with pytest.raises(ArithmeticError, match="hash"):
+        checked_artifacts(broken)
+
+
+def test_ratio_of_pooled_batch_means_and_zero_denominator() -> None:
+    from poker_ai.postflop.river_report import panel_summary
+
+    rows = []
+    for method, pairs in (
+        ("external", [(2.0, 10.0), (6.0, 20.0)]),
+        ("river_integrated", [(1.0, 20.0), (3.0, 40.0)]),
+    ):
+        for error, cost in pairs:
+            rows.append(
+                {
+                    "spot": "example",
+                    "policy": "uniform",
+                    "target": 0,
+                    "variant": method,
+                    "regret_mse_all": error,
+                    "regret_mse_turn": error,
+                    "average_mse_all": 0.0,
+                    "mean_node_visits": cost,
+                }
+            )
+    result = panel_summary(
+        {"frozen_panel": rows, "config": {"variants": ["external", "river_integrated"]}}
+    )[0]
+    assert result["regret_mse_all_ratio"] == 0.5
+    assert result["visit_ratio"] == 2
+    assert result["regret_mse_all_cost_ratio"] == 1
+    assert result["average_mse_all_cost_ratio"] is None
+
+
+def test_native_audit_rejects_missing_or_corrupt_comparison(
+    tiny_report: tuple[Path, dict[str, Any]], tmp_path: Path
+) -> None:
+    pytest.importorskip("pyspiel")
+    from poker_ai.postflop.river_report import checked_audit
+    from poker_ai.solver_validation.river import validate_study
+
+    path, report = tiny_report
+    output = tmp_path / "native.json"
+    native = validate_study(ROOT, path, output)
+    assert native["status"] == "passed" and len(native["comparisons"]) == 5
+    checked_audit(path, output, report)
+    native["comparisons"][-1]["native_exploitability_chips"] += 1.0
+    output.write_text(json.dumps(native))
+    with pytest.raises(ArithmeticError, match="tolerance"):
+        checked_audit(path, output, report)
+    native["comparisons"].pop()
+    output.write_text(json.dumps(native))
+    with pytest.raises(ArithmeticError, match="audit"):
+        checked_audit(path, output, report)
