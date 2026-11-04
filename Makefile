@@ -1,12 +1,13 @@
 UV ?= uv
+RIVER_OUTPUT ?= results/runs/river-integration-reproduction
 
 .PHONY: study-river-integration audit-river-integration report-river-integration
 
-# Full prospective study; refuses to overwrite an existing report.
+# Full prospective study in ignored output; refuses to overwrite a previous run.
 study-river-integration:
-	$(UV) run --locked --extra jit python scripts/study_river_integration.py
-	$(MAKE) audit-river-integration
-	$(MAKE) report-river-integration
+	$(UV) run --locked --extra jit python scripts/study_river_integration.py --output "$(RIVER_OUTPUT)/study.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_river_study.py --report "$(RIVER_OUTPUT)/study.json" --output "$(RIVER_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_river_study.py --report "$(RIVER_OUTPUT)/study.json" --audit "$(RIVER_OUTPUT)/independent.json" --output "$(RIVER_OUTPUT)/report"
 
 # Post-training value/BR only; independent outputs never enter own training.
 audit-river-integration:

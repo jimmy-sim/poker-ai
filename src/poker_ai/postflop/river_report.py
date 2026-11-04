@@ -1,6 +1,7 @@
 """Replay own policies, check the recorded audit, and render all river-study cells."""
 
 import csv
+import importlib
 import json
 import math
 import time
@@ -292,10 +293,9 @@ def _plots(
     report: dict[str, Any],
     output: Path,
 ) -> None:
-    import matplotlib
-
+    matplotlib = importlib.import_module("matplotlib")
     matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     plt.rcParams.update({"svg.hashsalt": "river-study-v1"})
     spots = list(dict.fromkeys(r["spot"] for r in learning))
