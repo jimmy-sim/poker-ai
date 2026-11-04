@@ -1,5 +1,9 @@
 # Issue 2: river-integrated external sampling
 
+The later [fixed-work study](river-fixed-work.md) completes the experiments
+deferred by this original protocol/correctness block. Its result is mixed, with
+no uniform integration advantage or global-agent upgrade.
+
 ## Session boundary and acceptance, before outcomes
 
 This session resumes [issue #2](https://github.com/jimmy-sim/poker-ai/issues/2)

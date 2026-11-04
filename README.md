@@ -62,6 +62,16 @@ and [verified resume claims and interview answers](docs/interview-guide.md).
 
 ![Own postflop learning, all fixed seeds](results/holdem-learning/report/learning-curves.png)
 
+The [river-integration follow-up](docs/river-fixed-work.md) completes all four
+known development games at matched work thresholds. At 10 million node-work,
+integration lowers the medium-IP median from **0.9433% to 0.7109% of the pot**,
+but raises medium-OOP from **0.2463% to 0.7612%**; its final median is higher in
+three of four games. Both methods pass the declared final development limits,
+and all **80 frozen policies** pass independent value/best-response checks.
+This mixed result changes no global-agent default or playing-strength claim.
+`make report-river-integration` replays the [tables and plots](results/river-integration/report/tables.md)
+offline; `make study-river-integration` reproduces the full bounded study.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with
