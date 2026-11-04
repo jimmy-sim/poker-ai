@@ -10,6 +10,18 @@ reviewable result.
 Dates below use America/Los_Angeles unless marked UTC. Entries describe actual
 work; elapsed agent/process time is not a record of personal hands-on hours.
 
+## 2026-11-03 — Same-day publication preference
+
+- **Request:** Make ongoing contributions visible across the days of actual work.
+- **Change:** Recorded same-day publication of coherent checked increments,
+  dated PR/work-log updates, and real commit dates in the project instructions.
+- **Scope:** Documentation only. Issue #2 remains paused; no training or research
+  experiment was started. A daily publishing cadence is not a recurring job.
+- **Assistance / time:** Codex updated the instructions from the developer's
+  request. Personal hands-on time was not recorded.
+- **Verification:** Diff review and documentation formatting checks; hosted CI
+  is attached to the PR containing this entry.
+
 ## 2026-11-03 — Public development workflow
 
 - **Question:** How can progress be visible and reviewable on GitHub as work happens?

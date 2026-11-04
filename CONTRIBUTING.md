@@ -23,6 +23,18 @@ verification. Existing commits retain their original dates and authors.
 For this solo project, a self-review explains a design decision and checks the
 diff/evidence; it should not imply an independent reviewer participated.
 
+## Publication cadence
+
+Publish meaningful, checked increments on the day the work happens, during the
+session or by its end. For work spanning multiple days, update the same issue/PR
+and add dated progress/evidence as each day's work is completed. A partial result
+can remain on a clearly marked draft PR while checks or experiments are pending.
+
+Keep actual author dates and publish completed work promptly. Daily visibility
+comes from real work on different days, rather than holding finished changes for
+future publication. This is a publishing preference for active sessions; paused
+research remains paused and no recurring work schedule is implied.
+
 ## Recording work and time
 
 Git records changes and dates, not hours worked. Record hands-on time only from

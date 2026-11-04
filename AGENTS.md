@@ -5,6 +5,12 @@
 - The user requested ongoing visible development in `jimmy-sim/poker-ai`.
   Follow `CONTRIBUTING.md`: prospective issue, focused branch/commits, linked PR,
   actual CI/evidence, and an entry in `docs/work-log.md` for substantive work.
+- On each actual work day, publish coherent checked increments during the session
+  or by its end, rather than waiting for an entire multi-day phase. Update the PR
+  and dated work log with actual progress and remaining checks. Preserve real
+  commit dates; do not distribute completed work artificially across future days.
+  This cadence applies to active work and does not resume paused work or create
+  an automatic daily work schedule.
 - Preserve historical commits and dates. Distinguish retrospective summaries from
   issues/PRs created during the work; do not manufacture activity or review.
 - Record actual hands-on time separately from AI sessions and experiment wall
