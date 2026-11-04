@@ -1,0 +1,32 @@
+name: Research experiment
+description: Declare the question, acceptance limits and budget before collecting results.
+title: "[Research] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and hypotheses
+      description: What uncertainty will this experiment resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Frozen protocol
+      description: Config paths, seeds, controls, metrics, acceptance limits and hold-out policy.
+    validations:
+      required: true
+  - type: textarea
+    id: budget
+    attributes:
+      label: Compute budget and stopping rule
+      description: Node/iteration and wall-time limits; retain every fixed-seed outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Required evidence
+      description: Scripts, checks, tables/plots and limitations needed to close the investigation.
+    validations:
+      required: true

@@ -1,5 +1,11 @@
 # Poker AI
 
+[![CI](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml)
+
+Follow the [work log](docs/work-log.md),
+[open research issues](https://github.com/jimmy-sim/poker-ai/issues), and
+[pull requests](https://github.com/jimmy-sim/poker-ai/pulls) for current progress.
+
 A poker AI research project built from first principles, emphasizing expected
 value, variance, statistical testing, and game-theoretic reasoning. Implementations
 will be validated independently before any performance claims are published.
@@ -57,6 +63,9 @@ and [verified resume claims and interview answers](docs/interview-guide.md).
 ![Own postflop learning, all fixed seeds](results/holdem-learning/report/learning-curves.png)
 
 ## Development
+
+New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with
+actual checks and evidence recorded alongside each change.
 
 Requirements: Git, Make, and [uv](https://docs.astral.sh/uv/getting-started/installation/)
 0.13.5. uv can provision the Python version selected by `.python-version`.

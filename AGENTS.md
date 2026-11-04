@@ -1,5 +1,17 @@
 # Project conventions
 
+## Visible GitHub progress
+
+- The user requested ongoing visible development in `jimmy-sim/poker-ai`.
+  Follow `CONTRIBUTING.md`: prospective issue, focused branch/commits, linked PR,
+  actual CI/evidence, and an entry in `docs/work-log.md` for substantive work.
+- Preserve historical commits and dates. Distinguish retrospective summaries from
+  issues/PRs created during the work; do not manufacture activity or review.
+- Record actual hands-on time separately from AI sessions and experiment wall
+  time. Missing historical time stays unknown; never infer hours from commits.
+- Publish only intended committed changes. Preserve unrelated local experiment
+  outputs, keep large runs ignored, and report failed research gates honestly.
+
 ## Scope and workflow
 
 - Follow `docs/roadmap.md` in order. State each phase's definition of done first.
