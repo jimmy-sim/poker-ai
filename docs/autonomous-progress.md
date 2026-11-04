@@ -43,4 +43,11 @@ All learning in Phase 5 uses own simulated opponents. External reference and
 public-benchmark outputs remain comparison-only. Risk analysis uses conditional
 research simulations. No real-money integration or unapproved C++/Rust core.
 Every quantitative claim must retain real source/dirty status, configs, seeds,
-hashes, environment and estimator assumptions. Hosted CI has not run.
+hashes, environment and estimator assumptions.
+
+On November 3, the existing history was published to
+[jimmy-sim/poker-ai](https://github.com/jimmy-sim/poker-ai). The first
+[hosted baseline CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41746694808)
+passed on Python 3.11 and 3.12. Earlier phase reports retain their historical
+local-only status. New work follows the linked [work log](work-log.md), issues,
+PRs and actual hosted checks.
