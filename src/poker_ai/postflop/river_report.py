@@ -370,7 +370,10 @@ def _plots(
         xlabel=(
             "Integrated / ordinary MSE × mean node visits (below 1 favors integration)"
         ),
-        title="Frozen policy, unweighted target passes; pooled equal seed batches",
+        title=(
+            "Empirical frozen-policy ratios; 3 × 256 target passes per cell\n"
+            "Pooled equal seed batches; extreme ratios can be unstable"
+        ),
     )
     ax.legend()
     ax.grid(axis="x", alpha=0.2)

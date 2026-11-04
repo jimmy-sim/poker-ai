@@ -87,4 +87,114 @@ downloads promised to exist.
   arithmetic/information-set alignment, not an independently implemented engine.
   No reference strategy or value enters the own learner.
 
-Results and three review questions follow after the complete run and native audit.
+## Observed results, November 4
+
+The complete study ran from clean **`aebed7b`**, with the original protocol and
+training implementation unchanged during execution. It retained **72 sampled
+learning snapshots, 8 own full-CFR+ controls, and 96 frozen-panel seed cells**
+(24,576 frozen target passes). No cap failure, omitted cell or best-seed selection
+occurred. Total study time was **972.029 seconds**; the independent post-training
+audit took **3.126 seconds** on the Apple M4/Python 3.11.17 environment
+with NumPy 2.4.6 and Numba 0.68.1. Concurrent checks affect timing interpretation.
+The raw sandboxed CPU-model query was unavailable; the supplemental
+[hardware observation](../results/river-integration/hardware.json) records an
+approved local model query after the run without changing original provenance.
+
+All 80 own frozen policies passed native value/exploitability checks, with maximum
+absolute error **9.95e-14 chips** against the declared 1e-9 tolerance. Own-policy
+metric replay error was zero. All 72 original checkpoint/visit receipts and work
+counters were checked locally. The audit source was committed/clean; rendering
+records its own source and dirty state separately. Timing, provenance-bearing
+checkpoint hashes and render manifests can change on a reproduction; fixed-seed
+numerical metrics are the target on the recorded locked environment.
+
+At **10 million node-work**, three-seed median exploitability / initial pot is:
+
+| Known development game | Ordinary external | River-integrated | Lower median |
+| --- | ---: | ---: | --- |
+| dev_low_oop | 2.07960e-11 | 8.57631e-10 | Ordinary; both numerically tiny |
+| dev_medium_oop | 0.00246273 | 0.00761239 | Ordinary |
+| heldout_low_oop | 3.09139e-9 | 1.49820e-7 | Ordinary; both very small |
+| heldout_medium_ip | 0.00943331 | 0.00710928 | Integrated |
+
+Every final own full-tree control and both sampled methods pass their predeclared
+development limits: full epsilon <=0.001 pots; sampled median <=0.01, worst
+<=0.025; positive average-row coverage >=95%. Earlier work thresholds retain
+their much larger errors in the raw report and curves. Passing these final limits
+does not imply integration beats the ordinary control. The result is **mixed**:
+the integrated final median is lower in one game and higher in three. In medium
+OOP its median is 0.7612% of the pot versus ordinary 0.2463%; in medium IP it is
+0.7109% versus 0.9433%. No statistical superiority or global upgrade is claimed.
+
+![Learning at common work thresholds](../results/river-integration/report/learning-work.png)
+
+The [runtime plot](../results/river-integration/report/learning-time.png) shows
+the same measurements against observed cumulative run times. The methods have
+different iteration counts and different linear-weighting/initialization
+amortization at the same work. These adaptive learning differences cannot be
+attributed solely to frozen-update variance.
+
+The empirical frozen-panel all-info regret MSE is lower per pass in all 16
+spot/policy/target groups (integrated/ordinary ratios **0.02393–0.6616**), but
+**MSE times mean node visits is higher in 14/16 groups**, with ratios
+**0.7957–20.5764**. Thus per-pass error reduction generally failed to compensate
+for extra traversal work in this panel. These are finite-panel measurements,
+not exact population variance estimates or a convergence theorem.
+
+![Empirical frozen error and cost](../results/river-integration/report/frozen-cost.png)
+
+One turn-only cost ratio is extreme, about 22,314, for medium-IP own-CFR+256,
+target 0. Its ordinary batches all have turn MSE 0.000286659 with essentially zero
+observed within-batch SD; integrated batch means are 0.353121, 0.223626 and
+0.000286659, with SDs 4.124, 3.573 and essentially zero. This is consistent with
+rare-event under-sampling, but this panel does **not establish its cause** or a
+reliable population ratio for that cell. The exact expected-update tests passed;
+we neither discard the cell nor tune/increase its seeds after seeing the result.
+Further moment/tail diagnosis would be a separate declared follow-up.
+
+Coverage also needs qualification. Both methods have 100% positive average-row
+coverage due to the initial expectation. In dev_low_oop, **368 rows remain
+initial-only**, and subsequent uniform-reach coverage is only **80%**, even at
+the final threshold. Other games retain their own initial-only counts in the
+[complete table/CSV](../results/river-integration/report/tables.md). The positive
+average-row gate must not hide this distinction.
+
+Raw evidence: [study](../results/river-integration/study.json),
+[frozen own policies](../results/river-integration/study-own-policies.json.gz),
+[native audit](../results/river-integration/independent.json), and
+[replayed summary](../results/river-integration/report/summary.json).
+The earlier medium-IP held-out gate remains failed in its original experiment;
+filenames containing `heldout` here are known development games. This study
+does not repair that historical result or satisfy fresh validation issue #3.
+
+## Verification and stopping point
+
+Local full checks passed **594 tests on each of Python 3.11.17 and 3.12.15**,
+plus lint, formatting, strict typing and hooks. The new study tests cover budgets,
+warm-start charging, missing/duplicate grids, timeout retention, frozen-error
+arithmetic, policy hashes, ratio pooling and native-audit corruption. Hosted
+[pipeline CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41799867893) passed
+both Python jobs; final evidence-commit checks are attached to PR #8. Figures
+were visually inspected. Rendering uses an optional plotting extra; baseline
+checks do not require it.
+
+This completes issue #2's bounded investigation. It establishes a checked
+implementation and an honest fixed-work comparison, with no uniform efficiency
+benefit. The ordinary default is retained. Stop here: new fresh games and a frozen
+validation procedure belong to issue #3; scalable public abstraction is issue #4.
+Neither new task nor global training ran in this block.
+
+## Three review questions
+
+1. **Why can lower MSE per pass lose at equal work?** An integrated pass traverses
+   many rivers. In this panel its lower per-pass error usually fails to offset
+   the additional node cost. Adaptive iteration weighting also changes at equal
+   work, so actual learning curves are needed alongside frozen diagnostics.
+2. **Why does a passed development gate not justify promoting the new sampler?**
+   The ordinary control also passes, and has the lower final median in three
+   games. These games were already observed; there is no fresh validation or
+   measured global-agent upgrade.
+3. **What do the coverage and extreme-ratio results teach?** Initial average mass
+   can mask unvisited rows, and a small frozen sample can miss rare events. Keep
+   initial-only coverage and per-seed variability, retain surprising cells, and
+   qualify conclusions rather than selecting favorable evidence.

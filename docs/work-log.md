@@ -18,9 +18,28 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
   Acceptance is stated in [the experiment document](river-fixed-work.md).
 - **Status at session publication:** Runner and experiments pending. No benefit
   of integration has been measured; all four earlier games are development data.
+- **PR:** [#8](https://github.com/jimmy-sim/poker-ai/pull/8). The scope was published
+  in `9400b71`, checked runner in `aebed7b`, audit/report pipeline in `fb4f04d`
+  with optional-dependency/rerun fixes in `a781086`, and full raw outcomes in
+  `80ed3f0` before native audit. Real commit dates are preserved.
+- **Observed study:** All 80 learning/control policies and 96 frozen seed cells
+  retained from clean `aebed7b`; 972.029s study wall time. Native audit took
+  3.126s, passed all 80 policies within 9.95e-14 chips; own replay error was zero.
+  All 72 original checkpoint/visit receipts and work counters were checked.
+- **Finding:** Both variants pass final development limits. Integration has a
+  lower final median in one game and higher in three; empirical frozen regret
+  MSE times visits is higher in 14/16 cells. Keep the ordinary default. The
+  [report](river-fixed-work.md) retains initial-only coverage and unstable
+  panel-ratio limitations; no global strength/fresh hold-out claim follows.
+- **Verification:** 594 all-extras local tests passed on each of Python 3.11 and
+  3.12, with lint/format/strict typing/hooks. Hosted Python jobs passed on
+  [pipeline CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41799867893);
+  final evidence checks are tracked on PR #8. Plots were visually inspected.
 - **Assistance / time:** Codex implements and checks the runner and executes the
   study. Developer hands-on time is not recorded. Experiment and audit wall times
-  will be recorded separately from assistant session elapsed time.
+  are recorded separately from assistant session elapsed time.
+- **Stopping point:** Bounded fixed-work investigation complete. No fresh games,
+  abstraction study, global training or additional seed sweep was started.
 
 ## 2026-11-04 — Issue #2 estimator correctness
 
