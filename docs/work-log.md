@@ -12,6 +12,20 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 
 ## 2026-11-03 — Same-day publication preference
 
+## 2026-11-03 — Issue #2 protocol and correctness session
+
+- **Start:** 23:50 Pacific (07:50 UTC November 4), from the session clock.
+- **Scope:** Resumed [issue #2](https://github.com/jimmy-sim/poker-ai/issues/2)
+  for a bounded protocol/correctness block. Training and variance experiments
+  remain deferred to the next block.
+- **Prospective protocol:** [Study config](../configs/river-integration-study.json)
+  and [derivation/acceptance](river-integration.md), committed before outcomes.
+  All four previously inspected spots are known development games now.
+- **Assistance / time:** Codex prepares the protocol, implementation and tests.
+  Developer hands-on time is not recorded; session and process time are separate.
+- **Status at protocol publication:** Implementation and correctness checks pending;
+  no sampled-training or frozen-policy variance results have been collected.
+
 - **Request:** Make ongoing contributions visible across the days of actual work.
 - **Change:** Recorded same-day publication of coherent checked increments,
   dated PR/work-log updates, and real commit dates in the project instructions.
