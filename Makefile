@@ -1,5 +1,11 @@
 UV ?= uv
 
+.PHONY: test-river-sampling
+
+# Correctness and resume checks only; starts no variance or learning experiment.
+test-river-sampling:
+	$(UV) run --locked pytest -q tests/test_river_sampling.py tests/test_postflop_sampling.py
+
 .PHONY: validate-holdem-learning report-holdem-learning
 
 # Bounded diagnostic; a missed performance gate returns nonzero and retains data.

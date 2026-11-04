@@ -10,7 +10,20 @@ reviewable result.
 Dates below use America/Los_Angeles unless marked UTC. Entries describe actual
 work; elapsed agent/process time is not a record of personal hands-on hours.
 
-## 2026-11-03 — Same-day publication preference
+## 2026-11-04 — Issue #2 estimator correctness
+
+- **PR:** [#7](https://github.com/jimmy-sim/poker-ai/pull/7), partial progress on
+  issue #2. The protocol was published first in `445adc2` on November 3 Pacific.
+- **Implementation:** Selected hidden-river chance integration with probability
+  weights on updates, deferred target passes, explicit node accounting and
+  algorithm-bound checkpoint restoration. Existing ordinary behavior stays tested.
+- **Checks observed:** 37 new tests passed. Full Python 3.11 checks passed lint,
+  formatting, strict typing and 579 tests with optional extras. Python 3.12 and
+  final hosted checks are pending at this implementation checkpoint.
+- **Meaning:** Exact expected-update and continuation checks, not measured variance
+  reduction or stronger play. No training/variance panel has run this session.
+- **Assistance / time:** Codex implemented and checked the estimator/tests;
+  developer hands-on time is not recorded. Session start is recorded below.
 
 ## 2026-11-03 — Issue #2 protocol and correctness session
 
@@ -25,6 +38,8 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
   Developer hands-on time is not recorded; session and process time are separate.
 - **Status at protocol publication:** Implementation and correctness checks pending;
   no sampled-training or frozen-policy variance results have been collected.
+
+## 2026-11-03 — Same-day publication preference
 
 - **Request:** Make ongoing contributions visible across the days of actual work.
 - **Change:** Recorded same-day publication of coherent checked increments,

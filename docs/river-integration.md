@@ -59,6 +59,38 @@ variance benefit. The experiments must measure both variance and work.
 Background: [Lanctot et al., MCCFR (2009)](https://www.cs.cmu.edu/~kwaugh/publications/nips09b.pdf).
 This project tests its own estimator; it claims no new convergence theorem.
 
+## Implementation and correctness checks
+
+`postflop/river_sampling.py` contains the selected-chance update function and
+`RiverIntegratedMCCFR`. The ordinary sampler retains its original update function;
+both classes share the iteration weighting, deferred update application and visit
+audit. The integrated class accepts indexed turn games only. Policy keys and
+action menus come from the existing observation-only matrix adapter.
+
+```sh
+make test-river-sampling
+make check
+```
+
+The finite synthetic test enumerates every selector tape and compares its weighted
+updates to independent closed-form values, for both target players. Nonuniform
+private/river probabilities, chance before and after a decision, and nested chance
+integration exercise the prefix/return distinction. A physical Hold'em fixture
+conditions product-weighted ranges on a blocked card pair and checks both players'
+expected regret and averaging increments against full-tree calculations. Privacy
+checks cover all 44 hidden rivers and alternate opponent cards at the same root.
+
+Checkpoints retain the ordinary sampler's v1 visit sidecar. Integrated checkpoints
+use a v2 sidecar bound to the core SHA, sampler and config. Continue them with
+`load_learning_checkpoint(..., solver_class=RiverIntegratedMCCFR)` and a learning
+config containing `sampler: river_integrated` and the actual `sampling_weighting`.
+The default loader rejects them; the integrated loader rejects ordinary v1 files.
+Always use this learning loader for weighted/integrated training continuation,
+rather than inferring the algorithm from the generic core's `external` label.
+Byte-identical continuation tests cover both weights, with/without initialization,
+including RNG, epsilon, raw rows, sampled keys and initialization work. Invalid
+mode/config, incomplete sidecars and wrong core methods fail closed.
+
 ## Frozen prospective experiment
 
 `configs/river-integration-study.json` fixes the primary procedure and budget:
@@ -78,6 +110,10 @@ This project tests its own estimator; it claims no new convergence theorem.
 - Report exact restricted NashConv/2 in chips and initial-pot units, every seed,
   initial-only versus subsequently sampled rows, coverage, runtime and node work.
   A shared initial seed does not imply identical random trajectories across methods.
+  At common work thresholds the methods also have different iteration counts, so
+  linear iteration weighting and warm-start amortization differ. A learning gap
+  cannot be attributed solely to estimator variance; the frozen panel isolates
+  per-pass update error and cost separately.
 - A separate frozen-policy panel compares update MSE to full-tree expected updates
   at uniform and own CFR+ iteration-256 policies. Keep per-seed results, all-info
   and turn-only regret errors, averaging error, cost and MSE*mean cost. This last
