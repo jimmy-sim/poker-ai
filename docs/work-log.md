@@ -10,6 +10,18 @@ reviewable result.
 Dates below use America/Los_Angeles unless marked UTC. Entries describe actual
 work; elapsed agent/process time is not a record of personal hands-on hours.
 
+## 2026-11-04 — Issue #2 fixed-work experiment session
+
+- **Start:** 00:17 Pacific (08:17 UTC), from the session clock.
+- **Scope:** Resume the unchanged river-integration protocol with a bounded
+  frozen-policy panel, fixed-work learning comparisons and a retained report.
+  Acceptance is stated in [the experiment document](river-fixed-work.md).
+- **Status at session publication:** Runner and experiments pending. No benefit
+  of integration has been measured; all four earlier games are development data.
+- **Assistance / time:** Codex implements and checks the runner and executes the
+  study. Developer hands-on time is not recorded. Experiment and audit wall times
+  will be recorded separately from assistant session elapsed time.
+
 ## 2026-11-04 — Issue #2 estimator correctness
 
 - **PR:** [#7](https://github.com/jimmy-sim/poker-ai/pull/7), partial progress on
