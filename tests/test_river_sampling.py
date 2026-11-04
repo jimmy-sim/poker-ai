@@ -318,6 +318,9 @@ def test_integrated_resume_is_byte_identical_and_bound_to_sampler(
         exact_initial_expectation(solver, low_tree)
     solver.epsilon = 0.25
     solver.train(8)
+    assert solver.nodes_visited > 0 and solver.sampled_keys
+    assert solver.sampled_keys <= solver.rows.keys()
+    assert solver.warm_node_equivalent == (2 * len(low_tree.player) if warm else 0)
     path = tmp_path / "checkpoint.json"
     config = {
         "learning": {"sampling_weighting": weighting, "sampler": "river_integrated"}

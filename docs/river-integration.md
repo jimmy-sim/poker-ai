@@ -87,9 +87,27 @@ config containing `sampler: river_integrated` and the actual `sampling_weighting
 The default loader rejects them; the integrated loader rejects ordinary v1 files.
 Always use this learning loader for weighted/integrated training continuation,
 rather than inferring the algorithm from the generic core's `external` label.
+Format compatibility does not bypass trainer source/config fingerprints, which
+can intentionally reject a cross-revision resume.
 Byte-identical continuation tests cover both weights, with/without initialization,
 including RNG, epsilon, raw rows, sampled keys and initialization work. Invalid
 mode/config, incomplete sidecars and wrong core methods fail closed.
+
+### Observed correctness milestone, November 4
+
+The 37 new tests pass, including exact finite selector-tape expectations and
+conditional physical-card probabilities. `make test-river-sampling` passes 44
+targeted checks including the earlier ordinary-sampler tests. Full local checks
+pass **579 tests on each of Python 3.11.17 and 3.12.15**, with their locked optional
+extras, and strict typing/lint/format checks pass. Repository hooks pass.
+[Hosted CI for implementation `773a517`](https://github.com/jimmy-sim/poker-ai/actions/runs/41797026396)
+also passed both Python jobs in the baseline dependency environment. Later
+verification/documentation commits receive their own hosted checks on PR #7.
+
+This is the session stopping point. The estimator and deterministic continuation
+are checked; the variance/learning runner, fixed-work experiments and reports
+remain unfinished acceptance criteria of issue #2. No performance or stronger-agent
+result has been measured for this new sampler.
 
 ## Frozen prospective experiment
 

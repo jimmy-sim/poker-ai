@@ -18,12 +18,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
   weights on updates, deferred target passes, explicit node accounting and
   algorithm-bound checkpoint restoration. Existing ordinary behavior stays tested.
 - **Checks observed:** 37 new tests passed. Full Python 3.11 checks passed lint,
-  formatting, strict typing and 579 tests with optional extras. Python 3.12 and
-  final hosted checks are pending at this implementation checkpoint.
+  formatting, strict typing and 579 tests with optional extras. Full Python 3.12
+  checks also passed 579 tests and strict typing. Targeted `make test-river-sampling`
+  passed 44 checks; hooks passed. [Implementation CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41797026396)
+  passed both hosted Python jobs; final-head checks are tracked on PR #7.
 - **Meaning:** Exact expected-update and continuation checks, not measured variance
   reduction or stronger play. No training/variance panel has run this session.
 - **Assistance / time:** Codex implemented and checked the estimator/tests;
   developer hands-on time is not recorded. Session start is recorded below.
+- **Stopping point:** Correctness foundation ready for review; fixed-work variance
+  and learning experiments remain for the next block. No benchmark was run to
+  fill the session, and no strength result is inferred from passing tests.
 
 ## 2026-11-03 — Issue #2 protocol and correctness session
 
