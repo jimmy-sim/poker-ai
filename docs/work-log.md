@@ -20,6 +20,10 @@ For a guided explanation of the ideas and results, start with the
   published card/position rules, verify the development gate, then retain a
   bounded fixed-work study and independent audit if admitted. Acceptance:
   [fresh-validation.md](fresh-validation.md). No fresh outcomes exist at publication.
+- **Before outcomes:** Protocol published in `25e85cc`; runner/admission/selection
+  code published in `1fbc9c8` after 26 new tests and 620 full local tests passed,
+  plus lint/format/strict typing/hooks. The four structurally selected inputs and
+  source/input freeze are published next, before admission or fresh training.
 - **User learning:** The developer reports completing the suggested terminal
   commands and getting the expected results. No further mastery or hands-on
   duration is inferred; the report is added to the journal's personal notes.

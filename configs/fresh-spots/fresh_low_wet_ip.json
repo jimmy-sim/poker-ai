@@ -1,0 +1,103 @@
+{
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_all_in": true,
+    "include_minimum": false
+  },
+  "actor": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "board": [
+    "8h",
+    "7d",
+    "Jh",
+    "Ts"
+  ],
+  "button": 1,
+  "hero": 1,
+  "max_tree_nodes": 200000,
+  "name": "fresh_low_wet_ip",
+  "pot": 324,
+  "prefix_actions": [
+    {
+      "amount": 6,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 18,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 54,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 162,
+      "kind": "raise_to"
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "range_conditioning": "product_weights_conditioned_on_card_removal",
+  "ranges": [
+    [
+      {
+        "cards": [
+          "As",
+          "Ah"
+        ],
+        "weight": 3
+      },
+      {
+        "cards": [
+          "2c",
+          "3d"
+        ],
+        "weight": 2
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Kd",
+          "8d"
+        ],
+        "weight": 3
+      },
+      {
+        "cards": [
+          "7s",
+          "2h"
+        ],
+        "weight": 1
+      }
+    ]
+  ],
+  "schema_version": 1,
+  "stacks": [
+    38,
+    38
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "texture": "wet"
+}

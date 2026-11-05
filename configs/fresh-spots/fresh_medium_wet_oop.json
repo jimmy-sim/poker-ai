@@ -1,0 +1,92 @@
+{
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_all_in": true,
+    "include_minimum": false
+  },
+  "actor": 0,
+  "blinds": [
+    1,
+    2
+  ],
+  "board": [
+    "4h",
+    "2s",
+    "3s",
+    "7s"
+  ],
+  "button": 1,
+  "hero": 0,
+  "max_tree_nodes": 200000,
+  "name": "fresh_medium_wet_oop",
+  "pot": 36,
+  "prefix_actions": [
+    {
+      "amount": 6,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 18,
+      "kind": "raise_to"
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "range_conditioning": "product_weights_conditioned_on_card_removal",
+  "ranges": [
+    [
+      {
+        "cards": [
+          "2c",
+          "4s"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "4d",
+          "9h"
+        ],
+        "weight": 1
+      }
+    ],
+    [
+      {
+        "cards": [
+          "8c",
+          "Qs"
+        ],
+        "weight": 3
+      },
+      {
+        "cards": [
+          "Kc",
+          "3d"
+        ],
+        "weight": 2
+      }
+    ]
+  ],
+  "schema_version": 1,
+  "stacks": [
+    182,
+    182
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "texture": "wet"
+}

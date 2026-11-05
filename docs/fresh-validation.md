@@ -111,3 +111,18 @@ then commits/publishes the generated configs and freeze before `--gate-only` or
 training. The generator is not part of ordinary reproduction; cases are already
 fixed in the repository. A later software change that invalidates source hashes
 needs an explicit versioned protocol decision, not silent resealing.
+
+## Cohort fixed before outcomes
+
+Selection source `1fbc9c8`; PCG64 seed 20261224. The accepted structural attempt counts are 20, 4, 8 and 15; no strategy scores were computed during selection.
+
+| Case | Board | Seat 0 combos (weight) | Seat 1 combos (weight) | Pot | Remaining stacks | Actor |
+| --- | --- | --- | --- | ---: | --- | ---: |
+| [fresh_low_dry_oop](../configs/fresh-spots/fresh_low_dry_oop.json) | 8d 4h Js 9h | Qc Qs (1); 6d 9s (3) | 7c 7d (3); 8c 3h (3) | 324 | [38, 38] | 0 |
+| [fresh_medium_wet_oop](../configs/fresh-spots/fresh_medium_wet_oop.json) | 4h 2s 3s 7s | 2c 4s (1); 4d 9h (1) | 8c Qs (3); Kc 3d (2) | 36 | [182, 182] | 0 |
+| [fresh_low_wet_ip](../configs/fresh-spots/fresh_low_wet_ip.json) | 8h 7d Jh Ts | As Ah (3); 2c 3d (2) | Kd 8d (3); 7s 2h (1) | 324 | [38, 38] | 1 |
+| [fresh_medium_dry_ip](../configs/fresh-spots/fresh_medium_dry_ip.json) | Jh 8d 2c 3s | 6s 7c (2); 6d 2d (3) | Js Qc (1); Ks 5s (1) | 108 | [146, 146] | 1 |
+
+The exact prefixes, actions and card-removal convention are in the linked configs. [The freeze](../configs/fresh-validation-freeze.json) binds all source/entrypoint/lock, protocol, known-game, development-evidence and selected-game hashes. Both low cases have SPR 38/324; the medium-OOP case has 182/36, and medium-IP 146/108. These are structural strata, not a causal test of position alone.
+
+At this cohort publication no fresh strategy has been trained or evaluated. Admission follows after this freeze is committed and published.

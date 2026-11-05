@@ -1,0 +1,99 @@
+{
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_all_in": true,
+    "include_minimum": false
+  },
+  "actor": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "board": [
+    "Jh",
+    "8d",
+    "2c",
+    "3s"
+  ],
+  "button": 1,
+  "hero": 1,
+  "max_tree_nodes": 200000,
+  "name": "fresh_medium_dry_ip",
+  "pot": 108,
+  "prefix_actions": [
+    {
+      "amount": 6,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 18,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 54,
+      "kind": "raise_to"
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "range_conditioning": "product_weights_conditioned_on_card_removal",
+  "ranges": [
+    [
+      {
+        "cards": [
+          "6s",
+          "7c"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "6d",
+          "2d"
+        ],
+        "weight": 3
+      }
+    ],
+    [
+      {
+        "cards": [
+          "Js",
+          "Qc"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "Ks",
+          "5s"
+        ],
+        "weight": 1
+      }
+    ]
+  ],
+  "schema_version": 1,
+  "stacks": [
+    146,
+    146
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "texture": "dry"
+}

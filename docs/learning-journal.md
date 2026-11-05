@@ -21,7 +21,8 @@ and store them in strategy tables. The chapters below explain how that works.
 The latest experiment, issue #2, is finished. A new way of handling river cards
 helped one small game's final median result and hurt three. Both methods passed
 the experiment's final development limits. The existing default stays in place.
-Fresh validation games are the next planned step; they have not been run.
+Fresh validation inputs and their procedure are now fixed; their training and
+results are pending. The dated entry below follows this next step.
 
 You can read this in three sittings:
 
@@ -547,6 +548,13 @@ one agent's ability to play an unseen board immediately.
 The selected method stays ordinary sampling because the previous comparison
 did not show a general advantage for river integration. The accuracy target is
 unchanged. See [the published rules and acceptance](fresh-validation.md).
+
+The four new case inputs have now been selected by the published seed and
+structural rules. Their exact cards, range weights, pot/stacks and positions are
+fixed in [the cohort table](fresh-validation.md#cohort-fixed-before-outcomes),
+alongside hashes that detect later changes. No fresh outcome was used to choose
+them. The next step is the enforced development admission check, then the fixed
+training run if admitted.
 
 ## How this journal stays current
 
