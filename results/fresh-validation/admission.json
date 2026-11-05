@@ -1,0 +1,47 @@
+{
+  "config_sha256": "c0d4fab443295b12d4d90576835cc030fb20f94bc2dbf21866ef4c7bb41cc3c2",
+  "development_checks": [
+    {
+      "full_epsilon_pot": 2.4545130526156373e-08,
+      "max_epsilon_pot": 7.076197515460328e-11,
+      "median_epsilon_pot": 2.0796028822172237e-11,
+      "minimum_coverage": 1.0,
+      "passed": true,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "variant": "external"
+    },
+    {
+      "full_epsilon_pot": 1.822898460278487e-06,
+      "max_epsilon_pot": 0.0028717927431499333,
+      "median_epsilon_pot": 0.0024627339022265105,
+      "minimum_coverage": 1.0,
+      "passed": true,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "variant": "external"
+    },
+    {
+      "full_epsilon_pot": 2.6963245858269147e-08,
+      "max_epsilon_pot": 1.0438983318365136e-08,
+      "median_epsilon_pot": 3.0913872723695135e-09,
+      "minimum_coverage": 1.0,
+      "passed": true,
+      "spot_file": "configs/learning-spots/heldout_low_oop.json",
+      "variant": "external"
+    },
+    {
+      "full_epsilon_pot": 6.16728010721451e-06,
+      "max_epsilon_pot": 0.009685358837149065,
+      "median_epsilon_pot": 0.00943330923645548,
+      "minimum_coverage": 1.0,
+      "passed": true,
+      "spot_file": "configs/learning-spots/heldout_medium_ip.json",
+      "variant": "external"
+    }
+  ],
+  "freeze_sha256": "be89a389f3e37600c7c091c7d7eecffb94983979e1ccab75288d931142dce6f8",
+  "maximum_replay_error_chips": 0.0,
+  "replayed_final_policies": 16,
+  "selected_method": "external",
+  "source_fingerprint": "1a3c22a3317052be371a1de084da83e13c22162b2b315c9e4432748897ed01b7",
+  "status": "passed"
+}

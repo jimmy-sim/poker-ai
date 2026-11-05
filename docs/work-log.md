@@ -13,6 +13,47 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-05 — Fresh validation session
+
+- **Start:** 10:03 Pacific (18:03 UTC), session clock. Resumed issue #3.
+- **Prospective scope:** Freeze the ordinary procedure, select new cases by
+  published card/position rules, verify the development gate, then retain a
+  bounded fixed-work study and independent audit if admitted. Acceptance:
+  [fresh-validation.md](fresh-validation.md). No fresh outcomes exist at publication.
+- **Before outcomes:** Protocol published in `25e85cc`; runner/admission/selection
+  code published in `1fbc9c8` after 26 new tests and 620 full local tests passed,
+  plus lint/format/strict typing/hooks. The four structurally selected inputs and
+  source/input freeze are published next, before admission or fresh training.
+- **Admission:** Cohort/freeze published in `1a86d28`; real gate passes with
+  16 final development/control policies replayed and zero own metric error.
+  Input/source hashes, unchanged limits and linked native audit are verified.
+  [Hosted cohort CI](https://github.com/jimmy-sim/poker-ai/actions/runs/42083487841)
+  passed both Python jobs. The admission receipt is committed before fresh training.
+- **Fresh result:** Clean `9442bca` completed all 44 sampled/control snapshots in
+  499.560s. Raw outcomes/frozen own policies were published in `6e4d3d5` before
+  native audit. All four cases pass the unchanged final procedure limits; the
+  closest median is 0.9670% of pot against 1%, worst 0.9845% against 2.5%.
+- **Independent checks:** All 44 native value/BR comparisons pass within
+  8.53e-14 chips; audit wall time 2.450s. Own replay error is zero. All 36 original
+  checkpoint/visit hash receipts and work counters were verified. Runtime
+  provenance and a separate post-run hardware observation are retained.
+- **Coverage/limits:** The medium wet case retains up to 1,545 initial-only rows
+  and 94.6657% subsequent uniform-reach coverage, despite passing initialized
+  average-row coverage. Four tiny per-case learners do not establish global
+  strength or zero-shot play. The old failed hold-out stays failed.
+- **Verification / PR:** [#11](https://github.com/jimmy-sim/poker-ai/pull/11);
+  620 local all-extras tests passed on both Python versions, with quality checks
+  and hooks. Cohort hosted CI passed; final evidence checks are attached to the
+  PR. Figures and linked artifact hashes were inspected.
+- **User learning:** The developer reports completing the suggested terminal
+  commands and getting the expected results. No further mastery or hands-on
+  duration is inferred; the report is added to the journal's personal notes.
+- **Assistance / time:** Codex prepares and executes the research block.
+  Developer hands-on time is not recorded; experiment time is recorded separately.
+- **Stopping point:** Fresh procedure validation complete. Ordinary default
+  retained. No global training/comparison, new abstraction or extra seed sweep
+  was started; representation work remains issue #4.
+
 ## 2026-11-04 — Plain-English learning journal
 
 - **Request / issue:** [#9](https://github.com/jimmy-sim/poker-ai/issues/9), create
