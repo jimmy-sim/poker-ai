@@ -78,7 +78,8 @@ give descriptive ranges, not a confidence guarantee about all games. Even a pass
 does not establish competitive global Hold'em strength. The older failed hold-out
 experiment stays failed in its own record.
 
-Outcome and verification sections will be added after the declared gates/run.
+The completed outcome below is separate from the prospective rules and
+pre-training admission record.
 
 ## Reproduction and admission
 
@@ -144,6 +145,94 @@ passed Python 3.11/3.12. Local Python 3.11 full checks passed 620 tests plus
 lint/format/strict typing/hooks. This receipt is an admission to run the predeclared
 study, not a fresh performance result. No reference strategy is supplied to the
 ordinary learner.
+
+## Observed results — November 5
+
+The admitted study completed from **clean `9442bca`** in **499.560 seconds**,
+including the repeated development admission, setup, own controls, training and
+checkpoint/metric work. All **36 sampled snapshots and 8 own full-CFR+ controls**
+were retained; there were no missing cases, replacements, cap failures, extra
+seeds or outcome-dependent iteration extensions. Complete raw evidence was
+published in `6e4d3d5` before native audit. Every source/input hash still matches
+the published freeze.
+
+The independent audit took **2.450 seconds** and passed **all 44 frozen policies**.
+Maximum absolute native value/exploitability error was **8.53e-14 chips**, within
+the unchanged **1e-9-chip** tolerance. Own-policy metric replay error was zero.
+All 36 local checkpoint/core-visit receipts and their work counters were checked.
+OpenSpiel 2.0.2 (Apache-2.0, [license previously read/recorded](solver_validation.md#solvers-versions-and-licenses))
+provides native value and best response only; its strategy never enters training.
+The export/mechanics are our own, so this checks arithmetic and information-set
+alignment rather than independently proving the entire engine.
+
+The recorded environment is Python 3.11.17, NumPy 2.4.6 and Numba 0.68.1 on macOS
+arm64. The sandboxed CPU query was unavailable; a separate
+[post-run hardware observation](../results/fresh-validation/hardware.json)
+records Apple M4/10 logical CPUs without rewriting original provenance. These
+are local wall times, not controlled cross-machine speed measurements or personal
+hands-on time.
+
+At the final **10 million node-work threshold**, exploitability is NashConv/2
+in net chips per hand, divided by the initial pot. Lower is better. All values
+below are **pot fractions**, so 0.01 means 1% of the pot.
+
+| Fresh case | Full final epsilon/pot | Sampled median | Sampled worst | Passed |
+| --- | ---: | ---: | ---: | --- |
+| low dry OOP | 1.52403e-8 | 2.66788e-8 | 6.73091e-8 | Yes |
+| medium wet OOP | 6.98912e-7 | 0.000489874 | 0.000597768 | Yes |
+| low wet IP | 3.75631e-8 | 0.0000702137 | 0.000126404 | Yes |
+| medium dry IP | 0.0000416776 | 0.00966995 | 0.00984460 | Yes |
+
+**The fresh procedure gate passes 4/4 cases.** The tightest case is medium dry IP:
+median **0.9670%** versus the preset **1%** limit, and worst **0.9845%** versus
+**2.5%**. That small median margin remains explicit. Full controls pass 0.001-pot
+accuracy; positive-average-row coverage is effectively 100% in every final case.
+Earlier lower-budget errors remain in the complete tables and curves.
+
+![Fresh learning at fixed work thresholds](../results/fresh-validation/report/learning-work.png)
+
+The [time plot](../results/fresh-validation/report/learning-time.png) uses observed
+cumulative run times, including preceding checkpoint overhead. Work includes
+initialization and terminal visits; actual counts/overshoot are retained in each
+row. Min–max bands span three fixed seeds, not confidence intervals. Vertical
+scales vary by panel, with a declared display floor for log plotting only.
+
+Coverage needs a separate reading. Medium wet OOP retains **1,545 initial-only
+rows** in the least-explored final seed. Its minimum subsequent uniform-reach
+coverage is **94.6657%**, while initialized positive-average-row coverage passes
+the original 95% criterion. We preserve both instead of tightening or changing the
+criterion after outcomes. Tiny floating roundoff can put a raw reach ratio a few
+ulps above one; it does not represent more than 100% of decisions.
+
+The supported claim is limited: the frozen ordinary procedure met its declared
+accuracy/average-coverage limits on these four structurally selected games, each
+with separate training. It does not measure a global-agent upgrade, zero-shot
+play, full-range robustness or a win rate. Reused public templates, artificial
+non-overlapping two-combo ranges, four strata and three seeds limit inference.
+The earlier failed hold-out experiment remains failed in its original record.
+These four cases are now known evidence; future tuning needs fresh validation.
+
+Evidence: [raw study](../results/fresh-validation/study.json),
+[frozen own policies](../results/fresh-validation/study-own-policies.json.gz),
+[native audit](../results/fresh-validation/independent.json),
+[complete tables/CSV](../results/fresh-validation/report/tables.md), and
+[replay summary](../results/fresh-validation/report/summary.json).
+
+## Verification and stopping point
+
+Local all-extras full checks passed **620 tests on each of Python 3.11.17 and
+3.12.15**, with lint/format/strict typing and hooks passing. The 26 new checks use
+old known games and a separate structural test seed; they cover selection
+reproduction, no-solver selection, input/code tampering, committed manifest bytes,
+missing evidence, seed/limit mismatches, gate ordering, complete-grid retention,
+policy hashes and native-audit corruption. Hosted cohort CI passed before fresh
+training; final evidence-head CI is attached to [PR #11](https://github.com/jimmy-sim/poker-ai/pull/11).
+The generated figures were visually inspected. No new dependencies were added.
+
+This completes issue #3's bounded validation milestone. The ordinary default
+remains; no new global policy, global comparison or abstraction experiment was
+launched. The next representation work is issue #4. Passing a small procedure
+check supports that next investigation rather than establishing competitive play.
 
 ## Three review questions
 

@@ -18,17 +18,17 @@ not established a competitive Hold'em agent.
 Here, “AI” mainly refers to algorithms that learn probabilities for poker actions
 and store them in strategy tables. The chapters below explain how that works.
 
-The latest experiment, issue #2, is finished. A new way of handling river cards
-helped one small game's final median result and hurt three. Both methods passed
-the experiment's final development limits. The existing default stays in place.
-Fresh validation inputs and their procedure are now fixed; their training and
-results are pending. The dated entry below follows this next step.
+The latest study, issue #3, tested the retained ordinary learning procedure on
+four newly selected small games. All four met the rules fixed before their
+outcomes were measured. This is progress in validating the method; each game
+received its own training. The earlier river-integration result remains mixed,
+and the ordinary default stays in place.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–13:** What the extensions and recent experiments taught us.
+- **Steps 10–14:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -437,15 +437,59 @@ Read more: [complete fixed-work study](river-fixed-work.md),
 [PR #7](https://github.com/jimmy-sim/poker-ai/pull/7), and
 [PR #8](https://github.com/jimmy-sim/poker-ai/pull/8).
 
+## 14. Try the frozen procedure on fresh games
+
+**Completed November 5, 2026 — issue #3, PR #11.**
+
+We wanted to know whether the retained ordinary learning procedure could meet
+its accuracy limits on new small games without changing the method to suit
+those results. The rules, selection seed, exact case files and code/input hashes
+were published before training. The admission check first replayed the accepted
+development evidence and refused changes to the frozen procedure.
+
+**Example:** A practice exam helps choose how to study. Once you use its answers
+to improve the method, retaking it is less convincing evidence than trying a
+reserved exam. The earlier poker games had become the practice set. The new
+cases tested the method after that choice was fixed.
+
+The run used three new seeds for each of four cases and the same 100,000,
+1 million and 10 million work thresholds. It finished in about 8.3 minutes and
+saved all 44 learned/control strategies. Every saved strategy passed independent
+value and best-response checks. The final procedure gate passed in all four cases.
+
+The closest case was medium dry IP: median exploitability was **0.9670% of the
+initial pot**, just under the declared **1%** median limit. Its worst seed was
+**0.9845%**, under the separate **2.5%** worst-seed limit. The tight result stayed
+in the report; we did not add iterations or select a nicer seed.
+
+Coverage still needs care. In medium wet OOP, 1,545 rows remained initial-only.
+Later visits covered about **94.67%** by the uniform-reach weighting, even though
+positive average-row coverage was effectively 100%. The original average-row
+criterion passed, but it does not mean every decision was explored after setup.
+
+The useful conclusion is that this fixed procedure met its chosen limits on
+four cases reserved before testing. Each case received separate training; these
+are not results from one global agent playing unseen boards. The ranges are
+still tiny and artificial. These cases are now known evidence, so later tuning
+needs another fresh test rather than relabeling them as unseen.
+
+![Learning on the four fresh cases](../results/fresh-validation/report/learning-work.png)
+
+Here the blue curve is the retained ordinary method. The panels show different
+cases, not different opponents. Lower is better; the dotted line is the median
+limit. The shaded range spans three seeds and is not a confidence interval.
+
+Read more: [method, exact case inputs and results](fresh-validation.md),
+[complete table](../results/fresh-validation/report/tables.md), and
+[PR #11](https://github.com/jimmy-sim/poker-ai/pull/11).
+
 ## What comes next
 
-[Issue #3](https://github.com/jimmy-sim/poker-ai/issues/3) plans fresh, fully
-specified games and acceptance rules before collecting their outcomes. The
-learning procedure must be frozen before those games are tested.
-[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) concerns a representation
-that preserves useful public-board information without storing every exact case.
-Neither investigation has been completed. The global training comparison remains
-subject to its prerequisites.
+[Issue #3](https://github.com/jimmy-sim/poker-ai/issues/3) completed the fresh
+procedure check. The next representation question is
+[issue #4](https://github.com/jimmy-sim/poker-ai/issues/4): how to preserve useful
+public-board information without storing every exact case. No global training
+comparison or new abstraction experiment ran in this block.
 
 For now, the useful achievement is a system that can test an idea, find a mixed
 result, and preserve enough evidence to explain the decision.
@@ -529,37 +573,11 @@ fine; it tells us what to explain next.
 - After steps 10–13: Why did we keep the ordinary sampler even though integration
   helped one game?
 
+- After step 14: Why does passing four fresh cases still leave work to do on
+  the global agent?
+
 Further answers or questions can be added here with the date and worked through
 in your own words.
-
-## November 5 — Set the next test before seeing its answer
-
-The new question is whether the retained ordinary learning procedure meets the
-same accuracy limits on fresh small games. We will publish the new card-selection
-rules and seeds first, freeze the procedure, and check its development evidence
-before training on the new cases. Outcomes are still pending at this entry.
-
-**Example:** A practice exam helps choose how to study. Once you use its answers
-to improve the method, taking that same exam again is less convincing evidence
-than trying a reserved exam. Our earlier poker spots are now the practice set.
-The new cases will each receive their own training; this tests the method, not
-one agent's ability to play an unseen board immediately.
-
-The selected method stays ordinary sampling because the previous comparison
-did not show a general advantage for river integration. The accuracy target is
-unchanged. See [the published rules and acceptance](fresh-validation.md).
-
-The four new case inputs have now been selected by the published seed and
-structural rules. Their exact cards, range weights, pot/stacks and positions are
-fixed in [the cohort table](fresh-validation.md#cohort-fixed-before-outcomes),
-alongside hashes that detect later changes. No fresh outcome was used to choose
-them. The next step is the enforced development admission check, then the fixed
-training run if admitted.
-
-Admission has now passed: the unchanged method still meets the old development
-limits, the code/input hashes match, and all 16 final development/control policies
-reproduce their recorded metrics exactly. The new games still have no performance
-result at this point. See [the receipt and checks](fresh-validation.md#development-admission-before-fresh-training).
 
 ## How this journal stays current
 

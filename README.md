@@ -29,6 +29,8 @@ including duplicate matches and a small public API pilot.
 [Phase 5 Bayesian and risk extensions](docs/phase5-verification.md) are complete
 within their declared scope. A new [own postflop learning diagnostic](docs/holdem-strength-v2.md)
 identifies public-card aliasing, but its held-out performance gate narrowly fails.
+A later [fresh procedure check](docs/fresh-validation.md) passes all four newly
+selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
@@ -74,6 +76,16 @@ and all **80 frozen policies** pass independent value/best-response checks.
 This mixed result changes no global-agent default or playing-strength claim.
 `make report-river-integration` replays the [tables and plots](results/river-integration/report/tables.md)
 offline; `make study-river-integration` reproduces the full bounded study.
+
+The [fresh validation study](docs/fresh-validation.md) retains ordinary sampling
+and passes its final accuracy/average-coverage limits on **4/4** preregistered
+cases at 10 million node-work. The closest case has median exploitability
+**0.9670% of the pot**, versus a fixed **1%** median limit. All **44 frozen
+strategies** pass independent value/best-response checks. Each case receives
+separate training on tiny explicit ranges; this does not establish a global
+upgrade or erase the older failed experiment. Initial-only coverage remains
+visible. `make report-fresh-games` replays the [tables and plots](results/fresh-validation/report/tables.md);
+`make validate-fresh-games` reproduces the frozen study in ignored staging.
 
 ## Development
 
