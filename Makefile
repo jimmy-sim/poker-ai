@@ -1,5 +1,21 @@
 UV ?= uv
 RIVER_OUTPUT ?= results/runs/river-integration-reproduction
+FRESH_OUTPUT ?= results/runs/fresh-validation-reproduction
+
+.PHONY: fresh-admission validate-fresh-games report-fresh-games
+
+# Verify known development evidence and the published source/input freeze.
+fresh-admission:
+	$(UV) run --locked python scripts/prepare_fresh_validation.py --gate-only --receipt "$(FRESH_OUTPUT)/admission.json"
+
+# Per-case training; all cells retained even after a performance miss.
+validate-fresh-games:
+	$(UV) run --locked --extra jit python scripts/validate_fresh_games.py --output "$(FRESH_OUTPUT)/study.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_fresh_games.py --report "$(FRESH_OUTPUT)/study.json" --output "$(FRESH_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_fresh_games.py --report "$(FRESH_OUTPUT)/study.json" --audit "$(FRESH_OUTPUT)/independent.json" --output "$(FRESH_OUTPUT)/report"
+
+report-fresh-games:
+	$(UV) run --locked --extra research python scripts/report_fresh_games.py
 
 .PHONY: study-river-integration audit-river-integration report-river-integration
 

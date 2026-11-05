@@ -79,3 +79,35 @@ does not establish competitive global Hold'em strength. The older failed hold-ou
 experiment stays failed in its own record.
 
 Outcome and verification sections will be added after the declared gates/run.
+
+## Reproduction and admission
+
+The selection program imports no reference solver and calls no game-tree builder
+or strategy evaluator while selecting cases. Its structural tests use a separate
+test seed. Once the actual cases/freeze are published, the generator refuses to
+replace them. Admission requires the freeze bytes to match Git HEAD, every source
+and input hash to match that freeze, and the relevant learner dependencies to
+match the accepted development implementation. It also replays all 16 final
+ordinary/control development policies against their recorded metrics, after
+checking the linked native audit and complete seed grid. This is a read-only
+gate; development/reference policies are never supplied to the new learners.
+
+```sh
+make fresh-admission       # Verify the published freeze and known evidence only
+make validate-fresh-games  # Full admitted own training, native audit, then report
+make report-fresh-games    # Replay the reviewed fresh policies/audit; no training
+```
+
+Full reproduction writes under ignored `results/runs/fresh-validation-reproduction/`
+and refuses to overwrite an existing report. Choose another retained directory
+with `FRESH_OUTPUT=results/runs/fresh-reproduction-2`. A complete failed performance
+gate returns nonzero only after all cells and the report are retained. Budget or
+numerical failures stop and retain partial evidence. Large resumable own
+checkpoints stay under the selected run's `runs/study/`; raw rows include their
+hash receipts. Small frozen policy exports suffice to replay published metrics.
+
+Initial cohort publication uses `scripts/prepare_fresh_validation.py` once,
+then commits/publishes the generated configs and freeze before `--gate-only` or
+training. The generator is not part of ordinary reproduction; cases are already
+fixed in the repository. A later software change that invalidates source hashes
+needs an explicit versioned protocol decision, not silent resealing.
