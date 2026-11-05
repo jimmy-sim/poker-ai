@@ -6,6 +6,9 @@ Follow the [work log](docs/work-log.md),
 [open research issues](https://github.com/jimmy-sim/poker-ai/issues), and
 [pull requests](https://github.com/jimmy-sim/poker-ai/pulls) for current progress.
 
+New to the project? Start with the [plain-English learning journal](docs/learning-journal.md)
+for the ideas, examples, results, and lessons in the order they were built.
+
 A poker AI research project built from first principles, emphasizing expected
 value, variance, statistical testing, and game-theoretic reasoning. Implementations
 will be validated independently before any performance claims are published.

@@ -19,6 +19,11 @@ verification. Existing commits retain their original dates and authors.
    meeting its performance target. Record that distinction explicitly.
 6. Add a concise work-log entry linking the PR and result. Update the README only
    when the new evidence changes the current project summary.
+7. For substantive implementation/research milestones, update the
+   [learning journal](docs/learning-journal.md) in the same PR. Explain the question,
+   change, example, actual result and next decision in plain English. Keep earlier
+   failures and link the evidence. Personal learning notes must come from the
+   developer's actual comments or actions; do not invent them.
 
 For this solo project, a self-review explains a design decision and checks the
 diff/evidence; it should not imply an independent reviewer participated.
