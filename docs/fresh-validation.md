@@ -111,6 +111,8 @@ then commits/publishes the generated configs and freeze before `--gate-only` or
 training. The generator is not part of ordinary reproduction; cases are already
 fixed in the repository. A later software change that invalidates source hashes
 needs an explicit versioned protocol decision, not silent resealing.
+Use a checkout of the recorded study revision for historical reproduction if
+later source changes invalidate this freeze; preserve the original manifest.
 
 ## Cohort fixed before outcomes
 
@@ -126,3 +128,19 @@ Selection source `1fbc9c8`; PCG64 seed 20261224. The accepted structural attempt
 The exact prefixes, actions and card-removal convention are in the linked configs. [The freeze](../configs/fresh-validation-freeze.json) binds all source/entrypoint/lock, protocol, known-game, development-evidence and selected-game hashes. Both low cases have SPR 38/324; the medium-OOP case has 182/36, and medium-IP 146/108. These are structural strata, not a causal test of position alone.
 
 At this cohort publication no fresh strategy has been trained or evaluated. Admission follows after this freeze is committed and published.
+
+## Development admission before fresh training
+
+The published cohort/source freeze is in `1a86d28`, following code `1fbc9c8` and
+protocol `25e85cc`. The real admission check passed before any fresh learning:
+all 16 final ordinary/full-control development policies replay with zero own
+metric discrepancy, all selected development cases pass the unchanged limits,
+the linked complete native audit is valid, and source/input hashes match.
+The [admission receipt](../results/fresh-validation/admission.json) binds this
+decision to the exact config, freeze and source fingerprint.
+
+The [cohort hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/42083487841)
+passed Python 3.11/3.12. Local Python 3.11 full checks passed 620 tests plus
+lint/format/strict typing/hooks. This receipt is an admission to run the predeclared
+study, not a fresh performance result. No reference strategy is supplied to the
+ordinary learner.

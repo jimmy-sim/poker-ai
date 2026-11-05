@@ -24,6 +24,11 @@ For a guided explanation of the ideas and results, start with the
   code published in `1fbc9c8` after 26 new tests and 620 full local tests passed,
   plus lint/format/strict typing/hooks. The four structurally selected inputs and
   source/input freeze are published next, before admission or fresh training.
+- **Admission:** Cohort/freeze published in `1a86d28`; real gate passes with
+  16 final development/control policies replayed and zero own metric error.
+  Input/source hashes, unchanged limits and linked native audit are verified.
+  [Hosted cohort CI](https://github.com/jimmy-sim/poker-ai/actions/runs/42083487841)
+  passed both Python jobs. The admission receipt is committed before fresh training.
 - **User learning:** The developer reports completing the suggested terminal
   commands and getting the expected results. No further mastery or hands-on
   duration is inferred; the report is added to the journal's personal notes.

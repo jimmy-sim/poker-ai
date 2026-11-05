@@ -556,6 +556,11 @@ alongside hashes that detect later changes. No fresh outcome was used to choose
 them. The next step is the enforced development admission check, then the fixed
 training run if admitted.
 
+Admission has now passed: the unchanged method still meets the old development
+limits, the code/input hashes match, and all 16 final development/control policies
+reproduce their recorded metrics exactly. The new games still have no performance
+result at this point. See [the receipt and checks](fresh-validation.md#development-admission-before-fresh-training).
+
 ## How this journal stays current
 
 For each substantive implementation or research milestone, update the current
