@@ -13,6 +13,19 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-05 — Fresh validation session
+
+- **Start:** 10:03 Pacific (18:03 UTC), session clock. Resumed issue #3.
+- **Prospective scope:** Freeze the ordinary procedure, select new cases by
+  published card/position rules, verify the development gate, then retain a
+  bounded fixed-work study and independent audit if admitted. Acceptance:
+  [fresh-validation.md](fresh-validation.md). No fresh outcomes exist at publication.
+- **User learning:** The developer reports completing the suggested terminal
+  commands and getting the expected results. No further mastery or hands-on
+  duration is inferred; the report is added to the journal's personal notes.
+- **Assistance / time:** Codex prepares and executes the research block.
+  Developer hands-on time is not recorded; experiment time will be separate.
+
 ## 2026-11-04 — Plain-English learning journal
 
 - **Request / issue:** [#9](https://github.com/jimmy-sim/poker-ai/issues/9), create

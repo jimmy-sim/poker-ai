@@ -514,6 +514,12 @@ git log -8 --oneline
 
 ## Your own learning notes
 
+**November 5, 2026 — your report:** You completed the suggested terminal commands
+and got the expected results. Those exercises covered project navigation, a
+focused card test, card conversion, hand evaluation, exact equity and opening
+the recorded graph. This records your reported completion; it does not infer
+additional code changes or that every concept has been mastered.
+
 These prompts are for you to answer in your own words. Leaving one unanswered is
 fine; it tells us what to explain next.
 
@@ -522,8 +528,25 @@ fine; it tells us what to explain next.
 - After steps 10–13: Why did we keep the ordinary sampler even though integration
   helped one game?
 
-No personal learning claims have been filled in on your behalf. When you give an
-answer or ask a question, we can add it here with the date and work through it.
+Further answers or questions can be added here with the date and worked through
+in your own words.
+
+## November 5 — Set the next test before seeing its answer
+
+The new question is whether the retained ordinary learning procedure meets the
+same accuracy limits on fresh small games. We will publish the new card-selection
+rules and seeds first, freeze the procedure, and check its development evidence
+before training on the new cases. Outcomes are still pending at this entry.
+
+**Example:** A practice exam helps choose how to study. Once you use its answers
+to improve the method, taking that same exam again is less convincing evidence
+than trying a reserved exam. Our earlier poker spots are now the practice set.
+The new cases will each receive their own training; this tests the method, not
+one agent's ability to play an unseen board immediately.
+
+The selected method stays ordinary sampling because the previous comparison
+did not show a general advantage for river integration. The accuracy target is
+unchanged. See [the published rules and acceptance](fresh-validation.md).
 
 ## How this journal stays current
 
