@@ -144,3 +144,21 @@ passed Python 3.11/3.12. Local Python 3.11 full checks passed 620 tests plus
 lint/format/strict typing/hooks. This receipt is an admission to run the predeclared
 study, not a fresh performance result. No reference strategy is supplied to the
 ordinary learner.
+
+## Three review questions
+
+1. **Why were the old games insufficient as fresh tests?** Their results already
+   influenced the choice to retain ordinary sampling. New cards/ranges are selected
+   by published structural rules before their learning outcomes are measured.
+   The shared public betting templates still limit novelty, so this is a small
+   procedure check rather than a representative sample of poker situations.
+2. **What does the development admission actually verify?** It binds the
+   committed freeze, current code/config/inputs and complete archived evidence;
+   requires unchanged limits and disjoint new seeds; and replays the selected
+   final development policies after checking their native audit. It does not
+   certify a future outcome or provide a reference strategy to training.
+3. **Would a pass mean one agent generalizes to new boards?** No. Every case
+   receives separate training. A pass supports this frozen procedure at these
+   budgets on the selected cases. A miss must stay a miss; neither outcome
+   supplies a full-game win rate or justifies tuning on these cases while
+   continuing to call them fresh hold-outs.
