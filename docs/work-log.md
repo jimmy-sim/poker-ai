@@ -10,6 +10,27 @@ reviewable result.
 Dates below use America/Los_Angeles unless marked UTC. Entries describe actual
 work; elapsed agent/process time is not a record of personal hands-on hours.
 
+For a guided explanation of the ideas and results, start with the
+[plain-English learning journal](learning-journal.md).
+
+## 2026-11-04 — Plain-English learning journal
+
+- **Request / issue:** [#9](https://github.com/jimmy-sim/poker-ai/issues/9), create
+  one guide to understand the project step by step and keep it current.
+- **Change:** Added a retrospective 13-step walkthrough, labeled examples,
+  evidence links, glossary, graph-reading help, local commands and optional
+  personal-note prompts. It covers the work through the completed issue #2 study.
+- **Maintenance:** README/work log link to the journal. Project instructions,
+  contribution guidance and PR template require updates with substantive future
+  milestones. This does not start experiments or schedule background work.
+- **Assistance / time:** Codex drafted the guide from recorded project evidence.
+  Developer hands-on time and personal learning progress are not recorded.
+- **Verification:** Evidence/relative-link review and ordered-chapter/code-fence
+  checks passed. Both suggested test commands passed together (116 tests; the
+  sandbox reported an unwritable optional pytest cache). Full local checks passed
+  lint/format/strict typing and 594 tests; hooks passed. Hosted CI is attached to
+  the PR linked from issue #9. No new research run.
+
 ## 2026-11-04 — Issue #2 fixed-work experiment session
 
 - **Start:** 00:17 Pacific (08:17 UTC), from the session clock.

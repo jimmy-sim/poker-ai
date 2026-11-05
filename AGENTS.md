@@ -26,6 +26,14 @@
   actual verification results, and the next step. Keep explanations concise.
 - Explain new game-theoretic concepts when they first appear. Challenge weak
   decisions and explain tradeoffs briefly.
+- Maintain `docs/learning-journal.md` with each substantive implementation or
+  research milestone, in the same PR. Update its current status and append a
+  dated plain-English account: question, change, illustrative example, actual
+  checks/result and next decision, linked to evidence. Define terms on first use.
+  Preserve earlier failures; label examples and assistance honestly. Add personal
+  learning notes only from what the user actually says or does. Do not invent
+  experiences, mastery, hours, or first-person authorship. No filler entries or
+  automatic work schedule are implied.
 - Write tests alongside implementation. Never advance with failing tests or
   unvalidated math. End each phase with three interview questions and answers.
 - Use existing poker libraries only as validation references, isolated to

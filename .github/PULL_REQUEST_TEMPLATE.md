@@ -22,3 +22,6 @@ independent validation and what it does not check.
 
 Link the entry in `docs/work-log.md`. Label AI assistance and hands-on versus
 experiment/session time accurately; missing time is "not recorded".
+
+For substantive implementation/research, link the updated plain-English entry in
+`docs/learning-journal.md`, including the actual result and next decision.
