@@ -31,7 +31,14 @@ For a guided explanation of the ideas and results, start with the
   TabularBestResponse evaluation after a temporary-object lifetime crash; add the
   explicit provenance stub to the tiny native fixture. No retained-case results
   had been produced. Existing source/config/model bytes remain unchanged.
-- **Status:** Publish tested implementation before measuring saved cases.
+- **Raw diagnosis retained:** Clean published `6699f4c` completes all eight
+  saved cases in 4.223s. Medium category epsilon is 2.593658% pot, decomposed
+  into 0.000168654% within-partition response gain and 2.593489588% extra exact
+  information value. Preserve raw diagnosis/all-info sidecar before native
+  audit; interpretation is provisional. Largest additive row is an unmerged
+  turn decision, illustrating that this attribution can include the value of
+  later response choices, not locate the abstraction error causally.
+- **Status:** Raw outcomes retained; independent root/profile audit pending.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are not recorded; actual process time will be recorded separately.
 
