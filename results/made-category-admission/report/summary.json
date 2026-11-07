@@ -1,0 +1,48 @@
+{
+  "acceptance": {
+    "checks": [
+      {
+        "candidate_full_excess_pot": 1.2646476458636828e-09,
+        "candidate_row_ratio": 0.26373626373626374,
+        "criteria": {
+          "average_coverage": true,
+          "candidate_compression": true,
+          "candidate_full_excess": true,
+          "exact_accuracy": true,
+          "recall": true
+        },
+        "passed": true,
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "candidate_full_excess_pot": 0.025934759517204094,
+        "candidate_row_ratio": 0.42805755395683454,
+        "criteria": {
+          "average_coverage": true,
+          "candidate_compression": true,
+          "candidate_full_excess": false,
+          "exact_accuracy": true,
+          "recall": true
+        },
+        "passed": false,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      }
+    ],
+    "complete": true,
+    "fresh_global_admission": false,
+    "independent_audit_required": true,
+    "own_full_control_gate_passed": false,
+    "sampled_learning": "not_run"
+  },
+  "audit_seconds": 5.630462165998324,
+  "audit_sha256": "33cbc303f8974ac4fb5699375a2a516b79f1208d9f077dc560c337c7f1357f20",
+  "fresh_global_admission": false,
+  "full_control_admission_passed": false,
+  "input_sha256": "56af49f9550f4b87a35ca19d818f83646af145ec73b7d13ef9edaead0f57a1a5",
+  "maximum_native_error_chips": 1.2789769243681803e-13,
+  "maximum_own_replay_error_chips": 0.0,
+  "native_policies_checked": 48,
+  "sampled_learning": "not_run",
+  "scope": "known-game full-control admission only; sampled learning/fresh/global strength not established",
+  "study_seconds": 9.454113624999081
+}

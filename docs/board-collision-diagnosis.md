@@ -54,8 +54,8 @@ make diagnose-board-collisions
 .venv/bin/python scripts/inspect_board_collision.py --rank 2
 ```
 
-Diagnosis results and the selected replacement definition are pending at this
-protocol's first publication. Existing failed evidence/configs are unchanged.
+At this protocol's first publication, diagnosis and replacement outcomes were
+pending. The completed results follow below; earlier failed evidence is preserved.
 `make diagnose-board-collisions` reproduces into ignored output; supply a new
 `BOARD_DIAGNOSIS_OUTPUT` path to retain an earlier run. No native solver or
 training job is invoked by this target.
@@ -150,6 +150,66 @@ After reviewed evidence is published, `make report-made-category` replays its
 tables/two figures offline. Direct `.venv/bin/python` entrypoints are also
 available when their locked optional extras are already installed.
 
-All candidate admission outcomes and the final decision are pending at code
-publication. The diagnosis remains an exploratory motivation on known cases,
-not independent evidence that this addition will improve play.
+At code publication, candidate outcomes were pending. The following measurements
+were produced afterward, without changing the fixed config or tested source.
+
+## Completed admission: candidate rejected
+
+Clean training source `f3c28f04df745abbc264d2ea3ef43664cfa32e09` completes all
+48 own full-tree snapshots in 9.454 seconds. The native audit starts from clean
+`a846df4e975c521ecda6f7af8b076c2a137d1995` and checks all 48 in 5.630 seconds.
+Maximum native disagreement is 1.27898e-13 chips; own replay error is zero.
+OpenSpiel 2.0.2 / Apache-2.0 evaluates only frozen own strategies on shared
+exported mechanics. It supplies no learner inputs and does not independently
+validate the entire engine. See the [license record](solver_validation.md).
+
+| Known game | Exact full epsilon (% pot) | Old texture (% pot) | Category candidate (% pot) | Candidate / raw rows |
+| --- | ---: | ---: | ---: | ---: |
+| Low OOP | 0.00000245451 | 0.00000266778 | 0.00000258098 | 96 / 364 |
+| Medium OOP | 0.000182290 | 2.522516 | 2.593658 | 1,428 / 3,336 |
+
+Epsilon is the project's exact-game exploitability convention. All columns here
+use **4,096 full-tree CFR+ iterations**. The medium candidate's excess over exact
+is 2.593476 percentage points of pot, above the preset 0.5 limit. It passes
+compression (57.19% fewer medium rows), coverage and recall checks but fails the
+overall admission. Low passes. Key bytes also increase relative to old texture;
+row reduction alone is not a whole-process memory or speed claim.
+
+The previous 7.37% texture result was sampled learning under a different work
+schedule. Comparing it to this 2.59% full-control result would not measure an
+improvement. The correct full-control comparison is **2.52% versus 2.59%**.
+No sampled-learning grid, fresh cases, global training or default change follows.
+
+The retained diagnosis also contains conflicts this feature cannot separate.
+Rank 7 (row 885) has `9c 9d` on `Ts 9s 4d 2h`, with either `Th` or `Td` on
+the river. Both make the same full house and share the same category history,
+but the frozen own continuation prefers folding on `Th` and raising to 144 on
+`Td`. In the fixed opponent range, `Tc Td` is possible on `Th` (making
+quads) but impossible when `Td` is public. This card-removal distinction survives
+equal own categories. Own-card/board suit and range interactions can matter
+beyond made-hand category. This is an inspected example from the already retained diagnosis,
+not proof that this row causes the measured final gap. The frozen diagnostic
+and the newly trained candidate are different policies.
+
+Splitting conspicuous conflicts does not guarantee lower deployed exploitability
+at a fixed training procedure and budget. The local ranking is a proxy. The
+next proposed block should inspect an own best response to the actual failed
+candidate and the remaining information it exploits, before selecting another
+feature or spending more compute. That work has not started.
+
+[Reviewed tables and figures](../results/made-category-admission/report/tables.md),
+[raw study](../results/made-category-admission/study.json),
+[native audit](../results/made-category-admission/independent.json),
+[PR #14](https://github.com/jimmy-sim/poker-ai/pull/14).
+
+## Questions to practice
+
+1. **Why did the obvious category fix fail?** It separates selected examples but
+   still discards distinctions. A local frozen-policy score does not optimize the
+   full game's exploitability; the measured candidate missed the unchanged gate.
+2. **What did the independent check establish?** Native values and best responses
+   agree for all 48 saved own strategies on shared exported game mechanics. It
+   does not prove competitive Hold'em strength or full-engine independence.
+3. **Why stop before the sampled run?** The cheaper full-control admission already
+   fails the required accuracy limit. Preserve the result and diagnose the actual
+   failing strategy before proposing another experiment.

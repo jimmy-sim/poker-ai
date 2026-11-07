@@ -102,6 +102,14 @@ offline; `make study-public-boards` repeats the fixed grid from clean source.
 Inspect a board's features locally with
 `.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d`.
 
+The [collision-diagnosis follow-up](docs/board-collision-diagnosis.md) identifies
+concrete merged decisions and tests one richer made-hand-category history.
+It still fails full-control admission: medium exploitability is **2.59% of pot**,
+versus **2.52%** for old texture at the same 4,096 full-tree iterations. All
+**48 saved strategies** pass native value/best-response checks. No sampled run
+or default change follows. Read [journal step 17](docs/learning-journal.md#17-find-which-shared-decisions-need-different-treatment)
+and the [tables/two figures](results/made-category-admission/report/tables.md).
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

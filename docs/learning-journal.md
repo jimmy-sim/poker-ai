@@ -31,9 +31,9 @@ but loses too much accuracy on the deeper game. Its preset gate fails, so no
 global-agent default changes. You can inspect features with the terminal command
 in step 15 and read the result in step 16.
 
-The follow-up now inspects which merged decisions disagree, before choosing a
-replacement. Step 17 records that diagnosis and the next candidate's admission
-check as it progresses.
+The follow-up finds concrete decisions the old representation merges and tests
+one category-based replacement. It also fails the deeper-game accuracy limit.
+Step 17 explains the example, result and why the larger run stops here.
 
 You can read this in three sittings:
 
@@ -642,8 +642,8 @@ plot checks require their optional extras. Read the
 
 ## 17. Find which shared decisions need different treatment
 
-**November 6, 2026 — in progress.** The last test showed that the smaller
-description was too weak on one game. Before adding features, we need concrete
+**November 6, 2026 — completed diagnosis and admission check.** The last test
+showed that the smaller description was too weak on one game. Before adding features, we need concrete
 examples of what the sharing loses.
 
 The diagnostic looks at a row containing several exact situations. It asks which
@@ -661,8 +661,8 @@ The ranking score is a local comparison under a frozen continuation. It is not
 the agent's total expected loss or exploitability. Tied local actions can also
 hide a need for different mixing probabilities when an opponent adapts.
 
-At first publication, actual diagnosis examples and the replacement candidate
-are pending. The code, tests and input hashes are published before that run.
+At first publication, diagnosis examples and the replacement candidate were
+pending. Code, tests and input hashes were published before that run.
 The local checks pass with 686 tests on both Python versions, including ten new
 tests for this diagnostic and viewer.
 Read the [definition and limits](board-collision-diagnosis.md).
@@ -676,15 +676,58 @@ combines a straight with one pair. These are different visible hand categories.
 The one proposed fix is to keep that category at every observed street. It
 still groups many situations, and does not store exact tiebreakers. Its code
 passes the unit/recall checks; the full local suite now has 712 tests on both
-Python versions. We will run a small full-tree admission test before claiming
-it helps. Sampled learning and fresh/global testing remain separate future work.
+Python versions. The small full-tree admission test is now complete.
+
+**The candidate fails.** Here all strategies receive 4,096 full-tree training
+iterations. Lower exploitability means less weakness against a best response.
+
+| On the deeper known game | Exploitability (% of initial pot) | Strategy rows |
+| --- | ---: | ---: |
+| Keep the exact public board | 0.000182 | 3,336 |
+| Old coarse texture | 2.522516 | 1,392 |
+| Texture plus made-hand categories | 2.593658 | 1,428 |
+
+The new candidate keeps 57% fewer rows than the raw-public control, but its
+excess weakness exceeds the rule set in advance. The low game passes. All
+48 saved strategies pass the separate OpenSpiel value/best-response check;
+that check confirms these measurements on our exported game mechanics.
+
+There is another revealing example already in the diagnosis: pocket nines on
+`Ts 9s 4d 2h` makes a full house with either `Th` or `Td` on the river. The
+category history is identical, yet the frozen control prefers different moves.
+The fixed opponent range includes `Tc Td`: that hand can make quads when the
+river is `Th`, but cannot exist when `Td` is on the board. This is called a
+**blocker** or card-removal effect. Knowing “full house” alone loses this detail.
+The example does not tell us how much of the final exploitability it causes.
+
+The lesson is that fixing an obvious local example does not automatically
+improve the whole learned strategy. The larger sampled-learning comparison
+stops here; fresh/global testing and agent defaults stay unchanged. The earlier
+7.37% result used sampled learning, so it cannot be compared directly with this
+2.59% full-tree result. The matching old full-tree number is 2.52%.
+
+To inspect the two examples and open the measured learning curves:
+
+```sh
+.venv/bin/python scripts/inspect_board_collision.py --rank 2
+.venv/bin/python scripts/inspect_board_collision.py --rank 7
+open results/made-category-admission/report/full-controls.png
+```
+
+On the right-hand graph, the old and new compressed versions flatten around
+2.5% of pot while the exact/raw-public controls keep falling. The vertical axis uses a
+logarithmic scale: each numbered step is a factor of ten. Read the
+[complete tables](../results/made-category-admission/report/tables.md) and
+[method, limits and stopping decision](board-collision-diagnosis.md), published
+with [PR #14](https://github.com/jimmy-sim/poker-ai/pull/14).
 
 ## What comes next
 
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
-question is which additional visible board details prevent costly merges without
-giving up too much sharing. Declare that candidate and comparison before training
-again. A later fresh/global stage must wait for accepted development results.
+question is which decisions an own best response exploits in the actual failed
+candidate. That should provide a more direct diagnosis than the frozen local
+proxy before another feature is selected. Declare any later candidate and limits
+before testing. Fresh/global work waits for accepted development results.
 
 ## A small glossary
 

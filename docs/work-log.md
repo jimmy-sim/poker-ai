@@ -28,8 +28,8 @@ For a guided explanation of the ideas and results, start with the
   3.11.17/3.12.15, plus lint/format/strict typing/hooks. Ten new tests cover
   hidden-history aggregation, player signs/opponent reach, zero support,
   sharing-score math/self-zero, input retention and the terminal viewer.
-- **Status:** Publish checked diagnostic code before computing retained-case
-  results; actual diagnosis and candidate selection/admission are pending.
+- **Initial status:** Diagnostic code was published before retained-case
+  results; diagnosis and candidate admission were pending at that checkpoint.
 - **Diagnosis:** Clean published `9189c40` produces 7/115 conflicting low/medium
   rows under own exact continuation, versus 4/0 under uniform. Retain both panels.
   One row merges a full house and quads for pocket nines, with opposite preferred
@@ -46,7 +46,23 @@ For a guided explanation of the ideas and results, start with the
   snapshots in 9.454s. The candidate passes low but fails medium full accuracy:
   2.593658% pot versus old texture 2.522516%, despite compression (1,428 vs raw
   3,336 rows). Preserve raw outcomes before native audit. No sampled comparison
-  or second candidate is launched; independent confirmation remains pending.
+  or second candidate is launched; confirmation was pending at raw publication.
+- **Audit / completed result:** All 48 snapshots pass OpenSpiel 2.0.2 native
+  value/BR checks (maximum error 1.27898e-13 chips); own replay error zero.
+  Audit takes 5.630s. Medium candidate excess over exact is 2.593476 percentage
+  points of pot versus a fixed 0.5 limit. Coverage/recall/compression pass;
+  full-control admission fails. Figures/tables preserve the complete grid.
+- **Interpretation / stopping point:** Category separates full-house/quads and
+  straight/pair examples, but same-category conflicts remain in the retained
+  diagnosis. The local proxy does not explain causal game EV loss. Compare
+  2.593658% to the old **full-tree** 2.522516%, not the old sampled 7.369742%.
+  Stop before sampled/fresh/global training; propose own best-response diagnosis
+  of the actual failed policy next. No second candidate or default change.
+- **Evidence:** [PR #14](https://github.com/jimmy-sim/poker-ai/pull/14),
+  [tables/figures](../results/made-category-admission/report/tables.md),
+  [method and limits](board-collision-diagnosis.md), journal step 17. Local
+  checks: 712 tests on both Python versions, lint/format/strict typing/hooks;
+  final hosted CI is recorded on the PR separately.
 - **Assistance / time:** Codex implements and checks this block. Developer
   hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
 
