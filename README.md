@@ -130,6 +130,13 @@ profile values** pass native checks. Inspect the full-house/blocker example with
 [journal step 19](docs/learning-journal.md#19-find-the-river-details-the-compressed-strategy-misses)
 or the [tables/figures](results/river-distinctions/report/tables.md).
 
+The next [range-mass candidate](docs/range-mass-representation.md) is defined and
+has correctness tests: existing buckets/texture/categories plus river prior-mass
+bins for blocked/loss/tie/win. Its full/sampled acceptance rules are fixed, but
+compression and learning results are **not yet measured**. Try
+`.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`, or
+read [journal step 20](docs/learning-journal.md#20-define-a-small-range-aware-description).
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

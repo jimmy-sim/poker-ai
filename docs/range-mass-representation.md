@@ -21,8 +21,11 @@ posterior is an input.
 Each seat has a **fixed declared prior**: the weighted physical combos from the
 versioned spot config. Canonicalize combo card order and entry order, reject
 duplicates/invalid cards/nonpositive or nonfinite weights, and normalize each
-seat's range separately. Interpret integer weights exactly and finite float
-weights through their shortest decimal string (`Fraction(str(weight))`). Exact
+seat's range separately. The standalone prior builder accepts exact integer weights; finite floats use
+their shortest decimal string (`Fraction(str(weight))`). The spot adapter starts
+from the existing loader's validated floating weights. This protocol pins unit
+weights, so no integer precision conversion is involved; preserving arbitrary
+raw JSON integers beyond that loader's precision is outside this contract. Exact
 rational arithmetic fixes normalization and quantization boundaries. Normalized
 priors, role order and a version tag determine a SHA256 context namespace.
 Reordering combos or multiplying weights by an exactly common scale preserves
@@ -104,7 +107,8 @@ The metric assessor in this milestone tests mathematical thresholds and complete
 identity grids using synthetic inputs. It is **not** a future artifact loader or
 proof of source/work replay; the eventual runner/auditor must supply those checks
 before any real admission claim. Missing/duplicate checkpoints, audit entries or
-context bindings cannot pass. A full-stage pass only permits the sampled
+context bindings cannot pass. The synthetic full metric assessment binds a
+canonical protocol/context fingerprint; the sampled assessment must match it. A full-stage pass only permits the sampled
 comparison, never fresh/global admission or deployment.
 
 Later sampled stage, also not run here: the same three fixed seeds and
@@ -118,7 +122,12 @@ Record all controls/seeds/checkpoints, keys/table storage, RSS, work, coverage,
 policy receipt hashes and cross-play. Passing rules cannot be relaxed afterward.
 
 The pure sampled-threshold assessor is also tested with synthetic grids and
-requires a passing full-stage metric assessment. It does not launch learning or
+requires a passing full-stage metric assessment for the same protocol/contexts.
+Numeric receipt checks require full work `2 * iteration * tree_nodes`; sampled
+work must cross the requested budget in exactly one recorded complete iteration,
+with initialization included. Method/weighting/initialization flags, zero recall,
+all final-control coverage and total stage runtime caps are checked. These
+numeric consistency checks still require raw source/policy/work replay later. It does not launch learning or
 replace independent artifact verification. A failure stops the candidate;
 preserve it without another feature/seed/config selected to rescue the result.
 No new cases/global training until a separately frozen fresh-case stage follows
@@ -138,5 +147,73 @@ wrong contexts, nonfinite metrics, required audits and global-admission denial.
 
 ## Status
 
-Prospective protocol/config checkpoint. Implementation/tests/results pending;
-no training or performance measurement is authorized by this milestone.
+At first publication, implementation/tests were pending. Correctness is now
+complete as recorded below; no training or performance measurement occurred.
+
+
+## Completed correctness milestone
+
+Protocol `2031519` was published before implementation. The optional encoder,
+finite-matrix adapter, inspector and pure metric assessors are now implemented.
+All existing learner/encoder/report source files, prior model files and failed
+study inputs remain byte-identical; new research modules are added separately.
+The range-aware subclass refuses global save/load operations that could discard
+its context. No deployable strategy or admission runner is introduced.
+
+Actual local verification with all extras passes **819 tests on Python 3.11.17**
+and **819 on Python 3.12.15**, including **66 new focused tests**. A separate
+base-only install passes **794 tests with 16 optional skips**. Ruff lint/format,
+strict mypy and hooks pass. The reused base/3.12 environments initially contained
+duplicate editable-path files pointing at older worktrees, causing collection
+errors. Removing the verified stale entries restored the intended package path;
+all relevant checks were rerun. No source or threshold was changed to resolve
+that environment issue. Hosted checks are recorded separately on PR #17.
+
+Structural tests verify refinement, compatible menus and zero perfect-recall
+violations on both known games, and the two published blocker/relative-strength
+counterexamples split. A limitation test intentionally retains the same-static-
+prior `Qd`/`Qh` example whose action-conditioned opponent weights differ. Tests
+also verify context separation even when feature bins stay identical, exact
+rational boundaries, missing/duplicate audit rejection, numeric work/budget gates
+and full-to-sampled protocol/context binding. The metric fixtures explicitly
+carry `synthetic_fixture=True`; their pass flags are not experimental results.
+
+No candidate row counts, compression ratios, learned policies, exploitability,
+training times or generalization results were produced. The **60 full** and
+**90 sampled** snapshots above are planned grids. The next milestone implements
+and runs only the full-control admission first; if it fails, retain the failure
+and stop before the sampled stage. A separate future artifact verifier must
+check actual source/config/policy/work receipts and independent value/BR results.
+
+Try the feature, using equal declared prior weights from the pinned medium spot:
+
+```sh
+.venv/bin/python scripts/inspect_range_feature.py 9h
+.venv/bin/python scripts/inspect_range_feature.py 9d
+.venv/bin/python -m pytest -q tests/test_range_mass.py tests/test_range_protocol.py
+```
+
+Expected bins in blocked/loss/tie/win order are `(0,4,0,4)` and `(4,0,0,4)`.
+The context SHA stays the same. The inspector's `1/2` losing mass on `9h` is a
+**starting prior**, whereas the previous inspector's 83.9% quads weight followed
+observed betting. This candidate deliberately does not implement that posterior.
+Its conditional static showdown equity is explanatory and never supplies an
+action rule. Bin values are interval labels, not action probabilities or chips.
+`q8` names the eight mass intervals; `b8` names the unchanged private buckets.
+
+Use `make test-range-mass` for the same focused checks with uv. These commands
+build no learned strategy. [PR #17](https://github.com/jimmy-sim/poker-ai/pull/17),
+[config](../configs/range-mass-protocol.json), and journal step 20 retain the
+prospective choice and the current stopping point.
+
+## Questions to practice
+
+1. **Why keep blocked mass instead of conditioning it away?** Removing a strong
+   opponent combo is information even when every remaining combo loses to us.
+   The four unconditional masses preserve that change before quantization.
+2. **Why bind the range context?** The same cards can have different relative
+   strength under different priors. Keys and stage contracts must identify the
+   assumptions they use, so a pass/checkpoint cannot silently cross contexts.
+3. **Do green tests mean the agent is stronger?** No. They establish encoding
+   and acceptance-rule behavior. Real compression, full/sampled exploitability
+   and independent audits remain unmeasured for this candidate.

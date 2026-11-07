@@ -25,7 +25,26 @@ For a guided explanation of the ideas and results, start with the
   and pinned config before implementation/partition measurement. Keep prior full
   and sampled accuracy/compression/work limits. No learning/compression study,
   fresh/global stage, default change or deployable checkpoint in this block.
-- **Status:** Protocol checkpoint; implementation and checks pending.
+- **Completed implementation:** Optional context-bound encoder, finite adapter,
+  inspector and pure full/sampled metric contracts. Exact rational mass bins;
+  unsupported-view and serialization guards. Existing source/model/evidence
+  bytes remain unchanged. No learning/compression result or deployable artifact.
+- **Verification:** 819 all-extras tests pass on Python 3.11.17/3.12.15, including
+  66 new feature/privacy/recall/context/metric-contract tests; base-only checks
+  pass 794 with 16 optional skips. Ruff lint/format, strict typing and hooks pass.
+  Synthetic metric fixtures are not performance evidence. The reused base/3.12
+  environments initially imported older worktrees via duplicate editable `.pth`
+  entries; remove only those verified stale paths, confirm the current package,
+  and rerun checks. No code/threshold change resolves that environment issue.
+- **Demonstration:** `inspect_range_feature.py 9h` versus `9d` separates the
+  published full-house blocker using `(0,4,0,4)` versus `(4,0,0,4)` prior-mass
+  bins. Current priors do not use betting-conditioned weights; the known static
+  residual remains intentionally merged in a limitation test.
+- **Evidence / stopping point:** [PR #17](https://github.com/jimmy-sim/poker-ai/pull/17),
+  [definition/limits](range-mass-representation.md), journal step 20. Stop before
+  candidate row-count/compression measurement or learning. Planned 60 full and
+  90 sampled snapshots are unrun. Next block builds/runs full admission first;
+  no fresh/global/default change. Hosted CI is recorded separately on the PR.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are unrecorded; no training wall time exists for this milestone.
 
