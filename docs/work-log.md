@@ -13,6 +13,55 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-06 — Public-board fixed-work comparison
+
+- **Request / scope:** Continue issue #4 with the unchanged fixed-work protocol,
+  GitHub publication, journal updates and a bounded stopping point.
+- **Before full outcomes:** Implement runner, collision/work/coverage checks,
+  checkpoint replay, native frozen-policy/cross-play audit and offline figures.
+  Clarify measurement conventions in
+  [public-board-comparison.md](public-board-comparison.md) without changing the
+  preregistered config. Tiny test fixtures are not development evidence.
+- **Assistance / time:** Codex implements and executes this block. Developer
+  hands-on time is not recorded; study runtime is recorded separately.
+- **Checks before outcomes:** `make check` passes on Python 3.11.17/3.12.15
+  with all optional extras: 676 tests each, lint/format and strict mypy. The 26
+  new tests include native checks of a tiny fixture's 20 policies/100 profiles,
+  coverage/work/receipt replay, missing-grid rejection and negative-gate retention.
+  These fixture outcomes are software checks, not development results.
+- **Initial status:** Runner code published before training; full-study results
+  were pending at the entry's first publication. No fresh/global training.
+- **Hosted fixture failure:** Initial CI on `48051de` fails because the timeout
+  unit fixture inherits the optional JIT backend in a base-only environment.
+  Correct the test to select NumPy; no learner/source/config/limit change. The
+  all-extras local checks had hidden this fixture dependency. Retain the failed
+  CI run and verify the base environment before advancing to result admission.
+- **Raw grid retained:** Clean training source `48051de` completed all 150 own
+  snapshots in 1205.044s, with all ten cells profiled three times. Source/input
+  hashes match at completion. Exact controls pass; the texture candidate's raw
+  learning gate fails on medium OOP despite meeting the compression requirement.
+  Publish complete raw evidence before native audit; interpretation remains
+  provisional until those independent checks finish. Test-only fix `3e1d374`
+  changes no captured source/script/config; its hosted CI passes both jobs.
+- **Audit / result:** All 150 policies, 800 ordered final cross-play profiles
+  and 90 checkpoint/visit pairs pass. Native maximum error 1.63425e-13 chips;
+  own replay error zero; audit wall time including replay 14.267s. Texture reduces
+  raw-public rows 364→92 on low and 3,336→1,392 on medium. Medium sampled median
+  7.369742% pot versus raw-public 0.233819%; worst 9.687537%. Full excess over exact
+  2.522334 percentage points versus a 0.5 limit. Candidate fails unchanged accuracy
+  gates despite passing compression. No result was dropped or retuned.
+- **Evidence / limits:** [Tables/figures](../results/public-board/report/tables.md),
+  [method and diagnosis](public-board-comparison.md), journal step 16,
+  [PR #13](https://github.com/jimmy-sim/poker-ai/pull/13). Canonical keys add no
+  row sharing here; all ten representations have zero abstract recall violations.
+  Initialized coverage is separated from later sampled rows. Storage counters
+  exclude shared tree/container costs; RSS is cumulative. Profiles precede their
+  individual learning cells rather than one upfront batch; timings are descriptive.
+- **Stopping point:** Bounded comparison and audit complete. Issue #4 stays open
+  for a more informative representation; no fresh cases/global training/default
+  changes. Final local/hosted quality checks are attached to the PR. Human hands-on
+  time remains unrecorded; the study/audit times above are process wall time.
+
 ## 2026-11-06 — Public-board protocol and correctness
 
 - **Scope / PR:** Resumed [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4),

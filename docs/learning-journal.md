@@ -18,7 +18,7 @@ not established a competitive Hold'em agent.
 Here, “AI” mainly refers to algorithms that learn probabilities for poker actions
 and store them in strategy tables. The chapters below explain how that works.
 
-The latest study, issue #3, tested the retained ordinary learning procedure on
+The earlier study, issue #3, tested the retained ordinary learning procedure on
 four newly selected small games. All four met the rules fixed before their
 outcomes were measured. This is progress in validating the method; each game
 received its own training. The earlier river-integration result remains mixed,
@@ -26,14 +26,16 @@ and the ordinary default stays in place.
 
 On November 6, issue #4 adds tested, optional ways to describe the public board.
 One removes arbitrary suit names; another groups boards by coarse features.
-The learning comparison is planned with fixed limits but has not run. You can
-inspect those features with a terminal command in step 15.
+The completed fixed-work comparison found that texture saves many strategy rows
+but loses too much accuracy on the deeper game. Its preset gate fails, so no
+global-agent default changes. You can inspect features with the terminal command
+in step 15 and read the result in step 16.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–15:** What the extensions and recent experiments taught us.
+- **Steps 10–16:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -542,16 +544,104 @@ any new fresh-case stage. Read the [protocol and limits](public-board-abstractio
 and [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4). The code and checks
 are published in [PR #12](https://github.com/jimmy-sim/poker-ai/pull/12).
 
+## 16. Compare the board descriptions at the same work budget
+
+**Completed November 6, 2026 — issue #4, PR #13.** We tested whether the new board
+description helps learning and whether it actually saves space.
+Correctness tests answered whether it follows its rules, not whether it is useful.
+
+**Illustrative example:** Two learners both run 1,000 iterations, but one visits
+twice as many game states each time. Those iteration counts do not represent the
+same work. Here we count visited states plus the cost assigned to initialization,
+and compare at the same declared work checkpoints. Both learners finish their
+current update before stopping; we keep any small overshoot in the report.
+
+The runner keeps every configured strategy, including bad ones. It separately
+records rows that received an initial calculation and rows later visited by
+sampling. It also checks **collisions**: different boards or private hands that
+share a strategy row. A collision saves rows, but it may force a harmful compromise.
+
+After training, the independent checker evaluates the saved strategies. **Cross-play**
+means having two frozen strategies face each other; we exchange their seats to
+account for position. All final pairings are kept, including self-play. A
+strategy's seat-balanced advantage against itself is zero by definition; that
+alone says nothing about how strong it is.
+
+The runner and tests were published before the full study. It then ran for about
+20 minutes, keeping all 150 strategy snapshots. The native audit checked all of
+them, all 800 ordered final strategy pairings and 90 saved checkpoint pairs.
+The largest native comparison error was below 1.64e-13 chips; our own replay
+matched exactly. That gives us confidence that the reported calculations agree,
+not that the resulting strategy is strong.
+
+**The result is a failed candidate gate.** Here is the comparison with the
+raw-public-board control at the same final work budget:
+
+| Game | Raw-board rows | Texture rows | Raw-board median weakness (% pot) | Texture median weakness (% pot) |
+|---|---:|---:|---:|---:|
+| Small stacks relative to pot | 364 | 92 | <0.000001 | <0.000001 |
+| Deeper stacks | 3,336 | 1,392 | 0.234 | 7.37 |
+
+“Weakness” here is the exact-game exploitability measure: lower is better. It is
+not a measured win rate against people. The texture description uses about 75%
+fewer rows on the first game and 58% fewer on the second. But on the second game
+it misses the preset 1% median limit and 2.5% worst-seed limit. Its full-tree
+control also stays around 2.52% pot, missing its separate accuracy requirement.
+We did not add training or choose a nicer seed to rescue the result.
+
+This points toward a public representation that loses useful distinctions, under
+this learner and budget. The medium game has no extra private-hand collisions,
+and checks for remembering past decisions, legal actions and native values pass.
+The full-tree result argues against
+blaming only sampling noise. It still does not prove that every possible strategy
+using texture must be bad, or that every engine detail is independently verified.
+
+![Fixed-work board comparison](../results/public-board/report/learning-work.png)
+
+These lines are five descriptions of the same game, not five opponents. On the
+right, purple is texture and ends above the dotted 1% limit. Exact, raw-public
+and suit-canonical lines overlap below it. The panels use different logarithmic
+vertical scales. Shading spans three seeds, not a confidence interval.
+
+Coverage also needs careful reading. The deeper texture learner has about 98.29%
+subsequently visited-row coverage versus raw-public's 97.60%, yet plays worse by
+the best-response measure. Visiting one shared row counts all situations mapped
+to that row; it does not prove the action fits every one of them. Initialized
+average-row coverage is 100%, and initial-only rows are reported separately.
+
+The saved own policies look much closer in cross-play: the largest seat-balanced
+advantage in that final pool is only about 0.103% pot. A small set of our own
+opponents can miss weaknesses that an exact best response finds.
+
+The key/float storage components shrink, but shared game trees and Python objects
+remain. We have not measured a comparable reduction in total process memory.
+No agent default changes, no new fresh cases and no global training follow this
+failed gate. Issue #4 remains open for a more informative representation.
+
+Software checks pass with 676 local tests on Python 3.11/3.12, including 26 new
+runner/audit tests. Initial GitHub CI caught an optional-dependency mistake in a
+timeout test; selecting NumPy in that fixture fixed it without changing the study
+source, config or outcomes. Hosted checks are linked on
+[PR #13](https://github.com/jimmy-sim/poker-ai/pull/13).
+
+From Terminal, open the graph or run the small software fixtures:
+
+```sh
+open results/public-board/report/learning-work.png
+.venv/bin/python -m pytest -q tests/test_public_study.py
+```
+
+Those tests use tiny fixtures; they do not repeat the 20-minute study. Native and
+plot checks require their optional extras. Read the
+[methods and diagnosis](public-board-comparison.md) and
+[complete tables](../results/public-board/report/tables.md).
+
 ## What comes next
 
-[Issue #3](https://github.com/jimmy-sim/poker-ai/issues/3) completed the fresh
-procedure check. The next representation question is
-[issue #4](https://github.com/jimmy-sim/poker-ai/issues/4): how to preserve useful
-public-board information without storing every exact case. No global training
-comparison or new abstraction experiment ran in this block.
-
-For now, the useful achievement is a system that can test an idea, find a mixed
-result, and preserve enough evidence to explain the decision.
+[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
+question is which additional visible board details prevent costly merges without
+giving up too much sharing. Declare that candidate and comparison before training
+again. A later fresh/global stage must wait for accepted development results.
 
 ## A small glossary
 
