@@ -3,6 +3,16 @@ RIVER_OUTPUT ?= results/runs/river-integration-reproduction
 FRESH_OUTPUT ?= results/runs/fresh-validation-reproduction
 PUBLIC_BOARD_OUTPUT ?= results/runs/public-board-reproduction
 BOARD_DIAGNOSIS_OUTPUT ?= results/runs/board-diagnosis/diagnosis.json
+MADE_ADMISSION_OUTPUT ?= results/runs/made-category-admission
+
+.PHONY: admit-made-category report-made-category
+admit-made-category:
+	$(UV) run --locked --extra jit python scripts/admit_made_category.py --output "$(MADE_ADMISSION_OUTPUT)/study.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_made_category.py --report "$(MADE_ADMISSION_OUTPUT)/study.json" --output "$(MADE_ADMISSION_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_made_category.py --report "$(MADE_ADMISSION_OUTPUT)/study.json" --audit "$(MADE_ADMISSION_OUTPUT)/independent.json" --output "$(MADE_ADMISSION_OUTPUT)/report"
+
+report-made-category:
+	$(UV) run --locked --extra research python scripts/report_made_category.py
 
 .PHONY: diagnose-board-collisions
 diagnose-board-collisions:

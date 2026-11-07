@@ -50,8 +50,8 @@ are averaged, not revealed or used to choose actions.
 After checked code/config publication, from a clean worktree:
 
 ```sh
-.venv/bin/python scripts/diagnose_board_collisions.py
-.venv/bin/python scripts/inspect_board_collision.py --rank 1
+make diagnose-board-collisions
+.venv/bin/python scripts/inspect_board_collision.py --rank 2
 ```
 
 Diagnosis results and the selected replacement definition are pending at this
@@ -115,3 +115,41 @@ establish sampled learning, fresh-case or global strength. The original three
 seeds/work checkpoints and 1%/2.5% sampled limits are recorded for that later
 comparison and will not run here. No new candidate performance outcome exists
 at this declaration.
+
+## Candidate implementation and reproduction
+
+The candidate is an opt-in `MadeCategoryAbstraction` wrapping the same pinned
+quantizers/config. It adds its versioned own-category history to the information
+key, then uses the existing finite matrix's texture encoding. It preserves the
+base private bucket/public betting context; it does not install a strategy rule
+such as "always call quads." All controls learn their probabilities from scratch.
+
+Only new reusable modules/entrypoints are added. Existing model, encoder, matrix,
+learner and old report sources are unchanged, so the preceding comparison's
+recorded dependency hashes still match. The global agent cannot load this
+separate admission-policy format as a deployment checkpoint.
+
+Before candidate outcomes, `make check` passes on Python 3.11.17/3.12.15 with all
+extras: 712 tests, lint/format and strict typing. The 26 new candidate/admission
+tests cover category meanings, suit/flop symmetry, prefix history, actual hidden
+opponent/future invariance, acting-seat guards, the two retained counterexamples,
+refinement/recall on both games, complete grids, work/coverage replay and native
+checks of a tiny eight-policy fixture. Tiny fixture outcomes are not admission
+results. The ten diagnostic tests remain in the same suite.
+
+After checked code/config publication, from clean source:
+
+```sh
+make admit-made-category
+```
+
+This trains/audits/reports in ignored `results/runs/made-category-admission/`.
+Choose a new `MADE_ADMISSION_OUTPUT` to preserve an earlier run. Completion of
+the command means the report was produced, not that its accuracy gate passed.
+After reviewed evidence is published, `make report-made-category` replays its
+tables/two figures offline. Direct `.venv/bin/python` entrypoints are also
+available when their locked optional extras are already installed.
+
+All candidate admission outcomes and the final decision are pending at code
+publication. The diagnosis remains an exploratory motivation on known cases,
+not independent evidence that this addition will improve play.

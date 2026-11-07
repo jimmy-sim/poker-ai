@@ -38,6 +38,10 @@ For a guided explanation of the ideas and results, start with the
   history. Publish its input-bound config and unchanged full accuracy/compression
   targets before implementation/partition measurement. Scope is 48 full snapshots
   and native admission only; no fixed-work sampled/fresh/global comparison here.
+- **Candidate implementation checks:** 712 all-extras tests pass on both Python
+  versions, including 26 new candidate/admission tests. Optional encoder source
+  and a bounded full-control runner/audit/report are published before the trial.
+  Existing model/matrix/learner/report dependency bytes remain unchanged.
 - **Assistance / time:** Codex implements and checks this block. Developer
   hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
 

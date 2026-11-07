@@ -667,6 +667,18 @@ The local checks pass with 686 tests on both Python versions, including ten new
 tests for this diagnostic and viewer.
 Read the [definition and limits](board-collision-diagnosis.md).
 
+The retained diagnosis now gives a concrete example. With pocket nines, one
+river makes a full house and another makes four of a kind, yet the old texture
+key shares their decision row. In the frozen-control example, the full house
+prefers folding to an all-in, while quads prefers calling. Another shared row
+combines a straight with one pair. These are different visible hand categories.
+
+The one proposed fix is to keep that category at every observed street. It
+still groups many situations, and does not store exact tiebreakers. Its code
+passes the unit/recall checks; the full local suite now has 712 tests on both
+Python versions. We will run a small full-tree admission test before claiming
+it helps. Sampled learning and fresh/global testing remain separate future work.
+
 ## What comes next
 
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
