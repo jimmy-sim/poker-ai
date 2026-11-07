@@ -1,6 +1,7 @@
 """Offline replay, tables and plots for saved-policy response diagnosis."""
 
 import csv
+import importlib
 import json
 from pathlib import Path
 from typing import Any
@@ -20,14 +21,27 @@ def render(root: Path, path: Path, audit_path: Path, output: Path) -> dict[str, 
     errors = [
         v for r in audit["rows"] for k, v in r.items() if k.endswith("error_chips")
     ]
+    recorded_errors = list(errors)
+    for row in audit["rows"]:
+        matches = [c for c in report["cases"] if all(c[k] == row[k] for k in IDENTITY)]
+        if len(matches) != 1 or row["target"] not in (0, 1):
+            raise ArithmeticError("changed reply audit identity")
+        own = matches[0]["responses"][row["target"]]
+        for label in ("exact", "restricted"):
+            errors.append(
+                abs(
+                    row[label + "_native_value_chips"]
+                    - own[label + "_reply_value_chips"]
+                )
+            )
     if (
         audit["status"] != "passed"
         or audit["input_sha256"] != digest(path)
         or len(ids) != len(set(ids))
         or set(ids) != expected
-        or len(errors) != 4 * len(ids)
+        or len(recorded_errors) != 4 * len(ids)
         or any(not 0 <= v <= report["config"]["tolerance_chips"] for v in errors)
-        or audit["maximum_native_error_chips"] != max(errors)
+        or audit["maximum_native_error_chips"] != max(recorded_errors)
     ):
         raise ArithmeticError("incomplete/changed reply audit")
     output.mkdir(parents=True, exist_ok=True)
@@ -116,10 +130,9 @@ def render(root: Path, path: Path, audit_path: Path, output: Path) -> dict[str, 
 def plot(
     rows: list[dict[str, Any]], streets: list[dict[str, Any]], output: Path
 ) -> None:
-    import matplotlib
-
+    matplotlib = importlib.import_module("matplotlib")
     matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     games = list(dict.fromkeys(Path(r["spot_file"]).stem for r in rows))
     fig, axes = plt.subplots(1, len(games), figsize=(12, 4.5), squeeze=False)

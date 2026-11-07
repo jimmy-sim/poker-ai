@@ -87,8 +87,8 @@ chips and complete grids; failure blocks interpretation rather than dropping row
 
 ## Status
 
-Protocol published before new measurements. Implementation, tests and actual
-results are pending. No candidate feature is selected by this block.
+At first publication, implementation/tests/results were pending. The completed
+results follow below. No new candidate feature is selected by this block.
 
 
 ## Implementation checkpoint, before retained-case measurement
@@ -123,3 +123,100 @@ preserve an earlier run; overwrites are refused. Once reviewed evidence is
 published, `make report-saved-replies` replays it offline with the research extra.
 Direct `.venv/bin/python scripts/inspect_saved_reply.py` reads the saved examples.
 No new retained-case performance outcome exists at this implementation checkpoint.
+
+
+## Completed diagnosis
+
+Clean source `6699f4c3849994893f97ee3f3b2fd81220995591` completes all eight
+saved cases in 4.223s. The native audit starts from clean
+`6a03e14465f13141e1dbc2c7cb844d19e997fbda` and takes 8.773s including own
+replay. All **32 response roots and 32 own reply-profile values** pass; maximum
+native disagreement is 9.94760e-14 chips. Full own numerical replay error is zero.
+All per-seat decision-loss sums and the exploitability decomposition pass the
+fixed 1e-9 chip tolerance. OpenSpiel is 2.0.2 / Apache-2.0; shared export and
+partition limitations apply.
+
+| Medium known game | Exact exploitability (% pot) | Within partition (% pot) | Extra exact information (% pot) |
+| --- | ---: | ---: | ---: |
+| Exact | 0.000182290 | 0.000182290 | 0 |
+| Raw public | 0.000182290 | 0.000182290 | 0 |
+| Old texture | 2.522516327 | 0.000185935 | 2.522330392 |
+| Texture plus categories | 2.593658242 | 0.000168654 | 2.593489588 |
+
+The category candidate is nearly an equilibrium when both responding players
+are restricted to its information partition. Its large exact-game weakness is
+almost entirely the extra response value available with exact information.
+The low-game candidate has no measured information premium and remains near
+zero exploitability. All eight cases and tiny near-zero residuals are retained
+in the [generated table](../results/saved-replies/report/tables.md).
+
+This favors investigating lost information before simply adding iterations.
+It does **not** establish an irreducible exploitability floor for this partition,
+a causal estimate of any feature's benefit, or the result of further training.
+Another restricted equilibrium could differ; this study holds each saved
+opponent fixed. No new strategy is deployed and the prior failed gate remains.
+
+## Concrete response example and an attribution trap
+
+Run `.venv/bin/python scripts/inspect_saved_reply.py`. The default displays
+medium category row 1062: responding seat 0 holds `Tc Td` on `Ts 9s 4d 2h`.
+The saved strategy checks about 0.000009 of the time, bets to 36 about 0.625078,
+and bets all-in to 182 about 0.374912. Under an **exact best-reply continuation**,
+check is worth 21.734972 net chips, versus 18.000366/18.000307 for the bets.
+Saved reach is 0.5; this row contributes 1.867296 chips to seat 0's unilateral
+gain of 1.867375 chips. Seat 0 is responding to the fixed seat 1 strategy.
+
+This turn row has only **one exact member**. The loss therefore cannot be blamed
+on merging distinct turn states in that row. Choosing check can unlock valuable
+later decisions under an exact-card reply; the saved-prefix/optimal-suffix
+identity attributes that opportunity at the earlier decision. The street plot
+is an accounting convention, not a map of where to add features. A static
+instruction to check trips would not reproduce the counterstrategy.
+
+Use the first graph to compare response value: on the medium panel the orange
+information component dominates the two texture bars. The low panel uses a
+separate scale around millionths of a percent of pot; compare its numeric table
+before inferring large losses from similarly tall bars. The second graph's
+seat labels identify the **responder**, and every bar is divided by two so its
+sum equals the project's exploitability convention. It is not a street-by-street
+causal decomposition of the defender's errors.
+
+## Stopping point and next question
+
+Diagnosis, complete receipts, independent checks and offline figures are done.
+There is no new training, sampled grid, fresh case, feature selection or global
+agent change. The next proposed block is to identify reachable river decisions
+where exact and restricted replies differ and define a small representation
+that preserves relevant card-removal/range distinctions. Declare that design
+and its admission limits before testing any replacement. This result alone does
+not prescribe which feature or prove it will improve performance.
+
+[PR #15](https://github.com/jimmy-sim/poker-ai/pull/15),
+[raw diagnosis](../results/saved-replies/diagnosis.json),
+[native audit](../results/saved-replies/independent.json),
+[CSV tables and two figures](../results/saved-replies/report/tables.md).
+
+## Questions to practice
+
+1. **What does the exact/restricted gap measure?** Extra best-response value from
+   exact information against one fixed opponent policy. It is not the EV gain
+   promised by retraining with a feature.
+2. **Why do losses add up here?** Saved-prefix reaches and optimal-reply suffix
+   values form a telescoping identity. Hidden histories are summed per info,
+   and the result matches the unilateral root gain and NashConv/2 convention.
+3. **Why is a large turn loss not proof of a turn abstraction bug?** Its value
+   includes later reply decisions. The largest row has no turn merge at all;
+   the continuation can benefit from exact river information.
+
+
+## Optional-dependency CI correction
+
+Hosted CI on the initial implementation catches direct Matplotlib imports in
+this new renderer when only base dependencies are installed. Use the same lazy
+optional imports as existing reporters. Preserve the first raw diagnosis,
+sidecar and native audit in `results/saved-replies-initial/`. Their captured
+source hashes require historical revision `6699f4c` (diagnosis) / `6a03e14`
+(audit); they are receipts, not inputs to training or the final diagnosis.
+A fresh clean-source run and native audit will follow the checked import fix.
+`scripts/check_saved_reply_reproduction.py` will compare all nested case fields,
+including examples. Final reproduction/check status is pending at this checkpoint.

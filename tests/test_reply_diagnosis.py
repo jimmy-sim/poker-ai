@@ -332,6 +332,11 @@ def test_native_roots_and_offline_report(
         "street-losses.csv",
     ):
         assert (tmp_path / "report" / name).stat().st_size > 50
+    changed = copy.deepcopy(result)
+    changed["rows"][0]["exact_native_value_chips"] += 1
+    audit_path.write_text(json.dumps(changed))
+    with pytest.raises(ArithmeticError, match="audit"):
+        reporting.render(ROOT, path, audit_path, tmp_path / "changed-root")
     result["rows"].pop()
     audit_path.write_text(json.dumps(result))
     with pytest.raises(ArithmeticError, match="audit"):

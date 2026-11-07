@@ -38,7 +38,30 @@ For a guided explanation of the ideas and results, start with the
   audit; interpretation is provisional. Largest additive row is an unmerged
   turn decision, illustrating that this attribution can include the value of
   later response choices, not locate the abstraction error causally.
-- **Status:** Raw outcomes retained; independent root/profile audit pending.
+- **Audit / result:** 32 native exact/restricted response roots and 32 own reply
+  profile values pass. Maximum native error 9.94760e-14 chips; own replay zero.
+  Audit including replay takes 8.773s. Decision-loss sums match unilateral gains
+  and half-summed exploitability. Medium category is near equilibrium within its
+  partition, but exact information adds 2.593489588% pot response value. This is
+  a fixed-profile comparison, not an irreducible floor or retraining benefit.
+- **Hosted optional-dependency failure:** CI run 42354820404 catches direct
+  Matplotlib imports in the new renderer during base-only strict typing. Replace
+  them with the existing project's lazy optional-import pattern. Preserve the
+  initial raw diagnosis/sidecar/audit in `results/saved-replies-initial/`; their
+  source freeze requires the historical revision. A fresh clean-source diagnosis
+  and audit will be rerun, and a script will compare every nested case field.
+  This is an import/typing correction, not a math, input, limit or feature change.
+  Base checks pass: 709 tests, 15 optional skips, lint/format/strict typing/hooks.
+  All-extras suites again pass 733 on both versions. Add a native-root receipt
+  consistency guard and check its mutation fixture on both versions. Final clean
+  reproduction/CI remains pending at this checkpoint.
+- **Evidence / stopping point:** [PR #15](https://github.com/jimmy-sim/poker-ai/pull/15),
+  [tables/two figures](../results/saved-replies/report/tables.md),
+  [method/limitations](candidate-best-response.md), journal step 18. Both figures
+  visually inspected. Stop before new features/training/global admission; next
+  proposed work examines reachable river response disagreements and range/card
+  removal distinctions. Final local/hosted checks are recorded separately on PR.
+  Personal hands-on time remains unrecorded.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are not recorded; actual process time will be recorded separately.
 

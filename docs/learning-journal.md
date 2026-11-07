@@ -34,7 +34,8 @@ in step 15 and read the result in step 16.
 The follow-up finds concrete decisions the old representation merges and tests
 one category-based replacement. It also fails the deeper-game accuracy limit.
 Step 17 explains the example, result and why the larger run stops there.
-Step 18 starts a direct best-response diagnosis of the saved failed strategy.
+Step 18 completes a best-response diagnosis: the saved candidate is nearly
+stable within its compressed game but remains vulnerable to exact information.
 
 You can read this in three sittings:
 
@@ -724,7 +725,7 @@ with [PR #14](https://github.com/jimmy-sim/poker-ai/pull/14).
 
 ## 18. Ask how a counterstrategy exploits the saved agent
 
-**November 7, 2026 — in progress.** The category experiment failed. Before
+**November 7, 2026 — completed diagnosis.** The category experiment failed. Before
 changing features again, this step will inspect the actual saved strategy.
 A **best response** is the strongest counterstrategy to a fixed opponent, using
 only the information its player is allowed to see.
@@ -744,15 +745,65 @@ caught a native-wrapper crash: the Python policy object had to stay alive while
 the C++ response calculator used it. That wrapper is fixed before any new
 research results are measured. The known Kuhn equilibrium gives zero loss, and
 brute-force Kuhn replies agree with the new response algorithm. Actual retained
-results are still pending at this code publication.
+results were still pending at that code publication.
+
+The completed diagnosis checks all eight saved cases. For the deeper game's
+category candidate:
+
+| What the response can use | Contribution to exploitability (% pot) |
+| --- | ---: |
+| Only the candidate's compressed descriptions | 0.000169 |
+| Additional value from seeing exact information | 2.593490 |
+| Total | 2.593658 |
+
+This means the saved strategy is close to an **equilibrium inside the compressed
+game**: if both players are forced to use those descriptions, neither can gain
+much by changing strategy. A player who can distinguish exact cards has much
+more opportunity. That points toward the information being discarded, instead
+of treating this as an obvious shortage of training iterations. It does not
+prove every strategy using this abstraction must have the same weakness.
+
+There is a useful surprise in the decision trace. Holding `Tc Td` on
+`Ts 9s 4d 2h`, the saved strategy almost always bets. The exact best response
+checks, because its later decisions can take advantage of the fixed opponent.
+This turn row has only one exact member: no turn situations were merged there.
+So “the loss appears on the turn” does not mean “add more turn features.”
+Earlier choices can gain value from better decisions later in the hand.
+
+All **32 response values and 32 own reply-profile values** pass the separate
+OpenSpiel checks, with disagreement below 0.0000000000001 chips; own replay
+error is zero. Each player's decision losses add up to its total gain, and
+half the two gains gives exploitability. The native comparison shares our game
+export and partition definitions; it does not independently prove those are
+correct or establish competitive Hold'em strength.
+
+Try the new inspector and graph:
+
+```sh
+.venv/bin/python scripts/inspect_saved_reply.py
+open results/saved-replies/report/response-values.png
+.venv/bin/python -m pytest -q tests/test_reply_diagnosis.py
+```
+
+The inspector is a saved research example, not an interactive match. “Responding
+seat 0” means it is exploiting the fixed seat 1 strategy. Its action values use
+best-response decisions later, so copying just its first action is not the whole
+counterstrategy. In the graph, blue is gain available within the descriptions;
+orange is extra value from exact information. Each panel uses its own scale.
+
+The previous failed gate stays failed; no new feature or training run follows
+this diagnosis. Read the [method and limits](candidate-best-response.md),
+[complete table and figures](../results/saved-replies/report/tables.md), and
+[PR #15](https://github.com/jimmy-sim/poker-ai/pull/15).
 
 ## What comes next
 
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
-question is which decisions an own best response exploits in the actual failed
-candidate. That should provide a more direct diagnosis than the frozen local
-proxy before another feature is selected. Declare any later candidate and limits
-before testing. Fresh/global work waits for accepted development results.
+question is which reachable river distinctions explain the exact-versus-compressed
+response differences, and how to preserve those distinctions without keeping
+every exact board. Card-removal and range information are worth investigating.
+Declare a replacement design and limits before testing; this diagnosis has not
+selected a feature. Fresh/global work waits for accepted development results.
 
 ## A small glossary
 
