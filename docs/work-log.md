@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Reachable river distinctions
+
+- **Request / issue:** Continue #4 with missing river distinctions; GitHub and
+  journal updates, then a bounded stopping point.
+- **Before outcomes:** Fix pinned own inputs, both prefix panels, river-only
+  F/G switches and loss accounting, strict reachable conflicts versus ties,
+  and three static rank/range probes. See
+  [river-distinction-diagnosis.md](river-distinction-diagnosis.md).
+- **Definition of done:** Tested diagnosis, all eight prior controls/two seats/
+  two panels, complete retained data, native own-profile root checks, concrete
+  examples and journal step 19. No new feature, training or global/default change.
+- **Status:** Protocol checkpoint; implementation/checks/results pending.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are unrecorded; process wall time will be recorded separately.
+
 ## 2026-11-07 — Best-response diagnosis of saved controls
 
 - **Scope / issue:** Continue #4 with exact versus same-partition responses and

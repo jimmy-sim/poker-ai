@@ -36,12 +36,13 @@ one category-based replacement. It also fails the deeper-game accuracy limit.
 Step 17 explains the example, result and why the larger run stops there.
 Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
+Step 19 investigates the missing river distinctions, without new training.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–18:** What the extensions and recent experiments taught us.
+- **Steps 10–19:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -802,6 +803,19 @@ The previous failed gate stays failed; no new feature or training run follows
 this diagnosis. Read the [method and limits](candidate-best-response.md),
 [complete table and figures](../results/saved-replies/report/tables.md), and
 [PR #15](https://github.com/jimmy-sim/poker-ai/pull/15).
+
+## 19. Find the river details the compressed strategy misses
+
+**November 7, 2026 — in progress.** The last diagnosis showed that exact
+information gives the counterstrategy much more opportunity. Now we will look
+at the river decisions themselves. We will hold earlier choices fixed, replace
+only river decisions, and check both the compressed and exact earlier choices.
+
+A **blocker** is a card you can see that prevents an opponent from holding a
+particular hand. We will investigate card removal, full hand rank and relative
+strength against the declared range. These are diagnostic probes, not new agent
+features or promises of stronger play. The [protocol](river-distinction-diagnosis.md)
+is published before outcomes. Actual checks and results are pending.
 
 ## What comes next
 
