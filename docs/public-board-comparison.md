@@ -38,11 +38,16 @@ The overshoot must be less than `2 * materialized_nodes`. Full-tree CFR+ control
 run at matched iterations, not the sampled work budget; their own work is shown.
 
 Profiles use fresh solvers at the first declared study seed, with 1,000 sampled
-iterations after initialization, repeated three times. They are discarded before
-learning starts. Profile work is separate; total study wall time includes setup,
+iterations after initialization, repeated three times. The published runner
+profiles each game/encoding immediately before that cell's learning, rather than
+collecting one all-controls profile batch up front. Each profile solver is
+discarded before that cell's learning starts; no outcome changes repetitions or
+budgets. Profile work is separate; total study wall time includes setup,
 profiling, optional JIT compilation and serialization. All cells use materialized
 trees and precomputed information keys. Thus traversal timings omit live card
 feature generation and do not establish global online inference speed.
+Brief base-environment software checks also overlap the early study. Timings are
+descriptive process measurements, not an isolated runtime benchmark.
 
 The complete exact control gate is checked before any later-stage admission.
 The development comparison still retains every configured control/seed when a
@@ -118,3 +123,22 @@ At runner publication, only tiny software fixtures have run. Full-study results,
 raw artifact links, actual runtimes, independent-check counts and interpretation
 will be added after the declared grid finishes. No new playing-strength or
 memory-saving claim is made at this stage.
+
+## How to read the eventual figures
+
+In `learning-work.png`, each colored line is a representation of the same game
+under the same learner, not a different opponent. The x-axis is charged work;
+the y-axis is exact-game exploitability divided by initial pot, so 0.01 means
+1% of pot. Lower is better. Lines show the three-seed median and shaded min/max,
+not confidence intervals. Encodings with the same outcome may overlap.
+
+`full-tree.png` separates full-tree controls from sampled learners. The dotted
+line is the exact full-control limit; the candidate's separate excess-over-exact
+criterion is in the table. `representation-size.png` separates UTF-8 key bytes
+from regret/average float bytes and excludes shared tree/container overhead.
+Fewer rows do not automatically mean fewer key bytes or lower total RSS.
+
+In `crossplay.png`, read the first policy on the row and its opponent on the
+column. Blue means positive seat-balanced EV for the row policy, red means
+negative, and white means near zero. The diagonal is zero by definition. A good
+matchup against one own policy does not prove low exploitability or global strength.

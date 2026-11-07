@@ -37,6 +37,13 @@ For a guided explanation of the ideas and results, start with the
   Correct the test to select NumPy; no learner/source/config/limit change. The
   all-extras local checks had hidden this fixture dependency. Retain the failed
   CI run and verify the base environment before advancing to result admission.
+- **Raw grid retained:** Clean training source `48051de` completed all 150 own
+  snapshots in 1205.044s, with all ten cells profiled three times. Source/input
+  hashes match at completion. Exact controls pass; the texture candidate's raw
+  learning gate fails on medium OOP despite meeting the compression requirement.
+  Publish complete raw evidence before native audit; interpretation remains
+  provisional until those independent checks finish. Test-only fix `3e1d374`
+  changes no captured source/script/config; its hosted CI passes both jobs.
 
 ## 2026-11-06 — Public-board protocol and correctness
 
