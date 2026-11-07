@@ -36,12 +36,14 @@ one category-based replacement. It also fails the deeper-game accuracy limit.
 Step 17 explains the example, result and why the larger run stops there.
 Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
+Step 19 finds missing relative-strength, blocker and action-conditioned range
+distinctions. It completes a diagnosis, without training a replacement.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–18:** What the extensions and recent experiments taught us.
+- **Steps 10–19:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -803,14 +805,87 @@ this diagnosis. Read the [method and limits](candidate-best-response.md),
 [complete table and figures](../results/saved-replies/report/tables.md), and
 [PR #15](https://github.com/jimmy-sim/poker-ai/pull/15).
 
+## 19. Find the river details the compressed strategy misses
+
+**November 7, 2026 — completed river diagnosis.** The last diagnosis showed that exact
+information gives the counterstrategy much more opportunity. Now we will look
+at the river decisions themselves. We will hold earlier choices fixed, replace
+only river decisions, and check both the compressed and exact earlier choices.
+
+A **blocker** is a card you can see that prevents an opponent from holding a
+particular hand. We will investigate card removal, full hand rank and relative
+strength against the declared range. These are diagnostic probes, not new agent
+features or promises of stronger play. The [protocol](river-distinction-diagnosis.md)
+is published before outcomes. The implementation passes 753 tests on each of
+Python 3.11/3.12, including 20 new checks. A separate base install passes 728 with
+16 optional checks skipped. Lint, formatting, strict typing and hooks pass.
+These checks establish software behavior; retained research results were pending
+at that code publication.
+
+The results identify three useful distinctions:
+
+1. **Strength relative to the opponent's range.** Pocket tens makes three of a
+   kind on either a king or jack river here. But the possible `Kh Qh` opponent
+   hand makes a straight on the jack. The saved exact reply calls one and folds
+   the other against the fixed opponent.
+2. **Card removal even with the same full house.** With `Tc Td` on
+   `Ts 9s 4d 2h`, either `9h` or `9d` makes tens full of nines. On `9h`, the
+   opponent can have `9c 9d` for quads. On `9d`, that hand is impossible because
+   the diamond nine is already on the board. The saved exact reply folds on
+   `9h` and calls on `9d`; the compressed reply calls both.
+3. **The range after observing betting.** Some rows still have different best
+   actions even when full own rank, possible opponent hands and their showdown
+   outcomes match. The opponent's betting gives those hands different weights.
+   Future betting behavior can matter too; this experiment does not isolate
+   those effects or explain why the saved opponent uses those frequencies.
+
+On the deeper game, after the exact earlier choices, there are **24 merged rows
+with strict reachable action conflicts** across both responding seats. Grouping
+by full own rank leaves 11 unresolved; compatibility alone leaves 14; the static
+range-outcome probe leaves 4. These are separate diagnostic probes, not trained
+agent upgrades. Removing a displayed conflict does not establish an EV gain.
+The simpler game's category candidate has zero such reachable conflicts.
+
+The earlier choices matter. Replacing only river decisions after the compressed
+response's earlier choices gains about **0.000014% of pot**. Replacing them after
+the exact response's earlier choices gains about **3.774592%**. These hold
+different paths fixed, so do not add them together. The second comparison also
+keeps the saved compressed river actions fixed, rather than fitting new ones.
+This explains why the previous trace could assign a large opportunity to a turn
+decision even though the exploitable distinction appears later.
+
+All eight cases, both seats and both prefixes are retained. All **64 own hybrid
+profile values** pass the native OpenSpiel check; maximum disagreement is below
+0.0000000000001 chips and own replay error is zero. That checks the calculations
+on our exported game mechanics. It does not prove an independently correct whole
+engine or competitive Hold'em strength.
+
+Inspect the same-full-house blocker example and the probe-count graph:
+
+```sh
+.venv/bin/python scripts/inspect_river_distinction.py --rank 2
+open results/river-distinctions/report/probe-conflicts.png
+.venv/bin/python -m pytest -q tests/test_river_distinctions.py
+```
+
+The graph's blue and orange bars hold the compressed and exact earlier choices
+fixed, respectively. Each probe is tried separately on the same saved data. The
+left panel is blank because all its conflict counts are zero. These colors have
+a different meaning from the previous chapter's exploitability decomposition.
+
+Read the [method, examples and limits](river-distinction-diagnosis.md),
+[complete tables](../results/river-distinctions/report/tables.md), and
+[PR #16](https://github.com/jimmy-sim/poker-ai/pull/16). We stop here: no feature
+has been selected, trained or deployed, and the earlier failed gate is preserved.
+
 ## What comes next
 
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
-question is which reachable river distinctions explain the exact-versus-compressed
-response differences, and how to preserve those distinctions without keeping
-every exact board. Card-removal and range information are worth investigating.
-Declare a replacement design and limits before testing; this diagnosis has not
-selected a feature. Fresh/global work waits for accepted development results.
+question is how to preserve the measured blocker/range distinctions in a useful
+representation. Declare one candidate, its access to declared ranges and its
+acceptance limits before testing. Features tailored to these tiny known ranges
+would need explicit generalization checks. Fresh/global work still waits for
+accepted development results.
 
 ## A small glossary
 

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "input_report": "results/saved-replies/diagnosis.json",
+  "input_report_sha256": "a0f85755141d3d4a5358f1efaf1d54c67eaa1932257c1b0230acaab100afd9e1",
+  "input_details_sha256": "6f0b9d5f5d749f9ca8966b0208d8906c4b824527d1e9e3b3edae3b0a27c97284",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8"
+  ],
+  "prefix_panels": [
+    "restricted_prefix",
+    "exact_prefix"
+  ],
+  "probes": [
+    "own_rank",
+    "range_compatibility",
+    "range_relations"
+  ],
+  "top_groups": 8,
+  "examples_per_group": 4,
+  "tolerance_chips": 1e-09,
+  "scope": "post-hoc river diagnosis of fixed own replies; no new feature, training or fresh/global admission"
+}

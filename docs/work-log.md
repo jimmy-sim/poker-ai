@@ -13,6 +13,48 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Reachable river distinctions
+
+- **Request / issue:** Continue #4 with missing river distinctions; GitHub and
+  journal updates, then a bounded stopping point.
+- **Before outcomes:** Fix pinned own inputs, both prefix panels, river-only
+  F/G switches and loss accounting, strict reachable conflicts versus ties,
+  and three static rank/range probes. See
+  [river-distinction-diagnosis.md](river-distinction-diagnosis.md).
+- **Definition of done:** Tested diagnosis, all eight prior controls/two seats/
+  two panels, complete retained data, native own-profile root checks, concrete
+  examples and journal step 19. No new feature, training or global/default change.
+- **Implementation checks:** 753 all-extras tests pass on Python 3.11.17 and
+  3.12.15, including 20 new river checks; base-only checks pass 728 with 16
+  optional skips. Ruff lint/format, strict typing and hooks pass. Tiny fixtures
+  cover prefix/sign/hidden-state accounting, probe invariance, receipt guards,
+  native values, figures and inspector. Prior source/model/learner bytes unchanged.
+- **Raw diagnosis retained:** Clean published `bb5f2cc` completes all eight
+  cases in 8.670s. On medium category, responding seat 0's river-only gain is
+  0.000006572 chips after the restricted prefix versus 2.717703 chips after the
+  exact prefix. Preserve both panels; these are different conditional switches,
+  not additive gains. Exact-prefix strict conflicts total 24 across seats;
+  static range relations leave 4 original rows unresolved. Concrete examples
+  include trips facing straight-making rivers and same-rank card removal.
+- **Audit / completed finding:** All 64 own F/G root values pass native
+  OpenSpiel expected returns (maximum error 9.94760e-14 chips); own replay zero.
+  Audit including replay takes 10.630s. All 32 panel accounting identities pass.
+  Medium category exact-prefix conflicts: 24 before probes, 11 after full rank,
+  14 after compatibility, 4 after range relations. Restricted-prefix counts are
+  19/10/8/4. These are structural counts, not trained-feature gains.
+- **Concrete evidence:** Same tens-full-of-nines rank on `9h` versus `9d`, but
+  `9d` blocks the declared `9c 9d` quads combo. Some remaining conflicts show
+  different action-conditioned opponent weights despite identical static probes;
+  causal belief/future-policy contributions were not separately ablated.
+- **Evidence / stopping point:** [PR #16](https://github.com/jimmy-sim/poker-ai/pull/16),
+  [tables/two figures](../results/river-distinctions/report/tables.md),
+  [method/limits](river-distinction-diagnosis.md), journal step 19. Figures visually
+  inspected. No feature selection/training/default or global admission change.
+  Next proposed block declares one representation and admission design; dependence
+  on the known tiny ranges must be explicit. Final hosted CI is reported on PR.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are unrecorded; process wall time will be recorded separately.
+
 ## 2026-11-07 — Best-response diagnosis of saved controls
 
 - **Scope / issue:** Continue #4 with exact versus same-partition responses and

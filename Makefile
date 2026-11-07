@@ -1,3 +1,14 @@
+RIVER_DISTINCTION_OUTPUT ?= results/runs/river-distinctions
+
+.PHONY: diagnose-river-distinctions report-river-distinctions
+diagnose-river-distinctions:
+	$(UV) run --locked python scripts/diagnose_river_distinctions.py --output "$(RIVER_DISTINCTION_OUTPUT)/diagnosis.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_river_distinctions.py --report "$(RIVER_DISTINCTION_OUTPUT)/diagnosis.json" --output "$(RIVER_DISTINCTION_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_river_distinctions.py --report "$(RIVER_DISTINCTION_OUTPUT)/diagnosis.json" --audit "$(RIVER_DISTINCTION_OUTPUT)/independent.json" --output "$(RIVER_DISTINCTION_OUTPUT)/report"
+
+report-river-distinctions:
+	$(UV) run --locked --extra research python scripts/report_river_distinctions.py
+
 SAVED_REPLY_OUTPUT ?= results/runs/saved-replies
 
 .PHONY: diagnose-saved-replies report-saved-replies
