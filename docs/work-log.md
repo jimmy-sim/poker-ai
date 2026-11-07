@@ -32,6 +32,11 @@ For a guided explanation of the ideas and results, start with the
 - **Status:** Publishing checked runner code before training; actual study,
   audit and result interpretation are pending at this entry's first publication.
   No fresh cases or global training in this block.
+- **Hosted fixture failure:** Initial CI on `48051de` fails because the timeout
+  unit fixture inherits the optional JIT backend in a base-only environment.
+  Correct the test to select NumPy; no learner/source/config/limit change. The
+  all-extras local checks had hidden this fixture dependency. Retain the failed
+  CI run and verify the base environment before advancing to result admission.
 
 ## 2026-11-06 — Public-board protocol and correctness
 

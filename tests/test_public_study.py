@@ -258,6 +258,7 @@ def test_budget_abort_is_retained_and_never_accepted(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     raw = config()
+    raw["full_tree_backend"] = "numpy"
     raw["maximum_seconds"] = 1e-12
     cfg = tmp_path / "config.json"
     cfg.write_text(json.dumps(raw))
