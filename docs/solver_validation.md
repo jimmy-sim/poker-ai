@@ -84,6 +84,11 @@ OpenSpiel's native library is a comparison reference, not a replacement for the
 own Python mechanics/training core. TexasSolver and postflop-solver were not used.
 No Gambit implementation is used; EFG is the interchange format only.
 
+November 6, issue #4: the full installed OpenSpiel 2.0.2 Apache-2.0 license was
+read again before the [public-board comparison](public-board-comparison.md).
+Its native expected-return/best-response functions check frozen own policies and
+cross-play only; the new learner never loads reference outputs.
+
 No PioSOLVER, GTO Wizard or other commercial solver data are imported, copied or
 used for training. Production `agents`, `training` and `abstraction` packages do
 not import the comparison package/OpenSpiel; an AST test enforces that import

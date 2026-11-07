@@ -13,6 +13,26 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-06 — Public-board fixed-work comparison
+
+- **Request / scope:** Continue issue #4 with the unchanged fixed-work protocol,
+  GitHub publication, journal updates and a bounded stopping point.
+- **Before full outcomes:** Implement runner, collision/work/coverage checks,
+  checkpoint replay, native frozen-policy/cross-play audit and offline figures.
+  Clarify measurement conventions in
+  [public-board-comparison.md](public-board-comparison.md) without changing the
+  preregistered config. Tiny test fixtures are not development evidence.
+- **Assistance / time:** Codex implements and executes this block. Developer
+  hands-on time is not recorded; study runtime is recorded separately.
+- **Checks before outcomes:** `make check` passes on Python 3.11.17/3.12.15
+  with all optional extras: 676 tests each, lint/format and strict mypy. The 26
+  new tests include native checks of a tiny fixture's 20 policies/100 profiles,
+  coverage/work/receipt replay, missing-grid rejection and negative-gate retention.
+  These fixture outcomes are software checks, not development results.
+- **Status:** Publishing checked runner code before training; actual study,
+  audit and result interpretation are pending at this entry's first publication.
+  No fresh cases or global training in this block.
+
 ## 2026-11-06 — Public-board protocol and correctness
 
 - **Scope / PR:** Resumed [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4),

@@ -2,9 +2,13 @@
 
 Issue [#4](https://github.com/jimmy-sim/poker-ai/issues/4) asks whether the learner
 can remember useful board information while sharing strategy rows across boards.
-This protocol is declared before new representation-learning outcomes. The
-[config](../configs/public-board-study.json) is prospective, not a result or an
-implemented end-to-end experiment command.
+This protocol was declared before new representation-learning outcomes. The
+[config](../configs/public-board-study.json) fixes the design; execution status
+and results are recorded separately.
+
+The subsequent [fixed-work execution block](public-board-comparison.md) follows
+this unchanged protocol and records its runner, checks and eventual outcomes.
+The scope and result below describe the completed PR #12 correctness block.
 
 ## This block's definition of done
 

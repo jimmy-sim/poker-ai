@@ -26,14 +26,15 @@ and the ordinary default stays in place.
 
 On November 6, issue #4 adds tested, optional ways to describe the public board.
 One removes arbitrary suit names; another groups boards by coarse features.
-The learning comparison is planned with fixed limits but has not run. You can
-inspect those features with a terminal command in step 15.
+The fixed-work comparison is now being implemented under the published limits;
+full-study outcomes are pending. You can inspect those features with a terminal
+command in step 15 and follow the comparison in step 16.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–15:** What the extensions and recent experiments taught us.
+- **Steps 10–16:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -541,6 +542,38 @@ every result. The candidate must meet both accuracy and compression limits befor
 any new fresh-case stage. Read the [protocol and limits](public-board-abstraction.md)
 and [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4). The code and checks
 are published in [PR #12](https://github.com/jimmy-sim/poker-ai/pull/12).
+
+## 16. Compare the board descriptions at the same work budget
+
+**November 6, 2026 — fixed-work comparison, in progress.** We now need to measure
+whether the new description helps learning and whether it actually saves space.
+Correctness tests answered whether it follows its rules, not whether it is useful.
+
+**Illustrative example:** Two learners both run 1,000 iterations, but one visits
+twice as many game states each time. Those iteration counts do not represent the
+same work. Here we count visited states plus the cost assigned to initialization,
+and compare at the same declared work checkpoints. Both learners finish their
+current update before stopping; we keep any small overshoot in the report.
+
+The runner keeps every configured strategy, including bad ones. It separately
+records rows that received an initial calculation and rows later visited by
+sampling. It also checks **collisions**: different boards or private hands that
+share a strategy row. A collision saves rows, but it may force a harmful compromise.
+
+After training, the independent checker evaluates the saved strategies. **Cross-play**
+means having two frozen strategies face each other; we exchange their seats to
+account for position. All final pairings are kept, including self-play. A
+strategy's seat-balanced advantage against itself is zero by definition; that
+alone says nothing about how strong it is.
+
+At this entry's first publication, only tiny software fixtures have run. Local
+checks pass with 676 tests on Python 3.11 and 3.12, including 26 new runner/audit
+tests. The native checker agrees on the fixture's 20 strategies and 100 matchups;
+those small fixtures do not measure the new representations' usefulness. The full
+study and interpretation will be added after completion. The
+published candidate and pass/fail limits remain unchanged. No new global agent
+or fresh test cases are being trained in this block. Read the
+[execution details](public-board-comparison.md).
 
 ## What comes next
 

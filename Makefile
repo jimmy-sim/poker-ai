@@ -1,6 +1,19 @@
 UV ?= uv
 RIVER_OUTPUT ?= results/runs/river-integration-reproduction
 FRESH_OUTPUT ?= results/runs/fresh-validation-reproduction
+PUBLIC_BOARD_OUTPUT ?= results/runs/public-board-reproduction
+
+.PHONY: study-public-boards report-public-boards
+
+# Clean published source required. A complete negative gate is retained/reported.
+study-public-boards:
+	$(UV) run --locked --extra jit python scripts/study_public_boards.py --output "$(PUBLIC_BOARD_OUTPUT)/study.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_public_boards.py --report "$(PUBLIC_BOARD_OUTPUT)/study.json" --output "$(PUBLIC_BOARD_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_public_boards.py --report "$(PUBLIC_BOARD_OUTPUT)/study.json" --audit "$(PUBLIC_BOARD_OUTPUT)/independent.json" --output "$(PUBLIC_BOARD_OUTPUT)/report"
+
+# Only own frozen-policy replay plus previously recorded native checks.
+report-public-boards:
+	$(UV) run --locked --extra research python scripts/report_public_boards.py
 
 .PHONY: fresh-admission validate-fresh-games report-fresh-games
 
