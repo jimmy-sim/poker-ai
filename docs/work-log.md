@@ -13,6 +13,22 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Range-mass candidate protocol and correctness
+
+- **Request / issue:** Continue #4 by defining the next blocker/range-aware
+  representation and acceptance tests, then stop at the protocol/correctness gate.
+- **Prospective choice:** One `texture_range_q8_b8` candidate: existing private
+  buckets/texture/category history plus river blocked/loss/tie/win masses against
+  a fixed declared prior, pooled and quantized into eight intervals. Context-bound
+  keys; no actual hidden hand, future card, betting posterior or solver output.
+- **Before outcomes:** Publish [definition/limits](range-mass-representation.md)
+  and pinned config before implementation/partition measurement. Keep prior full
+  and sampled accuracy/compression/work limits. No learning/compression study,
+  fresh/global stage, default change or deployable checkpoint in this block.
+- **Status:** Protocol checkpoint; implementation and checks pending.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are unrecorded; no training wall time exists for this milestone.
+
 ## 2026-11-07 — Reachable river distinctions
 
 - **Request / issue:** Continue #4 with missing river distinctions; GitHub and

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_correctness_only",
+  "candidate": "texture_range_q8_b8",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8",
+    "texture_range_q8_b8"
+  ],
+  "feature_version": "river-range-mass-q8-v1",
+  "mass_intervals": 8,
+  "feature_order": [
+    "blocked",
+    "loss",
+    "tie",
+    "win"
+  ],
+  "range_semantics": "fixed declared prior; unconditional normalized mass; no betting posterior",
+  "feature_streets": [
+    5
+  ],
+  "model": "results/card-models/potential-8.json",
+  "model_sha256": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "spot_sha256": {
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad"
+  },
+  "motivation_file": "results/river-distinctions/diagnosis.json",
+  "motivation_sha256": "958ad3fd38e742779f973345028c6e165c4eef6ddd401a6020ea5d33a2bb3b79",
+  "full_tree_backend": "fused_numba",
+  "full_tree_checkpoints": [
+    1,
+    16,
+    64,
+    256,
+    1024,
+    4096
+  ],
+  "maximum_full_seconds": 900,
+  "maximum_tree_nodes": 200000,
+  "full_limits": {
+    "exact_full_exploitability_pot": 0.001,
+    "candidate_full_excess_pot": 0.005,
+    "candidate_information_sets_relative_to_public_b8": 0.75,
+    "minimum_uniform_reach_average_coverage": 0.95,
+    "maximum_recall_violations": 0,
+    "independent_tolerance_chips": 1e-09
+  },
+  "later_sampled": {
+    "status": "not_run",
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ],
+    "node_work_checkpoints": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "sampling": "ordinary_external",
+    "weighting": "linear",
+    "initial_exact_expectation": true,
+    "median_exploitability_pot_limit": 0.01,
+    "worst_exploitability_pot_limit": 0.025,
+    "maximum_seconds": 7200,
+    "profile_iterations": 1000,
+    "profile_repetitions": 3,
+    "work_accounting": "actual node visits plus one exact initialization; one complete iteration overshoot allowed"
+  },
+  "scope": "definition/correctness only; no learning or compression results; neither fresh/global admission nor default change"
+}

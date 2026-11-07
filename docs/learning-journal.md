@@ -38,12 +38,13 @@ Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
 Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
+Step 20 defines the next candidate and its tests; learning results are pending.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–19:** What the extensions and recent experiments taught us.
+- **Steps 10–20:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -877,6 +878,20 @@ Read the [method, examples and limits](river-distinction-diagnosis.md),
 [complete tables](../results/river-distinctions/report/tables.md), and
 [PR #16](https://github.com/jimmy-sim/poker-ai/pull/16). We stop here: no feature
 has been selected, trained or deployed, and the earlier failed gate is preserved.
+
+## 20. Define a small blocker/range-aware description
+
+**November 7, 2026 — in progress.** The next candidate will add a river summary
+of how much of the declared opponent range is blocked, beats your hand, ties it,
+or loses to it. It keeps the existing buckets, board texture and hand categories.
+The four amounts are grouped into fixed intervals; no exact opponent deal or
+saved strategy is supplied to the feature.
+
+The range is a fixed assumption from the spot config. It does not change after
+bets, so this candidate does not solve the remaining conditional-range problem.
+The [definition and acceptance protocol](range-mass-representation.md) are
+published before implementation or performance outcomes. This milestone will
+build correctness tests and an inspector, then stop before training.
 
 ## What comes next
 
