@@ -334,7 +334,8 @@ def assess_sampled_metrics(
             if type(row[key]) is not int or row[key] < 0:
                 raise ValueError("invalid sampled work/recall count")
         work_ok = work_ok and (
-            row["initialization_node_work"]
+            0
+            < row["initialization_node_work"]
             <= row["previous_node_work"]
             < row["node_work_checkpoint"]
             <= row["total_node_work"]

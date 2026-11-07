@@ -266,6 +266,7 @@ def test_sampled_boundary_and_full_stage_precondition(
         "recall",
         "method",
         "initialization",
+        "zero_initialization_work",
         "overshoot",
         "work_below_checkpoint",
         "context",
@@ -312,6 +313,8 @@ def test_sampled_contract_cannot_cherry_pick_or_skip_checks(
         target["weighting"] = "uniform"
     elif change == "initialization":
         target["initial_exact_expectation"] = False
+    elif change == "zero_initialization_work":
+        target["initialization_node_work"] = 0
     elif change == "overshoot":
         target["previous_node_work"] = target["node_work_checkpoint"]
     elif change == "work_below_checkpoint":

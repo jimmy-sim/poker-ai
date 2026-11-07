@@ -29,13 +29,17 @@ For a guided explanation of the ideas and results, start with the
   inspector and pure full/sampled metric contracts. Exact rational mass bins;
   unsupported-view and serialization guards. Existing source/model/evidence
   bytes remain unchanged. No learning/compression result or deployable artifact.
-- **Verification:** 819 all-extras tests pass on Python 3.11.17/3.12.15, including
-  66 new feature/privacy/recall/context/metric-contract tests; base-only checks
-  pass 794 with 16 optional skips. Ruff lint/format, strict typing and hooks pass.
+- **Verification:** 820 all-extras tests pass on Python 3.11.17/3.12.15, including
+  67 new feature/privacy/recall/context/metric-contract tests; base-only checks
+  pass 795 with 16 optional skips. Ruff lint/format, strict typing and hooks pass.
   Synthetic metric fixtures are not performance evidence. The reused base/3.12
   environments initially imported older worktrees via duplicate editable `.pth`
   entries; remove only those verified stale paths, confirm the current package,
   and rerun checks. No code/threshold change resolves that environment issue.
+- **Final review:** Add the explicit positive initialization-work requirement
+  and its negative test; a true initialization flag with zero recorded work
+  cannot pass. Rerun all three environments successfully before publication.
+  No experiment or acceptance limit is changed by this contract correction.
 - **Demonstration:** `inspect_range_feature.py 9h` versus `9d` separates the
   published full-house blocker using `(0,4,0,4)` versus `(4,0,0,4)` prior-mass
   bins. Current priors do not use betting-conditioned weights; the known static

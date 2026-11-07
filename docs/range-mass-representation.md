@@ -123,7 +123,8 @@ policy receipt hashes and cross-play. Passing rules cannot be relaxed afterward.
 
 The pure sampled-threshold assessor is also tested with synthetic grids and
 requires a passing full-stage metric assessment for the same protocol/contexts.
-Numeric receipt checks require full work `2 * iteration * tree_nodes`; sampled
+Numeric receipt checks reject zero initialization work even with the initialization
+flag enabled. Full work must equal `2 * iteration * tree_nodes`; sampled
 work must cross the requested budget in exactly one recorded complete iteration,
 with initialization included. Method/weighting/initialization flags, zero recall,
 all final-control coverage and total stage runtime caps are checked. These
@@ -160,9 +161,9 @@ study inputs remain byte-identical; new research modules are added separately.
 The range-aware subclass refuses global save/load operations that could discard
 its context. No deployable strategy or admission runner is introduced.
 
-Actual local verification with all extras passes **819 tests on Python 3.11.17**
-and **819 on Python 3.12.15**, including **66 new focused tests**. A separate
-base-only install passes **794 tests with 16 optional skips**. Ruff lint/format,
+Actual local verification with all extras passes **820 tests on Python 3.11.17**
+and **820 on Python 3.12.15**, including **67 new focused tests**. A separate
+base-only install passes **795 tests with 16 optional skips**. Ruff lint/format,
 strict mypy and hooks pass. The reused base/3.12 environments initially contained
 duplicate editable-path files pointing at older worktrees, causing collection
 errors. Removing the verified stale entries restored the intended package path;

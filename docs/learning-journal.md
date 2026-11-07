@@ -920,12 +920,13 @@ coverage/recall/independent-audit checks. Only then may it enter the later sampl
 comparison, whose final median/worst limits remain 1%/2.5% of pot. A good result
 on one game cannot hide a failure on the other.
 
-There are **66 new correctness and contract tests**. They check examples, hidden
+There are **67 new correctness and contract tests**. They check examples, hidden
 information, memory of earlier observations, exact bin boundaries, context
 binding and failure cases in the acceptance rules. Their hypothetical metrics
-are explicitly synthetic. The full local suite passes **819 tests on each of
+are explicitly synthetic. They also reject a record claiming initialization
+while counting zero initialization work. The full local suite passes **820 tests on each of
 Python 3.11/3.12**, plus lint, formatting, strict typing and hooks. A base install
-passes 794 with 16 optional skips. Duplicate test-environment path files first
+passes 795 with 16 optional skips. Duplicate test-environment path files first
 pointed at older worktrees; repairing those paths and rerunning resolved the
 collection failures without changing the feature or its limits.
 
