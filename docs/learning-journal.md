@@ -777,6 +777,13 @@ half the two gains gives exploitability. The native comparison shares our game
 export and partition definitions; it does not independently prove those are
 correct or establish competitive Hold'em strength.
 
+GitHub then caught an optional Matplotlib typing issue in the new report module
+that the environments with all extras had missed. Lazy optional imports fixed
+it; a separate base install passes 709 tests with 15 optional skips. The first
+receipts are preserved. A clean rerun reproduces all eight cases exactly and
+produces a byte-identical reply-data file. This software correction did not
+change the experiment's conclusion.
+
 Try the new inspector and graph:
 
 ```sh

@@ -127,10 +127,9 @@ No new retained-case performance outcome exists at this implementation checkpoin
 
 ## Completed diagnosis
 
-Clean source `6699f4c3849994893f97ee3f3b2fd81220995591` completes all eight
-saved cases in 4.223s. The native audit starts from clean
-`6a03e14465f13141e1dbc2c7cb844d19e997fbda` and takes 8.773s including own
-replay. All **32 response roots and 32 own reply-profile values** pass; maximum
+Final clean source `e3ab00097b78c7ca76f526885cab1ff03789ddcb` completes all
+eight saved cases in 4.163s. The native audit uses the same clean revision and
+takes 8.481s including own replay. All **32 response roots and 32 own reply-profile values** pass; maximum
 native disagreement is 9.94760e-14 chips. Full own numerical replay error is zero.
 All per-seat decision-loss sums and the exploitability decomposition pass the
 fixed 1e-9 chip tolerance. OpenSpiel is 2.0.2 / Apache-2.0; shared export and
@@ -217,6 +216,22 @@ optional imports as existing reporters. Preserve the first raw diagnosis,
 sidecar and native audit in `results/saved-replies-initial/`. Their captured
 source hashes require historical revision `6699f4c` (diagnosis) / `6a03e14`
 (audit); they are receipts, not inputs to training or the final diagnosis.
-A fresh clean-source run and native audit will follow the checked import fix.
-`scripts/check_saved_reply_reproduction.py` will compare all nested case fields,
-including examples. Final reproduction/check status is pending at this checkpoint.
+After the checked import fix, the clean-source run and native audit both pass.
+`scripts/check_saved_reply_reproduction.py` confirms all eight nested cases,
+including examples, are numerically identical; the full own-reply/all-info
+sidecar is byte-identical. [Reproduction receipt](../results/saved-replies/reproduction.json).
+The native-root receipt guard also rejects a changed root even when a stored
+error field still claims zero. The 21 focused tests pass on both versions after
+that guard; full all-extras checks pass 733 each, and a separate base install
+passes 709 with 15 optional skips. Ruff, strict typing and hooks pass. Hosted CI
+for the final head is recorded separately on PR #15.
+
+To repeat the comparison of the retained receipts:
+
+```sh
+.venv/bin/python scripts/check_saved_reply_reproduction.py --output /tmp/saved-reply-reproduction.json
+```
+
+The source/environment/timing receipts differ as expected; they are excluded
+from the numerical equality claim. The original run took 4.223s and its audit
+8.773s; these are process wall times, not personal hours.

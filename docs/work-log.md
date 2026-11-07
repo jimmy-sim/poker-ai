@@ -54,7 +54,14 @@ For a guided explanation of the ideas and results, start with the
   Base checks pass: 709 tests, 15 optional skips, lint/format/strict typing/hooks.
   All-extras suites again pass 733 on both versions. Add a native-root receipt
   consistency guard and check its mutation fixture on both versions. Final clean
-  reproduction/CI remains pending at this checkpoint.
+  reproduction/CI were pending at that checkpoint.
+- **Final clean reproduction:** Source `e3ab000` completes all eight cases in
+  4.163s and native audit including replay in 8.481s, both from clean source.
+  All nested cases are numerically identical to the preserved initial run;
+  full own-reply/all-info sidecar is byte-identical. All 32 native roots and
+  32 own profile values pass again with the same maximum error; own replay zero.
+  [Reproduction receipt](../results/saved-replies/reproduction.json). No feature,
+  input, failed limit or training outcome was changed by the software fix.
 - **Evidence / stopping point:** [PR #15](https://github.com/jimmy-sim/poker-ai/pull/15),
   [tables/two figures](../results/saved-replies/report/tables.md),
   [method/limitations](candidate-best-response.md), journal step 18. Both figures
