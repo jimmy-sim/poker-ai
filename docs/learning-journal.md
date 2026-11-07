@@ -24,11 +24,16 @@ outcomes were measured. This is progress in validating the method; each game
 received its own training. The earlier river-integration result remains mixed,
 and the ordinary default stays in place.
 
+On November 6, issue #4 adds tested, optional ways to describe the public board.
+One removes arbitrary suit names; another groups boards by coarse features.
+The learning comparison is planned with fixed limits but has not run. You can
+inspect those features with a terminal command in step 15.
+
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–14:** What the extensions and recent experiments taught us.
+- **Steps 10–15:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -482,6 +487,60 @@ limit. The shaded range spans three seeds and is not a confidence interval.
 Read more: [method, exact case inputs and results](fresh-validation.md),
 [complete table](../results/fresh-validation/report/tables.md), and
 [PR #11](https://github.com/jimmy-sim/poker-ai/pull/11).
+
+## 15. Describe the board without storing every physical board
+
+**November 6, 2026 — protocol and correctness milestone.** The question is whether
+we can share strategy rows across boards without losing too much useful
+information. A **strategy row** stores the probabilities of the available moves
+at one kind of decision. More distinct rows mean more memory and more decisions
+that training needs to visit.
+
+Issue #4 adds two optional descriptions. The first removes suit names while
+preserving public ranks and suit relationships: changing every heart to a spade
+and every spade to a heart should not change the game's meaning. The second,
+called **texture**, groups boards by features such as pairs, suit counts, high
+cards and straight connectivity. It remembers a separate description of each
+street already seen.
+
+**Illustrative example:** `2c 3d 7h` and `3c 4d 8h` share a coarse texture. Both
+have three different ranks, three different suits, no ten-or-higher card, no ace,
+and at most two ranks in a five-rank straight window. Their exact ranks differ.
+Grouping them may save rows, but may also force different situations to share a
+bad compromise. The tests do not tell us whether that tradeoff helps learning.
+
+The software tests check that equivalent suit names/flop orders behave alike,
+actual hidden cards cannot enter the key, earlier streets stay remembered, and
+the small game's legal actions and abstract memory remain consistent. The
+existing three representations are retained. No default agent behavior changes.
+
+A full check also exposed the old study's source guard: it correctly rejects the
+new code as different from its frozen revision. The archived manifest remains
+unchanged; historical reproduction needs its recorded checkout. Unit-test
+fixtures are explicitly separate from archived admission evidence.
+
+**Actual checks:** 29 new board/inspection tests, plus the historical source-guard
+regression. Full-suite and hosted checks are recorded in the
+[protocol's verification](public-board-abstraction.md#verification-and-remaining-work)
+and linked PR. There is no new training or measured strength improvement here.
+
+To explore the new description from the ordinary Terminal prompt, run:
+
+```sh
+.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d
+```
+
+It prints the original board, a suit-renamed equivalent, and features for the
+flop, turn and river. The board's suit counts go from `[2,1,0,0]` to `[3,1,0,0]`
+to `[3,2,0,0]`; its river rank counts begin with `2` because the sevens pair.
+The renamed board is an encoding, not a new deal. This command inspects features;
+it does not play a bot or recommend a move.
+
+**Next decision:** Run the preregistered comparisons at equal work, retaining
+every result. The candidate must meet both accuracy and compression limits before
+any new fresh-case stage. Read the [protocol and limits](public-board-abstraction.md)
+and [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4). The code and checks
+are published in [PR #12](https://github.com/jimmy-sim/poker-ai/pull/12).
 
 ## What comes next
 

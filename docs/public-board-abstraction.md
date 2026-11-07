@@ -40,6 +40,10 @@ cards (the flop) are sorted; turn and river remain in reveal order. One global
 renaming applies to the whole observed board. This preserves all public card
 information except arbitrary suit names and flop deal order. It does not preserve
 the exact relationship to private-card suits beyond the existing private bucket.
+This is a card-encoding symmetry, not a claim that all merged decisions are
+strategically equivalent: fixed asymmetric physical ranges would also need the
+same global renaming to preserve a whole game's meaning. The bounded comparison
+must measure that possible loss rather than assume canonical keys are exact.
 
 The texture candidate stores these features for each available prefix of lengths
 3, 4 and 5 (preflop has an empty sequence):
@@ -110,7 +114,41 @@ after this change is expected; it must not be bypassed or relabeled as new evide
 
 ## Verification and remaining work
 
-Implementation, actual checks and publication evidence will be recorded below.
-No new abstraction learning/compression outcome has been measured at protocol
-publication. Next: implement the two keys and correctness tests, then stop at
-that reviewable milestone before the fixed-work runner.
+Protocol commit `d120490` was published before implementation/outcomes.
+[PR #12](https://github.com/jimmy-sim/poker-ai/pull/12) implements both opt-in keys
+and the board inspector. The 29 new tests cover card validation, all 24 suit
+renamings, flop permutations, prefix retention, actual hidden-opponent/future
+invariance, old key compatibility and both development games' menus/recall.
+A separate regression confirms the archived source freeze rejects changed code.
+Matching-source gate unit tests use explicitly labeled in-memory metadata
+fixtures; no archived report, manifest or admission receipt is changed.
+
+`make check` passes locally with **650 tests** on Python 3.11.17 and 3.12.15,
+including all locked optional extras, Ruff and strict mypy. Hosted CI is reported
+separately on the PR. The initial full-suite run failed on the old positive
+historical-admission test; preserving the production rejection and separating its
+test fixture resolves that failure. No gate or performance threshold was relaxed.
+
+Try the read-only inspector or focused tests from the repository root:
+
+```sh
+.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d
+.venv/bin/python -m pytest -q tests/test_public_board.py
+```
+
+No learning/compression experiment has run, no global default changes, and issue
+#4 remains open. Next milestone: implement and audit the configured fixed-work
+comparison, retaining negative outcomes. Do not use these checks as evidence of
+stronger play or measured memory savings.
+
+## Questions to practice
+
+1. **Why remember every street's features?** A final board feature can merge two
+   different turn situations. Keeping the prefix sequence preserves what the
+   player knew earlier at the abstract level.
+2. **Does canonicalizing suits make the representation exact?** Only the public
+   card encoding is preserved up to renaming. Private buckets and asymmetric
+   fixed ranges can still make merged decisions strategically different.
+3. **How will we decide whether texture helps?** Compare every fixed control at
+   matched work and require both the preregistered accuracy and compression
+   limits. Correctness tests alone do not answer that question.

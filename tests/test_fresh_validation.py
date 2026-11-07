@@ -12,6 +12,7 @@ import pytest
 from poker_ai.postflop import fresh_cohort as cohort
 from poker_ai.postflop import fresh_learning as learning
 from poker_ai.postflop.game import load_spot
+from poker_ai.postflop.river_artifacts import checked_artifacts
 from poker_ai.postflop.river_study import digest
 from poker_ai.postflop.tree import SpotTree
 
@@ -118,16 +119,35 @@ def gate_context(
         cohort, "verify_freeze", lambda *args: (raw, {"source_sha256": {}})
     )
     monkeypatch.setattr(cohort, "require_published_freeze", lambda *args: None)
+    # Test-only matching-source fixture: archived evidence must reject later
+    # source changes in production. Keep real artifact checks/policy replay, but
+    # substitute current learning hashes IN MEMORY for isolated gate unit tests.
+    # Never write these fixture hashes into the archived report or its freeze.
+    checked = checked_artifacts
+    matching = {p: digest(ROOT / p) for p in cohort.learning_paths(ROOT)}
+
+    def fixture_artifacts(p: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+        report, policies = checked(p)
+        report["source"]["sha256"].update(matching)
+        return report, policies
+
+    monkeypatch.setattr(cohort, "checked_artifacts", fixture_artifacts)
     return raw, path
 
 
-def test_actual_development_evidence_admits_unchanged_procedure(
+def test_matching_source_fixture_admits_archived_policies(
     gate_context: tuple[dict[str, Any], Path],
 ) -> None:
     _, path = gate_context
     receipt = cohort.development_gate(ROOT, path)
     assert receipt["status"] == "passed" and receipt["replayed_final_policies"] == 16
     assert receipt["maximum_replay_error_chips"] <= 1e-9
+
+
+def test_archived_freeze_rejects_current_changed_source() -> None:
+    # This manifest remains historical; do not reseal it for issue #4 code.
+    with pytest.raises(ArithmeticError, match="mismatch"):
+        cohort.verify_freeze(ROOT, ROOT / "configs/fresh-validation.json")
 
 
 @pytest.mark.parametrize(
