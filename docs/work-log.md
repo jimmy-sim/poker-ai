@@ -13,6 +13,59 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-06 — Collision diagnosis and replacement admission
+
+- **Request / issue:** Continue issue #4 after the texture accuracy failure.
+  Diagnose concrete merges using frozen own controls, then define and test one
+  replacement candidate before larger sampled/fresh/global work.
+- **Before diagnosis outcomes:** Fix the two continuation panels, normalized
+  decision weighting, hidden-history aggregation, support/tie handling and local
+  sharing-score definition in
+  [board-collision-diagnosis.md](board-collision-diagnosis.md). Input report and
+  own-policy hashes are fixed in the config. No external solver outputs enter
+  the diagnostic or learner.
+- **Checks before diagnosis:** 686 tests pass with all extras on Python
+  3.11.17/3.12.15, plus lint/format/strict typing/hooks. Ten new tests cover
+  hidden-history aggregation, player signs/opponent reach, zero support,
+  sharing-score math/self-zero, input retention and the terminal viewer.
+- **Initial status:** Diagnostic code was published before retained-case
+  results; diagnosis and candidate admission were pending at that checkpoint.
+- **Diagnosis:** Clean published `9189c40` produces 7/115 conflicting low/medium
+  rows under own exact continuation, versus 4/0 under uniform. Retain both panels.
+  One row merges a full house and quads for pocket nines, with opposite preferred
+  fold/call actions under the fixed own control. The local score is not game loss.
+- **Before candidate outcomes:** Select only texture plus own made-hand-category
+  history. Publish its input-bound config and unchanged full accuracy/compression
+  targets before implementation/partition measurement. Scope is 48 full snapshots
+  and native admission only; no fixed-work sampled/fresh/global comparison here.
+- **Candidate implementation checks:** 712 all-extras tests pass on both Python
+  versions, including 26 new candidate/admission tests. Optional encoder source
+  and a bounded full-control runner/audit/report are published before the trial.
+  Existing model/matrix/learner/report dependency bytes remain unchanged.
+- **Raw admission retained:** Clean source `f3c28f0` completes all 48 full-control
+  snapshots in 9.454s. The candidate passes low but fails medium full accuracy:
+  2.593658% pot versus old texture 2.522516%, despite compression (1,428 vs raw
+  3,336 rows). Preserve raw outcomes before native audit. No sampled comparison
+  or second candidate is launched; confirmation was pending at raw publication.
+- **Audit / completed result:** All 48 snapshots pass OpenSpiel 2.0.2 native
+  value/BR checks (maximum error 1.27898e-13 chips); own replay error zero.
+  Audit takes 5.630s. Medium candidate excess over exact is 2.593476 percentage
+  points of pot versus a fixed 0.5 limit. Coverage/recall/compression pass;
+  full-control admission fails. Figures/tables preserve the complete grid.
+- **Interpretation / stopping point:** Category separates full-house/quads and
+  straight/pair examples, but same-category conflicts remain in the retained
+  diagnosis. The local proxy does not explain causal game EV loss. Compare
+  2.593658% to the old **full-tree** 2.522516%, not the old sampled 7.369742%.
+  Stop before sampled/fresh/global training; propose own best-response diagnosis
+  of the actual failed policy next. No second candidate or default change.
+- **Evidence:** [PR #14](https://github.com/jimmy-sim/poker-ai/pull/14),
+  [tables/figures](../results/made-category-admission/report/tables.md),
+  [method and limits](board-collision-diagnosis.md), journal step 17. Local
+  checks: 712 tests on both Python versions, lint/format/strict typing/hooks;
+  final hosted CI is recorded on the PR separately.
+- **Assistance / time:** Codex implements and checks this block. Developer
+  hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
+
 ## 2026-11-06 — Public-board fixed-work comparison
 
 - **Request / scope:** Continue issue #4 with the unchanged fixed-work protocol,

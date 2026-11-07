@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "stage": "full_control_admission",
+  "candidate": "texture_made_b8",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8"
+  ],
+  "model": "results/card-models/potential-8.json",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "diagnosis_file": "results/board-diagnosis/diagnosis.json",
+  "diagnosis_sha256": "25bd2affa17fa4b497cb30362876ebd6b5b6a60bc146e27f8692bf474a21b263",
+  "features": "base private bucket/history key + texture + own made-hand category at each observed flop/turn/river prefix; no tiebreakers or opponent cards",
+  "full_tree_backend": "fused_numba",
+  "full_tree_checkpoints": [
+    1,
+    16,
+    64,
+    256,
+    1024,
+    4096
+  ],
+  "maximum_seconds": 900,
+  "maximum_tree_nodes": 200000,
+  "limits": {
+    "exact_full_exploitability_pot": 0.001,
+    "candidate_full_excess_pot": 0.005,
+    "candidate_information_sets_relative_to_public_b8": 0.75,
+    "minimum_uniform_reach_average_coverage": 0.95,
+    "maximum_recall_violations": 0,
+    "independent_tolerance_chips": 1e-09
+  },
+  "later_sampled_comparison": {
+    "status": "not_run_in_this_block",
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ],
+    "node_work_checkpoints": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "median_exploitability_pot_limit": 0.01,
+    "worst_exploitability_pot_limit": 0.025,
+    "sampling": "ordinary_external_linear_with_one_exact_initialization"
+  },
+  "scope": "known development full-control admission only; neither sampled-learning acceptance nor fresh/global strength"
+}
