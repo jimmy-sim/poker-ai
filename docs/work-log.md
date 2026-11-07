@@ -42,6 +42,11 @@ For a guided explanation of the ideas and results, start with the
   versions, including 26 new candidate/admission tests. Optional encoder source
   and a bounded full-control runner/audit/report are published before the trial.
   Existing model/matrix/learner/report dependency bytes remain unchanged.
+- **Raw admission retained:** Clean source `f3c28f0` completes all 48 full-control
+  snapshots in 9.454s. The candidate passes low but fails medium full accuracy:
+  2.593658% pot versus old texture 2.522516%, despite compression (1,428 vs raw
+  3,336 rows). Preserve raw outcomes before native audit. No sampled comparison
+  or second candidate is launched; independent confirmation remains pending.
 - **Assistance / time:** Codex implements and checks this block. Developer
   hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
 
