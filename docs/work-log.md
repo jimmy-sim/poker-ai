@@ -30,6 +30,14 @@ For a guided explanation of the ideas and results, start with the
   sharing-score math/self-zero, input retention and the terminal viewer.
 - **Status:** Publish checked diagnostic code before computing retained-case
   results; actual diagnosis and candidate selection/admission are pending.
+- **Diagnosis:** Clean published `9189c40` produces 7/115 conflicting low/medium
+  rows under own exact continuation, versus 4/0 under uniform. Retain both panels.
+  One row merges a full house and quads for pocket nines, with opposite preferred
+  fold/call actions under the fixed own control. The local score is not game loss.
+- **Before candidate outcomes:** Select only texture plus own made-hand-category
+  history. Publish its input-bound config and unchanged full accuracy/compression
+  targets before implementation/partition measurement. Scope is 48 full snapshots
+  and native admission only; no fixed-work sampled/fresh/global comparison here.
 - **Assistance / time:** Codex implements and checks this block. Developer
   hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
 
