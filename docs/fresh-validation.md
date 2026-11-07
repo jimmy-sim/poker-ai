@@ -115,6 +115,12 @@ needs an explicit versioned protocol decision, not silent resealing.
 Use a checkout of the recorded study revision for historical reproduction if
 later source changes invalidate this freeze; preserve the original manifest.
 
+**November 6 reproduction note:** Issue #4 changes source, so the commands above
+now require a separate checkout of
+`d587b81de598f9aca713cbff752bafeaefe127e0` and its own locked environment. The
+current branch intentionally fails the old freeze check. The archived manifest,
+outcomes and acceptance criteria remain unchanged.
+
 ## Cohort fixed before outcomes
 
 Selection source `1fbc9c8`; PCG64 seed 20261224. The accepted structural attempt counts are 20, 4, 8 and 15; no strategy scores were computed during selection.

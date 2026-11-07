@@ -13,6 +13,37 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-06 — Public-board protocol and correctness
+
+- **Scope / PR:** Resumed [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4),
+  [PR #12](https://github.com/jimmy-sim/poker-ai/pull/12). Stop at optional
+  representation code/correctness; no new training or compression study.
+- **Before outcomes:** Published protocol/config in `d120490`, fixing five
+  controls, the texture candidate, three seeds, node-work thresholds, runtime
+  cap and accuracy/compression limits. See
+  [public-board-abstraction.md](public-board-abstraction.md).
+- **Changes:** Added suit-canonical public boards and a coarse per-street texture
+  history, plugged into the finite-game matrix as optional encodings. Kept
+  existing keys/defaults. Added a read-only board inspector and journal step 15.
+- **Actual verification:** `make check` passes with all optional extras on
+  Python 3.11.17 and 3.12.15: 650 tests each, lint/format and strict types.
+  Of these, 29 new tests cover board features, symmetry, hidden information,
+  original-key compatibility, menus and recall on both development games.
+  One additional historical-source regression confirms freeze rejection.
+  Hosted CI is separate and attached to the PR.
+- **Failure retained / resolved:** The first full run failed because its old
+  positive admission test assumed current source matched historical evidence.
+  Production rejection stays intact. Gate unit tests now explicitly use matching
+  metadata in memory; the historical manifest/report/receipts remain unchanged.
+  README/protocol identify the original revision for historical reproduction.
+- **Limits / stopping point:** No measured learning benefit or memory reduction.
+  Texture deliberately merges public information; canonical public suits do not
+  preserve private blocker detail or guarantee equivalence under asymmetric
+  ranges. Issue #4 stays open for the fixed-work runner and comparisons.
+- **Assistance / time:** Codex implemented, checked and documented this block.
+  Developer hands-on time is not recorded. No training experiment wall time.
+  Unrelated user experiment outputs are excluded from the branch.
+
 ## 2026-11-05 — Fresh validation session
 
 - **Start:** 10:03 Pacific (18:03 UTC), session clock. Resumed issue #3.

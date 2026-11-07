@@ -84,8 +84,15 @@ cases at 10 million node-work. The closest case has median exploitability
 strategies** pass independent value/best-response checks. Each case receives
 separate training on tiny explicit ranges; this does not establish a global
 upgrade or erase the older failed experiment. Initial-only coverage remains
-visible. `make report-fresh-games` replays the [tables and plots](results/fresh-validation/report/tables.md);
+visible. At frozen revision `d587b81`, `make report-fresh-games` replays the
+[tables and plots](results/fresh-validation/report/tables.md);
 `make validate-fresh-games` reproduces the frozen study in ignored staging.
+Later source changes intentionally require that historical checkout.
+
+[Issue #4's public-board protocol](docs/public-board-abstraction.md) adds optional
+suit-canonical and coarse texture keys with correctness tests. Its fixed-work
+learning comparison has not run. Inspect a board's features locally with
+`.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d`.
 
 ## Development
 

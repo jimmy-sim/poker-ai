@@ -7,13 +7,17 @@ from typing import Literal
 import numpy as np
 
 from poker_ai.abstraction.model import CardAbstraction
+from poker_ai.abstraction.public_board import (
+    board_texture_history,
+    canonical_public_board,
+)
 from poker_ai.engine import Observation
 from poker_ai.finite import ArrayTree, FloatArray, IntArray
 from poker_ai.postflop.tree import Policy, SpotTree
 from poker_ai.training.holdem import exact_information
 from poker_ai.training.mccfr import SampleState
 
-Encoding = Literal["exact", "legacy_b8", "public_b8"]
+Encoding = Literal["exact", "legacy_b8", "public_b8", "canonical_b8", "texture_b8"]
 
 
 def observation_key(
@@ -21,8 +25,31 @@ def observation_key(
 ) -> str:
     if encoding == "exact":
         return exact_information(observation)
-    if encoding not in ("legacy_b8", "public_b8") or model is None:
+    if (
+        encoding
+        not in (
+            "legacy_b8",
+            "public_b8",
+            "canonical_b8",
+            "texture_b8",
+        )
+        or model is None
+    ):
         raise ValueError("unknown/missing representation model")
+    if encoding in ("canonical_b8", "texture_b8"):
+        if observation.terminal or observation.actor != observation.seat:
+            raise ValueError(
+                "public-board key requires the acting player's observation"
+            )
+        public = (
+            canonical_public_board(observation.board)
+            if encoding == "canonical_b8"
+            else board_texture_history(observation.board)
+        )
+        return json.dumps(
+            ["public-board-v1", encoding, model.information(observation), public],
+            separators=(",", ":"),
+        )
     key = model.information(observation)
     if encoding == "public_b8":
         # Preserve ordered public reveals independently of private-card buckets.
