@@ -38,12 +38,13 @@ Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
 Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
+Step 20 defines the next candidate and its tests; learning results are pending.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–19:** What the extensions and recent experiments taught us.
+- **Steps 10–20:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -878,14 +879,87 @@ Read the [method, examples and limits](river-distinction-diagnosis.md),
 [PR #16](https://github.com/jimmy-sim/poker-ai/pull/16). We stop here: no feature
 has been selected, trained or deployed, and the earlier failed gate is preserved.
 
+## 20. Define a small range-aware description
+
+**November 7, 2026 — completed definition and correctness tests.** The next candidate will add a river summary
+of how much of the declared opponent range is blocked, beats your hand, ties it,
+or loses to it. It keeps the existing buckets, board texture and hand categories.
+The four amounts are grouped into fixed intervals; no exact opponent deal or
+saved strategy is supplied to the feature.
+
+The range is a fixed assumption from the spot config. It does not change after
+bets, so this candidate does not solve the remaining conditional-range problem.
+The [definition and acceptance protocol](range-mass-representation.md) are
+published before implementation or performance outcomes. This milestone will
+build correctness tests and an inspector, then stop before training. That
+implementation is now complete.
+
+A **prior** is the range and weights assumed before conditioning on the betting
+we observe. A **histogram** groups that weight into a few categories. Here the
+categories are blocked / opponent beats us / tie / we beat opponent. Each amount
+is placed into one of eight fixed intervals, represented by numbers 0–7. The
+new name is `texture_range_q8_b8`: `q8` describes these mass intervals, while
+`b8` is the existing private-hand bucket count.
+
+With equal prior weights on `Kh Qh` and `9c 9d`, holding `Tc Td`:
+
+| River on `Ts 9s 4d 2h` | Blocked | Opponent beats us | Tie | We beat opponent |
+| --- | ---: | ---: | ---: | ---: |
+| `9h` | 0 | 1/2 | 0 | 1/2 |
+| `9d` | 1/2 | 0 | 0 | 1/2 |
+
+The new description separates these situations. It knows the whole declared
+range, not which hand was actually dealt. The weights here are the equal
+starting weights; the earlier 83.9% figure came after the opponent's betting.
+Handling those changing beliefs remains future work.
+
+The acceptance rules are fixed before training. On both known games, the future
+full-tree candidate must have at most 0.5 percentage points more exploitability
+than the exact control, use at most 75% of the raw-public strategy rows, and meet
+coverage/recall/independent-audit checks. Only then may it enter the later sampled
+comparison, whose final median/worst limits remain 1%/2.5% of pot. A good result
+on one game cannot hide a failure on the other.
+
+There are **67 new correctness and contract tests**. They check examples, hidden
+information, memory of earlier observations, exact bin boundaries, context
+binding and failure cases in the acceptance rules. Their hypothetical metrics
+are explicitly synthetic. They also reject a record claiming initialization
+while counting zero initialization work. The full local suite passes **820 tests on each of
+Python 3.11/3.12**, plus lint, formatting, strict typing and hooks. A base install
+passes 795 with 16 optional skips. Duplicate test-environment path files first
+pointed at older worktrees; repairing those paths and rerunning resolved the
+collection failures without changing the feature or its limits.
+
+Try these from the normal Terminal prompt (leave Python with `exit()` first if
+you still see `>>>`):
+
+```sh
+.venv/bin/python scripts/inspect_range_feature.py 9h
+.venv/bin/python scripts/inspect_range_feature.py 9d
+.venv/bin/python -m pytest -q tests/test_range_mass.py tests/test_range_protocol.py
+```
+
+Look at `prior_mass` and `feature_bins`. In blocked/loss/tie/win order, the bins
+change from `(0,4,0,4)` to `(4,0,0,4)`. These numbers label intervals; they are
+not betting probabilities. The context hash stays fixed because both examples
+use the same range assumptions.
+
+The prototype intentionally still merges one published example where betting
+changes the opponent weights but static masses stay the same. It also pools
+combo identities and small differences within each interval. We have not
+measured whether the candidate learns a stronger strategy or retains enough
+compression. Read the [definition and limits](range-mass-representation.md) and
+[PR #17](https://github.com/jimmy-sim/poker-ai/pull/17). We stop at this protocol
+and correctness milestone; no new training or default change has occurred.
+
 ## What comes next
 
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) remains open. The next
-question is how to preserve the measured blocker/range distinctions in a useful
-representation. Declare one candidate, its access to declared ranges and its
-acceptance limits before testing. Features tailored to these tiny known ranges
-would need explicit generalization checks. Fresh/global work still waits for
-accepted development results.
+step is to implement and run the declared full-control admission for this one
+candidate, preserving every control/checkpoint and the independent audit. If it
+fails, stop before the larger sampled comparison. Dependence on the tiny known
+ranges remains a limitation; fresh/global work waits for accepted development
+results and a separately frozen fresh-case design.
 
 ## A small glossary
 

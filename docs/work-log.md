@@ -13,6 +13,45 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Range-mass candidate protocol and correctness
+
+- **Request / issue:** Continue #4 by defining the next blocker/range-aware
+  representation and acceptance tests, then stop at the protocol/correctness gate.
+- **Prospective choice:** One `texture_range_q8_b8` candidate: existing private
+  buckets/texture/category history plus river blocked/loss/tie/win masses against
+  a fixed declared prior, pooled and quantized into eight intervals. Context-bound
+  keys; no actual hidden hand, future card, betting posterior or solver output.
+- **Before outcomes:** Publish [definition/limits](range-mass-representation.md)
+  and pinned config before implementation/partition measurement. Keep prior full
+  and sampled accuracy/compression/work limits. No learning/compression study,
+  fresh/global stage, default change or deployable checkpoint in this block.
+- **Completed implementation:** Optional context-bound encoder, finite adapter,
+  inspector and pure full/sampled metric contracts. Exact rational mass bins;
+  unsupported-view and serialization guards. Existing source/model/evidence
+  bytes remain unchanged. No learning/compression result or deployable artifact.
+- **Verification:** 820 all-extras tests pass on Python 3.11.17/3.12.15, including
+  67 new feature/privacy/recall/context/metric-contract tests; base-only checks
+  pass 795 with 16 optional skips. Ruff lint/format, strict typing and hooks pass.
+  Synthetic metric fixtures are not performance evidence. The reused base/3.12
+  environments initially imported older worktrees via duplicate editable `.pth`
+  entries; remove only those verified stale paths, confirm the current package,
+  and rerun checks. No code/threshold change resolves that environment issue.
+- **Final review:** Add the explicit positive initialization-work requirement
+  and its negative test; a true initialization flag with zero recorded work
+  cannot pass. Rerun all three environments successfully before publication.
+  No experiment or acceptance limit is changed by this contract correction.
+- **Demonstration:** `inspect_range_feature.py 9h` versus `9d` separates the
+  published full-house blocker using `(0,4,0,4)` versus `(4,0,0,4)` prior-mass
+  bins. Current priors do not use betting-conditioned weights; the known static
+  residual remains intentionally merged in a limitation test.
+- **Evidence / stopping point:** [PR #17](https://github.com/jimmy-sim/poker-ai/pull/17),
+  [definition/limits](range-mass-representation.md), journal step 20. Stop before
+  candidate row-count/compression measurement or learning. Planned 60 full and
+  90 sampled snapshots are unrun. Next block builds/runs full admission first;
+  no fresh/global/default change. Hosted CI is recorded separately on the PR.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are unrecorded; no training wall time exists for this milestone.
+
 ## 2026-11-07 — Reachable river distinctions
 
 - **Request / issue:** Continue #4 with missing river distinctions; GitHub and

@@ -1,3 +1,7 @@
+.PHONY: test-range-mass
+test-range-mass:
+	$(UV) run --locked pytest -q tests/test_range_mass.py tests/test_range_protocol.py
+
 RIVER_DISTINCTION_OUTPUT ?= results/runs/river-distinctions
 
 .PHONY: diagnose-river-distinctions report-river-distinctions
