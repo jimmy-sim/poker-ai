@@ -24,7 +24,12 @@ For a guided explanation of the ideas and results, start with the
 - **Definition of done:** Tested diagnosis, all eight prior controls/two seats/
   two panels, complete retained data, native own-profile root checks, concrete
   examples and journal step 19. No new feature, training or global/default change.
-- **Status:** Protocol checkpoint; implementation/checks/results pending.
+- **Implementation checks:** 753 all-extras tests pass on Python 3.11.17 and
+  3.12.15, including 20 new river checks; base-only checks pass 728 with 16
+  optional skips. Ruff lint/format, strict typing and hooks pass. Tiny fixtures
+  cover prefix/sign/hidden-state accounting, probe invariance, receipt guards,
+  native values, figures and inspector. Prior source/model/learner bytes unchanged.
+- **Status:** Publish tested code before retained-case outcomes.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are unrecorded; process wall time will be recorded separately.
 

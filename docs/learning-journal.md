@@ -815,7 +815,11 @@ A **blocker** is a card you can see that prevents an opponent from holding a
 particular hand. We will investigate card removal, full hand rank and relative
 strength against the declared range. These are diagnostic probes, not new agent
 features or promises of stronger play. The [protocol](river-distinction-diagnosis.md)
-is published before outcomes. Actual checks and results are pending.
+is published before outcomes. The implementation passes 753 tests on each of
+Python 3.11/3.12, including 20 new checks. A separate base install passes 728 with
+16 optional checks skipped. Lint, formatting, strict typing and hooks pass.
+These checks establish software behavior; retained research results are pending
+at this code publication.
 
 ## What comes next
 

@@ -98,3 +98,33 @@ which abstraction would work after training, or competitive Hold'em strength.
 
 Protocol/config published before new measurements; implementation, checks and
 results pending. Existing failed evidence and source bytes remain unchanged.
+
+
+## Implementation checkpoint, before outcomes
+
+New reusable diagnosis, native comparison and lazy-import reporting modules leave
+all previous learner/encoder/report source bytes unchanged. The 20 new tests
+cover both prefix panels and signs, hidden-world aggregation, conditional gain
+accounting, zero reach, tie sets, static full-rank/blocker/relative-strength
+semantics, whole-input suit and observation invariance, complete receipts and
+mutations, tiny native roots, figures and the terminal viewer. Tiny fixtures are
+software checks, not the retained research cases.
+
+Before measurement, `make check` passes with all extras on Python 3.11.17 and
+3.12.15: **753 tests each**, Ruff lint/format and strict typing. A separate base
+install passes **728 tests, 16 optional skips**; hooks pass. No retained-case
+probe or switch outcomes exist at this code checkpoint.
+
+After code publication, from clean source:
+
+```sh
+make diagnose-river-distinctions
+```
+
+The target diagnoses, audits and renders in ignored
+`results/runs/river-distinctions/`. Set `RIVER_DISTINCTION_OUTPUT` to a new path
+to preserve an earlier run. Once reviewed evidence is published,
+`make report-river-distinctions` replays it offline. The inspector is
+`.venv/bin/python scripts/inspect_river_distinction.py`; it reads saved examples
+and cannot train, deploy or play online. Native checks require the locked
+solver-validation extra; plots require the research extra.
