@@ -1,0 +1,68 @@
+{
+  "audit_sha256": "db5a205b12eef06ef48fad4c22495ff76aca69e78bb9bd1fdfeab892c6c191fb",
+  "cases": [
+    {
+      "exact_exploitability_percent_pot": 2.454513052615637e-06,
+      "extra_information_percent_pot": 0.0,
+      "representation": "exact",
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "within_partition_percent_pot": 2.454513052615637e-06
+    },
+    {
+      "exact_exploitability_percent_pot": 2.5771334070893938e-06,
+      "extra_information_percent_pot": 0.0,
+      "representation": "public_b8",
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "within_partition_percent_pot": 2.5771334070893938e-06
+    },
+    {
+      "exact_exploitability_percent_pot": 2.667776298910021e-06,
+      "extra_information_percent_pot": 2.5349796336134505e-09,
+      "representation": "texture_b8",
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "within_partition_percent_pot": 2.6652413192764076e-06
+    },
+    {
+      "exact_exploitability_percent_pot": 2.5809778172020058e-06,
+      "extra_information_percent_pot": 0.0,
+      "representation": "texture_made_b8",
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "within_partition_percent_pot": 2.5809778172020058e-06
+    },
+    {
+      "exact_exploitability_percent_pot": 0.0001822898460278487,
+      "extra_information_percent_pot": 0.0,
+      "representation": "exact",
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "within_partition_percent_pot": 0.0001822898460278487
+    },
+    {
+      "exact_exploitability_percent_pot": 0.0001822898460278487,
+      "extra_information_percent_pot": 0.0,
+      "representation": "public_b8",
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "within_partition_percent_pot": 0.0001822898460278487
+    },
+    {
+      "exact_exploitability_percent_pot": 2.522516326789987,
+      "extra_information_percent_pot": 2.5223303916581132,
+      "representation": "texture_b8",
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "within_partition_percent_pot": 0.00018593513187386494
+    },
+    {
+      "exact_exploitability_percent_pot": 2.593658241566437,
+      "extra_information_percent_pot": 2.593489587588898,
+      "representation": "texture_made_b8",
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "within_partition_percent_pot": 0.00016865397753917932
+    }
+  ],
+  "input_sha256": "a0f85755141d3d4a5358f1efaf1d54c67eaa1932257c1b0230acaab100afd9e1",
+  "maximum_native_error_chips": 9.947598300641403e-14,
+  "maximum_own_replay_error_chips": 0.0,
+  "native_roots_checked": 32,
+  "own_reply_values_checked": 32,
+  "scope": "fixed-opponent diagnosis only; no training, feature selection or global admission",
+  "status": "verified_diagnosis"
+}

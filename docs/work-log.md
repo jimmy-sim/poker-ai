@@ -13,6 +13,65 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Best-response diagnosis of saved controls
+
+- **Scope / issue:** Continue #4 with exact versus same-partition responses and
+  additive decision-loss accounting on PR #14's eight saved final controls.
+- **Before outcomes:** Publish pinned report/policy config, equations, tie/reach
+  conventions, complete-grid and independent root requirements in
+  [candidate-best-response.md](candidate-best-response.md). Diagnosis only;
+  no feature selection, new training, fresh/global work or default change.
+- **Implementation checks:** 733 all-extras tests pass on Python 3.11.17/3.12.15,
+  with lint/format/strict mypy/hooks. Twenty-one new checks cover analytic hidden
+  information/extra-value examples, random sequential accounting, brute-force
+  Kuhn, exact equilibrium zero, recall/reach/ties, retained-input rejection and
+  tiny native roots/plot/viewer fixtures. These are software checks, not evidence
+  that the failed category candidate improves.
+- **Fixture fixes before outcomes:** Retain the native Policy object through
+  TabularBestResponse evaluation after a temporary-object lifetime crash; add the
+  explicit provenance stub to the tiny native fixture. No retained-case results
+  had been produced. Existing source/config/model bytes remain unchanged.
+- **Raw diagnosis retained:** Clean published `6699f4c` completes all eight
+  saved cases in 4.223s. Medium category epsilon is 2.593658% pot, decomposed
+  into 0.000168654% within-partition response gain and 2.593489588% extra exact
+  information value. Preserve raw diagnosis/all-info sidecar before native
+  audit; interpretation is provisional. Largest additive row is an unmerged
+  turn decision, illustrating that this attribution can include the value of
+  later response choices, not locate the abstraction error causally.
+- **Audit / result:** 32 native exact/restricted response roots and 32 own reply
+  profile values pass. Maximum native error 9.94760e-14 chips; own replay zero.
+  Audit including replay takes 8.773s. Decision-loss sums match unilateral gains
+  and half-summed exploitability. Medium category is near equilibrium within its
+  partition, but exact information adds 2.593489588% pot response value. This is
+  a fixed-profile comparison, not an irreducible floor or retraining benefit.
+- **Hosted optional-dependency failure:** CI run 42354820404 catches direct
+  Matplotlib imports in the new renderer during base-only strict typing. Replace
+  them with the existing project's lazy optional-import pattern. Preserve the
+  initial raw diagnosis/sidecar/audit in `results/saved-replies-initial/`; their
+  source freeze requires the historical revision. A fresh clean-source diagnosis
+  and audit will be rerun, and a script will compare every nested case field.
+  This is an import/typing correction, not a math, input, limit or feature change.
+  Base checks pass: 709 tests, 15 optional skips, lint/format/strict typing/hooks.
+  All-extras suites again pass 733 on both versions. Add a native-root receipt
+  consistency guard and check its mutation fixture on both versions. Final clean
+  reproduction/CI were pending at that checkpoint.
+- **Final clean reproduction:** Source `e3ab000` completes all eight cases in
+  4.163s and native audit including replay in 8.481s, both from clean source.
+  All nested cases are numerically identical to the preserved initial run;
+  full own-reply/all-info sidecar is byte-identical. All 32 native roots and
+  32 own profile values pass again with the same maximum error; own replay zero.
+  [Reproduction receipt](../results/saved-replies/reproduction.json). No feature,
+  input, failed limit or training outcome was changed by the software fix.
+- **Evidence / stopping point:** [PR #15](https://github.com/jimmy-sim/poker-ai/pull/15),
+  [tables/two figures](../results/saved-replies/report/tables.md),
+  [method/limitations](candidate-best-response.md), journal step 18. Both figures
+  visually inspected. Stop before new features/training/global admission; next
+  proposed work examines reachable river response disagreements and range/card
+  removal distinctions. Final local/hosted checks are recorded separately on PR.
+  Personal hands-on time remains unrecorded.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are not recorded; actual process time will be recorded separately.
+
 ## 2026-11-06 — Collision diagnosis and replacement admission
 
 - **Request / issue:** Continue issue #4 after the texture accuracy failure.

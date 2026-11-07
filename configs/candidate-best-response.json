@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "input_report": "results/made-category-admission/study.json",
+  "input_report_sha256": "56af49f9550f4b87a35ca19d818f83646af145ec73b7d13ef9edaead0f57a1a5",
+  "input_policy_sha256": "ea958f3b728f01b2d1d50311e831649de8e372b0cf0064bedffee0e39e00ddbd",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8"
+  ],
+  "iteration": 4096,
+  "top_groups": 8,
+  "examples_per_group": 4,
+  "tolerance_chips": 1e-09,
+  "tie_rule": "first legal maximizer, no approximate tie substitution",
+  "scope": "deterministic diagnosis of saved final known-game controls; no training or new feature selection"
+}

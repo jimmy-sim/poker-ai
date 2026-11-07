@@ -110,6 +110,16 @@ versus **2.52%** for old texture at the same 4,096 full-tree iterations. All
 or default change follows. Read [journal step 17](docs/learning-journal.md#17-find-which-shared-decisions-need-different-treatment)
 and the [tables/two figures](results/made-category-admission/report/tables.md).
 
+The [saved-strategy response diagnosis](docs/candidate-best-response.md) finds
+that the medium category candidate is nearly stable within its compressed game:
+**0.000169% of pot** response gain within the partition, plus **2.593490%** from
+exact information. All **32 response roots and 32 own reply-profile values** pass
+native checks. This diagnoses fixed saved policies; it does not prove a training
+upgrade or an unavoidable abstraction limit. Inspect with
+`.venv/bin/python scripts/inspect_saved_reply.py`, or read
+[journal step 18](docs/learning-journal.md#18-ask-how-a-counterstrategy-exploits-the-saved-agent)
+and the [tables/figures](results/saved-replies/report/tables.md).
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with
