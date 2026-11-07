@@ -1,3 +1,14 @@
+SAVED_REPLY_OUTPUT ?= results/runs/saved-replies
+
+.PHONY: diagnose-saved-replies report-saved-replies
+diagnose-saved-replies:
+	$(UV) run --locked python scripts/diagnose_saved_replies.py --output "$(SAVED_REPLY_OUTPUT)/diagnosis.json"
+	$(UV) run --locked --extra solver-validation python scripts/audit_saved_replies.py --report "$(SAVED_REPLY_OUTPUT)/diagnosis.json" --output "$(SAVED_REPLY_OUTPUT)/independent.json"
+	$(UV) run --locked --extra research python scripts/report_saved_replies.py --report "$(SAVED_REPLY_OUTPUT)/diagnosis.json" --audit "$(SAVED_REPLY_OUTPUT)/independent.json" --output "$(SAVED_REPLY_OUTPUT)/report"
+
+report-saved-replies:
+	$(UV) run --locked --extra research python scripts/report_saved_replies.py
+
 UV ?= uv
 RIVER_OUTPUT ?= results/runs/river-integration-reproduction
 FRESH_OUTPUT ?= results/runs/fresh-validation-reproduction

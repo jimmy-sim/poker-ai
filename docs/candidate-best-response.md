@@ -35,7 +35,9 @@ project's exact exploitability (NashConv/2). Perfect recall and equal-depth info
 are required and checked in both trees. Expanding a restricted reply back to
 exact infos must reproduce its value. The exact/public controls remain visible.
 This separates fixed-opponent response opportunities, not the causal effect of
-retraining with a feature. Best-response ties/policy choice can affect attribution.
+retraining with a feature. Best-response ties/policy choice can affect attribution. A response labeled
+seat i exploits the fixed strategy of seat 1-i. Its decision-loss rows belong
+to the responding player; they are not a causal list of the defender's mistakes.
 
 ## Additive decision loss
 
@@ -58,7 +60,9 @@ These are additive losses of the fixed strategy under this continuation
 convention, unlike the preceding local collision proxy. They are still **not**
 a causal decomposition of abstraction error. Group exact losses by the deployed
 abstract row and by street/player. Rank all groups by summed chips, keep the top
-eight and up to four deterministic examples (distinct best actions first).
+eight and up to four deterministic examples with positive saved reach
+(distinct best actions first). Unsupported rows remain in the full sidecar;
+their arbitrary legal response and zero Q placeholders are not action advice.
 Examples show own cards, observed board, saved probabilities, response actions,
 conditional response-continuation values and support/reach. No hidden world is
 used as a decision rule. Full exact-info contributions and own replies are
@@ -85,3 +89,37 @@ chips and complete grids; failure blocks interpretation rather than dropping row
 
 Protocol published before new measurements. Implementation, tests and actual
 results are pending. No candidate feature is selected by this block.
+
+
+## Implementation checkpoint, before retained-case measurement
+
+New own reply/accounting, diagnosis, replay, optional native audit and offline
+renderer modules leave the old learner/encoder/model sources unchanged. The
+terminal inspector reads saved examples and cannot train or play online.
+Local `make check` passes on Python 3.11.17 and 3.12.15 with all extras:
+733 tests, Ruff lint/format, strict mypy and hooks. The 21 new tests include analytic hidden-world and information-premium
+examples, brute-force Kuhn replies, three random policies per toy game, a known
+Kuhn equilibrium with zero loss, recall/zero-reach/tie guards and tiny end-to-end
+fixtures with optional native/plot checks. Fixtures are not research outcomes.
+
+The first native fixture exposed a temporary-policy lifetime error in the new
+validation wrapper (process crash). Retaining the native Policy object through
+the response evaluation fixes it; the tiny native root/profile checks then run.
+A separate fixture metadata path needed its explicit test provenance stub.
+Both issues were found before retained-case measurement; neither changes the
+own response algorithm or earlier research evidence. The recorded OpenSpiel
+2.0.2 license hash is rechecked against the installed distribution:
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+
+From clean published source:
+
+```sh
+make diagnose-saved-replies
+```
+
+The target diagnoses, audits, then renders into ignored
+`results/runs/saved-replies/`. Set `SAVED_REPLY_OUTPUT` to a new directory to
+preserve an earlier run; overwrites are refused. Once reviewed evidence is
+published, `make report-saved-replies` replays it offline with the research extra.
+Direct `.venv/bin/python scripts/inspect_saved_reply.py` reads the saved examples.
+No new retained-case performance outcome exists at this implementation checkpoint.

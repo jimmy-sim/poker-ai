@@ -738,7 +738,13 @@ what would happen after retraining with a new feature.
 
 The [protocol](candidate-best-response.md) and input-bound config are declared
 before outcomes. No new training or feature selection starts in this block.
-Actual results/checks will be recorded here after implementation and measurement.
+The implementation now passes 733 local tests on Python 3.11/3.12, including
+21 new checks for the math, hidden information and saved evidence. A small test
+caught a native-wrapper crash: the Python policy object had to stay alive while
+the C++ response calculator used it. That wrapper is fixed before any new
+research results are measured. The known Kuhn equilibrium gives zero loss, and
+brute-force Kuhn replies agree with the new response algorithm. Actual retained
+results are still pending at this code publication.
 
 ## What comes next
 

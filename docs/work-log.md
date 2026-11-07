@@ -21,7 +21,17 @@ For a guided explanation of the ideas and results, start with the
   conventions, complete-grid and independent root requirements in
   [candidate-best-response.md](candidate-best-response.md). Diagnosis only;
   no feature selection, new training, fresh/global work or default change.
-- **Status:** Protocol checkpoint; implementation/checks/results pending.
+- **Implementation checks:** 733 all-extras tests pass on Python 3.11.17/3.12.15,
+  with lint/format/strict mypy/hooks. Twenty-one new checks cover analytic hidden
+  information/extra-value examples, random sequential accounting, brute-force
+  Kuhn, exact equilibrium zero, recall/reach/ties, retained-input rejection and
+  tiny native roots/plot/viewer fixtures. These are software checks, not evidence
+  that the failed category candidate improves.
+- **Fixture fixes before outcomes:** Retain the native Policy object through
+  TabularBestResponse evaluation after a temporary-object lifetime crash; add the
+  explicit provenance stub to the tiny native fixture. No retained-case results
+  had been produced. Existing source/config/model bytes remain unchanged.
+- **Status:** Publish tested implementation before measuring saved cases.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are not recorded; actual process time will be recorded separately.
 
