@@ -64,6 +64,8 @@ error probability or a proof that those decisions need different strategies.
 
 Coverage uses exact decision reach too. Positive average mass includes initialized
 rows; later sampled-visit coverage and initial-only row counts are separate.
+Visiting a shared row counts all exact infos mapped to it for this coverage metric;
+it does not establish that every physical history in the row was sampled.
 Frozen coverage masks permit offline replay without loading large checkpoints.
 The native-audit stage additionally reloads every local checkpoint/visit pair,
 verifies its hashes and matches its strategy, masks, iteration and work counters.
@@ -119,10 +121,81 @@ do not update old hashes to make reproduction pass.
 
 ## Results and interpretation
 
-At runner publication, only tiny software fixtures have run. Full-study results,
-raw artifact links, actual runtimes, independent-check counts and interpretation
-will be added after the declared grid finishes. No new playing-strength or
-memory-saving claim is made at this stage.
+**The candidate fails development admission.** The exact controls pass both
+games. Texture meets the compression requirement in both games and passes all
+criteria on the low game, but fails full accuracy, sampled median and sampled
+worst-seed accuracy on the medium game. No thresholds, seeds or checkpoints were
+changed; no fresh/global experiment or agent-default update follows this result.
+
+Clean source `48051de4d8320e958229b334f676679d15adbb44` completed the entire grid
+in **1205.044s**. All 150 own snapshots and ten sets of three profile repetitions
+are retained. Source/config/model/game hashes still match at completion. The
+test-only CI correction in `3e1d374` changes none of the captured source/scripts/
+inputs. Raw outcomes were committed in `142b260` before native audit.
+
+| Game | Raw-public rows | Texture rows | Row reduction | Raw-public sampled median (% pot) | Texture sampled median (% pot) | Texture worst (% pot) |
+|---|---:|---:|---:|---:|---:|---:|
+| Low OOP | 364 | 92 | 74.73% | 9.14195e-9 | 3.50235e-7 | 4.30443e-7 |
+| Medium OOP | 3,336 | 1,392 | 58.27% | 0.233819 | 7.369742 | 9.687537 |
+
+All sampled numbers are at the declared 10 million charged-work checkpoint,
+using all three seeds. Median limit is **1% pot**, worst-seed limit **2.5%**.
+The medium texture full control has exploitability **2.522516% pot**, versus
+**0.00018229%** for the exact full control: excess **2.522334 percentage points**,
+above the allowed **0.5**. Its full curve changes little between 1,024 and 4,096
+iterations. This supports a representation limitation under the tested learner
+and budget, rather than insufficient sampled iterations alone. It does not prove
+an irreducible lower bound for every possible strategy using these features.
+
+The medium bucket-only baseline is worse still: final median **15.829884% pot**.
+Its median rises from **15.640764%** at one million work, so more work is not
+monotonically better in this recorded grid. Canonical and raw-public partitions
+have the same row counts and measured trajectories here; canonical suit names
+add no sharing on these fixed public prefixes and make keys longer. These
+controls remain diagnostics; none replaces the preselected candidate afterward.
+
+Texture merges 68 public-board rows on the low game and 828 on the medium game.
+Their uniform-decision-reach collision mass is about 19.03% and 16.95% respectively.
+The medium raw and texture representations have zero same-board private-hand
+collisions; the extra merging is public. Every representation has zero abstract
+recall violations. These observations and the exact/native controls narrow the
+diagnosis toward public information loss/its learning effects, while not proving
+that every implementation or shared engine component is error-free.
+
+Combined key UTF-8 and unpadded regret/average float bytes fall from 136,874 to
+44,084 on low, and 1,209,852 to 654,120 on medium: component reductions of 67.79%
+and 45.93%. These exclude containers/shared tree storage. Process-lifetime peak
+RSS is **480.47 MiB**, cumulative across the study; no isolated total-process
+memory reduction is established. The separate
+[hardware observation](../results/public-board/hardware-observation.json)
+records Apple M4, 24 GiB RAM; initial sandbox metadata remains unchanged.
+
+Initialized average-row coverage is 100% for every final cell. That is not later
+exploration: the low texture runs retain up to 86 initial-only rows and 80%
+uniform-reach subsequent-row coverage. Medium texture retains up to 356 initial-only
+rows, with minimum subsequent-row coverage 98.29%, versus raw-public 97.60%.
+Higher shared-row coverage did not imply better decisions.
+
+The native audit passes all **150 frozen value/best-response checks**, **800
+ordered final cross-play profiles**, and **90 checkpoint/visit pairs**. Maximum
+native comparison error is **1.63425e-13 chips**; own replay error is zero. Audit
+wall time, including own replay/receipt checks, is **14.267s**. Own cross-play
+advantages are at most about **0.1027% pot** across this final-policy pool, despite
+much larger best-response weaknesses. Being hard for these particular own
+opponents to beat does not establish equilibrium play.
+
+Evidence: [raw study](../results/public-board/study.json),
+[compressed own policies](../results/public-board/study-own-policies.json.gz),
+[native audit](../results/public-board/independent.json),
+[all tables/figures](../results/public-board/report/tables.md), and
+[machine summary](../results/public-board/report/summary.json).
+[PR #13](https://github.com/jimmy-sim/poker-ai/pull/13) contains this block.
+Local checks and final hosted CI are recorded separately there.
+
+The next milestone should test a more informative public representation under
+another prospective development protocol. No larger global run is justified by
+this failed candidate. Issue #4 remains open; these two tiny, previously known
+games with separate learners do not establish zero-shot or full-game strength.
 
 ## How to read the eventual figures
 
@@ -131,6 +204,7 @@ under the same learner, not a different opponent. The x-axis is charged work;
 the y-axis is exact-game exploitability divided by initial pot, so 0.01 means
 1% of pot. Lower is better. Lines show the three-seed median and shaded min/max,
 not confidence intervals. Encodings with the same outcome may overlap.
+Both axes are logarithmic, and panels use independent vertical scales.
 
 `full-tree.png` separates full-tree controls from sampled learners. The dotted
 line is the exact full-control limit; the candidate's separate excess-over-exact
@@ -142,3 +216,17 @@ In `crossplay.png`, read the first policy on the row and its opponent on the
 column. Blue means positive seat-balanced EV for the row policy, red means
 negative, and white means near zero. The diagonal is zero by definition. A good
 matchup against one own policy does not prove low exploitability or global strength.
+
+## Questions to practice
+
+1. **Why reject a representation that saves 58% of strategy rows?** Its medium
+   sampled median is 7.37% pot against a preset 1% limit. Saving rows is useful
+   only if the strategy remains accurate enough for the stated purpose.
+2. **Why not just keep training?** The full-tree control also remains at about
+   2.52% pot at the declared budget. That points toward the representation/learning
+   interaction; it is not a proof that more computation can never help. We retain
+   the failed gate and require a new controlled hypothesis before another run.
+3. **What does independent agreement prove?** Native value and best-response
+   calculations agree on our frozen exported game. It checks solver math and
+   serialization, while the mechanics are shared. It does not prove competitive
+   global Hold'em strength or full engine correctness by itself.

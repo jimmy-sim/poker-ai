@@ -90,8 +90,16 @@ visible. At frozen revision `d587b81`, `make report-fresh-games` replays the
 Later source changes intentionally require that historical checkout.
 
 [Issue #4's public-board protocol](docs/public-board-abstraction.md) adds optional
-suit-canonical and coarse texture keys with correctness tests. Its fixed-work
-learning comparison has not run. Inspect a board's features locally with
+suit-canonical and coarse texture keys with correctness tests. The completed
+[fixed-work comparison](docs/public-board-comparison.md) finds a compression/accuracy
+tradeoff: texture cuts strategy rows from **3,336 to 1,392** on the medium game,
+but final median exploitability is **7.37% of pot**, versus **0.234%** for the
+raw-public control, missing the fixed **1%** limit. The candidate gate fails;
+no global default changes. All **150 frozen policies**, **800 ordered final
+cross-play profiles**, and **90 checkpoint pairs** pass independent/replay checks.
+`make report-public-boards` regenerates the [tables and four figures](results/public-board/report/tables.md)
+offline; `make study-public-boards` repeats the fixed grid from clean source.
+Inspect a board's features locally with
 `.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d`.
 
 ## Development

@@ -140,10 +140,11 @@ Try the read-only inspector or focused tests from the repository root:
 .venv/bin/python -m pytest -q tests/test_public_board.py
 ```
 
-No learning/compression experiment has run, no global default changes, and issue
-#4 remains open. Next milestone: implement and audit the configured fixed-work
-comparison, retaining negative outcomes. Do not use these checks as evidence of
-stronger play or measured memory savings.
+At PR #12 completion, no learning/compression experiment had run. The subsequent
+[fixed-work comparison](public-board-comparison.md) is now complete and retains
+a failed medium-game texture accuracy gate despite row compression. No global
+default changes; issue #4 remains open. The correctness checks above alone are
+not evidence of stronger play or measured memory savings.
 
 ## Questions to practice
 
