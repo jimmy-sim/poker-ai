@@ -120,6 +120,16 @@ upgrade or an unavoidable abstraction limit. Inspect with
 [journal step 18](docs/learning-journal.md#18-ask-how-a-counterstrategy-exploits-the-saved-agent)
 and the [tables/figures](results/saved-replies/report/tables.md).
 
+The [river-distinction diagnosis](docs/river-distinction-diagnosis.md) finds
+same-category relative-strength differences and same-rank blockers. In the medium
+category strategy, **24 strict reachable merged-row conflicts** under the exact
+prefix leave **4** unresolved after a static range-outcome probe. This is a
+known-case diagnostic count, not a trained improvement. All **64 own hybrid
+profile values** pass native checks. Inspect the full-house/blocker example with
+`.venv/bin/python scripts/inspect_river_distinction.py --rank 2`, and read
+[journal step 19](docs/learning-journal.md#19-find-the-river-details-the-compressed-strategy-misses)
+or the [tables/figures](results/river-distinctions/report/tables.md).
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

@@ -36,8 +36,22 @@ For a guided explanation of the ideas and results, start with the
   not additive gains. Exact-prefix strict conflicts total 24 across seats;
   static range relations leave 4 original rows unresolved. Concrete examples
   include trips facing straight-making rivers and same-rank card removal.
-- **Status:** Publish complete raw receipts before native evaluation; root
-  confirmation and final interpretation pending.
+- **Audit / completed finding:** All 64 own F/G root values pass native
+  OpenSpiel expected returns (maximum error 9.94760e-14 chips); own replay zero.
+  Audit including replay takes 10.630s. All 32 panel accounting identities pass.
+  Medium category exact-prefix conflicts: 24 before probes, 11 after full rank,
+  14 after compatibility, 4 after range relations. Restricted-prefix counts are
+  19/10/8/4. These are structural counts, not trained-feature gains.
+- **Concrete evidence:** Same tens-full-of-nines rank on `9h` versus `9d`, but
+  `9d` blocks the declared `9c 9d` quads combo. Some remaining conflicts show
+  different action-conditioned opponent weights despite identical static probes;
+  causal belief/future-policy contributions were not separately ablated.
+- **Evidence / stopping point:** [PR #16](https://github.com/jimmy-sim/poker-ai/pull/16),
+  [tables/two figures](../results/river-distinctions/report/tables.md),
+  [method/limits](river-distinction-diagnosis.md), journal step 19. Figures visually
+  inspected. No feature selection/training/default or global admission change.
+  Next proposed block declares one representation and admission design; dependence
+  on the known tiny ranges must be explicit. Final hosted CI is reported on PR.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are unrecorded; process wall time will be recorded separately.
 

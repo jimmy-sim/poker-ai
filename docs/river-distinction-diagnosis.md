@@ -96,8 +96,8 @@ which abstraction would work after training, or competitive Hold'em strength.
 
 ## Status
 
-Protocol/config published before new measurements; implementation, checks and
-results pending. Existing failed evidence and source bytes remain unchanged.
+At protocol publication, implementation/checks/results were pending. Completed
+results follow below. Existing failed evidence and source bytes are unchanged.
 
 
 ## Implementation checkpoint, before outcomes
@@ -128,3 +128,121 @@ to preserve an earlier run. Once reviewed evidence is published,
 `.venv/bin/python scripts/inspect_river_distinction.py`; it reads saved examples
 and cannot train, deploy or play online. Native checks require the locked
 solver-validation extra; plots require the research extra.
+
+
+## Completed diagnosis and native checks
+
+Clean source `bb5f2cc953f07593644d189e7052c0d6e56479aa` completes all eight cases
+in 8.670s. Native evaluation starts from clean
+`86d8f97b43d7cae6133a7b79d24f5feb942bba35` and takes 10.630s including own replay.
+All **64 own F/G profile values** pass OpenSpiel 2.0.2 expected-return checks.
+Maximum native disagreement is 9.94760e-14 chips; own full replay error is zero.
+All 32 panel loss identities pass. No native action or strategy is used by the
+own diagnostic. Shared exported mechanics remain a limitation.
+
+For the medium category candidate, half-summing the two responding seats and
+normalizing by the initial 36-chip spot pot gives:
+
+| Frozen comparison | Value (% initial pot) |
+| --- | ---: |
+| Previously measured total exact-information premium B-C | 2.593489588 |
+| River upgrade after restricted prefix H-C | 0.000013695 |
+| Earlier readjustment with exact river decisions B-H | 2.593475893 |
+| River upgrade after exact prefix B-D (separate panel) | 3.774592382 |
+
+The first two switch components H-C and B-H sum to B-C. B-D holds a different
+prefix fixed, so it must not be added to them or compared as a new win rate.
+In particular, the exact-prefix panel uses the **saved c river actions**; it
+does not refit the best shared river action to a changed prefix distribution.
+The small H-C is not evidence river information is harmless: the restricted
+prefix reaches different opportunities. All controls/panels, including zero
+low-game category gains and tiny old-texture residuals, remain in the
+[generated tables](../results/river-distinctions/report/tables.md).
+
+## Which static details separate conflicts?
+
+These counts aggregate the category candidate's responding seats on the medium
+game. They count original merged rows still containing reachable exact infos
+with no common near-optimal action after one static probe partitions that row.
+Each column is a separate probe; they are not sequentially trained additions.
+
+| Prefix held fixed | Before probe | Full own rank | Range compatibility | Range showdown relations |
+| --- | ---: | ---: | ---: | ---: |
+| Restricted | 19 | 10 | 8 | 4 |
+| Exact | 24 | 11 | 14 | 4 |
+
+The low category game has zero reachable conflicting rows in both panels.
+Two exact-prefix seat-0 action differences are ties within tolerance and are
+reported separately, not counted as strict missed actions. Full counts/support,
+posteriors and per-info losses are retained in the compressed sidecar; the
+[conflicts CSV](../results/river-distinctions/report/conflicts.csv) contains all
+32 panel summaries. The second figure visualizes these counts.
+
+Resolving 20 of 24 current-action conflicts with the relative-range probe is
+**not** a measured EV improvement or feature acceptance result. The probe knows
+the explicit two-combo spot range, and static outcome relations do not capture
+all action-conditioned beliefs, mixing or subsequent betting behavior.
+
+## Concrete saved examples
+
+`--rank 1` shows row 1251: own `Tc Td`, public `Ts 9s 4d 2h`, facing a river
+all-in. `Kd` leaves both declared opponent combos (`Kh Qh`, `9c 9d`) behind your
+three tens, so the exact reply calls. `Jd` lets `Kh Qh` make a straight, and the
+reply folds against the fixed saved opponent's betting distribution. Your own
+category is trips in both cases; relative strength against the range differs.
+
+`--rank 2` shows row 1089. Rivers `9h` and `9d` both make **tens full of nines**,
+with the same full own rank `(6,10,9)`. On `9h`, opponent `9c 9d` remains possible
+and makes quads; its conditional weight after the observed betting is about
+83.93%. Fold/call values are -18 / -135.707548 net chips. On `9d`, that combo is
+blocked, leaving `Kh Qh` alone: fold/call values are -18 / 200. The exact reply
+folds on `9h` and calls on `9d`; the restricted reply calls on both. The row's
+additive loss is 0.692145 chips in the exact-prefix panel. This is fixed-opponent
+research evidence, not a universal rule for playing full houses.
+
+A remaining example appears with `--seat 1 --rank 1`, row 954. Own `9c 9d` on a
+`Qd` versus `Qh` river has the same full rank, compatible range and showdown
+relations against `As Js` / `Tc Td`. Yet the current conditional weight on
+`As Js` is about 33.70% versus 9.13%; the displayed reply checks versus raises
+all-in respectively. This illustrates information absent from the static
+signatures. Different current beliefs and future opponent betting may both
+matter; we have not ablated their separate causal contributions or identified
+why the saved opponent produces those frequencies. No extra feature was tried
+to erase these remaining conflicts.
+
+```sh
+.venv/bin/python scripts/inspect_river_distinction.py
+.venv/bin/python scripts/inspect_river_distinction.py --rank 2
+.venv/bin/python scripts/inspect_river_distinction.py --seat 1
+open results/river-distinctions/report/probe-conflicts.png
+```
+
+All examples sum hidden hands before decisions. The posterior is an offline
+calculation from the saved opponent's chance/action reach, not privileged access
+to its actual dealt hand or an input added to the agent.
+
+## Stopping point
+
+The diagnosis, complete receipts, native comparison, two figures and journal
+step 19 are complete. The prior candidate still fails; no training/default or
+strength upgrade follows. Next proposed work is to declare one observable
+range/blocker-aware representation and its bounded admission protocol, with
+explicit limits on dependence on known tiny ranges. No representation is
+selected or implemented by this block. Any later training must use a separately
+published design and the unchanged development/hold-out requirements.
+
+[PR #16](https://github.com/jimmy-sim/poker-ai/pull/16),
+[raw diagnosis](../results/river-distinctions/diagnosis.json),
+[native audit](../results/river-distinctions/independent.json).
+
+## Questions to practice
+
+1. **Why is full hand rank insufficient?** The `9h`/`9d` example has the same
+   own full house but different compatible opponent hands. Blockers affect
+   conditional relative strength without changing your own rank.
+2. **Why report two prefix panels?** River information is encountered under
+   earlier decisions. Holding each prefix fixed avoids mistaking a low-reach
+   river upgrade for evidence that river distinctions do not matter.
+3. **Did the relative-range probe improve the agent?** No. It partitions observed
+   conflicts on known ranges without training. Counts do not measure retrained
+   EV or prove generalization, and four current-action conflicts remain.
