@@ -13,6 +13,26 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-06 — Collision diagnosis and replacement admission
+
+- **Request / issue:** Continue issue #4 after the texture accuracy failure.
+  Diagnose concrete merges using frozen own controls, then define and test one
+  replacement candidate before larger sampled/fresh/global work.
+- **Before diagnosis outcomes:** Fix the two continuation panels, normalized
+  decision weighting, hidden-history aggregation, support/tie handling and local
+  sharing-score definition in
+  [board-collision-diagnosis.md](board-collision-diagnosis.md). Input report and
+  own-policy hashes are fixed in the config. No external solver outputs enter
+  the diagnostic or learner.
+- **Checks before diagnosis:** 686 tests pass with all extras on Python
+  3.11.17/3.12.15, plus lint/format/strict typing/hooks. Ten new tests cover
+  hidden-history aggregation, player signs/opponent reach, zero support,
+  sharing-score math/self-zero, input retention and the terminal viewer.
+- **Status:** Publish checked diagnostic code before computing retained-case
+  results; actual diagnosis and candidate selection/admission are pending.
+- **Assistance / time:** Codex implements and checks this block. Developer
+  hands-on time is not recorded. Prior study outcomes/defaults remain unchanged.
+
 ## 2026-11-06 — Public-board fixed-work comparison
 
 - **Request / scope:** Continue issue #4 with the unchanged fixed-work protocol,

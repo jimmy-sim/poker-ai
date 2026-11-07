@@ -31,11 +31,15 @@ but loses too much accuracy on the deeper game. Its preset gate fails, so no
 global-agent default changes. You can inspect features with the terminal command
 in step 15 and read the result in step 16.
 
+The follow-up now inspects which merged decisions disagree, before choosing a
+replacement. Step 17 records that diagnosis and the next candidate's admission
+check as it progresses.
+
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–16:** What the extensions and recent experiments taught us.
+- **Steps 10–17:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -635,6 +639,33 @@ Those tests use tiny fixtures; they do not repeat the 20-minute study. Native an
 plot checks require their optional extras. Read the
 [methods and diagnosis](public-board-comparison.md) and
 [complete tables](../results/public-board/report/tables.md).
+
+## 17. Find which shared decisions need different treatment
+
+**November 6, 2026 — in progress.** The last test showed that the smaller
+description was too weak on one game. Before adding features, we need concrete
+examples of what the sharing loses.
+
+The diagnostic looks at a row containing several exact situations. It asks which
+action looks best in each situation under a frozen strategy from our own solver,
+then compares that with being forced to choose one action for the whole row.
+The values average possible hidden opponent hands first; the program cannot
+choose a different action after secretly looking at those cards.
+
+**Illustrative example:** One situation values check/call at 3/1 chips, another at
+0/4 chips. Separately they prefer different moves. If we force them into one
+row, at least one situation may receive the wrong compromise. These numbers
+explain the diagnostic and are not measured poker results.
+
+The ranking score is a local comparison under a frozen continuation. It is not
+the agent's total expected loss or exploitability. Tied local actions can also
+hide a need for different mixing probabilities when an opponent adapts.
+
+At first publication, actual diagnosis examples and the replacement candidate
+are pending. The code, tests and input hashes are published before that run.
+The local checks pass with 686 tests on both Python versions, including ten new
+tests for this diagnostic and viewer.
+Read the [definition and limits](board-collision-diagnosis.md).
 
 ## What comes next
 

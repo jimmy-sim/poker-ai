@@ -2,6 +2,11 @@ UV ?= uv
 RIVER_OUTPUT ?= results/runs/river-integration-reproduction
 FRESH_OUTPUT ?= results/runs/fresh-validation-reproduction
 PUBLIC_BOARD_OUTPUT ?= results/runs/public-board-reproduction
+BOARD_DIAGNOSIS_OUTPUT ?= results/runs/board-diagnosis/diagnosis.json
+
+.PHONY: diagnose-board-collisions
+diagnose-board-collisions:
+	$(UV) run --locked python scripts/diagnose_board_collisions.py --output "$(BOARD_DIAGNOSIS_OUTPUT)"
 
 .PHONY: study-public-boards report-public-boards
 
