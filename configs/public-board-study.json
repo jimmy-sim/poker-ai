@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_not_run",
+  "development_spots": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "encodings": ["exact", "legacy_b8", "public_b8", "canonical_b8", "texture_b8"],
+  "candidate": "texture_b8",
+  "model": "results/card-models/potential-8.json",
+  "seeds": [20261301, 20261302, 20261303],
+  "sampled_node_checkpoints": [100000, 1000000, 10000000],
+  "full_tree_checkpoints": [1, 16, 64, 256, 1024, 4096],
+  "sampling": "ordinary_external",
+  "sampling_weighting": "linear",
+  "initial_exact_expectation": true,
+  "full_tree_backend": "fused_numba",
+  "work_accounting": "actual sampled node visits plus one exact initialization pass; checkpoints may overshoot by one complete iteration",
+  "maximum_seconds": 7200,
+  "maximum_nodes_per_game": 200000,
+  "profile_iterations": 1000,
+  "profile_repetitions": 3,
+  "limits": {
+    "exact_full_exploitability_pot": 0.001,
+    "exact_sampled_median_exploitability_pot": 0.01,
+    "exact_sampled_worst_exploitability_pot": 0.025,
+    "minimum_initialized_uniform_reach_average_coverage": 0.95,
+    "candidate_full_exploitability_excess_over_exact_pot": 0.005,
+    "candidate_sampled_median_exploitability_pot": 0.01,
+    "candidate_sampled_worst_exploitability_pot": 0.025,
+    "candidate_maximum_information_sets_relative_to_public_b8": 0.75,
+    "maximum_recall_violations": 0,
+    "independent_value_br_tolerance_chips": 1e-9
+  },
+  "retain": [
+    "all controls, seeds and checkpoints including negative outcomes",
+    "exact/public/private collisions and chance-weighted collision mass",
+    "abstract recall violations and incompatible action menus",
+    "information sets, UTF-8 key bytes, regret/average table bytes, peak process RSS",
+    "initialized average coverage, subsequent sampled visits, initial-only rows and fallback reach",
+    "exact-game exploitability, value and ordered pairwise cross-play EV in chips and pot units",
+    "own frozen policies, source/input hashes, runtime and independent audit"
+  ],
+  "selection_rule": "texture_b8 only; every limit must pass on both development games; no post-outcome switch to another control",
+  "heldout_rule": "no new cases or global training in this block; freeze and publish a separate fresh-case protocol after development acceptance",
+  "scope": "known bounded development games; no full-game strength or zero-shot generalization claim"
+}
