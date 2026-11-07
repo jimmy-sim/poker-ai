@@ -29,7 +29,15 @@ For a guided explanation of the ideas and results, start with the
   optional skips. Ruff lint/format, strict typing and hooks pass. Tiny fixtures
   cover prefix/sign/hidden-state accounting, probe invariance, receipt guards,
   native values, figures and inspector. Prior source/model/learner bytes unchanged.
-- **Status:** Publish tested code before retained-case outcomes.
+- **Raw diagnosis retained:** Clean published `bb5f2cc` completes all eight
+  cases in 8.670s. On medium category, responding seat 0's river-only gain is
+  0.000006572 chips after the restricted prefix versus 2.717703 chips after the
+  exact prefix. Preserve both panels; these are different conditional switches,
+  not additive gains. Exact-prefix strict conflicts total 24 across seats;
+  static range relations leave 4 original rows unresolved. Concrete examples
+  include trips facing straight-making rivers and same-rank card removal.
+- **Status:** Publish complete raw receipts before native evaluation; root
+  confirmation and final interpretation pending.
 - **Assistance / time:** Codex implements/checks this block. Personal hands-on
   hours are unrecorded; process wall time will be recorded separately.
 
