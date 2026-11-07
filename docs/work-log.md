@@ -13,6 +13,18 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Best-response diagnosis of saved controls
+
+- **Scope / issue:** Continue #4 with exact versus same-partition responses and
+  additive decision-loss accounting on PR #14's eight saved final controls.
+- **Before outcomes:** Publish pinned report/policy config, equations, tie/reach
+  conventions, complete-grid and independent root requirements in
+  [candidate-best-response.md](candidate-best-response.md). Diagnosis only;
+  no feature selection, new training, fresh/global work or default change.
+- **Status:** Protocol checkpoint; implementation/checks/results pending.
+- **Assistance / time:** Codex implements/checks this block. Personal hands-on
+  hours are not recorded; actual process time will be recorded separately.
+
 ## 2026-11-06 — Collision diagnosis and replacement admission
 
 - **Request / issue:** Continue issue #4 after the texture accuracy failure.

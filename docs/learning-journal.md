@@ -33,13 +33,14 @@ in step 15 and read the result in step 16.
 
 The follow-up finds concrete decisions the old representation merges and tests
 one category-based replacement. It also fails the deeper-game accuracy limit.
-Step 17 explains the example, result and why the larger run stops here.
+Step 17 explains the example, result and why the larger run stops there.
+Step 18 starts a direct best-response diagnosis of the saved failed strategy.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–17:** What the extensions and recent experiments taught us.
+- **Steps 10–18:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -720,6 +721,24 @@ logarithmic scale: each numbered step is a factor of ten. Read the
 [complete tables](../results/made-category-admission/report/tables.md) and
 [method, limits and stopping decision](board-collision-diagnosis.md), published
 with [PR #14](https://github.com/jimmy-sim/poker-ai/pull/14).
+
+## 18. Ask how a counterstrategy exploits the saved agent
+
+**November 7, 2026 — in progress.** The category experiment failed. Before
+changing features again, this step will inspect the actual saved strategy.
+A **best response** is the strongest counterstrategy to a fixed opponent, using
+only the information its player is allowed to see.
+
+We will compare a response that sees exact cards with one restricted to the
+agent's compressed descriptions. Their difference measures extra response value
+from the discarded information against that fixed opponent. We will also trace
+losses to decisions and check that they add up to the measured total. This is a
+stronger accounting check than the earlier local ranking, but does not tell us
+what would happen after retraining with a new feature.
+
+The [protocol](candidate-best-response.md) and input-bound config are declared
+before outcomes. No new training or feature selection starts in this block.
+Actual results/checks will be recorded here after implementation and measurement.
 
 ## What comes next
 
