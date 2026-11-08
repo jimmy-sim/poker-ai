@@ -13,6 +13,39 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Policy-row cache and exact paired profile
+
+- **Request / issue:** Reduce #4's measured policy-table overhead, verify unchanged
+  behavior and profile again. [PR #24](https://github.com/jimmy-sim/poker-ai/pull/24),
+  [plan](row-policy-cache.md), config published fc27c56 before outcomes.
+- **Implementation:** Opt-in external backend: padded row normalization once per
+  visited row per frozen target pass, fresh cache before the next player. Existing
+  sampler, updater, rules, initialization, menus, source and evidence unchanged.
+  Skip the overwritten uniform fallback on positive rows; keep finite/legal row
+  checks. Dense full-state exports remain inherited.
+- **Fixed gates:** All 96 external cells / six checkpoints through iteration1001
+  must match exact array bytes, policies, RNG, keys and charged work before timing.
+  708 contemporaneous timing rows, balanced backend order, shared full cells,
+  six profiler cases; unchanged 10m/max-of-three/2×/7200s forecast and 1200s cap.
+- **Implementation checks:** 32 new + 33 prior focused tests pass (65 total),
+  lint/format and strict typing (251 files) pass. Full local checks pass 1009
+  all-extras each Python 3.11.17/3.12.15; base-only 976 passed/24 optional skips.
+  Hooks and both [code CI jobs 42508619364](https://github.com/jimmy-sim/poker-ai/actions/runs/42508619364)
+  pass. Code was checked/published before measurements; hosted CI overlapped them.
+- **Recorded evidence:** All 96 trajectories / 576 exact checkpoints, 708 timing
+  rows and six instrumented cases match state/RNG/work from clean 4cc0cc4928 in
+  323.345249s. Median paired dense/cache loop ratio 1.695×; low range-mass median
+  1.073× and slower individual repeats retained. Dense/cache training forecasts
+  15,228.659 / 8,219.338s; guarded 30,457.318 / 16,438.675s both exceed 7200s.
+  [Raw data](../results/row-policy-profile/profile.json),
+  [table](../results/row-policy-profile/report/tables.md). All five report files
+  regenerate byte-identically on Python 3.12; not a wall-time reproduction claim. Journal step 27.
+- **Stop / next:** Verified opt-in parity/profile only; no default, strength,
+  learning-cause or fresh/global admission, and no full learning sweep.
+  User authorized autonomous continuation through the day; next is the measured
+  state-adapter menu/child overhead, in a separate protocol/PR.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Controlled training compute gate
 
 - **Request / issue:** Continue #4 after reproducing the correctness gate.

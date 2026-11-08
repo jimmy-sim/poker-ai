@@ -1,3 +1,11 @@
+.PHONY: profile-policy-rows report-policy-rows
+profile-policy-rows:
+	$(UV) run --locked python scripts/profile_policy_rows.py
+
+report-policy-rows:
+	$(UV) run --locked python scripts/profile_policy_rows.py \
+		--report results/row-policy-profile/profile.json
+
 .PHONY: profile-controlled-training report-controlled-training
 profile-controlled-training:
 	$(UV) run --locked python scripts/profile_controlled_training.py
