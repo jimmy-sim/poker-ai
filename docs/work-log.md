@@ -13,6 +13,23 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Current policies and averaging history, prospective
+
+- **Request / issue:** Continue autonomous daytime #4 work after the fixed-opponent
+  diagnosis. [Plan](averaging-history.md) and config fix all 64 original cases,
+  192 original same-runtime prefix checks, 320 current /128 suffix /64 whole
+  profiles and 2048 fixed-opponent target conditions before implementation/outcomes.
+- **Question:** Does the current policy retain the weakness, or does the average
+  retain weak earlier play? Replaying the same original 10m trajectories is needed
+  because the old compact archive is not a resumable trainer. No new learning rule,
+  extended work budget, selected snapshot/window or default/fresh/global admission.
+- **Gates:** Read-only observer and exact prefix proof, frozen backend/rules/RNG,
+  complete local/hosted checks and source-bound correctness/compute admission
+  before poker replay. Three processes; forecast from the same 64 old durations,
+  fixed formula/guard; own/native caps 7200/900s. Retain all outcomes/failures.
+- **Status:** Protocol publication; implementation, admission and all new outcomes
+  pending. Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
 
 - **Request / issue:** Continue authorized daytime #4 work after the complete
