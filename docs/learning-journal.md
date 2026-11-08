@@ -1442,10 +1442,34 @@ The 32 new tests and previous focused checks pass: 65 total at this checkpoint.
 They cover padded rounding, stale caches, per-iteration state equality, real-game
 prefixes, balanced paired timing order and incomplete/changed receipts. Full local checks pass **1009 tests on each Python version**; base-only
 976 pass with 24 optional skips. Lint/format, strict typing and hooks pass.
-Hosted CI and recorded parity/profile evidence remain pending.
+Both code-head CI jobs passed. The complete parity/profile is now recorded below.
+
+The complete gate passed: **96 cases matched at all 576 checkpoints**, then
+all 708 timing rows and six profiler cases matched their expected states. The
+measurement took about **5.4 minutes**. The median paired loop-time ratio is
+**1.695× in favor of on-demand rows** across all 288 observations.
+
+The forecast fell from **4.23 hours to 2.28 hours for training alone**. With the
+same planning margin it is **4.57 hours**, still above the two-hour cap. These
+are projections, not hours already spent. There is still no full learning run
+or stronger-agent result. The low candidate gains little on average and some
+cached repeats were slower; all those timings are retained.
+
+The new profile points to remaining work in the unchanged state adapter: building
+actions/menus repeatedly and constructing child wrappers. I will investigate
+that as a separate measured change while you are away, preserving exact behavior
+and profiling again. The current optimization does not change card groups,
+clipping, averaging, random draws or which situations are examined.
+
+You can inspect the [recorded table](../results/row-policy-profile/report/tables.md):
+
+```sh
+.venv/bin/python scripts/profile_policy_rows.py --report results/row-policy-profile/profile.json
+.venv/bin/python -m pytest -q tests/test_row_policy.py tests/test_row_profile.py
+```
 
 The old trainer stays frozen and remains the default. The paired timing study
-will compare both backends on the same machine, alternating which runs first.
+compares both backends on the same machine, alternating which runs first.
 It retains all cases and the same two-hour forecast rule. A speed improvement
 would make the larger experiment cheaper; it would not establish stronger poker
 play or explain the river weakness. Read the [fixed plan](row-policy-cache.md).

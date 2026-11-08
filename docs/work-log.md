@@ -30,9 +30,20 @@ For a guided explanation of the ideas and results, start with the
 - **Implementation checks:** 32 new + 33 prior focused tests pass (65 total),
   lint/format and strict typing (251 files) pass. Full local checks pass 1009
   all-extras each Python 3.11.17/3.12.15; base-only 976 passed/24 optional skips.
-  Hooks pass. Hosted CI and recorded parity/profile evidence pending. Journal step 27.
+  Hooks and both [code CI jobs 42508619364](https://github.com/jimmy-sim/poker-ai/actions/runs/42508619364)
+  pass. Code was checked/published before measurements; hosted CI overlapped them.
+- **Recorded evidence:** All 96 trajectories / 576 exact checkpoints, 708 timing
+  rows and six instrumented cases match state/RNG/work from clean 4cc0cc4928 in
+  323.345249s. Median paired dense/cache loop ratio 1.695×; low range-mass median
+  1.073× and slower individual repeats retained. Dense/cache training forecasts
+  15,228.659 / 8,219.338s; guarded 30,457.318 / 16,438.675s both exceed 7200s.
+  [Raw data](../results/row-policy-profile/profile.json),
+  [table](../results/row-policy-profile/report/tables.md). All five report files
+  regenerate byte-identically on Python 3.12; not a wall-time reproduction claim. Journal step 27.
 - **Stop / next:** Verified opt-in parity/profile only; no default, strength,
   learning-cause or fresh/global admission, and no full learning sweep.
+  User authorized autonomous continuation through the day; next is the measured
+  state-adapter menu/child overhead, in a separate protocol/PR.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
 
 ## 2026-11-08 — Controlled training compute gate

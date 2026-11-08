@@ -89,7 +89,8 @@ At the implementation checkpoint, 32 new tests and 33 prior focused checks pass,
 including extreme padded rounding, cold/warm all-rule per-step state checks,
 real-game prefixes and synthetic complete/tampered profiling receipts. Full local checks pass **1009 all-extras tests** each Python 3.11.17/3.12.15;
 base-only **976 passed / 24 optional skips**. Ruff lint/format, strict mypy
-(251 files) and hooks pass. Hosted CI and measured evidence remain pending.
+(251 files) and hooks pass. Both code-head hosted CI jobs passed in [42508619364](https://github.com/jimmy-sim/poker-ai/actions/runs/42508619364).
+The measured result follows below.
 
 ### Three questions to explain this change
 
@@ -104,3 +105,45 @@ base-only **976 passed / 24 optional skips**. Ruff lint/format, strict mypy
    updates/work it should produce the same strategy. This bounded parity/profile
    can enable the controlled learning study; it does not establish its results
    or bit identity forever/on every machine.
+
+## Recorded result
+
+All **96 trajectories / 576 checkpoints** match exact array bytes, exported
+policies, RNG state, visited-key sets and charged work. All **708 timing rows**
+and **six instrumented cases** complete from clean
+`4cc0cc4928afb93881604d214d38d4a2eea50bb3` in **323.345249s**, below 1200s.
+Every timing repetition/backend and instrumented case matches its parity digest.
+[Raw evidence](../results/row-policy-profile/profile.json),
+[table](../results/row-policy-profile/report/tables.md).
+
+| Contemporary backend | Training-only forecast | With fixed 2× guard |
+|---|---:|---:|
+| Dense | 15,228.659s / 4.230h | 30,457.318s / 8.460h |
+| On-demand rows | 8,219.338s / 2.283h | 16,438.675s / 4.566h |
+
+Both return **`training_only_guarded_forecast_exceeds_cap`** against 7200s.
+The lower forecast is not an observed full-study runtime, and no study/default
+is admitted. Actual measured median dense/cache loop-time ratio across all
+288 paired observations is **1.695×**. All observations remain, including slower
+cached repeats. By game/group, medians are low exact **1.452×**, low range mass
+**1.073×**, medium exact **3.103×**, medium range mass **1.950×**. The low candidate
+individual ratios span **0.888–1.140×**; the optimization is not uniformly faster.
+No confidence interval, statistical population inference or universal speed claim.
+
+The six profiler cases preserve matching state/work. In the fixed medium cached
+case, `_policy_row` has 17,176 calls, `actions` 96,122 and `child` 33,473 over
+1000 extra iterations. Their cumulative times overlap and are not added.
+The unchanged state adapter still reconstructs menus and child wrappers; this
+is the next measured target, before rerunning the same compute gate. The current
+change intentionally leaves that adapter untouched. The ordinary row validation
+and RNG selection also remain costs, so another change is not guaranteed to fit.
+
+All five report files regenerate byte-identically on Python 3.12. This verifies
+recorded-data reporting, not repeatability of wall time. Old correctness/profile
+terminal commands remain valid. The bounded parity does not prove all possible
+states or unlimited trajectories on every architecture; learning quality and
+river-cause attribution remain unmeasured.
+
+The user subsequently authorized continued project work through the day. This
+PR ends at the fixed parity/profile boundary; the next measured optimization
+belongs in its own protocol/PR with the old implementations frozen.
