@@ -118,3 +118,54 @@ controls**, not a universal reason sampling is weaker or a global Hold'em edge.
 Fused/nonfused rounding and changed initialization/averaging must be reported as
 bridge differences, not silently attributed to sampling. If correctness fails,
 debug it before training.
+
+## Implementation and verification
+
+`controlled_training.py` implements the common updater without modifying the
+historical trainers. Its dense arrays and full normalization are diagnostic
+conveniences; they do not establish sampled efficiency or global scalability.
+It supports independent weights, shared-row aggregation before clipping, a
+charged simultaneous initialization and complete-iteration work checkpoints.
+`training_isolation.py` exhaustively enumerates adaptive selector tapes and
+checks the pinned historical receipts. No native strategy is involved here.
+
+The focused tests also compare the actual range-mass adapter against the old
+sampled updater in **both known games** for a short, fixed software regression
+trace. That is not a learning experiment or strength measurement. The old NumPy
+full CFR+ and linear controls are checked separately on the nonuniform fixture.
+Fused historical trajectories are not claimed bit-identical to the new backend.
+
+The chance-mass convention deserves care: with perfect recall, own realization
+reach is constant within an information row. Static chance masses can then just
+rescale that row and cancel in its normalized average, if used consistently
+across iterations. A test verifies this null effect on the fixture. Averaging
+on a different player's pass can still change the stored average because the
+joint policy changes between passes. A warm start with separately specified
+mass can also break the across-iteration rescaling argument. We report these
+conventions without presuming each changes poker strength.
+
+Focused checks: 20 tests pass. Local `make check` passes **964 all-extras tests**
+on Python 3.11.17 and 3.12.15; base-only **931 passed / 24 optional skips**.
+Ruff lint/format, strict mypy (243 files) and hooks pass. Hosted CI and the
+reviewed correctness receipt remain pending at this implementation checkpoint.
+
+## Commands
+
+After publishing checked source, `make check-training-isolation` creates a new
+receipt in ignored `results/runs/training-isolation/`. Existing outputs fail
+rather than being overwritten. `make report-training-isolation` replays the
+reviewed receipt after publication. Neither trains a postflop agent.
+
+## Three questions to explain this step
+
+1. **Why was the earlier comparison not a sampling experiment?** It changed
+   clipping, regret weights, averaging, initialization, work and arithmetic too.
+   Fixed card groups alone do not control those differences.
+2. **Does an unbiased sampled update reproduce full CFR?** Its raw frozen-pass
+   expectation can match. Nonlinear clipping and normalization, and refreshing
+   the next pass's policy, can still produce different trajectories. We check
+   raw expectations, not equality of expected learned strategies.
+3. **What would a causal result mean?** A predefined one-rule contrast under
+   common conventions could establish a finite effect in these known games at
+   the stated budget. Interactions, different cost axes and solver/abstraction
+   limits still prevent a universal or competitive Hold'em claim.

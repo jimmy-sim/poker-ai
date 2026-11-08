@@ -46,13 +46,15 @@ failure: most of its exploitable value appears when an opponent can use finer
 information. That value depends on the saved strategies; it is not a fixed floor.
 Step 24 swaps fixed turn/river policies and finds that the saved river continuation
 accounts for most of the deeper-game gap change, with interaction between streets.
+Step 25 separates the training rules and checks a shared updater before the next
+learning comparison. It does not yet identify the cause of the river weakness.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–24:** What the extensions and recent experiments taught us.
+- **Steps 10–25:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1288,6 +1290,51 @@ The [method](frozen-policy-swaps.md),
 [tables](../results/policy-swaps/report/tables.md) and
 [PR #21](https://github.com/jimmy-sim/poker-ai/pull/21) contain the complete evidence.
 We stop here before choosing a training or feature change. Issue #4 stays open.
+
+## 25. Change one training rule at a time
+
+**November 8, 2026.** The last step pointed to river decisions. The next question
+is what in training produced those decisions. We first checked whether the two
+training procedures were doing the same calculations.
+
+They were not. Full training deletes negative accumulated regret; sampled
+training keeps it and gives later regret updates more weight. Both give later
+strategy averages more weight, but collect those averages at different moments.
+They also start differently and use different amounts of work. Calling the
+whole difference “sampling” would combine all those changes.
+
+**Example, not a poker result:** Suppose two equally likely sample updates are
++1 and -1. Their mean is zero. If we delete each negative result before averaging,
+the mean becomes 0.5. Averaging first and then deleting negatives gives zero.
+This explains why a correct sampling estimate can still lead to different
+learning after clipping. It does not prove which rule hurt our river strategy.
+
+We built an experimental trainer with separate switches for full versus sampled
+traversal, clipping, regret time weights and strategy-average time weights. The
+common version uses the same averaging convention and initialization. The old
+trainers and saved strategies stay available for comparison.
+
+Before any long comparison, a small software game checks every possible random
+selection. Its chance probabilities are deliberately uneven. Both players and
+policies with zero-probability actions are included. Tests also check shared
+rows are combined before clipping, match the old trainers' specified modes,
+check all 16 switch combinations, and count initialization as real work.
+
+The short regression trace on the actual Hold'em adapter checks code compatibility
+in both known games. It is not a new strength experiment. Twenty focused tests
+pass. Full local checks pass **964 tests on each Python version**; base-only
+931 pass with 24 optional skips. The published receipt and hosted CI are still
+pending at this implementation checkpoint.
+
+The [protocol](training-isolation.md) fixes the later learning grid and separates
+equal-work comparisons from equal-iteration comparisons. An **iteration** is one
+update pass for each player. A **node visit** is one situation examined, including
+chance and terminal situations. Sampling can complete many short iterations in
+the time/work of a much smaller number of full traversals.
+
+We stop at the correctness gate before running that learning study or choosing a
+remedy. There is no new stronger agent or established training cause in this step.
+Codex assisted; personal hands-on time is not inferred.
 
 ## Your own learning notes
 

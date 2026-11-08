@@ -1,3 +1,12 @@
+.PHONY: check-training-isolation report-training-isolation
+# Correctness fixtures and old work audit only; no new postflop learning.
+check-training-isolation:
+	$(UV) run --locked python scripts/check_training_isolation.py
+
+report-training-isolation:
+	$(UV) run --locked python scripts/check_training_isolation.py \
+		--replay results/training-isolation/correctness.json
+
 .PHONY: study-policy-swaps report-policy-swaps
 study-policy-swaps:
 	$(UV) run --locked python scripts/study_policy_swaps.py \

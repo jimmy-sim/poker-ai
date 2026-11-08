@@ -13,6 +13,28 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Controlled training definitions and correctness gate
+
+- **Request / issue:** Continue #4 by isolating training differences behind the
+  saved river weakness. [PR #22](https://github.com/jimmy-sim/poker-ai/pull/22).
+- **Before outcomes:** Publish [protocol](training-isolation.md) and pinned
+  config c6e39c8. Stop at common-updater correctness and historical work audit;
+  later 16-cell learning grid/bridge is preregistered, not run.
+- **Implemented:** Own full/external updater with independent regret/average
+  weights, aggregate-then-clip, matched averaging and charged simultaneous start.
+  Exact selector enumeration, all-control work audit, receipt replay and CLI.
+  Historical code/policies unchanged; no reference actions involved.
+- **Initial checks:** 20 focused tests pass, including old full/sampled modes,
+  both real range-mass adapters, all 16 combinations, expectation/nonlinearity,
+  averaging conventions, RNG/work and changed-receipt rejection. Full local
+  checks: 964 all-extras each Python 3.11.17/3.12.15; base-only 931 passed/24
+  optional skips. Ruff lint/format, strict mypy (243 files) and hooks pass. Hosted
+  CI and reviewed correctness receipt remain pending at this checkpoint.
+- **Interpretation / next:** Definitions differ beyond sampling; do not claim
+  a training cause before the controlled study. Journal step 25 explains this.
+  No new postflop learning result, remedy or admission/default change.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Fixed-policy seat/street swaps
 
 - **Request / issue:** Investigate #4's different full/sampled vulnerabilities
