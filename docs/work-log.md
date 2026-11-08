@@ -20,8 +20,12 @@ For a guided explanation of the ideas and results, start with the
 - **Fixed scope:** All 30 final sampled policies and ten full controls, both
   seats, exact/restricted replies, full loss accounting and all seeds retained.
   Arithmetic means for additive components. No new training or feature choice.
-- **Pending:** Tested implementation, own 40-case diagnosis, native roots/achieved
-  values, report/inspector, journal step 23, local and hosted checks.
+- **Implementation checks before outcomes:** Own diagnosis, nested replay, native
+  root/achieved-value audit, report/inspector and 28 new tests. Local all-extras
+  914 tests pass on Python 3.11.17/3.12.15; base-only 883 passed/22 optional skips.
+  Ruff lint/format, strict mypy and hooks pass. No new research replies computed.
+- **Pending:** Own 40-case diagnosis, native roots/achieved values, journal step
+  23 results and hosted checks.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
 
 ## 2026-11-07 — Range-mass fixed-work sampled comparison

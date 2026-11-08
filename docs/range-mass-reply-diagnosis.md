@@ -50,6 +50,28 @@ value shows available deviations against this frozen opponent, not guaranteed
 self-play improvement. Extra-information value is specific to that opponent and
 policy, not a universal irreducible abstraction floor.
 
+## Reproduction and checks
+
+`make diagnose-range-replies` reproduces the own diagnosis, independent audit and
+plots into ignored `results/runs/range-mass-replies/` from a clean checkout. The
+1800-second cap applies to the own stage including input replay; audit and later
+reporting have separate timers. Existing outputs are not overwritten. To publish
+reviewed evidence, use the scripts' default paths and commit the own diagnosis
+and details before running the clean-source native audit. `make report-range-replies`
+only replays and renders the reviewed diagnosis with the saved audit.
+
+The inspector defaults to the first predeclared sampled seed, not a selected
+favorable or worst seed. Use `--training full` for the separate full control.
+It is an offline viewer; regeneration/replay is the numerical verification path.
+Test fixtures use a labeled one-game/one-seed uniform policy grid with a mocked
+input loader; production has no loader bypass. The full real 40-profile input
+selection is separately replayed in tests without computing new research replies.
+
 ## Status
 
-Prospective config and methodology, before implementation and new diagnosis results.
+Prospective plan published in [PR #20](https://github.com/jimmy-sim/poker-ai/pull/20)
+before implementation/outcomes. Own diagnosis, native audit, renderer and inspector
+are implemented. All local checks pass: 914 all-extras tests on Python
+3.11.17/3.12.15; base-only 883 passed/22 optional skips, including 28 new tests.
+Ruff lint/format, strict mypy and hooks pass. No new research reply results have
+been computed at this code-publication checkpoint.
