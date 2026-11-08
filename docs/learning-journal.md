@@ -51,13 +51,15 @@ learning comparison. It does not yet identify the cause of the river weakness.
 Step 26 checks the compute cost before the larger controlled learning study.
 Step 27 tests an opt-in policy-row cache against the frozen trainer and profiles
 it again without changing the learning rules.
+Step 28 tests an immutable game-node cache against every original node/edge,
+then checks exact training trajectories before profiling again.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–27:** What the extensions and recent experiments taught us.
+- **Steps 10–28:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1474,6 +1476,57 @@ It retains all cases and the same two-hour forecast rule. A speed improvement
 would make the larger experiment cheaper; it would not establish stronger poker
 play or explain the river weakness. Read the [fixed plan](row-policy-cache.md).
 Codex assisted; personal hands-on time is not inferred.
+
+## 28. Reuse the static game-node interface
+
+**November 8, 2026.** The row-cache profile still spends time repeatedly reading
+menu metadata and creating child-state wrappers. In a fixed finite game tree,
+those menus, chance probabilities and child links do not change as learning runs.
+This step adds an optional immutable cache for that interface.
+
+The two caches have different lifetimes. Policy rows change when regrets change,
+so their cache lasts one target pass. Game-node metadata stays fixed for the
+whole trainer. No policies, regrets, reach values or random-generator state are
+stored in cached game nodes. Reusing an object changes its Python identity;
+the mathematical state and its legal outgoing moves must stay identical.
+
+We first compare every node and edge with the original adapter, including values,
+types and errors for invalid accesses. The four matrices contain **48,604 nodes
+and 48,600 edges**. Tests also permute node IDs, check immutability, and compare
+each training iteration with the parent across cold/warm starts and all rules.
+All 30 new tests and 65 previous focused checks pass at this checkpoint.
+
+Building the cache creates more static objects up front. Its time is charged to
+initialization, and its prepared-node count is recorded separately from the
+unchanged CFR visit count. This is a memory/setup tradeoff, not a memory-saving
+or global Hold'em scalability claim. Full local checks pass: 1039 all-extras
+tests on each of Python 3.11 and 3.12, and 1006 base-only tests with 24 optional
+skips. Lint, typing and hooks pass; hosted CI and the fixed complete
+interface/parity/paired timing run remain pending.
+
+Read the [fixed plan](cached-node-graph.md). The next measurement uses the same
+cases, seeds, planning margin and compute cap. It will retain slow outcomes too.
+No learning rule or playing-strength result changes in this step. Codex assisted;
+personal hands-on time is not inferred.
+
+The complete fixed run now passes: all four interface matrices, all 96 training
+trajectories at six checkpoints (576 comparisons), 708 timing rows and six profiler
+cases. It took 213.257 seconds from clean published source `1991026`. The median
+parent/cache loop ratio is **1.356×**. The smallest observed ratio is 1.040×;
+every repeat is retained, including setup costs in the forecast. Report files
+regenerate exactly on Python 3.12; historical timings themselves will vary.
+
+The guarded training forecast falls from 16,337.788 to **12,432.056 seconds**.
+That is still above the unchanged 7,200-second limit, before other pipeline costs.
+This improves engineering speed; it does not make the agent stronger or establish
+why its river policy is weak. The large learning comparison remains off.
+
+Next we will measure independent cells running in separate CPU processes. Each
+cell keeps its own fixed seed and trainer; parallel execution must match serial
+results. Startup and contention will be measured, not assumed away. See the
+[recorded table](../results/cached-node-profile/report/tables.md) and
+[PR #25](https://github.com/jimmy-sim/poker-ai/pull/25). Hosted CI remains pending
+at this evidence checkpoint.
 
 ## Your own learning notes
 

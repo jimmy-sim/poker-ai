@@ -1,3 +1,11 @@
+.PHONY: profile-cached-nodes report-cached-nodes
+profile-cached-nodes:
+	$(UV) run --locked python scripts/profile_cached_nodes.py
+
+report-cached-nodes:
+	$(UV) run --locked python scripts/profile_cached_nodes.py \
+		--report results/cached-node-profile/profile.json
+
 .PHONY: profile-policy-rows report-policy-rows
 profile-policy-rows:
 	$(UV) run --locked python scripts/profile_policy_rows.py

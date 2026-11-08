@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "opt_in_immutable_adapter_only",
+  "input_sha256": {
+    "configs/row-policy-profile.json": "74d8d3c6e957686cdb281bff99a04b51bd90c5ba7a11d082862075d12e38fc3d",
+    "results/row-policy-profile/profile.json": "ca2138f8a9844f2bb2997d1faac62a30d321e8293616f86e9f540cd68e844483",
+    "results/row-policy-profile/report/summary.json": "6568bcd83a36eeaefc00ff6e1036773803ca47b43a5918f2ed7bb3b9fa117e08"
+  },
+  "parent_config": "configs/row-policy-profile.json",
+  "parent_profile": "results/row-policy-profile/profile.json",
+  "parity_iterations": [
+    1,
+    2,
+    16,
+    64,
+    128,
+    1001
+  ],
+  "repetitions": 3,
+  "external_iterations_after_initialization": 1000,
+  "full_iterations_after_initialization": 16,
+  "pair_order": "parent first if (external cell index + repeat) % 2 == 0; nodes first otherwise",
+  "maximum_seconds": 1200,
+  "forecast_target_node_work": 10000000,
+  "forecast_guard_multiplier": 2.0,
+  "adapter_gate": "every node and legal edge of all four static matrix trees: values, types, invalid-access errors and child node IDs; excludes object identity",
+  "setup_accounting": "fresh static node graph per candidate trainer; construction charged to initialization seconds; node records prepared reported separately from unchanged CFR visits",
+  "scope": "immutable adapter cache only; existing row normalization/updater/sampler unchanged; exact external parity and 708 paired timing rows; no score/default/learning admission"
+}

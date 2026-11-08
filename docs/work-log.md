@@ -13,6 +13,39 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Immutable game-node interface cache
+
+- **Request / issue:** Continue authorized through-day work on #4's measured
+  menu/child-wrapper overhead after PR #24. [PR #25](https://github.com/jimmy-sim/poker-ai/pull/25),
+  [plan](cached-node-graph.md), config published eaded32 before outcomes.
+- **Implementation:** Opt-in immutable node graph, acyclic child pointers and
+  cached static interface only. Frozen row math, sampler, updater, RNG/rules and
+  evidence unchanged. Fresh graph construction charged to initialization;
+  prepared-node records separate from unchanged CFR work. O(N) memory tradeoff.
+- **Predeclared gates:** All nodes/edges of four matrices, exact 96-cell / six
+  checkpoint trajectories, balanced 708 timing rows and six profiler cases;
+  unchanged compute forecast/cap. Generic validator uses explicitly renamed
+  reference/candidate schema roles without changing values or implementations.
+- **Implementation checks:** 30 new + 65 prior focused tests pass (95 total),
+  including 48,604 nodes / 48,600 edges, permuted node IDs, frozen metadata,
+  per-iteration math/RNG/work/query counts and changed receipt rejection.
+  Ruff/format, strict typing (256 files) and all-file hooks pass. Full local
+  suites: 1039 all-extras each Python 3.11.17 / 3.12.15; base 1006 / 24 optional
+  skips. Hosted CI and fixed profile remain pending at this code checkpoint.
+- **Recorded evidence:** Clean published `1991026` completed all four interface
+  matrices, 96 trajectories / 576 exact checkpoints, 708 timing rows and six
+  instrumented cases in 213.256995s. Paired order 144/144; all ratios retained,
+  min/median/max 1.040 / 1.356 / 1.668. Forecast parent/nodes 8168.894 / 6216.028s;
+  2× guarded 16337.788 / 12432.056s both exceed 7200s before other costs.
+  [Receipt](../results/cached-node-profile/profile.json),
+  [table](../results/cached-node-profile/report/tables.md). All five report files
+  regenerate byte-identically on Python 3.12. Hosted CI separately pending.
+  First commit-hook attempt lacked uv on PATH; environment-loaded retry passed.
+- **Scope / next:** Journal step 28. Interface/trajectory/performance only, no
+  default, strength, river-cause or learning-run admission. Continue subsequent
+  checked milestones under the user's through-day instruction.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Policy-row cache and exact paired profile
 
 - **Request / issue:** Reduce #4's measured policy-table overhead, verify unchanged
