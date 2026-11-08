@@ -62,12 +62,15 @@ checkpoints, with zero own replay error and independent native checks. Clipping
 and averaging interact; improving one gap can worsen another. This diagnoses
 training differences without selecting a replacement or passing a fresh-game gate.
 No remedy, default change or fresh/global admission follows automatically.
+Step 32 builds the saved-policy follow-up: account for decisions inside the
+compressed game, then compare all four training modes against the same opponents.
+Its software checks are passing; the new measurements have not run yet.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–31:** What the extensions and recent experiments taught us.
+- **Steps 10–32:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1778,6 +1781,58 @@ policies and own response traces before proposing a repair. The experiment
 narrows the question; it does not yet make a globally stronger agent or erase
 the earlier failed gate. Read the technical protocol's three interview answers
 for the exact numbers, ordered bridge and remaining limits.
+
+## 32. Separate our decisions from the opponent's behavior
+
+**November 8, 2026 — issue #4, saved-policy diagnosis.** Codex-assisted
+implementation; personal hands-on time not recorded. Follow
+[PR #29](https://github.com/jimmy-sim/poker-ai/pull/29) and the
+[fixed plan](controlled-reply-diagnosis.md).
+
+**Question:** Clipping can reduce one measured weakness while increasing another.
+Where does the extra room for improvement occur? Does it remain when we compare
+strategies against the same opponent?
+
+The previous comparison scored each learned pair together. Both players changed
+when we changed a training rule. A different score could therefore reflect our
+decisions, the opponent's decisions, or their combination. This follow-up freezes
+the saved strategies and crosses all four modes: signed or clipped regrets, each
+with equal or increasing weights in the final average. It keeps both seats,
+both games, both information descriptions, full controls and all three sampled
+seeds. There is no new Hold'em training or chosen winner.
+
+**Example, made up:** Against one fixed opponent, our best possible response in
+the compressed game earns 8 chips. Strategy A earns 3 and strategy B earns 6.
+Their remaining improvement is 5 and 2 chips respectively. The best-response
+value stays 8 because the opponent stayed fixed. This lets us compare our own
+decisions fairly within that game. A new opponent can change that 8-chip value.
+
+The code also records where a saved strategy gives up value along its decisions.
+These local losses add to its total improvement opportunity. Grouping them by
+turn and river is useful accounting, but does not prove which street caused a
+training problem: a turn decision can depend on what happens later.
+
+**Checks before measuring:** Hand-computed hidden-information examples check that
+the response cannot peek at the opponent's private choice. Tests cover both seats,
+all crossed combinations, missing or altered archive rows, and the terminal
+inspector. A separate toy learning check changes only the final averaging rule
+and confirms that the raw regrets, current strategy, random state and work stay
+unchanged. It helps distinguish the path of learning from how that path is
+summarized. Plot fixtures are explicitly synthetic, not poker research results.
+
+**Current result:** All 89 focused fast checks pass. Full base checks pass 1246
+tests with 24 optional skips on each Python version; the optional suites pass
+1279 each. Four slow adapter/render checks pass on both versions too. Hosted CI
+must still pass before the new diagnosis. The fixed study will
+read 64 old strategy pairs, retain 128 decision traces and evaluate every one of
+256 ordered crossed pairs, with a separate independent scalar audit. No stronger
+agent or repair has been demonstrated at this implementation checkpoint.
+
+The full suite also caught a packaging mistake: the read-only diagnosis imported
+an archived solver-check helper from inside the training package. Moving this
+new work into evaluation preserves the existing separation test. We fixed the
+location rather than weakening that test; this is a software correction, not a
+new poker finding.
 
 ## Your own learning notes
 

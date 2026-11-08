@@ -181,7 +181,8 @@ is selected or deployed; the older failed gate and global default remain.
 Read [journal step 31](docs/learning-journal.md#31-run-a-fair-comparison-of-the-training-choices)
 and [all endpoint tables](results/controlled-learning/report/tables.md), or run
 `.venv/bin/python scripts/report_controlled_learning.py --no-plots` without retraining.
-Fresh fixed-source reproduction uses `make compare-controlled-learning`; see the
+Fresh reproduction at recorded revision `c45b463` uses
+`make compare-controlled-learning`; later modules do not extend that learning admission. See the
 [protocol, runtime and limits](docs/controlled-learning-comparison.md).
 
 ## Development

@@ -75,7 +75,11 @@ new postflop learning or a claim of cross-runtime bit equality for the whole age
 
 Own and native stages each have a separate **900s hard cap**, including their
 input checks and IO; retain partial outcomes on failure, no silent budget reset.
-Publish complete own results before native comparison. OpenSpiel 2.0.2 uses the
+Publish complete own results before native comparison for the recorded study.
+Fresh one-command reproduction may keep immutable own outputs in ignored staging
+between stages; clean source and hash bindings still apply. This execution-only
+clarification precedes all new diagnosis outcomes and changes no selections,
+seeds, metrics, limits or validation gates. OpenSpiel 2.0.2 uses the
 previously read Apache-2.0 license; recheck installed bytes/version. Native results
 are scalar comparisons only; reference training and strategy export are forbidden.
 Every target/row/profile must pass fixed 1e-9 chip accounting/comparison, with
@@ -96,3 +100,13 @@ The original comparison's code and receipts stay frozen. Fresh reproduction of
 that earlier study belongs at its recorded revision; later read-only modules do
 not silently extend its learning admission. No new representation, seed, budget
 or accuracy gate is chosen in this follow-up.
+
+
+Fresh fixed-source reproduction uses `make diagnose-controlled-replies` after the
+checked implementation is published. It produces new ignored outputs, retains
+existing/partial files, and runs no new postflop training. Use
+`CONTROLLED_REPLY_DIR=results/runs/another-name` for a distinct rerun. Read-only
+review uses `.venv/bin/python scripts/report_controlled_replies.py --no-plots`.
+The terminal inspector is `.venv/bin/python scripts/inspect_controlled_reply.py`;
+its rank includes every owned row, not only positive losses. It states whether
+the corresponding crossed-profile native receipt is present and verified.

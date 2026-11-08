@@ -352,3 +352,18 @@ compare-controlled-learning:
 
 report-controlled-learning:
 	$(UV) run --locked --extra research python scripts/report_controlled_learning.py
+
+.PHONY: diagnose-controlled-replies report-controlled-replies
+CONTROLLED_REPLY_DIR ?= results/runs/controlled-replies-reproduction
+# Frozen policies only; fresh ignored outputs and immutable own hashes before audit.
+diagnose-controlled-replies:
+	$(UV) run --locked --extra research python scripts/diagnose_controlled_replies.py \
+		--output $(CONTROLLED_REPLY_DIR)/own.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_controlled_replies.py \
+		--own $(CONTROLLED_REPLY_DIR)/own.json --output $(CONTROLLED_REPLY_DIR)/native.json
+	$(UV) run --locked --extra research python scripts/report_controlled_replies.py \
+		--own $(CONTROLLED_REPLY_DIR)/own.json --native $(CONTROLLED_REPLY_DIR)/native.json \
+		--output $(CONTROLLED_REPLY_DIR)/report
+
+report-controlled-replies:
+	$(UV) run --locked --extra research python scripts/report_controlled_replies.py

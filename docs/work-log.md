@@ -25,8 +25,30 @@ For a guided explanation of the ideas and results, start with the
   choice, new representation/default/fresh/global admission.
 - **Gates:** Row/street/root/EV identities, complete grids, source/trace bindings,
   isolated native comparisons, separate 900s caps, tests and both code CI jobs
-  before measurement. Implementation and outcomes pending. Codex-assisted;
+  before measurement. Implementation built; outcomes pending. Codex-assisted;
   personal hands-on time not recorded.
+- **Initial software checks:** Asymmetric hidden-action toy and all ordered crosses
+  check signs/root/EV identities; 16 raw-trajectory invariance cases cover both
+  traversal/regret/weight/warm modes. 89 focused fast checks and four optional slow
+  checks pass; base old-policy/inspector integrations need no optional reference
+  runtime. Full base make check passes 1246 tests / 24 optional skips on each
+  Python version (234.10/224.29s); full optional suites pass 1279 each
+  (282.18/271.77s). Strict typing covers 310 files. Final-layout four slow checks
+  pass 22.50/23.04s; base pair passes 7.22/5.85s. Lint/format/hooks pass.
+  Final receipt-hardening targeted checks pass; hosted code CI/study gates pending.
+- **Boundary correction before measurement:** The full suite catches a new
+  read-only archived-reference import inside the postflop package. Move the new
+  diagnosis into evaluation, preserving the existing no-reference-import training
+  test. The focused regression passes; full checks rerun on the corrected layout.
+- **Review:** Compact replies bind legal menus and every owned row; support/mass
+  replay uses 1e-12 separately from chip values at 1e-9. All ordered crosses retain
+  asymmetric seat signs and fixed-opponent identities. Failed/partial receipts
+  remain inspectable; no reference strategy is exported. Four synthetic figures
+  inspected for layout, clearly labeled as software fixtures. Journal step 32
+  explains the question before outcomes. Execution-only reproduction clarification
+  published before measurements; no seed/metric/tolerance/cap change.
+  Native receipt validation also requires its complete 128-trace own replay with
+  finite bounded error/time; deliberate corruptions fail closed.
 
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner
 
@@ -54,7 +76,7 @@ For a guided explanation of the ideas and results, start with the
   Full optional suites pass 1190 each (265.87/255.54s); final-source slow pair
   passes 39.74/38.26s. Clean code `87fb4bc` yields 32 toy trajectories / 136
   snapshots in 0.539277s. Hosted CI 42522375101 passes both jobs on `87fb4bc`; source-bound
-  admission recorded before learning. New postflop study not yet started.
+  admission recorded before learning; study had not started at that checkpoint.
 - **Own evidence:** Clean published `70fe2f2` completes 140 cells / 840 checkpoints
   in 2161.351771s (<7200), batch 2148.667566s, parent/child CPU 3.489438/6446.21s.
   All prefix checks pass; own replay zero for all 282/282/276 worker snapshots,
@@ -76,7 +98,12 @@ For a guided explanation of the ideas and results, start with the
   cause, best-arm/default/fresh/global admission; follow up on saved own traces.
 - **Reporting:** All outcomes, eight inspected/tested figures, raw contrasts,
   methodology/limitations, three interview answers, verified claim draft, README
-  and journal step 31 updated. Final-head CI/main verification pending.
+  and journal step 31 updated. Final CI 42526808991 passes both jobs at `c45b463`;
+  merged PR #28 at `4d4b69a`. User main .venv passes 246 focused checks (49.38s),
+  all 840-policy replay zero (72.184812s) and archived native validation. First
+  report output path was sandbox-denied after numerical replay; the same helper
+  regenerates five byte-identical tables in /tmp. Ten unrelated output hashes
+  unchanged. No source/gate change.
 - **Admission CI:** Both code 42522375101 and receipt 42523042766 pass both Python
   jobs before this evidence publication; source/config hashes unchanged.
 - **Correction / review:** Prefix lookup initially omitted 44 full controls because
