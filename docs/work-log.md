@@ -13,6 +13,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Fixed-policy seat/street swaps (in progress)
+
+- **Request / issue:** Investigate #4's different full/sampled vulnerabilities
+  while keeping the information groups fixed. [Plan](frozen-policy-swaps.md).
+- **Before outcomes:** All controls/games/seeds; 160 crossed profiles and 120
+  street hybrids. Opponent-specific roots, prior diagonals, signed two-street
+  effects and interaction. No new training or remedy selection.
+- **Pending:** Tested implementation, full own/native evidence, report/inspector,
+  local/hosted checks and learning journal step 24; stop at verified diagnosis.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-07 — Saved range-mass reply diagnosis
 
 - **Issue / request:** Continue #4 after the failed sampled gate; diagnose before

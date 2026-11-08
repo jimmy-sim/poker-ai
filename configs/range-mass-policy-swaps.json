@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "previous_config": "configs/range-mass-reply-diagnosis.json",
+  "previous_report": "results/range-mass-replies/diagnosis.json",
+  "previous_audit": "results/range-mass-replies/independent.json",
+  "inputs_sha256": {
+    "configs/range-mass-reply-diagnosis.json": "9f5193eeb6f3147c7a8ca99cedc8a3ca021992e8688a9154dfb1fcbaad44d538",
+    "results/range-mass-replies/diagnosis.json": "16b743d75ec798ec9781a24d5b8071f4425881888fe0252488931290c9f9da5c",
+    "results/range-mass-replies/diagnosis-details.json.gz": "11b2e2b45035b29cb578066cde547fd50e579a683c86877e46b9068dd8cf6bc0",
+    "results/range-mass-replies/independent.json": "907d4dcfacce417ab2fc61c0faa3e1691f0ae7d572abc3adc71781673bdcda3c"
+  },
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8",
+    "texture_range_q8_b8"
+  ],
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "street_combinations": [
+    "FF",
+    "SF",
+    "FS",
+    "SS"
+  ],
+  "tolerance_chips": 1e-09,
+  "maximum_seconds": 1800,
+  "tie_rule": "first legal maximizer, no approximate tie substitution",
+  "aggregation": "all seeds retained; arithmetic mean of additive effects; repeated FF is a control, not an independent sample",
+  "scope": "fixed saved-policy seat/street substitutions only; no training, remedy selection or fresh/global/default admission"
+}

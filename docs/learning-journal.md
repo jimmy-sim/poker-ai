@@ -1217,6 +1217,23 @@ information groups produce very different exact-opponent vulnerability across
 the saved full and sampled strategies. We have not isolated that cause or chosen
 a remedy. The failed learning gate remains in force, with no fresh/global run.
 
+## 24. Hold the opponent fixed and swap saved decisions
+
+**November 8, 2026 — in progress.** The same information groups produced different
+weaknesses under full and sampled training. We now compare saved policies against
+the same opponents, then swap their turn and river decisions separately.
+
+For example, combine a full-control turn policy with a sampled river policy,
+without training either one. Does the extra value available to an exact responder
+move toward the full or sampled result? We will keep all four combinations and
+both substitution orders because the streets can interact.
+
+The [fixed plan](frozen-policy-swaps.md) retains every game, representation and
+seed. It can locate differences in saved behavior; it does not prove which
+training algorithm caused them or that a new agent would inherit a hybrid's result.
+We stop after numerical checks and reporting, before choosing a remedy.
+Codex assists with implementation/reporting; personal hours are not inferred.
+
 ## Your own learning notes
 
 **November 5, 2026 — your report:** You completed the suggested terminal commands
