@@ -32,6 +32,15 @@ For a guided explanation of the ideas and results, start with the
   Ruff/format, strict typing (256 files) and all-file hooks pass. Full local
   suites: 1039 all-extras each Python 3.11.17 / 3.12.15; base 1006 / 24 optional
   skips. Hosted CI and fixed profile remain pending at this code checkpoint.
+- **Recorded evidence:** Clean published `1991026` completed all four interface
+  matrices, 96 trajectories / 576 exact checkpoints, 708 timing rows and six
+  instrumented cases in 213.256995s. Paired order 144/144; all ratios retained,
+  min/median/max 1.040 / 1.356 / 1.668. Forecast parent/nodes 8168.894 / 6216.028s;
+  2× guarded 16337.788 / 12432.056s both exceed 7200s before other costs.
+  [Receipt](../results/cached-node-profile/profile.json),
+  [table](../results/cached-node-profile/report/tables.md). All five report files
+  regenerate byte-identically on Python 3.12. Hosted CI separately pending.
+  First commit-hook attempt lacked uv on PATH; environment-loaded retry passed.
 - **Scope / next:** Journal step 28. Interface/trajectory/performance only, no
   default, strength, river-cause or learning-run admission. Continue subsequent
   checked milestones under the user's through-day instruction.

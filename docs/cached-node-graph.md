@@ -79,3 +79,62 @@ remain pending at this checked-code checkpoint.
 3. **Is construction free or a memory reduction?** No. Initialization includes
    fresh graph construction, with O(N) node objects recorded separately from CFR
    visits. Forecasts keep that setup time; no RSS or global scalability claim.
+
+## Recorded complete run
+
+Clean checked source `19910267a99da5d8dd37f91f9d5f7855839ba88a` completed the
+entire fixed run in **213.256995 seconds** on Python 3.11.17 / NumPy 2.4.6.
+All four exhaustive interface matrices pass (48,604 nodes / 48,600 edges), then
+all 96 external trajectories / 576 exact checkpoints pass. All 708 timing rows
+and six instrumented cases pass state/RNG/work checks. Paired order is balanced:
+144 parent-first and 144 nodes-first observations. No outcomes were discarded.
+
+| Game / representation | Paired loop ratio min | Median | Max |
+|---|---:|---:|---:|
+| low / exact | 1.040 | 1.482 | 1.668 |
+| low / range mass | 1.105 | 1.483 | 1.545 |
+| medium / exact | 1.133 | 1.318 | 1.479 |
+| medium / range mass | 1.116 | 1.321 | 1.363 |
+
+Each group has 72 observations; ratios are parent time / cached-node time.
+Overall median **1.356×**; every observed paired loop ratio exceeds one, with
+minimum 1.040×. These dependent local timings are not a population confidence
+interval. Setup is outside these loop ratios and included in the forecast.
+Measured graph construction spans 0.004272–0.040813s in low and
+0.031665–0.085439s in medium, with all observations retained.
+
+| Backend | Training-only forecast | 2× guarded forecast | Decision |
+|---|---:|---:|---|
+| parent | 8168.894s | 16337.788s | exceeds 7200s |
+| nodes | 6216.028s | 12432.056s | exceeds 7200s |
+
+[Raw receipt](../results/cached-node-profile/profile.json) and
+[scripted table](../results/cached-node-profile/report/tables.md) retain all
+rows, paired ratios, counters, source/lock/runtime and profiler functions.
+All five report files regenerate byte-identically on Python 3.12.15. Report
+regeneration checks recorded evidence; it does not reproduce historical wall time.
+The instrumented medium candidate still spends 0.121683s cumulative in
+`_policy_row`, 0.084339s in `select` and 0.073645s in `_apply` during its
+0.363878s loop. Nested cumulative times overlap and must not be added.
+
+```sh
+.venv/bin/python scripts/profile_cached_nodes.py --report results/cached-node-profile/profile.json
+.venv/bin/python -m pytest -q tests/test_cached_nodes.py tests/test_node_profile.py
+```
+
+Self-review: static metadata lifetime differs from one-pass policy-row lifetime;
+full interface/error/edge checks deliberately exclude object identity. Node records
+and setup never replace or discount CFR visits. Existing trainer/math/evidence
+stay frozen. This is a solo Codex-assisted self-review, not independent human review.
+The first commit-hook attempt lacked `uv` on PATH; the retry with the project
+environment passed. Local checks pass; hosted CI remains separately pending at
+this evidence checkpoint. The implementation was published before measurements.
+
+## Next decision
+
+The large learning study remains off. Serial training alone exceeds the cap even
+before scoring/checkpoints. Next define and test parallel execution of independent
+cells, preserving every cell, seed, work threshold and update equation. Measure
+contention, process startup, tree construction and aggregate resource cost rather
+than dividing the serial forecast by CPU count. A new prospective config must
+precede measurements. No default, strength or river-cause claim follows this profile.

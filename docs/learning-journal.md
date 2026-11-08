@@ -1509,6 +1509,25 @@ cases, seeds, planning margin and compute cap. It will retain slow outcomes too.
 No learning rule or playing-strength result changes in this step. Codex assisted;
 personal hands-on time is not inferred.
 
+The complete fixed run now passes: all four interface matrices, all 96 training
+trajectories at six checkpoints (576 comparisons), 708 timing rows and six profiler
+cases. It took 213.257 seconds from clean published source `1991026`. The median
+parent/cache loop ratio is **1.356×**. The smallest observed ratio is 1.040×;
+every repeat is retained, including setup costs in the forecast. Report files
+regenerate exactly on Python 3.12; historical timings themselves will vary.
+
+The guarded training forecast falls from 16,337.788 to **12,432.056 seconds**.
+That is still above the unchanged 7,200-second limit, before other pipeline costs.
+This improves engineering speed; it does not make the agent stronger or establish
+why its river policy is weak. The large learning comparison remains off.
+
+Next we will measure independent cells running in separate CPU processes. Each
+cell keeps its own fixed seed and trainer; parallel execution must match serial
+results. Startup and contention will be measured, not assumed away. See the
+[recorded table](../results/cached-node-profile/report/tables.md) and
+[PR #25](https://github.com/jimmy-sim/poker-ai/pull/25). Hosted CI remains pending
+at this evidence checkpoint.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
