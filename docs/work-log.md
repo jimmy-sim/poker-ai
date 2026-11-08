@@ -13,6 +13,31 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Independent-cell process calibration
+
+- **Request / issue:** Continue authorized through-day work on #4 after the serial
+  node-cache forecast still exceeds the unchanged cap. [PR #26](https://github.com/jimmy-sim/poker-ai/pull/26),
+  [plan](parallel-cell-calibration.md); config published `77460e2` before implementation/outcomes.
+- **Fixed scope:** 1/2/3 spawned processes, three rotated-order repeats, all 140
+  cells each (1260 endpoints), original modulo partitions; same frozen trainers,
+  seeds/rules/work. Exact serial endpoint gate before forecasts. Charge startup,
+  tree preparation, IPC/collection and separate parent/reaped-child CPU cost.
+- **Implementation:** Isolated worker-local matrices/trainers/RNG, requested native
+  thread environment recorded, streamed partial events, terminate/reap on failure.
+  Source-bound replay/report, fixed-partition max-of-three forecast with measured
+  overhead; same 1200s calibration / 10m / 2× / 7200s planning limit.
+- **Checks so far:** 37 new tests pass, including real spawned toy parity and
+  deliberate exception/exit/invalid-message/timeout cleanup. Initial test-module
+  namespace was not importable in spawned children; explicit test source path fixes
+  the fixture. 132 focused checks pass; strict typing (261 files), lint/format and hooks pass.
+  Full local suites: 1076 all-extras each Python 3.11.17 / 3.12.15; base 1043 /
+  24 optional skips. CPU accounting assertions pass in all three environments.
+  Hosted CI and the fixed profile remain pending at this checked-code checkpoint.
+- **Scope / next:** Journal step 29. No scoring, learning admission, default,
+  playing-strength, global or river-cause claim. Remain on checked independent
+  milestones while the user is away.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Immutable game-node interface cache
 
 - **Request / issue:** Continue authorized through-day work on #4's measured
@@ -41,6 +66,12 @@ For a guided explanation of the ideas and results, start with the
   [table](../results/cached-node-profile/report/tables.md). All five report files
   regenerate byte-identically on Python 3.12. Hosted CI separately pending.
   First commit-hook attempt lacked uv on PATH; environment-loaded retry passed.
+- **Merge / user checkout:** Both final CI jobs pass at `e7ed1be`
+  ([42512474368](https://github.com/jimmy-sim/poker-ai/actions/runs/42512474368));
+  merged PR #25 as `5db25f7`. Earlier code-only CI was superseded/cancelled by
+  concurrency, not a math failure. Main `.venv` passes 95 focused checks (21.83s),
+  new report and prior correctness/controlled/row reports; all ten unrelated
+  modified output files are byte-identical after fast-forward and verification.
 - **Scope / next:** Journal step 28. Interface/trajectory/performance only, no
   default, strength, river-cause or learning-run admission. Continue subsequent
   checked milestones under the user's through-day instruction.

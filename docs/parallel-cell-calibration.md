@@ -65,3 +65,46 @@ rerunnable tables, meaningful tests, typing/lint/hooks/hosted CI, and journal/wo
 log update. Report regeneration validates historical data, not historical timing.
 No default/playing-strength/global/river-cause claim. Then measure remaining
 pipeline costs if supported by this result, or document the next measured obstacle.
+
+## Implementation checkpoint
+
+The scheduler uses spawned interpreters, worker-local trees/trainers/RNG and fixed
+modulo assignments. It streams events to the parent, retains partial events and
+terminates/reaps all children on error/timeout. Parent thread environment is restored
+after launch. OS reaped-child CPU deltas include interpreter imports, while child
+function timers begin later; these fields are kept separate.
+
+Forecast overhead is conservative over observed short batches: maximum worker
+elapsed minus its initialization/training timers retains tree preparation,
+exports/fingerprints and IPC; maximum batch elapsed minus maximum worker elapsed
+retains launch/import/collection/join. Add those maxima once to the largest fixed
+worker sum, then apply 2×. Additional future scoring/checkpoint/audit costs remain
+unmeasured; passing known-cost forecasts never starts the large learning study.
+
+All 37 new and 95 prior focused tests pass (132 total), with spawned toy endpoints and exception/early-exit/invalid
+message/timeout cleanup. The initial fixture import failed under pytest's import
+mode; explicit test source-path propagation fixes the child fixture without any
+training-math change. Lint/format and strict typing (261 files) pass. Broader local
+suites pass: 1076 all-extras each Python 3.11.17 / 3.12.15; base-only 1043
+pass / 24 optional skips. All-file hooks pass. Spawned tests also verify positive
+OS reaped-child CPU accounting on this Mac in all three environments. Hosted CI
+and the fixed calibration remain pending at this checked-code checkpoint.
+
+### Three questions to explain this calibration
+
+1. **Why should parallel scheduling preserve the strategy?** Each cell's trainer,
+   seed and update order are independent; worker scheduling changes elapsed time,
+   not its random sequence. Every endpoint must still exactly match serial output.
+2. **Why not divide the serial forecast by three?** Startup, unequal partitions
+   and CPU contention cost time. Measure complete batches and forecast the slowest
+   fixed worker from contemporaneous per-cell timings and measured overhead.
+3. **Does a cheaper forecast prove the agent is stronger?** No. It measures
+   resource feasibility for a later controlled learning experiment. Scoring and
+   checkpoint costs remain unknown, and no strength/default decision is made here.
+
+Self-review: independent worker payloads never share mutable trainer/RNG state;
+all stable endpoint fields and cache-query/preparation counters are checked against
+the pinned serial result. Fixed-partition imbalance and max-of-three/overhead
+arithmetic have an independent hand-computed fixture. CPU and elapsed-time fields
+are distinct. This is a Codex-assisted solo self-review, not independent human
+review. The published prospective gates remain unchanged.
