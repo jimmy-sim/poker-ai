@@ -13,6 +13,38 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Controlled training compute gate
+
+- **Request / issue:** Continue #4 after reproducing the correctness gate.
+  [PR #23](https://github.com/jimmy-sim/poker-ai/pull/23),
+  [prospective plan](controlled-training-profile.md), config published 58d8c62.
+- **Fixed before timings:** All 140 common/unique bridge cells, three timing
+  repetitions (420 rows), four separate profiler cases, fixed iteration counts,
+  900s profiling cap, max-of-three forecast and 2× guard against the unchanged
+  7200s learning cap. No EV/exploitability, arm selection or automatic learning run.
+- **Implementation checkpoint:** Library orchestration and thin CLI, complete-grid
+  timing validation/report, exact state/RNG repeat checks, legacy replay adapter.
+  Baseline mathematical source/receipt unchanged; the old CLI import is bridged
+  with explicitly pinned old/new hashes before outcomes. 13 new tests and all
+  33 focused checks pass. Full local checks: 977 all-extras each Python
+  3.11.17/3.12.15; base-only 944 passed/24 optional skips. Ruff lint/format,
+  strict typing (246 files) and hooks pass. Hosted CI runs separately.
+- **Recorded evidence:** All 420 rows/140 cells/four profiler cases complete from
+  clean 44da3984 in 179.069551s; all repeat/instrumentation state and work match.
+  Forecast 15,235.392s training-only; fixed 2× guard 30,470.783s versus 7200s cap.
+  Decision `training_only_guarded_forecast_exceeds_cap`; full study not launched.
+  External cells contribute 98.395% of forecast. Fixed medium sampled profiler
+  case spends 49.43% of instrumented step cumulative time in current_policy;
+  low case 20.26%. No universal bottleneck fraction or promised speedup.
+  [Raw evidence](../results/controlled-training-profile/profile.json),
+  [tables](../results/controlled-training-profile/report/tables.md); complete
+  Python 3.12 regeneration matches all four report files byte-for-byte.
+- **Stop / next:** Finish the verified compute gate before selecting a measured
+  optimization or launching the controlled learning sweep. Next is opt-in
+  overhead reduction with exact trajectory/RNG/work checks and a new profile.
+  No optimizer or learning-cause result here. Journal step 26.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Controlled training definitions and correctness gate
 
 - **Request / issue:** Continue #4 by isolating training differences behind the

@@ -1,3 +1,11 @@
+.PHONY: profile-controlled-training report-controlled-training
+profile-controlled-training:
+	$(UV) run --locked python scripts/profile_controlled_training.py
+
+report-controlled-training:
+	$(UV) run --locked python scripts/profile_controlled_training.py \
+		--report results/controlled-training-profile/profile.json
+
 .PHONY: check-training-isolation report-training-isolation
 # Correctness fixtures and old work audit only; no new postflop learning.
 check-training-isolation:
