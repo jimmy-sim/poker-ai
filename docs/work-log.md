@@ -29,6 +29,9 @@ For a guided explanation of the ideas and results, start with the
   fixed formula/guard; own/native caps 7200/900s. Retain all outcomes/failures.
 - **Status:** Protocol publication; implementation, admission and all new outcomes
   pending. Codex-assisted; personal hands-on time not recorded.
+- **Before outcomes:** Retain 192 own cumulative-mass boundaries too, so suffix
+  definitions reconstruct from the archive without retraining. Storage-only
+  clarification; all cases/windows/metrics/seeds/caps/gates remain unchanged.
 
 ## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
 
@@ -87,7 +90,10 @@ For a guided explanation of the ideas and results, start with the
 - **Reporting / next:** Methods, four figures, three interview answers and journal
   step 32 explain units and limits. Both base CLI seat inspectors verify the audit.
   Standard frozen-writer CSV CRLF retained; CR-at-EOL-aware diff check passes.
-  Final artifact CI/main verification pending. Next prospectively compare current
+  Final CI 42532418497 passes both Python jobs; PR #29 merged at `ca0b555`.
+  Main .venv passes 90 focused tests (4.00s), own replay zero (8.894023s), archived
+  native validation and all four byte-identical numerical reports. Seat-1 CLI
+  succeeds; all ten unrelated modified output hashes unchanged. Next compare current
   policies and averaging history with checked replay before changing a learner.
 
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner

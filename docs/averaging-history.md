@@ -50,6 +50,12 @@ excluded by subtraction. Report zero-window-mass row fractions and uniform-reach
 coverage overall and on the river; original warm average coverage is a different
 quantity. No epsilon, negative clipping or reference-derived fallback is allowed.
 
+Retain **192 cumulative-mass records** at 5m/9m/10m, with legal unnormalized
+weights, menus, source/state/work bindings and exact archive digests. Whole and
+suffix averages must reconstruct from these archived boundaries without training.
+This storage clarification precedes new poker replay or diagnostic outcomes and
+changes no selection, window, metric, seed, cap or admission gate.
+
 Retain each recaptured whole final average as a control: **64 profiles**. Together
 there are **512 self profiles**, all scored and archived with legal menus, exact
 identities and raw seeds. Store own response fingerprints, never native strategy
