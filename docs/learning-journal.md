@@ -1090,6 +1090,14 @@ per iteration than another. We compare at the same branch-visit budgets instead,
 including the exact initialization cost and any final complete-iteration overshoot.
 The [fixed plan](range-mass-sampled.md) keeps all five controls, both games and
 three seeds. All 90 saved policies will be checked; a failing seed stays visible.
+A hosted check found that an older replay guard compares floating-point
+collision probabilities exactly. That passed locally and failed on Linux.
+The first run was stopped and its 20 checkpoints kept; they are not a completed
+learning result. The repair will keep counts and hashes exact while allowing a
+tiny numerical difference in three probability reductions. Poker performance
+limits, seeds and training budgets stay the same. A clean complete run comes
+only after the repair passes local and hosted checks.
+
 This milestone stops after those development results, before fresh games.
 Codex assists with implementation/reporting; no personal learning or hours are
 inferred from the run.

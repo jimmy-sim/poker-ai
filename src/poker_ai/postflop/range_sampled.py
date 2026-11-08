@@ -25,7 +25,6 @@ from poker_ai.postflop.matrix import MatrixTree
 from poker_ai.postflop.public_metrics import collision_summary
 from poker_ai.postflop.public_study import peak_rss_bytes, profile
 from poker_ai.postflop.range_admission import context_tag, package_versions
-from poker_ai.postflop.range_admission import replay as full_replay
 from poker_ai.postflop.range_admission import verify_inputs as verify_full_inputs
 from poker_ai.postflop.range_admission_report import checked_audit
 from poker_ai.postflop.range_protocol import (
@@ -35,6 +34,8 @@ from poker_ai.postflop.range_protocol import (
     check_inputs,
     validate_protocol,
 )
+from poker_ai.postflop.range_replay import check_diagnostics
+from poker_ai.postflop.range_replay import replay as full_replay
 from poker_ai.postflop.river_study import Deadline, digest
 from poker_ai.postflop.sampling import (
     PostflopMCCFR,
@@ -401,7 +402,11 @@ def replay(
     report, snapshots = checked_artifacts(path)
     verify_inputs(root, report)
     config = report["config"]
-    if prerequisite(root, config) != report["full_prerequisite"]:
+    current_full = prerequisite(root, config)
+    if any(
+        current_full[k] != report["full_prerequisite"][k]
+        for k in ("study_sha256", "audit_sha256", "assessment")
+    ):
         raise ArithmeticError("full-control assessment changed")
     model = CardAbstraction.load(root / config["model"])
     lookup = {tuple(r[k] for k in IDENTITY): r for r in report["rows"]}
@@ -422,8 +427,7 @@ def replay(
                 "tree_nodes": len(tree.player),
                 **context_tag(name, filename, report["range_contexts"]),
             }
-            if any(diag[k] != v for k, v in actual_diag.items()):
-                raise ArithmeticError("partition/context diagnostics changed")
+            check_diagnostics(actual_diag, diag)
             profiles = diag["profiles"]
             later = config["later_sampled"]
             if (

@@ -69,7 +69,7 @@ def test_real_full_prerequisite_replays() -> None:
     config = json.loads((ROOT / "configs/range-mass-protocol.json").read_text())
     result = REAL_PREREQUISITE(ROOT, config)
     assert result["assessment"]["eligible_for_sampled_comparison"]
-    assert result["maximum_own_replay_error_chips"] == 0
+    assert result["maximum_own_replay_error_chips"] <= 1e-9
     assert result["maximum_native_error_chips"] <= 1e-9
 
 
@@ -322,3 +322,37 @@ def test_plot_smoke(tiny: tuple[Path, dict[str, Any]], tmp_path: Path) -> None:
         "learning-work.png",
         "final-seeds.png",
     }
+
+
+def test_only_declared_reach_reductions_allow_roundoff() -> None:
+    from poker_ai.postflop.range_replay import check_diagnostics
+
+    base = {
+        "information_sets": 10,
+        "uniform_decision_reach_any_collision": 0.25,
+        "range_context_sha256": "fixed",
+    }
+    check_diagnostics(
+        base, {**base, "uniform_decision_reach_any_collision": 0.25 + 1e-15}
+    )
+    for changed in (
+        {"information_sets": 11},
+        {"information_sets": 10.0},
+        {"range_context_sha256": "wrong"},
+        {"uniform_decision_reach_any_collision": 0.25 + 2e-12},
+        {"uniform_decision_reach_any_collision": float("nan")},
+    ):
+        with pytest.raises(ArithmeticError):
+            check_diagnostics(base, {**base, **changed})
+
+
+def test_live_prerequisite_roundoff_is_not_artifact_identity(
+    tiny: tuple[Path, dict[str, Any]], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    def rounded(root: Path, config: dict[str, Any]) -> dict[str, Any]:
+        result = prerequisite_fixture(root, config)
+        result["maximum_own_replay_error_chips"] = 1e-14
+        return result
+
+    monkeypatch.setattr(study, "prerequisite", rounded)
+    assert study.replay(ROOT, tiny[0])[2] <= 1e-9

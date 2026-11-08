@@ -73,6 +73,25 @@ mocked prerequisite solely for that fixture. Production has no prerequisite bypa
 The actual published full-control prerequisite is also replayed in tests. These
 fixtures measure software behavior and never establish learning strength.
 
+## Replay portability finding before the complete run
+
+The first hosted checks (run 42446227294) fail in the prior full-control replay:
+its diagnostic comparison requires exact equality on Linux. The locally passing
+first sampled run was deliberately interrupted at 20/90 snapshots after 259.433
+seconds and is retained in `results/range-mass-sampled-initial/`, with clean
+source acd3941, incomplete status and no performance admission.
+
+A new replay adapter leaves every historical source/config/evidence byte intact.
+It permits absolute differences up to **1e-12 only for the three unitless
+uniform-reach collision reductions**. Counts, key/table bytes, identities, contexts
+and work remain exact (including types). Policy value/BR replay and native checks
+retain the original **1e-9 chips** tolerance. This is a numerical replay repair,
+not a change to the candidate or any learning/performance limit. The current
+machine's recomputed replay error also does not define artifact identity: compare
+bound study/audit hashes and the actual assessment instead. The error must still
+pass its numerical tolerance. Two new regression tests cover these distinctions.
+A complete rerun must use new checked source, all original seeds and budgets.
+
 ## Status
 
 Prospective plan published in [PR #19](https://github.com/jimmy-sim/poker-ai/pull/19)
