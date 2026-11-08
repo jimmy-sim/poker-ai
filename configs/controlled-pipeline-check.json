@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "saved_own_policy_pipeline_calibration_no_new_learning",
+  "input_sha256": {
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "configs/parallel-cell-profile.json": "36d5882dc9db09e9b292fb288dd3f095f149addb759a24e86e4f7bbcdf000725",
+    "results/parallel-cell-profile/profile.json": "1aaa78d762d646f478fd4d45e795e3ab1c3126c9de2415838c0ef0e34e037f6a",
+    "results/parallel-cell-profile/report/summary.json": "a81af5f98e1c5c2fd6f8f8e4220012f0c07ca16b21cbc071c131bfc2c715619d",
+    "configs/range-mass-reply-diagnosis.json": "9f5193eeb6f3147c7a8ca99cedc8a3ca021992e8688a9154dfb1fcbaad44d538",
+    "results/range-mass-replies/diagnosis.json": "16b743d75ec798ec9781a24d5b8071f4425881888fe0252488931290c9f9da5c",
+    "results/range-mass-replies/independent.json": "907d4dcfacce417ab2fc61c0faa3e1691f0ae7d572abc3adc71781673bdcda3c",
+    "results/range-mass-sampled/study-own-receipts.json.gz": "dbcbbb99b96907e6ce357a81df488111b5cc12a9d01c147f2d49b35cdf2b51e3",
+    "results/range-mass-admission/study-own-policies.json.gz": "834106e42934a63a031b8ccbad1d49572b05cf7429af8817e9a4f7e9244c3e2d",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55"
+  },
+  "parallel_profile": "results/parallel-cell-profile/profile.json",
+  "saved_policy_config": "configs/range-mass-reply-diagnosis.json",
+  "worker_count": 3,
+  "repetitions": 3,
+  "source_policy_selection": "all 16 final own profiles: two pinned games x exact/range-mass x full/each of three sampled seeds; full iteration4096, sampled10m visits",
+  "assignment": "fixed sorted source-profile order, index modulo three",
+  "own_calibration_maximum_seconds": 1200,
+  "native_calibration_maximum_seconds": 1200,
+  "forecast_own_cap_seconds": 7200,
+  "forecast_native_cap_seconds": 3600,
+  "forecast_guard_multiplier": 2.0,
+  "future_policy_count": 840,
+  "future_checkpoints_per_cell": 6,
+  "tolerance_chips": 1e-09,
+  "checkpoint_contract": {
+    "node_work": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "iteration": [
+      16,
+      64,
+      128
+    ],
+    "crossing": "first complete iteration crossing each work threshold; record previous count and overshoot; iteration labels exact; keep axes separate; coalesce simultaneous labels without changing training",
+    "export": "observation only; exact arrays/RNG/work equal uninterrupted training; finite canonical gzip JSON mtime0, hash and byte-exact policy round trip"
+  },
+  "metric_contract": {
+    "exact_exploitability_chips": "half sum of target best-response gains; zero-sum signs explicit",
+    "within_partition_gain_chips": "half sum of restricted reply value minus saved target value",
+    "extra_information_gap_chips": "half sum of exact minus restricted reply values; exact exploitability equals within plus extra",
+    "river_only_gain_exact_prefix_chips": "half sum of exact reply value minus exact-turn/restricted-river own hybrid value against fixed saved opponent; nonnegative, not retraining gain",
+    "value_player_zero_chips": "exact policy value in target chips for seat0",
+    "regret_norm": "L2 norm over all stored regret entries",
+    "positive_average_coverage": "fraction of partition rows with positive stored average mass; warm exact initialization can make this one immediately",
+    "river_visit_coverage": "fraction of river partition keys read by external passes, excluding exact initialization; full traversal visits every row; return null for no river rows"
+  },
+  "forecast": "fixed three-worker training sums plus six checkpoints per future cell at maximum own-score/roundtrip cost over all four source profiles and three repeats for that game/representation; charge scoring twice for in-run plus report replay; add measured setup/collection and full-size serialization/render fixture cost, then 2x; native projection separate",
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "role": "EV/exact+restricted roots and achieved OWN reply/hybrid profiles only; no native actions/policies exported or used for training",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "scope": "checkpoint/metric correctness and timing of old own policies only; 48 own and 48 native calibration cases; synthetic 840-row IO/render fixture clearly labeled, not learning results; no large study/default/strength/global/river-cause admission"
+}

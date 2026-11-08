@@ -327,3 +327,13 @@ profile-parallel-cells:
 report-parallel-cells:
 	$(UV) run --locked python scripts/profile_parallel_cells.py \
 		--report results/parallel-cell-profile/profile.json
+
+.PHONY: profile-controlled-pipeline audit-controlled-pipeline report-controlled-pipeline
+profile-controlled-pipeline:
+	$(UV) run --locked --extra research python scripts/profile_controlled_pipeline.py
+
+audit-controlled-pipeline:
+	$(UV) run --locked --extra solver-validation python scripts/audit_controlled_pipeline.py
+
+report-controlled-pipeline:
+	$(UV) run --locked python scripts/report_controlled_pipeline.py

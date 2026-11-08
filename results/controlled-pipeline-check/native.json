@@ -1,0 +1,2564 @@
+{
+  "batches": [
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.05749299999999735,
+      "reaped_children_cpu_seconds": 9.28,
+      "repeat": 0,
+      "seconds": 3.375446207995992,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33967,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.4894486669945763
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.016703000000000134,
+                "index": 0,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 7.952622251394814e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970688,
+                  "within_partition_gain_chips": 7.952622251394814e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.0000103335705,
+                    "achieved_restricted_chips": 25.0000103335705,
+                    "achieved_river_before_chips": 25.0000103335705,
+                    "exact_root_chips": 25.0000103335705,
+                    "restricted_root_chips": 25.0000103335705,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016703041997971013
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.016032000000000046,
+                "index": 3,
+                "maximum_error_chips": 4.263256414560601e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.791087917510595e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000911215494,
+                  "within_partition_gain_chips": 4.791087917510595e-07
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000095795007,
+                    "achieved_restricted_chips": 25.00000095795007,
+                    "achieved_river_before_chips": 25.00000095795007,
+                    "exact_root_chips": 25.00000095795007,
+                    "restricted_root_chips": 25.00000095795007,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999732488,
+                    "achieved_restricted_chips": -24.999999999732488,
+                    "achieved_river_before_chips": -24.999999999732488,
+                    "exact_root_chips": -24.999999999732488,
+                    "restricted_root_chips": -24.999999999732488,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016032958010328002
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015148999999999635,
+                "index": 6,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.3239221259862006e-06,
+                  "extra_information_gap_chips": 1.2565793383600976e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793383600976e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.198264192150191e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000006630287928,
+                    "achieved_restricted_chips": 25.00000637897206,
+                    "achieved_river_before_chips": 25.00000637897206,
+                    "exact_root_chips": 25.000006630287928,
+                    "restricted_root_chips": 25.00000637897206,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999982443676,
+                    "achieved_restricted_chips": -24.999999982443676,
+                    "achieved_river_before_chips": -24.999999982443676,
+                    "exact_root_chips": -24.999999982443676,
+                    "restricted_root_chips": -24.999999982443676,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01515008400019724
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.1320319999999997,
+                "index": 9,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09169606953460274,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953460274
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.12026985015917,
+                    "achieved_restricted_chips": 18.12026985015917,
+                    "achieved_river_before_chips": 18.12026985015917,
+                    "exact_root_chips": 18.12026985015917,
+                    "restricted_root_chips": 18.12026985015917,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.936877711089963,
+                    "achieved_restricted_chips": -17.936877711089963,
+                    "achieved_river_before_chips": -17.936877711089963,
+                    "exact_root_chips": -17.936877711089963,
+                    "restricted_root_chips": -17.936877711089963,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13203174999216571
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.12954,
+                "index": 12,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09779045293985789,
+                  "extra_information_gap_chips": 0.09772779708569246,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379772,
+                  "value_player_zero_chips": 18.000021405782107,
+                  "within_partition_gain_chips": 6.265585416542763e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000088166449366,
+                    "achieved_restricted_chips": 18.000085872950798,
+                    "achieved_river_before_chips": 18.000085872950798,
+                    "exact_root_chips": 18.000088166449366,
+                    "restricted_root_chips": 18.000085872950798,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.80450726056965,
+                    "achieved_restricted_chips": -17.999960561242467,
+                    "achieved_river_before_chips": -18.856421727147037,
+                    "exact_root_chips": -17.80450726056965,
+                    "restricted_root_chips": -17.999960561242467,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.1295660420000786
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.21057099999999984,
+                "index": 15,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.1069927266992305,
+                  "extra_information_gap_chips": 1.0762463429885187,
+                  "river_only_gain_exact_prefix_chips": 1.3393855085797899,
+                  "value_player_zero_chips": 18.025971481747703,
+                  "within_partition_gain_chips": 0.03074638371071181
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.063297116187425,
+                    "achieved_restricted_chips": 18.060341560065066,
+                    "achieved_river_before_chips": 18.060341560065066,
+                    "exact_root_chips": 18.063297116187425,
+                    "restricted_root_chips": 18.060341560065066,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -15.849311662788963,
+                    "achieved_restricted_chips": -17.998848792643642,
+                    "achieved_river_before_chips": -18.525127123826184,
+                    "exact_root_chips": -15.849311662788963,
+                    "restricted_root_chips": -17.998848792643642,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.2106917089986382
+              }
+            },
+            {
+              "cpu_seconds": 3.016498,
+              "kind": "done",
+              "seconds": 3.0173758329910925,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33967,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33968,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.510676083009457
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.016747000000000067,
+                "index": 1,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.0539729089487082e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413054,
+                  "within_partition_gain_chips": 1.0539729089487082e-08
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000020808457,
+                    "achieved_restricted_chips": 25.000000020808457,
+                    "achieved_river_before_chips": 25.000000020808457,
+                    "exact_root_chips": 25.000000020808457,
+                    "restricted_root_chips": 25.000000020808457,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999729,
+                    "achieved_restricted_chips": -24.999999999729,
+                    "achieved_river_before_chips": -24.999999999729,
+                    "exact_root_chips": -24.999999999729,
+                    "restricted_root_chips": -24.999999999729,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016748042005929165
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.015349999999999753,
+                "index": 4,
+                "maximum_error_chips": 1.0658141036401503e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 8.32961936225729e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961936225729e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000011087564722,
+                    "achieved_restricted_chips": 25.000011087564722,
+                    "achieved_river_before_chips": 25.000011087564722,
+                    "exact_root_chips": 25.000011087564722,
+                    "restricted_root_chips": 25.000011087564722,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015348791988799348
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.014880999999999922,
+                "index": 7,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.0011882261979856423,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.0011882261979856423
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.002376028433687,
+                    "achieved_restricted_chips": 25.002376028433687,
+                    "achieved_river_before_chips": 25.002376028433687,
+                    "exact_root_chips": 25.002376028433687,
+                    "restricted_root_chips": 25.002376028433687,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999576037716,
+                    "achieved_restricted_chips": -24.999999576037716,
+                    "achieved_river_before_chips": -24.999999576037716,
+                    "exact_root_chips": -24.999999576037716,
+                    "restricted_root_chips": -24.999999576037716,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.014880000002449378
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.13374499999999978,
+                "index": 10,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.07957605105080212,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105080212
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.15573764437758,
+                    "achieved_restricted_chips": 18.15573764437758,
+                    "achieved_river_before_chips": 18.15573764437758,
+                    "exact_root_chips": 18.15573764437758,
+                    "restricted_root_chips": 18.15573764437758,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.996585542275977,
+                    "achieved_restricted_chips": -17.996585542275977,
+                    "achieved_river_before_chips": -17.996585542275977,
+                    "exact_root_chips": -17.996585542275977,
+                    "restricted_root_chips": -17.996585542275977,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13374533300520852
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.1317919999999999,
+                "index": 13,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.6129730656393697,
+                  "extra_information_gap_chips": 1.57298673007352,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285935,
+                  "value_player_zero_chips": 18.03982603320727,
+                  "within_partition_gain_chips": 0.03998633556584963
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.084120819466655,
+                    "achieved_restricted_chips": 18.078597912393537,
+                    "achieved_river_before_chips": 18.078597912393537,
+                    "exact_root_chips": 18.084120819466655,
+                    "restricted_root_chips": 18.078597912393537,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.858174688187916,
+                    "achieved_restricted_chips": -17.998625241261838,
+                    "achieved_river_before_chips": -19.083644104771984,
+                    "exact_root_chips": -14.858174688187916,
+                    "restricted_root_chips": -17.998625241261838,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.131936042002053
+              }
+            },
+            {
+              "cpu_seconds": 2.832482,
+              "kind": "done",
+              "seconds": 2.832768042004318,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33968,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33969,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.48249974999635
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.017326000000000175,
+                "index": 2,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.833328780762258e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000002136197274,
+                  "within_partition_gain_chips": 4.833328780762258e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000951934865,
+                    "achieved_restricted_chips": 25.00000951934865,
+                    "achieved_river_before_chips": 25.00000951934865,
+                    "exact_root_chips": 25.00000951934865,
+                    "restricted_root_chips": 25.00000951934865,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999985269109,
+                    "achieved_restricted_chips": -24.99999985269109,
+                    "achieved_river_before_chips": -24.99999985269109,
+                    "exact_root_chips": -24.99999985269109,
+                    "restricted_root_chips": -24.99999985269109,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01732687500771135
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015513999999999584,
+                "index": 5,
+                "maximum_error_chips": 1.2079226507921703e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.762231415294082e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000000464776,
+                  "within_partition_gain_chips": 3.762231415294082e-09
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000006103612,
+                    "achieved_restricted_chips": 25.000000006103612,
+                    "achieved_river_before_chips": 25.000000006103612,
+                    "exact_root_chips": 25.000000006103612,
+                    "restricted_root_chips": 25.000000006103612,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999999857915,
+                    "achieved_restricted_chips": -24.99999999857915,
+                    "achieved_river_before_chips": -24.99999999857915,
+                    "exact_root_chips": -24.99999999857915,
+                    "restricted_root_chips": -24.99999999857915,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015512917001615278
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.1389149999999999,
+                "index": 8,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 6.56243445753546e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.000012700829995,
+                  "within_partition_gain_chips": 6.56243445753546e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000086498267226,
+                    "achieved_restricted_chips": 18.000086498267226,
+                    "achieved_river_before_chips": 18.000086498267226,
+                    "exact_root_chips": 18.000086498267226,
+                    "restricted_root_chips": 18.000086498267226,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.999955249578075,
+                    "achieved_restricted_chips": -17.999955249578075,
+                    "achieved_river_before_chips": -17.999955249578075,
+                    "exact_root_chips": -17.999955249578075,
+                    "restricted_root_chips": -17.999955249578075,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13898570799210574
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.14667800000000009,
+                "index": 11,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.08417497338373892,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.06261975466355,
+                  "within_partition_gain_chips": 0.08417497338373892
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.16554201639294,
+                    "achieved_restricted_chips": 18.16554201639294,
+                    "achieved_river_before_chips": 18.16554201639294,
+                    "exact_root_chips": 18.16554201639294,
+                    "restricted_root_chips": 18.16554201639294,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.997192069625463,
+                    "achieved_restricted_chips": -17.997192069625463,
+                    "achieved_river_before_chips": -17.997192069625463,
+                    "exact_root_chips": -17.997192069625463,
+                    "restricted_root_chips": -17.997192069625463,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.1466889169969363
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.169006,
+                "index": 14,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.9823882980607568,
+                  "extra_information_gap_chips": 1.7904571388343058,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343058,
+                  "value_player_zero_chips": 18.040468860771053,
+                  "within_partition_gain_chips": 0.191931159226451
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.131879901146263,
+                    "achieved_restricted_chips": 18.126057547632193,
+                    "achieved_river_before_chips": 18.126057547632193,
+                    "exact_root_chips": 18.131879901146263,
+                    "restricted_root_chips": 18.126057547632193,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.16710330502475,
+                    "achieved_restricted_chips": -17.74219522917929,
+                    "achieved_river_before_chips": -17.74219522917929,
+                    "exact_root_chips": -14.16710330502475,
+                    "restricted_root_chips": -17.74219522917929,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.169004916009726
+              }
+            },
+            {
+              "cpu_seconds": 2.977863,
+              "kind": "done",
+              "seconds": 2.978027667006245,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33969,
+          "slot": 2
+        }
+      ]
+    },
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.0541640000000001,
+      "reaped_children_cpu_seconds": 9.280000000000001,
+      "repeat": 1,
+      "seconds": 3.389356083003804,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33970,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.4770512910035904
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.016547999999999785,
+                "index": 0,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 7.952622251394814e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970688,
+                  "within_partition_gain_chips": 7.952622251394814e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.0000103335705,
+                    "achieved_restricted_chips": 25.0000103335705,
+                    "achieved_river_before_chips": 25.0000103335705,
+                    "exact_root_chips": 25.0000103335705,
+                    "restricted_root_chips": 25.0000103335705,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016547291990718804
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015946000000000016,
+                "index": 3,
+                "maximum_error_chips": 4.263256414560601e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.791087917510595e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000911215494,
+                  "within_partition_gain_chips": 4.791087917510595e-07
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000095795007,
+                    "achieved_restricted_chips": 25.00000095795007,
+                    "achieved_river_before_chips": 25.00000095795007,
+                    "exact_root_chips": 25.00000095795007,
+                    "restricted_root_chips": 25.00000095795007,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999732488,
+                    "achieved_restricted_chips": -24.999999999732488,
+                    "achieved_river_before_chips": -24.999999999732488,
+                    "exact_root_chips": -24.999999999732488,
+                    "restricted_root_chips": -24.999999999732488,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01594654200016521
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015140000000000153,
+                "index": 6,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.3239221259862006e-06,
+                  "extra_information_gap_chips": 1.2565793383600976e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793383600976e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.198264192150191e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000006630287928,
+                    "achieved_restricted_chips": 25.00000637897206,
+                    "achieved_river_before_chips": 25.00000637897206,
+                    "exact_root_chips": 25.000006630287928,
+                    "restricted_root_chips": 25.00000637897206,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999982443676,
+                    "achieved_restricted_chips": -24.999999982443676,
+                    "achieved_river_before_chips": -24.999999982443676,
+                    "exact_root_chips": -24.999999982443676,
+                    "restricted_root_chips": -24.999999982443676,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015139707989874296
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.13100699999999987,
+                "index": 9,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09169606953460274,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953460274
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.12026985015917,
+                    "achieved_restricted_chips": 18.12026985015917,
+                    "achieved_river_before_chips": 18.12026985015917,
+                    "exact_root_chips": 18.12026985015917,
+                    "restricted_root_chips": 18.12026985015917,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.936877711089963,
+                    "achieved_restricted_chips": -17.936877711089963,
+                    "achieved_river_before_chips": -17.936877711089963,
+                    "exact_root_chips": -17.936877711089963,
+                    "restricted_root_chips": -17.936877711089963,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13100583299819846
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.12872799999999973,
+                "index": 12,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09779045293985789,
+                  "extra_information_gap_chips": 0.09772779708569246,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379772,
+                  "value_player_zero_chips": 18.000021405782107,
+                  "within_partition_gain_chips": 6.265585416542763e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000088166449366,
+                    "achieved_restricted_chips": 18.000085872950798,
+                    "achieved_river_before_chips": 18.000085872950798,
+                    "exact_root_chips": 18.000088166449366,
+                    "restricted_root_chips": 18.000085872950798,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.80450726056965,
+                    "achieved_restricted_chips": -17.999960561242467,
+                    "achieved_river_before_chips": -18.856421727147037,
+                    "exact_root_chips": -17.80450726056965,
+                    "restricted_root_chips": -17.999960561242467,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.1287504590000026
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.21024200000000004,
+                "index": 15,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.1069927266992305,
+                  "extra_information_gap_chips": 1.0762463429885187,
+                  "river_only_gain_exact_prefix_chips": 1.3393855085797899,
+                  "value_player_zero_chips": 18.025971481747703,
+                  "within_partition_gain_chips": 0.03074638371071181
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.063297116187425,
+                    "achieved_restricted_chips": 18.060341560065066,
+                    "achieved_river_before_chips": 18.060341560065066,
+                    "exact_root_chips": 18.063297116187425,
+                    "restricted_root_chips": 18.060341560065066,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -15.849311662788963,
+                    "achieved_restricted_chips": -17.998848792643642,
+                    "achieved_river_before_chips": -18.525127123826184,
+                    "exact_root_chips": -15.849311662788963,
+                    "restricted_root_chips": -17.998848792643642,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.2102547910035355
+              }
+            },
+            {
+              "cpu_seconds": 3.003219,
+              "kind": "done",
+              "seconds": 3.003296541995951,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33970,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33971,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.5012243340024725
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.017129000000000172,
+                "index": 1,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.0539729089487082e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413054,
+                  "within_partition_gain_chips": 1.0539729089487082e-08
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000020808457,
+                    "achieved_restricted_chips": 25.000000020808457,
+                    "achieved_river_before_chips": 25.000000020808457,
+                    "exact_root_chips": 25.000000020808457,
+                    "restricted_root_chips": 25.000000020808457,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999729,
+                    "achieved_restricted_chips": -24.999999999729,
+                    "achieved_river_before_chips": -24.999999999729,
+                    "exact_root_chips": -24.999999999729,
+                    "restricted_root_chips": -24.999999999729,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.017129875006503426
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.01556000000000024,
+                "index": 4,
+                "maximum_error_chips": 1.0658141036401503e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 8.32961936225729e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961936225729e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000011087564722,
+                    "achieved_restricted_chips": 25.000011087564722,
+                    "achieved_river_before_chips": 25.000011087564722,
+                    "exact_root_chips": 25.000011087564722,
+                    "restricted_root_chips": 25.000011087564722,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015558792001684196
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015194999999999848,
+                "index": 7,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.0011882261979856423,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.0011882261979856423
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.002376028433687,
+                    "achieved_restricted_chips": 25.002376028433687,
+                    "achieved_river_before_chips": 25.002376028433687,
+                    "exact_root_chips": 25.002376028433687,
+                    "restricted_root_chips": 25.002376028433687,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999576037716,
+                    "achieved_restricted_chips": -24.999999576037716,
+                    "achieved_river_before_chips": -24.999999576037716,
+                    "exact_root_chips": -24.999999576037716,
+                    "restricted_root_chips": -24.999999576037716,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01519508300407324
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.13554999999999984,
+                "index": 10,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.07957605105080212,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105080212
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.15573764437758,
+                    "achieved_restricted_chips": 18.15573764437758,
+                    "achieved_river_before_chips": 18.15573764437758,
+                    "exact_root_chips": 18.15573764437758,
+                    "restricted_root_chips": 18.15573764437758,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.996585542275977,
+                    "achieved_restricted_chips": -17.996585542275977,
+                    "achieved_river_before_chips": -17.996585542275977,
+                    "exact_root_chips": -17.996585542275977,
+                    "restricted_root_chips": -17.996585542275977,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13554883300093934
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.13065099999999985,
+                "index": 13,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.6129730656393697,
+                  "extra_information_gap_chips": 1.57298673007352,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285935,
+                  "value_player_zero_chips": 18.03982603320727,
+                  "within_partition_gain_chips": 0.03998633556584963
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.084120819466655,
+                    "achieved_restricted_chips": 18.078597912393537,
+                    "achieved_river_before_chips": 18.078597912393537,
+                    "exact_root_chips": 18.084120819466655,
+                    "restricted_root_chips": 18.078597912393537,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.858174688187916,
+                    "achieved_restricted_chips": -17.998625241261838,
+                    "achieved_river_before_chips": -19.083644104771984,
+                    "exact_root_chips": -14.858174688187916,
+                    "restricted_root_chips": -17.998625241261838,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13064958300674334
+              }
+            },
+            {
+              "cpu_seconds": 2.824567,
+              "kind": "done",
+              "seconds": 2.82469462500012,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33971,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33972,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.492819833001704
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.017278999999999822,
+                "index": 2,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.833328780762258e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000002136197274,
+                  "within_partition_gain_chips": 4.833328780762258e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000951934865,
+                    "achieved_restricted_chips": 25.00000951934865,
+                    "achieved_river_before_chips": 25.00000951934865,
+                    "exact_root_chips": 25.00000951934865,
+                    "restricted_root_chips": 25.00000951934865,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999985269109,
+                    "achieved_restricted_chips": -24.99999985269109,
+                    "achieved_river_before_chips": -24.99999985269109,
+                    "exact_root_chips": -24.99999985269109,
+                    "restricted_root_chips": -24.99999985269109,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01727908400062006
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.01570399999999994,
+                "index": 5,
+                "maximum_error_chips": 1.2079226507921703e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.762231415294082e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000000464776,
+                  "within_partition_gain_chips": 3.762231415294082e-09
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000006103612,
+                    "achieved_restricted_chips": 25.000000006103612,
+                    "achieved_river_before_chips": 25.000000006103612,
+                    "exact_root_chips": 25.000000006103612,
+                    "restricted_root_chips": 25.000000006103612,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999999857915,
+                    "achieved_restricted_chips": -24.99999999857915,
+                    "achieved_river_before_chips": -24.99999999857915,
+                    "exact_root_chips": -24.99999999857915,
+                    "restricted_root_chips": -24.99999999857915,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01570241698937025
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.13892700000000024,
+                "index": 8,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 6.56243445753546e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.000012700829995,
+                  "within_partition_gain_chips": 6.56243445753546e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000086498267226,
+                    "achieved_restricted_chips": 18.000086498267226,
+                    "achieved_river_before_chips": 18.000086498267226,
+                    "exact_root_chips": 18.000086498267226,
+                    "restricted_root_chips": 18.000086498267226,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.999955249578075,
+                    "achieved_restricted_chips": -17.999955249578075,
+                    "achieved_river_before_chips": -17.999955249578075,
+                    "exact_root_chips": -17.999955249578075,
+                    "restricted_root_chips": -17.999955249578075,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.138925332998042
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.15010000000000012,
+                "index": 11,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.08417497338373892,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.06261975466355,
+                  "within_partition_gain_chips": 0.08417497338373892
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.16554201639294,
+                    "achieved_restricted_chips": 18.16554201639294,
+                    "achieved_river_before_chips": 18.16554201639294,
+                    "exact_root_chips": 18.16554201639294,
+                    "restricted_root_chips": 18.16554201639294,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.997192069625463,
+                    "achieved_restricted_chips": -17.997192069625463,
+                    "achieved_river_before_chips": -17.997192069625463,
+                    "exact_root_chips": -17.997192069625463,
+                    "restricted_root_chips": -17.997192069625463,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.15011216700077057
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.17010000000000014,
+                "index": 14,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.9823882980607568,
+                  "extra_information_gap_chips": 1.7904571388343058,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343058,
+                  "value_player_zero_chips": 18.040468860771053,
+                  "within_partition_gain_chips": 0.191931159226451
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.131879901146263,
+                    "achieved_restricted_chips": 18.126057547632193,
+                    "achieved_river_before_chips": 18.126057547632193,
+                    "exact_root_chips": 18.131879901146263,
+                    "restricted_root_chips": 18.126057547632193,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.16710330502475,
+                    "achieved_restricted_chips": -17.74219522917929,
+                    "achieved_river_before_chips": -17.74219522917929,
+                    "exact_root_chips": -14.16710330502475,
+                    "restricted_root_chips": -17.74219522917929,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.17011112498585135
+              }
+            },
+            {
+              "cpu_seconds": 2.992996,
+              "kind": "done",
+              "seconds": 2.993051541998284,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33972,
+          "slot": 2
+        }
+      ]
+    },
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.05559600000000131,
+      "reaped_children_cpu_seconds": 9.280000000000001,
+      "repeat": 2,
+      "seconds": 3.3973535830009496,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33973,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.5082200830074726
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.01688199999999984,
+                "index": 0,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 7.952622251394814e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970688,
+                  "within_partition_gain_chips": 7.952622251394814e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.0000103335705,
+                    "achieved_restricted_chips": 25.0000103335705,
+                    "achieved_river_before_chips": 25.0000103335705,
+                    "exact_root_chips": 25.0000103335705,
+                    "restricted_root_chips": 25.0000103335705,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016883707998204045
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.01593800000000023,
+                "index": 3,
+                "maximum_error_chips": 4.263256414560601e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.791087917510595e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000911215494,
+                  "within_partition_gain_chips": 4.791087917510595e-07
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000095795007,
+                    "achieved_restricted_chips": 25.00000095795007,
+                    "achieved_river_before_chips": 25.00000095795007,
+                    "exact_root_chips": 25.00000095795007,
+                    "restricted_root_chips": 25.00000095795007,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999732488,
+                    "achieved_restricted_chips": -24.999999999732488,
+                    "achieved_river_before_chips": -24.999999999732488,
+                    "exact_root_chips": -24.999999999732488,
+                    "restricted_root_chips": -24.999999999732488,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015936915995553136
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015116000000000351,
+                "index": 6,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.3239221259862006e-06,
+                  "extra_information_gap_chips": 1.2565793383600976e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793383600976e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.198264192150191e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000006630287928,
+                    "achieved_restricted_chips": 25.00000637897206,
+                    "achieved_river_before_chips": 25.00000637897206,
+                    "exact_root_chips": 25.000006630287928,
+                    "restricted_root_chips": 25.00000637897206,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999982443676,
+                    "achieved_restricted_chips": -24.999999982443676,
+                    "achieved_river_before_chips": -24.999999982443676,
+                    "exact_root_chips": -24.999999982443676,
+                    "restricted_root_chips": -24.999999982443676,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015115749993128702
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.1324869999999998,
+                "index": 9,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09169606953460274,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953460274
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.12026985015917,
+                    "achieved_restricted_chips": 18.12026985015917,
+                    "achieved_river_before_chips": 18.12026985015917,
+                    "exact_root_chips": 18.12026985015917,
+                    "restricted_root_chips": 18.12026985015917,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.936877711089963,
+                    "achieved_restricted_chips": -17.936877711089963,
+                    "achieved_river_before_chips": -17.936877711089963,
+                    "exact_root_chips": -17.936877711089963,
+                    "restricted_root_chips": -17.936877711089963,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13248637500510085
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.1279539999999999,
+                "index": 12,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.09779045293985789,
+                  "extra_information_gap_chips": 0.09772779708569246,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379772,
+                  "value_player_zero_chips": 18.000021405782107,
+                  "within_partition_gain_chips": 6.265585416542763e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000088166449366,
+                    "achieved_restricted_chips": 18.000085872950798,
+                    "achieved_river_before_chips": 18.000085872950798,
+                    "exact_root_chips": 18.000088166449366,
+                    "restricted_root_chips": 18.000085872950798,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.80450726056965,
+                    "achieved_restricted_chips": -17.999960561242467,
+                    "achieved_river_before_chips": -18.856421727147037,
+                    "exact_root_chips": -17.80450726056965,
+                    "restricted_root_chips": -17.999960561242467,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.1279506249993574
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.19587900000000014,
+                "index": 15,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.1069927266992305,
+                  "extra_information_gap_chips": 1.0762463429885187,
+                  "river_only_gain_exact_prefix_chips": 1.3393855085797899,
+                  "value_player_zero_chips": 18.025971481747703,
+                  "within_partition_gain_chips": 0.03074638371071181
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.063297116187425,
+                    "achieved_restricted_chips": 18.060341560065066,
+                    "achieved_river_before_chips": 18.060341560065066,
+                    "exact_root_chips": 18.063297116187425,
+                    "restricted_root_chips": 18.060341560065066,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -15.849311662788963,
+                    "achieved_restricted_chips": -17.998848792643642,
+                    "achieved_river_before_chips": -18.525127123826184,
+                    "exact_root_chips": -15.849311662788963,
+                    "restricted_root_chips": -17.998848792643642,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.19590766599867493
+              }
+            },
+            {
+              "cpu_seconds": 3.0203279999999997,
+              "kind": "done",
+              "seconds": 3.0206168750009965,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33973,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33974,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.4890508329990553
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.01647299999999996,
+                "index": 1,
+                "maximum_error_chips": 5.684341886080802e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.0539729089487082e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413054,
+                  "within_partition_gain_chips": 1.0539729089487082e-08
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000020808457,
+                    "achieved_restricted_chips": 25.000000020808457,
+                    "achieved_river_before_chips": 25.000000020808457,
+                    "exact_root_chips": 25.000000020808457,
+                    "restricted_root_chips": 25.000000020808457,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999999729,
+                    "achieved_restricted_chips": -24.999999999729,
+                    "achieved_river_before_chips": -24.999999999729,
+                    "exact_root_chips": -24.999999999729,
+                    "restricted_root_chips": -24.999999999729,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.016473791998578236
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.015207999999999888,
+                "index": 4,
+                "maximum_error_chips": 1.0658141036401503e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 8.32961936225729e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961936225729e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000011087564722,
+                    "achieved_restricted_chips": 25.000011087564722,
+                    "achieved_river_before_chips": 25.000011087564722,
+                    "exact_root_chips": 25.000011087564722,
+                    "restricted_root_chips": 25.000011087564722,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999994428325998,
+                    "achieved_restricted_chips": -24.999994428325998,
+                    "achieved_river_before_chips": -24.999994428325998,
+                    "exact_root_chips": -24.999994428325998,
+                    "restricted_root_chips": -24.999994428325998,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.01520833300310187
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.014942999999999707,
+                "index": 7,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.0011882261979856423,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.0011882261979856423
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.002376028433687,
+                    "achieved_restricted_chips": 25.002376028433687,
+                    "achieved_river_before_chips": 25.002376028433687,
+                    "exact_root_chips": 25.002376028433687,
+                    "restricted_root_chips": 25.002376028433687,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.999999576037716,
+                    "achieved_restricted_chips": -24.999999576037716,
+                    "achieved_river_before_chips": -24.999999576037716,
+                    "exact_root_chips": -24.999999576037716,
+                    "restricted_root_chips": -24.999999576037716,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.014942916997824796
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.13313599999999992,
+                "index": 10,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.07957605105080212,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105080212
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.15573764437758,
+                    "achieved_restricted_chips": 18.15573764437758,
+                    "achieved_river_before_chips": 18.15573764437758,
+                    "exact_root_chips": 18.15573764437758,
+                    "restricted_root_chips": 18.15573764437758,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.996585542275977,
+                    "achieved_restricted_chips": -17.996585542275977,
+                    "achieved_river_before_chips": -17.996585542275977,
+                    "exact_root_chips": -17.996585542275977,
+                    "restricted_root_chips": -17.996585542275977,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.13313516600464936
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.12960199999999977,
+                "index": 13,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.6129730656393697,
+                  "extra_information_gap_chips": 1.57298673007352,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285935,
+                  "value_player_zero_chips": 18.03982603320727,
+                  "within_partition_gain_chips": 0.03998633556584963
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.084120819466655,
+                    "achieved_restricted_chips": 18.078597912393537,
+                    "achieved_river_before_chips": 18.078597912393537,
+                    "exact_root_chips": 18.084120819466655,
+                    "restricted_root_chips": 18.078597912393537,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.858174688187916,
+                    "achieved_restricted_chips": -17.998625241261838,
+                    "achieved_river_before_chips": -19.083644104771984,
+                    "exact_root_chips": -14.858174688187916,
+                    "restricted_root_chips": -17.998625241261838,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.12960208300501108
+              }
+            },
+            {
+              "cpu_seconds": 2.8065949999999997,
+              "kind": "done",
+              "seconds": 2.8068692090018885,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33974,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33975,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.4990127500059316
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.01731299999999969,
+                "index": 2,
+                "maximum_error_chips": 4.973799150320701e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 4.833328780762258e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000002136197274,
+                  "within_partition_gain_chips": 4.833328780762258e-06
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.00000951934865,
+                    "achieved_restricted_chips": 25.00000951934865,
+                    "achieved_river_before_chips": 25.00000951934865,
+                    "exact_root_chips": 25.00000951934865,
+                    "restricted_root_chips": 25.00000951934865,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999985269109,
+                    "achieved_restricted_chips": -24.99999985269109,
+                    "achieved_river_before_chips": -24.99999985269109,
+                    "exact_root_chips": -24.99999985269109,
+                    "restricted_root_chips": -24.99999985269109,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.017313165997620672
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.015649999999999942,
+                "index": 5,
+                "maximum_error_chips": 1.2079226507921703e-13,
+                "native_metrics": {
+                  "exact_exploitability_chips": 3.762231415294082e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000000464776,
+                  "within_partition_gain_chips": 3.762231415294082e-09
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 25.000000006103612,
+                    "achieved_restricted_chips": 25.000000006103612,
+                    "achieved_river_before_chips": 25.000000006103612,
+                    "exact_root_chips": 25.000000006103612,
+                    "restricted_root_chips": 25.000000006103612,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -24.99999999857915,
+                    "achieved_restricted_chips": -24.99999999857915,
+                    "achieved_river_before_chips": -24.99999999857915,
+                    "exact_root_chips": -24.99999999857915,
+                    "restricted_root_chips": -24.99999999857915,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.015646041007130407
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.14020699999999975,
+                "index": 8,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 6.56243445753546e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.000012700829995,
+                  "within_partition_gain_chips": 6.56243445753546e-05
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.000086498267226,
+                    "achieved_restricted_chips": 18.000086498267226,
+                    "achieved_river_before_chips": 18.000086498267226,
+                    "exact_root_chips": 18.000086498267226,
+                    "restricted_root_chips": 18.000086498267226,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.999955249578075,
+                    "achieved_restricted_chips": -17.999955249578075,
+                    "achieved_river_before_chips": -17.999955249578075,
+                    "exact_root_chips": -17.999955249578075,
+                    "restricted_root_chips": -17.999955249578075,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.14020674998755567
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.14822800000000003,
+                "index": 11,
+                "maximum_error_chips": 7.105427357601002e-15,
+                "native_metrics": {
+                  "exact_exploitability_chips": 0.08417497338373892,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.06261975466355,
+                  "within_partition_gain_chips": 0.08417497338373892
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.16554201639294,
+                    "achieved_restricted_chips": 18.16554201639294,
+                    "achieved_river_before_chips": 18.16554201639294,
+                    "exact_root_chips": 18.16554201639294,
+                    "restricted_root_chips": 18.16554201639294,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -17.997192069625463,
+                    "achieved_restricted_chips": -17.997192069625463,
+                    "achieved_river_before_chips": -17.997192069625463,
+                    "exact_root_chips": -17.997192069625463,
+                    "restricted_root_chips": -17.997192069625463,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.1482272080029361
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.1701950000000001,
+                "index": 14,
+                "maximum_error_chips": 1.0658141036401503e-14,
+                "native_metrics": {
+                  "exact_exploitability_chips": 1.9823882980607568,
+                  "extra_information_gap_chips": 1.7904571388343058,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343058,
+                  "value_player_zero_chips": 18.040468860771053,
+                  "within_partition_gain_chips": 0.191931159226451
+                },
+                "responses": [
+                  {
+                    "achieved_exact_chips": 18.131879901146263,
+                    "achieved_restricted_chips": 18.126057547632193,
+                    "achieved_river_before_chips": 18.126057547632193,
+                    "exact_root_chips": 18.131879901146263,
+                    "restricted_root_chips": 18.126057547632193,
+                    "target": 0
+                  },
+                  {
+                    "achieved_exact_chips": -14.16710330502475,
+                    "achieved_restricted_chips": -17.74219522917929,
+                    "achieved_river_before_chips": -17.74219522917929,
+                    "exact_root_chips": -14.16710330502475,
+                    "restricted_root_chips": -17.74219522917929,
+                    "target": 1
+                  }
+                ],
+                "seconds": 0.17019433299719822
+              }
+            },
+            {
+              "cpu_seconds": 2.9982189999999997,
+              "kind": "done",
+              "seconds": 2.998474083011388,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33975,
+          "slot": 2
+        }
+      ]
+    }
+  ],
+  "details_sha256": "696ecbe5bcd71d441921c5c33d4f855548c6614cab010e6c6514894a7800eac7",
+  "environment": {
+    "cpu": "arm",
+    "cpu_query_status": "sysctl unavailable: CalledProcessError",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "failure": null,
+  "format": "poker-ai-saved-own-pipeline-native-cost-v1",
+  "input_sha256": "2161361df686251ffabb93c03618217df409cc00220573e910f86f43a8fd6500",
+  "license": {
+    "installed_license_files": [
+      "open_spiel-2.0.2.dist-info/licenses/LICENSE"
+    ],
+    "previously_read_record": "docs/solver_validation.md",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "parent_cpu_seconds": 21.294088,
+  "reaped_children_cpu_seconds": 27.85,
+  "reference": {
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "name": "OpenSpiel",
+    "role": "EV/exact+restricted roots and achieved OWN reply/hybrid profiles only; no native actions/policies exported or used for training",
+    "version": "2.0.2"
+  },
+  "reference_actions_exported": false,
+  "seconds": 31.31852254200203,
+  "source": {
+    "dirty": false,
+    "git_commit": "9501ec44e4702e1a9c9ec2bb975686add7b7f560",
+    "git_status": [],
+    "sha256": {
+      "configs/controlled-pipeline-check.json": "2acbc2f3c6cd7628723c9f37e9354182a494a447833a1204c554dc660268988d",
+      "pyproject.toml": "a88e6023ac3ae5dd08da9ed6eceb83967e20e42aa9fe88dc4fb11c9fa49529f1",
+      "scripts/audit_controlled_pipeline.py": "80c32fe7c8840cf9a6cc26379aec575cf73771e0399c42ee8b8257331b46fa67",
+      "scripts/profile_controlled_pipeline.py": "3cea6f4204f498314b8edd1e16ea3ebbcfedde555d465aea1017f87554bbbbda",
+      "scripts/report_controlled_pipeline.py": "6d824fe1d851c8cd6be6aed0265e79baea7ec2e91aa15275132ccc98d215db4b",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/made_category.py": "2dfae8205af343943f4736d007efd2e18cc70c7147d7a2686db6730909831cc1",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/public_board.py": "8e3acf0d1dd36827962711f8561fa17a05abe042997498ec2a6044c45f83bf80",
+      "src/poker_ai/abstraction/range_mass.py": "b6afd34d1278e28424ee22ef1fc44fed9dc9f8179bf3cf014faef86b41080ca8",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/finite.py": "39dc15bf2daafc0bc0b6af0d014990fdd351ab39feef0d80f1796d0233422268",
+      "src/poker_ai/opponent_modeling/__init__.py": "a58c5e8a282812b3efb575227a25e0c37872c0709aa80696008b7e404ced159b",
+      "src/poker_ai/opponent_modeling/bayes.py": "d67e382b0f4115f167965e74ca0ad3768078d8b6b4e887da002be9850d5a4419",
+      "src/poker_ai/opponent_modeling/experiment.py": "4a8876a6eb211828c81b89bce909785953aed76ba23c6ebbaab8b71cd28d1580",
+      "src/poker_ai/opponent_modeling/policies.py": "a3a8faa9c32960f9ecb1323f0d218c9768f1eef7bb8885490fe64e21b4b534b0",
+      "src/poker_ai/postflop/__init__.py": "c05fd0b2b82cf5da814ea101df7b614efab78ca97d4f7fc1d6881a2667ae3d89",
+      "src/poker_ai/postflop/cached_nodes.py": "9475fd3bbe708e2094d5de0061d12fa40b602c47538d8e17c63e212ca2d1b02c",
+      "src/poker_ai/postflop/cell_process.py": "848944e5dad066aee2715d6ae3f09ee546d1827ce005baa7b8216bc2aa0f6630",
+      "src/poker_ai/postflop/collision_diagnosis.py": "1ecefdd9550fd9d1e6ab6f890f3dc9dc49c788f2bdb16f6e02f22fd1854114bc",
+      "src/poker_ai/postflop/controlled_checkpoints.py": "e723e4f74dbcb42c61d6c65c07d775a61d8008bdf1aa27907db77aff819b29a9",
+      "src/poker_ai/postflop/controlled_profile.py": "ae5036e03966d4e281e51a9b959da1b21584f0bba9703a3f4b3ebfb799e33673",
+      "src/poker_ai/postflop/controlled_scoring.py": "a081e91c36eb53518e48d4418dae6bb85fe36df37bca857e4b1903db6207cd09",
+      "src/poker_ai/postflop/controlled_training.py": "396b6f88b173bc7427469bbc9affb754a9d7ec32a01b5f1a89b371eafedc26ba",
+      "src/poker_ai/postflop/fresh_cohort.py": "c0b9041f4b6208a2da3538b678cc2cd19ef885af440e5b73cef3cbc879773326",
+      "src/poker_ai/postflop/fresh_learning.py": "673fcc22174ce70e53024bb72742f7c512c4d71f6472deaa2f8d2c2de40a7daf",
+      "src/poker_ai/postflop/fresh_report.py": "e776e483e7f02d847ba8705b62bcbbf3e497d8a2cef51fd7254a04988713970e",
+      "src/poker_ai/postflop/game.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/postflop/jit_cfr.py": "1b8e28d275565e173f2a1b08cd53ccee2b3b810d58a6f6492e1ed55b60dd5c64",
+      "src/poker_ai/postflop/learning.py": "2d667f797a8d98277dd31597c765a1f693473a916a11455f9352d6517254dc8a",
+      "src/poker_ai/postflop/made_admission.py": "852c42a323b7c50601406c981d4e09e17e4a3445f7bb7d2a37e83f00807b5ed5",
+      "src/poker_ai/postflop/made_admission_report.py": "eb360c825e422c683992753d3ce69bd03e5b1b4ea945dc3599c896eca4470a0b",
+      "src/poker_ai/postflop/matrix.py": "41ec2f9b16b461aab754547558b7d5713054c33f9f8e6e13dfcf4eb32d27f49d",
+      "src/poker_ai/postflop/node_profile.py": "efad8b155e2fc6dec9fc31c2ed68d8bc682276f0d439d77aeda4f84543673fc1",
+      "src/poker_ai/postflop/parallel_profile.py": "8a9cd3fdf0e96e2d22d3c610ce6941041f0670f4c547494be0f167fd2f00bf6c",
+      "src/poker_ai/postflop/pipeline_cost.py": "85fff3e70c4f253a799a4b5ecd968c87352a6ebcef65b7f78873e5046700e4e1",
+      "src/poker_ai/postflop/pipeline_native_checks.py": "d3a14ec7da845f8579df2934e6144b4a37600b00da009ae3b30b3c63083d9fd8",
+      "src/poker_ai/postflop/pipeline_render.py": "c105197fca71a991b6c328277b471af91557b488931ef5a0eeb4cd5b980420d3",
+      "src/poker_ai/postflop/pipeline_report.py": "bf31442e66082f7998923753deef73fb010e26ba2dec8980b800c23858593a7e",
+      "src/poker_ai/postflop/policy_swap_report.py": "effdc74ea7f83c5c84d0a478bbfec26707b6f93dea54588325abc7d30a6e7073",
+      "src/poker_ai/postflop/policy_swaps.py": "13756e57fb21b5c8a1761d812471c7dbf3417d7221d5a1108e23ac663e49b63a",
+      "src/poker_ai/postflop/public_evidence.py": "45081c3b8ab22fbd730384e8c65b4f9de0fae3651d47d6aa7744fe8439a2bbb0",
+      "src/poker_ai/postflop/public_metrics.py": "2c9f818021df24f19b6aa57658f5c5409485fee52fdf054bc6913051e9e95127",
+      "src/poker_ai/postflop/public_report.py": "358f843c8e6fdfb9d18d37b71bd47bfdab6a27d0f0bebe63423071fb243a7977",
+      "src/poker_ai/postflop/public_study.py": "650e27e44fc273e6ac8a6c6fdb986ccc3c0f463b839ff42c5f2dcd4b4455f417",
+      "src/poker_ai/postflop/range_admission.py": "cd6f5852abe013d5fae63d89dc6d77a9c36efd05ceeb0617ad0a9ffc95af88d6",
+      "src/poker_ai/postflop/range_admission_report.py": "ea79a49529dc6bfd550d50fcd718841d5d3dae6767ffb2b1fc4e03a57c4e7dac",
+      "src/poker_ai/postflop/range_protocol.py": "d3d933181c4da6f8afb862a3a4f7822b8162435f93f5ad21dc74c1301f4291d5",
+      "src/poker_ai/postflop/range_replay.py": "eac3fa590133133939c490f7bea371c5235a404e3cbeb0ff2763b8fdf2440da2",
+      "src/poker_ai/postflop/range_reply.py": "bd2e10ec39487ddbc0c4cc45e04500181cd36d577377cd4b8a4391eaab35b44e",
+      "src/poker_ai/postflop/range_reply_report.py": "0cc1fae6e70cfad8cb0a24644d7101625fd61724e47cbf1beb67690e07cac77d",
+      "src/poker_ai/postflop/range_sampled.py": "7b90bf1ffdb271e0fe80d9d5ec5cbbac4498599fb5d6a0dc381d1a566e9a8668",
+      "src/poker_ai/postflop/range_sampled_report.py": "c46791e9d06972853348f5c6b4b41120b1085362936cb125dc958970e599bafc",
+      "src/poker_ai/postflop/reply_diagnosis.py": "c59b3892733fffa2913742b43659582a86ba0856d52867d78ff40195459fbb3d",
+      "src/poker_ai/postflop/reply_report.py": "665510a2ca0aad40bbc54045e5b5b5697b628388615f11461e8b23706c65dba7",
+      "src/poker_ai/postflop/reply_trace.py": "f241751d2966adce8301ab29970ad951f5be367b05d0a46607ffe09f44f0a8b0",
+      "src/poker_ai/postflop/report.py": "4b3bc78c52260bca322b19b1dbedeaf24b3912c8f5ca8a093f060d7c1f7d475a",
+      "src/poker_ai/postflop/river_artifacts.py": "b4d4fc567fcc068b7eede90b6b4e94efe51508af5ff1e03b21808216d6892792",
+      "src/poker_ai/postflop/river_distinction_report.py": "f826285e9220c718276445d1217feed3889d65b31129dd68ac055cfa64797ffc",
+      "src/poker_ai/postflop/river_distinctions.py": "cf3f4618e726b9347fcf2939ae7cd956b8733714e3e0d9bf62135227778b30ca",
+      "src/poker_ai/postflop/river_report.py": "7ac4d708babff6c3b5f6f19770e4af91648a204b5d8dbacd5cac6918f6bccbca",
+      "src/poker_ai/postflop/river_sampling.py": "e3cf14adce001c37a5b62bc97217a50184aa113172e0bb0f686e6b7d3e975f6b",
+      "src/poker_ai/postflop/river_study.py": "c8debf96bbb348604e8b0dff80344cbc806170d830829b96fb26b22cfd74c7a3",
+      "src/poker_ai/postflop/row_policy.py": "4134ad8bd19e4c925559bc778b953bd74a12c4329cc6a429b18e6cc616ac7be5",
+      "src/poker_ai/postflop/row_profile.py": "12505e1574a75a5e6d5b66fd491e1a0a236b1d865819d9f40c34fe6430e1f3ce",
+      "src/poker_ai/postflop/sampling.py": "ac0d31aaefb8217be78b4df1ffa8c6a98a25749d1de1aadd8767121de0a03288",
+      "src/poker_ai/postflop/training_isolation.py": "e5044e4269a3cc980e038d8055a819ef8bfc85ee701aae93f7d09fdf9e509269",
+      "src/poker_ai/postflop/tree.py": "7c0af767759564759b9583c1792e1a0271914defec267c3180b1256d4ebb562d",
+      "src/poker_ai/reproducibility.py": "1f9cf96e33cbb11825348e03eccbd445e2d299d5623f9358846660462a96aeba",
+      "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
+      "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
+      "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/arithmetic.py": "3ed2bd872a1ba21982f6b2b6631f40221d2f920bad06c05c45d325274acfd1c4",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controlled_pipeline.py": "79032331f7d3d7d7bdb05299d2cbaede13704e0512270f88a56e38a9f33724c6",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/fresh.py": "adb98613e90e50e3ee00834064c8241a8d8c388b933501c480c6be93ebf9459b",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/learning.py": "d14c3e28ef123f375e6d9659e49407cca867074af2993977c8ee6f8f70c7f637",
+      "src/poker_ai/solver_validation/made_admission.py": "2dc0fe978c86dfa13cb0ee1e9e085370827e08a6f01a6d2d1f84cd40be9814e1",
+      "src/poker_ai/solver_validation/policy_swaps.py": "f4375d0a27a0bc8a60b4018100f8df8f0afb2d595bd21e2d6a6f96e9841c0ff5",
+      "src/poker_ai/solver_validation/public_board.py": "d7ebef61171379abdad2d84b47ff5636aeee63c6a02cdbe4433b87966ad9770a",
+      "src/poker_ai/solver_validation/range_admission.py": "4e42dec0070c2e378ebc5a3fe6a9e232a36fd9bdc0fee81ba977f2f06f0d1de5",
+      "src/poker_ai/solver_validation/range_reply.py": "028c10ac1e3053f4a9380a5ce227595cadba398ab4b872b32d948fbb513dcc5f",
+      "src/poker_ai/solver_validation/range_sampled.py": "832482c669998df11ef68ff57024176550ef7cbadf313c2271142a2f2af33043",
+      "src/poker_ai/solver_validation/reference.py": "335f501164b3fb38f165c23b08559e77cf2e7097106b112f1539943aee05f80d",
+      "src/poker_ai/solver_validation/reply_diagnosis.py": "befcd51bb7f724e65978d724b044681530da0057ceac4eaedddf45b254cd1b37",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/river.py": "6f648f997b112200d5c4ea52e23debc8faa2c683f22f9a0a3e55d08b31e45a46",
+      "src/poker_ai/solver_validation/river_distinctions.py": "abdf626863e8e6c2bea582f56a5496a7618dc1240f899dbde923723d166d1909",
+      "src/poker_ai/solver_validation/spots.py": "2c6383209429d345a6debb3accbdaef061e3896cad2479efa9cdce8815ac40af",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "a40b4b6bcf2f0b56297bae295fde3c4e914c0f4cd8b1792c7c8ca96d87aa10cc",
+      "src/poker_ai/toy/cfr.py": "03a04076225efa9faf2ae0440020080f860343d91f33e094944b268f99b51440",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "b618c65f17531cd4d4c2b7b2406ff66cb28eeb9a498a175d3aa6eda99b598d13",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+    }
+  },
+  "status": "completed",
+  "training_performed": false
+}

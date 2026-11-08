@@ -1,0 +1,74 @@
+{
+  "decision": "forecasts_fit_requires_separate_checked_learning_runner",
+  "maximum_fixture_seconds": 25.821396833998733,
+  "maximum_native_error_chips": 1.2079226507921703e-13,
+  "native_aggregate_cpu_seconds": 49.144087999999996,
+  "native_cases": 48,
+  "native_forecast": {
+    "cap_seconds": 3600,
+    "decision": "forecast_fits_comparison_only",
+    "guarded_seconds": 543.8377892725402,
+    "native_launch_collection_seconds": 0.3860595410078531,
+    "native_parent_validation_seconds": 21.156366668001283,
+    "native_worker_preparation_seconds": 2.5201098329998786,
+    "serial_own_input_replay_seconds": 219.59458500045002,
+    "strength_comparison_performed": false,
+    "training_admitted": false,
+    "unguarded_seconds": 271.9188946362701,
+    "worker_native_seconds": [
+      27.455315093742684,
+      28.261773593811085,
+      26.98787659170921
+    ]
+  },
+  "native_seconds": 31.31852254200203,
+  "native_sha256": "5035a07acce3173820489d37e03b518bf6918cb5eca351f27f81c29e4ba9d220",
+  "own_aggregate_cpu_seconds": 128.45563199999998,
+  "own_cases": 48,
+  "own_forecast": {
+    "cap_seconds": 7200,
+    "decision": "forecast_fits_requires_separate_checked_learning_runner",
+    "full_size_fixture_maximum_seconds": 25.821396833998733,
+    "group_maximum_seconds": [
+      {
+        "representation": "exact",
+        "seconds": 0.03475316699768882,
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "representation": "texture_range_q8_b8",
+        "seconds": 0.03504262499336619,
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "representation": "exact",
+        "seconds": 0.505002042002161,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      },
+      {
+        "representation": "texture_range_q8_b8",
+        "seconds": 0.47089066600892693,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      }
+    ],
+    "guarded_seconds": 4674.496361623027,
+    "parent_input_bundle_validation_seconds": 35.77000299899373,
+    "scoring_launch_collection_seconds": 0.16282029199646786,
+    "scoring_worker_preparation_seconds": 2.287628997990396,
+    "strength_comparison_performed": false,
+    "training_admitted": false,
+    "training_overhead_seconds": 2.342412414975115,
+    "unguarded_seconds": 2337.2481808115135,
+    "worker_training_scoring_replay_seconds": [
+      2270.863919273559,
+      2239.839603808754,
+      2223.4699197322934
+    ]
+  },
+  "own_seconds": 107.17377562500769,
+  "own_sha256": "2161361df686251ffabb93c03618217df409cc00220573e910f86f43a8fd6500",
+  "synthetic_fixture_scope": "SYNTHETIC IO CALIBRATION \u2014 NOT LEARNING RESULTS",
+  "training_admitted": false,
+  "training_performed": false,
+  "unique_old_profiles": 16
+}

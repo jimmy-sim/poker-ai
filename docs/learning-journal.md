@@ -55,13 +55,15 @@ Step 28 tests an immutable game-node cache against every original node/edge,
 then checks exact training trajectories before profiling again.
 Step 29 measures independent cells across CPU processes, including startup and
 resource costs, without changing a cell's learning rules.
+Step 30 verifies checkpoint/scoring behavior and measures the still-missing
+pipeline costs on old saved policies.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–29:** What the extensions and recent experiments taught us.
+- **Steps 10–30:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1583,6 +1585,85 @@ verify those functions and measure the remaining pipeline costs with a fixed
 three-process candidate. This is progress toward an affordable experiment, not
 proof of stronger poker play. See the [table](../results/parallel-cell-profile/report/tables.md).
 Hosted CI remains separately pending at this evidence checkpoint.
+
+## 30. Check what a training checkpoint means
+
+**November 8, 2026.** Three processes make the known training cost affordable on
+paper. We still need to check the work of saving, scoring and reporting policies.
+This step tests that machinery and calibrates OLD own policies; it does not launch
+the larger learning comparison.
+
+A **checkpoint** records a policy at a declared point. A work checkpoint saves the
+first complete iteration that crosses its node-visit threshold, including any
+overshoot. An iteration checkpoint saves that exact iteration. They answer
+different questions, so the report keeps them separate. Reading or saving a
+checkpoint must not change the next training update or random sequence.
+
+The scorer divides exploitability into improvement available within the saved
+information groups and extra improvement from exact information. Those pieces
+must add back to the total. A separate river-switch number keeps the saved
+opponent fixed; it does not predict improvement after retraining.
+
+One subtle diagnostic: exact warm initialization can give every row positive
+average mass immediately. That makes average coverage one while later sampled
+river visits are still zero. Full coverage does not mean a good strategy.
+
+A large reporting unit test also revealed unnecessary file padding. The internal
+arrays have width 44 for wider chance menus, while a betting row uses two or three
+actions. Files now save legal weights only and restore exactly the same matrix
+bytes. The synthetic 840-record IO fixture streams one record at a time. The first
+unit was interrupted during a run that also waited for macOS font discovery;
+we did not measure RAM usage or establish a sole cause for its delay.
+
+All 56 new fast checks and seven slower integration checks pass. The latter check
+all 16 old published profiles, native values/replies and all eight labeled fixture
+figures (60.58 seconds on Python 3.11, 59.17 on Python 3.12). Full local suites
+pass 1132 fast tests on each Python version; base 1099 pass / 24 optional skips.
+Typing/lint/format/hooks pass; hosted CI and formal timing runs remain pending. Fixture figures say **SYNTHETIC IO CALIBRATION — NOT LEARNING
+RESULTS** and stay in scratch space. No new playing-strength result is claimed.
+
+Read the [fixed plan](controlled-pipeline-check.md) and
+[PR #27](https://github.com/jimmy-sim/poker-ai/pull/27). Codex assisted; personal
+hands-on time is not inferred.
+
+The first own-only cost run completed all 48 cases and three reporting fixtures
+in 107.725 seconds from published source `f6ca5cb`. Its receipt is retained. CI also
+caught a base-environment typing problem: an optional plotting dependency was
+imported directly. The poker tests had not started in that CI job. Local base
+pytest had passed, but base-only typing had been missed. We will fix that import
+boundary, check base typing and repeat the same calibration under the corrected
+source. No scientific gate or training rule changes; native timing and the large
+learning run remain off.
+
+The import fix now passes complete base `make check` on Python 3.11 and 3.12:
+1099 tests passed, with 24 optional skips each. Clean typing passes in both minimal
+environments, and the rendering integration passes again. No dependency, strategy
+formula or scientific tolerance changed. The same fixed cost run will be repeated
+from the corrected published source.
+
+The corrected own-only cost run now passes full replay: 48 cases and all three
+reporting fixtures in **107.174 seconds**, from clean published source `8843db1`.
+The guarded own-stage forecast is **4674.496 seconds**, below 7200. It includes
+checkpoint scoring twice, byte/hash round trips, setup and the slowest reporting
+fixture. Every repeat is kept, including font discovery. These are timing
+estimates, not a guarantee. Native comparison/cost is next; the large learning
+run remains off.
+
+The native comparison has now checked all 48 cases in **31.319 seconds**. Its
+largest value/root/reply discrepancy is **1.21×10⁻¹³ chips**, below the 1e-9 limit.
+These are comparisons of old own policies; no reference strategy enters training.
+
+The combined report puts the guarded own-stage estimate at **4674.496 seconds**
+and native stage at **543.838 seconds**, under their separate 7200 / 3600 limits.
+That makes the planned experiment feasible on paper. It does not establish a
+stronger agent. The next milestone is a checked runner for the original 140 cells,
+with the original seeds and budgets. Only that experiment can provide new learning
+outcomes. Read the [final cost table](../results/controlled-pipeline-check/report/tables.md).
+
+Both report files regenerate exactly in the base Python 3.12 environment. That
+checks the saved evidence and forecast arithmetic; it does not reproduce timing.
+Hosted CI and main-checkout verification are the remaining checks for this
+milestone.
 
 ## Your own learning notes
 
