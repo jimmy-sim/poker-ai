@@ -164,6 +164,26 @@ checks. This is a saved-policy intervention, not a retraining improvement or pro
 that sampling alone caused the weakness. See [journal step 24](docs/learning-journal.md#24-hold-the-opponent-fixed-and-swap-saved-decisions)
 or run `.venv/bin/python scripts/inspect_policy_swap.py`.
 
+The [original controlled training comparison](docs/controlled-learning-comparison.md)
+is complete: **140 runs / 840 checkpoints**, zero own replay error, all independent
+native value/response checks within **1.71e-13 chips**. At the 10m work label in
+the medium range-mass game, holding regret weights linear gives these sampled
+mean exploitabilities (% initial pot; all three fixed seeds):
+
+| Strategy-average weight | Signed regrets | Clipped regrets |
+|---|---:|---:|
+| linear | 4.354032 | 2.501852 |
+| uniform | 2.664089 | 3.525759 |
+
+This reversal shows an averaging/clipping interaction. A lower extra-information
+gap can accompany a larger response gain within the compressed game. No recipe
+is selected or deployed; the older failed gate and global default remain.
+Read [journal step 31](docs/learning-journal.md#31-run-a-fair-comparison-of-the-training-choices)
+and [all endpoint tables](results/controlled-learning/report/tables.md), or run
+`.venv/bin/python scripts/report_controlled_learning.py --no-plots` without retraining.
+Fresh fixed-source reproduction uses `make compare-controlled-learning`; see the
+[protocol, runtime and limits](docs/controlled-learning-comparison.md).
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

@@ -1,0 +1,1060 @@
+{
+  "config": {
+    "admission": "source-bound correctness receipt, complete local base/optional checks and both hosted CI jobs passed on checked source before new postflop learning",
+    "admission_receipt": "results/controlled-learning/admission.json",
+    "analysis": {
+      "axes": "work and iteration separately; never pool",
+      "bridge": "four declared full-only averaging/initialization points; last endpoint aliases common cell, no repeated training",
+      "contrasts": "all 32 conditional one-factor differences plus all15 averaged nonempty factorial differences (order1..4; mean signed product times2^order); paired seeds/individual values retained; deterministic full controls reused, never independent seed replicates",
+      "factor_levels": {
+        "average_weight": [
+          "uniform",
+          "linear"
+        ],
+        "regret_rule": [
+          "signed",
+          "clipped"
+        ],
+        "regret_weight": [
+          "uniform",
+          "linear"
+        ],
+        "traversal": [
+          "full",
+          "external"
+        ]
+      },
+      "primary": "all four original primary metrics in chips and percent initial pot",
+      "uncertainty": "three fixed external seeds, individual values and arithmetic means; no seed-population confidence intervals, significance or best-arm/default admission"
+    },
+    "assignment": "original 140-cell order, index modulo three",
+    "checkpoint_labels": {
+      "iteration": [
+        16,
+        64,
+        128
+      ],
+      "work": [
+        100000,
+        1000000,
+        10000000
+      ]
+    },
+    "checkpoint_storage": "atomic own-v1 legal-weight gzip snapshots; hash/metadata/menu/bit checks; final compressed JSONL archive; stream one record, never decode 840 profiles together",
+    "comparison_config": "configs/training-isolation.json",
+    "correctness_receipt": "results/controlled-learning/correctness.json",
+    "expected_cells": 140,
+    "expected_logical_checkpoints": 840,
+    "input_sha256": {
+      "configs/controlled-pipeline-check.json": "2acbc2f3c6cd7628723c9f37e9354182a494a447833a1204c554dc660268988d",
+      "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+      "results/controlled-pipeline-check/native.json": "5035a07acce3173820489d37e03b518bf6918cb5eca351f27f81c29e4ba9d220",
+      "results/controlled-pipeline-check/own-profiles.json.gz": "696ecbe5bcd71d441921c5c33d4f855548c6614cab010e6c6514894a7800eac7",
+      "results/controlled-pipeline-check/own.json": "2161361df686251ffabb93c03618217df409cc00220573e910f86f43a8fd6500",
+      "results/controlled-pipeline-check/report/summary.json": "a2a2e02d30dd85fedf946d7ec98be2ab5fbb6e16918370c3c9ee86be3429f514"
+    },
+    "maximum_native_seconds": 3600,
+    "maximum_own_seconds": 7200,
+    "native_stage": "own published first for recorded study; comparison-only OpenSpiel2.0.2 Apache-2.0; all EV/exact+restricted roots/achieved own replies+river hybrids at1e-9; no native action or policy export",
+    "own_backend": {
+      "external": "unchanged CachedNodeTrainer",
+      "full": "unchanged ControlledTrainer"
+    },
+    "own_replay": "each fixed worker replays its own saved checkpoints without training before completing; same three partitions",
+    "partial": "retain every completed snapshot/event and failure reason; incomplete grid cannot become complete report or favorable subset",
+    "pipeline_summary": "results/controlled-pipeline-check/report/summary.json",
+    "schema_version": 1,
+    "scope": "original known-game causal-controls diagnosis only; no new representation/seed/budget/action/range, no best-arm selection/default/fresh/global admission",
+    "start_method": "spawn",
+    "status": "preregistered_diagnostic_learning_only",
+    "tolerance_chips": 1e-09,
+    "worker_count": 3
+  },
+  "format": "poker-ai-controlled-learning-correctness-v1",
+  "own_snapshot_roundtrips": 136,
+  "postflop_training_performed": false,
+  "seconds": 0.5392770000034943,
+  "source": {
+    "dirty": false,
+    "git_commit": "87fb4bce247083df1f9cced6fa26052df94dc6ae",
+    "git_status": [],
+    "sha256": {
+      "configs/controlled-learning-comparison.json": "ff764357114d6c635f58b1f49733c8517af3a2943f2d5410bd29dc6a0767a9fd",
+      "pyproject.toml": "a88e6023ac3ae5dd08da9ed6eceb83967e20e42aa9fe88dc4fb11c9fa49529f1",
+      "scripts/audit_controlled_learning.py": "3efdf90e01a87db8fce92a29ceeff9b6a0a8dc691e39230635c378a527ea2fc9",
+      "scripts/compare_controlled_learning.py": "1181da00ff3727353d11f72dc72a80e0e474511afab2f1531c1cdf6e1ff8cfd9",
+      "scripts/report_controlled_learning.py": "5eae1217fec0a56eb26f14d2c8a5456f2418ca21bca657ca136528ddc91964be",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/made_category.py": "2dfae8205af343943f4736d007efd2e18cc70c7147d7a2686db6730909831cc1",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/public_board.py": "8e3acf0d1dd36827962711f8561fa17a05abe042997498ec2a6044c45f83bf80",
+      "src/poker_ai/abstraction/range_mass.py": "b6afd34d1278e28424ee22ef1fc44fed9dc9f8179bf3cf014faef86b41080ca8",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/finite.py": "39dc15bf2daafc0bc0b6af0d014990fdd351ab39feef0d80f1796d0233422268",
+      "src/poker_ai/opponent_modeling/__init__.py": "a58c5e8a282812b3efb575227a25e0c37872c0709aa80696008b7e404ced159b",
+      "src/poker_ai/opponent_modeling/bayes.py": "d67e382b0f4115f167965e74ca0ad3768078d8b6b4e887da002be9850d5a4419",
+      "src/poker_ai/opponent_modeling/experiment.py": "4a8876a6eb211828c81b89bce909785953aed76ba23c6ebbaab8b71cd28d1580",
+      "src/poker_ai/opponent_modeling/policies.py": "a3a8faa9c32960f9ecb1323f0d218c9768f1eef7bb8885490fe64e21b4b534b0",
+      "src/poker_ai/postflop/__init__.py": "c05fd0b2b82cf5da814ea101df7b614efab78ca97d4f7fc1d6881a2667ae3d89",
+      "src/poker_ai/postflop/cached_nodes.py": "9475fd3bbe708e2094d5de0061d12fa40b602c47538d8e17c63e212ca2d1b02c",
+      "src/poker_ai/postflop/cell_process.py": "848944e5dad066aee2715d6ae3f09ee546d1827ce005baa7b8216bc2aa0f6630",
+      "src/poker_ai/postflop/collision_diagnosis.py": "1ecefdd9550fd9d1e6ab6f890f3dc9dc49c788f2bdb16f6e02f22fd1854114bc",
+      "src/poker_ai/postflop/controlled_checkpoints.py": "e723e4f74dbcb42c61d6c65c07d775a61d8008bdf1aa27907db77aff819b29a9",
+      "src/poker_ai/postflop/controlled_profile.py": "ae5036e03966d4e281e51a9b959da1b21584f0bba9703a3f4b3ebfb799e33673",
+      "src/poker_ai/postflop/controlled_scoring.py": "a081e91c36eb53518e48d4418dae6bb85fe36df37bca857e4b1903db6207cd09",
+      "src/poker_ai/postflop/controlled_training.py": "396b6f88b173bc7427469bbc9affb754a9d7ec32a01b5f1a89b371eafedc26ba",
+      "src/poker_ai/postflop/fresh_cohort.py": "c0b9041f4b6208a2da3538b678cc2cd19ef885af440e5b73cef3cbc879773326",
+      "src/poker_ai/postflop/fresh_learning.py": "673fcc22174ce70e53024bb72742f7c512c4d71f6472deaa2f8d2c2de40a7daf",
+      "src/poker_ai/postflop/fresh_report.py": "e776e483e7f02d847ba8705b62bcbbf3e497d8a2cef51fd7254a04988713970e",
+      "src/poker_ai/postflop/game.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/postflop/jit_cfr.py": "1b8e28d275565e173f2a1b08cd53ccee2b3b810d58a6f6492e1ed55b60dd5c64",
+      "src/poker_ai/postflop/learning.py": "2d667f797a8d98277dd31597c765a1f693473a916a11455f9352d6517254dc8a",
+      "src/poker_ai/postflop/learning_analysis.py": "8f1daff279a29675de0d48c388d3a84fa04a437e73ce3d339a3907a49666e741",
+      "src/poker_ai/postflop/learning_artifacts.py": "7f3fe6dc1c4c3f56b2e1b1384b20a3311418af5e935151bb438ccf365f13504a",
+      "src/poker_ai/postflop/learning_correctness.py": "1520702be6684d416f03d1b0f190ff9102059aa8be17b35911fa475be6c08b77",
+      "src/poker_ai/postflop/learning_protocol.py": "1e83d99c33ec0d32811f3262ead8e1c095a59e34de8fa4f048802d332ccf714e",
+      "src/poker_ai/postflop/learning_replay.py": "c9e0253dff0a1f60e551e6b2a9699f87b8167e47590ae1e1e30c2237b4b2334d",
+      "src/poker_ai/postflop/learning_report.py": "f56f32a215555edf4de770c52ddfb711cb6a0deddb4e0168a8dbd2c6c8af71b2",
+      "src/poker_ai/postflop/learning_run.py": "58bdc9ae369988aa66d83fa88dae7a9e6113d7569ee64056843284aa60d64ec3",
+      "src/poker_ai/postflop/learning_training.py": "9cf29844d9e35f085130d0cef857778b8d6a121d595c25d347372ef15e670a80",
+      "src/poker_ai/postflop/learning_validation.py": "caa9e6b2119e6c216c287351a8948ce4f202d41851c511b19923d823fcb79843",
+      "src/poker_ai/postflop/made_admission.py": "852c42a323b7c50601406c981d4e09e17e4a3445f7bb7d2a37e83f00807b5ed5",
+      "src/poker_ai/postflop/made_admission_report.py": "eb360c825e422c683992753d3ce69bd03e5b1b4ea945dc3599c896eca4470a0b",
+      "src/poker_ai/postflop/matrix.py": "41ec2f9b16b461aab754547558b7d5713054c33f9f8e6e13dfcf4eb32d27f49d",
+      "src/poker_ai/postflop/node_profile.py": "efad8b155e2fc6dec9fc31c2ed68d8bc682276f0d439d77aeda4f84543673fc1",
+      "src/poker_ai/postflop/parallel_profile.py": "8a9cd3fdf0e96e2d22d3c610ce6941041f0670f4c547494be0f167fd2f00bf6c",
+      "src/poker_ai/postflop/pipeline_cost.py": "85fff3e70c4f253a799a4b5ecd968c87352a6ebcef65b7f78873e5046700e4e1",
+      "src/poker_ai/postflop/pipeline_native_checks.py": "d3a14ec7da845f8579df2934e6144b4a37600b00da009ae3b30b3c63083d9fd8",
+      "src/poker_ai/postflop/pipeline_render.py": "c105197fca71a991b6c328277b471af91557b488931ef5a0eeb4cd5b980420d3",
+      "src/poker_ai/postflop/pipeline_report.py": "bf31442e66082f7998923753deef73fb010e26ba2dec8980b800c23858593a7e",
+      "src/poker_ai/postflop/policy_swap_report.py": "effdc74ea7f83c5c84d0a478bbfec26707b6f93dea54588325abc7d30a6e7073",
+      "src/poker_ai/postflop/policy_swaps.py": "13756e57fb21b5c8a1761d812471c7dbf3417d7221d5a1108e23ac663e49b63a",
+      "src/poker_ai/postflop/public_evidence.py": "45081c3b8ab22fbd730384e8c65b4f9de0fae3651d47d6aa7744fe8439a2bbb0",
+      "src/poker_ai/postflop/public_metrics.py": "2c9f818021df24f19b6aa57658f5c5409485fee52fdf054bc6913051e9e95127",
+      "src/poker_ai/postflop/public_report.py": "358f843c8e6fdfb9d18d37b71bd47bfdab6a27d0f0bebe63423071fb243a7977",
+      "src/poker_ai/postflop/public_study.py": "650e27e44fc273e6ac8a6c6fdb986ccc3c0f463b839ff42c5f2dcd4b4455f417",
+      "src/poker_ai/postflop/range_admission.py": "cd6f5852abe013d5fae63d89dc6d77a9c36efd05ceeb0617ad0a9ffc95af88d6",
+      "src/poker_ai/postflop/range_admission_report.py": "ea79a49529dc6bfd550d50fcd718841d5d3dae6767ffb2b1fc4e03a57c4e7dac",
+      "src/poker_ai/postflop/range_protocol.py": "d3d933181c4da6f8afb862a3a4f7822b8162435f93f5ad21dc74c1301f4291d5",
+      "src/poker_ai/postflop/range_replay.py": "eac3fa590133133939c490f7bea371c5235a404e3cbeb0ff2763b8fdf2440da2",
+      "src/poker_ai/postflop/range_reply.py": "bd2e10ec39487ddbc0c4cc45e04500181cd36d577377cd4b8a4391eaab35b44e",
+      "src/poker_ai/postflop/range_reply_report.py": "0cc1fae6e70cfad8cb0a24644d7101625fd61724e47cbf1beb67690e07cac77d",
+      "src/poker_ai/postflop/range_sampled.py": "7b90bf1ffdb271e0fe80d9d5ec5cbbac4498599fb5d6a0dc381d1a566e9a8668",
+      "src/poker_ai/postflop/range_sampled_report.py": "c46791e9d06972853348f5c6b4b41120b1085362936cb125dc958970e599bafc",
+      "src/poker_ai/postflop/reply_diagnosis.py": "c59b3892733fffa2913742b43659582a86ba0856d52867d78ff40195459fbb3d",
+      "src/poker_ai/postflop/reply_report.py": "665510a2ca0aad40bbc54045e5b5b5697b628388615f11461e8b23706c65dba7",
+      "src/poker_ai/postflop/reply_trace.py": "f241751d2966adce8301ab29970ad951f5be367b05d0a46607ffe09f44f0a8b0",
+      "src/poker_ai/postflop/report.py": "4b3bc78c52260bca322b19b1dbedeaf24b3912c8f5ca8a093f060d7c1f7d475a",
+      "src/poker_ai/postflop/river_artifacts.py": "b4d4fc567fcc068b7eede90b6b4e94efe51508af5ff1e03b21808216d6892792",
+      "src/poker_ai/postflop/river_distinction_report.py": "f826285e9220c718276445d1217feed3889d65b31129dd68ac055cfa64797ffc",
+      "src/poker_ai/postflop/river_distinctions.py": "cf3f4618e726b9347fcf2939ae7cd956b8733714e3e0d9bf62135227778b30ca",
+      "src/poker_ai/postflop/river_report.py": "7ac4d708babff6c3b5f6f19770e4af91648a204b5d8dbacd5cac6918f6bccbca",
+      "src/poker_ai/postflop/river_sampling.py": "e3cf14adce001c37a5b62bc97217a50184aa113172e0bb0f686e6b7d3e975f6b",
+      "src/poker_ai/postflop/river_study.py": "c8debf96bbb348604e8b0dff80344cbc806170d830829b96fb26b22cfd74c7a3",
+      "src/poker_ai/postflop/row_policy.py": "4134ad8bd19e4c925559bc778b953bd74a12c4329cc6a429b18e6cc616ac7be5",
+      "src/poker_ai/postflop/row_profile.py": "12505e1574a75a5e6d5b66fd491e1a0a236b1d865819d9f40c34fe6430e1f3ce",
+      "src/poker_ai/postflop/sampling.py": "ac0d31aaefb8217be78b4df1ffa8c6a98a25749d1de1aadd8767121de0a03288",
+      "src/poker_ai/postflop/training_isolation.py": "e5044e4269a3cc980e038d8055a819ef8bfc85ee701aae93f7d09fdf9e509269",
+      "src/poker_ai/postflop/tree.py": "7c0af767759564759b9583c1792e1a0271914defec267c3180b1256d4ebb562d",
+      "src/poker_ai/reproducibility.py": "1f9cf96e33cbb11825348e03eccbd445e2d299d5623f9358846660462a96aeba",
+      "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
+      "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
+      "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/arithmetic.py": "3ed2bd872a1ba21982f6b2b6631f40221d2f920bad06c05c45d325274acfd1c4",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controlled_learning.py": "9c8503d18e9209b4bee4932190343e012e4b2c90a5bf6810a6946b520e0fd041",
+      "src/poker_ai/solver_validation/controlled_pipeline.py": "79032331f7d3d7d7bdb05299d2cbaede13704e0512270f88a56e38a9f33724c6",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/fresh.py": "adb98613e90e50e3ee00834064c8241a8d8c388b933501c480c6be93ebf9459b",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/learning.py": "d14c3e28ef123f375e6d9659e49407cca867074af2993977c8ee6f8f70c7f637",
+      "src/poker_ai/solver_validation/made_admission.py": "2dc0fe978c86dfa13cb0ee1e9e085370827e08a6f01a6d2d1f84cd40be9814e1",
+      "src/poker_ai/solver_validation/policy_swaps.py": "f4375d0a27a0bc8a60b4018100f8df8f0afb2d595bd21e2d6a6f96e9841c0ff5",
+      "src/poker_ai/solver_validation/public_board.py": "d7ebef61171379abdad2d84b47ff5636aeee63c6a02cdbe4433b87966ad9770a",
+      "src/poker_ai/solver_validation/range_admission.py": "4e42dec0070c2e378ebc5a3fe6a9e232a36fd9bdc0fee81ba977f2f06f0d1de5",
+      "src/poker_ai/solver_validation/range_reply.py": "028c10ac1e3053f4a9380a5ce227595cadba398ab4b872b32d948fbb513dcc5f",
+      "src/poker_ai/solver_validation/range_sampled.py": "832482c669998df11ef68ff57024176550ef7cbadf313c2271142a2f2af33043",
+      "src/poker_ai/solver_validation/reference.py": "335f501164b3fb38f165c23b08559e77cf2e7097106b112f1539943aee05f80d",
+      "src/poker_ai/solver_validation/reply_diagnosis.py": "befcd51bb7f724e65978d724b044681530da0057ceac4eaedddf45b254cd1b37",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/river.py": "6f648f997b112200d5c4ea52e23debc8faa2c683f22f9a0a3e55d08b31e45a46",
+      "src/poker_ai/solver_validation/river_distinctions.py": "abdf626863e8e6c2bea582f56a5496a7618dc1240f899dbde923723d166d1909",
+      "src/poker_ai/solver_validation/spots.py": "2c6383209429d345a6debb3accbdaef061e3896cad2479efa9cdce8815ac40af",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "a40b4b6bcf2f0b56297bae295fde3c4e914c0f4cd8b1792c7c8ca96d87aa10cc",
+      "src/poker_ai/toy/cfr.py": "03a04076225efa9faf2ae0440020080f860343d91f33e094944b268f99b51440",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "b618c65f17531cd4d4c2b7b2406ff66cb28eeb9a498a175d3aa6eda99b598d13",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+    }
+  },
+  "status": "passed_toy_correctness_no_postflop_learning",
+  "synthetic_contrasts": {
+    "conditional": [
+      {
+        "difference": -12.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "signed",
+          "regret_weight": "uniform"
+        }
+      },
+      {
+        "difference": 8.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "signed",
+          "regret_weight": "uniform"
+        }
+      },
+      {
+        "difference": 20.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "signed",
+          "regret_weight": "linear"
+        }
+      },
+      {
+        "difference": 0.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "signed",
+          "regret_weight": "linear"
+        }
+      },
+      {
+        "difference": 8.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "clipped",
+          "regret_weight": "uniform"
+        }
+      },
+      {
+        "difference": -12.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "clipped",
+          "regret_weight": "uniform"
+        }
+      },
+      {
+        "difference": 0.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "clipped",
+          "regret_weight": "linear"
+        }
+      },
+      {
+        "difference": 20.0,
+        "factor": "traversal",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "clipped",
+          "regret_weight": "linear"
+        }
+      },
+      {
+        "difference": -14.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "uniform",
+          "regret_weight": "uniform",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 14.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "linear",
+          "regret_weight": "uniform",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 14.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "uniform",
+          "regret_weight": "linear",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": -14.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "linear",
+          "regret_weight": "linear",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 6.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "uniform",
+          "regret_weight": "uniform",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -6.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "linear",
+          "regret_weight": "uniform",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -6.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "uniform",
+          "regret_weight": "linear",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": 6.0,
+        "factor": "regret_rule",
+        "held": {
+          "average_weight": "linear",
+          "regret_weight": "linear",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -20.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "signed",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 8.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "signed",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 8.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "clipped",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": -20.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "clipped",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 12.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "signed",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": 0.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "signed",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": 0.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "uniform",
+          "regret_rule": "clipped",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": 12.0,
+        "factor": "regret_weight",
+        "held": {
+          "average_weight": "linear",
+          "regret_rule": "clipped",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -14.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "signed",
+          "regret_weight": "uniform",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 14.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "signed",
+          "regret_weight": "linear",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 14.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "clipped",
+          "regret_weight": "uniform",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": -14.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "clipped",
+          "regret_weight": "linear",
+          "traversal": "full"
+        }
+      },
+      {
+        "difference": 6.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "signed",
+          "regret_weight": "uniform",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -6.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "signed",
+          "regret_weight": "linear",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": -6.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "clipped",
+          "regret_weight": "uniform",
+          "traversal": "external"
+        }
+      },
+      {
+        "difference": 6.0,
+        "factor": "average_weight",
+        "held": {
+          "regret_rule": "clipped",
+          "regret_weight": "linear",
+          "traversal": "external"
+        }
+      }
+    ],
+    "factorial": [
+      {
+        "difference": 4.0,
+        "factors": [
+          "traversal"
+        ],
+        "order": 1
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "regret_rule"
+        ],
+        "order": 1
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "regret_weight"
+        ],
+        "order": 1
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "average_weight"
+        ],
+        "order": 1
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "traversal",
+          "regret_rule"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 12.0,
+        "factors": [
+          "traversal",
+          "regret_weight"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "traversal",
+          "average_weight"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "regret_rule",
+          "regret_weight"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "regret_rule",
+          "average_weight"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "regret_weight",
+          "average_weight"
+        ],
+        "order": 2
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "traversal",
+          "regret_rule",
+          "regret_weight"
+        ],
+        "order": 3
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "traversal",
+          "regret_rule",
+          "average_weight"
+        ],
+        "order": 3
+      },
+      {
+        "difference": 0.0,
+        "factors": [
+          "traversal",
+          "regret_weight",
+          "average_weight"
+        ],
+        "order": 3
+      },
+      {
+        "difference": -16.0,
+        "factors": [
+          "regret_rule",
+          "regret_weight",
+          "average_weight"
+        ],
+        "order": 3
+      },
+      {
+        "difference": 80.0,
+        "factors": [
+          "traversal",
+          "regret_rule",
+          "regret_weight",
+          "average_weight"
+        ],
+        "order": 4
+      }
+    ]
+  },
+  "trajectories": [
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "e60135767a64289699665b5166cbcae93ee93a5193251836cdc7d3c99c5a8f9d",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "59860a2f4325dd985964114e69b88e5dc208c180e446cef2df31ebc2d508dc2a",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "12d034261421cc4b1f830427eccd0cf9922e67d197c4ca0a2235aa9df3727960",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "b8e541500ce5a9e84749c716f272a55dbcea4821fda9081415f3b0ad5a0dd575",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "372ba59a5be0c51ba2904ffaf910f380cef91563a2f2e0e627db148b3856680e",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "4949ff640eb3b545309556030b58d687be09c6605de1ccc97b21d5b78fcebd2f",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "2460841775084170b4f72758dad0157c0230e980f7e1e7ec75103f2addfbff50",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "3b47d0ff705824019ed060ffad31293f871f73452d76bab4b401345c1cf12763",
+      "traversal": "full",
+      "warm": false,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "683d69934ac2ddcd04e93ec743b60c5aec4ae15cbc1257727d187225a8e224df",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "28ad9415e7bcd790fea92ddc5b8d9a4c16dae99a65651889f0d41707b04636d6",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "dff40d7d01023b6c11c1ff0f37fa51fb1708a4977d71e71926fa9e1a4b42bd03",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "dc0d53c1eb9853b636d314633998369fc9aa6ca716d6389e9915429451a7ad34",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "9c2ff494978c4e844c9a9817a95f821943db18c59fac3689b8ab7efde73689df",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "60b770b921f93f3bcc25e142ee658d700970b2564e2dd00a34cf35b055dcdc24",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "3e9afbc82a11ec4084749891d6e4757fa5357737e4ecb669fdfaaa4da74f95f9",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 8,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "86a351c01f3039c5e00113e0447bf015158dd2e3ad78c6944b0d2f07076b6e13",
+      "traversal": "full",
+      "warm": true,
+      "work": 928
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "8d85a75bb66886f4dbbd10a3412d1879eef9d055fb851f11aa3b56534cd4e702",
+      "traversal": "external",
+      "warm": false,
+      "work": 502
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "149ef61ed2340809a9f0295e236050adef66ef56697638e2d9838f87881671c5",
+      "traversal": "external",
+      "warm": false,
+      "work": 502
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "aa0dcdd0e3f3f5e8fe6e62ce93ccfb16b35e45ab18c1d293e5f8d2f10e5fc916",
+      "traversal": "external",
+      "warm": false,
+      "work": 507
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "71d99582b78161a01f7893b07abe909ab5e01e9e9b72e219074e46bfbf35cdd8",
+      "traversal": "external",
+      "warm": false,
+      "work": 507
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "52d61dbedbb862486437cb9415f08939509752a50e6e754936fbfb9bebae3596",
+      "traversal": "external",
+      "warm": false,
+      "work": 503
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 35,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "cd3cbab47b8bf79082e8fee2f51976ad24a4d78a4eed3efa9a8ef9a84dafd9e2",
+      "traversal": "external",
+      "warm": false,
+      "work": 503
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 36,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "f75ed06a78433f82789af1ae486eec54c3c218c66e09c6b7d90445b1627352c4",
+      "traversal": "external",
+      "warm": false,
+      "work": 505
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 36,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 5,
+      "state_sha256": "2e1e81f77ab0c93056c014ee565d9cdea5d3443cc50a97958931939246af2abe",
+      "traversal": "external",
+      "warm": false,
+      "work": 505
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "ab99f47caaae71a0dfc25e7a30fe84eb1888ffe5c6c5f657a51eebb2a2f30238",
+      "traversal": "external",
+      "warm": true,
+      "work": 508
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "signed",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "1cb44ebb9101f29bda06a30344014733d6e5b369a4f2744283561bf50ce8f218",
+      "traversal": "external",
+      "warm": true,
+      "work": 508
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "fa5b463afab7c6db69328f636356c36b182498675951a4e579d8e85b1b4001f1",
+      "traversal": "external",
+      "warm": true,
+      "work": 508
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "5d20af98e0789dfa1660b3d2d9578b77a40d26df6e2486594bfdd5e416e6a318",
+      "traversal": "external",
+      "warm": true,
+      "work": 508
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "f0418b49160f4d8813bd5d1539e95f546470dfa9a3cc30d42c2a9e99024b1734",
+      "traversal": "external",
+      "warm": true,
+      "work": 510
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "de20ebf8873d5ac4902c729c24231776404afcbb0e6bef5b729adcd9f2ee0ba1",
+      "traversal": "external",
+      "warm": true,
+      "work": 510
+    },
+    {
+      "average_weight": "uniform",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "33eedb6d6332daa3be3f5095bc6dbce66a0fcd4bf8c6daee70274819b14a85c0",
+      "traversal": "external",
+      "warm": true,
+      "work": 510
+    },
+    {
+      "average_weight": "linear",
+      "bridge": "common",
+      "iteration": 28,
+      "regret_rule": "clipped",
+      "regret_weight": "linear",
+      "seed": 20261301,
+      "snapshots": 4,
+      "state_sha256": "e8728c57f279d0a0ee887b3659d6df94ab02fb06aea5942e5b3be37cce00e4c1",
+      "traversal": "external",
+      "warm": true,
+      "work": 510
+    }
+  ],
+  "trajectory_count": 32
+}

@@ -13,6 +13,63 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Original controlled-learning comparison, prospective runner
+
+- **Request / issue:** Continue autonomous daytime #4 work after the measured
+  pipeline forecasts fit. [Plan](controlled-learning-comparison.md); original
+  140 cells, seeds, work/iteration labels and scope remain frozen.
+- **Before outcomes:** Publish this protocol before implementation and require a
+  source-bound correctness receipt, complete local checks and both hosted CI jobs
+  before new postflop learning. Three fixed workers, streaming legal snapshots,
+  own replay, all-cell native comparison and separate hard caps.
+- **Analysis fixed in advance:** All raw seeds, 32 conditional differences and 15
+  averaged factorial differences; separate work and iteration axes, four-point
+  bridge with common endpoint reused. No winner/default/global admission.
+- **Implementation:** Frozen trainer/scorer wrappers, first-crossing/exact-iteration
+  observations, source-bound CI/correctness admission, atomic compact strategies,
+  streamed archive, own replay and isolated native roots/achieved-own-reply checks.
+  Store own reply fingerprints and reconstruct them with the own scorer; no native
+  strategies enter training. Typed finite-grid validation rejects partial results.
+- **Checks so far:** 58 new fast checks pass Python 3.11/3.12. Real three-process
+  toy orchestration covers all 140 identities / 840 labels. Two slow old-policy /
+  synthetic-render checks pass Python 3.11/3.12 in 34.35/37.24s; reference strategy export and
+  new poker learning tripwires pass. Strict typing 293 files, lint/format pass.
+  Full base make check passes both versions: 1157 / 24 optional skips each.
+  Final focused checks and clean non-incremental typing pass both base versions.
+  Full optional suites pass 1190 each (265.87/255.54s); final-source slow pair
+  passes 39.74/38.26s. Clean code `87fb4bc` yields 32 toy trajectories / 136
+  snapshots in 0.539277s. Hosted CI 42522375101 passes both jobs on `87fb4bc`; source-bound
+  admission recorded before learning. New postflop study not yet started.
+- **Own evidence:** Clean published `70fe2f2` completes 140 cells / 840 checkpoints
+  in 2161.351771s (<7200), batch 2148.667566s, parent/child CPU 3.489438/6446.21s.
+  All prefix checks pass; own replay zero for all 282/282/276 worker snapshots,
+  clean exits. Archive 8,725,389 bytes; all raw rows, 1536 means / 4512 contrasts /
+  96 bridge rows / eight figures retained. Actual layout inspected; no strength
+  or cause claim before separate native audit. Own outputs published first.
+- **Native evidence:** Own outputs published `3bd6858` before comparison. All
+  840 native EV/root/achieved-own-reply comparisons pass, max 1.705303e-13 chips
+  (<1e-9). Native 92.193960s (<3600), parent/child CPU 0.222218/270.45s. License
+  bytes/version checked; no reference strategies in training. Base Python 3.12 /
+  NumPy 2.5.4 replays all 840 with zero error (64.920820s); all five numerical
+  reports regenerate byte-identically. Timing/PNG bytes are not reproduced.
+- **Finding:** In the focal medium candidate at 10m work, linear regret/average
+  weights: clipping lowers sampled mean total 4.354032→2.501852% pot, but shifts
+  within 0.243207→1.811454 while extra falls 4.110824→0.690398. With uniform
+  strategy averaging it raises total 2.664089→3.525759. All three seed-pair signs
+  agree in each contrast, without population inference. All eight common rule
+  contexts retain a sampled-minus-full mean gap in this focal case. No unique
+  cause, best-arm/default/fresh/global admission; follow up on saved own traces.
+- **Reporting:** All outcomes, eight inspected/tested figures, raw contrasts,
+  methodology/limitations, three interview answers, verified claim draft, README
+  and journal step 31 updated. Final-head CI/main verification pending.
+- **Admission CI:** Both code 42522375101 and receipt 42523042766 pass both Python
+  jobs before this evidence publication; source/config hashes unchanged.
+- **Correction / review:** Prefix lookup initially omitted 44 full controls because
+  the node timing column contains only external cells. A test catches this; use
+  the frozen combined endpoint lookup. No rule/seed/gate changes. Self-review adds
+  typed metric/work/coverage guards, final endpoint checks and partial-file retention.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-08 — Checkpoint/scoring and remaining pipeline cost
 
 - **Request / issue:** Continue through-day #4 work after PR #26 puts three-process
@@ -65,9 +122,12 @@ For a guided explanation of the ideas and results, start with the
   unchanged 7200 own / separate 3600 native caps. Native estimate includes serial
   own-input replay for 840 policies. [Table](../results/controlled-pipeline-check/report/tables.md).
   No new learning, strength, cause/default/global or automatic admission claim.
+- **Merge / main:** Final CI 42520115258 passes both jobs; PR #27 merged at
+  `a979d0a`. User .venv passes 188 focused fast checks (37.49s), final report and
+  old correctness replay. All ten unrelated modified output hashes unchanged.
 - **Next:** Journal step 30 completes old-policy correctness/cost calibration.
   Both report files regenerate byte-identically on base Python 3.12; saved timing
-  validation, not wall-time reproduction. Final CI/main verification pending; next
+  validation, not wall-time reproduction. Final CI/main verification passed; next
   define the actual 140-cell runner without changing the preregistered comparison.
   No default, strength, river-cause or global admission.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
