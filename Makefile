@@ -1,3 +1,19 @@
+.PHONY: study-range-mass report-range-sampled
+# Reviewed sampled protocol; ignored outputs and no automatic fresh/global stage.
+study-range-mass:
+	$(UV) run --locked python scripts/study_range_mass.py \
+		--output results/runs/range-mass-sampled/study.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_range_sampled.py \
+		--report results/runs/range-mass-sampled/study.json \
+		--output results/runs/range-mass-sampled/independent.json
+	$(UV) run --locked --extra research python scripts/report_range_sampled.py \
+		--report results/runs/range-mass-sampled/study.json \
+		--audit results/runs/range-mass-sampled/independent.json \
+		--output results/runs/range-mass-sampled/report
+
+report-range-sampled:
+	$(UV) run --locked --extra research python scripts/report_range_sampled.py
+
 .PHONY: admit-range-mass report-range-mass
 # Fixed protocol; training and native audit never run in routine CI.
 admit-range-mass:

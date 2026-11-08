@@ -51,6 +51,32 @@ Stop after audited development results and journal step 22, even if the gate
 passes. Fresh-game admission, global training and default changes remain separate.
 A failed gate is a completed investigation, not permission to retune this run.
 
+## Commands and software receipts
+
+`make study-range-mass` reproduces the fixed run, native audit and figures into
+ignored `results/runs/range-mass-sampled/` in a clean checkout. Existing receipts
+cause an error. The fixed 7,200-second budget is the training-stage cap; the native
+audit and later offline report have separate timings. To publish reviewed evidence,
+use the script defaults and commit the raw study/bundle before the clean-source
+native audit. `make report-range-sampled` only replays and renders reviewed files.
+
+The gzip bundle retains original own checkpoint and visits JSON for all snapshots,
+plus their policy and masks. Replay loads the strict own-checkpoint format into
+temporary files, verifies source/config/context and counters, recomputes probabilities
+from accumulators, and compares both average/visit masks and all saved scores.
+The crossing receipt is checked against actual checkpoint counters and the runner's
+previous/last-iteration counters. It is not an independent rerun of every training
+iteration. Hashes provide reproducibility/integrity, not cryptographic authorship.
+
+Tests use a labeled one-game/one-seed/two-budget software fixture, with an explicitly
+mocked prerequisite solely for that fixture. Production has no prerequisite bypass.
+The actual published full-control prerequisite is also replayed in tests. These
+fixtures measure software behavior and never establish learning strength.
+
 ## Status
 
-Prospective execution plan, before implementation and new sampled outcomes.
+Prospective plan published in [PR #19](https://github.com/jimmy-sim/poker-ai/pull/19)
+before implementation/outcomes. All 39 focused tests pass. Local `make check`
+passes 884 all-extras tests on Python 3.11.17 and 3.12.15; base-only checks pass
+855 with 20 optional skips. Ruff lint/format, strict mypy and hooks pass.
+No new research outcomes have been measured at this code-publication checkpoint.

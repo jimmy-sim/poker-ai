@@ -20,8 +20,12 @@ For a guided explanation of the ideas and results, start with the
 - **Before outcomes:** Five controls, two games, three fixed seeds and three work
   checkpoints: 90 policies. Count exact initialization and whole-iteration work.
   Replay the prior full-control admission before training; publish tested code.
-- **Pending:** Runner/checkpoint replay, native audit, report, local/hosted checks
-  and learning journal step 22. No fresh/global/default stage in this block.
+- **Implemented / checked before outcomes:** Own runner, bundled checkpoint/visit
+  replay, native audit, offline report and 39 new tests. `make check` passes
+  884 all-extras tests on Python 3.11.17/3.12.15; base-only 855 passed/20 optional
+  skips. Ruff lint/format, strict mypy and hooks pass. No sampled outcome yet.
+- **Pending:** Full 90-policy experiment/native audit, hosted CI and journal
+  step 22 results. No fresh/global/default stage in this block.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
 
 ## 2026-11-07 — Range-mass full-control admission
