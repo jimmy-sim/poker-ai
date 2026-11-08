@@ -67,12 +67,15 @@ compressed game, then compare all four training modes against the same opponents
 Its complete own calculation and independent audit pass. The larger within-game
 weakness persists against fixed opponents, especially for seat 1, and appears with
 exact information too. It is not explained by compression or changed opponents alone.
+Step 33 builds the next investigation: observe current play and reconstruct late
+averages while checking that the original learning paths stay unchanged. The
+software foundation is tested; the new poker trajectory study has not run.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–32:** What the extensions and recent experiments taught us.
+- **Steps 10–33:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1871,6 +1874,48 @@ shows why this is a useful distinction: the raw learning path can stay the same
 while its final average changes. A new learning experiment needs its own fixed
 plan and correctness/compute gates first. The previous failed performance limit
 and global default remain unchanged.
+
+## 33. Look at current play and older averages
+
+**November 8, 2026 — issue #4, averaging history.** Codex-assisted implementation;
+personal hands-on time not recorded. [PR #30](https://github.com/jimmy-sim/poker-ai/pull/30)
+and its [fixed plan](averaging-history.md) precede the new measurements.
+
+**Question:** The agent changes its action probabilities during learning. We
+usually evaluate a weighted average of those probabilities. Does a measured
+weakness remain in its current play, or is weaker earlier play still in the
+average? A current snapshot is only one point on a possibly changing path; it
+does not automatically make a better agent.
+
+The follow-up keeps the original cases, rules, random seeds and work limit. It
+will observe current play at five fixed checkpoints, plus averages from two
+fixed late windows. Each replay must recover the old strategy and state
+fingerprints at three original checkpoints. A mismatch stops the study.
+
+**Example, made up:** Suppose the cumulative weights for check and bet are
+initially `[8, 2]` and later `[9, 8]`. The new period contributes `[1, 6]`, so its
+average is check `1/7`, bet `6/7`. We subtract raw weights and then normalize.
+Subtracting the already-normalized old and new probabilities would not give
+that average. These weights are learning contributions, not a bankroll or a
+count of real hands played.
+
+The archive will retain the raw cumulative weights at the window boundaries.
+That lets the report reconstruct each late average without retraining. Rows
+with no new weight use the existing uniform legal fallback, and the report must
+show their coverage. Warm initialization giving every row some old mass does
+not tell us whether a late window learned about every row.
+
+**Software progress:** 119 focused checks pass on both Python versions. They
+cover hand-calculated window arithmetic, bit-exact toy trajectory preservation,
+all eight toy traversal/clipping/averaging combinations, corrupted artifacts and
+complete worker grids. Fictional ledger fixtures check missing/altered entries;
+their invented values are not poker results. The real archived loader also
+passes with new training and native solver construction explicitly blocked.
+
+The full runner, source-bound correctness/compute admission, new poker replay
+and native audit remain pending. Full foundation checks also pass: 1365 base
+tests with 24 optional skips and 1398 optional-suite tests on each Python version.
+These are software checks. The previous failed performance gate remains.
 
 ## Your own learning notes
 

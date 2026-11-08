@@ -32,6 +32,18 @@ For a guided explanation of the ideas and results, start with the
 - **Before outcomes:** Retain 192 own cumulative-mass boundaries too, so suffix
   definitions reconstruct from the archive without retraining. Storage-only
   clarification; all cases/windows/metrics/seeds/caps/gates remain unchanged.
+- **Foundation checks:** Own read-only current/sum observer, suffix mass arithmetic,
+  compact raw-mass envelopes, original-prefix trajectory worker and complete-grid
+  validation implemented. 119 focused checks pass on both Python versions; clean
+  strict typing covers 322 files. Real archived loader passes with new learning
+  and native construction blocked (4.48/4.23s). Eight toy worker combinations
+  reconstruct windows and original prefixes; deliberate late prefix corruption
+  retains partial files and fails completion. Full fictional ledgers test only
+  schema/completeness, with invented values explicitly labeled non-research.
+  Full foundation base make check passes 1365 tests /24 optional skips on both
+  versions (235.52/225.48s); optional suites pass 1398 each (278.33/270.72s).
+  Lint/format/clean strict typing pass. Complete runner/admission/study pending;
+  no new poker learning. Journal step 33 explains the planned comparison.
 
 ## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
 
