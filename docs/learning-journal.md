@@ -1649,6 +1649,22 @@ fixture. Every repeat is kept, including font discovery. These are timing
 estimates, not a guarantee. Native comparison/cost is next; the large learning
 run remains off.
 
+The native comparison has now checked all 48 cases in **31.319 seconds**. Its
+largest value/root/reply discrepancy is **1.21×10⁻¹³ chips**, below the 1e-9 limit.
+These are comparisons of old own policies; no reference strategy enters training.
+
+The combined report puts the guarded own-stage estimate at **4674.496 seconds**
+and native stage at **543.838 seconds**, under their separate 7200 / 3600 limits.
+That makes the planned experiment feasible on paper. It does not establish a
+stronger agent. The next milestone is a checked runner for the original 140 cells,
+with the original seeds and budgets. Only that experiment can provide new learning
+outcomes. Read the [final cost table](../results/controlled-pipeline-check/report/tables.md).
+
+Both report files regenerate exactly in the base Python 3.12 environment. That
+checks the saved evidence and forecast arithmetic; it does not reproduce timing.
+Hosted CI and main-checkout verification are the remaining checks for this
+milestone.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

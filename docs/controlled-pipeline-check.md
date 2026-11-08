@@ -189,3 +189,58 @@ Including measured overhead and the largest full-size fixture gives 2337.248s,
 **4674.496s with the unchanged 2× margin**, below 7200s. This is a planning estimate,
 not a timing guarantee or learning admission. Native costs/checks and final CI
 remain pending; no new postflop training or strength result.
+
+## Complete native comparison and final cost forecast
+
+Own receipt/profile bundle were committed as `9501ec4` before native timing.
+Clean source at that commit completes all 48 native cases in **31.318523s**.
+OpenSpiel 2.0.2 license bytes, exact/restricted roots and achieved OWN exact,
+restricted and river-hybrid profiles all pass; maximum scalar error is
+**1.2079226507921703e-13 chips**, below the fixed 1e-9 tolerance. No reference
+strategy/actions were exported or used in training.
+
+| Stage | Measured calibration wall | Parent + reaped-child CPU | Guarded future forecast | Declared cap |
+|---|---:|---:|---:|---:|
+| own | 107.173776s | 128.455632s | 4674.496362s | 7200s |
+| native | 31.318523s | 49.144088s | 543.837789s | 3600s |
+
+[Native receipt](../results/controlled-pipeline-check/native.json),
+[scripted table](../results/controlled-pipeline-check/report/tables.md) and
+[summary](../results/controlled-pipeline-check/report/summary.json) retain all
+case/repeat timings, source/lock/runtime, roots, errors and forecast components.
+The native forecast includes 219.594585s for SERIAL own-input replay of all 840
+policies, max native worker 28.261774s, preparation/launch/parent overhead, then 2×.
+The own estimate charges six checkpoints twice in each fixed training partition,
+retains all old source profiles and the largest full-size fixture. Setup is
+conservatively measured again in the separate calibration; nothing discounts CFR
+visits. CPU and elapsed time are separate and neither records personal hours.
+
+## Limits and next milestone
+
+This completes old-policy correctness/cost calibration, with both forecasts below
+their declared limits. No new postflop learning curve, stronger agent, causal river
+explanation, global scalability result or default change was produced. All 16
+profiles come from two known tiny-range development games. Native evaluation uses
+shared own exported mechanics; it independently checks parsing/value/BR algorithms,
+not all poker rules. Early timing prefixes and old-policy scoring may differ from
+later training costs; the 2× margin is a planning choice, not a time guarantee.
+Synthetic IO figures duplicate old values solely to benchmark 840-row reporting;
+they are prominently labeled and stay in ignored scratch. The first own receipt
+and CI failure are preserved above, not replaced or described as passing CI.
+
+Next define and check the actual 140-cell controlled-learning runner, preserving
+the original seeds/rules/work/iteration checkpoints and fixed three-worker
+partitions. Stream legal-weight checkpoint artifacts; enforce 7200s own and 3600s
+native caps, retain partial outcomes, publish own outputs before comparison, then
+report all one-factor contrasts/interactions separately by checkpoint axis.
+No best-arm/default/fresh/global admission follows this diagnosis alone. Hosted
+CI and main-checkout verification remain pending at final evidence publication.
+
+```sh
+.venv/bin/python scripts/report_controlled_pipeline.py
+.venv/bin/python -m pytest -q tests/test_controlled_scoring.py tests/test_controlled_checkpoints.py tests/test_pipeline_cost.py -m 'not slow'
+```
+
+Both final report files regenerate byte-identically on base Python 3.12, including
+its locked NumPy 2.5.4, from the retained Python 3.11/NumPy 2.4.6 evidence. This
+validates saved data/forecasts, not reproduction of historical wall time.

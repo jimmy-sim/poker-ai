@@ -58,8 +58,18 @@ For a guided explanation of the ideas and results, start with the
   before native timing. Group scoring maxima 0.034753 / 0.035043 / 0.505002 /
   0.470891s; IO fixtures 25.821397 / 16.939204 / 16.930429s, all retained. Forecast
   own 2337.248s, guarded 4674.496s < 7200. Still no learning admission; native/CI pending.
-- **Next:** Journal step 30; publish checked code before own timing, then commit own
-  receipts before native timing. No default, strength, river-cause or global claim.
+- **Native / final report:** Own receipt published at `9501ec4` before native run;
+  all 48 comparisons complete in 31.318523s. Max scalar error 1.207923e-13 chips,
+  fixed 1e-9 limit, no native actions/strategy export. Aggregate own/native CPU
+  128.455632 / 49.144088s; final guarded forecasts 4674.496362 / 543.837789s below
+  unchanged 7200 own / separate 3600 native caps. Native estimate includes serial
+  own-input replay for 840 policies. [Table](../results/controlled-pipeline-check/report/tables.md).
+  No new learning, strength, cause/default/global or automatic admission claim.
+- **Next:** Journal step 30 completes old-policy correctness/cost calibration.
+  Both report files regenerate byte-identically on base Python 3.12; saved timing
+  validation, not wall-time reproduction. Final CI/main verification pending; next
+  define the actual 140-cell runner without changing the preregistered comparison.
+  No default, strength, river-cause or global admission.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
 
 ## 2026-11-08 — Independent-cell process calibration
