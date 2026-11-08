@@ -40,7 +40,8 @@ Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
 Step 20 defines the next candidate and its tests. Step 21 finds a measured
 improvement: range masses pass the full-control gate on both known games.
-Sampled learning and fresh-game admission still remain.
+Step 22 now starts the fixed-work sampled comparison; outcomes are pending.
+Fresh-game admission remains separate.
 
 You can read this in three sittings:
 
@@ -1077,6 +1078,21 @@ no new personal learning or hands-on hours are inferred.
 We stop here before sampled learning. The next step is to test whether this
 improvement survives the fixed branch-visit budget and three training seeds.
 Passing this first gate does not yet make it the global Hold'em agent.
+
+## 22. Check whether the improvement survives sampled learning
+
+**November 7, 2026 — in progress.** The previous result used every branch of the
+small game tree. Now we ask whether the same description still learns accurately
+when each iteration explores only selected branches.
+
+Equal iteration counts would be misleading: one description can visit more nodes
+per iteration than another. We compare at the same branch-visit budgets instead,
+including the exact initialization cost and any final complete-iteration overshoot.
+The [fixed plan](range-mass-sampled.md) keeps all five controls, both games and
+three seeds. All 90 saved policies will be checked; a failing seed stays visible.
+This milestone stops after those development results, before fresh games.
+Codex assists with implementation/reporting; no personal learning or hours are
+inferred from the run.
 
 ## Your own learning notes
 

@@ -13,6 +13,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Range-mass fixed-work sampled comparison (in progress)
+
+- **Request / issue:** Continue #4's fixed-work sampled stage; stop at audited
+  development results. [Plan](range-mass-sampled.md), unchanged protocol.
+- **Before outcomes:** Five controls, two games, three fixed seeds and three work
+  checkpoints: 90 policies. Count exact initialization and whole-iteration work.
+  Replay the prior full-control admission before training; publish tested code.
+- **Pending:** Runner/checkpoint replay, native audit, report, local/hosted checks
+  and learning journal step 22. No fresh/global/default stage in this block.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-07 — Range-mass full-control admission
 
 - **Issue / authorization:** User requested continuing #4 after the protocol gate.
