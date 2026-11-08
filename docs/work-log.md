@@ -40,6 +40,14 @@ For a guided explanation of the ideas and results, start with the
   passes 39.74/38.26s. Clean code `87fb4bc` yields 32 toy trajectories / 136
   snapshots in 0.539277s. Hosted CI 42522375101 passes both jobs on `87fb4bc`; source-bound
   admission recorded before learning. New postflop study not yet started.
+- **Own evidence:** Clean published `70fe2f2` completes 140 cells / 840 checkpoints
+  in 2161.351771s (<7200), batch 2148.667566s, parent/child CPU 3.489438/6446.21s.
+  All prefix checks pass; own replay zero for all 282/282/276 worker snapshots,
+  clean exits. Archive 8,725,389 bytes; all raw rows, 1536 means / 4512 contrasts /
+  96 bridge rows / eight figures retained. Actual layout inspected; no strength
+  or cause claim before separate native audit. Own outputs published first.
+- **Admission CI:** Both code 42522375101 and receipt 42523042766 pass both Python
+  jobs before this evidence publication; source/config hashes unchanged.
 - **Correction / review:** Prefix lookup initially omitted 44 full controls because
   the node timing column contains only external cells. A test catches this; use
   the frozen combined endpoint lookup. No rule/seed/gate changes. Self-review adds

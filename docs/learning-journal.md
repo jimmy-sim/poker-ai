@@ -1732,9 +1732,13 @@ native checks, and interpret work and iteration matches separately. No strongest
 recipe, default change, fresh-game or global-agent admission follows this
 investigation automatically. The earlier failed sampled gate remains recorded.
 
-Read the [execution protocol](controlled-learning-comparison.md). The later
-results will be appended here when they exist; they are not inferred from toy
-checks or cost forecasts.
+Read the [execution protocol](controlled-learning-comparison.md). The own stage now completes all 140 runs and all 840 checkpoints in **36.02
+minutes**, within the two-hour cap. Reloading every saved strategy reproduces its
+own score with zero error, and all serial-prefix checks pass. The small archive
+holds all owned strategies; the tables and eight figures keep every combination.
+The independent native audit is still pending, so this is a completed own run,
+not yet a verified claim about which training difference explains the weakness.
+No result is inferred from the earlier toy checks or cost forecast.
 
 ## Your own learning notes
 

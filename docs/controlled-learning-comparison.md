@@ -160,3 +160,29 @@ fourth-order contrasts. Old selector correctness also replays. No new postflop
 training has occurred. Hosted CI `42522375101` passed both Python jobs on checked source `87fb4bc`.
 Formal source-bound admission is recorded in `results/controlled-learning/admission.json`. Source hashes bind code/config/lock/entrypoints;
 actual learning starts only after these checks and the admission commit are published.
+
+## Completed own stage; independent audit still pending
+
+Clean published `70fe2f27557af8e72c1039c941a639121122cee1` completes all 140 cells
+and 840 physical/logical checkpoints in **2161.351771s** (36.02 minutes), below
+7200s. Batch 2148.667566s includes all three worker preparation/training/scoring/
+replay and collection. Every serial prefix check passes; workers save/replay
+282 / 282 / 276 snapshots with maximum own replay error **zero**, exit codes zero.
+Replay wall inside workers 62.285469 / 64.062871 / 62.598497s. Parent / reaped-child
+CPU 3.489438 / 6446.210000s; these are process costs, not personal work hours.
+
+The complete compact archive is 8,725,389 bytes, SHA-256
+`8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054`.
+Its 840 owned policies and own-reply fingerprints remain available for replay.
+All raw checkpoint rows, 1536 factor means, 4512 paired conditional/factorial
+metric rows, 96 bridge rows, endpoint tables and eight figures are retained.
+These counts include four metrics, both axes and every checkpoint/group; they
+are not 4512 independent experiments. Plot filenames identify the chip metric;
+the plotted values are converted to **percent initial pot**, as labeled on axes.
+The actual extra-information/work plot was inspected for layout. Temporary
+Matplotlib font-cache startup is charged to own wall time; no RAM claim is made.
+
+Header/grid/prefix/admission/source checks pass. The recorded own receipts,
+archive and reports are published before the separate comparison-only native
+stage. Chip outcomes and training-cause interpretation await that complete
+independent audit. Original failed learning limits/defaults remain unchanged.
