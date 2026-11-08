@@ -49,13 +49,15 @@ accounts for most of the deeper-game gap change, with interaction between street
 Step 25 separates the training rules and checks a shared updater before the next
 learning comparison. It does not yet identify the cause of the river weakness.
 Step 26 checks the compute cost before the larger controlled learning study.
+Step 27 tests an opt-in policy-row cache against the frozen trainer and profiles
+it again without changing the learning rules.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–26:** What the extensions and recent experiments taught us.
+- **Steps 10–27:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1412,6 +1414,42 @@ versions. Rerunning a timer would produce different times.
 Read the [fixed profiling plan](controlled-training-profile.md). No poker score,
 new stronger agent or established cause of the river weakness follows from this
 step. Codex assisted; personal hands-on time is not inferred.
+
+## 27. Reuse policy rows within one update pass
+
+**November 8, 2026.** The profile identified repeated work: the sampled trainer
+rebuilds the full table of action probabilities before each player's pass, even
+though that pass visits only some rows. This step adds an optional backend that
+constructs a row when it is first needed and reuses it during that pass.
+
+A **cache** stores a result for reuse. Its lifetime matters. Regrets stay fixed
+while one pass is running, so its policy rows stay fixed too. After a player
+updates regrets, we discard the cache before starting the next pass. Keeping old
+rows across that boundary could silently train a different strategy.
+
+We also keep the same padded row width. Removing extra zero entries before a
+floating-point sum can change its last bits. A tiny probability change can later
+change a random action choice. The new backend keeps that sum/division behavior,
+checks visited rows, and computes the uniform fallback only when needed.
+
+Before timing, both implementations must match exactly on all 96 external cells,
+including both games/descriptions, all eight rules and all three seeds. Checks
+cover six fixed iterations through 1001, including the exact initialization.
+Regrets, average tables, policies, random-generator state and work counts must
+match; a small numerical tolerance is not a substitute for this gate.
+
+The 32 new tests and previous focused checks pass: 65 total at this checkpoint.
+They cover padded rounding, stale caches, per-iteration state equality, real-game
+prefixes, balanced paired timing order and incomplete/changed receipts. Full local checks pass **1009 tests on each Python version**; base-only
+976 pass with 24 optional skips. Lint/format, strict typing and hooks pass.
+Hosted CI and recorded parity/profile evidence remain pending.
+
+The old trainer stays frozen and remains the default. The paired timing study
+will compare both backends on the same machine, alternating which runs first.
+It retains all cases and the same two-hour forecast rule. A speed improvement
+would make the larger experiment cheaper; it would not establish stronger poker
+play or explain the river weakness. Read the [fixed plan](row-policy-cache.md).
+Codex assisted; personal hands-on time is not inferred.
 
 ## Your own learning notes
 

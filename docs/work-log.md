@@ -13,6 +13,28 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Policy-row cache and exact paired profile
+
+- **Request / issue:** Reduce #4's measured policy-table overhead, verify unchanged
+  behavior and profile again. [PR #24](https://github.com/jimmy-sim/poker-ai/pull/24),
+  [plan](row-policy-cache.md), config published fc27c56 before outcomes.
+- **Implementation:** Opt-in external backend: padded row normalization once per
+  visited row per frozen target pass, fresh cache before the next player. Existing
+  sampler, updater, rules, initialization, menus, source and evidence unchanged.
+  Skip the overwritten uniform fallback on positive rows; keep finite/legal row
+  checks. Dense full-state exports remain inherited.
+- **Fixed gates:** All 96 external cells / six checkpoints through iteration1001
+  must match exact array bytes, policies, RNG, keys and charged work before timing.
+  708 contemporaneous timing rows, balanced backend order, shared full cells,
+  six profiler cases; unchanged 10m/max-of-three/2×/7200s forecast and 1200s cap.
+- **Implementation checks:** 32 new + 33 prior focused tests pass (65 total),
+  lint/format and strict typing (251 files) pass. Full local checks pass 1009
+  all-extras each Python 3.11.17/3.12.15; base-only 976 passed/24 optional skips.
+  Hooks pass. Hosted CI and recorded parity/profile evidence pending. Journal step 27.
+- **Stop / next:** Verified opt-in parity/profile only; no default, strength,
+  learning-cause or fresh/global admission, and no full learning sweep.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Controlled training compute gate
 
 - **Request / issue:** Continue #4 after reproducing the correctness gate.

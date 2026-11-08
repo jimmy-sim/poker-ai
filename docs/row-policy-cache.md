@@ -76,3 +76,31 @@ forecast still exceeds the cap, keep the full study off and use the new hotspots
 to decide the next optimization. If training-only cost falls below it, measure
 remaining pipeline overhead before admission. Neither outcome establishes a
 stronger agent or which training rule caused the saved river weakness.
+
+## Implementation checks and explanation
+
+The backend retains padded axis-1 reductions and division. Since `maximum(R,0)`
+ensures nonnegative weights, it omits that redundant check; it retains finite
+and legal-weight validation for accessed rows. A positive row does not construct
+a uniform fallback that would immediately be overwritten. Zero-weight rows use
+the same padded legal-row normalization. No update or RNG operation is removed.
+
+At the implementation checkpoint, 32 new tests and 33 prior focused checks pass,
+including extreme padded rounding, cold/warm all-rule per-step state checks,
+real-game prefixes and synthetic complete/tampered profiling receipts. Full local checks pass **1009 all-extras tests** each Python 3.11.17/3.12.15;
+base-only **976 passed / 24 optional skips**. Ruff lint/format, strict mypy
+(251 files) and hooks pass. Hosted CI and measured evidence remain pending.
+
+### Three questions to explain this change
+
+1. **Why can a cached row be reused?** Regrets are frozen until the target pass
+   finishes. The cache is local to that pass, then discarded before the next
+   player's policy can reflect updated regrets.
+2. **Why keep zero padding in a sum?** Floating reductions can group additions
+   differently when the array width changes. We preserve width and require exact
+   tested state/RNG equality rather than assuming approximate probabilities imply
+   the same sampled trajectory.
+3. **Does a faster backend make the agent stronger?** At the same confirmed
+   updates/work it should produce the same strategy. This bounded parity/profile
+   can enable the controlled learning study; it does not establish its results
+   or bit identity forever/on every machine.
