@@ -1641,6 +1641,14 @@ environments, and the rendering integration passes again. No dependency, strateg
 formula or scientific tolerance changed. The same fixed cost run will be repeated
 from the corrected published source.
 
+The corrected own-only cost run now passes full replay: 48 cases and all three
+reporting fixtures in **107.174 seconds**, from clean published source `8843db1`.
+The guarded own-stage forecast is **4674.496 seconds**, below 7200. It includes
+checkpoint scoring twice, byte/hash round trips, setup and the slowest reporting
+fixture. Every repeat is kept, including font discovery. These are timing
+estimates, not a guarantee. Native comparison/cost is next; the large learning
+run remains off.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

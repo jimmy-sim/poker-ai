@@ -52,6 +52,12 @@ For a guided explanation of the ideas and results, start with the
   strict typing (274 files) both base versions, all-extras typing, 56 fast checks
   and a fresh full-size renderer integration (60.99s). Repeat the identical cost
   calibration from corrected published code; retain first source-bound artifacts.
+- **Corrected own receipt:** Clean published `8843db1` completes all 48 cases /
+  three full-size fixtures in 107.173776s. Full 16-profile replay, exact policy bits,
+  metrics/replies/digests and timings pass. Root own receipt/profile bundle published
+  before native timing. Group scoring maxima 0.034753 / 0.035043 / 0.505002 /
+  0.470891s; IO fixtures 25.821397 / 16.939204 / 16.930429s, all retained. Forecast
+  own 2337.248s, guarded 4674.496s < 7200. Still no learning admission; native/CI pending.
 - **Next:** Journal step 30; publish checked code before own timing, then commit own
   receipts before native timing. No default, strength, river-cause or global claim.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.

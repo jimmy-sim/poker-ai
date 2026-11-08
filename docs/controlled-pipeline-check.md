@@ -169,3 +169,23 @@ skips; clean non-incremental strict typing on both base versions (274 files),
 all-extras typing, 56 fast focused tests and another full-size rendering integration
 (60.99s). The same calibration will be repeated from the corrected published
 source; the first receipt remains archived unchanged.
+
+## Corrected own-cost receipt, before native timing
+
+Clean checked published source `8843db19e4312d48e99ad882b39e7fb9888f10db`
+completes all 48 old-own cases and three full-size reporting fixtures in
+**107.173776s**. Full replay verifies all 16 unique source policies, exact policy
+bits, root/response/river metrics, repeat archive/metadata digests and cost records.
+The [own receipt](../results/controlled-pipeline-check/own.json) and
+[own profile bundle](../results/controlled-pipeline-check/own-profiles.json.gz)
+are published before native timing. The first-source attempt remains unchanged.
+
+Largest observed own scoring/round-trip cost across all four source policies and
+three repeats per group: low exact 0.034753s, low range 0.035043s, medium
+exact 0.505002s, medium range 0.470891s. Full-size fixture repeats take
+25.821397 / 16.939204 / 16.930429s; all retained, including font-discovery startup.
+Worker training + two scoring/replay passes project 2270.864 / 2239.840 / 2223.470s.
+Including measured overhead and the largest full-size fixture gives 2337.248s,
+**4674.496s with the unchanged 2× margin**, below 7200s. This is a planning estimate,
+not a timing guarantee or learning admission. Native costs/checks and final CI
+remain pending; no new postflop training or strength result.
