@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
+
+- **Request / issue:** Continue authorized daytime #4 work after the complete
+  controlled comparison. [Plan](controlled-reply-diagnosis.md), config fixes 64
+  source policies / 128 within traces / 256 ordered crosses / 512 targets before
+  diagnostic outcomes. Linear regret weights retain the original baseline context;
+  all clipping/averaging modes, games/encodings/full controls/seeds retained.
+- **Question:** Locate the within-partition gain increase and hold opponents fixed
+  before blaming a street or changing a learner. No new postflop training, best-arm
+  choice, new representation/default/fresh/global admission.
+- **Gates:** Row/street/root/EV identities, complete grids, source/trace bindings,
+  isolated native comparisons, separate 900s caps, tests and both code CI jobs
+  before measurement. Implementation and outcomes pending. Codex-assisted;
+  personal hands-on time not recorded.
+
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner
 
 - **Request / issue:** Continue autonomous daytime #4 work after the measured
