@@ -13,7 +13,7 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-07 — Range-mass full-control admission (in progress)
+## 2026-11-07 — Range-mass full-control admission
 
 - **Issue / authorization:** User requested continuing #4 after the protocol gate.
 - **Prospective scope:** One unchanged range-mass candidate; all five controls,
@@ -22,7 +22,19 @@ For a guided explanation of the ideas and results, start with the
 - **Implementation checks:** 845 all-extras tests pass on Python 3.11.17 and
   3.12.15; base-only checks pass 818 with 18 optional skips. Includes 25 new
   runner/replay/audit/report tests. Ruff, strict mypy and hooks pass. These are
-  software checks; research outcomes are still pending at this checkpoint.
+  software checks, separate from the research gate.
+- **Measured result:** All 60 snapshots complete in 12.884 seconds. Both games
+  pass unchanged limits. Medium candidate 0.271640% pot versus category
+  2.593658% and exact 0.000182290% at 4,096 full iterations; 1,662/3,336 raw
+  rows. Coverage 100%, recall violations zero. All 60 native value/BR checks
+  pass, maximum error 1.27898e-13 chips; own replay zero. Audit 7.229 seconds.
+- **Limit / evidence:** Longer medium keys increase key bytes despite fewer
+  table rows; no total-memory or global-strength claim. [PR #18](https://github.com/jimmy-sim/poker-ai/pull/18),
+  [method](range-mass-admission.md), [tables/figures](../results/range-mass-admission/report/tables.md)
+  and journal step 21 retain source/config/context/work receipts.
+- **Environment check:** A reused Python 3.12 environment later contained a
+  duplicate editable path pointing to the previous worktree. A fresh environment
+  is used for the final 3.12 replay/check; no research source/config is changed.
 - **Stopping point:** Independently audited full-control evidence and journal
   step 21. No sampled learning, new feature search or global/default change.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.

@@ -38,14 +38,15 @@ Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
 Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
-Step 20 defines the next candidate and its tests. Step 21 starts its fixed
-full-control admission; measured outcomes are pending.
+Step 20 defines the next candidate and its tests. Step 21 finds a measured
+improvement: range masses pass the full-control gate on both known games.
+Sampled learning and fresh-game admission still remain.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–20:** What the extensions and recent experiments taught us.
+- **Steps 10–21:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1027,20 +1028,55 @@ git log -8 --oneline
 
 ## 21. Test whether the range-aware description is accurate enough
 
-**November 7, 2026 — in progress.** The next question is whether adding the river
-range masses actually improves the small-game strategies. We will train the five
-fixed descriptions on the same two games, visiting the whole tree each iteration.
-This separates representation limits from the extra noise of sampled learning.
+**November 7, 2026.** Does adding river range masses actually improve the
+small-game strategies? We trained all five fixed descriptions on the same two
+games, visiting the whole tree each iteration. That helps separate representation
+limits from the extra noise of sampling branches during learning.
 
 The earlier example explains the intended distinction: a river 9d blocks the
 opponent's pair of nines; 9h does not. The new description can tell those cases
-apart. That capability alone does not prove it learns a good strategy.
+apart. This time we measured whether the resulting strategy improved as well.
 
-The [plan](range-mass-admission.md) keeps the previous limits. We will save all
-60 checkpoints and independently check their values. A failed result stays in
-the report. This milestone stops after those checks, before sampled learning.
-Codex is assisting with the implementation; no new personal learning or hours
-are inferred from this run.
+On the deeper game at 4,096 iterations, old category exploitability was
+**2.594% of the initial pot**. The new range-mass description gives **0.272%**.
+Lower means a best-response opponent has less room to exploit the strategy
+inside that exact small game. It does not say how often the agent wins hands.
+The exact control is still much closer to zero, at **0.000182%**.
+
+The candidate uses **1,662 strategy rows versus 3,336** for raw-public. Both games
+pass the accuracy and row limits fixed before the run. All 60 checkpoints were
+saved and independently checked with OpenSpiel; the largest numerical difference
+was about **0.000000000000128 chips**. Own-policy replay matches exactly. Training
+and setup took about 13 seconds; the separate audit took about 7 seconds.
+
+There is a useful catch: fewer strategy rows did **not** mean less total storage.
+The new keys are longer. On the deeper game, key bytes rise even though the
+regret/average arrays shrink. We report both instead of claiming memory was halved.
+
+The curves show all descriptions nearly overlap on the easy game. On the deeper
+game, the new purple line falls below the old category/texture lines, then levels
+off above the exact/raw-public controls. The vertical axis is a **fraction** of
+the pot: about 0.00272 means 0.272%. It uses a logarithmic scale, so equal vertical
+gaps represent multiplication, not equal chip differences.
+
+Open the recorded plots from the project folder:
+
+```sh
+open results/range-mass-admission/report/full-controls.png
+open results/range-mass-admission/report/row-counts.png
+```
+
+For software checks, run `.venv/bin/python -m pytest -q tests/test_range_admission.py`.
+These are small fixtures, not a repeat of the research run. Local full checks
+pass 845 tests on each Python version; base-only checks pass 818 with 18 optional
+skips. [PR #18](https://github.com/jimmy-sim/poker-ai/pull/18), the
+[method](range-mass-admission.md) and [tables](../results/range-mass-admission/report/tables.md)
+contain the evidence and limits. Codex assisted with implementation and reporting;
+no new personal learning or hands-on hours are inferred.
+
+We stop here before sampled learning. The next step is to test whether this
+improvement survives the fixed branch-visit budget and three training seeds.
+Passing this first gate does not yet make it the global Hold'em agent.
 
 ## Your own learning notes
 
