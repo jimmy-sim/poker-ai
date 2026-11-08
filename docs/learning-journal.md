@@ -48,13 +48,14 @@ Step 24 swaps fixed turn/river policies and finds that the saved river continuat
 accounts for most of the deeper-game gap change, with interaction between streets.
 Step 25 separates the training rules and checks a shared updater before the next
 learning comparison. It does not yet identify the cause of the river weakness.
+Step 26 checks the compute cost before the larger controlled learning study.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–25:** What the extensions and recent experiments taught us.
+- **Steps 10–26:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1353,7 +1354,46 @@ We stop at the verified correctness gate before running the controlled learning
 study or choosing a remedy. There is no new stronger agent or established training cause in this step.
 Codex assisted; personal hands-on time is not inferred.
 
+## 26. Check the cost before a large comparison
+
+**November 8, 2026.** The trainer can change one rule at a time. Before asking it
+to run a large experiment, we need to know whether the planned work fits the
+two-hour computation cap. This step measures cost, not poker strength.
+
+**Profiling** means timing the program and finding where it spends that time.
+We fix the cases before looking at the measurements: both games, both card
+descriptions, every rule combination and all three sampled seeds. We also include
+the full-only bridge controls. That makes 140 different cases, each repeated
+three times, for 420 timing rows.
+
+Each repeat starts fresh. Full training gets 16 additional iterations; sampled
+training gets 1000. We separately count and time the initial exact calculation.
+We check the final training state and random-generator state are identical across
+repeats. Otherwise we might mistake changed work for a speed difference.
+
+The timing forecast uses the slowest of three estimates for each case, then
+adds a fixed 2× planning margin. This is a rough projection, not a guarantee.
+Later strategies can visit different situations, and scoring/checkpoint costs
+need separate measurement. A result below two hours would still leave those
+costs unresolved. A result above two hours would block the large study on
+training cost alone. We do not change the poker-learning targets to make it fit.
+
+The profiling tools and 13 new tests are implemented. The 33 focused checks
+(including the previous 20) pass at this checkpoint. Full local checks pass **977 tests on each Python version**; base-only
+944 pass with 24 optional skips. Lint/format, strict typing and hooks pass.
+Hosted CI and timing evidence are pending. The existing correctness command still works through a
+tested adapter; its old numerical receipt and mathematical code are unchanged.
+
+Read the [fixed profiling plan](controlled-training-profile.md). No poker score,
+new stronger agent or established cause of the river weakness follows from this
+step. Codex assisted; personal hands-on time is not inferred.
+
 ## Your own learning notes
+
+**November 8, 2026 — your report:** You ran the correctness replay and the
+controlled-training tests on your Mac. The replay passed and all 20 tests passed
+in 2.53 seconds. This records your reproduction of the checks, without inferring
+additional review or conceptual mastery.
 
 **November 5, 2026 — your report:** You completed the suggested terminal commands
 and got the expected results. Those exercises covered project navigation, a

@@ -3,7 +3,8 @@
 import argparse
 from pathlib import Path
 
-from poker_ai.postflop.training_isolation import CONFIG, replay, run
+from poker_ai.postflop.controlled_profile import replay_correctness as replay
+from poker_ai.postflop.training_isolation import CONFIG, run
 
 
 def main() -> int:

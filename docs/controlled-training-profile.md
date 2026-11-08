@@ -13,8 +13,9 @@ or training-cause claim follows. The prior failed learning gate remains.
 
 The [profile config](../configs/controlled-training-profile.json) binds the
 unchanged [comparison protocol](training-isolation.md) and correctness receipt.
-Historical trainers, source, game inputs, policies and correctness CLI remain
-unchanged. This is orchestration around the existing trainer, not a new update
+Historical trainers, mathematical source, game inputs and policies remain
+unchanged. The correctness CLI keeps its behavior through an explicitly pinned
+entrypoint compatibility bridge. This is orchestration around the existing trainer, not a new update
 algorithm. Profiling's short training traces are discarded; only state digests
 and work counts remain as timing-repeat checks, not deployable policies.
 
@@ -61,6 +62,19 @@ iteration/budget extension, feature change or changed learning gate. Own profili
 has a separate 900s cap including setup, correctness replay and instrumented runs;
 retain incomplete data if exceeded.
 
+## Replay compatibility
+
+PR #22's original replay requires its source manifest to equal today's complete
+source-file inventory. Adding the profiling library therefore requires a
+versioned adapter. The full old receipt is pinned byte-for-byte. The adapter
+checks every old source hash except its CLI entrypoint, whose old and new hashes
+are explicitly recorded in the profile config. Only that CLI's import/dispatch
+changes; the old checker, update equations and numerical receipt are untouched.
+It reruns the old mathematical evidence and checks typed identities and its
+1e-12 numerical bound. Newly created correctness receipts retain original replay.
+Tests exercise the existing terminal command, changed source and changed data.
+This compatibility revision was defined before profiling outcomes.
+
 ## Acceptance and reproduction
 
 - Publish tested script/config before timings; source must be clean.
@@ -80,3 +94,23 @@ retain incomplete data if exceeded.
 Stop after verified timing evidence and an explicit next decision. Any subsequent
 optimization must target measured hotspots and preserve update/RNG/work semantics
 before a learning run; no optimization is part of this initial profiling gate.
+
+## Implementation checks
+
+Thirteen new tests plus the previous twenty focused tests pass. Full local
+checks pass 977 all-extras tests each Python 3.11.17/3.12.15; base-only 944 with
+24 optional skips. Ruff lint/format, strict mypy (246 files) and hooks pass.
+Hosted CI and recorded timings are pending at this code publication.
+
+## Three questions to explain the compute gate
+
+1. **Why not just start the big experiment?** A short, fixed profile can reveal
+   that training alone exceeds the compute cap before spending hours on an
+   incomplete comparison. We retain failures instead of trimming inconvenient arms.
+2. **Does repeating a timing reproduce the same wall time?** No. We verify the
+   same final algorithm/RNG state and work, retain all times, and use a predefined
+   planning rule. Timing noise is not poker-strength uncertainty.
+3. **Does passing the forecast establish strength or feasibility?** Neither.
+   Strategy scoring/checkpoint costs remain unmeasured and the forecast can
+   change as later policies change. Only a complete audited learning comparison
+   could support its specific strategy claims.

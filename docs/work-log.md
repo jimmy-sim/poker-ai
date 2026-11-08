@@ -13,6 +13,26 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Controlled training compute gate
+
+- **Request / issue:** Continue #4 after reproducing the correctness gate.
+  [PR #23](https://github.com/jimmy-sim/poker-ai/pull/23),
+  [prospective plan](controlled-training-profile.md), config published 58d8c62.
+- **Fixed before timings:** All 140 common/unique bridge cells, three timing
+  repetitions (420 rows), four separate profiler cases, fixed iteration counts,
+  900s profiling cap, max-of-three forecast and 2× guard against the unchanged
+  7200s learning cap. No EV/exploitability, arm selection or automatic learning run.
+- **Implementation checkpoint:** Library orchestration and thin CLI, complete-grid
+  timing validation/report, exact state/RNG repeat checks, legacy replay adapter.
+  Baseline mathematical source/receipt unchanged; the old CLI import is bridged
+  with explicitly pinned old/new hashes before outcomes. 13 new tests and all
+  33 focused checks pass. Full local checks: 977 all-extras each Python
+  3.11.17/3.12.15; base-only 944 passed/24 optional skips. Ruff lint/format,
+  strict typing (246 files) and hooks pass. Hosted CI and timings pending.
+- **Stop / next:** Finish the verified compute gate before selecting a measured
+  optimization or launching the controlled learning sweep. Journal step 26.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Controlled training definitions and correctness gate
 
 - **Request / issue:** Continue #4 by isolating training differences behind the

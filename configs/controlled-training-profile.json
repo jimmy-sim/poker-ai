@@ -57,5 +57,9 @@
   ],
   "hotspot_rows": 25,
   "gate": "training_only_guarded_forecast_exceeds_cap if guarded training sum > 7200; otherwise unresolved_unmeasured_pipeline_cost; never admit or launch learning from this profile",
-  "scope": "timing and exact repeat-state diagnostics only; no EV/exploitability measurement, algorithm selection, default, fresh/global admission or new learned-agent claim"
+  "scope": "timing and exact repeat-state diagnostics only; no EV/exploitability measurement, algorithm selection, default, fresh/global admission or new learned-agent claim",
+  "correctness_cli_bridge": {
+    "old_sha256": "ad0ae3198dcd293a12fb37cc93d6242049a00e45d4c327f26182a170b92f2b2e",
+    "new_sha256": "8ddb0cf3cf0572a1f9b3850ca045c9a3c9d97dbc038c17a7f95357635ccc1fcf"
+  }
 }
