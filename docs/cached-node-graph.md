@@ -54,3 +54,28 @@ If guarded training still exceeds the cap, keep the large study off and measure
 another justified compute change. If below, measure remaining pipeline cost.
 The user authorized continued work through the day; subsequent milestones keep
 their own prospective protocols and source identities.
+
+## Implementation checkpoint
+
+Thirty new tests and 65 previous focused checks pass. All 48,604 matrix nodes
+and 48,600 legal edges are checked in the real-game unit gate. Reverse-level
+construction also passes a permuted-node-ID fixture; cached nodes are frozen and
+contain no parent/context back references. Direct value/error/type/edge checks
+exclude Python object identity, which intentionally differs when objects are reused.
+Ruff lint/format, strict mypy (256 files) and all-file hooks pass. Full local
+suites pass: 1039 all-extras tests each on Python 3.11.17 / 3.12.15; base-only
+1006 pass / 24 optional skips. Hosted CI and the fixed complete parity/profile
+remain pending at this checked-code checkpoint.
+
+### Three questions to explain this cache
+
+1. **Why can game nodes persist while policy rows cannot?** A fixed game's menus,
+   chance probabilities, terminal payoffs and information labels do not depend on
+   current regrets. Policy probabilities do, so that cache still ends each pass.
+2. **How do we check this does not change the game?** Exhaust all interface
+   properties, errors and child routes in the four finite matrices, then compare
+   raw learning arrays, policies, RNG and CFR counters at fixed checkpoints.
+   This is bounded evidence, not proof of arbitrary mutable or unlimited games.
+3. **Is construction free or a memory reduction?** No. Initialization includes
+   fresh graph construction, with O(N) node objects recorded separately from CFR
+   visits. Forecasts keep that setup time; no RSS or global scalability claim.
