@@ -1,0 +1,98 @@
+{
+  "audit_seconds": 71.16287124999508,
+  "audit_sha256": "5d3665d6c6c3768c8c03a802ac98e5b5e2d29b6d153435ad9a0fa89ad5cf4642",
+  "crossed_profiles_checked": 160,
+  "fresh_global_admission": false,
+  "hybrid_profiles_checked": 120,
+  "input_sha256": "e504f2316bb252ab1244f11a6ae66e93da73e78d7f837d42d357769e4c1e91d9",
+  "maximum_native_error_chips": 1.2789769243681803e-13,
+  "maximum_own_replay_error_chips": 0.0,
+  "mean_attribution": [
+    {
+      "gap_change_percent_pot": 0.0,
+      "interaction_percent_pot": 0.0,
+      "representation": "exact",
+      "river_effect_percent_pot": 0.0,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "turn_effect_percent_pot": 0.0
+    },
+    {
+      "gap_change_percent_pot": 0.0,
+      "interaction_percent_pot": 0.0,
+      "representation": "public_b8",
+      "river_effect_percent_pot": 0.0,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "turn_effect_percent_pot": 0.0
+    },
+    {
+      "gap_change_percent_pot": 1.50427430914024e-08,
+      "interaction_percent_pot": -0.003003254686635344,
+      "representation": "texture_b8",
+      "river_effect_percent_pot": 0.0015016446807866724,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "turn_effect_percent_pot": -0.001501629638043581
+    },
+    {
+      "gap_change_percent_pot": 1.1539571383493386e-07,
+      "interaction_percent_pot": 9.772386612776114e-08,
+      "representation": "texture_made_b8",
+      "river_effect_percent_pot": 6.653378077105329e-08,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "turn_effect_percent_pot": 4.886193306388057e-08
+    },
+    {
+      "gap_change_percent_pot": 1.2927770605277376e-08,
+      "interaction_percent_pot": -1.1656732497408672e-07,
+      "representation": "texture_range_q8_b8",
+      "river_effect_percent_pot": 7.121143309232074e-08,
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "turn_effect_percent_pot": -5.828366248704336e-08
+    },
+    {
+      "gap_change_percent_pot": 0.0,
+      "interaction_percent_pot": 0.0,
+      "representation": "exact",
+      "river_effect_percent_pot": 0.0,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "turn_effect_percent_pot": 0.0
+    },
+    {
+      "gap_change_percent_pot": 0.0,
+      "interaction_percent_pot": 0.0,
+      "representation": "public_b8",
+      "river_effect_percent_pot": 0.0,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "turn_effect_percent_pot": 0.0
+    },
+    {
+      "gap_change_percent_pot": 3.9186006564575124,
+      "interaction_percent_pot": 0.316350422393812,
+      "representation": "texture_b8",
+      "river_effect_percent_pot": 3.9900942956716596,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "turn_effect_percent_pot": -0.07149363921414724
+    },
+    {
+      "gap_change_percent_pot": 3.5265787260422283,
+      "interaction_percent_pot": 0.41303289807605253,
+      "representation": "texture_made_b8",
+      "river_effect_percent_pot": 3.610834538438094,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "turn_effect_percent_pot": -0.08425581239586638
+    },
+    {
+      "gap_change_percent_pot": 3.8393581672585753,
+      "interaction_percent_pot": 0.7656095467611216,
+      "representation": "texture_range_q8_b8",
+      "river_effect_percent_pot": 3.4731331557923206,
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "turn_effect_percent_pot": 0.36622501146625414
+    }
+  ],
+  "native_roots_checked": 480,
+  "own_achieved_values_checked": 480,
+  "scope": "saved-policy substitutions; not training-algorithm causality or a deployed hybrid",
+  "status": "verified_fixed_policy_interventions",
+  "study_seconds": 60.217984917006106,
+  "training_performed": false
+}

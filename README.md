@@ -155,6 +155,15 @@ a measured retraining gain. All **160 native response roots and 160 achieved own
 reply values** pass checks. Read [journal step 23](docs/learning-journal.md#23-separate-unfinished-learning-from-missing-distinctions)
 or try `.venv/bin/python scripts/inspect_range_reply.py --seat 1`.
 
+The [fixed-policy follow-up](docs/frozen-policy-swaps.md) locates most of the
+medium gap change in the saved river continuation. Mean extra-information gap is
+**0.271466% pot** for full/full, **0.254886%** for sampled-turn/full-river,
+**3.361794%** for full-turn/sampled-river and **4.110824%** for sampled/sampled.
+All 160 crossed profiles and 120 street hybrids pass independent value/response
+checks. This is a saved-policy intervention, not a retraining improvement or proof
+that sampling alone caused the weakness. See [journal step 24](docs/learning-journal.md#24-hold-the-opponent-fixed-and-swap-saved-decisions)
+or run `.venv/bin/python scripts/inspect_policy_swap.py`.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with
