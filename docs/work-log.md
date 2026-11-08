@@ -36,7 +36,10 @@ For a guided explanation of the ideas and results, start with the
   new poker learning tripwires pass. Strict typing 293 files, lint/format pass.
   Full base make check passes both versions: 1157 / 24 optional skips each.
   Final focused checks and clean non-incremental typing pass both base versions.
-  Full optional suites, source-bound correctness, hosted CI and actual learning pending.
+  Full optional suites pass 1190 each (265.87/255.54s); final-source slow pair
+  passes 39.74/38.26s. Clean code `87fb4bc` yields 32 toy trajectories / 136
+  snapshots in 0.539277s. Hosted CI 42522375101 passes both jobs on `87fb4bc`; source-bound
+  admission recorded before learning. New postflop study not yet started.
 - **Correction / review:** Prefix lookup initially omitted 44 full controls because
   the node timing column contains only external cells. A test catches this; use
   the frozen combined endpoint lookup. No rule/seed/gate changes. Self-review adds

@@ -1,0 +1,57 @@
+{
+  "checked_commit": "87fb4bce247083df1f9cced6fa26052df94dc6ae",
+  "ci_job_ids": {
+    "Python 3.11": 128858467105,
+    "Python 3.12": 128858467136
+  },
+  "ci_jobs": {
+    "Python 3.11": "success",
+    "Python 3.12": "success"
+  },
+  "ci_run": 42522375101,
+  "ci_url": "https://github.com/jimmy-sim/poker-ai/actions/runs/42522375101",
+  "correctness_sha256": "fc2f7f618743570531f8772067cbc967fd3ed0a600c766c55b564c6f6432a350",
+  "format": "poker-ai-controlled-learning-admission-v1",
+  "local_checks": {
+    "all_extras_311": "passed",
+    "all_extras_312": "passed",
+    "base_311": "passed",
+    "base_312": "passed",
+    "slow_integrations": "passed"
+  },
+  "local_evidence": {
+    "all_extras_each": 1190,
+    "all_extras_seconds": [
+      265.87,
+      255.54
+    ],
+    "base_each": 1157,
+    "base_optional_skips_each": 24,
+    "base_seconds": [
+      218.83,
+      209.18
+    ],
+    "final_focused_base_checks_after_validation_tightening": "passed both versions",
+    "final_source_slow_pair_seconds": [
+      39.74,
+      38.26
+    ],
+    "lint_format_hooks": "passed",
+    "new_fast_checks": 58,
+    "numpy_versions": [
+      "2.4.6",
+      "2.5.4"
+    ],
+    "python_versions": [
+      "3.11.17",
+      "3.12.15"
+    ],
+    "slow_excluded_each": 9,
+    "strict_typed_files": 293
+  },
+  "personal_hands_on_time": "not recorded",
+  "scope": "Original 140-cell known-game diagnostic only; no best-arm/default/fresh/global admission",
+  "source_sha256": "76b4b4d032e8bed788bec5578ed2c135c47c6d28d87faba62a24067f9e4a442f",
+  "status": "admitted_original_diagnostic_only",
+  "verification": "Codex inspected actual hosted job conclusions and local command results; no independent human review claimed"
+}

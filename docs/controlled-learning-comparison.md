@@ -71,9 +71,17 @@ subset of k factors, 2^k times mean(y × product of their ±1 level signs). Thes
 averaged k-way differences, not regression significance. Test normalization with
 hand-computed synthetic factors before outcomes. Preserve paired seed differences
 and interactions; full controls reused across comparisons are not new samples.
+Matching seed labels couples RNG initial states, not identical sampled histories:
+changed policies can change branch lengths and later random-draw consumption.
+These are conditional finite-seed diagnostics, not population causal estimates.
 No population confidence intervals from three algorithm seeds. Work/iteration
 results remain separate. Analyze four full-only bridge points separately, with
-last point referencing the common endpoint instead of duplicating it.
+last point referencing the common endpoint instead of duplicating it. The warm
+uniform iteration always uses common chance/own-reach, opponent-pass averaging,
+even when later bridge iterations use history mass. Ordered bridge differences
+can interact with that retained initial mass; they are not a unique attribution
+of cause. Consistent static per-information-group scaling can cancel after
+normalization, so do not infer a universal chance-weight effect from one bridge.
 
 ## Definition of done and limits
 
@@ -133,3 +141,22 @@ The implementation checkpoint has no new Hold'em learning result. Its tests use
 toy worlds, old own policies and visibly labeled synthetic figures. A prefix-
 inventory test caught a lookup that initially omitted the full backend's rows;
 using the frozen combined lookup fixes orchestration without changing learning.
+
+## Checked implementation evidence, before Hold'em learning
+
+Protocol `8b8256a`, code `87fb4bce247083df1f9cced6fa26052df94dc6ae`.
+58 new fast checks pass both Python versions and both base environments. Full
+all-extras: 1190 passed / 9 slow excluded each Python 3.11.17 / 3.12.15 (265.87 /
+255.54s). Complete base make check: 1157 passed / 24 optional skips / 9 slow
+excluded each (218.83 / 209.18s); final focused checks after validation tightening
+and clean non-incremental strict typing pass both base versions (293 files).
+Ruff checks 373 files and commit hooks pass. Two final-source native/render
+integrations pass 39.74 / 38.26s; no new poker training or reference policy export.
+Earlier integration runs 34.35 / 37.24s remain test history, not timing forecasts.
+
+Clean published code produces the source-bound toy receipt in 0.539277s: 32
+trajectories, 136 physical policy round trips and hand-computed first through
+fourth-order contrasts. Old selector correctness also replays. No new postflop
+training has occurred. Hosted CI `42522375101` passed both Python jobs on checked source `87fb4bc`.
+Formal source-bound admission is recorded in `results/controlled-learning/admission.json`. Source hashes bind code/config/lock/entrypoints;
+actual learning starts only after these checks and the admission commit are published.

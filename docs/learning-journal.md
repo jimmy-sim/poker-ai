@@ -1715,8 +1715,10 @@ receipts and changed source. Two slower native/render integrations pass in
 with new poker training and reference strategy export blocked. The synthetic
 figure layout was inspected; it is not a learning result. Full base checks pass
 both versions with 1157 tests and 24 optional skips each. Strict typing checks
-293 files. The full optional suites, clean-source correctness/admission receipts
-and hosted CI remain pending at this code checkpoint.
+293 files. The full optional suites also pass 1190 tests each, and the clean-source
+correctness receipt checks 32 toy trajectories / 136 physical snapshots in
+0.539277s. Final-source slower checks pass 39.74 / 38.26s. Hosted CI passes both Python jobs on `87fb4bc`; source-bound admission is
+recorded before starting. No new Hold'em learning result exists yet.
 
 One test caught an orchestration mistake: the old cached-node timing table has
 sampled cells, while its parent table holds the full controls. The new runner
