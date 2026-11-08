@@ -337,3 +337,18 @@ audit-controlled-pipeline:
 
 report-controlled-pipeline:
 	$(UV) run --locked python scripts/report_controlled_pipeline.py
+
+.PHONY: compare-controlled-learning report-controlled-learning
+CONTROLLED_RUN_DIR ?= results/runs/controlled-learning-reproduction
+# Fresh ignored output required; checked admission receipts remain prerequisites.
+compare-controlled-learning:
+	$(UV) run --locked --extra research python scripts/compare_controlled_learning.py \
+		--output $(CONTROLLED_RUN_DIR)/own.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_controlled_learning.py \
+		--own $(CONTROLLED_RUN_DIR)/own.json --output $(CONTROLLED_RUN_DIR)/native.json
+	$(UV) run --locked --extra research python scripts/report_controlled_learning.py \
+		--own $(CONTROLLED_RUN_DIR)/own.json --native $(CONTROLLED_RUN_DIR)/native.json \
+		--output $(CONTROLLED_RUN_DIR)/report
+
+report-controlled-learning:
+	$(UV) run --locked --extra research python scripts/report_controlled_learning.py

@@ -41,7 +41,10 @@ must not change arrays, RNG, keys or work; verify against uninterrupted toy runs
 and the pinned short-prefix serial endpoint checks before the large comparison.
 
 Write atomic own-v1 compact legal-action snapshots, with menus/metadata/hashes and
-bit-exact padded restoration. Stream the final compressed JSONL archive and native
+bit-exact padded restoration. Store each own reply profile's fingerprint; rebuild
+it from the saved own policy and frozen own scorer for replay/native comparison.
+This avoids retaining six redundant full reply arrays per checkpoint. Their
+fingerprints and root values must match before comparison. Stream the final compressed JSONL archive and native
 reader one record at a time; never decode 840 strategies at once. Each worker
 replays its saved policies/metrics without training before it completes, using the
 same fixed partition as forecast. Report/table/plot IO and validation belong to
@@ -85,3 +88,48 @@ unbiased estimator of a full clipped trajectory. New full NumPy controls also do
 not retroactively reproduce the old fused arithmetic. Shared exported mechanics,
 small known ranges, source-policy timing estimates and three fixed seeds limit
 what causal contrasts say about the broader Hold'em agent.
+
+## Commands and solo review before admission
+
+Fresh reproduction, after this source's committed correctness/admission receipts
+exist (requires the locked research and solver-validation extras):
+
+```sh
+make compare-controlled-learning
+```
+
+This uses `results/runs/controlled-learning-reproduction/`, which must be fresh.
+An existing receipt or partial archive is retained, never silently overwritten.
+Use `CONTROLLED_RUN_DIR=results/runs/another-name` for a separately labeled rerun.
+The recorded study uses explicit `--output results/controlled-learning/own.json`,
+then publishes own evidence before the separate native audit command. Reproduction
+can keep its immutable own outputs ignored between stages; no reference strategy
+is loaded into training. The recorded training runtime is Python 3.11 / locked
+NumPy 2.4.6; software and saved-output checks also run on Python 3.12. Exact prefix
+fingerprints can reject a different numerical runtime rather than silently claim
+bit-identical trajectories. Recorded CPU/wall times and PNG bytes vary by machine.
+
+Read-only review in the user's existing environment, without `uv` on PATH:
+
+```sh
+.venv/bin/python scripts/report_controlled_learning.py --no-plots
+```
+
+This replays all own policies on three processes, verifies a present native audit,
+and regenerates the numerical tables in an ignored folder. Omitting `--no-plots`
+also makes all eight figures when Matplotlib is installed. It does not retrain.
+Before learning is admitted, this command has no completed study to read.
+
+Solo self-review keeps the exact work units and first crossings, reuses the
+frozen combined prefix lookup for both backends, checks immutable config/source
+chains, rejects typed/nonfinite/partial grids, and retains worker errors/files.
+Own reply arrays are regenerated and fingerprint-checked with the own scorer;
+reference actions and policy export remain blocked by tests. Native code has a
+separate namespace and returns scalar comparisons. Each worker replays assigned
+checkpoints before its completion receipt; report IO is charged before own-stage
+completion. No independent human reviewer or measured RAM claim is implied.
+
+The implementation checkpoint has no new Hold'em learning result. Its tests use
+toy worlds, old own policies and visibly labeled synthetic figures. A prefix-
+inventory test caught a lookup that initially omitted the full backend's rows;
+using the frozen combined lookup fixes orchestration without changing learning.

@@ -25,8 +25,23 @@ For a guided explanation of the ideas and results, start with the
 - **Analysis fixed in advance:** All raw seeds, 32 conditional differences and 15
   averaged factorial differences; separate work and iteration axes, four-point
   bridge with common endpoint reused. No winner/default/global admission.
-- **Current result:** Protocol only; implementation, checks, admission and learning
-  remain pending. Codex-assisted; personal hands-on time not recorded.
+- **Implementation:** Frozen trainer/scorer wrappers, first-crossing/exact-iteration
+  observations, source-bound CI/correctness admission, atomic compact strategies,
+  streamed archive, own replay and isolated native roots/achieved-own-reply checks.
+  Store own reply fingerprints and reconstruct them with the own scorer; no native
+  strategies enter training. Typed finite-grid validation rejects partial results.
+- **Checks so far:** 58 new fast checks pass Python 3.11/3.12. Real three-process
+  toy orchestration covers all 140 identities / 840 labels. Two slow old-policy /
+  synthetic-render checks pass Python 3.11/3.12 in 34.35/37.24s; reference strategy export and
+  new poker learning tripwires pass. Strict typing 293 files, lint/format pass.
+  Full base make check passes both versions: 1157 / 24 optional skips each.
+  Final focused checks and clean non-incremental typing pass both base versions.
+  Full optional suites, source-bound correctness, hosted CI and actual learning pending.
+- **Correction / review:** Prefix lookup initially omitted 44 full controls because
+  the node timing column contains only external cells. A test catches this; use
+  the frozen combined endpoint lookup. No rule/seed/gate changes. Self-review adds
+  typed metric/work/coverage guards, final endpoint checks and partial-file retention.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
 
 ## 2026-11-08 — Checkpoint/scoring and remaining pipeline cost
 
@@ -80,9 +95,12 @@ For a guided explanation of the ideas and results, start with the
   unchanged 7200 own / separate 3600 native caps. Native estimate includes serial
   own-input replay for 840 policies. [Table](../results/controlled-pipeline-check/report/tables.md).
   No new learning, strength, cause/default/global or automatic admission claim.
+- **Merge / main:** Final CI 42520115258 passes both jobs; PR #27 merged at
+  `a979d0a`. User .venv passes 188 focused fast checks (37.49s), final report and
+  old correctness replay. All ten unrelated modified output hashes unchanged.
 - **Next:** Journal step 30 completes old-policy correctness/cost calibration.
   Both report files regenerate byte-identically on base Python 3.12; saved timing
-  validation, not wall-time reproduction. Final CI/main verification pending; next
+  validation, not wall-time reproduction. Final CI/main verification passed; next
   define the actual 140-cell runner without changing the preregistered comparison.
   No default, strength, river-cause or global admission.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.

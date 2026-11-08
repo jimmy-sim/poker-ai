@@ -57,13 +57,16 @@ Step 29 measures independent cells across CPU processes, including startup and
 resource costs, without changing a cell's learning rules.
 Step 30 verifies checkpoint/scoring behavior and measures the still-missing
 pipeline costs on old saved policies.
+Step 31 prepares the original controlled learning comparison, with complete
+checkpoint replay and all training-rule combinations retained. Learning outcomes
+remain pending at the checked-runner checkpoint.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–30:** What the extensions and recent experiments taught us.
+- **Steps 10–31:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1664,6 +1667,72 @@ Both report files regenerate exactly in the base Python 3.12 environment. That
 checks the saved evidence and forecast arithmetic; it does not reproduce timing.
 Hosted CI and main-checkout verification are the remaining checks for this
 milestone.
+
+## 31. Run a fair comparison of the training choices
+
+*November 8, 2026 — issue #4; [PR #28](https://github.com/jimmy-sim/poker-ai/pull/28).
+Codex-assisted implementation and drafting; personal hands-on time not recorded.*
+
+**Question:** With the computer cost now manageable, which training differences
+change the river weakness when the agent sees the same information groups?
+
+The comparison keeps four switches separate: full versus sampled traversal,
+signed versus clipped regrets, uniform versus increasing regret weights, and
+uniform versus increasing strategy-average weights. A **regret** is a stored
+score for how much a different action would have helped. **Clipping** replaces
+negative stored regret with zero after the declared update. The two time weights
+control different things: learning updates and the final averaged strategy.
+
+Four on/off switches make sixteen combinations. We keep all combinations in
+both known games and both representations. Sampled learning uses three fixed
+random seeds; deterministic full runs are performed once. The extra full-only
+bridge compares the original initialization/averaging conventions. Its final
+point already exists in the common comparison, so it is referenced rather than
+trained twice. This makes 140 actual runs.
+
+**Example — invented numbers:** Suppose clipping reduces a gap by two chips with
+uniform averaging but increases it by one chip with increasing average weights.
+Saying “clipping helps” would hide that dependence. An **interaction** measures
+how one switch's effect changes when another switch changes. The report keeps
+these paired differences and interactions, along with every individual seed.
+A three-seed average does not establish a precise population uncertainty interval.
+
+The runner saves each work checkpoint at the first complete learning iteration
+that crosses it. It also saves the exact iteration checkpoints, kept on a
+separate axis. Together these produce 840 logical checkpoints. The observer
+checks that scoring and saving do not change the learner's arrays, random state,
+or work counters. Each worker then reloads its own strategies and recomputes the
+scores. Strategies are stored one at a time; own reply fingerprints let us check
+reconstructed replies without saving six redundant reply tables per checkpoint.
+
+**Checks at this implementation checkpoint:** 58 new fast checks pass. The real
+three-process runner completes all 140 cell identities on explicitly toy worlds,
+with all 840 labels and archive replay. Hand-computed factor examples check first,
+second, third and fourth-order differences. Tests reject missing or duplicate
+cells, false work crossings, altered policies, nonfinite metrics, failed CI
+receipts and changed source. Two slower native/render integrations pass in
+34.35s / 37.24s on Python 3.11 / 3.12; they use old own policies and synthetic plot fixtures,
+with new poker training and reference strategy export blocked. The synthetic
+figure layout was inspected; it is not a learning result. Full base checks pass
+both versions with 1157 tests and 24 optional skips each. Strict typing checks
+293 files. The full optional suites, clean-source correctness/admission receipts
+and hosted CI remain pending at this code checkpoint.
+
+One test caught an orchestration mistake: the old cached-node timing table has
+sampled cells, while its parent table holds the full controls. The new runner
+now uses the already checked combined lookup, preserving all 140 prefix targets.
+No learning formula, seed, work limit or acceptance rule changed.
+
+**Next decision:** Publish checked code, replay toy correctness from clean source,
+verify both GitHub CI jobs, and record admission before the actual known-game
+comparison. Then keep all own outcomes, publish them before comparison-only
+native checks, and interpret work and iteration matches separately. No strongest
+recipe, default change, fresh-game or global-agent admission follows this
+investigation automatically. The earlier failed sampled gate remains recorded.
+
+Read the [execution protocol](controlled-learning-comparison.md). The later
+results will be appended here when they exist; they are not inferred from toy
+checks or cost forecasts.
 
 ## Your own learning notes
 
