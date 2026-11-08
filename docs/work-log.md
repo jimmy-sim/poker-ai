@@ -24,6 +24,13 @@ For a guided explanation of the ideas and results, start with the
   replay, native audit, offline report and 39 new tests. `make check` passes
   884 all-extras tests on Python 3.11.17/3.12.15; base-only 855 passed/20 optional
   skips. Ruff lint/format, strict mypy and hooks pass. No sampled outcome yet.
+- **CI finding / retained interruption:** Hosted run 42446227294 fails the real
+  prior-admission replay on Linux at exact diagnostic equality. Local checks had
+  passed. Stop the first run at 20/90 snapshots after 259.433 seconds; retain
+  `results/range-mass-sampled-initial/` with original clean source acd3941 and
+  KeyboardInterrupt/incomplete status. No performance admission from this run.
+  Investigate portable numerical replay without editing frozen old source or
+  changing the feature, seeds, work budgets or performance thresholds.
 - **Pending:** Full 90-policy experiment/native audit, hosted CI and journal
   step 22 results. No fresh/global/default stage in this block.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
