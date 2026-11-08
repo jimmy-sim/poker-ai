@@ -41,13 +41,16 @@ distinctions. It completes a diagnosis, without training a replacement.
 Step 20 defines the next candidate and its tests. Step 21 finds a measured
 improvement: range masses pass the full-control gate on both known games.
 Step 22 completes the sampled comparison: the new description improves on
-category but fails the deeper-game accuracy limits. We stop before fresh games.
+category but fails the deeper-game accuracy limits. Step 23 diagnoses the saved
+failure: most of its exploitable value appears when an opponent can use finer
+information. That value depends on the saved strategies; it is not a fixed floor.
+We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–22:** What the extensions and recent experiments taught us.
+- **Steps 10–23:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1147,20 +1150,72 @@ No fresh-game or global training follows this failed gate.
 
 ## 23. Separate unfinished learning from missing distinctions
 
-**November 7, 2026 — in progress.** The sampled strategy improved but missed its
-limits. Before changing it, we ask what an opponent could gain with the same
-information groups, then what extra exact information adds.
+**November 7, 2026.** The sampled strategy missed its limits. We kept it fixed
+and asked two questions: what could an opponent gain using the same information
+groups, and what extra gain could it get by distinguishing the exact poker states?
+A best reply is an optimized response to this one saved opponent, not a new trained
+agent or universal poker advice.
 
-Imagine two river situations share one strategy row. A restricted reply must use
-one action distribution for that row. An exact reply may choose differently in
-the two situations. We will measure both against each fixed saved opponent.
-This is a diagnosis, not a prediction that retraining will recover the same chips.
+All five descriptions, both games, all three final sampled seeds and the full
+controls are included: **40 saved profiles**. On the deeper game, the range-mass
+candidate's sampled mean splits like this, in percent of the initial pot:
 
-The [fixed plan](range-mass-reply-diagnosis.md) includes every final seed and full
-control: 40 profiles. We keep individual results and use averages when adding
-components across seeds, because medians do not generally add. No fresh games,
-new representation or larger training run occurs in this milestone.
-Codex assists with implementation/reporting; personal hours are not inferred.
+| Component | Mean across the three seeds |
+|---|---:|
+| Gain available within existing information groups | 0.243% |
+| Additional gain using exact information | 4.111% |
+| Total exploitability | 4.354% |
+
+The earlier **median is still 4.480%**. We use the mean here because the pieces
+must add. A different summary statistic is not an improvement in the agent.
+Every individual seed is kept in the report; all three have a much larger
+extra-information component than their within-group component.
+
+This points to a weakness that a compressed opponent mostly cannot see. But there
+is a catch: the full-tree control uses the **same description** and has only
+**0.272% total exploitability**. Its opponent's saved strategy also differs.
+Therefore 4.111% is not a permanent information-loss floor, and this result does
+not prove that adding a feature or simply training longer will fix it.
+
+There is a concrete example to explore. In the first sampled seed, seat 1 holds
+**9c 9d** on **Ts 9s 4d 2h**. The saved policy folds about **99.24%** of the time.
+The exact best reply calls against that saved opponent. Calling has a better
+net-chip value than folding **when followed by the exact reply's later play**.
+The reply restricted to the saved information groups still folds here. The turn
+row itself is not merged: later river distinctions can make the difference.
+We should not reduce that to “always call a set” or assume one turn-action edit
+recovers the whole gain.
+
+All **160 independent best-response roots** and **160 achieved own reply values**
+pass OpenSpiel checks, with maximum difference about **0.000000000000121 chips**.
+The complete summaries and row details replay with zero difference on this Mac;
+Python 3.12 also passes replay. Local checks pass 914 tests on each Python version;
+base-only passes 883 with 22 optional skips. Own diagnosis took about 26 seconds,
+and the separate audit took about 49 seconds. No agent training occurred.
+
+In the plots, **blue** is the response gain within the saved information groups;
+**orange** is the extra value of exact distinctions. Each bar's total is the
+saved strategy's exploitability. The candidate plot shows every seed plus the
+separate full control. The all-controls plot uses means of the three sampled seeds.
+The low and medium panels have different scales; compare their axis labels.
+
+```sh
+open results/range-mass-replies/report/candidate-profiles.png
+open results/range-mass-replies/report/sampled-means.png
+.venv/bin/python scripts/inspect_range_reply.py --seat 1
+```
+
+Try another saved seed with `--seed 20261302`, or the full control with
+`--training full`. These inspect saved counterstrategy examples and do not retrain.
+Read the [method and limits](range-mass-reply-diagnosis.md),
+[tables](../results/range-mass-replies/report/tables.md) and
+[PR #20](https://github.com/jimmy-sim/poker-ai/pull/20). Codex assisted with the work;
+no personal learning or hands-on hours are inferred.
+
+We stop at this verified diagnosis. A useful next question is why the same
+information groups produce very different exact-opponent vulnerability across
+the saved full and sampled strategies. We have not isolated that cause or chosen
+a remedy. The failed learning gate remains in force, with no fresh/global run.
 
 ## Your own learning notes
 
