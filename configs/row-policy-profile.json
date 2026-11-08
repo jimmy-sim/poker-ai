@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "opt_in_execution_optimization_only",
+  "input_sha256": {
+    "configs/controlled-training-profile.json": "b70aba52affc931bfd3a266a826a8770e31ea6ae4eb6a0550b24a762aed74424",
+    "results/controlled-training-profile/profile.json": "9d22fa21bc6b604e024ef98b1ae8c3f30d1645ee89baaa84033c358692423f79",
+    "results/controlled-training-profile/report/summary.json": "fddf794cccff301722a17d3999582f7a2a3eaeb8330a0326a375e2ed44040381"
+  },
+  "base_profile_config": "configs/controlled-training-profile.json",
+  "base_profile": "results/controlled-training-profile/profile.json",
+  "parity_iterations": [
+    1,
+    2,
+    16,
+    64,
+    128,
+    1001
+  ],
+  "parity": "exact array bytes, policies, RNG state, visited-key set, iteration and charged work; no tolerance substitution",
+  "repetitions": 3,
+  "external_iterations_after_initialization": 1000,
+  "full_iterations_after_initialization": 16,
+  "pair_order": "dense first if (external cell index + repeat) % 2 == 0; row cache first otherwise",
+  "maximum_seconds": 1200,
+  "forecast_guard_multiplier": 2.0,
+  "forecast_target_node_work": 10000000,
+  "scope": "96 complete external parity trajectories; 708 timing rows (420 dense + 288 row-cache); unchanged full cells shared between forecasts; six profiler cases; no strength scoring or learning-run admission"
+}
