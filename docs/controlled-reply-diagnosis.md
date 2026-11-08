@@ -110,3 +110,138 @@ review uses `.venv/bin/python scripts/report_controlled_replies.py --no-plots`.
 The terminal inspector is `.venv/bin/python scripts/inspect_controlled_reply.py`;
 its rank includes every owned row, not only positive losses. It states whether
 the corresponding crossed-profile native receipt is present and verified.
+
+## Recorded outcome
+
+Both code CI jobs [42531469249](https://github.com/jimmy-sim/poker-ai/actions/runs/42531469249)
+pass on clean `4f34289` before measurement. The
+[own receipt](../results/controlled-replies/own.json) completes every 64 source
+profile / 128 trace / 256 crossed profile / 512 target condition in **19.920551s**,
+below 900s. Parent/reaped-child CPU: 10.704774/9.16s. Its 3,065,110-byte archive
+retains **87,872 owned decision rows**, including zero-support/loss rows; maximum
+row/street/root accounting discrepancy is **2.260818e-13 chips**. Own outputs are
+published as `53d4fe9` before any new native comparison. The compressed archive's
+SHA-256 is `840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373`.
+
+The [native receipt](../results/controlled-replies/native.json) verifies every
+crossed EV, both within-partition roots and both achieved OWN replies. Maximum
+discrepancy is **2.415845e-13 chips**, below 1e-9; wall **17.525516s**, below 900s.
+This includes all-own-row replay with zero error (8.868434s). Parent/reaped-child
+CPU: 17.475461/0.03s. Installed OpenSpiel 2.0.2 license bytes match the pinned
+Apache-2.0 record. No native strategy is exported, trained, or loaded into an
+agent. Separate base Python 3.12 / NumPy 2.5.4 audited replay also has zero error
+(8.795223s), and all four numerical report files regenerate byte-identically.
+Report reproduction does not reproduce CPU/wall time or PNG bytes.
+
+See [all street means](../results/controlled-replies/report/tables.md),
+[every source/seat](../results/controlled-replies/report/self-targets.csv), and
+[all crossed targets](../results/controlled-replies/report/crossed-targets.csv).
+All four actual figures were visually inspected. Standard CSV CRLF is preserved
+from the frozen writer; diff validation uses `core.whitespace=cr-at-eol`.
+
+### Where the within gain appears
+
+For the motivating medium range-mass game, sampled arithmetic means over the
+three declared seeds, units **percent initial pot, half-summed over seats**:
+
+| Regret / average | Within gain | Turn loss | River loss |
+|---|---:|---:|---:|
+| signed / uniform | 0.372605 | 0.126476 | 0.246128 |
+| signed / linear | 0.243207 | 0.141330 | 0.101878 |
+| clipped / uniform | 2.918434 | 1.975778 | 0.942656 |
+| clipped / linear | 1.811454 | 1.315782 | 0.495672 |
+
+Turn rows account for 72.64% of clipped/linear within gain under this saved-prefix,
+optimal-own-suffix decomposition. This does **not** contradict the earlier
+river-policy result: that measured changes in extra exact-information value under
+street policy substitutions. Here the quantity, continuation and decomposition
+differ. Neither calculation identifies the causal training mechanism.
+
+![Every sampled source mode and seed](../results/controlled-replies/report/within-streets-external.png)
+
+### The increase persists with opponents fixed
+
+Keep linear own average weights, compare signed versus clipped own policies, and
+hold each opponent column fixed. The following are **unilateral** within gains in
+percent initial pot, three-seed arithmetic means, for the same medium candidate.
+They are not the half-summed self-profile metric above. A higher gain means more
+room to improve against this fixed opponent, inside the same information groups.
+
+| Responding seat | Fixed opponent regret / average | Signed own | Clipped own | Difference (points) |
+|---|---|---:|---:|---:|
+| 0 | signed / uniform | 0.278165 | 0.624549 | +0.346384 |
+| 0 | signed / linear | 0.146973 | 0.451940 | +0.304967 |
+| 0 | clipped / uniform | 1.215299 | 1.613857 | +0.398558 |
+| 0 | clipped / linear | 0.697162 | 1.040039 | +0.342878 |
+| 1 | signed / uniform | 0.106353 | 2.597033 | +2.490680 |
+| 1 | signed / linear | 0.339442 | 2.835582 | +2.496141 |
+| 1 | clipped / uniform | 0.135931 | 2.582107 | +2.446176 |
+| 1 | clipped / linear | 0.124639 | 2.582869 | +2.458230 |
+
+Thus changed opponent behavior alone cannot explain this within-gain increase.
+It is especially large for seat 1. It also appears with exact own/public
+information: seat-1 increases are 2.473964–2.617986 points across the same four
+fixed opponent modes. Information compression is not necessary for this observed
+within-game weakness. This does not rule out its separate extra-information cost.
+Every other game, encoding, traversal, mode, target and seed remains in the raw
+report; the motivated example is not a selected new winner or population claim.
+
+![All ordered fixed-opponent means](../results/controlled-replies/report/fixed-opponent-external.png)
+
+Within a heatmap, moving down keeps the opponent fixed and changes our mode.
+Moving across changes the opponent. Seat panels share a figure scale, but full
+and sampled figures have separate color limits; compare numbers, not colors
+across figures. All raw seeds are in the CSV; three runs are not confidence bounds.
+
+## Interpretation, checks and next decision
+
+- **Changed opponent alone:** Insufficient for the focal increase; it persists
+  in every fixed-opponent mean comparison above. Own EV is lower by exactly the
+  unilateral gain increase when the opponent is fixed, up to the chip tolerance.
+- **Information grouping alone:** Insufficient; exact-information training also
+  has a large clipped seat-1 within weakness. This is a local finding, not proof
+  that compression never matters or that the global agent is sound.
+- **Average weights change the raw learning path:** The separate 16 toy regression
+  cases keep regrets/current policy/RNG/work/keys identical. Average weights change
+  the stored average, which can score differently. The tests do not measure the
+  current policies or averaging history of every poker trajectory.
+- **Street localization or unique training cause:** Not established. Row losses
+  use future own replies, and sampling, clipping and finite-time policy movement
+  remain possible contributors. Numerical agreement does not establish convergence.
+
+Full local base checks pass 1246 tests with 24 optional skips on both Python
+versions; optional suites pass 1279 each. Four slow old-policy/render checks and
+the final 90 focused checks pass on both versions; clean strict typing covers
+310 source files. Existing training/reference separation is preserved by placing
+this read-only diagnosis in evaluation. The default inspector succeeds in base
+installs for both seats with the archived native audit verified; its examples
+show only own cards and the public board. Shared-row conditional values average
+compatible histories and use an optimal own reply suffix, not a universal action
+recommendation for the illustrative cards.
+
+Next, prospectively compare current policies and different time portions of the
+average along checked, reproducible trajectories. This can test whether the
+stored average retains weak earlier play or whether the current policies remain
+weak too. It requires a separate protocol, correctness/prefix tests and compute
+gate before new learning. No remedy, default, fresh-game or global admission is
+granted here; the earlier sampled performance failure remains.
+
+The experiment uses two already-known, tiny-range games, limited actions and the
+original seeds. The reference independently checks value/BR arithmetic on the
+exported own game; the two implementations still share our poker mechanics and
+information definition. These numbers establish neither broad Hold'em strength,
+global exploitability, nor real-world win rate. Human hands-on time is not recorded.
+
+## Three interview questions
+
+1. **Why cross strategies instead of comparing only trained pairs?** Both players
+   change in a trained-pair comparison. Holding the opponent fixed makes the BR
+   root constant; differences in remaining improvement then equal negative own
+   EV differences. All ordered pairs and both asymmetric seats are required.
+2. **Does the turn bar prove that turn training is the bug?** No. It is additive
+   fixed-profile accounting with a best-reply suffix. A turn loss can depend on
+   future decisions. The earlier river substitution examined another quantity.
+3. **What does the independent solver check prove?** Every crossed EV, root and
+   achieved own reply agrees within 1e-9 chips (max 2.42e-13). It checks these
+   exported games and strategies, not convergence, global strength or all engine
+   rules. The reference supplied no training strategy or targets.

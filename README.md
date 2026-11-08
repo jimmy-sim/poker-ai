@@ -185,6 +185,14 @@ Fresh reproduction at recorded revision `c45b463` uses
 `make compare-controlled-learning`; later modules do not extend that learning admission. See the
 [protocol, runtime and limits](docs/controlled-learning-comparison.md).
 
+The [saved-policy follow-up](docs/controlled-reply-diagnosis.md) retains all 64
+final source pairs and 256 ordered crosses. The clipped within-game weakness
+persists against fixed opponents, especially for seat 1, and appears with exact
+information too. All 512 target checks pass independent scalar audit (max
+2.42e-13 chips); this diagnoses a weakness without selecting a stronger default.
+Read [journal step 32](docs/learning-journal.md#32-separate-our-decisions-from-the-opponents-behavior)
+or try `.venv/bin/python scripts/inspect_controlled_reply.py --seat 1`.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

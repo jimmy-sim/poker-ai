@@ -55,7 +55,23 @@ For a guided explanation of the ideas and results, start with the
   bytes, SHA 840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373.
   Base Python 3.12 replays all traces with zero error (8.797627s), regenerating
   all four numerical files byte-identically. Four actual plots visually checked.
-  Independent comparison remains pending at this own-evidence publication.
+  Independent comparison was pending at own-evidence publication `53d4fe9`.
+- **Independent outcome:** All 256 crossed profiles /512 targets pass EV, root and
+  achieved OWN reply comparison; max 2.415845e-13 chips (<1e-9). Native 17.525516s
+  (<900), including zero-error own replay 8.868434s. Parent/reaped-child CPU
+  17.475461/0.03s. License/version checked; no reference strategy exported.
+  Audited base Python 3.12 replay zero (8.795223s); four numerical files byte-identical.
+- **Finding:** Focal sampled medium candidate clipped/linear within gain 1.811454%
+  pot splits turn 1.315782 /river 0.495672. Turn accounting is not training cause.
+  With opponents fixed, seat-1 signed→clipped own linear-average gain increases
+  2.446176–2.496141 points over all four opponent modes; exact encoding also shows
+  2.473964–2.617986. Changed opponents/compression alone cannot explain this
+  within weakness. All modes/seeds/seats retained; no winner/default/global stage.
+- **Reporting / next:** Methods, four figures, three interview answers and journal
+  step 32 explain units and limits. Both base CLI seat inspectors verify the audit.
+  Standard frozen-writer CSV CRLF retained; CR-at-EOL-aware diff check passes.
+  Final artifact CI/main verification pending. Next prospectively compare current
+  policies and averaging history with checked replay before changing a learner.
 
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner
 
