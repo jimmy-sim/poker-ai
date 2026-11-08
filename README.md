@@ -146,6 +146,15 @@ Read [journal step 21](docs/learning-journal.md#21-test-whether-the-range-aware-
 and the [tables/two figures](results/range-mass-admission/report/tables.md).
 Try `.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`.
 
+The [saved-profile diagnosis](docs/range-mass-reply-diagnosis.md) now checks all
+40 final sampled/full profiles. Medium range-mass **mean** exploitability is
+**4.354032% pot = 0.243207% within-partition gain + 4.110824% extra exact-information
+value**. The earlier median remains 4.480481%. The same representation's full
+control is much less vulnerable, so this is not a universal abstraction floor or
+a measured retraining gain. All **160 native response roots and 160 achieved own
+reply values** pass checks. Read [journal step 23](docs/learning-journal.md#23-separate-unfinished-learning-from-missing-distinctions)
+or try `.venv/bin/python scripts/inspect_range_reply.py --seat 1`.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

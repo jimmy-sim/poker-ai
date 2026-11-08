@@ -13,6 +13,31 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Saved range-mass reply diagnosis
+
+- **Issue / request:** Continue #4 after the failed sampled gate; diagnose before
+  selecting a remedy. [Prospective plan](range-mass-reply-diagnosis.md).
+- **Fixed scope:** All 30 final sampled policies and ten full controls, both
+  seats, exact/restricted replies, full loss accounting and all seeds retained.
+  Arithmetic means for additive components. No new training or feature choice.
+- **Implementation checks before outcomes:** Own diagnosis, nested replay, native
+  root/achieved-value audit, report/inspector and 28 new tests. Local all-extras
+  914 tests pass on Python 3.11.17/3.12.15; base-only 883 passed/22 optional skips.
+  Ruff lint/format, strict mypy and hooks pass. No new research replies computed.
+- **Measured diagnosis:** All 40 cases complete in 26.361s from clean 38fbe0f.
+  Medium candidate sampled mean 4.354032% pot = 0.243207% within partition +
+  4.110824% extra exact-information value; median remains 4.480481%. Same-key
+  full control totals 0.271640%, so no universal abstraction floor/remedy claim.
+- **Independent evidence:** All 160 exact/restricted roots and 160 achieved own
+  reply values pass native checks; max 1.20792e-13 chips, own nested replay zero.
+  Audit 49.321s from clean 5982ebb after own evidence publication. Full Python
+  3.12 replay passes; both plots inspected; first-seed set-of-nines example retained.
+- **Report / stop:** [PR #20](https://github.com/jimmy-sim/poker-ai/pull/20),
+  [method](range-mass-reply-diagnosis.md), [tables/two figures](../results/range-mass-replies/report/tables.md)
+  and journal step 23. No training, feature/remedy selection or admission change.
+  All earlier failures remain; #4 stays open for the next controlled question.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-07 — Range-mass fixed-work sampled comparison
 
 - **Request / issue:** Continue #4's fixed-work sampled stage; stop at audited

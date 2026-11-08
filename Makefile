@@ -1,3 +1,18 @@
+.PHONY: diagnose-range-replies report-range-replies
+diagnose-range-replies:
+	$(UV) run --locked python scripts/diagnose_range_replies.py \
+		--output results/runs/range-mass-replies/diagnosis.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_range_replies.py \
+		--report results/runs/range-mass-replies/diagnosis.json \
+		--output results/runs/range-mass-replies/independent.json
+	$(UV) run --locked --extra research python scripts/report_range_replies.py \
+		--report results/runs/range-mass-replies/diagnosis.json \
+		--audit results/runs/range-mass-replies/independent.json \
+		--output results/runs/range-mass-replies/report
+
+report-range-replies:
+	$(UV) run --locked --extra research python scripts/report_range_replies.py
+
 .PHONY: study-range-mass report-range-sampled
 # Reviewed sampled protocol; ignored outputs and no automatic fresh/global stage.
 study-range-mass:

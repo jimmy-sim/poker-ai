@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "inputs_sha256": {
+    "results/range-mass-sampled/study.json": "acdd8e4f5edbd548a9d01ca9c8666e663cfa6bcc25bd64ccd3a00fd8517d760f",
+    "results/range-mass-sampled/study-own-receipts.json.gz": "dbcbbb99b96907e6ce357a81df488111b5cc12a9d01c147f2d49b35cdf2b51e3",
+    "results/range-mass-sampled/independent.json": "b768360f4adc623eafa7fbe8388c0d5b9bd5768305597784bf493edc801da5ce",
+    "results/range-mass-admission/study.json": "91cc222a47f354430cbfdf0da19d3133b39261509f515c81e767153b1421e240",
+    "results/range-mass-admission/study-own-policies.json.gz": "834106e42934a63a031b8ccbad1d49572b05cf7429af8817e9a4f7e9244c3e2d",
+    "results/range-mass-admission/independent.json": "c9bd58a365173849346e0d9b8f5218eb96439f04e9eb33cafc87b616daf5eb8f"
+  },
+  "sampled_report": "results/range-mass-sampled/study.json",
+  "sampled_audit": "results/range-mass-sampled/independent.json",
+  "full_report": "results/range-mass-admission/study.json",
+  "full_audit": "results/range-mass-admission/independent.json",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8",
+    "texture_range_q8_b8"
+  ],
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "sampled_seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "sampled_node_work": 10000000,
+  "full_iteration": 4096,
+  "top_groups": 8,
+  "examples_per_group": 4,
+  "tolerance_chips": 1e-09,
+  "maximum_seconds": 1800,
+  "tie_rule": "first legal maximizer, no approximate tie substitution",
+  "aggregation": "arithmetic means of additive components; every seed retained; median total separate",
+  "scope": "saved final known-game profiles only; no training, feature/remedy selection or fresh/global/default admission"
+}
