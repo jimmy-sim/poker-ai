@@ -112,7 +112,8 @@ All **96 trajectories / 576 checkpoints** match exact array bytes, exported
 policies, RNG state, visited-key sets and charged work. All **708 timing rows**
 and **six instrumented cases** complete from clean
 `4cc0cc4928afb93881604d214d38d4a2eea50bb3` in **323.345249s**, below 1200s.
-Every timing repetition/backend and instrumented case matches its parity digest.
+Every external timing matches its final parity digest. Full timing repeats and
+instrumented cases match their corresponding recorded state/work diagnostics.
 [Raw evidence](../results/row-policy-profile/profile.json),
 [table](../results/row-policy-profile/report/tables.md).
 
