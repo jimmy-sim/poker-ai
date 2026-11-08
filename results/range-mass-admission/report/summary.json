@@ -1,0 +1,48 @@
+{
+  "acceptance": {
+    "budget_passed": true,
+    "checks": [
+      {
+        "criteria": {
+          "candidate_accuracy": true,
+          "compression": true,
+          "coverage": true,
+          "exact_accuracy": true,
+          "recall": true
+        },
+        "passed": true,
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "criteria": {
+          "candidate_accuracy": true,
+          "compression": true,
+          "coverage": true,
+          "exact_accuracy": true,
+          "recall": true
+        },
+        "passed": true,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      }
+    ],
+    "complete": true,
+    "context_binding": true,
+    "contract_sha256": "ea9f64f8f4887b766c0720aa5d3744548851850ed15fadc54cdafab04af7c014",
+    "eligible_for_sampled_comparison": true,
+    "fresh_global_admission": false,
+    "native_metrics_passed": true,
+    "scope": "metric thresholds only; real source/policy/work replay remains required",
+    "work_metrics_passed": true
+  },
+  "audit_seconds": 7.2285687910043634,
+  "audit_sha256": "c9bd58a365173849346e0d9b8f5218eb96439f04e9eb33cafc87b616daf5eb8f",
+  "fresh_global_admission": false,
+  "full_control_admission_passed": true,
+  "input_sha256": "91cc222a47f354430cbfdf0da19d3133b39261509f515c81e767153b1421e240",
+  "maximum_native_error_chips": 1.2789769243681803e-13,
+  "maximum_own_replay_error_chips": 0.0,
+  "native_policies_checked": 60,
+  "sampled_learning": "not_run",
+  "scope": "known-game full-control admission only; sampled learning/fresh/global strength not established",
+  "study_seconds": 12.88399437499902
+}

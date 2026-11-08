@@ -130,12 +130,15 @@ profile values** pass native checks. Inspect the full-house/blocker example with
 [journal step 19](docs/learning-journal.md#19-find-the-river-details-the-compressed-strategy-misses)
 or the [tables/figures](results/river-distinctions/report/tables.md).
 
-The next [range-mass candidate](docs/range-mass-representation.md) is defined and
-has correctness tests: existing buckets/texture/categories plus river prior-mass
-bins for blocked/loss/tie/win. Its full/sampled acceptance rules are fixed, but
-compression and learning results are **not yet measured**. Try
-`.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`, or
-read [journal step 20](docs/learning-journal.md#20-define-a-small-range-aware-description).
+The [range-mass candidate](docs/range-mass-representation.md) now passes its
+**full-control admission on both known games**. At 4,096 full-tree iterations,
+medium exploitability falls from category's **2.593658% to 0.271640% pot**;
+exact is **0.000182290%**. It uses **1,662/3,336** raw-public strategy rows, but
+longer keys mean this is not a total-memory saving. All **60 frozen policies**
+pass native checks. Sampled learning and fresh/global admission remain pending.
+Read [journal step 21](docs/learning-journal.md#21-test-whether-the-range-aware-description-is-accurate-enough)
+and the [tables/two figures](results/range-mass-admission/report/tables.md).
+Try `.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`.
 
 ## Development
 

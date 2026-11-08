@@ -1,3 +1,19 @@
+.PHONY: admit-range-mass report-range-mass
+# Fixed protocol; training and native audit never run in routine CI.
+admit-range-mass:
+	$(UV) run --locked --extra jit python scripts/admit_range_mass.py \
+		--output results/runs/range-mass-admission/study.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_range_mass.py \
+		--report results/runs/range-mass-admission/study.json \
+		--output results/runs/range-mass-admission/independent.json
+	$(UV) run --locked --extra research python scripts/report_range_mass.py \
+		--report results/runs/range-mass-admission/study.json \
+		--audit results/runs/range-mass-admission/independent.json \
+		--output results/runs/range-mass-admission/report
+
+report-range-mass:
+	$(UV) run --locked --extra research python scripts/report_range_mass.py
+
 .PHONY: test-range-mass
 test-range-mass:
 	$(UV) run --locked pytest -q tests/test_range_mass.py tests/test_range_protocol.py
