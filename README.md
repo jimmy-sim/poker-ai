@@ -135,7 +135,13 @@ The [range-mass candidate](docs/range-mass-representation.md) now passes its
 medium exploitability falls from category's **2.593658% to 0.271640% pot**;
 exact is **0.000182290%**. It uses **1,662/3,336** raw-public strategy rows, but
 longer keys mean this is not a total-memory saving. All **60 frozen policies**
-pass native checks. Sampled learning and fresh/global admission remain pending.
+pass native checks. The subsequent [fixed-work sampled comparison](docs/range-mass-sampled.md)
+retains all **90 policies** and **fails** the deeper-game gate: candidate median
+**4.480481% pot**, worst **5.506634%**, versus fixed 1%/2.5% limits. It improves
+on category (median **6.722857%**) but trails exact/raw-public (**0.233819%**).
+All 90 checkpoint/visit pairs and native checks pass. Fresh/global work stops
+here; [journal step 22](docs/learning-journal.md#22-check-whether-the-improvement-survives-sampled-learning)
+and the [sampled plots/tables](results/range-mass-sampled/report/tables.md) explain the result.
 Read [journal step 21](docs/learning-journal.md#21-test-whether-the-range-aware-description-is-accurate-enough)
 and the [tables/two figures](results/range-mass-admission/report/tables.md).
 Try `.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`.

@@ -40,13 +40,14 @@ Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
 Step 20 defines the next candidate and its tests. Step 21 finds a measured
 improvement: range masses pass the full-control gate on both known games.
-Sampled learning and fresh-game admission still remain.
+Step 22 completes the sampled comparison: the new description improves on
+category but fails the deeper-game accuracy limits. We stop before fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–21:** What the extensions and recent experiments taught us.
+- **Steps 10–22:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1077,6 +1078,72 @@ no new personal learning or hands-on hours are inferred.
 We stop here before sampled learning. The next step is to test whether this
 improvement survives the fixed branch-visit budget and three training seeds.
 Passing this first gate does not yet make it the global Hold'em agent.
+
+## 22. Check whether the improvement survives sampled learning
+
+**November 7, 2026.** The previous result used every branch of the small game
+tree. Would the same description stay accurate when learning explores only
+selected branches? We compared all five descriptions at the same branch-visit
+budgets, counting exact initialization and the last whole iteration's overshoot.
+
+There was a useful engineering failure first. The old replay compared calculated
+collision probabilities exactly; that passed locally and failed on Linux. A new
+adapter allows only a tiny rounding difference in those three probability sums,
+while keeping counts, hashes, contexts and work exact. Poker performance limits
+stay unchanged. Both Linux jobs passed the repair. The interrupted 20-checkpoint
+run is retained separately; the complete run starts again from checked source.
+
+The complete run saved **all 90 checkpoints** in about **21 minutes**. Here is the
+important deeper-game result at 10 million node work, in percent of the pot:
+
+| Description | Median exploitability | Worst seed |
+|---|---:|---:|
+| Exact/raw-public | 0.234% | 0.255% |
+| Texture | 7.370% | 9.688% |
+| Category | 6.723% | 7.189% |
+| Range mass | 4.480% | 5.507% |
+| Required exact/candidate limits | 1.000% | 2.500% |
+
+Lower is better: it leaves a best-response opponent less room to exploit the
+strategy inside this fixed game. The new description improves on category, but
+**fails both deeper-game limits**. It passes the easier game. The full-tree
+success from step 21 remains valid; it did not guarantee sampled learning would
+meet its separate budget and targets. These numbers are not human-match win rates.
+
+The software and numerical checks pass: **886 tests** on each Python version,
+**all 90 checkpoint/visit pairs** replay exactly on this Mac, and all 90 independent
+OpenSpiel value/BR comparisons agree within about **0.0000000000000853 chips**.
+This is why a failed strength result can still be useful progress: we checked
+that the measurement is reliable, then kept the unfavorable result.
+
+A row can be populated yet still make poor decisions. Exact initialization gives
+100% average-row coverage here; the report separately records later sampled
+visits. Likewise, fewer table rows do not imply less total memory. The run's
+process peak includes trees and the growing saved-receipt bundle.
+
+In the learning plot, faint lines are individual seeds and bold lines are their
+medians. Colors are blue exact, orange raw-public, green texture, red category,
+purple range mass. The vertical axis is already **percent of the initial pot**
+(unlike step 21's fraction axis). The dotted line marks the final 1% median target.
+The second plot retains every final seed and both final limits. Small low-game
+points look like zero on its linear axis; their recorded values are not all zero.
+
+```sh
+open results/range-mass-sampled/report/learning-work.png
+open results/range-mass-sampled/report/final-seeds.png
+.venv/bin/python -m pytest -q tests/test_range_sampled.py
+```
+
+The test command runs small fixtures, not another 21-minute research experiment.
+Read the [method and limits](range-mass-sampled.md),
+[tables](../results/range-mass-sampled/report/tables.md) and
+[PR #19](https://github.com/jimmy-sim/poker-ai/pull/19). Codex assisted with the work;
+no personal learning or hands-on hours are inferred.
+
+We stop here. Next, inspect whether the saved candidate is still learning within
+its own compressed game or mainly suffers from missing distinctions. We have not
+measured that diagnosis yet, so we will not assume extra compute is the answer.
+No fresh-game or global training follows this failed gate.
 
 ## Your own learning notes
 

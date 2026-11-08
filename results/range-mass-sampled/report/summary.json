@@ -1,0 +1,47 @@
+{
+  "assessment": {
+    "budget_passed": true,
+    "checks": [
+      {
+        "passed": true,
+        "representation": "exact",
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "passed": true,
+        "representation": "texture_range_q8_b8",
+        "spot_file": "configs/learning-spots/dev_low_oop.json"
+      },
+      {
+        "passed": true,
+        "representation": "exact",
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      },
+      {
+        "passed": false,
+        "representation": "texture_range_q8_b8",
+        "spot_file": "configs/learning-spots/dev_medium_oop.json"
+      }
+    ],
+    "complete": true,
+    "context_binding": true,
+    "coverage_passed": true,
+    "development_metrics_passed": false,
+    "fresh_global_admission": false,
+    "method_passed": true,
+    "recall_passed": true,
+    "scope": "metric thresholds only; separate full replay/audit and frozen fresh design required",
+    "work_metrics_passed": true
+  },
+  "audit_seconds": 15.460827374990913,
+  "audit_sha256": "b768360f4adc623eafa7fbe8388c0d5b9bd5768305597784bf493edc801da5ce",
+  "candidate_development_gate_passed": false,
+  "checkpoint_visit_pairs_replayed": 90,
+  "fresh_global_admission": false,
+  "input_sha256": "acdd8e4f5edbd548a9d01ca9c8666e663cfa6bcc25bd64ccd3a00fd8517d760f",
+  "maximum_native_error_chips": 8.526512829121202e-14,
+  "maximum_own_replay_error_chips": 0.0,
+  "native_policies_checked": 90,
+  "scope": "known separately trained games; no fresh/global/default admission",
+  "study_seconds": 1254.7899011659902
+}
