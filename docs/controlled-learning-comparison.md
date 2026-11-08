@@ -137,7 +137,7 @@ separate namespace and returns scalar comparisons. Each worker replays assigned
 checkpoints before its completion receipt; report IO is charged before own-stage
 completion. No independent human reviewer or measured RAM claim is implied.
 
-The implementation checkpoint has no new Hold'em learning result. Its tests use
+At the implementation checkpoint there was no new Hold'em learning result. Its tests used
 toy worlds, old own policies and visibly labeled synthetic figures. A prefix-
 inventory test caught a lookup that initially omitted the full backend's rows;
 using the frozen combined lookup fixes orchestration without changing learning.
@@ -156,12 +156,12 @@ Earlier integration runs 34.35 / 37.24s remain test history, not timing forecast
 
 Clean published code produces the source-bound toy receipt in 0.539277s: 32
 trajectories, 136 physical policy round trips and hand-computed first through
-fourth-order contrasts. Old selector correctness also replays. No new postflop
-training has occurred. Hosted CI `42522375101` passed both Python jobs on checked source `87fb4bc`.
+fourth-order contrasts. Old selector correctness also replays. At that point no
+new postflop training had occurred. Hosted CI `42522375101` passed both Python jobs on checked source `87fb4bc`.
 Formal source-bound admission is recorded in `results/controlled-learning/admission.json`. Source hashes bind code/config/lock/entrypoints;
 actual learning starts only after these checks and the admission commit are published.
 
-## Completed own stage; independent audit still pending
+## Completed own stage, published before the independent audit
 
 Clean published `70fe2f27557af8e72c1039c941a639121122cee1` completes all 140 cells
 and 840 physical/logical checkpoints in **2161.351771s** (36.02 minutes), below
@@ -184,5 +184,120 @@ Matplotlib font-cache startup is charged to own wall time; no RAM claim is made.
 
 Header/grid/prefix/admission/source checks pass. The recorded own receipts,
 archive and reports are published before the separate comparison-only native
-stage. Chip outcomes and training-cause interpretation await that complete
-independent audit. Original failed learning limits/defaults remain unchanged.
+stage. The later independent audit and interpretation follow below. Original failed
+learning limits/defaults remain unchanged.
+
+## Independent audit and numerical replay
+
+Own evidence published at `3bd6858ddc2cc9a4346296b6fb7a26a4f74f6974` before
+native evaluation. All **840 checkpoints** pass OpenSpiel 2.0.2 comparison-only
+EV, exact/restricted response-root and achieved own-reply/hybrid checks.
+Maximum error **1.7053025658242404e-13 chips**, below fixed **1e-9**. Native wall
+**92.193960s** (<3600); parent / reaped-child CPU 0.222218 / 270.450000s. The
+native stage includes streaming own-policy replay. Its installed Apache-2.0
+license matches the previously read hash. No reference strategy export/training
+or reference output in the learner. Shared own mechanics/export remain a limit
+on independence: this is a separate value/BR implementation, not an independent
+validation of every Hold'em rule.
+
+Base Python 3.12 / NumPy 2.5.4 replays all 840 owned policies with zero score/reply
+error in 64.920820s, validates the archived native comparisons without importing
+an installed native runtime, and regenerates all five numerical report files
+byte-for-byte: four CSVs and `tables.md`. The summary's figure inventory depends
+on `--no-plots`; recorded times and PNG bytes are not claimed to reproduce.
+
+## Findings: several conditional effects, no single universal cause
+
+The focal case remains the previously failing **medium range-mass** game, not a
+case selected for a favorable result. Pot is 36 chips. Every number below comes
+from the retained `factor-means.csv`, `contrasts.csv`, `bridges.csv` or raw
+`checkpoints.csv`; the linked report command regenerates them. All other games,
+representations, seeds, checkpoints and contrasts remain published too.
+
+At the **10m total-node-work label**, hold regret weights linear and change only
+clipping and strategy-average time weights. Entries are arithmetic means of all
+three external seeds; units are **percent initial pot**. Lower total is better.
+
+| Strategy-average weight | Regret rule | Exact exploitability | Within partition | Extra exact information | River-only diagnostic |
+|---|---|---:|---:|---:|---:|
+| linear | signed | 4.354032 | 0.243207 | 4.110824 | 4.856795 |
+| linear | clipped | 2.501852 | 1.811454 | 0.690398 | 1.764998 |
+| uniform | signed | 2.664089 | 0.372605 | 2.291484 | 4.052257 |
+| uniform | clipped | 3.525759 | 2.918434 | 0.607325 | 1.404964 |
+
+Clipping with linear averaging reduces extra-information value by **3.420426
+percentage points**, but increases within-partition gain by **1.568247 points**.
+Total falls **1.852179 points**, with paired total changes -1.709274 / -3.365672 /
+-0.481592 points in the three declared seeds. With uniform averaging, clipping
+instead **raises** total by **0.861670 points**, paired +0.888905 / +0.174850 /
++1.521255. This sign reversal is a measured interaction between clipping and
+averaging in these finite runs. It does not establish a universal advantage for
+either convention, a confidence interval, or the cause of all remaining error.
+Within + extra equals exact exploitability. River-only values use different
+hybrid prefixes and must **not** be added to that identity; they can exceed total.
+
+Matched work does not remove every traversal difference. Across all eight common
+rule combinations in this focal case, sampled-minus-full mean total is positive
+(1.059418–3.928729 points); its average across combinations is **2.170219 points**.
+For the same clipped/linear/linear rules shown above, full total is **0.050297%**
+versus sampled **2.501852%**. Its full extra-information value is **0.000825%**,
+which further demonstrates that the representation's vulnerability is
+strategy/opponent-dependent, rather than a fixed 4.11% abstraction floor. This
+is a conditional finite-budget traversal result, not proof that the sampler is
+buggy or a post-hoc best-arm/default selection.
+
+The work labels are first complete crossings, not identical visit counts: full
+medium cells finish at **10,012,410 visits / iteration 235**. The signed/linear/
+linear sampled seeds finish at **10,000,021 / 10,000,028 / 10,000,000 visits**, with
+**315,528 / 298,022 / 305,206 iterations**. At iteration 128 the full control has
+**5,453,568 visits**, versus **47,196 / 47,132 / 47,012** for those sampled seeds.
+An iteration match therefore answers a different compute question. Warm average
+coverage is 100% even then; sampled river-key read coverage is only
+25.7021 / 28.3272 / 24.6642%. Average mass is not proof of sampled exposure.
+
+At matched 10m work, the ordered full bridge totals are **0.386078 / 0.801019 /
+0.802919 / 0.803119% pot** for cold-target-history, warm-target-history,
+warm-target-chance, common-warm-opponent-chance. These show a larger finite
+initialization difference than the later two averaging changes along this one
+path. They are not a unique allocation of cause. Initialization always retains
+its common chance-weighted mass, so the history-mass bridge mixes conventions
+for its first iteration; consistent static scaling cancellation is not refuted.
+
+## What this changes and what it does not
+
+The original compute barrier is overcome, and the original controlled comparison
+is completed and audited. The differences cannot all be attributed to the old
+unequal work budget: material rule, averaging interaction and traversal effects
+remain in the matched-work grid. The evidence does **not** identify one repair
+that has passed a fresh-game/seed accuracy gate. The earlier sampled performance
+failure remains; no recipe is selected or deployed and the global agent does
+not inherit these separately trained tiny-range policies.
+
+Next useful diagnosis: explain where the increased within-partition response
+gain occurs when clipping reduces the finer-information gap, and why changing
+the time weighting reverses the total effect. Use fixed saved policies and own
+response traces before proposing a new remedy. Do not infer that visiting a key
+or changing a norm caused an EV improvement. All policy design/training stays
+independent of the reference solver's outputs.
+
+## Interview questions and verified claim drafts
+
+1. **What did you learn after matching compute?** The medium range-mass sampling
+   gap remains across all eight rule combinations at the 10m label, with an
+   averaged sampled-minus-full total of 2.170219 percentage points. Clipping and
+   averaging interact; the old budget mismatch alone is not an explanation.
+2. **Why not simply enable clipping?** With linear regret weights, clipping lowers
+   sampled total from 4.354032% to 2.501852% under linear averaging, but raises it
+   from 2.664089% to 3.525759% under uniform averaging. It can move error between
+   within-partition and extra-information components. None is a global win rate
+   or an admitted strongest recipe.
+3. **How are the numbers checked?** A preregistered 140-cell/840-checkpoint runner
+   preserves source, seeds, work, all outcomes and exact prefixes. Own replay is
+   zero; independent native value/BR checks differ by at most 1.705303e-13 chips.
+   All five numerical reports regenerate byte-identically in base Python 3.12.
+   Shared exported game mechanics and two known tiny-range games limit the claim.
+
+Verified draft: “Completed a preregistered 140-run poker training comparison with
+840 source-bound strategy checkpoints, zero own replay error and independent
+value/best-response agreement within 1.71e-13 chips.” This describes the checked
+experiment, not personal hours, unaided authorship or competitive playing strength.

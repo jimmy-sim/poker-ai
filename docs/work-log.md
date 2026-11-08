@@ -46,6 +46,22 @@ For a guided explanation of the ideas and results, start with the
   clean exits. Archive 8,725,389 bytes; all raw rows, 1536 means / 4512 contrasts /
   96 bridge rows / eight figures retained. Actual layout inspected; no strength
   or cause claim before separate native audit. Own outputs published first.
+- **Native evidence:** Own outputs published `3bd6858` before comparison. All
+  840 native EV/root/achieved-own-reply comparisons pass, max 1.705303e-13 chips
+  (<1e-9). Native 92.193960s (<3600), parent/child CPU 0.222218/270.45s. License
+  bytes/version checked; no reference strategies in training. Base Python 3.12 /
+  NumPy 2.5.4 replays all 840 with zero error (64.920820s); all five numerical
+  reports regenerate byte-identically. Timing/PNG bytes are not reproduced.
+- **Finding:** In the focal medium candidate at 10m work, linear regret/average
+  weights: clipping lowers sampled mean total 4.354032→2.501852% pot, but shifts
+  within 0.243207→1.811454 while extra falls 4.110824→0.690398. With uniform
+  strategy averaging it raises total 2.664089→3.525759. All three seed-pair signs
+  agree in each contrast, without population inference. All eight common rule
+  contexts retain a sampled-minus-full mean gap in this focal case. No unique
+  cause, best-arm/default/fresh/global admission; follow up on saved own traces.
+- **Reporting:** All outcomes, eight inspected/tested figures, raw contrasts,
+  methodology/limitations, three interview answers, verified claim draft, README
+  and journal step 31 updated. Final-head CI/main verification pending.
 - **Admission CI:** Both code 42522375101 and receipt 42523042766 pass both Python
   jobs before this evidence publication; source/config hashes unchanged.
 - **Correction / review:** Prefix lookup initially omitted 44 full controls because

@@ -57,10 +57,11 @@ Step 29 measures independent cells across CPU processes, including startup and
 resource costs, without changing a cell's learning rules.
 Step 30 verifies checkpoint/scoring behavior and measures the still-missing
 pipeline costs on old saved policies.
-Step 31 prepares the original controlled learning comparison, with complete
-checkpoint replay and all training-rule combinations retained. Learning outcomes
-remain pending at the checked-runner checkpoint.
-We stop before choosing a remedy or running fresh games.
+Step 31 completes the original controlled learning comparison: 140 runs and 840
+checkpoints, with zero own replay error and independent native checks. Clipping
+and averaging interact; improving one gap can worsen another. This diagnoses
+training differences without selecting a replacement or passing a fresh-game gate.
+No remedy, default change or fresh/global admission follows automatically.
 
 You can read this in three sittings:
 
@@ -1725,10 +1726,9 @@ sampled cells, while its parent table holds the full controls. The new runner
 now uses the already checked combined lookup, preserving all 140 prefix targets.
 No learning formula, seed, work limit or acceptance rule changed.
 
-**Next decision:** Publish checked code, replay toy correctness from clean source,
-verify both GitHub CI jobs, and record admission before the actual known-game
-comparison. Then keep all own outcomes, publish them before comparison-only
-native checks, and interpret work and iteration matches separately. No strongest
+**Execution:** Checked code, the clean-source toy receipt, both CI jobs and the
+admission receipt were published before the actual known-game comparison.
+Every own outcome was then published before the native comparison. No strongest
 recipe, default change, fresh-game or global-agent admission follows this
 investigation automatically. The earlier failed sampled gate remains recorded.
 
@@ -1736,9 +1736,48 @@ Read the [execution protocol](controlled-learning-comparison.md). The own stage 
 minutes**, within the two-hour cap. Reloading every saved strategy reproduces its
 own score with zero error, and all serial-prefix checks pass. The small archive
 holds all owned strategies; the tables and eight figures keep every combination.
-The independent native audit is still pending, so this is a completed own run,
-not yet a verified claim about which training difference explains the weakness.
-No result is inferred from the earlier toy checks or cost forecast.
+The independent native audit now passes every checkpoint too: its largest
+value/response discrepancy is **1.71e-13 chips**, below the fixed 1e-9 limit. It
+takes 92.19s, including its own-policy input replay. A base Python 3.12 environment
+also replays all strategies with zero error and rebuilds all five numerical
+report files byte-for-byte. The numbers come from the scripts and saved outputs,
+not from the earlier toy checks or the cost forecast.
+
+**What we learned:** Focus on the same deeper range-mass game that failed before.
+At the 10-million-work label, hold regret time weights linear. With later
+iterations weighted more heavily in the final strategy average, clipping lowers
+mean exploitability from **4.354032% to 2.501852% of the initial pot**. But the
+components move in opposite directions:
+
+| Stored regret rule, linear average | Total | Within compressed information | Extra exact-information value |
+|---|---:|---:|---:|
+| signed | 4.354032% | 0.243207% | 4.110824% |
+| clipped | 2.501852% | 1.811454% | 0.690398% |
+
+Clipping makes the strategy less vulnerable to the opponent's finer legal
+observations, while making it easier to improve on inside the compressed game.
+“Exact” still respects hidden opponent cards; it uses exact own cards and the
+public board. Percent of initial pot is a unit for these gains, not a win rate.
+
+With equal weights in the final average, clipping instead makes total
+exploitability **worse: 2.664089% to 3.525759%**. Both directions occur in all
+three declared seed pairs in their respective comparisons. This is why “just
+turn on clipping” is not a justified conclusion. All combinations, including
+unfavorable ones, remain in the report; three seeds are not a confidence interval.
+
+The gap between sampled and full traversal also remains after matching the work
+label in this case. Matching iteration numbers is different: at iteration 128,
+full traversal has about 5.45 million visits while the original sampled seeds
+have about 47 thousand. Warm initialization gives every row average mass, so
+100% average coverage does not mean all those rows were sampled. The report
+keeps these work, coverage and averaging distinctions explicit.
+
+**Next useful question:** Where does the larger within-partition gain occur, and
+why does the averaging choice reverse the clipping effect? Inspect fixed saved
+policies and own response traces before proposing a repair. The experiment
+narrows the question; it does not yet make a globally stronger agent or erase
+the earlier failed gate. Read the technical protocol's three interview answers
+for the exact numbers, ordered bridge and remaining limits.
 
 ## Your own learning notes
 

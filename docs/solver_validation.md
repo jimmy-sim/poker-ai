@@ -385,3 +385,15 @@ Own restricted exploitability exceeds the reference in 5/5 spots; hero EV agains
 
 Reproduce: `make validate-solvers` (minutes on the recorded Mac; optional solver/evaluator/plot dependencies are installed from the lockfile). No commercial solver data are used. See this document for methodology, licenses, convergence, diagnostics and limits.
 <!-- SOLVER_VALIDATION_RESULTS_END -->
+
+
+The [controlled learning comparison](controlled-learning-comparison.md) completes
+140 runs / 840 saved own policies after its separate software/compute admission.
+All 840 baseline EVs, exact/restricted roots and achieved own replies/hybrids pass
+comparison-only OpenSpiel 2.0.2 checks; maximum discrepancy 1.705303e-13 chips at
+1e-9 tolerance. Native wall 92.193960s includes own-policy replay. The installed
+Apache-2.0 license bytes match the previously read hash recorded above. Reference
+training and strategy export remain prohibited; the auditor returns only scalar
+comparisons. This is not a reference-equilibrium strategy match or an independent
+check of every exported poker rule. All source/own/archive bindings and archived
+native results also validate in a base Python 3.12 environment.
