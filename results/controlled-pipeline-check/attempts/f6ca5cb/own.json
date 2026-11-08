@@ -1,0 +1,3262 @@
+{
+  "batches": [
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.06929900000000089,
+      "reaped_children_cpu_seconds": 11.03,
+      "repeat": 0,
+      "seconds": 3.9274925410136348,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33112,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2177575410023564
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.03228199999999992,
+                "index": 0,
+                "metadata_sha256": "94c00111ecd91d84462471315bf3b4ef3284cadc8f53f7de9c274282817e8066",
+                "metrics": {
+                  "exact_exploitability_chips": 7.952622290474665e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970667,
+                  "within_partition_gain_chips": 7.952622290474665e-06
+                },
+                "receipt": {
+                  "bytes": 2503,
+                  "policy_sha256": "f7c7b06c6abac557912ebec38bac840308e50979e5b9c5597252a638743860bc",
+                  "sha256": "8e0eb3cb3c739c8372d5b7cebd17ced7d6a7e8fe8d805c2b42d3fa76a71eb731"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003411970667,
+                    "exact_reply_value_chips": 25.00001033357053,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00001033357053,
+                    "river_before_value_chips": 25.00001033357053,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.921599862153016e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003411970667,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.983644718796313e-06
+                  }
+                ],
+                "seconds": 0.032295667013386264
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03360499999999966,
+                "index": 3,
+                "metadata_sha256": "83ded265af1c8fb1c57cdee5621ede70bfd97bc9b78864e9189cee46db0365a9",
+                "metrics": {
+                  "exact_exploitability_chips": 4.791087668820637e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000091121548,
+                  "within_partition_gain_chips": 4.791087668820637e-07
+                },
+                "receipt": {
+                  "bytes": 3567,
+                  "policy_sha256": "83a11ec355b9719e4ef660e07d6b0b1d0b9e6ef646f836fb6d4d4c926b6d622a",
+                  "sha256": "4d3a0c5c9c60f0b9036e3ee318873073f8d084e5c495211a7192d91b80a9879e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000091121548,
+                    "exact_reply_value_chips": 25.00000095795003,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00000095795003,
+                    "river_before_value_chips": 25.00000095795003,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 4.673454867543114e-08
+                  },
+                  {
+                    "baseline_value_chips": -25.00000091121548,
+                    "exact_reply_value_chips": -24.999999999732495,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999732495,
+                    "river_before_value_chips": -24.999999999732495,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 9.114829850886963e-07
+                  }
+                ],
+                "seconds": 0.033615624997764826
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.205196329138249e-15,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.031716999999999995,
+                "index": 6,
+                "metadata_sha256": "92b7a56591392dc19eb56bad066620427e367a4e3a18bcd2b3b01ae8f5a9e031",
+                "metrics": {
+                  "exact_exploitability_chips": 3.3239221473024827e-06,
+                  "extra_information_gap_chips": 1.2565793028329608e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793028329608e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.1982642170191866e-06
+                },
+                "receipt": {
+                  "bytes": 3379,
+                  "policy_sha256": "f3c815a637367b8fe9cf48befc3ad36d261d4a950c9ab2a9b89d46725bcee3a0",
+                  "sha256": "ff5ebfc9885a753da626269a79f43ae9f4001cc40709d10514e3cf52e32b8d5c"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000579029944,
+                    "exact_reply_value_chips": 25.000006630287977,
+                    "extra_information_gap_chips": 2.5131586056659216e-07,
+                    "restricted_reply_value_chips": 25.000006378972117,
+                    "river_before_value_chips": 25.000006378972117,
+                    "river_only_gain_exact_prefix_chips": 2.5131586056659216e-07,
+                    "target": 0,
+                    "within_partition_gain_chips": 5.886726768267181e-07
+                  },
+                  {
+                    "baseline_value_chips": -25.00000579029944,
+                    "exact_reply_value_chips": -24.999999982443683,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999982443683,
+                    "river_before_value_chips": -24.999999982443683,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.807855757211655e-06
+                  }
+                ],
+                "seconds": 0.03171629201096948
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.5164590000000002,
+                "index": 9,
+                "metadata_sha256": "8f28c3810c4a52e292d4e230f59ce36b1dee83483952a4d111c9ba857d2531ff",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09169606953459919,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953459919
+                },
+                "receipt": {
+                  "bytes": 189664,
+                  "policy_sha256": "1129da00c3f5bcf23289f7b939907015ddd61df3e264c07e3c9d99cad970b3ed",
+                  "sha256": "368264d3388b1108973de040de8ddaef0afe6065cbeda54e8f74bee0a2bf876d"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.045594759228067,
+                    "exact_reply_value_chips": 18.12026985015917,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.12026985015917,
+                    "river_before_value_chips": 18.12026985015917,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0746750909311018
+                  },
+                  {
+                    "baseline_value_chips": -18.045594759228067,
+                    "exact_reply_value_chips": -17.93687771108997,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.93687771108997,
+                    "river_before_value_chips": -17.93687771108997,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.10871704813809657
+                  }
+                ],
+                "seconds": 0.5167820829956327
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.297631400800763e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.4658890000000002,
+                "index": 12,
+                "metadata_sha256": "51db3072c5faabc9969dc1e11a65e6d4b67ba7040a016441122e2b58c740b717",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09779045293985966,
+                  "extra_information_gap_chips": 0.09772779708569956,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379808,
+                  "value_player_zero_chips": 18.000021405782103,
+                  "within_partition_gain_chips": 6.265585416009856e-05
+                },
+                "receipt": {
+                  "bytes": 80347,
+                  "policy_sha256": "e663392994a6e65662e2b5758bae26fdcd12805d1878830761343237bc3926cd",
+                  "sha256": "84cba87f9d2491f2dbc0167e00a31453fb7d249f6e27b9edaec8a4d11e72808f"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.000021405782103,
+                    "exact_reply_value_chips": 18.00008816644937,
+                    "extra_information_gap_chips": 2.29349857150396e-06,
+                    "restricted_reply_value_chips": 18.000085872950798,
+                    "river_before_value_chips": 18.000085872950798,
+                    "river_only_gain_exact_prefix_chips": 2.29349857150396e-06,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.446716869490388e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.000021405782103,
+                    "exact_reply_value_chips": -17.80450726056965,
+                    "extra_information_gap_chips": 0.19545330067282762,
+                    "restricted_reply_value_chips": -17.999960561242478,
+                    "river_before_value_chips": -18.85642172714704,
+                    "river_only_gain_exact_prefix_chips": 1.05191446657739,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.084453962529324e-05
+                  }
+                ],
+                "seconds": 0.46588862501084805
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.4393868041917557e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.42539799999999994,
+                "index": 15,
+                "metadata_sha256": "ee607b4e35d9511d4879b082fb0cf12df260c01fe173318fcbb09c64528f00fe",
+                "metrics": {
+                  "exact_exploitability_chips": 1.1069927266992297,
+                  "extra_information_gap_chips": 1.0762463429885214,
+                  "river_only_gain_exact_prefix_chips": 1.339385508579789,
+                  "value_player_zero_chips": 18.0259714817477,
+                  "within_partition_gain_chips": 0.030746383710708258
+                },
+                "receipt": {
+                  "bytes": 109829,
+                  "policy_sha256": "987885888d35fb4b20445e2c7557153b02b4da827bfc8e9b3edb38edaeb2d83b",
+                  "sha256": "89a7166202641faa4e287571ce806da3be7f21051a4a48f42b89bfd29f39dbe6"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.0259714817477,
+                    "exact_reply_value_chips": 18.06329711618742,
+                    "extra_information_gap_chips": 0.0029555561223553184,
+                    "restricted_reply_value_chips": 18.060341560065066,
+                    "river_before_value_chips": 18.060341560065066,
+                    "river_only_gain_exact_prefix_chips": 0.0029555561223553184,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.03437007831736594
+                  },
+                  {
+                    "baseline_value_chips": -18.0259714817477,
+                    "exact_reply_value_chips": -15.849311662788962,
+                    "extra_information_gap_chips": 2.1495371298546875,
+                    "restricted_reply_value_chips": -17.99884879264365,
+                    "river_before_value_chips": -18.525127123826184,
+                    "river_only_gain_exact_prefix_chips": 2.6758154610372227,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.02712268910405058
+                  }
+                ],
+                "seconds": 0.4280398749979213
+              }
+            },
+            {
+              "cpu_seconds": 3.7719150000000004,
+              "kind": "done",
+              "seconds": 3.7753419159998884,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33112,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33113,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.217530790992896
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.030831000000000053,
+                "index": 1,
+                "metadata_sha256": "e8640cdf4b15a3d23bcee88b8ff04340743c8469199d9058841a7b93a270ee33",
+                "metrics": {
+                  "exact_exploitability_chips": 1.0539700667777652e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413083,
+                  "within_partition_gain_chips": 1.0539700667777652e-08
+                },
+                "receipt": {
+                  "bytes": 980,
+                  "policy_sha256": "044566107c2ba96b453ba755b4d3f03b310793e15bbacbcb1148005fd47cbdb0",
+                  "sha256": "b226cce7e3c924be4b9ee89d853934dca0830584bd1ad99151dc99a5f2619425"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000020413083,
+                    "exact_reply_value_chips": 25.000000020808457,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000020808457,
+                    "river_before_value_chips": 25.000000020808457,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 3.9537439988635015e-10
+                  },
+                  {
+                    "baseline_value_chips": -25.000000020413083,
+                    "exact_reply_value_chips": -24.999999999729056,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999729056,
+                    "river_before_value_chips": -24.999999999729056,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.0684026935668953e-08
+                  }
+                ],
+                "seconds": 0.03083162500115577
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.035347999999999935,
+                "index": 4,
+                "metadata_sha256": "407fdbfac147157b1c51153c73ef9c44e5ce0711a52958b6b3597b428a9f6fad",
+                "metrics": {
+                  "exact_exploitability_chips": 8.32961933383558e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961933383558e-06
+                },
+                "receipt": {
+                  "bytes": 2149,
+                  "policy_sha256": "bdaee7a7cc5d4c5871a96cfd59cccd126ac361f4c814f1ecea45b86ac24a0225",
+                  "sha256": "f7ac8e06b2b8bace26bc71b95051e3385a88a55d11eac3eccd37d62823083f68"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003410296728,
+                    "exact_reply_value_chips": 25.000011087564616,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000011087564616,
+                    "river_before_value_chips": 25.000011087564616,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.677267888084316e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003410296728,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.981970779586845e-06
+                  }
+                ],
+                "seconds": 0.03551050000532996
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03530800000000012,
+                "index": 7,
+                "metadata_sha256": "89f9dcca095912acae33a03522acf85cd29143c643d71c13b8e0a5069508cbcc",
+                "metrics": {
+                  "exact_exploitability_chips": 0.001188226197989195,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.001188226197989195
+                },
+                "receipt": {
+                  "bytes": 4331,
+                  "policy_sha256": "3a6d382a394e09f81da417dc3de0c3e69b24b796d614d48fd3d9e7d545a762ab",
+                  "sha256": "3b41c692dbfd665fd5928270c378df03d0dc1dd6ea39428aff23d8ef9b512f76"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.001378682616917,
+                    "exact_reply_value_chips": 25.002376028433645,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.002376028433645,
+                    "river_before_value_chips": 25.002376028433645,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0009973458167280569
+                  },
+                  {
+                    "baseline_value_chips": -25.001378682616917,
+                    "exact_reply_value_chips": -24.999999576037666,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999576037666,
+                    "river_before_value_chips": -24.999999576037666,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0013791065792503332
+                  }
+                ],
+                "seconds": 0.03539245898718946
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.4882360000000001,
+                "index": 10,
+                "metadata_sha256": "9107a371cbb58aaa234630e067469af57e6a87cf5441ce81768db71b6a87c6cd",
+                "metrics": {
+                  "exact_exploitability_chips": 0.07957605105079857,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105079857
+                },
+                "receipt": {
+                  "bytes": 190664,
+                  "policy_sha256": "80dc227a269181bc22690f89203744a130e2aafe4e3eaa750ae09997f0fab627",
+                  "sha256": "64cd9f2048eee403af498f228d1a6b935d1846ff4a5ff9eb43b07b7ee9c42cb9"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.05887932846624,
+                    "exact_reply_value_chips": 18.15573764437758,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.15573764437758,
+                    "river_before_value_chips": 18.15573764437758,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.09685831591134075
+                  },
+                  {
+                    "baseline_value_chips": -18.05887932846624,
+                    "exact_reply_value_chips": -17.996585542275984,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.996585542275984,
+                    "river_before_value_chips": -17.996585542275984,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.062293786190256384
+                  }
+                ],
+                "seconds": 0.48825454199686646
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 2.444550638303067e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.47235099999999974,
+                "index": 13,
+                "metadata_sha256": "a48e58477ce2ba58ce3f47b50f40e030b940f996c5bb905664a064e39caa13ba",
+                "metrics": {
+                  "exact_exploitability_chips": 1.6129730656393724,
+                  "extra_information_gap_chips": 1.572986730073528,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285997,
+                  "value_player_zero_chips": 18.039826033207273,
+                  "within_partition_gain_chips": 0.0399863355658443
+                },
+                "receipt": {
+                  "bytes": 103876,
+                  "policy_sha256": "666ccb8bec2cd13dbf436632331737de3dd0a29e66ff0cf4d45111cb9130821f",
+                  "sha256": "6be9da84e7cbac3573f3e3751a90204c2b6364fa5e63d4fbe6b4a465e39e3165"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.039826033207273,
+                    "exact_reply_value_chips": 18.084120819466655,
+                    "extra_information_gap_chips": 0.0055229070731179775,
+                    "restricted_reply_value_chips": 18.078597912393537,
+                    "river_before_value_chips": 18.078597912393537,
+                    "river_only_gain_exact_prefix_chips": 0.0055229070731179775,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0387718791862639
+                  },
+                  {
+                    "baseline_value_chips": -18.039826033207273,
+                    "exact_reply_value_chips": -14.85817468818791,
+                    "extra_information_gap_chips": 3.140450553073938,
+                    "restricted_reply_value_chips": -17.99862524126185,
+                    "river_before_value_chips": -19.08364410477199,
+                    "river_only_gain_exact_prefix_chips": 4.225469416584081,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0412007919454247
+                  }
+                ],
+                "seconds": 0.4723588750057388
+              }
+            },
+            {
+              "cpu_seconds": 3.318013,
+              "kind": "done",
+              "seconds": 3.318787832991802,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33113,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33114,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2279567910009064
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.034520000000000106,
+                "index": 2,
+                "metadata_sha256": "f807e3a9936d672087450d85a9ddb6ac32da27edd06faf45408d496ac02b52c4",
+                "metrics": {
+                  "exact_exploitability_chips": 4.833328798525827e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000213619728,
+                  "within_partition_gain_chips": 4.833328798525827e-06
+                },
+                "receipt": {
+                  "bytes": 7009,
+                  "policy_sha256": "24b1ee89c6666674a33513c413cc645e71e5b57bf8563ee0e9bd2ebb4fae93cd",
+                  "sha256": "c23c5e29646565ca355a54cb5b6193f8b213f790f2d001ce5999ecb45d6d99c3"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000213619728,
+                    "exact_reply_value_chips": 25.000009519348637,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000009519348637,
+                    "river_before_value_chips": 25.000009519348637,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.383151356066264e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.00000213619728,
+                    "exact_reply_value_chips": -24.99999985269104,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999985269104,
+                    "river_before_value_chips": -24.99999985269104,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.283506240985389e-06
+                  }
+                ],
+                "seconds": 0.03451679099816829
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.031555,
+                "index": 5,
+                "metadata_sha256": "62a423c37755d334b7019674646b02237395d96f0618e96b0ffe772195cfaa2d",
+                "metrics": {
+                  "exact_exploitability_chips": 3.7621461501657905e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000004647745,
+                  "within_partition_gain_chips": 3.7621461501657905e-09
+                },
+                "receipt": {
+                  "bytes": 1004,
+                  "policy_sha256": "d95d3b390507c1aefbad625e2188b686d0ccea08b1e1380722cf649593d3aa94",
+                  "sha256": "c6d0565ac446d6d2d1ea700180a9822c141e588b3b731af38ee6773ee32fa623"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000004647745,
+                    "exact_reply_value_chips": 25.000000006103562,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000006103562,
+                    "river_before_value_chips": 25.000000006103562,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 1.455816800444154e-09
+                  },
+                  {
+                    "baseline_value_chips": -25.000000004647745,
+                    "exact_reply_value_chips": -24.99999999857927,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999999857927,
+                    "river_before_value_chips": -24.99999999857927,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.068475499887427e-09
+                  }
+                ],
+                "seconds": 0.031553167005768046
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.4729610000000002,
+                "index": 8,
+                "metadata_sha256": "eafe37d4334cbb4c592c71f750fbe528e17be46d7788ac9e384e0f5b71d12a34",
+                "metrics": {
+                  "exact_exploitability_chips": 6.562434457002553e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.00001270082999,
+                  "within_partition_gain_chips": 6.562434457002553e-05
+                },
+                "receipt": {
+                  "bytes": 51314,
+                  "policy_sha256": "5c134b79d0d740234e5bd1ead3d756c0d5b973ff0207ce3e3560fe01bb3b97f8",
+                  "sha256": "abc3e81ad5a7e590fcddf958e5113be557298dba4372f88c0ef8eba83c7b9c4e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.00001270082999,
+                    "exact_reply_value_chips": 18.000086498267226,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.000086498267226,
+                    "river_before_value_chips": 18.000086498267226,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.379743723490151e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.00001270082999,
+                    "exact_reply_value_chips": -17.999955249578086,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.999955249578086,
+                    "river_before_value_chips": -17.999955249578086,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.745125190514955e-05
+                  }
+                ],
+                "seconds": 0.4729830839933129
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.509484,
+                "index": 11,
+                "metadata_sha256": "3b813ec50891e783e5959a3155bae880120fbd1bf76a1aba4652012a1d0f5b81",
+                "metrics": {
+                  "exact_exploitability_chips": 0.08417497338373714,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.062619754663547,
+                  "within_partition_gain_chips": 0.08417497338373714
+                },
+                "receipt": {
+                  "bytes": 188176,
+                  "policy_sha256": "3386cf17b0676adef6525c44498f2122f904ffb51f450b646425464c132996bf",
+                  "sha256": "363e5d817e24bdf0985774d3389e884eaed882cae60979b81950db3924559d0b"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.062619754663547,
+                    "exact_reply_value_chips": 18.165542016392944,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.165542016392944,
+                    "river_before_value_chips": 18.165542016392944,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.10292226172939678
+                  },
+                  {
+                    "baseline_value_chips": -18.062619754663547,
+                    "exact_reply_value_chips": -17.99719206962547,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.99719206962547,
+                    "river_before_value_chips": -17.99719206962547,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0654276850380775
+                  }
+                ],
+                "seconds": 0.5095079589955276
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.552713678800501e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.3564830000000003,
+                "index": 14,
+                "metadata_sha256": "e4451f919390c8695e9490498274015c79a995bf1712d72655f2748baaf6f942",
+                "metrics": {
+                  "exact_exploitability_chips": 1.982388298060756,
+                  "extra_information_gap_chips": 1.7904571388343102,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343102,
+                  "value_player_zero_chips": 18.04046886077105,
+                  "within_partition_gain_chips": 0.19193115922644566
+                },
+                "receipt": {
+                  "bytes": 105442,
+                  "policy_sha256": "0a518a8b7b63f50c4fa9eb3fa256a25fa4ebaa1aed5c19e9b70b141be0187211",
+                  "sha256": "e2a208c667911f1388abfeb48cda0f0b6db28b9af1ea7151e5cd3bb02d774971"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.04046886077105,
+                    "exact_reply_value_chips": 18.131879901146263,
+                    "extra_information_gap_chips": 0.005822353514069789,
+                    "restricted_reply_value_chips": 18.126057547632193,
+                    "river_before_value_chips": 18.126057547632193,
+                    "river_only_gain_exact_prefix_chips": 0.005822353514069789,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.08558868686114351
+                  },
+                  {
+                    "baseline_value_chips": -18.04046886077105,
+                    "exact_reply_value_chips": -14.167103305024751,
+                    "extra_information_gap_chips": 3.5750919241545507,
+                    "restricted_reply_value_chips": -17.742195229179302,
+                    "river_before_value_chips": -17.742195229179302,
+                    "river_only_gain_exact_prefix_chips": 3.5750919241545507,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.2982736315917478
+                  }
+                ],
+                "seconds": 0.3564906250103377
+              }
+            },
+            {
+              "cpu_seconds": 3.680433,
+              "kind": "done",
+              "seconds": 3.6809162499994272,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33114,
+          "slot": 2
+        }
+      ]
+    },
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.016360999999999848,
+      "reaped_children_cpu_seconds": 11.07,
+      "repeat": 1,
+      "seconds": 3.9343625830078963,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33119,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.1980651670019142
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.03199500000000022,
+                "index": 0,
+                "metadata_sha256": "94c00111ecd91d84462471315bf3b4ef3284cadc8f53f7de9c274282817e8066",
+                "metrics": {
+                  "exact_exploitability_chips": 7.952622290474665e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970667,
+                  "within_partition_gain_chips": 7.952622290474665e-06
+                },
+                "receipt": {
+                  "bytes": 2503,
+                  "policy_sha256": "f7c7b06c6abac557912ebec38bac840308e50979e5b9c5597252a638743860bc",
+                  "sha256": "8e0eb3cb3c739c8372d5b7cebd17ced7d6a7e8fe8d805c2b42d3fa76a71eb731"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003411970667,
+                    "exact_reply_value_chips": 25.00001033357053,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00001033357053,
+                    "river_before_value_chips": 25.00001033357053,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.921599862153016e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003411970667,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.983644718796313e-06
+                  }
+                ],
+                "seconds": 0.031995083001675084
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03191599999999983,
+                "index": 3,
+                "metadata_sha256": "83ded265af1c8fb1c57cdee5621ede70bfd97bc9b78864e9189cee46db0365a9",
+                "metrics": {
+                  "exact_exploitability_chips": 4.791087668820637e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000091121548,
+                  "within_partition_gain_chips": 4.791087668820637e-07
+                },
+                "receipt": {
+                  "bytes": 3567,
+                  "policy_sha256": "83a11ec355b9719e4ef660e07d6b0b1d0b9e6ef646f836fb6d4d4c926b6d622a",
+                  "sha256": "4d3a0c5c9c60f0b9036e3ee318873073f8d084e5c495211a7192d91b80a9879e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000091121548,
+                    "exact_reply_value_chips": 25.00000095795003,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00000095795003,
+                    "river_before_value_chips": 25.00000095795003,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 4.673454867543114e-08
+                  },
+                  {
+                    "baseline_value_chips": -25.00000091121548,
+                    "exact_reply_value_chips": -24.999999999732495,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999732495,
+                    "river_before_value_chips": -24.999999999732495,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 9.114829850886963e-07
+                  }
+                ],
+                "seconds": 0.03191404200333636
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.205196329138249e-15,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03357399999999977,
+                "index": 6,
+                "metadata_sha256": "92b7a56591392dc19eb56bad066620427e367a4e3a18bcd2b3b01ae8f5a9e031",
+                "metrics": {
+                  "exact_exploitability_chips": 3.3239221473024827e-06,
+                  "extra_information_gap_chips": 1.2565793028329608e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793028329608e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.1982642170191866e-06
+                },
+                "receipt": {
+                  "bytes": 3379,
+                  "policy_sha256": "f3c815a637367b8fe9cf48befc3ad36d261d4a950c9ab2a9b89d46725bcee3a0",
+                  "sha256": "ff5ebfc9885a753da626269a79f43ae9f4001cc40709d10514e3cf52e32b8d5c"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000579029944,
+                    "exact_reply_value_chips": 25.000006630287977,
+                    "extra_information_gap_chips": 2.5131586056659216e-07,
+                    "restricted_reply_value_chips": 25.000006378972117,
+                    "river_before_value_chips": 25.000006378972117,
+                    "river_only_gain_exact_prefix_chips": 2.5131586056659216e-07,
+                    "target": 0,
+                    "within_partition_gain_chips": 5.886726768267181e-07
+                  },
+                  {
+                    "baseline_value_chips": -25.00000579029944,
+                    "exact_reply_value_chips": -24.999999982443683,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999982443683,
+                    "river_before_value_chips": -24.999999982443683,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.807855757211655e-06
+                  }
+                ],
+                "seconds": 0.03357341700757388
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.5083829999999998,
+                "index": 9,
+                "metadata_sha256": "8f28c3810c4a52e292d4e230f59ce36b1dee83483952a4d111c9ba857d2531ff",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09169606953459919,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953459919
+                },
+                "receipt": {
+                  "bytes": 189664,
+                  "policy_sha256": "1129da00c3f5bcf23289f7b939907015ddd61df3e264c07e3c9d99cad970b3ed",
+                  "sha256": "368264d3388b1108973de040de8ddaef0afe6065cbeda54e8f74bee0a2bf876d"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.045594759228067,
+                    "exact_reply_value_chips": 18.12026985015917,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.12026985015917,
+                    "river_before_value_chips": 18.12026985015917,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0746750909311018
+                  },
+                  {
+                    "baseline_value_chips": -18.045594759228067,
+                    "exact_reply_value_chips": -17.93687771108997,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.93687771108997,
+                    "river_before_value_chips": -17.93687771108997,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.10871704813809657
+                  }
+                ],
+                "seconds": 0.5083924169884995
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.297631400800763e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.46491300000000013,
+                "index": 12,
+                "metadata_sha256": "51db3072c5faabc9969dc1e11a65e6d4b67ba7040a016441122e2b58c740b717",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09779045293985966,
+                  "extra_information_gap_chips": 0.09772779708569956,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379808,
+                  "value_player_zero_chips": 18.000021405782103,
+                  "within_partition_gain_chips": 6.265585416009856e-05
+                },
+                "receipt": {
+                  "bytes": 80347,
+                  "policy_sha256": "e663392994a6e65662e2b5758bae26fdcd12805d1878830761343237bc3926cd",
+                  "sha256": "84cba87f9d2491f2dbc0167e00a31453fb7d249f6e27b9edaec8a4d11e72808f"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.000021405782103,
+                    "exact_reply_value_chips": 18.00008816644937,
+                    "extra_information_gap_chips": 2.29349857150396e-06,
+                    "restricted_reply_value_chips": 18.000085872950798,
+                    "river_before_value_chips": 18.000085872950798,
+                    "river_only_gain_exact_prefix_chips": 2.29349857150396e-06,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.446716869490388e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.000021405782103,
+                    "exact_reply_value_chips": -17.80450726056965,
+                    "extra_information_gap_chips": 0.19545330067282762,
+                    "restricted_reply_value_chips": -17.999960561242478,
+                    "river_before_value_chips": -18.85642172714704,
+                    "river_only_gain_exact_prefix_chips": 1.05191446657739,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.084453962529324e-05
+                  }
+                ],
+                "seconds": 0.46493449999252334
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.4393868041917557e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.44983700000000004,
+                "index": 15,
+                "metadata_sha256": "ee607b4e35d9511d4879b082fb0cf12df260c01fe173318fcbb09c64528f00fe",
+                "metrics": {
+                  "exact_exploitability_chips": 1.1069927266992297,
+                  "extra_information_gap_chips": 1.0762463429885214,
+                  "river_only_gain_exact_prefix_chips": 1.339385508579789,
+                  "value_player_zero_chips": 18.0259714817477,
+                  "within_partition_gain_chips": 0.030746383710708258
+                },
+                "receipt": {
+                  "bytes": 109829,
+                  "policy_sha256": "987885888d35fb4b20445e2c7557153b02b4da827bfc8e9b3edb38edaeb2d83b",
+                  "sha256": "89a7166202641faa4e287571ce806da3be7f21051a4a48f42b89bfd29f39dbe6"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.0259714817477,
+                    "exact_reply_value_chips": 18.06329711618742,
+                    "extra_information_gap_chips": 0.0029555561223553184,
+                    "restricted_reply_value_chips": 18.060341560065066,
+                    "river_before_value_chips": 18.060341560065066,
+                    "river_only_gain_exact_prefix_chips": 0.0029555561223553184,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.03437007831736594
+                  },
+                  {
+                    "baseline_value_chips": -18.0259714817477,
+                    "exact_reply_value_chips": -15.849311662788962,
+                    "extra_information_gap_chips": 2.1495371298546875,
+                    "restricted_reply_value_chips": -17.99884879264365,
+                    "river_before_value_chips": -18.525127123826184,
+                    "river_only_gain_exact_prefix_chips": 2.6758154610372227,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.02712268910405058
+                  }
+                ],
+                "seconds": 0.4498840830055997
+              }
+            },
+            {
+              "cpu_seconds": 3.761965,
+              "kind": "done",
+              "seconds": 3.7621960420074174,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33119,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33120,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2211229579988867
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.031489999999999796,
+                "index": 1,
+                "metadata_sha256": "e8640cdf4b15a3d23bcee88b8ff04340743c8469199d9058841a7b93a270ee33",
+                "metrics": {
+                  "exact_exploitability_chips": 1.0539700667777652e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413083,
+                  "within_partition_gain_chips": 1.0539700667777652e-08
+                },
+                "receipt": {
+                  "bytes": 980,
+                  "policy_sha256": "044566107c2ba96b453ba755b4d3f03b310793e15bbacbcb1148005fd47cbdb0",
+                  "sha256": "b226cce7e3c924be4b9ee89d853934dca0830584bd1ad99151dc99a5f2619425"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000020413083,
+                    "exact_reply_value_chips": 25.000000020808457,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000020808457,
+                    "river_before_value_chips": 25.000000020808457,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 3.9537439988635015e-10
+                  },
+                  {
+                    "baseline_value_chips": -25.000000020413083,
+                    "exact_reply_value_chips": -24.999999999729056,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999729056,
+                    "river_before_value_chips": -24.999999999729056,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.0684026935668953e-08
+                  }
+                ],
+                "seconds": 0.03149058400595095
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.034877999999999965,
+                "index": 4,
+                "metadata_sha256": "407fdbfac147157b1c51153c73ef9c44e5ce0711a52958b6b3597b428a9f6fad",
+                "metrics": {
+                  "exact_exploitability_chips": 8.32961933383558e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961933383558e-06
+                },
+                "receipt": {
+                  "bytes": 2149,
+                  "policy_sha256": "bdaee7a7cc5d4c5871a96cfd59cccd126ac361f4c814f1ecea45b86ac24a0225",
+                  "sha256": "f7ac8e06b2b8bace26bc71b95051e3385a88a55d11eac3eccd37d62823083f68"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003410296728,
+                    "exact_reply_value_chips": 25.000011087564616,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000011087564616,
+                    "river_before_value_chips": 25.000011087564616,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.677267888084316e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003410296728,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.981970779586845e-06
+                  }
+                ],
+                "seconds": 0.034877582991612144
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03409299999999993,
+                "index": 7,
+                "metadata_sha256": "89f9dcca095912acae33a03522acf85cd29143c643d71c13b8e0a5069508cbcc",
+                "metrics": {
+                  "exact_exploitability_chips": 0.001188226197989195,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.001188226197989195
+                },
+                "receipt": {
+                  "bytes": 4331,
+                  "policy_sha256": "3a6d382a394e09f81da417dc3de0c3e69b24b796d614d48fd3d9e7d545a762ab",
+                  "sha256": "3b41c692dbfd665fd5928270c378df03d0dc1dd6ea39428aff23d8ef9b512f76"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.001378682616917,
+                    "exact_reply_value_chips": 25.002376028433645,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.002376028433645,
+                    "river_before_value_chips": 25.002376028433645,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0009973458167280569
+                  },
+                  {
+                    "baseline_value_chips": -25.001378682616917,
+                    "exact_reply_value_chips": -24.999999576037666,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999576037666,
+                    "river_before_value_chips": -24.999999576037666,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0013791065792503332
+                  }
+                ],
+                "seconds": 0.03410195800825022
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.510329,
+                "index": 10,
+                "metadata_sha256": "9107a371cbb58aaa234630e067469af57e6a87cf5441ce81768db71b6a87c6cd",
+                "metrics": {
+                  "exact_exploitability_chips": 0.07957605105079857,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105079857
+                },
+                "receipt": {
+                  "bytes": 190664,
+                  "policy_sha256": "80dc227a269181bc22690f89203744a130e2aafe4e3eaa750ae09997f0fab627",
+                  "sha256": "64cd9f2048eee403af498f228d1a6b935d1846ff4a5ff9eb43b07b7ee9c42cb9"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.05887932846624,
+                    "exact_reply_value_chips": 18.15573764437758,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.15573764437758,
+                    "river_before_value_chips": 18.15573764437758,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.09685831591134075
+                  },
+                  {
+                    "baseline_value_chips": -18.05887932846624,
+                    "exact_reply_value_chips": -17.996585542275984,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.996585542275984,
+                    "river_before_value_chips": -17.996585542275984,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.062293786190256384
+                  }
+                ],
+                "seconds": 0.5103276669979095
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 2.444550638303067e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.48728799999999994,
+                "index": 13,
+                "metadata_sha256": "a48e58477ce2ba58ce3f47b50f40e030b940f996c5bb905664a064e39caa13ba",
+                "metrics": {
+                  "exact_exploitability_chips": 1.6129730656393724,
+                  "extra_information_gap_chips": 1.572986730073528,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285997,
+                  "value_player_zero_chips": 18.039826033207273,
+                  "within_partition_gain_chips": 0.0399863355658443
+                },
+                "receipt": {
+                  "bytes": 103876,
+                  "policy_sha256": "666ccb8bec2cd13dbf436632331737de3dd0a29e66ff0cf4d45111cb9130821f",
+                  "sha256": "6be9da84e7cbac3573f3e3751a90204c2b6364fa5e63d4fbe6b4a465e39e3165"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.039826033207273,
+                    "exact_reply_value_chips": 18.084120819466655,
+                    "extra_information_gap_chips": 0.0055229070731179775,
+                    "restricted_reply_value_chips": 18.078597912393537,
+                    "river_before_value_chips": 18.078597912393537,
+                    "river_only_gain_exact_prefix_chips": 0.0055229070731179775,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0387718791862639
+                  },
+                  {
+                    "baseline_value_chips": -18.039826033207273,
+                    "exact_reply_value_chips": -14.85817468818791,
+                    "extra_information_gap_chips": 3.140450553073938,
+                    "restricted_reply_value_chips": -17.99862524126185,
+                    "river_before_value_chips": -19.08364410477199,
+                    "river_only_gain_exact_prefix_chips": 4.225469416584081,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0412007919454247
+                  }
+                ],
+                "seconds": 0.487404500003322
+              }
+            },
+            {
+              "cpu_seconds": 3.351712,
+              "kind": "done",
+              "seconds": 3.3519643749896204,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33120,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33121,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2332528340048157
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.034106999999999665,
+                "index": 2,
+                "metadata_sha256": "f807e3a9936d672087450d85a9ddb6ac32da27edd06faf45408d496ac02b52c4",
+                "metrics": {
+                  "exact_exploitability_chips": 4.833328798525827e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000213619728,
+                  "within_partition_gain_chips": 4.833328798525827e-06
+                },
+                "receipt": {
+                  "bytes": 7009,
+                  "policy_sha256": "24b1ee89c6666674a33513c413cc645e71e5b57bf8563ee0e9bd2ebb4fae93cd",
+                  "sha256": "c23c5e29646565ca355a54cb5b6193f8b213f790f2d001ce5999ecb45d6d99c3"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000213619728,
+                    "exact_reply_value_chips": 25.000009519348637,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000009519348637,
+                    "river_before_value_chips": 25.000009519348637,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.383151356066264e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.00000213619728,
+                    "exact_reply_value_chips": -24.99999985269104,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999985269104,
+                    "river_before_value_chips": -24.99999985269104,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.283506240985389e-06
+                  }
+                ],
+                "seconds": 0.034106457998859696
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03160499999999988,
+                "index": 5,
+                "metadata_sha256": "62a423c37755d334b7019674646b02237395d96f0618e96b0ffe772195cfaa2d",
+                "metrics": {
+                  "exact_exploitability_chips": 3.7621461501657905e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000004647745,
+                  "within_partition_gain_chips": 3.7621461501657905e-09
+                },
+                "receipt": {
+                  "bytes": 1004,
+                  "policy_sha256": "d95d3b390507c1aefbad625e2188b686d0ccea08b1e1380722cf649593d3aa94",
+                  "sha256": "c6d0565ac446d6d2d1ea700180a9822c141e588b3b731af38ee6773ee32fa623"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000004647745,
+                    "exact_reply_value_chips": 25.000000006103562,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000006103562,
+                    "river_before_value_chips": 25.000000006103562,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 1.455816800444154e-09
+                  },
+                  {
+                    "baseline_value_chips": -25.000000004647745,
+                    "exact_reply_value_chips": -24.99999999857927,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999999857927,
+                    "river_before_value_chips": -24.99999999857927,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.068475499887427e-09
+                  }
+                ],
+                "seconds": 0.03160508399014361
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.47056999999999993,
+                "index": 8,
+                "metadata_sha256": "eafe37d4334cbb4c592c71f750fbe528e17be46d7788ac9e384e0f5b71d12a34",
+                "metrics": {
+                  "exact_exploitability_chips": 6.562434457002553e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.00001270082999,
+                  "within_partition_gain_chips": 6.562434457002553e-05
+                },
+                "receipt": {
+                  "bytes": 51314,
+                  "policy_sha256": "5c134b79d0d740234e5bd1ead3d756c0d5b973ff0207ce3e3560fe01bb3b97f8",
+                  "sha256": "abc3e81ad5a7e590fcddf958e5113be557298dba4372f88c0ef8eba83c7b9c4e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.00001270082999,
+                    "exact_reply_value_chips": 18.000086498267226,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.000086498267226,
+                    "river_before_value_chips": 18.000086498267226,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.379743723490151e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.00001270082999,
+                    "exact_reply_value_chips": -17.999955249578086,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.999955249578086,
+                    "river_before_value_chips": -17.999955249578086,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.745125190514955e-05
+                  }
+                ],
+                "seconds": 0.4706026250059949
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.519981,
+                "index": 11,
+                "metadata_sha256": "3b813ec50891e783e5959a3155bae880120fbd1bf76a1aba4652012a1d0f5b81",
+                "metrics": {
+                  "exact_exploitability_chips": 0.08417497338373714,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.062619754663547,
+                  "within_partition_gain_chips": 0.08417497338373714
+                },
+                "receipt": {
+                  "bytes": 188176,
+                  "policy_sha256": "3386cf17b0676adef6525c44498f2122f904ffb51f450b646425464c132996bf",
+                  "sha256": "363e5d817e24bdf0985774d3389e884eaed882cae60979b81950db3924559d0b"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.062619754663547,
+                    "exact_reply_value_chips": 18.165542016392944,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.165542016392944,
+                    "river_before_value_chips": 18.165542016392944,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.10292226172939678
+                  },
+                  {
+                    "baseline_value_chips": -18.062619754663547,
+                    "exact_reply_value_chips": -17.99719206962547,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.99719206962547,
+                    "river_before_value_chips": -17.99719206962547,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0654276850380775
+                  }
+                ],
+                "seconds": 0.5200217910023639
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.552713678800501e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.35161700000000007,
+                "index": 14,
+                "metadata_sha256": "e4451f919390c8695e9490498274015c79a995bf1712d72655f2748baaf6f942",
+                "metrics": {
+                  "exact_exploitability_chips": 1.982388298060756,
+                  "extra_information_gap_chips": 1.7904571388343102,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343102,
+                  "value_player_zero_chips": 18.04046886077105,
+                  "within_partition_gain_chips": 0.19193115922644566
+                },
+                "receipt": {
+                  "bytes": 105442,
+                  "policy_sha256": "0a518a8b7b63f50c4fa9eb3fa256a25fa4ebaa1aed5c19e9b70b141be0187211",
+                  "sha256": "e2a208c667911f1388abfeb48cda0f0b6db28b9af1ea7151e5cd3bb02d774971"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.04046886077105,
+                    "exact_reply_value_chips": 18.131879901146263,
+                    "extra_information_gap_chips": 0.005822353514069789,
+                    "restricted_reply_value_chips": 18.126057547632193,
+                    "river_before_value_chips": 18.126057547632193,
+                    "river_only_gain_exact_prefix_chips": 0.005822353514069789,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.08558868686114351
+                  },
+                  {
+                    "baseline_value_chips": -18.04046886077105,
+                    "exact_reply_value_chips": -14.167103305024751,
+                    "extra_information_gap_chips": 3.5750919241545507,
+                    "restricted_reply_value_chips": -17.742195229179302,
+                    "river_before_value_chips": -17.742195229179302,
+                    "river_only_gain_exact_prefix_chips": 3.5750919241545507,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.2982736315917478
+                  }
+                ],
+                "seconds": 0.35162654099985957
+              }
+            },
+            {
+              "cpu_seconds": 3.681294,
+              "kind": "done",
+              "seconds": 3.6815229579951847,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33121,
+          "slot": 2
+        }
+      ]
+    },
+    {
+      "assignments": [
+        [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        [
+          1,
+          4,
+          7,
+          10,
+          13
+        ],
+        [
+          2,
+          5,
+          8,
+          11,
+          14
+        ]
+      ],
+      "failure": null,
+      "parent_cpu_seconds": 0.01628700000000194,
+      "reaped_children_cpu_seconds": 10.990000000000002,
+      "repeat": 2,
+      "seconds": 3.9167685419961344,
+      "status": "completed",
+      "worker_count": 3,
+      "workers": [
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33123,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2060439999913797
+            },
+            {
+              "index": 0,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.03199300000000038,
+                "index": 0,
+                "metadata_sha256": "94c00111ecd91d84462471315bf3b4ef3284cadc8f53f7de9c274282817e8066",
+                "metrics": {
+                  "exact_exploitability_chips": 7.952622290474665e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003411970667,
+                  "within_partition_gain_chips": 7.952622290474665e-06
+                },
+                "receipt": {
+                  "bytes": 2503,
+                  "policy_sha256": "f7c7b06c6abac557912ebec38bac840308e50979e5b9c5597252a638743860bc",
+                  "sha256": "8e0eb3cb3c739c8372d5b7cebd17ced7d6a7e8fe8d805c2b42d3fa76a71eb731"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003411970667,
+                    "exact_reply_value_chips": 25.00001033357053,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00001033357053,
+                    "river_before_value_chips": 25.00001033357053,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.921599862153016e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003411970667,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.983644718796313e-06
+                  }
+                ],
+                "seconds": 0.03200716699939221
+              }
+            },
+            {
+              "index": 3,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.033014999999999795,
+                "index": 3,
+                "metadata_sha256": "83ded265af1c8fb1c57cdee5621ede70bfd97bc9b78864e9189cee46db0365a9",
+                "metrics": {
+                  "exact_exploitability_chips": 4.791087668820637e-07,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000091121548,
+                  "within_partition_gain_chips": 4.791087668820637e-07
+                },
+                "receipt": {
+                  "bytes": 3567,
+                  "policy_sha256": "83a11ec355b9719e4ef660e07d6b0b1d0b9e6ef646f836fb6d4d4c926b6d622a",
+                  "sha256": "4d3a0c5c9c60f0b9036e3ee318873073f8d084e5c495211a7192d91b80a9879e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000091121548,
+                    "exact_reply_value_chips": 25.00000095795003,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.00000095795003,
+                    "river_before_value_chips": 25.00000095795003,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 4.673454867543114e-08
+                  },
+                  {
+                    "baseline_value_chips": -25.00000091121548,
+                    "exact_reply_value_chips": -24.999999999732495,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999732495,
+                    "river_before_value_chips": -24.999999999732495,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 9.114829850886963e-07
+                  }
+                ],
+                "seconds": 0.03301308299705852
+              }
+            },
+            {
+              "index": 6,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.205196329138249e-15,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.032110000000000305,
+                "index": 6,
+                "metadata_sha256": "92b7a56591392dc19eb56bad066620427e367a4e3a18bcd2b3b01ae8f5a9e031",
+                "metrics": {
+                  "exact_exploitability_chips": 3.3239221473024827e-06,
+                  "extra_information_gap_chips": 1.2565793028329608e-07,
+                  "river_only_gain_exact_prefix_chips": 1.2565793028329608e-07,
+                  "value_player_zero_chips": 25.00000579029944,
+                  "within_partition_gain_chips": 3.1982642170191866e-06
+                },
+                "receipt": {
+                  "bytes": 3379,
+                  "policy_sha256": "f3c815a637367b8fe9cf48befc3ad36d261d4a950c9ab2a9b89d46725bcee3a0",
+                  "sha256": "ff5ebfc9885a753da626269a79f43ae9f4001cc40709d10514e3cf52e32b8d5c"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000579029944,
+                    "exact_reply_value_chips": 25.000006630287977,
+                    "extra_information_gap_chips": 2.5131586056659216e-07,
+                    "restricted_reply_value_chips": 25.000006378972117,
+                    "river_before_value_chips": 25.000006378972117,
+                    "river_only_gain_exact_prefix_chips": 2.5131586056659216e-07,
+                    "target": 0,
+                    "within_partition_gain_chips": 5.886726768267181e-07
+                  },
+                  {
+                    "baseline_value_chips": -25.00000579029944,
+                    "exact_reply_value_chips": -24.999999982443683,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999982443683,
+                    "river_before_value_chips": -24.999999982443683,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.807855757211655e-06
+                  }
+                ],
+                "seconds": 0.032109833002323285
+              }
+            },
+            {
+              "index": 9,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.5061800000000001,
+                "index": 9,
+                "metadata_sha256": "8f28c3810c4a52e292d4e230f59ce36b1dee83483952a4d111c9ba857d2531ff",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09169606953459919,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.045594759228067,
+                  "within_partition_gain_chips": 0.09169606953459919
+                },
+                "receipt": {
+                  "bytes": 189664,
+                  "policy_sha256": "1129da00c3f5bcf23289f7b939907015ddd61df3e264c07e3c9d99cad970b3ed",
+                  "sha256": "368264d3388b1108973de040de8ddaef0afe6065cbeda54e8f74bee0a2bf876d"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.045594759228067,
+                    "exact_reply_value_chips": 18.12026985015917,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.12026985015917,
+                    "river_before_value_chips": 18.12026985015917,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0746750909311018
+                  },
+                  {
+                    "baseline_value_chips": -18.045594759228067,
+                    "exact_reply_value_chips": -17.93687771108997,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.93687771108997,
+                    "river_before_value_chips": -17.93687771108997,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.10871704813809657
+                  }
+                ],
+                "seconds": 0.506201708005392
+              }
+            },
+            {
+              "index": 12,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.297631400800763e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.453916,
+                "index": 12,
+                "metadata_sha256": "51db3072c5faabc9969dc1e11a65e6d4b67ba7040a016441122e2b58c740b717",
+                "metrics": {
+                  "exact_exploitability_chips": 0.09779045293985966,
+                  "extra_information_gap_chips": 0.09772779708569956,
+                  "river_only_gain_exact_prefix_chips": 0.5259583800379808,
+                  "value_player_zero_chips": 18.000021405782103,
+                  "within_partition_gain_chips": 6.265585416009856e-05
+                },
+                "receipt": {
+                  "bytes": 80347,
+                  "policy_sha256": "e663392994a6e65662e2b5758bae26fdcd12805d1878830761343237bc3926cd",
+                  "sha256": "84cba87f9d2491f2dbc0167e00a31453fb7d249f6e27b9edaec8a4d11e72808f"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.000021405782103,
+                    "exact_reply_value_chips": 18.00008816644937,
+                    "extra_information_gap_chips": 2.29349857150396e-06,
+                    "restricted_reply_value_chips": 18.000085872950798,
+                    "river_before_value_chips": 18.000085872950798,
+                    "river_only_gain_exact_prefix_chips": 2.29349857150396e-06,
+                    "target": 0,
+                    "within_partition_gain_chips": 6.446716869490388e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.000021405782103,
+                    "exact_reply_value_chips": -17.80450726056965,
+                    "extra_information_gap_chips": 0.19545330067282762,
+                    "restricted_reply_value_chips": -17.999960561242478,
+                    "river_before_value_chips": -18.85642172714704,
+                    "river_only_gain_exact_prefix_chips": 1.05191446657739,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.084453962529324e-05
+                  }
+                ],
+                "seconds": 0.4540223329968285
+              }
+            },
+            {
+              "index": 15,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 1.4393868041917557e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.43534000000000006,
+                "index": 15,
+                "metadata_sha256": "ee607b4e35d9511d4879b082fb0cf12df260c01fe173318fcbb09c64528f00fe",
+                "metrics": {
+                  "exact_exploitability_chips": 1.1069927266992297,
+                  "extra_information_gap_chips": 1.0762463429885214,
+                  "river_only_gain_exact_prefix_chips": 1.339385508579789,
+                  "value_player_zero_chips": 18.0259714817477,
+                  "within_partition_gain_chips": 0.030746383710708258
+                },
+                "receipt": {
+                  "bytes": 109829,
+                  "policy_sha256": "987885888d35fb4b20445e2c7557153b02b4da827bfc8e9b3edb38edaeb2d83b",
+                  "sha256": "89a7166202641faa4e287571ce806da3be7f21051a4a48f42b89bfd29f39dbe6"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.0259714817477,
+                    "exact_reply_value_chips": 18.06329711618742,
+                    "extra_information_gap_chips": 0.0029555561223553184,
+                    "restricted_reply_value_chips": 18.060341560065066,
+                    "river_before_value_chips": 18.060341560065066,
+                    "river_only_gain_exact_prefix_chips": 0.0029555561223553184,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.03437007831736594
+                  },
+                  {
+                    "baseline_value_chips": -18.0259714817477,
+                    "exact_reply_value_chips": -15.849311662788962,
+                    "extra_information_gap_chips": 2.1495371298546875,
+                    "restricted_reply_value_chips": -17.99884879264365,
+                    "river_before_value_chips": -18.525127123826184,
+                    "river_only_gain_exact_prefix_chips": 2.6758154610372227,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.02712268910405058
+                  }
+                ],
+                "seconds": 0.4353408750030212
+              }
+            },
+            {
+              "cpu_seconds": 3.741433,
+              "kind": "done",
+              "seconds": 3.7422637909912737,
+              "summary": {
+                "cells": 6
+              }
+            }
+          ],
+          "pid": 33123,
+          "slot": 0
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33124,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.2082837499910966
+            },
+            {
+              "index": 1,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03115800000000002,
+                "index": 1,
+                "metadata_sha256": "e8640cdf4b15a3d23bcee88b8ff04340743c8469199d9058841a7b93a270ee33",
+                "metrics": {
+                  "exact_exploitability_chips": 1.0539700667777652e-08,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000020413083,
+                  "within_partition_gain_chips": 1.0539700667777652e-08
+                },
+                "receipt": {
+                  "bytes": 980,
+                  "policy_sha256": "044566107c2ba96b453ba755b4d3f03b310793e15bbacbcb1148005fd47cbdb0",
+                  "sha256": "b226cce7e3c924be4b9ee89d853934dca0830584bd1ad99151dc99a5f2619425"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000020413083,
+                    "exact_reply_value_chips": 25.000000020808457,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000020808457,
+                    "river_before_value_chips": 25.000000020808457,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 3.9537439988635015e-10
+                  },
+                  {
+                    "baseline_value_chips": -25.000000020413083,
+                    "exact_reply_value_chips": -24.999999999729056,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999999729056,
+                    "river_before_value_chips": -24.999999999729056,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.0684026935668953e-08
+                  }
+                ],
+                "seconds": 0.031157541001448408
+              }
+            },
+            {
+              "index": 4,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.03112500000000029,
+                "index": 4,
+                "metadata_sha256": "407fdbfac147157b1c51153c73ef9c44e5ce0711a52958b6b3597b428a9f6fad",
+                "metrics": {
+                  "exact_exploitability_chips": 8.32961933383558e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000003410296728,
+                  "within_partition_gain_chips": 8.32961933383558e-06
+                },
+                "receipt": {
+                  "bytes": 2149,
+                  "policy_sha256": "bdaee7a7cc5d4c5871a96cfd59cccd126ac361f4c814f1ecea45b86ac24a0225",
+                  "sha256": "f7ac8e06b2b8bace26bc71b95051e3385a88a55d11eac3eccd37d62823083f68"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000003410296728,
+                    "exact_reply_value_chips": 25.000011087564616,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000011087564616,
+                    "river_before_value_chips": 25.000011087564616,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.677267888084316e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.000003410296728,
+                    "exact_reply_value_chips": -24.999994428325948,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999994428325948,
+                    "river_before_value_chips": -24.999994428325948,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 8.981970779586845e-06
+                  }
+                ],
+                "seconds": 0.031124832996283658
+              }
+            },
+            {
+              "index": 7,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03530699999999998,
+                "index": 7,
+                "metadata_sha256": "89f9dcca095912acae33a03522acf85cd29143c643d71c13b8e0a5069508cbcc",
+                "metrics": {
+                  "exact_exploitability_chips": 0.001188226197989195,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.001378682616917,
+                  "within_partition_gain_chips": 0.001188226197989195
+                },
+                "receipt": {
+                  "bytes": 4331,
+                  "policy_sha256": "3a6d382a394e09f81da417dc3de0c3e69b24b796d614d48fd3d9e7d545a762ab",
+                  "sha256": "3b41c692dbfd665fd5928270c378df03d0dc1dd6ea39428aff23d8ef9b512f76"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.001378682616917,
+                    "exact_reply_value_chips": 25.002376028433645,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.002376028433645,
+                    "river_before_value_chips": 25.002376028433645,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0009973458167280569
+                  },
+                  {
+                    "baseline_value_chips": -25.001378682616917,
+                    "exact_reply_value_chips": -24.999999576037666,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.999999576037666,
+                    "river_before_value_chips": -24.999999576037666,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0013791065792503332
+                  }
+                ],
+                "seconds": 0.03530570800649002
+              }
+            },
+            {
+              "index": 10,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.49810599999999994,
+                "index": 10,
+                "metadata_sha256": "9107a371cbb58aaa234630e067469af57e6a87cf5441ce81768db71b6a87c6cd",
+                "metrics": {
+                  "exact_exploitability_chips": 0.07957605105079857,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.05887932846624,
+                  "within_partition_gain_chips": 0.07957605105079857
+                },
+                "receipt": {
+                  "bytes": 190664,
+                  "policy_sha256": "80dc227a269181bc22690f89203744a130e2aafe4e3eaa750ae09997f0fab627",
+                  "sha256": "64cd9f2048eee403af498f228d1a6b935d1846ff4a5ff9eb43b07b7ee9c42cb9"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.05887932846624,
+                    "exact_reply_value_chips": 18.15573764437758,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.15573764437758,
+                    "river_before_value_chips": 18.15573764437758,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.09685831591134075
+                  },
+                  {
+                    "baseline_value_chips": -18.05887932846624,
+                    "exact_reply_value_chips": -17.996585542275984,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.996585542275984,
+                    "river_before_value_chips": -17.996585542275984,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.062293786190256384
+                  }
+                ],
+                "seconds": 0.4981051250069868
+              }
+            },
+            {
+              "index": 13,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 2.444550638303067e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.47766399999999987,
+                "index": 13,
+                "metadata_sha256": "a48e58477ce2ba58ce3f47b50f40e030b940f996c5bb905664a064e39caa13ba",
+                "metrics": {
+                  "exact_exploitability_chips": 1.6129730656393724,
+                  "extra_information_gap_chips": 1.572986730073528,
+                  "river_only_gain_exact_prefix_chips": 2.1154961618285997,
+                  "value_player_zero_chips": 18.039826033207273,
+                  "within_partition_gain_chips": 0.0399863355658443
+                },
+                "receipt": {
+                  "bytes": 103876,
+                  "policy_sha256": "666ccb8bec2cd13dbf436632331737de3dd0a29e66ff0cf4d45111cb9130821f",
+                  "sha256": "6be9da84e7cbac3573f3e3751a90204c2b6364fa5e63d4fbe6b4a465e39e3165"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.039826033207273,
+                    "exact_reply_value_chips": 18.084120819466655,
+                    "extra_information_gap_chips": 0.0055229070731179775,
+                    "restricted_reply_value_chips": 18.078597912393537,
+                    "river_before_value_chips": 18.078597912393537,
+                    "river_only_gain_exact_prefix_chips": 0.0055229070731179775,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.0387718791862639
+                  },
+                  {
+                    "baseline_value_chips": -18.039826033207273,
+                    "exact_reply_value_chips": -14.85817468818791,
+                    "extra_information_gap_chips": 3.140450553073938,
+                    "restricted_reply_value_chips": -17.99862524126185,
+                    "river_before_value_chips": -19.08364410477199,
+                    "river_only_gain_exact_prefix_chips": 4.225469416584081,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0412007919454247
+                  }
+                ],
+                "seconds": 0.47775095800170675
+              }
+            },
+            {
+              "cpu_seconds": 3.31378,
+              "kind": "done",
+              "seconds": 3.314303791994462,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33124,
+          "slot": 1
+        },
+        {
+          "exitcode": 0,
+          "messages": [
+            {
+              "kind": "started",
+              "pid": 33125,
+              "thread_environment": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              }
+            },
+            {
+              "kind": "prepared",
+              "seconds": 2.238468042007298
+            },
+            {
+              "index": 2,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03416299999999994,
+                "index": 2,
+                "metadata_sha256": "f807e3a9936d672087450d85a9ddb6ac32da27edd06faf45408d496ac02b52c4",
+                "metrics": {
+                  "exact_exploitability_chips": 4.833328798525827e-06,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.00000213619728,
+                  "within_partition_gain_chips": 4.833328798525827e-06
+                },
+                "receipt": {
+                  "bytes": 7009,
+                  "policy_sha256": "24b1ee89c6666674a33513c413cc645e71e5b57bf8563ee0e9bd2ebb4fae93cd",
+                  "sha256": "c23c5e29646565ca355a54cb5b6193f8b213f790f2d001ce5999ecb45d6d99c3"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.00000213619728,
+                    "exact_reply_value_chips": 25.000009519348637,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000009519348637,
+                    "river_before_value_chips": 25.000009519348637,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.383151356066264e-06
+                  },
+                  {
+                    "baseline_value_chips": -25.00000213619728,
+                    "exact_reply_value_chips": -24.99999985269104,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999985269104,
+                    "river_before_value_chips": -24.99999985269104,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 2.283506240985389e-06
+                  }
+                ],
+                "seconds": 0.034162459007347934
+              }
+            },
+            {
+              "index": 5,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261301,
+                  "spot_file": "configs/learning-spots/dev_low_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.03218500000000013,
+                "index": 5,
+                "metadata_sha256": "62a423c37755d334b7019674646b02237395d96f0618e96b0ffe772195cfaa2d",
+                "metrics": {
+                  "exact_exploitability_chips": 3.7621461501657905e-09,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 25.000000004647745,
+                  "within_partition_gain_chips": 3.7621461501657905e-09
+                },
+                "receipt": {
+                  "bytes": 1004,
+                  "policy_sha256": "d95d3b390507c1aefbad625e2188b686d0ccea08b1e1380722cf649593d3aa94",
+                  "sha256": "c6d0565ac446d6d2d1ea700180a9822c141e588b3b731af38ee6773ee32fa623"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 25.000000004647745,
+                    "exact_reply_value_chips": 25.000000006103562,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 25.000000006103562,
+                    "river_before_value_chips": 25.000000006103562,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 1.455816800444154e-09
+                  },
+                  {
+                    "baseline_value_chips": -25.000000004647745,
+                    "exact_reply_value_chips": -24.99999999857927,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -24.99999999857927,
+                    "river_before_value_chips": -24.99999999857927,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 6.068475499887427e-09
+                  }
+                ],
+                "seconds": 0.03218412499700207
+              }
+            },
+            {
+              "index": 8,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": null,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "full"
+                },
+                "cpu_seconds": 0.46574800000000005,
+                "index": 8,
+                "metadata_sha256": "eafe37d4334cbb4c592c71f750fbe528e17be46d7788ac9e384e0f5b71d12a34",
+                "metrics": {
+                  "exact_exploitability_chips": 6.562434457002553e-05,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.00001270082999,
+                  "within_partition_gain_chips": 6.562434457002553e-05
+                },
+                "receipt": {
+                  "bytes": 51314,
+                  "policy_sha256": "5c134b79d0d740234e5bd1ead3d756c0d5b973ff0207ce3e3560fe01bb3b97f8",
+                  "sha256": "abc3e81ad5a7e590fcddf958e5113be557298dba4372f88c0ef8eba83c7b9c4e"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.00001270082999,
+                    "exact_reply_value_chips": 18.000086498267226,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.000086498267226,
+                    "river_before_value_chips": 18.000086498267226,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 7.379743723490151e-05
+                  },
+                  {
+                    "baseline_value_chips": -18.00001270082999,
+                    "exact_reply_value_chips": -17.999955249578086,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.999955249578086,
+                    "river_before_value_chips": -17.999955249578086,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 5.745125190514955e-05
+                  }
+                ],
+                "seconds": 0.46574654198775534
+              }
+            },
+            {
+              "index": 11,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 0.0,
+                "case": {
+                  "range_context_sha256": null,
+                  "representation": "exact",
+                  "seed": 20261303,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.5002409999999999,
+                "index": 11,
+                "metadata_sha256": "3b813ec50891e783e5959a3155bae880120fbd1bf76a1aba4652012a1d0f5b81",
+                "metrics": {
+                  "exact_exploitability_chips": 0.08417497338373714,
+                  "extra_information_gap_chips": 0.0,
+                  "river_only_gain_exact_prefix_chips": 0.0,
+                  "value_player_zero_chips": 18.062619754663547,
+                  "within_partition_gain_chips": 0.08417497338373714
+                },
+                "receipt": {
+                  "bytes": 188176,
+                  "policy_sha256": "3386cf17b0676adef6525c44498f2122f904ffb51f450b646425464c132996bf",
+                  "sha256": "363e5d817e24bdf0985774d3389e884eaed882cae60979b81950db3924559d0b"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.062619754663547,
+                    "exact_reply_value_chips": 18.165542016392944,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": 18.165542016392944,
+                    "river_before_value_chips": 18.165542016392944,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.10292226172939678
+                  },
+                  {
+                    "baseline_value_chips": -18.062619754663547,
+                    "exact_reply_value_chips": -17.99719206962547,
+                    "extra_information_gap_chips": 0.0,
+                    "restricted_reply_value_chips": -17.99719206962547,
+                    "river_before_value_chips": -17.99719206962547,
+                    "river_only_gain_exact_prefix_chips": 0.0,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.0654276850380775
+                  }
+                ],
+                "seconds": 0.5003279999946244
+              }
+            },
+            {
+              "index": 14,
+              "kind": "cell",
+              "row": {
+                "accounting_error": 3.552713678800501e-15,
+                "case": {
+                  "range_context_sha256": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7",
+                  "representation": "texture_range_q8_b8",
+                  "seed": 20261302,
+                  "spot_file": "configs/learning-spots/dev_medium_oop.json",
+                  "training": "sampled"
+                },
+                "cpu_seconds": 0.35767300000000013,
+                "index": 14,
+                "metadata_sha256": "e4451f919390c8695e9490498274015c79a995bf1712d72655f2748baaf6f942",
+                "metrics": {
+                  "exact_exploitability_chips": 1.982388298060756,
+                  "extra_information_gap_chips": 1.7904571388343102,
+                  "river_only_gain_exact_prefix_chips": 1.7904571388343102,
+                  "value_player_zero_chips": 18.04046886077105,
+                  "within_partition_gain_chips": 0.19193115922644566
+                },
+                "receipt": {
+                  "bytes": 105442,
+                  "policy_sha256": "0a518a8b7b63f50c4fa9eb3fa256a25fa4ebaa1aed5c19e9b70b141be0187211",
+                  "sha256": "e2a208c667911f1388abfeb48cda0f0b6db28b9af1ea7151e5cd3bb02d774971"
+                },
+                "responses": [
+                  {
+                    "baseline_value_chips": 18.04046886077105,
+                    "exact_reply_value_chips": 18.131879901146263,
+                    "extra_information_gap_chips": 0.005822353514069789,
+                    "restricted_reply_value_chips": 18.126057547632193,
+                    "river_before_value_chips": 18.126057547632193,
+                    "river_only_gain_exact_prefix_chips": 0.005822353514069789,
+                    "target": 0,
+                    "within_partition_gain_chips": 0.08558868686114351
+                  },
+                  {
+                    "baseline_value_chips": -18.04046886077105,
+                    "exact_reply_value_chips": -14.167103305024751,
+                    "extra_information_gap_chips": 3.5750919241545507,
+                    "restricted_reply_value_chips": -17.742195229179302,
+                    "river_before_value_chips": -17.742195229179302,
+                    "river_only_gain_exact_prefix_chips": 3.5750919241545507,
+                    "target": 1,
+                    "within_partition_gain_chips": 0.2982736315917478
+                  }
+                ],
+                "seconds": 0.35767862500506453
+              }
+            },
+            {
+              "cpu_seconds": 3.668171,
+              "kind": "done",
+              "seconds": 3.6689639590040315,
+              "summary": {
+                "cells": 5
+              }
+            }
+          ],
+          "pid": 33125,
+          "slot": 2
+        }
+      ]
+    }
+  ],
+  "config": {
+    "assignment": "fixed sorted source-profile order, index modulo three",
+    "checkpoint_contract": {
+      "crossing": "first complete iteration crossing each work threshold; record previous count and overshoot; iteration labels exact; keep axes separate; coalesce simultaneous labels without changing training",
+      "export": "observation only; exact arrays/RNG/work equal uninterrupted training; finite canonical gzip JSON mtime0, hash and byte-exact policy round trip",
+      "iteration": [
+        16,
+        64,
+        128
+      ],
+      "node_work": [
+        100000,
+        1000000,
+        10000000
+      ]
+    },
+    "forecast": "fixed three-worker training sums plus six checkpoints per future cell at maximum own-score/roundtrip cost over all four source profiles and three repeats for that game/representation; charge scoring twice for in-run plus report replay; add measured setup/collection and full-size serialization/render fixture cost, then 2x; native projection separate",
+    "forecast_guard_multiplier": 2.0,
+    "forecast_native_cap_seconds": 3600,
+    "forecast_own_cap_seconds": 7200,
+    "future_checkpoints_per_cell": 6,
+    "future_policy_count": 840,
+    "input_sha256": {
+      "configs/parallel-cell-profile.json": "36d5882dc9db09e9b292fb288dd3f095f149addb759a24e86e4f7bbcdf000725",
+      "configs/range-mass-reply-diagnosis.json": "9f5193eeb6f3147c7a8ca99cedc8a3ca021992e8688a9154dfb1fcbaad44d538",
+      "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+      "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+      "results/parallel-cell-profile/profile.json": "1aaa78d762d646f478fd4d45e795e3ab1c3126c9de2415838c0ef0e34e037f6a",
+      "results/parallel-cell-profile/report/summary.json": "a81af5f98e1c5c2fd6f8f8e4220012f0c07ca16b21cbc071c131bfc2c715619d",
+      "results/range-mass-admission/study-own-policies.json.gz": "834106e42934a63a031b8ccbad1d49572b05cf7429af8817e9a4f7e9244c3e2d",
+      "results/range-mass-replies/diagnosis.json": "16b743d75ec798ec9781a24d5b8071f4425881888fe0252488931290c9f9da5c",
+      "results/range-mass-replies/independent.json": "907d4dcfacce417ab2fc61c0faa3e1691f0ae7d572abc3adc71781673bdcda3c",
+      "results/range-mass-sampled/study-own-receipts.json.gz": "dbcbbb99b96907e6ce357a81df488111b5cc12a9d01c147f2d49b35cdf2b51e3"
+    },
+    "metric_contract": {
+      "exact_exploitability_chips": "half sum of target best-response gains; zero-sum signs explicit",
+      "extra_information_gap_chips": "half sum of exact minus restricted reply values; exact exploitability equals within plus extra",
+      "positive_average_coverage": "fraction of partition rows with positive stored average mass; warm exact initialization can make this one immediately",
+      "regret_norm": "L2 norm over all stored regret entries",
+      "river_only_gain_exact_prefix_chips": "half sum of exact reply value minus exact-turn/restricted-river own hybrid value against fixed saved opponent; nonnegative, not retraining gain",
+      "river_visit_coverage": "fraction of river partition keys read by external passes, excluding exact initialization; full traversal visits every row; return null for no river rows",
+      "value_player_zero_chips": "exact policy value in target chips for seat0",
+      "within_partition_gain_chips": "half sum of restricted reply value minus saved target value"
+    },
+    "native_calibration_maximum_seconds": 1200,
+    "native_reference": {
+      "license": "Apache-2.0",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "name": "OpenSpiel",
+      "role": "EV/exact+restricted roots and achieved OWN reply/hybrid profiles only; no native actions/policies exported or used for training",
+      "version": "2.0.2"
+    },
+    "own_calibration_maximum_seconds": 1200,
+    "parallel_profile": "results/parallel-cell-profile/profile.json",
+    "repetitions": 3,
+    "saved_policy_config": "configs/range-mass-reply-diagnosis.json",
+    "schema_version": 1,
+    "scope": "checkpoint/metric correctness and timing of old own policies only; 48 own and 48 native calibration cases; synthetic 840-row IO/render fixture clearly labeled, not learning results; no large study/default/strength/global/river-cause admission",
+    "source_policy_selection": "all 16 final own profiles: two pinned games x exact/range-mass x full/each of three sampled seeds; full iteration4096, sampled10m visits",
+    "status": "saved_own_policy_pipeline_calibration_no_new_learning",
+    "tolerance_chips": 1e-09,
+    "worker_count": 3
+  },
+  "details_file": "own-profiles.json.gz",
+  "details_sha256": "696ecbe5bcd71d441921c5c33d4f855548c6614cab010e6c6514894a7800eac7",
+  "diagnostic_timing_fixture": "same-shape old-policy arrays and half-key lookup set; no trained diagnostic values claimed",
+  "environment": {
+    "cpu": "arm",
+    "cpu_query_status": "sysctl unavailable: CalledProcessError",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "failure": null,
+  "fixtures": [
+    {
+      "artifacts": {
+        "README.md": {
+          "bytes": 230,
+          "sha256": "05811f017bb493e5922690912dacf4ea84426fd6dd9b42e1d9504a81094f711f"
+        },
+        "exact_exploitability_chips-iteration.png": {
+          "bytes": 124873,
+          "sha256": "210b3363132545ea3632dd103ed5ff2a39ed43b7f212c7813d71c4e50aae3125"
+        },
+        "exact_exploitability_chips-work.png": {
+          "bytes": 120265,
+          "sha256": "5a825187cf818300bd807dfafa96ced29c70041bae79710b9b928a982e3fe6de"
+        },
+        "extra_information_gap_chips-iteration.png": {
+          "bytes": 118215,
+          "sha256": "e08ac31818c67fba0bd4263662557a024059a431aaa9c5ec2a27926c74021cdd"
+        },
+        "extra_information_gap_chips-work.png": {
+          "bytes": 115793,
+          "sha256": "999a7abbb1651d997b96ff650172800e639eb729d78ba5fdb8862a55b902765a"
+        },
+        "river_only_gain_exact_prefix_chips-iteration.png": {
+          "bytes": 120489,
+          "sha256": "28175ef6b8671a31a30cad3e90d4f64a2e4c12838b28ce7fdee5b129ba28428d"
+        },
+        "river_only_gain_exact_prefix_chips-work.png": {
+          "bytes": 116406,
+          "sha256": "5dba57b5cf0c371bdb8cc8855524c9f8f561ac7d3d8389bf2aecdcfd1ec4e09f"
+        },
+        "synthetic-840-profiles.jsonl.gz": {
+          "bytes": 51910842,
+          "sha256": "2c327b670d5ee79a69a9f2918d3ab47cb0cba5e74ee86a308c9bf7b64fa1544a"
+        },
+        "synthetic-rows.csv": {
+          "bytes": 384102,
+          "sha256": "eef9e08ee1e4c86b69468bb054835f87be854c5932bebd6cd3e83f8e1657774a"
+        },
+        "within_partition_gain_chips-iteration.png": {
+          "bytes": 125538,
+          "sha256": "a29e112d5f54192555f3ded0a1e6e4fb82c13b4679935c727a24e40933bb1d6b"
+        },
+        "within_partition_gain_chips-work.png": {
+          "bytes": 120527,
+          "sha256": "7ec9ff5c85f3e32ae4d16c0ab153dbc86542fbb4366e21ae1664a9f1caf37586"
+        }
+      },
+      "cpu_seconds": 16.589522999999996,
+      "directory": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/controlled-pipeline-check/results/runs/controlled-pipeline-check/1794168116640142000/io-fixture-0",
+      "figures": 8,
+      "rows": 840,
+      "scope": "SYNTHETIC IO CALIBRATION \u2014 NOT LEARNING RESULTS",
+      "seconds": 26.095437500000116,
+      "unique_source_profiles": 16
+    },
+    {
+      "artifacts": {
+        "README.md": {
+          "bytes": 230,
+          "sha256": "05811f017bb493e5922690912dacf4ea84426fd6dd9b42e1d9504a81094f711f"
+        },
+        "exact_exploitability_chips-iteration.png": {
+          "bytes": 124873,
+          "sha256": "210b3363132545ea3632dd103ed5ff2a39ed43b7f212c7813d71c4e50aae3125"
+        },
+        "exact_exploitability_chips-work.png": {
+          "bytes": 120265,
+          "sha256": "5a825187cf818300bd807dfafa96ced29c70041bae79710b9b928a982e3fe6de"
+        },
+        "extra_information_gap_chips-iteration.png": {
+          "bytes": 118215,
+          "sha256": "e08ac31818c67fba0bd4263662557a024059a431aaa9c5ec2a27926c74021cdd"
+        },
+        "extra_information_gap_chips-work.png": {
+          "bytes": 115793,
+          "sha256": "999a7abbb1651d997b96ff650172800e639eb729d78ba5fdb8862a55b902765a"
+        },
+        "river_only_gain_exact_prefix_chips-iteration.png": {
+          "bytes": 120489,
+          "sha256": "28175ef6b8671a31a30cad3e90d4f64a2e4c12838b28ce7fdee5b129ba28428d"
+        },
+        "river_only_gain_exact_prefix_chips-work.png": {
+          "bytes": 116406,
+          "sha256": "5dba57b5cf0c371bdb8cc8855524c9f8f561ac7d3d8389bf2aecdcfd1ec4e09f"
+        },
+        "synthetic-840-profiles.jsonl.gz": {
+          "bytes": 51910842,
+          "sha256": "2c327b670d5ee79a69a9f2918d3ab47cb0cba5e74ee86a308c9bf7b64fa1544a"
+        },
+        "synthetic-rows.csv": {
+          "bytes": 384102,
+          "sha256": "eef9e08ee1e4c86b69468bb054835f87be854c5932bebd6cd3e83f8e1657774a"
+        },
+        "within_partition_gain_chips-iteration.png": {
+          "bytes": 125538,
+          "sha256": "a29e112d5f54192555f3ded0a1e6e4fb82c13b4679935c727a24e40933bb1d6b"
+        },
+        "within_partition_gain_chips-work.png": {
+          "bytes": 120527,
+          "sha256": "7ec9ff5c85f3e32ae4d16c0ab153dbc86542fbb4366e21ae1664a9f1caf37586"
+        }
+      },
+      "cpu_seconds": 16.892418999999997,
+      "directory": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/controlled-pipeline-check/results/runs/controlled-pipeline-check/1794168116640142000/io-fixture-1",
+      "figures": 8,
+      "rows": 840,
+      "scope": "SYNTHETIC IO CALIBRATION \u2014 NOT LEARNING RESULTS",
+      "seconds": 16.894654124989756,
+      "unique_source_profiles": 16
+    },
+    {
+      "artifacts": {
+        "README.md": {
+          "bytes": 230,
+          "sha256": "05811f017bb493e5922690912dacf4ea84426fd6dd9b42e1d9504a81094f711f"
+        },
+        "exact_exploitability_chips-iteration.png": {
+          "bytes": 124873,
+          "sha256": "210b3363132545ea3632dd103ed5ff2a39ed43b7f212c7813d71c4e50aae3125"
+        },
+        "exact_exploitability_chips-work.png": {
+          "bytes": 120265,
+          "sha256": "5a825187cf818300bd807dfafa96ced29c70041bae79710b9b928a982e3fe6de"
+        },
+        "extra_information_gap_chips-iteration.png": {
+          "bytes": 118215,
+          "sha256": "e08ac31818c67fba0bd4263662557a024059a431aaa9c5ec2a27926c74021cdd"
+        },
+        "extra_information_gap_chips-work.png": {
+          "bytes": 115793,
+          "sha256": "999a7abbb1651d997b96ff650172800e639eb729d78ba5fdb8862a55b902765a"
+        },
+        "river_only_gain_exact_prefix_chips-iteration.png": {
+          "bytes": 120489,
+          "sha256": "28175ef6b8671a31a30cad3e90d4f64a2e4c12838b28ce7fdee5b129ba28428d"
+        },
+        "river_only_gain_exact_prefix_chips-work.png": {
+          "bytes": 116406,
+          "sha256": "5dba57b5cf0c371bdb8cc8855524c9f8f561ac7d3d8389bf2aecdcfd1ec4e09f"
+        },
+        "synthetic-840-profiles.jsonl.gz": {
+          "bytes": 51910842,
+          "sha256": "2c327b670d5ee79a69a9f2918d3ab47cb0cba5e74ee86a308c9bf7b64fa1544a"
+        },
+        "synthetic-rows.csv": {
+          "bytes": 384102,
+          "sha256": "eef9e08ee1e4c86b69468bb054835f87be854c5932bebd6cd3e83f8e1657774a"
+        },
+        "within_partition_gain_chips-iteration.png": {
+          "bytes": 125538,
+          "sha256": "a29e112d5f54192555f3ded0a1e6e4fb82c13b4679935c727a24e40933bb1d6b"
+        },
+        "within_partition_gain_chips-work.png": {
+          "bytes": 120527,
+          "sha256": "7ec9ff5c85f3e32ae4d16c0ab153dbc86542fbb4366e21ae1664a9f1caf37586"
+        }
+      },
+      "cpu_seconds": 16.982293999999996,
+      "directory": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/controlled-pipeline-check/results/runs/controlled-pipeline-check/1794168116640142000/io-fixture-2",
+      "figures": 8,
+      "rows": 840,
+      "scope": "SYNTHETIC IO CALIBRATION \u2014 NOT LEARNING RESULTS",
+      "seconds": 16.98378799999773,
+      "unique_source_profiles": 16
+    }
+  ],
+  "format": "poker-ai-saved-own-pipeline-cost-v1",
+  "parent_cpu_seconds": 86.497575,
+  "reaped_children_cpu_seconds": 42.54,
+  "scratch": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/controlled-pipeline-check/results/runs/controlled-pipeline-check/1794168116640142000",
+  "seconds": 107.72502708299726,
+  "source": {
+    "dirty": false,
+    "git_commit": "f6ca5cbdbaaa81b89028d5aabc4ea5c9f85cddd4",
+    "git_status": [],
+    "sha256": {
+      "configs/controlled-pipeline-check.json": "2acbc2f3c6cd7628723c9f37e9354182a494a447833a1204c554dc660268988d",
+      "pyproject.toml": "a88e6023ac3ae5dd08da9ed6eceb83967e20e42aa9fe88dc4fb11c9fa49529f1",
+      "scripts/audit_controlled_pipeline.py": "80c32fe7c8840cf9a6cc26379aec575cf73771e0399c42ee8b8257331b46fa67",
+      "scripts/profile_controlled_pipeline.py": "3cea6f4204f498314b8edd1e16ea3ebbcfedde555d465aea1017f87554bbbbda",
+      "scripts/report_controlled_pipeline.py": "6d824fe1d851c8cd6be6aed0265e79baea7ec2e91aa15275132ccc98d215db4b",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/made_category.py": "2dfae8205af343943f4736d007efd2e18cc70c7147d7a2686db6730909831cc1",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/public_board.py": "8e3acf0d1dd36827962711f8561fa17a05abe042997498ec2a6044c45f83bf80",
+      "src/poker_ai/abstraction/range_mass.py": "b6afd34d1278e28424ee22ef1fc44fed9dc9f8179bf3cf014faef86b41080ca8",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/finite.py": "39dc15bf2daafc0bc0b6af0d014990fdd351ab39feef0d80f1796d0233422268",
+      "src/poker_ai/opponent_modeling/__init__.py": "a58c5e8a282812b3efb575227a25e0c37872c0709aa80696008b7e404ced159b",
+      "src/poker_ai/opponent_modeling/bayes.py": "d67e382b0f4115f167965e74ca0ad3768078d8b6b4e887da002be9850d5a4419",
+      "src/poker_ai/opponent_modeling/experiment.py": "4a8876a6eb211828c81b89bce909785953aed76ba23c6ebbaab8b71cd28d1580",
+      "src/poker_ai/opponent_modeling/policies.py": "a3a8faa9c32960f9ecb1323f0d218c9768f1eef7bb8885490fe64e21b4b534b0",
+      "src/poker_ai/postflop/__init__.py": "c05fd0b2b82cf5da814ea101df7b614efab78ca97d4f7fc1d6881a2667ae3d89",
+      "src/poker_ai/postflop/cached_nodes.py": "9475fd3bbe708e2094d5de0061d12fa40b602c47538d8e17c63e212ca2d1b02c",
+      "src/poker_ai/postflop/cell_process.py": "848944e5dad066aee2715d6ae3f09ee546d1827ce005baa7b8216bc2aa0f6630",
+      "src/poker_ai/postflop/collision_diagnosis.py": "1ecefdd9550fd9d1e6ab6f890f3dc9dc49c788f2bdb16f6e02f22fd1854114bc",
+      "src/poker_ai/postflop/controlled_checkpoints.py": "e723e4f74dbcb42c61d6c65c07d775a61d8008bdf1aa27907db77aff819b29a9",
+      "src/poker_ai/postflop/controlled_profile.py": "ae5036e03966d4e281e51a9b959da1b21584f0bba9703a3f4b3ebfb799e33673",
+      "src/poker_ai/postflop/controlled_scoring.py": "a081e91c36eb53518e48d4418dae6bb85fe36df37bca857e4b1903db6207cd09",
+      "src/poker_ai/postflop/controlled_training.py": "396b6f88b173bc7427469bbc9affb754a9d7ec32a01b5f1a89b371eafedc26ba",
+      "src/poker_ai/postflop/fresh_cohort.py": "c0b9041f4b6208a2da3538b678cc2cd19ef885af440e5b73cef3cbc879773326",
+      "src/poker_ai/postflop/fresh_learning.py": "673fcc22174ce70e53024bb72742f7c512c4d71f6472deaa2f8d2c2de40a7daf",
+      "src/poker_ai/postflop/fresh_report.py": "e776e483e7f02d847ba8705b62bcbbf3e497d8a2cef51fd7254a04988713970e",
+      "src/poker_ai/postflop/game.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/postflop/jit_cfr.py": "1b8e28d275565e173f2a1b08cd53ccee2b3b810d58a6f6492e1ed55b60dd5c64",
+      "src/poker_ai/postflop/learning.py": "2d667f797a8d98277dd31597c765a1f693473a916a11455f9352d6517254dc8a",
+      "src/poker_ai/postflop/made_admission.py": "852c42a323b7c50601406c981d4e09e17e4a3445f7bb7d2a37e83f00807b5ed5",
+      "src/poker_ai/postflop/made_admission_report.py": "eb360c825e422c683992753d3ce69bd03e5b1b4ea945dc3599c896eca4470a0b",
+      "src/poker_ai/postflop/matrix.py": "41ec2f9b16b461aab754547558b7d5713054c33f9f8e6e13dfcf4eb32d27f49d",
+      "src/poker_ai/postflop/node_profile.py": "efad8b155e2fc6dec9fc31c2ed68d8bc682276f0d439d77aeda4f84543673fc1",
+      "src/poker_ai/postflop/parallel_profile.py": "8a9cd3fdf0e96e2d22d3c610ce6941041f0670f4c547494be0f167fd2f00bf6c",
+      "src/poker_ai/postflop/pipeline_cost.py": "85fff3e70c4f253a799a4b5ecd968c87352a6ebcef65b7f78873e5046700e4e1",
+      "src/poker_ai/postflop/pipeline_native_checks.py": "d3a14ec7da845f8579df2934e6144b4a37600b00da009ae3b30b3c63083d9fd8",
+      "src/poker_ai/postflop/pipeline_render.py": "608b005477395e67478d9b93cec72b25793c0845ad3483ca64ae23f6b3177a64",
+      "src/poker_ai/postflop/pipeline_report.py": "bf31442e66082f7998923753deef73fb010e26ba2dec8980b800c23858593a7e",
+      "src/poker_ai/postflop/policy_swap_report.py": "effdc74ea7f83c5c84d0a478bbfec26707b6f93dea54588325abc7d30a6e7073",
+      "src/poker_ai/postflop/policy_swaps.py": "13756e57fb21b5c8a1761d812471c7dbf3417d7221d5a1108e23ac663e49b63a",
+      "src/poker_ai/postflop/public_evidence.py": "45081c3b8ab22fbd730384e8c65b4f9de0fae3651d47d6aa7744fe8439a2bbb0",
+      "src/poker_ai/postflop/public_metrics.py": "2c9f818021df24f19b6aa57658f5c5409485fee52fdf054bc6913051e9e95127",
+      "src/poker_ai/postflop/public_report.py": "358f843c8e6fdfb9d18d37b71bd47bfdab6a27d0f0bebe63423071fb243a7977",
+      "src/poker_ai/postflop/public_study.py": "650e27e44fc273e6ac8a6c6fdb986ccc3c0f463b839ff42c5f2dcd4b4455f417",
+      "src/poker_ai/postflop/range_admission.py": "cd6f5852abe013d5fae63d89dc6d77a9c36efd05ceeb0617ad0a9ffc95af88d6",
+      "src/poker_ai/postflop/range_admission_report.py": "ea79a49529dc6bfd550d50fcd718841d5d3dae6767ffb2b1fc4e03a57c4e7dac",
+      "src/poker_ai/postflop/range_protocol.py": "d3d933181c4da6f8afb862a3a4f7822b8162435f93f5ad21dc74c1301f4291d5",
+      "src/poker_ai/postflop/range_replay.py": "eac3fa590133133939c490f7bea371c5235a404e3cbeb0ff2763b8fdf2440da2",
+      "src/poker_ai/postflop/range_reply.py": "bd2e10ec39487ddbc0c4cc45e04500181cd36d577377cd4b8a4391eaab35b44e",
+      "src/poker_ai/postflop/range_reply_report.py": "0cc1fae6e70cfad8cb0a24644d7101625fd61724e47cbf1beb67690e07cac77d",
+      "src/poker_ai/postflop/range_sampled.py": "7b90bf1ffdb271e0fe80d9d5ec5cbbac4498599fb5d6a0dc381d1a566e9a8668",
+      "src/poker_ai/postflop/range_sampled_report.py": "c46791e9d06972853348f5c6b4b41120b1085362936cb125dc958970e599bafc",
+      "src/poker_ai/postflop/reply_diagnosis.py": "c59b3892733fffa2913742b43659582a86ba0856d52867d78ff40195459fbb3d",
+      "src/poker_ai/postflop/reply_report.py": "665510a2ca0aad40bbc54045e5b5b5697b628388615f11461e8b23706c65dba7",
+      "src/poker_ai/postflop/reply_trace.py": "f241751d2966adce8301ab29970ad951f5be367b05d0a46607ffe09f44f0a8b0",
+      "src/poker_ai/postflop/report.py": "4b3bc78c52260bca322b19b1dbedeaf24b3912c8f5ca8a093f060d7c1f7d475a",
+      "src/poker_ai/postflop/river_artifacts.py": "b4d4fc567fcc068b7eede90b6b4e94efe51508af5ff1e03b21808216d6892792",
+      "src/poker_ai/postflop/river_distinction_report.py": "f826285e9220c718276445d1217feed3889d65b31129dd68ac055cfa64797ffc",
+      "src/poker_ai/postflop/river_distinctions.py": "cf3f4618e726b9347fcf2939ae7cd956b8733714e3e0d9bf62135227778b30ca",
+      "src/poker_ai/postflop/river_report.py": "7ac4d708babff6c3b5f6f19770e4af91648a204b5d8dbacd5cac6918f6bccbca",
+      "src/poker_ai/postflop/river_sampling.py": "e3cf14adce001c37a5b62bc97217a50184aa113172e0bb0f686e6b7d3e975f6b",
+      "src/poker_ai/postflop/river_study.py": "c8debf96bbb348604e8b0dff80344cbc806170d830829b96fb26b22cfd74c7a3",
+      "src/poker_ai/postflop/row_policy.py": "4134ad8bd19e4c925559bc778b953bd74a12c4329cc6a429b18e6cc616ac7be5",
+      "src/poker_ai/postflop/row_profile.py": "12505e1574a75a5e6d5b66fd491e1a0a236b1d865819d9f40c34fe6430e1f3ce",
+      "src/poker_ai/postflop/sampling.py": "ac0d31aaefb8217be78b4df1ffa8c6a98a25749d1de1aadd8767121de0a03288",
+      "src/poker_ai/postflop/training_isolation.py": "e5044e4269a3cc980e038d8055a819ef8bfc85ee701aae93f7d09fdf9e509269",
+      "src/poker_ai/postflop/tree.py": "7c0af767759564759b9583c1792e1a0271914defec267c3180b1256d4ebb562d",
+      "src/poker_ai/reproducibility.py": "1f9cf96e33cbb11825348e03eccbd445e2d299d5623f9358846660462a96aeba",
+      "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
+      "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
+      "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/arithmetic.py": "3ed2bd872a1ba21982f6b2b6631f40221d2f920bad06c05c45d325274acfd1c4",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controlled_pipeline.py": "79032331f7d3d7d7bdb05299d2cbaede13704e0512270f88a56e38a9f33724c6",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/fresh.py": "adb98613e90e50e3ee00834064c8241a8d8c388b933501c480c6be93ebf9459b",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/learning.py": "d14c3e28ef123f375e6d9659e49407cca867074af2993977c8ee6f8f70c7f637",
+      "src/poker_ai/solver_validation/made_admission.py": "2dc0fe978c86dfa13cb0ee1e9e085370827e08a6f01a6d2d1f84cd40be9814e1",
+      "src/poker_ai/solver_validation/policy_swaps.py": "f4375d0a27a0bc8a60b4018100f8df8f0afb2d595bd21e2d6a6f96e9841c0ff5",
+      "src/poker_ai/solver_validation/public_board.py": "d7ebef61171379abdad2d84b47ff5636aeee63c6a02cdbe4433b87966ad9770a",
+      "src/poker_ai/solver_validation/range_admission.py": "4e42dec0070c2e378ebc5a3fe6a9e232a36fd9bdc0fee81ba977f2f06f0d1de5",
+      "src/poker_ai/solver_validation/range_reply.py": "028c10ac1e3053f4a9380a5ce227595cadba398ab4b872b32d948fbb513dcc5f",
+      "src/poker_ai/solver_validation/range_sampled.py": "832482c669998df11ef68ff57024176550ef7cbadf313c2271142a2f2af33043",
+      "src/poker_ai/solver_validation/reference.py": "335f501164b3fb38f165c23b08559e77cf2e7097106b112f1539943aee05f80d",
+      "src/poker_ai/solver_validation/reply_diagnosis.py": "befcd51bb7f724e65978d724b044681530da0057ceac4eaedddf45b254cd1b37",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/river.py": "6f648f997b112200d5c4ea52e23debc8faa2c683f22f9a0a3e55d08b31e45a46",
+      "src/poker_ai/solver_validation/river_distinctions.py": "abdf626863e8e6c2bea582f56a5496a7618dc1240f899dbde923723d166d1909",
+      "src/poker_ai/solver_validation/spots.py": "2c6383209429d345a6debb3accbdaef061e3896cad2479efa9cdce8815ac40af",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "a40b4b6bcf2f0b56297bae295fde3c4e914c0f4cd8b1792c7c8ca96d87aa10cc",
+      "src/poker_ai/toy/cfr.py": "03a04076225efa9faf2ae0440020080f860343d91f33e094944b268f99b51440",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "b618c65f17531cd4d4c2b7b2406ff66cb28eeb9a498a175d3aa6eda99b598d13",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+    }
+  },
+  "status": "completed",
+  "strength_comparison_performed": false,
+  "training_performed": false
+}

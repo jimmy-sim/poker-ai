@@ -1626,6 +1626,15 @@ Read the [fixed plan](controlled-pipeline-check.md) and
 [PR #27](https://github.com/jimmy-sim/poker-ai/pull/27). Codex assisted; personal
 hands-on time is not inferred.
 
+The first own-only cost run completed all 48 cases and three reporting fixtures
+in 107.725 seconds from published source `f6ca5cb`. Its receipt is retained. CI then
+caught a base-environment typing problem: an optional plotting dependency was
+imported directly. The poker tests had not started in that CI job. Local base
+pytest had passed, but base-only typing had been missed. We will fix that import
+boundary, check base typing and repeat the same calibration under the corrected
+source. No scientific gate or training rule changes; native timing and the large
+learning run remain off.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

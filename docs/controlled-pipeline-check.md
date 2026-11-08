@@ -146,3 +146,18 @@ recall, signs and additive identities. Packing preserves legal weights and exact
 padded bytes; 840-record JSONL decoding is streamed. Native functions supply
 comparison scalars only; old own profiles remain the sole calibration inputs.
 This is Codex-assisted solo self-review, not independent human review.
+
+## First own-cost receipt and CI correction
+
+Published source `f6ca5cb` completed all 48 own cases and all three 840-record IO
+fixtures in 107.725027s, with no new learning. The unmodified receipt and 16-profile
+bundle are retained in `results/controlled-pipeline-check/attempts/f6ca5cb/`.
+They are historical source-bound evidence, not the final admission forecast.
+
+Hosted [CI 42517901699](https://github.com/jimmy-sim/poker-ai/actions/runs/42517901699)
+failed base-only typing before tests on both Python jobs: the renderer directly
+imported optional `matplotlib`. Local all-extras typing and base pytest had passed;
+base-only typing had been omitted. Use the existing dynamic optional-import
+pattern, verify typing in base environments too, then repeat the same fixed
+calibration under the corrected published source. No cap, seed, case, metric or
+acceptance tolerance changes. Native timing and learning remain off until then.
