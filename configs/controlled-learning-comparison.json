@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_diagnostic_learning_only",
+  "input_sha256": {
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "configs/controlled-pipeline-check.json": "2acbc2f3c6cd7628723c9f37e9354182a494a447833a1204c554dc660268988d",
+    "results/controlled-pipeline-check/own.json": "2161361df686251ffabb93c03618217df409cc00220573e910f86f43a8fd6500",
+    "results/controlled-pipeline-check/own-profiles.json.gz": "696ecbe5bcd71d441921c5c33d4f855548c6614cab010e6c6514894a7800eac7",
+    "results/controlled-pipeline-check/native.json": "5035a07acce3173820489d37e03b518bf6918cb5eca351f27f81c29e4ba9d220",
+    "results/controlled-pipeline-check/report/summary.json": "a2a2e02d30dd85fedf946d7ec98be2ab5fbb6e16918370c3c9ee86be3429f514"
+  },
+  "comparison_config": "configs/training-isolation.json",
+  "pipeline_summary": "results/controlled-pipeline-check/report/summary.json",
+  "worker_count": 3,
+  "start_method": "spawn",
+  "assignment": "original 140-cell order, index modulo three",
+  "maximum_own_seconds": 7200,
+  "maximum_native_seconds": 3600,
+  "tolerance_chips": 1e-09,
+  "admission": "source-bound correctness receipt, complete local base/optional checks and both hosted CI jobs passed on checked source before new postflop learning",
+  "correctness_receipt": "results/controlled-learning/correctness.json",
+  "admission_receipt": "results/controlled-learning/admission.json",
+  "own_backend": {
+    "full": "unchanged ControlledTrainer",
+    "external": "unchanged CachedNodeTrainer"
+  },
+  "checkpoint_labels": {
+    "work": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "iteration": [
+      16,
+      64,
+      128
+    ]
+  },
+  "expected_cells": 140,
+  "expected_logical_checkpoints": 840,
+  "checkpoint_storage": "atomic own-v1 legal-weight gzip snapshots; hash/metadata/menu/bit checks; final compressed JSONL archive; stream one record, never decode 840 profiles together",
+  "own_replay": "each fixed worker replays its own saved checkpoints without training before completing; same three partitions",
+  "native_stage": "own published first for recorded study; comparison-only OpenSpiel2.0.2 Apache-2.0; all EV/exact+restricted roots/achieved own replies+river hybrids at1e-9; no native action or policy export",
+  "analysis": {
+    "axes": "work and iteration separately; never pool",
+    "primary": "all four original primary metrics in chips and percent initial pot",
+    "factor_levels": {
+      "traversal": [
+        "full",
+        "external"
+      ],
+      "regret_rule": [
+        "signed",
+        "clipped"
+      ],
+      "regret_weight": [
+        "uniform",
+        "linear"
+      ],
+      "average_weight": [
+        "uniform",
+        "linear"
+      ]
+    },
+    "contrasts": "all 32 conditional one-factor differences plus all15 averaged nonempty factorial differences (order1..4; mean signed product times2^order); paired seeds/individual values retained; deterministic full controls reused, never independent seed replicates",
+    "bridge": "four declared full-only averaging/initialization points; last endpoint aliases common cell, no repeated training",
+    "uncertainty": "three fixed external seeds, individual values and arithmetic means; no seed-population confidence intervals, significance or best-arm/default admission"
+  },
+  "partial": "retain every completed snapshot/event and failure reason; incomplete grid cannot become complete report or favorable subset",
+  "scope": "original known-game causal-controls diagnosis only; no new representation/seed/budget/action/range, no best-arm selection/default/fresh/global admission"
+}

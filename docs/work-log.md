@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Original controlled-learning comparison, prospective runner
+
+- **Request / issue:** Continue autonomous daytime #4 work after the measured
+  pipeline forecasts fit. [Plan](controlled-learning-comparison.md); original
+  140 cells, seeds, work/iteration labels and scope remain frozen.
+- **Before outcomes:** Publish this protocol before implementation and require a
+  source-bound correctness receipt, complete local checks and both hosted CI jobs
+  before new postflop learning. Three fixed workers, streaming legal snapshots,
+  own replay, all-cell native comparison and separate hard caps.
+- **Analysis fixed in advance:** All raw seeds, 32 conditional differences and 15
+  averaged factorial differences; separate work and iteration axes, four-point
+  bridge with common endpoint reused. No winner/default/global admission.
+- **Current result:** Protocol only; implementation, checks, admission and learning
+  remain pending. Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-08 — Checkpoint/scoring and remaining pipeline cost
 
 - **Request / issue:** Continue through-day #4 work after PR #26 puts three-process
