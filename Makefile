@@ -319,3 +319,11 @@ benchmark-slumbot: preflight-slumbot
 # Offline own-only learning, exact audits, conditional risk and all tables/figures.
 analyze-extensions:
 	$(UV) run --locked --extra research python scripts/analyze_extensions.py
+
+.PHONY: profile-parallel-cells report-parallel-cells
+profile-parallel-cells:
+	$(UV) run --locked python scripts/profile_parallel_cells.py
+
+report-parallel-cells:
+	$(UV) run --locked python scripts/profile_parallel_cells.py \
+		--report results/parallel-cell-profile/profile.json

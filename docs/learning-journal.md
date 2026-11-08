@@ -53,13 +53,15 @@ Step 27 tests an opt-in policy-row cache against the frozen trainer and profiles
 it again without changing the learning rules.
 Step 28 tests an immutable game-node cache against every original node/edge,
 then checks exact training trajectories before profiling again.
+Step 29 measures independent cells across CPU processes, including startup and
+resource costs, without changing a cell's learning rules.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–28:** What the extensions and recent experiments taught us.
+- **Steps 10–29:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1527,6 +1529,60 @@ results. Startup and contention will be measured, not assumed away. See the
 [recorded table](../results/cached-node-profile/report/tables.md) and
 [PR #25](https://github.com/jimmy-sim/poker-ai/pull/25). Hosted CI remains pending
 at this evidence checkpoint.
+
+## 29. Measure several independent training cells at once
+
+**November 8, 2026.** The cached-node result is faster, but serial training still
+exceeds the two-hour planning gate. The next question is whether independent runs
+can use more of this Mac's CPU cores without changing their answers.
+
+A **process** is a separate running Python interpreter. Each receives a fixed
+list of cells, builds its own game trees, and creates a separate trainer and
+fixed random generator for each cell. No strategy table or random state is shared.
+This does not speed up the steps within one training trajectory; it lets unrelated
+trajectories proceed at the same time.
+
+**Example:** With two workers, cells 0, 2, 4 go to one and cells 1, 3, 5 go to the
+other. If the first worker has harder cells, the entire batch waits for it. We must
+measure that imbalance, startup and competition for CPU time; dividing serial time
+by two would hide them. More processes also replicate trees in memory and consume
+simultaneous resources.
+
+The plan fixes one, two and three processes, three balanced-order repeats, and all
+140 cells each time. All **1,260 endpoints** must exactly match the saved serial
+arrays/RNG/work fingerprints before we compute any forecast. Timing is a short
+calibration; it does not run the large learning comparison or measure poker skill.
+
+The first spawn tests exposed a test-module import path problem. Giving child
+interpreters the test source path fixed that fixture; no training equation changed.
+All 37 new tests now pass, including actual spawned toy runs, deliberately failing
+workers, early exits, timeouts and child cleanup. Strict typing passes (261 files).
+All 132 focused checks pass. Full local suites pass 1076 all-extras tests on
+each Python 3.11 / 3.12, and 1043 base tests with 24 optional skips. Lint,
+typing and hooks pass. Spawned tests confirm child CPU accounting in all three
+environments. Hosted CI and the fixed calibration remain pending at this
+checked-code checkpoint. Read the [fixed plan](parallel-cell-calibration.md) and
+[PR #26](https://github.com/jimmy-sim/poker-ai/pull/26). Codex assisted; personal
+hands-on time is not inferred.
+
+The fixed calibration completed all nine batches in **197.722 seconds**, from
+clean published source `0dd5af6`. All **1,260 endpoints** exactly match serial
+results, including work and cache counters. All repeats are retained. Report files
+regenerate exactly on Python 3.12; timing itself varies with machine conditions.
+
+One / two / three processes took median **33.163 / 18.691 / 13.827 seconds** per
+short batch. Three processes give a measured median 2.400× elapsed-time speedup.
+Median total CPU time rises from 33.175 to 40.795 seconds, because extra processes
+replicate setup and use simultaneous resources. Faster elapsed time is not less
+resource consumption.
+
+The guarded known-cost forecasts are **12,250.546 / 6,299.036 / 4,257.374
+seconds**. Two and three processes are below 7,200, but scoring and checkpoint
+costs are still missing. The large learning comparison remains off. Next we will
+verify those functions and measure the remaining pipeline costs with a fixed
+three-process candidate. This is progress toward an affordable experiment, not
+proof of stronger poker play. See the [table](../results/parallel-cell-profile/report/tables.md).
+Hosted CI remains separately pending at this evidence checkpoint.
 
 ## Your own learning notes
 
