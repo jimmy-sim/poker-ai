@@ -38,7 +38,8 @@ Step 18 completes a best-response diagnosis: the saved candidate is nearly
 stable within its compressed game but remains vulnerable to exact information.
 Step 19 finds missing relative-strength, blocker and action-conditioned range
 distinctions. It completes a diagnosis, without training a replacement.
-Step 20 defines the next candidate and its tests; learning results are pending.
+Step 20 defines the next candidate and its tests. Step 21 starts its fixed
+full-control admission; measured outcomes are pending.
 
 You can read this in three sittings:
 
@@ -1057,3 +1058,20 @@ Keep earlier failed results and distinguish corrections from new experiments.
 Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
+
+## 21. Test whether the range-aware description is accurate enough
+
+**November 7, 2026 — in progress.** The next question is whether adding the river
+range masses actually improves the small-game strategies. We will train the five
+fixed descriptions on the same two games, visiting the whole tree each iteration.
+This separates representation limits from the extra noise of sampled learning.
+
+The earlier example explains the intended distinction: a river 9d blocks the
+opponent's pair of nines; 9h does not. The new description can tell those cases
+apart. That capability alone does not prove it learns a good strategy.
+
+The [plan](range-mass-admission.md) keeps the previous limits. We will save all
+60 checkpoints and independently check their values. A failed result stays in
+the report. This milestone stops after those checks, before sampled learning.
+Codex is assisting with the implementation; no new personal learning or hours
+are inferred from this run.

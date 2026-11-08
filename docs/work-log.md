@@ -13,6 +13,16 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Range-mass full-control admission (in progress)
+
+- **Issue / authorization:** User requested continuing #4 after the protocol gate.
+- **Prospective scope:** One unchanged range-mass candidate; all five controls,
+  two known games and six full-tree checkpoints. Publish checked code before
+  measuring; preserve failed gates. [Plan](range-mass-admission.md).
+- **Stopping point:** Independently audited full-control evidence and journal
+  step 21. No sampled learning, new feature search or global/default change.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-07 — Range-mass candidate protocol and correctness
 
 - **Request / issue:** Continue #4 by defining the next blocker/range-aware
