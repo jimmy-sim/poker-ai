@@ -55,13 +55,15 @@ Step 28 tests an immutable game-node cache against every original node/edge,
 then checks exact training trajectories before profiling again.
 Step 29 measures independent cells across CPU processes, including startup and
 resource costs, without changing a cell's learning rules.
+Step 30 verifies checkpoint/scoring behavior and measures the still-missing
+pipeline costs on old saved policies.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–29:** What the extensions and recent experiments taught us.
+- **Steps 10–30:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1583,6 +1585,46 @@ verify those functions and measure the remaining pipeline costs with a fixed
 three-process candidate. This is progress toward an affordable experiment, not
 proof of stronger poker play. See the [table](../results/parallel-cell-profile/report/tables.md).
 Hosted CI remains separately pending at this evidence checkpoint.
+
+## 30. Check what a training checkpoint means
+
+**November 8, 2026.** Three processes make the known training cost affordable on
+paper. We still need to check the work of saving, scoring and reporting policies.
+This step tests that machinery and calibrates OLD own policies; it does not launch
+the larger learning comparison.
+
+A **checkpoint** records a policy at a declared point. A work checkpoint saves the
+first complete iteration that crosses its node-visit threshold, including any
+overshoot. An iteration checkpoint saves that exact iteration. They answer
+different questions, so the report keeps them separate. Reading or saving a
+checkpoint must not change the next training update or random sequence.
+
+The scorer divides exploitability into improvement available within the saved
+information groups and extra improvement from exact information. Those pieces
+must add back to the total. A separate river-switch number keeps the saved
+opponent fixed; it does not predict improvement after retraining.
+
+One subtle diagnostic: exact warm initialization can give every row positive
+average mass immediately. That makes average coverage one while later sampled
+river visits are still zero. Full coverage does not mean a good strategy.
+
+A large reporting unit test also revealed unnecessary file padding. The internal
+arrays have width 44 for wider chance menus, while a betting row uses two or three
+actions. Files now save legal weights only and restore exactly the same matrix
+bytes. The synthetic 840-record IO fixture streams one record at a time. The first
+unit was interrupted during a run that also waited for macOS font discovery;
+we did not measure RAM usage or establish a sole cause for its delay.
+
+All 56 new fast checks and seven slower integration checks pass. The latter check
+all 16 old published profiles, native values/replies and all eight labeled fixture
+figures (60.58 seconds on Python 3.11, 59.17 on Python 3.12). Full local suites
+pass 1132 fast tests on each Python version; base1099 pass / 24 optional skips.
+Typing/lint/format/hooks pass; hosted CI and formal timing runs remain pending. Fixture figures say **SYNTHETIC IO CALIBRATION — NOT LEARNING
+RESULTS** and stay in scratch space. No new playing-strength result is claimed.
+
+Read the [fixed plan](controlled-pipeline-check.md) and
+[PR #27](https://github.com/jimmy-sim/poker-ai/pull/27). Codex assisted; personal
+hands-on time is not inferred.
 
 ## Your own learning notes
 

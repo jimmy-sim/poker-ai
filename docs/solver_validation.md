@@ -89,6 +89,13 @@ read again before the [public-board comparison](public-board-comparison.md).
 Its native expected-return/best-response functions check frozen own policies and
 cross-play only; the new learner never loads reference outputs.
 
+November 8, issue #4: [pipeline cost calibration](controlled-pipeline-check.md)
+reuses this previously read OpenSpiel 2.0.2 license; installed bytes were rechecked
+against the same SHA256. The separate native module compares old own-policy EV,
+exact/restricted roots and achieved own reply/hybrid values. Tests block reference
+training and policy export. No native action output enters own training; the
+shared own game/export mechanics remain a limitation of this reference check.
+
 No PioSOLVER, GTO Wizard or other commercial solver data are imported, copied or
 used for training. Production `agents`, `training` and `abstraction` packages do
 not import the comparison package/OpenSpiel; an AST test enforces that import

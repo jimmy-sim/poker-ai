@@ -86,3 +86,63 @@ both estimates fit, this milestone only establishes tested machinery and a
 resource estimate. A subsequent checked runner/protocol must explicitly admit
 and enforce the complete fixed-work experiment. No strength/river-cause/default
 or fresh/global claim follows old-policy cost calibration.
+
+## Implementation checkpoint before calibration
+
+Own scorer checks exact/restricted roots with separate own response calculations,
+value ordering and both frozen river-prefix accounting panels. Context validation
+requires unchanged game arrays, legal menus, owners, information mapping, streets
+and perfect recall. Native code is separate; it compares scalar roots and achieved
+OWN replies only. Tests block reference training/policy-export methods.
+
+The observer checks raw arrays/policies/RNG/key/work fingerprints around callbacks,
+coalesces labels without pooling axes, and exports read-only copies. Diagnostic
+cost uses explicit same-shape copies of old policy arrays as storage fixtures and
+half the keys for lookup work; their returned norms/coverage are not learning
+results. No training update or random draw occurs in cost calibration.
+
+The first full-size IO unit was interrupted after six checks. Its padded payload
+was unnecessarily large; the interrupt traceback also showed a macOS font-discovery
+subprocess wait. No RAM usage was measured, so this is not a causal memory/timing
+claim. Artifact storage now packs only legal decision weights (two or three here),
+with explicit menus and exact padded-byte restoration; noncanonical negative-zero
+padding is rejected. The strategy math/arrays stay unchanged, including chance
+width 44. The synthetic 840-profile stress archive streams compressed JSONL and
+reads one record at a time, rather than decoding all copies simultaneously.
+The old local unit log/scratch is retained; no calibration receipt was produced.
+
+All 56 new fast tests pass. All seven explicit slower integration checks pass in
+60.58s, including all 16 old published metric profiles, native comparisons and the
+full-size archive plus eight rendered figures. Native error bounds are 1e-9 chips.
+The installed OpenSpiel license bytes match the previously read Apache-2.0 record.
+Strict typing (274 files), lint/format and hooks pass. Full local suites pass:
+1132 fast tests each Python 3.11.17 / 3.12.15; base1099 / 24 optional skips.
+Seven explicit slow integrations pass each Python version (60.58 / 59.17s).
+Hosted CI and both formal calibrations remain pending. Figures were inspected for prominent synthetic
+labels; they stay in ignored scratch space, never a strength report.
+
+The eight IO figures fix four primary metrics × two separate checkpoint axes,
+each with four game/representation panels and individual cell curves. Future own
+scoring/replay uses the fixed worker partitions. The native forecast additionally
+charges serial own-input replay over all 840 policies, conservatively, before the
+parallel native phase. These accounting details are fixed before measurements;
+all declared caps, cases, seeds and tolerances stay unchanged.
+
+### Three questions to explain this step
+
+1. **Why can average coverage be one before sampling visits the river?** The warm
+   exact uniform update supplies positive average mass to all possible rows.
+   Sampled visit coverage counts later sampled passes only. Neither is convergence.
+2. **What does the river number measure?** A saved opponent is fixed while only
+   the responder's river choices switch, keeping its exact-reply turn prefix.
+   It is a frozen-policy comparison, not predicted improvement after retraining.
+3. **Does packing the file change the strategy?** Only legal action weights are
+   stored, then restored into the same padded matrix with identical bytes. Menu,
+   shape, metadata and hashes are checked. Training update equations do not change.
+
+Self-review: observation fingerprints include raw learning arrays, both exports,
+RNG, keys and charged work. Scoring checks unchanged game structure, perfect
+recall, signs and additive identities. Packing preserves legal weights and exact
+padded bytes; 840-record JSONL decoding is streamed. Native functions supply
+comparison scalars only; old own profiles remain the sole calibration inputs.
+This is Codex-assisted solo self-review, not independent human review.

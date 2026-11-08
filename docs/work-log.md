@@ -13,6 +13,35 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-08 — Checkpoint/scoring and remaining pipeline cost
+
+- **Request / issue:** Continue through-day #4 work after PR #26 puts three-process
+  known cost below the cap. [PR #27](https://github.com/jimmy-sim/poker-ai/pull/27),
+  [plan](controlled-pipeline-check.md); config published `561ed6d` before implementation/calibration.
+- **Scope:** Checkpoint observers preserve arrays/RNG/keys/work; exact work crossings
+  and iteration labels stay separate. Own EV/exact/restricted/river root accounting,
+  explicit L2/coverage diagnostics, compact legal-weight archives and exact padded
+  byte round trips. Separate native comparison-only module; no new postflop learning.
+- **Fixed cost workload:** All 16 OLD own final profiles, three repeats and three
+  workers: 48 own plus 48 native cases, separate 1200s caps. Synthetic 840-record
+  IO/report fixture has eight figures and prominent labels, kept in ignored scratch.
+  Forecasts retain 2× / 7200s own gate and separate 3600s native gate; no admission.
+- **Unit findings / correction:** First padded full-size unit interrupted after six
+  checks (local log `/tmp/pipeline-check-slow.log`, 116.65s). Payload was oversized;
+  trace also showed a macOS font-discovery subprocess wait. No measured-RAM or
+  sole-cause claim. Legal weights now stored with menus and exact byte restoration;
+  fixture streams JSONL one profile at a time. No research gate/seed/formula changed.
+- **Checks so far:** 56 fast tests pass; seven explicit slow integrations pass in
+  60.58s, including all 16 old metrics, native roots/achieved own replies and render.
+  Native strategy export/training tripwires pass. Rechecked installed Apache-2.0
+  bytes against the previously read license. Strict typing (274 files), lint/format
+  and hooks pass. Full local suites: 1132 fast each Python 3.11.17 / 3.12.15;
+  base1099 / 24 optional skips. Seven slow integrations pass each Python version
+  (60.58 / 59.17s). Hosted CI and formal calibrations pending at this code checkpoint.
+- **Next:** Journal step 30; publish checked code before own timing, then commit own
+  receipts before native timing. No default, strength, river-cause or global claim.
+- **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
+
 ## 2026-11-08 — Independent-cell process calibration
 
 - **Request / issue:** Continue authorized through-day work on #4 after the serial
@@ -42,6 +71,11 @@ For a guided explanation of the ideas and results, start with the
   [Receipt](../results/parallel-cell-profile/profile.json),
   [table](../results/parallel-cell-profile/report/tables.md); all three report files
   byte-identical on Python 3.12. Hosted CI separately pending at evidence publication.
+- **Merge / user checkout:** Final CI both passes on `97eb96d`
+  ([42514226815](https://github.com/jimmy-sim/poker-ai/actions/runs/42514226815));
+  merged PR #26 as `75ef29d`. Earlier code-only CI superseded/cancelled by concurrency.
+  User `.venv`: 132 focused checks pass (36.91s), process/node reports and correctness
+  replay pass. All ten preexisting modified result files remain byte-identical.
 - **Scope / next:** Journal step 29. No scoring, learning admission, default,
   playing-strength, global or river-cause claim. Remain on checked independent
   milestones while the user is away.
