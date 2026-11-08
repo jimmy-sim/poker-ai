@@ -64,7 +64,8 @@ training differences without selecting a replacement or passing a fresh-game gat
 No remedy, default change or fresh/global admission follows automatically.
 Step 32 builds the saved-policy follow-up: account for decisions inside the
 compressed game, then compare all four training modes against the same opponents.
-Its software checks are passing; the new measurements have not run yet.
+Its software checks pass and the complete own calculation is saved. The separate
+independent comparison is next.
 
 You can read this in three sittings:
 
@@ -1822,11 +1823,13 @@ summarized. Plot fixtures are explicitly synthetic, not poker research results.
 
 **Current result:** All 89 focused fast checks pass. Full base checks pass 1246
 tests with 24 optional skips on each Python version; the optional suites pass
-1279 each. Four slow adapter/render checks pass on both versions too. Hosted CI
-must still pass before the new diagnosis. The fixed study will
-read 64 old strategy pairs, retain 128 decision traces and evaluate every one of
-256 ordered crossed pairs, with a separate independent scalar audit. No stronger
-agent or repair has been demonstrated at this implementation checkpoint.
+1279 each. Four slow adapter/render checks pass on both versions too. Both hosted
+code CI jobs then pass before measurement. The own calculation reads all 64 old
+strategy pairs, retains 128 decision traces and evaluates every one of 256 ordered
+crossed pairs in **19.92 seconds**. A base Python 3.12 environment replays the
+traces with zero error and regenerates every numerical report file byte-for-byte.
+The independent scalar audit is still pending at this publication. No stronger
+agent or repair has been demonstrated.
 
 The full suite also caught a packaging mistake: the read-only diagnosis imported
 an archived solver-check helper from inside the training package. Moving this

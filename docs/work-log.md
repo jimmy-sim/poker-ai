@@ -49,6 +49,13 @@ For a guided explanation of the ideas and results, start with the
   published before measurements; no seed/metric/tolerance/cap change.
   Native receipt validation also requires its complete 128-trace own replay with
   finite bounded error/time; deliberate corruptions fail closed.
+- **Own evidence before native:** Both hosted code jobs 42531469249 pass on
+  clean `4f34289`. All 64 sources / 128 traces / 256 crosses / 512 targets finish
+  in 19.920551s (<900); parent/reaped-child CPU 10.704774/9.16s. Archive 3,065,110
+  bytes, SHA 840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373.
+  Base Python 3.12 replays all traces with zero error (8.797627s), regenerating
+  all four numerical files byte-identically. Four actual plots visually checked.
+  Independent comparison remains pending at this own-evidence publication.
 
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner
 
