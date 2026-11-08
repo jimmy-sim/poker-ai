@@ -1145,6 +1145,23 @@ its own compressed game or mainly suffers from missing distinctions. We have not
 measured that diagnosis yet, so we will not assume extra compute is the answer.
 No fresh-game or global training follows this failed gate.
 
+## 23. Separate unfinished learning from missing distinctions
+
+**November 7, 2026 — in progress.** The sampled strategy improved but missed its
+limits. Before changing it, we ask what an opponent could gain with the same
+information groups, then what extra exact information adds.
+
+Imagine two river situations share one strategy row. A restricted reply must use
+one action distribution for that row. An exact reply may choose differently in
+the two situations. We will measure both against each fixed saved opponent.
+This is a diagnosis, not a prediction that retraining will recover the same chips.
+
+The [fixed plan](range-mass-reply-diagnosis.md) includes every final seed and full
+control: 40 profiles. We keep individual results and use averages when adding
+components across seeds, because medians do not generally add. No fresh games,
+new representation or larger training run occurs in this milestone.
+Codex assists with implementation/reporting; personal hours are not inferred.
+
 ## Your own learning notes
 
 **November 5, 2026 — your report:** You completed the suggested terminal commands

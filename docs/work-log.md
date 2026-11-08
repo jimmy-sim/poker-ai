@@ -13,6 +13,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-07 — Saved range-mass reply diagnosis (in progress)
+
+- **Issue / request:** Continue #4 after the failed sampled gate; diagnose before
+  selecting a remedy. [Prospective plan](range-mass-reply-diagnosis.md).
+- **Fixed scope:** All 30 final sampled policies and ten full controls, both
+  seats, exact/restricted replies, full loss accounting and all seeds retained.
+  Arithmetic means for additive components. No new training or feature choice.
+- **Pending:** Tested implementation, own 40-case diagnosis, native roots/achieved
+  values, report/inspector, journal step 23, local and hosted checks.
+- **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
+
 ## 2026-11-07 — Range-mass fixed-work sampled comparison
 
 - **Request / issue:** Continue #4's fixed-work sampled stage; stop at audited
