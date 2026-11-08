@@ -13,7 +13,7 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-07 — Range-mass fixed-work sampled comparison (in progress)
+## 2026-11-07 — Range-mass fixed-work sampled comparison
 
 - **Request / issue:** Continue #4's fixed-work sampled stage; stop at audited
   development results. [Plan](range-mass-sampled.md), unchanged protocol.
@@ -31,8 +31,20 @@ For a guided explanation of the ideas and results, start with the
   KeyboardInterrupt/incomplete status. No performance admission from this run.
   Investigate portable numerical replay without editing frozen old source or
   changing the feature, seeds, work budgets or performance thresholds.
-- **Pending:** Full 90-policy experiment/native audit, hosted CI and journal
-  step 22 results. No fresh/global/default stage in this block.
+- **Corrected verification:** 886 all-extras tests each on Python 3.11/3.12,
+  base-only 857 passed/20 skips, 41 new tests. Ruff/format/strict mypy/hooks pass.
+  Hosted repair CI 42446699119 passes both jobs before the complete rerun.
+- **Measured result:** All 90 snapshots complete from clean 64c0d9d in 1254.790s.
+  Candidate medium median 4.480481% pot, worst 5.506634%, failing fixed 1%/2.5%
+  limits; category 6.722857%/7.188975%, exact/raw 0.233819%/0.254711%.
+  Low passes. Coverage 100%, recall zero. All 90 checkpoint/visit pairs replay
+  with zero error; all 90 native value/BR checks pass, max 8.52651e-14 chips.
+  Audit 15.461s. Raw evidence published as f8f4f67 before native comparison.
+- **Evidence / stop:** [PR #19](https://github.com/jimmy-sim/poker-ai/pull/19),
+  [method](range-mass-sampled.md), [tables/two plots](../results/range-mass-sampled/report/tables.md),
+  journal step 22. A cumulative 3,008,036,864-byte peak RSS includes receipt
+  serialization; no total-memory/competitive-strength claim. Stop before fresh,
+  global or default changes; diagnose the saved failure next. No rescue run.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
 
 ## 2026-11-07 — Range-mass full-control admission

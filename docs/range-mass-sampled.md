@@ -92,10 +92,94 @@ bound study/audit hashes and the actual assessment instead. The error must still
 pass its numerical tolerance. Two new regression tests cover these distinctions.
 A complete rerun must use new checked source, all original seeds and budgets.
 
-## Status
+## Completed result
 
-Prospective plan published in [PR #19](https://github.com/jimmy-sim/poker-ai/pull/19)
-before implementation/outcomes. All 39 focused tests pass. Local `make check`
-passes 884 all-extras tests on Python 3.11.17 and 3.12.15; base-only checks pass
-855 with 20 optional skips. Ruff lint/format, strict mypy and hooks pass.
-No new research outcomes have been measured at this code-publication checkpoint.
+**The sampled development gate fails on the deeper game.** The exact controls
+pass both games. The range-mass candidate passes low OOP but misses both fixed
+accuracy limits on medium OOP. No budget extension, reseeding or feature tuning
+was performed. [All tables and both plots](../results/range-mass-sampled/report/tables.md)
+retain the complete five-control/two-game/three-seed/three-checkpoint grid.
+
+| Medium OOP, final requested work 10m | Median exploitability (% pot) | Worst seed (% pot) |
+|---|---:|---:|
+| Exact | 0.233819 | 0.254711 |
+| Raw-public | 0.233819 | 0.254711 |
+| Texture | 7.369742 | 9.687537 |
+| Category | 6.722857 | 7.188975 |
+| Range mass | 4.480481 | 5.506634 |
+| Fixed exact/candidate limits | 1.0 | 2.5 |
+
+Candidate medium individual seeds, in declared order: **4.480481%, 5.506634%,
+3.074980%**. Its low median is **0.00000102590%**, worst **0.000366736%**.
+These are exact-game exploitabilities (NashConv/2), divided by initial pot and
+multiplied by 100, not empirical win rates. Seed medians/ranges are descriptive;
+three seeds do not establish a population confidence interval. The report's
+`full-control-reference.csv` retains the unchanged earlier full controls.
+
+All 90 bundled checkpoint/visit pairs replay, including source/config/context,
+accumulators, policies, masks, scores and work counters. Own replay error is
+**zero** on the recorded Mac. All 90 OpenSpiel value/BR comparisons pass; maximum
+error **8.526512829121202e-14 chips**. The independent audit took **15.461 seconds**
+including own replay; native output remains comparison-only. The archived engine
+mechanics are shared with the reference, so this is not a separate engine proof.
+
+The complete run took **1,254.790 seconds** (about 20.9 minutes), below 7,200.
+All final initialized-average coverage is 100%; zero recall violations. Minimum
+subsequently sampled uniform-reach coverage on medium is 97.60% for exact/raw,
+98.29% texture, 97.77% category and 98.15% range mass. Low minimum is 80% for
+all descriptions. Positive averaging after exact initialization and later sampled
+visits are distinct facts; neither guarantees a strong policy.
+All actual work receipts include initialization and whole-iteration crossing;
+the largest recorded overshoot is 40 nodes. Profiles retain all 30 independent
+fixed-seed timing repetitions. They do not feed the experiment's solvers.
+
+## Source, storage and interpretation
+
+[PR #19](https://github.com/jimmy-sim/poker-ai/pull/19) records the prospective plan,
+checked implementation, real CI failure and retained interruption. Corrected source
+**64c0d9de691fc8041c1bf47e12c0432c65e42061** passed local and hosted checks before
+the complete run; its recorded dirty status is false. Raw study and own receipts
+were published in **f8f4f67f84db608f1180e023a1de3f98029d4652** before the clean-source
+native audit. Raw receipts remain unchanged after audit; the report combines them.
+Input/config/model/context/lock/source hashes, runtime environment, counters and
+package versions are retained in the JSON and gzip bundle.
+
+The reviewed bundle is about 6.6 MiB and includes all 90 original checkpoint/visit
+JSON pairs, making offline replay self-contained. Process peak RSS is
+**3,008,036,864 bytes**, a cumulative high-water including trees, growing receipt
+bundles and serialization, not isolated table memory or a per-representation cost.
+Rows/key/table components remain in diagnostics; smaller row counts do not
+establish lower total memory or a scalable global system.
+
+The candidate improves medium median exploitability relative to category at the
+same sampled work, but is still much weaker than raw-public and fails admission.
+Its earlier full-tree result (0.271640% pot) is a separate training condition:
+full CFR+ at 4,096 iterations versus linear external-sampling MCCFR at fixed node
+work. Their difference does not isolate sampling variance, insufficient work or
+representation error. Residual action-conditioned range distinctions remain a
+hypothesis, not a newly measured causal explanation. No additional ablation,
+fresh games, global training or default-agent change was run here.
+
+**Next decision:** diagnose the saved candidate's exact versus within-partition
+best-response gain, and inspect problematic decisions, before proposing a new
+representation or larger training budget. Keep #4 open. This completed negative
+experiment is the requested stopping milestone.
+
+## Verification and questions
+
+Corrected local `make check`: **886 all-extras tests** on Python 3.11.17/3.12.15;
+base-only **857 passed, 20 optional skips**, including **41 new tests**. Ruff,
+format, strict mypy and hooks pass. Hosted CI **42446699119** passes both Linux
+jobs before the complete run. The previous failed run **42446227294** remains
+linked; old source/evidence was not rewritten to hide it. Final evidence CI is
+reported separately in the PR. Both plots have been visually inspected.
+
+1. **Why can full-control admission pass while sampled learning fails?** The work
+   budgets, traversal and update procedures differ. This result does not identify
+   one cause. Diagnose the saved strategy before asserting that more compute fixes it.
+2. **Why does 100% average coverage not mean the strategy is good?** Own exact
+   initialization populates every row. A populated row can still have inaccurate
+   action probabilities; sampled visits and exploitability answer different questions.
+3. **What does the independent audit prove?** It checks that own saved policies'
+   values and best responses agree numerically on the exported game. A correctly
+   measured strategy can fail its strength target. It proves no general win rate.
