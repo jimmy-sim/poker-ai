@@ -1323,8 +1323,10 @@ check all 16 switch combinations, and count initialization as real work.
 The short regression trace on the actual Hold'em adapter checks code compatibility
 in both known games. It is not a new strength experiment. Twenty focused tests
 pass. Full local checks pass **964 tests on each Python version**; base-only
-931 pass with 24 optional skips. The published receipt and hosted CI are still
-pending at this implementation checkpoint.
+931 pass with 24 optional skips. Both hosted Python jobs pass. The recorded
+checks cover **54 possible selector tapes across four cases**, and replay on
+both Python versions. Their largest raw-update disagreement is below
+0.000000000000001 fixture chips; this is a software check, not a poker score.
 
 The [protocol](training-isolation.md) fixes the later learning grid and separates
 equal-work comparisons from equal-iteration comparisons. An **iteration** is one
@@ -1332,8 +1334,23 @@ update pass for each player. A **node visit** is one situation examined, includi
 chance and terminal situations. Sampling can complete many short iterations in
 the time/work of a much smaller number of full traversals.
 
-We stop at the correctness gate before running that learning study or choosing a
-remedy. There is no new stronger agent or established training cause in this step.
+The [work receipt](../results/training-isolation/correctness.json) checks all
+30 old control/seed endpoints. For the medium range-mass candidate, the full
+control examined **174,514,176 situations**, compared with about **10 million**
+for each sampled seed: roughly **17.45 times as much work** by the declared visit
+count. Sampling completed roughly 298,000–316,000 short iterations, versus 4096
+full ones. This tells us the old endpoints were not matched on either axis; it
+does not tell us how much of the weakness the work difference caused.
+
+You can replay these checks without training or overwriting anything:
+
+```sh
+.venv/bin/python scripts/check_training_isolation.py --replay results/training-isolation/correctness.json
+.venv/bin/python -m pytest -q tests/test_controlled_training.py
+```
+
+We stop at the verified correctness gate before running the controlled learning
+study or choosing a remedy. There is no new stronger agent or established training cause in this step.
 Codex assisted; personal hands-on time is not inferred.
 
 ## Your own learning notes

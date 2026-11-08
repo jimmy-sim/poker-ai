@@ -146,8 +146,45 @@ conventions without presuming each changes poker strength.
 
 Focused checks: 20 tests pass. Local `make check` passes **964 all-extras tests**
 on Python 3.11.17 and 3.12.15; base-only **931 passed / 24 optional skips**.
-Ruff lint/format, strict mypy (243 files) and hooks pass. Hosted CI and the
-reviewed correctness receipt remain pending at this implementation checkpoint.
+Ruff lint/format, strict mypy (243 files) and hooks pass. Both hosted jobs pass
+for checked source `b8ed1d4a3c2a7ad9c04d4e10f8d40d0b1f6dbcb7` in
+[code CI 42466613135](https://github.com/jimmy-sim/poker-ai/actions/runs/42466613135)
+before the reviewed receipt was recorded.
+
+## Recorded correctness and work evidence
+
+The [receipt](../results/training-isolation/correctness.json) was recorded from
+clean `b8ed1d4` after code CI passed. All four cases, **54 joint selector tapes**,
+and **30 historical work rows** pass. Software-audit runtime is **0.042211s**;
+this is not training or human work time. Replay passes on Python 3.11 and 3.12.
+
+| Fixture policy | Target | Selector tapes | Max raw regret error | Max average error | E[clip] − clip(E), max absolute |
+|---|---:|---:|---:|---:|---:|
+| Positive | 0 | 24 | 8.326673e-17 | 5.551115e-17 | 0.05208333 |
+| Positive | 1 | 18 | 2.775558e-17 | 0 | 0.07142857 |
+| Zero support | 0 | 6 | 0 | 0 | 0 |
+| Zero support | 1 | 6 | 0 | 0 | 0 |
+
+These utility discrepancies use **fixture chips**, not Hold'em EV, and the
+clipping comparison starts from zero regret. Probability masses sum to one
+within 1e-12. This verifies frozen-pass estimators and demonstrates nonlinearity;
+it does not claim the expected nonlinear training trajectory equals full CFR.
+
+All five controls and every historical seed are retained in the receipt.
+The motivating range-mass endpoints show the work mismatch clearly:
+
+| Known game | Full visits at 4096 iterations | Sampled visits across 3 seeds | Full / sampled work, approximately |
+|---|---:|---:|---:|
+| Low OOP | 24,567,808 | 10,000,000–10,000,009 | 2.45678 |
+| Medium OOP | 174,514,176 | 10,000,000–10,000,028 | 17.4514 |
+
+The medium sampled trajectories complete 298,022–315,528 iterations, versus
+4096 full iterations. Neither matched work nor matched iterations can be inferred
+from those old endpoints. Initialization and each whole-iteration overshoot are
+checked explicitly. Visits are the declared work proxy, not equal FLOPs or wall
+time. This audit measures the mismatch, **not how much of the river weakness it
+caused**. The later controlled learning experiment remains not run. No new
+postflop policy, strength number, remedy/default or admission change is produced.
 
 ## Commands
 

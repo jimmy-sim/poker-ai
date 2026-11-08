@@ -28,8 +28,15 @@ For a guided explanation of the ideas and results, start with the
   both real range-mass adapters, all 16 combinations, expectation/nonlinearity,
   averaging conventions, RNG/work and changed-receipt rejection. Full local
   checks: 964 all-extras each Python 3.11.17/3.12.15; base-only 931 passed/24
-  optional skips. Ruff lint/format, strict mypy (243 files) and hooks pass. Hosted
-  CI and reviewed correctness receipt remain pending at this checkpoint.
+  optional skips. Ruff lint/format, strict mypy (243 files) and hooks pass. Both
+  [code CI jobs 42466613135](https://github.com/jimmy-sim/poker-ai/actions/runs/42466613135)
+  pass before receipt production from clean b8ed1d4.
+- **Recorded evidence:** Four frozen-policy cases / 54 joint selector tapes pass;
+  max raw regret/average discrepancies 8.32667e-17 / 5.55112e-17 fixture chips.
+  Clipping nonlinearity demonstrated, not attributed as a poker-strength cause.
+  All 30 historical work rows verified; medium range-mass old full endpoint
+  174,514,176 visits versus about 10m sampled (17.4514×). Software audit 0.042211s;
+  full offline replay passes both Python versions. [Receipt](../results/training-isolation/correctness.json).
 - **Interpretation / next:** Definitions differ beyond sampling; do not claim
   a training cause before the controlled study. Journal step 25 explains this.
   No new postflop learning result, remedy or admission/default change.
