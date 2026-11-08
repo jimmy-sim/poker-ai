@@ -108,3 +108,55 @@ the pinned serial result. Fixed-partition imbalance and max-of-three/overhead
 arithmetic have an independent hand-computed fixture. CPU and elapsed-time fields
 are distinct. This is a Codex-assisted solo self-review, not independent human
 review. The published prospective gates remain unchanged.
+
+## Recorded complete calibration
+
+Clean checked published source `0dd5af6a366db300ce254b587dd616c79cb2279c`
+completed all nine batches in **197.722051s**. Every one of the **1,260 endpoints**
+exactly matches the pinned serial state/RNG/work fields and cache counters. All
+worker identities, fixed partitions, requested thread settings, timers and clean
+exits pass the receipt checks. No rows or repeats were discarded.
+
+| Processes | Median complete short-batch wall | Median serial / batch | Median parent + child CPU | 2× known-cost forecast |
+|---|---:|---:|---:|---:|
+| 1 | 33.163s | 1.000× | 33.175s | 12250.546s |
+| 2 | 18.691s | 1.771× | 37.213s | 6299.036s |
+| 3 | 13.827s | 2.400× | 40.795s | 4257.374s |
+
+These are three repeats each on this Mac, with balanced order positions; they are
+not population confidence intervals. The three-process batch wall spans
+13.817–13.851s; serial spans 32.607–33.228s. Median aggregate CPU rises from
+33.175 to 40.795s, about 23%: parallel execution uses simultaneous resources and
+replicates setup. It is not free compute or a memory-saving claim.
+
+The three-process forecast uses worker training sums 2126.345 / 2089.681 /
+2078.959s, then adds maximum worker nontraining 2.210810s and launch/collection
+0.131603s before the 2× margin. The unguarded known-cost estimate is 2128.687s.
+The one-process forecast still exceeds 7200s. Two and three processes both remain
+`unresolved_unmeasured_pipeline_cost`: passing known cost does not admit learning.
+All three counts are retained in the [scripted table](../results/parallel-cell-profile/report/tables.md),
+[batch CSV](../results/parallel-cell-profile/report/batches.csv) and
+[raw receipt](../results/parallel-cell-profile/profile.json), including source,
+lock, hardware/runtime, all child events, assignments and cost breakdowns.
+All three report files regenerate byte-identically on Python 3.12.15; this
+validates saved evidence, not reproduction of historical timing.
+
+```sh
+.venv/bin/python scripts/profile_parallel_cells.py --report results/parallel-cell-profile/profile.json
+.venv/bin/python -m pytest -q tests/test_cell_process.py tests/test_parallel_profile.py
+```
+
+Hosted CI remains separate and pending at this evidence checkpoint. The code and
+prospective protocol were published before measurements. No learning curve,
+playing-strength, default or river-cause result was measured here.
+
+## Next decision
+
+Use the three-process schedule as the fixed candidate for a separately declared
+pipeline-cost check, because it leaves more known-cost headroom within the same
+cap. Implement and verify checkpoint accounting and exact own scoring, using
+previously saved own policies for cost calibration. Define metric aggregation and
+coverage explicitly before any new learning-quality outcomes. Measure scoring,
+checkpoint writing, setup/replay and report costs and apply the same planning
+margin; retain the native reference audit as a separate comparison-only stage.
+Do not start the 140-cell learning comparison from this timing result alone.

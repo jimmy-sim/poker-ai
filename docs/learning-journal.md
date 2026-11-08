@@ -1565,6 +1565,25 @@ checked-code checkpoint. Read the [fixed plan](parallel-cell-calibration.md) and
 [PR #26](https://github.com/jimmy-sim/poker-ai/pull/26). Codex assisted; personal
 hands-on time is not inferred.
 
+The fixed calibration completed all nine batches in **197.722 seconds**, from
+clean published source `0dd5af6`. All **1,260 endpoints** exactly match serial
+results, including work and cache counters. All repeats are retained. Report files
+regenerate exactly on Python 3.12; timing itself varies with machine conditions.
+
+One / two / three processes took median **33.163 / 18.691 / 13.827 seconds** per
+short batch. Three processes give a measured median 2.400× elapsed-time speedup.
+Median total CPU time rises from 33.175 to 40.795 seconds, because extra processes
+replicate setup and use simultaneous resources. Faster elapsed time is not less
+resource consumption.
+
+The guarded known-cost forecasts are **12,250.546 / 6,299.036 / 4,257.374
+seconds**. Two and three processes are below 7,200, but scoring and checkpoint
+costs are still missing. The large learning comparison remains off. Next we will
+verify those functions and measure the remaining pipeline costs with a fixed
+three-process candidate. This is progress toward an affordable experiment, not
+proof of stronger poker play. See the [table](../results/parallel-cell-profile/report/tables.md).
+Hosted CI remains separately pending at this evidence checkpoint.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

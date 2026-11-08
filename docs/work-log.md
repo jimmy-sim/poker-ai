@@ -33,6 +33,15 @@ For a guided explanation of the ideas and results, start with the
   Full local suites: 1076 all-extras each Python 3.11.17 / 3.12.15; base 1043 /
   24 optional skips. CPU accounting assertions pass in all three environments.
   Hosted CI and the fixed profile remain pending at this checked-code checkpoint.
+- **Recorded evidence:** Clean published `0dd5af6` completes all nine batches in
+  197.722051s; all 1260 serial state/RNG/work/cache endpoint checks pass. Median
+  batch wall for 1/2/3 processes 33.163 / 18.691 / 13.827s; median serial ratio
+  1 / 1.771 / 2.400×; aggregate CPU 33.175 / 37.213 / 40.795s. All observations
+  retained. Guarded known-cost forecasts 12250.546 / 6299.036 / 4257.374s; latter
+  two remain unresolved because scoring/checkpoint/audit/report costs are missing.
+  [Receipt](../results/parallel-cell-profile/profile.json),
+  [table](../results/parallel-cell-profile/report/tables.md); all three report files
+  byte-identical on Python 3.12. Hosted CI separately pending at evidence publication.
 - **Scope / next:** Journal step 29. No scoring, learning admission, default,
   playing-strength, global or river-cause claim. Remain on checked independent
   milestones while the user is away.
