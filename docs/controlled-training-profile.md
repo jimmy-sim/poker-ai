@@ -100,7 +100,8 @@ before a learning run; no optimization is part of this initial profiling gate.
 Thirteen new tests plus the previous twenty focused tests pass. Full local
 checks pass 977 all-extras tests each Python 3.11.17/3.12.15; base-only 944 with
 24 optional skips. Ruff lint/format, strict mypy (246 files) and hooks pass.
-Hosted CI and recorded timings are pending at this code publication.
+Hosted CI was running when timing collection began; it is tracked separately
+from the completed local checks. No scoring/learning comparison was launched.
 
 ## Three questions to explain the compute gate
 
@@ -114,3 +115,49 @@ Hosted CI and recorded timings are pending at this code publication.
    Strategy scoring/checkpoint costs remain unmeasured and the forecast can
    change as later policies change. Only a complete audited learning comparison
    could support its specific strategy claims.
+
+## Recorded compute gate
+
+All **420 timing rows**, **140 cells** and **four instrumented cases** complete
+from clean `44da3984b3d9c618887e77b9a656895d597a502c`. Every repetition and
+instrumented case matches its deterministic algorithm/RNG-state digest and
+work. Total profiling wall time **179.069551s**, below 900s; tree/representation
+setup **1.948073s**. [Raw evidence](../results/controlled-training-profile/profile.json)
+and [derived tables](../results/controlled-training-profile/report/tables.md).
+
+| Quantity | Seconds | Hours |
+|---|---:|---:|
+| Training-only forecast, summed per-cell maxima | 15,235.392 | 4.232 |
+| With predefined 2× planning guard | 30,470.783 | 8.464 |
+| Existing complete own-stage cap | 7,200 | 2.000 |
+
+Decision: **`training_only_guarded_forecast_exceeds_cap`**. The projected hours
+were **not spent** running the full comparison. They exclude setup, scoring,
+checkpoint and native-audit costs and are not a statistical bound. Later policy
+changes can change visits and per-visit cost. All arms/seeds/slow repetitions
+remain; no budget, seed or learning gate was changed to accept the workload.
+
+### Measured hotspots and next decision
+
+External cells contribute **98.395% of the training-only forecast**. In the fixed
+medium candidate's external signed/linear/linear profiler case, `current_policy`
+is called **2000 times in 1000 additional iterations** and accounts for **49.43%**
+of instrumented `step` cumulative time. The low candidate case is **20.26%**.
+The nested `normalize` routine scans the full table; its time is already included,
+so these fractions must not be added together. These are instrumented, first-seed
+case observations, not an attribution across every arm or a promised speedup.
+Menu reconstruction, recursive traversal, random selection and update validation
+also cost time. Full traversal's hotspots include expected-pass evaluation and
+update validation, but its aggregate forecast is much smaller.
+
+Next: an opt-in sampled implementation that avoids repeated whole-table policy
+construction and measured menu overhead, with exact state/RNG/work equivalence
+tests against this frozen trainer. Reprofile before launching the unchanged
+learning comparison. One optimization may not suffice; do not promise the cap
+will pass or change semantics to force it. No optimizer was implemented here.
+
+The complete report is regenerated from the same recorded receipt on Python
+3.12; summary, both CSVs and Markdown table are byte-identical to Python 3.11.
+This verifies reporting, **not reproducibility of wall time**. The original
+correctness CLI still reproduces its frozen values through the tested bridge.
+The cause of the river weakness and any strength improvement remain unmeasured.

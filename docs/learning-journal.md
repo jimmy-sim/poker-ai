@@ -1381,8 +1381,33 @@ training cost alone. We do not change the poker-learning targets to make it fit.
 The profiling tools and 13 new tests are implemented. The 33 focused checks
 (including the previous 20) pass at this checkpoint. Full local checks pass **977 tests on each Python version**; base-only
 944 pass with 24 optional skips. Lint/format, strict typing and hooks pass.
-Hosted CI and timing evidence are pending. The existing correctness command still works through a
+The full timing run has now completed; hosted CI is tracked separately. The existing correctness command still works through a
 tested adapter; its old numerical receipt and mathematical code are unchanged.
+
+The profile completed all 420 rows in **about three minutes**. Its forecast
+puts the large comparison at **4.23 hours for training alone**, or **8.46 hours
+with the fixed planning margin**, against a two-hour cap. Those are projected
+hours, not time already spent. The large comparison stays off; no cases or seeds
+were removed to make the estimate smaller.
+
+The profiler gives us a concrete target. In its fixed medium-spot sampled case,
+roughly **half the instrumented update time** goes through the routine that
+rebuilds the whole current-policy table. It runs twice per iteration. The sampled
+traversal only needs some of those rows, so there may be repeated work to remove.
+That requires a tested alternative, not a change to the strategy rules. Other
+costs remain, so one change is not guaranteed to meet the budget.
+
+The next milestone is to preserve exactly the same updates, random choices and
+work counts while reducing measured overhead, then profile again. This is a
+compute barrier; it still does not explain which training rule caused the river
+weakness. The [tables](../results/controlled-training-profile/report/tables.md)
+come from the recorded timings, and regenerate identically on both Python
+versions. Rerunning a timer would produce different times.
+
+```sh
+.venv/bin/python scripts/profile_controlled_training.py --report results/controlled-training-profile/profile.json
+.venv/bin/python -m pytest -q tests/test_controlled_profile.py
+```
 
 Read the [fixed profiling plan](controlled-training-profile.md). No poker score,
 new stronger agent or established cause of the river weakness follows from this
