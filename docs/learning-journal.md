@@ -1618,7 +1618,7 @@ we did not measure RAM usage or establish a sole cause for its delay.
 All 56 new fast checks and seven slower integration checks pass. The latter check
 all 16 old published profiles, native values/replies and all eight labeled fixture
 figures (60.58 seconds on Python 3.11, 59.17 on Python 3.12). Full local suites
-pass 1132 fast tests on each Python version; base1099 pass / 24 optional skips.
+pass 1132 fast tests on each Python version; base 1099 pass / 24 optional skips.
 Typing/lint/format/hooks pass; hosted CI and formal timing runs remain pending. Fixture figures say **SYNTHETIC IO CALIBRATION — NOT LEARNING
 RESULTS** and stay in scratch space. No new playing-strength result is claimed.
 
@@ -1627,13 +1627,19 @@ Read the [fixed plan](controlled-pipeline-check.md) and
 hands-on time is not inferred.
 
 The first own-only cost run completed all 48 cases and three reporting fixtures
-in 107.725 seconds from published source `f6ca5cb`. Its receipt is retained. CI then
+in 107.725 seconds from published source `f6ca5cb`. Its receipt is retained. CI also
 caught a base-environment typing problem: an optional plotting dependency was
 imported directly. The poker tests had not started in that CI job. Local base
 pytest had passed, but base-only typing had been missed. We will fix that import
 boundary, check base typing and repeat the same calibration under the corrected
 source. No scientific gate or training rule changes; native timing and the large
 learning run remain off.
+
+The import fix now passes complete base `make check` on Python 3.11 and 3.12:
+1099 tests passed, with 24 optional skips each. Clean typing passes in both minimal
+environments, and the rendering integration passes again. No dependency, strategy
+formula or scientific tolerance changed. The same fixed cost run will be repeated
+from the corrected published source.
 
 ## Your own learning notes
 

@@ -2,6 +2,7 @@
 
 import csv
 import gzip
+import importlib
 import json
 import time
 from pathlib import Path
@@ -63,10 +64,10 @@ def planned_rows(
 
 def render_curves(rows: list[dict[str, Any]], output: Path) -> list[str]:
     """Eight fixed figures: four primary metrics x two separate checkpoint axes."""
-    import matplotlib
+    matplotlib = importlib.import_module("matplotlib")
 
     matplotlib.use("Agg")
-    from matplotlib import pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     groups = sorted({(r["spot_file"], r["representation"]) for r in rows})
     figures = []

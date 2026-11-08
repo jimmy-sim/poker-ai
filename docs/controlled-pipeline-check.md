@@ -116,7 +116,7 @@ All 56 new fast tests pass. All seven explicit slower integration checks pass in
 full-size archive plus eight rendered figures. Native error bounds are 1e-9 chips.
 The installed OpenSpiel license bytes match the previously read Apache-2.0 record.
 Strict typing (274 files), lint/format and hooks pass. Full local suites pass:
-1132 fast tests each Python 3.11.17 / 3.12.15; base1099 / 24 optional skips.
+1132 fast tests each Python 3.11.17 / 3.12.15; base 1099 / 24 optional skips.
 Seven explicit slow integrations pass each Python version (60.58 / 59.17s).
 Hosted CI and both formal calibrations remain pending. Figures were inspected for prominent synthetic
 labels; they stay in ignored scratch space, never a strength report.
@@ -161,3 +161,11 @@ base-only typing had been omitted. Use the existing dynamic optional-import
 pattern, verify typing in base environments too, then repeat the same fixed
 calibration under the corrected published source. No cap, seed, case, metric or
 acceptance tolerance changes. Native timing and learning remain off until then.
+
+The optional renderer now follows the existing `importlib.import_module` pattern;
+no dependency or mypy-ignore configuration changes. Corrected-source checks pass:
+full base `make check` on Python 3.11.17 / 3.12.15, each 1099 tests / 24 optional
+skips; clean non-incremental strict typing on both base versions (274 files),
+all-extras typing, 56 fast focused tests and another full-size rendering integration
+(60.99s). The same calibration will be repeated from the corrected published
+source; the first receipt remains archived unchanged.

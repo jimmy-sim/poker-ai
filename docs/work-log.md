@@ -36,16 +36,22 @@ For a guided explanation of the ideas and results, start with the
   Native strategy export/training tripwires pass. Rechecked installed Apache-2.0
   bytes against the previously read license. Strict typing (274 files), lint/format
   and hooks pass. Full local suites: 1132 fast each Python 3.11.17 / 3.12.15;
-  base1099 / 24 optional skips. Seven slow integrations pass each Python version
+  base 1099 / 24 optional skips. Seven slow integrations pass each Python version
   (60.58 / 59.17s). Hosted CI and formal calibrations pending at this code checkpoint.
 - **First own receipt / CI:** Clean published `f6ca5cb` completes 48 own cases and
-  three full-size fixtures in107.725027s. Raw receipt/bundle retained under
+  three full-size fixtures in 107.725027s. Raw receipt/bundle retained under
   `results/controlled-pipeline-check/attempts/f6ca5cb/`; no final forecast/native run.
-  [CI42517901699](https://github.com/jimmy-sim/poker-ai/actions/runs/42517901699)
+  [CI 42517901699](https://github.com/jimmy-sim/poker-ai/actions/runs/42517901699)
   fails base-only typing before tests: direct optional Matplotlib import. Local
   base pytest had passed, but base-only typing was omitted. Fix the optional-import
   boundary, check base typing and repeat identical calibration from corrected
   published source; no scientific gates change. Native timing/learning stay off.
+- **CI fix checks:** Renderer uses the existing dynamic optional-import pattern,
+  without dependency/typing-gate changes. Base `make check` passes both Python
+  3.11.17 / 3.12.15: each 1099 / 24 optional skips, plus clean non-incremental
+  strict typing (274 files) both base versions, all-extras typing, 56 fast checks
+  and a fresh full-size renderer integration (60.99s). Repeat the identical cost
+  calibration from corrected published code; retain first source-bound artifacts.
 - **Next:** Journal step 30; publish checked code before own timing, then commit own
   receipts before native timing. No default, strength, river-cause or global claim.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
