@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "profile_only_no_strength_comparison",
+  "input_sha256": {
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "results/training-isolation/correctness.json": "8d1d554a38ac5a126a48aad8638f924cc8b531be617b4a100aa6333f8a7c5a41"
+  },
+  "comparison_config": "configs/training-isolation.json",
+  "baseline_receipt": "results/training-isolation/correctness.json",
+  "repetitions": 3,
+  "external_iterations_after_initialization": 1000,
+  "full_iterations_after_initialization": 16,
+  "maximum_profile_seconds": 900,
+  "forecast_target_node_work": 10000000,
+  "forecast_guard_multiplier": 2.0,
+  "profiler_cases": [
+    {
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "representation": "texture_range_q8_b8",
+      "traversal": "full",
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "average_weight": "linear",
+      "seed": null,
+      "bridge": "common"
+    },
+    {
+      "spot_file": "configs/learning-spots/dev_low_oop.json",
+      "representation": "texture_range_q8_b8",
+      "traversal": "external",
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "average_weight": "linear",
+      "seed": 20261301,
+      "bridge": "common"
+    },
+    {
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "representation": "texture_range_q8_b8",
+      "traversal": "full",
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "average_weight": "linear",
+      "seed": null,
+      "bridge": "common"
+    },
+    {
+      "spot_file": "configs/learning-spots/dev_medium_oop.json",
+      "representation": "texture_range_q8_b8",
+      "traversal": "external",
+      "regret_rule": "signed",
+      "regret_weight": "linear",
+      "average_weight": "linear",
+      "seed": 20261301,
+      "bridge": "common"
+    }
+  ],
+  "hotspot_rows": 25,
+  "gate": "training_only_guarded_forecast_exceeds_cap if guarded training sum > 7200; otherwise unresolved_unmeasured_pipeline_cost; never admit or launch learning from this profile",
+  "scope": "timing and exact repeat-state diagnostics only; no EV/exploitability measurement, algorithm selection, default, fresh/global admission or new learned-agent claim"
+}
