@@ -62,12 +62,17 @@ checkpoints, with zero own replay error and independent native checks. Clipping
 and averaging interact; improving one gap can worsen another. This diagnoses
 training differences without selecting a replacement or passing a fresh-game gate.
 No remedy, default change or fresh/global admission follows automatically.
+Step 32 builds the saved-policy follow-up: account for decisions inside the
+compressed game, then compare all four training modes against the same opponents.
+Its complete own calculation and independent audit pass. The larger within-game
+weakness persists against fixed opponents, especially for seat 1, and appears with
+exact information too. It is not explained by compression or changed opponents alone.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–31:** What the extensions and recent experiments taught us.
+- **Steps 10–32:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1778,6 +1783,94 @@ policies and own response traces before proposing a repair. The experiment
 narrows the question; it does not yet make a globally stronger agent or erase
 the earlier failed gate. Read the technical protocol's three interview answers
 for the exact numbers, ordered bridge and remaining limits.
+
+## 32. Separate our decisions from the opponent's behavior
+
+**November 8, 2026 — issue #4, saved-policy diagnosis.** Codex-assisted
+implementation; personal hands-on time not recorded. Follow
+[PR #29](https://github.com/jimmy-sim/poker-ai/pull/29) and the
+[fixed plan](controlled-reply-diagnosis.md).
+
+**Question:** Clipping can reduce one measured weakness while increasing another.
+Where does the extra room for improvement occur? Does it remain when we compare
+strategies against the same opponent?
+
+The previous comparison scored each learned pair together. Both players changed
+when we changed a training rule. A different score could therefore reflect our
+decisions, the opponent's decisions, or their combination. This follow-up freezes
+the saved strategies and crosses all four modes: signed or clipped regrets, each
+with equal or increasing weights in the final average. It keeps both seats,
+both games, both information descriptions, full controls and all three sampled
+seeds. There is no new Hold'em training or chosen winner.
+
+**Example, made up:** Against one fixed opponent, our best possible response in
+the compressed game earns 8 chips. Strategy A earns 3 and strategy B earns 6.
+Their remaining improvement is 5 and 2 chips respectively. The best-response
+value stays 8 because the opponent stayed fixed. This lets us compare our own
+decisions fairly within that game. A new opponent can change that 8-chip value.
+
+The code also records where a saved strategy gives up value along its decisions.
+These local losses add to its total improvement opportunity. Grouping them by
+turn and river is useful accounting, but does not prove which street caused a
+training problem: a turn decision can depend on what happens later.
+
+**Checks before measuring:** Hand-computed hidden-information examples check that
+the response cannot peek at the opponent's private choice. Tests cover both seats,
+all crossed combinations, missing or altered archive rows, and the terminal
+inspector. A separate toy learning check changes only the final averaging rule
+and confirms that the raw regrets, current strategy, random state and work stay
+unchanged. It helps distinguish the path of learning from how that path is
+summarized. Plot fixtures are explicitly synthetic, not poker research results.
+
+**Current result:** All 89 focused fast checks pass. Full base checks pass 1246
+tests with 24 optional skips on each Python version; the optional suites pass
+1279 each. Four slow adapter/render checks pass on both versions too. Both hosted
+code CI jobs then pass before measurement. The own calculation reads all 64 old
+strategy pairs, retains 128 decision traces and evaluates every one of 256 ordered
+crossed pairs in **19.92 seconds**. A base Python 3.12 environment replays the
+traces with zero error and regenerates every numerical report file byte-for-byte.
+The independent scalar audit then checks all 256 crossed pairs and 512 targets
+in **17.53 seconds**, with maximum disagreement **2.42e-13 chips**, below the
+1e-9 limit. No stronger agent or repair has been demonstrated.
+
+The full suite also caught a packaging mistake: the read-only diagnosis imported
+an archived solver-check helper from inside the training package. Moving this
+new work into evaluation preserves the existing separation test. We fixed the
+location rather than weakening that test; this is a software correction, not a
+new poker finding.
+
+**What the saved strategies show:** On the deeper range-mass game with linear
+averaging, clipped regrets have 1.811454% of initial pot in remaining improvement
+inside the compressed game. The turn rows account for 1.315782 percentage points
+and river rows for 0.495672. This describes where the saved-policy accounting puts
+the losses, not which street caused the training problem. The old finding about
+river policy concerned a different quantity: vulnerability to finer information.
+
+Holding opponents fixed makes the new result clearer. For seat 1, the clipped
+policy leaves roughly **2.45–2.50 percentage points more** improvement than the
+signed policy against each of the four fixed opponent modes, averaged across the
+three seeds. The pattern also appears with exact information. Changing opponents
+or merging boards cannot explain it alone. Percent of initial pot is a score
+unit, not a win rate or a percentage of hands won.
+
+Read [the full table and heatmap](controlled-reply-diagnosis.md#the-increase-persists-with-opponents-fixed).
+In the heatmap, moving down keeps the opponent fixed and changes our strategy.
+Both seats and all unfavorable results are kept. The 512 target conditions reuse
+strategies; they are not 512 independent experiments.
+
+**Try it:** Run `.venv/bin/python scripts/inspect_controlled_reply.py --seat 1`
+to inspect the first seed's largest saved decision loss. The output confirms the
+archived audit, lists the saved action probabilities, and shows their conditional
+values under an own best-reply continuation. It shows only our cards and the
+public board. A merged row can average several legal situations, so its card
+example does not turn the output into general poker advice.
+
+**Next question:** Are the policies currently being learned also weak, or does the
+stored average keep too much weak earlier play? The averaging-only toy check
+shows why this is a useful distinction: the raw learning path can stay the same
+while its final average changes. A new learning experiment needs its own fixed
+plan and correctness/compute gates first. The previous failed performance limit
+and global default remain unchanged.
 
 ## Your own learning notes
 

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_saved_policy_diagnosis_no_new_postflop_training",
+  "input_sha256": {
+    "configs/controlled-learning-comparison.json": "ff764357114d6c635f58b1f49733c8517af3a2943f2d5410bd29dc6a0767a9fd",
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "results/controlled-learning/own.json": "a59d1fd00c50cd8b703764a3158133f624b4e1020bf4211731fec4f58a63a9db",
+    "results/controlled-learning/own-profiles.jsonl.gz": "8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054",
+    "results/controlled-learning/native.json": "183c5d961cec13f03d74956eca3a7abf4a0effcf76378e67a2a51c15d816ecdc",
+    "results/controlled-learning/report/summary.json": "78ebfff5cccd9ac8ff8b46923bf368c6b81d4b54c2f6b0b10787a7cdca4068e8"
+  },
+  "source_report": "results/controlled-learning/own.json",
+  "source_audit": "results/controlled-learning/native.json",
+  "source_axis": "work",
+  "source_target": 10000000,
+  "regret_weight": "linear",
+  "regret_rules": [
+    "signed",
+    "clipped"
+  ],
+  "average_weights": [
+    "uniform",
+    "linear"
+  ],
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "traversals": [
+    "full",
+    "external"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "expected_source_profiles": 64,
+  "expected_self_target_traces": 128,
+  "expected_cross_profiles": 256,
+  "expected_cross_target_conditions": 512,
+  "maximum_own_seconds": 900,
+  "maximum_native_seconds": 900,
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "trace": "saved-prefix full reach times local deviation with optimal within-partition reply suffix; all owned rows retained, summed by publicly constant turn/river; half sum over seats matches saved within-partition metric",
+  "cross": "every ordered pair of the four source modes, player0 mode A/player1 mode B, within each game/encoding/traversal/seed; keep both targets; fixed opponent root independent of own source mode; gain differences equal negative target EV differences",
+  "aggregation": "full controls once; external individual seeds and arithmetic means; no confidence intervals or seed selection",
+  "hypotheses": [
+    "Where is the self-profile within-partition increase concentrated by street and decision row? These traces do not identify training cause.",
+    "Does the own-mode within-gain change persist when opponent mode is held fixed? Report every opponent and both target seats, no favorable selection."
+  ],
+  "software_check": "toy tests verify changing strategy-average weights preserves regrets/current policies/RNG/work/visited keys; no new Holdem learning",
+  "admission": "publish protocol before implementation/outcomes; complete relevant local base/optional checks and both code CI jobs before measurement; original 840-policy audit required",
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "role": "crossed EV and within-partition response roots/achieved OWN replies only; no reference strategy export or training"
+  },
+  "figures": [
+    "within-gain street contributions, full controls",
+    "within-gain street contributions, sampled means plus individual seed points",
+    "fixed-opponent within-gain heatmaps, full controls, both seats",
+    "fixed-opponent within-gain heatmaps, sampled means, both seats"
+  ],
+  "inspector": "frozen-source own response rows only; rank all saved owned information rows by additive loss; labels distinguish merged-row conditional values from illustrative own-card/board examples; no poker advice or trained remedy",
+  "partial": "retain incomplete outcomes and failure reason; missing cells/targets/rows or failed accounting/native checks cannot yield a completed diagnosis",
+  "scope": "saved policies only, known two-combo-per-seat games; no new postflop training/remedy/default/fresh/global admission; no unique causal street attribution; no reference output enters an agent",
+  "reproduction": "recorded own results published first; fresh one-command reproduction may keep immutable own outputs in ignored staging before comparison; clean checked source and all hashes required, no new postflop training"
+}
