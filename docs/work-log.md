@@ -13,7 +13,7 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-08 — Fixed-policy seat/street swaps (in progress)
+## 2026-11-08 — Fixed-policy seat/street swaps
 
 - **Request / issue:** Investigate #4's different full/sampled vulnerabilities
   while keeping the information groups fixed. [Plan](frozen-policy-swaps.md).
@@ -23,8 +23,20 @@ For a guided explanation of the ideas and results, start with the
 - **Checked code before outcomes:** Runner, native audit, report/inspector and
   30 new tests. All-extras 944 pass each Python 3.11.17/3.12.15; base-only 911
   passed/24 optional skips. Ruff lint/format, strict mypy and hooks pass.
-- **Pending:** Hosted checks, complete own/native intervention evidence and
-  learning journal step 24 results; stop before any training or remedy choice.
+- **Verified result:** All 160 crossed profiles/320 target rows, 120 street
+  hybrids/240 response conditions complete in 60.218s from clean c2f14c1; nested
+  replay zero. Medium range-mass mean extra gap FF/SF/FS/SS =
+  0.271466/0.254886/3.361794/4.110824% pot. River contributes 3.473133 points
+  of the 3.839358-point change; turn 0.366225, interaction 0.765610 already shared.
+- **Independent evidence:** 160 crossed and 120 hybrid baseline EVs, 480 roots
+  and 480 achieved own reply values pass native checks; max 1.27898e-13 chips.
+  Audit 71.163s from clean acc98d8 after own evidence publication. Code CI
+  42463711199 passes both jobs before measurements. Both plots visually checked.
+- **Interpretation / stop:** [PR #21](https://github.com/jimmy-sim/poker-ai/pull/21),
+  [method](frozen-policy-swaps.md), [tables/two plots](../results/policy-swaps/report/tables.md)
+  and journal step 24. Saved river choices dominate this policy-substitution
+  effect; training-algorithm causality remains untested. No new training, remedy,
+  admission or default change; all failed gates remain and #4 stays open.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
 
 ## 2026-11-07 — Saved range-mass reply diagnosis

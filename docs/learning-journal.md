@@ -44,13 +44,15 @@ Step 22 completes the sampled comparison: the new description improves on
 category but fails the deeper-game accuracy limits. Step 23 diagnoses the saved
 failure: most of its exploitable value appears when an opponent can use finer
 information. That value depends on the saved strategies; it is not a fixed floor.
+Step 24 swaps fixed turn/river policies and finds that the saved river continuation
+accounts for most of the deeper-game gap change, with interaction between streets.
 We stop before choosing a remedy or running fresh games.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–23:** What the extensions and recent experiments taught us.
+- **Steps 10–24:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1219,20 +1221,73 @@ a remedy. The failed learning gate remains in force, with no fresh/global run.
 
 ## 24. Hold the opponent fixed and swap saved decisions
 
-**November 8, 2026 — in progress.** The same information groups produced different
-weaknesses under full and sampled training. We now compare saved policies against
-the same opponents, then swap their turn and river decisions separately.
+**November 8, 2026.** Full and sampled training use the same card-information
+groups, yet their saved policies have different weaknesses. We kept training
+stopped and swapped saved decisions to find where the difference lives.
 
-For example, combine a full-control turn policy with a sampled river policy,
-without training either one. Does the extra value available to an exact responder
-move toward the full or sampled result? We will keep all four combinations and
-both substitution orders because the streets can interact.
+First, we crossed the four saved policies between seats. Then, for every seed,
+we combined full or sampled turn decisions with full or sampled river decisions.
+All five descriptions and both games stay in the study: 160 crossed profiles
+and 120 street hybrids. A hybrid here is a diagnostic combination, not a new agent.
 
-The [fixed plan](frozen-policy-swaps.md) retains every game, representation and
-seed. It can locate differences in saved behavior; it does not prove which
-training algorithm caused them or that a new agent would inherit a hybrid's result.
-We stop after numerical checks and reporting, before choosing a remedy.
-Codex assists with implementation/reporting; personal hours are not inferred.
+For the deeper game's range-mass candidate, the mean extra value available to an
+exact-information responder is:
+
+| Turn decisions | River decisions | Extra-information gap (% initial pot) |
+|---|---|---:|
+| Full | Full | 0.271% |
+| Sampled | Full | 0.255% |
+| Full | Sampled | 3.362% |
+| Sampled | Sampled | 4.111% |
+
+The big jump follows the **sampled river decisions**, rather than a change to
+card groups. Turn and river interact: changing the earlier play can alter which
+later situations are reached and the opponent's likely hand distribution there.
+We averaged both swap orders so that one arbitrary order does not get all the
+credit. The 3.839-percentage-point gap change splits into **0.366 points turn**
+and **3.473 points river**; the interaction is already shared between them.
+
+These figures measure the extra-information gap, not total exploitability of a
+new hybrid. The earlier **4.480% median total** and failed learning gate remain.
+No retraining or playing-strength improvement occurred in this step.
+
+There is another useful finding: full has only a small seat-balanced advantage
+against these sampled policies in this spot, about **0.034–0.064% of the pot**.
+Two policies using the same compressed groups can look close when playing each
+other while differing greatly against a responder with finer legal information.
+Exact does not mean seeing hidden opponent cards; those stay hidden.
+
+This locates a difference in saved behavior. It does not prove whether sampling,
+the regret-update rule, averaging or training work caused that difference.
+The full and sampled procedures differ in several ways. We need a controlled
+comparison before choosing a remedy, rather than assuming a new feature or more
+iterations solves it.
+
+All fixed inputs, seeds, negative effects and interactions are retained. Complete
+replay matches with zero difference on this Mac. The independent audit passes
+160 crossed EVs, 120 hybrid baseline values, **480 response roots and 480 achieved
+own reply values**, with largest disagreement about **0.000000000000128 chips**.
+Own computation took about 60 seconds; the separate audit took about 71 seconds.
+Local checks pass 944 tests on each Python version; base-only 911 with 24 optional
+skips. Codex assisted; personal learning and hands-on hours are not inferred.
+
+```sh
+open results/policy-swaps/report/street-gaps.png
+open results/policy-swaps/report/crossed-payoffs.png
+.venv/bin/python scripts/inspect_policy_swap.py
+```
+
+In the bar chart, each bar is one turn/river combination. Check the low panel's
+scientific-notation scale; its gaps are tiny. In the heatmap, a positive blue cell
+favors the row policy over the column policy after balancing seats. The diagonal
+is zero by construction. These are fixed-spot EVs, not full-game win rates.
+
+The inspector defaults to the first declared seed. Try `--seed 20261302` to see
+another saved seed. F means full, S sampled, and the first letter is the turn.
+The [method](frozen-policy-swaps.md),
+[tables](../results/policy-swaps/report/tables.md) and
+[PR #21](https://github.com/jimmy-sim/poker-ai/pull/21) contain the complete evidence.
+We stop here before choosing a training or feature change. Issue #4 stays open.
 
 ## Your own learning notes
 

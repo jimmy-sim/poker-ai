@@ -78,11 +78,121 @@ policies with a mocked input loader. The real complete prior 40-profile selectio
 native binding and original receipt replay are checked separately. Production
 has no input-loader bypass.
 
-## Status
+## Recorded result
 
-Plan published in [PR #21](https://github.com/jimmy-sim/poker-ai/pull/21) before
-implementation/outcomes. Runner, native audit, offline report and inspector are
-implemented. Local checks pass 944 all-extras tests each on Python 3.11.17/3.12.15;
-base-only 911 passed/24 optional skips. Includes 30 new tests. Ruff lint/format,
-strict mypy and hooks pass. New research interventions have not yet run at this
-code-publication checkpoint.
+All **160 crossed profiles**, **320 crossed target rows**, **120 street hybrids**
+and **240 hybrid target conditions** complete. Every prior diagonal and additive
+identity passes. Own complete nested replay has **zero difference** on the recorded
+Mac. The independent audit passes all **160 crossed EVs, 120 hybrid baseline EVs,
+480 response roots and 480 achieved own reply values**. Maximum discrepancy,
+including recomputed street effects, is **1.2789769243681803e-13 chips**, below
+1e-9. The own stage took **60.218 seconds**, below 1800; audit including replay
+**71.163 seconds**. No learning or policy deployment occurred.
+
+### River choices explain most of the saved gap change
+
+For medium OOP range mass, these are mean **extra-information gaps**, half-summed
+over seats and averaged over all three seeds, as percent of the initial pot:
+
+| Opponent turn policy | Opponent river policy | Extra-information gap (% pot) |
+|---|---|---:|
+| Full | Full (FF) | 0.271466 |
+| Sampled | Full (SF) | 0.254886 |
+| Full | Sampled (FS) | 3.361794 |
+| Sampled | Sampled (SS) | 4.110824 |
+
+Replacing just the saved river decisions produces a much larger gap than
+replacing just the turn decisions. This pattern holds for each sampled seed.
+Keeping sampled turn decisions but substituting the full river continuation
+reduces the measured gap sharply. These are gap measurements, **not whole-hybrid
+exploitability, retraining improvements or an accepted new agent**. The previous
+sampled median total exploitability remains 4.480481% and its learning gate fails.
+
+The mean change SS minus FF is **3.839358 percentage points**. Averaging the two
+substitution orders attributes **0.366225 points to turn** and **3.473133 points
+to river**. Interaction is **+0.765610 points**, already split equally between
+those two order-averaged contributions; do not add it again. Turn alone slightly
+reduces the gap, but its average contribution becomes positive when the other
+order includes the river interaction. Signed values are retained for all controls.
+
+The other medium compressed controls also show dominant river contributions:
+texture change **3.918601** = turn **-0.071494** + river **3.990094** points;
+category change **3.526579** = **-0.084256** + **3.610835** points. Exact and
+raw-public medium premiums and effects are zero. Low candidate gaps remain tiny:
+FF/SF are zero; mean FS **1.294951e-7%**, SS **1.292777e-8%**. The two plot panels
+use different vertical scales. All individual seeds/seats are retained in raw
+JSON, with per-seed half-sums and means in the CSVs.
+
+### Why ordinary matches can miss this weakness
+
+Within the same medium spot, full range-mass has only **0.034084–0.063799% of the
+pot** seat-balanced EV advantage against the three saved sampled range-mass
+profiles. Yet their vulnerability to exact-information replies differs greatly.
+A match between two strategies using the same compressed information need not
+expose the weakness visible to an exact responder. These are deterministic spot
+EVs, not empirical win rates or population confidence intervals.
+
+The crossed matrix holds each opponent fixed while varying the other policy.
+Changing the responder's saved policy changes its baseline and within-partition
+improvement, but cannot change `B_i(o)-R_i(o)`: its own baseline cancels. In the
+street analysis, stored hybrid templates contain both actors' rows. For target i,
+this primary gap therefore measures the opponent-row intervention alone, as
+verified directly in tests. Raw hybrid baseline EVs/within-partition values can
+reflect both actors' changed rows; they are not attributed as opponent-only effects.
+This clarification was published in PR #21 before new outcomes.
+
+### What we learned, and what remains untested
+
+The observed full/sampled vulnerability difference is concentrated in the saved
+river continuation, with turn–river interaction. The information groups, card
+ranges, game and actions are fixed, so a representation-size change does not
+explain this experiment. Exact replies still respect hidden opponent cards.
+
+This does not identify *why training learned those river probabilities*: full
+CFR+ and linear sampled MCCFR differ in update rules, traversal and work. A
+street intervention is an intervention on a saved policy, not random assignment
+to a training algorithm. It can also expose histories rarely visited under the
+original prefix and change conditional opponent ranges. No claim of isolated
+sampling variance, an irreducible information floor, or guaranteed benefit from
+more iterations/new features follows. Do not deploy a hybrid from these plots.
+
+A useful next milestone is a controlled training-method comparison with matched
+update/averaging rules and documented work, or targeted inspection of the saved
+river rows and their training mass, before selecting a remedy. No such new
+training, remedy selection, fresh/global stage or default change runs here.
+
+## Evidence and verification
+
+[PR #21](https://github.com/jimmy-sim/poker-ai/pull/21) publishes the prospective
+plan first. Clean checked source **c2f14c122b850cf5bc8d152ccd074236367a7335** passed
+local and hosted checks before the own run. Raw own evidence was published in
+**acc98d81377399d8933e3ba7e326190c1a193c6a** before the clean-source native audit.
+Original model, strategies, configs, failed gates and historical source remain
+unchanged. Source/lock/config/input hashes, CPU/Python/NumPy metadata, every own
+hybrid and reply profile, and all raw chip values are retained. No reference
+actions enter the own computation.
+
+[Raw study](../results/policy-swaps/study.json),
+[native audit](../results/policy-swaps/independent.json),
+[summary](../results/policy-swaps/report/summary.json) and
+[tables/two figures](../results/policy-swaps/report/tables.md) reproduce the claims.
+Both figures are visually checked. Tests cover masks/partition projection,
+fixed-opponent root invariance, signed attribution, diagonals/antisymmetry,
+complete grids, source/context/profile/value tampering and native values themselves.
+All **944 all-extras tests** pass on Python 3.11.17/3.12.15; base-only **911 passed,
+24 optional skips**, including **30 new tests**. Ruff lint/format, strict mypy and
+hooks pass. Hosted code CI **42463711199** passes both Linux jobs before the run;
+final evidence checks are reported separately in the PR.
+
+Stop at this verified fixed-policy investigation. Issue #4 stays open.
+
+## Questions to practise
+
+1. **Why hold the opponent fixed?** It separates a change in the hero's baseline
+   play from a change in the opponent-specific exact/restricted reply roots.
+2. **Why average both street-swap orders?** Turn and river can interact. Each order
+   gives a different marginal effect; averaging shares interaction and preserves
+   the exact total change, including negative contributions.
+3. **Have we proved sampling caused the river weakness?** No. We located the
+   difference in saved behavior. A training-cause claim needs a comparison that
+   controls update rules, averaging and work, and may need more seeds/games.
