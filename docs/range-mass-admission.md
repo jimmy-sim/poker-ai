@@ -38,6 +38,27 @@ Reviewed evidence will live in `results/range-mass-admission/`; reproductions
 belong in ignored `results/runs/`. Sampled learning, fresh games, global admission,
 and default changes do not run in this milestone even if this gate passes.
 
+## Commands and verification
+
+In a clean checkout with uv 0.13.5, `make admit-range-mass` trains, audits and
+renders into ignored `results/runs/range-mass-admission/`. The 900-second cap is
+for training/setup; native audit and replay are timed separately. Existing
+outputs cause an error rather than being overwritten. For reviewed evidence,
+run the three scripts with explicit paths and commit the raw study/policies
+before the clean-source native audit. `make report-range-mass` only replays and
+renders the reviewed files; it does not train or call the reference solver.
+
+Software tests use a clearly labeled, tiny NumPy fixture by monkeypatching the
+solver factory. Production has no backend override: it still requires the frozen
+fused Numba backend. Tests cover context/input/source/policy hashes, missing or
+duplicate checkpoints, work counts, partition/active-mask consistency, numerical
+replay, deadline retention and native-value tampering. Fixture scores are never
+research results.
+
 ## Status
 
-Prospective plan published before implementation and measured outcomes.
+Prospective plan published in [PR #18](https://github.com/jimmy-sim/poker-ai/pull/18)
+before implementation and measured outcomes. Runner, replay, audit and renderer
+implemented. Local all-extras checks pass 845 tests on Python 3.11.17/3.12.15;
+base-only checks pass 818 with 18 optional skips. Ruff lint/format, strict mypy
+and hooks pass. This includes 25 new tests. No research training has run yet.

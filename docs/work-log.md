@@ -19,6 +19,10 @@ For a guided explanation of the ideas and results, start with the
 - **Prospective scope:** One unchanged range-mass candidate; all five controls,
   two known games and six full-tree checkpoints. Publish checked code before
   measuring; preserve failed gates. [Plan](range-mass-admission.md).
+- **Implementation checks:** 845 all-extras tests pass on Python 3.11.17 and
+  3.12.15; base-only checks pass 818 with 18 optional skips. Includes 25 new
+  runner/replay/audit/report tests. Ruff, strict mypy and hooks pass. These are
+  software checks; research outcomes are still pending at this checkpoint.
 - **Stopping point:** Independently audited full-control evidence and journal
   step 21. No sampled learning, new feature search or global/default change.
 - **Assistance / time:** Codex-assisted; personal hands-on time not recorded.
