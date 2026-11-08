@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "status": "correctness_only_not_learning_results",
+  "input_sha256": {
+    "configs/range-mass-policy-swaps.json": "a8be3448c78f692aa196815130d5be429c9b1ae08286d6ebc442365089d62f0a",
+    "results/policy-swaps/study.json": "e504f2316bb252ab1244f11a6ae66e93da73e78d7f837d42d357769e4c1e91d9",
+    "results/policy-swaps/study-profiles.json.gz": "e2415006b8db356432f13eb40d830ccb4078599845b8c0de6f7edfb4d6042138",
+    "results/policy-swaps/independent.json": "5d3665d6c6c3768c8c03a802ac98e5b5e2d29b6d153435ad9a0fa89ad5cf4642",
+    "configs/range-mass-protocol.json": "fe16eca6bbf018ada07e30a6c688dcd15d9eeeeb87599db962356dbc6a35ce89",
+    "results/range-mass-admission/study.json": "91cc222a47f354430cbfdf0da19d3133b39261509f515c81e767153b1421e240",
+    "results/range-mass-sampled/study.json": "acdd8e4f5edbd548a9d01ca9c8666e663cfa6bcc25bd64ccd3a00fd8517d760f",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad"
+  },
+  "future_comparison": {
+    "status": "preregistered_not_run",
+    "representations": [
+      "exact",
+      "texture_range_q8_b8"
+    ],
+    "spot_files": [
+      "configs/learning-spots/dev_low_oop.json",
+      "configs/learning-spots/dev_medium_oop.json"
+    ],
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ],
+    "traversal": [
+      "full",
+      "external"
+    ],
+    "regret_rule": [
+      "signed",
+      "clipped"
+    ],
+    "regret_weight": [
+      "uniform",
+      "linear"
+    ],
+    "average_weight": [
+      "uniform",
+      "linear"
+    ],
+    "common_averaging_phase": "opponent_pass",
+    "common_averaging_mass": "chance_own_reach",
+    "common_initialization": "one simultaneous exact uniform iteration; charged 2N visits",
+    "node_work_checkpoints": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "iteration_checkpoints": [
+      16,
+      64,
+      128
+    ],
+    "full_only_bridge": [
+      "cold_target_history_mass",
+      "warm_target_history_mass",
+      "warm_target_chance_mass",
+      "warm_opponent_chance_mass"
+    ],
+    "bridge_rules": {
+      "regret_rule": "clipped",
+      "regret_weight": "uniform",
+      "average_weight": "linear"
+    },
+    "maximum_own_seconds": 7200,
+    "work_accounting": "both passes; terminals/chance/decisions count; exact initialization included; first complete iteration crossing threshold; report overshoot",
+    "aggregation": "all seeds; arithmetic means and individual values; deterministic full cells not repeated as independent seeds",
+    "primary_metrics": [
+      "exact_exploitability_chips",
+      "within_partition_gain_chips",
+      "extra_information_gap_chips",
+      "river_only_gain_exact_prefix_chips"
+    ],
+    "secondary_metrics": [
+      "value_player_zero_chips",
+      "regret_norm",
+      "positive_average_coverage",
+      "river_visit_coverage",
+      "work",
+      "iterations",
+      "seconds"
+    ],
+    "effect_definition": "one-factor paired contrasts and interactions; work and iteration matches reported separately; no pooling axes; no seed confidence interval",
+    "audit": "comparison-only native EV, exact/restricted roots and achieved own replies for every published policy at 1e-9 chips; no native actions enter training",
+    "decision": "no best-arm selection, gate/default/fresh/global admission; diagnose before remedy; retain partial or failed outcomes"
+  },
+  "sentinel": {
+    "game": "kuhn_nonuniform_chance_software_fixture",
+    "policies": [
+      "positive",
+      "zero_support"
+    ],
+    "targets": [
+      0,
+      1
+    ],
+    "maximum_selector_paths": 10000,
+    "tolerance": 1e-12
+  },
+  "scope": "current milestone is common update correctness and historical work audit only; no new postflop learning result or causal strength claim"
+}
