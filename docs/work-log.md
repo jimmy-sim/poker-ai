@@ -20,8 +20,11 @@ For a guided explanation of the ideas and results, start with the
 - **Before outcomes:** All controls/games/seeds; 160 crossed profiles and 120
   street hybrids. Opponent-specific roots, prior diagonals, signed two-street
   effects and interaction. No new training or remedy selection.
-- **Pending:** Tested implementation, full own/native evidence, report/inspector,
-  local/hosted checks and learning journal step 24; stop at verified diagnosis.
+- **Checked code before outcomes:** Runner, native audit, report/inspector and
+  30 new tests. All-extras 944 pass each Python 3.11.17/3.12.15; base-only 911
+  passed/24 optional skips. Ruff lint/format, strict mypy and hooks pass.
+- **Pending:** Hosted checks, complete own/native intervention evidence and
+  learning journal step 24 results; stop before any training or remedy choice.
 - **Assistance / time:** Codex-assisted; personal hands-on hours not recorded.
 
 ## 2026-11-07 — Saved range-mass reply diagnosis

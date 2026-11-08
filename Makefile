@@ -1,3 +1,18 @@
+.PHONY: study-policy-swaps report-policy-swaps
+study-policy-swaps:
+	$(UV) run --locked python scripts/study_policy_swaps.py \
+		--output results/runs/policy-swaps/study.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_policy_swaps.py \
+		--report results/runs/policy-swaps/study.json \
+		--output results/runs/policy-swaps/independent.json
+	$(UV) run --locked --extra research python scripts/report_policy_swaps.py \
+		--report results/runs/policy-swaps/study.json \
+		--audit results/runs/policy-swaps/independent.json \
+		--output results/runs/policy-swaps/report
+
+report-policy-swaps:
+	$(UV) run --locked --extra research python scripts/report_policy_swaps.py
+
 .PHONY: diagnose-range-replies report-range-replies
 diagnose-range-replies:
 	$(UV) run --locked python scripts/diagnose_range_replies.py \
