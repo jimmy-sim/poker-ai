@@ -13,6 +13,31 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Matched-update batch foundation, prospective
+
+- **Issue:**#4; [prospective design](matched-update-batches.md) and fixed config
+  select ALL48 endpoint iteration targets by metadata, not strength.144new B1
+  readouts/144reused batched readouts;1152new/1152reused fixed targets planned.
+- **Implementation:**50focused checks pass each1.13/1.12s (28observer/22grid),
+  six16-step independent tiny trajectories; original work-observer parity and
+  both-book/RNG/current/work mutation guards. Actual source manifest validates
+  nine hashes/complete native receipts without training/reference construction.
+  Ruff/format547/strict450 pass; full local and hosted checks running.
+- **Complete checks:**base1947+24skip each266.13/255.43s; extras1980each
+  296.34/282.65s. Strengthened every16boundary assertion passes28observer tests
+  each0.15/0.16s after those full suites; no production-code changes. Final
+  hosted run remains required. Journal navigation added; no long admission.
+- **Published grid:**sourceCI42641272661bothgreen ond37e610; clean-source
+  plan.json records48targets(18,727–146,972updates), all within B1 sourceendpoints,
+  144profilepairs/1152reusedfixed targets;9inputhashes verified. New published
+  metadata regression recomputes all targets; final artifactCI pending.
+- **Viewer merged:**PR37at0e8b422 afterfinalCI42638459644bothgreen. Main24tests
+  0.26s and actualn/p/qCLI pass;10originalmodifiedoutputs untouched.
+- **Bounded scope:** grid validation and mutation-guarded mixed work/iteration
+  observation tests only. No actual Holdem replay/score or long admission.
+  Full7200+900 caps plus verification cannot fit tonight; no shortened run or
+  future schedule. All source/data preserved. Codex; personal hours unknown.
+
 ## 2026-11-09 — Offline saved-strategy viewer, prospective
 
 - **Issue:**#4; [prospective acceptance](batch-strategy-viewer.md) fixes a

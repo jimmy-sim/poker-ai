@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "prospective_matched_update_foundation_not_training_admission",
+  "input_sha256": {
+    "configs/frozen-pass-batches.json": "91b2c1979257fe826477de172c279ff5a5f96553e3f177aac345187dabbeb02b",
+    "results/reduced-batch-study/own.json": "cc7c4477f47ac012d3571d18a86788f9d4301142ae47e050b1d3b2aa505476b2",
+    "results/reduced-batch-study/native.json": "9fcf56d986151d7871634f2bc3e9976b87edea592d42258c10511856f82f6968",
+    "results/reduced-batch-study/own-profiles.jsonl.gz": "1e78d307fdd1265383f60affa5eee6910d15c4b11c6071a27a1476f16055686f",
+    "results/reduced-batch-study/own-masses.jsonl.gz": "a3b2f41955d86ec1e97e0d1ffc9899d607758499bb4aa03f6853cfbf78eb2cc5",
+    "results/reduced-batch-study/own-currents.jsonl.gz": "48d70fff85afd8c4cac785fe7b9c74da290901a5200d670f1b161cdd1af2bb26",
+    "results/batch-current-diagnosis/own.json": "3ed627c56cb3c590fdd395f3e70595c1669bb018534d4f82468ce6b886fc26df",
+    "results/batch-current-diagnosis/native.json": "c67e560d7b205d937d94fbaf81a551664b455cac415c058d416929b137615e89",
+    "results/batch-current-diagnosis/own-profiles.jsonl.gz": "82e2c215984032996ff4f9f2702bd89c77e5f9f44a01505d01e445efc5c0d57a"
+  },
+  "source_own": "results/reduced-batch-study/own.json",
+  "source_currents": "results/batch-current-diagnosis/own.json",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "regret_rules": [
+    "signed",
+    "clipped"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "comparison_batch_sizes": [
+    4,
+    16
+  ],
+  "readouts": [
+    "current",
+    "uniform_average",
+    "linear_average"
+  ],
+  "final_work_label": 10000000,
+  "original_work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "expected_contexts": 24,
+  "expected_iteration_targets": 48,
+  "expected_new_profiles": 144,
+  "expected_reused_profiles": 144,
+  "expected_self_pairs": 144,
+  "expected_new_fixed_targets": 1152,
+  "expected_reused_fixed_targets": 1152,
+  "expected_B1_readout_checks": 144,
+  "maximum_own_seconds": 7200,
+  "maximum_native_seconds": 900,
+  "maximum_profile_seconds": 900,
+  "maximum_software_seconds": 180,
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "selection": "ALL B4/B16 final10m recorded update counts in every context, independent of strength metrics; reject targets beyond originalB1 endpoint rather than extending source work",
+  "readouts_scope": "48 B1 prefix currents plus96 same-prefix averages; reuse48 batched currents plus96 final batched averages; dependent readouts,not independent learners",
+  "observation": "full target0+target1 policy update boundary only; exactiteration targets and firstcompleteworkcrossings share one guard; capture cannot mutate either average ledger,regrets,RNG,visited rows,counters or policies",
+  "baseline": "B1 same recordedPython3.11.17 NumPy2.4.6 backend/seed/warmstart/source; all original100k/1m/10m readoutstate/policy/work/iteration hashes exact before accepting any new prefix score",
+  "future_gates": "complete prospective runner/archive/grid/replay/failure tests, both base/optional local suites and sourcehostedCI; published sourcebound tinyproof and fixed conservative forecast strictlybelow7200; published checkedadmission before any Holdem replay; own evidence published before new nativecomparison",
+  "forecast": "three repeats of ALL24 unchangedB1 prefixes; same originalmax-per-path guardedformula, with added observer/scoring/archive/fixedtarget costs explicitly covered before admission; no favorable subset/retry or changed scientificcaps",
+  "scope": "known-game two-axisdiagnosis only; equalupdates spendsdifferentnodework; no purevariance/default/fresh/global/selectedpolicy admission",
+  "window": "no actuallongrun in remainingNov9 window: full7200own+900native caps plusverification do not fit; nofutureautomation"
+}
