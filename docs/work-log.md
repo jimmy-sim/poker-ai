@@ -13,7 +13,24 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-09 — Frozen-pass batches, prospective
+## 2026-11-09 — Batch function costs, prospective
+
+- **Issue / question:** #4, after the retained 7201.492439s forecast failure.
+  Profile actual function costs before optimizing; [plan](batch-overhead.md) and
+  config precede code/outcomes. No unchanged timing retries or relaxed caps.
+- **Fixed scope:** All 24 first-seed paths across both games/encodings/regret
+  rules and B1/B4/B16; plain plus instrumented copies (48 endpoints), three
+  workers, separate900s cap. Exact archived state/work/readout/prefix identities,
+  complete function/caller ledgers and independent call/work accounting. Whole
+  measure instrumentation; inclusive mean time includes traversal and is not
+  validation-only cost. No optimizer, EV scores or long admission in this step.
+- **Prior verification:** PR #32 adds two actual published-data replay tests,
+  base3.11/3.12 pass5.69/5.73s. Actual clean-source admission rejects the failed
+  forecast. Final artifact CI42609429095 pending at97234bb; no new-policy native
+  audit or long study claimed. All historical source/data/failures remain intact.
+- **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+
+## 2026-11-09 — Frozen-pass batches, complete failed compute gate
 
 - **Issue / question:** #4; does averaging independent frozen-policy traversals
   help at the same work, despite fewer updates? [Plan](frozen-pass-batches.md)
