@@ -2370,6 +2370,13 @@ and the second runtime remain in progress. [Method and checks](batch-strategy-vi
 [PR37](https://github.com/jimmy-sim/poker-ai/pull/37). Codex assisted; your own
 hands-on time or understanding is not inferred from these tests.
 
+The viewer now passes the full project checks on both Python versions:
+1,897base tests each,1,930with optional tools, plus three actual saved-data
+checks each. The real3.12terminal browser accepts n/p/q successfully, and its
+startup loads the saved chain once. These are software checks; no strategy was
+trained or made stronger by displaying it. Final GitHub checks remain required
+before merge.
+
 ## 41. Separating training work from policy updates — November 9
 
 A policy update is when the learner changes its action-probability table. Node
@@ -2408,6 +2415,7 @@ and the [prospective method](matched-update-batches.md) describe the remaining
 runner, archive, independent audit and compute gates. The full future caps
 cannot fit tonight's remaining window, so they stay intact and no run is started.
 This is preparation for a controlled test, not a stronger-agent result.
+
 
 ## Your own learning notes
 

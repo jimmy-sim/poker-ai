@@ -37,6 +37,12 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:**#4; [prospective acceptance](batch-strategy-viewer.md) fixes a
   read-only saved-policy comparison and optional n/p/q terminal browser before
   implementation. Distribution L1 is not EV loss or playing strength.
+- **Actual verification:**24fast+3actual-archive checks; fullbase1897+24skip
+  each270.11/257.66s, extras1930each298.10/285.85s;3actualsource checks each
+  65.71/62.01s, constructors blocked. Default3.11 and n/p/q3.12CLI pass.
+  Ruff/format541/strict445. No source/data edits; final hosted CI pending.
+- **Dependency merged:**PR36de4755d, finalCI42635166354bothgreen; main2checks
+  0.32s/full216+1728replay0in47.488662458s/6filesbyteequal;10userhashes intact.
 - **Scope:** verified own archives/complete published audit chain; only acting
   player's own cards and public board; preserve all old scientific source/data.
   New focused tests, actual CLI and full relevant checks/hosted CI required.
