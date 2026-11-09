@@ -18,10 +18,15 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
   Published raw cost evidence motivates the same array reductions through methods,
   preserving all validation/arithmetic. New optional backend; frozen old source/data.
+- **Implementation:**84 focused checks pass; Ruff/format496/strict405. Full
+  base/optional, tiny-game process and hosted checks pending. Explicit new factory,
+  all72 exact endpoint controls before216timings, no patch to frozen old code.
 - **Acceptance:** independent math/invalid/alias checks, exact tiny trajectories,
   full local and hosted source checks before all72 realprefixes/216timingrows.
   Same formula/grid/seeds/7200own/900native; retain old failure and all new outcomes.
   No optimizer result, long admission or stronger/default/fresh/global claim yet.
+- **Main cost merge verification:** PR33 merged9895452,51 focused tests pass
+  in0.18s; all4 offline numerical files identical;10 useroutput hashes unchanged.
 - **Assistance/time:** Codex-assisted; hands-on time not recorded.
 
 ## 2026-11-09 — Batch function costs, checked source

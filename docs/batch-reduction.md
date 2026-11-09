@@ -55,3 +55,18 @@ admission. No reference strategy enters the learner.
 Pre-implementation label correction: the declared q8 representation uses its
 existing exact identifier `texture_range_q8_b8`. Input byte hashes are pinned in
 the config before code; no cases, methods or outcomes changed.
+
+## Implementation checkpoint
+
+The optional backend retains all raw finite/nonnegative/menu/count and sum
+overflow checks; it only calls the corresponding ndarray reductions. B1 calls
+the frozen original step once. Explicit new measurement code selects this backend
+without patching original factories. It checks all72 same-source endpoints before
+permitting the full216-row profile. Offline readers reconstruct all state/work
+and forecast accounting without a learner/reference solver. Attempts, partial
+worker events and failures are retained; outputs cannot be overwritten.
+
+84 focused checks pass (1.41s). Ruff, formatting496files and strict typing405files
+pass. Real tiny-game three-process IO checks and complete base/optional suites
+are running; hosted complete-code checks precede actual poker prefixes. No
+optimizer performance or new compute forecast has been measured yet.

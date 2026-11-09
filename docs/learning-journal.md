@@ -2189,6 +2189,11 @@ assuming good inputs. The [plan](batch-reduction.md) fixes exact behavior tests
 and the complete cost grid before implementation. A failed cost result stays
 visible; this step has no outcome or new agent yet.
 
+The optional implementation now passes 84 focused checks. These include invalid
+input rejection, exact sparse means, random-state preservation and both average
+books. Full project, process and GitHub checks still precede any real Hold'em
+prefixes. These are software results, not a measured speed improvement.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
