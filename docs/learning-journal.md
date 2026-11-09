@@ -2180,6 +2180,15 @@ kettle. Blaming the whole interval on stirring would be misleading. Likewise,
 our batch function calls the game traversal while gathering samples; its total
 time is not all validation work. The saved caller breakdown separates them.
 
+## 37. Try cheaper dispatch while keeping every check (November 9, prospective)
+
+The cost report suggests a small implementation question: can an array perform
+its own “are all values finite?” check more cheaply than the general NumPy
+wrapper? The test must keep the check and the same arithmetic, rather than
+assuming good inputs. The [plan](batch-reduction.md) fixes exact behavior tests
+and the complete cost grid before implementation. A failed cost result stays
+visible; this step has no outcome or new agent yet.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

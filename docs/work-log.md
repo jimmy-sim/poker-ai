@@ -13,6 +13,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Batch reduction dispatch, prospective
+
+- **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
+  Published raw cost evidence motivates the same array reductions through methods,
+  preserving all validation/arithmetic. New optional backend; frozen old source/data.
+- **Acceptance:** independent math/invalid/alias checks, exact tiny trajectories,
+  full local and hosted source checks before all72 realprefixes/216timingrows.
+  Same formula/grid/seeds/7200own/900native; retain old failure and all new outcomes.
+  No optimizer result, long admission or stronger/default/fresh/global claim yet.
+- **Assistance/time:** Codex-assisted; hands-on time not recorded.
+
 ## 2026-11-09 — Batch function costs, checked source
 
 - **Complete own cost evidence:** 21.733298041s under900; all48 archived
