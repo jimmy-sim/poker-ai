@@ -61,6 +61,13 @@ For a guided explanation of the ideas and results, start with the
   Own stage 1136.768864s, parent CPU 100.041639s, reaped child CPU 3099.32s,
   below 7200s. Six figures and all six numerical files generated. Publish these
   own outputs before independent audit; they do not yet complete native validation.
+- **Independent audit:** After own publication `c0df957`, all 512 self profiles
+  and 2048 fixed target conditions pass OpenSpiel 2.0.2 scalar comparison.
+  Maximum discrepancy 2.4158453015843406e-13 chips, below 1e-9. Native stage
+  237.653849s under 900s, including 99.214009s complete own input replay with zero
+  error; parent CPU 237.495094s, reaped child CPU 0.07s. All 128 fixed-opponent/
+  target reply identities checked before reuse. Reference output never trains
+  an agent. All six figures inspected; raw numerical and seed results retained.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 
