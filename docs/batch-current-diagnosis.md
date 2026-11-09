@@ -44,3 +44,8 @@ contrasts, plots, units, scope, limitations and three interview answers. Update
 issue#4, the work log and plain-English journal. A good result cannot select a
 default or establish fresh/global strength. If full caps plus verification do not
 fit the remaining one-time window, save this boundary without future scheduling.
+
+Pre-measurement clarification: config now explicitly pins the previously stated
+chip/unitless tolerances and reference license bytes. The reference role names
+this step's216+1728 comparisons rather than inheriting the source study's480
+label. No cases, caps, method or result changed; no diagnosis has run.
