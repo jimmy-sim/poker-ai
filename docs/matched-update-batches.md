@@ -47,3 +47,66 @@ partial/failure; no reference strategy/training data or commercial outputs.
 The full caps plus verification do not fit the remaining one-time November9
 window. Stop tonight at verified software/protocol groundwork; do not shorten
 caps, run a subset as the study, claim admission or schedule another work window.
+
+## Foundation implementation and checked scope
+
+The new observer leaves the existing trainer unchanged. It combines iteration
+labels and first complete work crossings in one callback, checks the same
+complete state guard before/after, and checks the deadline after the last
+callback as well. The common exact warm start counts as iteration1. The same
+seed does not couple per-update random draws when batch sizes consume different
+numbers of samples.
+
+Twenty-eight observer tests pass: six independently uninterrupted tiny-game
+trajectories (B1/B4/B16 x signed/clipped), all16iteration endpoints, original
+work-observer identity, both ledgers/current/RNG/work equality, simultaneous
+coordinates and warm crossings, invalid labels, mutation, final-callback
+deadline and interrupted capture. Twenty-two grid tests cover a complete explicit
+metadata fixture, omitted/duplicate sources, wrong coordinates, mismatched
+readouts, forbidden budget extension, changed fixed opponents/seats/config and
+the complete actual archived-source manifest. Fixture values are not poker
+results. All50 focused checks pass on each base runtime1.13/1.12s.
+
+The actual manifest validates all nine original source hashes and complete
+published480-profile and216+1728target audit receipts without constructing a
+learner or reference. It reads no strength metric to select targets. There are
+24contexts,48logical iteration targets,144new profile identities and144reused
+endpoint identities. A target is an assigned context/batch comparison, not an
+independent statistical observation. Equal numeric targets, if any, would share
+one underlying prefix and must not be counted as independent training.
+
+Ruff/format547 and strict450 pass. Complete base/optional suites and hosted CI
+are running. No actual Holdem replay, new score, source-bound full-runner proof,
+new compute forecast or long admission exists. The earlier failed study gates
+and ordinary agent default are unchanged.
+
+## Terminal checks after merge
+
+```sh
+.venv/bin/python scripts/check_matched_update_grid.py
+.venv/bin/python -m pytest -q tests/test_coordinate_observer.py tests/test_matched_update_grid.py
+```
+
+The first command prints24contexts/48targets/144pairs and explicitly says no
+training or strength scores/admission. The second runs tiny-game/metadata tests,
+not a new Holdem experiment. Optional `--output` writes a new manifest path and
+refuses to overwrite an existing file. A future runner must still implement the
+complete archive/replay/partial-failure/reference/software/forecast gates.
+
+## Three questions to explain the design
+
+**Is matching updates fairer than matching work?** It answers another question.
+Larger batches use more samples per update, so equal updates gives them more
+compute. Report both axes and actual work instead of choosing whichever favors
+one method. Neither alone establishes a pure variance effect.
+
+**Why use existing endpoint iteration counts?** They give a complete metadata-
+defined target for every game/encoding/rule/seed and both larger batches. No
+best score or favorable seed selects a target, and B1 never extends its old
+endpoint to meet one. This is a prospective follow-up to known results, not a
+blind rediscovery.
+
+**What does the observer proof establish?** Observation preserves the tested
+learning trajectory and records complete update boundaries. It does not prove
+the future poker runner, convergence, playing strength or a compute admission.
+Those remain separate gates.

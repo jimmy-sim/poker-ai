@@ -18,6 +18,11 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:**#4; [prospective design](matched-update-batches.md) and fixed config
   select ALL48 endpoint iteration targets by metadata, not strength.144new B1
   readouts/144reused batched readouts;1152new/1152reused fixed targets planned.
+- **Implementation:**50focused checks pass each1.13/1.12s (28observer/22grid),
+  six16-step independent tiny trajectories; original work-observer parity and
+  both-book/RNG/current/work mutation guards. Actual source manifest validates
+  nine hashes/complete native receipts without training/reference construction.
+  Ruff/format547/strict450 pass; full local and hosted checks running.
 - **Bounded scope:** grid validation and mutation-guarded mixed work/iteration
   observation tests only. No actual Holdem replay/score or long admission.
   Full7200+900 caps plus verification cannot fit tonight; no shortened run or

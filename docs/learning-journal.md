@@ -2362,6 +2362,45 @@ and the second runtime remain in progress. [Method and checks](batch-strategy-vi
 [PR37](https://github.com/jimmy-sim/poker-ai/pull/37). Codex assisted; your own
 hands-on time or understanding is not inferred from these tests.
 
+## 41. Separating training work from policy updates — November 9
+
+A policy update is when the learner changes its action-probability table. Node
+work counts the game-tree nodes it visits to collect information for updates.
+These are different measurements. A larger batch gathers more samples before
+changing the table.
+
+**Teaching example:** Ignoring the shared warm start, B1 uses one sampled
+traversal per seat for an update; B4 uses four. Comparing both after100updates
+lets B4 do more sampling work. Comparing both after the same work lets B1 update
+more often. Either comparison is useful if we label what was held equal.
+
+The completed study held node work fixed. The next planned study also compares
+strategies after the same update count. It uses both larger batches' recorded
+endpoint counts in every existing game, encoding, rule and seed. It does not
+choose a favorable seed or score. There are48planned targets, with latest and
+two average readouts at each. No new Holdem strategy has been trained for this
+follow-up yet.
+
+Tonight's foundation checks that recording those moments cannot alter training.
+Twenty-eight tiny-game tests check the observer;22more check the complete
+planned grid and source records. All50pass on both Python versions. A capture
+that changes probabilities, accumulated averages, random state or work counters
+fails. Captures happen after both seats finish their update, and a deadline
+also covers the last capture.
+
+Try the quick saved-metadata check after merge:
+
+```sh
+.venv/bin/python scripts/check_matched_update_grid.py
+```
+
+Expected:24contexts,48targets,144pairs, and an explicit statement that no
+training, strength scores or long-run admission occurred. [PR38](https://github.com/jimmy-sim/poker-ai/pull/38)
+and the [prospective method](matched-update-batches.md) describe the remaining
+runner, archive, independent audit and compute gates. The full future caps
+cannot fit tonight's remaining window, so they stay intact and no run is started.
+This is preparation for a controlled test, not a stronger-agent result.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
