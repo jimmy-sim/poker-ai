@@ -40,6 +40,15 @@ For a guided explanation of the ideas and results, start with the
   covers 338 files in base and optional environments; lint/format/hooks pass.
   Both code CI jobs and source-bound correctness/forecast/admission still precede
   any new Hold'em replay. Local testing times are not experiment or human hours.
+- **Checked source / forecast:** Both hosted jobs
+  [42584867420](https://github.com/jimmy-sim/poker-ai/actions/runs/42584867420)
+  pass on `432908e`. Clean source-bound correctness completes in 9.559915s,
+  with 192 toy prefixes, 512 profiles, 192 mass boundaries, 160 current pairs,
+  2048 fixed targets and zero replay errors. This is explicitly toy software proof.
+  The complete 64-case historical forecast is 5328.971368s, below the unchanged
+  7200s own cap. Historical partition sums: 1032.242842/1031.129947/1021.501461s.
+  Forecast is a planning guard, not measured new runtime or human hours. Publish
+  correctness before recording and publishing checked admission; poker still pending.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 

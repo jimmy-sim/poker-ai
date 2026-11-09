@@ -1939,6 +1939,13 @@ skips and 1472 optional-suite tests on both Python versions. All ten longer chec
 pass on both. GitHub CI and the source-bound correctness/compute receipt remain
 separate gates before the study.
 
+Both GitHub code jobs have now passed. The recorded toy proof checks all planned
+archive paths with zero replay error. A fixed calculation using the original
+64 run durations forecasts about 89 minutes, below the two-hour own-stage cap.
+That is a cautious planning estimate, not time already spent or a guarantee.
+The next step is to publish the checked admission and replay the known Hold'em
+trajectories. [Correctness receipt](../results/averaging-history/correctness.json).
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
