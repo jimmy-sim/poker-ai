@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Saved-window fallback, prospective
+
+- **Issue / question:** Continue #4 after the completed averaging-history study.
+  Does the uniform fallback at zero-window-mass rows affect its saved late
+  policies? Missing mass alone is not proof of weakness; full controls can have
+  unreachable rows. [Plan](window-fallback.md) and config precede implementation
+  and intervention outcomes. No new Hold'em training or selected agent.
+- **Fixed design:** All 128 original suffixes; raw/seat0/seat1/both fill from the
+  same own whole average, only exact-zero rows. 512 self profiles, 2048 fixed
+  opponent conditions, full-control realization equivalence and complete 2×2
+  BR accounting. Original source/data/caps/gates remain frozen; this saved-policy
+  stage has separate 900s own/native caps. Tests/local/hosted checks precede
+  measurement; own publication precedes reference comparison.
+- **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+
 ## 2026-11-09 — Averaging-history runner and independent checks
 
 - **Authorization:** One work window from midnight to 08:00 Pacific, continuing

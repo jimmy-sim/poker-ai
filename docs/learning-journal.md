@@ -1994,6 +1994,32 @@ from the terminal, or run `.venv/bin/python scripts/report_averaging_history.py
 The [method page](averaging-history.md#reproduce-and-inspect) lists the exact
 commands and explains how to read all six plots.
 
+## 34. Ask what happens at late rows with no weight
+
+**November 9, 2026 — issue #4, prospective.** Codex-assisted; personal hands-on
+time not recorded. [Plan](window-fallback.md), published before implementation
+or intervention outcomes.
+
+**Question:** Some late-window rows received no new averaging weight. The
+existing rule uses uniform probabilities there. Does that fallback matter to
+the saved strategy, or are the rows unreachable under its own play?
+
+**Example, made up:** If an earlier decision always folds, a later decision on
+that path cannot happen. Changing the later action probabilities would not
+change the strategy's result. But a reachable decision might be absent from a
+finite sample, so its fallback could matter. Missing mass alone cannot tell us
+which situation applies.
+
+The new test will keep every learned row fixed and fill only exact-zero rows
+from the same agent's saved whole average. It keeps raw, seat-0-only,
+seat-1-only and both-seat fills for all original windows, then checks every
+variant and all fixed opponents. Full controls must preserve realized behavior;
+any failure is investigated before interpreting a result.
+
+This is an offline diagnostic, with no new training or agent deployment.
+Correctness, complete local and GitHub code checks, own results and independent
+comparison remain required in that order. All outcomes are pending.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
