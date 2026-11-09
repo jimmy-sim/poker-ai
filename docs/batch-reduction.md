@@ -90,3 +90,48 @@ readout identities, both books, RNG, counters and charged work. Complete stage:
 without learning. The [own correctness receipt](../results/batch-reduction/correctness.json)
 is published before the complete216-row timing stage. No speed/strength or long
 admission follows from this correctness result.
+
+## Complete new forecast fits — November 9
+
+[Own timing receipt](../results/batch-reduction/profile.json): all216 rows across
+72 paths and three repeats finish in **65.922444291s** under900. Every
+endpoint retains its exact old guard, both readout hashes, RNG/work/counters and
+prefix checks;144 repeated B1 identities pass. No cases, seeds, work, caps or
+forecast rules changed. The original failed attempt remains immutable.
+
+| Quantity | New array-method backend seconds |
+|---|---:|
+| Maximum B1 partition | 541.399749513 |
+| Maximum B4/B16 partition | 897.080457341 |
+| Sum of sequential barriers | 1438.480206855 |
+| Same guarded formula | **6953.920827419** |
+| Fixed limit | 7200 |
+
+The new forecast **fits, requiring checked admission**. Base3.12 offline replay
+reproduces both [report files](../results/batch-reduction/report/summary.json)
+byte for byte, including all216 raw [prefix rows](../results/batch-reduction/report/prefixes.csv).
+The historical6953/7201 comparison is **not a controlled speedup estimate**:
+measurements are from different times and may reflect system variability. The
+new measured source change and unchanged formula qualify a separate admission,
+not the old failed experiment. It does not guarantee future runtime or strength.
+
+No long trajectories, policy selection, native solver, changed default or
+fresh/global admission occur in this step. The conditional study needs its own
+complete source/IO/CI checks and published admission before learning.
+
+```sh
+.venv/bin/python scripts/validate_batch_reduction.py --replay results/batch-reduction/profile.json
+```
+
+### Interview practice
+
+1. **What changed mathematically?** Nothing in the intended estimator: same
+   sparse order, copies, sums, final division, clipping and validation. Only
+   dispatch for the same Boolean reductions changes. Checked real endpoints
+   and tiny trajectories are bit-identical to their originals.
+2. **Does a fitting forecast prove a speedup?** No. It passes this fixed planning
+   rule on the declared complete run. Historical timings are unpaired and noisy;
+   I do not infer a causal/general speed ratio or stronger play from them.
+3. **Why separate admission from this result?** Correct short trajectories and
+   a fitting forecast do not test the full archive/scoring pipeline or the
+   long-run source. That adapter needs its own tested, published source gate.

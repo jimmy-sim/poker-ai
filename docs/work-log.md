@@ -34,6 +34,11 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
   Published raw cost evidence motivates the same array reductions through methods,
   preserving all validation/arithmetic. New optional backend; frozen old source/data.
+- **Complete forecast:**216 rows/72 paths,144 repeatedB1checks, all old
+  state/work identities exact;65.922444291s under900. Same guarded
+  formula6953.920827419<7200; base3.12 two reportfiles byte-identical.
+  Old7201.492438542failure retained. Historical timings are unpaired, no causal
+  speedup or strength claim. No long admission yet.
 - **Own correctness:**72 endpoints/48B1readout checks all exact; 27.067313916s
   under900, base3.12 offline replay passed; published before216timings.
 - **Source gate:**3a1a3c9; both CIjobs42619839287passed. Base1784+24skip

@@ -2204,6 +2204,12 @@ both strategy averages, random state and work counts. This tells us the checked
 prefixes behave the same. The complete timing experiment is next; exact behavior
 alone does not show that the new implementation is faster or stronger.
 
+The complete216-row forecast fits the unchanged budget:6,953.92 seconds against
+7,200. Every checked state stays exact, and another Python version recreates the
+saved report. The old7,201.49-second failure remains visible. Different timing
+sessions are noisy, so this is not a measured percentage speedup or stronger
+agent. The separate long-study pipeline still needs its own checks/admission.
+
 ## 38. Prepare the conditional batch study (November 9, prospective)
 
 The cheaper checks still need their real cost gate. Meanwhile, the next step's
