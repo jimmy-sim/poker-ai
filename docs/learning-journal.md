@@ -2147,6 +2147,13 @@ states, and the profiler's visit counts match charged work. Saved reports replay
 without training and reproduce their numerical files. These are software checks;
 full project checks and GitHub CI still precede the actual Hold'em cost profile.
 
+A review caught a reporting issue before the real run: two different functions
+can have the same printed name and source line, especially generated constructors.
+The ordinary summary can hide one behind the other. Our collector now keeps
+all raw entries and distinguishes their code. Regression checks cover that case.
+The learner is unchanged, and the corrected collector needs its own complete
+checks before measuring Hold'em costs.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

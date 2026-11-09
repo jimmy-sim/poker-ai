@@ -34,7 +34,7 @@ def fixture() -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
             stats = None
             calls = None
             if mode == "instrumented":
-                functions = []
+                functions: list[dict[str, Any]] = []
                 names = [
                     (
                         "src/poker_ai/training/mccfr.py",
@@ -56,11 +56,21 @@ def fixture() -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
                         )
                     )
                 for file, name, count in names:
-                    frame = dict(file=file, line=1, name=name)
+                    frame = dict(
+                        file=file,
+                        line=1,
+                        name=name,
+                        qualname=name,
+                        arguments=[],
+                        code_sha256=sha([file, name]),
+                    )
+                    code_id = sha(frame)
                     functions.append(
                         dict(
                             **frame,
-                            id=sha(frame),
+                            id=sha([code_id, len(functions)]),
+                            code_id=code_id,
+                            entry_index=len(functions),
                             primitive_calls=1,
                             total_calls=count,
                             self_seconds=0.01,

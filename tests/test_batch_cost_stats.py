@@ -35,6 +35,35 @@ def test_recursive_function_and_caller_count_orders_are_distinct() -> None:
     assert stats["total_self_seconds"] >= 0
 
 
+@pytest.mark.parametrize("identical", [False, True])
+def test_generated_label_collisions_preserve_every_raw_entry_and_edge(
+    identical: bool,
+) -> None:
+    first: dict[str, Any] = {}
+    second: dict[str, Any] = {}
+    exec(compile("def same(x): return x + 1", "<generated>", "exec"), first)
+    text = "def same(x): return x + 1" if identical else "def same(y): return y * 2"
+    exec(compile(text, "<generated>", "exec"), second)
+
+    def both() -> tuple[Any, Any]:
+        return first["same"](3), second["same"](3)
+
+    profiler = cProfile.Profile()
+    profiler.runcall(both)
+    stats = extract(profiler, ROOT)
+    functions = [
+        f
+        for f in stats["functions"]
+        if f["file"] == "<generated>" and f["name"] == "same"
+    ]
+    assert len(functions) == 2 and len({f["id"] for f in functions}) == 2
+    assert sum(f["total_calls"] for f in functions) == 2
+    assert len({f["code_id"] for f in functions}) == (1 if identical else 2)
+    assert stats["frame_count"] == len(profiler.getstats())
+    for f in functions:
+        assert any(c["callee"] == f["id"] for c in stats["callers"])
+
+
 @pytest.mark.parametrize(
     "name,expected",
     [

@@ -40,6 +40,14 @@ For a guided explanation of the ideas and results, start with the
   CI/call ledgers test schema only. Full base/optional and hosted checks remain
   before any actual Hold'em cost prefix; no optimizer or new forecast/admission.
 
+- **Pre-measurement correction:** Review finds standard pstats labels can merge
+  generated constructors with the same file/line/name. Raw cProfile extraction
+  now retains every code entry and caller edge, using portable structural code
+  identities plus distinct entry IDs. Two regression cases cover different and
+  identical generated code sharing a label. 51 focused fast checks pass; complete
+  local/hosted checks are required on the corrected collector before any actual
+  Hold'em cost measurements. No learner, seed, work or scientific gate changes.
+
 ## 2026-11-09 — Frozen-pass batches, complete failed compute gate
 
 - **Issue / question:** #4; does averaging independent frozen-policy traversals

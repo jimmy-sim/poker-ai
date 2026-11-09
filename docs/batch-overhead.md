@@ -111,3 +111,12 @@ ledgers test contracts only and are not independently observed research evidence
 
 Full base/optional suites and hosted complete-code CI are pending. No actual
 Hold'em cost-profile outcomes or optimized backend exist at this checkpoint.
+
+Review before real measurement caught generated functions sharing one standard
+profiler file/line/name label. The collector now retains every raw cProfile
+entry and caller edge, with portable structural code identities and separate
+entry identifiers even for identical generated code. No self cost is overwritten
+by a label collision. Regression tests cover both different and identical code
+with colliding labels. Full checks and hosted CI must pass on this corrected
+collector before the Hold'em cost run. Earlier software-only timing summaries
+are not poker evidence or permission to reuse the old code gate.

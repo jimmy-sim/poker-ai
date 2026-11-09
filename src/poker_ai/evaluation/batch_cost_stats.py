@@ -1,24 +1,35 @@
-"""Portable cProfile call graph, exclusive costs and independent visit accounting.
+"""Lossless raw cProfile entries, portable code identities and visit accounting.
 
-Function tuples are (primitive,total,self,cumulative,callers). cProfile CALLER
-tuples reverse the first two fields: (total,primitive,self,cumulative). Preserve
-that distinction, including recursion. Cumulative costs overlap across levels.
+Standard pstats labels can overwrite generated functions sharing file/line/name.
+Keep one row per raw entry and use raw code-object identity for caller edges.
+A structural code digest supplies a portable code_id; entry_index distinguishes
+separately created identical code objects without losing either cost record.
 """
 
 import cProfile
+import inspect
 import math
-import pstats
 import re
+import struct
 from pathlib import Path
-from typing import Any, cast
+from types import CodeType
+from typing import Any, Protocol, cast
 
 from poker_ai.evaluation.batch_cost_inputs import duration
 from poker_ai.postflop.learning_artifacts import sha
 from poker_ai.postflop.parallel_profile import same
 
-Frame = tuple[str, int, str]
-Caller = tuple[int, int, float, float]
-Stat = tuple[int, int, float, float, dict[Frame, Caller]]
+
+class Call(Protocol):
+    code: CodeType | str
+    callcount: int
+    reccallcount: int
+    inlinetime: float
+    totaltime: float
+
+
+class Entry(Call, Protocol):
+    calls: list[Call] | None
 
 
 def filename(name: str, root: Path) -> str:
@@ -34,42 +45,129 @@ def filename(name: str, root: Path) -> str:
     return name
 
 
+def constant(value: Any, root: Path) -> Any:
+    """Canonical compiler constants, without object addresses or marshal refs."""
+    if isinstance(value, CodeType):
+        return ["code", code_data(value, root)]
+    if value is Ellipsis:
+        return ["ellipsis"]
+    if isinstance(value, bytes):
+        return ["bytes", value.hex()]
+    if isinstance(value, float):
+        return ["float64", struct.pack("<d", value).hex()]
+    if isinstance(value, complex):
+        return ["complex", constant(value.real, root), constant(value.imag, root)]
+    if isinstance(value, tuple):
+        return ["tuple", [constant(x, root) for x in value]]
+    if isinstance(value, frozenset):
+        values = [constant(x, root) for x in value]
+        return ["frozenset", sorted(values, key=sha)]
+    if value is None or type(value) in (bool, int, str):
+        return value
+    raise TypeError("unsupported compiler constant in profiler code identity")
+
+
+def code_data(code: CodeType, root: Path) -> dict[str, Any]:
+    return dict(
+        file=filename(code.co_filename, root),
+        line=code.co_firstlineno,
+        name=code.co_name,
+        qualname=code.co_qualname,
+        bytecode=code.co_code.hex(),
+        constants=[constant(x, root) for x in code.co_consts],
+        names=code.co_names,
+        variables=code.co_varnames,
+        free=code.co_freevars,
+        cells=code.co_cellvars,
+        args=code.co_argcount,
+        posonly=code.co_posonlyargcount,
+        kwonly=code.co_kwonlyargcount,
+        flags=code.co_flags,
+        locals=code.co_nlocals,
+        stack=code.co_stacksize,
+        lines=code.co_linetable.hex(),
+        exceptions=code.co_exceptiontable.hex(),
+    )
+
+
+def frame(code: CodeType | str, root: Path) -> dict[str, Any]:
+    if isinstance(code, str):
+        return dict(
+            file="~",
+            line=0,
+            name=code,
+            qualname=code,
+            arguments=[],
+            code_sha256=sha(["builtin", code]),
+        )
+    count = (
+        code.co_argcount
+        + code.co_kwonlyargcount
+        + bool(code.co_flags & inspect.CO_VARARGS)
+        + bool(code.co_flags & inspect.CO_VARKEYWORDS)
+    )
+    return dict(
+        file=filename(code.co_filename, root),
+        line=code.co_firstlineno,
+        name=code.co_name,
+        qualname=code.co_qualname,
+        arguments=list(code.co_varnames[:count]),
+        code_sha256=sha(code_data(code, root)),
+    )
+
+
+META = ("file", "line", "name", "qualname", "arguments", "code_sha256")
+
+
 def extract(profile: cProfile.Profile, root: Path) -> dict[str, Any]:
-    raw = cast(dict[Frame, Stat], vars(pstats.Stats(profile))["stats"])
-    frames = {k: dict(file=filename(k[0], root), line=k[1], name=k[2]) for k in raw}
-    identifiers = {k: sha(v) for k, v in frames.items()}
-    if len(set(identifiers.values())) != len(raw):
-        raise ArithmeticError("portable profiler frame collision")
+    entries = cast(list[Entry], profile.getstats())
+    identities = {id(e.code): i for i, e in enumerate(entries)}
+    if len(identities) != len(entries):
+        raise ArithmeticError("duplicate raw profiler code object")
     functions: list[dict[str, Any]] = []
-    callers: list[dict[str, Any]] = []
-    for frame, values in raw.items():
-        cc, nc, tt, ct, incoming = values
+    builtin: dict[str, list[int]] = {}
+    for index, entry in enumerate(entries):
+        metadata = frame(entry.code, root)
+        code_id = sha(metadata)
         functions.append(
             dict(
-                id=identifiers[frame],
-                **frames[frame],
-                primitive_calls=cc,
-                total_calls=nc,
-                self_seconds=tt,
-                cumulative_seconds=ct,
+                **metadata,
+                code_id=code_id,
+                entry_index=index,
+                id=sha([code_id, index]),
+                primitive_calls=entry.callcount - entry.reccallcount,
+                total_calls=entry.callcount,
+                self_seconds=entry.inlinetime,
+                cumulative_seconds=entry.totaltime,
             )
         )
-        for caller, (nc, cc, tt, ct) in incoming.items():
+        if isinstance(entry.code, str):
+            builtin.setdefault(entry.code, []).append(index)
+    callers = []
+    for index, entry in enumerate(entries):
+        for child in entry.calls or []:
+            target = identities.get(id(child.code))
+            if target is None and isinstance(child.code, str):
+                candidates = builtin.get(child.code, [])
+                if len(candidates) == 1:
+                    target = candidates[0]
+            if target is None:
+                raise ArithmeticError("ambiguous raw profiler child code")
             callers.append(
                 dict(
-                    caller=identifiers[caller],
-                    callee=identifiers[frame],
-                    primitive_calls=cc,
-                    total_calls=nc,
-                    self_seconds=tt,
-                    cumulative_seconds=ct,
+                    caller=functions[index]["id"],
+                    callee=functions[target]["id"],
+                    primitive_calls=child.callcount - child.reccallcount,
+                    total_calls=child.callcount,
+                    self_seconds=child.inlinetime,
+                    cumulative_seconds=child.totaltime,
                 )
             )
     result = dict(
-        functions=sorted(functions, key=lambda r: r["id"]),
+        functions=functions,
         callers=sorted(callers, key=lambda r: (r["caller"], r["callee"])),
-        total_self_seconds=math.fsum(r["self_seconds"] for r in functions),
-        frame_count=len(functions),
+        total_self_seconds=math.fsum(e.inlinetime for e in entries),
+        frame_count=len(entries),
         edge_count=len(callers),
     )
     validate(result)
@@ -94,12 +192,11 @@ def validate(saved: dict[str, Any]) -> None:
     ):
         raise ArithmeticError("profiler function/caller inventory changed")
     ids = set()
-    for row in functions:
-        if set(row) != {
+    for index, row in enumerate(functions):
+        if set(row) != set(META) | {
             "id",
-            "file",
-            "line",
-            "name",
+            "code_id",
+            "entry_index",
             "primitive_calls",
             "total_calls",
             "self_seconds",
@@ -113,9 +210,17 @@ def validate(saved: dict[str, Any]) -> None:
             or ".." in Path(row["file"]).parts
             or type(row["line"]) is not int
             or row["line"] < 0
-            or not isinstance(row["name"], str)
-            or not row["name"]
-            or row["id"] != sha({k: row[k] for k in ("file", "line", "name")})
+            or any(
+                not isinstance(row[k], str) or not row[k] for k in ("name", "qualname")
+            )
+            or not isinstance(row["arguments"], list)
+            or any(not isinstance(a, str) for a in row["arguments"])
+            or not isinstance(row["code_sha256"], str)
+            or len(row["code_sha256"]) != 64
+            or any(c not in "0123456789abcdef" for c in row["code_sha256"])
+            or row["code_id"] != sha({k: row[k] for k in META})
+            or not same(row["entry_index"], index)
+            or row["id"] != sha([row["code_id"], index])
             or row["id"] in ids
         ):
             raise ArithmeticError("profiler frame identity invalid/duplicate")
@@ -146,20 +251,26 @@ def validate(saved: dict[str, Any]) -> None:
             or row["self_seconds"] > row["cumulative_seconds"] + 1e-9
         ):
             raise ArithmeticError("invalid profiler calls/time")
-    total = math.fsum(r["self_seconds"] for r in functions)
-    if abs(total - saved["total_self_seconds"]) > 1e-9:
+    if (
+        abs(
+            math.fsum(r["self_seconds"] for r in functions)
+            - saved["total_self_seconds"]
+        )
+        > 1e-9
+    ):
         raise ArithmeticError("profiler exclusive time accounting changed")
 
 
 def call_accounting(stats: dict[str, Any], endpoint: dict[str, Any]) -> dict[str, int]:
     validate(stats)
-    functions = stats["functions"]
 
     def calls(file: str, name: str) -> int:
-        return sum(
-            r["total_calls"]
-            for r in functions
-            if r["file"] == file and r["name"] == name
+        return int(
+            sum(
+                r["total_calls"]
+                for r in stats["functions"]
+                if r["file"] == file and r["name"] == name
+            )
         )
 
     actual = dict(

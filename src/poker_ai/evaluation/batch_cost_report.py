@@ -13,7 +13,10 @@ FIGURES = ("function-self.png", "mean-direct-callees.png")
 
 
 def frame_label(row: dict[str, Any]) -> str:
-    return f"{Path(row['file']).name}:{row['line']} {row['name']}"
+    label = f"{Path(row['file']).name}:{row['line']} {row['name']}"
+    if row["file"].startswith("<"):
+        label += "(" + ",".join(row["arguments"][:4]) + ")#" + row["code_sha256"][:8]
+    return label
 
 
 def tables(
@@ -77,7 +80,7 @@ def tables(
 def aggregates(functions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     groups: dict[tuple[int, str], list[dict[str, Any]]] = {}
     for row in functions:
-        groups.setdefault((row["batch_size"], row["id"]), []).append(row)
+        groups.setdefault((row["batch_size"], row["code_id"]), []).append(row)
     result = []
     for (batch, identifier), rows in sorted(groups.items()):
         result.append(
@@ -115,7 +118,7 @@ def mean_children(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             for edge in stats["callers"]:
                 if edge["caller"] != f["id"]:
                     continue
-                key = batch, edge["callee"]
+                key = batch, by_id[edge["callee"]]["code_id"]
                 callee = by_id[edge["callee"]]
                 label = frame_label(callee)
                 if (
