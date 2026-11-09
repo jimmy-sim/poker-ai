@@ -35,6 +35,17 @@ For a guided explanation of the ideas and results, start with the
   observations so coverage and movement can be independently replayed offline.
   Warm mass is reconstructible from the unchanged two uniform expected passes.
   Storage adds no training paths, selection, scores or changed compute gates.
+- **Tested implementation:** 101 focused fast checks pass; all 23 new relevant
+  slow checks pass in both optional environments (37.05/36.96s while base suites
+  also ran). Complete three-process tiny-game IO replays 480 profiles, 432 masses,
+  216 currents and 144 baseline prefixes with zero error. Rehashed corruption,
+  source/work/grid failures and baseline barrier rejection pass. Four exact
+  conditional-moment cases (54 tapes/972 independent B2 products) agree within
+  2.8e-16 fixture units; 120 dense batch parity checkpoints include 40 B1
+  dual-book original matches. Two old own Hold'em profiles pass the real native
+  adapter, without new training. Fictional CI/native receipts are schema checks,
+  not external evidence. Full base/optional fast suites and hosted code CI remain
+  pending before actual timing or long learning.
 
 ## 2026-11-09 — Saved-window fallback, prospective
 

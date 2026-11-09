@@ -2096,10 +2096,17 @@ check that batch 1 reproduces the original learner, and measure whether the
 complete comparison fits the existing work/time limits. If that gate fails,
 we keep the failure and investigate cost; we do not shrink the test to get a pass.
 
-This is a plan, not a measured improvement. No new training or timing has run
-at this checkpoint. Codex assists with the implementation and documentation;
-your hands-on time is not recorded. Any later result stays diagnostic and does
-not automatically become a new default agent.
+The implementation now passes 101 focused fast checks and 23 relevant slow
+checks on each Python version. On the tiny test game, all 480 planned profiles
+and their raw observations replay with zero error. A deliberately broken
+baseline stops larger batches, and altered saved numbers are rejected. The
+batch arithmetic also matches a separate implementation. These checks establish
+that the experiment works as specified; they do not show stronger poker play.
+
+Full checks and hosted CI still precede Hold'em timing. No new Hold'em training
+or timing has run at this checkpoint. Codex assists with implementation and
+documentation; your hands-on time is not recorded. Any later result stays
+diagnostic and does not automatically become a new default agent.
 
 ## Your own learning notes
 

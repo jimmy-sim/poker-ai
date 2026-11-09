@@ -114,6 +114,45 @@ recheck its bytes before use. Native EV/BR/achieved-own-reply scalars are
 comparison-only. No reference strategy or probability enters learning. Its
 separate 900-second cap includes required own replay and all 480 profiles.
 
-No outcomes, compute admission, plots or stronger-agent claim exist at this
-prospective checkpoint. Completion will add exact results, commands, limitations
-and three interview questions with answers.
+## Tested software foundation — November 9
+
+The opt-in updater, both average ledgers, guarded work observer, fixed timing and
+admission readers, full own runner, raw archives, report and scalar-only native
+adapter are implemented. Historical trainers, inputs and scientific limits stay
+unchanged. No Hold'em prefix timing or new long trajectories have run yet.
+
+101 focused fast checks pass. Both optional environments pass all 23 relevant
+slow checks (37.05/36.96 seconds while base checks also ran). The complete
+three-process nonuniform-Kuhn exercise saves/replays 480 profiles, 432 raw
+cumulative ledgers and 216 current observations with zero numerical error.
+Its 144 original baseline readout checks pass before larger batches begin.
+Rehashed metric/mass/coverage corruption, missing/duplicate grids and a failed
+baseline barrier are rejected. Fictional native/CI receipts test metadata
+contracts only; they are not independent solver or hosted-CI evidence.
+
+Four exact frozen-policy/target cases enumerate 54 single adaptive tapes and
+972 within-case independent B2 tape pairs. Means and variance halving agree
+within 2.8e-16 fixture units at the fixed 1e-12 tolerance. Clipping nonlinearity
+is demonstrated. 120 toy checkpoints match the independent dense batch updater;
+40 B1 checkpoints also reproduce both original average books exactly. These
+are mathematical/software checks, not a poker strength result. Two existing own
+Hold'em profiles separately pass the real native scalar adapter; no new learning
+is involved in that adapter test.
+
+Complete base/optional fast suites and complete-code hosted CI remain pending at
+this checkpoint. Formal source-bound correctness and the fixed 216-row timing
+gate must still be published before any long trajectory study.
+
+Safe read-only commands after the corresponding receipts exist:
+
+```sh
+.venv/bin/python scripts/check_frozen_batches.py --replay results/frozen-pass-batches/correctness.json
+.venv/bin/python scripts/profile_frozen_batches.py --replay results/frozen-pass-batches/profile.json
+.venv/bin/python scripts/report_frozen_batches.py --no-plots
+```
+
+The second command returns nonzero if the retained forecast fails; that is the
+expected behavior for a failed gate. It never reruns training in replay mode.
+The report command requires complete admitted own evidence; it does not convert
+a partial grid into a result. Formal recording/reproduction commands and measured
+outcomes will be added only after their gates are actually observed.
