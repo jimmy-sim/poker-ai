@@ -2079,6 +2079,50 @@ learning update reduce sampling noise, or would fewer updates at the same work
 limit outweigh the benefit? That needs its own fixed plan, mathematical tests
 and compute gate before any new Hold'em learning.
 
+## 35. Would steadier updates help? — November 9, prospective
+
+The last experiment tried filling missing late-window decisions with our own
+whole-average probabilities. It changed little. The next question is whether
+training itself benefits from averaging several random samples before updating.
+
+**Example:** One noisy measurement can jump up or down. Taking four independent
+measurements and averaging them steadies the estimate, but costs four samples.
+In our learner that leaves fewer opportunities to change the strategy at the
+same total work. We need to measure both sides of that tradeoff.
+
+The [fixed plan](frozen-pass-batches.md) compares batches of 1, 4 and 16 on the
+same two known games and seeds. First we prove the arithmetic on a tiny game,
+check that batch 1 reproduces the original learner, and measure whether the
+complete comparison fits the existing work/time limits. If that gate fails,
+we keep the failure and investigate cost; we do not shrink the test to get a pass.
+
+The implementation now passes 101 focused fast checks and 23 relevant slow
+checks on each Python version. On the tiny test game, all 480 planned profiles
+and their raw observations replay with zero error. A deliberately broken
+baseline stops larger batches, and altered saved numbers are rejected. The
+batch arithmetic also matches a separate implementation. These checks establish
+that the experiment works as specified; they do not show stronger poker play.
+
+Full checks now pass: 1647 base tests and 1680 optional tests on each Python
+version, plus both GitHub CI jobs. The recorded correctness proof takes 6.34s
+and replays the complete tiny-game exercise with zero error. Next comes the
+fixed Hold'em timing test; no new Hold'em training or timing has run yet. Codex assists with implementation and
+documentation; your hands-on time is not recorded. Any later result stays
+diagnostic and does not automatically become a new default agent.
+
+### The first timing gate fails narrowly
+
+The fixed test completes all 216 timing rows in55.26 seconds. Its guarded
+forecast is 7201.49 seconds, just above the 7200-second limit fixed before running.
+That forecast includes extra allowances; it is not time actually spent training.
+The full learning comparison stays unrun, and no agent is changed.
+
+Being close does not let us add two seconds to the rule or keep retrying until
+a faster timing passes. We retain all raw measurements and the failed decision.
+Next we will profile where time goes before considering a verified execution
+optimization. This result says nothing yet about whether larger batches make
+the poker strategy stronger. [Exact counts and limits](frozen-pass-batches.md#retained-compute-gate-failure--november-9).
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

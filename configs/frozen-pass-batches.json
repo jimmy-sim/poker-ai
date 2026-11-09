@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_known_game_frozen_pass_batch_diagnosis",
+  "input_sha256": {
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "configs/controlled-learning-comparison.json": "ff764357114d6c635f58b1f49733c8517af3a2943f2d5410bd29dc6a0767a9fd",
+    "results/controlled-learning/own.json": "a59d1fd00c50cd8b703764a3158133f624b4e1020bf4211731fec4f58a63a9db",
+    "results/controlled-learning/own-profiles.jsonl.gz": "8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054",
+    "results/controlled-learning/native.json": "183c5d961cec13f03d74956eca3a7abf4a0effcf76378e67a2a51c15d816ecdc",
+    "configs/controlled-reply-diagnosis.json": "7318e8cf31fd50505eaf85edea1ae5706b8a638d09d184623b4c44576f7c80bc",
+    "results/controlled-replies/own.json": "bca183f081a9ba640f8d9e82da9886b46e4435ad119ce0bed779b9fe1a64aff5",
+    "results/controlled-replies/own-traces.jsonl.gz": "840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373",
+    "results/controlled-replies/native.json": "28ab27398dfab8bd8a5c9b652530746fcbe707a785e49dfaa9c5e94eda816f40",
+    "configs/averaging-history.json": "7d330fd5ad5634bbf3aff6161e7472ae21df49b7dffda1179ffe305941d3ad62",
+    "results/window-fallback/own.json": "8f6e755d36a92731deac834c08a856065305190c652fc065a07d10364b0a3936",
+    "results/window-fallback/native.json": "8592295162a82177be732f1ad1c07a0e3c7313c1f3894f48a68d13cf18b42998"
+  },
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "regret_rules": [
+    "signed",
+    "clipped"
+  ],
+  "regret_weight": "linear",
+  "average_weights": [
+    "uniform",
+    "linear"
+  ],
+  "batch_sizes": [
+    1,
+    4,
+    16
+  ],
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "worker_count": 3,
+  "start_method": "spawn",
+  "expected_unique_paths": 72,
+  "expected_average_streams": 144,
+  "expected_fresh_profiles": 432,
+  "expected_reused_full_profiles": 48,
+  "expected_self_profiles": 480,
+  "expected_baseline_paths": 24,
+  "expected_original_prefix_checks": 144,
+  "maximum_own_seconds": 7200,
+  "maximum_native_seconds": 900,
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "initialization": "unchanged simultaneous uniform exact warm start, iteration 1 and 2N charged visits",
+  "update": "target 0 then target 1; B independent external traversals at one frozen target policy; sum sparse increments in traversal/key encounter order, divide by B once, apply one original time-weighted update; clipping after mean; charge every visited node; target 1 observes target 0 update",
+  "averages": "one linear primary ledger and one uniform side ledger on each shared learning path; average weight does not enter regrets/current/RNG; two readouts are dependent, not independent learners",
+  "baseline": "B1 delegates unchanged cached-node step; both readout state/policy/work/iteration/initialization prefixes must match original archived 100k/1m/10m exactly on original runtime; all 24 B1 paths pass before any B4/B16 10m paths",
+  "prefix_runtime": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "requirement": "recorded source runtime; any poker state/policy/work prefix mismatch stops without loosening precision; base 3.12 report replay is a separate tolerance-based check"
+  },
+  "profile": {
+    "repetitions": 3,
+    "additional_node_work": 100000,
+    "maximum_seconds": 900,
+    "expected_timing_rows": 216,
+    "baseline_prefix_label": 100000,
+    "expected_repeated_baseline_readout_checks": 144,
+    "forecast": "per path maximum of three setup+warm + incremental_seconds * (10000000-initialization_visits)/actual_incremental_visits; separate B1 and B4/B16 sorted index-mod-three partitions; sum the two maximum partition totals",
+    "observation_allowance_multiplier": 2.0,
+    "fixed_overhead_allowance_seconds": 600.0,
+    "guard_multiplier": 2.0,
+    "formula": "guard_multiplier * (observation_allowance_multiplier * training_barrier_forecast + fixed_overhead_allowance_seconds)",
+    "required": "strictly below 7200 before long learning; retain failure, no reduced grid/work or relaxed allowance; prefixes are new postflop training but not strength outcomes"
+  },
+  "correctness": "nonuniform Kuhn exact adaptive-selector expectations; B2 Cartesian-product variance halving; Jensen/clipping nonlinearity; independent dense frozen-batch trajectory parity; dual-book B1 bit identity; observer/serialization/receipt corruption, partial grids and barriers",
+  "admission": "prospective protocol; tested implementation and local base/optional checks; both source-bound hosted code CI jobs; published source-bound correctness and all216 timing rows/forecast; checked admission before10m learning; own before comparison-only native audit",
+  "metrics": [
+    "EV/exact exploitability/within partition gain/extra exact information in chips and percent initial pot",
+    "river-only vulnerability",
+    "actual work/overshoot/update/traversal counts",
+    "average mass coverage and warm-only versus post-warm coverage",
+    "raw current movement",
+    "runtime/hardware/CPU/source/archive identities"
+  ],
+  "controls": "reuse 48 original full work profiles once, not newly trained or independent seed replicates; B1 fresh copies explicitly labeled baseline replays",
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "role": "comparison-only scalar EV/exact+restricted roots/achieved OWN replies and river hybrids for all 480 profiles; no reference strategy export or training"
+  },
+  "quality_gate": {
+    "scope": "diagnostic only; no family selected or admitted as agent/default/fresh/global in this protocol",
+    "primary": "B4 signed regrets, linear regret weights, linear average, texture_range_q8_b8; B1 baseline and B16 dose control",
+    "reporting": "all modes/seeds/checkpoints, arithmetic means and individual points; no seed-population CI or favorable-subset report; compare original known-game thresholds descriptively only; any later admission requires its own prospective protocol"
+  },
+  "interpretation": "within-pass averaging reduces conditional raw-update variance at fixed policy; at fixed node work it also reduces update count and changes iteration weighting. Learning outcomes cannot isolate a pure variance effect or establish global Holdem strength",
+  "partial": "persist every attempt, worker event and completed snapshot; no overwrite or incomplete grid declared complete",
+  "scope": "simulation-only known-game diagnostic; fixed old seeds/work/action/ranges/representations; no new feature, reset, budget extension or commercial/reference training targets",
+  "retained_observations": {
+    "cumulative_mass_records": 432,
+    "current_policy_records": 216,
+    "warm_origin": "reconstruct both books from the frozen two simultaneous uniform expected passes at t=1; no trainer/random draws",
+    "purpose": "offline normalization, post-warm support and current-movement replay; no extra training path or score selection"
+  }
+}

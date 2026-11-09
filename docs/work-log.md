@@ -13,6 +13,65 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Frozen-pass batches, prospective
+
+- **Issue / question:** #4; does averaging independent frozen-policy traversals
+  help at the same work, despite fewer updates? [Plan](frozen-pass-batches.md)
+  and fixed config precede implementation and outcomes.
+- **Design:** B1/B4/B16, 72 paths with two dependent average books; 432 new
+  profiles plus 48 reused full controls. Exact baseline prefix barrier, complete
+  conditional-variance proof and fixed 216-row timing forecast precede a possible
+  7200s own study. Separate timing/native 900s caps. No selected/default/fresh or
+  global admission, and no modified historical data, seeds, caps or gates.
+- **Status:** Plan only; no new training, timing or results. Codex-assisted;
+  developer hands-on time not recorded. The previous fallback result is complete
+  and awaits final artifact CI/merge on PR #31.
+- **Prospective clarification:** Replace the copied previous-stage native role
+  wording with this plan's already-declared 480 self profiles and river hybrids;
+  no fixed-opponent grid is part of this new batch plan. No cases or gates change,
+  and no timing/training outcomes have run. PR #31 is now merged after both final
+  hosted jobs passed at `b6d1076`.
+- **Before measurements:** Retain all 432 cumulative ledgers and 216 current
+  observations so coverage and movement can be independently replayed offline.
+  Warm mass is reconstructible from the unchanged two uniform expected passes.
+  Storage adds no training paths, selection, scores or changed compute gates.
+- **Tested implementation:** 101 focused fast checks pass; all 23 new relevant
+  slow checks pass in both optional environments (37.05/36.96s while base suites
+  also ran). Complete three-process tiny-game IO replays 480 profiles, 432 masses,
+  216 currents and 144 baseline prefixes with zero error. Rehashed corruption,
+  source/work/grid failures and baseline barrier rejection pass. Four exact
+  conditional-moment cases (54 tapes/972 independent B2 products) agree within
+  2.8e-16 fixture units; 120 dense batch parity checkpoints include 40 B1
+  dual-book original matches. Two old own Hold'em profiles pass the real native
+  adapter, without new training. Fictional CI/native receipts are schema checks,
+  not external evidence. Full base/optional fast suites and hosted code CI remain
+  pending before actual timing or long learning.
+
+- **Complete checked source:** Code `48c0960`, inventory SHA
+  `62bbea13782a0d4468000fc01cbf34a83810fdc42c738098f1ec0a3f1dbb18cd`.
+  Base 1647 passed /24 skipped each (230.21/230.30s); optional 1680 each
+  (258.63/248.43s); strict typing 381, format 469, hooks pass. Both hosted jobs
+  [42606554182](https://github.com/jimmy-sim/poker-ai/actions/runs/42606554182)
+  pass before measurement. Base Python 3.12 archived loader with all learner/native
+  constructors blocked passes 4.568871s. All four toy figures inspected.
+- **Source-bound correctness:** Formal receipt passes 6.3355535s at the checked
+  code revision, complete four moment/120 parity/480 profile/432 mass/216 current
+  software grids and 144 baseline prefixes; replay errors zero. No new Hold'em
+  timing or long learning yet. Publish correctness and observed code checks
+  before the unchanged 216-row timing gate. Method adds the chart guide and
+  three interview answers; no stronger/default/fresh/global claim.
+
+- **Retained timing gate:** All 216 rows/72 paths complete in 55.257181459s
+  (900s cap); repeated states and 144 repeated B1 source readouts match. Raw
+  [profile](../results/frozen-pass-batches/profile.json) retains every seed/repeat.
+  Training-only phase-max sum 1500.373109635s; fixed
+  guarded forecast 7201.492438542s exceeds 7200 by
+  1.492438542s. Stop before long learning; no new strength
+  scores, admission or default. This is planning sensitivity, not actual full
+  runtime. Parent/child CPU 4.679161/151.14s.
+  Preserve failure; profile real costs before optimizing rather than rerunning
+  unchanged timings to find a pass.
+
 ## 2026-11-09 — Saved-window fallback, prospective
 
 - **Issue / question:** Continue #4 after the completed averaging-history study.

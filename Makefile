@@ -1,3 +1,22 @@
+.PHONY: check-frozen-batches profile-frozen-batches study-frozen-batches report-frozen-batches
+check-frozen-batches:
+	$(UV) run --locked python scripts/check_frozen_batches.py
+
+profile-frozen-batches:
+	$(UV) run --locked python scripts/profile_frozen_batches.py
+
+study-frozen-batches:
+	$(UV) run --locked --extra research python scripts/study_frozen_batches.py
+	$(UV) run --locked --extra solver-validation python scripts/audit_frozen_batches.py \
+		--own results/runs/frozen-pass-batches/own.json
+	$(UV) run --locked --extra research python scripts/report_frozen_batches.py \
+		--own results/runs/frozen-pass-batches/own.json \
+		--native results/runs/frozen-pass-batches/native.json \
+		--output results/runs/frozen-pass-batches/report
+
+report-frozen-batches:
+	$(UV) run --locked --extra research python scripts/report_frozen_batches.py
+
 .PHONY: profile-cached-nodes report-cached-nodes
 profile-cached-nodes:
 	$(UV) run --locked python scripts/profile_cached_nodes.py

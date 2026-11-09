@@ -34,6 +34,11 @@ selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
+The next fixed-work batch experiment has passed its software checks, but its
+predeclared compute forecast narrowly fails: 7201.49s versus 7200s. The complete
+55.26s timing run is retained; long learning has not started, and no stronger-agent claim follows. See [the compute result](docs/frozen-pass-batches.md#retained-compute-gate-failure--november-9)
+and learning-journal step 35.
+
 ## Architecture and current strength work
 
 ```mermaid
