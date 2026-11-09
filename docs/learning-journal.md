@@ -2236,6 +2236,14 @@ the fixed known-game experiment. It still does not select a stronger agent or
 change the default. The next action is to run all declared cases, keeping every
 result and publishing our own calculation before the independent comparison.
 
+The full own calculation finished in25minutes3seconds. Every saved profile and
+raw observation replays with zero error. In the main B4 experiment, the deeper
+compressed game improves on average: total vulnerability falls from4.35% to2.17%
+of the initial pot. One seed gets worse, and the clipped mode does not receive a
+general fix. This is a mixed known-game result, not a stronger default. All cases
+are kept in [the report](reduced-batch-study.md#complete-own-outcome--independent-audit-pending).
+The independent check is still pending; our full result is published first.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

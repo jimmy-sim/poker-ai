@@ -19,6 +19,12 @@ For a guided explanation of the ideas and results, start with the
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Complete own calculation:**1502.599063166s under7200;480profiles
+  (432new+48reused),432mass/216current,144baselinechecks; ownreplay0chips/0unitless
+  in86.302381583s. Four figures inspected. PrimaryB4signedlinearq8 mean total
+  4.354031565→2.172683537%pot, one seed worsens; clippedmode remains mixed.
+  Publish allown evidence/3archives before any new-policy native. Base312/native
+  checks pending at this publication; no default/fresh/global admission.
 - **Admission:** software proof11c5758 and observed code receipt90f3a9e
   published first; new checked admission binds all8 prerequisites/current205
   source files and unchanged6953.920827419guard. Published before long learning;
