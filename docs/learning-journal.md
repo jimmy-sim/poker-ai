@@ -71,12 +71,16 @@ Step 33 completes the averaging-history investigation. Original learning paths
 match exactly, but the sampled current policies remain vulnerable. Late averages
 do not supply a general repair; improving against old opponents and resisting a
 best response are different outcomes. All own and independent checks pass.
+Step 34 completes the zero-weight fallback test while keeping learned rows fixed.
+All full controls are unchanged. The sampled whole-average fill has a small
+effect in the motivating case and leaves the main weakness unresolved. Both
+own and independent checks pass; no filled strategy is deployed.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–33:** What the extensions and recent experiments taught us.
+- **Steps 10–34:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1993,6 +1997,87 @@ from the terminal, or run `.venv/bin/python scripts/report_averaging_history.py
 --no-plots` as one line to check the saved result without training again.
 The [method page](averaging-history.md#reproduce-and-inspect) lists the exact
 commands and explains how to read all six plots.
+
+## 34. Ask what happens at late rows with no weight
+
+**November 9, 2026 — issue #4, prospective.** Codex-assisted; personal hands-on
+time not recorded. [Plan](window-fallback.md), published before implementation
+or intervention outcomes.
+
+**Question:** Some late-window rows received no new averaging weight. The
+existing rule uses uniform probabilities there. Does that fallback matter to
+the saved strategy, or are the rows unreachable under its own play?
+
+**Example, made up:** If an earlier decision always folds, a later decision on
+that path cannot happen. Changing the later action probabilities would not
+change the strategy's result. But a reachable decision might be absent from a
+finite sample, so its fallback could matter. Missing mass alone cannot tell us
+which situation applies.
+
+The new test will keep every learned row fixed and fill only exact-zero rows
+from the same agent's saved whole average. It keeps raw, seat-0-only,
+seat-1-only and both-seat fills for all original windows, then checks every
+variant and all fixed opponents. Full controls must preserve realized behavior;
+any failure is investigated before interpreting a result.
+
+This is an offline diagnostic, with no new training or agent deployment.
+Correctness, complete local and GitHub code checks, own results and independent
+comparison remain required in that order. All outcomes are pending.
+
+**Software checkpoint:** 107 focused fast checks pass. Hand-calculated examples
+distinguish an unreachable decision from a reachable one missed in a sample.
+A complete tiny-game archive tests every planned fill/opponent condition;
+corrupting probabilities, masks, scores or support fails replay even after the
+file hashes are recomputed. Interrupted attempts remain saved. The real archived
+window loader also works without starting a learner or native solver. These
+checks verify the tools; the Hold'em intervention still awaits full local and
+hosted code checks. The four draft figures are explicitly labeled toy fixtures.
+
+The complete local suites pass too: 1546 base tests with 24 optional skips and
+1579 optional-suite tests on both Python versions. All 27 relevant longer checks
+pass. GitHub must still check this complete code before the Hold'em intervention.
+
+Both complete-code GitHub jobs have now passed. The next calculation uses only
+the original saved policies and masses. It keeps both seats and every declared
+case; the independent comparison follows publication of the own results.
+The [plot-reading guide](window-fallback.md#how-to-read-the-four-figures) explains
+what the colors, diamonds, small points and signs mean before any new outcome.
+
+**Completed November 9:** All 128 saved windows and 512 fill profiles pass own
+replay. The independent audit checks all 512 profiles, 2048 fixed-opponent
+conditions and 128 accounting panels. The largest discrepancy is about
+0.00000000000016 chips, below the fixed limit. All 32 full-control windows
+preserve realized behavior and the required values exactly.
+
+For the motivating medium range-mass sampled case, with clipped regrets and
+linear time weights, the three-seed mean total is:
+
+| Late window | Original uniform fallback | Whole-average fill |
+|---|---:|---:|
+| 5m–10m work | 2.531900% pot | 2.531738% pot |
+| 9m–10m work | 4.888556% pot | 4.869954% pot |
+
+This particular fill changes little. Two of the three half-window seeds worsen
+slightly despite its small mean improvement. The short window improves in each
+seed but still has a large gap. Every mode, seed, one-seat fill and unfavorable
+result remains in [the full explanation and tables](window-fallback.md#completed-saved-policy-intervention--november-9).
+
+Missing coverage can describe a decision that the strategy itself cannot reach.
+That is what the unchanged full controls help distinguish. In the sampled first
+seed's short window, 544 rows actually change, yet the overall effect is small.
+This does not prove every possible fallback is harmless: some whole-average
+rows use the same uniform probabilities too, and only one fixed alternative
+was tested. We do not turn the result into a new agent or erase the failed gate.
+
+The own stage takes 285.48 seconds and the independent audit 332.71 seconds,
+within their separate 900-second caps. Base Python 3.12 replays everything with
+zero error and recreates all seven numerical files byte-for-byte. Four final
+figures and three interview answers are linked from the method page.
+
+**Next question:** Would averaging several independent traversals before each
+learning update reduce sampling noise, or would fewer updates at the same work
+limit outweigh the benefit? That needs its own fixed plan, mathematical tests
+and compute gate before any new Hold'em learning.
 
 ## Your own learning notes
 

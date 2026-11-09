@@ -385,3 +385,17 @@ study-averaging-history:
 
 report-averaging-history:
 	$(UV) run --locked --extra research python scripts/report_averaging_history.py
+
+.PHONY: diagnose-window-fallback report-window-fallback
+WINDOW_FALLBACK_DIR ?= results/runs/window-fallback-reproduction
+diagnose-window-fallback:
+	$(UV) run --locked --extra research python scripts/diagnose_window_fallback.py \
+		--output $(WINDOW_FALLBACK_DIR)/own.json
+	$(UV) run --locked --extra solver-validation python scripts/audit_window_fallback.py \
+		--own $(WINDOW_FALLBACK_DIR)/own.json --output $(WINDOW_FALLBACK_DIR)/native.json
+	$(UV) run --locked --extra research python scripts/report_window_fallback.py \
+		--own $(WINDOW_FALLBACK_DIR)/own.json --native $(WINDOW_FALLBACK_DIR)/native.json \
+		--output $(WINDOW_FALLBACK_DIR)/report
+
+report-window-fallback:
+	$(UV) run --locked --extra research python scripts/report_window_fallback.py

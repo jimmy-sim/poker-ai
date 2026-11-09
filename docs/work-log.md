@@ -13,6 +13,77 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Saved-window fallback, prospective
+
+- **Issue / question:** Continue #4 after the completed averaging-history study.
+  Does the uniform fallback at zero-window-mass rows affect its saved late
+  policies? Missing mass alone is not proof of weakness; full controls can have
+  unreachable rows. [Plan](window-fallback.md) and config precede implementation
+  and intervention outcomes. No new Hold'em training or selected agent.
+- **Fixed design:** All 128 original suffixes; raw/seat0/seat1/both fill from the
+  same own whole average, only exact-zero rows. 512 self profiles, 2048 fixed
+  opponent conditions, full-control realization equivalence and complete 2×2
+  BR accounting. Original source/data/caps/gates remain frozen; this saved-policy
+  stage has separate 900s own/native caps. Tests/local/hosted checks precede
+  measurement; own publication precedes reference comparison.
+- **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+- **Software progress:** 107 focused fast checks pass. Complete tiny-game checks
+  exercise all 512 self profiles/2048 fixed targets with training/reference
+  construction blocked during the offline stage (four checks, 11.26s). Complete
+  toy archive replay and rehashed corruption tests pass all 19 checks (13.73s).
+  The real old-window loader passes on base Python 3.12 with new learning/native
+  construction blocked (100.72s), retaining every 128 original window.
+  Own/native receipt failure tests and four explicitly toy figures pass (22
+  run/report checks, 25.58s); layouts inspected. Fictional byte/native ledgers
+  test schema only and are explicitly not independent solver evidence.
+- **Before outcomes:** Retain eligible/changed row counts and uniform/own reach
+  measures separately for all rows and river rows, by seat. This makes the
+  declared reach question inspectable; no masks, cases, gates, caps or metrics
+  selection are changed. Complete source/reader/report/native code drafted;
+  full base/optional checks and hosted code CI remain before intervention outcomes.
+- **Complete local code checks:** Base `make check`: 1546 passed /24 optional
+  skips on both Python versions (242.25/232.58s). All-extras fast suites: 1579
+  passed each (274.70/268.50s). All 27 relevant slow checks pass (169.41/166.45s),
+  including 26 new checks plus the earlier real-policy native adapter. Base-only
+  Python 3.12 toy replay/report: 20 passed /one plotting skip (30.11s). Strict
+  typing covers 358 files; lint/format/hooks pass. No intervention outcomes yet;
+  both hosted complete-code CI jobs remain required before measurement.
+- **Checked code before measurement:** Both
+  [42596478622](https://github.com/jimmy-sim/poker-ai/actions/runs/42596478622)
+  jobs pass on `815d4700800248a9ec70fc295f8c34f64ec101f8`. The complete source
+  inventory SHA is `c6f6761915cb106c6117bc233b76afd3d0659aad69c69ba051556b4243956f31`.
+  Publish these observed checks and the plot-reading guide before the clean
+  saved-policy run. No Hold'em intervention outcomes have been measured yet.
+- **Complete own evidence, native pending:** All 128 original windows produce
+  the planned 512 profiles and 2048 fixed target conditions. All 128 raw controls
+  and additive panels pass; all 32 full windows preserve realization and required
+  values exactly (maximum changes zero). Own archive replay has zero chip and
+  unitless error in 94.142837s. Own stage 285.478070s under 900s, including
+  94.552135s upstream replay; parent CPU 285.363828s, reaped child CPU 0.07s.
+  Seven numerical files and four figures retained. Publish complete own outputs
+  before independent comparison; no complete native claim at this checkpoint.
+- **Independent comparison:** After own publication `3fa97c4`, every 512 self
+  profile /2048 fixed target /128 accounting panel passes the pinned native
+  audit. Stage 332.709628s under 900s, including 193.038860s complete own/upstream
+  replay with zero error; parent CPU 332.593217s, reaped child CPU 0.07s.
+  Maximum scalar discrepancy 1.6342482922482304e-13 chips; fixed-difference
+  discrepancy at most 2.842170943040401e-14, both below 1e-9. All 128 cached
+  opponent/target identities verified. All four final figures inspected.
+- **Cross-version reproduction:** Base Python 3.12 replays the complete old/new
+  chain with zero error in 187.900927s, validates the independent receipt and
+  regenerates all seven numerical files byte-for-byte.
+- **Finding / limits:** Medium range-mass clipped/linear sampled means change
+  half-window 2.531900→2.531738% pot; short-window 4.888556→4.869954%. Two
+  half-window raw seeds worsen. Across all 96 sampled both-fill windows, total
+  differences span -0.073002 to +0.000529 percentage points. This one declared
+  completion makes a small change; it is not a bound on all alternatives or a
+  training-cause proof. Full controls show why missing uniform coverage can be
+  harmless under actual own reach. README, full method/limits, three interview
+  answers and journal step34 updated. Original failed limits/defaults preserved.
+- **Next:** Separately preregister within-pass sampling batches and their
+  correctness/compute tests before new learning. No batch method or stronger
+  agent is admitted by this saved-policy diagnosis. Final artifact CI pending.
+
 ## 2026-11-09 — Averaging-history runner and independent checks
 
 - **Authorization:** One work window from midnight to 08:00 Pacific, continuing
@@ -82,6 +153,11 @@ For a guided explanation of the ideas and results, start with the
   policies, distinguishing harmless unreachable rows from a missing-update effect
   before another learning rule. No new default, selected suffix, stronger-agent,
   fresh/global admission or relaxed failed limit. Final artifact CI pending.
+- **Merged / main verification:** Both final CI 42589812391 jobs pass at
+  `0035658`; PR #30 merged at `687d9bf`. User main passes 193 focused checks
+  (2.70s), all profile/boundary/fixed-target replay with zero error (97.326688s),
+  archived native audit and all six byte-identical numerical files. Ten original
+  modified output hashes are unchanged. Next protocol is isolated in PR #31.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 
