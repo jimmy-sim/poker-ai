@@ -1,11 +1,15 @@
 """Software-only independent utility/sign checks and invalid numeric guard."""
 
+import json
 from dataclasses import replace
+from pathlib import Path
 from typing import Any
+from unittest.mock import patch
 
 import numpy as np
 import pytest
 
+from poker_ai.evaluation import prefix_capture_software as software
 from poker_ai.evaluation.averaging_history_software import toy_context
 from poker_ai.evaluation.prefix_capture_software import metric_error
 from poker_ai.evaluation.tiny_policy_math import metrics, terminal_sum
@@ -32,3 +36,23 @@ def test_nonfinite_or_non_numeric_metric_cannot_disappear_in_max(bad: Any) -> No
 def test_metric_error_keeps_sign_errors_and_exact_self_zero() -> None:
     assert metric_error(dict(value=-2.0), dict(value=2.0)) == 4.0
     assert metric_error(dict(value=2.0), dict(value=2.0)) == 0.0
+
+
+def test_dirty_source_rejection_is_retained_before_toy_training(tmp_path: Path) -> None:
+    output = tmp_path / "own.json"
+    with (
+        patch.object(
+            software,
+            "source_provenance",
+            return_value=dict(
+                dirty=True, sha256={}, git_commit="EXPLICIT_DIRTY_SOURCE_FIXTURE"
+            ),
+        ),
+        patch.object(software, "learner", side_effect=AssertionError("must not train")),
+    ):
+        with pytest.raises(ArithmeticError, match="clean committed"):
+            software.run(tmp_path, output)
+    saved = json.loads(output.read_text())
+    assert saved["status"] == "incomplete"
+    assert saved["software_training_attempted"] is False
+    assert saved["completed_profiles"] == 0

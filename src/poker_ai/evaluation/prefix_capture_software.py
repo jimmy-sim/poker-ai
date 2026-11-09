@@ -299,6 +299,8 @@ def run(root: Path, output: Path) -> dict[str, Any]:
     try:
         saved["source"] = source_provenance(root, root / CONFIG, entrypoints=ENTRIES)
         saved["source_sha256"] = sha(saved["source"]["sha256"])
+        if saved["source"]["dirty"] is not False:
+            raise ArithmeticError("tiny proof requires clean committed source")
         persist(output, saved)
         saved["config"] = config_inputs(root)
         saved["software_training_attempted"] = True
