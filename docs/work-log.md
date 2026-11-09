@@ -68,6 +68,20 @@ For a guided explanation of the ideas and results, start with the
   error; parent CPU 237.495094s, reaped child CPU 0.07s. All 128 fixed-opponent/
   target reply identities checked before reuse. Reference output never trains
   an agent. All six figures inspected; raw numerical and seed results retained.
+- **Read-only cross-version check:** Base Python 3.12 replays all profiles,
+  boundaries and fixed matches with zero error (95.666413s), validates the archived
+  native receipt, and regenerates all six numerical files byte-for-byte.
+- **Finding:** In the motivating medium range-mass clipped/linear sampled context,
+  mean total is whole 2.501852 / current 9.519793 / half-window 2.531900 /
+  short-window 4.888556% initial pot. Current within weakness persists in every
+  seed; late windows do not provide a general repair. Old fixed-opponent mean EV
+  can improve while self exploitability worsens. All modes/seeds and unfavorable
+  raw conditions retained. Warm whole coverage does not establish late support.
+  README, method/limits, three interview answers and journal step 33 updated.
+- **Next decision:** Prospectively test only zero-window-mass fallback on saved
+  policies, distinguishing harmless unreachable rows from a missing-update effect
+  before another learning rule. No new default, selected suffix, stronger-agent,
+  fresh/global admission or relaxed failed limit. Final artifact CI pending.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 

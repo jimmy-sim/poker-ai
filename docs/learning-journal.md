@@ -67,9 +67,10 @@ compressed game, then compare all four training modes against the same opponents
 Its complete own calculation and independent audit pass. The larger within-game
 weakness persists against fixed opponents, especially for seat 1, and appears with
 exact information too. It is not explained by compression or changed opponents alone.
-Step 33 builds the next investigation: observe current play and reconstruct late
-averages while checking that the original learning paths stay unchanged. The
-software foundation is tested; the new poker trajectory study has not run.
+Step 33 completes the averaging-history investigation. Original learning paths
+match exactly, but the sampled current policies remain vulnerable. Late averages
+do not supply a general repair; improving against old opponents and resisting a
+best response are different outcomes. All own and independent checks pass.
 
 You can read this in three sittings:
 
@@ -1945,6 +1946,53 @@ archive paths with zero replay error. A fixed calculation using the original
 That is a cautious planning estimate, not time already spent or a guarantee.
 The next step is to publish the checked admission and replay the known Hold'em
 trajectories. [Correctness receipt](../results/averaging-history/correctness.json).
+
+**Completed November 9:** Admission was published first. All 64 known
+trajectories recovered their 192 original checkpoint fingerprints exactly.
+Every late average reconstructs from its stored raw weights. All 512 self
+profiles and 2048 fixed-opponent conditions pass the independent audit, with
+maximum difference about 0.00000000000024 chips. That checks the calculations;
+it does not mean the strategies are that close to unbeatable play.
+
+For the medium range-mass sampled game, using clipped regrets and linear time
+weights, the three-seed mean exploitability is:
+
+| Strategy being measured | Percent of initial pot; lower is better |
+|---|---:|
+| Whole average | 2.501852 |
+| Current play at 10m work | 9.519793 |
+| Average over 5m–10m work | 2.531900 |
+| Average over 9m–10m work | 4.888556 |
+
+The current weakness remains. The whole average is not simply hiding a good
+endpoint under bad old play. Removing the first half of learning does not improve
+the mean total here, and the shorter late window is worse in every seed. All four
+clipping/averaging modes, both games, both information descriptions and every
+seed remain in the [full result](averaging-history.md#completed-diagnosis--november-9).
+
+There is a useful surprise: these late variants can earn more against the old
+saved opponents while being more vulnerable to a best response. Doing better
+against one set of opponents is different from making fewer exploitable mistakes.
+That is why we keep both measurements and do not select a new agent from this table.
+
+Some river rows received no averaging weight in a late window and use the
+existing uniform fallback. That might matter, but coverage alone does not prove
+it: the full control has many such rows and zero measured late exploitability.
+Some rows may be unreachable under its own play. A sensible next saved-policy
+test is to change only that fallback while leaving every learned row fixed.
+It needs a separate plan before measurement. No new training rule or failed
+performance limit changes here.
+
+The own stage took 1136.77 seconds; the independent audit took 237.65 seconds,
+including input replay. Both stay below their fixed caps. Base Python 3.12
+also replays everything with zero error and regenerates all six numerical files
+byte-for-byte. These process times are not personal work hours.
+
+**Try it:** Open `results/averaging-history/report/final-averages-external.png`
+from the terminal, or run `.venv/bin/python scripts/report_averaging_history.py
+--no-plots` as one line to check the saved result without training again.
+The [method page](averaging-history.md#reproduce-and-inspect) lists the exact
+commands and explains how to read all six plots.
 
 ## Your own learning notes
 
