@@ -2079,6 +2079,28 @@ learning update reduce sampling noise, or would fewer updates at the same work
 limit outweigh the benefit? That needs its own fixed plan, mathematical tests
 and compute gate before any new Hold'em learning.
 
+## 35. Would steadier updates help? — November 9, prospective
+
+The last experiment tried filling missing late-window decisions with our own
+whole-average probabilities. It changed little. The next question is whether
+training itself benefits from averaging several random samples before updating.
+
+**Example:** One noisy measurement can jump up or down. Taking four independent
+measurements and averaging them steadies the estimate, but costs four samples.
+In our learner that leaves fewer opportunities to change the strategy at the
+same total work. We need to measure both sides of that tradeoff.
+
+The [fixed plan](frozen-pass-batches.md) compares batches of 1, 4 and 16 on the
+same two known games and seeds. First we prove the arithmetic on a tiny game,
+check that batch 1 reproduces the original learner, and measure whether the
+complete comparison fits the existing work/time limits. If that gate fails,
+we keep the failure and investigate cost; we do not shrink the test to get a pass.
+
+This is a plan, not a measured improvement. No new training or timing has run
+at this checkpoint. Codex assists with the implementation and documentation;
+your hands-on time is not recorded. Any later result stays diagnostic and does
+not automatically become a new default agent.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

@@ -13,6 +13,20 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Frozen-pass batches, prospective
+
+- **Issue / question:** #4; does averaging independent frozen-policy traversals
+  help at the same work, despite fewer updates? [Plan](frozen-pass-batches.md)
+  and fixed config precede implementation and outcomes.
+- **Design:** B1/B4/B16, 72 paths with two dependent average books; 432 new
+  profiles plus 48 reused full controls. Exact baseline prefix barrier, complete
+  conditional-variance proof and fixed 216-row timing forecast precede a possible
+  7200s own study. Separate timing/native 900s caps. No selected/default/fresh or
+  global admission, and no modified historical data, seeds, caps or gates.
+- **Status:** Plan only; no new training, timing or results. Codex-assisted;
+  developer hands-on time not recorded. The previous fallback result is complete
+  and awaits final artifact CI/merge on PR #31.
+
 ## 2026-11-09 — Saved-window fallback, prospective
 
 - **Issue / question:** Continue #4 after the completed averaging-history study.
