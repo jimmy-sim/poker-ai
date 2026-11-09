@@ -54,6 +54,13 @@ For a guided explanation of the ideas and results, start with the
   published correctness receipt. Scope is only the same original trajectories.
   This admission is published before starting the replay; all 64 cases, original
   prefixes, fixed seeds and caps remain required. Native study follows own publication.
+- **Complete own evidence, native pending:** All 64 original trajectories and
+  192 exact original prefixes pass. Retain 512 profiles, 192 raw boundaries and
+  2048 fixed target conditions; all 160 current-weight pairs match. Full own
+  archive replay takes 88.728334s with zero chip, unitless and identity errors.
+  Own stage 1136.768864s, parent CPU 100.041639s, reaped child CPU 3099.32s,
+  below 7200s. Six figures and all six numerical files generated. Publish these
+  own outputs before independent audit; they do not yet complete native validation.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 
