@@ -110,3 +110,16 @@ blind rediscovery.
 learning trajectory and records complete update boundaries. It does not prove
 the future poker runner, convergence, playing strength or a compute admission.
 Those remain separate gates.
+
+## Complete local checks
+
+Full base1,947+24optional skips each266.13/255.43s; extras1,980each296.34/
+282.65s. Ruff/format547/strict450 pass. The observer test was strengthened to
+assert every one of the16update endpoints, rather than just selected endpoints;
+all28observer checks pass again on both runtimes0.15/0.16s. No production code
+or source data changed. The full suite numbers above precede that strengthened
+assertion; the final hosted run checks the complete resulting test set.
+
+The learning journal now has direct navigation to completed batch/current
+results, terminal browsing and this future experiment. No actual long study
+is admitted or run by completing these software checks.
