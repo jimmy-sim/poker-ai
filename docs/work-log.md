@@ -54,6 +54,14 @@ For a guided explanation of the ideas and results, start with the
   inventory SHA is `c6f6761915cb106c6117bc233b76afd3d0659aad69c69ba051556b4243956f31`.
   Publish these observed checks and the plot-reading guide before the clean
   saved-policy run. No Hold'em intervention outcomes have been measured yet.
+- **Complete own evidence, native pending:** All 128 original windows produce
+  the planned 512 profiles and 2048 fixed target conditions. All 128 raw controls
+  and additive panels pass; all 32 full windows preserve realization and required
+  values exactly (maximum changes zero). Own archive replay has zero chip and
+  unitless error in 94.142837s. Own stage 285.478070s under 900s, including
+  94.552135s upstream replay; parent CPU 285.363828s, reaped child CPU 0.07s.
+  Seven numerical files and four figures retained. Publish complete own outputs
+  before independent comparison; no complete native claim at this checkpoint.
 
 ## 2026-11-09 — Averaging-history runner and independent checks
 
