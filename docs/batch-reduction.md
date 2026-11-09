@@ -81,3 +81,12 @@ Base1,784passed+24skipped each299.25/289.85s; extras1,817each340.29/332.14s.
 Three real tiny-game process checks pass each147.29/177.73s while other checks
 also ran. Ruff/format496/strict405 pass. This publication precedes the72 real
 correctness prefixes and216 timings. It permits no long study or strength claim.
+
+## Real prefix correctness passed
+
+All72 original same-path endpoints match exactly, including48 original B1
+readout identities, both books, RNG, counters and charged work. Complete stage:
+27.067313916s under900. Base3.12 replays the saved source/work evidence
+without learning. The [own correctness receipt](../results/batch-reduction/correctness.json)
+is published before the complete216-row timing stage. No speed/strength or long
+admission follows from this correctness result.

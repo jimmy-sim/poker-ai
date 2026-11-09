@@ -2199,6 +2199,11 @@ tests and1,817 with extras on each version, plus the three process checks. The
 saved source record is published before the72 real state comparisons. A speed
 or strength improvement has not been measured yet.
 
+All72 real short training paths now exactly match the originals, including
+both strategy averages, random state and work counts. This tells us the checked
+prefixes behave the same. The complete timing experiment is next; exact behavior
+alone does not show that the new implementation is faster or stronger.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
