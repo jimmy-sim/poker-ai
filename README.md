@@ -50,6 +50,12 @@ often do better against the unchanged original opponents. Those are different
 tests; neither establishes competitive full-game strength. Journal step39
 explains the distinction and links the plots and offline replay command.
 
+You can now [browse saved action tables in Terminal](docs/batch-strategy-viewer.md).
+The [matched-update protocol](docs/matched-update-batches.md) and
+[toy-only archive proof](docs/matched-prefix-capture.md) prepare the next controlled
+test. They do not run or admit another Hold'em learning study. Journal steps40–42
+explain the commands, raw averaging weights and remaining gates.
+
 ## Architecture and current strength work
 
 ```mermaid

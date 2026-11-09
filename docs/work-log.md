@@ -13,6 +13,30 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Matched-prefix capture, prospective software only
+
+- **Issue:**#4; [bounded plan](matched-prefix-capture.md) before implementation:
+ 24logical tiny cases/48targets/144own policies/96raw ledgers, complete immutable
+ archive/replay and independent exact arithmetic. No actual Holdem score/path.
+- **Implementation:**22focused checks pass each1.84/1.95s;144policy/96mass
+  IO,384exact-boundary/72work checks, independent terminal/pure-response math;
+  retained pre-input/dirty-source/partial/timeout/archive failures. Temporary
+  clean-source fixtures preserve main's ten modified outputs. Counts/hashes
+  exact; replay error uses existing1e-12fixture-chip tolerance. Ruff/format553/
+  strict455. Final source/full checks running; no accepted published proof yet.
+- **Published checked proof:**sourceCI42645030455bothgreen;218-fileSHA5f168559...
+  sourcegatebf9024dpublished first. Fullbase1957+24skip each264.38/251.57s;
+  extras1990each294.89/286.15s;73focused each2.45/2.46s. Clean toy proof
+  0.707454291s<180,144policies/96masses/384boundaries/72work; independent
+  error3.3306690738754696e-16fixturechips. Base312
+  reader0.223499291s, constructorsblocked. Actualpublished regression
+  added; finalartifactCI pending. No realHoldem/native/forecast/admission.
+- **Parent merged:**PR38at6f22103afterfinalCI42644211540bothgreen; main51tests
+  0.80s/metadataCLIpassed;tenuseroutputsintact. Source/data historicalbytes kept.
+- **Gate:** fixed180s software stage, complete local/hosted source checks before
+ published clean proof. Future7200/900 caps and own/native runner/forecast/
+ admission remain; no future work schedule. Codex; personal hours unrecorded.
+
 ## 2026-11-09 — Matched-update batch foundation, prospective
 
 - **Issue:**#4; [prospective design](matched-update-batches.md) and fixed config
