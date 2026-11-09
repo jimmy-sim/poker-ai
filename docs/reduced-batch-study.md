@@ -129,3 +129,65 @@ Averages share each learning path; full controls are not independent seeded repl
 Blue/orange/green on learning curves mean B1/B4/B16; gray is the reused full control. In component bars, blue is within-partition gain and orange is additional exact-information value. Every panel has its own vertical scale; near-zero bars can differ by orders of magnitude. River-only gain is a separate reply intervention and need not be below total self exploitability.
 
 No reference numbers or actions have entered training. These own results are published before any new-policy native construction. The next step is the fixed900-second OpenSpiel scalar/root/own-reply audit of all480 profiles.
+
+## Independent audit and completed interpretation
+
+The [OpenSpiel receipt](../results/reduced-batch-study/native.json) completes in
+**169.194451625s** under900, including115.699832292s replaying own artifacts. All
+**480 profiles** pass independent scalar/root/achieved-own-reply checks; maximum
+error is **1.5631940186722204e-13 chips**, below the unchanged1e-9 tolerance. No
+reference actions are exported or used in training. Own evidence was published
+at67c5894 before this new-policy comparison began. Base3.12 validates the native
+receipt data-only, after its own zero-error replay and four byte-identical reports.
+The pinned installed Apache2 license/version were checked again.
+
+This audit uses an independent parser and best-response/value algorithms on an
+export of our own bounded game. It does not independently establish every poker
+mechanic or show that the agent matches a separately trained postflop solver.
+Only two small known games, the declared action/range abstraction and three fixed
+seeds are covered. The two average books share paths; original full controls are
+reused once. Batching changes update counts/time weights at fixed work, so a
+result cannot be attributed to variance alone. The main clipped river weakness
+is not generally repaired, and no selected/default/fresh/global admission follows.
+
+The separately preregistered [saved-current follow-up](https://github.com/jimmy-sim/poker-ai/pull/36)
+will check whether current policies improve as well as averages, against the same
+original full opponents. It requires its own source/IO/admission gates and enough
+remaining authorized time. No more trajectories are necessary for that diagnosis.
+
+### Reading the report and reproducing it
+
+```sh
+.venv/bin/python scripts/report_reduced_batches.py --no-plots
+open results/reduced-batch-study/report/final-components-texture_range_q8_b8.png
+```
+
+The first command validates saved own/native evidence and writes numerical
+reports without training or native solver construction. Plotting requires the
+research extra; omit --no-plots to regenerate all four figures. Bars split
+total vulnerability into within-partition and extra exact-information parts.
+Lower is better for that saved strategy in that game; axes vary by panel.
+
+### Interview practice
+
+1. **Did B4 solve the river problem?** It improves the preregistered signed/linear
+   mean in one compressed game, with one seed worse. Clipped/linear remains
+   mixed and river vulnerability can increase when total decreases. I retain
+   every mode and do not claim a universal fix or change the default.
+2. **What does the independent audit prove?** OpenSpiel agrees with480 own
+   profile/value/root/reply calculations to1.57e-13chips on the exported games.
+   It checks the numerical analysis, not global playing strength or a new
+   independently implemented poker engine. No reference strategy trains the agent.
+3. **Why keep equal work rather than claim a pure variance test?** Equal node work
+   controls the declared budget. Larger batches mean fewer updates and different
+   iteration weights; the mathematical1/B conditional variance statement does
+   not remove those learning effects. A causal decomposition needs another plan.
+
+### Verified claim drafts
+
+- Validated480 frozen own strategy profiles on two bounded Hold'em games against
+  OpenSpiel, with maximum scalar/root discrepancy1.57e-13chips.
+- Built a reproducible72-path fixed-work batch comparison with zero own replay
+  error and retained432 raw average-mass and216 current-policy records.
+
+These are research/verification claims, not a claim of competitive poker strength.

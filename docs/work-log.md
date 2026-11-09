@@ -13,12 +13,18 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-09 — Conditional reduced-backend study, prospective
+## 2026-11-09 — Reduced-backend fixed-work study, complete
 
 - **Issue:** #4; [plan](reduced-batch-study.md) and config precede code. The
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Independent audit:**169.194451625s under900; all480profiles pass,maximum
+  scalar/root error1.5631940186722204e-13chips. Ownpublished67c5894before native.
+  Nativeincludesownreplay115.699832292s; base312ownreplay0/113.263148750s,
+  four numerical files byte-identical and native receipt validates data-only.
+  Three interview answers/verified claim drafts/limits recorded; no global/default
+  admission. Source205files unchanged throughout.
 - **Complete own calculation:**1502.599063166s under7200;480profiles
   (432new+48reused),432mass/216current,144baselinechecks; ownreplay0chips/0unitless
   in86.302381583s. Four figures inspected. PrimaryB4signedlinearq8 mean total

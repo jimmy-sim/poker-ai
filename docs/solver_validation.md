@@ -408,3 +408,11 @@ The distinct reduced-backend adapter retains the same480-profile scalar/reply
 checks and exports no reference actions. Reference data cannot enter training.
 New-policy comparison is pending publication of complete own evidence; historical
 own profiles used in software integration tests are not new agent results.
+
+The new-policy reduced-backend audit subsequently completed: all480profiles pass
+OpenSpiel scalar/root/achieved-own-reply checks, maximum discrepancy
+1.5631940186722204e-13chips in169.194451625s (<900). Own receipt/three archives
+were published67c5894 before native construction. OpenSpiel outputs remain
+comparison-only; no action distributions are exported or supplied to training.
+This verifies analysis on an own-game export, not reference playing strength or
+an independent poker-engine implementation. See docs/reduced-batch-study.md.
