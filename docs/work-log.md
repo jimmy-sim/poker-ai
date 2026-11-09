@@ -13,6 +13,17 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Saved batch current policies, prospective
+
+- **Issue:**#4; [plan](batch-current-diagnosis.md)/config fixed before batch
+  outcomes, code or diagnosis. All216 saved currents; final72currents+144averages
+  versus all4 original same-context full controls, both seats:1728 fixed targets.
+  No training/policy edits or favorable subsets. Source study/audit still running.
+- **Gate:** complete published own+native first; new source checks/admission before
+  scoring, own evidence before native;3600own/900native, only if full caps and
+  verification fit authorization. Preserve all failures/source/data. No default/
+  fresh/global claim. Codex-assisted; hands-on time unknown.
+
 ## 2026-11-09 — Conditional reduced-backend study, prospective
 
 - **Issue:** #4; [plan](reduced-batch-study.md) and config precede code. The

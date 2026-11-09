@@ -2236,6 +2236,16 @@ the fixed known-game experiment. It still does not select a stronger agent or
 change the default. The next action is to run all declared cases, keeping every
 result and publishing our own calculation before the independent comparison.
 
+## 39. Is the latest policy safer too? (November9, prospective)
+
+The full batch experiment is running; no new result has been inspected yet.
+The [next plan](batch-current-diagnosis.md) asks whether a change helps the latest
+strategy as well as its average. It fixes every saved checkpoint and opponent
+before looking at outcomes. A fixed opponent means we swap our responding player
+while keeping the other player's probabilities unchanged. This can clarify a
+change that a self-play comparison mixes together. No extra training is planned,
+and incomplete or failed source evidence blocks the diagnosis.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
