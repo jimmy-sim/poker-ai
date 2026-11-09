@@ -2194,6 +2194,15 @@ input rejection, exact sparse means, random-state preservation and both average
 books. Full project, process and GitHub checks still precede any real Hold'em
 prefixes. These are software results, not a measured speed improvement.
 
+## 38. Prepare the conditional batch study (November 9, prospective)
+
+The cheaper checks still need their real cost gate. Meanwhile, the next step's
+[plan](reduced-batch-study.md) explains how to connect the optional implementation
+to the full saved-study pipeline. It must keep every game, seed, work limit and
+accuracy rule. Missing or failed cost evidence blocks the experiment. A complete
+software rehearsal and GitHub checks must also pass before real long training.
+No result, new default or strength claim exists at this checkpoint.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

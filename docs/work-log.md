@@ -13,6 +13,19 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Conditional reduced-backend study, prospective
+
+- **Issue:** #4; [plan](reduced-batch-study.md) and config precede code. The
+  reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
+  blocks admission. Prepare an explicit backend adapter and complete tiny-game
+  archive gates without changing old source, design, seeds, work or caps.
+- **Acceptance:** full local/hosted source checks, published software proof and
+  checked admission before long learning; all144 B1 prefixes before B4/B16;
+  own7200/native900, complete inventories, own publication before native.
+  No long run unless full caps and safe verification fit this authorized window.
+- **Assistance/time:** Codex-assisted; hands-on time unknown. No outcome or
+  stronger/default/fresh/global claim at this prospective checkpoint.
+
 ## 2026-11-09 — Batch reduction dispatch, prospective
 
 - **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
