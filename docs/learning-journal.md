@@ -2267,6 +2267,13 @@ while keeping the other player's probabilities unchanged. This can clarify a
 change that a self-play comparison mixes together. No extra training is planned,
 and incomplete or failed source evidence blocks the diagnosis.
 
+The saved-policy evaluator now passes47 focused checks. Independent tiny-game
+path sums and exhaustive replies verify the signs and best-response values;
+comparing the same strategy to itself gives zero difference. A complete analytic
+software example checks216 profiles and1,728 fixed targets without training.
+These are software checks, not the real diagnosis. Full source checks and a
+published admission remain required.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

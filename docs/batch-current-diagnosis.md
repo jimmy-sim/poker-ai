@@ -49,3 +49,30 @@ Pre-measurement clarification: config now explicitly pins the previously stated
 chip/unitless tolerances and reference license bytes. The reference role names
 this step's216+1728 comparisons rather than inheriting the source study's480
 label. No cases, caps, method or result changed; no diagnosis has run.
+
+Code gates may survive a documentation/data-only merge only after comparing
+every current source/config/entrypoint byte to the observed CI commit's Git tree,
+including the complete set of Python source files. A different, added or deleted
+source file fails. The checked commit and actual working-tree commit are recorded
+separately. Dataset hashes are bound at admission after source outcomes exist.
+This prevents a documentation merge from falsely admitting changed code.
+
+## Implementation checkpoint before diagnosis
+
+The evaluator reads saved currents without constructing a learner. It verifies
+all original policy hashes, scores216 currents, and evaluates1728 fixed targets
+against the four original full controls. Complete worker/schema, old reply-root,
+source/policy and partial-count checks precede immutable archive/replay/report
+output. A distinct native adapter checks all216+1728 scalar/root targets after
+own publication and retains attempted reference setup on failures.
+
+47 focused fast checks pass, including independent terminal-path sums and
+exhaustive deterministic replies, self-zero/opposite EV/gain signs, real Git-tree
+identity across documentation-only commits, full fictional native schemas and
+retained pre-input/partial failures. The first complete analytic tiny-game
+exercise passes16 checks in15.68s with216/1728 real source/archive/process
+calculations and six byte-identical numerical files. Its three software-only
+figures were inspected; legends then moved outside the data panels. Full
+focused checks on both runtimes and complete base/optional suites are running.
+Ruff/format534 and strict typing440 pass. Source/hosted checks and a published
+admission still precede ANY real saved-policy diagnosis.

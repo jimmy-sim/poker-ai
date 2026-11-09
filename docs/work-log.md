@@ -19,6 +19,11 @@ For a guided explanation of the ideas and results, start with the
   outcomes, code or diagnosis. All216 saved currents; final72currents+144averages
   versus all4 original same-context full controls, both seats:1728 fixed targets.
   No training/policy edits or favorable subsets. Source study/audit still running.
+- **Implementation:**47 focused fast checks pass, independent exact path/reply
+  math, self-zero signs, real Git-tree checks, source/native schema/failure gates.
+  Analytic-only216/1728process/archive exercise16checks pass15.68s; three toy
+  figures inspected, legends moved off data. Full checks running; Ruff/format534/
+  strict440 pass. No actual diagnosis or source admission yet.
 - **Gate:** complete published own+native first; new source checks/admission before
   scoring, own evidence before native;3600own/900native, only if full caps and
   verification fit authorization. Preserve all failures/source/data. No default/
