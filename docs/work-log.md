@@ -13,7 +13,53 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-09 — Frozen-pass batches, prospective
+## 2026-11-09 — Batch function costs, checked source
+
+- **Complete own cost evidence:** 21.733298041s under900; all48 archived
+  endpoints exact,32 repeatedB1checks,24 completeprofiles/3,456frames/5,896edges.
+  Base3.12 offline replay reproduces all four numerical files byte for byte;
+  both real figures inspected. Raw costs published before any optimizer.
+  Mean directall/any callee totals1.121222/1.097186s forB4/B16 include reduction
+  work; mean inclusive time includes traversal. No strength/forecast/admission.
+- **Checked source:** `0a86ca8`; both hosted code jobs passed in run
+  [42616172811](https://github.com/jimmy-sim/poker-ai/actions/runs/42616172811).
+  Corrected base1,700+24skip each; extras1,733 each; five slow integrations each;
+  strict394 and format483. Formal cost-only source receipt published before
+  actual short prefixes. No Hold'em cost outcome at this checkpoint.
+- **Issue / question:** #4, after the retained 7201.492439s forecast failure.
+  Profile actual function costs before optimizing; [plan](batch-overhead.md) and
+  config precede code/outcomes. No unchanged timing retries or relaxed caps.
+- **Fixed scope:** All 24 first-seed paths across both games/encodings/regret
+  rules and B1/B4/B16; plain plus instrumented copies (48 endpoints), three
+  workers, separate900s cap. Exact archived state/work/readout/prefix identities,
+  complete function/caller ledgers and independent call/work accounting. Whole
+  measure instrumentation; inclusive mean time includes traversal and is not
+  validation-only cost. No optimizer, EV scores or long admission in this step.
+- **Prior verification:** PR #32 adds two actual published-data replay tests,
+  base3.11/3.12 pass5.69/5.73s. Actual clean-source admission rejects the failed
+  forecast. Final artifact CI42609429095 pending at97234bb; no new-policy native
+  audit or long study claimed. All historical source/data/failures remain intact.
+- **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+- **Tested implementation:** 49 focused fast checks pass; all five new relevant
+  integrations pass each optional runtime (57.30/67.82s while full checks ran).
+  Actual three-process software exercise retains all 48 endpoints/24 cProfiles,
+  exact old states/counters and independent visit/sample/mean call identities.
+  Full runner/report serialization and offline reader pass; four numerical files
+  recreate byte-identically and two explicitly software-only plots render. Real
+  recursion verifies different function/caller count tuple orders. Failure
+  receipts distinguish requested, attempted and completed training. Synthetic
+  CI/call ledgers test schema only. Full base/optional and hosted checks remain
+  before any actual Hold'em cost prefix; no optimizer or new forecast/admission.
+
+- **Pre-measurement correction:** Review finds standard pstats labels can merge
+  generated constructors with the same file/line/name. Raw cProfile extraction
+  now retains every code entry and caller edge, using portable structural code
+  identities plus distinct entry IDs. Two regression cases cover different and
+  identical generated code sharing a label. 51 focused fast checks pass; complete
+  local/hosted checks are required on the corrected collector before any actual
+  Hold'em cost measurements. No learner, seed, work or scientific gate changes.
+
+## 2026-11-09 — Frozen-pass batches, complete failed compute gate
 
 - **Issue / question:** #4; does averaging independent frozen-policy traversals
   help at the same work, despite fewer updates? [Plan](frozen-pass-batches.md)

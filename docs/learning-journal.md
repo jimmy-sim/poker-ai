@@ -76,6 +76,11 @@ All full controls are unchanged. The sampled whole-average fill has a small
 effect in the motivating case and leaves the main weakness unresolved. Both
 own and independent checks pass; no filled strategy is deployed.
 
+Step 35 validates frozen-pass batch training but retains its failed compute
+forecast; no long batch comparison was admitted. Step 36 profiles 48 short
+copies with exact saved-state matches. It identifies measurable check overhead
+without changing the learner or claiming stronger play.
+
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
@@ -2106,13 +2111,14 @@ that the experiment works as specified; they do not show stronger poker play.
 Full checks now pass: 1647 base tests and 1680 optional tests on each Python
 version, plus both GitHub CI jobs. The recorded correctness proof takes 6.34s
 and replays the complete tiny-game exercise with zero error. Next comes the
-fixed Hold'em timing test; no new Hold'em training or timing has run yet. Codex assists with implementation and
+fixed Hold'em timing test; at that checkpoint no new Hold'em timing had run.
+Codex assists with implementation and
 documentation; your hands-on time is not recorded. Any later result stays
 diagnostic and does not automatically become a new default agent.
 
 ### The first timing gate fails narrowly
 
-The fixed test completes all 216 timing rows in55.26 seconds. Its guarded
+The fixed test completes all 216 timing rows in 55.26 seconds. Its guarded
 forecast is 7201.49 seconds, just above the 7200-second limit fixed before running.
 That forecast includes extra allowances; it is not time actually spent training.
 The full learning comparison stays unrun, and no agent is changed.
@@ -2122,6 +2128,57 @@ a faster timing passes. We retain all raw measurements and the failed decision.
 Next we will profile where time goes before considering a verified execution
 optimization. This result says nothing yet about whether larger batches make
 the poker strategy stronger. [Exact counts and limits](frozen-pass-batches.md#retained-compute-gate-failure--november-9).
+
+## 36. Find the cost before changing code — November 9, prospective
+
+The batch experiment's planning gate fails narrowly. We keep that result. Next
+we will profile which functions take time before considering an optimization.
+A profiler is a tool that records function calls and durations. It can add
+overhead, so these timings will not replace the failed planning measurements.
+
+**Example:** If function A calls function B, A's total time includes B. Adding
+both totals double-counts some work. Our batch combiner also runs the sampled
+traversal through a generator, so its total time is not just the cost of checking
+and combining arrays. We must inspect its own time and the functions it calls.
+
+The [fixed plan](batch-overhead.md) uses all 24 first-seed combinations and checks
+that profiling changes no saved strategy, RNG state or work count. That gives a
+measured reason for a later change. No optimizer or new stronger agent exists at
+this prospective checkpoint. Codex assists; your hands-on time is not recorded.
+
+The implementation now passes 49 focused fast checks and five integration
+checks on each Python version. All 48 tiny-game copies preserve their expected
+states, and the profiler's visit counts match charged work. Saved reports replay
+without training and reproduce their numerical files. These are software checks;
+full project checks and GitHub CI still precede the actual Hold'em cost profile.
+
+A review caught a reporting issue before the real run: two different functions
+can have the same printed name and source line, especially generated constructors.
+The ordinary summary can hide one behind the other. Our collector now keeps
+all raw entries and distinguishes their code. Regression checks cover that case.
+The learner is unchanged, and the corrected collector needs its own complete
+checks before measuring Hold'em costs.
+
+The corrected measurement tool now passes the full local checks and both
+GitHub Python jobs. Each local base suite passes 1,700 tests; the optional suites
+pass 1,733 each, plus five dedicated process checks on each version. The saved
+permission record binds those checks to the exact code. The next action is the
+fixed short Hold'em cost experiment; it still cannot start a long study or
+establish better play.
+
+The real cost experiment is complete: all 48 copies match their saved training
+states exactly. It takes 21.73 seconds, and another Python version recreates all
+four numerical reports from the saved data. The graphs in
+[the report](batch-overhead.md#measured-outcome--november-9) show where instrumented
+time goes. Random action selection is the largest individual function cost.
+Repeated array checks are also measurable, so the next candidate is a cheaper
+way of doing the same checks. We have not removed checks, measured an optimizer,
+or shown stronger play. The earlier failed compute gate still stands.
+
+**Example:** A kitchen timer around making coffee also counts waiting for the
+kettle. Blaming the whole interval on stirring would be misleading. Likewise,
+our batch function calls the game traversal while gathering samples; its total
+time is not all validation work. The saved caller breakdown separates them.
 
 ## Your own learning notes
 
