@@ -416,3 +416,17 @@ were published67c5894 before native construction. OpenSpiel outputs remain
 comparison-only; no action distributions are exported or supplied to training.
 This verifies analysis on an own-game export, not reference playing strength or
 an independent poker-engine implementation. See docs/reduced-batch-study.md.
+
+### November9: saved-current and fixed-opponent diagnosis
+
+After own publication10df9be, comparison-only OpenSpiel2.0.2 checks all216self
+profiles and1728fixed targets: maximum discrepancy2.0605739337042905e-13chips,
+164.198028083s<900, including zero-error own replay41.213945417s. The pinned
+Apache2 installed LICENSE bytes retain SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+This step uses the same fully read installed license recorded above. All216
+scientific source files are bound to the observed source CI. Four finite own
+full controls, not reference equilibrium opponents, define fixed targets.
+The adapter exports no reference actions; native outputs are comparison-only
+and cannot enter training. Shared own-game export limits mechanical independence.
+See [method, all outcomes and limits](batch-current-diagnosis.md).

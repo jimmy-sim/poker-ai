@@ -145,3 +145,80 @@ half-summed self metric, select a policy/default or claim global strength.
 
 All own raw/archive/report evidence is published at this boundary. Independent
 OpenSpiel comparison of the216 self and1728 fixed targets is still pending.
+
+## Reading the figures and reproducing the saved analysis
+
+`current-self-exact.png` and `current-self-texture_range_q8_b8.png` show exact
+self exploitability, lower is better, in percent of each game's initial pot.
+Blue/orange/green mean B1/B4/B16. Solid is latest current, dotted is uniform
+average, dashed is linear average. Each panel is a different game/rule; scales
+differ. Points are means over the same three dependent learning paths at each
+work label, not confidence intervals or independent training runs per readout.
+The fixed-opponent figure explicitly labels six rule/readout colors. Its y-axis
+is unilateral within-partition gain against unchanged original opponents, not
+self exploitability. Lines connect measured batch settings; they do not predict
+unmeasured batch sizes. Per-seed values and all fixed targets remain in CSV.
+
+From the main project checkout after merging:
+
+```sh
+.venv/bin/python scripts/report_batch_currents.py --no-plots
+open results/batch-current-diagnosis/report/current-self-texture_range_q8_b8.png
+open results/batch-current-diagnosis/report/fixed-current-average.png
+```
+
+The first command checks every current and fixed target mathematically from
+immutable own archives, validates the published native receipt without installing
+or constructing OpenSpiel, and writes reports under ignored `results/runs/`.
+It does not retrain. Full reconstruction of native comparisons requires the
+locked optional validation environment and `scripts/audit_batch_currents.py`
+with a new ignored output path. Never overwrite reviewed evidence.
+
+## Interview questions and verified claim drafts
+
+**Why can a latest strategy beat test opponents yet be highly exploitable?**
+A few fixed opponents cannot expose every weakness. The best response adapts to
+the full strategy, and a self-profile comparison changes both players. Reporting
+both tests prevents success on a narrow opponent set from becoming a strength
+claim.
+
+**Does this prove batching reduces sampling variance?** No. Equal charged node
+work also changes policy-update counts and time weighting. All readouts share
+trajectories, only three seeds are available, and results differ by regret rule
+and game. A controlled causal claim needs another prospective design.
+
+**What does the independent solver check, and can it train the agent?** It checks
+scalar expected values, exact/restricted response roots and achieved own replies
+on an own-game export. It cannot train the agent or export reference actions.
+Shared export mechanics limit engine independence; neither this audit nor the
+fixed own controls measure competitive full-game strength.
+
+Verified own-only draft: “Replayed216 saved current strategies and1,728 fixed-
+opponent targets with zero chip discrepancy, retaining all checkpoints, seeds
+and failed historical gates.” Native numerical claims require the completed
+independent receipt; no unverified numbers belong in a resume.
+
+## Independent audit complete
+
+Own raw/archive/report evidence was published at10df9be BEFORE constructing
+a new-policy reference. The independent OpenSpiel2.0.2 Apache2 audit checks all
+216 self profiles and1728 fixed targets in164.198028083s (<900). Maximum scalar/
+root/achieved-own-reply error is2.0605739337042905e-13chips (<1e-9). Its full own
+replay is zero in41.213945417s. Four original full controls across four contexts
+and two seats give32 unique opponent/target roots, cached96times across the
+three workers; neither count is an independent sample size. The complete native
+receipt records installed license bytes and source216 binding. No reference
+actions are exported and no reference strategy or result enters training.
+
+Two published-evidence regression checks pass on both base runtimes in0.21/0.22s:
+source/admission/archive/native216+1728 proof and six numeric report files. These
+are deliberately metadata/byte checks, distinct from the complete mathematical
+replays already measured above. Ruff/format and strict typing pass. Complete
+source suites/hosted code CI precede scoring; final artifact CI remains required
+before merge. All original scientific source/data remain byte-identical.
+
+Verified claim draft: “Independently checked216 saved self-policy profiles and
+1,728 fixed-opponent targets with OpenSpiel2.0.2, within2.07e-13chips, retaining
+all seeds and both favorable and unfavorable comparisons.” This describes
+analysis correctness on restricted own-game exports, not stronger global play,
+a causal batching effect or a match to reference equilibrium strategies.

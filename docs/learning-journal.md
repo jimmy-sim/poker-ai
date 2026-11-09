@@ -11,6 +11,13 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
+November9 update: steps35–39 retain a failed compute gate, a tested overhead
+change, a completed72-path batch study and its saved-current diagnosis. All
+216latest profiles and1,728fixed targets pass independent scalar checks. The
+harder game's latest policies are substantially more exploitable than averages,
+while fixed-opponent comparisons often favor latest policies. No global agent
+or default changes. Read step39 for the plots and terminal replay.
+
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
 not established a competitive Hold'em agent.
@@ -2294,6 +2301,24 @@ original opponents, latest policies can nevertheless do better. That tells us
 “good against these opponents” and “hard to exploit” are different questions.
 The latest policy is not automatically the best policy to deploy. Independent
 checks are still pending; no default or broader strength claim changes.
+
+The independent check now passes all216 strategies and1,728 fixed-opponent
+targets. Its largest disagreement is about0.000000000000206chips, comfortably
+inside the preset tolerance. This checks the calculations, not full-game playing
+strength. You can rerun the saved analysis without learning or a solver install:
+
+```sh
+.venv/bin/python scripts/report_batch_currents.py --no-plots
+open results/batch-current-diagnosis/report/current-self-texture_range_q8_b8.png
+open results/batch-current-diagnosis/report/fixed-current-average.png
+```
+
+In the first plot, colors are batch sizes and line styles are latest, uniform
+average and linear average strategies. Lower is harder to exploit. In the
+second, each labeled line measures value left against unchanged original
+opponents. Its y-axis is a different measurement. The [writeup](batch-current-diagnosis.md)
+explains the distinction; every seed and case remains available. The next useful
+learning aid is to inspect actual saved action probabilities side by side.
 
 ## Your own learning notes
 
