@@ -2454,6 +2454,25 @@ checks and publication are still pending. [PR39](https://github.com/jimmy-sim/po
 and the [software-only method](matched-prefix-capture.md) record the remaining
 gates. No matched-update Holdem run is admitted and the agent default is unchanged.
 
+The clean software-only proof is now published after both source GitHub checks
+pass. It takes0.71seconds and retains all144readouts and96raw weight
+tables. The independent arithmetic differs by about0.00000000000000033fixture
+chips. A separate Python version replays every artifact without learning or a
+solver. This is storage/math correctness, not a new poker-strength result.
+
+From your current project folder, try:
+
+```sh
+.venv/bin/python scripts/check_prefix_capture.py --replay results/matched-prefix-capture/own.json
+```
+
+Expected:144policies,96ledgers,384step checks,72work checks, and explicit false
+flags for poker training, reference construction and long-run admission. The
+replay preserves your existing modified results. A fresh proof needs a clean
+branch; the integration tests create their own temporary clean copy. Final
+artifact GitHub checks remain required before merge. The next scientific work
+still needs the actual runner, comparison adapter, forecast and admission.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

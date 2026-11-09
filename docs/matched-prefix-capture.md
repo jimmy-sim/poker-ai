@@ -76,3 +76,38 @@ and does not independently validate poker rules or playing strength.
 explicit tiny fixtures. Actual source factories, full archives/partial grids,
 native comparison, conservative compute forecast and checked published admission
 remain required before the unchanged7200own/900native study.
+
+## Clean checked software proof published
+
+Both source CIjobs42645030455 pass on508a26fb4afebbe3174c8d65b55ab23ace4b1397.
+The218-file sourceSHA is5f1685591ab33711b7e4c63054931b9f5b820d7a82d82bc18691dbcf558201e6.
+Full final base1,957+24skip each264.38/251.57s; extras1,990each294.89/286.15s;
+73combined focused checks each2.45/2.46s; Ruff/format553/strict455pass. The
+[source gate](../results/matched-prefix-capture/code-checks.json) was published
+bf9024d BEFORE the actual software-only proof. All original216source bindings
+and nine primary input hashes remain unchanged.
+
+The clean [own proof](../results/matched-prefix-capture/own.json) completes in
+0.707454291s<180, with144policies/96raw ledgers/384update checks/72work
+crossings. Maximum independent terminal/pure-response error is
+3.3306690738754696e-16fixture chips<1e-12. A separate
+Python3.12 archived reader repeats all checks in0.223499291s, with learning
+and reference constructors blocked. No actual poker tree or reference solver
+is constructed. A regression test checks the actual published source/archives
+and independent replay on routine CI. Final artifact CI is still required.
+
+After merge, replay the published evidence from your existing checkout:
+
+```sh
+.venv/bin/python scripts/check_prefix_capture.py --replay results/matched-prefix-capture/own.json
+```
+
+This command does not train. Generating a fresh proof requires a clean branch;
+the user's ten unrelated modified main outputs are deliberately preserved, so
+use the published replay for this terminal exercise. The temporary-clean-source
+integration tests also work without changing those outputs.
+
+The parent protocol/grid PR38 is merged6f22103 after both final CI42644211540
+jobs pass. Main51tests pass0.80s and the24/48/144metadata command passes. The
+full actual matched-update Holdem runner/native/forecast/admission still does
+not exist. No stronger/default/fresh/global claim or future work schedule.
