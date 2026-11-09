@@ -155,3 +155,129 @@ generally better averaging rule or admit a filled strategy. A null effect is
 also useful: missing average mass can be harmless at unreachable rows. Keep
 unfavorable effects and distinguish coverage from realized reach before choosing
 a later training intervention. All implementation and outcomes are pending.
+
+## Completed saved-policy intervention — November 9
+
+The plan above preceded implementation and outcomes. Every 128 source window,
+512 self profile, 128 raw control/panel and 2048 fixed target condition is retained.
+All **32 full windows preserve own realization and the required values exactly**;
+their maximum changes are zero. Missing uniform-game coverage at those rows is
+compatible with harmless, unreachable own decisions.
+
+Own archive replay has zero chip/unitless error. Own stage **285.478070s** under
+900s includes 94.552135s upstream replay and 94.142837s intervention replay.
+Independent stage **332.709628s** under 900s includes 193.038860s complete input
+replay. All 512 self profiles, 2048 fixed conditions and 128 native panels pass;
+maximum complete discrepancy **1.6342482922482304e-13 chips**, below 1e-9.
+Fixed-difference discrepancy is at most 2.842170943040401e-14 chips. All 128
+cached fixed-opponent/target identities are checked before reuse; no reference
+strategy supplies probabilities or learning targets.
+
+Base Python 3.12 replays the complete input/intervention chain with zero error
+in **187.900927s**, validates the archived native receipt and reproduces all
+**seven numerical files byte-for-byte**. Four final figures inspected. Times are
+process measurements, with nested replay intervals, not human work hours.
+
+Ordering: prospective `a860f9c`, checked code `815d470`, both
+[code CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/42596478622)
+passed before check/reader notes `d170d93`; complete own publication `3fa97c4`
+preceded native publication `e91f8f2`. Original source/config/data/seeds/caps and
+the older failed performance limits remain unchanged.
+
+### The declared whole-average fill has a small effect here
+
+Medium range-mass sampled totals below are three-seed arithmetic means, in
+**percent of initial pot**. Fill changes **both seats' eligible rows only**;
+changes are percentage points, filled minus the same raw window. All separate
+seat fills, encodings, games, seeds and opponents remain in the
+[complete tables](../results/window-fallback/report/tables.md) and CSVs.
+
+| Regret / average | Window | Raw total | Both filled | Change |
+|---|---|---:|---:|---:|
+| Signed / uniform | 5m–10m | 6.334095 | 6.332892 | -0.001204 |
+| Signed / uniform | 9m–10m | 16.609958 | 16.608637 | -0.001321 |
+| Signed / linear | 5m–10m | 6.719436 | 6.718195 | -0.001241 |
+| Signed / linear | 9m–10m | 16.793465 | 16.792185 | -0.001280 |
+| Clipped / uniform | 5m–10m | 2.541802 | 2.541634 | -0.000168 |
+| Clipped / uniform | 9m–10m | 4.901764 | 4.883604 | -0.018160 |
+| Clipped / linear | 5m–10m | 2.531900 | 2.531738 | -0.000161 |
+| Clipped / linear | 9m–10m | 4.888556 | 4.869954 | -0.018602 |
+
+For clipped/linear half-window means, within gain changes 1.510004→1.509719%
+pot, while extra-information value changes 1.021896→1.022019%. A small mean
+total reduction conceals opposing components. Two of three half-window seeds
+worsen slightly: total changes +0.000136/-0.000655/+0.000034 percentage points
+for seeds 20261301/2/3. The short window improves in each seed, but stays much
+more vulnerable than the unchanged whole average's 2.501852% mean.
+
+Across **all 96 sampled both-fill windows**, raw total changes range from
+**-0.073002 to +0.000529 percentage points**. This is a descriptive range of this
+one intervention, not a confidence interval, population result or bound on all
+possible fallback choices. Positive results and no-op fills remain in the data.
+
+![All sampled self changes and raw seeds](../results/window-fallback/report/self-changes-external.png)
+
+### Missing mass is different from realized reach
+
+The fill is not simply a no-op everywhere. For the first seed's medium
+range-mass clipped/linear short window, **740 information rows** are eligible and
+**544** actually change probabilities. They are river rows in this case. The
+maximum own realization reach at an eligible river history is **0.006164**.
+That multiplies only the player's earlier actions and excludes chance and the
+opponent; it is not a measured hand frequency. The source has 1662 information
+rows, which represent groups of situations rather than 1662 independent hands.
+
+The full controls supply the important contrast: eligible rows can have positive
+uniform-game exposure but zero reach under the strategy. Every full fill leaves
+the realized policy and scalar results unchanged. A coverage deficit alone does
+not establish an error, and changing many off-path probabilities need not change
+EV substantially.
+
+This particular fill does not recover a strong late-window strategy. It also
+does **not** prove that every missing row or every alternative completion is
+harmless: some whole-average rows already use the same uniform fallback, and
+only one predetermined own completion was tested. The sampled learning cause
+remains unresolved. A separately planned test of within-pass sampling variance,
+with unchanged work limits and independent correctness/cost gates, is the next
+useful direction; no optimizer or new agent is admitted by this diagnosis.
+
+## Reproduce and inspect
+
+These commands replay the complete saved chain without training or an installed
+reference runtime, and open the retained figures:
+
+```sh
+.venv/bin/python scripts/report_window_fallback.py --no-plots --output results/runs/my-window-fallback-report
+.venv/bin/python -m pytest -q -m 'not slow' tests/test_window_fallback*.py
+open results/window-fallback/report/self-changes-external.png
+open results/window-fallback/report/fixed-opponent-changes-external.png
+```
+
+At frozen revision `e91f8f2`, `make diagnose-window-fallback` repeats the complete
+saved-policy own/native/report calculation into fresh ignored outputs, refusing
+overwrites. Use uv 0.13.5 and an isolated clean checkout. Future added modules
+do not alter the recorded source; read-only replay checks all original hashes.
+Original trajectory training still belongs to its own frozen revision and caps.
+
+## Limits and interview questions
+
+All games, windows and seeds are already known development cases. There is no
+new training, unseen-game validation, general win rate, convergence proof,
+selected suffix/fallback deployment or default/fresh/global admission. Fills,
+windows and average-weight readouts share source data and are not independent.
+Fixed-opponent changes concern our old strategies; native scalar checks do not
+turn those opponents into external GTO strategies. Own exports are shared by the
+native game, so agreement does not independently validate every engine rule.
+
+1. **Why can low coverage be harmless?** A row can be reachable under uniform
+   play yet blocked by the player's own zero-probability earlier action. All 32
+   full windows preserve realization and values exactly after the fill.
+2. **Why not adopt the filled strategy?** The tested completion makes only a
+   small change in the motivating case, can worsen individual outcomes, and
+   remains a known-window intervention. Other completions and training causes
+   remain unresolved; the old failed performance limit is not revised.
+3. **Why fill each seat separately and hold opponents fixed too?** The four
+   profiles check BR-root additivity without incorrectly forcing baseline EV
+   interaction to zero. Fixed opponents then isolate conditional own EV changes.
+   These checks validate the intervention's meaning, rather than identify a
+   unique training cause or general strength improvement.

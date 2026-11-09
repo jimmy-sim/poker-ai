@@ -69,6 +69,20 @@ For a guided explanation of the ideas and results, start with the
   Maximum scalar discrepancy 1.6342482922482304e-13 chips; fixed-difference
   discrepancy at most 2.842170943040401e-14, both below 1e-9. All 128 cached
   opponent/target identities verified. All four final figures inspected.
+- **Cross-version reproduction:** Base Python 3.12 replays the complete old/new
+  chain with zero error in 187.900927s, validates the independent receipt and
+  regenerates all seven numerical files byte-for-byte.
+- **Finding / limits:** Medium range-mass clipped/linear sampled means change
+  half-window 2.531900→2.531738% pot; short-window 4.888556→4.869954%. Two
+  half-window raw seeds worsen. Across all 96 sampled both-fill windows, total
+  differences span -0.073002 to +0.000529 percentage points. This one declared
+  completion makes a small change; it is not a bound on all alternatives or a
+  training-cause proof. Full controls show why missing uniform coverage can be
+  harmless under actual own reach. README, full method/limits, three interview
+  answers and journal step34 updated. Original failed limits/defaults preserved.
+- **Next:** Separately preregister within-pass sampling batches and their
+  correctness/compute tests before new learning. No batch method or stronger
+  agent is admitted by this saved-policy diagnosis. Final artifact CI pending.
 
 ## 2026-11-09 — Averaging-history runner and independent checks
 

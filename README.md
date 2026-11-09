@@ -213,6 +213,18 @@ or run `.venv/bin/python scripts/report_averaging_history.py --no-plots`.
 At frozen revision `7080163`, `make study-averaging-history` repeats the admitted
 study into new ignored outputs; later modules do not receive fresh admission.
 
+The [zero-weight fallback intervention](docs/window-fallback.md#completed-saved-policy-intervention--november-9)
+keeps learned rows fixed and fills only missing late rows from the same own whole
+average. All 32 full windows preserve realized play and values exactly. In the
+medium range-mass clipped/linear sampled case, half-window mean total changes
+**2.531900→2.531738% pot** and short-window **4.888556→4.869954%**. Some raw
+conditions worsen. All 512 profiles /2,048 fixed conditions pass independent
+audit; seven numerical files reproduce byte-for-byte on base Python 3.12.
+This specific fill does little to remove the main weakness and is not deployed.
+Read [journal step 34](docs/learning-journal.md#34-ask-what-happens-at-late-rows-with-no-weight)
+or replay with `.venv/bin/python scripts/report_window_fallback.py --no-plots`.
+At frozen `e91f8f2`, `make diagnose-window-fallback` repeats the saved-policy study.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

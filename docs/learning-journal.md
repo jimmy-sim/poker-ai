@@ -71,9 +71,10 @@ Step 33 completes the averaging-history investigation. Original learning paths
 match exactly, but the sampled current policies remain vulnerable. Late averages
 do not supply a general repair; improving against old opponents and resisting a
 best response are different outcomes. All own and independent checks pass.
-Step 34 tests whether the fallback at zero-weight late rows affects those saved
-strategies, while keeping learned rows fixed. The software checks pass; the
-Hold'em intervention still awaits its own/native measurement gates.
+Step 34 completes the zero-weight fallback test while keeping learned rows fixed.
+All full controls are unchanged. The sampled whole-average fill has a small
+effect in the motivating case and leaves the main weakness unresolved. Both
+own and independent checks pass; no filled strategy is deployed.
 
 You can read this in three sittings:
 
@@ -2041,6 +2042,42 @@ the original saved policies and masses. It keeps both seats and every declared
 case; the independent comparison follows publication of the own results.
 The [plot-reading guide](window-fallback.md#how-to-read-the-four-figures) explains
 what the colors, diamonds, small points and signs mean before any new outcome.
+
+**Completed November 9:** All 128 saved windows and 512 fill profiles pass own
+replay. The independent audit checks all 512 profiles, 2048 fixed-opponent
+conditions and 128 accounting panels. The largest discrepancy is about
+0.00000000000016 chips, below the fixed limit. All 32 full-control windows
+preserve realized behavior and the required values exactly.
+
+For the motivating medium range-mass sampled case, with clipped regrets and
+linear time weights, the three-seed mean total is:
+
+| Late window | Original uniform fallback | Whole-average fill |
+|---|---:|---:|
+| 5m–10m work | 2.531900% pot | 2.531738% pot |
+| 9m–10m work | 4.888556% pot | 4.869954% pot |
+
+This particular fill changes little. Two of the three half-window seeds worsen
+slightly despite its small mean improvement. The short window improves in each
+seed but still has a large gap. Every mode, seed, one-seat fill and unfavorable
+result remains in [the full explanation and tables](window-fallback.md#completed-saved-policy-intervention--november-9).
+
+Missing coverage can describe a decision that the strategy itself cannot reach.
+That is what the unchanged full controls help distinguish. In the sampled first
+seed's short window, 544 rows actually change, yet the overall effect is small.
+This does not prove every possible fallback is harmless: some whole-average
+rows use the same uniform probabilities too, and only one fixed alternative
+was tested. We do not turn the result into a new agent or erase the failed gate.
+
+The own stage takes 285.48 seconds and the independent audit 332.71 seconds,
+within their separate 900-second caps. Base Python 3.12 replays everything with
+zero error and recreates all seven numerical files byte-for-byte. Four final
+figures and three interview answers are linked from the method page.
+
+**Next question:** Would averaging several independent traversals before each
+learning update reduce sampling noise, or would fewer updates at the same work
+limit outweigh the benefit? That needs its own fixed plan, mathematical tests
+and compute gate before any new Hold'em learning.
 
 ## Your own learning notes
 
