@@ -2224,6 +2224,12 @@ game rehearsal of all480 saved profiles. Those are software examples, not new
 Hold’em results. Missing or failed real cost evidence still blocks long training,
 and full project/GitHub checks remain required.
 
+All full study checks now pass:1,822 base tests and1,855 with extras on each
+Python version,62 focused checks each, and both GitHub source jobs. The saved
+tiny-game proof replays all480 profiles with zero error. These checked files
+and the fitting forecast must be bound by a published admission before the real
+long study. The original failed experiment remains unchanged.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

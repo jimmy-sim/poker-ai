@@ -397,3 +397,14 @@ training and strategy export remain prohibited; the auditor returns only scalar
 comparisons. This is not a reference-equilibrium strategy match or an independent
 check of every exported poker rule. All source/own/archive bindings and archived
 native results also validate in a base Python 3.12 environment.
+
+### November9: conditional reduced-backend batch comparison
+
+Before any new-policy native comparison, the installed OpenSpiel2.0.2 Apache2
+license was re-read in full and verified through `license_record`. Installed
+path:`open_spiel-2.0.2.dist-info/licenses/LICENSE`; SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+The distinct reduced-backend adapter retains the same480-profile scalar/reply
+checks and exports no reference actions. Reference data cannot enter training.
+New-policy comparison is pending publication of complete own evidence; historical
+own profiles used in software integration tests are not new agent results.

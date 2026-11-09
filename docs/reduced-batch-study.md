@@ -56,3 +56,28 @@ conditional admission tests. The native integration uses existing historical
 own poker profiles as test controls; it is not a new agent comparison. Ruff,
 format510 and strict418 pass. Full base/optional checks and hosted code jobs are
 pending. Real long learning remains blocked on all gates.
+
+## Complete source/software gate — November 9
+
+Both source jobs passed on `d568f1f7582b9d8ab5a6c1eb0216929bf8c2b8f6` in
+[CI42622026217](https://github.com/jimmy-sim/poker-ai/actions/runs/42622026217).
+The205-file source SHA is
+`3c4cda2030ed59748b94a51ef071fe84533c22d8ee9f5e843383f05a79665212`.
+Complete local base1,822+24skip each265.07/254.26s; extras1,855each295.38/285.34s.
+All62 focused checks pass each37.61/50.97s, including the24 relevant slow checks.
+Ruff, formatting510 and strict typing418 pass.
+
+The formal [software proof](../results/reduced-batch-study/correctness.json)
+finishes in9.008274959s under180. It checks480profiles,432masses,216currents and
+144baseline identities on the explicit nonuniform Kuhn software fixture, with
+zero replay errors. Its two worker phases retain all expected completions.
+Base3.12 validates the source-bound proof without learner or native construction.
+This is software evidence, not a new Hold'em result. Publish it before the
+checked code receipt and conditional admission, and publish admission before
+long trajectories. Source files remain unchanged through those documentation
+commits; observed CI binds the proof's code commit and exact full source map.
+
+The pinned OpenSpiel2.0.2 Apache2 license was read again from the installed
+distribution, and its bytes match the existing recorded SHA
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+Actual new-policy reference comparison must still wait for published own evidence.

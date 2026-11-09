@@ -19,6 +19,12 @@ For a guided explanation of the ideas and results, start with the
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Source/software gate:** both jobs42622026217passed on d568f1f;205-file
+  SHA3c4cda2030ed59748b94a51ef071fe84533c22d8ee9f5e843383f05a79665212.
+  Base1822+24skip each265.07/254.26s; extras1855each295.38/285.34s;62focused
+  each37.61/50.97s including24slows; Ruff/strict418/format510. Formal9.008274959s
+  tiny-game proof480/432/216/144identities/replay0, base312readerpassed.
+  Publish proof/code/admission in order before new long trajectories.
 - **Implementation:** explicit new factory/own format/native adapter;62 focused
   optional checks pass37.39s, Ruff/format510/strict418. Complete tiny-game archive
   and source/admission gates tested; full suites/hosted checks pending.
