@@ -92,3 +92,14 @@ publication; a separately published input/source admission is still required.
 The source study is merged at864e407. Main2tests pass31.27s; its full480-profile
 replay has zero error in113.677454333s, all four numeric files match and native
 validation passes. All ten unrelated modified user outputs remain unchanged.
+
+## Admission before actual saved-data scoring
+
+The [admission](../results/batch-current-diagnosis/admission.json) binds all seven
+source/data/config/check receipt hashes and the exact tested216-file code map.
+The complete480-profile source own study and its independent audit are required;
+no failed or absent source is accepted. The code gate was published at5e9937a
+first. At06:16Pacific, the full3600own+900native caps plus final verification fit
+the remaining one-time window. Publish this admission before starting diagnosis.
+All original policies and source files remain unchanged. This admits no training,
+strategy edit, selected/default/fresh/global claim or future work schedule.

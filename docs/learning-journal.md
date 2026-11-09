@@ -2280,6 +2280,11 @@ checks each. The source record verifies every code byte against the tested
 commit. Admission must still tie it to the complete saved study and audit before
 we score real currents. No training or changed strategy is part of this step.
 
+The saved-data admission is now checked. It ties the exact evaluator to the
+complete saved study, its independent audit and all archive bytes. The next
+step scores existing latest policies and tests them against unchanged original
+opponents. There is no retraining and no strategy is edited.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
