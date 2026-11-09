@@ -26,6 +26,11 @@ For a guided explanation of the ideas and results, start with the
 - **Status:** Plan only; no new training, timing or results. Codex-assisted;
   developer hands-on time not recorded. The previous fallback result is complete
   and awaits final artifact CI/merge on PR #31.
+- **Prospective clarification:** Replace the copied previous-stage native role
+  wording with this plan's already-declared 480 self profiles and river hybrids;
+  no fixed-opponent grid is part of this new batch plan. No cases or gates change,
+  and no timing/training outcomes have run. PR #31 is now merged after both final
+  hosted jobs passed at `b6d1076`.
 
 ## 2026-11-09 — Saved-window fallback, prospective
 
