@@ -49,6 +49,11 @@ For a guided explanation of the ideas and results, start with the
   7200s own cap. Historical partition sums: 1032.242842/1031.129947/1021.501461s.
   Forecast is a planning guard, not measured new runtime or human hours. Publish
   correctness before recording and publishing checked admission; poker still pending.
+- **Admission:** `results/averaging-history/admission.json` binds clean checked
+  code `432908e`, actual CI run 42584867420 and complete local checks to the
+  published correctness receipt. Scope is only the same original trajectories.
+  This admission is published before starting the replay; all 64 cases, original
+  prefixes, fixed seeds and caps remain required. Native study follows own publication.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 

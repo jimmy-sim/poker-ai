@@ -1,0 +1,28 @@
+{
+  "checked_commit": "432908e814daaa711ae2b61a5bb586f3aa65bd1a",
+  "ci_jobs": {
+    "Python 3.11": "success",
+    "Python 3.12": "success"
+  },
+  "ci_run": 42584867420,
+  "correctness_sha256": "63a3e726adb064bffa674182ba0de3325441234bcab00192c5c02207ae0785fb",
+  "environment": {
+    "cpu": "arm",
+    "cpu_query_status": "sysctl unavailable: CalledProcessError",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "format": "poker-ai-averaging-history-admission-v1",
+  "local_checks": {
+    "all_extras_311": "passed",
+    "all_extras_312": "passed",
+    "base_311": "passed",
+    "base_312": "passed",
+    "slow_integrations": "passed"
+  },
+  "scope": "same original 10m trajectories only; no stronger/default/fresh/global admission",
+  "source_sha256": "03310df75df9e25da1907ad2cf6be1884be918d05c5289757673bb30d5050fcf",
+  "status": "admitted_same_trajectories_diagnosis_only"
+}
