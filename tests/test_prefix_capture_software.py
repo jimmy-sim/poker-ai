@@ -56,3 +56,21 @@ def test_dirty_source_rejection_is_retained_before_toy_training(tmp_path: Path) 
     assert saved["status"] == "incomplete"
     assert saved["software_training_attempted"] is False
     assert saved["completed_profiles"] == 0
+
+
+def test_replay_error_uses_preset_tolerance_without_loosening_counts() -> None:
+    actual = dict(
+        profiles=144, reference_constructed=False, maximum_error_fixture_chips=3e-16
+    )
+    recorded = dict(actual, maximum_error_fixture_chips=4e-16)
+    software.compare_proofs(actual, recorded)
+    for change in (
+        dict(profiles=True),
+        dict(profiles=143),
+        dict(reference_constructed=True),
+        dict(reference_constructed=0),
+        dict(maximum_error_fixture_chips=1.1e-12),
+        dict(maximum_error_fixture_chips=float("nan")),
+    ):
+        with pytest.raises(ArithmeticError):
+            software.compare_proofs(actual, dict(recorded, **change))

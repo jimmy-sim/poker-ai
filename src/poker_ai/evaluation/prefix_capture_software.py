@@ -29,6 +29,7 @@ from poker_ai.postflop.learning_artifacts import (
 )
 from poker_ai.postflop.learning_run import persist
 from poker_ai.postflop.learning_training import score_data
+from poker_ai.postflop.parallel_profile import same
 from poker_ai.postflop.pipeline_report import check_source
 from poker_ai.postflop.river_study import Deadline, digest
 from poker_ai.reproducibility import runtime_environment
@@ -339,6 +340,28 @@ def run(root: Path, output: Path) -> dict[str, Any]:
     return saved
 
 
+def compare_proofs(actual: dict[str, Any], recorded: dict[str, Any]) -> None:
+    diagnostic = "maximum_error_fixture_chips"
+    if set(actual) != set(recorded) or any(
+        (
+            type(actual[key]) is not type(recorded[key])
+            or not same(actual[key], recorded[key])
+        )
+        for key in actual
+        if key != diagnostic
+    ):
+        raise ArithmeticError("tiny replay proof structure changed")
+    errors = (actual[diagnostic], recorded[diagnostic])
+    if (
+        any(
+            type(x) not in (int, float) or not math.isfinite(x) or not 0 <= x <= 1e-12
+            for x in errors
+        )
+        or abs(errors[0] - errors[1]) > 1e-12
+    ):
+        raise ArithmeticError("tiny replay error exceeds preset chip tolerance")
+
+
 def read(root: Path, path: Path) -> dict[str, Any]:
     saved: dict[str, Any] = json.loads(path.read_text())
     if saved["status"] != "completed_software_only_not_poker":
@@ -366,6 +389,5 @@ def read(root: Path, path: Path) -> dict[str, Any]:
     ):
         raise ArithmeticError("incomplete or mislabeled tiny proof")
     proof = replay(root, path, saved, Deadline(180))
-    if proof != saved["replay"]:
-        raise ArithmeticError("tiny replay proof changed")
+    compare_proofs(proof, saved["replay"])
     return proof
