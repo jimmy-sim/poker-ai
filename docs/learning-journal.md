@@ -67,12 +67,16 @@ compressed game, then compare all four training modes against the same opponents
 Its complete own calculation and independent audit pass. The larger within-game
 weakness persists against fixed opponents, especially for seat 1, and appears with
 exact information too. It is not explained by compression or changed opponents alone.
+Step 33 completes the averaging-history investigation. Original learning paths
+match exactly, but the sampled current policies remain vulnerable. Late averages
+do not supply a general repair; improving against old opponents and resisting a
+best response are different outcomes. All own and independent checks pass.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–32:** What the extensions and recent experiments taught us.
+- **Steps 10–33:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -1871,6 +1875,124 @@ shows why this is a useful distinction: the raw learning path can stay the same
 while its final average changes. A new learning experiment needs its own fixed
 plan and correctness/compute gates first. The previous failed performance limit
 and global default remain unchanged.
+
+## 33. Look at current play and older averages
+
+**November 8, 2026 — issue #4, averaging history.** Codex-assisted implementation;
+personal hands-on time not recorded. [PR #30](https://github.com/jimmy-sim/poker-ai/pull/30)
+and its [fixed plan](averaging-history.md) precede the new measurements.
+
+**Question:** The agent changes its action probabilities during learning. We
+usually evaluate a weighted average of those probabilities. Does a measured
+weakness remain in its current play, or is weaker earlier play still in the
+average? A current snapshot is only one point on a possibly changing path; it
+does not automatically make a better agent.
+
+The follow-up keeps the original cases, rules, random seeds and work limit. It
+will observe current play at five fixed checkpoints, plus averages from two
+fixed late windows. Each replay must recover the old strategy and state
+fingerprints at three original checkpoints. A mismatch stops the study.
+
+**Example, made up:** Suppose the cumulative weights for check and bet are
+initially `[8, 2]` and later `[9, 8]`. The new period contributes `[1, 6]`, so its
+average is check `1/7`, bet `6/7`. We subtract raw weights and then normalize.
+Subtracting the already-normalized old and new probabilities would not give
+that average. These weights are learning contributions, not a bankroll or a
+count of real hands played.
+
+The archive will retain the raw cumulative weights at the window boundaries.
+That lets the report reconstruct each late average without retraining. Rows
+with no new weight use the existing uniform legal fallback, and the report must
+show their coverage. Warm initialization giving every row some old mass does
+not tell us whether a late window learned about every row.
+
+**Software progress:** 119 focused checks pass on both Python versions. They
+cover hand-calculated window arithmetic, bit-exact toy trajectory preservation,
+all eight toy traversal/clipping/averaging combinations, corrupted artifacts and
+complete worker grids. Fictional ledger fixtures check missing/altered entries;
+their invented values are not poker results. The real archived loader also
+passes with new training and native solver construction explicitly blocked.
+
+Full foundation checks also pass: 1365 base
+tests with 24 optional skips and 1398 optional-suite tests on each Python version.
+These are software checks. The previous failed performance gate remains.
+
+**November 9 software follow-up:** The runner now saves and reconstructs the
+whole average and both late windows, checks every saved strategy, and compares
+each one against the same frozen opponents. It also refuses to start learning
+until the checked-source and compute permissions are recorded. An interruption
+leaves a failed receipt and partial files instead of erasing the attempt.
+
+There are 193 passing focused fast checks. A three-process toy test exercises the
+entire archive, with all planned profiles and opponent conditions. Further tests
+deliberately change a score, a window boundary, coverage or raw learning weights
+and recompute the file hashes. Replay still rejects the altered meaning. A hash
+checks whether bytes changed; reconstructing and rescoring checks what they mean.
+The independent adapter also checks old audited Hold'em policies with both player
+signs, while reference training and strategy export are blocked.
+
+These are software results, not stronger play. Full local checks, GitHub CI,
+source-bound correctness/forecast and published admission still precede the new
+Hold'em replay. The plan and all old failed limits remain unchanged.
+
+The complete local code checks now pass too: 1439 base tests with 24 optional
+skips and 1472 optional-suite tests on both Python versions. All ten longer checks
+pass on both. GitHub CI and the source-bound correctness/compute receipt remain
+separate gates before the study.
+
+Both GitHub code jobs have now passed. The recorded toy proof checks all planned
+archive paths with zero replay error. A fixed calculation using the original
+64 run durations forecasts about 89 minutes, below the two-hour own-stage cap.
+That is a cautious planning estimate, not time already spent or a guarantee.
+The next step is to publish the checked admission and replay the known Hold'em
+trajectories. [Correctness receipt](../results/averaging-history/correctness.json).
+
+**Completed November 9:** Admission was published first. All 64 known
+trajectories recovered their 192 original checkpoint fingerprints exactly.
+Every late average reconstructs from its stored raw weights. All 512 self
+profiles and 2048 fixed-opponent conditions pass the independent audit, with
+maximum difference about 0.00000000000024 chips. That checks the calculations;
+it does not mean the strategies are that close to unbeatable play.
+
+For the medium range-mass sampled game, using clipped regrets and linear time
+weights, the three-seed mean exploitability is:
+
+| Strategy being measured | Percent of initial pot; lower is better |
+|---|---:|
+| Whole average | 2.501852 |
+| Current play at 10m work | 9.519793 |
+| Average over 5m–10m work | 2.531900 |
+| Average over 9m–10m work | 4.888556 |
+
+The current weakness remains. The whole average is not simply hiding a good
+endpoint under bad old play. Removing the first half of learning does not improve
+the mean total here, and the shorter late window is worse in every seed. All four
+clipping/averaging modes, both games, both information descriptions and every
+seed remain in the [full result](averaging-history.md#completed-diagnosis--november-9).
+
+There is a useful surprise: these late variants can earn more against the old
+saved opponents while being more vulnerable to a best response. Doing better
+against one set of opponents is different from making fewer exploitable mistakes.
+That is why we keep both measurements and do not select a new agent from this table.
+
+Some river rows received no averaging weight in a late window and use the
+existing uniform fallback. That might matter, but coverage alone does not prove
+it: the full control has many such rows and zero measured late exploitability.
+Some rows may be unreachable under its own play. A sensible next saved-policy
+test is to change only that fallback while leaving every learned row fixed.
+It needs a separate plan before measurement. No new training rule or failed
+performance limit changes here.
+
+The own stage took 1136.77 seconds; the independent audit took 237.65 seconds,
+including input replay. Both stay below their fixed caps. Base Python 3.12
+also replays everything with zero error and regenerates all six numerical files
+byte-for-byte. These process times are not personal work hours.
+
+**Try it:** Open `results/averaging-history/report/final-averages-external.png`
+from the terminal, or run `.venv/bin/python scripts/report_averaging_history.py
+--no-plots` as one line to check the saved result without training again.
+The [method page](averaging-history.md#reproduce-and-inspect) lists the exact
+commands and explains how to read all six plots.
 
 ## Your own learning notes
 

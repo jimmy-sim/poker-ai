@@ -193,6 +193,26 @@ information too. All 512 target checks pass independent scalar audit (max
 Read [journal step 32](docs/learning-journal.md#32-separate-our-decisions-from-the-opponents-behavior)
 or try `.venv/bin/python scripts/inspect_controlled_reply.py --seat 1`.
 
+The [averaging-history diagnosis](docs/averaging-history.md#completed-diagnosis--november-9)
+recovers all 192 original checkpoints and checks 512 saved current/average profiles.
+In the medium range-mass sampled game, with clipped regrets and linear time
+weights, the latest policy remains vulnerable. Three-seed mean exploitability,
+as percent of initial pot (lower is better):
+
+| Whole average | Current at 10m | 5m–10m average | 9m–10m average |
+|---:|---:|---:|---:|
+| 2.501852 | 9.519793 | 2.531900 | 4.888556 |
+
+Late windows can improve EV against old fixed opponents without becoming safer
+against a best response. All 512 self profiles and 2,048 fixed target conditions
+pass independent scalar audit; six numerical files reproduce byte-for-byte on
+base Python 3.12. This diagnoses the original known trajectories, without a new
+stronger agent or default change. See [all modes/seeds and six figures](results/averaging-history/report/tables.md),
+[journal step 33](docs/learning-journal.md#33-look-at-current-play-and-older-averages),
+or run `.venv/bin/python scripts/report_averaging_history.py --no-plots`.
+At frozen revision `7080163`, `make study-averaging-history` repeats the admitted
+study into new ignored outputs; later modules do not receive fresh admission.
+
 ## Development
 
 New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with

@@ -13,6 +13,119 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Averaging-history runner and independent checks
+
+- **Authorization:** One work window from midnight to 08:00 Pacific, continuing
+  issue #4 and [PR #30](https://github.com/jimmy-sim/poker-ai/pull/30). This does not
+  create another night of work. Codex-assisted; human hands-on time not recorded.
+- **Change:** Complete own replay/report runner, source-bound toy correctness and
+  historical forecast/admission, plus isolated native scalar comparison. Retain
+  raw cumulative weights to reconstruct whole/suffix policies without training.
+  Reports keep all seeds, duplicate current paths, support and fixed opponents.
+- **Tests so far:** 193 focused fast checks pass. Complete three-process toy
+  archive replay and four deliberately rehashed corruptions pass all 13 replay
+  checks (8.99s). Altered scores, support, window timing and cumulative masses
+  fail semantic validation despite recomputed file hashes. Fictional header/grid
+  fixtures test schema only, explicitly not research outcomes.
+- **Independent adapter:** Previously audited medium-game policies pass both
+  target signs, all four own modes and fixed-reply cache reuse. Reference training
+  and strategy export are blocked in this integration check. Partial own/native
+  attempts are retained, overwrite refused, admission denied before any worker.
+- **Remaining at this checkpoint:** Complete base/optional checks, hosted CI,
+  clean source-bound toy correctness/forecast and published admission. No new
+  Hold'em trajectory, new native study, selected snapshot or default admission.
+- **Complete code checks:** Base `make check` passes 1439 tests with 24 optional
+  skips on Python 3.11/3.12 (231.53/219.48s). All-extras suites pass 1472 each
+  (262.02/251.12s); all ten relevant slow checks pass (31.88/32.62s). Strict typing
+  covers 338 files in base and optional environments; lint/format/hooks pass.
+  Both code CI jobs and source-bound correctness/forecast/admission still precede
+  any new Hold'em replay. Local testing times are not experiment or human hours.
+- **Checked source / forecast:** Both hosted jobs
+  [42584867420](https://github.com/jimmy-sim/poker-ai/actions/runs/42584867420)
+  pass on `432908e`. Clean source-bound correctness completes in 9.559915s,
+  with 192 toy prefixes, 512 profiles, 192 mass boundaries, 160 current pairs,
+  2048 fixed targets and zero replay errors. This is explicitly toy software proof.
+  The complete 64-case historical forecast is 5328.971368s, below the unchanged
+  7200s own cap. Historical partition sums: 1032.242842/1031.129947/1021.501461s.
+  Forecast is a planning guard, not measured new runtime or human hours. Publish
+  correctness before recording and publishing checked admission; poker still pending.
+- **Admission:** `results/averaging-history/admission.json` binds clean checked
+  code `432908e`, actual CI run 42584867420 and complete local checks to the
+  published correctness receipt. Scope is only the same original trajectories.
+  This admission is published before starting the replay; all 64 cases, original
+  prefixes, fixed seeds and caps remain required. Native study follows own publication.
+- **Complete own evidence, native pending:** All 64 original trajectories and
+  192 exact original prefixes pass. Retain 512 profiles, 192 raw boundaries and
+  2048 fixed target conditions; all 160 current-weight pairs match. Full own
+  archive replay takes 88.728334s with zero chip, unitless and identity errors.
+  Own stage 1136.768864s, parent CPU 100.041639s, reaped child CPU 3099.32s,
+  below 7200s. Six figures and all six numerical files generated. Publish these
+  own outputs before independent audit; they do not yet complete native validation.
+- **Independent audit:** After own publication `c0df957`, all 512 self profiles
+  and 2048 fixed target conditions pass OpenSpiel 2.0.2 scalar comparison.
+  Maximum discrepancy 2.4158453015843406e-13 chips, below 1e-9. Native stage
+  237.653849s under 900s, including 99.214009s complete own input replay with zero
+  error; parent CPU 237.495094s, reaped child CPU 0.07s. All 128 fixed-opponent/
+  target reply identities checked before reuse. Reference output never trains
+  an agent. All six figures inspected; raw numerical and seed results retained.
+- **Read-only cross-version check:** Base Python 3.12 replays all profiles,
+  boundaries and fixed matches with zero error (95.666413s), validates the archived
+  native receipt, and regenerates all six numerical files byte-for-byte.
+- **Finding:** In the motivating medium range-mass clipped/linear sampled context,
+  mean total is whole 2.501852 / current 9.519793 / half-window 2.531900 /
+  short-window 4.888556% initial pot. Current within weakness persists in every
+  seed; late windows do not provide a general repair. Old fixed-opponent mean EV
+  can improve while self exploitability worsens. All modes/seeds and unfavorable
+  raw conditions retained. Warm whole coverage does not establish late support.
+  README, method/limits, three interview answers and journal step 33 updated.
+- **Next decision:** Prospectively test only zero-window-mass fallback on saved
+  policies, distinguishing harmless unreachable rows from a missing-update effect
+  before another learning rule. No new default, selected suffix, stronger-agent,
+  fresh/global admission or relaxed failed limit. Final artifact CI pending.
+
+## 2026-11-08 — Current policies and averaging history, prospective
+
+- **Request / issue:** Continue autonomous daytime #4 work after the fixed-opponent
+  diagnosis. [Plan](averaging-history.md) and config fix all 64 original cases,
+  192 original same-runtime prefix checks, 320 current /128 suffix /64 whole
+  profiles and 2048 fixed-opponent target conditions before implementation/outcomes.
+- **Question:** Does the current policy retain the weakness, or does the average
+  retain weak earlier play? Replaying the same original 10m trajectories is needed
+  because the old compact archive is not a resumable trainer. No new learning rule,
+  extended work budget, selected snapshot/window or default/fresh/global admission.
+- **Gates:** Read-only observer and exact prefix proof, frozen backend/rules/RNG,
+  complete local/hosted checks and source-bound correctness/compute admission
+  before poker replay. Three processes; forecast from the same 64 old durations,
+  fixed formula/guard; own/native caps 7200/900s. Retain all outcomes/failures.
+- **Status:** Protocol publication; implementation, admission and all new outcomes
+  pending. Codex-assisted; personal hands-on time not recorded.
+- **Before outcomes:** Retain 192 own cumulative-mass boundaries too, so suffix
+  definitions reconstruct from the archive without retraining. Storage-only
+  clarification; all cases/windows/metrics/seeds/caps/gates remain unchanged.
+- **Foundation checks:** Own read-only current/sum observer, suffix mass arithmetic,
+  compact raw-mass envelopes, original-prefix trajectory worker and complete-grid
+  validation implemented. 119 focused checks pass on both Python versions; clean
+  strict typing covers 322 files. Real archived loader passes with new learning
+  and native construction blocked (4.48/4.23s). Eight toy worker combinations
+  reconstruct windows and original prefixes; deliberate late prefix corruption
+  retains partial files and fails completion. Full fictional ledgers test only
+  schema/completeness, with invented values explicitly labeled non-research.
+  Full foundation base make check passes 1365 tests /24 optional skips on both
+  versions (235.52/225.48s); optional suites pass 1398 each (278.33/270.72s).
+  Lint/format/clean strict typing pass. Complete runner/admission/study pending;
+  no new poker learning. Journal step 33 explains the planned comparison.
+- **Published foundation:** `f5c9b3b`, both hosted jobs 42534643024 pass. Complete
+  runner/replay/report/admission and isolated native adapter subsequently drafted
+  locally. Latest 146 fast checks pass (2.00s), strict typing 336 files, lint and
+  format pass. Actual three-process toy archive integration passes Python 3.11/3.12
+  (5.50/5.40s); six numerical files reproduce byte-for-byte and six explicitly toy
+  figures render (20.86s), representative layouts inspected.
+- **User returned:** Stop this autonomous block before new poker replay. Full
+  runner changes remain isolated locally, beyond the published foundation. Native
+  adapter integration/schema tests, final relevant full checks/CI, source-bound
+  correctness/forecast and admission remain required before the fixed study.
+  No new Hold'em trajectory outcomes, window choice or agent default change.
+
 ## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
 
 - **Request / issue:** Continue authorized daytime #4 work after the complete
@@ -70,7 +183,10 @@ For a guided explanation of the ideas and results, start with the
 - **Reporting / next:** Methods, four figures, three interview answers and journal
   step 32 explain units and limits. Both base CLI seat inspectors verify the audit.
   Standard frozen-writer CSV CRLF retained; CR-at-EOL-aware diff check passes.
-  Final artifact CI/main verification pending. Next prospectively compare current
+  Final CI 42532418497 passes both Python jobs; PR #29 merged at `ca0b555`.
+  Main .venv passes 90 focused tests (4.00s), own replay zero (8.894023s), archived
+  native validation and all four byte-identical numerical reports. Seat-1 CLI
+  succeeds; all ten unrelated modified output hashes unchanged. Next compare current
   policies and averaging history with checked replay before changing a learner.
 
 ## 2026-11-08 — Original controlled-learning comparison, prospective runner

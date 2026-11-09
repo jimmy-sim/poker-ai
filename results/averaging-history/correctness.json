@@ -1,0 +1,880 @@
+{
+  "config": {
+    "admission": "publish protocol, implement meaningful correctness/serialization/partial-grid tests, full relevant base/optional local checks, both source-bound code CI jobs, source-bound toy observer correctness and fixed forecast, publish checked admission before new Holdem trajectory replay",
+    "admission_receipt": "results/averaging-history/admission.json",
+    "aggregation": "all full controls once; sampled every fixed seed and arithmetic means, no confidence intervals; duplicate current policies across average modes labeled, not independent samples",
+    "average_weights": [
+      "uniform",
+      "linear"
+    ],
+    "bridge": "common",
+    "correctness_receipt": "results/averaging-history/correctness.json",
+    "cumulative_mass_archive": "retain all three read-only own cumulative strategy_sum boundaries per case, packed legal unnormalized weights with source/menu/state/work hashes; archived suffix and whole policies must reconstruct from them without training",
+    "cumulative_mass_work_labels": [
+      5000000,
+      9000000,
+      10000000
+    ],
+    "current_work_labels": [
+      100000,
+      1000000,
+      5000000,
+      9000000,
+      10000000
+    ],
+    "expected_cells": 64,
+    "expected_cumulative_mass_records": 192,
+    "expected_current_profiles": 320,
+    "expected_fixed_opponent_target_conditions": 2048,
+    "expected_original_average_checks": 192,
+    "expected_self_profiles": 512,
+    "expected_suffix_profiles": 128,
+    "expected_whole_average_profiles": 64,
+    "figures": [
+      "current exact-exploitability curves, full",
+      "current exact-exploitability curves, sampled means and seed points",
+      "final whole/current/suffix within+extra bars, full",
+      "final whole/current/suffix within+extra bars, sampled means and seed points",
+      "fixed-opponent gain differences versus whole average, full, both seats",
+      "fixed-opponent gain differences versus whole average, sampled means, both seats"
+    ],
+    "fixed_opponent_modes": "all four original saved final source modes in the same game/representation/traversal/seed group; both responder seats; opponent always stays frozen",
+    "fixed_opponent_own_variants": [
+      "whole_average",
+      "current_final",
+      "suffix_5m_10m",
+      "suffix_9m_10m"
+    ],
+    "forecast": {
+      "cell_duration_source": "original source batch phase=trained wall seconds, complete 64-identity selection",
+      "fixed_overhead_allowance_seconds": 600.0,
+      "formula": "guard * (observation_multiplier * maximum_partition_original_cell_seconds + fixed_overhead_seconds)",
+      "guard_multiplier": 2.0,
+      "observation_allowance_multiplier": 2.0,
+      "partition": "fixed sorted source identities by index modulo three",
+      "required": "strictly below maximum_own_seconds; otherwise stop before trajectory replay; not a timing guarantee"
+    },
+    "hypotheses": [
+      "Does the current policy retain the clipped within weakness, or does averaging retain earlier weak play? Report every checkpoint/seed/mode, not only the final one.",
+      "Do fixed current/suffix versus whole-average EV changes persist against every declared saved opponent mode? Snapshot/suffix gains do not establish a generally better learning rule."
+    ],
+    "initialization": "unchanged simultaneous exact warm initialization, charged to work",
+    "input_sha256": {
+      "configs/controlled-learning-comparison.json": "ff764357114d6c635f58b1f49733c8517af3a2943f2d5410bd29dc6a0767a9fd",
+      "configs/controlled-reply-diagnosis.json": "7318e8cf31fd50505eaf85edea1ae5706b8a638d09d184623b4c44576f7c80bc",
+      "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+      "results/controlled-learning/native.json": "183c5d961cec13f03d74956eca3a7abf4a0effcf76378e67a2a51c15d816ecdc",
+      "results/controlled-learning/own-profiles.jsonl.gz": "8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054",
+      "results/controlled-learning/own.json": "a59d1fd00c50cd8b703764a3158133f624b4e1020bf4211731fec4f58a63a9db",
+      "results/controlled-replies/native.json": "28ab27398dfab8bd8a5c9b652530746fcbe707a785e49dfaa9c5e94eda816f40",
+      "results/controlled-replies/own-traces.jsonl.gz": "840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373",
+      "results/controlled-replies/own.json": "bca183f081a9ba640f8d9e82da9886b46e4435ad119ce0bed779b9fe1a64aff5"
+    },
+    "maximum_native_seconds": 900,
+    "maximum_own_seconds": 7200,
+    "metrics": [
+      "own exact exploitability",
+      "within-partition gain",
+      "extra exact-information value",
+      "own root values and achieved own reply fingerprints",
+      "raw current movement and uniform/linear current identity",
+      "suffix row and uniform-reach mass coverage overall and river",
+      "actual work/iteration/overshoots, runtime/hardware/CPU",
+      "fixed-opponent target EV, within root, gain and identities"
+    ],
+    "native_reference": {
+      "license": "Apache-2.0",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "name": "OpenSpiel",
+      "role": "comparison-only scalar EV/BR/achieved OWN replies for all 512 self profiles and 2048 fixed-opponent target conditions; no reference strategy export/training",
+      "version": "2.0.2"
+    },
+    "observer_tests": "read-only current/sum captures and suffix extraction preserve full raw arrays/current/average policies/RNG/keys/work against unobserved toy paths and frozen indexed backend; uniform/linear-average pairs have identical current paths under otherwise fixed rules; hidden-information signs and zero-support windows checked",
+    "original_average_replay_labels": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "prefix_runtime": {
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "requirement": "recorded source runtime; any poker state/policy/work prefix mismatch stops without loosening precision; base 3.12 report replay is a separate tolerance-based check"
+    },
+    "publication": "own results before independent native comparison for recorded study; fresh reproduction may use immutable ignored own staging; no overwrites or dropped failures",
+    "regret_rules": [
+      "signed",
+      "clipped"
+    ],
+    "regret_weight": "linear",
+    "representations": [
+      "exact",
+      "texture_range_q8_b8"
+    ],
+    "same_runtime_prefix": "all 192 original work checkpoints reproduce state/average-policy fingerprints, exact work, iteration, RNG and visited-key semantics on the recorded source runtime; any mismatch stops the new study",
+    "schema_version": 1,
+    "scope": "diagnosis of already-known trajectories at the original 10m work limit; no budget extension, new feature/rule/remedy/default, fresh/global admission, selected winner or claim of convergence; current/suffix policies comparison only",
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ],
+    "selection_config": "configs/controlled-reply-diagnosis.json",
+    "source_archive": "results/controlled-learning/own-profiles.jsonl.gz",
+    "source_axis": "work",
+    "source_report": "results/controlled-learning/own.json",
+    "source_target": 10000000,
+    "spot_files": [
+      "configs/learning-spots/dev_low_oop.json",
+      "configs/learning-spots/dev_medium_oop.json"
+    ],
+    "start_method": "spawn",
+    "status": "preregistered_diagnostic_trajectory_replay_no_new_learning_rule",
+    "suffix_definition": "normalize final cumulative own strategy_sum minus its copy at the first complete iteration crossing the left work boundary; retain original iteration time weights, no reset; zero-mass rows use frozen uniform legal fallback; never mutate learner arrays",
+    "suffix_windows": [
+      [
+        5000000,
+        10000000
+      ],
+      [
+        9000000,
+        10000000
+      ]
+    ],
+    "tolerance_chips": 1e-09,
+    "tolerance_unitless": 1e-12,
+    "traversals": [
+      "full",
+      "external"
+    ],
+    "worker_count": 3
+  },
+  "environment": {
+    "cpu": "arm",
+    "cpu_query_status": "sysctl unavailable: CalledProcessError",
+    "logical_cpus": 10,
+    "numpy": "2.4.6",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.11.17"
+  },
+  "failure": null,
+  "forecast": {
+    "cap_seconds": 7200,
+    "decision": "fits_requires_checked_admission",
+    "guarded_own_seconds": 5328.971367840248,
+    "historical_cell_rows": [
+      {
+        "index": 0,
+        "original_index": 29,
+        "seconds": 57.70531016700261,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 1,
+        "original_index": 93,
+        "seconds": 66.46474395800033,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 2,
+        "original_index": 30,
+        "seconds": 57.74578195899085,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 3,
+        "original_index": 94,
+        "seconds": 66.62590499999351,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 4,
+        "original_index": 31,
+        "seconds": 57.818744542004424,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 5,
+        "original_index": 95,
+        "seconds": 66.77369145800185,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 6,
+        "original_index": 7,
+        "seconds": 6.88827720801055,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 7,
+        "original_index": 71,
+        "seconds": 10.742469832999632,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 8,
+        "original_index": 61,
+        "seconds": 57.656082874993444,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 9,
+        "original_index": 125,
+        "seconds": 66.31841649999842,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 10,
+        "original_index": 62,
+        "seconds": 57.590380916997674,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 11,
+        "original_index": 126,
+        "seconds": 66.2673015420005,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 12,
+        "original_index": 63,
+        "seconds": 57.93840354200802,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 13,
+        "original_index": 127,
+        "seconds": 66.68503487500129,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 14,
+        "original_index": 39,
+        "seconds": 4.384597583004506,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 15,
+        "original_index": 103,
+        "seconds": 8.408100417000242,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 16,
+        "original_index": 17,
+        "seconds": 57.29515941700083,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 17,
+        "original_index": 81,
+        "seconds": 65.29142666599364,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 18,
+        "original_index": 18,
+        "seconds": 57.32919987500645,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 19,
+        "original_index": 82,
+        "seconds": 65.41967724999995,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 20,
+        "original_index": 19,
+        "seconds": 57.1494211669924,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 21,
+        "original_index": 83,
+        "seconds": 65.05663637499674,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 22,
+        "original_index": 3,
+        "seconds": 6.644066417007707,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 23,
+        "original_index": 67,
+        "seconds": 10.620323915994959,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 24,
+        "original_index": 49,
+        "seconds": 55.75075941599789,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 25,
+        "original_index": 113,
+        "seconds": 65.26132604099985,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 26,
+        "original_index": 50,
+        "seconds": 59.5321208749956,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 27,
+        "original_index": 114,
+        "seconds": 65.40644658300153,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 28,
+        "original_index": 51,
+        "seconds": 59.18183720900561,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 29,
+        "original_index": 115,
+        "seconds": 65.46039474999998,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 30,
+        "original_index": 35,
+        "seconds": 4.355632749997312,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 31,
+        "original_index": 99,
+        "seconds": 8.337060624995502,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 32,
+        "original_index": 26,
+        "seconds": 57.61833666700113,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 33,
+        "original_index": 90,
+        "seconds": 66.39153166700271,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 34,
+        "original_index": 27,
+        "seconds": 57.71810108300997,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 35,
+        "original_index": 91,
+        "seconds": 66.71643225000298,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 36,
+        "original_index": 28,
+        "seconds": 57.62028787500458,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 37,
+        "original_index": 92,
+        "seconds": 66.51025679199665,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 38,
+        "original_index": 6,
+        "seconds": 6.962110334003228,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 39,
+        "original_index": 70,
+        "seconds": 11.312053667003056,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 40,
+        "original_index": 58,
+        "seconds": 57.76779579100548,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 41,
+        "original_index": 122,
+        "seconds": 66.21222149999812,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 42,
+        "original_index": 59,
+        "seconds": 57.62976904200332,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 43,
+        "original_index": 123,
+        "seconds": 66.43010925000999,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 44,
+        "original_index": 60,
+        "seconds": 57.90559766700608,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 45,
+        "original_index": 124,
+        "seconds": 66.51392650000344,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 46,
+        "original_index": 38,
+        "seconds": 4.465313583001262,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 47,
+        "original_index": 102,
+        "seconds": 8.305320333995041,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 48,
+        "original_index": 14,
+        "seconds": 56.05092337500537,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 49,
+        "original_index": 78,
+        "seconds": 64.97205112500524,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 50,
+        "original_index": 15,
+        "seconds": 56.04167629200674,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 51,
+        "original_index": 79,
+        "seconds": 65.56017204200907,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 52,
+        "original_index": 16,
+        "seconds": 55.94921424999484,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 53,
+        "original_index": 80,
+        "seconds": 65.2351367920055,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 54,
+        "original_index": 2,
+        "seconds": 6.638588709000032,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 55,
+        "original_index": 66,
+        "seconds": 10.852820540996618,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 56,
+        "original_index": 46,
+        "seconds": 55.84823750000214,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 57,
+        "original_index": 110,
+        "seconds": 65.1922394590074,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261301, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 58,
+        "original_index": 47,
+        "seconds": 59.56221879199438,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 59,
+        "original_index": 111,
+        "seconds": 65.43429587499122,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261302, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 60,
+        "original_index": 48,
+        "seconds": 59.18652400000428,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 61,
+        "original_index": 112,
+        "seconds": 65.46156470901042,
+        "slot": 1,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": 20261303, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"external\"}"
+      },
+      {
+        "index": 62,
+        "original_index": 34,
+        "seconds": 4.340953042003093,
+        "slot": 2,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}"
+      },
+      {
+        "index": 63,
+        "original_index": 98,
+        "seconds": 8.363737791005406,
+        "slot": 0,
+        "source_id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}"
+      }
+    ],
+    "interpretation": "planning forecast, not measured new runtime or a timing guarantee",
+    "new_postflop_training_performed": false,
+    "partition_original_seconds": [
+      1032.242841960062,
+      1031.1299470000376,
+      1021.501461043983
+    ],
+    "source_cells": 64
+  },
+  "format": "poker-ai-averaging-history-software-and-forecast-v1",
+  "new_postflop_training_performed": false,
+  "parent_cpu_seconds": 8.211915000000001,
+  "reaped_children_cpu_seconds": 3.37,
+  "seconds": 9.559915290999925,
+  "software": {
+    "failure": null,
+    "fixed_opponent_targets": 2048,
+    "mass_archive_sha256": "67095dd7d3b38b5c40c2b1dddd30570c39f0001042e85eb8112004c888067c94",
+    "new_postflop_training_performed": false,
+    "original_prefix_checks": 192,
+    "profile_archive_sha256": "83e76c98d8f51c1cf6cc6466a54b8a56a270e4448588c74ab0b75a093bd27a5e",
+    "replay": {
+      "cumulative_boundaries": 192,
+      "fixed_opponent_target_conditions": 2048,
+      "identical_current_pairs": 160,
+      "maximum_error_chips": 0.0,
+      "maximum_error_unitless": 0.0,
+      "maximum_fixed_identity_error_chips": 0.0,
+      "new_postflop_training_performed": false,
+      "profiles": 512,
+      "seconds": 1.3715011249878444,
+      "source_cases": 64,
+      "status": "all_averaging_history_profiles_and_windows_replayed",
+      "suffix_reconstructions": 128,
+      "whole_reconstructions": 64
+    },
+    "scope": "EXPLICIT_SOFTWARE_FIXTURE_NOT_POKER_RESULTS",
+    "seconds": 5.300047166994773,
+    "status": "passed_software_roundtrip_no_new_poker_training",
+    "worker_summaries": [
+      {
+        "done": [
+          {
+            "cpu_seconds": 1.051777,
+            "kind": "done",
+            "seconds": 1.149688875011634,
+            "summary": {
+              "cells": 22,
+              "masses": 66,
+              "prefixes": 66,
+              "profiles": 176
+            }
+          }
+        ],
+        "exitcode": 0,
+        "slot": 0
+      },
+      {
+        "done": [
+          {
+            "cpu_seconds": 1.012676,
+            "kind": "done",
+            "seconds": 1.0735257919877768,
+            "summary": {
+              "cells": 21,
+              "masses": 63,
+              "prefixes": 63,
+              "profiles": 168
+            }
+          }
+        ],
+        "exitcode": 0,
+        "slot": 1
+      },
+      {
+        "done": [
+          {
+            "cpu_seconds": 1.004628,
+            "kind": "done",
+            "seconds": 1.0592316669935826,
+            "summary": {
+              "cells": 21,
+              "masses": 63,
+              "prefixes": 63,
+              "profiles": 168
+            }
+          }
+        ],
+        "exitcode": 0,
+        "slot": 2
+      }
+    ]
+  },
+  "software_folder": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/averaging-history/results/runs/averaging-software-2385ad937baf",
+  "software_receipt_sha256": "ca24b48fc5fb7158791b5d902051270f85519ce8225fca83ebea5f6fcb11dd9d",
+  "source": {
+    "dirty": false,
+    "git_commit": "432908e814daaa711ae2b61a5bb586f3aa65bd1a",
+    "git_status": [],
+    "sha256": {
+      "configs/averaging-history.json": "7d330fd5ad5634bbf3aff6161e7472ae21df49b7dffda1179ffe305941d3ad62",
+      "pyproject.toml": "a88e6023ac3ae5dd08da9ed6eceb83967e20e42aa9fe88dc4fb11c9fa49529f1",
+      "scripts/audit_averaging_history.py": "d70ab55a1ca3be4a61397fe09477c2d34a00b37a55406c746e31bf4444df7cfe",
+      "scripts/check_averaging_history.py": "5ff3449fbbcca299baa84753bd2d5f68235ad81714b71b38490695539595d2b2",
+      "scripts/report_averaging_history.py": "f4a5b3e6070485b053792bf638ae4f2f6daaa544ecc92f789b6e4c7cbd28f410",
+      "scripts/study_averaging_history.py": "524400465405cb881b4b47b74e8d863b3e89c310f0c0eb29fd03ef2b6eab3d2c",
+      "src/poker_ai/__init__.py": "af9e0350d935335c746a1952fa1ff24d39bec98944facb50b1c556aa5a73904a",
+      "src/poker_ai/abstraction/__init__.py": "2a3daf52eaddd50b3c79bdcd03cfb62c38b9298d4a4a526338e5941cd8283450",
+      "src/poker_ai/abstraction/actions.py": "6bc9d259c6ed95b05985c5681a2a738a7462722c52d3356f533a74859e1057a0",
+      "src/poker_ai/abstraction/clustering.py": "e9e52f45f66d443234cc2343c56ab7f2f8563ee51944d6dc5bcaeacf6f438973",
+      "src/poker_ai/abstraction/made_category.py": "2dfae8205af343943f4736d007efd2e18cc70c7147d7a2686db6730909831cc1",
+      "src/poker_ai/abstraction/model.py": "ce105d558cd6cb599d577d94160c0f01f2ef7dc556c1091673ebd9fd74e9e6e3",
+      "src/poker_ai/abstraction/potential.py": "2065d4f31a0d6b60fc8c3724415c51deb4dc1fb0498e9ccaedae7bb4b8134ec3",
+      "src/poker_ai/abstraction/public_board.py": "8e3acf0d1dd36827962711f8561fa17a05abe042997498ec2a6044c45f83bf80",
+      "src/poker_ai/abstraction/range_mass.py": "b6afd34d1278e28424ee22ef1fc44fed9dc9f8179bf3cf014faef86b41080ca8",
+      "src/poker_ai/abstraction/shadow.py": "f3db139bc3ea32e2e8bc6d1ec0c8f4cc58242c4f5b208707ed7660276da6f7eb",
+      "src/poker_ai/agents/__init__.py": "efd82d24cfa12f5076daa260675f4e4a1db5dbc1cc59428ec011f59de9f84e6a",
+      "src/poker_ai/agents/no_limit.py": "8b4b09ffa2b7397b64eebc8687128760a2ba6d26a3619f3f879805f337a84ff3",
+      "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+      "src/poker_ai/engine.py": "471e110735696ae784bcb5da443ca128c6b731e349910942c3ab26805f03fec3",
+      "src/poker_ai/equity.py": "ba094f6b7d7935469dedfe136592cd39e57cf273d24fe9066ec493f833503504",
+      "src/poker_ai/evaluation/__init__.py": "779711d9f5ba35ef3bbb69062121b3aa307290a49d94c0b941beae1a5c242251",
+      "src/poker_ai/evaluation/averaging_history_artifacts.py": "e9eac77d004138d0d4cdb50d8339a15390b4759632c374ef56d3ff6dd0c3a7b0",
+      "src/poker_ai/evaluation/averaging_history_correctness.py": "3c094e5ed6af9b06136d12c372d08dc4c960ad73d49c5b74ae890b090cc41615",
+      "src/poker_ai/evaluation/averaging_history_inputs.py": "6e4c347173aa3117c534d91537f9683b9d8d792c8fe5a8388ce5884081bc1495",
+      "src/poker_ai/evaluation/averaging_history_math.py": "5c48ea1c7b93e836bd288b99fc84fbe9544bfe495807a60c62a4fe5ba9e819da",
+      "src/poker_ai/evaluation/averaging_history_observe.py": "6f489a3e9ba7ce5fb1dacb926a51538e91f2e0d7d9b9598fd2719c0a6177dfba",
+      "src/poker_ai/evaluation/averaging_history_protocol.py": "a1ef304cdecddc957b4754986113afa79b3e221a2148a8824ac728f194945642",
+      "src/poker_ai/evaluation/averaging_history_replay.py": "60a69aa9565e4ff1cdfebfcbe8a361b51d7a231243d7476445407ba33643304e",
+      "src/poker_ai/evaluation/averaging_history_report.py": "e3576aa00a77f0101d1e98dd7ce5b9f85a82c3a12dc85178ee6d5fac8ae99dfb",
+      "src/poker_ai/evaluation/averaging_history_run.py": "7a34a100511853a50216a135d5e40c5658c1213169f2817846cabe987c90338a",
+      "src/poker_ai/evaluation/averaging_history_software.py": "6e6f62564acd0cbf5be0f7497042c0c1a23a9cfb4b76b9227ab40a721d0ad3f1",
+      "src/poker_ai/evaluation/averaging_history_training.py": "205b09ca046569982c35292adbaa1243df4b0fe3c360ea8c398d457113b1d140",
+      "src/poker_ai/evaluation/averaging_history_validation.py": "08ddf5d539d22ebecb3fc1483a1eb20b60de38a23fb22c48282b890594cf23e8",
+      "src/poker_ai/evaluation/baselines.py": "71ca44c7731121516a889202c513a014689548a39ce7d4555b7afc514d90ba7f",
+      "src/poker_ai/evaluation/controlled_reply_compute.py": "02db8de32baeecb766c501e1488c992031c484a0865b5bcfcf7cad60f6328b1c",
+      "src/poker_ai/evaluation/controlled_reply_inputs.py": "a0d381d47bd6d5dc2ffe892255b453bd1aec66ff51b97761dd48f28bad4758aa",
+      "src/poker_ai/evaluation/controlled_reply_inspect.py": "4b255ac8e678615bd9707a2f2995aa8dd91f77eac3b718c96ac74abf210b7515",
+      "src/poker_ai/evaluation/controlled_reply_io.py": "526b48e6217ded8a1f44b7bded1072b587cdb5e28b2a6ff5e75bd6a118d9b9e2",
+      "src/poker_ai/evaluation/controlled_reply_math.py": "5913b336b8650ab58e40db2ceaacde61177f23353a9f28488e3d754a4d1b8060",
+      "src/poker_ai/evaluation/controlled_reply_report.py": "8f31d658595c948c57443e5caece42f0d1e92c5c000f3cc1a4403cd568bd0cbc",
+      "src/poker_ai/evaluation/controlled_reply_traces.py": "16ceef61a42158f9dd3e79a757b4065198be258528bb235fb985195ae505c16d",
+      "src/poker_ai/evaluation/experiment.py": "6cc30283f7d1708808922e8e0b3f5fdcf10be414281f1c0129c29308fd37b137",
+      "src/poker_ai/evaluation/matches.py": "8b5e1f9b6ff4ba7a19f587319a617fcc084fb4fb9ac1876da2d4429d4776c199",
+      "src/poker_ai/evaluation/openspiel.py": "028cdc9202b19f76e2fdb3a5577aa238a2dc7ca0c801ef673dd0d3f6472ba2f2",
+      "src/poker_ai/evaluation/reference_validation.py": "ff22e256322229a78ae62e21e0ce8fd9b5a0f97ac721fed6074b9eafed549c45",
+      "src/poker_ai/evaluation/slumbot_client.py": "60142f11684df08c42a6eb2b6c9fab296ba53e3c3aca923eb6f54b8b6bbb1dc3",
+      "src/poker_ai/evaluation/slumbot_protocol.py": "44cdac2392f9535ba6963e1ab3792ae25ae843775c31ed4417e84d45eab09377",
+      "src/poker_ai/evaluation/statistics.py": "017af863c2946491c8c6481fd6ff6e7c071e5612539818329066bfd8ee652fb8",
+      "src/poker_ai/evaluator.py": "68881b9d16bffb2acb963fcf3ab07b032e7320aed25965a799ac8dda18f0746a",
+      "src/poker_ai/finite.py": "39dc15bf2daafc0bc0b6af0d014990fdd351ab39feef0d80f1796d0233422268",
+      "src/poker_ai/opponent_modeling/__init__.py": "a58c5e8a282812b3efb575227a25e0c37872c0709aa80696008b7e404ced159b",
+      "src/poker_ai/opponent_modeling/bayes.py": "d67e382b0f4115f167965e74ca0ad3768078d8b6b4e887da002be9850d5a4419",
+      "src/poker_ai/opponent_modeling/experiment.py": "4a8876a6eb211828c81b89bce909785953aed76ba23c6ebbaab8b71cd28d1580",
+      "src/poker_ai/opponent_modeling/policies.py": "a3a8faa9c32960f9ecb1323f0d218c9768f1eef7bb8885490fe64e21b4b534b0",
+      "src/poker_ai/postflop/__init__.py": "c05fd0b2b82cf5da814ea101df7b614efab78ca97d4f7fc1d6881a2667ae3d89",
+      "src/poker_ai/postflop/cached_nodes.py": "9475fd3bbe708e2094d5de0061d12fa40b602c47538d8e17c63e212ca2d1b02c",
+      "src/poker_ai/postflop/cell_process.py": "848944e5dad066aee2715d6ae3f09ee546d1827ce005baa7b8216bc2aa0f6630",
+      "src/poker_ai/postflop/collision_diagnosis.py": "1ecefdd9550fd9d1e6ab6f890f3dc9dc49c788f2bdb16f6e02f22fd1854114bc",
+      "src/poker_ai/postflop/controlled_checkpoints.py": "e723e4f74dbcb42c61d6c65c07d775a61d8008bdf1aa27907db77aff819b29a9",
+      "src/poker_ai/postflop/controlled_profile.py": "ae5036e03966d4e281e51a9b959da1b21584f0bba9703a3f4b3ebfb799e33673",
+      "src/poker_ai/postflop/controlled_scoring.py": "a081e91c36eb53518e48d4418dae6bb85fe36df37bca857e4b1903db6207cd09",
+      "src/poker_ai/postflop/controlled_training.py": "396b6f88b173bc7427469bbc9affb754a9d7ec32a01b5f1a89b371eafedc26ba",
+      "src/poker_ai/postflop/fresh_cohort.py": "c0b9041f4b6208a2da3538b678cc2cd19ef885af440e5b73cef3cbc879773326",
+      "src/poker_ai/postflop/fresh_learning.py": "673fcc22174ce70e53024bb72742f7c512c4d71f6472deaa2f8d2c2de40a7daf",
+      "src/poker_ai/postflop/fresh_report.py": "e776e483e7f02d847ba8705b62bcbbf3e497d8a2cef51fd7254a04988713970e",
+      "src/poker_ai/postflop/game.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+      "src/poker_ai/postflop/jit_cfr.py": "1b8e28d275565e173f2a1b08cd53ccee2b3b810d58a6f6492e1ed55b60dd5c64",
+      "src/poker_ai/postflop/learning.py": "2d667f797a8d98277dd31597c765a1f693473a916a11455f9352d6517254dc8a",
+      "src/poker_ai/postflop/learning_analysis.py": "8f1daff279a29675de0d48c388d3a84fa04a437e73ce3d339a3907a49666e741",
+      "src/poker_ai/postflop/learning_artifacts.py": "7f3fe6dc1c4c3f56b2e1b1384b20a3311418af5e935151bb438ccf365f13504a",
+      "src/poker_ai/postflop/learning_correctness.py": "1520702be6684d416f03d1b0f190ff9102059aa8be17b35911fa475be6c08b77",
+      "src/poker_ai/postflop/learning_protocol.py": "1e83d99c33ec0d32811f3262ead8e1c095a59e34de8fa4f048802d332ccf714e",
+      "src/poker_ai/postflop/learning_replay.py": "c9e0253dff0a1f60e551e6b2a9699f87b8167e47590ae1e1e30c2237b4b2334d",
+      "src/poker_ai/postflop/learning_report.py": "f56f32a215555edf4de770c52ddfb711cb6a0deddb4e0168a8dbd2c6c8af71b2",
+      "src/poker_ai/postflop/learning_run.py": "58bdc9ae369988aa66d83fa88dae7a9e6113d7569ee64056843284aa60d64ec3",
+      "src/poker_ai/postflop/learning_training.py": "9cf29844d9e35f085130d0cef857778b8d6a121d595c25d347372ef15e670a80",
+      "src/poker_ai/postflop/learning_validation.py": "caa9e6b2119e6c216c287351a8948ce4f202d41851c511b19923d823fcb79843",
+      "src/poker_ai/postflop/made_admission.py": "852c42a323b7c50601406c981d4e09e17e4a3445f7bb7d2a37e83f00807b5ed5",
+      "src/poker_ai/postflop/made_admission_report.py": "eb360c825e422c683992753d3ce69bd03e5b1b4ea945dc3599c896eca4470a0b",
+      "src/poker_ai/postflop/matrix.py": "41ec2f9b16b461aab754547558b7d5713054c33f9f8e6e13dfcf4eb32d27f49d",
+      "src/poker_ai/postflop/node_profile.py": "efad8b155e2fc6dec9fc31c2ed68d8bc682276f0d439d77aeda4f84543673fc1",
+      "src/poker_ai/postflop/parallel_profile.py": "8a9cd3fdf0e96e2d22d3c610ce6941041f0670f4c547494be0f167fd2f00bf6c",
+      "src/poker_ai/postflop/pipeline_cost.py": "85fff3e70c4f253a799a4b5ecd968c87352a6ebcef65b7f78873e5046700e4e1",
+      "src/poker_ai/postflop/pipeline_native_checks.py": "d3a14ec7da845f8579df2934e6144b4a37600b00da009ae3b30b3c63083d9fd8",
+      "src/poker_ai/postflop/pipeline_render.py": "c105197fca71a991b6c328277b471af91557b488931ef5a0eeb4cd5b980420d3",
+      "src/poker_ai/postflop/pipeline_report.py": "bf31442e66082f7998923753deef73fb010e26ba2dec8980b800c23858593a7e",
+      "src/poker_ai/postflop/policy_swap_report.py": "effdc74ea7f83c5c84d0a478bbfec26707b6f93dea54588325abc7d30a6e7073",
+      "src/poker_ai/postflop/policy_swaps.py": "13756e57fb21b5c8a1761d812471c7dbf3417d7221d5a1108e23ac663e49b63a",
+      "src/poker_ai/postflop/public_evidence.py": "45081c3b8ab22fbd730384e8c65b4f9de0fae3651d47d6aa7744fe8439a2bbb0",
+      "src/poker_ai/postflop/public_metrics.py": "2c9f818021df24f19b6aa57658f5c5409485fee52fdf054bc6913051e9e95127",
+      "src/poker_ai/postflop/public_report.py": "358f843c8e6fdfb9d18d37b71bd47bfdab6a27d0f0bebe63423071fb243a7977",
+      "src/poker_ai/postflop/public_study.py": "650e27e44fc273e6ac8a6c6fdb986ccc3c0f463b839ff42c5f2dcd4b4455f417",
+      "src/poker_ai/postflop/range_admission.py": "cd6f5852abe013d5fae63d89dc6d77a9c36efd05ceeb0617ad0a9ffc95af88d6",
+      "src/poker_ai/postflop/range_admission_report.py": "ea79a49529dc6bfd550d50fcd718841d5d3dae6767ffb2b1fc4e03a57c4e7dac",
+      "src/poker_ai/postflop/range_protocol.py": "d3d933181c4da6f8afb862a3a4f7822b8162435f93f5ad21dc74c1301f4291d5",
+      "src/poker_ai/postflop/range_replay.py": "eac3fa590133133939c490f7bea371c5235a404e3cbeb0ff2763b8fdf2440da2",
+      "src/poker_ai/postflop/range_reply.py": "bd2e10ec39487ddbc0c4cc45e04500181cd36d577377cd4b8a4391eaab35b44e",
+      "src/poker_ai/postflop/range_reply_report.py": "0cc1fae6e70cfad8cb0a24644d7101625fd61724e47cbf1beb67690e07cac77d",
+      "src/poker_ai/postflop/range_sampled.py": "7b90bf1ffdb271e0fe80d9d5ec5cbbac4498599fb5d6a0dc381d1a566e9a8668",
+      "src/poker_ai/postflop/range_sampled_report.py": "c46791e9d06972853348f5c6b4b41120b1085362936cb125dc958970e599bafc",
+      "src/poker_ai/postflop/reply_diagnosis.py": "c59b3892733fffa2913742b43659582a86ba0856d52867d78ff40195459fbb3d",
+      "src/poker_ai/postflop/reply_report.py": "665510a2ca0aad40bbc54045e5b5b5697b628388615f11461e8b23706c65dba7",
+      "src/poker_ai/postflop/reply_trace.py": "f241751d2966adce8301ab29970ad951f5be367b05d0a46607ffe09f44f0a8b0",
+      "src/poker_ai/postflop/report.py": "4b3bc78c52260bca322b19b1dbedeaf24b3912c8f5ca8a093f060d7c1f7d475a",
+      "src/poker_ai/postflop/river_artifacts.py": "b4d4fc567fcc068b7eede90b6b4e94efe51508af5ff1e03b21808216d6892792",
+      "src/poker_ai/postflop/river_distinction_report.py": "f826285e9220c718276445d1217feed3889d65b31129dd68ac055cfa64797ffc",
+      "src/poker_ai/postflop/river_distinctions.py": "cf3f4618e726b9347fcf2939ae7cd956b8733714e3e0d9bf62135227778b30ca",
+      "src/poker_ai/postflop/river_report.py": "7ac4d708babff6c3b5f6f19770e4af91648a204b5d8dbacd5cac6918f6bccbca",
+      "src/poker_ai/postflop/river_sampling.py": "e3cf14adce001c37a5b62bc97217a50184aa113172e0bb0f686e6b7d3e975f6b",
+      "src/poker_ai/postflop/river_study.py": "c8debf96bbb348604e8b0dff80344cbc806170d830829b96fb26b22cfd74c7a3",
+      "src/poker_ai/postflop/row_policy.py": "4134ad8bd19e4c925559bc778b953bd74a12c4329cc6a429b18e6cc616ac7be5",
+      "src/poker_ai/postflop/row_profile.py": "12505e1574a75a5e6d5b66fd491e1a0a236b1d865819d9f40c34fe6430e1f3ce",
+      "src/poker_ai/postflop/sampling.py": "ac0d31aaefb8217be78b4df1ffa8c6a98a25749d1de1aadd8767121de0a03288",
+      "src/poker_ai/postflop/training_isolation.py": "e5044e4269a3cc980e038d8055a819ef8bfc85ee701aae93f7d09fdf9e509269",
+      "src/poker_ai/postflop/tree.py": "7c0af767759564759b9583c1792e1a0271914defec267c3180b1256d4ebb562d",
+      "src/poker_ai/reproducibility.py": "1f9cf96e33cbb11825348e03eccbd445e2d299d5623f9358846660462a96aeba",
+      "src/poker_ai/risk/__init__.py": "243df0a7e62ba9d2de567899d14e42a9cab6c6c6eb96bd30d385cdddebc9d786",
+      "src/poker_ai/risk/bankroll.py": "b64bba8a928205227782f0bd3d21e9624a05c5f45655382a9298ee73e23624e2",
+      "src/poker_ai/risk/empirical.py": "07b3398ac3194bbd131f8f3f0a7b3ded3806c8978470a8a46d12b23228fcded2",
+      "src/poker_ai/risk/experiment.py": "bc4f2493b3a4cee87e1963d87751413aa58b21147aef88702f7c8dab3637b5ed",
+      "src/poker_ai/solver_validation/__init__.py": "21e214c354d43b04454467263a613e05bc756f9dbb5806ec13ead21072bc52ba",
+      "src/poker_ai/solver_validation/abstraction_check.py": "ac49bbd7f0718252148dbd4ad7c902a41209c2e820bb9151aaaf954370fe6cb6",
+      "src/poker_ai/solver_validation/arithmetic.py": "3ed2bd872a1ba21982f6b2b6631f40221d2f920bad06c05c45d325274acfd1c4",
+      "src/poker_ai/solver_validation/averaging_history.py": "b87a8d9fd22011eb0627bef91b0d9f83a9438ccff7d767650c31096189ec8636",
+      "src/poker_ai/solver_validation/comparison.py": "4329ad85645b9e955a1ed344ccbc1665b92f28d32932e5a060f13993d4f6526a",
+      "src/poker_ai/solver_validation/controlled_learning.py": "9c8503d18e9209b4bee4932190343e012e4b2c90a5bf6810a6946b520e0fd041",
+      "src/poker_ai/solver_validation/controlled_pipeline.py": "79032331f7d3d7d7bdb05299d2cbaede13704e0512270f88a56e38a9f33724c6",
+      "src/poker_ai/solver_validation/controlled_replies.py": "e0f34c1c3cca20ebf46a01e36b1eeffe7d81bbf4547bbefc793f2b55f4850666",
+      "src/poker_ai/solver_validation/controls.py": "b54d69e42e6d0b1b5363c890654a64b0234b4ef9e28f44a0374c893f22b947bb",
+      "src/poker_ai/solver_validation/fresh.py": "adb98613e90e50e3ee00834064c8241a8d8c388b933501c480c6be93ebf9459b",
+      "src/poker_ai/solver_validation/gaps.py": "e56a15f34c7f689b6ede5d978494e5afed86a930ddcfc5c0f815c4752afd4e45",
+      "src/poker_ai/solver_validation/learning.py": "d14c3e28ef123f375e6d9659e49407cca867074af2993977c8ee6f8f70c7f637",
+      "src/poker_ai/solver_validation/made_admission.py": "2dc0fe978c86dfa13cb0ee1e9e085370827e08a6f01a6d2d1f84cd40be9814e1",
+      "src/poker_ai/solver_validation/policy_swaps.py": "f4375d0a27a0bc8a60b4018100f8df8f0afb2d595bd21e2d6a6f96e9841c0ff5",
+      "src/poker_ai/solver_validation/public_board.py": "d7ebef61171379abdad2d84b47ff5636aeee63c6a02cdbe4433b87966ad9770a",
+      "src/poker_ai/solver_validation/range_admission.py": "4e42dec0070c2e378ebc5a3fe6a9e232a36fd9bdc0fee81ba977f2f06f0d1de5",
+      "src/poker_ai/solver_validation/range_reply.py": "028c10ac1e3053f4a9380a5ce227595cadba398ab4b872b32d948fbb513dcc5f",
+      "src/poker_ai/solver_validation/range_sampled.py": "832482c669998df11ef68ff57024176550ef7cbadf313c2271142a2f2af33043",
+      "src/poker_ai/solver_validation/reference.py": "335f501164b3fb38f165c23b08559e77cf2e7097106b112f1539943aee05f80d",
+      "src/poker_ai/solver_validation/reply_diagnosis.py": "befcd51bb7f724e65978d724b044681530da0057ceac4eaedddf45b254cd1b37",
+      "src/poker_ai/solver_validation/reporting.py": "828b59b0088ca78691709d9a67f67f54bf8598d9ac39024712ed160d92005341",
+      "src/poker_ai/solver_validation/river.py": "6f648f997b112200d5c4ea52e23debc8faa2c683f22f9a0a3e55d08b31e45a46",
+      "src/poker_ai/solver_validation/river_distinctions.py": "abdf626863e8e6c2bea582f56a5496a7618dc1240f899dbde923723d166d1909",
+      "src/poker_ai/solver_validation/spots.py": "2c6383209429d345a6debb3accbdaef061e3896cad2479efa9cdce8815ac40af",
+      "src/poker_ai/toy/__init__.py": "e380aff1ed1ce14c291d2384dc7ed7f62465670dc6f69dcce85e4a764c8c470a",
+      "src/poker_ai/toy/analysis.py": "a40b4b6bcf2f0b56297bae295fde3c4e914c0f4cd8b1792c7c8ca96d87aa10cc",
+      "src/poker_ai/toy/cfr.py": "03a04076225efa9faf2ae0440020080f860343d91f33e094944b268f99b51440",
+      "src/poker_ai/toy/games.py": "5f4eb4ece1e70e64253fe683b9522b1b7b292ca1c735eb5a6dc5c86993a14920",
+      "src/poker_ai/toy/tree.py": "b618c65f17531cd4d4c2b7b2406ff66cb28eeb9a498a175d3aa6eda99b598d13",
+      "src/poker_ai/training/__init__.py": "cb17a49b83aa629fe47a8bfacb39aa17e06aaa250b5ffda91466d38d4db2efe1",
+      "src/poker_ai/training/budget.py": "31440f06edebed70ebea1b771d740202fae218584931b1107a2275d1f7aa5342",
+      "src/poker_ai/training/checkpoint.py": "826958fcb6884e15e290e318ace507faa7ee91152656cbf16a8786c1e0147ff7",
+      "src/poker_ai/training/holdem.py": "0683ca284f7a735b98c68442ef72e93cd331b643046ed385d2828af7d58c07c7",
+      "src/poker_ai/training/mccfr.py": "c50add06a71d9b1071678477a33499dfe5e4e29dc00dada4a160da9831fb3a61",
+      "src/poker_ai/training/no_limit.py": "a01e1420acad3b182a09a518606f8f5e245b014a576e9ba9af67ba844bf8b434",
+      "src/poker_ai/validation/__init__.py": "dd2878ab96cb3b15f8ad41ee8d5d7f83043b530d474b76bf752638d3af8bf166",
+      "src/poker_ai/validation/best_of_five.py": "b98dde43dd195a2896d5715675b9cd031e4b37d2de69698ea38ee416146e94f6",
+      "src/poker_ai/validation/cfr.py": "8bb56c1c8cfa65526ab01484480f01cb9058473e062187f593de44fe376c771c",
+      "src/poker_ai/validation/five_card.py": "c1fe4edd68a632c06e421bfa7db932e20746425d70287dba1cc6baaa2e71d83b",
+      "src/poker_ai/validation/toy_games.py": "44991d3d185c14adbf0d18a974571d1d4b443b2d01052658326ed34bb7954531",
+      "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+    }
+  },
+  "source_sha256": "03310df75df9e25da1907ad2cf6be1884be918d05c5289757673bb30d5050fcf",
+  "status": "completed_software_and_forecast_no_new_poker_learning"
+}

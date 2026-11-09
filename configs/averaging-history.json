@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_diagnostic_trajectory_replay_no_new_learning_rule",
+  "input_sha256": {
+    "configs/training-isolation.json": "529d4ded4e8f5d16da08a4de04ca2a06668223988d101f991f4429851f94797b",
+    "configs/controlled-learning-comparison.json": "ff764357114d6c635f58b1f49733c8517af3a2943f2d5410bd29dc6a0767a9fd",
+    "results/controlled-learning/own.json": "a59d1fd00c50cd8b703764a3158133f624b4e1020bf4211731fec4f58a63a9db",
+    "results/controlled-learning/own-profiles.jsonl.gz": "8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054",
+    "results/controlled-learning/native.json": "183c5d961cec13f03d74956eca3a7abf4a0effcf76378e67a2a51c15d816ecdc",
+    "configs/controlled-reply-diagnosis.json": "7318e8cf31fd50505eaf85edea1ae5706b8a638d09d184623b4c44576f7c80bc",
+    "results/controlled-replies/own.json": "bca183f081a9ba640f8d9e82da9886b46e4435ad119ce0bed779b9fe1a64aff5",
+    "results/controlled-replies/own-traces.jsonl.gz": "840dc20aa50a2933f85d60388f5e88a46f9ac340d9e1213b59e7810287ec0373",
+    "results/controlled-replies/native.json": "28ab27398dfab8bd8a5c9b652530746fcbe707a785e49dfaa9c5e94eda816f40"
+  },
+  "source_report": "results/controlled-learning/own.json",
+  "source_archive": "results/controlled-learning/own-profiles.jsonl.gz",
+  "selection_config": "configs/controlled-reply-diagnosis.json",
+  "source_axis": "work",
+  "source_target": 10000000,
+  "regret_weight": "linear",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "traversals": [
+    "full",
+    "external"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "regret_rules": [
+    "signed",
+    "clipped"
+  ],
+  "average_weights": [
+    "uniform",
+    "linear"
+  ],
+  "bridge": "common",
+  "initialization": "unchanged simultaneous exact warm initialization, charged to work",
+  "current_work_labels": [
+    100000,
+    1000000,
+    5000000,
+    9000000,
+    10000000
+  ],
+  "original_average_replay_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "suffix_windows": [
+    [
+      5000000,
+      10000000
+    ],
+    [
+      9000000,
+      10000000
+    ]
+  ],
+  "suffix_definition": "normalize final cumulative own strategy_sum minus its copy at the first complete iteration crossing the left work boundary; retain original iteration time weights, no reset; zero-mass rows use frozen uniform legal fallback; never mutate learner arrays",
+  "expected_cells": 64,
+  "expected_original_average_checks": 192,
+  "expected_current_profiles": 320,
+  "expected_suffix_profiles": 128,
+  "expected_whole_average_profiles": 64,
+  "expected_self_profiles": 512,
+  "fixed_opponent_own_variants": [
+    "whole_average",
+    "current_final",
+    "suffix_5m_10m",
+    "suffix_9m_10m"
+  ],
+  "fixed_opponent_modes": "all four original saved final source modes in the same game/representation/traversal/seed group; both responder seats; opponent always stays frozen",
+  "expected_fixed_opponent_target_conditions": 2048,
+  "worker_count": 3,
+  "start_method": "spawn",
+  "maximum_own_seconds": 7200,
+  "maximum_native_seconds": 900,
+  "correctness_receipt": "results/averaging-history/correctness.json",
+  "admission_receipt": "results/averaging-history/admission.json",
+  "forecast": {
+    "cell_duration_source": "original source batch phase=trained wall seconds, complete 64-identity selection",
+    "partition": "fixed sorted source identities by index modulo three",
+    "observation_allowance_multiplier": 2.0,
+    "fixed_overhead_allowance_seconds": 600.0,
+    "guard_multiplier": 2.0,
+    "formula": "guard * (observation_multiplier * maximum_partition_original_cell_seconds + fixed_overhead_seconds)",
+    "required": "strictly below maximum_own_seconds; otherwise stop before trajectory replay; not a timing guarantee"
+  },
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "same_runtime_prefix": "all 192 original work checkpoints reproduce state/average-policy fingerprints, exact work, iteration, RNG and visited-key semantics on the recorded source runtime; any mismatch stops the new study",
+  "observer_tests": "read-only current/sum captures and suffix extraction preserve full raw arrays/current/average policies/RNG/keys/work against unobserved toy paths and frozen indexed backend; uniform/linear-average pairs have identical current paths under otherwise fixed rules; hidden-information signs and zero-support windows checked",
+  "metrics": [
+    "own exact exploitability",
+    "within-partition gain",
+    "extra exact-information value",
+    "own root values and achieved own reply fingerprints",
+    "raw current movement and uniform/linear current identity",
+    "suffix row and uniform-reach mass coverage overall and river",
+    "actual work/iteration/overshoots, runtime/hardware/CPU",
+    "fixed-opponent target EV, within root, gain and identities"
+  ],
+  "aggregation": "all full controls once; sampled every fixed seed and arithmetic means, no confidence intervals; duplicate current policies across average modes labeled, not independent samples",
+  "figures": [
+    "current exact-exploitability curves, full",
+    "current exact-exploitability curves, sampled means and seed points",
+    "final whole/current/suffix within+extra bars, full",
+    "final whole/current/suffix within+extra bars, sampled means and seed points",
+    "fixed-opponent gain differences versus whole average, full, both seats",
+    "fixed-opponent gain differences versus whole average, sampled means, both seats"
+  ],
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "role": "comparison-only scalar EV/BR/achieved OWN replies for all 512 self profiles and 2048 fixed-opponent target conditions; no reference strategy export/training"
+  },
+  "admission": "publish protocol, implement meaningful correctness/serialization/partial-grid tests, full relevant base/optional local checks, both source-bound code CI jobs, source-bound toy observer correctness and fixed forecast, publish checked admission before new Holdem trajectory replay",
+  "publication": "own results before independent native comparison for recorded study; fresh reproduction may use immutable ignored own staging; no overwrites or dropped failures",
+  "scope": "diagnosis of already-known trajectories at the original 10m work limit; no budget extension, new feature/rule/remedy/default, fresh/global admission, selected winner or claim of convergence; current/suffix policies comparison only",
+  "hypotheses": [
+    "Does the current policy retain the clipped within weakness, or does averaging retain earlier weak play? Report every checkpoint/seed/mode, not only the final one.",
+    "Do fixed current/suffix versus whole-average EV changes persist against every declared saved opponent mode? Snapshot/suffix gains do not establish a generally better learning rule."
+  ],
+  "prefix_runtime": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "requirement": "recorded source runtime; any poker state/policy/work prefix mismatch stops without loosening precision; base 3.12 report replay is a separate tolerance-based check"
+  },
+  "cumulative_mass_work_labels": [
+    5000000,
+    9000000,
+    10000000
+  ],
+  "expected_cumulative_mass_records": 192,
+  "cumulative_mass_archive": "retain all three read-only own cumulative strategy_sum boundaries per case, packed legal unnormalized weights with source/menu/state/work hashes; archived suffix and whole policies must reconstruct from them without training"
+}

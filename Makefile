@@ -367,3 +367,21 @@ diagnose-controlled-replies:
 
 report-controlled-replies:
 	$(UV) run --locked --extra research python scripts/report_controlled_replies.py
+
+.PHONY: check-averaging-history study-averaging-history report-averaging-history
+AVERAGING_HISTORY_DIR ?= results/runs/averaging-history-reproduction
+check-averaging-history:
+	$(UV) run --locked --python 3.11.17 python scripts/check_averaging_history.py
+
+# Fixed admitted source; original trajectories only, fresh retained output paths.
+study-averaging-history:
+	$(UV) run --locked --python 3.11.17 --extra research python scripts/study_averaging_history.py \
+		--output $(AVERAGING_HISTORY_DIR)/own.json
+	$(UV) run --locked --python 3.11.17 --extra solver-validation python scripts/audit_averaging_history.py \
+		--own $(AVERAGING_HISTORY_DIR)/own.json --output $(AVERAGING_HISTORY_DIR)/native.json
+	$(UV) run --locked --extra research python scripts/report_averaging_history.py \
+		--own $(AVERAGING_HISTORY_DIR)/own.json --native $(AVERAGING_HISTORY_DIR)/native.json \
+		--output $(AVERAGING_HISTORY_DIR)/report
+
+report-averaging-history:
+	$(UV) run --locked --extra research python scripts/report_averaging_history.py
