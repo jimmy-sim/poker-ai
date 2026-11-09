@@ -34,6 +34,11 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
   Published raw cost evidence motivates the same array reductions through methods,
   preserving all validation/arithmetic. New optional backend; frozen old source/data.
+- **Own correctness:**72 endpoints/48B1readout checks all exact; 27.067313916s
+  under900, base3.12 offline replay passed; published before216timings.
+- **Source gate:**3a1a3c9; both CIjobs42619839287passed. Base1784+24skip
+  each,extras1817each,3slowintegrations each; strict405/format496/Ruff. Formal
+  source receipt published before actual72prefixes and216timings.
 - **Implementation:**84 focused checks pass; Ruff/format496/strict405. Full
   base/optional, tiny-game process and hosted checks pending. Explicit new factory,
   all72 exact endpoint controls before216timings, no patch to frozen old code.

@@ -2194,6 +2194,16 @@ input rejection, exact sparse means, random-state preservation and both average
 books. Full project, process and GitHub checks still precede any real Hold'em
 prefixes. These are software results, not a measured speed improvement.
 
+The optional code passes both GitHub jobs and all full local checks:1,784 base
+tests and1,817 with extras on each version, plus the three process checks. The
+saved source record is published before the72 real state comparisons. A speed
+or strength improvement has not been measured yet.
+
+All72 real short training paths now exactly match the originals, including
+both strategy averages, random state and work counts. This tells us the checked
+prefixes behave the same. The complete timing experiment is next; exact behavior
+alone does not show that the new implementation is faster or stronger.
+
 ## 38. Prepare the conditional batch study (November 9, prospective)
 
 The cheaper checks still need their real cost gate. Meanwhile, the next step's
