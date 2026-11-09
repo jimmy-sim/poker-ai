@@ -51,3 +51,7 @@ If not, save the checked next-step boundary without scheduling future work.
 The narrow dispatch candidate may fail to save useful time. Report that result
 honestly. This is still known-game diagnostic work, not fresh or global-agent
 admission. No reference strategy enters the learner.
+
+Pre-implementation label correction: the declared q8 representation uses its
+existing exact identifier `texture_range_q8_b8`. Input byte hashes are pinned in
+the config before code; no cases, methods or outcomes changed.
