@@ -191,3 +191,9 @@ Lower is better for that saved strategy in that game; axes vary by panel.
   error and retained432 raw average-mass and216 current-policy records.
 
 These are research/verification claims, not a claim of competitive poker strength.
+
+Published-evidence regression checks pass on both base runtimes:2tests each in
+33.99/31.86s, with learner/reference constructors blocked. They verify the
+480-profile own/native source chain, all three archive byte hashes and all four
+reproducible numerical report files. Strict typing419 files and formatting511
+pass; no scientific source changed after the study. Final artifact CI follows.

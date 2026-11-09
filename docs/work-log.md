@@ -19,6 +19,9 @@ For a guided explanation of the ideas and results, start with the
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Published-evidence regression:**2tests pass on each base runtime33.99/31.86s,
+  constructors blocked;480own/nativechain/3archivehashes/4numericfiles checked.
+  Strict419/format511; finalartifactCIpending, scientificsource205unchanged.
 - **Independent audit:**169.194451625s under900; all480profiles pass,maximum
   scalar/root error1.5631940186722204e-13chips. Ownpublished67c5894before native.
   Nativeincludesownreplay115.699832292s; base312ownreplay0/113.263148750s,
