@@ -13,6 +13,43 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Saved batch current policies, independently audited
+
+- **Issue:**#4; [plan](batch-current-diagnosis.md)/config fixed before batch
+  outcomes, code or diagnosis. All216 saved currents; final72currents+144averages
+  versus all4 original same-context full controls, both seats:1728 fixed targets.
+  No training/policy edits or favorable subsets. Source study/audit still running.
+- **Independent audit:** all216+1728targets pass164.198028083s<900, maximum
+  2.0605739337042905e-13chips; included own replay0in41.213945417s. Own10df9be
+  published first. OpenSpiel2.0.2Apache2 comparison-only; no actions exported.
+  Two actual-evidence metadata/byte checks pass each0.21/0.22s; source216 intact.
+  Complete writeup/3interviewanswers/verifiedclaimdrafts/license/README/journal39
+  updated; final artifact CI pending. Hands-on time unknown; Codex-assisted.
+- **Own result, published before reference:**216currents/1728fixed targets complete
+  in156.781172375s<3600. Own replay0chips40.945068375s; base3.12 full replay0
+  40.166751417s; all6numeric files byte-identical and3actualfigures inspected.
+  Latest policies remain much more self-exploitable in the medium game, while
+  fixed-original-opponent gains often favor them. All cases retained; no pure
+  variance/default/fresh/global claim. Independent216+1728audit pending.
+- **Admission:** source gate5e9937apublished first; full source own/native
+  input chain and seven hashes bound in a new saved-data admission. At06:16
+  full3600own+900native plus verification fit this one-time window. Publish
+  admission before diagnosis; no training or strategy changes permitted.
+- **Source gate:** both CIjobs42630704951passed on2aa8f39;216-fileSHA
+  9968baff2397ac3ea4b297700b4392ece2b94f38a9b0fa2800bd5af0b9330337.
+  Base1871+24skipeach299.91/294.70s; extras1904each331.87/320.05s;65focused
+  each57.20/67.49s including18slow; strict440/format534/Ruff. Final3toyfigs
+  inspected. Publish source record before admission/anyactualdiagnosis.
+- **Implementation:**47 focused fast checks pass, independent exact path/reply
+  math, self-zero signs, real Git-tree checks, source/native schema/failure gates.
+  Analytic-only216/1728process/archive exercise16checks pass15.68s; three toy
+  figures inspected, legends moved off data. Full checks running; Ruff/format534/
+  strict440 pass. No actual diagnosis or source admission yet.
+- **Gate:** complete published own+native first; new source checks/admission before
+  scoring, own evidence before native;3600own/900native, only if full caps and
+  verification fit authorization. Preserve all failures/source/data. No default/
+  fresh/global claim. Codex-assisted; hands-on time unknown.
+
 ## 2026-11-09 — Reduced-backend fixed-work study, complete
 
 - **Issue:** #4; [plan](reduced-batch-study.md) and config precede code. The

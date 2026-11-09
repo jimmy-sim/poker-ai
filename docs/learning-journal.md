@@ -11,6 +11,13 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
+November9 update: steps35–39 retain a failed compute gate, a tested overhead
+change, a completed72-path batch study and its saved-current diagnosis. All
+216latest profiles and1,728fixed targets pass independent scalar checks. The
+harder game's latest policies are substantially more exploitable than averages,
+while fixed-opponent comparisons often favor latest policies. No global agent
+or default changes. Read step39 for the plots and terminal replay.
+
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
 not established a competitive Hold'em agent.
@@ -2256,6 +2263,62 @@ Another Python version reproduces all four numerical files exactly. This checks
 the numbers on our exported small games; it does not establish general poker
 strength. The next preregistered question asks whether the latest policies also
 improve when held against the same original opponents.
+
+## 39. Is the latest policy safer too? (November9, prospective)
+
+The full batch experiment is running; no new result has been inspected yet.
+The [next plan](batch-current-diagnosis.md) asks whether a change helps the latest
+strategy as well as its average. It fixes every saved checkpoint and opponent
+before looking at outcomes. A fixed opponent means we swap our responding player
+while keeping the other player's probabilities unchanged. This can clarify a
+change that a self-play comparison mixes together. No extra training is planned,
+and incomplete or failed source evidence blocks the diagnosis.
+
+The saved-policy evaluator now passes47 focused checks. Independent tiny-game
+path sums and exhaustive replies verify the signs and best-response values;
+comparing the same strategy to itself gives zero difference. A complete analytic
+software example checks216 profiles and1,728 fixed targets without training.
+These are software checks, not the real diagnosis. Full source checks and a
+published admission remain required.
+
+Both GitHub jobs and all full local checks now pass for the saved-policy
+diagnosis:1,871 base tests and1,904 with extras on each version, plus65focused
+checks each. The source record verifies every code byte against the tested
+commit. Admission must still tie it to the complete saved study and audit before
+we score real currents. No training or changed strategy is part of this step.
+
+The saved-data admission is now checked. It ties the exact evaluator to the
+complete saved study, its independent audit and all archive bytes. The next
+step scores existing latest policies and tests them against unchanged original
+opponents. There is no retraining and no strategy is edited.
+
+The saved-data calculation is complete, before its independent comparison. It
+checks216 latest policies and1,728 fixed-opponent targets in156.78seconds, with
+zero replay error. In the harder known game, averaging greatly reduces self
+vulnerability: for example signed B4 range encoding is28.01% of the initial pot
+for the latest policy versus2.17% for the linear average. Against unchanged
+original opponents, latest policies can nevertheless do better. That tells us
+“good against these opponents” and “hard to exploit” are different questions.
+The latest policy is not automatically the best policy to deploy. Independent
+checks are still pending; no default or broader strength claim changes.
+
+The independent check now passes all216 strategies and1,728 fixed-opponent
+targets. Its largest disagreement is about0.000000000000206chips, comfortably
+inside the preset tolerance. This checks the calculations, not full-game playing
+strength. You can rerun the saved analysis without learning or a solver install:
+
+```sh
+.venv/bin/python scripts/report_batch_currents.py --no-plots
+open results/batch-current-diagnosis/report/current-self-texture_range_q8_b8.png
+open results/batch-current-diagnosis/report/fixed-current-average.png
+```
+
+In the first plot, colors are batch sizes and line styles are latest, uniform
+average and linear average strategies. Lower is harder to exploit. In the
+second, each labeled line measures value left against unchanged original
+opponents. Its y-axis is a different measurement. The [writeup](batch-current-diagnosis.md)
+explains the distinction; every seed and case remains available. The next useful
+learning aid is to inspect actual saved action probabilities side by side.
 
 ## Your own learning notes
 

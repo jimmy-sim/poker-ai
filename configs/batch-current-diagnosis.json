@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "prospective_saved_batch_current_diagnosis_no_training",
+  "source_own": "results/reduced-batch-study/own.json",
+  "source_native": "results/reduced-batch-study/native.json",
+  "source_current_archive": "own-currents.jsonl.gz",
+  "precondition": "complete source-bound480profile own study and full independent native audit must be published and validated first; absent or failed sources block diagnosis",
+  "selection": "all216 saved current observations across all72 paths/three work labels, with all144 final average profiles; no favorable seed/game/mode subset",
+  "expected_current_profiles": 216,
+  "expected_final_current_profiles": 72,
+  "expected_final_average_profiles": 144,
+  "expected_fixed_candidate_profiles": 216,
+  "fixed_opponents": "all four original reused-full final controls for each same spot/representation: signed/clipped x uniform/linear, at final10m original work; original controls predate batch outcomes",
+  "expected_fixed_targets": 1728,
+  "fixed_target_calculation": "216 final candidate policies(current72+average144)*4 same-context original full controls*2 responding seats; exact same opponent across batch/seed/readout comparisons",
+  "self_metrics": [
+    "value_player_zero",
+    "exact_exploitability",
+    "within_partition_gain",
+    "extra_information_gap",
+    "river_only_gain_exact_prefix"
+  ],
+  "fixed_metrics": [
+    "unilateral_target_EV",
+    "within_partition_reply_root",
+    "within_partition_unilateral_gain"
+  ],
+  "arithmetic": "chips and percent initial pot; same source scorers/tolerance1e-9chips and1e-12unitless; saved current arrays and all original policies immutable",
+  "worker_count": 3,
+  "start_method": "spawn",
+  "maximum_own_seconds": 3600,
+  "maximum_native_seconds": 900,
+  "training_performed": false,
+  "publication": "full local/hosted source and meaningful tiny-game/archive/grid/failure checks; checked published admission before scoring; own216+self/fixed1728 evidence before comparison-only native; retain partial/failing outcomes",
+  "native": "OpenSpiel2.0.2 Apache2; check all216 self profiles and1728 unilateral fixed-opponent scalar/root/own-reply targets; no reference action export or training input",
+  "reports": "all individual policies/seeds/work labels,means and paired current-vs-average contrasts; plots of current/average self vulnerability and fixed-opponent gains, with units and scope",
+  "hypothesis": "determine whether batch changes appear in current policies or only their averages; fixed-opponent accounting separates changed opponents from changed responder quality",
+  "interpretation": "descriptive diagnostic, not pure variance causal identification: fixed node work still changes update count and iteration weighting; average books share learning paths; self comparison changes both players; only fixed targets keep the opponent constant",
+  "admission": "no selected/default/fresh/global admission; no strength claim beyond these known games/fixed original own opponents; no new trajectories or modified snapshots",
+  "window": "start only if full own3600+native900 caps plus verification fit remaining current authorization; otherwise preserve the prospective boundary, no future schedule",
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "role": "comparison-only216 current self profiles and1728 fixed targets; no reference action export or training"
+  }
+}

@@ -43,6 +43,13 @@ known compressed game, but one seed worsens and the clipped result remains mixed
 The global agent/default is unchanged. See learning-journal steps35–38; all earlier
 failures and every seed remain in the record.
 
+A [saved-current diagnosis](docs/batch-current-diagnosis.md) now independently
+checks216 latest policies and1,728 fixed-opponent targets within2.07e-13chips.
+Latest policies remain far more self-exploitable in the harder known game, yet
+often do better against the unchanged original opponents. Those are different
+tests; neither establishes competitive full-game strength. Journal step39
+explains the distinction and links the plots and offline replay command.
+
 ## Architecture and current strength work
 
 ```mermaid
