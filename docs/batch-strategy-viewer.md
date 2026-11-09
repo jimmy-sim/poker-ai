@@ -33,3 +33,54 @@ n/p/q/EOF/invalid navigation; constructor-blocked actual saved-archive CLI check
 on both runtimes. Run relevant base/optional suites, lint/format/strict types and
 hosted CI; update work log and plain-English journal step40 with actual outcomes,
 terminal examples and limits. No new performance/default/fresh/global claim.
+
+## Implemented viewer and first actual checks
+
+The viewer validates the complete published source/own/native receipt chain,
+scans immutable archive inventories and verifies both selected policy hashes
+and action menus. It displays only the acting player's observation. It loads
+once; checking the full saved chain can take a minute or more before browsing.
+No learner or reference is constructed, including in the actual saved-data tests.
+
+Twenty-four focused fast tests pass, including an independently summed L1,
+self-zero, symmetry, opposite-action bound2, owner/tie ordering, bad mass/menu/
+selection/context and navigation/EOF cases. Three actual archive/card/navigation
+tests pass71.81s on base3.11. The first real CLI example is a river row with own
+Tc Td and public Ts 9s 4d 2h Js: latest folds with probability1 while the linear
+average calls with probability approximately1. This is an unweighted difference
+example, not proof that either action is best or that this row matters on-path.
+Both readouts have80,741updates and10,000,119charged node visits.
+
+Full base/optional suites on both runtimes and final hosted CI are running. The
+first two fixture failures assumed Kuhn had no padded third column; the fixture
+was corrected before source publication. The inherited legal mask is numeric,
+so the viewer now uses the existing tree policy validator rather than duplicating
+it. These were software-development findings, not failed research outcomes.
+
+After merge, from your existing project checkout:
+
+```sh
+.venv/bin/python scripts/inspect_batch_strategy.py
+.venv/bin/python scripts/inspect_batch_strategy.py --interactive
+.venv/bin/python scripts/inspect_batch_strategy.py --left linear_average --right linear_average --left-batch 1 --right-batch 4
+.venv/bin/python scripts/inspect_batch_strategy.py --seat 1 --rank 2
+```
+
+The default compares current versus linear average for B4, medium known game,
+signed regrets, first seed and10m work label. `--help` lists retained choices.
+In interactive mode use n/p/q; it stops at the first/last rank instead of wrapping.
+EOF also exits. Nothing is written to an agent or published evidence.
+
+## Questions to explain the tool
+
+**What does L1=2 mean?** The two distributions put all their probability on
+different actions. Identical distributions give0; this says nothing about EV.
+
+**Why rank rows if some are unreachable?** This is an honest distribution
+inspection tool, not an impact ranking. It includes every owned row, labels the
+absence of reach weighting, and does not choose a training remedy from the list.
+
+**Why show only a representative board?** A compressed row can share one
+distribution across several exact observations. Showing one observation makes
+the table readable, but cannot establish that every member prefers one action.
+The example uses only own cards/public board and declares the member count.

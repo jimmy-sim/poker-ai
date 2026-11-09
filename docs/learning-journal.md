@@ -2320,6 +2320,48 @@ opponents. Its y-axis is a different measurement. The [writeup](batch-current-di
 explains the distinction; every seed and case remains available. The next useful
 learning aid is to inspect actual saved action probabilities side by side.
 
+## 40. Comparing saved action tables in Terminal — November 9
+
+The graphs summarize whole strategies. This tool lets you look at the action
+probabilities behind them. A “strategy row” is a situation, or a group of
+situations, where the saved agent uses the same probability table.
+
+From the project folder, run:
+
+```sh
+.venv/bin/python scripts/inspect_batch_strategy.py --interactive
+```
+
+The first load checks the complete saved evidence and can take a minute or more.
+Then type `n` for the next row, `p` for the previous row, or `q` to finish. The
+default compares the latest strategy with its linear average from the same B4
+training path. Both are already saved; this command does not train or play.
+
+Read “left” and “right” as two probability tables. In the first checked example,
+both see our Tc Td and the public Ts 9s 4d 2h Js river. The latest strategy folds
+almost always, while the average calls almost always. This shows a disagreement,
+not which action is best. The row's probability-distance score is nearly2:
+0would mean identical tables;2means choosing completely different actions.
+
+Rows are sorted by this unweighted probability difference. A large score does
+not mean a big money loss: a row may be rare or unreachable, and two actions
+might have similar values. The tool labels that limitation. It also shows the
+number of exact situations sharing a row; the displayed cards are one example.
+
+To compare linear averages from B1 and B4 instead:
+
+```sh
+.venv/bin/python scripts/inspect_batch_strategy.py --left linear_average --right linear_average --left-batch 1 --right-batch 4
+```
+
+The work label is matched, but actual node counts and update counts can differ.
+This tool reports them. It verifies saved hashes, keeps opponent private cards
+out of the display, and cannot change a strategy. Twenty-four fast checks and
+three actual-archive checks pass on the first runtime; complete project checks
+and the second runtime remain in progress. [Method and checks](batch-strategy-viewer.md),
+[PR37](https://github.com/jimmy-sim/poker-ai/pull/37). Codex assisted; your own
+hands-on time or understanding is not inferred from these tests.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
