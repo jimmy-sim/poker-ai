@@ -123,3 +123,19 @@ assertion; the final hosted run checks the complete resulting test set.
 The learning journal now has direct navigation to completed batch/current
 results, terminal browsing and this future experiment. No actual long study
 is admitted or run by completing these software checks.
+
+## Published prospective target manifest
+
+Both source CIjobs42641272661pass on the source/documentation merge d37e610.
+The [target manifest](../results/matched-update-batches/plan.json) is generated
+from clean committed source after those checks. It validates all nine input
+hashes and both complete archived own/native chains. All48logical targets span
+18,727–146,972 recorded iterations; every target is at or before its original
+B1 endpoint. All144profile pairs and1,152reused fixed targets remain. This is
+metadata selection only: no new training, EV score or long admission.
+
+A published-evidence test recomputes every target/pair and input hash, verifies
+the original clean source map, and asserts no-strength/no-admission flags.
+The final artifact CI remains required before merge. The viewer dependency is
+merged0e8b422; main24fast checks pass0.26s and actual n/p/q command exits normally,
+with all ten unrelated modified result hashes preserved.

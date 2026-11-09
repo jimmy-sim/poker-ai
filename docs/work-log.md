@@ -27,6 +27,12 @@ For a guided explanation of the ideas and results, start with the
   296.34/282.65s. Strengthened every16boundary assertion passes28observer tests
   each0.15/0.16s after those full suites; no production-code changes. Final
   hosted run remains required. Journal navigation added; no long admission.
+- **Published grid:**sourceCI42641272661bothgreen ond37e610; clean-source
+  plan.json records48targets(18,727–146,972updates), all within B1 sourceendpoints,
+  144profilepairs/1152reusedfixed targets;9inputhashes verified. New published
+  metadata regression recomputes all targets; final artifactCI pending.
+- **Viewer merged:**PR37at0e8b422 afterfinalCI42638459644bothgreen. Main24tests
+  0.26s and actualn/p/qCLI pass;10originalmodifiedoutputs untouched.
 - **Bounded scope:** grid validation and mutation-guarded mixed work/iteration
   observation tests only. No actual Holdem replay/score or long admission.
   Full7200+900 caps plus verification cannot fit tonight; no shortened run or

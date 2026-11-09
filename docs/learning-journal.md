@@ -2417,6 +2417,13 @@ cannot fit tonight's remaining window, so they stay intact and no run is started
 This is preparation for a controlled test, not a stronger-agent result.
 
 
+The prospective target list is now published from clean source after both
+GitHub source checks pass. It includes every48planned target, from18,727to
+146,972recorded updates, all within the old B1 endpoints. This only checks
+which saved comparisons the future experiment must make. It does not train
+those prefixes or report how good they are. A regression check recomputes
+every target and preserves that no-training/no-admission boundary.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
