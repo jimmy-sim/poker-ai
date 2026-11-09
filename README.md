@@ -34,10 +34,14 @@ selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
-The next fixed-work batch experiment has passed its software checks, but its
-predeclared compute forecast narrowly fails: 7201.49s versus 7200s. The complete
-55.26s timing run is retained; long learning has not started, and no stronger-agent claim follows. See [the compute result](docs/frozen-pass-batches.md#retained-compute-gate-failure--november-9)
-and learning-journal step 35.
+The original batch source's compute forecast fails **7201.49s vs7200s** and stays
+unadmitted. A profiled array-dispatch change preserves all checked paths and
+passes the same formula at6953.92s. The [completed fixed-work study](docs/reduced-batch-study.md)
+runs72 paths and independently checks480 profiles, with maximum scalar/root error
+1.57e-13chips. Its primary B4 mean improves4.35%→2.17% of initial pot in one
+known compressed game, but one seed worsens and the clipped result remains mixed.
+The global agent/default is unchanged. See learning-journal steps35–38; all earlier
+failures and every seed remain in the record.
 
 ## Architecture and current strength work
 

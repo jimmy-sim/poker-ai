@@ -81,6 +81,12 @@ forecast; no long batch comparison was admitted. Step 36 profiles 48 short
 copies with exact saved-state matches. It identifies measurable check overhead
 without changing the learner or claiming stronger play.
 
+Step37 completes the optional array-check dispatch change: checked training
+paths stay exact and a new complete forecast fits; the original failure stays.
+Step38 completes72 fixed-work batch paths and480 independently checked profiles.
+The main signed configuration improves on average in one known game, but a seed
+worsens and clipped river behavior remains unresolved. No default is changed.
+
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
@@ -2235,6 +2241,21 @@ software proof, both GitHub jobs and the complete fitting forecast. This permits
 the fixed known-game experiment. It still does not select a stronger agent or
 change the default. The next action is to run all declared cases, keeping every
 result and publishing our own calculation before the independent comparison.
+
+The full own calculation finished in25minutes3seconds. Every saved profile and
+raw observation replays with zero error. In the main B4 experiment, the deeper
+compressed game improves on average: total vulnerability falls from4.35% to2.17%
+of the initial pot. One seed gets worse, and the clipped mode does not receive a
+general fix. This is a mixed known-game result, not a stronger default. All cases
+are kept in [the report](reduced-batch-study.md#complete-own-outcome--independent-audit-pending).
+The independent check is still pending; our full result is published first.
+
+The independent check also passes: all480 profiles agree with OpenSpiel’s
+separate calculations, with maximum difference about0.000000000000156chips.
+Another Python version reproduces all four numerical files exactly. This checks
+the numbers on our exported small games; it does not establish general poker
+strength. The next preregistered question asks whether the latest policies also
+improve when held against the same original opponents.
 
 ## 39. Is the latest policy safer too? (November9, prospective)
 
