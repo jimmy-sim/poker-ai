@@ -27,6 +27,27 @@ For a guided explanation of the ideas and results, start with the
   stage has separate 900s own/native caps. Tests/local/hosted checks precede
   measurement; own publication precedes reference comparison.
 - **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+- **Software progress:** 107 focused fast checks pass. Complete tiny-game checks
+  exercise all 512 self profiles/2048 fixed targets with training/reference
+  construction blocked during the offline stage (four checks, 11.26s). Complete
+  toy archive replay and rehashed corruption tests pass all 19 checks (13.73s).
+  The real old-window loader passes on base Python 3.12 with new learning/native
+  construction blocked (100.72s), retaining every 128 original window.
+  Own/native receipt failure tests and four explicitly toy figures pass (22
+  run/report checks, 25.58s); layouts inspected. Fictional byte/native ledgers
+  test schema only and are explicitly not independent solver evidence.
+- **Before outcomes:** Retain eligible/changed row counts and uniform/own reach
+  measures separately for all rows and river rows, by seat. This makes the
+  declared reach question inspectable; no masks, cases, gates, caps or metrics
+  selection are changed. Complete source/reader/report/native code drafted;
+  full base/optional checks and hosted code CI remain before intervention outcomes.
+- **Complete local code checks:** Base `make check`: 1546 passed /24 optional
+  skips on both Python versions (242.25/232.58s). All-extras fast suites: 1579
+  passed each (274.70/268.50s). All 27 relevant slow checks pass (169.41/166.45s),
+  including 26 new checks plus the earlier real-policy native adapter. Base-only
+  Python 3.12 toy replay/report: 20 passed /one plotting skip (30.11s). Strict
+  typing covers 358 files; lint/format/hooks pass. No intervention outcomes yet;
+  both hosted complete-code CI jobs remain required before measurement.
 
 ## 2026-11-09 — Averaging-history runner and independent checks
 
@@ -97,6 +118,11 @@ For a guided explanation of the ideas and results, start with the
   policies, distinguishing harmless unreachable rows from a missing-update effect
   before another learning rule. No new default, selected suffix, stronger-agent,
   fresh/global admission or relaxed failed limit. Final artifact CI pending.
+- **Merged / main verification:** Both final CI 42589812391 jobs pass at
+  `0035658`; PR #30 merged at `687d9bf`. User main passes 193 focused checks
+  (2.70s), all profile/boundary/fixed-target replay with zero error (97.326688s),
+  archived native audit and all six byte-identical numerical files. Ten original
+  modified output hashes are unchanged. Next protocol is isolated in PR #31.
 
 ## 2026-11-08 — Current policies and averaging history, prospective
 

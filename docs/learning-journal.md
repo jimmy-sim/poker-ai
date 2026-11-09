@@ -71,12 +71,15 @@ Step 33 completes the averaging-history investigation. Original learning paths
 match exactly, but the sampled current policies remain vulnerable. Late averages
 do not supply a general repair; improving against old opponents and resisting a
 best response are different outcomes. All own and independent checks pass.
+Step 34 tests whether the fallback at zero-weight late rows affects those saved
+strategies, while keeping learned rows fixed. The software checks pass; the
+Hold'em intervention still awaits its own/native measurement gates.
 
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
 - **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–33:** What the extensions and recent experiments taught us.
+- **Steps 10–34:** What the extensions and recent experiments taught us.
 
 The [work log](work-log.md) has dates and commits. This journal explains the
 ideas. Some older reports say hosted CI had not run: that describes their original
@@ -2019,6 +2022,19 @@ any failure is investigated before interpreting a result.
 This is an offline diagnostic, with no new training or agent deployment.
 Correctness, complete local and GitHub code checks, own results and independent
 comparison remain required in that order. All outcomes are pending.
+
+**Software checkpoint:** 107 focused fast checks pass. Hand-calculated examples
+distinguish an unreachable decision from a reachable one missed in a sample.
+A complete tiny-game archive tests every planned fill/opponent condition;
+corrupting probabilities, masks, scores or support fails replay even after the
+file hashes are recomputed. Interrupted attempts remain saved. The real archived
+window loader also works without starting a learner or native solver. These
+checks verify the tools; the Hold'em intervention still awaits full local and
+hosted code checks. The four draft figures are explicitly labeled toy fixtures.
+
+The complete local suites pass too: 1546 base tests with 24 optional skips and
+1579 optional-suite tests on both Python versions. All 27 relevant longer checks
+pass. GitHub must still check this complete code before the Hold'em intervention.
 
 ## Your own learning notes
 
