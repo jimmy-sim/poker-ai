@@ -15,6 +15,12 @@ For a guided explanation of the ideas and results, start with the
 
 ## 2026-11-09 — Batch function costs, checked source
 
+- **Complete own cost evidence:** 21.733298041s under900; all48 archived
+  endpoints exact,32 repeatedB1checks,24 completeprofiles/3,456frames/5,896edges.
+  Base3.12 offline replay reproduces all four numerical files byte for byte;
+  both real figures inspected. Raw costs published before any optimizer.
+  Mean directall/any callee totals1.121222/1.097186s forB4/B16 include reduction
+  work; mean inclusive time includes traversal. No strength/forecast/admission.
 - **Checked source:** `0a86ca8`; both hosted code jobs passed in run
   [42616172811](https://github.com/jimmy-sim/poker-ai/actions/runs/42616172811).
   Corrected base1,700+24skip each; extras1,733 each; five slow integrations each;

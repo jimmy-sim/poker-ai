@@ -76,6 +76,11 @@ All full controls are unchanged. The sampled whole-average fill has a small
 effect in the motivating case and leaves the main weakness unresolved. Both
 own and independent checks pass; no filled strategy is deployed.
 
+Step 35 validates frozen-pass batch training but retains its failed compute
+forecast; no long batch comparison was admitted. Step 36 profiles 48 short
+copies with exact saved-state matches. It identifies measurable check overhead
+without changing the learner or claiming stronger play.
+
 You can read this in three sittings:
 
 - **Steps 1–5:** How the program represents cards and runs a legal hand.
@@ -2160,6 +2165,20 @@ pass 1,733 each, plus five dedicated process checks on each version. The saved
 permission record binds those checks to the exact code. The next action is the
 fixed short Hold'em cost experiment; it still cannot start a long study or
 establish better play.
+
+The real cost experiment is complete: all 48 copies match their saved training
+states exactly. It takes 21.73 seconds, and another Python version recreates all
+four numerical reports from the saved data. The graphs in
+[the report](batch-overhead.md#measured-outcome--november-9) show where instrumented
+time goes. Random action selection is the largest individual function cost.
+Repeated array checks are also measurable, so the next candidate is a cheaper
+way of doing the same checks. We have not removed checks, measured an optimizer,
+or shown stronger play. The earlier failed compute gate still stands.
+
+**Example:** A kitchen timer around making coffee also counts waiting for the
+kettle. Blaming the whole interval on stirring would be misleading. Likewise,
+our batch function calls the game traversal while gathering samples; its total
+time is not all validation work. The saved caller breakdown separates them.
 
 ## Your own learning notes
 
