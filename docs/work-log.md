@@ -13,6 +13,15 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Matched-prefix capture, prospective software only
+
+- **Issue:**#4; [bounded plan](matched-prefix-capture.md) before implementation:
+ 24logical tiny cases/48targets/144own policies/96raw ledgers, complete immutable
+ archive/replay and independent exact arithmetic. No actual Holdem score/path.
+- **Gate:** fixed180s software stage, complete local/hosted source checks before
+ published clean proof. Future7200/900 caps and own/native runner/forecast/
+ admission remain; no future work schedule. Codex; personal hours unrecorded.
+
 ## 2026-11-09 — Matched-update batch foundation, prospective
 
 - **Issue:**#4; [prospective design](matched-update-batches.md) and fixed config

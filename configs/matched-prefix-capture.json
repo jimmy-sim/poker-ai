@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "EXPLICIT_SOFTWARE_FIXTURE_ONLY_NOT_POKER_RESULTS",
+  "parent_config": "configs/matched-update-batches.json",
+  "parent_config_sha256": "3d9d628a1daa0e44ef59ee9cbb8d3b08caf8373e9c8498b5ee479871b682f21c",
+  "logical_cases": 24,
+  "targets_per_case": [4, 8],
+  "final_iteration": 16,
+  "profiles": 144,
+  "raw_ledgers": 96,
+  "reference_constructed": false,
+  "poker_training_performed": false,
+  "maximum_software_seconds": 180,
+  "tolerance_chips": 1e-12,
+  "scope": "tiny-game own prefix capture/archive/replay correctness only; no Holdem scoring, native integration, compute forecast or long admission",
+  "future_scientific_caps": {"own": 7200, "native": 900}
+}
