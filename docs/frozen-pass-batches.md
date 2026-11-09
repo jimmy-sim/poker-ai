@@ -208,3 +208,38 @@ Three questions to explain this investigation:
    our own replies. Agreement checks the algorithms and stored evidence. It
    does not establish a strong global Hold'em agent or independently validate
    every underlying engine payoff. Reference outputs never train the agent.
+
+## Retained compute-gate failure — November 9
+
+The complete fixed timing run takes **55.257181459s**, under its separate
+900s cap. All 216 rows/72 paths are retained; all repeated states match. Its
+144 repeated B1 readout checks reproduce the 48 distinct original 100k identities
+exactly (three repetitions each). No EV or strength scores are measured.
+Source revision `6b78345f984c66af8a8b8835d6c931c114298240` uses the unchanged checked source
+inventory above. Parent CPU is 4.679161s; reaped child CPU
+is 151.14s. These overlap and are not personal hours.
+
+| Forecast component | Slot 0 | Slot 1 | Slot 2 |
+|---|---:|---:|---:|
+| B1 training partition (s) | 532.264263 | 534.363182 | 526.695585 |
+| B4/B16 training partition (s) | 966.009928 | 953.261408 | 963.997384 |
+
+The two sequential phase maxima sum to **1500.373109635s**.
+The fixed rule `2 * (2 * training_barrier_forecast + 600)` gives
+**7201.492438542s**, above the unchanged **7200s** limit by
+**1.492438542s**. Decision:
+`exceeds_cap_stop_before_long_learning`.
+
+This is a failed planning gate, not a measured two-hour training run. Its narrow
+margin does not establish the full runtime or justify a favorable timing retry.
+The raw [profile](../results/frozen-pass-batches/profile.json) contains every
+repeat, actual work/overshoot, source identity and unchanged forecast inputs.
+The read-only replay reconstructs the failed decision and returns nonzero.
+
+**No long comparison, 10m B4/B16 learning, native audit of new profiles, or
+performance/default/fresh/global admission follows.** No admission receipt or
+new learned-policy archive exists. The implemented future runner is tested on
+toy grids; it is not evidence of completed Hold'em learning. Historical failed
+results remain intact. The next justified step is a separately fixed function
+profile before any behavior-preserving execution optimization; it must retain
+this failure and the same seeds, cases, work and scientific caps.

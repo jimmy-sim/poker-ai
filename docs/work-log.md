@@ -50,16 +50,27 @@ For a guided explanation of the ideas and results, start with the
 - **Complete checked source:** Code `48c0960`, inventory SHA
   `62bbea13782a0d4468000fc01cbf34a83810fdc42c738098f1ec0a3f1dbb18cd`.
   Base 1647 passed /24 skipped each (230.21/230.30s); optional 1680 each
-  (258.63/248.43s); strict typing381, format469, hooks pass. Both hosted jobs
+  (258.63/248.43s); strict typing 381, format 469, hooks pass. Both hosted jobs
   [42606554182](https://github.com/jimmy-sim/poker-ai/actions/runs/42606554182)
-  pass before measurement. Base312 archived loader with all learner/native
-  constructors blocked passes4.568871s. All four toy figures inspected.
-- **Source-bound correctness:** Formal receipt passes6.3355535s at the checked
+  pass before measurement. Base Python 3.12 archived loader with all learner/native
+  constructors blocked passes 4.568871s. All four toy figures inspected.
+- **Source-bound correctness:** Formal receipt passes 6.3355535s at the checked
   code revision, complete four moment/120 parity/480 profile/432 mass/216 current
-  software grids and144 baseline prefixes; replay errors zero. No new Hold'em
+  software grids and 144 baseline prefixes; replay errors zero. No new Hold'em
   timing or long learning yet. Publish correctness and observed code checks
-  before the unchanged216-row timing gate. Method adds the chart guide and
+  before the unchanged 216-row timing gate. Method adds the chart guide and
   three interview answers; no stronger/default/fresh/global claim.
+
+- **Retained timing gate:** All 216 rows/72 paths complete in 55.257181459s
+  (900s cap); repeated states and 144 repeated B1 source readouts match. Raw
+  [profile](../results/frozen-pass-batches/profile.json) retains every seed/repeat.
+  Training-only phase-max sum 1500.373109635s; fixed
+  guarded forecast 7201.492438542s exceeds 7200 by
+  1.492438542s. Stop before long learning; no new strength
+  scores, admission or default. This is planning sensitivity, not actual full
+  runtime. Parent/child CPU 4.679161/151.14s.
+  Preserve failure; profile real costs before optimizing rather than rerunning
+  unchanged timings to find a pass.
 
 ## 2026-11-09 — Saved-window fallback, prospective
 

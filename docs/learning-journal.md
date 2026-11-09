@@ -2110,6 +2110,19 @@ fixed Hold'em timing test; no new Hold'em training or timing has run yet. Codex 
 documentation; your hands-on time is not recorded. Any later result stays
 diagnostic and does not automatically become a new default agent.
 
+### The first timing gate fails narrowly
+
+The fixed test completes all 216 timing rows in55.26 seconds. Its guarded
+forecast is 7201.49 seconds, just above the 7200-second limit fixed before running.
+That forecast includes extra allowances; it is not time actually spent training.
+The full learning comparison stays unrun, and no agent is changed.
+
+Being close does not let us add two seconds to the rule or keep retrying until
+a faster timing passes. We retain all raw measurements and the failed decision.
+Next we will profile where time goes before considering a verified execution
+optimization. This result says nothing yet about whether larger batches make
+the poker strategy stronger. [Exact counts and limits](frozen-pass-batches.md#retained-compute-gate-failure--november-9).
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
