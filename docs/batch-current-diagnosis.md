@@ -103,3 +103,45 @@ first. At06:16Pacific, the full3600own+900native caps plus final verification fi
 the remaining one-time window. Publish this admission before starting diagnosis.
 All original policies and source files remain unchanged. This admits no training,
 strategy edit, selected/default/fresh/global claim or future work schedule.
+
+## Own saved-data result, published before native comparison
+
+The complete own calculation took156.781172375s, below the predeclared3600s
+cap. All216 current profiles and1728 fixed targets were scored without training
+or policy edits. The full own replay has zero chip error (40.945068375s). An
+independent base3.12 reader repeats all216/1728 calculations with zero error in
+40.166751417s and reproduces all six numeric files byte for byte. All three
+actual figures were inspected; source216 files and original policy hashes match.
+
+Final10m mean exact self exploitability in the medium known game (%initial pot):
+
+| Encoding / regret rule | B1 current / linear average | B4 current / linear average | B16 current / linear average |
+|---|---:|---:|---:|
+| exact / signed |30.590742 /0.236525|30.172451 /0.382574|36.321332 /0.262595|
+| exact / clipped |9.312838 /2.155253|10.696074 /2.199593|11.178711 /2.017615|
+| range q8 / signed |31.999117 /4.354032|28.011637 /2.172684|21.455738 /3.553971|
+| range q8 / clipped |9.519793 /2.501852|7.875894 /2.534473|10.569078 /2.479423|
+
+This extends the earlier average-only evidence: the latest policies can remain
+much more vulnerable, including in the exact encoding. It does not show that
+all weakness comes from compression or isolate sampling variance. The low game
+behaves differently: signed final currents are zero at printed precision and
+clipped current/average comparisons are mixed. All seeds/checkpoints/readouts
+are retained in [the complete tables](../results/batch-current-diagnosis/report/tables.md)
+and CSVs; the two games have different plot scales.
+
+Against the four unchanged original full controls, current minus linear-average
+unilateral within-partition gain instead averages -0.030211/-0.035681/-0.042204
+percentage points for signed q8 B1/B4/B16, and -0.640323/-0.648235/-0.357688 for
+clipped q8. These means cover24 dependent targets each (3seeds x2seats x4controls).
+Positive-gain contrasts still occur in5/5/3 signed targets and4/0/4 clipped targets.
+A negative difference means the latest policy leaves less best-reply value
+against THAT unchanged opponent; the responder EV difference has the opposite
+sign. It does not mean lower self exploitability. In particular, self-profile
+comparisons change both players, whereas fixed-target contrasts keep the opponent
+and reply root unchanged. These finite own controls are not reference GTO
+strategies or independent observations. Do not combine these units with the
+half-summed self metric, select a policy/default or claim global strength.
+
+All own raw/archive/report evidence is published at this boundary. Independent
+OpenSpiel comparison of the216 self and1728 fixed targets is still pending.

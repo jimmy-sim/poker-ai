@@ -2285,6 +2285,16 @@ complete saved study, its independent audit and all archive bytes. The next
 step scores existing latest policies and tests them against unchanged original
 opponents. There is no retraining and no strategy is edited.
 
+The saved-data calculation is complete, before its independent comparison. It
+checks216 latest policies and1,728 fixed-opponent targets in156.78seconds, with
+zero replay error. In the harder known game, averaging greatly reduces self
+vulnerability: for example signed B4 range encoding is28.01% of the initial pot
+for the latest policy versus2.17% for the linear average. Against unchanged
+original opponents, latest policies can nevertheless do better. That tells us
+“good against these opponents” and “hard to exploit” are different questions.
+The latest policy is not automatically the best policy to deploy. Independent
+checks are still pending; no default or broader strength claim changes.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

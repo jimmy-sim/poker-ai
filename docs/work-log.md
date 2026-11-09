@@ -13,12 +13,18 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-09 — Saved batch current policies, prospective
+## 2026-11-09 — Saved batch current policies, own complete
 
 - **Issue:**#4; [plan](batch-current-diagnosis.md)/config fixed before batch
   outcomes, code or diagnosis. All216 saved currents; final72currents+144averages
   versus all4 original same-context full controls, both seats:1728 fixed targets.
   No training/policy edits or favorable subsets. Source study/audit still running.
+- **Own result, published before reference:**216currents/1728fixed targets complete
+  in156.781172375s<3600. Own replay0chips40.945068375s; base3.12 full replay0
+  40.166751417s; all6numeric files byte-identical and3actualfigures inspected.
+  Latest policies remain much more self-exploitable in the medium game, while
+  fixed-original-opponent gains often favor them. All cases retained; no pure
+  variance/default/fresh/global claim. Independent216+1728audit pending.
 - **Admission:** source gate5e9937apublished first; full source own/native
   input chain and seven hashes bound in a new saved-data admission. At06:16
   full3600own+900native plus verification fit this one-time window. Publish
