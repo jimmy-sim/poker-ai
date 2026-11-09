@@ -2362,6 +2362,13 @@ and the second runtime remain in progress. [Method and checks](batch-strategy-vi
 [PR37](https://github.com/jimmy-sim/poker-ai/pull/37). Codex assisted; your own
 hands-on time or understanding is not inferred from these tests.
 
+The viewer now passes the full project checks on both Python versions:
+1,897base tests each,1,930with optional tools, plus three actual saved-data
+checks each. The real3.12terminal browser accepts n/p/q successfully, and its
+startup loads the saved chain once. These are software checks; no strategy was
+trained or made stronger by displaying it. Final GitHub checks remain required
+before merge.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

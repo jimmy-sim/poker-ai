@@ -84,3 +84,18 @@ absence of reach weighting, and does not choose a training remedy from the list.
 distribution across several exact observations. Showing one observation makes
 the table readable, but cannot establish that every member prefers one action.
 The example uses only own cards/public board and declares the member count.
+
+## Complete local verification
+
+Both full base suites pass1,897tests with24optional skips (270.11/257.66s).
+Both full optional suites pass1,930tests (298.10/285.85s). Three actual archive/
+privacy/navigation checks pass on both base runtimes65.71/62.01s, with learner
+and reference constructors blocked. The default3.11 CLI and scripted3.12n/p/q
+CLI both run on real retained policies. Ruff/format541 and strict445 pass.
+Published source and final hosted CI remain distinct from local checks.
+
+The underlying diagnosis PR36 is mergedde4755d after both final hosted jobs
+42635166354pass. Main2published tests pass0.32s; full216/1728own replay has zero
+error47.488662458s, native receipt validates, all6numeric files are byte-identical.
+All10unrelated modified outputs retain their original hashes. No new training
+or playing-strength claim follows this viewer.
