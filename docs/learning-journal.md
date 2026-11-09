@@ -2230,6 +2230,12 @@ tiny-game proof replays all480 profiles with zero error. These checked files
 and the fitting forecast must be bound by a published admission before the real
 long study. The original failed experiment remains unchanged.
 
+The separate admission is now checked: it ties the exact study code to the
+software proof, both GitHub jobs and the complete fitting forecast. This permits
+the fixed known-game experiment. It still does not select a stronger agent or
+change the default. The next action is to run all declared cases, keeping every
+result and publishing our own calculation before the independent comparison.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

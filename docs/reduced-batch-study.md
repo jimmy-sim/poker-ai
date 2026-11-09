@@ -81,3 +81,16 @@ The pinned OpenSpiel2.0.2 Apache2 license was read again from the installed
 distribution, and its bytes match the existing recorded SHA
 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
 Actual new-policy reference comparison must still wait for published own evidence.
+
+## Checked admission published before long learning
+
+The [admission](../results/reduced-batch-study/admission.json) binds the exact205
+source files, both observed CI jobs, software/code receipts and all reduction
+correctness/profile/config bytes. Its guard is6953.920827419s, strictly below
+7200. No old failed admission is reused. This admits only the fixed known-game
+diagnosis and still cannot select a default or establish fresh/global strength.
+
+At05:15Pacific, the full7200own+900native caps plus verification fit the remaining
+one-time authorized window. The next action is the complete fixed study. Do not
+change scientific limits to fit the clock. Publish all own outcomes before
+constructing the new-policy native comparison, and retain partial/failing work.

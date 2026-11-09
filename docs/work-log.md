@@ -19,6 +19,10 @@ For a guided explanation of the ideas and results, start with the
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Admission:** software proof11c5758 and observed code receipt90f3a9e
+  published first; new checked admission binds all8 prerequisites/current205
+  source files and unchanged6953.920827419guard. Published before long learning;
+  at05:15Pacific full7200own+900native plus verification fit this window.
 - **Source/software gate:** both jobs42622026217passed on d568f1f;205-file
   SHA3c4cda2030ed59748b94a51ef071fe84533c22d8ee9f5e843383f05a79665212.
   Base1822+24skip each265.07/254.26s; extras1855each295.38/285.34s;62focused
