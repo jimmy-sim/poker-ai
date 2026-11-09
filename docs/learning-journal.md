@@ -2194,6 +2194,11 @@ input rejection, exact sparse means, random-state preservation and both average
 books. Full project, process and GitHub checks still precede any real Hold'em
 prefixes. These are software results, not a measured speed improvement.
 
+The optional code passes both GitHub jobs and all full local checks:1,784 base
+tests and1,817 with extras on each version, plus the three process checks. The
+saved source record is published before the72 real state comparisons. A speed
+or strength improvement has not been measured yet.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

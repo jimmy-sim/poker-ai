@@ -70,3 +70,14 @@ worker events and failures are retained; outputs cannot be overwritten.
 pass. Real tiny-game three-process IO checks and complete base/optional suites
 are running; hosted complete-code checks precede actual poker prefixes. No
 optimizer performance or new compute forecast has been measured yet.
+
+## Source gate passed before poker prefixes
+
+Both hosted jobs passed on3a1a3c9 in
+[run42619839287](https://github.com/jimmy-sim/poker-ai/actions/runs/42619839287).
+The [receipt](../results/batch-reduction/code-checks.json) binds196source files,
+SHA2ff3ea0504a54942034903cb62ee0541fb398f024f15b6afcaa23332c9aae1c3.
+Base1,784passed+24skipped each299.25/289.85s; extras1,817each340.29/332.14s.
+Three real tiny-game process checks pass each147.29/177.73s while other checks
+also ran. Ruff/format496/strict405 pass. This publication precedes the72 real
+correctness prefixes and216 timings. It permits no long study or strength claim.
