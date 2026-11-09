@@ -62,6 +62,13 @@ For a guided explanation of the ideas and results, start with the
   94.552135s upstream replay; parent CPU 285.363828s, reaped child CPU 0.07s.
   Seven numerical files and four figures retained. Publish complete own outputs
   before independent comparison; no complete native claim at this checkpoint.
+- **Independent comparison:** After own publication `3fa97c4`, every 512 self
+  profile /2048 fixed target /128 accounting panel passes the pinned native
+  audit. Stage 332.709628s under 900s, including 193.038860s complete own/upstream
+  replay with zero error; parent CPU 332.593217s, reaped child CPU 0.07s.
+  Maximum scalar discrepancy 1.6342482922482304e-13 chips; fixed-difference
+  discrepancy at most 2.842170943040401e-14, both below 1e-9. All 128 cached
+  opponent/target identities verified. All four final figures inspected.
 
 ## 2026-11-09 — Averaging-history runner and independent checks
 
