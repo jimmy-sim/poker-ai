@@ -31,6 +31,10 @@ For a guided explanation of the ideas and results, start with the
   no fixed-opponent grid is part of this new batch plan. No cases or gates change,
   and no timing/training outcomes have run. PR #31 is now merged after both final
   hosted jobs passed at `b6d1076`.
+- **Before measurements:** Retain all 432 cumulative ledgers and 216 current
+  observations so coverage and movement can be independently replayed offline.
+  Warm mass is reconstructible from the unchanged two uniform expected passes.
+  Storage adds no training paths, selection, scores or changed compute gates.
 
 ## 2026-11-09 — Saved-window fallback, prospective
 

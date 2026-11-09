@@ -39,6 +39,12 @@ work labels (100k, 1m, 10m) give 432 fresh saved profiles. Reuse the 48 original
 full-tree work profiles once for controls: 480 scored and native-checked profiles.
 Do not repeat deterministic full controls as seed replicates.
 
+Retain 432 raw cumulative average ledgers and 216 raw current-policy observations
+for read-only support/normalization/movement replay. Reconstruct the common warm
+origin from its two frozen simultaneous uniform expected passes, without a
+trainer or random draws. This storage clarification precedes measurements; it
+adds no trajectories, scores or selection opportunities.
+
 Keep the original simultaneous uniform exact warm start: iteration one, 2N
 charged visits. Each later iteration runs target 0, then target 1. For each
 target, freeze its policy across B independent external traversals; aggregate

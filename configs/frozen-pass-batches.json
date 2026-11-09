@@ -108,5 +108,11 @@
   },
   "interpretation": "within-pass averaging reduces conditional raw-update variance at fixed policy; at fixed node work it also reduces update count and changes iteration weighting. Learning outcomes cannot isolate a pure variance effect or establish global Holdem strength",
   "partial": "persist every attempt, worker event and completed snapshot; no overwrite or incomplete grid declared complete",
-  "scope": "simulation-only known-game diagnostic; fixed old seeds/work/action/ranges/representations; no new feature, reset, budget extension or commercial/reference training targets"
+  "scope": "simulation-only known-game diagnostic; fixed old seeds/work/action/ranges/representations; no new feature, reset, budget extension or commercial/reference training targets",
+  "retained_observations": {
+    "cumulative_mass_records": 432,
+    "current_policy_records": 216,
+    "warm_origin": "reconstruct both books from the frozen two simultaneous uniform expected passes at t=1; no trainer/random draws",
+    "purpose": "offline normalization, post-warm support and current-movement replay; no extra training path or score selection"
+  }
 }
