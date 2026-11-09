@@ -139,9 +139,21 @@ are mathematical/software checks, not a poker strength result. Two existing own
 Hold'em profiles separately pass the real native scalar adapter; no new learning
 is involved in that adapter test.
 
-Complete base/optional fast suites and complete-code hosted CI remain pending at
-this checkpoint. Formal source-bound correctness and the fixed 216-row timing
-gate must still be published before any long trajectory study.
+Complete base checks pass 1647 tests plus 24 optional skips each
+(230.21/230.30s); all-extras fast checks pass 1680 each (258.63/248.43s).
+Lint/format, strict typing (381 files) and hooks pass. Both complete-code
+[CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/42606554182) pass on
+`48c0960579db72a419835c1087a0e06440f7b897`; source inventory SHA
+`62bbea13782a0d4468000fc01cbf34a83810fdc42c738098f1ec0a3f1dbb18cd`.
+Base Python 3.12 loads every archived control/prefix with all learner and native
+constructors blocked (4.568871s). Four software-only figures are inspected.
+
+The formal [correctness receipt](../results/frozen-pass-batches/correctness.json)
+passes in **6.3355535s** on that clean checked source, with all grids and zero
+own replay error. This is source-bound software evidence, with no new Hold'em
+prefixes or strength scores. Publish it and the observed code-check receipt
+before the fixed timing stage. The 216-row timing/forecast and checked admission
+still remain before long learning.
 
 Safe read-only commands after the corresponding receipts exist:
 
@@ -156,3 +168,43 @@ expected behavior for a failed gate. It never reruns training in replay mode.
 The report command requires complete admitted own evidence; it does not convert
 a partial grid into a result. Formal recording/reproduction commands and measured
 outcomes will be added only after their gates are actually observed.
+
+## Reading the figures
+
+The curve figures use blue for B1, orange for B4, green for B16, and gray for the
+reused full-tree control. Each large colored point is the mean of all three
+fixed seeds. The faint points show each seed, including unfavorable ones. Moving
+right spends more node work; moving down means less exact exploitability in that
+small game. A downward curve is encouraging, but these known games and three
+seeds do not establish a general playing edge. Actual work overshoots and update
+counts are retained in `profiles.csv`; the x-axis shows the declared work labels.
+
+The stacked-bar figures use colors differently: blue is gain available to a best
+response using the learner's own information groups; orange is the additional
+value available with finer allowed own-card/public-board distinctions. Together
+they equal exact exploitability. Read the legend for each figure. These are
+strategy/opponent-specific gaps, not a universal representation floor and not a
+street-by-street causal diagnosis.
+
+Rows show the two fixed games. Columns keep signed/clipped regret and
+uniform/linear averaging separate. Exact and q8 encodings have separate figures.
+Each panel has its own vertical scale, so compare its tick values as well as
+bar heights. The raw seed table is the numerical record; the plots are summaries.
+The uniform and linear readouts share a learning path and are not independent
+learners. Matching a seed across B1/B4/B16 does not align the sampled histories
+once their policies and number of updates differ.
+
+Three questions to explain this investigation:
+
+1. **Why might a larger batch help?** At one frozen policy it averages independent
+   raw updates, reducing component variance by 1/B without changing their mean.
+   The exact tiny-game enumeration checks this. It does not prove convergence.
+2. **Why might it hurt at the same work?** Larger batches make fewer updates.
+   Clipping and linear iteration weights interact with that change. The study
+   measures the combined tradeoff; it cannot attribute an outcome purely to less
+   sampling noise.
+3. **What does the external check prove?** OpenSpiel independently computes
+   values/best-response roots for the same bounded compiled game and evaluates
+   our own replies. Agreement checks the algorithms and stored evidence. It
+   does not establish a strong global Hold'em agent or independently validate
+   every underlying engine payoff. Reference outputs never train the agent.

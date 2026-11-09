@@ -2103,8 +2103,10 @@ baseline stops larger batches, and altered saved numbers are rejected. The
 batch arithmetic also matches a separate implementation. These checks establish
 that the experiment works as specified; they do not show stronger poker play.
 
-Full checks and hosted CI still precede Hold'em timing. No new Hold'em training
-or timing has run at this checkpoint. Codex assists with implementation and
+Full checks now pass: 1647 base tests and 1680 optional tests on each Python
+version, plus both GitHub CI jobs. The recorded correctness proof takes 6.34s
+and replays the complete tiny-game exercise with zero error. Next comes the
+fixed Hold'em timing test; no new Hold'em training or timing has run yet. Codex assists with implementation and
 documentation; your hands-on time is not recorded. Any later result stays
 diagnostic and does not automatically become a new default agent.
 
