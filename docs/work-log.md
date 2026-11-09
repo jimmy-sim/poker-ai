@@ -19,6 +19,9 @@ For a guided explanation of the ideas and results, start with the
   reduction72-prefix/216-timing outcomes remain pending; absent/failed evidence
   blocks admission. Prepare an explicit backend adapter and complete tiny-game
   archive gates without changing old source, design, seeds, work or caps.
+- **Implementation:** explicit new factory/own format/native adapter;62 focused
+  optional checks pass37.39s, Ruff/format510/strict418. Complete tiny-game archive
+  and source/admission gates tested; full suites/hosted checks pending.
 - **Acceptance:** full local/hosted source checks, published software proof and
   checked admission before long learning; all144 B1 prefixes before B4/B16;
   own7200/native900, complete inventories, own publication before native.

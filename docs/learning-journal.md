@@ -2203,6 +2203,11 @@ accuracy rule. Missing or failed cost evidence blocks the experiment. A complete
 software rehearsal and GitHub checks must also pass before real long training.
 No result, new default or strength claim exists at this checkpoint.
 
+The conditional connection passes62 focused checks, including a complete tiny-
+game rehearsal of all480 saved profiles. Those are software examples, not new
+Hold’em results. Missing or failed real cost evidence still blocks long training,
+and full project/GitHub checks remain required.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

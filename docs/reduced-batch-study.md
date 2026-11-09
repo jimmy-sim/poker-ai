@@ -40,3 +40,19 @@ If evidence is absent/failed or the full caps plus verification do not fit the
 remaining one-time window, stop at the tested conditional boundary. Never extend
 work or schedule another night without a new user request. Passing this known-game
 diagnostic cannot select a new default or establish fresh/global strength.
+
+## Tested conditional implementation
+
+An explicit new factory connects the checked reduction class to training; no
+original factory or global function is patched. Full own receipts use a distinct
+format and bind this protocol. The original scorer, archive reconstruction and
+report equations are reused unchanged. A distinct native adapter replays own
+evidence before comparison and retains the same480-profile identity/scalar gates.
+
+62 focused checks pass in37.39s on the optional3.11 runtime, including the real
+complete tiny-game runner,480profiles/432masses/216currents,144prefix barrier,
+raw corruption/partial/failure checks, four software figures, source proof and
+conditional admission tests. The native integration uses existing historical
+own poker profiles as test controls; it is not a new agent comparison. Ruff,
+format510 and strict418 pass. Full base/optional checks and hosted code jobs are
+pending. Real long learning remains blocked on all gates.
