@@ -195,5 +195,10 @@ These are research/verification claims, not a claim of competitive poker strengt
 Published-evidence regression checks pass on both base runtimes:2tests each in
 33.99/31.86s, with learner/reference constructors blocked. They verify the
 480-profile own/native source chain, all three archive byte hashes and all four
-reproducible numerical report files. Strict typing419 files and formatting511
+reproducible numerical report files. Strict typing419 files and formatting512
 pass; no scientific source changed after the study. Final artifact CI follows.
+
+The gray full-pass control is a saved, finitely trained policy at the original
+work checkpoint, not a known equilibrium or an optimal solver. At equal node work
+it also receives fewer updates than sampling. A smaller sampled bar therefore
+does not establish that a method is generally stronger than full CFR.
