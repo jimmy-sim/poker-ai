@@ -13,6 +13,32 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Batch reduction dispatch, prospective
+
+- **Issue:** #4; [plan](batch-reduction.md) and fixed config precede code.
+  Published raw cost evidence motivates the same array reductions through methods,
+  preserving all validation/arithmetic. New optional backend; frozen old source/data.
+- **Complete forecast:**216 rows/72 paths,144 repeatedB1checks, all old
+  state/work identities exact;65.922444291s under900. Same guarded
+  formula6953.920827419<7200; base3.12 two reportfiles byte-identical.
+  Old7201.492438542failure retained. Historical timings are unpaired, no causal
+  speedup or strength claim. No long admission yet.
+- **Own correctness:**72 endpoints/48B1readout checks all exact; 27.067313916s
+  under900, base3.12 offline replay passed; published before216timings.
+- **Source gate:**3a1a3c9; both CIjobs42619839287passed. Base1784+24skip
+  each,extras1817each,3slowintegrations each; strict405/format496/Ruff. Formal
+  source receipt published before actual72prefixes and216timings.
+- **Implementation:**84 focused checks pass; Ruff/format496/strict405. Full
+  base/optional, tiny-game process and hosted checks pending. Explicit new factory,
+  all72 exact endpoint controls before216timings, no patch to frozen old code.
+- **Acceptance:** independent math/invalid/alias checks, exact tiny trajectories,
+  full local and hosted source checks before all72 realprefixes/216timingrows.
+  Same formula/grid/seeds/7200own/900native; retain old failure and all new outcomes.
+  No optimizer result, long admission or stronger/default/fresh/global claim yet.
+- **Main cost merge verification:** PR33 merged9895452,51 focused tests pass
+  in0.18s; all4 offline numerical files identical;10 useroutput hashes unchanged.
+- **Assistance/time:** Codex-assisted; hands-on time not recorded.
+
 ## 2026-11-09 — Batch function costs, checked source
 
 - **Complete own cost evidence:** 21.733298041s under900; all48 archived

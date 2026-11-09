@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_array_reduction_dispatch_only",
+  "source_cost_profile": "results/batch-overhead/profile.json",
+  "source_cost_config": "configs/batch-overhead.json",
+  "source_forecast": "results/frozen-pass-batches/profile.json",
+  "backend": "new opt-in ReducedDispatchBatchTrainer; frozen original implementation/data remain byte-identical",
+  "change": "same finite/nonnegative reductions through ndarray.all/any methods; retain every raw/aggregate validation and exact sum/copy/divide arithmetic",
+  "batch_sizes": [
+    1,
+    4,
+    16
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "games": [
+    "dev_low_oop",
+    "dev_medium_oop"
+  ],
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "regret_rules": [
+    "signed",
+    "clipped"
+  ],
+  "regret_weight": "linear",
+  "average_books": [
+    "uniform",
+    "linear"
+  ],
+  "expected_paths": 72,
+  "additional_node_work": 100000,
+  "timing_repetitions": 3,
+  "expected_timing_rows": 216,
+  "worker_count": 3,
+  "start_method": "spawn",
+  "assignment": "unchanged sorted path indices modulo3; sequential B1 barrier before B4/B16 for any later long study",
+  "maximum_correctness_seconds": 900,
+  "maximum_profile_seconds": 900,
+  "maximum_own_seconds": 7200,
+  "maximum_native_seconds": 900,
+  "long_work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "forecast_formula": "same old complete216-row forecast: per-path maximum of three projections, baseline and remaining three-worker sequential barriers,2*(2*barrier+600),strictly below7200",
+  "prefix_equivalence": "all72 final guards, both readout hashes, RNG/counters/work/iteration/traversal/first crossing/prefix identities exactly equal archived original; no tolerance relaxation",
+  "software_gates": "independent sparse math, all original invalid cases, overflow, aliases/menu/order, both clipping rules/B1 identity, dual books, observer noninterference, complete meaningful toy process/serialization/failure/replay checks; relevant full local base/optional and both hosted source jobs before actual poker prefixes",
+  "publication": "publish own complete or partial/failing outcome; do not retry unchanged timings for a favorable pass; genuine source changes require new declared reason and checks",
+  "scope": "execution optimization only; no changed estimator/actions/representation/seeds/work/quality gates; old7201.492438542failure stays unadmitted; even a new fitting forecast needs a separately checked published long admission and complete own before independent native comparison; no default/fresh/global admission",
+  "reference": "none for correctness/cost; later OpenSpiel2.0.2 Apache2 comparison only, never training input",
+  "input_sha256": {
+    "configs/frozen-pass-batches.json": "91b2c1979257fe826477de172c279ff5a5f96553e3f177aac345187dabbeb02b",
+    "configs/batch-overhead.json": "2b8e24ae2e808dc468b1090795651c0eb5bba6e30a6310aa718da975267bb9a3",
+    "results/frozen-pass-batches/profile.json": "a68296d7768cdb61ff39b3e6757c9d39b7e56ca6e74e73116227ccc9c23bc3ce",
+    "results/batch-overhead/profile.json": "30fd0eb788a1335c0bf6fc5156c5dbad58d5cec0c69beb9d1f254a7e2f00e97f"
+  }
+}
