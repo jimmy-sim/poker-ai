@@ -100,7 +100,7 @@ modes; all raw durations remain, and no instrumented value becomes a forecast.
 Tree/context preparation stays outside the instrumented call and inside the
 overall stage cap.
 
-49 focused fast checks pass. All five relevant integration checks pass on both
+51 focused fast checks pass. All five relevant integration checks pass on both
 optional runtimes (57.30/67.82s while full suites also ran). The complete explicit
 nonuniform-Kuhn exercise runs all 48 endpoints/24 real function profiles with
 exact state and call/work identities. Four numerical files reproduce byte for
@@ -120,3 +120,20 @@ by a label collision. Regression tests cover both different and identical code
 with colliding labels. Full checks and hosted CI must pass on this corrected
 collector before the Hold'em cost run. Earlier software-only timing summaries
 are not poker evidence or permission to reuse the old code gate.
+
+
+## Corrected source admitted for cost prefixes
+
+Both [hosted code jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/42616172811)
+passed on `0a86ca8963f5babf45ccb4c1be8f6572b63c7775`. The
+[checked-source receipt](../results/batch-overhead/code-checks.json) binds source
+inventory SHA `24b862efae132bae5c1aa8000655e215a41ff0cfbd333799c7d669cda5d53972`.
+Corrected local base checks: 1,700 passed and 24 skipped on each runtime
+(262.53/261.63s); optional checks: 1,733 passed each (302.11/290.95s).
+Five slow integrations pass on each (57.44/54.58s), with Ruff, formatting
+483 files and strict typing 394 files. The corrected real tiny-game exercise
+retains all raw frames, and both software-only figures have been inspected.
+
+This receipt permits only the fixed 48 short cost endpoints. It does not admit
+long learning or replace the previous failed forecast. Actual Hold'em cost
+outcomes are still pending at this publication checkpoint.

@@ -2154,6 +2154,13 @@ all raw entries and distinguishes their code. Regression checks cover that case.
 The learner is unchanged, and the corrected collector needs its own complete
 checks before measuring Hold'em costs.
 
+The corrected measurement tool now passes the full local checks and both
+GitHub Python jobs. Each local base suite passes 1,700 tests; the optional suites
+pass 1,733 each, plus five dedicated process checks on each version. The saved
+permission record binds those checks to the exact code. The next action is the
+fixed short Hold'em cost experiment; it still cannot start a long study or
+establish better play.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

@@ -13,8 +13,13 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
-## 2026-11-09 — Batch function costs, prospective
+## 2026-11-09 — Batch function costs, checked source
 
+- **Checked source:** `0a86ca8`; both hosted code jobs passed in run
+  [42616172811](https://github.com/jimmy-sim/poker-ai/actions/runs/42616172811).
+  Corrected base1,700+24skip each; extras1,733 each; five slow integrations each;
+  strict394 and format483. Formal cost-only source receipt published before
+  actual short prefixes. No Hold'em cost outcome at this checkpoint.
 - **Issue / question:** #4, after the retained 7201.492439s forecast failure.
   Profile actual function costs before optimizing; [plan](batch-overhead.md) and
   config precede code/outcomes. No unchanged timing retries or relaxed caps.
