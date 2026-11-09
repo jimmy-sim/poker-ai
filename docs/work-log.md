@@ -13,6 +13,34 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Averaging-history runner and independent checks
+
+- **Authorization:** One work window from midnight to 08:00 Pacific, continuing
+  issue #4 and [PR #30](https://github.com/jimmy-sim/poker-ai/pull/30). This does not
+  create another night of work. Codex-assisted; human hands-on time not recorded.
+- **Change:** Complete own replay/report runner, source-bound toy correctness and
+  historical forecast/admission, plus isolated native scalar comparison. Retain
+  raw cumulative weights to reconstruct whole/suffix policies without training.
+  Reports keep all seeds, duplicate current paths, support and fixed opponents.
+- **Tests so far:** 193 focused fast checks pass. Complete three-process toy
+  archive replay and four deliberately rehashed corruptions pass all 13 replay
+  checks (8.99s). Altered scores, support, window timing and cumulative masses
+  fail semantic validation despite recomputed file hashes. Fictional header/grid
+  fixtures test schema only, explicitly not research outcomes.
+- **Independent adapter:** Previously audited medium-game policies pass both
+  target signs, all four own modes and fixed-reply cache reuse. Reference training
+  and strategy export are blocked in this integration check. Partial own/native
+  attempts are retained, overwrite refused, admission denied before any worker.
+- **Remaining at this checkpoint:** Complete base/optional checks, hosted CI,
+  clean source-bound toy correctness/forecast and published admission. No new
+  Hold'em trajectory, new native study, selected snapshot or default admission.
+- **Complete code checks:** Base `make check` passes 1439 tests with 24 optional
+  skips on Python 3.11/3.12 (231.53/219.48s). All-extras suites pass 1472 each
+  (262.02/251.12s); all ten relevant slow checks pass (31.88/32.62s). Strict typing
+  covers 338 files in base and optional environments; lint/format/hooks pass.
+  Both code CI jobs and source-bound correctness/forecast/admission still precede
+  any new Hold'em replay. Local testing times are not experiment or human hours.
+
 ## 2026-11-08 — Current policies and averaging history, prospective
 
 - **Request / issue:** Continue autonomous daytime #4 work after the fixed-opponent
@@ -44,6 +72,17 @@ For a guided explanation of the ideas and results, start with the
   versions (235.52/225.48s); optional suites pass 1398 each (278.33/270.72s).
   Lint/format/clean strict typing pass. Complete runner/admission/study pending;
   no new poker learning. Journal step 33 explains the planned comparison.
+- **Published foundation:** `f5c9b3b`, both hosted jobs 42534643024 pass. Complete
+  runner/replay/report/admission and isolated native adapter subsequently drafted
+  locally. Latest 146 fast checks pass (2.00s), strict typing 336 files, lint and
+  format pass. Actual three-process toy archive integration passes Python 3.11/3.12
+  (5.50/5.40s); six numerical files reproduce byte-for-byte and six explicitly toy
+  figures render (20.86s), representative layouts inspected.
+- **User returned:** Stop this autonomous block before new poker replay. Full
+  runner changes remain isolated locally, beyond the published foundation. Native
+  adapter integration/schema tests, final relevant full checks/CI, source-bound
+  correctness/forecast and admission remain required before the fixed study.
+  No new Hold'em trajectory outcomes, window choice or agent default change.
 
 ## 2026-11-08 — Saved controlled-policy reply diagnosis, prospective
 

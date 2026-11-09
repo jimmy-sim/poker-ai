@@ -1912,10 +1912,32 @@ complete worker grids. Fictional ledger fixtures check missing/altered entries;
 their invented values are not poker results. The real archived loader also
 passes with new training and native solver construction explicitly blocked.
 
-The full runner, source-bound correctness/compute admission, new poker replay
-and native audit remain pending. Full foundation checks also pass: 1365 base
+Full foundation checks also pass: 1365 base
 tests with 24 optional skips and 1398 optional-suite tests on each Python version.
 These are software checks. The previous failed performance gate remains.
+
+**November 9 software follow-up:** The runner now saves and reconstructs the
+whole average and both late windows, checks every saved strategy, and compares
+each one against the same frozen opponents. It also refuses to start learning
+until the checked-source and compute permissions are recorded. An interruption
+leaves a failed receipt and partial files instead of erasing the attempt.
+
+There are 193 passing focused fast checks. A three-process toy test exercises the
+entire archive, with all planned profiles and opponent conditions. Further tests
+deliberately change a score, a window boundary, coverage or raw learning weights
+and recompute the file hashes. Replay still rejects the altered meaning. A hash
+checks whether bytes changed; reconstructing and rescoring checks what they mean.
+The independent adapter also checks old audited Hold'em policies with both player
+signs, while reference training and strategy export are blocked.
+
+These are software results, not stronger play. Full local checks, GitHub CI,
+source-bound correctness/forecast and published admission still precede the new
+Hold'em replay. The plan and all old failed limits remain unchanged.
+
+The complete local code checks now pass too: 1439 base tests with 24 optional
+skips and 1472 optional-suite tests on both Python versions. All ten longer checks
+pass on both. GitHub CI and the source-bound correctness/compute receipt remain
+separate gates before the study.
 
 ## Your own learning notes
 
