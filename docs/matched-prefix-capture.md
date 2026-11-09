@@ -30,3 +30,49 @@ trajectory/inventory/serialization/partial-failure tests; full applicable checks
 published source-bound toy-only receipt and replay; plain-English journal and
 work log with exact outcomes and terminal command. This is not poker evidence
 or a long-run admission.
+
+## Implementation and latest focused checks
+
+The implementation captures144OWN policies and96raw ledgers, verifies384full
+update-boundary fingerprints and72source-work crossings against uninterrupted
+tiny paths, then archives/replays every artifact. Terminal-path enumeration and
+all deterministic tiny best replies independently check EV/exploitability at
+the predeclared1e-12fixture-chip tolerance. No native solver or poker tree is
+constructed.24logical cases share one tiny tree and six seed/rule trajectories;
+they are not independent game-strength observations.
+
+22focused tests pass on both base runtimes1.84/1.95s. They cover known constant
+utility and signs, nonfinite metrics, exact inventories/source-step identity,
+archive corruption, pre-input/dirty-source/partial/timeout/archive failure
+retention and the replay diagnostic tolerance. Counts, flags, policy/ledger
+bytes and sources remain exact. The last diagnostic uses the ALREADY preset
+1e-12tolerance across platforms; no cap, seed or scientific gate was changed.
+
+The early development reader rejected uncommitted source; run now rejects it
+before software training, persisting an incomplete receipt. Integration tests
+create a separate temporary clean Git source copy, preserving actual user
+modifications without weakening the production gate. New proof generation needs
+a clean branch; published-proof replay can run in the user's existing checkout.
+
+Ruff/format553 and strict455 pass. Complete final base/optional suites and source
+CI are running after the portability correction and parent integration. An
+accepted clean source-bound published toy receipt does not exist yet. No actual
+Holdem replay/score, full runner/native integration, compute forecast or long
+admission is created by these software checks.
+
+## Three questions to explain the archive
+
+**Why save raw averaging weights as well as probabilities?** Probabilities alone
+cannot reconstruct how much each earlier decision contributed. The raw weights
+let the replay verify that normalization gives exactly the stored average at
+the same update count. They are own training data, never solver outputs.
+
+**How independent is the arithmetic check?** The test walks terminal paths and
+enumerates deterministic replies instead of using the own vectorized scoring
+functions. The underlying tiny game is shared, so it checks arithmetic/storage
+and does not independently validate poker rules or playing strength.
+
+**Does passing this proof admit the real experiment?** No. It covers only
+explicit tiny fixtures. Actual source factories, full archives/partial grids,
+native comparison, conservative compute forecast and checked published admission
+remain required before the unchanged7200own/900native study.

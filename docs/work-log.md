@@ -18,6 +18,12 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:**#4; [bounded plan](matched-prefix-capture.md) before implementation:
  24logical tiny cases/48targets/144own policies/96raw ledgers, complete immutable
  archive/replay and independent exact arithmetic. No actual Holdem score/path.
+- **Implementation:**22focused checks pass each1.84/1.95s;144policy/96mass
+  IO,384exact-boundary/72work checks, independent terminal/pure-response math;
+  retained pre-input/dirty-source/partial/timeout/archive failures. Temporary
+  clean-source fixtures preserve main's ten modified outputs. Counts/hashes
+  exact; replay error uses existing1e-12fixture-chip tolerance. Ruff/format553/
+  strict455. Final source/full checks running; no accepted published proof yet.
 - **Gate:** fixed180s software stage, complete local/hosted source checks before
  published clean proof. Future7200/900 caps and own/native runner/forecast/
  admission remain; no future work schedule. Codex; personal hours unrecorded.

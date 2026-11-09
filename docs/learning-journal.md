@@ -19,7 +19,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November9 update: steps35–41 retain a failed compute gate, a tested overhead
+November9 update: steps35–42 retain a failed compute gate, a tested overhead
 change, a completed72-path batch study and its saved-current diagnosis. All
 216latest profiles and1,728fixed targets pass independent scalar checks. The
 harder game's latest policies are substantially more exploitable than averages,
@@ -2423,6 +2423,36 @@ GitHub source checks pass. It includes every48planned target, from18,727to
 which saved comparisons the future experiment must make. It does not train
 those prefixes or report how good they are. A regression check recomputes
 every target and preserves that no-training/no-admission boundary.
+
+## 42. Save what the learner knew at an exact update — November 9
+
+The next experiment will compare strategies at the same update count. Before
+using poker runs, we need to trust the files saved at those moments. This step
+tests that storage with a tiny teaching game. It is not another Holdem result.
+
+The archive stores the latest action probabilities and both averages. It also
+stores the raw weights used to make each average. Keeping those weights lets
+us check that dividing by the total recreates the saved probabilities exactly.
+We also compare the observed learner with a separate uninterrupted run, so
+saving a file cannot quietly change the learning path.
+
+The fixture covers144policy readouts,96raw weight tables and384update-boundary
+checks. Its24logical cases share one tiny game and repeat six seed/rule paths.
+That tests the storage inventory; it does not create24independent poker results.
+A separate terminal-path calculation and exhaustive replies check the arithmetic.
+
+All22focused checks pass on both Python versions. Deliberately broken archives,
+missing records, invalid numbers, interrupted work and expired time limits must
+fail visibly and keep incomplete output. A new source-bound proof also requires
+clean committed code. Tests use a temporary clean copy, so they preserve the
+results you already modified in your main checkout.
+
+The last replay check uses the preset rounding tolerance for its error summary,
+while retaining exact counts, flags, hashes and raw weights. This avoids making
+a cross-machine rounding difference look like a changed strategy. Final full
+checks and publication are still pending. [PR39](https://github.com/jimmy-sim/poker-ai/pull/39)
+and the [software-only method](matched-prefix-capture.md) record the remaining
+gates. No matched-update Holdem run is admitted and the agent default is unchanged.
 
 ## Your own learning notes
 
