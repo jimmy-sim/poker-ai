@@ -13,6 +13,16 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Offline saved-strategy viewer, prospective
+
+- **Issue:**#4; [prospective acceptance](batch-strategy-viewer.md) fixes a
+  read-only saved-policy comparison and optional n/p/q terminal browser before
+  implementation. Distribution L1 is not EV loss or playing strength.
+- **Scope:** verified own archives/complete published audit chain; only acting
+  player's own cards and public board; preserve all old scientific source/data.
+  New focused tests, actual CLI and full relevant checks/hosted CI required.
+- **Assistance:** Codex; hands-on time unrecorded. No training or new schedule.
+
 ## 2026-11-09 — Saved batch current policies, independently audited
 
 - **Issue:**#4; [plan](batch-current-diagnosis.md)/config fixed before batch
