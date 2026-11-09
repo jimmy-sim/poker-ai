@@ -1,3 +1,10 @@
+.PHONY: profile-batch-overhead report-batch-overhead
+profile-batch-overhead:
+	$(UV) run --locked --extra research python scripts/profile_batch_overhead.py
+
+report-batch-overhead:
+	$(UV) run --locked --extra research python scripts/report_batch_overhead.py
+
 .PHONY: check-frozen-batches profile-frozen-batches study-frozen-batches report-frozen-batches
 check-frozen-batches:
 	$(UV) run --locked python scripts/check_frozen_batches.py

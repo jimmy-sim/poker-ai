@@ -2141,6 +2141,12 @@ that profiling changes no saved strategy, RNG state or work count. That gives a
 measured reason for a later change. No optimizer or new stronger agent exists at
 this prospective checkpoint. Codex assists; your hands-on time is not recorded.
 
+The implementation now passes 49 focused fast checks and five integration
+checks on each Python version. All 48 tiny-game copies preserve their expected
+states, and the profiler's visit counts match charged work. Saved reports replay
+without training and reproduce their numerical files. These are software checks;
+full project checks and GitHub CI still precede the actual Hold'em cost profile.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

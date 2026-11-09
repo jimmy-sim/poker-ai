@@ -29,6 +29,16 @@ For a guided explanation of the ideas and results, start with the
   forecast. Final artifact CI42609429095 pending at97234bb; no new-policy native
   audit or long study claimed. All historical source/data/failures remain intact.
 - **Status:** Prospective only. Codex-assisted; human hands-on time not recorded.
+- **Tested implementation:** 49 focused fast checks pass; all five new relevant
+  integrations pass each optional runtime (57.30/67.82s while full checks ran).
+  Actual three-process software exercise retains all 48 endpoints/24 cProfiles,
+  exact old states/counters and independent visit/sample/mean call identities.
+  Full runner/report serialization and offline reader pass; four numerical files
+  recreate byte-identically and two explicitly software-only plots render. Real
+  recursion verifies different function/caller count tuple orders. Failure
+  receipts distinguish requested, attempted and completed training. Synthetic
+  CI/call ledgers test schema only. Full base/optional and hosted checks remain
+  before any actual Hold'em cost prefix; no optimizer or new forecast/admission.
 
 ## 2026-11-09 — Frozen-pass batches, complete failed compute gate
 

@@ -89,4 +89,25 @@ exact behavior proof against the frozen implementation, followed by the same
 complete 216-row forecast grid and unchanged limits. It cannot erase or admit
 the old failed experiment. No commercial or reference strategies enter training.
 
-No cost-profile outcomes or optimized backend exist at this checkpoint.
+## Tested implementation checkpoint
+
+The runner calls the frozen measure unchanged and checks both final states and
+profiler call counts. It retains all self/cumulative/caller entries, records
+attempted versus completed work on failures, refuses overwrites, and renders the
+complete numerical reports and two figures. Replay constructs no learner or
+reference solver. The old helper's derived extrapolation is omitted in both
+modes; all raw durations remain, and no instrumented value becomes a forecast.
+Tree/context preparation stays outside the instrumented call and inside the
+overall stage cap.
+
+49 focused fast checks pass. All five relevant integration checks pass on both
+optional runtimes (57.30/67.82s while full suites also ran). The complete explicit
+nonuniform-Kuhn exercise runs all 48 endpoints/24 real function profiles with
+exact state and call/work identities. Four numerical files reproduce byte for
+byte; full runner serialization, two software-only plots and offline reader
+checks pass. cProfile recursion tests distinguish function `(primitive,total)`
+counts from caller `(total,primitive)` counts. Synthetic source/CI and caller
+ledgers test contracts only and are not independently observed research evidence.
+
+Full base/optional suites and hosted complete-code CI are pending. No actual
+Hold'em cost-profile outcomes or optimized backend exist at this checkpoint.
