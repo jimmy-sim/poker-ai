@@ -190,3 +190,23 @@ def test_actual_source_manifest_without_learner_or_reference_construction() -> N
     for target in saved["iteration_targets"]:
         assert target["target_iteration"] <= target["baseline_original_final_iteration"]
         assert target["baseline_original_final_work"] >= 10000000
+
+
+def test_published_prospective_targets_recompute_from_verified_source() -> None:
+    from poker_ai.postflop.pipeline_report import check_source
+
+    saved = json.loads((ROOT / "results/matched-update-batches/plan.json").read_text())
+    check_source(ROOT, saved["source"])
+    actual = grid.manifest(ROOT)
+    for key in (
+        "input_sha256",
+        "iteration_targets",
+        "self_pairs",
+        "new_profiles_planned",
+        "reused_profiles",
+        "new_fixed_targets_planned",
+        "reused_fixed_targets",
+    ):
+        assert actual[key] == saved[key]
+    assert saved["source"]["dirty"] is False
+    assert saved["new_strength_scores"] is False and saved["long_run_admitted"] is False

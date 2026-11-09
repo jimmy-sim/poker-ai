@@ -39,7 +39,7 @@ def test_combined_observer_matches_independent_unobserved_steps(
         trace[direct.iteration] = (direct.nodes_visited, guard(direct))
     initial = trace[1][0]
     labels = sorted({initial - 1, initial, initial + 1, trace[7][0], trace[16][0]})
-    target_iterations = [1, 2, 7, 16]
+    target_iterations = list(range(1, 17))
     # Independent first-crossing table from the separate uninterrupted trajectory.
     crossings = {
         label: next(i for i in trace if trace[i][0] >= label) for label in labels

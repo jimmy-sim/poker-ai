@@ -9,9 +9,17 @@ The first version was compiled on November 4, 2026, looking back over the work
 already completed. Codex assisted with implementation and drafting. The personal
 notes section is for your own questions and explanations as you work through it.
 
+## Quick navigation
+
+- [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
+- [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
+- [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
+- [The next controlled test, not run yet](#41-separating-training-work-from-policy-updates--november-9)
+- [Your own reported terminal practice](#your-own-learning-notes)
+
 ## Where the project stands
 
-November9 update: steps35–39 retain a failed compute gate, a tested overhead
+November9 update: steps35–41 retain a failed compute gate, a tested overhead
 change, a completed72-path batch study and its saved-current diagnosis. All
 216latest profiles and1,728fixed targets pass independent scalar checks. The
 harder game's latest policies are substantially more exploitable than averages,
@@ -2097,7 +2105,7 @@ learning update reduce sampling noise, or would fewer updates at the same work
 limit outweigh the benefit? That needs its own fixed plan, mathematical tests
 and compute gate before any new Hold'em learning.
 
-## 35. Would steadier updates help? — November 9, prospective
+## 35. Test steadier updates: the first compute gate fails
 
 The last experiment tried filling missing late-window decisions with our own
 whole-average probabilities. It changed little. The next question is whether
@@ -2142,7 +2150,7 @@ Next we will profile where time goes before considering a verified execution
 optimization. This result says nothing yet about whether larger batches make
 the poker strategy stronger. [Exact counts and limits](frozen-pass-batches.md#retained-compute-gate-failure--november-9).
 
-## 36. Find the cost before changing code — November 9, prospective
+## 36. Find the cost before changing code
 
 The batch experiment's planning gate fails narrowly. We keep that result. Next
 we will profile which functions take time before considering an optimization.
@@ -2193,7 +2201,7 @@ kettle. Blaming the whole interval on stirring would be misleading. Likewise,
 our batch function calls the game traversal while gathering samples; its total
 time is not all validation work. The saved caller breakdown separates them.
 
-## 37. Try cheaper dispatch while keeping every check (November 9, prospective)
+## 37. Keep the checks while using cheaper dispatch
 
 The cost report suggests a small implementation question: can an array perform
 its own “are all values finite?” check more cheaply than the general NumPy
@@ -2223,7 +2231,7 @@ saved report. The old7,201.49-second failure remains visible. Different timing
 sessions are noisy, so this is not a measured percentage speedup or stronger
 agent. The separate long-study pipeline still needs its own checks/admission.
 
-## 38. Prepare the conditional batch study (November 9, prospective)
+## 38. Compare batch sizes at fixed work
 
 The cheaper checks still need their real cost gate. Meanwhile, the next step's
 [plan](reduced-batch-study.md) explains how to connect the optional implementation
@@ -2264,7 +2272,7 @@ the numbers on our exported small games; it does not establish general poker
 strength. The next preregistered question asks whether the latest policies also
 improve when held against the same original opponents.
 
-## 39. Is the latest policy safer too? (November9, prospective)
+## 39. Compare latest strategies with averages and fixed opponents
 
 The full batch experiment is running; no new result has been inspected yet.
 The [next plan](batch-current-diagnosis.md) asks whether a change helps the latest
@@ -2362,6 +2370,13 @@ and the second runtime remain in progress. [Method and checks](batch-strategy-vi
 [PR37](https://github.com/jimmy-sim/poker-ai/pull/37). Codex assisted; your own
 hands-on time or understanding is not inferred from these tests.
 
+The viewer now passes the full project checks on both Python versions:
+1,897base tests each,1,930with optional tools, plus three actual saved-data
+checks each. The real3.12terminal browser accepts n/p/q successfully, and its
+startup loads the saved chain once. These are software checks; no strategy was
+trained or made stronger by displaying it. Final GitHub checks remain required
+before merge.
+
 ## 41. Separating training work from policy updates — November 9
 
 A policy update is when the learner changes its action-probability table. Node
@@ -2400,6 +2415,14 @@ and the [prospective method](matched-update-batches.md) describe the remaining
 runner, archive, independent audit and compute gates. The full future caps
 cannot fit tonight's remaining window, so they stay intact and no run is started.
 This is preparation for a controlled test, not a stronger-agent result.
+
+
+The prospective target list is now published from clean source after both
+GitHub source checks pass. It includes every48planned target, from18,727to
+146,972recorded updates, all within the old B1 endpoints. This only checks
+which saved comparisons the future experiment must make. It does not train
+those prefixes or report how good they are. A regression check recomputes
+every target and preserves that no-training/no-admission boundary.
 
 ## Your own learning notes
 

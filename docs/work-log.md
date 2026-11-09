@@ -32,6 +32,16 @@ For a guided explanation of the ideas and results, start with the
   both-book/RNG/current/work mutation guards. Actual source manifest validates
   nine hashes/complete native receipts without training/reference construction.
   Ruff/format547/strict450 pass; full local and hosted checks running.
+- **Complete checks:**base1947+24skip each266.13/255.43s; extras1980each
+  296.34/282.65s. Strengthened every16boundary assertion passes28observer tests
+  each0.15/0.16s after those full suites; no production-code changes. Final
+  hosted run remains required. Journal navigation added; no long admission.
+- **Published grid:**sourceCI42641272661bothgreen ond37e610; clean-source
+  plan.json records48targets(18,727–146,972updates), all within B1 sourceendpoints,
+  144profilepairs/1152reusedfixed targets;9inputhashes verified. New published
+  metadata regression recomputes all targets; final artifactCI pending.
+- **Viewer merged:**PR37at0e8b422 afterfinalCI42638459644bothgreen. Main24tests
+  0.26s and actualn/p/qCLI pass;10originalmodifiedoutputs untouched.
 - **Bounded scope:** grid validation and mutation-guarded mixed work/iteration
   observation tests only. No actual Holdem replay/score or long admission.
   Full7200+900 caps plus verification cannot fit tonight; no shortened run or
@@ -42,6 +52,12 @@ For a guided explanation of the ideas and results, start with the
 - **Issue:**#4; [prospective acceptance](batch-strategy-viewer.md) fixes a
   read-only saved-policy comparison and optional n/p/q terminal browser before
   implementation. Distribution L1 is not EV loss or playing strength.
+- **Actual verification:**24fast+3actual-archive checks; fullbase1897+24skip
+  each270.11/257.66s, extras1930each298.10/285.85s;3actualsource checks each
+  65.71/62.01s, constructors blocked. Default3.11 and n/p/q3.12CLI pass.
+  Ruff/format541/strict445. No source/data edits; final hosted CI pending.
+- **Dependency merged:**PR36de4755d, finalCI42635166354bothgreen; main2checks
+  0.32s/full216+1728replay0in47.488662458s/6filesbyteequal;10userhashes intact.
 - **Scope:** verified own archives/complete published audit chain; only acting
   player's own cards and public board; preserve all old scientific source/data.
   New focused tests, actual CLI and full relevant checks/hosted CI required.
