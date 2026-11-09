@@ -13,6 +13,16 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-09 — Matched-update batch foundation, prospective
+
+- **Issue:**#4; [prospective design](matched-update-batches.md) and fixed config
+  select ALL48 endpoint iteration targets by metadata, not strength.144new B1
+  readouts/144reused batched readouts;1152new/1152reused fixed targets planned.
+- **Bounded scope:** grid validation and mutation-guarded mixed work/iteration
+  observation tests only. No actual Holdem replay/score or long admission.
+  Full7200+900 caps plus verification cannot fit tonight; no shortened run or
+  future schedule. All source/data preserved. Codex; personal hours unknown.
+
 ## 2026-11-09 — Offline saved-strategy viewer, prospective
 
 - **Issue:**#4; [prospective acceptance](batch-strategy-viewer.md) fixes a
