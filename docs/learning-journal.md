@@ -2036,6 +2036,12 @@ The complete local suites pass too: 1546 base tests with 24 optional skips and
 1579 optional-suite tests on both Python versions. All 27 relevant longer checks
 pass. GitHub must still check this complete code before the Hold'em intervention.
 
+Both complete-code GitHub jobs have now passed. The next calculation uses only
+the original saved policies and masses. It keeps both seats and every declared
+case; the independent comparison follows publication of the own results.
+The [plot-reading guide](window-fallback.md#how-to-read-the-four-figures) explains
+what the colors, diamonds, small points and signs mean before any new outcome.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the

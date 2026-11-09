@@ -48,6 +48,12 @@ For a guided explanation of the ideas and results, start with the
   Python 3.12 toy replay/report: 20 passed /one plotting skip (30.11s). Strict
   typing covers 358 files; lint/format/hooks pass. No intervention outcomes yet;
   both hosted complete-code CI jobs remain required before measurement.
+- **Checked code before measurement:** Both
+  [42596478622](https://github.com/jimmy-sim/poker-ai/actions/runs/42596478622)
+  jobs pass on `815d4700800248a9ec70fc295f8c34f64ec101f8`. The complete source
+  inventory SHA is `c6f6761915cb106c6117bc233b76afd3d0659aad69c69ba051556b4243956f31`.
+  Publish these observed checks and the plot-reading guide before the clean
+  saved-policy run. No Hold'em intervention outcomes have been measured yet.
 
 ## 2026-11-09 — Averaging-history runner and independent checks
 

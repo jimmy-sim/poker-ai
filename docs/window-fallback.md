@@ -121,6 +121,32 @@ independence claim for shared policies, windows, modes or no-op fills. Four
 fixed figures: self changes full; self changes sampled with raw seed points;
 fixed-opponent changes full, both seats; the same sampled means, both seats.
 
+## How to read the four figures
+
+The two self-change figures compare each fill with the **same raw window**.
+Each line label identifies the regret/average mode, late window and filled seat.
+Blue shows the change in exact total exploitability, orange the within-group
+component, green the extra exact-information component. Negative is a reduction;
+positive is an increase. Diamonds show the full control or the three-seed mean;
+small sampled points show each retained seed. There are no confidence bands.
+
+**Illustrative example, not an outcome:** A total change of -0.2 means a reduction
+of 0.2 percentage points of initial pot. It is not a 20% win probability. Within
+and extra changes add to the total; they can move in opposite directions.
+
+The other two figures hold an old **own whole-average opponent** fixed in each
+column and change only the responding seat's rows. They show both-fill minus raw
+unilateral within-group gain. Blue/negative means better own EV against that
+same opponent; red/positive means worse. Both seats and all four opponents stay
+visible. Those opponents are our saved policies, not native solver strategies.
+OpenSpiel independently checks the scalar calculations instead of supplying play.
+
+Colors within each heatmap share a symmetric scale; its minimum display range is
+±1e-6 percentage points so numerical control noise stays neutral. Cell labels and
+CSV values retain their actual numbers. This display choice changes no scientific
+value, mask or tolerance. Full controls, sampled means and no-op duplicates have
+the limits stated above; color intensity alone cannot compare separate figures.
+
 ## Interpretation and next decision
 
 An effect isolates this specific fallback substitution on these saved windows.
