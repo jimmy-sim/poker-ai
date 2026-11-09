@@ -76,3 +76,19 @@ figures were inspected; legends then moved outside the data panels. Full
 focused checks on both runtimes and complete base/optional suites are running.
 Ruff/format534 and strict typing440 pass. Source/hosted checks and a published
 admission still precede ANY real saved-policy diagnosis.
+
+## Checked source published before diagnosis
+
+Both [source CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/42630704951)
+passed on2aa8f390bf9a804a9379900466915155b14f7d76, with the complete216-file
+source SHA9968baff2397ac3ea4b297700b4392ece2b94f38a9b0fa2800bd5af0b9330337.
+The [receipt](../results/batch-current-diagnosis/code-checks.json) verifies every
+byte against that Git tree. Local base1,871+24skip each299.91/294.70s; extras
+1,904each331.87/320.05s;65focused each57.20/67.49s including18slow checks.
+Ruff/format534/strict440 pass. The final three software figures were inspected
+after moving legends outside panels. No actual diagnosis has run at this
+publication; a separately published input/source admission is still required.
+
+The source study is merged at864e407. Main2tests pass31.27s; its full480-profile
+replay has zero error in113.677454333s, all four numeric files match and native
+validation passes. All ten unrelated modified user outputs remain unchanged.

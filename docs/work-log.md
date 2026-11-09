@@ -19,6 +19,11 @@ For a guided explanation of the ideas and results, start with the
   outcomes, code or diagnosis. All216 saved currents; final72currents+144averages
   versus all4 original same-context full controls, both seats:1728 fixed targets.
   No training/policy edits or favorable subsets. Source study/audit still running.
+- **Source gate:** both CIjobs42630704951passed on2aa8f39;216-fileSHA
+  9968baff2397ac3ea4b297700b4392ece2b94f38a9b0fa2800bd5af0b9330337.
+  Base1871+24skipeach299.91/294.70s; extras1904each331.87/320.05s;65focused
+  each57.20/67.49s including18slow; strict440/format534/Ruff. Final3toyfigs
+  inspected. Publish source record before admission/anyactualdiagnosis.
 - **Implementation:**47 focused fast checks pass, independent exact path/reply
   math, self-zero signs, real Git-tree checks, source/native schema/failure gates.
   Analytic-only216/1728process/archive exercise16checks pass15.68s; three toy

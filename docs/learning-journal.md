@@ -2274,6 +2274,12 @@ software example checks216 profiles and1,728 fixed targets without training.
 These are software checks, not the real diagnosis. Full source checks and a
 published admission remain required.
 
+Both GitHub jobs and all full local checks now pass for the saved-policy
+diagnosis:1,871 base tests and1,904 with extras on each version, plus65focused
+checks each. The source record verifies every code byte against the tested
+commit. Admission must still tie it to the complete saved study and audit before
+we score real currents. No training or changed strategy is part of this step.
+
 ## Your own learning notes
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
