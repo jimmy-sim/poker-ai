@@ -11,24 +11,28 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
+- [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
-- [The next controlled test, not run yet](#41-separating-training-work-from-policy-updates--november-9)
+- [How the matched-update test was planned on November 9](#41-separating-training-work-from-policy-updates--november-9)
 - [How the new time gate works](#46-keep-the-time-budget-separate-from-playing-strength--november-10)
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
 
-November 10 update: the complete matched-update study and its independent audit
-have passed. All24 contexts,48 targets,144 captured policies and1,152 fixed
-targets remain in the report. The own replay has zero discrepancy; independent
-scalar disagreement is below1e-9 chips. This adds a second compute axis to the
-earlier equal-work comparison. It does not select a new default or establish
-general Hold'em strength. Steps54–67 retain the earlier failures and explain
-the checked route to the result. Step68 adds the complete data browser/report;
-steps69–75 validate and run a new sampling candidate. Its complete, independently checked result fails the main compressed-game accuracy
-target. Step 77 completes a saved-policy diagnosis; the next question is which merged\ndecisions produce the remaining weakness.
+November 10 update: issue #4 is improving the Hold'em learner through small,
+fully specified tests. The latest sampling candidate fails its main strength
+gate: 3.35% mean exploitability versus 2.17% for the existing batched research
+control in one known compressed game. Lower is better. The independent numerical
+audit passes, but the agent default stays unchanged.
+
+Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
+individual hands and add a terminal browser. Steps 80–81 show how changing later
+river choices can change the value of calling on the turn. The next question is
+which river distinctions or training gaps produce those later choices. None of
+these results establishes competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3264,6 +3268,55 @@ Next, hold the opponent fixed and change only our future river continuation
 to test that explanation. This is a saved-strategy question, not a claim that
 retraining with a new feature will improve the agent. Codex assisted with the
 implementation and analysis; personal practice or hours were not recorded.
+
+### Step 80 — hold the opponent fixed and change later choices (November 10)
+
+The next check asks why a turn call can become better when later river choices
+improve. It compares an exact reply, a constrained reply, and a hybrid that
+uses the exact earlier reply but the constrained river choices. The opponent's
+action probabilities stay fixed in all three cases.
+
+**Example:** imagine stopping pays 1. Continuing pays 4 if the later decision
+is good, but 0 if it is bad. The preferred earlier action changes even though
+nothing about the current observation changes. These are made-up payoff values
+used in arithmetic tests, not poker results.
+
+The [fixed saved-data panel](private-prefix-continuations.md) includes every
+previously selected group and every exact member, with all seeds and controls.
+An added two-player regression catches and fixes a support-checking mistake;
+14 focused checks now pass. The original failure is retained. Actual saved-poker values and
+full verification follow. This measures a continuation effect against a fixed
+opponent; it does not measure improvement from retraining the agent.
+
+### Step 81 — see the river weakness affect a turn call (November 10)
+
+The continuation check is complete. It keeps the opponent fixed within each
+saved snapshot and changes only the responding player's later river choices.
+All 90 selected groups and 415 exact situations remain in the report.
+
+In the pocket-nines example, the unfavorable new seed values folding at
+-18 chips. Calling with constrained river play is worse, about -19.85.
+Calling with the exact reply's later choices is better, about -12.72.
+The current turn cards did not change. The later continuation changed what
+calling was worth.
+
+Across the nine pocket-nines examples, seven switch from favoring fold to
+favoring call. Two already favor calling, and remain in the table. Across
+all selected turn records, 10 of 31 preferred actions change. These are
+dependent saved records, not a win rate or a fraction of all poker hands.
+
+The first diagnostic had a support-checking bug. Its original log and source
+are retained; a small two-player example reproduced and fixed it. The corrected
+program matches every checked source root and responding support exactly.
+Both base environments pass 2,318 tests; both optional environments pass 2,374.
+No new poker training or reference strategy input occurred.
+
+The [figure and report](private-prefix-continuations.md) explain the colors,
+all nine cases and reproduction commands. Next, investigate which river
+distinctions or training gaps cause the constrained choices before selecting
+another training change. This does not establish a stronger agent; the main
+sampling experiment's strength gate still fails. Codex assisted with the work;
+no personal practice, hours or mastery are inferred.
 
 ## Your own learning notes
 
