@@ -138,3 +138,19 @@ clock116.913814416s<180. All tables and three inspected heatmaps remain explicit
 labeled one-game toy fixtures. See results/private-prefix/software. This does
 not replace the real900-second profile,600-second residual overhead gate,
 strict native twice-elapsed gate or checked published long-study admission.
+
+
+## Complete own study; independent comparison pending
+
+After checked published admission39144dc and constructor-blocked recomputation,
+all48 changed paths/432readouts/288ledgers/1152fixed conditions complete in
+whole1201.279549125s. Own replay discrepancy0, all864/2304 comparisons retained,
+three new heatmaps inspected. Primary medium/q8/B4/signed/linear final10m
+seed percentages are2.311742130540/4.494857881670/3.245725163721. Existing IID-B4
+controls are2.793291801246/0.375286609858/3.349472198669. New mean3.350775058644%
+versus2.172683536591%, mean paired gap-1.178091522053percentage points; the
+median3.245725163721% and worst4.494857881670% fail unchanged1%/2.5% limits.
+Retain every unfavorable outcome; no default/fresh/global admission. Low-game
+and medium exact-control accuracy pass. Coverage including warm initialization
+is not learned post-warm support. These own quantities remain pending the
+independent900-second comparison. See results/private-prefix/study.

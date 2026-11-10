@@ -27,8 +27,8 @@ scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
-steps69–72 build and validate a new sampling candidate and its complete small-game
-rehearsal. The real compute forecast and long-study admission remain next.
+steps69–75 validate and run a new sampling candidate. Its complete own result
+fails the main compressed-game accuracy target; independent comparison is next.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3139,6 +3139,32 @@ strength is unmeasured and that no default or fresh/global policy is admitted.
 It is published before a read-only recheck with learner/reference constructors
 blocked, and before long training. The full prescribed budgets and final
 verification must also fit the remaining authorized window.
+
+### Step 75 — the new sampling method misses the main target (November 10)
+
+All48 planned training paths finished. The run saved432 strategies and288 raw
+average books, scored1,152 fixed conditions, and kept every planned comparison.
+It took20minutes1second, and archive replay finds zero difference. These are
+complete own results; the independent check is next.
+
+The main compressed deeper-game result is unfavorable. Average vulnerability
+is3.35% of the initial pot with the new sampler, compared with2.17% for the
+existing same-batch sampler. Lower is better. Two seeds improve a little, but
+one gets substantially worse. All three remain in the report. The new median
+is3.25% against a1% limit; the worst seed is4.49% against a2.5% limit. The main
+accuracy target fails, so this does not justify changing the default.
+
+The small game and the deeper exact-information control pass their accuracy
+limits. That helps locate the question, but it does not rescue the compressed
+primary result. Also,100% coverage including the exact warm start does not mean
+all those decisions were visited again during learning; both coverage views
+remain visible.
+
+The useful next step is to independently verify all numbers, then examine the
+saved policies to understand the larger loss in one seed. We will not repeat
+unchanged training until it happens to look favorable. The result covers two
+known small games and three seeds, and does not establish general Hold'em
+strength. Codex assisted with implementation, experiments and documentation.
 
 ## Your own learning notes
 

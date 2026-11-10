@@ -2198,3 +2198,31 @@ to run the prescribed known-game experiment, not a measured improvement. The
 record is published before constructor-blocked recomputation and any new long
 trajectory. Original7200/900 caps, complete grid, seeds and gates remain fixed.
 The actual window must still fit full caps plus final verification before launch.
+
+
+### November 10 — complete own private-prefix study, main accuracy gate fails
+
+Before any new long trajectory, published admission39144dc was canonically
+observed on GitHub and recomputed with5learner/reference constructors blocked
+in126.528608083s (all36 bound inputs). The17:08UTC window check left10320s,
+covering full7200+900caps plus1800verification seconds before20:00UTC.
+The original-runtime study completes all48paths/432readouts/288ledgers/1152fixed
+conditions,864self/2304fixed contrasts in whole1201.279549125s<7200. Own archive
+replay chip/unitless discrepancy0; all3 new heatmaps inspected. No case, seed,
+readout, cap or threshold changed.
+
+Primary medium/q8/B4/signed/linear final10m exploitability percentages by seeds
+20261301/02/03 are2.311742130540,4.494857881670,3.245725163721. Existing IID-B4
+controls are2.793291801246,0.375286609858,3.349472198669. The new mean is
+3.350775058644%, versus2.172683536591%; paired baseline-minus-new mean
+-1.178091522053percentage points. Two small positive seed differences and one
+large negative are all retained. New median3.245725163721>1% and worst
+4.494857881670>2.5% fail the unchanged primary accuracy limits. It is not rescued
+by a different readout, B16, or the exact control. Low-game accuracy passes;
+medium exact control also passes (median0.183407419724%, worst0.229841014432%).
+Whole warm-inclusive coverage is100%, while primary medium post-warm row
+coverage is0.652226/0.593261/0.613718; warm support is not learned coverage.
+These are own known-game quantities pending independent comparison. Publish all
+complete evidence first; keep default/fresh/global admission false. Next is
+the independent900-second audit, then diagnosis using saved policies, not an
+unchanged favorable training retry. AI-assisted execution/reporting.
