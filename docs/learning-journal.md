@@ -23,7 +23,7 @@ notes section is for your own questions and explanations as you work through it.
 November10 update: the original batch experiment and saved-current diagnosis are
 complete. We are building the next controlled test: compare strategies after the
 same number of learning updates, while showing their different compute costs.
-Steps43–47 explain the new input, capture and independent-checking software.
+Steps43–48 explain the new input, capture and independent-checking software.
 The small software fixtures pass local checks, but the new real Hold’em study
 still needs complete source checks, a published software proof and the fixed
 compute gate. No new default or competitive-strength claim follows.
@@ -2577,6 +2577,20 @@ check records; another test ensures old checks cannot start a fresh tiny proof.
 These are software corrections, not a new strength measurement. Complete checks
 are being repeated on the corrected source before any real timing run. Work and
 verification remain AI-assisted; no new personal practice/time was reported.
+
+## 48. Check the complete corrected source — November 10
+
+Both Python versions now pass the final checks:2,044 base tests,2,097 optional
+tests and59 relevant slow integrations each. Lint, formatting and strict typing
+also pass, and both hosted GitHub jobs are green. The source receipt links the
+actual logs to the tested commit; earlier checks stay in the log as earlier
+checks, not substitutes for this corrected version.
+
+Next we can run the full small archive proof, publish our own evidence first,
+and ask the independent native calculator to check it within the same time
+budget. A software pass still cannot claim a stronger Hold’em agent. Real
+prefix timing and the larger comparison remain gated. AI-assisted checks;
+no new human hands-on time or practice was reported.
 
 ## Your own learning notes
 

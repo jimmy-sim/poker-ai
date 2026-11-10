@@ -1535,3 +1535,21 @@ Twelve source-gate/pre-input/fresh-proof tests passed in0.09s. No original-file
 hash, cap, seed, tolerance or performance gate was weakened. a5fffa4 full base
 checks passed2036 tests on each Python version (305.69/305.45s), but the new
 source-gate correction requires a new complete source validation before use.
+
+### November10 — final complete source gate passed at06a3402
+
+Source06a34023ae13127018346d5e888b0c50abe304b9,242 mapped files, SHA256
+a516f6c59105c701d91d5d9d2c802dc8cba5cf4cb00037064d50dd3319999887.
+Both hosted jobs passed in [run42792838522](https://github.com/jimmy-sim/poker-ai/actions/runs/42792838522).
+Final local base:2044 passed/44optional skips/143slow deselected on each version
+(311.26/312.28s); optional:2097 passed/143slow deselected (372.20/360.08s);
+relevant slow integrations:59 passed/8deselected (266.72/256.99s). Ruff lint,
+590-file formatting and491-file strict typing passed. Python3.11.17 optional
+checks used original NumPy2.4.6; Python3.12.15 used NumPy2.5.4. Base environments
+used2.5.4 and are software/data evidence.
+
+[Source receipt](../results/matched-update-pipeline/code-checks.json) and six
+byte-hashed test logs retain actual commands/results. This admits the next
+source-bound tiny software proof, not real poker trajectories. Full tiny
+own/native proof, fixed forecast/overhead and checked published admission
+remain prerequisites for the long matched-update study.
