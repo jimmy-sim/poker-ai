@@ -1705,3 +1705,17 @@ history intact. The new243-file source inventory is
 its admission remains closed while complete checks run. No old favorable timing
 is reused as admission for changed source. Original scientific modules, source
 policies, seed/grid/cap contracts and user checkout results are unchanged.
+
+### November 10 — repaired parent IO source passes all current checks
+
+The expanded 243-file source passed both hosted jobs in run
+[42803996539](https://github.com/jimmy-sim/poker-ai/actions/runs/42803996539),
+checked commit a2b1604. Local machine-asserted Python 3.11.17 / NumPy 2.4.6
+and Python 3.12.15 / NumPy 2.5.4 each passed 2,054 base tests (44 skips,
+144 slow deselections), 2,107 optional tests and 60 relevant slow integrations.
+Base timings: 380.98 / 369.94 s; optional: 387.33 / 374.84 s; slow: 373.35 /
+358.91 s. Ruff checked 592 formatted files; strict typing passed 493 files.
+The [source-bound receipt](../results/matched-update-pipeline/code-checks.json)
+binds the exact source inventory and all six log hashes. Both base checks
+selected an absolute interpreter and asserted runtime before and after.
+This permits a fresh full tiny software proof, not real study admission.

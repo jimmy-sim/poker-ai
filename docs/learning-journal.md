@@ -22,7 +22,7 @@ notes section is for your own questions and explanations as you work through it.
 
 November10 update: the corrected software proof and own timing gate passed, but
 the native overhead reader failed on publication metadata before constructing a
-reference. Step54 explains the retained failure and the planned versioned repair.
+reference. Steps 54–57 explain the retained failure, the repair and its completed checks.
 The long Hold’em study remains blocked. No default or competitive-strength claim
 follows.
 
@@ -2722,6 +2722,20 @@ scientific source byte stays frozen. Its own complete checks, tiny proof and
 
 AI-assisted implementation/checking; no additional human practice or time has
 been reported. Next: finish the current source checks and its proof chain.
+
+### Step 57 — verify the publishing repair (November 10)
+
+Both supported Python versions now pass the full current check set: 2,054 base
+tests, 2,107 optional tests and 60 slower integrations each. The two GitHub CI
+jobs passed too. These counts overlap; they are not independent experiments.
+The actual saved-policy reader was tested with training and reference
+construction blocked. It accepts publication metadata changes but rejects
+changed targets, input hashes and original source bytes.
+
+The receipt records the actual interpreter versions, rather than trusting a
+folder name. Next comes a fresh tiny end-to-end proof tied to this exact source.
+Passing these checks does not yet admit new Hold'em training or show a stronger
+agent. AI-assisted implementation and verification; no human time was reported.
 
 ## Your own learning notes
 
