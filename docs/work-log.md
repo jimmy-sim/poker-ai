@@ -1631,3 +1631,21 @@ and reference constructors blocked. The first ineligible-chain proof and all
 original bytes remain retained separately. This corrected eligible software
 proof permits the first real short-prefix timing/old-overhead gate only; it
 still does not admit a long trajectory, stronger default or global agent.
+
+### November10 — first real original-runtime compute forecast, own stage passed
+
+All72 short B1 timing rows completed, with exact original100k checkpoint checks
+and repeated endpoint bits/work unchanged. Runtime3.11.17/NumPy2.4.6 was
+asserted. Max-per-context/fixed-partition training forecast535.8363967065269s;
+unchanged guarded formula gives3343.3455868261076s <7200.
+
+The complete OLD-policy overhead corpus144captures/144scored/96ledgers/1152fixed
+targets replayed in151.010662000044s <600. Full own profiling stage including
+source/setup/72timings/overhead/archive/replay/report took238.368770834000s <900.
+[Timing receipt](../results/matched-update-pipeline/profile.json) and
+[old-policy corpus](../results/matched-update-pipeline/overhead/own.json).
+All actual old iteration/work/policy/mass identities remain explicit; this is
+not a new prefix strength result or an unpaired causal speedup claim. Publishing
+complete own evidence now precedes comparison-only native overhead. The native
+900s cap and strict2*elapsed<900 gate, then checked published admission, still
+block the long study. No scientific cap, seed or tolerance changed.

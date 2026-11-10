@@ -22,8 +22,8 @@ notes section is for your own questions and explanations as you work through it.
 
 November10 update: corrected runtime checks and a fresh eligible complete tiny
 proof have passed. Steps50–52 explain the error, retained first attempt and
-verified replacement. The first real short-prefix/old-policy overhead timing
-gate comes next. The large Hold’em comparison remains blocked until its full
+verified replacement. The own short-prefix/old-policy overhead timing gate passed; its native
+comparison and checked admission come next. The large Hold’em comparison remains blocked until its full
 compute and published admission gates pass. No default or competitive-strength
 claim follows.
 
@@ -2657,6 +2657,24 @@ and the full reporting overhead on old saved policies. The forecast and overhead
 must pass before the larger comparison starts. This is software correctness,
 not a stronger-agent result. AI-assisted execution; no new human practice/time
 was reported.
+
+## 53. Measure the work around training too — November 10
+
+The first real timing attempt passed its own checks. Three short runs in each
+of24 contexts reproduced the original saved checkpoints. Keeping each context's
+slowest repeat and the fixed worker assignments gave a guarded forecast of
+3,343.35seconds, below the7,200second own cap.
+
+The reporting exercise then used old saved policies to measure loading,
+writing, scoring, fixed opponents, replay and tables/plots. It covered the same
+144policy/96ledger/1,152target shape and took151.01seconds, below its600second
+allowance. The entire own profile took238.37seconds, below900.
+
+These numbers estimate whether the next comparison fits its budget. They do
+not show the agent improved: the overhead policies are old timing aliases.
+The complete own evidence is published before the independent native overhead
+check. That check and a published checked admission are still needed before
+long training. AI-assisted execution; no human minutes or new practice inferred.
 
 ## Your own learning notes
 
