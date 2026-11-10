@@ -3125,6 +3125,21 @@ chips. Its whole command takes341.49seconds; twice that is682.99seconds, below
 the900-second limit. Own results were published first. The remaining step before
 long training is to publish and recheck the complete admission record.
 
+### Step 74 — bind permission to the exact evidence (November 10)
+
+An **admission record** connects the exact code and settings to the checks that
+allow an experiment to start. Here it includes both hosted jobs, all local logs,
+the complete small-game rehearsal, every short timing prefix, the old-policy
+independent check, and hashes of the input files. A changed or missing input
+blocks the next stage.
+
+The admission command now recomputes these checks successfully. Its permission
+is for the fixed known-game experiment only. The record still says that candidate
+strength is unmeasured and that no default or fresh/global policy is admitted.
+It is published before a read-only recheck with learner/reference constructors
+blocked, and before long training. The full prescribed budgets and final
+verification must also fit the remaining authorized window.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

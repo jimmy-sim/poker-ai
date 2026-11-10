@@ -2184,3 +2184,17 @@ published first. Next: recompute and publish exact source/config/input/CI/whole-
 clock admission, then constructor-blocked verification of those published bytes.
 This cost gate permits no stronger/default/fresh/global claim and has not yet
 started a long new candidate trajectory. Source/seeds/caps/gates unchanged.
+
+
+### November 10 — checked known-game admission before long training
+
+The admission command recomputes the complete source274-file inventory, exact
+config, both source CI jobs, all6 local logs, published tiny proof,144timing
+rows/fixed forecast, full OLD replay/native validation, whole clocks and every
+used input hash. It produces checked_known_game_trajectory_admission_not_agent_strength
+with long_run_admitted=true while new_agent_default/fresh_global_admission=false
+and candidate_strength_still_unmeasured=true. These flags describe permission
+to run the prescribed known-game experiment, not a measured improvement. The
+record is published before constructor-blocked recomputation and any new long
+trajectory. Original7200/900 caps, complete grid, seeds and gates remain fixed.
+The actual window must still fit full caps plus final verification before launch.
