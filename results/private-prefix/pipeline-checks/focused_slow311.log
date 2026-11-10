@@ -1,0 +1,7 @@
+CHECK_RUNTIME={"python": "3.11.17", "numpy": "2.4.6", "executable": "/tmp/poker-batch-current-env311/bin/python"}
+CHECK_COMMAND=["/tmp/poker-batch-current-env311/bin/python", "-m", "pytest", "-q", "-m", "slow", "tests/test_private_prefix_design.py", "tests/test_private_prefix_execution.py", "tests/test_private_prefix_pipeline.py", "tests/test_private_prefix_native_schema.py", "tests/test_private_prefix_sources.py", "tests/test_stratified_batches.py"]
+...                                                                      [100%]
+3 passed, 112 deselected in 98.91s (0:01:38)
+CHECK_SECONDS=99.25538858398795
+CHECK_RUNTIME_AFTER={"python": "3.11.17", "numpy": "2.4.6", "executable": "/tmp/poker-batch-current-env311/bin/python"}
+CHECK_EXIT=0

@@ -12,5 +12,13 @@
   },
   "cause": "Fast synthetic old-calibration interruption test called real historical kernel_evidence in a shallow checkout; git ls-tree ad160906 returned128.",
   "correction": "Isolate the synthetic failure test with a kernel_evidence stand-in. Actual original data/history remains validated by a separate slow test, which passes locally on both runtimes.",
-  "long_run_admitted": false
+  "long_run_admitted": false,
+  "host311_job": 129951573068,
+  "host311": {
+    "failed": 1,
+    "passed": 2266,
+    "skipped": 46,
+    "deselected": 148,
+    "seconds": 841.74
+  }
 }

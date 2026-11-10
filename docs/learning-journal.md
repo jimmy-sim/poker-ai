@@ -3072,6 +3072,13 @@ its unrelated input evidence. The separate slow test still verifies the real
 archive and history. The failed hosted log is retained, and hosted checking must
 pass before proof. The sampling code, seeds and limits are unchanged.
 
+The final source now passes every local check and both hosted jobs. Each runtime
+has2,267 base passes,2,322 optional passes and three slow integration passes.
+GitHub did not schedule the latest pull-request run while its mergeability state
+was unknown, so the existing workflow was run directly on the exact commit;
+both jobs passed. The complete check packet is saved. Next comes the full tiny
+rehearsal and its independent comparison, then the real compute forecast.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
