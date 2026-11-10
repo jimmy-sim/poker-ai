@@ -28,7 +28,7 @@ earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
 steps69–75 validate and run a new sampling candidate. Its complete, independently checked result fails the main compressed-game accuracy
-target. The next step is diagnosis from the saved policies.
+target. Step 77 completes a saved-policy diagnosis; the next question is which merged\ndecisions produce the remaining weakness.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3193,6 +3193,35 @@ pass11 base checks plus one optional plotting skip, or12 checks with plotting.
 They also confirm that a self comparison gives zero and an incomplete panel is
 rejected. The actual diagnosis is next. A component can locate a weakness
 without proving its cause or an unavoidable abstraction floor.
+
+### Step 77 — find where the failed strategy loses value (November 10)
+
+The saved-policy diagnosis is complete. In the main compressed-game comparison,
+the new strategy's average vulnerability is 3.350775% of the initial pot.
+About 0.150998% comes from improvements an opponent can make while respecting
+the same information groups; another 3.199777% becomes available when that
+opponent can distinguish exact situations. Those two parts add to the total.
+
+The ordinary batched control totals 2.172684%: 0.094215% within the groups and
+2.078469% from extra information. Most of the new strategy's disadvantage
+therefore appears when finer distinctions are allowed. This tells us where to
+look. It does not prove that the groups alone caused the difference, because
+both methods used the same groups but learned different strategies.
+
+One seed accounts for a large unfavorable difference; we kept it and the other
+two seeds. The exact-information control is much stronger on these small games.
+Changing to the latest strategy also does not solve the problem: latest
+strategies are far more vulnerable than their averages.
+
+The program replayed the complete saved evidence with learning and reference
+constructors blocked, then wrote every prescribed row. It did no new training.
+Both base environments passed 2,278 tests; both optional environments passed
+2,334. The [report](private-prefix-diagnosis.md) explains the complete tables,
+support counts, separate river diagnostic and limitations.
+
+Next, inspect the particular merged decisions behind the loss before choosing
+a new representation or training experiment. Codex assisted with the analysis
+and documentation; this entry does not record personal practice or hours.
 
 ## Your own learning notes
 

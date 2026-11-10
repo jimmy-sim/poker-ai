@@ -2280,3 +2280,30 @@ pass. Tests independently assert known signed gaps, zero-self, separate river
 metric, missing/duplicate/type/nonfinite/identity failures, missing seeds and
 no-overwrite-before-expensive-replay. Actual diagnosis and final base/optional/
 hosted checks follow; no diagnosis result or causal claim yet. AI-assisted work.
+
+### November 10 — complete saved-policy component diagnosis
+
+PR #43 merged at d83de6d after final artifact CI 42869639853 passed both jobs.
+Its negative performance gate remains failed; independent numerical validation
+does not change that outcome. PR #44 is retargeted to main.
+
+The constructor-blocked saved-policy diagnosis completed in 352.852207541s:
+324 method points / 216 paired points / 108 method groups / 72 paired groups,
+all fixed seeds/readouts/checkpoints/encodings/games retained. Frozen model
+a5a2e28 and own/native input hashes validated. No training/reference constructed.
+
+Primary compressed linear-average means (percent initial pot) are candidate
+3.350775 = 0.150998 within + 3.199777 extra, IID 2.172684 = 0.094215 + 2.078469.
+The candidate-minus-IID excess is concentrated in extra-information value;
+this locates a vulnerability, not a causal representation-only conclusion or
+irreducible floor. Exact-control and all current/uniform/linear readouts remain
+visible. River-switch values stay separate. Whole warm support does not imply
+learned coverage; updates differ at equal work.
+
+All four local suites pass: base 2,278 / 47 skipped / 148 deselected in
+379.79s (311) and 369.38s (312); optional 2,334 / 148 deselected in 414.01s
+and 402.83s. Runtime before/after assertions retained with exact logs.
+Actual diagnosis figure visually inspected. Cross-runtime numeric reproduction
+and final hosted CI remain to be recorded. Main was fast-forwarded to PR #43
+only after a fresh byte snapshot; all ten unrelated modified files and exact
+status were preserved. AI-assisted execution; no inferred human minutes.
