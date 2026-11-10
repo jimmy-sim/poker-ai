@@ -27,8 +27,8 @@ scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
-steps69–71 build and test a new sampling candidate and its execution checks,
-without admitting a real study yet.
+steps69–72 build and validate a new sampling candidate and its complete small-game
+rehearsal. The real compute forecast and long-study admission remain next.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3078,6 +3078,27 @@ GitHub did not schedule the latest pull-request run while its mergeability state
 was unknown, so the existing workflow was run directly on the exact commit;
 both jobs passed. The complete check packet is saved. Next comes the full tiny
 rehearsal and its independent comparison, then the real compute forecast.
+
+### Step 72 — the complete rehearsal agrees with an independent calculator (November 10)
+
+The new pipeline has now completed its small-game rehearsal. It saved432
+candidate strategies and288 raw average books, checked1,152 fixed conditions,
+and retained all648 baseline strategies and1,728 baseline conditions. Own
+archive replay finds zero difference. The files were published before the
+independent calculator was constructed.
+
+OpenSpiel then checked1,080 profiles and2,880 fixed conditions. Its largest
+difference is about0.00000000000000056chips. The complete own command, GitHub
+publication, independent check and final replay took116.91seconds together,
+inside the fixed180-second allowance. The three new heatmaps are labeled toy
+fixtures: their repeated rows represent one small Kuhn game under logical
+context names, not results on multiple Hold'em spots.
+
+This completes the software rehearsal. Next comes a real cost measurement of
+all144 short prefixes and the full old-policy workload. Only a fitting forecast
+and a checked published admission can permit the long new study. Codex assisted
+with implementation, verification and publication; no new human practice or
+minutes are inferred.
 
 ## Your own learning notes
 

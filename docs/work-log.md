@@ -2130,3 +2130,22 @@ previous shallow-history hosted failures remain retained, including311's
 1failed/2266pass/46skip/148deselect841.74s. These are source software checks
 only; actual shared-clock tiny proof, real forecast and checked published
 admission remain required before long study. AI-assisted work.
+
+
+### November 10 — complete source-bound tiny proof passes
+
+Own full-shape rehearsal432policies/288ledgers/1152fixed plus648baseline
+profiles/1728baseline fixed conditions completes whole22.93704875s. Own replay
+errors are exactly0; all864self/2304fixed contrasts and three inspected labeled
+Matplotlib heatmaps are retained. The15 own files match committed bytes at
+f684a319c5d48d25d5ae709c75820e4e0e0c82de; GitHub's canonical commit/tree
+79d72b074fe8898b4f677d562799cc75561e5758 was observed before reference construction.
+OpenSpiel independently checks1080profiles/2880fixed, maximum error
+5.551115123125783e-16chips. Complete native command11.838831416s; shared own
+command/publication/native/final-replay116.913814416s<180. Raw journals and exact
+child receipts remain published. This repeats ONE nonuniform Kuhn game under
+logical labels; it is software evidence, not Hold'em strength. Sourcee96e07e
+and both source CI42854406375 jobs bind the unchanged274-file sourceSHAa5a2e28.
+Next: original-runtime144-prefix complete conservative forecast and OLD workload
+inside900/600, then own publication before native timing and checked admission.
+No real candidate profiling or long trajectory has been admitted yet.

@@ -123,3 +123,18 @@ original-runtime timing and comparison-only native evidence.
 Implementation tests are not the published shared-clock proof or a compute
 admission. Full local/hosted source checks, the actual proof, forecast and
 admission still have to be recorded. No new strength result is asserted here.
+
+
+## Published complete tiny proof
+
+Sourcee96e07e (274-file SHAa5a2e28…) passes both jobs in sourceCI42854406375 and
+all six retained local checks. The full tiny own result is published atf684a31
+before reference construction; its canonical GitHub tree and every local
+committed own artifact were checked. Own432-policy/288-book/1152-fixed replay
+has zero discrepancy. The complete fixture baseline adds648policies/1728fixed,
+so OpenSpiel compares1080/2880 with maximum5.551115123125783e-16chips error.
+Whole own22.93704875s, whole native11.838831416s; shared publication/final-replay
+clock116.913814416s<180. All tables and three inspected heatmaps remain explicitly
+labeled one-game toy fixtures. See results/private-prefix/software. This does
+not replace the real900-second profile,600-second residual overhead gate,
+strict native twice-elapsed gate or checked published long-study admission.
