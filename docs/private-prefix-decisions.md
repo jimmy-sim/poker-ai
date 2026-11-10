@@ -73,3 +73,90 @@ zero-loss fixture initially exposed an indexing error, which was corrected.
 All 26 focused checks now pass (0.48 seconds), including canceling-seat errors
 and interrupted-detail retention. Final suites and the saved-data reproduction
 are next. No scientific source, strategy, seed, cap or threshold changes.
+
+## Recorded result — November 10
+
+The safeguarded replay completes all nine profiles, eighteen responses and
+30,024 owned exact-row records in 357.455549 seconds. Learner/reference
+constructors are blocked, every audited root and row/street identity passes,
+and the saved arrays stay unchanged. The final summary and full detail archive
+are byte-identical to the retained initial version; the added safeguards change
+verification and interruption retention, not the measured outcome.
+
+The table shows seat-balanced total and street contributions in **chips**,
+against each fixed saved strategy. Turn plus river equals total up to roundoff.
+
+| Seed | Method | Total | Turn | River |
+| --- | --- | ---: | ---: | ---: |
+| 20261301 | B1 | 1.612973 | 1.570235 | 0.042738 |
+| 20261301 | IID | 1.005585 | 0.972863 | 0.032722 |
+| 20261301 | stratified | 0.832227 | 0.802346 | 0.029881 |
+| 20261302 | B1 | 1.982388 | 1.905523 | 0.076865 |
+| 20261302 | IID | 0.135103 | 0.126583 | 0.008521 |
+| 20261302 | stratified | 1.618149 | 1.590942 | 0.027207 |
+| 20261303 | B1 | 1.106993 | 1.073060 | 0.033932 |
+| 20261303 | IID | 1.205810 | 1.169741 | 0.036069 |
+| 20261303 | stratified | 1.168461 | 1.125874 | 0.042587 |
+
+Most total gain appears at turn decisions. For responding seat 1, every
+profile's largest group is row 819: pocket 9c 9d on Ts 9s 4d 2h, facing a bet.
+This group has only one exact member. A large turn loss therefore does not by
+itself show missing turn-card distinctions. Best-response suffixes include
+future river choices.
+
+For the unfavorable candidate seed 20261302, this group contributes 2.123817
+chips to seat 1's 3.205207-chip unilateral gain. The saved strategy folds with
+probability 0.995270. Under the exact own best-response continuation, calling
+has value -12.721224 chips versus folding's -18 chips. Those are net target
+chips conditional on this fixed opponent and reply continuation; they are not
+general poker advice. Both players' gains are averaged for exploitability.
+
+This does not contradict the large separate river-switch diagnostic. A total
+loss trace attributes gain along the saved prefix and optimized suffix. The
+river switch holds an exact reply prefix and changes river rows. These answer
+different questions and must not be added together.
+
+The [full report](../results/private-prefix/decisions/) retains all seeds,
+controls, top groups and owned rows. Every completed profile also has a
+deterministic partial detail file, so a later failure can preserve earlier work.
+
+Both final local base suites pass 2,304 tests, 47 skipped and 148 deselected,
+in 380.77 / 368.58 seconds. Both optional suites pass 2,360 tests, 148 deselected,
+in 413.90 / 402.76 seconds. Cross-runtime saved-data reproduction and final
+hosted CI are separate checks.
+
+## What to try in Terminal
+
+The committed cached report loads without training or a full poker replay:
+
+```sh
+cd /Users/jimmysim/Projects/poker-ai
+.venv/bin/python scripts/inspect_private_prefix_decisions.py --interactive
+```
+
+Use n/p for groups, s for seeds, o for methods, t for the responding seat and q
+to quit. To inspect the large seat-1 example directly:
+
+```sh
+.venv/bin/python scripts/inspect_private_prefix_decisions.py --seed 20261302 --role stratified --seat 1
+```
+
+Full saved-data reproduction takes several minutes. Use a clean research
+checkout, retain existing outputs, and choose a fresh destination with
+--output results/runs/private-prefix-decisions-local. The cached browser checks
+the committed report's hashes; it is separate from that full replay.
+
+## Three questions to explain
+
+1. **Why can a turn row show loss from river limitations?** Its action values
+   include future choices. Improving a later continuation can make calling now
+   preferable even when the current turn group has no merged card situations.
+2. **Do row losses equal extra-information value?** They sum to total unilateral
+   reply gain. Extra-information value compares exact and constrained replies;
+   the two decompositions are different.
+3. **Do 30,024 rows establish general strength?** No. They are dependent records
+   from nine saved profiles on one known restricted game and three fixed seeds.
+   They locate decisions to investigate without establishing a full-game edge.
+
+Next, compare exact, constrained and hybrid river continuations on all
+previously ranked groups before choosing a representation or training change.
