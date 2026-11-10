@@ -1596,3 +1596,11 @@ selectedPython3.12 local base check is running with machine-reported runtime
 before/after; corrected receipts and a fresh eligible tiny proof must follow.
 Earlier journal/log claims of local base312 and reader312 are superseded by
 this correction; their numeric data have not been hand-tuned or discarded.
+
+Both explicitly selected base runs now passed with runtime asserted before and
+after:Python3.11.17/NumPy2.4.6 (2044passed,300.64s) andPython3.12.15/NumPy2.5.4
+(2044passed,287.24s);44optional skips/143slow deselections each. The original
+invalid-chain proof files are retained in the superseded folder and original
+commits. Their root latest-attempt aliases are cleared for a new eligible proof.
+Corrected source receipts will use parsed machine runtime headers, not directory
+names. No real timing or new trajectory has run.

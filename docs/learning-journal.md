@@ -2612,7 +2612,7 @@ practice or minutes reported.
 
 ## 50. Check the interpreter, not the folder name — November 10
 
-Correction to steps48–49: I mislabeled a local check. The folder was called
+Correction to steps48–49: the assistant mislabeled a local check. The folder was called
 base312, but `uv` used the project's defaultPython3.11 and recreated it. The
 archive read labelled312 also actually ranPython3.11.17/NumPy2.4.6. Optional
 and hostedPython3.12 checks did pass; the local base312 check was still missing.
