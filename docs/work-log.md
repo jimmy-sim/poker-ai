@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-10 — Full matched-update pipeline, prospective
+
+- **Issue:**#4; [detailed plan](matched-update-pipeline.md) and config published
+  before code/outcomes. Complete the unchanged24-context/48-target design,
+  full original-B1 barrier and144new/144reused profiles,1152new/reused targets.
+- **Compute:** all72 timing repeats; original2*(2*training+600)<7200, full added
+  old-policy overhead<600, comparison-only native overhead2*elapsed<900.
+  Real own/native7200/900 and shared tiny-proof180 caps unchanged.
+- **Preservation:** freshly hashed all ten current unrelated main modifications;
+  isolated research/matched-update-pipeline from latest GitHub main88ebfba.
+- **Direction:** continuing model research and reported user learning, not
+  contribution counts or inferred human hours. Codex-assisted; hands-on unknown.
+- **State:** planning only. Full source checks/proof/forecast/published admission
+  precede actual long trajectories; no native/reference output enters training.
+
 ## 2026-11-09 — Matched-prefix capture, prospective software only
 
 - **Issue:**#4; [bounded plan](matched-prefix-capture.md) before implementation:

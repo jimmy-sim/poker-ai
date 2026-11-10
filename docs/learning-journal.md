@@ -2473,7 +2473,39 @@ branch; the integration tests create their own temporary clean copy. Final
 artifact GitHub checks remain required before merge. The next scientific work
 still needs the actual runner, comparison adapter, forecast and admission.
 
+## 43. Build the complete equal-update experiment — November 10
+
+The next question is whether a bigger batch helps when both learners make the
+same number of updates. The earlier experiment instead gave them the same
+amount of game-tree work. We will report both comparisons and their different
+costs. This is a planned test, not a new stronger-agent result.
+
+The target list already fixes all24 contexts and both larger batches, giving
+48 targets and three saved readouts at each. First we must replay every old B1
+path and match its old checkpoints exactly. New target snapshots stay unscored
+until every original path passes. Then we can score and independently check
+the144 captured policies against the same original opponents.
+
+Timing must cover more than learning. The new gate also measures loading,
+scoring, writing/replaying files and independent comparisons. It keeps the old
+budgets and worst-repeat forecast formula. A failed compute or correctness gate
+stops the large run; it does not change the rules until they pass.
+
+The project is an ongoing research pursuit. For each milestone we will record
+the question, change, real evidence, limitations and next decision. Your own
+practice and reported time stay separate from AI work and experiment runtime.
+The [continuing roadmap](roadmap.md#continuing-research-program--user-direction-november-910-2026)
+records this direction without changing the original phase contracts.
+[Prospective pipeline](matched-update-pipeline.md).
+
 ## Your own learning notes
+
+**November 9, 2026 — your report:** You replayed the published prefix archive,
+then used the saved-strategy browser's n/p/q controls to inspect ranks1–9 and
+quit. The replay reported all144 policies/96ledgers/384step/72work checks.
+This records the exercise you reported; hands-on minutes and understanding
+were not measured or inferred.
+
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
 controlled-training tests on your Mac. The replay passed and all 20 tests passed
