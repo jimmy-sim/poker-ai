@@ -1719,3 +1719,17 @@ The [source-bound receipt](../results/matched-update-pipeline/code-checks.json)
 binds the exact source inventory and all six log hashes. Both base checks
 selected an absolute interpreter and asserted runtime before and after.
 This permits a fresh full tiny software proof, not real study admission.
+
+### November 10 — repaired-cohort full tiny proof passes
+
+Own evidence completed in 4.42767816700507 s and was pushed at 92dacbd,
+observed on GitHub (workflow 42806194225) before native reference construction.
+The complete native comparison and final own replay finished on the same
+34.34460362500977 s clock, below the unchanged 180 s cap including publication.
+All 144 captures / 144 scored policies / 96 ledgers / 72 work crossings /
+1,152 fixed targets passed; maximum independent scalar error
+2.220446049250313e-16 fixture chips. The Python 3.12.15 / NumPy 2.5.4 base reader
+replayed the archive with fixture building, learner and reference constructors
+blocked; runtime asserted before and after. Exact source cohort: cc43405e….
+This is tiny-game software evidence only. It permits the complete short-prefix
+forecast/old-policy overhead gate; it does not admit a long real trajectory.

@@ -2737,6 +2737,22 @@ folder name. Next comes a fresh tiny end-to-end proof tied to this exact source.
 Passing these checks does not yet admit new Hold'em training or show a stronger
 agent. AI-assisted implementation and verification; no human time was reported.
 
+### Step 58 — prove the whole repaired pipeline on a tiny game (November 10)
+
+The full software proof passed: it saved and replayed 144 policies and 96 raw
+averaging ledgers, then checked 144 self-play and 1,152 fixed-opponent scalar
+targets independently. The largest discrepancy was about 0.000000000000000222
+fixture chips. Own publication, independent comparison and final replay all
+fit one 34.34-second clock. The independent solver's strategies never enter
+training.
+
+A separate Python 3.12 reader replayed the saved archive with training and
+reference construction blocked. That checks we can inspect evidence without
+quietly rerunning a learner. These tiny cases prove software behavior, not
+Hold'em strength. Next: repeat the entire prescribed real compute forecast
+for the repaired source, keeping the earlier attempt visible.
+AI-assisted work; no new personal practice or human time was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
