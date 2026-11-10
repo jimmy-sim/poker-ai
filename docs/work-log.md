@@ -1790,3 +1790,19 @@ independent scalar error2.2204460492503131e-16 fixture chips.
 Actual3.12.15/NumPy2.5.4 constructor-blocked reader also passes.
 This source-bound software proof permits full original-runtime short profiling
 only; no long trajectory or strength/default/fresh/global admission.
+
+### November 10 — complete lifecycle own compute gate passes
+
+The244-file source completed the entire prospective72-row original-runtime
+forecast and complete OLD-policy overhead, including archives, zero-error own
+replay and reports. Training forecast535.5877299844701 s; unchanged guarded
+formula3342.3509199378805 s <7200. Complete overhead148.712823249982 s <600.
+Inner own profile234.590419542044 s; full launcher/child command
+234.750478875008 s <900. Exact child receipt is preserved beside the measured
+profile. Original100k checks pass for all72 timing rows.
+This is a new-source full gate, not substitution of an earlier favorable
+partial timing. Both earlier cohorts/failures remain byte-retained. The OLD
+corpus's144 policies/96 ledgers/1152 targets are timing aliases, not new-prefix
+strength results. Publish all own evidence now before the comparison-only
+900-second native overhead; strict2*complete elapsed <900 and published
+checked admission still block the real long study.

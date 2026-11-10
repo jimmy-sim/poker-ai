@@ -20,11 +20,10 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November10 update: the corrected software proof and own timing gate passed, but
-the native overhead reader failed on publication metadata before constructing a
-reference. Steps 54–59 explain both retained publishing/destination failures and their repairs.
-The long Hold’em study remains blocked. No default or competitive-strength claim
-follows.
+November 10 update: the complete launcher passed its local/hosted checks, tiny
+software proof and own compute gate. Independent overhead and published admission
+still block the long matched-update study. Steps54–63 retain the earlier IO
+failures and explain the repairs. No stronger-agent or default claim follows.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2812,6 +2811,20 @@ strength. Next: the entire72-row real compute forecast and complete old-policy
 overhead for this source, then independent overhead and published admission.
 No earlier partial timing is substituted. AI-assisted checking; no additional
 human practice or time was reported.
+
+### Step 63 — the whole own compute gate passes (November 10)
+
+This attempt finished all72 short timings and the complete old-policy
+copy/score/archive/replay/report cycle. Its guarded estimate is3,342.35 seconds
+against a7,200-second cap. Complete overhead took148.71 seconds
+against600. The complete launcher/child command took234.75 seconds
+against900, and the own replay had zero discrepancy.
+
+The old corpus is used to measure overhead; these are not new learned prefix
+strategies. The earlier failed attempts remain visible and are not rewritten.
+Next: publish these own results, independently check the complete overhead,
+and publish checked admission before starting any long real trajectory.
+AI-assisted work; no additional human practice or time was reported.
 
 ## Your own learning notes
 
