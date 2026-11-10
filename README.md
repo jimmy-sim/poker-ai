@@ -13,7 +13,7 @@ A poker AI research project built from first principles, emphasizing expected
 value, variance, statistical testing, and game-theoretic reasoning. Implementations
 will be validated independently before any performance claims are published.
 
-Current scope: Phase 1 includes card IDs, bitmasks, immutable decks, a
+The foundation includes card IDs, bitmasks, immutable decks, a
 [five-card evaluator](docs/phase1-five-card.md), and
 [six/seven-card best-five selection](docs/phase1-best-five.md). See the
 [encoding contract and full phase acceptance gate](docs/phase1-cards.md).
@@ -33,6 +33,25 @@ A later [fresh procedure check](docs/fresh-validation.md) passes all four newly
 selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
+
+**Latest research — November 10:** the complete private-deal stratification
+experiment passes independent numerical validation but fails its primary
+accuracy target. At10million visited nodes in the known deeper compressed game
+(B4, signed regrets, linear average; all three fixed seeds):
+
+| Method | Mean exact exploitability (% initial pot; lower is better) |
+| --- | ---: |
+| Original B1 control |4.354032 |
+| Existing IID B4 |2.172684 |
+| New stratified B4 |3.350775 |
+
+The new median3.245725% and worst4.494858% exceed the unchanged1%/2.5% limits.
+Every seed and control is retained; no agent default changes. All432 new policy
+readouts and1,152 fixed conditions agree with OpenSpiel within2.07e-13chips.
+These are two known small games, not general Hold'em playing strength.
+[Methods, complete outcome and limits](docs/private-prefix-pipeline.md),
+[all-case heatmaps](results/private-prefix/study/report/linear_average.png),
+and learning-journal steps69–75 explain the result.
 
 The original batch source's compute forecast fails **7201.49s vs7200s** and stays
 unadmitted. A profiled array-dispatch change preserves all checked paths and

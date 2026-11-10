@@ -2226,3 +2226,25 @@ These are own known-game quantities pending independent comparison. Publish all
 complete evidence first; keep default/fresh/global admission false. Next is
 the independent900-second audit, then diagnosis using saved policies, not an
 unchanged favorable training retry. AI-assisted execution/reporting.
+
+
+### November 10 — complete real independent audit verifies the negative result
+
+Own studyccbffb91064c82df6de503033932c6e90f789968/tree55bc8e106c41e9a18d76f06b85a9bac1d100dfdc
+was canonically observed, with all16 study files hash-matched to committed bytes,
+BEFORE real-native construction17:38UTC. All432profiles/1152fixed conditions
+pass independent OpenSpiel checks, maximum2.0605739337042905e-13chips. Whole
+native639.711564250s<900 includes all required setup/admission checks, own
+archive/baseline reads, reference work and final full replay. Raw1596-message
+journal and exact child retained. A data-only replay with constructors blocked
+checks source, whole-clock/child bytes, raw journal and complete native schema.
+
+The numerical audit passes; the main accuracy target still fails. Keep every
+negative seed/control/readout and the default/fresh/global flags false. README
+now reports B14.354032%, IID-B42.172684%, stratifiedB43.350775% on the declared
+primary, with scope and failed limits. No extra training study starts this
+window. Next bounded step is the prospectively specified saved-policy gap
+diagnosis (issue4 comment6774698163), with all3seeds/readouts/work labels and
+both encodings/games; no causal/floor claim or favorable unchanged retry.
+Final artifact CI is required before merge. AI-assisted work, no inferred human
+minutes or mastery.

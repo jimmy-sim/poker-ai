@@ -154,3 +154,16 @@ Retain every unfavorable outcome; no default/fresh/global admission. Low-game
 and medium exact-control accuracy pass. Coverage including warm initialization
 is not learned post-warm support. These own quantities remain pending the
 independent900-second comparison. See results/private-prefix/study.
+
+
+## Complete independent outcome
+
+All432 new profiles and1152 fixed conditions independently agree within
+2.0605739337042905e-13chips; complete native command639.711564250s<900. The
+whole-clock/child receipt and1596 raw messages replay with constructors blocked.
+Own full studyccbffb9/tree55bc8e1 and all16 artifact hashes were canonically
+observed before reference construction. No native strategy is exported.
+The complete numerical check passes, while the main accuracy limits above
+remain failed. No new default, fresh/global admission, stronger-agent or
+general win-rate claim follows. Further work in this window uses saved-policy
+diagnosis and reporting, with no extra long or favorable unchanged retraining.

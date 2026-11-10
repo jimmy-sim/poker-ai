@@ -27,8 +27,8 @@ scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
-steps69–75 validate and run a new sampling candidate. Its complete own result
-fails the main compressed-game accuracy target; independent comparison is next.
+steps69–75 validate and run a new sampling candidate. Its complete, independently checked result fails the main compressed-game accuracy
+target. The next step is diagnosis from the saved policies.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3165,6 +3165,14 @@ saved policies to understand the larger loss in one seed. We will not repeat
 unchanged training until it happens to look favorable. The result covers two
 known small games and three seeds, and does not establish general Hold'em
 strength. Codex assisted with implementation, experiments and documentation.
+
+The independent audit now checks all432 profiles and1,152 fixed conditions
+within about0.000000000000206chips. Its whole command takes639.71seconds,
+inside the900-second cap, including setup and final replay. This verifies the
+reported calculations. The main performance target still fails, so the default
+remains unchanged. The next question is where the saved strategies lose value,
+using every prescribed seed and control rather than retraining until a result
+looks favorable.
 
 ## Your own learning notes
 
