@@ -2307,3 +2307,14 @@ Actual diagnosis figure visually inspected. Cross-runtime numeric reproduction
 and final hosted CI remain to be recorded. Main was fast-forwarded to PR #43
 only after a fresh byte snapshot; all ten unrelated modified files and exact
 status were preserved. AI-assisted execution; no inferred human minutes.
+
+### November 10 — register complete saved-decision follow-up
+
+Before generating local row tables, issue #4 comment 6775611715 fixes the
+medium/q8/signed/B4/final10m/linear panel: all three seeds × B1/IID/stratified,
+nine profiles and both responding seats. Existing own trace, full owned-row
+archive, deterministic top-five groups/four examples, TURN/RIVER accounting to
+total unilateral gain, source/native/policy checks and unchanged inputs.
+This is not an attribution of extra-information value alone or a causal
+retraining gain. No new training or default/gate/seed/cap changes. Prospective
+config/document only; implementation and outcomes remain pending.

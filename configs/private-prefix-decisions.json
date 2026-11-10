@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "prospective_posthoc_saved_decision_diagnosis_no_training",
+  "registered_issue_comment": 6775611715,
+  "question": "Which saved exact decisions and streets contribute to the primary unilateral reply gains?",
+  "own": "results/private-prefix/study/own.json",
+  "own_sha256": "d2366ea9ba5f6c30694fb080ab5dc566c48169ed92bc9598c7d9e1e950f885b9",
+  "native": "results/private-prefix/study/native.json",
+  "model_source_sha256": "a5a2e28de289d719efe51e639f1a30bb9df8573377b406b823e0216d57154070",
+  "game": "dev_medium_oop",
+  "representation": "texture_range_q8_b8",
+  "regret_rule": "signed",
+  "batch_size": 4,
+  "work_label": 10000000,
+  "readout": "linear_average",
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "roles": [
+    "B1",
+    "IID",
+    "stratified"
+  ],
+  "expected_profiles": 9,
+  "expected_responses": 18,
+  "top_groups": 5,
+  "examples_per_group": 4,
+  "tolerance_chips": 1e-09,
+  "ranking": "descending total unilateral additive loss; ties by ascending merged info id; existing first legal exact maximizer",
+  "details": "retain every owned exact row and own reply profiles for both seats in deterministic gzip JSON",
+  "accounting": "sum exact-row losses over TURN/RIVER equals target unilateral gain; average seat totals equals saved exact exploitability; within/extra roots match independently audited source",
+  "limits": "Posthoc descriptive, known single restricted game, three fixed seeds and reused controls. Total-row losses do not isolate extra-information value or causal retraining benefit. No new training, seed, cap, gate, default, reference construction/strategy use or fresh/global admission."
+}

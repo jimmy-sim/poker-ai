@@ -3223,6 +3223,22 @@ Next, inspect the particular merged decisions behind the loss before choosing
 a new representation or training experiment. Codex assisted with the analysis
 and documentation; this entry does not record personal practice or hours.
 
+### Step 78 — plan to inspect the decisions behind the totals (November 10)
+
+A single number cannot show which card situations cause trouble. The next
+saved-data exercise keeps every seed and both ordinary controls, then lists
+the decisions that contribute most to a best response against each saved
+strategy. Turn and river contributions must add to the original total.
+
+**Example:** a saved action can lose value because an opponent can choose a
+better continuation. A row trace says where that fixed-strategy loss appears;
+it does not tell us how much retraining with a different representation would
+help. This is a teaching example, not a measured result.
+
+The [fixed panel and checks](private-prefix-decisions.md) are published before
+the local tables. No new training, solver strategy input or default change is
+authorized by this diagnostic. Actual implementation/results follow.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
