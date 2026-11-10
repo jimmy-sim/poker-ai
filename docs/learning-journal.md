@@ -2974,6 +2974,15 @@ before any new real study. The kernel replay command explicitly says those
 stages are incomplete. AI-assisted implementation/testing; no new user practice
 or human minutes are reported.
 
+The complete kernel checks now pass on both actual runtime pairs:2183 base tests
+(45 skips,145 deselections) and2237 optional tests(145 deselections), plus both
+hosted jobs in[run42828991764](https://github.com/jimmy-sim/poker-ai/actions/runs/42828991764).
+The published kernel receipt replays identically on both Python versions:
+12 raw-moment cases,120 trajectory endpoints,40 B1 bit checks,zero array error.
+The output explicitly says the full pipeline, forecast and admission are
+incomplete. [Replay command and limits](private-prefix-stratification.md).
+This is a completed correctness foundation, not a new Hold'em performance result.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

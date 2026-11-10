@@ -183,3 +183,13 @@ Three questions to practice:
    normalization, random-number consumption and fixed-work costs also matter.
 3. Why is B1 tested separately? Its exact delegation is a control for accidental
    changes to the old learner, not a new strength experiment.
+
+
+The foundation's complete source checks now pass on both supported runtime
+pairs:2183 base/2237 optional tests each, plus both hosted jobs42828991764.
+[Kernel receipt](../results/private-prefix/kernel.json) and
+[actual source/check logs](../results/private-prefix/kernel-code-checks.json)
+are published; replay on both runtimes reproduces every row. This is still
+kernel-only evidence. PR43 carries the remaining pipeline and the prospectively
+recorded early-B1-current accounting clarification; no real new trajectory is
+admitted by this foundation.
