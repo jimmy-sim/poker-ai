@@ -1934,3 +1934,16 @@ while confirming all numeric rows and byte-identical SVG/JSON. Complete current
 base/optional/hosted checks are next before publishing official presentation
 outputs. AI-assisted implementation/checking; no new user practice or human
 hands-on time is inferred. Original244-file scientific inventory stays unchanged.
+
+### November 10 — optional plot boundary corrected before publication
+
+Initial full reader-source67edaed checks passed2165 optional tests on each
+runtime(347.48/334.69 s), but both base strict type checks and hosted
+run42822352177 failed on three unresolved Matplotlib imports. No base pytest
+result is claimed. The direct imports were inside the plotting function but
+still required optional stubs during base typing. The corrected boundary uses
+the existing renderer pattern: dynamic optional imports and headless Agg only
+when plotting is requested. Added an explicitly fictional rendering smoke
+test; no plot data, model or scientific result changed. All four original
+check logs and their failure notice are retained. Complete current checks
+will rerun for the corrected source before official report publication.

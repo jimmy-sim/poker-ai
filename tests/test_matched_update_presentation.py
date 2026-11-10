@@ -237,3 +237,34 @@ def test_final_current_join_uses_ids_not_older_tuple_index_shape() -> None:
         assert result[i, "current"]["id"] == f"EXPLICIT-current-{i}"
         assert result[i, "uniform_average"]["id"] == f"EXPLICIT-{i}-uniform"
         assert result[i, "linear_average"]["id"] == f"EXPLICIT-{i}-linear"
+
+
+def test_optional_plot_boundary_renders_explicit_software_fixture(
+    tmp_path: Path,
+) -> None:
+    pytest.importorskip("matplotlib")
+    from poker_ai.evaluation.matched_update_data import READOUTS
+    from poker_ai.evaluation.matched_update_presentation import AXES, plots
+
+    groups = []
+    for readout in READOUTS:
+        for axis in AXES:
+            for batch in (4, 16):
+                groups.append(
+                    dict(
+                        spot_file="EXPLICIT-no-poker.json",
+                        representation="exact",
+                        regret_rule="signed",
+                        readout=readout,
+                        axis=axis,
+                        batch=batch,
+                        mean_exact_exploitability_delta_pct_pot=(
+                            -1 if axis == AXES[0] else 1
+                        ),
+                    )
+                )
+    plots(groups, tmp_path)
+    assert {p.name for p in tmp_path.iterdir()} == {r + ".png" for r in READOUTS}
+    assert all(
+        p.read_bytes().startswith(b"\x89PNG\r\n\x1a\n") for p in tmp_path.iterdir()
+    )

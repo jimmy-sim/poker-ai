@@ -1,0 +1,8 @@
+{
+  "base_status": "typecheck_failed_before_pytest; three missing optional Matplotlib imports",
+  "hosted_run": 42822352177,
+  "optional_status": "2165 passed,145 deselected each;347.48/334.69seconds",
+  "repair": "load optional Matplotlib modules dynamically in plots only, with a headless backend; no numeric/model/source-input change",
+  "scientific_data_unchanged": true,
+  "source_commit": "67edaed131bd35f7786689e555ec55c893e34454"
+}

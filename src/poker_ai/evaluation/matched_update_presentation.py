@@ -1,6 +1,7 @@
 """Deterministic two-axis contrasts from previously audited saved scalar values."""
 
 import csv
+import importlib
 import itertools
 import json
 import math
@@ -181,11 +182,14 @@ def csv_file(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def plots(groups: list[dict[str, Any]], folder: Path) -> None:
-    import matplotlib.pyplot as plt
     import numpy as np
-    from matplotlib.colors import LinearSegmentedColormap
 
-    cmap = LinearSegmentedColormap.from_list(
+    matplotlib = importlib.import_module("matplotlib")
+    matplotlib.use("Agg")
+    plt = importlib.import_module("matplotlib.pyplot")
+    colors = importlib.import_module("matplotlib.colors")
+
+    cmap = colors.LinearSegmentedColormap.from_list(
         "B1_to_batch", ["#2166ac", "#ffffff", "#d66000"]
     )
     contexts = sorted({tuple(r[k] for k in GROUP[:3]) for r in groups})

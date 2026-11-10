@@ -2922,6 +2922,13 @@ before publication of the new heatmaps and tables. This reports existing
 evidence; it does not change the agent. AI-assisted work, with no additional
 personal practice or time reported.
 
+The full source checks then caught an optional plotting boundary: the research
+environments passed, while base typing could not resolve Matplotlib. Plotting
+modules now load only when a plot is requested, using a headless backend. A
+fictional rendering test covers that boundary. The failed logs remain visible;
+complete source checks rerun before the new report is published. The archived
+strategies, numbers and scientific gates are unchanged.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
