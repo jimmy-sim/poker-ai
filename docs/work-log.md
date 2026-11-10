@@ -1749,3 +1749,18 @@ Next: prospective destination preflight before child computation, and a complete
 CLI clock receipt including preflight/startup/final-write. Keep all scientific
 source, caps, seeds and outcomes unchanged; the added IO source needs its full
 checks and new cohort gates rather than rewriting the failed receipt.
+
+### November 10 — additive destination preflight and full child-command clocks
+
+Added a launcher that rejects existing receipts, child copies, temporary archives
+and any report directory before child computation. A unique rejection receipt
+retains the reason; the launcher never removes old data. Complete child receipts
+remain byte-exact beside the measured receipt. Clock checks reject nonfinite,
+boolean, boundary, failed-child, changed-file, changed-host and expired shared
+proof observations. Subsequent stages and admission validate complete clocks in
+addition to the frozen original gates. No numerical worker or scientific cap
+changed. Focused lifecycle plus parent IO:39 passed,1 slow deselected in0.09s;
+strict typing passed both new files. All20 failed-cohort aliases were verified
+against retained bytes before clearing files AND empty directories.
+The expanded source now needs complete base/optional/slow checks on both
+versions, both hosted jobs, a new proof and the full fixed compute gate.

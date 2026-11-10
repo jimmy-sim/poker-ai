@@ -169,3 +169,38 @@ safety or change spawned worker code. Its pinned contract is
 included in the full checked inventory. The expanded cohort must pass its full
 checks/proof/forecast/admission before new trajectories; scientific caps, seeds,
 readouts, grids and tolerances remain the original ones.
+
+## Destination preflight and complete command clocks
+
+The second cohort retained a final-report failure: clearing old files left an
+empty report directory. `source-cohort-7bd650d/retention.json` preserves all 20
+files exactly, including its partial forecast and completed own replay. Neither
+that partial profile nor its favorable timings admit a study. No native overhead
+was attempted for it.
+
+The next additive CLI checks every receipt, child receipt, temporary archive and
+report destination before launching any computation. It never deletes a
+destination automatically; rejection is retained separately. It launches the
+frozen parent IO CLI in a child process, preserving the exact child receipt and
+adding a complete-command measurement. The clock includes preflight, required
+prerequisites, child startup and final child writes. The small administrative
+measurement receipt is written afterwards. This does not alter any inner cap.
+Both inner and complete-command limits must pass; native old-overhead uses the
+unchanged strict twice-elapsed < 900-second rule. Tiny publication and final
+replay share 180 seconds from the outer own command's start on the same host.
+
+Use the new entry point with the same explicit output arguments:
+
+```sh
+.venv/bin/python -m poker_ai.evaluation.matched_update_lifecycle check --help
+.venv/bin/python -m poker_ai.evaluation.matched_update_lifecycle profile --help
+.venv/bin/python -m poker_ai.evaluation.matched_update_lifecycle audit --help
+```
+
+Complete command receipts are validated before subsequent stages and admission.
+The frozen admission binds the measured own/profile/native receipt bytes; each
+receipt binds its exact child file. All prior scientific source stays frozen.
+This changed IO source requires all current local/hosted checks and a fresh full
+proof and fixed forecast; no old successful partial measurement is selected.
+The pinned lifecycle implementation contract is `configs/matched-update-lifecycle.json`.
+Scientific grids, seeds, caps, tolerances and claim limits remain unchanged.

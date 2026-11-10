@@ -2769,6 +2769,21 @@ starts, record the complete command clock, and verify the changed IO source.
 The scientific trainer and budgets stay frozen. AI-assisted work; no additional
 human practice or time was reported.
 
+### Step 60 — reject bad destinations before spending compute (November 10)
+
+A new launcher checks destinations before starting the unchanged child command.
+An empty report folder is now an immediate, saved rejection. The launcher never
+deletes anything automatically. It also keeps the child's exact receipt beside
+a measured copy, so a failed child cannot quietly become a successful result.
+
+The complete child clock includes setup checks, startup and final child writes.
+The tiny proof includes the publication interval too. Existing scientific limits
+stay fixed; the complete clock is checked alongside the original inner clock.
+The lifecycle and parent-reader checks passed 39 tests, including corrupted
+receipts, partial failures and strict clock boundaries. Next: verify this entire
+source cohort before repeating the prescribed proof and compute gate.
+AI-assisted work; no additional personal practice or time was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

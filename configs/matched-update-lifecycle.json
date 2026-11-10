@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "prospective_destination_and_complete_command_io_repair",
+  "parent_config": "configs/matched-update-parent-io.json",
+  "parent_sha256": "f4cda544a0e0999a8deb16f234f219c8816f760fe0b8633dc071c09fd01c53b2",
+  "rule": "reject every existing output, archive, temporary file or report directory before spawning; retain rejection and partial child receipts; never remove a destination automatically",
+  "clock": "parent perf_counter around preflight and the complete unchanged child command, including child startup and final writes; measurement receipt is administrative IO after the measured child",
+  "admission": "validate complete command receipts before proof, profile, admission, study and audit; frozen admission binds the measured own/native receipt bytes",
+  "caps_seconds": {"software_shared": 180, "profile": 900, "old_overhead": 600, "own": 7200, "native": 900},
+  "native_timing_guard": "strict twice complete command elapsed below900, in addition to the frozen inner guard",
+  "preservation": "all earlier source and complete/partial/failing data remain unchanged; full new-source checks and proof/forecast gates required; no scientific seed/grid/cap/tolerance/default changes"
+}
