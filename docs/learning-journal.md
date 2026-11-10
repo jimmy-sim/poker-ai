@@ -27,7 +27,8 @@ scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
-step69 starts correctness tests of a new sampling candidate without admission.
+steps69–75 validate and run a new sampling candidate. Its complete, independently checked result fails the main compressed-game accuracy
+target. The next step is diagnosis from the saved policies.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2982,6 +2983,196 @@ The published kernel receipt replays identically on both Python versions:
 The output explicitly says the full pipeline, forecast and admission are
 incomplete. [Replay command and limits](private-prefix-stratification.md).
 This is a completed correctness foundation, not a new Hold'em performance result.
+
+### Step 70 — save complete comparisons without changing training (November 10)
+
+The next pipeline keeps each saved strategy connected to its exact work count,
+update count, random-state guard and raw average weights. A **replay** reads those
+files and checks the numbers again without running the learner. It must also
+handle several work labels crossing in the same large batch update.
+
+The assistant initially made a reading mistake: the old216 current-policy
+records were assumed to describe only the final checkpoint. The actual saved
+records contain72 at each of three checkpoints, including24 B1 records at each.
+All72 B1 currents already have independent scalar checks. The erroneous draft
+stays visible, with a[version2 correction](private-prefix-pipeline.md) published
+before any real new profiling, training or native comparison. The original
+432-policy/288-ledger/1152-fixed core task, all seeds and all limits stay fixed.
+This correction avoids pretending a saved score is missing or silently changing
+a scientific workload.
+
+The new components capture all432 candidate readouts and288 average books,
+then score the same policies after the capture barrier. The explicit toy
+fixture also keeps all648 unchanged IID baseline readouts and1728 baseline
+fixed conditions, giving864 self comparisons and2304 fixed comparisons. This
+is one nonuniform Kuhn game repeated under logical labels, not many poker games.
+The full integration test replays both sets with learner/reference constructors
+blocked, gets zero discrepancy, and reproduces the four numeric report files
+byte-for-byte. Native schema tests use fictional data and do not claim a solver
+ran.
+
+The focused base checks pass133 tests with one optional plotting skip; the
+complete archive integration passes in11.50 seconds. The actual source-loader
+test passes in31.32 seconds with constructors blocked, checking all original
+72 B1 crossings and the existing scalar-score inventory. Source/compiler checks
+pass. The remaining work is the command-level runner, whole time limits,
+published own-before-native proof, conservative forecast and checked admission.
+No real new Hold'em trajectory or stronger/default claim follows from these
+component checks. AI-assisted work; no new user practice or human minutes
+reported.
+
+### Step 71 — a failed run must leave an honest record (November 10)
+
+A long experiment can stop during setup, training, saving or independent
+checking. The new command writes each worker message to disk immediately and
+keeps both the child result and the whole-command time. A **gate** is a check
+that must pass before the next stage starts. Passing code tests is one gate;
+proving the full job fits its fixed time budget is another. Neither means the
+agent plays better.
+
+**Example:** a worker finishes two saved strategies and then fails. Those two
+strategies and the error remain available. The run is marked incomplete, and
+it cannot become evidence for starting the full learning study. An existing
+report directory is rejected before profiling starts, so it cannot waste a
+training run and then quietly replace an earlier report.
+
+The execution/source tests pass23 checks in55.99 seconds. They include complete
+and interrupted spawned workers, journal tampering, independent forecast
+arithmetic, the full toy runner/replay, and copying the real old archive without
+constructing a learner. A separate failure test confirms that an unpublished
+own result is rejected before a reference solver is constructed. These are
+software checks, not measurements of a stronger Hold'em agent.
+
+Next: finish full local and hosted checks, publish the complete tiny proof
+before its independent comparison, and measure the unchanged compute gate.
+Only a checked published admission can permit the real new study. See
+[the command boundaries and limits](private-prefix-pipeline.md). Codex assisted
+with implementation and tests; no new hands-on time or learning is inferred.
+
+The full base suites then found a test-launch issue: both had two failures
+because the console test command could not import a synthetic worker fixture.
+The same tests passed under the Python module command. A console reproduction
+confirmed the missing import path; the test now supplies it explicitly. The
+corrected console run passes20 checks in0.85 seconds. The original failed full
+logs remain visible, and the full checks are being repeated before any admission.
+This fixed test setup, not poker strategy.
+
+Review then caught a different interruption gap: worker messages were saved
+immediately, but the parent could still lose later scoring messages if killed
+before its final JSON. Both hosted jobs and all local checks had passed for the
+earlier code, so passing tests did not excuse this gap. Parent scoring and old
+archive calibration now write durable journals too. New tests inspect those
+records before cleanup runs. Complete source checks are repeated before proof;
+no real new trajectory has started and no time limit changes.
+
+Hosted checking then found a dependency that the full local checkout hid: a
+synthetic failure test tried to verify a historical Git commit absent from the
+shallow hosted checkout. That unit test now uses a clearly marked stand-in for
+its unrelated input evidence. The separate slow test still verifies the real
+archive and history. The failed hosted log is retained, and hosted checking must
+pass before proof. The sampling code, seeds and limits are unchanged.
+
+The final source now passes every local check and both hosted jobs. Each runtime
+has2,267 base passes,2,322 optional passes and three slow integration passes.
+GitHub did not schedule the latest pull-request run while its mergeability state
+was unknown, so the existing workflow was run directly on the exact commit;
+both jobs passed. The complete check packet is saved. Next comes the full tiny
+rehearsal and its independent comparison, then the real compute forecast.
+
+### Step 72 — the complete rehearsal agrees with an independent calculator (November 10)
+
+The new pipeline has now completed its small-game rehearsal. It saved432
+candidate strategies and288 raw average books, checked1,152 fixed conditions,
+and retained all648 baseline strategies and1,728 baseline conditions. Own
+archive replay finds zero difference. The files were published before the
+independent calculator was constructed.
+
+OpenSpiel then checked1,080 profiles and2,880 fixed conditions. Its largest
+difference is about0.00000000000000056chips. The complete own command, GitHub
+publication, independent check and final replay took116.91seconds together,
+inside the fixed180-second allowance. The three new heatmaps are labeled toy
+fixtures: their repeated rows represent one small Kuhn game under logical
+context names, not results on multiple Hold'em spots.
+
+This completes the software rehearsal. Next comes a real cost measurement of
+all144 short prefixes and the full old-policy workload. Only a fitting forecast
+and a checked published admission can permit the long new study. Codex assisted
+with implementation, verification and publication; no new human practice or
+minutes are inferred.
+
+### Step 73 — the complete own cost forecast fits (November 10)
+
+A cost forecast asks whether the proposed experiment can finish within its
+fixed budget. It does not ask whether its strategy plays better. The new test
+uses all48 changed paths, each repeated three times for timing, and keeps the
+slowest measured cost for each path. Repeated timings use the same seeds; they
+are not144 independent strength tests.
+
+The full profiling command takes288.37seconds. This includes loading and checking
+the sources, warm setup, all short prefixes, and copying/scoring/replaying the
+complete old-policy workload. All remaining non-training work totals260.74
+seconds, below its600-second allowance. The fixed conservative formula predicts
+4,649.90seconds against the7,200-second own-study cap. All limits and cases stay
+unchanged. The old-policy heatmaps describe already saved strategies, and their
+IID-self comparisons are zero; they do not show new candidate learning results.
+
+The own forecast fits. Next, publish it before independently timing the old
+policies. A checked published admission is still needed before the long study.
+
+The independent cost check now passes too. It checks all432 old-policy profiles
+and1,152 fixed conditions, with maximum disagreement about0.000000000000206
+chips. Its whole command takes341.49seconds; twice that is682.99seconds, below
+the900-second limit. Own results were published first. The remaining step before
+long training is to publish and recheck the complete admission record.
+
+### Step 74 — bind permission to the exact evidence (November 10)
+
+An **admission record** connects the exact code and settings to the checks that
+allow an experiment to start. Here it includes both hosted jobs, all local logs,
+the complete small-game rehearsal, every short timing prefix, the old-policy
+independent check, and hashes of the input files. A changed or missing input
+blocks the next stage.
+
+The admission command now recomputes these checks successfully. Its permission
+is for the fixed known-game experiment only. The record still says that candidate
+strength is unmeasured and that no default or fresh/global policy is admitted.
+It is published before a read-only recheck with learner/reference constructors
+blocked, and before long training. The full prescribed budgets and final
+verification must also fit the remaining authorized window.
+
+### Step 75 — the new sampling method misses the main target (November 10)
+
+All48 planned training paths finished. The run saved432 strategies and288 raw
+average books, scored1,152 fixed conditions, and kept every planned comparison.
+It took20minutes1second, and archive replay finds zero difference. These are
+complete own results; the independent check is next.
+
+The main compressed deeper-game result is unfavorable. Average vulnerability
+is3.35% of the initial pot with the new sampler, compared with2.17% for the
+existing same-batch sampler. Lower is better. Two seeds improve a little, but
+one gets substantially worse. All three remain in the report. The new median
+is3.25% against a1% limit; the worst seed is4.49% against a2.5% limit. The main
+accuracy target fails, so this does not justify changing the default.
+
+The small game and the deeper exact-information control pass their accuracy
+limits. That helps locate the question, but it does not rescue the compressed
+primary result. Also,100% coverage including the exact warm start does not mean
+all those decisions were visited again during learning; both coverage views
+remain visible.
+
+The useful next step is to independently verify all numbers, then examine the
+saved policies to understand the larger loss in one seed. We will not repeat
+unchanged training until it happens to look favorable. The result covers two
+known small games and three seeds, and does not establish general Hold'em
+strength. Codex assisted with implementation, experiments and documentation.
+
+The independent audit now checks all432 profiles and1,152 fixed conditions
+within about0.000000000000206chips. Its whole command takes639.71seconds,
+inside the900-second cap, including setup and final replay. This verifies the
+reported calculations. The main performance target still fails, so the default
+remains unchanged. The next question is where the saved strategies lose value,
+using every prescribed seed and control rather than retraining until a result
+looks favorable.
 
 ## Your own learning notes
 

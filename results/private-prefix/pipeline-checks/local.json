@@ -1,0 +1,113 @@
+{
+  "results": {
+    "base311": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/base311.log",
+      "log_sha256": "c9f81cd84c2c7bd87648b69e556d719c40a8df693076caa076638d073c9d7cfc",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-base311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-base311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "seconds": 355.7049400419928,
+      "status": "passed",
+      "tests_passed": 2267
+    },
+    "base312": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/base312.log",
+      "log_sha256": "4f6a621a7f4addb14b737958d06b355c6613f144faa0593ef420d0b8ff9778ca",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-base312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-base312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "seconds": 342.16456491703866,
+      "status": "passed",
+      "tests_passed": 2267
+    },
+    "focused_slow311": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/focused_slow311.log",
+      "log_sha256": "59480768cc1596773c3780bc6c06d596c3d4d0383e5a207a73fdb56722959638",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-env311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-env311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "seconds": 99.25538858398795,
+      "status": "passed",
+      "tests_passed": 3
+    },
+    "focused_slow312": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/focused_slow312.log",
+      "log_sha256": "407b09b91be40645d6b07086d59b947aa8fed54f48b296688cfa27358514f455",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-env312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-env312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "seconds": 95.60755941696698,
+      "status": "passed",
+      "tests_passed": 3
+    },
+    "optional311": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/optional311.log",
+      "log_sha256": "902baa55b386e574bdfbf8c949852956be4cba30da63db8364ed26cb56c3c793",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-env311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-env311/bin/python",
+        "numpy": "2.4.6",
+        "python": "3.11.17"
+      },
+      "seconds": 388.4097942080116,
+      "status": "passed",
+      "tests_passed": 2322
+    },
+    "optional312": {
+      "checked_commit": "e96e07e346d99869ca1304b18eb276dd0acfaec1",
+      "log": "results/private-prefix/pipeline-checks/optional312.log",
+      "log_sha256": "0eb7b0d6fe26cbe0e420940bd867a5426d138ff39bd62768da58e1b966ea7da2",
+      "runtime_after": {
+        "executable": "/tmp/poker-batch-current-env312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "runtime_before": {
+        "executable": "/tmp/poker-batch-current-env312/bin/python",
+        "numpy": "2.5.4",
+        "python": "3.12.15"
+      },
+      "seconds": 374.96754041698296,
+      "status": "passed",
+      "tests_passed": 2322
+    }
+  },
+  "source_sha256": "a5a2e28de289d719efe51e639f1a30bb9df8573377b406b823e0216d57154070"
+}

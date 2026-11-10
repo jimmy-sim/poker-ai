@@ -2005,3 +2005,246 @@ PR42's sampler foundation only: full pipeline proof/forecast/admission remain
 false. PR43 continues source/context/grid/archive/native integration; its earlier
 published accounting adds48 previously unscored B1 current evaluations inside
 the same caps, with no altered scientific gates. AI-assisted work.
+
+
+### November 10 — complete source/capture/archive components and corrected inventory
+
+PR42 merged ate26656c after BOTH final artifact CI42831549444 jobs passed.
+Before updating the user checkout, a fresh backup of the actual10 changed files
+was made; all hashes/status stayed identical afterward. Kernel replay on that
+checkout passes12 moments/120 endpoints/40 B1 bit checks with zero array error.
+
+PR43's first accounting note contained an assistant reading error: the old216
+current records were treated as final-only. Actual own.json and its source loop
+show72 at each of100k/1m/10m and24 B1 currents per label, all independently
+audited. Corrective driver-v2/c49109e preserves the superseded draft before any
+new real profiling/training/native candidate comparison. It removes only the
+unnecessary48 extra evaluations proposed from that false assumption; original
+432/288/1152 core workload, case grid, seeds, work, formula, quality gates and
+scientific caps stay unchanged. The earlier step69 wording is historical and
+superseded by this correction, not evidence of missing scores.
+
+Implemented strict complete48-path/432-policy/288-ledger grids, typed work and
+shared-state/capture lineage, source/context factories and whole used-archive
+checks; generic own capture/score/archive/replay, partial retention, complete
+B1/IID paired functions, optional standard Matplotlib heatmaps and separate
+native432/1152 schema/scalar adapter. The explicit tiny fixture also retains
+648 old IID baseline profiles/1728 fixed conditions, yielding864 self and2304
+fixed contrasts; those are dependent software fixtures on one nonuniform Kuhn
+game. Real sources are loaded without any learner/reference constructor.
+
+Focused base133pass1skip2deselect4.87s. Full toy archive/paired/report integration
+1pass7deselect11.50s; all own/new/baseline metrics and raw masses replay with
+constructors blocked,zero discrepancy; numeric reports reproduce byte-identically.
+Actual original-data source-loader test1pass1deselect31.32s, including regression
+for all72 already scored B1 currents and exact72 original crossing records.
+Native schema tests are fictional and do not assert actual solver construction
+or agreement. Ruff/strict typing pass the new component files. These are checked
+components, not the source-bound full command/software proof, compute forecast,
+admission or real learning study. Command-level whole clocks/gates remain next.
+AI-assisted implementation/tests; no user practice/hours/mastery inferred.
+
+
+### November 10 — whole private-prefix command and failure retention
+
+Added separate complete-command source gates, original-runtime144-prefix fixed
+forecast, full OLD432/288/1152 cost corpus, own study/native controllers,
+source-bound admission recomputation and read-only replay. Append/fsync journals
+retain each worker message before final JSON; readers check exact journal/source
+bindings. Fresh-destination preflight includes the nested old report, and the
+parent kills the complete child process group on timeout. Partial baseline
+records/archive errors and failed/over-budget stages remain visible. Reference
+construction follows observed own publication; no reference policy is exported.
+
+Focused execution/source integration passes23 tests in55.99s, including a complete
+toy command/read-only replay, real archive copying with constructors blocked,
+spawn success/failure, journal tampering, fixed forecast arithmetic and failures,
+publication rejection before reference construction, and destination/timeout
+rejections. Initial journal tests exposed list-subclass equality/fixture-copy
+issues; corrected by comparing plain persisted lists, with no numerical change.
+Whole source base/optional and hosted checks are next. This implementation
+commit is not a passed full software proof, forecast, admission or real study.
+Scientific configs/seeds/caps and historical source/data are unchanged.
+AI-assisted work; no human minutes, practice or mastery inferred.
+
+
+### November 10 — retain and fix console-only spawn fixture failure
+
+Source63a6209 full base suites each finish2263pass/46skip/148deselect with2
+failures: console pytest omits the repository root from sys.path under importlib
+mode, so spawned synthetic test functions cannot import `tests`. The same
+module passes under python-m pytest. A console reproduction confirms the cause;
+explicit pytest monkeypatch of the test import path fixes it, matching the
+existing spawn tests. Corrected console run20pass1deselect0.85s. Both failing
+full logs and before/after diagnostics remain in
+results/private-prefix/development-failures/console-spawn. No scientific source,
+seed, cap, gate or result changed; fresh full checks are required before proof.
+
+
+### November 10 — close the parent-scoring interruption gap before proof
+
+The corrected f391c95 cohort passes both hosted source jobs42847940174 and all
+six local checks (base2265each, optional2320each, slow3each). Full source-bound
+logs/runtime assertions and observed CI are retained in pipeline-checks-f391c95.
+Review found that the real runner journaled worker messages but replaced its
+event list with a plain list before parent scoring; a hard timeout could lose
+completed scoring event metadata until final JSON. OLD calibration had the same
+parent-only gap. No actual proof, profiling, native comparison or real candidate
+trajectory had begun.
+
+The combined event list now preserves the existing worker stream once, then
+fsyncs parent scoring in its own slot. OLD copy/scoring has a checked durable
+journal too, included in admission inputs and unchanged whole-clock overhead.
+Tests check durability before exception handling or final JSON; focused console
+execution22pass1deselect2.61s, full Ruff/format/strict typing pass. No numerical
+operation, RNG, seed, grid or scientific cap changed. Repeat complete source
+checks before any proof/admission; the prior passing cohort is not reused as
+current admission. AI-assisted review/implementation, no inferred human time.
+
+
+### November 10 — isolate a synthetic test from shallow hosted history
+
+Source1989b52 passes all local checks:2267base/2322optional/3slow on each runtime.
+Hosted3.12 job129951572681 in42851073282 instead fails1 test (2266pass/46skip/
+148deselect,597.28s): the new synthetic OLD interruption test accidentally calls
+real historical kernel_evidence, but the shallow checkout lacks ad160906. The
+full hosted log and local packet are retained. Isolated the synthetic failure
+test's kernel evidence; separate slow real-source/archive validation remains
+unchanged. Corrected console22pass1deselect1.67s. No scientific source, seed,
+cap, gate or data changed (274-file sourceSHAa5a2e28 remains unchanged). New
+complete local/hosted checks precede proof; no reference/profiling/real candidate
+trajectory has run. AI-assisted work; no inferred human time or understanding.
+
+
+### November 10 — final complete pipeline source checks pass
+
+Sourcee96e07e, scientific274-file SHAa5a2e28de289d719efe51e639f1a30bb9df8573377b406b823e0216d57154070,
+passes both hosted jobs129963379794/129963379924 in run42854406375. This is the
+existing ci.yml workflow dispatched on exacte96 after GitHub reported PR
+mergeability unknown and did not list a synchronize run; no gate or workflow
+was weakened. All6 latest local logs have before/after runtime assertions:
+base2267each(354.74/341.16s;46skips148deselect), optional2322each(387.88/374.38s;
+148deselect), slow3each(98.91/95.25s;112deselect), actual3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4. Complete packet is results/private-prefix/pipeline-checks. Both
+previous shallow-history hosted failures remain retained, including311's
+1failed/2266pass/46skip/148deselect841.74s. These are source software checks
+only; actual shared-clock tiny proof, real forecast and checked published
+admission remain required before long study. AI-assisted work.
+
+
+### November 10 — complete source-bound tiny proof passes
+
+Own full-shape rehearsal432policies/288ledgers/1152fixed plus648baseline
+profiles/1728baseline fixed conditions completes whole22.93704875s. Own replay
+errors are exactly0; all864self/2304fixed contrasts and three inspected labeled
+Matplotlib heatmaps are retained. The15 own files match committed bytes at
+f684a319c5d48d25d5ae709c75820e4e0e0c82de; GitHub's canonical commit/tree
+79d72b074fe8898b4f677d562799cc75561e5758 was observed before reference construction.
+OpenSpiel independently checks1080profiles/2880fixed, maximum error
+5.551115123125783e-16chips. Complete native command11.838831416s; shared own
+command/publication/native/final-replay116.913814416s<180. Raw journals and exact
+child receipts remain published. This repeats ONE nonuniform Kuhn game under
+logical labels; it is software evidence, not Hold'em strength. Sourcee96e07e
+and both source CI42854406375 jobs bind the unchanged274-file sourceSHAa5a2e28.
+Next: original-runtime144-prefix complete conservative forecast and OLD workload
+inside900/600, then own publication before native timing and checked admission.
+No real candidate profiling or long trajectory has been admitted yet.
+
+
+### November 10 — complete real-prefix own forecast passes
+
+On original3.11.17/NumPy2.4.6, all144 prescribed timing prefixes (48changed paths
+repeated3times, additional100k node work each) complete with identical repeated
+state/work guards. The whole profile, including all setup/input checks and full
+OLD432-policy/288-ledger/1152-fixed serialization/scoring/replay/report workload,
+takes288.370542167s<900. Subtracting only the longest worker's actual setup+
+incremental-training intervals27.634824962s leaves260.735717205s<600 for ALL
+nontraining/setup/old workload. Complete fixed-partition max-of-three forecast
+T862.476172223s gives2*(2*T+600)=4649.904688890s<7200. The three OLD heatmaps
+were inspected; IID-self contrasts are zero and all figures say OLD/no new
+trajectories. No new candidate utility was scored from timing prefixes.
+
+Own forecast and old workload are being published before the independent native
+cost comparison. This is not long-study admission: strict2*whole-native<900,
+source/inputs/CI-bound checked published admission and constructor-blocked
+recomputation remain required. No seed, cap, formula, grid or gate changed.
+AI-assisted execution/documentation; no human time or stronger-agent claim.
+
+
+### November 10 — independent complete native cost gate passes
+
+After canonical GitHub observation of own profile commit6e245f628fee0e799d7b527e3d9ccd6e84fe9f91
+and tree0b7073a607e8b0db2847b9a8d47d1870229a0a87, all17 referenced own profiling
+files match committed bytes. The separate OpenSpiel audit checks every OLD
+432profile/1152fixed condition, maximum2.0605739337042905e-13chips disagreement.
+Whole native command341.493552959s; strict2*whole=682.987105918s<900 passes,
+including source/input setup, all independent work and final full own replay.
+No reference strategy is exported or loaded into learning. Own evidence was
+published first. Next: recompute and publish exact source/config/input/CI/whole-
+clock admission, then constructor-blocked verification of those published bytes.
+This cost gate permits no stronger/default/fresh/global claim and has not yet
+started a long new candidate trajectory. Source/seeds/caps/gates unchanged.
+
+
+### November 10 — checked known-game admission before long training
+
+The admission command recomputes the complete source274-file inventory, exact
+config, both source CI jobs, all6 local logs, published tiny proof,144timing
+rows/fixed forecast, full OLD replay/native validation, whole clocks and every
+used input hash. It produces checked_known_game_trajectory_admission_not_agent_strength
+with long_run_admitted=true while new_agent_default/fresh_global_admission=false
+and candidate_strength_still_unmeasured=true. These flags describe permission
+to run the prescribed known-game experiment, not a measured improvement. The
+record is published before constructor-blocked recomputation and any new long
+trajectory. Original7200/900 caps, complete grid, seeds and gates remain fixed.
+The actual window must still fit full caps plus final verification before launch.
+
+
+### November 10 — complete own private-prefix study, main accuracy gate fails
+
+Before any new long trajectory, published admission39144dc was canonically
+observed on GitHub and recomputed with5learner/reference constructors blocked
+in126.528608083s (all36 bound inputs). The17:08UTC window check left10320s,
+covering full7200+900caps plus1800verification seconds before20:00UTC.
+The original-runtime study completes all48paths/432readouts/288ledgers/1152fixed
+conditions,864self/2304fixed contrasts in whole1201.279549125s<7200. Own archive
+replay chip/unitless discrepancy0; all3 new heatmaps inspected. No case, seed,
+readout, cap or threshold changed.
+
+Primary medium/q8/B4/signed/linear final10m exploitability percentages by seeds
+20261301/02/03 are2.311742130540,4.494857881670,3.245725163721. Existing IID-B4
+controls are2.793291801246,0.375286609858,3.349472198669. The new mean is
+3.350775058644%, versus2.172683536591%; paired baseline-minus-new mean
+-1.178091522053percentage points. Two small positive seed differences and one
+large negative are all retained. New median3.245725163721>1% and worst
+4.494857881670>2.5% fail the unchanged primary accuracy limits. It is not rescued
+by a different readout, B16, or the exact control. Low-game accuracy passes;
+medium exact control also passes (median0.183407419724%, worst0.229841014432%).
+Whole warm-inclusive coverage is100%, while primary medium post-warm row
+coverage is0.652226/0.593261/0.613718; warm support is not learned coverage.
+These are own known-game quantities pending independent comparison. Publish all
+complete evidence first; keep default/fresh/global admission false. Next is
+the independent900-second audit, then diagnosis using saved policies, not an
+unchanged favorable training retry. AI-assisted execution/reporting.
+
+
+### November 10 — complete real independent audit verifies the negative result
+
+Own studyccbffb91064c82df6de503033932c6e90f789968/tree55bc8e106c41e9a18d76f06b85a9bac1d100dfdc
+was canonically observed, with all16 study files hash-matched to committed bytes,
+BEFORE real-native construction17:38UTC. All432profiles/1152fixed conditions
+pass independent OpenSpiel checks, maximum2.0605739337042905e-13chips. Whole
+native639.711564250s<900 includes all required setup/admission checks, own
+archive/baseline reads, reference work and final full replay. Raw1596-message
+journal and exact child retained. A data-only replay with constructors blocked
+checks source, whole-clock/child bytes, raw journal and complete native schema.
+
+The numerical audit passes; the main accuracy target still fails. Keep every
+negative seed/control/readout and the default/fresh/global flags false. README
+now reports B14.354032%, IID-B42.172684%, stratifiedB43.350775% on the declared
+primary, with scope and failed limits. No extra training study starts this
+window. Next bounded step is the prospectively specified saved-policy gap
+diagnosis (issue4 comment6774698163), with all3seeds/readouts/work labels and
+both encodings/games; no causal/floor claim or favorable unchanged retry.
+Final artifact CI is required before merge. AI-assisted work, no inferred human
+minutes or mastery.

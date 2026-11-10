@@ -441,3 +441,15 @@ The new array-to-EFG adapter uses the unmodified installed reference for scalar
 comparison only. It requests no reference policy or training output. This local
 software coverage does not complete the new source-bound proof or admit a real
 matched-update study. Historical solver results and license records remain intact.
+
+
+### November 10 pinned-license recheck for the private-prefix pipeline
+
+Before constructing a reference for the new pipeline, Codex re-read the full
+installed OpenSpiel2.0.2 Apache-2.0 license at15:40 UTC. Its SHA-256 remains
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`,
+matching the prospective config and runtime verifier. The license permits this
+comparison use; its redistribution and notice conditions continue to apply.
+This pipeline requests independent scalar values and best-response checks of
+own policies only. It exports no reference strategy or action table to training.
+This license review is not evidence that the new comparison has already run.
