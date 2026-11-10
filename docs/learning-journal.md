@@ -3240,6 +3240,24 @@ the local tables. No new training, solver strategy input or default change is
 authorized by this diagnostic. The implementation now has 16 passing fictional checks and a cached browser.
 Actual saved-game results and full verification follow.
 
+### Step 80 — hold the opponent fixed and change later choices (November 10)
+
+The next check asks why a turn call can become better when later river choices
+improve. It compares an exact reply, a constrained reply, and a hybrid that
+uses the exact earlier reply but the constrained river choices. The opponent's
+action probabilities stay fixed in all three cases.
+
+**Example:** imagine stopping pays 1. Continuing pays 4 if the later decision
+is good, but 0 if it is bad. The preferred earlier action changes even though
+nothing about the current observation changes. These are made-up payoff values
+used in arithmetic tests, not poker results.
+
+The [fixed saved-data panel](private-prefix-continuations.md) includes every
+previously selected group and every exact member, with all seeds and controls.
+Thirteen small arithmetic/failure checks pass. Actual saved-poker values and
+full verification follow. This measures a continuation effect against a fixed
+opponent; it does not measure improvement from retraining the agent.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

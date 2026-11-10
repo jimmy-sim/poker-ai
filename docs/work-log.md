@@ -2377,3 +2377,18 @@ complete inventory. Pin the final decision report to the initial summary bytes;
 do not change the hash if reproduction fails. No new training or solver.
 No contrast values measured yet. This diagnoses a frozen continuation, not
 causal training improvement or extra-information-only attribution.
+
+### November 10 — implement controlled saved-continuation values
+
+Report-only CLI reuses the frozen own scoring/conditional-action functions and
+the fixed decision archive loader. Exact/restricted/hybrid roots match audited
+source values; opponent rows are fixed; hybrid is checked to change only own
+river rows. Retain all90groups/415members, including unsupported rows with None
+choice, first-legal supported ties, finite values, separate1e-9chip/1e-12support
+tolerances and unchanged input arrays.
+
+Thirteen fictional arithmetic/control tests pass0.52s; Ruff/format/mypy549files
+pass. A hand-computed two-decision payoff fixture checks both target signs and
+own-past-reach exclusion, not poker strength. No actual continuation contrast
+yet. Integrate the published safeguarded input report, run full local checks,
+then constructor-blocked saved-data contrast and both hosted jobs. No training.

@@ -28,3 +28,20 @@ The prospective summary hash comes from the retained complete initial report;
 require the safeguarded final report to reproduce those exact bytes. If it
 does not, investigate rather than changing the prospective hash. All local and
 both hosted checks must pass before merge.
+
+## Implementation checkpoint
+
+The report entrypoint reuses the completed decision panel/archive loader, own
+scoring context and conditional-action helper. It validates the exact/restricted/
+hybrid roots against the audited source, fixes opponent rows, checks that the
+hybrid changes only own river rows, and retains all 90 groups / 415 exact members.
+
+Thirteen checks pass in 0.52 seconds. A fictional two-decision example has a
+stop payoff of 1, continuation payoff of 4 with a good later choice, and 0 with
+a bad later choice. It verifies both target signs and that own past reach is
+excluded from counterfactual support. These are constructed continuation
+profiles, not CFR training or equilibrium results. Failure tests cover changed
+roots, nonfinite values, prefix/river/opponent/mask/trio changes, unsupported/tied
+choices, unitless support errors below the chip tolerance, and no overwrite.
+Ruff, formatting and strict typing pass. Actual saved-poker values and full
+local/hosted checks remain pending.
