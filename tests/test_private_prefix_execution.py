@@ -225,6 +225,9 @@ def test_old_calibration_failure_keeps_copy_events_before_final_receipt(
     with (
         patch("poker_ai.evaluation.private_prefix_admission.require_software"),
         patch.object(runner, "source", return_value=current),
+        # This synthetic failure test does not need historical Git objects.
+        # The separate slow source/archive test verifies real kernel evidence.
+        patch.object(runner, "kernel_evidence", return_value={}),
         patch("poker_ai.evaluation.private_prefix_baselines.rows", return_value=[]),
         patch(
             "poker_ai.evaluation.private_prefix_baselines.source_hashes",

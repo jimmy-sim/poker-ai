@@ -2100,3 +2100,17 @@ execution22pass1deselect2.61s, full Ruff/format/strict typing pass. No numerical
 operation, RNG, seed, grid or scientific cap changed. Repeat complete source
 checks before any proof/admission; the prior passing cohort is not reused as
 current admission. AI-assisted review/implementation, no inferred human time.
+
+
+### November 10 — isolate a synthetic test from shallow hosted history
+
+Source1989b52 passes all local checks:2267base/2322optional/3slow on each runtime.
+Hosted3.12 job129951572681 in42851073282 instead fails1 test (2266pass/46skip/
+148deselect,597.28s): the new synthetic OLD interruption test accidentally calls
+real historical kernel_evidence, but the shallow checkout lacks ad160906. The
+full hosted log and local packet are retained. Isolated the synthetic failure
+test's kernel evidence; separate slow real-source/archive validation remains
+unchanged. Corrected console22pass1deselect1.67s. No scientific source, seed,
+cap, gate or data changed (274-file sourceSHAa5a2e28 remains unchanged). New
+complete local/hosted checks precede proof; no reference/profiling/real candidate
+trajectory has run. AI-assisted work; no inferred human time or understanding.

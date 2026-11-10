@@ -3065,6 +3065,13 @@ archive calibration now write durable journals too. New tests inspect those
 records before cleanup runs. Complete source checks are repeated before proof;
 no real new trajectory has started and no time limit changes.
 
+Hosted checking then found a dependency that the full local checkout hid: a
+synthetic failure test tried to verify a historical Git commit absent from the
+shallow hosted checkout. That unit test now uses a clearly marked stand-in for
+its unrelated input evidence. The separate slow test still verifies the real
+archive and history. The failed hosted log is retained, and hosted checking must
+pass before proof. The sampling code, seeds and limits are unchanged.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
