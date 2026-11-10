@@ -75,8 +75,9 @@ def require(root: Path, *, clean: bool) -> dict[str, Any]:
         raise ArithmeticError("complete source code gate changed")
     checked_tree(root, saved["ci"]["checked_commit"], saved["source"]["sha256"])
     current = source(root)
-    if not same(current["sha256"], saved["source"]["sha256"]) or (
-        clean and current["dirty"] is not False
+    if clean and (
+        current["dirty"] is not False
+        or not same(current["sha256"], saved["source"]["sha256"])
     ):
         raise ArithmeticError("current pipeline source differs from checked source")
     return saved

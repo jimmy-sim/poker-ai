@@ -173,6 +173,10 @@ def run(root: Path, output: Path) -> dict[str, Any]:
             raise ArithmeticError("complete tiny proof requires clean committed source")
         saved["config"] = inputs.config_inputs(root)
         saved["code_checks"] = code_gate.require(root, clean=False)
+        if saved["source_sha256"] != saved["code_checks"]["source_sha256"]:
+            raise ArithmeticError(
+                "fresh tiny proof differs from complete checked source"
+            )
         saved["software_training_attempted"] = True
 
         def mark_started() -> None:

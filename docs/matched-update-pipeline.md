@@ -122,3 +122,15 @@ loading and include source verification, setup, work, IO and final replay/report
 3. What if the forecast fails? Preserve all measurements, keep long training
    blocked and investigate the cause under a separately justified change. Do not
    remove contexts, retry unchanged timing for luck, or relax caps or tolerances.
+
+Historical readers verify every recorded original byte and the complete source
+inventory at the original checked commit. They allow added modules so later
+research can still inspect old evidence. Fresh proof, timing, native comparison
+and admission require the entire current source to match the checked cohort;
+this read-only compatibility is not a new-experiment exception.
+
+Native agreement checks the given bounded-game export and scalar/reply math.
+It is separate from earlier engine/evaluator correctness evidence and does not
+establish full-game playing strength. Worst-repeat forecasts are planning gates,
+not statistical runtime guarantees; games/readouts and three seeds remain a
+small dependent diagnostic design.

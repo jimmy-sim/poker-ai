@@ -8,6 +8,7 @@ import pytest
 
 from poker_ai.evaluation import matched_update_admission as admission
 from poker_ai.evaluation import matched_update_code_gate as code_gate
+from poker_ai.evaluation import matched_update_inputs as inputs
 from poker_ai.evaluation import matched_update_overhead as overhead
 from poker_ai.evaluation import matched_update_profile as profile
 from poker_ai.postflop.learning_artifacts import sha
@@ -72,3 +73,30 @@ def test_admission_with_different_source_rejected_before_publication(
     ):
         with pytest.raises(ArithmeticError, match="differs"):
             admission.require_admission(tmp_path, "b" * 64)
+
+
+def test_fresh_tiny_proof_cannot_use_old_checks_after_source_addition(
+    tmp_path: Path,
+) -> None:
+    from poker_ai.evaluation import matched_update_software as software
+
+    output = tmp_path / "own.json"
+    with (
+        patch.object(
+            software,
+            "source",
+            return_value=dict(dirty=False, sha256={"EXPLICIT_NEW": "a" * 64}),
+        ),
+        patch.object(inputs, "config_inputs", return_value={}),
+        patch.object(code_gate, "require", return_value=dict(source_sha256=sha({}))),
+        patch.object(
+            software,
+            "build",
+            side_effect=AssertionError("unchecked source cannot start fixture learner"),
+        ),
+    ):
+        with pytest.raises(ArithmeticError, match="complete checked source"):
+            software.run(tmp_path, output)
+    saved = json.loads(output.read_text())
+    assert saved["status"] == "incomplete"
+    assert saved["software_training_attempted"] is False

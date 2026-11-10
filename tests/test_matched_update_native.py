@@ -243,7 +243,7 @@ def test_native_constructor_failure_records_started_without_completed(
         )
     )
     output = tmp_path / "native.json"
-    fixture_own = dict(scope=SCOPE, details_sha256="a" * 64)
+    fixture_own = dict(scope=SCOPE, details_sha256="a" * 64, source_sha256=sha({}))
     with (
         patch(
             "poker_ai.solver_validation.matched_updates.source",

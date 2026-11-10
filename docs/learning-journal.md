@@ -23,7 +23,7 @@ notes section is for your own questions and explanations as you work through it.
 November10 update: the original batch experiment and saved-current diagnosis are
 complete. We are building the next controlled test: compare strategies after the
 same number of learning updates, while showing their different compute costs.
-Steps43–46 explain the new input, capture and independent-checking software.
+Steps43–47 explain the new input, capture and independent-checking software.
 The small software fixtures pass local checks, but the new real Hold’em study
 still needs complete source checks, a published software proof and the fixed
 compute gate. No new default or competitive-strength claim follows.
@@ -2561,6 +2561,22 @@ exporter, values and replies; it trains no new poker strategy. The four checks
 passed in3.32seconds. Full source checks and published proof/forecast evidence
 are still needed before the large study. AI-assisted implementation and tests;
 no additional human practice or minutes have been reported.
+
+## 47. Keep old evidence readable as the project grows — November 10
+
+Question: should adding a new module make an old result unreadable? Review found
+that one check was applying the fresh-experiment rule to an offline archive
+reader. A regression reproduced the problem. The corrected reader still checks
+every original file and the original tested commit, but allows additional files.
+A new experiment must match the complete newly tested source before it starts.
+
+For example, adding a new plotting helper should not erase access to yesterday's
+saved experiment. Editing yesterday's calculation code should still break its
+old source check. Seven source-gate tests cover those boundaries and incomplete
+check records; another test ensures old checks cannot start a fresh tiny proof.
+These are software corrections, not a new strength measurement. Complete checks
+are being repeated on the corrected source before any real timing run. Work and
+verification remain AI-assisted; no new personal practice/time was reported.
 
 ## Your own learning notes
 

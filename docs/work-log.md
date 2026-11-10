@@ -1522,3 +1522,16 @@ achieved values without learner construction. The full archived-input replay
 with the learner factory blocked passed in3.51s. Baseline d02492a base suites
 reported2033 passed/44skipped/143deselected each (292.24s and291.61s), but these
 precede the correction and are not used to admit the final source.
+
+### November10 — historical replay versus fresh-source admission
+
+Review found that the current-source inventory check also blocked historical
+data-only readers after any future SRC addition. A regression reproduced that
+rejection (1failed in1.08s). Read-only mode now checks every original byte and
+the original complete checked commit, while permitting added modules. Fresh
+proofs/profiling/native audits/admission still require the entire current source
+to match the tested cohort; explicit fresh-proof/native source checks were added.
+Twelve source-gate/pre-input/fresh-proof tests passed in0.09s. No original-file
+hash, cap, seed, tolerance or performance gate was weakened. a5fffa4 full base
+checks passed2036 tests on each Python version (305.69/305.45s), but the new
+source-gate correction requires a new complete source validation before use.

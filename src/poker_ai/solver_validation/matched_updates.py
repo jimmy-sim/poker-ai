@@ -265,6 +265,10 @@ def audit(
                 from poker_ai.evaluation.matched_update_replay import replay_real
 
                 replay_real(own_path, own, sources, deadline)
+        if saved["source_sha256"] != own["source_sha256"]:
+            raise ArithmeticError(
+                "fresh native audit differs from complete checked own source"
+            )
         saved.update(
             own_sha256=digest(own_path),
             details_sha256=own["details_sha256"],
