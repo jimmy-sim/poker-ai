@@ -20,12 +20,11 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November10 update: corrected runtime checks and a fresh eligible complete tiny
-proof have passed. Steps50–52 explain the error, retained first attempt and
-verified replacement. The own short-prefix/old-policy overhead timing gate passed; its native
-comparison and checked admission come next. The large Hold’em comparison remains blocked until its full
-compute and published admission gates pass. No default or competitive-strength
-claim follows.
+November10 update: the corrected software proof and own timing gate passed, but
+the native overhead reader failed on publication metadata before constructing a
+reference. Step54 explains the retained failure and the planned versioned repair.
+The long Hold’em study remains blocked. No default or competitive-strength claim
+follows.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2675,6 +2674,22 @@ not show the agent improved: the overhead policies are old timing aliases.
 The complete own evidence is published before the independent native overhead
 check. That check and a published checked admission are still needed before
 long training. AI-assisted execution; no human minutes or new practice inferred.
+
+## 54. Publishing evidence changed the wrong comparison field — November 10
+
+The native overhead step stopped before it built a reference or scored a target.
+The saved policies and all stable corpus identities matched. The mismatch came
+from comparing the Git commit and working-tree status inside the manifest.
+Publishing the own files changes those fields, even when the code and data are
+unchanged. The pipeline had treated that expected publication step as an input
+change.
+
+This is a software reader bug, not evidence that the poker agent lost. The failed
+receipt and successful own timing data are retained. A versioned IO adapter will
+check the original code/config bytes and every stable target separately from
+volatile publication metadata. The repaired source still needs its checks and
+compute admission before a long study. No cap, seed or tolerance is relaxed.
+AI-assisted diagnosis; no new human practice or time inferred.
 
 ## Your own learning notes
 

@@ -1649,3 +1649,26 @@ not a new prefix strength result or an unpaired causal speedup claim. Publishing
 complete own evidence now precedes comparison-only native overhead. The native
 900s cap and strict2*elapsed<900 gate, then checked published admission, still
 block the long study. No scientific cap, seed or tolerance changed.
+
+### November10 — native overhead blocked by volatile manifest provenance
+
+The first native old-policy overhead attempt FAILED before reference construction
+or any scalar target. It retained0profiles/0fixed targets, no reference setup,
+and `old-policy corpus/inputs changed`. Complete command wall30.607491416973062s;
+this is a software-input failure, not an unfavorable poker score. No long study
+was admitted. The successful own72-row forecast/151.01s overhead remains intact.
+
+A metadata-only diagnosis recomputed the full timing corpus: every stable target,
+readout, coordinate, policy identity and input hash matched. The ONLY differences
+were `/source/git_commit` and `/source/git_status:length`: publishing own evidence
+necessarily changes those fields. The reader incorrectly compared the entire
+manifest, including that volatile provenance.
+
+[Failed native receipt](../results/matched-update-pipeline/overhead/native.json),
+[diagnosis](../results/matched-update-pipeline/overhead/reader-failure-diagnosis.json).
+Next: a versioned parent IO adapter that preserves all existing scientific source
+and data, validates original code/config bytes separately and compares every
+stable corpus identity. Add lifecycle/failure tests, then recheck the expanded
+source cohort and its proof/compute gates before any real trajectory. This is a
+source repair, not permission for an unchanged favorable timing retry. Caps,
+seeds, grids and tolerances stay fixed; retain all first-attempt outcomes.
