@@ -2426,3 +2426,29 @@ regression; focused14pass0.45s, Ruff/format/typing pass. AllSRC/modela5, config
 SHA, seeds,9/18/90/415panel, chip tolerances and scientific caps unchanged.
 No new training/reference. Publish corrected source before fresh saved-data
 analysis; preserve failure in results/private-prefix/continuations-initial-e92-failure.
+
+### November 10 — complete fixed saved-continuation contrast
+
+Corrected source7f68380 completes18responses/90groups/415members in356.912652750s.
+Root discrepancy0chips; responding support discrepancy0; all415CFsupported,
+31TURN/384RIVER. Exact vs hybrid preferred actions differ in10of31selected
+TURNrecords. These are dependent post-hoc selected records, not hand frequencies.
+Allarraysunchanged; learner/referenceconstructorsblocked; no newtraining.
+
+Largestseat1singleton99turngroup:7of9snapshotsfold->call whenonly ownriver
+continuationchanges. B1seed02 andnewseed03alreadycall, retained. Newseed02fold-18,
+callhybrid-19.8539257466, exactcall-12.7212238082chips; different snapshots use
+their respective saved opponents, fixed onlyWITHIN eachcontrast. Full415rows
+retainalllegalQs; newper-rowQs are OWNmath, not anewnativeaudit ortrainingbenefit.
+
+Finalbase2318pass47skip148deselect384.99/371.81s; optional2374pass148deselect
+416.41/404.64s.14focusedchecks, Ruff/format/mypy pass. Separate renderer projects
+all9examples toCSV/PNG, visualinspectionfixedoverlappingfootercaption; unreviewed
+layoutdrafts stayignored. No source/strategy/scientific gate change. Journal81
+and plainreport explain the failure, mechanism, limitations and next decision.
+
+PR45finalCI42879966452bothPASS mergedb861c4bc. UsermainFFafterfresh19:08snapshot;
+all10modified bytes/index/statuspreserved. Main38focusedtestspass15.04s andactual
+cachedexampleworks; postcheck10hashes/statusunchanged. PR46retargetmain; integrate
+the last PR45data-only reproductionreceipt before final branch checks.
+Cross-runtime continuation reproduction and final hostedCI remain pending.

@@ -3283,6 +3283,36 @@ An added two-player regression catches and fixes a support-checking mistake;\n14
 full verification follow. This measures a continuation effect against a fixed
 opponent; it does not measure improvement from retraining the agent.
 
+### Step 81 — see the river weakness affect a turn call (November 10)
+
+The continuation check is complete. It keeps the opponent fixed within each
+saved snapshot and changes only the responding player's later river choices.
+All 90 selected groups and 415 exact situations remain in the report.
+
+In the pocket-nines example, the unfavorable new seed values folding at
+-18 chips. Calling with constrained river play is worse, about -19.85.
+Calling with the exact reply's later choices is better, about -12.72.
+The current turn cards did not change. The later continuation changed what
+calling was worth.
+
+Across the nine pocket-nines examples, seven switch from favoring fold to
+favoring call. Two already favor calling, and remain in the table. Across
+all selected turn records, 10 of 31 preferred actions change. These are
+dependent saved records, not a win rate or a fraction of all poker hands.
+
+The first diagnostic had a support-checking bug. Its original log and source
+are retained; a small two-player example reproduced and fixed it. The corrected
+program matches every checked source root and responding support exactly.
+Both base environments pass 2,318 tests; both optional environments pass 2,374.
+No new poker training or reference strategy input occurred.
+
+The [figure and report](private-prefix-continuations.md) explain the colors,
+all nine cases and reproduction commands. Next, investigate which river
+distinctions or training gaps cause the constrained choices before selecting
+another training change. This does not establish a stronger agent; the main
+sampling experiment's strength gate still fails. Codex assisted with the work;
+no personal practice, hours or mastery are inferred.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

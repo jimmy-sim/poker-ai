@@ -66,3 +66,110 @@ All original profiles, groups, members, roots, chip tolerances, seeds, caps and
 thresholds stay fixed; no model source changes. Fourteen focused checks now
 pass in 0.45 seconds. The corrected saved-data reproduction and full checks
 follow; no continuation result is claimed at this checkpoint.
+
+## Recorded result — November 10
+
+The corrected constructor-blocked replay completes all eighteen responses,
+ninety previously ranked groups and 415 exact members in 356.912653 seconds.
+All three continuation roots match the audited source exactly; the maximum
+responding-player support discrepancy is zero. Every input policy stays
+unchanged. All 415 selected members have positive counterfactual support.
+
+Here, support means chance times the **other player's** reach. It excludes
+the responding player's earlier action probabilities. Positive support is
+not a claim that the saved strategy actually reaches that row or that training
+visited it.
+
+Of the 415 selected member records, 31 are turn records and 384 are river
+records. Changing only own river continuation changes the preferred action
+in 10 of those 31 selected turn records. These are dependent records selected
+from the earlier largest-loss groups, not a percentage of all played hands.
+
+### The recurring pocket-nines example
+
+The table shows **call value minus fold value, in net responding-player chips**.
+Positive values favor calling over folding; negative values favor folding over
+calling. Each exact/hybrid pair keeps its own saved opponent fixed. The nine
+snapshots have their respective saved opponents, so differences between methods
+are not controlled cross-play comparisons.
+
+| Seed | Saved method | Exact continuation | Constrained river hybrid |
+| --- | --- | ---: | ---: |
+| 20261301 | B1 | 7.583328 | -0.487731 |
+| 20261301 | IID | 6.451725 | -1.103193 |
+| 20261301 | stratified | 4.272927 | -0.980783 |
+| 20261302 | B1 | 8.262801 | 0.553870 |
+| 20261302 | IID | 1.625753 | -1.854670 |
+| 20261302 | stratified | 5.278776 | -1.853926 |
+| 20261303 | B1 | 4.781521 | -1.170857 |
+| 20261303 | IID | 6.850217 | -1.439026 |
+| 20261303 | stratified | 5.399375 | 0.332727 |
+
+Seven of the nine examples change from fold under the constrained-river hybrid
+to call under the exact continuation. The two cases that already favor calling
+are retained: B1/20261302 and stratified/20261303. In this singleton turn group,
+restricted and hybrid call/fold values coincide; the full report retains all
+legal actions and all other selected groups.
+
+For the unfavorable new seed 20261302, folding is -18 chips. Calling is
+-19.853926 with constrained river play and -12.721224 with the exact reply
+continuation. The saved near-always-fold policy is consistent with the former;
+better later choices make calling preferable against this fixed opponent.
+
+![All nine fixed continuation contrasts](../results/private-prefix/continuations-figure/call-versus-fold.png)
+
+This gives a concrete continuation mechanism within the known restricted game.
+It does not show a causal benefit from retraining a new feature, an unavoidable
+abstraction floor, general Hold'em strength, or universal advice to call with
+pocket nines. The newly derived per-row action values use own mathematics and
+controlled fixtures; they are not a new independent native audit. Their source
+strategies and root metrics were independently audited in the original study.
+
+## Verification and reproduction
+
+Both final base environments pass 2,318 tests, 47 skipped and 148 deselected,
+in 384.99 / 371.81 seconds. Both optional environments pass 2,374 tests,
+148 deselected, in 416.41 / 404.64 seconds. Fourteen focused continuation
+checks pass, including the support-domain regression. The renderer passes
+lint, formatting, strict typing and visual inspection.
+
+From a clean research checkout, use fresh destinations for the full data-only
+reproduction and the optional figure:
+
+```sh
+.venv/bin/python scripts/contrast_private_prefix_continuations.py --output results/runs/continuations-local
+.venv/bin/python scripts/render_private_prefix_continuations.py --report results/runs/continuations-local --output results/runs/continuations-figure-local
+```
+
+To view the committed illustration without any replay:
+
+```sh
+open results/private-prefix/continuations-figure/call-versus-fold.png
+```
+
+Cross-runtime data reproduction and final hosted CI are separate checks and
+must be recorded before merging.
+
+## Next question and three explanations
+
+Before another training experiment, locate which river distinctions produce
+conflicting continuation actions in the saved information groups. Separate
+coarse probability bins from aggregation of different opponent-combo identities,
+and keep undertraining as an alternative explanation. The existing full-tree
+control already shows that these groups can support stronger policies on the
+known games; a large saved gap is not proof of an unavoidable representation
+floor. Any new representation needs observable-only, menu/owner/perfect-recall
+tests and a new prospective comparison, followed by the unchanged admission,
+compute and fresh-case gates before strength/default claims. No future run or
+work window is scheduled by this next decision.
+
+1. **Why can a later strategy change an earlier decision?** The earlier action
+   value includes all later choices. Holding the opponent fixed lets this
+   contrast isolate that continuation change.
+2. **What did the failed support test teach?** Only the responder's
+   chance-times-opponent support stays fixed. The other actor's counterfactual
+   support includes the responder's changing reach. The added two-player
+   fixture distinguishes those cases.
+3. **Does this prove a stronger trained agent?** No. These are controlled values
+   for saved strategies. The new sampling candidate still fails its declared
+   primary strength gate.

@@ -60,6 +60,12 @@ Browse the checked report without training with
 Use n/p for groups, s for seeds, o for methods, t for the responding seat and q
 to quit. Learning-journal steps 77–79 explain what the numbers mean.
 
+A [controlled continuation check](docs/private-prefix-continuations.md) shows
+how changing later river choices can change the value of a turn call against
+a fixed saved opponent. The [nine-snapshot figure](results/private-prefix/continuations-figure/call-versus-fold.png)
+and learning-journal steps 80–81 explain this saved-position result; no new
+agent was trained in that diagnostic.
+
 The original batch source's compute forecast fails **7201.49s vs7200s** and stays
 unadmitted. A profiled array-dispatch change preserves all checked paths and
 passes the same formula at6953.92s. The [completed fixed-work study](docs/reduced-batch-study.md)
