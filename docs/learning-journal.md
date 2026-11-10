@@ -3100,6 +3100,25 @@ and a checked published admission can permit the long new study. Codex assisted
 with implementation, verification and publication; no new human practice or
 minutes are inferred.
 
+### Step 73 — the complete own cost forecast fits (November 10)
+
+A cost forecast asks whether the proposed experiment can finish within its
+fixed budget. It does not ask whether its strategy plays better. The new test
+uses all48 changed paths, each repeated three times for timing, and keeps the
+slowest measured cost for each path. Repeated timings use the same seeds; they
+are not144 independent strength tests.
+
+The full profiling command takes288.37seconds. This includes loading and checking
+the sources, warm setup, all short prefixes, and copying/scoring/replaying the
+complete old-policy workload. All remaining non-training work totals260.74
+seconds, below its600-second allowance. The fixed conservative formula predicts
+4,649.90seconds against the7,200-second own-study cap. All limits and cases stay
+unchanged. The old-policy heatmaps describe already saved strategies, and their
+IID-self comparisons are zero; they do not show new candidate learning results.
+
+The own forecast fits. Next, publish it before independently timing the old
+policies. A checked published admission is still needed before the long study.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

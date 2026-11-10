@@ -2149,3 +2149,23 @@ and both source CI42854406375 jobs bind the unchanged274-file sourceSHAa5a2e28.
 Next: original-runtime144-prefix complete conservative forecast and OLD workload
 inside900/600, then own publication before native timing and checked admission.
 No real candidate profiling or long trajectory has been admitted yet.
+
+
+### November 10 — complete real-prefix own forecast passes
+
+On original3.11.17/NumPy2.4.6, all144 prescribed timing prefixes (48changed paths
+repeated3times, additional100k node work each) complete with identical repeated
+state/work guards. The whole profile, including all setup/input checks and full
+OLD432-policy/288-ledger/1152-fixed serialization/scoring/replay/report workload,
+takes288.370542167s<900. Subtracting only the longest worker's actual setup+
+incremental-training intervals27.634824962s leaves260.735717205s<600 for ALL
+nontraining/setup/old workload. Complete fixed-partition max-of-three forecast
+T862.476172223s gives2*(2*T+600)=4649.904688890s<7200. The three OLD heatmaps
+were inspected; IID-self contrasts are zero and all figures say OLD/no new
+trajectories. No new candidate utility was scored from timing prefixes.
+
+Own forecast and old workload are being published before the independent native
+cost comparison. This is not long-study admission: strict2*whole-native<900,
+source/inputs/CI-bound checked published admission and constructor-blocked
+recomputation remain required. No seed, cap, formula, grid or gate changed.
+AI-assisted execution/documentation; no human time or stronger-agent claim.
