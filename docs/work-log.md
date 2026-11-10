@@ -1899,3 +1899,67 @@ merging PR40. Local actual archive replays on3.11.17/NumPy2.4.6 and
 error; original SVG/JSON reproduce byte-for-byte, CSV values match with column
 order differences from JSON-sorted keys. The separate presentation milestone
 will make CSV column order canonical without rewriting historical results.
+
+### November 10 — matched-update study merged and local bytes preserved
+
+Both final artifact CI jobs42818361425 passed on7ecb3b9 after the documented
+hosting-timeout correction. PR40 merged at
+[e4df336](https://github.com/jimmy-sim/poker-ai/pull/40), completing the actual
+24-context matched-update experiment. The user checkout fast-forwarded from
+88ebfba to that merge. Before updating, all10 current modified result files
+were copied byte-for-byte to a timestamped local backup with hashes and binary
+diff; after updating every hash and the same10 modified paths remained intact.
+No user result was staged, reset or overwritten.
+
+### November 10 — read-only two-axis tables and policy browser implementation
+
+The prospective issue4 comment6767326534, pinned input config and new reading
+guide fix the complete presentation scope before new summary publication.
+Added data-only joins for288 self and2304 fixed contrasts (both axes),96/768
+three-seed groups, canonical CSV columns and three all-context heatmaps. The
+browser validates saved own/native chains, loads one same-update pair once,
+then displays unweighted L1-ranked own decisions with actual work/update counts
+and bounded n/p/q navigation. It labels global self vulnerability separately
+from the representative action differences. No strategy changes or training.
+
+29 independent unit checks pass(0.07 s); Ruff and strict typing pass all7 new
+Python files. Initial actual integration failed on both runtimes at a tuple-key
+join assumption before producing a new report; exact failure logs are retained.
+The explicit-ID rekey fix has its own regression. Corrected actual integration
+passes both base runtimes with learner/reference constructors blocked:1 pass,
+10 deselected,206.54/198.42 s. All144/96/1152 replay with zero error; full288/2304
+contrasts and six report files validate, plus averaged/current viewer paths on
+both seats. Separate original-script replays retain CSV column-order mismatch
+while confirming all numeric rows and byte-identical SVG/JSON. Complete current
+base/optional/hosted checks are next before publishing official presentation
+outputs. AI-assisted implementation/checking; no new user practice or human
+hands-on time is inferred. Original244-file scientific inventory stays unchanged.
+
+### November 10 — optional plot boundary corrected before publication
+
+Initial full reader-source67edaed checks passed2165 optional tests on each
+runtime(347.48/334.69 s), but both base strict type checks and hosted
+run42822352177 failed on three unresolved Matplotlib imports. No base pytest
+result is claimed. The direct imports were inside the plotting function but
+still required optional stubs during base typing. The corrected boundary uses
+the existing renderer pattern: dynamic optional imports and headless Agg only
+when plotting is requested. Added an explicitly fictional rendering smoke
+test; no plot data, model or scientific result changed. All four original
+check logs and their failure notice are retained. Complete current checks
+will rerun for the corrected source before official report publication.
+
+
+### November 10 — complete data-only report and browser
+
+Corrected source070e75a: base2112pass45skip145deselect(373.56/359.01 s), optional
+2166pass145deselect(414.37/401.80 s), actual constructor-blocked integration
+1pass10deselect(243.07/235.42 s), on actual3.11.17/NumPy2.4.6 and3.12.15/2.5.4.
+Ruff602files and strict typing502files pass; both hosted jobs42823793710 pass.
+All logs/runtime assertions and source inventory retained separately from the
+historical scientific admission. Generated complete288self/2304fixed raw
+contrasts,96/768three-seed groups and three visually inspected heatmaps in
+144.749310s. All six numeric/text exports reproduce byte-for-byte on both
+runtimes. Actual terminal n/p/q checked through ranks1→2→1, then clean quit after
+one load. Original science code/data unchanged; prior join/import failures
+retained. PR41 reports existing results, not new learning or a default selection.
+AI-assisted work; no additional user practice, mastery or human minutes inferred.

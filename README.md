@@ -51,10 +51,18 @@ tests; neither establishes competitive full-game strength. Journal step39
 explains the distinction and links the plots and offline replay command.
 
 You can now [browse saved action tables in Terminal](docs/batch-strategy-viewer.md).
-The [matched-update protocol](docs/matched-update-batches.md) and
-[toy-only archive proof](docs/matched-prefix-capture.md) prepare the next controlled
-test. They do not run or admit another Hold'em learning study. Journal steps40–42
-explain the commands, raw averaging weights and remaining gates.
+The [matched-update study](docs/matched-update-batches.md) now completes its
+prescribed24-context/48-target comparison and independent audit. The earlier
+[toy-only archive proof](docs/matched-prefix-capture.md) remains software evidence.
+Journal steps40–68 explain the commands, gates, failures and completed result.
+
+The completed [two-axis tables and terminal browser](docs/matched-update-viewer.md)
+retain every seed/readout and actual work/update count. Both strategies are our
+own; the independent solver checks scalar calculations. At equal updates B1
+uses much less work, so this does not isolate a pure variance effect or establish
+a stronger default. [Complete comparison table](results/matched-update-viewer/report/tables.md).
+
+![Both compute axes, linear average](results/matched-update-viewer/report/linear_average.png)
 
 ## Architecture and current strength work
 

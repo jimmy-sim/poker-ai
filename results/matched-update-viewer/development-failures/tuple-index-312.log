@@ -1,0 +1,57 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_actual_audited_data_readers_with_constructors_blocked __________
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-349/test_actual_audited_data_reade0')
+
+    @pytest.mark.slow
+    def test_actual_audited_data_readers_with_constructors_blocked(tmp_path: Path) -> None:
+        from poker_ai.evaluation.matched_update_parent_io import activate
+        from poker_ai.evaluation.matched_update_presentation import views, write
+        from poker_ai.evaluation.matched_update_replay import replay_real
+        from poker_ai.postflop.controlled_training import ControlledTrainer
+        from poker_ai.postflop.river_study import Deadline
+        from poker_ai.solver_validation.matched_array_reference import ScalarReference
+    
+        root = Path(__file__).resolve().parents[1]
+        with (
+            patch.object(
+                ControlledTrainer, "__init__", side_effect=AssertionError("no learner")
+            ),
+            patch.object(
+                ScalarReference, "__init__", side_effect=AssertionError("no reference")
+            ),
+        ):
+>           data = data_module.load(root, lambda _: None)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_matched_update_viewer.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/matched-update-viewer')
+progress = <function test_actual_audited_data_readers_with_constructors_blocked.<locals>.<lambda> at 0x109ffcea0>
+
+    def load(root: Path, progress: Callable[[str], object] = print) -> Data:
+        contract(root)
+        progress("1/3 Checking saved admission/source; this can take a few minutes.")
+        path = root / OWN
+        measured(root, path, "study")
+        measured(root, path.with_name("native.json"), "real_native")
+        with activate(root):
+            saved, sources = read_saved(root, path)
+            native = read_native(root, path.with_name("native.json"), path, saved)
+        progress("2/3 Own/native receipts verified; joining all declared endpoints.")
+        right_rows, _ = reused(sources)
+        final = {}
+        for i in range(24):
+            for readout in READOUTS:
+                if readout == "current":
+                    raw = sources.currents[i, 10_000_000]
+>                   row = sources.scored_currents[raw["id"]]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                   KeyError: 'current-000-10000000'
+
+src/poker_ai/evaluation/matched_update_data.py:60: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_matched_update_viewer.py::test_actual_audited_data_readers_with_constructors_blocked
+1 failed, 10 deselected in 164.68s (0:02:44)
