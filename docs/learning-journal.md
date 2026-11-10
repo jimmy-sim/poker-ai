@@ -22,7 +22,7 @@ notes section is for your own questions and explanations as you work through it.
 
 November10 update: the corrected software proof and own timing gate passed, but
 the native overhead reader failed on publication metadata before constructing a
-reference. Steps 54–57 explain the retained failure, the repair and its completed checks.
+reference. Steps 54–59 explain both retained publishing/destination failures and their repairs.
 The long Hold’em study remains blocked. No default or competitive-strength claim
 follows.
 
@@ -2752,6 +2752,22 @@ quietly rerunning a learner. These tiny cases prove software behavior, not
 Hold'em strength. Next: repeat the entire prescribed real compute forecast
 for the repaired source, keeping the earlier attempt visible.
 AI-assisted work; no new personal practice or human time was reported.
+
+### Step 59 — a destination check was missing (November 10)
+
+The next attempt completed all 72 timings and replayed the entire old-policy
+corpus. Its last step failed: the assistant had removed old report files but
+left an empty report folder behind. The report writer refuses to reuse any
+existing folder, even an empty one. That protects old evidence, but we should
+have checked the destination before spending compute.
+
+The complete failed attempt is retained in
+[source cohort 7bd650d](../results/matched-update-pipeline/source-cohort-7bd650d/retention.json).
+Its favorable partial timings do not turn it into a passing gate. No new native
+comparison or long study ran. Next: check all output destinations before a child
+starts, record the complete command clock, and verify the changed IO source.
+The scientific trainer and budgets stay frozen. AI-assisted work; no additional
+human practice or time was reported.
 
 ## Your own learning notes
 

@@ -1733,3 +1733,19 @@ replayed the archive with fixture building, learner and reference constructors
 blocked; runtime asserted before and after. Exact source cohort: cc43405e….
 This is tiny-game software evidence only. It permits the complete short-prefix
 forecast/old-policy overhead gate; it does not admit a long real trajectory.
+
+### November 10 — report destination failure retained, admission stays closed
+
+The repaired-cohort own profile failed after all 72 timing rows and complete
+144-policy / 96-ledger / 1,152-target own replay. The assistant removed old
+latest files but left their empty `overhead/report` directory. The report writer
+correctly refused any existing destination. Full profile235.7591332080192 s;
+overhead149.15557816601358 s; guarded forecast3361.849243913491 s. These are
+retained partial observations, NOT a passing compute/admission receipt.
+No native overhead was attempted and no long real trajectory was admitted.
+All current files are byte-retained under `source-cohort-7bd650d/` with a hash
+receipt and the empty-directory diagnosis. This was an avoidable setup mistake.
+Next: prospective destination preflight before child computation, and a complete
+CLI clock receipt including preflight/startup/final-write. Keep all scientific
+source, caps, seeds and outcomes unchanged; the added IO source needs its full
+checks and new cohort gates rather than rewriting the failed receipt.
