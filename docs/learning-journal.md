@@ -3240,6 +3240,31 @@ the local tables. No new training, solver strategy input or default change is
 authorized by this diagnostic. The implementation now has 16 passing fictional checks and a cached browser.
 Actual saved-game results and full verification follow.
 
+### Step 79 — move from totals to individual hands (November 10)
+
+The decision report now keeps every exact row behind nine saved strategies:
+30,024 row records, covering all three seeds, all ordinary controls and both
+responding seats. A terminal browser lets you switch groups, seeds, methods
+and seats without running another training job.
+
+A recurring example is pocket nines on the turn. The saved strategy usually
+folds; the exact best response prefers calling when it can choose its later
+river actions freely. The turn information group contains just one exact
+situation, so we should not immediately blame a missing turn feature. Later
+choices can change the value of an earlier decision.
+
+The [report](private-prefix-decisions.md) gives the actual chip values, every
+seed/control, and commands for inspecting them. The full detail archive and
+summary are unchanged byte for byte after adding stricter accounting and
+interruption safeguards. Both base environments pass 2,304 tests; both optional
+environments pass 2,360. No new poker training ran and the failed strength gate
+still fails.
+
+Next, hold the opponent fixed and change only our future river continuation
+to test that explanation. This is a saved-strategy question, not a claim that
+retraining with a new feature will improve the agent. Codex assisted with the
+implementation and analysis; personal practice or hours were not recorded.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

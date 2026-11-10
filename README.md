@@ -53,6 +53,13 @@ These are two known small games, not general Hold'em playing strength.
 [all-case heatmaps](results/private-prefix/study/report/linear_average.png),
 and learning-journal steps69–75 explain the result.
 
+The [saved-decision report](docs/private-prefix-decisions.md) follows the failed
+result down to individual hands, retaining all three seeds and both controls.
+Browse the checked report without training with
+`.venv/bin/python scripts/inspect_private_prefix_decisions.py --interactive`.
+Use n/p for groups, s for seeds, o for methods, t for the responding seat and q
+to quit. Learning-journal steps 77–79 explain what the numbers mean.
+
 The original batch source's compute forecast fails **7201.49s vs7200s** and stays
 unadmitted. A profiled array-dispatch change preserves all checked paths and
 passes the same formula at6953.92s. The [completed fixed-work study](docs/reduced-batch-study.md)

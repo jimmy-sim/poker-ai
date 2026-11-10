@@ -2366,3 +2366,19 @@ No scientific model/data change. Final full suites and saved-data replay follow.
 PR #44 final artifact CI42874878787 passed both jobs and merged8b303fdd.
 PR #45 retargeted to main; integrate the merged data-only reproduction receipts
 before final checks. Human minutes not recorded; AI-assisted execution.
+
+### November 10 — complete safeguarded saved-decision replay
+
+All9profiles/18responses/30,024owned exact rows complete in357.455548917s,
+constructors blocked, audited roots/accounting and unchanged arrays checked.
+Summary and full detail gzip are BYTEIDENTICAL to retained initial57f outcome;
+per-profile partial details now survive interruption. Both final base suites
+2304pass47skip148deselect380.77/368.58s; optional2360pass148deselect413.90/402.76s.
+
+Every seat-1 profile's top group819 is the singleton turn99 case. Most total
+gain is attributed at turn, but the best-reply suffix includes river choices;
+this is not evidence of missing turn information or extra-only row loss.
+All seed/control street totals and example values are in the report, with
+learning-journal step79 and an interactive cached browser. Native original
+432/1152 evidence remains comparison-only. Cross-runtime data-only replay and
+final hosted CI remain next; no new training or default/gate change.
