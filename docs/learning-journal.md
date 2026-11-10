@@ -20,11 +20,12 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November10 update: the matched-update pipeline's corrected base, optional, slow
-and hosted checks have passed. Steps50–51 explain an environment-label mistake,
-its retained original evidence and the actual-runtime reruns. The fresh eligible
-tiny proof comes next; real prefix timing and the larger Hold’em comparison
-remain gated. There is no new default or competitive-strength claim.
+November10 update: corrected runtime checks and a fresh eligible complete tiny
+proof have passed. Steps50–52 explain the error, retained first attempt and
+verified replacement. The first real short-prefix/old-policy overhead timing
+gate comes next. The large Hold’em comparison remains blocked until its full
+compute and published admission gates pass. No default or competitive-strength
+claim follows.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2638,6 +2639,24 @@ this corrected prerequisite record is published, with own evidence published
 before native comparison. Real timing and the larger study still follow their
 separate gates. This correction and execution were assistant work; no new human
 practice or minutes are inferred.
+
+## 52. Complete the eligible small proof — November 10
+
+The new small proof ran after the corrected runtime checks. Its own archive
+replayed144 policies and1,152 fixed conditions with zero error; the own files
+were pushed before independent comparison. The whole shared run finished in
+30.47seconds, including publication and final replay. The independent
+calculator's largest scalar difference was2.22×10^-16fixture chips.
+
+The separate archive reader now actually ranPython3.12.15/NumPy2.5.4, with its
+version asserted before and after and learner/reference constructors blocked.
+The earlier mislabeled attempt remains retained as ineligible evidence.
+
+Next is the first real timing attempt: all24 contexts, three short runs each,
+and the full reporting overhead on old saved policies. The forecast and overhead
+must pass before the larger comparison starts. This is software correctness,
+not a stronger-agent result. AI-assisted execution; no new human practice/time
+was reported.
 
 ## Your own learning notes
 

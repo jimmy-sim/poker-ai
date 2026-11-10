@@ -1614,3 +1614,20 @@ slow59each (266.72/256.99s); hosted42792838522bothgreen. Metadata now comes
 from actual header output; original invalid labels/bytes stay retained. The new
 source receipt enables a fresh eligible tiny proof only. First attempt arithmetic
 results remain historical, ineligible prerequisite evidence; no real timing yet.
+
+### November10 — eligible tiny proof after corrected prerequisites
+
+The fresh own proof completed in4.489952458011s after the corrected
+actual-runtime source receipt was published. Its144captures/144scored/96ledgers/
+72crossings/1152fixed conditions replayed with0 own error. OWN evidence was
+pushed45929b9ef8f6adab81c10582625f632028f694ec and GitHub workflow42798325998
+was observed before native construction. Native144/1152 plus finalownreplay
+completed the ONEshared180s clock in30.472155417025s, maximumerror
+2.2204460492503131e-16fixture chips.
+
+The archived-data read now genuinely ranPython3.12.15/
+NumPy2.5.4, asserted before and after, with learner
+and reference constructors blocked. The first ineligible-chain proof and all
+original bytes remain retained separately. This corrected eligible software
+proof permits the first real short-prefix timing/old-overhead gate only; it
+still does not admit a long trajectory, stronger default or global agent.
