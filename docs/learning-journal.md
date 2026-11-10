@@ -3279,7 +3279,7 @@ used in arithmetic tests, not poker results.
 
 The [fixed saved-data panel](private-prefix-continuations.md) includes every
 previously selected group and every exact member, with all seeds and controls.
-Thirteen small arithmetic/failure checks pass. Actual saved-poker values and
+An added two-player regression catches and fixes a support-checking mistake;\n14 focused checks now pass. The original failure is retained. Actual saved-poker values and
 full verification follow. This measures a continuation effect against a fixed
 opponent; it does not measure improvement from retraining the agent.
 

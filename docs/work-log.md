@@ -2408,3 +2408,21 @@ pass. A hand-computed two-decision payoff fixture checks both target signs and
 own-past-reach exclusion, not poker strength. No actual continuation contrast
 yet. Integrate the published safeguarded input report, run full local checks,
 then constructor-blocked saved-data contrast and both hosted jobs. No training.
+
+### November 10 — retain and correct continuation support-scope failure
+
+Initial source e92d0cc saved-data attempt fails at the first contrast before any
+completed derived output. Keep raw stderr, independent Kuhn reproduction,
+failure notice and all four initial passing suites: base2317/47skip/148deselect
+380.89/369.72s; optional2373/148deselect415.69/403.50s. Those tests missed a
+valid two-player support change. Exact failure wall time was not retained;
+do not infer it from polling.
+
+Independent fixture: responding CF mass change0, other-actor change1/6.
+Only responding infos' chance*opponent mass is invariant when own strategy
+changes. Restrict that comparison to target-owned infos at the SAME1e-12
+threshold; opponent POLICY equality remains universal. Add valid two-player
+regression; focused14pass0.45s, Ruff/format/typing pass. AllSRC/modela5, config
+SHA, seeds,9/18/90/415panel, chip tolerances and scientific caps unchanged.
+No new training/reference. Publish corrected source before fresh saved-data
+analysis; preserve failure in results/private-prefix/continuations-initial-e92-failure.

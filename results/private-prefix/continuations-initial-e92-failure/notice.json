@@ -1,0 +1,25 @@
+{
+  "status": "failed_report_support_scope_before_any_completed_contrast",
+  "source_commit": "e92d0ccd916a10704249030439283fbe9874a457",
+  "error": "continuation roots/support differ from bound source",
+  "root_cause": "Support invariance was checked across both actors. Only responding-player infos have unchanged chance*opponent support; the other actor legitimately sees changed responding reach.",
+  "independent_fixture": {
+    "responding_mass_change": 0.0,
+    "other_actor_mass_change": 0.16666666666666666
+  },
+  "completed_profiles": 0,
+  "derived_output_files": 0,
+  "exact_failure_wall_seconds": "not recorded",
+  "local_base": {
+    "passed_each": 2317,
+    "skipped_each": 47,
+    "deselected_each": 148
+  },
+  "local_optional": {
+    "passed_each": 2373,
+    "deselected_each": 148
+  },
+  "training_performed": false,
+  "reference_constructed": false,
+  "correction": "Restrict the existing1e-12 support comparison to target-owned information sets; keep the original config/seeds/thresholds/caps/panel unchanged."
+}

@@ -93,7 +93,8 @@ def values(
             support = mass
         else:
             support_error = max(
-                support_error, float(np.max(np.abs(mass - support), initial=0))
+                support_error,
+                float(np.max(np.abs(mass[~opponent] - support[~opponent]), initial=0)),
             )
         q[name] = action_values
     hybrid, exact, restricted = (

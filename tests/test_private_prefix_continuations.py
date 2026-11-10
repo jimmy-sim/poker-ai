@@ -149,3 +149,29 @@ def test_nonfinite_action_values_rejected(monkeypatch: Any) -> None:
     monkeypatch.setattr(CLI, "conditional_actions", changed)
     with pytest.raises(ArithmeticError, match="nonfinite"):
         CLI.values(tree, saved, profiles, river, 0, roots, 1e-9, 1e-12)
+
+
+def test_fixed_target_support_allows_changed_other_actor_support() -> None:
+    from poker_ai.postflop.collision_diagnosis import conditional_actions
+    from poker_ai.postflop.reply_trace import response_profile
+    from poker_ai.toy.tree import Tree
+
+    tree = Tree.build("kuhn")
+    saved = tree.normalize(tree.legal)
+    profiles = dict(
+        exact=response_profile(tree, saved, 0),
+        restricted=saved.copy(),
+        river_before=saved.copy(),
+    )
+    roots = {k: float(tree.values(tree.edges(p))[0]) for k, p in profiles.items()}
+    masses = [conditional_actions(tree, p)[1] for p in profiles.values()]
+    np.testing.assert_array_equal(
+        masses[0][tree.owners == 0], masses[1][tree.owners == 0]
+    )
+    assert np.max(np.abs(masses[0] - masses[1])[tree.owners == 1]) == pytest.approx(
+        1 / 6
+    )
+    _, _, root_error, support_error = CLI.values(
+        tree, saved, profiles, tree.owners == 0, 0, roots, 1e-9, 1e-12
+    )
+    assert root_error == support_error == 0.0

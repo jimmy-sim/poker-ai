@@ -1,0 +1,13 @@
+Checking complete saved evidence; constructors blocked...
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/private-prefix-continuations/scripts/contrast_private_prefix_continuations.py", line 344, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/private-prefix-continuations/scripts/contrast_private_prefix_continuations.py", line 339, in main
+    run(root, root / args.output)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/private-prefix-continuations/scripts/contrast_private_prefix_continuations.py", line 212, in run
+    q, support, error, mass_error = values(
+                                    ^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/private-prefix-continuations/scripts/contrast_private_prefix_continuations.py", line 107, in values
+    raise ArithmeticError("continuation roots/support differ from bound source")
+ArithmeticError: continuation roots/support differ from bound source

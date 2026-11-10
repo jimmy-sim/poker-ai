@@ -45,3 +45,24 @@ roots, nonfinite values, prefix/river/opponent/mask/trio changes, unsupported/ti
 choices, unitless support errors below the chip tolerance, and no overwrite.
 Ruff, formatting and strict typing pass. Actual saved-poker values and full
 local/hosted checks remain pending.
+
+## Retained support-scope failure and correction
+
+The first complete saved-data attempt, source e92d0cc, fails before completing
+any contrast. Its helper compared support at both actors' information sets.
+Only the responding player's chance-times-opponent support must remain fixed;
+the other player's support legitimately changes when the responding strategy
+changes. A separate Kuhn fixture reproduces zero change at the responding
+player's rows and a 1/6 change at the other player's rows.
+
+The original source, raw failure log, independent fixture and four passing
+initial suites remain retained in results/private-prefix/continuations-initial-
+e92-failure. The initial suites (2,317 base / 2,373 optional per environment)
+missed this valid two-player case. The added regression tests it explicitly.
+
+The correction checks the same 1e-12 tolerance on responding-player information
+sets. Opponent-policy identity remains checked across every opponent row.
+All original profiles, groups, members, roots, chip tolerances, seeds, caps and
+thresholds stay fixed; no model source changes. Fourteen focused checks now
+pass in 0.45 seconds. The corrected saved-data reproduction and full checks
+follow; no continuation result is claimed at this checkpoint.
