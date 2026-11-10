@@ -1837,3 +1837,27 @@ global gate. Publish this receipt and check its pushed exact bytes before any
 new learner starts. At04:01Pacific the full7200 own +900 native caps plus
 verification fit comfortably before the one-time noon deadline. No cap, seed,
 source target or acceptance tolerance changed. All earlier failures remain.
+
+### November 10 — complete real matched-update own evidence, before native
+
+Published admission3ec1b8b was independently observed on GitHub and its exact
+pushed-byte chain recomputed with learner/reference constructors blocked, before
+the first new real trajectory. At04:04Pacific all full caps plus verification
+fit before noon; source244 remained frozen.
+
+The complete real own stage now passes:24 initialized B1 paths through their
+original10m endpoints,72 original work crossings with144 average readouts,
+72 currents,144 raw masses and72 full-state/work guards exact. The global
+barrier passed before new scoring. Saved144 captures and separately scored
+versions of those SAME144 policies, plus96 raw ledgers. All144 matched self
+pairs and1152 fixed-opponent target contrasts remain; own replay error0.
+Inner full own stage756.632723374991 s; complete launcher/child
+756.886853375006 s <7200.24 paths attempted/initialized, both3-worker phases
+complete. Exact child receipt, all archives, reports and partial/failure history
+are retained. Original3.11.17/NumPy2.4.6 runtime verified.
+
+Publish this entire OWN evidence now before any new-policy native construction.
+The900-second complete native audit is still pending; no stronger/default/
+fresh/global or pure-variance claim follows. Reports are own-only snapshots;
+the later native receipt supplies the independent comparison without modifying
+the originally published own evidence.

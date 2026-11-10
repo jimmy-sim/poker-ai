@@ -20,10 +20,11 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November 10 update: the complete launcher passed its local/hosted checks, tiny
-software proof and own compute gate. Independent overhead and published admission
-still block the long matched-update study. Steps54–63 retain the earlier IO
-failures and explain the repairs. No stronger-agent or default claim follows.
+November 10 update: the complete real matched-update own run has finished and
+replayed without discrepancy. It keeps all24 contexts,48 targets,144 policies
+and1,152 fixed targets. Independent comparison is next. Steps54–66 retain the
+earlier IO failures and explain the checked path to this run. No stronger-agent
+or default claim follows.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2853,6 +2854,21 @@ It does not answer “is the strategy good?” The actual matched-update study
 still has to run and be independently audited. Every seed/readout and any
 failure remains in scope. AI-assisted work; no additional human practice or
 time was reported.
+
+### Step 66 — the real matched-update run completes (November 10)
+
+The complete planned run finished: all24 B1 paths reproduced their original
+checkpoints before any newly captured policy was scored. It saved144 policies
+and96 raw ledgers, then all144 self comparisons and1,152 fixed-opponent targets.
+The scored archive contains those same144 policies with measurements added;
+it is not another144 independent learners. Full own replay had zero discrepancy.
+The complete command took756.89 seconds, within7,200.
+
+The comparison keeps policy-update counts equal and reports the actual, unequal
+node work. It complements the earlier equal-work view. All games, encodings,
+regret rules, seeds and readouts remain in the tables. The independent audit is
+next, after these own files are published. No default or general-strength claim
+is being made. AI-assisted execution; no new human practice or time was reported.
 
 ## Your own learning notes
 
