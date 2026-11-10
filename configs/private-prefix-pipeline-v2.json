@@ -1,0 +1,33 @@
+{
+  "correction": "The original216 current profiles cover all72 paths at all3 work labels, including all72 B1 currents (24 per label); native audit validates the full216. The v1 assertion that48 early B1 currents were unscored was an assistant reading error, not an experimental result. Corrected before any real profiling/training or reference comparison of this candidate.",
+  "full_shape": "432 NEW profiles,288 ledgers,1152 final fixed conditions,48 changed paths,24 contexts; no baseline counted as newly trained",
+  "kernel_checks": "results/private-prefix/kernel-code-checks.json",
+  "kernel_receipt": "results/private-prefix/kernel.json",
+  "maximum_native_seconds": 900,
+  "maximum_old_overhead_seconds": 600,
+  "maximum_own_seconds": 7200,
+  "maximum_profile_seconds": 900,
+  "maximum_shared_software_seconds": 180,
+  "old_overhead": {
+    "accounting": "Complete source/baseline loading and verification counts inside unchanged600 own overhead/900 profiling/900 native and strict2*whole-native<900; all original432/288/1152 core conditions stay required. No scientific grid, seed, threshold, formula or cap changed. Extra48 evaluations proposed solely from the false v1 assumption are not required.",
+    "additional_native_self_checks": 0,
+    "additional_unscored_B1_early_currents": 0,
+    "baseline_inventory": "all216 B1 readouts across all3 labels (144 averages +72 currents) already have published independent scalar checks; reuse their exact source IDs, source archives and complete native receipts. All576 B1 final fixed conditions are also already audited",
+    "correction_evidence": "results/batch-current-diagnosis/own.json rows:72 at each of100k/1m/10m; B1 has24 at each. Its native.json validates all216 current scalar profiles and1728 final fixed targets.",
+    "required_core_fixed_targets": 1152,
+    "required_core_ledgers": 288,
+    "required_core_profiles": 432
+  },
+  "parent_config": "configs/private-prefix-stratification.json",
+  "parent_sha256": "d992c619b1b25b76ceca07fbe2e1dea69a9c8775b462d6f55fca1fec78de1c3a",
+  "partial": "fresh destinations before setup; immutable exact child and whole-parent measurements; retain source/worker events/snapshots on failure; existing aliases never overwritten",
+  "pipeline_checks": "results/private-prefix/pipeline-code-checks.json",
+  "publication": "own complete/partial/failing evidence before reference construction; all new baseline evaluations published and independently checked before admission; no reference strategy outputs in learning",
+  "schema_version": 2,
+  "source_scope": "all src Python files, pyproject.toml,uv.lock,parent config,this pipeline config and one pipeline entrypoint; bind original kernel/prospective config hashes and all required parent data/source",
+  "status": "prospective_corrected_complete_pipeline_not_admission",
+  "status_flags": "full tiny/software proof and actual own/native results are distinct; no default/fresh/global selection in this protocol",
+  "superseded_driver_config": "configs/private-prefix-pipeline.json",
+  "superseded_driver_sha256": "71a0db8b7615643950ef9af9764a8c696aa2d34adb64ee0227b81d905ab49613",
+  "worker_count": 3
+}

@@ -1,5 +1,22 @@
 # Complete stratification pipeline: accounting before measurement
 
+**Correction, November 10, 2026, before real measurements:** The early-current
+assumption below was wrong. Inspection of the actual saved records shows216
+current profiles across all three work labels,72 per label. B1 contributes24
+at each label: all72 B1 currents already have own/native checks. The assistant
+misread216 as final-only and proposed48 unnecessary extra evaluations. No new
+real profiling, training or native candidate comparison used that assumption.
+
+The active driver is now[version2](../configs/private-prefix-pipeline-v2.json),
+which pins and preserves the superseded version1. The required original core
+overhead remains **432 profiles,288 ledgers and1152 fixed conditions**, with
+complete source/baseline loading and verification. Reuse all216 B1 readouts and
+576 final B1 fixed conditions with their original identities/receipts. No
+candidate path, seed, work label, quality gate, forecast formula or scientific
+cap changes. The older text remains below as the record of the corrected mistake.
+
+## Superseded version1 assumption
+
 November 10, 2026, issue #4. This additive clarification precedes pipeline
 implementation and any real cost/strength measurement. The
 [original candidate contract](private-prefix-stratification.md) and all its
