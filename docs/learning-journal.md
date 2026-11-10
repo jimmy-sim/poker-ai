@@ -3237,7 +3237,8 @@ help. This is a teaching example, not a measured result.
 
 The [fixed panel and checks](private-prefix-decisions.md) are published before
 the local tables. No new training, solver strategy input or default change is
-authorized by this diagnostic. Actual implementation/results follow.
+authorized by this diagnostic. The implementation now has 16 passing fictional checks and a cached browser.
+Actual saved-game results and full verification follow.
 
 ## Your own learning notes
 

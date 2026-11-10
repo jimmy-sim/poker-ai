@@ -2318,3 +2318,17 @@ total unilateral gain, source/native/policy checks and unchanged inputs.
 This is not an attribution of extra-information value alone or a causal
 retraining gain. No new training or default/gate/seed/cap changes. Prospective
 config/document only; implementation and outcomes remain pending.
+
+### November 10 — implement saved-decision tracing and cached browser
+
+Experiment-specific CLI restores the nine policies from source-bound original
+archives, reuses existing own reply analysis, checks audited root/row/street
+identities, and fingerprints arrays before/after. Full owned-row detail and own
+reply profiles remain in deterministic gzip; partial progress is retained.
+No model source or scientific contract changes.
+
+Added a cached hash-checked browser with n/p/s/o/t/q controls, explicit target
+seat/action/value conventions and total-vs-extra/retraining distinctions.
+Sixteen fictional tests pass in 0.58s; Ruff/format/strict typing (547 files) pass.
+No actual decision result yet. Full local checks, constructor-blocked actual
+replay and both hosted jobs follow. AI-assisted implementation.

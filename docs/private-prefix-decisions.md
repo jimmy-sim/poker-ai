@@ -30,3 +30,29 @@ jobs before merge. Keep the frozen model source and all historical data intact.
 Next decision: use concrete contrasting actions to define a controlled future
 question. Do not repeat unchanged training until it appears favorable. No
 further long trajectory starts in the midnight–noon window.
+
+## Implementation checkpoint
+
+The experiment-specific entrypoint reuses the frozen archive reader and the
+existing own reply analysis. It checks the complete bound study/native receipt
+with all learner/reference constructors blocked, restores the nine exact saved
+policies, and compares trace roots with their independently audited metrics.
+Every original policy array is fingerprinted before and after analysis.
+
+Sixteen fictional checks pass (0.58 seconds): complete panel and controls,
+missing/duplicate/typed identities, both payoff signs, root/street/nonfinite/
+negative-loss failures, separate river-switch semantics, preserving an existing
+output before reading, cached-report/input tampering and all browser controls.
+Ruff, formatting and strict typing pass. Full local/hosted checks and actual
+decision results remain pending.
+
+Run .venv/bin/python scripts/trace_private_prefix_decisions.py to perform the
+complete saved-data replay and write a fresh report. Then run
+.venv/bin/python scripts/inspect_private_prefix_decisions.py --interactive to
+check the cached report/input hashes and browse without rerunning poker analysis.
+
+Use n/p to change group, s to change seed, o to change method, t to change
+responding seat, and q to quit. The displayed responding cards belong to the
+best-response player; saved probabilities are the strategy being diagnosed.
+Counterstrategy choices are conditional on that fixed saved opponent and reply
+continuation.
