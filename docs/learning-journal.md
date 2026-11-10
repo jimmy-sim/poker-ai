@@ -3049,6 +3049,14 @@ Only a checked published admission can permit the real new study. See
 [the command boundaries and limits](private-prefix-pipeline.md). Codex assisted
 with implementation and tests; no new hands-on time or learning is inferred.
 
+The full base suites then found a test-launch issue: both had two failures
+because the console test command could not import a synthetic worker fixture.
+The same tests passed under the Python module command. A console reproduction
+confirmed the missing import path; the test now supplies it explicitly. The
+corrected console run passes20 checks in0.85 seconds. The original failed full
+logs remain visible, and the full checks are being repeated before any admission.
+This fixed test setup, not poker strategy.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

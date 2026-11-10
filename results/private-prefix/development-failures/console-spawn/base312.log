@@ -1,0 +1,245 @@
+CHECK_RUNTIME={"python": "3.12.15", "numpy": "2.5.4", "executable": "/tmp/poker-batch-current-base312/bin/python"}
+CHECK_COMMAND=["make", "check"]
+uv run --locked ruff check .
+Uninstalled 1 package in 3ms
+Installed 1 package in 90ms
+All checks passed!
+uv run --locked ruff format --check .
+645 files already formatted
+uv run --locked mypy --strict src tests scripts
+Success: no issues found in 542 source files
+uv run --locked pytest -q -m "not slow"
+........................................................................ [  3%]
+........................................................................ [  6%]
+........................................................................ [  9%]
+........................................................................ [ 12%]
+........................................................................ [ 15%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+........................................................................ [ 31%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+...................................................sss.................. [ 40%]
+........................................................................ [ 43%]
+.........................................s.............................. [ 46%]
+........................................................................ [ 49%]
+........................................................................ [ 52%]
+.................ss..sss................................................ [ 56%]
+........................................................ssssssssssssssss [ 59%]
+s..............................................s........................ [ 62%]
+........................................................................ [ 65%]
+.................................................ss...s................. [ 68%]
+........................................................................ [ 71%]
+......................................FF................................ [ 74%]
+...s......................................................ss............ [ 77%]
+...........ss........................................................... [ 81%]
+.................................ss..................................... [ 84%]
+.ss.............................................................s....... [ 87%]
+.............s....................................................s..... [ 90%]
+.............................................................ss......... [ 93%]
+.s...................................................................... [ 96%]
+........................................................................ [ 99%]
+......                                                                   [100%]
+=================================== FAILURES ===================================
+__ test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events[False] __
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-381/test_real_spawn_adapter_fsyncs0')
+fail = False
+
+    @pytest.mark.parametrize("fail", [False, True])
+    def test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events(
+        tmp_path: Path, fail: bool
+    ) -> None:
+        journal = Journal(tmp_path / "events.jsonl", "FIXTURE", "spawn_fixture")
+        batch = Batch(journal)
+        if fail:
+            with pytest.raises(ChildProcessError, match="intentional retained"):
+                run_batch(6, 3, spawned_fixture, dict(fail=True), Deadline(20), batch)
+            assert batch["status"] == "incomplete"
+            assert any(
+                e["kind"] == "error" for w in batch["workers"] for e in w["messages"]
+            )
+            with pytest.raises(ArithmeticError):
+                complete(batch, 6)
+        else:
+>           run_batch(6, 3, spawned_fixture, {}, Deadline(20), batch)
+
+tests/test_private_prefix_execution.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+size = 6, workers = 3, job = <function spawned_fixture at 0x10d506660>
+payload = {}
+deadline = <poker_ai.postflop.river_study.Deadline object at 0x10ed2c1a0>
+record = {'worker_count': 3, 'assignments': [[0, 3], [1, 4], [2, 5]], 'workers': [{'slot': 0, 'pid': 33322, 'messages': [], 'ex...ds': 0.15851733402814716, 'parent_cpu_seconds': 0.01361199999999485, 'reaped_children_cpu_seconds': 0.3999999999999986}
+
+    def run_batch(
+        size: int,
+        workers: int,
+        job: Job,
+        payload: dict[str, Any],
+        deadline: Deadline,
+        record: dict[str, Any],
+    ) -> None:
+        """Drain child pipes while running; terminate/reap all children on failure.
+    
+        Spawn/import/start/collection/join belong to batch wall time. POSIX os.times
+        reaped-child CPU deltas include imports, unlike timers inside _entry. The
+        parent does not run other child commands during this interval. Thread settings
+        are requests inherited by children, not measurements of OS thread counts.
+        """
+        assignments = partition(size, workers)
+        if record:
+            raise ValueError("batch record must be fresh")
+        started, cpu, times = time.perf_counter(), time.process_time(), os.times()
+        record.update(
+            worker_count=workers,
+            assignments=assignments,
+            workers=[
+                dict(slot=s, pid=None, messages=[], exitcode=None) for s in range(workers)
+            ],
+            status="running",
+            failure=None,
+        )
+        context = mp.get_context("spawn")
+        processes = []
+        receivers: dict[Connection, int] = {}
+        old = {key: os.environ.get(key) for key in THREAD_ENV}
+        try:
+            os.environ.update(THREAD_ENV)
+            try:
+                for slot, indices in enumerate(assignments):
+                    deadline.check()
+                    receiver, sender = context.Pipe(duplex=False)
+                    process = context.Process(
+                        target=_entry, args=(job, slot, indices, payload, sender)
+                    )
+                    receivers[receiver] = slot
+                    try:
+                        process.start()
+                    finally:
+                        sender.close()
+                    processes.append(process)
+                    record["workers"][slot]["pid"] = process.pid
+            finally:
+                for key, value in old.items():
+                    if value is None:
+                        os.environ.pop(key, None)
+                    else:
+                        os.environ[key] = value
+            active = list(receivers)
+            while active:
+                deadline.check()
+                for ready in wait(active, timeout=0.05):
+                    receiver = cast(Connection, ready)
+                    slot = receivers[receiver]
+                    try:
+                        event = receiver.recv()
+                    except EOFError:
+                        active.remove(receiver)
+                        receiver.close()
+                        continue
+                    if not isinstance(event, dict) or event.get("kind") not in {
+                        "started",
+                        "prepared",
+                        "cell",
+                        "done",
+                        "error",
+                    }:
+                        raise ChildProcessError("invalid child event")
+                    record["workers"][slot]["messages"].append(event)
+                    if event["kind"] == "error":
+                        raise ChildProcessError(
+                            f"worker {slot}: {event['type']}: {event['reason']}"
+                        )
+            for process, worker in zip(processes, record["workers"], strict=True):
+                process.join(timeout=1.0)
+                if process.is_alive() or process.exitcode != 0:
+>                   raise ChildProcessError(f"worker {worker['slot']} did not exit cleanly")
+E                   ChildProcessError: worker 0 did not exit cleanly
+
+src/poker_ai/postflop/cell_process.py:142: ChildProcessError
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+__ test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events[True] ___
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-381/test_real_spawn_adapter_fsyncs1')
+fail = True
+
+    @pytest.mark.parametrize("fail", [False, True])
+    def test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events(
+        tmp_path: Path, fail: bool
+    ) -> None:
+        journal = Journal(tmp_path / "events.jsonl", "FIXTURE", "spawn_fixture")
+        batch = Batch(journal)
+        if fail:
+>           with pytest.raises(ChildProcessError, match="intentional retained"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'intentional retained'
+E             Actual message: 'worker 0 did not exit cleanly'
+
+tests/test_private_prefix_execution.py:127: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests'
+=========================== short test summary info ============================
+FAILED tests/test_private_prefix_execution.py::test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events[False]
+FAILED tests/test_private_prefix_execution.py::test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events[True]
+2 failed, 2263 passed, 46 skipped, 148 deselected in 345.08s (0:05:45)
+make: *** [test] Error 1
+CHECK_SECONDS=346.3133321669884
+CHECK_RUNTIME_AFTER={"python": "3.12.15", "numpy": "2.5.4", "executable": "/tmp/poker-batch-current-base312/bin/python"}
+CHECK_EXIT=2

@@ -119,8 +119,11 @@ def spawned_fixture(
 
 @pytest.mark.parametrize("fail", [False, True])
 def test_real_spawn_adapter_fsyncs_identical_complete_or_partial_events(
-    tmp_path: Path, fail: bool
+    tmp_path: Path, fail: bool, monkeypatch: pytest.MonkeyPatch
 ) -> None:
+    # Console pytest does not put the repository root on sys.path under
+    # importlib mode. Spawn must be able to import this explicit fixture job.
+    monkeypatch.syspath_prepend(str(ROOT))
     journal = Journal(tmp_path / "events.jsonl", "FIXTURE", "spawn_fixture")
     batch = Batch(journal)
     if fail:

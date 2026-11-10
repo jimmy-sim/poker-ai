@@ -2066,3 +2066,16 @@ Whole source base/optional and hosted checks are next. This implementation
 commit is not a passed full software proof, forecast, admission or real study.
 Scientific configs/seeds/caps and historical source/data are unchanged.
 AI-assisted work; no human minutes, practice or mastery inferred.
+
+
+### November 10 — retain and fix console-only spawn fixture failure
+
+Source63a6209 full base suites each finish2263pass/46skip/148deselect with2
+failures: console pytest omits the repository root from sys.path under importlib
+mode, so spawned synthetic test functions cannot import `tests`. The same
+module passes under python-m pytest. A console reproduction confirms the cause;
+explicit pytest monkeypatch of the test import path fixes it, matching the
+existing spawn tests. Corrected console run20pass1deselect0.85s. Both failing
+full logs and before/after diagnostics remain in
+results/private-prefix/development-failures/console-spawn. No scientific source,
+seed, cap, gate or result changed; fresh full checks are required before proof.

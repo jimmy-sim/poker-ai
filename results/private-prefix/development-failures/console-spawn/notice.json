@@ -1,0 +1,17 @@
+{
+  "status": "retained_software_failure_not_admission",
+  "source_commit": "63a6209f38127fc3309cc2ce84f1bbba5eeaa4ca",
+  "cause": "Console pytest lacks repository root on sys.path under importlib mode; spawned synthetic test job could not import tests. python -m pytest and optional suites include the root.",
+  "correction": "Test fixture explicitly prepends repository root using pytest monkeypatch, matching existing spawned tests. No scientific code or protocol changed.",
+  "base_each": {
+    "failed": 2,
+    "passed": 2263,
+    "skipped": 46,
+    "deselected": 148
+  },
+  "corrected_console": {
+    "passed": 20,
+    "deselected": 1
+  },
+  "long_run_admitted": false
+}
