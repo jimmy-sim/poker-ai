@@ -49,3 +49,29 @@ learning.
 
 Next decision: select a controlled follow-up question from the complete saved
 panel. No diagnostic outcomes are asserted at this prospective checkpoint.
+
+
+## Implementation checkpoint
+
+The experiment-specific CLI reuses frozen poker replay, gap, native-schema and
+source helpers. It projects validated saved records into the fixed tables and
+figure; it adds no training algorithm or reference-policy use and changes no
+`src/` model code. Fictional report fixtures check324/216points,108/72groups,
+independent expected positive/negative gaps, self-zero, grid/type/nonfinite/
+identity failures, missing seeds, no-overwrite-before-replay and optional PNG
+output. Focused base11pass1skip2.31s; optional12pass10.37s; strict typing and
+Ruff pass. These are software fixtures, not diagnostic results.
+
+Run from the frozen model source cohort:
+
+```sh
+.venv/bin/python scripts/diagnose_private_prefix.py
+.venv/bin/python scripts/diagnose_private_prefix.py --no-plots --output results/runs/private-prefix-diagnosis-local
+```
+
+The first command fully replays the bound own/native evidence once, with learner
+and reference constructors blocked, then writes fresh324method/216paired points,
+108/72three-seed groups and the fixed component figure. The second regenerates
+numeric tables only, without Matplotlib. Existing complete/partial output
+directories are preserved. Full local/hosted checks and actual outputs remain
+to be recorded.

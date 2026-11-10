@@ -2263,3 +2263,20 @@ trajectory, cap, seed, threshold or default change. Acceptance requires complete
 source/own/native/journal/whole-clock checks, constructor-blocked read-only
 replay, tests and reproducible tables/figure. Post-hoc evidence is descriptive,
 not causal proof or an irreducible-floor claim. No diagnostic result yet.
+
+
+### November10 — checked saved-policy projection entrypoint
+
+Implemented the prospective diagnostic as experiment-specific CLI orchestration
+over the frozen replay/metric/native/schema/source libraries. No src/model
+module changes. Complete108coordinate selection produces324method/216paired
+points and108/72three-seed groups; stack only within+extra. The fixed figure
+keeps all medium-game seeds/readouts and both encodings. Replays run with
+learner/reference constructors blocked; fresh outputs, config/own/model source
+hashes and complete native journal/clock are checked first.
+
+Fictional base11pass1skip2.31s, optional12pass10.37s, Ruff/format/strict typing
+pass. Tests independently assert known signed gaps, zero-self, separate river
+metric, missing/duplicate/type/nonfinite/identity failures, missing seeds and
+no-overwrite-before-expensive-replay. Actual diagnosis and final base/optional/
+hosted checks follow; no diagnosis result or causal claim yet. AI-assisted work.

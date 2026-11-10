@@ -3174,6 +3174,26 @@ remains unchanged. The next question is where the saved strategies lose value,
 using every prescribed seed and control rather than retraining until a result
 looks favorable.
 
+### Step 76 — locate the failed result using saved policies (November10)
+
+The next diagnostic is fixed before its tables are generated. It keeps every
+seed, readout and checkpoint for B4/signed in both known games and encodings.
+We compare the new strategies with both original controls. No further training
+is needed to inspect those saved calculations.
+
+**Example:** suppose a saved strategy has3units of vulnerability:1unit can be
+exploited using the same information groups, and2more become available with
+exact information. Those parts add to3. A separate river-row switch may change
+a different reply continuation; it must not be added to this stack or called
+the agent's actual EV loss. These are made-up teaching numbers, not a result.
+
+The implementation replays the complete bound evidence with constructors
+blocked, then writes the declared tables and figure. Fictional software tests
+pass11 base checks plus one optional plotting skip, or12 checks with plotting.
+They also confirm that a self comparison gives zero and an incomplete panel is
+rejected. The actual diagnosis is next. A component can locate a weakness
+without proving its cause or an unavoidable abstraction floor.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
