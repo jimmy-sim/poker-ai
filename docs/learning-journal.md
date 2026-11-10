@@ -2560,3 +2560,23 @@ grid with both training and reference constructors blocked. No new Hold’em
 trajectory, performance score or admission follows from this software milestone.
 Next: complete scoring/replay and independent-audit integration. AI-assisted
 implementation/checks; no additional human practice or minutes reported.
+
+### Step45 — Follow one saved policy through the whole pipeline (November10,2026)
+
+Question: do our files and comparisons still describe the same policy? A raw
+capture is now saved first. Scoring creates a second file linked to the capture's
+exact bytes; it adds measurements without changing action probabilities. Raw
+averaging weights must reproduce the saved averages exactly. An offline replay
+recalculates the scores, fixed-opponent values and paired differences.
+
+The small test control compares a strategy with an independently generated copy
+of itself: all gaps are zero. Other tests remove a row, alter a hash or value,
+or interrupt a file write; acceptance fails while partial evidence survives.
+The independent OpenSpiel adapter checks scalar values and best-response roots,
+and never provides a strategy for training. Its tests caught an information-set
+numbering mistake before any new poker experiment.
+
+This is AI-assisted software progress. The144 logical profiles share one tiny
+nonuniform Kuhn tree and six seed/rule paths; they are not144 independent
+Hold’em observations. Next: finish source checks, compute profiling and checked
+admission before a real comparison. No new human practice/minutes reported.

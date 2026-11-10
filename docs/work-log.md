@@ -1451,3 +1451,24 @@ until the complete cross-context barrier passes. Tests compare separate
 uninterrupted tiny trajectories, duplicate numeric target identities, signed/
 clipped rules, corruption of each state component and partial disk failure.
 Full source suites, native integration and admission remain pending.
+
+### November10 — full-shape own IO and native scalar adapter (PR #40, draft)
+
+Implemented the new scoring/archive/replay and comparison primitives. The full
+explicit tiny fixture exercises144 captures,144 scored versions of those same
+policies,96 raw ledgers and1,152 fixed targets. Its independently generated right
+profiles intentionally equal the left policies: every paired gap is zero.
+Twelve own integration/corruption/failure tests passed in22.54s.
+
+The native adapter exports the actual array game to OpenSpiel2.0.2 and requests
+only values and best-response roots. Its first tests caught nonconsecutive
+per-player information numbering; fixing the exporter made all6 scalar tests
+pass. Eighteen full-shape native/schema/failure tests passed in2.82s, checking
+all144 self profiles and1,152 fixed targets, missing/duplicate rows, wrong policy/
+reply hashes, nonfinite values and cap/flag/count corruption. These are local
+software tests, not the separately source-bound published proof or poker data.
+
+Re-read the installed Apache2.0 license before optional native tests: pinned
+SHA256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.
+The real-run admission entry currently fails closed; complete checks, source-bound
+software proof and the prospective compute gate remain required.
