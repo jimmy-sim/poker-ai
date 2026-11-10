@@ -1861,3 +1861,25 @@ The900-second complete native audit is still pending; no stronger/default/
 fresh/global or pure-variance claim follows. Reports are own-only snapshots;
 the later native receipt supplies the independent comparison without modifying
 the originally published own evidence.
+
+### November 10 — complete independent real matched-update audit
+
+All own results were published atd3bd9cf and observed through GitHub's canonical
+commit API before independent construction. OpenSpiel2.0.2 / Apache2 completed
+all144 new-policy self profiles and1152 fixed target conditions, including own
+input/admission replay and all required setup. Inner218.955465457984 s;
+complete launcher/child219.216563750000 s <900; maximum scalar discrepancy
+1.9895196601282805e-13 chips <1e-9. Exact native child receipt and
+complete measurements remain separate from the immutable own publication.
+No reference actions/strategies were exported or used in training.
+
+This completes the prescribed actual24-context/48-target comparison, with all
+144 new policies/96 ledgers and all seeds/readouts retained. The two compute
+axes differ: equal updates costs unequal node work. In the original motivating
+medium/q8/signed/linear context, the six raw target deltas in the report show
+mixed B4 seed directions, while the earlier B1 prefixes are more exploitable
+than B16 in all three declared seeds. These are bounded known-game comparisons,
+not a pure-variance effect, default selection, fresh/global admission or general
+win-rate claim. Next: complete artifact CI and make all paired results easier
+to read/browse before defining another method. Earlier IO/runtime mistakes and
+failed/partial cohorts remain retained rather than rewritten.

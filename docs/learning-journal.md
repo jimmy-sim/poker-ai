@@ -20,11 +20,13 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November 10 update: the complete real matched-update own run has finished and
-replayed without discrepancy. It keeps all24 contexts,48 targets,144 policies
-and1,152 fixed targets. Independent comparison is next. Steps54–66 retain the
-earlier IO failures and explain the checked path to this run. No stronger-agent
-or default claim follows.
+November 10 update: the complete matched-update study and its independent audit
+have passed. All24 contexts,48 targets,144 captured policies and1,152 fixed
+targets remain in the report. The own replay has zero discrepancy; independent
+scalar disagreement is below1e-9 chips. This adds a second compute axis to the
+earlier equal-work comparison. It does not select a new default or establish
+general Hold'em strength. Steps54–67 retain the earlier failures and explain
+the checked route to the result.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2869,6 +2871,25 @@ node work. It complements the earlier equal-work view. All games, encodings,
 regret rules, seeds and readouts remain in the tables. The independent audit is
 next, after these own files are published. No default or general-strength claim
 is being made. AI-assisted execution; no new human practice or time was reported.
+
+### Step 67 — the real independent comparison passes (November 10)
+
+The independent calculator checked every144 new-policy profile and1,152 fixed
+targets after own publication. Maximum scalar discrepancy was about
+1.99×10⁻¹³ chips. The complete command took219.22 seconds, within900.
+This finishes the planned matched-update experiment, including every seed and
+readout; exact child receipts and both earlier failed cohorts remain visible.
+
+In the original motivating medium-game/q8/signed/linear context, B4 has mixed
+seed directions at equal updates. B16 has lower self exploitability than the
+earlier B1 prefix in all three declared seeds there, while spending much more
+node work. That is a limited comparison on this known game. Equal work and
+equal updates answer different questions; neither proves a pure variance cause
+or a stronger global agent. The default stays unchanged.
+
+Next: make the complete two-axis results and saved decisions easier to inspect,
+then use them to define the next method before measuring it. AI-assisted
+implementation/execution; no additional human practice or time was reported.
 
 ## Your own learning notes
 

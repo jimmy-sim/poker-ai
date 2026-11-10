@@ -204,3 +204,59 @@ This changed IO source requires all current local/hosted checks and a fresh full
 proof and fixed forecast; no old successful partial measurement is selected.
 The pinned lifecycle implementation contract is `configs/matched-update-lifecycle.json`.
 Scientific grids, seeds, caps, tolerances and claim limits remain unchanged.
+
+## Completed real comparison — November 10
+
+The complete original design ran on frozen244-file source (checked36dbd45).
+All24 B1 paths reproduced every original100k/1m/10m checkpoint before scoring
+new prefixes:144 average readouts,72 current policies,144 raw masses and72
+full-state/work guards. The new archives retain144 captures, scored versions of
+those same144 policies and96 raw ledgers. All144 self pairs and1152 fixed
+target contrasts replay with zero own error. Complete own command756.886853375 s
+<7200. Own publicationd3bd9cf preceded new native construction.
+
+OpenSpiel2.0.2 / Apache2 checked all144+1152 scalar/root/achieved-own-reply
+targets. Maximum discrepancy1.9895196601282805e-13 chips <1e-9; complete native
+command219.216563750000 s <900. The native receipt provides independent
+completion; the original own/report pending labels stay immutable.
+
+The complete [self-pair table](../results/matched-update-study/report/self-pairs.csv)
+and [fixed-pair table](../results/matched-update-study/report/fixed-pairs.csv)
+retain every declared condition. The following rows are all six targets from
+the previously motivating medium/q8/signed/linear context, copied from that
+script-generated self-pair table. Delta is prefix minus batched exact self
+exploitability in chips: negative favors B1 prefix; positive favors the batch.
+
+| Seed | Batch target | Equal updates | B1 prefix node visits | Batch node visits | Delta chips |
+|---|---:|---:|---:|---:|---:|
+|20261301|4|80,741|2,538,926|10,000,119|-0.220811|
+|20261302|4|91,694|3,092,890|10,000,051|2.116509|
+|20261303|4|79,859|2,675,179|10,000,084|0.966469|
+|20261301|16|19,333|669,928|10,000,114|1.528401|
+|20261302|16|19,300|715,885|10,000,471|1.241899|
+|20261303|16|20,550|735,549|10,000,356|1.483591|
+
+B4 is mixed across these seeds. B16 is better than the earlier B1 prefix here
+while using much more work. This does not say it is best at equal work or
+prove that variance alone caused the difference. Uniform/current readouts,
+exact encoding, clipped regrets and the low game remain in the full tables.
+Three seeds and shared trajectories/readouts do not provide population
+confidence intervals. These known tiny-range games do not establish a global
+agent, convergence, default selection or fresh-case admission. Native scalar
+agreement checks the exported bounded game/calculators, not every engine rule
+or agent/solver strategy agreement. No reference strategy entered training.
+
+Read-only replay (no new training or installed reference required) and the
+original own-only plot:
+
+```sh
+.venv/bin/python -m poker_ai.evaluation.matched_update_lifecycle report --own results/matched-update-study/own.json
+open results/matched-update-study/report/all-pairs.svg
+```
+
+Validation of the complete admission/source chain can take a few minutes before
+the replay prints. A separate data-only report/viewer is the next step. For a
+fresh trajectory reproduction, use the pinned scientific checkout/source and
+original3.11.17/NumPy2.4.6 runtime; added future reader code is not new training
+admission. All source06/source7bd and runtime-label failure evidence remains
+under results/matched-update-pipeline/.
