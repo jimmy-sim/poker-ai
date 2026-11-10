@@ -2383,6 +2383,8 @@ learning-journal step79 and an interactive cached browser. Native original
 432/1152 evidence remains comparison-only. Cross-runtime data-only replay and
 final hosted CI remain next; no new training or default/gate change.
 
+Python 3.12.15 / NumPy 2.5.4 saved-data reproduction finishes in 257.833441s with constructors blocked. The full summary, full detail archive and all nine per-profile detail archives are byte-identical to the original-runtime report. This is data-only reproduction, not bit-exact training replay. Exact manifest and output hashes are retained in results/private-prefix/decisions/checks/.
+
 ### November 10 — register fixed saved-continuation contrast
 
 Issue #4 comment 6776137714 predeclares exact/restricted/hybrid action values
