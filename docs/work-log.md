@@ -13,6 +13,21 @@ work; elapsed agent/process time is not a record of personal hands-on hours.
 For a guided explanation of the ideas and results, start with the
 [plain-English learning journal](learning-journal.md).
 
+## 2026-11-10 — Full matched-update pipeline, prospective
+
+- **Issue:**#4; [detailed plan](matched-update-pipeline.md) and config published
+  before code/outcomes. Complete the unchanged24-context/48-target design,
+  full original-B1 barrier and144new/144reused profiles,1152new/reused targets.
+- **Compute:** all72 timing repeats; original2*(2*training+600)<7200, full added
+  old-policy overhead<600, comparison-only native overhead2*elapsed<900.
+  Real own/native7200/900 and shared tiny-proof180 caps unchanged.
+- **Preservation:** freshly hashed all ten current unrelated main modifications;
+  isolated research/matched-update-pipeline from latest GitHub main88ebfba.
+- **Direction:** continuing model research and reported user learning, not
+  contribution counts or inferred human hours. Codex-assisted; hands-on unknown.
+- **State:** planning only. Full source checks/proof/forecast/published admission
+  precede actual long trajectories; no native/reference output enters training.
+
 ## 2026-11-09 — Matched-prefix capture, prospective software only
 
 - **Issue:**#4; [bounded plan](matched-prefix-capture.md) before implementation:
@@ -1422,3 +1437,465 @@ Hands-on time (recorded, otherwise unknown):
 Experiment wall time (source; note overlaps):
 Next step:
 ```
+
+### November 10 — real factories and unscored capture barrier (PR #40)
+
+Added new modules, preserving historical source/data. The real factory validates
+all pinned receipts and produces all24 contexts,48 targets and72 old B1
+work-crossing expectations (both readouts, current, both raw ledgers and full
+state). Actual constructor-blocked source load passed in30.006725459s without
+training or constructing a reference. This is setup evidence, not a forecast.
+
+Capture writes immutable unscored policies and raw masses; no profile is scored
+until the complete cross-context barrier passes. Tests compare separate
+uninterrupted tiny trajectories, duplicate numeric target identities, signed/
+clipped rules, corruption of each state component and partial disk failure.
+Full source suites, native integration and admission remain pending.
+
+### November10 — full-shape own IO and native scalar adapter (PR #40, draft)
+
+Implemented the new scoring/archive/replay and comparison primitives. The full
+explicit tiny fixture exercises144 captures,144 scored versions of those same
+policies,96 raw ledgers and1,152 fixed targets. Its independently generated right
+profiles intentionally equal the left policies: every paired gap is zero.
+Twelve own integration/corruption/failure tests passed in22.54s.
+
+The native adapter exports the actual array game to OpenSpiel2.0.2 and requests
+only values and best-response roots. Its first tests caught nonconsecutive
+per-player information numbering; fixing the exporter made all6 scalar tests
+pass. Eighteen full-shape native/schema/failure tests passed in2.82s, checking
+all144 self profiles and1,152 fixed targets, missing/duplicate rows, wrong policy/
+reply hashes, nonfinite values and cap/flag/count corruption. These are local
+software tests, not the separately source-bound published proof or poker data.
+
+Re-read the installed Apache2.0 license before optional native tests: pinned
+SHA256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.
+The real-run admission entry currently fails closed; complete checks, source-bound
+software proof and the prospective compute gate remain required.
+
+### November10 — fixed forecasts, timing aliases and admission implementation
+
+Added72-row max-per-context/fixed-partition forecasting with the unchanged
+2*(2*training+600)<7200 rule; all17 synthetic timing tests pass (0.05s), including
+strict failure at7200. New old-policy overhead corpus keeps the actual original
+B1 final work/iteration and exact saved policy/mass hashes while duplicating only
+logical timing labels;2 metadata tests passed in0.42s. It does not claim new
+prefix outcomes or a new B1 barrier replay. The separate source and runtime gates
+remain mandatory. New command entry points expose source checks, tiny proof,
+profiling, admission, study, independent audit and offline replay/report.
+
+Added raw worker completion/partition checks, shared-clock expiry and native
+constructor failure retention. Four pre-input/shared-source/fake-admission tests
+passed in0.07s. The latest combined optional focused run passed140 tests with5
+slow tests deselected in26.17s; subsequent gate/corpus additions have their own
+results above and final broad checks remain pending. Four actual MatrixTree
+exporter/value/root/own-reply correctness checks passed in3.32s using uniform
+policies on both original spots and both representations, without poker training.
+
+The earlier fail-closed admission placeholder has been replaced by a checked
+reader that requires the full source-bound tiny proof, all72 real short timings,
+complete old-policy own/native overhead and published exact-source admission.
+No such admission exists yet; no new real prefix or long trajectory has run.
+
+### November10 — production event ordering regression found during review
+
+Review of the production collector found that fixed-target rows were ordered by
+opponent before policy, while the offline reader expects policy/opponent/seat.
+The explicit regression failed on d02492a (1failed in0.22s), even though the
+earlier synthetic pipeline bypassed that collector. Corrected the collector's
+canonical fixed-row order and added the regression alongside worker checks.
+No actual profile or new poker trajectory had run. Current full base checks
+started before this correction are baseline information only; the corrected
+source needs new complete local/hosted validation before any admission.
+
+The full tiny exercise now routes its records through the actual production
+collector instead of maintaining a separate list order. It explicitly labels
+sequential fixture event routes; it does not pretend to have spawned workers.
+The added full-shape regression fails if the old bad order is restored. Targeted
+own/native/worker checks passed45 tests in28.41s; the added full-shape bad-order
+test passed in2.72s. Training initialization is recorded separately from a request
+so a failure before actual initialization does not claim completed training.
+
+The tiny archive reader also previously regenerated fixture learners. It now
+loads saved OWN fixture inputs/controls/replies and validates their bytes and
+achieved values without learner construction. The full archived-input replay
+with the learner factory blocked passed in3.51s. Baseline d02492a base suites
+reported2033 passed/44skipped/143deselected each (292.24s and291.61s), but these
+precede the correction and are not used to admit the final source.
+
+### November10 — historical replay versus fresh-source admission
+
+Review found that the current-source inventory check also blocked historical
+data-only readers after any future SRC addition. A regression reproduced that
+rejection (1failed in1.08s). Read-only mode now checks every original byte and
+the original complete checked commit, while permitting added modules. Fresh
+proofs/profiling/native audits/admission still require the entire current source
+to match the tested cohort; explicit fresh-proof/native source checks were added.
+Twelve source-gate/pre-input/fresh-proof tests passed in0.09s. No original-file
+hash, cap, seed, tolerance or performance gate was weakened. a5fffa4 full base
+checks passed2036 tests on each Python version (305.69/305.45s), but the new
+source-gate correction requires a new complete source validation before use.
+
+### November10 — final complete source gate passed at06a3402
+
+Source06a34023ae13127018346d5e888b0c50abe304b9,242 mapped files, SHA256
+a516f6c59105c701d91d5d9d2c802dc8cba5cf4cb00037064d50dd3319999887.
+Both hosted jobs passed in [run42792838522](https://github.com/jimmy-sim/poker-ai/actions/runs/42792838522).
+Final local base:2044 passed/44optional skips/143slow deselected on each version
+(311.26/312.28s); optional:2097 passed/143slow deselected (372.20/360.08s);
+relevant slow integrations:59 passed/8deselected (266.72/256.99s). Ruff lint,
+590-file formatting and491-file strict typing passed. Python3.11.17 optional
+checks used original NumPy2.4.6; Python3.12.15 used NumPy2.5.4. Base environments
+used2.5.4 and are software/data evidence.
+
+[Source receipt](../results/matched-update-pipeline/code-checks.json) and six
+byte-hashed test logs retain actual commands/results. This admits the next
+source-bound tiny software proof, not real poker trajectories. Full tiny
+own/native proof, fixed forecast/overhead and checked published admission
+remain prerequisites for the long matched-update study.
+
+### November10 — published complete source-bound tiny own/native proof
+
+Generated from clean3d4ec03 with the checked06a3402 source cohort. Own proof
+completed in4.531098915991606s:144 unscored captures,144 scored versions of the
+SAME policies,96 raw ledgers,72 source crossings and1,152 fixed targets/paired
+conditions. Offline own replay error0. Own evidence and all three archives were
+pushed at [9fb1cf1](https://github.com/jimmy-sim/poker-ai/commit/9fb1cf1e85f5910d1ac27d4a211ac1cd14f8d8c8)
+and its GitHub workflow was observed before native construction.
+
+The full independent native144/1152 scalar audit and final OWN replay completed
+in34.524477458006004s on the ONEshared180s clock, including the publication
+interval. Maximum native error2.220446049250313e-16fixture chips. No native
+action/strategy was exported. Both learner/reference constructors blocked, the
+base Python3.12/NumPy2.5.4 archived-data reader also passed. This is not real
+trajectory replay and does not admit the long study.
+
+[Own proof](../results/matched-update-pipeline/software-own.json),
+[native proof](../results/matched-update-pipeline/software-native.json),
+[data-only reader](../results/matched-update-pipeline/software-replay-312.json).
+The24 logical labels share one tiny tree/six seed-rule paths, with identical
+right-strategy controls; not24 independent poker games. Next: all72 original-
+runtime short timings and complete old-policy overhead, then checked admission.
+
+### November10 — correction: local runtime labels were wrong; gate closed
+
+The assistant discovered that `uv run` respected the project's `.python-version`
+3.11 and recreated both named base environments asPython3.11.17/NumPy2.4.6.
+The earlier base312 check and the file named software-replay-312 were therefore
+mislabeled. The optional312 command genuinely usedPython3.12.15/NumPy2.5.4, and
+the hosted312 job passed, but these do not replace the missing local base312
+check. Base311 NumPy was also incorrectly described as2.5.4; actual2.4.6.
+
+The first tiny own/native arithmetic proof passed, including its shared34.52s
+clock, but its prerequisite record is NOT eligible for real study admission.
+All13 original receipt/log/proof/archive files are preserved byte-for-byte at
+[superseded-environment-labels](../results/matched-update-pipeline/superseded-environment-labels/retention.json)
+with SHA256s and original publication commits. The root code gate is explicitly
+closed. No real prefix timing or new long trajectory has run. An explicitly
+selectedPython3.12 local base check is running with machine-reported runtime
+before/after; corrected receipts and a fresh eligible tiny proof must follow.
+Earlier journal/log claims of local base312 and reader312 are superseded by
+this correction; their numeric data have not been hand-tuned or discarded.
+
+Both explicitly selected base runs now passed with runtime asserted before and
+after:Python3.11.17/NumPy2.4.6 (2044passed,300.64s) andPython3.12.15/NumPy2.5.4
+(2044passed,287.24s);44optional skips/143slow deselections each. The original
+invalid-chain proof files are retained in the superseded folder and original
+commits. Their root latest-attempt aliases are cleared for a new eligible proof.
+Corrected source receipts will use parsed machine runtime headers, not directory
+names. No real timing or new trajectory has run.
+
+### November10 — corrected machine-identified source receipt published
+
+Re-recorded the same checked06a3402 source cohort after both explicit base runs
+passed. Runtime headers before/after match:3.11.17/NumPy2.4.6 and3.12.15/2.5.4.
+Base counts2044each (300.64/287.24s), optional2097each (372.20/360.08s), relevant
+slow59each (266.72/256.99s); hosted42792838522bothgreen. Metadata now comes
+from actual header output; original invalid labels/bytes stay retained. The new
+source receipt enables a fresh eligible tiny proof only. First attempt arithmetic
+results remain historical, ineligible prerequisite evidence; no real timing yet.
+
+### November10 — eligible tiny proof after corrected prerequisites
+
+The fresh own proof completed in4.489952458011s after the corrected
+actual-runtime source receipt was published. Its144captures/144scored/96ledgers/
+72crossings/1152fixed conditions replayed with0 own error. OWN evidence was
+pushed45929b9ef8f6adab81c10582625f632028f694ec and GitHub workflow42798325998
+was observed before native construction. Native144/1152 plus finalownreplay
+completed the ONEshared180s clock in30.472155417025s, maximumerror
+2.2204460492503131e-16fixture chips.
+
+The archived-data read now genuinely ranPython3.12.15/
+NumPy2.5.4, asserted before and after, with learner
+and reference constructors blocked. The first ineligible-chain proof and all
+original bytes remain retained separately. This corrected eligible software
+proof permits the first real short-prefix timing/old-overhead gate only; it
+still does not admit a long trajectory, stronger default or global agent.
+
+### November10 — first real original-runtime compute forecast, own stage passed
+
+All72 short B1 timing rows completed, with exact original100k checkpoint checks
+and repeated endpoint bits/work unchanged. Runtime3.11.17/NumPy2.4.6 was
+asserted. Max-per-context/fixed-partition training forecast535.8363967065269s;
+unchanged guarded formula gives3343.3455868261076s <7200.
+
+The complete OLD-policy overhead corpus144captures/144scored/96ledgers/1152fixed
+targets replayed in151.010662000044s <600. Full own profiling stage including
+source/setup/72timings/overhead/archive/replay/report took238.368770834000s <900.
+[Timing receipt](../results/matched-update-pipeline/profile.json) and
+[old-policy corpus](../results/matched-update-pipeline/overhead/own.json).
+All actual old iteration/work/policy/mass identities remain explicit; this is
+not a new prefix strength result or an unpaired causal speedup claim. Publishing
+complete own evidence now precedes comparison-only native overhead. The native
+900s cap and strict2*elapsed<900 gate, then checked published admission, still
+block the long study. No scientific cap, seed or tolerance changed.
+
+### November10 — native overhead blocked by volatile manifest provenance
+
+The first native old-policy overhead attempt FAILED before reference construction
+or any scalar target. It retained0profiles/0fixed targets, no reference setup,
+and `old-policy corpus/inputs changed`. Complete command wall30.607491416973062s;
+this is a software-input failure, not an unfavorable poker score. No long study
+was admitted. The successful own72-row forecast/151.01s overhead remains intact.
+
+A metadata-only diagnosis recomputed the full timing corpus: every stable target,
+readout, coordinate, policy identity and input hash matched. The ONLY differences
+were `/source/git_commit` and `/source/git_status:length`: publishing own evidence
+necessarily changes those fields. The reader incorrectly compared the entire
+manifest, including that volatile provenance.
+
+[Failed native receipt](../results/matched-update-pipeline/overhead/native.json),
+[diagnosis](../results/matched-update-pipeline/overhead/reader-failure-diagnosis.json).
+Next: a versioned parent IO adapter that preserves all existing scientific source
+and data, validates original code/config bytes separately and compares every
+stable corpus identity. Add lifecycle/failure tests, then recheck the expanded
+source cohort and its proof/compute gates before any real trajectory. This is a
+source repair, not permission for an unchanged favorable timing retry. Caps,
+seeds, grids and tolerances stay fixed; retain all first-attempt outcomes.
+
+### November10 — additive parent IO adapter, frozen reader reused
+
+Added `matched_update_parent_io` and a pinned implementation contract, preserving
+every existing scientific source byte. The explicit parent service delegates all
+original receipt, worker, hash, archive and numerical checks. It validates every
+stable corpus field and all original nested code/config bytes, then supplies the
+saved provenance view to the frozen reader. Only publication HEAD/status may
+differ; targets, coordinates, hashes and metrics remain strict. Bindings restore
+on every exit; spawned numerical workers remain unchanged. This is a serialized
+parent CLI boundary, not a concurrent threaded API.
+
+The actual first old-policy corpus now replays144profiles/96ledgers/1152targets
+with learner/reference constructors blocked;9 checks including that integration
+passed in59.62s. Added restoration/error tests then10fast checks passed in0.50s.
+[Source-cohort06 retention](../results/matched-update-pipeline/source-cohort-06a3402/retention.json)
+preserves all25 original cohort files and the native pre-input failure exactly.
+The expanded source needs complete checks, fresh tiny proof and a complete
+prospectively fixed72-row/old-overhead compute gate before admission. Repeating
+that full gate is required by the new source cohort, not selecting favorable
+unchanged timings. All old observations remain visible and no cap/seed/tolerance
+changes. Use the new versioned module entry point for current operations.
+
+### November10 — fresh source cohort starts with old evidence retained
+
+Verified every byte/hash of all25 cohort06 files against their retention receipt,
+then cleared only the latest aliases. The first successful own forecast and
+failed native attempt remain under `source-cohort-06a3402/`, with original Git
+history intact. The new243-file source inventory is
+`cc43405e521329890b42cd29709f53ca60ed9504ac8eb13a8b11fa744df158b5`;
+its admission remains closed while complete checks run. No old favorable timing
+is reused as admission for changed source. Original scientific modules, source
+policies, seed/grid/cap contracts and user checkout results are unchanged.
+
+### November 10 — repaired parent IO source passes all current checks
+
+The expanded 243-file source passed both hosted jobs in run
+[42803996539](https://github.com/jimmy-sim/poker-ai/actions/runs/42803996539),
+checked commit a2b1604. Local machine-asserted Python 3.11.17 / NumPy 2.4.6
+and Python 3.12.15 / NumPy 2.5.4 each passed 2,054 base tests (44 skips,
+144 slow deselections), 2,107 optional tests and 60 relevant slow integrations.
+Base timings: 380.98 / 369.94 s; optional: 387.33 / 374.84 s; slow: 373.35 /
+358.91 s. Ruff checked 592 formatted files; strict typing passed 493 files.
+The [source-bound receipt](../results/matched-update-pipeline/code-checks.json)
+binds the exact source inventory and all six log hashes. Both base checks
+selected an absolute interpreter and asserted runtime before and after.
+This permits a fresh full tiny software proof, not real study admission.
+
+### November 10 — repaired-cohort full tiny proof passes
+
+Own evidence completed in 4.42767816700507 s and was pushed at 92dacbd,
+observed on GitHub (workflow 42806194225) before native reference construction.
+The complete native comparison and final own replay finished on the same
+34.34460362500977 s clock, below the unchanged 180 s cap including publication.
+All 144 captures / 144 scored policies / 96 ledgers / 72 work crossings /
+1,152 fixed targets passed; maximum independent scalar error
+2.220446049250313e-16 fixture chips. The Python 3.12.15 / NumPy 2.5.4 base reader
+replayed the archive with fixture building, learner and reference constructors
+blocked; runtime asserted before and after. Exact source cohort: cc43405e….
+This is tiny-game software evidence only. It permits the complete short-prefix
+forecast/old-policy overhead gate; it does not admit a long real trajectory.
+
+### November 10 — report destination failure retained, admission stays closed
+
+The repaired-cohort own profile failed after all 72 timing rows and complete
+144-policy / 96-ledger / 1,152-target own replay. The assistant removed old
+latest files but left their empty `overhead/report` directory. The report writer
+correctly refused any existing destination. Full profile235.7591332080192 s;
+overhead149.15557816601358 s; guarded forecast3361.849243913491 s. These are
+retained partial observations, NOT a passing compute/admission receipt.
+No native overhead was attempted and no long real trajectory was admitted.
+All current files are byte-retained under `source-cohort-7bd650d/` with a hash
+receipt and the empty-directory diagnosis. This was an avoidable setup mistake.
+Next: prospective destination preflight before child computation, and a complete
+CLI clock receipt including preflight/startup/final-write. Keep all scientific
+source, caps, seeds and outcomes unchanged; the added IO source needs its full
+checks and new cohort gates rather than rewriting the failed receipt.
+
+### November 10 — additive destination preflight and full child-command clocks
+
+Added a launcher that rejects existing receipts, child copies, temporary archives
+and any report directory before child computation. A unique rejection receipt
+retains the reason; the launcher never removes old data. Complete child receipts
+remain byte-exact beside the measured receipt. Clock checks reject nonfinite,
+boolean, boundary, failed-child, changed-file, changed-host and expired shared
+proof observations. Subsequent stages and admission validate complete clocks in
+addition to the frozen original gates. No numerical worker or scientific cap
+changed. Focused lifecycle plus parent IO:39 passed,1 slow deselected in0.09s;
+strict typing passed both new files. All20 failed-cohort aliases were verified
+against retained bytes before clearing files AND empty directories.
+The expanded source now needs complete base/optional/slow checks on both
+versions, both hosted jobs, a new proof and the full fixed compute gate.
+
+### November 10 — complete lifecycle source checks
+
+Both hosted jobs in [42808276656](https://github.com/jimmy-sim/poker-ai/actions/runs/42808276656)
+passed on 36dbd45, matching every byte of the complete 244-file source inventory
+84143f4e…. All six local runtime-asserted checks passed: base311: 2083 passed, 44 skipped, 144 deselected, 431.4 s; base312: 2083 passed, 44 skipped, 144 deselected, 419.88 s; focused_slow311: 60 passed, 0 skipped, 18 deselected, 414.39 s; focused_slow312: 60 passed, 0 skipped, 18 deselected, 398.2 s; optional311: 2136 passed, 0 skipped, 144 deselected, 472.66 s; optional312: 2136 passed, 0 skipped, 144 deselected, 464.38 s.
+Ruff/format checked 594 files; strict typing passed 495 files. Python/NumPy
+runtimes were asserted before and after: 3.11.17/2.4.6 and 3.12.15/2.5.4.
+The receipt binds all six log hashes. The source remains frozen for the next
+full tiny proof and fixed compute gate. No long study is admitted by software
+checks; the two retained IO failures and runtime-label correction remain visible.
+
+### November 10 — complete-launcher tiny proof passes
+
+Own tiny proof: inner4.438767125015 s, complete command
+4.632313500042 s. Exact child plus measured own receipt
+and all three archives were published at a30ed05 and observed through GitHub's
+commit API BEFORE native construction (workflow listing lagged). Complete native
+command5.920270000002 s; outer shared clock including
+publication and final replay52.012633042003 s
+<180. Inner shared clock51.890885124973 s also passes. All144 captures /
+144 scored /96 ledgers /72 crossings /1152 fixed targets replay; maximum
+independent scalar error2.2204460492503131e-16 fixture chips.
+Actual3.12.15/NumPy2.5.4 constructor-blocked reader also passes.
+This source-bound software proof permits full original-runtime short profiling
+only; no long trajectory or strength/default/fresh/global admission.
+
+### November 10 — complete lifecycle own compute gate passes
+
+The244-file source completed the entire prospective72-row original-runtime
+forecast and complete OLD-policy overhead, including archives, zero-error own
+replay and reports. Training forecast535.5877299844701 s; unchanged guarded
+formula3342.3509199378805 s <7200. Complete overhead148.712823249982 s <600.
+Inner own profile234.590419542044 s; full launcher/child command
+234.750478875008 s <900. Exact child receipt is preserved beside the measured
+profile. Original100k checks pass for all72 timing rows.
+This is a new-source full gate, not substitution of an earlier favorable
+partial timing. Both earlier cohorts/failures remain byte-retained. The OLD
+corpus's144 policies/96 ledgers/1152 targets are timing aliases, not new-prefix
+strength results. Publish all own evidence now before the comparison-only
+900-second native overhead; strict2*complete elapsed <900 and published
+checked admission still block the real long study.
+
+### November 10 — independent complete overhead passes
+
+Complete own evidence was pushed at5ad3aec and observed at its canonical GitHub
+commit before any native construction. Comparison-only OpenSpiel2.0.2
+(Apache2, pinned license already read/recorded) audited all144 profiles and
+1152 fixed targets; maximum scalar discrepancy1.3500311979441904e-13
+chips <1e-9. Inner complete audit111.469186791976 s; full launcher/child
+command111.674510959012 s; unchanged strict twice-complete guard
+223.349021918024 s <900. Exact native child bytes remain beside the measured
+receipt. Reference actions/strategies were not exported or used in training.
+The source-bound proof and complete own/native compute gates now pass.
+Next: generate, check and publish admission before any new real trajectory.
+This is bounded scalar/calculator agreement, not agent/solver strategy agreement
+or a stronger/default/fresh/global claim. All earlier failures remain retained.
+
+### November 10 — checked compute admission recorded before trajectories
+
+The frozen admission routine recomputed the complete source/proof/72-row
+forecast/old-overhead/native chain and produced
+[admission.json](../results/matched-update-pipeline/admission.json). It binds
+all source inputs, proof/corpus archives and measured own/native receipt bytes.
+New launcher prerequisites additionally checked the complete command clocks
+(own234.7505 s <900, native2×111.6745=223.3490 s <900) before recording.
+Original inner native guard222.9384 s also passes. Source244/checked36dbd45,
+both source CI jobs42808276656. This is compute admission for the complete
+24-context/48-target known-game study only, not a performance/default/fresh/
+global gate. Publish this receipt and check its pushed exact bytes before any
+new learner starts. At04:01Pacific the full7200 own +900 native caps plus
+verification fit comfortably before the one-time noon deadline. No cap, seed,
+source target or acceptance tolerance changed. All earlier failures remain.
+
+### November 10 — complete real matched-update own evidence, before native
+
+Published admission3ec1b8b was independently observed on GitHub and its exact
+pushed-byte chain recomputed with learner/reference constructors blocked, before
+the first new real trajectory. At04:04Pacific all full caps plus verification
+fit before noon; source244 remained frozen.
+
+The complete real own stage now passes:24 initialized B1 paths through their
+original10m endpoints,72 original work crossings with144 average readouts,
+72 currents,144 raw masses and72 full-state/work guards exact. The global
+barrier passed before new scoring. Saved144 captures and separately scored
+versions of those SAME144 policies, plus96 raw ledgers. All144 matched self
+pairs and1152 fixed-opponent target contrasts remain; own replay error0.
+Inner full own stage756.632723374991 s; complete launcher/child
+756.886853375006 s <7200.24 paths attempted/initialized, both3-worker phases
+complete. Exact child receipt, all archives, reports and partial/failure history
+are retained. Original3.11.17/NumPy2.4.6 runtime verified.
+
+Publish this entire OWN evidence now before any new-policy native construction.
+The900-second complete native audit is still pending; no stronger/default/
+fresh/global or pure-variance claim follows. Reports are own-only snapshots;
+the later native receipt supplies the independent comparison without modifying
+the originally published own evidence.
+
+### November 10 — complete independent real matched-update audit
+
+All own results were published atd3bd9cf and observed through GitHub's canonical
+commit API before independent construction. OpenSpiel2.0.2 / Apache2 completed
+all144 new-policy self profiles and1152 fixed target conditions, including own
+input/admission replay and all required setup. Inner218.955465457984 s;
+complete launcher/child219.216563750000 s <900; maximum scalar discrepancy
+1.9895196601282805e-13 chips <1e-9. Exact native child receipt and
+complete measurements remain separate from the immutable own publication.
+No reference actions/strategies were exported or used in training.
+
+This completes the prescribed actual24-context/48-target comparison, with all
+144 new policies/96 ledgers and all seeds/readouts retained. The two compute
+axes differ: equal updates costs unequal node work. In the original motivating
+medium/q8/signed/linear context, the six raw target deltas in the report show
+mixed B4 seed directions, while the earlier B1 prefixes are more exploitable
+than B16 in all three declared seeds. These are bounded known-game comparisons,
+not a pure-variance effect, default selection, fresh/global admission or general
+win-rate claim. Next: complete artifact CI and make all paired results easier
+to read/browse before defining another method. Earlier IO/runtime mistakes and
+failed/partial cohorts remain retained rather than rewritten.
+
+### November 10 — artifact CI hosting limit, not a scientific gate change
+
+Final artifact run42815549217 passed Python3.12. Python3.11 was canceled at
+exactly the15-minute job limit while pytest had reached91%, with no reported
+test failure; its stdout showed continuing progress. Retained the cancellation
+log and raised the GitHub Actions hosting timeout to25 minutes so all checks
+and commit hooks can finish on the hosted runner. No tests, scientific source,
+seed, acceptance threshold or7200/900/180/600-second experiment limit changed.
+The observed pre-study source CI42808276656 remains valid; this final artifact
+CI cancellation is retained separately. Both new hosted jobs must pass before
+merging PR40. Local actual archive replays on3.11.17/NumPy2.4.6 and
+3.12.15/NumPy2.5.4 pass with learner/reference constructors blocked and zero
+error; original SVG/JSON reproduce byte-for-byte, CSV values match with column
+order differences from JSON-sorted keys. The separate presentation milestone
+will make CSV column order canonical without rewriting historical results.

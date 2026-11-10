@@ -15,16 +15,18 @@ notes section is for your own questions and explanations as you work through it.
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
 - [The next controlled test, not run yet](#41-separating-training-work-from-policy-updates--november-9)
+- [How the new time gate works](#46-keep-the-time-budget-separate-from-playing-strength--november-10)
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
 
-November9 update: steps35–42 retain a failed compute gate, a tested overhead
-change, a completed72-path batch study and its saved-current diagnosis. All
-216latest profiles and1,728fixed targets pass independent scalar checks. The
-harder game's latest policies are substantially more exploitable than averages,
-while fixed-opponent comparisons often favor latest policies. No global agent
-or default changes. Read step39 for the plots and terminal replay.
+November 10 update: the complete matched-update study and its independent audit
+have passed. All24 contexts,48 targets,144 captured policies and1,152 fixed
+targets remain in the report. The own replay has zero discrepancy; independent
+scalar disagreement is below1e-9 chips. This adds a second compute axis to the
+earlier equal-work comparison. It does not select a new default or establish
+general Hold'em strength. Steps54–67 retain the earlier failures and explain
+the checked route to the result.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2473,7 +2475,439 @@ branch; the integration tests create their own temporary clean copy. Final
 artifact GitHub checks remain required before merge. The next scientific work
 still needs the actual runner, comparison adapter, forecast and admission.
 
+## 43. Build the complete equal-update experiment — November 10
+
+The next question is whether a bigger batch helps when both learners make the
+same number of updates. The earlier experiment instead gave them the same
+amount of game-tree work. We will report both comparisons and their different
+costs. This is a planned test, not a new stronger-agent result.
+
+The target list already fixes all24 contexts and both larger batches, giving
+48 targets and three saved readouts at each. First we must replay every old B1
+path and match its old checkpoints exactly. New target snapshots stay unscored
+until every original path passes. Then we can score and independently check
+the144 captured policies against the same original opponents.
+
+Timing must cover more than learning. The new gate also measures loading,
+scoring, writing/replaying files and independent comparisons. It keeps the old
+budgets and worst-repeat forecast formula. A failed compute or correctness gate
+stops the large run; it does not change the rules until they pass.
+
+The project is an ongoing research pursuit. For each milestone we will record
+the question, change, real evidence, limitations and next decision. Your own
+practice and reported time stay separate from AI work and experiment runtime.
+The [continuing roadmap](roadmap.md#continuing-research-program--user-direction-november-910-2026)
+records this direction without changing the original phase contracts.
+[Prospective pipeline](matched-update-pipeline.md).
+
+## 44. Check the old path before measuring the new one — November 10
+
+Question: could observing extra checkpoints accidentally change the learner?
+The new capture worker saves policies without scoring them, while checking the
+original saved checkpoints. For example, two comparisons may request update4:
+we observe update4 once, but keep both comparison names. Those are dependent
+readouts, not two learners.
+
+Separate tiny uninterrupted paths agree with the saved policies and raw weights.
+Tests deliberately alter an old ledger, RNG/state fingerprint, current policy or
+work counter: the check fails, earlier captures remain available, and scoring
+stays blocked. The real factory also loaded the complete published24-context
+grid with both training and reference constructors blocked. No new Hold’em
+trajectory, performance score or admission follows from this software milestone.
+Next: complete scoring/replay and independent-audit integration. AI-assisted
+implementation/checks; no additional human practice or minutes reported.
+
+## 45. Follow one saved policy through the whole pipeline — November 10
+
+Question: do our files and comparisons still describe the same policy? A raw
+capture is now saved first. Scoring creates a second file linked to the capture's
+exact bytes; it adds measurements without changing action probabilities. Raw
+averaging weights must reproduce the saved averages exactly. An offline replay
+recalculates the scores, fixed-opponent values and paired differences.
+
+The small test control compares a strategy with an independently generated copy
+of itself: all gaps are zero. Review then found that the production collector
+and reader expected different row orders. A new test reproduced the error; the
+collector was corrected and the full small exercise now uses that same collector.
+This happened before any real timing or new poker trajectory. Other tests remove a row, alter a hash or value,
+or interrupt a file write; acceptance fails while partial evidence survives.
+The independent OpenSpiel adapter checks scalar values and best-response roots,
+and never provides a strategy for training. Its tests caught an information-set
+numbering mistake before any new poker experiment.
+
+This is AI-assisted software progress. The144 logical profiles share one tiny
+nonuniform Kuhn tree and six seed/rule paths; they are not144 independent
+Hold’em observations. Next: finish source checks, compute profiling and checked
+admission before a real comparison. No new human practice/minutes reported.
+
+## 46. Keep the time budget separate from playing strength — November 10
+
+Question: can the next experiment fit the budget without changing its rules?
+We now have tests for the forecast, which estimates the large run's time from
+short runs. It keeps the slowest of three measurements for every context and
+uses the same fixed worker assignments. For example, exactly 7,200 projected
+seconds fails a rule that requires less than 7,200. All17 forecast tests passed.
+Those times are synthetic test examples, not measured experiment runtimes.
+
+The separate overhead exercise will load old saved policies and repeat the
+same number of file writes, scores and comparisons as the planned experiment.
+Each record keeps the old policy's real update count and labels itself as a
+timing alias. It cannot claim that a new prefix was trained. Two metadata tests
+checked all144 aliases and their1,152 original fixed targets without training.
+
+The native adapter also passed correctness checks on both actual poker spots
+and both representations using a fixed uniform policy. This checks the game
+exporter, values and replies; it trains no new poker strategy. The four checks
+passed in3.32seconds. Full source checks and published proof/forecast evidence
+are still needed before the large study. AI-assisted implementation and tests;
+no additional human practice or minutes have been reported.
+
+## 47. Keep old evidence readable as the project grows — November 10
+
+Question: should adding a new module make an old result unreadable? Review found
+that one check was applying the fresh-experiment rule to an offline archive
+reader. A regression reproduced the problem. The corrected reader still checks
+every original file and the original tested commit, but allows additional files.
+A new experiment must match the complete newly tested source before it starts.
+
+For example, adding a new plotting helper should not erase access to yesterday's
+saved experiment. Editing yesterday's calculation code should still break its
+old source check. Seven source-gate tests cover those boundaries and incomplete
+check records; another test ensures old checks cannot start a fresh tiny proof.
+These are software corrections, not a new strength measurement. Complete checks
+are being repeated on the corrected source before any real timing run. Work and
+verification remain AI-assisted; no new personal practice/time was reported.
+
+## 48. Check the complete corrected source — November 10
+
+Both Python versions now pass the final checks:2,044 base tests,2,097 optional
+tests and59 relevant slow integrations each. Lint, formatting and strict typing
+also pass, and both hosted GitHub jobs are green. The source receipt links the
+actual logs to the tested commit; earlier checks stay in the log as earlier
+checks, not substitutes for this corrected version.
+
+Next we can run the full small archive proof, publish our own evidence first,
+and ask the independent native calculator to check it within the same time
+budget. A software pass still cannot claim a stronger Hold’em agent. Real
+prefix timing and the larger comparison remain gated. AI-assisted checks;
+no new human hands-on time or practice was reported.
+
+## 49. Publish our own answer before the independent check — November 10
+
+The complete small proof passed. It saved144 captures and144 scored versions of
+those same policies, plus96 sets of averaging weights. Replay reproduced all
+1,152 fixed-opponent conditions with zero own error. These are dependent tiny
+test cases, not a poker-strength sample.
+
+The own files were committed and pushed before OpenSpiel checked them. Its
+largest scalar difference was about0.000000000000000222 chips. The shared
+34.52second run included publishing the own evidence and a final own replay;
+the cap was180seconds. A separate Python3.12 read also worked with learner and
+reference construction blocked.
+
+This shows the pipeline can preserve and independently check its evidence. It
+does not show the Hold’em agent improved. Next we measure the real short-prefix
+and reporting costs before deciding whether the full comparison may start.
+[Proof files](matched-update-pipeline.md). AI-assisted execution; no new human
+practice or minutes reported.
+
+## 50. Check the interpreter, not the folder name — November 10
+
+Correction to steps48–49: the assistant mislabeled a local check. The folder was called
+base312, but `uv` used the project's defaultPython3.11 and recreated it. The
+archive read labelled312 also actually ranPython3.11.17/NumPy2.4.6. Optional
+and hostedPython3.12 checks did pass; the local base312 check was still missing.
+
+The original files and exact bytes are retained with a correction notice. The
+first small arithmetic proof passed, but it cannot admit a real study with
+that prerequisite record. The gate is closed while an explicitly selected
+Python3.12 check runs, with runtime printed before and after. No real prefix
+timing or new poker trajectory started. Next: correct the evidence chain and
+repeat the eligible small proof. This records an assistant execution/reporting
+error, not a claim about your actions or understanding.
+
+## 51. Rebuild the evidence chain using actual runtimes — November 10
+
+Both base runs passed again, with the interpreter selected explicitly and its
+runtime asserted before and after:Python3.11.17/NumPy2.4.6 andPython3.12.15/
+NumPy2.5.4. Each passed2,044 tests plus lint, formatting and typing. The genuine
+optional and slow results remain2,097 and59 tests per version.
+
+The corrected receipt uses machine output rather than a folder name. All original
+mislabeled files remain in a separate, hashed retention folder. The first small
+arithmetic proof is not being reused as admission: a fresh proof will run after
+this corrected prerequisite record is published, with own evidence published
+before native comparison. Real timing and the larger study still follow their
+separate gates. This correction and execution were assistant work; no new human
+practice or minutes are inferred.
+
+## 52. Complete the eligible small proof — November 10
+
+The new small proof ran after the corrected runtime checks. Its own archive
+replayed144 policies and1,152 fixed conditions with zero error; the own files
+were pushed before independent comparison. The whole shared run finished in
+30.47seconds, including publication and final replay. The independent
+calculator's largest scalar difference was2.22×10^-16fixture chips.
+
+The separate archive reader now actually ranPython3.12.15/NumPy2.5.4, with its
+version asserted before and after and learner/reference constructors blocked.
+The earlier mislabeled attempt remains retained as ineligible evidence.
+
+Next is the first real timing attempt: all24 contexts, three short runs each,
+and the full reporting overhead on old saved policies. The forecast and overhead
+must pass before the larger comparison starts. This is software correctness,
+not a stronger-agent result. AI-assisted execution; no new human practice/time
+was reported.
+
+## 53. Measure the work around training too — November 10
+
+The first real timing attempt passed its own checks. Three short runs in each
+of24 contexts reproduced the original saved checkpoints. Keeping each context's
+slowest repeat and the fixed worker assignments gave a guarded forecast of
+3,343.35seconds, below the7,200second own cap.
+
+The reporting exercise then used old saved policies to measure loading,
+writing, scoring, fixed opponents, replay and tables/plots. It covered the same
+144policy/96ledger/1,152target shape and took151.01seconds, below its600second
+allowance. The entire own profile took238.37seconds, below900.
+
+These numbers estimate whether the next comparison fits its budget. They do
+not show the agent improved: the overhead policies are old timing aliases.
+The complete own evidence is published before the independent native overhead
+check. That check and a published checked admission are still needed before
+long training. AI-assisted execution; no human minutes or new practice inferred.
+
+## 54. Publishing evidence changed the wrong comparison field — November 10
+
+The native overhead step stopped before it built a reference or scored a target.
+The saved policies and all stable corpus identities matched. The mismatch came
+from comparing the Git commit and working-tree status inside the manifest.
+Publishing the own files changes those fields, even when the code and data are
+unchanged. The pipeline had treated that expected publication step as an input
+change.
+
+This is a software reader bug, not evidence that the poker agent lost. The failed
+receipt and successful own timing data are retained. A versioned IO adapter will
+check the original code/config bytes and every stable target separately from
+volatile publication metadata. The repaired source still needs its checks and
+compute admission before a long study. No cap, seed or tolerance is relaxed.
+AI-assisted diagnosis; no new human practice or time inferred.
+
+## 55. Separate identity from publication history — November 10
+
+The repair keeps the old reader and numerical code unchanged. A new parent IO
+adapter checks every stable target and original code/config byte, then lets the
+reader keep its saved publication view. That view's Git commit/status can differ
+after a push; the policy, grid and input identities cannot.
+
+The original real old-policy corpus now replays all144profiles,96ledgers and
+1,152fixed targets with learner and reference construction blocked. Tests also
+change a target, input hash or original source byte: the repaired boundary still
+rejects those changes. The adapter restores the original service after failure
+or CLI exit. The first cohort and failed native attempt are retained unchanged.
+
+Next: verify the expanded source and repeat the full prescribed proof/compute
+gates for that cohort. The old favorable forecast is not being silently reused
+for changed source. This is a reader repair, not a stronger-agent finding.
+AI-assisted work; no new human practice or time is inferred.
+
+### Step56 — keep the first attempt while checking the repair (November10)
+
+The first own forecast passed, but its independent comparison stopped at a
+publication-reader bug. That complete attempt now has a named retained folder:
+[source cohort06](../results/matched-update-pipeline/source-cohort-06a3402/retention.json).
+Every saved file was checked before clearing the latest-result aliases. This
+means a later result cannot quietly erase the failure or borrow an earlier
+favorable timing. The repair adds one parent reader service; every earlier
+scientific source byte stays frozen. Its own complete checks, tiny proof and
+72-row real compute forecast must pass before a long run is allowed.
+
+AI-assisted implementation/checking; no additional human practice or time has
+been reported. Next: finish the current source checks and its proof chain.
+
+### Step 57 — verify the publishing repair (November 10)
+
+Both supported Python versions now pass the full current check set: 2,054 base
+tests, 2,107 optional tests and 60 slower integrations each. The two GitHub CI
+jobs passed too. These counts overlap; they are not independent experiments.
+The actual saved-policy reader was tested with training and reference
+construction blocked. It accepts publication metadata changes but rejects
+changed targets, input hashes and original source bytes.
+
+The receipt records the actual interpreter versions, rather than trusting a
+folder name. Next comes a fresh tiny end-to-end proof tied to this exact source.
+Passing these checks does not yet admit new Hold'em training or show a stronger
+agent. AI-assisted implementation and verification; no human time was reported.
+
+### Step 58 — prove the whole repaired pipeline on a tiny game (November 10)
+
+The full software proof passed: it saved and replayed 144 policies and 96 raw
+averaging ledgers, then checked 144 self-play and 1,152 fixed-opponent scalar
+targets independently. The largest discrepancy was about 0.000000000000000222
+fixture chips. Own publication, independent comparison and final replay all
+fit one 34.34-second clock. The independent solver's strategies never enter
+training.
+
+A separate Python 3.12 reader replayed the saved archive with training and
+reference construction blocked. That checks we can inspect evidence without
+quietly rerunning a learner. These tiny cases prove software behavior, not
+Hold'em strength. Next: repeat the entire prescribed real compute forecast
+for the repaired source, keeping the earlier attempt visible.
+AI-assisted work; no new personal practice or human time was reported.
+
+### Step 59 — a destination check was missing (November 10)
+
+The next attempt completed all 72 timings and replayed the entire old-policy
+corpus. Its last step failed: the assistant had removed old report files but
+left an empty report folder behind. The report writer refuses to reuse any
+existing folder, even an empty one. That protects old evidence, but we should
+have checked the destination before spending compute.
+
+The complete failed attempt is retained in
+[source cohort 7bd650d](../results/matched-update-pipeline/source-cohort-7bd650d/retention.json).
+Its favorable partial timings do not turn it into a passing gate. No new native
+comparison or long study ran. Next: check all output destinations before a child
+starts, record the complete command clock, and verify the changed IO source.
+The scientific trainer and budgets stay frozen. AI-assisted work; no additional
+human practice or time was reported.
+
+### Step 60 — reject bad destinations before spending compute (November 10)
+
+A new launcher checks destinations before starting the unchanged child command.
+An empty report folder is now an immediate, saved rejection. The launcher never
+deletes anything automatically. It also keeps the child's exact receipt beside
+a measured copy, so a failed child cannot quietly become a successful result.
+
+The complete child clock includes setup checks, startup and final child writes.
+The tiny proof includes the publication interval too. Existing scientific limits
+stay fixed; the complete clock is checked alongside the original inner clock.
+The lifecycle and parent-reader checks passed 39 tests, including corrupted
+receipts, partial failures and strict clock boundaries. Next: verify this entire
+source cohort before repeating the prescribed proof and compute gate.
+AI-assisted work; no additional personal practice or time was reported.
+
+### Step 61 — check the complete lifecycle launcher (November 10)
+
+The whole current source passed both GitHub jobs and all six local checks. Each
+Python version passed 2,083 base tests,
+2,136 optional tests and
+60 relevant slower integrations. These
+overlapping suites are software checks, not independent poker experiments.
+The recorded runtime assertions prevent the earlier interpreter-label mistake.
+
+Next: a fresh tiny proof with the complete launcher clock, then the entire
+prospectively fixed compute gate. Earlier partial timings and successful old
+proofs are not admission for changed source. AI-assisted checking; no additional
+personal practice, time or mastery was reported.
+
+### Step 62 — the complete-clock tiny proof passes (November 10)
+
+The new launcher passed the full tiny proof: all144 policies,96 raw ledgers and
+1,152 fixed targets replayed. The independent discrepancy was about
+2.22×10⁻¹⁶ fixture chips. Publication and final replay fit one
+52.01-second outer clock, below180 seconds.
+The exact child receipts remain beside the measured receipts. A separate
+Python3.12 reader also passed with training/reference construction blocked.
+
+This proves the repaired lifecycle on tiny software fixtures, not poker
+strength. Next: the entire72-row real compute forecast and complete old-policy
+overhead for this source, then independent overhead and published admission.
+No earlier partial timing is substituted. AI-assisted checking; no additional
+human practice or time was reported.
+
+### Step 63 — the whole own compute gate passes (November 10)
+
+This attempt finished all72 short timings and the complete old-policy
+copy/score/archive/replay/report cycle. Its guarded estimate is3,342.35 seconds
+against a7,200-second cap. Complete overhead took148.71 seconds
+against600. The complete launcher/child command took234.75 seconds
+against900, and the own replay had zero discrepancy.
+
+The old corpus is used to measure overhead; these are not new learned prefix
+strategies. The earlier failed attempts remain visible and are not rewritten.
+Next: publish these own results, independently check the complete overhead,
+and publish checked admission before starting any long real trajectory.
+AI-assisted work; no additional human practice or time was reported.
+
+### Step 64 — independent overhead and scalar checks pass (November 10)
+
+The independent program checked all144 profiles and1,152 fixed targets. Its
+largest scalar discrepancy was about1.35×10⁻¹³ chips. The complete command took
+111.67 seconds; twice that stays below the fixed900-second guard.
+Own evidence was published first, and reference strategies never entered
+training. The exact child receipt is retained.
+
+This establishes that the two calculators agree on these bounded inputs. It
+does not mean our agent plays as well as an equilibrium solver. Next: publish
+and check the admission receipt, then start the full24-context matched-update
+study only if its complete caps and verification fit the remaining window.
+AI-assisted checking; no additional human practice or time was reported.
+
+### Step 65 — admission means permission to run, not a strong agent (November 10)
+
+The complete software proof and fixed own/native compute gates passed, so the
+project recorded an admission receipt. It binds the actual source and evidence
+files for all 24 contexts and 48 update-count targets. Its exact pushed bytes
+will be checked before training. There is enough time left in this authorized
+window for the full unchanged budgets and verification.
+
+This gate answers “is the planned experiment implemented and affordable?”
+It does not answer “is the strategy good?” The actual matched-update study
+still has to run and be independently audited. Every seed/readout and any
+failure remains in scope. AI-assisted work; no additional human practice or
+time was reported.
+
+### Step 66 — the real matched-update run completes (November 10)
+
+The complete planned run finished: all24 B1 paths reproduced their original
+checkpoints before any newly captured policy was scored. It saved144 policies
+and96 raw ledgers, then all144 self comparisons and1,152 fixed-opponent targets.
+The scored archive contains those same144 policies with measurements added;
+it is not another144 independent learners. Full own replay had zero discrepancy.
+The complete command took756.89 seconds, within7,200.
+
+The comparison keeps policy-update counts equal and reports the actual, unequal
+node work. It complements the earlier equal-work view. All games, encodings,
+regret rules, seeds and readouts remain in the tables. The independent audit is
+next, after these own files are published. No default or general-strength claim
+is being made. AI-assisted execution; no new human practice or time was reported.
+
+### Step 67 — the real independent comparison passes (November 10)
+
+The independent calculator checked every144 new-policy profile and1,152 fixed
+targets after own publication. Maximum scalar discrepancy was about
+1.99×10⁻¹³ chips. The complete command took219.22 seconds, within900.
+This finishes the planned matched-update experiment, including every seed and
+readout; exact child receipts and both earlier failed cohorts remain visible.
+
+In the original motivating medium-game/q8/signed/linear context, B4 has mixed
+seed directions at equal updates. B16 has lower self exploitability than the
+earlier B1 prefix in all three declared seeds there, while spending much more
+node work. That is a limited comparison on this known game. Equal work and
+equal updates answer different questions; neither proves a pure variance cause
+or a stronger global agent. The default stays unchanged.
+
+Next: make the complete two-axis results and saved decisions easier to inspect,
+then use them to define the next method before measuring it. AI-assisted
+implementation/execution; no additional human practice or time was reported.
+
+The final publication check exposed a hosting limit: GitHub's Python3.11 job
+was still progressing at91% when its15-minute allowance expired. Python3.12
+passed. The canceled log is retained, and the software-check hosting allowance
+is now25 minutes. The scientific7200/900-second limits are unchanged. Both
+new hosted jobs must pass before merge. Separate constructor-blocked replay on
+both Python versions reproduces all values; the original CSV renderer can
+reorder columns after JSON replay. The new presentation work will fix column
+order without changing the historical scientific files.
+
 ## Your own learning notes
+
+**November 9, 2026 — your report:** You replayed the published prefix archive,
+then used the saved-strategy browser's n/p/q controls to inspect ranks1–9 and
+quit. The replay reported all144 policies/96ledgers/384step/72work checks.
+This records the exercise you reported; hands-on minutes and understanding
+were not measured or inferred.
+
 
 **November 8, 2026 — your report:** You ran the correctness replay and the
 controlled-training tests on your Mac. The replay passed and all 20 tests passed
@@ -2511,3 +2945,4 @@ Keep earlier failed results and distinguish corrections from new experiments.
 Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
+

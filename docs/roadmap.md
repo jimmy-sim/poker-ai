@@ -91,3 +91,22 @@ or a small Deep CFR-style neural value approximation comparison.
 - 3–4 resume bullets with verified numbers and an interview Q&A cheat sheet.
 
 Every number in published results must come from a rerunnable repository script.
+
+## Continuing research program — user direction, November 9–10, 2026
+
+The original bounded prototype is the foundation for an ongoing effort to
+improve the agent. Track successive validated versions, research questions and
+the user's understanding. Each milestone keeps a concrete acceptance contract;
+the overall project has no claim of completed competitive Hold'em strength.
+
+A research cycle states a hypothesis and fixed test, implements and validates
+it, measures all planned controls, retains unfavorable outcomes, then explains
+the next decision. Use fresh cases before generalization claims and prescribed
+gates before global training or changing the agent default.
+
+Visible progress uses coherent commits/PRs and dated experiment and learning
+records on actual work days. Human hands-on minutes are recorded only when
+reported; keep AI execution, experiment wall time and CPU time separate.
+Resume claims use verified numbers, actual scope and honest assistance.
+This long-term goal creates no automatic schedule; work windows need user
+authorization. Historical phase contracts and failed results remain intact.

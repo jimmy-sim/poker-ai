@@ -430,3 +430,14 @@ full controls, not reference equilibrium opponents, define fixed targets.
 The adapter exports no reference actions; native outputs are comparison-only
 and cannot enter training. Shared own-game export limits mechanical independence.
 See [method, all outcomes and limits](batch-current-diagnosis.md).
+
+## November10 matched-update adapter license check
+
+Before new optional adapter tests, the assistant read the installed
+`open_spiel-2.0.2.dist-info/licenses/LICENSE` in the pinned Python3.11 environment.
+It is Apache-2.0, SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+The new array-to-EFG adapter uses the unmodified installed reference for scalar
+comparison only. It requests no reference policy or training output. This local
+software coverage does not complete the new source-bound proof or admit a real
+matched-update study. Historical solver results and license records remain intact.
