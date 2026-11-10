@@ -2366,3 +2366,14 @@ No scientific model/data change. Final full suites and saved-data replay follow.
 PR #44 final artifact CI42874878787 passed both jobs and merged8b303fdd.
 PR #45 retargeted to main; integrate the merged data-only reproduction receipts
 before final checks. Human minutes not recorded; AI-assisted execution.
+
+### November 10 — register fixed saved-continuation contrast
+
+Issue #4 comment 6776137714 predeclares exact/restricted/hybrid action values
+for all nine primary profiles and both seats, every previously ranked group
+and every exact member. The hybrid changes only own river rows; opponent and
+pre-river rows are checked, as are audited roots, finite values, support and
+complete inventory. Pin the final decision report to the initial summary bytes;
+do not change the hash if reproduction fails. No new training or solver.
+No contrast values measured yet. This diagnoses a frozen continuation, not
+causal training improvement or extra-information-only attribution.

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "prospective_posthoc_saved_continuation_contrast_no_training",
+  "registered_issue_comment": 6776137714,
+  "question": "Can changing only future own river continuation change the preferred turn action at the previously ranked groups?",
+  "own": "results/private-prefix/study/own.json",
+  "own_sha256": "d2366ea9ba5f6c30694fb080ab5dc566c48169ed92bc9598c7d9e1e950f885b9",
+  "native": "results/private-prefix/study/native.json",
+  "model_source_sha256": "a5a2e28de289d719efe51e639f1a30bb9df8573377b406b823e0216d57154070",
+  "decision_report": "results/private-prefix/decisions",
+  "decision_summary_sha256": "6ab9b43ed35ddab3a96ec6f2ec52adfe674347e0ca24102937597816f0d8cc26",
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "roles": [
+    "B1",
+    "IID",
+    "stratified"
+  ],
+  "profiles": 9,
+  "responses": 18,
+  "groups": 90,
+  "exact_members": 415,
+  "selection": "all previously ranked top-five groups for every seed/control/seat, every exact member including unsupported rows",
+  "profiles_compared": [
+    "exact",
+    "restricted",
+    "river_before"
+  ],
+  "hybrid": "river_before has exact own pre-river rows and restricted own river rows; opponent remains the fixed saved strategy",
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "argmax": "first legal maximizer only when counterfactual mass >0; unsupported choice None",
+  "limits": "Frozen-opponent continuation contrast, not causal training benefit, extra-information-only attribution or universal poker advice. No new training, trajectory, seed, cap, gate, default, reference construction/strategy use or fresh/global admission."
+}
