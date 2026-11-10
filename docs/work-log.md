@@ -1775,3 +1775,18 @@ runtimes were asserted before and after: 3.11.17/2.4.6 and 3.12.15/2.5.4.
 The receipt binds all six log hashes. The source remains frozen for the next
 full tiny proof and fixed compute gate. No long study is admitted by software
 checks; the two retained IO failures and runtime-label correction remain visible.
+
+### November 10 — complete-launcher tiny proof passes
+
+Own tiny proof: inner4.438767125015 s, complete command
+4.632313500042 s. Exact child plus measured own receipt
+and all three archives were published at a30ed05 and observed through GitHub's
+commit API BEFORE native construction (workflow listing lagged). Complete native
+command5.920270000002 s; outer shared clock including
+publication and final replay52.012633042003 s
+<180. Inner shared clock51.890885124973 s also passes. All144 captures /
+144 scored /96 ledgers /72 crossings /1152 fixed targets replay; maximum
+independent scalar error2.2204460492503131e-16 fixture chips.
+Actual3.12.15/NumPy2.5.4 constructor-blocked reader also passes.
+This source-bound software proof permits full original-runtime short profiling
+only; no long trajectory or strength/default/fresh/global admission.

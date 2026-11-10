@@ -2798,6 +2798,21 @@ prospectively fixed compute gate. Earlier partial timings and successful old
 proofs are not admission for changed source. AI-assisted checking; no additional
 personal practice, time or mastery was reported.
 
+### Step 62 — the complete-clock tiny proof passes (November 10)
+
+The new launcher passed the full tiny proof: all144 policies,96 raw ledgers and
+1,152 fixed targets replayed. The independent discrepancy was about
+2.22×10⁻¹⁶ fixture chips. Publication and final replay fit one
+52.01-second outer clock, below180 seconds.
+The exact child receipts remain beside the measured receipts. A separate
+Python3.12 reader also passed with training/reference construction blocked.
+
+This proves the repaired lifecycle on tiny software fixtures, not poker
+strength. Next: the entire72-row real compute forecast and complete old-policy
+overhead for this source, then independent overhead and published admission.
+No earlier partial timing is substituted. AI-assisted checking; no additional
+human practice or time was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
