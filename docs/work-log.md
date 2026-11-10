@@ -1576,3 +1576,23 @@ trajectory replay and does not admit the long study.
 The24 logical labels share one tiny tree/six seed-rule paths, with identical
 right-strategy controls; not24 independent poker games. Next: all72 original-
 runtime short timings and complete old-policy overhead, then checked admission.
+
+### November10 — correction: local runtime labels were wrong; gate closed
+
+The assistant discovered that `uv run` respected the project's `.python-version`
+3.11 and recreated both named base environments asPython3.11.17/NumPy2.4.6.
+The earlier base312 check and the file named software-replay-312 were therefore
+mislabeled. The optional312 command genuinely usedPython3.12.15/NumPy2.5.4, and
+the hosted312 job passed, but these do not replace the missing local base312
+check. Base311 NumPy was also incorrectly described as2.5.4; actual2.4.6.
+
+The first tiny own/native arithmetic proof passed, including its shared34.52s
+clock, but its prerequisite record is NOT eligible for real study admission.
+All13 original receipt/log/proof/archive files are preserved byte-for-byte at
+[superseded-environment-labels](../results/matched-update-pipeline/superseded-environment-labels/retention.json)
+with SHA256s and original publication commits. The root code gate is explicitly
+closed. No real prefix timing or new long trajectory has run. An explicitly
+selectedPython3.12 local base check is running with machine-reported runtime
+before/after; corrected receipts and a fresh eligible tiny proof must follow.
+Earlier journal/log claims of local base312 and reader312 are superseded by
+this correction; their numeric data have not been hand-tuned or discarded.

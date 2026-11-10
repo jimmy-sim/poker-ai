@@ -20,13 +20,12 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November10 update: the original batch experiment and saved-current diagnosis are
-complete. We are building the next controlled test: compare strategies after the
-same number of learning updates, while showing their different compute costs.
-Steps43–49 explain the new input, capture and independent-checking software.
-The small software fixtures pass local checks, but the new real Hold’em study
-still needs complete source checks, a published software proof and the fixed
-compute gate. No new default or competitive-strength claim follows.
+November10 update: the matched-update pipeline has passed broad software checks,
+but an environment-label error invalidated one local prerequisite claim. Step50
+explains the correction and retained evidence. The actualPython3.12 base check
+is being rerun with explicit interpreter selection. Real prefix timing and the
+large Hold’em comparison remain blocked until the corrected evidence chain and
+compute gate pass. There is no new default or competitive-strength claim.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2610,6 +2609,21 @@ does not show the Hold’em agent improved. Next we measure the real short-prefi
 and reporting costs before deciding whether the full comparison may start.
 [Proof files](matched-update-pipeline.md). AI-assisted execution; no new human
 practice or minutes reported.
+
+## 50. Check the interpreter, not the folder name — November 10
+
+Correction to steps48–49: I mislabeled a local check. The folder was called
+base312, but `uv` used the project's defaultPython3.11 and recreated it. The
+archive read labelled312 also actually ranPython3.11.17/NumPy2.4.6. Optional
+and hostedPython3.12 checks did pass; the local base312 check was still missing.
+
+The original files and exact bytes are retained with a correction notice. The
+first small arithmetic proof passed, but it cannot admit a real study with
+that prerequisite record. The gate is closed while an explicitly selected
+Python3.12 check runs, with runtime printed before and after. No real prefix
+timing or new poker trajectory started. Next: correct the evidence chain and
+repeat the eligible small proof. This records an assistant execution/reporting
+error, not a claim about your actions or understanding.
 
 ## Your own learning notes
 
