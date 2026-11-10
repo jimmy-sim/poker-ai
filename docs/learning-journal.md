@@ -2709,6 +2709,20 @@ gates for that cohort. The old favorable forecast is not being silently reused
 for changed source. This is a reader repair, not a stronger-agent finding.
 AI-assisted work; no new human practice or time is inferred.
 
+### Step56 — keep the first attempt while checking the repair (November10)
+
+The first own forecast passed, but its independent comparison stopped at a
+publication-reader bug. That complete attempt now has a named retained folder:
+[source cohort06](../results/matched-update-pipeline/source-cohort-06a3402/retention.json).
+Every saved file was checked before clearing the latest-result aliases. This
+means a later result cannot quietly erase the failure or borrow an earlier
+favorable timing. The repair adds one parent reader service; every earlier
+scientific source byte stays frozen. Its own complete checks, tiny proof and
+72-row real compute forecast must pass before a long run is allowed.
+
+AI-assisted implementation/checking; no additional human practice or time has
+been reported. Next: finish the current source checks and its proof chain.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

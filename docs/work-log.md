@@ -1694,3 +1694,14 @@ prospectively fixed72-row/old-overhead compute gate before admission. Repeating
 that full gate is required by the new source cohort, not selecting favorable
 unchanged timings. All old observations remain visible and no cap/seed/tolerance
 changes. Use the new versioned module entry point for current operations.
+
+### November10 — fresh source cohort starts with old evidence retained
+
+Verified every byte/hash of all25 cohort06 files against their retention receipt,
+then cleared only the latest aliases. The first successful own forecast and
+failed native attempt remain under `source-cohort-06a3402/`, with original Git
+history intact. The new243-file source inventory is
+`cc43405e521329890b42cd29709f53ca60ed9504ac8eb13a8b11fa744df158b5`;
+its admission remains closed while complete checks run. No old favorable timing
+is reused as admission for changed source. Original scientific modules, source
+policies, seed/grid/cap contracts and user checkout results are unchanged.
