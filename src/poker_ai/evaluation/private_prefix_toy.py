@@ -6,6 +6,7 @@ profiles and1728 final fixed conditions. These are software fixture outputs,
 not independent poker games or additional new-candidate trajectories.
 """
 
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -44,6 +45,8 @@ def baselines(
     scratch: Path,
     binding: str,
     deadline: Deadline,
+    on_row: Callable[[dict[str, Any]], None] | None = None,
+    on_fixed: Callable[[dict[str, Any]], None] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     if design.scope != TOY:
         raise ValueError("toy baselines cannot substitute for real published sources")
@@ -103,8 +106,14 @@ def baselines(
                             context, policy, metadata, scratch, lambda _: None, deadline
                         )
                         rows.append(row)
+                        if on_row is not None:
+                            on_row(row)
                         if label == design.labels[-1]:
-                            fixed.extend(opponents.matches(row, policy, binding))
+                            matches = opponents.matches(row, policy, binding)
+                            fixed.extend(matches)
+                            if on_fixed is not None:
+                                for match in matches:
+                                    on_fixed(match)
 
             observe(solver, design.labels, capture, deadline)
     if len(rows) != 648 or len(fixed) != 1728:

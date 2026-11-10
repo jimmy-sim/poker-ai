@@ -201,6 +201,7 @@ def plots(scope: str, groups: list[dict[str, Any]], folder: Path) -> None:
         if scope == OLD
         else "Two known tiny-range games; no default/global admission"
     )
+    candidate = "old IID copy" if scope == OLD else "stratified"
     for readout in READOUTS:
         selected = [r for r in groups if r["readout"] == readout]
         lookup = {
@@ -231,7 +232,7 @@ def plots(scope: str, groups: list[dict[str, Any]], folder: Path) -> None:
         axis.set_xticks(
             range(12),
             [
-                f"{kind} / stratified B{batch}\nwork {label:,}"
+                f"{kind} / {candidate} B{batch}\nwork {label:,}"
                 for kind, batch, label in columns
             ],
             rotation=45,
@@ -243,7 +244,7 @@ def plots(scope: str, groups: list[dict[str, Any]], folder: Path) -> None:
             + readout
             + (
                 ": mean of all three fixed seeds; blue baseline lower, "
-                "orange stratified lower. Scales differ."
+                f"orange {candidate} lower. Scales differ."
             )
         )
         for y, x in np.ndindex(array.shape):
@@ -252,7 +253,7 @@ def plots(scope: str, groups: list[dict[str, Any]], folder: Path) -> None:
             display,
             ax=axis,
             label=(
-                "Baseline minus stratified exact exploitability "
+                f"Baseline minus {candidate} exact exploitability "
                 "(percentage points of initial pot)"
             ),
         )

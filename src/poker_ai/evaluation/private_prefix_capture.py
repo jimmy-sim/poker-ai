@@ -10,7 +10,7 @@ from numpy.random import PCG64, Generator
 
 from poker_ai.evaluation.averaging_history_artifacts import array_sha, write_mass
 from poker_ai.evaluation.averaging_history_math import coverage, movement, window_mass
-from poker_ai.evaluation.private_prefix_design import READOUTS, WEIGHTS, Design
+from poker_ai.evaluation.private_prefix_design import OLD, READOUTS, WEIGHTS, Design
 from poker_ai.finite import FloatArray
 from poker_ai.postflop.cell_process import Send
 from poker_ai.postflop.controlled_checkpoints import write_snapshot
@@ -32,6 +32,8 @@ def collect(
     deadline: Deadline,
 ) -> dict[str, Any]:
     """No score/reference or external strategy is supplied to the learner."""
+    if design.scope == OLD:
+        raise ValueError("old cost calibration must copy archives, never train")
     started, cpu = time.perf_counter(), time.process_time()
     path = design.paths[index]
     deadline.check()

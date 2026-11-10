@@ -47,8 +47,28 @@ def exercise(
         gather(saved)
         persist(path, saved)
     inventory(design, saved, scored=False)
+
     archive(path, saved, scratch, "captures", "captures")
     archive(path, saved, scratch, "masses", "masses")
+    score_captures(path, saved, design, context_for, fixed_for, scratch, deadline)
+
+
+def score_captures(
+    path: Path,
+    saved: dict[str, Any],
+    design: Design,
+    context_for: ContextFor,
+    fixed_for: FixedFor,
+    scratch: Path,
+    deadline: Deadline,
+) -> None:
+    """Score only already archived captures, shared by real/old/toy routes."""
+    inventory(design, saved, scored=False)
+    contexts = {i: context_for(i) for i in range(48)}
+
+    def retain(event: dict[str, Any]) -> None:
+        saved["events"].append(event)
+
     # Every capture is complete before the first new policy score.
     for captured, blob in read_archive(
         path.with_name(saved["captures_file"]),
@@ -56,7 +76,7 @@ def exercise(
         saved["captures"],
     ):
         deadline.check()
-        context = context_for(captured["path_index"])
+        context = contexts[captured["path_index"]]
         policy = unpack_policy(
             context.partition, decode(blob, context, captured)["policy"]
         )

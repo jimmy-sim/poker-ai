@@ -2043,3 +2043,26 @@ or agreement. Ruff/strict typing pass the new component files. These are checked
 components, not the source-bound full command/software proof, compute forecast,
 admission or real learning study. Command-level whole clocks/gates remain next.
 AI-assisted implementation/tests; no user practice/hours/mastery inferred.
+
+
+### November 10 — whole private-prefix command and failure retention
+
+Added separate complete-command source gates, original-runtime144-prefix fixed
+forecast, full OLD432/288/1152 cost corpus, own study/native controllers,
+source-bound admission recomputation and read-only replay. Append/fsync journals
+retain each worker message before final JSON; readers check exact journal/source
+bindings. Fresh-destination preflight includes the nested old report, and the
+parent kills the complete child process group on timeout. Partial baseline
+records/archive errors and failed/over-budget stages remain visible. Reference
+construction follows observed own publication; no reference policy is exported.
+
+Focused execution/source integration passes23 tests in55.99s, including a complete
+toy command/read-only replay, real archive copying with constructors blocked,
+spawn success/failure, journal tampering, fixed forecast arithmetic and failures,
+publication rejection before reference construction, and destination/timeout
+rejections. Initial journal tests exposed list-subclass equality/fixture-copy
+issues; corrected by comparing plain persisted lists, with no numerical change.
+Whole source base/optional and hosted checks are next. This implementation
+commit is not a passed full software proof, forecast, admission or real study.
+Scientific configs/seeds/caps and historical source/data are unchanged.
+AI-assisted work; no human minutes, practice or mastery inferred.

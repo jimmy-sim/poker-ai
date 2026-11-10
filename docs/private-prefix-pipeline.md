@@ -89,3 +89,37 @@ implemented. These component checks do not authorize a real trajectory study.
 The actual original-data factory also has a regression test proving that all
 72 B1 current policies already have scores at all three labels. The superseded
 version1 accounting assumption above is not used.
+
+
+## Whole-command implementation (November 10)
+
+The additive command is `scripts/validate_private_prefix_pipeline.py`. It keeps
+the canonical source-bound stages separate: `code-checks`, `fixture-own`,
+`fixture-native`, `profile`, `timing-native`, `admit`, `study`, `real-native`,
+`replay` and `report`. Compute stages run in a separately timed child process;
+the complete parent receipt preserves the exact child bytes. A hard timeout
+terminates the child process group. Preflight checks every output, archive,
+journal and report destination, including the nested old-policy report before
+any profiling prefix starts. Existing complete or failed attempts are retained.
+
+Worker messages are appended and fsynced to a raw event journal as they arrive.
+The receipt reader checks that journal against retained worker messages. Failed
+baseline exports retain their available records and independent archive errors.
+The real source loader and old cost-corpus copier construct no learner/reference.
+All432 core policies,288 books,1152 fixed conditions and864/2304 contrasts remain
+required. The toy proof additionally trains and independently checks its complete
+648-profile/1728-fixed fixture baseline, under the same shared180-second clock.
+It is explicitly one nonuniform Kuhn game repeated under logical context names.
+
+The fixed forecast uses all144 new short prefixes and their exact repeated
+state/work identities. Whole profile time minus only the longest worker's sum
+of actual warm/setup and incremental-training intervals bounds **all** remaining
+setup, source reads, proof checks, spawn/join, serialization, old-policy scoring,
+archive replay, reports and final writes. That residual must remain below600
+inside the whole900 profile. No new long trajectory is authorized until the
+published admission recomputes from the complete source, observed CI, logs,
+original-runtime timing and comparison-only native evidence.
+
+Implementation tests are not the published shared-clock proof or a compute
+admission. Full local/hosted source checks, the actual proof, forecast and
+admission still have to be recorded. No new strength result is asserted here.

@@ -27,7 +27,8 @@ scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
 the checked route to the result. Step68 adds the complete data browser/report;
-step69 starts correctness tests of a new sampling candidate without admission.
+steps69–71 build and test a new sampling candidate and its execution checks,
+without admitting a real study yet.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3019,6 +3020,34 @@ published own-before-native proof, conservative forecast and checked admission.
 No real new Hold'em trajectory or stronger/default claim follows from these
 component checks. AI-assisted work; no new user practice or human minutes
 reported.
+
+### Step 71 — a failed run must leave an honest record (November 10)
+
+A long experiment can stop during setup, training, saving or independent
+checking. The new command writes each worker message to disk immediately and
+keeps both the child result and the whole-command time. A **gate** is a check
+that must pass before the next stage starts. Passing code tests is one gate;
+proving the full job fits its fixed time budget is another. Neither means the
+agent plays better.
+
+**Example:** a worker finishes two saved strategies and then fails. Those two
+strategies and the error remain available. The run is marked incomplete, and
+it cannot become evidence for starting the full learning study. An existing
+report directory is rejected before profiling starts, so it cannot waste a
+training run and then quietly replace an earlier report.
+
+The execution/source tests pass23 checks in55.99 seconds. They include complete
+and interrupted spawned workers, journal tampering, independent forecast
+arithmetic, the full toy runner/replay, and copying the real old archive without
+constructing a learner. A separate failure test confirms that an unpublished
+own result is rejected before a reference solver is constructed. These are
+software checks, not measurements of a stronger Hold'em agent.
+
+Next: finish full local and hosted checks, publish the complete tiny proof
+before its independent comparison, and measure the unchanged compute gate.
+Only a checked published admission can permit the real new study. See
+[the command boundaries and limits](private-prefix-pipeline.md). Codex assisted
+with implementation and tests; no new hands-on time or learning is inferred.
 
 ## Your own learning notes
 

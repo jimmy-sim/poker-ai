@@ -28,7 +28,9 @@ def test_corrected_contract_preserves_required_core_and_all_caps() -> None:
 
 
 @pytest.mark.slow
-def test_actual_sources_and_72_B1_crossings_without_learner_or_reference() -> None:
+def test_actual_sources_and_72_B1_crossings_without_learner_or_reference(
+    tmp_path: Path,
+) -> None:
     def forbidden(*args: Any, **kwargs: Any) -> Any:
         raise AssertionError("read-only factory constructed learner or reference")
 
@@ -52,3 +54,30 @@ def test_actual_sources_and_72_B1_crossings_without_learner_or_reference() -> No
             for label in (100000, 1000000, 10000000)
         } == {100000: 24, 1000000: 24, 10000000: 24}
         assert all("metrics" in row for row in B1)
+        from poker_ai.evaluation.private_prefix_design import Design, inventory
+        from poker_ai.evaluation.private_prefix_old import copy
+        from poker_ai.postflop.river_study import Deadline
+
+        design = Design.build(contract(root)[0], mode="old")
+        saved: dict[str, Any] = dict(
+            scope=design.scope,
+            events=[],
+            source_sha256="EXPLICIT_TEST_FIXTURE",
+            manifest=design.manifest(),
+        )
+        copy(
+            root,
+            tmp_path / "own.json",
+            saved,
+            sources,
+            design,
+            tmp_path / "scratch",
+            Deadline(180),
+        )
+        inventory(design, saved, scored=False)
+        assert len(saved["captures"]) == 432 and len(saved["masses"]) == 288
+        assert saved["initialized_training_paths"] == 0
+        assert all(
+            r["origin"] == "OLD_IID_SOURCE_COPY_NO_NEW_TRAINING"
+            for r in saved["captures"]
+        )

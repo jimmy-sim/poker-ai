@@ -14,6 +14,8 @@ def destinations(path: Path) -> list[Path]:
         path.with_suffix(".tmp"),
         path.parent / "report",
         path.with_name(path.stem + "-child.json"),
+        path.with_name(path.stem + "-child.tmp"),
+        path.with_name(path.stem + "-events.jsonl"),
     ]
     for name in ("captures", "masses", "profiles", "baseline", "baseline_extra"):
         archive = path.with_name(path.stem + "-" + name + ".jsonl.gz")
@@ -38,6 +40,14 @@ def gather(saved: dict[str, Any]) -> None:
         if type(index) is not int or not 0 <= index < 48:
             raise ArithmeticError("private-prefix event outside fixed path inventory")
         if phase in PHASES:
+            if (
+                not isinstance(event["row"], dict)
+                or event["row"]["path_index"] != index
+                or type(event["row"]["path_index"]) is not int
+            ):
+                raise ArithmeticError(
+                    "private-prefix event body routed to another path"
+                )
             saved[PHASES[phase]].append(event["row"])
         elif phase == "training_started":
             if index in started:
@@ -91,8 +101,15 @@ def retain_partial(path: Path, saved: dict[str, Any], scratch: Path) -> None:
         ("captures", "captures"),
         ("masses", "masses"),
         ("rows", "profiles"),
+        ("baseline_rows", "baseline"),
     ):
-        prefix = "details" if key == "rows" else key
+        prefix = (
+            "details"
+            if key == "rows"
+            else "baseline"
+            if key == "baseline_rows"
+            else key
+        )
         if prefix + "_file" in saved or not saved.get(key):
             continue
         try:
