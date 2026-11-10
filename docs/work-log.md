@@ -2307,3 +2307,5 @@ Actual diagnosis figure visually inspected. Cross-runtime numeric reproduction
 and final hosted CI remain to be recorded. Main was fast-forwarded to PR #43
 only after a fresh byte snapshot; all ten unrelated modified files and exact
 status were preserved. AI-assisted execution; no inferred human minutes.
+
+Numeric reproduction on Python 3.12.15 / NumPy 2.5.4 completed in 255.965582s; all four CSV files are byte-identical to the original-runtime diagnosis. Constructors remained blocked and no training or reference construction occurred. This is saved-data reproduction, not real trajectory parity. Exact receipt and manifest are retained in results/private-prefix/diagnosis/checks/.

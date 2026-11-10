@@ -142,3 +142,5 @@ largest extra-information loss, keeping all three seeds and IID controls. This
 can identify a concrete distinction to test. A causal training comparison would
 need a new prospective protocol, matched compute/update controls and its own
 gates. No further long trajectory starts in this work window.
+
+Numeric reproduction on Python 3.12.15 / NumPy 2.5.4 completed in 255.965582s; all four CSV files are byte-identical to the original-runtime diagnosis. Constructors remained blocked and no training or reference construction occurred. This is saved-data reproduction, not real trajectory parity. Exact receipt and manifest are retained in results/private-prefix/diagnosis/checks/.
