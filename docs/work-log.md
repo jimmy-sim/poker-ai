@@ -2169,3 +2169,18 @@ cost comparison. This is not long-study admission: strict2*whole-native<900,
 source/inputs/CI-bound checked published admission and constructor-blocked
 recomputation remain required. No seed, cap, formula, grid or gate changed.
 AI-assisted execution/documentation; no human time or stronger-agent claim.
+
+
+### November 10 — independent complete native cost gate passes
+
+After canonical GitHub observation of own profile commit6e245f628fee0e799d7b527e3d9ccd6e84fe9f91
+and tree0b7073a607e8b0db2847b9a8d47d1870229a0a87, all17 referenced own profiling
+files match committed bytes. The separate OpenSpiel audit checks every OLD
+432profile/1152fixed condition, maximum2.0605739337042905e-13chips disagreement.
+Whole native command341.493552959s; strict2*whole=682.987105918s<900 passes,
+including source/input setup, all independent work and final full own replay.
+No reference strategy is exported or loaded into learning. Own evidence was
+published first. Next: recompute and publish exact source/config/input/CI/whole-
+clock admission, then constructor-blocked verification of those published bytes.
+This cost gate permits no stronger/default/fresh/global claim and has not yet
+started a long new candidate trajectory. Source/seeds/caps/gates unchanged.

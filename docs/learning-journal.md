@@ -3119,6 +3119,12 @@ IID-self comparisons are zero; they do not show new candidate learning results.
 The own forecast fits. Next, publish it before independently timing the old
 policies. A checked published admission is still needed before the long study.
 
+The independent cost check now passes too. It checks all432 old-policy profiles
+and1,152 fixed conditions, with maximum disagreement about0.000000000000206
+chips. Its whole command takes341.49seconds; twice that is682.99seconds, below
+the900-second limit. Own results were published first. The remaining step before
+long training is to publish and recheck the complete admission record.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
