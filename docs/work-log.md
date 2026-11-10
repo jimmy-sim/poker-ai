@@ -1899,3 +1899,38 @@ merging PR40. Local actual archive replays on3.11.17/NumPy2.4.6 and
 error; original SVG/JSON reproduce byte-for-byte, CSV values match with column
 order differences from JSON-sorted keys. The separate presentation milestone
 will make CSV column order canonical without rewriting historical results.
+
+### November 10 — matched-update study merged and local bytes preserved
+
+Both final artifact CI jobs42818361425 passed on7ecb3b9 after the documented
+hosting-timeout correction. PR40 merged at
+[e4df336](https://github.com/jimmy-sim/poker-ai/pull/40), completing the actual
+24-context matched-update experiment. The user checkout fast-forwarded from
+88ebfba to that merge. Before updating, all10 current modified result files
+were copied byte-for-byte to a timestamped local backup with hashes and binary
+diff; after updating every hash and the same10 modified paths remained intact.
+No user result was staged, reset or overwritten.
+
+### November 10 — read-only two-axis tables and policy browser implementation
+
+The prospective issue4 comment6767326534, pinned input config and new reading
+guide fix the complete presentation scope before new summary publication.
+Added data-only joins for288 self and2304 fixed contrasts (both axes),96/768
+three-seed groups, canonical CSV columns and three all-context heatmaps. The
+browser validates saved own/native chains, loads one same-update pair once,
+then displays unweighted L1-ranked own decisions with actual work/update counts
+and bounded n/p/q navigation. It labels global self vulnerability separately
+from the representative action differences. No strategy changes or training.
+
+29 independent unit checks pass(0.07 s); Ruff and strict typing pass all7 new
+Python files. Initial actual integration failed on both runtimes at a tuple-key
+join assumption before producing a new report; exact failure logs are retained.
+The explicit-ID rekey fix has its own regression. Corrected actual integration
+passes both base runtimes with learner/reference constructors blocked:1 pass,
+10 deselected,206.54/198.42 s. All144/96/1152 replay with zero error; full288/2304
+contrasts and six report files validate, plus averaged/current viewer paths on
+both seats. Separate original-script replays retain CSV column-order mismatch
+while confirming all numeric rows and byte-identical SVG/JSON. Complete current
+base/optional/hosted checks are next before publishing official presentation
+outputs. AI-assisted implementation/checking; no new user practice or human
+hands-on time is inferred. Original244-file scientific inventory stays unchanged.

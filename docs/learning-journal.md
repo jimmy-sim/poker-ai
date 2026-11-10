@@ -2900,6 +2900,28 @@ both Python versions reproduces all values; the original CSV renderer can
 reorder columns after JSON replay. The new presentation work will fix column
 order without changing the historical scientific files.
 
+### Step 68 — make the two-axis result inspectable (November 10)
+
+The complete study is merged in[PR40](https://github.com/jimmy-sim/poker-ai/pull/40).
+Your local project was updated after all ten existing modified result files
+were backed up; their bytes are unchanged. The next work is a separate
+[data-only report and browser](matched-update-viewer.md).
+
+The report compares both the B1 final policy at the same work label and the
+earlier B1 prefix at the same update count. It keeps every seed and readout.
+The browser shows one matched pair's saved action probabilities, actual work
+and update counts, then lets you move through rows with n/p/q. A large action
+difference is not automatically an important decision or a good poker action.
+
+The first real-data integration check caught a tuple-index assumption in the
+new reader. Joining explicit saved IDs fixed it; a regression test covers that
+case. All29 focused tests and the actual constructor-blocked reader checks on
+both Python versions pass. The actual tests replay the whole saved study and
+exercise both average/current archive paths. Complete source checks still come
+before publication of the new heatmaps and tables. This reports existing
+evidence; it does not change the agent. AI-assisted work, with no additional
+personal practice or time reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
