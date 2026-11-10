@@ -150,3 +150,36 @@ research, with human practice/time recorded only when the user reports it. A
 software milestone may finish without a real training admission. Results are
 currently absent. The first decision is whether independent correctness supports
 the new sampler; strength and runtime remain unmeasured.
+
+
+## Kernel foundation (implementation, not admission)
+
+The optional sampler and its independent moment/trajectory checks are implemented.
+The first71 focused tests pass; the120 tiny trajectory endpoints have zero
+array error, including40 original B1 bit checks. All12 raw-moment cases pass.
+The standalone checker retains partial/failing receipts and explicitly sets
+`full_shape_proof_complete`, `forecast_complete` and `long_run_admitted` false.
+It does not run the future432-profile pipeline or train a real poker trajectory.
+Complete local/hosted source checks still precede publication of its own receipt.
+
+After merge, run each command separately:
+
+```sh
+cd /Users/jimmysim/Projects/poker-ai
+.venv/bin/python -m pytest -q tests/test_private_prefix.py tests/test_stratified_batches.py tests/test_private_prefix_correctness.py
+.venv/bin/python scripts/check_private_prefix.py --replay results/private-prefix/kernel.json
+```
+
+The replay reruns tiny mathematical/trajectory software checks. It does not
+construct a native solver or admit Hold'em learning. Fresh receipts require a
+clean published source; choose a new output path and retain prior attempts.
+
+Three questions to practice:
+
+1. Why join two chance levels? Seat1's legal range depends on seat0's dealt hand;
+   stratifying only one marginal would miss the intended joint distribution.
+2. Why can smaller variance still fail to improve strength? The identity is
+   conditional on a fixed policy and raw updates. Adaptive policies, clipping,
+   normalization, random-number consumption and fixed-work costs also matter.
+3. Why is B1 tested separately? Its exact delegation is a control for accidental
+   changes to the old learner, not a new strength experiment.
