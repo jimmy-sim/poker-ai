@@ -1672,3 +1672,25 @@ stable corpus identity. Add lifecycle/failure tests, then recheck the expanded
 source cohort and its proof/compute gates before any real trajectory. This is a
 source repair, not permission for an unchanged favorable timing retry. Caps,
 seeds, grids and tolerances stay fixed; retain all first-attempt outcomes.
+
+### November10 — additive parent IO adapter, frozen reader reused
+
+Added `matched_update_parent_io` and a pinned implementation contract, preserving
+every existing scientific source byte. The explicit parent service delegates all
+original receipt, worker, hash, archive and numerical checks. It validates every
+stable corpus field and all original nested code/config bytes, then supplies the
+saved provenance view to the frozen reader. Only publication HEAD/status may
+differ; targets, coordinates, hashes and metrics remain strict. Bindings restore
+on every exit; spawned numerical workers remain unchanged. This is a serialized
+parent CLI boundary, not a concurrent threaded API.
+
+The actual first old-policy corpus now replays144profiles/96ledgers/1152targets
+with learner/reference constructors blocked;9 checks including that integration
+passed in59.62s. Added restoration/error tests then10fast checks passed in0.50s.
+[Source-cohort06 retention](../results/matched-update-pipeline/source-cohort-06a3402/retention.json)
+preserves all25 original cohort files and the native pre-input failure exactly.
+The expanded source needs complete checks, fresh tiny proof and a complete
+prospectively fixed72-row/old-overhead compute gate before admission. Repeating
+that full gate is required by the new source cohort, not selecting favorable
+unchanged timings. All old observations remain visible and no cap/seed/tolerance
+changes. Use the new versioned module entry point for current operations.

@@ -143,3 +143,29 @@ explicitly (for example`UV_PYTHON=3.12`) and assert/log the actual Python/NumPy
 runtime before and after checks. The original mislabeled receipt and first tiny
 proof remain byte-retained under`superseded-environment-labels/retention.json`
 and are not study admission. The corrected source receipt uses machine headers.
+
+## Versioned parent IO entry point
+
+The first real own profile passed, but its native reader failed before reference
+construction because it compared publication HEAD/status as corpus identity.
+The diagnosis and full source06 evidence are retained under
+`results/matched-update-pipeline/source-cohort-06a3402/`.
+
+Current operations use the additive parent IO service:
+
+```sh
+.venv/bin/python -m poker_ai.evaluation.matched_update_parent_io check --help
+.venv/bin/python -m poker_ai.evaluation.matched_update_parent_io profile --help
+.venv/bin/python -m poker_ai.evaluation.matched_update_parent_io audit --help
+.venv/bin/python -m poker_ai.evaluation.matched_update_parent_io study --help
+```
+
+Use the same original arguments after the operation name. The adapter delegates
+the frozen scripts and mathematical workers, validates all stable fields and
+original nested source/config hashes, and restores parent bindings on exit. It
+is a serialized process-scoped CLI service; it does not claim threaded API
+safety or change spawned worker code. Its pinned contract is
+`configs/matched-update-parent-io.json`; the implementation lives in SRC and is
+included in the full checked inventory. The expanded cohort must pass its full
+checks/proof/forecast/admission before new trajectories; scientific caps, seeds,
+readouts, grids and tolerances remain the original ones.

@@ -2691,6 +2691,24 @@ volatile publication metadata. The repaired source still needs its checks and
 compute admission before a long study. No cap, seed or tolerance is relaxed.
 AI-assisted diagnosis; no new human practice or time inferred.
 
+## 55. Separate identity from publication history — November 10
+
+The repair keeps the old reader and numerical code unchanged. A new parent IO
+adapter checks every stable target and original code/config byte, then lets the
+reader keep its saved publication view. That view's Git commit/status can differ
+after a push; the policy, grid and input identities cannot.
+
+The original real old-policy corpus now replays all144profiles,96ledgers and
+1,152fixed targets with learner and reference construction blocked. Tests also
+change a target, input hash or original source byte: the repaired boundary still
+rejects those changes. The adapter restores the original service after failure
+or CLI exit. The first cohort and failed native attempt are retained unchanged.
+
+Next: verify the expanded source and repeat the full prescribed proof/compute
+gates for that cohort. The old favorable forecast is not being silently reused
+for changed source. This is a reader repair, not a stronger-agent finding.
+AI-assisted work; no new human practice or time is inferred.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
