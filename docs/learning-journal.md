@@ -2543,3 +2543,20 @@ Keep earlier failed results and distinguish corrections from new experiments.
 Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
+
+### Step44 — Check the old path before measuring the new one (November10,2026)
+
+Question: could observing extra checkpoints accidentally change the learner?
+The new capture worker saves policies without scoring them, while checking the
+original saved checkpoints. For example, two comparisons may request update4:
+we observe update4 once, but keep both comparison names. Those are dependent
+readouts, not two learners.
+
+Separate tiny uninterrupted paths agree with the saved policies and raw weights.
+Tests deliberately alter an old ledger, RNG/state fingerprint, current policy or
+work counter: the check fails, earlier captures remain available, and scoring
+stays blocked. The real factory also loaded the complete published24-context
+grid with both training and reference constructors blocked. No new Hold’em
+trajectory, performance score or admission follows from this software milestone.
+Next: complete scoring/replay and independent-audit integration. AI-assisted
+implementation/checks; no additional human practice or minutes reported.

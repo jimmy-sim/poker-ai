@@ -1437,3 +1437,17 @@ Hands-on time (recorded, otherwise unknown):
 Experiment wall time (source; note overlaps):
 Next step:
 ```
+
+### November 10 — real factories and unscored capture barrier (PR #40)
+
+Added new modules, preserving historical source/data. The real factory validates
+all pinned receipts and produces all24 contexts,48 targets and72 old B1
+work-crossing expectations (both readouts, current, both raw ledgers and full
+state). Actual constructor-blocked source load passed in30.006725459s without
+training or constructing a reference. This is setup evidence, not a forecast.
+
+Capture writes immutable unscored policies and raw masses; no profile is scored
+until the complete cross-context barrier passes. Tests compare separate
+uninterrupted tiny trajectories, duplicate numeric target identities, signed/
+clipped rules, corruption of each state component and partial disk failure.
+Full source suites, native integration and admission remain pending.
