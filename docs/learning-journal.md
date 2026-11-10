@@ -23,7 +23,7 @@ notes section is for your own questions and explanations as you work through it.
 November10 update: the original batch experiment and saved-current diagnosis are
 complete. We are building the next controlled test: compare strategies after the
 same number of learning updates, while showing their different compute costs.
-Steps43–48 explain the new input, capture and independent-checking software.
+Steps43–49 explain the new input, capture and independent-checking software.
 The small software fixtures pass local checks, but the new real Hold’em study
 still needs complete source checks, a published software proof and the fixed
 compute gate. No new default or competitive-strength claim follows.
@@ -2591,6 +2591,25 @@ and ask the independent native calculator to check it within the same time
 budget. A software pass still cannot claim a stronger Hold’em agent. Real
 prefix timing and the larger comparison remain gated. AI-assisted checks;
 no new human hands-on time or practice was reported.
+
+## 49. Publish our own answer before the independent check — November 10
+
+The complete small proof passed. It saved144 captures and144 scored versions of
+those same policies, plus96 sets of averaging weights. Replay reproduced all
+1,152 fixed-opponent conditions with zero own error. These are dependent tiny
+test cases, not a poker-strength sample.
+
+The own files were committed and pushed before OpenSpiel checked them. Its
+largest scalar difference was about0.000000000000000222 chips. The shared
+34.52second run included publishing the own evidence and a final own replay;
+the cap was180seconds. A separate Python3.12 read also worked with learner and
+reference construction blocked.
+
+This shows the pipeline can preserve and independently check its evidence. It
+does not show the Hold’em agent improved. Next we measure the real short-prefix
+and reporting costs before deciding whether the full comparison may start.
+[Proof files](matched-update-pipeline.md). AI-assisted execution; no new human
+practice or minutes reported.
 
 ## Your own learning notes
 

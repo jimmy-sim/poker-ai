@@ -1553,3 +1553,26 @@ byte-hashed test logs retain actual commands/results. This admits the next
 source-bound tiny software proof, not real poker trajectories. Full tiny
 own/native proof, fixed forecast/overhead and checked published admission
 remain prerequisites for the long matched-update study.
+
+### November10 — published complete source-bound tiny own/native proof
+
+Generated from clean3d4ec03 with the checked06a3402 source cohort. Own proof
+completed in4.531098915991606s:144 unscored captures,144 scored versions of the
+SAME policies,96 raw ledgers,72 source crossings and1,152 fixed targets/paired
+conditions. Offline own replay error0. Own evidence and all three archives were
+pushed at [9fb1cf1](https://github.com/jimmy-sim/poker-ai/commit/9fb1cf1e85f5910d1ac27d4a211ac1cd14f8d8c8)
+and its GitHub workflow was observed before native construction.
+
+The full independent native144/1152 scalar audit and final OWN replay completed
+in34.524477458006004s on the ONEshared180s clock, including the publication
+interval. Maximum native error2.220446049250313e-16fixture chips. No native
+action/strategy was exported. Both learner/reference constructors blocked, the
+base Python3.12/NumPy2.5.4 archived-data reader also passed. This is not real
+trajectory replay and does not admit the long study.
+
+[Own proof](../results/matched-update-pipeline/software-own.json),
+[native proof](../results/matched-update-pipeline/software-native.json),
+[data-only reader](../results/matched-update-pipeline/software-replay-312.json).
+The24 logical labels share one tiny tree/six seed-rule paths, with identical
+right-strategy controls; not24 independent poker games. Next: all72 original-
+runtime short timings and complete old-policy overhead, then checked admission.
