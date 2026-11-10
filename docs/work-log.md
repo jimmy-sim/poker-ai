@@ -2079,3 +2079,24 @@ existing spawn tests. Corrected console run20pass1deselect0.85s. Both failing
 full logs and before/after diagnostics remain in
 results/private-prefix/development-failures/console-spawn. No scientific source,
 seed, cap, gate or result changed; fresh full checks are required before proof.
+
+
+### November 10 — close the parent-scoring interruption gap before proof
+
+The corrected f391c95 cohort passes both hosted source jobs42847940174 and all
+six local checks (base2265each, optional2320each, slow3each). Full source-bound
+logs/runtime assertions and observed CI are retained in pipeline-checks-f391c95.
+Review found that the real runner journaled worker messages but replaced its
+event list with a plain list before parent scoring; a hard timeout could lose
+completed scoring event metadata until final JSON. OLD calibration had the same
+parent-only gap. No actual proof, profiling, native comparison or real candidate
+trajectory had begun.
+
+The combined event list now preserves the existing worker stream once, then
+fsyncs parent scoring in its own slot. OLD copy/scoring has a checked durable
+journal too, included in admission inputs and unchanged whole-clock overhead.
+Tests check durability before exception handling or final JSON; focused console
+execution22pass1deselect2.61s, full Ruff/format/strict typing pass. No numerical
+operation, RNG, seed, grid or scientific cap changed. Repeat complete source
+checks before any proof/admission; the prior passing cohort is not reused as
+current admission. AI-assisted review/implementation, no inferred human time.

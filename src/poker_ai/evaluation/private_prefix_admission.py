@@ -215,6 +215,7 @@ def evidence(root: Path) -> dict[str, Any]:
     files.extend(
         own_path.with_name(own[k + "_file"]) for k in ("captures", "masses", "details")
     )
+    files.append(own_path.with_name(own["journal_file"]))
     profile_raw = json.loads((root / PROFILE).read_text())
     files.extend(
         (

@@ -212,6 +212,13 @@ def old(
     )
     if shared_deadline is not None:
         deadline = shared_deadline
+    journal = Journal(
+        path.with_name(path.stem + "-events.jsonl"),
+        saved["source_sha256"],
+        "old_source_copy_and_score",
+    )
+    saved["events"] = Events(journal, 0)
+    saved["journal_file"] = journal.path.name
     error = None
     try:
         persist(path, saved)
@@ -253,6 +260,7 @@ def old(
         error = caught
         raise
     finally:
+        saved["journal"] = journal.close()
         finish(path, saved, scratch, deadline, started, error)
     return saved
 
@@ -320,7 +328,7 @@ def study(root: Path, path: Path) -> dict[str, Any]:
             )
             complete(saved["training_batch"], 48)
         finally:
-            saved["events"] = partial_cells(saved["training_batch"])
+            saved["events"] = Events(journal, 3, partial_cells(saved["training_batch"]))
             gather(saved)
             saved["training_event_count"] = len(saved["events"])
             persist(path, saved)

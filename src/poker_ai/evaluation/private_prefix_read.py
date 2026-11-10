@@ -65,6 +65,13 @@ def read(root: Path, path: Path, deadline: Deadline) -> tuple[dict[str, Any], An
         selves, targets = maps(design, saved["baseline_rows"], saved["baseline_fixed"])
         sources = (design, context, opponents)
     else:
+        if saved["scope"] == OLD:
+            validate_journal(
+                path.with_name(saved["journal_file"]),
+                saved["journal"],
+                saved["source_sha256"],
+                {0: saved["events"]},
+            )
         if saved["scope"] == REAL:
             from poker_ai.evaluation.private_prefix_admission import (
                 ADMISSION,
@@ -82,11 +89,15 @@ def read(root: Path, path: Path, deadline: Deadline) -> tuple[dict[str, Any], An
                     "real own study differs from its published admission"
                 )
             training_events = complete(saved["training_batch"], 48)
+            expected_messages = {
+                w["slot"]: w["messages"] for w in saved["training_batch"]["workers"]
+            }
+            expected_messages[3] = saved["events"][saved["training_event_count"] :]
             validate_journal(
                 path.with_name(saved["journal_file"]),
                 saved["journal"],
                 saved["source_sha256"],
-                {w["slot"]: w["messages"] for w in saved["training_batch"]["workers"]},
+                expected_messages,
             )
             if not same(
                 training_events, saved["events"][: saved["training_event_count"]]

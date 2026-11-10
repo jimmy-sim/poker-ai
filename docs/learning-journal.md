@@ -3057,6 +3057,14 @@ corrected console run passes20 checks in0.85 seconds. The original failed full
 logs remain visible, and the full checks are being repeated before any admission.
 This fixed test setup, not poker strategy.
 
+Review then caught a different interruption gap: worker messages were saved
+immediately, but the parent could still lose later scoring messages if killed
+before its final JSON. Both hosted jobs and all local checks had passed for the
+earlier code, so passing tests did not excuse this gap. Parent scoring and old
+archive calibration now write durable journals too. New tests inspect those
+records before cleanup runs. Complete source checks are repeated before proof;
+no real new trajectory has started and no time limit changes.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

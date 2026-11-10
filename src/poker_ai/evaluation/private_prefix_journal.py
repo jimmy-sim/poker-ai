@@ -58,8 +58,13 @@ class Journal:
 
 
 class Events(list[dict[str, Any]]):
-    def __init__(self, journal: Journal, slot: int) -> None:
-        super().__init__()
+    def __init__(
+        self, journal: Journal, slot: int, initial: list[dict[str, Any]] | None = None
+    ) -> None:
+        # Worker cells already occur in the raw worker journal. Keep them in
+        # the combined own list without logging them twice; later parent
+        # scoring messages use a separate journal slot.
+        super().__init__(initial or [])
         self.journal, self.slot = journal, slot
 
     def append(self, value: dict[str, Any]) -> None:

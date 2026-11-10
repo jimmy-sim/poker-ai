@@ -174,6 +174,84 @@ def test_journal_durable_before_close_and_tamper_rejected(tmp_path: Path) -> Non
         Journal(journal.path, "FIXTURE", "partial")
 
 
+def test_worker_to_parent_scoring_boundary_keeps_both_raw_streams(
+    tmp_path: Path,
+) -> None:
+    journal = Journal(tmp_path / "events.jsonl", "FIXTURE", "new_training")
+    worker_event = dict(kind="cell", phase="capture", index=0, row={"id": "capture"})
+    journal.append(0, worker_event)
+    combined = Events(journal, 3, [worker_event])
+    score = dict(kind="cell", phase="profile", index=0, row={"id": "scored"})
+    combined.append(score)
+    # Even without a final own JSON, the later scoring record is already on disk.
+    lines = journal.path.read_text().splitlines()
+    assert len(lines) == 3 and json.loads(lines[-1])["event"] == score
+    receipt = journal.close()
+    assert combined == [worker_event, score]
+    assert receipt["events"] == 2
+    validate(journal.path, receipt, "FIXTURE", {0: [worker_event], 3: [score]})
+
+
+def test_old_calibration_failure_keeps_copy_events_before_final_receipt(
+    tmp_path: Path,
+) -> None:
+    from poker_ai.evaluation import private_prefix_run as runner
+    from poker_ai.evaluation.private_prefix_sources import source
+
+    current = dict(source(ROOT), dirty=False)
+    output = tmp_path / "own.json"
+
+    def interrupted_copy(
+        root: Path, path: Path, saved: dict[str, Any], *args: Any
+    ) -> None:
+        saved["events"].append(
+            dict(
+                kind="cell",
+                phase="capture",
+                index=0,
+                row=dict(
+                    id="PARTIAL",
+                    path_index=0,
+                    work_label=100000,
+                    readout="current",
+                    file="missing",
+                ),
+            )
+        )
+        # The journal must be durable before exception handling writes the JSON.
+        assert "PARTIAL" in (tmp_path / "own-events.jsonl").read_text()
+        raise ValueError("intentional old copy interruption")
+
+    with (
+        patch("poker_ai.evaluation.private_prefix_admission.require_software"),
+        patch.object(runner, "source", return_value=current),
+        patch("poker_ai.evaluation.private_prefix_baselines.rows", return_value=[]),
+        patch(
+            "poker_ai.evaluation.private_prefix_baselines.source_hashes",
+            return_value={},
+        ),
+        patch(
+            "poker_ai.evaluation.private_prefix_old.copy", side_effect=interrupted_copy
+        ),
+    ):
+        from types import SimpleNamespace
+
+        sources = SimpleNamespace(parent=SimpleNamespace(fixed=[]))
+        with pytest.raises(ValueError, match="intentional old copy"):
+            runner.old(ROOT, output, sources=sources)
+    saved = json.loads(output.read_text())
+    assert saved["status"] == "failed_own_private_prefix_not_admitted"
+    assert saved["journal"]["events"] == 1
+    assert saved["captures"][0]["id"] == "PARTIAL"
+    assert saved["retention_errors"] and saved["training_performed"] is False
+    validate(
+        tmp_path / saved["journal_file"],
+        saved["journal"],
+        saved["source_sha256"],
+        {0: saved["events"]},
+    )
+
+
 def test_profile_preflight_checks_nested_report_before_launch(tmp_path: Path) -> None:
     output = tmp_path / "profile.json"
     report = tmp_path / "overhead/report"
