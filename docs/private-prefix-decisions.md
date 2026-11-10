@@ -160,3 +160,5 @@ the committed report's hashes; it is separate from that full replay.
 
 Next, compare exact, constrained and hybrid river continuations on all
 previously ranked groups before choosing a representation or training change.
+
+Python 3.12.15 / NumPy 2.5.4 saved-data reproduction finishes in 257.833441s with constructors blocked. The full summary, full detail archive and all nine per-profile detail archives are byte-identical to the original-runtime report. This is data-only reproduction, not bit-exact training replay. Exact manifest and output hashes are retained in results/private-prefix/decisions/checks/.
