@@ -2248,3 +2248,18 @@ diagnosis (issue4 comment6774698163), with all3seeds/readouts/work labels and
 both encodings/games; no causal/floor claim or favorable unchanged retry.
 Final artifact CI is required before merge. AI-assisted work, no inferred human
 minutes or mastery.
+
+
+### November10 — prospective bounded saved-policy diagnosis
+
+After the complete independently checked negative primary, register the fixed
+post-hoc panel before generating decomposition tables: B4/signed, both games
+and encodings, all3seeds/readouts/work labels, B1 and IID controls. Expected
+324method points/216paired points/108method groups/72paired groups. Stack only
+within-partition+extra-information gain; keep exact-prefix river switch separate
+from total/actual EV loss. Include actual work/updates and whole/post-warm support.
+The config binds published own SHA and unchanged model sourcea5a2e28. No new
+trajectory, cap, seed, threshold or default change. Acceptance requires complete
+source/own/native/journal/whole-clock checks, constructor-blocked read-only
+replay, tests and reproducible tables/figure. Post-hoc evidence is descriptive,
+not causal proof or an irreducible-floor claim. No diagnostic result yet.
