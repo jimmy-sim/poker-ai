@@ -2309,3 +2309,78 @@ only after a fresh byte snapshot; all ten unrelated modified files and exact
 status were preserved. AI-assisted execution; no inferred human minutes.
 
 Numeric reproduction on Python 3.12.15 / NumPy 2.5.4 completed in 255.965582s; all four CSV files are byte-identical to the original-runtime diagnosis. Constructors remained blocked and no training or reference construction occurred. This is saved-data reproduction, not real trajectory parity. Exact receipt and manifest are retained in results/private-prefix/diagnosis/checks/.
+
+### November 10 — register complete saved-decision follow-up
+
+Before generating local row tables, issue #4 comment 6775611715 fixes the
+medium/q8/signed/B4/final10m/linear panel: all three seeds × B1/IID/stratified,
+nine profiles and both responding seats. Existing own trace, full owned-row
+archive, deterministic top-five groups/four examples, TURN/RIVER accounting to
+total unilateral gain, source/native/policy checks and unchanged inputs.
+This is not an attribution of extra-information value alone or a causal
+retraining gain. No new training or default/gate/seed/cap changes. Prospective
+config/document only; implementation and outcomes remain pending.
+
+### November 10 — implement saved-decision tracing and cached browser
+
+Experiment-specific CLI restores the nine policies from source-bound original
+archives, reuses existing own reply analysis, checks audited root/row/street
+identities, and fingerprints arrays before/after. Full owned-row detail and own
+reply profiles remain in deterministic gzip; partial progress is retained.
+No model source or scientific contract changes.
+
+Added a cached hash-checked browser with n/p/s/o/t/q controls, explicit target
+seat/action/value conventions and total-vs-extra/retraining distinctions.
+Sixteen fictional tests pass in 0.58s; Ruff/format/strict typing (547 files) pass.
+No actual decision result yet. Full local checks, constructor-blocked actual
+replay and both hosted jobs follow. AI-assisted implementation.
+
+### November 10 — retain first complete nine-profile trace before review fixes
+
+Published source 57f11cb restores and traces all nine saved profiles / eighteen
+responses in 358.294261833s, with constructors blocked. Root comparisons pass,
+arrays are unchanged, and every seed/control is retained. Base suites each
+2,294 passed / 47 skipped / 148 deselected (381.84s / 369.55s); optional each
+2,350 passed / 148 deselected (415.93s / 404.14s). Exact logs and the complete
+initial archive are retained in results/private-prefix/decisions-initial57f.
+
+Actual TTY n/p/s/o/t/q and a captured command-input reproduction work. Source
+review identifies report safeguards to strengthen: explicit per-seat gain
+identities to reject canceling seat errors; full owned-row inventory checks;
+retain each completed profile's details before advancing, rather than retaining
+only a count until the final write. This is reporting validation/retention work,
+not a changed learner or a favorable training retry. Preserve the first outcome
+and rerun only saved-data analysis after the fix. No new poker training.
+
+### November 10 — strengthen report accounting and interruption retention
+
+Retained the complete initial diagnostic/source before review fixes. Added each
+seat's gain-to-root identity, complete owned-row/menu/support validation, and
+per-profile finite detail persistence before advancing. Canceling seat errors,
+missing/duplicate rows, changed sums/menus/support and later nonfinite detail
+failure are rejected; earlier completed detail bytes remain unchanged. Browser
+zero-loss fixture initially failed from indexing before the empty-list check;
+moved indexing after that check. Focused 26 pass0.48s; Ruff/format/typing pass.
+No scientific model/data change. Final full suites and saved-data replay follow.
+
+PR #44 final artifact CI42874878787 passed both jobs and merged8b303fdd.
+PR #45 retargeted to main; integrate the merged data-only reproduction receipts
+before final checks. Human minutes not recorded; AI-assisted execution.
+
+### November 10 — complete safeguarded saved-decision replay
+
+All9profiles/18responses/30,024owned exact rows complete in357.455548917s,
+constructors blocked, audited roots/accounting and unchanged arrays checked.
+Summary and full detail gzip are BYTEIDENTICAL to retained initial57f outcome;
+per-profile partial details now survive interruption. Both final base suites
+2304pass47skip148deselect380.77/368.58s; optional2360pass148deselect413.90/402.76s.
+
+Every seat-1 profile's top group819 is the singleton turn99 case. Most total
+gain is attributed at turn, but the best-reply suffix includes river choices;
+this is not evidence of missing turn information or extra-only row loss.
+All seed/control street totals and example values are in the report, with
+learning-journal step79 and an interactive cached browser. Native original
+432/1152 evidence remains comparison-only. Cross-runtime data-only replay and
+final hosted CI remain next; no new training or default/gate change.
+
+Python 3.12.15 / NumPy 2.5.4 saved-data reproduction finishes in 257.833441s with constructors blocked. The full summary, full detail archive and all nine per-profile detail archives are byte-identical to the original-runtime report. This is data-only reproduction, not bit-exact training replay. Exact manifest and output hashes are retained in results/private-prefix/decisions/checks/.
