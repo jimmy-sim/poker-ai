@@ -2983,6 +2983,43 @@ The output explicitly says the full pipeline, forecast and admission are
 incomplete. [Replay command and limits](private-prefix-stratification.md).
 This is a completed correctness foundation, not a new Hold'em performance result.
 
+### Step 70 — save complete comparisons without changing training (November 10)
+
+The next pipeline keeps each saved strategy connected to its exact work count,
+update count, random-state guard and raw average weights. A **replay** reads those
+files and checks the numbers again without running the learner. It must also
+handle several work labels crossing in the same large batch update.
+
+The assistant initially made a reading mistake: the old216 current-policy
+records were assumed to describe only the final checkpoint. The actual saved
+records contain72 at each of three checkpoints, including24 B1 records at each.
+All72 B1 currents already have independent scalar checks. The erroneous draft
+stays visible, with a[version2 correction](private-prefix-pipeline.md) published
+before any real new profiling, training or native comparison. The original
+432-policy/288-ledger/1152-fixed core task, all seeds and all limits stay fixed.
+This correction avoids pretending a saved score is missing or silently changing
+a scientific workload.
+
+The new components capture all432 candidate readouts and288 average books,
+then score the same policies after the capture barrier. The explicit toy
+fixture also keeps all648 unchanged IID baseline readouts and1728 baseline
+fixed conditions, giving864 self comparisons and2304 fixed comparisons. This
+is one nonuniform Kuhn game repeated under logical labels, not many poker games.
+The full integration test replays both sets with learner/reference constructors
+blocked, gets zero discrepancy, and reproduces the four numeric report files
+byte-for-byte. Native schema tests use fictional data and do not claim a solver
+ran.
+
+The focused base checks pass133 tests with one optional plotting skip; the
+complete archive integration passes in11.50 seconds. The actual source-loader
+test passes in31.32 seconds with constructors blocked, checking all original
+72 B1 crossings and the existing scalar-score inventory. Source/compiler checks
+pass. The remaining work is the command-level runner, whole time limits,
+published own-before-native proof, conservative forecast and checked admission.
+No real new Hold'em trajectory or stronger/default claim follows from these
+component checks. AI-assisted work; no new user practice or human minutes
+reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

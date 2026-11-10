@@ -2005,3 +2005,41 @@ PR42's sampler foundation only: full pipeline proof/forecast/admission remain
 false. PR43 continues source/context/grid/archive/native integration; its earlier
 published accounting adds48 previously unscored B1 current evaluations inside
 the same caps, with no altered scientific gates. AI-assisted work.
+
+
+### November 10 — complete source/capture/archive components and corrected inventory
+
+PR42 merged ate26656c after BOTH final artifact CI42831549444 jobs passed.
+Before updating the user checkout, a fresh backup of the actual10 changed files
+was made; all hashes/status stayed identical afterward. Kernel replay on that
+checkout passes12 moments/120 endpoints/40 B1 bit checks with zero array error.
+
+PR43's first accounting note contained an assistant reading error: the old216
+current records were treated as final-only. Actual own.json and its source loop
+show72 at each of100k/1m/10m and24 B1 currents per label, all independently
+audited. Corrective driver-v2/c49109e preserves the superseded draft before any
+new real profiling/training/native candidate comparison. It removes only the
+unnecessary48 extra evaluations proposed from that false assumption; original
+432/288/1152 core workload, case grid, seeds, work, formula, quality gates and
+scientific caps stay unchanged. The earlier step69 wording is historical and
+superseded by this correction, not evidence of missing scores.
+
+Implemented strict complete48-path/432-policy/288-ledger grids, typed work and
+shared-state/capture lineage, source/context factories and whole used-archive
+checks; generic own capture/score/archive/replay, partial retention, complete
+B1/IID paired functions, optional standard Matplotlib heatmaps and separate
+native432/1152 schema/scalar adapter. The explicit tiny fixture also retains
+648 old IID baseline profiles/1728 fixed conditions, yielding864 self and2304
+fixed contrasts; those are dependent software fixtures on one nonuniform Kuhn
+game. Real sources are loaded without any learner/reference constructor.
+
+Focused base133pass1skip2deselect4.87s. Full toy archive/paired/report integration
+1pass7deselect11.50s; all own/new/baseline metrics and raw masses replay with
+constructors blocked,zero discrepancy; numeric reports reproduce byte-identically.
+Actual original-data source-loader test1pass1deselect31.32s, including regression
+for all72 already scored B1 currents and exact72 original crossing records.
+Native schema tests are fictional and do not assert actual solver construction
+or agreement. Ruff/strict typing pass the new component files. These are checked
+components, not the source-bound full command/software proof, compute forecast,
+admission or real learning study. Command-level whole clocks/gates remain next.
+AI-assisted implementation/tests; no user practice/hours/mastery inferred.

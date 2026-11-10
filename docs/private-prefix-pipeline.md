@@ -72,3 +72,20 @@ All own outcomes, including failures/partial work, precede comparison-only nativ
 use. Re-read and record OpenSpiel2.0.2's pinned Apache-2.0 license before native
 use. Never load a reference strategy into the learner. This plan admits no real
 trajectory, new default, fresh/global policy or general-strength claim.
+
+
+## Implemented component boundary
+
+Strict source/context, capture/grid/work/lineage, raw-mass archive replay and
+paired-report primitives now have focused tests. The toy component integration
+covers432 new profiles/288 books/1152 fixed conditions plus648 old fixture
+profiles/1728 fixed conditions, all864/2304 comparisons, and constructor-blocked
+replay. Its logical context labels repeat one nonuniform Kuhn game. The native
+adapter has a separate complete-inventory/schema contract; synthetic tests are
+not independent solver results.
+
+The command-level runner/whole-clock proof/forecast/admission are still being
+implemented. These component checks do not authorize a real trajectory study.
+The actual original-data factory also has a regression test proving that all
+72 B1 current policies already have scores at all three labels. The superseded
+version1 accounting assumption above is not used.
