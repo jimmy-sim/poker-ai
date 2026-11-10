@@ -1496,3 +1496,29 @@ The earlier fail-closed admission placeholder has been replaced by a checked
 reader that requires the full source-bound tiny proof, all72 real short timings,
 complete old-policy own/native overhead and published exact-source admission.
 No such admission exists yet; no new real prefix or long trajectory has run.
+
+### November10 — production event ordering regression found during review
+
+Review of the production collector found that fixed-target rows were ordered by
+opponent before policy, while the offline reader expects policy/opponent/seat.
+The explicit regression failed on d02492a (1failed in0.22s), even though the
+earlier synthetic pipeline bypassed that collector. Corrected the collector's
+canonical fixed-row order and added the regression alongside worker checks.
+No actual profile or new poker trajectory had run. Current full base checks
+started before this correction are baseline information only; the corrected
+source needs new complete local/hosted validation before any admission.
+
+The full tiny exercise now routes its records through the actual production
+collector instead of maintaining a separate list order. It explicitly labels
+sequential fixture event routes; it does not pretend to have spawned workers.
+The added full-shape regression fails if the old bad order is restored. Targeted
+own/native/worker checks passed45 tests in28.41s; the added full-shape bad-order
+test passed in2.72s. Training initialization is recorded separately from a request
+so a failure before actual initialization does not claim completed training.
+
+The tiny archive reader also previously regenerated fixture learners. It now
+loads saved OWN fixture inputs/controls/replies and validates their bytes and
+achieved values without learner construction. The full archived-input replay
+with the learner factory blocked passed in3.51s. Baseline d02492a base suites
+reported2033 passed/44skipped/143deselected each (292.24s and291.61s), but these
+precede the correction and are not used to admit the final source.

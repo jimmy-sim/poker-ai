@@ -2526,7 +2526,10 @@ averaging weights must reproduce the saved averages exactly. An offline replay
 recalculates the scores, fixed-opponent values and paired differences.
 
 The small test control compares a strategy with an independently generated copy
-of itself: all gaps are zero. Other tests remove a row, alter a hash or value,
+of itself: all gaps are zero. Review then found that the production collector
+and reader expected different row orders. A new test reproduced the error; the
+collector was corrected and the full small exercise now uses that same collector.
+This happened before any real timing or new poker trajectory. Other tests remove a row, alter a hash or value,
 or interrupt a file write; acceptance fails while partial evidence survives.
 The independent OpenSpiel adapter checks scalar values and best-response roots,
 and never provides a strategy for training. Its tests caught an information-set

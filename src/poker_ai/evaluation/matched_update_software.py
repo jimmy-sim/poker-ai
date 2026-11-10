@@ -16,9 +16,16 @@ from poker_ai.evaluation.matched_update_records import (
     paired_self,
 )
 from poker_ai.evaluation.matched_update_replay import replay_archives
-from poker_ai.evaluation.matched_update_run import archive, fresh, source
+from poker_ai.evaluation.matched_update_run import archive, fresh, gather, source
 from poker_ai.evaluation.matched_update_scoring import score_capture
-from poker_ai.evaluation.matched_update_software_inputs import SCOPE, Fixture, build
+from poker_ai.evaluation.matched_update_software_inputs import (
+    SCOPE,
+    Fixture,
+    build,
+    pack,
+    restore,
+)
+from poker_ai.postflop.cell_process import partition
 from poker_ai.postflop.learning_artifacts import sha
 from poker_ai.postflop.learning_run import persist
 from poker_ai.postflop.pipeline_report import check_source
@@ -31,51 +38,67 @@ def exercise(
 ) -> None:
     """Same capture/scoring/archive/replay primitives, explicit fixture contexts."""
     scratch = Path(saved["scratch"])
+    saved["fixture_inputs"] = pack(fixture)
+    saved["fixture_inputs_sha256"] = sha(saved["fixture_inputs"])
+
+    def event_batch() -> dict[str, Any]:
+        return dict(
+            execution="SEQUENTIAL_FIXTURE_EVENT_ROUTES_NOT_SPAWNED_WORKERS",
+            assignments=partition(24, 3),
+            workers=[dict(slot=i, messages=[]) for i in range(3)],
+        )
+
+    batch = event_batch()
+    saved["batches"] = [batch]
 
     def retain(event: dict[str, Any]) -> None:
-        name = {
-            "capture": "captures",
-            "mass": "masses",
-            "checkpoint": "checkpoints",
-            "profile": "rows",
-        }[event["phase"]]
-        saved[name].append(event["row"])
+        batch["workers"][event["index"] % 3]["messages"].append(event)
 
-    for index, path in enumerate(fixture.paths):
-        collect(
-            toy_context(),
-            path,
-            index,
-            [
-                t
-                for t in fixture.manifest["iteration_targets"]
-                if t["baseline_path_index"] == index
-            ],
-            [r for r in fixture.expected if r["path_index"] == index],
-            scratch,
-            saved["source_sha256"],
-            SCOPE,
-            retain,
-            deadline,
-        )
-        persist(output, saved)
+    try:
+        for index, path in enumerate(fixture.paths):
+            retain(dict(kind="cell", phase="training_started", index=index))
+            collect(
+                toy_context(),
+                path,
+                index,
+                [
+                    t
+                    for t in fixture.manifest["iteration_targets"]
+                    if t["baseline_path_index"] == index
+                ],
+                [r for r in fixture.expected if r["path_index"] == index],
+                scratch,
+                saved["source_sha256"],
+                SCOPE,
+                retain,
+                deadline,
+            )
+            gather(saved)
+            persist(output, saved)
+    finally:
+        gather(saved)
     for name in ("captures", "masses"):
         archive(output, saved, scratch, name, name)
     inventory(saved, fixture.manifest, fixture.expected)
     # All source cases have passed. No new captured policy was scored above.
-    for row in saved["captures"]:
-        scored, policy = score_capture(
-            toy_context(),
-            row,
-            (scratch / row["file"]).read_bytes(),
-            scratch,
-            retain,
-            deadline,
-        )
-        saved["fixed_matches"].extend(fixture.fixed(scored, policy))
-    saved["fixed_matches"].sort(
-        key=lambda r: (r["own_snapshot_id"], r["opponent_profile_id"], r["target"])
-    )
+    batch = event_batch()
+    saved["batches"].append(batch)
+    try:
+        for row in saved["captures"]:
+            scored, policy = score_capture(
+                toy_context(),
+                row,
+                (scratch / row["file"]).read_bytes(),
+                scratch,
+                retain,
+                deadline,
+            )
+            for fixed in fixture.fixed(scored, policy):
+                retain(
+                    dict(kind="cell", phase="fixed", index=row["path_index"], row=fixed)
+                )
+    finally:
+        gather(saved)
     saved["self_pairs"] = paired_self(fixture.manifest, saved["rows"], fixture.right)
     saved["fixed_pairs"] = paired_fixed(
         fixture.manifest, saved["fixed_matches"], fixture.right_fixed
@@ -209,8 +232,22 @@ def read(
         )
     ):
         raise ArithmeticError("incomplete/mislabeled full tiny own proof")
+    rebuilt = dict(saved)
+    gather(rebuilt)
+    if any(
+        rebuilt[k] != saved[k]
+        for k in ("captures", "masses", "checkpoints", "rows", "fixed_matches")
+    ):
+        raise ArithmeticError("tiny rows differ from production event collection")
+    if len(saved["batches"]) != 2 or any(
+        b["execution"] != "SEQUENTIAL_FIXTURE_EVENT_ROUTES_NOT_SPAWNED_WORKERS"
+        for b in saved["batches"]
+    ):
+        raise ArithmeticError("tiny fixture cannot claim actual spawned workers")
     deadline = deadline or Deadline(180)
-    fixture = build(saved["source_sha256"], deadline)
+    if sha(saved["fixture_inputs"]) != saved["fixture_inputs_sha256"]:
+        raise ArithmeticError("archived tiny source inputs changed")
+    fixture = restore(saved["fixture_inputs"])
     proof = replay_archives(
         path,
         saved,

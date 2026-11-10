@@ -78,3 +78,41 @@ def test_partial_or_corrupt_worker_cannot_supply_complete_receipt(kind: str) -> 
         worker["messages"].append(dict(kind="error", reason="injected"))
     with pytest.raises(ArithmeticError):
         complete(value, dict(paths=8, profiles=48, fixed_targets=384))
+
+
+def test_fixed_event_rows_sort_by_policy_before_opponent_and_seat() -> None:
+    from poker_ai.evaluation.matched_update_run import gather
+
+    rows = [
+        dict(
+            path_index=0,
+            work_label=None,
+            own_snapshot_id=policy,
+            opponent_profile_id=opponent,
+            target=seat,
+        )
+        for policy in ("prefix-000-B4-current", "prefix-000-B4-linear_average")
+        for opponent in ("EXPLICIT_A", "EXPLICIT_B")
+        for seat in (0, 1)
+    ]
+    saved = dict(
+        batches=[
+            dict(
+                assignments=[[0], [1], [2]],
+                workers=[
+                    dict(
+                        slot=0,
+                        messages=[
+                            dict(kind="cell", phase="fixed", index=0, row=r)
+                            for r in rows
+                        ],
+                    )
+                ],
+            )
+        ]
+    )
+    gather(saved)
+    assert saved["fixed_matches"] == sorted(
+        rows,
+        key=lambda r: (r["own_snapshot_id"], r["opponent_profile_id"], r["target"]),
+    )

@@ -163,3 +163,44 @@ def test_real_admission_stays_closed_even_if_a_file_is_named_admission(
     (tmp_path / "admission.json").write_text('{"admitted": true}')
     with pytest.raises(FileNotFoundError):
         require_admission(tmp_path, "a" * 64)
+
+
+def test_full_fixture_detects_a_collector_that_reorders_fixed_targets(
+    tmp_path: Path,
+) -> None:
+    from poker_ai.evaluation.matched_update_run import gather
+
+    def broken(saved: dict[str, Any]) -> None:
+        gather(saved)
+        # Reproduce the old production bug: same rows, wrong canonical ordering.
+        saved["fixed_matches"].sort(
+            key=lambda r: (r["path_index"], r["opponent_profile_id"], r["target"])
+        )
+
+    with patch.object(software, "gather", broken):
+        with pytest.raises(ArithmeticError, match="identity"):
+            exercise(tmp_path)
+
+
+def test_archived_fixture_and_replay_do_not_rebuild_learners(tmp_path: Path) -> None:
+    from poker_ai.evaluation import reduced_study_inputs as study
+    from poker_ai.evaluation.matched_update_software_inputs import restore
+
+    saved, _, path = exercise(tmp_path)
+    with patch.object(
+        study, "trainer", side_effect=AssertionError("offline reader cannot train")
+    ):
+        fixture = restore(saved["fixture_inputs"])
+        proof = replay_archives(
+            path,
+            saved,
+            fixture.manifest,
+            fixture.expected,
+            lambda _: toy_context(),
+            fixture.fixed,
+            fixture.right,
+            fixture.right_fixed,
+            Deadline(30),
+        )
+    assert proof == saved["replay"]
+    assert proof["training_performed"] is False

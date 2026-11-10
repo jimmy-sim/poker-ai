@@ -105,6 +105,15 @@ def collect(
         raise ValueError("cross-context B1 checkpoint")
     solver = study.trainer(context.partition, path)
     solver.initialize_exact()
+    send(
+        dict(
+            kind="cell",
+            phase="training_initialized",
+            index=index,
+            iteration=solver.iteration,
+            total_work=solver.nodes_visited,
+        )
+    )
     counts = dict(captures=0, masses=0, checkpoints=0, capture_events=0)
 
     def capture(point: CoordinatePoint) -> None:

@@ -196,3 +196,84 @@ def build(
                 previous = solver.nodes_visited
                 solver.step()
     return fixture
+
+
+def pack(fixture: Fixture) -> dict[str, Any]:
+    """Persist fixture inputs once; offline readers never rebuild learners."""
+    from poker_ai.postflop.controlled_checkpoints import pack_policy
+
+    tree = toy_context().partition
+    return dict(
+        scope=SCOPE,
+        paths=fixture.paths,
+        expected=fixture.expected,
+        manifest=fixture.manifest,
+        right=fixture.right,
+        right_fixed=fixture.right_fixed,
+        controls={
+            name: dict(
+                policy=pack_policy(tree, policy),
+                replies={
+                    str(target): dict(
+                        target=reply.target,
+                        root=reply.root,
+                        choices=list(reply.choices),
+                    )
+                    for target, reply in replies.items()
+                },
+            )
+            for name, (policy, replies) in fixture.controls.items()
+        },
+    )
+
+
+def restore(saved: dict[str, Any]) -> Fixture:
+    """Decode explicit OWN fixture inputs without constructing a learner/reference."""
+    from poker_ai.postflop.controlled_checkpoints import unpack_policy
+    from poker_ai.postflop.learning_validation import number
+
+    if (
+        saved["scope"] != SCOPE
+        or len(saved["paths"]) != 24
+        or len(saved["expected"]) != 72
+        or len(saved["controls"]) != 16
+        or len(saved["right"]) != 144
+        or len(saved["right_fixed"]) != 1152
+    ):
+        raise ArithmeticError("incomplete explicit archived fixture inputs")
+    tree = toy_context().partition
+    controls: dict[str, tuple[FloatArray, dict[int, Reply]]] = {}
+    for name, row in saved["controls"].items():
+        if not name.startswith("EXPLICIT-control-") or set(row["replies"]) != {
+            "0",
+            "1",
+        }:
+            raise ArithmeticError("archived own fixture control identity changed")
+        policy = unpack_policy(tree, row["policy"])
+        policy.flags.writeable = False
+        replies: dict[int, Reply] = {}
+        for target in (0, 1):
+            peer = row["replies"][str(target)]
+            if (
+                type(peer["target"]) is not int
+                or peer["target"] != target
+                or not number(peer["root"])
+            ):
+                raise ArithmeticError("invalid archived own fixture reply")
+            reply = Reply(target, peer["root"], tuple(peer["choices"]))
+            applied = reply.apply(tree, policy)
+            value = (1 if target == 0 else -1) * float(
+                tree.values(tree.edges(applied))[0]
+            )
+            if abs(value - reply.root) > 1e-12:
+                raise ArithmeticError("archived own fixture achieved reply changed")
+            replies[target] = reply
+        controls[name] = policy, replies
+    return Fixture(
+        saved["paths"],
+        saved["expected"],
+        saved["manifest"],
+        saved["right"],
+        saved["right_fixed"],
+        controls,
+    )

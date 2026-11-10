@@ -60,7 +60,7 @@ def gather(saved: dict[str, Any]) -> None:
     """Also called after failure: retain each actually emitted partial record."""
     for name in PHASES.values():
         saved[name] = []
-    started = 0
+    started = initialized = 0
     for batch in saved["batches"]:
         for worker in batch.get("workers", []):
             for event in worker["messages"]:
@@ -75,18 +75,28 @@ def gather(saved: dict[str, Any]) -> None:
                     saved[PHASES[phase]].append(event["row"])
                 if phase == "training_started":
                     started += 1
+                elif phase == "training_initialized":
+                    initialized += 1
     saved["training_attempted_paths"] = started
-    saved["training_performed"] = started > 0
+    saved["initialized_training_paths"] = initialized
+    saved["training_performed"] = initialized > 0
     for name in PHASES.values():
-        saved[name].sort(
-            key=lambda r: (
-                r["path_index"],
-                str(r.get("id", "")),
-                r.get("work_label") or 0,
-                r.get("opponent_profile_id", ""),
-                r.get("target", -1),
+        if name == "fixed_matches":
+            saved[name].sort(
+                key=lambda r: (
+                    r["own_snapshot_id"],
+                    r["opponent_profile_id"],
+                    r["target"],
+                )
             )
-        )
+        else:
+            saved[name].sort(
+                key=lambda r: (
+                    r["path_index"],
+                    str(r.get("id", "")),
+                    r.get("work_label") or 0,
+                )
+            )
         saved["completed_" + name] = len(saved[name])
 
 
@@ -252,6 +262,8 @@ def read_saved(root: Path, path: Path) -> tuple[dict[str, Any], inputs.Sources]:
         or saved["config"] != inputs.config_inputs(root)
         or saved["source_sha256"] != sha(saved["source"]["sha256"])
         or saved["training_performed"] is not True
+        or type(saved["initialized_training_paths"]) is not int
+        or saved["initialized_training_paths"] != 24
         or any(
             saved[k] is not False
             for k in (
@@ -286,7 +298,11 @@ def read_saved(root: Path, path: Path) -> tuple[dict[str, Any], inputs.Sources]:
     gather(rebuilt)
     if any(
         not same(rebuilt[k], saved[k])
-        for k in (*PHASES.values(), "training_attempted_paths")
+        for k in (
+            *PHASES.values(),
+            "training_attempted_paths",
+            "initialized_training_paths",
+        )
     ):
         raise ArithmeticError("matched rows differ from raw worker messages")
     inventory(

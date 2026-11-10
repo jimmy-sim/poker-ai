@@ -120,7 +120,7 @@ def test_observation_and_archives_match_uninterrupted_path(
     capture.barrier(checks, expected)
     context = toy_context()
     for event in events:
-        if event["phase"] == "checkpoint":
+        if event["phase"] not in ("capture", "mass"):
             continue
         row = event["row"]
         blob = (tmp_path / row["file"]).read_bytes()
