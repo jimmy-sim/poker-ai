@@ -1806,3 +1806,18 @@ corpus's144 policies/96 ledgers/1152 targets are timing aliases, not new-prefix
 strength results. Publish all own evidence now before the comparison-only
 900-second native overhead; strict2*complete elapsed <900 and published
 checked admission still block the real long study.
+
+### November 10 — independent complete overhead passes
+
+Complete own evidence was pushed at5ad3aec and observed at its canonical GitHub
+commit before any native construction. Comparison-only OpenSpiel2.0.2
+(Apache2, pinned license already read/recorded) audited all144 profiles and
+1152 fixed targets; maximum scalar discrepancy1.3500311979441904e-13
+chips <1e-9. Inner complete audit111.469186791976 s; full launcher/child
+command111.674510959012 s; unchanged strict twice-complete guard
+223.349021918024 s <900. Exact native child bytes remain beside the measured
+receipt. Reference actions/strategies were not exported or used in training.
+The source-bound proof and complete own/native compute gates now pass.
+Next: generate, check and publish admission before any new real trajectory.
+This is bounded scalar/calculator agreement, not agent/solver strategy agreement
+or a stronger/default/fresh/global claim. All earlier failures remain retained.

@@ -2826,6 +2826,20 @@ Next: publish these own results, independently check the complete overhead,
 and publish checked admission before starting any long real trajectory.
 AI-assisted work; no additional human practice or time was reported.
 
+### Step 64 — independent overhead and scalar checks pass (November 10)
+
+The independent program checked all144 profiles and1,152 fixed targets. Its
+largest scalar discrepancy was about1.35×10⁻¹³ chips. The complete command took
+111.67 seconds; twice that stays below the fixed900-second guard.
+Own evidence was published first, and reference strategies never entered
+training. The exact child receipt is retained.
+
+This establishes that the two calculators agree on these bounded inputs. It
+does not mean our agent plays as well as an equilibrium solver. Next: publish
+and check the admission receipt, then start the full24-context matched-update
+study only if its complete caps and verification fit the remaining window.
+AI-assisted checking; no additional human practice or time was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
