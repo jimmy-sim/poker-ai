@@ -2891,6 +2891,15 @@ Next: make the complete two-axis results and saved decisions easier to inspect,
 then use them to define the next method before measuring it. AI-assisted
 implementation/execution; no additional human practice or time was reported.
 
+The final publication check exposed a hosting limit: GitHub's Python3.11 job
+was still progressing at91% when its15-minute allowance expired. Python3.12
+passed. The canceled log is retained, and the software-check hosting allowance
+is now25 minutes. The scientific7200/900-second limits are unchanged. Both
+new hosted jobs must pass before merge. Separate constructor-blocked replay on
+both Python versions reproduces all values; the original CSV renderer can
+reorder columns after JSON replay. The new presentation work will fix column
+order without changing the historical scientific files.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

@@ -1883,3 +1883,19 @@ not a pure-variance effect, default selection, fresh/global admission or general
 win-rate claim. Next: complete artifact CI and make all paired results easier
 to read/browse before defining another method. Earlier IO/runtime mistakes and
 failed/partial cohorts remain retained rather than rewritten.
+
+### November 10 — artifact CI hosting limit, not a scientific gate change
+
+Final artifact run42815549217 passed Python3.12. Python3.11 was canceled at
+exactly the15-minute job limit while pytest had reached91%, with no reported
+test failure; its stdout showed continuing progress. Retained the cancellation
+log and raised the GitHub Actions hosting timeout to25 minutes so all checks
+and commit hooks can finish on the hosted runner. No tests, scientific source,
+seed, acceptance threshold or7200/900/180/600-second experiment limit changed.
+The observed pre-study source CI42808276656 remains valid; this final artifact
+CI cancellation is retained separately. Both new hosted jobs must pass before
+merging PR40. Local actual archive replays on3.11.17/NumPy2.4.6 and
+3.12.15/NumPy2.5.4 pass with learner/reference constructors blocked and zero
+error; original SVG/JSON reproduce byte-for-byte, CSV values match with column
+order differences from JSON-sorted keys. The separate presentation milestone
+will make CSV column order canonical without rewriting historical results.
