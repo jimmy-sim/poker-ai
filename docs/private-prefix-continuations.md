@@ -56,8 +56,7 @@ changes. A separate Kuhn fixture reproduces zero change at the responding
 player's rows and a 1/6 change at the other player's rows.
 
 The original source, raw failure log, independent fixture and four passing
-initial suites remain retained in results/private-prefix/continuations-initial-
-e92-failure. The initial suites (2,317 base / 2,373 optional per environment)
+initial suites remain retained in results/private-prefix/continuations-initial-e92-failure. The initial suites (2,317 base / 2,373 optional per environment)
 missed this valid two-player case. The added regression tests it explicitly.
 
 The correction checks the same 1e-12 tolerance on responding-player information
@@ -173,3 +172,17 @@ work window is scheduled by this next decision.
 3. **Does this prove a stronger trained agent?** No. These are controlled values
    for saved strategies. The new sampling candidate still fails its declared
    primary strength gate.
+
+## Cross-runtime saved-data reproduction
+
+Python 3.12.15 / NumPy 2.5.4 reproduces the complete summary, all 415 action-value
+records and the cumulative partial report byte for byte in 253.189350
+seconds, with all learner/reference constructors blocked. Exact hashes and
+runtime/source metadata are retained in results/private-prefix/continuations/
+checks/. This is saved-data reproduction, not a real training replay.
+
+The hybrid holds the earlier exact strategy fixed; it does not reoptimize that
+earlier strategy after changing river rows. The figure compares conditional
+call/fold VALUES under different future continuations, not played action
+frequencies. A value preference can therefore differ from the hybrid's actual
+earlier action.

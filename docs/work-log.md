@@ -2454,3 +2454,13 @@ all10modified bytes/index/statuspreserved. Main38focusedtestspass15.04s andactua
 cachedexampleworks; postcheck10hashes/statusunchanged. PR46retargetmain; integrate
 the last PR45data-only reproductionreceipt before final branch checks.
 Cross-runtime continuation reproduction and final hostedCI remain pending.
+
+### November 10 — reproduce all saved-continuation records across runtimes
+
+Python3.12.15/NumPy2.5.4 saved-data reproduction completes in253.189350s,
+constructorsblocked. Fullsummary, all415Qrecords gzip and cumulativepartialJSON
+are BYTEIDENTICAL to original311; exactreceipt/manifest/log retained. No real
+trajectory replay or newnativeaudit claimed. Clarifiedhybridprefixremainsfixed:
+the figure compares conditionalactionvalues, notactualhybridactionfrequencies.
+Model/source/seeds/thresholds/caps/default unchanged. Finalbothhostedjobs required
+beforemerge; no newlongstudy thiswindow.
