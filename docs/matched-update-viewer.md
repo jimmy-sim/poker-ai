@@ -103,3 +103,31 @@ extracts all288/2304 contrasts, writes all six numeric/text report files and
 checks both an averaged medium/q8 pair and a current low/exact pair, both seats.
 These checks do not establish a stronger agent. Complete local/hosted source
 checks precede publication of the new summary output.
+
+
+## Published output and final source checks
+
+[PR41](https://github.com/jimmy-sim/poker-ai/pull/41) contains the complete
+[table](../results/matched-update-viewer/report/tables.md), all raw/group CSVs,
+three PNGs and a source/runtime/output manifest. The measured report command
+completed in144.749310 seconds. All six numeric/text files reproduce byte-for-byte
+under both actual runtime pairs; the original scientific files remain untouched.
+All three rendered PNGs were visually checked for labels, scales and values.
+
+For the motivating medium/q8/signed/linear mean, same-work B1/B4/B16 exact
+exploitability is4.354032% /2.172684% /3.553971% initial pot. At equal updates,
+the B1 prefixes are4.822839% for the B4 comparison and7.492759% for B16. Those
+prefixes use about27.69% /7.07% of the batch's work, on average. B4's same-update
+seed differences include both directions (-0.613363 to5.879192 percentage
+points); the mean alone hides this. These are existing known-game policies,
+not new training, and a favorable comparison does not pass the earlier quality
+or global-agent gates.
+
+Corrected source070e75a passes both hosted jobs in
+[run42823793710](https://github.com/jimmy-sim/poker-ai/actions/runs/42823793710).
+On each runtime, base checks pass2112 tests(45 optional skips,145 slow deselections),
+optional checks pass2166(145 slow deselections), and the actual constructor-blocked
+reader integration passes1(10 deselections). All six complete logs/runtime
+assertions and source map are in[code-checks.json](../results/matched-update-viewer/code-checks.json).
+The actual n/p/q browser was exercised by the assistant through ranks1→2→1 and
+quit, after one load. This is a software check, not a new user learning note.

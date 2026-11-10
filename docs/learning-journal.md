@@ -2929,6 +2929,21 @@ fictional rendering test covers that boundary. The failed logs remain visible;
 complete source checks rerun before the new report is published. The archived
 strategies, numbers and scientific gates are unchanged.
 
+The corrected full checks now pass:2112 base tests and2166 optional tests on
+**each** supported runtime, plus the actual saved-data integration and both
+hosted CI jobs. The published report contains all288 self/2304 fixed contrasts,
+96/768 complete three-seed groups and three heatmaps. All six numeric/text
+exports reproduce byte-for-byte across Python3.11/3.12. The assistant also
+checked n/p/q through ranks1→2→1 after one load; this does not imply new user
+practice. [Commands and reading guide](matched-update-viewer.md).
+
+For the motivating medium/q8/signed/linear comparison, the same-work means are
+4.354032% for B1,2.172684% for B4 and3.553971% for B16, in percent initial pot.
+At equal updates, B1 stops earlier and spends less work; B4 still has mixed
+seed directions. A lower mean on these tiny known ranges does not establish a
+competitive agent. Next: test a newly preregistered sampling candidate, starting
+with correctness rather than selecting the nicest chart. No default changed.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

@@ -56,6 +56,15 @@ The [matched-update protocol](docs/matched-update-batches.md) and
 test. They do not run or admit another Hold'em learning study. Journal steps40–42
 explain the commands, raw averaging weights and remaining gates.
 
+The completed [two-axis tables and terminal browser](docs/matched-update-viewer.md)
+retain every seed/readout and actual work/update count. Both strategies are our
+own; the independent solver checks scalar calculations. At equal updates B1
+uses much less work, so this does not isolate a pure variance effect or establish
+a stronger default. [Complete comparison table](results/matched-update-viewer/report/tables.md).
+
+![Both compute axes, linear average](results/matched-update-viewer/report/linear_average.png)
+
+
 ## Architecture and current strength work
 
 ```mermaid

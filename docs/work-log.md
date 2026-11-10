@@ -1947,3 +1947,19 @@ when plotting is requested. Added an explicitly fictional rendering smoke
 test; no plot data, model or scientific result changed. All four original
 check logs and their failure notice are retained. Complete current checks
 will rerun for the corrected source before official report publication.
+
+
+### November 10 — complete data-only report and browser
+
+Corrected source070e75a: base2112pass45skip145deselect(373.56/359.01 s), optional
+2166pass145deselect(414.37/401.80 s), actual constructor-blocked integration
+1pass10deselect(243.07/235.42 s), on actual3.11.17/NumPy2.4.6 and3.12.15/2.5.4.
+Ruff602files and strict typing502files pass; both hosted jobs42823793710 pass.
+All logs/runtime assertions and source inventory retained separately from the
+historical scientific admission. Generated complete288self/2304fixed raw
+contrasts,96/768three-seed groups and three visually inspected heatmaps in
+144.749310s. All six numeric/text exports reproduce byte-for-byte on both
+runtimes. Actual terminal n/p/q checked through ranks1→2→1, then clean quit after
+one load. Original science code/data unchanged; prior join/import failures
+retained. PR41 reports existing results, not new learning or a default selection.
+AI-assisted work; no additional user practice, mastery or human minutes inferred.
