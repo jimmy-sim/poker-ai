@@ -2332,3 +2332,20 @@ seat/action/value conventions and total-vs-extra/retraining distinctions.
 Sixteen fictional tests pass in 0.58s; Ruff/format/strict typing (547 files) pass.
 No actual decision result yet. Full local checks, constructor-blocked actual
 replay and both hosted jobs follow. AI-assisted implementation.
+
+### November 10 — retain first complete nine-profile trace before review fixes
+
+Published source 57f11cb restores and traces all nine saved profiles / eighteen
+responses in 358.294261833s, with constructors blocked. Root comparisons pass,
+arrays are unchanged, and every seed/control is retained. Base suites each
+2,294 passed / 47 skipped / 148 deselected (381.84s / 369.55s); optional each
+2,350 passed / 148 deselected (415.93s / 404.14s). Exact logs and the complete
+initial archive are retained in results/private-prefix/decisions-initial57f.
+
+Actual TTY n/p/s/o/t/q and a captured command-input reproduction work. Source
+review identifies report safeguards to strengthen: explicit per-seat gain
+identities to reject canceling seat errors; full owned-row inventory checks;
+retain each completed profile's details before advancing, rather than retaining
+only a count until the final write. This is reporting validation/retention work,
+not a changed learner or a favorable training retry. Preserve the first outcome
+and rerun only saved-data analysis after the fix. No new poker training.
