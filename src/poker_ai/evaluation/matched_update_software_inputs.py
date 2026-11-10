@@ -6,6 +6,7 @@ control for arithmetic/lineage, not evidence about batched poker training.
 """
 
 import itertools
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
@@ -59,7 +60,9 @@ class Fixture:
         return result
 
 
-def build(binding: str, deadline: Deadline) -> Fixture:
+def build(
+    binding: str, deadline: Deadline, mark_started: Callable[[], None] | None = None
+) -> Fixture:
     context = toy_context()
     paths = [
         dict(
@@ -80,6 +83,8 @@ def build(binding: str, deadline: Deadline) -> Fixture:
     path = paths[0]
     control = study.trainer(context.partition, path)
     control.initialize_exact()
+    if mark_started is not None:
+        mark_started()
     for slot, iteration in enumerate((1, 3, 5, 9)):
         while control.iteration < iteration:
             control.step()

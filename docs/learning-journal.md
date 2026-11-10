@@ -15,16 +15,18 @@ notes section is for your own questions and explanations as you work through it.
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
 - [The next controlled test, not run yet](#41-separating-training-work-from-policy-updates--november-9)
+- [How the new time gate works](#46-keep-the-time-budget-separate-from-playing-strength--november-10)
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
 
-November9 update: steps35–42 retain a failed compute gate, a tested overhead
-change, a completed72-path batch study and its saved-current diagnosis. All
-216latest profiles and1,728fixed targets pass independent scalar checks. The
-harder game's latest policies are substantially more exploitable than averages,
-while fixed-opponent comparisons often favor latest policies. No global agent
-or default changes. Read step39 for the plots and terminal replay.
+November10 update: the original batch experiment and saved-current diagnosis are
+complete. We are building the next controlled test: compare strategies after the
+same number of learning updates, while showing their different compute costs.
+Steps43–46 explain the new input, capture and independent-checking software.
+The small software fixtures pass local checks, but the new real Hold’em study
+still needs complete source checks, a published software proof and the fixed
+compute gate. No new default or competitive-strength claim follows.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2498,6 +2500,65 @@ The [continuing roadmap](roadmap.md#continuing-research-program--user-direction-
 records this direction without changing the original phase contracts.
 [Prospective pipeline](matched-update-pipeline.md).
 
+## 44. Check the old path before measuring the new one — November 10
+
+Question: could observing extra checkpoints accidentally change the learner?
+The new capture worker saves policies without scoring them, while checking the
+original saved checkpoints. For example, two comparisons may request update4:
+we observe update4 once, but keep both comparison names. Those are dependent
+readouts, not two learners.
+
+Separate tiny uninterrupted paths agree with the saved policies and raw weights.
+Tests deliberately alter an old ledger, RNG/state fingerprint, current policy or
+work counter: the check fails, earlier captures remain available, and scoring
+stays blocked. The real factory also loaded the complete published24-context
+grid with both training and reference constructors blocked. No new Hold’em
+trajectory, performance score or admission follows from this software milestone.
+Next: complete scoring/replay and independent-audit integration. AI-assisted
+implementation/checks; no additional human practice or minutes reported.
+
+## 45. Follow one saved policy through the whole pipeline — November 10
+
+Question: do our files and comparisons still describe the same policy? A raw
+capture is now saved first. Scoring creates a second file linked to the capture's
+exact bytes; it adds measurements without changing action probabilities. Raw
+averaging weights must reproduce the saved averages exactly. An offline replay
+recalculates the scores, fixed-opponent values and paired differences.
+
+The small test control compares a strategy with an independently generated copy
+of itself: all gaps are zero. Other tests remove a row, alter a hash or value,
+or interrupt a file write; acceptance fails while partial evidence survives.
+The independent OpenSpiel adapter checks scalar values and best-response roots,
+and never provides a strategy for training. Its tests caught an information-set
+numbering mistake before any new poker experiment.
+
+This is AI-assisted software progress. The144 logical profiles share one tiny
+nonuniform Kuhn tree and six seed/rule paths; they are not144 independent
+Hold’em observations. Next: finish source checks, compute profiling and checked
+admission before a real comparison. No new human practice/minutes reported.
+
+## 46. Keep the time budget separate from playing strength — November 10
+
+Question: can the next experiment fit the budget without changing its rules?
+We now have tests for the forecast, which estimates the large run's time from
+short runs. It keeps the slowest of three measurements for every context and
+uses the same fixed worker assignments. For example, exactly 7,200 projected
+seconds fails a rule that requires less than 7,200. All17 forecast tests passed.
+Those times are synthetic test examples, not measured experiment runtimes.
+
+The separate overhead exercise will load old saved policies and repeat the
+same number of file writes, scores and comparisons as the planned experiment.
+Each record keeps the old policy's real update count and labels itself as a
+timing alias. It cannot claim that a new prefix was trained. Two metadata tests
+checked all144 aliases and their1,152 original fixed targets without training.
+
+The native adapter also passed correctness checks on both actual poker spots
+and both representations using a fixed uniform policy. This checks the game
+exporter, values and replies; it trains no new poker strategy. The four checks
+passed in3.32seconds. Full source checks and published proof/forecast evidence
+are still needed before the large study. AI-assisted implementation and tests;
+no additional human practice or minutes have been reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
@@ -2544,39 +2605,3 @@ Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
 
-### Step44 — Check the old path before measuring the new one (November10,2026)
-
-Question: could observing extra checkpoints accidentally change the learner?
-The new capture worker saves policies without scoring them, while checking the
-original saved checkpoints. For example, two comparisons may request update4:
-we observe update4 once, but keep both comparison names. Those are dependent
-readouts, not two learners.
-
-Separate tiny uninterrupted paths agree with the saved policies and raw weights.
-Tests deliberately alter an old ledger, RNG/state fingerprint, current policy or
-work counter: the check fails, earlier captures remain available, and scoring
-stays blocked. The real factory also loaded the complete published24-context
-grid with both training and reference constructors blocked. No new Hold’em
-trajectory, performance score or admission follows from this software milestone.
-Next: complete scoring/replay and independent-audit integration. AI-assisted
-implementation/checks; no additional human practice or minutes reported.
-
-### Step45 — Follow one saved policy through the whole pipeline (November10,2026)
-
-Question: do our files and comparisons still describe the same policy? A raw
-capture is now saved first. Scoring creates a second file linked to the capture's
-exact bytes; it adds measurements without changing action probabilities. Raw
-averaging weights must reproduce the saved averages exactly. An offline replay
-recalculates the scores, fixed-opponent values and paired differences.
-
-The small test control compares a strategy with an independently generated copy
-of itself: all gaps are zero. Other tests remove a row, alter a hash or value,
-or interrupt a file write; acceptance fails while partial evidence survives.
-The independent OpenSpiel adapter checks scalar values and best-response roots,
-and never provides a strategy for training. Its tests caught an information-set
-numbering mistake before any new poker experiment.
-
-This is AI-assisted software progress. The144 logical profiles share one tiny
-nonuniform Kuhn tree and six seed/rule paths; they are not144 independent
-Hold’em observations. Next: finish source checks, compute profiling and checked
-admission before a real comparison. No new human practice/minutes reported.

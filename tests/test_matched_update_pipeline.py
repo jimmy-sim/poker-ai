@@ -161,5 +161,5 @@ def test_real_admission_stays_closed_even_if_a_file_is_named_admission(
     tmp_path: Path,
 ) -> None:
     (tmp_path / "admission.json").write_text('{"admitted": true}')
-    with pytest.raises(ArithmeticError, match="blocked"):
+    with pytest.raises(FileNotFoundError):
         require_admission(tmp_path, "a" * 64)

@@ -1,5 +1,6 @@
 """Complete identities, immutable capture lineage and paired own score accounting."""
 
+import math
 from typing import Any
 
 from poker_ai.evaluation.matched_update_capture import barrier
@@ -100,6 +101,11 @@ def paired_self(
                 )
             )
             or set(x["metrics"]) != set(y["metrics"])
+            or any(
+                type(v) not in (int, float) or not math.isfinite(v)
+                for r in (x, y)
+                for v in r["metrics"].values()
+            )
         ):
             raise ArithmeticError("matched profile coordinate/case/hash changed")
         result.append(
@@ -155,11 +161,24 @@ def paired_fixed(
                 for k in (
                     "opponent_policy_sha256",
                     "reply_sha256",
-                    "restricted_reply_value_chips",
-                    "achieved_reply_value_chips",
                 )
             ):
                 raise ArithmeticError("matched fixed opponent/reply/root changed")
+            values = (
+                "baseline_value_chips",
+                "restricted_reply_value_chips",
+                "achieved_reply_value_chips",
+                "gain_chips",
+            )
+            if any(
+                type(r[k]) not in (int, float) or not math.isfinite(r[k])
+                for r in (x, y)
+                for k in values
+            ) or any(
+                abs(x[k] - y[k]) > 1e-9
+                for k in ("restricted_reply_value_chips", "achieved_reply_value_chips")
+            ):
+                raise ArithmeticError("invalid/different matched fixed scalar root")
             ev = x["baseline_value_chips"] - y["baseline_value_chips"]
             gain = x["gain_chips"] - y["gain_chips"]
             if abs(ev + gain) > 1e-9:

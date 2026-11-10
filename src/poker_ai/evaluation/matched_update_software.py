@@ -151,7 +151,11 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         saved["config"] = inputs.config_inputs(root)
         saved["code_checks"] = code_gate.require(root, clean=False)
         saved["software_training_attempted"] = True
-        fixture = build(saved["source_sha256"], deadline)
+
+        def mark_started() -> None:
+            saved["software_training_performed"] = True
+
+        fixture = build(saved["source_sha256"], deadline, mark_started)
         exercise(output, saved, fixture, deadline)
         deadline.check()
         saved["status"] = "completed_tiny_own_native_pending_not_poker"
@@ -162,7 +166,9 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         )
         raise
     finally:
-        saved["software_training_performed"] = bool(saved["checkpoints"])
+        saved["software_training_performed"] = saved[
+            "software_training_performed"
+        ] or bool(saved["checkpoints"])
         saved["seconds"] = time.perf_counter() - started
         for name in ("captures", "masses", "checkpoints", "rows", "fixed_matches"):
             saved["completed_" + name] = len(saved[name])

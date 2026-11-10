@@ -2,6 +2,7 @@
 
 import json
 import math
+import os
 import socket
 import time
 from pathlib import Path
@@ -114,6 +115,27 @@ def validate(
         or saved["scope"] != own["scope"]
     ):
         raise ArithmeticError("incomplete/mislabeled native matched receipt")
+    if saved["scope"] == SCOPE:
+        if saved["batch"] != {} or any(
+            not same(saved["summary"][k], v)
+            for k, v in dict(
+                paths=24, profiles=144, fixed_targets=1152, cached_opponent_targets=32
+            ).items()
+        ):
+            raise ArithmeticError("tiny native complete inventory summary changed")
+    else:
+        from poker_ai.evaluation.matched_update_workers import complete
+
+        complete(
+            saved["batch"],
+            dict(paths=8, profiles=48, fixed_targets=384, cached_opponent_targets=32),
+        )
+        rebuilt = dict(saved)
+        results(rebuilt)
+        if not same(rebuilt["rows"], saved["rows"]) or not same(
+            rebuilt["fixed"], saved["fixed"]
+        ):
+            raise ArithmeticError("native records differ from raw worker events")
     maximum = 0.0
     for kind, peers, actual, fields in (
         ("self", own["rows"], saved["rows"], ("id",)),
@@ -170,11 +192,16 @@ def validate(
 
 
 def audit(
-    root: Path, own_path: Path, output: Path, *, tiny: bool = False
+    root: Path,
+    own_path: Path,
+    output: Path,
+    *,
+    tiny: bool = False,
+    timing: bool = False,
 ) -> dict[str, Any]:
     if output.exists() or output.with_suffix(".tmp").exists():
         raise FileExistsError("retain native matched attempt")
-    started = time.perf_counter()
+    started, cpu, children = time.perf_counter(), time.process_time(), os.times()
     saved: dict[str, Any] = dict(
         format=FORMAT,
         status="running",
@@ -186,6 +213,7 @@ def audit(
         publication=None,
         license=None,
         scope=SCOPE if tiny else None,
+        reference=None,
         environment=runtime_environment(),
         reference_setup_started=False,
         reference_setup_completed=False,
@@ -226,15 +254,23 @@ def audit(
         else:
             deadline = Deadline(900)
             deadline.started = started
-            own, sources = read_saved(root, own_path)
-            from poker_ai.evaluation.matched_update_replay import replay_real
+            if timing:
+                from poker_ai.evaluation.matched_update_overhead import (
+                    read as read_timing,
+                )
 
-            replay_real(own_path, own, sources, deadline)
+                own, sources = read_timing(root, own_path, deadline)
+            else:
+                own, sources = read_saved(root, own_path)
+                from poker_ai.evaluation.matched_update_replay import replay_real
+
+                replay_real(own_path, own, sources, deadline)
         saved.update(
             own_sha256=digest(own_path),
             details_sha256=own["details_sha256"],
             scope=own["scope"],
         )
+        saved["reference"] = config["reference"]
         saved["license"] = license_record(dict(native_reference=config["reference"]))
         if tiny:
             saved["reference_setup_started"] = True
@@ -296,5 +332,29 @@ def audit(
     finally:
         results(saved)
         saved["native_stage_seconds"] = time.perf_counter() - started
+        saved["parent_cpu_seconds"] = time.process_time() - cpu
+        now = os.times()
+        saved["reaped_children_cpu_seconds"] = (
+            now.children_user
+            + now.children_system
+            - children.children_user
+            - children.children_system
+        )
         persist(output, saved)
     return saved
+
+
+def read(root: Path, path: Path, own_path: Path, own: dict[str, Any]) -> dict[str, Any]:
+    from poker_ai.postflop.pipeline_report import check_source
+
+    saved: dict[str, Any] = json.loads(path.read_text())
+    check_source(root, saved["source"])
+    reference = inputs.config_inputs(root)["reference"]
+    if (
+        saved["reference"] != reference
+        or saved["license"]["sha256"] != reference["license_sha256"]
+        or saved["license"]["previously_read_record"] != "docs/solver_validation.md"
+        or not saved["license"]["installed_license_files"]
+    ):
+        raise ArithmeticError("native matched license receipt changed")
+    return validate(saved, own, own_path)

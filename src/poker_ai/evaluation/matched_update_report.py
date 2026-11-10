@@ -66,19 +66,37 @@ def write_report(saved: dict[str, Any], folder: Path) -> dict[str, str]:
     ratios = [float(r["prefix_total_work"]) / r["batched_total_work"] for r in rows]
     xmin, xmax = min(ratios), max(ratios)
     span = max(xmax - xmin, 1e-12)
+    title = (
+        "OLD-policy timing aliases: not new prefix/strength results"
+        if saved["scope"].startswith("OLD_")
+        else "Explicit tiny software fixtures: not poker results"
+        if saved["scope"].startswith("EXPLICIT_")
+        else "Known-game matched updates: all144 dependent pairs; own audit only"
+    )
+    old = saved["scope"].startswith("OLD_")
+    x_label = (
+        "Old source work / old source work; timing aliases only"
+        if old
+        else "Prefix node visits / batched node visits at matched updates"
+    )
+    y_label = (
+        "Rescored old OWN policy minus source score (chips)"
+        if old
+        else (
+            "Prefix minus batched exact exploitability (chips); "
+            "below zero favors prefix"
+        )
+    )
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" '
         f'height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
         '<g font-family="sans-serif" font-size="13" fill="#222">',
-        '<text x="60" y="26">Known-game matched updates: '
-        "all144 dependent seed/readout pairs; own audit only</text>",
+        f'<text x="60" y="26">{html.escape(title)}</text>',
         '<line x1="70" x2="850" y1="220" y2="220" stroke="#999"/>',
         '<line x1="70" x2="70" y1="65" y2="375" stroke="#222"/>',
-        '<text x="60" y="410">B1-prefix node visits / batched node visits '
-        "(same completed updates)</text>",
-        '<text x="60" y="442">Vertical: B1-prefix minus batched exact exploitability '
-        "(chips); below zero favors prefix</text>",
+        f'<text x="60" y="410">{html.escape(x_label)}</text>',
+        f'<text x="60" y="442">{html.escape(y_label)}</text>',
         f'<text x="10" y="70">+{extent:.4g}</text>',
         '<text x="10" y="225">0</text>',
         f'<text x="10" y="375">-{extent:.4g}</text>',

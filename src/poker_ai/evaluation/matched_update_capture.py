@@ -138,7 +138,10 @@ def collect(
             for weight in study.WEIGHTS:
                 mass = solver.ledger(weight)
                 metadata = dict(
-                    **common, id=target["id"] + "-" + weight, readout=weight
+                    common,
+                    case=study.case(path, weight),
+                    id=target["id"] + "-" + weight,
+                    readout=weight,
                 )
                 filename = "masses/" + metadata["id"] + ".json.gz"
                 receipt = write_mass(
@@ -162,7 +165,10 @@ def collect(
             for readout, policy in policies.items():
                 deadline.check()
                 metadata = dict(
-                    **common,
+                    common,
+                    case=study.case(
+                        path, "uniform" if readout == "uniform_average" else "linear"
+                    ),
                     id=target["id"] + "-" + readout,
                     readout=readout,
                     variant=readout,

@@ -85,6 +85,8 @@ def corpus(
         completed_fixed_targets=1152,
         seconds=1.0,
         maximum_error_chips=summary["maximum_error_chips"],
+        batch={},
+        summary=summary,
     )
     return own, saved, path
 
@@ -181,4 +183,98 @@ def test_native_pre_input_failure_retains_receipt_and_never_constructs_reference
     assert saved["status"] == "incomplete"
     assert saved["reference_setup_started"] is False
     assert saved["completed_profiles"] == saved["completed_fixed_targets"] == 0
+    assert saved["failure"]["type"] == "OSError"
+
+
+def test_shared_tiny_publication_clock_expiry_blocks_reference(tmp_path: Path) -> None:
+    import socket
+    import time
+
+    own = tmp_path / "own.json"
+    own.write_text(
+        json.dumps(
+            dict(
+                proof_host=socket.gethostname(),
+                proof_started_perf_counter=time.perf_counter() - 181,
+            )
+        )
+    )
+    output = tmp_path / "native.json"
+    with (
+        patch(
+            "poker_ai.solver_validation.matched_updates.source",
+            return_value=dict(dirty=False, sha256={}),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.inputs.config_inputs",
+            return_value=config_inputs(ROOT),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.published",
+            return_value=dict(own_sha256=digest(own)),
+        ),
+        patch.object(
+            ScalarReference,
+            "__init__",
+            side_effect=AssertionError("expired proof cannot construct reference"),
+        ),
+    ):
+        with pytest.raises(ArithmeticError, match="expired"):
+            audit(tmp_path, own, output, tiny=True)
+    saved = json.loads(output.read_text())
+    assert saved["status"] == "incomplete"
+    assert saved["reference_setup_started"] is False
+    assert saved["completed_profiles"] == 0
+
+
+def test_native_constructor_failure_records_started_without_completed(
+    tmp_path: Path,
+) -> None:
+    import socket
+    import time
+
+    own = tmp_path / "own.json"
+    own.write_text(
+        json.dumps(
+            dict(
+                proof_host=socket.gethostname(),
+                proof_started_perf_counter=time.perf_counter(),
+            )
+        )
+    )
+    output = tmp_path / "native.json"
+    fixture_own = dict(scope=SCOPE, details_sha256="a" * 64)
+    with (
+        patch(
+            "poker_ai.solver_validation.matched_updates.source",
+            return_value=dict(dirty=False, sha256={}),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.inputs.config_inputs",
+            return_value=config_inputs(ROOT),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.published",
+            return_value=dict(own_sha256=digest(own)),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.software.read",
+            return_value=(fixture_own, None, {}),
+        ),
+        patch(
+            "poker_ai.solver_validation.matched_updates.license_record", return_value={}
+        ),
+        patch.object(
+            ScalarReference,
+            "__init__",
+            side_effect=OSError("injected native constructor failure"),
+        ),
+    ):
+        with pytest.raises(OSError, match="constructor failure"):
+            audit(tmp_path, own, output, tiny=True)
+    saved = json.loads(output.read_text())
+    assert saved["status"] == "incomplete"
+    assert saved["reference_setup_started"] is True
+    assert saved["reference_setup_completed"] is False
+    assert saved["completed_profiles"] == 0
     assert saved["failure"]["type"] == "OSError"

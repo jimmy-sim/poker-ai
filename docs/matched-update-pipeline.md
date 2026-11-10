@@ -73,3 +73,52 @@ Record scope/dependence and three interview answers, with work log and journal.
 The current user authorization is November10 midnight–noon Pacific. Check time
 regularly and require full caps plus verification before starting a long run.
 This does not authorize another future work window.
+
+## Command sequence and current implementation scope
+
+New scripts are thin entry points. Run correctness tests while developing; do not
+run a real timing or trajectory command before its prerequisites are published.
+The checked source record contains both hosted jobs and actual local base,
+optional and relevant slow results for both Python versions.
+
+```sh
+.venv/bin/python scripts/check_matched_updates.py --record-checks /tmp/ci.json /tmp/local.json --output results/matched-update-pipeline/code-checks.json
+.venv/bin/python scripts/check_matched_updates.py --output results/matched-update-pipeline/software-own.json
+# Commit and push the own tiny proof and all three archives within its shared180s clock.
+.venv/bin/python scripts/audit_matched_updates.py --tiny --own results/matched-update-pipeline/software-own.json --output results/matched-update-pipeline/software-native.json
+# Publish the completed source-bound tiny proof before original-runtime short timings.
+.venv/bin/python scripts/profile_matched_updates.py --output results/matched-update-pipeline/profile.json --overhead results/matched-update-pipeline/overhead/own.json
+# Publish all own timing evidence before comparison-only native overhead.
+.venv/bin/python scripts/audit_matched_updates.py --timing --own results/matched-update-pipeline/overhead/own.json --output results/matched-update-pipeline/overhead/native.json
+.venv/bin/python scripts/check_matched_updates.py --admit --output results/matched-update-pipeline/admission.json
+# Publish and check admission; only then may the bounded real study start.
+.venv/bin/python scripts/study_matched_updates.py --output results/matched-update-study/own.json
+# Publish complete/partial/failing own evidence before any new native comparison.
+.venv/bin/python scripts/audit_matched_updates.py --own results/matched-update-study/own.json --output results/matched-update-study/native.json
+.venv/bin/python scripts/report_matched_updates.py --own results/matched-update-study/own.json
+```
+
+The environment for real short timings, overhead and trajectories must remain
+Python3.11.17/NumPy2.4.6. A new base environment from the current lock is only
+software/data evidence. Every command keeps pre-input/partial failures; a failed
+clock or compute gate is retained. Repeating an unchanged timing attempt to get
+a favorable result is prohibited. These example commands do not assert that
+the files or admissions have already been produced.
+
+Timing aliases preserve each original B1 final coordinate and record the planned
+new-prefix coordinate separately. Their archive identity records are labelled as
+archival source metadata, not newly observed trajectory checks. Real readers
+reject that timing scope. All real7200/900 clocks start before prerequisite
+loading and include source verification, setup, work, IO and final replay/report.
+
+### Three review questions
+
+1. Why save both a capture and a scored file? The capture is immutable evidence
+   of the observed policy. The scored file adds measurements with a hash link;
+   replay checks that action probabilities did not change.
+2. Why can the tiny proof not establish poker strength? Its24 labels reuse one
+   tiny tree and six seed/rule paths. Its right policies are identical-strategy
+   controls. It tests implementation and zero-gap accounting, not generalization.
+3. What if the forecast fails? Preserve all measurements, keep long training
+   blocked and investigate the cause under a separately justified change. Do not
+   remove contexts, retry unchanged timing for luck, or relax caps or tolerances.

@@ -70,3 +70,57 @@ def test_invalid_response_seat_does_not_call_native() -> None:
     for value in (True, -1, 2):
         with pytest.raises(ValueError, match="target"):
             reference.response_value(np.empty((0, 0)), value)
+
+
+@pytest.fixture(scope="module")
+def poker_contexts() -> dict[tuple[str, str], object]:
+    pytest.importorskip("pyspiel")
+    from pathlib import Path
+
+    from poker_ai.postflop.pipeline_cost import contexts
+
+    root = Path(__file__).resolve().parents[1]
+    return dict(
+        contexts(
+            root,
+            dict(
+                spot_files=[
+                    "configs/learning-spots/dev_low_oop.json",
+                    "configs/learning-spots/dev_medium_oop.json",
+                ],
+                representations=["exact", "texture_range_q8_b8"],
+            ),
+        )
+    )
+
+
+@pytest.mark.slow
+@pytest.mark.parametrize("spot", ["dev_low_oop", "dev_medium_oop"])
+@pytest.mark.parametrize("representation", ["exact", "texture_range_q8_b8"])
+def test_actual_matrix_contexts_native_value_roots_and_own_replies(
+    poker_contexts: dict[tuple[str, str], object],
+    spot: str,
+    representation: str,
+) -> None:
+    from typing import cast
+
+    from poker_ai.postflop.controlled_scoring import ScoringContext
+
+    context = cast(
+        ScoringContext,
+        poker_contexts["configs/learning-spots/" + spot + ".json", representation],
+    )
+    policy = context.partition.normalize(context.partition.legal)
+    own = context.score(policy)
+    detail = dict(
+        policy=pack_policy(context.partition, policy),
+        **score_data(context, own),
+        replies=[
+            {k: pack_policy(context.exact, v) for k, v in r.items()}
+            for r in own.replies
+        ],
+    )
+    exact = ScalarReference(context.exact)
+    limited = exact if representation == "exact" else ScalarReference(context.partition)
+    result = compare(context, (exact, limited), detail)
+    assert result["maximum_error_chips"] <= 1e-9

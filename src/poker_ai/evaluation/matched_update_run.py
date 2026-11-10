@@ -275,6 +275,10 @@ def read_saved(root: Path, path: Path) -> tuple[dict[str, Any], inputs.Sources]:
         for k in ("python", "numpy")
     ):
         raise ArithmeticError("matched trajectory recorded a different runtime")
+    from poker_ai.evaluation.matched_update_workers import complete
+
+    complete(saved["batches"][0], dict(paths=8, captures=48, masses=32, checkpoints=24))
+    complete(saved["batches"][1], dict(paths=8, profiles=48, fixed_targets=384))
     sources = inputs.load(root)
     if not same(saved["source_inputs"], sources.manifest["input_sha256"]):
         raise ArithmeticError("matched study input binding changed")

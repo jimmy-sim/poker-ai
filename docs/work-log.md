@@ -1472,3 +1472,27 @@ Re-read the installed Apache2.0 license before optional native tests: pinned
 SHA256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.
 The real-run admission entry currently fails closed; complete checks, source-bound
 software proof and the prospective compute gate remain required.
+
+### November10 — fixed forecasts, timing aliases and admission implementation
+
+Added72-row max-per-context/fixed-partition forecasting with the unchanged
+2*(2*training+600)<7200 rule; all17 synthetic timing tests pass (0.05s), including
+strict failure at7200. New old-policy overhead corpus keeps the actual original
+B1 final work/iteration and exact saved policy/mass hashes while duplicating only
+logical timing labels;2 metadata tests passed in0.42s. It does not claim new
+prefix outcomes or a new B1 barrier replay. The separate source and runtime gates
+remain mandatory. New command entry points expose source checks, tiny proof,
+profiling, admission, study, independent audit and offline replay/report.
+
+Added raw worker completion/partition checks, shared-clock expiry and native
+constructor failure retention. Four pre-input/shared-source/fake-admission tests
+passed in0.07s. The latest combined optional focused run passed140 tests with5
+slow tests deselected in26.17s; subsequent gate/corpus additions have their own
+results above and final broad checks remain pending. Four actual MatrixTree
+exporter/value/root/own-reply correctness checks passed in3.32s using uniform
+policies on both original spots and both representations, without poker training.
+
+The earlier fail-closed admission placeholder has been replaced by a checked
+reader that requires the full source-bound tiny proof, all72 real short timings,
+complete old-policy own/native overhead and published exact-source admission.
+No such admission exists yet; no new real prefix or long trajectory has run.
