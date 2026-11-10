@@ -26,7 +26,8 @@ targets remain in the report. The own replay has zero discrepancy; independent
 scalar disagreement is below1e-9 chips. This adds a second compute axis to the
 earlier equal-work comparison. It does not select a new default or establish
 general Hold'em strength. Steps54–67 retain the earlier failures and explain
-the checked route to the result.
+the checked route to the result. Step68 adds the complete data browser/report;
+step69 starts correctness tests of a new sampling candidate without admission.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2943,6 +2944,44 @@ At equal updates, B1 stops earlier and spends less work; B4 still has mixed
 seed directions. A lower mean on these tiny known ranges does not establish a
 competitive agent. Next: test a newly preregistered sampling candidate, starting
 with correctness rather than selecting the nicest chart. No default changed.
+
+### Step 69 — test spreading private deals across a batch (November 10)
+
+A **stratum** is a probability bin. Instead of drawing four private deals
+independently, the proposed B4 sampler draws once from each quarter of the joint
+private-deal distribution. The engine deals one player's hand and then a
+compatible opponent hand, so the plan must combine two chance levels. It still
+samples the river and later opponent actions normally.
+
+**Illustration, not a result:** four equally likely private deals and B4 give
+one deal of each kind per frozen pass. This can reduce one source of raw update
+noise. It changes random-number use and sampling cost too; it does not prove
+better play or a faster learner. The existing B1/default is unchanged.
+
+The [exact protocol](private-prefix-stratification.md) was published before the
+implementation in[PR42](https://github.com/jimmy-sim/poker-ai/pull/42). Independent
+rational-bin calculations check means and covariance, including unequal/zero
+probabilities and boundaries. A separate dense implementation uses its own
+warm calculation, sampled recursion, CDF and updater. All120 toy endpoints match
+with zero array error, including40 original B1 bit checks. All71 focused tests
+pass, including final-callback mutations of the plan/state and retained partial
+receipts. These are toy software results, not new Hold'em strength measurements.
+
+Next: complete both runtime suites and hosted checks, then the full
+archive/runner/native/schema/failure pipeline. The432-profile tiny proof,
+conservative time forecast and checked published admission remain required
+before any new real study. The kernel replay command explicitly says those
+stages are incomplete. AI-assisted implementation/testing; no new user practice
+or human minutes are reported.
+
+The complete kernel checks now pass on both actual runtime pairs:2183 base tests
+(45 skips,145 deselections) and2237 optional tests(145 deselections), plus both
+hosted jobs in[run42828991764](https://github.com/jimmy-sim/poker-ai/actions/runs/42828991764).
+The published kernel receipt replays identically on both Python versions:
+12 raw-moment cases,120 trajectory endpoints,40 B1 bit checks,zero array error.
+The output explicitly says the full pipeline, forecast and admission are
+incomplete. [Replay command and limits](private-prefix-stratification.md).
+This is a completed correctness foundation, not a new Hold'em performance result.
 
 ## Your own learning notes
 

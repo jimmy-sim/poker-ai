@@ -1963,3 +1963,45 @@ runtimes. Actual terminal n/p/q checked through ranks1→2→1, then clean quit 
 one load. Original science code/data unchanged; prior join/import failures
 retained. PR41 reports existing results, not new learning or a default selection.
 AI-assisted work; no additional user practice, mastery or human minutes inferred.
+
+
+### November 10 — preregistered private-prefix kernel foundation
+
+Prospective protocol/config740f8fa was pushed and observed on GitHub before new
+algorithm implementation. Issue4 comment6768900466 and draftPR42 declare the
+complete48-changed-path/432-profile/288-ledger/1152-fixed-target design and
+unchanged caps/seeds/gates. Added optional two-level joint private-deal plan,
+stratified selector and B>1 frozen-batch subclass; B1 delegates original code.
+All original scientific modules/data are preserved. Plans use only chance
+metadata and are included in the observation guard; both chance nodes stay
+charged. Tiny kernel check/replay is explicitly insufficient for real admission.
+
+71 focused tests pass in4.53s.12 fixed-policy raw-moment cases check unbiased
+means and variance decomposition against full expectations, plus independent
+rational covariance tests.120 adaptive dense-oracle endpoints match with zero
+array error, including40 B1 bit checks. The oracle has its own warm expectation,
+traversal, CDF and updater; tests forbid production arithmetic inside it.
+Boundary/zero support, invalid laws, post-warm books/work/RNG, last-callback plan
+and old-state mutations, stale/partial receipts and overwrite refusal are
+covered. Ruff/strict typing pass all9 new Python files. Complete base/optional
+and hosted checks are next; no new real trajectory or reference comparison,
+full-shape proof, forecast or admission is claimed. AI-assisted work, no inferred
+user time/practice/mastery. The reader branch is integrated to keep step68 and
+its immutable data available; its final hosted artifact checks remain separate.
+
+
+### November 10 — kernel foundation source and replay gates pass
+
+Sourcead160906f3c891817fbdb93a1b473846ee46dfec passes both hosted CI jobs in
+42828991764. Actual3.11.17/NumPy2.4.6 and3.12.15/2.5.4 base suites each pass2183
+tests/45skips/145deselections(332.01/319.19s); optional suites each pass2237/
+145deselections(378.30/365.45s). Ruff613files and strict typing511files pass.
+All four complete logs include actual runtime assertions before and after checks.
+Clean-source kernel.json records12 moment cases/120 adaptive endpoints/40 B1
+bit checks,zero maximum array error; a separate3.12 replay matches every row.
+No native reference or real poker learner is constructed. Kernel source map,
+CI/local receipts and logs are retained in results/private-prefix. This completes
+PR42's sampler foundation only: full pipeline proof/forecast/admission remain
+false. PR43 continues source/context/grid/archive/native integration; its earlier
+published accounting adds48 previously unscored B1 current evaluations inside
+the same caps, with no altered scientific gates. AI-assisted work.
