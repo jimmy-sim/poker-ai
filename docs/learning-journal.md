@@ -2784,6 +2784,20 @@ receipts, partial failures and strict clock boundaries. Next: verify this entire
 source cohort before repeating the prescribed proof and compute gate.
 AI-assisted work; no additional personal practice or time was reported.
 
+### Step 61 — check the complete lifecycle launcher (November 10)
+
+The whole current source passed both GitHub jobs and all six local checks. Each
+Python version passed 2,083 base tests,
+2,136 optional tests and
+60 relevant slower integrations. These
+overlapping suites are software checks, not independent poker experiments.
+The recorded runtime assertions prevent the earlier interpreter-label mistake.
+
+Next: a fresh tiny proof with the complete launcher clock, then the entire
+prospectively fixed compute gate. Earlier partial timings and successful old
+proofs are not admission for changed source. AI-assisted checking; no additional
+personal practice, time or mastery was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

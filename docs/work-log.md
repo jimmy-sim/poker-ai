@@ -1764,3 +1764,14 @@ strict typing passed both new files. All20 failed-cohort aliases were verified
 against retained bytes before clearing files AND empty directories.
 The expanded source now needs complete base/optional/slow checks on both
 versions, both hosted jobs, a new proof and the full fixed compute gate.
+
+### November 10 — complete lifecycle source checks
+
+Both hosted jobs in [42808276656](https://github.com/jimmy-sim/poker-ai/actions/runs/42808276656)
+passed on 36dbd45, matching every byte of the complete 244-file source inventory
+84143f4e…. All six local runtime-asserted checks passed: base311: 2083 passed, 44 skipped, 144 deselected, 431.4 s; base312: 2083 passed, 44 skipped, 144 deselected, 419.88 s; focused_slow311: 60 passed, 0 skipped, 18 deselected, 414.39 s; focused_slow312: 60 passed, 0 skipped, 18 deselected, 398.2 s; optional311: 2136 passed, 0 skipped, 144 deselected, 472.66 s; optional312: 2136 passed, 0 skipped, 144 deselected, 464.38 s.
+Ruff/format checked 594 files; strict typing passed 495 files. Python/NumPy
+runtimes were asserted before and after: 3.11.17/2.4.6 and 3.12.15/2.5.4.
+The receipt binds all six log hashes. The source remains frozen for the next
+full tiny proof and fixed compute gate. No long study is admitted by software
+checks; the two retained IO failures and runtime-label correction remain visible.
