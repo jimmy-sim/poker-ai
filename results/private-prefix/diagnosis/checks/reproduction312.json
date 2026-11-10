@@ -1,0 +1,23 @@
+{
+  "status": "four_numeric_tables_byte_identical",
+  "source_commit": "0b68f9c3e27c12ccb04887f1a760294961d80904",
+  "reproduction_environment": {
+    "cpu": "arm",
+    "cpu_query_status": "sysctl unavailable: CalledProcessError",
+    "logical_cpus": 10,
+    "numpy": "2.5.4",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.12.15"
+  },
+  "seconds": 255.96558245801134,
+  "constructors_blocked": true,
+  "training_performed": false,
+  "reference_constructed": false,
+  "files": {
+    "method-points.csv": "b7d0948fe8dccb4ea31b5fdd9632d8bc449c438269088f099e67c6fa4dcd1be9",
+    "paired-points.csv": "5445483f654ebba901f2eac243350dbb532749de906a7ed1aa925b3069f012d1",
+    "method-groups.csv": "eb354d3a12e1603b88cff6ba6e71ce27ac72a412493ed05821e8b900b0637f6f",
+    "paired-groups.csv": "595415d5b8ff29c83394d7cd6679229eecda91d27feb41c6ae4741ba9c435493"
+  },
+  "scope": "Data-only replay under Python3.12; not bit-exact real trajectory replay."
+}

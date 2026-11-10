@@ -1,0 +1,72 @@
+{
+  "additive_identity": "total exact exploitability = within-partition gain + extra-information gap, absolute tolerance1e-9chips; retain signed roundoff",
+  "baseline_kinds": [
+    "B1",
+    "IID"
+  ],
+  "batch_size": 4,
+  "expected_paired_groups": 72,
+  "expected_paired_points": 216,
+  "expected_profile_groups": 108,
+  "expected_profile_points": 324,
+  "extra_fields": [
+    "actual_work",
+    "iteration",
+    "initialization_visits",
+    "sampled_traversals",
+    "whole_row_coverage",
+    "post_warm_row_coverage",
+    "whole_river_reach_coverage",
+    "post_warm_river_reach_coverage"
+  ],
+  "figure": "medium game only, final10m, both encodings x all3readouts; all3seeds x B1/IID/stratified bars; stack ONLYwithin+extra; scales clearly labeled",
+  "games": [
+    "dev_low_oop",
+    "dev_medium_oop"
+  ],
+  "limits": "No causal proof, irreducible abstraction-floor claim, new seed, threshold/cap change, new trajectory, default or fresh/global admission. Never load reference outputs into learning.",
+  "metrics": [
+    "exact_exploitability_chips",
+    "within_partition_gain_chips",
+    "extra_information_gap_chips",
+    "river_only_gain_exact_prefix_chips",
+    "value_player_zero_chips"
+  ],
+  "model_source_sha256": "a5a2e28de289d719efe51e639f1a30bb9df8573377b406b823e0216d57154070",
+  "native": "results/private-prefix/study/native.json",
+  "next_decision": "Choose a controlled follow-up hypothesis from the complete saved-policy panel; do not rerun unchanged training for favorable results.",
+  "own": "results/private-prefix/study/own.json",
+  "own_sha256": "d2366ea9ba5f6c30694fb080ab5dc566c48169ed92bc9598c7d9e1e950f885b9",
+  "question": "Where does the failed primary fixed-work comparison lose value: within-partition response gain, extra exact-information value, readout/update differences or support?",
+  "readouts": [
+    "current",
+    "uniform_average",
+    "linear_average"
+  ],
+  "registered_after": "complete published own negative result ccbffb9; before diagnostic decomposition tables",
+  "regret_rule": "signed",
+  "representations": [
+    "exact",
+    "texture_range_q8_b8"
+  ],
+  "required_native": "completed source-bound432/1152 comparison and complete-command900 receipt; exact own SHA and raw journal validated before diagnosis",
+  "river_metric": "SEPARATE exact-prefix river-row switch diagnostic; not additive total or actual agent EV loss",
+  "roles": [
+    "B1",
+    "IID",
+    "stratified"
+  ],
+  "schema_version": 1,
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "status": "prospective_posthoc_saved_policy_diagnosis_no_training",
+  "uncertainty": "posthoc descriptive diagnosis;3fixed seeds, dependent checkpoints and reused controls; means/ranges are not confidence intervals",
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ]
+}

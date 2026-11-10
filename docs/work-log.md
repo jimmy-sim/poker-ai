@@ -2248,3 +2248,64 @@ diagnosis (issue4 comment6774698163), with all3seeds/readouts/work labels and
 both encodings/games; no causal/floor claim or favorable unchanged retry.
 Final artifact CI is required before merge. AI-assisted work, no inferred human
 minutes or mastery.
+
+
+### November10 — prospective bounded saved-policy diagnosis
+
+After the complete independently checked negative primary, register the fixed
+post-hoc panel before generating decomposition tables: B4/signed, both games
+and encodings, all3seeds/readouts/work labels, B1 and IID controls. Expected
+324method points/216paired points/108method groups/72paired groups. Stack only
+within-partition+extra-information gain; keep exact-prefix river switch separate
+from total/actual EV loss. Include actual work/updates and whole/post-warm support.
+The config binds published own SHA and unchanged model sourcea5a2e28. No new
+trajectory, cap, seed, threshold or default change. Acceptance requires complete
+source/own/native/journal/whole-clock checks, constructor-blocked read-only
+replay, tests and reproducible tables/figure. Post-hoc evidence is descriptive,
+not causal proof or an irreducible-floor claim. No diagnostic result yet.
+
+
+### November10 — checked saved-policy projection entrypoint
+
+Implemented the prospective diagnostic as experiment-specific CLI orchestration
+over the frozen replay/metric/native/schema/source libraries. No src/model
+module changes. Complete108coordinate selection produces324method/216paired
+points and108/72three-seed groups; stack only within+extra. The fixed figure
+keeps all medium-game seeds/readouts and both encodings. Replays run with
+learner/reference constructors blocked; fresh outputs, config/own/model source
+hashes and complete native journal/clock are checked first.
+
+Fictional base11pass1skip2.31s, optional12pass10.37s, Ruff/format/strict typing
+pass. Tests independently assert known signed gaps, zero-self, separate river
+metric, missing/duplicate/type/nonfinite/identity failures, missing seeds and
+no-overwrite-before-expensive-replay. Actual diagnosis and final base/optional/
+hosted checks follow; no diagnosis result or causal claim yet. AI-assisted work.
+
+### November 10 — complete saved-policy component diagnosis
+
+PR #43 merged at d83de6d after final artifact CI 42869639853 passed both jobs.
+Its negative performance gate remains failed; independent numerical validation
+does not change that outcome. PR #44 is retargeted to main.
+
+The constructor-blocked saved-policy diagnosis completed in 352.852207541s:
+324 method points / 216 paired points / 108 method groups / 72 paired groups,
+all fixed seeds/readouts/checkpoints/encodings/games retained. Frozen model
+a5a2e28 and own/native input hashes validated. No training/reference constructed.
+
+Primary compressed linear-average means (percent initial pot) are candidate
+3.350775 = 0.150998 within + 3.199777 extra, IID 2.172684 = 0.094215 + 2.078469.
+The candidate-minus-IID excess is concentrated in extra-information value;
+this locates a vulnerability, not a causal representation-only conclusion or
+irreducible floor. Exact-control and all current/uniform/linear readouts remain
+visible. River-switch values stay separate. Whole warm support does not imply
+learned coverage; updates differ at equal work.
+
+All four local suites pass: base 2,278 / 47 skipped / 148 deselected in
+379.79s (311) and 369.38s (312); optional 2,334 / 148 deselected in 414.01s
+and 402.83s. Runtime before/after assertions retained with exact logs.
+Actual diagnosis figure visually inspected. Cross-runtime numeric reproduction
+and final hosted CI remain to be recorded. Main was fast-forwarded to PR #43
+only after a fresh byte snapshot; all ten unrelated modified files and exact
+status were preserved. AI-assisted execution; no inferred human minutes.
+
+Numeric reproduction on Python 3.12.15 / NumPy 2.5.4 completed in 255.965582s; all four CSV files are byte-identical to the original-runtime diagnosis. Constructors remained blocked and no training or reference construction occurred. This is saved-data reproduction, not real trajectory parity. Exact receipt and manifest are retained in results/private-prefix/diagnosis/checks/.
