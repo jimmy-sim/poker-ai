@@ -2840,6 +2840,20 @@ and check the admission receipt, then start the full24-context matched-update
 study only if its complete caps and verification fit the remaining window.
 AI-assisted checking; no additional human practice or time was reported.
 
+### Step 65 — admission means permission to run, not a strong agent (November 10)
+
+The complete software proof and fixed own/native compute gates passed, so the
+project recorded an admission receipt. It binds the actual source and evidence
+files for all 24 contexts and 48 update-count targets. Its exact pushed bytes
+will be checked before training. There is enough time left in this authorized
+window for the full unchanged budgets and verification.
+
+This gate answers “is the planned experiment implemented and affordable?”
+It does not answer “is the strategy good?” The actual matched-update study
+still has to run and be independently audited. Every seed/readout and any
+failure remains in scope. AI-assisted work; no additional human practice or
+time was reported.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

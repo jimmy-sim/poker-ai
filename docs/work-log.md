@@ -1821,3 +1821,19 @@ The source-bound proof and complete own/native compute gates now pass.
 Next: generate, check and publish admission before any new real trajectory.
 This is bounded scalar/calculator agreement, not agent/solver strategy agreement
 or a stronger/default/fresh/global claim. All earlier failures remain retained.
+
+### November 10 — checked compute admission recorded before trajectories
+
+The frozen admission routine recomputed the complete source/proof/72-row
+forecast/old-overhead/native chain and produced
+[admission.json](../results/matched-update-pipeline/admission.json). It binds
+all source inputs, proof/corpus archives and measured own/native receipt bytes.
+New launcher prerequisites additionally checked the complete command clocks
+(own234.7505 s <900, native2×111.6745=223.3490 s <900) before recording.
+Original inner native guard222.9384 s also passes. Source244/checked36dbd45,
+both source CI jobs42808276656. This is compute admission for the complete
+24-context/48-target known-game study only, not a performance/default/fresh/
+global gate. Publish this receipt and check its pushed exact bytes before any
+new learner starts. At04:01Pacific the full7200 own +900 native caps plus
+verification fit comfortably before the one-time noon deadline. No cap, seed,
+source target or acceptance tolerance changed. All earlier failures remain.
