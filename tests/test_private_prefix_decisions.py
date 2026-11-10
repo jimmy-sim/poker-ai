@@ -254,3 +254,102 @@ def test_browser_controls_switch_rows_seeds_methods_and_seats(
     assert "20261303 / B1 / responding seat 1" in text
     assert "TOTAL unilateral gain" in text
     assert "not an extra-information-only or retraining benefit" in text
+
+
+def test_reject_per_seat_errors_even_when_total_cancels() -> None:
+    summary, source = roots_fixture()
+    for seat, change in ((0, 0.25), (1, -0.25)):
+        r = summary["responses"][seat]
+        r["exact_gain_chips"] += change
+        r["loss_sum_chips"] += change
+        r["street_losses_chips"]["RIVER"] += change
+    assert sum(r["exact_gain_chips"] for r in summary["responses"]) / 2 == 3.0
+    with pytest.raises(ArithmeticError):
+        CLI.verify(summary, source, 1e-9)
+
+
+def detail_fixture() -> tuple[dict[str, Any], dict[str, Any]]:
+    summary, _ = roots_fixture()
+
+    def row(info: int, loss: float) -> dict[str, Any]:
+        return dict(
+            exact_info=info,
+            loss_chips=loss,
+            counterfactual_mass=1.0,
+            saved_reach_mass=0.5,
+            conditional_values_chips=[0.0, 1.0],
+        )
+
+    detail = dict(
+        responses=[
+            dict(target=0, infos=[row(0, 1.0), row(2, 2.0)]),
+            dict(target=1, infos=[row(1, 3.0)]),
+        ]
+    )
+    return summary, detail
+
+
+def test_details_require_every_owned_row_and_total_gain() -> None:
+    summary, detail = detail_fixture()
+    CLI.verify_details(summary, detail, [0, 1, 0], [2, 2, 2], 1e-9)
+
+
+@pytest.mark.parametrize(
+    "bad", ["missing", "duplicate", "menu", "negative", "nan", "sum"]
+)
+def test_reject_bad_owned_details(bad: str) -> None:
+    summary, detail = detail_fixture()
+    rows = detail["responses"][0]["infos"]
+    if bad == "missing":
+        rows.pop()
+    elif bad == "duplicate":
+        rows[1] = copy.deepcopy(rows[0])
+    elif bad == "menu":
+        rows[0]["conditional_values_chips"].pop()
+    elif bad == "negative":
+        rows[0]["counterfactual_mass"] = -1.0
+    elif bad == "nan":
+        rows[0]["loss_chips"] = float("nan")
+    else:
+        rows[0]["loss_chips"] = 1.5
+    with pytest.raises((ArithmeticError, ValueError)):
+        CLI.verify_details(summary, detail, [0, 1, 0], [2, 2, 2], 1e-9)
+
+
+def test_partial_details_survive_later_failure_without_overwrite(
+    tmp_path: Path,
+) -> None:
+    import gzip
+
+    summary, detail = detail_fixture()
+    CLI.retain_partial(tmp_path, [summary], detail)
+    first = tmp_path / "partial-01-details.json.gz"
+    before = first.read_bytes()
+    assert json.loads(gzip.decompress(before)) == detail
+    broken = copy.deepcopy(detail)
+    broken["responses"][0]["infos"][0]["loss_chips"] = float("nan")
+    with pytest.raises(ValueError):
+        CLI.retain_partial(tmp_path, [summary, summary], broken)
+    assert first.read_bytes() == before
+    assert not (tmp_path / "partial-02-details.json.gz").exists()
+    assert len(json.loads((tmp_path / "partial.json").read_text())["profiles"]) == 1
+    with pytest.raises(FileExistsError):
+        CLI.retain_partial(tmp_path, [summary], detail)
+    assert first.read_bytes() == before
+
+
+def test_zero_loss_browser_stays_usable(tmp_path: Path, capsys: Any) -> None:
+    output = cached_fixture(tmp_path)
+    with patch.object(VIEW, "check_source"):
+        profiles = VIEW.load(tmp_path, output)
+    for p in profiles:
+        for r in p["responses"]:
+            r["top_groups"] = []
+            r["exact_gain_chips"] = 0.0
+    with (
+        patch.object(VIEW, "load", return_value=profiles),
+        patch("sys.argv", ["viewer", "--interactive"]),
+        patch("builtins.input", side_effect=["n", "p", "t", "q"]),
+    ):
+        assert VIEW.main() == 0
+    assert "No positive-loss groups" in capsys.readouterr().out

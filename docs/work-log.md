@@ -2349,3 +2349,18 @@ retain each completed profile's details before advancing, rather than retaining
 only a count until the final write. This is reporting validation/retention work,
 not a changed learner or a favorable training retry. Preserve the first outcome
 and rerun only saved-data analysis after the fix. No new poker training.
+
+### November 10 — strengthen report accounting and interruption retention
+
+Retained the complete initial diagnostic/source before review fixes. Added each
+seat's gain-to-root identity, complete owned-row/menu/support validation, and
+per-profile finite detail persistence before advancing. Canceling seat errors,
+missing/duplicate rows, changed sums/menus/support and later nonfinite detail
+failure are rejected; earlier completed detail bytes remain unchanged. Browser
+zero-loss fixture initially failed from indexing before the empty-list check;
+moved indexing after that check. Focused 26 pass0.48s; Ruff/format/typing pass.
+No scientific model/data change. Final full suites and saved-data replay follow.
+
+PR #44 final artifact CI42874878787 passed both jobs and merged8b303fdd.
+PR #45 retargeted to main; integrate the merged data-only reproduction receipts
+before final checks. Human minutes not recorded; AI-assisted execution.

@@ -55,9 +55,8 @@ def load(root: Path, folder: Path) -> list[dict[str, Any]]:
 def show(profile: dict[str, Any], seat: int, rank: int) -> None:
     response = profile["responses"][seat]
     groups = response["top_groups"]
-    if not 1 <= rank <= len(groups):
+    if not 1 <= rank <= max(1, len(groups)):
         raise ValueError("choose an available positive group rank")
-    group = groups[rank - 1]
     print(f"\n{profile['seed']} / {profile['role']} / responding seat {seat}")
     print("Cached hash-checked report; full poker replay is a separate command.")
     print("Own best reply against the fixed saved other seat; no new training.")
@@ -65,6 +64,10 @@ def show(profile: dict[str, Any], seat: int, rank: int) -> None:
         f"Total exploitability: {profile['exact_exploitability_chips']:.6g} chips; "
         f"this seat's unilateral gain: {response['exact_gain_chips']:.6g} chips"
     )
+    if not groups:
+        print("No positive-loss groups above the report's numerical tolerance.")
+        return
+    group = groups[rank - 1]
     print(
         f"Group {rank}/{len(groups)} (row {group['abstract_info']}): "
         f"{group['loss_contribution_chips']:.6g} chips of TOTAL unilateral gain."
@@ -150,9 +153,8 @@ def main() -> int:
             args.seat = 1 - args.seat
             rank = 1
         elif command in ("n", "p"):
-            rank = 1 + (rank - 1 + (1 if command == "n" else -1)) % len(
-                profile["responses"][args.seat]["top_groups"]
-            )
+            count = max(1, len(profile["responses"][args.seat]["top_groups"]))
+            rank = 1 + (rank - 1 + (1 if command == "n" else -1)) % count
         else:
             print("Choose n, p, s, o, t or q.")
     return 0

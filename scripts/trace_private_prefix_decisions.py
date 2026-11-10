@@ -93,6 +93,21 @@ def verify(summary: dict[str, Any], row: dict[str, Any], tolerance: float) -> No
         if set(street) - {"TURN", "RIVER"}:
             raise ArithmeticError("unexpected decision street")
         errors += [
+            abs(
+                response["exact_gain_chips"]
+                - response["exact_reply_value_chips"]
+                + response["baseline_value_chips"]
+            ),
+            abs(
+                response["within_partition_gain_chips"]
+                - response["restricted_reply_value_chips"]
+                + response["baseline_value_chips"]
+            ),
+            abs(
+                response["extra_information_value_chips"]
+                - response["exact_reply_value_chips"]
+                + response["restricted_reply_value_chips"]
+            ),
             abs(math.fsum(street.values()) - response["exact_gain_chips"]),
             abs(response["loss_sum_chips"] - response["exact_gain_chips"]),
             abs(response["accounting_error_chips"]),
@@ -107,6 +122,53 @@ def verify(summary: dict[str, Any], row: dict[str, Any], tolerance: float) -> No
     )
     if any(not math.isfinite(e) or e > tolerance for e in errors):
         raise ArithmeticError("decision trace differs from audited roots/accounting")
+
+
+def verify_details(
+    summary: dict[str, Any],
+    detail: dict[str, Any],
+    owners: list[int],
+    menus: list[int],
+    tolerance: float,
+) -> None:
+    """Require every owned row exactly once, not just the displayed examples."""
+    json.dumps(detail, allow_nan=False)
+    if [r["target"] for r in detail["responses"]] != [0, 1]:
+        raise ArithmeticError("complete ordered decision detail seats required")
+    for response, scalar in zip(detail["responses"], summary["responses"], strict=True):
+        target = response["target"]
+        rows = response["infos"]
+        if [r["exact_info"] for r in rows] != [
+            i for i, owner in enumerate(owners) if owner == target
+        ]:
+            raise ArithmeticError("complete owned exact-row inventory required")
+        if any(
+            r["loss_chips"] < -tolerance
+            or r["counterfactual_mass"] < 0
+            or r["saved_reach_mass"] < 0
+            or len(r["conditional_values_chips"]) != menus[r["exact_info"]]
+            for r in rows
+        ):
+            raise ArithmeticError("invalid decision row values/support/menu")
+        if (
+            abs(math.fsum(r["loss_chips"] for r in rows) - scalar["exact_gain_chips"])
+            > tolerance
+        ):
+            raise ArithmeticError("all owned decision rows differ from root gain")
+
+
+def retain_partial(
+    output: Path,
+    summaries: list[dict[str, Any]],
+    detail: dict[str, Any],
+) -> None:
+    """Commit each completed profile's finite details before advancing."""
+    data = canonical(detail)
+    path = output / f"partial-{len(summaries):02d}-details.json.gz"
+    with path.open("xb") as stream:
+        with gzip.GzipFile(fileobj=stream, mode="wb", filename="", mtime=0) as zipped:
+            zipped.write(data)
+    persist(output / "partial.json", dict(status="partial", profiles=summaries))
 
 
 def policies(
@@ -216,6 +278,13 @@ def run(root: Path, output: Path) -> None:
                 tolerance=config["tolerance_chips"],
             )
             verify(summary, row, config["tolerance_chips"])
+            verify_details(
+                summary,
+                detail,
+                [int(o) for o in scoring.exact.owners],
+                [len(a) for a in scoring.exact.actions],
+                config["tolerance_chips"],
+            )
             if array_sha(policy) != fingerprint or array_sha(expanded) != before:
                 raise ArithmeticError("decision analysis mutated saved policy")
             identity = dict(
@@ -226,9 +295,7 @@ def run(root: Path, output: Path) -> None:
             )
             summaries.append(dict(**identity, **summary))
             details.append(dict(**identity, **detail))
-            persist(
-                output / "partial.json", dict(status="partial", profiles=len(summaries))
-            )
+            retain_partial(output, summaries, details[-1])
             print(f"traced {record['seed']}/{record['role']}", flush=True)
     if len(summaries) != 9 or sum(len(s["responses"]) for s in summaries) != 18:
         raise ArithmeticError("complete nine/eighteen decision inventory required")
@@ -251,6 +318,9 @@ def run(root: Path, output: Path) -> None:
             seconds=time.perf_counter() - started,
             profiles=9,
             responses=18,
+            owned_exact_rows=sum(
+                len(r["infos"]) for p in details for r in p["responses"]
+            ),
             constructors_blocked=True,
             training_performed=False,
             reference_constructed=False,

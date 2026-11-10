@@ -56,3 +56,20 @@ responding seat, and q to quit. The displayed responding cards belong to the
 best-response player; saved probabilities are the strategy being diagnosed.
 Counterstrategy choices are conditional on that fixed saved opponent and reply
 continuation.
+
+## Review safeguards before the final saved-data reproduction
+
+The first complete report is retained with exact source at commit b64822f and
+results/private-prefix/decisions-initial57f. Its nine profiles/eighteen responses
+finish in 358.294262 seconds; initial base suites pass 2,294 tests each and
+optional suites pass 2,350 each. This is a complete initial diagnostic, not a
+new learner or a training retry.
+
+Review adds explicit per-seat gain identities, full owned-row/menu/support
+checks and a deterministic detail file for each completed profile before
+advancing. A later failure retains those details and the cumulative summary.
+The cached browser also handles a seat with no positive-loss groups. Its new
+zero-loss fixture initially exposed an indexing error, which was corrected.
+All 26 focused checks now pass (0.48 seconds), including canceling-seat errors
+and interrupted-detail retention. Final suites and the saved-data reproduction
+are next. No scientific source, strategy, seed, cap or threshold changes.
