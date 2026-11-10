@@ -2900,6 +2900,50 @@ both Python versions reproduces all values; the original CSV renderer can
 reorder columns after JSON replay. The new presentation work will fix column
 order without changing the historical scientific files.
 
+### Step 68 — make the two-axis result inspectable (November 10)
+
+The complete study is merged in[PR40](https://github.com/jimmy-sim/poker-ai/pull/40).
+Your local project was updated after all ten existing modified result files
+were backed up; their bytes are unchanged. The next work is a separate
+[data-only report and browser](matched-update-viewer.md).
+
+The report compares both the B1 final policy at the same work label and the
+earlier B1 prefix at the same update count. It keeps every seed and readout.
+The browser shows one matched pair's saved action probabilities, actual work
+and update counts, then lets you move through rows with n/p/q. A large action
+difference is not automatically an important decision or a good poker action.
+
+The first real-data integration check caught a tuple-index assumption in the
+new reader. Joining explicit saved IDs fixed it; a regression test covers that
+case. All29 focused tests and the actual constructor-blocked reader checks on
+both Python versions pass. The actual tests replay the whole saved study and
+exercise both average/current archive paths. Complete source checks still come
+before publication of the new heatmaps and tables. This reports existing
+evidence; it does not change the agent. AI-assisted work, with no additional
+personal practice or time reported.
+
+The full source checks then caught an optional plotting boundary: the research
+environments passed, while base typing could not resolve Matplotlib. Plotting
+modules now load only when a plot is requested, using a headless backend. A
+fictional rendering test covers that boundary. The failed logs remain visible;
+complete source checks rerun before the new report is published. The archived
+strategies, numbers and scientific gates are unchanged.
+
+The corrected full checks now pass:2112 base tests and2166 optional tests on
+**each** supported runtime, plus the actual saved-data integration and both
+hosted CI jobs. The published report contains all288 self/2304 fixed contrasts,
+96/768 complete three-seed groups and three heatmaps. All six numeric/text
+exports reproduce byte-for-byte across Python3.11/3.12. The assistant also
+checked n/p/q through ranks1→2→1 after one load; this does not imply new user
+practice. [Commands and reading guide](matched-update-viewer.md).
+
+For the motivating medium/q8/signed/linear comparison, the same-work means are
+4.354032% for B1,2.172684% for B4 and3.553971% for B16, in percent initial pot.
+At equal updates, B1 stops earlier and spends less work; B4 still has mixed
+seed directions. A lower mean on these tiny known ranges does not establish a
+competitive agent. Next: test a newly preregistered sampling candidate, starting
+with correctness rather than selecting the nicest chart. No default changed.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

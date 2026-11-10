@@ -1,0 +1,28 @@
+{
+  "axes": [
+    "same_work_label",
+    "same_updates"
+  ],
+  "limits": "known tiny ranges; dependent seeds/readouts/shared B1 final endpoints; L1 is not EV loss or reach-weighted importance; no default/fresh/global admission",
+  "metrics": [
+    "exact_exploitability",
+    "within_partition_gain",
+    "extra_information_gap",
+    "river_only_gain_exact_prefix",
+    "value_player_zero"
+  ],
+  "normalization": "100 times chips divided by each versioned spot initial pot; arithmetic means of all three declared seed values, no confidence intervals",
+  "readouts": [
+    "current",
+    "uniform_average",
+    "linear_average"
+  ],
+  "schema_version": 1,
+  "scope": "all144 matched target/readout pairs on both compute axes; all1152 fixed contrasts per axis; no training/reference construction or policy edits",
+  "source_sha256": {
+    "results/matched-update-study/native.json": "d49977751a38da440a13792034cfe237224b47b57170d4ee1a66b03e1ffaed22",
+    "results/matched-update-study/own.json": "f63338bf44a54a58a603eedffd11832afb38f970374a34a13c7c5a255d2c2b7d"
+  },
+  "status": "prospective_read_only_summary_and_viewer",
+  "viewer": "same game/encoding/regret rule/seed/readout and exact target iteration; all owned rows ranked by unweighted L1; representative own cards/board only; n/p/q loads once"
+}
