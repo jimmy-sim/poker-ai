@@ -8,39 +8,54 @@
     "run_id": 42792838522,
     "source_sha256": "a516f6c59105c701d91d5d9d2c802dc8cba5cf4cb00037064d50dd3319999887"
   },
-  "correction_notice": "results/matched-update-pipeline/superseded-environment-labels/retention.json",
   "local": {
+    "correction": "Machine-identified runtimes replace ineligible directory-name assumptions; original bytes retained under superseded-environment-labels.",
     "results": {
       "base311": {
-        "command": "make check",
+        "command": "explicit UV_PYTHON; uv sync --locked --dev; runtime assertion; make check; runtime assertion",
         "log_file": "results/matched-update-pipeline/checks/base311.log",
-        "log_sha256": "edd3872c74a09fcf884e59de5985306ec440600373d965151d31c3be728f6c6a",
-        "numpy": "2.5.4",
+        "log_sha256": "2014bff6bed78f3431faa6d1c1a09b033ba14d6746aa54ef602d83b62c87fe57",
+        "numpy": "2.4.6",
         "python": "3.11.17",
-        "seconds": 311.26,
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-base311/bin/python",
+          "numpy": "2.4.6",
+          "python": "3.11.17"
+        },
+        "seconds": 300.64,
         "status": "passed",
         "tests_deselected": 143,
         "tests_passed": 2044,
         "tests_skipped": 44
       },
       "base312": {
-        "command": "make check",
+        "command": "explicit UV_PYTHON; uv sync --locked --dev; runtime assertion; make check; runtime assertion",
         "log_file": "results/matched-update-pipeline/checks/base312.log",
-        "log_sha256": "52592a82fc58d766f29bc687fc21216005d739a6faa4da4d2e73608f02da10d1",
+        "log_sha256": "5c359d5b08c8a9c8b6315478c106c6aa61c84ed84b3315011606b70313739792",
         "numpy": "2.5.4",
         "python": "3.12.15",
-        "seconds": 312.28,
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-base312/bin/python",
+          "numpy": "2.5.4",
+          "python": "3.12.15"
+        },
+        "seconds": 287.24,
         "status": "passed",
         "tests_deselected": 143,
         "tests_passed": 2044,
         "tests_skipped": 44
       },
       "focused_slow311": {
-        "command": "pytest -q -m slow tests/test_matched_update_inputs.py tests/test_matched_array_reference.py tests/test_prefix_capture_integration.py tests/test_frozen_batch_integration.py tests/test_batch_reduction_integration.py tests/test_batch_current_integration.py",
+        "command": "direct same recorded optional environment; pytest -q -m slow: matched, prefix, frozen, reduction, current integrations",
         "log_file": "results/matched-update-pipeline/checks/slow311.log",
         "log_sha256": "da918802028f6e96bd45b9131472376ca9602ab5e36f61b4ddb592743105fbdb",
         "numpy": "2.4.6",
         "python": "3.11.17",
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-env311/bin/python",
+          "numpy": "2.4.6",
+          "python": "3.11.17"
+        },
         "seconds": 266.72,
         "status": "passed",
         "tests_deselected": 8,
@@ -48,11 +63,16 @@
         "tests_skipped": 0
       },
       "focused_slow312": {
-        "command": "pytest -q -m slow tests/test_matched_update_inputs.py tests/test_matched_array_reference.py tests/test_prefix_capture_integration.py tests/test_frozen_batch_integration.py tests/test_batch_reduction_integration.py tests/test_batch_current_integration.py",
+        "command": "direct same recorded optional environment; pytest -q -m slow: matched, prefix, frozen, reduction, current integrations",
         "log_file": "results/matched-update-pipeline/checks/slow312.log",
         "log_sha256": "8c162a93cc4a6e5defb9ad9bd0e2465df978a9434a5adfc559e18c26712d3993",
         "numpy": "2.5.4",
         "python": "3.12.15",
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-env312/bin/python",
+          "numpy": "2.5.4",
+          "python": "3.12.15"
+        },
         "seconds": 256.99,
         "status": "passed",
         "tests_deselected": 8,
@@ -60,11 +80,16 @@
         "tests_skipped": 0
       },
       "optional311": {
-        "command": "Ruff check .; Ruff format --check .; mypy --strict src tests scripts; pytest -q -m 'not slow' (direct recorded environment binaries)",
+        "command": "direct recorded environment Ruff lint/format, strict mypy and pytest -q -m \"not slow\"",
         "log_file": "results/matched-update-pipeline/checks/optional311.log",
         "log_sha256": "d625d1b7f018d541dcb8c2dfc137861bde6def93c900704da49e98f0eb971cd4",
         "numpy": "2.4.6",
         "python": "3.11.17",
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-env311/bin/python",
+          "numpy": "2.4.6",
+          "python": "3.11.17"
+        },
         "seconds": 372.2,
         "status": "passed",
         "tests_deselected": 143,
@@ -72,11 +97,16 @@
         "tests_skipped": 0
       },
       "optional312": {
-        "command": "Ruff check .; Ruff format --check .; mypy --strict src tests scripts; pytest -q -m 'not slow' (direct recorded environment binaries)",
+        "command": "direct recorded environment Ruff lint/format, strict mypy and pytest -q -m \"not slow\"",
         "log_file": "results/matched-update-pipeline/checks/optional312.log",
         "log_sha256": "fd448754a85dd4e5c2003ea88d7003573cdeb1c8c574216f82a4497e8ca2119a",
         "numpy": "2.5.4",
         "python": "3.12.15",
+        "runtime_evidence": {
+          "executable": "/tmp/poker-batch-current-env312/bin/python",
+          "numpy": "2.5.4",
+          "python": "3.12.15"
+        },
         "seconds": 360.08,
         "status": "passed",
         "tests_deselected": 143,
@@ -336,6 +366,5 @@
     }
   },
   "source_sha256": "a516f6c59105c701d91d5d9d2c802dc8cba5cf4cb00037064d50dd3319999887",
-  "status": "superseded_environment_mismatch_not_admitted",
-  "superseded_original_sha256": "b52f7df5ccd59b599d511c8041bd6dd125fcc564e88be22aedd03cf43d407289"
+  "status": "tested_software_not_real_study_admission"
 }

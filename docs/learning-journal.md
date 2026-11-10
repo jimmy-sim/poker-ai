@@ -20,12 +20,11 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November10 update: the matched-update pipeline has passed broad software checks,
-but an environment-label error invalidated one local prerequisite claim. Step50
-explains the correction and retained evidence. The actualPython3.12 base check
-is being rerun with explicit interpreter selection. Real prefix timing and the
-large Hold’em comparison remain blocked until the corrected evidence chain and
-compute gate pass. There is no new default or competitive-strength claim.
+November10 update: the matched-update pipeline's corrected base, optional, slow
+and hosted checks have passed. Steps50–51 explain an environment-label mistake,
+its retained original evidence and the actual-runtime reruns. The fresh eligible
+tiny proof comes next; real prefix timing and the larger Hold’em comparison
+remain gated. There is no new default or competitive-strength claim.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -2624,6 +2623,21 @@ Python3.12 check runs, with runtime printed before and after. No real prefix
 timing or new poker trajectory started. Next: correct the evidence chain and
 repeat the eligible small proof. This records an assistant execution/reporting
 error, not a claim about your actions or understanding.
+
+## 51. Rebuild the evidence chain using actual runtimes — November 10
+
+Both base runs passed again, with the interpreter selected explicitly and its
+runtime asserted before and after:Python3.11.17/NumPy2.4.6 andPython3.12.15/
+NumPy2.5.4. Each passed2,044 tests plus lint, formatting and typing. The genuine
+optional and slow results remain2,097 and59 tests per version.
+
+The corrected receipt uses machine output rather than a folder name. All original
+mislabeled files remain in a separate, hashed retention folder. The first small
+arithmetic proof is not being reused as admission: a fresh proof will run after
+this corrected prerequisite record is published, with own evidence published
+before native comparison. Real timing and the larger study still follow their
+separate gates. This correction and execution were assistant work; no new human
+practice or minutes are inferred.
 
 ## Your own learning notes
 

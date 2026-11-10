@@ -1604,3 +1604,13 @@ invalid-chain proof files are retained in the superseded folder and original
 commits. Their root latest-attempt aliases are cleared for a new eligible proof.
 Corrected source receipts will use parsed machine runtime headers, not directory
 names. No real timing or new trajectory has run.
+
+### November10 — corrected machine-identified source receipt published
+
+Re-recorded the same checked06a3402 source cohort after both explicit base runs
+passed. Runtime headers before/after match:3.11.17/NumPy2.4.6 and3.12.15/2.5.4.
+Base counts2044each (300.64/287.24s), optional2097each (372.20/360.08s), relevant
+slow59each (266.72/256.99s); hosted42792838522bothgreen. Metadata now comes
+from actual header output; original invalid labels/bytes stay retained. The new
+source receipt enables a fresh eligible tiny proof only. First attempt arithmetic
+results remain historical, ineligible prerequisite evidence; no real timing yet.

@@ -134,3 +134,12 @@ It is separate from earlier engine/evaluator correctness evidence and does not
 establish full-game playing strength. Worst-repeat forecasts are planning gates,
 not statistical runtime guarantees; games/readouts and three seeds remain a
 small dependent diagnostic design.
+
+### Local interpreter selection correction
+
+A directory calledbase312 does not selectPython3.12. `uv run` can recreate it
+using the project's default `.python-version`3.11. Select the interpreter
+explicitly (for example`UV_PYTHON=3.12`) and assert/log the actual Python/NumPy
+runtime before and after checks. The original mislabeled receipt and first tiny
+proof remain byte-retained under`superseded-environment-labels/retention.json`
+and are not study admission. The corrected source receipt uses machine headers.
