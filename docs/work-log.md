@@ -2582,3 +2582,36 @@ and a published software receipt are pending; no new real trajectory or stronger
 default/fresh/global claim. Added modules create a new source cohort, not an
 inheritance of the old admission. User authorization continues until stopped;
 the deleted automation is not recreated. No human hours or mastery inferred.
+
+### November 11 — freeze matched own-opponent learning controls and raw captures
+
+PR #49 foundation source05a00d6 passes full local base2401/optional2458 tests on
+both runtimes; 48 base skips and148 deselections, base363.61/350.74s and optional
+415.10/409.54s. Hosted42986614874 BOTH SUCCESS: 2401pass48skip148deselect1 retained
+historical roundoff warning; 591.72/791.28s. Clean311/312 software proofs agree on
+all analytic/structural/input/source fields, completing2.456548/2.388334s. Raw logs,
+proofs and source/hash receipt retained in results/opponent-information/software-views/.
+This checks source05a only, not the new learning pipeline or real admission.
+
+Prospective issue4comment6791111602 fixes the next coherent comparison before
+new real trajectories. Four logical arms separate fine own-opponent information
+from the cost of two learning games. Five actual paths per known game/seed reuse
+one explicitly charged coarse prefix. Fixed30paths/108boundaries/324rawpolicies/
+216ledgers/30warmorigins/108compositions/432uniqueprofiles, all3seeds/readouts,
+36originalB4barriers and1152fixed conditions. All8frozenowncontrols pergame are
+verified by saved policy hash; no strength-based opponent choice. Historical
+caps7200/900, runtime311.17/NumPy2.4.6, accuracy/coverage/recall gates preserved.
+New source cohort; historical admission is not inherited. Native output stays
+comparison-only. No new real-poker timing or learning trajectory.
+
+Implement fixed typed design, unchanged IIDB4 capture, warm/book/policy replay,
+explicit paired work and own seat composition/replay. Tiny fixtures cover all
+30paths and every raw/derived policy, normalization, legal-view/source bindings,
+observer state-bit identity, both warm starts/overshoots, repacked bad warm and
+average values, altered compositions, unsafe paths and interruption retention.
+Overwrite preflight rejects before initialization. Sixty-six focused tests pass
+at the implementation checkpoint; Ruff/format/strict typing pass. Full pipeline
+score/archive/fixed/native/report integration, source checks, conservative fixed
+forecast and published admission remain pending. Journal85 explains reuse and
+why two coarse paths are necessary. PR stays draft; no stronger/default/fresh/
+global claim and no personal hours or mastery inferred.

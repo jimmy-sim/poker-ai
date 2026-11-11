@@ -15,6 +15,7 @@ notes section is for your own questions and explanations as you work through it.
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
 - [Why these two static refinements do not help here](#step-83--rule-out-two-static-river-refinements-november-10)
+- [Comparing opponents without giving away compute](#step-85--separate-opponent-information-from-extra-training-work-november-11)
 - [Giving the own training opponent finer legal information](#step-84--build-the-own-opponent-information-controls-november-11)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
@@ -38,8 +39,9 @@ which river distinctions or training gaps produce those later choices. Steps
 82–83 find that finer static range probabilities and ordered combo outcomes add
 no new groups in this known game. The next question is whether training against
 an own opponent with more detailed own-card/public-board information helps.
-Step 84 builds and tests the mixed-information game software. The real learning
-comparison is not yet implemented or admitted. None of these results establishes
+Step 84 builds and tests the mixed-information game software. Step 85 fixes the
+learning comparison and implements its capture and replay checks. The full
+comparison pipeline is still being built; real learning is not admitted. None of these results establishes
 competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3433,6 +3435,49 @@ has run, and no reference strategies enter the learner. A real comparison still
 needs its fixed design, source/compute checks and published admission. The earlier
 strength failure and agent default stay unchanged. Codex assisted with the code
 and explanation; no personal practice, hours or mastery are inferred.
+
+The published foundation passes all broader checks: 2,401 base tests and 2,458
+optional tests on each runtime, with both GitHub jobs passing. The two software
+proofs agree exactly on their mathematical and structural fields. Their
+[receipt and raw logs](../results/opponent-information/software-views/checks.json)
+are retained. This validates the software construction; no new poker learning
+or playing-strength gain follows from it.
+
+### Step 85 — separate opponent information from extra training work (November 11)
+
+The finer-opponent idea needs two training games: one for our coarse seat 0 and
+another for our coarse seat 1. Simply comparing those two games with one ordinary
+self-play game could hide a compute advantage. The new design adds a paired
+coarse control too. Both paired arms split the same total work between two games
+and charge every warm start and both players' updates.
+
+**Example:** at a 100,000-node budget, the paired control takes seat 0 after
+50,000 nodes of coarse self-play and seat 1 after 50,000 nodes of a separate
+coarse self-play run. The treatment replaces each opponent with its own finer
+legal-information opponent at those same budgets. Each component can cross its
+label by one complete iteration, and both overshoots are reported. Ordinary
+coarse self-play through 100,000 nodes remains a separate practical comparison.
+
+The first control's earlier checkpoint already exists along the ordinary coarse
+path, so we reuse it. This saves duplicate execution. It stays fully charged in
+each logical comparison and is explicitly dependent data, not an independent
+repeat. Tests confirm that recording these extra checkpoints leaves every final
+training-state bit unchanged in the fictional fixtures.
+
+The [prospective protocol](own-opponent-learning.md) retains both known games,
+all three seeds, all three policy readouts and all eight frozen own opponents
+per game. The capture and replay tests exercise 30 fictional paths, 324 raw
+policies, 216 raw average ledgers and 108 seat compositions. They check that an
+average really matches its raw book and a composition really uses the correct
+seat's own rows. Consistently repacked wrong values must still fail; a matching
+file hash alone is insufficient. Interrupted work keeps its partial files.
+
+Sixty-six focused checks pass in 3.62 seconds, including the earlier construction
+checks. The complete scoring, fixed-opponent, archive, independent audit and
+compute/admission pipeline is still pending. Fictional signal games check
+software, not Hold'em strength. No new real trajectory or agent default change.
+Codex assisted with the implementation and explanation; personal hours, practice
+and mastery are not inferred.
 
 ## Your own learning notes
 

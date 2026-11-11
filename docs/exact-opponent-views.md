@@ -90,10 +90,19 @@ tests cover incorrect games/roles/mappings/policies, mutation, forgotten history
 depth, incomplete output and interruption retention. The existing cached
 saved-hand browser still loads all nine original snapshots.
 
-Full local/optional/hosted source checks and a published software receipt remain
-pending. No new poker trajectory or playing-strength/compression claim. The
-three old seeds, scientific caps and strength gates remain unchanged; the future
-learning grid is not selected by this software fixture.
+Published source `05a00d6` passes both local base suites (2,401 passed, 48
+skipped, 148 deselected; 363.61/350.74s) and optional suites (2,458 passed, 148
+deselected; 415.10/409.54s). Both hosted jobs in run 42986614874 pass: each 2,401
+passed, 48 skipped, 148 deselected and one retained historical rounding warning
+(591.72/791.28s). Raw logs, source hashes and both clean software proofs are in
+[the checked receipt](../results/opponent-information/software-views/checks.json).
+The proofs complete in 2.456548/2.388334s and agree exactly on analytic, structural,
+input and source fields. No learner/reference is constructed by the proof.
+
+No new poker trajectory or playing-strength/compression claim. The three old
+seeds, scientific caps and strength gates remain unchanged. The next
+[prospective comparison](own-opponent-learning.md) has its own controls and source
+cohort; this foundation is not its training admission.
 
 1. **Does the fine opponent see my hidden cards?** It uses its own legal private
    signal/cards and the public board. Different hidden worlds remain grouped
