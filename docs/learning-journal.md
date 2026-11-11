@@ -3922,6 +3922,15 @@ terminal browser. It changes no training strategy, seed, original acceptance
 rule or agent default. Implementation and results are still pending; no personal
 learning or time is inferred. Codex assists with the investigation.
 
+**Implementation update:** the new reader and browser have 35 focused passing
+tests. They check complete row accounting, common-opponent EV signs, saved reply
+fingerprints, partial-result retention, tampered caches and keyboard navigation.
+Relevant full checks and the actual complete diagnostic are still pending.
+The earlier measured study is merged as [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49),
+including its failed overall superiority condition. Your main checkout is updated
+and all ten unrelated local result changes are preserved byte-for-byte. No new
+personal learning exercise or time is inferred from these automated checks.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

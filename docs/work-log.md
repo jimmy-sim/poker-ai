@@ -2960,3 +2960,26 @@ only bound includes source-own replay and all work; original learning/audit caps
 and failed superiority gate unchanged. No new training/reference/default/fresh/
 global admission. Implementation and actual results are pending in isolated
 research/opponent-gap-inspection; PR49's final artifact CI runs unchanged.
+
+### November11 — merge verified experiment; implement read-only inspection
+
+PR49finalCI43032413121 passes both2590/58skip/149deselect/1historical warning,
+525.95/913.56s. Exact decoded logs/hashes retained in opponent-information/final-ci
+and explicitly scoped to the previous source, not this new diagnostic. Self-review
+records no independent human review. History-preserving merge07a39623960b615e65336bfcd13ac05869e63db2.
+Main fast-forwards only after a fresh complete snapshot; all10unrelated user
+file bytes, index entries, status and staged/unstaged diffs remain identical.
+Main package path checked;7permit regressions pass0.12s, with a non-failing
+pytest-cache write warning from the filesystem permissions. No user files reset.
+
+The new isolated branch implements frozen24/48trace and192common-opponent
+accounting, source/native-root verification, complete partial retention and a
+cached browser. Both ordered seats, every owned row, street/group sums, reply
+fingerprints, cross diagonal/zero-sum/common-opponent identities and no mutation
+are checked. Existing output and failed/interrupted caches are refused.
+Focused35tests pass on311; earlier33on312 before two additional browser cases.
+Complete Ruff/format/strict typing pass. Full relevant local/hosted checks and
+actual full diagnostic reproduction are still pending; no new learning or
+reference is constructed. The diagnostic clock starts at thin-script entry before
+numerical imports; interpreter startup is not measured or claimed. Original
+learning/audit caps unchanged. Journal95 remains prospective until actual output.
