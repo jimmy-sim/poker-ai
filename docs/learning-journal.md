@@ -11,6 +11,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the unfavorable seed is still vulnerable](#95-separate-a-changed-policy-from-a-changed-opponent)
 - [Latest measured learning result](#94-finer-own-opponents-help-the-harder-spot-the-overall-gate-still-fails)
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
@@ -58,6 +59,13 @@ validation before real learning can proceed. Steps92–93 complete those checks,
 the repeated proof/costs/forecast and corrected published permit. Step94 completes
 the actual learning run and independent audit while retaining the failed overall
 superiority condition.
+
+Step 95 completes the saved-policy diagnosis without training again. Two turn
+decisions account for most of the unfavorable seed's responding-seat 1 gap,
+but their values include later river replies. Comparing against the same saved
+opponents shows why better matchup results can coexist with worse vulnerability
+to an optimal reply. The new terminal browser lets you inspect every seed,
+method and seat.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3900,6 +3908,79 @@ from about 0.419% to 0.868% of the initial pot, even though its within-group
 learning gap decreases slightly. This points to a useful next question: which
 saved river decisions account for that seed's remaining vulnerability? It is
 a diagnosis to investigate, not a reason to drop the seed or change the gate.
+
+## 95. Separate a changed policy from a changed opponent
+
+**November 11, 2026 — issue #4; completed saved-policy diagnostic.**
+
+The completed finer-opponent study improves the harder known spot on average,
+but one seed still worsens. Before training again, the next investigation asks
+which saved decisions explain that weakness. It will inspect every final primary
+profile: both games, three seeds, four methods and both responding seats.
+
+**Example:** if strategy A has less loss than strategy B while facing a different
+opponent, that alone does not tell us that A's own choices improved. The new
+cross table will compare A and B against the same saved opponent. It will retain
+all 192 candidate/opponent/seat conditions. Separate traces will show how each
+profile's own fixed-opponent loss is distributed across decisions.
+
+The [frozen plan](own-opponent-decisions.md) requires complete row accounting,
+matching audited source roots, constructor blocks, tamper tests and a cached
+terminal browser. It changes no training strategy, seed, original acceptance
+rule or agent default. Implementation and results are still pending; no personal
+learning or time is inferred. Codex assists with the investigation.
+
+**Implementation update:** the new reader and browser have 35 focused passing
+tests. They check complete row accounting, common-opponent EV signs, saved reply
+fingerprints, partial-result retention, tampered caches and keyboard navigation.
+That was the implementation checkpoint; the completed checks and result follow.
+The earlier measured study is merged as [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49),
+including its failed overall superiority condition. Your main checkout is updated
+and all ten unrelated local result changes are preserved byte-for-byte. No new
+personal learning exercise or time is inferred from these automated checks.
+
+**Measured result:** the complete read-only command passes in 139.80 seconds.
+All24profiles,48seat traces and192common-opponent conditions are retained.
+The largest accounting difference is about 0.000000000000123 chips, below the
+declared tolerance. Both full local Python suites pass 2,625 tests; both relevant
+optional checks pass 35 tests. Both hosted source jobs pass, with the earlier
+numerical-roundoff warning retained. Final artifact CI is checked before merge.
+No model is trained or made the default by this diagnostic.
+
+**A real saved example:** in the harder spot with seed 20261302, the responding
+seat has `9c 9d` on `Ts 9s 4d 2h`, facing a 36-chip turn bet. The saved strategy
+folds about 99% of the time. Its best legal reply calls and then changes later
+river decisions. With that later continuation, calling is worth about -16.99 net
+chips versus -18 for folding. This is a result inside this specific saved game,
+not a general recommendation to call with a particular hand.
+
+That decision and the corresponding `Qh Kh` decision account for 91.50% of that
+seat's 0.67821-chip total reply gain. A turn loss can therefore point to a river
+continuation problem. We still need to hold the continuation fixed to understand
+which part creates the opportunity; a large bar alone does not answer that.
+
+**What the common-opponent table adds:** keep the paired opponent fixed, and
+changing this seat's saved candidate to mixed slightly reduces its reply gap,
+from 0.33099 to 0.32794 chips. Then keep that mixed candidate fixed but change the
+opposite seat to mixed, and the gap rises to 0.67821 chips. The self-play result
+therefore changes substantially with the other seat. Better results against
+saved opponents can coexist with a bigger weakness against an optimal reply.
+These new cross values are our own calculations; the original diagonal roots
+match the independently audited source, but the new crosses have no new native
+audit.
+
+**Try it:** from the project folder, run
+`.venv/bin/python scripts/inspect_own_opponent_decisions.py --seat 1`.
+Add `--rank 2` for the other large group, or use `--interactive` and press
+`n`/`p` for groups, `s` for seeds, `o` for methods, `g` for games, `t` for seats
+and `q` to quit. The agent smoke-tested all 48 selections with the actual cache;
+this does not record you personally trying them.
+
+The [method and complete result](own-opponent-decisions.md) link every profile,
+the full cross table and check logs. The next question is whether the same turn
+call is valuable with the saved river continuation, the best coarse continuation,
+or only the fine-information continuation. The original failed superiority gate,
+seeds and default remain unchanged. Codex assists; human hours are not inferred.
 
 ## Your own learning notes
 

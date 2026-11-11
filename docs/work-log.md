@@ -2946,3 +2946,72 @@ Method now states the known-game result, all-seed failure, failed low superiorit
 diagnosis, remaining medium seed2 extra-information gap, limitations and3practice
 interview answers. No original gate is changed and no quality promotion occurs.
 Final artifact hosted CI BOTH jobs must pass before a history-preserving merge.
+
+### November11 — prospective saved-decision and common-opponent diagnosis
+
+Issue4comment6797629916 registers the next bounded read-only investigation.
+Frozen own/native/config hashes select both known games, all3seeds/all4arms,
+final10m linear averages:24profiles/48responding-seat traces. The192condition
+common-opponent cross panel separates changed target from changed opponent.
+Full row/street/root accounting, diagonal source agreement, zero-sum hybrid-EV
+identities, cached-viewer tamper tests and constructor blocks define acceptance.
+Top10groups/4examples are display only; full owned rows remain. Fixed900s data-
+only bound includes source-own replay and all work; original learning/audit caps
+and failed superiority gate unchanged. No new training/reference/default/fresh/
+global admission. Implementation and actual results are pending in isolated
+research/opponent-gap-inspection; PR49's final artifact CI runs unchanged.
+
+### November11 — merge verified experiment; implement read-only inspection
+
+PR49finalCI43032413121 passes both2590/58skip/149deselect/1historical warning,
+525.95/913.56s. Exact decoded logs/hashes retained in opponent-information/final-ci
+and explicitly scoped to the previous source, not this new diagnostic. Self-review
+records no independent human review. History-preserving merge07a39623960b615e65336bfcd13ac05869e63db2.
+Main fast-forwards only after a fresh complete snapshot; all10unrelated user
+file bytes, index entries, status and staged/unstaged diffs remain identical.
+Main package path checked;7permit regressions pass0.12s, with a non-failing
+pytest-cache write warning from the filesystem permissions. No user files reset.
+
+The new isolated branch implements frozen24/48trace and192common-opponent
+accounting, source/native-root verification, complete partial retention and a
+cached browser. Both ordered seats, every owned row, street/group sums, reply
+fingerprints, cross diagonal/zero-sum/common-opponent identities and no mutation
+are checked. Existing output and failed/interrupted caches are refused.
+Focused35tests pass on311; earlier33on312 before two additional browser cases.
+Complete Ruff/format/strict typing pass. Full relevant local/hosted checks and
+actual full diagnostic reproduction are still pending; no new learning or
+reference is constructed. The diagnostic clock starts at thin-script entry before
+numerical imports; interpreter startup is not measured or claimed. Original
+learning/audit caps unchanged. Journal95 remains prospective until actual output.
+
+### November11 — complete saved-decision and common-opponent diagnosis
+
+PR50 source9bfe45c/fingerprint0927e4b runs the frozen complete read-only command
+in139.8018285s<900:24profiles/48responding traces/192cross conditions. Every owned
+row, street/group/root sum, reply fingerprint and diagonal source value checks;
+maximum trace discrepancy1.2273010890382813e-13chips<1e-9. Cross zero-sum/common-
+opponent identities pass; no training/reference/default/fresh/global admission.
+All new off-diagonals remain own calculations, not a new native audit.
+
+Both full local bases2625pass58skip149deselect, lint/format/types/hooks/source/
+runtime guards pass; relevant optional35pass1.00/.97s. SourceCI43036606438 BOTH
+jobs2625pass58skip149deselect1historical warning896.51/540.86s. Exact logs/receipts
+retained in results/opponent-decisions-checks. Agent-run actual-cache CLI smoke
+covers all48game/seed/arm/seat selections in one load, navigation, invalid key/
+rank and quit; no personal learning/time inferred. Final artifact CI remains.
+
+Unfavorable mediumseed20261302/mixed responding-seat1 gain.6782093457chips is
+concentrated in turn groups819/31 (.3988370387/.2216959014;91.50%combined).
+Their fine best reply calls using optimal later continuations. Saved prefix
+mass.4005350448vs paired.1546846116; not a conditional action frequency or causal
+local-error proof. With paired opponent fixed, paired->mixed target gap slightly
+improves.3309940111->.3279387575; switching that mixed target's opposite seat to
+mixed raises gap to.6782093457. Full both-game/all-seed/arm inventories retained;
+method/journal95 explain common-opponent scope, turn/river dependence and next
+controlled continuation question. Original superiority gate still FAILS; issue4
+open. These read-only results do not admit another learning study.
+
+Publication hooks first caught a missing tool path, then treated the exact
+external launcher record as repository Python. The path was restored and the
+unchanged launcher bytes retained as run_checks.py.txt (a historical execution
+record). No source, test, config, output or scientific gate changed.
