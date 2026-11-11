@@ -3104,3 +3104,48 @@ root-EV/retraining interpretation, new native audit/training/feature/default/
 fresh/global admission. Separate900s data-only clock and partial/failure retention;
 full relevant checks before measurement/merge. Implementation and outcomes pending;
 PR51 final artifact CI43044961257 runs unchanged.
+
+### November11 — prior continuation result merged; range math checkpoint
+
+PR51 finalCI43044961257 BOTH2687/58skip149deselect1historical warning,
+800.26/902.83s, before history-preserving merge01f91df39ba25ea6c53ba7f81a257c1f49b67476.
+Self-review6799767883 explicitly Codex-assisted solo review. Exact decoded final
+logs/length/hash receipt retained as old-source evidence, not checks of this new
+range calculation. Fresh main snapshot before FF preserves all10actual user
+file bytes/status/staged+unstaged diffs/userpath index entries. Main package path,
+new default four-column viewer and62focusedtests PASS1.89s; preservation verified
+again afterward. No personal practice/time inferred.
+
+New range core25tests and own-engine integration/group controls15tests pass:
+40PASS5.76s, relevant lint/format/strict typing pass. Independent terminal sums
+and both target signs check actual/prior mixtures, no hidden-world maximization,
+own-prefix exclusion, fixed pre-filter weights/zero support, wrong combo/weight
+order, blockers, aliases, nonfinite inputs, singleton/refinement/identical controls.
+Genuine uniform UNIT policies on both own games reconstruct every river menu,
+sourceQ/support and frozen suffix without training. Initial tamper-test reversal
+left a palindromic policy row unchanged; the fixture now changes the maximizer
+explicitly. Test config typing corrected. No actual saved-profile range study
+or new feature/learning. Complete command/cache/schema/failure/browser integration
+and full relevant source checks remain before measurement.
+
+### November11 — complete local range command/cache/browser implementation
+
+New-source integration now retains every river row and both own suffixes,
+builds192local panels/two group controls (384CSVrows), replays bound C5/C6/own/
+native receipts and original own math, and checks original reply roots/Q/support.
+Own prefix reach is excluded from range inference; declared priors match the
+chance-only compatible range, including wrong-order guards. Source weights update
+only actions inside the declared spot, not its fixed historical preflop prefix.
+Every complete profile is written before the next starts; complete/partial/
+failure destinations cannot be overwritten. Cached reader checks all artifact
+hashes and lazily rechecks detail bytes, full local mixture/group arithmetic,
+typed24/48/96/192inventories and fixed-support weighting. Browser adds r to
+n/p/s/o/g/t/q for own suffixes, showing hypothetical range order and both weights.
+
+Focused72tests PASS8.44s; full Ruff/728format/strict typing612files pass. Includes
+independent terminal sums, hidden-state/weighting/source guards, real uniform UNIT
+engine fixtures, source corruption, complete synthetic-cache schema/tamper,
+constructor blocks and genuine completed-profile interruption retention.
+All historical source/config/test/lock bytes remain unchanged; no actual saved-
+policy range comparison, training, feature or default change yet. Full relevant
+local runtime/optional/hosted checks precede measurement; final CI before merge.

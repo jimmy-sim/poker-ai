@@ -4082,6 +4082,23 @@ both own reply continuations. Its local disagreement scores are not root EV
 or improvements from training. No range result, new feature, new training or
 personal practice is claimed. Codex assists; the original failure remains.
 
+**Implementation checkpoint:** 40 focused math and integration checks pass.
+Small examples with independently summed outcomes catch hidden-hand mistakes,
+wrong range order and accidentally counting our own earlier action probabilities
+as evidence about the opponent. Uniform-policy examples in both poker engines
+reconstruct their conditional river values and keep every supported decision.
+The full saved-policy study has not run; these are software checks, not a stronger
+agent. The earlier four-column continuation browser is now merged and checked in
+your main project folder, with all ten local result changes preserved.
+
+**Command and browser checkpoint:** the focused suite now passes 72 tests.
+The new command retains complete and interrupted evidence, and the cached
+browser can compare both range weights and both later continuations. Missing
+hands, changed action values or weights, corrupted caches and wrong group totals
+are rejected. Full runtime checks and the actual saved-policy range comparison
+are still pending; no feature is deployed. Your main project's earlier
+continuation browser passes 62 focused checks, with local changes preserved.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

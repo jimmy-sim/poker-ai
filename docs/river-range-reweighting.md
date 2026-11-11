@@ -23,6 +23,11 @@ compatible prior uses only the declared weights and known card removal. This
 intervention is a local mechanism test; it does not define a new globally
 consistent poker strategy.
 
+The declared ranges are given at the spot root. The fixed earlier public prefix
+sets that root's pot, stacks and board; this diagnostic updates weights only
+from actions inside the enumerated spot. It does not infer a preflop range from
+the historical prefix or from real opponents.
+
 Retain both known games, all three seeds, all four methods, final10m primary
 linear averages:24profiles and48responding-seat conditions. Each uses both
 original own fine-best and restricted-best **river suffixes**, against its same
@@ -90,8 +95,20 @@ checks; no new effect-size threshold is chosen after outcomes.
 
 ## Status and next decision
 
-Prospective plan only; no implementation, range-mechanism outcome or stronger
-agent is claimed. After the full panel, determine whether posterior replacement
+Implementation checkpoint: 72 focused tests pass in8.44seconds. Independent
+terminal sums check both target signs, hidden-history mixtures, declared range
+order and own-prefix exclusion. Uniform UNIT policies in both own poker games
+reconstruct all conditional river values/support and preserve fixed suffixes.
+Cache/schema tests reject missing/duplicate rows, wrong weights/menus/groups,
+nonfinite values, tampered publications and changed lazy-loaded detail bytes.
+Actual partial-profile integration retains completed evidence after interruption;
+learner/reference construction is blocked before input replay. Cached terminal
+browsing distinguishes both own suffixes, actual versus prior weights and local
+scope. Whole-repository lint/format/strict typing pass. These tests do not contain
+a measured saved-policy range result or a deployed feature.
+
+Complete local runtime/optional/hosted source checks and the actual complete
+comparison remain pending. After the full panel, determine whether posterior replacement
 removes the relevant conflicts or whether frozen future-policy/board effects
 still suffice. Do not drop a seed, alter the failed original gate or deploy a
 feature on a diagnostic result. A later candidate needs its own prospective
