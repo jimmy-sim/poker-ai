@@ -2929,3 +2929,20 @@ Low means lowSPR (38behind324pot); medium has182behind36pot. Consistent with
 little improvement headroom in low; not a post-hoc exception or proof of broader
 strength. README reports the independently checked medium result and overall
 failure. Cross-runtime data-only replay/report and final artifact CI remain.
+
+### November11 — real archive portability and complete report
+
+Python3.12.15/NumPy2.5.4 BASE readonly replay passes140.020708584s; OPTIONAL
+readonly report passes151.335751459s. No training/reference construction. All3
+numeric files and all3PNGs are BYTEIDENTICAL to original report; original311
+figures already visually inspected. Exact original-output copies preserve
+replay/report receipt/child/journal basenames in portability312 with logs/SHA
+manifest. These validate data/math within fixed1e-9chip/1e-12unitless tolerances,
+not bit-exact new trajectory execution eligibility. CLI read-back retains the
+original own-replay maxima in its emitted metadata; do not label those as fresh
+312 error measurements. Actual311own0/native1.847e-13 errors remain separate.
+
+Method now states the known-game result, all-seed failure, failed low superiority
+diagnosis, remaining medium seed2 extra-information gap, limitations and3practice
+interview answers. No original gate is changed and no quality promotion occurs.
+Final artifact hosted CI BOTH jobs must pass before a history-preserving merge.

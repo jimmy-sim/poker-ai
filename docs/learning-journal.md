@@ -3887,6 +3887,20 @@ This is consistent with little improvement headroom in the already-solved low
 spot, but we keep the original gate and its failed outcome. All three seeds,
 including the one that worsens in medium, remain in the assessment.
 
+**Portability update:** Python 3.12 archive replay passes in 140.02 seconds;
+report rebuilding passes in 151.34 seconds. All three numeric files and all
+three plots match the original bytes. This checks saved data and calculations,
+not new training trajectories. The [portability record](../results/opponent-information/portability312/publication.json)
+keeps exact copies and states the tolerance and receipt scope.
+
+**What remains to understand:** the improvement is uneven. Against the paired
+control, medium seeds 20261301 and 20261303 greatly reduce the part of the gap
+available to a player with finer information. Seed 20261302 increases that gap
+from about 0.419% to 0.868% of the initial pot, even though its within-group
+learning gap decreases slightly. This points to a useful next question: which
+saved river decisions account for that seed's remaining vulnerability? It is
+a diagnosis to investigate, not a reason to drop the seed or change the gate.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

@@ -414,3 +414,102 @@ low known game is a plausible explanation, not an amended acceptance rule.
 Retain all original thresholds and the failed primary. No fresh/global/default
 admission follows. Shared own-game export limits mechanical independence; these
 are separately trained known spots with dependent readouts and only three seeds.
+
+### Portability and reproducibility
+
+Python3.12.15/NumPy2.5.4 base archive replay passes140.020708584s; optional
+report rebuilding passes151.335751459s. All3numeric report files and all3PNGs
+match the original bytes. Exact receipts/children/journals/logs and file hashes
+are retained in [portability312](../results/opponent-information/portability312/publication.json).
+This is data-only math/structure validation within1e-9chip/1e-12unitless, not a
+new training trajectory. The CLI replay field retains the original source-own
+replay maxima; it is not a newly measured312 error maximum. Actual poker
+trajectories remain restricted to3.11.17/NumPy2.4.6.
+
+Read and rebuild the published evidence in fresh ignored output paths:
+
+```sh
+.venv/bin/python scripts/validate_opponent_learning.py replay --own results/opponent-information/own.json --output results/runs/opponent-reader/replay.json
+.venv/bin/python scripts/validate_opponent_learning.py report --own results/opponent-information/own.json --output results/runs/opponent-reader/report
+```
+
+The report needs the locked research plotting dependencies; the archive reader
+needs base dependencies. These commands refuse existing output files. The
+original source commit is retained in Git history, including all source-bound
+receipts; use an isolated worktree rather than changing user experiment files.
+No reference strategy is needed to read/rebuild the own report.
+
+### Diagnose the failed gate and the seed that worsens
+
+Low final linear paired/mixed policies have identical probability hashes in
+two seeds, giving two exact zero improvements. All12 low final current profiles
+record zero exploitability. These diagnostics support little remaining
+headroom, but do not rescue the fixed linear-primary test or create a ceiling
+exception. This study's overall superiority gate remains failed.
+
+For the medium final linear readout, the same report retains:
+
+| Seed | Paired extra-information gap | Mixed extra-information gap | Paired within-group gap | Mixed within-group gap |
+| --- | ---: | ---: | ---: | ---: |
+| 20261301 | 4.890615 | 0.000759 | 0.246966 | 0.201644 |
+| 20261302 | 0.418913 | 0.868085 | 0.170490 | 0.167434 |
+| 20261303 | 2.763036 | 0.318076 | 0.595054 | 0.235086 |
+
+Units are %initial pot; within-group plus extra-information gap equals exact
+self-play exploitability. These are existing columns in the complete216-point
+CSV, not a new training ablation. Seed2's larger extra-information gap accounts
+for its worse total despite slightly better within-group learning. The separate
+river-only exact-prefix diagnostic has a different baseline and is NOT an
+additive self-exploitability component. Next investigate saved river replies in
+that seed without changing this result, dropping a seed or starting an unadmitted
+training run. A future broader validation needs its own prospective protocol.
+
+### What the numbers establish, and their limits
+
+- The treatment keeps each retained coarse seat's information groups, action
+  menus and work accounting unchanged. The paired control matches splitting
+  work across two games; ordinary coarse self-play is the practical comparison.
+- Two seeds improve and one worsens in the medium known spot. The low spot does
+  not improve in the median; the overall declared superiority condition fails.
+  No default, fresh-game or global-agent promotion follows.
+- Best response is exact inside the declared finite ranges, turn boards,
+  stacks and actions. This is not unrestricted no-limit Hold'em exploitability
+  or a measured win rate. These are separately trained known games.
+- Three fixed seeds, reused prefixes, related readouts and fixed opponents do
+  not form a population confidence interval. Plot means summarize those cases.
+- Whole warm-initialized support100% is not evidence of later learned support;
+  post-warm low coverage remains71–81%, medium97.2–97.6%.
+- OpenSpiel is an independent scalar implementation but shares the exported own
+  game definition. Agreement cannot independently validate every engine/range/
+  action-abstraction assumption. Its outputs never teach the agent.
+
+### Three interview practice questions
+
+1. **Why add the paired coarse control?** The treatment retains one coarse
+   player from each of two mixed-information training games. Comparing only
+   with one coarse self-play path would mix opponent information with how work
+   is divided. The paired control splits work in the same way while keeping both
+   opponents coarse. Both players' updates and both warm starts are charged;
+   reused prefixes remain charged in every logical arm that uses them.
+2. **How does the reference stay independent of learning?** Own archives and
+   results are published before reference construction. Own workers block
+   reference constructors. The pinned permitted solver exports only scalar
+   comparisons against the committed own policies; its strategies and actions
+   never enter our training. This checks measurement rather than supplies hidden
+   training targets.
+3. **Did this produce a stronger general Hold'em agent?** It produced a measured
+   improvement in one harder known finite game, validated independently, while
+   failing the original two-game superiority condition. It does not establish
+   performance on new games or a real playing edge. The next research question
+   is the remaining seed-specific vulnerability, followed by separately planned
+   broader testing. The current default remains unchanged.
+
+Verified resume-claim drafts, describing the AI-assisted project rather than
+unrecorded personal time or unassisted authorship:
+
+- “Developed an AI-assisted reproducible poker research pipeline with30training
+  paths and independent OpenSpiel checks of432saved policies and1152fixed
+  conditions; maximum scalar disagreement1.85e-13chips.”
+- “Measured a reduction in mean restricted exploitability from2.173% to0.597%
+  of initial pot on one known medium-SPR turn game across three fixed seeds;
+  retained the failed overall two-game superiority test and unchanged default.”

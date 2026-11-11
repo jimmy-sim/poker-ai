@@ -1,0 +1,61 @@
+{
+  "exact_copy": true,
+  "files": {
+    "base312-replay-command.log": "cd97c421daa06325b1ab67d99f7fc8b6abb515a2c5f04552ac3285687432dffe",
+    "optional312-report-command.log": "73ca30cefd9de3f0e384c7e6eae8ee73a5d5db11cd3e19b6bb0397054d85ab83",
+    "replay-child.json": "e7272f643673d3c3c623355422ba928dc0a30295b7f7f8fe0abe53245f16c6b0",
+    "replay-events.jsonl": "a77a813ecb201fd95a9a9ac48bbcf8de674a5c577d73dc77405e2043861b1873",
+    "replay.json": "fb02d9b4de9820fee0d1479a6a4096906401709135168ffa1e6852811476a4e7",
+    "report-receipt-child.json": "d4ad7a2b2ae9a38a569c83153619793d93c5bcf51da92d720c68818cedb0236f",
+    "report-receipt-events.jsonl": "ea7e95c873b788dda2f63f65ae15e5633819ae6d6da0d5254ed19ab706aa9b59",
+    "report-receipt.json": "f2c9bc7b670273e63532a7aca24d066c31f4dd5ecd94d8e352bb43a79880626f",
+    "report/arm-points.csv": "ace47db9ce88e46e1cd7693a2dd2540bf80657e279fe9a04074d794eea23a50b",
+    "report/fixed-conditions.csv": "6df453cc0cd3d68551138948a1e42772093faadd649b936290b9f86633aa7fa0",
+    "report/fixed-gain.png": "a45356ff885076afa12381be0140f7da6ce9c67c5c98c341606bacb357b11f3d",
+    "report/learning.png": "2d838426fc92977145186c71f8538803e885629cd50cff89f5af50c7be3903b6",
+    "report/paired-gaps.png": "a2084b59d25723ae19df34284978dbd9da0db8835587ed7426cad768de0eab36",
+    "report/summary.json": "13822e8fda04806935328a189d423d335989c0343823b0c9cc8001c31dda90b0"
+  },
+  "new_reference": false,
+  "new_training": false,
+  "numpy": "2.5.4",
+  "original_output": "results/runs/opponent-real-base312-5cbb87e",
+  "own_sha256": "3f9f1e993876674cce797c6d5ca03be4524ff48aebffc32c1a6198e5c6b7a5a9",
+  "python": "3.12.15",
+  "replay_receipt_scope": "CLI validates freshly recomputed math within1e-9 chip/1e-12 unitless and exact structures/bits; embedded replay maxima describe original own-source replay, not a new measured312 maximum.",
+  "report_comparison": {
+    "arm-points.csv": {
+      "identical": true,
+      "original_sha256": "ace47db9ce88e46e1cd7693a2dd2540bf80657e279fe9a04074d794eea23a50b",
+      "rebuilt_sha256": "ace47db9ce88e46e1cd7693a2dd2540bf80657e279fe9a04074d794eea23a50b"
+    },
+    "fixed-conditions.csv": {
+      "identical": true,
+      "original_sha256": "6df453cc0cd3d68551138948a1e42772093faadd649b936290b9f86633aa7fa0",
+      "rebuilt_sha256": "6df453cc0cd3d68551138948a1e42772093faadd649b936290b9f86633aa7fa0"
+    },
+    "fixed-gain.png": {
+      "identical": true,
+      "original_sha256": "a45356ff885076afa12381be0140f7da6ce9c67c5c98c341606bacb357b11f3d",
+      "rebuilt_sha256": "a45356ff885076afa12381be0140f7da6ce9c67c5c98c341606bacb357b11f3d"
+    },
+    "learning.png": {
+      "identical": true,
+      "original_sha256": "2d838426fc92977145186c71f8538803e885629cd50cff89f5af50c7be3903b6",
+      "rebuilt_sha256": "2d838426fc92977145186c71f8538803e885629cd50cff89f5af50c7be3903b6"
+    },
+    "paired-gaps.png": {
+      "identical": true,
+      "original_sha256": "a2084b59d25723ae19df34284978dbd9da0db8835587ed7426cad768de0eab36",
+      "rebuilt_sha256": "a2084b59d25723ae19df34284978dbd9da0db8835587ed7426cad768de0eab36"
+    },
+    "summary.json": {
+      "identical": true,
+      "original_sha256": "13822e8fda04806935328a189d423d335989c0343823b0c9cc8001c31dda90b0",
+      "rebuilt_sha256": "13822e8fda04806935328a189d423d335989c0343823b0c9cc8001c31dda90b0"
+    }
+  },
+  "source_sha256": "b0bc9c37e55fa65e14fc5e44548064b54d548e7ac19605e4b3d8528b3d37d038",
+  "status": "completed_data_only_portability_not_trajectory_training",
+  "trajectory_replay_eligibility": false
+}
