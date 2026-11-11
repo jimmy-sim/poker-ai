@@ -353,3 +353,15 @@ learner or solver executes in those tests. The fixed scientific config, seeds,
 inventory, budgets, updater and acceptance thresholds remain unchanged. Fresh
 complete corrected-source checks/proof/costs/forecast/published permit must precede
 another real attempt; old source evidence cannot be inherited.
+
+## Corrected-source forecast — November11
+
+Source5cbb87e passes all prescribed local/optional/slow and both hosted checks,
+then the complete fictional proof (16.982763458s shared; exact own bits and native
+maxerror1.1102230246251565e-16chips). All3own and3native old-data cost repetitions
+are published. D233.82809899999847,N358.8785483339998,T610.943356249918s; the full
+actual forecast verifies87input seals/all24 original timings in407.786650958s.
+Fixed guarded own4111.429622999669<7200 and native837.7570966679996<900 both pass.
+The corrected permit must still be created, published and independently read
+before workers initialize. The actual training study and quality gates remain
+pending. Known-game compute admission does not promote a default/global agent.

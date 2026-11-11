@@ -3788,6 +3788,34 @@ records exact copies and original run locations. The full forecast must still
 verify every source-bound input and apply the unchanged formulas; these timings
 alone grant no training permit or strength claim.
 
+## 93. Rebuild the forecast on the corrected source
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+All six new timing runs are complete and published. The full forecast command
+then replays the own archives, checks the independent calculations and source
+records, seals 87 inputs, and verifies all 24 historical training timings.
+That complete verification passes in 407.79 seconds, within its 900-second cap.
+
+| Conservative input or estimate | Seconds |
+| --- | ---: |
+| T: assigned-worker training estimate, without half-budget discount | 610.94 |
+| D: slowest of three full own data-pipeline runs | 233.83 |
+| N: slowest of three full independent comparison runs | 358.88 |
+| Guarded own estimate: 2 × (2T + D + 600) | 4,111.43 |
+| Guarded comparison estimate: 2 × (N + 60) | 837.76 |
+
+Both guarded estimates fit the original 7,200/900-second limits. No seed, cap,
+inventory, formula or accuracy target was adjusted. The [forecast](../results/opponent-information/forecast.json)
+is a checked estimate of whether the complete run fits, not a measured poker
+improvement or a guarantee of runtime.
+
+One outer shell launch stopped before Python because its variable name was
+reserved. The launcher was corrected and the error retained; it did not create
+a scientific run. The next step is a checked, published compute permit and an
+actual read-back of its saved input seals. Only afterward may real training
+start. Earlier failures stay recorded. Codex assisted; personal time is unknown.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

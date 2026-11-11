@@ -2859,3 +2859,16 @@ preflight, reference construction/scalars and final own replay. Exact canonical
 copies/logs and SHA manifest retained in cost/native-publication.json; original
 ignored output paths/arguments remain. Publish all native evidence, then run the
 full fixed forecast command; no corrected-source permit or real trajectory yet.
+
+### November11 — corrected full forecast passes fixed limits
+
+Actual complete forecast407.786650958s<900 verifies all3own/all3native costs,
+software proof/source checks,87input seals and all24 original B4 timing paths.
+T610.943356249918,D233.82809899999847,N358.8785483339998s. Guarded own
+4111.429622999669<7200 and native837.7570966679996<900 both pass unchanged
+strict formulas; no half-budget discount. Source/config/seeds/caps/gates unchanged.
+Parent/child/journal/full command log retained. An outer zsh launch used a
+reserved variable and stopped BEFORE Python; its diagnostic log is retained
+separately. It created no scientific receipt or run. Corrected wrapper uses
+forecast_rc. Publish forecast, then checked permit and actual persisted reader
+verification before real worker initialization. This is not a strength result.
