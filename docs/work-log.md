@@ -2819,3 +2819,20 @@ external launcher now supplies an explicit fresh scratch folder for a new full
 rehearsal. Source, configs, seeds, complete inventories, caps and gates remain
 unchanged; no partial run is resumed or favorable subset selected. Retain both
 attempts and require the complete new own/publication/native shared-clock proof.
+
+### November11 — corrected-source full fictional proof passes
+
+Source5cbb87e own6.453446791s publishesbc76e54 BEFORE native construction;
+native7.619018167s, full shared16.982763458s<180 including own publication and
+final replay. All30fictional paths/324raw policies/216books/30warm/108composed/
+432unique/216logical/1152fixed retained. Own chip/unitless replay maxima0 and
+exact policy/book bits. Independent OpenSpiel2.0.2 scalar maxerror
+1.1102230246251565e-16<1e-9, no exported actions/training. Native published1b4130e;
+actual software gate accepts tiny-only evidence. Read-only base312 replay also
+passes and its exact JSON/child/journal/log copies retain filenames in
+software/base312-replay. All3fictional report plots visually inspected.
+
+Next: all3complete old-OWN costs, own publication, all3native costs, full fixed
+forecast and published persisted permit round-trip before real training.
+Fresh ignored output/scratch folders distinguish this source from prior runs;
+canonical publication copies remain byte-identical. No caps/seeds/gates changed.

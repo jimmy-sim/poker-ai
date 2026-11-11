@@ -3742,6 +3742,34 @@ hooks and exact source/runtime checks pass. The [new check receipts](../results/
 retain the evidence. These results repair our confidence in the software path;
 they do not grant training admission or demonstrate poker strength.
 
+## 92. Repeat the full rehearsal after the permit fix
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The corrected source passed its complete checks, then repeated the full
+fictional learning-and-comparison rehearsal. Our stage took6.45seconds and was
+published before the independent solver was constructed. Its comparison took
+7.62seconds. The complete shared sequence, including publication and final
+replay, took16.98seconds, within the180-second limit.
+
+All432policies and1,152fixed-opponent comparisons pass. Own replay has zero
+measured error and exact saved probability/book bits; the independent scalar
+calculations differ by at most1.11×10⁻¹⁶chips. A read-only replay on Python3.12
+also passes. All three figures were visually checked and clearly identify their
+fictional data. See the [own result](../results/opponent-information/software/own.json)
+and [independent result](../results/opponent-information/software/native.json).
+
+The first launch accidentally reused an old scratch-folder name. It refused to
+overwrite that folder before any learning; the [failed attempt](../results/opponent-information/failed-software-scratch-5cbb87e/own.json)
+remains published. The successful launch uses a fresh folder and reruns the
+complete procedure. It does not resume a favorable fragment.
+
+This checks the machinery, not poker strength. The next stages repeat all three
+own and three independent timing tests using explicitly old saved strategies,
+then rebuild the forecast and published permit. Only afterward may the real
+fixed-work learning comparison start. The learner, seeds, budgets and strength
+targets remain unchanged. Codex assisted; no personal hours are inferred.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
