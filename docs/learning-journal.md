@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Try the four-column saved-hand terminal exercise](terminal-river-lab.md)
+- [Separate range beliefs from later action values](#97-separate-range-beliefs-from-later-action-values)
 - [Why a turn call needs finer river information](#96-ask-what-makes-the-turn-call-valuable)
 - [Why the unfavorable seed is still vulnerable](#95-separate-a-changed-policy-from-a-changed-opponent)
 - [Latest measured learning result](#94-finer-own-opponents-help-the-harder-spot-the-overall-gate-still-fails)
@@ -73,6 +75,12 @@ For the two important calls in the unfavorable saved matchup, even the best
 river play within the current groups still favors folding. Finer legal river
 information flips both to calling. This explains a concrete weakness; it does
 not train a remedy or establish general Hold'em strength.
+
+Step 97 implements the next range-weight check. Its full local checks pass on
+both Python versions, but GitHub has blocked the required hosted checks before
+they can start because of an account billing restriction. The saved-policy
+comparison stays pending. The [terminal exercise](terminal-river-lab.md) uses
+the already completed step 96 report and remains available in your main folder.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4098,6 +4106,20 @@ hands, changed action values or weights, corrupted caches and wrong group totals
 are rejected. Full runtime checks and the actual saved-policy range comparison
 are still pending; no feature is deployed. Your main project's earlier
 continuation browser passes 62 focused checks, with local changes preserved.
+
+**Full local checks, hosted block:** Both Python 3.11 and 3.12 pass 2,759 tests,
+with 58 tests skipped and 149 slow tests excluded in each. Lint, formatting,
+strict typing and hooks pass; the focused optional suite passes 72 tests on
+each runtime. [Exact records](../results/river-range-checks/source-local/summary.json)
+keep these software checks separate from the experiment. GitHub rejected both
+hosted jobs before any steps ran, citing its billing/payment or spending-limit
+restriction. This is an account block, not a failed poker result. Required
+hosted checks still need to pass before the range comparison; no gate is waived.
+
+**Something to try:** the [four-column terminal exercise](terminal-river-lab.md)
+walks through the saved nines and QhKh calls, navigation keys and root totals.
+Codex checked those commands against the actual cache. This records providing
+and checking an exercise, not you completing it or spending any measured time.
 
 ## Your own learning notes
 

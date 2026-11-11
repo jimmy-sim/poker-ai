@@ -1,0 +1,34 @@
+Checking cached continuation and original-source hashes...
+
+dev_medium_oop / 20261302 / mixed_pair / responding seat 1
+Cached hash-checked own calculation; fixed saved opponent; no new native audit.
+First three panels freeze every own turn and opponent row; full reply may change turns.
+Responding-seat root net chips:
+  saved: -18.041926835
+  restricted_river: -18.009389411
+  fine_river: -18.001955752
+  full_fine_reply: -17.363717490
+Root increments (restricted river / finer river / full-reply turns): 0.032537424 / 0.007433659 / 0.638238263
+Root increments are distinct from the earlier turn/river row-loss attribution.
+
+Turn group 1/10, row 819; prior full-reply loss 0.398837039 chips.
+Ranked by prior trace loss; these conditional action values are not additive losses.
+
+Own 9c 9d; board Ts 9s 4d 2h; THREE_OF_A_KIND; pot 72
+Chance-opponent support 0.400535045; saved full reach 0.400535045
+  history: seat 1 PREFLOP raise_to 6; paid 5
+  history: seat 0 PREFLOP raise_to 18; paid 16
+  history: seat 1 PREFLOP call None; paid 12
+  history: seat 0 FLOP check None; paid 0
+  history: seat 1 FLOP check None; paid 0
+  history: seat 0 TURN raise_to 36; paid 36
+  action | saved probability | saved / restricted-river / fine-river / full-reply net chips
+  fold: 0.989957 | -18.000000 / -18.000000 / -18.000000 / -18.000000
+  call: 0.010039 | -25.894981 / -18.808061 / -16.994315 / -16.994315
+  raise_to 144: 0.000000 | -60.581160 / -50.484606 / -50.484606 / -41.208969
+  raise_to 182: 0.000004 | -63.911865 / -63.911865 / -63.911865 / -63.911865
+  preferred with saved: fold
+  preferred with restricted_river: fold
+  preferred with fine_river: call
+  preferred with full_fine_reply: call
+Continuation-specific local deviations inside this saved simulation, not universal poker advice.

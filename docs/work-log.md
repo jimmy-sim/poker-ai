@@ -3149,3 +3149,28 @@ constructor blocks and genuine completed-profile interruption retention.
 All historical source/config/test/lock bytes remain unchanged; no actual saved-
 policy range comparison, training, feature or default change yet. Full relevant
 local runtime/optional/hosted checks precede measurement; final CI before merge.
+
+### November 11 — range source checks pass locally; hosted account block retained
+
+Published source42cd59f31324566b3286fc112e496438f5c484f4, scientific fingerprint
+987c636e258c4f866d22b23cbc6bc4349493bc0874b994ac5d0cbc8e258512bd, checked from
+a clean immutable detached checkout. Both full bases pass 2,759 tests, 58 skipped,
+149 deselected (Python3.11.17/NumPy2.4.6:484.87s; Python3.12.15/NumPy2.5.4:472.25s).
+Full lint/728-file format/strict typing612files/hooks/source/runtime/package-path
+guards pass before and after. Focused all-extras checks pass72tests10.36/9.65s;
+not the entire optional historical suite. Exact raw logs/receipts/launcher and
+hash index retained in results/river-range-checks/source-local.
+
+Hosted source run43050870261 fails both jobs before ANY steps. GitHub's exact
+annotation cites failed account payments or a spending limit; no actual billing
+dashboard inspected or payment/limit changed. This is not a code/test failure.
+Retained job metadata/annotations; no fabricated job logs for unstarted jobs.
+Required hosted source checks have NOT passed. Actual range comparison unrun,
+measurement admission false, PR52 draft. User notified; continue only independent
+work while Actions availability is unresolved. Scientific caps/seeds/gates stay.
+
+Added a plain-English four-column terminal exercise using completed C6 evidence.
+Actual-cache agent smoke passes default/rank2 plus n/p/s/o/g/t/q; separately
+retained logs/receipt. Journal97/navigation/current status explain local success,
+external block and unchanged pending comparison. No user completion, personal
+time or mastery inferred. No main update or unrelated-file mutation in this step.

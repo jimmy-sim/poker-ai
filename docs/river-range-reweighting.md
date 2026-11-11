@@ -107,8 +107,33 @@ browsing distinguishes both own suffixes, actual versus prior weights and local
 scope. Whole-repository lint/format/strict typing pass. These tests do not contain
 a measured saved-policy range result or a deployed feature.
 
-Complete local runtime/optional/hosted source checks and the actual complete
-comparison remain pending. After the full panel, determine whether posterior replacement
+Full local checks now pass on source `42cd59f31324566b3286fc112e496438f5c484f4`,
+scientific fingerprint
+`987c636e258c4f866d22b23cbc6bc4349493bc0874b994ac5d0cbc8e258512bd`.
+Both Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4 pass 2,759 tests,
+58 skipped and 149 deselected (484.87/472.25 seconds). Lint, 728-file formatting,
+strict typing over 612 files, hooks and before/after clean source/runtime guards
+pass. Focused optional checks pass 72 tests on each (10.36/9.65 seconds); this
+is not the entire historical optional suite. Raw logs, launcher and indexed
+receipts are retained in
+[source-local evidence](../results/river-range-checks/source-local/summary.json).
+
+[Hosted source run 43050870261](https://github.com/jimmy-sim/poker-ai/actions/runs/43050870261)
+failed before either job ran any steps. GitHub's annotation says recent account
+payments failed or a spending limit needs increasing; the account's actual
+billing dashboard has not been inspected. Exact job metadata and annotations
+are retained. This is an external account block, not a test failure. Required
+hosted checks have not passed: the actual saved-policy comparison remains
+unrun, the PR stays draft and measurement admission remains false. Restore
+Actions availability, verify both source jobs, then continue the unchanged plan.
+No scientific cap, seed, check or gate is relaxed to get around this block.
+
+The [terminal exercise](terminal-river-lab.md) uses the already completed C6
+cache; agent-run default/rank-2/navigation smoke checks pass and are retained
+[separately](../results/river-range-checks/terminal-lab/receipt.json). They do not
+measure a new range effect or record user practice.
+
+After the full panel, determine whether posterior replacement
 removes the relevant conflicts or whether frozen future-policy/board effects
 still suffice. Do not drop a seed, alter the failed original gate or deploy a
 feature on a diagnostic result. A later candidate needs its own prospective
