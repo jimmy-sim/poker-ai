@@ -365,3 +365,35 @@ Fixed guarded own4111.429622999669<7200 and native837.7570966679996<900 both pas
 The corrected permit must still be created, published and independently read
 before workers initialize. The actual training study and quality gates remain
 pending. Known-game compute admission does not promote a default/global agent.
+
+## Real own results before independent comparison — November11
+
+The complete source5cbb87e own command takes635.308768500s<7200 with
+210001434actual charged node visits over30paths. All36original B4 boundaries,
+108policy/72ledger/36work checks match exactly. Full own replay verifies324raw/
+216books/30warm/108composed/432unique/216logical/1152fixed, zero chip/unitless
+errors and exact policy/book bits. All3figures visually checked. Results below
+are own calculations pending independent scalar audit; all other readouts and
+checkpoints remain in the CSVs.
+
+Final10m logical-work linear-average medium exploitability (%initial pot):
+
+| Seed | Ordinary coarse | Paired coarse | Mixed pair | Fine self |
+| --- | ---: | ---: | ---: | ---: |
+| 20261301 | 2.793292 | 5.137580 | 0.202403 | 0.292420 |
+| 20261302 | 0.375287 | 0.589403 | 1.035519 | 0.660690 |
+| 20261303 | 3.349472 | 3.358091 | 0.553162 | 0.194613 |
+| Mean | 2.172684 | 3.028358 | 0.597028 | 0.382574 |
+
+Mixed medium median0.5531623046246893%, worst1.0355187414374256%, paired median
+improvement2.8049282275745457percentage points. Low mixed values
+[9.258394215892083e-8,6.607628573240134e-9,6.609080361175546e-9]%, median paired
+improvement0. Both games meet absolute accuracy and historical whole-average
+coverage100%, but the prospectively required strictly-positive median paired
+improvement in BOTH games FAILS on low. Preserve that overall failed primary;
+do not change the gate or use a secondary readout to rescue it. Two medium seeds
+improve, one worsens. Post-warm reach support low71.11–80.78%/medium97.24–97.56%
+is reported separately, not silently promoted to a new gate.
+
+Publish complete own evidence before constructing the independent reference.
+No stronger/default/fresh/global admission follows from this known-game study.

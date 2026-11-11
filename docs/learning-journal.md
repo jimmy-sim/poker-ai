@@ -3824,6 +3824,46 @@ initializes. It permits the bounded known-game computation; it does not prove
 successful completion, improved strength, or a new default agent. The study
 still repeats its prerequisites inside the original full time cap.
 
+## 94. Finer own opponents help the harder spot; the overall gate still fails
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The real fixed-work comparison finished in 635.31 seconds. All 30 paths completed,
+using 210,001,434 charged visits to game nodes. These are computational visits,
+not poker hands. The 36 original B4 checkpoints match exactly. All 432 policies
+and 1,152 fixed-opponent evaluations replay with zero measured error and exact
+saved policy/book bits. All seeds, readouts and the three figures are retained.
+
+The table below uses the final linear averages, with three fixed seeds in each
+known spot. Exploitability measures how much a best response can gain inside
+this specified game. Lower is better. Values are percent of that spot's initial
+pot; they are not win rates against human players.
+
+| Known spot | Ordinary coarse mean | Paired coarse mean | Finer-opponent treatment mean | Treatment median / worst |
+| --- | ---: | ---: | ---: | ---: |
+| Low | 8.61 × 10⁻⁹% | 2.46 × 10⁻⁸% | 3.53 × 10⁻⁸% | 6.61 × 10⁻⁹% / 9.26 × 10⁻⁸% |
+| Medium | 2.173% | 3.028% | 0.597% | 0.553% / 1.036% |
+
+**The overall predeclared superiority test fails.** Both spots meet the absolute
+accuracy limits, but we also required strictly positive median improvement over
+the paired control in both spots. The low spot was already near zero and has
+zero median improvement. We retain that failure and do not change the rule after
+seeing it. The medium spot's paired improvement is 2.805 percentage points in
+the median; two seeds improve and one worsens. The full per-seed results stay
+in the [216-point table](../results/opponent-information/report/arm-points.csv).
+
+Whole-average coverage is 100%. Later learned support is different: post-warm
+reach coverage is about 71–81% in low and 97.2–97.6% in medium. Uniform warm
+initialization must not be mistaken for later learning at every decision.
+
+This is promising evidence in the harder known spot, pending independent
+numerical comparison. It does not establish general Hold'em strength, an edge,
+or a new default agent. The [own receipt](../results/opponent-information/own.json)
+and [summary](../results/opponent-information/report/summary.json) are published
+before the reference is constructed. Next: the full independent scalar audit,
+then diagnosis of the failed superiority condition and the remaining weaknesses.
+Codex assisted with execution and reporting; personal hours are not inferred.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

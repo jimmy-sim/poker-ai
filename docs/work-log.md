@@ -2885,3 +2885,28 @@ prerequisites inside its unchanged whole-command cap and binds each worker to
 this exact permit/original3.11.17/NumPy2.4.6 runtime. No worker initialized at this
 publication checkpoint; completion, all36old B4 barriers, all30paths/432profiles/
 1152fixed and independent audit/quality gates remain ahead.
+
+### November11 — real own comparison complete; primary superiority gate fails
+
+Published permit9fe8083 passes the actual require_admission read-back (89sealed
+inputs/19routine pins) before real entry. Complete own command635.308768500s<7200
+trains30paths with210001434actual charged node visits, all seeds/readouts retained.
+All36original B4 boundaries match108policy/72ledger/36work-guard checks before
+scoring; full raw/archive/reply/support/fixed replay has0chip/unitless error and
+exact policy/book bits. All324raw/216books/30warm/108compose/432unique/216logical/
+1152fixed are retained. All3actual figures visually inspected.
+
+Final linear-average medium mean exploitability falls from ordinary coarse
+2.1726835365908252% to mixed0.597027911089941% initial pot. Mixed median
+0.5531623046246893%, worst1.0355187414374256%; paired-coarse minus mixed median
+improvement2.8049282275745457percentage points. Two seeds improve, one worsens.
+Low mixed median6.609080361175546e-9%, worst9.258394215892083e-8%; median paired
+improvement0. BOTH games pass absolute median<=1%/worst<=2.5% and whole-average
+coverage100%, BUT the preset strictly-positive paired improvement in BOTH games
+FAILS on low. Preserve failure; no new threshold, readout rescue or promotion.
+Post-warm reach support low71.11–80.78%, medium97.24–97.56%, reported separately.
+
+These are own-calculated known-game results pending the independent numerical
+audit. Publish complete own JSON/child/journal/5archives/6reports/command log/
+permit-read-back evidence before real native construction. No default/fresh/
+global admission. Issue4 remains open; source/seeds/caps/gates unchanged.

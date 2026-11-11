@@ -1,0 +1,105 @@
+{
+  "all_seeds_and_readouts_retained": true,
+  "arm_points": 216,
+  "dependence": "Three fixed seeds; reused prefixes and related readouts; no population confidence interval.",
+  "fixed_conditions": 1152,
+  "fixed_metric": "Fine best-response gain against each frozen OWN opponent; not self exploitability or an external strategy comparison.",
+  "fresh_global_admission": false,
+  "new_agent_default": false,
+  "poker_results": true,
+  "primary": {
+    "fresh_global_admission": false,
+    "groups": [
+      {
+        "accuracy_limits_pass": true,
+        "game": 0,
+        "historical_whole_average_coverage_pass": true,
+        "median": 6.609080361175546e-09,
+        "median_paired_improvement": 0.0,
+        "mixed_exact_exploitability": [
+          9.258394215892083e-08,
+          6.607628573240134e-09,
+          6.609080361175546e-09
+        ],
+        "ordinary_coarse_minus_mixed": [
+          -7.004760009343966e-08,
+          -4.957592635452592e-09,
+          -4.959875582946192e-09
+        ],
+        "paired_coarse_minus_mixed": [
+          -3.188773470240864e-08,
+          0.0,
+          0.0
+        ],
+        "paired_improvement_pass": false,
+        "post_warm_uniform_reach_coverage": [
+          0.807828282828283,
+          0.7111111111111116,
+          0.7111111111111116
+        ],
+        "seeds": [
+          20261301,
+          20261302,
+          20261303
+        ],
+        "whole_average_uniform_reach_coverage": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "worst": 9.258394215892083e-08
+      },
+      {
+        "accuracy_limits_pass": true,
+        "game": 1,
+        "historical_whole_average_coverage_pass": true,
+        "median": 0.5531623046246893,
+        "median_paired_improvement": 2.8049282275745457,
+        "mixed_exact_exploitability": [
+          0.20240268720770832,
+          1.0355187414374256,
+          0.5531623046246893
+        ],
+        "ordinary_coarse_minus_mixed": [
+          2.590889114038047,
+          -0.6602321315796533,
+          2.7963098940442586
+        ],
+        "paired_coarse_minus_mixed": [
+          4.935177680160394,
+          -0.4461154883387102,
+          2.8049282275745457
+        ],
+        "paired_improvement_pass": true,
+        "post_warm_uniform_reach_coverage": [
+          0.9755730783137976,
+          0.9726671964926026,
+          0.9723950643324193
+        ],
+        "seeds": [
+          20261301,
+          20261302,
+          20261303
+        ],
+        "whole_average_uniform_reach_coverage": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "worst": 1.0355187414374256
+      }
+    ],
+    "independent_audit": "reported separately; this own report cannot accept its numerical gate",
+    "known_game_accuracy_and_improvement_only": true,
+    "median_limit_pct_initial_pot": 1.0,
+    "minimum_whole_average_uniform_reach_coverage": 0.95,
+    "new_agent_default": false,
+    "no_secondary_readout_rescue": true,
+    "recall_and_source_gates": "required separately; not inferred from a strength curve",
+    "worst_limit_pct_initial_pot": 2.5
+  },
+  "reuse": "Logical comparisons charge each component fully; actual prefix execution is counted once.",
+  "scope": "KNOWN_HOLDEM_OWN_OPPONENT_INFORMATION_NOT_GLOBAL_ADMISSION",
+  "unique_scored_profiles": 432,
+  "units": "percent initial pot"
+}
