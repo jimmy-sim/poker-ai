@@ -3088,3 +3088,157 @@ causal training conclusion, newstrength/default/fresh/global admission or change
 to originaloverallFAIL. All games/seeds/methods/seats retained. Method and plain-
 English journal96 explain result/units/limits and next conditional-range question.
 Final artifact CI and evidence publication remain before merge.
+
+### November11 — prospective local river range-weight mechanism test
+
+Issue4comment6799471551 registers the next question before code/output. New
+frozen config binds complete PR50/PR51 evidence. Same24profiles/48responses,
+two own river suffixes/actual-vs-compatible-prior weights give96suffix conditions/
+192LOCALpanels, all owned RIVER rows/menus/compatible combos. Source conditional-Q
+mixture reconstruction, blocker/history/support normalization and singleton/
+identical/refinement convexity controls define math acceptance. Fixed per-game/
+seat uniform-decision weights normalize BEFORE shared actual-support filtering;
+no favorable subset or post-filter normalization. Original and full-static-probe
+groups retain separate denominators and signed changes. No effect-size gate,
+root-EV/retraining interpretation, new native audit/training/feature/default/
+fresh/global admission. Separate900s data-only clock and partial/failure retention;
+full relevant checks before measurement/merge. Implementation and outcomes pending;
+PR51 final artifact CI43044961257 runs unchanged.
+
+### November11 — prior continuation result merged; range math checkpoint
+
+PR51 finalCI43044961257 BOTH2687/58skip149deselect1historical warning,
+800.26/902.83s, before history-preserving merge01f91df39ba25ea6c53ba7f81a257c1f49b67476.
+Self-review6799767883 explicitly Codex-assisted solo review. Exact decoded final
+logs/length/hash receipt retained as old-source evidence, not checks of this new
+range calculation. Fresh main snapshot before FF preserves all10actual user
+file bytes/status/staged+unstaged diffs/userpath index entries. Main package path,
+new default four-column viewer and62focusedtests PASS1.89s; preservation verified
+again afterward. No personal practice/time inferred.
+
+New range core25tests and own-engine integration/group controls15tests pass:
+40PASS5.76s, relevant lint/format/strict typing pass. Independent terminal sums
+and both target signs check actual/prior mixtures, no hidden-world maximization,
+own-prefix exclusion, fixed pre-filter weights/zero support, wrong combo/weight
+order, blockers, aliases, nonfinite inputs, singleton/refinement/identical controls.
+Genuine uniform UNIT policies on both own games reconstruct every river menu,
+sourceQ/support and frozen suffix without training. Initial tamper-test reversal
+left a palindromic policy row unchanged; the fixture now changes the maximizer
+explicitly. Test config typing corrected. No actual saved-profile range study
+or new feature/learning. Complete command/cache/schema/failure/browser integration
+and full relevant source checks remain before measurement.
+
+### November11 — complete local range command/cache/browser implementation
+
+New-source integration now retains every river row and both own suffixes,
+builds192local panels/two group controls (384CSVrows), replays bound C5/C6/own/
+native receipts and original own math, and checks original reply roots/Q/support.
+Own prefix reach is excluded from range inference; declared priors match the
+chance-only compatible range, including wrong-order guards. Source weights update
+only actions inside the declared spot, not its fixed historical preflop prefix.
+Every complete profile is written before the next starts; complete/partial/
+failure destinations cannot be overwritten. Cached reader checks all artifact
+hashes and lazily rechecks detail bytes, full local mixture/group arithmetic,
+typed24/48/96/192inventories and fixed-support weighting. Browser adds r to
+n/p/s/o/g/t/q for own suffixes, showing hypothetical range order and both weights.
+
+Focused72tests PASS8.44s; full Ruff/728format/strict typing612files pass. Includes
+independent terminal sums, hidden-state/weighting/source guards, real uniform UNIT
+engine fixtures, source corruption, complete synthetic-cache schema/tamper,
+constructor blocks and genuine completed-profile interruption retention.
+All historical source/config/test/lock bytes remain unchanged; no actual saved-
+policy range comparison, training, feature or default change yet. Full relevant
+local runtime/optional/hosted checks precede measurement; final CI before merge.
+
+### November 11 — range source checks pass locally; hosted account block retained
+
+Published source42cd59f31324566b3286fc112e496438f5c484f4, scientific fingerprint
+987c636e258c4f866d22b23cbc6bc4349493bc0874b994ac5d0cbc8e258512bd, checked from
+a clean immutable detached checkout. Both full bases pass 2,759 tests, 58 skipped,
+149 deselected (Python3.11.17/NumPy2.4.6:484.87s; Python3.12.15/NumPy2.5.4:472.25s).
+Full lint/728-file format/strict typing612files/hooks/source/runtime/package-path
+guards pass before and after. Focused all-extras checks pass72tests10.36/9.65s;
+not the entire optional historical suite. Exact raw logs/receipts/launcher and
+hash index retained in results/river-range-checks/source-local.
+
+Hosted source run43050870261 fails both jobs before ANY steps. GitHub's exact
+annotation cites failed account payments or a spending limit; no actual billing
+dashboard inspected or payment/limit changed. This is not a code/test failure.
+Retained job metadata/annotations; no fabricated job logs for unstarted jobs.
+Required hosted source checks have NOT passed. Actual range comparison unrun,
+measurement admission false, PR52 draft. User notified; continue only independent
+work while Actions availability is unresolved. Scientific caps/seeds/gates stay.
+
+Added a plain-English four-column terminal exercise using completed C6 evidence.
+Actual-cache agent smoke passes default/rank2 plus n/p/s/o/g/t/q; separately
+retained logs/receipt. Journal97/navigation/current status explain local success,
+external block and unchanged pending comparison. No user completion, personal
+time or mastery inferred. No main update or unrelated-file mutation in this step.
+
+### November 11 — complete the local river range-weight comparison
+
+After explicit public-visibility authorization and CI retry/resume, source run
+43052779450 attempt2 passes BOTH jobs on unchanged published a682d91c605bdfe19b5d1153ffc47a59dd5b5000:
+2,759passed/58skip/149deselect/1historical roundoff warning, 675.02/944.82s.
+All lint/format/types/hooks steps pass; exact source/job metadata and decoded
+logs retained in results/river-range-checks/complete. Prior account-blocked
+attempts stay intact. No actual billing dashboard or spending settings changed.
+Expired temporary environments restored to persistent work paths from the same
+lock; original311.17/NumPy2.4.6/active module/clean source/config verified, 72
+focused tests PASS8.87s. Scientific fingerprint remains987c636e258c4f866d22b23cbc6bc4349493bc0874b994ac5d0cbc8e258512bd.
+
+Only then ACTUAL complete data-only command passes in168.794338750s<900:
+24profiles/48responses/96suffixes/192LOCALpanels/384CSVcontrol rows, 44,160
+profile-seat river-row records (88,320 across both suffixes, not independent
+hands). Largest source mixture/root/Q error8.526512829121202e-14chips<1e-9;
+unitless support/normalization error2.220446049250313e-16<1e-12. Complete raw
+rows/groups/unsupported cases/partials retained, trees/policies/source inputs
+unchanged and constructors blocked. No new native audit/training/feature/
+default/fresh/global admission; original overall learning FAIL remains.
+
+Both runtimes validate every cached detail and render all96 selections plus
+n/p/s/o/g/t/r/q/invalid-key/rank (11.1189/8.4191s); agent activity, not personal
+practice. A retained one-off analysis execution record formats all384 raw rows
+into192paired control rows, all-case tables and both visually inspected plots.
+Both runtimes reproduce all three numeric/text files and both PNGs byte for
+byte; raw inputs unchanged. Cached postprocessing time is separate from the
+900s original command, not new learning or original full replay. Its first
+Matplotlib import used a temporary font cache; the warning is retained, and
+subsequent checks use an explicit writable cache. Initial reporting-record
+lint/line wrapping was fixed before execution; no scientific source changed.
+
+In unfavorable mediumseed20261302/mixed/seat1/fine suffix, actual→prior local
+cost is1.026045948→0.635127679 in the saved partition (34→19conflicts/774groups),
+and0.386738718→0.164204558 with full static refinement (23→11/1,386). Same
+static-signature nines5d/5h have identical comboQ but different posteriors and
+call/fold preferences; common50/50prior removes that conflict. QhKh9d/9h still
+prefer fold/raise under commonprior because frozen later responses differ.
+Prior substitution also creates a small seat0 static conflict (0→.0002828928).
+All192paired control rows retained:66lower local cost,10higher,116within1e-9;
+dependent descriptive counts, not a success rate or learning gate. These local
+costs are NOT rootEV/retraining gains or additive to the prior.678209root gap.
+
+Method/README/plain-English journal97 and a dated note of the user's actual
+negative-continuation question updated. Added two publication tests checking
+the real full cache and every reported pair/plot digest; initial2PASS9.12s.
+Combined focused publication suite74PASS20.62/16.94s on both runtimes; whole
+Ruff/732-file format/strict typing613files pass. Scientific source bytes remain
+unchanged; the new publication test validates measured artifacts rather than
+altering their calculations.
+Complete relevant artifact checks and BOTH final hosted jobs required before
+merge; those final results are reported separately. Main and unrelated user
+results remain untouched at this checkpoint. Next question concerns residual
+later responses and their stability, not immediate range-only feature adoption.
+
+### November 11 — final local range publication checks
+
+Immutable result commit be6f91dd63ad041f5fac6f0d9179af449dba4de4 passes both full
+local bases: 2,761passed/58skip/149deselect, 504.91/488.55s. All lint/format/strict
+typing/hooks and before/after clean HEAD/runtime/module/scientific-source guards
+pass. Focused ALL-EXTRAS suites74PASS20.49/16.84s, not the entire optional
+historical suite. Exact logs/receipts/launcher retained in final-local; wrappers
+521.5702/506.9642s base and25.9293/21.9643s optional, setup excluded. Original
+scientific fingerprint987c636e... unchanged. Subsequent edits are documentation/
+evidence only, including clarification that a posterior feature might also proxy
+future responses; this local control does not prove a particular feature fails.
+Both final hosted artifact jobs remain required before history-preserving merge.

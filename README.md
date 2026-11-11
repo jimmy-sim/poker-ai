@@ -55,6 +55,13 @@ games, not evidence of general Hold'em strength. [Full method, all seeds and
 limits](docs/own-opponent-learning.md), [all-control heatmaps](results/opponent-information/report/fixed-gain.png)
 and learning-journal step94 explain the result.
 
+A [complete saved-river diagnosis](docs/river-range-reweighting.md) finds that
+betting-conditioned opponent ranges explain some shared-group action conflicts,
+while others persist because later opponent responses differ. All 24 saved
+profiles and both own continuations are retained; this is a local diagnostic,
+not a trained improvement. [All-case plots and tables](results/river-range-report/tables.md)
+and learning-journal step97 explain the distinction.
+
 ![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
 
 **Previous research — November 10:** the complete private-deal stratification
