@@ -15,6 +15,7 @@ notes section is for your own questions and explanations as you work through it.
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
 - [Why these two static refinements do not help here](#step-83--rule-out-two-static-river-refinements-november-10)
+- [Giving the own training opponent finer legal information](#step-84--build-the-own-opponent-information-controls-november-11)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
@@ -24,7 +25,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November 10 update: issue #4 is improving the Hold'em learner through small,
+November 11 update: issue #4 is improving the Hold'em learner through small,
 fully specified tests. The latest sampling candidate fails its main strength
 gate: 3.35% mean exploitability versus 2.17% for the existing batched research
 control in one known compressed game. Lower is better. The independent numerical
@@ -37,8 +38,9 @@ which river distinctions or training gaps produce those later choices. Steps
 82–83 find that finer static range probabilities and ordered combo outcomes add
 no new groups in this known game. The next question is whether training against
 an own opponent with more detailed own-card/public-board information helps.
-That comparison is not yet implemented or admitted. None of
-these results establishes competitive general Hold'em strength.
+Step 84 builds and tests the mixed-information game software. The real learning
+comparison is not yet implemented or admitted. None of these results establishes
+competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3393,7 +3395,44 @@ fraction check matches every saved local score within about 9e-16. The correctio
 allows at most 1e-12 roundoff in those recomputed scores while keeping file hashes,
 support, row counts and zero controls exact. It does not change the saved data,
 training results or strength limits. Seven regression cases test that boundary;
-the corrected full checks must still pass before merging.
+the corrected source passes 2,369 base and 2,426 optional tests on each runtime.
+Both Linux jobs pass too, measuring the same tiny rounding difference. PR #48
+is merged; your local checkout passes all 52 focused checks and reproduces the
+tables. Your ten existing local result changes remain intact.
+
+### Step 84 — build the own opponent information controls (November 11)
+
+The new question is whether a coarse learner misses weaknesses because its own
+training opponent is also coarse. We need to change the opponent's information
+without changing the game or quietly giving the learner extra information.
+
+The new software builds two views. In one, seat 0 stays coarse while seat 1 uses
+its fine legal own-card/public-board information. The other reverses those roles.
+A future final coarse strategy would take seat 0's own rows from the first game
+and seat 1's own rows from the second. The finer opponents' rows are discarded.
+Both training games must count toward the compute budget.
+
+**Fictional example:** a player can stop for zero or risk a response. In state 0,
+the opponent's A/B choices pay the player +1/-1; in state 1, -1/+1. A coarse
+opponent must respond the same way in both states, so risk averages to zero.
+A fine opponent can choose the harmful response in each state, making risk
+worth -1. Stopping still guarantees zero. Thus a coarse strategy can be safe,
+even when another coarse equilibrium is vulnerable to finer deviations.
+
+This example has a known answer, so tests independently add terminal payoffs and
+enumerate possible replies. Thirty-two focused checks pass. They cover both
+seats, source/role bindings, changed data, immutable copies and remembering past
+own information. Structural tests on both known poker games cover every decision
+node, including different hidden opponent hands and unrevealed future cards
+that share the same acting-player observation. The acting agent's groups stay
+coarse; the legal game, actions and payoffs stay the same.
+
+The [protocol](exact-opponent-views.md) explains the controls. Broader checks and
+source publication follow before software acceptance. No new Hold'em training
+has run, and no reference strategies enter the learner. A real comparison still
+needs its fixed design, source/compute checks and published admission. The earlier
+strength failure and agent default stay unchanged. Codex assisted with the code
+and explanation; no personal practice, hours or mastery are inferred.
 
 ## Your own learning notes
 

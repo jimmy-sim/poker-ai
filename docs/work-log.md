@@ -2552,3 +2552,33 @@ Focused corrected base51pass1skip2.48s; Ruff/format/stricttyping pass. New full
 local suites/hostedCI required beforemerge; no new research trajectory begins.
 Own-exact-opponent software prospect registeredcomment6790000490, separate empty
 worktree exists; its implementation waits until this mismatch is resolved.
+
+### November 11 — close PR #48 and build the own-opponent information controls
+
+PR #48 merges at 078433b after corrected CI 42981595850 passes both jobs.
+Linux measures 8.881784197001252e-16 local replay roundoff, with all structure,
+support and counts exact. Corrected local base suites each pass 2,369 tests
+(48 skipped, 148 deselected; 337.78/326.02s); optional suites each pass 2,426
+(148 deselected; 382.04/367.52s). Raw corrected logs and SHA receipts are in
+PR comment 6790343848. User main passes 52 focused checks in 12.25s; its actual
+renderer reproduces both numeric tables byte for byte. Fresh pre-FF snapshot
+and post-test checks preserve all ten modified bytes, index, status and diff.
+
+Only then implement prospective comment 6790000490 in a separate worktree.
+The new factory creates the two own coarse/fine-opponent information views;
+the composer projects each coarse seat from its own view and discards the fine
+opponent rows. Read-only copies, source/view/role/policy fingerprints, legal-menu
+checks and perfect recall protect the construction. No historical source file,
+policy data, updater, dependency lock or agent default changes.
+
+Thirty-two focused checks pass in 3.24s, with Ruff/format/strict typing passing.
+Independent terminal sums and pure replies validate a fictional signal-game
+counterexample for both target signs. Both known poker games pass all-node
+observability/hidden/future invariance and policy-edge/value/own-reply checks.
+The cached original browser still loads. Interrupted/incomplete software evidence
+retains failure and denies training admission. Journal step 84 and the versioned
+protocol explain this software-only milestone. Full base/optional/hosted checks
+and a published software receipt are pending; no new real trajectory or stronger/
+default/fresh/global claim. Added modules create a new source cohort, not an
+inheritance of the old admission. User authorization continues until stopped;
+the deleted automation is not recreated. No human hours or mastery inferred.

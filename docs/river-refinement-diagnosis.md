@@ -156,7 +156,12 @@ structure, support, counts and singleton zeros stay exact. Original chip/support
 tolerances, scientific configs, data, strength gates and caps are unchanged.
 Seven added regressions accept tiny cost roundoff but reject changed support,
 counts/probes, nonfinite costs, nonzero singletons and larger errors. Corrected
-full local/hosted results remain to be recorded before merge.
+source eb9db90 passes 2,369 base and 2,426 optional tests on each runtime. Hosted
+CI 42981595850 passes both jobs, measuring 8.881784197001252e-16 local roundoff
+on Linux. PR #48 merges at 078433b. User-main checks pass 52 tests in 12.25s and
+its renderer reproduces both numeric tables exactly; all ten local result changes
+remain intact. Full corrected raw logs/checksums are retained in PR #48 comment
+6790343848. No numerical data, scientific source or strength gate changed.
 
 From a clean checkout, use fresh destinations:
 
