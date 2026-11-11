@@ -2810,3 +2810,12 @@ Actual PR checkout e9d7ec0f4abfd3dde00dc45cc90c5553d42bdbfc matches all291
 scientific source/config/entrypoint/lock files. Raw local/hosted logs and hashes
 are retained in software-checks. These checks validate software; the corrected
 formal proof/cost forecast/published compute permit are still required.
+
+The first corrected-source fictional launch refuses an existing default scratch
+folder left by the prior source. This is a launch-path error, before worker
+initialization/toy or poker training/reference; full failed own evidence was
+published at a7c4fb1 and is retained in failed-software-scratch-5cbb87e. The
+external launcher now supplies an explicit fresh scratch folder for a new full
+rehearsal. Source, configs, seeds, complete inventories, caps and gates remain
+unchanged; no partial run is resumed or favorable subset selected. Retain both
+attempts and require the complete new own/publication/native shared-clock proof.
