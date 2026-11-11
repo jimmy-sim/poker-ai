@@ -2689,3 +2689,15 @@ completion. Complete real controls/thresholds/Native publication gates unchanged
 Journal88 explains the distinction. Focused182base21.54s/192optional20.85s and
 repository lint/format/typing pass. Fresh full source-cohort checks are required
 before the still-unrun formal proof/cost forecasts/permit/real trajectory.
+
+### November11 — final own-opponent source checks complete
+
+Source4878eb99de8ab021261576249e43c1edce3e0c78, complete sourceSHA
+2fdf2e2844cce31d1c25fc4bc23b5088a46efa53c74f03b07c720cd2c48c5a4a:
+both local base2583pass58skip149deselect437.38/420.75s; optional2650pass149deselect
+485.58/473.14s; relevant slow1pass10deselect50.83/49.00s. Both hosted43009320593
+jobs pass2583/58skip149deselect1historical roundoff warning506.05/911.71s.
+Checkout5f4f19f04aa7aaa0ef5e3be694ecea7be2b44d8e complete source inventory equals
+4878eb9. Raw logs/hash receipts retained in results/opponent-information/software-checks/.
+These are software checks, not a real training admission. The next required stage
+is the full fictional own/publication/native rehearsal under its shared180s.

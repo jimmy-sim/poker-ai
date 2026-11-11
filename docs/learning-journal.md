@@ -3608,6 +3608,12 @@ fictional proof and fixed cost forecasts. No new real trajectory, forecast or
 formal new proof has run yet. Codex assisted with the review and repair; no
 personal practice time or understanding is inferred.
 
+**Verification update:** source4878eb9 passes the complete suites on both Python
+versions: 2,583 base tests and 2,650 with optional dependencies, plus the archive
+check on each. Both GitHub jobs pass too. The raw logs and hashes are
+[saved](../results/opponent-information/software-checks/local.json). The next
+step is the formal fictional rehearsal; these checks alone admit no real run.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
