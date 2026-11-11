@@ -11,6 +11,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why a turn call needs finer river information](#96-ask-what-makes-the-turn-call-valuable)
 - [Why the unfavorable seed is still vulnerable](#95-separate-a-changed-policy-from-a-changed-opponent)
 - [Latest measured learning result](#94-finer-own-opponents-help-the-harder-spot-the-overall-gate-still-fails)
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
@@ -66,6 +67,12 @@ but their values include later river replies. Comparing against the same saved
 opponents shows why better matchup results can coexist with worse vulnerability
 to an optimal reply. The new terminal browser lets you inspect every seed,
 method and seat.
+
+Step 96 tests those continuations while keeping the turn and opponent fixed.
+For the two important calls in the unfavorable saved matchup, even the best
+river play within the current groups still favors folding. Finer legal river
+information flips both to calling. This explains a concrete weakness; it does
+not train a remedy or establish general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3984,7 +3991,7 @@ seeds and default remain unchanged. Codex assists; human hours are not inferred.
 
 ## 96. Ask what makes the turn call valuable
 
-**November 11, 2026 — issue #4; prospective follow-up.**
+**November 11, 2026 — issue #4; completed continuation diagnostic.**
 
 The saved-decision trace found two important turn calls. Its action values assume
 an optimal later reply. The next diagnostic keeps the turn probabilities and
@@ -3999,8 +4006,8 @@ different improvements. We will measure all 24 saved profiles and both seats,
 not only the unfavorable example, before choosing another training change.
 
 The [frozen plan](turn-continuations.md) defines the checks and unchanged scope.
-No continuation result, new training or personal learning is claimed yet.
-Codex assists; the prior failed superiority condition remains in the record.
+The question and complete panel were fixed before the measurements. Codex assists;
+the prior failed superiority condition remains in the record.
 
 **Implementation update:** 62 focused tests pass. Small examples with answers
 we can calculate directly check all four stages. One catches a tempting shortcut:
@@ -4008,8 +4015,51 @@ copying the turn action from a full best reply can be wrong when later choices
 must stay saved. Another shows that a shared river improvement can help overall
 while hurting one finer hand's action value, so the test checks the right total.
 Archive, partial-failure and terminal controls also pass. Full runtime checks and
-the complete saved-policy measurement are still pending; these software tests do
-not show a stronger agent or record personal practice.
+the complete saved-policy measurement were pending at that checkpoint. The
+completed result follows; those software tests alone do not show a stronger agent
+or record personal practice.
+
+**Measured answer:** all 24 profiles, 48 responding-seat conditions, 192 root
+values and 384 turn decisions pass the full calculation in 137.92 seconds.
+Source comparisons have zero chip discrepancy on the recorded runtime. Both
+full local Python suites pass 2,687 tests, both relevant optional checks pass
+62, and both hosted source jobs pass. Final artifact checks are required before
+merge. No model was trained or changed by this diagnostic.
+
+**A real example:** take the saved `9c 9d` hand on `Ts 9s 4d 2h`, facing the
+36-chip bet. Folding loses 18 net chips. Calling has different values depending
+on what happens after the turn:
+
+| River continuation after calling | Call's net chip value |
+| --- | ---: |
+| Saved play | -25.89 |
+| Best play using current river groups | -18.81 |
+| Best play using finer legal river information | -16.99 |
+
+The first two favor folding. The last favors calling. In this fixed matchup,
+learning the existing river groups better is not enough to flip the decision;
+the finer river distinctions matter. The other large `Qh Kh` example has the
+same fold-to-call switch. Different saved opponents can change this answer, so
+it is not a rule for all hands or proof of a universal representation limit.
+
+**Why the whole-game river gain looks small:** saved turn play mostly folds
+before these opportunities. Better coarse river play adds about 0.03254 chips
+at the root; finer river play adds only another 0.00743 while those folds stay
+fixed. Allow the full reply to change turn play too, and another 0.63824 becomes
+available. Together they recover the original 0.67821-chip reply gap. These are
+controlled reply values, not measured improvements from retraining our agent.
+
+**Try the four columns:** run
+`.venv/bin/python scripts/inspect_turn_continuations.py` from the project folder.
+Add `--rank 2` for the other large group or `--interactive` for n/p/s/o/g/t/q.
+The agent checked all 48 game/seed/method/seat selections with the real cache and
+training/reference construction blocked. This does not record you trying them.
+
+The [complete method and all-seed tables](turn-continuations.md) retain the
+unfavorable seed and both seats. Next, inspect the river groups themselves and
+their action-conditioned opponent-range weights. That can help explain which
+observable distinctions matter before selecting another feature or training
+change. The original failed superiority gate and agent default remain unchanged.
 
 ## Your own learning notes
 

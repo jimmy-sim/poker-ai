@@ -1,0 +1,10 @@
+Checking cached continuation and original-source hashes...
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/turn-continuations/scripts/inspect_turn_continuations.py", line 8, in <module>
+    raise SystemExit(main(Path(__file__).resolve().parents[1]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/turn-continuations/src/poker_ai/evaluation/turn_continuation_view.py", line 115, in main
+    show(profile, args.seat, rank)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/turn-continuations/src/poker_ai/evaluation/turn_continuation_view.py", line 15, in show
+    raise ValueError("choose an available positive turn-group rank")
+ValueError: choose an available positive turn-group rank
