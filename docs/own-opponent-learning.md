@@ -247,3 +247,26 @@ and a colorbar overlap. Their three numeric files remain byte-identical through
 the plot-only corrections. Wider exact-source local/optional/hosted checks,
 formal published full-shape proof, actual forecasts and compute admission are
 still pending. No new real trajectory or model-strength improvement is claimed.
+
+## Coverage-tolerance correction before advancement — November11
+
+Source627427b completes both full local base2576/optional2643 suites and the
+relevant archive check on both runtimes. Both hosted43004096870 jobs pass2576
+tests with58skips/149deselections and one retained historical warning, in
+906.60/887.49s. The full PR checkout source inventory equals627427b. Raw logs,
+hashes and local/hosted receipts are retained in
+[source-627427b-checks](../results/opponent-information/source-627427b-checks/receipt.json).
+
+Final protocol review catches a mismatch before the new formal proof, forecast
+or any real trajectory: coverage replay used1e-9 instead of the already-frozen
+unitless1e-12. New consistently repacked whole/post-warm archive fixtures with
+coverage error5e-10 are wrongly accepted before the repair (2failed/1passed).
+The correction rejects them at1e-12, separately from chip scores at1e-9. Error
+maxima keep separate units. The within-tolerance5e-13 fixture still passes;
+all3 regression cases pass after the fix. The earlier full checks remain valid
+for their historical source, not the corrected source. Complete corrected local/
+optional/hosted checks are required again. No threshold, seed, work cap, learning
+rule, historical result or agent default changes.
+
+Corrected focused checks:178base/10optional skips/1slow deselection23.51s;
+188optional/1slow deselection23.45s. Full repository lint/format/strict typing pass.

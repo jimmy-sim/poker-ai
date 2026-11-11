@@ -20,13 +20,19 @@ from poker_ai.evaluation.opponent_learning_design import (
     Design,
 )
 from poker_ai.evaluation.opponent_learning_own import fixture, replay, software_data
+from poker_ai.evaluation.opponent_learning_replay import metadata
 from poker_ai.evaluation.opponent_learning_report import assessment, write
 from poker_ai.evaluation.opponent_learning_score import fixed_inventory, scoring
 from poker_ai.evaluation.opponent_learning_workers import gather_independent
 from poker_ai.finite import FloatArray
 from poker_ai.postflop.cell_process import partition
-from poker_ai.postflop.controlled_checkpoints import unpack_policy
-from poker_ai.postflop.learning_artifacts import decode, read_archive
+from poker_ai.postflop.controlled_checkpoints import unpack_policy, write_snapshot
+from poker_ai.postflop.learning_artifacts import (
+    decode,
+    read_archive,
+    sha,
+    write_archive,
+)
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.solver_validation import opponent_learning as native
 
@@ -266,6 +272,72 @@ def test_combined_raw_mass_preserves_zero_support_and_own_rows() -> None:
         np.testing.assert_array_equal(mass[own0], [[4, 6]])
         np.testing.assert_array_equal(mass[own1], [[0, 0]])
         assert not mass.flags.writeable
+
+
+@pytest.mark.parametrize(
+    "phase,delta,accepted",
+    [("whole", 5e-10, False), ("post_warm", 5e-10, False), ("whole", 5e-13, True)],
+)
+def test_repacked_support_uses_frozen_unitless_not_chip_tolerance(
+    complete: dict[str, Any],
+    tmp_path: Path,
+    phase: str,
+    delta: float,
+    accepted: bool,
+) -> None:
+    s = copy.deepcopy(complete["saved"])
+    # Repack a fully valid archive with unchanged policy bits and consistent
+    # metadata/file hashes. Only independent support recomputation can catch it.
+    chosen = next(r for r in s["rows"] if r["coverage"] is not None)
+    for row, blob in read_archive(
+        complete["folder"] / s["details_file"], s["details_sha256"], s["rows"]
+    ):
+        destination = tmp_path / row["file"]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if row is chosen:
+            context = scoring(complete["contexts"][row["coordinate"] // 3], row)
+            detail = decode(blob, context, row)
+            value = row["coverage"][phase]["all"]["uniform_reach_fraction"]
+            row["coverage"][phase]["all"]["uniform_reach_fraction"] = (
+                value - delta if value > 0 else value + delta
+            )
+            meta = {
+                k: v
+                for k, v in row.items()
+                if k not in {"receipt", "metadata_sha256", "file"}
+            }
+            row["receipt"] = write_snapshot(
+                destination,
+                context.partition,
+                unpack_policy(context.partition, detail["policy"]),
+                meta,
+            )
+            row["metadata_sha256"] = sha(meta)
+            metadata(row)
+        else:
+            destination.write_bytes(blob)
+    archive = complete["folder"] / (tmp_path.name + "-details.jsonl.gz")
+    s["details_file"] = archive.name
+    s["details_sha256"] = write_archive(archive, tmp_path, s["rows"])
+
+    def check() -> dict[str, Any]:
+        return replay(
+            complete["folder"],
+            s,
+            Design(TOY, TOY_WORK),
+            lambda i: complete["contexts"][i // 3],
+            complete["opponents"],
+            BINDING,
+            Deadline(180),
+        )
+
+    if accepted:
+        result = check()
+        assert result["maximum_error"] == 0
+        assert 0 < result["maximum_unitless_error"] <= 1e-12
+    else:
+        with pytest.raises(ArithmeticError, match="unitless"):
+            check()
 
 
 @pytest.fixture(scope="module")

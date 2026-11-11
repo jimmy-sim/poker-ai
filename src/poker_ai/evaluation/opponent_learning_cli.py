@@ -112,7 +112,14 @@ def read(root: Path, path: Path, deadline: Deadline) -> dict[str, Any]:
         deadline,
         standins=standins,
     )
-    if compare(actual, saved["own_replay"]) > 1e-9:
+    if (
+        compare(actual, saved["own_replay"]) > 1e-9
+        or abs(
+            actual["maximum_unitless_error"]
+            - saved["own_replay"]["maximum_unitless_error"]
+        )
+        > 1e-12
+    ):
         raise ArithmeticError("own whole-grid replay receipt changed")
     for name, expected in saved["report"].items():
         if digest(path.parent / "report" / name) != expected:

@@ -2646,3 +2646,26 @@ the corrected all180-member reader passes. All3 draft figures visually checked;
 distinctions. Full source-bound local/optional/hosted checks and formal proof/
 forecast/admission are pending. No new real trajectory, improved agent/default,
 fresh/global claim, personal hours or invented user learning.
+
+### November11 — repair unitless replay tolerance before proof/admission
+
+Source627427b completes full local base2576/optional2643 each,58base skips and
+149deselections; pytest430.35/417.08s base,480.83/464.79s optional. Relevant
+slow archive1pass each51.48/49.62s. Both hosted43004096870 jobs pass2576 with
+58skips/149deselections/1historical warning,906.60/887.49s. All raw logs and
+source/checkout/hash receipts are retained in source-627427b-checks. GitHub PR
+checkout9a535dae source inventory exactly equals tested627427b.
+
+Final review finds coverage replay using the chip1e-9 tolerance instead of the
+frozen unitless1e-12. Two consistently repacked whole/post-warm5e-10 defects
+reproduce as wrongly accepted; one within-tolerance5e-13 control passes. Preserve
+before-fix2failed/1passed8.95s and after-fix3passed6.62s logs. Correct coverage
+guard and receipt comparison, retaining separate unitless/chip maxima. Journal87
+explains why readable/hash-consistent archives still need mathematical replay.
+Fresh complete corrected-source checks are required. No formal new proof/cost
+forecast/admission/real trajectory occurred on the superseded source. Seeds,
+learning rules, scientific caps and original thresholds remain unchanged.
+
+Corrected focused178base23.51s/188optional23.45s,1slow deselected and10base optional
+skips. Full repository Ruff/format/strict typing pass. Corrected full source-bound
+local/optional/hosted and relevant slow checks remain pending.

@@ -43,7 +43,8 @@ Step 84 builds and tests the mixed-information game software. Step 85 fixes the
 learning comparison and implements its capture and replay checks. Step86 connects
 the complete command, worker, archive, report and admission checks. Its wider
 source checks and published proof/forecasts are pending; real learning is not
-admitted. None of these results establishes
+admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
+proof or any new real trajectory. None of these results establishes
 competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3531,6 +3532,42 @@ blocked until those gates pass and its compute permit is published. The current
 agent default and known failed strength result remain unchanged. Codex assisted
 with this implementation and explanation; no personal practice, hours or mastery
 are inferred. See the [technical method](own-opponent-learning.md).
+
+## 87. Keep the promised tolerance for each kind of number
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The complete suites passed on the first pipeline source: 2,576 base tests and
+2,643 with optional dependencies on each Python version, plus the archive check
+on both. Both GitHub jobs passed too. A final comparison with the written
+protocol still found a mistake: the replay allowed the chip-value rounding
+tolerance when checking coverage fractions. The protocol had promised a tighter
+tolerance for those fractions. Passing existing tests did not establish that
+this separate requirement was implemented correctly.
+
+**Example:** chip values and a fraction such as 95% measure different things.
+The protocol allows an absolute discrepancy of 1e-9 chips, but only 1e-12 for a
+coverage fraction. A new test changes a saved fraction by 5e-10 and rebuilds its
+file and archive checksums consistently. The file is readable and its checksums
+match, but its coverage no longer agrees with the averaging book. The old replay
+accepted that error. This demonstrates why we recompute the mathematics as well
+as checking files.
+
+The correction enforces the original 1e-12 coverage tolerance and records chip
+and unitless error maxima separately. Both whole-average and post-warm altered
+fractions now fail. A change of 5e-13, inside the allowed rounding tolerance, still
+passes. The regression first reports two failures and one pass, then all three
+pass after the fix. The before/after logs and earlier complete check logs are
+[retained](../results/opponent-information/source-627427b-checks/receipt.json).
+
+The earlier checked source is preserved. The correction needs its own complete
+source checks before advancing. Its focused checks pass: 178 base in 23.51s and
+188 with optional dependencies in 23.45s. Lint, formatting and typing pass.
+No actual new poker trajectory, cost forecast or
+formal new proof ran on the too-permissive source. Training rules, seeds, caps
+and acceptance thresholds are unchanged; this repair follows the threshold
+already written down. Codex assisted with the review, test and fix. No personal
+learning time or mastery is inferred.
 
 ## Your own learning notes
 

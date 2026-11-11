@@ -298,7 +298,8 @@ def replay(
 
     No source trainer or native constructor is needed. Recompute every own scalar,
     reply fingerprint, support statistic and fixed condition. File/identity checks
-    remain exact; recalculated numerical scores allow only1e-9 absolute roundoff.
+    remain exact; chip scores allow1e-9 and unitless support allows1e-12 absolute
+    roundoff, as fixed prospectively. Error maxima retain their separate units.
     """
     if (
         saved["format"] != FORMAT
@@ -408,6 +409,7 @@ def replay(
         details=saved["rows"],
     )
     maximum = 0.0
+    maximum_unitless = 0.0
     with tempfile.TemporaryDirectory(prefix="own-opponent-replay-") as name:
         scratch = Path(name)
         for stream, rows in streams.items():
@@ -467,13 +469,12 @@ def replay(
                 not same(metadata(row).get(k), v) for k, v in metadata(source).items()
             ) or not same(row["source_policy_receipt"], source["receipt"]):
                 raise ArithmeticError("scored own source binding changed")
-            maximum = max(
-                maximum,
-                compare(
-                    books.support(contexts, source, captures),
-                    row["coverage"],
-                ),
+            support_error = compare(
+                books.support(contexts, source, captures), row["coverage"]
             )
+            if support_error > 1e-12:
+                raise ArithmeticError("own unitless support replay exceeds fixed1e-12")
+            maximum_unitless = max(maximum_unitless, support_error)
         measured = fixed_conditions(
             design,
             policies,
@@ -499,6 +500,7 @@ def replay(
         logical_profiles=216,
         fixed_conditions=1152,
         maximum_error=maximum,
+        maximum_unitless_error=maximum_unitless,
         policy_and_ledger_bits_exact=True,
         new_training_admission=False,
     )
