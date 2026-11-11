@@ -2848,3 +2848,14 @@ Original ignored outputs/scratch/args retained; canonical files/logs copied
 byte-identically with SHA manifest cost/own-publication.json. Publish ALL own
 cost evidence before first corrected-source native cost construction. Full
 native costs/forecast/persisted permit/real study remain pending.
+
+### November11 — all corrected-source native cost repetitions pass
+
+After own publicationc7930ad, complete native costs0/1/2 take356.133935375/
+357.755006833/358.878548334s<900 each. N=max358.8785483339998s. Each verifies
+all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+reference actions or training. Full command times include published-own/source
+preflight, reference construction/scalars and final own replay. Exact canonical
+copies/logs and SHA manifest retained in cost/native-publication.json; original
+ignored output paths/arguments remain. Publish all native evidence, then run the
+full fixed forecast command; no corrected-source permit or real trajectory yet.

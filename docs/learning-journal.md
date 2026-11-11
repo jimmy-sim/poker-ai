@@ -3779,6 +3779,15 @@ The [publication manifest](../results/opponent-information/cost/own-publication.
 records exact copies of every run before any independent timing comparison.
 All three independent costs and the complete forecast/permit are still required.
 
+**Independent timing update:** the three complete comparisons pass in 356.13,
+357.76 and 358.88 seconds. The forecast uses 358.88 seconds. Each checks all
+432 policies and 1,152 fixed comparisons; the largest discrepancy is
+1.85 × 10⁻¹³ chips, below the fixed 10⁻⁹ tolerance. They export no reference
+actions and perform no training. The [native publication manifest](../results/opponent-information/cost/native-publication.json)
+records exact copies and original run locations. The full forecast must still
+verify every source-bound input and apply the unchanged formulas; these timings
+alone grant no training permit or strength claim.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
