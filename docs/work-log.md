@@ -3015,3 +3015,17 @@ Publication hooks first caught a missing tool path, then treated the exact
 external launcher record as repository Python. The path was restored and the
 unchanged launcher bytes retained as run_checks.py.txt (a historical execution
 record). No source, test, config, output or scientific gate changed.
+
+### November11 — prospective fixed-turn continuation diagnostic
+
+Issue4comment6798673089 registers the next question before implementation/output.
+Frozen turn-continuations config binds PR50's complete manifest/summary/config.
+Both known games/all3seeds/all4arms/final10mLINEAR,24profiles/48responding seats,
+four continuation panels give192root values plus every owned TURN row/menu.
+Saved/restricted-river/fine-river preserve ownTURN and all opponent probabilities;
+full fine reply explicitly may change ownTURN. Exact information-set masked DP,
+analytic/enumerated controls, original reply slices/roots, root ordering/stage
+telescoping, support/inventory/source checks, retained partial failures, constructor
+blocks and cached browser define acceptance. Separate900s data-only bound does
+not admit learning or change historical caps/seeds/gates/default. Implementation
+and measurements pending; PR50 final artifact CI continues unchanged.

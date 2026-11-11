@@ -3982,6 +3982,26 @@ call is valuable with the saved river continuation, the best coarse continuation
 or only the fine-information continuation. The original failed superiority gate,
 seeds and default remain unchanged. Codex assists; human hours are not inferred.
 
+## 96. Ask what makes the turn call valuable
+
+**November 11, 2026 — issue #4; prospective follow-up.**
+
+The saved-decision trace found two important turn calls. Its action values assume
+an optimal later reply. The next diagnostic keeps the turn probabilities and
+opponent fixed, then compares saved river play, the best river play using the
+current information groups, and the best play using finer legal river information.
+It also retains the complete best reply as a separate control.
+
+**Example:** a call may look bad if we continue with our saved river mistakes,
+better if we learn those same river groups properly, and better still if we can
+distinguish rivers that the groups currently merge. Those possibilities require
+different improvements. We will measure all 24 saved profiles and both seats,
+not only the unfavorable example, before choosing another training change.
+
+The [frozen plan](turn-continuations.md) defines the checks and unchanged scope.
+No continuation result, new training or personal learning is claimed yet.
+Codex assists; the prior failed superiority condition remains in the record.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
