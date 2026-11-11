@@ -166,6 +166,17 @@ and both PNGs byte for byte; neither rerun trains or repeats original full math.
 The figures were visually inspected. Providing and checking the browser does
 not record personal practice or hours.
 
+Final full local checks on immutable result commit `be6f91d` pass **2,761 tests**
+per runtime, 58 skipped and 149 deselected (504.91/488.55 seconds), including the
+two actual-publication checks. All lint/format/strict typing/hooks and before/
+after source/runtime guards pass. Focused all-extras suites pass 74 tests each
+(20.49/16.84 seconds), not the entire historical optional suite. Exact logs,
+receipts and the external launcher are retained in
+[final local evidence](../results/river-range-checks/final-local/summary.json).
+The scientific source, data and tests stay unchanged in the subsequent
+documentation/evidence checkpoint; both latest hosted artifact jobs remain
+required before merge.
+
 See the [complete 192 paired-control rows](../results/river-range-report/effects.csv),
 [all-case tables](../results/river-range-report/tables.md),
 [raw measurements](../results/river-range-reweighting/panels.csv) and
@@ -286,8 +297,11 @@ a candidate needs its own learning and source-bound admission.
 
 The local prior intervention is not a globally consistent strategy. Off-path
 actions and responses stay at their frozen values and may not be optimized for
-that prior. These two known games and three dependent seeds do not establish
-general Hold'em strength. Original learning gates, including the failed overall
+that prior. A residual after reweighting does not prove a particular posterior
+feature must fail: its values could also correlate with later responses. No
+such feature or learning test has run. These two known games and three dependent
+seeds do not establish general Hold'em strength. Original learning gates,
+including the failed overall
 superiority condition, and the agent default remain unchanged. Complete artifact
 checks and both hosted final jobs are required before merge. Codex assists;
 human practice/time are recorded only when actually reported.

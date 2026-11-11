@@ -4141,7 +4141,9 @@ If we replace both updated ranges with the same 50/50 prior, both call values
 become zero. That removes this particular conflict. But it does not remove
 every conflict: another matched pair with Qh Kh still prefers fold on 9d and
 raise on 9h under the same prior. There, the saved opponent responds differently
-to the raise. Remembering hand weights alone would miss that second effect.
+to the raise. Those response differences remain when this diagnostic gives
+both rows the same hand weights. We have not tested whether a particular
+range-based feature could also act as a useful proxy for later responses.
 
 For the previously unfavorable saved matchup, the local disagreement score in
 the richer static groups falls from 0.38674 to 0.16420 chips per weighted
@@ -4160,6 +4162,12 @@ is which later opponent responses cause the remaining differences. This is
 evidence against treating a range-only feature as a complete repair, not proof
 that a new feature will improve learning. The original failed superiority gate
 and agent default remain unchanged.
+
+**Publication checks:** Both full local suites now pass 2,761 tests, with 58
+skipped and 149 excluded. This includes the two checks of the actual saved
+publication. Focused optional suites pass 74 tests on each runtime. These
+checks protect the evidence and reporting; they are not another training gain.
+The final GitHub checks are recorded separately before merging the milestone.
 
 **Try the new browser after this milestone is merged:**
 `.venv/bin/python scripts/inspect_river_range_weights.py --interactive`.

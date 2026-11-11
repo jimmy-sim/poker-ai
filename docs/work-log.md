@@ -3229,3 +3229,16 @@ Complete relevant artifact checks and BOTH final hosted jobs required before
 merge; those final results are reported separately. Main and unrelated user
 results remain untouched at this checkpoint. Next question concerns residual
 later responses and their stability, not immediate range-only feature adoption.
+
+### November 11 — final local range publication checks
+
+Immutable result commit be6f91dd63ad041f5fac6f0d9179af449dba4de4 passes both full
+local bases: 2,761passed/58skip/149deselect, 504.91/488.55s. All lint/format/strict
+typing/hooks and before/after clean HEAD/runtime/module/scientific-source guards
+pass. Focused ALL-EXTRAS suites74PASS20.49/16.84s, not the entire optional
+historical suite. Exact logs/receipts/launcher retained in final-local; wrappers
+521.5702/506.9642s base and25.9293/21.9643s optional, setup excluded. Original
+scientific fingerprint987c636e... unchanged. Subsequent edits are documentation/
+evidence only, including clarification that a posterior feature might also proxy
+future responses; this local control does not prove a particular feature fails.
+Both final hosted artifact jobs remain required before history-preserving merge.
