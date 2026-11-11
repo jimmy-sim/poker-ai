@@ -76,11 +76,11 @@ river play within the current groups still favors folding. Finer legal river
 information flips both to calling. This explains a concrete weakness; it does
 not train a remedy or establish general Hold'em strength.
 
-Step 97 implements the next range-weight check. Its full local checks pass on
-both Python versions, but GitHub has blocked the required hosted checks before
-they can start because of an account billing restriction. The saved-policy
-comparison stays pending. The [terminal exercise](terminal-river-lab.md) uses
-the already completed step 96 report and remains available in your main folder.
+Step 97 completes the range-weight check after both GitHub jobs pass. Changing
+the opponent's hand weights explains some river conflicts, but others persist
+because the saved opponent's later responses differ. This narrows the problem;
+it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
+the completed step 96 report, and step 97 adds a range-weight browser and plots.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4121,7 +4121,61 @@ walks through the saved nines and QhKh calls, navigation keys and root totals.
 Codex checked those commands against the actual cache. This records providing
 and checking an exercise, not you completing it or spending any measured time.
 
+**Completed comparison — November 11:** After you authorized making the repo
+public, both retried GitHub jobs passed. Each passed 2,759 tests, with 58 skipped,
+149 excluded and one retained historical rounding warning. The original local
+runtime was restored from the unchanged lockfile and passed 72 focused tests.
+The full comparison then finished in 168.79 seconds, inside its 900-second cap.
+All 24 saved strategies, both seats, both river continuations and both range
+weights are retained. This is a diagnosis of saved play, not new training.
+
+**What the result means:** Consider pocket nines on `Ts 9s 4d 2h`, later facing
+a river decision where folding costs 54 chips already invested. With river 5d,
+the fixed opponent's updated range puts about 43% on As Js and 57% on Tc Td.
+Calling is worth about −27.94 chips, better than folding for −54. With river 5h,
+the updated range puts only about 20% on As Js; calling falls to −118.37, so
+folding is better. Our made-hand rank and static showdown descriptions match.
+The change in likely opponent hands can therefore matter to the decision.
+
+If we replace both updated ranges with the same 50/50 prior, both call values
+become zero. That removes this particular conflict. But it does not remove
+every conflict: another matched pair with Qh Kh still prefers fold on 9d and
+raise on 9h under the same prior. There, the saved opponent responds differently
+to the raise. Remembering hand weights alone would miss that second effect.
+
+For the previously unfavorable saved matchup, the local disagreement score in
+the richer static groups falls from 0.38674 to 0.16420 chips per weighted
+decision when we replace the weights; 11 of 1,386 groups still conflict under
+the prior, versus 23 under the actual weights. These scores describe a fixed
+diagnostic weighting, not a measured gain from retraining or a game win rate.
+Other cases retain increases too: prior replacement creates one small conflict
+where the actual range had none. We keep all these directions in the
+[complete tables and plots](river-range-reweighting.md#complete-measured-panel).
+
+Both runtimes checked every cached condition and reproduced all report tables,
+examples and both plots byte for byte. Codex checked the terminal navigation;
+no personal practice or hours are inferred. New publication checks also validate
+the actual committed cache and all 192 reported weight pairs. The next question
+is which later opponent responses cause the remaining differences. This is
+evidence against treating a range-only feature as a complete repair, not proof
+that a new feature will improve learning. The original failed superiority gate
+and agent default remain unchanged.
+
+**Try the new browser after this milestone is merged:**
+`.venv/bin/python scripts/inspect_river_range_weights.py --interactive`.
+It shows the opponent's possible hands, prior and updated weights, and the
+resulting action values. Use r to switch between the two own continuations;
+the other navigation keys work as in the earlier browser. The figures show all
+seeds and controls, including zero-cost singleton controls and unfavorable changes.
+
 ## Your own learning notes
+
+**November 11, 2026 — your question:** You asked what “saved continuation” means
+and why its values are negative. We compared net results from the start of the
+hand with folding: −16.994 can be better than −18 even though both are negative.
+The example distinguishes a call's price, total expected result and value
+relative to folding. This records the question and explanation, not measured
+hands-on time or a claim of mastery.
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
 then used the saved-strategy browser's n/p/q controls to inspect ranks1–9 and

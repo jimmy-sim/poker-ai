@@ -1,0 +1,336 @@
+"""Reproduce a static report from the complete frozen C7 cache; no training.
+
+This is a retained one-off analysis execution record, not a learner or library.
+The original 900-second command already completed all local measurements; this
+separate command only validates and formats those cached measurements.
+"""
+
+import argparse
+import csv
+import hashlib
+import json
+import time
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+
+import matplotlib
+import numpy as np
+
+from poker_ai.evaluation.opponent_decision_run import BLOCKED, forbidden
+from poker_ai.evaluation.river_range_io import (
+    FOLDER,
+    GROUPS,
+    SUFFIXES,
+    load,
+    load_detail,
+)
+from poker_ai.evaluation.river_range_run import csv_rows
+from poker_ai.postflop.river_study import digest
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--root", type=Path, default=Path.cwd())
+parser.add_argument("--output", type=Path, default=Path("results/river-range-report"))
+args = parser.parse_args()
+root = args.root.resolve()
+folder = root / FOLDER
+output = root / args.output
+if output.exists() or output.is_symlink():
+    raise FileExistsError("retain existing report; choose a new output")
+started = time.perf_counter()
+manifest = json.loads((folder / "manifest.json").read_text())
+before = {p: digest(folder / p) for p in manifest["outputs"]}
+with ExitStack() as stack:
+    for name in BLOCKED:
+        stack.enter_context(patch(name, forbidden))
+    profiles = load(root, folder)
+    details = {p["source_id"]: load_detail(folder, p) for p in profiles}
+    raw = list(csv.DictReader((folder / "panels.csv").open()))
+    expected = [{k: str(v) for k, v in row.items()} for row in csv_rows(profiles)]
+    assert raw == expected and len(raw) == 384
+    grouped = {}
+    for row in raw:
+        key = tuple(
+            row[k] for k in ("game", "seed", "arm", "target", "suffix", "group_control")
+        )
+        by_weight = grouped.setdefault(key, {})
+        assert row["range_weights"] not in by_weight
+        by_weight[row["range_weights"]] = row
+    assert len(grouped) == 192
+    effects = []
+    for key, pair in grouped.items():
+        a, p = pair["actual_posterior"], pair["compatible_prior"]
+        assert a["total_groups"] == p["total_groups"]
+        assert a["supported_groups"] == p["supported_groups"]
+        assert (
+            a["supported_uniform_decision_weight"]
+            == p["supported_uniform_decision_weight"]
+        )
+        actual = float(a["local_sharing_cost_chips_per_weighted_decision"])
+        prior = float(p["local_sharing_cost_chips_per_weighted_decision"])
+        effects.append(
+            dict(
+                zip(
+                    ("game", "seed", "arm", "target", "suffix", "group_control"),
+                    key,
+                    strict=True,
+                )
+            )
+            | dict(
+                actual_cost=actual,
+                prior_cost=prior,
+                actual_minus_prior=actual - prior,
+                actual_conflicts=int(a["strict_conflicting_groups"]),
+                prior_conflicts=int(p["strict_conflicting_groups"]),
+                total_groups=int(a["total_groups"]),
+                supported_groups=int(a["supported_groups"]),
+                supported_uniform_weight=float(a["supported_uniform_decision_weight"]),
+                maximum_posterior_total_variation=float(
+                    a["maximum_posterior_total_variation_within_group"]
+                ),
+            )
+        )
+    assert all(
+        np.isfinite(e[k])
+        for e in effects
+        for k in (
+            "actual_cost",
+            "prior_cost",
+            "actual_minus_prior",
+            "supported_uniform_weight",
+        )
+    )
+    output.mkdir(parents=True)
+    with (output / "effects.csv").open("x", newline="") as stream:
+        writer = csv.DictWriter(stream, list(effects[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(effects)
+    text = [
+        "# Complete cached local range-weight comparison",
+        "",
+        "All 24 profiles, both responding seats, both own river suffixes, "
+        "both range weights and both group controls.",
+        "Costs are chips per decision under fixed uniform exposure weights; "
+        "they are NOT root EV, exploitability or learning gains.",
+        "Delta = actual-posterior cost minus compatible-prior cost. Positive "
+        "means replacing weights lowers local disagreement; negative raises it.",
+        "Conflicts use the same supported rows and weights in each pair. Group "
+        "denominators differ between controls; these are dependent records.",
+        f"The data-only measurement took {manifest['seconds']:.9f} seconds; "
+        "this command is separate cached validation/formatting.",
+        "",
+    ]
+    for game in ("dev_low_oop", "dev_medium_oop"):
+        for suffix in SUFFIXES:
+            for control in GROUPS:
+                text += [
+                    f"## {game} / {suffix} / {control}",
+                    "",
+                    "| Seed | Method | Seat | Actual cost | Prior cost | Delta | "
+                    "Actual conflicts | Prior conflicts | Groups | Weight |",
+                    "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | "
+                    "---: | ---: |",
+                ]
+                for e in effects:
+                    if (e["game"], e["suffix"], e["group_control"]) == (
+                        game,
+                        suffix,
+                        control,
+                    ):
+                        text.append(
+                            f"| {e['seed']} | {e['arm']} | {e['target']} | "
+                            f"{e['actual_cost']:.9g} | {e['prior_cost']:.9g} | "
+                            f"{e['actual_minus_prior']:+.9g} | "
+                            f"{e['actual_conflicts']} | {e['prior_conflicts']} | "
+                            f"{e['total_groups']} | "
+                            f"{e['supported_uniform_weight']:.9g} |"
+                        )
+                text.append("")
+    (output / "tables.md").write_text("\n".join(text))
+    labels = [
+        (arm, seed)
+        for arm in ("coarse_self", "coarse_pair", "mixed_pair", "fine_self")
+        for seed in ("20261301", "20261302", "20261303")
+    ]
+    columns = [
+        (seat, suffix, weights)
+        for seat in ("0", "1")
+        for suffix in SUFFIXES
+        for weights in ("actual_posterior", "compatible_prior")
+    ]
+    by_key = {
+        tuple(
+            row[k]
+            for k in (
+                "game",
+                "seed",
+                "arm",
+                "target",
+                "suffix",
+                "group_control",
+                "range_weights",
+            )
+        ): row
+        for row in raw
+    }
+    for game in ("dev_low_oop", "dev_medium_oop"):
+        matrices = []
+        for control in GROUPS:
+            matrices.append(
+                np.array(
+                    [
+                        [
+                            float(
+                                by_key[
+                                    (game, seed, arm, seat, suffix, control, weight)
+                                ]["local_sharing_cost_chips_per_weighted_decision"]
+                            )
+                            for seat, suffix, weight in columns
+                        ]
+                        for arm, seed in labels
+                    ]
+                )
+            )
+        maximum = max(float(m.max()) for m in matrices)
+        fig, axes = plt.subplots(1, 2, figsize=(16, 9), layout="constrained")
+        for ax, matrix, title in zip(
+            axes,
+            matrices,
+            ("Saved groups", "Groups refined by full static probes"),
+            strict=True,
+        ):
+            img = ax.imshow(
+                matrix,
+                aspect="auto",
+                vmin=0,
+                vmax=maximum if maximum > 0 else 1,
+                cmap="viridis",
+            )
+            ax.set_title(title)
+            ax.set_yticks(
+                range(len(labels)), [f"{arm} / {seed[-2:]}" for arm, seed in labels]
+            )
+            ax.set_xticks(
+                range(len(columns)),
+                [
+                    f"seat {seat}\n"
+                    f"{'fine' if suffix == 'fine_reply' else 'restricted'}\n"
+                    f"{'posterior' if weight == 'actual_posterior' else 'prior'}"
+                    for seat, suffix, weight in columns
+                ],
+                fontsize=8,
+            )
+        fig.colorbar(
+            img,
+            ax=axes,
+            label="Local sharing cost (chips per weighted decision)",
+            shrink=0.8,
+        )
+        fig.suptitle(
+            f"{game}: fixed saved opponents and own continuations\n"
+            "All three dependent seeds; local diagnostic, not game EV "
+            "or a trained improvement"
+        )
+        fig.savefig(
+            output / f"{game}.png",
+            dpi=130,
+            metadata={"Software": "poker-ai fixed-cache range report"},
+        )
+        plt.close(fig)
+    # Examples are display-only: select the largest qualifying local group in
+    # the previously identified mixed seed2 case. Full inventories remain above.
+    examples = {}
+    profile = next(
+        p
+        for p in profiles
+        if (p["game"], p["seed"], p["arm"])
+        == ("dev_medium_oop", 20261302, "mixed_pair")
+    )
+    for seat in (0, 1):
+        detail = details[profile["source_id"]]["responses"][seat]["suffixes"][0]
+        rows = {r["exact_info"]: r for r in detail["rows"]}
+        actual = detail["groups"]["actual_posterior"]["full_static_probe_refinement"]
+        prior = {
+            g["group_id"]: g
+            for g in detail["groups"]["compatible_prior"][
+                "full_static_probe_refinement"
+            ]
+        }
+        for name, predicate, weight in (
+            (
+                "posterior_only_conflict",
+                lambda a, p: a["strict_conflict"] and p["local_cost"] <= 1e-9,
+                "actual_action_values_chips",
+            ),
+            (
+                "remaining_prior_conflict",
+                lambda a, p: p["strict_conflict"],
+                "prior_action_values_chips",
+            ),
+            (
+                "conflict_created_by_prior",
+                lambda a, p: a["local_cost"] <= 1e-9 and p["strict_conflict"],
+                "prior_action_values_chips",
+            ),
+        ):
+            candidates = [g for g in actual if predicate(g, prior[g["group_id"]])]
+            candidates.sort(
+                key=lambda g: (
+                    -max(g["local_cost"], prior[g["group_id"]]["local_cost"]),
+                    g["abstract_info"],
+                    g["group_id"],
+                )
+            )
+            if not candidates:
+                continue
+            group = candidates[0]
+            chosen, seen = [], set()
+            for info in group["supported_infos"]:
+                row = rows[info]
+                best = int(np.argmax(row[weight]))
+                if best not in seen:
+                    chosen.append(row)
+                    seen.add(best)
+            examples[f"seat{seat}/{name}"] = dict(
+                actual=group, prior=prior[group["group_id"]], rows=chosen
+            )
+    (output / "examples.json").write_text(
+        json.dumps(examples, indent=2, allow_nan=False) + "\n"
+    )
+    assert before == {p: digest(folder / p) for p in manifest["outputs"]}
+    receipt = dict(
+        status="complete_cached_static_report",
+        input_manifest_sha256=digest(folder / "manifest.json"),
+        scientific_source_sha256=manifest["source_sha256"],
+        input_measurement_seconds=manifest["seconds"],
+        analysis_record_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        profiles=24,
+        responses=48,
+        suffix_conditions=96,
+        local_panels=192,
+        raw_csv_rows=384,
+        paired_group_rows=len(effects),
+        positive_deltas=sum(e["actual_minus_prior"] > 1e-9 for e in effects),
+        negative_deltas=sum(e["actual_minus_prior"] < -1e-9 for e in effects),
+        unchanged_within_1e9=sum(abs(e["actual_minus_prior"]) <= 1e-9 for e in effects),
+        training_performed=False,
+        reference_constructed=False,
+        new_independent_audit=False,
+        feature_deployed=False,
+        new_agent_default=False,
+        fresh_global_admission=False,
+        cached_inputs_unchanged=True,
+        seconds=time.perf_counter() - started,
+        outputs={
+            str(p.relative_to(output)): digest(p)
+            for p in output.iterdir()
+            if p.is_file()
+        },
+    )
+    (output / "receipt.json").write_text(
+        json.dumps(receipt, indent=2, allow_nan=False) + "\n"
+    )
+    print(json.dumps(receipt, indent=2))

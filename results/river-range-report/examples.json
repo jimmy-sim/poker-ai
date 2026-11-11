@@ -1,0 +1,1374 @@
+{
+  "seat0/remaining_prior_conflict": {
+    "actual": {
+      "abstract_info": 348,
+      "group_id": "348:a799b0aea1dd280327e5883f9fdffddebd33080b713e435392eb0b3f4ed9ab20",
+      "infos": [
+        864,
+        900
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.0,
+      "maximum_posterior_total_variation": 0.0,
+      "static_signature": {
+        "own_rank": [
+          0,
+          14,
+          11,
+          10,
+          9,
+          8
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": false,
+      "supported_infos": [
+        864,
+        900
+      ],
+      "supported_rows": 2,
+      "weight": 0.005414438502673797
+    },
+    "prior": {
+      "abstract_info": 348,
+      "group_id": "348:a799b0aea1dd280327e5883f9fdffddebd33080b713e435392eb0b3f4ed9ab20",
+      "infos": [
+        864,
+        900
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.0002828927999822331,
+      "maximum_posterior_total_variation": 0.0,
+      "static_signature": {
+        "own_rank": [
+          0,
+          14,
+          11,
+          10,
+          9,
+          8
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": true,
+      "supported_infos": [
+        864,
+        900
+      ],
+      "supported_rows": 2,
+      "weight": 0.005414438502673797
+    },
+    "rows": [
+      {
+        "abstract_info": 348,
+        "actions": [
+          "check",
+          "raise_to 108",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -53.9987743586549,
+          -99.53866383736045,
+          -65.86723644216313
+        ],
+        "actual_posterior": [
+          0.03265538733283252,
+          0.9673446126671675
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "8d"
+        ],
+        "combo_action_values_chips": [
+          [
+            -53.962467407518105,
+            115.60066692674327,
+            54.000047455784866
+          ],
+          [
+            -54.0,
+            -106.80128574544918,
+            -69.9136874514157
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 5.896353669401006e-05,
+        "exact_info": 864,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          }
+        ],
+        "hole": [
+          "Js",
+          "As"
+        ],
+        "pot": 108,
+        "prior_action_values_chips": [
+          -53.98123370375905,
+          4.399690590647047,
+          -7.9568199978154155
+        ],
+        "prior_fine_trace_loss_chips": 0.0004849101910392066,
+        "saved_probabilities": [
+          0.7000610437486126,
+          0.18826451055548224,
+          0.11167444569590515
+        ],
+        "saved_reach_mass": 4.898602817038474e-05,
+        "static_features": {
+          "own_rank": [
+            0,
+            14,
+            11,
+            10,
+            9,
+            8
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0027072192513368986
+      },
+      {
+        "abstract_info": 348,
+        "actions": [
+          "check",
+          "raise_to 108",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -53.999999244207324,
+          -100.35250182898699,
+          -65.86723645927057
+        ],
+        "actual_posterior": [
+          0.03265538733283252,
+          0.9673446126671675
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "8h"
+        ],
+        "combo_action_values_chips": [
+          [
+            -53.999976855497934,
+            90.67865380432393,
+            54.00004693190695
+          ],
+          [
+            -54.0,
+            -106.80128574544918,
+            -69.9136874514157
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 5.896353669401006e-05,
+        "exact_info": 900,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          }
+        ],
+        "hole": [
+          "Js",
+          "As"
+        ],
+        "pot": 108,
+        "prior_action_values_chips": [
+          -53.99998842774897,
+          -8.061315970562624,
+          -7.956820259754373
+        ],
+        "prior_fine_trace_loss_chips": 0.0004923976771400102,
+        "saved_probabilities": [
+          0.7000610437486126,
+          0.18826451055548224,
+          0.11167444569590515
+        ],
+        "saved_reach_mass": 4.898602817038474e-05,
+        "static_features": {
+          "own_rank": [
+            0,
+            14,
+            11,
+            10,
+            9,
+            8
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0027072192513368986
+      }
+    ]
+  },
+  "seat0/conflict_created_by_prior": {
+    "actual": {
+      "abstract_info": 348,
+      "group_id": "348:a799b0aea1dd280327e5883f9fdffddebd33080b713e435392eb0b3f4ed9ab20",
+      "infos": [
+        864,
+        900
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.0,
+      "maximum_posterior_total_variation": 0.0,
+      "static_signature": {
+        "own_rank": [
+          0,
+          14,
+          11,
+          10,
+          9,
+          8
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": false,
+      "supported_infos": [
+        864,
+        900
+      ],
+      "supported_rows": 2,
+      "weight": 0.005414438502673797
+    },
+    "prior": {
+      "abstract_info": 348,
+      "group_id": "348:a799b0aea1dd280327e5883f9fdffddebd33080b713e435392eb0b3f4ed9ab20",
+      "infos": [
+        864,
+        900
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.0002828927999822331,
+      "maximum_posterior_total_variation": 0.0,
+      "static_signature": {
+        "own_rank": [
+          0,
+          14,
+          11,
+          10,
+          9,
+          8
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": true,
+      "supported_infos": [
+        864,
+        900
+      ],
+      "supported_rows": 2,
+      "weight": 0.005414438502673797
+    },
+    "rows": [
+      {
+        "abstract_info": 348,
+        "actions": [
+          "check",
+          "raise_to 108",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -53.9987743586549,
+          -99.53866383736045,
+          -65.86723644216313
+        ],
+        "actual_posterior": [
+          0.03265538733283252,
+          0.9673446126671675
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "8d"
+        ],
+        "combo_action_values_chips": [
+          [
+            -53.962467407518105,
+            115.60066692674327,
+            54.000047455784866
+          ],
+          [
+            -54.0,
+            -106.80128574544918,
+            -69.9136874514157
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 5.896353669401006e-05,
+        "exact_info": 864,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          }
+        ],
+        "hole": [
+          "Js",
+          "As"
+        ],
+        "pot": 108,
+        "prior_action_values_chips": [
+          -53.98123370375905,
+          4.399690590647047,
+          -7.9568199978154155
+        ],
+        "prior_fine_trace_loss_chips": 0.0004849101910392066,
+        "saved_probabilities": [
+          0.7000610437486126,
+          0.18826451055548224,
+          0.11167444569590515
+        ],
+        "saved_reach_mass": 4.898602817038474e-05,
+        "static_features": {
+          "own_rank": [
+            0,
+            14,
+            11,
+            10,
+            9,
+            8
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0027072192513368986
+      },
+      {
+        "abstract_info": 348,
+        "actions": [
+          "check",
+          "raise_to 108",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -53.999999244207324,
+          -100.35250182898699,
+          -65.86723645927057
+        ],
+        "actual_posterior": [
+          0.03265538733283252,
+          0.9673446126671675
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "8h"
+        ],
+        "combo_action_values_chips": [
+          [
+            -53.999976855497934,
+            90.67865380432393,
+            54.00004693190695
+          ],
+          [
+            -54.0,
+            -106.80128574544918,
+            -69.9136874514157
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 5.896353669401006e-05,
+        "exact_info": 900,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          }
+        ],
+        "hole": [
+          "Js",
+          "As"
+        ],
+        "pot": 108,
+        "prior_action_values_chips": [
+          -53.99998842774897,
+          -8.061315970562624,
+          -7.956820259754373
+        ],
+        "prior_fine_trace_loss_chips": 0.0004923976771400102,
+        "saved_probabilities": [
+          0.7000610437486126,
+          0.18826451055548224,
+          0.11167444569590515
+        ],
+        "saved_reach_mass": 4.898602817038474e-05,
+        "static_features": {
+          "own_rank": [
+            0,
+            14,
+            11,
+            10,
+            9,
+            8
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0027072192513368986
+      }
+    ]
+  },
+  "seat1/posterior_only_conflict": {
+    "actual": {
+      "abstract_info": 897,
+      "group_id": "897:776a23878aec2a2b395debd31f8ae59141f4a720adf25c359dfedc992a319dc6",
+      "infos": [
+        1815,
+        1833
+      ],
+      "intervention_range_total_variation": 0.22608406319296215,
+      "local_cost": 0.03017337582463886,
+      "maximum_posterior_total_variation": 0.22608406319296215,
+      "static_signature": {
+        "own_rank": [
+          3,
+          9,
+          10,
+          5
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": true,
+      "supported_infos": [
+        1815,
+        1833
+      ],
+      "supported_rows": 2,
+      "weight": 0.0023156089193825044
+    },
+    "prior": {
+      "abstract_info": 897,
+      "group_id": "897:776a23878aec2a2b395debd31f8ae59141f4a720adf25c359dfedc992a319dc6",
+      "infos": [
+        1815,
+        1833
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.0,
+      "maximum_posterior_total_variation": 0.22608406319296215,
+      "static_signature": {
+        "own_rank": [
+          3,
+          9,
+          10,
+          5
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          1,
+          -1
+        ]
+      },
+      "strict_conflict": false,
+      "supported_infos": [
+        1815,
+        1833
+      ],
+      "supported_rows": 2,
+      "weight": 0.0023156089193825044
+    },
+    "rows": [
+      {
+        "abstract_info": 897,
+        "actions": [
+          "fold",
+          "call"
+        ],
+        "actual_action_values_chips": [
+          -54.0,
+          -27.939143547015618
+        ],
+        "actual_posterior": [
+          0.43015214113246103,
+          0.5698478588675391
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "5d"
+        ],
+        "combo_action_values_chips": [
+          [
+            -54.0,
+            200.0
+          ],
+          [
+            -54.0,
+            -200.0
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 0.0036080435322917775,
+        "exact_info": 1815,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          },
+          {
+            "amount": 146,
+            "chips_paid": 146,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "RIVER"
+          }
+        ],
+        "hole": [
+          "9c",
+          "9d"
+        ],
+        "pot": 254,
+        "prior_action_values_chips": [
+          -54.0,
+          0.0
+        ],
+        "prior_fine_trace_loss_chips": 0.0004834323955092549,
+        "saved_probabilities": [
+          0.51215083680545,
+          0.48784916319455
+        ],
+        "saved_reach_mass": 3.622006113564642e-05,
+        "static_features": {
+          "own_rank": [
+            3,
+            9,
+            10,
+            5
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0011578044596912522
+      },
+      {
+        "abstract_info": 897,
+        "actions": [
+          "fold",
+          "call"
+        ],
+        "actual_action_values_chips": [
+          -54.0,
+          -118.37276882420045
+        ],
+        "actual_posterior": [
+          0.2040680779394988,
+          0.7959319220605011
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "5h"
+        ],
+        "combo_action_values_chips": [
+          [
+            -54.0,
+            200.0
+          ],
+          [
+            -54.0,
+            -200.0
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 0.0025831805768698098,
+        "exact_info": 1833,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          },
+          {
+            "amount": 146,
+            "chips_paid": 146,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "RIVER"
+          }
+        ],
+        "hole": [
+          "9c",
+          "9d"
+        ],
+        "pot": 254,
+        "prior_action_values_chips": [
+          -54.0,
+          0.0
+        ],
+        "prior_fine_trace_loss_chips": 0.0008143665573266392,
+        "saved_probabilities": [
+          0.51215083680545,
+          0.48784916319455
+        ],
+        "saved_reach_mass": 2.5931770939362543e-05,
+        "static_features": {
+          "own_rank": [
+            3,
+            9,
+            10,
+            5
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0011578044596912522
+      }
+    ]
+  },
+  "seat1/remaining_prior_conflict": {
+    "actual": {
+      "abstract_info": 77,
+      "group_id": "77:b1bb3248589dbeb54ccea8773c048d532bce39edda1ce2305b0686c2ab0fb18a",
+      "infos": [
+        1013,
+        1049
+      ],
+      "intervention_range_total_variation": 8.071875087173935e-06,
+      "local_cost": 0.08669734117262826,
+      "maximum_posterior_total_variation": 8.071875087173935e-06,
+      "static_signature": {
+        "own_rank": [
+          1,
+          9,
+          13,
+          12,
+          10
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          -1,
+          -1
+        ]
+      },
+      "strict_conflict": true,
+      "supported_infos": [
+        1013,
+        1049
+      ],
+      "supported_rows": 2,
+      "weight": 0.0023156089193825044
+    },
+    "prior": {
+      "abstract_info": 77,
+      "group_id": "77:b1bb3248589dbeb54ccea8773c048d532bce39edda1ce2305b0686c2ab0fb18a",
+      "infos": [
+        1013,
+        1049
+      ],
+      "intervention_range_total_variation": 0.0,
+      "local_cost": 0.06425814749128267,
+      "maximum_posterior_total_variation": 8.071875087173935e-06,
+      "static_signature": {
+        "own_rank": [
+          1,
+          9,
+          13,
+          12,
+          10
+        ],
+        "range_compatibility": [
+          true,
+          true
+        ],
+        "range_relations": [
+          -1,
+          -1
+        ]
+      },
+      "strict_conflict": true,
+      "supported_infos": [
+        1013,
+        1049
+      ],
+      "supported_rows": 2,
+      "weight": 0.0023156089193825044
+    },
+    "rows": [
+      {
+        "abstract_info": 77,
+        "actions": [
+          "fold",
+          "call",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -54.0,
+          -162.0,
+          -199.99999992850712
+        ],
+        "actual_posterior": [
+          0.999999999810982,
+          1.890179934785241e-10
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "9d"
+        ],
+        "combo_action_values_chips": [
+          [
+            -54.0,
+            -162.0,
+            -199.9999999627194
+          ],
+          [
+            -54.0,
+            -162.0,
+            -19.0
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 0.004713706204389181,
+        "exact_info": 1013,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          },
+          {
+            "amount": 108,
+            "chips_paid": 108,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "RIVER"
+          }
+        ],
+        "hole": [
+          "Qh",
+          "Kh"
+        ],
+        "pot": 216,
+        "prior_action_values_chips": [
+          -54.0,
+          -162.0,
+          -109.4999999813597
+        ],
+        "prior_fine_trace_loss_chips": 1.0775695373707505e-07,
+        "saved_probabilities": [
+          0.9995378594383293,
+          3.8909854815658726e-07,
+          0.00046175146312254264
+        ],
+        "saved_reach_mass": 1.597399494343174e-06,
+        "static_features": {
+          "own_rank": [
+            1,
+            9,
+            13,
+            12,
+            10
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            -1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0011578044596912522
+      },
+      {
+        "abstract_info": 77,
+        "actions": [
+          "fold",
+          "call",
+          "raise_to 146"
+        ],
+        "actual_action_values_chips": [
+          -53.99999999999999,
+          -161.99999999999997,
+          20.88081467206263
+        ],
+        "actual_posterior": [
+          0.9999919279358948,
+          8.072064105118058e-06
+        ],
+        "board": [
+          "Ts",
+          "9s",
+          "4d",
+          "2h",
+          "9h"
+        ],
+        "combo_action_values_chips": [
+          [
+            -54.0,
+            -162.0,
+            20.879675570122956
+          ],
+          [
+            -54.0,
+            -162.0,
+            161.99623817936194
+          ]
+        ],
+        "compatible": [
+          true,
+          true
+        ],
+        "compatible_prior": [
+          0.5,
+          0.5
+        ],
+        "counterfactual_support": 0.001068130158415456,
+        "exact_info": 1049,
+        "history": [
+          {
+            "amount": 6,
+            "chips_paid": 5,
+            "kind": "raise_to",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": 18,
+            "chips_paid": 16,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 12,
+            "kind": "call",
+            "seat": 1,
+            "street": "PREFLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 0,
+            "street": "FLOP"
+          },
+          {
+            "amount": null,
+            "chips_paid": 0,
+            "kind": "check",
+            "seat": 1,
+            "street": "FLOP"
+          },
+          {
+            "amount": 36,
+            "chips_paid": 36,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "TURN"
+          },
+          {
+            "amount": null,
+            "chips_paid": 36,
+            "kind": "call",
+            "seat": 1,
+            "street": "TURN"
+          },
+          {
+            "amount": 108,
+            "chips_paid": 108,
+            "kind": "raise_to",
+            "seat": 0,
+            "street": "RIVER"
+          }
+        ],
+        "hole": [
+          "Qh",
+          "Kh"
+        ],
+        "pot": 216,
+        "prior_action_values_chips": [
+          -54.0,
+          -162.0,
+          91.43795687474244
+        ],
+        "prior_fine_trace_loss_chips": 2.709227229044784e-05,
+        "saved_probabilities": [
+          0.9995378594383293,
+          3.8909854815658726e-07,
+          0.00046175146312254264
+        ],
+        "saved_reach_mass": 3.619721936332778e-07,
+        "static_features": {
+          "own_rank": [
+            1,
+            9,
+            13,
+            12,
+            10
+          ],
+          "range_compatibility": [
+            true,
+            true
+          ],
+          "range_relations": [
+            -1,
+            -1
+          ]
+        },
+        "uniform_decision_weight": 0.0011578044596912522
+      }
+    ]
+  }
+}

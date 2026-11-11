@@ -1,0 +1,89 @@
+"""Replay complete cached C7 publications and browse all conditions, data only."""
+
+import contextlib
+import io
+import json
+import sys
+import time
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+
+import numpy as np
+import poker_ai
+
+from poker_ai.evaluation.opponent_decision_run import BLOCKED, forbidden
+from poker_ai.evaluation.river_range_io import FOLDER, load, load_detail
+from poker_ai.evaluation.river_range_view import main, show
+from poker_ai.postflop.river_study import digest
+
+root = Path(__file__).resolve().parent / "river-range-reweighting"
+label = sys.argv[1]
+assert label in ("311", "312")
+assert sys.version.split()[0] == ("3.11.17" if label == "311" else "3.12.15")
+assert np.__version__ == ("2.4.6" if label == "311" else "2.5.4")
+assert Path(poker_ai.__file__).resolve().is_relative_to(root / "src")
+folder = root / FOLDER
+before = {str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()}
+started = time.perf_counter()
+rendered = 0
+with ExitStack() as stack:
+    for name in BLOCKED:
+        stack.enter_context(patch(name, forbidden))
+    profiles = load(root, folder)
+    assert len(profiles) == 24
+    for profile in profiles:
+        detail = load_detail(folder, profile)
+        for seat in (0, 1):
+            for suffix in (0, 1):
+                with contextlib.redirect_stdout(io.StringIO()) as captured:
+                    show(profile, detail, seat, suffix, 1)
+                assert "LOCAL weight control" in captured.getvalue()
+                rendered += 1
+    keys = iter(("n", "p", "s", "o", "g", "t", "r", "?", "q"))
+    with (
+        patch.object(sys, "argv", ["inspect_river_range_weights.py", "--interactive"]),
+        patch("builtins.input", lambda prompt: next(keys)),
+        contextlib.redirect_stdout(io.StringIO()) as captured,
+    ):
+        assert main(root) == 0
+    text = captured.getvalue()
+    assert "Choose n, p, s, o, g, t, r or q." in text
+    assert "restricted_reply" in text
+    assert rendered == 96
+    with (
+        patch.object(sys, "argv", ["inspect_river_range_weights.py", "--rank", "0"]),
+        contextlib.redirect_stdout(io.StringIO()),
+    ):
+        try:
+            main(root)
+        except ValueError as exc:
+            assert "positive river-group rank" in str(exc)
+        else:
+            raise AssertionError("invalid rank accepted")
+after = {str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()}
+assert before == after
+receipt = dict(
+    status="passed_complete_cached_replay_and_browser",
+    scope="data-only cached math/schema and agent-run terminal navigation; no user practice inferred",
+    python=sys.version.split()[0],
+    numpy=np.__version__,
+    module=poker_ai.__file__,
+    profiles=24,
+    responses=48,
+    suffix_selections_rendered=rendered,
+    local_panels=192,
+    original_full_math_replay=False,
+    constructors_blocked=True,
+    training_performed=False,
+    reference_constructed=False,
+    user_practice_or_time_inferred=False,
+    artifact_bytes_unchanged=True,
+    manifest_sha256=digest(folder / "manifest.json"),
+    seconds=time.perf_counter() - started,
+)
+path = root.parent / "river-range-checks" / f"complete-cache{label}.json"
+with path.open("x") as output:
+    json.dump(receipt, output, indent=2)
+    output.write("\n")
+print(json.dumps(receipt, indent=2))

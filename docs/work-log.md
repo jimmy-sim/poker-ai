@@ -3174,3 +3174,58 @@ Actual-cache agent smoke passes default/rank2 plus n/p/s/o/g/t/q; separately
 retained logs/receipt. Journal97/navigation/current status explain local success,
 external block and unchanged pending comparison. No user completion, personal
 time or mastery inferred. No main update or unrelated-file mutation in this step.
+
+### November 11 — complete the local river range-weight comparison
+
+After explicit public-visibility authorization and CI retry/resume, source run
+43052779450 attempt2 passes BOTH jobs on unchanged published a682d91c605bdfe19b5d1153ffc47a59dd5b5000:
+2,759passed/58skip/149deselect/1historical roundoff warning, 675.02/944.82s.
+All lint/format/types/hooks steps pass; exact source/job metadata and decoded
+logs retained in results/river-range-checks/complete. Prior account-blocked
+attempts stay intact. No actual billing dashboard or spending settings changed.
+Expired temporary environments restored to persistent work paths from the same
+lock; original311.17/NumPy2.4.6/active module/clean source/config verified, 72
+focused tests PASS8.87s. Scientific fingerprint remains987c636e258c4f866d22b23cbc6bc4349493bc0874b994ac5d0cbc8e258512bd.
+
+Only then ACTUAL complete data-only command passes in168.794338750s<900:
+24profiles/48responses/96suffixes/192LOCALpanels/384CSVcontrol rows, 44,160
+profile-seat river-row records (88,320 across both suffixes, not independent
+hands). Largest source mixture/root/Q error8.526512829121202e-14chips<1e-9;
+unitless support/normalization error2.220446049250313e-16<1e-12. Complete raw
+rows/groups/unsupported cases/partials retained, trees/policies/source inputs
+unchanged and constructors blocked. No new native audit/training/feature/
+default/fresh/global admission; original overall learning FAIL remains.
+
+Both runtimes validate every cached detail and render all96 selections plus
+n/p/s/o/g/t/r/q/invalid-key/rank (11.1189/8.4191s); agent activity, not personal
+practice. A retained one-off analysis execution record formats all384 raw rows
+into192paired control rows, all-case tables and both visually inspected plots.
+Both runtimes reproduce all three numeric/text files and both PNGs byte for
+byte; raw inputs unchanged. Cached postprocessing time is separate from the
+900s original command, not new learning or original full replay. Its first
+Matplotlib import used a temporary font cache; the warning is retained, and
+subsequent checks use an explicit writable cache. Initial reporting-record
+lint/line wrapping was fixed before execution; no scientific source changed.
+
+In unfavorable mediumseed20261302/mixed/seat1/fine suffix, actual→prior local
+cost is1.026045948→0.635127679 in the saved partition (34→19conflicts/774groups),
+and0.386738718→0.164204558 with full static refinement (23→11/1,386). Same
+static-signature nines5d/5h have identical comboQ but different posteriors and
+call/fold preferences; common50/50prior removes that conflict. QhKh9d/9h still
+prefer fold/raise under commonprior because frozen later responses differ.
+Prior substitution also creates a small seat0 static conflict (0→.0002828928).
+All192paired control rows retained:66lower local cost,10higher,116within1e-9;
+dependent descriptive counts, not a success rate or learning gate. These local
+costs are NOT rootEV/retraining gains or additive to the prior.678209root gap.
+
+Method/README/plain-English journal97 and a dated note of the user's actual
+negative-continuation question updated. Added two publication tests checking
+the real full cache and every reported pair/plot digest; initial2PASS9.12s.
+Combined focused publication suite74PASS20.62/16.94s on both runtimes; whole
+Ruff/732-file format/strict typing613files pass. Scientific source bytes remain
+unchanged; the new publication test validates measured artifacts rather than
+altering their calculations.
+Complete relevant artifact checks and BOTH final hosted jobs required before
+merge; those final results are reported separately. Main and unrelated user
+results remain untouched at this checkpoint. Next question concerns residual
+later responses and their stability, not immediate range-only feature adoption.
