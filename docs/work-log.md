@@ -2797,3 +2797,16 @@ Keep permit_input_sha256 separate from routine input_sha256; no scientific gate
 is weakened. Exact prior proof/check/cost/forecast/permit files are retained under
 source-4878eb9-pipeline with original-path hashes and historical checkout guidance.
 Journal91 explains this missed integration path; full corrected checks pending.
+
+### November11 — complete corrected permit-source checks
+
+Source5cbb87e2899d214059c3748cc6c53dd39ba4b1f1, scientific sourceSHA
+b0bc9c37e55fa65e14fc5e44548064b54d548e7ac19605e4b3d8528b3d37d038:
+base2590pass58skip149deselect467.10/452.45s; optional2657pass149deselect
+518.75/501.64s; relevant slow1pass10deselect56.33/54.42s. Full lint/format/
+strict typing/hooks and before/after runtime/module/source guards pass.
+Hosted43019692776 both2590pass58skip149deselect1historical warning898.91/908.68s.
+Actual PR checkout e9d7ec0f4abfd3dde00dc45cc90c5553d42bdbfc matches all291
+scientific source/config/entrypoint/lock files. Raw local/hosted logs and hashes
+are retained in software-checks. These checks validate software; the corrected
+formal proof/cost forecast/published compute permit are still required.

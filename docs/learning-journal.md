@@ -3735,6 +3735,13 @@ attempt. Seeds, training rules, budgets and strength targets remain unchanged.
 This is a pipeline correctness fix, not evidence of a stronger model. Codex
 assisted with diagnosis, implementation and tests; personal time is unrecorded.
 
+**Complete-check update:** the corrected source passes2,590 base tests and2,657
+optional tests on each supported Python version, plus the required archive check
+on both. Both GitHub jobs pass2,590 tests as well. Formatting, lint, typing,
+hooks and exact source/runtime checks pass. The [new check receipts](../results/opponent-information/software-checks/local.json)
+retain the evidence. These results repair our confidence in the software path;
+they do not grant training admission or demonstrate poker strength.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
