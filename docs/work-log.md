@@ -2946,3 +2946,17 @@ Method now states the known-game result, all-seed failure, failed low superiorit
 diagnosis, remaining medium seed2 extra-information gap, limitations and3practice
 interview answers. No original gate is changed and no quality promotion occurs.
 Final artifact hosted CI BOTH jobs must pass before a history-preserving merge.
+
+### November11 — prospective saved-decision and common-opponent diagnosis
+
+Issue4comment6797629916 registers the next bounded read-only investigation.
+Frozen own/native/config hashes select both known games, all3seeds/all4arms,
+final10m linear averages:24profiles/48responding-seat traces. The192condition
+common-opponent cross panel separates changed target from changed opponent.
+Full row/street/root accounting, diagonal source agreement, zero-sum hybrid-EV
+identities, cached-viewer tamper tests and constructor blocks define acceptance.
+Top10groups/4examples are display only; full owned rows remain. Fixed900s data-
+only bound includes source-own replay and all work; original learning/audit caps
+and failed superiority gate unchanged. No new training/reference/default/fresh/
+global admission. Implementation and actual results are pending in isolated
+research/opponent-gap-inspection; PR49's final artifact CI runs unchanged.

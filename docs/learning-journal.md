@@ -3901,6 +3901,27 @@ learning gap decreases slightly. This points to a useful next question: which
 saved river decisions account for that seed's remaining vulnerability? It is
 a diagnosis to investigate, not a reason to drop the seed or change the gate.
 
+## 95. Separate a changed policy from a changed opponent
+
+**November 11, 2026 — issue #4; prospective diagnostic.**
+
+The completed finer-opponent study improves the harder known spot on average,
+but one seed still worsens. Before training again, the next investigation asks
+which saved decisions explain that weakness. It will inspect every final primary
+profile: both games, three seeds, four methods and both responding seats.
+
+**Example:** if strategy A has less loss than strategy B while facing a different
+opponent, that alone does not tell us that A's own choices improved. The new
+cross table will compare A and B against the same saved opponent. It will retain
+all192candidate/opponent/seat conditions. Separate traces will show how each
+profile's own fixed-opponent loss is distributed across decisions.
+
+The [frozen plan](own-opponent-decisions.md) requires complete row accounting,
+matching audited source roots, constructor blocks, tamper tests and a cached
+terminal browser. It changes no training strategy, seed, original acceptance
+rule or agent default. Implementation and results are still pending; no personal
+learning or time is inferred. Codex assists with the investigation.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
