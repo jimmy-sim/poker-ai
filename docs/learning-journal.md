@@ -4002,6 +4002,15 @@ The [frozen plan](turn-continuations.md) defines the checks and unchanged scope.
 No continuation result, new training or personal learning is claimed yet.
 Codex assists; the prior failed superiority condition remains in the record.
 
+**Implementation update:** 62 focused tests pass. Small examples with answers
+we can calculate directly check all four stages. One catches a tempting shortcut:
+copying the turn action from a full best reply can be wrong when later choices
+must stay saved. Another shows that a shared river improvement can help overall
+while hurting one finer hand's action value, so the test checks the right total.
+Archive, partial-failure and terminal controls also pass. Full runtime checks and
+the complete saved-policy measurement are still pending; these software tests do
+not show a stronger agent or record personal practice.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

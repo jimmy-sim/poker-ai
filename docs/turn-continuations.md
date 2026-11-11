@@ -73,8 +73,19 @@ values are not additive root losses or general poker advice.
 
 ## Status and next decision
 
-Prospective plan only. No implementation, continuation measurements or new
-learning result is claimed. Explain whether river learning, missing river
+Implementation checkpoint: 62 focused tests pass in 0.82 seconds. Independent
+terminal enumeration matches the closed-form four-stage values on both seat
+signs. Controls catch hidden-history maximization, full-reply slicing with a
+fixed future, zero support, exact ties, wrong masks, bad root/row inventories,
+source fingerprints and interrupted-profile retention. A genuine uniform-policy
+fixture uses the own low-SPR engine without training. An actual hash-checked
+read of the prior 24-profile cache passes; mocked cache tests remain UNIT-only.
+The terminal browser distinguishes four continuation columns and their scope.
+Whole-repository lint, format and strict typing pass; complete local runtime/
+optional/hosted checks and the actual full diagnostic remain pending.
+
+No continuation measurements or new learning result is claimed. Explain whether
+river learning, missing river
 information or earlier-turn choices remain plausible only after the full panel
 passes its accounting checks. Any later learning study needs its own prospective
 contract and prescribed source-bound admission. Codex assists; personal practice

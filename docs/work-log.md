@@ -3029,3 +3029,24 @@ telescoping, support/inventory/source checks, retained partial failures, constru
 blocks and cached browser define acceptance. Separate900s data-only bound does
 not admit learning or change historical caps/seeds/gates/default. Implementation
 and measurements pending; PR50 final artifact CI continues unchanged.
+
+### November11 — implement the fixed-turn continuation controls
+
+New modules only; historical scientific/diagnostic source bytes remain unchanged.
+Masked own DP freezes unselected rows and aggregates hidden histories before
+maximizing. Complete runner replays original evidence, checks prior full-reply
+fingerprints/river slices and every owned turn menu/support, then writes complete-
+profile partials before advancing. Cached browser shows saved/restricted-river/
+fine-river/full-reply values, fixed-opponent signs and public history; no hidden
+opponent cards or universal advice. Existing/failed/temporary outputs refused.
+
+Focused62tests PASS0.82s; full lint/format/strict typing pass. Independent analytic/
+pure-enumeration fixtures check both target signs, nonclairvoyant sharing,
+generic masked-vs-sliced full response, nonmonotone finer-row Q with improving
+root, exact ties and zero support. Genuine uniform-own-engine/source corruption/
+interruption tests and complete UNIT-only cache/schema/browser cases pass.
+Initial integration fixture failures came from passing unserialized tuples to
+the list-only archive decoder; fixture now performs the actual JSON round trip.
+An additional complete prior-reply fingerprint guard is included. No actual full
+continuation measurement/new training yet. Complete relevant local/optional/
+hosted checks pending before the registered full diagnostic and merge.
