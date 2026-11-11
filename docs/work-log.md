@@ -2771,3 +2771,20 @@ BEFORE any worker initialization. This grants the bounded known-game computation
 not successful completion or policy quality. All30paths/36original B4 barriers,
 all seeds/readouts, own replay, source checks and independent comparison remain
 required. No actual new real trajectory has started at this permit checkpoint.
+
+### November11 — actual study rejects a malformed permit before training
+
+The first actual study command fails preflight in8.845484625s with
+`complete checked published study permit changed`. No worker initialization,
+poker training or reference construction occurred. Exact failed parent/child
+receipts, command log and SHA manifest are retained in
+results/opponent-information/failed-admission-4878eb9/.
+
+Diagnosis: permit() builds89 sealed inputs (87 forecast inputs plus forecast and
+source-check receipts), but the common CLI write path overwrites input_sha256
+with19 routine input pins. The fail-closed reader detects the lost inventory.
+Earlier unit tests covered permit construction but did not round-trip it through
+CLI persistence. Add that missing integration/failure coverage and separate the
+permit seals from routine command pins; preserve all scientific rules. Fresh
+corrected-source checks, proof, cost measurements, forecast and published permit
+are required before another real attempt. No model-strength claim follows.
