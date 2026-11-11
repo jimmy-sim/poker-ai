@@ -270,3 +270,31 @@ rule, historical result or agent default changes.
 
 Corrected focused checks:178base/10optional skips/1slow deselection23.51s;
 188optional/1slow deselection23.45s. Full repository lint/format/strict typing pass.
+
+## Truthful partial-work flags before advancement — November11
+
+Coverage-corrected source7f191d4 completes full base2579/optional2646 each and
+the relevant archive check on both runtimes. Hosted43006909815 BOTH SUCCESS:
+2579pass/58skip/149deselect/1historical warning,638.31/866.85s. Local pytest
+434.84/421.63s base,487.04/470.06s optional,50.76/48.89s slow. Retain complete
+logs/hash receipts in [source-7f191d4-checks](../results/opponent-information/source-7f191d4-checks/receipt.json).
+
+Interruption review then reproduces an initialFalse poker-work flag surviving
+an attempted/partial study. No actual real study has run. Before any worker can
+initialize, the command now persists attempted/unknown progress and unknown
+completed work. Raw warm/capture/completion acknowledgments establish observed
+work lower bounds, taking the maximum per actual path rather than adding its
+repeated cumulative checkpoints. Missing messages remain unknown; they never
+prove zero work. Native construction attempts similarly retain unknown/confirmed
+state. A checked compute permit is distinct from study completion. Hard-kill
+retention preserves the last truthful running receipt even without an exception
+handler. Complete own scalar/work gates and native publication gates are unchanged.
+
+Synthetic REAL-label tests use mocked permits/source/worker events, not actual
+real factories, learning or reference construction. Before repair:2failed8deselected
+0.88s; afterward4 training/native interruption cases pass8deselected0.82s. The
+clock timeout case preserves unknown flags too. Focused182base/10optional skipped/
+1slow deselected21.54s,192optional/1slow deselected20.85s; repository lint/format/
+strict typing pass. Source7f191d4 remains preserved, but these source changes
+require fresh complete checks. No formal new proof/forecast/permit/real trajectory
+yet; mathematical thresholds, seeds, learning rules and caps stay fixed.

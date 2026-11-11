@@ -35,7 +35,7 @@ CAPS = {
 
 def arguments(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Own-opponent learning checks; no real study admission yet."
+        description="Own-opponent software, cost and gated known-game research."
     )
     parser.add_argument("operation", choices=CAPS)
     parser.add_argument("--own", type=Path)

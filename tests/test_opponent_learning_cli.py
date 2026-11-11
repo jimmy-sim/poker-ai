@@ -4,16 +4,19 @@ import json
 import socket
 import time
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 import pytest
 
 from poker_ai.evaluation import opponent_learning_admission as gates
 from poker_ai.evaluation import opponent_learning_cli as cli
-from poker_ai.evaluation.opponent_learning_design import TOY
+from poker_ai.evaluation.opponent_learning_design import REAL, TOY
 from poker_ai.evaluation.opponent_learning_gate import source as source_record
+from poker_ai.evaluation.opponent_learning_own import fixture as own_fixture
 from poker_ai.evaluation.opponent_learning_report import write as report_write
 from poker_ai.evaluation.private_prefix_journal import validate as journal_validate
+from poker_ai.postflop.river_study import digest
 
 
 def fixture_source(monkeypatch: pytest.MonkeyPatch, *, dirty: bool = False) -> None:
@@ -246,3 +249,126 @@ def test_full_fictional_child_uses_three_workers_and_checked_archives(
     journal_validate(
         output.with_name(s["journal"]["file"]), s["journal"], s["source_sha256"], groups
     )
+
+
+@pytest.mark.parametrize("witnessed", [False, True])
+def test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    witnessed: bool,
+) -> None:
+    # Synthetic REAL LABEL tests plumbing only. Both admission and source are
+    # mocked; no real game factory, learner, poker trajectory or solver runs.
+    fixture_source(monkeypatch)
+    games, opponents = own_fixture()
+    monkeypatch.setattr(
+        gates,
+        "require_admission",
+        lambda *a: {"long_run_admitted": True, "unit_only_not_a_real_permit": True},
+    )
+    permit = tmp_path / gates.ADMISSION
+    permit.parent.mkdir(parents=True)
+    permit.write_text("UNIT ONLY NOT A REAL PERMIT")
+    monkeypatch.setattr(
+        cli,
+        "load",
+        lambda r: SimpleNamespace(
+            games=games,
+            context=lambda i: games[i // 3],
+            opponents=opponents,
+            original_boundaries=(),
+        ),
+    )
+    output = tmp_path / "partial.json"
+    running: dict[str, Any] = {}
+
+    def interrupted(
+        size: int, workers: int, job: Any, payload: Any, deadline: Any, batch: Any
+    ) -> None:
+        running.update(json.loads(output.read_text()))
+        batch.update(workers=[dict(slot=0, messages=[])])
+        if witnessed:
+            for phase, row in (
+                ("warm", dict(initialization_visits=12)),
+                ("capture", dict(total_work=45)),
+            ):
+                batch["workers"][0]["messages"].append(
+                    dict(
+                        kind="cell",
+                        phase=phase,
+                        index=0,
+                        row=dict(row, scope=REAL, path_index=0),
+                    )
+                )
+        raise KeyboardInterrupt("synthetic interruption, no actual training")
+
+    monkeypatch.setattr(cli, "run_batch", interrupted)
+    with pytest.raises(KeyboardInterrupt):
+        cli.child_main(tmp_path, ["study", "--output", str(output), "--_child"])
+    saved = json.loads(output.read_text())
+    assert saved["poker_training_performed"] is (True if witnessed else None)
+    assert running["poker_training_performed"] is None
+    assert saved["actual_poker_training_work"] is None
+    assert saved["observed_training_work_lower_bound"] == (45 if witnessed else 0)
+    assert saved["long_run_admitted"] is True  # Mock permit, not a strength claim.
+    assert saved["compute_permit_checked"] is True
+
+
+@pytest.mark.parametrize("witnessed", [False, True])
+def test_interrupted_native_attempt_does_not_claim_no_construction(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    witnessed: bool,
+) -> None:
+    # Entirely mocked native-stage messages. No independent solver is built.
+    fixture_source(monkeypatch)
+    own_path = tmp_path / "results/opponent-information/software/own.json"
+    own_path.parent.mkdir(parents=True)
+    own_path.write_text("UNIT ONLY NOT OWN SCIENTIFIC EVIDENCE")
+    monkeypatch.setattr(
+        cli,
+        "measurement",
+        lambda *a: dict(
+            hostname=socket.gethostname(),
+            started_perf_counter=time.perf_counter() - 1,
+            seconds=0.1,
+        ),
+    )
+    monkeypatch.setattr(cli, "read", lambda *a: dict(scope=TOY))
+    monkeypatch.setattr(
+        cli, "publication", lambda *a: dict(own_sha256=digest(own_path))
+    )
+    monkeypatch.setattr(
+        "poker_ai.solver_validation.controlled_pipeline.license_record",
+        lambda *a: {"unit_only_not_a_license_check": True},
+    )
+    output = tmp_path / "native.json"
+    running: dict[str, Any] = {}
+
+    def interrupted(
+        size: int, workers: int, job: Any, payload: Any, deadline: Any, batch: Any
+    ) -> None:
+        running.update(json.loads(output.read_text()))
+        batch.update(workers=[dict(slot=0, messages=[])])
+        if witnessed:
+            batch["workers"][0]["messages"].append(
+                dict(
+                    kind="cell",
+                    phase="self",
+                    index=0,
+                    result={"unit_only_not_a_scalar_comparison": True},
+                )
+            )
+        raise KeyboardInterrupt("synthetic native interruption, no solver")
+
+    monkeypatch.setattr(cli, "run_batch", interrupted)
+    with pytest.raises(KeyboardInterrupt):
+        cli.child_main(
+            tmp_path, ["software-audit", "--output", str(output), "--_child"]
+        )
+    saved = json.loads(output.read_text())
+    assert saved["reference_constructed"] is (True if witnessed else None)
+    assert running["reference_constructed"] is None
+    assert running["reference_construction_attempted"] is True
+    assert saved["poker_training_performed"] is False
+    assert saved["reference_output_used_in_training"] is False

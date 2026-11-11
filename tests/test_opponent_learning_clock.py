@@ -213,7 +213,12 @@ def test_timeout_terminates_group_and_keeps_partial_child_receipt(
             if self.count == 1:
                 clock.atomic(
                     tmp_path / "results/own.json",
-                    dict(source_sha256="a" * 64, status="running_fixture"),
+                    dict(
+                        source_sha256="a" * 64,
+                        status="running_fixture",
+                        training_start_attempted=True,
+                        poker_training_performed=None,
+                    ),
                 )
                 raise subprocess.TimeoutExpired("fixture", timeout)
             return -15
@@ -236,6 +241,8 @@ def test_timeout_terminates_group_and_keeps_partial_child_receipt(
     )
     saved = json.loads((tmp_path / "results/own.json").read_text())
     assert saved["status"] == "running_fixture"
+    assert saved["poker_training_performed"] is None
+    assert saved["training_start_attempted"] is True
     assert saved["complete_command"]["interrupted"] == "TimeoutExpired"
     assert calls == [(12345, signal.SIGTERM)]
     with pytest.raises(ArithmeticError):

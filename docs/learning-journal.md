@@ -44,7 +44,8 @@ learning comparison and implements its capture and replay checks. Step86 connect
 the complete command, worker, archive, report and admission checks. Its wider
 source checks and published proof/forecasts are pending; real learning is not
 admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
-proof or any new real trajectory. None of these results establishes
+proof or any new real trajectory. Step88 makes interrupted-run records distinguish
+confirmed work from unknown progress. None of these results establishes
 competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3568,6 +3569,44 @@ formal new proof ran on the too-permissive source. Training rules, seeds, caps
 and acceptance thresholds are unchanged; this repair follows the threshold
 already written down. Codex assisted with the review, test and fix. No personal
 learning time or mastery is inferred.
+
+## 88. An interrupted worker may have done more than it reported
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The coverage correction passes the full suites: 2,579 base tests and 2,646 with
+optional dependencies on both Python versions, plus both archive checks and
+both GitHub jobs. Before starting the formal proof, an interruption review finds
+another reporting bug. The initial receipt said no poker training had happened.
+If workers started and the run failed, that initial flag could survive even
+though some work had happened. It would misdescribe an unfinished run.
+
+The command now saves an explicit unknown state before workers can start. If a
+worker reports completed initialization or a checkpoint, the failure record can
+confirm that work happened. Without such a message, it stays unknown. It does
+not turn a missing message into proof that nothing ran. Reference-solver attempts
+use the same distinction. A receipt saved before worker startup also protects
+the case where a hard timeout prevents the normal error handler from running.
+
+**Illustrative test:** a simulated worker reports 12 initialization visits and
+later a checkpoint at 45 total visits. If interrupted, we can record at least
+45 visits, rather than adding those two counters. More could have happened after
+the last message. The completed total remains unknown. This test mocks the
+permit, source and worker; it performs no real poker training or solver run.
+
+Two simulated training-interruption cases fail before the repair. Afterward,
+four training/reference interruption cases pass. The hard-timeout test also
+preserves unknown progress. The prior coverage-source logs and before/after
+regression are [retained](../results/opponent-information/source-7f191d4-checks/receipt.json).
+Focused checks pass: 182 base in 21.54s and 192 with optional dependencies in
+20.85s. Repository lint, formatting and typing pass.
+
+The new flags distinguish a checked compute permit from successful completion.
+They do not accept a failed study, change learning or promote an agent. The
+complete corrected source still needs its own wider checks, then the published
+fictional proof and fixed cost forecasts. No new real trajectory, forecast or
+formal new proof has run yet. Codex assisted with the review and repair; no
+personal practice time or understanding is inferred.
 
 ## Your own learning notes
 

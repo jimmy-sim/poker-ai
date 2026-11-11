@@ -1,0 +1,136 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully[False] _
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-73/test_interrupted_real_label_re0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c3918d0>
+witnessed = False
+
+    @pytest.mark.parametrize("witnessed", [False, True])
+    def test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully(
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+        witnessed: bool,
+    ) -> None:
+        # Synthetic REAL LABEL tests plumbing only. Both admission and source are
+        # mocked; no real game factory, learner, poker trajectory or solver runs.
+        fixture_source(monkeypatch)
+        games, opponents = own_fixture()
+        monkeypatch.setattr(
+            gates,
+            "require_admission",
+            lambda *a: {"long_run_admitted": True, "unit_only_not_a_real_permit": True},
+        )
+        permit = tmp_path / gates.ADMISSION
+        permit.parent.mkdir(parents=True)
+        permit.write_text("UNIT ONLY NOT A REAL PERMIT")
+        monkeypatch.setattr(
+            cli,
+            "load",
+            lambda r: SimpleNamespace(
+                games=games,
+                context=lambda i: games[i // 3],
+                opponents=opponents,
+                original_boundaries=(),
+            ),
+        )
+        output = tmp_path / "partial.json"
+        running: dict[str, Any] = {}
+    
+        def interrupted(
+            size: int, workers: int, job: Any, payload: Any, deadline: Any, batch: Any
+        ) -> None:
+            running.update(json.loads(output.read_text()))
+            batch.update(workers=[dict(slot=0, messages=[])])
+            if witnessed:
+                for phase, row in (
+                    ("warm", dict(initialization_visits=12)),
+                    ("capture", dict(total_work=45)),
+                ):
+                    batch["workers"][0]["messages"].append(
+                        dict(
+                            kind="cell",
+                            phase=phase,
+                            index=0,
+                            row=dict(row, scope=REAL, path_index=0),
+                        )
+                    )
+            raise KeyboardInterrupt("synthetic interruption, no actual training")
+    
+        monkeypatch.setattr(cli, "run_batch", interrupted)
+        with pytest.raises(KeyboardInterrupt):
+            cli.child_main(tmp_path, ["study", "--output", str(output), "--_child"])
+        saved = json.loads(output.read_text())
+>       assert saved["poker_training_performed"] is (True if witnessed else None)
+E       assert False is None
+
+tests/test_opponent_learning_cli.py:308: AssertionError
+_ test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully[True] _
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-73/test_interrupted_real_label_re1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bdfa710>
+witnessed = True
+
+    @pytest.mark.parametrize("witnessed", [False, True])
+    def test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully(
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+        witnessed: bool,
+    ) -> None:
+        # Synthetic REAL LABEL tests plumbing only. Both admission and source are
+        # mocked; no real game factory, learner, poker trajectory or solver runs.
+        fixture_source(monkeypatch)
+        games, opponents = own_fixture()
+        monkeypatch.setattr(
+            gates,
+            "require_admission",
+            lambda *a: {"long_run_admitted": True, "unit_only_not_a_real_permit": True},
+        )
+        permit = tmp_path / gates.ADMISSION
+        permit.parent.mkdir(parents=True)
+        permit.write_text("UNIT ONLY NOT A REAL PERMIT")
+        monkeypatch.setattr(
+            cli,
+            "load",
+            lambda r: SimpleNamespace(
+                games=games,
+                context=lambda i: games[i // 3],
+                opponents=opponents,
+                original_boundaries=(),
+            ),
+        )
+        output = tmp_path / "partial.json"
+        running: dict[str, Any] = {}
+    
+        def interrupted(
+            size: int, workers: int, job: Any, payload: Any, deadline: Any, batch: Any
+        ) -> None:
+            running.update(json.loads(output.read_text()))
+            batch.update(workers=[dict(slot=0, messages=[])])
+            if witnessed:
+                for phase, row in (
+                    ("warm", dict(initialization_visits=12)),
+                    ("capture", dict(total_work=45)),
+                ):
+                    batch["workers"][0]["messages"].append(
+                        dict(
+                            kind="cell",
+                            phase=phase,
+                            index=0,
+                            row=dict(row, scope=REAL, path_index=0),
+                        )
+                    )
+            raise KeyboardInterrupt("synthetic interruption, no actual training")
+    
+        monkeypatch.setattr(cli, "run_batch", interrupted)
+        with pytest.raises(KeyboardInterrupt):
+            cli.child_main(tmp_path, ["study", "--output", str(output), "--_child"])
+        saved = json.loads(output.read_text())
+>       assert saved["poker_training_performed"] is (True if witnessed else None)
+E       assert False is True
+
+tests/test_opponent_learning_cli.py:308: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_opponent_learning_cli.py::test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully[False]
+FAILED tests/test_opponent_learning_cli.py::test_interrupted_real_label_records_unknown_or_witnessed_training_truthfully[True]
+2 failed, 8 deselected in 0.88s

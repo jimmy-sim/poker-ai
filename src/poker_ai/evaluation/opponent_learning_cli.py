@@ -165,6 +165,13 @@ def child_main(root: Path, argv: list[str]) -> int:
         config=contract(root),
         events=[],
         poker_training_performed=False,
+        toy_learning_performed=False,
+        reference_constructed=False,
+        training_start_attempted=False,
+        reference_construction_attempted=False,
+        compute_permit_checked=False,
+        observed_training_work_lower_bound=0,
+        observed_work_units="reported visited nodes; lower bound, not completed total",
         reference_output_used_in_training=False,
         long_run_admitted=False,
         new_agent_default=False,
@@ -213,6 +220,9 @@ def child_main(root: Path, argv: list[str]) -> int:
                 )
             elif args.operation in ("study", "audit"):
                 saved["admission"] = gates.require_admission(root, binding)
+                saved["compute_permit_checked"] = True
+                if args.operation == "study":
+                    saved["long_run_admitted"] = True
                 if args.operation == "audit":
                     prepared_own = read(root, own_path, deadline)
                     if prepared_own["scope"] != REAL:
@@ -321,6 +331,22 @@ def child_main(root: Path, argv: list[str]) -> int:
                         originals = sources.original_boundaries
                     batch = Batch(journal)
                     saved["training_batch"] = batch
+                    saved["training_start_attempted"] = True
+                    training_key = (
+                        "poker_training_performed"
+                        if design.scope == REAL
+                        else "toy_learning_performed"
+                    )
+                    work_key = (
+                        "actual_poker_training_work"
+                        if design.scope == REAL
+                        else "actual_toy_training_work"
+                    )
+                    saved[training_key] = None
+                    saved[work_key] = None
+                    # A hard kill can bypass except/finally. Persist uncertainty
+                    # BEFORE any worker can initialize rather than claiming False.
+                    atomic(receipt, saved)
                     run_batch(
                         30,
                         3,
@@ -346,6 +372,8 @@ def child_main(root: Path, argv: list[str]) -> int:
                         batch,
                     )
                     paths = gather(batch, design)
+                    saved.update(partial_evidence(saved))
+                    atomic(receipt, saved)
                 data = finish_own(
                     receipt.parent,
                     scratch,
@@ -383,6 +411,9 @@ def child_main(root: Path, argv: list[str]) -> int:
                 saved["repetition"] = args.repetition
             batch = Batch(journal)
             saved["native_batch"] = batch
+            saved["reference_construction_attempted"] = True
+            saved["reference_constructed"] = None
+            atomic(receipt, saved)
             run_batch(
                 6,
                 3,
@@ -449,6 +480,7 @@ def child_main(root: Path, argv: list[str]) -> int:
         atomic(receipt, saved)
         deadline.check()
     except BaseException as exc:
+        saved.update(partial_evidence(saved))
         saved.update(
             status="failed_retained",
             failure=dict(type=type(exc).__name__, message=str(exc)),
@@ -458,8 +490,54 @@ def child_main(root: Path, argv: list[str]) -> int:
         )
         atomic(receipt, saved)
         raise
-    print(saved["status"] + "; no real trajectory admission")
+    print(saved["status"] + "; agent default unchanged")
     return 0
+
+
+def partial_evidence(saved: dict[str, Any]) -> dict[str, Any]:
+    """Raw acknowledgments give lower bounds; missing messages mean unknown.
+
+    This is failure reporting only, never an inventory/math acceptance gate.
+    Complete work counters remain the independently replayed own result's job.
+    """
+    result: dict[str, Any] = {}
+    if saved.get("training_start_attempted") is True:
+        known: dict[int, int] = {}
+        for worker in saved["training_batch"].get("workers", []):
+            for event in worker["messages"]:
+                if event.get("kind") != "cell":
+                    continue
+                index = event.get("index")
+                if type(index) is not int or not 0 <= index < 30:
+                    continue
+                phase = event.get("phase")
+                row = event.get("row", {})
+                value = (
+                    row.get("initialization_visits")
+                    if phase == "warm"
+                    else row.get("total_work")
+                    if phase in ("capture", "mass")
+                    else event.get("result", {}).get("final_total_work")
+                    if phase == "path_finished"
+                    else None
+                )
+                if type(value) is int and value > 0:
+                    known[index] = max(known.get(index, 0), value)
+        key = (
+            "poker_training_performed"
+            if saved["scope"] == REAL
+            else "toy_learning_performed"
+        )
+        result[key] = True if known else None
+        result["observed_training_work_lower_bound"] = sum(known.values())
+    if saved.get("reference_construction_attempted") is True:
+        witnessed = any(
+            e.get("kind") == "cell" and e.get("phase") in ("self", "fixed")
+            for w in saved["native_batch"].get("workers", [])
+            for e in w["messages"]
+        )
+        result["reference_constructed"] = True if witnessed else None
+    return result
 
 
 def pots(root: Path, scope: str) -> tuple[float, float]:

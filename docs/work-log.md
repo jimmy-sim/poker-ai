@@ -2669,3 +2669,23 @@ learning rules, scientific caps and original thresholds remain unchanged.
 Corrected focused178base23.51s/188optional23.45s,1slow deselected and10base optional
 skips. Full repository Ruff/format/strict typing pass. Corrected full source-bound
 local/optional/hosted and relevant slow checks remain pending.
+
+### November11 — preserve truthful uncertainty when workers are interrupted
+
+Coverage source7f191d4 passes complete base2579/optional2646 each,58base skips/
+149deselections:434.84/421.63s base,487.04/470.06s optional; relevant slow1pass
+50.76/48.89s. Both hosted43006909815 jobs pass2579/58skip/149deselect/1historical
+warning638.31/866.85s. Full PR checkoutec6bb135 source inventory equals7f191d4.
+All raw logs/hash receipts retained in source-7f191d4-checks.
+
+Interruption review catches initialFalse poker-work reporting surviving partial
+worker execution. Two synthetic REAL-label cases reproduce before repair;
+4training/native cases pass afterward. Source/permit/events are mocked: no actual
+real game, learner or solver runs. Persist attempted/unknown state before worker
+startup, infer only witnessed progress, retain per-path cumulative-work lower
+bounds and keep missing progress unknown. Hard-timeout receipt test verifies this
+without a child exception handler. Confirm compute permit separately from run
+completion. Complete real controls/thresholds/Native publication gates unchanged.
+Journal88 explains the distinction. Focused182base21.54s/192optional20.85s and
+repository lint/format/typing pass. Fresh full source-cohort checks are required
+before the still-unrun formal proof/cost forecasts/permit/real trajectory.
