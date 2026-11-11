@@ -2508,3 +2508,32 @@ deterministic archive and partial/timeout/input-change retention. Journal step82
 explains the question with a fictional example. Full base/optional checks,
 hosted CI and actual saved-data/cross-runtime results remain pending. Preserve
 all ten unrelated user result changes; work stays in an isolated checkout.
+
+### November 10 — static refinement adds no distinctions in the known game
+
+Source410faef published and fully checked before execution. Base suites each
+2348pass47skip148deselect357.35/344.48s; optional each2404pass148deselect
+404.50/389.09s. Hosted42974764735 both PASS. Diagnostic311 completes294.563466s;
+312 data-only reproduction266.377378s, both<900. All12 numeric files BYTEIDENTICAL;
+no trajectory replay. Exact receipts, complete/partial per-profile data and logs
+retained in results/river-refinement/. Frozen274-file scientific SHAa5a2e28 stays.
+
+All9profiles/18responses retain29,808ownriver memberrecords, everyrowCFsupported,
+not played/training coverage. Respondingseat0 has864originalgroups, seat1 has774;
+both have1656exactriverinfos. Exact rational static masses and ordered combo
+relations add ZEROgroups and leave every local cost/conflict count unchanged
+under BOTH own suffixes. Singleton costs0 byconstruction. Roots/support errors0.
+Local sharing cost is not rootEV/exploitability or a strength ranking across
+different opponents. OldprimaryFAIL remains; no agent/default/fresh/global change.
+
+Report reader reconstructs all row summaries and144conditiontable; bothnumeric
+reportfiles reproduce byteforbyte on312. Figure visually checked; label explicitly
+marks singletoncontrol. Report render source records its working-tree hashes,
+while the scientific saved-data run used clean published410faef. Focused base
+44pass1skip2.10s; optional45pass2.19s, including actual complete-receipt regression
+and changed/failure/source/hash/inventory rejection. Lint/format/stricttypingpass.
+Final base2362pass48skip148deselect353.39/338.86s and optional2419pass148deselect
+400.67/386.97s, runtimeassertedbefore/after. Final hostedCI pending beforemerge. README,
+method/limits/3QAs and plain-English journal83 record the complete negative result.
+Next question: own coarse learner against own exact-information training opponent,
+with new prospective mixed-view correctness/work controls before any admission.

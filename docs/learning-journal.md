@@ -14,6 +14,7 @@ notes section is for your own questions and explanations as you work through it.
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
+- [Why these two static refinements do not help here](#step-83--rule-out-two-static-river-refinements-november-10)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
@@ -32,8 +33,11 @@ audit passes, but the agent default stays unchanged.
 Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
 individual hands and add a terminal browser. Steps 80–81 show how changing later
 river choices can change the value of calling on the turn. The next question is
-which river distinctions or training gaps produce those later choices. Step 82
-defines and tests the next saved-data comparison before measuring it. None of
+which river distinctions or training gaps produce those later choices. Steps
+82–83 find that finer static range probabilities and ordered combo outcomes add
+no new groups in this known game. The next question is whether training against
+an own opponent with more detailed own-card/public-board information helps.
+That comparison is not yet implemented or admitted. None of
 these results establishes competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3346,6 +3350,42 @@ The [protocol](river-refinement-diagnosis.md) explains the score and safeguards.
 The failed strength result remains. This tests a way to diagnose a weakness;
 it does not yet establish a stronger representation or agent. Codex assisted
 with implementation and explanation; no personal practice or hours are inferred.
+
+### Step 83 — rule out two static river refinements (November 10)
+
+The full diagnostic is complete. It keeps all nine snapshots and both seats,
+including 29,808 river-row records. These repeat the same known game across
+saved strategies; they are not independent poker hands.
+
+Neither finer static range probabilities nor an ordered list of outcomes against
+each opponent combo separates any additional situations. Seat 0 still has 864
+groups; seat 1 still has 774. Each seat has 1,656 exact river situations. Every
+local conflict count and sharing score stays unchanged under both saved reply
+continuations.
+
+There is a simple reason for the probability result. With two equally weighted
+combos, a mass can only be 0, 1/2 or 1. The existing eight bins already distinguish
+those three values. An ordered combo list could add information in principle,
+but it adds none inside the current groups in this specific game. The tests
+include a fictional case where ordering does matter, so the negative result is
+not caused by accidentally implementing the same probe twice.
+
+The original calculation takes about 295 seconds. The second runtime reproduces
+all twelve numeric files byte for byte in about 266 seconds. Every checked root
+and responding support matches its source exactly. Both the full tables and
+figure remain in the [report](river-refinement-diagnosis.md). The chart's zero
+singleton control means there is no second row to disagree with; it does not
+represent a newly trained perfect agent. The local chart also cannot rank the
+saved learners' playing strength.
+
+This helps choose the next experiment: increasing these static features would
+leave the known-game agent's groups unchanged. A more useful question is whether
+its own training opponent needs finer information to punish weaknesses that a
+coarse opponent misses. “Exact” here would still mean that opponent's own cards
+and public board, never the other player's hidden cards. A new prospective
+protocol and correctness tests must come first. No reference strategy would be
+used for learning. The current strength failure and agent default stay unchanged.
+Codex assisted with the work; no personal practice, time or mastery is inferred.
 
 ## Your own learning notes
 
