@@ -397,3 +397,20 @@ is reported separately, not silently promoted to a new gate.
 
 Publish complete own evidence before constructing the independent reference.
 No stronger/default/fresh/global admission follows from this known-game study.
+
+### Independent real audit
+
+Own publication691a7074af105b77eebbfc84b6debb2589d43217 precedes all real native
+construction. Complete audit358.570928584s<900 verifies all432/1152, maximum
+scalar difference1.8474111129762605e-13chips<1e-9. Source/permit/published-own
+preflight, three workers and final own replay are timed. OpenSpiel2.0.2 Apache2
+is scalar comparison-only; no actions/strategy are exported to learning. The
+numerical gate passes, while the original overall superiority gate FAILS.
+
+The final low paired/mixed probability hashes are identical for seeds20261302
+and20261303; their exact zero improvements are not merely rounded displays.
+Low is lowSPR:38remaining/324initialpot; medium is182/36. Little headroom in the
+low known game is a plausible explanation, not an amended acceptance rule.
+Retain all original thresholds and the failed primary. No fresh/global/default
+admission follows. Shared own-game export limits mechanical independence; these
+are separately trained known spots with dependent readouts and only three seeds.

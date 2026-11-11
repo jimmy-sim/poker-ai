@@ -11,6 +11,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Latest measured learning result](#94-finer-own-opponents-help-the-harder-spot-the-overall-gate-still-fails)
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
@@ -26,11 +27,14 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November 11 update: issue #4 is improving the Hold'em learner through small,
-fully specified tests. The latest sampling candidate fails its main strength
-gate: 3.35% mean exploitability versus 2.17% for the existing batched research
-control in one known compressed game. Lower is better. The independent numerical
-audit passes, but the agent default stays unchanged.
+November 11 update: issue #4 has a measured improvement in the harder known spot.
+Training against finer own opponents reduces mean exploitability from 2.173%
+for ordinary coarse training to 0.597% of the initial pot. Lower is better.
+Both spots meet the absolute accuracy limits, and the independent audit passes.
+The overall preset superiority gate still fails: the already-near-zero low spot
+has zero median improvement against its paired control. The default stays
+unchanged. Step94 explains the complete result, including the seed that worsens.
+The earlier sampling candidate's 3.35% versus 2.17% failure remains in the record.
 
 Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
 individual hands and add a terminal browser. Steps 80–81 show how changing later
@@ -50,7 +54,10 @@ rehearsal and independent audit; fixed cost forecasts are next. None of these
 results establishes competitive general Hold'em strength. Step90 completes the
 fixed forecast; step91 records the first actual command's rejected permit before
 training and fixes its persistence bug. The corrected source needs fresh required
-validation before real learning can proceed.
+validation before real learning can proceed. Steps92–93 complete those checks,
+the repeated proof/costs/forecast and corrected published permit. Step94 completes
+the actual learning run and independent audit while retaining the failed overall
+superiority condition.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3863,6 +3870,22 @@ and [summary](../results/opponent-information/report/summary.json) are published
 before the reference is constructed. Next: the full independent scalar audit,
 then diagnosis of the failed superiority condition and the remaining weaknesses.
 Codex assisted with execution and reporting; personal hours are not inferred.
+
+**Independent-audit update:** the actual OpenSpiel comparison passes in 358.57
+seconds, including its complete preflight and closing own replay. All 432
+policies and 1,152 fixed comparisons agree within 1.85 × 10⁻¹³ chips, below the
+fixed 10⁻⁹ tolerance. The [native receipt](../results/opponent-information/native.json)
+records that our full own evidence was published first. No reference actions or
+strategy entered learning. This validates the measurements, not a winning-agent
+claim; the overall superiority gate remains failed.
+
+**Why the low spot ties:** for seeds 20261302 and 20261303, the paired control
+and treatment have identical saved probability hashes. Their exact tied scores
+are not just rounded graph labels. Here “low” means low stack-to-pot ratio:
+only 38 chips remain behind a 324-chip pot. The medium spot has 182 behind 36.
+This is consistent with little improvement headroom in the already-solved low
+spot, but we keep the original gate and its failed outcome. All three seeds,
+including the one that worsens in medium, remain in the assessment.
 
 ## Your own learning notes
 

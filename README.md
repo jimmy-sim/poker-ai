@@ -34,7 +34,30 @@ selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
-**Latest research — November 10:** the complete private-deal stratification
+**Latest research — November 11:** training the unchanged coarse learner against
+finer **own** opponents improves the harder known turn spot. At 10 million
+charged node visits, final linear averages over all three fixed seeds give:
+
+| Method | Mean exact exploitability (% initial pot; lower is better) |
+| --- | ---: |
+| Ordinary coarse self-play | 2.173 |
+| Paired coarse control | 3.028 |
+| Finer-opponent treatment | 0.597 |
+| Ordinary fine self-play | 0.383 |
+
+The treatment's medium-spot median/worst are 0.553%/1.036%, within the original
+1%/2.5% limits. Two seeds improve and one worsens. **The overall predeclared
+superiority gate still fails:** median improvement in the already-near-zero low
+spot is zero, rather than strictly positive. No agent default changes. All 432
+policies and 1,152 fixed conditions agree with OpenSpiel within 1.85e-13 chips;
+reference outputs are comparison-only. These are two separately trained known
+games, not evidence of general Hold'em strength. [Full method, all seeds and
+limits](docs/own-opponent-learning.md), [all-control heatmaps](results/opponent-information/report/fixed-gain.png)
+and learning-journal step94 explain the result.
+
+![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
+
+**Previous research — November 10:** the complete private-deal stratification
 experiment passes independent numerical validation but fails its primary
 accuracy target. At10million visited nodes in the known deeper compressed game
 (B4, signed regrets, linear average; all three fixed seeds):

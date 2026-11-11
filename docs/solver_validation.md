@@ -466,3 +466,12 @@ the already-published analytic mixed-view fixtures. Mocked worker/schema tests
 are not independent numerical comparisons. The new trained full-shape software
 proof must publish its own evidence before reference construction. No commercial
 outputs are used, and this license record does not admit real training.
+
+The real own-opponent study subsequently publishes complete own evidence at
+691a7074af105b77eebbfc84b6debb2589d43217 BEFORE constructing the reference.
+The full native command takes358.570928584s<900 and checks432policies/1152fixed
+conditions, maxdifference1.8474111129762605e-13chips<1e-9. Its receipt verifies
+the same pinned OpenSpiel2.0.2 Apache2 license and installed license files.
+No reference actions or strategy enter learning. Numerical validation passes;
+the study's two-game superiority condition fails, so no stronger/default/global
+admission is claimed. See [complete method and outcomes](own-opponent-learning.md).

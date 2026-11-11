@@ -2910,3 +2910,22 @@ These are own-calculated known-game results pending the independent numerical
 audit. Publish complete own JSON/child/journal/5archives/6reports/command log/
 permit-read-back evidence before real native construction. No default/fresh/
 global admission. Issue4 remains open; source/seeds/caps/gates unchanged.
+
+### November11 — real independent audit validates complete own measurements
+
+After own publication691a7074af105b77eebbfc84b6debb2589d43217, the actual native
+audit completes358.570928584s<900. All432policies/1152fixed targets validate with
+maxerror1.8474111129762605e-13chips<1e-9; no exported reference actions/training.
+Own/source/permit/publication preflight, three native workers and closing own
+replay count inside the command. Pinned OpenSpiel2.0.2 Apache2 license verified;
+source SHA b0bc.../original runtime retained. Publish full native JSON/child/
+journal/command log. The numerical gate passes; the overall two-game positive-
+improvement gate FAILS and no default/fresh/global promotion occurs.
+
+Read-only digest diagnosis: low final linear paired/mixed probability hashes
+are identical for seeds20261302/20261303. Their exact tied scores are not decimal
+display rounding. The other seed is slightly worse at an already tiny scale.
+Low means lowSPR (38behind324pot); medium has182behind36pot. Consistent with
+little improvement headroom in low; not a post-hoc exception or proof of broader
+strength. README reports the independently checked medium result and overall
+failure. Cross-runtime data-only replay/report and final artifact CI remain.
