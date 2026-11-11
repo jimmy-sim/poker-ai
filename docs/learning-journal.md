@@ -3387,6 +3387,14 @@ protocol and correctness tests must come first. No reference strategy would be
 used for learning. The current strength failure and agent default stay unchanged.
 Codex assisted with the work; no personal practice, time or mastery is inferred.
 
+The first Linux check catches a report-reader mistake: it requires exact
+floating-point equality when recalculating the summary. An independent exact-
+fraction check matches every saved local score within about 9e-16. The correction
+allows at most 1e-12 roundoff in those recomputed scores while keeping file hashes,
+support, row counts and zero controls exact. It does not change the saved data,
+training results or strength limits. Seven regression cases test that boundary;
+the corrected full checks must still pass before merging.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

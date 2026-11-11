@@ -1,5 +1,6 @@
 """Complete fictional report grid; means/ranges are not confidence intervals."""
 
+import copy
 import importlib.util
 import json
 import shutil
@@ -163,3 +164,42 @@ def test_changed_actual_receipt_rejected(tmp_path: Path, bad: str) -> None:
     path.write_text(json.dumps(manifest))
     with pytest.raises(ArithmeticError):
         REPORT.checked(ROOT, folder)
+
+
+def test_replay_roundoff_is_only_for_local_costs_and_inputs_unchanged() -> None:
+    saved = dict(
+        target=0,
+        total_counterfactual_mass=1.0,
+        probes=profiles()[0]["responses"][0]["probes"],
+    )
+    actual = copy.deepcopy(saved)
+    actual["probes"][0]["panels"]["exact"][REPORT.VALUE] += 1e-13
+    before = copy.deepcopy(actual)
+    assert 0 < REPORT.replay_summary(actual, saved) < 1e-12
+    assert actual == before
+
+
+@pytest.mark.parametrize(
+    "bad", ["cost", "support", "count", "probe", "singleton", "nan"]
+)
+def test_roundoff_does_not_hide_changed_costs_or_structural_failures(bad: str) -> None:
+    saved = dict(
+        target=0,
+        total_counterfactual_mass=1.0,
+        probes=profiles()[0]["responses"][0]["probes"],
+    )
+    actual = copy.deepcopy(saved)
+    if bad == "cost":
+        actual["probes"][0]["panels"]["exact"][REPORT.VALUE] += 1e-10
+    elif bad == "support":
+        actual["total_counterfactual_mass"] += 1e-13
+    elif bad == "count":
+        actual["probes"][0]["groups"] += 1
+    elif bad == "probe":
+        actual["probes"].pop()
+    elif bad == "singleton":
+        actual["probes"][-1]["panels"]["exact"][REPORT.VALUE] = 1e-13
+    else:
+        actual["probes"][0]["panels"]["exact"][REPORT.VALUE] = float("nan")
+    with pytest.raises(ArithmeticError):
+        REPORT.replay_summary(actual, saved)

@@ -1,12 +1,14 @@
 """Render complete saved river-refinement records; never train a strategy."""
 
 import argparse
+import copy
 import csv
 import gzip
 import importlib
 import importlib.util
 import json
 import math
+import warnings
 from pathlib import Path
 from typing import Any, cast
 
@@ -21,6 +23,43 @@ SUFFIXES = ("exact", "restricted")
 PROBES = ("q8", "exact_mass", "ordered_relations", "exact_info")
 SEEDS = (20261301, 20261302, 20261303)
 VALUE = "local_sharing_cost_chips_per_cf_decision"
+REPLAY_ROUNDOFF = 1e-12
+
+
+def replay_summary(actual: dict[str, Any], saved: dict[str, Any]) -> float:
+    """Exact structure/support; bounded roundoff ONLY for local float costs.
+
+    Archived file hashes remain exact. This is not a performance/root/support
+    tolerance, and does not rewrite any saved score. BLAS reductions can round
+    differently across platforms even on identical retained binary64 inputs.
+    """
+    left, right = copy.deepcopy(actual), copy.deepcopy(saved)
+    maximum = 0.0
+    if len(left["probes"]) != len(right["probes"]):
+        raise ArithmeticError("complete replay probe inventory required")
+    for a, b in zip(left["probes"], right["probes"], strict=True):
+        for suffix in SUFFIXES:
+            x, y = (p["panels"][suffix].pop(VALUE) for p in (a, b))
+            if any(
+                type(v) not in (int, float) or not math.isfinite(v) or v < 0
+                for v in (x, y)
+            ):
+                raise ArithmeticError("finite nonnegative replay costs required")
+            error = abs(x - y)
+            if error > REPLAY_ROUNDOFF or (
+                a["probe"] == "exact_info" and (x != 0 or y != 0)
+            ):
+                raise ArithmeticError(
+                    f"local sharing cost replay error {error:.17g} "
+                    "exceeds fixed roundoff/zero control"
+                )
+            maximum = max(maximum, error)
+    if canonical(left) != canonical(right):
+        fields = [k for k in left if canonical(left[k]) != canonical(right.get(k))]
+        raise ArithmeticError(
+            f"complete row replay structure/support differs at {fields}"
+        )
+    return maximum
 
 
 def checked(root: Path, folder: Path) -> list[dict[str, Any]]:
@@ -81,6 +120,7 @@ def checked(root: Path, folder: Path) -> list[dict[str, Any]]:
     spec.loader.exec_module(numeric)
     if manifest["config_sha256"] != numeric.CONFIG_SHA:
         raise ArithmeticError("prospective numeric protocol changed")
+    maximum_replay_error = 0.0
     for p, d in zip(profiles, detail, strict=True):
         if (
             any(p[k] != d[k] for k in ("source_id", "policy_sha256"))
@@ -90,10 +130,17 @@ def checked(root: Path, folder: Path) -> list[dict[str, Any]]:
             raise ArithmeticError("saved refinement identity/seat changed")
         for summary, inventory in zip(p["responses"], d["responses"], strict=True):
             recalculated = numeric.summarize(inventory["rows"], inventory["target"])
-            if canonical(recalculated) != canonical(
-                {k: summary[k] for k in recalculated}
-            ):
-                raise ArithmeticError("complete row replay differs from summary")
+            maximum_replay_error = max(
+                maximum_replay_error,
+                replay_summary(recalculated, {k: summary[k] for k in recalculated}),
+            )
+    if maximum_replay_error > 0:
+        warnings.warn(
+            f"Local cost replay roundoff {maximum_replay_error:.17g} "
+            "(limit 1e-12); archived bytes unchanged.",
+            RuntimeWarning,
+            stacklevel=2,
+        )
     return cast(list[dict[str, Any]], profiles)
 
 

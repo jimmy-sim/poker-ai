@@ -146,6 +146,18 @@ checks pass 44 with one plot skip in base and 45 with plotting installed.
 Final hosted CI remains required before merge; logs and results are separate
 from the earlier source checks that preceded saved-data execution.
 
+The first final Linux CI at `dd196a5` rejects the reader's byte-exact summary
+comparison. Its raw failure is retained in checks/initial-dd196a5-failure/.
+An independent exact-rational calculation on the retained binary64 Qs and
+normalized weights matches all 36 saved costs within 8.881785e-16. The reader
+correction permits only 1e-12 absolute recomputation roundoff for the local
+floating cost fields and reports any observed discrepancy. File hashes,
+structure, support, counts and singleton zeros stay exact. Original chip/support
+tolerances, scientific configs, data, strength gates and caps are unchanged.
+Seven added regressions accept tiny cost roundoff but reject changed support,
+counts/probes, nonfinite costs, nonzero singletons and larger errors. Corrected
+full local/hosted results remain to be recorded before merge.
+
 From a clean checkout, use fresh destinations:
 
 ```sh

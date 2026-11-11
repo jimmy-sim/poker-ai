@@ -2537,3 +2537,18 @@ Final base2362pass48skip148deselect353.39/338.86s and optional2419pass148deselec
 method/limits/3QAs and plain-English journal83 record the complete negative result.
 Next question: own coarse learner against own exact-information training opponent,
 with new prospective mixed-view correctness/work controls before any admission.
+
+### November 10 — retain Linux report-reader failure and narrow roundoff fix
+
+FinalCI42979804961 on dd196a5: Python312 fails the actual complete-row replay
+because its summary comparison requires byte-exact floating arithmetic. Raw log
+retained. Independent Fraction arithmetic on all36saved local costs has maximum
+error8.881784197001252e-16 relative to saved scores; rerunnable script/JSON retained.
+The correction permits1e-12absolute roundoff ONLY for recomputed local costs;
+archived hashes, all structure/support/counts and singletonzero stay EXACT.
+No scientific config/source/data, root/support tolerance, cap or strength-gate
+change. Seven regression cases cover small/large errors and forbidden field drift.
+Focused corrected base51pass1skip2.48s; Ruff/format/stricttyping pass. New full
+local suites/hostedCI required beforemerge; no new research trajectory begins.
+Own-exact-opponent software prospect registeredcomment6790000490, separate empty
+worktree exists; its implementation waits until this mismatch is resolved.
