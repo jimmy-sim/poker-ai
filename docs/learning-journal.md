@@ -3816,6 +3816,14 @@ a scientific run. The next step is a checked, published compute permit and an
 actual read-back of its saved input seals. Only afterward may real training
 start. Earlier failures stay recorded. Codex assisted; personal time is unknown.
 
+**Saved-permit update:** the actual admit command passes in 8.95 seconds. Its
+saved file now keeps all 89 permit seals separately from the 19 routine input
+pins. The earlier overwrite is repaired. The [permit](../results/opponent-information/admission.json)
+is published before its independent read-back and before any real worker
+initializes. It permits the bounded known-game computation; it does not prove
+successful completion, improved strength, or a new default agent. The study
+still repeats its prerequisites inside the original full time cap.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

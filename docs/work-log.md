@@ -2872,3 +2872,16 @@ reserved variable and stopped BEFORE Python; its diagnostic log is retained
 separately. It created no scientific receipt or run. Corrected wrapper uses
 forecast_rc. Publish forecast, then checked permit and actual persisted reader
 verification before real worker initialization. This is not a strength result.
+
+### November11 — corrected persisted permit retains both input inventories
+
+Actual admit8.952586750s completes source5cbb87e/SHA b0bc... with status
+own_opponent_learning_admitted. Saved permit_input_sha256 retains89 seals;
+routine input_sha256 separately retains19 pins, fixing the reproduced overwrite.
+Own/native caps7200/900, new_agent_default/fresh_global_admissionFalse.
+Publish complete permit/child/journal/log before the independent actual
+require_admission read-back and study entry. The real entry repeats all its
+prerequisites inside its unchanged whole-command cap and binds each worker to
+this exact permit/original3.11.17/NumPy2.4.6 runtime. No worker initialized at this
+publication checkpoint; completion, all36old B4 barriers, all30paths/432profiles/
+1152fixed and independent audit/quality gates remain ahead.
