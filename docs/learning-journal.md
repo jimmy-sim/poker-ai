@@ -45,7 +45,9 @@ the complete command, worker, archive, report and admission checks. Its wider
 source checks and published proof/forecasts are pending; real learning is not
 admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
 proof or any new real trajectory. Step88 makes interrupted-run records distinguish
-confirmed work from unknown progress. None of these results establishes
+confirmed work from unknown progress. Step89 completes the full fictional
+rehearsal and independent audit; fixed cost forecasts are next. None of these
+results establishes
 competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3613,6 +3615,37 @@ versions: 2,583 base tests and 2,650 with optional dependencies, plus the archiv
 check on each. Both GitHub jobs pass too. The raw logs and hashes are
 [saved](../results/opponent-information/software-checks/local.json). The next
 step is the formal fictional rehearsal; these checks alone admit no real run.
+
+## 89. The complete rehearsal passes before poker training
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The full pipeline now passes its formal rehearsal on fictional games. It trains
+all 30 planned toy paths, retains every required policy and averaging book, saves
+the five archives, rebuilds the paired policies and checks every reported value.
+Its own evidence was committed and pushed before the independent solver started.
+
+The own stage took 14.94 seconds. Publication, independent evaluation and final
+replay fit inside one shared 25.26-second clock, below the fixed 180-second limit.
+All 432 profiles and 1,152 fixed-opponent conditions pass. Own chip and coverage
+replay errors are zero; policy and book bits match exactly. The independent
+OpenSpiel calculation differs by at most 1.11e-16, below the 1e-9 tolerance. A
+base Python 3.12 replay of the published archives passes too.
+
+**What this means:** saving, reading, combining seats, evaluating strategies and
+checking them independently work together on these small test games. It does
+not establish a stronger poker agent or admit real training. The explicit
+fictional labels on the figures matter. See the [own receipt](../results/opponent-information/software/own.json)
+and [independent receipt](../results/opponent-information/software/native.json).
+
+Next we measure all three complete cost repetitions using old saved own poker
+strategies. Those old files help estimate the cost of loading, scoring, saving,
+reporting and checking the full-sized experiment. They record zero new training.
+We will publish all own cost evidence before constructing its native comparison,
+then evaluate the fixed conservative time-budget rules. Real learning stays
+blocked until a passing forecast and compute permit are checked and published.
+Codex assisted with execution and reporting; no personal practice time or mastery
+is inferred.
 
 ## Your own learning notes
 

@@ -298,3 +298,25 @@ clock timeout case preserves unknown flags too. Focused182base/10optional skippe
 strict typing pass. Source7f191d4 remains preserved, but these source changes
 require fresh complete checks. No formal new proof/forecast/permit/real trajectory
 yet; mathematical thresholds, seeds, learning rules and caps stay fixed.
+
+## Published full-shape software rehearsal — November11
+
+Checked source4878eb9, sourceSHA2fdf2e2844cce31d1c25fc4bc23b5088a46efa53c74f03b07c720cd2c48c5a4a:
+own stage14.940791666s, raw own publicationf969a04 BEFORE native construction;
+native stage7.353254167s, full shared software clock25.260755625s<180. Complete
+324raw/216books/30warm/108composed/432unique/216logical/1152fixed replay passes,
+chip and unitless errors0 and policy/book bits exact. Actual comparison-only
+OpenSpiel2.0.2 verifies all432/1152, maximum scalar discrepancy
+1.1102230246251565e-16<1e-9, publishedf84d698. No reference actions exported or
+training on reference output. Base312 replay of the published own archive passes.
+The checked published software gate accepts this fictional proof only.
+
+Before actual cost measurements, use fresh ignored output directories for each
+of the three own repetitions, preserving a clean source checkout for every
+entry. Publish byte-identical copies at canonical cost/{0,1,2} paths afterward;
+retain original outputs/scratch and exact command arguments. The same output
+choice applies to native repetitions after all own evidence is published. Child
+source/load/archive/score/report/replay/construction work is timed; subsequent
+administrative publication copying is separate, as with the command measurement
+receipts. Output location changes no coordinate, seed, inventory, tolerance or
+forecast rule. No cost forecast or real run is admitted by this software result.

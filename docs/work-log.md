@@ -2701,3 +2701,23 @@ Checkout5f4f19f04aa7aaa0ef5e3be694ecea7be2b44d8e complete source inventory equal
 4878eb9. Raw logs/hash receipts retained in results/opponent-information/software-checks/.
 These are software checks, not a real training admission. The next required stage
 is the full fictional own/publication/native rehearsal under its shared180s.
+
+### November11 — complete published own/native software rehearsal
+
+C3source4878eb9 passes the formal complete30path/324raw/216book/30warm/108compose/
+432profile/216logical/1152fixed fictional pipeline. Own14.940791666s published
+f969a04 BEFORE actual native construction. Native7.353254167s; full shared clock
+25.260755625s<180 includes own publication and final own replay. Both own error
+maxima0; policy/book bits exact. Independent OpenSpiel2.0.2 all432/1152 scalar
+checks pass max1.1102230246251565e-16<1e-9; publishedf84d698. Checked software
+gate accepts; base312 published-own replay passes. Journal89 distinguishes this
+software evidence from poker strength/admission.
+
+Next: actual three complete old-OWN cost repetitions under unchanged900s each,
+all own published before three native repetitions, then fixed conservative
+forecast and checked published compute permit before any new real trajectory.
+Prospective routine output/publication choice: fresh ignored output folders keep
+source clean between repetitions; exact byte-identical administrative copies go
+to canonical cost/{i} publication paths, retaining originals/args/scratch. All
+required child work is inside the measured command; later publication copying
+is separate. No scientific inventory, tolerance, seed, formula or cap changes.
