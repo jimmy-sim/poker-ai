@@ -3088,3 +3088,19 @@ causal training conclusion, newstrength/default/fresh/global admission or change
 to originaloverallFAIL. All games/seeds/methods/seats retained. Method and plain-
 English journal96 explain result/units/limits and next conditional-range question.
 Final artifact CI and evidence publication remain before merge.
+
+### November11 — prospective local river range-weight mechanism test
+
+Issue4comment6799471551 registers the next question before code/output. New
+frozen config binds complete PR50/PR51 evidence. Same24profiles/48responses,
+two own river suffixes/actual-vs-compatible-prior weights give96suffix conditions/
+192LOCALpanels, all owned RIVER rows/menus/compatible combos. Source conditional-Q
+mixture reconstruction, blocker/history/support normalization and singleton/
+identical/refinement convexity controls define math acceptance. Fixed per-game/
+seat uniform-decision weights normalize BEFORE shared actual-support filtering;
+no favorable subset or post-filter normalization. Original and full-static-probe
+groups retain separate denominators and signed changes. No effect-size gate,
+root-EV/retraining interpretation, new native audit/training/feature/default/
+fresh/global admission. Separate900s data-only clock and partial/failure retention;
+full relevant checks before measurement/merge. Implementation and outcomes pending;
+PR51 final artifact CI43044961257 runs unchanged.

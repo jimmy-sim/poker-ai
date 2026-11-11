@@ -4061,6 +4061,27 @@ their action-conditioned opponent-range weights. That can help explain which
 observable distinctions matter before selecting another feature or training
 change. The original failed superiority gate and agent default remain unchanged.
 
+## 97. Separate range beliefs from later action values
+
+**November 11, 2026 — issue #4; prospective follow-up.**
+
+The important calls need finer river information in the saved matchup. Next,
+we will check what the shared river groups are missing. A range is a set of
+possible opponent hands with weights. A posterior updates those weights using
+the public bets and a fixed opponent model; it does not reveal the actual hand.
+
+**Example:** two rivers might have the same made-hand category and the same
+possible opponent hands, yet a bet could be much more likely with one hand on
+one river. The updated weights could change our preferred response. Or the
+opponent's later action probabilities could matter even if we replace those
+updated weights with the original prior. The next diagnostic keeps later values
+fixed and changes only the range weights to separate those possibilities.
+
+The [frozen plan](river-range-reweighting.md) retains every saved profile and
+both own reply continuations. Its local disagreement scores are not root EV
+or improvements from training. No range result, new feature, new training or
+personal practice is claimed. Codex assists; the original failure remains.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
