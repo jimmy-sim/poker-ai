@@ -40,8 +40,10 @@ which river distinctions or training gaps produce those later choices. Steps
 no new groups in this known game. The next question is whether training against
 an own opponent with more detailed own-card/public-board information helps.
 Step 84 builds and tests the mixed-information game software. Step 85 fixes the
-learning comparison and implements its capture and replay checks. The full
-comparison pipeline is still being built; real learning is not admitted. None of these results establishes
+learning comparison and implements its capture and replay checks. Step86 connects
+the complete command, worker, archive, report and admission checks. Its wider
+source checks and published proof/forecasts are pending; real learning is not
+admitted. None of these results establishes
 competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3478,6 +3480,57 @@ compute/admission pipeline is still pending. Fictional signal games check
 software, not Hold'em strength. No new real trajectory or agent default change.
 Codex assisted with the implementation and explanation; personal hours, practice
 and mastery are not inferred.
+
+## 86. Check the whole experiment before spending its training budget
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The question is still whether our compressed agent learns better against an own
+opponent that can distinguish more legal card situations. Before running that
+test, we need to know that the complete experiment saves, checks and reports
+everything it promised. Checking the learner alone would miss bugs in how we
+combine seats, save averages or compare the final strategies.
+
+The command now starts three worker processes and collects all 30 learning paths
+in the fictional test games. It saves 324 policies, 216 books of averaging weights
+and 30 starting books. It then constructs 108 paired policies, scores 432 unique
+policies and checks 1,152 fixed-opponent conditions. A replay rebuilds the paired
+policies and verifies the stored numbers from the archives. Independent solver
+comparisons have their own publication gate and worker path.
+
+**Example:** a paired policy takes seat 0 from one training game and seat 1 from
+another. We must copy each seat's own decisions, charge both training games and
+keep their starting weights. Accidentally copying the finer opponent's decisions
+would give us a different agent. The tests reject altered seats, incomplete
+worker results and averages that no longer agree with their raw books.
+
+We also need a conservative time estimate before starting real training. The
+new cost mode sends old saved own strategies through the reporting/checking
+pipeline. It labels them as old data and records zero new training. For example,
+the nominal 50,000-node cost slot uses an explicitly identified old 100,000-node
+checkpoint. That helps measure file and scoring work; it is not a newly trained
+50,000-node strategy. Mixed cost tables were never trained together. They cannot
+pass as the actual experiment or improve the agent's reported strength.
+
+One archive test caught that an old averaging book did not contain its own work
+counter. The fix links it to the original checkpoint's saved work record. This
+preserves what the old files actually say. A separate test checks the full 180
+old policy/book members without constructing a new learner or external solver.
+
+At this checkpoint 175 focused checks pass in 18.04s; 10 optional checks are skipped
+in that base environment. With optional dependencies, 185 pass in 18.24s.
+The slow archive check passes separately in 34.42s.
+The complete fictional command uses actual worker processes. Schema tests with
+copied numbers check failure handling only; they are never presented as agreement
+with an independent solver. All three draft report figures were inspected, with
+numeric files unchanged by the layout corrections.
+
+Next are the wider local/optional and GitHub checks on this exact source, the
+published fictional proof and actual cost forecasts. Real Hold'em training stays
+blocked until those gates pass and its compute permit is published. The current
+agent default and known failed strength result remain unchanged. Codex assisted
+with this implementation and explanation; no personal practice, hours or mastery
+are inferred. See the [technical method](own-opponent-learning.md).
 
 ## Your own learning notes
 

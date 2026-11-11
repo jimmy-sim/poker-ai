@@ -12,7 +12,7 @@ from typing import Any
 from numpy.random import PCG64, Generator, SeedSequence
 
 from poker_ai.evaluation.averaging_history_artifacts import array_sha, write_mass
-from poker_ai.evaluation.opponent_learning_design import READOUTS, WEIGHTS, Design
+from poker_ai.evaluation.opponent_learning_design import COST, READOUTS, WEIGHTS, Design
 from poker_ai.finite import ArrayTree
 from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
 from poker_ai.postflop.cell_process import Send
@@ -25,6 +25,8 @@ from poker_ai.postflop.river_study import Deadline
 
 
 def trainer(tree: ArrayTree, design: Design, index: int) -> ReducedDispatchBatchTrainer:
+    if design.scope == COST:
+        raise ValueError("cost stand-ins cannot construct a learning path")
     path = design.path(index)
     entropy = path["rng_entropy"]
     # Preserve the historical scalar-seed stream for role zero. Do not replace

@@ -453,3 +453,16 @@ comparison use; its redistribution and notice conditions continue to apply.
 This pipeline requests independent scalar values and best-response checks of
 own policies only. It exports no reference strategy or action table to training.
 This license review is not evidence that the new comparison has already run.
+
+### November11 own-opponent adapter license recheck
+
+Before the new optional scalar-adapter tests, Codex re-read the full installed
+OpenSpiel2.0.2 Apache-2.0 LICENSE in the pinned311 environment. SHA-256 remains
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+Its license permits this comparison use with its notice/redistribution terms.
+The new adapter exports scalar values and achieved own-reply checks only; no
+reference strategy/action table enters learning. Optional numerical tests use
+the already-published analytic mixed-view fixtures. Mocked worker/schema tests
+are not independent numerical comparisons. The new trained full-shape software
+proof must publish its own evidence before reference construction. No commercial
+outputs are used, and this license record does not admit real training.

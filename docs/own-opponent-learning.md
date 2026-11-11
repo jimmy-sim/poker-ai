@@ -182,3 +182,68 @@ software proof. The current source cohort still needs its wider checks.
 3. **Would success mean a strong general Hold'em agent?** It would support a
    narrower known-game training result. Fresh games and a general agent still
    need their own separate acceptance evidence.
+
+## Complete command implementation — November 11
+
+The new entry point is `scripts/validate_opponent_learning.py`. Software and
+real training use the same three spawned workers, raw event journal, collector,
+book replay, seat composition, scoring and archive path. The independent scalar
+comparison also has three fixed worker partitions. Every complete own receipt
+contains 324 raw policies, 216 raw books, 30 warm origins, 108 new compositions,
+432 scored profiles, 216 logical arm points and 1,152 fixed target conditions.
+The report retains every seed/readout, with separate whole/post-warm support.
+Its three figures show primary learning curves, paired seed differences and
+fixed-opponent gaps. Fine fixed replies can use extra information; their gap
+is not self exploitability.
+
+The prospective [cost supplement](../configs/own-opponent-cost-standins.json),
+registered in [comment6792824092](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6792824092),
+specifies old OWN stand-ins before any cost forecast measurement. Labels50k/100k
+reuse old100k, 500k/1m reuse old1m, and5m/10m reuse old10m. All original source IDs,
+archive/member hashes and actual old checkpoint work are retained. A mixed cost
+table copies old coarse own rows and old fine opponent rows; those tables were
+never learned together. Both projected raw books and their warm origins remain
+available for exact replay. No new iteration, regret guard, first crossing,
+learning RNG stream or training work is fabricated. These COST records cannot
+enter the learner or satisfy the original36 B4 barriers.
+
+The command clock begins before numerical imports and includes child startup,
+preflight, prerequisites, worker work, archives, replay and final report writes.
+The parent records the subsequent administrative measurement/copy separately.
+Software own publication, independent comparison and final replay share180s on
+one host. Each own/native cost repetition has900s. Actual own/native study caps
+remain7200/900s. Interrupted receipts, raw messages, archives and temporary
+write bytes are retained; missing or changed evidence denies advancement.
+
+The required order is:
+
+1. Publish exact source with local base/optional checks on311/312, the relevant
+   slow archive check on both, both hosted jobs and retained raw logs.
+2. Run and publish the complete fictional `software-own` evidence before
+   `software-audit`, within the shared180s clock. Fictional means no poker.
+3. Run all three `cost-own --repetition 0/1/2` commands and publish own results
+   before any `cost-audit` construction. Run all three independent repetitions.
+4. `forecast` fully replays all own cost archives and verifies scalar audits,
+   publication, source and complete command clocks. Use the unchanged fixed
+   conservative formulas above. Retain a failed forecast; do not select retries.
+5. Publish a passing forecast, then `admit`, then publish that compute permit.
+   `study` checks it before workers; workers also bind its unchanged bytes and
+   the original311.17/NumPy2.4.6 runtime before initialization. Ordinary controls
+   must match all36 original B4 boundaries before scoring. Publish complete,
+   partial or failing own evidence before `audit`.
+
+At this implementation checkpoint,175 focused base checks pass in18.04s, with
+10 optional checks skipped and one slow check deselected. The slow check passes
+separately in34.42s, decoding all180 required original own members without a new
+learner or reference construction. Ruff/format/strict typing pass for the new
+modules/tests. With optional dependencies,185 focused checks pass18.24s. The
+fictional command integration includes actual spawned
+workers; mocked schema tests are explicitly not independent numerical evidence.
+The previous missing-work-field test failure is fixed by binding raw books to
+their original saved checkpoint work records, rather than inventing fields.
+
+All three draft figures were visually inspected after correcting crowded ticks
+and a colorbar overlap. Their three numeric files remain byte-identical through
+the plot-only corrections. Wider exact-source local/optional/hosted checks,
+formal published full-shape proof, actual forecasts and compute admission are
+still pending. No new real trajectory or model-strength improvement is claimed.

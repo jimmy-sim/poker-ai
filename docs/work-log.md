@@ -2615,3 +2615,34 @@ score/archive/fixed/native/report integration, source checks, conservative fixed
 forecast and published admission remain pending. Journal85 explains reuse and
 why two coarse paths are necessary. PR stays draft; no stronger/default/fresh/
 global claim and no personal hours or mastery inferred.
+
+### November11 — complete the own-opponent command and cost/permit implementation
+
+Continue the coherent issue4 investigation in draftPR49. New shared three-worker
+training and independent-scalar paths retain complete raw messages and partial
+failures. Own432-profile/1152-fixed-condition scoring, five archives, book/seat/
+scalar replay,216-point tables and three figures are connected. Whole-command
+clocks include startup/preflight/source/work/replay/report; interrupted temporary
+bytes are retained. Git publication is required before reference construction.
+
+Prospective comment6792824092 and a versioned COST supplement specify old OWN
+stand-ins before cost measurements. Every old coordinate/source/hash/work is
+retained; mixed tables were not learned together. New training work is0 and
+iteration/guard/learning RNG areNone. Cost data cannot enter the actual collector
+or satisfy36 original B4 barriers. Fixed24-path historical timing maxima and all
+three complete own/native cost repetitions feed the unchanged conservative
+forecast. Source checks, complete published software/cost evidence and a checked
+published permit gate real workers; original runtime/caps/seeds remain fixed.
+
+175 focused base tests pass18.04s;10 optional skipped,1slow deselected. Relevant
+slow original archive decoding passes1test34.42s. Ruff/format/strict typing pass
+on the new source/tests. Optional focused checks185pass18.24s. Actual spawned
+fictional integration checks the entire
+own path. Independent terminal arithmetic checks toy values; mocked native
+schema/worker numbers are explicitly not an audit. An old-book work-field test
+failed before linking books to their original saved checkpoint work records;
+the corrected all180-member reader passes. All3 draft figures visually checked;
+3numeric files byte-identical through layout-only fixes. Journal86 explains the
+distinctions. Full source-bound local/optional/hosted checks and formal proof/
+forecast/admission are pending. No new real trajectory, improved agent/default,
+fresh/global claim, personal hours or invented user learning.

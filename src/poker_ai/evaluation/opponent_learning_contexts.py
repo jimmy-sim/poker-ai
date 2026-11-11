@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from poker_ai.evaluation.averaging_history_math import validate_mass
 from poker_ai.evaluation.opponent_view_correctness import signal_game
 from poker_ai.finite import ArrayTree, FloatArray, IntArray
 from poker_ai.postflop.controlled_scoring import BoolArray, ScoringContext
@@ -66,6 +67,33 @@ class Contexts:
             owned = self.coarse.owners == target
             result[owned] = policy[owned]
         self.coarse.validate_policy(result)
+        return result
+
+    def combine_mass(
+        self, arm: str, first: FloatArray, second: FloatArray
+    ) -> FloatArray:
+        """Project raw own books without replacing zero rows by uniform policies."""
+        trees = (
+            (self.views[0].tree, self.views[1].tree)
+            if arm == "mixed_pair"
+            else (self.coarse, self.coarse)
+        )
+        for tree, mass in zip(trees, (first, second), strict=True):
+            validate_mass(tree, mass)
+        # Validate the same role/game bindings as probability composition. This
+        # normalized validation table is discarded; output copies RAW masses.
+        self.combine(arm, trees[0].normalize(first), trees[1].normalize(second))
+        result = np.zeros_like(self.coarse.legal)
+        for target, mass in enumerate((first, second)):
+            own = self.coarse.owners == target
+            rows = (
+                self.views[target].coarse_own_to_view[own]
+                if arm == "mixed_pair"
+                else own
+            )
+            result[own] = mass[rows]
+        validate_mass(self.coarse, result)
+        result.flags.writeable = False
         return result
 
 

@@ -24,6 +24,15 @@ PATHS = ("coarse0", "coarse1", "mixed0", "mixed1", "fine")
 ARMS = ("coarse_self", "coarse_pair", "mixed_pair", "fine_self")
 REAL = "KNOWN_HOLDEM_OWN_OPPONENT_INFORMATION_NOT_GLOBAL_ADMISSION"
 TOY = "FICTIONAL_SIGNAL_GAMES_OWN_OPPONENT_SOFTWARE_NOT_HOLDEM"
+COST = "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING"
+
+
+def is_raw(row: dict[str, Any]) -> bool:
+    return row["origin"] in ("own_raw_trajectory", "old_own_cost_standin")
+
+
+def is_composed(row: dict[str, Any]) -> bool:
+    return row["origin"] in ("own_seat_composition", "old_own_cost_projection")
 
 
 @dataclass(frozen=True)
@@ -32,7 +41,11 @@ class Design:
     labels: tuple[int, int, int]
 
     def __post_init__(self) -> None:
-        if (self.scope, self.labels) not in ((REAL, WORK), (TOY, TOY_WORK)):
+        if (self.scope, self.labels) not in (
+            (REAL, WORK),
+            (TOY, TOY_WORK),
+            (COST, WORK),
+        ):
             raise ValueError("use the complete fixed real or explicit toy design")
 
     def coordinate(self, index: int) -> dict[str, Any]:
@@ -48,7 +61,7 @@ class Design:
         name = PATHS[kind]
         seed = self.coordinate(coordinate)["seed"]
         role = 1 if name in ("coarse1", "mixed1") else 0
-        return dict(
+        result = dict(
             **self.coordinate(coordinate),
             path_index=index,
             path_kind=name,
@@ -61,6 +74,10 @@ class Design:
             primary_average_weight="linear",
             scope=self.scope,
         )
+        if self.scope == COST:
+            result["planned_learning_rng_entropy"] = result["rng_entropy"]
+            result["rng_entropy"] = None
+        return result
 
     def boundaries(self, index: int) -> tuple[int, ...]:
         kind = self.path(index)["path_kind"]
@@ -81,7 +98,9 @@ class Design:
             id=f"opponent-{self.scope}-{index:02d}-{work}-{readout}",
             work_label=work,
             readout=readout,
-            origin="own_raw_trajectory",
+            origin="old_own_cost_standin"
+            if self.scope == COST
+            else "own_raw_trajectory",
         )
 
     def mass(self, index: int, work: int, weight: str) -> dict[str, Any]:
@@ -119,7 +138,13 @@ class Design:
             arm=arm,
             work_label=work,
             readout=readout,
-            origin="raw_alias" if len(sources) == 1 else "own_seat_composition",
+            origin=(
+                "raw_alias"
+                if len(sources) == 1
+                else "old_own_cost_projection"
+                if self.scope == COST
+                else "own_seat_composition"
+            ),
             components=sources,
             component_work_labels=[w for _, w in components],
             information="fine" if arm == "fine_self" else "coarse",
@@ -143,7 +168,7 @@ class Design:
             self.arm(i, w, r, a)
             for i, w, r, a in itertools.product(range(6), self.labels, READOUTS, ARMS)
         ]
-        composed = [r for r in arms if r["origin"] == "own_seat_composition"]
+        composed = [r for r in arms if is_composed(r)]
         result = dict(
             scope=self.scope,
             work_labels=list(self.labels),
@@ -195,6 +220,28 @@ def paired_work(components: list[dict[str, Any]], logical_label: int) -> dict[st
     label = logical_label // len(components)
     if logical_label <= 0 or label * len(components) != logical_label:
         raise ValueError("paired work requires an exactly divisible positive label")
+    if any(r.get("scope") == COST for r in components):
+        if any(
+            r.get("scope") != COST
+            or not same(r.get("work_label"), label)
+            or not same(r.get("new_training_nodes"), 0)
+            or r.get("iteration") is not None
+            or r.get("rng_entropy") is not None
+            for r in components
+        ):
+            raise ArithmeticError("cost components cannot claim new learning work")
+        return dict(
+            logical_work_label=logical_label,
+            total_work=0,
+            initialization_visits=0,
+            overshoot=None,
+            overshoot_bound_exclusive=None,
+            component_count=len(components),
+            component_iterations=[None] * len(components),
+            component_total_work=[0] * len(components),
+            old_own_source_members=[r["old_own_source_members"] for r in components],
+            units="zero new training nodes; labels are nominal cost coordinates",
+        )
     fields = (
         "work_label",
         "previous_work",
