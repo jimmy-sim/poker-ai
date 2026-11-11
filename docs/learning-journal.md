@@ -3770,6 +3770,15 @@ then rebuild the forecast and published permit. Only afterward may the real
 fixed-work learning comparison start. The learner, seeds, budgets and strength
 targets remain unchanged. Codex assisted; no personal hours are inferred.
 
+**Own timing update:** all three complete old-data runs pass: 231.49, 233.83
+and 233.75 seconds. The forecast uses 233.83 seconds, the slowest. Every run
+replays all 432 policies and 1,152 fixed comparisons with zero measured error
+and exact saved bits. New poker training work is zero. The first run's tables
+and all three plots match the earlier old-data reports byte-for-byte.
+The [publication manifest](../results/opponent-information/cost/own-publication.json)
+records exact copies of every run before any independent timing comparison.
+All three independent costs and the complete forecast/permit are still required.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

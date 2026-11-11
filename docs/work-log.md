@@ -2836,3 +2836,15 @@ Next: all3complete old-OWN costs, own publication, all3native costs, full fixed
 forecast and published persisted permit round-trip before real training.
 Fresh ignored output/scratch folders distinguish this source from prior runs;
 canonical publication copies remain byte-identical. No caps/seeds/gates changed.
+
+### November11 — all corrected-source own cost repetitions pass
+
+Source5cbb87e complete own cost0/1/2 times231.491571875/233.828099000/
+233.752731375s<900 each. D=max233.82809899999847s. All three complete inventories
+retain324raw/216books/30warm/108composed/432unique/216logical/1152fixed, exact bits
+and zero chip/unitless replay errors. New poker/toy work0; no reference created.
+First cost's CSVs and all three PNGs match prior old-data reports byte-for-byte.
+Original ignored outputs/scratch/args retained; canonical files/logs copied
+byte-identically with SHA manifest cost/own-publication.json. Publish ALL own
+cost evidence before first corrected-source native cost construction. Full
+native costs/forecast/persisted permit/real study remain pending.
