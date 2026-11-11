@@ -2721,3 +2721,18 @@ source clean between repetitions; exact byte-identical administrative copies go
 to canonical cost/{i} publication paths, retaining originals/args/scratch. All
 required child work is inside the measured command; later publication copying
 is separate. No scientific inventory, tolerance, seed, formula or cap changes.
+
+### November11 — publish all three complete own cost repetitions
+
+Source4878eb9 complete old-OWN cost runs0/1/2:230.234677291/232.654408792/
+233.219642833s<900 each; D=233.219642833s, using the required maximum. Each
+retains324raw/216books/30warm/108composed/432profiles/216logical/1152fixed and
+complete zero-error chip/unitless replay with exact policy/book bits. New poker/
+toy training work0 and no reference construction. All three report figures
+visually inspected in the first repetition; clearly labeled old stand-ins.
+
+Original ignored outputs/args/scratch retained. Canonical publication copies
+under cost/{0,1,2} are verified byte-identical, with SHA manifest in
+cost/own-publication.json. Publish ALL own cost evidence before first native
+cost construction. Native repetitions, full forecast and compute permit remain
+pending; no real trajectory or strength/default/fresh/global admission.

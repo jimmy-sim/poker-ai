@@ -3647,6 +3647,13 @@ blocked until a passing forecast and compute permit are checked and published.
 Codex assisted with execution and reporting; no personal practice time or mastery
 is inferred.
 
+**Cost update, November 11:** all three complete old-own repetitions pass in
+230.23s, 232.65s and 233.22s. Every one keeps the full inventory and has zero
+replay error. The forecast will use the maximum, 233.22s. Byte-identical copies
+and their [publication manifest](../results/opponent-information/cost/own-publication.json)
+are saved before any native cost comparison. These are old-data cost tests with
+zero new training; the independent costs and final budget decision are pending.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
