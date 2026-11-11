@@ -3654,6 +3654,13 @@ and their [publication manifest](../results/opponent-information/cost/own-public
 are saved before any native cost comparison. These are old-data cost tests with
 zero new training; the independent costs and final budget decision are pending.
 
+**Independent cost update:** all three comparisons pass in 368.53s, 371.20s and
+371.65s. Each checks all 432 profiles and 1,152 conditions; its largest discrepancy
+is 1.85e-13 chips, below 1e-9. Original outputs and byte-identical publication
+copies are retained in the [native manifest](../results/opponent-information/cost/native-publication.json).
+The final forecast will use 371.65s, the maximum. The complete budget check and
+published compute permit are still required before real training.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,

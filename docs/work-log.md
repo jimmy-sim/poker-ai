@@ -2736,3 +2736,15 @@ under cost/{0,1,2} are verified byte-identical, with SHA manifest in
 cost/own-publication.json. Publish ALL own cost evidence before first native
 cost construction. Native repetitions, full forecast and compute permit remain
 pending; no real trajectory or strength/default/fresh/global admission.
+
+### November11 — complete and publish all native cost repetitions
+
+After own publication6c9c200, source4878eb9 native cost0/1/2 completes
+368.528307792/371.195141500/371.648972542s<900 each. Every repetition verifies
+all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+actions or training. N=max371.648972542s. End-to-end clocks include own/source/
+publication checks, all reference construction/scalars and final own replay.
+Byte-identical canonical copies and SHA manifest retained at cost/native-publication.json;
+original ignored output/args/rawjournals/logs remain. All outcomes included.
+The actual full forecast command must still verify every receipt/input and the
+fixed T/D/N rules before a checked published permit. No real trajectory yet.
