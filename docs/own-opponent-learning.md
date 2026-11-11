@@ -320,3 +320,17 @@ source/load/archive/score/report/replay/construction work is timed; subsequent
 administrative publication copying is separate, as with the command measurement
 receipts. Output location changes no coordinate, seed, inventory, tolerance or
 forecast rule. No cost forecast or real run is admitted by this software result.
+
+## Complete fixed forecast — November11
+
+All3own and3native cost repetitions complete and are published with exact-copy
+manifests. Maximum D=233.21964283299894s, N=371.6489725419997s. Every native run
+verifies432/1152, maxerror1.8474111129762605e-13chips. Actual forecast command
+408.798313416s<900 replays all own costs, checks every native receipt and87input
+seals, and computes T=610.943356249918s from ALL24 original complete B4 timings.
+Every new path uses its game's maximum of all12 old full10m paths; no half-work
+discount. Guarded own2*(2*T+D+600)=4110.21271066567<7200; guarded native
+2*(N+60)=863.2979450839994<900. Both strict forecast gates pass unchanged.
+The published checked compute permit is still required before any real worker.
+This estimate is not actual training runtime or strength/default/fresh/global
+admission. Keep the full actual caps and all original B4/numerical/quality gates.

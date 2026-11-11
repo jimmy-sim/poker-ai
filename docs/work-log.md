@@ -2748,3 +2748,15 @@ Byte-identical canonical copies and SHA manifest retained at cost/native-publica
 original ignored output/args/rawjournals/logs remain. All outcomes included.
 The actual full forecast command must still verify every receipt/input and the
 fixed T/D/N rules before a checked published permit. No real trajectory yet.
+
+### November11 — complete checked forecast passes unchanged limits
+
+Actual full forecast408.798313416s<900 verifies all3own costs, all3native audits,
+published source/proof/checks,87input seals and all24 original B4 timing paths.
+T610.943356249918,D233.21964283299894,N371.6489725419997s; no half-budget discount.
+Fixed guarded own4110.21271066567<7200 and native863.2979450839994<900 both pass.
+All source/seed/label/iteration/cap/acceptance rules unchanged. Full receipts,
+child, journal and command log retained; journal90 explains forecast versus
+strength. Publish this result, then create and publish the checked compute permit
+before actual new real trajectories. Forecast is not an actual-runtime guarantee
+or stronger/default/fresh/global admission.

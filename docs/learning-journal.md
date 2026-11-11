@@ -3661,6 +3661,43 @@ copies are retained in the [native manifest](../results/opponent-information/cos
 The final forecast will use 371.65s, the maximum. The complete budget check and
 published compute permit are still required before real training.
 
+## 90. The complete comparison fits its declared compute budget
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+All three own cost tests and all three independent cost comparisons have passed.
+Each used the complete old-data inventory. The forecast command then replayed
+the own archives, verified the independent calculations and publication records,
+checked all 24 historical training timings, and sealed 87 input files. That full
+verification took 408.80 seconds, below its separate 900-second cap.
+
+The fixed rules use the slowest measured repetition, not the fastest:
+
+| Input or estimate | Seconds |
+| --- | ---: |
+| T: conservative assigned-worker training estimate | 610.94 |
+| D: maximum complete own data-pipeline cost | 233.22 |
+| N: maximum complete independent comparison cost | 371.65 |
+| Guarded own estimate: 2 × (2T + D + 600) | 4,110.21 |
+| Guarded comparison estimate: 2 × (N + 60) | 863.30 |
+
+Both estimates fit the original 7,200/900-second limits. Every shorter training
+component was still charged a full historical path estimate; no half-budget
+discount was taken. The seeds, budgets, formulas and acceptance limits were not
+adjusted after seeing the measurements. The [forecast receipt](../results/opponent-information/forecast.json)
+retains the exact inputs and calculations.
+
+**What this means:** the bounded real experiment may proceed after its checked
+compute permit is published. A forecast is not a guarantee of runtime and says
+nothing about the agent's strength. The experiment still has to match the
+original 36 B4 boundaries, finish every required path, replay its saved results
+and pass independent numerical checks. Its performance targets remain separate.
+
+The next action is to publish the compute permit, then run the unchanged
+fixed-work learning comparison. Complete, partial and failing own evidence must
+be published before its native comparison. Codex assisted with execution and
+reporting; no personal learning time or mastery is inferred.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
