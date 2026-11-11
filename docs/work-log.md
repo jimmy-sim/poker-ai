@@ -2760,3 +2760,14 @@ child, journal and command log retained; journal90 explains forecast versus
 strength. Publish this result, then create and publish the checked compute permit
 before actual new real trajectories. Forecast is not an actual-runtime guarantee
 or stronger/default/fresh/global admission.
+
+### November11 — checked compute permit before real initialization
+
+The actual admit command completes8.905501334s and accepts source4878eb9/SHA2fdf...
+against the complete checked/published proof, all cost receipts and forecast
+seals. Statusown_opponent_learning_admitted; own/native7200/900 caps retained;
+new_agent_default/fresh_global_admissionFalse. Publish permit/child/journal/log
+BEFORE any worker initialization. This grants the bounded known-game computation,
+not successful completion or policy quality. All30paths/36original B4 barriers,
+all seeds/readouts, own replay, source checks and independent comparison remain
+required. No actual new real trajectory has started at this permit checkpoint.

@@ -3698,6 +3698,12 @@ fixed-work learning comparison. Complete, partial and failing own evidence must
 be published before its native comparison. Codex assisted with execution and
 reporting; no personal learning time or mastery is inferred.
 
+**Permit update:** the checked [compute permit](../results/opponent-information/admission.json)
+has passed verification and is published before real worker initialization.
+Its limits remain 7,200 seconds for own work and 900 seconds for comparison.
+It grants this bounded known-game experiment, while leaving the agent default
+and fresh/global admission unchanged. The actual study's results are still ahead.
+
 ## Your own learning notes
 
 **November 9, 2026 — your report:** You replayed the published prefix archive,
