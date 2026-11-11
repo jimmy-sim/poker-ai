@@ -1,0 +1,10 @@
+Checking cached report and source hashes...
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-gap-inspection/scripts/inspect_own_opponent_decisions.py", line 8, in <module>
+    raise SystemExit(main(Path(__file__).resolve().parents[1]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-gap-inspection/src/poker_ai/evaluation/opponent_decision_view.py", line 191, in main
+    show(profile, crosses, args.seat, rank)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-gap-inspection/src/poker_ai/evaluation/opponent_decision_view.py", line 98, in show
+    raise ValueError("choose an available positive group rank")
+ValueError: choose an available positive group rank

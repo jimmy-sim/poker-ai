@@ -2983,3 +2983,35 @@ actual full diagnostic reproduction are still pending; no new learning or
 reference is constructed. The diagnostic clock starts at thin-script entry before
 numerical imports; interpreter startup is not measured or claimed. Original
 learning/audit caps unchanged. Journal95 remains prospective until actual output.
+
+### November11 — complete saved-decision and common-opponent diagnosis
+
+PR50 source9bfe45c/fingerprint0927e4b runs the frozen complete read-only command
+in139.8018285s<900:24profiles/48responding traces/192cross conditions. Every owned
+row, street/group/root sum, reply fingerprint and diagonal source value checks;
+maximum trace discrepancy1.2273010890382813e-13chips<1e-9. Cross zero-sum/common-
+opponent identities pass; no training/reference/default/fresh/global admission.
+All new off-diagonals remain own calculations, not a new native audit.
+
+Both full local bases2625pass58skip149deselect, lint/format/types/hooks/source/
+runtime guards pass; relevant optional35pass1.00/.97s. SourceCI43036606438 BOTH
+jobs2625pass58skip149deselect1historical warning896.51/540.86s. Exact logs/receipts
+retained in results/opponent-decisions-checks. Agent-run actual-cache CLI smoke
+covers all48game/seed/arm/seat selections in one load, navigation, invalid key/
+rank and quit; no personal learning/time inferred. Final artifact CI remains.
+
+Unfavorable mediumseed20261302/mixed responding-seat1 gain.6782093457chips is
+concentrated in turn groups819/31 (.3988370387/.2216959014;91.50%combined).
+Their fine best reply calls using optimal later continuations. Saved prefix
+mass.4005350448vs paired.1546846116; not a conditional action frequency or causal
+local-error proof. With paired opponent fixed, paired->mixed target gap slightly
+improves.3309940111->.3279387575; switching that mixed target's opposite seat to
+mixed raises gap to.6782093457. Full both-game/all-seed/arm inventories retained;
+method/journal95 explain common-opponent scope, turn/river dependence and next
+controlled continuation question. Original superiority gate still FAILS; issue4
+open. These read-only results do not admit another learning study.
+
+Publication hooks first caught a missing tool path, then treated the exact
+external launcher record as repository Python. The path was restored and the
+unchanged launcher bytes retained as run_checks.py.txt (a historical execution
+record). No source, test, config, output or scientific gate changed.
