@@ -13,6 +13,7 @@ notes section is for your own questions and explanations as you work through it.
 
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
+- [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
@@ -31,7 +32,8 @@ audit passes, but the agent default stays unchanged.
 Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
 individual hands and add a terminal browser. Steps 80–81 show how changing later
 river choices can change the value of calling on the turn. The next question is
-which river distinctions or training gaps produce those later choices. None of
+which river distinctions or training gaps produce those later choices. Step 82
+defines and tests the next saved-data comparison before measuring it. None of
 these results establishes competitive general Hold'em strength.
 
 We have a working poker simulator, learning algorithms, and tools for checking
@@ -3317,6 +3319,33 @@ distinctions or training gaps cause the constrained choices before selecting
 another training change. This does not establish a stronger agent; the main
 sampling experiment's strength gate still fails. Codex assisted with the work;
 no personal practice, hours or mastery are inferred.
+
+### Step 82 — separate probability precision from combination identity (November 10)
+
+The next question is whether the river description loses important differences
+by rounding probabilities or by pooling different opponent hands together.
+These are different problems, so the next diagnostic tests them separately.
+
+**Example, made up for the arithmetic:** suppose two situations favor different
+actions. In one, fold/call values are 3/0; in the other they are 0/2. Give them
+weights 1/4 and 3/4. Choosing separately earns a weighted 2.25, while sharing one
+action earns at most 1.5. The local sharing cost is 0.75 chips per weighted
+decision. It is not a poker win rate or the amount lost over a whole hand.
+
+The fixed saved-data plan keeps all nine original snapshots and both seats,
+including every river information row. It compares the current summary, exact
+static probabilities, ordered outcomes against each declared opponent combo,
+and separate exact situations. It repeats this under both existing reply
+continuations. No new agent is trained and no opponent's actual hidden cards
+enter the feature. A declared range is an assumption fixed in the game config.
+
+Thirty focused checks pass, including the hand arithmetic, hidden/future-card
+invariance, malformed data and retained interruptions. The complete local and
+GitHub checks, followed by actual saved-data measurements, are still pending.
+The [protocol](river-refinement-diagnosis.md) explains the score and safeguards.
+The failed strength result remains. This tests a way to diagnose a weakness;
+it does not yet establish a stronger representation or agent. Codex assisted
+with implementation and explanation; no personal practice or hours are inferred.
 
 ## Your own learning notes
 
