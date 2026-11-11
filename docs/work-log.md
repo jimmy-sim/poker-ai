@@ -2552,3 +2552,397 @@ Focused corrected base51pass1skip2.48s; Ruff/format/stricttyping pass. New full
 local suites/hostedCI required beforemerge; no new research trajectory begins.
 Own-exact-opponent software prospect registeredcomment6790000490, separate empty
 worktree exists; its implementation waits until this mismatch is resolved.
+
+### November 11 — close PR #48 and build the own-opponent information controls
+
+PR #48 merges at 078433b after corrected CI 42981595850 passes both jobs.
+Linux measures 8.881784197001252e-16 local replay roundoff, with all structure,
+support and counts exact. Corrected local base suites each pass 2,369 tests
+(48 skipped, 148 deselected; 337.78/326.02s); optional suites each pass 2,426
+(148 deselected; 382.04/367.52s). Raw corrected logs and SHA receipts are in
+PR comment 6790343848. User main passes 52 focused checks in 12.25s; its actual
+renderer reproduces both numeric tables byte for byte. Fresh pre-FF snapshot
+and post-test checks preserve all ten modified bytes, index, status and diff.
+
+Only then implement prospective comment 6790000490 in a separate worktree.
+The new factory creates the two own coarse/fine-opponent information views;
+the composer projects each coarse seat from its own view and discards the fine
+opponent rows. Read-only copies, source/view/role/policy fingerprints, legal-menu
+checks and perfect recall protect the construction. No historical source file,
+policy data, updater, dependency lock or agent default changes.
+
+Thirty-two focused checks pass in 3.24s, with Ruff/format/strict typing passing.
+Independent terminal sums and pure replies validate a fictional signal-game
+counterexample for both target signs. Both known poker games pass all-node
+observability/hidden/future invariance and policy-edge/value/own-reply checks.
+The cached original browser still loads. Interrupted/incomplete software evidence
+retains failure and denies training admission. Journal step 84 and the versioned
+protocol explain this software-only milestone. Full base/optional/hosted checks
+and a published software receipt are pending; no new real trajectory or stronger/
+default/fresh/global claim. Added modules create a new source cohort, not an
+inheritance of the old admission. User authorization continues until stopped;
+the deleted automation is not recreated. No human hours or mastery inferred.
+
+### November 11 — freeze matched own-opponent learning controls and raw captures
+
+PR #49 foundation source05a00d6 passes full local base2401/optional2458 tests on
+both runtimes; 48 base skips and148 deselections, base363.61/350.74s and optional
+415.10/409.54s. Hosted42986614874 BOTH SUCCESS: 2401pass48skip148deselect1 retained
+historical roundoff warning; 591.72/791.28s. Clean311/312 software proofs agree on
+all analytic/structural/input/source fields, completing2.456548/2.388334s. Raw logs,
+proofs and source/hash receipt retained in results/opponent-information/software-views/.
+This checks source05a only, not the new learning pipeline or real admission.
+
+Prospective issue4comment6791111602 fixes the next coherent comparison before
+new real trajectories. Four logical arms separate fine own-opponent information
+from the cost of two learning games. Five actual paths per known game/seed reuse
+one explicitly charged coarse prefix. Fixed30paths/108boundaries/324rawpolicies/
+216ledgers/30warmorigins/108compositions/432uniqueprofiles, all3seeds/readouts,
+36originalB4barriers and1152fixed conditions. All8frozenowncontrols pergame are
+verified by saved policy hash; no strength-based opponent choice. Historical
+caps7200/900, runtime311.17/NumPy2.4.6, accuracy/coverage/recall gates preserved.
+New source cohort; historical admission is not inherited. Native output stays
+comparison-only. No new real-poker timing or learning trajectory.
+
+Implement fixed typed design, unchanged IIDB4 capture, warm/book/policy replay,
+explicit paired work and own seat composition/replay. Tiny fixtures cover all
+30paths and every raw/derived policy, normalization, legal-view/source bindings,
+observer state-bit identity, both warm starts/overshoots, repacked bad warm and
+average values, altered compositions, unsafe paths and interruption retention.
+Overwrite preflight rejects before initialization. Sixty-six focused tests pass
+at the implementation checkpoint; Ruff/format/strict typing pass. Full pipeline
+score/archive/fixed/native/report integration, source checks, conservative fixed
+forecast and published admission remain pending. Journal85 explains reuse and
+why two coarse paths are necessary. PR stays draft; no stronger/default/fresh/
+global claim and no personal hours or mastery inferred.
+
+### November11 — complete the own-opponent command and cost/permit implementation
+
+Continue the coherent issue4 investigation in draftPR49. New shared three-worker
+training and independent-scalar paths retain complete raw messages and partial
+failures. Own432-profile/1152-fixed-condition scoring, five archives, book/seat/
+scalar replay,216-point tables and three figures are connected. Whole-command
+clocks include startup/preflight/source/work/replay/report; interrupted temporary
+bytes are retained. Git publication is required before reference construction.
+
+Prospective comment6792824092 and a versioned COST supplement specify old OWN
+stand-ins before cost measurements. Every old coordinate/source/hash/work is
+retained; mixed tables were not learned together. New training work is0 and
+iteration/guard/learning RNG areNone. Cost data cannot enter the actual collector
+or satisfy36 original B4 barriers. Fixed24-path historical timing maxima and all
+three complete own/native cost repetitions feed the unchanged conservative
+forecast. Source checks, complete published software/cost evidence and a checked
+published permit gate real workers; original runtime/caps/seeds remain fixed.
+
+175 focused base tests pass18.04s;10 optional skipped,1slow deselected. Relevant
+slow original archive decoding passes1test34.42s. Ruff/format/strict typing pass
+on the new source/tests. Optional focused checks185pass18.24s. Actual spawned
+fictional integration checks the entire
+own path. Independent terminal arithmetic checks toy values; mocked native
+schema/worker numbers are explicitly not an audit. An old-book work-field test
+failed before linking books to their original saved checkpoint work records;
+the corrected all180-member reader passes. All3 draft figures visually checked;
+3numeric files byte-identical through layout-only fixes. Journal86 explains the
+distinctions. Full source-bound local/optional/hosted checks and formal proof/
+forecast/admission are pending. No new real trajectory, improved agent/default,
+fresh/global claim, personal hours or invented user learning.
+
+### November11 — repair unitless replay tolerance before proof/admission
+
+Source627427b completes full local base2576/optional2643 each,58base skips and
+149deselections; pytest430.35/417.08s base,480.83/464.79s optional. Relevant
+slow archive1pass each51.48/49.62s. Both hosted43004096870 jobs pass2576 with
+58skips/149deselections/1historical warning,906.60/887.49s. All raw logs and
+source/checkout/hash receipts are retained in source-627427b-checks. GitHub PR
+checkout9a535dae source inventory exactly equals tested627427b.
+
+Final review finds coverage replay using the chip1e-9 tolerance instead of the
+frozen unitless1e-12. Two consistently repacked whole/post-warm5e-10 defects
+reproduce as wrongly accepted; one within-tolerance5e-13 control passes. Preserve
+before-fix2failed/1passed8.95s and after-fix3passed6.62s logs. Correct coverage
+guard and receipt comparison, retaining separate unitless/chip maxima. Journal87
+explains why readable/hash-consistent archives still need mathematical replay.
+Fresh complete corrected-source checks are required. No formal new proof/cost
+forecast/admission/real trajectory occurred on the superseded source. Seeds,
+learning rules, scientific caps and original thresholds remain unchanged.
+
+Corrected focused178base23.51s/188optional23.45s,1slow deselected and10base optional
+skips. Full repository Ruff/format/strict typing pass. Corrected full source-bound
+local/optional/hosted and relevant slow checks remain pending.
+
+### November11 — preserve truthful uncertainty when workers are interrupted
+
+Coverage source7f191d4 passes complete base2579/optional2646 each,58base skips/
+149deselections:434.84/421.63s base,487.04/470.06s optional; relevant slow1pass
+50.76/48.89s. Both hosted43006909815 jobs pass2579/58skip/149deselect/1historical
+warning638.31/866.85s. Full PR checkoutec6bb135 source inventory equals7f191d4.
+All raw logs/hash receipts retained in source-7f191d4-checks.
+
+Interruption review catches initialFalse poker-work reporting surviving partial
+worker execution. Two synthetic REAL-label cases reproduce before repair;
+4training/native cases pass afterward. Source/permit/events are mocked: no actual
+real game, learner or solver runs. Persist attempted/unknown state before worker
+startup, infer only witnessed progress, retain per-path cumulative-work lower
+bounds and keep missing progress unknown. Hard-timeout receipt test verifies this
+without a child exception handler. Confirm compute permit separately from run
+completion. Complete real controls/thresholds/Native publication gates unchanged.
+Journal88 explains the distinction. Focused182base21.54s/192optional20.85s and
+repository lint/format/typing pass. Fresh full source-cohort checks are required
+before the still-unrun formal proof/cost forecasts/permit/real trajectory.
+
+### November11 — final own-opponent source checks complete
+
+Source4878eb99de8ab021261576249e43c1edce3e0c78, complete sourceSHA
+2fdf2e2844cce31d1c25fc4bc23b5088a46efa53c74f03b07c720cd2c48c5a4a:
+both local base2583pass58skip149deselect437.38/420.75s; optional2650pass149deselect
+485.58/473.14s; relevant slow1pass10deselect50.83/49.00s. Both hosted43009320593
+jobs pass2583/58skip149deselect1historical roundoff warning506.05/911.71s.
+Checkout5f4f19f04aa7aaa0ef5e3be694ecea7be2b44d8e complete source inventory equals
+4878eb9. Raw logs/hash receipts retained in results/opponent-information/software-checks/.
+These are software checks, not a real training admission. The next required stage
+is the full fictional own/publication/native rehearsal under its shared180s.
+
+### November11 — complete published own/native software rehearsal
+
+C3source4878eb9 passes the formal complete30path/324raw/216book/30warm/108compose/
+432profile/216logical/1152fixed fictional pipeline. Own14.940791666s published
+f969a04 BEFORE actual native construction. Native7.353254167s; full shared clock
+25.260755625s<180 includes own publication and final own replay. Both own error
+maxima0; policy/book bits exact. Independent OpenSpiel2.0.2 all432/1152 scalar
+checks pass max1.1102230246251565e-16<1e-9; publishedf84d698. Checked software
+gate accepts; base312 published-own replay passes. Journal89 distinguishes this
+software evidence from poker strength/admission.
+
+Next: actual three complete old-OWN cost repetitions under unchanged900s each,
+all own published before three native repetitions, then fixed conservative
+forecast and checked published compute permit before any new real trajectory.
+Prospective routine output/publication choice: fresh ignored output folders keep
+source clean between repetitions; exact byte-identical administrative copies go
+to canonical cost/{i} publication paths, retaining originals/args/scratch. All
+required child work is inside the measured command; later publication copying
+is separate. No scientific inventory, tolerance, seed, formula or cap changes.
+
+### November11 — publish all three complete own cost repetitions
+
+Source4878eb9 complete old-OWN cost runs0/1/2:230.234677291/232.654408792/
+233.219642833s<900 each; D=233.219642833s, using the required maximum. Each
+retains324raw/216books/30warm/108composed/432profiles/216logical/1152fixed and
+complete zero-error chip/unitless replay with exact policy/book bits. New poker/
+toy training work0 and no reference construction. All three report figures
+visually inspected in the first repetition; clearly labeled old stand-ins.
+
+Original ignored outputs/args/scratch retained. Canonical publication copies
+under cost/{0,1,2} are verified byte-identical, with SHA manifest in
+cost/own-publication.json. Publish ALL own cost evidence before first native
+cost construction. Native repetitions, full forecast and compute permit remain
+pending; no real trajectory or strength/default/fresh/global admission.
+
+### November11 — complete and publish all native cost repetitions
+
+After own publication6c9c200, source4878eb9 native cost0/1/2 completes
+368.528307792/371.195141500/371.648972542s<900 each. Every repetition verifies
+all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+actions or training. N=max371.648972542s. End-to-end clocks include own/source/
+publication checks, all reference construction/scalars and final own replay.
+Byte-identical canonical copies and SHA manifest retained at cost/native-publication.json;
+original ignored output/args/rawjournals/logs remain. All outcomes included.
+The actual full forecast command must still verify every receipt/input and the
+fixed T/D/N rules before a checked published permit. No real trajectory yet.
+
+### November11 — complete checked forecast passes unchanged limits
+
+Actual full forecast408.798313416s<900 verifies all3own costs, all3native audits,
+published source/proof/checks,87input seals and all24 original B4 timing paths.
+T610.943356249918,D233.21964283299894,N371.6489725419997s; no half-budget discount.
+Fixed guarded own4110.21271066567<7200 and native863.2979450839994<900 both pass.
+All source/seed/label/iteration/cap/acceptance rules unchanged. Full receipts,
+child, journal and command log retained; journal90 explains forecast versus
+strength. Publish this result, then create and publish the checked compute permit
+before actual new real trajectories. Forecast is not an actual-runtime guarantee
+or stronger/default/fresh/global admission.
+
+### November11 — checked compute permit before real initialization
+
+The actual admit command completes8.905501334s and accepts source4878eb9/SHA2fdf...
+against the complete checked/published proof, all cost receipts and forecast
+seals. Statusown_opponent_learning_admitted; own/native7200/900 caps retained;
+new_agent_default/fresh_global_admissionFalse. Publish permit/child/journal/log
+BEFORE any worker initialization. This grants the bounded known-game computation,
+not successful completion or policy quality. All30paths/36original B4 barriers,
+all seeds/readouts, own replay, source checks and independent comparison remain
+required. No actual new real trajectory has started at this permit checkpoint.
+
+### November11 — actual study rejects a malformed permit before training
+
+The first actual study command fails preflight in8.845484625s with
+`complete checked published study permit changed`. No worker initialization,
+poker training or reference construction occurred. Exact failed parent/child
+receipts, command log and SHA manifest are retained in
+results/opponent-information/failed-admission-4878eb9/.
+
+Diagnosis: permit() builds89 sealed inputs (87 forecast inputs plus forecast and
+source-check receipts), but the common CLI write path overwrites input_sha256
+with19 routine input pins. The fail-closed reader detects the lost inventory.
+Earlier unit tests covered permit construction but did not round-trip it through
+CLI persistence. Add that missing integration/failure coverage and separate the
+permit seals from routine command pins; preserve all scientific rules. Fresh
+corrected-source checks, proof, cost measurements, forecast and published permit
+are required before another real attempt. No model-strength claim follows.
+
+The synthetic CLI-to-persisted-reader regression fails before the fix and all39
+related admission/CLI tests pass afterward (4.58s). Mutations cover missing/
+changed seals, legacy overwritten inventory, cap/source changes and edited input
+bytes. Complete repository Ruff/format/strict typing pass697files/587typedfiles.
+Keep permit_input_sha256 separate from routine input_sha256; no scientific gate
+is weakened. Exact prior proof/check/cost/forecast/permit files are retained under
+source-4878eb9-pipeline with original-path hashes and historical checkout guidance.
+Journal91 explains this missed integration path; full corrected checks pending.
+
+### November11 — complete corrected permit-source checks
+
+Source5cbb87e2899d214059c3748cc6c53dd39ba4b1f1, scientific sourceSHA
+b0bc9c37e55fa65e14fc5e44548064b54d548e7ac19605e4b3d8528b3d37d038:
+base2590pass58skip149deselect467.10/452.45s; optional2657pass149deselect
+518.75/501.64s; relevant slow1pass10deselect56.33/54.42s. Full lint/format/
+strict typing/hooks and before/after runtime/module/source guards pass.
+Hosted43019692776 both2590pass58skip149deselect1historical warning898.91/908.68s.
+Actual PR checkout e9d7ec0f4abfd3dde00dc45cc90c5553d42bdbfc matches all291
+scientific source/config/entrypoint/lock files. Raw local/hosted logs and hashes
+are retained in software-checks. These checks validate software; the corrected
+formal proof/cost forecast/published compute permit are still required.
+
+The first corrected-source fictional launch refuses an existing default scratch
+folder left by the prior source. This is a launch-path error, before worker
+initialization/toy or poker training/reference; full failed own evidence was
+published at a7c4fb1 and is retained in failed-software-scratch-5cbb87e. The
+external launcher now supplies an explicit fresh scratch folder for a new full
+rehearsal. Source, configs, seeds, complete inventories, caps and gates remain
+unchanged; no partial run is resumed or favorable subset selected. Retain both
+attempts and require the complete new own/publication/native shared-clock proof.
+
+### November11 — corrected-source full fictional proof passes
+
+Source5cbb87e own6.453446791s publishesbc76e54 BEFORE native construction;
+native7.619018167s, full shared16.982763458s<180 including own publication and
+final replay. All30fictional paths/324raw policies/216books/30warm/108composed/
+432unique/216logical/1152fixed retained. Own chip/unitless replay maxima0 and
+exact policy/book bits. Independent OpenSpiel2.0.2 scalar maxerror
+1.1102230246251565e-16<1e-9, no exported actions/training. Native published1b4130e;
+actual software gate accepts tiny-only evidence. Read-only base312 replay also
+passes and its exact JSON/child/journal/log copies retain filenames in
+software/base312-replay. All3fictional report plots visually inspected.
+
+Next: all3complete old-OWN costs, own publication, all3native costs, full fixed
+forecast and published persisted permit round-trip before real training.
+Fresh ignored output/scratch folders distinguish this source from prior runs;
+canonical publication copies remain byte-identical. No caps/seeds/gates changed.
+
+### November11 — all corrected-source own cost repetitions pass
+
+Source5cbb87e complete own cost0/1/2 times231.491571875/233.828099000/
+233.752731375s<900 each. D=max233.82809899999847s. All three complete inventories
+retain324raw/216books/30warm/108composed/432unique/216logical/1152fixed, exact bits
+and zero chip/unitless replay errors. New poker/toy work0; no reference created.
+First cost's CSVs and all three PNGs match prior old-data reports byte-for-byte.
+Original ignored outputs/scratch/args retained; canonical files/logs copied
+byte-identically with SHA manifest cost/own-publication.json. Publish ALL own
+cost evidence before first corrected-source native cost construction. Full
+native costs/forecast/persisted permit/real study remain pending.
+
+### November11 — all corrected-source native cost repetitions pass
+
+After own publicationc7930ad, complete native costs0/1/2 take356.133935375/
+357.755006833/358.878548334s<900 each. N=max358.8785483339998s. Each verifies
+all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+reference actions or training. Full command times include published-own/source
+preflight, reference construction/scalars and final own replay. Exact canonical
+copies/logs and SHA manifest retained in cost/native-publication.json; original
+ignored output paths/arguments remain. Publish all native evidence, then run the
+full fixed forecast command; no corrected-source permit or real trajectory yet.
+
+### November11 — corrected full forecast passes fixed limits
+
+Actual complete forecast407.786650958s<900 verifies all3own/all3native costs,
+software proof/source checks,87input seals and all24 original B4 timing paths.
+T610.943356249918,D233.82809899999847,N358.8785483339998s. Guarded own
+4111.429622999669<7200 and native837.7570966679996<900 both pass unchanged
+strict formulas; no half-budget discount. Source/config/seeds/caps/gates unchanged.
+Parent/child/journal/full command log retained. An outer zsh launch used a
+reserved variable and stopped BEFORE Python; its diagnostic log is retained
+separately. It created no scientific receipt or run. Corrected wrapper uses
+forecast_rc. Publish forecast, then checked permit and actual persisted reader
+verification before real worker initialization. This is not a strength result.
+
+### November11 — corrected persisted permit retains both input inventories
+
+Actual admit8.952586750s completes source5cbb87e/SHA b0bc... with status
+own_opponent_learning_admitted. Saved permit_input_sha256 retains89 seals;
+routine input_sha256 separately retains19 pins, fixing the reproduced overwrite.
+Own/native caps7200/900, new_agent_default/fresh_global_admissionFalse.
+Publish complete permit/child/journal/log before the independent actual
+require_admission read-back and study entry. The real entry repeats all its
+prerequisites inside its unchanged whole-command cap and binds each worker to
+this exact permit/original3.11.17/NumPy2.4.6 runtime. No worker initialized at this
+publication checkpoint; completion, all36old B4 barriers, all30paths/432profiles/
+1152fixed and independent audit/quality gates remain ahead.
+
+### November11 — real own comparison complete; primary superiority gate fails
+
+Published permit9fe8083 passes the actual require_admission read-back (89sealed
+inputs/19routine pins) before real entry. Complete own command635.308768500s<7200
+trains30paths with210001434actual charged node visits, all seeds/readouts retained.
+All36original B4 boundaries match108policy/72ledger/36work-guard checks before
+scoring; full raw/archive/reply/support/fixed replay has0chip/unitless error and
+exact policy/book bits. All324raw/216books/30warm/108compose/432unique/216logical/
+1152fixed are retained. All3actual figures visually inspected.
+
+Final linear-average medium mean exploitability falls from ordinary coarse
+2.1726835365908252% to mixed0.597027911089941% initial pot. Mixed median
+0.5531623046246893%, worst1.0355187414374256%; paired-coarse minus mixed median
+improvement2.8049282275745457percentage points. Two seeds improve, one worsens.
+Low mixed median6.609080361175546e-9%, worst9.258394215892083e-8%; median paired
+improvement0. BOTH games pass absolute median<=1%/worst<=2.5% and whole-average
+coverage100%, BUT the preset strictly-positive paired improvement in BOTH games
+FAILS on low. Preserve failure; no new threshold, readout rescue or promotion.
+Post-warm reach support low71.11–80.78%, medium97.24–97.56%, reported separately.
+
+These are own-calculated known-game results pending the independent numerical
+audit. Publish complete own JSON/child/journal/5archives/6reports/command log/
+permit-read-back evidence before real native construction. No default/fresh/
+global admission. Issue4 remains open; source/seeds/caps/gates unchanged.
+
+### November11 — real independent audit validates complete own measurements
+
+After own publication691a7074af105b77eebbfc84b6debb2589d43217, the actual native
+audit completes358.570928584s<900. All432policies/1152fixed targets validate with
+maxerror1.8474111129762605e-13chips<1e-9; no exported reference actions/training.
+Own/source/permit/publication preflight, three native workers and closing own
+replay count inside the command. Pinned OpenSpiel2.0.2 Apache2 license verified;
+source SHA b0bc.../original runtime retained. Publish full native JSON/child/
+journal/command log. The numerical gate passes; the overall two-game positive-
+improvement gate FAILS and no default/fresh/global promotion occurs.
+
+Read-only digest diagnosis: low final linear paired/mixed probability hashes
+are identical for seeds20261302/20261303. Their exact tied scores are not decimal
+display rounding. The other seed is slightly worse at an already tiny scale.
+Low means lowSPR (38behind324pot); medium has182behind36pot. Consistent with
+little improvement headroom in low; not a post-hoc exception or proof of broader
+strength. README reports the independently checked medium result and overall
+failure. Cross-runtime data-only replay/report and final artifact CI remain.
+
+### November11 — real archive portability and complete report
+
+Python3.12.15/NumPy2.5.4 BASE readonly replay passes140.020708584s; OPTIONAL
+readonly report passes151.335751459s. No training/reference construction. All3
+numeric files and all3PNGs are BYTEIDENTICAL to original report; original311
+figures already visually inspected. Exact original-output copies preserve
+replay/report receipt/child/journal basenames in portability312 with logs/SHA
+manifest. These validate data/math within fixed1e-9chip/1e-12unitless tolerances,
+not bit-exact new trajectory execution eligibility. CLI read-back retains the
+original own-replay maxima in its emitted metadata; do not label those as fresh
+312 error measurements. Actual311own0/native1.847e-13 errors remain separate.
+
+Method now states the known-game result, all-seed failure, failed low superiority
+diagnosis, remaining medium seed2 extra-information gap, limitations and3practice
+interview answers. No original gate is changed and no quality promotion occurs.
+Final artifact hosted CI BOTH jobs must pass before a history-preserving merge.

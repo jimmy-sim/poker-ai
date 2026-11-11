@@ -11,10 +11,13 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Latest measured learning result](#94-finer-own-opponents-help-the-harder-spot-the-overall-gate-still-fails)
 - [Latest saved-hand browser and result](#step-79--move-from-totals-to-individual-hands-november-10)
 - [Why river choices change a turn call](#step-81--see-the-river-weakness-affect-a-turn-call-november-10)
 - [Testing what the river summary forgets](#step-82--separate-probability-precision-from-combination-identity-november-10)
 - [Why these two static refinements do not help here](#step-83--rule-out-two-static-river-refinements-november-10)
+- [Comparing opponents without giving away compute](#step-85--separate-opponent-information-from-extra-training-work-november-11)
+- [Giving the own training opponent finer legal information](#step-84--build-the-own-opponent-information-controls-november-11)
 - [What the batch experiment found](#38-compare-batch-sizes-at-fixed-work)
 - [Why latest and average strategies differ](#39-compare-latest-strategies-with-averages-and-fixed-opponents)
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
@@ -24,11 +27,14 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-November 10 update: issue #4 is improving the Hold'em learner through small,
-fully specified tests. The latest sampling candidate fails its main strength
-gate: 3.35% mean exploitability versus 2.17% for the existing batched research
-control in one known compressed game. Lower is better. The independent numerical
-audit passes, but the agent default stays unchanged.
+November 11 update: issue #4 has a measured improvement in the harder known spot.
+Training against finer own opponents reduces mean exploitability from 2.173%
+for ordinary coarse training to 0.597% of the initial pot. Lower is better.
+Both spots meet the absolute accuracy limits, and the independent audit passes.
+The overall preset superiority gate still fails: the already-near-zero low spot
+has zero median improvement against its paired control. The default stays
+unchanged. Step94 explains the complete result, including the seed that worsens.
+The earlier sampling candidate's 3.35% versus 2.17% failure remains in the record.
 
 Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
 individual hands and add a terminal browser. Steps 80–81 show how changing later
@@ -37,8 +43,21 @@ which river distinctions or training gaps produce those later choices. Steps
 82–83 find that finer static range probabilities and ordered combo outcomes add
 no new groups in this known game. The next question is whether training against
 an own opponent with more detailed own-card/public-board information helps.
-That comparison is not yet implemented or admitted. None of
-these results establishes competitive general Hold'em strength.
+Step 84 builds and tests the mixed-information game software. Step 85 fixes the
+learning comparison and implements its capture and replay checks. Step86 connects
+the complete command, worker, archive, report and admission checks. Its wider
+source checks and published proof/forecasts are pending; real learning is not
+admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
+proof or any new real trajectory. Step88 makes interrupted-run records distinguish
+confirmed work from unknown progress. Step89 completes the full fictional
+rehearsal and independent audit; fixed cost forecasts are next. None of these
+results establishes competitive general Hold'em strength. Step90 completes the
+fixed forecast; step91 records the first actual command's rejected permit before
+training and fixes its persistence bug. The corrected source needs fresh required
+validation before real learning can proceed. Steps92–93 complete those checks,
+the repeated proof/costs/forecast and corrected published permit. Step94 completes
+the actual learning run and independent audit while retaining the failed overall
+superiority condition.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3393,7 +3412,494 @@ fraction check matches every saved local score within about 9e-16. The correctio
 allows at most 1e-12 roundoff in those recomputed scores while keeping file hashes,
 support, row counts and zero controls exact. It does not change the saved data,
 training results or strength limits. Seven regression cases test that boundary;
-the corrected full checks must still pass before merging.
+the corrected source passes 2,369 base and 2,426 optional tests on each runtime.
+Both Linux jobs pass too, measuring the same tiny rounding difference. PR #48
+is merged; your local checkout passes all 52 focused checks and reproduces the
+tables. Your ten existing local result changes remain intact.
+
+### Step 84 — build the own opponent information controls (November 11)
+
+The new question is whether a coarse learner misses weaknesses because its own
+training opponent is also coarse. We need to change the opponent's information
+without changing the game or quietly giving the learner extra information.
+
+The new software builds two views. In one, seat 0 stays coarse while seat 1 uses
+its fine legal own-card/public-board information. The other reverses those roles.
+A future final coarse strategy would take seat 0's own rows from the first game
+and seat 1's own rows from the second. The finer opponents' rows are discarded.
+Both training games must count toward the compute budget.
+
+**Fictional example:** a player can stop for zero or risk a response. In state 0,
+the opponent's A/B choices pay the player +1/-1; in state 1, -1/+1. A coarse
+opponent must respond the same way in both states, so risk averages to zero.
+A fine opponent can choose the harmful response in each state, making risk
+worth -1. Stopping still guarantees zero. Thus a coarse strategy can be safe,
+even when another coarse equilibrium is vulnerable to finer deviations.
+
+This example has a known answer, so tests independently add terminal payoffs and
+enumerate possible replies. Thirty-two focused checks pass. They cover both
+seats, source/role bindings, changed data, immutable copies and remembering past
+own information. Structural tests on both known poker games cover every decision
+node, including different hidden opponent hands and unrevealed future cards
+that share the same acting-player observation. The acting agent's groups stay
+coarse; the legal game, actions and payoffs stay the same.
+
+The [protocol](exact-opponent-views.md) explains the controls. Broader checks and
+source publication follow before software acceptance. No new Hold'em training
+has run, and no reference strategies enter the learner. A real comparison still
+needs its fixed design, source/compute checks and published admission. The earlier
+strength failure and agent default stay unchanged. Codex assisted with the code
+and explanation; no personal practice, hours or mastery are inferred.
+
+The published foundation passes all broader checks: 2,401 base tests and 2,458
+optional tests on each runtime, with both GitHub jobs passing. The two software
+proofs agree exactly on their mathematical and structural fields. Their
+[receipt and raw logs](../results/opponent-information/software-views/checks.json)
+are retained. This validates the software construction; no new poker learning
+or playing-strength gain follows from it.
+
+### Step 85 — separate opponent information from extra training work (November 11)
+
+The finer-opponent idea needs two training games: one for our coarse seat 0 and
+another for our coarse seat 1. Simply comparing those two games with one ordinary
+self-play game could hide a compute advantage. The new design adds a paired
+coarse control too. Both paired arms split the same total work between two games
+and charge every warm start and both players' updates.
+
+**Example:** at a 100,000-node budget, the paired control takes seat 0 after
+50,000 nodes of coarse self-play and seat 1 after 50,000 nodes of a separate
+coarse self-play run. The treatment replaces each opponent with its own finer
+legal-information opponent at those same budgets. Each component can cross its
+label by one complete iteration, and both overshoots are reported. Ordinary
+coarse self-play through 100,000 nodes remains a separate practical comparison.
+
+The first control's earlier checkpoint already exists along the ordinary coarse
+path, so we reuse it. This saves duplicate execution. It stays fully charged in
+each logical comparison and is explicitly dependent data, not an independent
+repeat. Tests confirm that recording these extra checkpoints leaves every final
+training-state bit unchanged in the fictional fixtures.
+
+The [prospective protocol](own-opponent-learning.md) retains both known games,
+all three seeds, all three policy readouts and all eight frozen own opponents
+per game. The capture and replay tests exercise 30 fictional paths, 324 raw
+policies, 216 raw average ledgers and 108 seat compositions. They check that an
+average really matches its raw book and a composition really uses the correct
+seat's own rows. Consistently repacked wrong values must still fail; a matching
+file hash alone is insufficient. Interrupted work keeps its partial files.
+
+Sixty-six focused checks pass in 3.62 seconds, including the earlier construction
+checks. The complete scoring, fixed-opponent, archive, independent audit and
+compute/admission pipeline is still pending. Fictional signal games check
+software, not Hold'em strength. No new real trajectory or agent default change.
+Codex assisted with the implementation and explanation; personal hours, practice
+and mastery are not inferred.
+
+## 86. Check the whole experiment before spending its training budget
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The question is still whether our compressed agent learns better against an own
+opponent that can distinguish more legal card situations. Before running that
+test, we need to know that the complete experiment saves, checks and reports
+everything it promised. Checking the learner alone would miss bugs in how we
+combine seats, save averages or compare the final strategies.
+
+The command now starts three worker processes and collects all 30 learning paths
+in the fictional test games. It saves 324 policies, 216 books of averaging weights
+and 30 starting books. It then constructs 108 paired policies, scores 432 unique
+policies and checks 1,152 fixed-opponent conditions. A replay rebuilds the paired
+policies and verifies the stored numbers from the archives. Independent solver
+comparisons have their own publication gate and worker path.
+
+**Example:** a paired policy takes seat 0 from one training game and seat 1 from
+another. We must copy each seat's own decisions, charge both training games and
+keep their starting weights. Accidentally copying the finer opponent's decisions
+would give us a different agent. The tests reject altered seats, incomplete
+worker results and averages that no longer agree with their raw books.
+
+We also need a conservative time estimate before starting real training. The
+new cost mode sends old saved own strategies through the reporting/checking
+pipeline. It labels them as old data and records zero new training. For example,
+the nominal 50,000-node cost slot uses an explicitly identified old 100,000-node
+checkpoint. That helps measure file and scoring work; it is not a newly trained
+50,000-node strategy. Mixed cost tables were never trained together. They cannot
+pass as the actual experiment or improve the agent's reported strength.
+
+One archive test caught that an old averaging book did not contain its own work
+counter. The fix links it to the original checkpoint's saved work record. This
+preserves what the old files actually say. A separate test checks the full 180
+old policy/book members without constructing a new learner or external solver.
+
+At this checkpoint 175 focused checks pass in 18.04s; 10 optional checks are skipped
+in that base environment. With optional dependencies, 185 pass in 18.24s.
+The slow archive check passes separately in 34.42s.
+The complete fictional command uses actual worker processes. Schema tests with
+copied numbers check failure handling only; they are never presented as agreement
+with an independent solver. All three draft report figures were inspected, with
+numeric files unchanged by the layout corrections.
+
+Next are the wider local/optional and GitHub checks on this exact source, the
+published fictional proof and actual cost forecasts. Real Hold'em training stays
+blocked until those gates pass and its compute permit is published. The current
+agent default and known failed strength result remain unchanged. Codex assisted
+with this implementation and explanation; no personal practice, hours or mastery
+are inferred. See the [technical method](own-opponent-learning.md).
+
+## 87. Keep the promised tolerance for each kind of number
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The complete suites passed on the first pipeline source: 2,576 base tests and
+2,643 with optional dependencies on each Python version, plus the archive check
+on both. Both GitHub jobs passed too. A final comparison with the written
+protocol still found a mistake: the replay allowed the chip-value rounding
+tolerance when checking coverage fractions. The protocol had promised a tighter
+tolerance for those fractions. Passing existing tests did not establish that
+this separate requirement was implemented correctly.
+
+**Example:** chip values and a fraction such as 95% measure different things.
+The protocol allows an absolute discrepancy of 1e-9 chips, but only 1e-12 for a
+coverage fraction. A new test changes a saved fraction by 5e-10 and rebuilds its
+file and archive checksums consistently. The file is readable and its checksums
+match, but its coverage no longer agrees with the averaging book. The old replay
+accepted that error. This demonstrates why we recompute the mathematics as well
+as checking files.
+
+The correction enforces the original 1e-12 coverage tolerance and records chip
+and unitless error maxima separately. Both whole-average and post-warm altered
+fractions now fail. A change of 5e-13, inside the allowed rounding tolerance, still
+passes. The regression first reports two failures and one pass, then all three
+pass after the fix. The before/after logs and earlier complete check logs are
+[retained](../results/opponent-information/source-627427b-checks/receipt.json).
+
+The earlier checked source is preserved. The correction needs its own complete
+source checks before advancing. Its focused checks pass: 178 base in 23.51s and
+188 with optional dependencies in 23.45s. Lint, formatting and typing pass.
+No actual new poker trajectory, cost forecast or
+formal new proof ran on the too-permissive source. Training rules, seeds, caps
+and acceptance thresholds are unchanged; this repair follows the threshold
+already written down. Codex assisted with the review, test and fix. No personal
+learning time or mastery is inferred.
+
+## 88. An interrupted worker may have done more than it reported
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The coverage correction passes the full suites: 2,579 base tests and 2,646 with
+optional dependencies on both Python versions, plus both archive checks and
+both GitHub jobs. Before starting the formal proof, an interruption review finds
+another reporting bug. The initial receipt said no poker training had happened.
+If workers started and the run failed, that initial flag could survive even
+though some work had happened. It would misdescribe an unfinished run.
+
+The command now saves an explicit unknown state before workers can start. If a
+worker reports completed initialization or a checkpoint, the failure record can
+confirm that work happened. Without such a message, it stays unknown. It does
+not turn a missing message into proof that nothing ran. Reference-solver attempts
+use the same distinction. A receipt saved before worker startup also protects
+the case where a hard timeout prevents the normal error handler from running.
+
+**Illustrative test:** a simulated worker reports 12 initialization visits and
+later a checkpoint at 45 total visits. If interrupted, we can record at least
+45 visits, rather than adding those two counters. More could have happened after
+the last message. The completed total remains unknown. This test mocks the
+permit, source and worker; it performs no real poker training or solver run.
+
+Two simulated training-interruption cases fail before the repair. Afterward,
+four training/reference interruption cases pass. The hard-timeout test also
+preserves unknown progress. The prior coverage-source logs and before/after
+regression are [retained](../results/opponent-information/source-7f191d4-checks/receipt.json).
+Focused checks pass: 182 base in 21.54s and 192 with optional dependencies in
+20.85s. Repository lint, formatting and typing pass.
+
+The new flags distinguish a checked compute permit from successful completion.
+They do not accept a failed study, change learning or promote an agent. The
+complete corrected source still needs its own wider checks, then the published
+fictional proof and fixed cost forecasts. No new real trajectory, forecast or
+formal new proof has run yet. Codex assisted with the review and repair; no
+personal practice time or understanding is inferred.
+
+**Verification update:** source4878eb9 passes the complete suites on both Python
+versions: 2,583 base tests and 2,650 with optional dependencies, plus the archive
+check on each. Both GitHub jobs pass too. The raw logs and hashes are
+[saved](../results/opponent-information/source-4878eb9-pipeline/software-checks/local.json). The next
+step is the formal fictional rehearsal; these checks alone admit no real run.
+
+## 89. The complete rehearsal passes before poker training
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The full pipeline now passes its formal rehearsal on fictional games. It trains
+all 30 planned toy paths, retains every required policy and averaging book, saves
+the five archives, rebuilds the paired policies and checks every reported value.
+Its own evidence was committed and pushed before the independent solver started.
+
+The own stage took 14.94 seconds. Publication, independent evaluation and final
+replay fit inside one shared 25.26-second clock, below the fixed 180-second limit.
+All 432 profiles and 1,152 fixed-opponent conditions pass. Own chip and coverage
+replay errors are zero; policy and book bits match exactly. The independent
+OpenSpiel calculation differs by at most 1.11e-16, below the 1e-9 tolerance. A
+base Python 3.12 replay of the published archives passes too.
+
+**What this means:** saving, reading, combining seats, evaluating strategies and
+checking them independently work together on these small test games. It does
+not establish a stronger poker agent or admit real training. The explicit
+fictional labels on the figures matter. See the [own receipt](../results/opponent-information/source-4878eb9-pipeline/software/own.json)
+and [independent receipt](../results/opponent-information/source-4878eb9-pipeline/software/native.json).
+
+Next we measure all three complete cost repetitions using old saved own poker
+strategies. Those old files help estimate the cost of loading, scoring, saving,
+reporting and checking the full-sized experiment. They record zero new training.
+We will publish all own cost evidence before constructing its native comparison,
+then evaluate the fixed conservative time-budget rules. Real learning stays
+blocked until a passing forecast and compute permit are checked and published.
+Codex assisted with execution and reporting; no personal practice time or mastery
+is inferred.
+
+**Cost update, November 11:** all three complete old-own repetitions pass in
+230.23s, 232.65s and 233.22s. Every one keeps the full inventory and has zero
+replay error. The forecast will use the maximum, 233.22s. Byte-identical copies
+and their [publication manifest](../results/opponent-information/source-4878eb9-pipeline/cost/own-publication.json)
+are saved before any native cost comparison. These are old-data cost tests with
+zero new training; the independent costs and final budget decision are pending.
+
+**Independent cost update:** all three comparisons pass in 368.53s, 371.20s and
+371.65s. Each checks all 432 profiles and 1,152 conditions; its largest discrepancy
+is 1.85e-13 chips, below 1e-9. Original outputs and byte-identical publication
+copies are retained in the [native manifest](../results/opponent-information/source-4878eb9-pipeline/cost/native-publication.json).
+The final forecast will use 371.65s, the maximum. The complete budget check and
+published compute permit are still required before real training.
+
+## 90. The complete comparison fits its declared compute budget
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+All three own cost tests and all three independent cost comparisons have passed.
+Each used the complete old-data inventory. The forecast command then replayed
+the own archives, verified the independent calculations and publication records,
+checked all 24 historical training timings, and sealed 87 input files. That full
+verification took 408.80 seconds, below its separate 900-second cap.
+
+The fixed rules use the slowest measured repetition, not the fastest:
+
+| Input or estimate | Seconds |
+| --- | ---: |
+| T: conservative assigned-worker training estimate | 610.94 |
+| D: maximum complete own data-pipeline cost | 233.22 |
+| N: maximum complete independent comparison cost | 371.65 |
+| Guarded own estimate: 2 × (2T + D + 600) | 4,110.21 |
+| Guarded comparison estimate: 2 × (N + 60) | 863.30 |
+
+Both estimates fit the original 7,200/900-second limits. Every shorter training
+component was still charged a full historical path estimate; no half-budget
+discount was taken. The seeds, budgets, formulas and acceptance limits were not
+adjusted after seeing the measurements. The [forecast receipt](../results/opponent-information/source-4878eb9-pipeline/forecast.json)
+retains the exact inputs and calculations.
+
+**What this means:** the bounded real experiment may proceed after its checked
+compute permit is published. A forecast is not a guarantee of runtime and says
+nothing about the agent's strength. The experiment still has to match the
+original 36 B4 boundaries, finish every required path, replay its saved results
+and pass independent numerical checks. Its performance targets remain separate.
+
+The next action is to publish the compute permit, then run the unchanged
+fixed-work learning comparison. Complete, partial and failing own evidence must
+be published before its native comparison. Codex assisted with execution and
+reporting; no personal learning time or mastery is inferred.
+
+**Permit update:** the checked [compute permit](../results/opponent-information/source-4878eb9-pipeline/admission.json)
+has passed verification and is published before real worker initialization.
+Its limits remain 7,200 seconds for own work and 900 seconds for comparison.
+It grants this bounded known-game experiment, while leaving the agent default
+and fresh/global admission unchanged. The actual study's results are still ahead.
+
+## 91. A saved permit must survive being written and read
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The first real-study command stopped after 8.85 seconds, before any training
+worker started. Its safety check rejected the saved compute permit. The permit
+builder had listed89 required files, but the command's later save step replaced
+that list with a smaller19-file list used for ordinary input checks. The reader
+correctly refused the incomplete permit. Passing the earlier forecast did not
+make this saved file valid.
+
+**Example:** checking a packing list in memory is insufficient if saving it
+accidentally replaces it with a grocery list. The test must save the packing
+list and read it back. Our earlier tests missed that complete route.
+
+The fix gives the permit's full sealed inventory its own field. A new test
+reproduced the failure before the fix;39 related tests pass afterward. They also
+reject missing or changed seals, altered caps, the wrong source, and changed
+historical inputs. All prerequisites in this test are synthetic: it performs
+no poker training and constructs no solver.
+
+The [failed attempt](../results/opponent-information/failed-admission-4878eb9/own.json)
+and [earlier source evidence](../results/opponent-information/source-4878eb9-pipeline/README.md)
+are preserved. The corrected source must pass its complete software checks,
+proof, cost measurements, forecast and published permit before another real
+attempt. Seeds, training rules, budgets and strength targets remain unchanged.
+This is a pipeline correctness fix, not evidence of a stronger model. Codex
+assisted with diagnosis, implementation and tests; personal time is unrecorded.
+
+**Complete-check update:** the corrected source passes2,590 base tests and2,657
+optional tests on each supported Python version, plus the required archive check
+on both. Both GitHub jobs pass2,590 tests as well. Formatting, lint, typing,
+hooks and exact source/runtime checks pass. The [new check receipts](../results/opponent-information/software-checks/local.json)
+retain the evidence. These results repair our confidence in the software path;
+they do not grant training admission or demonstrate poker strength.
+
+## 92. Repeat the full rehearsal after the permit fix
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The corrected source passed its complete checks, then repeated the full
+fictional learning-and-comparison rehearsal. Our stage took6.45seconds and was
+published before the independent solver was constructed. Its comparison took
+7.62seconds. The complete shared sequence, including publication and final
+replay, took16.98seconds, within the180-second limit.
+
+All432policies and1,152fixed-opponent comparisons pass. Own replay has zero
+measured error and exact saved probability/book bits; the independent scalar
+calculations differ by at most1.11×10⁻¹⁶chips. A read-only replay on Python3.12
+also passes. All three figures were visually checked and clearly identify their
+fictional data. See the [own result](../results/opponent-information/software/own.json)
+and [independent result](../results/opponent-information/software/native.json).
+
+The first launch accidentally reused an old scratch-folder name. It refused to
+overwrite that folder before any learning; the [failed attempt](../results/opponent-information/failed-software-scratch-5cbb87e/own.json)
+remains published. The successful launch uses a fresh folder and reruns the
+complete procedure. It does not resume a favorable fragment.
+
+This checks the machinery, not poker strength. The next stages repeat all three
+own and three independent timing tests using explicitly old saved strategies,
+then rebuild the forecast and published permit. Only afterward may the real
+fixed-work learning comparison start. The learner, seeds, budgets and strength
+targets remain unchanged. Codex assisted; no personal hours are inferred.
+
+**Own timing update:** all three complete old-data runs pass: 231.49, 233.83
+and 233.75 seconds. The forecast uses 233.83 seconds, the slowest. Every run
+replays all 432 policies and 1,152 fixed comparisons with zero measured error
+and exact saved bits. New poker training work is zero. The first run's tables
+and all three plots match the earlier old-data reports byte-for-byte.
+The [publication manifest](../results/opponent-information/cost/own-publication.json)
+records exact copies of every run before any independent timing comparison.
+All three independent costs and the complete forecast/permit are still required.
+
+**Independent timing update:** the three complete comparisons pass in 356.13,
+357.76 and 358.88 seconds. The forecast uses 358.88 seconds. Each checks all
+432 policies and 1,152 fixed comparisons; the largest discrepancy is
+1.85 × 10⁻¹³ chips, below the fixed 10⁻⁹ tolerance. They export no reference
+actions and perform no training. The [native publication manifest](../results/opponent-information/cost/native-publication.json)
+records exact copies and original run locations. The full forecast must still
+verify every source-bound input and apply the unchanged formulas; these timings
+alone grant no training permit or strength claim.
+
+## 93. Rebuild the forecast on the corrected source
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+All six new timing runs are complete and published. The full forecast command
+then replays the own archives, checks the independent calculations and source
+records, seals 87 inputs, and verifies all 24 historical training timings.
+That complete verification passes in 407.79 seconds, within its 900-second cap.
+
+| Conservative input or estimate | Seconds |
+| --- | ---: |
+| T: assigned-worker training estimate, without half-budget discount | 610.94 |
+| D: slowest of three full own data-pipeline runs | 233.83 |
+| N: slowest of three full independent comparison runs | 358.88 |
+| Guarded own estimate: 2 × (2T + D + 600) | 4,111.43 |
+| Guarded comparison estimate: 2 × (N + 60) | 837.76 |
+
+Both guarded estimates fit the original 7,200/900-second limits. No seed, cap,
+inventory, formula or accuracy target was adjusted. The [forecast](../results/opponent-information/forecast.json)
+is a checked estimate of whether the complete run fits, not a measured poker
+improvement or a guarantee of runtime.
+
+One outer shell launch stopped before Python because its variable name was
+reserved. The launcher was corrected and the error retained; it did not create
+a scientific run. The next step is a checked, published compute permit and an
+actual read-back of its saved input seals. Only afterward may real training
+start. Earlier failures stay recorded. Codex assisted; personal time is unknown.
+
+**Saved-permit update:** the actual admit command passes in 8.95 seconds. Its
+saved file now keeps all 89 permit seals separately from the 19 routine input
+pins. The earlier overwrite is repaired. The [permit](../results/opponent-information/admission.json)
+is published before its independent read-back and before any real worker
+initializes. It permits the bounded known-game computation; it does not prove
+successful completion, improved strength, or a new default agent. The study
+still repeats its prerequisites inside the original full time cap.
+
+## 94. Finer own opponents help the harder spot; the overall gate still fails
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The real fixed-work comparison finished in 635.31 seconds. All 30 paths completed,
+using 210,001,434 charged visits to game nodes. These are computational visits,
+not poker hands. The 36 original B4 checkpoints match exactly. All 432 policies
+and 1,152 fixed-opponent evaluations replay with zero measured error and exact
+saved policy/book bits. All seeds, readouts and the three figures are retained.
+
+The table below uses the final linear averages, with three fixed seeds in each
+known spot. Exploitability measures how much a best response can gain inside
+this specified game. Lower is better. Values are percent of that spot's initial
+pot; they are not win rates against human players.
+
+| Known spot | Ordinary coarse mean | Paired coarse mean | Finer-opponent treatment mean | Treatment median / worst |
+| --- | ---: | ---: | ---: | ---: |
+| Low | 8.61 × 10⁻⁹% | 2.46 × 10⁻⁸% | 3.53 × 10⁻⁸% | 6.61 × 10⁻⁹% / 9.26 × 10⁻⁸% |
+| Medium | 2.173% | 3.028% | 0.597% | 0.553% / 1.036% |
+
+**The overall predeclared superiority test fails.** Both spots meet the absolute
+accuracy limits, but we also required strictly positive median improvement over
+the paired control in both spots. The low spot was already near zero and has
+zero median improvement. We retain that failure and do not change the rule after
+seeing it. The medium spot's paired improvement is 2.805 percentage points in
+the median; two seeds improve and one worsens. The full per-seed results stay
+in the [216-point table](../results/opponent-information/report/arm-points.csv).
+
+Whole-average coverage is 100%. Later learned support is different: post-warm
+reach coverage is about 71–81% in low and 97.2–97.6% in medium. Uniform warm
+initialization must not be mistaken for later learning at every decision.
+
+This is promising evidence in the harder known spot, pending independent
+numerical comparison. It does not establish general Hold'em strength, an edge,
+or a new default agent. The [own receipt](../results/opponent-information/own.json)
+and [summary](../results/opponent-information/report/summary.json) are published
+before the reference is constructed. Next: the full independent scalar audit,
+then diagnosis of the failed superiority condition and the remaining weaknesses.
+Codex assisted with execution and reporting; personal hours are not inferred.
+
+**Independent-audit update:** the actual OpenSpiel comparison passes in 358.57
+seconds, including its complete preflight and closing own replay. All 432
+policies and 1,152 fixed comparisons agree within 1.85 × 10⁻¹³ chips, below the
+fixed 10⁻⁹ tolerance. The [native receipt](../results/opponent-information/native.json)
+records that our full own evidence was published first. No reference actions or
+strategy entered learning. This validates the measurements, not a winning-agent
+claim; the overall superiority gate remains failed.
+
+**Why the low spot ties:** for seeds 20261302 and 20261303, the paired control
+and treatment have identical saved probability hashes. Their exact tied scores
+are not just rounded graph labels. Here “low” means low stack-to-pot ratio:
+only 38 chips remain behind a 324-chip pot. The medium spot has 182 behind 36.
+This is consistent with little improvement headroom in the already-solved low
+spot, but we keep the original gate and its failed outcome. All three seeds,
+including the one that worsens in medium, remain in the assessment.
+
+**Portability update:** Python 3.12 archive replay passes in 140.02 seconds;
+report rebuilding passes in 151.34 seconds. All three numeric files and all
+three plots match the original bytes. This checks saved data and calculations,
+not new training trajectories. The [portability record](../results/opponent-information/portability312/publication.json)
+keeps exact copies and states the tolerance and receipt scope.
+
+**What remains to understand:** the improvement is uneven. Against the paired
+control, medium seeds 20261301 and 20261303 greatly reduce the part of the gap
+available to a player with finer information. Seed 20261302 increases that gap
+from about 0.419% to 0.868% of the initial pot, even though its within-group
+learning gap decreases slightly. This points to a useful next question: which
+saved river decisions account for that seed's remaining vulnerability? It is
+a diagnosis to investigate, not a reason to drop the seed or change the gate.
 
 ## Your own learning notes
 

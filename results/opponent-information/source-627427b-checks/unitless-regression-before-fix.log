@@ -1,0 +1,146 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_repacked_support_uses_frozen_unitless_not_chip_tolerance[whole-5e-10-False] _
+
+complete = {'folder': PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-65/opponent-o...n=array([0, 0, 1, 2]), river_masks=(array([False, False,  True,  True]), array([ True,  True, False, False])))})), ...}
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-65/test_repacked_support_uses_fro0')
+phase = 'whole', delta = 5e-10, accepted = False
+
+    @pytest.mark.parametrize(
+        "phase,delta,accepted",
+        [("whole", 5e-10, False), ("post_warm", 5e-10, False), ("whole", 5e-13, True)],
+    )
+    def test_repacked_support_uses_frozen_unitless_not_chip_tolerance(
+        complete: dict[str, Any],
+        tmp_path: Path,
+        phase: str,
+        delta: float,
+        accepted: bool,
+    ) -> None:
+        s = copy.deepcopy(complete["saved"])
+        # Repack a fully valid archive with unchanged policy bits and consistent
+        # metadata/file hashes. Only independent support recomputation can catch it.
+        chosen = next(r for r in s["rows"] if r["coverage"] is not None)
+        for row, blob in read_archive(
+            complete["folder"] / s["details_file"], s["details_sha256"], s["rows"]
+        ):
+            destination = tmp_path / row["file"]
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if row is chosen:
+                context = scoring(complete["contexts"][row["coordinate"] // 3], row)
+                detail = decode(blob, context, row)
+                value = row["coverage"][phase]["all"]["uniform_reach_fraction"]
+                row["coverage"][phase]["all"]["uniform_reach_fraction"] = (
+                    value - delta if value > 0 else value + delta
+                )
+                meta = {
+                    k: v
+                    for k, v in row.items()
+                    if k not in {"receipt", "metadata_sha256", "file"}
+                }
+                row["receipt"] = write_snapshot(
+                    destination,
+                    context.partition,
+                    unpack_policy(context.partition, detail["policy"]),
+                    meta,
+                )
+                row["metadata_sha256"] = sha(meta)
+                metadata(row)
+            else:
+                destination.write_bytes(blob)
+        archive = complete["folder"] / (tmp_path.name + "-details.jsonl.gz")
+        s["details_file"] = archive.name
+        s["details_sha256"] = write_archive(archive, tmp_path, s["rows"])
+    
+        def check() -> dict[str, Any]:
+            return replay(
+                complete["folder"],
+                s,
+                Design(TOY, TOY_WORK),
+                lambda i: complete["contexts"][i // 3],
+                complete["opponents"],
+                BINDING,
+                Deadline(180),
+            )
+    
+        if accepted:
+            assert check()["maximum_error"] <= 1e-12
+        else:
+>           with pytest.raises(ArithmeticError, match="unitless"):
+E           Failed: DID NOT RAISE ArithmeticError
+
+tests/test_opponent_learning_pipeline.py:337: Failed
+_ test_repacked_support_uses_frozen_unitless_not_chip_tolerance[post_warm-5e-10-False] _
+
+complete = {'folder': PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-65/opponent-o...n=array([0, 0, 1, 2]), river_masks=(array([False, False,  True,  True]), array([ True,  True, False, False])))})), ...}
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-65/test_repacked_support_uses_fro1')
+phase = 'post_warm', delta = 5e-10, accepted = False
+
+    @pytest.mark.parametrize(
+        "phase,delta,accepted",
+        [("whole", 5e-10, False), ("post_warm", 5e-10, False), ("whole", 5e-13, True)],
+    )
+    def test_repacked_support_uses_frozen_unitless_not_chip_tolerance(
+        complete: dict[str, Any],
+        tmp_path: Path,
+        phase: str,
+        delta: float,
+        accepted: bool,
+    ) -> None:
+        s = copy.deepcopy(complete["saved"])
+        # Repack a fully valid archive with unchanged policy bits and consistent
+        # metadata/file hashes. Only independent support recomputation can catch it.
+        chosen = next(r for r in s["rows"] if r["coverage"] is not None)
+        for row, blob in read_archive(
+            complete["folder"] / s["details_file"], s["details_sha256"], s["rows"]
+        ):
+            destination = tmp_path / row["file"]
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if row is chosen:
+                context = scoring(complete["contexts"][row["coordinate"] // 3], row)
+                detail = decode(blob, context, row)
+                value = row["coverage"][phase]["all"]["uniform_reach_fraction"]
+                row["coverage"][phase]["all"]["uniform_reach_fraction"] = (
+                    value - delta if value > 0 else value + delta
+                )
+                meta = {
+                    k: v
+                    for k, v in row.items()
+                    if k not in {"receipt", "metadata_sha256", "file"}
+                }
+                row["receipt"] = write_snapshot(
+                    destination,
+                    context.partition,
+                    unpack_policy(context.partition, detail["policy"]),
+                    meta,
+                )
+                row["metadata_sha256"] = sha(meta)
+                metadata(row)
+            else:
+                destination.write_bytes(blob)
+        archive = complete["folder"] / (tmp_path.name + "-details.jsonl.gz")
+        s["details_file"] = archive.name
+        s["details_sha256"] = write_archive(archive, tmp_path, s["rows"])
+    
+        def check() -> dict[str, Any]:
+            return replay(
+                complete["folder"],
+                s,
+                Design(TOY, TOY_WORK),
+                lambda i: complete["contexts"][i // 3],
+                complete["opponents"],
+                BINDING,
+                Deadline(180),
+            )
+    
+        if accepted:
+            assert check()["maximum_error"] <= 1e-12
+        else:
+>           with pytest.raises(ArithmeticError, match="unitless"):
+E           Failed: DID NOT RAISE ArithmeticError
+
+tests/test_opponent_learning_pipeline.py:337: Failed
+=========================== short test summary info ============================
+FAILED tests/test_opponent_learning_pipeline.py::test_repacked_support_uses_frozen_unitless_not_chip_tolerance[whole-5e-10-False]
+FAILED tests/test_opponent_learning_pipeline.py::test_repacked_support_uses_frozen_unitless_not_chip_tolerance[post_warm-5e-10-False]
+2 failed, 1 passed, 53 deselected in 8.95s

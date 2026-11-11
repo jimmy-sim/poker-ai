@@ -1,0 +1,32 @@
+{
+  "checked_commit": "7f191d42f921a634ab4849c2c75b22e2aa6f53f8",
+  "ci_run": 43006909815,
+  "files": {
+    "base311-install.log": "2259b7c7a5a575fe9351713ad140ae83d4085769d9cb5b8b47522d126d65ed5b",
+    "base311-receipt.json": "7da50a91ab07e60a5cbc04acf984d289729d6b37c840da18005c2ac3e231399c",
+    "base311.log": "e950ae53c23860f35fecb71bd5a24da28bc20c4d44a4b9811c8684b72b09b22c",
+    "base312-install.log": "c450cc62f6b1cd42995206152314af4047af0e192c7168666d0c8067a84fc769",
+    "base312-receipt.json": "a9cafb3e0bfffad212636f9d23e0e4377038c5fcac262c9b0d42bb1b1ce961ef",
+    "base312.log": "d8face1155f31cc864ca31be96d6eaa0e96730dc999d682258e1faaff4071617",
+    "ci.json": "30941109778fe8e9821a533a0dfed7298afcbbef2b3e80476d4dfd7d1f9f88c7",
+    "focused_slow311-receipt.json": "c65f839c4b4cef038ac0b713f62c9e1a19d8b1d2a8566ee1a004812069104204",
+    "focused_slow311.log": "4eb5ad2343490975edbd0da5382fe789651454901e3aeb64a9a6a38174c63f4b",
+    "focused_slow312-receipt.json": "fc89ee45f79b642de3168aff19cae92cb11e1eac6ae09f40ff150975b282522d",
+    "focused_slow312.log": "e992d6eecac685f018174fdff74981ca4a56e2661e861e4c180fb389057021f6",
+    "hosted-130476554042.log": "bb83bc23323e06b0f849f64d82cc147fbf41ae77b347c8c9d680d481bf0a5416",
+    "hosted-130476554445.log": "c6b4d4b8c366e97d74016fdf6ff5c695ff37d32be800930ff4318521ffc364b4",
+    "local.json": "86effc8c2ce325845745d10869d375ca733064038d31309f35b03c80cda27368",
+    "optional311-install.log": "016943e9d6b4185c5fa34e8b05b3feba16265c99342598a2471393bfebf0a718",
+    "optional311-receipt.json": "3eb671236b7a704308f8add2a66bed1819bd8dd737b9a82465b033f662f43bff",
+    "optional311.log": "82e858f41e7eff737f67729747f2c28f980dbaf5f3f8daae2532da66044b7183",
+    "optional312-install.log": "1fa039fd9191e374be194c1242042a8691f65e92235722c9449b47be6d48e0f9",
+    "optional312-receipt.json": "e61d05f782bedc35feeced9210356f162e5a264aff80b1973d67fc1b5d36db9e",
+    "optional312.log": "5cdd6c2827e34738c81a236bbf14d2fc400bce6d012260b616996b003018618e",
+    "partial-flags-after-fix.log": "50aef0f55e1892a0697026d47f4a8e90510bbbad93160848c788eae1d9b2f2f9",
+    "partial-flags-before-fix.log": "a2c8d46b9bbcac9f09be326ab9422771e2a13467d726af1dd1fab46ae39ba3b3"
+  },
+  "full_checks_passed": true,
+  "reason": "Coverage correction passes all full checks. Interruption review then finds initial False poker-work flag could survive attempted/partial training. Synthetic REAL-label tests with mocked source/permit and no actual learner reproduce2fail before fix;4simulated training/native interruption cases pass after fix. Preserve unknown flags before workers start; record observed lower bounds separately. These draft regression additions were not part of the original checked commit. No actual new proof/cost forecast/permit/real trajectory on this source.",
+  "source_sha256": "2c5c41c6756e56cf4085c967d8b6be7f6a2f25be883a0239fd648cab798730c2",
+  "status": "superseded_implementation_checks_not_training_admission"
+}

@@ -1,0 +1,59 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.opponent_learning_gate import source\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='4878eb99de8ab021261576249e43c1edce3e0c78'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(source(root)['sha256'])})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-learning-lifecycle-checkout/src/poker_ai/__init__.py', 'source_sha256': '2fdf2e2844cce31d1c25fc4bc23b5088a46efa53c74f03b07c720cd2c48c5a4a'}
+{"command": ["uv", "run", "--locked", "ruff", "check", "."]}
+All checks passed!
+{"command": ["uv", "run", "--locked", "ruff", "format", "--check", "."]}
+Uninstalled 1 package in 0.57ms
+Installed 1 package in 1.14s
+696 files already formatted
+{"command": ["uv", "run", "--locked", "mypy", "--strict", "src", "tests", "scripts"]}
+Success: no issues found in 586 source files
+{"command": ["uv", "run", "--locked", "pytest", "-q", "-m", "not slow"]}
+........................................................................ [  2%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 10%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 19%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 30%]
+........................................................................ [ 32%]
+...................................................sss.................. [ 35%]
+........................................................................ [ 38%]
+.........................................s.............................. [ 40%]
+........................................................................ [ 43%]
+........................................................................ [ 46%]
+.................ss..sss................................................ [ 49%]
+........................................................ssssssssssssssss [ 51%]
+s..............................................s........................ [ 54%]
+........................................................................ [ 57%]
+...........................................................ssssssssss... [ 60%]
+........................................................................ [ 62%]
+........................................................................ [ 65%]
+.........................................................ss...s......... [ 68%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+...............s.................................................s...... [ 76%]
+................................................ss...................... [ 79%]
+.ss..................................................................... [ 81%]
+.......................ss......................................ss....... [ 84%]
+......................................................s................. [ 87%]
+...s.......................................s............................ [ 90%]
+....................................s................................... [ 92%]
+...............................ss..........s............................ [ 95%]
+........................................................................ [ 98%]
+................................................                         [100%]
+2583 passed, 58 skipped, 149 deselected in 420.75s (0:07:00)
+{"command": ["uv", "run", "--locked", "pre-commit", "validate-config"]}
+   Building poker-ai @ file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-learning-lifecycle-checkout
+      Built poker-ai @ file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-learning-lifecycle-checkout
+Uninstalled 1 package in 0.92ms
+Installed 1 package in 442ms
+{"command": ["uv", "run", "--locked", "pre-commit", "run", "--all-files"]}
+Ruff lint (locked project environment)...................................Passed
+Ruff format check (locked project environment)...........................Passed
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.opponent_learning_gate import source\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='4878eb99de8ab021261576249e43c1edce3e0c78'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(source(root)['sha256'])})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/opponent-learning-lifecycle-checkout/src/poker_ai/__init__.py', 'source_sha256': '2fdf2e2844cce31d1c25fc4bc23b5088a46efa53c74f03b07c720cd2c48c5a4a'}

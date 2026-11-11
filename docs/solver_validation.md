@@ -453,3 +453,25 @@ comparison use; its redistribution and notice conditions continue to apply.
 This pipeline requests independent scalar values and best-response checks of
 own policies only. It exports no reference strategy or action table to training.
 This license review is not evidence that the new comparison has already run.
+
+### November11 own-opponent adapter license recheck
+
+Before the new optional scalar-adapter tests, Codex re-read the full installed
+OpenSpiel2.0.2 Apache-2.0 LICENSE in the pinned311 environment. SHA-256 remains
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+Its license permits this comparison use with its notice/redistribution terms.
+The new adapter exports scalar values and achieved own-reply checks only; no
+reference strategy/action table enters learning. Optional numerical tests use
+the already-published analytic mixed-view fixtures. Mocked worker/schema tests
+are not independent numerical comparisons. The new trained full-shape software
+proof must publish its own evidence before reference construction. No commercial
+outputs are used, and this license record does not admit real training.
+
+The real own-opponent study subsequently publishes complete own evidence at
+691a7074af105b77eebbfc84b6debb2589d43217 BEFORE constructing the reference.
+The full native command takes358.570928584s<900 and checks432policies/1152fixed
+conditions, maxdifference1.8474111129762605e-13chips<1e-9. Its receipt verifies
+the same pinned OpenSpiel2.0.2 Apache2 license and installed license files.
+No reference actions or strategy enter learning. Numerical validation passes;
+the study's two-game superiority condition fails, so no stronger/default/global
+admission is claimed. See [complete method and outcomes](own-opponent-learning.md).

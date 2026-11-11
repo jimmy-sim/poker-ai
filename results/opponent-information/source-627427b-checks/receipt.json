@@ -1,0 +1,32 @@
+{
+  "checked_commit": "627427b9480980c2d22a4ef1a308b35135d0e68e",
+  "ci_run": 43004096870,
+  "files": {
+    "base311-install.log": "f70881f91f34196ab663191d0459f92bf457e4871d9a12a88fb10c12d3b3ad56",
+    "base311-receipt.json": "9f5860bb59df0ea7e9a811b8dc89b24208378d15cf445a8a33c6ccf3658317bc",
+    "base311.log": "8bee41f919f3c7aa4c80ae034f7393205883c97bd337d93bc81df4760b438043",
+    "base312-install.log": "ca1cea28216ffff1c93aa7a1968cff92602702fc4d1a402e786d5f1ebb62c12b",
+    "base312-receipt.json": "c7970ff960ec8ab8c21ca3e4b80361283a9c724ebd4c6ee5f5569245aa551ec7",
+    "base312.log": "40c7109089b4a905ee0507df524752ad33ee8cf5833684ae45227b2168212147",
+    "ci.json": "e4597656e8f2964bdc249b58c93a0f8ab1769fa1a0e6aeafa238fca20f7bd63e",
+    "focused_slow311-receipt.json": "cc3f096d91f29c9dc8e52da67149a872ef811d8f30d20ce16e651d183108704e",
+    "focused_slow311.log": "d4a8d1e3305403c7651ffd77598156c3ac7fb118b264ba63f35154dce7535d39",
+    "focused_slow312-receipt.json": "1b87b5f367ee0e0ebfb869ce5aeeaa2fa698109d20ff0762ae17b9fe659c5b2a",
+    "focused_slow312.log": "d1fd0f0496aadfb2ed5836cd4332c57e3e5fd3853be041ba16d01b2a6f66cddb",
+    "hosted-130467167941.log": "7c8f0932c4870ebaee3368f1c8ca9ef634ef81801097d012160029aee0840d25",
+    "hosted-130467168486.log": "63a3321f6d08a51b2d001ae3744c1594379000df80fab377b3b37684ced32648",
+    "local.json": "24c9bfd336d6983437b5c41cfd37b6d6bf1ac94b27aa5e2fbe0c1979e69e20df",
+    "optional311-install.log": "bb5cad950f299b907243bfebefdc39d4f520bb7537a843ea1983c3eeea83dd39",
+    "optional311-receipt.json": "b1b04936d69d5de1f2d24e2d02348ad0bab0e47d94eec2f7b473d19f83082bb5",
+    "optional311.log": "26ce2f7a51216402af06e54cc6049e6bd836bf08c2c42ff7b765c53d6f726192",
+    "optional312-install.log": "feea793345ac5ac89c61c774312d72c575be1db4a4ab4582d32d92ebad533318",
+    "optional312-receipt.json": "05f795250172cd57831b80fdc6bd02e70c4a65a47f912ad6f27bcbdc007b70ce",
+    "optional312.log": "a984dc24a764cf92a24ba29c7f1a9be0bc3c906dffff38f4cf105332b721ff42",
+    "unitless-regression-after-fix.log": "5ca60d02f50baa67f13560addd47c4cc7603eb7b30313a6b7c887d57a5d6d705",
+    "unitless-regression-before-fix.log": "e37d3e771512de44873dc8f26877523db7250239080b6ebe031ba9518e1b763d"
+  },
+  "full_checks_passed": true,
+  "reason": "Final review found unitless coverage replay used1e-9 chip tolerance instead of frozen1e-12. Three new draft regression cases before fix:2failed1passed; after fix3passed. These regression additions were not part of the original checked commit. No formal new software proof/cost forecast/real permit/real trajectory occurred on this source. Corrected source needs fresh complete checks.",
+  "source_sha256": "a4be9f3696701893bf04dca9c1bf73b1cc6c8945f5b4e926d1d03c6f6df4a0bb",
+  "status": "superseded_implementation_checks_not_training_admission"
+}
