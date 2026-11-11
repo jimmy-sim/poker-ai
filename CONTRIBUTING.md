@@ -4,14 +4,26 @@ Development happens in [jimmy-sim/poker-ai](https://github.com/jimmy-sim/poker-a
 The [work log](docs/work-log.md) connects decisions to commits, experiments and
 verification. Existing commits retain their original dates and authors.
 
+Project success comes first: model quality, correctness, reproducibility,
+efficient progress and the developer's understanding. GitHub provides a visible
+record. Contribution counts and the appearance of the contribution graph do not
+determine what work to do, how to divide it or when to publish it.
+
 ## Issue to reviewed result
 
 1. Open an implementation or research issue before a substantive step. State the
    problem and acceptance criteria; research also fixes seeds, configs and budget.
-2. Create a focused branch, such as `research/river-integration`. Keep commits
-   coherent: implementation, meaningful checks and recorded evidence.
-3. Run `make check`. Run relevant optional validation separately and retain failed
-   experiment outcomes. A passing software check does not accept a performance gate.
+2. Create a focused branch, such as `research/river-integration`. Prefer one PR
+   per coherent research question or implementation milestone, keeping it open
+   through its required stages. Group related implementation, tests, fixes,
+   documentation and evidence into meaningful commits. Split PRs when scope,
+   risk or independent review benefits justify it.
+3. Run checks appropriate to the change. Implementation changes require
+   `make check` and relevant optional validation. Documentation-only changes
+   require appropriate diff, format and link checks. Required hosted CI still
+   passes before merge. Experiment-specific local, optional, source-bound and
+   admission gates remain mandatory; retain failed outcomes. A passing software
+   check does not accept a performance gate.
 4. Open a PR linked to the issue. Explain the resulting behavior, actual checks,
    evidence paths and limitations. Let hosted CI check the branch.
 5. Merge after applicable checks pass. Close the issue only when its acceptance
@@ -28,6 +40,23 @@ verification. Existing commits retain their original dates and authors.
 For this solo project, a self-review explains a design decision and checks the
 diff/evidence; it should not imply an independent reviewer participated.
 
+## Commit boundaries and research history
+
+Keep separately required publication checkpoints intact: the prospective
+protocol, exact tested source, checked admission and own results published
+before reference comparison. Grouping work never permits crossing these
+boundaries with unpublished or unverified evidence.
+
+Research receipts can depend on exact commit IDs and source trees. Preserve
+those commits and their availability in a normal clone with history-preserving
+merges. Squashing may suit housekeeping without those dependencies; check before
+using it. Existing history remains intact.
+
+Use PR/issue updates for routine status. Commit logs and CI receipts when the
+protocol or reproducibility needs them; a status update alone need not create
+another commit. Avoid repeated full checks when no change, failure or unresolved
+concern justifies them, while completing every prescribed validation gate.
+
 ## Publication cadence
 
 Publish meaningful, checked increments on the day the work happens, during the
@@ -39,6 +68,9 @@ Keep actual author dates and publish completed work promptly. Daily visibility
 comes from real work on different days, rather than holding finished changes for
 future publication. This is a publishing preference for active sessions; paused
 research remains paused and no recurring work schedule is implied.
+
+There is no daily quota for commits, PRs or contributions. A quieter graph may
+result from coherent milestones, but it is not a measure of project success.
 
 ## Recording work and time
 
