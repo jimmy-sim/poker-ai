@@ -99,6 +99,13 @@ improve the agent. Track successive validated versions, research questions and
 the user's understanding. Each milestone keeps a concrete acceptance contract;
 the overall project has no claim of completed competitive Hold'em strength.
 
+On November 10, the user reaffirmed that project success and efficiency take
+priority over GitHub contribution counts or appearance. Prefer cohesive research
+milestones and PRs, grouping related commits and documentation while retaining
+every required publication and validation checkpoint. Keep exact-commit research
+history reproducible. There is no contribution quota or reason to change dates,
+delay completed work, weaken checks or divide work to shape the graph.
+
 A research cycle states a hypothesis and fixed test, implements and validates
 it, measures all planned controls, retains unfavorable outcomes, then explains
 the next decision. Use fresh cases before generalization claims and prescribed

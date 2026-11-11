@@ -2464,3 +2464,26 @@ trajectory replay or newnativeaudit claimed. Clarifiedhybridprefixremainsfixed:
 the figure compares conditionalactionvalues, notactualhybridactionfrequencies.
 Model/source/seeds/thresholds/caps/default unchanged. Finalbothhostedjobs required
 beforemerge; no newlongstudy thiswindow.
+
+### November 10 — project success governs publishing cadence
+
+The user explicitly reaffirmed that project success and efficiency take priority
+over the appearance or number of GitHub contributions. Record the accepted
+approach in AGENTS.md, CONTRIBUTING.md and the continuing roadmap: one coherent
+research question/milestone per PR when useful, related work grouped at logical
+commit boundaries, and routine status updates in PRs/issues.
+
+All separately required protocol, tested-source, admission and own-before-
+reference publication gates remain. Preserve exact-commit research history;
+consider squashing only unreferenced housekeeping. No daily activity quota,
+artificial dates or delayed completed work. Use appropriate local checks for
+documentation-only changes and retain required hosted CI before merge.
+
+Scope is process documentation only: no model, scientific config, seed, cap,
+result, validation threshold, CI workflow or schedule change. No new scientific
+milestone or personal learning claim is inferred. Local diff/content checks pass,
+three local guideline/roadmap links resolve, and the scientific source inventory
+remains the same 274-file SHA a5a2e28. Only the
+four intended Markdown files differ; source/config/results/workflow diffs are
+empty. No numerical tests were added or run for these documentation edits.
+Required hosted CI follows before merge.

@@ -1,10 +1,25 @@
 # Project conventions
 
-## Visible GitHub progress
+## Project priorities and publishing
 
+- Prioritize model quality, correctness, reproducibility, efficient progress and
+  the user's understanding. The user explicitly reaffirmed on November 10, 2026
+  that project success comes first. GitHub activity records the work; contribution
+  counts, graph appearance and daily activity targets are not project goals.
 - The user requested ongoing visible development in `jimmy-sim/poker-ai`.
   Follow `CONTRIBUTING.md`: prospective issue, focused branch/commits, linked PR,
   actual CI/evidence, and an entry in `docs/work-log.md` for substantive work.
+- Prefer one focused PR per coherent research question or implementation
+  milestone, covering its supporting implementation, validation and report.
+  Keep it open through the required stages. Split when scope, risk or independent
+  review benefits justify it; do not split to generate activity.
+- Group related fixes, tests, documentation, journal updates and evidence at
+  meaningful commit boundaries. Keep every separately required publication
+  checkpoint: prospective protocol, tested source, admission and own evidence
+  before reference comparison. Batching must not bypass these gates.
+- Preserve commits referenced by research evidence and their availability in a
+  normal clone. Use history-preserving merges for those PRs. Squashing is suitable
+  only for housekeeping changes without such dependencies, after checking them.
 - On each actual work day, publish coherent checked increments during the session
   or by its end, rather than waiting for an entire multi-day phase. Update the PR
   and dated work log with actual progress and remaining checks. Preserve real
@@ -17,6 +32,13 @@
   time. Missing historical time stays unknown; never infer hours from commits.
 - Publish only intended committed changes. Preserve unrelated local experiment
   outputs, keep large runs ignored, and report failed research gates honestly.
+- Use PR/issue updates for routine status. Commit check receipts when required
+  for reproducibility; avoid standalone status commits that add no evidence.
+- During iteration, run checks appropriate to the change. Complete every local,
+  optional, hosted and source-bound check required by the applicable protocol
+  before advancing. Repeat checks when changes, failures or unresolved concerns
+  justify them. Documentation-only edits need appropriate diff, format and link
+  checks; required hosted CI must still pass before merge.
 
 ## Scope and workflow
 
