@@ -2487,3 +2487,68 @@ remains the same 274-file SHA a5a2e28. Only the
 four intended Markdown files differ; source/config/results/workflow diffs are
 empty. No numerical tests were added or run for these documentation edits.
 Required hosted CI follows before merge.
+
+### November 10 — resume issue #4 with static river refinement controls
+
+The user deleted the next scheduled window and authorized autonomous work now
+until stopped. Automation poker-ai-nov-11-midnight-to-noon was deleted through
+the app. Issue #4 comment 6788998129 prospectively registers the complete nine-
+snapshot, both-seat, all-river-row diagnostic before new feature measurements.
+
+The experiment-specific runner preserves frozen model source and compares the
+original groups, exact rational static masses, ordered combo relations and exact
+singletons under both fixed own reply suffixes. Local sharing cost is normalized
+by responding chance-times-opponent support; it is not root EV/exploitability or
+a training improvement. No new trajectory, native construction or default change.
+
+Thirty focused tests pass in 0.12s; Ruff/format and strict typing pass. Tests cover
+hand-computed cost, ties/unsupported rows, refinement, independent equal-prior
+bin arithmetic, observable-card invariance, malformed/duplicate/owner/menu data,
+deterministic archive and partial/timeout/input-change retention. Journal step82
+explains the question with a fictional example. Full base/optional checks,
+hosted CI and actual saved-data/cross-runtime results remain pending. Preserve
+all ten unrelated user result changes; work stays in an isolated checkout.
+
+### November 10 — static refinement adds no distinctions in the known game
+
+Source410faef published and fully checked before execution. Base suites each
+2348pass47skip148deselect357.35/344.48s; optional each2404pass148deselect
+404.50/389.09s. Hosted42974764735 both PASS. Diagnostic311 completes294.563466s;
+312 data-only reproduction266.377378s, both<900. All12 numeric files BYTEIDENTICAL;
+no trajectory replay. Exact receipts, complete/partial per-profile data and logs
+retained in results/river-refinement/. Frozen274-file scientific SHAa5a2e28 stays.
+
+All9profiles/18responses retain29,808ownriver memberrecords, everyrowCFsupported,
+not played/training coverage. Respondingseat0 has864originalgroups, seat1 has774;
+both have1656exactriverinfos. Exact rational static masses and ordered combo
+relations add ZEROgroups and leave every local cost/conflict count unchanged
+under BOTH own suffixes. Singleton costs0 byconstruction. Roots/support errors0.
+Local sharing cost is not rootEV/exploitability or a strength ranking across
+different opponents. OldprimaryFAIL remains; no agent/default/fresh/global change.
+
+Report reader reconstructs all row summaries and144conditiontable; bothnumeric
+reportfiles reproduce byteforbyte on312. Figure visually checked; label explicitly
+marks singletoncontrol. Report render source records its working-tree hashes,
+while the scientific saved-data run used clean published410faef. Focused base
+44pass1skip2.10s; optional45pass2.19s, including actual complete-receipt regression
+and changed/failure/source/hash/inventory rejection. Lint/format/stricttypingpass.
+Final base2362pass48skip148deselect353.39/338.86s and optional2419pass148deselect
+400.67/386.97s, runtimeassertedbefore/after. Final hostedCI pending beforemerge. README,
+method/limits/3QAs and plain-English journal83 record the complete negative result.
+Next question: own coarse learner against own exact-information training opponent,
+with new prospective mixed-view correctness/work controls before any admission.
+
+### November 10 — retain Linux report-reader failure and narrow roundoff fix
+
+FinalCI42979804961 on dd196a5: Python312 fails the actual complete-row replay
+because its summary comparison requires byte-exact floating arithmetic. Raw log
+retained. Independent Fraction arithmetic on all36saved local costs has maximum
+error8.881784197001252e-16 relative to saved scores; rerunnable script/JSON retained.
+The correction permits1e-12absolute roundoff ONLY for recomputed local costs;
+archived hashes, all structure/support/counts and singletonzero stay EXACT.
+No scientific config/source/data, root/support tolerance, cap or strength-gate
+change. Seven regression cases cover small/large errors and forbidden field drift.
+Focused corrected base51pass1skip2.48s; Ruff/format/stricttyping pass. New full
+local suites/hostedCI required beforemerge; no new research trajectory begins.
+Own-exact-opponent software prospect registeredcomment6790000490, separate empty
+worktree exists; its implementation waits until this mismatch is resolved.

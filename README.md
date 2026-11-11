@@ -66,6 +66,14 @@ a fixed saved opponent. The [nine-snapshot figure](results/private-prefix/contin
 and learning-journal steps 80–81 explain this saved-position result; no new
 agent was trained in that diagnostic.
 
+The [static river-refinement check](docs/river-refinement-diagnosis.md) keeps all
+29,808 river-row records across those nine snapshots and both seats. Exact
+static range probabilities and ordered combo outcomes add **zero new groups**
+and leave every measured local sharing cost unchanged. Both runtimes reproduce
+all twelve numeric files byte for byte. This rules out those two refinements as
+a repair for this known test, without claiming a training improvement. Journal
+steps 82–83 explain the result; the original failed strength gate remains.
+
 The original batch source's compute forecast fails **7201.49s vs7200s** and stays
 unadmitted. A profiled array-dispatch change preserves all checked paths and
 passes the same formula at6953.92s. The [completed fixed-work study](docs/reduced-batch-study.md)

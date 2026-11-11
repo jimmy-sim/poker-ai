@@ -1,0 +1,1913 @@
+{
+  "profiles": [
+    {
+      "policy_sha256": "15b8c33cf55c406ba024966a00a74598e3bdd189a5e810cdaf4a95905046ab31",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17820882709405253,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17899500371762456,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17820882709405253,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17899500371762456,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17820882709405253,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17899500371762456,
+                  "supported_groups": 864,
+                  "unresolved_parents": 20
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.08412081946665,
+            "restricted": 18.078597912393533
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1895547210802768,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.587373245550097,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.570107551276853,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.587373245550097,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.570107551276853,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.587373245550097,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.570107551276853,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -14.858174688187919,
+            "restricted": -17.99862524126185
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.9306176954581427,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "B1",
+      "seed": 20261301,
+      "source_id": "path-018-linear-10000000"
+    },
+    {
+      "policy_sha256": "1fcb0b7e75653bf56b2c8ad757a7b42ecf52e9ac1b198bd9298769949e4edcc3",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31711931572551405,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31708105612180515,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31711931572551405,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31708105612180515,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31711931572551405,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.31708105612180515,
+                  "supported_groups": 864,
+                  "unresolved_parents": 29
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.092661100053817,
+            "restricted": 18.089175692865943
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1959354482604323,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643838633527608,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643870523696165,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643838633527608,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643870523696165,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643838633527608,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.643870523696165,
+                  "supported_groups": 774,
+                  "unresolved_parents": 49
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -16.081491003156874,
+            "restricted": -17.998743231089392
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.7576420212612324,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "IID",
+      "seed": 20261301,
+      "source_id": "path-042-linear-10000000"
+    },
+    {
+      "policy_sha256": "6c9cfd4d2a91038a6f968a89a043ac310c4526ee8822ac4f895a7600f4517869",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11165368639590716,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11264009815340836,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11165368639590716,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11264009815340836,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11165368639590716,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.11264009815340836,
+                  "supported_groups": 864,
+                  "unresolved_parents": 21
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.064140811530294,
+            "restricted": 18.06205349705161
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.2015962364770019,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022951996516613,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022955798629167,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022951996516613,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022955798629167,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022951996516613,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.022955798629167,
+                  "supported_groups": 774,
+                  "unresolved_parents": 50
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -16.399686477541568,
+            "restricted": -17.999181460127335
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.8570459422052188,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "stratified",
+      "seed": 20261301,
+      "source_id": "stratified-018-10000000-linear_average"
+    },
+    {
+      "policy_sha256": "75aac7ccd409077f2a67671fa04b85daac4fd27babc997fecd441b0541af957a",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.3521369152239512,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.4711244609036796,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.3521369152239512,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.4711244609036796,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.3521369152239512,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.4711244609036796,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.131879901146263,
+            "restricted": 18.126057547632193
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1852525928205615,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.980697033828413,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.965670920078875,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.980697033828413,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.965670920078875,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.980697033828413,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 4.965670920078875,
+                  "supported_groups": 774,
+                  "unresolved_parents": 53
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -14.167103305024751,
+            "restricted": -17.742195229179302
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 1.1242670713308078,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "B1",
+      "seed": 20261302,
+      "source_id": "path-019-linear-10000000"
+    },
+    {
+      "policy_sha256": "f4ed0bcaa7918ea9ae9e1e48e92dad71547cb1d249cd3cd41c6bea9ad143e9ac",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19610883721274788,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19631577837659514,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19610883721274788,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19631577837659514,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19610883721274788,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.19631577837659514,
+                  "supported_groups": 864,
+                  "unresolved_parents": 25
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.040513181352,
+            "restricted": 18.03843299671398
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.204461797557882,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4423903872268236,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4433835852164525,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4423903872268236,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4433835852164525,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4423903872268236,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.4433835852164525,
+                  "supported_groups": 774,
+                  "unresolved_parents": 40
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -17.770306822254405,
+            "restricted": -17.998311352501524
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.31940408832501066,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "IID",
+      "seed": 20261302,
+      "source_id": "path-043-linear-10000000"
+    },
+    {
+      "policy_sha256": "362c46cd140f203a2ad636ffcfa7b31acca43580d1d04994648b929265f5742c",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573618451210678,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573348567300797,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573618451210678,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573348567300797,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573618451210678,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.16573348567300797,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.051693619720762,
+            "restricted": 18.05166435352689
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1913468659150903,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887008181261198,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887030823733718,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887008181261198,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887030823733718,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887008181261198,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.887030823733718,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -14.815395944918187,
+            "restricted": -17.997109123686393
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.8958530366010311,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "stratified",
+      "seed": 20261302,
+      "source_id": "stratified-019-10000000-linear_average"
+    },
+    {
+      "policy_sha256": "c87aba5312f4a019d7e71e21318debcdd51024f95ea080b08bae5702315f9d1d",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21601052362594286,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21646293309733133,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21601052362594286,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21646293309733133,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21601052362594286,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.21646293309733133,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.06329711618742,
+            "restricted": 18.060341560065066
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1723578086306077,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.5595893427096543,
+                  "supported_groups": 774,
+                  "unresolved_parents": 43
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.559583127283945,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.5595893427096543,
+                  "supported_groups": 774,
+                  "unresolved_parents": 43
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.559583127283945,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.5595893427096543,
+                  "supported_groups": 774,
+                  "unresolved_parents": 43
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.559583127283945,
+                  "supported_groups": 774,
+                  "unresolved_parents": 42
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -15.849311662788962,
+            "restricted": -17.99884879264365
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 1.041566785470139,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "B1",
+      "seed": 20261303,
+      "source_id": "path-020-linear-10000000"
+    },
+    {
+      "policy_sha256": "ed81326d44a3b2b206a1d2608c5370ab725d014e6c35df4b851ec4dc49dafecc",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.1542112558658497,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.15421580202072357,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.1542112558658497,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.15421580202072357,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.1542112558658497,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.15421580202072357,
+                  "supported_groups": 864,
+                  "unresolved_parents": 19
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.06932971228644,
+            "restricted": 18.068689730642408
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.2147127697729931,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855720295332249,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855721518093565,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855720295332249,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855721518093565,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855720295332249,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 5.855721518093565,
+                  "supported_groups": 774,
+                  "unresolved_parents": 51
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -15.657709729244797,
+            "restricted": -17.99574025223792
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.7537536841499427,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "IID",
+      "seed": 20261303,
+      "source_id": "path-044-linear-10000000"
+    },
+    {
+      "policy_sha256": "d6d58ec4ab1ac68637d204343a60506695cea865bc24ddaa86f3c2e41d4fdd7a",
+      "responses": [
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                28,
+                29
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                42,
+                46
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17996136667656581,
+                  "supported_groups": 864,
+                  "unresolved_parents": 27
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.18033810682116277,
+                  "supported_groups": 864,
+                  "unresolved_parents": 28
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17996136667656581,
+                  "supported_groups": 864,
+                  "unresolved_parents": 27
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.18033810682116277,
+                  "supported_groups": 864,
+                  "unresolved_parents": 28
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 864,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.17996136667656581,
+                  "supported_groups": 864,
+                  "unresolved_parents": 27
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.18033810682116277,
+                  "supported_groups": 864,
+                  "unresolved_parents": 28
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": 18.10797659290918,
+            "restricted": 18.10135570542255
+          },
+          "supported_infos": 1656,
+          "target": 0,
+          "total_counterfactual_mass": 1.1838950645542174,
+          "unsupported_infos": 0
+        },
+        {
+          "maximum_support_error": 0.0,
+          "no_supported_evidence": false,
+          "prior": [
+            {
+              "cards": [
+                32,
+                33
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            },
+            {
+              "cards": [
+                39,
+                51
+              ],
+              "mass": [
+                1,
+                2
+              ]
+            }
+          ],
+          "probes": [
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9083200582974884,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9192017652072577,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "q8"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9083200582974884,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9192017652072577,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "exact_mass"
+            },
+            {
+              "groups": 774,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9083200582974884,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 3.9192017652072577,
+                  "supported_groups": 774,
+                  "unresolved_parents": 45
+                }
+              },
+              "probe": "ordered_relations"
+            },
+            {
+              "groups": 1656,
+              "panels": {
+                "exact": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                },
+                "restricted": {
+                  "local_sharing_cost_chips_per_cf_decision": 0.0,
+                  "supported_groups": 1656,
+                  "unresolved_parents": 0
+                }
+              },
+              "probe": "exact_info"
+            }
+          ],
+          "q8_exact_mass_same_partition": true,
+          "river_infos": 1656,
+          "roots_chips": {
+            "exact": -15.771054475030208,
+            "restricted": -17.892627388187012
+          },
+          "supported_infos": 1656,
+          "target": 1,
+          "total_counterfactual_mass": 0.7276085200812787,
+          "unsupported_infos": 0
+        }
+      ],
+      "role": "stratified",
+      "seed": 20261303,
+      "source_id": "stratified-020-10000000-linear_average"
+    }
+  ],
+  "status": "complete"
+}
