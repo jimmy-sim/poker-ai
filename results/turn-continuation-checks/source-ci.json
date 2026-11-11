@@ -1,0 +1,24 @@
+{
+  "source_commit": "8e347e23fc6e3d149d61e3311c3f7bbecd4bc2b1",
+  "source_sha256": "45bb7d825589a22a71151620e5efd84f8854ae6938052a0e8128723239c7a0dc",
+  "run_id": 43041865392,
+  "scope": "Both source jobs; final artifact CI remains separate",
+  "jobs": [
+    {
+      "name": "Python3.11",
+      "job_id": 130595476313,
+      "conclusion": "success",
+      "decoded_characters": 33226,
+      "sha256": "458eeb4bb35ea9d0116b3275b1079876092af8475baf00f08045de6ea1d51065",
+      "log": "ci311.log"
+    },
+    {
+      "name": "Python3.12",
+      "job_id": 130595476901,
+      "conclusion": "success",
+      "decoded_characters": 32102,
+      "sha256": "c9c23386de869fb3ae75e72dcfc90621561185777ee6fb612ada7f88692031f5",
+      "log": "ci312.log"
+    }
+  ]
+}

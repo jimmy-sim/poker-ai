@@ -3015,3 +3015,76 @@ Publication hooks first caught a missing tool path, then treated the exact
 external launcher record as repository Python. The path was restored and the
 unchanged launcher bytes retained as run_checks.py.txt (a historical execution
 record). No source, test, config, output or scientific gate changed.
+
+### November11 — prospective fixed-turn continuation diagnostic
+
+Issue4comment6798673089 registers the next question before implementation/output.
+Frozen turn-continuations config binds PR50's complete manifest/summary/config.
+Both known games/all3seeds/all4arms/final10mLINEAR,24profiles/48responding seats,
+four continuation panels give192root values plus every owned TURN row/menu.
+Saved/restricted-river/fine-river preserve ownTURN and all opponent probabilities;
+full fine reply explicitly may change ownTURN. Exact information-set masked DP,
+analytic/enumerated controls, original reply slices/roots, root ordering/stage
+telescoping, support/inventory/source checks, retained partial failures, constructor
+blocks and cached browser define acceptance. Separate900s data-only bound does
+not admit learning or change historical caps/seeds/gates/default. Implementation
+and measurements pending; PR50 final artifact CI continues unchanged.
+
+### November11 — implement the fixed-turn continuation controls
+
+New modules only; historical scientific/diagnostic source bytes remain unchanged.
+Masked own DP freezes unselected rows and aggregates hidden histories before
+maximizing. Complete runner replays original evidence, checks prior full-reply
+fingerprints/river slices and every owned turn menu/support, then writes complete-
+profile partials before advancing. Cached browser shows saved/restricted-river/
+fine-river/full-reply values, fixed-opponent signs and public history; no hidden
+opponent cards or universal advice. Existing/failed/temporary outputs refused.
+
+Focused62tests PASS0.82s; full lint/format/strict typing pass. Independent analytic/
+pure-enumeration fixtures check both target signs, nonclairvoyant sharing,
+generic masked-vs-sliced full response, nonmonotone finer-row Q with improving
+root, exact ties and zero support. Genuine uniform-own-engine/source corruption/
+interruption tests and complete UNIT-only cache/schema/browser cases pass.
+Initial integration fixture failures came from passing unserialized tuples to
+the list-only archive decoder; fixture now performs the actual JSON round trip.
+An additional complete prior-reply fingerprint guard is included. No actual full
+continuation measurement/new training yet. Complete relevant local/optional/
+hosted checks pending before the registered full diagnostic and merge.
+
+### November11 — merge saved-decision diagnosis and preserve main changes
+
+PR50 finalCI43039703564 passes BOTH2625/58skip/149deselect/1historical warning,
+916.61/519.27s, before history-preserving merge967990bccd044623150a0a6a1e1f44764ded99ae.
+Self-review6798971799 explicitly Codex-assisted solo review. PR51 retargetedmain;
+scientific source/head8e347e2 unchanged. Fresh actual main snapshot before FF:
+all10unrelated file bytes/status/staged+unstaged diffs/userpath index entries
+preserved. Main editable package path and actual seat1 cached browser checked;
+35focusedtests PASS0.94s with cache writes disabled; all10remain exact afterward.
+Exact PR50 finalCI logs retained with old-source scope in the next publication.
+
+### November11 — complete fixed-turn continuation measurement
+
+Source8e347e23fc6e3d149d61e3311c3f7bbecd4bc2b1/fingerprint45bb7d825589a22a71151620e5efd84f8854ae6938052a0e8128723239c7a0dc.
+Both full local bases2687pass58skip149deselect (476.86/469.51s), all lint/format/
+types/hooks/before-after source/runtime guards pass. Relevant optional62pass
+.96/.92s. Hosted sourceCI43041865392 BOTH2687pass58skip149deselect1historical
+roundoff warning889.03/467.53s. Scientific source/config/seeds/caps/gates unchanged.
+
+ACTUAL complete data-only command137.917452209s<900 retains24profiles/48conditions/
+192root values/384owned TURNrows. All baseline/fullreply fingerprint/river slice/
+Q/support/source comparisons have0chip error on311.17/NumPy2.4.6. Root ordering,
+stage telescoping, complete turn menus and immutable policies/games/inputs pass.
+No trainer/reference constructed; new calculations have NO new native audit.
+Actual cached-browser agent smoke coversall48 selections in one load, constructors
+blocked, n/p/s/o/g/t/q, invalidkey/rank and quit; not personal practice/time.
+
+Mediumseed20261302/mixed/seat1/nines call: saved-25.8949808893, bestrestricted
+river-18.8080607860, fine river/fullreply-16.9943146228 vsfold-18. QhKhcall
+-29.023136/-18.439778/-17.446327, also flips onlywithfine river. Rootstages
+.0325374242/.00743365886/.63823826267 sumoriginal.67820934573gain. Saved turn
+folds suppress realization of the fine river opportunity; root-only small fine
+increment does not rule out missing river information. Not a universalfloor,
+causal training conclusion, newstrength/default/fresh/global admission or change
+to originaloverallFAIL. All games/seeds/methods/seats retained. Method and plain-
+English journal96 explain result/units/limits and next conditional-range question.
+Final artifact CI and evidence publication remain before merge.
