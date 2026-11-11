@@ -334,3 +334,22 @@ discount. Guarded own2*(2*T+D+600)=4110.21271066567<7200; guarded native
 The published checked compute permit is still required before any real worker.
 This estimate is not actual training runtime or strength/default/fresh/global
 admission. Keep the full actual caps and all original B4/numerical/quality gates.
+
+## Persisted permit failure — November11
+
+The first actual study attempt on source4878eb9 fails preflight in8.845484625s,
+before any worker initialization or poker training. The command overwrote the
+permit builder's89-file input_sha256 inventory with19 routine input pins; the
+reader correctly rejected the mismatch. Exact failed parent/child/log evidence
+is retained in failed-admission-4878eb9; the prior complete source cohort is
+preserved byte-identically in source-4878eb9-pipeline with original-path hashes.
+Historical relative paths are reproduced in an isolated checkout at f5771e7.
+
+Separate permit_input_sha256 from routine command input_sha256. A new synthetic
+CLI persistence-to-reader regression reproduces the original failure;39 related
+tests pass after repair. Missing/edited seals, legacy overwritten inventories,
+changed caps/source and changed historical input bytes remain rejected. No real
+learner or solver executes in those tests. The fixed scientific config, seeds,
+inventory, budgets, updater and acceptance thresholds remain unchanged. Fresh
+complete corrected-source checks/proof/costs/forecast/published permit must precede
+another real attempt; old source evidence cannot be inherited.

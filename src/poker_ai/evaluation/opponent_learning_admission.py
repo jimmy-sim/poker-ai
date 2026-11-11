@@ -344,7 +344,9 @@ def permit(root: Path, saved_forecast: dict[str, Any]) -> dict[str, Any]:
         source_sha256=checked["source_sha256"],
         checked_commit=checked["ci"]["checked_commit"],
         ci_run=checked["ci"]["run_id"],
-        input_sha256=hashes,
+        # CLI input_sha256 records routine command pins. Keep the wider sealed
+        # admission inventory separate so persistence cannot overwrite it.
+        permit_input_sha256=hashes,
         maximum_own_seconds=7200,
         maximum_native_seconds=900,
         guarded_own_seconds=f["guarded_own_seconds"],

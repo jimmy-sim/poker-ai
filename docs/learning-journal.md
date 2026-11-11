@@ -47,8 +47,10 @@ admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
 proof or any new real trajectory. Step88 makes interrupted-run records distinguish
 confirmed work from unknown progress. Step89 completes the full fictional
 rehearsal and independent audit; fixed cost forecasts are next. None of these
-results establishes
-competitive general Hold'em strength.
+results establishes competitive general Hold'em strength. Step90 completes the
+fixed forecast; step91 records the first actual command's rejected permit before
+training and fixes its persistence bug. The corrected source needs fresh required
+validation before real learning can proceed.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -3613,7 +3615,7 @@ personal practice time or understanding is inferred.
 **Verification update:** source4878eb9 passes the complete suites on both Python
 versions: 2,583 base tests and 2,650 with optional dependencies, plus the archive
 check on each. Both GitHub jobs pass too. The raw logs and hashes are
-[saved](../results/opponent-information/software-checks/local.json). The next
+[saved](../results/opponent-information/source-4878eb9-pipeline/software-checks/local.json). The next
 step is the formal fictional rehearsal; these checks alone admit no real run.
 
 ## 89. The complete rehearsal passes before poker training
@@ -3635,8 +3637,8 @@ base Python 3.12 replay of the published archives passes too.
 **What this means:** saving, reading, combining seats, evaluating strategies and
 checking them independently work together on these small test games. It does
 not establish a stronger poker agent or admit real training. The explicit
-fictional labels on the figures matter. See the [own receipt](../results/opponent-information/software/own.json)
-and [independent receipt](../results/opponent-information/software/native.json).
+fictional labels on the figures matter. See the [own receipt](../results/opponent-information/source-4878eb9-pipeline/software/own.json)
+and [independent receipt](../results/opponent-information/source-4878eb9-pipeline/software/native.json).
 
 Next we measure all three complete cost repetitions using old saved own poker
 strategies. Those old files help estimate the cost of loading, scoring, saving,
@@ -3650,14 +3652,14 @@ is inferred.
 **Cost update, November 11:** all three complete old-own repetitions pass in
 230.23s, 232.65s and 233.22s. Every one keeps the full inventory and has zero
 replay error. The forecast will use the maximum, 233.22s. Byte-identical copies
-and their [publication manifest](../results/opponent-information/cost/own-publication.json)
+and their [publication manifest](../results/opponent-information/source-4878eb9-pipeline/cost/own-publication.json)
 are saved before any native cost comparison. These are old-data cost tests with
 zero new training; the independent costs and final budget decision are pending.
 
 **Independent cost update:** all three comparisons pass in 368.53s, 371.20s and
 371.65s. Each checks all 432 profiles and 1,152 conditions; its largest discrepancy
 is 1.85e-13 chips, below 1e-9. Original outputs and byte-identical publication
-copies are retained in the [native manifest](../results/opponent-information/cost/native-publication.json).
+copies are retained in the [native manifest](../results/opponent-information/source-4878eb9-pipeline/cost/native-publication.json).
 The final forecast will use 371.65s, the maximum. The complete budget check and
 published compute permit are still required before real training.
 
@@ -3684,7 +3686,7 @@ The fixed rules use the slowest measured repetition, not the fastest:
 Both estimates fit the original 7,200/900-second limits. Every shorter training
 component was still charged a full historical path estimate; no half-budget
 discount was taken. The seeds, budgets, formulas and acceptance limits were not
-adjusted after seeing the measurements. The [forecast receipt](../results/opponent-information/forecast.json)
+adjusted after seeing the measurements. The [forecast receipt](../results/opponent-information/source-4878eb9-pipeline/forecast.json)
 retains the exact inputs and calculations.
 
 **What this means:** the bounded real experiment may proceed after its checked
@@ -3698,11 +3700,40 @@ fixed-work learning comparison. Complete, partial and failing own evidence must
 be published before its native comparison. Codex assisted with execution and
 reporting; no personal learning time or mastery is inferred.
 
-**Permit update:** the checked [compute permit](../results/opponent-information/admission.json)
+**Permit update:** the checked [compute permit](../results/opponent-information/source-4878eb9-pipeline/admission.json)
 has passed verification and is published before real worker initialization.
 Its limits remain 7,200 seconds for own work and 900 seconds for comparison.
 It grants this bounded known-game experiment, while leaving the agent default
 and fresh/global admission unchanged. The actual study's results are still ahead.
+
+## 91. A saved permit must survive being written and read
+
+**November 11, 2026 — issue #4, [PR #49](https://github.com/jimmy-sim/poker-ai/pull/49).**
+
+The first real-study command stopped after 8.85 seconds, before any training
+worker started. Its safety check rejected the saved compute permit. The permit
+builder had listed89 required files, but the command's later save step replaced
+that list with a smaller19-file list used for ordinary input checks. The reader
+correctly refused the incomplete permit. Passing the earlier forecast did not
+make this saved file valid.
+
+**Example:** checking a packing list in memory is insufficient if saving it
+accidentally replaces it with a grocery list. The test must save the packing
+list and read it back. Our earlier tests missed that complete route.
+
+The fix gives the permit's full sealed inventory its own field. A new test
+reproduced the failure before the fix;39 related tests pass afterward. They also
+reject missing or changed seals, altered caps, the wrong source, and changed
+historical inputs. All prerequisites in this test are synthetic: it performs
+no poker training and constructs no solver.
+
+The [failed attempt](../results/opponent-information/failed-admission-4878eb9/own.json)
+and [earlier source evidence](../results/opponent-information/source-4878eb9-pipeline/README.md)
+are preserved. The corrected source must pass its complete software checks,
+proof, cost measurements, forecast and published permit before another real
+attempt. Seeds, training rules, budgets and strength targets remain unchanged.
+This is a pipeline correctness fix, not evidence of a stronger model. Codex
+assisted with diagnosis, implementation and tests; personal time is unrecorded.
 
 ## Your own learning notes
 

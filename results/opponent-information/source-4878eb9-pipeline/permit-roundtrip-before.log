@@ -1,0 +1,96 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_cli_written_permit_roundtrips_without_losing_required_seals[none] ____
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-81/test_cli_written_permit_roundt0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bdf7e10>
+change = 'none'
+
+    @pytest.mark.parametrize(
+        "change", ["none", "missing_seal", "wrong_seal", "legacy", "cap", "source", "input"]
+    )
+    def test_cli_written_permit_roundtrips_without_losing_required_seals(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch, change: str
+    ) -> None:
+        # Gate prerequisites/identity/timings are UNIT ONLY. The actual permit
+        # builder, CLI persistence and permit reader run; no game/worker/reference.
+        source = dict(
+            git_commit="UNIT_ONLY_NOT_A_COMMIT",
+            dirty=False,
+            git_status=[],
+            sha256={"unit_only.py": "a" * 64},
+        )
+        binding = sha(source["sha256"])
+        folder = tmp_path / gates.FOLDER
+        folder.mkdir(parents=True)
+        (tmp_path / gates.CHECKS).write_text("UNIT ONLY NOT ACTUAL CHECKS")
+        historical = tmp_path / "old-input.txt"
+        historical.write_text("UNIT ONLY historical data")
+        routine = {"routine-input.txt": "b" * 64}
+        seals = {"old-input.txt": digest(historical)}
+        timing = [dict(scope=COST, repetition=i, complete_command=dict(seconds=1)) for i in range(3)]
+        forecast = gates.forecast({"T": 1}, timing, timing)
+        (folder / "forecast.json").write_text(
+            json.dumps(
+                dict(
+                    status="complete_fixed_cost_forecast",
+                    failure=None,
+                    source_sha256=binding,
+                    forecast=forecast,
+                    verified_input_sha256=seals,
+                )
+            )
+        )
+        monkeypatch.setattr(cli, "source", lambda r: source)
+        monkeypatch.setattr(cli, "contract", lambda r: {"unit_only": True})
+        monkeypatch.setattr(cli, "input_pins", lambda r: routine)
+        monkeypatch.setattr(
+            gates,
+            "require_checks",
+            lambda r: dict(
+                source_sha256=binding,
+                ci=dict(checked_commit="UNIT_ONLY_NOT_A_COMMIT", run_id=1),
+            ),
+        )
+        monkeypatch.setattr(gates, "published", lambda *a: None)
+        monkeypatch.setattr(gates, "committed", lambda *a: None)
+        monkeypatch.setattr(gates, "measurement", lambda *a: {"unit_only": True})
+        monkeypatch.setattr(gates, "sealed_costs", lambda r: (forecast, seals))
+        monkeypatch.setenv("POKER_OPPONENT_COMMAND_STARTED", repr(time.perf_counter()))
+    
+        def forbidden(*a: Any, **k: Any) -> None:
+            raise AssertionError("synthetic admission reached a worker")
+    
+        monkeypatch.setattr(cli, "run_batch", forbidden)
+        assert cli.child_main(tmp_path, ["admit", "--_child"]) == 0
+        path = tmp_path / gates.ADMISSION
+        saved = json.loads(path.read_text())
+        if change == "none":
+>           checked = gates.require_admission(tmp_path, binding)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_opponent_learning_permit_roundtrip.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-81/test_cli_written_permit_roundt0')
+binding = 'f9f1d08783a6fd9ce4976aa00af8f1616d098fb7b7f4dcc6d425693de1477cfa'
+
+    def require_admission(root: Path, binding: str) -> dict[str, Any]:
+        path = root / ADMISSION
+        saved: dict[str, Any] = json.loads(path.read_text())
+        published(root, path)
+        measurement(path, "admit")
+        forecast_path = root / FOLDER / "forecast.json"
+        expected = permit(root, json.loads(forecast_path.read_text()))
+        if saved["source_sha256"] != binding or any(
+            not same(saved.get(k), v) for k, v in expected.items()
+        ):
+>           raise ArithmeticError("complete checked published study permit changed")
+E           ArithmeticError: complete checked published study permit changed
+
+src/poker_ai/evaluation/opponent_learning_admission.py:369: ArithmeticError
+----------------------------- Captured stdout call -----------------------------
+own_opponent_learning_admitted; agent default unchanged
+=========================== short test summary info ============================
+FAILED tests/test_opponent_learning_permit_roundtrip.py::test_cli_written_permit_roundtrips_without_losing_required_seals[none]
+1 failed, 6 deselected in 1.19s

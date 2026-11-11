@@ -2788,3 +2788,12 @@ CLI persistence. Add that missing integration/failure coverage and separate the
 permit seals from routine command pins; preserve all scientific rules. Fresh
 corrected-source checks, proof, cost measurements, forecast and published permit
 are required before another real attempt. No model-strength claim follows.
+
+The synthetic CLI-to-persisted-reader regression fails before the fix and all39
+related admission/CLI tests pass afterward (4.58s). Mutations cover missing/
+changed seals, legacy overwritten inventory, cap/source changes and edited input
+bytes. Complete repository Ruff/format/strict typing pass697files/587typedfiles.
+Keep permit_input_sha256 separate from routine input_sha256; no scientific gate
+is weakened. Exact prior proof/check/cost/forecast/permit files are retained under
+source-4878eb9-pipeline with original-path hashes and historical checkout guidance.
+Journal91 explains this missed integration path; full corrected checks pending.
