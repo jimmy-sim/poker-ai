@@ -1,0 +1,283 @@
+"""Format every completed C8 cached panel; separate from its measurement clock.
+
+Retained one-off analysis record, not training code or a solver. Every profile
+detail is reconstructed from the bound parent cache before formatting results.
+"""
+
+import argparse
+import csv
+import hashlib
+import json
+import time
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+
+import matplotlib
+import numpy as np
+
+from poker_ai.evaluation.opponent_decision_run import BLOCKED, forbidden
+from poker_ai.evaluation.range_blocker_io import FLAGS, FOLDER, load
+from poker_ai.evaluation.range_blocker_probe import CONTROLS, SUFFIXES, WEIGHTS
+from poker_ai.postflop.river_study import digest
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--root", type=Path, default=Path.cwd())
+parser.add_argument("--output", type=Path, default=Path("results/two-sided-report"))
+args = parser.parse_args()
+root = args.root.resolve()
+folder = root / FOLDER
+output = root / args.output
+if output.exists() or output.is_symlink():
+    raise FileExistsError("retain old report; choose a new destination")
+started = time.perf_counter()
+before = {
+    str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()
+}
+with ExitStack() as stack:
+    for name in BLOCKED:
+        stack.enter_context(patch(name, forbidden))
+    cache = load(root, folder)
+    details = {p["source_id"]: cache.detail(p) for p in cache.profiles}
+    raw = list(csv.DictReader((folder / "panels.csv").open()))
+    assert len(raw) == 960
+    fields = ("game", "seed", "arm", "target", "suffix", "range_weights")
+    grouped = {}
+    for row in raw:
+        key = tuple(row[k] for k in fields)
+        group = grouped.setdefault(key, {})
+        assert row["group_control"] not in group
+        group[row["group_control"]] = row
+    assert len(grouped) == 192
+    effects = []
+    for key, group in grouped.items():
+        assert set(group) == set(CONTROLS)
+        result = dict(zip(fields, key, strict=True))
+        for control in CONTROLS:
+            row = group[control]
+            for short, field in (
+                ("cost", "local_sharing_cost_chips_per_weighted_decision"),
+                ("conflicts", "strict_conflicting_groups"),
+                ("groups", "total_groups"),
+                ("supported", "supported_groups"),
+                ("resolved", "source_conflicting_groups_resolved"),
+            ):
+                result[f"{control}_{short}"] = (
+                    float(row[field]) if short == "cost" else int(row[field])
+                )
+        result["supported_uniform_weight"] = float(
+            group[CONTROLS[0]]["supported_uniform_decision_weight"]
+        )
+        result["own_public_reduction"] = (
+            result["source_static_cost"] - result["own_public_cost"]
+        )
+        result["additional_both_public_reduction"] = (
+            result["own_public_cost"] - result["both_public_cost"]
+        )
+        result["total_public_reduction"] = (
+            result["source_static_cost"] - result["both_public_cost"]
+        )
+        effects.append(result)
+    output.mkdir(parents=True)
+    with (output / "effects.csv").open("x", newline="") as stream:
+        writer = csv.DictWriter(stream, list(effects[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(effects)
+    lines = [
+        "# Complete two-sided public-blocker grouping diagnostic",
+        "",
+        "All 24 profiles, both seats, both own suffixes and both original weight panels.",
+        "Costs are chips per weighted decision under the SAME source weights/support; no renormalization.",
+        "These are frozen local grouping costs, not root EV, exploitability or learned improvements.",
+        "Columns show conflicting/total groups. Resolved means old conflicting source groups whose every child is nonconflicting.",
+        "The joint table is determined by both masks and fixed private-card intersections: its results must match both-public.",
+        "Exact-information singleton control has zero local cost/conflicts; this does not make saved play optimal.",
+        "The complete raw 960-row CSV retains all controls and denominators; repeated records are dependent.",
+        "",
+    ]
+    for game in ("dev_low_oop", "dev_medium_oop"):
+        for suffix in SUFFIXES:
+            for weights in WEIGHTS:
+                lines += [
+                    f"## {game} / {suffix} / {weights}",
+                    "",
+                    "| Seed | Method | Seat | Static cost | Own public | Both public | Joint | Exact | Static conflicts/groups | Own conflicts/groups | Both conflicts/groups | Resolved own / both | Weight |",
+                    "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- | --- | --- | ---: |",
+                ]
+                for e in effects:
+                    if (e["game"], e["suffix"], e["range_weights"]) != (
+                        game,
+                        suffix,
+                        weights,
+                    ):
+                        continue
+                    costs = " | ".join(f"{e[c + '_cost']:.9g}" for c in CONTROLS)
+                    counts = " | ".join(
+                        f"{e[c + '_conflicts']}/{e[c + '_groups']}"
+                        for c in CONTROLS[:3]
+                    )
+                    lines.append(
+                        f"| {e['seed']} | {e['arm']} | {e['target']} | {costs} | {counts} | {e['own_public_resolved']} / {e['both_public_resolved']} | {e['supported_uniform_weight']:.9g} |"
+                    )
+                lines.append("")
+    (output / "tables.md").write_text("\n".join(lines))
+    labels = [
+        (arm, str(seed))
+        for arm in ("coarse_self", "coarse_pair", "mixed_pair", "fine_self")
+        for seed in (20261301, 20261302, 20261303)
+    ]
+    columns = [
+        (str(seat), suffix, weight)
+        for seat in (0, 1)
+        for suffix in SUFFIXES
+        for weight in WEIGHTS
+    ]
+    titles = (
+        "Original static groups",
+        "+ own public range",
+        "+ both public ranges",
+        "+ joint table (redundant)",
+        "Exact-information singletons",
+    )
+    for game in ("dev_low_oop", "dev_medium_oop"):
+        by_key = {tuple(e[k] for k in fields): e for e in effects if e["game"] == game}
+        matrices = [
+            np.array(
+                [
+                    [
+                        by_key[(game, seed, arm, seat, suffix, weight)][c + "_cost"]
+                        for seat, suffix, weight in columns
+                    ]
+                    for arm, seed in labels
+                ]
+            )
+            for c in CONTROLS
+        ]
+        maximum = max(float(m.max()) for m in matrices)
+        fig, axes = plt.subplots(2, 3, figsize=(22, 13), layout="constrained")
+        for ax, matrix, title in zip(
+            list(axes.flat)[:5], matrices, titles, strict=True
+        ):
+            img = ax.imshow(
+                matrix,
+                aspect="auto",
+                vmin=0,
+                vmax=maximum if maximum > 0 else 1,
+                cmap="viridis",
+            )
+            ax.set_title(title)
+            ax.set_yticks(
+                range(len(labels)), [f"{a} / {s[-2:]}" for a, s in labels], fontsize=9
+            )
+            ax.set_xticks(
+                range(len(columns)),
+                [
+                    f"seat {t}\n{'fine' if s == SUFFIXES[0] else 'restricted'}\n{'post' if w == WEIGHTS[0] else 'prior'}"
+                    for t, s, w in columns
+                ],
+                fontsize=8,
+            )
+        axes[1, 2].axis("off")
+        axes[1, 2].text(
+            0,
+            0.8,
+            "Darker = less local disagreement\nSame color scale within this figure\n\nBoth-public and joint must match\nSingleton zero is a mathematical control\n\nFixed saved Q, weights and support\nNo training or causal policy intervention\nKnown games; dependent records",
+            fontsize=14,
+            va="top",
+        )
+        fig.colorbar(
+            img,
+            ax=list(axes.flat[:5]),
+            label="Local cost (chips per weighted decision)",
+            shrink=0.8,
+        )
+        fig.suptitle(
+            f"{game}: public blockers to both declared ranges\nAll three dependent seeds; frozen local diagnostic, not game EV or trained strength"
+        )
+        fig.savefig(
+            output / f"{game}.png",
+            dpi=110,
+            metadata={"Software": "poker-ai fixed-cache two-sided report"},
+        )
+        plt.close(fig)
+    # Display-only examples: both 9d/9h river rows in the previously identified
+    # medium/mixed seed2 seat1 case, from the largest qualifying old static group.
+    p = next(
+        p
+        for p in cache.profiles
+        if (p["game"], p["seed"], p["arm"])
+        == ("dev_medium_oop", 20261302, "mixed_pair")
+    )
+    new, source = details[p["source_id"]]
+    response, old = new["responses"][1], source["responses"][1]["suffixes"][0]
+    lookup = {r["exact_info"]: r for r in old["rows"]}
+    candidates = []
+    for g in old["groups"][WEIGHTS[0]]["full_static_probe_refinement"]:
+        rows = [
+            lookup[i]
+            for i in g["supported_infos"]
+            if lookup[i]["hole"] == ["Qh", "Kh"]
+            and lookup[i]["board"][:4] == ["Ts", "9s", "4d", "2h"]
+            and lookup[i]["board"][-1] in ("9d", "9h")
+        ]
+        if {r["board"][-1] for r in rows} == {"9d", "9h"}:
+            candidates.append((g, rows))
+    candidates.sort(key=lambda pair: (-pair[0]["local_cost"], pair[0]["group_id"]))
+    examples = {}
+    if candidates:
+        group, rows = candidates[0]
+        bindings = {r["exact_info"]: r["feature"] for r in response["row_features"]}
+        examples = dict(
+            source_group=group,
+            rows=[
+                dict(
+                    source=r,
+                    public_features=cache.book.entries[bindings[r["exact_info"]]],
+                )
+                for r in rows
+            ],
+            interpretation="Public features distinguish these rows; this does not prove why the opponent policy responds differently.",
+        )
+    (output / "examples.json").write_text(
+        json.dumps(examples, indent=2, allow_nan=False) + "\n"
+    )
+    assert before == {
+        str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()
+    }
+    receipt = dict(
+        status="complete_cached_two_sided_report",
+        input_manifest_sha256=digest(folder / "manifest.json"),
+        scientific_source_sha256=cache.manifest["source_sha256"],
+        analysis_record_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        profiles=24,
+        responses=48,
+        suffix_conditions=96,
+        range_panels=192,
+        group_panels=960,
+        effect_rows=len(effects),
+        public_boards=cache.manifest["public_boards"],
+        own_public_cost_decreases=sum(
+            e["own_public_reduction"] > 1e-9 for e in effects
+        ),
+        additional_both_public_cost_decreases=sum(
+            e["additional_both_public_reduction"] > 1e-9 for e in effects
+        ),
+        total_public_cost_decreases=sum(
+            e["total_public_reduction"] > 1e-9 for e in effects
+        ),
+        public_residual_positive_panels=sum(
+            e["both_public_cost"] > 1e-9 for e in effects
+        ),
+        cached_inputs_unchanged=True,
+        input_measurement_seconds=cache.manifest["seconds"],
+        seconds=time.perf_counter() - started,
+        **{k: False for k in FLAGS},
+        outputs={p.name: digest(p) for p in output.iterdir() if p.is_file()},
+    )
+    (output / "receipt.json").write_text(
+        json.dumps(receipt, indent=2, allow_nan=False) + "\n"
+    )
+    print(json.dumps(receipt, indent=2))

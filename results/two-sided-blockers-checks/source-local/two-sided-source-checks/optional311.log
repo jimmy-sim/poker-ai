@@ -1,0 +1,7 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.range_blocker_io import CONFIG,ENTRIES\nfrom poker_ai.validation.five_card import source_provenance\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='21d3420adb48c4384f605d3579a4f4ccfa60419b'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.11.17'\nassert numpy.__version__=='2.4.6'\ns=source_provenance(root,root/CONFIG,entrypoints=ENTRIES)\nassert s['dirty'] is False\nassert sha(s['sha256'])=='519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(s['sha256'])})\n"]}
+{'python': '3.11.17', 'numpy': '2.4.6', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/two-sided-source-checkout/src/poker_ai/__init__.py', 'source_sha256': '519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022'}
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_river_range_math.py", "tests/test_river_range_case.py", "tests/test_range_blocker_io.py", "tests/test_river_range_publication.py"]}
+ERROR: file or directory not found: tests/test_range_blocker_io.py
+
+
+no tests ran in 0.00s

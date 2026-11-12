@@ -1,0 +1,73 @@
+"""Reconstruct all C8 cache details and smoke every offline browser selection."""
+
+import contextlib
+import io
+import itertools
+import json
+import time
+from pathlib import Path
+from unittest.mock import patch
+
+from poker_ai.evaluation.opponent_decision_run import BLOCKED, forbidden
+from poker_ai.evaluation.range_blocker_io import FOLDER, load
+from poker_ai.evaluation.range_blocker_view import main, show
+from poker_ai.postflop.river_study import digest
+
+root = Path.cwd()
+folder = root / FOLDER
+started = time.perf_counter()
+before = {
+    str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()
+}
+with contextlib.ExitStack() as stack:
+    for name in BLOCKED:
+        stack.enter_context(patch(name, forbidden))
+    cache = load(root, folder)
+    sink = io.StringIO()
+    conditions = 0
+    with contextlib.redirect_stdout(sink):
+        for profile in cache.profiles:
+            cache.detail(profile)
+            for seat, suffix in itertools.product((0, 1), repeat=2):
+                show(cache, profile, seat, suffix, 1)
+                conditions += 1
+        with (
+            patch("sys.argv", ["inspect_two_sided_blockers.py", "--interactive"]),
+            patch(
+                "builtins.input",
+                side_effect=["n", "p", "s", "o", "g", "t", "r", "invalid", "q"],
+            ),
+        ):
+            assert main(root) == 0
+        with (
+            patch("sys.argv", ["inspect_two_sided_blockers.py", "--interactive"]),
+            patch("builtins.input", side_effect=EOFError),
+        ):
+            assert main(root) == 0
+        try:
+            show(cache, cache.profiles[0], 0, 0, 0)
+            raise AssertionError("rank zero was accepted")
+        except ValueError:
+            pass
+    assert "Choose n, p, s, o, g, t, r or q." in sink.getvalue()
+    assert "Leaving cached blocker report." in sink.getvalue()
+    assert len(cache.decoded) == 24 and conditions == 96
+assert before == {
+    str(p.relative_to(folder)): digest(p) for p in folder.rglob("*") if p.is_file()
+}
+print(
+    json.dumps(
+        dict(
+            status="all24details96conditions_reconstructed_and_browsed",
+            manifest_sha256=digest(folder / "manifest.json"),
+            profiles=24,
+            conditions=conditions,
+            source_chip_error=cache.manifest["maximum_source_chip_error"],
+            unitless_error=cache.manifest["maximum_unitless_error"],
+            constructors_blocked=True,
+            outputs_unchanged=True,
+            seconds=time.perf_counter() - started,
+        ),
+        indent=2,
+    )
+)

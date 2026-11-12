@@ -83,9 +83,10 @@ because the saved opponent's later responses differ. This narrows the problem;
 it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
 the completed step 96 report, and step 97 adds a range-weight browser and plots.
 
-Step 98 tests whether public cards remove important possibilities from either
-player's declared range. Its implementation passes the first 53 focused tests.
-Full source checks still precede measurement; no feature has been trained.
+Step 98 finds a useful missing distinction: which alternative hands public
+cards remove from our own range. In the previously weak case it reduces local
+conflicting groups from 23 to four. This is checked saved-data diagnosis; it
+has not trained a stronger feature or changed the agent.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4219,6 +4220,37 @@ use deliberately fictional tiny examples; these are software checks, not new
 playing-strength results. Both full Python environments and GitHub checks are
 next, before measuring every saved case. This work is Codex-assisted; no personal
 practice time or mastery is inferred.
+
+**Complete saved-data result, November 11:** Both full local suites and GitHub
+source jobs passed before the 11.83-second comparison. In the same harder spot
+and second seed, adding public blockers to our alternative range separates 19
+of 23 previously conflicting groups. Four remain. Local disagreement cost falls
+from 0.386739 to 0.046621 chips per weighted decision; with the compatible-prior
+control it falls from 0.164205 to zero. These are fixed saved-decision costs,
+not money won or a stronger trained model.
+
+The QhKh example makes this concrete. A river 9d removes our possible 9c9d value
+hand; 9h leaves it possible. The old description treated those river situations
+alike. The public own-range description can separate them. This fits the earlier
+bluff-credibility hypothesis, but does not prove why the opponent's saved policy
+responds differently.
+
+Every saved case remains in the report: 24 profiles, 192 range panels and 960 grouped
+panels. Cost falls in 36 panels; 69 still have residual cost. Adding the other public
+range adds no further split in these particular tiny ranges, because hands
+across the two players' declared ranges share no private cards: the old opponent
+compatibility feature already gives that mask. That may differ for overlapping
+ranges; the software has a test demonstrating it. The joint table is separately
+redundant whenever both public masks and fixed ranges are known.
+
+Both Python versions check all 24 details and 96 browser selections. All five report
+files, including both plots, reproduce byte for byte. [Method and all-case
+tables](two-sided-blockers.md) retain the support weights, zero outcomes and
+limits. The [new terminal exercise](terminal-two-sided-lab.md) walks through
+the browser. Next, any compact feature needs its own declared learning test;
+this milestone does not promote a default or erase the earlier failed gate.
+Final publication checks/CI remain before merge. Codex-assisted; personal
+practice or hours are not inferred.
 
 ## Your own learning notes
 

@@ -1,0 +1,33 @@
+Checking complete cached blocker report and parent-source hashes...
+
+dev_medium_oop / 20261302 / mixed_pair / seat 1 / fine_reply
+Cached public-range grouping diagnostic; fixed source Q and weights.
+Local costs: chips per weighted decision, not root EV or trained gains.
+control | actual cost / prior cost | actual conflicts / prior conflicts
+  source_static: 0.386738718 / 0.164204558; 23 / 11 of 1386 groups; source conflicts resolved 0 / 0
+  own_public: 0.0466210477 / 0; 4 / 0 of 1440 groups; source conflicts resolved 19 / 11
+  both_public: 0.0466210477 / 0; 4 / 0 of 1440 groups; source conflicts resolved 19 / 11
+  both_public_joint: 0.0466210477 / 0; 4 / 0 of 1440 groups; source conflicts resolved 19 / 11
+  exact_information: 0 / 0; 0 / 0 of 1656 groups; source conflicts resolved 23 / 11
+Both-public and joint controls are redundant with fixed declared ranges.
+
+Source static group 1/10: 77:b1bb3248589dbeb54ccea8773c048d532bce39edda1ce2305b0686c2ab0fb18a
+Declared range order by seat: [[['Js', 'As'], ['Tc', 'Td']], [['Qh', 'Kh'], ['9c', '9d']]]
+Up to four deterministic examples; distinct masks/actions first. All rows retained.
+
+Own Qh Kh; board Ts 9s 4d 2h 9d; pot 216
+Public availability seat0 / seat1: ((True, True), (True, False))
+Joint matrix: rows seat0 alternatives, columns seat1 alternatives: ((True, False), (True, False))
+Source CF support 0.0047137062; fixed exposure 0.00115780446
+  fold: actual Q -54.000000; prior Q -54.000000
+  call: actual Q -162.000000; prior Q -162.000000
+  raise_to 146: actual Q -200.000000; prior Q -109.500000
+
+Own Qh Kh; board Ts 9s 4d 2h 9h; pot 216
+Public availability seat0 / seat1: ((True, True), (True, True))
+Joint matrix: rows seat0 alternatives, columns seat1 alternatives: ((True, True), (True, True))
+Source CF support 0.00106813016; fixed exposure 0.00115780446
+  fold: actual Q -54.000000; prior Q -54.000000
+  call: actual Q -162.000000; prior Q -162.000000
+  raise_to 146: actual Q 20.880815; prior Q 91.437957
+No actual opponent hand is revealed; own alternatives use public cards only.

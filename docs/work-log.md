@@ -3274,3 +3274,39 @@ same support/weights, all960 panel slots, corrupt cache and interruption/cap
 tests pass. Full local bases/focused all-extras/both hosted SOURCE checks are
 pending and must precede the actual C8 comparison. No measurements/training/
 feature deployment or performance admission at this checkpoint.
+
+### November 11 — complete two-sided public blocker comparison
+
+Both full immutable source bases on21d3420 pass2,814/58skip/149deselect,
+512.17/497.50s; all lint/format/mypy622/hooks/source-runtime guards pass.
+Focused ALL-EXTRAS53pass3.05/2.90s, not all historical optional tests. Hosted
+SOURCE43159009130 both pass BEFOREmeasurement (2,814/58/149/one old roundoff
+warning each;935.75/670.86s). Original optional launcher filename errors exit4
+remain with corrected successful logs; inherited receipt scope wording is
+clarified as synthetic units only. No scientific source changes for that fix.
+
+Published clean21d3420/fingerprint519887a... completes unchanged900s cache-only
+command in11.832719541s. All24/48/96/192/960inventory and44,160/88,320rows,
+96publicboards retained; max source reconstruction5.330805e-15chips and
+2.220446e-16unitless. New manifest4559326c...; no new Q/policy/trajectory/native
+audit or original full-game mathematical replay. Original data/source frozen.
+
+Focal harder/mixed/seed2/seat1/fine actualcost0.386738718→0.046621048,
+23/1,386→4/1,440conflicting groups;19originalconflictsresolved. Priorcontrol
+0.164204558→0,11→0. Own-public masks separate recordedQhKh9d/9h observations.
+All192panels:36costdecreases,156unchangedwithin1e-9,69positive residuals. Both
+public masks addnothing beyondown in THESE inputs because every cross-seat
+private-hand pair is disjoint and oldcompatibility already gives opponent
+publicmask; overlap UNITfixture explicitly demonstrates general extra split.
+Joint given BOTH masks is alwaysredundant forfixedranges. These two facts differ.
+No causal response attribution, rootEV/exploitability/learning-gain or global
+compression claim. Original overall learningFAIL/default/gates remain.
+
+All24cached details/96browser selections+navigation/rank/EOF pass both runtimes
+with blockedconstructors,20.441678459/18.489029166s. All5numeric/text/plot outputs
+byte-identical; both figures visually inspected. Firstformat15.613303416s is
+separate postprocessing; original font-cache warning retained. Exact sourceCI,
+local bases/optional failures+correction, command/cache/report records committed
+with plain-English journal98 and terminal exercise. Two actual-publication
+regressions added; final relevant checks and both artifactCI jobs remain before
+merge. Ten user main result modifications remain untouched in the isolated work.

@@ -1,0 +1,409 @@
+﻿2026-11-12T05:05:24.7316949Z Current runner version: '2.338.2'
+2026-11-12T05:05:24.7354868Z ##[group]Runner Image Provisioner
+2026-11-12T05:05:24.7356812Z Hosted Compute Agent
+2026-11-12T05:05:24.7357978Z Version: 20261028.624
+2026-11-12T05:05:24.7359361Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T05:05:24.7360716Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T05:05:24.7362180Z Worker ID: {c29eacd6-1298-4c03-872a-00f553e2e635}
+2026-11-12T05:05:24.7363497Z Region: eastus
+2026-11-12T05:05:24.7364879Z Cloud: Azure
+2026-11-12T05:05:24.7366081Z ##[endgroup]
+2026-11-12T05:05:24.7368599Z ##[group]Operating System
+2026-11-12T05:05:24.7369869Z Ubuntu
+2026-11-12T05:05:24.7370906Z 24.04.5
+2026-11-12T05:05:24.7371836Z LTS
+2026-11-12T05:05:24.7373005Z ##[endgroup]
+2026-11-12T05:05:24.7374324Z ##[group]Runner Image
+2026-11-12T05:05:24.7375603Z Image: ubuntu-24.04
+2026-11-12T05:05:24.7376625Z Version: 20261101.360.1
+2026-11-12T05:05:24.7378929Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-12T05:05:24.7381655Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-12T05:05:24.7383915Z ##[endgroup]
+2026-11-12T05:05:24.7385972Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T05:05:24.7388956Z Contents: read
+2026-11-12T05:05:24.7390020Z Metadata: read
+2026-11-12T05:05:24.7391266Z ##[endgroup]
+2026-11-12T05:05:24.7395057Z Secret source: Actions
+2026-11-12T05:05:24.7396798Z Cache mode: write
+2026-11-12T05:05:24.7397952Z Prepare workflow directory
+2026-11-12T05:05:24.7900334Z Prepare all required actions
+2026-11-12T05:05:24.7974934Z Getting action download info
+2026-11-12T05:05:24.9691838Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T05:05:25.0830694Z Download action repository 'astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9' (SHA:c771a70e6277c0a99b617c7a806ffedaca235ff9)
+2026-11-12T05:05:25.3710115Z Complete job name: Python 3.11
+2026-11-12T05:05:25.4617468Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-12T05:05:25.4618561Z with:
+2026-11-12T05:05:25.4619037Z   persist-credentials: false
+2026-11-12T05:05:25.4619615Z   repository: jimmy-sim/poker-ai
+2026-11-12T05:05:25.4623558Z   token: ***
+2026-11-12T05:05:25.4624236Z   ssh-strict: true
+2026-11-12T05:05:25.4624701Z   ssh-user: git
+2026-11-12T05:05:25.4625151Z   clean: true
+2026-11-12T05:05:25.4625623Z   sparse-checkout-cone-mode: true
+2026-11-12T05:05:25.4626176Z   fetch-depth: 1
+2026-11-12T05:05:25.4626633Z   fetch-tags: false
+2026-11-12T05:05:25.4627108Z   show-progress: true
+2026-11-12T05:05:25.4627586Z   lfs: false
+2026-11-12T05:05:25.4628016Z   submodules: false
+2026-11-12T05:05:25.4628498Z   set-safe-directory: true
+2026-11-12T05:05:25.4629026Z   allow-unsafe-pr-checkout: false
+2026-11-12T05:05:25.4629833Z ##[endgroup]
+2026-11-12T05:05:25.7556478Z Syncing repository: jimmy-sim/poker-ai
+2026-11-12T05:05:25.7561047Z ##[group]Getting Git version info
+2026-11-12T05:05:25.7563381Z Working directory is '/home/runner/work/poker-ai/poker-ai'
+2026-11-12T05:05:25.7566401Z [command]/usr/bin/git version
+2026-11-12T05:05:25.7646218Z git version 2.56.0
+2026-11-12T05:05:25.7673042Z ##[endgroup]
+2026-11-12T05:05:25.7693406Z Temporarily overriding HOME='/home/runner/work/_temp/445dafcc-289b-4f95-be0a-b156ffaade6a' before making global git config changes
+2026-11-12T05:05:25.7696922Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T05:05:25.7707108Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/poker-ai/poker-ai
+2026-11-12T05:05:25.7827241Z Deleting the contents of '/home/runner/work/poker-ai/poker-ai'
+2026-11-12T05:05:25.7829881Z ##[group]Determining repository object format
+2026-11-12T05:05:25.7833161Z ##[endgroup]
+2026-11-12T05:05:25.7836175Z ##[group]Initializing the repository
+2026-11-12T05:05:25.7838085Z [command]/usr/bin/git init /home/runner/work/poker-ai/poker-ai
+2026-11-12T05:05:25.7923509Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-12T05:05:25.7925534Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-12T05:05:25.7926872Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-12T05:05:25.7927859Z hint: call:
+2026-11-12T05:05:25.7928441Z hint:
+2026-11-12T05:05:25.7929276Z hint: 	git config --global init.defaultBranch <name>
+2026-11-12T05:05:25.7930105Z hint:
+2026-11-12T05:05:25.7930858Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-12T05:05:25.7932092Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-12T05:05:25.7933267Z hint:
+2026-11-12T05:05:25.7934670Z hint: 	git branch -m <name>
+2026-11-12T05:05:25.7935818Z hint:
+2026-11-12T05:05:25.7937151Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-12T05:05:25.7952559Z Initialized empty Git repository in /home/runner/work/poker-ai/poker-ai/.git/
+2026-11-12T05:05:25.7968457Z [command]/usr/bin/git remote add origin https://github.com/jimmy-sim/poker-ai
+2026-11-12T05:05:25.8050522Z ##[endgroup]
+2026-11-12T05:05:25.8052702Z ##[group]Disabling automatic garbage collection
+2026-11-12T05:05:25.8054905Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-12T05:05:25.8086399Z ##[endgroup]
+2026-11-12T05:05:25.8089852Z ##[group]Setting up auth
+2026-11-12T05:05:25.8103100Z Removing SSH command configuration
+2026-11-12T05:05:25.8110939Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T05:05:25.8171362Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T05:05:25.8607141Z Removing HTTP extra header
+2026-11-12T05:05:25.8615216Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T05:05:25.8679169Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T05:05:25.8948235Z Removing includeIf entries pointing to credentials config files
+2026-11-12T05:05:25.8949862Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T05:05:25.9006708Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T05:05:25.9290114Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-12T05:05:25.9566763Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path /home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:25.9619803Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:26.0049638Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:26.0101496Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:26.0153342Z ##[endgroup]
+2026-11-12T05:05:26.0155150Z ##[group]Fetching the repository
+2026-11-12T05:05:26.0156939Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +789b77a958381a0dd6aa18c49938b4e2c786f017:refs/remotes/pull/53/merge
+2026-11-12T05:05:39.0090048Z From https://github.com/jimmy-sim/poker-ai
+2026-11-12T05:05:39.0092590Z  * [new ref]         789b77a958381a0dd6aa18c49938b4e2c786f017 -> pull/53/merge
+2026-11-12T05:05:39.0098261Z ##[endgroup]
+2026-11-12T05:05:39.0099863Z ##[group]Determining the checkout info
+2026-11-12T05:05:39.0101570Z ##[endgroup]
+2026-11-12T05:05:39.0105975Z [command]/usr/bin/git sparse-checkout disable
+2026-11-12T05:05:39.0175612Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-12T05:05:39.0221427Z ##[group]Checking out the ref
+2026-11-12T05:05:39.0226003Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/53/merge
+2026-11-12T05:05:40.0501880Z Updating files:  37% (813/2152)
+2026-11-12T05:05:40.1101386Z Updating files:  38% (818/2152)
+2026-11-12T05:05:40.1654532Z Updating files:  39% (840/2152)
+2026-11-12T05:05:40.1668666Z Updating files:  40% (861/2152)
+2026-11-12T05:05:40.2524231Z Updating files:  41% (883/2152)
+2026-11-12T05:05:40.2703540Z Updating files:  42% (904/2152)
+2026-11-12T05:05:40.2709546Z Updating files:  43% (926/2152)
+2026-11-12T05:05:40.2979150Z Updating files:  44% (947/2152)
+2026-11-12T05:05:40.3155753Z Updating files:  45% (969/2152)
+2026-11-12T05:05:40.3209390Z Updating files:  46% (990/2152)
+2026-11-12T05:05:40.3303401Z Updating files:  47% (1012/2152)
+2026-11-12T05:05:40.3334539Z Updating files:  48% (1033/2152)
+2026-11-12T05:05:40.3996493Z Updating files:  49% (1055/2152)
+2026-11-12T05:05:40.4086977Z Updating files:  50% (1076/2152)
+2026-11-12T05:05:40.4641568Z Updating files:  51% (1098/2152)
+2026-11-12T05:05:40.5222602Z Updating files:  52% (1120/2152)
+2026-11-12T05:05:40.5592372Z Updating files:  53% (1141/2152)
+2026-11-12T05:05:40.5835201Z Updating files:  54% (1163/2152)
+2026-11-12T05:05:40.6157324Z Updating files:  55% (1184/2152)
+2026-11-12T05:05:40.6662257Z Updating files:  56% (1206/2152)
+2026-11-12T05:05:40.6721770Z Updating files:  57% (1227/2152)
+2026-11-12T05:05:40.6739458Z Updating files:  58% (1249/2152)
+2026-11-12T05:05:40.6749615Z Updating files:  59% (1270/2152)
+2026-11-12T05:05:40.6804494Z Updating files:  60% (1292/2152)
+2026-11-12T05:05:40.7349324Z Updating files:  61% (1313/2152)
+2026-11-12T05:05:40.7361085Z Updating files:  62% (1335/2152)
+2026-11-12T05:05:40.7574206Z Updating files:  63% (1356/2152)
+2026-11-12T05:05:40.7650498Z Updating files:  64% (1378/2152)
+2026-11-12T05:05:40.7817110Z Updating files:  65% (1399/2152)
+2026-11-12T05:05:40.7849796Z Updating files:  66% (1421/2152)
+2026-11-12T05:05:40.7959289Z Updating files:  67% (1442/2152)
+2026-11-12T05:05:40.7970569Z Updating files:  68% (1464/2152)
+2026-11-12T05:05:40.7991743Z Updating files:  69% (1485/2152)
+2026-11-12T05:05:40.8287097Z Updating files:  70% (1507/2152)
+2026-11-12T05:05:40.8296680Z Updating files:  71% (1528/2152)
+2026-11-12T05:05:40.8306424Z Updating files:  72% (1550/2152)
+2026-11-12T05:05:40.8317927Z Updating files:  73% (1571/2152)
+2026-11-12T05:05:40.8334812Z Updating files:  74% (1593/2152)
+2026-11-12T05:05:40.8339406Z Updating files:  75% (1614/2152)
+2026-11-12T05:05:40.8351776Z Updating files:  76% (1636/2152)
+2026-11-12T05:05:40.8365324Z Updating files:  77% (1658/2152)
+2026-11-12T05:05:40.8386704Z Updating files:  78% (1679/2152)
+2026-11-12T05:05:40.8406877Z Updating files:  79% (1701/2152)
+2026-11-12T05:05:40.8429576Z Updating files:  80% (1722/2152)
+2026-11-12T05:05:40.8444890Z Updating files:  81% (1744/2152)
+2026-11-12T05:05:40.8472310Z Updating files:  82% (1765/2152)
+2026-11-12T05:05:40.8494723Z Updating files:  83% (1787/2152)
+2026-11-12T05:05:40.8512400Z Updating files:  84% (1808/2152)
+2026-11-12T05:05:40.8527928Z Updating files:  85% (1830/2152)
+2026-11-12T05:05:40.8544394Z Updating files:  86% (1851/2152)
+2026-11-12T05:05:40.8561728Z Updating files:  87% (1873/2152)
+2026-11-12T05:05:40.8577721Z Updating files:  88% (1894/2152)
+2026-11-12T05:05:40.8592425Z Updating files:  89% (1916/2152)
+2026-11-12T05:05:40.8604470Z Updating files:  90% (1937/2152)
+2026-11-12T05:05:40.8617498Z Updating files:  91% (1959/2152)
+2026-11-12T05:05:40.8631157Z Updating files:  92% (1980/2152)
+2026-11-12T05:05:40.8644652Z Updating files:  93% (2002/2152)
+2026-11-12T05:05:40.8657986Z Updating files:  94% (2023/2152)
+2026-11-12T05:05:40.8671162Z Updating files:  95% (2045/2152)
+2026-11-12T05:05:40.8688642Z Updating files:  96% (2066/2152)
+2026-11-12T05:05:40.8702711Z Updating files:  97% (2088/2152)
+2026-11-12T05:05:40.8720341Z Updating files:  98% (2109/2152)
+2026-11-12T05:05:40.8746549Z Updating files:  99% (2131/2152)
+2026-11-12T05:05:40.8747447Z Updating files: 100% (2152/2152)
+2026-11-12T05:05:40.8748098Z Updating files: 100% (2152/2152), done.
+2026-11-12T05:05:40.8772848Z Note: switching to 'refs/remotes/pull/53/merge'.
+2026-11-12T05:05:40.8773348Z 
+2026-11-12T05:05:40.8844783Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-12T05:05:40.8845483Z changes and commit them, and you can discard any commits you make in this
+2026-11-12T05:05:40.8846030Z state without impacting any branches by switching back to a branch.
+2026-11-12T05:05:40.8846344Z 
+2026-11-12T05:05:40.8846591Z If you want to create a new branch to retain commits you create, you may
+2026-11-12T05:05:40.8847107Z do so (now or later) by using -c with the switch command. Example:
+2026-11-12T05:05:40.8847394Z 
+2026-11-12T05:05:40.8847514Z   git switch -c <new-branch-name>
+2026-11-12T05:05:40.8847718Z 
+2026-11-12T05:05:40.8847815Z Or undo this operation with:
+2026-11-12T05:05:40.8847987Z 
+2026-11-12T05:05:40.8848069Z   git switch -
+2026-11-12T05:05:40.8848195Z 
+2026-11-12T05:05:40.8848407Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-12T05:05:40.8848711Z 
+2026-11-12T05:05:40.8849058Z HEAD is now at 789b77a Merge 21d3420adb48c4384f605d3579a4f4ccfa60419b into 1de6706d90f692dedf6cd1e57ac1d1ba3026b653
+2026-11-12T05:05:40.8950310Z ##[endgroup]
+2026-11-12T05:05:40.9012367Z [command]/usr/bin/git log -1 --format=%H
+2026-11-12T05:05:40.9053207Z 789b77a958381a0dd6aa18c49938b4e2c786f017
+2026-11-12T05:05:40.9067724Z ##[group]Removing auth
+2026-11-12T05:05:40.9068164Z Removing SSH command configuration
+2026-11-12T05:05:40.9070459Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T05:05:40.9119289Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T05:05:40.9379659Z Removing HTTP extra header
+2026-11-12T05:05:40.9384373Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T05:05:40.9431512Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T05:05:40.9683077Z Removing includeIf entries pointing to credentials config files
+2026-11-12T05:05:40.9687036Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T05:05:40.9729771Z includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path
+2026-11-12T05:05:40.9730649Z includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path
+2026-11-12T05:05:40.9731125Z includeif.gitdir:/github/workspace/.git.path
+2026-11-12T05:05:40.9731495Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T05:05:40.9739534Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path
+2026-11-12T05:05:40.9777077Z /home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:40.9787702Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-3b2c3b51\-b4aa\-4f19\-9641\-49f43333b88a\.config
+2026-11-12T05:05:40.9843554Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path
+2026-11-12T05:05:40.9880378Z /home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:40.9890818Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-3b2c3b51\-b4aa\-4f19\-9641\-49f43333b88a\.config
+2026-11-12T05:05:40.9937503Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-12T05:05:40.9973197Z /github/runner_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:40.9981251Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-3b2c3b51\-b4aa\-4f19\-9641\-49f43333b88a\.config
+2026-11-12T05:05:41.0030871Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T05:05:41.0068143Z /github/runner_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config
+2026-11-12T05:05:41.0085475Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-3b2c3b51\-b4aa\-4f19\-9641\-49f43333b88a\.config
+2026-11-12T05:05:41.0132052Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T05:05:41.0376866Z Removing credentials config '/home/runner/work/_temp/git-credentials-3b2c3b51-b4aa-4f19-9641-49f43333b88a.config'
+2026-11-12T05:05:41.0386581Z ##[endgroup]
+2026-11-12T05:05:41.0682877Z ##[group]Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+2026-11-12T05:05:41.0683280Z with:
+2026-11-12T05:05:41.0683465Z   version: 0.13.5
+2026-11-12T05:05:41.0684030Z   python-version: 3.11
+2026-11-12T05:05:41.0684273Z   enable-cache: true
+2026-11-12T05:05:41.0684496Z   activate-environment: false
+2026-11-12T05:05:41.0684736Z   no-project: false
+2026-11-12T05:05:41.0685016Z   working-directory: /home/runner/work/poker-ai/poker-ai
+2026-11-12T05:05:41.0687864Z   github-token: ***
+2026-11-12T05:05:41.0688453Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T05:05:41.0689087Z   restore-cache: true
+2026-11-12T05:05:41.0689298Z   save-cache: true
+2026-11-12T05:05:41.0689503Z   prune-cache: false
+2026-11-12T05:05:41.0689722Z   cache-python: false
+2026-11-12T05:05:41.0689949Z   ignore-nothing-to-cache: false
+2026-11-12T05:05:41.0690255Z   ignore-empty-workdir: false
+2026-11-12T05:05:41.0690519Z   download-from-astral-mirror: true
+2026-11-12T05:05:41.0690797Z   add-problem-matchers: true
+2026-11-12T05:05:41.0691027Z   quiet: false
+2026-11-12T05:05:41.0691231Z   resolution-strategy: highest
+2026-11-12T05:05:41.0691472Z ##[endgroup]
+2026-11-12T05:05:41.2578768Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-11-12T05:05:41.3256464Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-12T05:05:41.4510827Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/42289ba1-02f3-4f29-9516-e9858e9b8ae1 -f /home/runner/work/_temp/28582f6a-d7ea-4ec0-8577-3767e7853c18
+2026-11-12T05:05:41.7605214Z Added /home/runner/.local/bin to the path
+2026-11-12T05:05:41.7608926Z Added /opt/hostedtoolcache/uv/0.13.5/x86_64 to the path
+2026-11-12T05:05:41.7610860Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-11-12T05:05:41.7611581Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-11-12T05:05:41.7612177Z Set UV_PYTHON to 3.11
+2026-11-12T05:05:41.7634942Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-11-12T05:05:41.7635335Z Successfully installed uv version 0.13.5
+2026-11-12T05:05:41.7636913Z Searching files using cache dependency glob: /home/runner/work/poker-ai/poker-ai/**/*requirements*.txt,/home/runner/work/poker-ai/poker-ai/**/*requirements*.in,/home/runner/work/poker-ai/poker-ai/**/*constraints*.txt,/home/runner/work/poker-ai/poker-ai/**/*constraints*.in,/home/runner/work/poker-ai/poker-ai/**/pyproject.toml,/home/runner/work/poker-ai/poker-ai/**/uv.lock,/home/runner/work/poker-ai/poker-ai/**/*.py.lock
+2026-11-12T05:05:41.8052214Z /home/runner/work/poker-ai/poker-ai/pyproject.toml
+2026-11-12T05:05:42.0302619Z /home/runner/work/poker-ai/poker-ai/uv.lock
+2026-11-12T05:05:42.0319445Z Found 2 files to hash.
+2026-11-12T05:05:42.0404175Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-12T05:05:42.0887372Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-12T05:05:42.4475037Z Received 48005944 of 48005944 (100.0%), 140.9 MBs/sec
+2026-11-12T05:05:42.4475703Z Cache Size: ~46 MB (48005944 B)
+2026-11-12T05:05:42.4501717Z [command]/usr/bin/tar -xf /home/runner/work/_temp/fd724cf4-3e6b-43b5-8c09-c28ac5ee2dde/cache.tzst -P -C /home/runner/work/poker-ai/poker-ai --use-compress-program unzstd
+2026-11-12T05:05:42.8159031Z Cache restored successfully
+2026-11-12T05:05:42.8185009Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-12T05:05:42.9406286Z ##[group]Run make setup
+2026-11-12T05:05:42.9406599Z [36;1mmake setup[0m
+2026-11-12T05:05:42.9431699Z shell: /usr/bin/bash -e {0}
+2026-11-12T05:05:42.9431961Z env:
+2026-11-12T05:05:42.9432245Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T05:05:42.9432596Z   UV_PYTHON: 3.11
+2026-11-12T05:05:42.9432855Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T05:05:42.9433150Z ##[endgroup]
+2026-11-12T05:05:42.9526436Z uv sync --locked --dev
+2026-11-12T05:05:43.0452203Z Downloading cpython-3.11.17-linux-x86_64-gnu (download) (29.1MiB)
+2026-11-12T05:05:43.5661432Z  Downloaded cpython-3.11.17-linux-x86_64-gnu (download)
+2026-11-12T05:05:43.6934054Z Using CPython 3.11.17
+2026-11-12T05:05:43.6934402Z Creating virtual environment at: .venv
+2026-11-12T05:05:43.6967314Z Resolved 47 packages in 0.89ms
+2026-11-12T05:05:43.6988964Z    Building poker-ai @ file:///home/runner/work/poker-ai/poker-ai
+2026-11-12T05:05:44.4104349Z       Built poker-ai @ file:///home/runner/work/poker-ai/poker-ai
+2026-11-12T05:05:44.4119936Z Prepared 1 package in 713ms
+2026-11-12T05:05:44.4505151Z Installed 25 packages in 38ms
+2026-11-12T05:05:44.4505781Z  + cfgv==3.5.0
+2026-11-12T05:05:44.4506253Z  + distlib==0.4.4
+2026-11-12T05:05:44.4506729Z  + filelock==4.2.7
+2026-11-12T05:05:44.4507214Z  + hypothesis==6.170.14
+2026-11-12T05:05:44.4507709Z  + identify==2.6.20
+2026-11-12T05:05:44.4508173Z  + iniconfig==2.3.1
+2026-11-12T05:05:44.4508623Z  + librt==0.16.0
+2026-11-12T05:05:44.4509065Z  + mypy==1.20.2
+2026-11-12T05:05:44.4509545Z  + mypy-extensions==1.1.0
+2026-11-12T05:05:44.4510020Z  + nodeenv==1.12.0
+2026-11-12T05:05:44.4510501Z  + numpy==2.4.6
+2026-11-12T05:05:44.4511047Z  + packaging==26.3
+2026-11-12T05:05:44.4511533Z  + pathspec==1.1.1
+2026-11-12T05:05:44.4512067Z  + platformdirs==4.14.3
+2026-11-12T05:05:44.4512535Z  + pluggy==1.7.0
+2026-11-12T05:05:44.4513165Z  + poker-ai==0.1.0 (from file:///home/runner/work/poker-ai/poker-ai)
+2026-11-12T05:05:44.4513965Z  + pre-commit==4.7.0
+2026-11-12T05:05:44.4514598Z  + pygments==2.21.0
+2026-11-12T05:05:44.4515332Z  + pytest==9.2.0
+2026-11-12T05:05:44.4515904Z  + python-discovery==1.9.1
+2026-11-12T05:05:44.4516212Z  + pyyaml==6.0.3
+2026-11-12T05:05:44.4516418Z  + ruff==0.17.3
+2026-11-12T05:05:44.4516625Z  + sortedcontainers==2.4.0
+2026-11-12T05:05:44.4516874Z  + typing-extensions==4.16.0
+2026-11-12T05:05:44.4517111Z  + virtualenv==21.15.2
+2026-11-12T05:05:44.4651640Z ##[group]Run make check
+2026-11-12T05:05:44.4651925Z [36;1mmake check[0m
+2026-11-12T05:05:44.4673263Z shell: /usr/bin/bash -e {0}
+2026-11-12T05:05:44.4673514Z env:
+2026-11-12T05:05:44.4674173Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T05:05:44.4674763Z   UV_PYTHON: 3.11
+2026-11-12T05:05:44.4675015Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T05:05:44.4675350Z ##[endgroup]
+2026-11-12T05:05:44.4736317Z uv run --locked ruff check .
+2026-11-12T05:05:44.6274360Z All checks passed!
+2026-11-12T05:05:44.6306622Z uv run --locked ruff format --check .
+2026-11-12T05:05:44.7532611Z 744 files already formatted
+2026-11-12T05:05:44.7568173Z uv run --locked mypy --strict src tests scripts
+2026-11-12T05:06:01.8680180Z Success: no issues found in 622 source files
+2026-11-12T05:06:01.9012433Z uv run --locked pytest -q -m "not slow"
+2026-11-12T05:06:08.5192788Z ........................................................................ [  2%]
+2026-11-12T05:06:10.5519647Z ........................................................................ [  5%]
+2026-11-12T05:06:14.8580744Z ........................................................................ [  7%]
+2026-11-12T05:06:15.9319290Z ........................................................................ [ 10%]
+2026-11-12T05:06:20.9480182Z ........................................................................ [ 12%]
+2026-11-12T05:06:22.2358449Z ........................................................................ [ 15%]
+2026-11-12T05:06:23.7999871Z ........................................................................ [ 17%]
+2026-11-12T05:06:36.3205421Z ........................................................................ [ 20%]
+2026-11-12T05:06:43.3248494Z ........................................................................ [ 22%]
+2026-11-12T05:06:56.5412792Z ........................................................................ [ 25%]
+2026-11-12T05:07:01.5544205Z ........................................................................ [ 27%]
+2026-11-12T05:07:09.6766975Z ........................................................................ [ 30%]
+2026-11-12T05:07:11.2654413Z ...................................................sss.................. [ 32%]
+2026-11-12T05:07:11.6120751Z ........................................................................ [ 35%]
+2026-11-12T05:07:20.6748313Z .........................................s.............................. [ 37%]
+2026-11-12T05:07:39.8003184Z ........................................................................ [ 40%]
+2026-11-12T05:07:53.8401239Z ........................................................................ [ 42%]
+2026-11-12T05:08:06.1458497Z .................ss..sss................................................ [ 45%]
+2026-11-12T05:08:06.9868109Z ........................................................ssssssssssssssss [ 47%]
+2026-11-12T05:09:56.7547210Z s..............................................s........................ [ 50%]
+2026-11-12T05:10:16.5004218Z ........................................................................ [ 52%]
+2026-11-12T05:10:39.6061909Z ........................................................................ [ 55%]
+2026-11-12T05:10:59.3380953Z ......................ssssssssss........................................ [ 57%]
+2026-11-12T05:11:14.2929985Z ........................................................................ [ 60%]
+2026-11-12T05:13:47.0776262Z ........................................................................ [ 62%]
+2026-11-12T05:14:33.6120125Z ...........................ss...s....................................... [ 65%]
+2026-11-12T05:14:47.2085435Z ........................................................................ [ 67%]
+2026-11-12T05:14:48.9128600Z .........................................................s.............. [ 70%]
+2026-11-12T05:15:03.9649084Z ...................................s.................................... [ 72%]
+2026-11-12T05:15:27.6514894Z ..................ss.......................ss........................... [ 75%]
+2026-11-12T05:15:43.5049869Z ........................................................................ [ 77%]
+2026-11-12T05:17:50.5961016Z ..............................................ss........................ [ 80%]
+2026-11-12T05:19:43.5992480Z ..............ss........................................................ [ 82%]
+2026-11-12T05:20:37.0370404Z .....s....................s............................................. [ 85%]
+2026-11-12T05:21:05.8856554Z ....................................................................s... [ 87%]
+2026-11-12T05:21:10.2698387Z .............................................................s.......... [ 90%]
+2026-11-12T05:21:26.0047472Z ........................................................ss..........s... [ 92%]
+2026-11-12T05:21:27.7560489Z ........................................................................ [ 95%]
+2026-11-12T05:21:36.0559741Z ........................................................................ [ 97%]
+2026-11-12T05:21:39.0118910Z ...............................................................          [100%]
+2026-11-12T05:21:39.0119571Z =============================== warnings summary ===============================
+2026-11-12T05:21:39.0120242Z tests/test_river_refinement_report.py::test_complete_actual_saved_data_receipt_replays_all_rows
+2026-11-12T05:21:39.0121366Z   /home/runner/work/poker-ai/poker-ai/tests/test_river_refinement_report.py:128: RuntimeWarning: Local cost replay roundoff 8.8817841970012523e-16 (limit 1e-12); archived bytes unchanged.
+2026-11-12T05:21:39.0122359Z     data = REPORT.checked(ROOT, ROOT / "results/river-refinement")
+2026-11-12T05:21:39.0122706Z 
+2026-11-12T05:21:39.0122954Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-12T05:21:39.0123519Z 2814 passed, 58 skipped, 149 deselected, 1 warning in 935.75s (0:15:35)
+2026-11-12T05:21:39.3530344Z ##[group]Run uv run --locked pre-commit validate-config
+2026-11-12T05:21:39.3530851Z [36;1muv run --locked pre-commit validate-config[0m
+2026-11-12T05:21:39.3531232Z [36;1muv run --locked pre-commit run --all-files[0m
+2026-11-12T05:21:39.3551623Z shell: /usr/bin/bash -e {0}
+2026-11-12T05:21:39.3551874Z env:
+2026-11-12T05:21:39.3552167Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T05:21:39.3552513Z   UV_PYTHON: 3.11
+2026-11-12T05:21:39.3552771Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T05:21:39.3553071Z ##[endgroup]
+2026-11-12T05:21:39.8107836Z Ruff lint (locked project environment)...................................Passed
+2026-11-12T05:21:39.8707058Z Ruff format check (locked project environment)...........................Passed
+2026-11-12T05:21:39.9037545Z Post job cleanup.
+2026-11-12T05:21:40.0130811Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-11-12T05:21:40.0136529Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-11-12T05:21:40.0139636Z Cache hit occurred on key setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697, not saving cache.
+2026-11-12T05:21:40.1325535Z Post job cleanup.
+2026-11-12T05:21:40.2202774Z [command]/usr/bin/git version
+2026-11-12T05:21:40.2250418Z git version 2.56.0
+2026-11-12T05:21:40.2288941Z Temporarily overriding HOME='/home/runner/work/_temp/7dbcc9a8-5ef2-4dab-a179-342d642c7c6e' before making global git config changes
+2026-11-12T05:21:40.2290371Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T05:21:40.2295210Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/poker-ai/poker-ai
+2026-11-12T05:21:40.2332186Z Removing SSH command configuration
+2026-11-12T05:21:40.2339236Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T05:21:40.2386224Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T05:21:40.2659952Z Removing HTTP extra header
+2026-11-12T05:21:40.2673403Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T05:21:40.2720691Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T05:21:40.3004365Z Removing includeIf entries pointing to credentials config files
+2026-11-12T05:21:40.3012955Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T05:21:40.3099915Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T05:21:40.3544645Z Cleaning up orphan processes

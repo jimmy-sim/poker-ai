@@ -1,0 +1,66 @@
+{
+  "source_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+  "records": [
+    {
+      "name": "base311",
+      "status": "passed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 528.4831209580002,
+      "setup_and_check_seconds": 541.912815834,
+      "record_folder": "two-sided-source-checks"
+    },
+    {
+      "name": "base312",
+      "status": "passed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 515.7500704589997,
+      "setup_and_check_seconds": 528.2674030829999,
+      "record_folder": "two-sided-source-checks"
+    },
+    {
+      "name": "optional311",
+      "status": "passed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 7.586055083000247,
+      "setup_and_check_seconds": 7.600723624999773,
+      "record_folder": "two-sided-source-optional-corrected"
+    },
+    {
+      "name": "optional312",
+      "status": "passed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 7.455638375000035,
+      "setup_and_check_seconds": 7.4687452080002,
+      "record_folder": "two-sided-source-optional-corrected"
+    },
+    {
+      "name": "optional311",
+      "status": "failed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 3.1414993749999667,
+      "setup_and_check_seconds": 34.47900579199995,
+      "record_folder": "two-sided-source-checks"
+    },
+    {
+      "name": "optional312",
+      "status": "failed",
+      "checked_commit": "21d3420adb48c4384f605d3579a4f4ccfa60419b",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 3.2698530000002393,
+      "setup_and_check_seconds": 33.22370258299998,
+      "record_folder": "two-sided-source-checks"
+    }
+  ],
+  "limits": "Full base suites; focused 53-test all-extras suites, not all historical optional tests. Optional scope labels inherited 'actual publication' wording but these source checks used ONLY fictional unit fixtures; real C8 measurements had not started. Two initial launcher errors reference a nonexistent test filename, exit4; retained and corrected without scientific-source edits."
+}

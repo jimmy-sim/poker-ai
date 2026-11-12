@@ -62,6 +62,14 @@ profiles and both own continuations are retained; this is a local diagnostic,
 not a trained improvement. [All-case plots and tables](results/river-range-report/tables.md)
 and learning-journal step97 explain the distinction.
 
+The [two-sided blocker follow-up](docs/two-sided-blockers.md) finds that public
+removal from our own alternative range separates 19 of 23 conflicting groups in
+the previously weak river case (four remain). Local disagreement cost falls
+0.386739→0.046621 chips per weighted decision. All 24 profiles/960 grouped panels
+are retained; this is a saved-data diagnostic, not a trained strength gain.
+[Journal step 98](docs/learning-journal.md#98-ask-which-hands-each-player-can-still-represent) and the [terminal exercise](docs/terminal-two-sided-lab.md) explain how to
+browse the masks and remaining conflicts.
+
 ![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
 
 **Previous research — November 10:** the complete private-deal stratification

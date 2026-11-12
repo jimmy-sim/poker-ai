@@ -104,3 +104,115 @@ Focused tests: 53 passed in 2.35s. Repository-wide Ruff lint/format and strict
 mypy checks (622 source files) pass. Full local base/optional and both hosted
 source checks remain required before the complete saved-data measurement.
 No measured effect, new training or deployed feature is claimed at this point.
+
+## Complete cached result — November 11, 2026
+
+After both full local bases and BOTH hosted source jobs passed on published
+21d3420, the unchanged command completed in **11.832719541s < 900s**. It retains
+all 24 profiles/48 responses/96 suffix conditions/192 range panels/960 grouped
+panels, 44,160 profile-seat river rows (88,320 across suffixes) and 96 public
+boards. Independent scalar reconstruction differs from the source by at most
+5.33081e-15 chips and 2.22045e-16 unitless, below 1e-9/1e-12 limits.
+
+In the previously investigated harder spot, seed20261302/mixed/seat1/fine suffix:
+
+| Control | Actual-posterior cost | Prior cost | Actual conflicts/groups | Prior conflicts/groups |
+| --- | ---: | ---: | --- | --- |
+| Source static | 0.386738718 | 0.164204558 | 23/1,386 | 11/1,386 |
+| Add own public range | 0.046621048 | 0 | 4/1,440 | 0/1,440 |
+| Add both public ranges | 0.046621048 | 0 | 4/1,440 | 0/1,440 |
+| Add joint table | 0.046621048 | 0 | 4/1,440 | 0/1,440 |
+| Exact-information singleton | 0 | 0 | 0/1,656 | 0/1,656 |
+
+Costs are chips per weighted decision on the SAME source support/exposure,
+not root EV, exploitability or training gains. Nineteen of the original 23
+actual-posterior conflicting groups are entirely resolved; four remain.
+The displayed actual cost falls about 87.95%, a local diagnostic reduction.
+
+Across ALL 192 dependent panels, own-public refinement lowers cost by more than
+1e-9 in 36 and changes it by at most 1e-9 in 156. Those 36 are all harder-game
+seat1, non-fine-self panels. Sixty-nine panels retain cost above 1e-9 after both
+public masks. These descriptive counts are not a success rate or confidence
+interval. [All-case tables](../results/two-sided-report/tables.md) and the raw
+960-row CSV retain every denominator, support weight and zero outcome.
+
+**Two different redundancies:** adding the other public mask gives no further
+split in THESE inputs. Every hypothetical cross-seat private hand pair is
+card-disjoint in both declared games, so original actual-own opponent
+compatibility already equals the opponent's public availability. This does not
+prove that mask is useless with overlapping ranges; the UNIT overlap fixture
+explicitly demonstrates a further split. Separately, the joint table is always
+determined by BOTH masks and fixed private-hand intersections for fixed ranges.
+Its partition equality is an algebraic control, independent of the first fact.
+
+The recorded QhKh9d/9h pair now separates: 9d removes our alternative9c9d, while
+9h leaves it possible. Its original static group had the same opponent
+compatibility and showdown relations, yet prior raise-to146 values were
+−109.500000 and +91.437957 chips (fold−54/call−162). Public own-range masks
+distinguish those observations. This association does not establish why the
+opponent policy responds differently or the causal effect of retraining.
+
+## Verification and reproduction
+
+Source full local bases: each2,814passed/58skip/149deselect,512.17/497.50s;
+lint/format/strict typing/hooks and before/after clean source/runtime/module
+guards pass. Focused ALL-EXTRAS53pass3.05/2.90s, not all historical optional
+tests. Source [CI43159009130](https://github.com/jimmy-sim/poker-ai/actions/runs/43159009130)
+passes both jobs, each2,814/58skip/149deselect/one historical roundoff warning,
+935.75/670.86s. Initial optional launcher filename errors remain recorded;
+their correction changed no scientific source or gate.
+
+Both runtimes reconstruct all24 new details and exercise all96 browser
+selections/navigation/invalid rank/EOF with constructors blocked,20.441678459/
+18.489029166s. All five numeric/text/plot report outputs reproduce byte for byte.
+Both figures were visually inspected. Formatting is a separate postprocessing
+command (15.613303416s in the first report), not a new scientific clock. Exact
+records are in `results/two-sided-blockers-checks`; the original Matplotlib
+font-cache warning is retained. Final artifact checks/CI remain before merge.
+
+Browse the published cache after updating the project:
+
+```sh
+.venv/bin/python scripts/inspect_two_sided_blockers.py --interactive
+```
+
+The [terminal exercise](terminal-two-sided-lab.md) explains each column. To
+reproduce with clean source, choose a fresh output:
+
+```sh
+.venv/bin/python scripts/diagnose_two_sided_blockers.py --output results/runs/two-sided-reproduction
+```
+
+The exact retained report-formatting record is runnable with the research extra:
+
+```sh
+.venv/bin/python results/two-sided-blockers-checks/complete/render_report.py.txt --output results/runs/two-sided-report-reproduction
+```
+
+## Limits and next decision
+
+This is complete cached-data arithmetic validation, not an original full-game
+mathematical replay or a new independent solver audit. No strategies, hidden
+hands or reference outputs enter training. Both own suffixes, all seeds and
+unsupported rows remain; observations are dependent and limited to two known
+tiny-range games. Ordered combo masks can be large and are tied to the declared
+ranges. Neither scalable memory/compression nor general Hold'em strength is
+established. Original learning failure, caps, seeds, defaults and fresh/global
+gates remain unchanged.
+
+The result supports considering public own-range removal in a future feature
+design. Residual conflicts and range-weight effects remain. A compact deployable
+candidate needs a separately prospective definition, correctness/compression
+tests and fixed-work learning/admission comparison. No further study starts
+automatically at this stopping point.
+
+Three questions to explain this work:
+
+1. **Why can our range matter to the opponent?** Public cards change the strong
+   hands we could represent. Our actual private hand must not erase alternatives
+   the opponent cannot know are impossible.
+2. **Why does the joint table add nothing?** For fixed declared hands it is the
+   product of both public availability flags and their fixed private-card
+   disjointness. It contains no extra board information beyond those flags.
+3. **Did the agent become stronger?** No training ran. Lower fixed-value grouping
+   disagreement identifies a useful distinction to test, not learned EV gain.
