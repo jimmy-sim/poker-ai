@@ -289,6 +289,43 @@ def test_viewer_checks_named_historical_source_not_a_new_aggregate(tool: Any) ->
         tool.authenticate_source(ROOT, source)
 
 
+def test_shallow_history_refuses_evidence_until_full_history_is_fetched(
+    tool: Any,
+    tmp_path: Path,
+) -> None:
+    from poker_ai.postflop.learning_artifacts import sha
+
+    origin, shallow = tmp_path / "origin", tmp_path / "shallow"
+    origin.mkdir()
+
+    def git(root: Path, *args: str) -> str:
+        return subprocess.check_output(
+            ["git", "-C", str(root), *args], text=True
+        ).strip()
+
+    git(origin, "init", "--quiet")
+    (origin / "sample.py").write_text("value = 1\n")
+    git(origin, "add", "sample.py")
+    settings = ("-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid")
+    git(origin, *settings, "commit", "--quiet", "-m", "fixture source")
+    ancestor = git(origin, "rev-parse", "HEAD")
+    hashes = {"sample.py": tool.digest(origin / "sample.py")}
+    (origin / "later.txt").write_text("later fixture\n")
+    git(origin, "add", "later.txt")
+    git(origin, *settings, "commit", "--quiet", "-m", "fixture later")
+    subprocess.run(
+        ["git", "clone", "--quiet", "--depth", "1", origin.as_uri(), str(shallow)],
+        check=True,
+    )
+    saved = dict(git_commit=ancestor, sha256=hashes, fingerprint=sha(hashes))
+    assert git(shallow, "rev-parse", "--is-shallow-repository") == "true"
+    with pytest.raises(subprocess.CalledProcessError):
+        tool.authenticate_source(shallow, saved)
+    git(shallow, "fetch", "--quiet", "--unshallow", "origin")
+    assert git(shallow, "rev-parse", "--is-shallow-repository") == "false"
+    tool.authenticate_source(shallow, saved)
+
+
 def test_full_tiny_read_profile_matches_plain_in_fresh_process(tmp_path: Path) -> None:
     """Actual complete reader/guard/432 scores, not a mocked replay loop."""
     code = """import importlib.util,json,sys

@@ -1,0 +1,55 @@
+{
+  "status": "hosted_shallow_checkout_failure_retained",
+  "checked_commit": "e330975d246843b4b284d50e17221dfd55773c0d",
+  "source_fingerprint": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+  "run_id": 43240165310,
+  "failed_job_id": 131258273301,
+  "failed_tests": 2,
+  "passed_tests": 3350,
+  "other_job_status_at_capture": "in_progress",
+  "missing_commit_trees": [
+    "0ec17ef91f01a06169b1cd6d3378d7d654d66323",
+    "9e1f4fce4e6e98d33680ddb7a714d9d6c8f8e09e"
+  ],
+  "local_checks": [
+    {
+      "name": "base311",
+      "status": "passed",
+      "checked_commit": "e330975d246843b4b284d50e17221dfd55773c0d",
+      "scientific_source_sha256": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 502.59175895799854,
+      "setup_and_check_seconds": 504.86773029199685
+    },
+    {
+      "name": "base312",
+      "status": "passed",
+      "checked_commit": "e330975d246843b4b284d50e17221dfd55773c0d",
+      "scientific_source_sha256": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 481.53891916700377,
+      "setup_and_check_seconds": 484.9182157920004
+    },
+    {
+      "name": "optional311",
+      "status": "passed",
+      "checked_commit": "e330975d246843b4b284d50e17221dfd55773c0d",
+      "scientific_source_sha256": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+      "scope": "complete standalone replay profiler/identity/caps/failure/viewer and unchanged raw-profiler/constructor-isolation/admission/clock checks, all extras; actual complete432 tiny replay. No formal poker profile or training",
+      "check_seconds": 11.516784667001048,
+      "setup_and_check_seconds": 29.346208125003614
+    },
+    {
+      "name": "optional312",
+      "status": "passed",
+      "checked_commit": "e330975d246843b4b284d50e17221dfd55773c0d",
+      "scientific_source_sha256": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+      "scope": "complete standalone replay profiler/identity/caps/failure/viewer and unchanged raw-profiler/constructor-isolation/admission/clock checks, all extras; actual complete432 tiny replay. No formal poker profile or training",
+      "check_seconds": 11.394921458006138,
+      "setup_and_check_seconds": 28.812148957993486
+    }
+  ],
+  "remedy": "fetch-depth0; preserve all source/Git-blob guards; actual shallow-clone regression refuses missing tree and succeeds only after full history fetch",
+  "formal_poker_profile_performed": false,
+  "training_performed": false
+}
