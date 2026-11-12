@@ -4768,8 +4768,11 @@ tests each, relevant optional checks (513 on Python 3.11; 511 and two runtime
 skips on 3.12), and both source-bound GitHub jobs before collection. The actual
 tiny 144-panel rehearsal passed first; separate hand-calculated tests cover
 positive information benefits, both players, zero support and overlapping ties.
-Final publication checks remain a merge gate. The earlier sampled accuracy
-failure and default agent remain unchanged.
+Final publication checks passed on both local bases and both hosted jobs before
+the history-preserving merge in PR #58. Main then passed 138 focused checks,
+the complete 144-panel replay, and saved-decision browser checks. All ten
+unrelated local result changes stayed byte-identical. The earlier sampled
+accuracy failure and default agent remain unchanged.
 
 After updating the checkout, try one command per line:
 
@@ -4823,3 +4826,27 @@ pending; no new model or strength result exists yet. The full capped study
 must fit before the user's 10 a.m. stopping time, or we stop at a tested smaller
 milestone. No automatic future window is created. Codex assists with the work;
 personal hours and understanding are not inferred.
+
+The first implementation now separates the training worker from every saved
+opponent loader. A worker receives game/source/clock identifiers, not saved
+probability tables. Its own finer opponent learns during that same game. Fresh
+process checks reject reference imports. The read-only parent can authenticate
+old comparison receipts, but its learner and native constructors are blocked.
+
+We also need honest cost data before committing to a long experiment. Imagine
+an old group split into two new groups: copying its whole book into both would
+double that group's recorded mass. Instead, the adapter carries over its
+post-initialization density in proportion to each new group's exact uniform
+warm mass. Tests check the exact new warm origin, monotone later books and
+unchanged normalized probabilities. These tables estimate pipeline cost; they
+were never learned with the compact groups and cannot establish model strength.
+
+The original compact/exact snapshots supply all 36 ordinary-path checkpoints.
+Their probabilities, raw books, RNG/state hashes and visited-node work must
+match exactly. A changed probability or a merely close score cannot replace
+this check. A separate slow integration test loaded all 36 boundaries and 180
+cost source tables with solver constructors blocked. The complete base/optional
+and hosted source checks, formal shared-clock rehearsal and compute gates are
+still pending. Unit fixtures, including direct terminal sums and exhaustive
+pure responses for all 432 tiny profiles, are software tests rather than new
+poker training or a published admission.

@@ -146,6 +146,25 @@ never shorten the experiment or schedule another window automatically.
 
 ## Reporting and next decision
 
+The separately bound entrypoint is `scripts/validate_compact_opponents.py`.
+Its operations are `software-own`, `software-audit`, `cost-own`, `cost-audit`,
+`forecast`, `admit`, `study`, `audit`, `replay` and `report`; `checks` verifies
+an already published observed six-role `checks.json`, without inventing CI
+results. Each cost command requires its fixed `--repetition 0`, `1` or `2`.
+Pass `--stop-at 2026-11-12T18:00:00Z` during this authorized window. Existing
+complete/partial destinations are rejected; changing `--output` is not permission
+to rerun an unfavorable repetition or bypass a failed scientific gate.
+
+The implementation reuses the original design, capture, books, composition,
+scoring, archives, replay, report arithmetic and independent scalar backend.
+New source/clock/publication/admission wrappers keep the new protocol separate;
+historical modules are not edited. The structural worker imports no saved-policy
+loader/reference module; native work has a separate entry. The source loader
+authenticates and replays the original histories before exposing the 36 exact
+baseline barriers. Cost lifts retain exact new warm origins and original source
+identities. Six-role source checks and new complete formal software evidence
+remain required, even though shared primitives already have historical tests.
+
 Retain every seed/readout/arm, 36 original-boundary checks, all raw books and
 own policies, worker journals and partial/failing records. Record actual source,
 runtime, wall/CPU time and per-component work. Render all-case tables/learning

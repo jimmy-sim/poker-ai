@@ -4001,3 +4001,47 @@ after6:55Pacific. Costs are explicitly nontraining refinement/density projection
 not original-prefix or strength evidence. No new trajectory/feature/default/
 fresh/global admission exists. PR58 final publication checks are still running;
 this separate draft is stacked on its published9f2e122 before implementation.
+
+### November 12 — merged trace, preserved main, compact training adapters
+
+PR58 history-merged511ae2f after final local bases3217passed/64skipped/149deselected
+each603.868004/591.673235s and both exact-head hosted43220163404 jobs passed on
+9f2e122. Raw final logs/head metadata/digests retained outside the repo to avoid
+a CI-only source cycle. Fresh snapshot20261112T130215Z, guarded main FF and
+post-test checks preserve all10 unrelated result bytes/status/changed-index
+entries/patches. Main3.11.17/NumPy2.4.6/module/source guard,138focused tests34.39s,
+full144/288trace replay and both saved browser cases pass. No new learning.
+
+PR59 is retargeted to main. New separately bound adapters reuse unchanged
+capture/normalization/composition/scoring/archive/replay/reference-scalar math.
+Compact contexts refine original coarse groups (130/1770rows; mixed254/252 and
+2544/2562 versus fine376/3336). Training imports no saved-policy loader or
+reference backend; exact structural payload schema rejects policy injection.
+Read-only source/cost/replay parents block all learner and native constructors.
+All36 original compact/exact raw checkpoints decode; literal old readout hashes
+are reconstructed without a learner. Cost density projection preserves exact
+new uniform warm origin and normalized old probabilities, records old/new
+hashes/IDs/work and never claims new learned books.
+
+Full tiny three-worker child/archive/replay tests cover432unique profiles and
+1152fixed conditions; direct terminal equations/exhaustive pure choices check
+all432values/BRs and positive information gaps. Command caps, shared software
+clock, cutoff reserve, partial event/unknown-state retention, missing checks/
+permit rejection and persisted seal/cap/input mutations are tested. Allthree
+own cost publications are required before ANYnativecost; every recorded witness
+field and raw scalar/derived error schema is checked. Native schema tests use
+already-public old data or explicit unit fixtures, not a new reference run on
+unpublished policies. Source/180projection integration passed89.01s with solver
+constructors blocked; this is not a fixed cost repetition or timing forecast.
+Full exact-source base/optional/hosted checks and formal software/cost/forecast/
+admission still precede new real training. All old scientific source/data and
+preregistered seeds/caps/strict gates remain unchanged. Codex-assisted work;
+human practice/time not inferred.
+
+Draft implementation verification:100new fast checks pass18.98s, one slow
+source/180projection integration check passes separately89.01s; shared backend
+integration group175passes/1slow deselected before the final seven witness-field
+cases. Whole-repo Ruff/format840files and strict mypy708files pass. Earlier
+iteration fixture naming/path mistakes were corrected before source publication;
+no formal source-bound scientific collection has started. Full immutable base/
+optional and both hosted checks remain next, not inferred from focused passes.
