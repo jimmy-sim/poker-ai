@@ -3812,3 +3812,15 @@ replayed before selecting48sources. All raw144mixture/reply details plus own/chi
 manifest are public in this checkpoint BEFORE reference construction. No new
 learning/RNG draws/default/admission. Original sampled accuracy remains failed.
 Independent scalar validation/report are pending; no remedy selected yet.
+
+
+### November 12 — all frozen-opponent scalar comparisons pass
+
+All144real joint profiles/288player responses independently checked after own
+publicationcc53a93. Complete native clock 105.58452487500108s <900s; maximum
+raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13chips <1e-9.
+Both exact/restricted roots and achieved OWN exact/restricted/river-before replies
+are covered, not aggregate exploitability alone. Pinned OpenSpiel2.0.2 license
+verified; no reference policies returned/used for training. Fixed source2670f3f6
+and all historical source maps remain unchanged. Report is next; no new training,
+remedy choice, default/fresh/global or failed-gate change.
