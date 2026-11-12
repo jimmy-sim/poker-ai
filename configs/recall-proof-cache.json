@@ -1,0 +1,60 @@
+{
+  "acceptance": {
+    "cached_original_traversals_fewer_than_uncached": true,
+    "cached_wall_less_than_uncached_for_this_pair": true,
+    "changed_geometry_revalidated": true,
+    "exact_actual_and_stored_replay_identity": true,
+    "exact_policy_book_bytes": true,
+    "only_successful_stable_proofs_cached": true,
+    "original_invalid_recall_cases_rejected": true
+  },
+  "admission_evidence": false,
+  "baseline_own": "results/compact-own-opponent-learning/cost/0/own.json",
+  "baseline_own_sha256": "51e77198ae495c7972826757c05d901357f5bd06af0ca9dc6a3fe1f2e6a25e3d",
+  "expected_fixed_conditions": 1152,
+  "expected_requests_per_mode": 2832,
+  "expected_unique_profiles": 432,
+  "fallback": "unsupported array types or object dtypes use original checker without caching",
+  "final_ci_reserve_seconds": 1500,
+  "geometry_fields": [
+    "children",
+    "valid",
+    "player",
+    "information",
+    "levels"
+  ],
+  "hooks": [
+    "poker_ai.postflop.reply_trace.require_recall",
+    "poker_ai.postflop.river_distinctions.require_recall",
+    "poker_ai.postflop.controlled_scoring.require_recall",
+    "poker_ai.postflop.opponent_views.require_recall"
+  ],
+  "key_schema": "sha256_v1_field_names_dtype_shape_C_bytes_validator_version",
+  "maximum_child_seconds": 900,
+  "maximum_pair_seconds": 1800,
+  "order": [
+    "uncached",
+    "cached"
+  ],
+  "original_scientific_source": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+  "poker_training_performed": false,
+  "production_integration": false,
+  "profile_config": "configs/compact-replay-profile.json",
+  "profile_config_sha256": "d9c43f528aa47ed1faa08cd82a4d882f4b9046340d17c3ae38a3da61bbef6d76",
+  "save_reserve_seconds": 600,
+  "schema": 1,
+  "scope": "OWN_SAVED_COST_RECALL_CACHE_SOFTWARE_ONLY",
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "study_id": "recall-proof-cache-2026-11-12",
+  "validator_file": "src/poker_ai/postflop/reply_trace.py",
+  "validator_sha256": "f241751d2966adce8301ab29970ad951f5be367b05d0a46607ffe09f44f0a8b0",
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ]
+}

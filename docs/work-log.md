@@ -4275,3 +4275,49 @@ Browse the authenticated retained evidence:
 ```sh
 .venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
 ```
+
+
+### November12 — prospective recall-proof cache comparison
+
+The full profile points to repeated recall checks. The [prospective cache plan](recall-proof-cache.md) tests a content-hash certificate: if the exact checked fields change, run the original checker again; never cache a failed check. A fixed uncached/cached whole-archive pair must preserve actual replay results and all policy/book bytes. No implementation or cache speed result exists yet. Required source checks come before timing; if the full caps/CI/save reserve do not fit by10a.m., stop at tested source. The current model and failed admission remain unchanged. Codex assists; personal time or mastery is not inferred.
+
+The mutation-aware prototype now passes31focused checks, including every structural input, failed proofs not cached, mutation during validation, restored structures, unsupported-input fallback, hook restoration, late-start refusal and exact actual/stored results for all432tiny scored profiles. Lint/format and strict typing pass. Four explicit read-only hooks count every request and restore on exit. All original files/arithmetic remain unchanged; fresh full local/optional/hosted source checks are required before the fixed whole-cost pair. No cache timing result, production integration or new training yet.
+
+
+### November 12 — checked recall-cache source before timing
+
+PR61 frozen79354f8a665c1d137c58bf8974f7327ae92e9807,367-file fingerprint
+cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352,
+now has all six observed source-bound check roles. Both complete local bases
+pass3,387/64skip/150deselect (478.56/456.30s), optional147each (16.28/15.55s),
+and both hosted43257152055 jobs pass3,387/64/150 plus historical warning
+(888.98/1,200.64s). Exact raw logs/head/job metadata/check drivers retained;
+source-only receipts precede the one registered full-cost pair. PR retargeted
+main after dependencyPR60merged and sourceCIcompleted. Journal106 now explains
+content fingerprints, mutation limits and what software identity would prove.
+Original362-file2ace and364-filece6 dependencies remain unchanged/public;
+no timedcache outcome, integration, admission or poker learning yet.
+
+
+### November 12 — complete recall-cache pair, exact results
+
+After allsix source roles were public37dcf58, the single registered pair starts
+8:41a.m.Pacific (before8:55latest). Uncached188.27628845899744s, cached
+138.15393783400214s; both return0 under900each, shared326.43247416600207<1,800.
+All432/1,152 actual AND stored summaries exact, numerical errors0, policy/book
+bytes exact; full324raw/216books/30warms/108compositions retained. Both2,832
+requests; original traversals2,832→18, successful reuses0→2,814, no fallback or
+rejection on valid archive. Source367/config/inventory/source-publication and
+whole-child CPU/wall/command/environment are bound in retained raw manifests;
+original ignored bytes copied exactly before verification. No expanded macOS
+resource query repeated; no memoryclaim. Conditional ordered-pair wall reduction
+26.621701030563326%, not population or full-native-audit speed estimate. All
+unfavorable historical outcomes including old1,210.21>900admission remain;
+no production integration/permit/new poker training. README/method/3QAs/journal106
+explain exact outcomes and limits. Final relevant checks and both final-head
+hostedCI remain before merge. Stop10a.m.; no further automation/subagents.
+
+Final same-source relevant suites pass147each:16.16s onPython3.11 and15.91s
+onPython3.12. All367named scientific files unchanged; complete raw pair hashes
+and recomputed/stored identity rechecked by the retained own reader.
+Lint/format/hooks pass. Final publication hosted checks required before merge.

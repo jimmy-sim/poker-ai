@@ -1,0 +1,57 @@
+"""Final immutable-checkout base and focused all-extras publication checks."""
+
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+work = Path(__file__).resolve().parent
+root = work / "recall-proof-cache-checkout"
+folder = work / "recall-proof-cache-checks"
+folder.mkdir(exist_ok=True)
+name = sys.argv[1]
+assert name in ("base311", "base312", "optional311", "optional312")
+optional = name.startswith("optional")
+minor = name[-3:]
+version = "3.11.17" if minor == "311" else "3.12.15"
+python = work / "python" / f"cpython-{version}-macos-aarch64-none/bin/python3.{minor[-2:]}"
+env = dict(os.environ, UV_PROJECT_ENVIRONMENT=str(work / f"recall-proof-cache-{name}"), UV_PYTHON=str(python))
+uv = ["uv", "run", "--locked", *(["--all-extras"] if optional else [])]
+started = time.perf_counter()
+with (folder / f"{name}-install.log").open("x") as stream:
+    subprocess.run(["uv", "sync", "--locked", "--dev", *(["--all-extras"] if optional else [])], cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+guard = """import pathlib,subprocess,sys,numpy,poker_ai
+sys.path.insert(0,str(pathlib.Path.cwd()/"scripts"))
+import recall_cache_support as support
+def source(root,clean=True):return support.source(root)[1]
+root=pathlib.Path.cwd()
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='79354f8a665c1d137c58bf8974f7327ae92e9807'
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+assert sys.version.split()[0]==VERSION
+assert numpy.__version__==NUMPY
+s=source(root,clean=True)
+assert s['dirty'] is False
+assert s['fingerprint']=='cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352'
+print({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':s['fingerprint']})
+""".replace("VERSION", repr(version)).replace("NUMPY", repr("2.4.6" if minor == "311" else "2.5.4"))
+commands = [uv + ["python", "-c", guard]]
+if optional:
+    suites = ["tests/test_recall_proof_cache.py","tests/test_compact_replay_profile.py","tests/test_batch_cost_stats.py","tests/test_compact_opponent_isolation.py","tests/test_compact_opponent_admission.py","tests/test_compact_opponent_clock.py"]
+    commands.append(uv + ["pytest","-q",*suites])
+else:
+    commands.extend((uv + ["ruff", "check", "."], uv + ["ruff", "format", "--check", "."], uv + ["mypy", "--strict", "src", "tests", "scripts"], uv + ["pytest", "-q", "-m", "not slow"], uv + ["pre-commit", "validate-config"], uv + ["pre-commit", "run", "--all-files"]))
+commands.append(uv + ["python", "-c", guard])
+began = time.perf_counter()
+outcome = "failed"
+try:
+    with (folder / f"{name}.log").open("x") as stream:
+        for command in commands:
+            stream.write(json.dumps(dict(command=command)) + "\n")
+            stream.flush()
+            subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+    outcome = "passed"
+finally:
+    (folder / f"{name}-receipt.json").write_text(json.dumps(dict(name=name, status=outcome, checked_commit="79354f8a665c1d137c58bf8974f7327ae92e9807", scientific_source_sha256="cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352", scope="mutation-aware recall cache, all structural/rejection/fallback/stability/hook/clock/counter checks and complete432 tiny identity; older observer/raw-profile/isolation/admission/clock, all extras. No timed full-cost cache comparison or training" if optional else "complete base lint/format/types/non-slow/tests/hooks", check_seconds=time.perf_counter()-began, setup_and_check_seconds=time.perf_counter()-started), indent=2)+"\n")
+print(name + ": complete, source/runtime guarded")
