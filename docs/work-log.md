@@ -3340,3 +3340,18 @@ compression/savedQ/learning measurement. Actual admission alwaysfalse.
 Main repeatCI43164682908 BOTHpassed; fresh snapshot063713UTC captures allten
 current unrelated user edits before isolatedbranch. PriorPR53finalhostedlogs
 retained as OLD source evidence. Journal99 explains plannedscope in plain English.
+
+### November 11 — compact candidate implementation and focused checks
+
+Protocol7ace4a3 precedes new code. PublicOwnRangeAbstraction only adds river
+public-own-prior blocked/category q8 packed30bits to complete oldrange parent.
+New source modules only; no historical scientific source edits. Fixed config/
+context/input binding, finite adapter, serialization denial and public inspector
+implemented. Scalar/set/exhaustive5card oracle, allcategory/bin/packing/privacy/
+context/collision/structural tests and pure72full/324sampled SYNTHETIC threshold
+grids total98PASS4.10s. Both known structural games preserve parent refinement/
+concrete menus and zero recall; motivating observations split, pooled collision
+retained. Lint/format/mypy629 PASS. Initial two typing/format defects corrected
+before advancement; config/feature/gates unchanged. Full local bases/relevant
+optional/hosted checks follow. No row-count/compression/savedQ/learning/native
+measurement, actual admission or default change. Plain-English journal99 updated.

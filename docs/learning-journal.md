@@ -88,9 +88,10 @@ cards remove from our own range. In the previously weak case it reduces local
 conflicting groups from 23 to four. This is checked saved-data diagnosis; it
 has not trained a stronger feature or changed the agent.
 
-Step 99 defines a compact candidate from that finding: summarize which kinds
-of hands our public range can still contain, then store the binned summary in
-one 30-bit word. Definition and tests precede compression or learning results.
+Step 99 defines and tests a compact candidate from that finding: summarize which
+kinds of hands our public range can still contain, then store the binned summary
+in one 30-bit word. It passes 98 focused software tests; full publication checks
+follow. No compression or learning result is claimed for the new candidate.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4288,6 +4289,22 @@ Fictional metric tables test future pass/fail rules; they are not poker results
 or permission to train. Stop at the tested definition. Actual compression and
 learning need separate source-bound stages; the earlier failure remains.
 Codex-assisted; no personal practice, hours or mastery are inferred.
+
+**Implementation checkpoint:** All 98 focused tests pass (4.10s), along with
+lint, formatting and strict typing. The public summary takes only a board and
+fixed range. Tests change hidden opponent/future cards, check exact category
+arithmetic independently and keep earlier-street information unchanged. The new
+key separates the motivating 9d/9h observations; another board pair intentionally
+collides, showing that the summary loses information.
+
+The future-gate tests use fictional 72-profile full tables and 324 sampled readouts,
+not trained policies. Even when those thresholds pass, the code returns
+`actual_admission=False`. Full publication checks are next. The definition
+milestone stops before counting compressed rows or running learning.
+
+Try `.venv/bin/python scripts/inspect_public_range_feature.py 9h`, then replace
+9h with 9d. “Word” is just the packed bin label. The [method](compact-public-range.md)
+explains its coordinates; it is not an action or playing-strength score.
 
 ## Your own learning notes
 

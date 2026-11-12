@@ -106,6 +106,42 @@ fresh/global work needs its own later prospective contract. None starts here.
 
 ## Status
 
-Prospective definition only. Implementation/checks pending. No compression,
-policies, exploitability or stronger-agent result. Codex assists; no personal
-practice/time/mastery is inferred.
+Prospective protocol7ace4a3 preceded implementation. The public feature,
+context-bound opt-in encoder/finite adapter, offline inspector and pure metric
+assessors are implemented. All98 focused tests pass in4.10s; whole-repository
+Ruff lint/format and strict mypy629files pass. The original sources remain
+unchanged. An initial strict-typing/format pass caught two local annotations
+and formatting issues; corrected before proceeding, without feature/gate changes.
+Full base/optional and both hosted checks remain publication requirements.
+No row-count/compression measurement, policy, exploitability, native audit or
+stronger-agent result. Codex assists; no personal practice/time/mastery inferred.
+
+The two structural fixture observations1013/1049, pinned to the earlier known
+game, have equal parent keys and distinct new keys. The test constructs only
+observations; it loads no saved Q/strategy values. Both structural games have
+compatible concrete menus and zero recall violations. The pooled5c/5h example
+intentionally keeps the same word; this is not exact-board information.
+
+After updating your checkout, inspect the encoding:
+
+```sh
+.venv/bin/python scripts/inspect_public_range_feature.py 9h
+.venv/bin/python scripts/inspect_public_range_feature.py 9d
+.venv/bin/python -m pytest -q tests/test_public_range.py tests/test_public_range_acceptance.py
+```
+
+The first word is67,109,120 (half pair/half quads); the second is260 (half
+blocked/half pair). These are interval labels, not action probabilities, chips
+or strategic recommendations. Use no Python REPL or heredoc for these commands.
+
+Three questions to practice:
+
+1. **Why pool categories?** The extra key has ten bins regardless of range size,
+   while an ordered compatibility vector grows with the range. Whole memory
+   costs and useful strategy compression remain unmeasured.
+2. **Why not filter with our private hand?** We are describing what the opponent
+   can think we represent. Alternative own hands are mutually exclusive
+   hypotheses; the opponent does not get our actual private cards.
+3. **Do these tests admit training?** No. They establish feature/contract behavior.
+   Real source-bound runner, replay/audit, forecast and published admission are
+   still needed; the old learning failure/default remains unchanged.
