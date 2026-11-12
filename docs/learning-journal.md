@@ -4550,3 +4550,11 @@ git show --stat 72755ed
 
 These commands inspect the design and run tiny software fixtures. They do not
 start the real sampled study or establish that the Hold'em agent is stronger.
+
+The first complete source checks caught a packaging mistake: the optional graph
+code expected the plotting library even in the basic installation. Both Python
+base checks and GitHub failed at strict typing. The import was corrected before
+any new poker training; the failed logs remain in the result folder and CI
+history. Passing tests with every extra installed was useful, but it did not
+prove that the smaller basic installation worked. The corrected source must pass
+the whole required check set before the rehearsal begins.

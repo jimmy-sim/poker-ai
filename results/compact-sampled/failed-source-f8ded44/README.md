@@ -1,0 +1,1 @@
+Retained failed first source checks at f8ded44. Both base/hosted jobs failed strict typing because the optional plot imported Matplotlib directly. Hosted run43191822549, jobs131092786589/131092786933. No scientific trajectory started. Raw hosted logs retain BOM/whitespace.

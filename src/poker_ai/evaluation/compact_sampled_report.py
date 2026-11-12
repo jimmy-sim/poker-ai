@@ -1,5 +1,6 @@
 """Audited known-game results; seed ranges are descriptive, not confidence bands."""
 
+import importlib
 import json
 import statistics
 import time
@@ -116,10 +117,9 @@ def summaries(rows: list[dict[str, Any]], config: dict[str, Any]) -> dict[str, A
 
 
 def plot(rows: list[dict[str, Any]], output: Path, config: dict[str, Any]) -> None:
-    import matplotlib
-
+    matplotlib = importlib.import_module("matplotlib")
     matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharey=False)
     for axis, spot in zip(axes, config["spot_files"], strict=True):

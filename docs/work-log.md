@@ -3516,3 +3516,16 @@ Learning journal101 explains the question and limits. Codex assisted; human
 minutes not recorded. Ten unrelated main result edits were snapshotted with
 their actual bytes and remain untouched. User cutoff10a.m.Pacific November12;
 full downstream reserves apply before starting any real study.
+
+### November 12 — repair the optional plotting import before admission
+
+The first exact-source base311/base312 checks and hosted run43191822549 both
+fail strict typing: Matplotlib was imported directly in the optional plotting
+function while absent from the base environment. Relevant all-extras tests had
+passed; they did not establish base compatibility. Retain the exact failed
+logs/receipts in results/compact-sampled/failed-source-f8ded44. Replace only the
+optional plotting import with the repository's runtime optional-import pattern;
+no training/scientific fields change. Base-environment strict typing now passes
+658files; the95new focused/architecture tests pass in13.61s. Repeat the full
+source-bound base/optional/hosted cohort on the corrected revision. No real
+Hold'em trajectory or source-bound rehearsal started before these gates.
