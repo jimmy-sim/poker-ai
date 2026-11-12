@@ -3584,3 +3584,15 @@ Actual/fresh/global admission remainFalse; these dependent tiny aliases establis
 software only. Next run the fixed three NONTRAINING own cost repetitions, publish
 all own fixtures, then their three native costs. No new poker prefix or learner
 is permitted in COST scope; conservative forecasts/caps remain unchanged.
+
+### November 12 — all three no-training own costs complete
+
+All three declared own cost repetitions finish under900s each, including startup,
+source/full-prerequisite checks,108archive slots/324scores, raw replay and writes.
+Complete clocks65.935652250/66.580811209/67.018426166s (exact raw receipts retained).
+Each explicitly records sampled_training_performed=False/learner_constructed=False;
+no new real prefix or initialization. Only pinned OWN full64/1024/4096policies
+are repeated across the IO readout labels as declared stand-ins. Their labels
+are not newly learned current/average strategies. Publish ALLthree own fixtures
+and archives BEFORE any corresponding native cost reference. The forecast must
+use the maximum WHOLE-command time, not an interim pre-replay manifest timer.

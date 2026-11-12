@@ -4589,3 +4589,10 @@ published. The largest difference was about2.08e-16chips, well below the fixed
 responses, not a reference strategy to train on. The next cost runs only copy and
 score old own full-control policies as stand-ins. They cannot initialize or train
 the new sampled agent.
+
+All three own cost runs completed in65.94,66.58and67.02seconds, including the
+required replay. They exercise108archive slots and324scores each using old own
+policies, with no learner constructed. The forecast will use the slowest full
+command, not a partial timer saved before replay. The three own fixture sets are
+published together before their native cost comparisons. These timings estimate
+feasibility; they say nothing about whether the new agent plays better.
