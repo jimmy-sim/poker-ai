@@ -4657,3 +4657,10 @@ each), relevant optional checks (447 on Python 3.11; 446 and one skip on 3.12),
 and both GitHub jobs. The skip needs the original archive's exact runtime and
 is exercised on 3.11. The next step is a tiny-game rehearsal with the actual
 archive pipeline. Passing that will validate the software path, not poker strength.
+
+
+The actual tiny rehearsal now passes too: 144 saved profile combinations and
+288 player responses replay, and the independent scalar comparison agrees
+within 2.08e-16 chips. Own results were published before the comparison started.
+This is software evidence. Next comes the same diagnostic on the two known
+poker spots using only their frozen strategies; no new learning is started.

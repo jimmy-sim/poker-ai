@@ -3787,3 +3787,16 @@ No native constructed, no new training or poker strength claim; all144details
 and parent/child receipts are published here BEFORE native construction.
 Raw hosted logs retain original trailing whitespace/BOM; code/docs diff checks
 exclude those authenticated verbatim receipts rather than editing their bytes.
+
+
+### November 12 — complete tiny scalar proof before real frozen diagnosis
+
+Tiny own144profiles/288responses were public atdb348c9 BEFORE scalar-reference
+construction. Native144comparisons/all288responses pass with maximum error
+2.0816681711721685e-16chips; complete native command5.406218207997881s <180s.
+Own complete2.4802082079986576s. No new training or poker admission; positive
+information-gap branch is additionally covered by the actual independent seven-
+node fixture test, not inferred from one-to-one Kuhn aliases. Published complete
+source-bound software proof now permits only the frozen real diagnostic, within
+its original900/900/900s caps and full4800s cutoff reserve. Prior sampled accuracy
+failure stays failed. This is no new Holdem trajectory study.
