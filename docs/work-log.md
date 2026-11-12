@@ -3868,3 +3868,38 @@ Historical source/checkers stay unchanged; new sealed-source reader authenticate
 named old dependencies/Git blobs and raw own policies. No new trace outcomes yet.
 PR57 final publication local/hosted checks are still running; branch is stacked
 on its published4c5ba3c, to retarget main after checked history merge.
+
+### November 12 — information-trace implementation and first correctness checks
+
+Prospectiveca983341/PR58 precedes all new row outcomes. Implemented a sealed
+parent reader that authenticates unchanged source2670named files/Git blobs and
+replays all parent mixtures; old strict aggregate checkers are not edited or
+patched. Added restricted-best-reply-prefix trace panels, 288alias binding,
+all-row/group/street accounting, exact tie-set conflict rules, complete clocks,
+immutable/partial retention and all-case tables/terminal browser. Reusable
+receipt and no-training execution helpers reduce duplicated experiment plumbing.
+A fresh-process import blocker refuses every reference backend and patches all
+learner factories; there is no new native construction. Parent B/R scalar
+comparisons remain comparison-only, and new individual-row values are labeled
+own calculations rather than independently audited new values.
+
+Current67focused tests pass13.34s, including positive hand-calculated hidden-
+world sums for BOTHplayers, zero-support retention, overlapping action ties,
+wrong aliases/context/root identifiers, complete mocked144panel/288alias IO,
+corrupt/re-signed details, partial/report timeouts, cache/terminal navigation,
+clock failures and six-role receipt failures. Recorded tiny parent144profiles/
+288responses also replay with learner/reference constructors blocked; this is
+parent replay, not the new source-bound trace proof. Initial fixture-sharing
+import-path error was caught/fixed before this passing suite, with logs retained
+outside the repo. Ruff/817formattedfiles/strict typing686files pass. No new real
+trace outcome, probe, learned feature, training/default/admission exists yet.
+Next: full exact-source local/optional/hosted cohort, then published tiny trace
+proof before any900s real trace under unchanged3900s cutoff reserve.
+
+PR57 final local bases3152/63skip/149deselect pass576.41/562.89s; BOTH exact-head
+hosted43211159496 pass before history merge9737b7acbde53f1fdbc48b46850fcd7d6760020c.
+Hosted311894.65s and3121113.89s, same3152/63/149/one historical warning. Full
+head/log/digest/local proof retained outside repo to avoid a CI-only commit.
+Fresh main snapshot/guardedFF preserve allten unrelated bytes/status/changed-index
+entries/patches; main source/runtime guard and73focused tests21.01s pass. Complete
+main archive replay is running separately. PR58 retargeted main after the merge.

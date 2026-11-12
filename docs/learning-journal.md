@@ -4726,3 +4726,11 @@ No new feature, training, reference strategy or strength claim is part of this
 step. Implementation, source checks and the tiny rehearsal are pending. Results
 and the next decision will be added only after those gates pass. Codex assists
 with the work; personal time and understanding are not inferred.
+
+The first implementation now passes 67 focused checks. A hand-calculated tiny
+example checks that decision losses add to the information benefit for either
+player. Another catches a subtle display mistake: different first-best actions
+do not prove a conflict if the sets of equally good actions still overlap.
+Tests also cover zero-reach rows, corrupted archives, partial results and the
+new terminal browser. Full source checks and the actual tiny pipeline rehearsal
+are still pending; there are no new poker trace results yet.
