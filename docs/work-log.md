@@ -4127,3 +4127,21 @@ this complete own outcome before the next own repetition; allthree own costs
 must precede ANY nativecost. Remaining two own/three native repetitions, complete
 maxima-based forecast and checked published permit are still required. A cost
 curve is not a newly trained agent or a playing-strength result.
+
+### November 12 — all three own costs complete before native costs
+
+Own cost repetitions0/1/2 complete308.32340462499997/309.2752516670007/
+305.3145045409983s, each<900. All432unique/324raw policies/216books/30warms/
+108compositions/216logical/1152fixed conditions replay with maximumchip/unitless
+error0 and policy/ledger bytes exact. All actual poker/toy work0, initialized
+trainingpaths0, learner/native constructionFalse. D=max309.2752516670007s; the
+remaining full forecast still needs all three independent cost commands.
+Six report files (twoCSVs/summary/threePNGs) are byte-identical across allthree
+repetitions. Allthree repetition0plots visually inspected; cost-only/zero-new-
+learning titles readable, all seeds/readouts retained. Coincident paired/control
+curves are a consequence of old table reuse, not a new training result.
+Own0 published01517bf, own1 published7e8d493; this own2 publication completes the
+required all-own checkpoint BEFORE ANY nativecost construction. No changed
+code/seed/cap/gate/environment setting between repetitions; no favorable subset.
+Native0/1/2 full432/1152 scalar audits, complete forecast and checked published
+permit remain before a real study; full11100s reserve and10a.m.cutoff unchanged.

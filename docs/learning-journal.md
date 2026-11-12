@@ -4888,3 +4888,11 @@ replay checks in 308.32 seconds under 900. It reuses old own-policy tables as
 cost stand-ins: zero new poker work, learning iterations or reference
 construction. All three own runs must be public before any native cost run;
 the maxima of all fixed repetitions will determine the conservative forecast.
+
+All three own cost runs now pass: 308.32, 309.28 and 305.31 seconds, each under
+900. Every run retains and replays all 432 profiles and 1,152 fixed conditions
+with zero numerical change and exact policy/book bytes. Their two CSV tables,
+summary and three plots reproduce byte for byte. The charts were visually
+checked; their labels say zero new learning. The paired control and treatment
+coincide here because they reuse old tables by construction, not because a new
+training experiment found no difference. The independent cost runs are next.
