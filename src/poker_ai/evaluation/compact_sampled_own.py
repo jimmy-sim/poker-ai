@@ -293,7 +293,7 @@ def gather(
         partitions=layouts,
         raw_states_checked=108,
         readouts_checked=len(rows),
-        sampled_training_performed=False,
+        replay_sampled_training_performed=False,
     )
 
 
@@ -464,6 +464,9 @@ def run(
         training_batch={},
         protocol_sha256=inputs.SPEC_SHA,
         partial_evidence=None,
+        trajectory_collection="not_started",
+        sampled_training_performed=False,
+        new_holdem_training_performed=False,
     )
 
     def persist() -> None:
@@ -508,8 +511,19 @@ def run(
             admission=str(admission) if admission else None,
             admission_sha256=digest(admission) if admission else None,
         )
+        saved.update(
+            trajectory_collection="started_progress_unknown",
+            sampled_training_performed=None,
+            new_holdem_training_performed=None if scope == "real" else False,
+        )
+        persist()
         run_batch(
             36, config["worker_count"], job, payload, deadline, saved["training_batch"]
+        )
+        saved.update(
+            trajectory_collection="completed_36_paths",
+            sampled_training_performed=True,
+            new_holdem_training_performed=scope == "real",
         )
         deadline.check()
         captured = gather(root, output.parent, saved, score=True)
@@ -540,6 +554,9 @@ def replay(root: Path, path: Path) -> dict[str, Any]:
         or saved["fresh_global_admission"] is not False
         or saved["new_agent_default"] is not False
         or saved["protocol_sha256"] != inputs.SPEC_SHA
+        or saved["trajectory_collection"] != "completed_36_paths"
+        or saved["sampled_training_performed"] is not True
+        or saved["new_holdem_training_performed"] is not (saved["scope"] == "real")
     ):
         raise ArithmeticError("partial or changed sampled own receipt")
     inputs.check_source(root, saved["source"])

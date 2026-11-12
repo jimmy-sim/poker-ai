@@ -1,5 +1,6 @@
 """Audited known-game results; seed ranges are descriptive, not confidence bands."""
 
+import csv
 import importlib
 import json
 import statistics
@@ -155,6 +156,76 @@ def plot(rows: list[dict[str, Any]], output: Path, config: dict[str, Any]) -> No
     plt.close(fig)
 
 
+def tables(
+    folder: Path,
+    rows: list[dict[str, Any]],
+    summary: dict[str, Any],
+    config: dict[str, Any],
+) -> list[Path]:
+    """Full numeric readouts plus a short primary-final table; preserve every seed."""
+    fields = (
+        *inputs.IDENTITY,
+        "total_node_work",
+        "iteration",
+        "exploitability_pot",
+        "value_player_zero_chips",
+        "best_response_zero_chips",
+        "best_response_one_chips",
+        "coverage",
+    )
+    numeric = folder / "all-readouts.csv"
+    paired = folder / "paired-final-linear.csv"
+    markdown = folder / "tables.md"
+    for path in (numeric, paired, markdown):
+        if path.exists() or path.is_symlink():
+            raise FileExistsError("retain previous report tables")
+    with numeric.open("x", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows({k: row[k] for k in fields} for row in rows)
+    differences = summary["final_linear_paired"]
+    with paired.open("x", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(differences[0]))
+        writer.writeheader()
+        writer.writerows(differences)
+    lines = [
+        "# Fixed-work compact sampled comparison",
+        "",
+        "Known restricted games; final LINEAR averages. "
+        "Lower exploitability is better.",
+        "Three fixed seeds; ranges are descriptive, not confidence intervals.",
+        "",
+        "| Game | Representation | Median % pot | Worst % pot | "
+        "All three seeds % pot |",
+        "|---|---|---:|---:|---|",
+    ]
+    final = config["sampled"]["node_work_checkpoints"][-1]
+    for row in summary["curves"]:
+        if row["readout"] == "linear" and row["work_checkpoint"] == final:
+            seeds = ", ".join(f"{100 * v:.9g}" for v in row["values"])
+            lines.append(
+                f"| {Path(row['spot_file']).stem} | {row['representation']} | "
+                f"{100 * row['median']:.9g} | {100 * row['maximum']:.9g} | {seeds} |"
+            )
+    lines.extend(
+        [
+            "",
+            "Exact AND candidate must meet median <=1% and worst <=2.5% in BOTH games.",
+            "Other readouts cannot replace this declared primary.",
+            "All324 readouts and30 signed paired baseline effects "
+            "are in the CSV files.",
+            "Negative candidate-minus-baseline favors candidate; "
+            "every seed is retained.",
+            "Whole average coverage includes exact warm mass; "
+            "see result.json support rows",
+            "for post-warm/all/river support. No default/fresh/global strength claim.",
+            "",
+        ]
+    )
+    markdown.write_text("\n".join(lines))
+    return [numeric, paired, markdown]
+
+
 def run(
     root: Path, own_path: Path, native_path: Path, output: Path, started: float
 ) -> dict[str, Any]:
@@ -196,6 +267,13 @@ def run(
         if figure.exists():
             raise FileExistsError("retain existing result plot")
         plot(summary["curves"], figure, config)
+        outputs = tables(output.parent, original["rows"], summary, config)
+        superiority = {
+            r["baseline"]: assessment["thresholds_passed"]
+            and r["both_games_paired_median_better"]
+            for r in summary["baseline_specific_superiority"]
+            if "both_games_paired_median_better" in r
+        }
         saved.update(
             inputs=[bound(root, own_path), bound(root, native_path)],
             assessment=assessment,
@@ -203,6 +281,18 @@ def run(
             sampled_known_game_gates_passed=assessment["thresholds_passed"],
             actual_admission=assessment["thresholds_passed"],
             plot=bound(root, figure),
+            tables=[bound(root, path) for path in outputs],
+            baseline_specific_superiority_admitted=superiority,
+            dominates_all_five_baselines=len(superiority) == 5
+            and all(superiority.values()),
+            storage=dict(
+                partitions=original["partitions"],
+                parent_lifetime_peak_rss_bytes=original["peak_process_rss_bytes"],
+                workers=original["worker_receipts"],
+                limitation=(
+                    "Row counts/key bytes/lifetime RSS are distinct measurements"
+                ),
+            ),
             support_rows=[
                 {
                     k: v

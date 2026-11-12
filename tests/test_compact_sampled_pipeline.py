@@ -1,7 +1,10 @@
 """Complete tiny archive and failure fixtures; never a real poker study permit."""
 
 import copy
+import csv
 import json
+import shutil
+import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -9,6 +12,7 @@ from typing import Any
 import pytest
 
 from poker_ai.evaluation import compact_sampled_inputs as inputs
+from poker_ai.evaluation import compact_sampled_own as runner
 from poker_ai.evaluation.compact_sampled_clock import measurement, schedule
 from poker_ai.evaluation.compact_sampled_own import (
     check_batch,
@@ -16,7 +20,7 @@ from poker_ai.evaluation.compact_sampled_own import (
     journal_rows,
     partial,
 )
-from poker_ai.evaluation.compact_sampled_report import summaries
+from poker_ai.evaluation.compact_sampled_report import summaries, tables
 from poker_ai.postflop.cell_process import THREAD_ENV, partition
 from poker_ai.postflop.compact_sampled_capture import Journal, collect
 from poker_ai.postflop.compact_sampled_native_checks import (
@@ -95,7 +99,7 @@ def test_whole_grid_and_independent_pipe_journal_agreement(
     assert len(captured["warms"]) == 36
     assert len(captured["points"]) == 108
     assert len(captured["rows"]) == 324
-    assert captured["sampled_training_performed"] is False
+    assert captured["replay_sampled_training_performed"] is False
     assert all(
         r["previous_node_work"] < r["work_checkpoint"] <= r["total_node_work"]
         for r in captured["points"]
@@ -315,7 +319,7 @@ def test_clock_rejects_fabricated_success(tmp_path: Path) -> None:
         measurement(path, "study")
 
 
-def test_signed_result_keeps_unfavorable_seeds() -> None:
+def test_signed_result_keeps_unfavorable_seeds(tmp_path: Path) -> None:
     config = contract(ROOT)
     rows = [
         dict(
@@ -343,3 +347,98 @@ def test_signed_result_keeps_unfavorable_seeds() -> None:
     )
     with pytest.raises(ArithmeticError):
         summaries(rows[:-1], config)
+    # Explicit synthetic values test export completeness, never poker accuracy.
+    exported = [
+        dict(
+            row,
+            total_node_work=row["work_checkpoint"],
+            iteration=2,
+            value_player_zero_chips=0.0,
+            best_response_zero_chips=1.0,
+            best_response_one_chips=1.0,
+            coverage=1.0,
+        )
+        for row in rows
+    ]
+    paths = tables(tmp_path, exported, result, config)
+    with paths[0].open(newline="") as stream:
+        saved = list(csv.DictReader(stream))
+    assert len(saved) == 324
+    assert {r["readout"] for r in saved} == set(inputs.READOUTS)
+    with paths[1].open(newline="") as stream:
+        paired = list(csv.DictReader(stream))
+    assert len(paired) == 30
+    assert all(float(r["candidate_minus_baseline_pot"]) > 0 for r in paired)
+    assert "not confidence intervals" in paths[2].read_text()
+    with pytest.raises(FileExistsError):
+        tables(tmp_path, exported, result, config)
+
+
+def test_completed_collection_does_not_inherit_replay_no_training_flag(
+    archive: tuple[Path, dict[str, Any]],
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    folder, original = archive
+    output = tmp_path / "own.json"
+    monkeypatch.setattr(inputs, "source", lambda *a, **k: original["source"])
+    monkeypatch.setattr(inputs, "check_source", lambda *a, **k: None)
+    monkeypatch.setattr(runner, "runtime", lambda: dict(fixture=True))
+    monkeypatch.setattr(runner, "check_runtime", lambda *a, **k: None)
+    monkeypatch.setattr(
+        "poker_ai.evaluation.compact_sampled_gate.require_checks",
+        lambda *a, **k: dict(fixture=True),
+    )
+
+    def completed_batch(*args: Any) -> None:
+        started = json.loads(output.read_text())
+        assert started["sampled_training_performed"] is None
+        assert started["trajectory_collection"] == "started_progress_unknown"
+        for name in ("warms", "states"):
+            shutil.copytree(folder / name, tmp_path / name)
+        for path in folder.glob("*.jsonl"):
+            shutil.copyfile(path, tmp_path / path.name)
+        args[5].update(copy.deepcopy(original["training_batch"]))
+
+    monkeypatch.setattr(runner, "run_batch", completed_batch)
+    saved = runner.run(
+        ROOT, output, "software", tmp_path / "mock-checks.json", time.perf_counter()
+    )
+    assert saved["status"] == "completed", saved["failure"]
+    assert saved["sampled_training_performed"] is True
+    assert saved["new_holdem_training_performed"] is False
+    assert saved["replay_sampled_training_performed"] is False
+    assert saved["replay"]["sampled_training_performed"] is False
+
+
+def test_interrupted_real_collection_keeps_progress_unknown(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(inputs, "source", lambda *a, **k: dict(fingerprint=FINGERPRINT))
+    monkeypatch.setattr(runner, "runtime", lambda: dict(fixture=True))
+    monkeypatch.setattr(runner, "check_runtime", lambda *a, **k: None)
+    monkeypatch.setattr(
+        "poker_ai.evaluation.compact_sampled_gate.require_checks",
+        lambda *a, **k: dict(fixture=True),
+    )
+    monkeypatch.setattr(
+        "poker_ai.evaluation.compact_sampled_gate.require_admission",
+        lambda *a, **k: dict(fixture=True),
+    )
+    permit = tmp_path / "mock-permit.json"
+    permit.write_text("{}")
+    output = tmp_path / "own.json"
+
+    def interrupted_batch(*args: Any) -> None:
+        raise ChildProcessError("mock worker died before a confirmed checkpoint")
+
+    monkeypatch.setattr(runner, "run_batch", interrupted_batch)
+    saved = runner.run(
+        ROOT, output, "real", tmp_path / "mock-checks.json", time.perf_counter(), permit
+    )
+    assert saved["status"] == "incomplete"
+    assert saved["sampled_training_performed"] is None
+    assert saved["new_holdem_training_performed"] is None
+    assert saved["partial_evidence"]["complete"] is False
+    assert saved["actual_admission"] is False

@@ -3529,3 +3529,20 @@ no training/scientific fields change. Base-environment strict typing now passes
 658files; the95new focused/architecture tests pass in13.61s. Repeat the full
 source-bound base/optional/hosted cohort on the corrected revision. No real
 Hold'em trajectory or source-bound rehearsal started before these gates.
+
+### November 12 — distinguish collection from read-only replay
+
+Before experiments, self-review found that gather's replay-only no-training flag
+would be copied into an own training manifest. Separate replay-only metadata
+from actual collection. Completed collection records sampled training; tiny
+scope explicitly records no Hold'em training. A started/interrupted collection
+records unknown progress, with journal receipts, instead of asserting no training.
+Two regression tests exercise completed archive orchestration and interrupted
+real-scope orchestration with mocked workers/permits; they authorize no study.
+Focused new/architecture97tests pass14.40s; base strict typing658files and Ruff
+lint/format pass. Export all324 numeric readouts and30 signed final LINEAR
+candidate-baseline seed effects to CSV plus a primary-final Markdown table.
+Superiority admission requires the full accuracy gates and each baseline's
+two-game paired sign; storage/key/lifetime-RSS quantities remain distinct.
+Scientific seeds/configs/caps/method unchanged. Repeat the mandatory exact-source
+cohort on this corrected metadata/report revision before the first rehearsal.

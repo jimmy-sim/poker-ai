@@ -4558,3 +4558,11 @@ any new poker training; the failed logs remain in the result folder and CI
 history. Passing tests with every extra installed was useful, but it did not
 prove that the smaller basic installation worked. The corrected source must pass
 the whole required check set before the rehearsal begins.
+
+Self-review also caught a label that needed separating: “this replay did no
+training” describes checking saved files, while the original collection really
+does train. The corrected manifests state those separately. If collection starts
+and a worker disappears before a confirmed checkpoint, progress is **unknown**.
+Two regression tests cover completed and interrupted orchestration. The report
+exports every readout and signed seed comparison, including cases unfavorable
+to the candidate; a paired advantage alone cannot bypass the accuracy gates.
