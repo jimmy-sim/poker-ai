@@ -4621,3 +4621,9 @@ promotion: the harder game's candidate median is2.390%of the pot, above the
 fixed1%limit. Its worst seed is2.495%, just below the separate2.5%worst-seed
 limit. Passing one limit does not cancel failing the other. Every seed/control
 will be published before independent checking; the default agent stays unchanged.
+
+The independent audit passed all324readouts in41.16seconds, with maximum
+error1.28e-13chips. That supports the calculation, not the accuracy gate: the
+candidate's harder-game median remains2.390%pot. Exact/raw-public are0.292%in
+this same comparison. The smaller description still needs a remedy before
+promotion. All results stay in the report, including the failed limit.

@@ -3653,3 +3653,14 @@ Candidate fails fixed medium median<=1%pot despite worst<=2.5%; do not change
 limits/readout/seed grid. Exact passes. No default/fresh/global promotion. Publish
 ALLown evidence before constructing the actual native reference. All-control
 whole average coverage includes warm mass; report post-warm support separately.
+
+### November 12 — actual sampled scalar audit passes; quality failure retained
+
+ALLown9177081 was public before actual OpenSpiel construction. Native checks
+all324policy values/BOTH-BR roots, maximum error1.27897692436818e-13chips<1e-9. Complete
+command41.155461709s<900, pinned OpenSpiel2.0.2/Apache2 license verified; no
+reference policy used in training. Numerical verification passes; the candidate
+medium LINEAR median2.389912005%pot still misses the preset1%limit. Do not
+change limits or select a different readout/seed. Publish audit before authenticated
+report; full result tables/plot and failure explanation are next. Default/fresh/
+global admission remain unchanged.
