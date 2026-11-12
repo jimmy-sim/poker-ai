@@ -82,6 +82,13 @@ passes its complete software rehearsal and all fixed numerical cost audits, but
 training was started. [Journal 104](docs/learning-journal.md#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
 explains the decision; full replay profiling comes before optimization.
 
+The [full replay profile](docs/compact-replay-profile.md) now identifies repeated
+perfect-recall validation as the largest exclusive Python cost in this one
+complete replay. All computed summaries and policy/book bytes match before and
+after instrumentation. [Journal 105](docs/learning-journal.md#105-measure-why-verification-is-expensive-before-optimizing-it)
+explains the 2,832 checks, the partial outer OS-resource capture and why a cache
+must detect changed structure. This is verification software, not new training.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:

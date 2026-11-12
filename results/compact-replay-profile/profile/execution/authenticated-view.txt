@@ -1,0 +1,30 @@
+Complete cost replay; identical plain/profile results; no new learning
+plain: 188.008402 whole-child seconds
+profile: 289.352565 whole-child seconds
+Raw functions: 2017; caller edges: 4722
+self_seconds:
+  44.089108s  2832 calls  src/poker_ai/postflop/reply_trace.py:11 require_recall
+  11.782901s  822853 calls  stdlib/json/encoder.py:205 JSONEncoder.iterencode
+  9.901555s  13999344 calls  site-packages/numpy/_core/numeric.py:679 flatnonzero
+  9.874545s  8108 calls  src/poker_ai/finite.py:70 ArrayTree.reaches
+  9.092697s  22462 calls  stdlib/json/decoder.py:343 JSONDecoder.raw_decode
+  8.750881s  113868 calls  ~:0 <method 'update' of '_hashlib.HASH' objects>
+  7.595495s  16570130 calls  ~:0 <method 'tolist' of 'numpy.ndarray' objects>
+  6.201280s  13999344 calls  site-packages/numpy/_core/fromnumeric.py:1879 ravel
+  5.806150s  24184222 calls  ~:0 <built-in method builtins.sorted>
+  5.732316s  2049568 calls  src/poker_ai/evaluator.py:151 evaluate_best
+  5.021957s  16294104 calls  ~:0 <built-in method builtins.any>
+  4.965043s  18686153 calls  src/poker_ai/postflop/parallel_profile.py:30 same
+cumulative_seconds (inclusive times overlap):
+  287.884152s  1 calls  scripts/profile_compact_replay.py:113 read_with_actual
+  287.881128s  1 calls  src/poker_ai/evaluation/compact_opponent_cli.py:67 read
+  287.856959s  1 calls  src/poker_ai/evaluation/compact_opponent_cli.py:72 _read
+  159.793191s  1 calls  src/poker_ai/evaluation/compact_opponent_sources.py:51 load
+  159.784877s  1 calls  src/poker_ai/evaluation/compact_opponent_sources.py:56 _load
+  124.664110s  1 calls  scripts/profile_compact_replay.py:127 read_with_actual.<locals>.record
+  124.663812s  1 calls  src/poker_ai/evaluation/opponent_learning_own.py:286 replay
+  103.325174s  432 calls  src/poker_ai/postflop/learning_training.py:56 replay_snapshot
+  103.238523s  432 calls  src/poker_ai/postflop/learning_training.py:37 replay_detail
+  90.602133s  432 calls  src/poker_ai/postflop/controlled_scoring.py:88 ScoringContext.score
+  75.244400s  2832 calls  src/poker_ai/postflop/reply_trace.py:11 require_recall
+  70.349253s  1 calls  src/poker_ai/evaluation/opponent_learning_sources.py:218 load

@@ -97,7 +97,7 @@ measurements cover supervisor and children together, not per-child CPU times.
 The already implemented whole-child wall clocks remain the900-second gate;
 metadata capture and administration do not substitute for, or shorten, them.
 The fixed900/1,800caps, order, input corpus and all source/constructor checks
-remain unchanged. No formal profiling has run yet.
+remain unchanged. This plan preceded formal profiling.
 
 
 The instrumented source now observes the actual computed replay return exactly once, in addition to the full stored receipt returned by the frozen reader. This observer forwards every original argument/result and changes no arithmetic or source guard. Exact pair identity includes both computed and stored summaries. Each child records its actual runtime/hardware; each supervisor measurement records OS-reported reaped-child user/system CPU (possibly partial for failed children). Startup is charged against the original monotonic cap before waiting. These corrections precede any formal profiling and require a fresh complete source cohort; older checks cannot admit changed source.
@@ -134,3 +134,63 @@ No. These are diagnostic replays of existing own data, not new training or fixed
 cost repetitions. An optimized implementation must have its own correctness,
 source checks, fixed costs and complete conservative forecast. The original
 failed admission and numerical/strength limits remain.
+
+
+## Recorded full replay profile — November 12, 2026
+
+**Core replay identity passes; expanded outer OS resource recording is partial.**
+The complete plain and instrumented children return 0 in 188.008402s and
+289.352565s, each under 900. Their exact pair identity passes in477.363457s
+under 1,800. Both actual recomputed summaries and full stored receipt hashes
+match: 324 raw policies,216 books,30 warm origins,108 compositions,216 logical profiles,
+432 unique scored profiles and 1,152fixed conditions; zero chip/unitless error and
+exact policy/book bytes. No learner/reference construction or new admission.
+
+All 2,017 raw function entries and 4,722 caller edges are retained, alongside the
+supplemental binary profile, actual runtime/hardware, per-child OS-reported
+CPU and command/metadata/raw logs. [Manifest and limits](../results/compact-replay-profile/profile/manifest.json)
+record every byte. The timed process uses Python3.11.17/NumPy2.4.6 on the recorded
+arm64 macOS 27.2.1 workstation with 10 logical CPUs; exact CPU-model query is
+unavailable and is recorded as such.
+
+The outer `/usr/bin/time -lp` wrapper returns 1 because macOS denies
+`sysctl kern.clockrate`. Both child return codes and the pair's numerical/cap
+checks pass. The wrapper's raw failure is retained, with available wall/user/sys
+values; expanded memory/resource counters are unavailable. No rerun replaces
+this outcome. This is not a claim of successful full OS resource capture or
+memory savings.
+
+The largest exclusive Python cost is `require_recall`: 2,832 calls,
+44.089108s exclusive and 75.244400 s inclusive.
+The entire profiled reader takes 287.884152 s; exclusive recall
+work is 15.31% of that profiled time.
+Inclusive recall work is 26.14%,
+but overlaps the source-loading/scoring paths below and must not be added again.
+
+| Caller of the recall check | Calls | Inclusive recall seconds |
+|---|---:|---:|
+| `response_profile` | 1760 | 49.616282 |
+| `river_switches` | 864 | 20.584490 |
+| `ScoringContext.__post_init__` | 200 | 4.818562 |
+| `build_view` | 8 | 0.225066 |
+
+The source loader takes 159.793191inclusive seconds and the subsequent full
+archive replay 124.663812. These component totals include other functions and
+are not independent exclusive budgets. Scoring and nested replay calls also
+overlap. All raw data remains available beyond the viewer's top 12 display rows.
+The one ordered pair measures instrumentation under these conditions; it is
+not a population speed estimate, a new fixed-cost repetition or new poker play.
+
+The next question is whether an already proven equal-depth/perfect-recall
+property can be reused when the exact fields that define it stay unchanged.
+A candidate must detect structural mutations, preserve all rejection cases and
+match the complete original replay. It must not remove validation, touch the
+historical checker or claim that this profile rescues the failed 2ace forecast.
+Any cache needs its own prospective protocol, source checks and controlled
+comparison before a performance claim or production integration.
+
+Browse the authenticated retained evidence:
+
+```sh
+.venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
+```

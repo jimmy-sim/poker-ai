@@ -2925,7 +2925,7 @@ AI-assisted work; no additional human practice or time was reported.
 
 The independent program checked all144 profiles and1,152 fixed targets. Its
 largest scalar discrepancy was about1.35×10⁻¹³ chips. The complete command took
-111.67 seconds; twice that stays below the fixed900-second guard.
+111.67 seconds; twice that stays below the fixed 900-second guard.
 Own evidence was published first, and reference strategies never entered
 training. The exact child receipt is retained.
 
@@ -4963,3 +4963,30 @@ profile is next. It will retain every raw function and caller entry, actual
 runtime/hardware and CPU use, and exact comparison of recomputed summaries.
 This measures verification software, not a stronger poker strategy. Codex
 assists with implementation and execution; personal hours or mastery are not inferred.
+
+
+The full pair is now complete. The normal replay takes 188.01 seconds and the
+instrumented replay 289.35, within the fixed 900-second caps. Both recomputed
+summaries match exactly, with zero numerical change and exact policy/book bytes
+across the full archive. The 2,017 functions and 4,722 caller relationships are all
+retained, including entries outside the short terminal display.
+
+The clearest next target is the perfect-recall check. It verifies that a player
+has not forgotten earlier information or choices needed by the response method.
+The same checker runs 2,832 times here. Its own Python work takes 44.09 seconds of
+the instrumented run; including its called helpers takes 75.24. Those inclusive
+times overlap other work, so they cannot be added to the source-loader total.
+This suggests testing a reusable proof for unchanged tree structure. It does
+not justify deleting the check or using an old proof after the structure changes.
+
+One resource-recording failure remains visible: macOS denies the expanded
+kernel query requested by the outer time tool. Both replay processes pass,
+but that recorder returns 1. We keep its failure and the available wall/CPU
+records; full memory/resource counters are unavailable. The trial is not rerun.
+The [method and raw evidence](compact-replay-profile.md#recorded-full-replay-profile--november-12-2026)
+explain the distinction. This profile changes no poker strategy and does not
+admit the failed training experiment. A controlled cache test is the next question.
+
+```sh
+.venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
+```
