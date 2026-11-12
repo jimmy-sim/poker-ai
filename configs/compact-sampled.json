@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "prospective_sampled_pipeline",
+  "base_contract": "configs/compact-public-range.json",
+  "base_contract_sha256": "794c4938ce7bbe9d1170fcc091e5dc5f02ab7583f58e776eec461a4cb07d5d70",
+  "input_sha256": {
+    "configs/compact-public-range.json": "f2a5d7630580e8731c652c29363f970a361a76e10b040850e5bb57e546f31314",
+    "results/compact-full-control/own.json": "2aa37c6df4a7d76303605253b2b943b2581adee4e93eea4edff9c2d900169102",
+    "results/compact-full-control/native.json": "b5d987905fa02c5f0bf89d085c7d25c94cc07529f2e9a78a15db7db29a130f07",
+    "results/compact-full-control/result.json": "bb9ba546f0be188bdc35667ac0fe1bd3d2072ce04edbef280eb8acf2c9b15ef3",
+    "results/compact-full-control/checks.json": "fb7e1dfd58cba22c831ca2ae1bc3f4fcb0b563214004bcedf15c042b0b36e934",
+    "results/reduced-batch-study/own.json": "cc7c4477f47ac012d3571d18a86788f9d4301142ae47e050b1d3b2aa505476b2",
+    "results/reduced-batch-study/native.json": "9fcf56d986151d7871634f2bc3e9976b87edea592d42258c10511856f82f6968"
+  },
+  "prior_source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+  "worker_count": 3,
+  "start_method": "spawn",
+  "software_work_labels": [
+    1000,
+    3000,
+    10000
+  ],
+  "software_maximum_seconds": 180,
+  "cost_repetitions": [
+    0,
+    1,
+    2
+  ],
+  "cost_maximum_seconds": 900,
+  "forecast_safety_factor": 4,
+  "full_cost_source_iterations": [
+    64,
+    1024,
+    4096
+  ],
+  "superiority": "Report each of five candidate-baseline paired-seed primary-final differences; positive median in BOTH games required for each baseline-specific superiority claim; dominance across all requires all five, plus primary accuracy admission.",
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "scope": "Known-game fixed-work B4 sampled comparison only; no fresh/global/default promotion. Scientific design/caps/seeds inherited unchanged from base contract."
+}
