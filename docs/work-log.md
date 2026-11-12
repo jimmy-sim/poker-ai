@@ -3708,3 +3708,34 @@ before actual900s own/native diagnostic. Publish own before reference, preserve
 partials, use pinned scalar-only Apache2reference. Full4800s downstream reserve
 must fit the user's10a.m.Pacific cutoff. Method/config/journal102 published first;
 no outcomes or remedy choice claimed. PR56 final publication checks still run.
+
+### November 12 — fixed-opponent implementation and first correctness checks
+
+Prospective62aa441/PR57 precedes implementation. Added original-source compatible
+readers, ownership-bit-preserving SS/SF/FS/FF mixtures, immutable own reply/detail
+archives, E=W+I and fixed-opponent root/information/EV identities, complete clocks/
+cutoff guard, scalar-only native schema/replay and all-case reports. No training
+entry point or fresh RNG draws. Current focused new/architecture69tests pass
+20.92s; lint/format pass and strict typing672files passes. Includes literal
+seven-node hidden-world nonzero-information/within gains and actual native check,
+two-player Kuhn zero-support root invariance, complete mocked144details/288target
+IO, corrupted/re-signed policies, missing/duplicate rows, partial retention,
+fake native error/source/license fields and clock/source-check failure paths.
+The published tiny-source adapter replays324sampled readouts/72full policies and
+selects48sources with sampled/full/reference constructors blocked. These are
+software tests, not new real diagnostic outcomes or a formal rehearsal count.
+Selected OpenSpiel2.0.2 Apache2license was read earlier November12; its new pinned
+environment copy matches cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.
+Original full/sampled source maps are verified as unchanged subsets/Git blobs;
+no strict historical checker was edited. Complete exact-source base/optional/
+hosted cohort and published-own144-profile software proof remain required before
+real diagnosis. All original scientific caps/seeds and failed sampled gate stay.
+
+PR56 final publication BOTHCI43202520424 and both immutable bases pass atccb0c82
+before history mergea53bda02840bcb78c4027408fa3e91c3a69f21cf. Main guarded FF,
+3.11.17/NumPy2.4.6/Numba0.68.1/module/fingerprint guard,97focused tests14.44s,
+full108-state/36-warm/324-readout replay0 in17.648811s all pass. Fresh snapshot
+and post-test checks preserve allten unrelated user bytes/status/index entries/
+patches. Raw finalCI/head/log/local proofs retained outside repo; no CI-only
+commit. Main-push repeat43204968981 is separately in progress. PR57 retargeted
+from dependent branch to main. No stronger/default/fresh/global admission.

@@ -4628,3 +4628,16 @@ The implementation, tests, checked-source tiny rehearsal and numerical audit
 remain pending. Own evidence must be public before reference comparison. The
 previous failed learning gate and default agent remain unchanged. Codex assists
 with the work; no personal learning time or understanding is inferred.
+
+The first implementation checks now pass 69 focused tests. They include a tiny
+hand-calculated hidden-world example where finer information has a real benefit,
+a two-player example with zero-probability actions, corrupted archive cases, and
+a complete mocked four-way grid. Those are software checks, not poker outcomes.
+The saved tiny input archives also replay with learner/reference constructors
+blocked. Next come full local and hosted source checks, then the published-own
+software rehearsal before any real diagnostic results.
+
+The previous comparison is now merged in PR #56. Main passed 97 focused tests
+and replayed all 324 readouts with zero metric change; all ten unrelated local
+result edits were preserved. That completes the negative comparison, not the
+project's broader strength goal.
