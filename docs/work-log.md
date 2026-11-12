@@ -4275,3 +4275,8 @@ Browse the authenticated retained evidence:
 ```sh
 .venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
 ```
+
+
+### November12 — prospective recall-proof cache comparison
+
+The full profile points to repeated recall checks. The [prospective cache plan](recall-proof-cache.md) tests a content-hash certificate: if the exact checked fields change, run the original checker again; never cache a failed check. A fixed uncached/cached whole-archive pair must preserve actual replay results and all policy/book bytes. No implementation or cache speed result exists yet. Required source checks come before timing; if the full caps/CI/save reserve do not fit by10a.m., stop at tested source. The current model and failed admission remain unchanged. Codex assists; personal time or mastery is not inferred.
