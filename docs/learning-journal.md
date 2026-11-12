@@ -88,6 +88,10 @@ cards remove from our own range. In the previously weak case it reduces local
 conflicting groups from 23 to four. This is checked saved-data diagnosis; it
 has not trained a stronger feature or changed the agent.
 
+Step 99 defines a compact candidate from that finding: summarize which kinds
+of hands our public range can still contain, then store the binned summary in
+one 30-bit word. Definition and tests precede compression or learning results.
+
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
 not established a competitive Hold'em agent.
@@ -4258,6 +4262,32 @@ both focused optional suites pass all 55 tests. These include checking every
 actual saved detail and every number in the report. The measured source and
 data remain unchanged. The exact check records are linked from the method;
 the PR records the final GitHub conclusions before merge.
+
+## 99. Keep the distinction without listing every possible hand
+
+**November 11, 2026 — issue #4; prospective definition.**
+
+The previous diagnosis stored an availability flag for every possible hand.
+That list grows with the range. This candidate asks a smaller question: how much
+of our original range is blocked, and how much can still make each kind of hand,
+such as a pair, full house or quads?
+
+It keeps the old description and adds this public summary only on the river.
+Ten values go into eight fixed intervals and pack into one 30-bit number. That
+bounds the added description; it does not prove the whole model uses less memory
+or plays better. Pooling can still merge important hands.
+
+For example, 9h leaves our alternative 9c9d available as quads on the recorded
+board; 9d removes it. The summary notices this without keeping every identity.
+It must not remove alternatives just because they share a card with our actual
+private hand: the opponent cannot see that hand.
+
+The [fixed definition and acceptance plan](compact-public-range.md) precedes
+implementation. Tests will check arithmetic, privacy, packing and legal groups.
+Fictional metric tables test future pass/fail rules; they are not poker results
+or permission to train. Stop at the tested definition. Actual compression and
+learning need separate source-bound stages; the earlier failure remains.
+Codex-assisted; no personal practice, hours or mastery are inferred.
 
 ## Your own learning notes
 

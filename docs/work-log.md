@@ -3325,3 +3325,18 @@ timestamp spaces/BOM preserved verbatim, documented in complete/README.md;
 code/docs diff check excluding only those two raw logs passes. Both final
 hosted artifact jobs on the final PR head remain a merge gate; PR53 records
 their conclusions without manufacturing an independent human review.
+
+### November 11 — prospective compact public-range candidate
+
+Issue4 comment6816637695 fixes ONE texture_range_q8_own_q8_b8 candidate before
+code/measurement: old parent plus river public-own-prior blocked/nine-category
+unconditional exact masses, q8 bins packed30bits. No actual-own filtering of
+alternatives, hidden opponent/future/policy/posterior input or joint vector.
+Config binds model/spots/C8 evidence and canonical contexts. Same six-control
+full72 and later324sampled-readout inventories/gates fixed prospectively; old
+thresholds/caps/seeds/failure/default untouched. This milestone ONLY definition,
+encoder/structural/privacy tests and SYNTHETIC metric assessors; no actual row/
+compression/savedQ/learning measurement. Actual admission alwaysfalse.
+Main repeatCI43164682908 BOTHpassed; fresh snapshot063713UTC captures allten
+current unrelated user edits before isolatedbranch. PriorPR53finalhostedlogs
+retained as OLD source evidence. Journal99 explains plannedscope in plain English.
