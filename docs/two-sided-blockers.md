@@ -168,7 +168,17 @@ selections/navigation/invalid rank/EOF with constructors blocked,20.441678459/
 Both figures were visually inspected. Formatting is a separate postprocessing
 command (15.613303416s in the first report), not a new scientific clock. Exact
 records are in `results/two-sided-blockers-checks`; the original Matplotlib
-font-cache warning is retained. Final artifact checks/CI remain before merge.
+font-cache warning is retained. Final artifact checks and both GitHub jobs are
+required before merge; [PR #53](https://github.com/jimmy-sim/poker-ai/pull/53)
+records their conclusions.
+
+Final immutable result88178f5 checks also pass: both full bases have2,816passed/
+58skip/149deselect (514.55/493.73s), complete lint/format/mypy623files/hooks and
+before/after source/runtime/module guards. Focused ALL-EXTRAS55tests pass
+17.89/16.43s, including the actual complete cache/report regressions. Exact
+[final local receipts](../results/two-sided-blockers-checks/final-local/summary.json)
+retain those outcomes. This later checkpoint changes documentation/evidence
+only; the measured source fingerprint and raw cache remain unchanged.
 
 Browse the published cache after updating the project:
 

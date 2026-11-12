@@ -4249,8 +4249,15 @@ tables](two-sided-blockers.md) retain the support weights, zero outcomes and
 limits. The [new terminal exercise](terminal-two-sided-lab.md) walks through
 the browser. Next, any compact feature needs its own declared learning test;
 this milestone does not promote a default or erase the earlier failed gate.
-Final publication checks/CI remain before merge. Codex-assisted; personal
-practice or hours are not inferred.
+Final publication checks and both GitHub jobs are required before merge; see
+[PR #53](https://github.com/jimmy-sim/poker-ai/pull/53) for their conclusions.
+Codex-assisted; personal practice or hours are not inferred.
+
+**Publication checks:** Both complete final environments pass 2,816 tests, and
+both focused optional suites pass all 55 tests. These include checking every
+actual saved detail and every number in the report. The measured source and
+data remain unchanged. The exact check records are linked from the method;
+the PR records the final GitHub conclusions before merge.
 
 ## Your own learning notes
 

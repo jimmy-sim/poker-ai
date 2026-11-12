@@ -1,0 +1,47 @@
+{
+  "source_commit": "88178f54f0fc5c5bd4459e2e361b30f9b2e99dff",
+  "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+  "records": [
+    {
+      "name": "base311",
+      "status": "passed",
+      "checked_commit": "88178f54f0fc5c5bd4459e2e361b30f9b2e99dff",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 528.4606571250001,
+      "setup_and_check_seconds": 544.1199871670001,
+      "pytest_result": "2816 passed, 58 skipped, 149 deselected in 514.55s (0:08:34)"
+    },
+    {
+      "name": "base312",
+      "status": "passed",
+      "checked_commit": "88178f54f0fc5c5bd4459e2e361b30f9b2e99dff",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 508.83639645799985,
+      "setup_and_check_seconds": 524.6967058750001,
+      "pytest_result": "2816 passed, 58 skipped, 149 deselected in 493.73s (0:08:13)"
+    },
+    {
+      "name": "optional311",
+      "status": "passed",
+      "checked_commit": "88178f54f0fc5c5bd4459e2e361b30f9b2e99dff",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 22.758831666999868,
+      "setup_and_check_seconds": 49.34297941700015,
+      "pytest_result": "55 passed in 17.89s"
+    },
+    {
+      "name": "optional312",
+      "status": "passed",
+      "checked_commit": "88178f54f0fc5c5bd4459e2e361b30f9b2e99dff",
+      "scientific_source_sha256": "519887a07b6c7df3fd92bdfe8cf62edd828abc816521136113ae7f0cbaa69022",
+      "scope": "focused new diagnostics and actual publication, all extras",
+      "check_seconds": 21.682086709000032,
+      "setup_and_check_seconds": 48.042367083000045,
+      "pytest_result": "55 passed in 16.43s"
+    }
+  ],
+  "limits": "Complete immutable base suites, focused ALL-EXTRAS55 tests (not all historical optional tests). Before/after clean HEAD/module/runtime/source guards. Scientific source/data unchanged; later publication edits are docs/evidence only. Hosted final jobs must pass on the final PR head before history-preserving merge."
+}

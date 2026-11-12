@@ -52,7 +52,7 @@ Try changing one setting at a time. Does the cost fall after `own_public`?
 Does `both_public` lower it further? Does disagreement remain? These are
 questions to investigate, not a quiz with an assumed favorable answer.
 
-After the completed report is published, open its all-case figure:
+Open the completed report's all-case figure:
 
 ```sh
 open results/two-sided-report/dev_medium_oop.png
