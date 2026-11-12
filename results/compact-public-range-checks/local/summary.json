@@ -1,0 +1,45 @@
+{
+  "scope": "Definition/correctness only. No actual compression/learning/trajectory/native audit; no study admission. Full base suites and focused ALL-EXTRAS candidate+parent suites, not every optional historical test.",
+  "records": [
+    {
+      "name": "base311",
+      "status": "passed",
+      "checked_commit": "02b7c9b9d67a3b7bfae8ead2af19bd35617111ba",
+      "scientific_source_sha256": "f1f91bc0b107cf71685bfb510937ba1d78889c540a41ea50c2723aa6787f2111",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 549.3354516669988,
+      "setup_and_check_seconds": 552.7709467500008,
+      "pytest_result": "2914 passed, 58 skipped, 149 deselected in 528.28s (0:08:48)"
+    },
+    {
+      "name": "base312",
+      "status": "passed",
+      "checked_commit": "02b7c9b9d67a3b7bfae8ead2af19bd35617111ba",
+      "scientific_source_sha256": "f1f91bc0b107cf71685bfb510937ba1d78889c540a41ea50c2723aa6787f2111",
+      "scope": "complete base lint/format/types/non-slow/tests/hooks",
+      "check_seconds": 533.4136098750005,
+      "setup_and_check_seconds": 536.8895159580006,
+      "pytest_result": "2914 passed, 58 skipped, 149 deselected in 509.72s (0:08:29)"
+    },
+    {
+      "name": "optional311",
+      "status": "passed",
+      "checked_commit": "02b7c9b9d67a3b7bfae8ead2af19bd35617111ba",
+      "scientific_source_sha256": "f1f91bc0b107cf71685bfb510937ba1d78889c540a41ea50c2723aa6787f2111",
+      "scope": "new candidate and unchanged parent feature/metric tests, all extras; definition only",
+      "check_seconds": 18.34065208300126,
+      "setup_and_check_seconds": 22.514964542000598,
+      "pytest_result": "165 passed in 9.17s"
+    },
+    {
+      "name": "optional312",
+      "status": "passed",
+      "checked_commit": "02b7c9b9d67a3b7bfae8ead2af19bd35617111ba",
+      "scientific_source_sha256": "f1f91bc0b107cf71685bfb510937ba1d78889c540a41ea50c2723aa6787f2111",
+      "scope": "new candidate and unchanged parent feature/metric tests, all extras; definition only",
+      "check_seconds": 17.5221306250005,
+      "setup_and_check_seconds": 21.69562691700048,
+      "pytest_result": "165 passed in 8.44s"
+    }
+  ]
+}

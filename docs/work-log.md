@@ -3355,3 +3355,18 @@ retained. Lint/format/mypy629 PASS. Initial two typing/format defects corrected
 before advancement; config/feature/gates unchanged. Full local bases/relevant
 optional/hosted checks follow. No row-count/compression/savedQ/learning/native
 measurement, actual admission or default change. Plain-English journal99 updated.
+
+### November 11 — complete local compact-definition checks
+
+Immutable source02b7c9b passes full bases BOTH2,914/58skip/149deselect,528.28/
+509.72s; lint/format/mypy629/hooks and before/after clean HEAD/runtime/module/
+source guards pass. Relevant ALL-EXTRAS(candidate plus old parent feature/gates)
+BOTH165PASS9.17/8.44s, not the entire optional historical suite. Exact local
+logs/receipts/launcher and public-only9h/9d encoding examples retained. Wrappers
+549.335451667/533.413609875s base and18.340652083/17.522130625s optional exclude
+setup. Sourcefingerprintf1f91bc0... unchanged by subsequent docs/evidence.
+Config/gates/seeds untouched; original scientific source/data immutable. No
+actual compression, candidate policy, exploitability, runtime forecast, native
+audit or learning admission. Current milestone is tested definition ONLY.
+Both hosted final jobs remain required before history-preserving merge; PR54
+records actual conclusions. Journal99 includes current checks/plain-Englishscope.

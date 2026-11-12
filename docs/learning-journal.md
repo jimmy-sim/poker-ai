@@ -90,8 +90,8 @@ has not trained a stronger feature or changed the agent.
 
 Step 99 defines and tests a compact candidate from that finding: summarize which
 kinds of hands our public range can still contain, then store the binned summary
-in one 30-bit word. It passes 98 focused software tests; full publication checks
-follow. No compression or learning result is claimed for the new candidate.
+in one 30-bit word. Both full local suites pass 2,914 tests. No compression or
+learning result is claimed for the new candidate.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4305,6 +4305,14 @@ milestone stops before counting compressed rows or running learning.
 Try `.venv/bin/python scripts/inspect_public_range_feature.py 9h`, then replace
 9h with 9d. “Word” is just the packed bin label. The [method](compact-public-range.md)
 explains its coordinates; it is not an action or playing-strength score.
+
+**Full local checks:** Both complete base suites pass 2,914 tests, including
+the 98 new tests. Both focused all-extras suites pass 165 tests covering this
+candidate and its unchanged parent. Lint, formatting, strict typing and hooks
+also pass; the test environments check the exact source before and after.
+[PR #54](https://github.com/jimmy-sim/poker-ai/pull/54) records the final hosted
+checks required before merge. This completes the tested definition, without
+claiming fewer strategy rows or a stronger trained agent. Those are later tests.
 
 ## Your own learning notes
 

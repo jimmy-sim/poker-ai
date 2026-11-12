@@ -95,6 +95,11 @@ Report every signed candidate-baseline effect. Strict superiority requires
 positive paired median gain in BOTH games; accuracy admission alone does not
 assert dominance. The old mixed-training superiority failure is unchanged.
 
+Report warm/initialized/sampled/fallback quantities and whole/post-warm,
+all-street/river coverage separately. Warm coverage is not learned support.
+The metric functions here check only the declared scalar thresholds; future
+raw ledgers and policy/work replay must substantiate those reporting quantities.
+
 Metric functions here authenticate NO raw artifacts. Future real factories,
 runner/capture/archive/replay/partial retention, native schema/failure integration,
 full local/relevant optional/both hosted checks, source-bound toy proof, fixed
@@ -108,19 +113,34 @@ fresh/global work needs its own later prospective contract. None starts here.
 
 Prospective protocol7ace4a3 preceded implementation. The public feature,
 context-bound opt-in encoder/finite adapter, offline inspector and pure metric
-assessors are implemented. All98 focused tests pass in4.10s; whole-repository
-Ruff lint/format and strict mypy629files pass. The original sources remain
+assessors are implemented. All 98 focused tests pass in 4.10s; whole-repository
+Ruff lint/format and strict mypy 629 files pass. The original sources remain
 unchanged. An initial strict-typing/format pass caught two local annotations
 and formatting issues; corrected before proceeding, without feature/gate changes.
-Full base/optional and both hosted checks remain publication requirements.
+Full immutable02b7c9b checks pass on Python3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4:
+each2,914passed/58skip/149deselect,528.28/509.72s. Lint/format/mypy629/hooks and
+before/after clean HEAD/runtime/module/source guards pass. Relevant ALL-EXTRAS
+suites (new candidate plus unchanged parent) each165pass9.17/8.44s; this is not
+the entire optional historical suite. Exact [local receipts](../results/compact-public-range-checks/local/summary.json)
+and the two public-encoding examples are retained. Source fingerprint
+f1f91bc0b107cf71685bfb510937ba1d78889c540a41ea50c2723aa6787f2111 is unchanged
+by this later documentation/evidence checkpoint. Both final hosted jobs must
+pass before history-preserving merge; [PR #54](https://github.com/jimmy-sim/poker-ai/pull/54)
+records their conclusions.
 No row-count/compression measurement, policy, exploitability, native audit or
 stronger-agent result. Codex assists; no personal practice/time/mastery inferred.
 
-The two structural fixture observations1013/1049, pinned to the earlier known
+The two structural fixture observations 1013/1049, pinned to the earlier known
 game, have equal parent keys and distinct new keys. The test constructs only
 observations; it loads no saved Q/strategy values. Both structural games have
-compatible concrete menus and zero recall violations. The pooled5c/5h example
+compatible concrete menus and zero recall violations. The pooled 5c/5h example
 intentionally keeps the same word; this is not exact-board information.
+
+Whole-input suit relabeling preserves the public histogram/bins. Full keys
+still bind literal physical priors, so namespaces may differ under a suit
+renaming. Compare the induced partitions up to that namespace. The public
+histogram ignores final board order; the complete parent still retains the
+legitimate earlier-street reveal history. Neither fact removes parent context.
 
 After updating your checkout, inspect the encoding:
 
@@ -130,9 +150,9 @@ After updating your checkout, inspect the encoding:
 .venv/bin/python -m pytest -q tests/test_public_range.py tests/test_public_range_acceptance.py
 ```
 
-The first word is67,109,120 (half pair/half quads); the second is260 (half
+The first word is 67,109,120 (half pair/half quads); the second is 260 (half
 blocked/half pair). These are interval labels, not action probabilities, chips
-or strategic recommendations. Use no Python REPL or heredoc for these commands.
+or strategic recommendations. Run these commands directly in Terminal.
 
 Three questions to practice:
 
