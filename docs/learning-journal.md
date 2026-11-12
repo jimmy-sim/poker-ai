@@ -4624,10 +4624,9 @@ best-response values should stay the same; only our achieved baseline value
 changes. Their difference isolates the value of finer information against that
 particular opponent. It is not a universal cost of the feature.
 
-The implementation, tests, checked-source tiny rehearsal and numerical audit
-remain pending. Own evidence must be public before reference comparison. The
-previous failed learning gate and default agent remain unchanged. Codex assists
-with the work; no personal learning time or understanding is inferred.
+Own evidence must be public before reference comparison. The previous failed
+learning gate and default agent remain unchanged. Codex assists with the work;
+no personal learning time or understanding is inferred.
 
 The first implementation checks now pass 69 focused tests. They include a tiny
 hand-calculated hidden-world example where finer information has a real benefit,
@@ -4641,3 +4640,11 @@ The previous comparison is now merged in PR #56. Main passed 97 focused tests
 and replayed all 324 readouts with zero metric change; all ten unrelated local
 result edits were preserved. That completes the negative comparison, not the
 project's broader strength goal.
+
+
+Self-review caught a small receipt bug before the diagnostic: Python treats
+`False == 0` and `0.0 == 0` as true. Player identifiers must be actual integers,
+so four new tests now reject those lookalikes. All 73 focused checks pass after
+the fix. Full source checks are being repeated for the corrected code; the
+previous optional passes do not authorize a changed implementation. No poker
+diagnostic result has been collected yet.

@@ -160,7 +160,11 @@ def native_check(
         raise ValueError("numeric native error required")
     responses = native["responses"]
     value = native["native_metrics"]["value_player_zero_chips"]
-    if len(responses) != 2 or [r["target"] for r in responses] != [0, 1]:
+    if (
+        len(responses) != 2
+        or any(type(r["target"]) is not int for r in responses)
+        or [r["target"] for r in responses] != [0, 1]
+    ):
         raise ArithmeticError("both native response targets required")
     fields = (
         "exact_root_chips",

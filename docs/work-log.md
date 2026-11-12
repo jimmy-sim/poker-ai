@@ -3739,3 +3739,19 @@ and post-test checks preserve allten unrelated user bytes/status/index entries/
 patches. Raw finalCI/head/log/local proofs retained outside repo; no CI-only
 commit. Main-push repeat43204968981 is separately in progress. PR57 retargeted
 from dependent branch to main. No stronger/default/fresh/global admission.
+
+
+### November 12 — reject malformed native player identifiers before diagnosis
+
+Self-review after implementation2852bef found that Python equality allowed
+False/0.0 and True/1.0 as native player identifiers. Four explicit regression
+cases failed as expected before the fix; their raw log is retained under
+results/compact-fixed-opponents/implementation-regressions. Require actual int
+IDs0/1 before accepting scalar receipts. This tightens the new diagnostic only;
+no historical dependency/config/seed/cap/gate changed and no diagnostic outcomes
+were collected. Corrected focused suite73passes24.53s; Ruff/format/type672pass.
+Initial optional443passes77.40s (3.11),442passes/1runtime-specificskip75.79s
+(3.12) belong to the superseded source, not permission for corrected code.
+A new complete source-bound local/optional/hosted cohort is required next.
+Method prose spacing and journal status are clarified without changing design.
+Installed OpenSpiel2.0.2 Apache2license reread in full; pinned digest unchanged.

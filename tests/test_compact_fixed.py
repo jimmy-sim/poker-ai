@@ -149,6 +149,14 @@ def test_native_fields_are_recomputed(mutation: str) -> None:
         native_check(own, native)
 
 
+@pytest.mark.parametrize("target", [False, 0.0, True, 1.0])
+def test_native_target_requires_an_integer_identifier(target: Any) -> None:
+    own, native = native_fixture()
+    native["responses"][int(target)]["target"] = target
+    with pytest.raises((ArithmeticError, ValueError)):
+        native_check(own, native)
+
+
 def test_deadline_reserves_all_downstream_caps() -> None:
     now = datetime(2026, 11, 12, 16, 40, tzinfo=UTC)
     schedule("own", "2026-11-12T18:00:00Z", now)
