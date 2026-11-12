@@ -83,9 +83,9 @@ because the saved opponent's later responses differ. This narrows the problem;
 it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
 the completed step 96 report, and step 97 adds a range-weight browser and plots.
 
-Step 98 prospectively tests whether public cards remove important possibilities
-from either player's declared range. It keeps all saved values fixed and has
-not yet produced a measurement or trained a feature.
+Step 98 tests whether public cards remove important possibilities from either
+player's declared range. Its implementation passes the first 53 focused tests.
+Full source checks still precede measurement; no feature has been trained.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4206,6 +4206,19 @@ extra descriptions separate decisions that previously conflicted. We must not
 use our actual private hand to remove alternatives the opponent cannot know
 are impossible. No results, new agent feature or personal practice are claimed.
 The original failed learning gate remains. Codex assists with implementation.
+
+**Implementation checkpoint, November 11:** The checker now constructs both
+players' possible-hand lists from the board alone, then asks whether those lists
+separate conflicting saved decisions. Our actual private hand must not erase
+alternative hands that the opponent could still think we hold. Tests also check
+that two different boards with identical feature values stay grouped together:
+otherwise we would quietly be testing exact board identity instead of blockers.
+
+All 53 focused tests pass (2.35s), plus lint, formatting and strict typing. Tests
+use deliberately fictional tiny examples; these are software checks, not new
+playing-strength results. Both full Python environments and GitHub checks are
+next, before measuring every saved case. This work is Codex-assisted; no personal
+practice time or mastery is inferred.
 
 ## Your own learning notes
 

@@ -90,4 +90,17 @@ A candidate needs a separately registered learning test and applicable
 source-bound admission. Codex assistance and actual check outcomes are stated;
 human practice, hours and mastery are recorded only when reported.
 
-Status: prospective design only. Implementation and measurements are pending.
+## Implementation checkpoint — November 11, 2026
+
+The public feature, independent scalar cost reconstruction, five nested group
+controls, source-bound cache loader, guarded runner and offline terminal browser
+are implemented. Unit fixtures cover physical-card enumeration, alternative
+private hands, redundant joint information, fixed support/weights, unchanged
+feature values across different boards, all 960 panel slots, malformed caches,
+interruption retention and the 900-second cap. Fictional test parents are marked
+UNIT_ONLY; they are not new poker results.
+
+Focused tests: 53 passed in 2.35s. Repository-wide Ruff lint/format and strict
+mypy checks (622 source files) pass. Full local base/optional and both hosted
+source checks remain required before the complete saved-data measurement.
+No measured effect, new training or deployed feature is claimed at this point.

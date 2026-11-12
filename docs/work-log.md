@@ -3260,3 +3260,17 @@ Separate900s cache-only full-validation/feature/regroup/write clock; original
 caps/seeds/gates unchanged. Full local/optional/hosted source checks precede
 measurement; both final artifact jobs before merge. Implementation/results
 pending; a future feature-learning test needs its own contract/admission.
+
+### November 11 — two-sided blocker implementation checkpoint
+
+PR53 adds new modules only: public two-range availability/joint features,
+independent scalar reconstruction and nested grouping, pinned cache schema,
+guarded runner with per-profile partial/failure retention, and offline inspector.
+Historical source/data remain unchanged. Fifty-three focused tests pass in2.35s;
+whole-repository Ruff lint/format and strict mypy622files pass. Synthetic runner
+tests use explicitly fictional UNIT_ONLY parents, never scientific receipts.
+Physical-card oracle/private-input exclusion/unchanged-feature/matrix redundancy,
+same support/weights, all960 panel slots, corrupt cache and interruption/cap
+tests pass. Full local bases/focused all-extras/both hosted SOURCE checks are
+pending and must precede the actual C8 comparison. No measurements/training/
+feature deployment or performance admission at this checkpoint.
