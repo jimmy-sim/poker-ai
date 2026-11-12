@@ -4412,3 +4412,11 @@ and keeps receipt arithmetic in a pure checker. The original boundary test was
 kept and now passes in the focused suite (279 tests). Complete corrected checks
 still have to pass before the rehearsal. This is a software correction; it adds
 no evidence that the poker agent plays better. The failed records stay published.
+
+**Corrected publication checks, November 12:** both complete local suites pass
+2,990 tests, and both relevant optional suites pass279. Both GitHub source jobs
+also pass2,990 tests. The saved logs identify the exact code and environment.
+This completes the source check; next comes the small software rehearsal and
+its independent check, then the cost forecast. The compact poker study still
+has not started. These execution times are automated check times, not personal
+hands-on hours.

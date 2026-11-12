@@ -3402,3 +3402,17 @@ removes the forbidden dependency instead of weakening/bypassing the guard.
 Focused suite INCLUDING that unchanged guard now279pass32.24s; lint/format and
 mypy641 pass. Failed source/logs/receipts retained under compact-full-control.
 A corrected immutable cohort and both hosted jobs are required before advancement.
+
+### November 12 — complete corrected compact source checks
+
+Source02234c7/fingerprint9db8dab passes both immutable full bases2,990/60skip/
+149deselect551.59/532.46s. All lint/format/mypy641/hooks and clean before/after
+HEAD/runtime/module/source guards pass. Both relevant ALL-EXTRAS279pass37.58/
+35.98s; not every optional historical suite. Both sourceCI43179157842 jobs pass
+2,990/60/149/one oldroundoffwarning1019.59/976.81s, exact head metadata/logs
+retained. Six-role receipt validator accepts all6. Rejected1a9 hosted attempt
+retained311failure/312canceled (superseded); both local failures remain. Scientific
+source fingerprint unchanged by this evidence/docs publication. No measured
+tiny proof, forecast/admission or compact scientific trajectory yet. Existing
+bounded kernel correctness fixtures are software checks. Publish checked-source
+evidence now before the tiny own rehearsal; publish own archive before reference.

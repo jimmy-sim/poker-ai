@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2990 passed, 60 skipped, 149 deselected in 551.59s (0:09:11)",
+      "log": {
+        "file": "results/compact-full-control/checks/base311.log",
+        "sha256": "6e48fadba1ce8754c753da9c85cd33fcd40d12d51ca7a56fa71f24b176fbf636"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2990 passed, 60 skipped, 149 deselected in 532.46s (0:08:52)",
+      "log": {
+        "file": "results/compact-full-control/checks/base312.log",
+        "sha256": "36a8866d227ced095ceb0295a3c0180566619f7e2e3f7bf64ee6433ad1195920"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "279 passed in 37.58s",
+      "log": {
+        "file": "results/compact-full-control/checks/optional311.log",
+        "sha256": "5ccecf7e4dbc48e1a7e9031bee73647d524723594cc28f5a30d198e51f50737d"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "279 passed in 35.98s",
+      "log": {
+        "file": "results/compact-full-control/checks/optional312.log",
+        "sha256": "faac362ea30e3a3ba4cc80c112835c9847ddf52306d73d5479df771db86fde58"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "head_sha": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "conclusion": "success",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "job_id": 131050719966,
+      "run_id": 43179157842,
+      "log": {
+        "file": "results/compact-full-control/checks/hosted312.log",
+        "sha256": "c739349277c42b7f1d19d246e42912fe46ddd2806ba46b135e71bd216d4636e7"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "head_sha": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "conclusion": "success",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "job_id": 131050720373,
+      "run_id": 43179157842,
+      "log": {
+        "file": "results/compact-full-control/checks/hosted311.log",
+        "sha256": "9bae15750c2a104eae4abb3869b161386073d00610128920d6c16ed94d26db4b"
+      }
+    }
+  ],
+  "scope": "Actual source-bound local base/relevant ALL-EXTRAS/hosted checks. Optional is not every historical extra test. No scientific trajectory admission from these checks alone."
+}

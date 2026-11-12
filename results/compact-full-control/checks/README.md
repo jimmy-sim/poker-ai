@@ -1,0 +1,1 @@
+Exact execution logs and receipts. Hosted decoded UTF-8 logs retain their BOM/timestamp whitespace; do not normalize them. Install/setup time is distinct from check-command time. Source commit 02234c75d5cc2c210bf5b44b0622c83bf71184e6.

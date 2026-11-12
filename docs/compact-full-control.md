@@ -105,3 +105,18 @@ guard remains unchanged and now passes in the focused279-test suite (32.24s);
 strict typing641 files and lint/format pass. Complete corrected source checks
 remain required. The [rejected cohort](../results/compact-full-control/failed-source-1a9bb4a/README.md)
 retains actual failures; it cannot supply admission.
+
+## Corrected source publication gate — November 12
+
+Source02234c7 (fingerprint9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490)
+passes both immutable complete local bases:2,990passed/60skipped/149deselected,
+551.59s on3.11.17/NumPy2.4.6 and532.46s on3.12.15/NumPy2.5.4. Lint/format/
+mypy641/hooks and before/after clean HEAD/runtime/module/source guards pass.
+Relevant ALL-EXTRAS suites both279pass37.58/35.98s, not every optional historical
+test. Both hosted source jobs43179157842 pass:2,990/60/149/one historical warning,
+1019.59/976.81s. Exact [six-role check receipts](../results/compact-full-control/checks.json),
+logs and launcher are retained with their original raw timestamp whitespace.
+The rejected hosted attempt is311failure/312canceled when corrected source
+superseded it; separate final metadata preserves that distinction. These checks
+permit the tiny software rehearsal only. No measured proof or real compact
+scientific training has run at this publication checkpoint.
