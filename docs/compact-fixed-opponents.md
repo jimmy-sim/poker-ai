@@ -119,3 +119,69 @@ next decision. Final publication CI passes before a history-preserving merge.
 Three interview questions explain fixed opponents, E=W+I and the limits. Stop at
 the authorized cutoff, saving a verified complete/partial state. Further work
 windows require the user's request.
+
+
+## Completed diagnosis — November 12, 2026
+
+All declared inventories and scalar gates pass, without training. Own command
+123.742557791 s; native 105.584524875 s; authenticated report 88.638096042 s,
+all below their fixed 900 s caps. Own cc53a93 was public before real reference
+construction. Maximum independent error is 1.0658141036401503e-13 chips across
+all 144 joint profiles / 288 targets; all fixed-opponent identities have zero
+error. Historical SS/FF primary metrics are reproduced. All raw details, source
+receipts, signed effects, per-seed CSVs and figures are retained in
+[the complete report](../results/compact-fixed-opponents/real/tables.md).
+
+The harder compact SS mean is 0.733192732549 chips = 0.042159369694 within +
+0.691033362855 extra information (2.036646479% = 0.117109360% + 1.919537119%
+of its 36-chip initial pot). Extra information accounts for 94.24989258% of
+that mean. This mean is not the earlier 2.389912005% median acceptance statistic;
+the original sampled accuracy failure remains failed.
+
+For compact responding seat 1 against each fixed sampled seat-0 opponent,
+I is [1.6890740885925197, 0.8186241819688647, 1.6260200483283072] chips
+in declared seed order. Against its fixed full opponent, I is [0, 0, 0]. Each
+I is invariant to whether the responder uses its own S or F policy. Consequently
+the very small FF result does not establish a small universal abstraction floor:
+its opponent conceals distinctions another saved opponent exposes. The remaining
+within-group optimization gain is small relative to I in all three compact seeds.
+Neither a pure sampling cause nor a remedy's effectiveness is established.
+
+All 144 signed own-S-to-F fixed-opponent EV changes remain. There are 74 below
+-1e-9 chips: 72 in the already-near-zero low game, plus two medium conditions
+(texture seed 20261303 target 0 versus S: -0.0050259386782 chips; made-category
+seed 20261301 target 0 versus S: -0.00773450487666). Do not turn the low game's
+tiny negative effects into a meaningful strength claim. Both figures were
+visually inspected; their legends describe different quantities, their panel
+scales differ, and min/max bars are not confidence intervals.
+
+Source c6c384b / fingerprint 2670f3f6 passed all six bound roles before the tiny
+144-profile rehearsal and actual diagnosis. The earlier boolean/float target-ID
+bug has a retained four-case failing regression log and corrected tests. Full
+source checks: local 3,152 base tests per version, relevant optional 447 / 446
+(one recorded-runtime skip on 3.12), hosted 43207761909 both successful. The
+matched tiny proof passed at 2.480208208 / 5.406218208 s with 2.08167e-16-chip
+native error. Software aliases prove software only. Final publication checks
+remain a merge gate. All default/fresh/global/accuracy admission flags stay false.
+
+**Next decision:** diagnose which concrete observable distinctions the compact
+rows still merge against the frozen sampled opponents, before selecting another
+feature or training intervention. That is a separate prospective step, not an
+outcome silently included here.
+
+## Three interview questions
+
+1. **Why hold the opponent fixed?** The exact and group-constrained best-response
+   values depend on the opponent. Changing both players can hide the source of a
+   gap. The four mixtures let us change only our own policy, verify root
+   invariance and measure its signed achieved-value change.
+2. **Does the 94.25% information component prove an unavoidable feature floor?**
+   No. It is specific to these saved opponents and finer legal responder
+   information. The same compact groups have almost zero information benefit
+   against a different saved full-control opponent. No universal lower bound,
+   causal training explanation or general strength follows.
+3. **What makes the diagnosis reproducible and independent?** Pinned source
+   maps/Git blobs and raw archives, fixed selectors/seeds, all four mixtures,
+   complete-command clocks, mathematical identities and a separately published
+   own-before-native scalar audit. The audit shares exported topology/payoffs;
+   it independently checks response math, not every poker mechanic.

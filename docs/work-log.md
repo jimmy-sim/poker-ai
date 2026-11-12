@@ -3824,3 +3824,31 @@ are covered, not aggregate exploitability alone. Pinned OpenSpiel2.0.2 license
 verified; no reference policies returned/used for training. Fixed source2670f3f6
 and all historical source maps remain unchanged. Report is next; no new training,
 remedy choice, default/fresh/global or failed-gate change.
+
+
+### November 12 — complete frozen-opponent diagnosis, retained negative result
+
+Authenticated report completes88.63809604199923s <900s, all144profile CSV rows,
+288target rows,144fixed-opponent EV conditions and both visually inspected
+figures. Original accuracy gate stays FAILED. Harder compact SS mean E2.036646479%
+pot =W0.117109360% +I1.919537119%; I/E94.24989258%. This is descriptive mean,
+not the prior median2.389912005% acceptance statistic. Responding seat1 versus
+sampled seat0 has I[1.6890740885925197,.8186241819688647,1.6260200483283072]
+chips by fixed seed; versus full seat0 it has I[0,0,0]. Every I/root stays exactly
+invariant to changing only the target's S/F policy. Full-control self play hides
+a weakness exposed by sampled own opponents; no universal abstraction floor or
+pure causal sampling/training remedy follows. Within-group gain is small in all
+three compact medium seeds. No feature selected/trained/default promoted.
+
+Every signed own-S-to-F EV effect retained:74 below-1e-9chips,72 in near-zero low
+game and two medium texture/category cases. All six representations, both games,
+all three seeds and four mixtures remain. Figures distinguish their legends,
+show panel scales and retain negative effects; min/max is not confidence.
+README/method/three interview Q&As and rewritten plain-English journal102 explain
+the result, source/runtime, dependent full aliases and shared exported-engine
+limits. Artifact hashes,144/288/144CSV counts, unchanged scientific source2670,
+and all relative README/method/journal file links pass. Codex-assisted solo review
+notes retained outside repo. Final local base/hosted publication checks remain
+before history merge; no new trace/probe outcomes or new trajectory study started.
+Next justified separate step: identify the concrete merged decisions behind the
+large information benefit while holding frozen opponents fixed.
