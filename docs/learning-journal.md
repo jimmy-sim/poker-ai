@@ -4896,3 +4896,10 @@ summary and three plots reproduce byte for byte. The charts were visually
 checked; their labels say zero new learning. The paired control and treatment
 coincide here because they reuse old tables by construction, not because a new
 training experiment found no difference. The independent cost runs are next.
+
+
+## 105. Measure why verification is expensive before optimizing it
+
+November 12, 2026. The training-remedy pipeline passes its software rehearsal, but the first complete independent cost audit already exceeds the conservative admission threshold. The remaining fixed measurements and forecast must still be retained. This is a compute gate, not a new model-quality result.
+
+The [next prospective step](compact-replay-profile.md) profiles one complete read-only replay: first normally, then with Python counting function calls and elapsed time. Both must return exactly the same authenticated evidence. We choose archive0 by index, retain every profile/book/condition and keep learner/reference constructors blocked. A profile can identify repeated validation or scoring work worth optimizing; it does not permit skipping those checks or admitting the failed source. No profiling result exists yet. Codex assists with this work; personal hours and mastery are not inferred.

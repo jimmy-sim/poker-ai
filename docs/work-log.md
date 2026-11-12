@@ -4145,3 +4145,8 @@ required all-own checkpoint BEFORE ANY nativecost construction. No changed
 code/seed/cap/gate/environment setting between repetitions; no favorable subset.
 Native0/1/2 full432/1152 scalar audits, complete forecast and checked published
 permit remain before a real study; full11100s reserve and10a.m.cutoff unchanged.
+
+
+## November 12, 2026 — prospect: complete compact replay profiling
+
+The first published independent cost needs 533.671665 seconds; the fixed native admission formula requires the maximum of all three costs below390. Remaining repetitions and the original complete forecast remain required in PR#59. The separate [profiling protocol](compact-replay-profile.md) fixes plain then instrumented full replay of cost archive0, unchanged original source/guards,900s per child and complete raw function/caller evidence. No profile outcome or optimization exists yet. Codex-assisted planning; no personal time or understanding inferred. Refs#4.
