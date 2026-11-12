@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Rehearse and check the full-control test](#100-check-the-test-before-trusting-the-new-description)
+
 - [Which strong hands could each player represent?](#98-ask-which-hands-each-player-can-still-represent)
 - [Try the four-column saved-hand terminal exercise](terminal-river-lab.md)
 - [Separate range beliefs from later action values](#97-separate-range-beliefs-from-later-action-values)
@@ -31,6 +33,11 @@ notes section is for your own questions and explanations as you work through it.
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
+
+The compact river description now has a full-control admission pipeline under
+construction in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100
+explains the checks required before its first measured learning run. Its playing
+strength remains unmeasured; the earlier results below still describe the agent.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4367,3 +4374,32 @@ Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
 
+
+## 100. Check the test before trusting the new description
+
+**November 11, 2026 — issue #4; full-control admission in progress.**
+
+We have a compact way to describe what each range can still contain. Now we need
+to find out whether it actually preserves good decisions while using fewer
+strategy rows. The test keeps six descriptions on the same two small known games
+and records each one after six fixed amounts of full-tree training. That makes
+72 saved strategies; it is not yet a test of general heads-up Hold'em strength.
+
+A saved strategy is more useful when we can check where it came from. The new
+runner saves the action probabilities, the accumulated training weights that
+produce their average, the legal action menus, and the exact information groups.
+Replay reconstructs the same game and recomputes its numbers. If a run is
+interrupted, completed checkpoints survive and the result stays incomplete.
+
+The independent check asks OpenSpiel to calculate the saved policy's value and
+each player's best response separately. Checking only their combined total could
+hide two errors that cancel. No OpenSpiel strategy enters our agent. A clock
+includes imports, setup, checks, training, replay and final writes.
+
+So far 78 new focused tests pass, including changed files, invalid probabilities,
+missing comparisons, interrupted own runs and failed reference audits. Lint and
+strict typing also pass. This is software progress, not an improved trained model.
+Complete checks on both Python versions and GitHub come before a tiny rehearsal;
+then a fixed conservative forecast must admit the real run. All original pass
+limits and budgets stay fixed. The [protocol](compact-full-control.md) records
+that order. Codex-assisted; no personal practice, time or mastery is inferred.

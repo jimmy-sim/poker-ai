@@ -3370,3 +3370,21 @@ actual compression, candidate policy, exploitability, runtime forecast, native
 audit or learning admission. Current milestone is tested definition ONLY.
 Both hosted final jobs remain required before history-preserving merge; PR54
 records actual conclusions. Journal99 includes current checks/plain-Englishscope.
+
+### November 11 — compact full-control pipeline foundation
+
+User authorized full-control admission for the one frozen candidate. Protocol
+bb98b68 and issue4 comment6817542727 preceded code/measurement. PR55 adds new
+source modules only: real/same-path tiny factories; immutable hashed snapshots
+of policies, CFR+ regrets and linear average masses; complete 72-profile replay;
+OpenSpiel scalar value/BOTH-BR audit and failure retention; stdlib process-group
+clocks; source-bound check receipts; no-training structural cost, fixed forecast
+and published-admission gates; complete report path. Six controls, both spot/model
+pins, checkpoints, scientific caps and all scalar gates unchanged. No sampled
+stage/default change. Original scientific source/data and allten main edits
+preserved; latest snapshot072721UTC. Full installed pinned Apache license read
+and recorded before reference unit fixtures. New78 focused tests pass; repository
+lint/format/strict typing640 files pass after correcting a test adapter and
+annotation/formatting defects. Full immutable local bases/relevant optional and
+both hosted source checks are next. No measured proof, forecast/admission or new
+real Hold'em trajectory yet. Journal100 explains what the new records establish.
