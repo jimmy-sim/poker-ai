@@ -4745,3 +4745,10 @@ Both full base suites now pass 3,217 tests. Relevant optional suites pass 513 on
 Python 3.11 and 511 with two runtime-specific skips on 3.12; both source-bound
 GitHub jobs pass too. The next gate is the actual tiny trace rehearsal. Software
 checks do not yet supply new poker decision results.
+
+
+The actual tiny pipeline rehearsal now passes: 144 panels, 288 source aliases
+and 864 owned decision rows replay in 2.17 seconds. Maximum accounting error
+is 3.47e-17 chips. It constructs no learner or reference solver. The separate
+hand-calculated tests cover a genuine positive information benefit. Real tracing
+can now begin from the frozen poker strategies, after this proof is published.

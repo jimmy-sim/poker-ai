@@ -3922,3 +3922,15 @@ PR57 main full144/288 archive replay completes75.40927466599896s with zero
 fixed-opponent identity error; allten unrelated main bytes/status/changed-index
 entries and patches remain exact after checks/replay. Receipt/post-preservation
 proof retained outside repo. New trace code does not alter any historical SRC.
+
+
+### November 12 — complete tiny information-trace proof before real rows
+
+Actual checked-source same-pipeline tiny run completes144panels/288aliases/864
+ownedrows, all raw details and summaries replayed, maximum accounting/root error
+3.469446951953614e-17chips. Complete command 2.169484458001534s <180s.
+Learner factories and every reference import blocked; no new toy training,
+reference construction or poker-strength result. One-to-one aliases are zero-
+information software cases; separate literal hidden-world tests cover positiveI
+for both players and overlapping ties. Full own/child/144details are published
+here before real tracing. No scientific caps/seeds/gates/admission changed.
