@@ -3438,3 +3438,15 @@ BR roots; maximumerror1.5265566588595902e-16chips. Complete native command
 190709760/191676416bytes; not isolated per-representation memory. Uniform policies
 and zero training weights only; no compact scientific trajectory or strength
 claim. Publish proof/cost evidence before fixed conservative forecast/admission.
+
+### November 12 — fixed compact full-control forecast
+
+Published proof/cost27642b8 precedes forecast. Source9db8 replays the72 tiny own
+policies/native comparisons, allthree12-layout cost archives and historical
+60-profile range-mass own/native evidence. Fixed formula gives own94.07949982799036s,
+native68.05050486082328s; each below unchanged900s. HistoricalH12.88399437499902,
+A7.2285687910043634; S6.218683040999167; T1.8403986659996008; N2.1196606250014156.
+Factor1.2 and margin4 unchanged. Complete forecast command23.047677708000265s.
+This is a conservative engineering forecast, not a statistical guarantee.
+Publish forecast now, then recompute/check published admission before any compact
+scientific trajectory. No sampled/default/fresh/global promotion.

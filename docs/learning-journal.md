@@ -4435,3 +4435,9 @@ their tables; each complete command took about6.2 seconds. Their uniform policie
 are setup fixtures. Next, the fixed safety-margin formula combines these costs
 with the old checked run's timing. The forecast must fit the unchanged budget
 before any compact candidate training starts.
+
+**Forecast:** the unchanged formula projects about94.1 seconds for the own full
+run and68.1 seconds for its audit. Both fit their900-second limits. The formula
+uses a fixed factor-four safety margin; it is an engineering estimate, not a
+probability guarantee. The admission check must still recompute it from the
+published files before training is allowed.
