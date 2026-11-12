@@ -4441,3 +4441,9 @@ run and68.1 seconds for its audit. Both fit their900-second limits. The formula
 uses a fixed factor-four safety margin; it is an engineering estimate, not a
 probability guarantee. The admission check must still recompute it from the
 published files before training is allowed.
+
+**Permission to run:** the admission command recomputed the forecast and checked
+the exact published prerequisites. It permits the fixed full-control study.
+That is permission to measure the candidate, not a statement that it passed the
+playing-quality test. The next saved records will be real own training, published
+before their independent audit.

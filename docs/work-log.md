@@ -3450,3 +3450,13 @@ Factor1.2 and margin4 unchanged. Complete forecast command23.047677708000265s.
 This is a conservative engineering forecast, not a statistical guarantee.
 Publish forecast now, then recompute/check published admission before any compact
 scientific trajectory. No sampled/default/fresh/global promotion.
+
+### November 12 — checked published permission for the compact full study
+
+Forecast0f3cc57 is public before admission. Admission recomputes all prerequisite
+proof/cost/history arithmetic and checks exact published input bytes. Complete
+command24.040744333000475s; full_trajectory_admitted=True, actual_admission=False,
+fresh_global_admission=False. Publish this permit before the real own run.
+It authorizes only the frozen72-policy full-control study, not accuracy, sampled
+learning, a new default or a stronger/general agent. Own runner rechecks the
+published permit and dependencies under its unchanged900s complete-command cap.
