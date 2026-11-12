@@ -490,3 +490,17 @@ It requests no reference strategy. Outputs remain comparison-only and cannot
 enter the own learner. This checks arithmetic on the exported own game, not
 independent Hold'em mechanics or general playing strength. See the
 [prospective full-control protocol](compact-full-control.md) for gates and caps.
+
+## Compact sampled comparison — November 12, 2026
+
+[PR #56](https://github.com/jimmy-sim/poker-ai/pull/56) retains OpenSpiel2.0.2
+under Apache-2.0. The selected license was read in the prior full-control step;
+Codex re-read its full installed LICENSE in the new pinned Python3.11.17
+environment on November12. Its SHA-256 remains
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+The license permits this comparison use, subject to its license/notice terms.
+The new adapter requests only the own policy value and both best-response
+values. No reference policy enters the B4 trainer. Optional tiny unit comparisons
+are separate from the later source-bound rehearsal and real study; those require
+publication of the complete own evidence first. This verifies arithmetic on the
+exported own games, not independent engine mechanics or fresh/global strength.

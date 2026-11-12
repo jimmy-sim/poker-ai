@@ -3488,3 +3488,31 @@ and visually checked. OwnpeakRSS394985472bytes lifetimeonly; largerUTF8keys mean
 no whole-memory savings claim. No sampled/fresh/global/default/superiority
 promotion. Oldfailuresretained. README/method/journal100updated; finalhostedCI
 onfinalpublicationhead remainsmergegate. Stopafterverifiedpublication/mainchecks.
+
+### November 12 — fixed-work compact sampled pipeline, source checkpoint
+
+Issue4 / [PR56](https://github.com/jimmy-sim/poker-ai/pull/56). Published
+prospective protocol72755ed before implementation. Preserve the frozen six
+representations, two games, seeds20261301–3, B4 signed/linear method and first
+complete-iteration100k/1m/10m work crossings; no gate/cap changes. New own runner
+captures36warm origins,108states and324current/uniform/linear readouts. Raw signed
+regrets, both books, PCG64 states, counters and fsynced worker journals support
+algebra/receipt replay and honest partial outcomes. Current support, exact-warm
+mass and post-warm support stay distinct. Cost stand-ins are pinned OWN full
+policies only and never construct a sampled learner. Native adapter requests
+only independent own-policy value and BOTH best-response scalars after own
+publication. Complete-command clocks, exact-source checks, conservative forecast
+and checked published admission remain mandatory before real sampled training.
+
+Initial relevant all-extras check:373passed in47.09s on3.11.17/NumPy2.4.6;
+Ruff lint/format pass and strict typing658files passes. Includes new tiny
+capture/original-B4 bit equivalence, complete archive, raw/worker/journal/clock/
+native failure tests and old candidate/parent/archive/JIT integration. The prior
+full-control72policies replay under unchanged historical dependency/Git blobs
+in10.8452s. This is software/prerequisite evidence, not a sampled accuracy result.
+New source-bound complete base checks, focused optional checks on both supported
+versions and BOTH hosted jobs are next. No new Hold'em trajectory has run.
+Learning journal101 explains the question and limits. Codex assisted; human
+minutes not recorded. Ten unrelated main result edits were snapshotted with
+their actual bytes and remain untouched. User cutoff10a.m.Pacific November12;
+full downstream reserves apply before starting any real study.

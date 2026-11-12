@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Test whether the smaller description learns under sampling](#101-test-the-smaller-description-at-the-same-learning-work)
+
 - [Rehearse and check the full-control test](#100-check-the-test-before-trusting-the-new-description)
 
 - [Which strong hands could each player represent?](#98-ask-which-hands-each-player-can-still-represent)
@@ -38,7 +40,9 @@ The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
 its saved strategies, independent check, smaller strategy tables and larger key
 strings. Fixed-work sampled learning is still untested; the default agent and
-previous sampled results below remain unchanged.
+previous sampled results below remain unchanged. The next comparison is being
+implemented in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56); step101
+explains its question and the checks that come before new training.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4496,3 +4500,53 @@ It trains nothing. Use a fresh output name if that file already exists. The save
 archive is bound to its published source/runtime; later source changes may require
 a checkout of the recorded revision. Codex assisted with code and execution;
 personal practice, time and mastery are not inferred.
+
+## 101. Test the smaller description at the same learning work
+
+November 12, 2026. The previous full-control result answers whether the compact
+river description can represent a good strategy in the two known games. The next
+question is whether sampled training can **learn** one with the same work budget
+as the five existing descriptions. Sampled training visits selected branches
+instead of calculating the whole tree on every update.
+
+The [published protocol](compact-sampled.md) fixes three seeds and checkpoints at
+100,000, 1 million and 10 million total node visits. A node visit is one unit of
+tree traversal work. All six descriptions get the same work labels, including
+the exact initialization. Each checkpoint saves three ways of reading the
+strategy: the latest policy, an ordinary average and an average that gives later
+iterations more weight. The last one is the declared accuracy test. We cannot
+switch to whichever readout looks best afterward.
+
+**Example:** initialization may put a little probability mass in every row, so
+the average appears to cover the entire table before sampling has learned much.
+The new report separates that initial mass from later sampled support. A full
+table is useful bookkeeping; it does not prove the sampled strategy is accurate.
+
+The implementation saves signed regrets, both average tables, RNG state, work
+counters and immutable checkpoint files. Worker journals record completed writes
+as they happen. If a process fails, later progress stays unknown rather than
+being guessed from elapsed time. Replaying these files checks table arithmetic,
+normalization, identities and receipts without retraining millions of steps.
+It does not reconstruct every historical random draw. Tiny tests also compare
+the actual capture path with the original B4 trainer bit for bit.
+
+Before new Hold'em training, the source needs complete local and hosted checks,
+a complete tiny-game rehearsal, three no-training cost measurements, a fixed
+conservative forecast and a published admission receipt. The prior 72 full-control
+policies have already replayed successfully under unchanged historical
+dependencies. That is a prerequisite, not a new sampled-learning result.
+
+The default agent has not changed. The first implementation checks are recorded
+in the work log; the complete source-bound checks and scientific results remain
+pending at this entry's initial publication. Codex assisted with implementation,
+tests and this explanation. No personal study time or understanding is inferred.
+
+To inspect the question and run the focused software checks after updating:
+
+```sh
+git show --stat 72755ed
+.venv/bin/python -m pytest -q tests/test_compact_sampled_state.py tests/test_compact_sampled_pipeline.py tests/test_compact_sampled_clock.py
+```
+
+These commands inspect the design and run tiny software fixtures. They do not
+start the real sampled study or establish that the Hold'em agent is stronger.
