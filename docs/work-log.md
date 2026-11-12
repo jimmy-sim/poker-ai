@@ -3775,3 +3775,15 @@ Prospective seeds/complete caps/144logical/288target grid and failed sampled
 accuracy gate stay unchanged. No new poker diagnostic outcomes have been
 collected. Next is the actual checked-source tiny own rehearsal, publication,
 then scalar comparison; only its published complete proof admits real diagnosis.
+
+
+### November 12 — tiny own fixed-opponent rehearsal before reference
+
+Checked-source no-training tiny run completes all144joint profiles/288target
+responses and144fixed-opponent identities using48published own final inputs.
+All original324sampled readouts/72full policies replay before selection; every
+new detail/reply profile replays exactly. Complete own clock 2.4802082079986576s <180s.
+No native constructed, no new training or poker strength claim; all144details
+and parent/child receipts are published here BEFORE native construction.
+Raw hosted logs retain original trailing whitespace/BOM; code/docs diff checks
+exclude those authenticated verbatim receipts rather than editing their bytes.
