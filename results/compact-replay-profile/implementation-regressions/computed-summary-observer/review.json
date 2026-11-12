@@ -1,0 +1,13 @@
+{
+  "status": "observer_gap_caught_before_formal_profile",
+  "old_entry_commit": "567a9b1345df8b7dcd434cb70787ca2acdcac401",
+  "old_source_fingerprint": "cd4d6962702156153fdb914b5fd370c3f9773835aa86949fccfdbfee5a749569",
+  "issue": "frozen read validates computed replay but returns stored receipt; old new identity only compared that stored summary",
+  "synthetic_stored_error": 0.0,
+  "synthetic_computed_probe_error": 1e-16,
+  "synthetic_fixture_only": true,
+  "formal_poker_profile_performed": false,
+  "training_performed": false,
+  "fix": "record exactly one unchanged replay result; compare computed summaries as well as full stored receipt; add actual runtime and OS child CPU records; original reader arithmetic/guards untouched",
+  "focused_tests": "61 passed in11.42s"
+}

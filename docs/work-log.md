@@ -4184,3 +4184,94 @@ source must earn its own checks, fixed costs and admission; this result cannot
 be rescued by profiler timings. No default/fresh/global or stronger-agent claim.
 
 Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
+
+## November 12, 2026 — prospect: complete compact replay profiling
+
+The first published independent cost needs 533.671665 seconds; the fixed native admission formula requires the maximum of all three costs below390. Remaining repetitions and the original complete forecast remain required in PR#59. The separate [profiling protocol](compact-replay-profile.md) fixes plain then instrumented full replay of cost archive0, unchanged original source/guards,900s per child and complete raw function/caller evidence. No profile outcome or optimization exists yet. Codex-assisted planning; no personal time or understanding inferred. Refs#4.
+
+The standalone profiling tool now passes56focused checks, including an actual full432-profile tiny replay with exact plain/profile identity, raw caller accounting, blocked construction, changed-source/input rejection, corrupt viewer evidence and retained hard timeouts/failures. Lint/format and strict typing pass. Both complete local bases and source-bound hosted checks remain required before a formal poker-archive profile. This is software evidence only; no new poker learning or runtime result.
+
+Viewer self-review also binds every named historical scientific file and Git blob before presenting timings. It accepts unrelated source additions without weakening the original runner aggregate.57focused checks now pass (10.82s), including this provenance check; no formal profile has run.
+
+GitHub then caught a checkout-history issue: Python3.11 reports3,350passes and two provenance-test failures because its default shallow checkout lacks the archived source commits. Both full local suites had3,352passes/64skips/150deselections; optional112each. We retain the failed hosted log, exact head/job metadata and local receipts. CI now fetches full history. A new local shallow-clone fixture proves the checker refuses missing history and passes after fetching it; no source checker is relaxed.58focused checks pass9.51s. A fresh same-head local/optional/hosted cohort is required before formal profiling. The original forecast and scientific source are unchanged.
+
+Self-review before formal profiling caught a verification gap: the frozen reader checks recomputed values, then returns its stored input receipt. Comparing that object alone would compare stored diagnostics rather than directly compare both recomputations. The new observer records the return from exactly one call to the unchanged replay function. Both complete stored receipt and actual computed summary must match across modes; original arithmetic/guards remain. Synthetic tests reject missing/duplicate summaries and detect a1e-16 computed change despite identical stored inputs.61focused tests pass11.42s, including a real full432-profile tiny replay with actual summaries equal. Actual runtime/hardware and OS-reported reaped-child CPU are now recorded. Old full local3353/optional113 and successful hosted3.11 remain retained evidence for the earlier source, not admission for this changed entrypoint. Fresh required same-head checks follow; no formal poker profile or new learning has run.
+
+
+### November 12 — complete observed-summary profiler source cohort
+
+Frozen c349b4f2f86f8aefc88ccee5067f8f501bbed87d / fingerprint
+ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851
+passes BOTH full local bases (3,356/64skip/150deselected), BOTH relevant optional
+suites (116each), and BOTH exact-head hosted43246354825 jobs BEFORE formal
+profiling. All six raw logs, head/job metadata, guards and observed receipts
+validate and are published with this checkpoint. Earlier source cohorts do not
+admit this corrected observer. Late cancelled/superseded old logs and final
+metadata are retained separately without overwriting initial snapshots.
+
+PR59 history-merged d14a3ca after final hosted43243962216 both passed at9d2464d.
+Actual main imports correct runtime/source,102fast checks pass18.92s, and a full
+COST0 reader executes all original math gates; combined208.409087s. Ten unrelated
+user modifications remain byte/status/index/patch identical. PR60 retargets main.
+No formal profiler data yet, no new learning or admitted training remedy.
+
+
+### November 12 — full replay profile, exact core identity and partial OS capture
+
+
+**Core replay identity passes; expanded outer OS resource recording is partial.**
+The complete plain and instrumented children return 0 in 188.008402s and
+289.352565s, each under 900. Their exact pair identity passes in477.363457s
+under 1,800. Both actual recomputed summaries and full stored receipt hashes
+match: 324 raw policies,216 books,30 warm origins,108 compositions,216 logical profiles,
+432 unique scored profiles and 1,152fixed conditions; zero chip/unitless error and
+exact policy/book bytes. No learner/reference construction or new admission.
+
+All 2,017 raw function entries and 4,722 caller edges are retained, alongside the
+supplemental binary profile, actual runtime/hardware, per-child OS-reported
+CPU and command/metadata/raw logs. [Manifest and limits](../results/compact-replay-profile/profile/manifest.json)
+record every byte. The timed process uses Python3.11.17/NumPy2.4.6 on the recorded
+arm64 macOS 27.2.1 workstation with 10 logical CPUs; exact CPU-model query is
+unavailable and is recorded as such.
+
+The outer `/usr/bin/time -lp` wrapper returns 1 because macOS denies
+`sysctl kern.clockrate`. Both child return codes and the pair's numerical/cap
+checks pass. The wrapper's raw failure is retained, with available wall/user/sys
+values; expanded memory/resource counters are unavailable. No rerun replaces
+this outcome. This is not a claim of successful full OS resource capture or
+memory savings.
+
+The largest exclusive Python cost is `require_recall`: 2,832 calls,
+44.089108s exclusive and 75.244400 s inclusive.
+The entire profiled reader takes 287.884152 s; exclusive recall
+work is 15.31% of that profiled time.
+Inclusive recall work is 26.14%,
+but overlaps the source-loading/scoring paths below and must not be added again.
+
+| Caller of the recall check | Calls | Inclusive recall seconds |
+|---|---:|---:|
+| `response_profile` | 1760 | 49.616282 |
+| `river_switches` | 864 | 20.584490 |
+| `ScoringContext.__post_init__` | 200 | 4.818562 |
+| `build_view` | 8 | 0.225066 |
+
+The source loader takes 159.793191inclusive seconds and the subsequent full
+archive replay 124.663812. These component totals include other functions and
+are not independent exclusive budgets. Scoring and nested replay calls also
+overlap. All raw data remains available beyond the viewer's top 12 display rows.
+The one ordered pair measures instrumentation under these conditions; it is
+not a population speed estimate, a new fixed-cost repetition or new poker play.
+
+The next question is whether an already proven equal-depth/perfect-recall
+property can be reused when the exact fields that define it stay unchanged.
+A candidate must detect structural mutations, preserve all rejection cases and
+match the complete original replay. It must not remove validation, touch the
+historical checker or claim that this profile rescues the failed 2ace forecast.
+Any cache needs its own prospective protocol, source checks and controlled
+comparison before a performance claim or production integration.
+
+Browse the authenticated retained evidence:
+
+```sh
+.venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
+```

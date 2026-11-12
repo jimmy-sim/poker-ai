@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Measure complete replay overhead before optimizing it](#105-measure-why-verification-is-expensive-before-optimizing-it)
+
 - [Why the compact training remedy waits for a faster audit](#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
 
 - [Inspect the actual decisions behind the information benefit](#103-find-the-concrete-decisions-behind-the-information-benefit)
@@ -54,7 +56,8 @@ now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
 Step 104 now completes the proposed compact training remedy's software proof and
 cost checks, but compute admission fails. The actual new training comparison
-has not run; verification cost must be profiled before optimization.
+has not run; verification cost must be profiled before optimization. Step 105 completes the
+profiling tool and its source checks; the full timed replay is next.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -2922,7 +2925,7 @@ AI-assisted work; no additional human practice or time was reported.
 
 The independent program checked all144 profiles and1,152 fixed targets. Its
 largest scalar discrepancy was about1.35×10⁻¹³ chips. The complete command took
-111.67 seconds; twice that stays below the fixed900-second guard.
+111.67 seconds; twice that stays below the fixed 900-second guard.
 Own evidence was published first, and reference strategies never entered
 training. The exact child receipt is retained.
 
@@ -4919,3 +4922,71 @@ results. A profiler tells us where time goes before we change code. It does not
 make a stronger agent by itself. No new permit or agent default was created.
 
 Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
+
+## 105. Measure why verification is expensive before optimizing it
+
+November 12, 2026. The compact training remedy is ready as software, but its
+verification estimate exceeds the preset budget. We need to find where the time
+goes before changing the code. A **profiler** records how often functions run
+and how much time they use. It adds overhead, so its timings are diagnostic.
+
+The [prospective plan](compact-replay-profile.md) fixes the first cost archive
+by index. One fresh process will replay the entire archive normally; another
+will do the same with instrumentation. Both keep all 324 raw policies, 216 books,
+432 scored profiles and 1,152 fixed conditions. No learner or reference solver
+can be constructed. Each whole child has a 900-second cap; the pair has 1,800.
+
+Two checks caught problems before collecting formal profile data. First,
+GitHub downloaded only the latest commit, but the archived reports point to
+older source commits. Those checks correctly refused missing history. CI now
+fetches the full history, and a local shallow-clone test proves that refusal
+stays in place. The original failed and cancelled jobs are retained.
+
+Second, the old reader validates its newly computed values and then returns
+the stored report. Comparing only that returned object would compare stored
+summaries. The observer now records the actual replay calculation's return as
+well. **Synthetic test:** a computed difference of 1e-16 is detected even when
+the stored report stays identical. Missing or duplicate summaries are rejected.
+The actual complete tiny-game rehearsal has matching computed and stored results.
+The original reader's arithmetic and tolerances stay unchanged.
+
+Before formal collection, both complete local base suites pass 3,356 tests,
+with 64 optional skips and 150 slow deselections. Both relevant optional suites
+pass 116 tests, and both exact-head GitHub jobs pass. All six raw check receipts
+are [retained](../results/compact-replay-profile/checks.json). The instrumented
+source has its own binding; the earlier scientific runner is unchanged.
+
+The older timing receipts already show about 72% of an audit's wall time falls
+outside its three-worker comparison batch. That remainder includes several
+parent stages, so it does not prove which function is slow. The full replay
+profile is next. It will retain every raw function and caller entry, actual
+runtime/hardware and CPU use, and exact comparison of recomputed summaries.
+This measures verification software, not a stronger poker strategy. Codex
+assists with implementation and execution; personal hours or mastery are not inferred.
+
+
+The full pair is now complete. The normal replay takes 188.01 seconds and the
+instrumented replay 289.35, within the fixed 900-second caps. Both recomputed
+summaries match exactly, with zero numerical change and exact policy/book bytes
+across the full archive. The 2,017 functions and 4,722 caller relationships are all
+retained, including entries outside the short terminal display.
+
+The clearest next target is the perfect-recall check. It verifies that a player
+has not forgotten earlier information or choices needed by the response method.
+The same checker runs 2,832 times here. Its own Python work takes 44.09 seconds of
+the instrumented run; including its called helpers takes 75.24. Those inclusive
+times overlap other work, so they cannot be added to the source-loader total.
+This suggests testing a reusable proof for unchanged tree structure. It does
+not justify deleting the check or using an old proof after the structure changes.
+
+One resource-recording failure remains visible: macOS denies the expanded
+kernel query requested by the outer time tool. Both replay processes pass,
+but that recorder returns 1. We keep its failure and the available wall/CPU
+records; full memory/resource counters are unavailable. The trial is not rerun.
+The [method and raw evidence](compact-replay-profile.md#recorded-full-replay-profile--november-12-2026)
+explain the distinction. This profile changes no poker strategy and does not
+admit the failed training experiment. A controlled cache test is the next question.
+
+```sh
+.venv/bin/python scripts/profile_compact_replay.py --show results/compact-replay-profile/profile
+```

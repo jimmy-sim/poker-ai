@@ -1,0 +1,26 @@
+"""Administrative exact-command/environment/time recorder; no numerical adapter."""
+import json,os,shutil,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-replay-profile';python=w/'compact-own-opponents-active311/bin/python'
+out=w/'compact-replay-profile-execution';out.mkdir(exist_ok=False)
+shutil.copyfile(__file__,out/'run_profile.py.txt')
+env=dict(os.environ,PYTHONPATH=str(r/'src'))
+metadata="""import importlib.util,json,sys
+from pathlib import Path
+from poker_ai.reproducibility import runtime_environment
+r=Path.cwd();s=importlib.util.spec_from_file_location('profile_tool',r/'scripts/profile_compact_replay.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+c,x=m.preflight(r);m.checked(r,x)
+assert x['fingerprint']=='ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851'
+print(json.dumps(dict(environment=runtime_environment(),source=x,config_sha256=m.digest(r/m.CONFIG),checks_sha256=m.digest(r/m.FOLDER/'checks.json'),python_executable=sys.executable,scope='administrative pre-invocation snapshot; actual each-child startup/check/replay/extraction/writes are independently charged again'),indent=2))
+"""
+with (out/'environment.json').open('x') as stream:
+ with (out/'metadata-stderr.log').open('x') as err:
+  subprocess.run([str(python),'-c',metadata],cwd=r,env=env,stdout=stream,stderr=err,check=True)
+command=['/usr/bin/time','-lp',str(python),'scripts/profile_compact_replay.py','--stop-at','2026-11-12T18:00:00Z']
+(out/'invocation.json').write_text(json.dumps(dict(command=command,cwd=str(r),PYTHONPATH=env['PYTHONPATH'],expected_ignored_output='results/runs/compact-replay-profile/profile',scope='unchanged fixed pair, whole-pair OS resource report; no new learning or reference construction'),indent=2)+'\n')
+with (out/'stdout.log').open('x') as stream:
+ with (out/'time-stderr.log').open('x') as err:
+  result=subprocess.run(command,cwd=r,env=env,stdout=stream,stderr=err)
+(out/'exit.json').write_text(json.dumps(dict(returncode=result.returncode),indent=2)+'\n')
+print(json.dumps(dict(returncode=result.returncode,execution=str(out))))
+raise SystemExit(result.returncode)
