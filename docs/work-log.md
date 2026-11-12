@@ -3546,3 +3546,18 @@ Superiority admission requires the full accuracy gates and each baseline's
 two-game paired sign; storage/key/lifetime-RSS quantities remain distinct.
 Scientific seeds/configs/caps/method unchanged. Repeat the mandatory exact-source
 cohort on this corrected metadata/report revision before the first rehearsal.
+
+### November 12 — complete sampled source gate, before rehearsal
+
+Exact8da3c2c/source41b6f34d passes immutable base3.11/3.12:3082passed,
+61optional skips/149slow deselected each (536.16/517.75s). Lint/format/strict
+typing658files/hooks and before/after head/module/runtime/source guards pass.
+Relevant locked ALL-EXTRAS375each52.47/52.45s. Hosted43193724153 BOTH pass at
+the exact source head:3082/61/149/one historical warning each;1035.94/598.58s.
+Archive exact observed raw logs, metadata, execution wrapper and digest receipts
+in results/compact-sampled/checks*. The source gate validator authenticates all
+six roles. Preserve initial failures and superseded local cohorts outside the
+canonical successful receipt. Clarify that36separately initialized paths reuse
+paired seeds and are not36independent random replicates; no design field changes.
+Publish this checked-source checkpoint BEFORE the first source-bound tiny own
+collection. No real sampled trajectory, forecast or admission yet.

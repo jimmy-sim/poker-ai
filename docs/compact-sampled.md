@@ -15,7 +15,9 @@ representations, both known turn games, model/range/context pins, three seeds
 IID external B4, signed regrets, linear regret weights and LINEAR primary average.
 Retain allcurrent/uniform/linear readouts:108 primary profiles,324 total. Exact
 simultaneous uniform initialization costs2*tree_nodes; both players' B4 work counts.
-There are36 independent training paths, with dependent checkpoint/readout pairs.
+There are36 separately initialized training paths. Repeated seeds pair the
+representations and games; these are not36 independent random replicates.
+Checkpoint/readout pairs from one path are dependent as well.
 Use the unchanged ReducedDispatchBatchTrainer and three fixed spawn workers,
 round-robin partition of the declared spot/representation/seed path order.
 Set the existing one-thread numerical environment requests in child workers;

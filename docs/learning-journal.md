@@ -4566,3 +4566,11 @@ and a worker disappears before a confirmed checkpoint, progress is **unknown**.
 Two regression tests cover completed and interrupted orchestration. The report
 exports every readout and signed seed comparison, including cases unfavorable
 to the candidate; a paired advantage alone cannot bypass the accuracy gates.
+
+The corrected source now passes the complete check set:3,082 base tests on each
+Python version,375 relevant optional tests on each, and both GitHub jobs. The
+exact [source-check receipts](../results/compact-sampled/checks.json) are retained.
+The next step is the tiny rehearsal, followed by cost and admission checks. These
+software passes still do not establish a sampled Hold'em strength result. There
+are36separate trainer instances, but repeated seeds deliberately pair the runs;
+they are not36independent statistical observations.
