@@ -3693,3 +3693,18 @@ Final publication base/hosted checks and solo self-review remain merge gates.
 Next justified issue4 question: separate within-group learning weakness from
 finer-information vulnerability with each saved opponent held fixed, before
 choosing another training/representation remedy. Human minutes not recorded.
+
+### November 12 — prospective compact fixed-opponent diagnosis
+
+After complete PR56 failed accuracy, preregister a separate diagnostic before
+new crossed/decomposition outcomes. All36saved final LINEAR S policies and12
+same-representation full4096 F policies, allsix/two games/three seeds. Four
+owner-row mixes SS/SF/FS/FF perpair:144logical profiles/288target conditions.
+No new learning/RNG draws/default/feature/fresh/global stage. Test E=W+I and
+fixed-opponent root/I invariance; retain all signed own EV effects and source
+failures. Full archive/source/Git-blob compatibility without editing old checkers;
+complete local/optional/hosted source checks and tiny same-pipeline software proof
+before actual900s own/native diagnostic. Publish own before reference, preserve
+partials, use pinned scalar-only Apache2reference. Full4800s downstream reserve
+must fit the user's10a.m.Pacific cutoff. Method/config/journal102 published first;
+no outcomes or remedy choice claimed. PR56 final publication checks still run.

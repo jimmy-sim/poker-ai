@@ -4601,3 +4601,30 @@ it already exists. The [method and complete receipts](compact-sampled.md) contai
 the recorded-runtime replay command and its source requirements. Codex assisted
 with implementation, execution and drafting; personal time and mastery are not
 inferred.
+
+## 102. Keep the opponent fixed when explaining the remaining weakness
+
+November 12, 2026. The fixed-work compact test failed its harder-game median
+accuracy limit. The next question is whether the saved policy makes poor choices
+inside its existing groups, or whether a responder gains from distinctions those
+groups merge. Those explanations suggest different remedies, so measure them
+before choosing one.
+
+The [prospective diagnostic](compact-fixed-opponents.md) uses all 36 saved sampled
+linear averages and all 12 same-description full-control averages. It starts no
+new training. For every paired context it crosses both players' sources: sampled/
+sampled, sampled/full, full/sampled and full/full. There are 144 planned logical
+profiles and 288 player conditions, including repeated full-profile aliases.
+Those counts are a design, not a measured result yet.
+
+**Example:** replacing both players at once could make our apparent gap change
+because the opponent changed. Keeping that opponent fixed lets us ask what
+happens when only our own saved strategy changes. The exact and group-constrained
+best-response values should stay the same; only our achieved baseline value
+changes. Their difference isolates the value of finer information against that
+particular opponent. It is not a universal cost of the feature.
+
+The implementation, tests, checked-source tiny rehearsal and numerical audit
+remain pending. Own evidence must be public before reference comparison. The
+previous failed learning gate and default agent remain unchanged. Codex assists
+with the work; no personal learning time or understanding is inferred.
