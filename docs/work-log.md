@@ -3617,3 +3617,14 @@ Fixed4*(T+O+P)=3220.713439164s<7200 and4*(N+O+P)=489.940297996s<900.
 Forecast complete command107.862500125s; no real trajectory was run. Publish
 this forecast BEFORE checked admission. No changed factors/caps/seeds, no accuracy/
 default/fresh/global admission. Full11100s user-deadline reserve still applies.
+
+### November 12 — checked sampled study permission, publish before trajectory
+
+Published forecast06e099e precedes admission. The admission command recomputes
+source/proof/cost/history arithmetic and authenticates909sealed prerequisite files
+and exact fetched-origin publication bytes. Complete command26.335615209s;
+sampled_trajectory_admitted=True, actual_admission=False, fresh_global=False.
+This permits only the frozen36-path known-game research study, not accuracy, a
+stronger agent or default/fresh/global promotion. Publish the permit before
+starting. The full11100s study/audit/report/final-CI/save reserve fits before
+the user's10a.m.Pacific cutoff; parent/worker recheck permit/source before learning.

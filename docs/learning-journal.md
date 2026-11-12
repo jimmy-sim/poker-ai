@@ -4608,3 +4608,9 @@ for the native audit, below the unchanged120/15-minute caps. It uses all24old
 B4timings, each game's slowest path, the largest measured costs and the fixed
 four-times margin. These are conservative estimates, not actual training times
 or a strength result. A separately checked published permit is still required.
+
+The permission check passed after verifying909prerequisite files and their
+published bytes. It took26.34seconds. This means the frozen study is allowed to
+run, not that its strategy passed an accuracy test. The permit is published
+before the first new Hold'em trajectory; all36paths and every unfavorable seed
+will be retained. The full allowed caps plus verification still fit before10a.m.
