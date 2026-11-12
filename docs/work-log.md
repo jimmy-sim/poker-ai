@@ -4297,3 +4297,27 @@ main after dependencyPR60merged and sourceCIcompleted. Journal106 now explains
 content fingerprints, mutation limits and what software identity would prove.
 Original362-file2ace and364-filece6 dependencies remain unchanged/public;
 no timedcache outcome, integration, admission or poker learning yet.
+
+
+### November 12 — complete recall-cache pair, exact results
+
+After allsix source roles were public37dcf58, the single registered pair starts
+8:41a.m.Pacific (before8:55latest). Uncached188.27628845899744s, cached
+138.15393783400214s; both return0 under900each, shared326.43247416600207<1,800.
+All432/1,152 actual AND stored summaries exact, numerical errors0, policy/book
+bytes exact; full324raw/216books/30warms/108compositions retained. Both2,832
+requests; original traversals2,832→18, successful reuses0→2,814, no fallback or
+rejection on valid archive. Source367/config/inventory/source-publication and
+whole-child CPU/wall/command/environment are bound in retained raw manifests;
+original ignored bytes copied exactly before verification. No expanded macOS
+resource query repeated; no memoryclaim. Conditional ordered-pair wall reduction
+26.621701030563326%, not population or full-native-audit speed estimate. All
+unfavorable historical outcomes including old1,210.21>900admission remain;
+no production integration/permit/new poker training. README/method/3QAs/journal106
+explain exact outcomes and limits. Final relevant checks and both final-head
+hostedCI remain before merge. Stop10a.m.; no further automation/subagents.
+
+Final same-source relevant suites pass147each:16.16s onPython3.11 and15.91s
+onPython3.12. All367named scientific files unchanged; complete raw pair hashes
+and recomputed/stored identity independently rechecked by the retained reader.
+Lint/format/hooks pass. Final publication hosted checks required before merge.

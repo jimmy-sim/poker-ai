@@ -1,0 +1,20 @@
+"""Exact experimental invocation; no expanded kernel resource query."""
+import json,os,shutil,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'recall-proof-cache';python=w/'compact-own-opponents-active311/bin/python';out=w/'recall-proof-cache-execution';out.mkdir(exist_ok=False)
+shutil.copyfile(__file__,out/'run_pair.py.txt');env=dict(os.environ,PYTHONPATH=str(r/'src'))
+metadata="""import sys,json
+from pathlib import Path
+from poker_ai.reproducibility import runtime_environment
+r=Path.cwd();sys.path.insert(0,str(r/'scripts'));import recall_cache_support as t
+c,x=t.source(r);t.checked(r,x);assert x['fingerprint']=='cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352'
+p=t.profile_tool(r)
+print(json.dumps(dict(environment=runtime_environment(),source=x,config_sha256=p.digest(r/t.CONFIG),checks_sha256=p.digest(r/t.FOLDER/'checks.json'),scope='pre-invocation metadata; child startup/all checks/replay/hash/writes charged again'),indent=2))
+"""
+with (out/'environment.json').open('x') as stream:
+ with (out/'metadata-stderr.log').open('x') as err:subprocess.run([str(python),'-c',metadata],cwd=r,env=env,stdout=stream,stderr=err,check=True)
+command=[str(python),'scripts/compare_recall_cache.py','--stop-at','2026-11-12T18:00:00Z']
+(out/'invocation.json').write_text(json.dumps(dict(command=command,cwd=str(r),PYTHONPATH=env['PYTHONPATH'],scope='one fixed uncached/cached comparison, all whole-child OS CPU/wall receipts; no reference construction/training/admission'),indent=2)+'\n')
+with (out/'stdout.log').open('x') as stream:
+ with (out/'stderr.log').open('x') as err:result=subprocess.run(command,cwd=r,env=env,stdout=stream,stderr=err)
+(out/'exit.json').write_text(json.dumps(dict(returncode=result.returncode),indent=2)+'\n');print(json.dumps(dict(returncode=result.returncode,execution=str(out))));raise SystemExit(result.returncode)

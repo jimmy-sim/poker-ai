@@ -61,7 +61,9 @@ cost checks, but compute admission fails. The actual new training comparison
 has not run. Step 105 completes the full replay profile: computed results match
 exactly, and repeated recall validation is the largest exclusive Python cost.
 The outer OS recorder remains partially failed. Step 106 tests reuse of a proof
-for unchanged structure, with source checks required before timing.
+for unchanged structure. The full archive now replays identically in 188.28
+seconds without reuse and 138.15 with reuse; this is a software result from one
+ordered pair, not stronger poker play.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -5023,17 +5025,33 @@ summary and the stored receipt for all 432 scored profiles. Both full local
 base suites now pass 3,387 tests, with 64 optional skips and 150 slow deselections;
 both relevant optional suites pass 147 tests. Both exact-source GitHub jobs also pass, with the same 3,387 passes, 64 skips
 and 150 deselections (plus one historical warning) each. All six roles and
-raw logs are [retained](../results/recall-proof-cache/checks.json). No full
-saved-cost cache timing result exists yet.
+raw logs are [retained](../results/recall-proof-cache/checks.json). They were
+published before collecting the full saved-cost timing.
 
-With the source checks complete, publish them before starting one fixed pair
-by the unchanged 8:55 a.m. latest start:
-the full saved archive without reuse, then the same archive with reuse. All
-policy/book bytes and computed results must match. Each process keeps its
-900-second cap, and the full pair keeps 1,800 seconds. We reserve time for final
-CI and saving before the user's 10 a.m. stop; arriving late means no timing run.
+The pair started at 8:41 a.m., before the unchanged 8:55 latest start: the full
+saved archive without reuse, then the same archive with reuse. Policy/book bytes
+and computed results must match. Each process keeps its 900-second cap and the
+full pair keeps 1,800 seconds, with the required final-CI/save reserve before
+the user's 10 a.m. stop. No cap or gate is changed to fit the clock.
 
 A faster replay would help us verify future experiments efficiently. It would
 not make today's poker policy stronger or reverse the failed training-budget
 forecast. That still needs a separately checked integration and admission.
 Codex assists with this work; personal hours and understanding are not inferred.
+
+
+The fixed pair is complete: 188.28 seconds without reuse, then 138.15 with it.
+All recomputed results and policy/book bytes match exactly across the full
+432-score, 1,152-condition archive. Both runs make 2,832 checker requests. The
+cached run validates 18 distinct structures and reuses 2,814 successful proofs.
+It still hashes the current contents before every reuse. No request is dropped.
+
+That is a 26.62% lower whole-replay wall time in this one ordered pair. It is a
+useful software result: we can spend less time checking the same saved evidence.
+It does not establish the same gain on other machines or the full independent
+audit, and it does not train a better policy. The old 1,210.21-second forecast
+still fails its 900-second gate. The [full method and raw records](recall-proof-cache.md#complete-saved-archive-result--november-12)
+retain exact times, CPU records, limits and the next decision. Before any future
+training, integrate and check the improvement separately, measure the complete
+prescribed costs, and pass the original admission rules. Final GitHub checks
+remain before merging this result; work stops by the user's 10 a.m. deadline.

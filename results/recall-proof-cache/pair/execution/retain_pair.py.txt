@@ -1,0 +1,38 @@
+"""Preserve the single registered outcome before validating its claims."""
+import hashlib,json,shutil,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'recall-proof-cache';raw=r/'results/runs/recall-proof-cache/pair';outside=w/'recall-proof-cache-execution';out=r/'results/recall-proof-cache/pair'
+assert raw.is_dir() and outside.is_dir() and not out.exists()
+shutil.copytree(raw,out);shutil.copytree(outside,out/'execution')
+shutil.copyfile(__file__,out/'execution/retain_pair.py.txt')
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+for p in raw.rglob('*'):
+ if p.is_file():assert p.read_bytes()==(out/p.relative_to(raw)).read_bytes()
+for p in outside.rglob('*'):
+ if p.is_file():assert p.read_bytes()==(out/'execution'/p.relative_to(outside)).read_bytes()
+saved=json.loads((out/'pair.json').read_text());ret=dict(status=saved['status'],admission_evidence=False,poker_training_performed=False,reference_constructed=False,production_integration=False,original_compute_admission_remains_failed=True,sha256={str(p.relative_to(out)):digest(p) for p in sorted(out.rglob('*')) if p.is_file()})
+(out/'manifest.json').write_text(json.dumps(ret,sort_keys=True,indent=2)+'\n')
+if saved['status']!='same_complete_replay_with_reused_proofs':
+ print('Partial/failing outcome retained; do not retry.',json.dumps(ret));sys.exit(2)
+sys.path.insert(0,str(r/'src'));sys.path.insert(0,str(r/'scripts'));import recall_cache_support as t
+p=t.profile_tool(r);c=t.contract(r)
+a,b=[json.loads((out/m/'child.json').read_text()) for m in c['order']]
+assert saved['identity']==t.pair_identity(a,b)['identity']
+for mode,child,m in zip(c['order'],(a,b),saved['measurements'],strict=True):
+ assert m==json.loads((out/mode/'measurement.json').read_text())
+ assert m['child_sha256']==digest(out/mode/'child.json') and m['returncode']==0 and m['interrupted'] is None
+ assert 0<m['seconds']<c['maximum_child_seconds'] and child['seconds']<=m['seconds']
+ assert child['source']['fingerprint']=='cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352' and child['config_sha256']==t.CONFIG_SHA
+ p.authenticate_source(r,child['source']);assert child['cache']['requests']==c['expected_requests_per_mode']
+ assert child['poker_training_performed'] is False and child['reference_constructed'] is False and child['admission_evidence'] is False
+for name in ('own_replay','stored_own_replay'):
+ x=saved['identity'][name]
+ assert x['unique_profiles']==432 and x['fixed_conditions']==1152 and x['raw_profiles']==324 and x['raw_ledgers']==216 and x['warm_origins']==30 and x['composed_profiles']==108 and x['logical_profiles']==216
+ assert x['maximum_error']==0 and x['maximum_unitless_error']==0 and x['policy_and_ledger_bits_exact'] is True and x['new_training_admission'] is False
+assert saved['seconds']<c['maximum_pair_seconds']
+a_time,b_time=[x['seconds'] for x in saved['measurements']]
+assert saved['narrow_wall_time_pass']==(b_time<a_time)
+assert json.loads((out/'execution/exit.json').read_text())['returncode']==(0 if b_time<a_time else 2)
+ret.update(uncached_seconds=a_time,cached_seconds=b_time,pair_seconds=saved['seconds'],narrow_wall_time_pass=b_time<a_time,uncached=a['cache'],cached=b['cache'],source_fingerprint=a['source']['fingerprint'],source_checked_commit='79354f8a665c1d137c58bf8974f7327ae92e9807',exact_actual_and_stored_summary=True,exact_policy_book_bytes=True)
+(out/'manifest.json').write_text(json.dumps(ret,sort_keys=True,indent=2)+'\n')
+print(json.dumps({k:v for k,v in ret.items() if k!='sha256'},indent=2))
