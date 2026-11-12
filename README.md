@@ -75,6 +75,13 @@ a collision at that turn row. Browse the published data with
 [Journal step 103](docs/learning-journal.md#103-find-the-concrete-decisions-behind-the-information-benefit)
 explains the negative values, reach weights and attacker/defender roles.
 
+The next [compact training-remedy pipeline](docs/compact-own-opponent-learning.md)
+passes its complete software rehearsal and all fixed numerical cost audits, but
+**compute admission fails**: its guarded independent forecast is
+1210.21 seconds against 900. No new compact/finer-opponent
+training was started. [Journal 104](docs/learning-journal.md#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
+explains the decision; full replay profiling comes before optimization.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:

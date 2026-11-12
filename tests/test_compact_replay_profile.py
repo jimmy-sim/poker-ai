@@ -38,7 +38,10 @@ def original() -> dict[str, Any]:
 def test_prospective_config_and_whole_original_identity(tool: Any) -> None:
     c = tool.contract(ROOT)
     saved = original()
-    assert tool.identity(saved, c)["own_replay"]["unique_profiles"] == 432
+    assert (
+        tool.identity(saved, c, saved["own_replay"])["own_replay"]["unique_profiles"]
+        == 432
+    )
     assert saved["source_sha256"] == c["original_source_sha256"]
     assert saved["source"]["sha256"] == c["original_named_source"]
     assert all(
@@ -92,7 +95,7 @@ def test_cost_only_identity_cannot_claim_learning(
     saved = original()
     saved[field] = value
     with pytest.raises(ArithmeticError, match="cost-only"):
-        tool.identity(saved, tool.contract(ROOT))
+        tool.identity(saved, tool.contract(ROOT), saved["own_replay"])
 
 
 @pytest.mark.parametrize(
@@ -109,14 +112,16 @@ def test_incomplete_replay_counts_are_refused(tool: Any, field: str) -> None:
     saved = original()
     saved["own_replay"][field] = False if field == "policy_and_ledger_bits_exact" else 1
     with pytest.raises(ArithmeticError, match="cost-only"):
-        tool.identity(saved, tool.contract(ROOT))
+        tool.identity(saved, tool.contract(ROOT), saved["own_replay"])
 
 
 def children(tool: Any) -> tuple[dict[str, Any], dict[str, Any]]:
     plain = dict(
         status="complete_read_only_replay",
         mode="plain",
-        identity=tool.identity(original(), tool.contract(ROOT)),
+        identity=tool.identity(
+            original(), tool.contract(ROOT), original()["own_replay"]
+        ),
         source=dict(sha256={"source": "hash"}),
         config_sha256=tool.CONFIG_SHA,
     )
@@ -148,6 +153,38 @@ def test_pair_source_order_and_full_hash_are_required(tool: Any, damage: str) ->
         tool.pair_identity(plain, profile)
 
 
+@pytest.mark.parametrize("calls", [0, 1, 2])
+def test_recording_requires_exactly_one_real_computed_summary(
+    tool: Any,
+    monkeypatch: pytest.MonkeyPatch,
+    calls: int,
+) -> None:
+    from poker_ai.evaluation import compact_opponent_cli as frozen
+
+    stored = original()
+    actual = copy.deepcopy(stored["own_replay"])
+    actual["maximum_error"] = 1e-16
+    monkeypatch.setattr(frozen, "replay", lambda *args, **kwargs: actual)
+
+    def read(*args: Any) -> Any:
+        for _ in range(calls):
+            vars(frozen)["replay"]()
+        return stored
+
+    monkeypatch.setattr(frozen, "read", read)
+    if calls != 1:
+        with pytest.raises(ArithmeticError, match="one complete computed"):
+            tool.read_with_actual(ROOT, Path("fixture"), None)
+    else:
+        result = tool.read_with_actual(ROOT, Path("fixture"), None)
+        assert result["computed_replay"]["maximum_error"] == 1e-16
+        assert result["own"]["own_replay"]["maximum_error"] == 0
+        plain, profile = children(tool)
+        profile["identity"] = tool.identity(stored, tool.contract(ROOT), actual)
+        with pytest.raises(ArithmeticError, match="identity changed"):
+            tool.pair_identity(plain, profile)
+
+
 @pytest.mark.parametrize("exitcode", [0, 7])
 def test_supervisor_retains_complete_or_failed_child(
     tool: Any, tmp_path: Path, exitcode: int
@@ -167,6 +204,8 @@ def test_supervisor_retains_complete_or_failed_child(
     ]
     result = tool.supervise(command, destination, 10)
     assert result["returncode"] == exitcode
+    assert result["reaped_child_user_seconds"] >= 0
+    assert result["reaped_child_system_seconds"] >= 0
     assert result["child_sha256"] == tool.digest(destination / "child.json")
     assert json.loads((destination / "measurement.json").read_text()) == result
     assert "retained" in (destination / "command.log").read_text()
@@ -232,14 +271,17 @@ def test_viewer_authenticates_full_children_and_raw_profile(
     capsys: pytest.CaptureFixture[str],
     damage: str | None,
 ) -> None:
-    from poker_ai.evaluation import compact_opponent_cli
 
     plain, profiled = children(tool)
     monkeypatch.setattr(tool, "authenticate_source", lambda *args: None)
     folders = [tmp_path / mode for mode in ("plain", "profile")]
     for folder in folders:
         folder.mkdir()
-    monkeypatch.setattr(compact_opponent_cli, "read", lambda *args: original())
+    monkeypatch.setattr(
+        tool,
+        "read_with_actual",
+        lambda *args: dict(own=original(), computed_replay=original()["own_replay"]),
+    )
     tool.profile_read(ROOT, tmp_path / "own", None, folders[1])
     profiled["profile_files"] = {
         name: tool.digest(folders[1] / name)
@@ -337,10 +379,10 @@ root,out=map(Path,sys.argv[1:])
 spec=importlib.util.spec_from_file_location('profile_tool',root/'scripts/profile_compact_replay.py')
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 own=root/'results/compact-own-opponent-learning/software/own.json'
-plain=read(root,own,Deadline(120))
+plain=module.read_with_actual(root,own,Deadline(120))
 profile=module.profile_read(root,own,Deadline(120),out)
 assert module.canonical(plain)==module.canonical(profile)
-assert plain['own_replay']['unique_profiles']==432
+assert plain['computed_replay']['unique_profiles']==432
 with isolated(worker=False):
  from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
  try: ReducedDispatchBatchTrainer(None,None,None)

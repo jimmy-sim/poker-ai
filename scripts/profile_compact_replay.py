@@ -10,10 +10,12 @@ import gzip
 import hashlib
 import json
 import os
+import resource
 import signal
 import subprocess
 import sys
 import time
+from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -85,8 +87,9 @@ def checked(root: Path, source: dict[str, Any]) -> None:
         published(root, root / row["log"]["file"])
 
 
-def identity(own: dict[str, Any], c: dict[str, Any]) -> dict[str, Any]:
-    replay = own["own_replay"]
+def identity(
+    own: dict[str, Any], c: dict[str, Any], replay: dict[str, Any]
+) -> dict[str, Any]:
     if (
         own["scope"] != "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING"
         or own["poker_training_performed"] is not False
@@ -100,10 +103,37 @@ def identity(own: dict[str, Any], c: dict[str, Any]) -> dict[str, Any]:
     return dict(
         complete_own_sha256=hashlib.sha256(canonical(own)).hexdigest(),
         own_replay=replay,
+        stored_own_replay=own["own_replay"],
         source_sha256=own["source_sha256"],
         poker_training_performed=False,
         reference_constructed=False,
     )
+
+
+def read_with_actual(root: Path, own: Path, deadline: Any) -> dict[str, Any]:
+    """Observe the unchanged replay return, not merely the old saved receipt.
+
+    The frozen reader validates recomputed math then returns its stored input.
+    Transparently recording its one replay call makes the new exact comparison
+    cover computed diagnostics too, without replacing any arithmetic or guard.
+    """
+    from unittest.mock import patch
+
+    from poker_ai.evaluation import compact_opponent_cli as frozen
+
+    original: Callable[..., dict[str, Any]] = vars(frozen)["replay"]
+    observed = []
+
+    def record(*args: Any, **kwargs: Any) -> dict[str, Any]:
+        actual = original(*args, **kwargs)
+        observed.append(json.loads(canonical(actual)))
+        return actual
+
+    with patch.object(frozen, "replay", record):
+        saved = frozen.read(root, own, deadline)
+    if len(observed) != 1:
+        raise ArithmeticError("one complete computed replay summary required")
+    return dict(own=saved, computed_replay=observed[0])
 
 
 def profile_read(root: Path, own: Path, deadline: Any, output: Path) -> dict[str, Any]:
@@ -111,11 +141,10 @@ def profile_read(root: Path, own: Path, deadline: Any, output: Path) -> dict[str
     import cProfile
 
     from poker_ai.evaluation.batch_cost_stats import extract
-    from poker_ai.evaluation.compact_opponent_cli import read
 
     profiler = cProfile.Profile()
     try:
-        return profiler.runcall(read, root, own, deadline)
+        return profiler.runcall(read_with_actual, root, own, deadline)
     finally:
         profiler.disable()
         profiler.dump_stats(str(output / "replay.prof"))
@@ -137,9 +166,9 @@ def child(root: Path, mode: str, output: Path, origin: float) -> int:
     receipt = output / "child.json"
     atomic(receipt, saved)
     try:
-        from poker_ai.evaluation.compact_opponent_cli import read
         from poker_ai.evaluation.compact_opponent_publication import publication
         from poker_ai.postflop.river_study import Deadline
+        from poker_ai.reproducibility import runtime_environment
 
         c, source = preflight(root)
         import numpy as np
@@ -162,12 +191,12 @@ def child(root: Path, mode: str, output: Path, origin: float) -> int:
             root, own_path, json.loads(own_path.read_text())
         )
         deadline.check()
-        own = (
+        result = (
             profile_read(root, own_path, deadline, output)
             if mode == "profile"
-            else read(root, own_path, deadline)
+            else read_with_actual(root, own_path, deadline)
         )
-        saved["identity"] = identity(own, c)
+        saved["identity"] = identity(result["own"], c, result["computed_replay"])
         after_c, after_source = preflight(root)
         if after_c != c or after_source["sha256"] != source["sha256"]:
             raise ArithmeticError(
@@ -178,6 +207,7 @@ def child(root: Path, mode: str, output: Path, origin: float) -> int:
                 p: digest(output / p)
                 for p in ("replay.prof", "functions-callers.json.gz")
             }
+        saved["environment"] = runtime_environment()
         saved.update(
             status="complete_read_only_replay", seconds=time.perf_counter() - origin
         )
@@ -199,6 +229,7 @@ def supervise(command: list[str], output: Path, cap: float) -> dict[str, Any]:
         raise FileExistsError("retain complete/partial replay profile output")
     output.mkdir(parents=True)
     started = time.perf_counter()
+    before = resource.getrusage(resource.RUSAGE_CHILDREN)
     env = dict(os.environ, POKER_COMPACT_REPLAY_PROFILE_STARTED=repr(started))
     with (output / "command.log").open("x") as log:
         process = subprocess.Popen(
@@ -210,7 +241,7 @@ def supervise(command: list[str], output: Path, cap: float) -> dict[str, Any]:
         )
         interrupted = None
         try:
-            code = process.wait(timeout=cap)
+            code = process.wait(timeout=max(0.001, started + cap - time.perf_counter()))
         except (subprocess.TimeoutExpired, KeyboardInterrupt) as exc:
             interrupted = type(exc).__name__
             os.killpg(process.pid, signal.SIGTERM)
@@ -220,11 +251,15 @@ def supervise(command: list[str], output: Path, cap: float) -> dict[str, Any]:
                 os.killpg(process.pid, signal.SIGKILL)
                 process.wait()
             code = 124 if isinstance(exc, subprocess.TimeoutExpired) else 130
+    after = resource.getrusage(resource.RUSAGE_CHILDREN)
     result = dict(
         command=command,
         returncode=code,
         interrupted=interrupted,
         seconds=time.perf_counter() - started,
+        reaped_child_user_seconds=after.ru_utime - before.ru_utime,
+        reaped_child_system_seconds=after.ru_stime - before.ru_stime,
+        cpu_scope="OS-reported reaped child/descendant CPU; may be partial on failure",
         child_sha256=digest(output / "child.json")
         if (output / "child.json").is_file()
         else None,

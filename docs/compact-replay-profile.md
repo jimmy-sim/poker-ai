@@ -69,3 +69,35 @@ profiling needs another bounded step. Never remove required historical checks
 to fit a clock. Update issue4, work log and plain-English learning journal with
 actual counts/times and this limitation. Codex assistance is explicit; human
 hours and mastery remain unrecorded unless the user reports them.
+
+
+## Existing timing context and instrumentation metadata
+
+Before formal profiling, the already published cost receipts give:
+
+| Fixed repetition | Whole command (s) | Three-worker batch (s) | Other command stages (s) |
+|---|---:|---:|---:|
+|0|533.671665|148.636288|385.035377|
+|1|545.105072|150.287858|394.817214|
+|2|544.434855|150.261643|394.173212|
+
+The last column is simply complete_command.seconds minus native_batch.seconds
+in the three retained native.json receipts. About72% lies outside the batch.
+This residual includes parent preflight, validation, final own replay, startup
+and writes; it does not isolate replay or reference-solver time. The batch also
+contains worker preparation. This is retrospective inspection of existing
+receipts, not a formal profile or evidence of a speedup.
+
+Retain an actual execution-environment snapshot from the existing repository
+runtime_environment function (Python, NumPy, platform, CPU and logical cores),
+source/config fingerprints and the exact invocation before the fixed pair. Run
+the unchanged command under macOS /usr/bin/time -lp and retain its raw output
+for whole-pair wall/user/system time and resource use. Those outer process
+measurements cover supervisor and children together, not per-child CPU times.
+The already implemented whole-child wall clocks remain the900-second gate;
+metadata capture and administration do not substitute for, or shorten, them.
+The fixed900/1,800caps, order, input corpus and all source/constructor checks
+remain unchanged. No formal profiling has run yet.
+
+
+The instrumented source now observes the actual computed replay return exactly once, in addition to the full stored receipt returned by the frozen reader. This observer forwards every original argument/result and changes no arithmetic or source guard. Exact pair identity includes both computed and stored summaries. Each child records its actual runtime/hardware; each supervisor measurement records OS-reported reaped-child user/system CPU (possibly partial for failed children). Startup is charged against the original monotonic cap before waiting. These corrections precede any formal profiling and require a fresh complete source cohort; older checks cannot admit changed source.

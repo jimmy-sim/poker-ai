@@ -4147,6 +4147,44 @@ Native0/1/2 full432/1152 scalar audits, complete forecast and checked published
 permit remain before a real study; full11100s reserve and10a.m.cutoff unchanged.
 
 
+### November 12 — compact training remedy denied compute admission
+
+
+**Compute admission fails; no new compact/finer-opponent trajectory was run.**
+The complete fictional software proof passed all 432 profiles / 1,152 conditions
+within 47.276234 seconds shared, and all required source checks passed before
+collection. All three own costs were published before any independent cost.
+Every fixed cost completed under its 900-second command cap, with exact own
+policy/book replay and all 432 / 1,152 independent scalar checks passing.
+
+| Fixed repetition | Complete own seconds | Complete independent seconds | Largest independent error (chips) |
+|---|---:|---:|---:|
+| 0 | 308.323405 | 533.671665 | 1.84741e-13 |
+| 1 | 309.275252 | 545.105072 | 1.84741e-13 |
+| 2 | 305.314505 | 544.434855 | 1.84741e-13 |
+
+The complete [forecast](../results/compact-own-opponent-learning/forecast.json)
+replays all three own archives and validates every independent raw worker,
+publication witness, complete clock and source/input seal. It takes
+655.200384 seconds under 900. From all 24 original timing
+paths, T=610.943356249918; D=309.275251667001; N=545.105072250000 seconds. The unchanged
+own forecast 2*(2*T+D+600)=4262.323928<7200 passes. The unchanged
+independent forecast 2*(N+60)=1210.210145<900 is **false**.
+A command fitting its individual cap is insufficient for the conservative
+admission forecast. No favorable repetition is discarded and no gate/cap is
+changed. These are wall times on the recorded workstation, with routine light
+administrative work during collection, not exclusive-machine speed benchmarks.
+
+No study permit is created, no new real learning starts, and the failed compact
+sampled accuracy result remains. The paired/treatment cost curves reuse old
+OWN tables by construction; they never measure the proposed training remedy.
+The next separate [profiling milestone](https://github.com/jimmy-sim/poker-ai/pull/60)
+measures a full replay before selecting any lossless optimization. An optimized
+source must earn its own checks, fixed costs and admission; this result cannot
+be rescued by profiler timings. No default/fresh/global or stronger-agent claim.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
+
 ## November 12, 2026 — prospect: complete compact replay profiling
 
 The first published independent cost needs 533.671665 seconds; the fixed native admission formula requires the maximum of all three costs below390. Remaining repetitions and the original complete forecast remain required in PR#59. The separate [profiling protocol](compact-replay-profile.md) fixes plain then instrumented full replay of cost archive0, unchanged original source/guards,900s per child and complete raw function/caller evidence. No profile outcome or optimization exists yet. Codex-assisted planning; no personal time or understanding inferred. Refs#4.
@@ -4156,3 +4194,5 @@ The standalone profiling tool now passes56focused checks, including an actual fu
 Viewer self-review also binds every named historical scientific file and Git blob before presenting timings. It accepts unrelated source additions without weakening the original runner aggregate.57focused checks now pass (10.82s), including this provenance check; no formal profile has run.
 
 GitHub then caught a checkout-history issue: Python3.11 reports3,350passes and two provenance-test failures because its default shallow checkout lacks the archived source commits. Both full local suites had3,352passes/64skips/150deselections; optional112each. We retain the failed hosted log, exact head/job metadata and local receipts. CI now fetches full history. A new local shallow-clone fixture proves the checker refuses missing history and passes after fetching it; no source checker is relaxed.58focused checks pass9.51s. A fresh same-head local/optional/hosted cohort is required before formal profiling. The original forecast and scientific source are unchanged.
+
+Self-review before formal profiling caught a verification gap: the frozen reader checks recomputed values, then returns its stored input receipt. Comparing that object alone would compare stored diagnostics rather than directly compare both recomputations. The new observer records the return from exactly one call to the unchanged replay function. Both complete stored receipt and actual computed summary must match across modes; original arithmetic/guards remain. Synthetic tests reject missing/duplicate summaries and detect a1e-16 computed change despite identical stored inputs.61focused tests pass11.42s, including a real full432-profile tiny replay with actual summaries equal. Actual runtime/hardware and OS-reported reaped-child CPU are now recorded. Old full local3353/optional113 and successful hosted3.11 remain retained evidence for the earlier source, not admission for this changed entrypoint. Fresh required same-head checks follow; no formal poker profile or new learning has run.

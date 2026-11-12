@@ -11,6 +11,10 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Measure complete replay overhead before optimizing it](#105-measure-why-verification-is-expensive-before-optimizing-it)
+
+- [Why the compact training remedy waits for a faster audit](#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
+
 - [Inspect the actual decisions behind the information benefit](#103-find-the-concrete-decisions-behind-the-information-benefit)
 
 - [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
@@ -50,6 +54,9 @@ game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 expla
 all controls, the independent checks and what the failure means. Step 102
 now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
+Step 104 now completes the proposed compact training remedy's software proof and
+cost checks, but compute admission fails. The actual new training comparison
+has not run; verification cost must be profiled before optimization.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4898,6 +4905,23 @@ coincide here because they reuse old tables by construction, not because a new
 training experiment found no difference. The independent cost runs are next.
 
 
+The complete cost record now blocks the real comparison. All three independent
+runs pass the same 432 strategy / 1,152 condition checks, but their slowest complete
+command needs 545.11 seconds. The predefined safety formula doubles that time
+plus 60 seconds, giving 1,210.21 seconds against a 900-second
+limit. It fails. The own-work forecast passes at 4,262.32 seconds
+against 7,200, but both must pass. The [full forecast and every timing](compact-own-opponent-learning.md#recorded-compute-decision--november-12-2026)
+are retained; no seed, cap or rule changes to turn it into a pass.
+
+This is not another measurement of the model's playing strength: the new compact
+training remedy has not run. It is a refusal to start a long experiment whose
+complete verification currently costs too much. The next profiling step keeps
+all checks and compares normal versus instrumented full replay for identical
+results. A profiler tells us where time goes before we change code. It does not
+make a stronger agent by itself. No new permit or agent default was created.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
+
 ## 105. Measure why verification is expensive before optimizing it
 
 November 12, 2026. The training-remedy pipeline passes its software rehearsal, but the first complete independent cost audit already exceeds the conservative admission threshold. The remaining fixed measurements and forecast must still be retained. This is a compute gate, not a new model-quality result.
@@ -4909,3 +4933,5 @@ The standalone profiling tool now passes56focused checks, including an actual fu
 Viewer self-review also binds every named historical scientific file and Git blob before presenting timings. It accepts unrelated source additions without weakening the original runner aggregate.57focused checks now pass (10.82s), including this provenance check; no formal profile has run.
 
 GitHub then caught a checkout-history issue: Python3.11 reports3,350passes and two provenance-test failures because its default shallow checkout lacks the archived source commits. Both full local suites had3,352passes/64skips/150deselections; optional112each. We retain the failed hosted log, exact head/job metadata and local receipts. CI now fetches full history. A new local shallow-clone fixture proves the checker refuses missing history and passes after fetching it; no source checker is relaxed.58focused checks pass9.51s. A fresh same-head local/optional/hosted cohort is required before formal profiling. The original forecast and scientific source are unchanged.
+
+Self-review before formal profiling caught a verification gap: the frozen reader checks recomputed values, then returns its stored input receipt. Comparing that object alone would compare stored diagnostics rather than directly compare both recomputations. The new observer records the return from exactly one call to the unchanged replay function. Both complete stored receipt and actual computed summary must match across modes; original arithmetic/guards remain. Synthetic tests reject missing/duplicate summaries and detect a1e-16 computed change despite identical stored inputs.61focused tests pass11.42s, including a real full432-profile tiny replay with actual summaries equal. Actual runtime/hardware and OS-reported reaped-child CPU are now recorded. Old full local3353/optional113 and successful hosted3.11 remain retained evidence for the earlier source, not admission for this changed entrypoint. Fresh required same-head checks follow; no formal poker profile or new learning has run.
