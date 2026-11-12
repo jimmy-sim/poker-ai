@@ -3426,3 +3426,15 @@ change. Complete command1.8403986659996008s, cap180; own snapshot/manifest/child
 clock hashes verified. No Hold'em study and no reference constructed in this
 operation. Publish this own evidence before comparison-only OpenSpiel audit.
 These duplicate fixture labels are software coverage, not12 poker treatments.
+
+### November 12 — independent tiny proof and fixed nontraining costs
+
+Own tiny evidence7a07560 was public before constructing the reference. Same
+9db8 source/OpenSpiel2.0.2 Apache scalar adapter checks all72 values and BOTH
+BR roots; maximumerror1.5265566588595902e-16chips. Complete native command
+2.1196606250014156s under180. Three fixed nontraining real-layout repetitions
+0/1/2 complete and replay all12 layouts plus their disk archives:6.20355091700003,
+6.194329124999058,6.218683040999167s. Process lifetime high-water RSS191299584/
+190709760/191676416bytes; not isolated per-representation memory. Uniform policies
+and zero training weights only; no compact scientific trajectory or strength
+claim. Publish proof/cost evidence before fixed conservative forecast/admission.

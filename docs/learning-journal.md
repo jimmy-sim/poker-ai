@@ -4427,3 +4427,11 @@ automated command took about1.84 seconds. The six labels deliberately repeat the
 same tiny information structure; this checks plumbing, not six poker methods.
 These own records are published before the independent reference is constructed.
 The independent check and cost admission are next.
+
+**Independent rehearsal and setup cost:** OpenSpiel agreed on the tiny archive's
+value and both players' best-response values to within about1.53e-16 chips.
+Three no-training repetitions built and checked every real layout and wrote/read
+their tables; each complete command took about6.2 seconds. Their uniform policies
+are setup fixtures. Next, the fixed safety-margin formula combines these costs
+with the old checked run's timing. The forecast must fit the unchanged budget
+before any compact candidate training starts.
