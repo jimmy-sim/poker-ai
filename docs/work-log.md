@@ -4196,3 +4196,21 @@ Viewer self-review also binds every named historical scientific file and Git blo
 GitHub then caught a checkout-history issue: Python3.11 reports3,350passes and two provenance-test failures because its default shallow checkout lacks the archived source commits. Both full local suites had3,352passes/64skips/150deselections; optional112each. We retain the failed hosted log, exact head/job metadata and local receipts. CI now fetches full history. A new local shallow-clone fixture proves the checker refuses missing history and passes after fetching it; no source checker is relaxed.58focused checks pass9.51s. A fresh same-head local/optional/hosted cohort is required before formal profiling. The original forecast and scientific source are unchanged.
 
 Self-review before formal profiling caught a verification gap: the frozen reader checks recomputed values, then returns its stored input receipt. Comparing that object alone would compare stored diagnostics rather than directly compare both recomputations. The new observer records the return from exactly one call to the unchanged replay function. Both complete stored receipt and actual computed summary must match across modes; original arithmetic/guards remain. Synthetic tests reject missing/duplicate summaries and detect a1e-16 computed change despite identical stored inputs.61focused tests pass11.42s, including a real full432-profile tiny replay with actual summaries equal. Actual runtime/hardware and OS-reported reaped-child CPU are now recorded. Old full local3353/optional113 and successful hosted3.11 remain retained evidence for the earlier source, not admission for this changed entrypoint. Fresh required same-head checks follow; no formal poker profile or new learning has run.
+
+
+### November 12 — complete observed-summary profiler source cohort
+
+Frozen c349b4f2f86f8aefc88ccee5067f8f501bbed87d / fingerprint
+ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851
+passes BOTH full local bases (3,356/64skip/150deselected), BOTH relevant optional
+suites (116each), and BOTH exact-head hosted43246354825 jobs BEFORE formal
+profiling. All six raw logs, head/job metadata, guards and observed receipts
+validate and are published with this checkpoint. Earlier source cohorts do not
+admit this corrected observer. Late cancelled/superseded old logs and final
+metadata are retained separately without overwriting initial snapshots.
+
+PR59 history-merged d14a3ca after final hosted43243962216 both passed at9d2464d.
+Actual main imports correct runtime/source,102fast checks pass18.92s, and a full
+COST0 reader executes all original math gates; combined208.409087s. Ten unrelated
+user modifications remain byte/status/index/patch identical. PR60 retargets main.
+No formal profiler data yet, no new learning or admitted training remedy.

@@ -56,7 +56,8 @@ now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
 Step 104 now completes the proposed compact training remedy's software proof and
 cost checks, but compute admission fails. The actual new training comparison
-has not run; verification cost must be profiled before optimization.
+has not run; verification cost must be profiled before optimization. Step 105 completes the
+profiling tool and its source checks; the full timed replay is next.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4924,14 +4925,41 @@ Final same-source review passes102focused fast checks (one slow integration dese
 
 ## 105. Measure why verification is expensive before optimizing it
 
-November 12, 2026. The training-remedy pipeline passes its software rehearsal, but the first complete independent cost audit already exceeds the conservative admission threshold. The remaining fixed measurements and forecast must still be retained. This is a compute gate, not a new model-quality result.
+November 12, 2026. The compact training remedy is ready as software, but its
+verification estimate exceeds the preset budget. We need to find where the time
+goes before changing the code. A **profiler** records how often functions run
+and how much time they use. It adds overhead, so its timings are diagnostic.
 
-The [next prospective step](compact-replay-profile.md) profiles one complete read-only replay: first normally, then with Python counting function calls and elapsed time. Both must return exactly the same authenticated evidence. We choose archive0 by index, retain every profile/book/condition and keep learner/reference constructors blocked. A profile can identify repeated validation or scoring work worth optimizing; it does not permit skipping those checks or admitting the failed source. No profiling result exists yet. Codex assists with this work; personal hours and mastery are not inferred.
+The [prospective plan](compact-replay-profile.md) fixes the first cost archive
+by index. One fresh process will replay the entire archive normally; another
+will do the same with instrumentation. Both keep all 324 raw policies, 216 books,
+432 scored profiles and 1,152 fixed conditions. No learner or reference solver
+can be constructed. Each whole child has a 900-second cap; the pair has 1,800.
 
-The standalone profiling tool now passes56focused checks, including an actual full432-profile tiny replay with exact plain/profile identity, raw caller accounting, blocked construction, changed-source/input rejection, corrupt viewer evidence and retained hard timeouts/failures. Lint/format and strict typing pass. Both complete local bases and source-bound hosted checks remain required before a formal poker-archive profile. This is software evidence only; no new poker learning or runtime result.
+Two checks caught problems before collecting formal profile data. First,
+GitHub downloaded only the latest commit, but the archived reports point to
+older source commits. Those checks correctly refused missing history. CI now
+fetches the full history, and a local shallow-clone test proves that refusal
+stays in place. The original failed and cancelled jobs are retained.
 
-Viewer self-review also binds every named historical scientific file and Git blob before presenting timings. It accepts unrelated source additions without weakening the original runner aggregate.57focused checks now pass (10.82s), including this provenance check; no formal profile has run.
+Second, the old reader validates its newly computed values and then returns
+the stored report. Comparing only that returned object would compare stored
+summaries. The observer now records the actual replay calculation's return as
+well. **Synthetic test:** a computed difference of 1e-16 is detected even when
+the stored report stays identical. Missing or duplicate summaries are rejected.
+The actual complete tiny-game rehearsal has matching computed and stored results.
+The original reader's arithmetic and tolerances stay unchanged.
 
-GitHub then caught a checkout-history issue: Python3.11 reports3,350passes and two provenance-test failures because its default shallow checkout lacks the archived source commits. Both full local suites had3,352passes/64skips/150deselections; optional112each. We retain the failed hosted log, exact head/job metadata and local receipts. CI now fetches full history. A new local shallow-clone fixture proves the checker refuses missing history and passes after fetching it; no source checker is relaxed.58focused checks pass9.51s. A fresh same-head local/optional/hosted cohort is required before formal profiling. The original forecast and scientific source are unchanged.
+Before formal collection, both complete local base suites pass 3,356 tests,
+with 64 optional skips and 150 slow deselections. Both relevant optional suites
+pass 116 tests, and both exact-head GitHub jobs pass. All six raw check receipts
+are [retained](../results/compact-replay-profile/checks.json). The instrumented
+source has its own binding; the earlier scientific runner is unchanged.
 
-Self-review before formal profiling caught a verification gap: the frozen reader checks recomputed values, then returns its stored input receipt. Comparing that object alone would compare stored diagnostics rather than directly compare both recomputations. The new observer records the return from exactly one call to the unchanged replay function. Both complete stored receipt and actual computed summary must match across modes; original arithmetic/guards remain. Synthetic tests reject missing/duplicate summaries and detect a1e-16 computed change despite identical stored inputs.61focused tests pass11.42s, including a real full432-profile tiny replay with actual summaries equal. Actual runtime/hardware and OS-reported reaped-child CPU are now recorded. Old full local3353/optional113 and successful hosted3.11 remain retained evidence for the earlier source, not admission for this changed entrypoint. Fresh required same-head checks follow; no formal poker profile or new learning has run.
+The older timing receipts already show about 72% of an audit's wall time falls
+outside its three-worker comparison batch. That remainder includes several
+parent stages, so it does not prove which function is slow. The full replay
+profile is next. It will retain every raw function and caller entry, actual
+runtime/hardware and CPU use, and exact comparison of recomputed summaries.
+This measures verification software, not a stronger poker strategy. Codex
+assists with implementation and execution; personal hours or mastery are not inferred.

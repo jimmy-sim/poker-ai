@@ -101,3 +101,36 @@ remain unchanged. No formal profiling has run yet.
 
 
 The instrumented source now observes the actual computed replay return exactly once, in addition to the full stored receipt returned by the frozen reader. This observer forwards every original argument/result and changes no arithmetic or source guard. Exact pair identity includes both computed and stored summaries. Each child records its actual runtime/hardware; each supervisor measurement records OS-reported reaped-child user/system CPU (possibly partial for failed children). Startup is charged against the original monotonic cap before waiting. These corrections precede any formal profiling and require a fresh complete source cohort; older checks cannot admit changed source.
+
+
+## Checked instrumentation source before measurement
+
+Source c349b4f2f86f8aefc88ccee5067f8f501bbed87d and fingerprint
+ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851
+pass both complete local bases (3,356passed/64skipped/150deselected), both optional
+suites (116each), and both hosted43246354825 jobs before formal data collection.
+The six-role [receipt](../results/compact-replay-profile/checks.json) retains all
+raw logs and exact-head metadata. The original2ace named scientific files and
+contracts remain unchanged. Older cohorts cannot admit the corrected observer.
+
+## Three interview questions
+
+**Why compare the computed summary as well as the returned report?**
+The original reader checks new calculations against stored evidence and returns
+that stored evidence. An exact comparison of returned objects alone would miss
+a difference between recomputations within the old numerical tolerance. The
+transparent observer records exactly one original replay return, so exact pair
+identity covers both actual diagnostics and the stored report without changing
+any original calculation or gate.
+
+**Why separate exclusive and inclusive function time?**
+Exclusive time belongs to a function's own work. Inclusive time also includes
+its callees, so nested inclusive times overlap and cannot be added as a budget.
+All raw frames and caller edges remain available beyond the short display.
+Profiling overhead and ordered one-pair scope limit any speed inference.
+
+**Can a faster profile admit the failed experiment?**
+No. These are diagnostic replays of existing own data, not new training or fixed
+cost repetitions. An optimized implementation must have its own correctness,
+source checks, fixed costs and complete conservative forecast. The original
+failed admission and numerical/strength limits remain.

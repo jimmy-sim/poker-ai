@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3356 passed, 64 skipped, 150 deselected in 458.91s (0:07:38)",
+      "log": {
+        "file": "results/compact-replay-profile/checks/base311.log",
+        "sha256": "dd78f789684077351416299d073c8fd5d9a6aedb42f9b8a2c910bfb421e34080"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3356 passed, 64 skipped, 150 deselected in 439.43s (0:07:19)",
+      "log": {
+        "file": "results/compact-replay-profile/checks/base312.log",
+        "sha256": "47e15efa2d9851fc3e8334bdb8df1127dd5a5a17f53e1ee060b3829a67f969e8"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "116 passed in 11.64s",
+      "log": {
+        "file": "results/compact-replay-profile/checks/optional311.log",
+        "sha256": "981ab58b366717900df837e4124c67f63971cc7a6ecb1fe2d62c35fb8101f3c5"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "116 passed in 12.63s",
+      "log": {
+        "file": "results/compact-replay-profile/checks/optional312.log",
+        "sha256": "9c3ed1835a0e224189e85fc5e57828a962168c336d677117075cc4e5dc6d3e93"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43246354825,
+      "job_id": 131280107713,
+      "head_sha": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-replay-profile/checks/hosted311.log",
+        "sha256": "2d76c3c6181ea147a978ab0338d37a3e4fd16ba0bf7abf4a600942980a9f45f2"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851",
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43246354825,
+      "job_id": 131280108409,
+      "head_sha": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-replay-profile/checks/hosted312.log",
+        "sha256": "13504030c6f5daa7a0a3f34722c09d9b3dfd311b15ffda77e388c49b9d4775f5"
+      }
+    }
+  ],
+  "scope": "Observed exact-source full local bases, focused optional suites and both hosted full-history jobs for complete replay profiling. No formal poker profile or new training/admission."
+}
