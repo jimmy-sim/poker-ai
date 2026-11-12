@@ -34,7 +34,30 @@ selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
-**Latest research — November 12:** the compact blocker-aware description passes
+**Latest research — November 12:** the compact blocker-aware description fails
+its fixed-work sampled accuracy gate. At 10 million charged node visits, final
+linear averages over all three declared seeds give:
+
+| Known game | Exact / raw-public median (% pot) | Compact median (% pot) | Compact worst (% pot) |
+|---|---:|---:|---:|
+| Low | <0.000001 | <0.000001 | <0.000001 |
+| Medium | 0.292 | 2.390 | 2.495 |
+
+The medium median exceeds the fixed 1% limit; the worst seed being below 2.5%
+does not rescue it. The previous range-aware control's medium median/worst are
+2.793%/3.349% in this same comparison. Two paired seeds improve and one worsens.
+All 36 paths, 108 states and 324 readouts are retained; archive replay is exact
+and all 324 independent OpenSpiel value/BOTH-BR checks pass within 1.28e-13 chips.
+Own/audit complete commands take 735.62/41.16 seconds under unchanged caps.
+**No default, fresh or global promotion.** These are known restricted games,
+not competitive Hold'em strength. [Method and all limits](docs/compact-sampled.md),
+[all controls and seeds](results/compact-sampled/real/tables.md), and
+[journal101](docs/learning-journal.md#101-test-the-smaller-description-at-the-same-learning-work)
+explain the failed gate and next question.
+
+![All six descriptions at fixed work; linear median and three-seed range, not confidence intervals](results/compact-sampled/real/learning-log.png)
+
+**Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:
 
@@ -47,7 +70,8 @@ All72 saved policies pass own replay and independent OpenSpiel value/BOTH-BR
 checks (maximum error1.35e-13 chips). Own/audit complete commands take50.7/25.0s
 inside unchanged900/900s caps. **Key strings are larger**, so fewer rows do not
 establish whole-memory savings. These are two known, separately trained games;
-sampled learning, fresh/global strength and the default agent remain unchanged.
+this full-control result alone does not establish sampled learning or fresh/global
+strength, and the default agent remains unchanged.
 [Full method and all controls](docs/compact-full-control.md),
 [complete tables](results/compact-full-control/report/tables.md), and
 [journal100](docs/learning-journal.md#100-check-the-test-before-trusting-the-new-description)
@@ -95,7 +119,8 @@ The [compact candidate definition](docs/compact-public-range.md) pools public
 own-range removal and hand categories into one30-bit river word, appended to the
 existing range-aware key. Its own full-control measurement above follows the
 prospective gates; it does not inherit the preceding diagnostic's conflict count.
-The separately specified fixed-work sampled comparison remains a later step.
+Its separately specified fixed-work sampled comparison now fails the median
+accuracy gate reported above.
 
 ![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
 

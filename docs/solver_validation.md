@@ -504,3 +504,13 @@ values. No reference policy enters the B4 trainer. Optional tiny unit comparison
 are separate from the later source-bound rehearsal and real study; those require
 publication of the complete own evidence first. This verifies arithmetic on the
 exported own games, not independent engine mechanics or fresh/global strength.
+
+The complete new sampled own grid was subsequently public at9177081 before
+reference construction. All324current/uniform/linear readouts pass value and
+BOTH-BR scalar checks within1.2789769243681803e-13chips; complete audit41.155462s
+under the unchanged900s cap. Own raw replay has zero metric change. Numerical
+validation passes, while the candidate's medium LINEAR median2.389912%pot fails
+the fixed1%accuracy limit. Keep that distinction: no reference strategy enters
+training, and no default/fresh/global admission follows. The full method, failed
+gate, every seed/control and three-seed uncertainty limitations are retained in
+[the sampled writeup](compact-sampled.md).

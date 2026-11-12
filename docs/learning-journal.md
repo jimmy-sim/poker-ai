@@ -39,10 +39,11 @@ notes section is for your own questions and explanations as you work through it.
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
 its saved strategies, independent check, smaller strategy tables and larger key
-strings. Fixed-work sampled learning is still untested; the default agent and
-previous sampled results below remain unchanged. The next comparison is being
-implemented in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56); step101
-explains its question and the checks that come before new training.
+strings. The default agent and previous sampled results below remain unchanged.
+The new fixed-work comparison
+in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56) now fails the harder
+game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 explains
+all controls, the independent checks and what the failure means.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4503,127 +4504,100 @@ personal practice, time and mastery are not inferred.
 
 ## 101. Test the smaller description at the same learning work
 
-November 12, 2026. The previous full-control result answers whether the compact
-river description can represent a good strategy in the two known games. The next
-question is whether sampled training can **learn** one with the same work budget
-as the five existing descriptions. Sampled training visits selected branches
-instead of calculating the whole tree on every update.
+November 12, 2026. The compact river description passed the full-control test,
+but its new sampled-learning test **fails the declared accuracy gate**. On the
+harder game, median exploitability is 2.390% of the initial pot; the limit is 1%.
+The default agent stays unchanged.
 
-The [published protocol](compact-sampled.md) fixes three seeds and checkpoints at
-100,000, 1 million and 10 million total node visits. A node visit is one unit of
-tree traversal work. All six descriptions get the same work labels, including
-the exact initialization. Each checkpoint saves three ways of reading the
-strategy: the latest policy, an ordinary average and an average that gives later
-iterations more weight. The last one is the declared accuracy test. We cannot
-switch to whichever readout looks best afterward.
+The question was whether the smaller description could learn a good strategy
+with the same work as the five existing descriptions. The
+[published protocol](compact-sampled.md) fixed three seeds and checkpoints at
+100,000, 1 million and 10 million node visits. A node visit is one unit of tree
+traversal work. Both players' work and the exact initialization count. There are
+36 separate trainer instances, but repeated seeds deliberately pair the runs;
+they are not 36 independent statistical observations.
 
-**Example:** initialization may put a little probability mass in every row, so
-the average appears to cover the entire table before sampling has learned much.
-The new report separates that initial mass from later sampled support. A full
-table is useful bookkeeping; it does not prove the sampled strategy is accurate.
+Each checkpoint saves the current policy, an ordinary average and an average
+that gives later iterations more weight. The last one, called the linear
+average, was chosen as the accuracy test before results. A more favorable
+readout cannot replace it afterward.
 
-The implementation saves signed regrets, both average tables, RNG state, work
-counters and immutable checkpoint files. Worker journals record completed writes
-as they happen. If a process fails, later progress stays unknown rather than
-being guessed from elapsed time. Replaying these files checks table arithmetic,
-normalization, identities and receipts without retraining millions of steps.
-It does not reconstruct every historical random draw. Tiny tests also compare
-the actual capture path with the original B4 trainer bit for bit.
+At 10 million visits, the harder game's final linear averages give:
 
-Before new Hold'em training, the source needs complete local and hosted checks,
-a complete tiny-game rehearsal, three no-training cost measurements, a fixed
-conservative forecast and a published admission receipt. The prior 72 full-control
-policies have already replayed successfully under unchanged historical
-dependencies. That is a prerequisite, not a new sampled-learning result.
+| Description | Median exploitability (% pot) | Worst seed (% pot) |
+|---|---:|---:|
+| Exact / raw public board | 0.292 | 0.661 |
+| Previous range-aware description | 2.793 | 3.349 |
+| New compact description | 2.390 | 2.495 |
 
-The default agent has not changed. The first implementation checks are recorded
-in the work log; the complete source-bound checks and scientific results remain
-pending at this entry's initial publication. Codex assisted with implementation,
-tests and this explanation. No personal study time or understanding is inferred.
+Lower is better. The compact description's three seeds are 2.495%, 1.225% and
+2.390%. Two improve over their paired previous-description controls; one worsens.
+Its worst seed is just below the separate 2.5% limit, but passing that limit does
+not cancel the failed median limit. The low game is already near zero for all
+six descriptions. Tiny numerical differences there do not show useful strength.
+[Every control, seed and readout](../results/compact-sampled/real/tables.md)
+remains available, including the unfavorable outcomes.
 
-To inspect the question and run the focused software checks after updating:
+This does not prove the feature is useless. Full-control training found a much
+less exploitable strategy with these same information groups. It also does not
+prove that sampling alone caused the gap: the full and sampled procedures use
+different work and update conventions, and their learned opponents differ.
+The next useful question is whether the saved weakness comes from decisions
+inside a group or from distinctions a finer responder can use. Holding the
+opponent fixed will matter when answering it.
+
+**Example:** initialization puts a little average mass in every row, so an average
+can cover the whole table before sampling has learned much. Here whole-average
+coverage is 100%, but some low-game seeds added no later river average mass.
+That alone is not a bug: some decisions may be almost unreachable. The report
+separates initial, sampled, post-warm, warm-only and fallback support so coverage
+cannot be mistaken for accuracy. Reach under the saved whole profile includes
+both players' actions; it is not the actor-only reach used in CFR averaging.
+
+The implementation saves signed regrets, both average tables, RNG state and work
+counters. Worker journals record completed writes as they happen; progress after
+the last confirmed write stays unknown if a worker disappears. Archive replay
+checks table arithmetic, normalization and receipts without retraining millions
+of steps. It does not reconstruct every historical random draw. Tiny tests also
+compare the capture path with the original B4 trainer bit for bit.
+
+Before real training, both Python versions passed 3,082 base tests and 375
+relevant optional tests, and both GitHub jobs passed. Initial checks caught an
+optional plotting-library import mistake; self-review caught a replay-only
+"no training" label being copied into collection metadata. Both were corrected
+and tested before the experiment; failed logs remain. A complete tiny rehearsal,
+three nontraining cost measurements, a fixed conservative forecast and a permit
+bound to 909 published prerequisite files preceded the real run.
+
+The real own command took 12.26 minutes. All 108 states and 324 readouts replayed
+with zero metric change. After the own archive was published, OpenSpiel checked
+all 324 values and both best-response roots in 41.16 seconds. Maximum disagreement
+was 1.28e-13 chips, below the fixed 1e-9 tolerance. Numerical validation passes;
+accuracy is the only failed check among the 13 sampled checks. Reference output
+is comparison-only and never enters training. These are two known, restricted
+games, not a general Hold'em win-rate result. Smaller tables also do not prove
+lower total memory use; the compact key strings are larger.
+
+Open the [clearer learning plot](../results/compact-sampled/real/learning-log.png).
+Colors are descriptions, not opponents. Blue/orange exact and raw-public curves
+overlap on the harder game. Brown is the compact candidate; its final median
+stays above the dotted 1% limit. Lines show medians and bands show the three-seed
+minimum/maximum, **not confidence intervals**. Both axes are logarithmic. The
+original report figure is retained; the clearer figure changes only axis display
+and records unchanged scientific-input hashes.
+
+After updating the checkout, try one command per line:
 
 ```sh
-git show --stat 72755ed
+open results/compact-sampled/real/learning-log.png
+open results/compact-sampled/real/tables.md
 .venv/bin/python -m pytest -q tests/test_compact_sampled_state.py tests/test_compact_sampled_pipeline.py tests/test_compact_sampled_clock.py
+.venv/bin/python scripts/render_compact_sampled.py --output results/runs/compact-sampled-local-plot.png
 ```
 
-These commands inspect the design and run tiny software fixtures. They do not
-start the real sampled study or establish that the Hold'em agent is stronger.
-
-The first complete source checks caught a packaging mistake: the optional graph
-code expected the plotting library even in the basic installation. Both Python
-base checks and GitHub failed at strict typing. The import was corrected before
-any new poker training; the failed logs remain in the result folder and CI
-history. Passing tests with every extra installed was useful, but it did not
-prove that the smaller basic installation worked. The corrected source must pass
-the whole required check set before the rehearsal begins.
-
-Self-review also caught a label that needed separating: “this replay did no
-training” describes checking saved files, while the original collection really
-does train. The corrected manifests state those separately. If collection starts
-and a worker disappears before a confirmed checkpoint, progress is **unknown**.
-Two regression tests cover completed and interrupted orchestration. The report
-exports every readout and signed seed comparison, including cases unfavorable
-to the candidate; a paired advantage alone cannot bypass the accuracy gates.
-
-The corrected source now passes the complete check set:3,082 base tests on each
-Python version,375 relevant optional tests on each, and both GitHub jobs. The
-exact [source-check receipts](../results/compact-sampled/checks.json) are retained.
-The next step is the tiny rehearsal, followed by cost and admission checks. These
-software passes still do not establish a sampled Hold'em strength result. There
-are36separate trainer instances, but repeated seeds deliberately pair the runs;
-they are not36independent statistical observations.
-
-The tiny own rehearsal then completed all36paths/108saved states/324readouts,
-including both average books and36initial states. Checking the saved files
-reproduced their metrics without training again. The complete command took2.55
-seconds under its180-second cap. Its manifest correctly says tiny sampled
-training happened, while no new Hold'em training happened. The own archive must
-be public before the independent scalar check starts. Poker accuracy is still
-unmeasured at this point.
-
-The independent tiny audit checked all324readouts after the own archive was
-published. The largest difference was about2.08e-16chips, well below the fixed
-1e-9limit; the full command took5.03seconds. It checked values and both best
-responses, not a reference strategy to train on. The next cost runs only copy and
-score old own full-control policies as stand-ins. They cannot initialize or train
-the new sampled agent.
-
-All three own cost runs completed in65.94,66.58and67.02seconds, including the
-required replay. They exercise108archive slots and324scores each using old own
-policies, with no learner constructed. The forecast will use the slowest full
-command, not a partial timer saved before replay. The three own fixture sets are
-published together before their native cost comparisons. These timings estimate
-feasibility; they say nothing about whether the new agent plays better.
-
-The three native cost comparisons also finished, in50.02, 50.37, 50.44seconds.
-Each checked324stand-in readouts after the own fixtures were public. These are
-comparison/cost measurements, with no reference strategy entering training. The
-next decision uses the predeclared conservative formula and full command clocks.
-A feasible forecast still would not establish playing strength.
-
-The fixed forecast passes: about53.68minutes for own work and8.17minutes
-for the native audit, below the unchanged120/15-minute caps. It uses all24old
-B4timings, each game's slowest path, the largest measured costs and the fixed
-four-times margin. These are conservative estimates, not actual training times
-or a strength result. A separately checked published permit is still required.
-
-The permission check passed after verifying909prerequisite files and their
-published bytes. It took26.34seconds. This means the frozen study is allowed to
-run, not that its strategy passed an accuracy test. The permit is published
-before the first new Hold'em trajectory; all36paths and every unfavorable seed
-will be retained. The full allowed caps plus verification still fit before10a.m.
-
-The full own comparison finished all36paths/324readouts in12.26minutes; saved
-metrics replayed with zero change. Its preliminary result is unfavorable to
-promotion: the harder game's candidate median is2.390%of the pot, above the
-fixed1%limit. Its worst seed is2.495%, just below the separate2.5%worst-seed
-limit. Passing one limit does not cancel failing the other. Every seed/control
-will be published before independent checking; the default agent stays unchanged.
-
-The independent audit passed all324readouts in41.16seconds, with maximum
-error1.28e-13chips. That supports the calculation, not the accuracy gate: the
-candidate's harder-game median remains2.390%pot. Exact/raw-public are0.292%in
-this same comparison. The smaller description still needs a remedy before
-promotion. All results stay in the report, including the failed limit.
+The tests use tiny fixtures. The last command draws a fresh figure from the saved
+results without training or constructing a reference. Use a new output name if
+it already exists. The [method and complete receipts](compact-sampled.md) contain
+the recorded-runtime replay command and its source requirements. Codex assisted
+with implementation, execution and drafting; personal time and mastery are not
+inferred.

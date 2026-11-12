@@ -3664,3 +3664,32 @@ medium LINEAR median2.389912005%pot still misses the preset1%limit. Do not
 change limits or select a different readout/seed. Publish audit before authenticated
 report; full result tables/plot and failure explanation are next. Default/fresh/
 global admission remain unchanged.
+
+### November 12 — complete failed sampled report and readable figures
+
+Authenticated report completes64.070273584s<900. All13 checks are evaluated:
+accuracyFalse alone, allother12True. Compact medium LINEAR median2.389912005%
+exceeds fixed1%; worst2.494567700%<2.5%cannot rescue it. Exact/rawpublic
+median0.292419682%/worst0.660690263%; previous range-aware2.793291801%/
+3.349472199%. Two paired candidate seeds improve and one worsens. All324readouts,
+30signed baseline effects,12final primary rows, support/storage/work metadata and
+all five false superiority-admission flags are retained. No reseed/readout switch,
+more work, changed gate, default/fresh/global promotion or issue4closure.
+
+Visually inspected original learning.png; its symlog view wastes negative-axis
+space. Preserve original figure/result hashes. Add a separate data-only positive-
+log renderer and learning-log.png/receipt using unchanged scalar input hashes,
+all six descriptions and all three primary seeds. Original scientific source
+fingerprint41b6f34d is unchanged; the new display script authenticates every named
+historical dependency/Git blob without weakening the old aggregate checker.
+Actual3.11/3.12data-only rendering produces identical PNG SHA
+ff8df8887919b36d4b2853710a1da8851a6411c8c1e109ae31cb997d4837af9e;
+this is NOT bit-exact real trajectory admission on3.12. Lint/format pass;
+strict typing659files passes both versions. New method/README/journal101 clearly
+state failure, seed dependence, warm-versus-postwarm coverage, exported-engine
+limits and no whole-memory claim. Three interview Q&As and read-only terminal
+commands included. Artifact digest/failure-flag/relative method-link checks pass.
+Final publication base/hosted checks and solo self-review remain merge gates.
+Next justified issue4 question: separate within-group learning weakness from
+finer-information vulnerability with each saved opponent held fixed, before
+choosing another training/representation remedy. Human minutes not recorded.

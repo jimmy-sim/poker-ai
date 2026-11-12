@@ -129,3 +129,110 @@ clear. After a bounded result, proceed only to a justified issue4 step with its
 own prospective question, preserving this design. At10a.m. stop and summarize
 actual source/tests/experiments, GitHub links and terminal commands. Human hands-on
 time stays unknown unless the user supplies it; Codex assistance is explicit.
+
+## Measured outcome — November 12, 2026
+
+**The sampled accuracy gate fails.** The exact control passes; the compact
+candidate's harder-game final LINEAR median is 2.389912% of the initial pot,
+above the unchanged 1% limit. Its worst seed, 2.494568%, is below the separate
+2.5% limit. Both conditions were required. No alternate readout, selected seed,
+more work or changed threshold rescues this result. All five baseline-specific
+superiority-admission flags are false; no default/fresh/global promotion follows.
+
+| Medium game, final LINEAR | Seed 20261301 (% pot) | Seed 20261302 | Seed 20261303 | Median | Worst |
+|---|---:|---:|---:|---:|---:|
+| Exact / public_b8 |0.292420|0.660690|0.194613|0.292420|0.660690|
+| texture_b8 |5.408578|7.794681|5.238119|5.408578|7.794681|
+| texture_made_b8 |4.319132|4.463153|4.298384|4.319132|4.463153|
+| texture_range_q8_b8 |2.793292|0.375287|3.349472|2.793292|3.349472|
+| texture_range_q8_own_q8_b8 |2.494568|1.225460|2.389912|2.389912|2.494568|
+
+Low-game final values are near zero for all controls; see the
+[complete primary table](../results/compact-sampled/real/tables.md),
+[all 324 numeric readouts](../results/compact-sampled/real/all-readouts.csv), and
+[all 30 signed paired effects](../results/compact-sampled/real/paired-final-linear.csv).
+In the medium game two candidate seeds improve against the previous description
+and one worsens. Do not splice these values into older experiments with different
+seed derivations or training conventions. This is the current matched grid.
+
+All 36 paths, 36 warm origins, 108 states and 216 cumulative books are retained.
+Own complete command **735.623852375 seconds**, below 7200; raw replay checks
+all 324 readouts with zero metric change, without retraining the trajectories.
+All own evidence `9177081` was public before native construction. The complete
+OpenSpiel audit takes **41.155461709 seconds**, below 900, checking every value
+and both BR roots within **1.2789769243681803e-13 chips**. Its output remains
+scalar comparison only. Native evidence `1558773` precedes authenticated report
+creation, which takes **64.070273584 seconds**, below 900, including font-cache
+setup. Accuracy is the only failed one of the 13 sampled metric checks.
+
+Source `41b6f34d` / checked commit `8da3c2c` passed both immutable bases
+(3082/61 optional skips/149 slow deselected), focused locked ALL-EXTRAS375 each,
+and both hosted jobs43193724153 before the tiny proof. Initial failed base-import
+logs and the pre-experiment metadata correction are retained. Own tiny proof
+2.554832s was public before native5.027906s. Complete own costs
+65.935652/66.580811/67.018426s were public before native costs
+50.020954/50.368202/50.438742s. Fixed forecasts3220.713439/489.940298s fit the
+original7200/900caps. Published permit486d29e authenticated909input files before
+real training. The [work log](work-log.md) and raw receipts preserve every stage.
+
+Candidate row counts remain130/364 and1770/3336 of raw-public counts. Larger
+key strings and process-lifetime RSS are separate quantities; no whole-memory
+saving is claimed. Whole uniform/linear average coverage is100% because exact
+warm mass populates the tables. The report separately retains post-warm,
+initialized, sampled, warm-only and fallback support. In this terminology "own
+reach" means reach under the complete saved own self-play profile, including both
+players; it is not actor-only counterfactual/averaging reach. Positive mass is
+not proof of learned accuracy, and tiny-reach missing support is not by itself a
+bug. All three seed readouts and their work/iteration counts remain available.
+
+These are two already-diagnosed narrow-range turn games, with dependent paired
+seeds/checkpoints/readouts. Independent arithmetic uses exported own engine
+mechanics, so agreement does not independently validate those mechanics or
+establish broader playing strength. Full-control sufficiency does not establish
+sampled learning efficiency. A useful next question is how much saved weakness
+lies within the partition versus finer-information responses, and how that
+changes with the opponent held fixed. No new feature or training change is
+selected by this report.
+
+### Read or reproduce
+
+The original [`learning.png`](../results/compact-sampled/real/learning.png) and
+its report-bound hash are retained. A
+[clearer positive-log view](../results/compact-sampled/real/learning-log.png)
+uses exactly the same six primary curves and all three seeds, with a separate
+script/input/figure digest receipt. It changes axis display only. Bands are
+minimum/maximum over three fixed seeds, not confidence intervals.
+
+```sh
+open results/compact-sampled/real/learning-log.png
+open results/compact-sampled/real/tables.md
+.venv/bin/python scripts/render_compact_sampled.py --output results/runs/compact-sampled-local-plot.png
+.venv/bin/python scripts/validate_compact_sampled.py replay --own results/compact-sampled/real/own.json --output results/runs/compact-sampled-local-replay.json
+```
+
+Use fresh output names. Full raw-state replay requires the recorded source and
+Python3.11.17/NumPy2.4.6 runtime (with the pinned NumPy/Numba environment checks).
+Later added scientific modules can require a checkout of the recorded revision
+or a separately validated unchanged-dependency adapter; the original strict
+checker remains intact. The display script authenticates all named original
+source dependencies/Git blobs and published numeric input hashes without
+training or constructing a reference. The original scientific results are never
+overwritten. A new complete study still requires its original publication gates;
+these read-only commands do not authorize it.
+
+### Interview questions
+
+1. **Why equal node visits instead of equal iterations?** A sampled update and
+   a full-tree pass do different amounts of traversal work. This comparison
+   charges both players and the2N initialization, then takes the first complete
+   iteration crossing each fixed work label. Wall-clock caps are a separate
+   feasibility condition; equal work does not isolate a pure variance effect.
+2. **Why save three readouts if only one decides accuracy?** They expose current
+   and average behavior from the same trajectory. LINEAR was fixed as primary
+   before results, so another readout cannot rescue failure. Every seed and
+   signed effect is retained rather than selecting a favorable snapshot.
+3. **What does the solver agreement prove?** OpenSpiel independently calculates
+   own-policy values and both BR roots within the exported finite game. It agrees
+   within1e-9chips here, but shares the exported own mechanics and uses two known
+   restricted games. No reference strategy is trained on, and this does not
+   establish competitive or global Hold'em strength.
