@@ -3800,3 +3800,15 @@ node fixture test, not inferred from one-to-one Kuhn aliases. Published complete
 source-bound software proof now permits only the frozen real diagnostic, within
 its original900/900/900s caps and full4800s cutoff reserve. Prior sampled accuracy
 failure stays failed. This is no new Holdem trajectory study.
+
+
+### November 12 — publish all real frozen-own diagnosis before reference
+
+Complete no-training real own command 123.74255779099985s <900s; all144joint
+profiles/288responses and144fixed-opponent identities replay. Maximum identity
+error 0.0chips. SS/FF reproduce the original
+primary source metrics; original108sampled states/324readouts and72full snapshots
+replayed before selecting48sources. All raw144mixture/reply details plus own/child
+manifest are public in this checkpoint BEFORE reference construction. No new
+learning/RNG draws/default/admission. Original sampled accuracy remains failed.
+Independent scalar validation/report are pending; no remedy selected yet.
