@@ -70,6 +70,12 @@ are retained; this is a saved-data diagnostic, not a trained strength gain.
 [Journal step 98](docs/learning-journal.md#98-ask-which-hands-each-player-can-still-represent) and the [terminal exercise](docs/terminal-two-sided-lab.md) explain how to
 browse the masks and remaining conflicts.
 
+A [compact candidate definition](docs/compact-public-range.md) now pools public
+own-range removal and hand categories into one 30-bit river word, appended to the
+existing range-aware key. It has correctness/privacy/structural and synthetic
+acceptance tests. Candidate row compression and learned strength remain
+unmeasured; it does not inherit the preceding diagnostic's conflict reduction.
+
 ![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
 
 **Previous research — November 10:** the complete private-deal stratification

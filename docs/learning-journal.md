@@ -88,6 +88,11 @@ cards remove from our own range. In the previously weak case it reduces local
 conflicting groups from 23 to four. This is checked saved-data diagnosis; it
 has not trained a stronger feature or changed the agent.
 
+Step 99 defines and tests a compact candidate from that finding: summarize which
+kinds of hands our public range can still contain, then store the binned summary
+in one 30-bit word. Both full local suites pass 2,914 tests. No compression or
+learning result is claimed for the new candidate.
+
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
 not established a competitive Hold'em agent.
@@ -4258,6 +4263,56 @@ both focused optional suites pass all 55 tests. These include checking every
 actual saved detail and every number in the report. The measured source and
 data remain unchanged. The exact check records are linked from the method;
 the PR records the final GitHub conclusions before merge.
+
+## 99. Keep the distinction without listing every possible hand
+
+**November 11, 2026 — issue #4; prospective definition.**
+
+The previous diagnosis stored an availability flag for every possible hand.
+That list grows with the range. This candidate asks a smaller question: how much
+of our original range is blocked, and how much can still make each kind of hand,
+such as a pair, full house or quads?
+
+It keeps the old description and adds this public summary only on the river.
+Ten values go into eight fixed intervals and pack into one 30-bit number. That
+bounds the added description; it does not prove the whole model uses less memory
+or plays better. Pooling can still merge important hands.
+
+For example, 9h leaves our alternative 9c9d available as quads on the recorded
+board; 9d removes it. The summary notices this without keeping every identity.
+It must not remove alternatives just because they share a card with our actual
+private hand: the opponent cannot see that hand.
+
+The [fixed definition and acceptance plan](compact-public-range.md) precedes
+implementation. Tests will check arithmetic, privacy, packing and legal groups.
+Fictional metric tables test future pass/fail rules; they are not poker results
+or permission to train. Stop at the tested definition. Actual compression and
+learning need separate source-bound stages; the earlier failure remains.
+Codex-assisted; no personal practice, hours or mastery are inferred.
+
+**Implementation checkpoint:** All 98 focused tests pass (4.10s), along with
+lint, formatting and strict typing. The public summary takes only a board and
+fixed range. Tests change hidden opponent/future cards, check exact category
+arithmetic independently and keep earlier-street information unchanged. The new
+key separates the motivating 9d/9h observations; another board pair intentionally
+collides, showing that the summary loses information.
+
+The future-gate tests use fictional 72-profile full tables and 324 sampled readouts,
+not trained policies. Even when those thresholds pass, the code returns
+`actual_admission=False`. Full publication checks are next. The definition
+milestone stops before counting compressed rows or running learning.
+
+Try `.venv/bin/python scripts/inspect_public_range_feature.py 9h`, then replace
+9h with 9d. “Word” is just the packed bin label. The [method](compact-public-range.md)
+explains its coordinates; it is not an action or playing-strength score.
+
+**Full local checks:** Both complete base suites pass 2,914 tests, including
+the 98 new tests. Both focused all-extras suites pass 165 tests covering this
+candidate and its unchanged parent. Lint, formatting, strict typing and hooks
+also pass; the test environments check the exact source before and after.
+[PR #54](https://github.com/jimmy-sim/poker-ai/pull/54) records the final hosted
+checks required before merge. This completes the tested definition, without
+claiming fewer strategy rows or a stronger trained agent. Those are later tests.
 
 ## Your own learning notes
 

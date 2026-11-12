@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "status": "definition_correctness_only",
+  "candidate": "texture_range_q8_own_q8_b8",
+  "feature_version": "public-own-category-q8-packed-v1",
+  "representations": [
+    "exact",
+    "public_b8",
+    "texture_b8",
+    "texture_made_b8",
+    "texture_range_q8_b8",
+    "texture_range_q8_own_q8_b8"
+  ],
+  "feature_order": [
+    "blocked",
+    "high_card",
+    "one_pair",
+    "two_pair",
+    "three_of_a_kind",
+    "straight",
+    "flush",
+    "full_house",
+    "four_of_a_kind",
+    "straight_flush"
+  ],
+  "mass_intervals": 8,
+  "packed_bits": 30,
+  "feature_streets": [
+    5
+  ],
+  "semantics": "public board plus complete own fixed prior; unconditional exact masses; no actual-own filtering or betting posterior",
+  "model": "results/card-models/potential-8.json",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "input_sha256": {
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/range-mass-protocol.json": "fe16eca6bbf018ada07e30a6c688dcd15d9eeeeb87599db962356dbc6a35ce89",
+    "configs/two-sided-blockers.json": "fdeef4c5ea0d7a5c321cf5a2e14b8a2df27e72bd8e5eb232778df5769c3dbe65",
+    "results/two-sided-blockers/manifest.json": "4559326c3ebeeb28a9340f49f234e2d303af1a73531bcd9025e141e37fb48c64",
+    "results/two-sided-report/receipt.json": "cff600b41cf4de88d2f13404833fba58d3e46f752afe7d7ead6b22d7335c29a8"
+  },
+  "contexts": {
+    "configs/learning-spots/dev_low_oop.json": "792bba72ec2c4719d84ea246ae46be1f03d26cfaf96a34f4dd5daf292e0cfa62",
+    "configs/learning-spots/dev_medium_oop.json": "208046077f724da2b6f7d6486ef514de6c9666bdec4242cd581b405beeb4e3d7"
+  },
+  "full": {
+    "backend": "fused_numba_cfr_plus_linear",
+    "checkpoints": [
+      1,
+      16,
+      64,
+      256,
+      1024,
+      4096
+    ],
+    "expected_profiles": 72,
+    "maximum_seconds": 900,
+    "maximum_audit_seconds": 900,
+    "maximum_tree_nodes": 200000,
+    "limits": {
+      "exact_full_exploitability_pot": 0.001,
+      "candidate_full_excess_pot": 0.005,
+      "candidate_information_sets_relative_to_public_b8": 0.75,
+      "minimum_uniform_reach_average_coverage": 0.95,
+      "maximum_recall_violations": 0,
+      "independent_tolerance_chips": 1e-09
+    }
+  },
+  "sampled": {
+    "backend": "reduced_dispatch_iid_b4",
+    "sampling": "iid_external_b4",
+    "batch_size": 4,
+    "regret_mode": "signed",
+    "regret_weighting": "linear",
+    "average_weighting": "linear",
+    "initial_exact_expectation": true,
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ],
+    "node_work_checkpoints": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "readouts": [
+      "current",
+      "uniform",
+      "linear"
+    ],
+    "primary_readout": "linear",
+    "expected_primary_profiles": 108,
+    "expected_all_profiles": 324,
+    "maximum_seconds": 7200,
+    "maximum_audit_seconds": 900,
+    "median_exploitability_pot_limit": 0.01,
+    "worst_exploitability_pot_limit": 0.025,
+    "minimum_uniform_reach_average_coverage": 0.95,
+    "maximum_candidate_rows_relative_to_public": 0.75,
+    "independent_tolerance_chips": 1e-09
+  },
+  "scope": "definition/correctness and synthetic metric functions only; no real compression or learning/admission/default/global result"
+}

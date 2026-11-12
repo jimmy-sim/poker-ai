@@ -3325,3 +3325,48 @@ timestamp spaces/BOM preserved verbatim, documented in complete/README.md;
 code/docs diff check excluding only those two raw logs passes. Both final
 hosted artifact jobs on the final PR head remain a merge gate; PR53 records
 their conclusions without manufacturing an independent human review.
+
+### November 11 — prospective compact public-range candidate
+
+Issue4 comment6816637695 fixes ONE texture_range_q8_own_q8_b8 candidate before
+code/measurement: old parent plus river public-own-prior blocked/nine-category
+unconditional exact masses, q8 bins packed30bits. No actual-own filtering of
+alternatives, hidden opponent/future/policy/posterior input or joint vector.
+Config binds model/spots/C8 evidence and canonical contexts. Same six-control
+full72 and later324sampled-readout inventories/gates fixed prospectively; old
+thresholds/caps/seeds/failure/default untouched. This milestone ONLY definition,
+encoder/structural/privacy tests and SYNTHETIC metric assessors; no actual row/
+compression/savedQ/learning measurement. Actual admission alwaysfalse.
+Main repeatCI43164682908 BOTHpassed; fresh snapshot063713UTC captures allten
+current unrelated user edits before isolatedbranch. PriorPR53finalhostedlogs
+retained as OLD source evidence. Journal99 explains plannedscope in plain English.
+
+### November 11 — compact candidate implementation and focused checks
+
+Protocol7ace4a3 precedes new code. PublicOwnRangeAbstraction only adds river
+public-own-prior blocked/category q8 packed30bits to complete oldrange parent.
+New source modules only; no historical scientific source edits. Fixed config/
+context/input binding, finite adapter, serialization denial and public inspector
+implemented. Scalar/set/exhaustive5card oracle, allcategory/bin/packing/privacy/
+context/collision/structural tests and pure72full/324sampled SYNTHETIC threshold
+grids total98PASS4.10s. Both known structural games preserve parent refinement/
+concrete menus and zero recall; motivating observations split, pooled collision
+retained. Lint/format/mypy629 PASS. Initial two typing/format defects corrected
+before advancement; config/feature/gates unchanged. Full local bases/relevant
+optional/hosted checks follow. No row-count/compression/savedQ/learning/native
+measurement, actual admission or default change. Plain-English journal99 updated.
+
+### November 11 — complete local compact-definition checks
+
+Immutable source02b7c9b passes full bases BOTH2,914/58skip/149deselect,528.28/
+509.72s; lint/format/mypy629/hooks and before/after clean HEAD/runtime/module/
+source guards pass. Relevant ALL-EXTRAS(candidate plus old parent feature/gates)
+BOTH165PASS9.17/8.44s, not the entire optional historical suite. Exact local
+logs/receipts/launcher and public-only9h/9d encoding examples retained. Wrappers
+549.335451667/533.413609875s base and18.340652083/17.522130625s optional exclude
+setup. Sourcefingerprintf1f91bc0... unchanged by subsequent docs/evidence.
+Config/gates/seeds untouched; original scientific source/data immutable. No
+actual compression, candidate policy, exploitability, runtime forecast, native
+audit or learning admission. Current milestone is tested definition ONLY.
+Both hosted final jobs remain required before history-preserving merge; PR54
+records actual conclusions. Journal99 includes current checks/plain-Englishscope.
