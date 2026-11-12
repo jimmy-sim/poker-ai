@@ -4602,3 +4602,9 @@ Each checked324stand-in readouts after the own fixtures were public. These are
 comparison/cost measurements, with no reference strategy entering training. The
 next decision uses the predeclared conservative formula and full command clocks.
 A feasible forecast still would not establish playing strength.
+
+The fixed forecast passes: about53.68minutes for own work and8.17minutes
+for the native audit, below the unchanged120/15-minute caps. It uses all24old
+B4timings, each game's slowest path, the largest measured costs and the fixed
+four-times margin. These are conservative estimates, not actual training times
+or a strength result. A separately checked published permit is still required.

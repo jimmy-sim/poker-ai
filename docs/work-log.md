@@ -3606,3 +3606,14 @@ strategy enters learning; no learner was constructed in any cost run. The source
 bound software proof and ALLthree own/native costs are complete. Publish native
 cost evidence before the fixed deep forecast and checked admission; real sampled
 training remains unrun/unadmitted until those published gates pass.
+
+### November 12 — unchanged conservative sampled forecast passes
+
+Deep source-bound forecast authenticates/replays the full-stage prerequisite,
+tiny proof, ALLthree own/native costs and ALL24historical complete B4 paths.
+T=733.132027500s is the maximum fixed-worker sum of per-game maximum old10m
+path times for all36new paths. O/N/P are the declared maximum complete costs.
+Fixed4*(T+O+P)=3220.713439164s<7200 and4*(N+O+P)=489.940297996s<900.
+Forecast complete command107.862500125s; no real trajectory was run. Publish
+this forecast BEFORE checked admission. No changed factors/caps/seeds, no accuracy/
+default/fresh/global admission. Full11100s user-deadline reserve still applies.
