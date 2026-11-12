@@ -8,6 +8,12 @@ seat-0 opponent, but none against its full-control opponent. The failed sampled
 accuracy gate stays failed. Before choosing another representation or training
 change, identify the concrete merged decisions behind this benefit.
 
+Keep the roles clear: when the target is seat 1, its finer reply attacks the
+fixed seat 0 strategy. A large B-R does not say the target's saved own policy
+is the weak defender, or that adding a feature is necessarily the remedy.
+It measures an attack available against the fixed opponent that a constrained
+responder misses. The next decision must consider that distinction.
+
 This is a frozen-data trace, without learners, new RNG draws, reference
 construction, feature probes or admission. The pinned config authenticates the
 complete previous source/checks, software and real own/native/result archives.

@@ -4734,3 +4734,14 @@ do not prove a conflict if the sets of equally good actions still overlap.
 Tests also cover zero-reach rows, corrupted archives, partial results and the
 new terminal browser. Full source checks and the actual tiny pipeline rehearsal
 are still pending; there are no new poker trace results yet.
+
+The roles matter here. If the responding player is seat 1, its best reply is
+attacking the fixed seat 0 strategy. A large benefit from finer information
+exposes an attack against seat 0; it does not mean seat 1's saved strategy is
+the weak defender. The trace will help identify that attack before we choose
+how to improve the training or the information groups.
+
+Both full base suites now pass 3,217 tests. Relevant optional suites pass 513 on
+Python 3.11 and 511 with two runtime-specific skips on 3.12; both source-bound
+GitHub jobs pass too. The next gate is the actual tiny trace rehearsal. Software
+checks do not yet supply new poker decision results.

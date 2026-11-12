@@ -3903,3 +3903,22 @@ head/log/digest/local proof retained outside repo to avoid a CI-only commit.
 Fresh main snapshot/guardedFF preserve allten unrelated bytes/status/changed-index
 entries/patches; main source/runtime guard and73focused tests21.01s pass. Complete
 main archive replay is running separately. PR58 retargeted main after the merge.
+
+### November 12 — complete exact-source trace checks before rehearsal
+
+Source219f338/fingerprint3b5b9878 passes all six roles. BOTH complete localbases
+3217passed/64skipped/149deselected in581.29s311/564.74s312; Ruff817format/strict
+mypy686/hooks pass. Relevant locked optional513passed90.58s311;511passed with
+2recorded-runtime adapter skips86.94s312. BOTH exact-head source-hosted43214557237
+pass:311job131170497572808.46s,312job1311704978961138.64s, same3217/64/149 plus
+one historical warning. Raw decoded logs/head/job metadata/install receipts and
+wrapper retained; six-rolechecks.jsonsha0f5214fa7157c3ec6f5d7d93dff020832c42196804904441939c7110715b7530
+validates before publication. Authenticated raw logs retain their whitespace/BOM.
+Scientific source/caps/seeds/config unchanged. Prose clarifies target=attacker,
+fixed opponent=defender; largeI does not itself select a card-feature remedy.
+No new row outcomes yet. Actual tiny trace proof is next, before real tracing.
+
+PR57 main full144/288 archive replay completes75.40927466599896s with zero
+fixed-opponent identity error; allten unrelated main bytes/status/changed-index
+entries and patches remain exact after checks/replay. Receipt/post-preservation
+proof retained outside repo. New trace code does not alter any historical SRC.
