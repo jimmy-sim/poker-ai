@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Rehearse and check the full-control test](#100-check-the-test-before-trusting-the-new-description)
+
 - [Which strong hands could each player represent?](#98-ask-which-hands-each-player-can-still-represent)
 - [Try the four-column saved-hand terminal exercise](terminal-river-lab.md)
 - [Separate range beliefs from later action values](#97-separate-range-beliefs-from-later-action-values)
@@ -31,6 +33,12 @@ notes section is for your own questions and explanations as you work through it.
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
+
+The compact river description passes full-control admission on both known turn
+games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
+its saved strategies, independent check, smaller strategy tables and larger key
+strings. Fixed-work sampled learning is still untested; the default agent and
+previous sampled results below remain unchanged.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4367,3 +4375,124 @@ Label teaching examples and preserve actual assistance and authorship. Personal
 notes should reflect what you actually said or did. Updating happens with the
 project work; this instruction does not schedule background work or filler entries.
 
+
+## 100. Check the test before trusting the new description
+
+**November 11, 2026 — issue #4; full-control admission in progress.**
+
+We have a compact way to describe what each range can still contain. Now we need
+to find out whether it actually preserves good decisions while using fewer
+strategy rows. The test keeps six descriptions on the same two small known games
+and records each one after six fixed amounts of full-tree training. That makes
+72 saved strategies; it is not yet a test of general heads-up Hold'em strength.
+
+A saved strategy is more useful when we can check where it came from. The new
+runner saves the action probabilities, the accumulated training weights that
+produce their average, the legal action menus, and the exact information groups.
+Replay reconstructs the same game and recomputes its numbers. If a run is
+interrupted, completed checkpoints survive and the result stays incomplete.
+
+The independent check asks OpenSpiel to calculate the saved policy's value and
+each player's best response separately. Checking only their combined total could
+hide two errors that cancel. No OpenSpiel strategy enters our agent. A clock
+includes imports, setup, checks, training, replay and final writes.
+
+So far 78 new focused tests pass, including changed files, invalid probabilities,
+missing comparisons, interrupted own runs and failed reference audits. Lint and
+strict typing also pass. This is software progress, not an improved trained model.
+Complete checks on both Python versions and GitHub come before a tiny rehearsal;
+then a fixed conservative forecast must admit the real run. All original pass
+limits and budgets stay fixed. The [protocol](compact-full-control.md) records
+that order. Codex-assisted; no personal practice, time or mastery is inferred.
+
+**The wider checks caught a mistake:** both complete base runs rejected an import
+from the reference-audit package into the own postflop package. Keeping those
+packages separate is a project rule. The optional tests had passed, but that did
+not cancel this failure. The fix puts native dispatch outside the learner package
+and keeps receipt arithmetic in a pure checker. The original boundary test was
+kept and now passes in the focused suite (279 tests). Complete corrected checks
+still have to pass before the rehearsal. This is a software correction; it adds
+no evidence that the poker agent plays better. The failed records stay published.
+
+**Corrected publication checks, November 12:** both complete local suites pass
+2,990 tests, and both relevant optional suites pass279. Both GitHub source jobs
+also pass2,990 tests. The saved logs identify the exact code and environment.
+This completes the source check; next comes the small software rehearsal and
+its independent check, then the cost forecast. The compact poker study still
+has not started. These execution times are automated check times, not personal
+hands-on hours.
+
+**Own rehearsal:** the same runner saved and replayed all72 planned checkpoint
+slots on tiny artificial games, with no changed replay numbers. The complete
+automated command took about1.84 seconds. The six labels deliberately repeat the
+same tiny information structure; this checks plumbing, not six poker methods.
+These own records are published before the independent reference is constructed.
+The independent check and cost admission are next.
+
+**Independent rehearsal and setup cost:** OpenSpiel agreed on the tiny archive's
+value and both players' best-response values to within about1.53e-16 chips.
+Three no-training repetitions built and checked every real layout and wrote/read
+their tables; each complete command took about6.2 seconds. Their uniform policies
+are setup fixtures. Next, the fixed safety-margin formula combines these costs
+with the old checked run's timing. The forecast must fit the unchanged budget
+before any compact candidate training starts.
+
+**Forecast:** the unchanged formula projects about94.1 seconds for the own full
+run and68.1 seconds for its audit. Both fit their900-second limits. The formula
+uses a fixed factor-four safety margin; it is an engineering estimate, not a
+probability guarantee. The admission check must still recompute it from the
+published files before training is allowed.
+
+**Permission to run:** the admission command recomputed the forecast and checked
+the exact published prerequisites. It permits the fixed full-control study.
+That is permission to measure the candidate, not a statement that it passed the
+playing-quality test. The next saved records will be real own training, published
+before their independent audit.
+
+**The real own run finished:** all72 strategies were saved and replayed, in
+about50.7 seconds including prerequisite checks and final writes. On the harder
+known game, the new description uses1,770 strategy rows versus3,336 for raw
+public information. Its own exploitability calculation is near the exact control.
+Those numbers still need independent verification. The key strings themselves
+are larger than raw-public keys, so fewer strategy rows do not prove lower total
+memory. Publish the whole own grid before asking OpenSpiel to check it.
+
+**Full-control result:** the complete report passes every predeclared gate on
+both known turn games. The new description uses130 of364 raw-public rows in the
+low game (35.7%) and1,770 of3,336 in the medium game (53.1%). On the medium game,
+its final exploitability is0.000177% of the initial pot, near the exact control's
+0.000182%. All72 saved policies agree with OpenSpiel's value and both best-response
+calculations within1.35e-13 chips. The complete own/audit commands take50.7/25.0s.
+
+Open [the learning curves](../results/compact-full-control/report/full-controls.png).
+Each color is an information description, not a different opponent. Left and right
+are the low and medium games. Moving right means more full-tree iterations; lower
+means less vulnerability to a best response. Both axes use logarithmic scales.
+Brown is the new candidate; it overlaps the exact/raw-public curves. Purple is
+the earlier range-aware description. On the low game almost everything overlaps.
+The vertical axis is a fraction of the pot; multiply by100 for the table's percent.
+
+Open [the row counts](../results/compact-full-control/report/row-counts.png). The
+last bar is the candidate. The dotted line is its fixed75%-of-raw-public limit.
+Being below that line is useful only alongside the accuracy and audit checks.
+It does not show total RAM: the candidate's serialized keys are larger.
+
+This supports the next fixed-work sampled test. It does not establish that the
+current default agent improved, that the feature generalizes, or that its extra
+information can be learned efficiently under sampling. The games were already
+used to diagnose the weakness. The older unfavorable sampled results remain.
+Final publication CI is a merge gate recorded on PR55; stop at this milestone.
+
+After updating the checkout, try these directly in Terminal (one command per line):
+
+```sh
+open results/compact-full-control/report/full-controls.png
+open results/compact-full-control/report/row-counts.png
+.venv/bin/python scripts/validate_compact_full.py replay --own results/compact-full-control/own.json --output results/runs/compact-full-local-replay.json
+```
+
+The replay should report72 checked profiles in its saved JSON and exit successfully.
+It trains nothing. Use a fresh output name if that file already exists. The saved
+archive is bound to its published source/runtime; later source changes may require
+a checkout of the recorded revision. Codex assisted with code and execution;
+personal practice, time and mastery are not inferred.

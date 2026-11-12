@@ -475,3 +475,18 @@ the same pinned OpenSpiel2.0.2 Apache2 license and installed license files.
 No reference actions or strategy enter learning. Numerical validation passes;
 the study's two-game superiority condition fails, so no stronger/default/global
 admission is claimed. See [complete method and outcomes](own-opponent-learning.md).
+
+## Compact full-control reference check — November 11, 2026
+
+For [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55), Codex read the full
+installed OpenSpiel2.0.2 Apache-2.0 LICENSE again before new reference use.
+The installed dist-info/licenses/LICENSE SHA-256 is
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+The license permits this comparison use and redistribution subject to its
+license/notice conditions; no solver source is copied here. The unchanged
+ScalarReference exports own finite-game topology, chance/payoffs and own policy
+probabilities to OpenSpiel's independent EFG evaluator and both BR calculators.
+It requests no reference strategy. Outputs remain comparison-only and cannot
+enter the own learner. This checks arithmetic on the exported own game, not
+independent Hold'em mechanics or general playing strength. See the
+[prospective full-control protocol](compact-full-control.md) for gates and caps.

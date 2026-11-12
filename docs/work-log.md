@@ -3370,3 +3370,121 @@ actual compression, candidate policy, exploitability, runtime forecast, native
 audit or learning admission. Current milestone is tested definition ONLY.
 Both hosted final jobs remain required before history-preserving merge; PR54
 records actual conclusions. Journal99 includes current checks/plain-Englishscope.
+
+### November 11 — compact full-control pipeline foundation
+
+User authorized full-control admission for the one frozen candidate. Protocol
+bb98b68 and issue4 comment6817542727 preceded code/measurement. PR55 adds new
+source modules only: real/same-path tiny factories; immutable hashed snapshots
+of policies, CFR+ regrets and linear average masses; complete 72-profile replay;
+OpenSpiel scalar value/BOTH-BR audit and failure retention; stdlib process-group
+clocks; source-bound check receipts; no-training structural cost, fixed forecast
+and published-admission gates; complete report path. Six controls, both spot/model
+pins, checkpoints, scientific caps and all scalar gates unchanged. No sampled
+stage/default change. Original scientific source/data and allten main edits
+preserved; latest snapshot072721UTC. Full installed pinned Apache license read
+and recorded before reference unit fixtures. New78 focused tests pass; repository
+lint/format/strict typing640 files pass after correcting a test adapter and
+annotation/formatting defects. Full immutable local bases/relevant optional and
+both hosted source checks are next. No measured proof, forecast/admission or new
+real Hold'em trajectory yet. Journal100 explains what the new records establish.
+
+### November 11 — full-control source gate catches a reference boundary violation
+
+Both complete immutable1a9 base suites fail unchanged
+test_postflop_training_has_no_reference_imports: 2,989pass/60skip/149deselect,
+onefailure,533.09/516.60s. Initial optional suites278pass36.62/35.72s; they do not
+override the base failure. SourceCI43177397488 also reports a failing311 job;
+312 conclusion retained when observed. No measured proof, forecast/admission or
+compact scientific trajectory. Native dispatch moved to evaluation; pure native
+scalar receipt/schema arithmetic extracted into its own postflop module. This
+removes the forbidden dependency instead of weakening/bypassing the guard.
+Focused suite INCLUDING that unchanged guard now279pass32.24s; lint/format and
+mypy641 pass. Failed source/logs/receipts retained under compact-full-control.
+A corrected immutable cohort and both hosted jobs are required before advancement.
+
+### November 12 — complete corrected compact source checks
+
+Source02234c7/fingerprint9db8dab passes both immutable full bases2,990/60skip/
+149deselect551.59/532.46s. All lint/format/mypy641/hooks and clean before/after
+HEAD/runtime/module/source guards pass. Both relevant ALL-EXTRAS279pass37.58/
+35.98s; not every optional historical suite. Both sourceCI43179157842 jobs pass
+2,990/60/149/one oldroundoffwarning1019.59/976.81s, exact head metadata/logs
+retained. Six-role receipt validator accepts all6. Rejected1a9 hosted attempt
+retained311failure/312canceled (superseded); both local failures remain. Scientific
+source fingerprint unchanged by this evidence/docs publication. No measured
+tiny proof, forecast/admission or compact scientific trajectory yet. Existing
+bounded kernel correctness fixtures are software checks. Publish checked-source
+evidence now before the tiny own rehearsal; publish own archive before reference.
+
+### November 12 — tiny own full-control rehearsal published before reference
+
+Same corrected9db8 source, checked-source publicationa482067. The real full runner
+on two dependent ordinary/negated Kuhn software contexts and six logical control
+labels captures all72 profiles/12layouts and replays all72 with zero metric
+change. Complete command1.8403986659996008s, cap180; own snapshot/manifest/child
+clock hashes verified. No Hold'em study and no reference constructed in this
+operation. Publish this own evidence before comparison-only OpenSpiel audit.
+These duplicate fixture labels are software coverage, not12 poker treatments.
+
+### November 12 — independent tiny proof and fixed nontraining costs
+
+Own tiny evidence7a07560 was public before constructing the reference. Same
+9db8 source/OpenSpiel2.0.2 Apache scalar adapter checks all72 values and BOTH
+BR roots; maximumerror1.5265566588595902e-16chips. Complete native command
+2.1196606250014156s under180. Three fixed nontraining real-layout repetitions
+0/1/2 complete and replay all12 layouts plus their disk archives:6.20355091700003,
+6.194329124999058,6.218683040999167s. Process lifetime high-water RSS191299584/
+190709760/191676416bytes; not isolated per-representation memory. Uniform policies
+and zero training weights only; no compact scientific trajectory or strength
+claim. Publish proof/cost evidence before fixed conservative forecast/admission.
+
+### November 12 — fixed compact full-control forecast
+
+Published proof/cost27642b8 precedes forecast. Source9db8 replays the72 tiny own
+policies/native comparisons, allthree12-layout cost archives and historical
+60-profile range-mass own/native evidence. Fixed formula gives own94.07949982799036s,
+native68.05050486082328s; each below unchanged900s. HistoricalH12.88399437499902,
+A7.2285687910043634; S6.218683040999167; T1.8403986659996008; N2.1196606250014156.
+Factor1.2 and margin4 unchanged. Complete forecast command23.047677708000265s.
+This is a conservative engineering forecast, not a statistical guarantee.
+Publish forecast now, then recompute/check published admission before any compact
+scientific trajectory. No sampled/default/fresh/global promotion.
+
+### November 12 — checked published permission for the compact full study
+
+Forecast0f3cc57 is public before admission. Admission recomputes all prerequisite
+proof/cost/history arithmetic and checks exact published input bytes. Complete
+command24.040744333000475s; full_trajectory_admitted=True, actual_admission=False,
+fresh_global_admission=False. Publish this permit before the real own run.
+It authorizes only the frozen72-policy full-control study, not accuracy, sampled
+learning, a new default or a stronger/general agent. Own runner rechecks the
+published permit and dependencies under its unchanged900s complete-command cap.
+
+### November 12 — complete compact own full-control grid, audit pending
+
+Published permit5483c42 precedes real own command. Source9db8/original3.11.17/
+NumPy2.4.6 completes all72 profiles/12layouts,1/16/64/256/1024/4096, allsix
+controls/two games. Raw policy/regret/linear-mass snapshots replay72 with zero
+metric change. Complete command50.698962332999145s, cap900; source/data intact.
+Final own candidate exploitability2.577133407089394e-6%pot low and
+0.00017718448559713964%pot medium, versus exact2.4545130526156374e-6% and
+0.0001822898460278487%. Candidate130/364 rawpublicrows low;1770/3336 medium.
+Allcontrol final uniform coverage1.0. These are OWN figures pending independent
+audit; actual_admission staysFalse. Key UTF8bytes150986/1985885 exceed rawpublic
+125226/1079292; fewer rows are not whole-memory savings. Publish allown evidence
+before constructing the real comparison reference; retain allcontrols/checkpoints.
+
+### November 12 — compact full-control admission passes
+
+All72real own policies were publicbb73102 before real OpenSpiel construction.
+Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13chips, complete
+25.00606195799992s. Authenticated result/report passes all11 frozen full checks
+onboth known turn games. Candidate epsilon%pot2.5771334e-6/0.00017718449 and
+rows130/364 (35.7143%),1770/3336 (53.0576%). Allcontrols uniform coverage1.0;
+recall0/menus/context/work/source good. Report45.7460s includes temporaryfontcache;
+allcontrol/checkpoint/layout/signed-difference CSVs/tables and both plots retained
+and visually checked. OwnpeakRSS394985472bytes lifetimeonly; largerUTF8keys mean
+no whole-memory savings claim. No sampled/fresh/global/default/superiority
+promotion. Oldfailuresretained. README/method/journal100updated; finalhostedCI
+onfinalpublicationhead remainsmergegate. Stopafterverifiedpublication/mainchecks.
