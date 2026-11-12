@@ -4182,3 +4182,5 @@ The next separate [profiling milestone](https://github.com/jimmy-sim/poker-ai/pu
 measures a full replay before selecting any lossless optimization. An optimized
 source must earn its own checks, fixed costs and admission; this result cannot
 be rescued by profiler timings. No default/fresh/global or stronger-agent claim.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.

@@ -4905,9 +4905,9 @@ training experiment found no difference. The independent cost runs are next.
 
 The complete cost record now blocks the real comparison. All three independent
 runs pass the same 432 strategy / 1,152 condition checks, but their slowest complete
-command needs545.11 seconds. The predefined safety formula doubles that time
-plus 60 seconds, giving1210.21 seconds against a 900-second
-limit. It fails. The own-work forecast passes at4262.32 seconds
+command needs 545.11 seconds. The predefined safety formula doubles that time
+plus 60 seconds, giving 1,210.21 seconds against a 900-second
+limit. It fails. The own-work forecast passes at 4,262.32 seconds
 against 7,200, but both must pass. The [full forecast and every timing](compact-own-opponent-learning.md#recorded-compute-decision--november-12-2026)
 are retained; no seed, cap or rule changes to turn it into a pass.
 
@@ -4917,3 +4917,5 @@ complete verification currently costs too much. The next profiling step keeps
 all checks and compares normal versus instrumented full replay for identical
 results. A profiler tells us where time goes before we change code. It does not
 make a stronger agent by itself. No new permit or agent default was created.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
