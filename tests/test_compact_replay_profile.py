@@ -235,6 +235,7 @@ def test_viewer_authenticates_full_children_and_raw_profile(
     from poker_ai.evaluation import compact_opponent_cli
 
     plain, profiled = children(tool)
+    monkeypatch.setattr(tool, "authenticate_source", lambda *args: None)
     folders = [tmp_path / mode for mode in ("plain", "profile")]
     for folder in folders:
         folder.mkdir()
@@ -278,6 +279,14 @@ def test_viewer_authenticates_full_children_and_raw_profile(
         output = capsys.readouterr().out
         assert "identical plain/profile" in output
         assert "caller edges" in output
+
+
+def test_viewer_checks_named_historical_source_not_a_new_aggregate(tool: Any) -> None:
+    source = original()["source"]
+    tool.authenticate_source(ROOT, source)
+    source["fingerprint"] = "changed"
+    with pytest.raises(ArithmeticError, match="named scientific source changed"):
+        tool.authenticate_source(ROOT, source)
 
 
 def test_full_tiny_read_profile_matches_plain_in_fresh_process(tmp_path: Path) -> None:

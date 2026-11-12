@@ -251,6 +251,18 @@ def pair_identity(plain: dict[str, Any], profiled: dict[str, Any]) -> dict[str, 
     return dict(status="same_complete_cost_replay", **plain["identity"])
 
 
+def authenticate_source(root: Path, saved: dict[str, Any]) -> None:
+    """Named historical bytes stay checkable after unrelated source additions."""
+    from poker_ai.postflop.compact_full_artifacts import commit_sources
+    from poker_ai.postflop.learning_artifacts import sha
+
+    if saved["fingerprint"] != sha(saved["sha256"]) or any(
+        digest(root / name) != expected for name, expected in saved["sha256"].items()
+    ):
+        raise ArithmeticError("profile viewer named scientific source changed")
+    commit_sources(root, saved["git_commit"], saved["sha256"])
+
+
 def show(output: Path) -> None:
     """Authenticate retained children/profile bytes before printing costs."""
     from poker_ai.evaluation.batch_cost_stats import validate
@@ -274,6 +286,7 @@ def show(output: Path) -> None:
             raise ArithmeticError("profile child measurement changed")
         children.append(json.loads((folder / "child.json").read_text()))
     identity = pair_identity(*children)
+    authenticate_source(ROOT, children[0]["source"])
     if any(saved[k] != value for k, value in identity.items()):
         raise ArithmeticError("saved pair identity changed")
     for name, expected in children[1]["profile_files"].items():
