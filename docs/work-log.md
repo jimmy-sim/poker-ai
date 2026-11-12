@@ -4045,3 +4045,12 @@ cases. Whole-repo Ruff/format840files and strict mypy708files pass. Earlier
 iteration fixture naming/path mistakes were corrected before source publication;
 no formal source-bound scientific collection has started. Full immutable base/
 optional and both hosted checks remain next, not inferred from focused passes.
+
+Before formal source checks, identified optional-test process contamination:
+other native test modules import pyspiel at collection. Keep production fresh-
+process guards unchanged. The real own-child and historical-source integration
+tests now use fresh subprocesses; wholly mocked interruption fixtures isolate
+only their fake parent boundary. The guarded three-worker child plus optional
+native-module collection regression passes18checks3.93s; strict typing passes.
+Scientific source fingerprintd6da7eeb is unchanged; corrected test head still
+needs the complete exact-head check cohort before formal evidence collection.

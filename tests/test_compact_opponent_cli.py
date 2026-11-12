@@ -2,7 +2,10 @@
 
 import json
 import socket
+import subprocess
+import sys
 import time
+from contextlib import nullcontext
 from itertools import product
 from pathlib import Path
 from types import SimpleNamespace
@@ -13,10 +16,8 @@ import pytest
 
 from poker_ai.evaluation import compact_opponent_admission as gates
 from poker_ai.evaluation import compact_opponent_cli as cli
-from poker_ai.evaluation.compact_opponent_source import source as source_record
 from poker_ai.evaluation.opponent_learning_design import REAL, TOY
 from poker_ai.evaluation.opponent_learning_own import fixture as own_fixture
-from poker_ai.evaluation.opponent_learning_report import write as report_write
 from poker_ai.evaluation.opponent_learning_score import scoring
 from poker_ai.evaluation.private_prefix_journal import validate as journal_validate
 from poker_ai.postflop.controlled_checkpoints import unpack_policy
@@ -42,6 +43,9 @@ def fixture_source(monkeypatch: pytest.MonkeyPatch, *, dirty: bool = False) -> N
     monkeypatch.setattr(cli, "input_pins", lambda root: {})
     monkeypatch.setattr(gates, "require_checks", lambda root: {"unit_only": True})
     monkeypatch.setenv("POKER_COMPACT_OPPONENT_STARTED", repr(time.perf_counter()))
+    # Synthetic interruption messages only; real isolation is tested in fresh
+    # subprocesses, independent of optional tests preloading pyspiel here.
+    monkeypatch.setattr(cli, "isolated", lambda **kwargs: nullcontext())
 
 
 def test_dirty_source_retains_failure_before_any_learner(
@@ -248,30 +252,37 @@ def test_full_fictional_child_uses_three_workers_and_checked_archives(
     # This mocked gate is UNIT COVERAGE ONLY on draft source. It cannot be
     # published as a clean-source proof, forecast or actual training admission.
     root = Path(__file__).resolve().parents[1]
-    source = dict(source_record(root), dirty=False)
-    monkeypatch.setattr(cli, "source", lambda r: source)
-    monkeypatch.setattr(gates, "require_checks", lambda r: {"unit_only": True})
-    monkeypatch.setenv("POKER_COMPACT_OPPONENT_STARTED", repr(time.perf_counter()))
-    # Numerical CSV/summary are exercised; plot rendering has separate visual QA.
-    monkeypatch.setattr(
-        cli,
-        "write_report",
-        lambda p, s, d, scales: report_write(p, s, d, scales, no_plots=True),
-    )
     output = tmp_path / "draft-unit-own.json"
-    assert (
-        cli.child_main(
-            root,
-            [
-                "software-own",
-                "--output",
-                str(output),
-                "--scratch",
-                str(tmp_path / "scratch"),
-                "--_child",
-            ],
-        )
-        == 0
+    script = tmp_path / "unit_child.py"
+    script.write_text("""import os,sys,time
+from pathlib import Path
+if __name__ == "__main__":
+    from poker_ai.evaluation import compact_opponent_cli as cli
+    from poker_ai.evaluation import compact_opponent_admission as gates
+    from poker_ai.evaluation.compact_opponent_source import source
+    from poker_ai.evaluation.opponent_learning_report import write
+    root,output,scratch=map(Path,sys.argv[1:])
+    saved=dict(source(root),dirty=False)
+    cli.source=lambda r:saved
+    gates.require_checks=lambda r:{"UNIT_ONLY_NOT_ACTUAL_CHECKS":True}
+    cli.write_report=lambda p,s,d,scales:write(p,s,d,scales,no_plots=True)
+    os.environ["POKER_COMPACT_OPPONENT_STARTED"]=repr(time.perf_counter())
+    raise SystemExit(cli.child_main(root,["software-own","--output",str(output),
+                         "--scratch",str(scratch),"--_child"]))
+""")
+    subprocess.run(
+        [
+            sys.executable,
+            str(script),
+            str(root),
+            str(output),
+            str(tmp_path / "scratch"),
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        check=True,
+        timeout=180,
     )
     s = json.loads(output.read_text())
     assert s["status"] == "completed_own_native_pending"
