@@ -1,0 +1,11 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.compact_sampled_inputs import CONFIG\nENTRIES=(\"scripts/validate_compact_sampled.py\",)\nfrom poker_ai.validation.five_card import source_provenance\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='f8ded44d93373160ce84e62de54c1fb3be77409c'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\ns=source_provenance(root,root/CONFIG,entrypoints=ENTRIES)\nassert s['dirty'] is False\nassert sha(s['sha256'])=='098ff2db2787fcefff496caa0357a65e29e1b854b43f337e62fba17667520f41'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(s['sha256'])})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-sampled-checkout/src/poker_ai/__init__.py', 'source_sha256': '098ff2db2787fcefff496caa0357a65e29e1b854b43f337e62fba17667520f41'}
+{"command": ["uv", "run", "--locked", "ruff", "check", "."]}
+All checks passed!
+{"command": ["uv", "run", "--locked", "ruff", "format", "--check", "."]}
+787 files already formatted
+{"command": ["uv", "run", "--locked", "mypy", "--strict", "src", "tests", "scripts"]}
+src/poker_ai/evaluation/compact_sampled_report.py:119: error: Cannot find implementation or library stub for module named "matplotlib"  [import-not-found]
+src/poker_ai/evaluation/compact_sampled_report.py:122: error: Cannot find implementation or library stub for module named "matplotlib.pyplot"  [import-not-found]
+src/poker_ai/evaluation/compact_sampled_report.py:122: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+Found 2 errors in 1 file (checked 658 source files)

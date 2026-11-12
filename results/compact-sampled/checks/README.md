@@ -1,0 +1,1 @@
+Exact local/hosted execution records at 8da3c2cf0fe236b0953a95eca2aa87ac74350bc4. Hosted decoded UTF-8 logs retain BOM/whitespace. Setup time is separate from check-command time. The first failed source attempt remains separately retained.

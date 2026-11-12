@@ -3488,3 +3488,208 @@ and visually checked. OwnpeakRSS394985472bytes lifetimeonly; largerUTF8keys mean
 no whole-memory savings claim. No sampled/fresh/global/default/superiority
 promotion. Oldfailuresretained. README/method/journal100updated; finalhostedCI
 onfinalpublicationhead remainsmergegate. Stopafterverifiedpublication/mainchecks.
+
+### November 12 — fixed-work compact sampled pipeline, source checkpoint
+
+Issue4 / [PR56](https://github.com/jimmy-sim/poker-ai/pull/56). Published
+prospective protocol72755ed before implementation. Preserve the frozen six
+representations, two games, seeds20261301–3, B4 signed/linear method and first
+complete-iteration100k/1m/10m work crossings; no gate/cap changes. New own runner
+captures36warm origins,108states and324current/uniform/linear readouts. Raw signed
+regrets, both books, PCG64 states, counters and fsynced worker journals support
+algebra/receipt replay and honest partial outcomes. Current support, exact-warm
+mass and post-warm support stay distinct. Cost stand-ins are pinned OWN full
+policies only and never construct a sampled learner. Native adapter requests
+only independent own-policy value and BOTH best-response scalars after own
+publication. Complete-command clocks, exact-source checks, conservative forecast
+and checked published admission remain mandatory before real sampled training.
+
+Initial relevant all-extras check:373passed in47.09s on3.11.17/NumPy2.4.6;
+Ruff lint/format pass and strict typing658files passes. Includes new tiny
+capture/original-B4 bit equivalence, complete archive, raw/worker/journal/clock/
+native failure tests and old candidate/parent/archive/JIT integration. The prior
+full-control72policies replay under unchanged historical dependency/Git blobs
+in10.8452s. This is software/prerequisite evidence, not a sampled accuracy result.
+New source-bound complete base checks, focused optional checks on both supported
+versions and BOTH hosted jobs are next. No new Hold'em trajectory has run.
+Learning journal101 explains the question and limits. Codex assisted; human
+minutes not recorded. Ten unrelated main result edits were snapshotted with
+their actual bytes and remain untouched. User cutoff10a.m.Pacific November12;
+full downstream reserves apply before starting any real study.
+
+### November 12 — repair the optional plotting import before admission
+
+The first exact-source base311/base312 checks and hosted run43191822549 both
+fail strict typing: Matplotlib was imported directly in the optional plotting
+function while absent from the base environment. Relevant all-extras tests had
+passed; they did not establish base compatibility. Retain the exact failed
+logs/receipts in results/compact-sampled/failed-source-f8ded44. Replace only the
+optional plotting import with the repository's runtime optional-import pattern;
+no training/scientific fields change. Base-environment strict typing now passes
+658files; the95new focused/architecture tests pass in13.61s. Repeat the full
+source-bound base/optional/hosted cohort on the corrected revision. No real
+Hold'em trajectory or source-bound rehearsal started before these gates.
+
+### November 12 — distinguish collection from read-only replay
+
+Before experiments, self-review found that gather's replay-only no-training flag
+would be copied into an own training manifest. Separate replay-only metadata
+from actual collection. Completed collection records sampled training; tiny
+scope explicitly records no Hold'em training. A started/interrupted collection
+records unknown progress, with journal receipts, instead of asserting no training.
+Two regression tests exercise completed archive orchestration and interrupted
+real-scope orchestration with mocked workers/permits; they authorize no study.
+Focused new/architecture97tests pass14.40s; base strict typing658files and Ruff
+lint/format pass. Export all324 numeric readouts and30 signed final LINEAR
+candidate-baseline seed effects to CSV plus a primary-final Markdown table.
+Superiority admission requires the full accuracy gates and each baseline's
+two-game paired sign; storage/key/lifetime-RSS quantities remain distinct.
+Scientific seeds/configs/caps/method unchanged. Repeat the mandatory exact-source
+cohort on this corrected metadata/report revision before the first rehearsal.
+
+### November 12 — complete sampled source gate, before rehearsal
+
+Exact8da3c2c/source41b6f34d passes immutable base3.11/3.12:3082passed,
+61optional skips/149slow deselected each (536.16/517.75s). Lint/format/strict
+typing658files/hooks and before/after head/module/runtime/source guards pass.
+Relevant locked ALL-EXTRAS375each52.47/52.45s. Hosted43193724153 BOTH pass at
+the exact source head:3082/61/149/one historical warning each;1035.94/598.58s.
+Archive exact observed raw logs, metadata, execution wrapper and digest receipts
+in results/compact-sampled/checks*. The source gate validator authenticates all
+six roles. Preserve initial failures and superseded local cohorts outside the
+canonical successful receipt. Clarify that36separately initialized paths reuse
+paired seeds and are not36independent random replicates; no design field changes.
+Publish this checked-source checkpoint BEFORE the first source-bound tiny own
+collection. No real sampled trajectory, forecast or admission yet.
+
+### November 12 — source-bound tiny own rehearsal published before reference
+
+Checked-source checkpoint4b30519 precedes the first formal own collection.
+Software-only36B4 paths complete:36warm origins/108raw checkpoint states/
+216cumulative books/324current-uniform-linear readouts. All raw work, RNG,
+normalization, journal/pipe and exact-warm checks replay; no trajectory retraining
+during replay. Complete command2.554832042s<180, exit0, no interruption/temporary.
+Collection reports sampled trainingTrue and new Hold'em trainingFalse; replay
+reports no sampled training. These are dependent ordinary/negated Kuhn aliases,
+not36independent poker experiments or playing-strength admission. Publish ALLown
+manifests/child/journals/warms/states before constructing the native reference.
+
+### November 12 — complete tiny native rehearsal, cost stage next
+
+Alltiny own evidence1edc652 was public before new reference construction.
+OpenSpiel2.0.2 scalar-only audit checks all324values/BOTH-BR roots; maximum
+error2.0816681711721685e-16chips<1e-9. Installed Apache2LICENSE SHA matches.
+Complete native command5.027906125s<180, no failure/interruption/temporary.
+Actual/fresh/global admission remainFalse; these dependent tiny aliases establish
+software only. Next run the fixed three NONTRAINING own cost repetitions, publish
+all own fixtures, then their three native costs. No new poker prefix or learner
+is permitted in COST scope; conservative forecasts/caps remain unchanged.
+
+### November 12 — all three no-training own costs complete
+
+All three declared own cost repetitions finish under900s each, including startup,
+source/full-prerequisite checks,108archive slots/324scores, raw replay and writes.
+Complete clocks65.935652250/66.580811209/67.018426166s (exact raw receipts retained).
+Each explicitly records sampled_training_performed=False/learner_constructed=False;
+no new real prefix or initialization. Only pinned OWN full64/1024/4096policies
+are repeated across the IO readout labels as declared stand-ins. Their labels
+are not newly learned current/average strategies. Publish ALLthree own fixtures
+and archives BEFORE any corresponding native cost reference. The forecast must
+use the maximum WHOLE-command time, not an interim pre-replay manifest timer.
+
+### November 12 — complete three native cost comparisons
+
+Allthree own fixtures d2efbdc were public before native cost construction. Each
+comparison checks324stand-in own values/BOTH-BR roots; complete clocks50.020953959/50.368202500/50.438742208s<900each.
+Maximum error across all repetitions 1.35003119794419e-13chips<1e-9. No reference
+strategy enters learning; no learner was constructed in any cost run. The source-
+bound software proof and ALLthree own/native costs are complete. Publish native
+cost evidence before the fixed deep forecast and checked admission; real sampled
+training remains unrun/unadmitted until those published gates pass.
+
+### November 12 — unchanged conservative sampled forecast passes
+
+Deep source-bound forecast authenticates/replays the full-stage prerequisite,
+tiny proof, ALLthree own/native costs and ALL24historical complete B4 paths.
+T=733.132027500s is the maximum fixed-worker sum of per-game maximum old10m
+path times for all36new paths. O/N/P are the declared maximum complete costs.
+Fixed4*(T+O+P)=3220.713439164s<7200 and4*(N+O+P)=489.940297996s<900.
+Forecast complete command107.862500125s; no real trajectory was run. Publish
+this forecast BEFORE checked admission. No changed factors/caps/seeds, no accuracy/
+default/fresh/global admission. Full11100s user-deadline reserve still applies.
+
+### November 12 — checked sampled study permission, publish before trajectory
+
+Published forecast06e099e precedes admission. The admission command recomputes
+source/proof/cost/history arithmetic and authenticates909sealed prerequisite files
+and exact fetched-origin publication bytes. Complete command26.335615209s;
+sampled_trajectory_admitted=True, actual_admission=False, fresh_global=False.
+This permits only the frozen36-path known-game research study, not accuracy, a
+stronger agent or default/fresh/global promotion. Publish the permit before
+starting. The full11100s study/audit/report/final-CI/save reserve fits before
+the user's10a.m.Pacific cutoff; parent/worker recheck permit/source before learning.
+
+### November 12 — complete real sampled own grid; audit pending
+
+Published permit486d29e precedes first new real trajectory. All36paths/36warm
+origins/108raw states/216average books/324readouts complete, original3.11.17/
+NumPy2.4.6/Numba0.68.1/source41b6. Complete command735.623852375s<7200;
+raw-state/work/RNG/normalization/journal/pipe replay324 with zero metric change,
+no retraining during replay. ALLcontrols/seeds/crossings retained. Initial OWN
+primary-final values below are pending independent audit, not admission.
+dev_low_oop/exact:median 2.02482310754e-09%pot,worst 2.07116552715e-07%pot; seeds 2.07116552715e-07,1.65007760542e-09,2.02482310754e-09.
+dev_low_oop/public_b8:median 1.65003593779e-09%pot,worst 1.86390995916e-08%pot; seeds 1.86390995916e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_b8:median 1.65003593779e-09%pot,worst 2.23571208186e-08%pot; seeds 2.23571208186e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_made_b8:median 1.65003593779e-09%pot,worst 2.25363420655e-08%pot; seeds 2.25363420655e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_range_q8_b8:median 1.65003593779e-09%pot,worst 2.25363420655e-08%pot; seeds 2.25363420655e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_range_q8_own_q8_b8:median 1.65003593779e-09%pot,worst 2.26489280006e-08%pot; seeds 2.26489280006e-08,1.65003593779e-09,1.64920477823e-09.
+dev_medium_oop/exact:median 0.292419682341%pot,worst 0.660690262712%pot; seeds 0.292419682341,0.660690262712,0.194613427468.
+dev_medium_oop/public_b8:median 0.292419682341%pot,worst 0.660690262712%pot; seeds 0.292419682341,0.660690262712,0.194613427468.
+dev_medium_oop/texture_b8:median 5.4085783262%pot,worst 7.79468119515%pot; seeds 5.4085783262,7.79468119515,5.23811949182.
+dev_medium_oop/texture_made_b8:median 4.31913150937%pot,worst 4.46315286224%pot; seeds 4.31913150937,4.46315286224,4.29838415609.
+dev_medium_oop/texture_range_q8_b8:median 2.79329180125%pot,worst 3.34947219867%pot; seeds 2.79329180125,0.375286609858,3.34947219867.
+dev_medium_oop/texture_range_q8_own_q8_b8:median 2.38991200503%pot,worst 2.49456769971%pot; seeds 2.49456769971,1.22545973317,2.38991200503.
+Candidate fails fixed medium median<=1%pot despite worst<=2.5%; do not change
+limits/readout/seed grid. Exact passes. No default/fresh/global promotion. Publish
+ALLown evidence before constructing the actual native reference. All-control
+whole average coverage includes warm mass; report post-warm support separately.
+
+### November 12 — actual sampled scalar audit passes; quality failure retained
+
+ALLown9177081 was public before actual OpenSpiel construction. Native checks
+all324policy values/BOTH-BR roots, maximum error1.27897692436818e-13chips<1e-9. Complete
+command41.155461709s<900, pinned OpenSpiel2.0.2/Apache2 license verified; no
+reference policy used in training. Numerical verification passes; the candidate
+medium LINEAR median2.389912005%pot still misses the preset1%limit. Do not
+change limits or select a different readout/seed. Publish audit before authenticated
+report; full result tables/plot and failure explanation are next. Default/fresh/
+global admission remain unchanged.
+
+### November 12 — complete failed sampled report and readable figures
+
+Authenticated report completes64.070273584s<900. All13 checks are evaluated:
+accuracyFalse alone, allother12True. Compact medium LINEAR median2.389912005%
+exceeds fixed1%; worst2.494567700%<2.5%cannot rescue it. Exact/rawpublic
+median0.292419682%/worst0.660690263%; previous range-aware2.793291801%/
+3.349472199%. Two paired candidate seeds improve and one worsens. All324readouts,
+30signed baseline effects,12final primary rows, support/storage/work metadata and
+all five false superiority-admission flags are retained. No reseed/readout switch,
+more work, changed gate, default/fresh/global promotion or issue4closure.
+
+Visually inspected original learning.png; its symlog view wastes negative-axis
+space. Preserve original figure/result hashes. Add a separate data-only positive-
+log renderer and learning-log.png/receipt using unchanged scalar input hashes,
+all six descriptions and all three primary seeds. Original scientific source
+fingerprint41b6f34d is unchanged; the new display script authenticates every named
+historical dependency/Git blob without weakening the old aggregate checker.
+Actual3.11/3.12data-only rendering produces identical PNG SHA
+ff8df8887919b36d4b2853710a1da8851a6411c8c1e109ae31cb997d4837af9e;
+this is NOT bit-exact real trajectory admission on3.12. Lint/format pass;
+strict typing659files passes both versions. New method/README/journal101 clearly
+state failure, seed dependence, warm-versus-postwarm coverage, exported-engine
+limits and no whole-memory claim. Three interview Q&As and read-only terminal
+commands included. Artifact digest/failure-flag/relative method-link checks pass.
+Final publication base/hosted checks and solo self-review remain merge gates.
+Next justified issue4 question: separate within-group learning weakness from
+finer-information vulnerability with each saved opponent held fixed, before
+choosing another training/representation remedy. Human minutes not recorded.

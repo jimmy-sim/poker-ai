@@ -1,0 +1,60 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.compact_sampled_inputs import CONFIG\nENTRIES=(\"scripts/validate_compact_sampled.py\",)\nfrom poker_ai.validation.five_card import source_provenance\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='8da3c2cf0fe236b0953a95eca2aa87ac74350bc4'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\ns=source_provenance(root,root/CONFIG,entrypoints=ENTRIES)\nassert s['dirty'] is False\nassert sha(s['sha256'])=='41b6f34d26395ff55127cd0b62bd304786eb887d103778429114e0cb36a3e58b'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(s['sha256'])})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-sampled-metadata-checkout/src/poker_ai/__init__.py', 'source_sha256': '41b6f34d26395ff55127cd0b62bd304786eb887d103778429114e0cb36a3e58b'}
+{"command": ["uv", "run", "--locked", "ruff", "check", "."]}
+All checks passed!
+{"command": ["uv", "run", "--locked", "ruff", "format", "--check", "."]}
+787 files already formatted
+{"command": ["uv", "run", "--locked", "mypy", "--strict", "src", "tests", "scripts"]}
+Success: no issues found in 658 source files
+{"command": ["uv", "run", "--locked", "pytest", "-q", "-m", "not slow"]}
+........................................................................ [  2%]
+........................................................................ [  4%]
+........................................................................ [  6%]
+........................................................................ [  9%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 18%]
+........................................................................ [ 20%]
+.....................................................................ss. [ 22%]
+........................................................................ [ 25%]
+........................................................................ [ 27%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+.....sss................................................................ [ 36%]
+...................................................................s.... [ 38%]
+........................................................................ [ 41%]
+........................................................................ [ 43%]
+...........................................ss..sss...................... [ 45%]
+........................................................................ [ 48%]
+..........sssssssssssssssss............................................. [ 50%]
+.s...................................................................... [ 52%]
+........................................................................ [ 55%]
+................................................ssssssssss.............. [ 57%]
+........................................................................ [ 59%]
+........................................................................ [ 61%]
+.....................................................ss...s............. [ 64%]
+........................................................................ [ 66%]
+........................................................................ [ 68%]
+...........s.................................................s.......... [ 71%]
+........................................................................ [ 73%]
+......................................................................ss [ 75%]
+.......................ss............................................... [ 77%]
+........................................................................ [ 80%]
+..........................ss......................................ss.... [ 82%]
+.........................................................s.............. [ 84%]
+......s................................................................. [ 87%]
+................................................s....................... [ 89%]
+.........................................s.............................. [ 91%]
+....................................ss..........s....................... [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 98%]
+.............................................                            [100%]
+3082 passed, 61 skipped, 149 deselected in 517.75s (0:08:37)
+{"command": ["uv", "run", "--locked", "pre-commit", "validate-config"]}
+{"command": ["uv", "run", "--locked", "pre-commit", "run", "--all-files"]}
+Ruff lint (locked project environment)...................................Passed
+Ruff format check (locked project environment)...........................Passed
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.compact_sampled_inputs import CONFIG\nENTRIES=(\"scripts/validate_compact_sampled.py\",)\nfrom poker_ai.validation.five_card import source_provenance\nfrom poker_ai.postflop.learning_artifacts import sha\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='8da3c2cf0fe236b0953a95eca2aa87ac74350bc4'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\ns=source_provenance(root,root/CONFIG,entrypoints=ENTRIES)\nassert s['dirty'] is False\nassert sha(s['sha256'])=='41b6f34d26395ff55127cd0b62bd304786eb887d103778429114e0cb36a3e58b'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(s['sha256'])})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-sampled-metadata-checkout/src/poker_ai/__init__.py', 'source_sha256': '41b6f34d26395ff55127cd0b62bd304786eb887d103778429114e0cb36a3e58b'}
