@@ -3242,3 +3242,21 @@ scientific fingerprint987c636e... unchanged. Subsequent edits are documentation/
 evidence only, including clarification that a posterior feature might also proxy
 future responses; this local control does not prove a particular feature fails.
 Both final hosted artifact jobs remain required before history-preserving merge.
+
+### November 11 — prospective two-sided public range-blocker diagnosis
+
+Issue4comment6814712059 registers the next question before code/output. PR52
+post-merge mainCI43086132574 passes both jobs. Fresh actual user-main snapshot
+before isolated branch creation captures all ten current unrelated result edits;
+no main files changed. Frozen config binds the complete C7 manifest/summary/CSV.
+Same24profiles/48responses/96suffixes/192source range panels and all44,160
+profile-seat river records (88,320acrosssuffixes); five nested controls produce
+960grouped panels. Source static / own public range availability / both public
+masks / both masks+joint matrix / exact singleton. No new Q/posterior/policy or
+training; source reconstruction, physical-card oracle, private-input exclusion,
+refinement/singleton and joint redundancy controls define acceptance. Retain
+all unsupported rows/common weights/denominators and no positive-effect gate.
+Separate900s cache-only full-validation/feature/regroup/write clock; original
+caps/seeds/gates unchanged. Full local/optional/hosted source checks precede
+measurement; both final artifact jobs before merge. Implementation/results
+pending; a future feature-learning test needs its own contract/admission.

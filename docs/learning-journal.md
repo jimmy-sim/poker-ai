@@ -11,6 +11,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Which strong hands could each player represent?](#98-ask-which-hands-each-player-can-still-represent)
 - [Try the four-column saved-hand terminal exercise](terminal-river-lab.md)
 - [Separate range beliefs from later action values](#97-separate-range-beliefs-from-later-action-values)
 - [Why a turn call needs finer river information](#96-ask-what-makes-the-turn-call-valuable)
@@ -81,6 +82,10 @@ the opponent's hand weights explains some river conflicts, but others persist
 because the saved opponent's later responses differ. This narrows the problem;
 it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
 the completed step 96 report, and step 97 adds a range-weight browser and plots.
+
+Step 98 prospectively tests whether public cards remove important possibilities
+from either player's declared range. It keeps all saved values fixed and has
+not yet produced a measurement or trained a feature.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4175,6 +4180,32 @@ It shows the opponent's possible hands, prior and updated weights, and the
 resulting action values. Use r to switch between the two own continuations;
 the other navigation keys work as in the earlier browser. The figures show all
 seeds and controls, including zero-cost singleton controls and unfavorable changes.
+
+## 98. Ask which hands each player can still represent
+
+**November 11, 2026 — issue #4; prospective investigation.**
+
+A blocker is a visible or known card that makes a particular hand impossible.
+Our previous report showed a new question: do we need to describe not just the
+opponent's possible hands, but also the hands the opponent thinks WE could hold?
+
+**Recorded example:** with Qh Kh on Ts 9s 4d 2h, a river 9d removes 9c9d from
+our declared alternative range. A river 9h leaves that strong hand possible.
+The opponent could respond differently to a raise because the strong hands we
+can represent differ. That is a hypothesis to investigate, not a proved cause
+of the saved strategy's decisions or a trained improvement.
+
+The [fixed plan](two-sided-blockers.md) checks every earlier saved case. It adds
+public availability of our range, then both ranges, to the old grouping. It
+also checks the full compatibility table between possible hands. With fixed
+ranges, that table is determined by the two availability masks and the cards
+already in the declared hands; it must not magically add more information.
+
+We will keep all action values and weights fixed. The question is whether these
+extra descriptions separate decisions that previously conflicted. We must not
+use our actual private hand to remove alternatives the opponent cannot know
+are impossible. No results, new agent feature or personal practice are claimed.
+The original failed learning gate remains. Codex assists with implementation.
 
 ## Your own learning notes
 
