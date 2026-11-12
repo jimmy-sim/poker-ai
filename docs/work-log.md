@@ -3852,3 +3852,129 @@ notes retained outside repo. Final local base/hosted publication checks remain
 before history merge; no new trace/probe outcomes or new trajectory study started.
 Next justified separate step: identify the concrete merged decisions behind the
 large information benefit while holding frozen opponents fixed.
+
+### November 12 — prospective trace of the audited information benefit
+
+Before new row/conflict outcomes, pin PR57's complete 48-input/144-profile/288-
+response archives and define 144 unique fixed-opponent traces with all288alias
+provenance. Unchanged own trace_losses starts at the saved partition-best reply,
+so all additive rows must sum to already-audited B-R. Prefix is restricted-reply
+reach, not original sampled reach; turn contributions do not causally identify
+a river feature. All six/two games/three seeds/both players/S-F opponents retained.
+No new learner/RNG/reference constructor, feature probe/selection/admission.
+Prospective software180s and realown/report900s complete caps, full3900s cutoff
+reserve, own-before-rendering checkpoints and complete source/test/hosted gates.
+Historical source/checkers stay unchanged; new sealed-source reader authenticates
+named old dependencies/Git blobs and raw own policies. No new trace outcomes yet.
+PR57 final publication local/hosted checks are still running; branch is stacked
+on its published4c5ba3c, to retarget main after checked history merge.
+
+### November 12 — information-trace implementation and first correctness checks
+
+Prospectiveca983341/PR58 precedes all new row outcomes. Implemented a sealed
+parent reader that authenticates unchanged source2670named files/Git blobs and
+replays all parent mixtures; old strict aggregate checkers are not edited or
+patched. Added restricted-best-reply-prefix trace panels, 288alias binding,
+all-row/group/street accounting, exact tie-set conflict rules, complete clocks,
+immutable/partial retention and all-case tables/terminal browser. Reusable
+receipt and no-training execution helpers reduce duplicated experiment plumbing.
+A fresh-process import blocker refuses every reference backend and patches all
+learner factories; there is no new native construction. Parent B/R scalar
+comparisons remain comparison-only, and new individual-row values are labeled
+own calculations rather than independently audited new values.
+
+Current67focused tests pass13.34s, including positive hand-calculated hidden-
+world sums for BOTHplayers, zero-support retention, overlapping action ties,
+wrong aliases/context/root identifiers, complete mocked144panel/288alias IO,
+corrupt/re-signed details, partial/report timeouts, cache/terminal navigation,
+clock failures and six-role receipt failures. Recorded tiny parent144profiles/
+288responses also replay with learner/reference constructors blocked; this is
+parent replay, not the new source-bound trace proof. Initial fixture-sharing
+import-path error was caught/fixed before this passing suite, with logs retained
+outside the repo. Ruff/817formattedfiles/strict typing686files pass. No new real
+trace outcome, probe, learned feature, training/default/admission exists yet.
+Next: full exact-source local/optional/hosted cohort, then published tiny trace
+proof before any900s real trace under unchanged3900s cutoff reserve.
+
+PR57 final local bases3152/63skip/149deselect pass576.41/562.89s; BOTH exact-head
+hosted43211159496 pass before history merge9737b7acbde53f1fdbc48b46850fcd7d6760020c.
+Hosted311894.65s and3121113.89s, same3152/63/149/one historical warning. Full
+head/log/digest/local proof retained outside repo to avoid a CI-only commit.
+Fresh main snapshot/guardedFF preserve allten unrelated bytes/status/changed-index
+entries/patches; main source/runtime guard and73focused tests21.01s pass. Complete
+main archive replay is running separately. PR58 retargeted main after the merge.
+
+### November 12 — complete exact-source trace checks before rehearsal
+
+Source219f338/fingerprint3b5b9878 passes all six roles. BOTH complete localbases
+3217passed/64skipped/149deselected in581.29s311/564.74s312; Ruff817format/strict
+mypy686/hooks pass. Relevant locked optional513passed90.58s311;511passed with
+2recorded-runtime adapter skips86.94s312. BOTH exact-head source-hosted43214557237
+pass:311job131170497572808.46s,312job1311704978961138.64s, same3217/64/149 plus
+one historical warning. Raw decoded logs/head/job metadata/install receipts and
+wrapper retained; six-rolechecks.jsonsha0f5214fa7157c3ec6f5d7d93dff020832c42196804904441939c7110715b7530
+validates before publication. Authenticated raw logs retain their whitespace/BOM.
+Scientific source/caps/seeds/config unchanged. Prose clarifies target=attacker,
+fixed opponent=defender; largeI does not itself select a card-feature remedy.
+No new row outcomes yet. Actual tiny trace proof is next, before real tracing.
+
+PR57 main full144/288 archive replay completes75.40927466599896s with zero
+fixed-opponent identity error; allten unrelated main bytes/status/changed-index
+entries and patches remain exact after checks/replay. Receipt/post-preservation
+proof retained outside repo. New trace code does not alter any historical SRC.
+
+
+### November 12 — complete tiny information-trace proof before real rows
+
+Actual checked-source same-pipeline tiny run completes144panels/288aliases/864
+ownedrows, all raw details and summaries replayed, maximum accounting/root error
+3.469446951953614e-17chips. Complete command 2.169484458001534s <180s.
+Learner factories and every reference import blocked; no new toy training,
+reference construction or poker-strength result. One-to-one aliases are zero-
+information software cases; separate literal hidden-world tests cover positiveI
+for both players and overlapping ties. Full own/child/144details are published
+here before real tracing. No scientific caps/seeds/gates/admission changed.
+
+
+### November 12 — publish complete real information trace before report
+
+No-training own trace completes 117.1815822919998s <900s. All144fixed-opponent
+panels/288sourcealiases/133632owned decision rows replay, maximum accounting/
+root error 1.0658141036401503e-13chips <1e-9. All raw row/menu/R-prefix
+reach/conditional-value/group/street/alias detail files plus own/child manifests
+are published here BEFORE report rendering. Complete source/prospective/tiny
+proof gates precede this collection; old B/R scalar audit is reused only as
+a comparison receipt. No new learner/RNG/reference construction, independent
+row-value audit, feature selection or model/default/accuracy admission. Report
+and concrete interpretation are next; original sampled gate remains failed.
+
+
+### November 12 — complete decision trace and actual terminal inspection
+
+Authenticated report98.93773416600015s <900s follows published ownf4824b2; all
+144panels/288aliases/133632ownedrows/84600grouprows retained and replayed. Hashes,
+CSV counts, source3b5b9878 and relative doc links pass. Actual browser n/p/j/k/q
+navigation passes; allthree default compact target1-versus-S seeds, fullopponent,
+rank2riverconflict and opposite-seat rivercase inspected. No new native solver
+or training runs. Prior B/R comparison receipts remain comparison-only; new
+individual conditional row values are own calculations.
+
+Allthree medium compact seeds concentrate nearly all target1I at exactturnrow
+1611/coarserow873, own9c9d onTs9s4d2h. This group hasONEexact member and no strict
+current conflict. R folds, finer-suffix B calls: callvalues[-12.9751262,
+-15.5716222,-13.3752332] versusfold-18; contributions[1.68900823229,
+.818596892079,1.62600876064]chips versus totalI[1.68907408859,.818624181969,
+1.62602004833]. Negativecall stillbeatsfold, but Q assumesfinerfutureplay R
+cannotuse. ReachisRprefix,notoriginalsampled. R-prefixstrictreachable groups
+3/4/7remain; riverlosses.000065856301/.0000272898904/.0000112876885chips are
+smallbecauseearlierfoldssuppressreach. This is not causal turn-local feature
+attribution or universal advice. Target1attacksfixedseat0S; itisnotnecessarily
+theweakdefender. SamepanelsversusFhaveI0allseeds.
+
+README/method/3interviewQ&As and rewritten plain-English journal103 explain all
+roles/units and provide the actual browser commands. No personalpractice/hours
+inferred from Codex's checks. No feature selected or agent promoted; original
+compact sampled accuracy remains failed. Next justified separate test is finer
+OWN opponents for the unchanged compact learner, with paired coarse/fixed-work
+controls and all original seeds/caps/gates, not an assumed fix. Final applicable
+local base/hosted checks and solo self-review remain before history merge.

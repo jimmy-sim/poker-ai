@@ -1,0 +1,57 @@
+"""Final immutable-checkout base and focused all-extras publication checks."""
+
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+work = Path(__file__).resolve().parent
+root = work / "compact-information-checkout"
+folder = work / "compact-information-source-checks"
+folder.mkdir(exist_ok=True)
+name = sys.argv[1]
+assert name in ("base311", "base312", "optional311", "optional312")
+optional = name.startswith("optional")
+minor = name[-3:]
+version = "3.11.17" if minor == "311" else "3.12.15"
+python = work / "python" / f"cpython-{version}-macos-aarch64-none/bin/python3.{minor[-2:]}"
+env = dict(os.environ, UV_PROJECT_ENVIRONMENT=str(work / f"compact-information-source-{name}"), UV_PYTHON=str(python))
+uv = ["uv", "run", "--locked", *(["--all-extras"] if optional else [])]
+started = time.perf_counter()
+with (folder / f"{name}-install.log").open("x") as stream:
+    subprocess.run(["uv", "sync", "--locked", "--dev", *(["--all-extras"] if optional else [])], cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+guard = """import pathlib,subprocess,sys,numpy,poker_ai
+from poker_ai.evaluation.compact_information_inputs import CONFIG
+ENTRIES=("scripts/trace_compact_information.py",)
+from poker_ai.validation.five_card import source_provenance
+from poker_ai.postflop.learning_artifacts import sha
+root=pathlib.Path.cwd()
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='219f3385ea16a80bef2ab36f57f302cb33fb93bf'
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+assert sys.version.split()[0]==VERSION
+assert numpy.__version__==NUMPY
+s=source_provenance(root,root/CONFIG,entrypoints=ENTRIES)
+assert s['dirty'] is False
+assert sha(s['sha256'])=='3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660'
+print({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':sha(s['sha256'])})
+""".replace("VERSION", repr(version)).replace("NUMPY", repr("2.4.6" if minor == "311" else "2.5.4"))
+commands = [uv + ["python", "-c", guard]]
+if optional:
+    commands.append(uv + ["pytest", "-q", "tests/test_compact_information.py", "tests/test_compact_information_archive.py", "tests/test_diagnostic_clock.py", "tests/test_diagnostic_receipts.py", "tests/test_compact_fixed.py", "tests/test_compact_fixed_archive.py", "tests/test_compact_fixed_clock.py", "tests/test_compact_fixed_native.py", "tests/test_compact_sampled_state.py", "tests/test_compact_sampled_pipeline.py", "tests/test_compact_sampled_clock.py", "tests/test_compact_sampled_native.py", "tests/test_compact_full.py", "tests/test_compact_full_clock.py", "tests/test_public_range.py", "tests/test_public_range_acceptance.py", "tests/test_range_mass.py", "tests/test_range_protocol.py", "tests/test_range_admission.py", "tests/test_postflop_jit.py", "tests/test_postflop_learning.py::test_postflop_training_has_no_reference_imports"])
+else:
+    commands.extend((uv + ["ruff", "check", "."], uv + ["ruff", "format", "--check", "."], uv + ["mypy", "--strict", "src", "tests", "scripts"], uv + ["pytest", "-q", "-m", "not slow"], uv + ["pre-commit", "validate-config"], uv + ["pre-commit", "run", "--all-files"]))
+commands.append(uv + ["python", "-c", guard])
+began = time.perf_counter()
+outcome = "failed"
+try:
+    with (folder / f"{name}.log").open("x") as stream:
+        for command in commands:
+            stream.write(json.dumps(dict(command=command)) + "\n")
+            stream.flush()
+            subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+    outcome = "passed"
+finally:
+    (folder / f"{name}-receipt.json").write_text(json.dumps(dict(name=name, status=outcome, checked_commit="219f3385ea16a80bef2ab36f57f302cb33fb93bf", scientific_source_sha256="3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660", scope="information-gain trace/sealed-parent/no-reference/IO/failure/cache/browser plus frozen-opponent diagnosis plus sampled/candidate/parent/JIT integration, all extras; software checks only" if optional else "complete base lint/format/types/non-slow/tests/hooks", check_seconds=time.perf_counter()-began, setup_and_check_seconds=time.perf_counter()-started), indent=2)+"\n")
+print(name + ": complete, source/runtime guarded")

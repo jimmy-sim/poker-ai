@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3217 passed, 64 skipped, 149 deselected in 581.29s (0:09:41)",
+      "log": {
+        "file": "results/compact-information-trace/checks/base311.log",
+        "sha256": "cb5cc60721f44184c569744200ed290ff8b1831d0c58f613a9aef0955e93385d"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3217 passed, 64 skipped, 149 deselected in 564.74s (0:09:24)",
+      "log": {
+        "file": "results/compact-information-trace/checks/base312.log",
+        "sha256": "7674e43c060293db232d1396dc5a3ef8ba786ff81fd6a6a65725e0ecb60358ea"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "513 passed in 90.58s (0:01:30)",
+      "log": {
+        "file": "results/compact-information-trace/checks/optional311.log",
+        "sha256": "4807443ead8895de66cb42e87567fb806846cff3f641149646895d1d0a827836"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "511 passed, 2 skipped in 86.94s (0:01:26)",
+      "log": {
+        "file": "results/compact-information-trace/checks/optional312.log",
+        "sha256": "f1f25d72d242fc6df01076ffcc5d203b9a0c25ffdba718fc68eb8a69b43789f4"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43214557237,
+      "job_id": 131170497572,
+      "head_sha": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-information-trace/checks/hosted311.log",
+        "sha256": "0390f51409ad61e2e38adae853c82bf70045347e601caccbf8b0825d7f47bb2c"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3b5b9878bd0d9a1f9d9cb1ca9067f2c2c8471c7b4ed1f37173efd0ae9ae44660",
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43214557237,
+      "job_id": 131170497896,
+      "head_sha": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-information-trace/checks/hosted312.log",
+        "sha256": "fcb07919a0af95cf2ee06504e36d3c2193bb87890401af7f3faaac90ddc45a77"
+      }
+    }
+  ],
+  "scope": "Observed source-bound local complete base, focused all-extras and hosted checks. No new training or accuracy admission."
+}
