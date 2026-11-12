@@ -3460,3 +3460,17 @@ fresh_global_admission=False. Publish this permit before the real own run.
 It authorizes only the frozen72-policy full-control study, not accuracy, sampled
 learning, a new default or a stronger/general agent. Own runner rechecks the
 published permit and dependencies under its unchanged900s complete-command cap.
+
+### November 12 — complete compact own full-control grid, audit pending
+
+Published permit5483c42 precedes real own command. Source9db8/original3.11.17/
+NumPy2.4.6 completes all72 profiles/12layouts,1/16/64/256/1024/4096, allsix
+controls/two games. Raw policy/regret/linear-mass snapshots replay72 with zero
+metric change. Complete command50.698962332999145s, cap900; source/data intact.
+Final own candidate exploitability2.577133407089394e-6%pot low and
+0.00017718448559713964%pot medium, versus exact2.4545130526156374e-6% and
+0.0001822898460278487%. Candidate130/364 rawpublicrows low;1770/3336 medium.
+Allcontrol final uniform coverage1.0. These are OWN figures pending independent
+audit; actual_admission staysFalse. Key UTF8bytes150986/1985885 exceed rawpublic
+125226/1079292; fewer rows are not whole-memory savings. Publish allown evidence
+before constructing the real comparison reference; retain allcontrols/checkpoints.

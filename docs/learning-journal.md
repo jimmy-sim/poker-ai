@@ -4447,3 +4447,11 @@ the exact published prerequisites. It permits the fixed full-control study.
 That is permission to measure the candidate, not a statement that it passed the
 playing-quality test. The next saved records will be real own training, published
 before their independent audit.
+
+**The real own run finished:** all72 strategies were saved and replayed, in
+about50.7 seconds including prerequisite checks and final writes. On the harder
+known game, the new description uses1,770 strategy rows versus3,336 for raw
+public information. Its own exploitability calculation is near the exact control.
+Those numbers still need independent verification. The key strings themselves
+are larger than raw-public keys, so fewer strategy rows do not prove lower total
+memory. Publish the whole own grid before asking OpenSpiel to check it.
