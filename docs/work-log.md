@@ -4084,3 +4084,22 @@ passes100.88s. No original scientific dependency or training rule was edited.
 This draft-source correction requires a new full exact-source cohort before
 formal software/cost/forecast/admission or real study. Earlier check cohorts
 remain separate and cannot admit the corrected source.
+
+### November 12 — complete source-bound compact opponent cohort
+
+Source1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152 / scientific fingerprint
+2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989 passes ALL
+six roles before formal software/cost/learning. Immutable full base311/312:
+3319passed/64skipped/150deselected each; complete checks669.730447/651.925671s,
+including lint/format/strict types/tests/hooks and source/runtime/module guards.
+Relevant all-extras636each, complete checks350.804740/288.604327s; original-runtime
+full36/180 integration311, expected real-runtime rejection312 and structural/
+raw-data/software checks both. Both exact-head hosted43228827703 jobs pass:
+131218952181/131218954870, same3319/64/150 with one historical warning each,
+pytest670.28/1190.68s. Raw decoded UTF8 logs, API head/job metadata, executeddriver
+and typed six-role checks retained, receipt SHA
+0a6e3bb645a2a3dff9a303a895cc0623c21c3a2e18b502e54a68fdc856cc233f verified.
+This source-check publication is not compute or strength admission. Formal full
+tiny own/public-before-native proof is next; no new real trajectory yet. Method's
+three interview questions explain paired controls, future-suffix interpretation
+and what a software/compute gate does and does not establish.

@@ -4868,3 +4868,9 @@ check remains unchanged, and proximity to the original probabilities still
 meets the predeclared 1e-12 cost-only limit. The complete 180-table integration
 passes with this exact relationship checked. This fixes test data preparation;
 it changes no original policy, learned trajectory or quality gate.
+
+The corrected source now passes both complete local base suites (3,319 tests,
+64 optional skips and 150 slow deselections each), both relevant optional suites
+(636 each), and both exact-head hosted jobs before formal collection. The
+observed logs, source hashes and receipt are retained. The formal rehearsal,
+fixed cost runs, forecast and checked admission still come before real learning.

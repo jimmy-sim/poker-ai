@@ -186,3 +186,30 @@ The study may support a narrower known-game training improvement, or fail.
 Neither outcome erases the original compact sampled gate. Further feature,
 fresh-case, global/default or broader strength work requires its own prescribed
 evidence; it is not silently admitted by this protocol.
+
+## Three interview questions
+
+**Why keep both ordinary compact and paired compact controls?**
+The treatment combines two separately trained half-budget compact/fine games.
+Ordinary self-play alone changes both opponent information and the way work is
+split. The paired compact control uses the same split and role streams, so its
+difference from treatment targets the opponent-information change more closely.
+Both-player initialization, updates and boundary overshoot still count. This is
+a controlled comparison in known games, without a population causal guarantee.
+
+**Does the earlier turn call show the turn representation must change?**
+No. That turn row has one exact member. Its call value uses finer legal future
+decisions, and the constrained reply cannot necessarily realize that suffix.
+The same compact groups also support a low-exploitability full-control policy.
+Testing finer own training opponents asks whether training can avoid leaving
+that attack available before another feature is selected. A result is required;
+the diagnosis alone does not establish that the proposed remedy works.
+
+**What do a passed software proof and compute forecast establish?**
+The proof exercises the complete pipeline on fictional games, including actual
+spawned learning, raw books, all readouts, aliases, composition, independent
+terminal math and scalar reference checks. The forecast uses all fixed cost
+repetitions and the unchanged conservative timing formula. Together with source
+checks and published admission they can permit the bounded real experiment.
+They establish neither stronger Hold'em play nor a reason to relax a failed
+accuracy or superiority gate. Cost projections never count as learned policies.
