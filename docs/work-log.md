@@ -3573,3 +3573,14 @@ Collection reports sampled trainingTrue and new Hold'em trainingFalse; replay
 reports no sampled training. These are dependent ordinary/negated Kuhn aliases,
 not36independent poker experiments or playing-strength admission. Publish ALLown
 manifests/child/journals/warms/states before constructing the native reference.
+
+### November 12 — complete tiny native rehearsal, cost stage next
+
+Alltiny own evidence1edc652 was public before new reference construction.
+OpenSpiel2.0.2 scalar-only audit checks all324values/BOTH-BR roots; maximum
+error2.0816681711721685e-16chips<1e-9. Installed Apache2LICENSE SHA matches.
+Complete native command5.027906125s<180, no failure/interruption/temporary.
+Actual/fresh/global admission remainFalse; these dependent tiny aliases establish
+software only. Next run the fixed three NONTRAINING own cost repetitions, publish
+all own fixtures, then their three native costs. No new poker prefix or learner
+is permitted in COST scope; conservative forecasts/caps remain unchanged.

@@ -4582,3 +4582,10 @@ seconds under its180-second cap. Its manifest correctly says tiny sampled
 training happened, while no new Hold'em training happened. The own archive must
 be public before the independent scalar check starts. Poker accuracy is still
 unmeasured at this point.
+
+The independent tiny audit checked all324readouts after the own archive was
+published. The largest difference was about2.08e-16chips, well below the fixed
+1e-9limit; the full command took5.03seconds. It checked values and both best
+responses, not a reference strategy to train on. The next cost runs only copy and
+score old own full-control policies as stand-ins. They cannot initialize or train
+the new sampled agent.
