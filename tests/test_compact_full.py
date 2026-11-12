@@ -12,15 +12,15 @@ import pytest
 from poker_ai.postflop import compact_full_artifacts as artifacts
 from poker_ai.postflop import compact_full_run as own
 from poker_ai.postflop.compact_full_context import Context, contexts, metrics
-from poker_ai.postflop.learning_artifacts import sha
-from poker_ai.postflop.public_range_definition import contract
-from poker_ai.solver_validation.compact_full import (
+from poker_ai.postflop.compact_full_native_checks import (
     FIELDS,
     FORMAT,
     REFERENCE,
     comparison,
     validate,
 )
+from poker_ai.postflop.learning_artifacts import sha
+from poker_ai.postflop.public_range_definition import contract
 
 ROOT = Path(__file__).resolve().parents[1]
 

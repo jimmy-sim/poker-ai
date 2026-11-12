@@ -92,3 +92,16 @@ Only authenticated complete own/native artifacts may wrap the frozen pure
 metric assessor into an actual full-control decision. Even a pass is known-game
 full-training evidence, not sampled, general or deployable playing strength.
 Codex implementation/execution is AI assistance; human time remains unrecorded.
+
+## Source gate: retained architecture failure
+
+Initial source1a9bb4a fails the unchanged reference-free postflop package test in
+both complete base environments: 2,989 passed,60 skipped,149 deselected and one
+failure (533.09/516.60s). Both optional suites passed278, which did not suffice.
+No compact study, measured tiny proof or cost forecast started. The correction
+moves native dispatch into evaluation and extracts pure scalar-receipt checks
+into postflop. The own package imports no reference implementation. The original
+guard remains unchanged and now passes in the focused279-test suite (32.24s);
+strict typing641 files and lint/format pass. Complete corrected source checks
+remain required. The [rejected cohort](../results/compact-full-control/failed-source-1a9bb4a/README.md)
+retains actual failures; it cannot supply admission.

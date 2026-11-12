@@ -194,9 +194,9 @@ def conservative_bounds(
 
 
 def forecast(root: Path, check_path: Path) -> dict[str, Any]:
+    from poker_ai.postflop.compact_full_native_checks import validate
     from poker_ai.postflop.range_admission import replay as old_replay
     from poker_ai.postflop.range_admission_report import checked_audit
-    from poker_ai.solver_validation.compact_full import validate
 
     checks(root, check_path)
     base = root / ROOT_FOLDER

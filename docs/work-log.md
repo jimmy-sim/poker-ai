@@ -3388,3 +3388,17 @@ lint/format/strict typing640 files pass after correcting a test adapter and
 annotation/formatting defects. Full immutable local bases/relevant optional and
 both hosted source checks are next. No measured proof, forecast/admission or new
 real Hold'em trajectory yet. Journal100 explains what the new records establish.
+
+### November 11 — full-control source gate catches a reference boundary violation
+
+Both complete immutable1a9 base suites fail unchanged
+test_postflop_training_has_no_reference_imports: 2,989pass/60skip/149deselect,
+onefailure,533.09/516.60s. Initial optional suites278pass36.62/35.72s; they do not
+override the base failure. SourceCI43177397488 also reports a failing311 job;
+312 conclusion retained when observed. No measured proof, forecast/admission or
+compact scientific trajectory. Native dispatch moved to evaluation; pure native
+scalar receipt/schema arithmetic extracted into its own postflop module. This
+removes the forbidden dependency instead of weakening/bypassing the guard.
+Focused suite INCLUDING that unchanged guard now279pass32.24s; lint/format and
+mypy641 pass. Failed source/logs/receipts retained under compact-full-control.
+A corrected immutable cohort and both hosted jobs are required before advancement.

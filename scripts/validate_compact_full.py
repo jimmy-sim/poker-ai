@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     if "--_child" in sys.argv:
-        from poker_ai.postflop.compact_full_cli import child_main
+        from poker_ai.evaluation.compact_full_cli import child_main
 
         return child_main(ROOT, sys.argv[1:])
     from poker_ai.postflop.compact_full_clock import execute

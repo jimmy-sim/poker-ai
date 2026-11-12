@@ -1,0 +1,1 @@
+Rejected source1a9bb4a. Both full local base suites failed the unchanged reference-import boundary test; optional tests passed. No scientific trajectory/proof/forecast was admitted. Hosted run43177397488 is recorded separately as it completes; do not use this cohort for admission.

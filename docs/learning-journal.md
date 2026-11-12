@@ -4403,3 +4403,12 @@ Complete checks on both Python versions and GitHub come before a tiny rehearsal;
 then a fixed conservative forecast must admit the real run. All original pass
 limits and budgets stay fixed. The [protocol](compact-full-control.md) records
 that order. Codex-assisted; no personal practice, time or mastery is inferred.
+
+**The wider checks caught a mistake:** both complete base runs rejected an import
+from the reference-audit package into the own postflop package. Keeping those
+packages separate is a project rule. The optional tests had passed, but that did
+not cancel this failure. The fix puts native dispatch outside the learner package
+and keeps receipt arithmetic in a pure checker. The original boundary test was
+kept and now passes in the focused suite (279 tests). Complete corrected checks
+still have to pass before the rehearsal. This is a software correction; it adds
+no evidence that the poker agent plays better. The failed records stay published.

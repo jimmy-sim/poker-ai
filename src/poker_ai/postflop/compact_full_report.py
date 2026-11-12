@@ -8,12 +8,12 @@ from typing import Any
 from poker_ai.postflop import compact_full_artifacts as artifacts
 from poker_ai.postflop.compact_full_clock import measurement
 from poker_ai.postflop.compact_full_gate import checked_path, require_admission
+from poker_ai.postflop.compact_full_native_checks import validate
 from poker_ai.postflop.compact_full_run import replay
 from poker_ai.postflop.public_range_acceptance import assess_full
 from poker_ai.postflop.public_range_definition import contract
 from poker_ai.postflop.public_report import write_csv
 from poker_ai.postflop.river_study import digest
-from poker_ai.solver_validation.compact_full import validate
 
 
 def render(
