@@ -3561,3 +3561,15 @@ canonical successful receipt. Clarify that36separately initialized paths reuse
 paired seeds and are not36independent random replicates; no design field changes.
 Publish this checked-source checkpoint BEFORE the first source-bound tiny own
 collection. No real sampled trajectory, forecast or admission yet.
+
+### November 12 — source-bound tiny own rehearsal published before reference
+
+Checked-source checkpoint4b30519 precedes the first formal own collection.
+Software-only36B4 paths complete:36warm origins/108raw checkpoint states/
+216cumulative books/324current-uniform-linear readouts. All raw work, RNG,
+normalization, journal/pipe and exact-warm checks replay; no trajectory retraining
+during replay. Complete command2.554832042s<180, exit0, no interruption/temporary.
+Collection reports sampled trainingTrue and new Hold'em trainingFalse; replay
+reports no sampled training. These are dependent ordinary/negated Kuhn aliases,
+not36independent poker experiments or playing-strength admission. Publish ALLown
+manifests/child/journals/warms/states before constructing the native reference.

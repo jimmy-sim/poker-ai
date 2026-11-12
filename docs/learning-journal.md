@@ -4574,3 +4574,11 @@ The next step is the tiny rehearsal, followed by cost and admission checks. Thes
 software passes still do not establish a sampled Hold'em strength result. There
 are36separate trainer instances, but repeated seeds deliberately pair the runs;
 they are not36independent statistical observations.
+
+The tiny own rehearsal then completed all36paths/108saved states/324readouts,
+including both average books and36initial states. Checking the saved files
+reproduced their metrics without training again. The complete command took2.55
+seconds under its180-second cap. Its manifest correctly says tiny sampled
+training happened, while no new Hold'em training happened. The own archive must
+be public before the independent scalar check starts. Poker accuracy is still
+unmeasured at this point.
