@@ -4282,3 +4282,18 @@ Browse the authenticated retained evidence:
 The full profile points to repeated recall checks. The [prospective cache plan](recall-proof-cache.md) tests a content-hash certificate: if the exact checked fields change, run the original checker again; never cache a failed check. A fixed uncached/cached whole-archive pair must preserve actual replay results and all policy/book bytes. No implementation or cache speed result exists yet. Required source checks come before timing; if the full caps/CI/save reserve do not fit by10a.m., stop at tested source. The current model and failed admission remain unchanged. Codex assists; personal time or mastery is not inferred.
 
 The mutation-aware prototype now passes31focused checks, including every structural input, failed proofs not cached, mutation during validation, restored structures, unsupported-input fallback, hook restoration, late-start refusal and exact actual/stored results for all432tiny scored profiles. Lint/format and strict typing pass. Four explicit read-only hooks count every request and restore on exit. All original files/arithmetic remain unchanged; fresh full local/optional/hosted source checks are required before the fixed whole-cost pair. No cache timing result, production integration or new training yet.
+
+
+### November 12 — checked recall-cache source before timing
+
+PR61 frozen79354f8a665c1d137c58bf8974f7327ae92e9807,367-file fingerprint
+cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352,
+now has all six observed source-bound check roles. Both complete local bases
+pass3,387/64skip/150deselect (478.56/456.30s), optional147each (16.28/15.55s),
+and both hosted43257152055 jobs pass3,387/64/150 plus historical warning
+(888.98/1,200.64s). Exact raw logs/head/job metadata/check drivers retained;
+source-only receipts precede the one registered full-cost pair. PR retargeted
+main after dependencyPR60merged and sourceCIcompleted. Journal106 now explains
+content fingerprints, mutation limits and what software identity would prove.
+Original362-file2ace and364-filece6 dependencies remain unchanged/public;
+no timedcache outcome, integration, admission or poker learning yet.

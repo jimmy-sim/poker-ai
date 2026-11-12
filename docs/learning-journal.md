@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Reuse a structural proof without skipping changed inputs](#106-reuse-a-proof-only-while-the-checked-structure-stays-the-same)
+
 - [Measure complete replay overhead before optimizing it](#105-measure-why-verification-is-expensive-before-optimizing-it)
 
 - [Why the compact training remedy waits for a faster audit](#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
@@ -56,8 +58,10 @@ now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
 Step 104 now completes the proposed compact training remedy's software proof and
 cost checks, but compute admission fails. The actual new training comparison
-has not run; verification cost must be profiled before optimization. Step 105 completes the
-profiling tool and its source checks; the full timed replay is next.
+has not run. Step 105 completes the full replay profile: computed results match
+exactly, and repeated recall validation is the largest exclusive Python cost.
+The outer OS recorder remains partially failed. Step 106 tests reuse of a proof
+for unchanged structure, with source checks required before timing.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4994,6 +4998,42 @@ admit the failed training experiment. A controlled cache test is the next questi
 
 ## 106. Reuse a proof only while the checked structure stays the same
 
-The full profile points to repeated recall checks. The [prospective cache plan](recall-proof-cache.md) tests a content-hash certificate: if the exact checked fields change, run the original checker again; never cache a failed check. A fixed uncached/cached whole-archive pair must preserve actual replay results and all policy/book bytes. No implementation or cache speed result exists yet. Required source checks come before timing; if the full caps/CI/save reserve do not fit by10a.m., stop at tested source. The current model and failed admission remain unchanged. Codex assists; personal time or mastery is not inferred.
+November 12, 2026. The full profile shows the same recall checker running 2,832
+times in one saved replay. Recall means that a player retains the earlier
+information and choices required by our response calculation. We need that
+check, but we may be able to reuse its result for an unchanged structure.
 
-The mutation-aware prototype now passes31focused checks, including every structural input, failed proofs not cached, mutation during validation, restored structures, unsupported-input fallback, hook restoration, late-start refusal and exact actual/stored results for all432tiny scored profiles. Lint/format and strict typing pass. Four explicit read-only hooks count every request and restore on exit. All original files/arithmetic remain unchanged; fresh full local/optional/hosted source checks are required before the fixed whole-cost pair. No cache timing result, production integration or new training yet.
+The [prospective plan](recall-proof-cache.md) fixes a narrow software experiment.
+Before every request, the prototype hashes every structural input consumed by
+the original checker, including all levels of the tree. A **hash** is a short
+fingerprint of those exact contents. A successful proof may be reused only when
+the fingerprint matches. If an information label or child changes, the original
+checker runs again. Failed checks are never saved as successful proofs. Other
+policy, payoff and scoring calculations still run as before.
+
+This is a private experimental adapter. It restores its four temporary hooks
+when finished and does not change the production checker or trained agent.
+It assumes one thread owns stable tree data while a check runs; it does not
+promise safety against concurrent mutation.
+
+The prototype passes 31 focused tests, covering changed structural fields,
+invalid recall, mutation during validation, unsupported-input fallback and hook
+restoration. A complete tiny-game replay preserves both the actual recomputed
+summary and the stored receipt for all 432 scored profiles. Both full local
+base suites now pass 3,387 tests, with 64 optional skips and 150 slow deselections;
+both relevant optional suites pass 147 tests. Both exact-source GitHub jobs also pass, with the same 3,387 passes, 64 skips
+and 150 deselections (plus one historical warning) each. All six roles and
+raw logs are [retained](../results/recall-proof-cache/checks.json). No full
+saved-cost cache timing result exists yet.
+
+With the source checks complete, publish them before starting one fixed pair
+by the unchanged 8:55 a.m. latest start:
+the full saved archive without reuse, then the same archive with reuse. All
+policy/book bytes and computed results must match. Each process keeps its
+900-second cap, and the full pair keeps 1,800 seconds. We reserve time for final
+CI and saving before the user's 10 a.m. stop; arriving late means no timing run.
+
+A faster replay would help us verify future experiments efficiently. It would
+not make today's poker policy stronger or reverse the failed training-budget
+forecast. That still needs a separately checked integration and admission.
+Codex assists with this work; personal hours and understanding are not inferred.

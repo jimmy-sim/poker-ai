@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3387 passed, 64 skipped, 150 deselected in 478.56s (0:07:58)",
+      "log": {
+        "file": "results/recall-proof-cache/checks/base311.log",
+        "sha256": "88e1130d50fd282be11ffab366052c259aef8005dcd294bb2d29dedddee52ceb"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3387 passed, 64 skipped, 150 deselected in 456.30s (0:07:36)",
+      "log": {
+        "file": "results/recall-proof-cache/checks/base312.log",
+        "sha256": "3167210f0b78e8f53d7703b9eb90d919bab4db0779fe9ecbc852fd0d204a143c"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "147 passed in 16.28s",
+      "log": {
+        "file": "results/recall-proof-cache/checks/optional311.log",
+        "sha256": "29b5f2b32923da58637a55bfa571d35293d65f07d6a72f5a53dd7d814f6fbe22"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "147 passed in 15.55s",
+      "log": {
+        "file": "results/recall-proof-cache/checks/optional312.log",
+        "sha256": "3c38e44485c2d130855feca5d0579a591968cea822b62956a2deddfb5844cabe"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43257152055,
+      "job_id": 131318525454,
+      "head_sha": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "conclusion": "success",
+      "log": {
+        "file": "results/recall-proof-cache/checks/hosted311.log",
+        "sha256": "5979414c19c447a28bc87d0c53fc93440783c99366230320e442e651b5e84729"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43257152055,
+      "job_id": 131318525970,
+      "head_sha": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "conclusion": "success",
+      "log": {
+        "file": "results/recall-proof-cache/checks/hosted312.log",
+        "sha256": "b6cc3f89077588e96be8c59db0eea6846aba8e7a4ec3f6533742ba11bf6d7f6e"
+      }
+    }
+  ],
+  "scope": "Observed exact-source full local bases, focused optional suites and both hosted full-history jobs for mutation-aware recall proof cache. No timed full-cost pair or new training/admission."
+}

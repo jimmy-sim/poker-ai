@@ -73,3 +73,33 @@ solver is constructed; no new strategy/default/fresh/global promotion. The old
 545.105s native maximum and failed1,210.21s guarded forecast remain unchanged.
 This prototype cannot serve as a new fixed cost repetition or rescue admission.
 Codex-assisted work; human hours and mastery are not inferred.
+
+
+## Correctness checks before the timed comparison
+
+The frozen adapter source is79354f8a665c1d137c58bf8974f7327ae92e9807;
+its367-file fingerprint iscc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352.
+Both full local bases pass3,387tests/64optional skips/150slow deselections,
+including lint, format, strict types and hooks. Both relevant optional suites
+pass147tests. The31new tests include actual432-profile tiny replay identity.
+Both exact-head hosted jobs43257152055 pass:3,387/64skip/150deselect
+plus one historical warning each (888.98s/1,200.64s pytest). Allsix roles and
+raw logs are retained in[checks.json](../results/recall-proof-cache/checks.json)
+and published before the formal whole-cost pair. Timing remains unmeasured.
+
+## Three interview questions
+
+1. **Why hash the contents on every request?** Object identity alone misses
+   mutations. The certificate includes the validator version, field names,
+   dtypes, shapes and exact bytes of every input the original predicate reads.
+   Unsupported types fall back to the original check.
+2. **What would matching results establish?** Exact agreement of recomputed
+   summaries and policy/book bytes on this complete saved archive, supported by
+   structural mutation and rejection tests. It would not prove concurrent-mutation
+   safety, population speed gains or stronger poker play.
+3. **Would a faster pair admit the training remedy?** No. This ordered software
+   experiment is not one of the prescribed own/native cost repetitions. The
+   original formula requires the full native maximum N to be strictly below
+   390seconds, since2*(N+60)<900. Its measured545.105seconds does not meet that
+   requirement. A future integrated source needs its own checks, costs and
+   unchanged admission gates.
