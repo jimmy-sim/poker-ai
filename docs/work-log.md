@@ -3693,3 +3693,162 @@ Final publication base/hosted checks and solo self-review remain merge gates.
 Next justified issue4 question: separate within-group learning weakness from
 finer-information vulnerability with each saved opponent held fixed, before
 choosing another training/representation remedy. Human minutes not recorded.
+
+### November 12 — prospective compact fixed-opponent diagnosis
+
+After complete PR56 failed accuracy, preregister a separate diagnostic before
+new crossed/decomposition outcomes. All36saved final LINEAR S policies and12
+same-representation full4096 F policies, allsix/two games/three seeds. Four
+owner-row mixes SS/SF/FS/FF perpair:144logical profiles/288target conditions.
+No new learning/RNG draws/default/feature/fresh/global stage. Test E=W+I and
+fixed-opponent root/I invariance; retain all signed own EV effects and source
+failures. Full archive/source/Git-blob compatibility without editing old checkers;
+complete local/optional/hosted source checks and tiny same-pipeline software proof
+before actual900s own/native diagnostic. Publish own before reference, preserve
+partials, use pinned scalar-only Apache2reference. Full4800s downstream reserve
+must fit the user's10a.m.Pacific cutoff. Method/config/journal102 published first;
+no outcomes or remedy choice claimed. PR56 final publication checks still run.
+
+### November 12 — fixed-opponent implementation and first correctness checks
+
+Prospective62aa441/PR57 precedes implementation. Added original-source compatible
+readers, ownership-bit-preserving SS/SF/FS/FF mixtures, immutable own reply/detail
+archives, E=W+I and fixed-opponent root/information/EV identities, complete clocks/
+cutoff guard, scalar-only native schema/replay and all-case reports. No training
+entry point or fresh RNG draws. Current focused new/architecture69tests pass
+20.92s; lint/format pass and strict typing672files passes. Includes literal
+seven-node hidden-world nonzero-information/within gains and actual native check,
+two-player Kuhn zero-support root invariance, complete mocked144details/288target
+IO, corrupted/re-signed policies, missing/duplicate rows, partial retention,
+fake native error/source/license fields and clock/source-check failure paths.
+The published tiny-source adapter replays324sampled readouts/72full policies and
+selects48sources with sampled/full/reference constructors blocked. These are
+software tests, not new real diagnostic outcomes or a formal rehearsal count.
+Selected OpenSpiel2.0.2 Apache2license was read earlier November12; its new pinned
+environment copy matches cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.
+Original full/sampled source maps are verified as unchanged subsets/Git blobs;
+no strict historical checker was edited. Complete exact-source base/optional/
+hosted cohort and published-own144-profile software proof remain required before
+real diagnosis. All original scientific caps/seeds and failed sampled gate stay.
+
+PR56 final publication BOTHCI43202520424 and both immutable bases pass atccb0c82
+before history mergea53bda02840bcb78c4027408fa3e91c3a69f21cf. Main guarded FF,
+3.11.17/NumPy2.4.6/Numba0.68.1/module/fingerprint guard,97focused tests14.44s,
+full108-state/36-warm/324-readout replay0 in17.648811s all pass. Fresh snapshot
+and post-test checks preserve allten unrelated user bytes/status/index entries/
+patches. Raw finalCI/head/log/local proofs retained outside repo; no CI-only
+commit. Main-push repeat43204968981 is separately in progress. PR57 retargeted
+from dependent branch to main. No stronger/default/fresh/global admission.
+
+
+### November 12 — reject malformed native player identifiers before diagnosis
+
+Self-review after implementation2852bef found that Python equality allowed
+False/0.0 and True/1.0 as native player identifiers. Four explicit regression
+cases failed as expected before the fix; their raw log is retained under
+results/compact-fixed-opponents/implementation-regressions. Require actual int
+IDs0/1 before accepting scalar receipts. This tightens the new diagnostic only;
+no historical dependency/config/seed/cap/gate changed and no diagnostic outcomes
+were collected. Corrected focused suite73passes24.53s; Ruff/format/type672pass.
+Initial optional443passes77.40s (3.11),442passes/1runtime-specificskip75.79s
+(3.12) belong to the superseded source, not permission for corrected code.
+A new complete source-bound local/optional/hosted cohort is required next.
+Method prose spacing and journal status are clarified without changing design.
+Installed OpenSpiel2.0.2 Apache2license reread in full; pinned digest unchanged.
+
+
+### November 12 — corrected fixed-opponent source checks pass before rehearsal
+
+Immutable sourcec6c384b, fingerprint2670f3f6, passes all six required roles.
+Full local bases3152passed/63skipped/149deselected each,604.24s (3.11) and585.21s
+(3.12); Ruff/802formattedfiles/strict typing672files/hooks pass. Focused locked
+ALL-EXTRAS447passes94.81s on3.11;446passes/1recorded-runtime-specificskip94.02s
+on3.12. BOTH exact-head hosted43207761909 jobs131147296682/131147296281 pass.
+Raw decoded logs, full GitHub head/job metadata, install logs, local receipts and
+wrapper retained with the six-role bound checks.json; gate validates its digest.
+The superseded initial bases3148passeseach and443/442optional remain locally
+retained, not substituted for the corrected cohort. One failed worktree setup
+attempt (missing sandbox write access to shared Git metadata) ran no tests or
+experiment and was retained separately before successful isolated setup.
+
+Prospective seeds/complete caps/144logical/288target grid and failed sampled
+accuracy gate stay unchanged. No new poker diagnostic outcomes have been
+collected. Next is the actual checked-source tiny own rehearsal, publication,
+then scalar comparison; only its published complete proof admits real diagnosis.
+
+
+### November 12 — tiny own fixed-opponent rehearsal before reference
+
+Checked-source no-training tiny run completes all144joint profiles/288target
+responses and144fixed-opponent identities using48published own final inputs.
+All original324sampled readouts/72full policies replay before selection; every
+new detail/reply profile replays exactly. Complete own clock 2.4802082079986576s <180s.
+No native constructed, no new training or poker strength claim; all144details
+and parent/child receipts are published here BEFORE native construction.
+Raw hosted logs retain original trailing whitespace/BOM; code/docs diff checks
+exclude those authenticated verbatim receipts rather than editing their bytes.
+
+
+### November 12 — complete tiny scalar proof before real frozen diagnosis
+
+Tiny own144profiles/288responses were public atdb348c9 BEFORE scalar-reference
+construction. Native144comparisons/all288responses pass with maximum error
+2.0816681711721685e-16chips; complete native command5.406218207997881s <180s.
+Own complete2.4802082079986576s. No new training or poker admission; positive
+information-gap branch is additionally covered by the actual independent seven-
+node fixture test, not inferred from one-to-one Kuhn aliases. Published complete
+source-bound software proof now permits only the frozen real diagnostic, within
+its original900/900/900s caps and full4800s cutoff reserve. Prior sampled accuracy
+failure stays failed. This is no new Holdem trajectory study.
+
+
+### November 12 — publish all real frozen-own diagnosis before reference
+
+Complete no-training real own command 123.74255779099985s <900s; all144joint
+profiles/288responses and144fixed-opponent identities replay. Maximum identity
+error 0.0chips. SS/FF reproduce the original
+primary source metrics; original108sampled states/324readouts and72full snapshots
+replayed before selecting48sources. All raw144mixture/reply details plus own/child
+manifest are public in this checkpoint BEFORE reference construction. No new
+learning/RNG draws/default/admission. Original sampled accuracy remains failed.
+Independent scalar validation/report are pending; no remedy selected yet.
+
+
+### November 12 — all frozen-opponent scalar comparisons pass
+
+All144real joint profiles/288player responses independently checked after own
+publicationcc53a93. Complete native clock 105.58452487500108s <900s; maximum
+raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13chips <1e-9.
+Both exact/restricted roots and achieved OWN exact/restricted/river-before replies
+are covered, not aggregate exploitability alone. Pinned OpenSpiel2.0.2 license
+verified; no reference policies returned/used for training. Fixed source2670f3f6
+and all historical source maps remain unchanged. Report is next; no new training,
+remedy choice, default/fresh/global or failed-gate change.
+
+
+### November 12 — complete frozen-opponent diagnosis, retained negative result
+
+Authenticated report completes88.63809604199923s <900s, all144profile CSV rows,
+288target rows,144fixed-opponent EV conditions and both visually inspected
+figures. Original accuracy gate stays FAILED. Harder compact SS mean E2.036646479%
+pot =W0.117109360% +I1.919537119%; I/E94.24989258%. This is descriptive mean,
+not the prior median2.389912005% acceptance statistic. Responding seat1 versus
+sampled seat0 has I[1.6890740885925197,.8186241819688647,1.6260200483283072]
+chips by fixed seed; versus full seat0 it has I[0,0,0]. Every I/root stays exactly
+invariant to changing only the target's S/F policy. Full-control self play hides
+a weakness exposed by sampled own opponents; no universal abstraction floor or
+pure causal sampling/training remedy follows. Within-group gain is small in all
+three compact medium seeds. No feature selected/trained/default promoted.
+
+Every signed own-S-to-F EV effect retained:74 below-1e-9chips,72 in near-zero low
+game and two medium texture/category cases. All six representations, both games,
+all three seeds and four mixtures remain. Figures distinguish their legends,
+show panel scales and retain negative effects; min/max is not confidence.
+README/method/three interview Q&As and rewritten plain-English journal102 explain
+the result, source/runtime, dependent full aliases and shared exported-engine
+limits. Artifact hashes,144/288/144CSV counts, unchanged scientific source2670,
+and all relative README/method/journal file links pass. Codex-assisted solo review
+notes retained outside repo. Final local base/hosted publication checks remain
+before history merge; no new trace/probe outcomes or new trajectory study started.
+Next justified separate step: identify the concrete merged decisions behind the
+large information benefit while holding frozen opponents fixed.

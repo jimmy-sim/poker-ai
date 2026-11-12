@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "prospective_frozen_opponent_diagnosis",
+  "base_contract": "configs/compact-public-range.json",
+  "input_sha256": {
+    "configs/compact-public-range.json": "f2a5d7630580e8731c652c29363f970a361a76e10b040850e5bb57e546f31314",
+    "configs/compact-sampled.json": "ccd5c244224b9fe3852f4d1f912194207f6f3ef5e1de33093695957376ed43e4",
+    "results/compact-sampled/checks.json": "aa517a39c55696bfa67482a765de577de75d6e23ebd17480c44174a56bc428d6",
+    "results/compact-sampled/real/own.json": "efd22a1b28532a8208c638046225eacef683b5aa79419cf7fd94fede0a4a5f1f",
+    "results/compact-sampled/real/native.json": "4fbd08eafc72fab103752417d27598521d08b451c503e4f76986c36aea0aa214",
+    "results/compact-sampled/real/result.json": "abe1bba51023adb7fa5cfb96a052a38eae3938477b390c5cc910f8c44f2bb118",
+    "results/compact-sampled/software/own.json": "974fcd3678783ceaf699dc4b59b928d13729fff1409b6b52296db4d73481d3ef",
+    "results/compact-sampled/software/native.json": "b0388fbae7e8d3d0b536256bb52e58e26c727e094c37d9ae16302b745013b9bb",
+    "results/compact-full-control/own.json": "2aa37c6df4a7d76303605253b2b943b2581adee4e93eea4edff9c2d900169102",
+    "results/compact-full-control/native.json": "b5d987905fa02c5f0bf89d085c7d25c94cc07529f2e9a78a15db7db29a130f07",
+    "results/compact-full-control/result.json": "bb9ba546f0be188bdc35667ac0fe1bd3d2072ce04edbef280eb8acf2c9b15ef3",
+    "results/compact-full-control/software/own.json": "facf918bf3507f97ba2125b573db8faadfe2cf804e0256386d3284846177049e",
+    "results/compact-full-control/software/native.json": "674258da80c6f47b2b93f92a9516aedd5d0d417b8495c1c7088e919e3334b837"
+  },
+  "sampled_source_fingerprint": "41b6f34d26395ff55127cd0b62bd304786eb887d103778429114e0cb36a3e58b",
+  "full_source_fingerprint": "9db8dab585b2533be8ed109377e73b4314dcac963b2d45fb8686c87db157d490",
+  "sampled_selector": {
+    "readout": "linear",
+    "work_checkpoint": 10000000,
+    "seeds": [
+      20261301,
+      20261302,
+      20261303
+    ]
+  },
+  "full_selector": {
+    "iteration": 4096
+  },
+  "mixtures": [
+    "SS",
+    "SF",
+    "FS",
+    "FF"
+  ],
+  "mixture_convention": "First letter seat0, second seat1; S=saved sampled final LINEAR, F=same-representation saved full final average.",
+  "source_profiles": 48,
+  "logical_profiles": 144,
+  "target_conditions": 288,
+  "independent_tolerance_chips": 1e-09,
+  "maximum_own_seconds": 900,
+  "maximum_native_seconds": 900,
+  "maximum_report_seconds": 900,
+  "software_maximum_seconds": 180,
+  "deadline_reserve_seconds": 4800,
+  "native_reference": {
+    "name": "OpenSpiel",
+    "version": "2.0.2",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "scope": "Frozen own policies and comparison-only scalar audit. No new training/RNG draws, feature choice, accuracy/default/fresh/global admission. Full failure retained."
+}

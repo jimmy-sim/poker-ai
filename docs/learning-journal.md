@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
+
 - [Test whether the smaller description learns under sampling](#101-test-the-smaller-description-at-the-same-learning-work)
 
 - [Rehearse and check the full-control test](#100-check-the-test-before-trusting-the-new-description)
@@ -43,7 +45,8 @@ strings. The default agent and previous sampled results below remain unchanged.
 The new fixed-work comparison
 in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56) now fails the harder
 game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 explains
-all controls, the independent checks and what the failure means.
+all controls, the independent checks and what the failure means. Step 102
+now diagnoses the saved failure while holding each opponent fixed.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4601,3 +4604,106 @@ it already exists. The [method and complete receipts](compact-sampled.md) contai
 the recorded-runtime replay command and its source requirements. Codex assisted
 with implementation, execution and drafting; personal time and mastery are not
 inferred.
+
+## 102. Keep the opponent fixed when explaining the remaining weakness
+
+November 12, 2026. The compact description passed the full-control test but
+failed the fixed-work sampled test. Before changing the feature or training
+again, we checked what the saved strategies were getting wrong.
+
+**Result:** in the harder spot, most of the compact sampled strategy's weakness
+comes from useful distinctions its groups hide. Across the three saved seeds,
+mean exploitability is **2.037% of the initial pot**: 0.117 percentage points of
+better choices within the groups, plus 1.920 points available to a responder with
+finer legal information. The second part is 94.25% of this mean total. These are
+means for diagnosis; the previous **2.390% median still fails the 1% gate**.
+
+A **best response** is the best strategy against a fixed opponent. We calculated
+one that must use the existing groups, and another that can distinguish its own
+cards and public board more precisely. Neither sees hidden opponent cards.
+Their value difference measures what those extra distinctions are worth against
+that particular saved opponent.
+
+We used all 36 saved sampled averages and 12 same-description full-control
+averages, without training. For each pair, we mixed their rows in four ways:
+
+| Label | Seat 0 | Seat 1 |
+|---|---|---|
+| SS | Sampled | Sampled |
+| SF | Sampled | Full control |
+| FS | Full control | Sampled |
+| FF | Full control | Full control |
+
+The first letter always means seat 0. Here is the harder compact case, averaged
+across all three declared seeds. All values are percentages of the initial pot;
+smaller response gains mean less vulnerability.
+
+| Saved pair | Total vulnerability | Within groups | Extra information |
+|---|---:|---:|---:|
+| SS | 2.036646 | 0.117109 | 1.919537 |
+| SF | 1.918312 | 0.004551 | 1.913760 |
+| FS | 0.118512 | 0.112734 | 0.005779 |
+| FF | 0.000177 | 0.000175 | 0.000002 |
+
+This table does **not** say that replacing our own strategy makes the whole
+problem disappear. Compare SS with SF for responding seat 1: its opponent,
+seat 0, stays sampled. Swapping seat 1's own saved strategy changes its achieved
+value, but the extra-information benefit stays exactly the same. Against that
+sampled opponent, seat 1's information benefit is 1.689, 0.819 and 1.626 chips
+in the three seeds. Against the full-control opponent it is zero in every seed.
+The full-control opponent therefore hides a weakness that the sampled opponent
+exposes. This is a property of these matchups, not a universal feature error or
+a promise that more training fixes it.
+
+**Example:** imagine two public river situations share one strategy row. A
+responder with finer information may prefer calling in one and folding in the
+other. A different opponent can make calling correct in both. The row is still
+the same; the value of separating those situations depends on the opponent.
+This is an illustration, not an extra measured hand.
+
+Open the [decomposition plot](../results/compact-fixed-opponents/real/decomposition.png).
+Blue is the possible gain within existing groups; orange is the extra benefit
+of finer information. Each stacked bar adds to total exploitability. SS and FF
+use different opponents, so comparing those bars alone does not isolate a cause.
+The low-spot axis has a **1e-6 multiplier**: its differences are extremely small.
+
+The [fixed-opponent plot](../results/compact-fixed-opponents/real/fixed-opponents.png)
+asks a different question: how does our achieved value change when only our own
+saved policy changes from sampled to full? In that figure, blue means a fixed
+sampled opponent and orange a fixed full-control opponent. Negative values are
+kept. The error bars span the three saved seeds; they are not confidence
+intervals. All per-seed numbers remain in the [tables and CSVs](../results/compact-fixed-opponents/real/tables.md).
+
+All 144 profile combinations and 288 player responses replayed. Both players'
+fixed-opponent identities held with zero numerical error. After own evidence was
+published, the independent scalar audit agreed within 1.07e-13 chips. Complete
+own/audit/report commands took 123.74, 105.58 and 88.64 seconds. No reference
+strategy entered training. Both complete local base suites passed 3,152 tests;
+relevant optional suites passed 447 on Python 3.11 and 446 with one runtime skip
+on 3.12; both exact-source GitHub jobs passed. Four deliberately failing tests
+caught a player-ID type bug before outcomes; the fix and raw failure log remain.
+
+These are two previously studied, narrow-range games. Repeated full profiles
+and paired seeds are dependent. Training work and update conventions differ
+between the sources, so this is not a pure causal sampling experiment. We have
+not changed the default agent, admitted the failed candidate or established
+competitive Hold'em strength. The next useful step is to inspect the concrete
+merged decisions behind the large information benefit, keeping opponents fixed,
+before choosing another representation or training change.
+
+After updating the checkout, try one command per line:
+
+```sh
+open results/compact-fixed-opponents/real/decomposition.png
+open results/compact-fixed-opponents/real/fixed-opponents.png
+open results/compact-fixed-opponents/real/tables.md
+.venv/bin/python -m pytest -q tests/test_compact_fixed.py tests/test_compact_fixed_archive.py tests/test_compact_fixed_clock.py
+.venv/bin/python scripts/diagnose_compact_fixed.py replay --own results/compact-fixed-opponents/real/own.json --output results/runs/compact-fixed-local-replay.json
+```
+
+Use a new replay output name if it already exists. Replay uses the recorded
+Python 3.11.17/NumPy 2.4.6/Numba 0.68.1 runtime and checked diagnostic source;
+it loads saved policies, without training or constructing a reference solver.
+The [method](compact-fixed-opponents.md) explains the source checks and limits.
+Codex assisted with implementation, execution and drafting; no personal hours
+or understanding are inferred.

@@ -57,6 +57,16 @@ explain the failed gate and next question.
 
 ![All six descriptions at fixed work; linear median and three-seed range, not confidence intervals](results/compact-sampled/real/learning-log.png)
 
+The [frozen-opponent diagnosis](docs/compact-fixed-opponents.md) now explains
+part of that failure. Harder-spot compact sampled **mean** exploitability is
+2.037% pot: 0.117 points within the existing groups plus 1.920 points available
+to a responder with finer legal information. That information benefit depends
+on the saved opponent; the full-control opponent largely hides it. All 144
+joint profiles and 288 player responses pass independent scalar checks within
+1.07e-13 chips. No new training or admission.
+[Journal step 102](docs/learning-journal.md#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
+explains the four combinations, plots and limits.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:

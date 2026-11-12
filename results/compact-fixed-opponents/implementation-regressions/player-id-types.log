@@ -1,0 +1,56 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_native_target_requires_an_integer_identifier[False] ___________
+
+target = False
+
+    @pytest.mark.parametrize("target", [False, 0.0, True, 1.0])
+    def test_native_target_requires_an_integer_identifier(target: Any) -> None:
+        own, native = native_fixture()
+        native["responses"][int(target)]["target"] = target
+>       with pytest.raises((ArithmeticError, ValueError)):
+E       Failed: DID NOT RAISE any of (ArithmeticError, ValueError)
+
+tests/test_compact_fixed.py:156: Failed
+____________ test_native_target_requires_an_integer_identifier[0.0] ____________
+
+target = 0.0
+
+    @pytest.mark.parametrize("target", [False, 0.0, True, 1.0])
+    def test_native_target_requires_an_integer_identifier(target: Any) -> None:
+        own, native = native_fixture()
+        native["responses"][int(target)]["target"] = target
+>       with pytest.raises((ArithmeticError, ValueError)):
+E       Failed: DID NOT RAISE any of (ArithmeticError, ValueError)
+
+tests/test_compact_fixed.py:156: Failed
+___________ test_native_target_requires_an_integer_identifier[True] ____________
+
+target = True
+
+    @pytest.mark.parametrize("target", [False, 0.0, True, 1.0])
+    def test_native_target_requires_an_integer_identifier(target: Any) -> None:
+        own, native = native_fixture()
+        native["responses"][int(target)]["target"] = target
+>       with pytest.raises((ArithmeticError, ValueError)):
+E       Failed: DID NOT RAISE any of (ArithmeticError, ValueError)
+
+tests/test_compact_fixed.py:156: Failed
+____________ test_native_target_requires_an_integer_identifier[1.0] ____________
+
+target = 1.0
+
+    @pytest.mark.parametrize("target", [False, 0.0, True, 1.0])
+    def test_native_target_requires_an_integer_identifier(target: Any) -> None:
+        own, native = native_fixture()
+        native["responses"][int(target)]["target"] = target
+>       with pytest.raises((ArithmeticError, ValueError)):
+E       Failed: DID NOT RAISE any of (ArithmeticError, ValueError)
+
+tests/test_compact_fixed.py:156: Failed
+=========================== short test summary info ============================
+FAILED tests/test_compact_fixed.py::test_native_target_requires_an_integer_identifier[False]
+FAILED tests/test_compact_fixed.py::test_native_target_requires_an_integer_identifier[0.0]
+FAILED tests/test_compact_fixed.py::test_native_target_requires_an_integer_identifier[True]
+FAILED tests/test_compact_fixed.py::test_native_target_requires_an_integer_identifier[1.0]
+4 failed in 0.08s
