@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3319 passed, 64 skipped, 150 deselected in 651.60s (0:10:51)",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/base311.log",
+        "sha256": "af221e7cbee8e0d59d06a0d7a94d4be3f9b876304144fad74094d2f2a586feca"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3319 passed, 64 skipped, 150 deselected in 632.34s (0:10:32)",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/base312.log",
+        "sha256": "fac0a9378a8d2f82b7e9e86ba493ab4f21be0251ea6deeab53fba50bd46a2dad"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "636 passed in 344.33s (0:05:44)",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/optional311.log",
+        "sha256": "422ce140de7d625e2f49777ed8594581950a5a3b7aa2b1dcc9036427c27335c6"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "636 passed in 281.46s (0:04:41)",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/optional312.log",
+        "sha256": "21fd83b395877d02bcddd6c75be815fa628b3b47f8d36b98f1bab9840ea5ae15"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43228827703,
+      "job_id": 131218952181,
+      "head_sha": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/hosted311.log",
+        "sha256": "11a08bcc66663ee13c6c161b5f2c9500d0e63b5a377073af55517ff616a51c4e"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43228827703,
+      "job_id": 131218954870,
+      "head_sha": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-own-opponent-learning/checks/hosted312.log",
+        "sha256": "e3fc7c79b91e6fd662804c61ddf973a194d18d344fb8c923e41a070323f0d596"
+      }
+    }
+  ],
+  "scope": "Observed exact-source local base/optional/hosted cohort. Original-runtime full source/180cost-projection integration311 and expected real-runtime rejection312. Software only; no new trajectory/compute/quality admission."
+}

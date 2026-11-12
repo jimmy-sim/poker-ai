@@ -3978,3 +3978,209 @@ compact sampled accuracy remains failed. Next justified separate test is finer
 OWN opponents for the unchanged compact learner, with paired coarse/fixed-work
 controls and all original seeds/caps/gates, not an assumed fix. Final applicable
 local base/hosted checks and solo self-review remain before history merge.
+
+### November 12 — prospective compact finer-own-opponent comparison
+
+After the complete PR58 trace, register a matched-work training remedy before
+new trajectories/outcomes. Keep the compact learner fixed; compare ordinary
+compact, paired compact, mixed compact/fine own opponents and ordinary fine.
+Preserve old five-path/30actual-path/108boundary/432profile/1152fixed-target design,
+three seeds, scalar/role1PCG64 streams, 100k/1m/10m total-work labels, exact2N
+initialization, both-player charges and ALLoriginal strict quality gates. In
+particular low-game zero improvement stillfails strict superiority; no rescue.
+All36 ordinary compact/exact B4 barriers bind the original compact-sampled raw
+states; original8own full controls/game remain comparison-only and are expanded
+from their original parent encoding, not loaded into the learner.
+
+New pinned design/cost contracts require complete source/local/optional/hosted
+checks, actual full432/1152tiny shared180s proof, all3own-cost publications before
+ANYnativecost, all3nativecosts, unchanged conservative24path historical forecast,
+and checked published admission before any7200s real study. Own/native/report
+caps7200/900/900 unchanged; full11100s reserve means no current-window study start
+after6:55Pacific. Costs are explicitly nontraining refinement/density projections,
+not original-prefix or strength evidence. No new trajectory/feature/default/
+fresh/global admission exists. PR58 final publication checks are still running;
+this separate draft is stacked on its published9f2e122 before implementation.
+
+### November 12 — merged trace, preserved main, compact training adapters
+
+PR58 history-merged511ae2f after final local bases3217passed/64skipped/149deselected
+each603.868004/591.673235s and both exact-head hosted43220163404 jobs passed on
+9f2e122. Raw final logs/head metadata/digests retained outside the repo to avoid
+a CI-only source cycle. Fresh snapshot20261112T130215Z, guarded main FF and
+post-test checks preserve all10 unrelated result bytes/status/changed-index
+entries/patches. Main3.11.17/NumPy2.4.6/module/source guard,138focused tests34.39s,
+full144/288trace replay and both saved browser cases pass. No new learning.
+
+PR59 is retargeted to main. New separately bound adapters reuse unchanged
+capture/normalization/composition/scoring/archive/replay/reference-scalar math.
+Compact contexts refine original coarse groups (130/1770rows; mixed254/252 and
+2544/2562 versus fine376/3336). Training imports no saved-policy loader or
+reference backend; exact structural payload schema rejects policy injection.
+Read-only source/cost/replay parents block all learner and native constructors.
+All36 original compact/exact raw checkpoints decode; literal old readout hashes
+are reconstructed without a learner. Cost density projection preserves exact
+new uniform warm origin and normalized old probabilities, records old/new
+hashes/IDs/work and never claims new learned books.
+
+Full tiny three-worker child/archive/replay tests cover432unique profiles and
+1152fixed conditions; direct terminal equations/exhaustive pure choices check
+all432values/BRs and positive information gaps. Command caps, shared software
+clock, cutoff reserve, partial event/unknown-state retention, missing checks/
+permit rejection and persisted seal/cap/input mutations are tested. Allthree
+own cost publications are required before ANYnativecost; every recorded witness
+field and raw scalar/derived error schema is checked. Native schema tests use
+already-public old data or explicit unit fixtures, not a new reference run on
+unpublished policies. Source/180projection integration passed89.01s with solver
+constructors blocked; this is not a fixed cost repetition or timing forecast.
+Full exact-source base/optional/hosted checks and formal software/cost/forecast/
+admission still precede new real training. All old scientific source/data and
+preregistered seeds/caps/strict gates remain unchanged. Codex-assisted work;
+human practice/time not inferred.
+
+Draft implementation verification:100new fast checks pass18.98s, one slow
+source/180projection integration check passes separately89.01s; shared backend
+integration group175passes/1slow deselected before the final seven witness-field
+cases. Whole-repo Ruff/format840files and strict mypy708files pass. Earlier
+iteration fixture naming/path mistakes were corrected before source publication;
+no formal source-bound scientific collection has started. Full immutable base/
+optional and both hosted checks remain next, not inferred from focused passes.
+
+Before formal source checks, identified optional-test process contamination:
+other native test modules import pyspiel at collection. Keep production fresh-
+process guards unchanged. The real own-child and historical-source integration
+tests now use fresh subprocesses; wholly mocked interruption fixtures isolate
+only their fake parent boundary. The guarded three-worker child plus optional
+native-module collection regression passes18checks3.93s; strict typing passes.
+Scientific source fingerprintd6da7eeb is unchanged; corrected test head still
+needs the complete exact-head check cohort before formal evidence collection.
+
+The157bd40 optional311 cohort passes634tests; optional312 reports633passed/1failed.
+Retained raw optional312 log/receipt, exact reproduction and executed check driver
+under results/compact-own-opponent-learning/implementation-regressions/runtime-matrix-157bd40.
+The test incorrectly expected real original-runtime source replay under3.12;
+unchanged compact_full_run.check_runtime correctly raises own/native/replay
+runtime changed. Correct only the test expectation: full36/180 integration on
+recorded3.11.17/NumPy2.4.6; expected real-runtime rejection on3.12, whose structural/
+software/raw-data checks remain. Targeted312guard regression passes39.82s.
+No scientific source, seeds/caps/tolerances/quality gates changed, no formal new
+collection/training yet. A complete corrected exact-head cohort is still required.
+
+Reread the full installed OpenSpiel2.0.2 Apache2.0 license in the new active311
+environment, SHA cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30;
+comparison-only reference, no source copied into the own learning core.
+
+Before any formal cost repetition, self-review found that independently lifting
+old average probabilities and raw density books can disagree by one floating
+bit, despite satisfying the1e-12 old-probability cost tolerance. Synthetic fixed
+density fixtures on the two structural layouts reproduce30/185 probability-bit
+differences, maximum1.1102230246251565e-16; these are NOT learned policy results.
+Keep the old exact replay check unchanged. Lift each book once and derive its
+cost average by exact normalization of that book; record both original members
+and before/after hashes. Current/fine tables stay as declared. Two new real-layout
+fixture checks pass with all18foundation tests18.25s; complete36boundary/180table
+source integration, now also checking all36coarse book-average pairs exactly,
+passes100.88s. No original scientific dependency or training rule was edited.
+This draft-source correction requires a new full exact-source cohort before
+formal software/cost/forecast/admission or real study. Earlier check cohorts
+remain separate and cannot admit the corrected source.
+
+### November 12 — complete source-bound compact opponent cohort
+
+Source1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152 / scientific fingerprint
+2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989 passes ALL
+six roles before formal software/cost/learning. Immutable full base311/312:
+3319passed/64skipped/150deselected each; complete checks669.730447/651.925671s,
+including lint/format/strict types/tests/hooks and source/runtime/module guards.
+Relevant all-extras636each, complete checks350.804740/288.604327s; original-runtime
+full36/180 integration311, expected real-runtime rejection312 and structural/
+raw-data/software checks both. Both exact-head hosted43228827703 jobs pass:
+131218952181/131218954870, same3319/64/150 with one historical warning each,
+pytest670.28/1190.68s. Raw decoded UTF8 logs, API head/job metadata, executeddriver
+and typed six-role checks retained, receipt SHA
+0a6e3bb645a2a3dff9a303a895cc0623c21c3a2e18b502e54a68fdc856cc233f verified.
+This source-check publication is not compute or strength admission. Formal full
+tiny own/public-before-native proof is next; no new real trajectory yet. Method's
+three interview questions explain paired controls, future-suffix interpretation
+and what a software/compute gate does and does not establish.
+
+### November 12 — full new software proof; own cost repetition0
+
+Formal software-own15.292187916005787s publishes37ca53d734a50386a37ea6d04a7c2e070e627aa1
+BEFORE native5.612813625004492s publishes0ec17ef91f01a06169b1cd6d3378d7d654d66323.
+Whole shared proof47.27623416600545s<180, source2ace916f; same3spawn learning path,
+all30initializations/108boundaries/324raw policies/216ledgers/108compositions/
+432unique scores/1152fixed conditions. All432/1152 independent scalar and derived
+field checks pass, maximum1.1102230246251565e-16 FICTIONAL payoffunits; no native
+actions exported or reference output used in learning. Checked published software
+gate reports complete_tiny_software_only_not_poker_admission. Actual toy learning
+ran; no new Hold'em trajectory. Raw reports/events/archives and both own/native
+complete-command bodies retained. Raw hosted log whitespace is preserved so
+the recorded hashes remain exact.
+
+Fixed cost-own repetition0 completes308.32340462499997s<900 including full historical
+source/context loading, all30data-only paths, raw/composed archives,432scorings,
+1152fixed conditions, complete replay and all required reports. Cost scope is
+explicit; no new poker/toy learning, initialization or native construction.
+No code, seed, gate or environment tuning between fixed repetitions. Publish
+this complete own outcome before the next own repetition; allthree own costs
+must precede ANY nativecost. Remaining two own/three native repetitions, complete
+maxima-based forecast and checked published permit are still required. A cost
+curve is not a newly trained agent or a playing-strength result.
+
+### November 12 — all three own costs complete before native costs
+
+Own cost repetitions0/1/2 complete308.32340462499997/309.2752516670007/
+305.3145045409983s, each<900. All432unique/324raw policies/216books/30warms/
+108compositions/216logical/1152fixed conditions replay with maximumchip/unitless
+error0 and policy/ledger bytes exact. All actual poker/toy work0, initialized
+trainingpaths0, learner/native constructionFalse. D=max309.2752516670007s; the
+remaining full forecast still needs all three independent cost commands.
+Six report files (twoCSVs/summary/threePNGs) are byte-identical across allthree
+repetitions. Allthree repetition0plots visually inspected; cost-only/zero-new-
+learning titles readable, all seeds/readouts retained. Coincident paired/control
+curves are a consequence of old table reuse, not a new training result.
+Own0 published01517bf, own1 published7e8d493; this own2 publication completes the
+required all-own checkpoint BEFORE ANY nativecost construction. No changed
+code/seed/cap/gate/environment setting between repetitions; no favorable subset.
+Native0/1/2 full432/1152 scalar audits, complete forecast and checked published
+permit remain before a real study; full11100s reserve and10a.m.cutoff unchanged.
+
+
+### November 12 — compact training remedy denied compute admission
+
+
+**Compute admission fails; no new compact/finer-opponent trajectory was run.**
+The complete fictional software proof passed all 432 profiles / 1,152 conditions
+within 47.276234 seconds shared, and all required source checks passed before
+collection. All three own costs were published before any independent cost.
+Every fixed cost completed under its 900-second command cap, with exact own
+policy/book replay and all 432 / 1,152 independent scalar checks passing.
+
+| Fixed repetition | Complete own seconds | Complete independent seconds | Largest independent error (chips) |
+|---|---:|---:|---:|
+| 0 | 308.323405 | 533.671665 | 1.84741e-13 |
+| 1 | 309.275252 | 545.105072 | 1.84741e-13 |
+| 2 | 305.314505 | 544.434855 | 1.84741e-13 |
+
+The complete [forecast](../results/compact-own-opponent-learning/forecast.json)
+replays all three own archives and validates every independent raw worker,
+publication witness, complete clock and source/input seal. It takes
+655.200384 seconds under 900. From all 24 original timing
+paths, T=610.943356249918; D=309.275251667001; N=545.105072250000 seconds. The unchanged
+own forecast 2*(2*T+D+600)=4262.323928<7200 passes. The unchanged
+independent forecast 2*(N+60)=1210.210145<900 is **false**.
+A command fitting its individual cap is insufficient for the conservative
+admission forecast. No favorable repetition is discarded and no gate/cap is
+changed. These are wall times on the recorded workstation, with routine light
+administrative work during collection, not exclusive-machine speed benchmarks.
+
+No study permit is created, no new real learning starts, and the failed compact
+sampled accuracy result remains. The paired/treatment cost curves reuse old
+OWN tables by construction; they never measure the proposed training remedy.
+The next separate [profiling milestone](https://github.com/jimmy-sim/poker-ai/pull/60)
+measures a full replay before selecting any lossless optimization. An optimized
+source must earn its own checks, fixed costs and admission; this result cannot
+be rescued by profiler timings. No default/fresh/global or stronger-agent claim.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.

@@ -1,0 +1,135 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nfrom poker_ai.evaluation.compact_opponent_source import source\nroot=pathlib.Path.cwd()\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='157bd40f812778ec1b1e16e6d94677b88a537e09'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')\nassert sys.version.split()[0]=='3.12.15'\nassert numpy.__version__=='2.5.4'\ns=source(root,clean=True)\nassert s['dirty'] is False\nassert s['fingerprint']=='d6da7eebc35c4726b291e2ed69bd538f64d1acb4357723bee853279633385dba'\nprint({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':s['fingerprint']})\n"]}
+{'python': '3.12.15', 'numpy': '2.5.4', 'module': '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout/src/poker_ai/__init__.py', 'source_sha256': 'd6da7eebc35c4726b291e2ed69bd538f64d1acb4357723bee853279633385dba'}
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_compact_opponent_admission.py", "tests/test_compact_opponent_cli.py", "tests/test_compact_opponent_clock.py", "tests/test_compact_opponent_foundation.py", "tests/test_compact_opponent_isolation.py", "tests/test_compact_opponent_native.py", "tests/test_compact_opponent_permit_roundtrip.py", "tests/test_compact_opponent_sources.py", "tests/test_opponent_learning_admission.py", "tests/test_opponent_learning_capture.py", "tests/test_opponent_learning_cli.py", "tests/test_opponent_learning_clock.py", "tests/test_opponent_learning_cost.py", "tests/test_opponent_learning_design.py", "tests/test_opponent_learning_gate.py", "tests/test_opponent_learning_native.py", "tests/test_opponent_learning_permit_roundtrip.py", "tests/test_opponent_learning_pipeline.py", "tests/test_opponent_learning_sources.py", "tests/test_opponent_learning_workers.py", "tests/test_compact_sampled_state.py", "tests/test_compact_sampled_pipeline.py", "tests/test_compact_sampled_native.py", "tests/test_compact_full.py", "tests/test_public_range.py", "tests/test_public_range_acceptance.py", "tests/test_range_mass.py", "tests/test_range_protocol.py", "tests/test_range_admission.py", "tests/test_postflop_jit.py", "tests/test_postflop_learning.py::test_postflop_training_has_no_reference_imports"]}
+........................................................................ [ 11%]
+............................F........................................... [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 56%]
+........................................................................ [ 68%]
+........................................................................ [ 79%]
+........................................................................ [ 90%]
+..........................................................               [100%]
+=================================== FAILURES ===================================
+____ test_complete_sealed_real_sources_and_all180_explicit_cost_projections ____
+
+    def test_complete_sealed_real_sources_and_all180_explicit_cost_projections() -> None:
+        # Other optional tests may preload pyspiel. Production guards stay strict;
+        # the actual loader runs in a fresh subprocess, like its real CLI.
+        code = """from pathlib import Path
+    import numpy as np
+    from poker_ai.evaluation.compact_opponent_guard import isolated
+    from poker_ai.evaluation.compact_opponent_sources import load,standins
+    from poker_ai.postflop.river_study import Deadline
+    ROOT=Path.cwd()
+    with isolated(worker=False):
+        deadline = Deadline(900)
+        sources = load(ROOT, deadline)
+        assert len(sources.original_boundaries) == 36
+        assert len(sources.opponents) == 16
+        assert {r["path_index"] % 5 for r in sources.original_boundaries} == {0, 4}
+        data = standins(ROOT, sources, deadline)
+        assert len(data.members) == 180
+        for coordinate in range(6):
+            for weight in ("uniform", "linear"):
+                books = [
+                    data.members[coordinate, "coarse", work, weight].values
+                    for work in (100_000, 1_000_000, 10_000_000)
+                ]
+                assert all(
+                    np.all(b >= a) for a, b in zip(books, books[1:], strict=False)
+                )
+        assert all(
+            m.identity["learned_compact_values"] is False for m in data.members.values()
+        )
+    print("all36boundaries180projections; zero new learning/native construction")
+    """
+>       result = subprocess.run(
+            [sys.executable, "-c", code],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=900,
+        )
+
+tests/test_compact_opponent_sources.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = 900, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-optional312/b... m in data.members.values()\n    )\nprint("all36boundaries180projections; zero new learning/native construction")\n'],)
+kwargs = {'cwd': PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout'), 'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-optional312/bin/python', '-c', 'from pathlib import Path\nimport numpy as np\nfrom poker_ai.evaluation.compact_opponent_guard import isolated\nfrom poker_ai.evaluation.compact_opponent_sources import load,standins\nfrom poker_ai.postflop.river_study import Deadline\nROOT=Path.cwd()\nwith isolated(worker=False):\n    deadline = Deadline(900)\n    sources = load(ROOT, deadline)\n    assert len(sources.original_boundaries) == 36\n    assert len(sources.opponents) == 16\n    assert {r["path_index"] % 5 for r in sources.original_boundaries} == {0, 4}\n    data = standins(ROOT, sources, deadline)\n    assert len(data.members) == 180\n    for coordinate in range(6):\n        for weight in ("uniform", "linear"):\n            books = [\n                data.members[coordinate, "coarse", work, weight].values\n                for work in (100_000, 1_000_000, 10_000_000)\n            ]\n            assert all(\n                np.all(b >= a) for a, b in zip(books, books[1:], strict=False)\n            )\n    assert all(\n        m.identity["learned_compact_values"] is False for m in data.members.values()\n    )\nprint("all36boundaries180projections; zero new learning/native construction")\n']' returned non-zero exit status 1.
+
+../python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/subprocess.py:571: CalledProcessError
+=========================== short test summary info ============================
+FAILED tests/test_compact_opponent_sources.py::test_complete_sealed_real_sources_and_all180_explicit_cost_projections
+1 failed, 633 passed in 187.25s (0:03:07)

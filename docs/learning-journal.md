@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the compact training remedy waits for a faster audit](#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
+
 - [Inspect the actual decisions behind the information benefit](#103-find-the-concrete-decisions-behind-the-information-benefit)
 
 - [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
@@ -50,6 +52,9 @@ game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 expla
 all controls, the independent checks and what the failure means. Step 102
 now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
+Step 104 now completes the proposed compact training remedy's software proof and
+cost checks, but compute admission fails. The actual new training comparison
+has not run; verification cost must be profiled before optimization.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4768,8 +4773,11 @@ tests each, relevant optional checks (513 on Python 3.11; 511 and two runtime
 skips on 3.12), and both source-bound GitHub jobs before collection. The actual
 tiny 144-panel rehearsal passed first; separate hand-calculated tests cover
 positive information benefits, both players, zero support and overlapping ties.
-Final publication checks remain a merge gate. The earlier sampled accuracy
-failure and default agent remain unchanged.
+Final publication checks passed on both local bases and both hosted jobs before
+the history-preserving merge in PR #58. Main then passed 138 focused checks,
+the complete 144-panel replay, and saved-decision browser checks. All ten
+unrelated local result changes stayed byte-identical. The earlier sampled
+accuracy failure and default agent remain unchanged.
 
 After updating the checkout, try one command per line:
 
@@ -4800,3 +4808,114 @@ pot; those are different units and summaries. The [method and limits](compact-in
 explain the proof and recorded-source replay. These are two known, narrow-range
 games, not competitive Hold'em validation. Codex assisted with implementation,
 execution and drafting; personal hours and understanding are not inferred.
+
+## 104. Test whether a finer own training opponent helps the compact learner
+
+November 12, 2026. The trace shows an attack a finer responder can use against
+the sampled opponent. The next [prospective comparison](compact-own-opponent-learning.md)
+keeps the compact learner's information groups and work budget fixed, while
+letting its own training opponent distinguish its own cards/public board more
+precisely. That opponent still cannot see the learner's hidden cards. No
+reference solver strategy is used in learning.
+
+We will compare four arms: ordinary compact self-play, two half-budget compact
+controls, two half-budget compact/fine learning games, and ordinary fine
+self-play. The paired compact control matters: otherwise an apparent improvement
+could come from splitting training across two games instead of finer information.
+Both players' updates and initialization count in each budget.
+
+All original seeds and gates remain, including strict improvement in both known
+games. A zero improvement in the already-near-zero low game can still fail that
+rule. Implementation, software proof, conservative forecast and admission are
+pending; no new model or strength result exists yet. The full capped study
+must fit before the user's 10 a.m. stopping time, or we stop at a tested smaller
+milestone. No automatic future window is created. Codex assists with the work;
+personal hours and understanding are not inferred.
+
+The first implementation now separates the training worker from every saved
+opponent loader. A worker receives game/source/clock identifiers, not saved
+probability tables. Its own finer opponent learns during that same game. Fresh
+process checks reject reference imports. The read-only parent can authenticate
+old comparison receipts, but its learner and native constructors are blocked.
+
+We also need honest cost data before committing to a long experiment. Imagine
+an old group split into two new groups: copying its whole book into both would
+double that group's recorded mass. Instead, the adapter carries over its
+post-initialization density in proportion to each new group's exact uniform
+warm mass. Tests check the exact new warm origin, monotone later books and
+unchanged normalized probabilities. These tables estimate pipeline cost; they
+were never learned with the compact groups and cannot establish model strength.
+
+The original compact/exact snapshots supply all 36 ordinary-path checkpoints.
+Their probabilities, raw books, RNG/state hashes and visited-node work must
+match exactly. A changed probability or a merely close score cannot replace
+this check. A separate slow integration test loaded all 36 boundaries and 180
+cost source tables with solver constructors blocked. The complete base/optional
+and hosted source checks, formal shared-clock rehearsal and compute gates are
+still pending. Unit fixtures, including direct terminal sums and exhaustive
+pure responses for all 432 tiny profiles, are software tests rather than new
+poker training or a published admission.
+
+One optional test initially expected the original real archive to replay under
+Python 3.12. It failed because the existing original-runtime guard correctly
+refused it. The corrected test expects that refusal on an unsupported runtime;
+the full 36-boundary/180-table source integration runs on the recorded Python
+3.11.17/NumPy 2.4.6 environment. Python 3.12 still checks the structural factories,
+software pipeline and raw data math. The original failure is retained. No
+runtime tolerance, scientific cap or performance gate was relaxed.
+
+Review then caught a cost-fixture consistency bug before any formal cost run.
+A book is a table of accumulated action weights; dividing each row by its
+total gives the average action probabilities. Lifting the old probabilities
+separately from the book could change the final floating-point bit. We now
+derive each cost average directly from its lifted book. The old exact replay
+check remains unchanged, and proximity to the original probabilities still
+meets the predeclared 1e-12 cost-only limit. The complete 180-table integration
+passes with this exact relationship checked. This fixes test data preparation;
+it changes no original policy, learned trajectory or quality gate.
+
+The corrected source now passes both complete local base suites (3,319 tests,
+64 optional skips and 150 slow deselections each), both relevant optional suites
+(636 each), and both exact-head hosted jobs before formal collection. The
+observed logs, source hashes and receipt are retained. The formal rehearsal,
+fixed cost runs, forecast and checked admission still come before real learning.
+
+The new formal rehearsal is now complete on the fictional signal games: all
+30 learning paths, 324 captured policies, 216 raw books, 432 unique scored
+profiles and 1,152 fixed conditions pass replay and independent scalar checks.
+Own evidence was public before reference construction. The whole shared clock,
+including that publication, was 47.28 seconds under the 180-second limit. The
+largest comparison difference was about 1.1e-16 fictional payoff units. Those
+counts test software coverage, not new Hold'em playing strength.
+
+The first of the three fixed own cost runs also passes its complete archive and
+replay checks in 308.32 seconds under 900. It reuses old own-policy tables as
+cost stand-ins: zero new poker work, learning iterations or reference
+construction. All three own runs must be public before any native cost run;
+the maxima of all fixed repetitions will determine the conservative forecast.
+
+All three own cost runs now pass: 308.32, 309.28 and 305.31 seconds, each under
+900. Every run retains and replays all 432 profiles and 1,152 fixed conditions
+with zero numerical change and exact policy/book bytes. Their two CSV tables,
+summary and three plots reproduce byte for byte. The charts were visually
+checked; their labels say zero new learning. The paired control and treatment
+coincide here because they reuse old tables by construction, not because a new
+training experiment found no difference. The independent cost runs are next.
+
+
+The complete cost record now blocks the real comparison. All three independent
+runs pass the same 432 strategy / 1,152 condition checks, but their slowest complete
+command needs 545.11 seconds. The predefined safety formula doubles that time
+plus 60 seconds, giving 1,210.21 seconds against a 900-second
+limit. It fails. The own-work forecast passes at 4,262.32 seconds
+against 7,200, but both must pass. The [full forecast and every timing](compact-own-opponent-learning.md#recorded-compute-decision--november-12-2026)
+are retained; no seed, cap or rule changes to turn it into a pass.
+
+This is not another measurement of the model's playing strength: the new compact
+training remedy has not run. It is a refusal to start a long experiment whose
+complete verification currently costs too much. The next profiling step keeps
+all checks and compares normal versus instrumented full replay for identical
+results. A profiler tells us where time goes before we change code. It does not
+make a stronger agent by itself. No new permit or agent default was created.
+
+Final same-source review passes102focused fast checks (one slow integration deselected),20.70s. All362named scientific dependencies match the original fully checked source. The earlier complete local bases (3,319passes/64skips/150deselections each), optional636each and both source-bound hosted checks remain valid; the new complete archive/cost/forecast evidence is retained. Final PR-head hosted CI is required before merge.
