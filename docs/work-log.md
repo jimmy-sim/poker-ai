@@ -3852,3 +3852,19 @@ notes retained outside repo. Final local base/hosted publication checks remain
 before history merge; no new trace/probe outcomes or new trajectory study started.
 Next justified separate step: identify the concrete merged decisions behind the
 large information benefit while holding frozen opponents fixed.
+
+### November 12 — prospective trace of the audited information benefit
+
+Before new row/conflict outcomes, pin PR57's complete 48-input/144-profile/288-
+response archives and define 144 unique fixed-opponent traces with all288alias
+provenance. Unchanged own trace_losses starts at the saved partition-best reply,
+so all additive rows must sum to already-audited B-R. Prefix is restricted-reply
+reach, not original sampled reach; turn contributions do not causally identify
+a river feature. All six/two games/three seeds/both players/S-F opponents retained.
+No new learner/RNG/reference constructor, feature probe/selection/admission.
+Prospective software180s and realown/report900s complete caps, full3900s cutoff
+reserve, own-before-rendering checkpoints and complete source/test/hosted gates.
+Historical source/checkers stay unchanged; new sealed-source reader authenticates
+named old dependencies/Git blobs and raw own policies. No new trace outcomes yet.
+PR57 final publication local/hosted checks are still running; branch is stacked
+on its published4c5ba3c, to retarget main after checked history merge.

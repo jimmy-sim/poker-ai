@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "prospective_frozen_information_gain_trace",
+  "parent_config": "configs/compact-fixed-opponents.json",
+  "parent_source_fingerprint": "2670f3f6f965f018361a973ca7021b620317d0d60fe0b2ebb7b4466023e17443",
+  "input_sha256": {
+    "configs/compact-fixed-opponents.json": "35b9a1956c90400018ffe22fbafdcb9ab994876e812e43fdc03f4250d632f82c",
+    "results/compact-fixed-opponents/checks.json": "4fee6616e82e2a095d25ddfe7abf3bf4b6cafad5a13f1ac394bd9d27cd7f3ffa",
+    "results/compact-fixed-opponents/software/own.json": "edabd34342d0033cf7da7e3bf799091d90bea43863599a5890370c13bccffbc2",
+    "results/compact-fixed-opponents/software/native.json": "3d18a04eae789e1630936467099e17b239de346858ce0425da1247121ddc4a8e",
+    "results/compact-fixed-opponents/real/own.json": "e7facbeabed816709dc532ecb3bc7e23bd8cde70730a2f93eb202be12612f34d",
+    "results/compact-fixed-opponents/real/native.json": "d50e258443b844d4f053f91094c79691109370cb760b780bb61e9fa33bd1dbda",
+    "results/compact-fixed-opponents/real/result.json": "1996567b382e6307176f7c244c403074e2125eb7d53a9faa408b26019187209d"
+  },
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "source_profiles": 48,
+  "logical_joint_profiles": 144,
+  "response_aliases": 288,
+  "unique_fixed_opponent_panels": 144,
+  "maximum_own_seconds": 900,
+  "maximum_report_seconds": 900,
+  "software_maximum_seconds": 180,
+  "deadline_reserve_seconds": 3900,
+  "absolute_tolerance_chips": 1e-09,
+  "display_top_groups": 5,
+  "display_examples_per_group": 4,
+  "tie_rule": "first legal maximizer, no approximate tie substitution",
+  "prefix": "target partition-best reply R; opponent unchanged; full exact best-reply suffix B",
+  "scope": "Trace already-audited B-R with unchanged own math. No new training/RNG/reference construction, feature probes/selection or admission. All rows and aliases retained; not causal street or training improvement."
+}

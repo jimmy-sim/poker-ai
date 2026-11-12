@@ -4707,3 +4707,22 @@ it loads saved policies, without training or constructing a reference solver.
 The [method](compact-fixed-opponents.md) explains the source checks and limits.
 Codex assisted with implementation, execution and drafting; no personal hours
 or understanding are inferred.
+
+## 103. Find the concrete decisions behind the information benefit
+
+November 12, 2026. Step 102 shows a large benefit from finer information against
+the sampled opponent. The next question is which shared decisions account for
+it. The [prospective trace](compact-information-trace.md) is published before
+new row-level outcomes. It keeps every description, seed, player and opponent.
+
+We will start from our best response inside the existing groups, keep the
+opponent fixed, then measure what a finer legal response gains. The decision
+contributions must add to the information benefit already checked in step 102.
+This starting strategy differs from the original sampled strategy, so its
+reach weights answer a different question. A turn decision can still include
+later river choices; a large turn contribution does not locate a causal bug.
+
+No new feature, training, reference strategy or strength claim is part of this
+step. Implementation, source checks and the tiny rehearsal are pending. Results
+and the next decision will be added only after those gates pass. Codex assists
+with the work; personal time and understanding are not inferred.
