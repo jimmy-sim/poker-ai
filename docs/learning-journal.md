@@ -4420,3 +4420,10 @@ This completes the source check; next comes the small software rehearsal and
 its independent check, then the cost forecast. The compact poker study still
 has not started. These execution times are automated check times, not personal
 hands-on hours.
+
+**Own rehearsal:** the same runner saved and replayed all72 planned checkpoint
+slots on tiny artificial games, with no changed replay numbers. The complete
+automated command took about1.84 seconds. The six labels deliberately repeat the
+same tiny information structure; this checks plumbing, not six poker methods.
+These own records are published before the independent reference is constructed.
+The independent check and cost admission are next.

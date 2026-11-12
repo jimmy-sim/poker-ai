@@ -3416,3 +3416,13 @@ source fingerprint unchanged by this evidence/docs publication. No measured
 tiny proof, forecast/admission or compact scientific trajectory yet. Existing
 bounded kernel correctness fixtures are software checks. Publish checked-source
 evidence now before the tiny own rehearsal; publish own archive before reference.
+
+### November 12 — tiny own full-control rehearsal published before reference
+
+Same corrected9db8 source, checked-source publicationa482067. The real full runner
+on two dependent ordinary/negated Kuhn software contexts and six logical control
+labels captures all72 profiles/12layouts and replays all72 with zero metric
+change. Complete command1.8403986659996008s, cap180; own snapshot/manifest/child
+clock hashes verified. No Hold'em study and no reference constructed in this
+operation. Publish this own evidence before comparison-only OpenSpiel audit.
+These duplicate fixture labels are software coverage, not12 poker treatments.
