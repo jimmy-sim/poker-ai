@@ -4319,5 +4319,5 @@ hostedCI remain before merge. Stop10a.m.; no further automation/subagents.
 
 Final same-source relevant suites pass147each:16.16s onPython3.11 and15.91s
 onPython3.12. All367named scientific files unchanged; complete raw pair hashes
-and recomputed/stored identity independently rechecked by the retained reader.
+and recomputed/stored identity rechecked by the retained own reader.
 Lint/format/hooks pass. Final publication hosted checks required before merge.
