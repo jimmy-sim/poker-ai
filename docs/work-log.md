@@ -3596,3 +3596,13 @@ are repeated across the IO readout labels as declared stand-ins. Their labels
 are not newly learned current/average strategies. Publish ALLthree own fixtures
 and archives BEFORE any corresponding native cost reference. The forecast must
 use the maximum WHOLE-command time, not an interim pre-replay manifest timer.
+
+### November 12 — complete three native cost comparisons
+
+Allthree own fixtures d2efbdc were public before native cost construction. Each
+comparison checks324stand-in own values/BOTH-BR roots; complete clocks50.020953959/50.368202500/50.438742208s<900each.
+Maximum error across all repetitions 1.35003119794419e-13chips<1e-9. No reference
+strategy enters learning; no learner was constructed in any cost run. The source-
+bound software proof and ALLthree own/native costs are complete. Publish native
+cost evidence before the fixed deep forecast and checked admission; real sampled
+training remains unrun/unadmitted until those published gates pass.

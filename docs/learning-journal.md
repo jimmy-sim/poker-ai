@@ -4596,3 +4596,9 @@ policies, with no learner constructed. The forecast will use the slowest full
 command, not a partial timer saved before replay. The three own fixture sets are
 published together before their native cost comparisons. These timings estimate
 feasibility; they say nothing about whether the new agent plays better.
+
+The three native cost comparisons also finished, in50.02, 50.37, 50.44seconds.
+Each checked324stand-in readouts after the own fixtures were public. These are
+comparison/cost measurements, with no reference strategy entering training. The
+next decision uses the predeclared conservative formula and full command clocks.
+A feasible forecast still would not establish playing strength.
