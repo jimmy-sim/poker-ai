@@ -4874,3 +4874,17 @@ The corrected source now passes both complete local base suites (3,319 tests,
 (636 each), and both exact-head hosted jobs before formal collection. The
 observed logs, source hashes and receipt are retained. The formal rehearsal,
 fixed cost runs, forecast and checked admission still come before real learning.
+
+The new formal rehearsal is now complete on the fictional signal games: all
+30 learning paths, 324 captured policies, 216 raw books, 432 unique scored
+profiles and 1,152 fixed conditions pass replay and independent scalar checks.
+Own evidence was public before reference construction. The whole shared clock,
+including that publication, was 47.28 seconds under the 180-second limit. The
+largest comparison difference was about 1.1e-16 fictional payoff units. Those
+counts test software coverage, not new Hold'em playing strength.
+
+The first of the three fixed own cost runs also passes its complete archive and
+replay checks in 308.32 seconds under 900. It reuses old own-policy tables as
+cost stand-ins: zero new poker work, learning iterations or reference
+construction. All three own runs must be public before any native cost run;
+the maxima of all fixed repetitions will determine the conservative forecast.

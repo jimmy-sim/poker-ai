@@ -4103,3 +4103,27 @@ This source-check publication is not compute or strength admission. Formal full
 tiny own/public-before-native proof is next; no new real trajectory yet. Method's
 three interview questions explain paired controls, future-suffix interpretation
 and what a software/compute gate does and does not establish.
+
+### November 12 — full new software proof; own cost repetition0
+
+Formal software-own15.292187916005787s publishes37ca53d734a50386a37ea6d04a7c2e070e627aa1
+BEFORE native5.612813625004492s publishes0ec17ef91f01a06169b1cd6d3378d7d654d66323.
+Whole shared proof47.27623416600545s<180, source2ace916f; same3spawn learning path,
+all30initializations/108boundaries/324raw policies/216ledgers/108compositions/
+432unique scores/1152fixed conditions. All432/1152 independent scalar and derived
+field checks pass, maximum1.1102230246251565e-16 FICTIONAL payoffunits; no native
+actions exported or reference output used in learning. Checked published software
+gate reports complete_tiny_software_only_not_poker_admission. Actual toy learning
+ran; no new Hold'em trajectory. Raw reports/events/archives and both own/native
+complete-command bodies retained. Raw hosted log whitespace is preserved so
+the recorded hashes remain exact.
+
+Fixed cost-own repetition0 completes308.32340462499997s<900 including full historical
+source/context loading, all30data-only paths, raw/composed archives,432scorings,
+1152fixed conditions, complete replay and all required reports. Cost scope is
+explicit; no new poker/toy learning, initialization or native construction.
+No code, seed, gate or environment tuning between fixed repetitions. Publish
+this complete own outcome before the next own repetition; allthree own costs
+must precede ANY nativecost. Remaining two own/three native repetitions, complete
+maxima-based forecast and checked published permit are still required. A cost
+curve is not a newly trained agent or a playing-strength result.
