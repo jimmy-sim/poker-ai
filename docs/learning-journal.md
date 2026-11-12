@@ -11,6 +11,7 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Which strong hands could each player represent?](#98-ask-which-hands-each-player-can-still-represent)
 - [Try the four-column saved-hand terminal exercise](terminal-river-lab.md)
 - [Separate range beliefs from later action values](#97-separate-range-beliefs-from-later-action-values)
 - [Why a turn call needs finer river information](#96-ask-what-makes-the-turn-call-valuable)
@@ -81,6 +82,11 @@ the opponent's hand weights explains some river conflicts, but others persist
 because the saved opponent's later responses differ. This narrows the problem;
 it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
 the completed step 96 report, and step 97 adds a range-weight browser and plots.
+
+Step 98 finds a useful missing distinction: which alternative hands public
+cards remove from our own range. In the previously weak case it reduces local
+conflicting groups from 23 to four. This is checked saved-data diagnosis; it
+has not trained a stronger feature or changed the agent.
 
 We have a working poker simulator, learning algorithms, and tools for checking
 their results. The project has found useful bugs and measured weaknesses. It has
@@ -4175,6 +4181,83 @@ It shows the opponent's possible hands, prior and updated weights, and the
 resulting action values. Use r to switch between the two own continuations;
 the other navigation keys work as in the earlier browser. The figures show all
 seeds and controls, including zero-cost singleton controls and unfavorable changes.
+
+## 98. Ask which hands each player can still represent
+
+**November 11, 2026 — issue #4; prospective investigation.**
+
+A blocker is a visible or known card that makes a particular hand impossible.
+Our previous report showed a new question: do we need to describe not just the
+opponent's possible hands, but also the hands the opponent thinks WE could hold?
+
+**Recorded example:** with Qh Kh on Ts 9s 4d 2h, a river 9d removes 9c9d from
+our declared alternative range. A river 9h leaves that strong hand possible.
+The opponent could respond differently to a raise because the strong hands we
+can represent differ. That is a hypothesis to investigate, not a proved cause
+of the saved strategy's decisions or a trained improvement.
+
+The [fixed plan](two-sided-blockers.md) checks every earlier saved case. It adds
+public availability of our range, then both ranges, to the old grouping. It
+also checks the full compatibility table between possible hands. With fixed
+ranges, that table is determined by the two availability masks and the cards
+already in the declared hands; it must not magically add more information.
+
+We will keep all action values and weights fixed. The question is whether these
+extra descriptions separate decisions that previously conflicted. We must not
+use our actual private hand to remove alternatives the opponent cannot know
+are impossible. No results, new agent feature or personal practice are claimed.
+The original failed learning gate remains. Codex assists with implementation.
+
+**Implementation checkpoint, November 11:** The checker now constructs both
+players' possible-hand lists from the board alone, then asks whether those lists
+separate conflicting saved decisions. Our actual private hand must not erase
+alternative hands that the opponent could still think we hold. Tests also check
+that two different boards with identical feature values stay grouped together:
+otherwise we would quietly be testing exact board identity instead of blockers.
+
+All 53 focused tests pass (2.35s), plus lint, formatting and strict typing. Tests
+use deliberately fictional tiny examples; these are software checks, not new
+playing-strength results. Both full Python environments and GitHub checks are
+next, before measuring every saved case. This work is Codex-assisted; no personal
+practice time or mastery is inferred.
+
+**Complete saved-data result, November 11:** Both full local suites and GitHub
+source jobs passed before the 11.83-second comparison. In the same harder spot
+and second seed, adding public blockers to our alternative range separates 19
+of 23 previously conflicting groups. Four remain. Local disagreement cost falls
+from 0.386739 to 0.046621 chips per weighted decision; with the compatible-prior
+control it falls from 0.164205 to zero. These are fixed saved-decision costs,
+not money won or a stronger trained model.
+
+The QhKh example makes this concrete. A river 9d removes our possible 9c9d value
+hand; 9h leaves it possible. The old description treated those river situations
+alike. The public own-range description can separate them. This fits the earlier
+bluff-credibility hypothesis, but does not prove why the opponent's saved policy
+responds differently.
+
+Every saved case remains in the report: 24 profiles, 192 range panels and 960 grouped
+panels. Cost falls in 36 panels; 69 still have residual cost. Adding the other public
+range adds no further split in these particular tiny ranges, because hands
+across the two players' declared ranges share no private cards: the old opponent
+compatibility feature already gives that mask. That may differ for overlapping
+ranges; the software has a test demonstrating it. The joint table is separately
+redundant whenever both public masks and fixed ranges are known.
+
+Both Python versions check all 24 details and 96 browser selections. All five report
+files, including both plots, reproduce byte for byte. [Method and all-case
+tables](two-sided-blockers.md) retain the support weights, zero outcomes and
+limits. The [new terminal exercise](terminal-two-sided-lab.md) walks through
+the browser. Next, any compact feature needs its own declared learning test;
+this milestone does not promote a default or erase the earlier failed gate.
+Final publication checks and both GitHub jobs are required before merge; see
+[PR #53](https://github.com/jimmy-sim/poker-ai/pull/53) for their conclusions.
+Codex-assisted; personal practice or hours are not inferred.
+
+**Publication checks:** Both complete final environments pass 2,816 tests, and
+both focused optional suites pass all 55 tests. These include checking every
+actual saved detail and every number in the report. The measured source and
+data remain unchanged. The exact check records are linked from the method;
+the PR records the final GitHub conclusions before merge.
 
 ## Your own learning notes
 

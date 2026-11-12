@@ -3242,3 +3242,86 @@ scientific fingerprint987c636e... unchanged. Subsequent edits are documentation/
 evidence only, including clarification that a posterior feature might also proxy
 future responses; this local control does not prove a particular feature fails.
 Both final hosted artifact jobs remain required before history-preserving merge.
+
+### November 11 — prospective two-sided public range-blocker diagnosis
+
+Issue4comment6814712059 registers the next question before code/output. PR52
+post-merge mainCI43086132574 passes both jobs. Fresh actual user-main snapshot
+before isolated branch creation captures all ten current unrelated result edits;
+no main files changed. Frozen config binds the complete C7 manifest/summary/CSV.
+Same24profiles/48responses/96suffixes/192source range panels and all44,160
+profile-seat river records (88,320acrosssuffixes); five nested controls produce
+960grouped panels. Source static / own public range availability / both public
+masks / both masks+joint matrix / exact singleton. No new Q/posterior/policy or
+training; source reconstruction, physical-card oracle, private-input exclusion,
+refinement/singleton and joint redundancy controls define acceptance. Retain
+all unsupported rows/common weights/denominators and no positive-effect gate.
+Separate900s cache-only full-validation/feature/regroup/write clock; original
+caps/seeds/gates unchanged. Full local/optional/hosted source checks precede
+measurement; both final artifact jobs before merge. Implementation/results
+pending; a future feature-learning test needs its own contract/admission.
+
+### November 11 — two-sided blocker implementation checkpoint
+
+PR53 adds new modules only: public two-range availability/joint features,
+independent scalar reconstruction and nested grouping, pinned cache schema,
+guarded runner with per-profile partial/failure retention, and offline inspector.
+Historical source/data remain unchanged. Fifty-three focused tests pass in2.35s;
+whole-repository Ruff lint/format and strict mypy622files pass. Synthetic runner
+tests use explicitly fictional UNIT_ONLY parents, never scientific receipts.
+Physical-card oracle/private-input exclusion/unchanged-feature/matrix redundancy,
+same support/weights, all960 panel slots, corrupt cache and interruption/cap
+tests pass. Full local bases/focused all-extras/both hosted SOURCE checks are
+pending and must precede the actual C8 comparison. No measurements/training/
+feature deployment or performance admission at this checkpoint.
+
+### November 11 — complete two-sided public blocker comparison
+
+Both full immutable source bases on21d3420 pass2,814/58skip/149deselect,
+512.17/497.50s; all lint/format/mypy622/hooks/source-runtime guards pass.
+Focused ALL-EXTRAS53pass3.05/2.90s, not all historical optional tests. Hosted
+SOURCE43159009130 both pass BEFOREmeasurement (2,814/58/149/one old roundoff
+warning each;935.75/670.86s). Original optional launcher filename errors exit4
+remain with corrected successful logs; inherited receipt scope wording is
+clarified as synthetic units only. No scientific source changes for that fix.
+
+Published clean21d3420/fingerprint519887a... completes unchanged900s cache-only
+command in11.832719541s. All24/48/96/192/960inventory and44,160/88,320rows,
+96publicboards retained; max source reconstruction5.330805e-15chips and
+2.220446e-16unitless. New manifest4559326c...; no new Q/policy/trajectory/native
+audit or original full-game mathematical replay. Original data/source frozen.
+
+Focal harder/mixed/seed2/seat1/fine actualcost0.386738718→0.046621048,
+23/1,386→4/1,440conflicting groups;19originalconflictsresolved. Priorcontrol
+0.164204558→0,11→0. Own-public masks separate recordedQhKh9d/9h observations.
+All192panels:36costdecreases,156unchangedwithin1e-9,69positive residuals. Both
+public masks addnothing beyondown in THESE inputs because every cross-seat
+private-hand pair is disjoint and oldcompatibility already gives opponent
+publicmask; overlap UNITfixture explicitly demonstrates general extra split.
+Joint given BOTH masks is alwaysredundant forfixedranges. These two facts differ.
+No causal response attribution, rootEV/exploitability/learning-gain or global
+compression claim. Original overall learningFAIL/default/gates remain.
+
+All24cached details/96browser selections+navigation/rank/EOF pass both runtimes
+with blockedconstructors,20.441678459/18.489029166s. All5numeric/text/plot outputs
+byte-identical; both figures visually inspected. Firstformat15.613303416s is
+separate postprocessing; original font-cache warning retained. Exact sourceCI,
+local bases/optional failures+correction, command/cache/report records committed
+with plain-English journal98 and terminal exercise. Two actual-publication
+regressions added; final relevant checks and both artifactCI jobs remain before
+merge. Ten user main result modifications remain untouched in the isolated work.
+
+### November 11 — final blocker publication verification
+
+Immutable result88178f5 passes both full bases:2,816passed/58skip/149deselect,
+514.55/493.73s. Whole lint/format/mypy623files/hooks and before/after clean
+HEAD/module/runtime/scientific-source guards pass. Focused ALL-EXTRAS55pass
+17.89/16.43s, including actual-cache/report checks; not the entire historical
+optional suite. Exact logs/receipts/launcher retained in final-local. Check
+wrappers528.460657125/508.836396458s base,22.758831667/21.682086709s optional;
+setup excluded. Only docs/evidence change at this checkpoint. Scientific
+fingerprint519887a... and all measured raw outputs unchanged. Raw sourceCI
+timestamp spaces/BOM preserved verbatim, documented in complete/README.md;
+code/docs diff check excluding only those two raw logs passes. Both final
+hosted artifact jobs on the final PR head remain a merge gate; PR53 records
+their conclusions without manufacturing an independent human review.
