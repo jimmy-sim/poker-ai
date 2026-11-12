@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Inspect the actual decisions behind the information benefit](#103-find-the-concrete-decisions-behind-the-information-benefit)
+
 - [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
 
 - [Test whether the smaller description learns under sampling](#101-test-the-smaller-description-at-the-same-learning-work)
@@ -46,7 +48,8 @@ The new fixed-work comparison
 in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56) now fails the harder
 game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 explains
 all controls, the independent checks and what the failure means. Step 102
-now diagnoses the saved failure while holding each opponent fixed.
+now diagnoses the saved failure while holding each opponent fixed. Step 103
+traces that benefit to inspectable turn and river decisions.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4710,45 +4713,90 @@ or understanding are inferred.
 
 ## 103. Find the concrete decisions behind the information benefit
 
-November 12, 2026. Step 102 shows a large benefit from finer information against
-the sampled opponent. The next question is which shared decisions account for
-it. The [prospective trace](compact-information-trace.md) is published before
-new row-level outcomes. It keeps every description, seed, player and opponent.
+November 12, 2026. Step 102 found a large benefit from finer information against
+the sampled opponent. We traced that benefit down to decisions, keeping the
+opponent fixed and starting from our best response inside the existing groups.
+This starts no new training.
 
-We will start from our best response inside the existing groups, keep the
-opponent fixed, then measure what a finer legal response gains. The decision
-contributions must add to the information benefit already checked in step 102.
-This starting strategy differs from the original sampled strategy, so its
-reach weights answer a different question. A turn decision can still include
-later river choices; a large turn contribution does not locate a causal bug.
+**Result:** all three compact sampled seeds point to the same important turn
+situation. The responding player holds **9c 9d** on **Ts 9s 4d 2h**. The best
+constrained response folds; a response that can use finer legal information
+later prefers calling. The turn row itself has only one member, so this is
+**not a collision at that turn decision**. Its value includes later choices.
 
-No new feature, training, reference strategy or strength claim is part of this
-step. Implementation, source checks and the tiny rehearsal are pending. Results
-and the next decision will be added only after those gates pass. Codex assists
-with the work; personal time and understanding are not inferred.
+| Seed | Total information benefit (chips) | This turn's contribution | Call with finer future play | Fold |
+|---|---:|---:|---:|---:|
+| 20261301 | 1.689074 | 1.689008 | -12.975126 | -18 |
+| 20261302 | 0.818624 | 0.818597 | -15.571622 | -18 |
+| 20261303 | 1.626020 | 1.626009 | -13.375233 | -18 |
 
-The first implementation now passes 67 focused checks. A hand-calculated tiny
-example checks that decision losses add to the information benefit for either
-player. Another catches a subtle display mistake: different first-best actions
-do not prove a conflict if the sets of equally good actions still overlap.
-Tests also cover zero-reach rows, corrupted archives, partial results and the
-new terminal browser. Full source checks and the actual tiny pipeline rehearsal
-are still pending; there are no new poker trace results yet.
+Negative call values do not make folding better. In the first seed, -12.98 is
+better than -18: the values count net chips, including chips already committed.
+The conditional improvement is about 5.025 chips. Multiplying by this decision's
+0.336129 restricted-reply-prefix reach gives its 1.689008-chip contribution.
+These are saved conditional values, not universal advice for playing a set.
 
-The roles matter here. If the responding player is seat 1, its best reply is
-attacking the fixed seat 0 strategy. A large benefit from finer information
-exposes an attack against seat 0; it does not mean seat 1's saved strategy is
-the weak defender. The trace will help identify that attack before we choose
-how to improve the training or the information groups.
+The displayed call value assumes the **finer reply's future choices**. The
+constrained responder cannot simply take that continuation as its own. Its fold
+is not evidence that the constrained best-response code ignored a better legal
+option under its own future information limits.
 
-Both full base suites now pass 3,217 tests. Relevant optional suites pass 513 on
-Python 3.11 and 511 with two runtime-specific skips on 3.12; both source-bound
-GitHub jobs pass too. The next gate is the actual tiny trace rehearsal. Software
-checks do not yet supply new poker decision results.
+The raw trace still finds three, four and seven strictly conflicting reachable
+groups in the three compact seat-1 panels against sampled opponents. Those
+river contributions are much smaller under this prefix. Some future branches
+have little or zero reach because the constrained response folds earlier.
+We retain every row, including zero-reach rows. The location where value is
+attributed does not prove which street's feature should change.
 
+**Who is being attacked?** Here seat 1 is the responding player; it attacks the
+fixed sampled seat 0 strategy. The information benefit is zero against the
+full-control seat 0 opponent in every seed. This suggests testing whether our
+compact learner can avoid leaving these attacks available when its own training
+opponent has finer information. That needs a separate fixed-work comparison;
+we have not trained that remedy or selected a new card feature in this trace.
 
-The actual tiny pipeline rehearsal now passes: 144 panels, 288 source aliases
-and 864 owned decision rows replay in 2.17 seconds. Maximum accounting error
-is 3.47e-17 chips. It constructs no learner or reference solver. The separate
-hand-calculated tests cover a genuine positive information benefit. Real tracing
-can now begin from the frozen poker strategies, after this proof is published.
+The complete result retains 144 panels, both aliases per panel, 133,632 owned
+decision rows and 84,600 group rows across all descriptions, games, seeds,
+players and opponents. The trace sums back to the already-audited information
+benefit within 1.07e-13 chips. New row values are our own calculations, not a new
+independent solver audit of each row. Own and report commands took 117.18 and
+98.94 seconds under their fixed 900-second caps. All own data were published
+before report rendering. Learner factories and reference imports were blocked.
+
+The implementation passed 67 focused checks, both full base suites with 3,217
+tests each, relevant optional checks (513 on Python 3.11; 511 and two runtime
+skips on 3.12), and both source-bound GitHub jobs before collection. The actual
+tiny 144-panel rehearsal passed first; separate hand-calculated tests cover
+positive information benefits, both players, zero support and overlapping ties.
+Final publication checks remain a merge gate. The earlier sampled accuracy
+failure and default agent remain unchanged.
+
+After updating the checkout, try one command per line:
+
+```sh
+cd /Users/jimmysim/Projects/poker-ai
+.venv/bin/python scripts/inspect_compact_information.py --interactive
+```
+
+Use **n/p** for groups, **j/k** for panels and **q** to quit. The initial display
+shows the first seed's turn decision above. These are constrained-best-reply
+probabilities, not the original sampled agent's action probabilities. The
+browser checks published hashes and source files; full mathematical replay is
+separate. Codex checked the actual n/p/j/k/q navigation; this is not a claim
+that you have practiced it yet.
+
+Try the other seeds or the full-control opponent separately:
+
+```sh
+.venv/bin/python scripts/inspect_compact_information.py --seed 20261302
+.venv/bin/python scripts/inspect_compact_information.py --seed 20261303
+.venv/bin/python scripts/inspect_compact_information.py --opponent F
+open results/compact-information-trace/real/report/tables.md
+```
+
+The browser reports one player's information benefit in chips. Earlier
+exploitability charts average both players' gains and divide by the initial
+pot; those are different units and summaries. The [method and limits](compact-information-trace.md)
+explain the proof and recorded-source replay. These are two known, narrow-range
+games, not competitive Hold'em validation. Codex assisted with implementation,
+execution and drafting; personal hours and understanding are not inferred.

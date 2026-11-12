@@ -109,3 +109,99 @@ hosted checks, a plain-English journal entry, work log, three interview Q&As and
 truthful commands. The outcome may justify a later prospective feature probe;
 this step itself selects/trains no feature and promotes no agent. Continue
 issue #4 only with evidence-supported bounded work; stop at the user's cutoff.
+
+
+## Completed trace — November 12, 2026
+
+All 144 fixed-opponent panels / 288 aliases / 133,632 owned rows replay, including
+zero-support rows. All 84,600 coarse-group rows are retained. Maximum accounting/
+parent-root disagreement is 1.0658141036401503e-13 chips, below 1e-9. Own command
+117.181582292 s; report 98.937734166 s, both below 900 s. Complete own f4824b2 was
+public before rendering. The [all-panel table](../results/compact-information-trace/real/report/tables.md),
+CSV exports and every compressed raw row remain. No learner/RNG/reference
+construction, new independent individual-row audit or admission occurred.
+
+In all three compact medium target-1-versus-S panels, group 873 contains one
+exact turn row (1611), own 9c 9d on Ts 9s 4d 2h. Its constrained reply folds;
+its finer-reply-suffix values prefer calling. By declared seed order:
+
+| Seed | B-R chips | Turn contribution | Finer call value | Fold value | Strict reachable groups |
+|---|---:|---:|---:|---:|---:|
+| 20261301 | 1.68907408859 | 1.68900823229 | -12.9751262 | -18 | 3 |
+| 20261302 | 0.818624181969 | 0.818596892079 | -15.5716222 | -18 | 4 |
+| 20261303 | 1.62602004833 | 1.62600876064 | -13.3752332 | -18 | 7 |
+
+The unmerged turn row is NOT a direct turn feature conflict. Its action values
+include finer future choices, which the constrained reply cannot use. The
+remaining R-prefix river losses are 0.0000658563010, 0.0000272898904 and
+0.0000112876885 chips. Small R-prefix river attribution does not rule out missing
+river distinctions: folding earlier suppresses later prefix reach. All conditional
+values/group members remain, rather than selecting only favorable illustrations.
+
+The same compact target-1 panels versus F have B-R zero in every seed. This is a
+statement about attacks available against those fixed own opponents, not a
+universal representation floor. The full-control policies show that this game's
+same information groups can support a low-exploitability profile; different work,
+updaters and averaging histories still prevent a pure causal sampling claim.
+
+All relative artifact hashes, 144-panel and 84,600-group CSV counts validate.
+Actual cached browser n/p/j/k/q navigation passes; default, both other seeds,
+rank 2's river conflict and the opposite player's river case were inspected.
+Cached browsing verifies published own/child bytes, every raw detail hash and
+unchanged named source blobs. It is intentionally distinguished from full math
+replay. Later added modules do not invalidate its unchanged-dependency check;
+full execution replay retains its recorded-source requirement.
+
+Source219f338 / 3b5b9878 passed both full local bases 3,217/64skip/149deselect,
+optional 513 on 3.11 and 511/2skip on 3.12, and both hosted43214557237 before
+outcomes. The actual tiny144/288/864 proof completed2.169484458s with maximum
+3.469446951953614e-17-chip error. Positive-information and overlapping-tie paths
+are covered by separate literal fixtures; toy aliases alone do not establish them.
+Final applicable publication checks remain before a history-preserving merge.
+
+**Next decision:** prospectively test finer OWN training opponents for the
+unchanged compact learner at matched total work, including the paired-coarse
+control. The trace itself neither trains this remedy nor proves it succeeds.
+All original gates, caps, seeds and failed outcomes remain; no default/fresh/
+global promotion follows this known-game diagnosis.
+
+## Commands
+
+```sh
+.venv/bin/python scripts/inspect_compact_information.py --interactive
+.venv/bin/python scripts/inspect_compact_information.py --rank 2
+.venv/bin/python scripts/inspect_compact_information.py --seed 20261302
+.venv/bin/python scripts/inspect_compact_information.py --opponent F
+```
+
+n/p moves groups, j/k moves the complete panel inventory, q exits. Browser output
+shows constrained-reply probabilities and finer suffix values, not the original
+sampled action probabilities. All data are simulation diagnostics.
+
+Full math replay uses the recorded 3.11.17/NumPy2.4.6/Numba0.68.1 runtime and the
+unchanged scientific source3b5b9878 at the published report commit:
+
+```sh
+.venv/bin/python scripts/trace_compact_information.py replay --own results/compact-information-trace/real/own.json --output results/runs/compact-information-replay.json
+```
+
+Use a fresh output name; no training or solver is constructed. Added source can
+require the recorded checkout for this strict execution replay, while the cached
+browser authenticates its original named source subset. Every original checker
+and scientific source is preserved. Journal103 gives a plain-English walkthrough.
+
+## Three interview questions
+
+1. **Why can a one-member turn row carry an information benefit?** Its conditional
+   action values use a finer best-reply suffix. The constrained responder folds
+   instead because it cannot use those later distinctions. Attribution at a turn
+   decision does not identify a turn feature collision or a causal street bug.
+2. **Why call with a negative value?** Net values include sunk chips. In the first
+   saved case, -12.975 is better than folding for -18. The difference is multiplied
+   by the restricted-reply-prefix reach to get this row's additive contribution;
+   it is not universal advice or a fresh match win rate.
+3. **What is independently checked, and is the agent stronger?** Prior native
+   receipts check B/R/achieved own reply roots for all source profiles. New row
+   decompositions use unchanged own math, independent literal tiny tests, full
+   numerical replay and telescoping identities, not a fresh native audit of
+   every conditional value. No new agent is trained or promoted by this trace.

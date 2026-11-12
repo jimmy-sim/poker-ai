@@ -67,6 +67,14 @@ joint profiles and 288 player responses pass independent scalar checks within
 [Journal step 102](docs/learning-journal.md#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
 explains the four combinations, plots and limits.
 
+The [saved-decision trace](docs/compact-information-trace.md) now follows that
+benefit to individual hands. All three compact sampled seeds point to the same
+turn call with 9c 9d; its value depends on finer future decisions, rather than
+a collision at that turn row. Browse the published data with
+`.venv/bin/python scripts/inspect_compact_information.py --interactive`.
+[Journal step 103](docs/learning-journal.md#103-find-the-concrete-decisions-behind-the-information-benefit)
+explains the negative values, reach weights and attacker/defender roles.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:
