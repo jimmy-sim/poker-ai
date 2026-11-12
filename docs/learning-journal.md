@@ -4614,3 +4614,10 @@ published bytes. It took26.34seconds. This means the frozen study is allowed to
 run, not that its strategy passed an accuracy test. The permit is published
 before the first new Hold'em trajectory; all36paths and every unfavorable seed
 will be retained. The full allowed caps plus verification still fit before10a.m.
+
+The full own comparison finished all36paths/324readouts in12.26minutes; saved
+metrics replayed with zero change. Its preliminary result is unfavorable to
+promotion: the harder game's candidate median is2.390%of the pot, above the
+fixed1%limit. Its worst seed is2.495%, just below the separate2.5%worst-seed
+limit. Passing one limit does not cancel failing the other. Every seed/control
+will be published before independent checking; the default agent stays unchanged.

@@ -3628,3 +3628,28 @@ This permits only the frozen36-path known-game research study, not accuracy, a
 stronger agent or default/fresh/global promotion. Publish the permit before
 starting. The full11100s study/audit/report/final-CI/save reserve fits before
 the user's10a.m.Pacific cutoff; parent/worker recheck permit/source before learning.
+
+### November 12 — complete real sampled own grid; audit pending
+
+Published permit486d29e precedes first new real trajectory. All36paths/36warm
+origins/108raw states/216average books/324readouts complete, original3.11.17/
+NumPy2.4.6/Numba0.68.1/source41b6. Complete command735.623852375s<7200;
+raw-state/work/RNG/normalization/journal/pipe replay324 with zero metric change,
+no retraining during replay. ALLcontrols/seeds/crossings retained. Initial OWN
+primary-final values below are pending independent audit, not admission.
+dev_low_oop/exact:median 2.02482310754e-09%pot,worst 2.07116552715e-07%pot; seeds 2.07116552715e-07,1.65007760542e-09,2.02482310754e-09.
+dev_low_oop/public_b8:median 1.65003593779e-09%pot,worst 1.86390995916e-08%pot; seeds 1.86390995916e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_b8:median 1.65003593779e-09%pot,worst 2.23571208186e-08%pot; seeds 2.23571208186e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_made_b8:median 1.65003593779e-09%pot,worst 2.25363420655e-08%pot; seeds 2.25363420655e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_range_q8_b8:median 1.65003593779e-09%pot,worst 2.25363420655e-08%pot; seeds 2.25363420655e-08,1.65003593779e-09,1.64920477823e-09.
+dev_low_oop/texture_range_q8_own_q8_b8:median 1.65003593779e-09%pot,worst 2.26489280006e-08%pot; seeds 2.26489280006e-08,1.65003593779e-09,1.64920477823e-09.
+dev_medium_oop/exact:median 0.292419682341%pot,worst 0.660690262712%pot; seeds 0.292419682341,0.660690262712,0.194613427468.
+dev_medium_oop/public_b8:median 0.292419682341%pot,worst 0.660690262712%pot; seeds 0.292419682341,0.660690262712,0.194613427468.
+dev_medium_oop/texture_b8:median 5.4085783262%pot,worst 7.79468119515%pot; seeds 5.4085783262,7.79468119515,5.23811949182.
+dev_medium_oop/texture_made_b8:median 4.31913150937%pot,worst 4.46315286224%pot; seeds 4.31913150937,4.46315286224,4.29838415609.
+dev_medium_oop/texture_range_q8_b8:median 2.79329180125%pot,worst 3.34947219867%pot; seeds 2.79329180125,0.375286609858,3.34947219867.
+dev_medium_oop/texture_range_q8_own_q8_b8:median 2.38991200503%pot,worst 2.49456769971%pot; seeds 2.49456769971,1.22545973317,2.38991200503.
+Candidate fails fixed medium median<=1%pot despite worst<=2.5%; do not change
+limits/readout/seed grid. Exact passes. No default/fresh/global promotion. Publish
+ALLown evidence before constructing the actual native reference. All-control
+whole average coverage includes warm mass; report post-warm support separately.
