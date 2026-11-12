@@ -3755,3 +3755,23 @@ Initial optional443passes77.40s (3.11),442passes/1runtime-specificskip75.79s
 A new complete source-bound local/optional/hosted cohort is required next.
 Method prose spacing and journal status are clarified without changing design.
 Installed OpenSpiel2.0.2 Apache2license reread in full; pinned digest unchanged.
+
+
+### November 12 — corrected fixed-opponent source checks pass before rehearsal
+
+Immutable sourcec6c384b, fingerprint2670f3f6, passes all six required roles.
+Full local bases3152passed/63skipped/149deselected each,604.24s (3.11) and585.21s
+(3.12); Ruff/802formattedfiles/strict typing672files/hooks pass. Focused locked
+ALL-EXTRAS447passes94.81s on3.11;446passes/1recorded-runtime-specificskip94.02s
+on3.12. BOTH exact-head hosted43207761909 jobs131147296682/131147296281 pass.
+Raw decoded logs, full GitHub head/job metadata, install logs, local receipts and
+wrapper retained with the six-role bound checks.json; gate validates its digest.
+The superseded initial bases3148passeseach and443/442optional remain locally
+retained, not substituted for the corrected cohort. One failed worktree setup
+attempt (missing sandbox write access to shared Git metadata) ran no tests or
+experiment and was retained separately before successful isolated setup.
+
+Prospective seeds/complete caps/144logical/288target grid and failed sampled
+accuracy gate stay unchanged. No new poker diagnostic outcomes have been
+collected. Next is the actual checked-source tiny own rehearsal, publication,
+then scalar comparison; only its published complete proof admits real diagnosis.

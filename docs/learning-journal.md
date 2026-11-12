@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
+
 - [Test whether the smaller description learns under sampling](#101-test-the-smaller-description-at-the-same-learning-work)
 
 - [Rehearse and check the full-control test](#100-check-the-test-before-trusting-the-new-description)
@@ -4648,3 +4650,10 @@ so four new tests now reject those lookalikes. All 73 focused checks pass after
 the fix. Full source checks are being repeated for the corrected code; the
 previous optional passes do not authorize a changed implementation. No poker
 diagnostic result has been collected yet.
+
+
+The corrected implementation now passes both complete base suites (3,152 tests
+each), relevant optional checks (447 on Python 3.11; 446 and one skip on 3.12),
+and both GitHub jobs. The skip needs the original archive's exact runtime and
+is exercised on 3.11. The next step is a tiny-game rehearsal with the actual
+archive pipeline. Passing that will validate the software path, not poker strength.
