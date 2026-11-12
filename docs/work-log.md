@@ -4145,3 +4145,40 @@ required all-own checkpoint BEFORE ANY nativecost construction. No changed
 code/seed/cap/gate/environment setting between repetitions; no favorable subset.
 Native0/1/2 full432/1152 scalar audits, complete forecast and checked published
 permit remain before a real study; full11100s reserve and10a.m.cutoff unchanged.
+
+
+### November 12 — compact training remedy denied compute admission
+
+
+**Compute admission fails; no new compact/finer-opponent trajectory was run.**
+The complete fictional software proof passed all 432 profiles / 1,152 conditions
+within 47.276234 seconds shared, and all required source checks passed before
+collection. All three own costs were published before any independent cost.
+Every fixed cost completed under its 900-second command cap, with exact own
+policy/book replay and all 432 / 1,152 independent scalar checks passing.
+
+| Fixed repetition | Complete own seconds | Complete independent seconds | Largest independent error (chips) |
+|---|---:|---:|---:|
+| 0 | 308.323405 | 533.671665 | 1.84741e-13 |
+| 1 | 309.275252 | 545.105072 | 1.84741e-13 |
+| 2 | 305.314505 | 544.434855 | 1.84741e-13 |
+
+The complete [forecast](../results/compact-own-opponent-learning/forecast.json)
+replays all three own archives and validates every independent raw worker,
+publication witness, complete clock and source/input seal. It takes
+655.200384 seconds under 900. From all 24 original timing
+paths, T=610.943356249918; D=309.275251667001; N=545.105072250000 seconds. The unchanged
+own forecast 2*(2*T+D+600)=4262.323928<7200 passes. The unchanged
+independent forecast 2*(N+60)=1210.210145<900 is **false**.
+A command fitting its individual cap is insufficient for the conservative
+admission forecast. No favorable repetition is discarded and no gate/cap is
+changed. These are wall times on the recorded workstation, with routine light
+administrative work during collection, not exclusive-machine speed benchmarks.
+
+No study permit is created, no new real learning starts, and the failed compact
+sampled accuracy result remains. The paired/treatment cost curves reuse old
+OWN tables by construction; they never measure the proposed training remedy.
+The next separate [profiling milestone](https://github.com/jimmy-sim/poker-ai/pull/60)
+measures a full replay before selecting any lossless optimization. An optimized
+source must earn its own checks, fixed costs and admission; this result cannot
+be rescued by profiler timings. No default/fresh/global or stronger-agent claim.

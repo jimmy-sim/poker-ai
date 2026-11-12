@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the compact training remedy waits for a faster audit](#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
+
 - [Inspect the actual decisions behind the information benefit](#103-find-the-concrete-decisions-behind-the-information-benefit)
 
 - [Why the opponent must stay fixed](#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
@@ -50,6 +52,9 @@ game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 expla
 all controls, the independent checks and what the failure means. Step 102
 now diagnoses the saved failure while holding each opponent fixed. Step 103
 traces that benefit to inspectable turn and river decisions.
+Step 104 now completes the proposed compact training remedy's software proof and
+cost checks, but compute admission fails. The actual new training comparison
+has not run; verification cost must be profiled before optimization.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4896,3 +4901,19 @@ summary and three plots reproduce byte for byte. The charts were visually
 checked; their labels say zero new learning. The paired control and treatment
 coincide here because they reuse old tables by construction, not because a new
 training experiment found no difference. The independent cost runs are next.
+
+
+The complete cost record now blocks the real comparison. All three independent
+runs pass the same 432 strategy / 1,152 condition checks, but their slowest complete
+command needs545.11 seconds. The predefined safety formula doubles that time
+plus 60 seconds, giving1210.21 seconds against a 900-second
+limit. It fails. The own-work forecast passes at4262.32 seconds
+against 7,200, but both must pass. The [full forecast and every timing](compact-own-opponent-learning.md#recorded-compute-decision--november-12-2026)
+are retained; no seed, cap or rule changes to turn it into a pass.
+
+This is not another measurement of the model's playing strength: the new compact
+training remedy has not run. It is a refusal to start a long experiment whose
+complete verification currently costs too much. The next profiling step keeps
+all checks and compares normal versus instrumented full replay for identical
+results. A profiler tells us where time goes before we change code. It does not
+make a stronger agent by itself. No new permit or agent default was created.
