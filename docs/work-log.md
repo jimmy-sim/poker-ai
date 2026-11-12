@@ -3934,3 +3934,16 @@ reference construction or poker-strength result. One-to-one aliases are zero-
 information software cases; separate literal hidden-world tests cover positiveI
 for both players and overlapping ties. Full own/child/144details are published
 here before real tracing. No scientific caps/seeds/gates/admission changed.
+
+
+### November 12 — publish complete real information trace before report
+
+No-training own trace completes 117.1815822919998s <900s. All144fixed-opponent
+panels/288sourcealiases/133632owned decision rows replay, maximum accounting/
+root error 1.0658141036401503e-13chips <1e-9. All raw row/menu/R-prefix
+reach/conditional-value/group/street/alias detail files plus own/child manifests
+are published here BEFORE report rendering. Complete source/prospective/tiny
+proof gates precede this collection; old B/R scalar audit is reused only as
+a comparison receipt. No new learner/RNG/reference construction, independent
+row-value audit, feature selection or model/default/accuracy admission. Report
+and concrete interpretation are next; original sampled gate remains failed.
