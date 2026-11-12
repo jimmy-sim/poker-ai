@@ -1,0 +1,64 @@
+{
+  "expected": {
+    "boundaries": 108,
+    "compositions": 108,
+    "fixed_conditions": 1152,
+    "paths": 30,
+    "raw_books": 216,
+    "raw_policies": 324,
+    "unique_profiles": 432,
+    "warm_origins": 30
+  },
+  "forecast": {
+    "data": "Three COMPLETE data-only own pipeline cost repetitions on all432 profile contexts and1152 fixed targets using explicitly old OWN policies only as cost stand-ins, including source loading, archive construction, replay and report; D=max end-to-end seconds. No new poker timing trajectory and no strength claims.",
+    "failures": "No favorable subsets, missing stage estimates, cherry-picked retries, shortened caps or continuation after failed admission. Publish own data-only evidence before first native construction.",
+    "native": "Three complete independent cost repetitions over the exact432/1152 data-only stand-in inventory, all construction/replay included; N=max seconds.",
+    "native_rule": "2*(N+60) strictly below900",
+    "own_rule": "2*(2*T+D+600) strictly below7200",
+    "training": "Require complete24 original B4 paths (2games x2encodings x2regret rules x3seeds), all original complete path seconds/setup/work. For each new path use maximum original complete B4 seconds among all12 rows of its own game, with NO half-budget discount. T=max of sums over fixed path-index modulo3 assignment. This deliberately charges a full historical10m cost even for each5m component."
+  },
+  "input_sha256": {
+    "results/reduced-batch-study/native.json": "9fcf56d986151d7871634f2bc3e9976b87edea592d42258c10511856f82f6968",
+    "results/reduced-batch-study/own-currents.jsonl.gz": "48d70fff85afd8c4cac785fe7b9c74da290901a5200d670f1b161cdd1af2bb26",
+    "results/reduced-batch-study/own-masses.jsonl.gz": "a3b2f41955d86ec1e97e0d1ffc9899d607758499bb4aa03f6853cfbf78eb2cc5",
+    "results/reduced-batch-study/own-profiles.jsonl.gz": "1e78d307fdd1265383f60affa5eee6910d15c4b11c6071a27a1476f16055686f",
+    "results/reduced-batch-study/own.json": "cc7c4477f47ac012d3571d18a86788f9d4301142ae47e050b1d3b2aa505476b2"
+  },
+  "limits": "Shape/cost measurement only. No real/new strategy learning, original-runtime prefix proof, playing-strength selection, agent default or fresh/global admission. Preserve all repetitions and partial/failing evidence; publish own before native construction.",
+  "maximum_forecast_native_seconds": 900,
+  "maximum_forecast_own_seconds": 900,
+  "mixed_projection": "Old own coarse role lifted into the refined compact view and old exact other role, same original source endpoint/seed. Combined policy/books are cost projections only, never learner inputs or experimental strength results.",
+  "native_repetitions": [
+    0,
+    1,
+    2
+  ],
+  "new_learning_iterations": null,
+  "new_learning_rng_entropy": null,
+  "new_training_nodes": 0,
+  "original_B4_crossing_proof": false,
+  "original_source_ids_and_actual_old_work_required": true,
+  "own_repetitions": [
+    0,
+    1,
+    2
+  ],
+  "parent_config": "configs/compact-own-opponent-learning.json",
+  "parent_sha256": "46922073b88796463ae5c911e6de5eea29de788f7b3fbd3e96275d11c9845d8d",
+  "real_training_admission": false,
+  "registered_comment": null,
+  "schema_version": 1,
+  "scope": "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING",
+  "source": "All original signed IID-B4 own current/average/mass archives, same game/scalar seed/encoding; no selection by outcomes. New compact partition must refine the original coarse partition.",
+  "source_label_map": {
+    "100000": 100000,
+    "1000000": 1000000,
+    "10000000": 10000000,
+    "50000": 100000,
+    "500000": 1000000,
+    "5000000": 10000000
+  },
+  "status": "prospective_data_only_cost_standins_not_trajectories",
+  "compact_representation": "texture_range_q8_own_q8_b8",
+  "compact_book_projection": "Lift each original coarse post-warm book density into refined compact rows using the new/old exact-uniform warm-mass ratio, then add the exact new warm mass. Preserve nonnegative monotone windows. These projected books and combined mixed views were never jointly learned; they are data-only shape/cost stand-ins. Retain original source IDs/work and both before/after hashes; no original B4 crossing proof from a cost projection."
+}

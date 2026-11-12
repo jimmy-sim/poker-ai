@@ -1,0 +1,379 @@
+{
+  "arms": [
+    "coarse_self",
+    "coarse_pair",
+    "mixed_pair",
+    "fine_self"
+  ],
+  "coarse_representation": "texture_range_q8_own_q8_b8",
+  "expected": {
+    "actual_paths": 30,
+    "composed_profiles": 108,
+    "fixed_targets": 1152,
+    "logical_profiles": 216,
+    "original_B4_boundaries": 36,
+    "raw_boundaries": 108,
+    "raw_ledgers": 216,
+    "raw_profiles": 324,
+    "unique_profiles": 432,
+    "warm_origins": 30
+  },
+  "forecast": {
+    "data": "Three COMPLETE data-only own pipeline cost repetitions on all432 profile contexts and1152 fixed targets using explicitly old OWN policies only as cost stand-ins, including source loading, archive construction, replay and report; D=max end-to-end seconds. No new poker timing trajectory and no strength claims.",
+    "failures": "No favorable subsets, missing stage estimates, cherry-picked retries, shortened caps or continuation after failed admission. Publish own data-only evidence before first native construction.",
+    "native": "Three complete independent cost repetitions over the exact432/1152 data-only stand-in inventory, all construction/replay included; N=max seconds.",
+    "native_rule": "2*(N+60) strictly below900",
+    "own_rule": "2*(2*T+D+600) strictly below7200",
+    "training": "Require complete24 original B4 paths (2games x2encodings x2regret rules x3seeds), all original complete path seconds/setup/work. For each new path use maximum original complete B4 seconds among all12 rows of its own game, with NO half-budget discount. T=max of sums over fixed path-index modulo3 assignment. This deliberately charges a full historical10m cost even for each5m component."
+  },
+  "fresh_global_admission": false,
+  "frozen_controls": [
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "db09d7af3f23a023e5594c0fbb1b67c65a6635064dce245e3534d3d47f2ec193"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "5688bf99c671dcce50fcbc2e83576dc23196a9eeddb86925eed89b5a85f925b9"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "e49bac199ca192201a90919f6e33423bb7725d3fe8d4763e0d22c17017ba9d93"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "cc6d26278b8036a85af3354366bbc177c32116cd54cc783a929fa6921c1a7867"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "db09d7af3f23a023e5594c0fbb1b67c65a6635064dce245e3534d3d47f2ec193"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "ce6ab3d47c9e609e9bbef9b54e2310fc99831ed951607554a267619ff1c28235"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "e49bac199ca192201a90919f6e33423bb7725d3fe8d4763e0d22c17017ba9d93"
+    },
+    {
+      "case": {
+        "average_weight": "linear",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"linear\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "eb4604a7fb9e04d289149f2a1951c811dd75704f8e177e9934e05b7530da0936"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "060e551a1da8dca3ad0843e431b8cd4577a6eb9e30daed227893fe473e08fb7b"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "6ef24ade7c68b9286d08f9e64052339c5ea87bdbcacae1dbdb8dbe5ddee48f0a"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "e78cb7647eae05e5bbdb0770238549205aa2ce8e7bf19d1e0d916c39c7178d6c"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "clipped",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"clipped\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "e0fb9b48dcc1cf1af633aaac09f5114ee174f2a0fc91752ebf141271124a31b0"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "060e551a1da8dca3ad0843e431b8cd4577a6eb9e30daed227893fe473e08fb7b"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "exact",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"exact\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "c1a3529e9d8eecb05569983577ca155343ace41f5921727417c489630bba551d"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_low_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_low_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "e78cb7647eae05e5bbdb0770238549205aa2ce8e7bf19d1e0d916c39c7178d6c"
+    },
+    {
+      "case": {
+        "average_weight": "uniform",
+        "bridge": "common",
+        "regret_rule": "signed",
+        "regret_weight": "linear",
+        "representation": "texture_range_q8_b8",
+        "seed": null,
+        "spot_file": "configs/learning-spots/dev_medium_oop.json",
+        "traversal": "full"
+      },
+      "id": "{\"average_weight\": \"uniform\", \"regret_rule\": \"signed\", \"representation\": \"texture_range_q8_b8\", \"seed\": null, \"spot_file\": \"configs/learning-spots/dev_medium_oop.json\", \"traversal\": \"full\"}",
+      "policy_sha256": "a6a1729f56e644284a499a1f537a1b198330f165f4136cc42e28eb77408fa962"
+    }
+  ],
+  "input_sha256": {
+    "configs/exact-opponent-views.json": "6c1060ee37c544e8ad3aee97ae3cf2574a36b8a4bf01224a3e7c211319c9c880",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/range-mass-protocol.json": "fe16eca6bbf018ada07e30a6c688dcd15d9eeeeb87599db962356dbc6a35ce89",
+    "configs/reduced-batch-study.json": "767bbfa378e9935980e08f3925ef277c0507e8c5b91b1f855fc4e19828f3cfb5",
+    "results/batch-current-diagnosis/native.json": "c67e560d7b205d937d94fbaf81a551664b455cac415c058d416929b137615e89",
+    "results/batch-current-diagnosis/own.json": "3ed627c56cb3c590fdd395f3e70595c1669bb018534d4f82468ce6b886fc26df",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/controlled-learning/native.json": "183c5d961cec13f03d74956eca3a7abf4a0effcf76378e67a2a51c15d816ecdc",
+    "results/controlled-learning/own-profiles.jsonl.gz": "8a0e2494584763365e2dd607be16992984f553b32397d7d3c92f19ae21e9e054",
+    "results/controlled-learning/own.json": "a59d1fd00c50cd8b703764a3158133f624b4e1020bf4211731fec4f58a63a9db",
+    "results/opponent-information/software-views/checks.json": "d02af76a8f57e3569546818d3e30bea529f0003ddf57a8aef78687dfc0c2018d",
+    "results/opponent-information/software-views/correctness311.json": "c8bdb9ac85c4bca4539810839ebab8e4e052ac34a29db6883e25887112fde8ac",
+    "results/opponent-information/software-views/correctness312.json": "6f3e5a7259df4fad4797f0c51d4f03ad2964c4069ef64348bb67b82e83b56dee",
+    "results/reduced-batch-study/native.json": "9fcf56d986151d7871634f2bc3e9976b87edea592d42258c10511856f82f6968",
+    "results/reduced-batch-study/own-currents.jsonl.gz": "48d70fff85afd8c4cac785fe7b9c74da290901a5200d670f1b161cdd1af2bb26",
+    "results/reduced-batch-study/own-masses.jsonl.gz": "a3b2f41955d86ec1e97e0d1ffc9899d607758499bb4aa03f6853cfbf78eb2cc5",
+    "results/reduced-batch-study/own-profiles.jsonl.gz": "1e78d307fdd1265383f60affa5eee6910d15c4b11c6071a27a1476f16055686f",
+    "results/reduced-batch-study/own.json": "cc7c4477f47ac012d3571d18a86788f9d4301142ae47e050b1d3b2aa505476b2",
+    "configs/own-opponent-learning.json": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+    "configs/own-opponent-cost-standins.json": "13828f6f7ba0678a73575b6e625039850ba7967c2ef384d2823d977554cde03b",
+    "configs/compact-public-range.json": "f2a5d7630580e8731c652c29363f970a361a76e10b040850e5bb57e546f31314",
+    "configs/compact-sampled.json": "ccd5c244224b9fe3852f4d1f912194207f6f3ef5e1de33093695957376ed43e4",
+    "configs/compact-information-trace.json": "78c8f2c5229c1dcf3b1cb6eb2f8a6dceded73ae19fc48d6f52ec92db5af8931b",
+    "results/compact-sampled/checks.json": "aa517a39c55696bfa67482a765de577de75d6e23ebd17480c44174a56bc428d6",
+    "results/compact-sampled/real/own.json": "efd22a1b28532a8208c638046225eacef683b5aa79419cf7fd94fede0a4a5f1f",
+    "results/compact-sampled/real/native.json": "4fbd08eafc72fab103752417d27598521d08b451c503e4f76986c36aea0aa214",
+    "results/compact-sampled/real/result.json": "abe1bba51023adb7fa5cfb96a052a38eae3938477b390c5cc910f8c44f2bb118",
+    "results/compact-full-control/own.json": "2aa37c6df4a7d76303605253b2b943b2581adee4e93eea4edff9c2d900169102",
+    "results/compact-full-control/native.json": "b5d987905fa02c5f0bf89d085c7d25c94cc07529f2e9a78a15db7db29a130f07",
+    "results/compact-full-control/result.json": "bb9ba546f0be188bdc35667ac0fe1bd3d2072ce04edbef280eb8acf2c9b15ef3",
+    "results/compact-information-trace/real/own.json": "a3fad5a0387ffbfe29ce77c4ae75f116ecd0f5c71f53c10894b7dd14b1b6562f",
+    "results/compact-information-trace/real/report/result.json": "3e0b82f44d8be2f835323297abb4d880402eec9152beea0dbea0bd52b323049e"
+  },
+  "issue": 4,
+  "long_run_admitted": false,
+  "maximum_forecast_native_seconds": 900,
+  "maximum_forecast_own_seconds": 900,
+  "maximum_native_seconds": 900,
+  "maximum_own_seconds": 7200,
+  "maximum_software_seconds": 180,
+  "model": "results/card-models/potential-8.json",
+  "native_reference": {
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "name": "OpenSpiel",
+    "use": "independent scalar evaluation only, outputs never loaded into learner",
+    "version": "2.0.2"
+  },
+  "new_agent_default": false,
+  "paths": [
+    "coarse0",
+    "coarse1",
+    "mixed0",
+    "mixed1",
+    "fine"
+  ],
+  "prefix_reuse": "coarse0 whole-path W/2 prefix reused by paired control; all warm starts and updates charged logically, actual execution charged once; guarded extra captures preserve original controls",
+  "prefix_runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.17"
+  },
+  "primary": "mixed_pair at10m total charged work, signed/linear/linear IID B4 texture_range_q8_own_q8_b8; no secondary readout rescue",
+  "prospective_comment": null,
+  "quality": {
+    "all_seeds_and_readouts": true,
+    "coverage": "Report all/river, row/uniform-reach, whole/post-warm own-coarse coverage separately; retain warm support distinction. Coverage and all unchanged source gates remain required.",
+    "maximum_recall_violations": 0,
+    "minimum_uniform_reach_average_coverage": 0.95,
+    "paired_median_improvement": "coarse_pair minus mixed_pair exact exploitability at final primary readout; strictly positive median separately in BOTH known games",
+    "per_game_primary_median_pct_limit": 1.0,
+    "per_game_primary_worst_pct_limit": 2.5,
+    "scope": "known-game diagnostic only, no default/fresh/global admission"
+  },
+  "readouts": [
+    "current",
+    "uniform_average",
+    "linear_average"
+  ],
+  "schema_version": 1,
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "software_foundation_commit": "05a00d6022719c637c80d2ed12f477f86ec835f6",
+  "software_gate": "Full30path/108boundary/324raw/216mass/108composition/432score/1152fixed tiny-game capture/archive/replay/native integration and failure/schema proof under180s. Mark fictional logical labels, publish own evidence before native, use one shared deadline for software stages. New source-bound local base/optional and both hosted jobs, complete fixed forecast and checked published admission BEFORE any new real trajectory.",
+  "spot_files": [
+    "configs/learning-spots/dev_low_oop.json",
+    "configs/learning-spots/dev_medium_oop.json"
+  ],
+  "start_method": "spawn",
+  "status": "prospective_compact_own_opponent_information_diagnostic_not_admission",
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "update": {
+    "average_weight": "linear",
+    "backend": "ReducedDispatchBatchTrainer",
+    "batch_size": 4,
+    "initialization": "unchanged simultaneous uniform exact expectation charged2N",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "rng": "PCG64 scalar seed for role0; PCG64 SeedSequence([seed,1]) for role1; role entropy matched between control and treatment"
+  },
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "worker_count": 3,
+  "study_id": "compact-own-opponents-20261112",
+  "parent_design": "configs/own-opponent-learning.json",
+  "parent_design_sha256": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+  "deadline_reserve_seconds": 11100,
+  "baseline_source": "results/compact-sampled/real/own.json",
+  "baseline_control_representations": {
+    "coarse0": "texture_range_q8_own_q8_b8",
+    "fine": "exact"
+  },
+  "compact_full_gate_required": true,
+  "baseline_binding": "Replay all original compact-sampled sources, then compare all36 coarse0/fine ordinary B4 boundaries against the compact/exact original snapshots: work/iteration/guards/RNG-related fingerprints/current/averages/raw books, no probability translation or relaxed bit checks. Extra half-budget observations are guarded and charged.",
+  "frozen_control_binding": "Retain the same eight original own full controls per game unchanged. Their parent coarse representation differs from the new compact learner: validate against the original old context before expanding to the common fine game. Never load these comparison policies into a learner."
+}

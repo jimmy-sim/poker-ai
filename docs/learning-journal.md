@@ -4800,3 +4800,26 @@ pot; those are different units and summaries. The [method and limits](compact-in
 explain the proof and recorded-source replay. These are two known, narrow-range
 games, not competitive Hold'em validation. Codex assisted with implementation,
 execution and drafting; personal hours and understanding are not inferred.
+
+## 104. Test whether a finer own training opponent helps the compact learner
+
+November 12, 2026. The trace shows an attack a finer responder can use against
+the sampled opponent. The next [prospective comparison](compact-own-opponent-learning.md)
+keeps the compact learner's information groups and work budget fixed, while
+letting its own training opponent distinguish its own cards/public board more
+precisely. That opponent still cannot see the learner's hidden cards. No
+reference solver strategy is used in learning.
+
+We will compare four arms: ordinary compact self-play, two half-budget compact
+controls, two half-budget compact/fine learning games, and ordinary fine
+self-play. The paired compact control matters: otherwise an apparent improvement
+could come from splitting training across two games instead of finer information.
+Both players' updates and initialization count in each budget.
+
+All original seeds and gates remain, including strict improvement in both known
+games. A zero improvement in the already-near-zero low game can still fail that
+rule. Implementation, software proof, conservative forecast and admission are
+pending; no new model or strength result exists yet. The full capped study
+must fit before the user's 10 a.m. stopping time, or we stop at a tested smaller
+milestone. No automatic future window is created. Codex assists with the work;
+personal hours and understanding are not inferred.

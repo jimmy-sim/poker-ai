@@ -3978,3 +3978,26 @@ compact sampled accuracy remains failed. Next justified separate test is finer
 OWN opponents for the unchanged compact learner, with paired coarse/fixed-work
 controls and all original seeds/caps/gates, not an assumed fix. Final applicable
 local base/hosted checks and solo self-review remain before history merge.
+
+### November 12 — prospective compact finer-own-opponent comparison
+
+After the complete PR58 trace, register a matched-work training remedy before
+new trajectories/outcomes. Keep the compact learner fixed; compare ordinary
+compact, paired compact, mixed compact/fine own opponents and ordinary fine.
+Preserve old five-path/30actual-path/108boundary/432profile/1152fixed-target design,
+three seeds, scalar/role1PCG64 streams, 100k/1m/10m total-work labels, exact2N
+initialization, both-player charges and ALLoriginal strict quality gates. In
+particular low-game zero improvement stillfails strict superiority; no rescue.
+All36 ordinary compact/exact B4 barriers bind the original compact-sampled raw
+states; original8own full controls/game remain comparison-only and are expanded
+from their original parent encoding, not loaded into the learner.
+
+New pinned design/cost contracts require complete source/local/optional/hosted
+checks, actual full432/1152tiny shared180s proof, all3own-cost publications before
+ANYnativecost, all3nativecosts, unchanged conservative24path historical forecast,
+and checked published admission before any7200s real study. Own/native/report
+caps7200/900/900 unchanged; full11100s reserve means no current-window study start
+after6:55Pacific. Costs are explicitly nontraining refinement/density projections,
+not original-prefix or strength evidence. No new trajectory/feature/default/
+fresh/global admission exists. PR58 final publication checks are still running;
+this separate draft is stacked on its published9f2e122 before implementation.
