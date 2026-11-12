@@ -34,7 +34,28 @@ selected restricted games after freezing the method and inputs in advance.
 No competitive playing-strength result has been established.
 All gameplay is restricted to simulation and permitted public bot benchmarks.
 
-**Latest research — November 11:** training the unchanged coarse learner against
+**Latest research — November 12:** the compact blocker-aware description passes
+its fixed **full-control admission** on both known turn games. At4,096 full
+CFR+ iterations, linear-average policies give:
+
+| Game | Exact exploitability (% pot) | Compact candidate (% pot) | Candidate / raw-public rows |
+|---|---:|---:|---:|
+| Low |0.0000024545|0.0000025771|130 /364 (35.7%)|
+| Medium |0.00018229|0.00017718|1,770 /3,336 (53.1%)|
+
+All72 saved policies pass own replay and independent OpenSpiel value/BOTH-BR
+checks (maximum error1.35e-13 chips). Own/audit complete commands take50.7/25.0s
+inside unchanged900/900s caps. **Key strings are larger**, so fewer rows do not
+establish whole-memory savings. These are two known, separately trained games;
+sampled learning, fresh/global strength and the default agent remain unchanged.
+[Full method and all controls](docs/compact-full-control.md),
+[complete tables](results/compact-full-control/report/tables.md), and
+[journal100](docs/learning-journal.md#100-check-the-test-before-trusting-the-new-description)
+explain the result.
+
+![Full-control known-game learning; colors are representations, lower is better](results/compact-full-control/report/full-controls.png)
+
+**Previous sampled research — November 11:** training the unchanged coarse learner against
 finer **own** opponents improves the harder known turn spot. At 10 million
 charged node visits, final linear averages over all three fixed seeds give:
 
@@ -70,11 +91,11 @@ are retained; this is a saved-data diagnostic, not a trained strength gain.
 [Journal step 98](docs/learning-journal.md#98-ask-which-hands-each-player-can-still-represent) and the [terminal exercise](docs/terminal-two-sided-lab.md) explain how to
 browse the masks and remaining conflicts.
 
-A [compact candidate definition](docs/compact-public-range.md) now pools public
-own-range removal and hand categories into one 30-bit river word, appended to the
-existing range-aware key. It has correctness/privacy/structural and synthetic
-acceptance tests. Candidate row compression and learned strength remain
-unmeasured; it does not inherit the preceding diagnostic's conflict reduction.
+The [compact candidate definition](docs/compact-public-range.md) pools public
+own-range removal and hand categories into one30-bit river word, appended to the
+existing range-aware key. Its own full-control measurement above follows the
+prospective gates; it does not inherit the preceding diagnostic's conflict count.
+The separately specified fixed-work sampled comparison remains a later step.
 
 ![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
 

@@ -3474,3 +3474,17 @@ Allcontrol final uniform coverage1.0. These are OWN figures pending independent
 audit; actual_admission staysFalse. Key UTF8bytes150986/1985885 exceed rawpublic
 125226/1079292; fewer rows are not whole-memory savings. Publish allown evidence
 before constructing the real comparison reference; retain allcontrols/checkpoints.
+
+### November 12 — compact full-control admission passes
+
+All72real own policies were publicbb73102 before real OpenSpiel construction.
+Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13chips, complete
+25.00606195799992s. Authenticated result/report passes all11 frozen full checks
+onboth known turn games. Candidate epsilon%pot2.5771334e-6/0.00017718449 and
+rows130/364 (35.7143%),1770/3336 (53.0576%). Allcontrols uniform coverage1.0;
+recall0/menus/context/work/source good. Report45.7460s includes temporaryfontcache;
+allcontrol/checkpoint/layout/signed-difference CSVs/tables and both plots retained
+and visually checked. OwnpeakRSS394985472bytes lifetimeonly; largerUTF8keys mean
+no whole-memory savings claim. No sampled/fresh/global/default/superiority
+promotion. Oldfailuresretained. README/method/journal100updated; finalhostedCI
+onfinalpublicationhead remainsmergegate. Stopafterverifiedpublication/mainchecks.

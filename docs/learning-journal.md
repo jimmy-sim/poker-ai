@@ -34,10 +34,11 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
-The compact river description now has a full-control admission pipeline under
-construction in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100
-explains the checks required before its first measured learning run. Its playing
-strength remains unmeasured; the earlier results below still describe the agent.
+The compact river description passes full-control admission on both known turn
+games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
+its saved strategies, independent check, smaller strategy tables and larger key
+strings. Fixed-work sampled learning is still untested; the default agent and
+previous sampled results below remain unchanged.
 
 November 11 update: issue #4 has a measured improvement in the harder known spot.
 Training against finer own opponents reduces mean exploitability from 2.173%
@@ -4455,3 +4456,43 @@ public information. Its own exploitability calculation is near the exact control
 Those numbers still need independent verification. The key strings themselves
 are larger than raw-public keys, so fewer strategy rows do not prove lower total
 memory. Publish the whole own grid before asking OpenSpiel to check it.
+
+**Full-control result:** the complete report passes every predeclared gate on
+both known turn games. The new description uses130 of364 raw-public rows in the
+low game (35.7%) and1,770 of3,336 in the medium game (53.1%). On the medium game,
+its final exploitability is0.000177% of the initial pot, near the exact control's
+0.000182%. All72 saved policies agree with OpenSpiel's value and both best-response
+calculations within1.35e-13 chips. The complete own/audit commands take50.7/25.0s.
+
+Open [the learning curves](../results/compact-full-control/report/full-controls.png).
+Each color is an information description, not a different opponent. Left and right
+are the low and medium games. Moving right means more full-tree iterations; lower
+means less vulnerability to a best response. Both axes use logarithmic scales.
+Brown is the new candidate; it overlaps the exact/raw-public curves. Purple is
+the earlier range-aware description. On the low game almost everything overlaps.
+The vertical axis is a fraction of the pot; multiply by100 for the table's percent.
+
+Open [the row counts](../results/compact-full-control/report/row-counts.png). The
+last bar is the candidate. The dotted line is its fixed75%-of-raw-public limit.
+Being below that line is useful only alongside the accuracy and audit checks.
+It does not show total RAM: the candidate's serialized keys are larger.
+
+This supports the next fixed-work sampled test. It does not establish that the
+current default agent improved, that the feature generalizes, or that its extra
+information can be learned efficiently under sampling. The games were already
+used to diagnose the weakness. The older unfavorable sampled results remain.
+Final publication CI is a merge gate recorded on PR55; stop at this milestone.
+
+After updating the checkout, try these directly in Terminal (one command per line):
+
+```sh
+open results/compact-full-control/report/full-controls.png
+open results/compact-full-control/report/row-counts.png
+.venv/bin/python scripts/validate_compact_full.py replay --own results/compact-full-control/own.json --output results/runs/compact-full-local-replay.json
+```
+
+The replay should report72 checked profiles in its saved JSON and exit successfully.
+It trains nothing. Use a fresh output name if that file already exists. The saved
+archive is bound to its published source/runtime; later source changes may require
+a checkout of the recorded revision. Codex assisted with code and execution;
+personal practice, time and mastery are not inferred.
