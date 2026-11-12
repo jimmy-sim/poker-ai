@@ -38,6 +38,10 @@ with isolated(worker=False):
             assert all(
                 np.all(b >= a) for a, b in zip(books, books[1:], strict=False)
             )
+            for work,book in zip((100_000,1_000_000,10_000_000),books,strict=True):
+                average=data.members[coordinate,"coarse",work,weight+"_average"].values
+                tree=data.context_for(coordinate).coarse
+                assert np.array_equal(tree.normalize(book),average)
     assert all(
         m.identity["learned_compact_values"] is False for m in data.members.values()
     )

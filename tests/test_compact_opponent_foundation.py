@@ -20,7 +20,11 @@ from poker_ai.evaluation.compact_opponent_contract import (
     cost_contract,
     input_pins,
 )
-from poker_ai.evaluation.compact_opponent_projection import lift_mass, lift_policy
+from poker_ai.evaluation.compact_opponent_projection import (
+    lift_book_and_average,
+    lift_mass,
+    lift_policy,
+)
 from poker_ai.evaluation.frozen_batch_replay import warm_mass
 from poker_ai.evaluation.opponent_learning_capture import trainer
 from poker_ai.evaluation.opponent_learning_contexts import Contexts, software_context
@@ -133,6 +137,39 @@ def test_book_before_warm_and_nonfinite_book_are_rejected(
     values.flat[0] = np.nan
     with pytest.raises(ValueError):
         lift_mass(old, new, mapping, values)
+
+
+def test_cost_average_is_bit_exact_with_its_lifted_book(
+    real_contexts: tuple[Contexts, Contexts],
+) -> None:
+    old, new = real_contexts
+    mapping = refinement(old, new)
+    coefficients = np.resize(
+        np.array(
+            [
+                0.123456789,
+                0.987654321,
+                0.333333333,
+                0.777777777,
+                0.314159265,
+                0.271828182,
+                0.161803399,
+            ]
+        ),
+        old.coarse.legal.shape[1],
+    )
+    book = warm_mass(old.coarse) + old.coarse.legal * coefficients
+    average = old.coarse.normalize(book)
+    lifted, policy, receipt = lift_book_and_average(old, new, mapping, book, average)
+    assert np.array_equal(new.coarse.normalize(lifted), policy)
+    assert policy.flags.writeable is False
+    assert receipt["average_origin"] == "exact_normalization_of_lifted_cost_book"
+    assert receipt["maximum_old_probability_difference"] <= 1e-12
+    assert np.allclose(policy, average[mapping], atol=1e-12, rtol=0)
+    with pytest.raises(ArithmeticError, match="original cost average"):
+        lift_book_and_average(
+            old, new, mapping, book, old.coarse.normalize(old.coarse.legal)
+        )
 
 
 def original() -> dict[str, Any]:

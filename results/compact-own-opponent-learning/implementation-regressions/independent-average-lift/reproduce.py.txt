@@ -1,0 +1,34 @@
+"""Synthetic density fixture; no new learning, native construction or strength."""
+from pathlib import Path
+import json,sys
+import numpy as np
+from poker_ai.evaluation.compact_opponent_contexts import build_game,refinement
+from poker_ai.evaluation.opponent_learning_sources import build_game as original_game
+from poker_ai.evaluation.compact_opponent_projection import lift_mass,lift_policy,lift_book_and_average
+from poker_ai.evaluation.compact_opponent_guard import isolated
+from poker_ai.evaluation.compact_opponent_source import source
+from poker_ai.evaluation.frozen_batch_replay import warm_mass
+root=Path.cwd();rows=[]
+with isolated(worker=False):
+    for game in (0,1):
+        old,new=original_game(root,game),build_game(root,game)
+        mapping=refinement(old,new)
+        factors=np.resize(np.array([.123456789,.987654321,.333333333,
+                         .777777777,.314159265,.271828182,.161803399]),old.coarse.legal.shape[1])
+        book=warm_mass(old.coarse)+old.coarse.legal*factors
+        average=old.coarse.normalize(book)
+        lifted,_=lift_mass(old,new,mapping,book)
+        copied=lift_policy(old,new,mapping,average)
+        coupled_book,coupled,_=lift_book_and_average(old,new,mapping,book,average)
+        expected=new.coarse.normalize(lifted)
+        assert np.array_equal(lifted,coupled_book)
+        assert np.array_equal(expected,coupled)
+        rows.append(dict(game=game,independent_lift_probability_bit_mismatches=int(np.count_nonzero(copied!=expected)),
+                         maximum_old_probability_difference=float(np.max(abs(copied-expected))),
+                         coupled_book_policy_bit_mismatches=int(np.count_nonzero(coupled!=expected))))
+result=dict(scope="Synthetic weights in known structural layouts; not learned policies or cost repetitions",
+            new_training=False,reference_constructed=False,python=sys.version.split()[0],numpy=np.__version__,
+            source=source(root),rows=rows)
+out=root/'results/compact-own-opponent-learning/implementation-regressions/independent-average-lift/result.json'
+with out.open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(rows)

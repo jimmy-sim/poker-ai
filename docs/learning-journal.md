@@ -4858,3 +4858,13 @@ the full 36-boundary/180-table source integration runs on the recorded Python
 3.11.17/NumPy 2.4.6 environment. Python 3.12 still checks the structural factories,
 software pipeline and raw data math. The original failure is retained. No
 runtime tolerance, scientific cap or performance gate was relaxed.
+
+Review then caught a cost-fixture consistency bug before any formal cost run.
+A book is a table of accumulated action weights; dividing each row by its
+total gives the average action probabilities. Lifting the old probabilities
+separately from the book could change the final floating-point bit. We now
+derive each cost average directly from its lifted book. The old exact replay
+check remains unchanged, and proximity to the original probabilities still
+meets the predeclared 1e-12 cost-only limit. The complete 180-table integration
+passes with this exact relationship checked. This fixes test data preparation;
+it changes no original policy, learned trajectory or quality gate.

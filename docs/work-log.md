@@ -4069,3 +4069,18 @@ collection/training yet. A complete corrected exact-head cohort is still require
 Reread the full installed OpenSpiel2.0.2 Apache2.0 license in the new active311
 environment, SHA cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30;
 comparison-only reference, no source copied into the own learning core.
+
+Before any formal cost repetition, self-review found that independently lifting
+old average probabilities and raw density books can disagree by one floating
+bit, despite satisfying the1e-12 old-probability cost tolerance. Synthetic fixed
+density fixtures on the two structural layouts reproduce30/185 probability-bit
+differences, maximum1.1102230246251565e-16; these are NOT learned policy results.
+Keep the old exact replay check unchanged. Lift each book once and derive its
+cost average by exact normalization of that book; record both original members
+and before/after hashes. Current/fine tables stay as declared. Two new real-layout
+fixture checks pass with all18foundation tests18.25s; complete36boundary/180table
+source integration, now also checking all36coarse book-average pairs exactly,
+passes100.88s. No original scientific dependency or training rule was edited.
+This draft-source correction requires a new full exact-source cohort before
+formal software/cost/forecast/admission or real study. Earlier check cohorts
+remain separate and cannot admit the corrected source.

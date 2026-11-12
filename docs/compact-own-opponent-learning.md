@@ -165,6 +165,14 @@ baseline barriers. Cost lifts retain exact new warm origins and original source
 identities. Six-role source checks and new complete formal software evidence
 remain required, even though shared primitives already have historical tests.
 
+For cost-only averages, normalize the lifted raw book itself. A separately
+copied old average can differ by one final bit after density scaling; the
+unchanged raw replay requires exact book/average equality. Retain the original
+old policy/book identities and hashes and require the new cost probabilities
+to remain within the predeclared 1e-12 of the old probabilities. Current policy
+copies remain exact. This coupling is data preparation, never a learned-policy
+edit or relaxation of any real baseline's bit-exact probability checks.
+
 Retain every seed/readout/arm, 36 original-boundary checks, all raw books and
 own policies, worker journals and partial/failing records. Record actual source,
 runtime, wall/CPU time and per-component work. Render all-case tables/learning

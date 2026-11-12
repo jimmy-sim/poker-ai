@@ -22,7 +22,10 @@ from poker_ai.evaluation.compact_opponent_contract import (
     input_pins,
 )
 from poker_ai.evaluation.compact_opponent_guard import isolated
-from poker_ai.evaluation.compact_opponent_projection import lift_mass, lift_policy
+from poker_ai.evaluation.compact_opponent_projection import (
+    lift_book_and_average,
+    lift_policy,
+)
 from poker_ai.evaluation.opponent_learning_contexts import Contexts
 from poker_ai.evaluation.opponent_learning_design import REAL, WORK, Design
 from poker_ai.evaluation.opponent_learning_sources import Opponent
@@ -95,13 +98,30 @@ def standins(root: Path, sources: Sources, deadline: Deadline) -> old_cost.Stand
     maps = [refinement(sources.original.games[i], sources.games[i]) for i in (0, 1)]
     members = {}
     for key, member in old.members.items():
-        coordinate, kind, _, readout = key
+        coordinate, kind, label, readout = key
         game = coordinate // 3
         before, after = sources.original.games[game], sources.games[game]
         if kind == "fine":
             values, projection = member.values.copy(), dict(projection="unchanged_fine")
         elif readout in ("uniform", "linear"):
-            values, projection = lift_mass(before, after, maps[game], member.values)
+            average_key = (coordinate, kind, label, readout + "_average")
+            average_member = old.members[average_key]
+            values, average, projection = lift_book_and_average(
+                before, after, maps[game], member.values, average_member.values
+            )
+            members[average_key] = old_cost.OldMember(
+                average,
+                dict(
+                    original_own_member=average_member.identity,
+                    original_own_book_member=member.identity,
+                    before_values_sha256=array_sha(average_member.values),
+                    after_values_sha256=array_sha(average),
+                    learned_compact_values=False,
+                    **projection,
+                ),
+            )
+        elif readout != "current":
+            continue  # Filled together with its corresponding raw book above.
         else:
             values = lift_policy(before, after, maps[game], member.values)
             projection = dict(projection="unchanged_policy_lift_to_refining_groups")
