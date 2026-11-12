@@ -4054,3 +4054,18 @@ only their fake parent boundary. The guarded three-worker child plus optional
 native-module collection regression passes18checks3.93s; strict typing passes.
 Scientific source fingerprintd6da7eeb is unchanged; corrected test head still
 needs the complete exact-head check cohort before formal evidence collection.
+
+The157bd40 optional311 cohort passes634tests; optional312 reports633passed/1failed.
+Retained raw optional312 log/receipt, exact reproduction and executed check driver
+under results/compact-own-opponent-learning/implementation-regressions/runtime-matrix-157bd40.
+The test incorrectly expected real original-runtime source replay under3.12;
+unchanged compact_full_run.check_runtime correctly raises own/native/replay
+runtime changed. Correct only the test expectation: full36/180 integration on
+recorded3.11.17/NumPy2.4.6; expected real-runtime rejection on3.12, whose structural/
+software/raw-data checks remain. Targeted312guard regression passes39.82s.
+No scientific source, seeds/caps/tolerances/quality gates changed, no formal new
+collection/training yet. A complete corrected exact-head cohort is still required.
+
+Reread the full installed OpenSpiel2.0.2 Apache2.0 license in the new active311
+environment, SHA cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30;
+comparison-only reference, no source copied into the own learning core.

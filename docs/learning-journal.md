@@ -4850,3 +4850,11 @@ and hosted source checks, formal shared-clock rehearsal and compute gates are
 still pending. Unit fixtures, including direct terminal sums and exhaustive
 pure responses for all 432 tiny profiles, are software tests rather than new
 poker training or a published admission.
+
+One optional test initially expected the original real archive to replay under
+Python 3.12. It failed because the existing original-runtime guard correctly
+refused it. The corrected test expects that refusal on an unsupported runtime;
+the full 36-boundary/180-table source integration runs on the recorded Python
+3.11.17/NumPy 2.4.6 environment. Python 3.12 still checks the structural factories,
+software pipeline and raw data math. The original failure is retained. No
+runtime tolerance, scientific cap or performance gate was relaxed.

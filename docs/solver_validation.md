@@ -78,6 +78,12 @@ passed on both. Figures were visually inspected.
 The complete pinned [OpenSpiel license](https://github.com/google-deepmind/open_spiel/blob/v2.0.2/LICENSE)
 was read and checked against the installed distribution's license. Both SHA256s:
 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+
+November 12, 2026: reread the complete installed OpenSpiel 2.0.2 Apache-2.0
+license in the compact-own-opponent comparison environment; its bytes match
+the same hash above. The new study retains the pinned scalar comparison-only
+adapter. No native strategy is a learning input, and this license check does
+not admit a new trajectory or replace the prospective source/compute gates.
 The complete Treys installed `treys-0.1.8.dist-info/LICENSE` was also read before
 this milestone's card-world controls. Installed wheels retain their notices.
 OpenSpiel's native library is a comparison reference, not a replacement for the

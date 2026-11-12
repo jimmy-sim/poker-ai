@@ -1,7 +1,9 @@
 """Fresh source/old-cost integration, no new learning or native construction."""
 
+import json
 import subprocess
 import sys
+from importlib.metadata import version
 from pathlib import Path
 
 import pytest
@@ -46,7 +48,23 @@ print("all36boundaries180projections; zero new learning/native construction")
         cwd=ROOT,
         capture_output=True,
         text=True,
-        check=True,
+        check=False,
         timeout=900,
     )
+    recorded = json.loads((ROOT / "results/compact-sampled/real/own.json").read_text())[
+        "runtime"
+    ]
+    import numpy as np
+
+    if (
+        sys.version.split()[0] != recorded["python"]
+        or np.__version__ != recorded["numpy"]
+        or version("numba") != recorded["numba"]
+    ):
+        # The original guard is intentional and unchanged. Software/data tests
+        # on a newer interpreter cannot admit bit-exact original trajectories.
+        assert result.returncode != 0
+        assert "own/native/replay runtime changed" in result.stderr
+        return
+    assert result.returncode == 0, result.stderr
     assert "all36boundaries180projections" in result.stdout

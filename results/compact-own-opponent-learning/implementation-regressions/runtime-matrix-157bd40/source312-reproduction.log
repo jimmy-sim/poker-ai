@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout/src/poker_ai/evaluation/compact_opponent_sources.py", line 50, in load
+    return _load(root, deadline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout/src/poker_ai/evaluation/compact_opponent_sources.py", line 68, in _load
+    replay = sampled_parent.replay_sources(root, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout/src/poker_ai/evaluation/compact_fixed_inputs.py", line 159, in replay_sources
+    check_runtime(original["runtime"], real=not software)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-opponent-source-checkout/src/poker_ai/postflop/compact_full_run.py", line 54, in check_runtime
+    raise ArithmeticError("own/native/replay runtime changed")
+ArithmeticError: own/native/replay runtime changed
