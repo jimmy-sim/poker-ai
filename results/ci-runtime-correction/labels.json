@@ -1,0 +1,436 @@
+{
+  "all_declared_versions_supported": false,
+  "hosted_rows": 18,
+  "input_revision": "c0eff262b888db255bdb92d76948973414df4aaf",
+  "input_sha256": {
+    "results/compact-cached-learning/checks.json": "e44beb6dbb7e2724ccc5cf43e69282c9b73686c360f5b358a9360a1648937f10",
+    "results/compact-cached-learning/checks/hosted311.log": "c6737e8e4bb5094b07bcb1fe4cb668984f06ad29069e7c9429a51dd9c293a481",
+    "results/compact-cached-learning/checks/hosted312.log": "6ba19eb1240c982496051676a6bbfe627ab1e3470a4791fcf18427b4d7885718",
+    "results/compact-fixed-opponents/checks.json": "4fee6616e82e2a095d25ddfe7abf3bf4b6cafad5a13f1ac394bd9d27cd7f3ffa",
+    "results/compact-fixed-opponents/checks/hosted311.log": "2e9836c334c5fd9f426a5b1464b59bf2513e61b796fa11c90356d8ecb7646c5a",
+    "results/compact-fixed-opponents/checks/hosted312.log": "269499efb4d4e9c0e132d3ced7aabb318ff10e956b2598dd593556505383a320",
+    "results/compact-full-control/checks.json": "fb7e1dfd58cba22c831ca2ae1bc3f4fcb0b563214004bcedf15c042b0b36e934",
+    "results/compact-full-control/checks/hosted311.log": "9bae15750c2a104eae4abb3869b161386073d00610128920d6c16ed94d26db4b",
+    "results/compact-full-control/checks/hosted312.log": "c739349277c42b7f1d19d246e42912fe46ddd2806ba46b135e71bd216d4636e7",
+    "results/compact-information-trace/checks.json": "0f5214fa7157c3ec6f5d7d93dff020832c42196804904441939c7110715b7530",
+    "results/compact-information-trace/checks/hosted311.log": "0390f51409ad61e2e38adae853c82bf70045347e601caccbf8b0825d7f47bb2c",
+    "results/compact-information-trace/checks/hosted312.log": "fcb07919a0af95cf2ee06504e36d3c2193bb87890401af7f3faaac90ddc45a77",
+    "results/compact-native-profile/checks.json": "28ea09d6709bf9804c8e94af3631d0657861fbba21e975ee93f61465e4ddfde6",
+    "results/compact-native-profile/checks/hosted311.log": "cb2e96b9f0b213380501c1baeebaee6649f35bd059319b35ff867c4a22d3ab75",
+    "results/compact-native-profile/checks/hosted312.log": "117e33787fa9c0a9742f1ba1e57e862495f0e22c7fcc5bc1fd463b59cec2c491",
+    "results/compact-own-opponent-learning/checks.json": "0a6e3bb645a2a3dff9a303a895cc0623c21c3a2e18b502e54a68fdc856cc233f",
+    "results/compact-own-opponent-learning/checks/hosted311.log": "11a08bcc66663ee13c6c161b5f2c9500d0e63b5a377073af55517ff616a51c4e",
+    "results/compact-own-opponent-learning/checks/hosted312.log": "e3fc7c79b91e6fd662804c61ddf973a194d18d344fb8c923e41a070323f0d596",
+    "results/compact-replay-profile/checks.json": "212a0a6ed45aaf97badf186fcbecc986d7897a8716d27d09d6e10404d833a421",
+    "results/compact-replay-profile/checks/hosted311.log": "2d76c3c6181ea147a978ab0338d37a3e4fd16ba0bf7abf4a600942980a9f45f2",
+    "results/compact-replay-profile/checks/hosted312.log": "13504030c6f5daa7a0a3f34722c09d9b3dfd311b15ffda77e388c49b9d4775f5",
+    "results/compact-sampled/checks.json": "aa517a39c55696bfa67482a765de577de75d6e23ebd17480c44174a56bc428d6",
+    "results/compact-sampled/checks/hosted311.log": "1c93c51444fc9bc77efb7694d064e8896e38b1204a831befb37d4e01fc77c2da",
+    "results/compact-sampled/checks/hosted312.log": "2f80f2186a99bc40e7b8bda9d814e346b017f6f28da5205340bf071d13415186",
+    "results/recall-proof-cache/checks.json": "e19c4c792620ed1b9f94b952fcff1f509a4dececf8b986a21c369674eeed684f",
+    "results/recall-proof-cache/checks/hosted311.log": "5979414c19c447a28bc87d0c53fc93440783c99366230320e442e651b5e84729",
+    "results/recall-proof-cache/checks/hosted312.log": "b6cc3f89077588e96be8c59db0eea6846aba8e7a4ec3f6533742ba11bf6d7f6e"
+  },
+  "limitations": "A mismatched patch label is unsupported. Exact-version admission cannot rely on it. This does not recompute or automatically invalidate numerical values; producer runtimes and each prospective contract must be assessed separately. Original evidence remains unchanged.",
+  "receipts": [
+    "results/compact-cached-learning/checks.json",
+    "results/compact-fixed-opponents/checks.json",
+    "results/compact-full-control/checks.json",
+    "results/compact-information-trace/checks.json",
+    "results/compact-native-profile/checks.json",
+    "results/compact-own-opponent-learning/checks.json",
+    "results/compact-replay-profile/checks.json",
+    "results/compact-sampled/checks.json",
+    "results/recall-proof-cache/checks.json"
+  ],
+  "rows": [
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "b52a9ef9e0fa82b091dd6ee5f99f759ac9485c92",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-13T10:12:25.4939822Z Using CPython 3.11.17"
+      ],
+      "job_id": 131824728476,
+      "log_file": "results/compact-cached-learning/checks/hosted311.log",
+      "log_sha256": "c6737e8e4bb5094b07bcb1fe4cb668984f06ad29069e7c9429a51dd9c293a481",
+      "minor": "311",
+      "receipt": "results/compact-cached-learning/checks.json",
+      "run_id": 43407283257,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "b52a9ef9e0fa82b091dd6ee5f99f759ac9485c92",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-13T10:12:19.1092279Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131824728557,
+      "log_file": "results/compact-cached-learning/checks/hosted312.log",
+      "log_sha256": "6ba19eb1240c982496051676a6bbfe627ab1e3470a4791fcf18427b4d7885718",
+      "minor": "312",
+      "receipt": "results/compact-cached-learning/checks.json",
+      "run_id": 43407283257,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "c6c384b7075d48a0aee8e9c5648456179cb64224",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T11:17:21.7620867Z Using CPython 3.11.17"
+      ],
+      "job_id": 131147296682,
+      "log_file": "results/compact-fixed-opponents/checks/hosted311.log",
+      "log_sha256": "2e9836c334c5fd9f426a5b1464b59bf2513e61b796fa11c90356d8ecb7646c5a",
+      "minor": "311",
+      "receipt": "results/compact-fixed-opponents/checks.json",
+      "run_id": 43207761909,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "c6c384b7075d48a0aee8e9c5648456179cb64224",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T11:17:22.8632259Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131147296281,
+      "log_file": "results/compact-fixed-opponents/checks/hosted312.log",
+      "log_sha256": "269499efb4d4e9c0e132d3ced7aabb318ff10e956b2598dd593556505383a320",
+      "minor": "312",
+      "receipt": "results/compact-fixed-opponents/checks.json",
+      "run_id": 43207761909,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T07:58:41.7779132Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131050719966,
+      "log_file": "results/compact-full-control/checks/hosted312.log",
+      "log_sha256": "c739349277c42b7f1d19d246e42912fe46ddd2806ba46b135e71bd216d4636e7",
+      "minor": "312",
+      "receipt": "results/compact-full-control/checks.json",
+      "run_id": 43179157842,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "02234c75d5cc2c210bf5b44b0622c83bf71184e6",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T07:58:40.1170437Z Using CPython 3.11.17"
+      ],
+      "job_id": 131050720373,
+      "log_file": "results/compact-full-control/checks/hosted311.log",
+      "log_sha256": "9bae15750c2a104eae4abb3869b161386073d00610128920d6c16ed94d26db4b",
+      "minor": "311",
+      "receipt": "results/compact-full-control/checks.json",
+      "run_id": 43179157842,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T12:04:45.7917140Z Using CPython 3.11.17"
+      ],
+      "job_id": 131170497572,
+      "log_file": "results/compact-information-trace/checks/hosted311.log",
+      "log_sha256": "0390f51409ad61e2e38adae853c82bf70045347e601caccbf8b0825d7f47bb2c",
+      "minor": "311",
+      "receipt": "results/compact-information-trace/checks.json",
+      "run_id": 43214557237,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "219f3385ea16a80bef2ab36f57f302cb33fb93bf",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T12:04:47.3159347Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131170497896,
+      "log_file": "results/compact-information-trace/checks/hosted312.log",
+      "log_sha256": "fcb07919a0af95cf2ee06504e36d3c2193bb87890401af7f3faaac90ddc45a77",
+      "minor": "312",
+      "receipt": "results/compact-information-trace/checks.json",
+      "run_id": 43214557237,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-13T11:42:57.7196357Z Using CPython 3.11.17"
+      ],
+      "job_id": 131864674964,
+      "log_file": "results/compact-native-profile/checks/hosted311.log",
+      "log_sha256": "cb2e96b9f0b213380501c1baeebaee6649f35bd059319b35ff867c4a22d3ab75",
+      "minor": "311",
+      "receipt": "results/compact-native-profile/checks.json",
+      "run_id": 43419209354,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-13T11:42:54.7768277Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131864675496,
+      "log_file": "results/compact-native-profile/checks/hosted312.log",
+      "log_sha256": "117e33787fa9c0a9742f1ba1e57e862495f0e22c7fcc5bc1fd463b59cec2c491",
+      "minor": "312",
+      "receipt": "results/compact-native-profile/checks.json",
+      "run_id": 43419209354,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T13:36:35.0582323Z Using CPython 3.11.17"
+      ],
+      "job_id": 131218952181,
+      "log_file": "results/compact-own-opponent-learning/checks/hosted311.log",
+      "log_sha256": "11a08bcc66663ee13c6c161b5f2c9500d0e63b5a377073af55517ff616a51c4e",
+      "minor": "311",
+      "receipt": "results/compact-own-opponent-learning/checks.json",
+      "run_id": 43228827703,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T13:36:33.7794864Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131218954870,
+      "log_file": "results/compact-own-opponent-learning/checks/hosted312.log",
+      "log_sha256": "e3fc7c79b91e6fd662804c61ddf973a194d18d344fb8c923e41a070323f0d596",
+      "minor": "312",
+      "receipt": "results/compact-own-opponent-learning/checks.json",
+      "run_id": 43228827703,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T15:19:02.6361810Z Using CPython 3.11.17"
+      ],
+      "job_id": 131280107713,
+      "log_file": "results/compact-replay-profile/checks/hosted311.log",
+      "log_sha256": "2d76c3c6181ea147a978ab0338d37a3e4fd16ba0bf7abf4a600942980a9f45f2",
+      "minor": "311",
+      "receipt": "results/compact-replay-profile/checks.json",
+      "run_id": 43246354825,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "c349b4f2f86f8aefc88ccee5067f8f501bbed87d",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T15:19:01.2929313Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131280108409,
+      "log_file": "results/compact-replay-profile/checks/hosted312.log",
+      "log_sha256": "13504030c6f5daa7a0a3f34722c09d9b3dfd311b15ffda77e388c49b9d4775f5",
+      "minor": "312",
+      "receipt": "results/compact-replay-profile/checks.json",
+      "run_id": 43246354825,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "8da3c2cf0fe236b0953a95eca2aa87ac74350bc4",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T09:42:21.0085952Z Using CPython 3.11.17"
+      ],
+      "job_id": 131099353998,
+      "log_file": "results/compact-sampled/checks/hosted311.log",
+      "log_sha256": "1c93c51444fc9bc77efb7694d064e8896e38b1204a831befb37d4e01fc77c2da",
+      "minor": "311",
+      "receipt": "results/compact-sampled/checks.json",
+      "run_id": 43193724153,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "8da3c2cf0fe236b0953a95eca2aa87ac74350bc4",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T09:42:20.4858823Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131099354639,
+      "log_file": "results/compact-sampled/checks/hosted312.log",
+      "log_sha256": "2f80f2186a99bc40e7b8bda9d814e346b017f6f28da5205340bf071d13415186",
+      "minor": "312",
+      "receipt": "results/compact-sampled/checks.json",
+      "run_id": 43193724153,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    },
+    {
+      "actual_python": [
+        "3.11.17"
+      ],
+      "all_uv_versions": [
+        "3.11.17"
+      ],
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "declared_python": "3.11.17",
+      "evidence_lines": [
+        "2026-11-12T16:18:44.2564367Z Using CPython 3.11.17"
+      ],
+      "job_id": 131318525454,
+      "log_file": "results/recall-proof-cache/checks/hosted311.log",
+      "log_sha256": "5979414c19c447a28bc87d0c53fc93440783c99366230320e442e651b5e84729",
+      "minor": "311",
+      "receipt": "results/recall-proof-cache/checks.json",
+      "run_id": 43257152055,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "match"
+    },
+    {
+      "actual_python": [
+        "3.12.3"
+      ],
+      "all_uv_versions": [
+        "3.12.3"
+      ],
+      "checked_commit": "79354f8a665c1d137c58bf8974f7327ae92e9807",
+      "declared_python": "3.12.15",
+      "evidence_lines": [
+        "2026-11-12T16:18:42.9042870Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12"
+      ],
+      "job_id": 131318525970,
+      "log_file": "results/recall-proof-cache/checks/hosted312.log",
+      "log_sha256": "b6cc3f89077588e96be8c59db0eea6846aba8e7a4ec3f6533742ba11bf6d7f6e",
+      "minor": "312",
+      "receipt": "results/recall-proof-cache/checks.json",
+      "run_id": 43257152055,
+      "runtime_evidence": "uv_interpreter_selection",
+      "status": "mismatch"
+    }
+  ],
+  "scope": "Tracked *checks*.json receipts with hosted role and declared patch version; no universal inference about protocols without those fields, and no numerical replay or rewrite",
+  "script_sha256": "11632f8a9691b3f899494e506b103e55b73d9f89f33f7c51c1afde65d671e958",
+  "status": "fixed_revision_runtime_label_audit_complete",
+  "summary": {
+    "ambiguous": 0,
+    "match": 9,
+    "mismatch": 9,
+    "missing_log": 0,
+    "unknown": 0
+  }
+}

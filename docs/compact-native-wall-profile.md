@@ -82,3 +82,15 @@ CPU-profiler/statistics checks pass131/21.31s; full lint/format and strict732-fi
 typing pass. Source/input/worker/read/scalar/admission guards and partial retention
 remain covered. All historical380numerical and382CPU-instrumentation bytes stay
 unchanged. Full same-head six-role checks still precede formal elapsed data.
+
+
+## Premeasurement runtime repair
+
+C0local suites pass and both hosted jobs pass software checks, but actual
+hosted3.12uses3.12.3 instead of the declared3.12.15. No elapsed data was collected.
+Preserve the whole cohort as nonqualifying, pin and assert actual CI runtimes,
+and rerun ALLsix roles at one corrected head before collection. All384source
+bytes remain unchanged. See[the full correction audit](ci-runtime-correction.md);
+old mislabeled gates do not become valid retroactively. The new method uses
+old saved own data as fixed inputs whose full numerical replay remains inside
+the complete command, never as a retroactively source-admitted production run.

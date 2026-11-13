@@ -178,3 +178,12 @@ fresh/global generalization. The previous sampled accuracy failure remains.
 Next: separately register and check a complete-native-path profile before
 choosing another optimizer. Its diagnostic times cannot replace this cost set
 or issue a permit. Keep the original scientific caps, seeds and gates.
+
+
+## Runtime-label correction
+
+The hosted3.12row in B52's six-role receipt actually ran3.12.3 while its field
+said3.12.15. The exact-patch source-admission claim is not qualified as stated.
+All original source/log/data bytes and numerical findings remain, including the
+failed933.889sforecast and absence of a new trajectory/permit. New CI cannot
+retroactively qualify this old cost set. See[the correction and scope audit](ci-runtime-correction.md).

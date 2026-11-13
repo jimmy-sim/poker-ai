@@ -150,3 +150,14 @@ the profiling instrument and units, preserving this failure and all scientific
 work/caps. It cannot rescue this CPU gate, the original cost set or the failed
 933.889s budget forecast. No model optimizer has been selected from missing
 function data.
+
+
+## Runtime-label correction
+
+The hosted3.12row in the D4source receipt actually used3.12.3, despite its
+3.12.15field. Its exact-patch qualification claim is withdrawn; the raw logs,
+ordinary diagnostic and CPU timeout stay unchanged. This is separate from the
+timed-out profiling outcome and gives no retroactive gate. See the bounded
+[correction audit](ci-runtime-correction.md). Numerical fixed inputs remain
+replayable on their recorded local producer runtime, without promoting these
+old receipts into new source admission.

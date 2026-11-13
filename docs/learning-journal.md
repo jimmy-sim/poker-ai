@@ -50,6 +50,13 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Where the project stands
 
+A [November13 verification correction](ci-runtime-correction.md) found nine
+GitHub receipt rows with the wrong Python patch label: they ran3.12.3, not
+3.12.15. The original logs/results remain, but those labels cannot qualify the
+exact-version gate. CI now pins and checks the actual runtime; fresh same-head
+checks precede further profiling. Numerical producer results are a separate
+question, and no new agent is promoted.
+
 Step 107 completes the integrated cache checks and all six cost runs. Results
 agree, but its full audit-budget forecast still fails: 933.89 seconds against
 900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
@@ -5199,3 +5206,18 @@ The separate elapsed-time instrument now passes131focused checks with the older
 profiler tests included. A fixture verifies that it uses the built-in timer.
 The original CPU-profiler code, failure and numerical pipeline stay unchanged.
 Full checks on both Python versions and GitHub still precede the new measurement.
+
+
+A second verification issue was caught before the elapsed pair ran: the GitHub
+job labeled Python3.12 was actually using the runner's3.12.3 interpreter, while
+our receipts said3.12.15. A read-only audit found nine such mislabeled rows;
+the nine Python3.11 rows matched. The original records stay saved, with the
+[correction](ci-runtime-correction.md) clearly attached. We cannot use later
+tests to pretend an earlier precollection check happened. The local numerical
+runs have their own recorded runtimes; this audit did not erase or rerun them.
+
+The workflow now forces the exact interpreter and prints/asserts actual Python
+and NumPy before testing. All six checks will run again at one corrected head
+before more profiling data. Reading the actual tool output caught what a matrix
+label alone missed. No new Hold'em training, limit change or stronger agent
+claim follows. Codex assistance and this mistake are documented plainly.

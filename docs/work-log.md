@@ -4531,3 +4531,24 @@ New elapsed instrument implemented separately:35new+96related checks pass
 profiler factory has no Python CPUcallback. Prior382map+newentry/config yields
 384effectivefiles; original380numeric and382CPUinstrumentation remain unchanged.
 Freeze/publish source; six same-head roles before any new elapsed-profile data.
+
+
+### November13 — actual hosted patch mismatch found before elapsed collection
+
+C0local3513/64skip/150deselect each(763.62/743.98s), optional854each
+(426.06/365.19s), both hosted43426080942 pass software. Reading actual uv lines
+finds hosted312uses3.12.3, not receipt/schema's3.12.15. C0cohort savednonqualifying;
+no elapsed pair collected. Earlier B52/D4hosted312logs show same mismatch.
+Read-only fixedC0audit of tracked*checks*.json roles authenticates all log hashes:
+9receipts/18hostedrows,9declared31117match,9declared31215actually3123. Sixparser
+self-tests pass. Allrows/inputhashes/rerunnablescript retained; scope limitedto
+theseformats, no automatic claim every numerical value invalid. Exact-patch
+gate claims unsupported; no backfilled qualification or rewritten olddata.
+
+Workflow now pins exact3.11.17/3.12.15 throughsetup-uv+UV_PYTHON and assertsactual
+Python/NumPy beforetests. YAML parsed/pins/guard verified and uvinstalledhelp
+confirmsUV_PYTHON selection. All384sciencefiles unchanged. README/methods/dated
+correction/journal explicitly distinguish metadata error from numerical producer
+outputs and retained budget/profilefailures. New six roles atONEcorrectedhead
+must pass withactualguardmarkers before moredata. Originalcaps/seeds/quality
+gates unchanged; no newrealtrajectory/default/global admission or humanhours.

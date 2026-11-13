@@ -1,0 +1,16 @@
+{
+  "status": "software_checks_passed_but_hosted_exact_patch_version_not_qualified",
+  "head": "c0eff262b888db255bdb92d76948973414df4aaf",
+  "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+  "actual_hosted_python": {
+    "311": "3.11.17",
+    "312": "3.12.3"
+  },
+  "expected_hosted_python": {
+    "311": "3.11.17",
+    "312": "3.12.15"
+  },
+  "new_elapsed_data_collected": false,
+  "raw_logs_unchanged": true,
+  "reason": "uv sync selected OS /usr/bin/python3.12 rather than expected patch; fix workflow interpreter selection and assert actual runtime before testing; new same-head six-role checks required"
+}

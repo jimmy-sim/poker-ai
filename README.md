@@ -89,6 +89,11 @@ after instrumentation. [Journal 105](docs/learning-journal.md#105-measure-why-ve
 explains the 2,832 checks, the partial outer OS-resource capture and why a cache
 must detect changed structure. This is verification software, not new training.
 
+**Verification-record correction — November13:** nine hosted Python3.12
+receipt rows labeled3.12.15 actually ran3.12.3. Those exact-version labels do
+not qualify the stated patch gate. Original logs/results remain; no new agent
+is admitted. [Audit, scope and corrected CI](docs/ci-runtime-correction.md).
+
 The [complete cached pipeline](docs/compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
 now preserves all policy/book values and passes independent numerical checks.
 Its new guarded audit estimate still fails: **933.89 seconds against 900**
