@@ -4507,3 +4507,21 @@ historical warning;1093.35/1256.25s), ready for history merge; rawfinalCI logs
 and metadata retained separately. Fresh main snapshot115945Z still matches all
 ten original094024Z user changes exactly. Finish safe main integration before
 the one fixed full native profile, with no competing local heavy checks.
+
+
+### November13 — CPU-instrumented full audit hits fixed cap; raw partial retained
+
+ONEpair: ordinary407.5098637080082s/0, profile900.0317477079952s/124
+TimeoutExpired; overalldriver1, pairfailed_retained. Allthree native DONE records
+survive144scores/384fixed each, but finalownmath/wrapperidentity unfinished.
+No .prof/losslessfunctions/callers outputs; no detailed bottleneck or complete
+pair agreement claimed. Exactwholepair/execution copies plusallfilehashes and
+originalignoredbytes retained. Old CPUsource382/capsunchanged; no retryunderit.
+Source/runtime/mainintegration and sixrole evidence stillvalid.
+
+Separately register complete ELAPSED-stack measurement on samefixedcost0 with
+builtin cProfile timer(no per-call Python CPU callback), same900/1800caps/all
+mandatorymath/workers. Parent/read boundaryCPU and workerCPU remain separate;
+per-framevaluesare elapsed/wait-inclusive. Newsource384 bindsold382+newentry/
+config, allold380kernelsunchanged. New six-role checks before formaldata, old
+partialpublished first. No diagnostic-time rescue/optimizerselection/newlearning.

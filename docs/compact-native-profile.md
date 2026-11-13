@@ -121,3 +121,32 @@ All checks are public before the fixed formal pair. No profile outcome yet.
    prove population runtime, all-input correctness, memory savings or stronger
    poker. The failed original forecast stays failed; diagnostic times never
    issue a training permit.
+
+
+## CPU-timer attempt retained as incomplete — November 13
+
+The [fixed pair](../results/compact-native-profile/pair/pair.json) does not pass.
+The ordinary copy completes in407.5098637080082s. Its tiny/initial/final own
+reads take2.0983742920070654/136.4960294170014/138.80937808299495 wall seconds,
+with parent CPU1.952277/135.802313/138.144586s. The two real own reads account for
+about275s of the complete ordinary audit. This is one fixed diagnostic copy,
+not a replacement cost repetition or timing-population result.
+
+The CPU-instrumented copy reaches the unchanged900s child limit: supervisor
+900.0317477079952s, TimeoutExpired/returncode124 (includes termination overhead).
+Allthree native worker done records survive, each144scores/384conditions, but
+the final own replay and complete wrapper identity do not finish. Its retained
+native/child files remain running/partial, so those missing outcomes stay unknown.
+There is no native-parent.prof or lossless functions/callers file. No detailed
+function bottleneck or complete plain/profile equality is established. Every
+existing raw file, journal, measurement, command log and execution receipt was
+copied byte-for-byte and the original ignored output retained. No retry or cap
+extension under this CPU protocol. It remains incomplete.
+
+The per-call Python CPU timer is a plausible source of measurement overhead;
+this incomplete pair does not isolate it causally. The next separately
+[registered elapsed-stack measurement](compact-native-wall-profile.md) changes
+the profiling instrument and units, preserving this failure and all scientific
+work/caps. It cannot rescue this CPU gate, the original cost set or the failed
+933.889s budget forecast. No model optimizer has been selected from missing
+function data.

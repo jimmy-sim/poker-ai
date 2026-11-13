@@ -5178,3 +5178,19 @@ before any formal profile data. The preceding cached-pipeline result also passed
 its final GitHub checks. Next preserve the local changes while integrating that
 finished milestone, then run the one fixed ordinary/profile pair without other
 heavy local work. No bottleneck or optimization outcome is assumed in advance.
+
+
+The first formal profiling attempt did not finish. Its ordinary copy completed
+in407.51seconds, including about275seconds across the two real own-result
+replays. The CPU-instrumented copy hit its900-second limit. Its reference workers
+finished, but the final replay and wrapper checks did not. The full raw partial
+is saved; no detailed function profile was produced, so we cannot name a
+function bottleneck from it. The old budget forecast remains failed.
+
+The next [separately registered instrument](compact-native-wall-profile.md) uses
+the profiler's built-in elapsed clock, avoiding a Python CPU-clock callback on
+every function call. This is a new measurement method, not a retry that makes
+the CPU attempt pass. Its function values include waiting and must not be called
+CPU time. We still sample whole-parent, read and worker CPU separately. The same
+complete work, fixed case,900/1800-second caps and source checks remain. No agent
+optimization is chosen before complete measurements, and no new training starts.
