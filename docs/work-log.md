@@ -4717,10 +4717,23 @@ cardcounts/unchangednumericworkers EXACT; all3read+3worker source/PID/runtime/
 resource records validate. Canonical/rank countersmatcholdprototype(917324/
 4068415hits,780/30721originals), zeroerrors/fallbacks/evictions. No production/
 performanceadmission/newforecast/permit/learning; rawlowerwallisdescriptiveonly.
-BodyCPU285.656045/260.792604. Resourceownreads reveal22.76–23.28CPU seconds in
-REAPEDCHILDREN perfullread, alongside127–141parentCPU; workerown124–125CPU plus
-about42childCPU. ParentCPUalonewasincompletecomputeaccounting. Extraobserver
+BodyCPU285.656045/260.792604. Resourceownreads report21.46–21.97childUSERCPU plus1.28–1.31childSYSTEMCPU
+perfullread, alongside127–141parentCPU; workersreport124–125ownCPU plus
+about39.5childUSERCPU/2.5childSYSTEMCPU. ParentCPUalonewasincompletecomputeaccounting. Extraobserver
 sourcechecksareincluded; no causaldiagnosisofolderuntracedpair, no summedparallel
 CPUaselapsed or assertion-state claim. Original481.84→595.65timingFAILunchanged.
 Exactwholepair/executioncopies/allhashes+originalignoredbytes retained; readonly
 source/raw/resources/completeidentityverifierPASS. Publishrawbeforeposthocrender.
+
+
+Posthoc392-source report frompublished641reporter generated andexactcopied;
+actualPNGinspected(noclip/overlap), all16clock/288counter/32peak rows/input/output
+hashes retained. Tableusesrawreporteduser/systemchildCPUfields, notunmeasured
+helperattribution; oldprofiledifferentcopy. No wallstackofCPU/parallel sums,
+causalidleclaim, memorysaving or productionforecast. Documentednexttest=perhelper
+accountingbeforeoptimization. AddedpostcollectiondirectchildCPUagreementfixture
+(0.1saccountingtolerance, fixedintegerwork, no poker) passes311/312. 312alsofound
+posthocfixtureexact2 versuscorrectfloatdelta1.9999999999999998; approximateassertion
+fixONLYtest, no390measurementcode/data altered. All9report/accountingtestsPASS
+bothversions0.04/0.07s andstrictbothbaseenvs pass. Journal112/README/methods current;
+finalrelevantchecks+bothhostedjobsrequiredbefore65historymerge.

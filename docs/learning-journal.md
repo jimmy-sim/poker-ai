@@ -72,9 +72,11 @@ learning treatment remains unrun. Step 110 now measures the complete audit:
 the ordinary copy takes 406.49 seconds and the profiled copy 573.87, with identical
 checked results. Step 111 now retains a failed whole-command timing comparison: 481.84 seconds
 uncached versus 595.65 cached, despite identical checked results and less parent
-CPU time. Step 112 adds resource observations to investigate that discrepancy.
-Its full source checks precede the separate diagnostic pair. The playing strategy
-is unchanged; no new strength claim or learning permit follows.
+CPU time. Step 112 now retains a complete resource trace with matching results. It records
+substantial CPU work in child programs, which the parent CPU column omitted.
+The new diagnostic's lower cached elapsed time does not erase the earlier failure
+or admit performance. The playing strategy is unchanged; no new strength claim
+or learning permit follows.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5385,3 +5387,30 @@ worker source/identity checks. Together with the preceding cache/report tests,
 before the one diagnostic pair runs. Its goal is complete trustworthy telemetry;
 either timing direction is reported without admitting performance, a stronger
 agent, or a new learning run. Codex assistance is recorded.
+
+
+The diagnostic now completes with all checked answers unchanged:551.62seconds
+uncached and527.12cached, with every resource record validated. This is a separate
+condition, not a replacement for the earlier failed timing test. All source
+checks were public first, and both time directions remain descriptive.
+
+One useful finding is that “CPU time” needs an owner. During a full own read,
+the main Python process records about127–141seconds, while completed child
+programs report another21–22user CPU seconds plus system CPU. Source validation
+starts helper programs such as Git. Their work is outside the parent CPU column.
+The new trace does not identify each helper's contribution, so it cannot prove
+what caused the older timing gap. That is the next accounting question before
+choosing another optimization.
+
+The [new chart](../results/card-audit-clock-trace/report/resource-clocks.png)
+shows elapsed time and process CPU separately. The gap between them is not
+necessarily idle time. The exports keep every clock/counter and memory-peak
+record; zero counters do not prove an event absent, and peaks are not one step's
+allocations. No memory saving, production speedup or stronger agent is accepted.
+
+Nine small report/accounting tests now pass on both Python versions. A new child
+process reports its own CPU so the parent counter can be checked. A report test
+also caught floating-point subtraction giving1.9999999999999998 instead of2;
+approximate comparison fixes that test without changing any measured result.
+The original failed gates and source-version correction stay visible. Codex
+assisted; no personal practice, time or mastery is inferred.
