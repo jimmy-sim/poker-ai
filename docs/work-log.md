@@ -4377,3 +4377,26 @@ baseline, and absent parity evidence. Original source379check cohort is retained
 as pre-correction evidence and cannot qualify the final380source. No formal
 measurements were made on it, so this is not a cost retry or outcome selection.
 All final source roles will be rerun at one unchanged final head before data.
+
+
+### November 13 — final effective-source gate complete before collection
+
+B52a9ef/E45source380 passes both full local bases3,443/64skip/150deselect
+(785.65/764.62s), both broad ALL-EXTRAS784 (451.06/392.08s), and BOTH exact-head
+hosted43407283257 (3,443/64/150 plus historical warning;1,207.10/1,223.59s).
+Allsix raw roles/head/job metadata are retained atchecks.json. Superseded379
+source's3434/775local passes and cancelled hosted43405881565 are retained
+separately; no formal results existed on that source and none qualify380.
+Original source/config/kernel bytes unchanged. Source/frame/runtime guards use
+explicit checkout PYTHONPATH because this Mac skips hidden editable-path files.
+
+Collection may use fresh ignored output directories, then publish exact original
+receipt/child/journal/archive/report bytes at canonical versioned paths. Actual
+producer paths/invocations stay retained; no data rewriting or timing changes.
+The original complete-command scope excludes subsequent administrative copying
+and publication. All source/loading/archive/mathematical replay/report work stays
+inside measured clocks. This permits one coherent ALLthree-own publication
+BEFOREany native cost, and ALLthree-native publication before forecast, without
+weakening clean-source or publication gates. Runs remain serial. No formal proof,
+new cost or real training outcome yet. Next: publish these source roles, then the
+full shared180s tiny proof, own before native.

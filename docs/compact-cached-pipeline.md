@@ -92,3 +92,40 @@ Keep README when warranted, dated work log and plain-English journal107 updated
 with question, actual change/checks/outcome/limits/next decision. Three interview
 answers accompany the milestone. Record Codex assistance; no invented human time,
 mastery, reviewer or contribution dates.
+
+
+## Source checks and implementation notes
+
+Final sourceb52a9ef9e0fa82b091dd6ee5f99f759ac9485c92 binds380files,
+fingerprinte45ab633d952d0ceece575358095a05a93558e8943bcc934cd7327a5249bf137.
+Allsix actual roles pass in[checks.json](../results/compact-cached-learning/checks.json):
+full local3443/64skip/150deselect each, optional784each, BOTH hosted43407283257
+3443/64/150plus historical warning each. Premeasurement review added an explicit
+formal old-vector check, not just a unit comparison; baseline commit37ca53d,
+all324policy/216book/30warm contents. The superseded379source had no formal data;
+its localgreen/cancelledCI records are retained separately. Original source/math
+unchanged, and allfinal380named files match their exact tested commit.
+
+Fresh ignored collection destinations may be copied byte-for-byte into canonical
+versioned folders for coherent publication; receipt/child/journal/archives/report
+and original producer command/paths remain. This administrative preservation is
+outside the explicitly declared complete-child clock. All original required
+stage work remains inside, including final own rereplay in native costs. Serial
+ALLthree-own bundle is public before ANYnative cost, and ALLthree-native before
+forecast. No favorable reruns or substitution of prototype times.
+
+## Three interview questions
+
+1. **Why does the adapter need its own source identity?** An unchanged numerical
+   kernel can execute with different validation software. Every process must bind
+   both and record actual execution. An old permit cannot describe the new code.
+2. **What qualifies a real training run?** Same-head local/optional/hosted checks,
+   complete tiny own/native proof and old-vector parity, allthree complete own
+   publications before reference costs, allthree complete native costs, unchanged
+   conservative forecast, and checked published admission. A tiny test or cache
+   speedup alone qualifies no Hold'em trajectory or stronger agent.
+3. **Why maxima and original caps?** Three repetitions expose some runtime
+   variation. The unchanged guard uses the largest full-command cost and full
+   old10m path charge even for half-budget components. This is a conservative
+   configured-device rule, not a statistical runtime guarantee. A failed estimate
+   remains failed; do not choose a faster subset or relax the quality target.

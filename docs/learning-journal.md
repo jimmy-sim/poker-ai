@@ -5078,3 +5078,12 @@ worker execution records, failure retention, scope labels and missing permits
 are checked too. Full source-bound local/optional/GitHub checks still precede
 formal measurements. No new cost or playing-strength result exists yet. Work
 stops by9a.m.Pacific. Codex assists; personal time and understanding are not inferred.
+
+
+The final source checks now pass: 3,443 tests on each Python base environment,
+784 relevant optional tests on each, and both exact-source GitHub jobs. The
+formal toy proof also has a new safeguard: it must match every old policy,
+book and warm-vector content, with the original published baseline identified
+by its Git commit. Updating a changed archive's hash cannot bypass that check.
+The earlier source version's checks remain separate; no formal experiment used
+it. These checks are published before the next fresh proof or timing run.
