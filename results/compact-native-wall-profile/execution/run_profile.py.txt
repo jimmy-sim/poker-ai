@@ -1,0 +1,23 @@
+"""One separately registered complete elapsed native pair; filtered environment and full clocks."""
+import json,os,shutil,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-native-profile';f=w/'compact-native-wall-execution';f.mkdir(exist_ok=False)
+shutil.copyfile(__file__,f/'run_profile.py.txt')
+allowed={'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}
+env={k:v for k,v in os.environ.items() if k in allowed};env['PYTHONPATH']=os.pathsep.join((str(r/'src'),str(r/'scripts')))
+python=str(r/'.venv/bin/python')
+metadata="""import json,sys,numpy,poker_ai
+from pathlib import Path
+from profile_cached_native_wall import preflight,checked
+from poker_ai.reproducibility import runtime_environment
+r=Path.cwd();assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6';assert Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+c,s=preflight(r);assert len(s['sha256'])==384 and s['fingerprint']=='7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c';checked(r,s)
+print(json.dumps(dict(source=s,environment=runtime_environment(),module=poker_ai.__file__,scope='administrative pre-invocation runtime/source check; all required prerequisites repeated inside complete registered clocks'),indent=2))
+"""
+with (f/'environment.json').open('x') as o:
+ with (f/'metadata-stderr.log').open('x') as e:subprocess.run([python,'-c',metadata],cwd=r,env=env,stdout=o,stderr=e,check=True)
+command=[python,'scripts/profile_cached_native_wall.py','--output','results/runs/compact-native-wall-profile/pair','--stop-at','2026-11-13T17:00:00Z']
+(f/'invocation.json').write_text(json.dumps(dict(command=command,cwd=str(r),PYTHONPATH=env['PYTHONPATH'],scope='one fixed built-in elapsed plain/profile complete native pair, prior CPU timeout retained, no new training/admission'),indent=2)+'\n')
+with (f/'stdout.log').open('x') as o:
+ with (f/'stderr.log').open('x') as e:result=subprocess.run(command,cwd=r,env=env,stdout=o,stderr=e)
+(f/'exit.json').write_text(json.dumps(dict(returncode=result.returncode),indent=2)+'\n');print(json.dumps(dict(returncode=result.returncode,execution=str(f))));raise SystemExit(result.returncode)

@@ -4565,3 +4565,22 @@ bindsworkflow/correction, future-diagnostic-only andno-retroactive-admission fla
 All384sciencebytes/7fdfp unchanged. Journal109 explains labelsversusactualruntime.
 Publish allsixroles BEFOREsinglefixedelapsedpair. No elapsed outcome/optimizer
 selection/newtrajectory yet. No localheavychecks duringcollection.
+
+### November13 — complete elapsed audit profile and exact pair identity
+
+Correctactualrolespub331precede fixedpair. Ordinary406.4912895419984s/0,
+profile573.8724571670027s/0; shared980.402532209002<1800, each<900. Complete
+432scalars/1152fixed/threeactualreads/worker-cache-source identities EXACT.
+All2354rawfunctions/5640callers+binary retained; exactwholepair/executioncopies,
+allfilehashes/originalignoredbytes, readonlyverifierPASS. OldCPU900timeout and
+old9runtime-label mismatches remainunchanged/flagged; no retroactiveadmission.
+
+Callersshow184matrixbuilds114.6707inclusive,918104canonicalcalls32.0032inclusive,
+4099136bestevaluatorcalls35.2272inclusive. Wait126.5368self includesnativework;
+wallframesnotCPU andinclusiveregionsoverlap. Measurednextquestion: boundedpure
+card normalization/ranking reuse preserving allvalues/RNG/typedinputbehavior,
+notpolicy/referenceoutputcaching. No optimizationoutcome/newtrajectory yet.
+Posthocreport source+10unit checks0.02s pass withlint/format/types; rawallframes/
+callers exported andelapsed-versusCPU guard preventswrongunitlabels. Publish
+source+rawsbeforeactualrender. Latest13:55real-study start nowpassed; remaining
+work is boundedsoftware/diagnosis before9, never shrunkcaps/seeds/gates.

@@ -122,3 +122,40 @@ Publish this evidence before the fixed elapsed pair; no elapsed outcome yet.
    may identify a bottleneck, but a new optimizer still needs prospective
    correctness/source/proof/cost/forecast/admission gates before new training.
    Diagnostic timings cannot replace the failed cost set or quality criteria.
+
+## Complete elapsed result — November13
+
+After corrected same-head gates were public3318248, the fixed pair completes:
+ordinary406.4912895419984s, profiled573.8724571670027s, shared980.402532209002s.
+Each child fits900and shared fits1800. Every432scalar/1152fixed result, allthree
+actual computed replay summaries and worker/cache summaries match EXACTLY.
+Both receipts explicitly fail base admission. Raw binary plusALL2354function
+entries/5640caller edges are retained; readonly verification passes. The earlier
+CPU-callback profile stays incomplete, and old exact-version claims remain
+corrected rather than backfilled. No new poker learning or compute permit.
+
+Ordinary parent-body CPU277.739903s; its tiny/initial/final own reads take
+2.056473917/135.228961750/138.547934250wall seconds (CPU1.911168/134.531548/
+137.870874). Native worker batch124.341737833wall seconds. Profiled parent-body
+CPU444.815026s and worker batch124.348938625wall seconds are separate. Frame
+self/cumulative values are elapsed/wait-inclusive, not individual CPU samples.
+The largest self entry is poll126.53684s, which includes waiting for required
+workers; removing that wait would remove work. Inclusive regions overlap.
+
+Allraw callers place repeated construction in old validation loaders:184matrix
+builds114.6707inclusive seconds,341504observation keys97.0765,52spot-tree builds
+73.9934. These overlap and must NOT be added. Card canonicalization918104calls
+32.003185498inclusive seconds (859328throughCardAbstraction.bucket); hand
+ranking4099136calls35.227197824inclusive (2811904throughown equity outcomes).
+These are observed profiled elapsed costs on one ordered case, not uninstrumented
+CPU costs or population estimates. The two card functions are deterministic
+from fixed card inputs and return immutable values. A separately prospective,
+bounded memoization test is justified; no speedup or stronger agent assumed.
+
+The complete original required math and reference isolation stayed intact.
+Post-measurement report generation will authenticate source/units/raw files,
+export EVERYframe/caller plus disjoint elapsed parts, and clearly separate CPU
+from elapsed measures. Its10unit checks pass0.02s, including rejection of other
+instrument units and overlapping/missing final-read accounting; lint/format/
+strict typing of the new report code pass. Publish raw evidence and reporting
+source before rendering. No original costD/Nsubstitution or old-gate rescue.
