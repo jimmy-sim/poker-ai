@@ -4737,3 +4737,15 @@ posthocfixtureexact2 versuscorrectfloatdelta1.9999999999999998; approximateasser
 fixONLYtest, no390measurementcode/data altered. All9report/accountingtestsPASS
 bothversions0.04/0.07s andstrictbothbaseenvs pass. Journal112/README/methods current;
 finalrelevantchecks+bothhostedjobsrequiredbefore65historymerge.
+
+### November13 — prospective helper-accounting component only
+
+Resourcecountertrace recordschildCPUbutnotpercommand. Registertransparent
+subprocess.runobserver contractbeforeimplementation: Gitread-onlycategories/
+argvhashes/outputtype+hashonly, no rawargs/env/input/outputcontents. Unsupported
+calls executeunchanged withvisibleincompletecoverage. Rawresourceincrements
+areovercallinterval, notexclusivePIDCPU; concurrentchildrenconfound. Return/error
+identity, partialstarts/retentionfailures/restoration/privacy tests withtiny
+softwarefixtures. No real-sourcecollector wired or formalmeasurement tonight;
+futurecollector mustbesource-bound/all6rolespublicwithfixedcap/config. No new
+pokertraining/reference/optimization/admission, originalfailuresremain.
