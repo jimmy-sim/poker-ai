@@ -137,11 +137,10 @@ class Recorder:
             recognized=classification is not None,
             status="running",
         )
-        before = snapshot() if classification is not None else None
+        before = None
         if classification is not None:
             row.update(
                 classification,
-                before=before,
                 attribution=(
                     "parent reaped-child increment over call; not exclusive PID "
                     "CPU; concurrent children would confound"
@@ -151,10 +150,16 @@ class Recorder:
             row["coverage"] = (
                 "unsupported call; arguments/input/environment/output not retained"
             )
+        # Count the attempt even if its first resource reading fails. Otherwise
+        # earlier completed calls could incorrectly look like full coverage.
         self.rows.append(row)
         try:
+            before = snapshot() if classification is not None else None
+            if classification is not None:
+                row["before"] = before
             self.publish(row)
         except BaseException:
+            self.observer_errors += 1
             row["status"] = "observer_failed_before_execution"
             raise
         try:

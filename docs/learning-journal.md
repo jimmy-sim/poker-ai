@@ -78,7 +78,10 @@ CPU time. Step 112 now retains a complete resource trace with matching results. 
 substantial CPU work in child programs, which the parent CPU column omitted.
 The new diagnostic's lower cached elapsed time does not erase the earlier failure
 or admit performance. The playing strategy is unchanged; no new strength claim
-or learning permit follows.
+or learning permit follows. Step 113 prepares a helper-call recorder and fixes two
+coverage corner cases. Its 22 focused tests and 166 related tests pass on each
+Python version. The corrected component remains a draft until its fresh full
+checks pass; no real source-validation collector is wired or measured.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5451,3 +5454,18 @@ coverage. This tightens the observer; it does not change a poker result.
 The corrected component now passes20 focused tests on both actual Python3.11.17
 and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
 base/optional and hosted checks are repeated for the corrected head before merge.
+
+A second review test checks what happens when the resource reading itself fails.
+The attempted call must stay visible; otherwise the earlier successful calls
+could incorrectly look like complete coverage. The ledger now records the
+attempt before taking that reading and rejects completion after a failure.
+Both an ordinary operating-system error and a keyboard interrupt are tested.
+This correction needs fresh full checks before merge; earlier full results
+belong to their original heads and do not qualify the corrected component.
+
+The latest correction passes22 focused tests on Python3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4 (1.89/0.10s), and166 related tests on each (9.16/8.34s). Strict
+typing746files passes on both; lint/format pass. Full checks of the prior heads
+stay labeled as prior-head evidence. The latest corrected head needs fresh full
+checks before merge, so this foundation may remain a published draft at the9AM
+stop. No new long check or experiment is squeezed into the remaining window.

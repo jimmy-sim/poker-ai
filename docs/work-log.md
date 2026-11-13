@@ -4770,3 +4770,22 @@ component full checks remain draft-head results, not qualification of this fix.
 The corrected component now passes20 focused tests on both actual Python3.11.17
 and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
 base/optional and hosted checks are repeated for the corrected head before merge.
+
+Further failure review found an initial snapshot could raise before appending the
+attempt, allowing previous completed calls to masquerade as full coverage. Record
+the attempt first, mark/count initial observer failures and preserve exception
+identity without executing the original command. OSError/KeyboardInterrupt
+regressions cover a completed prior call. Full checks at768b/ac4ec9b remain their
+own-head software evidence; this correction requires fresh checks before merge.
+No real-source collector or formal collection.
+
+Latest initial-snapshot correction:22focused tests PASS311/312(1.89/0.10s),
+166related tests PASSboth(9.16/8.34s), strict746files PASSboth and all lint/format
+pass. Journal current-status updated. Remain DRAFT until fresh full local/hosted
+checks of this correction pass; prior-head results are not transferable. With
+under13minutes to9AM, do not launch another full local check whose safe finish
+cannot be assured. Publish corrected source/CI and retain all partial/prior
+checks; no formal collector, actual source-path measurement or poker trajectory.
+PR65 is history-merged effa65c after verified3632pass hosted jobs on both actual
+runtimes; main viewer/43tests0.20s and all390source hashes match, ten user result
+edits/status/index entries/staged+unstaged patches remain exact.

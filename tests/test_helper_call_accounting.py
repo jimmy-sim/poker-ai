@@ -228,3 +228,32 @@ def test_relative_root_with_child_cwd_is_unsupported(tmp_path: Path) -> None:
     assert recorder.summary()["unsupported"] == 1
     with pytest.raises(ArithmeticError, match="coverage"):
         recorder.require_complete_coverage()
+
+
+@pytest.mark.parametrize("error", [OSError("fixture"), KeyboardInterrupt()])
+def test_initial_snapshot_failure_cannot_hide_an_attempt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, error: BaseException
+) -> None:
+    result = subprocess.CompletedProcess([], 0, b"unchanged", b"")
+    calls = []
+
+    def run(*a: Any, **k: Any) -> Any:
+        calls.append(True)
+        return result
+
+    recorder = tool.Recorder(tmp_path, COMMANDS, original=run)
+    assert recorder(command(tmp_path)) is result
+    recorder.require_complete_coverage()
+
+    def failed_snapshot() -> dict[str, Any]:
+        raise error
+
+    monkeypatch.setattr(tool, "snapshot", failed_snapshot)
+    with pytest.raises(type(error)) as actual:
+        recorder(command(tmp_path))
+    assert actual.value is error and calls == [True]
+    assert recorder.summary()["requests"] == 2
+    assert recorder.summary()["observer_errors"] == 1
+    assert recorder.rows[1]["status"] == "observer_failed_before_execution"
+    with pytest.raises(ArithmeticError, match="coverage"):
+        recorder.require_complete_coverage()

@@ -44,3 +44,9 @@ accounting/raw-delta integrity. Use tiny temporary Git/software fixtures only;
 no real-poker or source-path timing conclusions. Full project checks and both
 hosted jobs precede merge. Publish accurate component status and the learning
 journal; do not call this a complete collector or measured speedup.
+
+The in-memory ledger counts an attempted call before its first resource snapshot.
+If that snapshot raises, the original command is not executed, the same observer
+error is raised, and coverage remains visibly incomplete even when earlier calls
+completed. This does not guarantee disk retention after a failed sink or abrupt
+process death; a future collector must retain its outer partial/failure status.
