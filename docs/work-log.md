@@ -4647,3 +4647,20 @@ verified; all6roles/rawmetadata/untrimmedlogs authenticated andretained. Source
 387/b55a86 unchanged; retarget64main onlyafterthisruncompleted. Publishchecks+
 posthocreporter/source beforeONEregistered completepair. No otherlocalheavyjob
 runs duringmeasurement; full900/1800caps+1800finalCI+120save fit9a.m.cutoff.
+
+### November13 — card reuse exact but registered whole-wall criterion FAILS
+
+Bothcompletecommands0,481.8409937079996/595.6503214999975s; pairedtimingdriver2.
+All432scalars/1152fixed/threeactualreads/worker-source-proof identities EXACT.
+ParentCPU283.79782/261.253542s(7.94%lower), butwholecachedwall23.62%higher.
+Canonical918104requests/917324hits/780originals; rank4099136/4068415/30721.
+No errors/fallbacks/evictions; allentrybounds intact. UnchangedworkerCPUabout123s
+each whilebatchwall134.1043→165.1282; tinyreadCPU1.91/2.03 versuswall2.06/9.61.
+Evidence identifiesCPU-versus-elapsed discrepancy, notitscause. No arbitrarywall
+exclusion, capchange, rerun, cachedproduction/forecast/admission or newlearning.
+Exactwholepair/executioncopies+allhashes/originalignoredbytesretained; readonly
+complete math verifierPASSwhiletimingFAILkept. RendererC806publishedbeforedata;
+389-source report generated, exactcopied, actualPNG visuallychecked(no clipping/
+labeloverlap), allinputs/outputs bound. Sevenreport/boundarytests/lint/format/strict
+bothbase interpreterspass. Next separately registerboundedresources/clocktracing,
+notintegration ofthefailedprototype. Final64hostCIbeforehistorymerge.

@@ -53,3 +53,50 @@ That shared instrumentation adds work relative to an unwrapped historical comman
 A measured reduction is relative to this instrumented uncached baseline. It must
 not be relabeled as a measured production speedup, and cannot replace the fresh
 three-repetition complete production costs or their maximum-based forecast.
+
+## Result — exact calculations, whole-command timing FAIL
+
+All six actual-runtime checks at49ebd19 were publicc806e7f before the ONEpair.
+Both complete commands finish under900seconds and the pair under1800. Every
+432scalar,1152fixed condition,three actual computed replays, original proof-cache
+counter and worker summary matches exactly. No errors, fallbacks or evictions.
+
+| Measurement | Uncached | Cached |
+|---|---:|---:|
+| Whole command, elapsed seconds |481.8409937079996|595.6503214999975|
+| Parent body CPU seconds |283.79782|261.253542|
+| Reference-worker batch elapsed seconds |134.10429270799796|165.1282204159943|
+| Original normalization calls |918104|780|
+| Original ranking calls |4099136|30721|
+
+The cached command is23.62%slower in this ordered pair, so the registered timing
+gate FAILS and the driver returns2. Parent CPU is7.94%lower. Normalization has
+917324hits and780entries; ranking4068415hits and30721entries, both below their
+fixed entry limits. These are counts and one pair's observations, not peak-memory
+or population-speed estimates. The original unwrapped historical audit is a
+separate run; shared instrumentation overhead must not be hidden.
+
+The elapsed increase also appears in the unchanged reference workers: their CPU
+bodies remain roughly123seconds each, while their elapsed bodies rise from about
+134to165seconds. The tiny read uses1.91/2.03CPU seconds but2.06/9.61elapsed.
+Those records show that less counted CPU work did not yield lower elapsed time;
+they do not identify whether scheduling, I/O, memory pressure, idle behavior or
+another cause explains it. No machine-wide or per-interval resource trace was
+collected, so there is no causal diagnosis. CPU values are not stacked as wall
+intervals or summed across parallel workers.
+
+All original/retained raw commands, complete identities, journals, clocks and
+execution code survive, with exact file hashes. The read-only viewer verifies
+complete mathematics even though the performance criterion fails. The report
+exports the raw counters and disjoint elapsed parts, binds all inputs and renders
+[the inspected chart](../results/card-computation-cache/report/card-cache.png).
+No implementation/source/cap/seed was changed to improve this outcome. No repeat
+under this protocol, production integration, new forecast, permit or learning.
+The next question is a separately registered resource-trace diagnostic, preserving
+this failure and the older budget/runtime-record limitations.
+
+```sh
+.venv/bin/python scripts/check_card_cache.py --show results/card-computation-cache/pair
+open results/card-computation-cache/report/card-cache.png
+.venv/bin/python -m pytest -q tests/test_card_computation_cache.py tests/test_card_cache_report.py
+```

@@ -5335,3 +5335,21 @@ computed replay and worker summary. A faster result would justify investigating
 production integration; it would not prove a stronger poker agent or pass the old
 failed budget forecast. No new learning run fits tonight's reserved window.
 Codex assistance is recorded; personal practice and time are not inferred.
+
+The complete pair is now saved. Every checked result agrees, and the cache avoids
+almost all repeated calculations. However, the timing gate **fails**:481.84seconds
+without reuse versus595.65with reuse. The parent uses less active CPU time
+(283.80to261.25seconds), while total elapsed time rises. Even the unchanged
+reference workers take longer to finish despite using about the same CPU time.
+
+CPU time measures active processing; elapsed time includes the whole wait until
+completion. This difference matters: fewer original calls did not make this
+complete command faster. The [saved chart](../results/card-computation-cache/report/card-cache.png)
+shows both sides, and [the method](card-computation-cache.md) keeps every raw result
+and the failed criterion. There were no invalid-input fallbacks, errors or entry
+limit violations. Neither a stronger agent nor a production speedup was accepted.
+
+The next investigation records more timing and resource information to help
+separate possible causes. We have not established whether scheduling, I/O, memory
+pressure or idle behavior explains the gap. That question gets a new protocol;
+this result is preserved rather than rerun or relabeled as a pass.
