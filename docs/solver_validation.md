@@ -520,3 +520,16 @@ the fixed1%accuracy limit. Keep that distinction: no reference strategy enters
 training, and no default/fresh/global admission follows. The full method, failed
 gate, every seed/control and three-seed uncertainty limitations are retained in
 [the sampled writeup](compact-sampled.md).
+
+## Cached compact pipeline — November 13, 2026
+
+For PR #62, Codex read the full installed OpenSpiel2.0.2 LICENSE in the isolated
+Python3.11.17/NumPy2.4.6 environment before formal reference use. It remains
+Apache-2.0, SHA-256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+The comparison use remains permitted subject to the license/notice terms; no
+solver source or reference strategy is copied. The unchanged scalar interface
+exports the OWN finite game and OWN probabilities for value/BOTH-BR comparison.
+Reference outputs are comparison-only and cannot enter the reference-free
+training workers. Formal own proof/cost evidence must be public before native
+construction; mocked unit gates are not a new numerical reference result.

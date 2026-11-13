@@ -4332,3 +4332,34 @@ forecast/admission and unchanged scientific gates before any new learning.
 No prototype timing rescues old1,210.21>900failure. No implementation or new cost
 outcomes yet. Latest real-study start5:55a.m. preserves original11,100s reserve;
 no future automation/subagents. Codex-assisted, human time not recorded.
+
+
+### November 13 — cached pipeline implementation/correctness foundation
+
+New opt-in scripts/compact_cached family reuses original capture/replay/scoring/
+context/projection/native math and preserves every historical src/entry/config
+byte. Its379-file effective source includes every private module, entry and
+registration plus all367historical cache dependencies. New own/native/worker
+records require implementation config and strict actual cache counters; missing,
+disabled, malformed and cross-family records/permits are rejected. Whole clocks,
+original180/900/7200caps, fixed formulas and all-three-own-before-native gates
+are preserved. Read-only new-family metadata uses actual COST/REAL/TOY scope and
+actual recomputed summary, with stored summary separate; legacy entry unchanged.
+
+Focused adapter47+original cache31 checks pass on the current source. Complete
+new spawned30-path/432-score tiny unit data agree with direct terminal sums and
+exhaustive pure replies; all324policy/216book/30warm vector contents match the
+old uncached proof, while source-bearing metadata intentionally differs. These
+are mocked-gate UNIT checks, not formal checked-source proof/admission. Lint,
+format and full-project strict typing pass. Full fresh local bases/optional and
+both exact-head hosted checks are next before formal collection.
+
+Local setup found an inherited macOS UF_HIDDEN flag on the isolated editable
+.pth file, which Python correctly skipped. Clearing ONLY that local environment
+flag restored imports; interpreter/scientific source stayed unchanged. A draft
+subprocess-test import indentation issue and missing explicit unit own-path were
+fixed before formal collection; early private logs retained outside repo. No
+scientific outcome or favorable timing retry involved. OpenSpiel2.0.2 full
+installed Apache license reread/recorded Nov13 before any new reference use.
+Codex-assisted; human time/mastery not inferred. Stop9a.m.Pacific, latest real
+study5:55 under the unchanged11,100s reserve; no subagents/future automation.

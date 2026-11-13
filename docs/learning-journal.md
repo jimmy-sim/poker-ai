@@ -5071,5 +5071,10 @@ that, the integrated software must pass correctness, both Python checks and
 GitHub CI, a complete tiny-game rehearsal, and three complete own/audit cost
 measurements. The original time and accuracy rules stay fixed. If the complete
 forecast still fails, retain that failure and investigate the remaining cost.
-This is a prospective plan; no new implementation or measurement yet. Work stops
-by9a.m.Pacific. Codex assists; personal time and understanding are not inferred.
+The separate opt-in adapter is now implemented. Its focused checks include a
+complete tiny-game run whose policy and book contents match the old uncached
+proof exactly, and direct enumeration checks of values and best replies. Source,
+worker execution records, failure retention, scope labels and missing permits
+are checked too. Full source-bound local/optional/GitHub checks still precede
+formal measurements. No new cost or playing-strength result exists yet. Work
+stops by9a.m.Pacific. Codex assists; personal time and understanding are not inferred.
