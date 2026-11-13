@@ -20,7 +20,12 @@ each unchanged spawned reference worker with two own-process snapshots and a
 source-bound separate sidecar; leave its numerical summary untouched. Capture
 OS-provided user/system CPU, peak RSS, faults, swaps, block I/O and voluntary/
 involuntary context-switch counters. Raw snapshots and derived deltas survive.
-RSS is a cumulative per-process peak, not interval allocation; units are explicit
+The installed Darwin getrusage(2) manual was checked on November13 and specifies
+ru_maxrss in bytes. Reaped-child counters include all completed subprocesses in that interval:
+parent-wide intervals can include parallel native workers and metadata tools.
+They are not an additional wall interval. RSS is a cumulative per-process peak,
+not interval allocation;
+units are explicit
 (Darwin bytes; Linux KiB in software fixtures). Zero/unsupported counters do not
 prove an event absent. Calls are nearby, not atomic. CPU is not stacked as wall
 intervals or summed across parallel workers. UTC is observational, not a cap clock.

@@ -4687,3 +4687,24 @@ assertionstate), exactsupervisorcommand/binary pin checked, restoredaliases/env,
 no newtraining/policy/referencecache.34new+66cache/reporttests100pass2.36s;
 fullprojectlint/strict742filespass. Publishsource thenall6same-head actual-runtime
 rolesbeforeanyformaltrace. Supplemental profiletests included in finalfocusedset.
+
+PR64historymergedb8ef006afterbothfinalhost43448389410pass3589/64skip/150plus
+historicalwarning926.89/1198.07s, actualuv/Python/NumPyverified; rawlogs/metadata
+retained. MainFFfresh152151Zsnapshot alltenbytes/status/index/patches preserved;
+readonlydata/sourceviewer and66regressions3.77spass, aftertestpreservationpasses.
+This closesnegativeinvestigation, nottimingadmission. New390-sourcecollection
+stillwaitsforallsixroles. Posthocresourceexporter draftedbeforeoutcome:8unit
+scope/raw-delta/CPU-wall/peak-unitchecks0.04s andbothbase-onlystrictchecks pass;
+allresourcecounter/clock/peakrows retainedwithoutcausal/performanceclaim.
+
+InstalledDarwingetrusage(2)manualchecked:ru_maxrssmaximumresidentsetisbytes;
+LinuxKiBlabelsapplyonlytheir software fixtures. Temporarycaffeinate-i truefixture
+returns0/no diagnostics; requestfieldexplicitlydoesnotclaimindependentassertion-
+state audit. Originalfailedpairimmutable, newbothdirectiondescriptivetraceonly.
+
+390-source7487afb/be647d36 ALL6rolesPASS: local3623/64skip/150deselect
+798.44/772.94s; optional964each449.10/382.05s; bothhost43450790359actualuv+
+Python/NumPyverifiedbeforetests. Untrimmedlogs/fullheadmetadata authenticated;
+retarget65mainonlyafterruncompleted. Publishallsixandtestedposthocreporter
+BEFOREoneformalresourcepair. Source390/old387 unchanged. Currentfullcaps plus
+1800finalCI/120save reservefit9a.m.; no otherlocalheavyjobduringcollection.

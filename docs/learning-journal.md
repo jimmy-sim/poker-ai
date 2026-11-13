@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Measure active work and elapsed time](#112-measure-the-work-and-the-wait-separately)
+
 - [Reuse an exact card calculation](#111-reuse-a-card-calculation-without-changing-a-decision)
 
 - [See where the complete audit spends time](#110-see-the-complete-audit-cost-before-changing-it)
@@ -68,9 +70,11 @@ agree, but its full audit-budget forecast still fails: 933.89 seconds against
 900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
 learning treatment remains unrun. Step 110 now measures the complete audit:
 the ordinary copy takes 406.49 seconds and the profiled copy 573.87, with identical
-checked results. Step 111 tests bounded reuse of repeated card calculations;
-full source checks still precede its timing pair. These are verification and
-software results, not a new stronger agent.
+checked results. Step 111 now retains a failed whole-command timing comparison: 481.84 seconds
+uncached versus 595.65 cached, despite identical checked results and less parent
+CPU time. Step 112 adds resource observations to investigate that discrepancy.
+Its full source checks precede the separate diagnostic pair. The playing strategy
+is unchanged; no new strength claim or learning permit follows.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
