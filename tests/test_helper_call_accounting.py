@@ -211,3 +211,20 @@ def test_complete_coverage_is_not_command_success(tmp_path: Path) -> None:
     assert recorder(command(tmp_path), check=False) is result
     assert recorder.rows[0]["returncode"] == 5
     recorder.require_complete_coverage()
+
+
+def test_relative_root_with_child_cwd_is_unsupported(tmp_path: Path) -> None:
+    result = subprocess.CompletedProcess([], 0, b"unchanged", b"")
+    calls = []
+
+    def run(*a: Any, **k: Any) -> Any:
+        calls.append((a, k))
+        return result
+
+    recorder = tool.Recorder(Path.cwd(), COMMANDS, original=run)
+    argv = ["git", "-C", ".", "status"]
+    assert recorder(argv, cwd=tmp_path) is result
+    assert calls == [((argv,), {"cwd": tmp_path})]
+    assert recorder.summary()["unsupported"] == 1
+    with pytest.raises(ArithmeticError, match="coverage"):
+        recorder.require_complete_coverage()

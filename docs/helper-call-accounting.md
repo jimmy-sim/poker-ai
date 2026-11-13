@@ -16,7 +16,9 @@ seeds, work counts,7200/900study caps and failed gates remain unchanged.
 
 The recorder observes `subprocess.run`, including calls through `check_output`.
 Recognize only builtin argv lists/tuples for Git with `-C` equal to the checked
-repository and declared read-only subcommands. Recognition is observation, not authorization of arbitrary flags; a future
+repository through an absolute `-C` path, and declared read-only subcommands.
+Relative paths remain unsupported because a child working folder could change
+their meaning; the original command still executes unchanged. Recognition is observation, not authorization of arbitrary flags; a future
 collector remains responsible for its frozen reviewed argument forms.
 Record category and argument hash,
 not raw arguments, environment, input or output contents. Supported output is

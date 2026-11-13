@@ -4760,3 +4760,13 @@ expandedpriorfixturegroup126/2.84s(17-testdraft) and31260/0.40s; strict746files+
 alllintpass. Journal113current, no real-sourcepathrecorded, solverorlearnerrun,
 optimization, measuredspeedup or admission. Publishtestedcode, thenfullbase and
 relevantoptionalchecks+bothhostjobs. Futureformalcollectorstillunimplemented.
+
+Final component review caught relative `git -C` classification ignoring child
+`cwd`. Recognition now requires an absolute repository path; unsupported forms
+still execute unchanged. Added regression test for return/argument identity and
+visible coverage rejection. No old source/data changed. Previous19-test and
+component full checks remain draft-head results, not qualification of this fix.
+
+The corrected component now passes20 focused tests on both actual Python3.11.17
+and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
+base/optional and hosted checks are repeated for the corrected head before merge.

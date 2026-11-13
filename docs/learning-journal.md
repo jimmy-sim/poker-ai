@@ -5440,3 +5440,14 @@ published qualification still precede collection. The remaining overnight window
 is being used for software checks and saving this foundation, not another long
 poker audit. The strategy, failed gates and scientific limits remain unchanged.
 Codex assistance is recorded; personal time or understanding is not inferred.
+
+
+Final review found a path corner case: a relative repository path can refer to a
+different folder when the command changes its working folder. The observer now
+requires an absolute repository path for recognized calls. A regression test
+checks that the relative form still executes unchanged but records unsupported
+coverage. This tightens the observer; it does not change a poker result.
+
+The corrected component now passes20 focused tests on both actual Python3.11.17
+and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
+base/optional and hosted checks are repeated for the corrected head before merge.

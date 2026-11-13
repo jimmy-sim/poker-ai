@@ -93,6 +93,10 @@ class Recorder:
             or any(type(a) is not str for a in argv)
         ):
             return None
+        # Relative -C paths use the child's cwd, which may differ from ours.
+        # Keep recognition narrow; the future collector uses absolute roots.
+        if not Path(argv[2]).is_absolute():
+            return None
         try:
             known_root = Path(argv[2]).resolve() == self.root
         except (OSError, ValueError, RuntimeError):
