@@ -1,0 +1,12 @@
+"""Fixed serial0/1/2 collection, no retries/selection or intervening source edits."""
+import json,subprocess,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent
+commands=[[sys.executable,str(w/'run-cached-stage.py'),'cost-own','--repetition',str(i),'--output',f'results/runs/compact-cached/cost-{i}/own.json','--scratch',f'results/runs/compact-cached/cost-{i}/scratch'] for i in range(3)]
+p=w/'compact-cached-own-collection.json';assert not p.exists();p.write_text(json.dumps(dict(order=[0,1,2],commands=commands,scope='fresh ignored outputs retained exactly; ALLthree own bundle published before any native cost; no poker training'),indent=2)+'\n')
+for i,command in enumerate(commands):
+ if (w/'compact-cached-stop-requested').exists():raise SystemExit('stop requested between fixed stages; retain preceding evidence')
+ print('starting fixed own cost',i,flush=True)
+ result=subprocess.run(command,cwd=w)
+ if result.returncode:raise SystemExit(result.returncode)
+print('all THREE own cost stages complete; no native cost constructed',flush=True)

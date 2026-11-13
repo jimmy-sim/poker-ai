@@ -4321,3 +4321,153 @@ Final same-source relevant suites pass147each:16.16s onPython3.11 and15.91s
 onPython3.12. All367named scientific files unchanged; complete raw pair hashes
 and recomputed/stored identity rechecked by the retained own reader.
 Lint/format/hooks pass. Final publication hosted checks required before merge.
+
+### November 13 — resume issue4; prospective cached pipeline
+
+User authorizes this night's work through9a.m.Pacific. Actual main455e6e9 and
+allten unrelated modified result files inspected and freshly snapshotted before
+isolated research/compact-cached-pipeline. The prospective integration plan fixes
+effective source/counters in every process, complete original proof/cost/audit/
+forecast/admission and unchanged scientific gates before any new learning.
+No prototype timing rescues old1,210.21>900failure. No implementation or new cost
+outcomes yet. Latest real-study start5:55a.m. preserves original11,100s reserve;
+no future automation/subagents. Codex-assisted, human time not recorded.
+
+
+### November 13 — cached pipeline implementation/correctness foundation
+
+New opt-in scripts/compact_cached family reuses original capture/replay/scoring/
+context/projection/native math and preserves every historical src/entry/config
+byte. Its380-file effective source includes every private module, entry and
+registration plus all367historical cache dependencies. New own/native/worker
+records require implementation config and strict actual cache counters; missing,
+disabled, malformed and cross-family records/permits are rejected. Whole clocks,
+original180/900/7200caps, fixed formulas and all-three-own-before-native gates
+are preserved. Read-only new-family metadata uses actual COST/REAL/TOY scope and
+actual recomputed summary, with stored summary separate; legacy entry unchanged.
+
+Focused adapter47+original cache31 checks pass on the current source. Complete
+new spawned30-path/432-score tiny unit data agree with direct terminal sums and
+exhaustive pure replies; all324policy/216book/30warm vector contents match the
+old uncached proof, while source-bearing metadata intentionally differs. These
+are mocked-gate UNIT checks, not formal checked-source proof/admission. Lint,
+format and full-project strict typing pass. Full fresh local bases/optional and
+both exact-head hosted checks are next before formal collection.
+
+Local setup found an inherited macOS UF_HIDDEN flag on the isolated editable
+.pth file, which Python correctly skipped. Clearing ONLY that local environment
+flag restored imports; interpreter/scientific source stayed unchanged. A draft
+subprocess-test import indentation issue and missing explicit unit own-path were
+fixed before formal collection; early private logs retained outside repo. No
+scientific outcome or favorable timing retry involved. OpenSpiel2.0.2 full
+installed Apache license reread/recorded Nov13 before any new reference use.
+Codex-assisted; human time/mastery not inferred. Stop9a.m.Pacific, latest real
+study5:55 under the unchanged11,100s reserve; no subagents/future automation.
+
+
+Premeasurement review strengthened the baseline-equivalence requirement: the
+first379-file implementation checked old vector agreement in UNIT tests, but
+the formal software proof/admission must enforce it too. A new source-bound
+parity module checks all324policy/216book/30warm contents against exact original
+published commit37ca53d, including archive/header integrity, under the complete
+stage clocks. Formal read/publication/native/permit paths now require its record
+and replay its numerical check; source380binds that helper. Tests reject changed
+vectors even when archive hashes are updated, missing inventory, wrong scope or
+baseline, and absent parity evidence. Original source379check cohort is retained
+as pre-correction evidence and cannot qualify the final380source. No formal
+measurements were made on it, so this is not a cost retry or outcome selection.
+All final source roles will be rerun at one unchanged final head before data.
+
+
+### November 13 — final effective-source gate complete before collection
+
+B52a9ef/E45source380 passes both full local bases3,443/64skip/150deselect
+(785.65/764.62s), both broad ALL-EXTRAS784 (451.06/392.08s), and BOTH exact-head
+hosted43407283257 (3,443/64/150 plus historical warning;1,207.10/1,223.59s).
+Allsix raw roles/head/job metadata are retained atchecks.json. Superseded379
+source's3434/775local passes and cancelled hosted43405881565 are retained
+separately; no formal results existed on that source and none qualify380.
+Original source/config/kernel bytes unchanged. Source/frame/runtime guards use
+explicit checkout PYTHONPATH because this Mac skips hidden editable-path files.
+
+Collection may use fresh ignored output directories, then publish exact original
+receipt/child/journal/archive/report bytes at canonical versioned paths. Actual
+producer paths/invocations stay retained; no data rewriting or timing changes.
+The original complete-command scope excludes subsequent administrative copying
+and publication. All source/loading/archive/mathematical replay/report work stays
+inside measured clocks. This permits one coherent ALLthree-own publication
+BEFOREany native cost, and ALLthree-native publication before forecast, without
+weakening clean-source or publication gates. Runs remain serial. No formal proof,
+new cost or real training outcome yet. Next: publish these source roles, then the
+full shared180s tiny proof, own before native.
+
+
+### November 13 — complete source-bound cached tiny proof
+
+After six-role source evidence31db81a was public, fresh own software proof takes
+15.0506875s, all324policies/216books/30warms/108compositions/432scores/1152fixed
+conditions, replay0 and exact policy/book bytes. Formal old-vector guard matches
+all570vector contents against original own-only commit37ca53d. Parent5244checks,
+8original traversals/5236reuses; actual per-worker counters/journal retained.
+Complete own evidence02be1af public BEFORE any new native constructor. New
+independent command6.247079s; all432/1152compare within1.1102230246251565e-16
+FICTIONALpayoffunits; no reference actions exported/training. Shared133.857476s
+(includes own publication/administrative interval) fits180. Raw clocks, source,
+worker/journal/schema and exact copies retained. This is software proof ONLY;
+no new Hold'em trajectory or compute permit. Next allthree serial own cost
+stand-ins, one coherent own publication BEFOREany native costs.
+
+
+### November 13 — all three complete own costs retained before native
+
+Fixed serial0/1/2 whole own commands take200.1095483750105,
+200.82031762499537,201.19776920799632seconds; D=max201.19776920799632.
+Each fits900, includes source/proof/loading/archive/full math replay/sixreports,
+and records432scores/1152fixed, replay0, exactpolicy/bookbits and actualnew
+pokerwork0. Parent8076requests/26original/8050reuse, nofallback/rejection each.
+Every producer receipt/child/journal/archive/report is byte-identical at its
+published canonical path; original ignored outputs and command paths retained.
+Allsix reportfiles byte-identical across allthree runs; inspected allthree PNG
+classes (representative0 covers identical1/2). Titles explicitly say oldOWN
+stand-ins/zero newlearning/no strengthadmission, coincidentpairedgaps are not
+an experimental treatment result. No native COST constructor yet. Publish this
+ALLthree-own bundle before any new nativecost. These are new absolute pipeline
+costs, not a causal speed estimate versus old unpaired timings. Native N and the
+complete original guarded forecast remain unmeasured; no permit/new training.
+
+
+### November 13 — all three complete independent costs retained
+
+After ALLthree own costs were public atab02f25, fixed serial native0/1/2
+commands take402.320211541999,406.53780845800065,406.9446965840034s.
+Each compares432scores/1152fixed targets within1.8474111129762605e-13chips;
+reference scalar-only, no new training. Parent8316requests/26original/8290reuse
+and each native worker1112/18/1094, no fallback/rejection. Whole clocks retain
+pre-own rereplay, worker startup/loading/scalars, and required final own rereplay.
+Raw receipts/children/journals/execution/publication witnesses are retained at
+results/compact-cached-learning/cost/0..2. Original outputs remain unchanged.
+N=max406.9446965840034 gives native guard933.8893931680068>900; the COMPLETE
+forecast has not yet run and must seal/replay ALLinputs before final reporting.
+Publish this ALLthree-native bundle first. No admission/new poker trajectory.
+If full forecast fails, next step is complete-native-path profiling before any
+new optimizer; retain this failed cost set without favorable retries.
+
+
+### November 13 — complete cached forecast fails the independent budget
+
+Whole forecast 450.751459332998s<900; ALLthree own
+archives replayed, all native worker/journal/license/clock/publication evidence
+validated, 101 inputs sealed and original ALL24 full B4 paths/kernel geometry
+checked. No half discount. T=610.943356249918, D=201.19776920799632, N=406.9446965840034.
+Own guard 4046.1689634156646<7200 passes; independent
+933.8893931680068>900 FAILS. No admit command or new Hold'em
+trajectory. All prior failed outcomes and defaults remain. Method retains all
+six times and limitations; journal107 explains the practical decision.
+Next complete-native-path profiling, separately registered/source-checked,
+before any further optimization. Diagnostic times cannot rescue this cost set.
+
+Final relevant same-source regression:87focused adapter/cache tests pass in17.00s;
+all380scientific bytes still match B52/E45, complete forecast measurement valid,
+no permit/real own trajectory file exists. This evidence/documentation-only
+publication retains the earlier complete same-source local/optional gate. Both
+final PR-head hosted checks remain required before history-preserving merge.

@@ -1,0 +1,28 @@
+"""Exact new-family stage invocation; full clocks are owned by frozen entry."""
+import argparse,json,os,shutil,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-cached-pipeline';python=r/'.venv/bin/python'
+a=argparse.ArgumentParser();a.add_argument('operation');a.add_argument('--repetition',type=int);a.add_argument('--own');a.add_argument('--output');a.add_argument('--scratch');args=a.parse_args()
+label=args.operation+('-'+str(args.repetition) if args.repetition is not None else '')
+folder=w/'compact-cached-execution'/label;folder.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,folder/'run_stage.py.txt')
+allowed={'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}
+env={k:v for k,v in os.environ.items() if k in allowed};env['PYTHONPATH']=os.pathsep.join((str(r/'src'),str(r/'scripts')))
+metadata="""import json,sys,numpy,poker_ai
+from pathlib import Path
+from poker_ai.reproducibility import runtime_environment
+from compact_cached.source import source
+from compact_cached.admission import require_checks
+r=Path.cwd();assert sys.version.split()[0]=='3.11.17';assert numpy.__version__=='2.4.6';assert Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+s=source(r,clean=True);assert s['fingerprint']=='e45ab633d952d0ceece575358095a05a93558e8943bcc934cd7327a5249bf137';assert len(s['sha256'])==380;require_checks(r)
+print(json.dumps(dict(source=s,environment=runtime_environment(),module=poker_ai.__file__,scope='pre-invocation administrative metadata; stage repeats required source/check work inside original complete command clock'),indent=2))
+"""
+with (folder/'environment.json').open('x') as stream:
+ with (folder/'metadata-stderr.log').open('x') as err:subprocess.run([str(python),'-c',metadata],cwd=r,env=env,stdout=stream,stderr=err,check=True)
+command=[str(python),'scripts/validate_cached_compact.py',args.operation,'--stop-at','2026-11-13T17:00:00Z']
+for key in ('repetition','own','output','scratch'):
+ value=getattr(args,key)
+ if value is not None:command += ['--'+key,str(value)]
+(folder/'invocation.json').write_text(json.dumps(dict(command=command,cwd=str(r),PYTHONPATH=env['PYTHONPATH'],scope='original complete stage clocks/caps; no prototype timing substitution or changed seed/gate'),indent=2)+'\n')
+with (folder/'stdout.log').open('x') as stream:
+ with (folder/'stderr.log').open('x') as err:result=subprocess.run(command,cwd=r,env=env,stdout=stream,stderr=err)
+(folder/'exit.json').write_text(json.dumps(dict(returncode=result.returncode),indent=2)+'\n');print(json.dumps(dict(stage=label,returncode=result.returncode,execution=str(folder))));raise SystemExit(result.returncode)

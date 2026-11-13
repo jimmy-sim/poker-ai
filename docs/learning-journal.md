@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the complete cached comparison still waits](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline)
+
 - [Reuse a structural proof without skipping changed inputs](#106-reuse-a-proof-only-while-the-checked-structure-stays-the-same)
 
 - [Measure complete replay overhead before optimizing it](#105-measure-why-verification-is-expensive-before-optimizing-it)
@@ -45,6 +47,13 @@ notes section is for your own questions and explanations as you work through it.
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
+
+Step 107 completes the integrated cache checks and all six cost runs. Results
+agree, but its full audit-budget forecast still fails: 933.89 seconds against
+900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
+learning treatment remains unrun. Next measure the complete audit path before
+choosing another software improvement. These are verification results, not a
+new stronger agent.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5055,3 +5064,76 @@ retain exact times, CPU records, limits and the next decision. Before any future
 training, integrate and check the improvement separately, measure the complete
 prescribed costs, and pass the original admission rules. Final GitHub checks
 remain before merging this result; work stops by the user's 10 a.m. deadline.
+
+## 107. Put the faster check into a fully recorded experiment pipeline
+
+November13,2026. The cache trial speeds up one saved replay, but the full training
+experiment still lacks a passing audit-budget forecast. The next step is a
+separate [recorded pipeline](compact-cached-pipeline.md). Its source identity must
+include the adapter that actually runs, and each process must report its cache
+requests and reuses. We cannot call it the old implementation or reuse its old
+admission receipt.
+
+The scientific question stays the same: does training against our own
+finer-informed opponent help the compact learner at fixed work? Before trying
+that, the integrated software must pass correctness, both Python checks and
+GitHub CI, a complete tiny-game rehearsal, and three complete own/audit cost
+measurements. The original time and accuracy rules stay fixed. If the complete
+forecast still fails, retain that failure and investigate the remaining cost.
+The separate opt-in adapter is now implemented. Its focused checks include a
+complete tiny-game run whose policy and book contents match the old uncached
+proof exactly, and direct enumeration checks of values and best replies. Source,
+worker execution records, failure retention, scope labels and missing permits
+are checked too. Full source-bound local/optional/GitHub checks still precede
+formal measurements. No new cost or playing-strength result exists yet. Work
+stops by9a.m.Pacific. Codex assists; personal time and understanding are not inferred.
+
+
+The final source checks now pass: 3,443 tests on each Python base environment,
+784 relevant optional tests on each, and both exact-source GitHub jobs. The
+formal toy proof also has a new safeguard: it must match every old policy,
+book and warm-vector content, with the original published baseline identified
+by its Git commit. Updating a changed archive's hash cannot bypass that check.
+The earlier source version's checks remain separate; no formal experiment used
+it. These checks are published before the next fresh proof or timing run.
+
+
+The fresh tiny-game rehearsal is complete. It preserves every old policy/book
+and warm-vector value, and all 432 scores plus 1,152 fixed conditions agree with
+the independent checker within 1.11e-16 fictional payoff units. Our own evidence
+was public before the reference ran. The full proof, including that publication
+interval, takes 133.86 seconds under its 180-second cap. This validates software;
+it says nothing new about poker strength. Next measure the complete real-game
+verification workload using old own policies as timing stand-ins, without any
+new poker training. All three own cost records must be public before reference
+costs start.
+
+
+All three own-side cost runs finished in 200.11, 200.82 and 201.20 seconds.
+The forecast will use the slowest, 201.20. Each checks the whole fixed inventory
+and reproduces every value exactly. These are old policies reused only to
+measure software cost, so the identical report curves do not show a new agent
+learning. The plots say this explicitly. All own evidence is published before
+the next three independent-reference cost runs. Their slowest complete time
+will decide whether the unchanged audit-budget forecast fits. No new training
+permit has been issued.
+
+
+All three complete reference-side cost runs also agree numerically: 432 scores
+and 1,152 conditions differ by at most 1.85e-13 chips, a tiny rounding amount.
+They take 402.32, 406.54 and 406.94 seconds. The slowest still exceeds the
+390-second threshold required by our unchanged safety formula. The cache passed
+correctness, but this implementation does not yet make the larger study fit its
+audit budget. Next run the complete forecast, retaining all inputs and all three
+runs. Then profile the whole reference-checking path before choosing another
+optimization. No new Hold'em training or stronger-agent claim follows.
+
+
+The [complete forecast](compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
+is now finished. It takes 450.75 seconds to recheck every required run, archive
+and training-cost input. The own-work estimate is 4,046.17 seconds against a
+7,200-second limit; the independent-check estimate is 933.89 against 900. Both
+must pass, so the planned learning experiment stays unrun. We retain the failed
+result, even though it is close. The next measured question is which part of
+the complete audit remains expensive; an earlier own-replay-only profile cannot
+answer that alone. No time limit, seed, training work or accuracy gate changed.

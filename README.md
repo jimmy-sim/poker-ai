@@ -89,6 +89,13 @@ after instrumentation. [Journal 105](docs/learning-journal.md#105-measure-why-ve
 explains the 2,832 checks, the partial outer OS-resource capture and why a cache
 must detect changed structure. This is verification software, not new training.
 
+The [complete cached pipeline](docs/compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
+now preserves all policy/book values and passes independent numerical checks.
+Its new guarded audit estimate still fails: **933.89 seconds against 900**
+(own-work estimate 4,046.17 against 7,200 passes). All three fixed own/native
+costs and the full forecast are retained. No new training or stronger agent
+follows; the next step profiles the complete audit path.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:
