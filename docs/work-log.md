@@ -4584,3 +4584,14 @@ Posthocreport source+10unit checks0.02s pass withlint/format/types; rawallframes
 callers exported andelapsed-versusCPU guard preventswrongunitlabels. Publish
 source+rawsbeforeactualrender. Latest13:55real-study start nowpassed; remaining
 work is boundedsoftware/diagnosis before9, never shrunkcaps/seeds/gates.
+
+
+Posthoc385-source report generated from published8519562reportcode, rawdata and
+source/unit guards; exact copies retained withallinput/outputhashes. ActualPNG
+visually inspected: labels/legend/elapsed-versusCPU clear, no clipping/overlap.
+ALL2354function/5640caller CSVrows pluselapsedparts/workers/summary saved.
+Tenpure accounting/unit-source tests0.02s/lint/format/strict2newfiles pass.
+README/method/limits/terminalcommands/journal110 updated. Final hostedCI required
+before63historymerge. Next prospectivecard-only memoization (canonicalization
+andranking), exactvalues/input/RNG andboundedmemory withactualperprocesscounters;
+no agentperformance claim or fulltrajectory after13:55UTCunder11100reserve.

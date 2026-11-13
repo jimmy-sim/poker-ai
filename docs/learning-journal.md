@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [See where the complete audit spends time](#110-see-the-complete-audit-cost-before-changing-it)
+
 - [Check which interpreter actually ran](#109-check-which-interpreter-actually-ran)
 
 - [Measure the full independent check](#108-find-the-remaining-cost-in-the-complete-independent-check)
@@ -5265,3 +5267,36 @@ expected exact Python and NumPy versions, with assertions before tests. The
 [new receipt](../results/compact-native-wall-profile/checks.json) is public
 before the elapsed pair. Earlier mislabeled gates remain flagged; no historical
 run was reclassified as properly source-admitted.
+
+
+## 110. See the complete audit cost before changing it
+
+November 13, 2026. After the corrected source/runtime checks were public, the
+new elapsed-time pair finished:406.49seconds ordinarily and573.87with profiling.
+Every432score,1,152fixed condition, computed replay and worker summary matched
+exactly. All2,354function entries and5,640caller links survive alongside the raw
+binary. The older CPU-clock attempt stays failed and the historical version
+labels stay corrected; this result does not backfill either gate.
+
+The [saved chart](../results/compact-native-wall-profile/report/audit-costs.png)
+shows elapsed time on the left. Orange/red are the initial/final own-result
+replays; green is the reference-worker batch. Those two real own reads use about
+274seconds in the ordinary copy. The longer profiled bar includes measurement
+overhead. On the right, poll mostly means waiting for required workers. Those
+frame values are elapsed time, not CPU samples; inclusive function costs overlap.
+
+The caller records show old loaders rebuilding trees and repeating deterministic
+card work: about918,000normalizations of card suits and4.10million hand rankings.
+A normalization maps equivalent suit labels into the same card description. A
+hand ranking gives an immutable comparison value such as full house versus quads.
+Both depend on the cards passed to them, not on a learned strategy. The next
+prospective optimization will test bounded reuse of exactly those results, with
+original validation/fallback behavior and no changed RNG or policy values.
+
+The report exports every function/caller and checks that CPU-timer data cannot
+be relabeled as elapsed data. Its10tests pass; the actual chart was inspected.
+[Full method and raw evidence](compact-native-wall-profile.md) explain limits.
+One ordered saved case is not population runtime evidence, a stronger poker
+agent, a new budget permit or proof of memory savings. The full learning window
+no longer fits its required reserve tonight; bounded correctness/optimization
+work continues until9a.m. without reducing any scientific cap.

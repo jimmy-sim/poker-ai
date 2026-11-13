@@ -159,3 +159,27 @@ from elapsed measures. Its10unit checks pass0.02s, including rejection of other
 instrument units and overlapping/missing final-read accounting; lint/format/
 strict typing of the new report code pass. Publish raw evidence and reporting
 source before rendering. No original costD/Nsubstitution or old-gate rescue.
+
+
+## Saved report and terminal view
+
+[Audit costs](../results/compact-native-wall-profile/report/audit-costs.png),
+[all function rows](../results/compact-native-wall-profile/report/all-parent-functions.csv),
+[all caller rows](../results/compact-native-wall-profile/report/all-parent-callers.csv)
+and[render manifest](../results/compact-native-wall-profile/report/render-manifest.json)
+retain every value/source/input/output hash. Reporting is post-measurement and
+does not replace the original complete clocks. Renderer source8519562 was
+published before generation; its385-source map includes every384measurement
+dependency plus the reporting entry. All output copies match original bytes.
+The actual PNG was inspected: full labels/legend/units visible, no clipped data.
+Ten accounting/unit-source tests pass0.02s; newcode lint/format/types pass.
+
+```sh
+PYTHONPATH=src:scripts .venv/bin/python scripts/profile_cached_native_wall.py --show results/compact-native-wall-profile/pair
+open results/compact-native-wall-profile/report/audit-costs.png
+PYTHONPATH=src:scripts .venv/bin/python scripts/report_cached_native.py --output results/runs/native-audit-report-local
+```
+
+The first command reads saved results. The last builds a fresh posthoc report;
+source-bearing metadata may reflect the current compatible commit. It does not
+rerun trajectories, reference solvers or the original profiling experiment.

@@ -101,6 +101,14 @@ Its new guarded audit estimate still fails: **933.89 seconds against 900**
 costs and the full forecast are retained. No new training or stronger agent
 follows; the next step profiles the complete audit path.
 
+The[complete audit diagnosis](docs/compact-native-wall-profile.md) now has a
+correctly version-checked elapsed profile:406.49sordinary/573.87sprofiled, all
+432scores/1,152conditions and computed replays identical. Allfunction/caller
+records and a readable cost chart are saved. Repeated card-normalization and
+ranking during tree reconstruction are the next optimization question. The
+earlier CPU-timer timeout and incorrect historical patch labels stay visible.
+This is verification-software evidence; no new Hold'em training was run.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:
