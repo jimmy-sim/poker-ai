@@ -1,0 +1,29 @@
+{
+  "status": "same_complete_audit_with_parent_card_reuse",
+  "returncode": 2,
+  "original": "results/runs/card-computation-cache/pair",
+  "published": "results/card-computation-cache/pair",
+  "files": {
+    "pair.json": "ff7979d02acb799bbe2ebe8192c686e58059c19960a3636ff1845cc2038dd547",
+    "cached/native-events.jsonl": "e9d186b336b8d28033506542ace07220734c9572751c7597b8fdd16e9da05c3c",
+    "cached/read-phases.json": "8a8f0e651f092b07bb23c36b8e98215cb7576bf787828c785048e2f779b6e0b3",
+    "cached/measurement.json": "79de7d50dee7217fc0c66f9088bb0c68f6fec5511a8731ab1b75ebcf57dd4658",
+    "cached/command.log": "6b3e7c8a4dc92c47e6b239681067170a001e0994be470c01253006741f12fcda",
+    "cached/native.json": "e3e90f405a132843831e33bffa34f38f96fae840ab412bec5b520b1811f61bc8",
+    "cached/child.json": "0af0f3bfa3a573c02a2e1704465b197649f35b5b0f608cd69b0a093c3ddd5ec3",
+    "uncached/native-events.jsonl": "b1972e51563d4fd1bcc0ad523a6c130b9960f7a9f3092aeefc30658ae12ae662",
+    "uncached/read-phases.json": "bb89d2cf97b9e74d78ed464646f72ffe6828b0d177896ffb8437b8c419708909",
+    "uncached/measurement.json": "362b0aff08a27ea639c3c0a591336e9b59bb73819efe8bbc4bbcb48fa46b58a6",
+    "uncached/command.log": "6b3e7c8a4dc92c47e6b239681067170a001e0994be470c01253006741f12fcda",
+    "uncached/native.json": "7add536f55534ea3c2b42cade05ce268a7e38c232343e3228536917fe6066452",
+    "uncached/child.json": "0f670e3986e81abcd4514bee113d842539f56deb99cc224c1818ecdcb91f4f8d"
+  },
+  "original_ignored_bytes_retained": true,
+  "source_sha256": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+  "scope": "exact administrative copies after original complete clocks; no replays omitted or substituted",
+  "read_only_complete_math_verification": {
+    "file": "read-only-complete.log",
+    "sha256": "fc796efd110f89ee5b72183897387a0e7bf148296c31c6a2c7b80491a2606a7a",
+    "status": "passed; original whole-wall timing gate remains failed"
+  }
+}

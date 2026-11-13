@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Reuse an exact card calculation](#111-reuse-a-card-calculation-without-changing-a-decision)
+
 - [See where the complete audit spends time](#110-see-the-complete-audit-cost-before-changing-it)
 
 - [Check which interpreter actually ran](#109-check-which-interpreter-actually-ran)
@@ -64,9 +66,11 @@ question, and no new agent is promoted.
 Step 107 completes the integrated cache checks and all six cost runs. Results
 agree, but its full audit-budget forecast still fails: 933.89 seconds against
 900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
-learning treatment remains unrun. Next measure the complete audit path before
-choosing another software improvement. These are verification results, not a
-new stronger agent.
+learning treatment remains unrun. Step 110 now measures the complete audit:
+the ordinary copy takes 406.49 seconds and the profiled copy 573.87, with identical
+checked results. Step 111 tests bounded reuse of repeated card calculations;
+full source checks still precede its timing pair. These are verification and
+software results, not a new stronger agent.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5300,3 +5304,52 @@ One ordered saved case is not population runtime evidence, a stronger poker
 agent, a new budget permit or proof of memory savings. The full learning window
 no longer fits its required reserve tonight; bounded correctness/optimization
 work continues until9a.m. without reducing any scientific cap.
+
+
+## 111. Reuse a card calculation without changing a decision
+
+November 13, 2026. The complete profile points to repeated card normalization and
+hand ranking. The [new prospective test](card-computation-cache.md) asks whether
+a small bounded store can reuse the original answer when exactly the same cards
+are passed again. **Example:** asking twice for the rank of the same seven cards
+should return the same immutable rank, without recomputing it the second time.
+
+This does not give the player more information or reuse a solver strategy. The
+store contains only results of our original card functions. It preserves input
+order and types, calls the original for unsupported inputs or changed dependencies,
+retains errors, limits entries and records hits, misses and evictions. A miss is
+an answer that is not in the store yet; an eviction removes an older answer to
+stay within the entry limit. The original functions are restored on failure.
+Spawned reference workers remain unchanged.
+
+The first 59 new tests pass, together with 101 earlier profile and proof-cache
+tests. They compare every hand category, randomized five-, six- and seven-card
+cases, suit and order changes, error behavior, random-number continuation and a
+complete simulated hand. Actual runtime guards also reject mislabeled GitHub
+environments. Full local base and optional checks on both Python versions, plus
+both correctly pinned GitHub jobs, must still pass at one source commit and be
+public before any timing result.
+
+Then one complete saved audit pair will compare every score, fixed condition,
+computed replay and worker summary. A faster result would justify investigating
+production integration; it would not prove a stronger poker agent or pass the old
+failed budget forecast. No new learning run fits tonight's reserved window.
+Codex assistance is recorded; personal practice and time are not inferred.
+
+The complete pair is now saved. Every checked result agrees, and the cache avoids
+almost all repeated calculations. However, the timing gate **fails**:481.84seconds
+without reuse versus595.65with reuse. The parent uses less active CPU time
+(283.80to261.25seconds), while total elapsed time rises. Even the unchanged
+reference workers take longer to finish despite using about the same CPU time.
+
+CPU time measures active processing; elapsed time includes the whole wait until
+completion. This difference matters: fewer original calls did not make this
+complete command faster. The [saved chart](../results/card-computation-cache/report/card-cache.png)
+shows both sides, and [the method](card-computation-cache.md) keeps every raw result
+and the failed criterion. There were no invalid-input fallbacks, errors or entry
+limit violations. Neither a stronger agent nor a production speedup was accepted.
+
+The next investigation records more timing and resource information to help
+separate possible causes. We have not established whether scheduling, I/O, memory
+pressure or idle behavior explains the gap. That question gets a new protocol;
+this result is preserved rather than rerun or relabeled as a pass.

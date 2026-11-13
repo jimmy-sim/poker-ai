@@ -1,0 +1,104 @@
+{
+  "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3582 passed, 64 skipped, 150 deselected in 774.51s (0:12:54)",
+      "log": {
+        "file": "results/card-computation-cache/checks/base311.log",
+        "sha256": "bafc7f407edbbaf25264de4e0d1e74d5e09738bc1c06274229ec60532a5de55b"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3582 passed, 64 skipped, 150 deselected in 754.13s (0:12:34)",
+      "log": {
+        "file": "results/card-computation-cache/checks/base312.log",
+        "sha256": "64b085dfc9a25e89a2b52193ea3a7749b0bd96a244a43411a836607bae058c4b"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "923 passed in 439.81s (0:07:19)",
+      "log": {
+        "file": "results/card-computation-cache/checks/optional311.log",
+        "sha256": "ed1fec7ed6e6ac31daa904f28bf3bafff1b6d5496244fbf5a2aa1e41b997ecc3"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "923 passed in 371.70s (0:06:11)",
+      "log": {
+        "file": "results/card-computation-cache/checks/optional312.log",
+        "sha256": "ee7d069d9ec7769a5cbdff88772321735a75a464e5a8a7a324b35329d66caeb3"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43440514840,
+      "job_id": 131936761524,
+      "head_sha": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "log": {
+        "file": "results/card-computation-cache/checks/hosted311.log",
+        "sha256": "6b5df6a20767289ea21adcdbdc3a75e73d2079bcc58a98db37a84aff03d9aeaf"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+      "checked_commit": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43440514840,
+      "job_id": 131936762039,
+      "head_sha": "49ebd193c25b9da8c12e4c60d9a329a001147faf",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "log": {
+        "file": "results/card-computation-cache/checks/hosted312.log",
+        "sha256": "39ddcc574fe7479878480264ea8d0ffcef157f383992832e24c0c3ec67f2f921"
+      }
+    }
+  ],
+  "scope": "Observed exact same-head full local bases, relevant all-extras suites and BOTH hosted jobs for expanded387-source parent-only card normalization/rank reuse diagnostic. Exact original values/types/errors/RNG/complete hand, bounded counters/dependency fallback/alias cleanup/source/runtime guards. Actual interpreter/NumPy assertions and uv selections verified; prior mislabeled stages not retroactively qualified. No formal card-cache pair before these published checks."
+}
