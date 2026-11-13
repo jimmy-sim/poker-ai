@@ -4493,3 +4493,17 @@ full lint/format and strict730-file typing pass. Actual fixture profile retains
 lossless stats and blocks base admission; hard timeout retains partial bytes.
 No formal native profile outcome yet. Freeze/publish exact instrumentation
 source, then all six same-head base/optional/hosted roles before collection.
+
+
+### November 13 — all six complete-native-profile source roles pass
+
+Immutable D4/0471/382 source: full local3478/64skip/150deselect each
+(786.59/762.55s), optional819each(437.70/372.98s), BOTH exact-head hosted
+43419209354 pass (3478/64/150 plus historical warning;1140.45/741.41s).
+Raw role logs/run/jobhead/timing metadata/driver retained. Source unchanged;
+all six roles published before any formal pair. Method/3QAs/journal108 updated.
+Previous PR62 final hosted43418526498 BOTHpass at07c6dcd (3443/64/150 plus
+historical warning;1093.35/1256.25s), ready for history merge; rawfinalCI logs
+and metadata retained separately. Fresh main snapshot115945Z still matches all
+ten original094024Z user changes exactly. Finish safe main integration before
+the one fixed full native profile, with no competing local heavy checks.

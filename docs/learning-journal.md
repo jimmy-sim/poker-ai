@@ -5169,3 +5169,12 @@ child retains its raw function records and cannot qualify as ordinary budget
 evidence. Tests also reject missing final replay, changed scalar results and
 worker identities, and preserve timed-out output. All original 380 pipeline
 source files stay unchanged. Full source checks still precede formal profiling.
+
+
+The profiler's complete source checks now pass: 3,478 base tests on each Python
+version, 819 optional tests on each, and both exact-source GitHub jobs. Their
+[logs and source record](../results/compact-native-profile/checks.json) are saved
+before any formal profile data. The preceding cached-pipeline result also passed
+its final GitHub checks. Next preserve the local changes while integrating that
+finished milestone, then run the one fixed ordinary/profile pair without other
+heavy local work. No bottleneck or optimization outcome is assumed in advance.

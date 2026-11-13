@@ -89,3 +89,35 @@ identity, changed source/inputs, missing source roles, base-admission rejection,
 hook restoration, raw-function extraction and retained hard timeout. These are
 software tests, not formal native-cost measurements. All six same-head source
 roles must still pass and be public before the fixed complete real-archive pair.
+
+
+## Exact-source checks complete before collection
+
+Source d4c94fb7b1f42619e3aec5c660af91dfa87915ee binds382files, fingerprint
+0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e.
+All 380 base dependencies remain unchanged. The [six-role receipt](../results/compact-native-profile/checks.json)
+retains both full local bases (3,478 passed/64 skipped/150 deselected each;
+786.59/762.55s), optional819each (437.70/372.98s), and BOTH exact-head
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/43419209354)
+(3,478/64/150 plus historical warning each;1,140.45/741.41s). Raw decoded logs
+retain their original whitespace/BOM; run/job metadata bind the actual head.
+All checks are public before the fixed formal pair. No profile outcome yet.
+
+## Three interview questions
+
+1. **Why keep both own replays in a performance measurement?** They are part of
+   the actual audit contract. The first establishes the independent check's
+   input; the final one verifies the own archive again before finishing. Removing
+   one would measure a different command. Diagnose its cost before proposing a
+   separately reviewed change; a faster incomplete check is not comparable.
+2. **Why separate parent CPU, child CPU and wall time?** Parent CPU measures work
+   executed by that process. The independent workers execute separately, and
+   their CPU can overlap. Wall time includes waits, startup and IO. Inclusive
+   function totals also overlap. Adding those quantities would double count or
+   confuse processor use with elapsed time. The whole-command clock governs caps.
+3. **What does exact agreement prove?** Both instrumented and ordinary versions
+   produced every required scalar and computed-replay result identically for
+   this fixed saved corpus, with unchanged mathematical kernels. It does not
+   prove population runtime, all-input correctness, memory savings or stronger
+   poker. The failed original forecast stays failed; diagnostic times never
+   issue a training permit.
