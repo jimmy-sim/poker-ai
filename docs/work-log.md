@@ -4525,3 +4525,9 @@ mandatorymath/workers. Parent/read boundaryCPU and workerCPU remain separate;
 per-framevaluesare elapsed/wait-inclusive. Newsource384 bindsold382+newentry/
 config, allold380kernelsunchanged. New six-role checks before formaldata, old
 partialpublished first. No diagnostic-time rescue/optimizerselection/newlearning.
+
+New elapsed instrument implemented separately:35new+96related checks pass
+131/21.31s; full lint/format/strict732files pass. Actual fixture verifies builtin
+profiler factory has no Python CPUcallback. Prior382map+newentry/config yields
+384effectivefiles; original380numeric and382CPUinstrumentation remain unchanged.
+Freeze/publish source; six same-head roles before any new elapsed-profile data.

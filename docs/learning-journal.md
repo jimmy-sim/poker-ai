@@ -5194,3 +5194,8 @@ the CPU attempt pass. Its function values include waiting and must not be called
 CPU time. We still sample whole-parent, read and worker CPU separately. The same
 complete work, fixed case,900/1800-second caps and source checks remain. No agent
 optimization is chosen before complete measurements, and no new training starts.
+
+The separate elapsed-time instrument now passes131focused checks with the older
+profiler tests included. A fixture verifies that it uses the built-in timer.
+The original CPU-profiler code, failure and numerical pipeline stay unchanged.
+Full checks on both Python versions and GitHub still precede the new measurement.

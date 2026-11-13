@@ -70,3 +70,15 @@ scientific caps to fit; no actual study after05:55under11100s reserve. Keep
 PR#63, dated work log and plain-English journal updated with actual outcomes,
 Codex assistance and three interview answers. No future schedule/subagents or
 invented human hours/mastery/independent review.
+
+## Implementation checks before formal collection
+
+The new standalone entry authenticates the complete prior382source map through
+its unchanged predecessor preflight, then adds its own entry/config (384files).
+The unchanged numerical cached child and workers still supply every result.
+The new fixture test records the profiler factory arguments and requires the
+empty argument set: no Python per-call CPU timer. All35new checks plus96related
+CPU-profiler/statistics checks pass131/21.31s; full lint/format and strict732-file
+typing pass. Source/input/worker/read/scalar/admission guards and partial retention
+remain covered. All historical380numerical and382CPU-instrumentation bytes stay
+unchanged. Full same-head six-role checks still precede formal elapsed data.
