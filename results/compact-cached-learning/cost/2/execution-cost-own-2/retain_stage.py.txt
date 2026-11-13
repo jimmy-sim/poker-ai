@@ -1,0 +1,47 @@
+"""Retain exact stage bytes after measured work; no extra math replay/timing."""
+import argparse,hashlib,json,shutil,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-cached-pipeline';sys.path.insert(0,str(r/'scripts'));sys.path.insert(0,str(r/'src'))
+from compact_cached.clock import arguments,output_path,measurement
+from compact_cached.cache import check_execution
+from compact_cached.source import check_source
+from compact_cached.publication import STREAMS
+from poker_ai.evaluation.private_prefix_journal import validate
+from poker_ai.evaluation.opponent_learning_workers import gather_independent
+from poker_ai.solver_validation.opponent_learning import validate_rows
+p=argparse.ArgumentParser();p.add_argument('label');p.add_argument('--destination',required=True);a=p.parse_args()
+execution=w/'compact-cached-execution'/a.label;inv=json.loads((execution/'invocation.json').read_text());args=arguments(inv['command'][2:]);src=output_path(r,args);dst=r/a.destination
+if args.operation=='report':raise ValueError('report-only destinations use separate reviewed renderer')
+saved=json.loads(src.read_text());status=saved['status'];success=json.loads((execution/'exit.json').read_text())['returncode']==0 and saved.get('failure') is None
+if not success:
+ dst=r/'results/compact-cached-learning/failures'/a.label/src.name
+members=[src,src.with_name(saved['complete_command']['child_file'])]
+if 'journal' in saved:members.append(src.with_name(saved['journal']['file']))
+if 'captures_file' in saved:
+ members.extend(src.parent/saved[n+'_file'] for n in STREAMS)
+ members.extend(src.parent/'report'/n for n in saved['report'])
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+copied={}
+for original in members:
+ assert original.is_file();relative=original.relative_to(src.parent);target=dst.parent/relative
+ if target.resolve()!=original.resolve():
+  assert not target.exists();target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(original,target)
+ assert target.read_bytes()==original.read_bytes();copied[str(relative)]=dict(sha256=sha(target),source=str(original.relative_to(r)))
+admin=dst.parent/('execution-'+a.label);assert not admin.exists();shutil.copytree(execution,admin);shutil.copyfile(__file__,admin/'retain_stage.py.txt')
+for f in execution.rglob('*'):
+ if f.is_file():assert f.read_bytes()==(admin/f.relative_to(execution)).read_bytes()
+record=dict(status=status,complete=success,operation=args.operation,copied=copied,original_output=str(src.relative_to(r)),published_output=str(dst.relative_to(r)),original_ignored_bytes_retained=True,scope='exact administrative preservation after measured producer work; no new numerical replay or substituted timing')
+(admin/'preservation.json').write_text(json.dumps(record,indent=2)+'\n')
+if not success:
+ print(json.dumps(dict(retained_failure=str(dst),status=status)));sys.exit(2)
+measurement(src,args.operation);measurement(dst,args.operation);check_source(r,saved['source']);check_execution(r,saved)
+if 'journal' in saved:
+ groups={3:saved['events']}
+ for name in ('training_batch','native_batch'):
+  if name in saved:groups.update({x['slot']:x['messages'] for x in saved[name]['workers']})
+ validate(dst.with_name(saved['journal']['file']),saved['journal'],saved['source_sha256'],groups)
+if args.operation in ('software-audit','cost-audit','audit'):
+ own_path=r/(args.own or ('results/compact-cached-learning/cost/'+str(args.repetition)+'/own.json' if args.operation=='cost-audit' else 'results/compact-cached-learning/own.json' if args.operation=='audit' else 'results/compact-cached-learning/software/own.json'))
+ own=json.loads(own_path.read_text());actual=gather_independent(saved['native_batch'],own);assert all(actual[k]==saved[k] for k in actual);assert validate_rows(saved,own)==saved['verification']
+summary=dict(operation=args.operation,status=status,source=saved['source_sha256'],whole_seconds=saved['complete_command']['seconds'],validation_cache=saved['validation_cache'],poker_training_performed=saved['poker_training_performed'],reference_constructed=saved['reference_constructed'],destination=str(dst))
+(admin/'verified.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))

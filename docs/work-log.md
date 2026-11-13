@@ -4416,3 +4416,21 @@ FICTIONALpayoffunits; no reference actions exported/training. Shared133.857476s
 worker/journal/schema and exact copies retained. This is software proof ONLY;
 no new Hold'em trajectory or compute permit. Next allthree serial own cost
 stand-ins, one coherent own publication BEFOREany native costs.
+
+
+### November 13 — all three complete own costs retained before native
+
+Fixed serial0/1/2 whole own commands take200.1095483750105,
+200.82031762499537,201.19776920799632seconds; D=max201.19776920799632.
+Each fits900, includes source/proof/loading/archive/full math replay/sixreports,
+and records432scores/1152fixed, replay0, exactpolicy/bookbits and actualnew
+pokerwork0. Parent8076requests/26original/8050reuse, nofallback/rejection each.
+Every producer receipt/child/journal/archive/report is byte-identical at its
+published canonical path; original ignored outputs and command paths retained.
+Allsix reportfiles byte-identical across allthree runs; inspected allthree PNG
+classes (representative0 covers identical1/2). Titles explicitly say oldOWN
+stand-ins/zero newlearning/no strengthadmission, coincidentpairedgaps are not
+an experimental treatment result. No native COST constructor yet. Publish this
+ALLthree-own bundle before any new nativecost. These are new absolute pipeline
+costs, not a causal speed estimate versus old unpaired timings. Native N and the
+complete original guarded forecast remain unmeasured; no permit/new training.

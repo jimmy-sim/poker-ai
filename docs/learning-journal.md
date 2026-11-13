@@ -5098,3 +5098,13 @@ it says nothing new about poker strength. Next measure the complete real-game
 verification workload using old own policies as timing stand-ins, without any
 new poker training. All three own cost records must be public before reference
 costs start.
+
+
+All three own-side cost runs finished in 200.11, 200.82 and 201.20 seconds.
+The forecast will use the slowest, 201.20. Each checks the whole fixed inventory
+and reproduces every value exactly. These are old policies reused only to
+measure software cost, so the identical report curves do not show a new agent
+learning. The plots say this explicitly. All own evidence is published before
+the next three independent-reference cost runs. Their slowest complete time
+will decide whether the unchanged audit-budget forecast fits. No new training
+permit has been issued.
