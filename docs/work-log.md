@@ -4486,3 +4486,10 @@ instrumented receipts. Source-bound six-role checks precede formal collection.
 Private unmeasured scaffold drafted during prior forecast; protocol published
 before outcomes. No optimization selected, new training, gate change, admission
 or causal/population speed claim. Stop9a.m.Pacific; no subagents/future schedule.
+
+Complete native profiler implemented in an explicitly separate standalone entry;
+all380base bytes unchanged.35new+61existing focused checks pass96/16.12s,
+full lint/format and strict730-file typing pass. Actual fixture profile retains
+lossless stats and blocks base admission; hard timeout retains partial bytes.
+No formal native profile outcome yet. Freeze/publish exact instrumentation
+source, then all six same-head base/optional/hosted roles before collection.

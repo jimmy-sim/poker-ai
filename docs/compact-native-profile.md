@@ -71,3 +71,21 @@ results and caps. Record full timings, function/caller counts, parent CPU and
 worker CPU/wall with their separate scopes, next measured optimization question,
 limits and three interview Q&As in the report/work log/plain-English journal.
 Codex assistance is explicit; human time or understanding is not inferred.
+
+## Implementation checks before formal measurements
+
+The standalone entry now invokes the unchanged complete cached native child.
+It transparently records all three actual own-read summaries and phase clocks,
+retains every native scalar and worker summary, and explicitly marks its output
+as instrumentation that the base admission checker rejects. Parent CPU profiling
+uses the registered nanosecond process timer and the existing lossless extractor.
+The existing hard supervisor retains incomplete output and refuses replacement.
+All 380 base source bytes remain unchanged.
+
+The 35 new tests plus 61 relevant profiler/statistics tests pass (96 total,
+16.12s) on Python3.11.17/NumPy2.4.6. Full lint/format and strict typing of730files
+pass. Tests include an instrumented fixture child, exact scalar/read/worker
+identity, changed source/inputs, missing source roles, base-admission rejection,
+hook restoration, raw-function extraction and retained hard timeout. These are
+software tests, not formal native-cost measurements. All six same-head source
+roles must still pass and be public before the fixed complete real-archive pair.

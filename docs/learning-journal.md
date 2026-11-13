@@ -5162,3 +5162,10 @@ budget permit. A private unmeasured scaffold was drafted during the preceding
 forecast; this prospective protocol is public before formal data. Source checks,
 tests, both Python environments and both GitHub jobs come first. No profile
 outcome yet. Codex assists; personal time and understanding are not inferred.
+
+The measurement tool now has 35 new tests. Together with existing profiler and
+raw-statistics tests, all 96 pass. A small fixture confirms that the profiled
+child retains its raw function records and cannot qualify as ordinary budget
+evidence. Tests also reject missing final replay, changed scalar results and
+worker identities, and preserve timed-out output. All original 380 pipeline
+source files stay unchanged. Full source checks still precede formal profiling.
