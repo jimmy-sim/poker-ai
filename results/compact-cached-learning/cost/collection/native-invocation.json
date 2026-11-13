@@ -1,0 +1,43 @@
+{
+  "order": [
+    0,
+    1,
+    2
+  ],
+  "commands": [
+    [
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/bootstrap/bin/python3",
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-cached-stage.py",
+      "cost-audit",
+      "--repetition",
+      "0",
+      "--own",
+      "results/compact-cached-learning/cost/0/own.json",
+      "--output",
+      "results/runs/compact-cached/native-0/native.json"
+    ],
+    [
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/bootstrap/bin/python3",
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-cached-stage.py",
+      "cost-audit",
+      "--repetition",
+      "1",
+      "--own",
+      "results/compact-cached-learning/cost/1/own.json",
+      "--output",
+      "results/runs/compact-cached/native-1/native.json"
+    ],
+    [
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/bootstrap/bin/python3",
+      "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-cached-stage.py",
+      "cost-audit",
+      "--repetition",
+      "2",
+      "--own",
+      "results/compact-cached-learning/cost/2/own.json",
+      "--output",
+      "results/runs/compact-cached/native-2/native.json"
+    ]
+  ],
+  "scope": "ALLthree source-bound own costs public before ANY native-cost constructor; no new poker training; no retries"
+}

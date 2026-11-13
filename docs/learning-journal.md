@@ -5108,3 +5108,13 @@ learning. The plots say this explicitly. All own evidence is published before
 the next three independent-reference cost runs. Their slowest complete time
 will decide whether the unchanged audit-budget forecast fits. No new training
 permit has been issued.
+
+
+All three complete reference-side cost runs also agree numerically: 432 scores
+and 1,152 conditions differ by at most 1.85e-13 chips, a tiny rounding amount.
+They take 402.32, 406.54 and 406.94 seconds. The slowest still exceeds the
+390-second threshold required by our unchanged safety formula. The cache passed
+correctness, but this implementation does not yet make the larger study fit its
+audit budget. Next run the complete forecast, retaining all inputs and all three
+runs. Then profile the whole reference-checking path before choosing another
+optimization. No new Hold'em training or stronger-agent claim follows.

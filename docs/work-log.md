@@ -4434,3 +4434,20 @@ an experimental treatment result. No native COST constructor yet. Publish this
 ALLthree-own bundle before any new nativecost. These are new absolute pipeline
 costs, not a causal speed estimate versus old unpaired timings. Native N and the
 complete original guarded forecast remain unmeasured; no permit/new training.
+
+
+### November 13 — all three complete independent costs retained
+
+After ALLthree own costs were public atab02f25, fixed serial native0/1/2
+commands take402.320211541999,406.53780845800065,406.9446965840034s.
+Each compares432scores/1152fixed targets within1.8474111129762605e-13chips;
+reference scalar-only, no new training. Parent8316requests/26original/8290reuse
+and each native worker1112/18/1094, no fallback/rejection. Whole clocks retain
+pre-own rereplay, worker startup/loading/scalars, and required final own rereplay.
+Raw receipts/children/journals/execution/publication witnesses are retained at
+results/compact-cached-learning/cost/0..2. Original outputs remain unchanged.
+N=max406.9446965840034 gives native guard933.8893931680068>900; the COMPLETE
+forecast has not yet run and must seal/replay ALLinputs before final reporting.
+Publish this ALLthree-native bundle first. No admission/new poker trajectory.
+If full forecast fails, next step is complete-native-path profiling before any
+new optimizer; retain this failed cost set without favorable retries.
