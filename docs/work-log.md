@@ -4676,3 +4676,14 @@ unchangednumeric summary; RSSpeakunits/counterlimits explicit. Sixactual-runtime
 rolespublicbeforeONE900/1800pair+1800finalCI+120save. Done=exactmath+complete
 telemetry, BOTHtimingdirectionsdescriptive, NOperformanceadmission. Priorfailed
 pairnotretried/reclassified; no productionintegration/newforecast/learning.
+
+Resource observer implemented withown/reaped-child rusage andperf/UTC/process/
+thread boundaries, raw/delta/unit guards, cumulativeRSSpeaklabeling andUTCadjustment
+allowance. Parentreadstarts/workerstarts andnumericfinished-before-aftersource
+are persisted onfailure. Threeworker sidecarsbindnewsource/runtime/module-root/
+actualspawnedPID/partitions/unchangednumericsummary. Old387files/cardhelper/caps
+unchanged. Utility-lifetimecaffeinate-i requestrecorded(notindependentlyaudited
+assertionstate), exactsupervisorcommand/binary pin checked, restoredaliases/env,
+no newtraining/policy/referencecache.34new+66cache/reporttests100pass2.36s;
+fullprojectlint/strict742filespass. Publishsource thenall6same-head actual-runtime
+rolesbeforeanyformaltrace. Supplemental profiletests included in finalfocusedset.
