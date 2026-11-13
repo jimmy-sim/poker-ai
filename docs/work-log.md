@@ -4552,3 +4552,16 @@ correction/journal explicitly distinguish metadata error from numerical producer
 outputs and retained budget/profilefailures. New six roles atONEcorrectedhead
 must pass withactualguardmarkers before moredata. Originalcaps/seeds/quality
 gates unchanged; no newrealtrajectory/default/global admission or humanhours.
+
+
+### November13 — corrected actual-runtime source roles qualify new diagnostics
+
+A672all6roles PASS: local3513/64skip/150deselect each796.09/771.16s;
+optional854each448.17/387.33s; BOTHhost43430646265headA6723513/64/150plus
+historicalwarning1290.36/962.81s. Raw uv lines ANDactualguardmarkers confirm
+31117/NumPy246 and31215/NumPy254 beforetests. Newassembler requires those
+markers/selectionlines/guardsteps, actualhead andrawuntrimmedloghashes. Receipt
+bindsworkflow/correction, future-diagnostic-only andno-retroactive-admission flags.
+All384sciencebytes/7fdfp unchanged. Journal109 explains labelsversusactualruntime.
+Publish allsixroles BEFOREsinglefixedelapsedpair. No elapsed outcome/optimizer
+selection/newtrajectory yet. No localheavychecks duringcollection.

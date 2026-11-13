@@ -1,0 +1,58 @@
+"""Complete native-profile source base and relevant all-extras publication checks."""
+
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+work = Path(__file__).resolve().parent
+root = work / "compact-native-wall-pinned-checkout"
+folder = work / "compact-native-wall-pinned-checks"
+folder.mkdir(exist_ok=True)
+name = sys.argv[1]
+assert name in ("base311", "base312", "optional311", "optional312")
+optional = name.startswith("optional")
+minor = name[-3:]
+version = "3.11.17" if minor == "311" else "3.12.15"
+python = work / "python" / f"cpython-{version}-macos-aarch64-none/bin/python3.{minor[-2:]}"
+allowed = {"PATH", "HOME", "TMPDIR", "USER", "LOGNAME", "SHELL", "LANG", "LC_ALL", "LC_CTYPE", "UV_CACHE_DIR", "UV_PYTHON_INSTALL_DIR", "UV_OFFLINE", "PRE_COMMIT_HOME"}
+env = dict({k:v for k,v in os.environ.items() if k in allowed}, PYTHONPATH=str(root / "src"), UV_PROJECT_ENVIRONMENT=str(work / f"compact-native-wall-pinned-{name}"), UV_PYTHON=str(python))
+uv = ["uv", "run", "--locked", *(["--all-extras"] if optional else [])]
+started = time.perf_counter()
+with (folder / f"{name}-install.log").open("x") as stream:
+    subprocess.run(["uv", "sync", "--locked", "--dev", *(["--all-extras"] if optional else [])], cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+guard = """import pathlib,subprocess,sys,numpy,poker_ai
+sys.path.insert(0,str(pathlib.Path.cwd()/"scripts"))
+from profile_cached_native_wall import preflight
+root=pathlib.Path.cwd()
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='a672bd37f2c6211581ccdf789286f5d3ee4e02a4'
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+assert sys.version.split()[0]==VERSION
+assert numpy.__version__==NUMPY
+_,s=preflight(root,clean=True)
+assert s['dirty'] is False
+assert s['fingerprint']=='7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c'
+print({'python':sys.version.split()[0],'numpy':numpy.__version__,'module':poker_ai.__file__,'source_sha256':s['fingerprint']})
+""".replace("VERSION", repr(version)).replace("NUMPY", repr("2.4.6" if minor == "311" else "2.5.4"))
+commands = [uv + ["python", "-c", guard]]
+if optional:
+    suites = sorted(str(p.relative_to(root)) for pattern in ("test_cached_compact_*.py","test_compact_opponent_*.py","test_opponent_learning_*.py") for p in (root/"tests").glob(pattern))
+    suites += ["tests/test_cached_native_wall_profile.py","tests/test_cached_native_profile.py","tests/test_recall_proof_cache.py","tests/test_compact_replay_profile.py","tests/test_batch_cost_stats.py","tests/test_compact_sampled_state.py","tests/test_compact_sampled_pipeline.py","tests/test_compact_sampled_native.py","tests/test_compact_full.py","tests/test_public_range.py","tests/test_public_range_acceptance.py","tests/test_range_mass.py","tests/test_range_protocol.py","tests/test_range_admission.py","tests/test_postflop_jit.py","tests/test_postflop_learning.py::test_postflop_training_has_no_reference_imports"]
+    commands.append(uv + ["pytest","-q",*suites])
+else:
+    commands.extend((uv + ["ruff", "check", "."], uv + ["ruff", "format", "--check", "."], uv + ["mypy", "--strict", "src", "tests", "scripts"], uv + ["pytest", "-q", "-m", "not slow"], uv + ["pre-commit", "validate-config"], uv + ["pre-commit", "run", "--all-files"]))
+commands.append(uv + ["python", "-c", guard])
+began = time.perf_counter()
+outcome = "failed"
+try:
+    with (folder / f"{name}.log").open("x") as stream:
+        for command in commands:
+            stream.write(json.dumps(dict(command=command)) + "\n")
+            stream.flush()
+            subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+    outcome = "passed"
+finally:
+    (folder / f"{name}-receipt.json").write_text(json.dumps(dict(name=name, status=outcome, checked_commit="a672bd37f2c6211581ccdf789286f5d3ee4e02a4", scientific_source_sha256="7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c", scope="effective384source complete native elapsed-stack profiler preserving CPU timeout, default builtin timer and separate boundary CPU, identity/source/input/timeout/partial/admission rejection, all original cached parent/worker and complete toy parity plus compact/opponent/candidate/privacy/JIT/math optional coverage. Actual pinned runtime guard repair; no formal elapsed profile or new training" if optional else "complete base lint/format/types/non-slow/tests/hooks", check_seconds=time.perf_counter()-began, setup_and_check_seconds=time.perf_counter()-started), indent=2)+"\n")
+print(name + ": complete, source/runtime guarded")

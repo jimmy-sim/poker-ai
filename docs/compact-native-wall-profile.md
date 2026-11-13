@@ -94,3 +94,31 @@ bytes remain unchanged. See[the full correction audit](ci-runtime-correction.md)
 old mislabeled gates do not become valid retroactively. The new method uses
 old saved own data as fixed inputs whose full numerical replay remains inside
 the complete command, never as a retroactively source-admitted production run.
+
+
+## Correctly pinned source roles before collection
+
+All six roles at a672bd37f2c6211581ccdf789286f5d3ee4e02a4 pass, with all384
+science/instrumentation bytes unchanged (fingerprint7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c).
+Full local3513/64skip/150deselect each(796.09/771.16s); optional854each
+(448.17/387.33s). BOTH[hosted43430646265 jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/43430646265)
+pass3513/64/150plus historical warning(1290.36/962.81s). Raw uv selection lines
+and actual project assertions agree on3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4.
+The [new qualifying receipt](../results/compact-native-wall-profile/checks.json)
+binds source, checked head, raw logs, workflow hash and the historical correction.
+It qualifies subsequent diagnostics, not earlier production stages retroactively.
+Publish this evidence before the fixed elapsed pair; no elapsed outcome yet.
+
+## Three interview questions
+
+1. **Why keep the CPU attempt failed?** Its900-second child cap was exceeded,
+   final math was unfinished and no raw function profile was produced. A new
+   instrument with different units cannot change that historical result.
+2. **Why separate elapsed frames from CPU?** The built-in profiler counts
+   blocked waits. Boundary parent/read CPU and worker CPU are distinct measures;
+   worker CPU may overlap and cannot be added into an elapsed-time stack.
+3. **What qualifies another measurement or training?** Current exact-source
+   tests with actual runtime evidence qualify this diagnostic. A complete result
+   may identify a bottleneck, but a new optimizer still needs prospective
+   correctness/source/proof/cost/forecast/admission gates before new training.
+   Diagnostic timings cannot replace the failed cost set or quality criteria.

@@ -1,0 +1,114 @@
+{
+  "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3513 passed, 64 skipped, 150 deselected in 796.09s (0:13:16)",
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/base311.log",
+        "sha256": "84c5f9c3f8b891c8ca56a879b83ea26ed31953ace9f4e64b29de5f2f9e24d238"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3513 passed, 64 skipped, 150 deselected in 771.16s (0:12:51)",
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/base312.log",
+        "sha256": "bb4cd73919b2acae7b3963870da9e5a0f57db6a21e3113013642968c72c88750"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "854 passed in 448.17s (0:07:28)",
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/optional311.log",
+        "sha256": "16c946579ef24d2f562849d63a06826b462513011e3b015e6e7b2a9be2cd1291"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "854 passed in 387.33s (0:06:27)",
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/optional312.log",
+        "sha256": "1e4c69d66fba575a29be9f32d66196a9caf3becc7508ed7c10c64c45b3da4deb"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43430646265,
+      "job_id": 131902969734,
+      "head_sha": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/hosted311.log",
+        "sha256": "e9481a4649bf7fb040c042e5b05d4f7706e720226b262f613cadfbb85ed8b4de"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+      "checked_commit": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43430646265,
+      "job_id": 131902970219,
+      "head_sha": "a672bd37f2c6211581ccdf789286f5d3ee4e02a4",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "log": {
+        "file": "results/compact-native-wall-profile/checks/hosted312.log",
+        "sha256": "a474edeb420f52611706df29c2200bd3d91e9ca183d2b982e86471848af16e9b"
+      }
+    }
+  ],
+  "scope": "Observed exact same-head full local bases, relevant all-extras suites and BOTH hosted jobs for expanded384-source complete native elapsed-stack profiler; prior CPU timeout retained and exact scalar/read/worker/source/input/failure/admission guards. Actual interpreter/NumPy assertions and uv lines verified, prior mislabeled stages not retroactively qualified; no new elapsed pair before these published checks.",
+  "workflow": {
+    "file": ".github/workflows/ci.yml",
+    "sha256": "c0ec2b4f5724ad57e90ccc08041dd0b157f367fde15918d8f3829244beefd7cd"
+  },
+  "historical_runtime_correction": {
+    "file": "docs/ci-runtime-correction.md",
+    "sha256": "849e1838f51fc485efa7b2c9466642c853773f59dd4b057985cd5ca236feeb3a"
+  },
+  "qualifies_subsequent_diagnostics_only": true,
+  "old_stages_retroactively_admitted": false
+}

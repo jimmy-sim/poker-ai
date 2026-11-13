@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Check which interpreter actually ran](#109-check-which-interpreter-actually-ran)
+
 - [Measure the full independent check](#108-find-the-remaining-cost-in-the-complete-independent-check)
 
 - [Why the complete cached comparison still waits](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline)
@@ -5221,3 +5223,45 @@ and NumPy before testing. All six checks will run again at one corrected head
 before more profiling data. Reading the actual tool output caught what a matrix
 label alone missed. No new Hold'em training, limit change or stronger agent
 claim follows. Codex assistance and this mistake are documented plainly.
+
+## 109. Check which interpreter actually ran
+
+November 13, 2026. The CI matrix said Python3.12, but that label did not tell us
+which patch version the project used. While preparing the next profile, the
+actual installation log showed3.12.3. Our receipt field said3.12.15. That was a
+recording mistake, so the old exact-version qualification cannot stand as written.
+
+The [fixed-revision audit](ci-runtime-correction.md) checked nine saved receipts
+and eighteen hosted rows using their original log hashes. All nine3.11.17labels
+matched; the nine3.12.15labels actually used3.12.3. The old records stay intact,
+with the correction attached. This audit did not rerun poker, erase numerical
+findings from their recorded producer runtimes, or establish every old outcome
+false. It also cannot pretend that a missing precollection check happened later.
+
+The fix tells both setup-uv and the project environment to use the exact patch,
+then prints and asserts actual Python and NumPy before tests start. New source
+records must be assembled from that output. All six source checks run again at
+one corrected commit before new measurements. The original numerical source,
+seeds, time caps and accuracy limits stay fixed. No new agent is promoted.
+
+An environment is part of reproducibility: installing a Python version does not
+by itself prove that a project used it. You can inspect your own environment
+with one terminal command:
+
+```sh
+.venv/bin/python -c 'import sys, numpy; print(sys.version.split()[0]); print(numpy.__version__)'
+```
+
+The saved original real-poker replay environment is Python3.11.17/NumPy2.4.6.
+This command only prints information; it does not train or modify a strategy.
+The audit script's six parser tests can also be run from the correction document.
+Codex assisted with the correction; personal hands-on time and mastery are not
+inferred from automated work.
+
+
+The corrected same-head checks now pass:3,513base tests and854optional tests
+on each local version, plus both hosted jobs. Their raw logs now confirm the
+expected exact Python and NumPy versions, with assertions before tests. The
+[new receipt](../results/compact-native-wall-profile/checks.json) is public
+before the elapsed pair. Earlier mislabeled gates remain flagged; no historical
+run was reclassified as properly source-admitted.
