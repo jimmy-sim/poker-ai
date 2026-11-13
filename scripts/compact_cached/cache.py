@@ -9,6 +9,7 @@ from typing import Any
 from recall_cache_support import RecallProofs, hooks
 
 from compact_cached.contract import CONFIG_SHA, variant
+from poker_ai.evaluation.opponent_learning_design import TOY
 
 
 @contextmanager
@@ -45,6 +46,17 @@ def check_counters(row: dict[str, Any]) -> None:
 def check_execution(root: Path, saved: dict[str, Any]) -> None:
     if saved.get("implementation_config") != variant(root):
         raise ArithmeticError("effective cached implementation contract required")
+    if (
+        saved.get("status") == "completed_own_native_pending"
+        and saved.get("scope") == TOY
+    ):
+        parity = saved.get("software_vector_parity")
+        if (
+            not isinstance(parity, dict)
+            or parity.get("status")
+            != "all324policies216books30warms_exact_with_original_own_toy"
+        ):
+            raise ArithmeticError("formal own toy vector parity evidence required")
     try:
         check_counters(saved["validation_cache"])
         for name in ("training_batch", "native_batch"):

@@ -13,6 +13,7 @@ from typing import Any
 from compact_cached.cache import check_execution
 from compact_cached.clock import measurement
 from compact_cached.contract import contract, input_pins
+from compact_cached.parity import vectors
 from compact_cached.publication import committed, publication
 from compact_cached.source import check_source, source
 from poker_ai.evaluation.compact_opponent_contexts import build_game
@@ -25,7 +26,7 @@ from poker_ai.postflop.cell_process import partition
 from poker_ai.postflop.compact_full_artifacts import commit_sources
 from poker_ai.postflop.learning_artifacts import sha
 from poker_ai.postflop.parallel_profile import same
-from poker_ai.postflop.river_study import digest
+from poker_ai.postflop.river_study import Deadline, digest
 from poker_ai.solver_validation.opponent_learning import FORMAT as NATIVE_FORMAT
 from poker_ai.solver_validation.opponent_learning import validate_rows
 
@@ -178,6 +179,11 @@ def software(root: Path, own: dict[str, Any]) -> dict[str, Any]:
     check_execution(root, own)
     own_path = root / FOLDER / "software/own.json"
     native_path = own_path.with_name("native.json")
+    if not same(
+        vectors(root, own_path.parent, own, Deadline(900)),
+        own["software_vector_parity"],
+    ):
+        raise ArithmeticError("complete formal toy parity required before admission")
     from poker_ai.evaluation.opponent_learning_design import TOY
 
     if (

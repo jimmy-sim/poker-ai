@@ -148,7 +148,7 @@ def test_full_source_binds_all_actual_adapter_files(modules: dict[str, Any]) -> 
         saved["fingerprint"]
         != "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989"
     )
-    assert len(saved["sha256"]) == 379
+    assert len(saved["sha256"]) == 380
     for name in tool.MODULES:
         assert f"{tool.PACKAGE}/{name}.py" in saved["sha256"]
     assert tool.ENTRY in saved["sha256"]
@@ -317,3 +317,30 @@ def test_worker_rejects_a_cross_family_permit_before_publication(
     else:
         tool.worker_admission(tmp_path, "a" * 64, digest(path))
         assert publications == [path]
+
+
+@pytest.mark.parametrize(
+    "parity",
+    [None, {}, {"status": "all324policies216books30warms_exact_with_original_own_toy"}],
+)
+def test_formal_toy_publication_requires_parity_record(
+    modules: dict[str, Any],
+    monkeypatch: pytest.MonkeyPatch,
+    parity: dict[str, Any] | None,
+) -> None:
+    from poker_ai.evaluation.opponent_learning_design import TOY
+
+    tool = modules["cache"]
+    monkeypatch.setattr(tool, "variant", lambda root: {"UNIT_ONLY": True})
+    own = dict(
+        implementation_config={"UNIT_ONLY": True},
+        validation_cache=counts(),
+        status="completed_own_native_pending",
+        scope=TOY,
+        software_vector_parity=parity,
+    )
+    if parity:
+        tool.check_execution(ROOT, own)
+    else:
+        with pytest.raises(ArithmeticError, match="parity evidence"):
+            tool.check_execution(ROOT, own)

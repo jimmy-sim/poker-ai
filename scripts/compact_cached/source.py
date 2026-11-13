@@ -20,6 +20,7 @@ MODULES = (
     "clock",
     "contract",
     "native",
+    "parity",
     "publication",
     "source",
     "workers",

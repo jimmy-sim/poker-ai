@@ -25,6 +25,7 @@ from compact_cached.clock import (
 )
 from compact_cached.contract import contract, input_pins, variant
 from compact_cached.native import independent
+from compact_cached.parity import vectors
 from compact_cached.publication import publication
 from compact_cached.source import check_source, source
 from compact_cached.workers import training
@@ -148,6 +149,10 @@ def _read(
     for name, expected in saved["report"].items():
         if digest(path.parent / "report" / name) != expected:
             raise ArithmeticError("own report file changed")
+    if scope == TOY and not same(
+        vectors(root, path.parent, saved, deadline), saved["software_vector_parity"]
+    ):
+        raise ArithmeticError("formal cached toy vector parity changed")
     deadline.check()
     if observed is not None:
         observed.append(actual)
@@ -407,6 +412,10 @@ def _child_main(root: Path, argv: list[str], cache: RecallProofs) -> int:
                     originals=originals if args.operation != "cost-own" else (),
                 )
             saved.update(data)
+            if args.operation == "software-own":
+                saved["software_vector_parity"] = vectors(
+                    root, receipt.parent, saved, deadline
+                )
             saved["report"] = write_report(
                 receipt.parent / "report", saved, design, pots(root, saved["scope"])
             )

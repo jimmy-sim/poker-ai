@@ -4338,7 +4338,7 @@ no future automation/subagents. Codex-assisted, human time not recorded.
 
 New opt-in scripts/compact_cached family reuses original capture/replay/scoring/
 context/projection/native math and preserves every historical src/entry/config
-byte. Its379-file effective source includes every private module, entry and
+byte. Its380-file effective source includes every private module, entry and
 registration plus all367historical cache dependencies. New own/native/worker
 records require implementation config and strict actual cache counters; missing,
 disabled, malformed and cross-family records/permits are rejected. Whole clocks,
@@ -4363,3 +4363,17 @@ scientific outcome or favorable timing retry involved. OpenSpiel2.0.2 full
 installed Apache license reread/recorded Nov13 before any new reference use.
 Codex-assisted; human time/mastery not inferred. Stop9a.m.Pacific, latest real
 study5:55 under the unchanged11,100s reserve; no subagents/future automation.
+
+
+Premeasurement review strengthened the baseline-equivalence requirement: the
+first379-file implementation checked old vector agreement in UNIT tests, but
+the formal software proof/admission must enforce it too. A new source-bound
+parity module checks all324policy/216book/30warm contents against exact original
+published commit37ca53d, including archive/header integrity, under the complete
+stage clocks. Formal read/publication/native/permit paths now require its record
+and replay its numerical check; source380binds that helper. Tests reject changed
+vectors even when archive hashes are updated, missing inventory, wrong scope or
+baseline, and absent parity evidence. Original source379check cohort is retained
+as pre-correction evidence and cannot qualify the final380source. No formal
+measurements were made on it, so this is not a cost retry or outcome selection.
+All final source roles will be rerun at one unchanged final head before data.
