@@ -4664,3 +4664,15 @@ complete math verifierPASSwhiletimingFAILkept. RendererC806publishedbeforedata;
 labeloverlap), allinputs/outputs bound. Sevenreport/boundarytests/lint/format/strict
 bothbase interpreterspass. Next separately registerboundedresources/clocktracing,
 notintegration ofthefailedprototype. Final64hostCIbeforehistorymerge.
+
+### November13 — prospectively trace the failed clock discrepancy
+
+AfterPR64whole-wallFAIL, registerseparatecurrent-process/worker-resource trace
+beforeimplementation/data. Unchangedcardcache/387source/limits/numerics; explicit
+temporarypercommandcaffeinate-i controlforbothsides,binarypinned/localmanualread,
+no display/persistentsettings/machine-widelogs. Boundaryperf/UTC/process/thread/
+rusage+self/reapedchildren, threeseparateworkersidecarswithnewsourceguard and
+unchangednumeric summary; RSSpeakunits/counterlimits explicit. Sixactual-runtime
+rolespublicbeforeONE900/1800pair+1800finalCI+120save. Done=exactmath+complete
+telemetry, BOTHtimingdirectionsdescriptive, NOperformanceadmission. Priorfailed
+pairnotretried/reclassified; no productionintegration/newforecast/learning.

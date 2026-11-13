@@ -1,0 +1,51 @@
+{
+  "admission_evidence": false,
+  "canonical_maxsize": 16384,
+  "definition_of_done": "all original432scalars1152fixed3actualreads/card counters/worker summaries exact, complete validated boundary/worker telemetry under unchanged caps; BOTH timing directions descriptive, NO performance admission",
+  "failure_pair": "results/card-computation-cache/pair/pair.json",
+  "failure_pair_sha256": "ff7979d02acb799bbe2ebe8192c686e58059c19960a3636ff1845cc2038dd547",
+  "final_ci_reserve_seconds": 1800,
+  "fresh_global_admission": false,
+  "historical_source": "b55a86b3042043ae4c4d74b87a3fa02fd95727252fb50ca53beb6bbb580fd751",
+  "idle_control": {
+    "arguments": [
+      "-i"
+    ],
+    "path": "/usr/bin/caffeinate",
+    "scope": "temporary utility-duration idle-sleep assertion; no display assertion or persistent setting; startup/teardown included in complete clocks",
+    "sha256": "3724d8f032bfc2c0e7c5481da448003bd23c72e5914b5edf723f694271380dc8"
+  },
+  "maximum_child_seconds": 900,
+  "maximum_pair_seconds": 1800,
+  "new_agent_default": false,
+  "observation": "boundary current-process and reaped-child rusage, perf/UTC/process/thread clocks; three fresh reference-worker sidecars source-bound; no sampling thread or machine-wide process/power logs",
+  "order": [
+    "uncached",
+    "cached"
+  ],
+  "original_timing_failure_preserved": true,
+  "own": "results/compact-cached-learning/cost/0/own.json",
+  "poker_training_performed": false,
+  "production_integrated": false,
+  "publish_checks_before_collection": true,
+  "rank_maxsize": 65536,
+  "reference_outputs_comparison_only": true,
+  "reference_strategy_input_permitted": false,
+  "required_checks": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312",
+    "hosted311",
+    "hosted312"
+  ],
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.17"
+  },
+  "save_reserve_seconds": 120,
+  "schema": 1,
+  "scope": "RESOURCE_DIAGNOSTIC_COMPLETE_SAVED_AUDIT_NOT_PERFORMANCE_ADMISSION",
+  "stop_at": "2026-11-13T17:00:00Z",
+  "study_id": "card-audit-clock-trace-2026-11-13"
+}
