@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Reuse an exact card calculation](#111-reuse-a-card-calculation-without-changing-a-decision)
+
 - [See where the complete audit spends time](#110-see-the-complete-audit-cost-before-changing-it)
 
 - [Check which interpreter actually ran](#109-check-which-interpreter-actually-ran)
@@ -5300,3 +5302,29 @@ One ordered saved case is not population runtime evidence, a stronger poker
 agent, a new budget permit or proof of memory savings. The full learning window
 no longer fits its required reserve tonight; bounded correctness/optimization
 work continues until9a.m. without reducing any scientific cap.
+
+
+## 111. Reuse a card calculation without changing a decision
+
+November13,2026. The complete profile points to repeated card normalization and
+hand ranking. The [new prospective test](card-computation-cache.md) asks whether
+a small bounded store can reuse the original answer when exactly the same cards
+are passed again. **Example:** asking twice for the rank of the same seven cards
+should return the same immutable rank, without recomputing it the second time.
+
+This does not give the player more information or reuse a solver strategy. The
+store contains only results of our original card functions. It preserves input
+order/types, calls the original for unsupported inputs or changed dependencies,
+retains errors, limits entries and records hits, misses and evictions. Hooks are
+restored on failure; spawned reference workers remain unchanged. Tests compare
+all hand categories, randomized5/6/7card cases, suit/order changes, error behavior,
+RNG continuation and a complete simulated hand. Actual runtime guards also reject
+mislabeled hosted environments.
+
+Before any timing result, full local base/optional checks on both versions and
+both correctly pinned GitHub jobs must pass at one source commit and be public.
+Then one complete saved audit pair will compare every score, fixed condition,
+computed replay and worker summary. A faster result would justify investigating
+production integration; it would not prove a stronger poker agent or pass the old
+failed budget forecast. No new learning run fits tonight's reserved window.
+Codex assistance is recorded; personal practice and time are not inferred.

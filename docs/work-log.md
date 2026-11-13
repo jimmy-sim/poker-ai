@@ -4613,3 +4613,10 @@ spawned workers,900/1800caps and1800finalCI+120save reserve, six actual-runtime
 source checks before pair. Exact432/1152/three computed reads/worker equality,
 invalid/fallback/dependency/RNG/counter/bounds tests. No policy/reference cache,
 production integration, admission or new learning; originalfailuresretained.
+
+Parent-only cache scaffold now covers exact primitive tuple keys, bounded LRUs,
+success-only insertions, dependency fallback including card validation/helpers,
+full accounting, aliases/late imports/failure restoration and explicit original
+worker scope.59new+101prior profile/recall tests pass160/19.73s; allprojectlint and
+strict735files pass. Six fresh same-head actual-runtime roles precede formal
+ONEcomplete pair. No timing outcome or changed policy/source gate claimed yet.
