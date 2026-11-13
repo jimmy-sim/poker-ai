@@ -4,6 +4,7 @@ import argparse
 import csv
 import gzip
 import hashlib
+import importlib
 import json
 import math
 from pathlib import Path
@@ -168,10 +169,9 @@ def render(folder: Path, output: Path) -> dict[str, Any]:
     )
     write_csv(output / "all-parent-functions.csv", stats["functions"])
     write_csv(output / "all-parent-callers.csv", stats["callers"])
-    import matplotlib
-
+    matplotlib = importlib.import_module("matplotlib")
     matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     figure, axes = plt.subplots(1, 2, figsize=(16, 6), layout="constrained")
     labels = {

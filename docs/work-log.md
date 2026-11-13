@@ -4595,3 +4595,11 @@ README/method/limits/terminalcommands/journal110 updated. Final hostedCI require
 before63historymerge. Next prospectivecard-only memoization (canonicalization
 andranking), exactvalues/input/RNG andboundedmemory withactualperprocesscounters;
 no agentperformance claim or fulltrajectory after13:55UTCunder11100reserve.
+
+Posthoc base-only typing caught optionalMatplotlib import-not-found after the
+all-extras check passed. Fixed ONLYreporter to defer optional imports through
+importlib, matching optional rendering dependency boundaries. Both actual base
+311/312strictnewfile checks and10report tests pass; no384measuredsource orraw
+artifact changed. Original385render851source/outputs retained; final hostedCI
+must include this reporter fix. This is a reporting packaging correction, not
+an experiment rerun or changed numerical claim.
