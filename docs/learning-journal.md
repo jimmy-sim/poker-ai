@@ -66,9 +66,11 @@ question, and no new agent is promoted.
 Step 107 completes the integrated cache checks and all six cost runs. Results
 agree, but its full audit-budget forecast still fails: 933.89 seconds against
 900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
-learning treatment remains unrun. Next measure the complete audit path before
-choosing another software improvement. These are verification results, not a
-new stronger agent.
+learning treatment remains unrun. Step 110 now measures the complete audit:
+the ordinary copy takes 406.49 seconds and the profiled copy 573.87, with identical
+checked results. Step 111 tests bounded reuse of repeated card calculations;
+full source checks still precede its timing pair. These are verification and
+software results, not a new stronger agent.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5306,7 +5308,7 @@ work continues until9a.m. without reducing any scientific cap.
 
 ## 111. Reuse a card calculation without changing a decision
 
-November13,2026. The complete profile points to repeated card normalization and
+November 13, 2026. The complete profile points to repeated card normalization and
 hand ranking. The [new prospective test](card-computation-cache.md) asks whether
 a small bounded store can reuse the original answer when exactly the same cards
 are passed again. **Example:** asking twice for the rank of the same seven cards
@@ -5314,15 +5316,20 @@ should return the same immutable rank, without recomputing it the second time.
 
 This does not give the player more information or reuse a solver strategy. The
 store contains only results of our original card functions. It preserves input
-order/types, calls the original for unsupported inputs or changed dependencies,
-retains errors, limits entries and records hits, misses and evictions. Hooks are
-restored on failure; spawned reference workers remain unchanged. Tests compare
-all hand categories, randomized5/6/7card cases, suit/order changes, error behavior,
-RNG continuation and a complete simulated hand. Actual runtime guards also reject
-mislabeled hosted environments.
+order and types, calls the original for unsupported inputs or changed dependencies,
+retains errors, limits entries and records hits, misses and evictions. A miss is
+an answer that is not in the store yet; an eviction removes an older answer to
+stay within the entry limit. The original functions are restored on failure.
+Spawned reference workers remain unchanged.
 
-Before any timing result, full local base/optional checks on both versions and
-both correctly pinned GitHub jobs must pass at one source commit and be public.
+The first 59 new tests pass, together with 101 earlier profile and proof-cache
+tests. They compare every hand category, randomized five-, six- and seven-card
+cases, suit and order changes, error behavior, random-number continuation and a
+complete simulated hand. Actual runtime guards also reject mislabeled GitHub
+environments. Full local base and optional checks on both Python versions, plus
+both correctly pinned GitHub jobs, must still pass at one source commit and be
+public before any timing result.
+
 Then one complete saved audit pair will compare every score, fixed condition,
 computed replay and worker summary. A faster result would justify investigating
 production integration; it would not prove a stronger poker agent or pass the old

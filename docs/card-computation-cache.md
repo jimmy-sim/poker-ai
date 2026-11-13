@@ -46,3 +46,10 @@ passes, a production integration still needs fresh source gates, software proof,
 all three own costs published before native costs, conservative full forecast
 and checked admission. The old933.8894>900failure and runtime-label correction
 remain. The latest real-study start has passed tonight; no new trajectory here.
+
+Both modes install the same observation wrappers and record actual requests; the
+uncached mode still performs primitive/dependency guards and counter updates.
+That shared instrumentation adds work relative to an unwrapped historical command.
+A measured reduction is relative to this instrumented uncached baseline. It must
+not be relabeled as a measured production speedup, and cannot replace the fresh
+three-repetition complete production costs or their maximum-based forecast.

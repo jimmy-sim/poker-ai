@@ -4618,5 +4618,32 @@ Parent-only cache scaffold now covers exact primitive tuple keys, bounded LRUs,
 success-only insertions, dependency fallback including card validation/helpers,
 full accounting, aliases/late imports/failure restoration and explicit original
 worker scope.59new+101prior profile/recall tests pass160/19.73s; allprojectlint and
-strict735files pass. Six fresh same-head actual-runtime roles precede formal
+strict737files pass. Six fresh same-head actual-runtime roles precede formal
 ONEcomplete pair. No timing outcome or changed policy/source gate claimed yet.
+
+A separate posthoc reporter is drafted while387-source checks run, before any
+pair outcome. Seven report scope/source and warmed-key type-boundary tests0.03s and strict checks on both
+base-only interpreters pass; optional plotting uses importlib from the start.
+It will display all mandatory wall stages and original card calls, retain either
+timing sign and bind all measured inputs. No report generated or pair yet.
+
+PR63history merged52619fa after BOTHfinalhost43439012871 pass3523/64skip/150
+plus historicalwarning1270.80/1137.55s, actualuv+Python/NumPy verified. Rawfinal
+logs/metadata saved inwork/native-profile-final-checks. Main actual31117/NP246,
+all384source/historicalinput hashes/viewer and111regressions15.86s pass. Fresh
+141842Zsnapshot matches originalnightly allten user bytes/status/index/patches;
+allstillpreserved afterFF/viewer/tests. Historical exact-patch qualification
+mistakes remain corrected, not backfilled.
+
+Card source49ebd19/387files/b55a86 passes localfull3582/64skip/150deselect each
+774.51/754.13s andoptional923each439.81/371.70s; allfouractualenv/sourceguards
+pass andprocessesclosed0. BOTHhost43440514840stillpending. No timingpair yet.
+Posthocreport explicitly discloses samewrapper/guard/counter overhead in BOTH
+modes: a pair reduction cannot be called unwrappedproduction speedup or replace
+freshthreecosts/maximumforecast. No originalboundsciencebyte altered.
+
+BOTHsourcehost43440514840 nowPASS at49ebd19 withactualuv+Python/NumPy guards
+verified; all6roles/rawmetadata/untrimmedlogs authenticated andretained. Source
+387/b55a86 unchanged; retarget64main onlyafterthisruncompleted. Publishchecks+
+posthocreporter/source beforeONEregistered completepair. No otherlocalheavyjob
+runs duringmeasurement; full900/1800caps+1800finalCI+120save fit9a.m.cutoff.
