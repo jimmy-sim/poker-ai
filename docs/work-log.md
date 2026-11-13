@@ -4471,3 +4471,18 @@ all380scientific bytes still match B52/E45, complete forecast measurement valid,
 no permit/real own trajectory file exists. This evidence/documentation-only
 publication retains the earlier complete same-source local/optional gate. Both
 final PR-head hosted checks remain required before history-preserving merge.
+
+
+### November 13 — complete native-path profile registered before measurements
+
+Issue4/step108: cached whole-native costs402.32–406.94s leave the guarded
+forecast933.889>900failed. Fix repetition0, one plain/profile pair,900each/1800
+pair plus60save reserve, full initial/final own math and all native workers.
+Use parent CPU cProfile nanosecond timer, lossless functions/callers and raw
+binary; retain separate worker wall/CPU and complete-read phase times. Allscalar
+and computed replay summaries must be exact. Expanded source binds all380old
+files plus standalone instrumentation; base-admission validator must reject
+instrumented receipts. Source-bound six-role checks precede formal collection.
+Private unmeasured scaffold drafted during prior forecast; protocol published
+before outcomes. No optimization selected, new training, gate change, admission
+or causal/population speed claim. Stop9a.m.Pacific; no subagents/future schedule.

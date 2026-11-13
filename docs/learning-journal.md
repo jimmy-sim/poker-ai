@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Measure the full independent check](#108-find-the-remaining-cost-in-the-complete-independent-check)
+
 - [Why the complete cached comparison still waits](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline)
 
 - [Reuse a structural proof without skipping changed inputs](#106-reuse-a-proof-only-while-the-checked-structure-stays-the-same)
@@ -5137,3 +5139,26 @@ must pass, so the planned learning experiment stays unrun. We retain the failed
 result, even though it is close. The next measured question is which part of
 the complete audit remains expensive; an earlier own-replay-only profile cannot
 answer that alone. No time limit, seed, training work or accuracy gate changed.
+
+
+## 108. Find the remaining cost in the complete independent check
+
+November 13, 2026. Step 107 preserves every result, but its complete audit-budget
+forecast still fails. We now ask where the complete audit spends its time. The
+[fixed plan](compact-native-profile.md) selects old cost repetition 0 by index,
+then runs one ordinary and one profiled copy of exactly that complete check.
+This includes the initial own replay, all reference workers, and the final own
+replay. Every scalar and computed replay summary must match exactly.
+
+A **CPU profile** records which functions use processor time in the parent. The
+three child workers have separate CPU and wall times; waiting for them is not
+parent CPU. Full wall time still includes all startup, checks, waiting, profile
+extraction and writing. We also time the complete own reads to see costs that
+the CPU-only profile excludes. Inclusive function times overlap.
+
+The instrumented outputs are explicitly excluded from experiment admission. One
+ordered pair is a diagnosis, not evidence of improved poker strength or a new
+budget permit. A private unmeasured scaffold was drafted during the preceding
+forecast; this prospective protocol is public before formal data. Source checks,
+tests, both Python environments and both GitHub jobs come first. No profile
+outcome yet. Codex assists; personal time and understanding are not inferred.
