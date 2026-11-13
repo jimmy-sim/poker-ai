@@ -5087,3 +5087,14 @@ book and warm-vector content, with the original published baseline identified
 by its Git commit. Updating a changed archive's hash cannot bypass that check.
 The earlier source version's checks remain separate; no formal experiment used
 it. These checks are published before the next fresh proof or timing run.
+
+
+The fresh tiny-game rehearsal is complete. It preserves every old policy/book
+and warm-vector value, and all 432 scores plus 1,152 fixed conditions agree with
+the independent checker within 1.11e-16 fictional payoff units. Our own evidence
+was public before the reference ran. The full proof, including that publication
+interval, takes 133.86 seconds under its 180-second cap. This validates software;
+it says nothing new about poker strength. Next measure the complete real-game
+verification workload using old own policies as timing stand-ins, without any
+new poker training. All three own cost records must be public before reference
+costs start.

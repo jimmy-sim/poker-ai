@@ -4400,3 +4400,19 @@ BEFOREany native cost, and ALLthree-native publication before forecast, without
 weakening clean-source or publication gates. Runs remain serial. No formal proof,
 new cost or real training outcome yet. Next: publish these source roles, then the
 full shared180s tiny proof, own before native.
+
+
+### November 13 — complete source-bound cached tiny proof
+
+After six-role source evidence31db81a was public, fresh own software proof takes
+15.0506875s, all324policies/216books/30warms/108compositions/432scores/1152fixed
+conditions, replay0 and exact policy/book bytes. Formal old-vector guard matches
+all570vector contents against original own-only commit37ca53d. Parent5244checks,
+8original traversals/5236reuses; actual per-worker counters/journal retained.
+Complete own evidence02be1af public BEFORE any new native constructor. New
+independent command6.247079s; all432/1152compare within1.1102230246251565e-16
+FICTIONALpayoffunits; no reference actions exported/training. Shared133.857476s
+(includes own publication/administrative interval) fits180. Raw clocks, source,
+worker/journal/schema and exact copies retained. This is software proof ONLY;
+no new Hold'em trajectory or compute permit. Next allthree serial own cost
+stand-ins, one coherent own publication BEFOREany native costs.
