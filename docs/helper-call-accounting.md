@@ -16,12 +16,16 @@ seeds, work counts,7200/900study caps and failed gates remain unchanged.
 
 The recorder observes `subprocess.run`, including calls through `check_output`.
 Recognize only builtin argv lists/tuples for Git with `-C` equal to the checked
-repository and declared read-only subcommands. Record category and argument hash,
+repository and declared read-only subcommands. Recognition is observation, not authorization of arbitrary flags; a future
+collector remains responsible for its frozen reviewed argument forms.
+Record category and argument hash,
 not raw arguments, environment, input or output contents. Supported output is
 represented by type,size and SHA256; text hashing is explicitly UTF8 with
 surrogatepass, not a claim about original wire bytes. Unknown shapes/commands
 execute unchanged but count as unsupported coverage, without argument/output
-recording. A future complete source trace must reject unsupported coverage.
+recording. A future complete source trace must reject unsupported coverage. A complete
+ledger means coverage, not command success or accepted source; original return
+codes and validation decisions remain authoritative.
 
 Capture nearby own-process/reaped-child resource snapshots over each synchronous
 call. Their increment belongs to that observation interval, not necessarily that

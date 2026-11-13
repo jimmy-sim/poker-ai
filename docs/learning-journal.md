@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Ask which helper program used the CPU](#113-ask-which-helper-program-used-the-cpu)
+
 - [Measure active work and elapsed time](#112-measure-the-work-and-the-wait-separately)
 
 - [Reuse an exact card calculation](#111-reuse-a-card-calculation-without-changing-a-decision)
@@ -5414,3 +5416,27 @@ also caught floating-point subtraction giving1.9999999999999998 instead of2;
 approximate comparison fixes that test without changing any measured result.
 The original failed gates and source-version correction stay visible. Codex
 assisted; no personal practice, time or mastery is inferred.
+
+
+## 113. Ask which helper program used the CPU
+
+November 13, 2026. The resource trace reports work by child programs, but it does
+not identify each call. The next [component](helper-call-accounting.md) prepares
+that investigation. It observes a synchronous helper call and records its command
+category, hashes and resource-counter boundaries. A hash is a fingerprint for
+comparison; the ledger keeps no raw arguments, environment, input or output text.
+
+The original call still returns the same object and bytes, or raises the same
+error. Unsupported call forms still execute, but leave an explicit coverage gap.
+A complete ledger means that calls were recorded, not that commands succeeded or
+that a source gate passed. Other concurrent children could affect the counter
+increment, so the recorder does not claim exclusive CPU attribution to a PID.
+
+Nineteen software tests pass on both Python versions. They include a tiny
+temporary Git repository, return/error identity, privacy, partial starts, failed
+retention, unsupported forms and cleanup. No real source-validation collector is
+wired or measured here. Its future source binding, full checks, fixed cap and
+published qualification still precede collection. The remaining overnight window
+is being used for software checks and saving this foundation, not another long
+poker audit. The strategy, failed gates and scientific limits remain unchanged.
+Codex assistance is recorded; personal time or understanding is not inferred.

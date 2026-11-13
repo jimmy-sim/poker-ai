@@ -4749,3 +4749,14 @@ identity, partialstarts/retentionfailures/restoration/privacy tests withtiny
 softwarefixtures. No real-sourcecollector wired or formalmeasurement tonight;
 futurecollector mustbesource-bound/all6rolespublicwithfixedcap/config. No new
 pokertraining/reference/optimization/admission, originalfailuresremain.
+
+Helperobservercomponent implemented withoutcollector: supportedGitcategories+
+argument/outputfingerprints only, no rawargs/env/input/output, visibleunknown
+coverage, before/afterOSsnapshotswithnonexclusiveintervalscope. Originalreturned
+object/bytes andprimaryexceptionidentity preserved; startretentionfailureblocks
+execution, secondaryobserverfailuredoesnotreplaceprimaryerror, hooksrestore.
+Coverageisnotcommandsuccess/sourceadmission.19testsPASSboth311/3120.08/0.07s;
+expandedpriorfixturegroup126/2.84s(17-testdraft) and31260/0.40s; strict746files+
+alllintpass. Journal113current, no real-sourcepathrecorded, solverorlearnerrun,
+optimization, measuredspeedup or admission. Publishtestedcode, thenfullbase and
+relevantoptionalchecks+bothhostjobs. Futureformalcollectorstillunimplemented.
