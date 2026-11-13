@@ -4321,3 +4321,14 @@ Final same-source relevant suites pass147each:16.16s onPython3.11 and15.91s
 onPython3.12. All367named scientific files unchanged; complete raw pair hashes
 and recomputed/stored identity rechecked by the retained own reader.
 Lint/format/hooks pass. Final publication hosted checks required before merge.
+
+### November 13 — resume issue4; prospective cached pipeline
+
+User authorizes this night's work through9a.m.Pacific. Actual main455e6e9 and
+allten unrelated modified result files inspected and freshly snapshotted before
+isolated research/compact-cached-pipeline. The prospective integration plan fixes
+effective source/counters in every process, complete original proof/cost/audit/
+forecast/admission and unchanged scientific gates before any new learning.
+No prototype timing rescues old1,210.21>900failure. No implementation or new cost
+outcomes yet. Latest real-study start5:55a.m. preserves original11,100s reserve;
+no future automation/subagents. Codex-assisted, human time not recorded.

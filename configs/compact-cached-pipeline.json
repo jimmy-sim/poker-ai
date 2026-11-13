@@ -1,0 +1,54 @@
+{
+  "cache_config": "configs/recall-proof-cache.json",
+  "cache_config_sha256": "f78198c7570fe21f0164cec8303207ac840bc804d26163946fd1a98a1c1dc09b",
+  "cache_source": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+  "cache_support": "scripts/recall_cache_support.py",
+  "cache_support_sha256": "7ed13347df22f104e0fa38abd8b4bb16f5ecf73ab4f8d91c58479bd19cc1dca6",
+  "caps": {
+    "cost_native": 900,
+    "cost_own": 900,
+    "forecast": 900,
+    "software_shared": 180,
+    "study_native": 900,
+    "study_own": 7200
+  },
+  "folder": "results/compact-cached-learning",
+  "forecast_rules": {
+    "native": "2*(N+60)<900",
+    "own": "2*(2*T+D+600)<7200",
+    "repetitions": [
+      0,
+      1,
+      2
+    ],
+    "training": "unchanged ALL24 original B4 paths, original fixed30path partition, no half discount"
+  },
+  "fresh_global_admission": false,
+  "historical_cache_manifest": "results/recall-proof-cache/pair/manifest.json",
+  "historical_cache_manifest_sha256": "22af28b8369f58f952facb410978324dd726bf489d2ae09a22ca8dc67e719bcf",
+  "latest_study_start": "2026-11-13T13:55:00Z",
+  "new_agent_default": false,
+  "original_cost": "configs/compact-own-opponent-cost-standins.json",
+  "original_cost_sha256": "bf590525ab8c1cb206d6b1afb6562ce4c628ad3943edc93a33259eb181c58ca3",
+  "original_science": "configs/compact-own-opponent-learning.json",
+  "original_science_sha256": "46922073b88796463ae5c911e6de5eea29de788f7b3fbd3e96275d11c9845d8d",
+  "original_scientific_source": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+  "reference_strategy_input_permitted": false,
+  "required_checks": {
+    "publish_before_formal_software": true,
+    "roles": [
+      "base311",
+      "base312",
+      "optional311",
+      "optional312",
+      "hosted311",
+      "hosted312"
+    ],
+    "same_head": true
+  },
+  "schema": 1,
+  "source_placement_exception": "private scripts/compact_cached package, every py file plus entry and pinned historical dependencies in effective source; original src/entry/configs stay byte-identical",
+  "stop_at": "2026-11-13T17:00:00Z",
+  "study_id": "compact-cached-pipeline-2026-11-13",
+  "study_start_reserve_seconds": 11100
+}

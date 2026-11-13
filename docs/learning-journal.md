@@ -5055,3 +5055,21 @@ retain exact times, CPU records, limits and the next decision. Before any future
 training, integrate and check the improvement separately, measure the complete
 prescribed costs, and pass the original admission rules. Final GitHub checks
 remain before merging this result; work stops by the user's 10 a.m. deadline.
+
+## 107. Put the faster check into a fully recorded experiment pipeline
+
+November13,2026. The cache trial speeds up one saved replay, but the full training
+experiment still lacks a passing audit-budget forecast. The next step is a
+separate [recorded pipeline](compact-cached-pipeline.md). Its source identity must
+include the adapter that actually runs, and each process must report its cache
+requests and reuses. We cannot call it the old implementation or reuse its old
+admission receipt.
+
+The scientific question stays the same: does training against our own
+finer-informed opponent help the compact learner at fixed work? Before trying
+that, the integrated software must pass correctness, both Python checks and
+GitHub CI, a complete tiny-game rehearsal, and three complete own/audit cost
+measurements. The original time and accuracy rules stay fixed. If the complete
+forecast still fails, retain that failure and investigate the remaining cost.
+This is a prospective plan; no new implementation or measurement yet. Work stops
+by9a.m.Pacific. Codex assists; personal time and understanding are not inferred.
