@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Why the complete cached comparison still waits](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline)
+
 - [Reuse a structural proof without skipping changed inputs](#106-reuse-a-proof-only-while-the-checked-structure-stays-the-same)
 
 - [Measure complete replay overhead before optimizing it](#105-measure-why-verification-is-expensive-before-optimizing-it)
@@ -45,6 +47,13 @@ notes section is for your own questions and explanations as you work through it.
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
+
+Step 107 completes the integrated cache checks and all six cost runs. Results
+agree, but its full audit-budget forecast still fails: 933.89 seconds against
+900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
+learning treatment remains unrun. Next measure the complete audit path before
+choosing another software improvement. These are verification results, not a
+new stronger agent.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5118,3 +5127,13 @@ correctness, but this implementation does not yet make the larger study fit its
 audit budget. Next run the complete forecast, retaining all inputs and all three
 runs. Then profile the whole reference-checking path before choosing another
 optimization. No new Hold'em training or stronger-agent claim follows.
+
+
+The [complete forecast](compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
+is now finished. It takes 450.75 seconds to recheck every required run, archive
+and training-cost input. The own-work estimate is 4,046.17 seconds against a
+7,200-second limit; the independent-check estimate is 933.89 against 900. Both
+must pass, so the planned learning experiment stays unrun. We retain the failed
+result, even though it is close. The next measured question is which part of
+the complete audit remains expensive; an earlier own-replay-only profile cannot
+answer that alone. No time limit, seed, training work or accuracy gate changed.

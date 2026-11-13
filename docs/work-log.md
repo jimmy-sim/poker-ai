@@ -4451,3 +4451,23 @@ forecast has not yet run and must seal/replay ALLinputs before final reporting.
 Publish this ALLthree-native bundle first. No admission/new poker trajectory.
 If full forecast fails, next step is complete-native-path profiling before any
 new optimizer; retain this failed cost set without favorable retries.
+
+
+### November 13 — complete cached forecast fails the independent budget
+
+Whole forecast 450.751459332998s<900; ALLthree own
+archives replayed, all native worker/journal/license/clock/publication evidence
+validated, 101 inputs sealed and original ALL24 full B4 paths/kernel geometry
+checked. No half discount. T=610.943356249918, D=201.19776920799632, N=406.9446965840034.
+Own guard 4046.1689634156646<7200 passes; independent
+933.8893931680068>900 FAILS. No admit command or new Hold'em
+trajectory. All prior failed outcomes and defaults remain. Method retains all
+six times and limitations; journal107 explains the practical decision.
+Next complete-native-path profiling, separately registered/source-checked,
+before any further optimization. Diagnostic times cannot rescue this cost set.
+
+Final relevant same-source regression:87focused adapter/cache tests pass in17.00s;
+all380scientific bytes still match B52/E45, complete forecast measurement valid,
+no permit/real own trajectory file exists. This evidence/documentation-only
+publication retains the earlier complete same-source local/optional gate. Both
+final PR-head hosted checks remain required before history-preserving merge.

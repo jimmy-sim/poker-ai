@@ -129,3 +129,52 @@ forecast. No favorable reruns or substitution of prototype times.
    old10m path charge even for half-budget components. This is a conservative
    configured-device rule, not a statistical runtime guarantee. A failed estimate
    remains failed; do not choose a faster subset or relax the quality target.
+
+
+## Recorded compute decision — November 13, 2026
+
+The complete forecast finishes in **450.7514593329979 seconds**, under its
+unchanged 900-second cap. It replays all three whole own archives, validates
+every independent worker/journal/publication/license/clock, seals 101 required
+input files, and checks all 24 original full B4 training paths and kernel
+geometry. No half-budget discount is applied. Parent cache accounting is
+11,176 requests, 26 original traversals and 11,150 reuses, with no rejection or
+fallback. [Full receipt](../results/compact-cached-learning/forecast.json) and
+[exact invocation and preservation](../results/compact-cached-learning/execution-forecast/verified.json).
+
+| Fixed repetition | Complete own cost (s) | Complete independent cost (s) |
+|---|---:|---:|
+| 0 | 200.109548375010 | 402.320211541999 |
+| 1 | 200.820317624995 | 406.537808458001 |
+| 2 | 201.197769207996 | 406.944696584003 |
+
+The fixed maxima are T=610.943356249918, D=201.197769207996 and
+N=406.944696584003 seconds. The unchanged formulas give:
+
+| Gate | Guarded estimate (s) | Strict limit (s) | Result |
+|---|---:|---:|---|
+| Own: `2*(2*T+D+600)` | 4046.168963415665 | 7,200 | Pass |
+| Independent: `2*(N+60)` | 933.889393168007 | 900 | **Fail** |
+
+All three native runs verify 432 scores and 1,152 fixed conditions within
+1.8474111129762605e-13 chips. Both the initial AND final own mathematical
+replays remain inside every complete native clock. All three own costs were
+published together at ab02f25 before any native cost constructor; all three
+native costs were public at 796f372 before the complete forecast. Original
+ignored outputs and all exact canonical copies, raw children, journals and
+execution records are retained. The six report files match byte for byte across
+the own repetitions; all three plot types were inspected and clearly label old
+own stand-ins, zero new learning and no strength admission. Coincident curves
+are therefore not a treatment result.
+
+**No new study is admitted.** No admission command or new compact/finer-opponent
+trajectory is run. The original 1,210.21-second failed estimate stays unchanged.
+These new absolute costs are not a paired causal speedup over old timings;
+three configured-device repetitions are not a runtime population guarantee.
+The cache preserves this finite correctness inventory but does not prove every
+possible future input correct, total-memory savings, a stronger policy or
+fresh/global generalization. The previous sampled accuracy failure remains.
+
+Next: separately register and check a complete-native-path profile before
+choosing another optimizer. Its diagnostic times cannot replace this cost set
+or issue a permit. Keep the original scientific caps, seeds and gates.
