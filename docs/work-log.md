@@ -4708,3 +4708,19 @@ Python/NumPyverifiedbeforetests. Untrimmedlogs/fullheadmetadata authenticated;
 retarget65mainonlyafterruncompleted. Publishallsixandtestedposthocreporter
 BEFOREoneformalresourcepair. Source390/old387 unchanged. Currentfullcaps plus
 1800finalCI/120save reservefit9a.m.; no otherlocalheavyjobduringcollection.
+
+### November13 — complete resource diagnostic, old timing FAIL preserved
+
+ONEresourcepaircomplete0:551.6211327499914/527.1198560829944s, shared
+1078.7796968330076<1800; each<900. All432scalars/1152fixed/threeactualreads/
+cardcounts/unchangednumericworkers EXACT; all3read+3worker source/PID/runtime/
+resource records validate. Canonical/rank countersmatcholdprototype(917324/
+4068415hits,780/30721originals), zeroerrors/fallbacks/evictions. No production/
+performanceadmission/newforecast/permit/learning; rawlowerwallisdescriptiveonly.
+BodyCPU285.656045/260.792604. Resourceownreads reveal22.76–23.28CPU seconds in
+REAPEDCHILDREN perfullread, alongside127–141parentCPU; workerown124–125CPU plus
+about42childCPU. ParentCPUalonewasincompletecomputeaccounting. Extraobserver
+sourcechecksareincluded; no causaldiagnosisofolderuntracedpair, no summedparallel
+CPUaselapsed or assertion-state claim. Original481.84→595.65timingFAILunchanged.
+Exactwholepair/executioncopies/allhashes+originalignoredbytes retained; readonly
+source/raw/resources/completeidentityverifierPASS. Publishrawbeforeposthocrender.
