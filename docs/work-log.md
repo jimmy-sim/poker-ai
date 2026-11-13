@@ -4603,3 +4603,13 @@ importlib, matching optional rendering dependency boundaries. Both actual base
 artifact changed. Original385render851source/outputs retained; final hostedCI
 must include this reporter fix. This is a reporting packaging correction, not
 an experiment rerun or changed numerical claim.
+
+### November13 — prospective parent-only pure-card reuse diagnostic
+
+Measured elapsed callers motivate bounded16,384canonical/65,536rank exact-tuple
+LRUs, successful immutable original results only. Publish protocol/config before
+implementation/outcomes. Same complete cost0audit uncached/cached, unchanged
+spawned workers,900/1800caps and1800finalCI+120save reserve, six actual-runtime
+source checks before pair. Exact432/1152/three computed reads/worker equality,
+invalid/fallback/dependency/RNG/counter/bounds tests. No policy/reference cache,
+production integration, admission or new learning; originalfailuresretained.
