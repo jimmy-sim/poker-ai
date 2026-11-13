@@ -21,7 +21,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.11', '3.12']
+        include:
+          - python-version: '3.11'
+            exact-python: '3.11.17'
+            exact-numpy: '2.4.6'
+          - python-version: '3.12'
+            exact-python: '3.12.15'
+            exact-numpy: '2.5.4'
+    env:
+      # uv sync must use the tested patch version, not an OS interpreter.
+      UV_PYTHON: ${{ matrix.exact-python }}
+      EXPECTED_NUMPY: ${{ matrix.exact-numpy }}
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -33,10 +43,13 @@ jobs:
         uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           version: '0.13.5'
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.exact-python }}
           enable-cache: true
       - name: Install locked dependencies
         run: make setup
+      - name: Verify actual installed runtime
+        run: |
+          uv run --locked python -c 'import os, sys, numpy; actual = sys.version.split()[0]; assert actual == os.environ["UV_PYTHON"], (actual, os.environ["UV_PYTHON"]); assert numpy.__version__ == os.environ["EXPECTED_NUMPY"]; print("ACTUAL_PYTHON=" + actual); print("ACTUAL_NUMPY=" + numpy.__version__)'
       - name: Check lint, formatting, types, and tests
         run: make check
       - name: Validate and run commit hooks

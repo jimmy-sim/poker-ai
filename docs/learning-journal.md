@@ -11,6 +11,12 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [See where the complete audit spends time](#110-see-the-complete-audit-cost-before-changing-it)
+
+- [Check which interpreter actually ran](#109-check-which-interpreter-actually-ran)
+
+- [Measure the full independent check](#108-find-the-remaining-cost-in-the-complete-independent-check)
+
 - [Why the complete cached comparison still waits](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline)
 
 - [Reuse a structural proof without skipping changed inputs](#106-reuse-a-proof-only-while-the-checked-structure-stays-the-same)
@@ -47,6 +53,13 @@ notes section is for your own questions and explanations as you work through it.
 - [Your own reported terminal practice](#your-own-learning-notes)
 
 ## Where the project stands
+
+A [November13 verification correction](ci-runtime-correction.md) found nine
+GitHub receipt rows with the wrong Python patch label: they ran3.12.3, not
+3.12.15. The original logs/results remain, but those labels cannot qualify the
+exact-version gate. CI now pins and checks the actual runtime; fresh same-head
+checks precede further profiling. Numerical producer results are a separate
+question, and no new agent is promoted.
 
 Step 107 completes the integrated cache checks and all six cost runs. Results
 agree, but its full audit-budget forecast still fails: 933.89 seconds against
@@ -5137,3 +5150,153 @@ must pass, so the planned learning experiment stays unrun. We retain the failed
 result, even though it is close. The next measured question is which part of
 the complete audit remains expensive; an earlier own-replay-only profile cannot
 answer that alone. No time limit, seed, training work or accuracy gate changed.
+
+
+## 108. Find the remaining cost in the complete independent check
+
+November 13, 2026. Step 107 preserves every result, but its complete audit-budget
+forecast still fails. We now ask where the complete audit spends its time. The
+[fixed plan](compact-native-profile.md) selects old cost repetition 0 by index,
+then runs one ordinary and one profiled copy of exactly that complete check.
+This includes the initial own replay, all reference workers, and the final own
+replay. Every scalar and computed replay summary must match exactly.
+
+A **CPU profile** records which functions use processor time in the parent. The
+three child workers have separate CPU and wall times; waiting for them is not
+parent CPU. Full wall time still includes all startup, checks, waiting, profile
+extraction and writing. We also time the complete own reads to see costs that
+the CPU-only profile excludes. Inclusive function times overlap.
+
+The instrumented outputs are explicitly excluded from experiment admission. One
+ordered pair is a diagnosis, not evidence of improved poker strength or a new
+budget permit. A private unmeasured scaffold was drafted during the preceding
+forecast; this prospective protocol is public before formal data. Source checks,
+tests, both Python environments and both GitHub jobs come first. No profile
+outcome yet. Codex assists; personal time and understanding are not inferred.
+
+The measurement tool now has 35 new tests. Together with existing profiler and
+raw-statistics tests, all 96 pass. A small fixture confirms that the profiled
+child retains its raw function records and cannot qualify as ordinary budget
+evidence. Tests also reject missing final replay, changed scalar results and
+worker identities, and preserve timed-out output. All original 380 pipeline
+source files stay unchanged. Full source checks still precede formal profiling.
+
+
+The profiler's complete source checks now pass: 3,478 base tests on each Python
+version, 819 optional tests on each, and both exact-source GitHub jobs. Their
+[logs and source record](../results/compact-native-profile/checks.json) are saved
+before any formal profile data. The preceding cached-pipeline result also passed
+its final GitHub checks. Next preserve the local changes while integrating that
+finished milestone, then run the one fixed ordinary/profile pair without other
+heavy local work. No bottleneck or optimization outcome is assumed in advance.
+
+
+The first formal profiling attempt did not finish. Its ordinary copy completed
+in407.51seconds, including about275seconds across the two real own-result
+replays. The CPU-instrumented copy hit its900-second limit. Its reference workers
+finished, but the final replay and wrapper checks did not. The full raw partial
+is saved; no detailed function profile was produced, so we cannot name a
+function bottleneck from it. The old budget forecast remains failed.
+
+The next [separately registered instrument](compact-native-wall-profile.md) uses
+the profiler's built-in elapsed clock, avoiding a Python CPU-clock callback on
+every function call. This is a new measurement method, not a retry that makes
+the CPU attempt pass. Its function values include waiting and must not be called
+CPU time. We still sample whole-parent, read and worker CPU separately. The same
+complete work, fixed case,900/1800-second caps and source checks remain. No agent
+optimization is chosen before complete measurements, and no new training starts.
+
+The separate elapsed-time instrument now passes131focused checks with the older
+profiler tests included. A fixture verifies that it uses the built-in timer.
+The original CPU-profiler code, failure and numerical pipeline stay unchanged.
+Full checks on both Python versions and GitHub still precede the new measurement.
+
+
+A second verification issue was caught before the elapsed pair ran: the GitHub
+job labeled Python3.12 was actually using the runner's3.12.3 interpreter, while
+our receipts said3.12.15. A read-only audit found nine such mislabeled rows;
+the nine Python3.11 rows matched. The original records stay saved, with the
+[correction](ci-runtime-correction.md) clearly attached. We cannot use later
+tests to pretend an earlier precollection check happened. The local numerical
+runs have their own recorded runtimes; this audit did not erase or rerun them.
+
+The workflow now forces the exact interpreter and prints/asserts actual Python
+and NumPy before testing. All six checks will run again at one corrected head
+before more profiling data. Reading the actual tool output caught what a matrix
+label alone missed. No new Hold'em training, limit change or stronger agent
+claim follows. Codex assistance and this mistake are documented plainly.
+
+## 109. Check which interpreter actually ran
+
+November 13, 2026. The CI matrix said Python3.12, but that label did not tell us
+which patch version the project used. While preparing the next profile, the
+actual installation log showed3.12.3. Our receipt field said3.12.15. That was a
+recording mistake, so the old exact-version qualification cannot stand as written.
+
+The [fixed-revision audit](ci-runtime-correction.md) checked nine saved receipts
+and eighteen hosted rows using their original log hashes. All nine3.11.17labels
+matched; the nine3.12.15labels actually used3.12.3. The old records stay intact,
+with the correction attached. This audit did not rerun poker, erase numerical
+findings from their recorded producer runtimes, or establish every old outcome
+false. It also cannot pretend that a missing precollection check happened later.
+
+The fix tells both setup-uv and the project environment to use the exact patch,
+then prints and asserts actual Python and NumPy before tests start. New source
+records must be assembled from that output. All six source checks run again at
+one corrected commit before new measurements. The original numerical source,
+seeds, time caps and accuracy limits stay fixed. No new agent is promoted.
+
+An environment is part of reproducibility: installing a Python version does not
+by itself prove that a project used it. You can inspect your own environment
+with one terminal command:
+
+```sh
+.venv/bin/python -c 'import sys, numpy; print(sys.version.split()[0]); print(numpy.__version__)'
+```
+
+The saved original real-poker replay environment is Python3.11.17/NumPy2.4.6.
+This command only prints information; it does not train or modify a strategy.
+The audit script's six parser tests can also be run from the correction document.
+Codex assisted with the correction; personal hands-on time and mastery are not
+inferred from automated work.
+
+
+The corrected same-head checks now pass:3,513base tests and854optional tests
+on each local version, plus both hosted jobs. Their raw logs now confirm the
+expected exact Python and NumPy versions, with assertions before tests. The
+[new receipt](../results/compact-native-wall-profile/checks.json) is public
+before the elapsed pair. Earlier mislabeled gates remain flagged; no historical
+run was reclassified as properly source-admitted.
+
+
+## 110. See the complete audit cost before changing it
+
+November 13, 2026. After the corrected source/runtime checks were public, the
+new elapsed-time pair finished:406.49seconds ordinarily and573.87with profiling.
+Every432score,1,152fixed condition, computed replay and worker summary matched
+exactly. All2,354function entries and5,640caller links survive alongside the raw
+binary. The older CPU-clock attempt stays failed and the historical version
+labels stay corrected; this result does not backfill either gate.
+
+The [saved chart](../results/compact-native-wall-profile/report/audit-costs.png)
+shows elapsed time on the left. Orange/red are the initial/final own-result
+replays; green is the reference-worker batch. Those two real own reads use about
+274seconds in the ordinary copy. The longer profiled bar includes measurement
+overhead. On the right, poll mostly means waiting for required workers. Those
+frame values are elapsed time, not CPU samples; inclusive function costs overlap.
+
+The caller records show old loaders rebuilding trees and repeating deterministic
+card work: about918,000normalizations of card suits and4.10million hand rankings.
+A normalization maps equivalent suit labels into the same card description. A
+hand ranking gives an immutable comparison value such as full house versus quads.
+Both depend on the cards passed to them, not on a learned strategy. The next
+prospective optimization will test bounded reuse of exactly those results, with
+original validation/fallback behavior and no changed RNG or policy values.
+
+The report exports every function/caller and checks that CPU-timer data cannot
+be relabeled as elapsed data. Its10tests pass; the actual chart was inspected.
+[Full method and raw evidence](compact-native-wall-profile.md) explain limits.
+One ordered saved case is not population runtime evidence, a stronger poker
+agent, a new budget permit or proof of memory savings. The full learning window
+no longer fits its required reserve tonight; bounded correctness/optimization
+work continues until9a.m. without reducing any scientific cap.

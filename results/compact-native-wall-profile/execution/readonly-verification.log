@@ -1,0 +1,30 @@
+plain: 406.491290s whole wall; 277.739903s parent body CPU
+profile: 573.872457s whole wall; 444.815026s parent body CPU
+Identical complete native scalar and computed replay results; no new training or admission
+Parent elapsed-stack profile: 2354 raw functions, 5640 caller edges; worker CPU is separate
+self_seconds
+  126.536838s 16416 calls ~:0 <method 'poll' of 'select.poll' objects>
+  26.199530s 642160 calls ~:0 <method 'update' of '_hashlib.HASH' objects>
+  24.718893s 1781516 calls stdlib/json/encoder.py:205 JSONEncoder.iterencode
+  20.472449s 22132 calls src/poker_ai/finite.py:70 ArrayTree.reaches
+  20.374998s 56309 calls stdlib/json/decoder.py:343 JSONDecoder.raw_decode
+  14.572777s 33160996 calls ~:0 <method 'tolist' of 'numpy.ndarray' objects>
+  11.735262s 48383444 calls ~:0 <built-in method builtins.sorted>
+  11.589516s 4099136 calls src/poker_ai/evaluator.py:151 evaluate_best
+  10.670922s 40250976 calls src/poker_ai/postflop/parallel_profile.py:30 same
+  10.630778s 32621019 calls ~:0 <built-in method builtins.any>
+  8.539059s 28812 calls src/poker_ai/finite.py:62 ArrayTree.values
+  8.437583s 3154426 calls ~:0 <method 'reduce' of 'numpy.ufunc' objects>
+cumulative_seconds (inclusive costs overlap)
+  572.046397s 1 calls scripts/profile_cached_native_wall.py:141 execute_child
+  572.012772s 1 calls scripts/compact_cached/cli.py:626 child_main
+  571.997052s 1 calls scripts/compact_cached/cli.py:162 _child_main
+  441.479809s 3 calls scripts/profile_cached_native_wall.py:149 execute_child.<locals>.observe
+  441.479748s 3 calls scripts/compact_cached/cli.py:71 read
+  441.428932s 3 calls scripts/compact_cached/cli.py:81 _read
+  312.596357s 2 calls src/poker_ai/evaluation/compact_opponent_sources.py:51 load
+  312.580084s 2 calls src/poker_ai/evaluation/compact_opponent_sources.py:56 _load
+  138.043696s 2 calls src/poker_ai/evaluation/opponent_learning_sources.py:218 load
+  130.156355s 2 calls src/poker_ai/evaluation/compact_fixed_inputs.py:148 replay_sources
+  126.560590s 16416 calls stdlib/selectors.py:402 _PollLikeSelector.select
+  126.536838s 16416 calls ~:0 <method 'poll' of 'select.poll' objects>

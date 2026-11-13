@@ -1,0 +1,96 @@
+{
+  "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3478 passed, 64 skipped, 150 deselected in 786.59s (0:13:06)",
+      "log": {
+        "file": "results/compact-native-profile/checks/base311.log",
+        "sha256": "464165f4d4a400b7fa8bc79ea90302dbceb0fb2fbab2ecb073da9e48f531e09e"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3478 passed, 64 skipped, 150 deselected in 762.55s (0:12:42)",
+      "log": {
+        "file": "results/compact-native-profile/checks/base312.log",
+        "sha256": "5fe0b67cae3fffe0f95d9c82020c1198c5d123f2bd470ced5c46fb1d7c398748"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "819 passed in 437.70s (0:07:17)",
+      "log": {
+        "file": "results/compact-native-profile/checks/optional311.log",
+        "sha256": "bc0027c92b7f454e281e223064bb78d6f611e21025c006c1b9ec2ea4cd915b12"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "819 passed in 372.98s (0:06:12)",
+      "log": {
+        "file": "results/compact-native-profile/checks/optional312.log",
+        "sha256": "f1d6cceef834ee7dd25e6c35a96d24a69af3e93f62f475f7f7deb1219f70d7f9"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43419209354,
+      "job_id": 131864674964,
+      "head_sha": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-native-profile/checks/hosted311.log",
+        "sha256": "cb2e96b9f0b213380501c1baeebaee6649f35bd059319b35ff867c4a22d3ab75"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e",
+      "checked_commit": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43419209354,
+      "job_id": 131864675496,
+      "head_sha": "d4c94fb7b1f42619e3aec5c660af91dfa87915ee",
+      "conclusion": "success",
+      "log": {
+        "file": "results/compact-native-profile/checks/hosted312.log",
+        "sha256": "117e33787fa9c0a9742f1ba1e57e862495f0e22c7fcc5bc1fd463b59cec2c491"
+      }
+    }
+  ],
+  "scope": "Observed exact same-head full local bases, relevant all-extras suites and BOTH hosted jobs for expanded382-source complete native parent profiler and exact scalar/read/worker/source/input/failure/admission guards. No formal native pair before these published checks."
+}

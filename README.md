@@ -89,12 +89,25 @@ after instrumentation. [Journal 105](docs/learning-journal.md#105-measure-why-ve
 explains the 2,832 checks, the partial outer OS-resource capture and why a cache
 must detect changed structure. This is verification software, not new training.
 
+**Verification-record correction — November13:** nine hosted Python3.12
+receipt rows labeled3.12.15 actually ran3.12.3. Those exact-version labels do
+not qualify the stated patch gate. Original logs/results remain; no new agent
+is admitted. [Audit, scope and corrected CI](docs/ci-runtime-correction.md).
+
 The [complete cached pipeline](docs/compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
 now preserves all policy/book values and passes independent numerical checks.
 Its new guarded audit estimate still fails: **933.89 seconds against 900**
 (own-work estimate 4,046.17 against 7,200 passes). All three fixed own/native
 costs and the full forecast are retained. No new training or stronger agent
 follows; the next step profiles the complete audit path.
+
+The[complete audit diagnosis](docs/compact-native-wall-profile.md) now has a
+correctly version-checked elapsed profile:406.49sordinary/573.87sprofiled, all
+432scores/1,152conditions and computed replays identical. Allfunction/caller
+records and a readable cost chart are saved. Repeated card-normalization and
+ranking during tree reconstruction are the next optimization question. The
+earlier CPU-timer timeout and incorrect historical patch labels stay visible.
+This is verification-software evidence; no new Hold'em training was run.
 
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full

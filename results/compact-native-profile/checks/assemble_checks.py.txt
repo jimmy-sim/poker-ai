@@ -1,0 +1,29 @@
+"""Archive observed immutable-source role checks, with exact untrimmed logs."""
+import hashlib,json,re,shutil
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-native-profile';f=w/'compact-native-profile-checks'
+head='d4c94fb7b1f42619e3aec5c660af91dfa87915ee';fp='0471f8fb3e431d37293abc0b82c9ae57df2204ab7cda34b0de8bef807500480e';run=43419209354
+out=r/'results/compact-native-profile/checks';rows=[]
+def bind(p):return dict(file=str(p.relative_to(r)),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+for role in ('base','optional'):
+ for minor in ('311','312'):
+  name=role+minor;x=json.loads((f/f'{name}-receipt.json').read_text());log=(f/f'{name}.log').read_text()
+  assert x['status']=='passed' and x['checked_commit']==head and x['scientific_source_sha256']==fp
+  line=next(t for t in log.splitlines() if re.match(r'^\d+ passed',t))
+  assert line.startswith('3478 passed, 64 skipped, 150 deselected' if role=='base' else '819 passed')
+  rows.append(dict(role=role,minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python='3.11.17' if minor=='311' else '3.12.15',numpy='2.4.6' if minor=='311' else '2.5.4',result=line))
+m=json.loads((f/'hosted-run.json').read_text());jobs=json.loads((f/'hosted-jobs.json').read_text())['jobs']
+assert m['head_sha']==head and m['status']=='completed' and m['conclusion']=='success' and m['id']==run
+for minor in ('311','312'):
+ job=next(x for x in jobs if x['name']=='Python '+('3.11' if minor=='311' else '3.12'))
+ assert job['status']=='completed' and job['conclusion']=='success' and job['head_sha']==head
+ log=(f/f'hosted{minor}.log').read_text(encoding='utf-8-sig');assert head in log and '3478 passed, 64 skipped, 150 deselected' in log
+ rows.append(dict(role='hosted',minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python='3.11.17' if minor=='311' else '3.12.15',numpy='2.4.6' if minor=='311' else '2.5.4',run_id=run,job_id=job['id'],head_sha=head,conclusion='success'))
+assert not out.exists();out.mkdir(parents=True)
+for p in f.iterdir():
+ if p.is_file():shutil.copyfile(p,out/p.name)
+shutil.copyfile(w/'run-native-profile-checks.py',out/'run_checks.py.txt');shutil.copyfile(__file__,out/'assemble_checks.py.txt')
+for x in rows:x['log']=bind(out/f"{x['role']}{x['minor']}.log")
+p=out.parent/'checks.json'
+with p.open('x') as stream:json.dump(dict(source_fingerprint=fp,checks=rows,scope='Observed exact same-head full local bases, relevant all-extras suites and BOTH hosted jobs for expanded382-source complete native parent profiler and exact scalar/read/worker/source/input/failure/admission guards. No formal native pair before these published checks.'),stream,indent=2);stream.write('\n')
+print(json.dumps([dict(role=x['role'],minor=x['minor'],result=x.get('result'),job=x.get('job_id')) for x in rows]))

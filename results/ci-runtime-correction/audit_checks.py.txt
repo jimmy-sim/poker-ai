@@ -1,0 +1,71 @@
+"""Read-only, fixed-revision audit of declared hosted patch-version labels."""
+import argparse
+import hashlib
+import json
+import re
+import subprocess
+import unittest
+from pathlib import Path
+
+FIXED_REVISION = 'c0eff262b888db255bdb92d76948973414df4aaf'
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def parse(log):
+    guards=sorted(set(re.findall(r'ACTUAL_PYTHON=([0-9]+\.[0-9]+\.[0-9]+)',log)))
+    uv=sorted(set(re.findall(r'Using CPython ([0-9]+\.[0-9]+\.[0-9]+)',log)))
+    return dict(actual_python=guards or uv, runtime_evidence='explicit_project_assertion' if guards else 'uv_interpreter_selection', all_uv_versions=uv)
+
+def classify(declared, log):
+    versions=parse(log)['actual_python']
+    return 'unknown' if not versions else 'ambiguous' if len(versions)!=1 else 'match' if versions[0]==declared else 'mismatch'
+
+class Tests(unittest.TestCase):
+    def test_actual_uv_version(self):
+        self.assertEqual(classify('3.12.15','Using CPython 3.12.3 interpreter at: /usr/bin/python3.12'),'mismatch')
+    def test_matching(self):
+        self.assertEqual(classify('3.11.17','Using CPython 3.11.17'),'match')
+    def test_target_is_not_actual(self):
+        self.assertEqual(classify('3.12.15','Installed Python 3.12.15; requested 3.12.15'),'unknown')
+    def test_multiple(self):
+        self.assertEqual(classify('3.12.15','Using CPython 3.12.3\nUsing CPython 3.12.15'),'ambiguous')
+    def test_asserted_runtime(self):
+        self.assertEqual(classify('3.12.15','Using CPython 3.12.3\nACTUAL_PYTHON=3.12.15'),'match')
+    def test_bom_and_timestamps(self):
+        self.assertEqual(classify('3.12.15','\ufeff2026-11-13T00:00:00Z Using CPython 3.12.3'),'mismatch')
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);p.add_argument('--revision',default=FIXED_REVISION);p.add_argument('--output',type=Path,default=Path('results/runs/ci-runtime-labels.json'));p.add_argument('--self-test',action='store_true');a=p.parse_args()
+    if a.self_test:
+        result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(Tests));return 0 if result.wasSuccessful() else 1
+    if not re.fullmatch('[0-9a-f]{40}',a.revision):raise ValueError('fixed full Git revision required')
+    def git(*args):return subprocess.check_output(['git','-C',str(a.root),*args])
+    def blob(name):return git('show',a.revision+':'+name)
+    paths=git('ls-tree','-r','--name-only',a.revision,'--','results').decode().splitlines();receipts=[n for n in paths if n.endswith('.json') and 'checks' in Path(n).name]
+    rows=[];inputs={};selected=[]
+    for path in receipts:
+        data=blob(path)
+        try:saved=json.loads(data)
+        except (ValueError,UnicodeError):continue
+        checks=saved.get('checks',[]) if isinstance(saved,dict) else []
+        if not isinstance(checks,list):continue
+        hosted=[r for r in checks if isinstance(r,dict) and r.get('role')=='hosted' and isinstance(r.get('python'),str)]
+        if not hosted:continue
+        selected.append(path);inputs[path]=sha(data)
+        for row in hosted:
+            member=row.get('log',{});name=member.get('file') if isinstance(member,dict) else None
+            if not isinstance(name,str):
+                rows.append(dict(receipt=path,declared_python=row['python'],status='missing_log'));continue
+            raw=blob(name);inputs[name]=sha(raw)
+            if member.get('sha256')!=sha(raw):raise ArithmeticError('saved log byte hash changed: '+name)
+            log=raw.decode('utf-8-sig');evidence=parse(log)
+            rows.append(dict(receipt=path,minor=row.get('minor'),checked_commit=row.get('checked_commit'),run_id=row.get('run_id'),job_id=row.get('job_id'),declared_python=row['python'],**evidence,status=classify(row['python'],log),log_file=name,log_sha256=sha(raw),evidence_lines=[s for s in log.splitlines() if 'Using CPython' in s or 'ACTUAL_PYTHON=' in s]))
+    summary={s:sum(r['status']==s for r in rows) for s in ['match','mismatch','unknown','ambiguous','missing_log']}
+    result=dict(status='fixed_revision_runtime_label_audit_complete',input_revision=a.revision,scope='Tracked *checks*.json receipts with hosted role and declared patch version; no universal inference about protocols without those fields, and no numerical replay or rewrite',receipts=selected,hosted_rows=len(rows),summary=summary,all_declared_versions_supported=all(r['status']=='match' for r in rows),rows=rows,input_sha256=inputs,script_sha256=sha(Path(__file__).read_bytes()),limitations='A mismatched patch label is unsupported. Exact-version admission cannot rely on it. This does not recompute or automatically invalidate numerical values; producer runtimes and each prospective contract must be assessed separately. Original evidence remains unchanged.')
+    out=a.root/a.output
+    if out.exists():raise FileExistsError('retain existing runtime audit')
+    out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n');print(json.dumps(dict(receipts=len(selected),hosted_rows=len(rows),summary=summary,input_revision=a.revision)))
+    return 0
+
+if __name__=='__main__':raise SystemExit(main())

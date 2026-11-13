@@ -4471,3 +4471,135 @@ all380scientific bytes still match B52/E45, complete forecast measurement valid,
 no permit/real own trajectory file exists. This evidence/documentation-only
 publication retains the earlier complete same-source local/optional gate. Both
 final PR-head hosted checks remain required before history-preserving merge.
+
+
+### November 13 — complete native-path profile registered before measurements
+
+Issue4/step108: cached whole-native costs402.32–406.94s leave the guarded
+forecast933.889>900failed. Fix repetition0, one plain/profile pair,900each/1800
+pair plus60save reserve, full initial/final own math and all native workers.
+Use parent CPU cProfile nanosecond timer, lossless functions/callers and raw
+binary; retain separate worker wall/CPU and complete-read phase times. Allscalar
+and computed replay summaries must be exact. Expanded source binds all380old
+files plus standalone instrumentation; base-admission validator must reject
+instrumented receipts. Source-bound six-role checks precede formal collection.
+Private unmeasured scaffold drafted during prior forecast; protocol published
+before outcomes. No optimization selected, new training, gate change, admission
+or causal/population speed claim. Stop9a.m.Pacific; no subagents/future schedule.
+
+Complete native profiler implemented in an explicitly separate standalone entry;
+all380base bytes unchanged.35new+61existing focused checks pass96/16.12s,
+full lint/format and strict730-file typing pass. Actual fixture profile retains
+lossless stats and blocks base admission; hard timeout retains partial bytes.
+No formal native profile outcome yet. Freeze/publish exact instrumentation
+source, then all six same-head base/optional/hosted roles before collection.
+
+
+### November 13 — all six complete-native-profile source roles pass
+
+Immutable D4/0471/382 source: full local3478/64skip/150deselect each
+(786.59/762.55s), optional819each(437.70/372.98s), BOTH exact-head hosted
+43419209354 pass (3478/64/150 plus historical warning;1140.45/741.41s).
+Raw role logs/run/jobhead/timing metadata/driver retained. Source unchanged;
+all six roles published before any formal pair. Method/3QAs/journal108 updated.
+Previous PR62 final hosted43418526498 BOTHpass at07c6dcd (3443/64/150 plus
+historical warning;1093.35/1256.25s), ready for history merge; rawfinalCI logs
+and metadata retained separately. Fresh main snapshot115945Z still matches all
+ten original094024Z user changes exactly. Finish safe main integration before
+the one fixed full native profile, with no competing local heavy checks.
+
+
+### November13 — CPU-instrumented full audit hits fixed cap; raw partial retained
+
+ONEpair: ordinary407.5098637080082s/0, profile900.0317477079952s/124
+TimeoutExpired; overalldriver1, pairfailed_retained. Allthree native DONE records
+survive144scores/384fixed each, but finalownmath/wrapperidentity unfinished.
+No .prof/losslessfunctions/callers outputs; no detailed bottleneck or complete
+pair agreement claimed. Exactwholepair/execution copies plusallfilehashes and
+originalignoredbytes retained. Old CPUsource382/capsunchanged; no retryunderit.
+Source/runtime/mainintegration and sixrole evidence stillvalid.
+
+Separately register complete ELAPSED-stack measurement on samefixedcost0 with
+builtin cProfile timer(no per-call Python CPU callback), same900/1800caps/all
+mandatorymath/workers. Parent/read boundaryCPU and workerCPU remain separate;
+per-framevaluesare elapsed/wait-inclusive. Newsource384 bindsold382+newentry/
+config, allold380kernelsunchanged. New six-role checks before formaldata, old
+partialpublished first. No diagnostic-time rescue/optimizerselection/newlearning.
+
+New elapsed instrument implemented separately:35new+96related checks pass
+131/21.31s; full lint/format/strict732files pass. Actual fixture verifies builtin
+profiler factory has no Python CPUcallback. Prior382map+newentry/config yields
+384effectivefiles; original380numeric and382CPUinstrumentation remain unchanged.
+Freeze/publish source; six same-head roles before any new elapsed-profile data.
+
+
+### November13 — actual hosted patch mismatch found before elapsed collection
+
+C0local3513/64skip/150deselect each(763.62/743.98s), optional854each
+(426.06/365.19s), both hosted43426080942 pass software. Reading actual uv lines
+finds hosted312uses3.12.3, not receipt/schema's3.12.15. C0cohort savednonqualifying;
+no elapsed pair collected. Earlier B52/D4hosted312logs show same mismatch.
+Read-only fixedC0audit of tracked*checks*.json roles authenticates all log hashes:
+9receipts/18hostedrows,9declared31117match,9declared31215actually3123. Sixparser
+self-tests pass. Allrows/inputhashes/rerunnablescript retained; scope limitedto
+theseformats, no automatic claim every numerical value invalid. Exact-patch
+gate claims unsupported; no backfilled qualification or rewritten olddata.
+
+Workflow now pins exact3.11.17/3.12.15 throughsetup-uv+UV_PYTHON and assertsactual
+Python/NumPy beforetests. YAML parsed/pins/guard verified and uvinstalledhelp
+confirmsUV_PYTHON selection. All384sciencefiles unchanged. README/methods/dated
+correction/journal explicitly distinguish metadata error from numerical producer
+outputs and retained budget/profilefailures. New six roles atONEcorrectedhead
+must pass withactualguardmarkers before moredata. Originalcaps/seeds/quality
+gates unchanged; no newrealtrajectory/default/global admission or humanhours.
+
+
+### November13 — corrected actual-runtime source roles qualify new diagnostics
+
+A672all6roles PASS: local3513/64skip/150deselect each796.09/771.16s;
+optional854each448.17/387.33s; BOTHhost43430646265headA6723513/64/150plus
+historicalwarning1290.36/962.81s. Raw uv lines ANDactualguardmarkers confirm
+31117/NumPy246 and31215/NumPy254 beforetests. Newassembler requires those
+markers/selectionlines/guardsteps, actualhead andrawuntrimmedloghashes. Receipt
+bindsworkflow/correction, future-diagnostic-only andno-retroactive-admission flags.
+All384sciencebytes/7fdfp unchanged. Journal109 explains labelsversusactualruntime.
+Publish allsixroles BEFOREsinglefixedelapsedpair. No elapsed outcome/optimizer
+selection/newtrajectory yet. No localheavychecks duringcollection.
+
+### November13 — complete elapsed audit profile and exact pair identity
+
+Correctactualrolespub331precede fixedpair. Ordinary406.4912895419984s/0,
+profile573.8724571670027s/0; shared980.402532209002<1800, each<900. Complete
+432scalars/1152fixed/threeactualreads/worker-cache-source identities EXACT.
+All2354rawfunctions/5640callers+binary retained; exactwholepair/executioncopies,
+allfilehashes/originalignoredbytes, readonlyverifierPASS. OldCPU900timeout and
+old9runtime-label mismatches remainunchanged/flagged; no retroactiveadmission.
+
+Callersshow184matrixbuilds114.6707inclusive,918104canonicalcalls32.0032inclusive,
+4099136bestevaluatorcalls35.2272inclusive. Wait126.5368self includesnativework;
+wallframesnotCPU andinclusiveregionsoverlap. Measurednextquestion: boundedpure
+card normalization/ranking reuse preserving allvalues/RNG/typedinputbehavior,
+notpolicy/referenceoutputcaching. No optimizationoutcome/newtrajectory yet.
+Posthocreport source+10unit checks0.02s pass withlint/format/types; rawallframes/
+callers exported andelapsed-versusCPU guard preventswrongunitlabels. Publish
+source+rawsbeforeactualrender. Latest13:55real-study start nowpassed; remaining
+work is boundedsoftware/diagnosis before9, never shrunkcaps/seeds/gates.
+
+
+Posthoc385-source report generated from published8519562reportcode, rawdata and
+source/unit guards; exact copies retained withallinput/outputhashes. ActualPNG
+visually inspected: labels/legend/elapsed-versusCPU clear, no clipping/overlap.
+ALL2354function/5640caller CSVrows pluselapsedparts/workers/summary saved.
+Tenpure accounting/unit-source tests0.02s/lint/format/strict2newfiles pass.
+README/method/limits/terminalcommands/journal110 updated. Final hostedCI required
+before63historymerge. Next prospectivecard-only memoization (canonicalization
+andranking), exactvalues/input/RNG andboundedmemory withactualperprocesscounters;
+no agentperformance claim or fulltrajectory after13:55UTCunder11100reserve.
+
+Posthoc base-only typing caught optionalMatplotlib import-not-found after the
+all-extras check passed. Fixed ONLYreporter to defer optional imports through
+importlib, matching optional rendering dependency boundaries. Both actual base
+311/312strictnewfile checks and10report tests pass; no384measuredsource orraw
+artifact changed. Original385render851source/outputs retained; final hostedCI
+must include this reporter fix. This is a reporting packaging correction, not
+an experiment rerun or changed numerical claim.

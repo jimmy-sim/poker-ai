@@ -1,0 +1,25 @@
+"""Exact post-measurement preservation; no mathematical/timing substitution."""
+import hashlib,json,shutil,subprocess,sys,os
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'compact-native-profile';src=r/'results/runs/compact-native-wall-profile/pair';dst=r/'results/compact-native-wall-profile/pair';execution=w/'compact-native-wall-execution'
+assert src.is_dir() and not dst.exists();shutil.copytree(src,dst)
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+files={}
+for p in src.rglob('*'):
+ if p.is_file():
+  target=dst/p.relative_to(src);assert target.read_bytes()==p.read_bytes();files[str(p.relative_to(src))]=digest(p)
+admin=dst.parent/'execution';assert not admin.exists();shutil.copytree(execution,admin);shutil.copyfile(__file__,admin/'retain_profile.py.txt')
+for p in execution.rglob('*'):
+ if p.is_file():assert (admin/p.relative_to(execution)).read_bytes()==p.read_bytes()
+pair=json.loads((src/'pair.json').read_text());code=json.loads((execution/'exit.json').read_text())['returncode']
+record=dict(status=pair['status'],returncode=code,original=str(src.relative_to(r)),published=str(dst.relative_to(r)),files=files,original_ignored_bytes_retained=True,source_sha256='7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c',scope='exact administrative copies after original complete clocks; no replays omitted or substituted')
+(admin/'preservation.json').write_text(json.dumps(record,indent=2)+'\n')
+if code or pair['status']!='same_complete_native_scalar_and_replay_results':
+ print(json.dumps(dict(retained_failure=str(dst),status=pair['status'],returncode=code)));sys.exit(2)
+allowed={'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}
+env={k:v for k,v in os.environ.items() if k in allowed};env['PYTHONPATH']=os.pathsep.join((str(r/'src'),str(r/'scripts')))
+command=[str(r/'.venv/bin/python'),'scripts/profile_cached_native_wall.py','--show',str(dst.relative_to(r))]
+with (admin/'readonly-verification.log').open('x') as log:
+ result=subprocess.run(command,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT)
+assert result.returncode==0
+print(json.dumps(dict(status=pair['status'],seconds=pair['seconds'],measurements=[m['seconds'] for m in pair['measurements']],original_bytes_retained=True,readonly_viewer_pass=True),indent=2))
