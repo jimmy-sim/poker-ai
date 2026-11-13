@@ -4664,3 +4664,76 @@ complete math verifierPASSwhiletimingFAILkept. RendererC806publishedbeforedata;
 labeloverlap), allinputs/outputs bound. Sevenreport/boundarytests/lint/format/strict
 bothbase interpreterspass. Next separately registerboundedresources/clocktracing,
 notintegration ofthefailedprototype. Final64hostCIbeforehistorymerge.
+
+### November13 — prospectively trace the failed clock discrepancy
+
+AfterPR64whole-wallFAIL, registerseparatecurrent-process/worker-resource trace
+beforeimplementation/data. Unchangedcardcache/387source/limits/numerics; explicit
+temporarypercommandcaffeinate-i controlforbothsides,binarypinned/localmanualread,
+no display/persistentsettings/machine-widelogs. Boundaryperf/UTC/process/thread/
+rusage+self/reapedchildren, threeseparateworkersidecarswithnewsourceguard and
+unchangednumeric summary; RSSpeakunits/counterlimits explicit. Sixactual-runtime
+rolespublicbeforeONE900/1800pair+1800finalCI+120save. Done=exactmath+complete
+telemetry, BOTHtimingdirectionsdescriptive, NOperformanceadmission. Priorfailed
+pairnotretried/reclassified; no productionintegration/newforecast/learning.
+
+Resource observer implemented withown/reaped-child rusage andperf/UTC/process/
+thread boundaries, raw/delta/unit guards, cumulativeRSSpeaklabeling andUTCadjustment
+allowance. Parentreadstarts/workerstarts andnumericfinished-before-aftersource
+are persisted onfailure. Threeworker sidecarsbindnewsource/runtime/module-root/
+actualspawnedPID/partitions/unchangednumericsummary. Old387files/cardhelper/caps
+unchanged. Utility-lifetimecaffeinate-i requestrecorded(notindependentlyaudited
+assertionstate), exactsupervisorcommand/binary pin checked, restoredaliases/env,
+no newtraining/policy/referencecache.34new+66cache/reporttests100pass2.36s;
+fullprojectlint/strict742filespass. Publishsource thenall6same-head actual-runtime
+rolesbeforeanyformaltrace. Supplemental profiletests included in finalfocusedset.
+
+PR64historymergedb8ef006afterbothfinalhost43448389410pass3589/64skip/150plus
+historicalwarning926.89/1198.07s, actualuv/Python/NumPyverified; rawlogs/metadata
+retained. MainFFfresh152151Zsnapshot alltenbytes/status/index/patches preserved;
+readonlydata/sourceviewer and66regressions3.77spass, aftertestpreservationpasses.
+This closesnegativeinvestigation, nottimingadmission. New390-sourcecollection
+stillwaitsforallsixroles. Posthocresourceexporter draftedbeforeoutcome:8unit
+scope/raw-delta/CPU-wall/peak-unitchecks0.04s andbothbase-onlystrictchecks pass;
+allresourcecounter/clock/peakrows retainedwithoutcausal/performanceclaim.
+
+InstalledDarwingetrusage(2)manualchecked:ru_maxrssmaximumresidentsetisbytes;
+LinuxKiBlabelsapplyonlytheir software fixtures. Temporarycaffeinate-i truefixture
+returns0/no diagnostics; requestfieldexplicitlydoesnotclaimindependentassertion-
+state audit. Originalfailedpairimmutable, newbothdirectiondescriptivetraceonly.
+
+390-source7487afb/be647d36 ALL6rolesPASS: local3623/64skip/150deselect
+798.44/772.94s; optional964each449.10/382.05s; bothhost43450790359actualuv+
+Python/NumPyverifiedbeforetests. Untrimmedlogs/fullheadmetadata authenticated;
+retarget65mainonlyafterruncompleted. Publishallsixandtestedposthocreporter
+BEFOREoneformalresourcepair. Source390/old387 unchanged. Currentfullcaps plus
+1800finalCI/120save reservefit9a.m.; no otherlocalheavyjobduringcollection.
+
+### November13 — complete resource diagnostic, old timing FAIL preserved
+
+ONEresourcepaircomplete0:551.6211327499914/527.1198560829944s, shared
+1078.7796968330076<1800; each<900. All432scalars/1152fixed/threeactualreads/
+cardcounts/unchangednumericworkers EXACT; all3read+3worker source/PID/runtime/
+resource records validate. Canonical/rank countersmatcholdprototype(917324/
+4068415hits,780/30721originals), zeroerrors/fallbacks/evictions. No production/
+performanceadmission/newforecast/permit/learning; rawlowerwallisdescriptiveonly.
+BodyCPU285.656045/260.792604. Resourceownreads report21.46–21.97childUSERCPU plus1.28–1.31childSYSTEMCPU
+perfullread, alongside127–141parentCPU; workersreport124–125ownCPU plus
+about39.5childUSERCPU/2.5childSYSTEMCPU. ParentCPUalonewasincompletecomputeaccounting. Extraobserver
+sourcechecksareincluded; no causaldiagnosisofolderuntracedpair, no summedparallel
+CPUaselapsed or assertion-state claim. Original481.84→595.65timingFAILunchanged.
+Exactwholepair/executioncopies/allhashes+originalignoredbytes retained; readonly
+source/raw/resources/completeidentityverifierPASS. Publishrawbeforeposthocrender.
+
+
+Posthoc392-source report frompublished641reporter generated andexactcopied;
+actualPNGinspected(noclip/overlap), all16clock/288counter/32peak rows/input/output
+hashes retained. Tableusesrawreporteduser/systemchildCPUfields, notunmeasured
+helperattribution; oldprofiledifferentcopy. No wallstackofCPU/parallel sums,
+causalidleclaim, memorysaving or productionforecast. Documentednexttest=perhelper
+accountingbeforeoptimization. AddedpostcollectiondirectchildCPUagreementfixture
+(0.1saccountingtolerance, fixedintegerwork, no poker) passes311/312. 312alsofound
+posthocfixtureexact2 versuscorrectfloatdelta1.9999999999999998; approximateassertion
+fixONLYtest, no390measurementcode/data altered. All9report/accountingtestsPASS
+bothversions0.04/0.07s andstrictbothbaseenvs pass. Journal112/README/methods current;
+finalrelevantchecks+bothhostedjobsrequiredbefore65historymerge.

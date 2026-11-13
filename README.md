@@ -109,6 +109,15 @@ ranking during tree reconstruction are the next optimization question. The
 earlier CPU-timer timeout and incorrect historical patch labels stay visible.
 This is verification-software evidence; no new Hold'em training was run.
 
+A [card-only reuse test](docs/card-computation-cache.md) preserves all checked
+answers but fails its registered whole-command timing gate:481.84→595.65seconds,
+despite lower parent CPU. The subsequent [resource diagnostic](docs/card-audit-clock-trace.md)
+keeps that failure and records CPU in child programs separately. Its551.62/527.12s
+pair is descriptive under added observation/idle-prevention conditions; it does
+not rescue the budget, promote the cache or establish a stronger agent.
+[Journal112](docs/learning-journal.md#112-measure-the-work-and-the-wait-separately)
+explains active work, elapsed time and the next accounting question.
+
 **Previous full-control research — November 12:** the compact blocker-aware description passes
 its fixed **full-control admission** on both known turn games. At4,096 full
 CFR+ iterations, linear-average policies give:

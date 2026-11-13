@@ -1,0 +1,104 @@
+{
+  "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3623 passed, 64 skipped, 150 deselected in 798.44s (0:13:18)",
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/base311.log",
+        "sha256": "b307eb3ec2abd44bb2cbd4a82a9cc5f42da46b0c15da08886ce30039286d9c0c"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3623 passed, 64 skipped, 150 deselected in 772.94s (0:12:52)",
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/base312.log",
+        "sha256": "785c6c3ba5fe6db22918bbd4e66751a4e73362094a44947d4b4b8ca535846278"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "964 passed in 449.10s (0:07:29)",
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/optional311.log",
+        "sha256": "c158ad54c3d18b032ae33bf47c9d98daa9c05f6018282c856e9d44be143ed401"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "964 passed in 382.05s (0:06:22)",
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/optional312.log",
+        "sha256": "911f50f934e2cd75960d2d3f16708b092d32ce86395ff55b44927111c69a9776"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43450790359,
+      "job_id": 131972252937,
+      "head_sha": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/hosted311.log",
+        "sha256": "6ebb4ca0dcef38f1a2cec022e22c8ed9684fbaff1e364c70b7e1aaeca6ba48b2"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "be647d36e87d7173cf20a36a3e5d9b9ff6dee581a5bdb8bf98c06a0292e6ef9e",
+      "checked_commit": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43450790359,
+      "job_id": 131972253706,
+      "head_sha": "7487afbae28a0a914c1a1033676ee8487c874b6a",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "log": {
+        "file": "results/card-audit-clock-trace/checks/hosted312.log",
+        "sha256": "826e8bf5b88067943f988e521e4cb0edd2af1ad319808148a97fda2aec9fcb5f"
+      }
+    }
+  ],
+  "scope": "Observed exact same-head full local bases, relevant all-extras suites and BOTH hosted jobs for expanded390-source own-process/worker resource trace preserving prior card timing failure, all original card/kernel/source bytes and numerical inventories. Raw/delta/units/cumulative-peak/partial/PID/runtime/partition/unchanged-summary/control-command/source guards; both timing directions descriptive. Actual interpreter/NumPy assertions and uv selections verified; prior mislabeled stages not retroactively qualified. No formal resource pair before these published checks."
+}
