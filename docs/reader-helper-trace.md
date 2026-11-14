@@ -238,10 +238,10 @@ The original failure remains independently reproducible with
 ## Complete-reader result — November 14, 2026
 
 The corrected pair completes with the exact same pinned returned own receipt,
-actual computed summary and cache counters. Both replays cover432 unique
-profiles and1,152 fixed conditions with zero recorded score/support error and
-policy/ledger bits exact. Each fresh validation cache records2,832 requests,
-18 original traversals and2,814 hits, with no rejections or fallbacks.
+actual computed summary and cache counters. Both replays cover 432 unique
+profiles and 1,152 fixed conditions with zero recorded score/support error and
+policy/ledger bits exact. Each fresh validation cache records 2,832 requests,
+18 original traversals and 2,814 hits, with no rejections or fallbacks.
 
 The observed read records **49 helpers: 47 Git calls and 2 CPU-metadata queries**.
 Every request has one matching process event; all helpers succeed, with no
@@ -283,8 +283,9 @@ standalone call cannot identify the cause of the discrepancy or invalidate the
 older raw counters. Keep it unresolved rather than blaming sleep, Git, the OS
 or an accounting bug without another controlled test.
 
-This result does not rescue the 933.89-second forecast against 900, supply a complete-native-audit forecast,
-improve a strategy, or admit the still-unrun training comparison. It does not
+This result does not rescue the 933.89-second forecast against 900 or supply a
+complete-native-audit forecast. It does not
+improve a strategy or admit the still-unrun training comparison. It does not
 justify a launch-count optimization as the next bottleneck remedy. The next
 question is to reconcile the old/current boundaries and account for the dominant
 own-process work under the intended audit context before choosing an optimizer.

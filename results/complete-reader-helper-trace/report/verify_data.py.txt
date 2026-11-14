@@ -1,0 +1,21 @@
+"""Verify saved-data exports on actual3.12; never run the poker reader."""
+import hashlib,json,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();destination=Path(sys.argv[2]).resolve()
+sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import numpy,poker_ai
+import collect_complete_reader_helpers as t
+from compact_cached import cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+assert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'
+assert Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+assert Path(t.__file__).resolve()==r/t.ENTRY
+c,source=t.binding(r,clean=False);assert len(source['sha256'])==398 and source['fingerprint']=='e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752'
+def forbidden(*args,**kwargs):raise AssertionError('data-only verification entered reader')
+t.target=forbidden;cli.read=forbidden
+with isolated(worker=False):value=t.report(r,r/'results/complete-reader-helper-trace/pair',destination)
+expected=r/'results/complete-reader-helper-trace/report';assert value==json.loads((expected/'summary.json').read_text())
+for name in('summary.json','helpers.csv'):assert(destination/name).read_bytes()==(expected/name).read_bytes()
+_,after=t.binding(r,clean=False);assert after['sha256']==source['sha256']
+proof=dict(scope='saved-data parser only; target/read/learner/reference blocked; no actual mathematical replay or new poker work',actual_python=sys.version.split()[0],actual_numpy=numpy.__version__,code_fingerprint=source['fingerprint'],checked_commit=source['git_commit'],source_maps_unchanged=True,lock_sha256=t.digest(r/'uv.lock'),numeric_files={name:t.digest(expected/name)for name in('summary.json','helpers.csv')},both_files_byte_identical=True)
+print(json.dumps(proof,indent=2))
