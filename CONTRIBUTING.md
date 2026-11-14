@@ -71,6 +71,9 @@ research remains paused and no recurring work schedule is implied.
 
 There is no daily quota for commits, PRs or contributions. A quieter graph may
 result from coherent milestones, but it is not a measure of project success.
+The November 14 preference is to keep counts modest through coherent batching
+and edits to existing descriptions, preserving every required publication
+checkpoint and publishing actual work on its real dates.
 
 ## Recording work and time
 

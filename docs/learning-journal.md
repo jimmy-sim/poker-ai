@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Reconcile the saved CPU readings](#117-check-the-records-before-explaining-the-runtime-difference)
+
 - [Count helpers across a complete saved-policy read](#116-count-helpers-across-the-complete-saved-policy-read)
 
 - [Count helpers in one publication check](#114-count-the-helpers-in-one-publication-check)
@@ -92,6 +94,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 117](#117-check-the-records-before-explaining-the-runtime-difference):
+  compare the saved boundaries before choosing another timing experiment.
 
 - [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the
   completed helper inventory and retained environment failure.
@@ -5489,3 +5494,26 @@ A Python 3.12 data-only check regenerates both numeric files exactly with reader
 reference calls blocked. No second-runtime poker replay or stronger-agent claim
 follows. The first failed attempt remains visible and its helper count stays
 unknown. This is the stopping point; no optimizer or new training begins.
+
+## 117. Check the records before explaining the runtime difference
+
+November 14, 2026. The older audit records about 21–22 seconds of child user CPU
+inside a real saved-policy read. The newer standalone reader records about 0.24
+seconds. Before explaining this difference, check whether the records subtract
+the right snapshots and whether the code changed.
+
+This step adds a data-only checker. It reads saved receipts, checks their hashes,
+recomputes intervals, and compares historical source bytes. It does not play
+poker, repeat the expensive validation or train a model. **Example:** if a
+cumulative counter goes from 35 to 57 seconds, the interval is 22 seconds. A
+correct subtraction still does not identify which setup difference caused it.
+
+The first 28 tests pass, including deliberately changed inputs, counters, parent
+process IDs and source bytes. Complete verification and the result follow in
+this milestone. The next decision depends on what these records can establish;
+matching bookkeeping alone cannot explain a causal speedup.
+
+Codex assisted with the checker, tests and explanation. No new personal practice,
+hours or mastery is inferred. The publishing preference is to batch related work
+into fewer meaningful commits and one milestone PR, preserving required evidence
+checkpoints and real dates. Project success remains the priority.

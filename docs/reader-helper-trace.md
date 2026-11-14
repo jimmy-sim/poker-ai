@@ -317,6 +317,26 @@ qualification, failed outcome, phase limits and comparison-only references stay
 available. This is one known archive and one ordered complete pair, not a
 population runtime study or evidence of competitive full-game strength.
 
+## Saved-boundary reconciliation — November 14, 2026
+
+The next bounded step was registered in
+[issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6886112990)
+before implementation. It checks saved bookkeeping before another measurement:
+recompute all eight recorded intervals, check their parent processes and scope,
+compare the recorded source maps and current historical bytes, and compare the
+saved real-archive identities and computed summaries. Six exact input hashes
+are fixed in [the data-only config](../configs/reader-boundary-reconciliation.json).
+
+The acceptance rules reject changed or missing inputs, intervals, parent IDs,
+scope/order, source maps and source bytes. Both old arms' tiny/initial/final
+reads and both standalone reads remain visible. Supported Python versions must
+produce identical exports. Applicable local checks and both hosted CI jobs
+precede merge. This does not run the reader, perform mathematical archive replay,
+collect another timing, optimize a routine or change an admission gate.
+
+Implementation and tests are Codex-assisted. The first 28 checks pass; final
+local checks, the table, interpretation and hosted results follow in this PR.
+
 ## Three questions
 
 **Why not optimize the repeated Git calls now?** They are repeated, but their

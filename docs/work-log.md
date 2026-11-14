@@ -4977,3 +4977,20 @@ learner/reference blocked. Methods/table/limits/threeQAs/journal116 complete;
 first278fc04failure retained. Final relevant/source/hosted checks precede merge;
 stopafterthisinventory, before newoptimization or training. Codex-assisted;
 personal hours/mastery/practice not inferred.
+
+### November 14 — reconcile saved reader boundaries before another measurement
+
+Prospective [issue #4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6886112990)
+precedes this data-only checker. Six fixed input hashes bind both historical
+three-read arms and both standalone reader receipts. Check all eight intervals,
+process/scope/order, recorded source maps/current bytes and recorded real archive
+summaries; do not execute the reader or infer a causal speedup. Tests deliberately
+break these conditions. Initial28 pass; full applicable checks and hosted CI
+still follow. Historical398 files and all raw results stay unchanged. The ten
+unrelated main changes were freshly snapshotted; this isolated branch preserves
+them. Journal117 explains the question. Codex-assisted; human time unrecorded.
+
+Record the November14 request for modest contribution counts here and in the
+publishing guidance: coherent batching/edit existing status descriptions, with
+all mandatory publication boundaries and real dates intact. No separate PR or
+commit for that preference, no contribution quota and no change to research gates.
