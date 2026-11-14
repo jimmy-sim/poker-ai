@@ -4825,5 +4825,5 @@ was its own untracked output directory; ignored that directory in the fixture,
 not in the real validator. No actual publication target or training run yet.
 
 Prepublication software checks:37new +22component =59pass both311/312
-(0.60/0.64s); full lint/format and strict748files pass. Fresh full local base,
+(0.60/0.72s); full lint/format and strict748files pass. Fresh full local base,
 relevant all-extras and both hosted checks now precede formal collection.
