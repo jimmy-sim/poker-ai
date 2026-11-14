@@ -5508,10 +5508,26 @@ poker, repeat the expensive validation or train a model. **Example:** if a
 cumulative counter goes from 35 to 57 seconds, the interval is 22 seconds. A
 correct subtraction still does not identify which setup difference caused it.
 
-The first 28 tests pass, including deliberately changed inputs, counters, parent
-process IDs and source bytes. Complete verification and the result follow in
-this milestone. The next decision depends on what these records can establish;
-matching bookkeeping alone cannot explain a causal speedup.
+All eight saved intervals subtract correctly and belong to the expected parent
+processes. The old 390-file source map agrees with the newer map, and all 398
+newer historical files still match their saved hashes. The six real-read
+summaries and archive hashes match as recorded. These findings make a changed
+reader implementation or a simple subtraction mistake poor explanations.
+
+The context still differs. The older audit first reads a tiny archive, shares
+an existing validation cache across reads, and installs card-function wrappers
+even when their cache is disabled. The standalone read starts fresh without
+those wrappers. A native worker is a separate process used for independent
+checking; those workers run between the old initial and final reads, so their
+later work does not explain the initial reading by itself.
+
+The checker has 28 tests covering deliberately changed inputs, counters, process
+IDs and source bytes. Together with related clock tests, 71 pass on each Python
+version. Its JSON export matches exactly on Python 3.11 and 3.12.
+These are saved-data checks, not another poker replay. The [table and scope](reader-helper-trace.md#saved-boundary-reconciliation--november-14-2026)
+retain both measurements. The cause stays unresolved, and the failed compute
+forecast stays failed. Next: register a controlled measurement in the original
+audit context before choosing an optimization.
 
 Codex assisted with the checker, tests and explanation. No new personal practice,
 hours or mastery is inferred. The publishing preference is to batch related work

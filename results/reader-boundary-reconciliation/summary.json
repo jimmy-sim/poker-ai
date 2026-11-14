@@ -1,0 +1,89 @@
+{
+  "boundary_count": 8,
+  "cause_identified": false,
+  "config_sha256": "39ebddb69f3a4cf577baa7168a03bbad4a034872108801355cf733e121678c6d",
+  "current_source_files_checked": 398,
+  "historical_source_files": 390,
+  "implementation_sha256": "48e3693864249e5ababeafdabaebfbf4a80a0fe630fdafd945bb3f92a7560119",
+  "input_sha256": {
+    "results/card-audit-clock-trace/pair/cached/child.json": "417dd1a69fed1d5ba8baf591cc39f769c16a03e8e2ad0af7c681e55ca9e75333",
+    "results/card-audit-clock-trace/pair/cached/parent-resource-reads.json": "1fd7869a9269d1821e337430db8af918a5fcdf4162181f9fa2473f88c910c33d",
+    "results/card-audit-clock-trace/pair/uncached/child.json": "653892533b82a91a847d71fec96edfa5819694ec0ba902b41dbaaaf356126c43",
+    "results/card-audit-clock-trace/pair/uncached/parent-resource-reads.json": "b1ce96d404f9639c70342aaa468280f7dc3160e223c0c9184719bfd66d665121",
+    "results/complete-reader-helper-trace/pair/control/child.json": "4fdfcaa417b0804a2032c3cc39eff93d7e6a1c3600ee36be47bc642c8b5f26b7",
+    "results/complete-reader-helper-trace/pair/observed/child.json": "697c1050dff9c8a9006459576b2a349a85f408d299b10cc445185c92f8bce6e2"
+  },
+  "long_run_admitted": false,
+  "mathematical_archive_replay_performed": false,
+  "poker_training_performed": false,
+  "recorded_own_sha256": "d6493151ef03386f454c7c91825e4e2139ac25e57fb13c6906ed5cbd10cae143",
+  "recorded_real_summaries_compared": 6,
+  "recorded_real_summaries_equal": true,
+  "rows": [
+    {
+      "label": "uncached/tiny",
+      "own_process_cpu_seconds": 1.9678490000000002,
+      "pid": 81505,
+      "reaped_child_system_seconds": 0.2576170000000001,
+      "reaped_child_user_seconds": 3.984112999999999,
+      "wall_seconds": 6.137996707999264
+    },
+    {
+      "label": "uncached/initial",
+      "own_process_cpu_seconds": 139.15487099999999,
+      "pid": 81505,
+      "reaped_child_system_seconds": 1.301799,
+      "reaped_child_user_seconds": 21.461343,
+      "wall_seconds": 161.59256720900885
+    },
+    {
+      "label": "uncached/final",
+      "own_process_cpu_seconds": 140.934715,
+      "pid": 81505,
+      "reaped_child_system_seconds": 1.3125580000000028,
+      "reaped_child_user_seconds": 21.965172999999936,
+      "wall_seconds": 163.93314962499426
+    },
+    {
+      "label": "cached/tiny",
+      "own_process_cpu_seconds": 2.010655,
+      "pid": 82407,
+      "reaped_child_system_seconds": 0.2482240000000001,
+      "reaped_child_user_seconds": 4.129021,
+      "wall_seconds": 6.319800708006369
+    },
+    {
+      "label": "cached/initial",
+      "own_process_cpu_seconds": 127.11480900000001,
+      "pid": 82407,
+      "reaped_child_system_seconds": 1.2849920000000004,
+      "reaped_child_user_seconds": 21.915327999999995,
+      "wall_seconds": 149.92023366600915
+    },
+    {
+      "label": "cached/final",
+      "own_process_cpu_seconds": 128.17927799999998,
+      "pid": 82407,
+      "reaped_child_system_seconds": 1.291758999999999,
+      "reaped_child_user_seconds": 21.970810999999912,
+      "wall_seconds": 151.1599769579916
+    },
+    {
+      "label": "standalone/control",
+      "own_process_cpu_seconds": 140.967645,
+      "pid": 37187,
+      "reaped_child_system_seconds": 0.652146,
+      "reaped_child_user_seconds": 0.237207,
+      "wall_seconds": 141.66939983300108
+    },
+    {
+      "label": "standalone/observed",
+      "own_process_cpu_seconds": 141.079611,
+      "pid": 37299,
+      "reaped_child_system_seconds": 0.652311,
+      "reaped_child_user_seconds": 0.23920799999999998,
+      "wall_seconds": 141.70230495899887
+    }
+  ],
+  "scope": "SAVED_BOUNDARY_BOOKKEEPING_NOT_REPLAY_OR_CAUSAL_RUNTIME_EVIDENCE"
+}

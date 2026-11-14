@@ -334,8 +334,71 @@ produce identical exports. Applicable local checks and both hosted CI jobs
 precede merge. This does not run the reader, perform mathematical archive replay,
 collect another timing, optimize a routine or change an admission gate.
 
-Implementation and tests are Codex-assisted. The first 28 checks pass; final
-local checks, the table, interpretation and hosted results follow in this PR.
+[PR #71](https://github.com/jimmy-sim/poker-ai/pull/71) contains the checker,
+[deterministic export](../results/reader-boundary-reconciliation/summary.json),
+and tests. This is extraction from retained receipts, not a new timing sample.
+All times below are seconds; own-process CPU includes its libraries. Child CPU
+is the OS-reported increment for reaped children/descendants, not per-PID work
+or an additive wall-time partition.
+
+| Recorded boundary | Wall | Own-process CPU | Child user CPU | Child system CPU |
+|---|---:|---:|---:|---:|
+| uncached/tiny | 6.137997 | 1.967849 | 3.984113 | 0.257617 |
+| uncached/initial | 161.592567 | 139.154871 | 21.461343 | 1.301799 |
+| uncached/final | 163.933150 | 140.934715 | 21.965173 | 1.312558 |
+| cached/tiny | 6.319801 | 2.010655 | 4.129021 | 0.248224 |
+| cached/initial | 149.920234 | 127.114809 | 21.915328 | 1.284992 |
+| cached/final | 151.159977 | 128.179278 | 21.970811 | 1.291759 |
+| standalone/control | 141.669400 | 140.967645 | 0.237207 | 0.652146 |
+| standalone/observed | 141.702305 | 141.079611 | 0.239208 | 0.652311 |
+
+Every interval recomputes exactly from its saved snapshots and has a consistent
+parent PID, platform and units. The six real-read computed summaries and own
+archive hashes match as recorded. All 390 older source hashes agree with the
+398-file newer map; all 398 current files match that map byte-for-byte. This
+rules out a changed recorded reader implementation as the explanation. It does
+not establish that the OS counters have exclusive per-helper attribution or
+replay the mathematics that produced the receipts.
+
+The frozen call paths show material context differences:
+
+- The older full audit performs a tiny read before its initial real read. Its
+  existing recall-proof cache is shared across those reads and the final read.
+  Independent workers run between the initial and final reads. They cannot
+  explain the initial read merely by being later in that sequence.
+- Both older arms install pure-card function wrappers and counters. The
+  `uncached` arm disables their reuse, but still calls through those wrappers;
+  `cached` also reuses pure-card results. The standalone arms install neither.
+- Each standalone reader starts with a fresh existing recall-proof cache. Its
+  observed arm records helpers and CPU metadata queries. These are different
+  boundaries from the full audit's nested read observers and surrounding work.
+
+The older elapsed-stack profile is another measurement with its own observation
+cost and full-audit scope. Its inclusive frame times cannot be treated as CPU
+or assigned to either table's per-read boundary. It supplies leads, not a bridge
+that makes these experiments interchangeable.
+
+**The cause remains unresolved.** Correct arithmetic and unchanged source narrow
+the question; they do not prove wrapper overhead, cache history, accounting error
+or machine state caused the difference. The next measurement should register a
+controlled original-audit-context diagnostic, with helper coverage and resource
+boundaries together, before selecting an optimizer. The dominant own-process
+work also needs accounting in that context. No further collection starts here.
+The 933.89-second forecast still fails 900; no training/default/strength admission
+changes. The older unfavorable pure-card timing outcome remains intact.
+
+To inspect this table's exact inputs and values without another poker run:
+
+```sh
+.venv/bin/python scripts/reconcile_reader_boundaries.py
+```
+
+The checker uses the standard library and the frozen interval validator. It
+cannot collect another timing or run a solver. Its export is byte-identical on
+Python 3.11.17 and 3.12.15. This is a data-only portability check, not a second
+runtime's mathematical replay. Implementation, tests and explanation are
+Codex-assisted; no personal time or mastery is inferred. Local and hosted
+verification is recorded in the work log and linked PR.
 
 ## Three questions
 
