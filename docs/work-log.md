@@ -4933,3 +4933,15 @@ companion311byte-identical to direct download. No CI/measurement retry.
 Publish checks.json/raw six-role logs/runners and exact operator before the
 one complete-reader pair. Clock boundary conventions are explicit; no source,
 scientific cap or acceptance criterion changes. No actual target yet.
+
+Original pair fails and is retained278fc04 before reporting: control37.860311792s,
+return1/PackageNotFoundError; shared37.897130209s; no observed arm, complete
+summary or helper count. Exact four raw files/execution copied with originals
+retained. Launcher base environment lacked Numba and other extras; metadata-only
+inventory proves missing requirements, not which package triggered first.
+Static review identifies the reader's CPU-brand sysctl query, outside the first
+Git-only catalog. Prospectively register ONE fresh runtime-complete pair with
+new398-file collector/config preserving all396 measured files. Pin existing
+optional versions and exact probe binary; keep old caps/data/reader/math/gates.
+Fresh six-role checks and published qualification precede any corrected read.
+No optimization or new training. Journal116 records failure and correction.

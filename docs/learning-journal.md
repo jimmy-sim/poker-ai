@@ -5445,3 +5445,16 @@ version, plus both hosted jobs with actual runtimes verified. Their records and
 the exact launch command are published before measurement. A log-download
 connection timed out; retrieving the already completed job's full log resolved
 that without rerunning tests or an experiment.
+
+The first attempt failed before completing the normal read. The launch used a
+base environment without optional packages required by historical validation.
+The error is retained; it is not a speed result, and there is no helper count
+because the recorded arm never started. A metadata-only check found the missing
+packages without rerunning the reader.
+
+Review also found that the reader queries CPU metadata, so a Git-only recorder
+would be incomplete. A prospective follow-up keeps the same poker work, limits
+and acceptance rules, but checks the full environment first and recognizes that
+one exact metadata query. The old collector and failure stay frozen; new source
+checks and publication must come before the one corrected pair. This addresses
+the same question rather than choosing a more favorable timing.

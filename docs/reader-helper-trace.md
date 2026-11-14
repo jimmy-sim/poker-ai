@@ -141,3 +141,62 @@ No job or experiment was rerun for that retrieval failure.
 logs, check runners and the exact forthcoming operator are published before the
 one real pair. Qualification is software/source evidence, not a reader timing
 result or permission for a training study.
+
+## Retained incomplete attempt — November 14
+
+The original control exits1 after37.860311792complete-child seconds; the shared
+pair stops at37.897130209. No observed arm starts and no complete mathematical
+summary or helper ledger exists. These are failed-command durations, not a reader
+benchmark or a zero helper count. The four available raw files, original ignored
+bytes, execution records and manifest were published278fc04 before this analysis.
+The receipt records `PackageNotFoundError`, not the missing distribution's name.
+
+A metadata-only inventory shows the launcher used the base environment: NumPy
+was present, but Numba, OpenSpiel, Treys, PokerKit and Matplotlib were absent.
+The frozen reader explicitly checks Numba's installed version, and other
+historical checks use optional package/license metadata. Missing Numba is a
+known unmet requirement; the retained error does not prove which package was
+queried first. The already-qualified optional environment has the complete locked
+extras. No solver construction or real-reader retry was used to diagnose this.
+
+Static review also finds a CPU-brand `sysctl` query in runtime metadata called
+by the complete reader. The original Git-only catalog would mark that helper
+unsupported. Merely switching environments would therefore be insufficient.
+The old collector, config, qualification and failed data now stay frozen.
+
+## Prospective runtime-complete follow-up
+
+Continue the SAME complete-reader question in this PR, before another outcome.
+The [new config](../configs/complete-reader-helper-trace.json) fixes ONE new
+control/observed pair at a fresh destination. Preserve the preceding failed run;
+no attempt is selected or substituted. Unchanged900/1800caps, original reader,
+input/archive, cold validation cache, idle-control request, exact mathematics,
+successful-helper requirement and all prior study limits still apply. This is
+an environment/coverage correction, not a change to poker or an optimization.
+Stop after this pair's checked inventory or a retained explicit failure.
+
+Use a new private collector/config, preserving every previously measured396
+file byte-for-byte (398effective files). Require installed versions of all
+locked extras BEFORE target entry, recording their metadata without importing
+a reference. The operator uses the actual all-extras3.11 environment qualified
+on this source, rather than the base environment. Missing/mismatched versions
+must fail before a real read. Newly changed source requires all six fresh
+same-head actual-runtime checks and published qualification before collection.
+
+Extend recognition only for the exact existing read-only CPU-brand command:
+`sysctl -n machdep.cpu.brand_string`, with the original check/capture/text
+arguments. Verify its resolved binary and hash before collection. All other
+non-Git forms stay unsupported, original arguments/results/exceptions remain
+unchanged, and raw arguments/contents remain unrecorded. Both validation Git
+helpers and this declared metadata helper must succeed for a complete trace;
+a failed optional probe is retained as an incomplete trace even if the reader
+handles its fallback. Keep the independent process-event census, original
+resource deltas, gzip integrity and complete before/after source checks.
+
+Add software fixtures for exact probe recognition, changed property/flags and
+unexpected calls, process-event coverage, probe failure retention, dependency
+preflight and the prior failure's honest unknown helper count. Keep actual
+reader/solver/learner execution blocked in fixtures. Publish all new raw
+complete/partial/failing evidence before reporting. Report Git and CPU metadata
+separately, and retain the previous attempt in the final writeup. No stronger
+agent, forecast rescue, default or new-study admission follows.
