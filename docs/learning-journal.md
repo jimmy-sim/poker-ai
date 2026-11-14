@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Count helpers across a complete saved-policy read](#116-count-helpers-across-the-complete-saved-policy-read)
+
 - [Count helpers in one publication check](#114-count-the-helpers-in-one-publication-check)
 
 - [Ask which helper program used the CPU](#113-ask-which-helper-program-used-the-cpu)
@@ -90,6 +92,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the
+  completed helper inventory and retained environment failure.
 
 - [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
   compact candidate's sampled result and all controls.
@@ -5409,3 +5414,78 @@ Relative paths and heading links pass; GitHub-rendered Markdown retains the
 tables and collapsible sections. All five linked figures were inspected without
 changes. The public-board terminal example passes. The saved-decision browser
 requires a published branch, so its smoke check follows publication.
+
+## 116. Count helpers across the complete saved-policy read
+
+November 14, 2026. The earlier publication check counted 21 helper launches,
+but only covered about 0.6 seconds of validation. The next question is how often
+helpers run inside the complete saved-policy reader, which also recomputes the
+archived mathematics. A **helper** here is a separate Git program launched by
+Python to check committed source or evidence.
+
+The plan compares one normal read with one recorded read in separate processes.
+Both use the same source and archive, with a fresh existing validation cache.
+The original receipt, recomputed summary and cache counters must match exactly.
+This can identify repeated validation work; it does not teach the agent poker
+or prove a full-audit speedup. The [protocol](reader-helper-trace.md) fixes the
+checks, caps, retention and interpretation before measurements. All software
+checks and published qualification precede the real pair.
+
+Codex assisted with the plan and code/checks. No personal practice, hours or
+mastery is inferred from automated work.
+
+The collector now has55 software tests. Together with earlier recorder tests,
+116 pass on Python3.11; strict checking also passes. They verify that a stored
+summary cannot substitute for the recomputed result and that damaged or partial
+helper records cannot be reported as a complete measurement. The real read still
+waits for all six source checks and their published qualification.
+
+All six source checks now pass:3748full tests and260related optional tests per
+version, plus both hosted jobs with actual runtimes verified. Their records and
+the exact launch command are published before measurement. A log-download
+connection timed out; retrieving the already completed job's full log resolved
+that without rerunning tests or an experiment.
+
+The first attempt failed before completing the normal read. The launch used a
+base environment without optional packages required by historical validation.
+The error is retained; it is not a speed result, and there is no helper count
+because the recorded arm never started. A metadata-only check found the missing
+packages without rerunning the reader.
+
+Review also found that the reader queries CPU metadata, so a Git-only recorder
+would be incomplete. A prospective follow-up keeps the same poker work, limits
+and acceptance rules, but checks the full environment first and recognizes that
+one exact metadata query. The old collector and failure stay frozen; new source
+checks and publication must come before the one corrected pair. This addresses
+the same question rather than choosing a more favorable timing.
+
+The correction now has68 tests. They include a missing-package case that must
+stop before the reader and a CPU-query case that must be counted by the separate
+process-event check. Together with the older collectors,184 fixtures pass on
+each Python version. No second real read has run; the corrected source still
+needs its complete checks and published qualification.
+
+The corrected source now passes all six checks:3816full tests and328optional
+tests per version, plus both hosted jobs with installed runtimes verified.
+Its exact full-environment launcher and qualification are published before the
+one corrected pair. The earlier failed run stays visible and is not relabeled
+as successful evidence.
+
+The corrected pair now completes with 49 helpers:47 Git calls and 2 CPU queries.
+Every launch is matched by the separate process counter. Both full reads return
+the same receipt and recomputed summary; all 432 profiles and 1,152 fixed conditions
+check, with zero recorded error and the same cache counters.
+
+The surprising finding is how little CPU these helpers use here: about 0.89
+seconds in total, compared with about 141 seconds in the validation process and
+its libraries. This does not reproduce the older 21–22 seconds of child CPU.
+The older trace remains evidence; the reason for the difference is unresolved.
+Optimizing call counts would therefore chase a small measured cost in this
+case. Before another remedy, the useful question is how the older boundaries
+compare and where the main process spends its work.
+
+The raw data were published before the [table and interpretation](reader-helper-trace.md#complete-reader-result--november-14-2026).
+A Python 3.12 data-only check regenerates both numeric files exactly with reader/learner/
+reference calls blocked. No second-runtime poker replay or stronger-agent claim
+follows. The first failed attempt remains visible and its helper count stays
+unknown. This is the stopping point; no optimizer or new training begins.

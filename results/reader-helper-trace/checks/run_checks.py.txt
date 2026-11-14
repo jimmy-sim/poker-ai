@@ -1,0 +1,35 @@
+"""Six-role source qualification: software fixtures, never the actual target."""
+import json,os,subprocess,sys,time
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'reader-helper-source-checkout';f=w/'reader-helper-checks';f.mkdir(exist_ok=True)
+role=sys.argv[1];assert role in ('base311','base312','optional311','optional312');optional=role.startswith('optional');minor=role[-3:];version='3.11.17' if minor=='311' else '3.12.15';numpy='2.4.6' if minor=='311' else '2.5.4';head='0e46992aad75d60a60349116d51cc5a7f58f0e44';fp='db1fbed91a6f91613dc7a5c1da4a4b5ed30558100727aa3343d995c03626aad1'
+allowed={'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}
+env={k:v for k,v in os.environ.items() if k in allowed};env.update(PYTHONPATH=str(r/'src'),UV_PROJECT_ENVIRONMENT=str(w/f'reader-helper-{role}'),UV_PYTHON=str(w/'python'/f'cpython-{version}-macos-aarch64-none/bin/python3.{minor[-2:]}'))
+uv=['uv','run','--locked',*(['--all-extras'] if optional else [])];started=time.perf_counter()
+with (f/f'{role}-install.log').open('x') as log:subprocess.run(['uv','sync','--locked','--dev',*(['--all-extras'] if optional else [])],cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+guard=f'''import pathlib,subprocess,sys,numpy,poker_ai
+r=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))
+import collect_reader_helpers as t
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=={head!r}
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY
+assert sys.version.split()[0]=={version!r} and numpy.__version__=={numpy!r}
+c,s=t.binding(r);assert len(s['sha256'])==396 and s['fingerprint']=={fp!r} and s['dirty'] is False
+print('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)
+print('CHECKED_COMMIT='+{head!r});print('COLLECTOR_SOURCE='+s['fingerprint'])
+print('Software qualification only: no real complete reader target/collector measurement, learner or reference constructed')
+'''
+commands=[uv+['python','-c',guard]]
+if optional:
+ suites=['tests/test_reader_helper_trace.py','tests/test_source_helper_trace.py','tests/test_helper_call_accounting.py','tests/test_card_audit_clock_trace.py','tests/test_card_clock_report.py','tests/test_card_computation_cache.py','tests/test_card_cache_report.py','tests/test_cached_native_wall_profile.py']
+ commands.append(uv+['pytest','-q',*suites])
+else:
+ commands.extend((uv+['ruff','check','.'],uv+['ruff','format','--check','.'],uv+['mypy','--strict','src','tests','scripts'],uv+['pytest','-q','-m','not slow'],uv+['pre-commit','validate-config'],uv+['pre-commit','run','--all-files']))
+commands.append(uv+['python','-c',guard]);status='failed';began=time.perf_counter()
+try:
+ with (f/f'{role}.log').open('x') as log:
+  for command in commands:
+   log.write(json.dumps(dict(command=command))+'\n');log.flush();subprocess.run(command,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+ status='passed'
+finally:
+ (f/f'{role}-receipt.json').write_text(json.dumps(dict(role=role,status=status,checked_commit=head,source_fingerprint=fp,python=version,numpy=numpy,scope='Software fixtures and complete source qualification, not actual diagnostic data',check_seconds=time.perf_counter()-began,setup_and_check_seconds=time.perf_counter()-started),indent=2)+'\n')
+print(role+': source qualification complete; no formal target collection')

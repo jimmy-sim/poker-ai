@@ -1,0 +1,99 @@
+{
+  "admission_evidence": false,
+  "commands": [
+    "status",
+    "rev-parse",
+    "ls-tree",
+    "show",
+    "diff",
+    "merge-base",
+    "ls-files",
+    "log",
+    "cat-file",
+    "symbolic-ref"
+  ],
+  "complete_role_requirements": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312",
+    "hosted311",
+    "hosted312"
+  ],
+  "coverage": {
+    "raw_audit_arguments_retained": false,
+    "require_no_unassigned_events": true,
+    "require_nonzero_requests": true,
+    "require_one_popen_event_per_request": true,
+    "require_successful_helpers": true
+  },
+  "effective_source_count": 396,
+  "expected_replay": {
+    "composed_profiles": 108,
+    "fixed_conditions": 1152,
+    "logical_profiles": 216,
+    "maximum_error": 0.0,
+    "maximum_unitless_error": 0.0,
+    "new_training_admission": false,
+    "policy_and_ledger_bits_exact": true,
+    "raw_ledgers": 216,
+    "raw_profiles": 324,
+    "status": "all_own_books_roles_scores_and_fixed_conditions_replayed",
+    "unique_profiles": 432,
+    "warm_origins": 30
+  },
+  "expected_source_sha256": "e45ab633d952d0ceece575358095a05a93558e8943bcc934cd7327a5249bf137",
+  "historical_anchor": "results/source-helper-trace/pair/control/child.json",
+  "historical_source_count": 394,
+  "idle_control": {
+    "arguments": [
+      "-i"
+    ],
+    "path": "/usr/bin/caffeinate",
+    "scope": "temporary utility-duration idle-sleep assertion; no display assertion or persistent setting; startup/teardown included in complete clocks",
+    "sha256": "3724d8f032bfc2c0e7c5481da448003bd23c72e5914b5edf723f694271380dc8"
+  },
+  "input_sha256": {
+    "results/card-audit-clock-trace/pair/uncached/child.json": "653892533b82a91a847d71fec96edfa5819694ec0ba902b41dbaaaf356126c43",
+    "results/compact-cached-learning/cost/0/own-captures.jsonl.gz": "10103940df6c4e5ace00a52f7e6ec5be3a8332299d0ca29cf7e2777d155b576b",
+    "results/compact-cached-learning/cost/0/own-child.json": "766370f4cc333af9fd995e2d352f9fb8e5bc2ff7186e3eb24ace15f70ee33658",
+    "results/compact-cached-learning/cost/0/own-composed.jsonl.gz": "4938c5432fffa3b9709825428610126379bdf692d7110e2681c11d769deb255d",
+    "results/compact-cached-learning/cost/0/own-details.jsonl.gz": "8003e8cebc2a5b61598a778378f23382365cb2831ef9be437d03418a853d3e8c",
+    "results/compact-cached-learning/cost/0/own-events.jsonl": "977e58d0267707e61a8fd1e8702b27fadfc1211ccfd0c69d8116ec3617dce765",
+    "results/compact-cached-learning/cost/0/own-masses.jsonl.gz": "6d8967f941fb61fb3279bd80b416635e128fe7e9cdfdfde2926204f17c0763ed",
+    "results/compact-cached-learning/cost/0/own-warms.jsonl.gz": "b9cffc67ce97eaa8f696e3d5c6310d295acac6c1e602d51cbcd084820dc3d56a",
+    "results/compact-cached-learning/cost/0/own.json": "d6493151ef03386f454c7c91825e4e2139ac25e57fb13c6906ed5cbd10cae143",
+    "results/compact-cached-learning/cost/0/report/arm-points.csv": "a1c0c97a66ee7fbbc70432c71d3825c89c2eabc9375c9ec3f0775297669d26c1",
+    "results/compact-cached-learning/cost/0/report/fixed-conditions.csv": "1dfcda11283a01124e2f0c345c07cfbc1950d28d778788762937d774304fd7ce",
+    "results/compact-cached-learning/cost/0/report/fixed-gain.png": "5f0dc799441190491d8a35029f7dca79183139a82673090bbc7883d8005b2f44",
+    "results/compact-cached-learning/cost/0/report/learning.png": "13c5f22af2941b2fa0e6c1aeac9f00299d0883472125a12932d1df2dc2ef2ad9",
+    "results/compact-cached-learning/cost/0/report/paired-gaps.png": "876dc09c37f30fe1b110df4392412e4c1047203e66328b3e3dd24e2fcfc3882c",
+    "results/compact-cached-learning/cost/0/report/summary.json": "782e9121f4d81acba6986ae67d69b018a05931233104defc850242da84fea7a6",
+    "results/source-helper-trace/pair/control/child.json": "1c0b3921fc297caf5b9eb268322d841c8675bb217c50f78cd4590464c72abe90"
+  },
+  "maximum_child_seconds": 900,
+  "maximum_pair_seconds": 1800,
+  "mode_interpretation": "Both timing directions descriptive; one order, not full-audit forecast or pure per-PID runtime",
+  "order": [
+    "control",
+    "observed"
+  ],
+  "original_own_canonical_sha256": "acc85dc9487b29831ec8d1cde73e80cdffd85682a17c08212d8b6429fca9098c",
+  "original_source_fingerprint": "e45ab633d952d0ceece575358095a05a93558e8943bcc934cd7327a5249bf137",
+  "own": "results/compact-cached-learning/cost/0/own.json",
+  "poker_training_performed": false,
+  "production_integrated": false,
+  "random_generators_used": false,
+  "raw_encoding": "gzip streams, mtime0, original helper dictionaries retained; compression/flush/observer charged",
+  "reader_scope": "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING",
+  "reference_constructed": false,
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.17"
+  },
+  "schema": 1,
+  "scope": "ONE_COMPLETE_FROZEN_OWN_READER_HELPERS_DIAGNOSTIC_ONLY",
+  "seeds": [],
+  "target": "compact_cached.cli.read",
+  "validation_recall_cache": "enabled, fresh per arm; original compact_cached.cache.cached; pure-card cache disabled"
+}

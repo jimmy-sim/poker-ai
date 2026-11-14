@@ -4895,3 +4895,85 @@ The original Mermaid diagram, historical journal/personal notes, interview
 numbers, phase contracts, operational files, and package metadata are preserved.
 The public-board example passes. The saved-decision browser needs a published
 branch; its smoke check and required hosted CI follow publication.
+
+
+### November 14 — complete-reader helper diagnostic, prospective
+
+Continues [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) after PR #67.
+The [protocol](reader-helper-trace.md) fixes one control/observed complete own
+read, fresh existing recall cache, original real-archive runtime, complete
+900/1800 diagnostic caps, exact returned/computed/cache identity, and full
+helper/process-event coverage. All six exact-source qualification roles are
+published before a real read; raw evidence precedes reporting. No training,
+reference construction, optimization, failed-gate revision or new admission.
+The ten unrelated local result changes were freshly snapshotted before work;
+an isolated branch preserves their bytes/index/status/patches. Historical394
+measurement files stay unchanged; new private entry/config are explicit.
+Learning-journal116 explains the difference from the narrow publication check.
+Codex assisted; personal hands-on time is unrecorded. Stop after this bounded
+inventory or a retained explicit failure, before choosing an optimizer.
+
+Implementation adds the private collector and55 software fixtures only; original
+394files remain unchanged. New gzip streams preserve full dictionaries and
+partial outcomes; exact reader/cache/deadline call shape, actual summary,
+independent process coverage, raw/log hashes, caps, scopes, input mutation and
+read-only report tests pass. Combined116fixtures pass3.11 in1.22s; initial312
+fixtures passed116 in1.58s, before two typing-only corrections. All lint/format
+and strict750files pass. Full exact-source base/optional/hosted checks and
+published qualification are next; no real reader target has run. The connector's
+PR-only comment route was rejected for issue4; verified issues/4 as an issue and
+published the plan through the issue-specific interface, without changing scope.
+
+Source0e46992/396filedb1fbed9 passes all6roles before collection: base3748/
+64skip/150deselect each801.47/786.78s; optional260each12.15/10.62s; hosted
+43618535981 both3748 with one historical warning (940.29/658.15s). Actual
+3.11.17/NumPy2.4.6 and3.12.15/2.5.4, exact heads/uv/log hashes verified.
+Direct312log redirect timed out; complete authenticated connector log retained,
+companion311byte-identical to direct download. No CI/measurement retry.
+Publish checks.json/raw six-role logs/runners and exact operator before the
+one complete-reader pair. Clock boundary conventions are explicit; no source,
+scientific cap or acceptance criterion changes. No actual target yet.
+
+Original pair fails and is retained278fc04 before reporting: control37.860311792s,
+return1/PackageNotFoundError; shared37.897130209s; no observed arm, complete
+summary or helper count. Exact four raw files/execution copied with originals
+retained. Launcher base environment lacked Numba and other extras; metadata-only
+inventory proves missing requirements, not which package triggered first.
+Static review identifies the reader's CPU-brand sysctl query, outside the first
+Git-only catalog. Prospectively register ONE fresh runtime-complete pair with
+new398-file collector/config preserving all396 measured files. Pin existing
+optional versions and exact probe binary; keep old caps/data/reader/math/gates.
+Fresh six-role checks and published qualification precede any corrected read.
+No optimization or new training. Journal116 records failure and correction.
+
+Follow-up implementation preserves old396files, adds private collector/config
+and68fixtures. Combined184 pass both versions; strict752files passes. Required
+locked versions and exact CPU-probe binary are checked before target; saved
+requirements, probe success/alias/privacy and unknown-not-zero prior-failure
+report covered. Fresh six-role398-source qualification still precedes a real
+follow-up. No old source/data/caps/acceptance predicate changes.
+
+Corrected398-sourceab69275/e1e5e879 passes ALL6roles before newdata: local3816/
+64skip/150deselect each781.55/766.57s; optional328each15.32/14.09s; hosted
+43622239051both3816/onehistoricalwarning736.56/656.41s. Actual3.11.17NP2.4.6
+and3.12.15NP2.5.4, exactsource/uv/log hashes verified. Strict752/Ruff895pass.
+Publish newchecks.json/allrawlogs/runners and exact full-optional311operator
+before ONE correctedpair. Original396files/failed278fc04evidence preserved.
+The old failure JSON reports unknown helpers and no completed replay; no new
+reader measurement yet. No scientific cap/gate/strategy/default changes.
+
+Corrected ONEpair completes0: wholechildren142.690953542/142.749746041s,
+shared286.059276959s;398source and20input bindings unchanged. Raw507058a
+public BEFOREreport. Nine rawfiles/execution exactcopied, originals retained,
+operator==prepublishedcopy.49helpers/49process events(47Git+2sysctl), all0,
+no unsupported/unassigned/observer/retention error; exact own/computed/cache
+identity,432uniqueprofiles/1152fixed conditions, zero recorded errors.
+Cache2832requests/18original/2814hits, no rejection/fallback. ReportCPUhelper
+sums0.239208user/0.652311system match whole target increments; ownprocess
+about141s. Historical21–22child-userCPU NOTreproduced, cause unresolved.
+No helper-dominance/optimizer/933.89forecast rescue/strategy improvement claim.
+Both numeric exports byte-identical in3.12DATA-ONLYparser with actualreader/
+learner/reference blocked. Methods/table/limits/threeQAs/journal116 complete;
+first278fc04failure retained. Final relevant/source/hosted checks precede merge;
+stopafterthisinventory, before newoptimization or training. Codex-assisted;
+personal hours/mastery/practice not inferred.
