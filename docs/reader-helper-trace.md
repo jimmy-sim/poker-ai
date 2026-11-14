@@ -200,3 +200,18 @@ reader/solver/learner execution blocked in fixtures. Publish all new raw
 complete/partial/failing evidence before reporting. Report Git and CPU metadata
 separately, and retain the previous attempt in the final writeup. No stronger
 agent, forecast rescue, default or new-study admission follows.
+
+### Follow-up software checks
+
+The new collector recognizes the original CPU probe without changing its call,
+return or exception. Dependency and binary checks run before target entry and
+the recorded requirements are verified on saved-data inspection. Failed probes
+remain failures; no validation is suppressed. A metadata-only `--failed-attempt`
+report labels the prior helper count unknown, never zero.
+
+The follow-up adds68 fixtures, including missing-dependency target blocking,
+exact metadata-probe/failure/alias coverage and altered saved requirements.
+Combined184 recorder/collector fixtures pass on each version (5.34/4.11seconds;
+see current check logs for exact timings). Strict checking passes752files.
+These tests do not run the real reader. The new398-file source needs fresh
+full base, optional and hosted qualification before collection.

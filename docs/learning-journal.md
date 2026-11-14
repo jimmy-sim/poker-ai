@@ -5458,3 +5458,9 @@ and acceptance rules, but checks the full environment first and recognizes that
 one exact metadata query. The old collector and failure stay frozen; new source
 checks and publication must come before the one corrected pair. This addresses
 the same question rather than choosing a more favorable timing.
+
+The correction now has68 tests. They include a missing-package case that must
+stop before the reader and a CPU-query case that must be counted by the separate
+process-event check. Together with the older collectors,184 fixtures pass on
+each Python version. No second real read has run; the corrected source still
+needs its complete checks and published qualification.

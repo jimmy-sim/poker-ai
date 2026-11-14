@@ -4945,3 +4945,10 @@ new398-file collector/config preserving all396 measured files. Pin existing
 optional versions and exact probe binary; keep old caps/data/reader/math/gates.
 Fresh six-role checks and published qualification precede any corrected read.
 No optimization or new training. Journal116 records failure and correction.
+
+Follow-up implementation preserves old396files, adds private collector/config
+and68fixtures. Combined184 pass both versions; strict752files passes. Required
+locked versions and exact CPU-probe binary are checked before target; saved
+requirements, probe success/alias/privacy and unknown-not-zero prior-failure
+report covered. Fresh six-role398-source qualification still precedes a real
+follow-up. No old source/data/caps/acceptance predicate changes.
