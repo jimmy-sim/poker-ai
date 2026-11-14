@@ -4961,3 +4961,19 @@ Publish newchecks.json/allrawlogs/runners and exact full-optional311operator
 before ONE correctedpair. Original396files/failed278fc04evidence preserved.
 The old failure JSON reports unknown helpers and no completed replay; no new
 reader measurement yet. No scientific cap/gate/strategy/default changes.
+
+Corrected ONEpair completes0: wholechildren142.690953542/142.749746041s,
+shared286.059276959s;398source and20input bindings unchanged. Raw507058a
+public BEFOREreport. Nine rawfiles/execution exactcopied, originals retained,
+operator==prepublishedcopy.49helpers/49process events(47Git+2sysctl), all0,
+no unsupported/unassigned/observer/retention error; exact own/computed/cache
+identity,432uniqueprofiles/1152fixed conditions, zero recorded errors.
+Cache2832requests/18original/2814hits, no rejection/fallback. ReportCPUhelper
+sums0.239208user/0.652311system match whole target increments; ownprocess
+about141s. Historical21–22child-userCPU NOTreproduced, cause unresolved.
+No helper-dominance/optimizer/933.89forecast rescue/strategy improvement claim.
+Both numeric exports byte-identical in3.12DATA-ONLYparser with actualreader/
+learner/reference blocked. Methods/table/limits/threeQAs/journal116 complete;
+first278fc04failure retained. Final relevant/source/hosted checks precede merge;
+stopafterthisinventory, before newoptimization or training. Codex-assisted;
+personal hours/mastery/practice not inferred.

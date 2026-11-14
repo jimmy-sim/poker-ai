@@ -122,8 +122,8 @@ of the research record.
 [Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) investigates how card and
 range representations interact with sampled learning at fixed work. Recent work
 also measures validation overhead before the next proposed training comparison.
-The [publication-helper diagnostic](docs/source-helper-trace.md) follows that
-question without changing the playing strategy.
+The [complete-reader helper study](docs/reader-helper-trace.md) measures that
+validation work without changing the playing strategy.
 
 - [Learning journal](docs/learning-journal.md): explanations in development order,
   with separately recorded personal practice notes.

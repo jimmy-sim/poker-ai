@@ -93,8 +93,8 @@ restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
 
-- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the planned
-  complete-reader helper measurement, after the narrow publication check.
+- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the
+  completed helper inventory and retained environment failure.
 
 - [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
   compact candidate's sampled result and all controls.
@@ -5470,3 +5470,22 @@ tests per version, plus both hosted jobs with installed runtimes verified.
 Its exact full-environment launcher and qualification are published before the
 one corrected pair. The earlier failed run stays visible and is not relabeled
 as successful evidence.
+
+The corrected pair now completes with 49 helpers:47 Git calls and 2 CPU queries.
+Every launch is matched by the separate process counter. Both full reads return
+the same receipt and recomputed summary; all 432 profiles and 1,152 fixed conditions
+check, with zero recorded error and the same cache counters.
+
+The surprising finding is how little CPU these helpers use here: about 0.89
+seconds in total, compared with about 141 seconds in the validation process and
+its libraries. This does not reproduce the older 21–22 seconds of child CPU.
+The older trace remains evidence; the reason for the difference is unresolved.
+Optimizing call counts would therefore chase a small measured cost in this
+case. Before another remedy, the useful question is how the older boundaries
+compare and where the main process spends its work.
+
+The raw data were published before the [table and interpretation](reader-helper-trace.md#complete-reader-result--november-14-2026).
+A Python 3.12 data-only check regenerates both numeric files exactly with reader/learner/
+reference calls blocked. No second-runtime poker replay or stronger-agent claim
+follows. The first failed attempt remains visible and its helper count stays
+unknown. This is the stopping point; no optimizer or new training begins.
