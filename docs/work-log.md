@@ -4923,3 +4923,13 @@ and strict750files pass. Full exact-source base/optional/hosted checks and
 published qualification are next; no real reader target has run. The connector's
 PR-only comment route was rejected for issue4; verified issues/4 as an issue and
 published the plan through the issue-specific interface, without changing scope.
+
+Source0e46992/396filedb1fbed9 passes all6roles before collection: base3748/
+64skip/150deselect each801.47/786.78s; optional260each12.15/10.62s; hosted
+43618535981 both3748 with one historical warning (940.29/658.15s). Actual
+3.11.17/NumPy2.4.6 and3.12.15/2.5.4, exact heads/uv/log hashes verified.
+Direct312log redirect timed out; complete authenticated connector log retained,
+companion311byte-identical to direct download. No CI/measurement retry.
+Publish checks.json/raw six-role logs/runners and exact operator before the
+one complete-reader pair. Clock boundary conventions are explicit; no source,
+scientific cap or acceptance criterion changes. No actual target yet.

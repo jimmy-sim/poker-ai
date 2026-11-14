@@ -5439,3 +5439,9 @@ The collector now has55 software tests. Together with earlier recorder tests,
 summary cannot substitute for the recomputed result and that damaged or partial
 helper records cannot be reported as a complete measurement. The real read still
 waits for all six source checks and their published qualification.
+
+All six source checks now pass:3748full tests and260related optional tests per
+version, plus both hosted jobs with actual runtimes verified. Their records and
+the exact launch command are published before measurement. A log-download
+connection timed out; retrieving the already completed job's full log resolved
+that without rerunning tests or an experiment.

@@ -114,3 +114,30 @@ checking passes for750files. These fixtures do not run the real archive reader.
 The six exact-source qualification roles and their publication still precede
 formal data. Type-checking initially caught a reused gzip stream variable and
 an untyped fixture return; both were corrected without changing reader behavior.
+
+Clock boundaries follow the reused supervisor: each complete-child observation
+ends after process teardown and before the supervisor writes that measurement
+receipt. The shared pair clock starts at the pair function, includes those
+measurement writes and final saved-pair verification, and ends before its own
+last receipt write. Parent entry-point import/argument dispatch and that final
+self-write are outside the shared recorded interval. The operator records its
+invocation separately. These are the existing accounting conventions, not a
+relaxation of a study cap or a full-audit runtime claim.
+
+## Source qualification — November 14, 2026
+
+Source0e46992 binds396files, fingerprint
+`db1fbed91a6f91613dc7a5c1da4a4b5ed30558100727aa3343d995c03626aad1`.
+All394 historical files remain unchanged. Both full local suites pass3748tests
+(801.47/786.78seconds), and both relevant optional suites pass260
+(12.15/10.62seconds). Hosted43618535981 passes3748tests on each actual runtime:
+Python3.11.17/NumPy2.4.6 and3.12.15/2.5.4. Exact heads, uv selections,
+installed runtime markers and untrimmed log hashes are verified. A direct log
+redirect timed out; the authenticated connector supplied the complete log, with
+its companion log verified byte-identical to the successful direct download.
+No job or experiment was rerun for that retrieval failure.
+
+[Qualification](../results/reader-helper-trace/checks.json), all six raw role
+logs, check runners and the exact forthcoming operator are published before the
+one real pair. Qualification is software/source evidence, not a reader timing
+result or permission for a training study.
