@@ -4737,3 +4737,55 @@ posthocfixtureexact2 versuscorrectfloatdelta1.9999999999999998; approximateasser
 fixONLYtest, no390measurementcode/data altered. All9report/accountingtestsPASS
 bothversions0.04/0.07s andstrictbothbaseenvs pass. Journal112/README/methods current;
 finalrelevantchecks+bothhostedjobsrequiredbefore65historymerge.
+
+### November13 — prospective helper-accounting component only
+
+Resourcecountertrace recordschildCPUbutnotpercommand. Registertransparent
+subprocess.runobserver contractbeforeimplementation: Gitread-onlycategories/
+argvhashes/outputtype+hashonly, no rawargs/env/input/outputcontents. Unsupported
+calls executeunchanged withvisibleincompletecoverage. Rawresourceincrements
+areovercallinterval, notexclusivePIDCPU; concurrentchildrenconfound. Return/error
+identity, partialstarts/retentionfailures/restoration/privacy tests withtiny
+softwarefixtures. No real-sourcecollector wired or formalmeasurement tonight;
+futurecollector mustbesource-bound/all6rolespublicwithfixedcap/config. No new
+pokertraining/reference/optimization/admission, originalfailuresremain.
+
+Helperobservercomponent implemented withoutcollector: supportedGitcategories+
+argument/outputfingerprints only, no rawargs/env/input/output, visibleunknown
+coverage, before/afterOSsnapshotswithnonexclusiveintervalscope. Originalreturned
+object/bytes andprimaryexceptionidentity preserved; startretentionfailureblocks
+execution, secondaryobserverfailuredoesnotreplaceprimaryerror, hooksrestore.
+Coverageisnotcommandsuccess/sourceadmission.19testsPASSboth311/3120.08/0.07s;
+expandedpriorfixturegroup126/2.84s(17-testdraft) and31260/0.40s; strict746files+
+alllintpass. Journal113current, no real-sourcepathrecorded, solverorlearnerrun,
+optimization, measuredspeedup or admission. Publishtestedcode, thenfullbase and
+relevantoptionalchecks+bothhostjobs. Futureformalcollectorstillunimplemented.
+
+Final component review caught relative `git -C` classification ignoring child
+`cwd`. Recognition now requires an absolute repository path; unsupported forms
+still execute unchanged. Added regression test for return/argument identity and
+visible coverage rejection. No old source/data changed. Previous19-test and
+component full checks remain draft-head results, not qualification of this fix.
+
+The corrected component now passes20 focused tests on both actual Python3.11.17
+and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
+base/optional and hosted checks are repeated for the corrected head before merge.
+
+Further failure review found an initial snapshot could raise before appending the
+attempt, allowing previous completed calls to masquerade as full coverage. Record
+the attempt first, mark/count initial observer failures and preserve exception
+identity without executing the original command. OSError/KeyboardInterrupt
+regressions cover a completed prior call. Full checks at768b/ac4ec9b remain their
+own-head software evidence; this correction requires fresh checks before merge.
+No real-source collector or formal collection.
+
+Latest initial-snapshot correction:22focused tests PASS311/312(1.89/0.10s),
+166related tests PASSboth(9.16/8.34s), strict746files PASSboth and all lint/format
+pass. Journal current-status updated. Remain DRAFT until fresh full local/hosted
+checks of this correction pass; prior-head results are not transferable. With
+under13minutes to9AM, do not launch another full local check whose safe finish
+cannot be assured. Publish corrected source/CI and retain all partial/prior
+checks; no formal collector, actual source-path measurement or poker trajectory.
+PR65 is history-merged effa65c after verified3632pass hosted jobs on both actual
+runtimes; main viewer/43tests0.20s and all390source hashes match, ten user result
+edits/status/index entries/staged+unstaged patches remain exact.

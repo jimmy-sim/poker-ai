@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Ask which helper program used the CPU](#113-ask-which-helper-program-used-the-cpu)
+
 - [Measure active work and elapsed time](#112-measure-the-work-and-the-wait-separately)
 
 - [Reuse an exact card calculation](#111-reuse-a-card-calculation-without-changing-a-decision)
@@ -76,7 +78,10 @@ CPU time. Step 112 now retains a complete resource trace with matching results. 
 substantial CPU work in child programs, which the parent CPU column omitted.
 The new diagnostic's lower cached elapsed time does not erase the earlier failure
 or admit performance. The playing strategy is unchanged; no new strength claim
-or learning permit follows.
+or learning permit follows. Step 113 prepares a helper-call recorder and fixes two
+coverage corner cases. Its 22 focused tests and 166 related tests pass on each
+Python version. The corrected component remains a draft until its fresh full
+checks pass; no real source-validation collector is wired or measured.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5414,3 +5419,53 @@ also caught floating-point subtraction giving1.9999999999999998 instead of2;
 approximate comparison fixes that test without changing any measured result.
 The original failed gates and source-version correction stay visible. Codex
 assisted; no personal practice, time or mastery is inferred.
+
+
+## 113. Ask which helper program used the CPU
+
+November 13, 2026. The resource trace reports work by child programs, but it does
+not identify each call. The next [component](helper-call-accounting.md) prepares
+that investigation. It observes a synchronous helper call and records its command
+category, hashes and resource-counter boundaries. A hash is a fingerprint for
+comparison; the ledger keeps no raw arguments, environment, input or output text.
+
+The original call still returns the same object and bytes, or raises the same
+error. Unsupported call forms still execute, but leave an explicit coverage gap.
+A complete ledger means that calls were recorded, not that commands succeeded or
+that a source gate passed. Other concurrent children could affect the counter
+increment, so the recorder does not claim exclusive CPU attribution to a PID.
+
+Nineteen software tests pass on both Python versions. They include a tiny
+temporary Git repository, return/error identity, privacy, partial starts, failed
+retention, unsupported forms and cleanup. No real source-validation collector is
+wired or measured here. Its future source binding, full checks, fixed cap and
+published qualification still precede collection. The remaining overnight window
+is being used for software checks and saving this foundation, not another long
+poker audit. The strategy, failed gates and scientific limits remain unchanged.
+Codex assistance is recorded; personal time or understanding is not inferred.
+
+
+Final review found a path corner case: a relative repository path can refer to a
+different folder when the command changes its working folder. The observer now
+requires an absolute repository path for recognized calls. A regression test
+checks that the relative form still executes unchanged but records unsupported
+coverage. This tightens the observer; it does not change a poker result.
+
+The corrected component now passes20 focused tests on both actual Python3.11.17
+and3.12.15 (0.07/0.09s), plus full strict typing746files and lint/format. Full
+base/optional and hosted checks are repeated for the corrected head before merge.
+
+A second review test checks what happens when the resource reading itself fails.
+The attempted call must stay visible; otherwise the earlier successful calls
+could incorrectly look like complete coverage. The ledger now records the
+attempt before taking that reading and rejects completion after a failure.
+Both an ordinary operating-system error and a keyboard interrupt are tested.
+This correction needs fresh full checks before merge; earlier full results
+belong to their original heads and do not qualify the corrected component.
+
+The latest correction passes22 focused tests on Python3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4 (1.89/0.10s), and166 related tests on each (9.16/8.34s). Strict
+typing746files passes on both; lint/format pass. Full checks of the prior heads
+stay labeled as prior-head evidence. The latest corrected head needs fresh full
+checks before merge, so this foundation may remain a published draft at the9AM
+stop. No new long check or experiment is squeezed into the remaining window.
