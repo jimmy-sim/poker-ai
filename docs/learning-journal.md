@@ -5509,3 +5509,9 @@ command form. Each child also saves its actual runtime and hardware context.
 The earlier full checks passed, but the corrected source needs its own fresh
 checks. No real diagnostic has run yet; passing fixtures are not enough to skip
 this gate.
+
+The corrected collector now passes all six required checks:3,693 full tests and
+205 related optional tests on each version, plus both hosted jobs with their
+actual runtimes verified. Its qualification records are published before data.
+The upcoming pair still tests one publication check, not full-audit performance
+or playing strength.

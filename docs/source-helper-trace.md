@@ -124,3 +124,19 @@ regression covers this CLI form. Each child now captures actual runtime/hardware
 inside its charged command; saved-data verification checks the Python/NumPy
 context. These changes precede any formal pair and require fresh source roles.
 The target, fourteen inputs, ordering and caps are unchanged.
+
+## Source qualification — November 14, 2026
+
+Corrected source459fc0f has all six required passes:3,693 base tests per version,
+205 relevant optional tests per version, and both hosted jobs43578743429.
+Actual Python3.11.17/NumPy2.4.6 and3.12.15/2.5.4 markers, uv selections, exact
+heads and raw logs are authenticated. The fingerprint is
+`7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815`.
+[Qualification](../results/source-helper-trace/checks.json) and raw logs are
+published before collection. The superseded1f85d32 checks are not substituted.
+
+Each child records actual runtime/hardware inside its command. The operator
+launch record also captures administrative context and Git version before
+invocation; it does not replace prerequisites repeated inside the registered
+clocks. All available raw evidence survives failures. An abrupt kill can leave
+streamed events and a child start without a final ledger; that remains incomplete.

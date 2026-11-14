@@ -4841,3 +4841,9 @@ No protocol target/input/seed/cap changes and all390 historical sources unchange
 Corrected prepublication tests:39new plus22component =61pass on actual311/312
 (0.72/0.69s), all lint/format and strict748files pass. Old1f checks fully passed
 but do not qualify this changed collector. Publish code and repeat all six.
+
+Corrected394-source459fc0f/7da2c541 now passes ALL6roles before data: 3693 passed, 64 skipped, 150 deselected in 791.93s (0:13:11); 3693 passed, 64 skipped, 150 deselected in 769.40s (0:12:49); 205 passed in 11.04s; 205 passed in 9.71s; 132398692248; 132398692142.
+Hosted43578743429 both actual runtime/uv/head/log hashes authenticated. Full
+local3693/64skip/150deselect each, optional205each, exact source guards before/
+after. Publish all raw role logs plus checks.json and operator launch record
+BEFORE the one fixed pair. All390 historical files unchanged; no target yet.
