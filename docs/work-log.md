@@ -4912,3 +4912,14 @@ measurement files stay unchanged; new private entry/config are explicit.
 Learning-journal116 explains the difference from the narrow publication check.
 Codex assisted; personal hands-on time is unrecorded. Stop after this bounded
 inventory or a retained explicit failure, before choosing an optimizer.
+
+Implementation adds the private collector and55 software fixtures only; original
+394files remain unchanged. New gzip streams preserve full dictionaries and
+partial outcomes; exact reader/cache/deadline call shape, actual summary,
+independent process coverage, raw/log hashes, caps, scopes, input mutation and
+read-only report tests pass. Combined116fixtures pass3.11 in1.22s; initial312
+fixtures passed116 in1.58s, before two typing-only corrections. All lint/format
+and strict750files pass. Full exact-source base/optional/hosted checks and
+published qualification are next; no real reader target has run. The connector's
+PR-only comment route was rejected for issue4; verified issues/4 as an issue and
+published the plan through the issue-specific interface, without changing scope.

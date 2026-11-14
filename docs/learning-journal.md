@@ -93,6 +93,9 @@ restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
 
+- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the planned
+  complete-reader helper measurement, after the narrow publication check.
+
 - [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
   compact candidate's sampled result and all controls.
 - [Step 107](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline):
@@ -5430,3 +5433,9 @@ checks and published qualification precede the real pair.
 
 Codex assisted with the plan and code/checks. No personal practice, hours or
 mastery is inferred from automated work.
+
+The collector now has55 software tests. Together with earlier recorder tests,
+116 pass on Python3.11; strict checking also passes. They verify that a stored
+summary cannot substitute for the recomputed result and that damaged or partial
+helper records cannot be reported as a complete measurement. The real read still
+waits for all six source checks and their published qualification.

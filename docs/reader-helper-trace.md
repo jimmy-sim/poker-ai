@@ -94,3 +94,23 @@ raw evidence, readable table, limitations and next decision, or a retained
 explicit failure explaining what prevented completeness. Keep one coherent PR,
 issue #4, the work log and the learning journal updated. Stop at that milestone;
 a new optimizer or broader audit collector is a separate decision.
+
+## Software implementation
+
+The collector invokes the unchanged reader once and captures its one actual
+computed summary, complete returned-receipt hash and fresh validation-cache
+counters. Gzip events are flushed as calls start/finish; the final/partial ledger
+is written in a finally block. Full raw dictionaries survive lossless compression.
+The parser checks command-log hashes as well as child/ledger/stream bindings,
+rejects changed scopes, counters, caps and symlinks, and groups repeated argument
+fingerprints without retaining arguments. A killed stream can remain truncated;
+it is retained as incomplete rather than silently repaired.
+
+Fifty-five new software fixtures cover compressed records, reader/cache/deadline
+call shape, computed-summary identity, privacy/alias coverage, missing source
+qualification, tampering, failures and read-only reporting. Combined with the
+previous recorder/collector fixtures, 116 pass on the local3.11 runtime; strict
+checking passes for750files. These fixtures do not run the real archive reader.
+The six exact-source qualification roles and their publication still precede
+formal data. Type-checking initially caught a reused gzip stream variable and
+an untyped fixture return; both were corrected without changing reader behavior.
