@@ -4895,3 +4895,41 @@ The original Mermaid diagram, historical journal/personal notes, interview
 numbers, phase contracts, operational files, and package metadata are preserved.
 The public-board example passes. The saved-decision browser needs a published
 branch; its smoke check and required hosted CI follow publication.
+
+
+### November 14 — complete-reader helper diagnostic, prospective
+
+Continues [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) after PR #67.
+The [protocol](reader-helper-trace.md) fixes one control/observed complete own
+read, fresh existing recall cache, original real-archive runtime, complete
+900/1800 diagnostic caps, exact returned/computed/cache identity, and full
+helper/process-event coverage. All six exact-source qualification roles are
+published before a real read; raw evidence precedes reporting. No training,
+reference construction, optimization, failed-gate revision or new admission.
+The ten unrelated local result changes were freshly snapshotted before work;
+an isolated branch preserves their bytes/index/status/patches. Historical394
+measurement files stay unchanged; new private entry/config are explicit.
+Learning-journal116 explains the difference from the narrow publication check.
+Codex assisted; personal hands-on time is unrecorded. Stop after this bounded
+inventory or a retained explicit failure, before choosing an optimizer.
+
+Implementation adds the private collector and55 software fixtures only; original
+394files remain unchanged. New gzip streams preserve full dictionaries and
+partial outcomes; exact reader/cache/deadline call shape, actual summary,
+independent process coverage, raw/log hashes, caps, scopes, input mutation and
+read-only report tests pass. Combined116fixtures pass3.11 in1.22s; initial312
+fixtures passed116 in1.58s, before two typing-only corrections. All lint/format
+and strict750files pass. Full exact-source base/optional/hosted checks and
+published qualification are next; no real reader target has run. The connector's
+PR-only comment route was rejected for issue4; verified issues/4 as an issue and
+published the plan through the issue-specific interface, without changing scope.
+
+Source0e46992/396filedb1fbed9 passes all6roles before collection: base3748/
+64skip/150deselect each801.47/786.78s; optional260each12.15/10.62s; hosted
+43618535981 both3748 with one historical warning (940.29/658.15s). Actual
+3.11.17/NumPy2.4.6 and3.12.15/2.5.4, exact heads/uv/log hashes verified.
+Direct312log redirect timed out; complete authenticated connector log retained,
+companion311byte-identical to direct download. No CI/measurement retry.
+Publish checks.json/raw six-role logs/runners and exact operator before the
+one complete-reader pair. Clock boundary conventions are explicit; no source,
+scientific cap or acceptance criterion changes. No actual target yet.

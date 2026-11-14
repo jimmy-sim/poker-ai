@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Count helpers across a complete saved-policy read](#116-count-helpers-across-the-complete-saved-policy-read)
+
 - [Count helpers in one publication check](#114-count-the-helpers-in-one-publication-check)
 
 - [Ask which helper program used the CPU](#113-ask-which-helper-program-used-the-cpu)
@@ -90,6 +92,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the planned
+  complete-reader helper measurement, after the narrow publication check.
 
 - [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
   compact candidate's sampled result and all controls.
@@ -5409,3 +5414,34 @@ Relative paths and heading links pass; GitHub-rendered Markdown retains the
 tables and collapsible sections. All five linked figures were inspected without
 changes. The public-board terminal example passes. The saved-decision browser
 requires a published branch, so its smoke check follows publication.
+
+## 116. Count helpers across the complete saved-policy read
+
+November 14, 2026. The earlier publication check counted 21 helper launches,
+but only covered about 0.6 seconds of validation. The next question is how often
+helpers run inside the complete saved-policy reader, which also recomputes the
+archived mathematics. A **helper** here is a separate Git program launched by
+Python to check committed source or evidence.
+
+The plan compares one normal read with one recorded read in separate processes.
+Both use the same source and archive, with a fresh existing validation cache.
+The original receipt, recomputed summary and cache counters must match exactly.
+This can identify repeated validation work; it does not teach the agent poker
+or prove a full-audit speedup. The [protocol](reader-helper-trace.md) fixes the
+checks, caps, retention and interpretation before measurements. All software
+checks and published qualification precede the real pair.
+
+Codex assisted with the plan and code/checks. No personal practice, hours or
+mastery is inferred from automated work.
+
+The collector now has55 software tests. Together with earlier recorder tests,
+116 pass on Python3.11; strict checking also passes. They verify that a stored
+summary cannot substitute for the recomputed result and that damaged or partial
+helper records cannot be reported as a complete measurement. The real read still
+waits for all six source checks and their published qualification.
+
+All six source checks now pass:3748full tests and260related optional tests per
+version, plus both hosted jobs with actual runtimes verified. Their records and
+the exact launch command are published before measurement. A log-download
+connection timed out; retrieving the already completed job's full log resolved
+that without rerunning tests or an experiment.

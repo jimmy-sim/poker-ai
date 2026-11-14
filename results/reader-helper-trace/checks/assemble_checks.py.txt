@@ -1,0 +1,36 @@
+"""Archive observed immutable-source role checks, with exact untrimmed logs."""
+import hashlib,json,re,shutil,runpy
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'reader-helper-trace';f=w/'reader-helper-checks'
+head='0e46992aad75d60a60349116d51cc5a7f58f0e44';fp='db1fbed91a6f91613dc7a5c1da4a4b5ed30558100727aa3343d995c03626aad1';run=43618535981
+out=r/'results/reader-helper-trace/checks';rows=[]
+def bind(p):return dict(file=str(p.relative_to(r)),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+for role in ('base','optional'):
+ for minor in ('311','312'):
+  name=role+minor;x=json.loads((f/f'{name}-receipt.json').read_text());log=(f/f'{name}.log').read_text()
+  assert x['status']=='passed' and x['checked_commit']==head and x['source_fingerprint']==fp
+  line=next(t for t in log.splitlines() if re.match(r'^\d+ passed',t))
+  assert line.startswith('3748 passed, 64 skipped, 150 deselected' if role=='base' else '260 passed')
+  rows.append(dict(role=role,minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python='3.11.17' if minor=='311' else '3.12.15',numpy='2.4.6' if minor=='311' else '2.5.4',result=line))
+m=json.loads((f/'run.json').read_text());jobs=json.loads((f/'jobs.json').read_text())['jobs']
+assert m['head_sha']==head and m['status']=='completed' and m['conclusion']=='success' and m['id']==run
+for minor in ('311','312'):
+ job=next(x for x in jobs if x['name']=='Python '+('3.11' if minor=='311' else '3.12'))
+ assert job['status']=='completed' and job['conclusion']=='success' and job['head_sha']==head
+ log=(f/f'hosted{minor}.log').read_text(encoding='utf-8-sig');assert head in log and '3748 passed, 64 skipped, 150 deselected' in log
+ version='3.11.17' if minor=='311' else '3.12.15';numpy='2.4.6' if minor=='311' else '2.5.4'
+ parse=runpy.run_path(str(r/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='runtime_label_parser')['parse'];actual=parse(log)
+ assert actual['actual_python']==[version] and actual['all_uv_versions']==[version]
+ assert 'ACTUAL_PYTHON='+version in log and 'ACTUAL_NUMPY='+numpy in log
+ guard=next(t for t in job['steps'] if t['name']=='Verify actual installed runtime');assert guard['conclusion']=='success'
+
+ rows.append(dict(role='hosted',minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python='3.11.17' if minor=='311' else '3.12.15',numpy='2.4.6' if minor=='311' else '2.5.4',run_id=run,job_id=job['id'],head_sha=head,conclusion='success',runtime_verified_from_actual_guard=True,actual_uv_versions=actual['all_uv_versions']))
+assert not out.exists();out.mkdir(parents=True)
+for p in f.iterdir():
+ if p.is_file():shutil.copyfile(p,out/p.name)
+shutil.copyfile(w/'run-reader-helper-checks.py',out/'run_checks.py.txt');shutil.copyfile(__file__,out/'assemble_checks.py.txt')
+shutil.copyfile(w/'run-reader-helper-pair.py',out/'operator_launch.py.txt')
+for x in rows:x['log']=bind(out/f"{x['role']}{x['minor']}.log")
+p=out.parent/'checks.json'
+with p.open('x') as stream:json.dump(dict(source_fingerprint=fp,checks=rows,scope='Same-head396-source complete-reader helper diagnostic software qualification. All historical394 files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. No real complete reader target invoked by these fixture checks. No training, reference construction, full-audit forecast rescue or performance/default/global admission. Publish before the one fixed control/observed pair.'),stream,indent=2);stream.write('\n')
+print(json.dumps([dict(role=x['role'],minor=x['minor'],result=x.get('result'),job=x.get('job_id')) for x in rows]))
