@@ -1,17 +1,20 @@
 # Development work log
 
-Use this log with [issues](https://github.com/jimmy-sim/poker-ai/issues),
-[pull requests](https://github.com/jimmy-sim/poker-ai/pulls),
-[commits](https://github.com/jimmy-sim/poker-ai/commits/main/) and
-[hosted CI](https://github.com/jimmy-sim/poker-ai/actions). The
-[contribution workflow](../CONTRIBUTING.md) defines how each new task becomes a
-reviewable result.
+This is the dated record of changes, experiments, and verification for poker-ai.
+[Issues](https://github.com/jimmy-sim/poker-ai/issues),
+[PRs](https://github.com/jimmy-sim/poker-ai/pulls),
+[commits](https://github.com/jimmy-sim/poker-ai/commits/main/), and
+[CI runs](https://github.com/jimmy-sim/poker-ai/actions) provide the associated
+history. The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
-Dates below use America/Los_Angeles unless marked UTC. Entries describe actual
-work; elapsed agent/process time is not a record of personal hands-on hours.
+Dates use America/Los_Angeles unless marked UTC. Entries include AI-assisted
+implementation, checks, execution, and writing. Experiment and automation runtimes
+are separate from personal hands-on time, which is recorded only when reported.
+Specific historical attribution and failed outcomes are preserved below.
 
-For a guided explanation of the ideas and results, start with the
-[plain-English learning journal](learning-journal.md).
+For explanations of the concepts, start with the
+[learning journal](learning-journal.md). Entries are historical snapshots, not a
+list of claims that every earlier “next step” is still pending.
 
 ## 2026-11-10 — Full matched-update pipeline, prospective
 
@@ -1665,7 +1668,7 @@ necessarily changes those fields. The reader incorrectly compared the entire
 manifest, including that volatile provenance.
 
 [Failed native receipt](../results/matched-update-pipeline/overhead/native.json),
-[diagnosis](../results/matched-update-pipeline/overhead/reader-failure-diagnosis.json).
+[diagnosis](https://github.com/jimmy-sim/poker-ai/blob/95e8c8d6f89e4d05bdd526a455180f9e770bbc9e/results/matched-update-pipeline/overhead/reader-failure-diagnosis.json).
 Next: a versioned parent IO adapter that preserves all existing scientific source
 and data, validates original code/config bytes separately and compares every
 stable corpus identity. Add lifecycle/failure tests, then recheck the expanded
@@ -4858,3 +4861,37 @@ observed interval0.236304623s, targetabout0.6s. No causaloldread explanation,
 per-PIDCPU/wallstack, full-audit forecast rescue, memorysaving or stronger agent.
 Nextquestion whole-reader helperfrequency; stop this milestone after final checks.
 Journal114/methods complete; original390sources/caps/seeds/failures unchanged.
+
+
+### November 14 — clearer project introduction and contribution wording
+
+Editorial work requested in [issue #68](https://github.com/jimmy-sim/poker-ai/issues/68).
+The README now introduces the project, components, representative results, setup,
+and research navigation. Detailed reports remain linked; all four generated
+summary blocks and their markers are retained unchanged in a collapsible section.
+The [previous front page](https://github.com/jimmy-sim/poker-ai/blob/459fc0f98a6989ce4beb6646229ae03a87281c9f/README.md)
+preserves the earlier running narrative without duplicating it in a new file.
+
+Overview introductions and interview drafts distinguish project capabilities,
+Codex assistance, supported intentions, and actual personal practice. Historical
+journal chapters, specific credits, reports, protocols, raw results, and operational
+requirements are preserved. The package description was reviewed and left intact:
+it is already factual and is part of frozen source fingerprints. No code, tests,
+dependencies, budgets, criteria, CI behavior, or autonomous permissions change.
+Documentation/link/anchor/image/generator checks and hosted CI are required before
+merge; actual verification results are recorded in the documentation PR.
+
+Codex assisted with the editorial restructuring and verification. No new personal
+practice, manual implementation, or hands-on time is inferred.
+
+One pre-existing broken work-log artifact link now points to its original file
+at immutable commit95e8c8d. The artifact, event description, dates, and results
+are unchanged; no historical data were recreated.
+
+Focused verification passes: diff whitespace, relative links and heading targets,
+GitHub Markdown rendering, five unchanged linked figures, four byte-identical
+generated blocks, and generator-update functions on a temporary README copy.
+The original Mermaid diagram, historical journal/personal notes, interview
+numbers, phase contracts, operational files, and package metadata are preserved.
+The public-board example passes. The saved-decision browser needs a published
+branch; its smoke check and required hosted CI follow publication.

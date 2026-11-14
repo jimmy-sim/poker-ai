@@ -1,4 +1,15 @@
-# Approved roadmap
+# Project roadmap
+
+<a id="approved-roadmap"></a>
+
+I want to keep improving the Hold'em model through measurable, reproducible
+changes and understand what limits its decisions. The original prototype is a
+foundation for that ongoing work.
+
+The phase contracts below preserve the original development sequence. Their
+acceptance rules remain in force. For current experiments, see
+[issue #4](https://github.com/jimmy-sim/poker-ai/issues/4); for outcomes, see the
+[work log](work-log.md) and [learning journal](learning-journal.md).
 
 Phases run in order. Each phase begins with explicit acceptance criteria, proceeds
 in small tested commits, and ends with verification results and three interview
