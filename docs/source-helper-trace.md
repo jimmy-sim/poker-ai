@@ -140,3 +140,55 @@ launch record also captures administrative context and Git version before
 invocation; it does not replace prerequisites repeated inside the registered
 clocks. All available raw evidence survives failures. An abrupt kill can leave
 streamed events and a child start without a final ledger; that remains incomplete.
+
+## Recorded result — November 14, 2026
+
+The one fixed control/observed pair completes. Both original publication
+records match exactly across all fourteen input hashes, the source fingerprint
+and recorded Git witness. There are 21 recorded helpers and 21 matched CPython
+process events, one per request, with zero unsupported or unassigned launches.
+All helpers exit 0; raw starts/finals, PID/units/deltas and source/qualification
+bindings validate. The diagnostic constructs no solver, replays no strategies
+and changes no agent.
+
+Complete children take 1.060422500/1.064042709seconds;
+target intervals are0.580941375/
+0.609266167seconds. Shared time is
+2.516450083seconds, within the fixed 1800-second cap; each child is below 900.
+The added observer work and fixed order make this descriptive, not a population
+performance estimate. Raw evidence was published as fbf5eb8 before this report.
+
+| Helper category | Calls | Observed interval (s) | Parent CPU (s) | Reaped-child user / system CPU (s) |
+| --- | ---: | ---: | ---: | ---: |
+| `git merge-base` | 1 | 0.007709 | 0.001162 | 0.003323 / 0.002463 |
+| `git rev-parse` | 3 | 0.021954 | 0.003332 | 0.009940 / 0.006826 |
+| `git show` | 14 | 0.236305 | 0.067982 | 0.093955 / 0.068132 |
+| `git status` | 2 | 0.037998 | 0.002644 | 0.011917 / 0.078161 |
+| `git symbolic-ref` | 1 | 0.009218 | 0.002421 | 0.003483 / 0.002494 |
+
+Fourteen `git show` calls have the largest sum of observed helper intervals in
+this selected check. Those intervals include entry logging and result hashing.
+CPU counters include completed children/descendants and can exceed elapsed time;
+they are not added to wall time or attributed to an exclusive PID.
+
+This block takes about 0.6 seconds under these conditions. It does not identify
+where the older complete read used 21–22 child USER CPU seconds, or establish
+that publication checks are the full audit's bottleneck. The old runs differ in
+source/context and the whole reader's call frequency is not measured here.
+The next justified investigation inventories helper-call frequency and intervals
+inside the complete own reader before choosing an optimization. No such broader
+measurement or production change is part of this milestone.
+
+Runtime: Python 3.11.17 / NumPy 2.4.6; macOS 27.2.1 arm64, 10 logical CPUs. The CPU brand
+query is unavailable (recorded CalledProcessError); only `arm` is reported.
+Both child environments and administrative Git/version context are retained.
+No CPU model, memory saving, full-audit forecast rescue or playing-strength gain
+is inferred. Original failed accuracy, budget and timing outcomes remain.
+
+[Checked table](../results/source-helper-trace/report/helpers.csv),
+[full report](../results/source-helper-trace/report/summary.json),
+[raw manifest](../results/source-helper-trace/raw-manifest.json).
+
+```sh
+.venv/bin/python scripts/collect_source_helpers.py --show --output results/source-helper-trace/pair
+```

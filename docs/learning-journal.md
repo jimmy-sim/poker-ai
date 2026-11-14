@@ -5515,3 +5515,16 @@ The corrected collector now passes all six required checks:3,693 full tests and
 actual runtimes verified. Its qualification records are published before data.
 The upcoming pair still tests one publication check, not full-audit performance
 or playing strength.
+
+The diagnostic now completes with exactly the same publication record. It sees
+21 helper launches, with every launch matched and every recorded call successful.
+Fourteen are `git show` calls, which read committed evidence; they have the largest
+observed helper interval here. The check itself takes about 0.6 seconds.
+
+This answers a narrow question. It does not explain all the CPU in a full replay
+or prove the complete audit now fits its budget. The next measurement needs to
+count helpers across that larger reader before choosing an optimization. The
+[table and limits](source-helper-trace.md#recorded-result--november-14-2026) keep
+CPU, elapsed time and observer work distinct. The CPU brand query failed, so the
+record reports only the architecture and logical CPU count rather than inventing
+a processor model. No training or playing-strength change occurred.

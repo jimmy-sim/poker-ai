@@ -4847,3 +4847,14 @@ Hosted43578743429 both actual runtime/uv/head/log hashes authenticated. Full
 local3693/64skip/150deselect each, optional205each, exact source guards before/
 after. Publish all raw role logs plus checks.json and operator launch record
 BEFORE the one fixed pair. All390 historical files unchanged; no target yet.
+
+ONEfixed publication-helper pair complete0 after5396c43six-role publication; raw
+fbf5eb8 published BEFORE posthoc renderer. Completechildren 1.0604225000024599/1.064042709000205s; exact14input/witness
+identity,21helpers/21audit events,1event/request,0unsupported/unassigned/nonzero.
+All9raw files+executionexactcopied, originalignoredbytes retained, manifest binds
+allraws; operator matches prepublished launch source. Child runtime/hardware
+recorded(brandquery unavailable,arm/10CPU only). Reportgroups Gitshow14largest
+observed interval0.236304623s, targetabout0.6s. No causaloldread explanation,
+per-PIDCPU/wallstack, full-audit forecast rescue, memorysaving or stronger agent.
+Nextquestion whole-reader helperfrequency; stop this milestone after final checks.
+Journal114/methods complete; original390sources/caps/seeds/failures unchanged.
