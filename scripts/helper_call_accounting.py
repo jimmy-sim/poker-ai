@@ -28,6 +28,7 @@ READ_ONLY = frozenset(
         "ls-files",
         "log",
         "cat-file",
+        "symbolic-ref",
     )
 )
 

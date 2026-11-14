@@ -5496,3 +5496,8 @@ exact source, full checks and all six required roles are public. It will not
 train an agent, replay poker decisions or start a reference solver. Its result
 will describe this one publication check, not the complete audit or a stronger
 agent. Codex assistance is recorded; personal time or mastery is not inferred.
+
+The collector now has37 new software tests. Together with the recorder's22,
+59 pass on each Python version. They catch bypassed calls and damaged saved
+evidence before it can be called complete. Full checks and the published
+qualification still precede any real measurement; this is software evidence.

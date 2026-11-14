@@ -4811,3 +4811,19 @@ symbolic-ref used by the existing check. All390 historical scientific files stay
 unchanged; exact collector source and six actual-runtime roles public BEFORE
 collection. Both timing directions descriptive, no full-audit forecast rescue.
 Journal114 explains the bounded question. Codex assisted; actual work dates.
+
+Publication collector implemented after prospective557511c: existing validator
+called unchanged, separate child per arm, exact returned witness, source394
+(all historical390 unchanged), fixed inputs/caps and published six-role gate.
+Helper catalog adds symbolic-ref only. CPython audit census discards arguments
+and detects imported run/Popen aliases; marker detects suppressed registration.
+Streaming starts/finals and partial ledgers persist, observer scope is interval
+accounting rather than exclusive PID CPU. Read-only CSV reporter checks raw
+inventory/command/status/PID/deltas/hash/qualification/witness before grouping.
+Unit fixtures isolate audit hooks in separate processes. First fixture failure
+was its own untracked output directory; ignored that directory in the fixture,
+not in the real validator. No actual publication target or training run yet.
+
+Prepublication software checks:37new +22component =59pass both311/312
+(0.60/0.64s); full lint/format and strict748files pass. Fresh full local base,
+relevant all-extras and both hosted checks now precede formal collection.

@@ -10,8 +10,9 @@ to `compact_cached.publication.publication(root, own_path, own)`? Use the
 frozen cost-zero own receipt and its fourteen published evidence members,
 without replaying strategies. This is the existing own-publication witness used
 before reference comparison. It verifies source metadata, committed bytes and
-the fetched upstream witness. It excludes later tree reconstruction, evaluation, complete archive
-replay, publication checks, native workers and all training. It cannot explain
+the fetched upstream witness. It excludes tree reconstruction, evaluation,
+strategy replay, native workers and all training. It covers this publication
+check alone, rather than every validation block in the complete audit. It cannot explain
 all CPU recorded in an older full read or establish a whole-audit speedup.
 
 Use the unchanged function, not a substitute validator. Its returned publication dictionary must match exactly, including all input
@@ -93,3 +94,26 @@ API basis: [Python audit hooks](https://docs.python.org/3.11/library/sys.html#sy
 and [documented events](https://docs.python.org/3.11/library/audit_events.html).
 Hooks are not a security boundary and can be suppressed; test the marker before
 collection. They persist for the child lifetime and count only while active.
+
+## Implemented software checks
+
+The collector and read-only reporter are implemented. Tiny Git fixtures check
+normal calls and imported check_output aliases, and reject cached run/Popen
+aliases, unsupported forms and missing audit-hook installation. Initial resource
+failures retain their attempted rows and partial ledger. Fictional saved-pair
+fixtures test raw deltas, command/PID/input/source/qualification hashes, missing
+files, caps, streamed starts/finals and reporting. Runtime-marker tests reject
+labels without actual interpreter evidence. These fixtures do not execute the
+real publication target. The audit hooks run in separate fixture interpreters
+so they cannot affect later project tests.
+
+One early fixture saw its own output directory as an untracked Git file; ignoring
+that fixture directory corrected the test assumption. It was not a poker result
+or a real collection failure. All source qualification and publication remain
+required before the first actual pair.
+
+The complete-pair cap includes final verification. The measurement receipt's
+own last write is outside its recorded elapsed interval, as in the reused
+supervisor. No command destination is reused. Posthoc reports must stay outside
+the frozen raw folder. A fresh clone can authenticate recorded source commits,
+qualification hashes and the fourteen-input witness without rerunning poker.
