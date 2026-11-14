@@ -1,0 +1,17 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport collect_source_helpers as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='459fc0f98a6989ce4beb6646229ae03a87281c9f'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==394 and s['fingerprint']=='7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'459fc0f98a6989ce4beb6646229ae03a87281c9f');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real publication target/collector measurement, replay, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=459fc0f98a6989ce4beb6646229ae03a87281c9f
+COLLECTOR_SOURCE=7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815
+Software qualification only: no real publication target/collector measurement, replay, learner or reference constructed
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_source_helper_trace.py", "tests/test_helper_call_accounting.py", "tests/test_card_audit_clock_trace.py", "tests/test_card_clock_report.py", "tests/test_card_computation_cache.py", "tests/test_card_cache_report.py", "tests/test_cached_native_wall_profile.py"]}
+........................................................................ [ 35%]
+........................................................................ [ 70%]
+.............................................................            [100%]
+205 passed in 9.71s
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport collect_source_helpers as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='459fc0f98a6989ce4beb6646229ae03a87281c9f'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==394 and s['fingerprint']=='7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'459fc0f98a6989ce4beb6646229ae03a87281c9f');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real publication target/collector measurement, replay, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=459fc0f98a6989ce4beb6646229ae03a87281c9f
+COLLECTOR_SOURCE=7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815
+Software qualification only: no real publication target/collector measurement, replay, learner or reference constructed

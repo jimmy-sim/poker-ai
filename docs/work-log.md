@@ -4789,3 +4789,72 @@ checks; no formal collector, actual source-path measurement or poker trajectory.
 PR65 is history-merged effa65c after verified3632pass hosted jobs on both actual
 runtimes; main viewer/43tests0.20s and all390source hashes match, ten user result
 edits/status/index entries/staged+unstaged patches remain exact.
+
+
+### November 14 — finish PR #66 and register a publication-helper diagnostic
+
+Corrected source3a94953 passes full local3,654/64skip/150deselect on both
+versions(819.99/806.67s), relevant optional166each(10.19/8.88s), strict746files,
+lint/format/hooks. Hosted43466368826 passes both actual3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4(918.26/1178.60s). Raw logs/exact heads/runtime guards authenticated.
+History-merged PR66 as6c9d394; main22tests0.10s pass. Guarded FF preserves all
+ten unrelated edits/status/index entries/patches. This completes the software
+component, not measurement qualification for a future collector.
+
+Register fixed publication-check diagnostic before implementation: one original
+compact_cached.publication.publication call per control/observed arm, exact
+returned dictionary and fourteen frozen input members; no replay/training/reference.
+900s complete child/1800s shared separate diagnostic caps; seeds/work/study gates
+unchanged. Add independent process-event census to detect run/Popen aliases;
+ignore event arguments, retain partial failures. Extend command catalog only with
+symbolic-ref used by the existing check. All390 historical scientific files stay
+unchanged; exact collector source and six actual-runtime roles public BEFORE
+collection. Both timing directions descriptive, no full-audit forecast rescue.
+Journal114 explains the bounded question. Codex assisted; actual work dates.
+
+Publication collector implemented after prospective557511c: existing validator
+called unchanged, separate child per arm, exact returned witness, source394
+(all historical390 unchanged), fixed inputs/caps and published six-role gate.
+Helper catalog adds symbolic-ref only. CPython audit census discards arguments
+and detects imported run/Popen aliases; marker detects suppressed registration.
+Streaming starts/finals and partial ledgers persist, observer scope is interval
+accounting rather than exclusive PID CPU. Read-only CSV reporter checks raw
+inventory/command/status/PID/deltas/hash/qualification/witness before grouping.
+Unit fixtures isolate audit hooks in separate processes. First fixture failure
+was its own untracked output directory; ignored that directory in the fixture,
+not in the real validator. No actual publication target or training run yet.
+
+Prepublication software checks:37new +22component =59pass both311/312
+(0.60/0.72s); full lint/format and strict748files pass. Fresh full local base,
+relevant all-extras and both hosted checks now precede formal collection.
+
+Premeasurement interface review caught a real relative-path mismatch: the
+supervisor recorded the CLI's relative output argument while child provenance
+stored an absolute path. Normalize the run destination before child commands;
+add a regression for the public relative CLI form. Record runtime/hardware in
+each child as well as administrative context, and validate saved Python/NumPy
+markers in the reporter. No formal target pair had run. Earlier1f85d32 software
+checks remain source-bound evidence for that superseded head; none qualify this
+correction. Repeat all required source checks on the corrected head before data.
+No protocol target/input/seed/cap changes and all390 historical sources unchanged.
+
+Corrected prepublication tests:39new plus22component =61pass on actual311/312
+(0.72/0.69s), all lint/format and strict748files pass. Old1f checks fully passed
+but do not qualify this changed collector. Publish code and repeat all six.
+
+Corrected394-source459fc0f/7da2c541 now passes ALL6roles before data: 3693 passed, 64 skipped, 150 deselected in 791.93s (0:13:11); 3693 passed, 64 skipped, 150 deselected in 769.40s (0:12:49); 205 passed in 11.04s; 205 passed in 9.71s; 132398692248; 132398692142.
+Hosted43578743429 both actual runtime/uv/head/log hashes authenticated. Full
+local3693/64skip/150deselect each, optional205each, exact source guards before/
+after. Publish all raw role logs plus checks.json and operator launch record
+BEFORE the one fixed pair. All390 historical files unchanged; no target yet.
+
+ONEfixed publication-helper pair complete0 after5396c43six-role publication; raw
+fbf5eb8 published BEFORE posthoc renderer. Completechildren 1.0604225000024599/1.064042709000205s; exact14input/witness
+identity,21helpers/21audit events,1event/request,0unsupported/unassigned/nonzero.
+All9raw files+executionexactcopied, originalignoredbytes retained, manifest binds
+allraws; operator matches prepublished launch source. Child runtime/hardware
+recorded(brandquery unavailable,arm/10CPU only). Reportgroups Gitshow14largest
+observed interval0.236304623s, targetabout0.6s. No causaloldread explanation,
+per-PIDCPU/wallstack, full-audit forecast rescue, memorysaving or stronger agent.
+Nextquestion whole-reader helperfrequency; stop this milestone after final checks.
+Journal114/methods complete; original390sources/caps/seeds/failures unchanged.

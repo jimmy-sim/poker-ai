@@ -11,6 +11,8 @@ notes section is for your own questions and explanations as you work through it.
 
 ## Quick navigation
 
+- [Count helpers in one publication check](#114-count-the-helpers-in-one-publication-check)
+
 - [Ask which helper program used the CPU](#113-ask-which-helper-program-used-the-cpu)
 
 - [Measure active work and elapsed time](#112-measure-the-work-and-the-wait-separately)
@@ -80,8 +82,9 @@ The new diagnostic's lower cached elapsed time does not erase the earlier failur
 or admit performance. The playing strategy is unchanged; no new strength claim
 or learning permit follows. Step 113 prepares a helper-call recorder and fixes two
 coverage corner cases. Its 22 focused tests and 166 related tests pass on each
-Python version. The corrected component remains a draft until its fresh full
-checks pass; no real source-validation collector is wired or measured.
+Python version. The corrected component now passes its full checks and is merged in PR #66.
+Step 114 prepares a bounded publication-check diagnostic; no new training or
+performance admission follows.
 
 The compact river description passes full-control admission on both known turn
 games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
@@ -5469,3 +5472,59 @@ typing746files passes on both; lint/format pass. Full checks of the prior heads
 stay labeled as prior-head evidence. The latest corrected head needs fresh full
 checks before merge, so this foundation may remain a published draft at the9AM
 stop. No new long check or experiment is squeezed into the remaining window.
+
+
+## 114. Count the helpers in one publication check
+
+November 14, 2026. PR #66 is now merged. Its corrected code passes3,654 full
+tests on each Python version,166 related tests each, and both GitHub jobs.
+The latest source was checked; earlier results were not substituted.
+
+The next [diagnostic](source-helper-trace.md) asks where helper work occurs in
+one existing check. Before comparing strategies, the project checks that the
+saved evidence matches its Git version. That includes fourteen files and a
+record of what was published. We will run this original check once normally
+and once with observation. The returned publication record must match exactly.
+
+The observer keeps categories and fingerprints, not command contents. A separate
+count of process launches must agree with the recorder, so a cached function
+alias cannot silently escape the accounting. Its intervals include some observer
+work and are not exclusive CPU measurements for a particular process.
+
+This is a prospective plan. No measurement is accepted before the collector's
+exact source, full checks and all six required roles are public. It will not
+train an agent, replay poker decisions or start a reference solver. Its result
+will describe this one publication check, not the complete audit or a stronger
+agent. Codex assistance is recorded; personal time or mastery is not inferred.
+
+The collector now has37 new software tests. Together with the recorder's22,
+59 pass on each Python version. They catch bypassed calls and damaged saved
+evidence before it can be called complete. Full checks and the published
+qualification still precede any real measurement; this is software evidence.
+
+Before measurement, review caught a path mismatch: a relative output path in
+the launch command would not match the absolute path in the saved record. The
+collector now resolves it first, and a regression tests the normal relative
+command form. Each child also saves its actual runtime and hardware context.
+The earlier full checks passed, but the corrected source needs its own fresh
+checks. No real diagnostic has run yet; passing fixtures are not enough to skip
+this gate.
+
+The corrected collector now passes all six required checks:3,693 full tests and
+205 related optional tests on each version, plus both hosted jobs with their
+actual runtimes verified. Its qualification records are published before data.
+The upcoming pair still tests one publication check, not full-audit performance
+or playing strength.
+
+The diagnostic now completes with exactly the same publication record. It sees
+21 helper launches, with every launch matched and every recorded call successful.
+Fourteen are `git show` calls, which read committed evidence; they have the largest
+observed helper interval here. The check itself takes about 0.6 seconds.
+
+This answers a narrow question. It does not explain all the CPU in a full replay
+or prove the complete audit now fits its budget. The next measurement needs to
+count helpers across that larger reader before choosing an optimization. The
+[table and limits](source-helper-trace.md#recorded-result--november-14-2026) keep
+CPU, elapsed time and observer work distinct. The CPU brand query failed, so the
+record reports only the architecture and logical CPU count rather than inventing
+a processor model. No training or playing-strength change occurred.

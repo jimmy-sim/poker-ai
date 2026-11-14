@@ -1,0 +1,194 @@
+# Measure helpers in one source-validation check
+
+Prospective protocol, November 14, 2026. Continues issue #4 after the helper
+recorder in PR #66. Codex assisted. This is a diagnostic, not a training permit.
+
+## Question and scope
+
+Which observed helper-call intervals account for cost inside one existing call
+to `compact_cached.publication.publication(root, own_path, own)`? Use the
+frozen cost-zero own receipt and its fourteen published evidence members,
+without replaying strategies. This is the existing own-publication witness used
+before reference comparison. It verifies source metadata, committed bytes and
+the fetched upstream witness. It excludes tree reconstruction, evaluation,
+strategy replay, native workers and all training. It covers this publication
+check alone, rather than every validation block in the complete audit. It cannot explain
+all CPU recorded in an older full read or establish a whole-audit speedup.
+
+Use the unchanged function, not a substitute validator. Its returned publication dictionary must match exactly, including all input
+hashes, source fingerprint and recorded Git witness. Compare that result with
+and without observation. Historical mathematical sources and outputs,
+failed timing/accuracy/forecast gates, scientific seeds and 7200/900 study caps
+remain untouched. No solver is constructed and no reference strategy is loaded.
+
+## Fixed design before collection
+
+One ordered control/observed pair, one invocation of the named publication check per arm.
+Metadata-only: no random generator or seed selection. Runtime is Python3.11.17
+and NumPy2.4.6. The diagnostic supervisor allows900seconds per complete child
+and1800seconds shared, including startup, imports, qualification, checks, writes
+and teardown. These are separate diagnostic caps, not new study budgets.
+No retry to obtain a preferred timing direction; retain partial/failing outcomes.
+
+Input `results/compact-cached-learning/cost/0/own.json`, SHA256
+`d6493151ef03386f454c7c91825e4e2139ac25e57fb13c6906ed5cbd10cae143`.
+Its target source fingerprint is
+`e45ab633d952d0ceece575358095a05a93558e8943bcc934cd7327a5249bf137`.
+Bind all390 historical measured-source files from the unchanged resource anchor,
+plus the two helper-component files and the new collector/config. Publish the
+exact effective collector source and all six same-source check roles before any
+formal target collection: full base checks and relevant all-extras checks on
+both actual Python/NumPy versions, plus both hosted jobs. Check actual runtime
+markers and raw log hashes, not matrix labels. Qualification occurs outside the
+target interval but remains inside each complete-command cap.
+
+## Coverage and privacy
+
+Record helper categories and fingerprints through the existing recorder.
+Do not normalize or change arguments, returns, bytes, errors or validation
+choices. Unknown forms or failed helpers make collection incomplete. Keep no
+raw Git arguments, input/output contents or environment. Resource snapshots
+belong to synchronous call intervals, not exclusive PID CPU. Entry logging and
+result hashing add observer work inside those intervals.
+
+Use a separate count of CPython subprocess.Popen audit events to detect calls
+that bypass the run hook, including pre-imported run/Popen aliases. Confirm hook
+installation with a private marker. Count events only while the named target is
+active, discard their arguments, and disable counting afterwards. Require one
+event per recorded successful request, no unassigned event, and nonzero complete
+coverage. Review the frozen call route and retain the standard-library API links.
+This is an accounting check, not a security boundary or census of Git's children,
+other interpreters, native launch APIs or machine-wide processes. The target
+runs sequentially in its own child. A future different path needs a new inventory.
+
+## Acceptance and retention
+
+Both target decisions must succeed unchanged, source/input bindings must match
+before/after, and all observed rows must validate their original resource deltas.
+All recorded helpers exit0; audit coverage is complete. Validate mode, PID/unit,
+ordinal, category/hash, command status, input hashes and raw/derived integrity.
+The collector extends the recorder catalog only with `symbolic-ref`, which the
+unchanged publication check uses for `--short HEAD`; this needs its own test
+and fresh source qualification. Other historical source files remain unchanged.
+Tests cover unsupported/aliased/bypassed calls, failed initial observations,
+exceptions, partial persistence, missing qualification, tampered raw counters and
+saved-data reporting. Software tests use temporary Git fixtures only; they must
+not invoke the real target before published qualification.
+
+Persist child starts, streaming events and final/partial ledgers. Supervisor
+records timeout/interruption/exit status and all available raw files without
+reusing a destination. Publish raw complete/partial/failing evidence before any
+posthoc rendering. A read-only report verifies hashes and prints grouped counts,
+elapsed intervals, parent CPU and reaped-child CPU, keeping units/scopes distinct.
+Include the control and observed whole/target intervals so observer work is
+visible. No CPU stack as elapsed time, subtraction-as-idle claim, memory-saving
+claim or extrapolation to the failed900second full audit forecast. Either timing
+direction is descriptive. No production optimization or agent promotion here.
+
+Done means a checked, published source-only diagnostic with honest raw data and
+a readable table, or a retained explicit failure with the next decision. Update
+the work log, issue #4 and learning journal in the same research PR. A further
+optimization or broader collector is a separate question chosen from evidence.
+
+API basis: [Python audit hooks](https://docs.python.org/3.11/library/sys.html#sys.addaudithook)
+and [documented events](https://docs.python.org/3.11/library/audit_events.html).
+Hooks are not a security boundary and can be suppressed; test the marker before
+collection. They persist for the child lifetime and count only while active.
+
+## Implemented software checks
+
+The collector and read-only reporter are implemented. Tiny Git fixtures check
+normal calls and imported check_output aliases, and reject cached run/Popen
+aliases, unsupported forms and missing audit-hook installation. Initial resource
+failures retain their attempted rows and partial ledger. Fictional saved-pair
+fixtures test raw deltas, command/PID/input/source/qualification hashes, missing
+files, caps, streamed starts/finals and reporting. Runtime-marker tests reject
+labels without actual interpreter evidence. These fixtures do not execute the
+real publication target. The audit hooks run in separate fixture interpreters
+so they cannot affect later project tests.
+
+One early fixture saw its own output directory as an untracked Git file; ignoring
+that fixture directory corrected the test assumption. It was not a poker result
+or a real collection failure. All source qualification and publication remain
+required before the first actual pair.
+
+The complete-pair cap includes final verification. The measurement receipt's
+own last write is outside its recorded elapsed interval, as in the reused
+supervisor. No command destination is reused. Posthoc reports must stay outside
+the frozen raw folder. A fresh clone can authenticate recorded source commits,
+qualification hashes and the fourteen-input witness without rerunning poker.
+
+Premeasurement correction: resolve relative run destinations before building
+supervised child commands, so their arguments match absolute provenance. A
+regression covers this CLI form. Each child now captures actual runtime/hardware
+inside its charged command; saved-data verification checks the Python/NumPy
+context. These changes precede any formal pair and require fresh source roles.
+The target, fourteen inputs, ordering and caps are unchanged.
+
+## Source qualification — November 14, 2026
+
+Corrected source459fc0f has all six required passes:3,693 base tests per version,
+205 relevant optional tests per version, and both hosted jobs43578743429.
+Actual Python3.11.17/NumPy2.4.6 and3.12.15/2.5.4 markers, uv selections, exact
+heads and raw logs are authenticated. The fingerprint is
+`7da2c5418021886735047ca504021dc392eb18fc448aeea4738904c92407e815`.
+[Qualification](../results/source-helper-trace/checks.json) and raw logs are
+published before collection. The superseded1f85d32 checks are not substituted.
+
+Each child records actual runtime/hardware inside its command. The operator
+launch record also captures administrative context and Git version before
+invocation; it does not replace prerequisites repeated inside the registered
+clocks. All available raw evidence survives failures. An abrupt kill can leave
+streamed events and a child start without a final ledger; that remains incomplete.
+
+## Recorded result — November 14, 2026
+
+The one fixed control/observed pair completes. Both original publication
+records match exactly across all fourteen input hashes, the source fingerprint
+and recorded Git witness. There are 21 recorded helpers and 21 matched CPython
+process events, one per request, with zero unsupported or unassigned launches.
+All helpers exit 0; raw starts/finals, PID/units/deltas and source/qualification
+bindings validate. The diagnostic constructs no solver, replays no strategies
+and changes no agent.
+
+Complete children take 1.060422500/1.064042709seconds;
+target intervals are0.580941375/
+0.609266167seconds. Shared time is
+2.516450083seconds, within the fixed 1800-second cap; each child is below 900.
+The added observer work and fixed order make this descriptive, not a population
+performance estimate. Raw evidence was published as fbf5eb8 before this report.
+
+| Helper category | Calls | Observed interval (s) | Parent CPU (s) | Reaped-child user / system CPU (s) |
+| --- | ---: | ---: | ---: | ---: |
+| `git merge-base` | 1 | 0.007709 | 0.001162 | 0.003323 / 0.002463 |
+| `git rev-parse` | 3 | 0.021954 | 0.003332 | 0.009940 / 0.006826 |
+| `git show` | 14 | 0.236305 | 0.067982 | 0.093955 / 0.068132 |
+| `git status` | 2 | 0.037998 | 0.002644 | 0.011917 / 0.078161 |
+| `git symbolic-ref` | 1 | 0.009218 | 0.002421 | 0.003483 / 0.002494 |
+
+Fourteen `git show` calls have the largest sum of observed helper intervals in
+this selected check. Those intervals include entry logging and result hashing.
+CPU counters include completed children/descendants and can exceed elapsed time;
+they are not added to wall time or attributed to an exclusive PID.
+
+This block takes about 0.6 seconds under these conditions. It does not identify
+where the older complete read used 21–22 child USER CPU seconds, or establish
+that publication checks are the full audit's bottleneck. The old runs differ in
+source/context and the whole reader's call frequency is not measured here.
+The next justified investigation inventories helper-call frequency and intervals
+inside the complete own reader before choosing an optimization. No such broader
+measurement or production change is part of this milestone.
+
+Runtime: Python 3.11.17 / NumPy 2.4.6; macOS 27.2.1 arm64, 10 logical CPUs. The CPU brand
+query is unavailable (recorded CalledProcessError); only `arm` is reported.
+Both child environments and administrative Git/version context are retained.
+No CPU model, memory saving, full-audit forecast rescue or playing-strength gain
+is inferred. Original failed accuracy, budget and timing outcomes remain.
+
+[Checked table](../results/source-helper-trace/report/helpers.csv),
+[full report](../results/source-helper-trace/report/summary.json),
+[raw manifest](../results/source-helper-trace/raw-manifest.json).
+
+```sh
+.venv/bin/python scripts/collect_source_helpers.py --show --output results/source-helper-trace/pair
+```
