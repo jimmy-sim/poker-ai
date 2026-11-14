@@ -4789,3 +4789,25 @@ checks; no formal collector, actual source-path measurement or poker trajectory.
 PR65 is history-merged effa65c after verified3632pass hosted jobs on both actual
 runtimes; main viewer/43tests0.20s and all390source hashes match, ten user result
 edits/status/index entries/staged+unstaged patches remain exact.
+
+
+### November 14 — finish PR #66 and register a publication-helper diagnostic
+
+Corrected source3a94953 passes full local3,654/64skip/150deselect on both
+versions(819.99/806.67s), relevant optional166each(10.19/8.88s), strict746files,
+lint/format/hooks. Hosted43466368826 passes both actual3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4(918.26/1178.60s). Raw logs/exact heads/runtime guards authenticated.
+History-merged PR66 as6c9d394; main22tests0.10s pass. Guarded FF preserves all
+ten unrelated edits/status/index entries/patches. This completes the software
+component, not measurement qualification for a future collector.
+
+Register fixed publication-check diagnostic before implementation: one original
+compact_cached.publication.publication call per control/observed arm, exact
+returned dictionary and fourteen frozen input members; no replay/training/reference.
+900s complete child/1800s shared separate diagnostic caps; seeds/work/study gates
+unchanged. Add independent process-event census to detect run/Popen aliases;
+ignore event arguments, retain partial failures. Extend command catalog only with
+symbolic-ref used by the existing check. All390 historical scientific files stay
+unchanged; exact collector source and six actual-runtime roles public BEFORE
+collection. Both timing directions descriptive, no full-audit forecast rescue.
+Journal114 explains the bounded question. Codex assisted; actual work dates.
