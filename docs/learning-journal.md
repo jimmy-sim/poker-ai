@@ -5501,3 +5501,11 @@ The collector now has37 new software tests. Together with the recorder's22,
 59 pass on each Python version. They catch bypassed calls and damaged saved
 evidence before it can be called complete. Full checks and the published
 qualification still precede any real measurement; this is software evidence.
+
+Before measurement, review caught a path mismatch: a relative output path in
+the launch command would not match the absolute path in the saved record. The
+collector now resolves it first, and a regression tests the normal relative
+command form. Each child also saves its actual runtime and hardware context.
+The earlier full checks passed, but the corrected source needs its own fresh
+checks. No real diagnostic has run yet; passing fixtures are not enough to skip
+this gate.

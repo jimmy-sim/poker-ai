@@ -4827,3 +4827,17 @@ not in the real validator. No actual publication target or training run yet.
 Prepublication software checks:37new +22component =59pass both311/312
 (0.60/0.72s); full lint/format and strict748files pass. Fresh full local base,
 relevant all-extras and both hosted checks now precede formal collection.
+
+Premeasurement interface review caught a real relative-path mismatch: the
+supervisor recorded the CLI's relative output argument while child provenance
+stored an absolute path. Normalize the run destination before child commands;
+add a regression for the public relative CLI form. Record runtime/hardware in
+each child as well as administrative context, and validate saved Python/NumPy
+markers in the reporter. No formal target pair had run. Earlier1f85d32 software
+checks remain source-bound evidence for that superseded head; none qualify this
+correction. Repeat all required source checks on the corrected head before data.
+No protocol target/input/seed/cap changes and all390 historical sources unchanged.
+
+Corrected prepublication tests:39new plus22component =61pass on actual311/312
+(0.72/0.69s), all lint/format and strict748files pass. Old1f checks fully passed
+but do not qualify this changed collector. Publish code and repeat all six.

@@ -117,3 +117,10 @@ own last write is outside its recorded elapsed interval, as in the reused
 supervisor. No command destination is reused. Posthoc reports must stay outside
 the frozen raw folder. A fresh clone can authenticate recorded source commits,
 qualification hashes and the fourteen-input witness without rerunning poker.
+
+Premeasurement correction: resolve relative run destinations before building
+supervised child commands, so their arguments match absolute provenance. A
+regression covers this CLI form. Each child now captures actual runtime/hardware
+inside its charged command; saved-data verification checks the Python/NumPy
+context. These changes precede any formal pair and require fresh source roles.
+The target, fourteen inputs, ordering and caps are unchanged.

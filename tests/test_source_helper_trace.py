@@ -163,6 +163,8 @@ def test_suppressed_audit_hook_blocks_target(
 
 
 def fixture_contract() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    import numpy
+
     source = dict(git_commit="a" * 40, fingerprint="fixture-only", sha256={})
     c = dict(
         commands=["status"],
@@ -170,7 +172,7 @@ def fixture_contract() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
         historical_anchor="fixture-anchor.json",
         original_source_fingerprint="fixture-only",
         input_sha256={"fixture-own.json": "b" * 64, "fixture-anchor.json": "c" * 64},
-        runtime={},
+        runtime=dict(python=sys.version.split()[0], numpy=numpy.__version__),
         order=["control", "observed"],
         maximum_child_seconds=900,
         maximum_pair_seconds=1800,
@@ -322,6 +324,13 @@ def saved_software_pair(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path
             mode=mode,
             pid=a["pid"],
             source=source,
+            environment=dict(
+                **c["runtime"],
+                platform="software-fixture",
+                cpu="software-fixture",
+                cpu_query_status="fixture",
+                logical_cpus=1,
+            ),
             config_sha256=tool.CONFIG_SHA,
             qualification_sha256=tool.digest(qual),
             witness=witness,
@@ -396,6 +405,7 @@ def test_saved_report_uses_checked_raw_deltas(
         "cap",
         "ledger",
         "missing",
+        "environment",
     ],
 )
 def test_saved_pair_cannot_accept_changed_evidence(
@@ -418,6 +428,8 @@ def test_saved_pair_cannot_accept_changed_evidence(
         m["command"][3] = "control"
     elif kind == "cap":
         m["seconds"] = 901
+    elif kind == "environment":
+        child["environment"]["python"] = "3.12.3"
     elif kind == "ledger":
         (folder / "ledger.json").write_text("tampered")
     else:
@@ -495,3 +507,24 @@ def test_changed_publication_input_rejected_before_collection(
         member.symlink_to(target)
     with pytest.raises(ArithmeticError, match="input changed"):
         tool.contract(tmp_path)
+
+
+def test_relative_output_is_bound_to_absolute_child_command(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    c, _, _ = fixture_contract()
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(tool, "contract", lambda *a: c)
+    commands = []
+
+    def supervisor(command: list[str], output: Path, cap: float) -> dict[str, Any]:
+        commands.append(command)
+        assert Path(command[-1]) == output.resolve() and output.is_absolute()
+        return dict(returncode=0, interrupted=None, seconds=0.01)
+
+    monkeypatch.setattr(tool, "supervise", supervisor)
+    monkeypatch.setattr(tool, "verify_pair", lambda *a: None)
+    assert tool.pair(tmp_path, Path("results/runs/relative")) == 0
+    assert [c[-1] for c in commands] == [
+        str(tmp_path / "results/runs/relative" / m) for m in c["order"]
+    ]

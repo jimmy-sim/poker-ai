@@ -259,12 +259,15 @@ def child(root: Path, mode: str, output: Path, origin: float) -> int:
         checked(root, source)
         import numpy
 
+        from poker_ai.reproducibility import runtime_environment
+
         if (
             sys.version.split()[0] != c["runtime"]["python"]
             or numpy.__version__ != c["runtime"]["numpy"]
         ):
             raise ArithmeticError("original qualified runtime required")
         qualification = digest(root / FOLDER / "checks.json")
+        saved["environment"] = runtime_environment()
         saved.update(
             source=source, config_sha256=CONFIG_SHA, qualification_sha256=qualification
         )
@@ -344,6 +347,15 @@ def verify_pair(root: Path, output: Path) -> dict[str, Any]:
         ):
             raise ArithmeticError("complete child/raw measurement binding changed")
         row = json.loads((folder / "child.json").read_text())
+        environment = row["environment"]
+        if (
+            environment["python"] != c["runtime"]["python"]
+            or environment["numpy"] != c["runtime"]["numpy"]
+            or not {"platform", "cpu", "cpu_query_status", "logical_cpus"}.issubset(
+                environment
+            )
+        ):
+            raise ArithmeticError("recorded runtime/hardware context changed")
         execution_root = Path(row["execution_root"])
         execution_output = Path(row["execution_output"])
         expected_command = [
@@ -418,6 +430,7 @@ def verify_pair(root: Path, output: Path) -> dict[str, Any]:
 
 def pair(root: Path, output: Path) -> int:
     started = time.perf_counter()
+    output = output.resolve()
     if (
         output.exists()
         or output.is_symlink()
@@ -505,6 +518,7 @@ def report(root: Path, output: Path, destination: Path | None = None) -> dict[st
         helpers=len(checked_pair["ledger"]["rows"]),
         complete_children=checked_pair["pair"]["measurements"],
         target_intervals=[r["target_observation"] for r in checked_pair["children"]],
+        environments=[r["environment"] for r in checked_pair["children"]],
         input_sha256={
             str(p.relative_to(output)): digest(p)
             for p in sorted(output.rglob("*"))
