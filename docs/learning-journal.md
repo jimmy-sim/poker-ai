@@ -1,13 +1,27 @@
 # Learning journal: building the poker project
 
-Start here if the other project documents feel too technical. This guide follows
-the order in which the project was built and explains why each part exists.
-Examples marked **Example** are made up to explain an idea. Recorded results link
-to the reports that support them.
+This journal follows the code, ideas, experiments, and results as the project
+developed. It includes Codex-assisted explanations and project history. The first
+version was compiled on November 4, 2026, looking back over earlier work, with
+Codex assistance in implementation and drafting. Specific assistance notes remain
+in the entries.
 
-The first version was compiled on November 4, 2026, looking back over the work
-already completed. Codex assisted with implementation and drafting. The personal
-notes section is for your own questions and explanations as you work through it.
+Examples marked **Example** are invented to explain a concept. Actual reported
+terminal practice and questions are recorded under
+[personal notes](#your-own-learning-notes). An unanswered exercise is a prompt,
+not evidence that it was completed or understood.
+
+## Start here
+
+- [Current research](#where-the-project-stands)
+- [Cards and mechanics](#2-give-every-card-an-unambiguous-identity)
+- [How strategies learn](#6-learn-decisions-in-tiny-poker-games-first)
+- [Why evaluation needs care](#9-play-matches-without-mistaking-luck-for-skill)
+- [Personal practice and questions](#your-own-learning-notes)
+- [Small glossary](#a-small-glossary) and [terminal exercises](#things-you-can-try-on-this-mac)
+
+<details>
+<summary>Research topics and earlier entries</summary>
 
 ## Quick navigation
 
@@ -60,197 +74,37 @@ notes section is for your own questions and explanations as you work through it.
 - [How the new time gate works](#46-keep-the-time-budget-separate-from-playing-strength--november-10)
 - [Your own reported terminal practice](#your-own-learning-notes)
 
+
+</details>
+
 ## Where the project stands
 
-A [November13 verification correction](ci-runtime-correction.md) found nine
-GitHub receipt rows with the wrong Python patch label: they ran3.12.3, not
-3.12.15. The original logs/results remain, but those labels cannot qualify the
-exact-version gate. CI now pins and checks the actual runtime; fresh same-head
-checks precede further profiling. Numerical producer results are a separate
-question, and no new agent is promoted.
+The simulator, learning algorithms, and evaluation tools work. The continuing
+research asks how to improve the Hold'em strategies through controlled,
+reproducible comparisons. Competitive full-game strength has not been established.
 
-Step 107 completes the integrated cache checks and all six cost runs. Results
-agree, but its full audit-budget forecast still fails: 933.89 seconds against
-900. The own-work estimate passes at 4,046.17 against 7,200. The proposed new
-learning treatment remains unrun. Step 110 now measures the complete audit:
-the ordinary copy takes 406.49 seconds and the profiled copy 573.87, with identical
-checked results. Step 111 now retains a failed whole-command timing comparison: 481.84 seconds
-uncached versus 595.65 cached, despite identical checked results and less parent
-CPU time. Step 112 now retains a complete resource trace with matching results. It records
-substantial CPU work in child programs, which the parent CPU column omitted.
-The new diagnostic's lower cached elapsed time does not erase the earlier failure
-or admit performance. The playing strategy is unchanged; no new strength claim
-or learning permit follows. Step 113 prepares a helper-call recorder and fixes two
-coverage corner cases. Its 22 focused tests and 166 related tests pass on each
-Python version. The corrected component now passes its full checks and is merged in PR #66.
-Step 114 prepares a bounded publication-check diagnostic; no new training or
-performance admission follows.
+The latest compact sampled representation misses the harder known game's median
+accuracy target: **2.390% of the initial pot against 1%**. The proposed training
+follow-up remains unrun because its complete independent-audit forecast is
+**933.89 seconds against 900**. These are different tests: software correctness,
+restricted-game accuracy, and compute cost each need their own evidence.
 
-The compact river description passes full-control admission on both known turn
-games in [PR #55](https://github.com/jimmy-sim/poker-ai/pull/55). Step100 explains
-its saved strategies, independent check, smaller strategy tables and larger key
-strings. The default agent and previous sampled results below remain unchanged.
-The new fixed-work comparison
-in [PR #56](https://github.com/jimmy-sim/poker-ai/pull/56) now fails the harder
-game's median accuracy gate: 2.390% pot versus the fixed 1% limit. Step101 explains
-all controls, the independent checks and what the failure means. Step 102
-now diagnoses the saved failure while holding each opponent fixed. Step 103
-traces that benefit to inspectable turn and river decisions.
-Step 104 now completes the proposed compact training remedy's software proof and
-cost checks, but compute admission fails. The actual new training comparison
-has not run. Step 105 completes the full replay profile: computed results match
-exactly, and repeated recall validation is the largest exclusive Python cost.
-The outer OS recorder remains partially failed. Step 106 tests reuse of a proof
-for unchanged structure. The full archive now replays identically in 188.28
-seconds without reuse and 138.15 with reuse; this is a software result from one
-ordered pair, not stronger poker play.
+Recent explanations:
 
-November 11 update: issue #4 has a measured improvement in the harder known spot.
-Training against finer own opponents reduces mean exploitability from 2.173%
-for ordinary coarse training to 0.597% of the initial pot. Lower is better.
-Both spots meet the absolute accuracy limits, and the independent audit passes.
-The overall preset superiority gate still fails: the already-near-zero low spot
-has zero median improvement against its paired control. The default stays
-unchanged. Step94 explains the complete result, including the seed that worsens.
-The earlier sampling candidate's 3.35% versus 2.17% failure remains in the record.
+- [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
+  compact candidate's sampled result and all controls.
+- [Step 107](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline):
+  why faster checks have not yet admitted the next training comparison.
+- [Step 109](#109-check-which-interpreter-actually-ran): the correction to historical
+  interpreter labels, preserving the original records.
+- [Steps 112–114](#112-measure-the-work-and-the-wait-separately): process accounting
+  and the bounded helper-call investigation.
 
-Steps 69–75 explain that study. Steps 77–79 trace the saved strategies down to
-individual hands and add a terminal browser. Steps 80–81 show how changing later
-river choices can change the value of calling on the turn. The next question is
-which river distinctions or training gaps produce those later choices. Steps
-82–83 find that finer static range probabilities and ordered combo outcomes add
-no new groups in this known game. The next question is whether training against
-an own opponent with more detailed own-card/public-board information helps.
-Step 84 builds and tests the mixed-information game software. Step 85 fixes the
-learning comparison and implements its capture and replay checks. Step86 connects
-the complete command, worker, archive, report and admission checks. Its wider
-source checks and published proof/forecasts are pending; real learning is not
-admitted. Step87 catches and corrects a coverage-tolerance mismatch before that
-proof or any new real trajectory. Step88 makes interrupted-run records distinguish
-confirmed work from unknown progress. Step89 completes the full fictional
-rehearsal and independent audit; fixed cost forecasts are next. None of these
-results establishes competitive general Hold'em strength. Step90 completes the
-fixed forecast; step91 records the first actual command's rejected permit before
-training and fixes its persistence bug. The corrected source needs fresh required
-validation before real learning can proceed. Steps92–93 complete those checks,
-the repeated proof/costs/forecast and corrected published permit. Step94 completes
-the actual learning run and independent audit while retaining the failed overall
-superiority condition.
-
-Step 95 completes the saved-policy diagnosis without training again. Two turn
-decisions account for most of the unfavorable seed's responding-seat 1 gap,
-but their values include later river replies. Comparing against the same saved
-opponents shows why better matchup results can coexist with worse vulnerability
-to an optimal reply. The new terminal browser lets you inspect every seed,
-method and seat.
-
-Step 96 tests those continuations while keeping the turn and opponent fixed.
-For the two important calls in the unfavorable saved matchup, even the best
-river play within the current groups still favors folding. Finer legal river
-information flips both to calling. This explains a concrete weakness; it does
-not train a remedy or establish general Hold'em strength.
-
-Step 97 completes the range-weight check after both GitHub jobs pass. Changing
-the opponent's hand weights explains some river conflicts, but others persist
-because the saved opponent's later responses differ. This narrows the problem;
-it does not train a remedy. The [terminal exercise](terminal-river-lab.md) uses
-the completed step 96 report, and step 97 adds a range-weight browser and plots.
-
-Step 98 finds a useful missing distinction: which alternative hands public
-cards remove from our own range. In the previously weak case it reduces local
-conflicting groups from 23 to four. This is checked saved-data diagnosis; it
-has not trained a stronger feature or changed the agent.
-
-Step 99 defines and tests a compact candidate from that finding: summarize which
-kinds of hands our public range can still contain, then store the binned summary
-in one 30-bit word. Both full local suites pass 2,914 tests. No compression or
-learning result is claimed for the new candidate.
-
-We have a working poker simulator, learning algorithms, and tools for checking
-their results. The project has found useful bugs and measured weaknesses. It has
-not established a competitive Hold'em agent.
-
-Here, “AI” mainly refers to algorithms that learn probabilities for poker actions
-and store them in strategy tables. The chapters below explain how that works.
-
-The earlier study, issue #3, tested the retained ordinary learning procedure on
-four newly selected small games. All four met the rules fixed before their
-outcomes were measured. This is progress in validating the method; each game
-received its own training. The earlier river-integration result remains mixed,
-and the ordinary default stays in place.
-
-On November 6, issue #4 adds tested, optional ways to describe the public board.
-One removes arbitrary suit names; another groups boards by coarse features.
-The completed fixed-work comparison found that texture saves many strategy rows
-but loses too much accuracy on the deeper game. Its preset gate fails, so no
-global-agent default changes. You can inspect features with the terminal command
-in step 15 and read the result in step 16.
-
-The follow-up finds concrete decisions the old representation merges and tests
-one category-based replacement. It also fails the deeper-game accuracy limit.
-Step 17 explains the example, result and why the larger run stops there.
-Step 18 completes a best-response diagnosis: the saved candidate is nearly
-stable within its compressed game but remains vulnerable to exact information.
-Step 19 finds missing relative-strength, blocker and action-conditioned range
-distinctions. It completes a diagnosis, without training a replacement.
-Step 20 defines the next candidate and its tests. Step 21 finds a measured
-improvement: range masses pass the full-control gate on both known games.
-Step 22 completes the sampled comparison: the new description improves on
-category but fails the deeper-game accuracy limits. Step 23 diagnoses the saved
-failure: most of its exploitable value appears when an opponent can use finer
-information. That value depends on the saved strategies; it is not a fixed floor.
-Step 24 swaps fixed turn/river policies and finds that the saved river continuation
-accounts for most of the deeper-game gap change, with interaction between streets.
-Step 25 separates the training rules and checks a shared updater before the next
-learning comparison. It does not yet identify the cause of the river weakness.
-Step 26 checks the compute cost before the larger controlled learning study.
-Step 27 tests an opt-in policy-row cache against the frozen trainer and profiles
-it again without changing the learning rules.
-Step 28 tests an immutable game-node cache against every original node/edge,
-then checks exact training trajectories before profiling again.
-Step 29 measures independent cells across CPU processes, including startup and
-resource costs, without changing a cell's learning rules.
-Step 30 verifies checkpoint/scoring behavior and measures the still-missing
-pipeline costs on old saved policies.
-Step 31 completes the original controlled learning comparison: 140 runs and 840
-checkpoints, with zero own replay error and independent native checks. Clipping
-and averaging interact; improving one gap can worsen another. This diagnoses
-training differences without selecting a replacement or passing a fresh-game gate.
-No remedy, default change or fresh/global admission follows automatically.
-Step 32 builds the saved-policy follow-up: account for decisions inside the
-compressed game, then compare all four training modes against the same opponents.
-Its complete own calculation and independent audit pass. The larger within-game
-weakness persists against fixed opponents, especially for seat 1, and appears with
-exact information too. It is not explained by compression or changed opponents alone.
-Step 33 completes the averaging-history investigation. Original learning paths
-match exactly, but the sampled current policies remain vulnerable. Late averages
-do not supply a general repair; improving against old opponents and resisting a
-best response are different outcomes. All own and independent checks pass.
-Step 34 completes the zero-weight fallback test while keeping learned rows fixed.
-All full controls are unchanged. The sampled whole-average fill has a small
-effect in the motivating case and leaves the main weakness unresolved. Both
-own and independent checks pass; no filled strategy is deployed.
-
-Step 35 validates frozen-pass batch training but retains its failed compute
-forecast; no long batch comparison was admitted. Step 36 profiles 48 short
-copies with exact saved-state matches. It identifies measurable check overhead
-without changing the learner or claiming stronger play.
-
-Step37 completes the optional array-check dispatch change: checked training
-paths stay exact and a new complete forecast fits; the original failure stays.
-Step38 completes72 fixed-work batch paths and480 independently checked profiles.
-The main signed configuration improves on average in one known game, but a seed
-worsens and clipped river behavior remains unresolved. No default is changed.
-
-You can read this in three sittings:
-
-- **Steps 1–5:** How the program represents cards and runs a legal hand.
-- **Steps 6–9:** How it learns decisions and how we judge those decisions.
-- **Steps 10–34:** What the extensions and recent experiments taught us.
-
-The [work log](work-log.md) has dates and commits. This journal explains the
-ideas. Some older reports say hosted CI had not run: that describes their original
-checkpoint. The repository now has [hosted checks](https://github.com/jimmy-sim/poker-ai/actions).
+[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) and the
+[work log](work-log.md) track the current decision. The chapters below preserve
+what was known at each point; an earlier entry's “next step” may already have
+been completed in a later chapter. Here, “AI” usually means algorithms that
+learn action probabilities and store them in strategy tables.
 
 ## 1. Make the work repeatable
 
@@ -5528,3 +5382,30 @@ count helpers across that larger reader before choosing an optimization. The
 CPU, elapsed time and observer work distinct. The CPU brand query failed, so the
 record reports only the architecture and logical CPU count rather than inventing
 a processor model. No training or playing-strength change occurred.
+
+
+## 115. Make the project easier to read
+
+November 14, 2026. The README now starts with the project, working components,
+representative results, setup, and research navigation. Detailed methods stay in
+the existing reports; generated tables and their markers remain unchanged.
+
+The introductions distinguish explanatory material from actual personal practice.
+Specific historical Codex credits and reported questions/exercises are preserved.
+Interview drafts describe project capabilities when personal implementation is
+unverified. A goal such as improving the model can be stated in first person; a
+validation count describes the project without assigning manual authorship.
+
+This is editorial work requested in issue #68. Algorithms, research outcomes,
+protocols, acceptance rules, dependencies, and permissions are unchanged. The
+existing GitHub workflow and documentation checks still apply.
+
+Codex assisted with these editorial changes and checks. Personal practice notes
+remain unchanged.
+
+Editorial checks preserve all four generated blocks, the original diagram,
+historical journal chapters and personal notes, and the original phase contracts.
+Relative paths and heading links pass; GitHub-rendered Markdown retains the
+tables and collapsible sections. All five linked figures were inspected without
+changes. The public-board terminal example passes. The saved-decision browser
+requires a published branch, so its smoke check follows publication.

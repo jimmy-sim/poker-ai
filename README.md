@@ -2,260 +2,28 @@
 
 [![CI](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml)
 
-Follow the [work log](docs/work-log.md),
-[open research issues](https://github.com/jimmy-sim/poker-ai/issues), and
-[pull requests](https://github.com/jimmy-sim/poker-ai/pulls) for current progress.
+I'm developing poker-ai as an ongoing project in poker simulation and strategy
+learning. I want to make the Hold'em model stronger through reproducible
+experiments and understand the decisions it learns.
 
-New to the project? Start with the [plain-English learning journal](docs/learning-journal.md)
-for the ideas, examples, results, and lessons in the order they were built.
+The project covers the path from cards and betting rules to learned strategies,
+independent comparisons, and evaluation. **Competitive full-game Hold'em strength
+has not been established.** The working agents are research prototypes; most
+strategy experiments use small, explicitly specified games.
 
-A poker AI research project built from first principles, emphasizing expected
-value, variance, statistical testing, and game-theoretic reasoning. Implementations
-will be validated independently before any performance claims are published.
+## What currently works
 
-The foundation includes card IDs, bitmasks, immutable decks, a
-[five-card evaluator](docs/phase1-five-card.md), and
-[six/seven-card best-five selection](docs/phase1-best-five.md). See the
-[encoding contract and full phase acceptance gate](docs/phase1-cards.md).
-Profile-guided direct evaluation and [heads-up equity](docs/phase1-equity.md)
-are implemented, together with the [2–6-seat Hold’em engine](docs/phase1-engine.md).
-[Phase 1 verification](docs/phase1-verification.md) and
-[Phase 2 exact toy-game solvers](docs/phase2-solvers.md) are complete.
-[Phase 3 bounded sampled-CFR agents](docs/phase3-verification.md) are implemented
-and trained. [Phase 3.5 solver validation](docs/solver_validation.md) is
-[complete](docs/phase3.5-verification.md) and has measured substantial postflop
-strategy gaps. [Phase 4 evaluation](docs/phase4-verification.md) is complete,
-including duplicate matches and a small public API pilot.
-[Phase 5 Bayesian and risk extensions](docs/phase5-verification.md) are complete
-within their declared scope. A new [own postflop learning diagnostic](docs/holdem-strength-v2.md)
-identifies public-card aliasing, but its held-out performance gate narrowly fails.
-A later [fresh procedure check](docs/fresh-validation.md) passes all four newly
-selected restricted games after freezing the method and inputs in advance.
-No competitive playing-strength result has been established.
-All gameplay is restricted to simulation and permitted public bot benchmarks.
+| Component | What it does |
+| --- | --- |
+| [Poker mechanics](docs/phase1-verification.md) | Card/deck representations, 5–7-card evaluation, exact and Monte Carlo equity, and an immutable 2–6-seat Hold'em engine with side pots. |
+| [Strategy learning](docs/phase3-training.md) | CFR variants for Kuhn and Leduc, sampled CFR for heads-up Hold'em, card/action abstractions, and resumable checkpoints. |
+| [Independent comparisons](docs/solver_validation.md) | OpenSpiel checks on exact toy games and fully specified postflop subgames. |
+| [Evaluation](docs/phase4-evaluation.md) | Duplicate-deal matches against fixed opponents, uncertainty estimates, and a recorded public API pilot. |
+| [Quantitative extensions](docs/phase5-extensions.md) | Bayesian opponent models in toy games and conditional bankroll/risk analysis. |
 
-**Latest research — November 12:** the compact blocker-aware description fails
-its fixed-work sampled accuracy gate. At 10 million charged node visits, final
-linear averages over all three declared seeds give:
+<a id="architecture-and-current-strength-work"></a>
 
-| Known game | Exact / raw-public median (% pot) | Compact median (% pot) | Compact worst (% pot) |
-|---|---:|---:|---:|
-| Low | <0.000001 | <0.000001 | <0.000001 |
-| Medium | 0.292 | 2.390 | 2.495 |
-
-The medium median exceeds the fixed 1% limit; the worst seed being below 2.5%
-does not rescue it. The previous range-aware control's medium median/worst are
-2.793%/3.349% in this same comparison. Two paired seeds improve and one worsens.
-All 36 paths, 108 states and 324 readouts are retained; archive replay is exact
-and all 324 independent OpenSpiel value/BOTH-BR checks pass within 1.28e-13 chips.
-Own/audit complete commands take 735.62/41.16 seconds under unchanged caps.
-**No default, fresh or global promotion.** These are known restricted games,
-not competitive Hold'em strength. [Method and all limits](docs/compact-sampled.md),
-[all controls and seeds](results/compact-sampled/real/tables.md), and
-[journal101](docs/learning-journal.md#101-test-the-smaller-description-at-the-same-learning-work)
-explain the failed gate and next question.
-
-![All six descriptions at fixed work; linear median and three-seed range, not confidence intervals](results/compact-sampled/real/learning-log.png)
-
-The [frozen-opponent diagnosis](docs/compact-fixed-opponents.md) now explains
-part of that failure. Harder-spot compact sampled **mean** exploitability is
-2.037% pot: 0.117 points within the existing groups plus 1.920 points available
-to a responder with finer legal information. That information benefit depends
-on the saved opponent; the full-control opponent largely hides it. All 144
-joint profiles and 288 player responses pass independent scalar checks within
-1.07e-13 chips. No new training or admission.
-[Journal step 102](docs/learning-journal.md#102-keep-the-opponent-fixed-when-explaining-the-remaining-weakness)
-explains the four combinations, plots and limits.
-
-The [saved-decision trace](docs/compact-information-trace.md) now follows that
-benefit to individual hands. All three compact sampled seeds point to the same
-turn call with 9c 9d; its value depends on finer future decisions, rather than
-a collision at that turn row. Browse the published data with
-`.venv/bin/python scripts/inspect_compact_information.py --interactive`.
-[Journal step 103](docs/learning-journal.md#103-find-the-concrete-decisions-behind-the-information-benefit)
-explains the negative values, reach weights and attacker/defender roles.
-
-The next [compact training-remedy pipeline](docs/compact-own-opponent-learning.md)
-passes its complete software rehearsal and all fixed numerical cost audits, but
-**compute admission fails**: its guarded independent forecast is
-1210.21 seconds against 900. No new compact/finer-opponent
-training was started. [Journal 104](docs/learning-journal.md#104-test-whether-a-finer-own-training-opponent-helps-the-compact-learner)
-explains the decision; full replay profiling comes before optimization.
-
-The [full replay profile](docs/compact-replay-profile.md) now identifies repeated
-perfect-recall validation as the largest exclusive Python cost in this one
-complete replay. All computed summaries and policy/book bytes match before and
-after instrumentation. [Journal 105](docs/learning-journal.md#105-measure-why-verification-is-expensive-before-optimizing-it)
-explains the 2,832 checks, the partial outer OS-resource capture and why a cache
-must detect changed structure. This is verification software, not new training.
-
-**Verification-record correction — November13:** nine hosted Python3.12
-receipt rows labeled3.12.15 actually ran3.12.3. Those exact-version labels do
-not qualify the stated patch gate. Original logs/results remain; no new agent
-is admitted. [Audit, scope and corrected CI](docs/ci-runtime-correction.md).
-
-The [complete cached pipeline](docs/compact-cached-pipeline.md#recorded-compute-decision--november-13-2026)
-now preserves all policy/book values and passes independent numerical checks.
-Its new guarded audit estimate still fails: **933.89 seconds against 900**
-(own-work estimate 4,046.17 against 7,200 passes). All three fixed own/native
-costs and the full forecast are retained. No new training or stronger agent
-follows; the next step profiles the complete audit path.
-
-The[complete audit diagnosis](docs/compact-native-wall-profile.md) now has a
-correctly version-checked elapsed profile:406.49sordinary/573.87sprofiled, all
-432scores/1,152conditions and computed replays identical. Allfunction/caller
-records and a readable cost chart are saved. Repeated card-normalization and
-ranking during tree reconstruction are the next optimization question. The
-earlier CPU-timer timeout and incorrect historical patch labels stay visible.
-This is verification-software evidence; no new Hold'em training was run.
-
-A [card-only reuse test](docs/card-computation-cache.md) preserves all checked
-answers but fails its registered whole-command timing gate:481.84→595.65seconds,
-despite lower parent CPU. The subsequent [resource diagnostic](docs/card-audit-clock-trace.md)
-keeps that failure and records CPU in child programs separately. Its551.62/527.12s
-pair is descriptive under added observation/idle-prevention conditions; it does
-not rescue the budget, promote the cache or establish a stronger agent.
-[Journal112](docs/learning-journal.md#112-measure-the-work-and-the-wait-separately)
-explains active work, elapsed time and the next accounting question.
-
-**Previous full-control research — November 12:** the compact blocker-aware description passes
-its fixed **full-control admission** on both known turn games. At4,096 full
-CFR+ iterations, linear-average policies give:
-
-| Game | Exact exploitability (% pot) | Compact candidate (% pot) | Candidate / raw-public rows |
-|---|---:|---:|---:|
-| Low |0.0000024545|0.0000025771|130 /364 (35.7%)|
-| Medium |0.00018229|0.00017718|1,770 /3,336 (53.1%)|
-
-All72 saved policies pass own replay and independent OpenSpiel value/BOTH-BR
-checks (maximum error1.35e-13 chips). Own/audit complete commands take50.7/25.0s
-inside unchanged900/900s caps. **Key strings are larger**, so fewer rows do not
-establish whole-memory savings. These are two known, separately trained games;
-this full-control result alone does not establish sampled learning or fresh/global
-strength, and the default agent remains unchanged.
-[Full method and all controls](docs/compact-full-control.md),
-[complete tables](results/compact-full-control/report/tables.md), and
-[journal100](docs/learning-journal.md#100-check-the-test-before-trusting-the-new-description)
-explain the result.
-
-![Full-control known-game learning; colors are representations, lower is better](results/compact-full-control/report/full-controls.png)
-
-**Previous sampled research — November 11:** training the unchanged coarse learner against
-finer **own** opponents improves the harder known turn spot. At 10 million
-charged node visits, final linear averages over all three fixed seeds give:
-
-| Method | Mean exact exploitability (% initial pot; lower is better) |
-| --- | ---: |
-| Ordinary coarse self-play | 2.173 |
-| Paired coarse control | 3.028 |
-| Finer-opponent treatment | 0.597 |
-| Ordinary fine self-play | 0.383 |
-
-The treatment's medium-spot median/worst are 0.553%/1.036%, within the original
-1%/2.5% limits. Two seeds improve and one worsens. **The overall predeclared
-superiority gate still fails:** median improvement in the already-near-zero low
-spot is zero, rather than strictly positive. No agent default changes. All 432
-policies and 1,152 fixed conditions agree with OpenSpiel within 1.85e-13 chips;
-reference outputs are comparison-only. These are two separately trained known
-games, not evidence of general Hold'em strength. [Full method, all seeds and
-limits](docs/own-opponent-learning.md), [all-control heatmaps](results/opponent-information/report/fixed-gain.png)
-and learning-journal step94 explain the result.
-
-A [complete saved-river diagnosis](docs/river-range-reweighting.md) finds that
-betting-conditioned opponent ranges explain some shared-group action conflicts,
-while others persist because later opponent responses differ. All 24 saved
-profiles and both own continuations are retained; this is a local diagnostic,
-not a trained improvement. [All-case plots and tables](results/river-range-report/tables.md)
-and learning-journal step97 explain the distinction.
-
-The [two-sided blocker follow-up](docs/two-sided-blockers.md) finds that public
-removal from our own alternative range separates 19 of 23 conflicting groups in
-the previously weak river case (four remain). Local disagreement cost falls
-0.386739→0.046621 chips per weighted decision. All 24 profiles/960 grouped panels
-are retained; this is a saved-data diagnostic, not a trained strength gain.
-[Journal step 98](docs/learning-journal.md#98-ask-which-hands-each-player-can-still-represent) and the [terminal exercise](docs/terminal-two-sided-lab.md) explain how to
-browse the masks and remaining conflicts.
-
-The [compact candidate definition](docs/compact-public-range.md) pools public
-own-range removal and hand categories into one30-bit river word, appended to the
-existing range-aware key. Its own full-control measurement above follows the
-prospective gates; it does not inherit the preceding diagnostic's conflict count.
-Its separately specified fixed-work sampled comparison now fails the median
-accuracy gate reported above.
-
-![Known low/medium spots: all four methods and three fixed seeds; no global admission](results/opponent-information/report/learning.png)
-
-**Previous research — November 10:** the complete private-deal stratification
-experiment passes independent numerical validation but fails its primary
-accuracy target. At10million visited nodes in the known deeper compressed game
-(B4, signed regrets, linear average; all three fixed seeds):
-
-| Method | Mean exact exploitability (% initial pot; lower is better) |
-| --- | ---: |
-| Original B1 control |4.354032 |
-| Existing IID B4 |2.172684 |
-| New stratified B4 |3.350775 |
-
-The new median3.245725% and worst4.494858% exceed the unchanged1%/2.5% limits.
-Every seed and control is retained; no agent default changes. All432 new policy
-readouts and1,152 fixed conditions agree with OpenSpiel within2.07e-13chips.
-These are two known small games, not general Hold'em playing strength.
-[Methods, complete outcome and limits](docs/private-prefix-pipeline.md),
-[all-case heatmaps](results/private-prefix/study/report/linear_average.png),
-and learning-journal steps69–75 explain the result.
-
-The [saved-decision report](docs/private-prefix-decisions.md) follows the failed
-result down to individual hands, retaining all three seeds and both controls.
-Browse the checked report without training with
-`.venv/bin/python scripts/inspect_private_prefix_decisions.py --interactive`.
-Use n/p for groups, s for seeds, o for methods, t for the responding seat and q
-to quit. Learning-journal steps 77–79 explain what the numbers mean.
-
-A [controlled continuation check](docs/private-prefix-continuations.md) shows
-how changing later river choices can change the value of a turn call against
-a fixed saved opponent. The [nine-snapshot figure](results/private-prefix/continuations-figure/call-versus-fold.png)
-and learning-journal steps 80–81 explain this saved-position result; no new
-agent was trained in that diagnostic.
-
-The [static river-refinement check](docs/river-refinement-diagnosis.md) keeps all
-29,808 river-row records across those nine snapshots and both seats. Exact
-static range probabilities and ordered combo outcomes add **zero new groups**
-and leave every measured local sharing cost unchanged. Both runtimes reproduce
-all twelve numeric files byte for byte. This rules out those two refinements as
-a repair for this known test, without claiming a training improvement. Journal
-steps 82–83 explain the result; the original failed strength gate remains.
-
-The original batch source's compute forecast fails **7201.49s vs7200s** and stays
-unadmitted. A profiled array-dispatch change preserves all checked paths and
-passes the same formula at6953.92s. The [completed fixed-work study](docs/reduced-batch-study.md)
-runs72 paths and independently checks480 profiles, with maximum scalar/root error
-1.57e-13chips. Its primary B4 mean improves4.35%→2.17% of initial pot in one
-known compressed game, but one seed worsens and the clipped result remains mixed.
-The global agent/default is unchanged. See learning-journal steps35–38; all earlier
-failures and every seed remain in the record.
-
-A [saved-current diagnosis](docs/batch-current-diagnosis.md) now independently
-checks216 latest policies and1,728 fixed-opponent targets within2.07e-13chips.
-Latest policies remain far more self-exploitable in the harder known game, yet
-often do better against the unchanged original opponents. Those are different
-tests; neither establishes competitive full-game strength. Journal step39
-explains the distinction and links the plots and offline replay command.
-
-You can now [browse saved action tables in Terminal](docs/batch-strategy-viewer.md).
-The [matched-update study](docs/matched-update-batches.md) now completes its
-prescribed24-context/48-target comparison and independent audit. The earlier
-[toy-only archive proof](docs/matched-prefix-capture.md) remains software evidence.
-Journal steps40–68 explain the commands, gates, failures and completed result.
-
-The completed [two-axis tables and terminal browser](docs/matched-update-viewer.md)
-retain every seed/readout and actual work/update count. Both strategies are our
-own; the independent solver checks scalar calculations. At equal updates B1
-uses much less work, so this does not isolate a pure variance effect or establish
-a stronger default. [Complete comparison table](results/matched-update-viewer/report/tables.md).
-
-![Both compute axes, linear average](results/matched-update-viewer/report/linear_average.png)
-
-## Architecture and current strength work
+## Architecture
 
 ```mermaid
 flowchart LR
@@ -270,287 +38,129 @@ flowchart LR
     Evaluation --> Audit
 ```
 
-The new bounded study uses four turn-river games, two physical combos per seat,
-three fixed seeds and all four weighting/initialization controls. Preserving the
-public board lowers median restricted exploitability from **16.43% to 0.30% of
-the pot** in one medium-SPR development game and **18.72% to 1.0153%** in the
-medium-SPR held-out game. The latter misses the preset **1%** median target.
-These are separate per-game self-play learners, not a measured upgrade to the
-global Hold'em agent. The preregistered global comparison has not run.
-
-All **378 frozen policy records** pass independent value/exploitability checks.
-`make report-holdem-learning` replays the committed policies and regenerates
-[tables](results/holdem-learning/report/tables.md) and plots without retraining.
-`make validate-holdem-learning` repeats the fixed experiment in ignored staging;
-it returns nonzero if the performance gate fails. See [methods and retained
-failures](docs/holdem-strength-v2.md), the [technical brief](docs/research-brief.pdf),
-and [verified resume claims and interview answers](docs/interview-guide.md).
-
-![Own postflop learning, all fixed seeds](results/holdem-learning/report/learning-curves.png)
-
-The [river-integration follow-up](docs/river-fixed-work.md) completes all four
-known development games at matched work thresholds. At 10 million node-work,
-integration lowers the medium-IP median from **0.9433% to 0.7109% of the pot**,
-but raises medium-OOP from **0.2463% to 0.7612%**; its final median is higher in
-three of four games. Both methods pass the declared final development limits,
-and all **80 frozen policies** pass independent value/best-response checks.
-This mixed result changes no global-agent default or playing-strength claim.
-`make report-river-integration` replays the [tables and plots](results/river-integration/report/tables.md)
-offline; `make study-river-integration` reproduces the full bounded study.
-
-The [fresh validation study](docs/fresh-validation.md) retains ordinary sampling
-and passes its final accuracy/average-coverage limits on **4/4** preregistered
-cases at 10 million node-work. The closest case has median exploitability
-**0.9670% of the pot**, versus a fixed **1%** median limit. All **44 frozen
-strategies** pass independent value/best-response checks. Each case receives
-separate training on tiny explicit ranges; this does not establish a global
-upgrade or erase the older failed experiment. Initial-only coverage remains
-visible. At frozen revision `d587b81`, `make report-fresh-games` replays the
-[tables and plots](results/fresh-validation/report/tables.md);
-`make validate-fresh-games` reproduces the frozen study in ignored staging.
-Later source changes intentionally require that historical checkout.
-
-[Issue #4's public-board protocol](docs/public-board-abstraction.md) adds optional
-suit-canonical and coarse texture keys with correctness tests. The completed
-[fixed-work comparison](docs/public-board-comparison.md) finds a compression/accuracy
-tradeoff: texture cuts strategy rows from **3,336 to 1,392** on the medium game,
-but final median exploitability is **7.37% of pot**, versus **0.234%** for the
-raw-public control, missing the fixed **1%** limit. The candidate gate fails;
-no global default changes. All **150 frozen policies**, **800 ordered final
-cross-play profiles**, and **90 checkpoint pairs** pass independent/replay checks.
-`make report-public-boards` regenerates the [tables and four figures](results/public-board/report/tables.md)
-offline; `make study-public-boards` repeats the fixed grid from clean source.
-Inspect a board's features locally with
-`.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d`.
-
-The [collision-diagnosis follow-up](docs/board-collision-diagnosis.md) identifies
-concrete merged decisions and tests one richer made-hand-category history.
-It still fails full-control admission: medium exploitability is **2.59% of pot**,
-versus **2.52%** for old texture at the same 4,096 full-tree iterations. All
-**48 saved strategies** pass native value/best-response checks. No sampled run
-or default change follows. Read [journal step 17](docs/learning-journal.md#17-find-which-shared-decisions-need-different-treatment)
-and the [tables/two figures](results/made-category-admission/report/tables.md).
-
-The [saved-strategy response diagnosis](docs/candidate-best-response.md) finds
-that the medium category candidate is nearly stable within its compressed game:
-**0.000169% of pot** response gain within the partition, plus **2.593490%** from
-exact information. All **32 response roots and 32 own reply-profile values** pass
-native checks. This diagnoses fixed saved policies; it does not prove a training
-upgrade or an unavoidable abstraction limit. Inspect with
-`.venv/bin/python scripts/inspect_saved_reply.py`, or read
-[journal step 18](docs/learning-journal.md#18-ask-how-a-counterstrategy-exploits-the-saved-agent)
-and the [tables/figures](results/saved-replies/report/tables.md).
-
-The [river-distinction diagnosis](docs/river-distinction-diagnosis.md) finds
-same-category relative-strength differences and same-rank blockers. In the medium
-category strategy, **24 strict reachable merged-row conflicts** under the exact
-prefix leave **4** unresolved after a static range-outcome probe. This is a
-known-case diagnostic count, not a trained improvement. All **64 own hybrid
-profile values** pass native checks. Inspect the full-house/blocker example with
-`.venv/bin/python scripts/inspect_river_distinction.py --rank 2`, and read
-[journal step 19](docs/learning-journal.md#19-find-the-river-details-the-compressed-strategy-misses)
-or the [tables/figures](results/river-distinctions/report/tables.md).
-
-The [range-mass candidate](docs/range-mass-representation.md) now passes its
-**full-control admission on both known games**. At 4,096 full-tree iterations,
-medium exploitability falls from category's **2.593658% to 0.271640% pot**;
-exact is **0.000182290%**. It uses **1,662/3,336** raw-public strategy rows, but
-longer keys mean this is not a total-memory saving. All **60 frozen policies**
-pass native checks. The subsequent [fixed-work sampled comparison](docs/range-mass-sampled.md)
-retains all **90 policies** and **fails** the deeper-game gate: candidate median
-**4.480481% pot**, worst **5.506634%**, versus fixed 1%/2.5% limits. It improves
-on category (median **6.722857%**) but trails exact/raw-public (**0.233819%**).
-All 90 checkpoint/visit pairs and native checks pass. Fresh/global work stops
-here; [journal step 22](docs/learning-journal.md#22-check-whether-the-improvement-survives-sampled-learning)
-and the [sampled plots/tables](results/range-mass-sampled/report/tables.md) explain the result.
-Read [journal step 21](docs/learning-journal.md#21-test-whether-the-range-aware-description-is-accurate-enough)
-and the [tables/two figures](results/range-mass-admission/report/tables.md).
-Try `.venv/bin/python scripts/inspect_range_feature.py 9h` and repeat with `9d`.
-
-The [saved-profile diagnosis](docs/range-mass-reply-diagnosis.md) now checks all
-40 final sampled/full profiles. Medium range-mass **mean** exploitability is
-**4.354032% pot = 0.243207% within-partition gain + 4.110824% extra exact-information
-value**. The earlier median remains 4.480481%. The same representation's full
-control is much less vulnerable, so this is not a universal abstraction floor or
-a measured retraining gain. All **160 native response roots and 160 achieved own
-reply values** pass checks. Read [journal step 23](docs/learning-journal.md#23-separate-unfinished-learning-from-missing-distinctions)
-or try `.venv/bin/python scripts/inspect_range_reply.py --seat 1`.
-
-The [fixed-policy follow-up](docs/frozen-policy-swaps.md) locates most of the
-medium gap change in the saved river continuation. Mean extra-information gap is
-**0.271466% pot** for full/full, **0.254886%** for sampled-turn/full-river,
-**3.361794%** for full-turn/sampled-river and **4.110824%** for sampled/sampled.
-All 160 crossed profiles and 120 street hybrids pass independent value/response
-checks. This is a saved-policy intervention, not a retraining improvement or proof
-that sampling alone caused the weakness. See [journal step 24](docs/learning-journal.md#24-hold-the-opponent-fixed-and-swap-saved-decisions)
-or run `.venv/bin/python scripts/inspect_policy_swap.py`.
-
-The [original controlled training comparison](docs/controlled-learning-comparison.md)
-is complete: **140 runs / 840 checkpoints**, zero own replay error, all independent
-native value/response checks within **1.71e-13 chips**. At the 10m work label in
-the medium range-mass game, holding regret weights linear gives these sampled
-mean exploitabilities (% initial pot; all three fixed seeds):
-
-| Strategy-average weight | Signed regrets | Clipped regrets |
-|---|---:|---:|
-| linear | 4.354032 | 2.501852 |
-| uniform | 2.664089 | 3.525759 |
-
-This reversal shows an averaging/clipping interaction. A lower extra-information
-gap can accompany a larger response gain within the compressed game. No recipe
-is selected or deployed; the older failed gate and global default remain.
-Read [journal step 31](docs/learning-journal.md#31-run-a-fair-comparison-of-the-training-choices)
-and [all endpoint tables](results/controlled-learning/report/tables.md), or run
-`.venv/bin/python scripts/report_controlled_learning.py --no-plots` without retraining.
-Fresh reproduction at recorded revision `c45b463` uses
-`make compare-controlled-learning`; later modules do not extend that learning admission. See the
-[protocol, runtime and limits](docs/controlled-learning-comparison.md).
-
-The [saved-policy follow-up](docs/controlled-reply-diagnosis.md) retains all 64
-final source pairs and 256 ordered crosses. The clipped within-game weakness
-persists against fixed opponents, especially for seat 1, and appears with exact
-information too. All 512 target checks pass independent scalar audit (max
-2.42e-13 chips); this diagnoses a weakness without selecting a stronger default.
-Read [journal step 32](docs/learning-journal.md#32-separate-our-decisions-from-the-opponents-behavior)
-or try `.venv/bin/python scripts/inspect_controlled_reply.py --seat 1`.
-
-The [averaging-history diagnosis](docs/averaging-history.md#completed-diagnosis--november-9)
-recovers all 192 original checkpoints and checks 512 saved current/average profiles.
-In the medium range-mass sampled game, with clipped regrets and linear time
-weights, the latest policy remains vulnerable. Three-seed mean exploitability,
-as percent of initial pot (lower is better):
-
-| Whole average | Current at 10m | 5m–10m average | 9m–10m average |
-|---:|---:|---:|---:|
-| 2.501852 | 9.519793 | 2.531900 | 4.888556 |
-
-Late windows can improve EV against old fixed opponents without becoming safer
-against a best response. All 512 self profiles and 2,048 fixed target conditions
-pass independent scalar audit; six numerical files reproduce byte-for-byte on
-base Python 3.12. This diagnoses the original known trajectories, without a new
-stronger agent or default change. See [all modes/seeds and six figures](results/averaging-history/report/tables.md),
-[journal step 33](docs/learning-journal.md#33-look-at-current-play-and-older-averages),
-or run `.venv/bin/python scripts/report_averaging_history.py --no-plots`.
-At frozen revision `7080163`, `make study-averaging-history` repeats the admitted
-study into new ignored outputs; later modules do not receive fresh admission.
-
-The [zero-weight fallback intervention](docs/window-fallback.md#completed-saved-policy-intervention--november-9)
-keeps learned rows fixed and fills only missing late rows from the same own whole
-average. All 32 full windows preserve realized play and values exactly. In the
-medium range-mass clipped/linear sampled case, half-window mean total changes
-**2.531900→2.531738% pot** and short-window **4.888556→4.869954%**. Some raw
-conditions worsen. All 512 profiles /2,048 fixed conditions pass independent
-audit; seven numerical files reproduce byte-for-byte on base Python 3.12.
-This specific fill does little to remove the main weakness and is not deployed.
-Read [journal step 34](docs/learning-journal.md#34-ask-what-happens-at-late-rows-with-no-weight)
-or replay with `.venv/bin/python scripts/report_window_fallback.py --no-plots`.
-At frozen `e91f8f2`, `make diagnose-window-fallback` repeats the saved-policy study.
-
-## Development
-
-New work follows the [issue-to-PR contribution workflow](CONTRIBUTING.md), with
-actual checks and evidence recorded alongside each change.
-
-Requirements: Git, Make, and [uv](https://docs.astral.sh/uv/getting-started/installation/)
-0.13.5. uv can provision the Python version selected by `.python-version`.
-
-From the repository root:
-
-```sh
-uv --version
-make setup
-make check
-make hooks
-```
-
-`uv.lock` fixes resolved dependencies. `--locked` rejects stale declarations
-rather than silently changing the lockfile. The Python baseline is 3.11; CI tests
-3.11 and 3.12 on Ubuntu. Local hooks run the same locked Ruff installation as CI.
-
-```sh
-make format                              # Apply lint fixes and formatting
-uv run --locked pre-commit run --all-files
-```
-
-## Layout
-
-- `src/poker_ai/`: installable, typed Python package.
-- `tests/`: unit, property, and reference-validation tests as phases progress.
-- `configs/`: versioned experiment inputs.
-- `scripts/`: reproducible experiment and validation entry points.
-- `results/`: reviewed metrics and figures with provenance.
-- `docs/`: roadmap, design decisions, and phase verification records.
-
-The `src/` layout and pytest import mode check the installed package rather than
-implicitly importing source from the working directory.
+The research agents play heads-up even though the engine supports more seats.
+Reference libraries are used for validation and comparison; their strategies do
+not enter the agent's training. The [roadmap](docs/roadmap.md) explains the original
+phase sequence and the continuing research plan.
 
 ## Validation and results
 
-The Phase 0 smoke test checks distribution installation and inclusion of the
-`py.typed` marker. It makes no claim about poker correctness or playing strength.
-The five-card evaluator has been checked against Treys over **2,598,960 hands**,
-with **zero disagreements** across all **7,462 distinct ranks**. The category
-census also matches independent combinatorial formulas. Reproduce with
-`make validate-five`; see [the protocol](docs/phase1-five-card.md) and
-[raw validation report](results/five-card-exhaustive.json). Full enumeration is
-deterministic and uses no RNG.
+A few examples show both what has been checked and where the model still falls
+short. The linked reports contain the complete controls, configurations, failures,
+and reproduction instructions.
 
-Six/seven-card best-five selection matched Treys on
-**2,000,000 seeded sampled hands** with **zero disagreements**:
+| Study | Recorded result | Scope |
+| --- | --- | --- |
+| [Hand evaluation](docs/phase1-verification.md) | Zero disagreements with Treys across all 2,598,960 five-card hands and 2,000,000 seeded six/seven-card samples. | The six/seven-card checks are sampled, not exhaustive. |
+| [Exact toy-game solvers](docs/phase2-solvers.md) | Maximum matched-iteration exploitability disagreement with OpenSpiel: 1.39e-16 ante chips/hand. | Kuhn and Leduc under the recorded rules and checkpoints. |
+| [Compact sampled representation](docs/compact-sampled.md) | Harder known game's median exploitability: 2.390% of the initial pot, exceeding the fixed 1% target. | Separately trained restricted games at a fixed work budget; the candidate failed its accuracy criterion. |
+| [Duplicate-deal evaluation](docs/phase4-evaluation.md) | 36,000 simulated hands from 1,000 independent deck clusters; no positive advantage confirmed across six opponents by the primary familywise test. | The conservative test has low power; this does not prove the true advantages are zero. |
 
-| Cards | Sampled hands | Seed | Disagreements |
-| --- | ---: | ---: | ---: |
-| 6 | 1,000,000 | 20261103 | 0 |
-| 7 | 1,000,000 | 20261104 | 0 |
+Exploitability measures vulnerability to a best response in the specified game;
+lower is better. Here it is NashConv/2, with postflop percentages normalized by
+the starting pot. It is different from a full-game win rate. The risk studies
+also depend on their assumed return laws and do not establish a real-world edge.
+All gameplay is limited to simulation and permitted public bot benchmarks.
 
-Reproduce with `make validate-best`; see
-[the protocol and limits](docs/phase1-best-five.md) and
-[raw report](results/best-five-validation.json). These are sampled checks,
-not exhaustive six/seven-card coverage. Engine validation is recorded below.
+## Development
 
-The current direct rank-mask evaluator preserves the subset implementation as
-`evaluate_best_reference`. It passed a separate two-million-hand revalidation;
-see [performance methodology and paired measurements](docs/evaluator-performance.md)
-and [direct validation evidence](results/best-five-direct-validation.json).
-`make validate-best` now targets that direct evaluator report.
+Install Git, Make, and [uv](https://docs.astral.sh/uv/getting-started/installation/)
+**0.13.5**. uv can provision the Python version in `.python-version`.
 
-Exact and Monte Carlo [heads-up equity](docs/phase1-equity.md) passed five
-predeclared reference cases. Exact outcome counts matched Treys; each configured
-Monte Carlo interval covered its exact counterpart. Reproduce with
-`make validate-equity`; see [raw counts and intervals](results/equity-validation.json).
+```sh
+git clone https://github.com/jimmy-sim/poker-ai.git
+cd poker-ai
+make setup
+make check
+```
 
-The engine completed **1,000 seeded independent traces / 10,039 actions**, including
-**471 side-pot hands**, with no unexplained mismatches in the declared comparison
-scope. This compares shared actions and rational terminal shares; short-blind,
-short-raise, free-fold, and integer-rounding differences are explicitly documented.
-See [rules and limitations](docs/phase1-engine.md) and
-[raw evidence](results/engine-validation.json). Run `make validate-engine`.
+`make setup` installs the locked development environment. `make check` runs lint,
+formatting, strict typing, and the normal test suite; long validation sweeps are
+separate. The project supports Python 3.11+, with pinned 3.11 and 3.12 environments
+in CI. `uv.lock` and `--locked` keep dependency resolution reproducible.
 
-Exact CFR, CFR+, Linear and Discounted CFR passed matched OpenSpiel checks on
-Kuhn (10,000 iterations) and Leduc (1,000 iterations). Leduc final exploitability
-was **0.0118178 / 0.000257152 / 0.00482613 / 0.000143468** ante chips per hand,
-respectively. Maximum matched-iteration exploitability disagreement across the
-experiment was **1.39e-16**. These are toy-game results, not Hold’em win rates.
-Run `make validate-cfr`; see [methodology and limits](docs/phase2-solvers.md),
-[raw evidence](results/cfr-validation.json), and [convergence plot](results/cfr-convergence.png).
+For development, `make hooks` installs the local checks and `make format` applies
+Ruff fixes and formatting. The [contribution workflow](CONTRIBUTING.md) describes
+how changes, experiments, and verification are published.
 
-Phase 3 now has tested external/outcome sampling and exact checkpoint resumption.
-An [18-run compute pilot](docs/phase3-training.md) records toy-game convergence
-and small fixed-limit runs. Card models have [measured reconstruction errors](results/card-abstraction.json).
-Twelve abstracted fixed-limit runs produced 36 checkpoints through 500 iterations,
-and 12 bounded no-limit runs produced another 36 checkpoints through 300 iterations.
-These are bounded research runs with no playing-strength claim. Reproduce with
-`make train-mccfr-pilot`, `make build-card-abstraction`, `make train-limit`, and
-`make train-no-limit`.
+### Explore the project
 
-Long validation sweeps use explicit configurations/seeds or deterministic complete
-enumeration, with saved reports, separately from fast CI checks.
+Inspect a public board's representation:
 
-See [the roadmap](docs/roadmap.md), [design decisions](docs/decisions.md), and
-[contributor instructions](AGENTS.md). Local setup verification is recorded in
-[the Phase 0 report](docs/phase0-verification.md). The first
-[hosted baseline CI](https://github.com/jimmy-sim/poker-ai/actions/runs/41746694808)
-passed on Python 3.11 and 3.12; the badge above shows current default-branch CI.
+```sh
+.venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d
+```
+
+Browse saved decisions from the compact-representation study:
+
+```sh
+.venv/bin/python scripts/inspect_compact_information.py --interactive
+```
+
+The browser reads saved evidence without training. It prints its controls; use
+`q` to quit. The [learning journal](docs/learning-journal.md) explains the examples
+and includes more terminal exercises.
+
+Each research report gives its reproduction command, optional dependencies, and
+any required historical checkout. Some experiment commands intentionally return
+nonzero when a recorded acceptance criterion fails; those outcomes remain part
+of the research record.
+
+## Layout
+
+| Path | Contents |
+| --- | --- |
+| `src/poker_ai/` | Typed Python package: mechanics, learning, and evaluation. |
+| `tests/` | Unit, property, and reference-validation checks. |
+| `configs/` | Versioned experiment inputs and declared comparison designs. |
+| `scripts/` | Experiment entry points, validation, reporting, and offline browsers. |
+| `results/` | Reviewed evidence and figures; generated runs/checkpoints are normally ignored. |
+| `docs/` | Explanations, methods, decisions, and dated verification records. |
+
+## Current work and research history
+
+[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) investigates how card and
+range representations interact with sampled learning at fixed work. Recent work
+also measures validation overhead before the next proposed training comparison.
+The [publication-helper diagnostic](docs/source-helper-trace.md) follows that
+question without changing the playing strategy.
+
+- [Learning journal](docs/learning-journal.md): explanations in development order,
+  with separately recorded personal practice notes.
+- [Work log](docs/work-log.md): dated changes, experiment outcomes, checks, and PRs.
+- [Roadmap](docs/roadmap.md): phase contracts and continuing research direction.
+- [Solver-validation report](docs/solver_validation.md): methodology, reference
+  licenses, detailed comparisons, and limitations.
+- [Interview guide](docs/interview-guide.md): project-level claim drafts and
+  technical explanations, with contribution/assistance context.
+- [Original packaging record](docs/phase6-verification.md): the dated technical
+  brief and original phase reports. These are historical snapshots; current CI
+  and publication status are in [Actions](https://github.com/jimmy-sim/poker-ai/actions).
+
+The [verification-record correction](docs/ci-runtime-correction.md) documents
+mislabeled historical interpreter records. Original evidence and failed outcomes
+remain available rather than being replaced by later checks.
+
+## Assistance and references
+
+Codex has assisted with implementation, testing, experiment execution, and
+writing. Specific historical assistance notes remain in the journal and work log;
+recorded personal practice is kept separate from automated work.
+
+Treys and PokerKit provide independent mechanics checks; OpenSpiel provides
+reference algorithms and game calculations. Versions, third-party licenses,
+and comparison limits are recorded in the
+[mechanics reports](docs/phase1-verification.md) and
+[solver-validation report](docs/solver_validation.md).
+
+## Recorded study summaries
+
+The sections below are maintained by the existing report generators. They keep
+complete summary tables and their qualifications available without making the
+front page a running experiment log.
+
+<details>
+<summary>Expand generated solver, evaluation, public-pilot, and extension summaries</summary>
 
 <!-- SOLVER_VALIDATION_RESULTS_BEGIN -->
 ### Reproduced external-solver comparison
@@ -659,3 +269,5 @@ The 0/5/10 bb/100 fixed costs are illustrative, not a real site's pot-rake sched
 
 ![Measured-return risk sensitivity](results/extensions/empirical-bankroll.png)
 <!-- EXTENSIONS_END -->
+
+</details>
