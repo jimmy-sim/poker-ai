@@ -4895,3 +4895,20 @@ The original Mermaid diagram, historical journal/personal notes, interview
 numbers, phase contracts, operational files, and package metadata are preserved.
 The public-board example passes. The saved-decision browser needs a published
 branch; its smoke check and required hosted CI follow publication.
+
+
+### November 14 — complete-reader helper diagnostic, prospective
+
+Continues [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) after PR #67.
+The [protocol](reader-helper-trace.md) fixes one control/observed complete own
+read, fresh existing recall cache, original real-archive runtime, complete
+900/1800 diagnostic caps, exact returned/computed/cache identity, and full
+helper/process-event coverage. All six exact-source qualification roles are
+published before a real read; raw evidence precedes reporting. No training,
+reference construction, optimization, failed-gate revision or new admission.
+The ten unrelated local result changes were freshly snapshotted before work;
+an isolated branch preserves their bytes/index/status/patches. Historical394
+measurement files stay unchanged; new private entry/config are explicit.
+Learning-journal116 explains the difference from the narrow publication check.
+Codex assisted; personal hands-on time is unrecorded. Stop after this bounded
+inventory or a retained explicit failure, before choosing an optimizer.
