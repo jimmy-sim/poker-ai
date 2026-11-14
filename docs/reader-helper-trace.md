@@ -215,3 +215,22 @@ Combined184 recorder/collector fixtures pass on each version (5.34/4.11seconds;
 see current check logs for exact timings). Strict checking passes752files.
 These tests do not run the real reader. The new398-file source needs fresh
 full base, optional and hosted qualification before collection.
+
+### Follow-up qualification — November 14
+
+Sourceab69275 binds398files, fingerprint
+`e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752`.
+All396 previously measured files remain unchanged. Both full local suites pass
+3816tests,64skips/150deselections (781.55/766.57seconds); optional suites pass
+328each (15.32/14.09seconds). Hosted43622239051 passes both actual runtime jobs,
+3816tests each with the existing warning (736.56/656.41seconds). Installed
+Python/NumPy markers, uv versions, source heads and complete connector log
+hashes are authenticated. Strict752files and all895lint/format files pass.
+
+The [new qualification](../results/complete-reader-helper-trace/checks.json)
+publishes all six raw role logs, source-check runner and the exact operator
+before the one corrected pair. The operator selects the actual all-extras3.11
+qualification environment and verifies every declared distribution and the probe
+binary; the same prerequisites repeat inside both complete child clocks.
+The original failure remains independently reproducible with
+`python scripts/collect_complete_reader_helpers.py --failed-attempt`.

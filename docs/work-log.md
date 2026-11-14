@@ -4952,3 +4952,12 @@ locked versions and exact CPU-probe binary are checked before target; saved
 requirements, probe success/alias/privacy and unknown-not-zero prior-failure
 report covered. Fresh six-role398-source qualification still precedes a real
 follow-up. No old source/data/caps/acceptance predicate changes.
+
+Corrected398-sourceab69275/e1e5e879 passes ALL6roles before newdata: local3816/
+64skip/150deselect each781.55/766.57s; optional328each15.32/14.09s; hosted
+43622239051both3816/onehistoricalwarning736.56/656.41s. Actual3.11.17NP2.4.6
+and3.12.15NP2.5.4, exactsource/uv/log hashes verified. Strict752/Ruff895pass.
+Publish newchecks.json/allrawlogs/runners and exact full-optional311operator
+before ONE correctedpair. Original396files/failed278fc04evidence preserved.
+The old failure JSON reports unknown helpers and no completed replay; no new
+reader measurement yet. No scientific cap/gate/strategy/default changes.

@@ -5464,3 +5464,9 @@ stop before the reader and a CPU-query case that must be counted by the separate
 process-event check. Together with the older collectors,184 fixtures pass on
 each Python version. No second real read has run; the corrected source still
 needs its complete checks and published qualification.
+
+The corrected source now passes all six checks:3816full tests and328optional
+tests per version, plus both hosted jobs with installed runtimes verified.
+Its exact full-environment launcher and qualification are published before the
+one corrected pair. The earlier failed run stays visible and is not relabeled
+as successful evidence.

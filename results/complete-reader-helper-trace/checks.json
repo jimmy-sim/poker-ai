@@ -1,0 +1,104 @@
+{
+  "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "3816 passed, 64 skipped, 150 deselected in 781.55s (0:13:01)",
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/base311.log",
+        "sha256": "5376484ec7b34961eceb3131044182218e831ac25dece0caff392233252ba2b8"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "3816 passed, 64 skipped, 150 deselected in 766.57s (0:12:46)",
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/base312.log",
+        "sha256": "9ed49d6cde619c52b6ccb1268c8c6e3c63bab353f36f826861bcb46fa5d71e56"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "328 passed in 15.32s",
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/optional311.log",
+        "sha256": "392fd240ee9f6df0d54c36ebdf9141ddff035965d4eb130a34d2659eca92951b"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "328 passed in 14.09s",
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/optional312.log",
+        "sha256": "3956cef5f4f271f541b66862a1384e09e24e87c96593c6969aa20ddf5c03b9c9"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43622239051,
+      "job_id": 132530332467,
+      "head_sha": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/hosted311.log",
+        "sha256": "b3cb6ca25817f23eb8d768f3ae997470866933ffb9156e2188cd470b66c0bf30"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "e1e5e879d347244cea79ee599e2ce32460a7ab1881e944ecd0f2acd68dfb8752",
+      "checked_commit": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43622239051,
+      "job_id": 132530332695,
+      "head_sha": "ab6927542ba6487810ed98144f04362c1c247f07",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "log": {
+        "file": "results/complete-reader-helper-trace/checks/hosted312.log",
+        "sha256": "8c76a3865a0582052acd22f447cc7185056d8dd5e6c3de69e1b59cebb1aa456c"
+      }
+    }
+  ],
+  "scope": "Same-head398-source complete-reader helper diagnostic software qualification. All historical396 files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. No real complete reader target invoked by these fixture checks. No training, reference construction, full-audit forecast rescue or performance/default/global admission. Publish before the one fixed control/observed pair."
+}
