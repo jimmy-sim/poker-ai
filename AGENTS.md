@@ -34,6 +34,9 @@
   outputs, keep large runs ignored, and report failed research gates honestly.
 - Use PR/issue updates for routine status. Commit check receipts when required
   for reproducibility; avoid standalone status commits that add no evidence.
+- On November 14, the user asked to keep contribution counts modest where
+  possible. Batch related work and edit existing descriptions for routine status;
+  retain all required checkpoints, prompt publication and actual dates above.
 - During iteration, run checks appropriate to the change. Complete every local,
   optional, hosted and source-bound check required by the applicable protocol
   before advancing. Repeat checks when changes, failures or unresolved concerns

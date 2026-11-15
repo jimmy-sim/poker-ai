@@ -4977,3 +4977,46 @@ learner/reference blocked. Methods/table/limits/threeQAs/journal116 complete;
 first278fc04failure retained. Final relevant/source/hosted checks precede merge;
 stopafterthisinventory, before newoptimization or training. Codex-assisted;
 personal hours/mastery/practice not inferred.
+
+### November 14 — reconcile saved reader boundaries before another measurement
+
+Prospective [issue #4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6886112990)
+precedes this data-only checker. Six fixed input hashes bind both historical
+three-read arms and both standalone reader receipts. Check all eight intervals,
+process/scope/order, recorded source maps/current bytes and recorded real archive
+summaries; do not execute the reader or infer a causal speedup. Tests deliberately
+break these conditions. Initial28 pass; full applicable checks and hosted CI
+still follow. Historical398 files and all raw results stay unchanged. The ten
+unrelated main changes were freshly snapshotted; this isolated branch preserves
+them. Journal117 explains the question. Codex-assisted; human time unrecorded.
+
+Record the November14 request for modest contribution counts here and in the
+publishing guidance: coherent batching/edit existing status descriptions, with
+all mandatory publication boundaries and real dates intact. No separate PR or
+commit for that preference, no contribution quota and no change to research gates.
+
+Data-only result in [PR #71](https://github.com/jimmy-sim/poker-ai/pull/71): all8
+raw intervals recompute exactly with matching parent IDs/platform/units. Six
+recorded real-archive summaries and own hashes agree; old390source hashes are
+unchanged within the newer398map, and all398current bytes match. Export
+[summary.json](../results/reader-boundary-reconciliation/summary.json) binds all
+six input hashes plus checker/config hashes. Actual3.11.17/NumPy2.4.6 and
+3.12.15/2.5.4 produce identical JSON (SHA256593df042b166f618a20410c3da8b24c11322c038b4ecda7a9551da1ada819a06).
+These are data-only checks, not new mathematical replay or runtime collection.
+
+28new tests pass per version; related optional clock/checker suites71pass each
+(0.69/0.90s). Ruff897files, strict754files, hooks, diff whitespace and allfive
+changed Markdown files' relative links/anchors/fences pass with no old or new
+link defects. Full local tests and hosted checks are still running at report
+publication; their final results and exact-head CI links are recorded in the PR
+before merge. No code changed after these checks began; the final increment
+adds the saved-data export and explanation.
+
+Cause remains unresolved. Frozen call paths differ in tiny-read/cache history,
+card wrappers and nested observers. Later native workers cannot by themselves
+explain the older initial read. Do not call this a speedup or choose a helper
+optimizer from counts. Next separately registered measurement should restore
+the intended original audit context and account for helper/resource boundaries
+and dominant own-process work together. No further collection begins in this
+milestone. Original933.89/900forecast and prior unfavorable cache timing remain
+failed; no new training, stronger agent or default/admission claim.
