@@ -147,3 +147,23 @@ actual complete-audit target or new real trajectory study ran in qualification.
 All 412 source files, prior 409 and 53 pinned inputs remain fixed. The formal
 180-second own software proof and one original-only audit remain unrun at this
 publication checkpoint. No cost/optimizer/training/default/fresh/global admission.
+
+
+## Recorded software proof — November 15, 2026
+
+After qualification1bffc0f was published, the one formal own software proof
+returns zero: outer command 4.598493875004351 seconds, registered command
+4.5392701660166495, supervised whole child 2.5236837080155965, all
+below180. All five original/phased constructor field fingerprints match,
+including all array bits/geometry/flags and every tuple value/type. Both
+explicitly synthetic same-observation/depth1-and2 fixtures reject with the
+original ValueError; their expected failure records remain separate. No learner,
+reference constructor or new trajectory is created.
+
+[Complete proof](../results/matrix-phases/software/proof.json),
+[all25 raw/admin hashes](../results/matrix-phases/raw-software-manifest.json)
+and exact launch/save operators retain original ignored outputs too; the
+manifest is26th. Saved-data proof verification passes without construction.
+Publish this proof before the single actual audit. It establishes this narrow
+instrument check, not a speedup, production-family full end-to-end proof or
+training/default/fresh/global admission. The actual audit remains unrun here.

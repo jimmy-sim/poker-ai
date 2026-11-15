@@ -5421,3 +5421,15 @@ collection. Qualification publication precedes the one bounded software proof;
 its publication must precede the one actual audit. No formal attempt has run yet.
 The933.89/900forecast and2.390%versus1% quality failures remain. Journal122 updated;
 AI-assisted, no invented personal hours or mastery.
+
+Formal own software proof after qualification publication `1bffc0f`: outer
+4.598493875004351, registered 4.5392701660166495, whole child 2.5236837080155965
+seconds, all below180. Five original/phased constructor field vectors match;
+positive phase records are complete; both explicitly synthetic depth fixtures
+retain the expected ValueError distinctly from actual collection failure.
+No learner/reference/new trajectory. [Raw proof](../results/matrix-phases/software/proof.json)
+SHA256990a85ca93eddaa367194bfa8ea5523f1eb23b58d5dca13cbbc66f54c73d17ba.
+All25raw/admin files and originals retained/hash-checked; manifest is26th.
+Publish this evidence before the one ORIGINAL-only audit. Scientific source412,
+all53pins/caps/gates unchanged. This is not the separately required production
+family end-to-end proof or training admission. Journal122 updated.

@@ -5948,3 +5948,12 @@ toy-game/fixture solvers; they do not perform this actual postflop audit or a
 new real trajectory study. The formal own software proof still comes next,
 and must be published before the single original-only capture. These source
 checks do not establish a faster or stronger agent.
+
+The formal own software proof now passes after qualification publication. All
+five original/phased constructor field vectors match, and both versions reject
+the explicitly synthetic invalid-depth fixture with the same ValueError. The
+complete command takes 4.60 seconds, under 180. No learner or reference
+solver is constructed. [Proof and clocks](matrix-phases.md#recorded-software-proof--november-15-2026)
+and all 25 raw/administrative files are retained before the actual audit.
+This checks the instrument's software behavior; it is not a speedup, a complete
+new training-family proof or permission to train a new policy.
