@@ -103,7 +103,7 @@ Recent explanations:
   timers for the main validation process, now being checked.
 
 - [Step 118](#118-measure-the-original-audit-context-before-choosing-an-optimizer):
-  the controlled full-audit measurement now being checked.
+  the completed full-audit measurement; helper-child costs stay small in this run.
 
 - [Step 117](#117-check-the-records-before-explaining-the-runtime-difference):
   compare the saved boundaries before choosing another timing experiment.
@@ -5622,9 +5622,11 @@ or subtract it before adding totals; adding both inclusive times counts it twice
 The new tests check that nested time is not counted twice and that the wrapper
 preserves method behavior, subclass binding, arguments, returned objects and
 exceptions. They also check restoration after failure and reject changed clocks,
-threads, partial records or too many callbacks. The first 70 fixtures pass; no
-real profile has run. Full source qualification and published operators still
-precede the single fixed pair.
+threads, partial records or too many callbacks. The 70 focused fixtures pass on both Python versions, as do the complete local
+suites: 3,951 tests per version and 463 relevant optional tests per version.
+[PR #73](https://github.com/jimmy-sim/poker-ai/pull/73) holds the source and coming
+evidence. No real profile has run. Hosted source qualification and published
+operators still precede the single fixed pair.
 
 The [protocol](coarse-reader-cpu.md) keeps the same saved strategies and original
 full-audit context. A result can identify a useful optimization target. It does
@@ -5633,3 +5635,16 @@ verified step will inform the next issue #4 question under the current request
 to continue until interrupted. Local work and checks are batched before pushes,
 with the required research publication boundaries preserved. Codex assists with
 implementation and explanation; personal practice and hours are not inferred.
+
+
+**Project decision, November14:** after considering an external practice platform,
+the user selected continued issue#4 validation and training improvements first.
+The adapter remains a later option. This records a choice, not a practice session
+or evidence of full-game competitive strength.
+
+
+The source checks are complete before timing begins: all six local, optional
+and GitHub roles pass at the same source revision. The full hosted suites also
+pass3,951tests each. Their recorded runtimes and the exact run/save instructions
+are retained in the [qualification](../results/coarse-reader-cpu/checks.json).
+This establishes which tool will run; it is not yet a measured CPU result.

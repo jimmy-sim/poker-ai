@@ -5090,3 +5090,27 @@ Apply the latest publishing preference in this substantive change: finish local
 implementation/review/checks before the first source push, then batch commits
 at the required qualification, raw and report boundaries. No standalone preference
 push, date manipulation, acceptance change or future work schedule is introduced.
+
+
+Source stage in [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73):8970bc5,
+404-file fingerprint00a339915681bbb109d04c9ee15a90d245a8bd6672b5d01b4081b17d44d3e8db.
+Both immutable local bases pass3,951tests/64skipped/150deselected,814.15/801.25s;
+optional463pass each,17.88/16.53s. Lint/format/strict typing/hooks and focused
+Markdown links/anchors/fences pass. Source is published after local checks;
+both same-source hosted jobs and qualification publication still precede data.
+
+
+At the November14 check-in, the user chose to continue issue#4 validation and
+training improvements before building a Chipzen practice adapter. This keeps
+the current research sequence; no external connection or season entry is part
+of this milestone. No personal practice, hours or strength claim is inferred.
+
+
+All six source roles now pass at8970bc5: hostedCI43688723951 verifies actual
+3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4, all uv selections and exact checkout;
+3,951tests/64skip/150deselect plus the old warning each. Complete decoded logs,
+local/install receipts, exact check runner/assembler and prepublished launch/
+retention operators are in[checks](../results/coarse-reader-cpu/checks.json).
+This qualification checkpoint precedes the one pair; no real target has run.
+The404-file map and37scientific pins remain unchanged. The same source and
+qualification checks will run inside the registered clocks as well.

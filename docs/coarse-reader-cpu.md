@@ -2,7 +2,8 @@
 
 Registered November 14, 2026 in [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6890391633),
 before implementation or timing data. This follows the [original-context audit](original-audit-helpers.md)
-from [PR #72](https://github.com/jimmy-sim/poker-ai/pull/72).
+from [PR #72](https://github.com/jimmy-sim/poker-ai/pull/72). Implementation and evidence
+are in [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73).
 
 ## Question and fixed scope
 
@@ -70,6 +71,11 @@ including startup, source/qualification/input checks, all original work,
 capture/extraction/writes and final validation; keep 120 seconds of operator
 saving reserve. One attempt, fresh ignored destinations, no favorable retry,
 smaller workload or cap extension. Retain and publish partial/failing outcomes.
+The unchanged supervisor times each complete spawned command through reaping;
+its own measurement-receipt write belongs to parent orchestration rather than
+the child-command clock. Parent orchestration and final pair verification are
+charged to the shared clock. Canonical copying/publication is administrative
+preservation outside these clocks, retaining the original ignored outputs.
 Diagnostic data remain rejected as base-family admission and cannot replace
 the failed 933.89/900 forecast or the old CPU-profiler/card-cache failures.
 
@@ -96,6 +102,11 @@ invalid coverage. A complete result supplies a measured region for a separately
 specified optimization; it does not itself improve the agent or admit training.
 The old child-CPU discrepancy remains unresolved.
 
+The initial and final real reads replay the same saved own strategies around
+independent reference work. They are repeated validation, not new training or
+independent playing-strength samples. Differences in their timings describe
+this execution; they do not show the strategy improving between reads.
+
 Current authorization permits continued issue #4 work after this bounded step,
 using each verified result to define the next question. It creates no future
 automation, permits no C++/Rust core without approval, and changes no research
@@ -115,3 +126,22 @@ retaining the original inclusive values and their nesting.
 **Does the largest region automatically name the remedy?** It identifies a lead.
 An optimization still needs its own correctness, source, cost and acceptance
 checks, and measured savings cannot silently replace the failed forecast.
+
+
+## Published source qualification, November 14
+
+Source8970bc556697d684b6482be82f431699a76128d7 preserves the prior402files and
+binds404effective files, fingerprint
+`00a339915681bbb109d04c9ee15a90d245a8bd6672b5d01b4081b17d44d3e8db`.
+All [six roles](../results/coarse-reader-cpu/checks.json) pass: full local bases
+3,951/64skipped/150deselected each; optional463each; both hosted jobs in
+[CI43688723951](https://github.com/jimmy-sim/poker-ai/actions/runs/43688723951)
+3,951/64/150 each plus the retained historical roundoff warning. Complete decoded
+logs and actual Python/NumPy/uv/head evidence are retained. Python3.12.15 with
+NumPy2.5.4 qualifies software only; the real archive remains3.11.17/2.4.6.
+
+The exact [launch](../results/coarse-reader-cpu/checks/operator_launch.py.txt) and
+[retention](../results/coarse-reader-cpu/checks/operator_retention.py.txt)
+operators are published with this qualification before any collection. No pair
+has run at this checkpoint. Complete/partial evidence will be copied exactly,
+with original ignored files retained, and published before posthoc analysis.
