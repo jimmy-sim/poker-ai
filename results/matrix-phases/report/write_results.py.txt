@@ -1,0 +1,126 @@
+"""Write tables from published raw-derived exports; no new collection/gate."""
+import csv,json,math,shutil
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'matrix-phases';p=r/'results/matrix-phases/report';x=json.loads((p/'summary.json').read_text());rows=x['matrix_totals'];matrix=math.fsum(z['matrix_cpu'] for z in rows);total=math.fsum(z['inner_cpu_seconds'] for z in x['readers'][1:]);names={'information_keys':'Information/key creation','array_setup':'Array setup','depth_validation':'Original depth validation','instantiate':'Object creation','field_witness':'Complete field witnessing'}
+phase=[(names[k],v) for k,v in x['phase_cpu'].items()];phase += [('Constructor timer/record remainder',math.fsum(z['constructor_remainder_cpu'] for z in rows)),('Outer matrix wrapper remainder',math.fsum(z['matrix_wrapper_remainder_cpu'] for z in rows))]
+s=f'''\n\n## Recorded CPU result — November 15, 2026
+
+Information/key creation uses **{x['phase_cpu']['information_keys']:.6f} CPU seconds**,
+**{x['phase_cpu']['information_keys']/matrix*100:.2f}%** of the observed matrix
+region's {matrix:.6f} seconds. Original depth validation is only
+{x['phase_cpu']['depth_validation']/matrix*100:.2f}% of that region. This locates a
+larger target inside key creation; it does not measure an optimizer's saving.
+
+![Original-only matrix phase CPU](../results/matrix-phases/report/matrix-phases.png)
+
+| Disjoint matrix component | CPU seconds | Matrix CPU share |
+|---|---:|---:|
+'''
+for name,value in phase:s+=f'| {name} | {value:.6f} | {value/matrix*100:.4f}% |\n'
+s+=f'''\nThe two archived-policy reads use {total:.6f} process CPU seconds in total.
+Observed matrix construction is {matrix/total*100:.4f}% of that total, and key
+creation {x['phase_cpu']['information_keys']/total*100:.4f}%. These denominators
+exclude the tiny fictional software pre-read. CPU includes observation/library
+work; the five phase intervals and remainders are disjoint. Do not add the
+matrix parent again. Timers do not isolate pure self-time or wall time.
+
+| Read | Constructor calls | Calls per phase | Global selected calls | Inner read CPU seconds | Matrix CPU seconds |
+|---|---:|---:|---:|---:|---:|
+'''
+for i,z in enumerate(rows):s+=f"| {('Tiny software pre-read','Initial archived-policy read','Final archived-policy read')[i]} | {z['constructors']} | {z['constructors']} | {x['readers'][i]['selected_calls']} | {x['readers'][i]['inner_cpu_seconds']:.6f} | {z['matrix_cpu']:.6f} |\n"
+s+='''
+The tiny pre-read's zero matrix count is verified observed coverage, not a
+placeholder for missing data. Every one of the other 184 constructor calls has
+five complete intervals; the published parser refuses missing/failed phases,
+changed schema/clock/context, out-of-bound timing or mismatched field vectors.
+
+### Exploratory encoding classification
+
+This posthoc table groups **constructor encoding fields**, not final trained
+representation names or strategy counts. Source field witnesses and phase
+indices supply the mapping. Different groups contain different game trees and
+call inventories: these aggregates are not a controlled encoding-speed test.
+
+| Constructor encoding | Calls | Information/key CPU seconds | All constructor CPU seconds |
+|---|---:|---:|---:|
+'''
+enc=list(csv.DictReader((p/'encodings.csv').open()))
+for name in sorted({z['encoding'] for z in enc}):
+ selected=[z for z in enc if z['encoding']==name];s+=f"| `{name}` | {sum(int(z['constructors']) for z in selected)} | {math.fsum(float(z['information_keys_cpu_seconds']) for z in selected):.6f} | {math.fsum(float(z['constructor_cpu_seconds']) for z in selected):.6f} |\n"
+s+='''
+Only these three encoding fields occur in this capture. The separate formal
+software proof covers all five declared builder encodings. Classification is
+exploratory; it adds no acceptance threshold and changes no earlier outcome.
+
+### Complete and nested clocks
+
+The complete supervised command is 432.06430320898653 seconds; registered parent
+436.83444570799475; outer operator 436.86079670800245. All fit900/1800.
+The following original-body/nearby-child intervals are nested and narrower than
+the supervised clock; their resource fields are not extra elapsed segments.
+
+| Interval | Wall seconds | Own-process CPU seconds |
+|---|---:|---:|
+'''
+for z in csv.DictReader((p/'bodies.csv').open()):s+=f"| `{z['scope']}` | {float(z['wall_seconds']):.6f} | {float(z['process_cpu_seconds']):.6f} |\n"
+s+='''
+| Original comparison worker | Wall seconds | Worker-process CPU seconds |
+|---|---:|---:|
+'''
+for z in csv.DictReader((p/'workers.csv').open()):s+=f"| {z['slot']} | {float(z['wall_seconds']):.6f} | {float(z['process_cpu_seconds']):.6f} |\n"
+s+='''
+The three workers run in parallel. Their CPU/resource intervals are not added
+into parent wall time. [Reader clocks](../results/matrix-phases/report/readers.csv),
+[all six global regions, inclusive/exclusive CPU](../results/matrix-phases/report/regions.csv),
+[all920 phase rows](../results/matrix-phases/report/phases.csv),
+[worker resources](../results/matrix-phases/report/workers.csv),
+[body clocks](../results/matrix-phases/report/bodies.csv) and
+[posthoc encodings](../results/matrix-phases/report/encodings.csv)
+retain the full numbers and zero/missing distinctions.
+
+### Saved-data verification and limits
+
+All six main numeric exports are byte-identical on actual3.12.15/NumPy2.5.4,
+with actual builder/reader/child/supervisor/learner/native execution blocked.
+The additional encoding CSV is byte-identical too. Explicit legacy3.11
+sequential CPU association is checked against the frozen parser's existing1e-9
+CPU-second arithmetic allowance; phase aggregation uses `math.fsum`. No raw
+number, poker tolerance, scientific cap, seed or acceptance gate changes.
+The figure was visually inspected. This is saved-data parsing, not a new bit-exact
+3.12 mathematical replay or trajectory. See the
+[render manifest](../results/matrix-phases/report/render-manifest.json) and
+[portable receipt](../results/matrix-phases/report/replay312.json).
+
+One original-only historical cost-context capture cannot estimate uncertainty,
+population runtime, production throughput or a causal saving. Initial/final
+reads share archives and recall state; they are not independent replications.
+The tiny read is explicitly fictional software evidence. The other reads retain
+`OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING` scope. This does not turn them
+into the prospective full24-context/48-target/144-new-profile study.
+
+Key creation includes observations, model keys, board features, JSON and mapping
+work. The phase timer does not distinguish those internals or prove that any
+specific replacement is faster. The next candidate needs its own prospective
+hypothesis, exact software/field checks and complete cost comparison. The failed
+grouped-depth condition and older card-cache timing failure remain failures.
+No optimizer/default/stronger agent is admitted here. The933.89/900 production
+forecast and2.390%-versus-1% known-game accuracy failure remain. Fresh production
+qualification, complete original end-to-end proof, all three own publications
+before any fresh native run, all three native costs, conservative forecast and
+checked admission still precede a real learning study.
+
+```sh
+.venv/bin/python scripts/profile_matrix_phases.py --show --output results/matrix-phases/pair
+open results/matrix-phases/report/matrix-phases.png
+.venv/bin/python -m pytest -q tests/test_matrix_phase_support.py tests/test_matrix_phase_collection.py
+```
+'''
+pdoc=r/'docs/matrix-phases.md';pdoc.write_text(pdoc.read_text()+s)
+for old,new in [('render-matrix.py','render.py.txt'),('verify-matrix-data.py','verify_data.py.txt'),('matrix-encoding-report.py','classify_encodings.py.txt'),('run-matrix-final-checks.py','run_final_checks.py.txt')]:shutil.copyfile(w/old,p/new)
+shutil.copyfile(w/'matrix-portable/verified.json',p/'replay312.json');shutil.copyfile(w/'matrix-portable/data-only-render312.log',p/'data-only-render312.log')
+for minor in ('311','312'):
+ for ext in ('log','json'):shutil.copyfile(w/'matrix-final-checks'/f'optional{minor}.{ext}',p/f'final-optional{minor}.{ext}')
+shutil.copyfile(w/'matrix-portable/encoding312.log',p/'encoding312.log')
+shutil.copyfile(w/'matrix-encoding311.log',p/'encoding311.log')
+shutil.copyfile(__file__,p/'write_results.py.txt')
+print('Generated phase/encoding/clock tables from exports; archived exact render/check scripts')

@@ -1,0 +1,9 @@
+"""Actual second-runtime saved encoding export identity, no new construction."""
+import hashlib,json,sys
+from pathlib import Path
+import numpy
+r=Path(sys.argv[1]).resolve();w=r.parent
+assert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'
+a=r/'results/matrix-phases/report/encodings.csv';b=w/'matrix-portable/encodings312.csv';assert a.read_bytes()==b.read_bytes()
+m=json.loads((a.with_suffix('.manifest.json')).read_text());assert hashlib.sha256(a.read_bytes()).hexdigest()==m['csv_sha256'] and m['constructors']==184
+print(json.dumps(dict(scope='Saved-data classification only; no original mathematics, learner, reference or trajectory',python=sys.version.split()[0],numpy=numpy.__version__,csv_sha256=m['csv_sha256'],source_fingerprint=m['source_fingerprint'],constructors=m['constructors'],byte_identical=True),indent=2))

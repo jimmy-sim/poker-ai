@@ -184,3 +184,123 @@ and original ignored outputs remain retained; the manifest is33rd. This
 publication precedes the detailed phase analysis. No favorable retry or new
 trajectory occurs. This successful diagnostic capture does not replace the
 failed production-family forecast or admit a faster/default/stronger agent.
+
+
+## Recorded CPU result — November 15, 2026
+
+Information/key creation uses **44.433599 CPU seconds**,
+**84.29%** of the observed matrix
+region's 52.715310 seconds. Original depth validation is only
+2.45% of that region. This locates a
+larger target inside key creation; it does not measure an optimizer's saving.
+
+![Original-only matrix phase CPU](../results/matrix-phases/report/matrix-phases.png)
+
+| Disjoint matrix component | CPU seconds | Matrix CPU share |
+|---|---:|---:|
+| Array setup | 1.818490 | 3.4496% |
+| Original depth validation | 1.292698 | 2.4522% |
+| Complete field witnessing | 1.403231 | 2.6619% |
+| Information/key creation | 44.433599 | 84.2897% |
+| Object creation | 3.727125 | 7.0703% |
+| Constructor timer/record remainder | 0.028252 | 0.0536% |
+| Outer matrix wrapper remainder | 0.011915 | 0.0226% |
+
+The two archived-policy reads use 288.672415 process CPU seconds in total.
+Observed matrix construction is 18.2613% of that total, and key
+creation 15.3924%. These denominators
+exclude the tiny fictional software pre-read. CPU includes observation/library
+work; the five phase intervals and remainders are disjoint. Do not add the
+matrix parent again. Timers do not isolate pure self-time or wall time.
+
+| Read | Constructor calls | Calls per phase | Global selected calls | Inner read CPU seconds | Matrix CPU seconds |
+|---|---:|---:|---:|---:|---:|
+| Tiny software pre-read | 0 | 0 | 432 | 1.945540 | 0.000000 |
+| Initial archived-policy read | 92 | 92 | 553 | 143.274095 | 26.261939 |
+| Final archived-policy read | 92 | 92 | 553 | 145.398320 | 26.453371 |
+
+The tiny pre-read's zero matrix count is verified observed coverage, not a
+placeholder for missing data. Every one of the other 184 constructor calls has
+five complete intervals; the published parser refuses missing/failed phases,
+changed schema/clock/context, out-of-bound timing or mismatched field vectors.
+
+### Exploratory encoding classification
+
+This posthoc table groups **constructor encoding fields**, not final trained
+representation names or strategy counts. Source field witnesses and phase
+indices supply the mapping. Different groups contain different game trees and
+call inventories: these aggregates are not a controlled encoding-speed test.
+
+| Constructor encoding | Calls | Information/key CPU seconds | All constructor CPU seconds |
+|---|---:|---:|---:|
+| `exact` | 68 | 0.986307 | 4.272210 |
+| `public_b8` | 16 | 4.966956 | 5.729262 |
+| `texture_b8` | 100 | 38.480336 | 42.701923 |
+
+Only these three encoding fields occur in this capture. The separate formal
+software proof covers all five declared builder encodings. Classification is
+exploratory; it adds no acceptance threshold and changes no earlier outcome.
+
+### Complete and nested clocks
+
+The complete supervised command is 432.06430320898653 seconds; registered parent
+436.83444570799475; outer operator 436.86079670800245. All fit900/1800.
+The following original-body/nearby-child intervals are nested and narrower than
+the supervised clock; their resource fields are not extra elapsed segments.
+
+| Interval | Wall seconds | Own-process CPU seconds |
+|---|---:|---:|
+| `body_observation` | 426.403917 | 294.189777 |
+| `child_observation` | 428.256842 | 295.372888 |
+
+| Original comparison worker | Wall seconds | Worker-process CPU seconds |
+|---|---:|---:|
+| 0 | 128.694521 | 126.514952 |
+| 1 | 128.694510 | 126.472614 |
+| 2 | 128.694523 | 126.559348 |
+
+The three workers run in parallel. Their CPU/resource intervals are not added
+into parent wall time. [Reader clocks](../results/matrix-phases/report/readers.csv),
+[all six global regions, inclusive/exclusive CPU](../results/matrix-phases/report/regions.csv),
+[all920 phase rows](../results/matrix-phases/report/phases.csv),
+[worker resources](../results/matrix-phases/report/workers.csv),
+[body clocks](../results/matrix-phases/report/bodies.csv) and
+[posthoc encodings](../results/matrix-phases/report/encodings.csv)
+retain the full numbers and zero/missing distinctions.
+
+### Saved-data verification and limits
+
+All six main numeric exports are byte-identical on actual3.12.15/NumPy2.5.4,
+with actual builder/reader/child/supervisor/learner/native execution blocked.
+The additional encoding CSV is byte-identical too. Explicit legacy3.11
+sequential CPU association is checked against the frozen parser's existing1e-9
+CPU-second arithmetic allowance; phase aggregation uses `math.fsum`. No raw
+number, poker tolerance, scientific cap, seed or acceptance gate changes.
+The figure was visually inspected. This is saved-data parsing, not a new bit-exact
+3.12 mathematical replay or trajectory. See the
+[render manifest](../results/matrix-phases/report/render-manifest.json) and
+[portable receipt](../results/matrix-phases/report/replay312.json).
+
+One original-only historical cost-context capture cannot estimate uncertainty,
+population runtime, production throughput or a causal saving. Initial/final
+reads share archives and recall state; they are not independent replications.
+The tiny read is explicitly fictional software evidence. The other reads retain
+`OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING` scope. This does not turn them
+into the prospective full24-context/48-target/144-new-profile study.
+
+Key creation includes observations, model keys, board features, JSON and mapping
+work. The phase timer does not distinguish those internals or prove that any
+specific replacement is faster. The next candidate needs its own prospective
+hypothesis, exact software/field checks and complete cost comparison. The failed
+grouped-depth condition and older card-cache timing failure remain failures.
+No optimizer/default/stronger agent is admitted here. The933.89/900 production
+forecast and2.390%-versus-1% known-game accuracy failure remain. Fresh production
+qualification, complete original end-to-end proof, all three own publications
+before any fresh native run, all three native costs, conservative forecast and
+checked admission still precede a real learning study.
+
+```sh
+.venv/bin/python scripts/profile_matrix_phases.py --show --output results/matrix-phases/pair
+open results/matrix-phases/report/matrix-phases.png
+.venv/bin/python -m pytest -q tests/test_matrix_phase_support.py tests/test_matrix_phase_collection.py
+```

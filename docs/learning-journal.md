@@ -106,7 +106,8 @@ restricted-game accuracy, and compute cost each need their own evidence.
 Recent explanations:
 
 - [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
-  inside the original constructor after the grouped alternative misses its cost test.
+  inside the original constructor: key creation accounts for 84.3% of its measured
+  CPU; the failed grouped alternative remains unadmitted.
 
 - [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
   grouped depth check inside measured matrix construction; correctness passes,
@@ -5965,3 +5966,31 @@ intervals. [All32 raw/admin files](../results/matrix-phases/raw-pair-manifest.js
 are retained with the original ignored output before detailed phase analysis.
 There is no timing retry or new trained policy. A successful capture locates
 work; it does not accept an optimizer or replace the failed production forecast.
+
+**Result:** information/key creation uses 44.43 of the observed matrix region's
+52.72 CPU seconds, about 84.3%. The original depth check uses about 2.45%, and
+complete field witnessing about 2.66%. Matrix work itself is 18.26% of the two
+archived-policy reads' CPU. These are different denominators:84.3% does not mean
+84.3% of all training or of the whole command.
+
+A **key** turns an observed situation into the name of its decision group.
+**Example:** cards, public board and betting history are encoded so a strategy
+can look up the correct action probabilities. Repeating that description many
+times can cost more than checking tree depths. The [figure and tables](matrix-phases.md#recorded-cpu-result--november-15-2026)
+show both archived-policy reads, with the five phases and recording remainder.
+
+A posthoc classification finds 38.48 key-creation CPU seconds under the constructor
+field `texture_b8`. These are constructor labels, not counts of trained agents;
+different labels have different tree/call inventories. The table identifies
+where this capture spends time, not which representation is inherently faster.
+
+All six main exports and the extra encoding table match byte-for-byte on the
+second Python environment with poker execution blocked. Both final optional
+suites pass 742 tests. The plot is inspected. The initial fresh-runner clock-test
+failure remains documented and retained; it has not become a passing first run.
+
+The next question is an exact mathematical optimization of repeated card-suit
+translations inside key work, supported by this localization and the earlier
+canonicalization trace. It needs a new prospective plan, original-result/field
+checks and a complete cost comparison. Nothing here trains a new policy or
+accepts a faster/default agent; the existing compute and accuracy failures stay.

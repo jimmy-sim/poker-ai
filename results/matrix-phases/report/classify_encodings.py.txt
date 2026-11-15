@@ -1,0 +1,31 @@
+"""Posthoc encoding classification of the published capture; no new run/gate."""
+import csv,hashlib,json,math,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();assert not out.exists();sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import profile_matrix_phases as t
+from compact_cached import cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+def forbidden(*a,**k):raise AssertionError('encoding extraction entered poker execution')
+t.child=forbidden;t.software_child=forbidden;t.pair_run=forbidden;t.proof_run=forbidden;t.depth.build=forbidden;t.original.child=forbidden;t.supervise=forbidden;cli.read=forbidden
+for category,owner,name in t.prior.targets():setattr(owner,name,forbidden)
+from poker_ai.postflop.controlled_scoring import ScoringContext
+import poker_ai.postflop.learning_training as training
+ScoringContext.score=forbidden;training.replay_detail=forbidden
+folder=r/'results/matrix-phases/pair';mode='original_profiled'
+with isolated(worker=False):verified=t.verify_pair(r,folder)
+child=verified['children'][0];constructors=t.constructor_phases(r,folder/mode,t.contract(r),child,verified['constructors'][mode]);path=folder/mode/'constructors/constructor-events.jsonl';events=[json.loads(x) for x in path.read_text().splitlines()];witnesses=[events[2*i+1]['witness'] for i in range(184)]
+classified=[]
+for record,witness in zip(constructors,witnesses,strict=True):
+ encoding=witness['fields']['encoding'];assert encoding['kind']=='str' and encoding['value'] in t.contract(r)['proof_encodings']
+ classified.append(dict(encoding=encoding['value'],read=record['read'],constructor=record['index'],phases=record['phases'],total=record['total']))
+rows=[]
+for encoding in sorted({x['encoding'] for x in classified}):
+ for read in (1,2):
+  selected=[x for x in classified if x['encoding']==encoding and x['read']==read]
+  rows.append(dict(encoding=encoding,read=read,constructors=len(selected),constructor_cpu_seconds=math.fsum(x['total']['cpu'] for x in selected),**{name+'_cpu_seconds':math.fsum(x['phases'][name]['cpu'] for x in selected) for name in t.depth.PHASES}))
+out.parent.mkdir(parents=True,exist_ok=True)
+with out.open('x',newline='') as stream:
+ writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+manifest=dict(scope='Posthoc saved-data encoding classification; not preregistered cost/strength gate or new collection; all execution blocked',source_fingerprint=child['source']['fingerprint'],script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),constructor_events_sha256=t.digest(path),raw_pair_manifest_sha256=t.digest(r/'results/matrix-phases/raw-pair-manifest.json'),csv_sha256=t.digest(out),rows=len(rows),constructors=sum(x['constructors'] for x in rows))
+out.with_suffix('.manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n');print(json.dumps(dict(rows=rows,manifest=manifest),indent=2))

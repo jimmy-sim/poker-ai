@@ -1,0 +1,81 @@
+"""Saved-data original-constructor phase accounting; no new measurement."""
+import csv,gzip,json,math,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();destination=Path(sys.argv[2]).resolve()
+assert not destination.exists() and not destination.is_relative_to(r/'results/matrix-phases/pair')
+sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import profile_matrix_phases as t
+from compact_cached import cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+def forbidden(*a,**k):raise AssertionError('saved-data extraction entered poker execution')
+t.child=forbidden;t.software_child=forbidden;t.pair_run=forbidden;t.proof_run=forbidden;t.depth.build=forbidden;t.original.child=forbidden;t.supervise=forbidden;cli.read=forbidden
+for category,owner,name in t.prior.targets():setattr(owner,name,forbidden)
+from poker_ai.postflop.controlled_scoring import ScoringContext
+import poker_ai.postflop.learning_training as training
+ScoringContext.score=forbidden;training.replay_detail=forbidden
+with isolated(worker=False):data=t.report(r,r/'results/matrix-phases/pair')
+mode='original_profiled';folder=r/'results/matrix-phases/pair'/mode
+outer=json.loads((folder/'old/parent-resource-reads.json').read_text())['reads'];inner=json.loads((folder/'inner-reads.json').read_text())['reads']
+readers=[];regions=[];phase_rows=[];matrix_totals=[]
+for i,block in enumerate(data['ledgers'][mode]):
+ # Explicit legacy3.11 binary64 association, declared before this capture and
+ # checked against the frozen parser's existing1e-9 CPU arithmetic allowance.
+ raw=block['ledger']['rows'];children={j:[] for j in range(len(raw))};groups={k:dict(calls=0,inclusive_cpu=0.0,exclusive_selected_cpu=0.0) for k in t.prior.CATEGORIES}
+ for j,event in enumerate(raw):
+  if event['parent'] is not None:children[event['parent']].append(j)
+  group=groups[event['category']];group['calls']+=1;group['inclusive_cpu']+=event['after']['cpu']-event['before']['cpu']
+ union=0.0
+ for j,event in enumerate(raw):
+  amount=event['after']['cpu']-event['before']['cpu'];child_cpu=0.0
+  for child in children[j]:child_cpu+=raw[child]['after']['cpu']-raw[child]['before']['cpu']
+  groups[event['category']]['exclusive_selected_cpu']+=amount-child_cpu
+  if event['parent'] is None:union+=amount
+ previous=block['summary'];assert union==previous['selected_union_cpu']
+ for name,value in groups.items():
+  assert value['calls']==previous['groups'][name]['calls']
+  for measure in ('inclusive_cpu','exclusive_selected_cpu'):assert abs(value[measure]-previous['groups'][name][measure])<=1e-9
+ block['summary']=dict(calls=previous['calls'],groups=groups,selected_union_cpu=union)
+ for name,value in groups.items():regions.append(dict(read=i,category=name,**value))
+ clocks=outer[i]['observation']['interval']['clocks'];inside=inner[i]['observation']['interval']['clocks']
+ readers.append(dict(read=i,scope=outer[i]['scope'],outer_wall_seconds=clocks['perf_seconds'],outer_cpu_seconds=clocks['process_cpu_seconds'],inner_wall_seconds=inside['perf_seconds'],inner_cpu_seconds=inside['process_cpu_seconds'],selected_calls=previous['calls'],selected_union_cpu=union,outside_selected_cpu=inside['process_cpu_seconds']-union))
+ selected=[x for x in data['constructor_phases'] if x['read']==i]
+ counts={name:len(selected) for name in t.depth.PHASES}
+ phases={name:math.fsum(x['phases'][name]['cpu'] for x in selected) for name in t.depth.PHASES}
+ total=math.fsum(x['total']['cpu'] for x in selected)
+ constructor_remainder=math.fsum(x['remainder']['cpu'] for x in selected)
+ matrix=groups['matrix_build']['inclusive_cpu'];wrapper=matrix-total
+ assert abs(matrix-groups['matrix_build']['exclusive_selected_cpu'])<=1e-9
+ assert wrapper>=-1e-9 and abs(math.fsum(phases.values())+constructor_remainder+wrapper-matrix)<=1e-9
+ matrix_totals.append(dict(read=i,constructors=len(selected),phase_calls=counts,phase_cpu=phases,constructor_cpu=total,constructor_remainder_cpu=constructor_remainder,matrix_wrapper_remainder_cpu=wrapper,matrix_cpu=matrix))
+ for entry in selected:
+  for name,value in entry['phases'].items():phase_rows.append(dict(constructor=entry['index'],read=i,phase=name,cpu_seconds=value['cpu'],wall_seconds=value['wall']))
+data['readers']=readers;data['matrix_totals']=matrix_totals
+workers=[];bodies=[]
+raw=json.loads((folder/'old/child.json').read_text())
+for scope in ('body_observation','child_observation'):
+ interval=raw[scope]['interval'];child=interval['resources']['reaped_child_usage']['delta']
+ bodies.append(dict(scope=scope,wall_seconds=interval['clocks']['perf_seconds'],process_cpu_seconds=interval['clocks']['process_cpu_seconds'],child_user_seconds=child['ru_utime'],child_system_seconds=child['ru_stime'],note=raw['child_observation_scope'] if scope=='child_observation' else 'Original body nested within child; not complete command'))
+for slot in range(3):
+ raw=json.loads((folder/f'old/worker-telemetry/worker-{slot}.json').read_text());interval=raw['observation']['interval'];child=interval['resources']['reaped_child_usage']['delta']
+ workers.append(dict(slot=slot,pid=raw['observation']['before']['pid'],wall_seconds=interval['clocks']['perf_seconds'],process_cpu_seconds=interval['clocks']['process_cpu_seconds'],child_user_seconds=child['ru_utime'],child_system_seconds=child['ru_stime']))
+destination.mkdir(parents=True);(destination/'summary.json').write_bytes(t.canonical(data)+b'\n')
+for name,rows in [('readers.csv',readers),('regions.csv',regions),('phases.csv',phase_rows),('workers.csv',workers),('bodies.csv',bodies)]:
+ with (destination/name).open('x',newline='') as stream:
+  writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+real=matrix_totals[1:];fig,ax=plt.subplots(figsize=(11,7),layout='constrained');bottom=[0.0,0.0]
+labels=dict(information_keys='Information/key creation',array_setup='Array setup',depth_validation='Original depth validation',instantiate='Object creation',field_witness='Complete field witnessing')
+for name in t.depth.PHASES:
+ values=[x['phase_cpu'][name] for x in real];ax.bar(range(2),values,bottom=bottom,width=0.6,label=labels[name]);bottom=[a+b for a,b in zip(bottom,values,strict=True)]
+for name,label in [('constructor_remainder_cpu','Constructor timer/record remainder'),('matrix_wrapper_remainder_cpu','Outer matrix wrapper remainder')]:
+ values=[x[name] for x in real];ax.bar(range(2),values,bottom=bottom,width=0.6,label=label);bottom=[a+b for a,b in zip(bottom,values,strict=True)]
+for i,x in enumerate(real):ax.text(i,x['matrix_cpu'],f"{x['matrix_cpu']:.3f}s",ha='center',va='bottom')
+ax.set_xticks(range(2),['Initial mathematical read','Final mathematical read']);ax.set_ylabel('Own-process CPU seconds, including observation');ax.set_title('One ORIGINAL-only audit: CPU within matrix construction');ax.grid(axis='y',alpha=0.2);ax.set_axisbelow(True);ax.set_ylim(0,max(x['matrix_cpu'] for x in real)*1.15);ax.legend(loc='upper center',bbox_to_anchor=(0.5,-0.10),fontsize=9)
+fig.savefig(destination/'matrix-phases.png',dpi=160);plt.close(fig)
+numeric=('summary.json','readers.csv','regions.csv','phases.csv','workers.csv','bodies.csv')
+manifest=dict(scope='Data-only original-only phase localization; no paired cost/speedup, forecast or training admission. CPU includes observation/library work, not pure self-time or wall partition. Workers parallel; do not add into command wall.',script_sha256=t.digest(Path(__file__)),cpu_association='Explicit legacy3.11 sequential binary64 from selected rows; existing1e-9 CPU arithmetic check; phases use math.fsum; no changed raw/tolerance/gate',raw_sha256=data['input_sha256'],numeric_files={n:t.digest(destination/n) for n in numeric},figure_sha256=t.digest(destination/'matrix-phases.png'),matplotlib=matplotlib.__version__,blocked_operations=['new diagnostic/proof/child/supervisor','actual archive mathematical read','all selected matrix/spot/checkpoint/loader operations','ScoringContext.score/replay_detail','learner/native constructors/imports via isolated(worker=False)'])
+(destination/'render-manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+print(json.dumps(dict(readers=readers,matrix_totals=matrix_totals,phase_rows=len(phase_rows),workers=workers,bodies=bodies),indent=2))

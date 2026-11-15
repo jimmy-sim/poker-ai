@@ -5444,3 +5444,39 @@ and originals exact; [raw manifest](../results/matrix-phases/raw-pair-manifest.j
 is33rd. Publish this complete raw evidence BEFORE phase CPU analysis. Source412/
 all53pins remain unchanged. No retry, new training, optimizer/default admission
 or production933.89/900 forecast replacement. Journal122 explains capture scope.
+
+Posthoc after raw publication `c4a9141`: information/key CPU44.433599 of
+52.715310observed matrix seconds,84.289742%; original depth1.292698(2.452225%),
+field witnessing1.403231(2.661904%). Two archived-policy reads total288.672415CPU;
+matrix18.261291%,key15.392395%. Inclusive/exclusive global ledgers,920phase CSV
+rows, two-read stacked plot and disjoint constructor/wrapper remainders retained.
+No parent/child CPU double count. Whole original body/nearby-child and all three
+parallel comparison-worker clocks/resources are in tables; workers not summed
+into elapsed. [Results](matrix-phases.md#recorded-cpu-result--november-15-2026).
+
+Posthoc constructor-encoding classification:exact68calls,key0.986307CPU;
+public_b816calls,key4.966956;texture_b8100calls,key38.480336. These are constructor
+fields with different inventories, not causal encoding-speed or strategy-count
+comparisons. Separate rerunnable extraction and raw-bound manifest retained.
+Actual3.12.15/NumPy2.5.4 reproduces all six numeric exports and encoding CSV
+byte-for-byte with builder/reader/child/supervisor/scorer/replay/learner/native
+execution blocked. Explicit legacy3.11 sequential CPU association stays within
+frozen1e-9 arithmetic allowance; phase aggregation math.fsum; no changedraw,
+tolerance,caps,seeds,gates or recapture. Figure visually inspected.
+
+Final relevant suites742each pass; exact logs/timings retained in report. Source
+remains412FPf0b2…/all53pins; original25software and32audit raw/admin files and
+ignored outputs preserved. No full-game strength/new training/default/fresh/global
+admission or933.89/900forecast rescue. Next prospective question:replace repeated
+card-suit arithmetic with a fixed exact lookup, requiring independent equivalence
+and complete cost proof before any production integration. Journal122 updated;
+final local verification and exact-report-head hosted checks precede merge.
+
+Final local verification passes:742relevant tests each40.53/39.27s, source/
+raw/original-copy/initial-failed-CI retention proof, actual3.12portable exports,
+CLI base fields equal report (report adds derived read/matrix aggregates),Ruff916,
+strictmypy768,hooks and409focused destinations/5images/anchors/fences.
+[Local receipt](../results/matrix-phases/report/local-verification.json) records
+actual scope and remaining exact-report-head hosted requirement. No source or
+scientific criterion changes; no new trajectory. Publish coherent report, then
+both hosted jobs must pass before history-preserving merge.
