@@ -128,6 +128,29 @@ infer human hours or mastery. Continue until the user stops; no future schedule,
 subagents or C++/Rust core. PR #74's pending final CI/merge remains a separate
 prerequisite to its closure, not an assumed completed result.
 
+## Source stage — November 15, 2026
+
+[PR #75](https://github.com/jimmy-sim/poker-ai/pull/75) source
+`7311ab4d3c84a2df032f56cdd744e7572de425dd` binds a verified 409 files, fingerprint
+`01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7`.
+All prior 406 files and 47 input pins remain unchanged. Both complete immutable
+local bases pass 4,135 tests / 64 skipped / 150 deselected, in 825.92 / 805.02
+test seconds. Both relevant optional suites pass 647, in 56.19 / 54.67 seconds.
+Actual runtimes, physical imports, source/head/cleanliness, lint, formatting,
+strict typing and hooks are checked before/after as applicable. The source was
+pushed only after all four local roles passed. Hosted source checks, published
+qualification/operators and formal software proof remain prerequisites to the
+single comparison. No formal software proof or candidate timing has run here.
+
+All six source roles now pass. Both hosted jobs in
+[CI 43759887855](https://github.com/jimmy-sim/poker-ai/actions/runs/43759887855)
+pass 4,135 tests with the historical skips/warning, in 871.60 / 760.88 seconds.
+Actual Python/NumPy/uv and the complete temporary checkout tree match the
+qualified source. The [six-role receipt](../results/grouped-depth-check/checks.json)
+retains untrimmed logs, metadata, the actual runner/assembler and exact generic
+launch/retention operators for both stages. Qualification publication precedes
+the formal software proof; no formal proof or candidate timing exists yet.
+
 ## Three questions
 
 **Why compare constructor fields?** A faster check is useful only if the same

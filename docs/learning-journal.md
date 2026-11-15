@@ -5817,3 +5817,15 @@ and a slower candidate's failed cost result. A software-proof fixture compares
 the five constructors and can be read back with actual construction blocked.
 Its qualification is deliberately fictional: a unit test is not the formal
 published proof. Full local and hosted source qualification still comes first.
+
+All four immutable local roles now pass: 4,135 base tests per Python version
+and 647 relevant optional tests per version. The [source PR](https://github.com/jimmy-sim/poker-ai/pull/75)
+was opened after those results. Both GitHub source checks and publication of
+qualification/run instructions still precede the formal proof. No candidate
+timing or measured saving exists at this source checkpoint.
+
+Both GitHub source jobs now pass 4,135 tests with verified actual runtimes and
+matching complete source trees. The [qualification record](../results/grouped-depth-check/checks.json)
+retains all six roles and the exact run/save instructions. Its publication comes
+before the formal software proof, which must itself be published before the one
+timing comparison. None of these source checks establishes a speedup.

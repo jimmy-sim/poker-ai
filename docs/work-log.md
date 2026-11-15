@@ -5274,3 +5274,22 @@ Ruff lint/format passes 911 files; strict typing passes 764, hooks and 387 focus
 relative destinations / five images / anchors / fences pass. CLI help works.
 Complete immutable-source local and hosted qualification remains pending;
 no real proof, reference comparison or candidate timing has run.
+
+Source [PR #75](https://github.com/jimmy-sim/poker-ai/pull/75):
+7311ab4d3c84a2df032f56cdd744e7572de425dd; verified 409-file fingerprint
+01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7.
+Both immutable full local bases pass 4,135 / 64 skipped / 150 deselected,
+825.92 / 805.02 test seconds; both optional suites pass 647, 56.19 / 54.67 seconds.
+Actual runtime, physical imports, head/source cleanliness and fingerprint match
+before/after. Initial source push waits for all four local roles. Both hosted
+jobs and publication of complete qualification/operators still precede the
+formal software proof and its required publication before the one pair.
+
+All six roles pass at 7311ab4. Hosted [CI 43759887855](https://github.com/jimmy-sim/poker-ai/actions/runs/43759887855)
+passes 4,135 / 64 skipped / 150 deselected plus the historical warning each,
+871.60 / 760.88 test seconds. Actual Python/NumPy/uv and source test-merge
+a218b773's complete tree equal the qualified source tree. [Qualification](../results/grouped-depth-check/checks.json)
+retains exact untrimmed logs, raw metadata, local runner, assembler and generic
+launch/save operators. No formal software proof or pair has run; publication
+of this qualification precedes those stages. Source remains 409 files, all
+47 pins and original scientific caps unchanged.
