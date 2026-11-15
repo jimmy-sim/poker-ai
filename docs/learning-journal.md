@@ -5916,3 +5916,19 @@ matching and outer-call containment. A saved software-proof fixture replays with
 the actual builder blocked. Its source qualification is deliberately fictional;
 it is not the formal published proof. Complete local and hosted qualification
 still comes first. Lint/format, strict types and focused documentation links pass.
+
+
+Both initial hosted jobs fail two expiry fixtures, despite local passes. A fresh
+runner's monotonic clock can be less than 2,000 seconds; subtracting 2,000 gives
+an invalid negative origin rather than the intended expired positive origin.
+The runner correctly refuses that origin. The test accidentally depended on
+how long the machine had been running.
+
+The fixture now controls its clock explicitly: current time 5,000, origin 3,000.
+It exercises both short and long simulated host uptimes. Production clocks,
+180/900/1,800-second caps and the measured constructor remain unchanged.
+The [initial failed hosted records](../results/matrix-phases/qualification-history/initial-a459b06/initial-failure.json)
+retain both failures alongside all four original local passes. Corrected-head
+local and hosted qualification must be complete before the formal proof or
+actual audit. No measurement has been attempted. This is a portability fix in
+a software test, not an unfavorable poker result or a changed acceptance rule.

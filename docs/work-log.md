@@ -5376,3 +5376,20 @@ source qualification, with failed local outputs retained in the workspace.
 Ruff lint passes, 916 files formatted, strict mypy passes768source files;
 385 focused relative destinations/4images/heading anchors/fences pass.
 No formal collection or measurement was performed by these software tests.
+
+
+Initial [hosted run43768513969](https://github.com/jimmy-sim/poker-ai/actions/runs/43768513969)
+fails both runtimes:2failed/4226passed/64skipped/150deselected plus historical
+warning,895.58s311/787.44s312. Both failures are the two new expiry fixtures:
+`perf_counter()-2000` can be negative on a recently booted VM. Actual runtime,
+every uv selection and complete test-merge tree equal initial source `a459b06`.
+[All initial receipts](../results/matrix-phases/qualification-history/initial-a459b06/manifest.json)
+retain four local passes, both complete failed hosted logs and raw metadata;
+no six-role pass or formal proof is claimed for that head.
+
+Fix only the test clock:positive5000/3000 synthetic timestamps, with explicit
+short/long host-uptime cases. Production instrument, original sources,412-file
+fingerprint,53pins,caps,seeds,tolerances,gates unchanged. Nine initial targeted
+checks pass; strengthened clock regression gives11passed/44deselected. Complete
+corrected-head local and hosted qualification is required again before any
+formal proof or actual audit. Journal122 records the portability failure.

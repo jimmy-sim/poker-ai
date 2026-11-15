@@ -1,0 +1,15 @@
+"""Retain initial source qualification failure; never accept it as a passed role."""
+import hashlib,json,runpy,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'matrix-phases';f=w/'matrix-checks';head='a459b060e70051dd12852d09d1f2570910b9500a';run=43768513969
+m=json.loads((f/'run.json').read_text());jobs=json.loads((f/'jobs.json').read_text())['jobs'];assert m['id']==run and m['head_sha']==head and m['status']=='completed' and m['conclusion']=='failure'
+checkout=json.loads((f/'checkout-source.json').read_text());tree=subprocess.check_output(['git','-C',str(r),'rev-parse',head+'^{tree}'],text=True).strip();assert checkout['tree']['sha']==tree and head in [x['sha'] for x in checkout['parents']]
+parse=runpy.run_path(str(r/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='runtime_label_parser')['parse'];rows=[]
+for minor,version,numpy,jobid in [('311','3.11.17','2.4.6',132978935169),('312','3.12.15','2.5.4',132978935160)]:
+ job=next(x for x in jobs if x['id']==jobid);assert job['conclusion']=='failure' and job['head_sha']==head and job['status']=='completed'
+ p=f/f'hosted{minor}.log';s=p.read_text(encoding='utf-8-sig');a=parse(s);assert a['actual_python']==[version] and a['all_uv_versions']==[version] and 'ACTUAL_NUMPY='+numpy in s and checkout['sha'] in s
+ failures=[x for x in s.splitlines() if 'Z FAILED tests/' in x];assert len(failures)==2 and all('test_expired_preflight_does_not_launch_or_extend_cap' in x and 'invalid registered command origin' in x for x in failures)
+ line=next(x for x in s.splitlines() if '2 failed, 4226 passed, 64 skipped, 150 deselected' in x)
+ rows.append(dict(minor=minor,job_id=jobid,python=version,numpy=numpy,result=line,log_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),eligible_passed_role=False))
+proof=dict(scope='Initial local-passing source whose hosted expiry fixtures fail on a short-uptime runner; retained nonqualifying software evidence. No formal proof or actual audit started.',head_sha=head,run_id=run,actual_checkout_sha=checkout['sha'],tree_sha=tree,actual_runtime_uv_tree_verified=True,rows=rows,all_hosted_roles_passed=False,formal_collection_started=False)
+(f/'initial-failure.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');print(json.dumps(proof,indent=2))

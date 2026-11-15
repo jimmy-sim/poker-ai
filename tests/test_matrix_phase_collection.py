@@ -746,13 +746,16 @@ def test_expected_negative_is_not_a_generic_ignored_failure(
 
 
 @pytest.mark.parametrize("proof", [False, True])
+@pytest.mark.parametrize("host_uptime", [0.125, 500000.0])
 def test_expired_preflight_does_not_launch_or_extend_cap(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, proof: bool
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, proof: bool, host_uptime: float
 ) -> None:
+    monkeypatch.setattr(t.time, "perf_counter", lambda: host_uptime)
     fake_parent(monkeypatch)
-    monkeypatch.setenv(
-        "POKER_MATRIX_PHASES_COMMAND_STARTED", str(time.perf_counter() - 2000)
-    )
+    # A freshly booted CI VM can have a monotonic clock below 2000 seconds.
+    # Model a valid positive origin and an expired budget independently of uptime.
+    monkeypatch.setattr(t.time, "perf_counter", lambda: 5000.0)
+    monkeypatch.setenv("POKER_MATRIX_PHASES_COMMAND_STARTED", "3000.0")
     monkeypatch.setattr(
         t, "supervise", lambda *args: pytest.fail("expired budget launched child")
     )
