@@ -5066,3 +5066,27 @@ not replay archived mathematics in a newer runtime. Journal118 explains scales
 and limits. No optimizer, new training/default, stronger-agent or933.89/900
 forecast rescue; prior unfavorable results remain. Final relevant checks and
 both exact-head hosted jobs precede merge, then stop at this milestone.
+
+
+### November 14 — coarse CPU boundaries, prospective
+
+[PR #72](https://github.com/jimmy-sim/poker-ai/pull/72) closes the preceding
+original-context measurement at 6d59531. Final exact-head CI43681028590 passes
+3,881 tests per version, and main's saved-data command plus 37 fixtures pass;
+all ten unrelated result edits remain exact. Its finding motivates this step,
+without resolving the historical child-counter discrepancy or admitting training.
+
+The [new issue #4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6890391633)
+precedes this [coarse CPU instrument](coarse-reader-cpu.md). Time only matrix
+builds, spot-tree builds and checkpoint replays inside the original three reads;
+retain the original full audit in both halves. The selected call forest derives
+non-overlapping process CPU without a global per-frame timer. Preserve all402
+prior files in a404-file source map;37 inputs, original runtime/extras,900/1800
+caps, one attempt and all failed outcomes stay fixed. Initial70software fixtures
+pass on3.11 and3.12; full six-role qualification precedes any data.
+No real target has run. Codex-assisted; personal time/mastery unrecorded.
+
+Apply the latest publishing preference in this substantive change: finish local
+implementation/review/checks before the first source push, then batch commits
+at the required qualification, raw and report boundaries. No standalone preference
+push, date manipulation, acceptance change or future work schedule is introduced.

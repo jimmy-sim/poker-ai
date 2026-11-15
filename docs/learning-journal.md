@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Locate CPU work inside validation](#119-locate-the-work-with-a-few-coarse-timers)
+
 - [Measure the original audit context](#118-measure-the-original-audit-context-before-choosing-an-optimizer)
 
 - [Reconcile the saved CPU readings](#117-check-the-records-before-explaining-the-runtime-difference)
@@ -96,6 +98,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 119](#119-locate-the-work-with-a-few-coarse-timers): a small set of CPU
+  timers for the main validation process, now being checked.
 
 - [Step 118](#118-measure-the-original-audit-context-before-choosing-an-optimizer):
   the controlled full-audit measurement now being checked.
@@ -5599,3 +5604,32 @@ optimizing a small helper cost. The existing forecast still fails its limit;
 no training or default policy is admitted. Stop after this measurement report
 and closing checks. The three numeric exports also match exactly under a
 Python 3.12 data-only check with poker execution blocked.
+
+
+## 119. Locate the work with a few coarse timers
+
+November 14, 2026. The original-context measurement found that most reader CPU
+belongs to the main process and its libraries. The next question is which broad
+operations account for it. The older elapsed profile suggests building game
+trees, building matrix representations and replaying saved checkpoints as leads.
+
+A previous attempt to time every function with a CPU callback exceeded its cap.
+This tool times only those three coarse operations. **Example:** timing a kitchen's
+prep, cooking and cleaning stages needs fewer clock readings than timing every
+hand movement. When cooking includes stirring, count stirring within cooking
+or subtract it before adding totals; adding both inclusive times counts it twice.
+
+The new tests check that nested time is not counted twice and that the wrapper
+preserves method behavior, subclass binding, arguments, returned objects and
+exceptions. They also check restoration after failure and reject changed clocks,
+threads, partial records or too many callbacks. The first 70 fixtures pass; no
+real profile has run. Full source qualification and published operators still
+precede the single fixed pair.
+
+The [protocol](coarse-reader-cpu.md) keeps the same saved strategies and original
+full-audit context. A result can identify a useful optimization target. It does
+not train a better strategy or revise the failed forecast. Each completed,
+verified step will inform the next issue #4 question under the current request
+to continue until interrupted. Local work and checks are batched before pushes,
+with the required research publication boundaries preserved. Codex assists with
+implementation and explanation; personal practice and hours are not inferred.
