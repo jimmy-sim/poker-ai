@@ -5114,3 +5114,33 @@ retention operators are in[checks](../results/coarse-reader-cpu/checks.json).
 This qualification checkpoint precedes the one pair; no real target has run.
 The404-file map and37scientific pins remain unchanged. The same source and
 qualification checks will run inside the registered clocks as well.
+
+
+Recorded outcome, [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73): one
+control/profiled pair426.7636394160072/444.64136350000626s, shared872.5313877080043s,
+all under900/1800. Full original432profiles/1,152conditions/three computed reads,
+worker/card identity and base-admission rejection pass. The1532-call inventory
+is184matrix/52spot-tree/1296checkpoint; all complete, no hook errors, restored
+aliases/descriptors, all actual selected roots. Raw31files plus8execution files
+published6e69bd2 after qualificationb1b3f98 and before posthoc rendering; original
+ignored bytes and exact published operators preserved.
+
+The [report](coarse-reader-cpu.md#recorded-result--november-14-2026) assigns
+17.9292% matrix,10.5082% spot-tree,24.5342% checkpoint and47.0283% outside across
+two real-read process CPU totals148.116763/146.597543s. Body/nearby-child/worker
+and supervisor clocks remain separate; one order does not identify pure overhead.
+The old21–22child-user discrepancy remains unresolved. All five numeric exports
+match actual3.12.15/NumPy2.5.4 with reader/child/tree/snapshot/scoring/learner/native
+execution blocked; source404 unchanged. Final figure inspected after correcting
+a clipped label with numeric bytes unchanged. No optimizer, new training/default,
+strength or933.89/900forecast rescue. Next separately registered question:
+localize the47% remainder, rather than assume the matrix-depth hypothesis is
+large enough. Final relevant local and exact-head hosted checks precede merge.
+
+
+Final local regressions463each(16.28/16.26s), Ruff903files, strict mypy758,
+hooks and focused Markdown paths/images/anchors/fences pass. Saved-data CLI
+matches report; all39raw/admin bytes and ignored originals retained. Local
+verification and complete final logs are in the report. Both final exact-head
+hosted jobs must pass before history-preserving merge; routine CI/merge status
+updates the existing PR description, avoiding a status-only commit.

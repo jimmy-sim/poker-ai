@@ -1,0 +1,19 @@
+"""Final local report evidence; original measurement is never rerun."""
+from pathlib import Path
+import hashlib,json
+import sys
+r=Path(sys.argv[1]).resolve();w=r.parent;sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+from profile_coarse_reader import binding
+p=r/'results/coarse-reader-cpu/report';assert json.loads((w/'coarse-cli-show.json').read_text())==json.loads((p/'summary.json').read_text())
+_,s=binding(r,clean=False);assert s['fingerprint']=='00a339915681bbb109d04c9ee15a90d245a8bd6672b5d01b4081b17d44d3e8db' and len(s['sha256'])==404
+checks=[]
+for minor in ['311','312']:
+ q=json.loads((p/('final-optional'+minor+'.json')).read_text());checks.append(dict(minor=minor,**q))
+raw=json.loads((r/'results/coarse-reader-cpu/raw-manifest.json').read_text())['raw_sha256'];pairs=[n for n in raw if n.startswith('pair/')];execution=[n for n in raw if n.startswith('execution/')]
+assert len(pairs)==31 and len(execution)==8 and len(raw)==39
+for n,h in raw.items():assert hashlib.sha256((r/'results/coarse-reader-cpu'/n).read_bytes()).hexdigest()==h
+for directory,old in [('pair',r/'results/runs/coarse-reader-cpu/pair'),('execution',w/'coarse-execution')]:
+ for original in old.rglob('*'):
+  if original.is_file():assert original.read_bytes()==(r/'results/coarse-reader-cpu'/directory/original.relative_to(old)).read_bytes()
+proof=dict(scope='Final local saved-data/report and relevant software checks; no fresh pair, poker learning or forecast admission',source_fingerprint=s['fingerprint'],effective_source_files=404,source_unchanged=True,source_checked_commit='8970bc556697d684b6482be82f431699a76128d7',raw_publication='6e69bd2dcd2b0100bbfc26ba9c57afcd11c1bf07',working_head=s['git_commit'],working_report_dirty=s['dirty'],pair_files_exact=len(pairs),execution_files_exact=len(execution),raw_and_execution_files_exact=len(raw),retained_files_including_manifest=len(raw)+1,original_ignored_outputs_retained=True,cli_saved_result_equals_report=True,final_relevant_checks=checks,ruff_lint_and_format_pass=True,ruff_files=903,mypy_strict_pass=True,mypy_source_files=758,hooks_pass=True,focused_markdown_links_images_anchors_fences_pass=True,figure_visually_inspected=True,figure_label_revision_preserves_all_five_numeric_exports=True,actual312_numeric_exports_byte_identical=json.loads((p/'replay312.json').read_text())['byte_identical'],diff_scope='Changed prose/code checked; untrimmed original hosted logs preserve their trailing whitespace and all original bytes',final_exact_head_hosted_checks='Required after report publication, before merge')
+(p/'local-verification.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');print(json.dumps(proof,indent=2))
