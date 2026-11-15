@@ -5232,3 +5232,45 @@ that loop's cost/savings are not yet established. Complete final local and
 exact-head hosted checks still precede merge. No training/default/stronger-agent
 or failed-forecast admission follows from this measurement. Journal 120 explains
 the result and retained export failure. Codex-assisted; personal time unknown.
+
+### November 15 — close loader profiling and test grouped matrix depths
+
+[PR #74](https://github.com/jimmy-sim/poker-ai/pull/74) merged at
+efec4e2900b9722bb099f0bf64e1a93d3b8ce356 after both final jobs in
+[CI 43749828795](https://github.com/jimmy-sim/poker-ai/actions/runs/43749828795)
+passed 4,007 tests / 64 skipped / 150 deselected plus the historical warning
+each: 1,181.03 / 760.90 test seconds. Actual Python/NumPy/uv and both source/final
+temporary test-merge trees match their complete published PR-head trees.
+[Closing evidence](../results/reader-load-cpu/final-ci/verified.json) includes the
+untrimmed logs, metadata and verifier. Main's saved-data command equals the
+report; 56 fixtures pass in 2.74 seconds under actual 3.11.17 / NumPy 2.4.6.
+All ten unrelated result edits retain bytes, status, changed-path index entries
+and both patches, rechecked after main verification. Their file bytes are not
+published. Closure is archived with this substantive step to avoid a status push.
+
+The [next prospective issue #4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6899625741)
+precedes implementation. [Protocol](grouped-depth-check.md) and sealed config
+pin 47 inputs, all prior 406 source files, the original 900/1800-second caps,
+one attempt and unchanged scientific rules. A grouped integer depth predicate
+replaces only the original constructor's repeated final masks, with an AST-body
+guard and complete dataclass/array field witnesses. Expected effective source
+count is 409, to be verified after the new entry is complete. Original/grouped
+arms must have the same timers and ordered field fingerprints; both complete
+wall time and matrix CPU must strictly decrease for the diagnostic cost pass.
+Source qualification and a 180-second source-bound software proof precede any
+comparison. No candidate timing, speedup or training admission is claimed.
+Journal 121 explains groups, depths, exact equivalence and the remaining checks.
+Codex-assisted; personal hours and mastery are not inferred.
+
+Initial candidate/runner checks: 128 new fixtures pass; combined with the
+existing reader/coarse fixtures, 254 pass under each actual Python version
+(12.22 / 12.30 test seconds). Literal-constructor AST equivalence, independent
+integer sets, all five encodings, full field fingerprints, aliases/subclasses,
+primary exceptions, incomplete/corrupt records and comparison/source/clock/cap
+failures are covered. A fictional-qualified software-proof fixture exercises
+the retained shape without a reference or trajectory; it is not formal proof.
+The saved-data pair fixture preserves a slower candidate's failed cost result.
+Ruff lint/format passes 911 files; strict typing passes 764, hooks and 387 focused
+relative destinations / five images / anchors / fences pass. CLI help works.
+Complete immutable-source local and hosted qualification remains pending;
+no real proof, reference comparison or candidate timing has run.

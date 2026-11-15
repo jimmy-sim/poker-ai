@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Check matrix depths with grouped integer work](#121-check-matrix-depths-without-rescanning-every-node)
+
 - [Find CPU inside input loading](#120-follow-the-work-inside-input-loading)
 
 - [Locate CPU work inside validation](#119-locate-the-work-with-a-few-coarse-timers)
@@ -100,6 +102,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
+  grouped depth check inside measured matrix construction; correctness work is
+  underway and no candidate timing result exists.
 
 - [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
   inside input loading; the complete capture assigns about 86% of real-read CPU
@@ -5766,3 +5772,48 @@ The check makes sure each group belongs to one depth in the game tree. A faster
 equivalent must reject the same invalid groups and preserve every constructed
 array. Its individual cost and possible savings remain unmeasured. The failed
 forecast still blocks new training; this result identifies work to investigate.
+
+**Closing checks:** [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74) is merged.
+Both final GitHub jobs pass 4,007 tests with the actual runtimes and matching
+tested source trees. In the updated main checkout, the saved-data command equals
+the report and 56 fixtures pass. All ten unrelated local result edits remain
+exactly preserved after verification. The [closing receipts](../results/reader-load-cpu/final-ci/verified.json)
+are retained with the next substantive change, rather than a separate status push.
+
+## 121. Check matrix depths without rescanning every node
+
+November 15, 2026. Matrix construction takes about 18.53% of the measured
+real-read CPU. One final check repeatedly scans every node for each information
+group. The next question is whether grouping the depths once can preserve the
+same decisions and constructed game arrays. The cost of that individual loop
+has not been measured, so a useful saving remains a hypothesis.
+
+An information group holds situations that must use the same decision row.
+Depth counts steps from the root of the game tree. This matrix backend requires
+each group to occur at one depth. **Example:** depths `[3, 3, 3]` pass; `[3, 5]`
+fail. Checking that a group's minimum equals its maximum gives the same answer,
+provided an empty group still fails. The implementation uses integer reductions;
+it changes no poker payoff, strategy or floating tolerance.
+
+The candidate lives in private research support. The historical constructor
+remains unchanged and is restored after the scoped comparison. A source-body
+guard checks that the copied construction code differs only at that final
+validation step. Tests compare all output fields, including array bits and
+geometry, and exercise aliases, subclasses, failure records and restoration.
+This is Codex-assisted implementation and explanation, not a personal practice
+entry or a claim of manual authorship.
+
+The [prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6899625741)
+and [sealed protocol](grouped-depth-check.md) precede implementation and outcomes.
+Full source qualification and a bounded software proof must precede the single
+original/grouped complete-audit pair. Both arms will use the same timers and
+constructor-field observer. Missing, failing or slower results remain visible.
+No candidate timing, optimizer cost pass, new training or admission exists yet.
+
+The initial implementation and runner now pass 128 focused fixtures. Together
+with the earlier loader/timer fixtures, 254 pass on each Python version. The
+runner tests retain source failures, interrupted or missing work, changed records
+and a slower candidate's failed cost result. A software-proof fixture compares
+the five constructors and can be read back with actual construction blocked.
+Its qualification is deliberately fictional: a unit test is not the formal
+published proof. Full local and hosted source qualification still comes first.
