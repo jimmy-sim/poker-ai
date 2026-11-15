@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Find CPU inside input loading](#120-follow-the-work-inside-input-loading)
+
 - [Locate CPU work inside validation](#119-locate-the-work-with-a-few-coarse-timers)
 
 - [Measure the original audit context](#118-measure-the-original-audit-context-before-choosing-an-optimizer)
@@ -98,6 +100,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
+  inside input loading while retaining the same saved-policy audit.
 
 - [Step 119](#119-locate-the-work-with-a-few-coarse-timers): a small set of CPU
   timers for the main validation process; the completed profile leaves about47%
@@ -5623,11 +5628,13 @@ or subtract it before adding totals; adding both inclusive times counts it twice
 The new tests check that nested time is not counted twice and that the wrapper
 preserves method behavior, subclass binding, arguments, returned objects and
 exceptions. They also check restoration after failure and reject changed clocks,
-threads, partial records or too many callbacks. The 70 focused fixtures pass on both Python versions, as do the complete local
-suites: 3,951 tests per version and 463 relevant optional tests per version.
+threads, partial records or too many callbacks.
+
+**Before measurement:** the 70 focused fixtures passed on both Python versions,
+as did the complete local suites: 3,951 tests per version and 463 relevant optional tests per version.
 [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73) holds the source and coming
-evidence. No real profile has run. Hosted source qualification and published
-operators still precede the single fixed pair.
+evidence. At that source-only checkpoint, no real profile had run. Hosted
+qualification and published operators still had to precede the single pair.
 
 The [protocol](coarse-reader-cpu.md) keeps the same saved strategies and original
 full-audit context. A result can identify a useful optimization target. It does
@@ -5638,26 +5645,26 @@ with the required research publication boundaries preserved. Codex assists with
 implementation and explanation; personal practice and hours are not inferred.
 
 
-**Project decision, November14:** after considering an external practice platform,
-the user selected continued issue#4 validation and training improvements first.
+**Project decision, November 14:** after considering an external practice platform,
+the user selected continued issue #4 validation and training improvements first.
 The adapter remains a later option. This records a choice, not a practice session
 or evidence of full-game competitive strength.
 
 
 The source checks are complete before timing begins: all six local, optional
 and GitHub roles pass at the same source revision. The full hosted suites also
-pass3,951tests each. Their recorded runtimes and the exact run/save instructions
+pass 3,951 tests each. Their recorded runtimes and the exact run/save instructions
 are retained in the [qualification](../results/coarse-reader-cpu/checks.json).
 This establishes which tool will run; it is not yet a measured CPU result.
 
 
-**What the measurement found:** the one pair completes in426.76/444.64seconds,
+**What the measurement found:** the one pair completes in 426.76/444.64 seconds,
 within the fixed limits, and the saved poker results remain identical. It records
 1,532 complete selected calls with no hook or event errors. The tiny software
 read is counted separately from the two real saved-policy reads.
 
-Across those two real reads, about18% of process CPU is in matrix construction,
-11% in spot-tree construction and25% in checkpoint replay. The remaining47%
+Across those two real reads, about 18% of process CPU is in matrix construction,
+11% in spot-tree construction and 25% in checkpoint replay. The remaining 47%
 is elsewhere. **Example:** labeling three expenses explains part of a budget;
 the unlabelled remainder still needs an explanation before deciding what to cut.
 The bars in the [report](coarse-reader-cpu.md#recorded-result--november-14-2026)
@@ -5669,10 +5676,46 @@ match exactly in the newer Python saved-data check, with actual poker execution
 blocked. The original failed forecast remains failed. The next question is where
 the unassigned CPU goes; the source-review idea about repeated matrix checks
 has not yet earned an optimization decision. Closing checks and GitHub CI still
-precede merge, then issue#4 continues under the standing request.
+precede merge, then issue #4 continues under the standing request.
 
 
-Final local checks pass463relevant tests on each Python version, plus lint,
+Final local checks pass 463 relevant tests on each Python version, plus lint,
 formatting, strict typing and hooks. The saved-data Terminal command returns
 the same result as the report. GitHub will check the exact report revision
 before merge; this remains a validation-cost result rather than a stronger bot.
+
+
+**Closing checks, November 15:** [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73)
+is merged. Both final GitHub jobs pass 3,951 tests with the recorded runtimes;
+their tested files match the published revision. The updated main checkout's
+saved-data command and 70 new fixtures pass, and all ten unrelated local result
+edits remain unchanged. These [closing receipts](../results/coarse-reader-cpu/final-ci/verified.json)
+are published with the next substantive step, rather than a separate status push.
+
+## 120. Follow the work inside input loading
+
+November 15, 2026. The previous profile explained roughly half the reader's CPU.
+The remaining 47.03% is a reason to look more closely, not to assume that a
+particular loop is the bottleneck. The next measurement adds three broad calls:
+loading comparison inputs, loading older own inputs and replaying the sampled
+source archive. It retains the original tree and checkpoint counters.
+
+**Example:** a folder can contain another folder. Timing both and adding their
+full durations counts the inner folder twice. The recorder keeps the nesting
+and subtracts selected children when assigning CPU to a parent. It can then show
+which older validation branch contains the remaining work.
+
+There is another small software trap: a command can import a function and keep
+its own reference. Updating the original definition does not update that saved
+copy. The new tests exercise the private command's imported alias, later imports,
+restoration after errors and nested time accounting. They also check that the
+bounded extension leaves the previous collector and its source identity intact.
+The 56 focused fixtures pass on both Python versions, including the real
+prior-source identity check. Complete source qualification still precedes
+timing; no new audit has run.
+
+The [prospective protocol](reader-load-cpu.md) fixes the same saved strategies,
+original runtime, limits and acceptance rules before implementation. A complete
+result should narrow the next optimization target. It does not improve the
+strategy by itself or replace the failed forecast. The source, tests, reports
+and explanations are Codex-assisted; no personal practice or hours are inferred.

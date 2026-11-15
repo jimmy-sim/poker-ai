@@ -5144,3 +5144,35 @@ matches report; all39raw/admin bytes and ignored originals retained. Local
 verification and complete final logs are in the report. Both final exact-head
 hosted jobs must pass before history-preserving merge; routine CI/merge status
 updates the existing PR description, avoiding a status-only commit.
+
+
+### November 15 — close coarse profiling and locate input-loading CPU
+
+[PR #73](https://github.com/jimmy-sim/poker-ai/pull/73) merged at 15546d8 after
+both final jobs in [CI 43692243608](https://github.com/jimmy-sim/poker-ai/actions/runs/43692243608)
+passed 3,951 tests / 64 skipped / 150 deselected plus the historical warning
+per version, in 937.88 / 1176.29 test seconds. Actual Python, NumPy and all uv
+versions are checked. GitHub's temporary source and final test-merge trees equal
+the complete published PR-head trees; those are distinct commit IDs, not distinct
+code. [Full closing evidence](../results/coarse-reader-cpu/final-ci/verified.json)
+is retained with this substantive follow-up. Main's saved-data CLI equals the
+report; 70 fixtures pass in 3.59 seconds under 3.11.17 / NumPy 2.4.6. All ten
+unrelated result edits preserve bytes, status, changed-path index entries and
+both patches. Their uncommitted file bytes are not part of this publication.
+
+The [next prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6891701494)
+precedes implementation and data. [Protocol](reader-load-cpu.md) and sealed config
+add three nested input-loader boundaries to the original three, to locate the
+47.03% CPU remainder. Preserve all prior 404 source files; the new entry/config
+are expected to form 406, to be verified after the source commit. There are 41
+pinned inputs. Original 900/1800-second caps, 120-second saving reserve, 4096-call
+ceiling, one attempt, runtime/extras and all scientific rules remain unchanged.
+The original per-read selected counts must match the coarse capture exactly.
+
+The private implementation reuses the coarse collector under a bounded registry,
+target and owned-alias extension. It includes the private command package's
+imported loader alias and restores original globals/aliases after success and
+failure. The 56 fixtures pass on both versions, and strict focused typing passes;
+full source qualification remains pending. No new real audit, optimizer,
+policy, default or admission exists at this checkpoint. Journal 120 explains
+nested accounting. Codex-assisted; human time and mastery are not inferred.

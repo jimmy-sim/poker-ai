@@ -1,0 +1,22 @@
+"""Guarded FF and exact preservation of the freshly snapshotted user edits."""
+import hashlib,json,subprocess,sys
+from pathlib import Path
+snapshot=Path(sys.argv[1])
+m=json.loads((snapshot/'manifest.json').read_text());root=Path(m['root']);expected=sys.argv[2]
+def git(*args):return subprocess.check_output(['git','-C',str(root),*args])
+def preserved():
+ assert git('status','--porcelain=v1','-z','--untracked-files=all')==(snapshot/'status.bin').read_bytes()
+ assert git('diff','--binary','--no-ext-diff','--no-textconv')==(snapshot/'unstaged.patch').read_bytes()
+ assert git('diff','--cached','--binary','--no-ext-diff','--no-textconv')==(snapshot/'staged.patch').read_bytes()
+ names=[]
+ for row in m['files']:
+  assert row['kind']=='file';p=root/row['path'];assert hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'];names.append(row['path'])
+ assert git('ls-files','--stage','-z','--',*names)==(snapshot/'changed-path-index-entries.bin').read_bytes()
+preserved();assert git('rev-parse','HEAD').decode().strip()==m['head'];assert git('symbolic-ref','--short','HEAD').decode().strip()=='main'
+assert git('rev-parse','origin/main').decode().strip()==expected
+changed=set(git('diff','--name-only',m['head'],expected).decode().splitlines());assert changed.isdisjoint(r['path'] for r in m['files'])
+with (snapshot/'fast-forward.log').open('x') as stream:
+ subprocess.run(['git','-C',str(root),'merge','--ff-only','--quiet','origin/main'],stdout=stream,stderr=subprocess.STDOUT,check=True)
+assert git('rev-parse','HEAD').decode().strip()==expected;preserved()
+(snapshot/'verified-after-ff.json').write_text(json.dumps(dict(head=expected,preserved_paths=len(m['files']),bytes_status_index_patches_preserved=True),indent=2)+'\n')
+print('main FF',expected,'all10user bytes/status/index entries/patches preserved')

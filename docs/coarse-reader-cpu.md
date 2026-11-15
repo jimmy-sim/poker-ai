@@ -249,3 +249,17 @@ all39 raw/administrative copies remain exact. See
 [local-verification.json](../results/coarse-reader-cpu/report/local-verification.json)
 and the saved final logs. The full local bases at the qualified source passed
 3,951tests each; final exact-head hosted checks still precede merge.
+
+
+## Closing verification — November 15
+
+[PR #73](https://github.com/jimmy-sim/poker-ai/pull/73) is merged at 15546d8.
+Both final jobs in [CI 43692243608](https://github.com/jimmy-sim/poker-ai/actions/runs/43692243608)
+pass 3,951 tests per version with the recorded historical warning. Actual
+runtimes and GitHub's complete temporary test-merge trees are verified against
+the published source/report revisions in the
+[closing receipt](../results/coarse-reader-cpu/final-ci/verified.json).
+The updated main checkout's saved-data command and 70 fixtures pass; all ten
+unrelated local result edits remain exact. These receipts accompany the next
+substantive [input-loading investigation](reader-load-cpu.md), without a separate
+status-only commit. The recorded CPU result and failed forecast are unchanged.
