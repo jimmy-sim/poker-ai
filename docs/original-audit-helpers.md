@@ -85,7 +85,7 @@ The unchanged native adapter checks the previously published own archives before
 comparison. OpenSpiel 2.0.2 remains an Apache-2.0 scalar-only reference; no solver
 strategy enters the agent. The complete installed license was reread for this
 step and matches the [recorded license hash](solver_validation.md#solvers-versions-and-licenses).
-No new Hold'em training or opponent strategy is created here.
+No new Hold'em training runs; no reference policy is exported to the agent.
 
 Report both full or partial outcomes, all reader intervals, helper groups and
 resource sums, original scalar identity, body/worker context and limits. A small
@@ -107,3 +107,24 @@ stay separate from reader-helper attribution.
 **Does matching every scalar establish agent strength?** It checks that the
 instrument preserved the old comparison. It neither trains an agent nor supplies
 fresh-game evidence, a successful forecast or competitive full-game strength.
+
+
+## Qualified source before collection
+
+All six roles pass at `9bd3593c55cb80d4719e6ac367600def50768a87`, source
+fingerprint `f0f19b0833ae0a8959b80e837dfd1f4e3d5e08d0e7d46a10fb6df458005d23d0`.
+Both local bases pass 3,881 tests, 64 skipped and 150 deselected (795.80 / 778.81
+seconds); both optional suites pass 393 tests (16.20 / 14.65 seconds).
+[Hosted source checks](https://github.com/jimmy-sim/poker-ai/actions/runs/43677796759)
+pass both versions with one existing river-refinement roundoff warning. Installed
+Python/NumPy, uv selection, source head and successful jobs are checked from the
+complete logs. Ruff checks 900 files, strict typing checks 756, and hooks and
+relative links pass. These are software checks, not a new timing result.
+
+[Qualification](../results/original-audit-helpers/checks.json) binds every raw
+role log. Its [launch](../results/original-audit-helpers/checks/operator_launch.py.txt)
+and [retention](../results/original-audit-helpers/checks/operator_retention.py.txt)
+operators are published before the one pair. All 400 prior source files remain
+unchanged. The full optional 3.11 environment will run the measurement, and all
+required prerequisites repeat inside the complete registered clocks. No actual
+target has run at this publication checkpoint.

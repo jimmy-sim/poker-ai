@@ -5035,3 +5035,12 @@ nested ledger/schema failures and original-child raw retention. No real target
 has run. Codex-assisted; no personal hours/mastery inferred. Ten unrelated local
 result changes freshly snapshotted and preserved in an isolated branch. One PR
 will keep the required source, qualification, raw and report boundaries batched.
+
+
+All six source roles pass at 9bd3593 / 402-file f0f19b08 before collection:
+local bases 3,881 / 64 skipped / 150 deselected each (795.80 / 778.81s), optional
+393 each (16.20 / 14.65s); hosted43677796759 both pass with actual runtimes/uv/head
+verified and one existing roundoff warning. Ruff900/type756/hooks/relative links
+pass. Publish checks.json, every full log and exact launch/retention operators
+before the one pair. The 400 prior source bytes, caps, seeds and gates remain
+unchanged. No real target yet; these checks do not admit training or a forecast.

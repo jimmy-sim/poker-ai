@@ -5565,3 +5565,10 @@ cause unresolved if it does not. It cannot yet explain which setup difference
 caused the discrepancy. Stop at the completed measurement report or a retained
 failure; no optimizer or new training begins in this step. Codex assisted with
 the wrapper, tests and explanation. Personal practice and hours are unrecorded.
+
+
+The measuring tool now passes all six source checks: 3,881 full tests and 393
+optional tests on each Python version, plus both hosted jobs with installed
+versions verified. The qualification and exact operators are published before
+the single pair. This completes checking the tool; the actual timing outcome
+is still unknown at this checkpoint.
