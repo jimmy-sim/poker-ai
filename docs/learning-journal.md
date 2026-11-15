@@ -5572,3 +5572,30 @@ optional tests on each Python version, plus both hosted jobs with installed
 versions verified. The qualification and exact operators are published before
 the single pair. This completes checking the tool; the actual timing outcome
 is still unknown at this checkpoint.
+
+
+The pair now finishes successfully: about 7.2 minutes for the control and 7.7
+minutes with recording, within the fixed limits. Every original scalar and
+computed result matches. The [raw files were published before the report](https://github.com/jimmy-sim/poker-ai/commit/79e2b9f).
+
+The older 21–22 seconds of child-user CPU did not appear again. Each current
+real read shows roughly a quarter-second of child-user CPU, including in the
+control without the new recorder. Each observed real read has 49 helpers, and their
+recorded intervals account for its child counters exactly at saved precision.
+Most CPU work remains in the main process and its libraries: about 141–158
+seconds per real read, against less than one second of combined child CPU.
+
+In the [new plot](../results/original-audit-helpers/report/reader-cpu.png), blue is
+the control, orange is the observed run, and green is the helper-interval sum.
+The panels have different scales: the main process uses over a hundred seconds,
+while the child counters stay below one. Both runs use the same saved strategies.
+This explains validation cost; it does not show a stronger poker agent.
+
+The original audit context alone did not reproduce the historical reading in
+this one pair. The old arithmetic stays valid, and the cause remains unresolved.
+Startup, process history and machine conditions were not identical to the old
+run. The next useful question concerns the main process's work, rather than
+optimizing a small helper cost. The existing forecast still fails its limit;
+no training or default policy is admitted. Stop after this measurement report
+and closing checks. The three numeric exports also match exactly under a
+Python 3.12 data-only check with poker execution blocked.

@@ -5044,3 +5044,25 @@ verified and one existing roundoff warning. Ruff900/type756/hooks/relative links
 pass. Publish checks.json, every full log and exact launch/retention operators
 before the one pair. The 400 prior source bytes, caps, seeds and gates remain
 unchanged. No real target yet; these checks do not admit training or a forecast.
+
+
+ONE actual original-context pair completes at published qualification c4428ac,
+source402/f0f19b08 unchanged. Raw79e2b9f is public BEFORE interpretation; 30 raw
+files and exact execution copies retained, originals kept. Whole children
+430.942727125/460.964389041s, shared893.187598875s, all within900/1800 caps.
+Original432profiles/1152conditions/three actual replays/three workers/card
+counters match historical control and both halves exactly. Observed110helpers/
+110CPython events (12tiny,49initial,49final), all recognized/successful and no
+unassigned/observer/retention error. Per-read helper user/system sums equal
+outer child-counter increments exactly at saved precision; zero residuals.
+Real read own-process CPU141.258–158.211s, child-user0.247–0.278s and combined
+childCPU<1s each. Historical21–22child-userCPU does NOT reproduce even in control.
+Cause remains unresolved; no causal factor isolation or old-result invalidation.
+
+Report includes six read rows, all six worker clocks, a visually checked figure,
+raw/code/render hashes and three byte-identical numeric exports in actual31215/
+NP254 data-only replay with reader/child/learner/reference blocked. This does
+not replay archived mathematics in a newer runtime. Journal118 explains scales
+and limits. No optimizer, new training/default, stronger-agent or933.89/900
+forecast rescue; prior unfavorable results remain. Final relevant checks and
+both exact-head hosted jobs precede merge, then stop at this milestone.

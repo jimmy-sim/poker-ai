@@ -128,3 +128,96 @@ operators are published before the one pair. All 400 prior source files remain
 unchanged. The full optional 3.11 environment will run the measurement, and all
 required prerequisites repeat inside the complete registered clocks. No actual
 target has run at this publication checkpoint.
+
+
+## Result — November 14, 2026
+
+The one pair completed with exact original scalar, computed-replay, worker and
+card-counter identity. Both complete children fit 900 seconds: **430.942727s**
+control and **460.964389s** observed. Shared time, including final verification,
+was **893.187599s**, within the separate 1,800-second pair limit. That shared
+limit is not the production native budget. [Raw evidence was published first](https://github.com/jimmy-sim/poker-ai/commit/79e2b9f),
+with all original ignored outputs retained and every canonical copy checked
+byte-for-byte. No retry, cap, workload or seed change occurred.
+
+[Exact table](../results/original-audit-helpers/report/readers.csv),
+[worker clocks](../results/original-audit-helpers/report/workers.csv) and
+[full export](../results/original-audit-helpers/report/summary.json) retain the
+unrounded values. Times below are seconds. Child counters include reaped
+children/descendants and do not provide exclusive per-PID attribution.
+
+| Half / read | Wall | Own-process CPU | Child user CPU | Child system CPU | Recorded helpers |
+|---|---:|---:|---:|---:|---:|
+| Control / tiny | 2.074045 | 1.927358 | 0.059702 | 0.120487 | — |
+| Control / initial real | 142.165931 | 141.258408 | 0.250943 | 0.650096 | — |
+| Control / final real | 146.029150 | 145.157263 | 0.249263 | 0.648600 | — |
+| Observed / tiny | 2.211081 | 2.059311 | 0.064544 | 0.130567 | 12 |
+| Observed / initial real | 146.835278 | 145.950144 | 0.247121 | 0.636120 | 49 |
+| Observed / final real | 161.217728 | 158.210657 | 0.277696 | 0.677126 | 49 |
+
+The observed arm records **110 helpers and 110 corresponding CPython launches**:
+12 in the tiny read and 49 in each real read. Each real read has 15 `git ls-tree`,
+16 `git rev-parse`, 16 `git status` and 2 CPU queries. The tiny read has 2
+`ls-tree`, 3 `rev-parse`, 4 `show` and 3 `status` calls. All are successful and
+recognized, with no unassigned launch, observer or retention failure. This scope
+does not count worker launches outside reader calls.
+
+Summed helper intervals account for both observed child-counter columns exactly
+at saved precision; the CSV's two outside-helper residuals are zero for all
+three reads. This is boundary bookkeeping, not proof of exclusive helper CPU.
+The real reads spend about **141–158 seconds of own-process CPU**, while their
+combined child user/system counters remain **below one second each**. Three
+worker records in each half retain their separate clocks and original source
+checks; their overlapping work must not be stacked into a wall-time partition.
+
+![CPU inside the original audit reader calls](../results/original-audit-helpers/report/reader-cpu.png)
+
+The panels use different vertical scales: the left shows process CPU up to about
+160 seconds; the right shows child counters below one second. Blue is control,
+orange is observed, and green is the observed helper-interval sum. Both halves
+use the same saved strategies. The higher observed wall/process readings are
+one ordered outcome, not a pure estimate of recorder overhead or a regression
+in poker strength; machine state, filesystem caches and execution order are
+not separately controlled.
+
+**The older 21–22 child-user seconds did not reproduce.** They are absent even
+in the control, which has no new helper recorder. Restoring the original tiny
+pre-read, shared cache, card wrappers, nested observers and worker sequence did
+not by itself reproduce that historical reading in this case. It does not prove
+those factors never mattered, identify an OS/accounting bug, or invalidate the
+older arithmetic. Startup qualification, process lifetime, Git/filesystem state
+and machine conditions are not identical to history. The cause remains unresolved.
+
+Helper launch counts are therefore a poor optimization target in the currently
+measured reader. The next justified question is where the own-process/library
+work goes under this audit context, using the retained elapsed profile as a
+lead rather than CPU attribution. That needs a separately registered bounded
+measurement before an optimizer. No further collection starts here. The
+**933.89/900 failed forecast**, earlier unfavorable card-cache experiment,
+training/default/strength and fresh/global restrictions remain unchanged.
+
+The saved-data renderer regenerates all three numeric files byte-for-byte on
+actual Python 3.12.15 / NumPy 2.5.4 with reader, child, learner and reference
+execution blocked. This is data-only portability, not mathematical replay in a
+new runtime. [Verification](../results/original-audit-helpers/report/replay312.json)
+and [render manifest](../results/original-audit-helpers/report/render-manifest.json)
+record the input, script, lock and output hashes. The figure was visually checked.
+
+Inspect without another poker run:
+
+```sh
+.venv/bin/python scripts/measure_original_audit.py --output results/original-audit-helpers/pair --show
+open results/original-audit-helpers/report/reader-cpu.png
+```
+
+With the locked research extra installed, regenerate the report in a fresh
+folder using the retained script:
+
+```sh
+.venv/bin/python results/original-audit-helpers/report/render.py.txt "$PWD" results/runs/original-audit-report
+```
+
+The original source qualification and raw execution stay frozen. Another timing
+collection requires a new prospective contract and qualification, rather than
+reusing this one-attempt plan. Implementation, measurement and explanation were
+Codex-assisted; human hands-on time is not recorded or inferred.
