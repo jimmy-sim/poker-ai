@@ -37,6 +37,9 @@
 - On November 14, the user asked to keep contribution counts modest where
   possible. Batch related work and edit existing descriptions for routine status;
   retain all required checkpoints, prompt publication and actual dates above.
+- Batch pushes at meaningful publication checkpoints. Complete related local
+  implementation, fixes, tests, documentation and review before the first source
+  push; keep mandatory protocol/qualification/own/raw-evidence boundaries intact.
 - During iteration, run checks appropriate to the change. Complete every local,
   optional, hosted and source-bound check required by the applicable protocol
   before advancing. Repeat checks when changes, failures or unresolved concerns

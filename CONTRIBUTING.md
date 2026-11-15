@@ -74,6 +74,9 @@ result from coherent milestones, but it is not a measure of project success.
 The November 14 preference is to keep counts modest through coherent batching
 and edits to existing descriptions, preserving every required publication
 checkpoint and publishing actual work on its real dates.
+Batch pushes as well as commits: finish related local changes and checks before
+the first source push, then publish at the required research boundaries. Routine
+status belongs in the existing PR description.
 
 ## Recording work and time
 
