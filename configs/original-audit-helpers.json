@@ -1,0 +1,107 @@
+{
+  "admission_evidence": false,
+  "commands": [
+    "status",
+    "rev-parse",
+    "ls-tree",
+    "show",
+    "diff",
+    "merge-base",
+    "ls-files",
+    "log",
+    "cat-file",
+    "symbolic-ref"
+  ],
+  "complete_role_requirements": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312",
+    "hosted311",
+    "hosted312"
+  ],
+  "effective_source_count": 402,
+  "historical_helper_anchor": "results/complete-reader-helper-trace/pair/observed/child.json",
+  "historical_original": "results/card-audit-clock-trace/pair/uncached/child.json",
+  "historical_original_source_count": 390,
+  "idle_control": {
+    "arguments": [
+      "-i"
+    ],
+    "path": "/usr/bin/caffeinate",
+    "scope": "temporary utility-duration idle-sleep assertion; no display assertion or persistent setting; startup/teardown included in complete clocks",
+    "sha256": "3724d8f032bfc2c0e7c5481da448003bd23c72e5914b5edf723f694271380dc8"
+  },
+  "input_sha256": {
+    "results/card-audit-clock-trace/pair/uncached/child.json": "653892533b82a91a847d71fec96edfa5819694ec0ba902b41dbaaaf356126c43",
+    "results/card-audit-clock-trace/pair/uncached/command.log": "6b3e7c8a4dc92c47e6b239681067170a001e0994be470c01253006741f12fcda",
+    "results/card-audit-clock-trace/pair/uncached/measurement.json": "246912979e605211b62b1bc494656f72b6ba960426b21b2bb3b3e0df1c8b5fab",
+    "results/card-audit-clock-trace/pair/uncached/native-events.jsonl": "4572998acfd7e56fe5fe09024c2ba4a639627070235bb357b8638f60e610befa",
+    "results/card-audit-clock-trace/pair/uncached/native.json": "347cf65d0faa51fb28f8a463b382040d70bf64280b177f7c86bb2c51b303ea7f",
+    "results/card-audit-clock-trace/pair/uncached/parent-resource-reads.json": "b1ce96d404f9639c70342aaa468280f7dc3160e223c0c9184719bfd66d665121",
+    "results/card-audit-clock-trace/pair/uncached/read-phases.json": "2bc5343c02daa611b4eccd168f3f4267cb5510b8c83fbdee844d4d3fbf96e226",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-0.json": "d9df64868c67ffd2bddd9cb5aae94907f8880f46167023bf42b78413c59b713e",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-1.json": "e3865136d06a8a9ca24d600b819ee13019d0620c2e236791e8cfe12a4fa6e60e",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-2.json": "7a8e8e1e175a7d5e63c3a554f935d6a9a9ee293ff1a6441f7b16eb9f62ae787b",
+    "results/compact-cached-learning/cost/0/own-captures.jsonl.gz": "10103940df6c4e5ace00a52f7e6ec5be3a8332299d0ca29cf7e2777d155b576b",
+    "results/compact-cached-learning/cost/0/own-child.json": "766370f4cc333af9fd995e2d352f9fb8e5bc2ff7186e3eb24ace15f70ee33658",
+    "results/compact-cached-learning/cost/0/own-composed.jsonl.gz": "4938c5432fffa3b9709825428610126379bdf692d7110e2681c11d769deb255d",
+    "results/compact-cached-learning/cost/0/own-details.jsonl.gz": "8003e8cebc2a5b61598a778378f23382365cb2831ef9be437d03418a853d3e8c",
+    "results/compact-cached-learning/cost/0/own-events.jsonl": "977e58d0267707e61a8fd1e8702b27fadfc1211ccfd0c69d8116ec3617dce765",
+    "results/compact-cached-learning/cost/0/own-masses.jsonl.gz": "6d8967f941fb61fb3279bd80b416635e128fe7e9cdfdfde2926204f17c0763ed",
+    "results/compact-cached-learning/cost/0/own-warms.jsonl.gz": "b9cffc67ce97eaa8f696e3d5c6310d295acac6c1e602d51cbcd084820dc3d56a",
+    "results/compact-cached-learning/cost/0/own.json": "d6493151ef03386f454c7c91825e4e2139ac25e57fb13c6906ed5cbd10cae143",
+    "results/compact-cached-learning/cost/0/report/arm-points.csv": "a1c0c97a66ee7fbbc70432c71d3825c89c2eabc9375c9ec3f0775297669d26c1",
+    "results/compact-cached-learning/cost/0/report/fixed-conditions.csv": "1dfcda11283a01124e2f0c345c07cfbc1950d28d778788762937d774304fd7ce",
+    "results/compact-cached-learning/cost/0/report/fixed-gain.png": "5f0dc799441190491d8a35029f7dca79183139a82673090bbc7883d8005b2f44",
+    "results/compact-cached-learning/cost/0/report/learning.png": "13c5f22af2941b2fa0e6c1aeac9f00299d0883472125a12932d1df2dc2ef2ad9",
+    "results/compact-cached-learning/cost/0/report/paired-gaps.png": "876dc09c37f30fe1b110df4392412e4c1047203e66328b3e3dd24e2fcfc3882c",
+    "results/compact-cached-learning/cost/0/report/summary.json": "782e9121f4d81acba6986ae67d69b018a05931233104defc850242da84fea7a6",
+    "results/complete-reader-helper-trace/pair/observed/child.json": "697c1050dff9c8a9006459576b2a349a85f408d299b10cc445185c92f8bce6e2",
+    "results/reader-boundary-reconciliation/summary.json": "593df042b166f618a20410c3da8b24c11322c038b4ecda7a9551da1ada819a06",
+    "results/reader-helper-trace/followup/base-distributions.json": "d6304ca8dc1bf9724fa4eaf6f9aa4c8fcb1d49fb7376b10f00a2b3532695cb28",
+    "results/reader-helper-trace/followup/qualified_optional-distributions.json": "45235545202884c4a9c44cb8fa0a8c4e490189c865fbd3ebcffdb8fda1a75138",
+    "results/reader-helper-trace/pair/control/child.json": "64442a21eaa1167d54fea6d6b675067747953efc2ba313afd59ce747cc3e4f1f",
+    "results/reader-helper-trace/raw-manifest.json": "2f25d7e9840b52a3170a15eb189de1634aa85acc1e324f720093528796b0343f",
+    "results/source-helper-trace/pair/control/child.json": "1c0b3921fc297caf5b9eb268322d841c8675bb217c50f78cd4590464c72abe90"
+  },
+  "maximum_child_seconds": 900,
+  "maximum_pair_seconds": 1800,
+  "metadata_probe": {
+    "argv": [
+      "sysctl",
+      "-n",
+      "machdep.cpu.brand_string"
+    ],
+    "category": "sysctl cpu-brand",
+    "path": "/usr/sbin/sysctl",
+    "sha256": "c3e3632b35887ad30a21fa14a8b58c9abc77e6df4561cba306fd2df9a12a9e1a",
+    "success_required": true
+  },
+  "new_attempts_after_registration": 1,
+  "order": [
+    "control",
+    "observed"
+  ],
+  "original_mode": "uncached",
+  "original_own": "results/compact-cached-learning/cost/0/own.json",
+  "poker_training_performed": false,
+  "preserved_source_count": 400,
+  "reference_output_used_in_training": false,
+  "reference_strategy_input_permitted": false,
+  "required_distributions": {
+    "matplotlib": "3.11.2",
+    "numba": "0.68.1",
+    "numpy": "2.4.6",
+    "open-spiel": "2.0.2",
+    "pokerkit": "0.7.7",
+    "treys": "0.1.8"
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.17"
+  },
+  "save_reserve_seconds": 120,
+  "schema": 1,
+  "scope": "ORIGINAL_COMPLETE_AUDIT_HELPER_BOUNDARIES_NOT_ADMISSION"
+}

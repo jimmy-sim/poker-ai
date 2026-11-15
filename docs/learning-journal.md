@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Measure the original audit context](#118-measure-the-original-audit-context-before-choosing-an-optimizer)
+
 - [Reconcile the saved CPU readings](#117-check-the-records-before-explaining-the-runtime-difference)
 
 - [Count helpers across a complete saved-policy read](#116-count-helpers-across-the-complete-saved-policy-read)
@@ -94,6 +96,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 118](#118-measure-the-original-audit-context-before-choosing-an-optimizer):
+  the controlled full-audit measurement now being checked.
 
 - [Step 117](#117-check-the-records-before-explaining-the-runtime-difference):
   compare the saved boundaries before choosing another timing experiment.
@@ -5533,3 +5538,30 @@ Codex assisted with the checker, tests and explanation. No new personal practice
 hours or mastery is inferred. The publishing preference is to batch related work
 into fewer meaningful commits and one milestone PR, preserving required evidence
 checkpoints and real dates. Project success remains the priority.
+
+
+## 118. Measure the original audit context before choosing an optimizer
+
+November 14, 2026. The saved-data check found consistent arithmetic and unchanged
+code, but it did not explain the different CPU readings. The next step runs the
+original full audit twice: first normally, then with helper recording added
+around its three reader calls.
+
+Both runs keep the warm-up, existing cache history, card-function wrappers and
+independent workers. A **control** is the version used for comparison; here it
+shows what the same audit does without the added recorder. **Example:** measuring
+one errand alone and measuring it as part of a longer trip are different setups.
+The new comparison keeps the longer trip in both halves.
+
+The first 37 software fixtures pass. They check that the wrapper forwards the
+original objects, restores functions after a failure, preserves the original
+child's receipt, and rejects incomplete or misplaced helper records. These are
+checks of the measuring tool; no new real audit has run. Full source checks and
+published qualification must pass before the one fixed pair.
+
+The [protocol](original-audit-helpers.md) keeps the original limits and results.
+It will report whether helper CPU accounts for the older reading, or leave the
+cause unresolved if it does not. It cannot yet explain which setup difference
+caused the discrepancy. Stop at the completed measurement report or a retained
+failure; no optimizer or new training begins in this step. Codex assisted with
+the wrapper, tests and explanation. Personal practice and hours are unrecorded.

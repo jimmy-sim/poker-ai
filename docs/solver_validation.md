@@ -533,3 +533,11 @@ exports the OWN finite game and OWN probabilities for value/BOTH-BR comparison.
 Reference outputs are comparison-only and cannot enter the reference-free
 training workers. Formal own proof/cost evidence must be public before native
 construction; mocked unit gates are not a new numerical reference result.
+
+
+November 14, original-audit-context diagnostic: reread the complete installed
+OpenSpiel 2.0.2 Apache-2.0 license before the unchanged scalar comparison. It
+retains SHA256 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`
+and the obligations above. This reuses the pinned native adapter and published
+own archives; reference strategies remain excluded from training. The diagnostic
+does not admit a new trajectory or revise an earlier failed forecast.

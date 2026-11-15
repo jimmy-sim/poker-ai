@@ -5020,3 +5020,18 @@ the intended original audit context and account for helper/resource boundaries
 and dominant own-process work together. No further collection begins in this
 milestone. Original933.89/900forecast and prior unfavorable cache timing remain
 failed; no new training, stronger agent or default/admission claim.
+
+### November 14 — original-audit-context measurement registered
+
+Continue [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6889171302)
+with one fixed control/observed pair of the original complete uncached audit.
+[Protocol](original-audit-helpers.md) preserves the warm-up, shared recall cache,
+card wrappers, three mathematical reads and native workers. Only the observed
+half adds per-read helper/resource coverage. Source map402 preserves all400prior
+measurement/bookkeeping files;31input hashes, runtime/extras/binaries and900/1800
+caps fixed. All six same-head source checks and published qualification/operator
+precede data; raw evidence precedes reporting. First37fixtures pass, including
+nested ledger/schema failures and original-child raw retention. No real target
+has run. Codex-assisted; no personal hours/mastery inferred. Ten unrelated local
+result changes freshly snapshotted and preserved in an isolated branch. One PR
+will keep the required source, qualification, raw and report boundaries batched.
