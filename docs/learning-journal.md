@@ -5837,3 +5837,10 @@ fingerprints match. The complete command takes 4.26 seconds, under its
 are published before the timing pair. No learner or reference solver is
 constructed. This establishes the software behavior checked here; it supplies
 no evidence yet that a complete audit is faster or the strategy stronger.
+
+The one timing pair completes with equal recorded results and field fingerprints.
+The original command takes 430.35 seconds; grouped takes 431.91 seconds. Both
+fit the unchanged limits, but the grouped command is longer, so it misses the
+required lower-wall-time condition. The [raw records](../results/grouped-depth-check/raw-pair-manifest.json)
+are published before the detailed CPU analysis. No timing retry or claim that
+the agent became stronger follows from this result.

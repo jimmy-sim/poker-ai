@@ -5304,3 +5304,13 @@ and 18-file raw/admin manifest retain exact original/administrative bytes and
 published operators; manifest is the 19th file. Publish this evidence before
 the single pair. This is not a speedup or a replacement full training-family
 software proof; the pair and all later compute/admission requirements remain.
+
+Single pair after proof publication `4915c76`: original 430.3515602090047,
+grouped 431.91335204200004, registered shared 866.5069792499999, outer command
+866.5707877919776 seconds, all under 900/1800. Both commands return zero;
+original audit/field-fingerprint/capture/restoration verification passes.
+Grouped wall time is longer, missing that predeclared diagnostic condition.
+All 51 raw/admin files are copied exactly and hash-checked, with original
+ignored bytes retained; [manifest](../results/grouped-depth-check/raw-pair-manifest.json)
+is file 52. This raw publication precedes CPU analysis. No favorable retry,
+new policy, optimizer admission or forecast rescue.

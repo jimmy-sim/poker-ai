@@ -172,6 +172,21 @@ construction facts, not a measured speedup or the complete end-to-end proof
 required for a future training family. This proof is published before the
 single original/grouped audit pair; that comparison has not yet run.
 
+## Raw comparison checkpoint — November 15, 2026
+
+After software-proof publication `4915c76`, the single pair completes:
+original **430.3515602090047 seconds**, grouped **431.91335204200004 seconds**,
+registered shared **866.5069792499999 seconds**, outer command
+**866.5707877919776 seconds**, all within the unchanged limits. Both children
+return zero and the original audit, ordered construction-fingerprint and
+capture/restoration checks pass. The grouped wall time is longer; a diagnostic
+cost pass requires strictly lower wall time as well as lower selected matrix CPU.
+
+The [51-file raw/admin manifest](../results/grouped-depth-check/raw-pair-manifest.json)
+retains exact copies and original ignored bytes before posthoc analysis. The
+manifest is the 52nd retained file. The full CPU breakdown and interpretation
+follow this raw publication. No retry, optimizer admission or new training.
+
 ## Three questions
 
 **Why compare constructor fields?** A faster check is useful only if the same
