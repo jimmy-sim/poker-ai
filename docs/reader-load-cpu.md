@@ -156,6 +156,106 @@ runners and prepublished launch/retention operators. No timed audit has run at
 this qualification checkpoint. An interruption is retained, never counted as
 a successful test completion.
 
+## Recorded result — November 15, 2026
+
+The single pair completes in **409.6105099580018 / 413.1019390830188 seconds**
+(control/profiled), with **823.8671735420066 seconds shared**, under the unchanged
+900/1800 limits. Source qualification was published at `22e6cbf`; the
+[39-file raw manifest](../results/reader-load-cpu/raw-manifest.json) and exact
+original copies were published at `8d6d379` before analysis. The manifest itself
+is the 40th retained file. All original 432 profiles, 1,152 fixed conditions,
+three computed reads, worker/card inventories and base-admission rejection pass.
+No learning or new policy was produced.
+
+The capture contains **1,538 selected calls**, no hook/event errors, no remaining
+aliases and restored descriptors/globals. The original three categories retain
+their exact previous per-read counts. The added loaders each run once in each
+real read; none runs in the tiny pre-read.
+
+| Read | Matrix | Spot-tree | Checkpoint | Comparison inputs | Older inputs | Sampled-source replay |
+|---|---:|---:|---:|---:|---:|---:|
+| Tiny software pre-read | 0 | 0 | 432 | 0 | 0 | 0 |
+| Initial real read | 92 | 26 | 432 | 1 | 1 | 1 |
+| Final real read | 92 | 26 | 432 | 1 | 1 | 1 |
+
+The two real reads use **137.775238 / 139.401896 process-CPU seconds**, totaling
+277.177134. Subtracting selected descendants gives this non-overlapping view:
+
+| Region | Selected-exclusive CPU seconds | Share of real-read CPU |
+|---|---:|---:|
+| Matrix construction | 51.360752 | 18.5299% |
+| Spot-tree construction | 30.215716 | 10.9012% |
+| Checkpoint replay | 66.284621 | 23.9142% |
+| Comparison input loading | 7.382174 | 2.6633% |
+| Older input loading | 34.724512 | 12.5279% |
+| Sampled-source replay | 48.930237 | 17.6531% |
+| Outside selected regions | 38.279122 | 13.8103% |
+
+![Non-overlapping CPU regions in the initial and final real reads](../results/reader-load-cpu/report/selected-cpu.png)
+
+The selected regions cover **86.1897%** of real-read CPU. Input loading contains
+other selected work: comparison-input inclusive CPU is 172.613391 seconds, while
+only 7.382174 remains after selected descendants are subtracted. Adding that
+inclusive number to the rows above would count work twice. The tiny read is
+reported separately and is not included in these percentages.
+
+[Full-precision summary](../results/reader-load-cpu/report/summary.json),
+[reader clocks](../results/reader-load-cpu/report/readers.csv),
+[inclusive/exclusive regions](../results/reader-load-cpu/report/regions.csv),
+[worker clocks](../results/reader-load-cpu/report/workers.csv) and
+[body/nearby-child clocks](../results/reader-load-cpu/report/bodies.csv) retain the
+other boundaries. The three parallel workers take about 124.74 seconds each in
+control and 124.45 seconds each in the profiled arm. Their parallel clocks cannot
+be added to explain elapsed time. The complete-command difference is not pure
+wrapper overhead, and this one order supplies no uncertainty estimate. Compared
+with the older capture, these are different observations of unchanged work,
+not a measured optimization. The historical 21–22 child-user discrepancy remains
+unresolved; current real-read helper-user deltas stay about 0.23–0.24 seconds.
+
+### Saved-data check and next decision
+
+The report blocks real archive reads, child/supervisor calls, all six selected
+operations, scoring/replay and learner/native construction. All five numeric
+exports match byte-for-byte under actual Python 3.12.15 / NumPy 2.5.4. This is a
+saved-data check, not a new mathematical replay on that runtime. The figure was
+visually inspected.
+
+The first export check failed on one derived CSV residual: Python 3.11 and 3.12
+built-in floating summation produced 1.4210854715202004e-14 versus 0 seconds. The
+summary and other four exports were identical. The initial renderer, failed
+output and drafts are [retained](../results/reader-load-cpu/report/initial-export-failure/failure.json).
+Using `math.fsum` for that posthoc selected-exclusive-minus-union sum makes the
+exports deterministic across the two tested versions. It does not clamp raw
+values, change the instrument, rerun the capture or alter the existing allowance.
+The [final export check](../results/reader-load-cpu/report/replay312.json) and
+[renderer](../results/reader-load-cpu/report/render.py.txt) record the correction.
+
+Matrix construction is a measured 18.53% of real-read CPU. Source inspection
+shows its depth-consistency check rescans all nodes for each information group.
+The next candidate is a linear-work grouped check, first proving the same
+accept/reject behavior and constructed arrays before any performance claim.
+This profile does not measure that individual loop or prove its potential
+savings. Historical replays also remain substantial and must not be skipped.
+Any optimizer still needs separate source-bound correctness and complete cost,
+forecast and published admission before new trajectories. The 933.89/900 forecast
+remains failed; competitive full-game strength remains unestablished.
+
+Final local checks pass 519 relevant optional tests on each Python version,
+lint/formatting for 906 files, strict typing for 760 source files and commit
+hooks. All 378 focused relative links, five images, heading anchors and fences
+pass. The saved-data CLI equals the full report, and all raw/original hashes
+remain exact. [Local verification](../results/reader-load-cpu/report/local-verification.json)
+records these checks. Both exact-report-head GitHub jobs must pass before merge.
+
+To inspect the saved result after updating the checkout:
+
+```sh
+.venv/bin/python scripts/profile_reader_loads.py --show --output results/reader-load-cpu/pair
+open results/reader-load-cpu/report/selected-cpu.png
+```
+
+The first command checks and prints saved records; it starts no fresh capture.
+
 ## Three questions
 
 **Why retain the original counters?** Their per-read inventory checks that the

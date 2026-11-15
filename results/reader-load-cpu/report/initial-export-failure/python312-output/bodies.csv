@@ -1,0 +1,5 @@
+mode,scope,wall_seconds,process_cpu_seconds,child_user_seconds,child_system_seconds,note
+control,body_observation,406.1938984580047,278.45795599999997,367.99620799999997,11.439746,"Original body boundary; nested within original child, not a complete command clock"
+control,child_observation,407.87826350002433,279.521475,368.22355799999997,11.963970999999999,after imports/argument dispatch through final prewrite; supervisor alone supplies complete command clock
+profiled,body_observation,409.72920541698113,282.465147,367.46761899999996,11.410058,"Original body boundary; nested within original child, not a complete command clock"
+profiled,child_observation,411.32262750001973,283.525298,367.69215199999996,11.938905,after imports/argument dispatch through final prewrite; supervisor alone supplies complete command clock

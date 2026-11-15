@@ -102,7 +102,8 @@ restricted-game accuracy, and compute cost each need their own evidence.
 Recent explanations:
 
 - [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
-  inside input loading while retaining the same saved-policy audit.
+  inside input loading; the complete capture assigns about 86% of real-read CPU
+  to selected regions and leaves about 14% outside them.
 
 - [Step 119](#119-locate-the-work-with-a-few-coarse-timers): a small set of CPU
   timers for the main validation process; the completed profile leaves about47%
@@ -5738,3 +5739,30 @@ the control and413seconds for the profiled command. The original audit and
 capture checks pass. The [raw records](../results/reader-load-cpu/raw-manifest.json)
 are retained before analysis; the timing breakdown and its interpretation come
 next. These are validation commands on saved strategies, not new learning.
+
+**What the measurement found:** the added loader boundaries raise coverage to
+86.19% of process CPU across the two real reads. About 18.53% is matrix
+construction, 10.90% spot-tree construction, 23.91% checkpoint replay and 32.84%
+other work inside the three loaders. About 13.81% remains outside them.
+The [plot and table](reader-load-cpu.md#recorded-result--november-15-2026) show
+two checks of saved strategies, not two training runs.
+
+**Example:** timing a folder and the files inside it requires subtracting those
+files before assigning the folder's own share. Here, the outer comparison loader
+contains much of the work; its own remainder is only 2.66%. The report keeps
+both views so the outer call does not get counted twice.
+
+The newer-Python saved-data check caught a rounding difference in one derived
+CSV residual: about 0.000000000000014 seconds. The raw capture and full summary
+matched. The failed export and its original renderer are retained; a stable
+floating sum fixes that report calculation without changing a poker tolerance
+or rerunning the capture. All five final numeric exports match exactly across
+the two Python versions with actual poker execution blocked. Both final relevant
+suites pass 519 tests.
+
+The next candidate is the repeated depth-consistency scan inside matrix
+construction. A group here means game situations that must share a decision.
+The check makes sure each group belongs to one depth in the game tree. A faster
+equivalent must reject the same invalid groups and preserve every constructed
+array. Its individual cost and possible savings remain unmeasured. The failed
+forecast still blocks new training; this result identifies work to investigate.

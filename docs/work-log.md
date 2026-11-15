@@ -5207,3 +5207,28 @@ are copied exactly, with originals retained and39hashes verified in the
 [raw manifest](../results/reader-load-cpu/raw-manifest.json). This raw publication
 precedes posthoc analysis. No CPU attribution, optimization or admission is
 claimed at this checkpoint.
+
+Posthoc report: [full result](reader-load-cpu.md#recorded-result--november-15-2026).
+The 1,538-call capture preserves all original per-read counts and adds one call
+per loader per real read; all hooks restore with zero errors/remaining aliases.
+Real-read CPU totals 277.177134 seconds: matrix 18.5299%, spot-tree 10.9012%,
+checkpoint 23.9142%, comparison-loader remainder 2.6633%, older-loader remainder
+12.5279%, sampled-source remainder 17.6531%, outside 13.8103%. Inclusive loader
+times overlap descendants and are not added to these selected-exclusive shares.
+The original 432/1,152/three-read/worker/card/scalar witnesses remain identical.
+The raw publication `8d6d379` precedes rendering; all 39 raw/admin bytes and
+original ignored copies remain exact.
+
+The first Python 3.12 export check fails only `readers.csv`: built-in summation
+changes one posthoc residual from 1.4210854715202004e-14 to 0 seconds. Retain its
+exact renderer, failed outputs and drafts. Using `math.fsum` in that derived
+column produces all five numeric exports byte-identically on actual 3.11.17 /
+NumPy 2.4.6 and 3.12.15 / NumPy 2.5.4, with reader/child/tree/loader/scoring/
+replay/learner/native execution blocked. Instrument/source, raw data and the
+existing arithmetic allowance stay unchanged; no new pair or favorable retry.
+Figure inspected. Final optional regressions pass 519 each (19.44/19.39 seconds).
+The next candidate is a linear-work depth check in measured matrix construction;
+that loop's cost/savings are not yet established. Complete final local and
+exact-head hosted checks still precede merge. No training/default/stronger-agent
+or failed-forecast admission follows from this measurement. Journal 120 explains
+the result and retained export failure. Codex-assisted; personal time unknown.

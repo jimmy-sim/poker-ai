@@ -1,0 +1,30 @@
+"""Focused relative Markdown destinations, heading anchors, images and fences."""
+import json,re,unicodedata
+from pathlib import Path
+from urllib.parse import unquote,urlsplit
+r=Path(__file__).resolve().parent/'reader-load-cpu'
+files=['docs/reader-load-cpu.md','docs/learning-journal.md','docs/work-log.md','docs/coarse-reader-cpu.md']
+def headings(path):
+    result=set();seen={};inside=False
+    for line in path.read_text().splitlines():
+        if line.lstrip().startswith('```'):
+            inside=not inside;continue
+        if inside or not re.match(r'^#{1,6}\s',line):continue
+        value=re.sub(r'^#{1,6}\s+','',line).strip().lower()
+        value=re.sub(r'[^\w\-\s]','',value,flags=re.UNICODE).replace(' ','-')
+        number=seen.get(value,0);seen[value]=number+1
+        result.add(value+(f'-{number}' if number else ''))
+    assert not inside,('unclosed fence',path)
+    return result
+count=0;images=0
+for name in files:
+    p=r/name;body=p.read_text();headings(p)
+    for match in re.finditer(r'(!?)\[[^\]]*\]\(([^)]+)\)',body):
+        target=match[2].split(' "',1)[0].strip('<>');parts=urlsplit(target)
+        if parts.scheme or parts.netloc:continue
+        path=(p.parent/unquote(parts.path)).resolve() if parts.path else p
+        assert path.exists(),(name,target)
+        if parts.fragment and path.suffix=='.md':
+            assert unquote(parts.fragment) in headings(path),(name,target)
+        count+=1;images+=bool(match[1])
+print(json.dumps(dict(files=files,relative_destinations=count,images=images,heading_anchors_and_fences='passed')))

@@ -1,0 +1,24 @@
+"""Final local report evidence; original measurement is never rerun."""
+from pathlib import Path
+import hashlib,json
+import sys
+r=Path(sys.argv[1]).resolve();w=r.parent;sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+from profile_reader_loads import binding
+p=r/'results/reader-load-cpu/report';assert json.loads((w/'reader-load-cli-show.json').read_text())==json.loads((p/'summary.json').read_text())
+_,s=binding(r,clean=False);assert s['fingerprint']=='07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3' and len(s['sha256'])==406
+checks=[]
+for minor in ['311','312']:
+ q=json.loads((p/('final-optional'+minor+'.json')).read_text());checks.append(dict(minor=minor,**q))
+raw=json.loads((r/'results/reader-load-cpu/raw-manifest.json').read_text())['raw_sha256'];pairs=[n for n in raw if n.startswith('pair/')];execution=[n for n in raw if n.startswith('execution/')]
+assert len(pairs)==31 and len(execution)==8 and len(raw)==39
+for n,h in raw.items():assert hashlib.sha256((r/'results/reader-load-cpu'/n).read_bytes()).hexdigest()==h
+for directory,old in [('pair',r/'results/runs/reader-load-cpu/pair'),('execution',w/'reader-load-execution')]:
+ for original in old.rglob('*'):
+  if original.is_file():assert original.read_bytes()==(r/'results/reader-load-cpu'/directory/original.relative_to(old)).read_bytes()
+assert (p/'selected-cpu.png').read_bytes()==(w/'reader-load-report-draft/selected-cpu.png').read_bytes()
+assert (p/'initial-export-failure/failure.json').is_file()
+assert (p/'render.py.txt').read_bytes()==(w/'render-reader-load.py').read_bytes()
+for name in ('summary.json','regions.csv','workers.csv','bodies.csv'):
+ assert (p/name).read_bytes()==(p/'initial-export-failure/initial-canonical-report'/name).read_bytes()
+proof=dict(scope='Final local saved-data/report and relevant software checks; no fresh pair, poker learning or forecast admission',source_fingerprint=s['fingerprint'],effective_source_files=406,source_unchanged=True,source_checked_commit='8453abd1c5e84604fb19a802f5d2b7c0e232bc71',raw_publication='8d6d379b61136ef1f555157852433aae88e8d632',working_head=s['git_commit'],working_report_dirty=s['dirty'],pair_files_exact=len(pairs),execution_files_exact=len(execution),raw_and_execution_files_exact=len(raw),retained_files_including_manifest=len(raw)+1,original_ignored_outputs_retained=True,cli_saved_result_equals_report=True,final_relevant_checks=checks,ruff_lint_and_format_pass=True,ruff_files=906,mypy_strict_pass=True,mypy_source_files=760,hooks_pass=True,focused_markdown_links_images_anchors_fences_pass=True,figure_visually_inspected=True,initial_export_failure_retained=True,posthoc_fsum_only_correction=True,actual312_numeric_exports_byte_identical=json.loads((p/'replay312.json').read_text())['byte_identical'],diff_scope='Changed prose/code checked; untrimmed original hosted logs preserve their trailing whitespace and all original bytes',final_exact_head_hosted_checks='Required after report publication, before merge')
+(p/'local-verification.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');print(json.dumps(proof,indent=2))
