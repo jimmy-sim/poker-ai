@@ -1,0 +1,260 @@
+"""Posthoc saved-data accounting; never collect another measurement."""
+
+import csv, gzip, json, math, sys
+from pathlib import Path
+
+r = Path(sys.argv[1]).resolve()
+destination = Path(sys.argv[2]).resolve()
+assert not destination.exists()
+assert not destination.is_relative_to(r / "results/grouped-depth-check/pair")
+sys.path[:0] = [str(r / "src"), str(r / "scripts")]
+import compare_grouped_depth as t
+from compact_cached import cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+
+def forbidden(*a, **k):
+    raise AssertionError("posthoc extraction entered poker execution")
+
+
+t.child = forbidden
+t.software_child = forbidden
+t.pair_run = forbidden
+t.proof_run = forbidden
+t.depth.build = forbidden
+t.original.child = forbidden
+cli.read = forbidden
+t.supervise = forbidden
+for category, owner, name in t.prior.targets():
+    setattr(owner, name, forbidden)
+from poker_ai.postflop.controlled_scoring import ScoringContext
+import poker_ai.postflop.learning_training as training
+
+ScoringContext.score = forbidden
+training.replay_detail = forbidden
+with isolated(worker=False):
+    data = t.report(r, r / "results/grouped-depth-check/pair")
+# Preserve the original 3.11 association explicitly on every supported parser.
+# This is posthoc CPU bookkeeping only, checked against the frozen validator's
+# existing 1e-9 CPU-second allowance. No clamp, poker tolerance or gate changes.
+for row in data["rows"]:
+    ledger_path = (
+        r
+        / "results/grouped-depth-check/pair"
+        / row["mode"]
+        / "reads"
+        / str(row["read"])
+        / "ledger.json.gz"
+    )
+    raw = json.loads(gzip.decompress(ledger_path.read_bytes()))["rows"]
+    children = {i: [] for i in range(len(raw))}
+    groups = {
+        k: dict(calls=0, inclusive_cpu=0.0, exclusive_selected_cpu=0.0)
+        for k in t.prior.CATEGORIES
+    }
+    for i, event in enumerate(raw):
+        if event["parent"] is not None:
+            children[event["parent"]].append(i)
+        group = groups[event["category"]]
+        group["calls"] += 1
+        group["inclusive_cpu"] += event["after"]["cpu"] - event["before"]["cpu"]
+    union = 0.0
+    for i, event in enumerate(raw):
+        amount = event["after"]["cpu"] - event["before"]["cpu"]
+        child_cpu = 0.0
+        for j in children[i]:
+            child_cpu += raw[j]["after"]["cpu"] - raw[j]["before"]["cpu"]
+        groups[event["category"]]["exclusive_selected_cpu"] += amount - child_cpu
+        if event["parent"] is None:
+            union += amount
+    previous = row["selected"]
+    assert union == previous["selected_union_cpu"]
+    for key, value in groups.items():
+        assert value["calls"] == previous["groups"][key]["calls"]
+        for measure in ("inclusive_cpu", "exclusive_selected_cpu"):
+            assert abs(value[measure] - previous["groups"][key][measure]) <= 1e-9
+    row["selected"] = dict(
+        calls=previous["calls"], groups=groups, selected_union_cpu=union
+    )
+    row["outside_selected_cpu"] = row["inner"]["clocks"]["process_cpu_seconds"] - union
+    row["exclusive_minus_union_cpu"] = (
+        math.fsum(g["exclusive_selected_cpu"] for g in groups.values()) - union
+    )
+for mode in ("original", "grouped"):
+    assert data["matrix_cpu"][mode] == math.fsum(
+        row["selected"]["groups"]["matrix_build"]["exclusive_selected_cpu"]
+        for row in data["rows"]
+        if row["mode"] == mode
+    )
+
+destination.mkdir(parents=True)
+(destination / "summary.json").write_bytes(t.canonical(data) + b"\n")
+readers, selected = [], []
+for x in data["rows"]:
+    clocks = x["outer"]["clocks"]
+    child = x["outer"]["resources"]["reaped_child_usage"]["delta"]
+    row = dict(
+        mode=x["mode"],
+        read=x["read"],
+        scope=x["scope"],
+        outer_wall_seconds=clocks["perf_seconds"],
+        outer_process_cpu_seconds=clocks["process_cpu_seconds"],
+        child_user_seconds=child["ru_utime"],
+        child_system_seconds=child["ru_stime"],
+        inner_wall_seconds=None,
+        inner_process_cpu_seconds=None,
+        selected_calls=None,
+        selected_union_cpu_seconds=None,
+        outside_selected_cpu_seconds=None,
+        exclusive_minus_union_cpu_seconds=None,
+    )
+    if x["selected"] is not None:
+        row.update(
+            inner_wall_seconds=x["inner"]["clocks"]["perf_seconds"],
+            inner_process_cpu_seconds=x["inner"]["clocks"]["process_cpu_seconds"],
+            selected_calls=x["selected"]["calls"],
+            selected_union_cpu_seconds=x["selected"]["selected_union_cpu"],
+            outside_selected_cpu_seconds=x["outside_selected_cpu"],
+            exclusive_minus_union_cpu_seconds=math.fsum(
+                g["exclusive_selected_cpu"] for g in x["selected"]["groups"].values()
+            )
+            - x["selected"]["selected_union_cpu"],
+        )
+        for category, group in x["selected"]["groups"].items():
+            selected.append(
+                dict(
+                    read=x["read"],
+                    scope=x["scope"],
+                    category=category,
+                    calls=group["calls"],
+                    inclusive_cpu_seconds=group["inclusive_cpu"],
+                    exclusive_selected_cpu_seconds=group["exclusive_selected_cpu"],
+                )
+            )
+    readers.append(row)
+workers, bodies = [], []
+for mode in ("original", "grouped"):
+    raw = json.loads(
+        (r / f"results/grouped-depth-check/pair/{mode}/old/child.json").read_text()
+    )
+    for scope in ("body_observation", "child_observation"):
+        interval = raw[scope]["interval"]
+        child = interval["resources"]["reaped_child_usage"]["delta"]
+        bodies.append(
+            dict(
+                mode=mode,
+                scope=scope,
+                wall_seconds=interval["clocks"]["perf_seconds"],
+                process_cpu_seconds=interval["clocks"]["process_cpu_seconds"],
+                child_user_seconds=child["ru_utime"],
+                child_system_seconds=child["ru_stime"],
+                note=raw["child_observation_scope"]
+                if scope == "child_observation"
+                else "Original body boundary; nested within original child, not a complete command clock",
+            )
+        )
+    for slot in range(3):
+        raw = json.loads(
+            (
+                r
+                / f"results/grouped-depth-check/pair/{mode}/old/worker-telemetry/worker-{slot}.json"
+            ).read_text()
+        )
+        interval = raw["observation"]["interval"]
+        child = interval["resources"]["reaped_child_usage"]["delta"]
+        workers.append(
+            dict(
+                mode=mode,
+                slot=slot,
+                pid=raw["observation"]["before"]["pid"],
+                wall_seconds=interval["clocks"]["perf_seconds"],
+                process_cpu_seconds=interval["clocks"]["process_cpu_seconds"],
+                child_user_seconds=child["ru_utime"],
+                child_system_seconds=child["ru_stime"],
+            )
+        )
+for name, rows in [
+    ("readers.csv", readers),
+    ("regions.csv", selected),
+    ("workers.csv", workers),
+    ("bodies.csv", bodies),
+]:
+    with (destination / name).open("x", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+real = [x for x in data["rows"] if x["read"] in (1, 2)]
+fig, ax = plt.subplots(figsize=(12, 7.5), layout="constrained")
+bottom = [0.0] * len(real)
+labels = {
+    "matrix_build": "Matrix construction, including field observation",
+    "spot_tree_build": "Spot-tree construction",
+    "checkpoint_replay": "Checkpoint replay",
+    "comparison_inputs": "Comparison-loader remainder",
+    "legacy_inputs": "Older-loader remainder",
+    "sampled_source_replay": "Sampled-source remainder",
+}
+for category in t.prior.CATEGORIES:
+    values = [x["selected"]["groups"][category]["exclusive_selected_cpu"] for x in real]
+    ax.bar(range(len(real)), values, bottom=bottom, label=labels[category], width=0.65)
+    bottom = [a + b for a, b in zip(bottom, values, strict=True)]
+ax.bar(
+    range(len(real)),
+    [x["outside_selected_cpu"] for x in real],
+    bottom=bottom,
+    label="Outside selected regions",
+    width=0.65,
+)
+for i, x in enumerate(real):
+    total = x["inner"]["clocks"]["process_cpu_seconds"]
+    ax.text(i, total, f"{total:.2f}", ha="center", va="bottom", fontsize=10)
+ax.set_xticks(
+    range(len(real)),
+    [
+        x["mode"] + "\n" + ("initial read" if x["read"] == 1 else "final read")
+        for x in real
+    ],
+)
+ax.set_ylabel("Own-process CPU seconds\n(including libraries and observation)")
+ax.set_title("One original/grouped pair: non-overlapping selected CPU")
+ax.set_ylim(0, max(x["inner"]["clocks"]["process_cpu_seconds"] for x in real) * 1.15)
+ax.grid(axis="y", alpha=0.2)
+ax.set_axisbelow(True)
+ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), fontsize=9)
+fig.savefig(destination / "selected-cpu.png", dpi=160)
+plt.close(fig)
+numeric = ("summary.json", "readers.csv", "regions.csv", "workers.csv", "bodies.csv")
+manifest = dict(
+    scope="Posthoc data-only extraction; no reader, learner or native construction. One ordered original/grouped pair with equal field observation; not pure causal savings, uncertainty, a wall-time partition or training admission.",
+    script_sha256=t.digest(Path(__file__)),
+    cpu_association="Explicit legacy3.11 sequential binary64 sums from raw selected rows; frozen-validator comparison within existing1e-9 CPU-second allowance; matrix cost gates unchanged",
+    raw_sha256=data["input_sha256"],
+    numeric_files={name: t.digest(destination / name) for name in numeric},
+    figure_sha256=t.digest(destination / "selected-cpu.png"),
+    matplotlib=matplotlib.__version__,
+    blocked_operations=[
+        "diagnostic child",
+        "original child",
+        "supervisor",
+        "actual archive reader",
+        "selected matrix/spot-tree/snapshot/loader operations",
+        "ScoringContext.score",
+        "replay_detail",
+        "native and learner constructors/imports via isolated(worker=False)",
+    ],
+)
+(destination / "render-manifest.json").write_text(
+    json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+)
+print(
+    json.dumps(
+        dict(readers=readers, regions=selected, workers=workers, bodies=bodies),
+        indent=2,
+    )
+)

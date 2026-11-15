@@ -1,0 +1,53 @@
+"""Actual3.12 saved-data export check, not a mathematical archive replay."""
+
+import contextlib, hashlib, json, runpy, sys
+from pathlib import Path
+
+r = Path(sys.argv[1]).resolve()
+destination = Path(sys.argv[2]).resolve()
+renderer = Path(sys.argv[3]).resolve()
+sys.path[:0] = [str(r / "src"), str(r / "scripts")]
+import numpy, poker_ai
+import compare_grouped_depth as t
+
+assert sys.version.split()[0] == "3.12.15" and numpy.__version__ == "2.5.4"
+assert Path(poker_ai.__file__).resolve().is_relative_to(r / "src")
+_, source = t.binding(r, clean=False)
+assert (
+    len(source["sha256"]) == 409
+    and source["fingerprint"]
+    == "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7"
+)
+sys.argv = [str(renderer), str(r), str(destination)]
+with (destination.parent / "data-only-render312.log").open("x") as stream:
+    with contextlib.redirect_stdout(stream):
+        runpy.run_path(str(renderer), run_name="__main__")
+expected = r / "results/grouped-depth-check/report"
+for name in ("summary.json", "readers.csv", "regions.csv", "workers.csv", "bodies.csv"):
+    assert (destination / name).read_bytes() == (expected / name).read_bytes(), name
+_, after = t.binding(r, clean=False)
+assert after["sha256"] == source["sha256"]
+print(
+    json.dumps(
+        dict(
+            scope="data-only parser; reader/child/learner/native execution blocked; no actual math replay or trajectory",
+            python=sys.version.split()[0],
+            numpy=numpy.__version__,
+            source_fingerprint=source["fingerprint"],
+            source_unchanged=True,
+            lock_sha256=t.digest(r / "uv.lock"),
+            numeric_files={
+                n: t.digest(expected / n)
+                for n in (
+                    "summary.json",
+                    "readers.csv",
+                    "regions.csv",
+                    "workers.csv",
+                    "bodies.csv",
+                )
+            },
+            byte_identical=True,
+        ),
+        indent=2,
+    )
+)

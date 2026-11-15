@@ -5314,3 +5314,26 @@ All 51 raw/admin files are copied exactly and hash-checked, with original
 ignored bytes retained; [manifest](../results/grouped-depth-check/raw-pair-manifest.json)
 is file 52. This raw publication precedes CPU analysis. No favorable retry,
 new policy, optimizer admission or forecast rescue.
+
+Posthoc decision: **diagnostic cost fail**. Grouped wall is +1.5617918329953682
+seconds (+0.3629106938%); selected matrix CPU is −0.744592000000182 seconds
+(−1.4122152201%). Correctness/coverage passes, but both lower wall AND lower
+matrix CPU were required. All 184 whole-child field fingerprints match in order
+per arm; both 1,538-call captures, original 432/1,152/three-read/worker/card/
+source/scalar witnesses and restoration pass. [Full report](grouped-depth-check.md#recorded-cost-decision--november-15-2026)
+includes real-read CPU 287.629979 / 289.543382 and all region/body/worker clocks.
+One order is not pure causal savings, uncertainty or a forecast replacement.
+
+First actual 3.12 export fails one grouped comparison-loader CPU remainder:
+3.736865999999978 vs 3.7368659999999636 seconds. Retain exact failed renderer,
+drafts and difference JSON. Posthoc explicit sequential sums restore 3.11's
+association from raw selected rows, checked against the frozen parser's existing
+1e-9 CPU-second allowance. All five initial 3.11 exports/figure stay byte-equal;
+all five final exports match actual 3.12.15 / NumPy 2.5.4 with poker execution
+blocked. No source/raw/tolerance/gate change or capture retry. Source stays409.
+Final optional suites pass647each (29.02/28.97seconds). Next question: isolate
+observation/key, array, depth-check and witness costs before another optimizer.
+Final local report checks and both exact-head hosted jobs still precede merge.
+The failed forecast and known-game quality result remain; no new training or
+default admission. Journal121 explains the negative result. AI-assisted;
+personal hours/mastery unknown.

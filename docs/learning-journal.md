@@ -104,8 +104,8 @@ restricted-game accuracy, and compute cost each need their own evidence.
 Recent explanations:
 
 - [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
-  grouped depth check inside measured matrix construction; correctness work is
-  underway and no candidate timing result exists.
+  grouped depth check inside measured matrix construction; correctness passes,
+  but the complete command is longer and the cost condition fails.
 
 - [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
   inside input loading; the complete capture assigns about 86% of real-read CPU
@@ -5844,3 +5844,22 @@ fit the unchanged limits, but the grouped command is longer, so it misses the
 required lower-wall-time condition. The [raw records](../results/grouped-depth-check/raw-pair-manifest.json)
 are published before the detailed CPU analysis. No timing retry or claim that
 the agent became stronger follows from this result.
+
+**Cost result:** the declared check fails. Selected matrix CPU is about 1.41%
+lower, but complete-command wall time is about 0.36% longer. Both improvements
+were required. All 184 constructor fingerprints match per arm, and the original
+poker checks remain equal. The [plot and full table](grouped-depth-check.md#recorded-cost-decision--november-15-2026)
+retain this unfavorable outcome.
+
+**Example:** making one task slightly cheaper does not guarantee a whole job
+finishes sooner. The blue matrix segment is a little smaller, while other
+regions vary. One run of each version is not enough to isolate why. It also
+does not tell us how much time the depth-check loop itself consumes.
+
+The first newer-Python export differs on one CPU sum by about
+0.000000000000014 seconds. The failed export is retained. Explicit sequential
+addition in the report preserves every original 3.11 number and makes all five
+exports identical across versions; raw data, instrument and tolerances stay
+unchanged. The cost decision remains failed. Both final optional suites pass
+647 tests. The next useful step is measuring the construction phases, before
+choosing another optimizer. No new training or stronger-agent claim is admitted.

@@ -187,6 +187,105 @@ retains exact copies and original ignored bytes before posthoc analysis. The
 manifest is the 52nd retained file. The full CPU breakdown and interpretation
 follow this raw publication. No retry, optimizer admission or new training.
 
+## Recorded cost decision — November 15, 2026
+
+**The diagnostic cost check fails.** Correctness and coverage pass, and selected
+matrix CPU is lower in this one pair. The complete grouped command is longer,
+so the two required cost conditions do not both pass. The implementation remains
+a research candidate; it is not admitted into a new training family or default.
+
+| Predeclared check | Original | Grouped | Result |
+|---|---:|---:|---|
+| Complete-command wall seconds | 430.3515602090047 | 431.91335204200004 | **Fail**: grouped is longer |
+| Selected-exclusive matrix CPU seconds | 52.72510800000012 | 51.98051599999994 | Pass: grouped is lower |
+| Complete original audit and constructor fields | Preserved | Equal | Pass |
+| Combined diagnostic condition | Both cost conditions required | One misses | **Fail** |
+
+The wall difference is **+1.5617918329953682 seconds (+0.3629106938%)**; selected
+matrix CPU differs by **−0.744592000000182 seconds (−1.4122152201%)**. These are
+paired point differences, not estimates of pure algorithm savings or uncertainty.
+The selected matrix region includes the same field observer and timer machinery
+in both arms. It does not isolate the final depth-check loop.
+
+All **184 whole-child constructor fingerprints per arm** match in order. They
+cover the 92 constructions in each real read; the tiny read has none. Each arm
+retains 1,538 selected calls (3,076 combined), the original 432-profile /
+1,152-condition / three-computed-read identities, worker/card/source/scalar
+checks, zero hook errors and full restoration. No tolerance was relaxed.
+
+Across the two real reads, the non-overlapping CPU totals are:
+
+| Region, including observation where applicable | Original CPU seconds | Grouped CPU seconds |
+|---|---:|---:|
+| Matrix construction | 52.725108 | 51.980516 |
+| Spot-tree construction | 30.217175 | 30.762100 |
+| Checkpoint replay | 71.417259 | 70.365332 |
+| Comparison-loader remainder | 7.431874 | 7.578065 |
+| Older-loader remainder | 35.715616 | 36.281101 |
+| Sampled-source remainder | 50.578009 | 51.236032 |
+| Outside selected regions | 39.544938 | 41.340236 |
+| Total real-read process CPU | 287.629979 | 289.543382 |
+
+![Original and grouped initial/final real-read CPU regions](../results/grouped-depth-check/report/selected-cpu.png)
+
+The bars show validation of the same saved strategies. A smaller matrix segment
+does not imply that the complete command is faster. Other measured regions vary
+too, and the three parallel workers take about 128.67 seconds each in original
+versus 128.42–128.44 in grouped. Worker/body/nearby-child/command clocks are
+different boundaries and cannot be added into a wall-time explanation.
+One fixed order does not identify causality or support a general speedup claim.
+
+[Full-precision result](../results/grouped-depth-check/report/summary.json),
+[reader clocks](../results/grouped-depth-check/report/readers.csv),
+[regions](../results/grouped-depth-check/report/regions.csv),
+[workers](../results/grouped-depth-check/report/workers.csv) and
+[body clocks](../results/grouped-depth-check/report/bodies.csv) retain the
+underlying quantities. Raw publication `31bd40a` precedes all this analysis.
+
+### Portable exports and next question
+
+The first Python 3.12 export check fails on one old-parser CPU sum: the grouped
+initial comparison-loader remainder is 3.736865999999978 seconds on 3.11 versus
+3.7368659999999636 on 3.12. The difference is about 1.42e-14 seconds. The exact
+failed renderer, outputs and [difference record](../results/grouped-depth-check/report/initial-export-failure/failure.json)
+are retained. No capture is repeated.
+
+The posthoc renderer now uses explicit sequential binary64 additions from the
+raw selected-call rows to preserve the original 3.11 association on both
+versions. It checks the frozen parser's results against its existing 1e-9
+CPU-second arithmetic allowance. All five original 3.11 numeric exports and
+the inspected figure remain byte-identical. The final five exports also match
+actual 3.12.15 / NumPy 2.5.4 exactly, with poker construction/execution blocked.
+Neither the source instrument, raw records, poker tolerance nor cost decision
+changes. [Renderer](../results/grouped-depth-check/report/render.py.txt) and
+[portable check](../results/grouped-depth-check/report/replay312.json) retain
+this saved-data correction; it is not a new mathematical poker replay.
+
+The next question is where matrix construction spends time: observation/key
+creation, array setup, the depth check or field witnessing. This result does
+not measure those pieces individually. Locate their cost before another
+optimization rather than assuming the repeated depth masks dominate. Preserve
+this negative result; no favorable retiming, shortened workload or changed gate.
+
+The old 933.889393168007/900 forecast remains failed. A new production adapter,
+complete source-bound end-to-end proof, all prescribed own/native costs and
+checked published admission still precede any new trajectory study. Existing
+known-game quality and competitive full-game limitations remain unchanged.
+
+Final local checks pass 647 relevant tests per version (29.02 / 28.97 seconds),
+Ruff lint/format for 911 files, strict typing for 764 source files, hooks and
+focused Markdown links/images/anchors/fences. The saved-data CLI equals the
+report; both raw manifests and all original ignored bytes remain exact.
+[Local verification](../results/grouped-depth-check/report/local-verification.json)
+records the checks. Both exact-report-head GitHub jobs must pass before merge.
+
+After updating the checkout, inspect the saved result without a new run:
+
+```sh
+.venv/bin/python scripts/compare_grouped_depth.py --show --output results/grouped-depth-check/pair
+open results/grouped-depth-check/report/selected-cpu.png
+```
+
 ## Three questions
 
 **Why compare constructor fields?** A faster check is useful only if the same
