@@ -5719,3 +5719,16 @@ original runtime, limits and acceptance rules before implementation. A complete
 result should narrow the next optimization target. It does not improve the
 strategy by itself or replace the failed forecast. The source, tests, reports
 and explanations are Codex-assisted; no personal practice or hours are inferred.
+
+The interrupted full checks have now been completed at the same source revision.
+Both Python versions pass 4,007 base tests and 519 relevant optional tests. The
+initial partial logs remain alongside the completed results; an interrupted test
+run is not counted as a pass. [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74)
+holds the source. Both GitHub source checks and publication of the run/save
+instructions still precede the single capture. No new timed audit has run.
+
+Both GitHub source jobs now pass 4,007 tests. Their actual Python/NumPy versions
+and tested file trees match the qualified source. The [complete check record](../results/reader-load-cpu/checks.json)
+retains the local, optional and hosted logs, including the initial interruption,
+and the exact run/save instructions. This publication precedes collection; it
+does not supply a new CPU result or admit training.

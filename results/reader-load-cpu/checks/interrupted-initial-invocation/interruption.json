@@ -1,0 +1,74 @@
+{
+  "scope": "Intentional turn interruption; incomplete software qualification is not a failed poker experiment",
+  "source_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+  "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+  "local_source_published": false,
+  "new_timed_audit_started": false,
+  "rows": [
+    {
+      "role": "base311",
+      "completion_receipt_present": false,
+      "receipt": null,
+      "log_sha256": "adff9a529feedc38d8092f33db93c2bef752c7021d156fdaeea0268b095599e1",
+      "last_lines": [
+        "....................................................................ss.. [ 76%]",
+        ".....................ss................................................. [ 77%]",
+        "......................................................................."
+      ]
+    },
+    {
+      "role": "base312",
+      "completion_receipt_present": false,
+      "receipt": null,
+      "log_sha256": "65c221caaaefb3c80526fbafdc4d0c56720392486e4e7f3452a872b7341c397e",
+      "last_lines": [
+        "....................................................................ss.. [ 76%]",
+        ".....................ss................................................. [ 77%]",
+        "......................................................................."
+      ]
+    },
+    {
+      "role": "optional311",
+      "completion_receipt_present": true,
+      "receipt": {
+        "role": "optional311",
+        "status": "passed",
+        "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+        "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 105.56285004100937,
+        "setup_and_check_seconds": 124.08303016700665
+      },
+      "log_sha256": "bb469765ecfc2d8a8cba552f91be2509e505d0f54341d9afbaa937a8c482a1ce",
+      "last_lines": [
+        "CHECKED_COMMIT=8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+        "COLLECTOR_SOURCE=07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+        "Software qualification only: no real complete reader target/collector measurement, learner or reference constructed"
+      ]
+    },
+    {
+      "role": "optional312",
+      "completion_receipt_present": true,
+      "receipt": {
+        "role": "optional312",
+        "status": "passed",
+        "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+        "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 104.32577612499881,
+        "setup_and_check_seconds": 122.9215242920036
+      },
+      "log_sha256": "537713f078d0cf5f85106522ee55c4283196ce4049f7fab55397a7de1e30b090",
+      "last_lines": [
+        "CHECKED_COMMIT=8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+        "COLLECTOR_SOURCE=07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+        "Software qualification only: no real complete reader target/collector measurement, learner or reference constructed"
+      ]
+    }
+  ],
+  "next_step": "Resume both full local base roles with fresh log destinations; retain these partial logs and completed optional results. Source publication/hosted qualification/operators still precede any new timed audit."
+}

@@ -140,6 +140,22 @@ This creates no future automation and authorizes no C++/Rust core or subagents.
 Codex assists with implementation and reporting; personal hours and mastery
 are not inferred.
 
+## Source qualification — November 15, 2026
+
+[PR #74](https://github.com/jimmy-sim/poker-ai/pull/74) source
+`8453abd1c5e84604fb19a802f5d2b7c0e232bc71` binds 406 files, fingerprint
+`07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3`.
+All prior 404 files and 41 scientific input pins remain unchanged.
+Both full local bases pass 4,007 tests / 64 skipped / 150 deselected; both
+relevant optional suites pass 519. Both hosted jobs in
+[CI 43746058432](https://github.com/jimmy-sim/poker-ai/actions/runs/43746058432)
+pass 4,007 tests with the recorded actual runtimes and matching complete tested
+source tree. The [six-role receipt](../results/reader-load-cpu/checks.json)
+retains full logs, interrupted initial bases, completed resumed bases, exact
+runners and prepublished launch/retention operators. No timed audit has run at
+this qualification checkpoint. An interruption is retained, never counted as
+a successful test completion.
+
 ## Three questions
 
 **Why retain the original counters?** Their per-read inventory checks that the

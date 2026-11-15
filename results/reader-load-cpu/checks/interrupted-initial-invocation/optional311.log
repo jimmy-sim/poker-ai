@@ -1,0 +1,22 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport profile_reader_loads as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='8453abd1c5e84604fb19a802f5d2b7c0e232bc71'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nc,s=t.binding(r);assert len(s['sha256'])==406 and s['fingerprint']=='07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'8453abd1c5e84604fb19a802f5d2b7c0e232bc71');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real complete reader target/collector measurement, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.11.17
+ACTUAL_NUMPY=2.4.6
+CHECKED_COMMIT=8453abd1c5e84604fb19a802f5d2b7c0e232bc71
+COLLECTOR_SOURCE=07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3
+Software qualification only: no real complete reader target/collector measurement, learner or reference constructed
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_reader_load_cpu.py", "tests/test_coarse_reader_cpu.py", "tests/test_original_audit_helpers.py", "tests/test_reader_boundary_reconciliation.py", "tests/test_complete_reader_helper_trace.py", "tests/test_reader_helper_trace.py", "tests/test_source_helper_trace.py", "tests/test_helper_call_accounting.py", "tests/test_card_audit_clock_trace.py", "tests/test_card_clock_report.py", "tests/test_card_computation_cache.py", "tests/test_card_cache_report.py", "tests/test_cached_native_wall_profile.py"]}
+........................................................................ [ 13%]
+........................................................................ [ 27%]
+........................................................................ [ 41%]
+........................................................................ [ 55%]
+........................................................................ [ 69%]
+........................................................................ [ 83%]
+........................................................................ [ 97%]
+...............                                                          [100%]
+519 passed in 61.78s (0:01:01)
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport profile_reader_loads as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='8453abd1c5e84604fb19a802f5d2b7c0e232bc71'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nc,s=t.binding(r);assert len(s['sha256'])==406 and s['fingerprint']=='07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'8453abd1c5e84604fb19a802f5d2b7c0e232bc71');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real complete reader target/collector measurement, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.11.17
+ACTUAL_NUMPY=2.4.6
+CHECKED_COMMIT=8453abd1c5e84604fb19a802f5d2b7c0e232bc71
+COLLECTOR_SOURCE=07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3
+Software qualification only: no real complete reader target/collector measurement, learner or reference constructed

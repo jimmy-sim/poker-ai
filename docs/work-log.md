@@ -5176,3 +5176,25 @@ failure. The 56 fixtures pass on both versions, and strict focused typing passes
 full source qualification remains pending. No new real audit, optimizer,
 policy, default or admission exists at this checkpoint. Journal 120 explains
 nested accounting. Codex-assisted; human time and mastery are not inferred.
+
+Source stage in [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74):
+8453abd1c5e84604fb19a802f5d2b7c0e232bc71, verified406-file fingerprint
+07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3.
+The two initially interrupted base runs retain their partial logs; only those
+incomplete roles were resumed into new files. Both complete local bases now pass
+4,007tests/64skipped/150deselected in815.00/793.63test seconds. The unchanged
+optional roles pass519each in61.78/60.44seconds. Actual runtime, physical imports,
+source cleanliness/fingerprint, lint, format, strict typing and hooks pass.
+Source was pushed after all four local roles completed. Both same-source hosted
+jobs, their actual runtimes/tested trees and published qualification/operators
+still precede the one measurement. No timed audit has started.
+
+All six source roles now pass at8453abd: [hosted CI43746058432](https://github.com/jimmy-sim/poker-ai/actions/runs/43746058432)
+passes4,007tests/64skip/150deselect plus the historical warning each,
+904.83/803.24test seconds. Actual3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4,
+all uv selections and runtime guards are verified. GitHub's actual temporary
+checkout e068958 has the same complete tree as the source PR head, with the
+distinct commit IDs recorded explicitly. [Qualification](../results/reader-load-cpu/checks.json)
+retains untrimmed logs, raw metadata, exact initial/resumed runners and interrupted
+logs, assembler and the launch/retention operators. This checkpoint is published
+before the one fixed pair. No new audit or training has run.

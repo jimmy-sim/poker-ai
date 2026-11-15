@@ -1,0 +1,51 @@
+"""Combine completed same-source roles without overwriting interrupted evidence."""
+
+import hashlib, json, shutil
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+old = w / "reader-load-checks"
+resume = json.loads((w / "reader-load-resume.json").read_text())
+fresh = Path(resume["folder"])
+out = w / "reader-load-qualified-checks"
+head = "8453abd1c5e84604fb19a802f5d2b7c0e232bc71"
+fp = "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3"
+assert not out.exists()
+for role in ["base311", "base312", "optional311", "optional312"]:
+    root = fresh if role.startswith("base") else old
+    r = json.loads((root / (role + "-receipt.json")).read_text())
+    assert (
+        r["status"] == "passed"
+        and r["checked_commit"] == head
+        and r["source_fingerprint"] == fp
+    )
+    if role.startswith("base"):
+        assert not (old / (role + "-receipt.json")).exists()
+out.mkdir()
+for role in ["base311", "base312", "optional311", "optional312"]:
+    root = fresh if role.startswith("base") else old
+    for suffix in [".log", "-install.log", "-receipt.json"]:
+        source = root / (role + suffix)
+        target = out / source.name
+        shutil.copyfile(source, target)
+        assert source.read_bytes() == target.read_bytes()
+shutil.copytree(old, out / "interrupted-initial-invocation")
+shutil.copyfile(w / "run-reader-load-checks.py", out / "initial_runner.py.txt")
+shutil.copyfile(Path(resume["script"]), out / "resumed_base_runner.py.txt")
+shutil.copyfile(__file__, out / "consolidate.py.txt")
+manifest = dict(
+    scope="Same8453 source, completed optional roles from initial invocation and completed full bases from fresh resumed invocation; interruption and all original logs retained, no new poker experiment",
+    source_commit=head,
+    source_fingerprint=fp,
+    raw_sha256={
+        str(p.relative_to(out)): hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in sorted(out.rglob("*"))
+        if p.is_file()
+    },
+)
+(out / "local-manifest.json").write_text(
+    json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+)
+print(
+    json.dumps(dict(folder=str(out), completed_roles=4, interrupted_logs_retained=True))
+)
