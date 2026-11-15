@@ -5144,3 +5144,91 @@ matches report; all39raw/admin bytes and ignored originals retained. Local
 verification and complete final logs are in the report. Both final exact-head
 hosted jobs must pass before history-preserving merge; routine CI/merge status
 updates the existing PR description, avoiding a status-only commit.
+
+
+### November 15 — close coarse profiling and locate input-loading CPU
+
+[PR #73](https://github.com/jimmy-sim/poker-ai/pull/73) merged at 15546d8 after
+both final jobs in [CI 43692243608](https://github.com/jimmy-sim/poker-ai/actions/runs/43692243608)
+passed 3,951 tests / 64 skipped / 150 deselected plus the historical warning
+per version, in 937.88 / 1176.29 test seconds. Actual Python, NumPy and all uv
+versions are checked. GitHub's temporary source and final test-merge trees equal
+the complete published PR-head trees; those are distinct commit IDs, not distinct
+code. [Full closing evidence](../results/coarse-reader-cpu/final-ci/verified.json)
+is retained with this substantive follow-up. Main's saved-data CLI equals the
+report; 70 fixtures pass in 3.59 seconds under 3.11.17 / NumPy 2.4.6. All ten
+unrelated result edits preserve bytes, status, changed-path index entries and
+both patches. Their uncommitted file bytes are not part of this publication.
+
+The [next prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6891701494)
+precedes implementation and data. [Protocol](reader-load-cpu.md) and sealed config
+add three nested input-loader boundaries to the original three, to locate the
+47.03% CPU remainder. Preserve all prior 404 source files; the new entry/config
+are expected to form 406, to be verified after the source commit. There are 41
+pinned inputs. Original 900/1800-second caps, 120-second saving reserve, 4096-call
+ceiling, one attempt, runtime/extras and all scientific rules remain unchanged.
+The original per-read selected counts must match the coarse capture exactly.
+
+The private implementation reuses the coarse collector under a bounded registry,
+target and owned-alias extension. It includes the private command package's
+imported loader alias and restores original globals/aliases after success and
+failure. The 56 fixtures pass on both versions, and strict focused typing passes;
+full source qualification remains pending. No new real audit, optimizer,
+policy, default or admission exists at this checkpoint. Journal 120 explains
+nested accounting. Codex-assisted; human time and mastery are not inferred.
+
+Source stage in [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74):
+8453abd1c5e84604fb19a802f5d2b7c0e232bc71, verified406-file fingerprint
+07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3.
+The two initially interrupted base runs retain their partial logs; only those
+incomplete roles were resumed into new files. Both complete local bases now pass
+4,007tests/64skipped/150deselected in815.00/793.63test seconds. The unchanged
+optional roles pass519each in61.78/60.44seconds. Actual runtime, physical imports,
+source cleanliness/fingerprint, lint, format, strict typing and hooks pass.
+Source was pushed after all four local roles completed. Both same-source hosted
+jobs, their actual runtimes/tested trees and published qualification/operators
+still precede the one measurement. No timed audit has started.
+
+All six source roles now pass at8453abd: [hosted CI43746058432](https://github.com/jimmy-sim/poker-ai/actions/runs/43746058432)
+passes4,007tests/64skip/150deselect plus the historical warning each,
+904.83/803.24test seconds. Actual3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4,
+all uv selections and runtime guards are verified. GitHub's actual temporary
+checkout e068958 has the same complete tree as the source PR head, with the
+distinct commit IDs recorded explicitly. [Qualification](../results/reader-load-cpu/checks.json)
+retains untrimmed logs, raw metadata, exact initial/resumed runners and interrupted
+logs, assembler and the launch/retention operators. This checkpoint is published
+before the one fixed pair. No new audit or training has run.
+
+The single pair completes: control409.6105099580018s,
+profiled413.1019390830188s, shared823.8671735420066s, all under the original
+900/1800caps. Both child commands return0; the original audit, selected-call
+coverage and restoration checks pass. All31pair files and8administrative files
+are copied exactly, with originals retained and39hashes verified in the
+[raw manifest](../results/reader-load-cpu/raw-manifest.json). This raw publication
+precedes posthoc analysis. No CPU attribution, optimization or admission is
+claimed at this checkpoint.
+
+Posthoc report: [full result](reader-load-cpu.md#recorded-result--november-15-2026).
+The 1,538-call capture preserves all original per-read counts and adds one call
+per loader per real read; all hooks restore with zero errors/remaining aliases.
+Real-read CPU totals 277.177134 seconds: matrix 18.5299%, spot-tree 10.9012%,
+checkpoint 23.9142%, comparison-loader remainder 2.6633%, older-loader remainder
+12.5279%, sampled-source remainder 17.6531%, outside 13.8103%. Inclusive loader
+times overlap descendants and are not added to these selected-exclusive shares.
+The original 432/1,152/three-read/worker/card/scalar witnesses remain identical.
+The raw publication `8d6d379` precedes rendering; all 39 raw/admin bytes and
+original ignored copies remain exact.
+
+The first Python 3.12 export check fails only `readers.csv`: built-in summation
+changes one posthoc residual from 1.4210854715202004e-14 to 0 seconds. Retain its
+exact renderer, failed outputs and drafts. Using `math.fsum` in that derived
+column produces all five numeric exports byte-identically on actual 3.11.17 /
+NumPy 2.4.6 and 3.12.15 / NumPy 2.5.4, with reader/child/tree/loader/scoring/
+replay/learner/native execution blocked. Instrument/source, raw data and the
+existing arithmetic allowance stay unchanged; no new pair or favorable retry.
+Figure inspected. Final optional regressions pass 519 each (19.44/19.39 seconds).
+The next candidate is a linear-work depth check in measured matrix construction;
+that loop's cost/savings are not yet established. Complete final local and
+exact-head hosted checks still precede merge. No training/default/stronger-agent
+or failed-forecast admission follows from this measurement. Journal 120 explains
+the result and retained export failure. Codex-assisted; personal time unknown.

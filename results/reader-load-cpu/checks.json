@@ -1,0 +1,110 @@
+{
+  "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4007 passed, 64 skipped, 150 deselected in 815.00s (0:13:34)",
+      "log": {
+        "file": "results/reader-load-cpu/checks/base311.log",
+        "sha256": "7058a5030134b99d9ac8aa0dd5eee94e766b00e25e07e37d5e611f6ab11d49a2"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4007 passed, 64 skipped, 150 deselected in 793.63s (0:13:13)",
+      "log": {
+        "file": "results/reader-load-cpu/checks/base312.log",
+        "sha256": "07d9ca729ca06d9fff4eaf5cd2deb95baf6e7cf9a370ac9d273ac76e0ef3c425"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "519 passed in 61.78s (0:01:01)",
+      "log": {
+        "file": "results/reader-load-cpu/checks/optional311.log",
+        "sha256": "bb469765ecfc2d8a8cba552f91be2509e505d0f54341d9afbaa937a8c482a1ce"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "519 passed in 60.44s (0:01:00)",
+      "log": {
+        "file": "results/reader-load-cpu/checks/optional312.log",
+        "sha256": "537713f078d0cf5f85106522ee55c4283196ce4049f7fab55397a7de1e30b090"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43746058432,
+      "job_id": 132909494063,
+      "head_sha": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "e06895875fe1f402c3929081a7e95ab67df882b6",
+      "actual_checkout_tree": "c8dfef0702542e9ff1c7310f3dcecaeb54f159c2",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/reader-load-cpu/checks/hosted311.log",
+        "sha256": "8f6177ebedffa3a65262a7e117d96cfc03cafb3af06dbce3542ffcd1a7ac5e59"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3",
+      "checked_commit": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43746058432,
+      "job_id": 132909493797,
+      "head_sha": "8453abd1c5e84604fb19a802f5d2b7c0e232bc71",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "e06895875fe1f402c3929081a7e95ab67df882b6",
+      "actual_checkout_tree": "c8dfef0702542e9ff1c7310f3dcecaeb54f159c2",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/reader-load-cpu/checks/hosted312.log",
+        "sha256": "878220c4051b71785700e9c723b4e7bc0e37cd2f4583d8baca123e45234083ae"
+      }
+    }
+  ],
+  "scope": "Same-head406-source nested-loader original-audit-context software qualification. All prior404 measurement/bookkeeping files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. No real original-audit target invoked by these fixture checks. No training, reference construction, full-audit forecast rescue or performance/default/global admission. Publish before the one fixed control/profiled pair."
+}
