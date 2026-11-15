@@ -5337,3 +5337,42 @@ Final local report checks and both exact-head hosted jobs still precede merge.
 The failed forecast and known-game quality result remain; no new training or
 default admission. Journal121 explains the negative result. AI-assisted;
 personal hours/mastery unknown.
+
+
+PR #75 closing verification, November 15: merged `af764a7`. Final
+[CI 43764600876](https://github.com/jimmy-sim/poker-ai/actions/runs/43764600876)
+passes 4,135 / 64 skipped / 150 deselected each, 882.87 / 882.82 test seconds;
+actual Python/NumPy/uv and complete test-merge tree equal report `095204e`.
+Main saved CLI equals report; 128 focused tests pass 8.22 seconds. Fresh snapshot
+and post-check proof preserve all ten unrelated user bytes/status/changed-path
+index entries/both patches. [Closing receipts](../results/grouped-depth-check/final-ci/manifest.json)
+are batched here. Negative cost outcome and all scientific failures remain.
+
+### November 15, 2026 — locate phases inside original construction (issue #4)
+
+Question: what fraction of the observed matrix CPU belongs to information/key
+creation, array setup, original depth validation, object creation or complete
+field witnessing? [Registered plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6901801110)
+precedes implementation. [Protocol](matrix-phases.md) fixes one ORIGINAL-only
+complete audit, unchanged scientific caps and all historical checks, five coarse
+intervals per 184 constructors, 2,458 combined selected calls and matching pinned
+original field fingerprints. It does not retest the failed original/grouped
+cost condition or claim optimization/admission.
+
+Private source-body/phase-boundary checked constructor, serial recorder and
+source-bound runner are implemented alongside software/failure fixtures. Preserve
+all 409 previous source files and 53 pinned inputs. Source qualification and a
+published bounded own software proof still precede actual collection. Expected
+synthetic depth rejection stays distinct from failed real data. No new trajectory,
+reference training input or numerical outcome exists at this checkpoint.
+Journal122 explains the question and an explicitly illustrative example;
+AI-assisted, no inferred personal hours or mastery. Full local/hosted checks
+and formal stages remain pending.
+
+Implementation check: 93 new fixtures; combined 347 on both supported Python
+versions (actual runtimes retained in subsequent qualification). A unit-test
+name collision and nonfinite-clock failure handling were corrected before
+source qualification, with failed local outputs retained in the workspace.
+Ruff lint passes, 916 files formatted, strict mypy passes768source files;
+385 focused relative destinations/4images/heading anchors/fences pass.
+No formal collection or measurement was performed by these software tests.
