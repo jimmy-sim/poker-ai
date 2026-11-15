@@ -5232,3 +5232,108 @@ that loop's cost/savings are not yet established. Complete final local and
 exact-head hosted checks still precede merge. No training/default/stronger-agent
 or failed-forecast admission follows from this measurement. Journal 120 explains
 the result and retained export failure. Codex-assisted; personal time unknown.
+
+### November 15 — close loader profiling and test grouped matrix depths
+
+[PR #74](https://github.com/jimmy-sim/poker-ai/pull/74) merged at
+efec4e2900b9722bb099f0bf64e1a93d3b8ce356 after both final jobs in
+[CI 43749828795](https://github.com/jimmy-sim/poker-ai/actions/runs/43749828795)
+passed 4,007 tests / 64 skipped / 150 deselected plus the historical warning
+each: 1,181.03 / 760.90 test seconds. Actual Python/NumPy/uv and both source/final
+temporary test-merge trees match their complete published PR-head trees.
+[Closing evidence](../results/reader-load-cpu/final-ci/verified.json) includes the
+untrimmed logs, metadata and verifier. Main's saved-data command equals the
+report; 56 fixtures pass in 2.74 seconds under actual 3.11.17 / NumPy 2.4.6.
+All ten unrelated result edits retain bytes, status, changed-path index entries
+and both patches, rechecked after main verification. Their file bytes are not
+published. Closure is archived with this substantive step to avoid a status push.
+
+The [next prospective issue #4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6899625741)
+precedes implementation. [Protocol](grouped-depth-check.md) and sealed config
+pin 47 inputs, all prior 406 source files, the original 900/1800-second caps,
+one attempt and unchanged scientific rules. A grouped integer depth predicate
+replaces only the original constructor's repeated final masks, with an AST-body
+guard and complete dataclass/array field witnesses. Expected effective source
+count is 409, to be verified after the new entry is complete. Original/grouped
+arms must have the same timers and ordered field fingerprints; both complete
+wall time and matrix CPU must strictly decrease for the diagnostic cost pass.
+Source qualification and a 180-second source-bound software proof precede any
+comparison. No candidate timing, speedup or training admission is claimed.
+Journal 121 explains groups, depths, exact equivalence and the remaining checks.
+Codex-assisted; personal hours and mastery are not inferred.
+
+Initial candidate/runner checks: 128 new fixtures pass; combined with the
+existing reader/coarse fixtures, 254 pass under each actual Python version
+(12.22 / 12.30 test seconds). Literal-constructor AST equivalence, independent
+integer sets, all five encodings, full field fingerprints, aliases/subclasses,
+primary exceptions, incomplete/corrupt records and comparison/source/clock/cap
+failures are covered. A fictional-qualified software-proof fixture exercises
+the retained shape without a reference or trajectory; it is not formal proof.
+The saved-data pair fixture preserves a slower candidate's failed cost result.
+Ruff lint/format passes 911 files; strict typing passes 764, hooks and 387 focused
+relative destinations / five images / anchors / fences pass. CLI help works.
+Complete immutable-source local and hosted qualification remains pending;
+no real proof, reference comparison or candidate timing has run.
+
+Source [PR #75](https://github.com/jimmy-sim/poker-ai/pull/75):
+7311ab4d3c84a2df032f56cdd744e7572de425dd; verified 409-file fingerprint
+01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7.
+Both immutable full local bases pass 4,135 / 64 skipped / 150 deselected,
+825.92 / 805.02 test seconds; both optional suites pass 647, 56.19 / 54.67 seconds.
+Actual runtime, physical imports, head/source cleanliness and fingerprint match
+before/after. Initial source push waits for all four local roles. Both hosted
+jobs and publication of complete qualification/operators still precede the
+formal software proof and its required publication before the one pair.
+
+All six roles pass at 7311ab4. Hosted [CI 43759887855](https://github.com/jimmy-sim/poker-ai/actions/runs/43759887855)
+passes 4,135 / 64 skipped / 150 deselected plus the historical warning each,
+871.60 / 760.88 test seconds. Actual Python/NumPy/uv and source test-merge
+a218b773's complete tree equal the qualified source tree. [Qualification](../results/grouped-depth-check/checks.json)
+retains exact untrimmed logs, raw metadata, local runner, assembler and generic
+launch/save operators. No formal software proof or pair has run; publication
+of this qualification precedes those stages. Source remains 409 files, all
+47 pins and original scientific caps unchanged.
+
+Formal software proof after qualification `e40d5e4`: outer command
+4.258358540973859 seconds; registered shared 4.2042644579778425; supervised
+child 2.367665457975818, all below 180. All 256 generated integer cases plus
+eight edges match independent direct sets with unchanged inputs; all five
+original/grouped constructor field vectors match. No learner, reference
+constructor or new trajectory. [Raw proof](../results/grouped-depth-check/software/proof.json)
+and 18-file raw/admin manifest retain exact original/administrative bytes and
+published operators; manifest is the 19th file. Publish this evidence before
+the single pair. This is not a speedup or a replacement full training-family
+software proof; the pair and all later compute/admission requirements remain.
+
+Single pair after proof publication `4915c76`: original 430.3515602090047,
+grouped 431.91335204200004, registered shared 866.5069792499999, outer command
+866.5707877919776 seconds, all under 900/1800. Both commands return zero;
+original audit/field-fingerprint/capture/restoration verification passes.
+Grouped wall time is longer, missing that predeclared diagnostic condition.
+All 51 raw/admin files are copied exactly and hash-checked, with original
+ignored bytes retained; [manifest](../results/grouped-depth-check/raw-pair-manifest.json)
+is file 52. This raw publication precedes CPU analysis. No favorable retry,
+new policy, optimizer admission or forecast rescue.
+
+Posthoc decision: **diagnostic cost fail**. Grouped wall is +1.5617918329953682
+seconds (+0.3629106938%); selected matrix CPU is −0.744592000000182 seconds
+(−1.4122152201%). Correctness/coverage passes, but both lower wall AND lower
+matrix CPU were required. All 184 whole-child field fingerprints match in order
+per arm; both 1,538-call captures, original 432/1,152/three-read/worker/card/
+source/scalar witnesses and restoration pass. [Full report](grouped-depth-check.md#recorded-cost-decision--november-15-2026)
+includes real-read CPU 287.629979 / 289.543382 and all region/body/worker clocks.
+One order is not pure causal savings, uncertainty or a forecast replacement.
+
+First actual 3.12 export fails one grouped comparison-loader CPU remainder:
+3.736865999999978 vs 3.7368659999999636 seconds. Retain exact failed renderer,
+drafts and difference JSON. Posthoc explicit sequential sums restore 3.11's
+association from raw selected rows, checked against the frozen parser's existing
+1e-9 CPU-second allowance. All five initial 3.11 exports/figure stay byte-equal;
+all five final exports match actual 3.12.15 / NumPy 2.5.4 with poker execution
+blocked. No source/raw/tolerance/gate change or capture retry. Source stays409.
+Final optional suites pass647each (29.02/28.97seconds). Next question: isolate
+observation/key, array, depth-check and witness costs before another optimizer.
+Final local report checks and both exact-head hosted jobs still precede merge.
+The failed forecast and known-game quality result remain; no new training or
+default admission. Journal121 explains the negative result. AI-assisted;
+personal hours/mastery unknown.

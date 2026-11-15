@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Check matrix depths with grouped integer work](#121-check-matrix-depths-without-rescanning-every-node)
+
 - [Find CPU inside input loading](#120-follow-the-work-inside-input-loading)
 
 - [Locate CPU work inside validation](#119-locate-the-work-with-a-few-coarse-timers)
@@ -100,6 +102,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
+  grouped depth check inside measured matrix construction; correctness passes,
+  but the complete command is longer and the cost condition fails.
 
 - [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
   inside input loading; the complete capture assigns about 86% of real-read CPU
@@ -5766,3 +5772,94 @@ The check makes sure each group belongs to one depth in the game tree. A faster
 equivalent must reject the same invalid groups and preserve every constructed
 array. Its individual cost and possible savings remain unmeasured. The failed
 forecast still blocks new training; this result identifies work to investigate.
+
+**Closing checks:** [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74) is merged.
+Both final GitHub jobs pass 4,007 tests with the actual runtimes and matching
+tested source trees. In the updated main checkout, the saved-data command equals
+the report and 56 fixtures pass. All ten unrelated local result edits remain
+exactly preserved after verification. The [closing receipts](../results/reader-load-cpu/final-ci/verified.json)
+are retained with the next substantive change, rather than a separate status push.
+
+## 121. Check matrix depths without rescanning every node
+
+November 15, 2026. Matrix construction takes about 18.53% of the measured
+real-read CPU. One final check repeatedly scans every node for each information
+group. The next question is whether grouping the depths once can preserve the
+same decisions and constructed game arrays. The cost of that individual loop
+has not been measured, so a useful saving remains a hypothesis.
+
+An information group holds situations that must use the same decision row.
+Depth counts steps from the root of the game tree. This matrix backend requires
+each group to occur at one depth. **Example:** depths `[3, 3, 3]` pass; `[3, 5]`
+fail. Checking that a group's minimum equals its maximum gives the same answer,
+provided an empty group still fails. The implementation uses integer reductions;
+it changes no poker payoff, strategy or floating tolerance.
+
+The candidate lives in private research support. The historical constructor
+remains unchanged and is restored after the scoped comparison. A source-body
+guard checks that the copied construction code differs only at that final
+validation step. Tests compare all output fields, including array bits and
+geometry, and exercise aliases, subclasses, failure records and restoration.
+This is Codex-assisted implementation and explanation, not a personal practice
+entry or a claim of manual authorship.
+
+The [prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6899625741)
+and [sealed protocol](grouped-depth-check.md) precede implementation and outcomes.
+Full source qualification and a bounded software proof must precede the single
+original/grouped complete-audit pair. Both arms will use the same timers and
+constructor-field observer. Missing, failing or slower results remain visible.
+No candidate timing, optimizer cost pass, new training or admission exists yet.
+
+The initial implementation and runner now pass 128 focused fixtures. Together
+with the earlier loader/timer fixtures, 254 pass on each Python version. The
+runner tests retain source failures, interrupted or missing work, changed records
+and a slower candidate's failed cost result. A software-proof fixture compares
+the five constructors and can be read back with actual construction blocked.
+Its qualification is deliberately fictional: a unit test is not the formal
+published proof. Full local and hosted source qualification still comes first.
+
+All four immutable local roles now pass: 4,135 base tests per Python version
+and 647 relevant optional tests per version. The [source PR](https://github.com/jimmy-sim/poker-ai/pull/75)
+was opened after those results. Both GitHub source checks and publication of
+qualification/run instructions still precede the formal proof. No candidate
+timing or measured saving exists at this source checkpoint.
+
+Both GitHub source jobs now pass 4,135 tests with verified actual runtimes and
+matching complete source trees. The [qualification record](../results/grouped-depth-check/checks.json)
+retains all six roles and the exact run/save instructions. Its publication comes
+before the formal software proof, which must itself be published before the one
+timing comparison. None of these source checks establishes a speedup.
+
+**Formal software proof:** after qualification was published, all 264 integer
+cases match the independent set check, and all five original/grouped constructor
+fingerprints match. The complete command takes 4.26 seconds, under its
+180-second limit. The [proof and clocks](grouped-depth-check.md#software-proof--november-15-2026)
+are published before the timing pair. No learner or reference solver is
+constructed. This establishes the software behavior checked here; it supplies
+no evidence yet that a complete audit is faster or the strategy stronger.
+
+The one timing pair completes with equal recorded results and field fingerprints.
+The original command takes 430.35 seconds; grouped takes 431.91 seconds. Both
+fit the unchanged limits, but the grouped command is longer, so it misses the
+required lower-wall-time condition. The [raw records](../results/grouped-depth-check/raw-pair-manifest.json)
+are published before the detailed CPU analysis. No timing retry or claim that
+the agent became stronger follows from this result.
+
+**Cost result:** the declared check fails. Selected matrix CPU is about 1.41%
+lower, but complete-command wall time is about 0.36% longer. Both improvements
+were required. All 184 constructor fingerprints match per arm, and the original
+poker checks remain equal. The [plot and full table](grouped-depth-check.md#recorded-cost-decision--november-15-2026)
+retain this unfavorable outcome.
+
+**Example:** making one task slightly cheaper does not guarantee a whole job
+finishes sooner. The blue matrix segment is a little smaller, while other
+regions vary. One run of each version is not enough to isolate why. It also
+does not tell us how much time the depth-check loop itself consumes.
+
+The first newer-Python export differs on one CPU sum by about
+0.000000000000014 seconds. The failed export is retained. Explicit sequential
+addition in the report preserves every original 3.11 number and makes all five
+exports identical across versions; raw data, instrument and tolerances stay
+unchanged. The cost decision remains failed. Both final optional suites pass
+647 tests. The next useful step is measuring the construction phases, before
+choosing another optimizer. No new training or stronger-agent claim is admitted.

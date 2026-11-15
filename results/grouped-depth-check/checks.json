@@ -1,0 +1,110 @@
+{
+  "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4135 passed, 64 skipped, 150 deselected in 825.92s (0:13:45)",
+      "log": {
+        "file": "results/grouped-depth-check/checks/base311.log",
+        "sha256": "5c464c5c27fa53383ea1f7f6ce5188e2b5065f69b66dd78fea351bd77ea6902f"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4135 passed, 64 skipped, 150 deselected in 805.02s (0:13:25)",
+      "log": {
+        "file": "results/grouped-depth-check/checks/base312.log",
+        "sha256": "8765ca4cfac66924ef0a87f1e1d39b3f27b61a1f10a27a2bb859cbfdbf394d9f"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "647 passed in 56.19s",
+      "log": {
+        "file": "results/grouped-depth-check/checks/optional311.log",
+        "sha256": "e766af71176b70b95c9d2bce933265de62cd606362be66600b64939fc995de1b"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "647 passed in 54.67s",
+      "log": {
+        "file": "results/grouped-depth-check/checks/optional312.log",
+        "sha256": "4bd2f868ef7f8f21e9bea8387b1ddf59386798269fb6f85ed7325bbed17fcf7a"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43759887855,
+      "job_id": 132952098626,
+      "head_sha": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "a218b773d7d11ccece5035e00d2b5769ec711042",
+      "actual_checkout_tree": "22e28811223e6af15636d3cb1123933464bf43b6",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/grouped-depth-check/checks/hosted311.log",
+        "sha256": "a046cf7df961ca1ea9a5ee29b40332462d95498d82eb83c2bd8147da0f23f65a"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "01dfb1da8ac702c585744b997c77b19e0da1035e6b50c290d955d39766d05ef7",
+      "checked_commit": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43759887855,
+      "job_id": 132952098803,
+      "head_sha": "7311ab4d3c84a2df032f56cdd744e7572de425dd",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "a218b773d7d11ccece5035e00d2b5769ec711042",
+      "actual_checkout_tree": "22e28811223e6af15636d3cb1123933464bf43b6",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/grouped-depth-check/checks/hosted312.log",
+        "sha256": "ccb73669f0df1729cfb2fadc20a237a6a2948cd39d9c2940cddad823cbdf558b"
+      }
+    }
+  ],
+  "scope": "Same-head409-source grouped-depth original-audit comparison qualification. All prior406 files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. No real original-audit target invoked by these fixture checks. No training, reference construction, full-audit forecast rescue or performance/default/global admission. Publish before the formal own software proof and single original/grouped pair."
+}

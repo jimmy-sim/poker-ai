@@ -1,0 +1,19 @@
+{
+  "status": "failed_retained",
+  "failure": "AssertionError: summary.json",
+  "scope": "First posthoc actual312 export check; source/raw/diagnostic gates unchanged",
+  "numeric_differences": [
+    {
+      "path": [
+        "rows",
+        4,
+        "selected",
+        "groups",
+        "comparison_inputs",
+        "exclusive_selected_cpu"
+      ],
+      "python311": 3.736865999999978,
+      "python312": 3.7368659999999636
+    }
+  ]
+}
