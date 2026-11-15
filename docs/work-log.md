@@ -5433,3 +5433,14 @@ All25raw/admin files and originals retained/hash-checked; manifest is26th.
 Publish this evidence before the one ORIGINAL-only audit. Scientific source412,
 all53pins/caps/gates unchanged. This is not the separately required production
 family end-to-end proof or training admission. Journal122 updated.
+
+Single ORIGINAL-only audit after proof publication `ee4a639`: supervised whole
+child 432.06430320898653, registered shared 436.83444570799475, complete outer
+command 436.86079670800245seconds, below900/1800. Outer exits0, uninterrupted.
+All original432profiles/1152conditions/three computed reads, worker/card/source/
+scalar witnesses, restored hooks and184 pinned ORIGINAL field fingerprints pass.
+Five phases184each=920plus1538global=2458<4096. All32raw/admin files retained
+and originals exact; [raw manifest](../results/matrix-phases/raw-pair-manifest.json)
+is33rd. Publish this complete raw evidence BEFORE phase CPU analysis. Source412/
+all53pins remain unchanged. No retry, new training, optimizer/default admission
+or production933.89/900 forecast replacement. Journal122 explains capture scope.

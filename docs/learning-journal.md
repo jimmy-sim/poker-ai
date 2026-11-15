@@ -5957,3 +5957,11 @@ solver is constructed. [Proof and clocks](matrix-phases.md#recorded-software-pro
 and all 25 raw/administrative files are retained before the actual audit.
 This checks the instrument's software behavior; it is not a speedup, a complete
 new training-family proof or permission to train a new policy.
+
+The one original-only audit now completes under its caps. The complete outer
+command takes 436.86 seconds; all original poker checks and all 184
+constructor field fingerprints pass. Each of the five phases has 184 complete
+intervals. [All32 raw/admin files](../results/matrix-phases/raw-pair-manifest.json)
+are retained with the original ignored output before detailed phase analysis.
+There is no timing retry or new trained policy. A successful capture locates
+work; it does not accept an optimizer or replace the failed production forecast.

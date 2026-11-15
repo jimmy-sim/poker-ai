@@ -167,3 +167,20 @@ manifest is26th. Saved-data proof verification passes without construction.
 Publish this proof before the single actual audit. It establishes this narrow
 instrument check, not a speedup, production-family full end-to-end proof or
 training/default/fresh/global admission. The actual audit remains unrun here.
+
+
+## Recorded raw audit — November 15, 2026
+
+After proofee4a639 publication, the single original-only audit completes:
+whole child 432.06430320898653 seconds (cap900), registered shared
+436.83444570799475 and complete outer command 436.86079670800245
+(cap1800). Exit0, no interruption. All original432/1152/three-read/worker/card/
+source/scalar checks pass, with restored hooks and all184 constructor fingerprints
+equal to the pinned original. Five complete phases per constructor give920phase
+calls, plus1538global calls=2458below4096.
+
+[All32 exact raw/admin files](../results/matrix-phases/raw-pair-manifest.json)
+and original ignored outputs remain retained; the manifest is33rd. This
+publication precedes the detailed phase analysis. No favorable retry or new
+trajectory occurs. This successful diagnostic capture does not replace the
+failed production-family forecast or admit a faster/default/stronger agent.
