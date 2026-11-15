@@ -5829,3 +5829,11 @@ matching complete source trees. The [qualification record](../results/grouped-de
 retains all six roles and the exact run/save instructions. Its publication comes
 before the formal software proof, which must itself be published before the one
 timing comparison. None of these source checks establishes a speedup.
+
+**Formal software proof:** after qualification was published, all 264 integer
+cases match the independent set check, and all five original/grouped constructor
+fingerprints match. The complete command takes 4.26 seconds, under its
+180-second limit. The [proof and clocks](grouped-depth-check.md#software-proof--november-15-2026)
+are published before the timing pair. No learner or reference solver is
+constructed. This establishes the software behavior checked here; it supplies
+no evidence yet that a complete audit is faster or the strategy stronger.

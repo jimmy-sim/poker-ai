@@ -151,6 +151,27 @@ retains untrimmed logs, metadata, the actual runner/assembler and exact generic
 launch/retention operators for both stages. Qualification publication precedes
 the formal software proof; no formal proof or candidate timing exists yet.
 
+## Software proof — November 15, 2026
+
+After qualification `e40d5e4`, the single formal proof completes in
+**4.258358540973859 seconds** for the outer command, with
+**4.2042644579778425 seconds** registered shared and
+**2.367665457975818 seconds** supervised child time, all below 180 seconds.
+All **256 generated cases plus eight edges** match the independent direct-set
+predicate without mutating inputs. All five original/grouped encoding
+fingerprint vectors match, including complete constructed array metadata/bits
+and the exact input-source identity check. Descriptors and owned aliases restore.
+
+The [proof](../results/grouped-depth-check/software/proof.json),
+[child record](../results/grouped-depth-check/software/child/child.json) and
+[18-file raw/admin manifest](../results/grouped-depth-check/raw-software-manifest.json)
+retain the exact executed operators, inputs, cases, witnesses, original ignored
+bytes and clock records. The manifest is the 19th retained file. No learner,
+reference constructor or new poker trajectory is involved. These are software
+construction facts, not a measured speedup or the complete end-to-end proof
+required for a future training family. This proof is published before the
+single original/grouped audit pair; that comparison has not yet run.
+
 ## Three questions
 
 **Why compare constructor fields?** A faster check is useful only if the same

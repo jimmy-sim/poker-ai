@@ -5293,3 +5293,14 @@ retains exact untrimmed logs, raw metadata, local runner, assembler and generic
 launch/save operators. No formal software proof or pair has run; publication
 of this qualification precedes those stages. Source remains 409 files, all
 47 pins and original scientific caps unchanged.
+
+Formal software proof after qualification `e40d5e4`: outer command
+4.258358540973859 seconds; registered shared 4.2042644579778425; supervised
+child 2.367665457975818, all below 180. All 256 generated integer cases plus
+eight edges match independent direct sets with unchanged inputs; all five
+original/grouped constructor field vectors match. No learner, reference
+constructor or new trajectory. [Raw proof](../results/grouped-depth-check/software/proof.json)
+and 18-file raw/admin manifest retain exact original/administrative bytes and
+published operators; manifest is the 19th file. Publish this evidence before
+the single pair. This is not a speedup or a replacement full training-family
+software proof; the pair and all later compute/admission requirements remain.
