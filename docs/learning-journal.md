@@ -5732,3 +5732,9 @@ and tested file trees match the qualified source. The [complete check record](..
 retains the local, optional and hosted logs, including the initial interruption,
 and the exact run/save instructions. This publication precedes collection; it
 does not supply a new CPU result or admit training.
+
+The single pair now completes within its original limits: about410seconds for
+the control and413seconds for the profiled command. The original audit and
+capture checks pass. The [raw records](../results/reader-load-cpu/raw-manifest.json)
+are retained before analysis; the timing breakdown and its interpretation come
+next. These are validation commands on saved strategies, not new learning.

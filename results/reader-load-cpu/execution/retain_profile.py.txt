@@ -1,0 +1,99 @@
+"""Keep every raw byte before any posthoc rendering; original outputs survive."""
+
+import hashlib, json, shutil
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = w / "reader-load-cpu"
+original = r / "results/runs/reader-load-cpu/pair"
+folder = r / "results/reader-load-cpu"
+output = folder / "pair"
+execution = w / "reader-load-execution"
+if not original.exists():
+    assert not (folder / "execution").exists()
+    shutil.copytree(execution, folder / "execution")
+    assert (
+        json.loads((execution / "exit.json").read_text())["phase"]
+        == "administrative_preflight_failed_no_pair_started"
+    )
+    assert (
+        Path(__file__).read_bytes()
+        == (folder / "checks/operator_retention.py.txt").read_bytes()
+    )
+    sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    (folder / "raw-manifest.json").write_text(
+        json.dumps(
+            dict(
+                status="administrative_preflight_failed_no_pair_started",
+                raw_sha256={
+                    str(p.relative_to(folder)): sha(p)
+                    for p in sorted((folder / "execution").rglob("*"))
+                    if p.is_file()
+                },
+                scope="No real pair or helper count; retain administrative failure without a rerun",
+            ),
+            indent=2,
+        )
+        + "\n"
+    )
+    raise SystemExit(0)
+assert not output.exists() and not (folder / "execution").exists()
+shutil.copytree(original, output)
+shutil.copytree(execution, folder / "execution")
+for source, destination in ((original, output), (execution, folder / "execution")):
+    for p in source.rglob("*"):
+        if p.is_file():
+            assert p.read_bytes() == (destination / p.relative_to(source)).read_bytes()
+assert (execution / "run_profile.py.txt").read_bytes() == (
+    folder / "checks/operator_launch.py.txt"
+).read_bytes()
+assert (
+    Path(__file__).read_bytes()
+    == (folder / "checks/operator_retention.py.txt").read_bytes()
+)
+shutil.copyfile(__file__, folder / "execution/retain_profile.py.txt")
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+raw = json.loads((output / "pair.json").read_text())
+assert raw["status"] in ("complete", "failed_retained")
+exit_code = json.loads((execution / "exit.json").read_text())["returncode"]
+if raw["status"] == "complete":
+    assert exit_code == 0
+for mode in ("control", "profiled"):
+    if raw["status"] == "complete":
+        child = json.loads((output / mode / "child.json").read_text())
+        assert (
+            child["status"] == "complete"
+            and child["source"]["fingerprint"]
+            == "07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3"
+        )
+raw_count = len([p for p in output.rglob("*") if p.is_file()])
+if raw["status"] == "complete":
+    assert raw_count > 20
+manifest = dict(
+    raw_sha256={
+        str(p.relative_to(folder)): sha(p)
+        for directory in (output, folder / "execution")
+        for p in sorted(directory.rglob("*"))
+        if p.is_file()
+    },
+    scope="Exact canonical copies of raw complete/partial command evidence and administrative context; original ignored files retained; no posthoc report or performance admission",
+    operator_matches_previously_published_copy=True,
+)
+(folder / "raw-manifest.json").write_text(
+    json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+)
+print(
+    json.dumps(
+        dict(
+            status=raw["status"],
+            seconds=raw["seconds"],
+            measurements=[
+                dict(seconds=m["seconds"], returncode=m["returncode"])
+                for m in raw["measurements"]
+            ],
+            raw_files=raw_count,
+            original_bytes_exact=True,
+        ),
+        indent=2,
+    )
+)

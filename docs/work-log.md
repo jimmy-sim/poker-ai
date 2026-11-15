@@ -5198,3 +5198,12 @@ distinct commit IDs recorded explicitly. [Qualification](../results/reader-load-
 retains untrimmed logs, raw metadata, exact initial/resumed runners and interrupted
 logs, assembler and the launch/retention operators. This checkpoint is published
 before the one fixed pair. No new audit or training has run.
+
+The single pair completes: control409.6105099580018s,
+profiled413.1019390830188s, shared823.8671735420066s, all under the original
+900/1800caps. Both child commands return0; the original audit, selected-call
+coverage and restoration checks pass. All31pair files and8administrative files
+are copied exactly, with originals retained and39hashes verified in the
+[raw manifest](../results/reader-load-cpu/raw-manifest.json). This raw publication
+precedes posthoc analysis. No CPU attribution, optimization or admission is
+claimed at this checkpoint.
