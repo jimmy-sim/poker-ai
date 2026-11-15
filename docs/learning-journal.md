@@ -5932,3 +5932,19 @@ retain both failures alongside all four original local passes. Corrected-head
 local and hosted qualification must be complete before the formal proof or
 actual audit. No measurement has been attempted. This is a portability fix in
 a software test, not an unfavorable poker result or a changed acceptance rule.
+
+
+Corrected immutable-source qualification is complete: both full local suites
+pass 4,230 tests and both optional suites pass 742. Both corrected GitHub source
+jobs also pass 4,230, with actual runtimes and complete tested trees checked.
+The [six-role record](../results/matrix-phases/checks.json) retains exact logs,
+metadata and launch/save instructions. The first failed hosted run remains in
+its separate nonqualifying history; it has not been relabeled as a pass.
+
+There are now 95 new fixtures, with 349 combined constructor/loader/timer tests
+passing on each Python version. Source construction remains unchanged: 412 files,
+including all 409 earlier files, and 53 pinned inputs. Full suites can exercise
+toy-game/fixture solvers; they do not perform this actual postflop audit or a
+new real trajectory study. The formal own software proof still comes next,
+and must be published before the single original-only capture. These source
+checks do not establish a faster or stronger agent.

@@ -5393,3 +5393,31 @@ fingerprint,53pins,caps,seeds,tolerances,gates unchanged. Nine initial targeted
 checks pass; strengthened clock regression gives11passed/44deselected. Complete
 corrected-head local and hosted qualification is required again before any
 formal proof or actual audit. Journal122 records the portability failure.
+
+
+Corrected source qualification at `f82ae1d0be8099b4c6bd70dd2e78668e8191ffed`
+now has all six roles passing. Effective412-file fingerprint
+f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d,
+all prior409 files and53pins unchanged. Corrected working-copy combined suites
+pass349each27.35/27.13s,95newfixtures; lint916/type768/docs387dest4imagespass.
+[Full qualification](../results/matrix-phases/checks.json) preserves all actual
+source/role/runtime/uv/full-tree proof and exact generic launch/save operators.
+Observed results:
+
+- base311: 4230 passed, 64 skipped, 150 deselected in 874.36s (0:14:34)
+- base312: 4230 passed, 64 skipped, 150 deselected in 860.61s (0:14:20)
+- optional311: 742 passed in 78.69s (0:01:18)
+- optional312: 742 passed in 76.42s (0:01:16)
+- hosted311: 2026-11-15T23:08:25.4535929Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 772.88s (0:12:52)
+- hosted312: 2026-11-15T23:09:18.5579400Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 811.23s (0:13:31)
+
+The initial local-passing/hosted-failing a459 source remains explicitly
+nonqualifying in its original history. This test-clock correction changes no
+scientific instrument/config/source fingerprint/cap/seed/tolerance/gate. Full
+software suites can exercise toy/fixture solvers; source status lines refer to
+formal diagnostic collection, not a claim that no unit test constructs a learner.
+Eight synthetic administrative retention fixtures pass without actual poker
+collection. Qualification publication precedes the one bounded software proof;
+its publication must precede the one actual audit. No formal attempt has run yet.
+The933.89/900forecast and2.390%versus1% quality failures remain. Journal122 updated;
+AI-assisted, no invented personal hours or mastery.

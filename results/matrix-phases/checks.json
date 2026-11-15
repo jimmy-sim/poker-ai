@@ -1,0 +1,112 @@
+{
+  "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4230 passed, 64 skipped, 150 deselected in 874.36s (0:14:34)",
+      "log": {
+        "file": "results/matrix-phases/checks/base311.log",
+        "sha256": "4e82d0206f2b4862e08c1b3886dd0dca52a447c2b73571ff7c5afa68414ac08c"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4230 passed, 64 skipped, 150 deselected in 860.61s (0:14:20)",
+      "log": {
+        "file": "results/matrix-phases/checks/base312.log",
+        "sha256": "70f8e9a4b30a8551ca6c95c59f5aa360f70986326bd3e5204cf1e72a3ac3e150"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "742 passed in 78.69s (0:01:18)",
+      "log": {
+        "file": "results/matrix-phases/checks/optional311.log",
+        "sha256": "34480daa106bcc5dc278de8200eae4ae4427015bd85ad9a68a4110ff03bc81dc"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "742 passed in 76.42s (0:01:16)",
+      "log": {
+        "file": "results/matrix-phases/checks/optional312.log",
+        "sha256": "3a5245d1f132fb48c372b8e581c9f308815e6200ce4f0f018bf6ad150c5b4ce3"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "result": "2026-11-15T23:08:25.4535929Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 772.88s (0:12:52)",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43771918458,
+      "job_id": 132989490053,
+      "head_sha": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "137a7e3ad0aeac7e401f7d5ce76a2cc960382a82",
+      "actual_checkout_tree": "6114a8a86a74ca548e86a0d4fcec358a1d83ed0b",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/matrix-phases/checks/hosted311.log",
+        "sha256": "2698bfcc0fafaf08636cd88be0f4c794d3bd9c32a82b3a8e16d84e9abd062976"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "result": "2026-11-15T23:09:18.5579400Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 811.23s (0:13:31)",
+      "source_fingerprint": "f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d",
+      "checked_commit": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43771918458,
+      "job_id": 132989490237,
+      "head_sha": "f82ae1d0be8099b4c6bd70dd2e78668e8191ffed",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "137a7e3ad0aeac7e401f7d5ce76a2cc960382a82",
+      "actual_checkout_tree": "6114a8a86a74ca548e86a0d4fcec358a1d83ed0b",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/matrix-phases/checks/hosted312.log",
+        "sha256": "ee9b43e0752d8a1fa8ae1984b069c2232646507514d39bb6d914798ccec84bfc"
+      }
+    }
+  ],
+  "scope": "Same-head412-source original matrix-phase localization qualification. All prior409 files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. Role suites can construct/train toy-game or software-fixture solvers. No actual complete-audit target or new real Holdem trajectory study was invoked by these checks; the guard status line refers to formal collection, not every unit-test object. No full-audit forecast rescue or performance/default/global admission. Publish before the formal own software proof and single original-only audit."
+}

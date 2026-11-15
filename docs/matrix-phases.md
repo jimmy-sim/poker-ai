@@ -126,3 +126,24 @@ Separating it avoids assuming all CPU belongs to game construction.
 
 **Does a complete profile admit a faster agent?** No. It provides a target for
 another correctness/cost investigation, preserving prior failures and gates.
+
+
+## Recorded source qualification — November 15, 2026
+
+Initial source a459b06 passes all four local roles but fails both hosted jobs on
+its two expiry fixtures. [Original complete records](../results/matrix-phases/qualification-history/initial-a459b06/manifest.json)
+are retained. The test subtracts 2,000 seconds from uptime; this can create a
+negative origin on a fresh VM, correctly refused by the production runner.
+Correct only the fixture to model a positive 5,000/3,000 clock independently of
+short/long host uptime. No scientific source/config/cap/seed/tolerance changes.
+
+Corrected source f82ae1d passes both full local bases (4,230 each), both optional
+suites (742 each) and both [hosted source jobs 43771918458](https://github.com/jimmy-sim/poker-ai/actions/runs/43771918458)
+(4,230 each). Actual Python/NumPy, every uv selection and complete temporary
+checkout trees match the checked source. [Six-role records and exact operators](../results/matrix-phases/checks.json)
+precede the formal proof. Their software fixtures may exercise toy solvers; no
+actual complete-audit target or new real trajectory study ran in qualification.
+
+All 412 source files, prior 409 and 53 pinned inputs remain fixed. The formal
+180-second own software proof and one original-only audit remain unrun at this
+publication checkpoint. No cost/optimizer/training/default/fresh/global admission.
