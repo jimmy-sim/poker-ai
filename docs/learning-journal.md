@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Measure the original audit context](#118-measure-the-original-audit-context-before-choosing-an-optimizer)
+
 - [Reconcile the saved CPU readings](#117-check-the-records-before-explaining-the-runtime-difference)
 
 - [Count helpers across a complete saved-policy read](#116-count-helpers-across-the-complete-saved-policy-read)
@@ -94,6 +96,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 118](#118-measure-the-original-audit-context-before-choosing-an-optimizer):
+  the controlled full-audit measurement now being checked.
 
 - [Step 117](#117-check-the-records-before-explaining-the-runtime-difference):
   compare the saved boundaries before choosing another timing experiment.
@@ -5533,3 +5538,64 @@ Codex assisted with the checker, tests and explanation. No new personal practice
 hours or mastery is inferred. The publishing preference is to batch related work
 into fewer meaningful commits and one milestone PR, preserving required evidence
 checkpoints and real dates. Project success remains the priority.
+
+
+## 118. Measure the original audit context before choosing an optimizer
+
+November 14, 2026. The saved-data check found consistent arithmetic and unchanged
+code, but it did not explain the different CPU readings. The next step runs the
+original full audit twice: first normally, then with helper recording added
+around its three reader calls.
+
+Both runs keep the warm-up, existing cache history, card-function wrappers and
+independent workers. A **control** is the version used for comparison; here it
+shows what the same audit does without the added recorder. **Example:** measuring
+one errand alone and measuring it as part of a longer trip are different setups.
+The new comparison keeps the longer trip in both halves.
+
+The first 37 software fixtures pass. They check that the wrapper forwards the
+original objects, restores functions after a failure, preserves the original
+child's receipt, and rejects incomplete or misplaced helper records. These are
+checks of the measuring tool; no new real audit has run. Full source checks and
+published qualification must pass before the one fixed pair.
+
+The [protocol](original-audit-helpers.md) keeps the original limits and results.
+It will report whether helper CPU accounts for the older reading, or leave the
+cause unresolved if it does not. It cannot yet explain which setup difference
+caused the discrepancy. Stop at the completed measurement report or a retained
+failure; no optimizer or new training begins in this step. Codex assisted with
+the wrapper, tests and explanation. Personal practice and hours are unrecorded.
+
+
+The measuring tool now passes all six source checks: 3,881 full tests and 393
+optional tests on each Python version, plus both hosted jobs with installed
+versions verified. The qualification and exact operators are published before
+the single pair. This completes checking the tool; the actual timing outcome
+is still unknown at this checkpoint.
+
+
+The pair now finishes successfully: about 7.2 minutes for the control and 7.7
+minutes with recording, within the fixed limits. Every original scalar and
+computed result matches. The [raw files were published before the report](https://github.com/jimmy-sim/poker-ai/commit/79e2b9f).
+
+The older 21–22 seconds of child-user CPU did not appear again. Each current
+real read shows roughly a quarter-second of child-user CPU, including in the
+control without the new recorder. Each observed real read has 49 helpers, and their
+recorded intervals account for its child counters exactly at saved precision.
+Most CPU work remains in the main process and its libraries: about 141–158
+seconds per real read, against less than one second of combined child CPU.
+
+In the [new plot](../results/original-audit-helpers/report/reader-cpu.png), blue is
+the control, orange is the observed run, and green is the helper-interval sum.
+The panels have different scales: the main process uses over a hundred seconds,
+while the child counters stay below one. Both runs use the same saved strategies.
+This explains validation cost; it does not show a stronger poker agent.
+
+The original audit context alone did not reproduce the historical reading in
+this one pair. The old arithmetic stays valid, and the cause remains unresolved.
+Startup, process history and machine conditions were not identical to the old
+run. The next useful question concerns the main process's work, rather than
+optimizing a small helper cost. The existing forecast still fails its limit;
+no training or default policy is admitted. Stop after this measurement report
+and closing checks. The three numeric exports also match exactly under a
+Python 3.12 data-only check with poker execution blocked.

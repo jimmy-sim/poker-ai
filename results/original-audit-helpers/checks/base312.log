@@ -1,0 +1,83 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport measure_original_audit as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='9bd3593c55cb80d4719e6ac367600def50768a87'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==402 and s['fingerprint']=='f0f19b0833ae0a8959b80e837dfd1f4e3d5e08d0e7d46a10fb6df458005d23d0' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'9bd3593c55cb80d4719e6ac367600def50768a87');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real complete reader target/collector measurement, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=9bd3593c55cb80d4719e6ac367600def50768a87
+COLLECTOR_SOURCE=f0f19b0833ae0a8959b80e837dfd1f4e3d5e08d0e7d46a10fb6df458005d23d0
+Software qualification only: no real complete reader target/collector measurement, learner or reference constructed
+{"command": ["uv", "run", "--locked", "ruff", "check", "."]}
+All checks passed!
+{"command": ["uv", "run", "--locked", "ruff", "format", "--check", "."]}
+900 files already formatted
+{"command": ["uv", "run", "--locked", "mypy", "--strict", "src", "tests", "scripts"]}
+Success: no issues found in 756 source files
+{"command": ["uv", "run", "--locked", "pytest", "-q", "-m", "not slow"]}
+........................................................................ [  1%]
+........................................................................ [  3%]
+........................................................................ [  5%]
+........................................................................ [  7%]
+........................................................................ [  9%]
+........................................................................ [ 10%]
+........................................................................ [ 12%]
+........................................................................ [ 14%]
+........................................................................ [ 16%]
+........................................................................ [ 18%]
+........................................................................ [ 20%]
+........................................................................ [ 21%]
+........................................................................ [ 23%]
+..............................s......................................... [ 25%]
+.........................ss............................................. [ 27%]
+...................s.................................................... [ 29%]
+........................................................................ [ 31%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+........................................................................ [ 36%]
+........................................................................ [ 38%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+..................sss................................................... [ 43%]
+........................................................................ [ 45%]
+........s............................................................... [ 47%]
+........................................................................ [ 49%]
+........................................................................ [ 51%]
+......ss..sss........................................................... [ 52%]
+.............................................sssssssssssssssss.......... [ 54%]
+....................................s................................... [ 56%]
+........................................................................ [ 58%]
+........................................................................ [ 60%]
+...........ssssssssss................................................... [ 62%]
+........................................................................ [ 63%]
+........................................................................ [ 65%]
+.....................................................ss...s............. [ 67%]
+........................................................................ [ 69%]
+........................................................................ [ 71%]
+...........s.................................................s.......... [ 73%]
+........................................................................ [ 74%]
+......................................................................ss [ 76%]
+.......................ss............................................... [ 78%]
+........................................................................ [ 80%]
+..........................ss......................................ss.... [ 82%]
+........................................................................ [ 84%]
+........................................................................ [ 85%]
+...........................s....................s....................... [ 87%]
+........................................................................ [ 89%]
+..................s..................................................... [ 91%]
+...........s............................................................ [ 93%]
+......ss..........s..................................................... [ 94%]
+........................................................................ [ 96%]
+........................................................................ [ 98%]
+......................................................                   [100%]
+3881 passed, 64 skipped, 150 deselected in 778.81s (0:12:58)
+{"command": ["uv", "run", "--locked", "pre-commit", "validate-config"]}
+   Building poker-ai @ file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/original-audit-source-checkout
+      Built poker-ai @ file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/original-audit-source-checkout
+Uninstalled 1 package in 2ms
+Installed 1 package in 101ms
+{"command": ["uv", "run", "--locked", "pre-commit", "run", "--all-files"]}
+Ruff lint (locked project environment)...................................Passed
+Ruff format check (locked project environment)...........................Passed
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport measure_original_audit as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='9bd3593c55cb80d4719e6ac367600def50768a87'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==402 and s['fingerprint']=='f0f19b0833ae0a8959b80e837dfd1f4e3d5e08d0e7d46a10fb6df458005d23d0' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'9bd3593c55cb80d4719e6ac367600def50768a87');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only: no real complete reader target/collector measurement, learner or reference constructed')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=9bd3593c55cb80d4719e6ac367600def50768a87
+COLLECTOR_SOURCE=f0f19b0833ae0a8959b80e837dfd1f4e3d5e08d0e7d46a10fb6df458005d23d0
+Software qualification only: no real complete reader target/collector measurement, learner or reference constructed

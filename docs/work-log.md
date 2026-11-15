@@ -5020,3 +5020,49 @@ the intended original audit context and account for helper/resource boundaries
 and dominant own-process work together. No further collection begins in this
 milestone. Original933.89/900forecast and prior unfavorable cache timing remain
 failed; no new training, stronger agent or default/admission claim.
+
+### November 14 — original-audit-context measurement registered
+
+Continue [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6889171302)
+with one fixed control/observed pair of the original complete uncached audit.
+[Protocol](original-audit-helpers.md) preserves the warm-up, shared recall cache,
+card wrappers, three mathematical reads and native workers. Only the observed
+half adds per-read helper/resource coverage. Source map402 preserves all400prior
+measurement/bookkeeping files;31input hashes, runtime/extras/binaries and900/1800
+caps fixed. All six same-head source checks and published qualification/operator
+precede data; raw evidence precedes reporting. First37fixtures pass, including
+nested ledger/schema failures and original-child raw retention. No real target
+has run. Codex-assisted; no personal hours/mastery inferred. Ten unrelated local
+result changes freshly snapshotted and preserved in an isolated branch. One PR
+will keep the required source, qualification, raw and report boundaries batched.
+
+
+All six source roles pass at 9bd3593 / 402-file f0f19b08 before collection:
+local bases 3,881 / 64 skipped / 150 deselected each (795.80 / 778.81s), optional
+393 each (16.20 / 14.65s); hosted43677796759 both pass with actual runtimes/uv/head
+verified and one existing roundoff warning. Ruff900/type756/hooks/relative links
+pass. Publish checks.json, every full log and exact launch/retention operators
+before the one pair. The 400 prior source bytes, caps, seeds and gates remain
+unchanged. No real target yet; these checks do not admit training or a forecast.
+
+
+ONE actual original-context pair completes at published qualification c4428ac,
+source402/f0f19b08 unchanged. Raw79e2b9f is public BEFORE interpretation; 30 raw
+files and exact execution copies retained, originals kept. Whole children
+430.942727125/460.964389041s, shared893.187598875s, all within900/1800 caps.
+Original432profiles/1152conditions/three actual replays/three workers/card
+counters match historical control and both halves exactly. Observed110helpers/
+110CPython events (12tiny,49initial,49final), all recognized/successful and no
+unassigned/observer/retention error. Per-read helper user/system sums equal
+outer child-counter increments exactly at saved precision; zero residuals.
+Real read own-process CPU141.258–158.211s, child-user0.247–0.278s and combined
+childCPU<1s each. Historical21–22child-userCPU does NOT reproduce even in control.
+Cause remains unresolved; no causal factor isolation or old-result invalidation.
+
+Report includes six read rows, all six worker clocks, a visually checked figure,
+raw/code/render hashes and three byte-identical numeric exports in actual31215/
+NP254 data-only replay with reader/child/learner/reference blocked. This does
+not replay archived mathematics in a newer runtime. Journal118 explains scales
+and limits. No optimizer, new training/default, stronger-agent or933.89/900
+forecast rescue; prior unfavorable results remain. Final relevant checks and
+both exact-head hosted jobs precede merge, then stop at this milestone.

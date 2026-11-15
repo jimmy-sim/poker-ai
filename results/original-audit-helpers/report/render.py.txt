@@ -1,0 +1,48 @@
+"""Posthoc saved-data extraction/figure; no poker or native reference execution."""
+import csv,hashlib,json,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();destination=Path(sys.argv[2]).resolve()
+assert not destination.exists();assert not destination.is_relative_to(r/'results/original-audit-helpers/pair')
+sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import measure_original_audit as t
+from compact_cached import cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+def forbidden(*a,**k):raise AssertionError('posthoc extraction entered poker execution')
+t.child=forbidden;t.original.child=forbidden;cli.read=forbidden;t.supervise=forbidden
+with isolated(worker=False):data=t.report(r,r/'results/original-audit-helpers/pair')
+destination.mkdir(parents=True)
+(destination/'summary.json').write_bytes(t.canonical(data)+b'\n')
+rows=[]
+for x in data['rows']:
+ clocks=x['outer']['clocks'];children=x['outer']['resources']['reaped_child_usage']['delta'];h=x['helper_totals']
+ rows.append(dict(mode=x['mode'],read=x['read'],scope=x['scope'],wall_seconds=clocks['perf_seconds'],own_process_cpu_seconds=clocks['process_cpu_seconds'],child_user_seconds=children['ru_utime'],child_system_seconds=children['ru_stime'],helper_count=x['helper_count'],helper_child_user_seconds=None if h is None else h['ru_utime'],helper_child_system_seconds=None if h is None else h['ru_stime'],child_user_outside_helper_intervals=None if h is None else children['ru_utime']-h['ru_utime'],child_system_outside_helper_intervals=None if h is None else children['ru_stime']-h['ru_stime']))
+with (destination/'readers.csv').open('x',newline='') as f:
+ w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+workers=[]
+for mode in ('control','observed'):
+ for slot in range(3):
+  w=json.loads((r/f'results/original-audit-helpers/pair/{mode}/old/worker-telemetry/worker-{slot}.json').read_text())
+  interval=w['observation']['interval'];clocks=interval['clocks'];child=interval['resources']['reaped_child_usage']['delta']
+  workers.append(dict(mode=mode,slot=slot,pid=w['observation']['before']['pid'],wall_seconds=clocks['perf_seconds'],own_process_cpu_seconds=clocks['process_cpu_seconds'],child_user_seconds=child['ru_utime'],child_system_seconds=child['ru_stime']))
+with (destination/'workers.csv').open('x',newline='') as f:
+ w=csv.DictWriter(f,fieldnames=list(workers[0]));w.writeheader();w.writerows(workers)
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+fig,axes=plt.subplots(1,2,figsize=(12,4.3),layout='constrained')
+for j,mode in enumerate(('control','observed')):
+ values=[v for v in rows if v['mode']==mode]
+ axes[0].bar([i+(j-.5)*.32 for i in range(3)],[v['own_process_cpu_seconds'] for v in values],width=.32,label=mode)
+ axes[1].bar([i+(j-1)*.25 for i in range(3)],[v['child_user_seconds']+v['child_system_seconds'] for v in values],width=.25,label=mode+' whole read')
+observed=[v for v in rows if v['mode']=='observed']
+axes[1].bar([i+.25 for i in range(3)],[v['helper_child_user_seconds']+v['helper_child_system_seconds'] for v in observed],width=.25,label='observed helper intervals')
+for ax in axes:
+ ax.set_xticks(range(3),['Tiny pre-read','Initial real read','Final real read']);ax.set_ylabel('Recorded CPU seconds');ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True);ax.legend(fontsize=8)
+axes[0].set_title('Own-process CPU, including its libraries')
+axes[1].set_title('Reaped-child counter deltas; no exclusive PID attribution')
+fig.suptitle('One ordered original audit pair; CPU is not a wall-time partition',fontsize=12)
+fig.savefig(destination/'reader-cpu.png',dpi=160);plt.close(fig)
+manifest=dict(scope='posthoc data-only report; no reader/learner/native construction; one ordered case, no causal factor isolation or compute admission',script_sha256=t.digest(Path(__file__)),raw_sha256=data['input_sha256'],numeric_files={n:t.digest(destination/n)for n in ('summary.json','readers.csv','workers.csv')},figure_sha256=t.digest(destination/'reader-cpu.png'),matplotlib=matplotlib.__version__)
+(destination/'render-manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+print(json.dumps(rows,indent=2))
