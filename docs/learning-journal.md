@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Separate original construction phases](#122-separate-construction-work-from-checking-work)
+
 - [Check matrix depths with grouped integer work](#121-check-matrix-depths-without-rescanning-every-node)
 
 - [Find CPU inside input loading](#120-follow-the-work-inside-input-loading)
@@ -102,6 +104,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
+  inside the original constructor: key creation accounts for 84.3% of its measured
+  CPU; the failed grouped alternative remains unadmitted.
 
 - [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
   grouped depth check inside measured matrix construction; correctness passes,
@@ -5863,3 +5869,128 @@ exports identical across versions; raw data, instrument and tolerances stay
 unchanged. The cost decision remains failed. Both final optional suites pass
 647 tests. The next useful step is measuring the construction phases, before
 choosing another optimizer. No new training or stronger-agent claim is admitted.
+
+
+**Closing checks:** [PR #75](https://github.com/jimmy-sim/poker-ai/pull/75) is merged.
+Both final GitHub jobs pass 4,135 tests with the verified actual runtimes and
+matching tested trees. Main reproduces the report and passes 128 focused fixtures
+in 8.22 seconds. All ten unrelated local result edits remain unchanged after
+those checks. [Closing receipts](../results/grouped-depth-check/final-ci/verified.json)
+travel with this next substantive change, avoiding a separate status push.
+
+## 122. Separate construction work from checking work
+
+November 15, 2026. The grouped check preserves the game arrays but does not
+make the complete command faster. The next question is where the original
+constructor spends its time. The earlier matrix timer includes both construction
+and the work that verifies every output field, so it cannot answer that yet.
+
+The new private copy keeps the original depth loop. Five coarse timers separate
+information-key creation, array setup, depth validation, object creation and
+field witnessing. A source-body check removes only the declared timing contexts
+and requires the original statements, their phase boundaries and dependencies
+to match. The historical constructor and training code stay unchanged.
+
+**Example:** timing a whole kitchen visit includes preparing food and washing
+up. Measuring those separately can identify a useful next change. It does not
+prove a new recipe is faster. Here, field witnessing is checking the complete
+constructed output; its cost must not be mistaken for learning work.
+
+The [prospective issue plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6901801110)
+and [protocol](matrix-phases.md) specify one original-only complete audit,
+preceded by source qualification and a published software proof. All 184 saved
+constructor fingerprints must match the previous original capture, with five
+complete intervals each. Missing or failed measurements remain unknown, not zero.
+The invalid-depth fixture is an explicitly synthetic software test whose expected
+error is recorded separately; it is not played poker or a failed real audit.
+
+Implementation and explanations are Codex-assisted. No new personal practice,
+manual authorship, hours or mastery is inferred. Complete qualification and the
+formal proof still precede the one audit. There is no new CPU result, speedup,
+training admission or stronger-agent claim at this implementation checkpoint.
+
+The new instrument passes 93 focused fixtures; combined with the preceding
+constructor/loader/timer suites, 347 pass on each Python version. Tests cover
+the five complete fields/intervals, preserved depth errors, moved phase boundaries,
+primary exceptions, partial records, invalid clocks/context, original fingerprint
+matching and outer-call containment. A saved software-proof fixture replays with
+the actual builder blocked. Its source qualification is deliberately fictional;
+it is not the formal published proof. Complete local and hosted qualification
+still comes first. Lint/format, strict types and focused documentation links pass.
+
+
+Both initial hosted jobs fail two expiry fixtures, despite local passes. A fresh
+runner's monotonic clock can be less than 2,000 seconds; subtracting 2,000 gives
+an invalid negative origin rather than the intended expired positive origin.
+The runner correctly refuses that origin. The test accidentally depended on
+how long the machine had been running.
+
+The fixture now controls its clock explicitly: current time 5,000, origin 3,000.
+It exercises both short and long simulated host uptimes. Production clocks,
+180/900/1,800-second caps and the measured constructor remain unchanged.
+The [initial failed hosted records](../results/matrix-phases/qualification-history/initial-a459b06/initial-failure.json)
+retain both failures alongside all four original local passes. Corrected-head
+local and hosted qualification must be complete before the formal proof or
+actual audit. No measurement has been attempted. This is a portability fix in
+a software test, not an unfavorable poker result or a changed acceptance rule.
+
+
+Corrected immutable-source qualification is complete: both full local suites
+pass 4,230 tests and both optional suites pass 742. Both corrected GitHub source
+jobs also pass 4,230, with actual runtimes and complete tested trees checked.
+The [six-role record](../results/matrix-phases/checks.json) retains exact logs,
+metadata and launch/save instructions. The first failed hosted run remains in
+its separate nonqualifying history; it has not been relabeled as a pass.
+
+There are now 95 new fixtures, with 349 combined constructor/loader/timer tests
+passing on each Python version. Source construction remains unchanged: 412 files,
+including all 409 earlier files, and 53 pinned inputs. Full suites can exercise
+toy-game/fixture solvers; they do not perform this actual postflop audit or a
+new real trajectory study. The formal own software proof still comes next,
+and must be published before the single original-only capture. These source
+checks do not establish a faster or stronger agent.
+
+The formal own software proof now passes after qualification publication. All
+five original/phased constructor field vectors match, and both versions reject
+the explicitly synthetic invalid-depth fixture with the same ValueError. The
+complete command takes 4.60 seconds, under 180. No learner or reference
+solver is constructed. [Proof and clocks](matrix-phases.md#recorded-software-proof--november-15-2026)
+and all 25 raw/administrative files are retained before the actual audit.
+This checks the instrument's software behavior; it is not a speedup, a complete
+new training-family proof or permission to train a new policy.
+
+The one original-only audit now completes under its caps. The complete outer
+command takes 436.86 seconds; all original poker checks and all 184
+constructor field fingerprints pass. Each of the five phases has 184 complete
+intervals. [All32 raw/admin files](../results/matrix-phases/raw-pair-manifest.json)
+are retained with the original ignored output before detailed phase analysis.
+There is no timing retry or new trained policy. A successful capture locates
+work; it does not accept an optimizer or replace the failed production forecast.
+
+**Result:** information/key creation uses 44.43 of the observed matrix region's
+52.72 CPU seconds, about 84.3%. The original depth check uses about 2.45%, and
+complete field witnessing about 2.66%. Matrix work itself is 18.26% of the two
+archived-policy reads' CPU. These are different denominators:84.3% does not mean
+84.3% of all training or of the whole command.
+
+A **key** turns an observed situation into the name of its decision group.
+**Example:** cards, public board and betting history are encoded so a strategy
+can look up the correct action probabilities. Repeating that description many
+times can cost more than checking tree depths. The [figure and tables](matrix-phases.md#recorded-cpu-result--november-15-2026)
+show both archived-policy reads, with the five phases and recording remainder.
+
+A posthoc classification finds 38.48 key-creation CPU seconds under the constructor
+field `texture_b8`. These are constructor labels, not counts of trained agents;
+different labels have different tree/call inventories. The table identifies
+where this capture spends time, not which representation is inherently faster.
+
+All six main exports and the extra encoding table match byte-for-byte on the
+second Python environment with poker execution blocked. Both final optional
+suites pass 742 tests. The plot is inspected. The initial fresh-runner clock-test
+failure remains documented and retained; it has not become a passing first run.
+
+The next question is an exact mathematical optimization of repeated card-suit
+translations inside key work, supported by this localization and the earlier
+canonicalization trace. It needs a new prospective plan, original-result/field
+checks and a complete cost comparison. Nothing here trains a new policy or
+accepts a faster/default agent; the existing compute and accuracy failures stay.

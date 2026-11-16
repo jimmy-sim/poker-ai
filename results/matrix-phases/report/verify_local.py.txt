@@ -1,0 +1,34 @@
+"""Final saved-data/source/retention proof, never collect another audit."""
+import hashlib,json,re,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();w=r.parent;sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import profile_matrix_phases as t
+import numpy,poker_ai
+assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6' and Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+p=r/'results/matrix-phases/report';data=json.loads((p/'summary.json').read_text());cli=json.loads((w/'matrix-cli-show.json').read_text());expected=dict(data);expected.pop('readers');expected.pop('matrix_totals');assert cli==expected
+_,source=t.binding(r,clean=False);assert len(source['sha256'])==412 and source['fingerprint']=='f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d'
+counts={}
+for stage in ('software','pair'):
+ folder=r/'results/matrix-phases';manifest=json.loads((folder/('raw-'+stage+'-manifest.json')).read_text());assert manifest['status']=='complete_raw_before_analysis' and manifest['originals_retained'] and manifest['operator_bytes_match_published']
+ for name,h in manifest['raw_sha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==h
+ for directory,old in [(stage,r/'results/runs/matrix-phases'/stage),('execution-'+stage,w/('matrix-execution-'+stage))]:
+  for original in old.rglob('*'):
+   if original.is_file():assert original.read_bytes()==(folder/directory/original.relative_to(old)).read_bytes()
+ counts[stage]=len(manifest['raw_sha256'])
+assert counts==dict(software=25,pair=32)
+initial=r/'results/matrix-phases/qualification-history/initial-a459b06';initial_manifest=json.loads((initial/'manifest.json').read_text())
+for name,h in initial_manifest['raw_sha256'].items():assert hashlib.sha256((initial/name).read_bytes()).hexdigest()==h
+failure=json.loads((initial/'initial-failure.json').read_text());assert failure['all_hosted_roles_passed'] is False and len(failure['rows'])==2 and all(x['eligible_passed_role'] is False for x in failure['rows'])
+manifest=json.loads((p/'render-manifest.json').read_text());assert manifest['script_sha256']==t.digest(p/'render.py.txt')
+for name,h in manifest['numeric_files'].items():assert t.digest(p/name)==h
+assert len(manifest['numeric_files'])==6 and manifest['figure_sha256']==t.digest(p/'matrix-phases.png')
+portable=json.loads((p/'replay312.json').read_text());assert portable['byte_identical'] and portable['source_unchanged'] and portable['numeric_files']==manifest['numeric_files']
+enc=json.loads((p/'encodings.manifest.json').read_text());assert enc['script_sha256']==t.digest(p/'classify_encodings.py.txt') and enc['csv_sha256']==t.digest(p/'encodings.csv') and enc['constructors']==184 and enc['rows']==6
+replay_enc=json.loads((p/'encoding-replay312.json').read_text());assert replay_enc['byte_identical'] and replay_enc['csv_sha256']==enc['csv_sha256'] and replay_enc['python']=='3.12.15' and replay_enc['numpy']=='2.5.4'
+checks=[]
+for minor in ('311','312'):
+ row=json.loads((p/f'final-optional{minor}.json').read_text());assert row['status']=='passed';log=(p/f'final-optional{minor}.log').read_text();line=next(x for x in log.splitlines() if re.match(r'^742 passed',x));checks.append(dict(minor=minor,result=line,**row))
+assert data['global_selected_calls']==1538 and data['phase_calls']==920 and data['combined_selected_calls']==2458 and len(data['constructor_phases'])==184
+assert data['all_constructor_fingerprints_equal'] and data['original_identity_exact'] and data['diagnostic_cost_pass_claim_permitted'] is False and data['poker_training_performed'] is data['long_run_admitted'] is False
+proof=dict(scope='Final local source/raw/saved-data verification; no new collector, mathematical replay, trajectory or admission',effective_source_files=412,source_fingerprint=source['fingerprint'],checked_source_commit='f82ae1d0be8099b4c6bd70dd2e78668e8191ffed',source_unchanged=True,raw_admin_files_exact=counts,original_ignored_outputs_retained=True,initial_nonqualifying_failed_hosted_records_retained=True,software_publication='ee4a639',raw_audit_publication='c4a9141',cli_base_fields_equal_report=True,report_adds_derived_readers_and_matrix_totals=True,all6_numeric_exports_and_posthoc_encoding_csv_portable=True,actual312_saved_data_only=True,figure_visually_inspected=True,final_relevant_checks=checks,ruff_lint_format_pass=True,ruff_files=916,mypy_strict_pass=True,mypy_source_files=768,hooks_pass=True,focused_markdown_links_images_anchors_fences_pass=True,no_new_poker_training=True,no_optimizer_or_cost_admission=True,final_exact_head_hosted='required before merge')
+(p/'local-verification.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');print(json.dumps(proof,indent=2))

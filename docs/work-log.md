@@ -5337,3 +5337,146 @@ Final local report checks and both exact-head hosted jobs still precede merge.
 The failed forecast and known-game quality result remain; no new training or
 default admission. Journal121 explains the negative result. AI-assisted;
 personal hours/mastery unknown.
+
+
+PR #75 closing verification, November 15: merged `af764a7`. Final
+[CI 43764600876](https://github.com/jimmy-sim/poker-ai/actions/runs/43764600876)
+passes 4,135 / 64 skipped / 150 deselected each, 882.87 / 882.82 test seconds;
+actual Python/NumPy/uv and complete test-merge tree equal report `095204e`.
+Main saved CLI equals report; 128 focused tests pass 8.22 seconds. Fresh snapshot
+and post-check proof preserve all ten unrelated user bytes/status/changed-path
+index entries/both patches. [Closing receipts](../results/grouped-depth-check/final-ci/manifest.json)
+are batched here. Negative cost outcome and all scientific failures remain.
+
+### November 15, 2026 — locate phases inside original construction (issue #4)
+
+Question: what fraction of the observed matrix CPU belongs to information/key
+creation, array setup, original depth validation, object creation or complete
+field witnessing? [Registered plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6901801110)
+precedes implementation. [Protocol](matrix-phases.md) fixes one ORIGINAL-only
+complete audit, unchanged scientific caps and all historical checks, five coarse
+intervals per 184 constructors, 2,458 combined selected calls and matching pinned
+original field fingerprints. It does not retest the failed original/grouped
+cost condition or claim optimization/admission.
+
+Private source-body/phase-boundary checked constructor, serial recorder and
+source-bound runner are implemented alongside software/failure fixtures. Preserve
+all 409 previous source files and 53 pinned inputs. Source qualification and a
+published bounded own software proof still precede actual collection. Expected
+synthetic depth rejection stays distinct from failed real data. No new trajectory,
+reference training input or numerical outcome exists at this checkpoint.
+Journal122 explains the question and an explicitly illustrative example;
+AI-assisted, no inferred personal hours or mastery. Full local/hosted checks
+and formal stages remain pending.
+
+Implementation check: 93 new fixtures; combined 347 on both supported Python
+versions (actual runtimes retained in subsequent qualification). A unit-test
+name collision and nonfinite-clock failure handling were corrected before
+source qualification, with failed local outputs retained in the workspace.
+Ruff lint passes, 916 files formatted, strict mypy passes768source files;
+385 focused relative destinations/4images/heading anchors/fences pass.
+No formal collection or measurement was performed by these software tests.
+
+
+Initial [hosted run43768513969](https://github.com/jimmy-sim/poker-ai/actions/runs/43768513969)
+fails both runtimes:2failed/4226passed/64skipped/150deselected plus historical
+warning,895.58s311/787.44s312. Both failures are the two new expiry fixtures:
+`perf_counter()-2000` can be negative on a recently booted VM. Actual runtime,
+every uv selection and complete test-merge tree equal initial source `a459b06`.
+[All initial receipts](../results/matrix-phases/qualification-history/initial-a459b06/manifest.json)
+retain four local passes, both complete failed hosted logs and raw metadata;
+no six-role pass or formal proof is claimed for that head.
+
+Fix only the test clock:positive5000/3000 synthetic timestamps, with explicit
+short/long host-uptime cases. Production instrument, original sources,412-file
+fingerprint,53pins,caps,seeds,tolerances,gates unchanged. Nine initial targeted
+checks pass; strengthened clock regression gives11passed/44deselected. Complete
+corrected-head local and hosted qualification is required again before any
+formal proof or actual audit. Journal122 records the portability failure.
+
+
+Corrected source qualification at `f82ae1d0be8099b4c6bd70dd2e78668e8191ffed`
+now has all six roles passing. Effective412-file fingerprint
+f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d,
+all prior409 files and53pins unchanged. Corrected working-copy combined suites
+pass349each27.35/27.13s,95newfixtures; lint916/type768/docs387dest4imagespass.
+[Full qualification](../results/matrix-phases/checks.json) preserves all actual
+source/role/runtime/uv/full-tree proof and exact generic launch/save operators.
+Observed results:
+
+- base311: 4230 passed, 64 skipped, 150 deselected in 874.36s (0:14:34)
+- base312: 4230 passed, 64 skipped, 150 deselected in 860.61s (0:14:20)
+- optional311: 742 passed in 78.69s (0:01:18)
+- optional312: 742 passed in 76.42s (0:01:16)
+- hosted311: 2026-11-15T23:08:25.4535929Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 772.88s (0:12:52)
+- hosted312: 2026-11-15T23:09:18.5579400Z 4230 passed, 64 skipped, 150 deselected, 1 warning in 811.23s (0:13:31)
+
+The initial local-passing/hosted-failing a459 source remains explicitly
+nonqualifying in its original history. This test-clock correction changes no
+scientific instrument/config/source fingerprint/cap/seed/tolerance/gate. Full
+software suites can exercise toy/fixture solvers; source status lines refer to
+formal diagnostic collection, not a claim that no unit test constructs a learner.
+Eight synthetic administrative retention fixtures pass without actual poker
+collection. Qualification publication precedes the one bounded software proof;
+its publication must precede the one actual audit. No formal attempt has run yet.
+The933.89/900forecast and2.390%versus1% quality failures remain. Journal122 updated;
+AI-assisted, no invented personal hours or mastery.
+
+Formal own software proof after qualification publication `1bffc0f`: outer
+4.598493875004351, registered 4.5392701660166495, whole child 2.5236837080155965
+seconds, all below180. Five original/phased constructor field vectors match;
+positive phase records are complete; both explicitly synthetic depth fixtures
+retain the expected ValueError distinctly from actual collection failure.
+No learner/reference/new trajectory. [Raw proof](../results/matrix-phases/software/proof.json)
+SHA256990a85ca93eddaa367194bfa8ea5523f1eb23b58d5dca13cbbc66f54c73d17ba.
+All25raw/admin files and originals retained/hash-checked; manifest is26th.
+Publish this evidence before the one ORIGINAL-only audit. Scientific source412,
+all53pins/caps/gates unchanged. This is not the separately required production
+family end-to-end proof or training admission. Journal122 updated.
+
+Single ORIGINAL-only audit after proof publication `ee4a639`: supervised whole
+child 432.06430320898653, registered shared 436.83444570799475, complete outer
+command 436.86079670800245seconds, below900/1800. Outer exits0, uninterrupted.
+All original432profiles/1152conditions/three computed reads, worker/card/source/
+scalar witnesses, restored hooks and184 pinned ORIGINAL field fingerprints pass.
+Five phases184each=920plus1538global=2458<4096. All32raw/admin files retained
+and originals exact; [raw manifest](../results/matrix-phases/raw-pair-manifest.json)
+is33rd. Publish this complete raw evidence BEFORE phase CPU analysis. Source412/
+all53pins remain unchanged. No retry, new training, optimizer/default admission
+or production933.89/900 forecast replacement. Journal122 explains capture scope.
+
+Posthoc after raw publication `c4a9141`: information/key CPU44.433599 of
+52.715310observed matrix seconds,84.289742%; original depth1.292698(2.452225%),
+field witnessing1.403231(2.661904%). Two archived-policy reads total288.672415CPU;
+matrix18.261291%,key15.392395%. Inclusive/exclusive global ledgers,920phase CSV
+rows, two-read stacked plot and disjoint constructor/wrapper remainders retained.
+No parent/child CPU double count. Whole original body/nearby-child and all three
+parallel comparison-worker clocks/resources are in tables; workers not summed
+into elapsed. [Results](matrix-phases.md#recorded-cpu-result--november-15-2026).
+
+Posthoc constructor-encoding classification:exact68calls,key0.986307CPU;
+public_b816calls,key4.966956;texture_b8100calls,key38.480336. These are constructor
+fields with different inventories, not causal encoding-speed or strategy-count
+comparisons. Separate rerunnable extraction and raw-bound manifest retained.
+Actual3.12.15/NumPy2.5.4 reproduces all six numeric exports and encoding CSV
+byte-for-byte with builder/reader/child/supervisor/scorer/replay/learner/native
+execution blocked. Explicit legacy3.11 sequential CPU association stays within
+frozen1e-9 arithmetic allowance; phase aggregation math.fsum; no changedraw,
+tolerance,caps,seeds,gates or recapture. Figure visually inspected.
+
+Final relevant suites742each pass; exact logs/timings retained in report. Source
+remains412FPf0b2…/all53pins; original25software and32audit raw/admin files and
+ignored outputs preserved. No full-game strength/new training/default/fresh/global
+admission or933.89/900forecast rescue. Next prospective question:replace repeated
+card-suit arithmetic with a fixed exact lookup, requiring independent equivalence
+and complete cost proof before any production integration. Journal122 updated;
+final local verification and exact-report-head hosted checks precede merge.
+
+Final local verification passes:742relevant tests each40.53/39.27s, source/
+raw/original-copy/initial-failed-CI retention proof, actual3.12portable exports,
+CLI base fields equal report (report adds derived read/matrix aggregates),Ruff916,
+strictmypy768,hooks and409focused destinations/5images/anchors/fences.
+[Local receipt](../results/matrix-phases/report/local-verification.json) records
+actual scope and remaining exact-report-head hosted requirement. No source or
+scientific criterion changes; no new trajectory. Publish coherent report, then
+both hosted jobs must pass before history-preserving merge.

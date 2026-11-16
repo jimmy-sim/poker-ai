@@ -1,0 +1,24 @@
+"""Final relevant regression checks; unchanged412-file instrument, no fresh timing pair."""
+import json,os,subprocess,sys,time
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'matrix-phases';minor=sys.argv[1];assert minor in ('311','312')
+f=w/'matrix-final-checks';f.mkdir(exist_ok=True)
+python=w/f'matrix-corrected-optional{minor}/bin/python';env=dict(os.environ,PYTHONPATH=str(r/'src')+os.pathsep+str(r/'scripts'))
+version,numpy=('3.11.17','2.4.6') if minor=='311' else ('3.12.15','2.5.4')
+suites=['tests/test_matrix_phase_support.py','tests/test_matrix_phase_collection.py','tests/test_grouped_depth_support.py','tests/test_grouped_depth_comparison.py','tests/test_reader_load_cpu.py', 'tests/test_coarse_reader_cpu.py', 'tests/test_original_audit_helpers.py', 'tests/test_reader_boundary_reconciliation.py', 'tests/test_complete_reader_helper_trace.py', 'tests/test_reader_helper_trace.py', 'tests/test_source_helper_trace.py', 'tests/test_helper_call_accounting.py', 'tests/test_card_audit_clock_trace.py', 'tests/test_card_clock_report.py', 'tests/test_card_computation_cache.py', 'tests/test_card_cache_report.py', 'tests/test_cached_native_wall_profile.py']
+started=time.perf_counter();status='failed'
+guard="""import json,sys,numpy,poker_ai
+from pathlib import Path
+from profile_matrix_phases import binding
+r=Path.cwd();assert sys.version.split()[0]==VERSION and numpy.__version__==NUMPY and Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+_,s=binding(r,clean=False);assert len(s['sha256'])==412 and s['fingerprint']=='f0b2bdf3bb793cd1645ea60055e37afff6e2e707f4fe7624ef31ce0d97419f6d'
+print(json.dumps(dict(python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=s['fingerprint'],head=s['git_commit'],dirty=s['dirty'],scope='Final relevant regressions on unchanged source; working report, not a new six-role qualification or real collection')))
+""".replace('VERSION',repr(version)).replace('NUMPY',repr(numpy))
+try:
+ with (f/f'optional{minor}.log').open('x') as log:
+  for cmd in ([str(python),'-c',guard],[str(python),'-m','pytest','-q',*suites],[str(python),'-c',guard]):
+   log.write(json.dumps(dict(command=cmd))+'\n');log.flush();subprocess.run(cmd,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+ status='passed'
+finally:
+ (f/f'optional{minor}.json').write_text(json.dumps(dict(status=status,python=version,numpy=numpy,seconds=time.perf_counter()-started),indent=2)+'\n')
+print('final optional'+minor+': '+status)

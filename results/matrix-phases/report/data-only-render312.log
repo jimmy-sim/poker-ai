@@ -1,0 +1,150 @@
+{
+  "readers": [
+    {
+      "read": 0,
+      "scope": "FICTIONAL_SIGNAL_GAMES_OWN_OPPONENT_SOFTWARE_NOT_HOLDEM",
+      "outer_wall_seconds": 2.095635500008939,
+      "outer_cpu_seconds": 1.9462369999999998,
+      "inner_wall_seconds": 2.0949373329931404,
+      "inner_cpu_seconds": 1.94554,
+      "selected_calls": 432,
+      "selected_union_cpu": 0.6155190000000026,
+      "outside_selected_cpu": 1.3300209999999975
+    },
+    {
+      "read": 1,
+      "scope": "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING",
+      "outer_wall_seconds": 144.12530587500078,
+      "outer_cpu_seconds": 143.275007,
+      "inner_wall_seconds": 144.12439141698997,
+      "inner_cpu_seconds": 143.274095,
+      "selected_calls": 553,
+      "selected_union_cpu": 123.42129399999993,
+      "outside_selected_cpu": 19.852801000000056
+    },
+    {
+      "read": 2,
+      "scope": "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING",
+      "outer_wall_seconds": 146.13485658401623,
+      "outer_cpu_seconds": 145.39920599999996,
+      "inner_wall_seconds": 146.1339690410241,
+      "inner_cpu_seconds": 145.39832,
+      "selected_calls": 553,
+      "selected_union_cpu": 124.62384299999945,
+      "outside_selected_cpu": 20.77447700000056
+    }
+  ],
+  "matrix_totals": [
+    {
+      "read": 0,
+      "constructors": 0,
+      "phase_calls": {
+        "information_keys": 0,
+        "array_setup": 0,
+        "depth_validation": 0,
+        "instantiate": 0,
+        "field_witness": 0
+      },
+      "phase_cpu": {
+        "information_keys": 0.0,
+        "array_setup": 0.0,
+        "depth_validation": 0.0,
+        "instantiate": 0.0,
+        "field_witness": 0.0
+      },
+      "constructor_cpu": 0.0,
+      "constructor_remainder_cpu": 0.0,
+      "matrix_wrapper_remainder_cpu": 0.0,
+      "matrix_cpu": 0.0
+    },
+    {
+      "read": 1,
+      "constructors": 92,
+      "phase_calls": {
+        "information_keys": 92,
+        "array_setup": 92,
+        "depth_validation": 92,
+        "instantiate": 92,
+        "field_witness": 92
+      },
+      "phase_cpu": {
+        "information_keys": 22.162525000000066,
+        "array_setup": 0.9012189999999451,
+        "depth_validation": 0.6358370000000075,
+        "instantiate": 1.856880999999916,
+        "field_witness": 0.6856019999999985
+      },
+      "constructor_cpu": 26.256060000000037,
+      "constructor_remainder_cpu": 0.013996000000101816,
+      "matrix_wrapper_remainder_cpu": 0.005878999999932688,
+      "matrix_cpu": 26.26193899999997
+    },
+    {
+      "read": 2,
+      "constructors": 92,
+      "phase_calls": {
+        "information_keys": 92,
+        "array_setup": 92,
+        "depth_validation": 92,
+        "instantiate": 92,
+        "field_witness": 92
+      },
+      "phase_cpu": {
+        "information_keys": 22.271073999999885,
+        "array_setup": 0.9172710000001985,
+        "depth_validation": 0.6568609999999353,
+        "instantiate": 1.8702439999998148,
+        "field_witness": 0.7176289999998744
+      },
+      "constructor_cpu": 26.447334999999782,
+      "constructor_remainder_cpu": 0.01425600000007421,
+      "matrix_wrapper_remainder_cpu": 0.006036000000250397,
+      "matrix_cpu": 26.453371000000033
+    }
+  ],
+  "phase_rows": 920,
+  "workers": [
+    {
+      "slot": 0,
+      "pid": 8913,
+      "wall_seconds": 128.6945209170226,
+      "process_cpu_seconds": 126.51495200000001,
+      "child_user_seconds": 0.471448,
+      "child_system_seconds": 1.480183
+    },
+    {
+      "slot": 1,
+      "pid": 8914,
+      "wall_seconds": 128.6945100830053,
+      "process_cpu_seconds": 126.47261400000001,
+      "child_user_seconds": 0.47296,
+      "child_system_seconds": 1.478083
+    },
+    {
+      "slot": 2,
+      "pid": 8915,
+      "wall_seconds": 128.69452258301317,
+      "process_cpu_seconds": 126.559348,
+      "child_user_seconds": 0.473607,
+      "child_system_seconds": 1.47285
+    }
+  ],
+  "bodies": [
+    {
+      "scope": "body_observation",
+      "wall_seconds": 426.40391658301814,
+      "process_cpu_seconds": 294.189777,
+      "child_user_seconds": 376.95160000000004,
+      "child_system_seconds": 13.129745,
+      "note": "Original body nested within child; not complete command"
+    },
+    {
+      "scope": "child_observation",
+      "wall_seconds": 428.25684229200124,
+      "process_cpu_seconds": 295.372888,
+      "child_user_seconds": 377.188225,
+      "child_system_seconds": 13.715319,
+      "note": "after imports/argument dispatch through final prewrite; supervisor alone supplies complete command clock"
+    }
+  ]
+}
