@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-suit-source-checks.py", line 31, in <module>
+    log.write(json.dumps(dict(command=command))+'\n');log.flush();subprocess.run(command,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+                                                                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['uv', 'run', '--locked', '--all-extras', 'pytest', '-q', 'tests/test_suit_lookup_support.py', 'tests/test_suit_lookup_comparison.py', 'tests/test_matrix_phase_support.py', 'tests/test_matrix_phase_collection.py', 'tests/test_grouped_depth_support.py', 'tests/test_grouped_depth_comparison.py', 'tests/test_reader_load_cpu.py', 'tests/test_coarse_reader_cpu.py', 'tests/test_original_audit_helpers.py', 'tests/test_reader_boundary_reconciliation.py', 'tests/test_complete_reader_helper_trace.py', 'tests/test_reader_helper_trace.py', 'tests/test_source_helper_trace.py', 'tests/test_helper_call_accounting.py', 'tests/test_card_audit_clock_trace.py', 'tests/test_card_clock_report.py', 'tests/test_card_computation_cache.py', 'tests/test_card_cache_report.py', 'tests/test_cached_native_wall_profile.py']' returned non-zero exit status 2.

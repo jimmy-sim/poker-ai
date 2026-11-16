@@ -6039,3 +6039,12 @@ Implementation and explanations are Codex-assisted. No personal hours, practice
 or mastery is inferred. Even a faster audit would address validation cost; it
 would not establish stronger poker or accept new training. The existing compute
 forecast and strategy-accuracy failures remain separate next decisions.
+
+
+A final accounting review adds the exact lookup rule: every original evaluation
+in lookup mode must be a fallback. Two new regression cases fail before the
+parser correction; four additional fixtures then pass with the full 167-test
+focused set. The four in-progress local source roles were interrupted and are
+[retained as nonqualifying](../results/suit-lookup/qualification-history/superseded-d3e60b2/superseded.json).
+No formal proof or actual audit had started. Qualification restarts on the revised
+immutable source; the algorithm, config, scientific caps and seeds are unchanged.

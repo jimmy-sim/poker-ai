@@ -1,0 +1,44 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__________ test_lookup_original_evaluations_are_exactly_fallbacks[0] ___________
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-144/test_lookup_original_evaluatio0')
+reported_fallbacks = 0
+
+    @pytest.mark.parametrize("reported_fallbacks", [0, 1])
+    def test_lookup_original_evaluations_are_exactly_fallbacks(
+        tmp_path: Path, reported_fallbacks: int
+    ) -> None:
+        with s.kernel_scope("lookup", tmp_path / "kernel.json", 8, SHA) as receipt:
+            s.potential.canonical_cards((0, 1), ())
+        path = tmp_path / "kernel.json"
+        row = json.loads(path.read_text())
+        row.update(requests=3, original_evaluations=2, fallbacks=reported_fallbacks)
+        path.write_text(json.dumps(row))
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+tests/test_suit_lookup_support.py:359: Failed
+__________ test_lookup_original_evaluations_are_exactly_fallbacks[1] ___________
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-144/test_lookup_original_evaluatio1')
+reported_fallbacks = 1
+
+    @pytest.mark.parametrize("reported_fallbacks", [0, 1])
+    def test_lookup_original_evaluations_are_exactly_fallbacks(
+        tmp_path: Path, reported_fallbacks: int
+    ) -> None:
+        with s.kernel_scope("lookup", tmp_path / "kernel.json", 8, SHA) as receipt:
+            s.potential.canonical_cards((0, 1), ())
+        path = tmp_path / "kernel.json"
+        row = json.loads(path.read_text())
+        row.update(requests=3, original_evaluations=2, fallbacks=reported_fallbacks)
+        path.write_text(json.dumps(row))
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+tests/test_suit_lookup_support.py:359: Failed
+=========================== short test summary info ============================
+FAILED tests/test_suit_lookup_support.py::test_lookup_original_evaluations_are_exactly_fallbacks[0]
+FAILED tests/test_suit_lookup_support.py::test_lookup_original_evaluations_are_exactly_fallbacks[1]
+2 failed, 104 deselected in 0.25s

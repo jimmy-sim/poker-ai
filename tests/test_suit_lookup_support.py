@@ -344,3 +344,45 @@ def test_no_result_memoization_or_rng_draws(mode: str, tmp_path: Path) -> None:
     assert receipt["original_evaluations"] == (3 if mode == "original" else 0)
     assert receipt["lookup_evaluations"] == (3 if mode == "lookup" else 0)
     assert rng.bit_generator.state == before
+
+
+@pytest.mark.parametrize("reported_fallbacks", [0, 1])
+def test_lookup_original_evaluations_are_exactly_fallbacks(
+    tmp_path: Path, reported_fallbacks: int
+) -> None:
+    with s.kernel_scope("lookup", tmp_path / "kernel.json", 8, SHA) as receipt:
+        s.potential.canonical_cards((0, 1), ())
+    path = tmp_path / "kernel.json"
+    row = json.loads(path.read_text())
+    row.update(requests=3, original_evaluations=2, fallbacks=reported_fallbacks)
+    path.write_text(json.dumps(row))
+    with pytest.raises(ArithmeticError):
+        s.read_kernel(
+            path,
+            "lookup",
+            8,
+            SHA,
+            receipt["pid"],
+            receipt["thread"],
+            require_lookup=True,
+        )
+
+
+@pytest.mark.parametrize("mode", ["original", "lookup"])
+def test_complete_supported_and_fallback_accounting(mode: str, tmp_path: Path) -> None:
+    path = tmp_path / "kernel.json"
+    with s.kernel_scope(mode, path, 8, SHA) as receipt:
+        s.potential.canonical_cards((0, 1), ())
+        s.potential.canonical_cards(hole=(0, 1), board=())
+    row = s.read_kernel(
+        path,
+        mode,
+        8,
+        SHA,
+        receipt["pid"],
+        receipt["thread"],
+        require_lookup=mode == "lookup",
+    )
+    assert row["requests"] == 2 and row["fallbacks"] == 1
+    assert row["original_evaluations"] == (2 if mode == "original" else 1)
+    assert row["lookup_evaluations"] == (0 if mode == "original" else 1)

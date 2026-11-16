@@ -1,0 +1,18 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport check_suit_lookup as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='d3e60b24eb1c415cd4282844dd7c8520b9888279'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==415 and s['fingerprint']=='468a54645de4f090468c35cbe71f9cde32a3c58655cb556837eba490074aec18' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'d3e60b24eb1c415cd4282844dd7c8520b9888279');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=d3e60b24eb1c415cd4282844dd7c8520b9888279
+COLLECTOR_SOURCE=468a54645de4f090468c35cbe71f9cde32a3c58655cb556837eba490074aec18
+Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_suit_lookup_support.py", "tests/test_suit_lookup_comparison.py", "tests/test_matrix_phase_support.py", "tests/test_matrix_phase_collection.py", "tests/test_grouped_depth_support.py", "tests/test_grouped_depth_comparison.py", "tests/test_reader_load_cpu.py", "tests/test_coarse_reader_cpu.py", "tests/test_original_audit_helpers.py", "tests/test_reader_boundary_reconciliation.py", "tests/test_complete_reader_helper_trace.py", "tests/test_reader_helper_trace.py", "tests/test_source_helper_trace.py", "tests/test_helper_call_accounting.py", "tests/test_card_audit_clock_trace.py", "tests/test_card_clock_report.py", "tests/test_card_computation_cache.py", "tests/test_card_cache_report.py", "tests/test_cached_native_wall_profile.py"]}
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 23%]
+........................................................................ [ 31%]
+........................................................................ [ 39%]
+........................................................................ [ 47%]
+.........
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/selectors.py:415: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+441 passed in 57.32s

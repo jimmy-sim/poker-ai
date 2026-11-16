@@ -248,6 +248,7 @@ def read_kernel(
         or row["requests"] != row["original_evaluations"] + row["lookup_evaluations"]
         or row["fallbacks"] > row["original_evaluations"]
         or (mode == "original" and row["lookup_evaluations"] != 0)
+        or (mode == "lookup" and row["original_evaluations"] != row["fallbacks"])
         or (mode == "lookup" and require_lookup and row["lookup_evaluations"] == 0)
     ):
         raise ArithmeticError("complete same-context kernel accounting required")
