@@ -1,0 +1,30 @@
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport compare_suit_candidates as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==418 and s['fingerprint']=='8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602
+COLLECTOR_SOURCE=8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a
+Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked
+{"command": ["uv", "run", "--locked", "--all-extras", "pytest", "-q", "tests/test_suit_candidates_support.py", "tests/test_suit_candidates_comparison.py", "tests/test_suit_lookup_support.py", "tests/test_suit_lookup_comparison.py", "tests/test_matrix_phase_support.py", "tests/test_matrix_phase_collection.py", "tests/test_grouped_depth_support.py", "tests/test_grouped_depth_comparison.py", "tests/test_reader_load_cpu.py", "tests/test_coarse_reader_cpu.py", "tests/test_original_audit_helpers.py", "tests/test_reader_boundary_reconciliation.py", "tests/test_complete_reader_helper_trace.py", "tests/test_reader_helper_trace.py", "tests/test_source_helper_trace.py", "tests/test_helper_call_accounting.py", "tests/test_card_audit_clock_trace.py", "tests/test_card_clock_report.py", "tests/test_card_computation_cache.py", "tests/test_card_cache_report.py", "tests/test_cached_native_wall_profile.py"]}
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 19%]
+........................................................................ [ 26%]
+........................................................................ [ 32%]
+........................................................................ [ 39%]
+........................................................................ [ 45%]
+........................................................................ [ 52%]
+........................................................................ [ 59%]
+........................................................................ [ 65%]
+........................................................................ [ 72%]
+........................................................................ [ 78%]
+........................................................................ [ 85%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+..................                                                       [100%]
+1098 passed in 125.67s (0:02:05)
+{"command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport compare_suit_candidates as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r);assert len(s['sha256'])==418 and s['fingerprint']=='8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a' and s['dirty'] is False\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602
+COLLECTOR_SOURCE=8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a
+Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked

@@ -1,0 +1,47 @@
+{
+  "actual_checkout_sha": "774e3b9f55169f99724e634d65429702d44c0771",
+  "all_passed": true,
+  "head_sha": "bee09134a3d4bb43306c8392e0170943e1d8a4c0",
+  "rows": [
+    {
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "job_id": 133044793780,
+      "log_sha256": "a18c09a85529644ad07145095e9a50196358d9a517f07b8089ec99f3039445f2",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "result": "2026-11-16T02:16:57.0223943Z 4397 passed, 64 skipped, 150 deselected, 1 warning in 902.83s (0:15:02)",
+      "status": "passed"
+    },
+    {
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "job_id": 133044793408,
+      "log_sha256": "ef1521f1c4c0ef27aade834475091c851cf3511b044ae737c491b19da86c4f5a",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "result": "2026-11-16T02:14:59.4021943Z 4397 passed, 64 skipped, 150 deselected, 1 warning in 783.30s (0:13:03)",
+      "status": "passed"
+    }
+  ],
+  "run_id": 43789578292,
+  "scope": "Final exact-PR-head hosted checks with actual runtime and complete test-merge tree equivalence; not a new six-role source qualification or poker run",
+  "tested_tree_checks": [
+    {
+      "actual_checkout_sha": "da4ac259a6220dbef0a9502cb61883bfe23220ea",
+      "pr_head": "53fbdf10ff4a32ce29c56c5bb88db9c559cf024f",
+      "same_complete_repository_tree": true,
+      "scope": "source",
+      "tree_sha": "630d3bd0c472ba35c195a5903e121e259c564028"
+    },
+    {
+      "actual_checkout_sha": "774e3b9f55169f99724e634d65429702d44c0771",
+      "pr_head": "bee09134a3d4bb43306c8392e0170943e1d8a4c0",
+      "same_complete_repository_tree": true,
+      "scope": "final",
+      "tree_sha": "fabf524d361e175b3423c547d0cfec5e33b6d868"
+    }
+  ]
+}

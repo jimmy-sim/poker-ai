@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
+
 - [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
 
 - [Separate original construction phases](#122-separate-construction-work-from-checking-work)
@@ -106,6 +108,11 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
+  an exact way to compare fewer suit renamings. The one audit pair preserves
+  outputs and reduces selected matrix CPU by 14.07%; production qualification
+  remains separate.
 
 - [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
   suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
@@ -6105,3 +6112,115 @@ avoid redundant candidates, but requires a new prospective plan and exact tests.
 The current table remains private; production and strategy-quality requirements
 are still separate. Implementation, experiments and explanations are AI-assisted;
 no new personal practice or hours are inferred.
+
+
+PR #77 is merged. Both final GitHub jobs pass 4,397 tests, with actual runtimes
+and complete source trees verified. Main's saved-data command equals the report,
+and 167 focused tests pass in 12.58 seconds. All ten local result files and
+patches remain unchanged after checks. [Closing evidence](../results/suit-lookup/final-ci/manifest.json)
+is preserved with the next substantive increment rather than a status-only commit.
+
+## 124. Compare the board only among private-card ties
+
+**November 15, 2026 — issue #4, exact mathematical factorization.**
+
+The first suit-table experiment has a small positive cost point, but no stable
+production saving. The next question is whether the same canonical card result
+can be found while considering fewer suit renamings.
+
+The existing function compares two descriptions in order: the private cards,
+then the board. A worse private-card description cannot win because its board
+looks better. Find the smallest private description first. Several suit maps
+may tie there; keep every tie and compare their boards. A **factorization** here
+means splitting one exact calculation into these two exact steps.
+
+**Example:** with `2c 3c` and board `4s 5s 6s`, the smallest private description
+keeps clubs as clubs. The board can become `4d 5d 6d`. Independently making the
+board all clubs would lose its relation to the private cards. This is simultaneous
+renaming, not changing the cards or the poker information available to the agent.
+
+A fixed table describes all 2,652 valid ordered private-card pairs. Depending on
+their ranks and suits, two, four or six of the original 24 suit maps tie at the
+private minimum. An empty board needs no second comparison. The [prospective plan](suit-candidates.md)
+and [config](../configs/suit-candidates.json) precede implementation and timing.
+The control keeps all 24 candidates; the new version keeps every private-minimum
+tie. Both preserve original validation and unsupported-input behavior.
+
+There are now 189 passing focused development tests. They include every ordered
+private pair, all fixed table slots, generated boards, complete matrix fields,
+restoration/interruption, clocks/caps and saved-record failure checks. A saved-data
+fixture blocks the actual kernels and builder while checking its recorded results.
+Its qualification is deliberately fictional; it is not the formal published proof.
+
+New corruption tests catch a parser subtlety: Python considers `False == 0`.
+Saved booleans must not stand in for integer card IDs or permutation indices.
+The typed JSON comparisons now reject those cases even after the test updates
+all associated hashes. That fixes record verification; it does not change card
+ranking, the strategy, scientific budgets or acceptance criteria.
+
+Full source qualification on both Python versions, published run instructions,
+the one formal own proof and one full cost comparison still come next. There is
+no new speed result or trained agent at this implementation checkpoint. Work and
+explanations are Codex-assisted; no personal practice, mastery or hours are inferred.
+
+
+Both Python environments now pass all 189 focused development tests (33.61 and
+31.94 seconds). Full-project lint/format and strict types pass as well. These
+checks preserve all 415 earlier scientific sources and all 68 pinned inputs.
+The next step is to freeze the source and complete every local and hosted
+qualification role before publishing instructions for the formal proof. There
+is still no new cost measurement, trained policy or production admission.
+
+
+All six source-check roles now pass on the same revision: both full local suites
+pass 4,586 tests, both optional suites pass 1,098, and both GitHub source jobs pass
+4,586. [Exact logs, runtimes, source trees and run instructions](../results/suit-candidates/checks.json)
+are retained before formal collection. The 5,724 fixed software inputs also have
+identical hashes across Python environments, and outer failure-routing checks
+pass. The next step is the single formal own proof; these software checks do not
+establish a runtime benefit, new strategy or training admission.
+
+
+The formal own software proof now passes in 6.46 seconds, under 180. All 5,724
+cases and 17 fixed behavior cases agree across original/all/reduced. Complete
+matrix fields match for all five builder encodings in all three implementations.
+[The 62 retained raw/admin files and original outputs](suit-candidates.md#recorded-own-software-proof--november-15-2026)
+are published before the actual pair. This validates the implementation; it is
+not yet a speed result, new trained strategy or production admission.
+
+
+The complete audit pair finished without interruption. Both implementations
+passed the original correctness checks. Its 53 raw and administrative files
+are saved with exact copies of the original outputs. They are being published
+before the performance calculation, so the record cannot depend on whether the
+new implementation turns out to be faster. The result is still a loader
+experiment, not a newly trained poker strategy.
+
+
+The performance calculation now passes its planned diagnostic: matrix CPU falls
+from 50.67 to 43.55 seconds (14.07%), while the complete command falls from 413.89
+to 408.69 seconds (1.26%). The smaller overall change makes sense: the command
+also checks source history, rebuilds trees, replays training records and runs
+independent workers. Those stages still cost time and vary between runs. One
+ordered pair is a point comparison, not a reliable estimate of every future run.
+
+[The report and plots](suit-candidates.md#recorded-cost-result--november-15-2026)
+retain the exact numbers and limits. All six numeric exports also match on the
+second Python environment with actual execution blocked. The next decision is
+to qualify a production-validation implementation separately, preserving the
+original checks. No new policy was trained in this investigation.
+
+**Example to try:** `.venv/bin/python scripts/explain_suit_ties.py --list-maps`
+prints why six suit maps tie for `2c 3c`, and which gives the smallest board.
+Use `--hole 9c 9d --board Ts 4h 2c --list-maps` to see a pair's four ties.
+This is an explanatory tool added with Codex assistance; no personal practice
+or learning time is inferred from its availability.
+
+
+Both final relevant test sets pass 1,098 tests. The new terminal demonstration
+also passes eight illustrative checks across the two environments, including
+invalid-card rejection. A bookkeeping mistake in the first report verifier
+expected private-hook restoration receipts from the unhooked original. That
+verifier failed; its corrected version checks the original's separate outcomes
+and both variants' restoration records. The failure remains available. The
+actual audit was not repeated or changed. Final GitHub checks still precede merge.

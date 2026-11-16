@@ -1,0 +1,12 @@
+E501 Line too long (90 > 88)
+  --> scripts/explain_suit_ties.py:55:89
+   |
+53 |             selected = " [minimum board]" if transformed == reduced[1] else ""
+54 |             print(
+55 |                 f"  map {index:2}: {mapping}; board {format_cards(transformed)}{selected}"
+   |                                                                                         ^^
+56 |             )
+57 |     return 0
+   |
+
+Found 1 error.

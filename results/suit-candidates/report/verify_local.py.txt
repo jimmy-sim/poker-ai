@@ -1,0 +1,58 @@
+"""Verify the final report, untouched instrument and exact retained originals."""
+import hashlib,json,re,shutil,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();w=r.parent;sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import numpy,poker_ai
+import compare_suit_candidates as t
+assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'
+assert Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+f=r/'results/suit-candidates';p=f/'report'
+data=json.loads((p/'summary.json').read_text());cli=json.loads((w/'candidates-cli-show.json').read_text())
+assert t.canonical(data)==t.canonical(cli)
+c,s=t.binding(r,clean=False)
+assert len(s['sha256'])==418 and s['fingerprint']=='8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a'
+assert len(c['input_sha256'])==68
+counts={}
+for stage in ['software','pair']:
+ m=json.loads((f/f'raw-{stage}-manifest.json').read_text())
+ assert m['status']=='complete_raw_before_analysis' and m['originals_retained'] is True and m['operator_bytes_match_published'] is True
+ for name,h in m['raw_sha256'].items():assert t.digest(f/name)==h
+ for name,old in [(stage,r/'results/runs/suit-candidates'/stage),('execution-'+stage,w/('candidates-execution-'+stage))]:
+  for original in old.rglob('*'):
+   if original.is_file():assert original.read_bytes()==(f/name/original.relative_to(old)).read_bytes()
+ counts[stage]=len(m['raw_sha256'])
+assert counts==dict(software=62,pair=53)
+fixed=list((f/'software/child/fixed').glob('*.json'));assert len(fixed)==34
+for path in fixed:
+ row=json.loads(path.read_text());assert row['restored'] is True and type(row['restored']) is bool and row['aliases_remaining']==0
+fixed_results=json.loads((f/'software/child/fixed-results.json').read_text());assert set(fixed_results)=={'original','all','reduced'} and all(len(rows)==17 for rows in fixed_results.values())
+direct=json.loads((f/'software/child/original-direct.json').read_text())
+assert direct==dict(constructor_calls=5,fixed_calls=17,inputs_unchanged=True,method='unhooked own original canonicalization',owner_after_unchanged=True,owner_before_unchanged=True,valid_calls=5724)
+previous=r/'results/suit-lookup/final-ci';m=json.loads((previous/'manifest.json').read_text())
+assert len(m['raw_sha256'])==11
+for name,h in m['raw_sha256'].items():assert t.digest(previous/name)==h
+manifest=json.loads((p/'render-manifest.json').read_text());assert manifest['script_sha256']==t.digest(p/'render.py.txt')
+for name,h in manifest['numeric_files'].items():assert t.digest(p/name)==h
+assert len(manifest['numeric_files'])==6 and manifest['figure_sha256']==t.digest(p/'selected-cpu.png') and manifest['cost_figure_sha256']==t.digest(p/'costs.png')
+portable=json.loads((p/'replay312.json').read_text())
+assert portable['byte_identical'] is True and portable['source_unchanged'] is True and portable['numeric_files']==manifest['numeric_files'] and portable['python']=='3.12.15' and portable['numpy']=='2.5.4'
+checks=[]
+for minor in ['311','312']:
+ row=json.loads((p/f'final-optional{minor}.json').read_text());assert row['status']=='passed'
+ log=(p/f'final-optional{minor}.log').read_text();line=next(x for x in log.splitlines() if re.match(r'^1098 passed',x));assert s['fingerprint'] in log
+ checks.append(dict(minor=minor,result=line,**row))
+assert data['diagnostic_cost_passed'] is True and all(v is True for v in data['diagnostic_cost_checks'].values())
+assert data['all_constructor_fingerprints_equal'] is data['original_identity_exact'] is True
+assert data['constructor_calls']==dict(all=184,reduced=184)
+assert data['poker_training_performed'] is data['long_run_admitted'] is False
+for mode,row in data['kernel_counters'].items():
+ assert row['requests']==918104 and row['errors']==row['fallbacks']==row['original_evaluations']==0
+ assert row['all_evaluations']==(918104 if mode=='all' else 0) and row['reduced_evaluations']==(918104 if mode=='reduced' else 0)
+assert sum(row['selected']['calls'] for row in data['rows'])==3076
+for name,needle in [('lint','All checks passed!'),('format','927 files already formatted'),('types','Success: no issues found in 777 source files'),('hooks','Passed')]:
+ path=w/f'candidates-final-{name}.log';assert needle in path.read_text();shutil.copyfile(path,p/f'final-{name}.log')
+docs=json.loads((w/'candidates-final-docs.json').read_text());assert docs['heading_anchors_and_fences']=='passed' and docs['relative_destinations']==439 and docs['images']==7
+shutil.copyfile(w/'candidates-final-docs.json',p/'final-docs.json')
+demo=json.loads((p/'demo/checks.json').read_text());assert len(demo['rows'])==8 and all(row['expected'] is True for row in demo['rows'])
+proof=dict(scope='Final local saved-data/source/raw/retention verification; not new collection, six-role qualification, real trajectory or production admission',effective_source_files=418,source_fingerprint=s['fingerprint'],checked_source_commit='3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602',source_unchanged=True,pins=68,raw_admin_files_exact=counts,original_ignored_outputs_retained=True,all34_variant_fixed_restoration_flags_typed_true=True,original_direct_baseline_truthful=True,previous_PR77_closing_receipts_preserved=True,cli_report_equals_rendered_summary=True,all6_numeric_exports_portable=True,actual312_saved_data_only=True,both_figures_visually_inspected=True,final_relevant_checks=checks,ruff_lint_format_pass=True,ruff_files=927,mypy_strict_pass=True,mypy_files=777,hooks_pass=True,markdown=docs,diagnostic_cost_passed=True,single_point_not_stable_causal_saving=True,unchanged_worker_runtime_variation_disclosed=True,production_forecast_not_replaced=True,no_production_or_default_or_training_admission=True,illustrative_demo_sha256=t.digest(r/'scripts/explain_suit_ties.py'),illustrative_checks=8,final_exact_report_head_hosted='required before merge')
+(p/'local-verification.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');shutil.copyfile(__file__,p/'verify_local.py.txt');print(json.dumps(proof,indent=2))

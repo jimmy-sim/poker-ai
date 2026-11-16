@@ -5589,3 +5589,119 @@ Final relevant909eachPASS53.68/53.43s, source/runtime guards retained. Journal12
 updated. Next prospective question: private-hole minimum/tied-suit candidate
 factorization, independently proven before any new cost study. No production/
 new-trajectory/default/quality admission;933.89/900and2.390vs1failures remain.
+
+
+PR #77 closing verification: both final hosted jobs in43789578292 pass4397/
+64skip/150deselect+existing warning (902.83/783.30s), actual Python/NumPy/alluv
+and complete source/report test-merge trees verified. History merge63535047;
+fresh snapshot+guarded main FF, saved CLI==report and167fixtures12.58s pass.
+All ten user paths' bytes/status/changed-path index/bothpatches preserved AFTER
+checks. [Closing11raw+manifest12](../results/suit-lookup/final-ci/manifest.json)
+are batched with this substantive source. Issue4 remains open, no production or
+strategy-quality admission from the small cost diagnostic.
+
+## 2026-11-15 — Private-minimum suit factorization, implementation
+
+[Prospective issue4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6905294880)
+before code: exact lex minimum min(H_p,B_p)=(h*,min B_p over H_p=h*). Controlall24
+LUT vs reduced tied maps, identical guards/fields. Static52x52 ordered-hole table,
+52duplicate sentinels/2652valid slots, tie counts2:1872/4:156/6:624. Fresh private/
+outer tuples, original validation/fallback and alias/primary-failure restoration.
+All415 earlier scientific files preserved; add entry/support/config for418,68pins.
+ConfigSHA593072acc4d94403378675dc7550131e75373a1f159c5f04a9337edbf007cb09,
+geometrySHAf1cf3685244285e88220e82b5c274fd96b12f07acf4cd17a106bf079ce2cfc8d.
+
+Focused189development fixtures pass33.61s on actual311/NP246; lint/format/strict
+new-file types pass. Fictional qualification in own small-builder/data-parser
+fixtures is not formal source qualification or a new actual audit. Tests cover
+allorderedholes/ties/suit-inputproperties/invalidcalls/dependencies/counters/
+restoration, source/caps/publication/preconditions/failures and original/all/reduced
+software record parsing. Four rebound-schema regressions catch bool/int equality
+before the fix, four other new cases already reject; canonical typed comparisons
+then reject all and the full focused set passes. No algorithm/cap/seed/gate change.
+
+[Protocol](suit-candidates.md) fixes full6-role qualification and operatorPUB,
+one180s own proof (all2704geometry/1248translation entries,5724valid original/all/
+reduced cases,17fixed outcomes each,5fullbuilder encodings each), proofPUB before
+ONEall/reducedpair900each/1800shared/120save. Shared software-only seed20261502,
+all historical poker RNG/caps/gates unchanged;1538timers each3076<4096, no phase/
+dense profiling. Current code is a private experiment only; no actual proof/pair
+or timing result yet. Journal124 explains the math and parser fix; AI-assisted,
+human time not recorded. Full production/fresh/default/quality admission remains
+separate; old933.89/900 and2.390vs1failures preserved.
+
+
+Both actual31117/NP246 and31215/NP254 focused sets pass189 (33.61/31.94s).
+Full-project Ruff lint/format926, strictmypy776 pass; focused relative links,
+anchors/fences and images pass. All415prior sources/68pins/11PR77closing raw
+receipts remain byte-exact. Implementation/config/data checked before source
+freeze. Complete immutable-head local base/optional roles and both source-bound
+hosted roles still required before any formal proof/capture. No actual new timing
+or quality claim; source-only publication will wait for all four local roles.
+
+
+All6exact-source roles pass at3a15a53/418FP8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a.
+Local full4586/64skip150deselect930.76/900.93s; optional1098each130.47/125.67s.
+Hosted source43796168210both4586+existingwarning,3111002.91s/312856.88s. Actual
+Python3.11.17/NP2.4.6 and3.12.15/NP2.5.4, alluvselections, actualsourcecheckout
+91d9def5 andcompleteTREE1f0fc8d310444c70a206ca013a3a06718b6fc669==3a15 checked.
+[Six-role record](../results/suit-candidates/checks.json) retainsfulluntrimmedlogs,
+rawAPIobjects, guardsandEXACTlaunch/saveoperators. All415earlierfiles/68pinsunchanged.
+EightfictionalroutingfixturesPASS;5724softwareinputhashesmatchbothactualruntimes,
+noactualkernelrequests/game/learner/native/trajectory (staticgeometrymetadatamayinit).
+Theseextrasnotformalproof/data; fullsuitescanexerciseTOY/fixturelearning,notactual
+completereal-audittarget/newrealtrajectory. Publishqualification/operatorsBEFORE
+ONE180sownproof. Noactualnewtiming/stronger/default/fresh/global/productionadmission;
+alloldforecast/accuracyfailuresretained. Journal124updated.
+
+
+ONEformal own proof afterqualificationd62b657passes: outer6.4555765409895685s,
+registered6.42996020798455, supervised3.901490958989598, under180/exits0/nointerrupt.
+All1248translation entries/2704geometryslots independentlymatch;5724valid+17fixed
+peroriginal/all/reduced;all5fullMatrixfieldseach=15witnessesmatch. Variantvalid/builder
+12296requests each,allwithdeclaredkernel,0fallback/errors. Originaldirectbaseline
+recordsactualowncalls/owner/fields,notexternalref/nofakekernelcounts; expected
+negativefixedcasesseparateprecisereceipts. No learner/reference/newtrajectory.
+[Proof](../results/suit-candidates/software/proof.json)SHA256
+1dee6b09d999df3b68c93c0e9b5e1ed07d8c08eef8ea02acc6a50da695c5e364.
+62raw/adminfiles+manifest63andignoredoriginalsretainedexact. PublishBEFOREactual
+ONEall/reducedpair. All418FP8fd/68pins/caps/seeds/gatesunchanged; noactualnewcost
+verdict/production/fresh/default/qualityadmission. Journal124updated.
+
+
+November 15, 2026 — The one registered suit-candidate audit pair completed:
+outer command 829.4326407079934 seconds, both children successful within the
+900-second child/1,800-second shared limits, no interruption or retry.
+`verify_pair` validates original identities, fields, source, card/worker checks
+and saved records. Both raw manifests remain exact. Retained 53 pair/admin
+files plus manifest and their ignored originals. Publish this raw checkpoint
+before cost analysis. Scientific source, seeds, budgets and admission rules
+remain unchanged; no production or new trajectory admission. Journal step 124
+records this stage.
+
+
+November 15, 2026 — After raw publication da0dc24, the declared diagnostic cost
+checks pass: complete supervised wall 413.8943964159989 -> 408.68608008301817 seconds
+(1.258368% lower), selected exclusive matrix CPU 50.67445900000007 -> 43.54697200000005
+(14.065245% lower). Both184 original constructor witnesses,432profiles,
+1152conditions,3reads,918104 declared-kernel requests/zeroerrors/fallbacks each;
+1538 timers each3076combined<4096. One ordered pair, identical instrumentation,
+all-candidate LUT control, unchanged-worker variation disclosed. No stable causal
+speedup/production forecast or strategy-quality claim. Both zero-based figures
+visually inspected; actual31215/NP254 six numeric exports byte-identical with
+execution blocked. Standalone illustrative suit-tie viewer added with the report,
+not a scientific collector dependency. Journal124 updated. Separate production
+qualification/full proof/all3own before freshnative/all3costs/forecast/admission
+remain mandatory; historical failed gates are retained.
+
+
+Final relevant regressions: 1098 pass on actual311/NP246 in92.44s and312/NP254
+in90.54s; guarded commands including startup95.107988/94.013639s. Full Ruff
+lint/format927, strictmypy777 andhooks pass;439relative destinations/7images/
+anchors/fences pass. CLI equals report,418scientific files/68pins/raw manifests/
+ignored originals exact. Eight illustrative viewer cases pass both runtimes.
+Initial viewer E501 resolved by splitting one output string; failure log retained.
+First posthoc verifier expected51hook restorations incorrectly; retained failure
+and exact operator, then v2 verifies34variant restorations plus all51fixed
+outcomes and truthful unhooked original baseline. No collection retry. Final
+exact-report-head hosted jobs remain required before merge.

@@ -1,0 +1,112 @@
+{
+  "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4586 passed, 64 skipped, 150 deselected in 930.76s (0:15:30)",
+      "log": {
+        "file": "results/suit-candidates/checks/base311.log",
+        "sha256": "19a110093776d4b6b4a282fd73dfd290ce68e092790111ec1ede11e7e1d9bf7b"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4586 passed, 64 skipped, 150 deselected in 900.93s (0:15:00)",
+      "log": {
+        "file": "results/suit-candidates/checks/base312.log",
+        "sha256": "82e1cd8e1bd657b8da68759a2b30eb363da8caad329f26133569c9b65610ec2e"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1098 passed in 130.47s (0:02:10)",
+      "log": {
+        "file": "results/suit-candidates/checks/optional311.log",
+        "sha256": "475f8c4b9cd6fdcc2a6ca8e2e54439543ebb8016df4c062960a2dd6ddf86fe58"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1098 passed in 125.67s (0:02:05)",
+      "log": {
+        "file": "results/suit-candidates/checks/optional312.log",
+        "sha256": "f8f05e2f6117ef95aea48ee3ef5d4a21eba9d08a56c5962481e03d863fa8f1b3"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "result": "2026-11-16T03:24:12.4581670Z 4586 passed, 64 skipped, 150 deselected, 1 warning in 1002.91s (0:16:42)",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43796168210,
+      "job_id": 133065362210,
+      "head_sha": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "91d9def513dd2f491c06a2911644d33ec946692b",
+      "actual_checkout_tree": "1f0fc8d310444c70a206ca013a3a06718b6fc669",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/suit-candidates/checks/hosted311.log",
+        "sha256": "f6b59cd8f8fb8b48672ced6757e3a79cbe181f96c35aab33000616b0bac98274"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "result": "2026-11-16T03:21:50.2901888Z 4586 passed, 64 skipped, 150 deselected, 1 warning in 856.88s (0:14:16)",
+      "source_fingerprint": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+      "checked_commit": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43796168210,
+      "job_id": 133065362808,
+      "head_sha": "3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "91d9def513dd2f491c06a2911644d33ec946692b",
+      "actual_checkout_tree": "1f0fc8d310444c70a206ca013a3a06718b6fc669",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/suit-candidates/checks/hosted312.log",
+        "sha256": "7f0a4bcb63734be2ea479ccbffb9c5fc97ab2e6a122bef26fc5e97181fad1305"
+      }
+    }
+  ],
+  "scope": "Same-head418-source exact private-minimum suit-candidate qualification. All prior415 files unchanged; full local bases, relevant all-extras and both hosted jobs with actual runtime evidence. Role suites can construct/train toy-game or software-fixture solvers. No actual complete-audit target or new real Holdem trajectory study was invoked by these checks; the guard status line refers to formal collection, not every unit-test object. No full-audit forecast rescue or performance/default/global admission. Publish before the formal own software proof and single all/reduced pair."
+}

@@ -1,0 +1,66 @@
+"""Exact raw/admin retention; failed administration never publishes a usable proof."""
+
+import hashlib, json, shutil, sys
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = w / "suit-candidates"
+stage = sys.argv[1]
+assert stage in ("software", "pair")
+f = w / ("candidates-execution-" + stage)
+folder = r / "results/suit-candidates"
+original = r / "results/runs/suit-candidates" / stage
+exit = json.loads((f / "exit.json").read_text())
+passed = exit["returncode"] == 0 and exit.get("complete_command_within_cap") is True
+name = stage if passed else stage + "-failed"
+out = folder / name
+admin = folder / ("execution-" + stage)
+assert not out.exists() and not admin.exists()
+for actual, published in [
+    (w / "run-candidates-collection.py", "operator_launch.py.txt"),
+    (Path(__file__), "operator_retention.py.txt"),
+]:
+    assert actual.read_bytes() == (folder / "checks" / published).read_bytes()
+assert (f / "operator_launch.py.txt").read_bytes() == (
+    folder / "checks/operator_launch.py.txt"
+).read_bytes()
+shutil.copytree(f, admin)
+shutil.copyfile(__file__, admin / "operator_retention.py.txt")
+if original.exists():
+    shutil.copytree(original, out)
+    for p in original.rglob("*"):
+        if p.is_file():
+            assert p.read_bytes() == (out / p.relative_to(original)).read_bytes()
+else:
+    assert not passed
+if passed:
+    marker = "proof.json" if stage == "software" else "pair.json"
+    assert json.loads((out / marker).read_text())["status"] == "complete"
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+manifest = dict(
+    stage=stage,
+    status="complete_raw_before_analysis"
+    if passed
+    else "failed_or_partial_retained_not_admitted",
+    originals_retained=True,
+    operator_bytes_match_published=True,
+    raw_sha256={
+        str(p.relative_to(folder)): sha(p)
+        for directory in (out, admin)
+        if directory.exists()
+        for p in sorted(directory.rglob("*"))
+        if p.is_file()
+    },
+)
+(folder / ("raw-" + stage + "-manifest.json")).open("x").write(
+    json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+)
+print(
+    json.dumps(
+        dict(
+            stage=stage,
+            status=manifest["status"],
+            bound_files=len(manifest["raw_sha256"]),
+        )
+    )
+)
