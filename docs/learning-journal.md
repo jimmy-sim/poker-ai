@@ -6382,3 +6382,13 @@ Next come the complete local and hosted checks, then the separately published
 own-only proof before any fresh reference comparison. No formal timing pair or
 new training has run. Implementation and explanations are Codex-assisted; no
 personal practice or time is inferred.
+
+
+The first full local checks pass: 4,799 base tests and 1,702 optional tests on
+each runtime. A report should also be reproducible without deleting its earlier
+copy. Review found that the command needed a separate output-folder option;
+two new tests check that the saved inputs stay unchanged and numerical exports
+match in two fresh folders. The focused suite now passes 136 tests on Python
+3.11.17 (23.73 seconds). [Earlier passing logs](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
+remain separate; complete local and hosted checks must qualify the corrected
+version before measurement. The poker calculations and fixed limits are unchanged.

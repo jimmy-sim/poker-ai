@@ -1047,7 +1047,7 @@ def exports(saved: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str,
     return reads, commands
 
 
-def report(root: Path, output: Path) -> None:
+def report(root: Path, output: Path, destination: Path | None = None) -> None:
     """Saved-data report; a separate raw publication must precede this analysis."""
     import csv
 
@@ -1058,7 +1058,7 @@ def report(root: Path, output: Path) -> None:
         if path.is_file() and "report" not in path.relative_to(output).parts:
             published(root, path)
     reads, commands = exports(saved)
-    folder = output / "report"
+    folder = destination if destination is not None else output / "report"
     if folder.exists() or folder.is_symlink():
         raise FileExistsError("retain existing checkpoint report")
     folder.mkdir()
@@ -1153,8 +1153,15 @@ def main() -> int:
     parser.add_argument("operation", nargs="?", choices=("proof", "pair", "report"))
     parser.add_argument("--child", choices=("proof", "plain", "profiled"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--report-output",
+        type=Path,
+        help="Fresh report directory; saved inputs stay unchanged",
+    )
     args = parser.parse_args()
     output = ROOT / args.output
+    if args.report_output is not None and args.operation != "report":
+        parser.error("--report-output is only for saved-data reports")
     if args.child and args.operation:
         parser.error("child mode and parent operation are separate")
     if args.child:
@@ -1165,7 +1172,11 @@ def main() -> int:
             else child(ROOT, args.child, output, origin)
         )
     if args.operation == "report":
-        report(ROOT, output)
+        report(
+            ROOT,
+            output,
+            ROOT / args.report_output if args.report_output is not None else None,
+        )
         return 0
     if args.operation == "pair":
         return pair(ROOT, output)

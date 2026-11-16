@@ -733,3 +733,71 @@ def test_own_publication_rejects_bad_proof(
     runner.atomic(folder / "measurement.json", measurement)
     with pytest.raises(ArithmeticError):
         runner.own_published(root, source)
+
+
+def test_cli_routes_fresh_report_output_without_collection(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    calls = []
+    monkeypatch.setattr(runner, "report", lambda *args: calls.append(args))
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "profile_checkpoint_cpu.py",
+            "report",
+            "--output",
+            "results/checkpoint-replay-cpu/pair",
+            "--report-output",
+            str(tmp_path / "new-report"),
+        ],
+    )
+    assert runner.main() == 0
+    assert calls == [
+        (ROOT, ROOT / "results/checkpoint-replay-cpu/pair", tmp_path / "new-report")
+    ]
+
+
+def test_numeric_report_can_be_recreated_without_touching_raw_inputs(
+    saved_fixture: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from compact_suit import admission
+
+    saved = runner.saved_pair(ROOT, saved_fixture)
+    original = {
+        str(p.relative_to(saved_fixture)): runner.digest(p)
+        for p in saved_fixture.rglob("*")
+        if p.is_file()
+    }
+    monkeypatch.setattr(runner, "saved_pair", lambda *args: saved)
+    monkeypatch.setattr(admission, "published", lambda *args: None)
+
+    class GraphicsBoundary(RuntimeError):
+        pass
+
+    actual_import = runner.importlib.import_module
+
+    def import_module(name: str, *args: Any, **kwargs: Any) -> Any:
+        if name == "matplotlib":
+            raise GraphicsBoundary(
+                "numeric exports complete; fixture stops before graphics"
+            )
+        return actual_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(runner.importlib, "import_module", import_module)
+    folders = [
+        saved_fixture.with_name(saved_fixture.name + suffix)
+        for suffix in ("-report-one", "-report-two")
+    ]
+    for destination in folders:
+        with pytest.raises(GraphicsBoundary):
+            runner.report(ROOT, saved_fixture, destination)
+    for name in ("reads.csv", "commands.csv", "summary.json"):
+        assert (folders[0] / name).read_bytes() == (folders[1] / name).read_bytes()
+    assert original == {
+        str(p.relative_to(saved_fixture)): runner.digest(p)
+        for p in saved_fixture.rglob("*")
+        if p.is_file()
+    }
+    with pytest.raises(FileExistsError):
+        runner.report(ROOT, saved_fixture, folders[0])

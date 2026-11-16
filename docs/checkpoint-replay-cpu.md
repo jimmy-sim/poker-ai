@@ -67,3 +67,25 @@ From the project directory:
 The tests exercise software fixtures and saved data. They do not start the formal
 measurement or authorize the blocked training comparison. A single ordered pair
 will not establish stable timing overhead, production savings or stronger play.
+
+
+## Report reproduction check — November 16
+
+The first local cohort passes both complete bases (4,799 tests each) and both
+relevant optional suites (1,702 each). [Its raw logs](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
+remain separate because review then added a fresh report-output directory option.
+That correction preserves saved inputs while recreating identical numerical
+exports. All 136 focused tests pass on Python 3.11.17 in 23.73 seconds. The
+corrected source still needs complete local and hosted checks before collection.
+
+Once raw measurements have been published, a saved-data report can be reproduced
+into a fresh directory with:
+
+```sh
+uv run --locked --extra research python scripts/profile_checkpoint_cpu.py report \
+  --output results/checkpoint-replay-cpu/pair \
+  --report-output results/runs/checkpoint-cpu-report-local
+```
+
+This command requires the complete published pair; it is not available as a
+result before that pair has been collected and verified.

@@ -5934,3 +5934,15 @@ Eight actual tiny checkpoint cases use independent terminal/pure-choice math.
 Complete immutable-source local/optional and hosted checks still precede formal
 proof/measurement. No fresh reference, real trajectory, budget change, stronger
 strategy or default promotion is claimed. Journal step 126 explains the question.
+
+
+The first immutable local cohort on `04dbb78` passes all four roles: bases
+4,799 / 65 skipped / 150 deselected each (626.73 / 598.87 seconds), and optional
+1,702 each (315.51 / 252.07 seconds). Runtime/root/source guards and hooks pass.
+[Raw logs and exact operator](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
+are retained as a superseded cohort, before hosted checks or any formal run.
+Review added a separate report-output destination to make re-rendering possible
+without removing existing results. Two regression tests check routing, byte-equal
+numerical exports and raw-input preservation. Focused tests pass 136 / 23.73
+seconds; lint/format and strict types pass. Corrected-source full local/optional
+and hosted checks precede collection. No original scientific byte or gate changed.
