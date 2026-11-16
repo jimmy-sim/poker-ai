@@ -107,9 +107,9 @@ restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
 
-- [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): test a
-  fixed translation table inside card normalization, preserving original results
-  before measuring complete audit cost.
+- [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
+  suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
+  reduction. Production benefit and strategy strength remain unestablished.
 
 - [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
   inside the original constructor: key creation accounts for 84.3% of its measured
@@ -6080,3 +6080,28 @@ retain 53 files plus their manifest, with original ignored outputs preserved.
 Publish those before calculating the cost verdict and drawing the plots. This
 is a successful collection, not yet a claim that the lookup is faster or that
 an agent has learned a better strategy.
+
+
+**Result:** the diagnostic passes, but the improvement is small. Complete elapsed
+time is 423.39 seconds for original and 421.00 for lookup, an observed 0.56%
+reduction. Matrix CPU falls from 53.67 to 51.90 seconds, 3.28%. Both arms process
+918,104 canonicalization requests and preserve all fields and original results.
+
+The [zero-based cost plot](../results/suit-lookup/report/costs.png) makes the small
+size visible. The unchanged comparison workers also finish about 1.65 seconds
+quicker in the lookup arm. That prevents attributing the whole wall difference
+to the table. One ordered pair does not establish a repeatable production saving,
+solve the failed compute forecast or make the strategy stronger.
+
+All six saved numeric tables match on the second Python environment with poker
+execution blocked. A first export attempt hit an existing generic log name and
+refused to overwrite it; its failure is retained. A distinct log name fixes the
+reporting administration, preserving both the old bytes and the single actual
+audit. Both final optional suites pass 909 tests and both plots are inspected.
+
+The next question is mathematical: choose the smallest private-card description
+first, then compare the board only for suit renamings that tie there. This might
+avoid redundant candidates, but requires a new prospective plan and exact tests.
+The current table remains private; production and strategy-quality requirements
+are still separate. Implementation, experiments and explanations are AI-assisted;
+no new personal practice or hours are inferred.

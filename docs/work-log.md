@@ -5566,3 +5566,26 @@ originals retained exact, [manifest](../results/suit-lookup/raw-pair-manifest.js
 cost verdict or production/quality/default/fresh/global admission yet. No new
 own policy/real trajectory trained; reference outputs comparison-only. Journal123
 updated with observed scope and next decision.
+
+
+Posthoc after raw59ff388: cost diagnostic PASS, original/lookup whole supervised
+wall423.3883260829898/420.99904466600856s (observed0.5643238771%lower);
+selected matrix CPU53.6667260000001/51.90405599999999s (3.2844746296%lower).
+All correctness/counters/coverage/source/184FPs remain exact;918104requests each,
+original918104BASE vslookup918104LUT,0fallback/errors. Native code unchanged.
+Small one-point benefit, not stable causal/runtime/population/production admission:
+unchanged parallel workers also ~1.65squicker, not added into wall. Both own read
+CPU totals remain similar. [Report](suit-lookup.md#recorded-cost-result--november-15-2026)
+retains full clocks/6numeric exports/2zero-based inspected figures and exact code.
+
+First312export failed BEFORE numeric generation: generic work/data-only-render312.log
+already existed. Unhandled FileExistsError retained with empty stdout; outer shell
+last tail returned0, not a passed verifier. No separately captured Python exit
+status invented. Original verifier/log/error and failure metadata/manifest retained.
+Corrected verifier uses unique log, preserves old bytes, and all6numeric exports
+match actual3.12.15/NP2.5.4 byte-for-byte with poker execution blocked. No actual
+poker retry/raw/cap/seed/gate/source change. Matplotlib temp-cache notices retained.
+Final relevant909eachPASS53.68/53.43s, source/runtime guards retained. Journal123
+updated. Next prospective question: private-hole minimum/tied-suit candidate
+factorization, independently proven before any new cost study. No production/
+new-trajectory/default/quality admission;933.89/900and2.390vs1failures remain.

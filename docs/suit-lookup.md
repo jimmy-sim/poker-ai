@@ -173,3 +173,78 @@ Publish this evidence before posthoc CPU/cost analysis. Completion is a capture
 and correctness result, not yet a diagnostic cost verdict or training admission.
 No new policy/real trajectory study is trained, and comparison outputs remain
 comparison-only. Scientific source, caps, seeds and old failed outcomes stay fixed.
+
+
+## Recorded cost result — November 15, 2026
+
+Raw publication `59ff388` precedes this analysis. The diagnostic passes its
+predeclared conditions, with a small observed difference:
+
+| Metric | Original | Lookup | Observed reduction |
+| --- | ---: | ---: | ---: |
+| Complete supervised command, wall seconds | 423.388326 | 420.999045 | 2.389281 (0.5643%) |
+| Selected matrix construction, own CPU seconds | 53.666726 | 51.904056 | 1.762670 (3.2845%) |
+
+All correctness/coverage, counters and full fields agree. Each arm records
+918,104 canonicalization requests. Original evaluates all with the original
+function; lookup evaluates all with the table, with zero original fallbacks or
+errors in either complete arm. Native spawned workers keep the original code.
+This is comparison against the equally instrumented control, not an unwrapped
+production command. Full values and the three pass flags are in
+[summary.json](../results/suit-lookup/report/summary.json).
+
+![Whole-command and matrix costs, with zero-based axes](../results/suit-lookup/report/costs.png)
+
+The small wall difference should not be treated as a stable causal saving.
+The unchanged parallel comparison workers also run about 1.65 seconds quicker
+in the lookup arm. They overlap, so their times are not added into command wall
+time. One fixed-order pair cannot separate the lookup from run variation,
+cache/order effects or unrelated stage differences. No confidence interval,
+population-runtime or peak-memory claim is established. The positive diagnostic
+does not rescue the 933.89/900 forecast or accept a production/default family.
+
+![Exclusive regions and remaining own CPU in both real reads](../results/suit-lookup/report/selected-cpu.png)
+
+Blue is matrix construction, including full-field observation. Other colors are
+non-overlapping selected operations or their remainders; pink is outside those
+selected regions. Initial/final refer to reads of the same archived own policies,
+not newly trained agents. The bar heights are CPU, not elapsed time or playing
+strength. [Reader](../results/suit-lookup/report/readers.csv),
+[region](../results/suit-lookup/report/regions.csv),
+[worker](../results/suit-lookup/report/workers.csv),
+[body](../results/suit-lookup/report/bodies.csv) and
+[kernel](../results/suit-lookup/report/kernel.csv) tables retain the detail.
+
+### Report verification and next decision
+
+All six numeric exports match byte-for-byte under actual Python 3.12.15/NumPy
+2.5.4, with canonicalization, tree/reader/scoring/replay, learner and native
+execution blocked. This is saved-data parsing, not bit-exact real poker replay.
+The first export attempt refused to overwrite an earlier report's generic log;
+[it is retained](../results/suit-lookup/report/portability-attempt1/failure.json).
+The corrected verifier uses a unique log name and preserves the earlier bytes.
+No raw measurement, scientific source, threshold, seed, cap or actual pair is
+changed or repeated. Matplotlib's temporary-font-cache notices remain in logs.
+Both final relevant suites pass 909 tests (53.68/53.43 seconds); the two plots are
+visually checked. Exact scripts, runtime/source guards and logs accompany them.
+
+The next useful question is whether every request really needs all 24 suit
+candidates. A new prospective mathematical factorization could first select
+translations with the smallest private-card description, then compare boards
+only among those ties. It needs its own exact proof, complete original field
+checks and a new bounded cost comparison; this result does not admit it.
+The current lookup remains a private diagnostic candidate. Full production
+qualification, end-to-end proof, conservative costs and checked admission still
+precede new trajectories, and strategy quality still needs separate evidence.
+
+To inspect the published saved result, without collecting another audit:
+
+```sh
+.venv/bin/python scripts/check_suit_lookup.py --show --output results/suit-lookup/pair
+open results/suit-lookup/report/costs.png
+open results/suit-lookup/report/selected-cpu.png
+```
+
+Recreate the report in a new destination with the retained script and research
+dependencies: `python results/suit-lookup/report/render.py.txt . NEW_OUTPUT_DIR`.
+The script refuses an existing output directory and blocks poker execution.
