@@ -1,0 +1,1075 @@
+{
+  "checkpoint-observer-operator-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "400c77b516cebd77b28a995593ee9a68eb73a622a044cb5204762fb985117a2e",
+      "bytes": 783
+    },
+    {
+      "file": "interrupt-outer.json",
+      "sha256": "c323f6b77504913ea6f16b5208dfd04e5888a113c1d7e351ae10404153063163",
+      "bytes": 1033
+    },
+    {
+      "file": "interrupt-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "missing-command-outer.json",
+      "sha256": "fa73e0bab9521b9dae1b3c15b0bac704e181c34d18095ee8817cecd52c212353",
+      "bytes": 735
+    },
+    {
+      "file": "missing-command-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "nested-timeout/owned-child.pid",
+      "sha256": "cd0d56d325b7544fbed3a8ac5f440b73e48ce5cb91ed57cafb44302f82b2b5aa",
+      "bytes": 5
+    },
+    {
+      "file": "nested-timeout-outer.json",
+      "sha256": "339f412b7f49f7ec064ac2e136635bc63ecf290f5de082039ef1127991e99695",
+      "bytes": 1503
+    },
+    {
+      "file": "nested-timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "nonzero-outer.json",
+      "sha256": "641f1f961205293d63d8665a3e920eafdd804db8a20f4ea170bb781e33d400d1",
+      "bytes": 1073
+    },
+    {
+      "file": "nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "success-outer.json",
+      "sha256": "86c8ac6a5053b220700b89bd0e181837d4171e4614f609d78c39f20037ac0f7e",
+      "bytes": 1065
+    },
+    {
+      "file": "success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "timeout-outer.json",
+      "sha256": "6b5a2965f5030f4fd8e8371c77c80065d5681073aeecd5c0222638c44bd7ef7a",
+      "bytes": 1161
+    },
+    {
+      "file": "timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    }
+  ],
+  "checkpoint-observer-retention-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "05640539236b8233f74d81d8657cb7b0e399b8da8eb1ff91ee708bc7f483cae4",
+      "bytes": 855
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/checkpoint-replay-cpu/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/checkpoint-replay-cpu/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/checkpoint-replay-cpu/pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/checkpoint-replay-cpu/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/checkpoint-replay-cpu/pair-raw-manifest.json",
+      "sha256": "ffb8416cc9f5328155c11765c576ea87f58368c4661841c1f7db8f9500d44391",
+      "bytes": 1274
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/checkpoint-observer/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/first.stdout",
+      "sha256": "6b6c19b8f2268f98afe0f18e8f1738ff974d414a7ea0acf4daf72aa0567a5aa6",
+      "bytes": 52
+    },
+    {
+      "file": "pair-complete/repeat.stderr",
+      "sha256": "5de27e11c1f506f200f83d3fefa8f7dc00d60a733948e8d6be2b1ec2ed9dfdbc",
+      "bytes": 392
+    },
+    {
+      "file": "pair-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/pair-raw-manifest.json",
+      "sha256": "ca60533db0db3c3ad8da32ebff023baab9cef5e979cb49c89e98b1201efc721c",
+      "bytes": 1288
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/checkpoint-observer/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/first.stdout",
+      "sha256": "ea5fa7548c22f60f5230603a96455f1ebeabe001914545e582e3cc5f25c6c390",
+      "bytes": 59
+    },
+    {
+      "file": "pair-failed_retained/repeat.stderr",
+      "sha256": "68f66177e5f64b3389ee966a887eeee9b6d954fd22adb7776300552aa202dd87",
+      "bytes": 399
+    },
+    {
+      "file": "pair-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/checkpoint-replay-cpu/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/checkpoint-replay-cpu/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "1aa867f27264ce9a1d2c5d0fd538f582682bf7d0f6fdecb78abe9fd23b6cd2b8",
+      "bytes": 1294
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/checkpoint-observer/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/first.stdout",
+      "sha256": "c54e0d831704133c2289b52c99edbe31e7dac08d06d95fbf093be52f3f7a4d30",
+      "bytes": 53
+    },
+    {
+      "file": "proof-complete/repeat.stderr",
+      "sha256": "a935eb80de40acbd6af419aa12902e84168d5e16de14ccbc2bfe2e16d610e885",
+      "bytes": 393
+    },
+    {
+      "file": "proof-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "32053b55c29cfdb83357f36b098455abe3d5e7ebcda4eb4610b54fa184aa872d",
+      "bytes": 1308
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/checkpoint-observer/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/first.stdout",
+      "sha256": "b1cdf9ea63603e535c13f9665b127b59e429714d07e68486b8d7c0d78d86c299",
+      "bytes": 60
+    },
+    {
+      "file": "proof-failed_retained/repeat.stderr",
+      "sha256": "e2eb08d2bf96b650b89973c3cb21f5a79a290b071b9b71bfd96505ab8145f7c7",
+      "bytes": 400
+    },
+    {
+      "file": "proof-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    }
+  ],
+  "checkpoint-observer-publication-fixtures": [
+    {
+      "file": "bad_cap/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "8cae3236ef3a5bd45fcc58c5f8128b200163a72d3233be163422cb67bdf6580c",
+      "bytes": 849
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "0b0b5bb84dd760cefd1a8406ec1d292797382761193d519aeb10e0ac50dd9c89",
+      "bytes": 993
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "8cae3236ef3a5bd45fcc58c5f8128b200163a72d3233be163422cb67bdf6580c",
+      "bytes": 849
+    },
+    {
+      "file": "bad_cap/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "bad_cap/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bad_cap/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "f00715dc75bc5e837bfe943bcffe498a110ece89de9bc73d8a9cf6b0aa9e2611",
+      "bytes": 854
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "09d8217aa93dd621f6f0c83d6a9a6327965d15ea4839229096a6795ab3a7be86",
+      "bytes": 995
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "f00715dc75bc5e837bfe943bcffe498a110ece89de9bc73d8a9cf6b0aa9e2611",
+      "bytes": 854
+    },
+    {
+      "file": "bool_clock/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "bool_clock/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_clock/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "dd78843368609ac9f63f40a1575351dcf99918d8cf3b5828d82a8f96207e338f",
+      "bytes": 869
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "2f4ec5e99e505b2ec22ab7b4ed31aa730ed0d4025bc983bbb07036daac74a77c",
+      "bytes": 1000
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "dd78843368609ac9f63f40a1575351dcf99918d8cf3b5828d82a8f96207e338f",
+      "bytes": 869
+    },
+    {
+      "file": "bool_returncode/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "bool_returncode/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_returncode/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "checks.json",
+      "sha256": "cc7180fdefdaf9482a9da0766de4954bcba60a917b4da4c3c8c82288957841b4",
+      "bytes": 932
+    },
+    {
+      "file": "command/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "d23728eae5ee62f050f18432d74176e4d039ea37cfd02c2f30f65baf91a38b68",
+      "bytes": 669
+    },
+    {
+      "file": "command/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "b5e9d53a8786bc152b56331bb27414b5919cf2550cf25e98cee90c847dafe4ed",
+      "bytes": 992
+    },
+    {
+      "file": "command/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "d23728eae5ee62f050f18432d74176e4d039ea37cfd02c2f30f65baf91a38b68",
+      "bytes": 669
+    },
+    {
+      "file": "command/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "command/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "command/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "c6e72bdb53ea4fe0d37818c15d70bcaddd30cb31dba256eceef41a8e4eb89ac1",
+      "bytes": 853
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "4fa8e3b3a8deafdf1831bb6473b2e7d632f540090c851e986b5bb84c5113c503",
+      "bytes": 1150
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "c6e72bdb53ea4fe0d37818c15d70bcaddd30cb31dba256eceef41a8e4eb89ac1",
+      "bytes": 853
+    },
+    {
+      "file": "duplicate/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "duplicate/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "duplicate/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "failed/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "e9c9128314631564fb84df7d567b924140908d3932419673969e1c8d241b514b",
+      "bytes": 854
+    },
+    {
+      "file": "failed/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "f6282c9c22d1112e9d6700d18cc4edef40b34e482f41fd68be4f707376497091",
+      "bytes": 998
+    },
+    {
+      "file": "failed/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "e9c9128314631564fb84df7d567b924140908d3932419673969e1c8d241b514b",
+      "bytes": 854
+    },
+    {
+      "file": "failed/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "failed/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "failed/retention.stdout",
+      "sha256": "c40a02afbe01a78d0701586c39c7a6498520cfa6aaf663629c36d68f868dea62",
+      "bytes": 60
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/checkpoint-replay-cpu/software/extra",
+      "sha256": "c8dee78f8c7b466c881847accc196998bad00e2b96c5ef913dfbe454d3807c96",
+      "bytes": 5
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "ecf902bf679f42a72b842ecc24773c21e4e079a8eab379665a8510d36902f42f",
+      "bytes": 853
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "963813f5e3323b69a56d4b214a6601255f376802771af82815bb22288008b264",
+      "bytes": 995
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "ecf902bf679f42a72b842ecc24773c21e4e079a8eab379665a8510d36902f42f",
+      "bytes": 853
+    },
+    {
+      "file": "inventory/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "inventory/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "inventory/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "nan/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "c8c4e4c263d0b9b803f73f1f1a5cae5b6543fff0840b4afe2fa30f98bd7a3d38",
+      "bytes": 839
+    },
+    {
+      "file": "nan/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "7e0587a0f0caa644ea274b7b23bba9c98e2bdb5c2ba7941773df51e9fc6dcd40",
+      "bytes": 987
+    },
+    {
+      "file": "nan/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "c8c4e4c263d0b9b803f73f1f1a5cae5b6543fff0840b4afe2fa30f98bd7a3d38",
+      "bytes": 839
+    },
+    {
+      "file": "nan/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "nan/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "nan/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "original/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "original/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "e9e42da3d95ed45d3c56cfea8aaed0291aab6061c75219c529aa100e5197efd0",
+      "bytes": 851
+    },
+    {
+      "file": "original/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "0a5f097304534d18121da62cc28f287dfe242e4d14eaa5743959b519253f1924",
+      "bytes": 994
+    },
+    {
+      "file": "original/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "905a3fed9382cefa2f10194744547db818ac2f36bd92bac3cde65f94ba7717c9",
+      "bytes": 18
+    },
+    {
+      "file": "original/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "e9e42da3d95ed45d3c56cfea8aaed0291aab6061c75219c529aa100e5197efd0",
+      "bytes": 851
+    },
+    {
+      "file": "original/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "original/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "original/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "positive/checkpoint-observer/results/checkpoint-replay-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.json",
+      "sha256": "ebecda61891f6f2a0c264647f5645f7df80787d8d67a6bfb3ba3129cb42f46bc",
+      "bytes": 851
+    },
+    {
+      "file": "positive/checkpoint-observer/results/checkpoint-replay-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/checkpoint-observer/results/checkpoint-replay-cpu/software-raw-manifest.json",
+      "sha256": "828bdcbfc01f28636b650e6e5e6402ce243007bf46ca08c0e2c1dd14d521d109",
+      "bytes": 994
+    },
+    {
+      "file": "positive/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.json",
+      "sha256": "ebecda61891f6f2a0c264647f5645f7df80787d8d67a6bfb3ba3129cb42f46bc",
+      "bytes": 851
+    },
+    {
+      "file": "positive/checkpoint-observer/results/runs/checkpoint-cpu-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/retain.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "positive/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "positive/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    }
+  ],
+  "checkpoint-observer-operator-history": [
+    {
+      "file": "v1/check-checkpoint-observer-operators.py",
+      "sha256": "240387031b2a18bcb110203c914a5c7c62e90e855348f758c5815e67640e018b",
+      "bytes": 1923
+    },
+    {
+      "file": "v1/fixtures/checks.json",
+      "sha256": "91235e8a9c1c508fc379fbfa154ec4f7edf3e2baaf0b0453ea06993490664775",
+      "bytes": 552
+    },
+    {
+      "file": "v1/fixtures/interrupt-outer.json",
+      "sha256": "1b712773ea49e41145ec95f6fc262541ae480fcc734166afd5eeb89fbe86fbdb",
+      "bytes": 1021
+    },
+    {
+      "file": "v1/fixtures/interrupt-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v1/fixtures/nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "v1/fixtures/nonzero-outer.json",
+      "sha256": "703b026bafa5ddcefcd3d774c725906d09decde0d8a040e7a1539a68043dfa6d",
+      "bytes": 1086
+    },
+    {
+      "file": "v1/fixtures/nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v1/fixtures/success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "v1/fixtures/success-outer.json",
+      "sha256": "95e697cc45fa6004d8a9bfc62ef0ec96c3ce632939f772f0982a2ed6a2fbdaf1",
+      "bytes": 1054
+    },
+    {
+      "file": "v1/fixtures/success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v1/fixtures/timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "v1/fixtures/timeout-outer.json",
+      "sha256": "8d7571c4f9f1a0319363a31cd26a77ca0588e6d6963260db9a330fd07624f3e6",
+      "bytes": 1163
+    },
+    {
+      "file": "v1/fixtures/timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "v1/retain-checkpoint-observer-collection.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "v1/run-checkpoint-observer-collection.py",
+      "sha256": "07a076c50b8836ee647cafcab8a8ee4a27bd10c54b74ad581aa44b288a1d324f",
+      "bytes": 5183
+    },
+    {
+      "file": "v2/check-checkpoint-observer-operators.py",
+      "sha256": "f77fb6f4a4cb25c7af48bfea0a0d61f2805f4d468f6f922fe0bf3bb72c68f425",
+      "bytes": 2915
+    },
+    {
+      "file": "v2/fixtures/checks.json",
+      "sha256": "fd0dbcd2b1c035977ec869f96abeed17c09fab04ba993f9c2b35f5a670ce3329",
+      "bytes": 680
+    },
+    {
+      "file": "v2/fixtures/interrupt-outer.json",
+      "sha256": "3fbb9d631cb2eb7cbedf8c9340d363b737aace8109c7a930cfafddb8bb915c25",
+      "bytes": 1046
+    },
+    {
+      "file": "v2/fixtures/interrupt-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v2/fixtures/nested-timeout/owned-child.pid",
+      "sha256": "54df9d11651517715ee77e535626b340132763472b1c146f2e556f075b05a8e8",
+      "bytes": 5
+    },
+    {
+      "file": "v2/fixtures/nested-timeout-outer.json",
+      "sha256": "7018295771e14f71a59c64f780616a4f9c894cb17469cd9bc064b38cb0b93e56",
+      "bytes": 1494
+    },
+    {
+      "file": "v2/fixtures/nested-timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "v2/fixtures/nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "v2/fixtures/nonzero-outer.json",
+      "sha256": "3449b06036caf0333a3e50631013339e84e342551e1cc8dbf434143f64776072",
+      "bytes": 1073
+    },
+    {
+      "file": "v2/fixtures/nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v2/fixtures/success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "v2/fixtures/success-outer.json",
+      "sha256": "840632090c49bcc7fa57e77436ff5028f89c8bb019e9e8d37fcf9474464f0237",
+      "bytes": 1066
+    },
+    {
+      "file": "v2/fixtures/success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "v2/fixtures/timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "v2/fixtures/timeout-outer.json",
+      "sha256": "f7106c15e3b7307009ae1813556c5396e6bcb0c013d82fcee30ad68fe1cef4a7",
+      "bytes": 1163
+    },
+    {
+      "file": "v2/fixtures/timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "v2/retain-checkpoint-observer-collection.py",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8",
+      "bytes": 2216
+    },
+    {
+      "file": "v2/run-checkpoint-observer-collection.py",
+      "sha256": "9588a35596f5ab03a26329d6e4a065af281ded2457167fcd59484c1bcfef7593",
+      "bytes": 5936
+    }
+  ]
+}

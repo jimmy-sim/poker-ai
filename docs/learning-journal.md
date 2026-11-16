@@ -6392,3 +6392,10 @@ match in two fresh folders. The focused suite now passes 136 tests on Python
 3.11.17 (23.73 seconds). [Earlier passing logs](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
 remain separate; complete local and hosted checks must qualify the corrected
 version before measurement. The poker calculations and fixed limits are unchanged.
+
+
+All six source checks now pass on the corrected version. Both hosted jobs used
+the intended Python and NumPy versions, and GitHub tested the same complete
+source tree as the local checks. The [raw records and run instructions](../results/checkpoint-replay-cpu/checks.json)
+are being published before measurement. Next is the small own-only checkpoint
+proof; its results must be public before the reference comparison begins.

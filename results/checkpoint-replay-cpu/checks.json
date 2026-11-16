@@ -1,0 +1,144 @@
+{
+  "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4801 passed, 65 skipped, 150 deselected in 621.86s (0:10:21)",
+      "check_seconds": 635.6842393749976,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/base311.log",
+        "sha256": "88cd9c6a455632958faadf05ad4273b1e849fd624eab8ee97213889f9d6fa45d"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4801 passed, 65 skipped, 150 deselected in 594.09s (0:09:54)",
+      "check_seconds": 612.2082104580186,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/base312.log",
+        "sha256": "8c21e0d7ffb32b6eb8a6ce266396a1aa1d482f1431f34fe5f6247d9ce575bc0d"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1704 passed in 311.83s (0:05:11)",
+      "check_seconds": 314.67576095898403,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/optional311.log",
+        "sha256": "e3f1d429b1652f5a6996419f0a5a896b1c90542b201f1153ac5ddff0fb1e192c"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1704 passed in 252.73s (0:04:12)",
+      "check_seconds": 255.5183858339733,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/optional312.log",
+        "sha256": "5294a61e113314b4ef2b69a9cab745889a5953c8dd9f3ceae3098b1b530dad1e"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-16T10:19:44.5417408Z 4801 passed, 65 skipped, 150 deselected, 1 warning in 1076.80s (0:17:56)",
+      "run_id": 43844976093,
+      "job_id": 133222751095,
+      "head_sha": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "e788184744a37d79533f9ce3395bc0fe1ac7f618",
+      "actual_checkout_tree": "55ff96dc6859bd558e5d24a1c2533fc5a2c95c62",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/hosted311.log",
+        "sha256": "465406d115f62634bedaa5030aecf6a02d3af4aca9603522677cc1db1799f637"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+      "checked_commit": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-16T10:25:34.5603028Z 4801 passed, 65 skipped, 150 deselected, 1 warning in 1425.28s (0:23:45)",
+      "run_id": 43844976093,
+      "job_id": 133222750642,
+      "head_sha": "899ad05181bf7d2e9094bb20d1b8da84313a4f68",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "e788184744a37d79533f9ce3395bc0fe1ac7f618",
+      "actual_checkout_tree": "55ff96dc6859bd558e5d24a1c2533fc5a2c95c62",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/checkpoint-replay-cpu/checks/hosted312.log",
+        "sha256": "64fd7de2929d11422c942bf0fa93e3327f0b52e514cdc99b67d357fe2f999416"
+      }
+    }
+  ],
+  "operators": {
+    "run-checkpoint-observer-source-v2-checks.py": {
+      "file": "results/checkpoint-replay-cpu/checks/run_checks.py.txt",
+      "sha256": "88d25af3b5168bbae2a97c0f48c4bf6595d4e6455a72d6d85c7098946dcdb20e"
+    },
+    "run-checkpoint-observer-collection.py": {
+      "file": "results/checkpoint-replay-cpu/checks/operator_launch.py.txt",
+      "sha256": "210d3da450effb394c2f7e4c0863f6574929ae067e3f5dd781ca5a86a2ee354f"
+    },
+    "retain-checkpoint-observer-collection.py": {
+      "file": "results/checkpoint-replay-cpu/checks/operator_retention.py.txt",
+      "sha256": "ebad4905194b86c58a17eac5f898d4b4701db58a160d0ceddc06350f0ebc9be8"
+    },
+    "verify-checkpoint-observer-publication.py": {
+      "file": "results/checkpoint-replay-cpu/checks/verify_publication.py.txt",
+      "sha256": "21f0021eace4e5289e49077336eae125e31d1b62c49d4c3e2ef63c91400c7cf9"
+    },
+    "check-checkpoint-observer-operators.py": {
+      "file": "results/checkpoint-replay-cpu/checks/check_operators.py.txt",
+      "sha256": "7bb49f0085ee556e308005f3611ad13e5e47d305f8f4c5970bf2f2eccac28280"
+    },
+    "check-checkpoint-observer-retention.py": {
+      "file": "results/checkpoint-replay-cpu/checks/check_retention.py.txt",
+      "sha256": "33aa61d7327a9a9368a16981b6feea751403e438e0082b2ccfbeb5325f9eae69"
+    },
+    "check-checkpoint-observer-publication.py": {
+      "file": "results/checkpoint-replay-cpu/checks/check_publication.py.txt",
+      "sha256": "1c51827c85ad238fe10186a567679b565fea22cf634049cf1bb071698ef8002b"
+    }
+  },
+  "scope": "All six roles on corrected immutable436-file source; all433 predecessor scientific bytes and128 pins unchanged. Actual runtime/all uv/entire tested Git tree verified. Unit tests may exercise fictional and existing fixture solvers; no formal observer proof, fixed audit pair or new real trajectory has run. Publish these six roles and exact tested operators before fresh own-only proof, then publish own raw evidence before any new reference. Negative budget/strength results stay unchanged."
+}

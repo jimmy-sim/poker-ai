@@ -5946,3 +5946,22 @@ without removing existing results. Two regression tests check routing, byte-equa
 numerical exports and raw-input preservation. Focused tests pass 136 / 23.73
 seconds; lint/format and strict types pass. Corrected-source full local/optional
 and hosted checks precede collection. No original scientific byte or gate changed.
+
+
+November 16 — All six corrected source roles pass on `899ad05` / source436
+`81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca`.
+Local bases 4,801 / 65 skipped / 150 deselected each (621.86 / 594.09 seconds);
+optional 1,704 each (311.83 / 252.73 seconds). Hosted run
+[43844976093](https://github.com/jimmy-sim/poker-ai/actions/runs/43844976093) passes
+both jobs, 4,801 each with the same skips/deselections and existing warning
+(1,076.80 / 1,425.28 seconds). Actual patches/NumPy, all uv selections and entire
+GitHub merge tree `55ff96dc6859bd558e5d24a1c2533fc5a2c95c62` equal the source head.
+
+[All six raw receipts](../results/checkpoint-replay-cpu/checks.json), exact executed
+launch/retention/publication operators and all process/filesystem/schema fixture
+archives are published at this boundary, before the fresh own-only proof.
+BOMs and original log whitespace remain intact. Six real process cases, four
+synthetic retention cases and ten synthetic publication cases pass. No formal
+proof, cost pair or new poker trajectory has run. Original seeds, caps and
+failed budget/accuracy results are unchanged. [PR #82](https://github.com/jimmy-sim/poker-ai/pull/82)
+remains open through the required evidence and final checks.

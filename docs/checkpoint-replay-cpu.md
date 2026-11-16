@@ -89,3 +89,28 @@ uv run --locked --extra research python scripts/profile_checkpoint_cpu.py report
 
 This command requires the complete published pair; it is not available as a
 result before that pair has been collected and verified.
+
+## Checked source, before measurement — November 16
+
+All six roles pass on `899ad05`, with the complete 436-file source identity
+`81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca`.
+All 433 predecessor scientific files remain unchanged.
+
+| Check | Python 3.11.17 / NumPy 2.4.6 | Python 3.12.15 / NumPy 2.5.4 |
+| --- | --- | --- |
+| Full local base | 4,801 passed; 65 skipped; 150 deselected; 621.86 s | 4,801 passed; 65 skipped; 150 deselected; 594.09 s |
+| Relevant optional | 1,704 passed; 311.83 s | 1,704 passed; 252.73 s |
+| Hosted base | 4,801 passed; 65 skipped; 150 deselected; 1,076.80 s | 4,801 passed; 65 skipped; 150 deselected; 1,425.28 s |
+
+[The six raw records and exact operators](../results/checkpoint-replay-cpu/checks.json)
+retain the runtime assertions, every uv selection and the full GitHub-tested
+tree. Both hosted jobs have the existing historical replay-roundoff warning,
+within its unchanged 1e-12 limit.
+
+Six small process fixtures test the launcher's success, nonzero exit, timeout,
+interruption, separately grouped child cleanup and failure before launch. Four
+filesystem cases check exact retention, refusal to overwrite and unrelated-file
+preservation; ten synthetic cases check the publication boundary. Their invented
+headers are test inputs, never timing results.
+
+This source checkpoint precedes the fresh own-only proof and measured pair.
