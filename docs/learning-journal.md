@@ -6169,3 +6169,12 @@ checks preserve all 415 earlier scientific sources and all 68 pinned inputs.
 The next step is to freeze the source and complete every local and hosted
 qualification role before publishing instructions for the formal proof. There
 is still no new cost measurement, trained policy or production admission.
+
+
+All six source-check roles now pass on the same revision: both full local suites
+pass 4,586 tests, both optional suites pass 1,098, and both GitHub source jobs pass
+4,586. [Exact logs, runtimes, source trees and run instructions](../results/suit-candidates/checks.json)
+are retained before formal collection. The 5,724 fixed software inputs also have
+identical hashes across Python environments, and outer failure-routing checks
+pass. The next step is the single formal own proof; these software checks do not
+establish a runtime benefit, new strategy or training admission.

@@ -5638,3 +5638,18 @@ receipts remain byte-exact. Implementation/config/data checked before source
 freeze. Complete immutable-head local base/optional roles and both source-bound
 hosted roles still required before any formal proof/capture. No actual new timing
 or quality claim; source-only publication will wait for all four local roles.
+
+
+All6exact-source roles pass at3a15a53/418FP8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a.
+Local full4586/64skip150deselect930.76/900.93s; optional1098each130.47/125.67s.
+Hosted source43796168210both4586+existingwarning,3111002.91s/312856.88s. Actual
+Python3.11.17/NP2.4.6 and3.12.15/NP2.5.4, alluvselections, actualsourcecheckout
+91d9def5 andcompleteTREE1f0fc8d310444c70a206ca013a3a06718b6fc669==3a15 checked.
+[Six-role record](../results/suit-candidates/checks.json) retainsfulluntrimmedlogs,
+rawAPIobjects, guardsandEXACTlaunch/saveoperators. All415earlierfiles/68pinsunchanged.
+EightfictionalroutingfixturesPASS;5724softwareinputhashesmatchbothactualruntimes,
+noactualkernelrequests/game/learner/native/trajectory (staticgeometrymetadatamayinit).
+Theseextrasnotformalproof/data; fullsuitescanexerciseTOY/fixturelearning,notactual
+completereal-audittarget/newrealtrajectory. Publishqualification/operatorsBEFORE
+ONE180sownproof. Noactualnewtiming/stronger/default/fresh/global/productionadmission;
+alloldforecast/accuracyfailuresretained. Journal124updated.

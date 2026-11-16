@@ -134,3 +134,27 @@ different boards. The second minimum preserves the exact original result.
 **What would a faster diagnostic establish?** Only a cost point with exact original
 outputs and the declared workload. It would not replace production qualification,
 conservative forecasts or strategy-quality evidence.
+
+
+## Recorded source qualification — November 15, 2026
+
+All six exact-source roles pass on `3a15a53`: local full suites each pass 4,586
+(64 skipped, 150 deselected), optional suites each pass 1,098, and both source
+GitHub jobs pass 4,586 with the existing warning. Hosted run `43796168210` uses
+actual Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4. Every uv
+selection, actual checkout and complete tested tree is verified against the
+checked source. These are software-suite durations, not the actual audit's
+900-second budget.
+
+[The six receipts](../results/suit-candidates/checks.json), full untrimmed logs,
+raw metadata and exact launch/save operators are retained. All 415 prior sources
+remain unchanged; effective source is 418, with 68 pinned inputs. Eight extra
+fictional failure-routing fixtures pass. All 5,724 software inputs have identical
+hashes across both environments; no original/all/reduced request kernel, game,
+learner, native or trajectory is evaluated by that input-generation check.
+Static geometry metadata may initialize.
+
+Publish these records before the one formal own software proof. Full suites can
+exercise toy/fixture solvers; they do not invoke the actual complete-audit target
+or a new real trajectory study. No timing result or production admission exists
+at this qualification checkpoint.
