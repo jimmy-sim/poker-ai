@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
+
 - [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
 
 - [Separate original construction phases](#122-separate-construction-work-from-checking-work)
@@ -106,6 +108,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
+  an exact way to compare fewer suit renamings. Full qualification comes before
+  any new audit measurement.
 
 - [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
   suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
@@ -6105,3 +6111,61 @@ avoid redundant candidates, but requires a new prospective plan and exact tests.
 The current table remains private; production and strategy-quality requirements
 are still separate. Implementation, experiments and explanations are AI-assisted;
 no new personal practice or hours are inferred.
+
+
+PR #77 is merged. Both final GitHub jobs pass 4,397 tests, with actual runtimes
+and complete source trees verified. Main's saved-data command equals the report,
+and 167 focused tests pass in 12.58 seconds. All ten local result files and
+patches remain unchanged after checks. [Closing evidence](../results/suit-lookup/final-ci/manifest.json)
+is preserved with the next substantive increment rather than a status-only commit.
+
+## 124. Compare the board only among private-card ties
+
+**November 15, 2026 — issue #4, exact mathematical factorization.**
+
+The first suit-table experiment has a small positive cost point, but no stable
+production saving. The next question is whether the same canonical card result
+can be found while considering fewer suit renamings.
+
+The existing function compares two descriptions in order: the private cards,
+then the board. A worse private-card description cannot win because its board
+looks better. Find the smallest private description first. Several suit maps
+may tie there; keep every tie and compare their boards. A **factorization** here
+means splitting one exact calculation into these two exact steps.
+
+**Example:** with `2c 3c` and board `4s 5s 6s`, the smallest private description
+keeps clubs as clubs. The board can become `4d 5d 6d`. Independently making the
+board all clubs would lose its relation to the private cards. This is simultaneous
+renaming, not changing the cards or the poker information available to the agent.
+
+A fixed table describes all 2,652 valid ordered private-card pairs. Depending on
+their ranks and suits, two, four or six of the original 24 suit maps tie at the
+private minimum. An empty board needs no second comparison. The [prospective plan](suit-candidates.md)
+and [config](../configs/suit-candidates.json) precede implementation and timing.
+The control keeps all 24 candidates; the new version keeps every private-minimum
+tie. Both preserve original validation and unsupported-input behavior.
+
+There are now 189 passing focused development tests. They include every ordered
+private pair, all fixed table slots, generated boards, complete matrix fields,
+restoration/interruption, clocks/caps and saved-record failure checks. A saved-data
+fixture blocks the actual kernels and builder while checking its recorded results.
+Its qualification is deliberately fictional; it is not the formal published proof.
+
+New corruption tests catch a parser subtlety: Python considers `False == 0`.
+Saved booleans must not stand in for integer card IDs or permutation indices.
+The typed JSON comparisons now reject those cases even after the test updates
+all associated hashes. That fixes record verification; it does not change card
+ranking, the strategy, scientific budgets or acceptance criteria.
+
+Full source qualification on both Python versions, published run instructions,
+the one formal own proof and one full cost comparison still come next. There is
+no new speed result or trained agent at this implementation checkpoint. Work and
+explanations are Codex-assisted; no personal practice, mastery or hours are inferred.
+
+
+Both Python environments now pass all 189 focused development tests (33.61 and
+31.94 seconds). Full-project lint/format and strict types pass as well. These
+checks preserve all 415 earlier scientific sources and all 68 pinned inputs.
+The next step is to freeze the source and complete every local and hosted
+qualification role before publishing instructions for the formal proof. There
+is still no new cost measurement, trained policy or production admission.

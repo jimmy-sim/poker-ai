@@ -1,0 +1,13 @@
+import ast,hashlib,json,os,subprocess,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=Path('/Users/jimmysim/Projects/poker-ai');env=dict(os.environ,PYTHONPATH=str(r/'src')+os.pathsep+str(r/'scripts'));py=str(r/'.venv/bin/python')
+code="import sys,numpy,poker_ai,pathlib; assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'; assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(pathlib.Path.cwd()/'src'); print('ACTUAL_PYTHON='+sys.version.split()[0]); print('ACTUAL_NUMPY='+numpy.__version__)"
+subprocess.run([py,'-c',code],cwd=r,env=env,check=True)
+with (w/'suit-main-cli.json').open('x') as log:subprocess.run([py,'scripts/check_suit_lookup.py','--show','--output','results/suit-lookup/pair'],cwd=r,env=env,stdout=log,check=True)
+expected=json.loads((r/'results/suit-lookup/report/summary.json').read_text());assert json.loads((w/'suit-main-cli.json').read_text())==expected
+with (w/'suit-main-tests.log').open('x') as log:subprocess.run([py,'-m','pytest','-q','tests/test_suit_lookup_support.py','tests/test_suit_lookup_comparison.py'],cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+snapshot=w/'main-before-compact-20261116T021909Z';m=json.loads((snapshot/'manifest.json').read_text());ns=dict(snapshot=snapshot,m=m,root=r,hashlib=hashlib,subprocess=subprocess)
+module=ast.parse((w/'ff-main-session.py').read_text());exec(compile(ast.Module(body=[n for n in module.body if isinstance(n,ast.FunctionDef)],type_ignores=[]),'preservation-only','exec'),ns);ns['preserved']()
+head=subprocess.check_output(['git','-C',str(r),'rev-parse','HEAD'],text=True).strip();assert head=='63535047d51999dee68e3b0863dfdc556f91fc3f'
+result=dict(scope='Merged main saved-data and software fixture check; no new collection/training/admission',head=head,python='3.11.17',numpy='2.4.6',saved_cli_equals_report=True,preserved_user_paths=len(m['files']),bytes_status_changed_path_index_and_both_patches_preserved=True,checked_after_main_checks=True,focused_tests=(w/'suit-main-tests.log').read_text().splitlines()[-1],tests_log_sha256=hashlib.sha256((w/'suit-main-tests.log').read_bytes()).hexdigest())
+(w/'suit-main-verified.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n');print(json.dumps(result,indent=2))

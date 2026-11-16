@@ -1,0 +1,254 @@
+{
+  "admission_evidence": false,
+  "baseline_capture": "results/coarse-reader-cpu/report/summary.json",
+  "baseline_selected_read_counts": [
+    {
+      "counts": {
+        "checkpoint_replay": 432,
+        "matrix_build": 0,
+        "spot_tree_build": 0
+      },
+      "read": 0
+    },
+    {
+      "counts": {
+        "checkpoint_replay": 432,
+        "matrix_build": 92,
+        "spot_tree_build": 26
+      },
+      "read": 1
+    },
+    {
+      "counts": {
+        "checkpoint_replay": 432,
+        "matrix_build": 92,
+        "spot_tree_build": 26
+      },
+      "read": 2
+    }
+  ],
+  "commands": [
+    "status",
+    "rev-parse",
+    "ls-tree",
+    "show",
+    "diff",
+    "merge-base",
+    "ls-files",
+    "log",
+    "cat-file",
+    "symbolic-ref"
+  ],
+  "complete_role_requirements": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312",
+    "hosted311",
+    "hosted312"
+  ],
+  "constructor_baseline": "results/grouped-depth-check/pair/original/constructors",
+  "cost_pass": {
+    "all_identities_and_fields": true,
+    "complete_coverage_and_counters": true,
+    "lower_complete_command_wall": true,
+    "lower_selected_exclusive_matrix_cpu": true
+  },
+  "effective_source_count": 418,
+  "entry": "scripts/compare_suit_candidates.py",
+  "expected_combined_calls": 3076,
+  "expected_constructors": 184,
+  "expected_global_selected_calls": 1538,
+  "experiment": "exact private-minimum suit-candidate factorization",
+  "full_capture_baseline": "results/grouped-depth-check/report/summary.json",
+  "geometry_duplicate_sentinels": 52,
+  "geometry_sha256": "f1cf3685244285e88220e82b5c274fd96b12f07acf4cd17a106bf079ce2cfc8d",
+  "geometry_slots": 2704,
+  "geometry_tie_counts": {
+    "2": 1872,
+    "4": 156,
+    "6": 624
+  },
+  "geometry_valid_ordered_holes": 2652,
+  "historical_helper_anchor": "results/original-audit-helpers/pair/observed/child.json",
+  "historical_original": "results/card-audit-clock-trace/pair/uncached/child.json",
+  "historical_original_source_count": 390,
+  "idle_control": {
+    "arguments": [
+      "-i"
+    ],
+    "path": "/usr/bin/caffeinate",
+    "scope": "temporary utility-duration idle-sleep assertion; no display assertion or persistent setting; startup/teardown included in complete clocks",
+    "sha256": "3724d8f032bfc2c0e7c5481da448003bd23c72e5914b5edf723f694271380dc8"
+  },
+  "input_sha256": {
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "results/card-audit-clock-trace/pair/uncached/child.json": "653892533b82a91a847d71fec96edfa5819694ec0ba902b41dbaaaf356126c43",
+    "results/card-audit-clock-trace/pair/uncached/command.log": "6b3e7c8a4dc92c47e6b239681067170a001e0994be470c01253006741f12fcda",
+    "results/card-audit-clock-trace/pair/uncached/measurement.json": "246912979e605211b62b1bc494656f72b6ba960426b21b2bb3b3e0df1c8b5fab",
+    "results/card-audit-clock-trace/pair/uncached/native-events.jsonl": "4572998acfd7e56fe5fe09024c2ba4a639627070235bb357b8638f60e610befa",
+    "results/card-audit-clock-trace/pair/uncached/native.json": "347cf65d0faa51fb28f8a463b382040d70bf64280b177f7c86bb2c51b303ea7f",
+    "results/card-audit-clock-trace/pair/uncached/parent-resource-reads.json": "b1ce96d404f9639c70342aaa468280f7dc3160e223c0c9184719bfd66d665121",
+    "results/card-audit-clock-trace/pair/uncached/read-phases.json": "2bc5343c02daa611b4eccd168f3f4267cb5510b8c83fbdee844d4d3fbf96e226",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-0.json": "d9df64868c67ffd2bddd9cb5aae94907f8880f46167023bf42b78413c59b713e",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-1.json": "e3865136d06a8a9ca24d600b819ee13019d0620c2e236791e8cfe12a4fa6e60e",
+    "results/card-audit-clock-trace/pair/uncached/worker-telemetry/worker-2.json": "7a8e8e1e175a7d5e63c3a554f935d6a9a9ee293ff1a6441f7b16eb9f62ae787b",
+    "results/card-computation-cache/pair/pair.json": "ff7979d02acb799bbe2ebe8192c686e58059c19960a3636ff1845cc2038dd547",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/coarse-reader-cpu/pair/profiled/child.json": "56bb929af9edb3037e9324fe85dcccc5a27172d619b165a284da6d410e1aaca0",
+    "results/coarse-reader-cpu/raw-manifest.json": "df99789918e37dbb44ad1eeaa7c30509a41e9e8bb54744f530bd22994ffef8e6",
+    "results/coarse-reader-cpu/report/render-manifest.json": "8c343739d6d1f14ad8cc769d7310c97dd60ffad24807b3683aa4e589ea151587",
+    "results/coarse-reader-cpu/report/summary.json": "4aec4801421de287d8a32a28fabf1759507f9b0b099c1e4ab1ee860930eb1def",
+    "results/compact-cached-learning/cost/0/own-captures.jsonl.gz": "10103940df6c4e5ace00a52f7e6ec5be3a8332299d0ca29cf7e2777d155b576b",
+    "results/compact-cached-learning/cost/0/own-child.json": "766370f4cc333af9fd995e2d352f9fb8e5bc2ff7186e3eb24ace15f70ee33658",
+    "results/compact-cached-learning/cost/0/own-composed.jsonl.gz": "4938c5432fffa3b9709825428610126379bdf692d7110e2681c11d769deb255d",
+    "results/compact-cached-learning/cost/0/own-details.jsonl.gz": "8003e8cebc2a5b61598a778378f23382365cb2831ef9be437d03418a853d3e8c",
+    "results/compact-cached-learning/cost/0/own-events.jsonl": "977e58d0267707e61a8fd1e8702b27fadfc1211ccfd0c69d8116ec3617dce765",
+    "results/compact-cached-learning/cost/0/own-masses.jsonl.gz": "6d8967f941fb61fb3279bd80b416635e128fe7e9cdfdfde2926204f17c0763ed",
+    "results/compact-cached-learning/cost/0/own-warms.jsonl.gz": "b9cffc67ce97eaa8f696e3d5c6310d295acac6c1e602d51cbcd084820dc3d56a",
+    "results/compact-cached-learning/cost/0/own.json": "d6493151ef03386f454c7c91825e4e2139ac25e57fb13c6906ed5cbd10cae143",
+    "results/compact-cached-learning/cost/0/report/arm-points.csv": "a1c0c97a66ee7fbbc70432c71d3825c89c2eabc9375c9ec3f0775297669d26c1",
+    "results/compact-cached-learning/cost/0/report/fixed-conditions.csv": "1dfcda11283a01124e2f0c345c07cfbc1950d28d778788762937d774304fd7ce",
+    "results/compact-cached-learning/cost/0/report/fixed-gain.png": "5f0dc799441190491d8a35029f7dca79183139a82673090bbc7883d8005b2f44",
+    "results/compact-cached-learning/cost/0/report/learning.png": "13c5f22af2941b2fa0e6c1aeac9f00299d0883472125a12932d1df2dc2ef2ad9",
+    "results/compact-cached-learning/cost/0/report/paired-gaps.png": "876dc09c37f30fe1b110df4392412e4c1047203e66328b3e3dd24e2fcfc3882c",
+    "results/compact-cached-learning/cost/0/report/summary.json": "782e9121f4d81acba6986ae67d69b018a05931233104defc850242da84fea7a6",
+    "results/compact-cached-learning/forecast.json": "114ce6690413cfe51871b8ffbedce6a6d6adb82726db39d383d90098778f3a77",
+    "results/compact-native-profile/pair/pair.json": "bd2a21495194d87d2d1079eb6c866921b77e8d4a4f579dcf6e9facb9d6f4ef83",
+    "results/compact-native-wall-profile/report/all-parent-functions.csv": "58cfaf515da0cadb925ecbf54a46f60f29f4fe771f9644ba78796ad9c14a09b7",
+    "results/complete-reader-helper-trace/pair/observed/child.json": "697c1050dff9c8a9006459576b2a349a85f408d299b10cc445185c92f8bce6e2",
+    "results/grouped-depth-check/pair/original/child.json": "ab0e62b1073e9e83b4efcdc141718c548c31b2e44069e878b7557a8dbeeb7e4c",
+    "results/grouped-depth-check/pair/original/constructors/constructor-events.jsonl": "7882f18bf56449c7b93b945bb93a0f9f478f41a712306cf16bab0f39b42941b4",
+    "results/grouped-depth-check/pair/original/constructors/constructor.json": "bb59c6242ca6a07b0d5a437217a5c7a836b4ded4dc07b931ccf1715ee640e4d6",
+    "results/grouped-depth-check/raw-pair-manifest.json": "77867ceaf24202a79ab2f7077684e441bbcb755b26f9efbc3376a6c4f981ca5d",
+    "results/grouped-depth-check/report/render-manifest.json": "8d82fed74d46cfe68db2c3d54b93def982df83db3f02b673d93af7b78de45757",
+    "results/grouped-depth-check/report/summary.json": "a95a8f59517a0a2457563731e996d015870e8f202cea1eb10512931857e5bea6",
+    "results/matrix-phases/pair/original_profiled/child.json": "e9c5775e88e27de0d47db5b7817bd1d463144929c91d3a2979e41c79c318cb80",
+    "results/matrix-phases/raw-pair-manifest.json": "542aed85a5ecd1267c2f9ecdec6939885b40cbd2a0c154080f7a818a13ec0775",
+    "results/matrix-phases/report/encodings.csv": "360b9aeefbe33567edad6f61600920a941657266c890be97d0d89e625c7a9aec",
+    "results/matrix-phases/report/encodings.manifest.json": "31a43d4747eb1919c66684b6bc7b131e049c78b218600cc27cba4d0fd931c9b8",
+    "results/matrix-phases/report/local-verification.json": "d57fd75af27afa0301713522e285224bc897799de5ba96852fbd052f54ee8934",
+    "results/matrix-phases/report/render-manifest.json": "aedc8d88c58920ea0e51c385e9014a04849745bced7d8498af8022b0d77b94f8",
+    "results/matrix-phases/report/summary.json": "9d2b9908a4ec6889a50e53a28d68aee04d636c2f29a0bff8d859ddf3fb41bf84",
+    "results/original-audit-helpers/pair/observed/child.json": "7c746a23cf72b4d60c38d9ac1c999487fa2dce1a8b997b2ce445b70c91c4850e",
+    "results/original-audit-helpers/raw-manifest.json": "8a554dc24dfdf1ac7cdd9a14419d57a906ceb6d8869a2701a2340ee274fc1d07",
+    "results/reader-boundary-reconciliation/summary.json": "593df042b166f618a20410c3da8b24c11322c038b4ecda7a9551da1ada819a06",
+    "results/reader-helper-trace/followup/base-distributions.json": "d6304ca8dc1bf9724fa4eaf6f9aa4c8fcb1d49fb7376b10f00a2b3532695cb28",
+    "results/reader-helper-trace/followup/qualified_optional-distributions.json": "45235545202884c4a9c44cb8fa0a8c4e490189c865fbd3ebcffdb8fda1a75138",
+    "results/reader-helper-trace/pair/control/child.json": "64442a21eaa1167d54fea6d6b675067747953efc2ba313afd59ce747cc3e4f1f",
+    "results/reader-helper-trace/raw-manifest.json": "2f25d7e9840b52a3170a15eb189de1634aa85acc1e324f720093528796b0343f",
+    "results/reader-load-cpu/pair/profiled/child.json": "47221eb59abb259f999859ed53673d8faf3e7cfe27d6cafc1393aed11ea164d4",
+    "results/reader-load-cpu/raw-manifest.json": "6723247e46d2d20a2a6f31fcadedc67d4f651c23fff4ef582049a31ef16407f4",
+    "results/reader-load-cpu/report/render-manifest.json": "9fb2aef114eb9494b8758ac337bf7ada52bc86059cb768dc791f668b3633aa7b",
+    "results/reader-load-cpu/report/summary.json": "e3bf349650ea4fb6216095c8cba8372a22a0d724cdf4970040a1b08ec8b08775",
+    "results/source-helper-trace/pair/control/child.json": "1c0b3921fc297caf5b9eb268322d841c8675bb217c50f78cd4590464c72abe90",
+    "results/suit-lookup/pair/lookup/child.json": "ba8c0b641f9e5ff853ca3d0dca797e2a833e2355a2e05c4077b287529fc4bc53",
+    "results/suit-lookup/pair/original/child.json": "98e067841f4ef9ac83766d23fc5dcbf1f55346fee9bd4788910c2f4c20636b33",
+    "results/suit-lookup/raw-pair-manifest.json": "6eeae0e968539acf579369a5eeb7b637bc6b62c56c12e7b2280db5de20c0c3fb",
+    "results/suit-lookup/raw-software-manifest.json": "3baa0fbcead6c66b016816ded68fb1edaf639144ae9457ee024284e9efd85cd2",
+    "results/suit-lookup/report/local-verification.json": "c84ccfcf21c7e751afd2dfd8952c6657da948e35a06a4deb2a6f8df6f93bdafe",
+    "results/suit-lookup/report/render-manifest.json": "9e485e51e006533b268c705919ff43f2d6defc7d02faa8540ba185622761cbf9",
+    "results/suit-lookup/report/summary.json": "9a2377b82a3f15f94c44c48f947a49d49e0a3d8b9f391215383d39bee3c46c30",
+    "results/suit-lookup/software/proof.json": "0362d13b0bead0ec06685a09171652fbb282266b56a64d71857535d60f4b6259"
+  },
+  "lookup_table_sha256": "f422fabd71dd88fc9b169442354ac8a8d017be6debe69f170548f1064c8c3ec8",
+  "maximum_builder_calls_per_child": 512,
+  "maximum_child_seconds": 900,
+  "maximum_kernel_requests": 10000000,
+  "maximum_pair_seconds": 1800,
+  "maximum_selected_calls": 4096,
+  "maximum_selected_calls_pair": 4096,
+  "maximum_selected_calls_total": 4096,
+  "maximum_software_proof_seconds": 180,
+  "metadata_probe": {
+    "argv": [
+      "sysctl",
+      "-n",
+      "machdep.cpu.brand_string"
+    ],
+    "category": "sysctl cpu-brand",
+    "path": "/usr/sbin/sysctl",
+    "sha256": "c3e3632b35887ad30a21fa14a8b58c9abc77e6df4561cba306fd2df9a12a9e1a",
+    "success_required": true
+  },
+  "new_attempts_after_registration": 1,
+  "order": [
+    "all",
+    "reduced"
+  ],
+  "original_mode": "uncached",
+  "original_own": "results/compact-cached-learning/cost/0/own.json",
+  "poker_training_performed": false,
+  "preserved_source_anchor": "results/suit-lookup/pair/original/child.json",
+  "preserved_source_count": 415,
+  "proof_encodings": [
+    "exact",
+    "legacy_b8",
+    "public_b8",
+    "canonical_b8",
+    "texture_b8"
+  ],
+  "proof_model": "results/card-models/potential-8.json",
+  "proof_spot": "configs/learning-spots/dev_low_oop.json",
+  "reference_output_used_in_training": false,
+  "reference_strategy_input_permitted": false,
+  "regions": [
+    "matrix_build",
+    "spot_tree_build",
+    "checkpoint_replay",
+    "comparison_inputs",
+    "legacy_inputs",
+    "sampled_source_replay"
+  ],
+  "required_distributions": {
+    "matplotlib": "3.11.2",
+    "numba": "0.68.1",
+    "numpy": "2.4.6",
+    "open-spiel": "2.0.2",
+    "pokerkit": "0.7.7",
+    "treys": "0.1.8"
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.17"
+  },
+  "save_reserve_seconds": 120,
+  "schema": 1,
+  "scope": "EXACT_PRIVATE_MINIMUM_SUIT_CANDIDATES_DIAGNOSTIC_NOT_TRAINING_ADMISSION",
+  "software_board_lengths": [
+    3,
+    4,
+    5
+  ],
+  "software_cases_per_board": 1024,
+  "software_fixed_calls": [
+    "wrong_hole_empty",
+    "wrong_hole_one",
+    "wrong_hole_three",
+    "wrong_board_one",
+    "wrong_board_two",
+    "wrong_board_six",
+    "duplicate_hole",
+    "duplicate_board",
+    "overlap",
+    "negative_card",
+    "high_card",
+    "bool_card",
+    "float_card",
+    "valid_lists",
+    "tuple_list_concat",
+    "keyword_valid",
+    "unknown_keyword"
+  ],
+  "software_fixture_seed": 20261502,
+  "software_order": [
+    "original",
+    "all",
+    "reduced"
+  ],
+  "software_preflop_order": "all2652ordered_distinct_card_pairs",
+  "software_preflop_pairs": 2652,
+  "software_table_entries": 1248,
+  "software_valid_cases": 5724,
+  "support": "scripts/suit_candidates_support.py"
+}

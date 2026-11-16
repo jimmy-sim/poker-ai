@@ -5589,3 +5589,52 @@ Final relevant909eachPASS53.68/53.43s, source/runtime guards retained. Journal12
 updated. Next prospective question: private-hole minimum/tied-suit candidate
 factorization, independently proven before any new cost study. No production/
 new-trajectory/default/quality admission;933.89/900and2.390vs1failures remain.
+
+
+PR #77 closing verification: both final hosted jobs in43789578292 pass4397/
+64skip/150deselect+existing warning (902.83/783.30s), actual Python/NumPy/alluv
+and complete source/report test-merge trees verified. History merge63535047;
+fresh snapshot+guarded main FF, saved CLI==report and167fixtures12.58s pass.
+All ten user paths' bytes/status/changed-path index/bothpatches preserved AFTER
+checks. [Closing11raw+manifest12](../results/suit-lookup/final-ci/manifest.json)
+are batched with this substantive source. Issue4 remains open, no production or
+strategy-quality admission from the small cost diagnostic.
+
+## 2026-11-15 — Private-minimum suit factorization, implementation
+
+[Prospective issue4 plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6905294880)
+before code: exact lex minimum min(H_p,B_p)=(h*,min B_p over H_p=h*). Controlall24
+LUT vs reduced tied maps, identical guards/fields. Static52x52 ordered-hole table,
+52duplicate sentinels/2652valid slots, tie counts2:1872/4:156/6:624. Fresh private/
+outer tuples, original validation/fallback and alias/primary-failure restoration.
+All415 earlier scientific files preserved; add entry/support/config for418,68pins.
+ConfigSHA593072acc4d94403378675dc7550131e75373a1f159c5f04a9337edbf007cb09,
+geometrySHAf1cf3685244285e88220e82b5c274fd96b12f07acf4cd17a106bf079ce2cfc8d.
+
+Focused189development fixtures pass33.61s on actual311/NP246; lint/format/strict
+new-file types pass. Fictional qualification in own small-builder/data-parser
+fixtures is not formal source qualification or a new actual audit. Tests cover
+allorderedholes/ties/suit-inputproperties/invalidcalls/dependencies/counters/
+restoration, source/caps/publication/preconditions/failures and original/all/reduced
+software record parsing. Four rebound-schema regressions catch bool/int equality
+before the fix, four other new cases already reject; canonical typed comparisons
+then reject all and the full focused set passes. No algorithm/cap/seed/gate change.
+
+[Protocol](suit-candidates.md) fixes full6-role qualification and operatorPUB,
+one180s own proof (all2704geometry/1248translation entries,5724valid original/all/
+reduced cases,17fixed outcomes each,5fullbuilder encodings each), proofPUB before
+ONEall/reducedpair900each/1800shared/120save. Shared software-only seed20261502,
+all historical poker RNG/caps/gates unchanged;1538timers each3076<4096, no phase/
+dense profiling. Current code is a private experiment only; no actual proof/pair
+or timing result yet. Journal124 explains the math and parser fix; AI-assisted,
+human time not recorded. Full production/fresh/default/quality admission remains
+separate; old933.89/900 and2.390vs1failures preserved.
+
+
+Both actual31117/NP246 and31215/NP254 focused sets pass189 (33.61/31.94s).
+Full-project Ruff lint/format926, strictmypy776 pass; focused relative links,
+anchors/fences and images pass. All415prior sources/68pins/11PR77closing raw
+receipts remain byte-exact. Implementation/config/data checked before source
+freeze. Complete immutable-head local base/optional roles and both source-bound
+hosted roles still required before any formal proof/capture. No actual new timing
+or quality claim; source-only publication will wait for all four local roles.
