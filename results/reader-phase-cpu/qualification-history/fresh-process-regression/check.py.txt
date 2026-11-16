@@ -1,0 +1,4 @@
+import pyspiel
+import pytest
+assert pyspiel is not None
+raise SystemExit(pytest.main(['-q','tests/test_reader_phase_cpu.py','tests/test_reader_phase_observer.py','-k','actual_archived_software_read_preserves_computed_math or proof_prerequisite_failure_is_retained']))

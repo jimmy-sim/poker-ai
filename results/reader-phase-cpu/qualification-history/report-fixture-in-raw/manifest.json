@@ -1,0 +1,17 @@
+{
+  "status": "one_report_fixture_failed_before_source_qualification",
+  "base_commit": "9a445959fd449c838ac5286c25146b96bfc1aa31",
+  "preserved_scientific_files": 436,
+  "preserved_source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+  "result": "1 failed, 82 passed in 22.69s",
+  "reason": "The test selected a report destination inside its raw fixture, which the new runner correctly refuses. Move report output to a separate temporary folder and explicitly test inside-raw rejection. No formal capture or source qualification occurred.",
+  "files": {
+    "configs/reader-phase-cpu.json": "bc570fc349b20f40b98777fe82261bdf2764642660e444be7cf1296dd33d3bc1",
+    "optional311.log": "3967de832e917f329f51389e932198652aa90118b75b79c07079e9666c539b22",
+    "scripts/profile_reader_phases.py.txt": "4b97331908a845e24321a5bd07f6dd33826429ad09b459d29464c1cdc0b7e67c",
+    "scripts/reader_phase_support.py.txt": "d375a29a621fa55a2ff46db77807c77f562089d5c0d6bf21fcb95df4565678f7",
+    "tests/test_reader_phase_cpu.py.txt": "afa04d6694cb289314379231dfb31424e354232cbd6f975db94418c8ce4095ec",
+    "tests/test_reader_phase_observer.py.txt": "3fdb79539d0e1d6d8bc37e1ffc8c66f398dce6d37d4dbffcec93bd35b22dbf77"
+  },
+  "archived_python_suffix": ".py.txt preserves exact failed-source bytes while excluding historical snapshots from formatting hooks"
+}

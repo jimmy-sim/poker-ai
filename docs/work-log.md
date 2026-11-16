@@ -6015,3 +6015,159 @@ visual review](../results/checkpoint-replay-cpu/report-verification/manifest.jso
 are retained. Both actual figures inspected; all axes/labels readable. No
 collection source/data changed or measurement rerun. Final local/optional and
 exact-report-head hosted checks remain before merge.
+
+
+## November 16 — checkpoint measurement merged; reader phases registered
+
+[PR #82](https://github.com/jimmy-sim/poker-ai/pull/82) history-merged at
+`9a445959fd449c838ac5286c25146b96bfc1aa31`. All six final roles bind head
+`32ab60d`: bases 4,801 passed / 65 skipped / 150 deselected (621.20 / 595.10s),
+optional suites 1,704 each (319.14 / 260.44s); hosted workflow 43855113726 passes
+both jobs (1,397.57 / 922.57s tests), with the existing 8.88e-16 historical
+roundoff warning below 1e-12. Actual Python/NumPy/all uv and entire tested tree
+`5c1b29e19b078ab51441db9b25684f2b161c2dc8` verified. Actual main 3.11.17/2.4.6:
+136 focused tests pass in 19.58s; complete saved pair authenticates, all three
+numerical exports byte-identical. Fresh snapshot/guarded fast-forward and
+post-check verification preserve all ten user result bytes, status, changed-path
+index entries and both patches. [Full closing receipts](../results/checkpoint-replay-cpu/final-ci/manifest.json)
+are batched here, without a status-only commit or retrospective source admission.
+
+The [next phase-CPU question](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6914870507)
+was public before implementation: seven named source-load/stand-in-load/replay
+calls across the original three complete reads, with a fixed 16-call cap. All
+436 preceding scientific files and historical results stay unchanged. New private
+observer/runner/config use a separate source identity and output namespace.
+Thirty-five observer tests pass on each actual runtime; the first 27 runner tests
+pass on 3.11. They distinguish actual archived fictional-game replay from
+synthetic loader forwarding. Saved-pair clock checks also require individual
+worker duration to fit within its enclosing body and both child executions to
+fit the shared clock. These are software checks, not formal phase results.
+Complete source checks, published own proof, raw-before-analysis pair and final
+verification still precede any result or merge. Fixed 180/900/1,800-second caps,
+120-second failure retention, seeds, math and admission criteria stay unchanged.
+
+The production 912.5424664160237 / 900-second forecast and 2.390% / 1% accuracy
+gates remain failed; no fresh trajectory, stronger/default/fresh/global claim or
+optimizer follows these fixtures. Learning journal step 127 explains the
+question. Codex-assisted; human hands-on time is not recorded.
+
+Development optional check: one report fixture failed (82 other tests passed)
+because it requested a separate report inside the raw folder. The runner refused
+that destination as designed. The corrected fixture uses a fresh external
+folder and explicitly checks inside-raw refusal; both focused report tests pass
+in 12.27s. Exact failed code/log retained under
+`results/reader-phase-cpu/qualification-history/report-fixture-in-raw`. No formal
+capture or qualified source had been published.
+
+Administrative operators: all six real temporary-process cases pass in the
+required process-access context; the first restricted-context timeout check
+failed when `ps` was denied, and its exact code, log and partial fixture files
+remain in operator history. Four raw-retention/refusal cases and ten synthetic
+publication-boundary cases pass. No formal collection ran. Both installed
+OpenSpiel2.0.2 Apache2.0 license files were read/checked against the existing
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` pin;
+comparison-only use and strategy isolation remain unchanged.
+
+
+Initial source `706d5d3`: bases 4,887 passed / 66 skipped / 150 deselected each
+(642.84 / 612.18s), but both combined optional suites fail two new tests with
+1,789 other passes (341.58 / 278.73s). Earlier tests had imported the reference
+in the shared pytest parent. The preserved own-only guard correctly rejected
+that process. Two tests now use fresh subprocesses, matching the actual CLI;
+all 439 scientific files retain fingerprint
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+No runtime guard, algorithm, cap or tolerance was changed. Exact failed-cohort
+logs, receipts, expected source and original tests are [retained](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json).
+Deliberate reference-preloaded-parent regression passes five cases on each
+runtime (7.56 / 5.96s); the first 3.12 driver path error happened before tests
+and is retained too. Full strict typing (806 files) and Ruff pass. All four
+local source roles and both same-head hosted jobs still need to qualify the
+corrected test revision before formal collection. No source push or formal
+phase run has occurred; first push batches the original commit and this fix.
+
+
+November 16 — All six source roles qualify `4bef6ae` / 439-file fingerprint
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+Bases 4,887 / 66 skipped / 150 deselected each (648.19 / 616.01s); optional
+1,791 each (337.25 / 278.26s). Workflow 43868816929: initial hosted 3.11 job
+133304229996 cancelled at the existing 25-minute job limit after 84%, without
+an assertion failure. Official annotations/full raw log retained. One unchanged-
+source software retry, job 133321132029, passes all 4,887 / 66 / 150 plus the
+existing historical warning in 1,115.64s. Original 3.12 job 133304230313 passes
+in 875.19s; attempt2 logical job 133321136325 carries forward byte-identical
+logs and original timestamps, not another execution. Both actual interpreters,
+NumPy, all uv choices and complete tested checkout `ca7d1b2` / tree
+`dbae69e8b69991425c5895aac7ec64ae784e3ae7` equal to the local head are verified.
+[Six-role archive](../results/reader-phase-cpu/checks.json) retains every attempt,
+exact source map, nine tested operators, installed licenses and fixture history.
+
+Separate software-test duration diagnosis: unchanged local base selection
+4,887 / 66 / 150 passes in 594.52s (595.3704771669873s complete wrapper),
+actual 3.11.17/2.4.6, source identical before/after. Largest individual costs:
+old 40-policy binding 44.57s, complete reduced-study publication 31.28s; new
+archived-reader call and runner-proof setup about 4.3s each. These are local
+software-test durations, not a causal hosted-runner diagnosis, poker strength
+or production cost. The original workflow and all scientific caps stay fixed.
+
+Both actual runtimes resolve, patch and restore all 40 proposed report-guard
+entry points without executing a report, game or reference. This checks static
+import/descriptor setup only; actual numerical-export reproduction still waits
+for the complete published pair. All raw logs retain original BOM/whitespace.
+The qualification and operator archive is published before a fresh own-only
+proof; no formal phase measurement, new reference construction or new Hold'em
+trajectory has run. [PR #83](https://github.com/jimmy-sim/poker-ai/pull/83) remains
+draft through the required proof, pair, report and final checks.
+
+
+November 16 — Fresh own-only phase proof follows public six-role qualification
+`dde10b3` and source/operator readiness verification. Complete outer CLI
+5.341215124994051s; complete inner child 5.2538408339896705s, under 180s.
+One actual archived software read matches the separately computed ordinary
+result exactly; two explicit synthetic phase-shape reads exercise six forwarding
+fixtures, seven selected calls overall, full restoration. No real cost-loader
+coverage or new independent poker-math claim. Reference and poker-training flags
+remain false. Source 439-file fingerprint stays
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+[All 13 raw files](../results/reader-phase-cpu/software-raw-manifest.json), complete
+outer/inner clocks and [source readiness](../results/reader-phase-cpu/source-published-verification.json)
+are retained in this own-before-reference publication. Public-boundary validation
+remains before any fresh reference construction. No formal phase audit pair or
+new Hold'em trajectory has run; failed budget/accuracy gates remain unchanged.
+
+
+November 16 — The single complete reader-phase pair finishes after published
+own-proof verification, source head `262e7931c5aa9619be619d2bd13a4cc72fd6bbd1`.
+Ordinary/observed complete children: 393.5271485419944 / 395.7039985000156s;
+complete outer CLI: 790.3233785830089s. Exact complete scalar/computed-replay
+identity and full restoration pass. Original three reads, 432 profiles, 1,152
+fixed conditions and three reference workers remain; caps stay 900/1,800s.
+[All 27 raw files](../results/reader-phase-cpu/pair-raw-manifest.json), outer
+metadata/log and the earlier [own-publication verification](../results/reader-phase-cpu/software-published-verification.json)
+are retained in this raw-before-analysis batch. Ignored originals are untouched.
+No phase analysis, optimizer, new trajectory or admission claim is included.
+Public-boundary verification, report reproduction and final checks remain.
+
+
+November 16 — Raw pair publication `fb87f79` passes source/raw/clock and earlier
+own-proof publication verification before phase analysis. Saved report:
+source-load CPU 77.699410 / 78.599851s, stand-in-load 2.214787 / 2.093312s,
+own-replay 49.279233 / 49.743959s, remaining read 0.586987 / 0.656897s;
+complete cost-read CPU 129.780417 / 131.094019s. Actual software read CPU
+2.010200s, of which own replay 1.563982s. Seven calls, exact full result identity
+and restoration pass; full retained inventory remains 3 reads / 432 profiles /
+1,152 conditions / 3 reference workers. Complete child walls 393.5271485419944 /
+395.7039985000156s, parent body CPU 263.988770 / 266.671255s, summed parallel
+worker body CPU 370.331519 / 369.548862s; these clocks are not interchangeable.
+Both actual PNGs visually inspected.
+
+Actual 3.11.17/NumPy2.4.6 and 3.12.15/NumPy2.5.4 report reproduction passes with
+all 40 numerical paths blocked after static import setup: all three numerical
+exports byte-equal, zero forbidden calls, raw inputs unchanged. Guard execution
+10.826516333996551 / 11.016834832989844s, not trajectory replay or production
+costs. [Receipts](../results/reader-phase-cpu/report311.json) and
+[second runtime](../results/reader-phase-cpu/report312.json), logs and the
+[published-pair verification](../results/reader-phase-cpu/pair-published-verification.json)
+are retained with the report. Current source loading is the next target to
+investigate; no causal speedup or new optimizer follows this single ordered
+pair. Existing 912.54/900 budget and 2.390%/1% accuracy failures remain. Final
+four local roles and both same-head hosted jobs still precede merge.

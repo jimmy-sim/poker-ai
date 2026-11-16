@@ -1,0 +1,177 @@
+# Follow the remaining reader work
+
+The [checkpoint measurement](checkpoint-replay-cpu.md) found about 97–98 CPU
+seconds per cost read outside its selected checkpoint callsite. This follow-up
+separates three current phases: loading the scientific inputs, loading the saved
+own-policy stand-ins, and replaying the own archive. It does not change a poker
+decision or introduce a faster implementation.
+
+The [prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6914870507)
+was published before implementation. The complete comparison now passes with
+identical calculated results; the largest measured phase is source loading.
+
+## The boundaries
+
+Only three aliases in `compact_suit.cli` are observed: `load`, `load_standins`
+and `replay`. Their reusable defining functions stay unchanged. The original
+software read calls replay once; the two cost reads call all three phases in
+order. That gives seven selected calls, plus three whole-read clocks. The fixed
+call limit is 16. Calls elsewhere are outside these selected boundaries.
+
+The selected phases are sequential. Their CPU times plus the remaining read CPU
+equal the complete read CPU, within the existing 1e-9-second roundoff allowance.
+A phase includes all its nested work and measuring overhead; it does not identify
+one serializer or leaf function. Parent CPU, worker CPU and elapsed time remain
+separate.
+
+## Check the observer first
+
+The new observer reuses the checkpoint observer's clock validation, read lifecycle
+and restoration machinery. Synthetic fixtures check forwarding, call inventories,
+disjoint arithmetic, corrupt records, errors, ownership, caps and cleanup.
+They do not establish real cost-loader behavior. A separate test runs the actual
+saved fictional-game reader and requires identical complete calculated results.
+
+Before formal collection, all four local roles and both hosted jobs must qualify
+the complete source on the intended runtimes. The own-only proof then compares
+ordinary and observed archived software reads under the existing 180-second cap,
+with synthetic loader-forwarding checks separately labeled. This is saved
+software evidence, not new poker evidence or cost-branch coverage.
+
+## Keep the complete comparison
+
+One ordinary/instrumented pair retains the original three reads, 432 profiles,
+1,152 fixed conditions, three reference workers and complete validation path.
+Limits stay 900 seconds per child and 1,800 seconds shared; the 120-second failure
+reserve only saves partial outputs. Own evidence must be public before the fresh
+reference, and raw pair evidence before analysis. Exact complete results,
+inventory and restoration are required. No favorable retry or smaller workload.
+
+All 436 preceding scientific source files and historical data stay unchanged.
+OpenSpiel 2.0.2 remains a pinned Apache 2.0 comparison reference; its strategies
+cannot enter training. The installed license was read again on November 16 in
+both optional environments; both match SHA-256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+[Solver versions, licensing and comparison-only rules](solver_validation.md)
+remain in force. A saved-data report must reproduce on the second runtime
+with game execution blocked before final checks and merge.
+
+This diagnostic cannot replace the production forecast. The 912.54 / 900-second
+budget failure and 2.390% versus 1% accuracy failure remain. One ordered pair
+does not establish stable overhead, a causal speedup or competitive full-game
+strength.
+
+
+The first complete optional checks caught two own-only tests running in a shared
+process that had already imported the reference solver. The guard correctly
+stopped them. The corrected tests use fresh processes, including a regression
+with the reference deliberately preloaded in the parent. The scientific source
+and guard are unchanged; the [failed check records](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json)
+are retained, and complete qualification repeats before publication.
+
+
+## Qualified source — November 16
+
+[All six source checks and tested operators](../results/reader-phase-cpu/checks.json)
+qualify revision `4bef6ae`: both local bases pass 4,887 tests, both relevant
+optional suites pass 1,791, and both hosted roles pass on the intended runtimes
+and complete source tree. The 439-file fingerprint is
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+
+The first hosted 3.11 job reached the unchanged 25-minute limit at 84%, with no
+assertion failure in its partial log. One unchanged-source software retry passes
+in 1,115.64 test seconds. The original 3.12 pass takes 875.19 seconds; GitHub
+carries that success into the retry rather than running it again. Both executions,
+the cancellation, and the earlier test-isolation failures remain. This is source
+qualification, not a favorable retry of a scientific measurement. These checks
+preceded the fresh own-only proof and complete pair below.
+
+
+## Own-only proof — November 16
+
+The single registered [proof and all 13 raw files](../results/reader-phase-cpu/software-raw-manifest.json)
+finish in 5.341215124994051 seconds for the complete CLI and
+5.2538408339896705 seconds for its complete child, within 180 seconds.
+The actual archived software replay agrees exactly before and during observation.
+Two separately labeled synthetic reads exercise six forwarding boundaries;
+seven selected calls are retained overall, with full restoration.
+
+These fixtures do not claim real cost-loader coverage or new independent poker
+math. Reference construction and poker-training flags remain false. This own
+publication preceded the fresh reference. Public-byte/source/clock verification
+passed before the single complete audit pair.
+
+
+## Complete raw pair — November 16
+
+After the published own proof verified, the single fixed pair completes with
+exact complete scalar and calculated-replay identity. Ordinary and observed
+complete children take 393.5271485419944 and 395.7039985000156 seconds; the
+complete enclosing CLI takes 790.3233785830089 seconds. The original 900-second
+child and 1,800-second shared limits hold.
+
+[All 27 raw files](../results/reader-phase-cpu/pair-raw-manifest.json), including
+the complete outer clock, are retained before analysis. The ignored originals
+remain byte-identical. [Own-publication verification](../results/reader-phase-cpu/software-published-verification.json)
+records the earlier boundary. Raw publication and its verification precede
+phase analysis, saved-data export reproduction and final local/hosted checks.
+No phase breakdown or optimization was claimed in that raw publication.
+
+## Result
+
+The complete raw pair was published at `fb87f79` and verified before this analysis.
+The [saved-data report](../results/reader-phase-cpu/pair/report/summary.json)
+separates sequential, inclusive parent CPU seconds:
+
+| Read | Source loading | Saved-policy loading | Own replay | Remaining work | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Software archive | 0 | 0 | 1.563982 | 0.446218 | 2.010200 |
+| Cost before reference | 77.699410 | 2.214787 | 49.279233 | 0.586987 | 129.780417 |
+| Cost after reference | 78.599851 | 2.093312 | 49.743959 | 0.656897 | 131.094019 |
+
+Source loading is about 60% of each cost read. This includes constructing and
+checking historical scientific inputs; it is not a measurement of disk I/O alone.
+Own replay is about 38%. Loading saved policy values is a much smaller phase.
+The software read does not call either loader, so those zeros mean no call.
+The ordinary arm's selected zeros mean its timers were disabled.
+
+![Sequential phases of the three complete reads](../results/reader-phase-cpu/pair/report/reader-phases.png)
+
+Both arms retain all three reads, 432 profiles, 1,152 fixed conditions and three
+reference workers. Seven selected calls and complete restoration pass. Complete
+scalar results, calculated replays, worker outputs, normalization and cache
+inventories agree exactly. The two child clocks are 393.5271485419944 and
+395.7039985000156 seconds. Parent body CPU is 263.988770 and 266.671255 seconds;
+summed parallel worker body CPU is 370.331519 and 369.548862 seconds. These are
+different clocks: parallel CPU cannot be added to parent CPU to infer elapsed time.
+
+![Complete elapsed time and separate CPU clocks](../results/reader-phase-cpu/pair/report/complete-clocks.png)
+
+The report's three numerical exports reproduce byte for byte on actual
+Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4, with 40 game,
+replay, score and reference entry points blocked after static import setup.
+No forbidden call occurs and raw inputs stay unchanged. The
+[3.11 receipt](../results/reader-phase-cpu/report311.json) and
+[3.12 receipt](../results/reader-phase-cpu/report312.json) describe this saved-data
+check; it does not establish real-trajectory replay on the newer runtime.
+Both rendered figures were inspected. Final full local and hosted checks remain.
+
+The next question is which work *inside the current source-loader boundary*
+accounts for those 78–79 CPU seconds. Earlier isolated profiles do not answer
+that question for this complete reader. No optimizer or cache is introduced here.
+One ordered pair cannot establish stable overhead, causal speedup or a replacement
+production forecast. The existing budget and accuracy failures remain.
+
+## Explore the saved result
+
+From the repository, open `results/reader-phase-cpu/pair/report/reader-phases.png`
+or read `reads.csv` in the same folder. To regenerate the report in a fresh,
+separate ignored folder, using an environment with the locked research extra:
+
+```sh
+.venv/bin/python scripts/profile_reader_phases.py report \
+  --output results/reader-phase-cpu/pair \
+  --report-output results/runs/reader-phase-report-local
+```
+
+This authenticates and plots saved evidence; it does not run new training.

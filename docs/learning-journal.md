@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
+
 - [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
 
 - [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
@@ -106,9 +108,10 @@ the **1% target**. Competitive full-game strength remains unestablished.
 Checking a proposed training comparison is itself expensive. The latest complete
 validation pipeline passes correctness checks but its conservative audit forecast
 is **912.54 seconds against a 900-second limit**. The next training comparison
-remains blocked. The latest measurement separates checkpoint decoding
-from score recomputation. Most whole-read CPU lies outside that checkpoint
-callsite; the next question is which loading/checking phases account for it.
+remains blocked. The latest complete diagnostic separates loading from replay:
+about 78–79 CPU seconds per cost read load scientific inputs, while 49–50
+replay the saved strategy. Results stay identical with observation enabled.
+The next investigation follows the work inside that input-loading phase.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6437,3 +6440,65 @@ it replaced a class-method descriptor too early. The corrected guard preserves
 descriptors and blocks the actual entry points after static metadata loads; its
 failed and passing records remain. The measured audit was not rerun. Final local
 and hosted checks still precede merge.
+
+
+PR #82 is now merged. All six final roles pass: 4,801 base tests and 1,704
+optional tests on each local runtime, plus both same-head hosted jobs. The actual
+main checkout passes 136 focused tests and reproduces all three saved numerical
+exports exactly. All ten unrelated local result changes remain preserved.
+[Closing check records](../results/checkpoint-replay-cpu/final-ci/manifest.json)
+are published with the next substantive implementation batch, rather than a
+separate status commit.
+
+## 127. Separate loading from replaying the saved strategy
+
+**November 16, 2026 — issue #4: complete reader-phase comparison.**
+
+The checkpoint measurement explains only part of a complete read. This follow-up
+asks whether the remaining work comes from loading scientific inputs, loading
+saved policy values, or replaying decisions. The [plan and method](reader-phase-cpu.md)
+keep the original workload and limits. Only three named callsites are observed;
+the reusable scientific functions stay unchanged.
+
+**Example:** if a read spends 60 CPU seconds loading inputs, 10 loading values,
+25 replaying decisions and five on other checks, the separate phases add to 100.
+Those are illustrative numbers. In the actual two cost reads, loading scientific
+inputs takes **77.70 / 78.60 CPU seconds**, about 60% of each read. Own replay
+takes **49.28 / 49.74 seconds**, saved-policy loading **2.21 / 2.09**, and remaining
+work **0.59 / 0.66**. Loading includes constructing and checking the scientific
+inputs, not just reading files from disk.
+
+[The phase plot](../results/reader-phase-cpu/pair/report/reader-phases.png) shows
+those separate parts. [The clock plot](../results/reader-phase-cpu/pair/report/complete-clocks.png)
+compares complete elapsed time with parent and parallel worker CPU. CPU measures
+active work; parallel workers can accumulate more CPU seconds than the elapsed
+clock shows. The complete ordinary/observed runs take about **394 / 396 seconds**.
+
+The complete calculated results agree exactly, all seven selected calls are
+present, and every temporary binding is restored. All three original reads,
+432 profiles, 1,152 fixed conditions and three reference workers remain. The
+[own proof](../results/reader-phase-cpu/software-raw-manifest.json) was published
+before the fresh reference; [all raw pair files](../results/reader-phase-cpu/pair-raw-manifest.json)
+were published and verified before this analysis. The proof's actual archived
+software replay is separate from its synthetic forwarding fixtures; it claims
+neither real cost-loader coverage nor new independent poker math.
+
+Tests caught useful setup mistakes. One report test chose an output inside its
+raw fixture and was correctly refused. Two optional tests entered an own-only
+scope after another test had loaded the reference into their shared process;
+they now use fresh processes, matching the command. The original guard was not
+relaxed. A process-cleanup fixture initially lacked process-list access. These
+[failed records and fixes](../results/reader-phase-cpu/checks.json) remain. Source
+qualification passes 4,887 base and 1,791 optional tests on each runtime, plus
+both hosted roles. The first hosted 3.11 job reached its unchanged 25-minute
+limit; one unchanged-source software retry passes, with the earlier 3.12 success
+carried forward rather than rerun.
+
+The three report exports reproduce byte for byte on both actual runtimes with
+40 numerical execution paths blocked. No forbidden call occurs; raw inputs stay
+unchanged. Both figures were inspected. Final full local and hosted checks remain.
+The next question follows the largest phase inside the current source loader,
+without skipping verification. This diagnostic does not improve the strategy or
+replace the failed production budget and accuracy tests. Implementation,
+execution and explanation are Codex-assisted; personal practice and hours are
+not inferred.

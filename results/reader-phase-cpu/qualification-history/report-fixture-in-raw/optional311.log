@@ -1,0 +1,65 @@
+...............................................F........................ [ 86%]
+...........                                                              [100%]
+=================================== FAILURES ===================================
+__________ test_report_recreates_numeric_exports_without_mutating_raw __________
+
+saved_fixture = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-227/test_report_recreates_numeric_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x112862810>
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-227/test_report_recreates_numeric_0')
+
+    def test_report_recreates_numeric_exports_without_mutating_raw(
+        saved_fixture: Path, monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+    ) -> None:
+        pytest.importorskip("matplotlib")
+        from compact_suit import admission, cli
+    
+        def forbidden(*args: Any, **kwargs: Any) -> Any:
+            raise AssertionError("saved report started numerical work")
+    
+        monkeypatch.setattr(admission, "published", lambda *a: None)
+        monkeypatch.setattr(cli, "child_main", forbidden)
+        monkeypatch.setattr(cli, "read", forbidden)
+        before = {
+            str(p.relative_to(saved_fixture)): runner.digest(p)
+            for p in saved_fixture.rglob("*")
+            if p.is_file()
+        }
+        first, second = tmp_path / "first-report", tmp_path / "second-report"
+>       runner.report(ROOT, saved_fixture, first)
+
+tests/test_reader_phase_cpu.py:670: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/reader-phase-cpu')
+output = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-227/test_report_recreates_numeric_0')
+destination = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-227/test_report_recreates_numeric_0/first-report')
+
+    def report(root: Path, output: Path, destination: Path | None = None) -> None:
+        """Authenticate saved evidence, then render it without numerical execution."""
+        import csv
+        import importlib
+    
+        from compact_suit.admission import published
+    
+        saved = saved_pair(root, output)
+        for path in sorted(output.rglob("*")):
+            if path.is_file() and "report" not in path.relative_to(output).parts:
+                published(root, path)
+        folder = destination if destination is not None else output / "report"
+        if folder.exists() or folder.is_symlink():
+            raise FileExistsError(
+                "retain existing phase report; choose a fresh destination"
+            )
+        if destination is not None and folder.resolve().is_relative_to(output.resolve()):
+>           raise ValueError(
+                "a separate report destination must be outside saved raw evidence"
+            )
+E           ValueError: a separate report destination must be outside saved raw evidence
+
+scripts/profile_reader_phases.py:905: ValueError
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib:__init__.py:577 /Users/jimmysim/.matplotlib is not a writable directory
+WARNING  matplotlib:__init__.py:596 Matplotlib created a temporary cache directory at /var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/matplotlib-36wd7o7n because there was an issue with the default path (/Users/jimmysim/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+=========================== short test summary info ============================
+FAILED tests/test_reader_phase_cpu.py::test_report_recreates_numeric_exports_without_mutating_raw
+1 failed, 82 passed in 22.69s

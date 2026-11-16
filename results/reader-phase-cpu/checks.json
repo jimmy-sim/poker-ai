@@ -1,0 +1,160 @@
+{
+  "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4887 passed, 66 skipped, 150 deselected in 648.19s (0:10:48)",
+      "check_seconds": 664.6613468750147,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/base311.log",
+        "sha256": "876f638bed7529b7650b28083bfaec6f9a7ba82b4029a5dbafadd37a63848fd0"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4887 passed, 66 skipped, 150 deselected in 616.01s (0:10:16)",
+      "check_seconds": 664.8362932910095,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/base312.log",
+        "sha256": "0111be96d203f439be1ff106a808f0331a20352b0c3528947cc79f5e90441ece"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1791 passed in 337.25s (0:05:37)",
+      "check_seconds": 338.9747336669825,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/optional311.log",
+        "sha256": "f8af8d3c1b26f77c0bba2029c847cfbf6bce139246f1b2e734dff56de7ba4d6e"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1791 passed in 278.26s (0:04:38)",
+      "check_seconds": 280.1160979170236,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/optional312.log",
+        "sha256": "d42c2e46ffd7ad99edf331ed4ad04338d282cc61c473ea00ba946cdfc3a73b15"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-16T13:32:39.1059371Z 4887 passed, 66 skipped, 150 deselected, 1 warning in 1115.64s (0:18:35)",
+      "run_id": 43868816929,
+      "job_id": 133321132029,
+      "head_sha": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "ca7d1b2623c4d244d032224a42b6e46ec2a58c1a",
+      "actual_checkout_tree": "dbae69e8b69991425c5895aac7ec64ae784e3ae7",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 2,
+      "actual_execution_job_id": 133321132029,
+      "actual_execution_attempt": 2,
+      "reused_prior_success": false,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/hosted311.log",
+        "sha256": "439042d6d703855d5145d9861fba59ca051a149190b27601608f266d26b9c36f"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "checked_commit": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-16T12:56:17.7512692Z 4887 passed, 66 skipped, 150 deselected, 1 warning in 875.19s (0:14:35)",
+      "run_id": 43868816929,
+      "job_id": 133321136325,
+      "head_sha": "4bef6ae03a396441102b390d760c7409d68441ea",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "ca7d1b2623c4d244d032224a42b6e46ec2a58c1a",
+      "actual_checkout_tree": "dbae69e8b69991425c5895aac7ec64ae784e3ae7",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 2,
+      "actual_execution_job_id": 133304230313,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": true,
+      "log": {
+        "file": "results/reader-phase-cpu/checks/hosted312.log",
+        "sha256": "d253e71af3f99671e5618d964215f7f5d7c18f35da4882e5085f1906024fa58c"
+      }
+    }
+  ],
+  "operators": {
+    "run-reader-phases-source-v2-checks.py": {
+      "file": "results/reader-phase-cpu/checks/run_checks.py.txt",
+      "sha256": "cb4bb3c85487adbaf344d258a95d0f6f0ed6fe33d6f17123ba42a4e7f8119804"
+    },
+    "run-reader-phases-collection.py": {
+      "file": "results/reader-phase-cpu/checks/operator_launch.py.txt",
+      "sha256": "fe4244a5c7d465ed605537f0324429f43c87627410b5dfba6160ab7d4ed6090d"
+    },
+    "retain-reader-phases-collection.py": {
+      "file": "results/reader-phase-cpu/checks/operator_retention.py.txt",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e"
+    },
+    "verify-reader-phases-publication.py": {
+      "file": "results/reader-phase-cpu/checks/verify_publication.py.txt",
+      "sha256": "cc7cf76c41e9e84fe1ee0fc5dcbcb7b232f0b8887547d64bc0aafa5806d750a4"
+    },
+    "check-reader-phases-operators.py": {
+      "file": "results/reader-phase-cpu/checks/check_operators.py.txt",
+      "sha256": "6e805539728ea8e0ee3f5cb57f8de0a0b383c79791832959ed763192042e2be0"
+    },
+    "check-reader-phases-retention.py": {
+      "file": "results/reader-phase-cpu/checks/check_retention.py.txt",
+      "sha256": "5743fc5b49f247c21e092e58a8b13a1a6e1a4d45a10b375df9b5ec6df6ec79a7"
+    },
+    "check-reader-phases-publication.py": {
+      "file": "results/reader-phase-cpu/checks/check_publication.py.txt",
+      "sha256": "2a0697a57e7bb42a7c3deed92f03c91615aeb7cb7a874044c5ef06db1c17ca42"
+    },
+    "check-reader-phases-report.py": {
+      "file": "results/reader-phase-cpu/checks/report_execution_guard.py.txt",
+      "sha256": "e831fb8b0e4d7267309641121cfff299b7e1eece8d6efee3e760c72ca2b0f681"
+    },
+    "check-reader-phase-guard-setup.py": {
+      "file": "results/reader-phase-cpu/checks/check_report_guard_setup.py.txt",
+      "sha256": "4575945b3432114e33fc765d3f1d7253d9bf880bae514f5951702f523a052c47"
+    }
+  },
+  "scope": "All six roles on immutable439-file phase source; all436 predecessor scientific bytes and128 pins unchanged. Actual runtime/all uv/entire tested Git tree verified. Unit tests may exercise fictional and existing fixture solvers; no formal phase proof, fixed audit pair or new real trajectory has run. Publish these six roles and exact tested operators before fresh own-only proof, then publish own raw evidence before any new reference. The initial hosted3.11attempt exceeded the unchanged25-minute job limit and is retained; one unchanged-source software retry supplies the qualifying3.11execution. The successful3.12payload is carried forward, not claimed as a new execution. No scientific capture was retried. Negative budget/strength results stay unchanged."
+}

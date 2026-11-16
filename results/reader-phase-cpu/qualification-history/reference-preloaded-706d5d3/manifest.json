@@ -1,0 +1,70 @@
+{
+  "status": "source_qualification_failed_not_published_or_admitted",
+  "source_commit": "706d5d3953b5959935ffdd45abb6ea29a0a11e2c",
+  "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+  "roles": [
+    {
+      "role": "base311",
+      "status": "passed",
+      "checked_commit": "706d5d3953b5959935ffdd45abb6ea29a0a11e2c",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+      "check_seconds": 654.6728607499972,
+      "setup_and_check_seconds": 656.3248435840069
+    },
+    {
+      "role": "base312",
+      "status": "passed",
+      "checked_commit": "706d5d3953b5959935ffdd45abb6ea29a0a11e2c",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+      "check_seconds": 631.9652649589989,
+      "setup_and_check_seconds": 633.7958662500023
+    },
+    {
+      "role": "optional311",
+      "status": "failed",
+      "checked_commit": "706d5d3953b5959935ffdd45abb6ea29a0a11e2c",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+      "check_seconds": 342.76969508398906,
+      "setup_and_check_seconds": 342.80482762499014
+    },
+    {
+      "role": "optional312",
+      "status": "failed",
+      "checked_commit": "706d5d3953b5959935ffdd45abb6ea29a0a11e2c",
+      "source_fingerprint": "39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+      "check_seconds": 280.02283754199743,
+      "setup_and_check_seconds": 280.0529012500192
+    }
+  ],
+  "reason": "Both combined optional suites imported pyspiel in earlier tests. Two new tests correctly hit the original own-only runtime guard before their intended checks. Move only those tests to fresh subprocesses; preserve the scientific source and isolation guard. No formal capture has run; no source push.",
+  "files": {
+    "checks/base311-install.log": "fd0b15b36a4ea339fa39dc6e65f29573982d8e9c02db27ac65cb61a6cb3f29e3",
+    "checks/base311-receipt.json": "2e4300235e4cb1e67e3f31291c141ff50e212ec228a50af4ff940206ae2db9d3",
+    "checks/base311.log": "0ba82e2348b5f8789f90b8c4b0c7954263af377c467bb87bc5573eb6e0b75cc9",
+    "checks/base312-install.log": "2b5a3f729c2f8984d8627df9e29f6bc713146b42d122f4fb8695f01c78161cc9",
+    "checks/base312-receipt.json": "6c459bf5bb04126311b2be49ad00547892b9b1ae8507eb4500fdc5fc89149fdc",
+    "checks/base312.log": "41be1a331f8e40d89ac5b793dcacc1a491d5b003a6cc837664075bcfbebb52b8",
+    "checks/optional311-install.log": "57c56acd7926a625d64af5c553b41ac954db1e4754f50b5dfa681aa34a6ad142",
+    "checks/optional311-receipt.json": "fb9cce4b28d17b0d6b30a17f704c9f661a9936d950cfdcfa07903da4cec36f31",
+    "checks/optional311.log": "64fdf4831d22c3fc8b046d37033b74890f0472e4f20bb54ff8b8da1c0c02085f",
+    "checks/optional312-install.log": "91b79d641e779b6e2aef95781bdc4b84a2b609eb54dafc556a640e7a4c16b808",
+    "checks/optional312-receipt.json": "60ece3af488b5b26a86c1282400a56be091e620ae0071e308879cf71984d5312",
+    "checks/optional312.log": "d25a2d45acaccb8f21e8cfe97312d4f61d7628ea99808a5fcdcc2c93f69e53ab",
+    "expected-source.json": "c23249ceba5e46c5645d8b7af4bdcdbc8d8764df5cd61c37a2444a63102a2251",
+    "run_checks.py.txt": "43a34515c0825d21d29426fec8eddfd6c640c539fe276945f7c6000a4c1f89ea",
+    "tests/test_reader_phase_cpu.py.txt": "7362590afcd2122824781b1bfe452c5bcf2a602b680a31aa352717e116008591",
+    "tests/test_reader_phase_observer.py.txt": "3fdb79539d0e1d6d8bc37e1ffc8c66f398dce6d37d4dbffcec93bd35b22dbf77"
+  }
+}
