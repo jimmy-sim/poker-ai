@@ -1,28 +1,27 @@
 # Verified claims and interview notes
 
-These notes describe the project's recorded capabilities and results. Development
-includes Codex-assisted implementation, testing, experiment execution, and writing;
-specific attribution remains in the journal and work log.
-
-The bullet drafts are project-level descriptions. First-person accounts of
-implementation or discovery should come from actual contributions and practice.
-Numbers refer to the configurations and hardware in the linked reports.
+Notes on the project's results and the reasoning behind them. The resume drafts
+describe the project; personal examples are recorded in the journal's
+[practice notes](learning-journal.md#your-own-learning-notes). Development includes
+Codex-assisted implementation, testing, experiment execution, and writing, with
+specific attribution in the journal and work log. Numbers apply to the linked
+configurations and hardware.
 
 ## Four resume bullet drafts
 
-- AI-assisted poker research project with a Python Hold'em engine and 5–7-card
-  evaluators: validation covers all 2,598,960 five-card hands and 2,000,000 seeded
+- Poker research project developed with Codex assistance, including a Python
+  Hold'em engine and 5–7-card evaluators. Validation covers all 2,598,960 five-card hands and 2,000,000 seeded
   six/seven-card samples against Treys, plus 1,000 engine traces compared with
   PokerKit.
 - CFR, CFR+, Linear CFR and DCFR with exact information-set best responses:
   matched OpenSpiel's Kuhn/Leduc exploitability within 1.39e-16 ante
   chips/hand at the configured iteration checkpoints.
-- Resumable sampled-CFR training and a fixed-seed postflop diagnostic with
-  378 independently checked frozen policy records; identified public-card aliasing
-  while retaining a failed 1% pot held-out exploitability target.
-- A 36,000-hand duplicate-deal evaluation using 1,000 independent deck
-  clusters and conservative familywise inference; reported zero confirmed positive
-  advantages across six opponents rather than treating point estimates as proof.
+- Resumable sampled-CFR training and a reproducible study of public-card aliasing:
+  378 independently checked frozen policy records, with the failed 1% pot held-out
+  exploitability target retained.
+- A 36,000-hand duplicate-deal evaluation using 1,000 independent deck clusters;
+  no positive advantage confirmed across six opponents by the primary
+  familywise test.
 
 Evidence: [fundamentals](phase1-verification.md), [toy solvers](phase2-solvers.md),
 [postflop diagnostic](holdem-strength-v2.md), [evaluation](phase4-evaluation.md). The
@@ -95,12 +94,12 @@ those exact toy games. Risk simulations are conditional on return laws and stake
 scaling; all five empirical confidence-robust sizing fractions are zero before fees.
 Neither result establishes a real-world edge or bankroll advice.
 
-**12. What would you do next?** The current focus is validation overhead before the
-proposed compact/finer-opponent training comparison. The experiment design, seeds,
-accuracy targets, and compute limits remain fixed. Subsequent work needs measured
-improvements and fresh cases before broader strength claims. That follows the
-project's continuing goal: strengthen the model through reproducible experiments and
-understand its weaknesses.
+**12. What would you do next?** Measure where checkpoint replay spends CPU, then
+use that evidence to improve validation. The compact/finer-opponent training
+comparison is still blocked by its audit budget. Its seeds, accuracy targets and
+compute limits stay fixed. Longer term, improving the agent needs measured
+strategy gains and fresh cases to test whether those gains extend beyond the
+known games.
 
 ## Reproduction and limits
 
