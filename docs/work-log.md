@@ -6067,3 +6067,20 @@ publication-boundary cases pass. No formal collection ran. Both installed
 OpenSpiel2.0.2 Apache2.0 license files were read/checked against the existing
 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` pin;
 comparison-only use and strategy isolation remain unchanged.
+
+
+Initial source `706d5d3`: bases 4,887 passed / 66 skipped / 150 deselected each
+(642.84 / 612.18s), but both combined optional suites fail two new tests with
+1,789 other passes (341.58 / 278.73s). Earlier tests had imported the reference
+in the shared pytest parent. The preserved own-only guard correctly rejected
+that process. Two tests now use fresh subprocesses, matching the actual CLI;
+all 439 scientific files retain fingerprint
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+No runtime guard, algorithm, cap or tolerance was changed. Exact failed-cohort
+logs, receipts, expected source and original tests are [retained](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json).
+Deliberate reference-preloaded-parent regression passes five cases on each
+runtime (7.56 / 5.96s); the first 3.12 driver path error happened before tests
+and is retained too. Full strict typing (806 files) and Ruff pass. All four
+local source roles and both same-head hosted jobs still need to qualify the
+corrected test revision before formal collection. No source push or formal
+phase run has occurred; first push batches the original commit and this fix.

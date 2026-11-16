@@ -59,3 +59,11 @@ This diagnostic cannot replace the production forecast. The 912.54 / 900-second
 budget failure and 2.390% versus 1% accuracy failure remain. One ordered pair
 does not establish stable overhead, a causal speedup or competitive full-game
 strength.
+
+
+The first complete optional checks caught two own-only tests running in a shared
+process that had already imported the reference solver. The guard correctly
+stopped them. The corrected tests use fresh processes, including a regression
+with the reference deliberately preloaded in the parent. The scientific source
+and guard are unchanged; the [failed check records](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json)
+are retained, and complete qualification repeats before publication.

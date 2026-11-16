@@ -2,6 +2,7 @@
 
 import copy
 import os
+import subprocess
 import sys
 import threading
 from pathlib import Path
@@ -211,23 +212,35 @@ def test_only_named_aliases_observed_and_late_alias_restored(
 
 
 def test_actual_archived_software_read_preserves_computed_math() -> None:
-    from compact_suit import cli
-
-    from poker_ai.postflop.river_study import Deadline
-
-    path = ROOT / "results/compact-suit-learning/software/own.json"
-    before = path.read_bytes()
-    plain: list[dict[str, Any]] = []
-    expected = cli.read(ROOT, path, Deadline(180), observed=plain)
-    actual: list[dict[str, Any]] = []
-    observer = tool.Observer(enabled=True)
-    with observer.hooks(), observer.read(0):
-        saved = cli.read(ROOT, path, Deadline(180), observed=actual)
-    assert saved == expected and actual == plain
-    assert len(actual) == 1 and actual[0]["unique_profiles"] == 432
-    assert observer.restored and observer.state()["selected_calls"] == 1
-    assert tool.validate_read(observer.reads[0], 0, enabled=True)["selected_calls"] == 1
-    assert path.read_bytes() == before
+    # Optional suites may already have imported a reference in the pytest
+    # parent. Match the real own-only CLI's fresh process instead of weakening
+    # its runtime guard or deleting reference modules from the shared process.
+    code = """import pathlib,sys
+import reader_phase_support as tool
+from compact_suit import cli
+from poker_ai.postflop.river_study import Deadline
+root=pathlib.Path(sys.argv[1]);path=root/'results/compact-suit-learning/software/own.json'
+before=path.read_bytes();plain=[]
+expected=cli.read(root,path,Deadline(180),observed=plain)
+actual=[];observer=tool.Observer(enabled=True)
+with observer.hooks(),observer.read(0):
+ saved=cli.read(root,path,Deadline(180),observed=actual)
+assert saved==expected and actual==plain
+assert len(actual)==1 and actual[0]['unique_profiles']==432
+assert observer.restored and observer.state()['selected_calls']==1
+assert tool.validate_read(observer.reads[0],0,enabled=True)['selected_calls']==1
+assert path.read_bytes()==before and 'pyspiel' not in sys.modules
+"""
+    subprocess.run(
+        [sys.executable, "-c", code, str(ROOT)],
+        cwd=ROOT,
+        env=dict(
+            os.environ,
+            PYTHONPATH=str(ROOT / "src") + os.pathsep + str(ROOT / "scripts"),
+        ),
+        check=True,
+        capture_output=True,
+    )
 
 
 @pytest.mark.parametrize("maximum", [True, False, 0, -1, 1.5])

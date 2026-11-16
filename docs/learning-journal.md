@@ -6491,3 +6491,15 @@ graceful signals, and launch failure. The initial restricted run could not call
 `ps`; its partial files, code and log are retained. Four raw-copy/refusal cases
 and ten publication-boundary cases also pass. These are small software fixtures,
 not measurements of the poker agent.
+
+
+The first complete qualification caught two failures in each combined optional
+suite, after both base suites passed 4,887 tests. Earlier optional tests had
+already loaded the reference solver into the shared test process. The original
+own-only guard correctly refused to enter that process. The two new tests now
+start fresh processes, matching the real command; the guard and scientific code
+stay unchanged. With the reference deliberately loaded in the parent, all five
+corrected cases pass on both runtimes. [Failed qualification](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json)
+and [targeted regression records](../results/reader-phase-cpu/qualification-history/fresh-process-regression/manifest.json)
+remain separate. Complete qualification must run again before the source is
+published; no formal phase capture has begun.

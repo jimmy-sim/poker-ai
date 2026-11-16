@@ -166,29 +166,36 @@ def test_actual_proof_keeps_fixture_scope_explicit(actual_software_proof: Path) 
 
 
 @pytest.mark.parametrize("failure", ["source", "checks", "runtime", "math"])
-def test_proof_prerequisite_failure_is_retained(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failure: str
-) -> None:
-    primary = LookupError(failure)
-
-    def fail(*args: Any, **kwargs: Any) -> Any:
-        raise primary
-
-    monkeypatch.setattr(
-        runner,
-        "binding",
-        fail if failure == "source" else lambda *a, **k: ({}, dict(sha256={})),
+def test_proof_prerequisite_failure_is_retained(tmp_path: Path, failure: str) -> None:
+    code = """import pathlib,sys
+from unittest.mock import patch
+import profile_reader_phases as runner
+root=pathlib.Path(sys.argv[1]);output=pathlib.Path(sys.argv[2]);failure=sys.argv[3]
+primary=LookupError(failure)
+def fail(*args,**kwargs):raise primary
+with (
+ patch.object(runner,'binding',
+  fail if failure=='source' else lambda *a,**k:({},dict(sha256={}))),
+ patch.object(runner,'checked',fail if failure=='checks' else lambda *a:None),
+ patch.object(runner.previous,'runtime',
+  fail if failure=='runtime' else lambda *a:None),
+ patch.object(runner,'own_math',fail),
+):
+ try:runner.proof(root,output,0.0)
+ except LookupError as caught:assert caught is primary
+ else:raise AssertionError('prerequisite failure was swallowed')
+assert 'pyspiel' not in sys.modules
+"""
+    subprocess.run(
+        [sys.executable, "-c", code, str(ROOT), str(tmp_path), failure],
+        cwd=ROOT,
+        env=dict(
+            os.environ,
+            PYTHONPATH=str(ROOT / "src") + os.pathsep + str(ROOT / "scripts"),
+        ),
+        check=True,
+        capture_output=True,
     )
-    monkeypatch.setattr(
-        runner, "checked", fail if failure == "checks" else lambda *a: None
-    )
-    monkeypatch.setattr(
-        runner.previous, "runtime", fail if failure == "runtime" else lambda *a: None
-    )
-    monkeypatch.setattr(runner, "own_math", fail)
-    with pytest.raises(LookupError) as caught:
-        runner.proof(ROOT, tmp_path, 0.0)
-    assert caught.value is primary
     saved = json.loads((tmp_path / "child.json").read_text())
     assert saved["status"] == "failed_retained"
     assert saved["reference_constructed"] is saved["poker_training_performed"] is False
