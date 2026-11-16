@@ -6221,7 +6221,7 @@ bytes remain unchanged; next source442 qualification and tested operators remain
 
 November16 — Prequalification self-review moves proxy bookkeeping to private
 fields so ordinary module attributes named selected/selected_name/delegate are
-forwarded too. Four focused proxy/late-alias/cleanup checks pass each0.16/0.17s;
+forwarded too. Four focused proxy/late-alias/cleanup checks pass each0.09/0.10s;
 complete source qualification will include this final source. Both actual runtimes
 resolve, patch and restore all45 future report-guard entry points, with zero
 numerical calls; this is static setup only, not report reproduction. All six
