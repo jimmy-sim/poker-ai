@@ -99,3 +99,19 @@ These fixtures do not claim real cost-loader coverage or new independent poker
 math. Reference construction and poker-training flags remain false. This own
 publication precedes the fresh reference. Public-byte/source/clock verification
 still precedes the single complete audit pair.
+
+
+## Complete raw pair — November 16
+
+After the published own proof verified, the single fixed pair completes with
+exact complete scalar and calculated-replay identity. Ordinary and observed
+complete children take 393.5271485419944 and 395.7039985000156 seconds; the
+complete enclosing CLI takes 790.3233785830089 seconds. The original 900-second
+child and 1,800-second shared limits hold.
+
+[All 27 raw files](../results/reader-phase-cpu/pair-raw-manifest.json), including
+the complete outer clock, are retained before analysis. The ignored originals
+remain byte-identical. [Own-publication verification](../results/reader-phase-cpu/software-published-verification.json)
+records the earlier boundary. Raw publication and its verification precede
+phase analysis, saved-data export reproduction and final local/hosted checks.
+No phase breakdown or optimization is claimed in this publication.

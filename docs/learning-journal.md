@@ -6526,3 +6526,12 @@ fixtures, not real poker loading. [All raw proof files](../results/reader-phase-
 are published before the fresh comparison. Seven selected calls are present;
 no reference or new training was constructed. Next is public-record verification,
 then the complete ordinary/instrumented comparison with all original work.
+
+
+The complete comparison now finishes with identical calculated results and full
+restoration: about 394 seconds ordinary and 396 seconds observed, under the
+unchanged limits. [All 27 raw files](../results/reader-phase-cpu/pair-raw-manifest.json)
+are retained for publication before timing analysis. This checks that observing
+the three phases preserves the result; it does not make the agent stronger.
+Next: verify the public raw record, then examine the breakdown and reproduce
+the report from saved data.

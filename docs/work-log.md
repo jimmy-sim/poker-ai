@@ -6133,3 +6133,16 @@ outer/inner clocks and [source readiness](../results/reader-phase-cpu/source-pub
 are retained in this own-before-reference publication. Public-boundary validation
 remains before any fresh reference construction. No formal phase audit pair or
 new Hold'em trajectory has run; failed budget/accuracy gates remain unchanged.
+
+
+November 16 — The single complete reader-phase pair finishes after published
+own-proof verification, source head `262e7931c5aa9619be619d2bd13a4cc72fd6bbd1`.
+Ordinary/observed complete children: 393.5271485419944 / 395.7039985000156s;
+complete outer CLI: 790.3233785830089s. Exact complete scalar/computed-replay
+identity and full restoration pass. Original three reads, 432 profiles, 1,152
+fixed conditions and three reference workers remain; caps stay 900/1,800s.
+[All 27 raw files](../results/reader-phase-cpu/pair-raw-manifest.json), outer
+metadata/log and the earlier [own-publication verification](../results/reader-phase-cpu/software-published-verification.json)
+are retained in this raw-before-analysis batch. Ignored originals are untouched.
+No phase analysis, optimizer, new trajectory or admission claim is included.
+Public-boundary verification, report reproduction and final checks remain.
