@@ -2,24 +2,37 @@
 
 [![CI](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/jimmy-sim/poker-ai/actions/workflows/ci.yml)
 
-I'm developing poker-ai as an ongoing project in poker simulation and strategy
-learning. I want to make the Hold'em model stronger through reproducible
-experiments and understand the decisions it learns.
+I'm developing a poker simulator and learning agents to explore how strategies
+improve, where they fail, and how to measure the difference. My long-term goal is
+to make the Hold'em agent stronger and understand the decisions it learns.
 
-The project covers the path from cards and betting rules to learned strategies,
-independent comparisons, and evaluation. **Competitive full-game Hold'em strength
-has not been established.** The working agents are research prototypes; most
-strategy experiments use small, explicitly specified games.
+**Competitive full-game Hold'em strength has not been established.** The current
+agents are research prototypes, with most experiments in small, specified games.
+
+## Current work and research history
+
+The main question in [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) is
+what information a sampled learner needs. Can a smaller description of the cards
+preserve important decisions? How much of a weakness comes from lost information,
+and how much from training?
+
+[One saved river example](docs/river-distinction-diagnosis.md) gives the agent a
+full house on two boards, yet the best reply to the same saved opponent switches
+between folding and calling. A hand-category label misses the distinction. The
+experiments test richer descriptions at fixed training work, then inspect the
+remaining mistakes. The [latest validation test](docs/compact-suit-pipeline.md)
+passes correctness checks but still misses its runtime budget, leaving the next
+training comparison on hold.
 
 ## What currently works
 
-| Component | What it does |
-| --- | --- |
-| [Poker mechanics](docs/phase1-verification.md) | Card/deck representations, 5–7-card evaluation, exact and Monte Carlo equity, and an immutable 2–6-seat Hold'em engine with side pots. |
-| [Strategy learning](docs/phase3-training.md) | CFR variants for Kuhn and Leduc, sampled CFR for heads-up Hold'em, card/action abstractions, and resumable checkpoints. |
-| [Independent comparisons](docs/solver_validation.md) | OpenSpiel checks on exact toy games and fully specified postflop subgames. |
-| [Evaluation](docs/phase4-evaluation.md) | Duplicate-deal matches against fixed opponents, uncertainty estimates, and a recorded public API pilot. |
-| [Quantitative extensions](docs/phase5-extensions.md) | Bayesian opponent models in toy games and conditional bankroll/risk analysis. |
+The Python package includes an immutable 2–6-seat Hold'em engine with side pots,
+5–7-card evaluation, and exact and Monte Carlo equity. Learning code covers CFR
+variants for Kuhn and Leduc, sampled CFR for heads-up Hold'em, card/action
+abstractions, and resumable checkpoints. Evaluation includes independent solver
+comparisons, duplicate-deal matches, and a recorded public API pilot.
+[Bayesian opponent modeling and conditional risk analysis](docs/phase5-extensions.md) are
+separate extensions. Research agents currently play heads-up.
 
 <a id="architecture-and-current-strength-work"></a>
 
@@ -27,45 +40,39 @@ strategy experiments use small, explicitly specified games.
 
 ```mermaid
 flowchart LR
-    Cards[Own cards and evaluator] --> Engine[Own immutable Hold'em engine]
-    Engine --> Training[Own CFR and sampled CFR]
+    Cards[Cards and evaluator] --> Engine[Hold'em engine]
+    Engine --> Training[CFR and sampled CFR]
     Abstraction[Card and action abstractions] --> Training
-    Training --> Checkpoint[Frozen own average strategies]
-    Checkpoint --> Evaluation[Duplicate matches and exact spot metrics]
+    Training --> Checkpoint[Saved average strategies]
+    Checkpoint --> Evaluation[Matches and spot metrics]
     Engine --> Export[Finite-game export]
-    Export --> Reference[OpenSpiel comparison only]
+    Export --> Reference[OpenSpiel comparison]
     Reference --> Audit[Independent metric checks]
     Evaluation --> Audit
 ```
 
-The research agents play heads-up even though the engine supports more seats.
-Reference libraries are used for validation and comparison; their strategies do
-not enter the agent's training. The [roadmap](docs/roadmap.md) explains the original
-phase sequence and the continuing research plan.
+Reference strategies never enter training. The [roadmap](docs/roadmap.md) connects
+these components to the original development plan and continuing research.
 
 ## Validation and results
 
-A few examples show both what has been checked and where the model still falls
-short. The linked reports contain the complete controls, configurations, failures,
-and reproduction instructions.
-
-| Study | Recorded result | Scope |
-| --- | --- | --- |
-| [Hand evaluation](docs/phase1-verification.md) | Zero disagreements with Treys across all 2,598,960 five-card hands and 2,000,000 seeded six/seven-card samples. | The six/seven-card checks are sampled, not exhaustive. |
-| [Exact toy-game solvers](docs/phase2-solvers.md) | Maximum matched-iteration exploitability disagreement with OpenSpiel: 1.39e-16 ante chips/hand. | Kuhn and Leduc under the recorded rules and checkpoints. |
-| [Compact sampled representation](docs/compact-sampled.md) | Harder known game's median exploitability: 2.390% of the initial pot, exceeding the fixed 1% target. | Separately trained restricted games at a fixed work budget; the candidate failed its accuracy criterion. |
-| [Duplicate-deal evaluation](docs/phase4-evaluation.md) | 36,000 simulated hands from 1,000 independent deck clusters; no positive advantage confirmed across six opponents by the primary familywise test. | The conservative test has low power; this does not prove the true advantages are zero. |
+| Study | Result and scope |
+| --- | --- |
+| [Hand evaluation](docs/phase1-verification.md) | Zero disagreements with Treys across all 2,598,960 five-card hands and 2,000,000 seeded six/seven-card samples. The latter checks are sampled. |
+| [Toy-game solvers](docs/phase2-solvers.md) | Maximum matched-iteration exploitability disagreement with OpenSpiel: 1.39e-16 ante chips/hand on the configured Kuhn and Leduc runs. |
+| [Compact sampled representation](docs/compact-sampled.md) | Harder known game's median exploitability: 2.390% of the initial pot, exceeding the fixed 1% target. This candidate failed its accuracy test. |
+| [Duplicate-deal evaluation](docs/phase4-evaluation.md) | 36,000 simulated hands, 1,000 independent deck clusters, and no positive advantage confirmed across six opponents by the primary familywise test. Its low power leaves uncertainty. |
 
 Exploitability measures vulnerability to a best response in the specified game;
-lower is better. Here it is NashConv/2, with postflop percentages normalized by
-the starting pot. It is different from a full-game win rate. The risk studies
-also depend on their assumed return laws and do not establish a real-world edge.
-All gameplay is limited to simulation and permitted public bot benchmarks.
+lower is better. Reports use NashConv/2, normalized by the starting pot for
+postflop percentages. It is different from full-game win rate. The linked reports
+retain all controls, failed outcomes, assumptions, and reproduction instructions.
+Gameplay is limited to simulation and permitted public bot benchmarks.
 
 ## Development
 
 Install Git, Make, and [uv](https://docs.astral.sh/uv/getting-started/installation/)
-**0.13.5**. uv can provision the Python version in `.python-version`.
+**0.13.5**, then:
 
 ```sh
 git clone https://github.com/jimmy-sim/poker-ai.git
@@ -74,86 +81,46 @@ make setup
 make check
 ```
 
-`make setup` installs the locked development environment. `make check` runs lint,
-formatting, strict typing, and the normal test suite; long validation sweeps are
-separate. The project supports Python 3.11+, with pinned 3.11 and 3.12 environments
-in CI. `uv.lock` and `--locked` keep dependency resolution reproducible.
-
-For development, `make hooks` installs the local checks and `make format` applies
-Ruff fixes and formatting. The [contribution workflow](CONTRIBUTING.md) describes
-how changes, experiments, and verification are published.
+Setup uses the committed lockfile. Checks cover lint, formatting, strict typing,
+and fast tests; long validation runs are separate. Python 3.11 and 3.12 are pinned
+in CI. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and
+individual reports for optional dependencies and historical checkouts.
 
 ### Explore the project
 
-Inspect a public board's representation:
-
 ```sh
 .venv/bin/python scripts/inspect_public_board.py Ac Kc 2d 7c 7d
-```
-
-Browse saved decisions from the compact-representation study:
-
-```sh
 .venv/bin/python scripts/inspect_compact_information.py --interactive
+.venv/bin/python scripts/report_suit_pipeline.py
 ```
 
-The browser reads saved evidence without training. It prints its controls; use
-`q` to quit. The [learning journal](docs/learning-journal.md) explains the examples
-and includes more terminal exercises.
-
-Each research report gives its reproduction command, optional dependencies, and
-any required historical checkout. Some experiment commands intentionally return
-nonzero when a recorded acceptance criterion fails; those outcomes remain part
-of the research record.
+These show a board representation, browse saved strategy decisions (`q` quits),
+and read the latest validation-cost result. They do not start training.
 
 ## Layout
 
-| Path | Contents |
-| --- | --- |
-| `src/poker_ai/` | Typed Python package: mechanics, learning, and evaluation. |
-| `tests/` | Unit, property, and reference-validation checks. |
-| `configs/` | Versioned experiment inputs and declared comparison designs. |
-| `scripts/` | Experiment entry points, validation, reporting, and offline browsers. |
-| `results/` | Reviewed evidence and figures; generated runs/checkpoints are normally ignored. |
-| `docs/` | Explanations, methods, decisions, and dated verification records. |
+Core code is in [src/poker_ai](src/poker_ai/), with [tests](tests/),
+[experiment configs](configs/), and [entry scripts](scripts/). Reviewed evidence
+lives in [results](results/); generated runs and checkpoints are normally ignored.
 
-## Current work and research history
+## Reading further
 
-[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) investigates how card and
-range representations interact with sampled learning at fixed work. Recent work
-also measures validation overhead before the next proposed training comparison.
-The [latest complete validation test](docs/compact-suit-pipeline.md) preserves
-correctness but still misses the independent-audit budget. Its report links the
-[earlier helper measurements](docs/reader-helper-trace.md); these investigations
-change validation software rather than the playing strategy.
+- [Learning journal](docs/learning-journal.md): plain-English explanations and separately recorded personal practice.
+- [Work log](docs/work-log.md): dated changes, experiments, checks, and PRs.
+- [Solver comparisons](docs/solver_validation.md): methods, licenses, results, and limitations.
+- [Interview notes](docs/interview-guide.md): verified project claims and technical questions.
 
-- [Learning journal](docs/learning-journal.md): explanations in development order,
-  with separately recorded personal practice notes.
-- [Work log](docs/work-log.md): dated changes, experiment outcomes, checks, and PRs.
-- [Roadmap](docs/roadmap.md): phase contracts and continuing research direction.
-- [Solver-validation report](docs/solver_validation.md): methodology, reference
-  licenses, detailed comparisons, and limitations.
-- [Interview guide](docs/interview-guide.md): project-level claim drafts and
-  technical explanations, with contribution/assistance context.
-- [Original packaging record](docs/phase6-verification.md): the dated technical
-  brief and original phase reports. These are historical snapshots; current CI
-  and publication status are in [Actions](https://github.com/jimmy-sim/poker-ai/actions).
-
-The [verification-record correction](docs/ci-runtime-correction.md) documents
-mislabeled historical interpreter records. Original evidence and failed outcomes
-remain available rather than being replaced by later checks.
+The [original packaging report](docs/phase6-verification.md) and
+[runtime-record correction](docs/ci-runtime-correction.md) preserve earlier
+snapshots and corrections. Current checks are in [GitHub Actions](https://github.com/jimmy-sim/poker-ai/actions).
 
 ## Assistance and references
 
-Codex has assisted with implementation, testing, experiment execution, and
-writing. Specific historical assistance notes remain in the journal and work log;
-recorded personal practice is kept separate from automated work.
-
-Treys and PokerKit provide independent mechanics checks; OpenSpiel provides
-reference algorithms and game calculations. Versions, third-party licenses,
-and comparison limits are recorded in the
-[mechanics reports](docs/phase1-verification.md) and
-[solver-validation report](docs/solver_validation.md).
+Codex has assisted with implementation, testing, experiment execution, and writing.
+Specific attribution remains in the journal and work log. Treys and PokerKit
+supply mechanics checks; OpenSpiel supplies reference algorithms and game values.
+Versions and licenses are recorded in the [mechanics](docs/phase1-verification.md)
+and [solver-validation](docs/solver_validation.md) reports.
 
 ## Recorded study summaries
 

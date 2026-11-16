@@ -1,20 +1,17 @@
 # Development work log
 
-This is the dated record of changes, experiments, and verification for poker-ai.
-[Issues](https://github.com/jimmy-sim/poker-ai/issues),
+The dated record of changes, experiments, and checks. For the reasoning in plain
+English, read the [learning journal](learning-journal.md); for the current
+question, see [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4).
 [PRs](https://github.com/jimmy-sim/poker-ai/pulls),
 [commits](https://github.com/jimmy-sim/poker-ai/commits/main/), and
-[CI runs](https://github.com/jimmy-sim/poker-ai/actions) provide the associated
-history. The [contribution workflow](../CONTRIBUTING.md) describes publication.
+[CI](https://github.com/jimmy-sim/poker-ai/actions) contain the associated history.
 
 Dates use America/Los_Angeles unless marked UTC. Entries include AI-assisted
-implementation, checks, execution, and writing. Experiment and automation runtimes
-are separate from personal hands-on time, which is recorded only when reported.
-Specific historical attribution and failed outcomes are preserved below.
-
-For explanations of the concepts, start with the
-[learning journal](learning-journal.md). Entries are historical snapshots, not a
-list of claims that every earlier “next step” is still pending.
+implementation, execution, checks, and writing. Personal hands-on time is recorded
+only when reported, separately from experiment runtime. Entries retain their
+original context and attribution; an earlier next step may already be complete.
+The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-10 — Full matched-update pipeline, prospective
 
@@ -5892,3 +5889,21 @@ reference audit, alongside the earlier entry-point guards. All three numeric
 exports remain byte-identical in both actual environments and to the original
 report. [Supplemental execution guards](../results/compact-suit-learning/report-execution-guard-v3-manifest.json)
 retain this check without replacing the earlier report or its partial failures.
+
+
+## 2026-11-15–16 — Shorter project introduction and reading paths
+
+[Issue #80](https://github.com/jimmy-sim/poker-ai/issues/80) follows Jimmy's request
+for clearer, shorter documentation with a personal project voice. The README
+now leads with the research questions and a recorded river-decision example; its
+handwritten overview is 719 words, down from 1,013. Journal navigation, roadmap
+and work-log introductions, and interview wording were tightened. Intentions use
+first person where supported; implementation history and AI-assistance credits
+remain factual. No new personal practice, discoveries or hours are inferred.
+
+Local checks pass: 456 relative destinations, 57 incoming anchors, eight image
+references, Markdown fences, GitHub README rendering, and four existing generator
+update functions exercised only on disposable copies. Generated README content,
+historical journal/log entries, phase contracts and all 433 scientific source
+hashes remain unchanged. Hooks and diff checks pass; required hosted CI still precedes merge. The existing About description already fits; package metadata remains
+untouched. Research in issue #4 stays paused; this is an editorial change.

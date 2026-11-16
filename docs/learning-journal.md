@@ -1,24 +1,21 @@
 # Learning journal: building the poker project
 
-This journal follows the code, ideas, experiments, and results as the project
-developed. It includes Codex-assisted explanations and project history. The first
+A plain-English account of the project's ideas, code, and experiments. The first
 version was compiled on November 4, 2026, looking back over earlier work, with
 Codex assistance in implementation and drafting. Specific assistance notes remain
 in the entries.
 
-Examples marked **Example** are invented to explain a concept. Actual reported
-terminal practice and questions are recorded under
-[personal notes](#your-own-learning-notes). An unanswered exercise is a prompt,
-not evidence that it was completed or understood.
+[Personal practice notes](#your-own-learning-notes) record what Jimmy reported
+trying or asking. **Example** marks an illustration; an exercise is a suggestion,
+not a record of completed practice.
 
 ## Start here
 
 - [Current research](#where-the-project-stands)
 - [Cards and mechanics](#2-give-every-card-an-unambiguous-identity)
 - [How strategies learn](#6-learn-decisions-in-tiny-poker-games-first)
-- [Why evaluation needs care](#9-play-matches-without-mistaking-luck-for-skill)
-- [Personal practice and questions](#your-own-learning-notes)
-- [Small glossary](#a-small-glossary) and [terminal exercises](#things-you-can-try-on-this-mac)
+- [How results are evaluated](#9-play-matches-without-mistaking-luck-for-skill)
+- [Personal practice](#your-own-learning-notes), [glossary](#a-small-glossary), and [terminal exercises](#things-you-can-try-on-this-mac)
 
 <details>
 <summary>Research topics and earlier entries</summary>
@@ -92,77 +89,33 @@ not evidence that it was completed or understood.
 - [Browse saved decisions in Terminal](#40-comparing-saved-action-tables-in-terminal--november-9)
 - [How the matched-update test was planned on November 9](#41-separating-training-work-from-policy-updates--november-9)
 - [How the new time gate works](#46-keep-the-time-budget-separate-from-playing-strength--november-10)
-- [Your own reported terminal practice](#your-own-learning-notes)
+- [Reported terminal practice](#your-own-learning-notes)
 
 
 </details>
 
 ## Where the project stands
 
-The simulator, learning algorithms, and evaluation tools work. The continuing
-research asks how to improve the Hold'em strategies through controlled,
-reproducible comparisons. Competitive full-game strength has not been established.
+The simulator and learning tools work. The open question is how to make the
+Hold'em strategies stronger. In the latest compact-representation study, the
+harder known game's median exploitability is **2.390% of the initial pot**, above
+the **1% target**. Competitive full-game strength remains unestablished.
 
-The latest compact sampled representation misses the harder known game's median
-accuracy target: **2.390% of the initial pot against 1%**. The proposed training
-follow-up remains unrun: the latest complete independent-audit forecast is
-**912.54 seconds against 900**. The earlier **933.89-second** failure remains
-in the historical record. These are different tests: software correctness,
-restricted-game accuracy, and compute cost each need their own evidence.
+Checking a proposed training comparison is itself expensive. The latest complete
+validation pipeline passes correctness checks but its conservative audit forecast
+is **912.54 seconds against a 900-second limit**. The next training comparison
+remains blocked. Earlier failures and their original conditions stay in the
+entries below.
 
-Recent explanations:
+Three useful reading paths:
 
-- [Step 125](#125-take-the-exact-card-calculation-into-complete-validation): qualify
-  the exact calculation in full validation; correctness passes, budget still fails.
+- **What information is missing?** Start with the [river distinction example](river-distinction-diagnosis.md), then [the compact learning test](#101-test-the-smaller-description-at-the-same-learning-work).
+- **Where does validation time go?** Follow [input loading](#120-follow-the-work-inside-input-loading), [suit calculations](#124-compare-the-board-only-among-private-card-ties), and [the complete pipeline result](#125-take-the-exact-card-calculation-into-complete-validation).
+- **What is the current decision?** See [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) and the [work log](work-log.md).
 
-- [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
-  an exact way to compare fewer suit renamings. The one audit pair preserves
-  outputs and reduces selected matrix CPU by 14.07%; production qualification
-  remains separate.
-
-- [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
-  suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
-  reduction. Production benefit and strategy strength remain unestablished.
-
-- [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
-  inside the original constructor: key creation accounts for 84.3% of its measured
-  CPU; the failed grouped alternative remains unadmitted.
-
-- [Step 121](#121-check-matrix-depths-without-rescanning-every-node): test a
-  grouped depth check inside measured matrix construction; correctness passes,
-  but the complete command is longer and the cost condition fails.
-
-- [Step 120](#120-follow-the-work-inside-input-loading): broaden the CPU view
-  inside input loading; the complete capture assigns about 86% of real-read CPU
-  to selected regions and leaves about 14% outside them.
-
-- [Step 119](#119-locate-the-work-with-a-few-coarse-timers): a small set of CPU
-  timers for the main validation process; the completed profile leaves about47%
-  of real-read CPU outside those selected operations.
-
-- [Step 118](#118-measure-the-original-audit-context-before-choosing-an-optimizer):
-  the completed full-audit measurement; helper-child costs stay small in this run.
-
-- [Step 117](#117-check-the-records-before-explaining-the-runtime-difference):
-  compare the saved boundaries before choosing another timing experiment.
-
-- [Step 116](#116-count-helpers-across-the-complete-saved-policy-read): the
-  completed helper inventory and retained environment failure.
-
-- [Step 101](#101-test-the-smaller-description-at-the-same-learning-work): the
-  compact candidate's sampled result and all controls.
-- [Step 107](#107-put-the-faster-check-into-a-fully-recorded-experiment-pipeline):
-  why faster checks have not yet admitted the next training comparison.
-- [Step 109](#109-check-which-interpreter-actually-ran): the correction to historical
-  interpreter labels, preserving the original records.
-- [Steps 112–114](#112-measure-the-work-and-the-wait-separately): process accounting
-  and the bounded helper-call investigation.
-
-[Issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) and the
-[work log](work-log.md) track the current decision. The chapters below preserve
-what was known at each point; an earlier entry's “next step” may already have
-been completed in a later chapter. Here, “AI” usually means algorithms that
-learn action probabilities and store them in strategy tables.
+Here, “AI” means algorithms that learn action probabilities and store them in
+strategy tables. Each dated entry describes what was known then; its next step
+may have been completed later.
 
 ## 1. Make the work repeatable
 
@@ -4299,7 +4252,9 @@ also pass; the test environments check the exact source before and after.
 checks required before merge. This completes the tested definition, without
 claiming fewer strategy rows or a stronger trained agent. Those are later tests.
 
-## Your own learning notes
+<a id="your-own-learning-notes"></a>
+
+## Personal practice notes
 
 **November 11, 2026 — your question:** You asked what “saved continuation” means
 and why its values are negative. We compared net results from the start of the
@@ -6383,3 +6338,13 @@ saved with the report. Additional checks block the actual builders, scoring,
 canonicalization, replay and reference audit; all three numeric exports still
 match across both environments. GitHub’s final checks and merge remain next.
 The budget failure is retained, and no training study is admitted.
+
+
+## Documentation cleanup — November 15–16, 2026
+
+The README now starts with the questions behind the project and a concrete river
+decision, with shorter routes into the detailed reports. This journal's overview
+was shortened too. Earlier explanations and personal practice records retain
+their wording and attribution; the practice heading keeps its old link. This was
+a Codex-assisted editorial change requested by Jimmy, with no new experiment or
+personal learning claim. Issue #4 research remains paused.
