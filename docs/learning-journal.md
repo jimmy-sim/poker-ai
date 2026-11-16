@@ -6517,3 +6517,12 @@ These records and the exact tested operators are published before the own-only
 proof. No formal phase timing has run yet. The next proof checks actual archived
 software replay and labels the separate forwarding fixtures; reference comparison
 comes after its own results are public.
+
+
+The fresh own-only proof finishes in 5.34 seconds and restores every temporary
+binding. The actual archived software read produces identical results before
+and during observation. Two other reads contain clearly labeled forwarding
+fixtures, not real poker loading. [All raw proof files](../results/reader-phase-cpu/software-raw-manifest.json)
+are published before the fresh comparison. Seven selected calls are present;
+no reference or new training was constructed. Next is public-record verification,
+then the complete ordinary/instrumented comparison with all original work.

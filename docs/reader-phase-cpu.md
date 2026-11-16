@@ -84,3 +84,18 @@ carries that success into the retry rather than running it again. Both execution
 the cancellation, and the earlier test-isolation failures remain. This is source
 qualification, not a favorable retry of a scientific measurement. The fresh
 own-only proof and complete pair have not run.
+
+
+## Own-only proof — November 16
+
+The single registered [proof and all 13 raw files](../results/reader-phase-cpu/software-raw-manifest.json)
+finish in 5.341215124994051 seconds for the complete CLI and
+5.2538408339896705 seconds for its complete child, within 180 seconds.
+The actual archived software replay agrees exactly before and during observation.
+Two separately labeled synthetic reads exercise six forwarding boundaries;
+seven selected calls are retained overall, with full restoration.
+
+These fixtures do not claim real cost-loader coverage or new independent poker
+math. Reference construction and poker-training flags remain false. This own
+publication precedes the fresh reference. Public-byte/source/clock verification
+still precedes the single complete audit pair.

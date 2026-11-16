@@ -6117,3 +6117,19 @@ The qualification and operator archive is published before a fresh own-only
 proof; no formal phase measurement, new reference construction or new Hold'em
 trajectory has run. [PR #83](https://github.com/jimmy-sim/poker-ai/pull/83) remains
 draft through the required proof, pair, report and final checks.
+
+
+November 16 — Fresh own-only phase proof follows public six-role qualification
+`dde10b3` and source/operator readiness verification. Complete outer CLI
+5.341215124994051s; complete inner child 5.2538408339896705s, under 180s.
+One actual archived software read matches the separately computed ordinary
+result exactly; two explicit synthetic phase-shape reads exercise six forwarding
+fixtures, seven selected calls overall, full restoration. No real cost-loader
+coverage or new independent poker-math claim. Reference and poker-training flags
+remain false. Source 439-file fingerprint stays
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+[All 13 raw files](../results/reader-phase-cpu/software-raw-manifest.json), complete
+outer/inner clocks and [source readiness](../results/reader-phase-cpu/source-published-verification.json)
+are retained in this own-before-reference publication. Public-boundary validation
+remains before any fresh reference construction. No formal phase audit pair or
+new Hold'em trajectory has run; failed budget/accuracy gates remain unchanged.
