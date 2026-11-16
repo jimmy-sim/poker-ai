@@ -6309,3 +6309,25 @@ November 15, 2026 — software-own: complete raw capture. The complete command r
 
 
 November 15, 2026 — software-audit: complete raw capture. The complete command reports 6.631517209025333 seconds. Independent output is comparison-only; complete proof verification still precedes costs. This is software evidence, not new Hold’em training or strength admission.
+
+
+The complete fresh software proof now passes, including publication before the
+independent comparison, within its shared 180-second limit. Both the original
+toy learning histories and the separate real card calculation agree. This checks
+implementation; it does not train a stronger Hold’em policy.
+
+Three complete own-cost runs also pass, taking about 182,184 and187 seconds.
+Each rebuilds cost stand-ins from earlier own policies, replays all432profiles
+and1,152fixed conditions, and writes the original reports. No new learning takes
+place. All three raw records are being published together before any new
+independent cost measurement.
+
+**Example:** a faster card calculation helps only part of the full command. The
+next measurements include the entire independent audit, not just its card loop.
+Only after all three are saved and published will the unchanged conservative
+forecast decide whether a new training comparison fits its budget.
+
+[Full measurements and retained checker error](compact-suit-pipeline.md#own-proof-and-all-three-complete-own-costs--november-15-2026)
+separate the experiment from a posthoc publication check that needed an import
+fix. The experiment was not repeated. The older failed budget and strategy
+accuracy results remain current; no personal practice or time is inferred.

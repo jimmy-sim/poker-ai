@@ -106,3 +106,37 @@ November 15, 2026 — software-own: complete raw capture. The complete command r
 
 
 November 15, 2026 — software-audit: complete raw capture. The complete command reports 6.631517209025333 seconds. Independent output is comparison-only; complete proof verification still precedes costs. This is software evidence, not new Hold’em training or strength admission.
+
+
+### Own proof and all three complete own costs — November 15, 2026
+
+The fresh shared software proof passes in 24.288505792006617 seconds, including
+own publication before the independent constructor. Own and native commands
+take 6.797211083001457 and 6.631517209025333 seconds. All original toy histories
+match; the native scalar comparison covers 432 profiles and 1,152 fixed conditions
+with maximum error 1.1102230246251565e-16 fixture chips. The production card
+contract passes all 5,724 inputs, 17 fixed cases and five full builder encodings,
+with 12,296 reduced calls, no fallback/error and final restoration.
+[Saved verification](../results/compact-suit-learning/software/verified-publication.json).
+
+All three fresh own-cost repetitions complete: 182.12105958300526,
+184.0667208750092 and 186.84964237501845 complete-command seconds, each below
+900. Their supervised outer clocks are 182.54452658299124,184.4868316249922
+and187.26981083399733 seconds. Each includes original stand-in creation, full
+own math replay and all six report files; 432 profiles/1,152 conditions replay
+with zero error and exact policy/ledger bits, 459,052 reduced calls, no
+fallback/error and restored aliases. These are cost stand-ins with zero new
+learning, not a measured improvement in strategy quality.
+
+Publish all 66 raw/admin members and three manifests together before any fresh
+native cost constructor. [Raw publication checks](../results/compact-suit-learning/own-cost-raw-verification.json)
+verify bytes against ignored originals, saved replay/accounting, source and caps;
+they do not perform another mathematical replay or a comparative cost analysis.
+The first posthoc checker failed on an import before producing evidence; its
+[history](../results/compact-suit-learning/checks/posthoc-own-verifier-history/failure.json)
+and corrected operator remain available. No collection was repeated.
+
+Next: all three complete independent costs, then publish them before the original
+maximum-based forecast. The old budget and accuracy failures remain current.
+Source, seeds, caps and acceptance criteria are unchanged. Codex-assisted; human
+hands-on time not recorded.
