@@ -1,0 +1,52 @@
+"""Retain actual immutable report regressions without changing qualification."""
+import hashlib
+import json
+import re
+import shutil
+import subprocess
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = w / "compact-suit"
+original = w / "compact-suit-final-checks"
+destination = r / "results/compact-suit-learning/final-regressions"
+assert not destination.exists()
+expected = json.loads((w / "compact-suit-final-expected.json").read_text())
+assert len(expected["optional_suites"]) == 51
+assert subprocess.check_output(["git", "-C", str(w / "compact-suit-final-checkout"), "rev-parse", "HEAD"], text=True).strip() == expected["head"]
+assert not subprocess.check_output(["git", "-C", str(w / "compact-suit-final-checkout"), "status", "--porcelain"], text=True).strip()
+rows = []
+for role in ("base311", "base312", "optional311", "optional312"):
+    receipt = json.loads((original / f"{role}-receipt.json").read_text())
+    text = (original / f"{role}.log").read_text()
+    count = expected["optional_passed"] if role.startswith("optional") else expected["base_passed"]
+    assert receipt["status"] == "passed" and receipt["checked_commit"] == expected["head"]
+    assert receipt["source_fingerprint"] == expected["fingerprint"]
+    assert re.findall(r"^ACTUAL_PYTHON=(.*)$", text, re.M) == [receipt["python"]] * 2
+    assert re.findall(r"^ACTUAL_NUMPY=(.*)$", text, re.M) == [receipt["numpy"]] * 2
+    assert re.findall(r"^CHECKED_COMMIT=(.*)$", text, re.M) == [expected["head"]] * 2
+    matches = re.findall(r"^(\d+) passed([^\n]*)$", text, re.M)
+    assert len(matches) == 1 and int(matches[0][0]) == count
+    if role.startswith("base"):
+        assert "65 skipped" in matches[0][1] and "150 deselected" in matches[0][1]
+        assert "949 files already formatted" in text
+        assert "in 798 source files" in text
+        assert re.search(r"Ruff lint.*Passed", text) and re.search(r"Ruff format.*Passed", text)
+    commands = [json.loads(line)["command"] for line in text.splitlines() if line.startswith('{"command":')]
+    assert all(command[:3] == ["uv", "run", "--locked"] for command in commands)
+    assert all(("--all-extras" in command) == role.startswith("optional") for command in commands)
+    rows.append(dict(role=role, passed=count, summary=matches[0][0] + " passed" + matches[0][1], receipt=receipt))
+destination.mkdir(parents=True)
+for p in original.iterdir():
+    if p.is_file():
+        shutil.copyfile(p, destination / p.name)
+        assert p.read_bytes() == (destination / p.name).read_bytes()
+for name in ("run-compact-suit-final-checks.py", "compact-suit-final-expected.json", "check-compact-suit-final-docs.py"):
+    shutil.copyfile(w / name, destination / (name + ".txt" if name.endswith(".py") else name))
+shutil.copyfile(__file__, destination / "operator_assemble.py.txt")
+manifest = dict(status="all_four_final_local_regressions_passed_hosted_still_required", checked_commit=expected["head"],
+                source_fingerprint=expected["fingerprint"], scientific_sources=433,
+                scope="Final report and original software tests; not new formal trajectory or successful compute admission",
+                checks=rows, raw_sha256={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(destination.iterdir()) if p.is_file()})
+(destination / "manifest.json").open("x").write(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+print(json.dumps(dict(status=manifest["status"], checked_commit=expected["head"], roles=4, raw_files=len(manifest["raw_sha256"]))))

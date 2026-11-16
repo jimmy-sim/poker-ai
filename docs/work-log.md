@@ -4093,7 +4093,7 @@ remain separate and cannot admit the corrected source.
 Source1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152 / scientific fingerprint
 2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989 passes ALL
 six roles before formal software/cost/learning. Immutable full base311/312:
-3319passed/64skipped/150deselected each; complete checks669.730447/651.925671s,
+3319passed/64skipped/150 deselected each; complete checks669.730447/651.925671s,
 including lint/format/strict types/tests/hooks and source/runtime/module guards.
 Relevant all-extras636each, complete checks350.804740/288.604327s; original-runtime
 full36/180 integration311, expected real-runtime rejection312 and structural/
@@ -4205,7 +4205,7 @@ Self-review before formal profiling caught a verification gap: the frozen reader
 
 Frozen c349b4f2f86f8aefc88ccee5067f8f501bbed87d / fingerprint
 ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851
-passes BOTH full local bases (3,356/64skip/150deselected), BOTH relevant optional
+passes BOTH full local bases (3,356/64skip/150 deselected), BOTH relevant optional
 suites (116each), and BOTH exact-head hosted43246354825 jobs BEFORE formal
 profiling. All six raw logs, head/job metadata, guards and observed receipts
 validate and are published with this checkpoint. Earlier source cohorts do not
@@ -5094,7 +5094,7 @@ push, date manipulation, acceptance change or future work schedule is introduced
 
 Source stage in [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73):8970bc5,
 404-file fingerprint00a339915681bbb109d04c9ee15a90d245a8bd6672b5d01b4081b17d44d3e8db.
-Both immutable local bases pass3,951tests/64skipped/150deselected,814.15/801.25s;
+Both immutable local bases pass3,951tests/64skipped/150 deselected,814.15/801.25s;
 optional463pass each,17.88/16.53s. Lint/format/strict typing/hooks and focused
 Markdown links/anchors/fences pass. Source is published after local checks;
 both same-source hosted jobs and qualification publication still precede data.
@@ -5182,7 +5182,7 @@ Source stage in [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74):
 07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3.
 The two initially interrupted base runs retain their partial logs; only those
 incomplete roles were resumed into new files. Both complete local bases now pass
-4,007tests/64skipped/150deselected in815.00/793.63test seconds. The unchanged
+4,007tests/64skipped/150 deselected in815.00/793.63test seconds. The unchanged
 optional roles pass519each in61.78/60.44seconds. Actual runtime, physical imports,
 source cleanliness/fingerprint, lint, format, strict typing and hooks pass.
 Source was pushed after all four local roles completed. Both same-source hosted
@@ -5379,7 +5379,7 @@ No formal collection or measurement was performed by these software tests.
 
 
 Initial [hosted run43768513969](https://github.com/jimmy-sim/poker-ai/actions/runs/43768513969)
-fails both runtimes:2failed/4226passed/64skipped/150deselected plus historical
+fails both runtimes:2failed/4226passed/64skipped/150 deselected plus historical
 warning,895.58s311/787.44s312. Both failures are the two new expiry fixtures:
 `perf_counter()-2000` can be negative on a recently booted VM. Actual runtime,
 every uv selection and complete test-merge tree equal initial source `a459b06`.
@@ -5877,3 +5877,18 @@ research environments render successfully to fresh folders. The first code commi
 hook could not find uv before the project environment was sourced; hooks then
 pass. No scientific collection repeated or source433byte changed. Final relevant
 local/optional and exact-report-head hosted checks remain required before merge.
+
+
+Final local report checks pass on immutable 31da1f8: both full bases 4,665 / 65 skipped /
+150 deselected (1,088.97/1,075.45 seconds), relevant optional 1,568 each
+(642.57/578.45 seconds). All runtime/root/source guards pass before/after;
+lint/format 949, strict mypy 798 and hooks pass. [Exact four-role logs](../results/compact-suit-learning/final-regressions/manifest.json)
+retain the operator and actual commands. The 433-file scientific source remains
+unchanged. Both final exact-report-head hosted jobs still precede merge.
+
+The saved-data audit additionally blocks actual MatrixTree/SpotTree constructors,
+ScoringContext.score, defining canonical/lookup functions, internal replay and
+reference audit, alongside the earlier entry-point guards. All three numeric
+exports remain byte-identical in both actual environments and to the original
+report. [Supplemental execution guards](../results/compact-suit-learning/report-execution-guard-v3-manifest.json)
+retain this check without replacing the earlier report or its partial failures.

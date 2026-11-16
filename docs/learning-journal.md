@@ -113,7 +113,7 @@ restricted-game accuracy, and compute cost each need their own evidence.
 Recent explanations:
 
 - [Step 125](#125-take-the-exact-card-calculation-into-complete-validation): qualify
-  a separate full validation pipeline before making a new budget decision.
+  the exact calculation in full validation; correctness passes, budget still fails.
 
 - [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
   an exact way to compare fewer suit renamings. The one audit pair preserves
@@ -6240,7 +6240,7 @@ is batched with the next implementation.
 
 ## 125. Take the exact card calculation into complete validation
 
-**November 15, 2026 — issue #4, implementation in progress.**
+**November 15, 2026 — issue #4: correctness checked; budget criterion fails.**
 
 The suit experiment preserves exact outputs and reduces one measured part of
 validation. The next question is practical: does it help the complete pipeline
@@ -6375,3 +6375,11 @@ environments with all experiment execution blocked. Four integrity tests pass
 on each. Rendering needs the existing research extra; the first base-environment
 attempts lacked it and their partial files remain available. No new strategy was
 trained. Final regression and GitHub checks still precede merge.
+
+
+All four final local suites pass: 4,665 tests in each full base environment and
+1,568 in each relevant optional suite. The exact logs and guarded commands are
+saved with the report. Additional checks block the actual builders, scoring,
+canonicalization, replay and reference audit; all three numeric exports still
+match across both environments. GitHub’s final checks and merge remain next.
+The budget failure is retained, and no training study is admitted.

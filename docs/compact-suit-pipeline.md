@@ -225,3 +225,18 @@ clock rejection and existing-output preservation. Initial plotting attempts used
 base environments without Matplotlib; partial numeric outputs and their operator
 remain retained. Successful rendering uses the existing locked research extra,
 not a dependency change or scientific rerun. [Report manifest](../results/compact-suit-learning/report-manifest.json).
+
+
+Final local report checks pass on immutable 31da1f8: both full bases 4,665 / 65 skipped /
+150 deselected (1,088.97/1,075.45 seconds), relevant optional 1,568 each
+(642.57/578.45 seconds). All runtime/root/source guards pass before/after;
+lint/format 949, strict mypy 798 and hooks pass. [Exact four-role logs](../results/compact-suit-learning/final-regressions/manifest.json)
+retain the operator and actual commands. The 433-file scientific source remains
+unchanged. Both final exact-report-head hosted jobs still precede merge.
+
+The saved-data audit additionally blocks actual MatrixTree/SpotTree constructors,
+ScoringContext.score, defining canonical/lookup functions, internal replay and
+reference audit, alongside the earlier entry-point guards. All three numeric
+exports remain byte-identical in both actual environments and to the original
+report. [Supplemental execution guards](../results/compact-suit-learning/report-execution-guard-v3-manifest.json)
+retain this check without replacing the earlier report or its partial failures.
