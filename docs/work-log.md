@@ -5480,3 +5480,33 @@ strictmypy768,hooks and409focused destinations/5images/anchors/fences.
 actual scope and remaining exact-report-head hosted requirement. No source or
 scientific criterion changes; no new trajectory. Publish coherent report, then
 both hosted jobs must pass before history-preserving merge.
+
+
+PR #76 closing verification: both final hosted jobs in run43776395105 pass
+4,230/64skip/150deselect, actual 3.11.17/2.4.6 and 3.12.15/2.5.4 runtimes and
+complete tested tree verified. History-preserving merge26e0c8c; fresh snapshot,
+guarded main FF and actual3.11 saved CLI base/report equality plus95fixtures
+(14.29s) pass. All ten unrelated user paths' bytes/status/index/patches remain
+exact after checks. [Closing receipts](../results/matrix-phases/final-ci/manifest.json)
+are batched with this next substantive implementation; no status-only commit.
+
+## 2026-11-15 — Exact suit translation lookup, prospective implementation
+
+Issue #4 [plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6903489482)
+precedes new code. [Protocol](suit-lookup.md) and60-pin sealed config: preserve412
+prior sources, add3 for415. Fixed24x52 translations replace repeated arithmetic,
+not card-result memoization. Both modes share eligibility/dependency/counter hooks,
+original uncached card wrappers and full constructor-field observer; native workers
+keep original code. No production algorithm, dependency, CI, seed or old gate change.
+
+Focused163 software fixtures pass; Ruff/format and strict types pass on new files.
+Coverage includes1248entries,1326preflop pairs, property boards, exceptions,
+unsupported/dependency fallbacks, aliases/counters/PID/thread/primary interruption,
+expired budgets, complete saved-data proof shape and rebound-kernel corruption.
+Fictional fixture qualification is not actual formal qualification or a measurement.
+Complete immutable-source local base/optional roles and both hosted roles come
+before published exact operators/receipts, then one180s own proof publication,
+then one original/lookup pair900each/1800shared/120failure-saving. No actual audit
+or timing claim yet. Journal123 explains the question in plain English; Codex-
+assisted work, human time not recorded. Preserve prior failed outcomes and all
+unrelated user main bytes. Full cost and subsequent production/quality gates remain.

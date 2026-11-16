@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
+
 - [Separate original construction phases](#122-separate-construction-work-from-checking-work)
 
 - [Check matrix depths with grouped integer work](#121-check-matrix-depths-without-rescanning-every-node)
@@ -104,6 +106,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): test a
+  fixed translation table inside card normalization, preserving original results
+  before measuring complete audit cost.
 
 - [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
   inside the original constructor: key creation accounts for 84.3% of its measured
@@ -5994,3 +6000,42 @@ translations inside key work, supported by this localization and the earlier
 canonicalization trace. It needs a new prospective plan, original-result/field
 checks and a complete cost comparison. Nothing here trains a new policy or
 accepts a faster/default agent; the existing compute and accuracy failures stay.
+
+
+PR #76 is now merged. Both final GitHub jobs pass 4,230 tests; after updating
+main, its saved-data command and 95 focused fixtures pass. The ten unrelated
+local result files remain byte-for-byte intact. [Closing receipts](../results/matrix-phases/final-ci/manifest.json)
+retain actual runtimes, full logs, tested trees and merged-main verification.
+
+## 123. Replace repeated suit arithmetic with a fixed table
+
+**November 15, 2026 — issue #4, prospective cost comparison.**
+
+The previous capture puts most measured matrix-construction CPU in creating
+information keys. One repeated operation translates cards under all 24 possible
+renamings of the four suits. A translation can be computed from integer division
+and remainders, or read from a small fixed table.
+
+**Example:** changing every club to a diamond and every diamond to a club changes
+the card names but preserves the poker situation. The canonical description is
+the smallest sorted description across every suit renaming. The candidate still
+checks all 24 renamings every time; it only replaces each integer translation
+with a lookup. It remembers no hand results or strategy decisions.
+
+The [prospective plan](suit-lookup.md) and [sealed config](../configs/suit-lookup.json)
+come before measurement. The private implementation keeps the original validation,
+outputs, error behavior and unsupported-input fallback. Both comparison arms pay
+the same guards, counters and full-field observer. Original scientific source,
+seeds, caps and unfavorable outcomes stay unchanged.
+
+The current focused software tests pass 163 fixtures, including all 1,248 table
+entries, all 1,326 preflop pairs, generated boards, invalid calls, alias restoration,
+interruption and strict saved-record checks. These are development fixtures,
+with deliberately fictional qualification where necessary. They are not the
+formal published proof or a timing result. Full source checks on both Python
+versions and both hosted jobs still precede that proof and the one audit pair.
+
+Implementation and explanations are Codex-assisted. No personal hours, practice
+or mastery is inferred. Even a faster audit would address validation cost; it
+would not establish stronger poker or accept new training. The existing compute
+forecast and strategy-accuracy failures remain separate next decisions.
