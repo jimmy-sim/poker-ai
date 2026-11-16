@@ -103,7 +103,7 @@ list of claims that every earlier “next step” is still pending.
   versus all4 original same-context full controls, both seats:1728 fixed targets.
   No training/policy edits or favorable subsets. Source study/audit still running.
 - **Independent audit:** all216+1728targets pass164.198028083s<900, maximum
-  2.0605739337042905e-13chips; included own replay0in41.213945417s. Own10df9be
+  2.0605739337042905e-13 chips; included own replay0in41.213945417s. Own10df9be
   published first. OpenSpiel2.0.2Apache2 comparison-only; no actions exported.
   Two actual-evidence metadata/byte checks pass each0.21/0.22s; source216 intact.
   Complete writeup/3interviewanswers/verifiedclaimdrafts/license/README/journal39
@@ -143,7 +143,7 @@ list of claims that every earlier “next step” is still pending.
   constructors blocked;480own/nativechain/3archivehashes/4numericfiles checked.
   Strict419/format512; finalartifactCIpending, scientificsource205unchanged.
 - **Independent audit:**169.194451625s under900; all480profiles pass,maximum
-  scalar/root error1.5631940186722204e-13chips. Ownpublished67c5894before native.
+  scalar/root error1.5631940186722204e-13 chips. Ownpublished67c5894before native.
   Nativeincludesownreplay115.699832292s; base312ownreplay0/113.263148750s,
   four numerical files byte-identical and native receipt validates data-only.
   Three interview answers/verified claim drafts/limits recorded; no global/default
@@ -2179,7 +2179,7 @@ AI-assisted execution/documentation; no human time or stronger-agent claim.
 After canonical GitHub observation of own profile commit6e245f628fee0e799d7b527e3d9ccd6e84fe9f91
 and tree0b7073a607e8b0db2847b9a8d47d1870229a0a87, all17 referenced own profiling
 files match committed bytes. The separate OpenSpiel audit checks every OLD
-432profile/1152fixed condition, maximum2.0605739337042905e-13chips disagreement.
+432profile/1152fixed condition, maximum2.0605739337042905e-13 chips disagreement.
 Whole native command341.493552959s; strict2*whole=682.987105918s<900 passes,
 including source/input setup, all independent work and final full own replay.
 No reference strategy is exported or loaded into learning. Own evidence was
@@ -2235,8 +2235,8 @@ unchanged favorable training retry. AI-assisted execution/reporting.
 
 Own studyccbffb91064c82df6de503033932c6e90f789968/tree55bc8e106c41e9a18d76f06b85a9bac1d100dfdc
 was canonically observed, with all16 study files hash-matched to committed bytes,
-BEFORE real-native construction17:38UTC. All432profiles/1152fixed conditions
-pass independent OpenSpiel checks, maximum2.0605739337042905e-13chips. Whole
+BEFORE real-native construction17:38UTC. All 432 profiles/1152fixed conditions
+pass independent OpenSpiel checks, maximum2.0605739337042905e-13 chips. Whole
 native639.711564250s<900 includes all required setup/admission checks, own
 archive/baseline reads, reference work and final full replay. Raw1596-message
 journal and exact child retained. A data-only replay with constructors blocked
@@ -2744,7 +2744,7 @@ pending; no real trajectory or strength/default/fresh/global admission.
 
 After own publication6c9c200, source4878eb9 native cost0/1/2 completes
 368.528307792/371.195141500/371.648972542s<900 each. Every repetition verifies
-all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+all 432 profiles/1152fixed, maxerror1.8474111129762605e-13 chips<1e-9, no exported
 actions or training. N=max371.648972542s. End-to-end clocks include own/source/
 publication checks, all reference construction/scalars and final own replay.
 Byte-identical canonical copies and SHA manifest retained at cost/native-publication.json;
@@ -2856,7 +2856,7 @@ native costs/forecast/persisted permit/real study remain pending.
 
 After own publicationc7930ad, complete native costs0/1/2 take356.133935375/
 357.755006833/358.878548334s<900 each. N=max358.8785483339998s. Each verifies
-all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+all 432 profiles/1152fixed, maxerror1.8474111129762605e-13 chips<1e-9, no exported
 reference actions or training. Full command times include published-own/source
 preflight, reference construction/scalars and final own replay. Exact canonical
 copies/logs and SHA manifest retained in cost/native-publication.json; original
@@ -2918,7 +2918,7 @@ global admission. Issue4 remains open; source/seeds/caps/gates unchanged.
 
 After own publication691a7074af105b77eebbfc84b6debb2589d43217, the actual native
 audit completes358.570928584s<900. All432policies/1152fixed targets validate with
-maxerror1.8474111129762605e-13chips<1e-9; no exported reference actions/training.
+maxerror1.8474111129762605e-13 chips<1e-9; no exported reference actions/training.
 Own/source/permit/publication preflight, three native workers and closing own
 replay count inside the command. Pinned OpenSpiel2.0.2 Apache2 license verified;
 source SHA b0bc.../original runtime retained. Publish full native JSON/child/
@@ -2992,7 +2992,7 @@ learning/audit caps unchanged. Journal95 remains prospective until actual output
 PR50 source9bfe45c/fingerprint0927e4b runs the frozen complete read-only command
 in139.8018285s<900:24profiles/48responding traces/192cross conditions. Every owned
 row, street/group/root sum, reply fingerprint and diagonal source value checks;
-maximum trace discrepancy1.2273010890382813e-13chips<1e-9. Cross zero-sum/common-
+maximum trace discrepancy1.2273010890382813e-13 chips<1e-9. Cross zero-sum/common-
 opponent identities pass; no training/reference/default/fresh/global admission.
 All new off-diagonals remain own calculations, not a new native audit.
 
@@ -3481,7 +3481,7 @@ before constructing the real comparison reference; retain allcontrols/checkpoint
 ### November 12 — compact full-control admission passes
 
 All72real own policies were publicbb73102 before real OpenSpiel construction.
-Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13chips, complete
+Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13 chips, complete
 25.00606195799992s. Authenticated result/report passes all11 frozen full checks
 onboth known turn games. Candidate epsilon%pot2.5771334e-6/0.00017718449 and
 rows130/364 (35.7143%),1770/3336 (53.0576%). Allcontrols uniform coverage1.0;
@@ -3604,7 +3604,7 @@ use the maximum WHOLE-command time, not an interim pre-replay manifest timer.
 
 Allthree own fixtures d2efbdc were public before native cost construction. Each
 comparison checks324stand-in own values/BOTH-BR roots; complete clocks50.020953959/50.368202500/50.438742208s<900each.
-Maximum error across all repetitions 1.35003119794419e-13chips<1e-9. No reference
+Maximum error across all repetitions 1.35003119794419e-13 chips<1e-9. No reference
 strategy enters learning; no learner was constructed in any cost run. The source-
 bound software proof and ALLthree own/native costs are complete. Publish native
 cost evidence before the fixed deep forecast and checked admission; real sampled
@@ -3660,7 +3660,7 @@ whole average coverage includes warm mass; report post-warm support separately.
 ### November 12 — actual sampled scalar audit passes; quality failure retained
 
 ALLown9177081 was public before actual OpenSpiel construction. Native checks
-all324policy values/BOTH-BR roots, maximum error1.27897692436818e-13chips<1e-9. Complete
+all324policy values/BOTH-BR roots, maximum error 1.27897692436818e-13 chips<1e-9. Complete
 command41.155461709s<900, pinned OpenSpiel2.0.2/Apache2 license verified; no
 reference policy used in training. Numerical verification passes; the candidate
 medium LINEAR median2.389912005%pot still misses the preset1%limit. Do not
@@ -3821,7 +3821,7 @@ Independent scalar validation/report are pending; no remedy selected yet.
 
 All144real joint profiles/288player responses independently checked after own
 publicationcc53a93. Complete native clock 105.58452487500108s <900s; maximum
-raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13chips <1e-9.
+raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13 chips <1e-9.
 Both exact/restricted roots and achieved OWN exact/restricted/river-before replies
 are covered, not aggregate exploitability alone. Pinned OpenSpiel2.0.2 license
 verified; no reference policies returned/used for training. Fixed source2670f3f6
@@ -3943,7 +3943,7 @@ here before real tracing. No scientific caps/seeds/gates/admission changed.
 
 No-training own trace completes 117.1815822919998s <900s. All144fixed-opponent
 panels/288sourcealiases/133632owned decision rows replay, maximum accounting/
-root error 1.0658141036401503e-13chips <1e-9. All raw row/menu/R-prefix
+root error 1.0658141036401503e-13 chips <1e-9. All raw row/menu/R-prefix
 reach/conditional-value/group/street/alias detail files plus own/child manifests
 are published here BEFORE report rendering. Complete source/prospective/tiny
 proof gates precede this collection; old B/R scalar audit is reused only as
@@ -4093,7 +4093,7 @@ remain separate and cannot admit the corrected source.
 Source1b6ccc8ca928ddc1ce2a6abd6072ee48d54df152 / scientific fingerprint
 2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989 passes ALL
 six roles before formal software/cost/learning. Immutable full base311/312:
-3319passed/64skipped/150deselected each; complete checks669.730447/651.925671s,
+3319passed/64skipped/150 deselected each; complete checks669.730447/651.925671s,
 including lint/format/strict types/tests/hooks and source/runtime/module guards.
 Relevant all-extras636each, complete checks350.804740/288.604327s; original-runtime
 full36/180 integration311, expected real-runtime rejection312 and structural/
@@ -4205,7 +4205,7 @@ Self-review before formal profiling caught a verification gap: the frozen reader
 
 Frozen c349b4f2f86f8aefc88ccee5067f8f501bbed87d / fingerprint
 ce6cf85ca3b2333a2f001406c737fc3f7cd9bb1548cb736e58bf51c9b71b9851
-passes BOTH full local bases (3,356/64skip/150deselected), BOTH relevant optional
+passes BOTH full local bases (3,356/64skip/150 deselected), BOTH relevant optional
 suites (116each), and BOTH exact-head hosted43246354825 jobs BEFORE formal
 profiling. All six raw logs, head/job metadata, guards and observed receipts
 validate and are published with this checkpoint. Earlier source cohorts do not
@@ -4443,7 +4443,7 @@ complete original guarded forecast remain unmeasured; no permit/new training.
 
 After ALLthree own costs were public atab02f25, fixed serial native0/1/2
 commands take402.320211541999,406.53780845800065,406.9446965840034s.
-Each compares432scores/1152fixed targets within1.8474111129762605e-13chips;
+Each compares432scores/1152fixed targets within1.8474111129762605e-13 chips;
 reference scalar-only, no new training. Parent8316requests/26original/8290reuse
 and each native worker1112/18/1094, no fallback/rejection. Whole clocks retain
 pre-own rereplay, worker startup/loading/scalars, and required final own rereplay.
@@ -5094,7 +5094,7 @@ push, date manipulation, acceptance change or future work schedule is introduced
 
 Source stage in [PR #73](https://github.com/jimmy-sim/poker-ai/pull/73):8970bc5,
 404-file fingerprint00a339915681bbb109d04c9ee15a90d245a8bd6672b5d01b4081b17d44d3e8db.
-Both immutable local bases pass3,951tests/64skipped/150deselected,814.15/801.25s;
+Both immutable local bases pass3,951tests/64skipped/150 deselected,814.15/801.25s;
 optional463pass each,17.88/16.53s. Lint/format/strict typing/hooks and focused
 Markdown links/anchors/fences pass. Source is published after local checks;
 both same-source hosted jobs and qualification publication still precede data.
@@ -5182,7 +5182,7 @@ Source stage in [PR #74](https://github.com/jimmy-sim/poker-ai/pull/74):
 07fd809ecd498154177624eedbf762b277225758f92a852dc5bed4f0499dc4d3.
 The two initially interrupted base runs retain their partial logs; only those
 incomplete roles were resumed into new files. Both complete local bases now pass
-4,007tests/64skipped/150deselected in815.00/793.63test seconds. The unchanged
+4,007tests/64skipped/150 deselected in815.00/793.63test seconds. The unchanged
 optional roles pass519each in61.78/60.44seconds. Actual runtime, physical imports,
 source cleanliness/fingerprint, lint, format, strict typing and hooks pass.
 Source was pushed after all four local roles completed. Both same-source hosted
@@ -5379,7 +5379,7 @@ No formal collection or measurement was performed by these software tests.
 
 
 Initial [hosted run43768513969](https://github.com/jimmy-sim/poker-ai/actions/runs/43768513969)
-fails both runtimes:2failed/4226passed/64skipped/150deselected plus historical
+fails both runtimes:2failed/4226passed/64skipped/150 deselected plus historical
 warning,895.58s311/787.44s312. Both failures are the two new expiry fixtures:
 `perf_counter()-2000` can be negative on a recently booted VM. Actual runtime,
 every uv selection and complete test-merge tree equal initial source `a459b06`.
@@ -5436,7 +5436,7 @@ family end-to-end proof or training admission. Journal122 updated.
 
 Single ORIGINAL-only audit after proof publication `ee4a639`: supervised whole
 child 432.06430320898653, registered shared 436.83444570799475, complete outer
-command 436.86079670800245seconds, below900/1800. Outer exits0, uninterrupted.
+command 436.86079670800245seconds, below 900/1800. Outer exits0, uninterrupted.
 All original432profiles/1152conditions/three computed reads, worker/card/source/
 scalar witnesses, restored hooks and184 pinned ORIGINAL field fingerprints pass.
 Five phases184each=920plus1538global=2458<4096. All32raw/admin files retained
@@ -5705,3 +5705,190 @@ First posthoc verifier expected51hook restorations incorrectly; retained failure
 and exact operator, then v2 verifies34variant restorations plus all51fixed
 outcomes and truthful unhooked original baseline. No collection retry. Final
 exact-report-head hosted jobs remain required before merge.
+
+
+## 2026-11-15 — Exact normalization in complete validation, in progress
+
+[Prospective issue4 registration](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6906832663)
+precedes new compact_suit adapter code. Separate parent-only exact factorization
+plus original recall caching; training/native workers retain original canonical
+code. All418 predecessor sources remain unchanged; the current adapter inventory
+extends this to433. New contract SHA443f6a78b7d58bdf9c758bc5f31de31dacd9022a6698b11b3cce64bebc4bf2b0.
+Original science, seeds, work, caps, strict formulas and quality gates unchanged.
+Source metadata is read from a pinned own proof anchor rather than importing the
+diagnostic runner into a reference-free training worker. Fresh subprocess checks
+validate the complete source with inactive worker normalization.
+
+Initial38 focused tests pass1.03s: role isolation, live/final restoration,
+unsupported/dependency fallback, counter typing, source coverage, worker imports,
+unchanged forecast AST and old failed-admission refusal. Card-contract and full
+pipeline integration/failure tests remain in progress. New own-only card dispatch
+proof is required inside the same180s software command before reference use;
+actual software/cost/forecast/admission collection has not started. No new real
+trajectory or strength result. Journal125 explains why tiny games alone cannot
+exercise the card optimization. AI-assisted; human time not recorded.
+
+PR78 final CI43800671628 passes4586/64skip150deselect+existingwarning both,
+978.25/696.45s; actual Python/NumPy/alluv and full source/report trees verified.
+History mergee8018609, fresh guarded main update, CLI==report and189tests35.42s.
+All10user bytes/status/changed-pathindex/bothpatches preserved AFTER verification.
+[Closing11raw+manifest12](../results/suit-candidates/final-ci/manifest.json) retained
+with this next source increment; issue4 remains open.
+
+
+All75 focused tests pass actual311/NP24610.06s and312/NP25410.37s. This includes
+fresh three-worker own tiny capture and original324/216/30 vector parity with
+independent terminal/pure-choice oracles; optional unit native432/1152 matches
+unchanged tolerance with original worker normalization. Mocked source/publication
+fixtures remain nonqualifying; no formal own/reference/cost/study run yet.
+Production card fixture5724/17/five complete builder encodings passes; rebound
+schema corruptions/data-only parsing/partial and existing-output preservation
+checks pass. Initial serializer-whitespace failure retained; fixed to preserve
+original input bytes. Cleanup-overwrite risk found in review, fixed by early
+refusal plus last-write ownership binding, covered by new regression tests.
+Formal operators must register pre-Python origin; complete clocks bind observed
+child PID, real archive costs/replay require original31117/NP246. Source433files,
+all418 prior bytes unchanged. Ruff lint/format947 and strictmypy796 pass.
+Installed OpenSpiel2.0.2 Apache2.0 license read before optional comparison; pinned
+license and comparison-only scope preserved. All four immutable local roles plus
+both exact-source hosted jobs remain required before formal evidence. Journal125
+updated; source publication will wait for complete local checks as requested.
+
+
+November 15 — Premeasurement boundary review: the initial local cohort at
+`d6f0fa5` passes both full suites (4,660/65 skipped/150 deselected;
+971.48/944.20 seconds) and both optional suites (1,563; 549.18/483.40 seconds).
+It is retained as superseded local software evidence, without hosted checks or
+formal collection. Final execution-counter, role and restoration validation is
+now charged inside the child command before its final receipt write. A new
+regression rejects inconsistent final accounting before completion is written.
+Both focused revisions pass 76 tests (10.94/11.14 seconds); direct private-module
+pytest imports are explicit. All four local roles and both hosted roles must be
+repeated on the revised source before any formal proof or production cost.
+No scientific cap, seed, mathematical result or acceptance criterion changes.
+
+
+November 15, 2026 — All six source-check roles pass on `066f522` with the same
+433-file fingerprint. Both full local suites pass 4,661 tests (65 skipped,
+150 deselected; 988.95/963.24 seconds); optional suites pass 1,564 each
+(565.55/499.07 seconds). Both GitHub source jobs in run `43809812112` pass 4,661
+with the existing warning (1,284.07/866.26 seconds). Actual Python/NumPy, every uv
+selection, checkout and whole tested tree are verified. The earlier cohort stays
+superseded. The exact launch, retention and publication instructions and their
+19 subprocess/file checks plus four mocked publication-order cases are retained.
+Publish these receipts before the single fresh shared-180-second software proof.
+No formal proof, production cost or new registered Hold’em study has run yet.
+
+
+November 15, 2026 — software-own: complete raw capture. The complete command reports 6.797211083001457 seconds. Own evidence is published before the independent constructor. This is software evidence, not new Hold’em training or strength admission.
+
+
+November 15, 2026 — software-audit: complete raw capture. The complete command reports 6.631517209025333 seconds. Independent output is comparison-only; complete proof verification still precedes costs. This is software evidence, not new Hold’em training or strength admission.
+
+
+### Own proof and all three complete own costs — November 15, 2026
+
+The fresh shared software proof passes in 24.288505792006617 seconds, including
+own publication before the independent constructor. Own and native commands
+take 6.797211083001457 and 6.631517209025333 seconds. All original toy histories
+match; the native scalar comparison covers 432 profiles and 1,152 fixed conditions
+with maximum error 1.1102230246251565e-16 fixture chips. The production card
+contract passes all 5,724 inputs, 17 fixed cases and five full builder encodings,
+with 12,296 reduced calls, no fallback/error and final restoration.
+[Saved verification](../results/compact-suit-learning/software/verified-publication.json).
+
+All three fresh own-cost repetitions complete: 182.12105958300526,
+184.0667208750092 and 186.84964237501845 complete-command seconds, each below
+900. Their supervised outer clocks are 182.54452658299124,184.4868316249922
+and187.26981083399733 seconds. Each includes original stand-in creation, full
+own math replay and all six report files; 432 profiles/1,152 conditions replay
+with zero error and exact policy/ledger bits, 459,052 reduced calls, no
+fallback/error and restored aliases. These are cost stand-ins with zero new
+learning, not a measured improvement in strategy quality.
+
+Publish all 66 raw/admin members and three manifests together before any fresh
+native cost constructor. [Raw publication checks](../results/compact-suit-learning/own-cost-raw-verification.json)
+verify bytes against ignored originals, saved replay/accounting, source and caps;
+they do not perform another mathematical replay or a comparative cost analysis.
+The first posthoc checker failed on an import before producing evidence; its
+[history](../results/compact-suit-learning/checks/posthoc-own-verifier-history/failure.json)
+and corrected operator remain available. No collection was repeated.
+
+Next: all three complete independent costs, then publish them before the original
+maximum-based forecast. The old budget and accuracy failures remain current.
+Source, seeds, caps and acceptance criteria are unchanged. Codex-assisted; human
+hands-on time not recorded.
+
+
+### All three complete independent costs — November 15, 2026
+
+The fixed native repetitions complete in 390.69778079201933,
+393.7666274170042 and 396.27123320801184 seconds, below their 900-second caps.
+Supervised outer clocks are 390.8178977500065,393.85517862500274 and
+396.3754958329955 seconds. Each retains both complete own replays, original
+worker loads, source/publication/license checks and final writes. All 432 profiles
+and 1,152 fixed conditions agree with maximum error 1.8474111129762605e-13 chips.
+Each parent records 918,104 reduced calls, zero fallback/error and final restoration;
+all three spawned workers retain original normalization. Outputs are comparison
+scalars only, with no training or exported reference actions.
+
+All three own grids were published together at d8d514e before any native cost.
+Their exact publication inventories pass again with a clean unchanged 433-file
+source before retention. The 33 native raw/admin members, three manifests and
+ignored originals match. [Raw validation](../results/compact-suit-learning/native-cost-raw-verification.json)
+checks saved workers/scalars/journals/accounting/bytes and clocks; it is not an
+additional full own mathematical replay. Publish this complete batch before
+posthoc cost analysis or the fresh full forecast. No favorable retry, cap/seed
+change, new poker trajectory or admission. The original failed budget and quality
+results remain intact.
+
+
+### Complete forecast: independent budget still fails — November 15, 2026
+
+The full forecast command completes in 412.56740954099223 seconds (supervised
+outer 412.6018629579921), below its 900-second command cap. It replays the tiny proof
+and all three complete own archives, validates the independent records and all
+127 sealed inputs, and rebuilds the original kernel-geometry check. Its 11 raw/admin
+members and manifest match ignored originals; the 433-file source is unchanged.
+
+The unchanged maximum-based calculation yields T=610.943356249918,
+D=186.84964237501845 and N=396.27123320801184seconds. Own forecast
+`2*(2*T+D+600)=4017.472709749709 < 7200` passes. Independent forecast
+`2*(N+60)=912.5424664160237 < 900` **fails**. This is a completed calculation with
+a failed budget criterion, not a failed replay. No admission or new real
+trajectory is attempted. [Complete forecast](../results/compact-suit-learning/forecast.json)
+and [raw manifest](../results/compact-suit-learning/raw-forecast-manifest.json)
+retain the unfavorable result. The historical 933.889393168007/900 and
+2.390%-versus-1% failures remain intact. Different runs/sources do not establish
+a causal speedup or a playing-strength improvement.
+
+Next: finish the saved-data terminal report/plots, portability and final local
+and hosted checks, then investigate remaining validation cost using measured
+evidence. No changed cap, safety margin, seed, accuracy criterion or default.
+
+
+November 15 — Saved-data report added with four integrity/isolation tests passing
+both actual runtimes (6.09/7.30s), lint/format and strict types. Complete six costs
+and both strict forecast outcomes print without numerical execution. All three
+numeric exports match byte-for-byte actual31117/NP246 vs31215/NP254 with execution
+blocked; two zero-based plots visually inspected. Initial rendering in base
+environments lacked Matplotlib; partials/operator retained, then existing locked
+research environments render successfully to fresh folders. The first code commit
+hook could not find uv before the project environment was sourced; hooks then
+pass. No scientific collection repeated or source433byte changed. Final relevant
+local/optional and exact-report-head hosted checks remain required before merge.
+
+
+Final local report checks pass on immutable 31da1f8: both full bases 4,665 / 65 skipped /
+150 deselected (1,088.97/1,075.45 seconds), relevant optional 1,568 each
+(642.57/578.45 seconds). All runtime/root/source guards pass before/after;
+lint/format 949, strict mypy 798 and hooks pass. [Exact four-role logs](../results/compact-suit-learning/final-regressions/manifest.json)
+retain the operator and actual commands. The 433-file scientific source remains
+unchanged. Both final exact-report-head hosted jobs still precede merge.
+
+The saved-data audit additionally blocks actual MatrixTree/SpotTree constructors,
+ScoringContext.score, defining canonical/lookup functions, internal replay and
+reference audit, alongside the earlier entry-point guards. All three numeric
+exports remain byte-identical in both actual environments and to the original
+report. [Supplemental execution guards](../results/compact-suit-learning/report-execution-guard-v3-manifest.json)
+retain this check without replacing the earlier report or its partial failures.

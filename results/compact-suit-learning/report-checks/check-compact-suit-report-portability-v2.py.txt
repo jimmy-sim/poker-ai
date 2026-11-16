@@ -1,0 +1,35 @@
+"""Actual saved-data exports with all numerical experiment entry points blocked."""
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+import numpy
+import pytest
+
+w = Path(__file__).resolve().parent
+r = w / "compact-suit"
+sys.path.insert(0, str(r / "scripts"))
+sys.path.insert(0, str(r / "tests"))
+import report_suit_pipeline as report
+from test_suit_pipeline_report import block_execution
+
+pair = (sys.version.split()[0], numpy.__version__)
+assert pair in (("3.11.17", "2.4.6"), ("3.12.15", "2.5.4"))
+minor = "311" if pair[0].startswith("3.11") else "312"
+output = r / f"results/runs/compact-suit-report-v2-{minor}"
+with pytest.MonkeyPatch.context() as monkeypatch:
+    block_execution(monkeypatch)
+    summary = report.render(r, output)
+    report.show(summary)
+exports = ("summary.json", "costs.csv", "forecast.csv")
+if minor == "312":
+    baseline = r / "results/runs/compact-suit-report-v2-311"
+    assert all((output / name).read_bytes() == (baseline / name).read_bytes() for name in exports)
+result = dict(status="saved_report_complete_with_execution_blocked", actual_python=pair[0], actual_numpy=pair[1],
+              scope="Saved numeric portability; not real trajectory replay eligibility", numeric_exports=3,
+              baseline_byte_equal=True if minor == "312" else None,
+              blocked="Game construction/geometry, replay, training, independent workers, original/all/reduced normalization and installation",
+              raw_sha256={name: hashlib.sha256((output / name).read_bytes()).hexdigest() for name in exports})
+(w / f"compact-suit-report-portability-v2-{minor}.json").open("x").write(json.dumps(result, indent=2, sort_keys=True) + "\n")
+print(json.dumps(result))

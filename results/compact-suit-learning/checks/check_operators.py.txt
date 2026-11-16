@@ -1,0 +1,71 @@
+"""Fictional administrative processes/files only; not scientific collection."""
+import contextlib,hashlib,io,json,os,runpy,shutil,sys
+from pathlib import Path
+
+w=Path(__file__).resolve().parent
+out=w/'compact-suit-operator-fixtures';out.mkdir(exist_ok=False)
+run=runpy.run_path(str(w/'run-compact-suit-collection.py'),run_name='fixture_operator')['launch']
+rows=[]
+for name,program,expected,cap in [
+ ('success','import os;assert float(os.environ["POKER_COMPACT_SUIT_COMMAND_STARTED"])>0',0,2.0),
+ ('nonzero','raise SystemExit(7)',7,2.0),
+ ('timeout','import time;time.sleep(10)',124,0.15),
+ ('interrupt','import os,signal,time;os.kill(os.getppid(),signal.SIGINT);time.sleep(10)',130,2.0),
+]:
+ with (out/(name+'.stdout')).open('x') as stdout,(out/(name+'.stderr')).open('x') as stderr:
+  record=run([sys.executable,'-c',program],w,dict(os.environ),cap,0.5,stdout,stderr)
+ assert record['returncode']==expected
+ assert record['complete_command_within_cap'] is (name in ('success','nonzero'))
+ rows.append(dict(case=name,status='passed',record=record))
+for value in (True,0,-1,float('nan'),float('inf')):
+ try:
+  run([],w,{},value,1,None,None)
+ except ValueError:rows.append(dict(case='invalid_cap_'+repr(value),status='passed'))
+ else:raise AssertionError('invalid fictional cap accepted')
+
+keeper=runpy.run_path(str(w/'retain-compact-suit-collection.py'),run_name='fixture_retention')['main']
+original_args=sys.argv[:]
+try:
+ for name in ['complete','nonzero','over_cap','wrong_status','bool_code','bool_within','no_invocation','same_destination','changed_destination','symlink_destination']:
+  fake=out/name;fake.mkdir()
+  r=fake/'compact-suit';f=fake/'compact-suit-execution-software-own';f.mkdir()
+  target=r/'results/compact-suit-learning';checks=target/'checks';checks.mkdir(parents=True)
+  for actual,published in [('run-compact-suit-collection.py','operator_launch.py.txt'),('retain-compact-suit-collection.py','operator_retention.py.txt')]:
+   shutil.copyfile(w/actual,fake/actual);shutil.copyfile(w/actual,checks/published)
+  producer=r/'results/runs/compact-suit/software/own.json';producer.parent.mkdir(parents=True)
+  producer.write_text(json.dumps(dict(status='wrong' if name=='wrong_status' else 'completed_own_native_pending',scope='FICTIONAL_ADMIN_ONLY_NOT_PROOF')))
+  exit=dict(returncode=7 if name=='nonzero' else False if name=='bool_code' else 0,
+            complete_command_within_cap=False if name=='over_cap' else 1 if name=='bool_within' else True)
+  if name=='no_invocation':exit=dict(returncode=1,phase='fictional_preflight_failed')
+  (f/'exit.json').write_text(json.dumps(exit))
+  if name!='no_invocation':(f/'invocation.json').write_text(json.dumps(dict(output=str(producer))))
+  destination=target/'software/own.json'
+  if name in ('same_destination','changed_destination','symlink_destination'):
+   destination.parent.mkdir(parents=True)
+   if name=='symlink_destination':destination.symlink_to(producer)
+   else:destination.write_bytes(producer.read_bytes() if name=='same_destination' else b'PREVIOUS EXACT BYTES')
+  keeper.__globals__['__file__']=str(fake/'retain-compact-suit-collection.py')
+  sys.argv=[str(fake/'retain-compact-suit-collection.py'),'software-own']
+  error=None
+  try:
+   with contextlib.redirect_stdout(io.StringIO()):keeper()
+  except AssertionError:error='AssertionError'
+  if name in ('changed_destination','symlink_destination'):
+   assert error=='AssertionError' and not (target/'raw-software-own-manifest.json').exists()
+   if name=='changed_destination':assert destination.read_bytes()==b'PREVIOUS EXACT BYTES'
+   else:assert destination.is_symlink()
+  else:
+   assert error is None
+   manifest=json.loads((target/'raw-software-own-manifest.json').read_text())
+   complete=name in ('complete','same_destination')
+   assert (manifest['status']=='complete_raw_before_analysis') is complete
+   if complete:assert destination.read_bytes()==producer.read_bytes()
+   else:assert not destination.exists()
+   for relative,h in manifest['raw_sha256'].items():assert hashlib.sha256((target/relative).read_bytes()).hexdigest()==h
+  assert producer.exists()
+  rows.append(dict(case='retention_'+name,status='passed',scope='Mock producer status only; source/math/clock gates absent, never eligible proof'))
+finally:sys.argv=original_args
+record=dict(scope='Fictional subprocess supervision and administrative routing only. No archive reader/game/kernel/learner/reference or registered study/cost target executed.',checks=len(rows),rows=rows,
+ scripts={name:hashlib.sha256((w/name).read_bytes()).hexdigest() for name in ('run-compact-suit-collection.py','retain-compact-suit-collection.py')})
+(out/'checks.json').write_text(json.dumps(record,indent=2,sort_keys=True)+'\n')
+print(json.dumps(dict(status='passed_fictional_administration_only',checks=len(rows))))

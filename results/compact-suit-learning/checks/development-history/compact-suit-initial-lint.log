@@ -1,0 +1,291 @@
+E501 Line too long (97 > 88)
+   --> scripts/compact_suit/cli.py:628:89
+    |
+626 |     args = arguments(argv)
+627 |     path = output_path(root, args)
+628 |     receipt = path if args.operation != "report" else path.with_name(path.name + "-receipt.json")
+    |                                                                                         ^^^^^^^^^
+629 |     try:
+630 |         with cached(root) as cache:
+    |
+
+E501 Line too long (94 > 88)
+  --> scripts/compact_suit/native.py:98:89
+   |
+96 |         result = _independent(slot, indices, payload, send)
+97 |     return dict(result, validation_cache=cache.summary(),
+98 |                 normalization=cache.normalization.summary(), implementation_sha256=CONFIG_SHA)
+   |                                                                                         ^^^^^^
+
+E501 Line too long (104 > 88)
+  --> scripts/compact_suit/normalization.py:23:89
+   |
+21 |         if type(parent) is not bool:
+22 |             raise TypeError("explicit boolean parent role required")
+23 |         if type(config["maximum_parent_requests"]) is not int or config["maximum_parent_requests"] <= 0:
+   |                                                                                         ^^^^^^^^^^^^^^^^
+24 |             raise ValueError("positive normalization request bound required")
+25 |         self.config, self.parent = config, parent
+   |
+
+E501 Line too long (97 > 88)
+  --> scripts/compact_suit/normalization.py:34:89
+   |
+33 |     def summary(self) -> dict[str, Any]:
+34 |         return dict(scope=SCOPE, role="parent" if self.parent else "worker", enabled=self.parent,
+   |                                                                                         ^^^^^^^^^
+35 |                     pid=self.pid, thread=self.thread, status=self.status, active=self.active,
+36 |                     restored=self.restored, aliases_remaining=self.remaining,
+   |
+
+E501 Line too long (93 > 88)
+  --> scripts/compact_suit/normalization.py:35:89
+   |
+33 |     def summary(self) -> dict[str, Any]:
+34 |         return dict(scope=SCOPE, role="parent" if self.parent else "worker", enabled=self.parent,
+35 |                     pid=self.pid, thread=self.thread, status=self.status, active=self.active,
+   |                                                                                         ^^^^^
+36 |                     restored=self.restored, aliases_remaining=self.remaining,
+37 |                     maximum=self.config["maximum_parent_requests"], requests=self.requests,
+   |
+
+E501 Line too long (91 > 88)
+  --> scripts/compact_suit/normalization.py:37:89
+   |
+35 |                     pid=self.pid, thread=self.thread, status=self.status, active=self.active,
+36 |                     restored=self.restored, aliases_remaining=self.remaining,
+37 |                     maximum=self.config["maximum_parent_requests"], requests=self.requests,
+   |                                                                                         ^^^
+38 |                     original_evaluations=self.original_evaluations, reduced_evaluations=self.reduced_evaluations,
+39 |                     fallbacks=self.fallbacks, errors=self.errors,
+   |
+
+E501 Line too long (113 > 88)
+  --> scripts/compact_suit/normalization.py:38:89
+   |
+36 |                     restored=self.restored, aliases_remaining=self.remaining,
+37 |                     maximum=self.config["maximum_parent_requests"], requests=self.requests,
+38 |                     original_evaluations=self.original_evaluations, reduced_evaluations=self.reduced_evaluations,
+   |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+39 |                     fallbacks=self.fallbacks, errors=self.errors,
+40 |                     table_sha256=self.config["lookup_table_sha256"], geometry_sha256=self.config["geometry_sha256"])
+   |
+
+E501 Line too long (116 > 88)
+  --> scripts/compact_suit/normalization.py:40:89
+   |
+38 |                     original_evaluations=self.original_evaluations, reduced_evaluations=self.reduced_evaluations,
+39 |                     fallbacks=self.fallbacks, errors=self.errors,
+40 |                     table_sha256=self.config["lookup_table_sha256"], geometry_sha256=self.config["geometry_sha256"])
+   |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+41 |
+42 |     def call(self, *args: Any, **kwargs: Any) -> Any:
+   |
+
+E501 Line too long (93 > 88)
+  --> scripts/compact_suit/normalization.py:75:89
+   |
+73 |         if (self.status != "not_started" or potential.canonical_cards is not kernel.BASE
+74 |                 or threading.current_thread() is not threading.main_thread()):
+75 |             raise ArithmeticError("parent normalization requires original main-thread owner")
+   |                                                                                         ^^^^^
+76 |         kernel.check_geometry(self.config["lookup_table_sha256"], self.config["geometry_sha256"])
+77 |         initial: list[tuple[ModuleType, str, Any]] = []
+   |
+
+E501 Line too long (97 > 88)
+  --> scripts/compact_suit/normalization.py:76:89
+   |
+74 |                 or threading.current_thread() is not threading.main_thread()):
+75 |             raise ArithmeticError("parent normalization requires original main-thread owner")
+76 |         kernel.check_geometry(self.config["lookup_table_sha256"], self.config["geometry_sha256"])
+   |                                                                                         ^^^^^^^^^
+77 |         initial: list[tuple[ModuleType, str, Any]] = []
+78 |         primary = False
+   |
+
+E501 Line too long (118 > 88)
+   --> scripts/compact_suit/normalization.py:100:89
+    |
+ 98 |                 for module, name, value in initial:
+ 99 |                     setattr(module, name, value)
+100 |                 self.remaining = sum(value is wrapper or (isinstance(value, MethodType) and value.__func__ is wrapper)
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+101 |                                      for module in aliases.owned_modules() for value in vars(module).values())
+102 |                 self.restored = potential.canonical_cards is kernel.BASE and self.remaining == 0
+    |
+
+E501 Line too long (110 > 88)
+   --> scripts/compact_suit/normalization.py:101:89
+    |
+ 99 |                     setattr(module, name, value)
+100 |                 self.remaining = sum(value is wrapper or (isinstance(value, MethodType) and value.__func__ is wrapper)
+101 |                                      for module in aliases.owned_modules() for value in vars(module).values())
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+102 |                 self.restored = potential.canonical_cards is kernel.BASE and self.remaining == 0
+103 |                 self.active = False
+    |
+
+E501 Line too long (96 > 88)
+   --> scripts/compact_suit/normalization.py:102:89
+    |
+100 |                 self.remaining = sum(value is wrapper or (isinstance(value, MethodType) and value.__func__ is wrapper)
+101 |                                      for module in aliases.owned_modules() for value in vars(module).values())
+102 |                 self.restored = potential.canonical_cards is kernel.BASE and self.remaining == 0
+    |                                                                                         ^^^^^^^^
+103 |                 self.active = False
+104 |                 self.status = "complete" if self.restored and not primary else "failed_retained"
+    |
+
+E501 Line too long (96 > 88)
+   --> scripts/compact_suit/normalization.py:104:89
+    |
+102 |                 self.restored = potential.canonical_cards is kernel.BASE and self.remaining == 0
+103 |                 self.active = False
+104 |                 self.status = "complete" if self.restored and not primary else "failed_retained"
+    |                                                                                         ^^^^^^^^
+105 |                 if not self.restored and not primary:
+106 |                     raise ArithmeticError("normalization aliases not restored")
+    |
+
+E501 Line too long (96 > 88)
+   --> scripts/compact_suit/normalization.py:119:89
+    |
+117 |     numeric = ("pid", "thread", "maximum", "requests", "original_evaluations",
+118 |                "reduced_evaluations", "fallbacks", "errors", "aliases_remaining")
+119 |     if (set(row) != set(expected) or any(type(row[k]) is not int or row[k] < 0 for k in numeric)
+    |                                                                                         ^^^^^^^^
+120 |             or row['pid'] <= 0 or row['thread'] <= 0 or row['scope'] != SCOPE
+121 |             or row['role'] != expected['role'] or row['enabled'] is not parent
+    |
+
+E501 Line too long (90 > 88)
+   --> scripts/compact_suit/normalization.py:130:89
+    |
+128 |             or row['geometry_sha256'] != expected['geometry_sha256']
+129 |             or not 0 <= row['requests'] <= row['maximum']
+130 |             or row['requests'] != row['original_evaluations'] + row['reduced_evaluations']
+    |                                                                                         ^^
+131 |             or row['fallbacks'] != row['original_evaluations']
+132 |             or type(expected_errors) is not int or expected_errors < 0
+    |
+
+E501 Line too long (133 > 88)
+   --> scripts/compact_suit/normalization.py:134:89
+    |
+132 |             or type(expected_errors) is not int or expected_errors < 0
+133 |             or row['errors'] != expected_errors
+134 |             or (not parent and any(row[k] for k in ('requests','original_evaluations','reduced_evaluations','fallbacks','errors')))):
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+135 |         raise ArithmeticError("normalization counters, role or final restoration changed")
+    |
+
+E501 Line too long (90 > 88)
+   --> scripts/compact_suit/normalization.py:135:89
+    |
+133 |             or row['errors'] != expected_errors
+134 |             or (not parent and any(row[k] for k in ('requests','original_evaluations','reduced_evaluations','fallbacks','errors')))):
+135 |         raise ArithmeticError("normalization counters, role or final restoration changed")
+    |                                                                                         ^^
+
+E501 Line too long (90 > 88)
+  --> scripts/compact_suit/source.py:48:89
+   |
+46 |     # Read source metadata only. Importing the diagnostic runner here would pull
+47 |     # pure reference validators into an otherwise reference-free training worker.
+48 |     proof = json.loads((root / "results/suit-candidates/software/proof.json").read_text())
+   |                                                                                         ^^
+49 |     anchor = root / "results/suit-candidates/software/child/child.json"
+50 |     if digest(anchor) != proof["measurement"]["child_sha256"]:
+   |
+
+E501 Line too long (97 > 88)
+  --> scripts/compact_suit/source.py:56:89
+   |
+54 |             or old["fingerprint"] != sha(old["sha256"])
+55 |             or len(old["sha256"]) != c["predecessor_source_files"]
+56 |             or any(digest(root / name) != expected for name, expected in old["sha256"].items())):
+   |                                                                                         ^^^^^^^^^
+57 |         raise ArithmeticError("unchanged complete predecessor source required")
+58 |     commit_sources(root, old["git_commit"], old["sha256"])
+   |
+
+E501 Line too long (94 > 88)
+  --> scripts/compact_suit/workers.py:76:89
+   |
+74 |         result = _training(slot, indices, payload, send)
+75 |     return dict(result, validation_cache=cache.summary(),
+76 |                 normalization=cache.normalization.summary(), implementation_sha256=CONFIG_SHA)
+   |                                                                                         ^^^^^^
+
+E501 Line too long (126 > 88)
+  --> tests/test_suit_compact_normalization.py:14:89
+   |
+12 | from poker_ai.abstraction import potential
+13 |
+14 | CONFIG = json.loads((Path(__file__).resolve().parents[1] / "configs/compact-suit-pipeline.json").read_text())["normalization"]
+   |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+E501 Line too long (99 > 88)
+  --> tests/test_suit_compact_normalization.py:20:89
+   |
+18 |     state = Normalization(CONFIG, parent=True)
+19 |     with state.installed():
+20 |         assert potential.canonical_cards((0, 4), (11, 15, 19)) == kernel.BASE((0, 4), (11, 15, 19))
+   |                                                                                         ^^^^^^^^^^^
+21 |         assert state.summary()["active"] is True
+22 |         with pytest.raises(ArithmeticError):
+   |
+
+E501 Line too long (95 > 88)
+  --> tests/test_suit_compact_normalization.py:40:89
+   |
+40 | def test_primary_exception_and_late_alias_restoration(monkeypatch: pytest.MonkeyPatch) -> None:
+   |                                                                                         ^^^^^^^
+41 |     late = ModuleType("poker_ai.test_late_suit_alias")
+42 |     import sys
+   |
+
+E501 Line too long (100 > 88)
+  --> tests/test_suit_compact_normalization.py:67:89
+   |
+67 | def test_unsupported_and_changed_dependencies_use_original(monkeypatch: pytest.MonkeyPatch) -> None:
+   |                                                                                         ^^^^^^^^^^^^
+68 |     state = Normalization(CONFIG, parent=True)
+69 |     with state.installed():
+   |
+
+E501 Line too long (93 > 88)
+  --> tests/test_suit_compact_normalization.py:70:89
+   |
+68 |     state = Normalization(CONFIG, parent=True)
+69 |     with state.installed():
+70 |         assert potential.canonical_cards([0, 1], [2, 3, 4]) == kernel.BASE([0, 1], [2, 3, 4])  # type: ignore[arg-type]
+   |                                                                                         ^^^^^
+71 |         with monkeypatch.context() as patch:
+72 |             patch.setattr(kernel, "dependencies_unchanged", lambda: False)
+   |
+
+E501 Line too long (92 > 88)
+   --> tests/test_suit_compact_normalization.py:99:89
+    |
+ 97 |     ("role", "worker"), ("original_evaluations", 1), ("errors", 1),
+ 98 | ])
+ 99 | def test_final_state_rejects_typed_or_context_corruption(field: str, value: object) -> None:
+    |                                                                                         ^^^^
+100 |     state = Normalization(CONFIG, parent=True)
+101 |     with state.installed():
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> tests/test_suit_compact_normalization.py:103:41
+    |
+101 |     with state.installed():
+102 |         potential.canonical_cards((0, 4), ())
+103 |     row = copy.deepcopy(state.summary());row[field] = value
+    |                                         ^
+104 |     with pytest.raises(ArithmeticError):
+105 |         validate(row, CONFIG, parent=True)
+    |
+
+Found 29 errors (1 fixed, 28 remaining).

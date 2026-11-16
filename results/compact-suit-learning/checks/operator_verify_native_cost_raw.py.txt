@@ -1,0 +1,83 @@
+"""Verify all raw native costs before analysis; do not rerun timed work."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+from compact_suit.publication import committed
+from compact_suit.cache import check_execution
+from compact_suit.clock import measurement
+from compact_suit.contract import contract
+from compact_suit.source import check_source, source
+from poker_ai.evaluation.opponent_learning_workers import gather_independent
+from poker_ai.evaluation.private_prefix_journal import validate as validate_journal
+from poker_ai.postflop.parallel_profile import same
+from poker_ai.solver_validation.opponent_learning import validate_rows
+
+w = Path(__file__).resolve().parent
+r = w / "compact-suit"
+base = r / "results/compact-suit-learning"
+rows = []
+total = 0
+for rep in (0, 1, 2):
+    folder = base / f"cost/{rep}"
+    path = folder / "native.json"
+    saved = json.loads(path.read_text())
+    own = json.loads((folder / "own.json").read_text())
+    manifest = json.loads((base / f"raw-cost-audit-{rep}-manifest.json").read_text())
+    assert manifest["status"] == "complete_raw_before_analysis"
+    for relative, expected in manifest["raw_sha256"].items():
+        member = base / relative
+        assert not member.is_symlink()
+        assert hashlib.sha256(member.read_bytes()).hexdigest() == expected
+        if relative.startswith(f"cost/{rep}/"):
+            original = r / "results/runs/compact-suit" / relative
+            assert member.read_bytes() == original.read_bytes()
+    check_source(r, saved["source"])
+    check_execution(r, saved)
+    m = measurement(path, "cost-audit")
+    assert type(saved["repetition"]) is int and saved["repetition"] == rep
+    assert saved["status"] == "completed_scalar_comparison" and saved["failure"] is None
+    assert same(saved["config"], contract(r))
+    assert saved["reference_constructed"] is True
+    for key in ("reference_output_used_in_training", "poker_training_performed", "training_start_attempted", "new_agent_default", "fresh_global_admission", "long_run_admitted"):
+        assert saved[key] is False
+    witnesses = saved["all_own_cost_publications_before_native"]
+    assert len(witnesses) == 3
+    for index, witness in enumerate(witnesses):
+        member = base / f"cost/{index}/own.json"
+        assert witness["own_sha256"] == hashlib.sha256(member.read_bytes()).hexdigest()
+        assert witness["own_commit"] == "d8d514e41c58a295f5e8321088444bb43b61d9ae"
+        for relative, expected in witness["published_input_sha256"].items():
+            published = r / relative
+            assert hashlib.sha256(published.read_bytes()).hexdigest() == expected
+            committed(r, published)
+    verified = validate_rows(saved, own)
+    assert same(verified, saved["verification"])
+    gathered = gather_independent(saved["native_batch"], own)
+    assert all(same(saved[k], value) for k, value in gathered.items())
+    assert verified["profiles"] == 432 and verified["fixed_conditions"] == 1152
+    assert verified["maximum_error_chips"] <= 1e-9
+    assert verified["reference_actions_exported"] is False and verified["training_performed"] is False
+    groups = {3: saved["events"], **{worker["slot"]: worker["messages"] for worker in saved["native_batch"]["workers"]}}
+    validate_journal(path.with_name(saved["journal"]["file"]), saved["journal"], saved["source_sha256"], groups)
+    assert saved["native_batch"]["worker_count"] == 3
+    admin = json.loads((base / f"execution-cost-audit-{rep}/exit.json").read_text())
+    assert type(admin["returncode"]) is int and admin["returncode"] == 0
+    assert admin["complete_command_within_cap"] is True and admin["interrupted"] is None
+    assert 0 < admin["seconds"] < 900
+    assert saved["license"]["sha256"] == contract(r)["native_reference"]["license_sha256"]
+    total += len(manifest["raw_sha256"])
+    rows.append(dict(repetition=rep, raw_files=len(manifest["raw_sha256"]), complete_seconds=m["seconds"],
+                     supervised_outer_seconds=admin["seconds"], native_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                     verification=verified, normalization=saved["normalization"],
+                     own_publication=saved["publication"]["own_commit"]))
+current = source(r)
+assert len(current["sha256"]) == 433
+assert current["fingerprint"] == "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78"
+result = dict(status="all_three_raw_native_costs_verified_before_publication_and_analysis",
+              scope="Administrative raw/source/clock checks and saved native scalar/worker/journal/publication validation; not another full own mathematical replay or cost comparison",
+              original_ignored_outputs_retained=True, source_sha256=current["fingerprint"], rows=rows)
+(base / "native-cost-raw-verification.json").open("x").write(json.dumps(result, indent=2, sort_keys=True) + "\n")
+shutil.copyfile(__file__, base / "checks/operator_verify_native_cost_raw.py.txt")
+print(json.dumps(dict(status=result["status"], repetitions=3, raw_files=total, source_files=433)))

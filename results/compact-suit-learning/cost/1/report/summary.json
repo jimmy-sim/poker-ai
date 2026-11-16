@@ -1,0 +1,105 @@
+{
+  "all_seeds_and_readouts_retained": true,
+  "arm_points": 216,
+  "dependence": "Three fixed seeds; reused prefixes and related readouts; no population confidence interval.",
+  "fixed_conditions": 1152,
+  "fixed_metric": "Fine best-response gain against each frozen OWN opponent; not self exploitability or an external strategy comparison.",
+  "fresh_global_admission": false,
+  "new_agent_default": false,
+  "poker_results": false,
+  "primary": {
+    "fresh_global_admission": false,
+    "groups": [
+      {
+        "accuracy_limits_pass": null,
+        "game": 0,
+        "historical_whole_average_coverage_pass": null,
+        "median": 1.650035937787542e-09,
+        "median_paired_improvement": 0.0,
+        "mixed_exact_exploitability": [
+          2.2536342065481176e-08,
+          1.650035937787542e-09,
+          1.6492047782293534e-09
+        ],
+        "ordinary_coarse_minus_mixed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "paired_coarse_minus_mixed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "paired_improvement_pass": null,
+        "post_warm_uniform_reach_coverage": [
+          0.8366161616161618,
+          0.7111111111111116,
+          0.7111111111111116
+        ],
+        "seeds": [
+          20261301,
+          20261302,
+          20261303
+        ],
+        "whole_average_uniform_reach_coverage": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "worst": 2.2536342065481176e-08
+      },
+      {
+        "accuracy_limits_pass": null,
+        "game": 1,
+        "historical_whole_average_coverage_pass": null,
+        "median": 2.793291801245755,
+        "median_paired_improvement": 0.0,
+        "mixed_exact_exploitability": [
+          2.793291801245755,
+          0.3752866098577723,
+          3.349472198668948
+        ],
+        "ordinary_coarse_minus_mixed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "paired_coarse_minus_mixed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "paired_improvement_pass": null,
+        "post_warm_uniform_reach_coverage": [
+          0.9805303093078616,
+          0.9680296501642209,
+          0.9704844894085034
+        ],
+        "seeds": [
+          20261301,
+          20261302,
+          20261303
+        ],
+        "whole_average_uniform_reach_coverage": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "worst": 3.349472198668948
+      }
+    ],
+    "independent_audit": "reported separately; this own report cannot accept its numerical gate",
+    "known_game_accuracy_and_improvement_only": false,
+    "median_limit_pct_initial_pot": 1.0,
+    "minimum_whole_average_uniform_reach_coverage": 0.95,
+    "new_agent_default": false,
+    "no_secondary_readout_rescue": true,
+    "recall_and_source_gates": "required separately; not inferred from a strength curve",
+    "worst_limit_pct_initial_pot": 2.5
+  },
+  "reuse": "Old OWN endpoints reused at nominal cost coordinates. Zero new training; mixed tables were never learned together.",
+  "scope": "OLD_OWN_OPPONENT_COST_STANDINS_NO_NEW_TRAINING",
+  "unique_scored_profiles": 432,
+  "units": "percent initial pot"
+}

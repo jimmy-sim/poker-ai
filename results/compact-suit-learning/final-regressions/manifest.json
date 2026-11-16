@@ -1,0 +1,91 @@
+{
+  "checked_commit": "31da1f82cbd0db8d2ee1684209409839a4ccda63",
+  "checks": [
+    {
+      "passed": 4665,
+      "receipt": {
+        "check_seconds": 1110.4806104579766,
+        "checked_commit": "31da1f82cbd0db8d2ee1684209409839a4ccda63",
+        "numpy": "2.4.6",
+        "python": "3.11.17",
+        "role": "base311",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "setup_and_check_seconds": 1111.3167118340207,
+        "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+        "status": "passed"
+      },
+      "role": "base311",
+      "summary": "4665 passed, 65 skipped, 150 deselected in 1088.97s (0:18:08)"
+    },
+    {
+      "passed": 4665,
+      "receipt": {
+        "check_seconds": 1098.678873332974,
+        "checked_commit": "31da1f82cbd0db8d2ee1684209409839a4ccda63",
+        "numpy": "2.5.4",
+        "python": "3.12.15",
+        "role": "base312",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "setup_and_check_seconds": 1099.5374360829883,
+        "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+        "status": "passed"
+      },
+      "role": "base312",
+      "summary": "4665 passed, 65 skipped, 150 deselected in 1075.45s (0:17:55)"
+    },
+    {
+      "passed": 1568,
+      "receipt": {
+        "check_seconds": 651.5378704590257,
+        "checked_commit": "31da1f82cbd0db8d2ee1684209409839a4ccda63",
+        "numpy": "2.4.6",
+        "python": "3.11.17",
+        "role": "optional311",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "setup_and_check_seconds": 652.3741222500103,
+        "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+        "status": "passed"
+      },
+      "role": "optional311",
+      "summary": "1568 passed in 642.57s (0:10:42)"
+    },
+    {
+      "passed": 1568,
+      "receipt": {
+        "check_seconds": 588.201445417013,
+        "checked_commit": "31da1f82cbd0db8d2ee1684209409839a4ccda63",
+        "numpy": "2.5.4",
+        "python": "3.12.15",
+        "role": "optional312",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "setup_and_check_seconds": 589.0405731249775,
+        "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+        "status": "passed"
+      },
+      "role": "optional312",
+      "summary": "1568 passed in 578.45s (0:09:38)"
+    }
+  ],
+  "raw_sha256": {
+    "base311-install.log": "7897be96578c9c5adfa1f919be84769b8f528d788f0f0515cfdaa463f8151f3d",
+    "base311-receipt.json": "f3e6025f01cc9ed96b6991cd7187340a43af9a980692543c3dade946ce5cd021",
+    "base311.log": "7981e311954a901a784dc37c280f0880d1e7a4c125319de967c0d4b78db6b5a7",
+    "base312-install.log": "55952065cdd99d1a2921deff9f15aafc15976467a92aeab1acf925690aec2ee5",
+    "base312-receipt.json": "7e9825c88c6d37881898c5656ffb09deacaac7621ec232ad28ffb7de3ccf1eb8",
+    "base312.log": "e65cf599cbbee4c413d967a5fac907182427a7c75a0b4c05296c21feaedc69ce",
+    "check-compact-suit-final-docs.py.txt": "974f6f1ba3cae58f74f946486edaa41827017d7060906d49bcc5309f5de79e53",
+    "compact-suit-final-expected.json": "bd3d225f9d3a388c510b432d1824e4c1ea82297200eb923fa34394c153371b7e",
+    "operator_assemble.py.txt": "3bca44996c4c05d9ac80a7be9d84335a74263432f6b603f5331b72562336036c",
+    "optional311-install.log": "2e2b98eecff99944c05312852103c829681b92cf621fee78e74edf1322202ae3",
+    "optional311-receipt.json": "dbc5b7f9031d14a6765a0ee5989fd941c64c5aa097a96d7ffcb37252b7659ce4",
+    "optional311.log": "04d25371e1e35282b607d899b0b046076473c973078655e2a110f2f493099009",
+    "optional312-install.log": "50b0f99d314952fba05f129769103ad5e7b58511535a77bc0ba4f5e866f07c7b",
+    "optional312-receipt.json": "e1d8023fec172461e5f5a4bb95b98e1e41bd12e37bb3cbbe0dec9389ce3f3f49",
+    "optional312.log": "eb09089b34acacaf02fe1c8fe39b826347b0af6739a919384271e168e651ffa8",
+    "run-compact-suit-final-checks.py.txt": "362821f049639c8e58863329e4b9bc01a2b2532eb6dfe145bf288d3465e24c60"
+  },
+  "scientific_sources": 433,
+  "scope": "Final report and original software tests; not new formal trajectory or successful compute admission",
+  "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+  "status": "all_four_final_local_regressions_passed_hosted_still_required"
+}

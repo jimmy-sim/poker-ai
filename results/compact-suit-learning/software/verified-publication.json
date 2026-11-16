@@ -1,0 +1,136 @@
+{
+  "card_counts": {
+    "original": 5724,
+    "reduced": 5724
+  },
+  "card_normalization": {
+    "active": false,
+    "aliases_remaining": 0,
+    "enabled": true,
+    "errors": 0,
+    "fallbacks": 0,
+    "geometry_sha256": "f1cf3685244285e88220e82b5c274fd96b12f07acf4cd17a106bf079ce2cfc8d",
+    "maximum": 10000000,
+    "original_evaluations": 0,
+    "pid": 50532,
+    "reduced_evaluations": 12296,
+    "requests": 12296,
+    "restored": true,
+    "role": "parent",
+    "scope": "parent-only exact suit factorization; workers original; no adaptive hand cache",
+    "status": "complete",
+    "table_sha256": "f422fabd71dd88fc9b169442354ac8a8d017be6debe69f170548f1064c8c3ec8",
+    "thread": 8419578624
+  },
+  "current_head": "e1dbffa752a1793b932eec9d87b170dacf62bebe",
+  "full_builder_fields": {
+    "original": [
+      "43c80ef54f5f2519b50d2f19db9d6268fb590330a398855374d7ec012bac004a",
+      "57bbe961a9ed8b49fa979f3535dca9846fb10a741bf497c1caa35fcbec491561",
+      "8e43b948e719e1ab3d7ca162c252925a6ccf609ab6e3b204510b0c945b6a195e",
+      "efb2a4f6b3265ddc0d7025a450e701b8c60fce4cad71ceecf7e729b1aa141fb5",
+      "f337bca43370d844303c10512d81424e1c98f06840f759722f8e7b42c1b83bcf"
+    ],
+    "reduced": [
+      "43c80ef54f5f2519b50d2f19db9d6268fb590330a398855374d7ec012bac004a",
+      "57bbe961a9ed8b49fa979f3535dca9846fb10a741bf497c1caa35fcbec491561",
+      "8e43b948e719e1ab3d7ca162c252925a6ccf609ab6e3b204510b0c945b6a195e",
+      "efb2a4f6b3265ddc0d7025a450e701b8c60fce4cad71ceecf7e729b1aa141fb5",
+      "f337bca43370d844303c10512d81424e1c98f06840f759722f8e7b42c1b83bcf"
+    ]
+  },
+  "gate": {
+    "native_file": "results/compact-suit-learning/software/native.json",
+    "native_sha256": "98b01c6b37bdf29ddac283b28d733ca2e04ec397d0317a6e4970e27e13300dfb",
+    "own_file": "results/compact-suit-learning/software/own.json",
+    "own_sha256": "b0d97e8279c48728c0035e23e85da95b4c7d7b8283e025442ad93ce104c8b20f",
+    "shared_seconds": 24.288505792006617,
+    "source_sha256": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+    "status": "complete_tiny_software_only_not_poker_admission"
+  },
+  "native_seconds": 6.631517209025333,
+  "native_verification": {
+    "fixed_conditions": 1152,
+    "maximum_error_chips": 1.1102230246251565e-16,
+    "profiles": 432,
+    "reference_actions_exported": false,
+    "training_performed": false
+  },
+  "old_vector_parity": {
+    "original_commit": "37ca53d734a50386a37ea6d04a7c2e070e627aa1",
+    "original_own_sha256": "9dc45cd91700c314a692b6b447678d770fb200d76dba61e56232322010c05bd0",
+    "scope": "metadata intentionally differs; own toy vectors, not poker/reference",
+    "status": "all324policies216books30warms_exact_with_original_own_toy",
+    "streams": {
+      "captures": {
+        "count": 324,
+        "new_archive_sha256": "26c060f9a4871fc55e7f9abc6947a3fd54c1e62d3d146b3e930d477ede5d89ae",
+        "original_archive_sha256": "a500e1ed8521b0cd9be887c359eeaa12f6b1aa9754cc60ecfdfcc8c2ab97cc47"
+      },
+      "masses": {
+        "count": 216,
+        "new_archive_sha256": "b1ab43e784a687b03fb66ae763f9785e3147df66c854b97cb23315af084574e1",
+        "original_archive_sha256": "f1ea0f0f2776685b6a2516f68b6581fad74de9e5400113382849982db9a27092"
+      },
+      "warms": {
+        "count": 30,
+        "new_archive_sha256": "3208e3e28da2ce0f5141294287e68ca774f99fb589684e3d4f5d0c4e92f74545",
+        "original_archive_sha256": "a7e25b1e460031643963b94b81d66f787ff96e09a2882bce01f951b116b427b6"
+      }
+    }
+  },
+  "original_ignored_outputs_retained": true,
+  "own_publication": {
+    "locally_recorded_upstream": "refs/remotes/origin/research/compact-suit",
+    "own_commit": "110b36019d85168a0def9cbc4e7326c5e52a1958",
+    "own_sha256": "b0d97e8279c48728c0035e23e85da95b4c7d7b8283e025442ad93ce104c8b20f",
+    "published_input_sha256": {
+      "results/compact-suit-learning/software/own-captures.jsonl.gz": "26c060f9a4871fc55e7f9abc6947a3fd54c1e62d3d146b3e930d477ede5d89ae",
+      "results/compact-suit-learning/software/own-card-contract/card-inputs.json": "2535c63d150f28df7431807e97258786004c58950f560e24fff42365fcce55a0",
+      "results/compact-suit-learning/software/own-card-contract/contract.json": "53652fbb94bd01f94975b2dbce70f7a4bbdc4ea6234bb76b054241ff1527b4e7",
+      "results/compact-suit-learning/software/own-card-contract/fixed-results.json": "5343fd445946c90fa4d0bf92a894dcd7b9f1bf11f98ac878dc8e2b965dbfed37",
+      "results/compact-suit-learning/software/own-card-contract/fixed/bool_card.json": "a58791b73613d6586d7c92afad0f16db34c7840e9e55e18b37a5f5b48a7e1c1b",
+      "results/compact-suit-learning/software/own-card-contract/fixed/duplicate_board.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/duplicate_hole.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/float_card.json": "a58791b73613d6586d7c92afad0f16db34c7840e9e55e18b37a5f5b48a7e1c1b",
+      "results/compact-suit-learning/software/own-card-contract/fixed/high_card.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/keyword_valid.json": "0f5fe07c464c4ff4a6fc42a267caa22f180f97c15ceab1dc947f44368f0f77fd",
+      "results/compact-suit-learning/software/own-card-contract/fixed/negative_card.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/overlap.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/tuple_list_concat.json": "a58791b73613d6586d7c92afad0f16db34c7840e9e55e18b37a5f5b48a7e1c1b",
+      "results/compact-suit-learning/software/own-card-contract/fixed/unknown_keyword.json": "a58791b73613d6586d7c92afad0f16db34c7840e9e55e18b37a5f5b48a7e1c1b",
+      "results/compact-suit-learning/software/own-card-contract/fixed/valid_lists.json": "0f5fe07c464c4ff4a6fc42a267caa22f180f97c15ceab1dc947f44368f0f77fd",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_board_one.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_board_six.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_board_two.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_hole_empty.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_hole_one.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/fixed/wrong_hole_three.json": "03b20296402a6e2913dc32b27ebe1b3bc7a30cda19acd7108617a576553cc730",
+      "results/compact-suit-learning/software/own-card-contract/original-cards.jsonl": "34715c76d7a38eb0d346f46ec9c7d03beeb24755ffc5a3a3feda02199e296f42",
+      "results/compact-suit-learning/software/own-card-contract/original/constructor-events.jsonl": "fa09c348169f15dbbd8d9dd34ea50eb6089891d0c1cb034b851b38501ff66cc8",
+      "results/compact-suit-learning/software/own-card-contract/original/constructor.json": "952238f09158acd64c1a0d9d7487822d19cba03ff5b14eeae8b1fc105796eb23",
+      "results/compact-suit-learning/software/own-card-contract/reduced-cards.jsonl": "34715c76d7a38eb0d346f46ec9c7d03beeb24755ffc5a3a3feda02199e296f42",
+      "results/compact-suit-learning/software/own-card-contract/reduced/constructor-events.jsonl": "fa09c348169f15dbbd8d9dd34ea50eb6089891d0c1cb034b851b38501ff66cc8",
+      "results/compact-suit-learning/software/own-card-contract/reduced/constructor.json": "952238f09158acd64c1a0d9d7487822d19cba03ff5b14eeae8b1fc105796eb23",
+      "results/compact-suit-learning/software/own-child.json": "f2352e968ab9f0fee46ac0174f811dbd0939c24e0adf4f1cbafd4752a68d72a3",
+      "results/compact-suit-learning/software/own-composed.jsonl.gz": "2e587e5f91929e840f13c8845f9b2dfc9c7947edf07ad7d0b05f3a49376f6c5a",
+      "results/compact-suit-learning/software/own-details.jsonl.gz": "09c9e68e2ff10b97bac37d43c175be9bccc56c412ef0dee21e238a83faf19c6e",
+      "results/compact-suit-learning/software/own-events.jsonl": "0b10392358b4380d1ba4b7d4bc95aa49a16144b0fc0ebdf803f3fe3900833c7b",
+      "results/compact-suit-learning/software/own-masses.jsonl.gz": "b1ab43e784a687b03fb66ae763f9785e3147df66c854b97cb23315af084574e1",
+      "results/compact-suit-learning/software/own-warms.jsonl.gz": "3208e3e28da2ce0f5141294287e68ca774f99fb589684e3d4f5d0c4e92f74545",
+      "results/compact-suit-learning/software/own.json": "b0d97e8279c48728c0035e23e85da95b4c7d7b8283e025442ad93ce104c8b20f",
+      "results/compact-suit-learning/software/report/arm-points.csv": "7c766a21b9998e0f871c367ce14a1764187d252d72b835bd2d3c2a3c9f071538",
+      "results/compact-suit-learning/software/report/fixed-conditions.csv": "e5e866ec7619c73f3460b3915c042ccb78f6984d6309144b4edd565e9f274748",
+      "results/compact-suit-learning/software/report/fixed-gain.png": "a9bbca33a9c961a4e0b8c513626d1050656f8632bcc87441348062580310f37c",
+      "results/compact-suit-learning/software/report/learning.png": "c0b0ca205319992de000e301dd7034ab96ce86e832d844d3db4ca41d5f242573",
+      "results/compact-suit-learning/software/report/paired-gaps.png": "fbf41ca49d7bba1234774027922fd0e16122ecbfff78a12accf38e53f0d7849d",
+      "results/compact-suit-learning/software/report/summary.json": "6b4b51215aeaed43c7e3f1c77cbb3f56295049c1d9c8504699942de4888d0fa4"
+    },
+    "scope": "Git publication witness, not independent scientific or human review",
+    "source_sha256": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+    "upstream_commit": "110b36019d85168a0def9cbc4e7326c5e52a1958"
+  },
+  "own_seconds": 6.797211083001457,
+  "scope": "Fresh registered software proof and published records verified; not cost/real-training admission",
+  "shared_seconds": 24.288505792006617
+}

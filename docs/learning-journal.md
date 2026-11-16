@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
+
 - [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
 
 - [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
@@ -103,11 +105,15 @@ reproducible comparisons. Competitive full-game strength has not been establishe
 
 The latest compact sampled representation misses the harder known game's median
 accuracy target: **2.390% of the initial pot against 1%**. The proposed training
-follow-up remains unrun because its complete independent-audit forecast is
-**933.89 seconds against 900**. These are different tests: software correctness,
+follow-up remains unrun: the latest complete independent-audit forecast is
+**912.54 seconds against 900**. The earlier **933.89-second** failure remains
+in the historical record. These are different tests: software correctness,
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 125](#125-take-the-exact-card-calculation-into-complete-validation): qualify
+  the exact calculation in full validation; correctness passes, budget still fails.
 
 - [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
   an exact way to compare fewer suit renamings. The one audit pair preserves
@@ -2713,7 +2719,7 @@ slowest repeat and the fixed worker assignments gave a guarded forecast of
 The reporting exercise then used old saved policies to measure loading,
 writing, scoring, fixed opponents, replay and tables/plots. It covered the same
 144policy/96ledger/1,152target shape and took151.01seconds, below its600second
-allowance. The entire own profile took238.37seconds, below900.
+allowance. The entire own profile took238.37seconds, below 900.
 
 These numbers estimate whether the next comparison fits its budget. They do
 not show the agent improved: the overhead policies are old timing aliases.
@@ -3772,7 +3778,7 @@ published before the independent solver was constructed. Its comparison took
 7.62seconds. The complete shared sequence, including publication and final
 replay, took16.98seconds, within the180-second limit.
 
-All432policies and1,152fixed-opponent comparisons pass. Own replay has zero
+All432policies and 1,152 fixed-opponent comparisons pass. Own replay has zero
 measured error and exact saved probability/book bits; the independent scalar
 calculations differ by at most1.11×10⁻¹⁶chips. A read-only replay on Python3.12
 also passes. All three figures were visually checked and clearly identify their
@@ -4409,7 +4415,7 @@ with the old checked run's timing. The forecast must fit the unchanged budget
 before any compact candidate training starts.
 
 **Forecast:** the unchanged formula projects about94.1 seconds for the own full
-run and68.1 seconds for its audit. Both fit their900-second limits. The formula
+run and68.1 seconds for its audit. Both fit their 900-second limits. The formula
 uses a fixed factor-four safety margin; it is an engineering estimate, not a
 probability guarantee. The admission check must still recompute it from the
 published files before training is allowed.
@@ -5117,7 +5123,7 @@ heavy local work. No bottleneck or optimization outcome is assumed in advance.
 
 The first formal profiling attempt did not finish. Its ordinary copy completed
 in407.51seconds, including about275seconds across the two real own-result
-replays. The CPU-instrumented copy hit its900-second limit. Its reference workers
+replays. The CPU-instrumented copy hit its 900-second limit. Its reference workers
 finished, but the final replay and wrapper checks did not. The full raw partial
 is saved; no detailed function profile was produced, so we cannot name a
 function bottleneck from it. The old budget forecast remains failed.
@@ -6224,3 +6230,156 @@ expected private-hook restoration receipts from the unhooked original. That
 verifier failed; its corrected version checks the original's separate outcomes
 and both variants' restoration records. The failure remains available. The
 actual audit was not repeated or changed. Final GitHub checks still precede merge.
+
+
+PR #78 is merged after both final GitHub jobs pass 4,586 tests, with actual
+runtimes and whole tested trees verified. On main, the saved-data command matches
+the report and 189 focused tests pass in 35.42 seconds. All ten local result files
+and patches remain unchanged after checks. [Closing evidence](../results/suit-candidates/final-ci/manifest.json)
+is batched with the next implementation.
+
+## 125. Take the exact card calculation into complete validation
+
+**November 15, 2026 — issue #4: correctness checked; budget criterion fails.**
+
+The suit experiment preserves exact outputs and reduces one measured part of
+validation. The next question is practical: does it help the complete pipeline
+enough to fit the original budget? The [prospective plan](compact-suit-pipeline.md)
+was published before this new implementation. The earlier failed forecast and
+accuracy result remain current.
+
+A separate opt-in pipeline is under development. Its parent loader uses the
+exact private-card tie calculation alongside the existing recall-proof cache.
+The spawned learning and independent-comparison workers retain original card
+normalization. Every process must report that distinction. A live counter record
+is not evidence that temporary function replacements were restored; the final
+record is written after leaving the replacement scope.
+
+**Example:** the earlier tiny signal-game proof can test training updates and
+archive replay without calling Hold'em card normalization. Passing it alone
+would leave the new dispatch untested. The new software command therefore also
+needs a card-only contract: all 5,724 fixed inputs, 17 behavior cases and five
+complete builder encodings compared with original own outputs. Its own evidence
+must be published before the independent reference runs. The shared software
+budget stays 180 seconds, including this check and publication interval.
+
+The first 38 focused tests pass, covering roles, typed counters, restoration,
+fresh worker import isolation, complete source coverage and unchanged forecast
+math. This is development evidence. The separate card-contract fixture, complete
+pipeline integration, failure tests, full local and hosted checks are still in
+progress. No new formal proof, production cost, forecast, admission or real
+trajectory has started. Implementation and explanations are Codex-assisted; no
+personal learning or time is inferred.
+
+
+Both environments now pass all 75 focused tests. The new card-only fixture
+agrees with the original bytes and full builder fields; the complete tiny-game
+fixture preserves the original numerical histories. The optional independent
+unit comparison also checks all 432 profiles and 1,152 fixed conditions. These
+are explicitly mocked development fixtures, not the formal published proof.
+
+A review found that a cleanup write could overwrite an existing receipt. The
+runner now refuses existing files and verifies ownership before its final write;
+regression tests cover both cases. Tests also cover secondary save failures and
+wrong process IDs. Full-project lint, formatting and strict types pass. Next is
+the immutable-source qualification: all four local roles and both hosted jobs
+must pass before collecting any formal production evidence. The old failed
+budget and accuracy results are unchanged.
+
+
+The initial full local checks passed. Review then found that the final counter
+and restoration validation should finish inside the timed command. That check
+now runs before the final receipt is written, and a regression test rejects
+impossible accounting at that boundary. The earlier logs remain in
+[qualification history](../results/compact-suit-learning/qualification-history/superseded-d6f0fa5/manifest.json);
+they do not qualify the revised implementation. Both environments pass 76 focused
+tests. Complete local and hosted checks must now pass on the revised source
+before any formal proof or cost run. No scientific budget or criterion changes.
+
+
+All six source-check roles now pass on the same revision, including both hosted
+jobs with actual runtimes and whole source trees verified. [The raw receipts and
+run instructions](../results/compact-suit-learning/checks.json) preserve the details.
+The next step is the single fresh software proof: own card/learning records must
+be published before the independent comparison, all within the shared software
+budget. These checks do not replace the failed production budget or demonstrate
+a stronger strategy.
+
+
+November 15, 2026 — software-own: complete raw capture. The complete command reports 6.797211083001457 seconds. Own evidence is published before the independent constructor. This is software evidence, not new Hold’em training or strength admission.
+
+
+November 15, 2026 — software-audit: complete raw capture. The complete command reports 6.631517209025333 seconds. Independent output is comparison-only; complete proof verification still precedes costs. This is software evidence, not new Hold’em training or strength admission.
+
+
+The complete fresh software proof now passes, including publication before the
+independent comparison, within its shared 180-second limit. Both the original
+toy learning histories and the separate real card calculation agree. This checks
+implementation; it does not train a stronger Hold’em policy.
+
+Three complete own-cost runs also pass, taking about 182, 184 and 187 seconds.
+Each rebuilds cost stand-ins from earlier own policies, replays all 432 profiles
+and 1,152 fixed conditions, and writes the original reports. No new learning takes
+place. All three raw records are being published together before any new
+independent cost measurement.
+
+**Example:** a faster card calculation helps only part of the full command. The
+next measurements include the entire independent audit, not just its card loop.
+Only after all three are saved and published will the unchanged conservative
+forecast decide whether a new training comparison fits its budget.
+
+[Full measurements and retained checker error](compact-suit-pipeline.md#own-proof-and-all-three-complete-own-costs--november-15-2026)
+separate the experiment from a posthoc publication check that needed an import
+fix. The experiment was not repeated. The older failed budget and strategy
+accuracy results remain current; no personal practice or time is inferred.
+
+
+The three complete independent audits now pass correctness, taking about 391, 394
+and 396 seconds. Each compares all 432 profiles and 1,152 fixed condition and finishes
+its final own-archive replay before stopping the clock. All raw outcomes are
+being published together before the budget calculation.
+
+This distinction matters: **correctness passing is not a budget pass**. The next
+forecast uses the slowest complete run, with the original safety margin and
+900-second limit. A result close to the limit still has to satisfy that rule.
+[The exact times and raw checks](compact-suit-pipeline.md#all-three-complete-independent-costs--november-15-2026)
+remain available. No new Hold’em training or personal learning time is recorded.
+
+
+The full forecast now finishes, and the independent-audit budget still fails:
+**912.54 seconds against 900**. The own-training side passes at 4,017.47 against 7,200.
+The complete forecast itself took 412.57 seconds and rechecked all prescribed
+archives and source records before making that decision.
+
+**Example:** the audit rule is twice the slowest measured run plus a 60-second
+allowance inside that doubling. A 396.27-second maximum therefore becomes 912.54,
+not 396.27. Finishing an individual run below 900 does not pass the conservative
+forecast. This keeps the safety rule unchanged when a result is close.
+
+No new training study is admitted. [The complete failed forecast](compact-suit-pipeline.md#complete-forecast-independent-budget-still-fails--november-15-2026)
+is retained alongside the older failures. Next is a readable saved-data report
+and investigation of the remaining validation work. These are AI-assisted
+implementation and experiment records, not personal learning or hours.
+
+
+A new read-only command makes this result easier to inspect:
+
+```sh
+.venv/bin/python scripts/report_suit_pipeline.py
+```
+
+It prints all six timings and the own PASS / independent FAIL forecast results.
+[The two plots](compact-suit-pipeline.md#read-the-result-without-running-an-experiment)
+show the same distinction from zero. Their numeric exports match across both
+environments with all experiment execution blocked. Four integrity tests pass
+on each. Rendering needs the existing research extra; the first base-environment
+attempts lacked it and their partial files remain available. No new strategy was
+trained. Final regression and GitHub checks still precede merge.
+
+
+All four final local suites pass: 4,665 tests in each full base environment and
+1,568 in each relevant optional suite. The exact logs and guarded commands are
+saved with the report. Additional checks block the actual builders, scoring,
+canonicalization, replay and reference audit; all three numeric exports still
+match across both environments. GitHub’s final checks and merge remain next.
+The budget failure is retained, and no training study is admitted.
