@@ -6171,3 +6171,61 @@ are retained with the report. Current source loading is the next target to
 investigate; no causal speedup or new optimizer follows this single ordered
 pair. Existing 912.54/900 budget and 2.390%/1% accuracy failures remain. Final
 four local roles and both same-head hosted jobs still precede merge.
+
+
+## November 16 — source-root children, prospective implementation
+
+[Plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6918554952)
+published before code/outcomes. PR83 final checks remain running; isolated
+implementation only, formal collection waits for its verified merge/main check.
+Preserve all439 preceding scientific files (fingerprint39b5f696...) and original
+scientific data/caps/seeds. New private entry/support/config only; no optimizer.
+Observe two source roots with six serial children each, fourteen calls/cap32,
+root/child/outside arithmetic without double counting. Two module-alias proxies
+leave original defining modules/functions unchanged. Complete audit180/900/1800
+and failure-save120 rules remain, own-before-reference/raw-before-analysis.
+
+Observer54 focused tests pass on each actual runtime36.51/35.41s during ongoing
+software checks, not scientific timing. Strict typing passes both new modules;
+Ruff passes. Initial runner unit suite3FAIL/48PASS/1SKIP76.82s caught three
+inherited test assumptions: two erased already-empty software event streams,
+one expected7 instead of14calls. Corrected runner suites51PASS/1SKIP63.69/63.38s.
+Separate lifecycle fixtures initially1FAIL/6PASS/52deselected0.20s because the
+shared-cap fixture omitted arm order; corrected7PASS/52deselected0.15/0.17s.
+[Both failure histories](source-phase-cpu.md) retain exact logs/code; no guard,
+source algorithm, compute limit or scientific result changed. These are unit
+fixtures, not qualified source or a formal own/source-loader proof. Full runner
+failure coverage, local/hosted qualification and documentation remain.
+
+
+November16 — PR83 all final six roles pass exact head2981f61 / source439 FP39b5.
+Bases4,887/66skip150deselect1,260.05/1,230.38s; optional1,791each809.88/747.76s.
+Hostedrun43880737350 jobs133345763483/133345764103 pass1,081.90/901.00s plus
+existing warning. Actual patch/NumPy/alluv and entire checkout903f893/tree
+cbfa7dd1f6be0accf041a07abb9a6d281376bb33 equal checked head. Administrative verifier
+first read connector-normalized jobs lacking head_sha; preserved that attempt
+and verified full official metadata instead, without rerunning tests/captures.
+History merge81ba6bf; fresh actual user snapshot before guarded FF. Main actual
+3.11.17/2.4.6 passes223focused51.90s, authenticates complete saved pair and all
+three numeric exports. User ten changed bytes/status/index entries/both patches
+preserved after checks. [All closing raw receipts](../results/reader-phase-cpu/final-ci/manifest.json)
+batched into this next substantive milestone, not a status-only commit.
+
+Source-child observer/runner focused optional113PASS each61.36/60.62s. Full strict
+typing810files passes after test-only explicit dynamic module-alias typing;
+Ruff passes. New lifecycle tests retain full/partial pair without retries,
+pre-child shared-cap failure and failed-receipt invalidation/error preservation.
+No formal source-child proof, pair or reference has run. Scientific439preceding
+bytes remain unchanged; next source442 qualification and tested operators remain.
+
+
+November16 — Prequalification self-review moves proxy bookkeeping to private
+fields so ordinary module attributes named selected/selected_name/delegate are
+forwarded too. Four focused proxy/late-alias/cleanup checks pass each0.16/0.17s;
+complete source qualification will include this final source. Both actual runtimes
+resolve, patch and restore all45 future report-guard entry points, with zero
+numerical calls; this is static setup only, not report reproduction. All six
+owned-process launch cases, four exact-retention/refusal cases and ten synthetic
+publication-boundary cases pass. These are software fixtures, not scientific
+proofs or new timing. Source implementation now freezes for full qualification;
+no source-child formal capture has begun.

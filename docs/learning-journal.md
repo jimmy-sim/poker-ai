@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Follow the stages inside source loading](#128-look-inside-the-input-loader)
+
 - [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
 
 - [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
@@ -6496,9 +6498,51 @@ carried forward rather than rerun.
 
 The three report exports reproduce byte for byte on both actual runtimes with
 40 numerical execution paths blocked. No forbidden call occurs; raw inputs stay
-unchanged. Both figures were inspected. Final full local and hosted checks remain.
+unchanged. Both figures were inspected. All six final checks now pass; PR #83 is merged
+and main passes 223 focused checks with every unrelated local result preserved.
 The next question follows the largest phase inside the current source loader,
 without skipping verification. This diagnostic does not improve the strategy or
 replace the failed production budget and accuracy tests. Implementation,
 execution and explanation are Codex-assisted; personal practice and hours are
 not inferred.
+
+
+## 128. Look inside the input loader
+
+**November 16, 2026 — issue #4: nested observer under development.**
+
+The complete reader comparison identifies its largest phase, but “source
+loading” includes several jobs. This next question separates older scientific
+sources, compact game construction, sampled-parent archive validation, original
+contexts and original boundaries. [The plan and method](source-phase-cpu.md)
+were published before implementation; no new formal measurement has run.
+
+**Example:** a folder's label says “load inputs,” but the program may also build
+poker trees and check historical strategies while loading it. Timing only disk
+reads would miss that work. A nested observer times a source root and its named
+children. The children plus the root's remaining work must equal the root total;
+adding the total to the children would count work twice.
+
+Two temporary module proxies forward selected calls while leaving the original
+modules and defining functions intact. The observer passes 54 focused checks on
+each actual runtime, including errors, cleanup and ownership. An actual archived
+software replay stays identical and correctly records no source root. Separate
+fixture checks do not claim real cost-loader coverage or new poker mathematics.
+Runner tests caught assumptions carried over from the previous observer: empty
+software event streams and its older seven-call count. The corrected fixtures
+match this plan's fourteen calls; failed logs and code remain linked in the
+method. A separate cap fixture's missing order is retained too.
+
+Next: finish the complete runner/failure tests and qualify all source checks
+before any formal proof or pair. The preceding measurement now has all six final
+checks, a verified history merge and a protected-main check. This is diagnostic engineering toward a cheaper
+complete training comparison, with no new model-quality result. Implementation,
+checks and explanation are Codex-assisted; personal learning or hours are not
+inferred.
+
+
+The next observer and runner now pass all 113 focused checks on each optional
+runtime (61.36 / 60.62 seconds). Full strict typing passes 810 files. The retained
+failure cases now check complete/partial outcomes without retries, shared-clock
+exhaustion before a child, and refusal to leave failed diagnostic output eligible
+for ordinary admission. Full source qualification remains before formal use.

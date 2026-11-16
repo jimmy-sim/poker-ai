@@ -154,7 +154,8 @@ No forbidden call occurs and raw inputs stay unchanged. The
 [3.11 receipt](../results/reader-phase-cpu/report311.json) and
 [3.12 receipt](../results/reader-phase-cpu/report312.json) describe this saved-data
 check; it does not establish real-trajectory replay on the newer runtime.
-Both rendered figures were inspected. Final full local and hosted checks remain.
+Both rendered figures were inspected. All final checks and the history merge
+are complete; see the closing verification below.
 
 The next question is which work *inside the current source-loader boundary*
 accounts for those 78–79 CPU seconds. Earlier isolated profiles do not answer
@@ -175,3 +176,21 @@ separate ignored folder, using an environment with the locked research extra:
 ```
 
 This authenticates and plots saved evidence; it does not run new training.
+
+
+## Closing verification
+
+[PR #83](https://github.com/jimmy-sim/poker-ai/pull/83) is history-merged at
+`81ba6bf7a4f782904a5a1a2d4734eab6944071e8`. All six final roles qualify exact
+head `2981f61`: both bases 4,887 passed / 66 skipped / 150 deselected
+(1,260.05 / 1,230.38s), both optional suites 1,791 passed (809.88 / 747.76s),
+and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/43880737350)
+pass (1,081.90 / 901.00s). Actual runtimes, NumPy, all uv choices and the entire
+hosted checkout tree match. The existing historical rounding warning remains.
+
+The merged main folder passes 223 focused tests, authenticates the complete saved
+pair and matches all three report exports. All ten unrelated local result bytes,
+status, index entries and both patches stay preserved after checks. [Closing
+receipts and raw logs](../results/reader-phase-cpu/final-ci/manifest.json) are
+included in the next substantive investigation, preserving this PR's checked head.
+The [next plan](source-phase-cpu.md) follows the work inside source loading.
