@@ -6399,3 +6399,11 @@ the intended Python and NumPy versions, and GitHub tested the same complete
 source tree as the local checks. The [raw records and run instructions](../results/checkpoint-replay-cpu/checks.json)
 are being published before measurement. Next is the small own-only checkpoint
 proof; its results must be public before the reference comparison begins.
+
+
+The fresh own-only proof now agrees on all eight tiny checkpoint cases. It
+records 72 selected calls across three reads, with exact original/instrumented
+results, zero independent calculation error and all temporary replacements
+restored. The complete command took 0.987 seconds. Its [raw files](../results/checkpoint-replay-cpu/software-raw-manifest.json)
+are published before the comparison solver runs. The next check authenticates
+that publication; the measured audit pair follows only if it passes.

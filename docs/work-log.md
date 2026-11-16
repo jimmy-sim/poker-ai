@@ -5965,3 +5965,14 @@ synthetic retention cases and ten synthetic publication cases pass. No formal
 proof, cost pair or new poker trajectory has run. Original seeds, caps and
 failed budget/accuracy results are unchanged. [PR #82](https://github.com/jimmy-sim/poker-ai/pull/82)
 remains open through the required evidence and final checks.
+
+
+November 16 — Fresh own-only observer proof captured after public six-role
+qualification `67b8b82`. Complete CLI 0.9871026249893475 seconds; complete inner
+child 0.920909083011793 seconds, under 180. Eight actual tiny checkpoint cases,
+three reads / 72 selected calls, independent maximum error 0.0, original and
+instrumented results exact, hooks fully restored. Reference construction and
+poker training flags remain false. [All 13 raw files and clocks](../results/checkpoint-replay-cpu/software-raw-manifest.json)
+are retained in this own-before-reference publication. Saved-publication
+verification still precedes the fresh cost-audit pair; no real trajectory or
+production-cost admission follows this software proof.

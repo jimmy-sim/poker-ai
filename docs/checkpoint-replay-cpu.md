@@ -114,3 +114,17 @@ preservation; ten synthetic cases check the publication boundary. Their invented
 headers are test inputs, never timing results.
 
 This source checkpoint precedes the fresh own-only proof and measured pair.
+
+## Own-only proof — November 16
+
+[Eight actual tiny checkpoints](../results/checkpoint-replay-cpu/software/child.json)
+pass independent terminal/pure-choice checks with maximum error **0.0**. Three
+reads record **72 selected calls**, with exact original/instrumented results and
+complete restoration. Whole CLI time is **0.9871026249893475 seconds**; the
+[inner complete-child measurement](../results/checkpoint-replay-cpu/software/measurement.json)
+is 0.920909083011793 seconds, within the original 180-second limit.
+
+[All raw files](../results/checkpoint-replay-cpu/software-raw-manifest.json) are
+retained at the own-before-reference publication boundary. No reference was
+constructed and no Hold'em training ran. These are fictional-game software
+checks; saved-publication verification precedes the measured audit pair.
