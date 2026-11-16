@@ -187,3 +187,41 @@ a causal speedup or a playing-strength improvement.
 Next: finish the saved-data terminal report/plots, portability and final local
 and hosted checks, then investigate remaining validation cost using measured
 evidence. No changed cap, safety margin, seed, accuracy criterion or default.
+
+
+## Read the result without running an experiment
+
+```sh
+.venv/bin/python scripts/report_suit_pipeline.py
+open results/compact-suit-learning/report/complete-costs.png
+open results/compact-suit-learning/report/forecast.png
+```
+
+The terminal reader authenticates the complete saved forecast, all sealed inputs,
+source and command clocks, then prints the six costs and both budget outcomes.
+It does not build games, replay training or construct a reference.
+
+Reproduce the report in a fresh ignored folder with the existing research extra:
+
+```sh
+uv run --locked --extra research python scripts/report_suit_pipeline.py --output results/runs/suit-pipeline-report-local
+```
+
+The first figure shows every prescribed repetition from zero; the dashed390-second
+line is the raw native maximum required by `2*(N+60)<900`. The second shows each
+conservative forecast as a percentage of its own cap. A bar above100% fails.
+These are complete validation costs, not strength, CPU-only timings or evidence
+that a future run will have the same runtime.
+
+![All six complete validation costs](../results/compact-suit-learning/report/complete-costs.png)
+
+![Original conservative budget rules](../results/compact-suit-learning/report/forecast.png)
+
+Both zero-based figures were visually inspected. All three numeric exports are
+byte-identical under actual31117/NP246 and31215/NP254, with construction, geometry,
+replay, learning, independent workers and normalization execution blocked. Four
+reader tests pass on each (6.09/7.30seconds), including changed archive/boolean
+clock rejection and existing-output preservation. Initial plotting attempts used
+base environments without Matplotlib; partial numeric outputs and their operator
+remain retained. Successful rendering uses the existing locked research extra,
+not a dependency change or scientific rerun. [Report manifest](../results/compact-suit-learning/report-manifest.json).

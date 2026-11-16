@@ -6360,3 +6360,18 @@ No new training study is admitted. [The complete failed forecast](compact-suit-p
 is retained alongside the older failures. Next is a readable saved-data report
 and investigation of the remaining validation work. These are AI-assisted
 implementation and experiment records, not personal learning or hours.
+
+
+A new read-only command makes this result easier to inspect:
+
+```sh
+.venv/bin/python scripts/report_suit_pipeline.py
+```
+
+It prints all six timings and the own PASS / independent FAIL forecast results.
+[The two plots](compact-suit-pipeline.md#read-the-result-without-running-an-experiment)
+show the same distinction from zero. Their numeric exports match across both
+environments with all experiment execution blocked. Four integrity tests pass
+on each. Rendering needs the existing research extra; the first base-environment
+attempts lacked it and their partial files remain available. No new strategy was
+trained. Final regression and GitHub checks still precede merge.

@@ -5865,3 +5865,15 @@ a causal speedup or a playing-strength improvement.
 Next: finish the saved-data terminal report/plots, portability and final local
 and hosted checks, then investigate remaining validation cost using measured
 evidence. No changed cap, safety margin, seed, accuracy criterion or default.
+
+
+November 15 — Saved-data report added with four integrity/isolation tests passing
+both actual runtimes (6.09/7.30s), lint/format and strict types. Complete six costs
+and both strict forecast outcomes print without numerical execution. All three
+numeric exports match byte-for-byte actual31117/NP246 vs31215/NP254 with execution
+blocked; two zero-based plots visually inspected. Initial rendering in base
+environments lacked Matplotlib; partials/operator retained, then existing locked
+research environments render successfully to fresh folders. The first code commit
+hook could not find uv before the project environment was sourced; hooks then
+pass. No scientific collection repeated or source433byte changed. Final relevant
+local/optional and exact-report-head hosted checks remain required before merge.

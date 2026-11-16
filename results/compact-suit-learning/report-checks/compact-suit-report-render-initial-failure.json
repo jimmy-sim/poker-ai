@@ -1,0 +1,15 @@
+{
+  "scope": "Saved-data report rendering only; no collection rerun",
+  "operator": "check-compact-suit-report-portability.py",
+  "source_commit": "ca69b42",
+  "actual_environments": [
+    "base311",
+    "base312"
+  ],
+  "error": "ModuleNotFoundError: No module named 'matplotlib'",
+  "partial_numeric_outputs_retained": [
+    "compact-suit-report-311",
+    "compact-suit-report-312"
+  ],
+  "correction": "Use existing locked optional/research environments, new output folders and v2 operator. No dependency/source/scientific change."
+}
