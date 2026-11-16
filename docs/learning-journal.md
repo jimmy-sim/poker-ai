@@ -6303,3 +6303,6 @@ The next step is the single fresh software proof: own card/learning records must
 be published before the independent comparison, all within the shared software
 budget. These checks do not replace the failed production budget or demonstrate
 a stronger strategy.
+
+
+November 15, 2026 — software-own: complete raw capture. The complete command reports 6.797211083001457 seconds. Own evidence is published before the independent constructor. This is software evidence, not new Hold’em training or strength admission.

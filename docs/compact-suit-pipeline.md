@@ -100,3 +100,6 @@ No formal proof, production cost or new registered Hold’em study has run yet.
 [Six-role qualification and raw logs](../results/compact-suit-learning/checks.json)
 include exact producer/publication instructions. Source qualification is software
 evidence, not acceptance of the old failed budget or the strategy-quality target.
+
+
+November 15, 2026 — software-own: complete raw capture. The complete command reports 6.797211083001457 seconds. Own evidence is published before the independent constructor. This is software evidence, not new Hold’em training or strength admission.

@@ -1,0 +1,67 @@
+"""Exact additive stage retention; failures never become admissible proof."""
+import hashlib,json,shutil,sys
+from pathlib import Path
+
+
+def copy_exact(original,destination):
+    destination.parent.mkdir(parents=True,exist_ok=True)
+    if destination.exists() or destination.is_symlink():
+        assert not destination.is_symlink() and destination.read_bytes()==original.read_bytes()
+    else:
+        shutil.copyfile(original,destination)
+        assert destination.read_bytes()==original.read_bytes()
+
+
+def main():
+    w=Path(__file__).resolve().parent;r=w/'compact-suit'
+    operation=sys.argv[1];rep=int(sys.argv[2]) if operation.startswith('cost-') else None
+    assert operation in ('software-own','software-audit','cost-own','cost-audit','forecast','admit','study','audit')
+    assert (rep in (0,1,2) and len(sys.argv)==3) if rep is not None else len(sys.argv)==2
+    stage=operation+(f'-{rep}' if rep is not None else '')
+    f=w/('compact-suit-execution-'+stage);target=r/'results/compact-suit-learning'
+    assert (w/'run-compact-suit-collection.py').read_bytes()==(target/'checks/operator_launch.py.txt').read_bytes()
+    assert Path(__file__).read_bytes()==(target/'checks/operator_retention.py.txt').read_bytes()
+    exit=json.loads((f/'exit.json').read_text())
+    complete=type(exit['returncode']) is int and exit['returncode']==0 and exit.get('complete_command_within_cap') is True
+    admin=target/('execution-'+stage);assert not admin.exists()
+    shutil.copytree(f,admin);shutil.copyfile(__file__,admin/'operator_retention.py.txt')
+    copied=[]
+    invocation=f/'invocation.json'
+    if invocation.exists():
+        original=Path(json.loads(invocation.read_text())['output'])
+        assert original.is_relative_to(r/'results/runs/compact-suit')
+        relative=original.relative_to(r/'results/runs/compact-suit')
+        expected_status={'software-own':'completed_own_native_pending','cost-own':'completed_own_native_pending','study':'completed_own_native_pending','software-audit':'completed_scalar_comparison','cost-audit':'completed_scalar_comparison','audit':'completed_scalar_comparison','forecast':'complete_fixed_cost_forecast','admit':'compact_own_opponent_learning_admitted'}[operation]
+        if complete and (not original.exists() or json.loads(original.read_text()).get('status')!=expected_status):
+            complete=False
+        destination=target/relative
+        if not complete:destination=target/'failed'/stage/relative
+        prefix=original.stem
+        selected=[p for p in original.parent.glob(prefix+'*') if p.is_file()]
+        if prefix=='own':
+            for name in ('report','own-card-contract'):
+                folder=original.parent/name
+                if folder.exists():selected.extend(p for p in folder.rglob('*') if p.is_file())
+        for src in sorted(selected):
+            assert not src.is_symlink() and src.resolve().is_relative_to(original.parent.resolve())
+            dst=destination.parent/src.relative_to(original.parent)
+            copy_exact(src,dst);copied.append(dst)
+        if complete:
+            assert original.exists() and json.loads(original.read_text())['status']=={
+                'software-own':'completed_own_native_pending','cost-own':'completed_own_native_pending',
+                'study':'completed_own_native_pending','software-audit':'completed_scalar_comparison',
+                'cost-audit':'completed_scalar_comparison','audit':'completed_scalar_comparison',
+                'forecast':'complete_fixed_cost_forecast','admit':'compact_own_opponent_learning_admitted',
+            }[operation]
+    else:assert not complete
+    files=[*copied,*(p for p in admin.rglob('*') if p.is_file())]
+    manifest=dict(stage=stage,status='complete_raw_before_analysis' if complete else 'partial_or_failed_retained_not_admitted',
+                  original_ignored_outputs_retained=True,scratch_retained_ignored=True,
+                  additive_copy_never_overwrites_changed_bytes=True,
+                  raw_sha256={str(p.relative_to(target)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(files)})
+    out=target/('raw-'+stage+'-manifest.json');out.parent.mkdir(parents=True,exist_ok=True)
+    out.open('x').write(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+    print(json.dumps(dict(stage=stage,status=manifest['status'],retained_files=len(files))))
+
+
+if __name__=='__main__':main()
