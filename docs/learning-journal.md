@@ -6071,3 +6071,12 @@ exceptions remain explicitly expected software outcomes, separate from actual
 audit failure. [Proof and retained files](suit-lookup.md#recorded-own-software-proof--november-15-2026)
 are published before the one full original/lookup comparison. There is still no
 measured audit speedup, new trained policy or production admission.
+
+
+The one full original/lookup audit pair now completes in 14.18 minutes total.
+All original result checks and all 184 constructor field fingerprints per arm
+pass. [The raw records](suit-lookup.md#recorded-complete-pair--november-15-2026)
+retain 53 files plus their manifest, with original ignored outputs preserved.
+Publish those before calculating the cost verdict and drawing the plots. This
+is a successful collection, not yet a claim that the lookup is faster or that
+an agent has learned a better strategy.

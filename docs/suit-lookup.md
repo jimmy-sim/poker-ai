@@ -152,3 +152,24 @@ raw/administrative files and exact ignored originals; the manifest is the 58th.
 Publish them before the actual pair. This proof constructs no learner/reference
 and performs no new trajectory study. It validates the private implementation,
 not performance, full production-family admission or stronger poker.
+
+
+## Recorded complete pair — November 15, 2026
+
+After own proof publication `0b4203c`, the one original/lookup pair completes
+successfully. Its outer command takes 850.8070003750036 seconds and its registered
+shared command 850.7695943330182, under 1,800. Both supervised children finish
+under their unchanged 900-second limits, without interruption or retry.
+
+Both arms preserve all original 432-profile/1,152-condition/three-read identities,
+worker/card/source/scalar checks, equal kernel request/fallback accounting and
+all 184 pinned original constructor field fingerprints. The six global regions
+record 1,538 calls per arm, 3,076 combined below 4,096. No five-phase recorder
+is installed. [Raw pair](../results/suit-lookup/pair/pair.json), [outer clock](../results/suit-lookup/execution-pair/exit.json)
+and [manifest](../results/suit-lookup/raw-pair-manifest.json) retain 53 exact
+raw/administrative files and ignored originals; the manifest is the 54th.
+
+Publish this evidence before posthoc CPU/cost analysis. Completion is a capture
+and correctness result, not yet a diagnostic cost verdict or training admission.
+No new policy/real trajectory study is trained, and comparison outputs remain
+comparison-only. Scientific source, caps, seeds and old failed outcomes stay fixed.

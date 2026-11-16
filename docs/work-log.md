@@ -5553,3 +5553,16 @@ SHA2560362d13b0bead0ec06685a09171652fbb282266b56a64d71857535d60f4b6259. All57raw
 Publish own proof BEFORE actual original/lookup pair. No timing retry, changed
 source415FPfc3/all60pins/caps/seeds/gates or production/quality admission.
 Journal123 updated; this is not the separately required production-family proof.
+
+
+ONE complete original/lookup pair after ownproof0b4203c: outer850.8070003750036s,
+registered850.7695943330182s, under1800; both whole children under900, exits0,
+uninterrupted. No retry/seed/cap/gate/source change. Parent validation passes all
+original432profiles/1152conditions/3reads/worker/card/source/scalar identities,
+equal request/fallback counts and184pinned ORIGINAL constructor fingerprints each.
+Global1538each/3076combined<4096; no920phasehooks. All53raw/admin files+ignored
+originals retained exact, [manifest](../results/suit-lookup/raw-pair-manifest.json)
+54th. Publish this raw evidence BEFORE posthoc cost/CPU analysis. No diagnostic
+cost verdict or production/quality/default/fresh/global admission yet. No new
+own policy/real trajectory trained; reference outputs comparison-only. Journal123
+updated with observed scope and next decision.
