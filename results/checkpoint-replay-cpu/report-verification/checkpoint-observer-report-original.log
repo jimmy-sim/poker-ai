@@ -1,0 +1,86 @@
+{
+  "reads": [
+    {
+      "mode": "plain",
+      "read": 0,
+      "read_cpu_seconds": 1.844702,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 1.844702,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "plain",
+      "read": 1,
+      "read_cpu_seconds": 126.827743,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 126.827743,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "plain",
+      "read": 2,
+      "read_cpu_seconds": 130.078973,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 130.078973,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "profiled",
+      "read": 0,
+      "read_cpu_seconds": 2.0153169999999996,
+      "decode_cpu_seconds": 0.036659000000001996,
+      "score_cpu_seconds": 0.49737100000000356,
+      "checkpoint_residual_cpu_seconds": 0.11120899999999101,
+      "outside_checkpoint_cpu_seconds": 1.370078000000003,
+      "selected_union_cpu_seconds": 0.6452389999999966,
+      "selected_calls": 1296
+    },
+    {
+      "mode": "profiled",
+      "read": 1,
+      "read_cpu_seconds": 129.72848199999999,
+      "decode_cpu_seconds": 1.2532070000001312,
+      "score_cpu_seconds": 23.423214999999914,
+      "checkpoint_residual_cpu_seconds": 7.680944000000039,
+      "outside_checkpoint_cpu_seconds": 97.3711159999999,
+      "selected_union_cpu_seconds": 32.357366000000084,
+      "selected_calls": 1296
+    },
+    {
+      "mode": "profiled",
+      "read": 2,
+      "read_cpu_seconds": 131.58820299999996,
+      "decode_cpu_seconds": 1.134553999999838,
+      "score_cpu_seconds": 23.743813000000102,
+      "checkpoint_residual_cpu_seconds": 8.740500000000083,
+      "outside_checkpoint_cpu_seconds": 97.96933599999994,
+      "selected_union_cpu_seconds": 33.61886700000002,
+      "selected_calls": 1296
+    }
+  ],
+  "commands": [
+    {
+      "mode": "plain",
+      "complete_wall_seconds": 391.30728316598106,
+      "parent_body_cpu_seconds": 262.494996,
+      "total_worker_body_cpu_seconds": 370.205641,
+      "maximum_worker_body_wall_seconds": 124.35541908399318
+    },
+    {
+      "mode": "profiled",
+      "complete_wall_seconds": 395.89443708298495,
+      "parent_body_cpu_seconds": 267.245621,
+      "total_worker_body_cpu_seconds": 369.927908,
+      "maximum_worker_body_wall_seconds": 124.2435237080208
+    }
+  ]
+}

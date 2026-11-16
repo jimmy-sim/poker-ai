@@ -5907,3 +5907,111 @@ update functions exercised only on disposable copies. Generated README content,
 historical journal/log entries, phase contracts and all 433 scientific source
 hashes remain unchanged. Hooks and diff checks pass; required hosted CI still precedes merge. The existing About description already fits; package metadata remains
 untouched. Research in issue #4 stays paused; this is an editorial change.
+
+
+## 2026-11-16 — Checkpoint-replay observer and correctness tests
+
+Issue #4 resumes from main `472662d`, after PRs [#79](https://github.com/jimmy-sim/poker-ai/pull/79)
+and [#81](https://github.com/jimmy-sim/poker-ai/pull/81). PR #79's two final hosted
+jobs passed 4,665 tests each, with 65 skipped and 150 deselected, on verified
+Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4; whole tested trees
+matched the PR head. [Closing receipts](../results/compact-suit-learning/final-ci/manifest.json)
+are retained in this implementation batch. PR #81's documentation checks also
+passed before its merge. The ten unrelated user result changes were freshly
+snapshotted before this isolated branch; their files remain untouched.
+
+The [registered checkpoint investigation](checkpoint-replay-cpu.md) adds a
+parent-only observer at the current own-archive callsite. It separates decode,
+score and residual CPU without changing the reusable replay function or old
+scientific source. Partial records retain original failures, and even failed
+native outputs are marked as diagnostic. The saved-data reader checks the
+complete ledger, raw files, producer identity and outer clock boundaries.
+
+The initial regressions caught seven draft failures; retained development logs
+record these rather than a successful first attempt. All 134 focused tests now
+pass on Python 3.11.17 (25.45 seconds), and strict types and focused lint pass.
+Eight actual tiny checkpoint cases use independent terminal/pure-choice math.
+Complete immutable-source local/optional and hosted checks still precede formal
+proof/measurement. No fresh reference, real trajectory, budget change, stronger
+strategy or default promotion is claimed. Journal step 126 explains the question.
+
+
+The first immutable local cohort on `04dbb78` passes all four roles: bases
+4,799 / 65 skipped / 150 deselected each (626.73 / 598.87 seconds), and optional
+1,702 each (315.51 / 252.07 seconds). Runtime/root/source guards and hooks pass.
+[Raw logs and exact operator](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
+are retained as a superseded cohort, before hosted checks or any formal run.
+Review added a separate report-output destination to make re-rendering possible
+without removing existing results. Two regression tests check routing, byte-equal
+numerical exports and raw-input preservation. Focused tests pass 136 / 23.73
+seconds; lint/format and strict types pass. Corrected-source full local/optional
+and hosted checks precede collection. No original scientific byte or gate changed.
+
+
+November 16 — All six corrected source roles pass on `899ad05` / source436
+`81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca`.
+Local bases 4,801 / 65 skipped / 150 deselected each (621.86 / 594.09 seconds);
+optional 1,704 each (311.83 / 252.73 seconds). Hosted run
+[43844976093](https://github.com/jimmy-sim/poker-ai/actions/runs/43844976093) passes
+both jobs, 4,801 each with the same skips/deselections and existing warning
+(1,076.80 / 1,425.28 seconds). Actual patches/NumPy, all uv selections and entire
+GitHub merge tree `55ff96dc6859bd558e5d24a1c2533fc5a2c95c62` equal the source head.
+
+[All six raw receipts](../results/checkpoint-replay-cpu/checks.json), exact executed
+launch/retention/publication operators and all process/filesystem/schema fixture
+archives are published at this boundary, before the fresh own-only proof.
+BOMs and original log whitespace remain intact. Six real process cases, four
+synthetic retention cases and ten synthetic publication cases pass. No formal
+proof, cost pair or new poker trajectory has run. Original seeds, caps and
+failed budget/accuracy results are unchanged. [PR #82](https://github.com/jimmy-sim/poker-ai/pull/82)
+remains open through the required evidence and final checks.
+
+
+November 16 — Fresh own-only observer proof captured after public six-role
+qualification `67b8b82`. Complete CLI 0.9871026249893475 seconds; complete inner
+child 0.920909083011793 seconds, under 180. Eight actual tiny checkpoint cases,
+three reads / 72 selected calls, independent maximum error 0.0, original and
+instrumented results exact, hooks fully restored. Reference construction and
+poker training flags remain false. [All 13 raw files and clocks](../results/checkpoint-replay-cpu/software-raw-manifest.json)
+are retained in this own-before-reference publication. Saved-publication
+verification still precedes the fresh cost-audit pair; no real trajectory or
+production-cost admission follows this software proof.
+
+
+November 16 — The single registered audit pair completes after the own proof
+was public at `0533b61` and its saved-publication verification passed. All code,
+Git head and inputs stayed fixed; local heavy checks stayed idle during capture.
+Ordinary / instrumented complete-child clocks: 391.30728316598106 /
+395.89443708298495 seconds, each under 900. Outer whole CLI
+788.0160884579818 seconds under 1,800. All three reads, 432 profiles / 1,152 fixed
+conditions, exact full scalar/computed-replay identity; profiled inventory
+3,888 selected calls, final restoration true. Both receipts reject base-family
+admission. [All 27 raw files](../results/checkpoint-replay-cpu/pair-raw-manifest.json)
+and the earlier [published-own verification](../results/checkpoint-replay-cpu/proof-published-verification.json)
+are retained in this raw publication before analysis. No new Hold'em training,
+production forecast or stronger/default promotion. Full saved-pair verification,
+report, blocked 3.12 exports and final checks remain.
+
+
+November 16 — Published-pair verification passes, including raw inventories,
+original ignored-byte equality, outer/inner clock bounds, producer IDs, all
+workers/journals, full identity and the earlier own-proof blob in the capture
+revision. Saved report renders both figures. Cost reads before / after reference
+(CPU seconds): decode 1.253207 / 1.134554; score 23.423215 / 23.743813; other
+checkpoint 7.680944 / 8.740500; outside selected root 97.371116 / 97.969336.
+Every read is retained; [CSV/JSON and figures](../results/checkpoint-replay-cpu/pair/report/summary.json)
+come from the unchanged saved-data entry. Most current whole-read CPU remains
+outside this callsite. Next diagnosis should split current loader/replay phases
+before choosing an optimizer; no causal/stable timing or production-admission
+claim follows this pair.
+
+Both actual runtimes regenerate all three numerical files byte-identically with
+34 defining/captured game/kernel/replay/reference entry points blocked, plus
+parent learner/reference guards. No forbidden call occurs and published inputs
+stay unchanged. The first guard failed before report execution during descriptor-
+sensitive import setup; its exact code/logs remain. The corrected guard preloads
+static metadata and preserves class-method descriptors. [All guard receipts and
+visual review](../results/checkpoint-replay-cpu/report-verification/manifest.json)
+are retained. Both actual figures inspected; all axes/labels readable. No
+collection source/data changed or measurement rerun. Final local/optional and
+exact-report-head hosted checks remain before merge.

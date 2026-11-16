@@ -1,0 +1,45 @@
+"""Actual final CI, runtime and complete repository tree checks before merge."""
+import hashlib
+import json
+import re
+import runpy
+import shutil
+import subprocess
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = w / "compact-suit"
+f = w / "compact-suit-final-hosted"
+head = "b1b68297d6ce1e6d42b7a8d958779c5620ebcdf7"
+checkout = "458ac7950e8d8c891e9b476b5e25485b53ee7510"
+run = 43822016289
+saved = json.loads((f / "run.json").read_text())
+assert saved["id"] == run and saved["head_sha"] == head
+assert saved["status"] == "completed" and saved["conclusion"] == "success"
+jobs = json.loads((f / "jobs.json").read_text())["jobs"]
+parser = runpy.run_path(str(r / "results/ci-runtime-correction/audit_checks.py.txt"), run_name="runtime_parser")["parse"]
+rows = []
+for minor, version, numpy, jobid in [("311", "3.11.17", "2.4.6", 133147031637), ("312", "3.12.15", "2.5.4", 133147031994)]:
+    job = next(row for row in jobs if row["id"] == jobid)
+    assert job["head_sha"] == head and job["run_id"] == run
+    assert job["status"] == "completed" and job["conclusion"] == "success"
+    assert all(row["conclusion"] == "success" for row in job["steps"])
+    path = f / f"hosted{minor}.log"
+    text = path.read_text(encoding="utf-8-sig")
+    actual = parser(text)
+    assert actual["actual_python"] == [version] and actual["all_uv_versions"] == [version]
+    assert re.findall(r"ACTUAL_NUMPY=([0-9.]+)\s*$", text, re.M) == [numpy]
+    assert checkout in text
+    result = [line for line in text.splitlines() if "4665 passed, 65 skipped, 150 deselected" in line]
+    assert len(result) == 1
+    rows.append(dict(job_id=jobid, actual_python=version, actual_numpy=numpy, all_uv_versions=actual["all_uv_versions"], result=result[0], log_sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+obj = json.loads((f / "checkout-initial.json").read_text())
+tree = subprocess.check_output(["git", "-C", str(r), "rev-parse", head + "^{tree}"], text=True).strip()
+assert obj["sha"] == checkout and obj["tree"]["sha"] == tree
+assert head in [row["sha"] for row in obj["parents"]]
+assert subprocess.check_output(["git", "-C", str(r), "rev-parse", "HEAD"], text=True).strip() == head
+assert not subprocess.check_output(["git", "-C", str(r), "status", "--porcelain"], text=True).strip()
+proof = dict(status="both_final_hosted_roles_verified_before_merge", head_sha=head, actual_checkout_sha=checkout, whole_tree_sha=tree, complete_tree_equal=True, run_id=run, rows=rows, scope="Final report regression evidence; not fresh source qualification, training or successful compute admission")
+(f / "verified.json").open("x").write(json.dumps(proof, indent=2, sort_keys=True) + "\n")
+shutil.copyfile(__file__, f / "verify.py.txt")
+print(json.dumps(proof, indent=2))

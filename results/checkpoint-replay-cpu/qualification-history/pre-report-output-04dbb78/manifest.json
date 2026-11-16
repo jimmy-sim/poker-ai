@@ -1,0 +1,86 @@
+{
+  "status": "all_four_local_roles_passed_superseded_before_hosted",
+  "checked_commit": "04dbb78324f088691362ae231a42972ca54dfc0e",
+  "source_fingerprint": "643e971758320c7b68d57e5f791f4af5c2c0b2e8e0f186312e603cd234b7f5ed",
+  "reason": "Review found the saved-data report needed a separate fresh output destination to reproduce exports without removing an existing report. Corrected source must receive four new local roles and both hosted jobs. No formal proof or measurement ran on this cohort.",
+  "checks": [
+    {
+      "role": "base311",
+      "result": "4799 passed, 65 skipped, 150 deselected in 626.73s (0:10:26)",
+      "check_seconds": 639.7829139170062
+    },
+    {
+      "role": "base312",
+      "result": "4799 passed, 65 skipped, 150 deselected in 598.87s (0:09:58)",
+      "check_seconds": 608.9269415420131
+    },
+    {
+      "role": "optional311",
+      "result": "1702 passed in 315.51s (0:05:15)",
+      "check_seconds": 316.74151554200216
+    },
+    {
+      "role": "optional312",
+      "result": "1702 passed in 252.07s (0:04:12)",
+      "check_seconds": 253.46447770899977
+    }
+  ],
+  "files": [
+    {
+      "file": "base311-install.log",
+      "sha256": "b1c2a7e4d301b01e139fc13e451bf155e30f9961dc824e44de16511f113a9f37"
+    },
+    {
+      "file": "base311-receipt.json",
+      "sha256": "1788ab00565765c0cbafbcdd0d709eae6fda058ed1bb683698448e2eac431252"
+    },
+    {
+      "file": "base311.log",
+      "sha256": "a759cc1dadd28077ffff1e4722f9537fba6117664c11ac3c2dfdb29c00484665"
+    },
+    {
+      "file": "base312-install.log",
+      "sha256": "6469cd803d880fcbcf817f0a003d89fa4dc9d8668a49307226e9ba3c436a445f"
+    },
+    {
+      "file": "base312-receipt.json",
+      "sha256": "533ef8a1d4a0ce91194fe83f4c0ea8418c795af51a095750eb2b69cf7c0f6e98"
+    },
+    {
+      "file": "base312.log",
+      "sha256": "e95a58e8ed7519e5b4469b24b3ebb2ef871332e3102a992373a9dd20754d2a11"
+    },
+    {
+      "file": "checkpoint-observer-source-expected.json.txt",
+      "sha256": "af5978654fc84e98a151b9781a9d88d6bc2eac03b00d11ff0b192795a6ce89bf"
+    },
+    {
+      "file": "optional311-install.log",
+      "sha256": "efcaeabc67b0c6e1e4f84f81a6fc826b5f2850d2c6fae227494961e2a484eac3"
+    },
+    {
+      "file": "optional311-receipt.json",
+      "sha256": "3f923d91aad236e6f35b108a3ea7fc852f7339e03624d43ccd166d22a7190ebd"
+    },
+    {
+      "file": "optional311.log",
+      "sha256": "704c8b4ad678496fc8f4084eecfd1ac2c55e7c5385c66160e0c71a1d234da4a3"
+    },
+    {
+      "file": "optional312-install.log",
+      "sha256": "07140ce60e0d8bad86c5cbf1d51cb7f701a8a7c962f0bfe0d0d17e754fd1ad53"
+    },
+    {
+      "file": "optional312-receipt.json",
+      "sha256": "2dfc015e98da51edc9bbcd49017380a5cd3f2e37460b555a02f3619ed2d60ab3"
+    },
+    {
+      "file": "optional312.log",
+      "sha256": "61f8276c510bc80e0f10268323faa4e4b0739d403d51864e70e4256e25ba5cbb"
+    },
+    {
+      "file": "run-checkpoint-observer-source-checks.py.txt",
+      "sha256": "8d126953416faa37a6f186ea07cee9eec1cdece8c7bbdc59e21e8e79df62216b"
+    }
+  ]
+}

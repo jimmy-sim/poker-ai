@@ -1,0 +1,278 @@
+"""Bounded CPU regions inside the current own-archive checkpoint callsite.
+
+This observer changes no scoring/replay function. Other checkpoint callers stay
+outside the named root; inner regions activate only under that root. Native
+workers are spawned without these parent-only replacements.
+"""
+
+import copy
+import functools
+import os
+import threading
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager
+from typing import Any
+
+import profile_coarse_reader as coarse
+
+CATEGORIES = ("own_checkpoint", "checkpoint_decode", "checkpoint_score")
+ORIGINAL_CATEGORIES = coarse.CATEGORIES
+BUSY = False
+Clock = Callable[[], dict[str, Any]]
+
+
+@contextmanager
+def categories() -> Iterator[None]:
+    """Extend the old region validator without replacing its source permits."""
+    global BUSY
+    if (
+        BUSY
+        or coarse.CATEGORIES is not ORIGINAL_CATEGORIES
+        or threading.current_thread() is not threading.main_thread()
+    ):
+        raise ArithmeticError("fresh main-thread checkpoint region context required")
+    BUSY = True
+    coarse.CATEGORIES = CATEGORIES
+    primary = False
+    try:
+        yield
+    except BaseException:
+        primary = True
+        raise
+    finally:
+        changed = coarse.CATEGORIES is not CATEGORIES
+        coarse.CATEGORIES = ORIGINAL_CATEGORIES
+        BUSY = False
+        if changed and not primary:
+            raise ArithmeticError("checkpoint category registry changed")
+
+
+class ScopedRegions(coarse.Regions):
+    """Decode/score timers ignore calls outside the declared checkpoint root."""
+
+    def wrap(self, category: str, function: Callable[..., Any]) -> Callable[..., Any]:
+        selected = super().wrap(category, function)
+
+        @functools.wraps(function)
+        def conditional(*args: Any, **kwargs: Any) -> Any:
+            inside = any(
+                self.rows[index]["category"] == "own_checkpoint" for index in self.stack
+            )
+            if category == "own_checkpoint":
+                if self.active and inside:
+                    self.errors += 1
+                    raise ArithmeticError("recursive own-checkpoint root unsupported")
+                return selected(*args, **kwargs)
+            if not self.active or not inside:
+                return function(*args, **kwargs)
+            return selected(*args, **kwargs)
+
+        marker = "_coarse_cpu_region"
+        setattr(conditional, marker, True)
+        return conditional
+
+
+class Observer:
+    """One serial parent scope, three separately recorded mathematical reads."""
+
+    def __init__(
+        self,
+        *,
+        enabled: bool,
+        maximum: int = 4096,
+        read_clock: Clock = coarse.clock,
+    ) -> None:
+        if type(enabled) is not bool:
+            raise TypeError("explicit observer mode required")
+        self.enabled = enabled
+        self.clock = read_clock
+        self.regions = ScopedRegions(maximum, read_clock=read_clock)
+        self.reads: list[dict[str, Any]] = []
+        self.installed = False
+        self.started = False
+        self.restored = False
+        self.remaining: int | None = None
+        self.cleanup_failures: list[str] = []
+        self.inner: dict[str, Any] = {}
+        self.original_root_unchanged = False
+
+    @contextmanager
+    def hooks(self) -> Iterator[None]:
+        from poker_ai.evaluation import opponent_learning_own as own
+        from poker_ai.postflop import learning_artifacts as artifacts
+        from poker_ai.postflop import learning_training as training
+        from poker_ai.postflop.controlled_scoring import ScoringContext
+
+        if self.started or self.installed:
+            raise ArithmeticError("observer scope is fresh and cannot be reused")
+        root_name = "replay_snapshot"
+        original = getattr(own, root_name)
+        if original is not training.replay_snapshot:
+            raise ArithmeticError("original named checkpoint callsite required")
+        self.started = True
+        primary: BaseException | None = None
+        with categories():
+            wrapper = self.regions.wrap("own_checkpoint", original)
+            inner = coarse.selected_hooks(
+                self.regions,
+                self.inner,
+                (
+                    ("checkpoint_decode", artifacts, "decode"),
+                    ("checkpoint_score", ScoringContext, "score"),
+                ),
+            )
+            entered = False
+            try:
+                if self.enabled:
+                    inner.__enter__()
+                    entered = True
+                    setattr(own, root_name, wrapper)
+                self.installed = True
+                try:
+                    yield
+                except BaseException as error:
+                    primary = error
+                    raise
+            finally:
+                self.installed = False
+                if self.enabled:
+                    try:
+                        coarse.aliases(wrapper, original)
+                        setattr(own, root_name, original)
+                    except BaseException as error:
+                        self.cleanup_failures.append(type(error).__name__)
+                    if entered:
+                        try:
+                            inner.__exit__(
+                                type(primary) if primary is not None else None,
+                                primary,
+                                primary.__traceback__ if primary is not None else None,
+                            )
+                        except BaseException as error:
+                            self.cleanup_failures.append(type(error).__name__)
+                self.remaining = sum(
+                    value is wrapper
+                    for module in coarse.modules()
+                    for value in vars(module).values()
+                )
+                self.original_root_unchanged = training.replay_snapshot is original
+                self.restored = (
+                    getattr(own, root_name) is original
+                    and self.original_root_unchanged
+                    and self.remaining == 0
+                    and not self.cleanup_failures
+                    and (
+                        not self.enabled
+                        or (
+                            self.inner.get("restored") is True
+                            and self.inner.get("aliases_remaining") == 0
+                        )
+                    )
+                )
+                if not self.restored and primary is None:
+                    raise ArithmeticError("checkpoint observer cleanup incomplete")
+
+    @contextmanager
+    def read(self, index: int) -> Iterator[dict[str, Any]]:
+        if (
+            not self.installed
+            or self.regions.active
+            or self.regions.stack
+            or type(index) is not int
+            or index != len(self.reads)
+            or not 0 <= index < 3
+            or os.getpid() != self.regions.pid
+            or threading.get_ident() != self.regions.thread
+        ):
+            raise ArithmeticError("ordered serial read within installed scope required")
+        events: list[dict[str, Any]] = []
+        self.regions.rows = []
+        self.regions.read_index = index
+        self.regions.emit = events.append
+        row: dict[str, Any] = dict(index=index, status="running", before=self.clock())
+        self.reads.append(row)
+        self.regions.active = self.enabled
+        complete = False
+        try:
+            yield row
+            complete = True
+        finally:
+            self.regions.active = False
+            row.update(
+                status="complete" if complete and not self.regions.stack else "partial",
+                after=self.clock(),
+                ledger=dict(
+                    status="complete"
+                    if complete and not self.regions.errors
+                    else "partial",
+                    errors=self.regions.errors,
+                    rows=copy.deepcopy(self.regions.rows),
+                    pid=self.regions.pid,
+                    thread=self.regions.thread,
+                ),
+                events=events,
+            )
+
+    def state(self) -> dict[str, Any]:
+        return dict(
+            enabled=self.enabled,
+            pid=self.regions.pid,
+            thread=self.regions.thread,
+            active=self.installed or self.regions.active,
+            restored=self.restored,
+            aliases_remaining=self.remaining,
+            original_root_unchanged=self.original_root_unchanged,
+            errors=self.regions.errors,
+            cleanup_failures=list(self.cleanup_failures),
+            selected_calls=self.regions.total,
+            maximum=self.regions.maximum,
+            read_count=len(self.reads),
+            categories=list(CATEGORIES),
+        )
+
+
+def validate_read(row: dict[str, Any], expected: int) -> dict[str, Any]:
+    """Data-only typed nesting/accounting; no checkpoint or score execution."""
+    if type(expected) is not int or expected < 0 or row["status"] != "complete":
+        raise ArithmeticError("complete read and typed expected inventory required")
+    index, before, after = row["index"], row["before"], row["after"]
+    if type(index) is not int or not 0 <= index < 3:
+        raise ArithmeticError("typed ordered read index required")
+    for clock in (before, after):
+        if any(type(clock[k]) is not int or clock[k] <= 0 for k in ("pid", "thread")):
+            raise ArithmeticError("typed positive producer identity required")
+    ledger = row["ledger"]
+    if type(ledger["errors"]) is not int or ledger["errors"] != 0:
+        raise ArithmeticError("typed zero error count required")
+    for item in [*ledger["rows"], *row["events"]]:
+        if (
+            type(item["read"]) is not int
+            or type(item["index"]) is not int
+            or (item["parent"] is not None and type(item["parent"]) is not int)
+        ):
+            raise ArithmeticError("typed selected identities required")
+    with categories():
+        result = coarse.validate_regions(
+            ledger, row["events"], before["pid"], before["thread"], index
+        )
+    if any(result["groups"][key]["calls"] != expected for key in CATEGORIES):
+        raise ArithmeticError(
+            "complete fixed checkpoint/decode/score inventory required"
+        )
+    for item in ledger["rows"]:
+        if not all(
+            before[key] <= item["before"][key] <= item["after"][key] <= after[key]
+            for key in ("cpu", "wall")
+        ):
+            raise ArithmeticError("selected region outside complete read")
+    read_cpu = after["cpu"] - before["cpu"]
+    outside = read_cpu - result["selected_union_cpu"]
+    if (
+        before["pid"] != after["pid"]
+        or before["thread"] != after["thread"]
+        or outside < -1e-9
+    ):
+        raise ArithmeticError("complete read identity/accounting changed")
+    return dict(
+        result, read_cpu_seconds=read_cpu, outside_checkpoint_cpu_seconds=outside
+    )

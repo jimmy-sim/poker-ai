@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
+
 - [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
 
 - [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
@@ -104,8 +106,10 @@ the **1% target**. Competitive full-game strength remains unestablished.
 Checking a proposed training comparison is itself expensive. The latest complete
 validation pipeline passes correctness checks but its conservative audit forecast
 is **912.54 seconds against a 900-second limit**. The next training comparison
-remains blocked. Earlier failures and their original conditions stay in the
-entries below.
+remains blocked. The latest measurement separates checkpoint decoding
+from score recomputation. Most whole-read CPU lies outside that checkpoint
+callsite; the next question is which loading/checking phases account for it.
+Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
 
@@ -6348,3 +6352,88 @@ was shortened too. Earlier explanations and personal practice records retain
 their wording and attribution; the practice heading keeps its old link. This was
 a Codex-assisted editorial change requested by Jimmy, with no new experiment or
 personal learning claim. Issue #4 research remains paused.
+
+
+## 126. Check the tool before timing checkpoint replay
+
+**November 16, 2026 — issue #4: observer correctness, before measurement.**
+
+A saved checkpoint contains a strategy and the results previously calculated
+from it. Replaying it checks those results again. The next question is where
+that work spends CPU: decoding the file, recomputing scores, or the remaining
+checkpoint work. The [plan](checkpoint-replay-cpu.md) fixes the workload before
+measurement; it preserves the existing code and failed budget result.
+
+**Example:** suppose a checkpoint call takes 10 CPU seconds, including two in
+decoding and five in scoring. Adding all three timings would count 17 seconds.
+The report instead separates two, five and three seconds. Those last three
+seconds include everything else inside the call, including measuring overhead;
+they do not identify a particular serializer. These numbers illustrate the
+accounting and are not experimental results.
+
+The draft's first regression tests caught seven failures, including malformed
+clocks being accepted and cleanup hiding an original error. Those failures were
+fixed. The current 134 focused tests pass on Python 3.11.17, including eight
+actual tiny-game checkpoint cases checked with independent terminal sums and
+exhaustive pure decisions. Tests also check restoration after errors, bounded
+call coverage and saved-data parsing. Tiny games establish software behavior,
+not Hold'em strength.
+
+Next come the complete local and hosted checks, then the separately published
+own-only proof before any fresh reference comparison. No formal timing pair or
+new training has run. Implementation and explanations are Codex-assisted; no
+personal practice or time is inferred.
+
+
+The first full local checks pass: 4,799 base tests and 1,702 optional tests on
+each runtime. A report should also be reproducible without deleting its earlier
+copy. Review found that the command needed a separate output-folder option;
+two new tests check that the saved inputs stay unchanged and numerical exports
+match in two fresh folders. The focused suite now passes 136 tests on Python
+3.11.17 (23.73 seconds). [Earlier passing logs](../results/checkpoint-replay-cpu/qualification-history/pre-report-output-04dbb78/manifest.json)
+remain separate; complete local and hosted checks must qualify the corrected
+version before measurement. The poker calculations and fixed limits are unchanged.
+
+
+All six source checks now pass on the corrected version. Both hosted jobs used
+the intended Python and NumPy versions, and GitHub tested the same complete
+source tree as the local checks. The [raw records and run instructions](../results/checkpoint-replay-cpu/checks.json)
+are being published before measurement. Next is the small own-only checkpoint
+proof; its results must be public before the reference comparison begins.
+
+
+The fresh own-only proof now agrees on all eight tiny checkpoint cases. It
+records 72 selected calls across three reads, with exact original/instrumented
+results, zero independent calculation error and all temporary replacements
+restored. The complete command took 0.987 seconds. Its [raw files](../results/checkpoint-replay-cpu/software-raw-manifest.json)
+are published before the comparison solver runs. The next check authenticates
+that publication; the measured audit pair follows only if it passes.
+
+
+Both complete passes finished with identical results: all three reads, 432
+profiles and 1,152 fixed comparisons. The measured pass recorded all 3,888
+selected calls and restored its temporary replacements. Whole-child times were
+391.31 and 395.89 seconds. The [raw files](../results/checkpoint-replay-cpu/pair-raw-manifest.json)
+are published before examining the CPU breakdown. The next step checks those
+saved records and turns them into a table and plots. These are validation costs,
+not a change in the agent's playing strength.
+
+
+**What the measurement shows:** each cost-archive read spends about 23–24 CPU
+seconds recomputing the selected checkpoint scores, 1.1–1.3 decoding, and 7.7–8.7
+in other checkpoint work. Another 97–98 seconds lies outside the selected
+callsite. The [plot and full table](checkpoint-replay-cpu.md#what-the-measurement-shows)
+measure validation work in CPU seconds. That outside bucket can contain loading
+and older checks; it is not a single identified bottleneck yet.
+
+The ordinary and measured whole commands took 391.31 / 395.89 seconds. This one
+ordered pair does not isolate stable measuring overhead or predict production
+savings. The previous budget failure and the agent's recorded strategy remain
+unchanged. Next is a more specific breakdown of the current loader/replay work.
+
+Both Python environments recreate all three numerical files byte-for-byte with
+game execution blocked. The first extra guard failed during import setup because
+it replaced a class-method descriptor too early. The corrected guard preserves
+descriptors and blocks the actual entry points after static metadata loads; its
+failed and passing records remain. The measured audit was not rerun. Final local
+and hosted checks still precede merge.
