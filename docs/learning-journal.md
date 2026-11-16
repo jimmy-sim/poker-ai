@@ -6062,3 +6062,12 @@ on both Python/NumPy environments, with poker execution blocked. Eight outer
 failure-routing fixtures also pass. These checks do not replace the formal proof.
 Publish the qualification first; then run that one bounded own proof, retaining
 complete or failing results before the original/lookup timing comparison.
+
+
+The formal own software proof now passes after qualification publication. All
+4,398 card cases, the 17 fixed behavior cases and five complete matrix-field
+vectors agree. The whole command takes 5.31 seconds, under 180. Invalid input
+exceptions remain explicitly expected software outcomes, separate from actual
+audit failure. [Proof and retained files](suit-lookup.md#recorded-own-software-proof--november-15-2026)
+are published before the one full original/lookup comparison. There is still no
+measured audit speedup, new trained policy or production admission.

@@ -129,3 +129,26 @@ it is not a measurement of an unwrapped production implementation.
 **Would a faster point prove stronger poker?** No. Software/cost admission and
 later strategy-quality evidence are separate. All production and learning gates
 remain in force, including unfavorable historical outcomes.
+
+
+## Recorded own software proof — November 15, 2026
+
+After qualification publication `89be152`, the one formal software proof passes.
+The complete outer command takes **5.307256125001004 seconds**; its registered
+command takes 5.236114416999044 and its supervised child 3.0092819170095026,
+all under the complete 180-second budget. No interruption or retry occurs.
+
+All 1,248 table entries and all 4,398 valid cases agree exactly across original
+and lookup, with input/type checks. Each arm completes all 17 fixed behavior
+cases. Expected invalid-call exceptions have their own precise retained receipts;
+they are not failed actual audits. All five complete matrix-field vectors agree.
+The main valid/builder scope records 10,970 requests per arm: original evaluates
+10,970 with the original function; lookup evaluates 10,970 with the table. Both
+have zero fallbacks/errors there; fixed unsupported/error calls are separate.
+
+[The proof](../results/suit-lookup/software/proof.json), [child record](../results/suit-lookup/software/child/child.json)
+and [raw manifest](../results/suit-lookup/raw-software-manifest.json) retain 57
+raw/administrative files and exact ignored originals; the manifest is the 58th.
+Publish them before the actual pair. This proof constructs no learner/reference
+and performs no new trajectory study. It validates the private implementation,
+not performance, full production-family admission or stronger poker.

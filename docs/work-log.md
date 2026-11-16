@@ -5540,3 +5540,16 @@ admission. First publish qualification/operators, then the formal180-second own
 software proof. No actual timing pair, retry or new training has occurred. Existing
 production forecast and strategy-accuracy failures remain. Journal123 updated;
 [PR #77](https://github.com/jimmy-sim/poker-ai/pull/77) keeps the coherent milestone.
+
+
+One formal own software proof after qualification89be152: complete outer
+5.307256125001004s, registered5.236114416999044, whole supervised child
+3.0092819170095026; exits0/uninterrupted under180. All1248table entries,
+4398valid cases each,17fixed behavior cases each and5complete constructor fields
+match. Valid/builder scope10970requests each, original10970BASE vslookup10970LUT,
+no fallback/error; fixed unsupported/error calls separate precise receipts.
+No learner/reference/new trajectory. [Proof](../results/suit-lookup/software/proof.json)
+SHA2560362d13b0bead0ec06685a09171652fbb282266b56a64d71857535d60f4b6259. All57raw/admin files+ignored originals exact, manifest58th.
+Publish own proof BEFORE actual original/lookup pair. No timing retry, changed
+source415FPfc3/all60pins/caps/seeds/gates or production/quality admission.
+Journal123 updated; this is not the separately required production-family proof.
