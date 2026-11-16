@@ -6407,3 +6407,12 @@ results, zero independent calculation error and all temporary replacements
 restored. The complete command took 0.987 seconds. Its [raw files](../results/checkpoint-replay-cpu/software-raw-manifest.json)
 are published before the comparison solver runs. The next check authenticates
 that publication; the measured audit pair follows only if it passes.
+
+
+Both complete passes finished with identical results: all three reads, 432
+profiles and 1,152 fixed comparisons. The measured pass recorded all 3,888
+selected calls and restored its temporary replacements. Whole-child times were
+391.31 and 395.89 seconds. The [raw files](../results/checkpoint-replay-cpu/pair-raw-manifest.json)
+are published before examining the CPU breakdown. The next step checks those
+saved records and turns them into a table and plots. These are validation costs,
+not a change in the agent's playing strength.

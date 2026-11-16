@@ -5976,3 +5976,18 @@ poker training flags remain false. [All 13 raw files and clocks](../results/chec
 are retained in this own-before-reference publication. Saved-publication
 verification still precedes the fresh cost-audit pair; no real trajectory or
 production-cost admission follows this software proof.
+
+
+November 16 — The single registered audit pair completes after the own proof
+was public at `0533b61` and its saved-publication verification passed. All code,
+Git head and inputs stayed fixed; local heavy checks stayed idle during capture.
+Ordinary / instrumented complete-child clocks: 391.30728316598106 /
+395.89443708298495 seconds, each under 900. Outer whole CLI
+788.0160884579818 seconds under 1,800. All three reads, 432 profiles / 1,152 fixed
+conditions, exact full scalar/computed-replay identity; profiled inventory
+3,888 selected calls, final restoration true. Both receipts reject base-family
+admission. [All 27 raw files](../results/checkpoint-replay-cpu/pair-raw-manifest.json)
+and the earlier [published-own verification](../results/checkpoint-replay-cpu/proof-published-verification.json)
+are retained in this raw publication before analysis. No new Hold'em training,
+production forecast or stronger/default promotion. Full saved-pair verification,
+report, blocked 3.12 exports and final checks remain.

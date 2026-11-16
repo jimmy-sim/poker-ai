@@ -128,3 +128,17 @@ is 0.920909083011793 seconds, within the original 180-second limit.
 retained at the own-before-reference publication boundary. No reference was
 constructed and no Hold'em training ran. These are fictional-game software
 checks; saved-publication verification precedes the measured audit pair.
+
+## Complete raw pair — November 16
+
+[All 27 raw files](../results/checkpoint-replay-cpu/pair-raw-manifest.json) are
+retained before analysis. The ordinary complete child took
+391.30728316598106 seconds; the instrumented child took 395.89443708298495 seconds.
+The outer complete CLI took 788.0160884579818 seconds, within the fixed child /
+shared limits of 900 / 1,800 seconds.
+
+Both passes retain all three reads, 432 profiles and 1,152 fixed conditions,
+with exact complete scalar/computed-replay identity. The instrumented pass
+records all 3,888 selected calls and full restoration. Both outputs explicitly
+reject base-family admission. Saved-publication verification and analysis
+follow this raw boundary; these clocks cannot replace production costs.
