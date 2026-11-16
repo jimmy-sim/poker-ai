@@ -1,0 +1,47 @@
+"""Final local source, raw-copy and saved-data proof; no new poker collection."""
+import hashlib,json,re,shutil,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();w=r.parent;sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import numpy,poker_ai
+import check_suit_lookup as t
+assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6' and Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+p=r/'results/suit-lookup/report';data=json.loads((p/'summary.json').read_text());cli=json.loads((w/'suit-cli-show.json').read_text());assert t.canonical(cli)==t.canonical(data)
+c,source=t.binding(r,clean=False);assert len(source['sha256'])==415 and source['fingerprint']=='fc3d73cd6365bfc440230ad3b0596add01001731e72c04a38766ed117858058b'
+assert len(c['input_sha256'])==60
+counts={}
+for stage in ('software','pair'):
+ f=r/'results/suit-lookup';m=json.loads((f/('raw-'+stage+'-manifest.json')).read_text());assert m['status']=='complete_raw_before_analysis' and m['originals_retained'] and m['operator_bytes_match_published']
+ for name,h in m['raw_sha256'].items():assert hashlib.sha256((f/name).read_bytes()).hexdigest()==h
+ for directory,old in [(stage,r/'results/runs/suit-lookup'/stage),('execution-'+stage,w/('suit-execution-'+stage))]:
+  for original in old.rglob('*'):
+   if original.is_file():assert original.read_bytes()==(f/directory/original.relative_to(old)).read_bytes()
+ counts[stage]=len(m['raw_sha256'])
+assert counts==dict(software=57,pair=53)
+fixed=r/'results/suit-lookup/software/child/fixed'
+assert len(list(fixed.glob('*.json')))==34
+for f in fixed.glob('*.json'):
+ row=json.loads(f.read_text());assert row['restored'] is True and type(row['restored']) is bool and row['aliases_remaining']==0
+for folder in (r/'results/suit-lookup/qualification-history/superseded-d3e60b2',r/'results/matrix-phases/final-ci',p/'portability-attempt1'):
+ m=json.loads((folder/'manifest.json').read_text())
+ for name,h in m['raw_sha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==h
+failure=json.loads((p/'portability-attempt1/failure.json').read_text());assert failure['numeric_exports_created'] is False and failure['exception']=='FileExistsError' and failure['python_exit_status']=='not separately captured' and failure['outer_shell_exit_status']==0
+assert hashlib.sha256((w/'data-only-render312.log').read_bytes()).hexdigest()==failure['preexisting_log_sha256']
+manifest=json.loads((p/'render-manifest.json').read_text());assert manifest['script_sha256']==t.digest(p/'render.py.txt')
+for name,h in manifest['numeric_files'].items():assert t.digest(p/name)==h
+assert len(manifest['numeric_files'])==6 and manifest['figure_sha256']==t.digest(p/'selected-cpu.png') and manifest['cost_figure_sha256']==t.digest(p/'costs.png')
+portable=json.loads((p/'replay312.json').read_text());assert portable['byte_identical'] and portable['source_unchanged'] and portable['numeric_files']==manifest['numeric_files'] and portable['python']=='3.12.15' and portable['numpy']=='2.5.4'
+checks=[]
+for minor in ('311','312'):
+ row=json.loads((p/f'final-optional{minor}.json').read_text());assert row['status']=='passed';log=(p/f'final-optional{minor}.log').read_text();line=next(x for x in log.splitlines() if re.match(r'^909 passed',x));assert source['fingerprint'] in log;checks.append(dict(minor=minor,result=line,**row))
+assert data['diagnostic_cost_passed'] is True and all(value is True for value in data['diagnostic_cost_checks'].values())
+assert data['all_constructor_fingerprints_equal'] is data['original_identity_exact'] is True and data['constructor_calls']==dict(original=184,lookup=184)
+assert data['poker_training_performed'] is data['long_run_admitted'] is False
+for mode,row in data['kernel_counters'].items():
+ assert row['requests']==918104 and row['errors']==row['fallbacks']==0
+ assert row['lookup_evaluations']==(918104 if mode=='lookup' else 0) and row['original_evaluations']==(918104 if mode=='original' else 0)
+assert sum(row['selected']['calls'] for row in data['rows'])==3076
+for name,needle in [('lint','All checks passed!'),('format','921 files already formatted'),('types','Success: no issues found in 772 source files'),('hooks','Passed')]:
+ f=w/f'suit-final-{name}.log';text=f.read_text();assert needle in text;shutil.copyfile(f,p/f'final-{name}.log')
+docs=json.loads((w/'suit-final-docs.json').read_text());assert docs['heading_anchors_and_fences']=='passed' and docs['relative_destinations']==428 and docs['images']==6;shutil.copyfile(w/'suit-final-docs.json',p/'final-docs.json')
+proof=dict(scope='Final local saved-data/source/raw/retention verification, not a new collection, six-role qualification, real trajectory or production admission',effective_source_files=415,source_fingerprint=source['fingerprint'],checked_source_commit='53fbdf10ff4a32ce29c56c5bb88db9c559cf024f',source_unchanged=True,pins=60,raw_admin_files_exact=counts,original_ignored_outputs_retained=True,all34_fixed_restoration_flags_typed_true=True,interrupted_nonqualifying_source_checks_preserved=True,previous_PR76_closing_receipts_preserved=True,first_export_failure_and_preexisting_log_preserved=True,cli_report_equals_rendered_summary=True,all6_numeric_exports_portable=True,actual312_saved_data_only=True,both_figures_visually_inspected=True,final_relevant_checks=checks,ruff_lint_format_pass=True,ruff_files=921,mypy_strict_pass=True,mypy_files=772,hooks_pass=True,markdown=docs,diagnostic_cost_passed=True,small_point_result_not_stable_causal_saving=True,unchanged_worker_runtime_variation_disclosed=True,production_forecast_not_replaced=True,no_production_or_default_or_training_admission=True,final_exact_report_head_hosted='required before merge')
+(p/'local-verification.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');shutil.copyfile(__file__,p/'verify_local.py.txt');print(json.dumps(proof,indent=2))

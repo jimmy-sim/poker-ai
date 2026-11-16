@@ -1,0 +1,27 @@
+"""Fictional administrative routing only; never create eligible poker evidence."""
+import hashlib,json,shutil,subprocess,sys,tempfile
+from pathlib import Path
+w=Path(__file__).resolve().parent;rows=[]
+for stage in ('software','pair'):
+ for case,code,within in [('child_success_controller_failed',1,True),('controller_cap',124,False),('zero_outside_cap',0,False),('complete_routing',0,True)]:
+  with tempfile.TemporaryDirectory(prefix='suit-retention-software-') as temp:
+   root=Path(temp)
+   for name in ('run','retain'):shutil.copyfile(w/f'{name}-suit-collection.py',root/f'{name}-suit-collection.py')
+   r=root/'suit-lookup';folder=r/'results/suit-lookup';checks=folder/'checks';checks.mkdir(parents=True)
+   shutil.copyfile(root/'run-suit-collection.py',checks/'operator_launch.py.txt');shutil.copyfile(root/'retain-suit-collection.py',checks/'operator_retention.py.txt')
+   admin=root/('suit-execution-'+stage);admin.mkdir();shutil.copyfile(root/'run-suit-collection.py',admin/'operator_launch.py.txt')
+   (admin/'exit.json').write_text(json.dumps(dict(returncode=code,complete_command_within_cap=within,fictional_software_fixture=True)))
+   original=r/'results/runs/suit-lookup'/stage;original.mkdir(parents=True)
+   marker='proof.json' if stage=='software' else 'pair.json'
+   (original/marker).write_text(json.dumps(dict(status='complete',fictional_software_fixture=True,not_qualified_or_eligible=True)))
+   result=subprocess.run([sys.executable,str(root/'retain-suit-collection.py'),stage],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True);assert result.returncode==0,result.stderr
+   usable=code==0 and within;target=folder/(stage if usable else stage+'-failed')
+   assert (target/marker).read_bytes()==(original/marker).read_bytes()
+   assert original.exists() and (folder/('execution-'+stage)/'exit.json').read_bytes()==(admin/'exit.json').read_bytes()
+   if not usable:assert not (folder/stage).exists()
+   manifest=json.loads((folder/('raw-'+stage+'-manifest.json')).read_text());assert manifest['originals_retained'] and manifest['operator_bytes_match_published']
+   assert manifest['status']==('complete_raw_before_analysis' if usable else 'failed_or_partial_retained_not_admitted')
+   for name,h in manifest['raw_sha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==h
+   rows.append(dict(stage=stage,case=case,retained_exact=True,canonical_namespace_created=usable,source_qualification_or_poker_evidence=False))
+result=dict(scope='Fictional administrative routing fixtures only; no real proof/audit/source qualification/reference/training; complete_routing is not eligible experimental evidence',rows=rows,all_passed=True,retention_operator_sha256=hashlib.sha256((w/'retain-suit-collection.py').read_bytes()).hexdigest())
+(w/'suit-retention-fixtures.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n');print(json.dumps(dict(fixtures=len(rows),all_passed=True,scope=result['scope'])))

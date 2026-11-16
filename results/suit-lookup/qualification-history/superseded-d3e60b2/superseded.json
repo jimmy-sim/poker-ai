@@ -1,0 +1,9 @@
+{
+  "scope": "Interrupted nonqualifying software checks; not actual audit failure or a passing source qualification",
+  "head": "d3e60b24eb1c415cd4282844dd7c8520b9888279",
+  "reason": "Review found lookup-mode original evaluations must equal fallbacks, not merely bound them. Two new red fixtures reproduce the missing parser rejection. Stopped all four partial local roles before publishing source; base311 required an additional SIGINT to its runner after an in-test interruption. Partial E/error markers caused by interruption are preserved, not silently relabeled as a completed passing suite.",
+  "source_checks_eligible": false,
+  "actual_software_proof_started": false,
+  "actual_audit_started": false,
+  "caps_seeds_algorithms_unchanged": true
+}

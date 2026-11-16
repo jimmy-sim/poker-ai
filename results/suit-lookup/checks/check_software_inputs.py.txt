@@ -1,0 +1,13 @@
+"""Fixed software-input generation only, not proof collection or poker replay."""
+import hashlib,json,sys
+from pathlib import Path
+r=Path(sys.argv[1]).resolve();sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import numpy
+import check_suit_lookup as t
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+def forbidden(*args,**kwargs):raise AssertionError('software-input check entered poker computation')
+t.kernel.BASE=forbidden;t.kernel.translated_cards=forbidden;t.fields.build=forbidden;t.child=forbidden;t.software_child=forbidden;t.supervise=forbidden
+c=t.contract(r)
+with isolated(worker=False):cases=t.software_cases(c)
+print(json.dumps(dict(scope='Software fixture input generation only; no canonicalization, game construction, formal proof, audit, learner, native or trajectory',python=sys.version.split()[0],numpy=numpy.__version__,config_sha256=t.CONFIG_SHA,cases=len(cases),fixture_seed=c['software_fixture_seed'],case_sha256=hashlib.sha256(t.canonical(cases)).hexdigest()),indent=2))

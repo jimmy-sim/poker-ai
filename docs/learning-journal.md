@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
+
 - [Separate original construction phases](#122-separate-construction-work-from-checking-work)
 
 - [Check matrix depths with grouped integer work](#121-check-matrix-depths-without-rescanning-every-node)
@@ -104,6 +106,10 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
+  suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
+  reduction. Production benefit and strategy strength remain unestablished.
 
 - [Step 122](#122-separate-construction-work-from-checking-work): locate CPU
   inside the original constructor: key creation accounts for 84.3% of its measured
@@ -5994,3 +6000,108 @@ translations inside key work, supported by this localization and the earlier
 canonicalization trace. It needs a new prospective plan, original-result/field
 checks and a complete cost comparison. Nothing here trains a new policy or
 accepts a faster/default agent; the existing compute and accuracy failures stay.
+
+
+PR #76 is now merged. Both final GitHub jobs pass 4,230 tests; after updating
+main, its saved-data command and 95 focused fixtures pass. The ten unrelated
+local result files remain byte-for-byte intact. [Closing receipts](../results/matrix-phases/final-ci/manifest.json)
+retain actual runtimes, full logs, tested trees and merged-main verification.
+
+## 123. Replace repeated suit arithmetic with a fixed table
+
+**November 15, 2026 — issue #4, prospective cost comparison.**
+
+The previous capture puts most measured matrix-construction CPU in creating
+information keys. One repeated operation translates cards under all 24 possible
+renamings of the four suits. A translation can be computed from integer division
+and remainders, or read from a small fixed table.
+
+**Example:** changing every club to a diamond and every diamond to a club changes
+the card names but preserves the poker situation. The canonical description is
+the smallest sorted description across every suit renaming. The candidate still
+checks all 24 renamings every time; it only replaces each integer translation
+with a lookup. It remembers no hand results or strategy decisions.
+
+The [prospective plan](suit-lookup.md) and [sealed config](../configs/suit-lookup.json)
+come before measurement. The private implementation keeps the original validation,
+outputs, error behavior and unsupported-input fallback. Both comparison arms pay
+the same guards, counters and full-field observer. Original scientific source,
+seeds, caps and unfavorable outcomes stay unchanged.
+
+The current focused software tests pass 163 fixtures, including all 1,248 table
+entries, all 1,326 preflop pairs, generated boards, invalid calls, alias restoration,
+interruption and strict saved-record checks. These are development fixtures,
+with deliberately fictional qualification where necessary. They are not the
+formal published proof or a timing result. Full source checks on both Python
+versions and both hosted jobs still precede that proof and the one audit pair.
+
+Implementation and explanations are Codex-assisted. No personal hours, practice
+or mastery is inferred. Even a faster audit would address validation cost; it
+would not establish stronger poker or accept new training. The existing compute
+forecast and strategy-accuracy failures remain separate next decisions.
+
+
+A final accounting review adds the exact lookup rule: every original evaluation
+in lookup mode must be a fallback. Two new regression cases fail before the
+parser correction; four additional fixtures then pass with the full 167-test
+focused set. The four in-progress local source roles were interrupted and are
+[retained as nonqualifying](../results/suit-lookup/qualification-history/superseded-d3e60b2/superseded.json).
+No formal proof or actual audit had started. Qualification restarts on the revised
+immutable source; the algorithm, config, scientific caps and seeds are unchanged.
+
+
+All six source-check roles now pass on the same revision: both local full suites
+pass 4,397 tests, both optional suites pass 909, and both GitHub jobs pass 4,397.
+The [qualification record](../results/suit-lookup/checks.json) retains full logs,
+actual runtimes, the complete tested source tree and exact launch/save instructions.
+GitHub's jobs take 15.2 and 21.9 minutes; those are software-suite durations,
+not measurements of the proposed audit or its 900-second child budget.
+
+A separate software-input check finds identical hashes for all 4,398 fixed cases
+on both Python/NumPy environments, with poker execution blocked. Eight outer
+failure-routing fixtures also pass. These checks do not replace the formal proof.
+Publish the qualification first; then run that one bounded own proof, retaining
+complete or failing results before the original/lookup timing comparison.
+
+
+The formal own software proof now passes after qualification publication. All
+4,398 card cases, the 17 fixed behavior cases and five complete matrix-field
+vectors agree. The whole command takes 5.31 seconds, under 180. Invalid input
+exceptions remain explicitly expected software outcomes, separate from actual
+audit failure. [Proof and retained files](suit-lookup.md#recorded-own-software-proof--november-15-2026)
+are published before the one full original/lookup comparison. There is still no
+measured audit speedup, new trained policy or production admission.
+
+
+The one full original/lookup audit pair now completes in 14.18 minutes total.
+All original result checks and all 184 constructor field fingerprints per arm
+pass. [The raw records](suit-lookup.md#recorded-complete-pair--november-15-2026)
+retain 53 files plus their manifest, with original ignored outputs preserved.
+Publish those before calculating the cost verdict and drawing the plots. This
+is a successful collection, not yet a claim that the lookup is faster or that
+an agent has learned a better strategy.
+
+
+**Result:** the diagnostic passes, but the improvement is small. Complete elapsed
+time is 423.39 seconds for original and 421.00 for lookup, an observed 0.56%
+reduction. Matrix CPU falls from 53.67 to 51.90 seconds, 3.28%. Both arms process
+918,104 canonicalization requests and preserve all fields and original results.
+
+The [zero-based cost plot](../results/suit-lookup/report/costs.png) makes the small
+size visible. The unchanged comparison workers also finish about 1.65 seconds
+quicker in the lookup arm. That prevents attributing the whole wall difference
+to the table. One ordered pair does not establish a repeatable production saving,
+solve the failed compute forecast or make the strategy stronger.
+
+All six saved numeric tables match on the second Python environment with poker
+execution blocked. A first export attempt hit an existing generic log name and
+refused to overwrite it; its failure is retained. A distinct log name fixes the
+reporting administration, preserving both the old bytes and the single actual
+audit. Both final optional suites pass 909 tests and both plots are inspected.
+
+The next question is mathematical: choose the smallest private-card description
+first, then compare the board only for suit renamings that tie there. This might
+avoid redundant candidates, but requires a new prospective plan and exact tests.
+The current table remains private; production and strategy-quality requirements
+are still separate. Implementation, experiments and explanations are AI-assisted;
+no new personal practice or hours are inferred.

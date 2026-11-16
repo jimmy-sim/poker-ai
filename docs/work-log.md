@@ -5480,3 +5480,112 @@ strictmypy768,hooks and409focused destinations/5images/anchors/fences.
 actual scope and remaining exact-report-head hosted requirement. No source or
 scientific criterion changes; no new trajectory. Publish coherent report, then
 both hosted jobs must pass before history-preserving merge.
+
+
+PR #76 closing verification: both final hosted jobs in run43776395105 pass
+4,230/64skip/150deselect, actual 3.11.17/2.4.6 and 3.12.15/2.5.4 runtimes and
+complete tested tree verified. History-preserving merge26e0c8c; fresh snapshot,
+guarded main FF and actual3.11 saved CLI base/report equality plus95fixtures
+(14.29s) pass. All ten unrelated user paths' bytes/status/index/patches remain
+exact after checks. [Closing receipts](../results/matrix-phases/final-ci/manifest.json)
+are batched with this next substantive implementation; no status-only commit.
+
+## 2026-11-15 — Exact suit translation lookup, prospective implementation
+
+Issue #4 [plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6903489482)
+precedes new code. [Protocol](suit-lookup.md) and60-pin sealed config: preserve412
+prior sources, add3 for415. Fixed24x52 translations replace repeated arithmetic,
+not card-result memoization. Both modes share eligibility/dependency/counter hooks,
+original uncached card wrappers and full constructor-field observer; native workers
+keep original code. No production algorithm, dependency, CI, seed or old gate change.
+
+Focused163 software fixtures pass; Ruff/format and strict types pass on new files.
+Coverage includes1248entries,1326preflop pairs, property boards, exceptions,
+unsupported/dependency fallbacks, aliases/counters/PID/thread/primary interruption,
+expired budgets, complete saved-data proof shape and rebound-kernel corruption.
+Fictional fixture qualification is not actual formal qualification or a measurement.
+Complete immutable-source local base/optional roles and both hosted roles come
+before published exact operators/receipts, then one180s own proof publication,
+then one original/lookup pair900each/1800shared/120failure-saving. No actual audit
+or timing claim yet. Journal123 explains the question in plain English; Codex-
+assisted work, human time not recorded. Preserve prior failed outcomes and all
+unrelated user main bytes. Full cost and subsequent production/quality gates remain.
+
+
+A final accounting review adds the exact lookup rule: every original evaluation
+in lookup mode must be a fallback. Two new regression cases fail before the
+parser correction; four additional fixtures then pass with the full 167-test
+focused set. The four in-progress local source roles were interrupted and are
+[retained as nonqualifying](../results/suit-lookup/qualification-history/superseded-d3e60b2/superseded.json).
+No formal proof or actual audit had started. Qualification restarts on the revised
+immutable source; the algorithm, config, scientific caps and seeds are unchanged.
+
+
+Exact-source qualification now passes on published source53fbdf10: effective415
+files, FPfc3d73cd6365bfc440230ad3b0596add01001731e72c04a38766ed117858058b;
+all412 previous sources/all60 config pins unchanged. Full local bases each4397/
+64skip/150deselect,885.69/867.35s; optional909each91.99/89.38s. Full lint/format,
+strict types772, hooks and post-check source/runtime guards pass. GitHub source
+run43783661537 both4397/64skip/150deselect+existing warning:311911.12s,
+3121312.17s. Actual Python3.11.17/NumPy2.4.6 and3.12.15/2.5.4, all uv selections,
+both actual checkout logs and complete temp-merge tree verified against53fbdf10.
+CI durations are software checks, not actual child900-second measurements.
+
+[All six receipts](../results/suit-lookup/checks.json), full untrimmed logs/raw
+metadata, tested-tree record and exact launch/save operators are retained. Eight
+fictional administrative routing fixtures pass; all4398 software-input hashes
+match across actual311/312 with canonical/game/learner/native execution blocked.
+These extra checks are not actual proof/audit evidence or bit-exact real-trajectory
+admission. First publish qualification/operators, then the formal180-second own
+software proof. No actual timing pair, retry or new training has occurred. Existing
+production forecast and strategy-accuracy failures remain. Journal123 updated;
+[PR #77](https://github.com/jimmy-sim/poker-ai/pull/77) keeps the coherent milestone.
+
+
+One formal own software proof after qualification89be152: complete outer
+5.307256125001004s, registered5.236114416999044, whole supervised child
+3.0092819170095026; exits0/uninterrupted under180. All1248table entries,
+4398valid cases each,17fixed behavior cases each and5complete constructor fields
+match. Valid/builder scope10970requests each, original10970BASE vslookup10970LUT,
+no fallback/error; fixed unsupported/error calls separate precise receipts.
+No learner/reference/new trajectory. [Proof](../results/suit-lookup/software/proof.json)
+SHA2560362d13b0bead0ec06685a09171652fbb282266b56a64d71857535d60f4b6259. All57raw/admin files+ignored originals exact, manifest58th.
+Publish own proof BEFORE actual original/lookup pair. No timing retry, changed
+source415FPfc3/all60pins/caps/seeds/gates or production/quality admission.
+Journal123 updated; this is not the separately required production-family proof.
+
+
+ONE complete original/lookup pair after ownproof0b4203c: outer850.8070003750036s,
+registered850.7695943330182s, under1800; both whole children under900, exits0,
+uninterrupted. No retry/seed/cap/gate/source change. Parent validation passes all
+original432profiles/1152conditions/3reads/worker/card/source/scalar identities,
+equal request/fallback counts and184pinned ORIGINAL constructor fingerprints each.
+Global1538each/3076combined<4096; no920phasehooks. All53raw/admin files+ignored
+originals retained exact, [manifest](../results/suit-lookup/raw-pair-manifest.json)
+54th. Publish this raw evidence BEFORE posthoc cost/CPU analysis. No diagnostic
+cost verdict or production/quality/default/fresh/global admission yet. No new
+own policy/real trajectory trained; reference outputs comparison-only. Journal123
+updated with observed scope and next decision.
+
+
+Posthoc after raw59ff388: cost diagnostic PASS, original/lookup whole supervised
+wall423.3883260829898/420.99904466600856s (observed0.5643238771%lower);
+selected matrix CPU53.6667260000001/51.90405599999999s (3.2844746296%lower).
+All correctness/counters/coverage/source/184FPs remain exact;918104requests each,
+original918104BASE vslookup918104LUT,0fallback/errors. Native code unchanged.
+Small one-point benefit, not stable causal/runtime/population/production admission:
+unchanged parallel workers also ~1.65squicker, not added into wall. Both own read
+CPU totals remain similar. [Report](suit-lookup.md#recorded-cost-result--november-15-2026)
+retains full clocks/6numeric exports/2zero-based inspected figures and exact code.
+
+First312export failed BEFORE numeric generation: generic work/data-only-render312.log
+already existed. Unhandled FileExistsError retained with empty stdout; outer shell
+last tail returned0, not a passed verifier. No separately captured Python exit
+status invented. Original verifier/log/error and failure metadata/manifest retained.
+Corrected verifier uses unique log, preserves old bytes, and all6numeric exports
+match actual3.12.15/NP2.5.4 byte-for-byte with poker execution blocked. No actual
+poker retry/raw/cap/seed/gate/source change. Matplotlib temp-cache notices retained.
+Final relevant909eachPASS53.68/53.43s, source/runtime guards retained. Journal123
+updated. Next prospective question: private-hole minimum/tied-suit candidate
+factorization, independently proven before any new cost study. No production/
+new-trajectory/default/quality admission;933.89/900and2.390vs1failures remain.
