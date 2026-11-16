@@ -1,0 +1,133 @@
+"""One qualified software proof or one original/lookup audit pair; no retry."""
+
+import json, os, shutil, signal, subprocess, sys, time
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = w / "suit-lookup"
+stage = sys.argv[1]
+assert stage in ("software", "pair")
+f = w / ("suit-execution-" + stage)
+f.mkdir(exist_ok=False)
+shutil.copyfile(__file__, f / "operator_launch.py.txt")
+allowed = {
+    "PATH",
+    "HOME",
+    "TMPDIR",
+    "USER",
+    "LOGNAME",
+    "SHELL",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "UV_CACHE_DIR",
+    "UV_PYTHON_INSTALL_DIR",
+    "UV_OFFLINE",
+    "PRE_COMMIT_HOME",
+}
+env = {k: v for k, v in os.environ.items() if k in allowed}
+env["PYTHONPATH"] = str(r / "src") + os.pathsep + str(r / "scripts")
+python = str(w / "suit-source-optional311/bin/python")
+metadata = """import json,sys,numpy,poker_ai
+from pathlib import Path
+from check_suit_lookup import binding,checked,runtime,published_proof
+r=Path.cwd();assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6' and Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+c,s=binding(r);assert len(s['sha256'])==415 and s['fingerprint']=='fc3d73cd6365bfc440230ad3b0596add01001731e72c04a38766ed117858058b';checked(r,s)
+if STAGE=='pair':published_proof(r)
+print(json.dumps(dict(source=s,config=c,runtime=runtime(c),scope='administrative preflight; all prerequisites repeated inside registered clock'),indent=2))
+""".replace("STAGE", repr(stage))
+with (
+    (f / "environment.json").open("x") as out,
+    (f / "metadata-stderr.log").open("x") as err,
+):
+    check = subprocess.run(
+        [python, "-c", metadata], cwd=r, env=env, stdout=out, stderr=err
+    )
+if check.returncode:
+    (f / "exit.json").write_text(
+        json.dumps(
+            dict(
+                returncode=check.returncode,
+                phase="administrative_preflight_failed_no_collection_started",
+            ),
+            indent=2,
+        )
+        + "\n"
+    )
+    raise SystemExit(check.returncode)
+c = json.loads((f / "environment.json").read_text())["config"]
+cap = (
+    c["maximum_software_proof_seconds"]
+    if stage == "software"
+    else c["maximum_pair_seconds"]
+)
+output = r / "results/runs/suit-lookup" / stage
+assert not output.exists()
+command = [
+    python,
+    "scripts/check_suit_lookup.py",
+    *(["--prove"] if stage == "software" else []),
+    "--output",
+    str(output),
+]
+(f / "invocation.json").write_text(
+    json.dumps(
+        dict(
+            stage=stage,
+            command=command,
+            cwd=str(r),
+            PYTHONPATH=env["PYTHONPATH"],
+            cap=cap,
+            reserve=c["save_reserve_seconds"],
+            clock="monotonic origin immediately before Popen; imports/orchestration/final writes charged; reserve only for safe failure retention, never successful budget extension",
+        ),
+        indent=2,
+    )
+    + "\n"
+)
+interrupted = None
+with (f / "stdout.log").open("x") as out, (f / "stderr.log").open("x") as err:
+    started = time.perf_counter()
+    env["POKER_SUIT_LOOKUP_COMMAND_STARTED"] = str(started)
+    process = subprocess.Popen(
+        command, cwd=r, env=env, stdout=out, stderr=err, start_new_session=True
+    )
+    try:
+        code = process.wait(timeout=cap)
+    except (subprocess.TimeoutExpired, KeyboardInterrupt) as error:
+        interrupted = type(error).__name__
+        try:
+            os.killpg(process.pid, signal.SIGINT)
+        except ProcessLookupError:
+            pass
+        try:
+            process.wait(timeout=c["save_reserve_seconds"])
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            process.wait()
+        code = 130 if isinstance(error, KeyboardInterrupt) else 124
+    seconds = time.perf_counter() - started
+if code == 0 and seconds >= cap:
+    code = 124
+(f / "exit.json").write_text(
+    json.dumps(
+        dict(
+            returncode=code,
+            stage=stage,
+            seconds=seconds,
+            interrupted=interrupted,
+            complete_command_within_cap=interrupted is None and seconds < cap,
+        ),
+        indent=2,
+    )
+    + "\n"
+)
+print(
+    json.dumps(
+        dict(returncode=code, stage=stage, seconds=seconds, interrupted=interrupted)
+    )
+)
+raise SystemExit(code)

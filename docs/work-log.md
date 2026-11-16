@@ -5519,3 +5519,24 @@ focused set. The four in-progress local source roles were interrupted and are
 [retained as nonqualifying](../results/suit-lookup/qualification-history/superseded-d3e60b2/superseded.json).
 No formal proof or actual audit had started. Qualification restarts on the revised
 immutable source; the algorithm, config, scientific caps and seeds are unchanged.
+
+
+Exact-source qualification now passes on published source53fbdf10: effective415
+files, FPfc3d73cd6365bfc440230ad3b0596add01001731e72c04a38766ed117858058b;
+all412 previous sources/all60 config pins unchanged. Full local bases each4397/
+64skip/150deselect,885.69/867.35s; optional909each91.99/89.38s. Full lint/format,
+strict types772, hooks and post-check source/runtime guards pass. GitHub source
+run43783661537 both4397/64skip/150deselect+existing warning:311911.12s,
+3121312.17s. Actual Python3.11.17/NumPy2.4.6 and3.12.15/2.5.4, all uv selections,
+both actual checkout logs and complete temp-merge tree verified against53fbdf10.
+CI durations are software checks, not actual child900-second measurements.
+
+[All six receipts](../results/suit-lookup/checks.json), full untrimmed logs/raw
+metadata, tested-tree record and exact launch/save operators are retained. Eight
+fictional administrative routing fixtures pass; all4398 software-input hashes
+match across actual311/312 with canonical/game/learner/native execution blocked.
+These extra checks are not actual proof/audit evidence or bit-exact real-trajectory
+admission. First publish qualification/operators, then the formal180-second own
+software proof. No actual timing pair, retry or new training has occurred. Existing
+production forecast and strategy-accuracy failures remain. Journal123 updated;
+[PR #77](https://github.com/jimmy-sim/poker-ai/pull/77) keeps the coherent milestone.

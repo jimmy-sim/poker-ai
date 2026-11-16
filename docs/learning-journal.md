@@ -6048,3 +6048,17 @@ focused set. The four in-progress local source roles were interrupted and are
 [retained as nonqualifying](../results/suit-lookup/qualification-history/superseded-d3e60b2/superseded.json).
 No formal proof or actual audit had started. Qualification restarts on the revised
 immutable source; the algorithm, config, scientific caps and seeds are unchanged.
+
+
+All six source-check roles now pass on the same revision: both local full suites
+pass 4,397 tests, both optional suites pass 909, and both GitHub jobs pass 4,397.
+The [qualification record](../results/suit-lookup/checks.json) retains full logs,
+actual runtimes, the complete tested source tree and exact launch/save instructions.
+GitHub's jobs take 15.2 and 21.9 minutes; those are software-suite durations,
+not measurements of the proposed audit or its 900-second child budget.
+
+A separate software-input check finds identical hashes for all 4,398 fixed cases
+on both Python/NumPy environments, with poker execution blocked. Eight outer
+failure-routing fixtures also pass. These checks do not replace the formal proof.
+Publish the qualification first; then run that one bounded own proof, retaining
+complete or failing results before the original/lookup timing comparison.
