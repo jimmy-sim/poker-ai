@@ -5705,3 +5705,51 @@ First posthoc verifier expected51hook restorations incorrectly; retained failure
 and exact operator, then v2 verifies34variant restorations plus all51fixed
 outcomes and truthful unhooked original baseline. No collection retry. Final
 exact-report-head hosted jobs remain required before merge.
+
+
+## 2026-11-15 — Exact normalization in complete validation, in progress
+
+[Prospective issue4 registration](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6906832663)
+precedes new compact_suit adapter code. Separate parent-only exact factorization
+plus original recall caching; training/native workers retain original canonical
+code. All418 predecessor sources remain unchanged; the current adapter inventory
+extends this to433. New contract SHA443f6a78b7d58bdf9c758bc5f31de31dacd9022a6698b11b3cce64bebc4bf2b0.
+Original science, seeds, work, caps, strict formulas and quality gates unchanged.
+Source metadata is read from a pinned own proof anchor rather than importing the
+diagnostic runner into a reference-free training worker. Fresh subprocess checks
+validate the complete source with inactive worker normalization.
+
+Initial38 focused tests pass1.03s: role isolation, live/final restoration,
+unsupported/dependency fallback, counter typing, source coverage, worker imports,
+unchanged forecast AST and old failed-admission refusal. Card-contract and full
+pipeline integration/failure tests remain in progress. New own-only card dispatch
+proof is required inside the same180s software command before reference use;
+actual software/cost/forecast/admission collection has not started. No new real
+trajectory or strength result. Journal125 explains why tiny games alone cannot
+exercise the card optimization. AI-assisted; human time not recorded.
+
+PR78 final CI43800671628 passes4586/64skip150deselect+existingwarning both,
+978.25/696.45s; actual Python/NumPy/alluv and full source/report trees verified.
+History mergee8018609, fresh guarded main update, CLI==report and189tests35.42s.
+All10user bytes/status/changed-pathindex/bothpatches preserved AFTER verification.
+[Closing11raw+manifest12](../results/suit-candidates/final-ci/manifest.json) retained
+with this next source increment; issue4 remains open.
+
+
+All75 focused tests pass actual311/NP24610.06s and312/NP25410.37s. This includes
+fresh three-worker own tiny capture and original324/216/30 vector parity with
+independent terminal/pure-choice oracles; optional unit native432/1152 matches
+unchanged tolerance with original worker normalization. Mocked source/publication
+fixtures remain nonqualifying; no formal own/reference/cost/study run yet.
+Production card fixture5724/17/five complete builder encodings passes; rebound
+schema corruptions/data-only parsing/partial and existing-output preservation
+checks pass. Initial serializer-whitespace failure retained; fixed to preserve
+original input bytes. Cleanup-overwrite risk found in review, fixed by early
+refusal plus last-write ownership binding, covered by new regression tests.
+Formal operators must register pre-Python origin; complete clocks bind observed
+child PID, real archive costs/replay require original31117/NP246. Source433files,
+all418 prior bytes unchanged. Ruff lint/format947 and strictmypy796 pass.
+Installed OpenSpiel2.0.2 Apache2.0 license read before optional comparison; pinned
+license and comparison-only scope preserved. All four immutable local roles plus
+both exact-source hosted jobs remain required before formal evidence. Journal125
+updated; source publication will wait for complete local checks as requested.

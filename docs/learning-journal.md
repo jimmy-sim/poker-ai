@@ -25,6 +25,8 @@ not evidence that it was completed or understood.
 
 ## Quick navigation
 
+- [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
+
 - [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
 
 - [Test a fixed suit lookup](#123-replace-repeated-suit-arithmetic-with-a-fixed-table)
@@ -108,6 +110,9 @@ follow-up remains unrun because its complete independent-audit forecast is
 restricted-game accuracy, and compute cost each need their own evidence.
 
 Recent explanations:
+
+- [Step 125](#125-take-the-exact-card-calculation-into-complete-validation): qualify
+  a separate full validation pipeline before making a new budget decision.
 
 - [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
   an exact way to compare fewer suit renamings. The one audit pair preserves
@@ -6224,3 +6229,58 @@ expected private-hook restoration receipts from the unhooked original. That
 verifier failed; its corrected version checks the original's separate outcomes
 and both variants' restoration records. The failure remains available. The
 actual audit was not repeated or changed. Final GitHub checks still precede merge.
+
+
+PR #78 is merged after both final GitHub jobs pass 4,586 tests, with actual
+runtimes and whole tested trees verified. On main, the saved-data command matches
+the report and 189 focused tests pass in 35.42 seconds. All ten local result files
+and patches remain unchanged after checks. [Closing evidence](../results/suit-candidates/final-ci/manifest.json)
+is batched with the next implementation.
+
+## 125. Take the exact card calculation into complete validation
+
+**November 15, 2026 — issue #4, implementation in progress.**
+
+The suit experiment preserves exact outputs and reduces one measured part of
+validation. The next question is practical: does it help the complete pipeline
+enough to fit the original budget? The [prospective plan](compact-suit-pipeline.md)
+was published before this new implementation. The earlier failed forecast and
+accuracy result remain current.
+
+A separate opt-in pipeline is under development. Its parent loader uses the
+exact private-card tie calculation alongside the existing recall-proof cache.
+The spawned learning and independent-comparison workers retain original card
+normalization. Every process must report that distinction. A live counter record
+is not evidence that temporary function replacements were restored; the final
+record is written after leaving the replacement scope.
+
+**Example:** the earlier tiny signal-game proof can test training updates and
+archive replay without calling Hold'em card normalization. Passing it alone
+would leave the new dispatch untested. The new software command therefore also
+needs a card-only contract: all 5,724 fixed inputs, 17 behavior cases and five
+complete builder encodings compared with original own outputs. Its own evidence
+must be published before the independent reference runs. The shared software
+budget stays 180 seconds, including this check and publication interval.
+
+The first 38 focused tests pass, covering roles, typed counters, restoration,
+fresh worker import isolation, complete source coverage and unchanged forecast
+math. This is development evidence. The separate card-contract fixture, complete
+pipeline integration, failure tests, full local and hosted checks are still in
+progress. No new formal proof, production cost, forecast, admission or real
+trajectory has started. Implementation and explanations are Codex-assisted; no
+personal learning or time is inferred.
+
+
+Both environments now pass all 75 focused tests. The new card-only fixture
+agrees with the original bytes and full builder fields; the complete tiny-game
+fixture preserves the original numerical histories. The optional independent
+unit comparison also checks all 432 profiles and 1,152 fixed conditions. These
+are explicitly mocked development fixtures, not the formal published proof.
+
+A review found that a cleanup write could overwrite an existing receipt. The
+runner now refuses existing files and verifies ownership before its final write;
+regression tests cover both cases. Tests also cover secondary save failures and
+wrong process IDs. Full-project lint, formatting and strict types pass. Next is
+the immutable-source qualification: all four local roles and both hosted jobs
+must pass before collecting any formal production evidence. The old failed
+budget and accuracy results are unchanged.

@@ -1,0 +1,74 @@
+{
+  "authorization": "Current user resume-until-stopped instruction; no schedule or autonomous permission granted by this configuration",
+  "cache_config": "configs/recall-proof-cache.json",
+  "cache_config_sha256": "f78198c7570fe21f0164cec8303207ac840bc804d26163946fd1a98a1c1dc09b",
+  "cache_source": "cc9840128fe313a3a564131055d169d00f7cad079e7c8e7ca59890245c922352",
+  "cache_support": "scripts/recall_cache_support.py",
+  "cache_support_sha256": "7ed13347df22f104e0fa38abd8b4bb16f5ecf73ab4f8d91c58479bd19cc1dca6",
+  "caps": {
+    "cost_native": 900,
+    "cost_own": 900,
+    "forecast": 900,
+    "software_shared": 180,
+    "study_native": 900,
+    "study_own": 7200
+  },
+  "folder": "results/compact-suit-learning",
+  "forecast_rules": {
+    "native": "2*(N+60)<900",
+    "own": "2*(2*T+D+600)<7200",
+    "repetitions": [
+      0,
+      1,
+      2
+    ],
+    "training": "unchanged ALL24 original B4 paths, original fixed30path partition, no half discount"
+  },
+  "fresh_global_admission": false,
+  "historical_cache_manifest": "results/recall-proof-cache/pair/manifest.json",
+  "historical_cache_manifest_sha256": "22af28b8369f58f952facb410978324dd726bf489d2ae09a22ca8dc67e719bcf",
+  "new_agent_default": false,
+  "normalization": {
+    "adaptive_full_hand_cache": false,
+    "geometry_sha256": "f1cf3685244285e88220e82b5c274fd96b12f07acf4cd17a106bf079ce2cfc8d",
+    "lookup_table_sha256": "f422fabd71dd88fc9b169442354ac8a8d017be6debe69f170548f1064c8c3ec8",
+    "maximum_parent_requests": 10000000,
+    "native_workers": "original",
+    "parent": "exact_private_minimum_ties",
+    "rank_cache": false,
+    "training_workers": "original"
+  },
+  "original_cost": "configs/compact-own-opponent-cost-standins.json",
+  "original_cost_sha256": "bf590525ab8c1cb206d6b1afb6562ce4c628ad3943edc93a33259eb181c58ca3",
+  "original_science": "configs/compact-own-opponent-learning.json",
+  "original_science_sha256": "46922073b88796463ae5c911e6de5eea29de788f7b3fbd3e96275d11c9845d8d",
+  "original_scientific_source": "2ace916f0812efd1d93d0f16f533a9ecab15deceda482e94553df9a158d6a989",
+  "predecessor_source": "8fd42fd8ae4f18461a5646b46e3ec8b7da4ff62352dfbf2e6878fed8e5deec1a",
+  "predecessor_source_files": 418,
+  "prerequisite_sha256": {
+    "configs/suit-candidates.json": "593072acc4d94403378675dc7550131e75373a1f159c5f04a9337edbf007cb09",
+    "results/suit-candidates/checks.json": "db71a6bc54ce50f31e4665686289f3ef6893879ce60031f1effd39d3cd25974c",
+    "results/suit-candidates/pair/pair.json": "e7b938643df9a1015a0853ec4f78370a901fb942808483c6ee7a196c7beba2d7",
+    "results/suit-candidates/report/summary.json": "f334b49004911ff27d0274da1f89390aabf1b6e6311bb9f69e9748c881e4984a",
+    "results/suit-candidates/software/proof.json": "1dee6b09d999df3b68c93c0e9b5e1ed07d8c08eef8ea02acc6a50da695c5e364",
+    "scripts/suit_candidates_support.py": "642c4cd8a77eabfe41514eb5db1cd90a4f7f6e1bcc0f026cbfccb0e9f5799458",
+    "scripts/suit_lookup_support.py": "c2a671c00dac1c54d4bda56abecf0ad4cf54a73614f58d13a0aa158de5a64d1e"
+  },
+  "reference_strategy_input_permitted": false,
+  "required_checks": {
+    "publish_before_formal_software": true,
+    "roles": [
+      "base311",
+      "base312",
+      "optional311",
+      "optional312",
+      "hosted311",
+      "hosted312"
+    ],
+    "same_head": true
+  },
+  "schema": 1,
+  "source_placement_exception": "Separate private scripts/compact_suit package, all Python modules plus entry/config and unchanged418-file predecessor map; preserve historical source",
+  "study_id": "compact-suit-pipeline-2026-11-15",
+  "study_start_reserve_seconds": 11100
+}

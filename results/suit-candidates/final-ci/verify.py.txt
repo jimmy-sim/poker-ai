@@ -1,0 +1,21 @@
+"""Actual final CI jobs/runtimes/test-merge trees; no new collection."""
+import hashlib,json,re,runpy,shutil,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'suit-candidates';f=w/'candidates-final-hosted';head='0c27c176942a2acc6ff600ac34f9291dc8ff8b27';checkout='7d489ee08eef3215c483d8faadac32c28f60b8d0';run=43800671628
+m=json.loads((f/'run.json').read_text());jobs=json.loads((f/'jobs.json').read_text())['jobs'];assert m['id']==run and m['head_sha']==head and m['status']=='completed' and m['conclusion']=='success'
+rows=[];parser=runpy.run_path(str(r/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='runtime_label_parser')['parse']
+for minor,version,numpy,jobid in [('311','3.11.17','2.4.6',133079989782),('312','3.12.15','2.5.4',133079989534)]:
+ job=next(j for j in jobs if j['id']==jobid);assert job['head_sha']==head and job['status']=='completed' and job['conclusion']=='success' and job['run_id']==run
+ assert next(x for x in job['steps'] if x['name']=='Verify actual installed runtime')['conclusion']=='success'
+ p=f/('hosted'+minor+'.log');s=p.read_text(encoding='utf-8-sig');actual=parser(s);assert actual['actual_python']==[version] and actual['all_uv_versions']==[version]
+ assert 'ACTUAL_PYTHON='+version in s and 'ACTUAL_NUMPY='+numpy in s and head in s and checkout in s
+ line=next(x for x in s.splitlines() if '4586 passed, 64 skipped, 150 deselected' in x)
+ rows.append(dict(job_id=jobid,python=version,numpy=numpy,actual_uv_versions=actual['all_uv_versions'],result=line,log_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),status='passed'))
+trees=[]
+for name,branch in [('source','3a15a53aa3eeb1033e6ac2dfcefad1c10ab08602'),('final',head)]:
+ obj=json.loads((f/('checkout-'+name+'.json')).read_text());tree=subprocess.check_output(['git','-C',str(r),'rev-parse',branch+'^{tree}'],text=True).strip();assert tree==obj['tree']['sha'] and branch in [x['sha'] for x in obj['parents']]
+ trees.append(dict(scope=name,pr_head=branch,actual_checkout_sha=obj['sha'],tree_sha=tree,same_complete_repository_tree=True))
+assert subprocess.check_output(['git','-C',str(r),'rev-parse','HEAD'],text=True).strip()==head
+assert subprocess.check_output(['git','-C',str(r),'status','--porcelain'],text=True)==''
+proof=dict(scope='Final exact-PR-head hosted checks with actual runtime and complete test-merge tree equivalence; not a new six-role source qualification or poker run',run_id=run,head_sha=head,actual_checkout_sha=checkout,rows=rows,tested_tree_checks=trees,all_passed=True)
+(f/'verified.json').write_text(json.dumps(proof,indent=2,sort_keys=True)+'\n');shutil.copyfile(__file__,f/'verify.py.txt');print(json.dumps(proof,indent=2))
