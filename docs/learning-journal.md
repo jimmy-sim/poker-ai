@@ -6503,3 +6503,17 @@ corrected cases pass on both runtimes. [Failed qualification](../results/reader-
 and [targeted regression records](../results/reader-phase-cpu/qualification-history/fresh-process-regression/manifest.json)
 remain separate. Complete qualification must run again before the source is
 published; no formal phase capture has begun.
+
+
+The corrected version now passes all six source checks: 4,887 base tests and
+1,791 optional tests on each local runtime, plus both hosted roles. One hosted
+3.11 job ran out of its existing 25 minutes; the unchanged-source retry passes.
+The earlier 3.12 success was carried forward, not rerun. [Full check records](../results/reader-phase-cpu/checks.json)
+retain the cancellation too. A separate local timing check finds the largest
+individual test costs in older saved-policy/archive checks; that observation does
+not establish the hosted slowdown's cause or change a research budget.
+
+These records and the exact tested operators are published before the own-only
+proof. No formal phase timing has run yet. The next proof checks actual archived
+software replay and labels the separate forwarding fixtures; reference comparison
+comes after its own results are public.

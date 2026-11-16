@@ -1,0 +1,970 @@
+{
+  "reader-phases-operator-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "400c77b516cebd77b28a995593ee9a68eb73a622a044cb5204762fb985117a2e",
+      "bytes": 783
+    },
+    {
+      "file": "interrupt-outer.json",
+      "sha256": "eb5bb644863aedc8282dcbdfd41f1a04e1f8af26128ab07ef2a8186f8c93d462",
+      "bytes": 1040
+    },
+    {
+      "file": "interrupt-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "missing-command-outer.json",
+      "sha256": "159a5f2af93a6004c0158d7188db946933bcb9e4f861aa846c70bf82bc8b4495",
+      "bytes": 735
+    },
+    {
+      "file": "missing-command-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "nested-timeout/owned-child.pid",
+      "sha256": "40882cd198422ad37f6f45c40d6fa262ae98e262e9f817f85c47452691a74e93",
+      "bytes": 5
+    },
+    {
+      "file": "nested-timeout-outer.json",
+      "sha256": "7f110d1046ffdb74ae78db616edc6cdf761fd3b9c143d2944fe2a04b1a863312",
+      "bytes": 1487
+    },
+    {
+      "file": "nested-timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "nonzero-outer.json",
+      "sha256": "5fc23660f39ef16a85393930046830a2c201bc4c7e826270c49fe4d92ea73bab",
+      "bytes": 1067
+    },
+    {
+      "file": "nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "success-outer.json",
+      "sha256": "50105604231f94571ac8621d6bea1e5a70942528b2e345a06e29408197220b42",
+      "bytes": 1047
+    },
+    {
+      "file": "success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "timeout-outer.json",
+      "sha256": "a6128d5105ab689f4395a31cd11cecb12e023e6296a2e6f66603ca640ab0afde",
+      "bytes": 1156
+    },
+    {
+      "file": "timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    }
+  ],
+  "reader-phases-retention-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "05640539236b8233f74d81d8657cb7b0e399b8da8eb1ff91ee708bc7f483cae4",
+      "bytes": 855
+    },
+    {
+      "file": "pair-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/first.stdout",
+      "sha256": "6b6c19b8f2268f98afe0f18e8f1738ff974d414a7ea0acf4daf72aa0567a5aa6",
+      "bytes": 52
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/reader-phase-cpu/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/reader-phase-cpu/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/reader-phase-cpu/pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/reader-phase-cpu/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/reader-phase-cpu/pair-raw-manifest.json",
+      "sha256": "aa6e3461e114b3f9885086f0de340bc099e2846359a5985415b265d1b4ff69c6",
+      "bytes": 1245
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/runs/reader-phases-20261116-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/runs/reader-phases-20261116-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/runs/reader-phases-20261116-pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/results/runs/reader-phases-20261116-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/reader-phase-cpu/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-complete/repeat.stderr",
+      "sha256": "546843fe716931d6297cc9e1c606389925195a22327482e9b0705574fe751ca9",
+      "bytes": 386
+    },
+    {
+      "file": "pair-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "pair-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/first.stdout",
+      "sha256": "ea5fa7548c22f60f5230603a96455f1ebeabe001914545e582e3cc5f25c6c390",
+      "bytes": 59
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/reader-phase-cpu/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/reader-phase-cpu/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/reader-phase-cpu/pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/reader-phase-cpu/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/reader-phase-cpu/pair-raw-manifest.json",
+      "sha256": "4f862e4bb382c4e4b81ed50a075da88079ba8573ef7bea277e3d479bcaa07a69",
+      "bytes": 1259
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/reader-phase-cpu/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-failed_retained/repeat.stderr",
+      "sha256": "2c27d6511759cca8a98c64d32eefc9ec582990534309f40a4b6db28cb0c512a4",
+      "bytes": 393
+    },
+    {
+      "file": "pair-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "proof-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/first.stdout",
+      "sha256": "c54e0d831704133c2289b52c99edbe31e7dac08d06d95fbf093be52f3f7a4d30",
+      "bytes": 53
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/reader-phase-cpu/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/reader-phase-cpu/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "6f093fbd17ebb9f66cc4caee1b0b4aa19581a056796f36584e111c5813c11965",
+      "bytes": 1263
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/runs/reader-phases-20261116-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/runs/reader-phases-20261116-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/reader-phase-cpu/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-complete/repeat.stderr",
+      "sha256": "0d4d55d48545f15df393a651acbbdc57b5e45be85f7d480b09d0d4731c2bdd88",
+      "bytes": 387
+    },
+    {
+      "file": "proof-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "proof-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/first.stdout",
+      "sha256": "b1cdf9ea63603e535c13f9665b127b59e429714d07e68486b8d7c0d78d86c299",
+      "bytes": 60
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/reader-phase-cpu/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/reader-phase-cpu/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "58478f0b653e105ad064a5eec9a35c2409e0ee345209b23653308a3a5c1f61ee",
+      "bytes": 1277
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/reader-phase-cpu/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-failed_retained/repeat.stderr",
+      "sha256": "63e6a3c85a7bc5420cb9a6466feb0a5b916e7ea946a269c4cbf178301b05f66b",
+      "bytes": 394
+    },
+    {
+      "file": "proof-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    }
+  ],
+  "reader-phases-publication-fixtures": [
+    {
+      "file": "bad_cap/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "72722623b78a84dcb5f148f426f5455b57ce64e56ef8b7d4e5ff66be55eb6d51",
+      "bytes": 829
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "0a4051df065f03e93626f5f5eb97399c038d448f8d98752c702fe04657cdb0de",
+      "bytes": 968
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "72722623b78a84dcb5f148f426f5455b57ce64e56ef8b7d4e5ff66be55eb6d51",
+      "bytes": 829
+    },
+    {
+      "file": "bad_cap/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "bad_cap/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bad_cap/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "7d48fc8e4fd03407aeb1a4a1bf8ebc75643813723810f9e62396239332cf6904",
+      "bytes": 834
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "0c7948505b422e76bdd624cc1c45c2e32b9ad8af8d05184854cf728a31811122",
+      "bytes": 970
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "7d48fc8e4fd03407aeb1a4a1bf8ebc75643813723810f9e62396239332cf6904",
+      "bytes": 834
+    },
+    {
+      "file": "bool_clock/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "bool_clock/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_clock/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "806815ff84048af0c438fa34a2bb74ca3954b28ae30c7c25f69b2e14b86c6d04",
+      "bytes": 849
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "9f375fae9fd52959a79dfa69db260777df368591d3fca6a9169a99b66c6f65ea",
+      "bytes": 976
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "806815ff84048af0c438fa34a2bb74ca3954b28ae30c7c25f69b2e14b86c6d04",
+      "bytes": 849
+    },
+    {
+      "file": "bool_returncode/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "bool_returncode/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_returncode/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "checks.json",
+      "sha256": "cc7180fdefdaf9482a9da0766de4954bcba60a917b4da4c3c8c82288957841b4",
+      "bytes": 932
+    },
+    {
+      "file": "command/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "fa0423871d5270489926de552361e62de9eca4ec7844e8c4d1de502711afea1a",
+      "bytes": 659
+    },
+    {
+      "file": "command/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "b88ab7008cd9748d99b7856fcb4e4b209d4d274d91933a9592f60de9c47ea2b4",
+      "bytes": 968
+    },
+    {
+      "file": "command/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "fa0423871d5270489926de552361e62de9eca4ec7844e8c4d1de502711afea1a",
+      "bytes": 659
+    },
+    {
+      "file": "command/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "command/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "command/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "1eb735b01bff78e38ba1b578edb307d07f5270fbb9803b98c1609756787ea7fa",
+      "bytes": 833
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "b015c1569bec015dd82c399514cd242920a1914b97fb235a28f5f302c504c59c",
+      "bytes": 1120
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "1eb735b01bff78e38ba1b578edb307d07f5270fbb9803b98c1609756787ea7fa",
+      "bytes": 833
+    },
+    {
+      "file": "duplicate/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "duplicate/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "duplicate/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "af2be3ccc349b97be9df9cad1023a13b87646a24fb76452a47a418d3e05177ec",
+      "bytes": 834
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "da3cf251e169c7cb3c7c7885a6d56fece2074051739ecab106ff1c94583af766",
+      "bytes": 974
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "af2be3ccc349b97be9df9cad1023a13b87646a24fb76452a47a418d3e05177ec",
+      "bytes": 834
+    },
+    {
+      "file": "failed/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "failed/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "failed/retention.stdout",
+      "sha256": "c40a02afbe01a78d0701586c39c7a6498520cfa6aaf663629c36d68f868dea62",
+      "bytes": 60
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/reader-phase-cpu/software/extra",
+      "sha256": "c8dee78f8c7b466c881847accc196998bad00e2b96c5ef913dfbe454d3807c96",
+      "bytes": 5
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "ad468f6fe544b2d0c68c9e1a20f1673e06a32a998173ab95a4255fe66a9cab65",
+      "bytes": 833
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "0d51a1ffda58dfa10029d9df35d34eb152aa570440dde595c5d7819078339f79",
+      "bytes": 970
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "ad468f6fe544b2d0c68c9e1a20f1673e06a32a998173ab95a4255fe66a9cab65",
+      "bytes": 833
+    },
+    {
+      "file": "inventory/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "inventory/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "inventory/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "bb985338c5c24e75d0bd6d57e36b4d4ea82c87a6e8458b80894a9b6b9d7e1cc6",
+      "bytes": 819
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "7e8d8c4ed0c8d8cdfffd1e6aebe126714684a5076eff59e754af0625121bf939",
+      "bytes": 962
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "bb985338c5c24e75d0bd6d57e36b4d4ea82c87a6e8458b80894a9b6b9d7e1cc6",
+      "bytes": 819
+    },
+    {
+      "file": "nan/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "nan/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "nan/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "original/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "original/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "43fd902d21bc1f52e4099a43abd371f80943a457ffa03903ca3320e932fdf020",
+      "bytes": 831
+    },
+    {
+      "file": "original/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "261f51b817a57de49a28e811beabbf804e1321f8482036ea764a824e655c3b5c",
+      "bytes": 969
+    },
+    {
+      "file": "original/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "905a3fed9382cefa2f10194744547db818ac2f36bd92bac3cde65f94ba7717c9",
+      "bytes": 18
+    },
+    {
+      "file": "original/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "43fd902d21bc1f52e4099a43abd371f80943a457ffa03903ca3320e932fdf020",
+      "bytes": 831
+    },
+    {
+      "file": "original/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "original/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "original/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/reader-phase-cpu/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/reader-phase-cpu/software-outer.json",
+      "sha256": "f2a8aaa50804da20e677e2cbea6926cb0f5c543482a5aef0e7d3a8f6124b779f",
+      "bytes": 831
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/reader-phase-cpu/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/reader-phase-cpu/software-raw-manifest.json",
+      "sha256": "3c2d90041f6a75de00e6756b000b63de65bb8f5eaa114322c2960db3619eafa2",
+      "bytes": 969
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/runs/reader-phases-20261116-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.json",
+      "sha256": "f2a8aaa50804da20e677e2cbea6926cb0f5c543482a5aef0e7d3a8f6124b779f",
+      "bytes": 831
+    },
+    {
+      "file": "positive/reader-phase-cpu/results/runs/reader-phases-20261116-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/retain.py",
+      "sha256": "eea932c2d068cb5df6f0de909bf1b26ff7ad9f9c78da476e44a410b8711c3e2e",
+      "bytes": 2207
+    },
+    {
+      "file": "positive/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "positive/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    }
+  ],
+  "reader-phases-operator-history": [
+    {
+      "file": "restricted-process-list/check-reader-phases-operators.py.txt",
+      "sha256": "6e805539728ea8e0ee3f5cb57f8de0a0b383c79791832959ed763192042e2be0",
+      "bytes": 3195
+    },
+    {
+      "file": "restricted-process-list/failure.log",
+      "sha256": "a4d842832cebe32f87959c3a592e34c901ae3259d6d2aafff52101ba9e519d63",
+      "bytes": 3463
+    },
+    {
+      "file": "restricted-process-list/fixtures/nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "restricted-process-list/fixtures/nonzero-outer.json",
+      "sha256": "e13962b45159cafbd71e81d7738b20b4ffa49e162e6823ba88d74fb0f33709c5",
+      "bytes": 1065
+    },
+    {
+      "file": "restricted-process-list/fixtures/nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "restricted-process-list/fixtures/success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "restricted-process-list/fixtures/success-outer.json",
+      "sha256": "ca561fc5086d64a55dbb83384b50d9355bc8ab164f0cb27a5e434a79ed17faac",
+      "bytes": 1058
+    },
+    {
+      "file": "restricted-process-list/fixtures/success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "restricted-process-list/fixtures/timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "restricted-process-list/fixtures/timeout-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "restricted-process-list/manifest.json",
+      "sha256": "c4b19908ac0353b31b3fa91221962299bdd03fd6023103854b0dd48ca58f820d",
+      "bytes": 1447
+    },
+    {
+      "file": "restricted-process-list/run-reader-phases-collection.py.txt",
+      "sha256": "fe4244a5c7d465ed605537f0324429f43c87627410b5dfba6160ab7d4ed6090d",
+      "bytes": 6283
+    }
+  ]
+}

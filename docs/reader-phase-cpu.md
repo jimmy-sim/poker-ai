@@ -67,3 +67,20 @@ stopped them. The corrected tests use fresh processes, including a regression
 with the reference deliberately preloaded in the parent. The scientific source
 and guard are unchanged; the [failed check records](../results/reader-phase-cpu/qualification-history/reference-preloaded-706d5d3/manifest.json)
 are retained, and complete qualification repeats before publication.
+
+
+## Qualified source — November 16
+
+[All six source checks and tested operators](../results/reader-phase-cpu/checks.json)
+qualify revision `4bef6ae`: both local bases pass 4,887 tests, both relevant
+optional suites pass 1,791, and both hosted roles pass on the intended runtimes
+and complete source tree. The 439-file fingerprint is
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+
+The first hosted 3.11 job reached the unchanged 25-minute limit at 84%, with no
+assertion failure in its partial log. One unchanged-source software retry passes
+in 1,115.64 test seconds. The original 3.12 pass takes 875.19 seconds; GitHub
+carries that success into the retry rather than running it again. Both executions,
+the cancellation, and the earlier test-isolation failures remain. This is source
+qualification, not a favorable retry of a scientific measurement. The fresh
+own-only proof and complete pair have not run.

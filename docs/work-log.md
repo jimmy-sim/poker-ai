@@ -6084,3 +6084,36 @@ and is retained too. Full strict typing (806 files) and Ruff pass. All four
 local source roles and both same-head hosted jobs still need to qualify the
 corrected test revision before formal collection. No source push or formal
 phase run has occurred; first push batches the original commit and this fix.
+
+
+November 16 — All six source roles qualify `4bef6ae` / 439-file fingerprint
+`39b5f696d15ed9994f190a5c928f030bbc348eb328103f451797c000146693bf`.
+Bases 4,887 / 66 skipped / 150 deselected each (648.19 / 616.01s); optional
+1,791 each (337.25 / 278.26s). Workflow 43868816929: initial hosted 3.11 job
+133304229996 cancelled at the existing 25-minute job limit after 84%, without
+an assertion failure. Official annotations/full raw log retained. One unchanged-
+source software retry, job 133321132029, passes all 4,887 / 66 / 150 plus the
+existing historical warning in 1,115.64s. Original 3.12 job 133304230313 passes
+in 875.19s; attempt2 logical job 133321136325 carries forward byte-identical
+logs and original timestamps, not another execution. Both actual interpreters,
+NumPy, all uv choices and complete tested checkout `ca7d1b2` / tree
+`dbae69e8b69991425c5895aac7ec64ae784e3ae7` equal to the local head are verified.
+[Six-role archive](../results/reader-phase-cpu/checks.json) retains every attempt,
+exact source map, nine tested operators, installed licenses and fixture history.
+
+Separate software-test duration diagnosis: unchanged local base selection
+4,887 / 66 / 150 passes in 594.52s (595.3704771669873s complete wrapper),
+actual 3.11.17/2.4.6, source identical before/after. Largest individual costs:
+old 40-policy binding 44.57s, complete reduced-study publication 31.28s; new
+archived-reader call and runner-proof setup about 4.3s each. These are local
+software-test durations, not a causal hosted-runner diagnosis, poker strength
+or production cost. The original workflow and all scientific caps stay fixed.
+
+Both actual runtimes resolve, patch and restore all 40 proposed report-guard
+entry points without executing a report, game or reference. This checks static
+import/descriptor setup only; actual numerical-export reproduction still waits
+for the complete published pair. All raw logs retain original BOM/whitespace.
+The qualification and operator archive is published before a fresh own-only
+proof; no formal phase measurement, new reference construction or new Hold'em
+trajectory has run. [PR #83](https://github.com/jimmy-sim/poker-ai/pull/83) remains
+draft through the required proof, pair, report and final checks.
