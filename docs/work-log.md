@@ -5991,3 +5991,27 @@ and the earlier [published-own verification](../results/checkpoint-replay-cpu/pr
 are retained in this raw publication before analysis. No new Hold'em training,
 production forecast or stronger/default promotion. Full saved-pair verification,
 report, blocked 3.12 exports and final checks remain.
+
+
+November 16 — Published-pair verification passes, including raw inventories,
+original ignored-byte equality, outer/inner clock bounds, producer IDs, all
+workers/journals, full identity and the earlier own-proof blob in the capture
+revision. Saved report renders both figures. Cost reads before / after reference
+(CPU seconds): decode 1.253207 / 1.134554; score 23.423215 / 23.743813; other
+checkpoint 7.680944 / 8.740500; outside selected root 97.371116 / 97.969336.
+Every read is retained; [CSV/JSON and figures](../results/checkpoint-replay-cpu/pair/report/summary.json)
+come from the unchanged saved-data entry. Most current whole-read CPU remains
+outside this callsite. Next diagnosis should split current loader/replay phases
+before choosing an optimizer; no causal/stable timing or production-admission
+claim follows this pair.
+
+Both actual runtimes regenerate all three numerical files byte-identically with
+34 defining/captured game/kernel/replay/reference entry points blocked, plus
+parent learner/reference guards. No forbidden call occurs and published inputs
+stay unchanged. The first guard failed before report execution during descriptor-
+sensitive import setup; its exact code/logs remain. The corrected guard preloads
+static metadata and preserves class-method descriptors. [All guard receipts and
+visual review](../results/checkpoint-replay-cpu/report-verification/manifest.json)
+are retained. Both actual figures inspected; all axes/labels readable. No
+collection source/data changed or measurement rerun. Final local/optional and
+exact-report-head hosted checks remain before merge.

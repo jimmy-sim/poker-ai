@@ -1,0 +1,87 @@
+{
+  "reads": [
+    {
+      "mode": "plain",
+      "read": 0,
+      "read_cpu_seconds": 1.844702,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 1.844702,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "plain",
+      "read": 1,
+      "read_cpu_seconds": 126.827743,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 126.827743,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "plain",
+      "read": 2,
+      "read_cpu_seconds": 130.078973,
+      "decode_cpu_seconds": 0.0,
+      "score_cpu_seconds": 0.0,
+      "checkpoint_residual_cpu_seconds": 0.0,
+      "outside_checkpoint_cpu_seconds": 130.078973,
+      "selected_union_cpu_seconds": 0.0,
+      "selected_calls": 0
+    },
+    {
+      "mode": "profiled",
+      "read": 0,
+      "read_cpu_seconds": 2.0153169999999996,
+      "decode_cpu_seconds": 0.036659000000001996,
+      "score_cpu_seconds": 0.49737100000000356,
+      "checkpoint_residual_cpu_seconds": 0.11120899999999101,
+      "outside_checkpoint_cpu_seconds": 1.370078000000003,
+      "selected_union_cpu_seconds": 0.6452389999999966,
+      "selected_calls": 1296
+    },
+    {
+      "mode": "profiled",
+      "read": 1,
+      "read_cpu_seconds": 129.72848199999999,
+      "decode_cpu_seconds": 1.2532070000001312,
+      "score_cpu_seconds": 23.423214999999914,
+      "checkpoint_residual_cpu_seconds": 7.680944000000039,
+      "outside_checkpoint_cpu_seconds": 97.3711159999999,
+      "selected_union_cpu_seconds": 32.357366000000084,
+      "selected_calls": 1296
+    },
+    {
+      "mode": "profiled",
+      "read": 2,
+      "read_cpu_seconds": 131.58820299999996,
+      "decode_cpu_seconds": 1.134553999999838,
+      "score_cpu_seconds": 23.743813000000102,
+      "checkpoint_residual_cpu_seconds": 8.740500000000083,
+      "outside_checkpoint_cpu_seconds": 97.96933599999994,
+      "selected_union_cpu_seconds": 33.61886700000002,
+      "selected_calls": 1296
+    }
+  ],
+  "commands": [
+    {
+      "mode": "plain",
+      "complete_wall_seconds": 391.30728316598106,
+      "parent_body_cpu_seconds": 262.494996,
+      "total_worker_body_cpu_seconds": 370.205641,
+      "maximum_worker_body_wall_seconds": 124.35541908399318
+    },
+    {
+      "mode": "profiled",
+      "complete_wall_seconds": 395.89443708298495,
+      "parent_body_cpu_seconds": 267.245621,
+      "total_worker_body_cpu_seconds": 369.927908,
+      "maximum_worker_body_wall_seconds": 124.2435237080208
+    }
+  ]
+}
+{"status": "three_numeric_exports_byte_equal_with_numerical_execution_blocked", "python": "3.11.17", "numpy": "2.4.6", "seconds": 1.2515048339846544, "blocked": ["poker_ai.postflop.matrix.MatrixTree.build", "poker_ai.postflop.tree.SpotTree.build", "poker_ai.postflop.controlled_scoring.ScoringContext.__init__", "poker_ai.postflop.controlled_scoring.ScoringContext.score", "poker_ai.evaluation.compact_opponent_sources.load", "poker_ai.evaluation.opponent_learning_contexts.software_context", "poker_ai.evaluation.opponent_learning_own.fixture", "poker_ai.evaluation.opponent_learning_own.replay", "poker_ai.evaluation.opponent_learning_own.replay_snapshot", "poker_ai.postflop.learning_training.replay_snapshot", "poker_ai.postflop.learning_training.replay_detail", "poker_ai.postflop.learning_artifacts.decode", "poker_ai.abstraction.potential.canonical_cards", "suit_candidates_support.reduced_cards", "compact_suit.cli.child_main", "compact_suit.cli.read", "compact_suit.cli.replay", "compact_suit.native.independent", "poker_ai.postflop.learning_training.decode", "poker_ai.postflop.controlled_checkpoints.unpack_policy", "poker_ai.finite.ArrayTree.edges", "poker_ai.finite.ArrayTree.values", "poker_ai.evaluator.evaluate_five", "poker_ai.evaluator.evaluate_best_reference", "poker_ai.evaluator.evaluate_best", "grouped_depth_support.BASE_FUNCTION", "grouped_depth_support.BASE_DESCRIPTOR", "grouped_depth_support.build", "suit_candidates_support.BASE", "suit_candidates_support.ALL", "suit_candidates_support.BASE_MASK", "suit_lookup_support.translated_cards", "suit_lookup_support.BASE", "suit_lookup_support.BASE_MASK"], "forbidden_attempts": [], "static_import_setup_before_blocking": true, "descriptor_types_preserved": true, "numerical_sha256": {"reads.csv": "7165862548d8eac25d53b5ae55e232942a620dfc5ccaf1224ff9d42ea5a5efa7", "commands.csv": "df16a1343e082b1fad2e12783e69d1d8f2c33e2c5f994b0f5514e9b480dbe937", "summary.json": "e4c4ed18722e291bbc33c4e33cce6a27427a12e0b5a2dedee2f7d65a2f3e35a3"}, "source_inputs_unchanged": true, "scope": "Saved data and plotting only; not new trajectory replay or reference construction"}

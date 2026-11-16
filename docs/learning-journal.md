@@ -106,9 +106,10 @@ the **1% target**. Competitive full-game strength remains unestablished.
 Checking a proposed training comparison is itself expensive. The latest complete
 validation pipeline passes correctness checks but its conservative audit forecast
 is **912.54 seconds against a 900-second limit**. The next training comparison
-remains blocked. Current work checks a tool for separating checkpoint decoding
-from score recomputation before measuring their costs. Earlier failures and
-their original conditions stay in the entries below.
+remains blocked. The latest measurement separates checkpoint decoding
+from score recomputation. Most whole-read CPU lies outside that checkpoint
+callsite; the next question is which loading/checking phases account for it.
+Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
 
@@ -6416,3 +6417,23 @@ selected calls and restored its temporary replacements. Whole-child times were
 are published before examining the CPU breakdown. The next step checks those
 saved records and turns them into a table and plots. These are validation costs,
 not a change in the agent's playing strength.
+
+
+**What the measurement shows:** each cost-archive read spends about 23–24 CPU
+seconds recomputing the selected checkpoint scores, 1.1–1.3 decoding, and 7.7–8.7
+in other checkpoint work. Another 97–98 seconds lies outside the selected
+callsite. The [plot and full table](checkpoint-replay-cpu.md#what-the-measurement-shows)
+measure validation work in CPU seconds. That outside bucket can contain loading
+and older checks; it is not a single identified bottleneck yet.
+
+The ordinary and measured whole commands took 391.31 / 395.89 seconds. This one
+ordered pair does not isolate stable measuring overhead or predict production
+savings. The previous budget failure and the agent's recorded strategy remain
+unchanged. Next is a more specific breakdown of the current loader/replay work.
+
+Both Python environments recreate all three numerical files byte-for-byte with
+game execution blocked. The first extra guard failed during import setup because
+it replaced a class-method descriptor too early. The corrected guard preserves
+descriptors and blocks the actual entry points after static metadata loads; its
+failed and passing records remain. The measured audit was not rerun. Final local
+and hosted checks still precede merge.

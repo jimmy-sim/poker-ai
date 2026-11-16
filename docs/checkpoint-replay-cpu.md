@@ -10,6 +10,47 @@ was published on November 15, before implementation or outcomes. The preceding
 [complete pipeline report](compact-suit-pipeline.md) retains the failed forecast.
 This is a measurement tool, with no change to poker decisions or training.
 
+## What the measurement shows
+
+CPU seconds in the instrumented pass, rounded to four decimal places:
+
+| Complete read | Decode / validate | Recompute score | Other checkpoint | Outside selected root | Total read |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Software archive (432 profiles) | 0.0367 | 0.4974 | 0.1112 | 1.3701 | 2.0153 |
+| Cost archive before reference | 1.2532 | 23.4232 | 7.6809 | 97.3711 | 129.7285 |
+| Cost archive after reference | 1.1346 | 23.7438 | 8.7405 | 97.9693 | 131.5882 |
+
+Scoring is the largest part inside the selected checkpoint. Most whole-read CPU
+lies outside that callsite. The outside bucket includes input loading and other
+replay/validation callers; this measurement does not split those costs. The next
+useful question is which current loader/replay phases account for that work,
+before choosing an optimization.
+
+![CPU regions in the three complete reads](../results/checkpoint-replay-cpu/pair/report/checkpoint-cpu.png)
+
+The first bar is the earlier complete software archive, not the new eight-case
+observer proof. Only the instrumented pass has a category breakdown. Zeros in
+the plain pass's selected columns mean those timers were disabled.
+
+| Pass | Complete wall seconds | Parent body CPU seconds | Sum of worker body CPU seconds |
+| --- | ---: | ---: | ---: |
+| plain | 391.3073 | 262.4950 | 370.2056 |
+| profiled | 395.8944 | 267.2456 | 369.9279 |
+
+![Whole-command and separate process clocks](../results/checkpoint-replay-cpu/pair/report/complete-clocks.png)
+
+Worker CPU sums activity across parallel processes and cannot be added to wall
+time. Timer/capture overhead is part of the observed regions. One ordered pair
+cannot establish a stable overhead estimate, causal speedup or production-cost
+forecast. The earlier **912.5424664160237 / 900-second forecast remains failed**;
+the known-game **2.390% versus 1%** accuracy result also remains unchanged.
+
+[All numerical exports](../results/checkpoint-replay-cpu/pair/report/summary.json)
+reproduce byte-for-byte on actual Python 3.11.17/NumPy 2.4.6 and
+Python 3.12.15/NumPy 2.5.4 with game construction, scoring, replay, training and
+reference execution blocked after static import setup. The initial guard setup
+failure and corrected check are kept in [verification history](../results/checkpoint-replay-cpu/report-verification/manifest.json).
+
 ## What is measured
 
 A checkpoint is a saved strategy and its recorded results. Replaying it checks
@@ -40,9 +81,10 @@ arguments, return/error identity, alias and descriptor restoration, nested CPU
 accounting, malformed records, process/thread ownership, recursion, call limits,
 timeouts and failed writes. Synthetic clock fixtures are explicitly test data.
 
-On November 16, **134 focused tests pass on Python 3.11.17**. Full local/optional
-checks on both environments and both hosted jobs remain pending. No formal
-observer proof, measured pair or new Hold'em training has run.
+The initial November 16 development snapshot passed **134 focused tests on
+Python 3.11.17**. At that point, complete local/hosted checks were pending and
+no formal observer proof or measured pair had run. Later source checks and
+results are recorded below.
 
 The prescribed sequence is unchanged: publish all six source-check receipts and
 operators; publish a fresh own-only proof within 180 seconds; run one complete
@@ -76,7 +118,7 @@ relevant optional suites (1,702 each). [Its raw logs](../results/checkpoint-repl
 remain separate because review then added a fresh report-output directory option.
 That correction preserves saved inputs while recreating identical numerical
 exports. All 136 focused tests pass on Python 3.11.17 in 23.73 seconds. The
-corrected source still needs complete local and hosted checks before collection.
+corrected source still needed complete local and hosted checks at that checkpoint.
 
 Once raw measurements have been published, a saved-data report can be reproduced
 into a fresh directory with:
@@ -141,4 +183,22 @@ Both passes retain all three reads, 432 profiles and 1,152 fixed conditions,
 with exact complete scalar/computed-replay identity. The instrumented pass
 records all 3,888 selected calls and full restoration. Both outputs explicitly
 reject base-family admission. Saved-publication verification and analysis
-follow this raw boundary; these clocks cannot replace production costs.
+came after this raw boundary; these clocks cannot replace production costs.
+
+## Three questions
+
+**Why subtract decode and score CPU from the checkpoint total?** They are nested
+inside it. Adding their inclusive times to the checkpoint time would count them
+twice. The remainder covers all other checkpoint work, including observation
+overhead; it does not identify serializer self time.
+
+**How was unchanged behavior checked?** The complete ordinary and instrumented
+passes match on every scalar, computed replay, worker summary and semantic
+normalization/cache counter. All 3,888 expected selected calls are present and
+all temporary bindings are restored. Independent tiny-game calculations check
+the observer first; those checks do not establish full-game playing strength.
+
+**Can these times admit more training?** This is a diagnostic, with extra
+observation work and one ordered pair. A later optimization still needs its own
+correctness checks, fresh complete production costs and the original forecast
+criteria. The existing budget failure remains a failure.
