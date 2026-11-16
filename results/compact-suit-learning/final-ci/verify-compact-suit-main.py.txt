@@ -1,0 +1,47 @@
+"""Closing main CLI/fixture checks with AFTER-check user-change preservation."""
+import ast
+import contextlib
+import hashlib
+import importlib.util
+import io
+import json
+import os
+import subprocess
+from pathlib import Path
+
+w = Path(__file__).resolve().parent
+r = Path("/Users/jimmysim/Projects/poker-ai")
+snapshot = w / "main-before-compact-20261116T073904Z"
+m = json.loads((snapshot / "manifest.json").read_text())
+env = dict(os.environ, PYTHONPATH=str(r / "src") + os.pathsep + str(r / "scripts"))
+py = str(r / ".venv/bin/python")
+runtime = "import sys,numpy,poker_ai,pathlib;assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6';assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(pathlib.Path.cwd()/'src');print('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)"
+subprocess.run([py, "-c", runtime], cwd=r, env=env, check=True)
+with (w / "compact-suit-main-cli.log").open("x") as log:
+    subprocess.run([py, "scripts/report_suit_pipeline.py"], cwd=r, env=env, stdout=log, check=True)
+spec = importlib.util.spec_from_file_location("main_saved_report", r / "scripts/report_suit_pipeline.py")
+assert spec is not None and spec.loader is not None
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+expected = io.StringIO()
+with contextlib.redirect_stdout(expected):
+    module.show(json.loads((r / "results/compact-suit-learning/report/summary.json").read_text()))
+assert (w / "compact-suit-main-cli.log").read_text() == expected.getvalue()
+tests = [str(p.relative_to(r)) for p in sorted((r / "tests").glob("test_suit_compact_*.py"))]
+assert len(tests) == 5
+tests.append("tests/test_suit_pipeline_report.py")
+with (w / "compact-suit-main-tests.log").open("x") as log:
+    subprocess.run([py, "-m", "pytest", "-q", *tests], cwd=r, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
+namespace = dict(snapshot=snapshot, m=m, root=r, hashlib=hashlib, subprocess=subprocess)
+parsed = ast.parse((w / "ff-main-session.py").read_text())
+exec(compile(ast.Module(body=[node for node in parsed.body if isinstance(node, ast.FunctionDef)], type_ignores=[]), "preservation_only", "exec"), namespace)
+namespace["preserved"]()
+head = subprocess.check_output(["git", "-C", str(r), "rev-parse", "HEAD"], text=True).strip()
+assert head == "dfaa1cd4a2d081d156f86eddd08392ae0fa98317"
+result = dict(status="merged_main_report_and_fixtures_verified_user_changes_preserved_after_checks", head=head,
+              actual_python="3.11.17", actual_numpy="2.4.6", saved_cli_equals_report=True,
+              focused_result=(w / "compact-suit-main-tests.log").read_text().splitlines()[-1],
+              user_changed_paths=len(m["files"]), bytes_status_changed_path_index_and_both_patches_preserved=True,
+              scope="Saved-data and software fixture verification; no new training or admission")
+(w / "compact-suit-main-verified.json").open("x").write(json.dumps(result, indent=2, sort_keys=True) + "\n")
+print(json.dumps(result, indent=2))

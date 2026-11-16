@@ -5907,3 +5907,30 @@ update functions exercised only on disposable copies. Generated README content,
 historical journal/log entries, phase contracts and all 433 scientific source
 hashes remain unchanged. Hooks and diff checks pass; required hosted CI still precedes merge. The existing About description already fits; package metadata remains
 untouched. Research in issue #4 stays paused; this is an editorial change.
+
+
+## 2026-11-16 — Checkpoint-replay observer and correctness tests
+
+Issue #4 resumes from main `472662d`, after PRs [#79](https://github.com/jimmy-sim/poker-ai/pull/79)
+and [#81](https://github.com/jimmy-sim/poker-ai/pull/81). PR #79's two final hosted
+jobs passed 4,665 tests each, with 65 skipped and 150 deselected, on verified
+Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4; whole tested trees
+matched the PR head. [Closing receipts](../results/compact-suit-learning/final-ci/manifest.json)
+are retained in this implementation batch. PR #81's documentation checks also
+passed before its merge. The ten unrelated user result changes were freshly
+snapshotted before this isolated branch; their files remain untouched.
+
+The [registered checkpoint investigation](checkpoint-replay-cpu.md) adds a
+parent-only observer at the current own-archive callsite. It separates decode,
+score and residual CPU without changing the reusable replay function or old
+scientific source. Partial records retain original failures, and even failed
+native outputs are marked as diagnostic. The saved-data reader checks the
+complete ledger, raw files, producer identity and outer clock boundaries.
+
+The initial regressions caught seven draft failures; retained development logs
+record these rather than a successful first attempt. All 134 focused tests now
+pass on Python 3.11.17 (25.45 seconds), and strict types and focused lint pass.
+Eight actual tiny checkpoint cases use independent terminal/pure-choice math.
+Complete immutable-source local/optional and hosted checks still precede formal
+proof/measurement. No fresh reference, real trajectory, budget change, stronger
+strategy or default promotion is claimed. Journal step 126 explains the question.

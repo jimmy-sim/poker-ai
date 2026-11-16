@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
+
 - [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
 
 - [Reduce redundant suit candidates](#124-compare-the-board-only-among-private-card-ties)
@@ -104,8 +106,9 @@ the **1% target**. Competitive full-game strength remains unestablished.
 Checking a proposed training comparison is itself expensive. The latest complete
 validation pipeline passes correctness checks but its conservative audit forecast
 is **912.54 seconds against a 900-second limit**. The next training comparison
-remains blocked. Earlier failures and their original conditions stay in the
-entries below.
+remains blocked. Current work checks a tool for separating checkpoint decoding
+from score recomputation before measuring their costs. Earlier failures and
+their original conditions stay in the entries below.
 
 Three useful reading paths:
 
@@ -6348,3 +6351,34 @@ was shortened too. Earlier explanations and personal practice records retain
 their wording and attribution; the practice heading keeps its old link. This was
 a Codex-assisted editorial change requested by Jimmy, with no new experiment or
 personal learning claim. Issue #4 research remains paused.
+
+
+## 126. Check the tool before timing checkpoint replay
+
+**November 16, 2026 — issue #4: observer correctness, before measurement.**
+
+A saved checkpoint contains a strategy and the results previously calculated
+from it. Replaying it checks those results again. The next question is where
+that work spends CPU: decoding the file, recomputing scores, or the remaining
+checkpoint work. The [plan](checkpoint-replay-cpu.md) fixes the workload before
+measurement; it preserves the existing code and failed budget result.
+
+**Example:** suppose a checkpoint call takes 10 CPU seconds, including two in
+decoding and five in scoring. Adding all three timings would count 17 seconds.
+The report instead separates two, five and three seconds. Those last three
+seconds include everything else inside the call, including measuring overhead;
+they do not identify a particular serializer. These numbers illustrate the
+accounting and are not experimental results.
+
+The draft's first regression tests caught seven failures, including malformed
+clocks being accepted and cleanup hiding an original error. Those failures were
+fixed. The current 134 focused tests pass on Python 3.11.17, including eight
+actual tiny-game checkpoint cases checked with independent terminal sums and
+exhaustive pure decisions. Tests also check restoration after errors, bounded
+call coverage and saved-data parsing. Tiny games establish software behavior,
+not Hold'em strength.
+
+Next come the complete local and hosted checks, then the separately published
+own-only proof before any fresh reference comparison. No formal timing pair or
+new training has run. Implementation and explanations are Codex-assisted; no
+personal practice or time is inferred.
