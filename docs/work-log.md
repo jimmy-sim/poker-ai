@@ -5678,3 +5678,30 @@ files plus manifest and their ignored originals. Publish this raw checkpoint
 before cost analysis. Scientific source, seeds, budgets and admission rules
 remain unchanged; no production or new trajectory admission. Journal step 124
 records this stage.
+
+
+November 15, 2026 — After raw publication da0dc24, the declared diagnostic cost
+checks pass: complete supervised wall 413.8943964159989 -> 408.68608008301817 seconds
+(1.258368% lower), selected exclusive matrix CPU 50.67445900000007 -> 43.54697200000005
+(14.065245% lower). Both184 original constructor witnesses,432profiles,
+1152conditions,3reads,918104 declared-kernel requests/zeroerrors/fallbacks each;
+1538 timers each3076combined<4096. One ordered pair, identical instrumentation,
+all-candidate LUT control, unchanged-worker variation disclosed. No stable causal
+speedup/production forecast or strategy-quality claim. Both zero-based figures
+visually inspected; actual31215/NP254 six numeric exports byte-identical with
+execution blocked. Standalone illustrative suit-tie viewer added with the report,
+not a scientific collector dependency. Journal124 updated. Separate production
+qualification/full proof/all3own before freshnative/all3costs/forecast/admission
+remain mandatory; historical failed gates are retained.
+
+
+Final relevant regressions: 1098 pass on actual311/NP246 in92.44s and312/NP254
+in90.54s; guarded commands including startup95.107988/94.013639s. Full Ruff
+lint/format927, strictmypy777 andhooks pass;439relative destinations/7images/
+anchors/fences pass. CLI equals report,418scientific files/68pins/raw manifests/
+ignored originals exact. Eight illustrative viewer cases pass both runtimes.
+Initial viewer E501 resolved by splitting one output string; failure log retained.
+First posthoc verifier expected51hook restorations incorrectly; retained failure
+and exact operator, then v2 verifies34variant restorations plus all51fixed
+outcomes and truthful unhooked original baseline. No collection retry. Final
+exact-report-head hosted jobs remain required before merge.

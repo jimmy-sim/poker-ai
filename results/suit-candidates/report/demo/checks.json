@@ -1,0 +1,117 @@
+{
+  "scope": "Eight illustrative CLI checks; no solver or training; not user practice",
+  "rows": [
+    {
+      "python_minor": "311",
+      "case": "same",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional311/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--list-maps"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "311",
+      "case": "pair",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional311/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "9c",
+        "9d",
+        "--board",
+        "Ts",
+        "4h",
+        "2c",
+        "--list-maps"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "311",
+      "case": "empty",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional311/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "Tc",
+        "Jd",
+        "--board"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "311",
+      "case": "bad",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional311/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "2c",
+        "2c"
+      ],
+      "returncode": 2,
+      "expected": true
+    },
+    {
+      "python_minor": "312",
+      "case": "same",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional312/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--list-maps"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "312",
+      "case": "pair",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional312/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "9c",
+        "9d",
+        "--board",
+        "Ts",
+        "4h",
+        "2c",
+        "--list-maps"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "312",
+      "case": "empty",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional312/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "Tc",
+        "Jd",
+        "--board"
+      ],
+      "returncode": 0,
+      "expected": true
+    },
+    {
+      "python_minor": "312",
+      "case": "bad",
+      "command": [
+        "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-optional312/bin/python",
+        "scripts/explain_suit_ties.py",
+        "--hole",
+        "2c",
+        "2c"
+      ],
+      "returncode": 2,
+      "expected": true
+    }
+  ]
+}

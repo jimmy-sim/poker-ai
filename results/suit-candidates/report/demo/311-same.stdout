@@ -1,0 +1,12 @@
+Exact card-representation demo; no agent decisions or training.
+Input: private 2c 3c; board 4s 5s 6s
+Private-minimum ties: 6 of 24 suit renamings
+Smallest private description: 2c 3c
+Canonical result: 2c 3c; 4d 5d 6d
+Original, all-candidate and reduced outputs agree exactly.
+  map  0: c->c, d->d, h->h, s->s; board 4s 5s 6s
+  map  1: c->c, d->d, h->s, s->h; board 4h 5h 6h
+  map  2: c->c, d->h, h->d, s->s; board 4s 5s 6s
+  map  3: c->c, d->h, h->s, s->d; board 4d 5d 6d [minimum board]
+  map  4: c->c, d->s, h->d, s->h; board 4h 5h 6h
+  map  5: c->c, d->s, h->h, s->d; board 4d 5d 6d [minimum board]

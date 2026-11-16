@@ -1,0 +1,7 @@
+{
+  "scope": "Posthoc local verifier only; no experiment retried",
+  "exception": "AssertionError",
+  "incorrect_expected_private_hook_receipts": 51,
+  "actual_private_hook_receipts": 34,
+  "explanation": "Original baseline is unhooked and has 17 outcomes in fixed-results.json, not private-hook restoration receipts. Each of the two hooked variants has17. Corrected verifier separately checks all51 outcomes and34 variant restorations."
+}

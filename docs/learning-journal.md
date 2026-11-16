@@ -110,8 +110,9 @@ restricted-game accuracy, and compute cost each need their own evidence.
 Recent explanations:
 
 - [Step 124](#124-compare-the-board-only-among-private-card-ties): define and test
-  an exact way to compare fewer suit renamings. Full qualification comes before
-  any new audit measurement.
+  an exact way to compare fewer suit renamings. The one audit pair preserves
+  outputs and reduces selected matrix CPU by 14.07%; production qualification
+  remains separate.
 
 - [Step 123](#123-replace-repeated-suit-arithmetic-with-a-fixed-table): the fixed
   suit lookup passes one cost diagnostic, with a small 0.56% observed elapsed
@@ -6194,3 +6195,32 @@ are saved with exact copies of the original outputs. They are being published
 before the performance calculation, so the record cannot depend on whether the
 new implementation turns out to be faster. The result is still a loader
 experiment, not a newly trained poker strategy.
+
+
+The performance calculation now passes its planned diagnostic: matrix CPU falls
+from 50.67 to 43.55 seconds (14.07%), while the complete command falls from 413.89
+to 408.69 seconds (1.26%). The smaller overall change makes sense: the command
+also checks source history, rebuilds trees, replays training records and runs
+independent workers. Those stages still cost time and vary between runs. One
+ordered pair is a point comparison, not a reliable estimate of every future run.
+
+[The report and plots](suit-candidates.md#recorded-cost-result--november-15-2026)
+retain the exact numbers and limits. All six numeric exports also match on the
+second Python environment with actual execution blocked. The next decision is
+to qualify a production-validation implementation separately, preserving the
+original checks. No new policy was trained in this investigation.
+
+**Example to try:** `.venv/bin/python scripts/explain_suit_ties.py --list-maps`
+prints why six suit maps tie for `2c 3c`, and which gives the smallest board.
+Use `--hole 9c 9d --board Ts 4h 2c --list-maps` to see a pair's four ties.
+This is an explanatory tool added with Codex assistance; no personal practice
+or learning time is inferred from its availability.
+
+
+Both final relevant test sets pass 1,098 tests. The new terminal demonstration
+also passes eight illustrative checks across the two environments, including
+invalid-card rejection. A bookkeeping mistake in the first report verifier
+expected private-hook restoration receipts from the unhooked original. That
+verifier failed; its corrected version checks the original's separate outcomes
+and both variants' restoration records. The failure remains available. The
+actual audit was not repeated or changed. Final GitHub checks still precede merge.

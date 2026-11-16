@@ -199,3 +199,79 @@ card and worker checks all pass. This is the only attempt.
 53 raw/administrative files and their exact ignored originals. Publish these
 files before calculating the cost comparison. There is no cost verdict at this
 checkpoint, and this diagnostic does not admit production training.
+
+
+## Recorded cost result — November 15, 2026
+
+Raw publication `da0dc24` precedes this calculation. Every planned diagnostic
+check passes. The values below come from one ordered pair, all candidates first.
+
+| Measure | All 24 candidates | Private-minimum ties | Difference |
+| --- | ---: | ---: | ---: |
+| Complete supervised wall, seconds | 413.894396415999 | 408.686080083018 | 1.258368% lower |
+| Selected exclusive matrix CPU, seconds | 50.674459000000 | 43.546972000000 | 14.065245% lower |
+
+Each arm records 918,104 requests, using its declared kernel with zero errors or
+fallbacks. All 184 original constructor fields match in each arm; original
+432-profile/1,152-condition identities and all three reads match. Sparse timing
+records 1,538 calls per arm, 3,076 combined, within the unchanged 4,096 limit.
+
+![Complete command and selected matrix cost](../results/suit-candidates/report/costs.png)
+
+The matrix saving is larger than the complete-command saving because validation
+also rebuilds trees, replays checkpoints, checks sources and runs independent
+workers. These stages remain in the measured command. Their times vary, including
+unchanged worker times; the wall difference cannot all be assigned causally to
+the new kernel. One fixed order provides no uncertainty interval or stable
+population speedup. The control is the instrumented all-candidate lookup, not
+unwrapped production code.
+
+![Non-overlapping own-process CPU regions](../results/suit-candidates/report/selected-cpu.png)
+
+The stacked plot separates exclusive own-process CPU across the two substantive
+reads; its bars are not a partition of parallel wall time. The six numeric
+exports reproduce byte-for-byte on actual Python 3.12.15/NumPy 2.5.4 with reader,
+builder, learner, native and request-kernel execution blocked. Static geometry
+metadata may initialize. This is saved-data export verification, not trajectory
+replay. [Summary](../results/suit-candidates/report/summary.json),
+[CSV rows](../results/suit-candidates/report/regions.csv) and
+[render manifest](../results/suit-candidates/report/render-manifest.json) retain
+the calculations and exact raw inputs.
+
+The result supports taking the exact factorization into a separately qualified
+production-validation family. It does not replace the complete original
+end-to-end proof, all three own publications before any fresh native comparison,
+all three native costs, conservative forecast or checked published admission.
+The old 933.89/900 forecast and 2.390%-versus-1% strategy failure remain current.
+
+## Explore the calculation
+
+From the repository directory, show the six private-card ties and their boards:
+
+```sh
+.venv/bin/python scripts/explain_suit_ties.py --list-maps
+.venv/bin/python scripts/explain_suit_ties.py --hole 9c 9d --board Ts 4h 2c --list-maps
+.venv/bin/python scripts/compare_suit_candidates.py --show --output results/suit-candidates/pair
+open results/suit-candidates/report/costs.png
+```
+
+The standalone demonstration compares the three own implementations on the
+specified cards. It shows representation equality, not a poker recommendation.
+
+
+### Final local verification
+
+Both final relevant suites pass 1,098 tests (92.44 and 90.54 seconds). Ruff
+lint/format, strict typing of 777 source files, hooks, relative destinations,
+heading anchors, fences and images pass. The saved-data command agrees with
+the rendered summary; all source pins, raw bytes and original ignored outputs
+remain exact. Eight illustrative viewer checks cover six/four/two ties, an empty
+board and duplicate-card rejection on both Python versions.
+
+The first local report verifier incorrectly expected 51 private-hook restoration
+receipts. There are correctly 34: 17 for each hooked variant. The unhooked
+original has its 17 outcomes in the separate results record. The failed verifier
+is retained; the corrected verifier checks all 51 outcomes and 34 restorations.
+No experiment was repeated. The viewer's initial long-line lint failure is also
+retained; splitting that output string resolves it. Both final hosted jobs on
+the exact report head are still required before merge.
