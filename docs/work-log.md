@@ -5667,3 +5667,14 @@ negativefixedcasesseparateprecisereceipts. No learner/reference/newtrajectory.
 62raw/adminfiles+manifest63andignoredoriginalsretainedexact. PublishBEFOREactual
 ONEall/reducedpair. All418FP8fd/68pins/caps/seeds/gatesunchanged; noactualnewcost
 verdict/production/fresh/default/qualityadmission. Journal124updated.
+
+
+November 15, 2026 — The one registered suit-candidate audit pair completed:
+outer command 829.4326407079934 seconds, both children successful within the
+900-second child/1,800-second shared limits, no interruption or retry.
+`verify_pair` validates original identities, fields, source, card/worker checks
+and saved records. Both raw manifests remain exact. Retained 53 pair/admin
+files plus manifest and their ignored originals. Publish this raw checkpoint
+before cost analysis. Scientific source, seeds, budgets and admission rules
+remain unchanged; no production or new trajectory admission. Journal step 124
+records this stage.

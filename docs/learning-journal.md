@@ -6186,3 +6186,11 @@ matrix fields match for all five builder encodings in all three implementations.
 [The 62 retained raw/admin files and original outputs](suit-candidates.md#recorded-own-software-proof--november-15-2026)
 are published before the actual pair. This validates the implementation; it is
 not yet a speed result, new trained strategy or production admission.
+
+
+The complete audit pair finished without interruption. Both implementations
+passed the original correctness checks. Its 53 raw and administrative files
+are saved with exact copies of the original outputs. They are being published
+before the performance calculation, so the record cannot depend on whether the
+new implementation turns out to be faster. The result is still a loader
+experiment, not a newly trained poker strategy.

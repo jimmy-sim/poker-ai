@@ -183,3 +183,19 @@ raw/administrative files plus exact ignored originals; the manifest is the 63rd.
 Publish them before the one actual all/reduced pair. No learner/reference/new
 trajectory is constructed, no production family is admitted, and there is no
 cost verdict yet. Scientific source, caps, seeds and previous failures stay fixed.
+
+
+## Recorded raw audit pair — November 15, 2026
+
+After own-proof publication `9331d4e`, the single registered all/reduced pair
+completed without interruption. Both child processes exited successfully,
+within their 900-second limits; the complete command took
+829.4326407079934 seconds, within the shared 1,800-second limit.
+The original audit identities, complete constructor fields, source bindings,
+card and worker checks all pass. This is the only attempt.
+
+[Raw pair](../results/suit-candidates/pair/pair.json) and
+[retention manifest](../results/suit-candidates/raw-pair-manifest.json) preserve
+53 raw/administrative files and their exact ignored originals. Publish these
+files before calculating the cost comparison. There is no cost verdict at this
+checkpoint, and this diagnostic does not admit production training.
