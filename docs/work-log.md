@@ -6015,3 +6015,55 @@ visual review](../results/checkpoint-replay-cpu/report-verification/manifest.jso
 are retained. Both actual figures inspected; all axes/labels readable. No
 collection source/data changed or measurement rerun. Final local/optional and
 exact-report-head hosted checks remain before merge.
+
+
+## November 16 — checkpoint measurement merged; reader phases registered
+
+[PR #82](https://github.com/jimmy-sim/poker-ai/pull/82) history-merged at
+`9a445959fd449c838ac5286c25146b96bfc1aa31`. All six final roles bind head
+`32ab60d`: bases 4,801 passed / 65 skipped / 150 deselected (621.20 / 595.10s),
+optional suites 1,704 each (319.14 / 260.44s); hosted workflow 43855113726 passes
+both jobs (1,397.57 / 922.57s tests), with the existing 8.88e-16 historical
+roundoff warning below 1e-12. Actual Python/NumPy/all uv and entire tested tree
+`5c1b29e19b078ab51441db9b25684f2b161c2dc8` verified. Actual main 3.11.17/2.4.6:
+136 focused tests pass in 19.58s; complete saved pair authenticates, all three
+numerical exports byte-identical. Fresh snapshot/guarded fast-forward and
+post-check verification preserve all ten user result bytes, status, changed-path
+index entries and both patches. [Full closing receipts](../results/checkpoint-replay-cpu/final-ci/manifest.json)
+are batched here, without a status-only commit or retrospective source admission.
+
+The [next phase-CPU question](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6914870507)
+was public before implementation: seven named source-load/stand-in-load/replay
+calls across the original three complete reads, with a fixed 16-call cap. All
+436 preceding scientific files and historical results stay unchanged. New private
+observer/runner/config use a separate source identity and output namespace.
+Thirty-five observer tests pass on each actual runtime; the first 27 runner tests
+pass on 3.11. They distinguish actual archived fictional-game replay from
+synthetic loader forwarding. Saved-pair clock checks also require individual
+worker duration to fit within its enclosing body and both child executions to
+fit the shared clock. These are software checks, not formal phase results.
+Complete source checks, published own proof, raw-before-analysis pair and final
+verification still precede any result or merge. Fixed 180/900/1,800-second caps,
+120-second failure retention, seeds, math and admission criteria stay unchanged.
+
+The production 912.5424664160237 / 900-second forecast and 2.390% / 1% accuracy
+gates remain failed; no fresh trajectory, stronger/default/fresh/global claim or
+optimizer follows these fixtures. Learning journal step 127 explains the
+question. Codex-assisted; human hands-on time is not recorded.
+
+Development optional check: one report fixture failed (82 other tests passed)
+because it requested a separate report inside the raw folder. The runner refused
+that destination as designed. The corrected fixture uses a fresh external
+folder and explicitly checks inside-raw refusal; both focused report tests pass
+in 12.27s. Exact failed code/log retained under
+`results/reader-phase-cpu/qualification-history/report-fixture-in-raw`. No formal
+capture or qualified source had been published.
+
+Administrative operators: all six real temporary-process cases pass in the
+required process-access context; the first restricted-context timeout check
+failed when `ps` was denied, and its exact code, log and partial fixture files
+remain in operator history. Four raw-retention/refusal cases and ten synthetic
+publication-boundary cases pass. No formal collection ran. Both installed
+OpenSpiel2.0.2 Apache2.0 license files were read/checked against the existing
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` pin;
+comparison-only use and strategy isolation remain unchanged.

@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
+
 - [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
 
 - [Qualify exact suit normalization in the full pipeline](#125-take-the-exact-card-calculation-into-complete-validation)
@@ -108,7 +110,8 @@ validation pipeline passes correctness checks but its conservative audit forecas
 is **912.54 seconds against a 900-second limit**. The next training comparison
 remains blocked. The latest measurement separates checkpoint decoding
 from score recomputation. Most whole-read CPU lies outside that checkpoint
-callsite; the next question is which loading/checking phases account for it.
+callsite. The current follow-up separates loading from replay before choosing
+an optimization.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6437,3 +6440,54 @@ it replaced a class-method descriptor too early. The corrected guard preserves
 descriptors and blocks the actual entry points after static metadata loads; its
 failed and passing records remain. The measured audit was not rerun. Final local
 and hosted checks still precede merge.
+
+
+PR #82 is now merged. All six final roles pass: 4,801 base tests and 1,704
+optional tests on each local runtime, plus both same-head hosted jobs. The actual
+main checkout passes 136 focused tests and reproduces all three saved numerical
+exports exactly. All ten unrelated local result changes remain preserved.
+[Closing check records](../results/checkpoint-replay-cpu/final-ci/manifest.json)
+are published with the next substantive implementation batch, rather than a
+separate status commit.
+
+## 127. Separate loading from replaying the saved strategy
+
+**November 16, 2026 — issue #4: phase observer and correctness tests.**
+
+The checkpoint measurement explains only part of the complete read. The next
+question is whether the remaining work comes from loading scientific inputs,
+loading saved policy values, or other replay checks. The [prospective plan and
+method](reader-phase-cpu.md) preserve the original complete comparison.
+
+**Example:** imagine that a read takes 100 CPU seconds: 60 loading inputs, 10
+loading saved values, 25 replaying the strategy and five doing other checks.
+These are separate phases, so they add to 100. They are illustrative numbers,
+not a measured result. The observer records three boundaries rather than every
+Python function call.
+
+The observer reuses the previous clock, read-lifecycle and cleanup machinery.
+Its 35 safety tests pass on both actual Python environments, including a real
+saved fictional-game read with identical results. The first 27 runner checks
+pass on Python 3.11; complete source qualification remains ahead. Forwarding
+fixtures check loader boundaries separately from the actual archived software
+read. They do not establish real cost-loader coverage or new independent poker
+math. Tests also retain original errors when a final observer write fails.
+
+No formal phase measurement or new Hold'em training has run. The next steps
+finish saved-evidence and failure tests, qualify the complete implementation,
+then publish the own-only proof before the reference comparison. The previous
+budget and accuracy failures remain. Implementation and explanation are
+Codex-assisted; no personal practice, mastery or work hours are inferred.
+
+An optional report test initially selected a folder inside its own raw fixture.
+The runner correctly refused it; the corrected test uses a separate temporary
+folder and also checks that refusal explicitly. Both report tests now pass.
+The [exact failed code and log](../results/reader-phase-cpu/qualification-history/report-fixture-in-raw/manifest.json)
+remain; no formal measurement was involved.
+
+The temporary-process launcher checks now pass with process-list access: normal
+exit, nonzero exit, timeout, interruption, a separately grouped child that ignores
+graceful signals, and launch failure. The initial restricted run could not call
+`ps`; its partial files, code and log are retained. Four raw-copy/refusal cases
+and ten publication-boundary cases also pass. These are small software fixtures,
+not measurements of the poker agent.

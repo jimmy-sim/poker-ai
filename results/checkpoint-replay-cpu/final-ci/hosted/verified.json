@@ -1,0 +1,102 @@
+{
+  "status": "all_six_final_roles_pass_actual_runtime_and_entire_tested_tree",
+  "checked_commit": "32ab60d865154cc5e912be584b8bc6777843bc33",
+  "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+  "tested_checkout": "c37eb5514b44d7f77ce9dfa095cdfb9c0581620e",
+  "tested_tree": "5c1b29e19b078ab51441db9b25684f2b161c2dc8",
+  "entire_tree_equals_head": true,
+  "run_id": 43855113726,
+  "checks": [
+    {
+      "role": "base311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4801 passed, 65 skipped, 150 deselected in 621.20s (0:10:21)",
+      "receipt": {
+        "role": "base311",
+        "status": "passed",
+        "checked_commit": "32ab60d865154cc5e912be584b8bc6777843bc33",
+        "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 635.329101499985,
+        "setup_and_check_seconds": 636.6224522500124
+      },
+      "log_sha256": "5bdef2aab46db21f8f17546e6e1ce86aacdb2b5ca4456126212526086a247b17"
+    },
+    {
+      "role": "base312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4801 passed, 65 skipped, 150 deselected in 595.10s (0:09:55)",
+      "receipt": {
+        "role": "base312",
+        "status": "passed",
+        "checked_commit": "32ab60d865154cc5e912be584b8bc6777843bc33",
+        "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 615.0287492080242,
+        "setup_and_check_seconds": 615.0569034579967
+      },
+      "log_sha256": "68978961f14dde5ca0f385bd86fbe76ff0aeaee673e6f313628cc8941a9686d3"
+    },
+    {
+      "role": "optional311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1704 passed in 319.14s (0:05:19)",
+      "receipt": {
+        "role": "optional311",
+        "status": "passed",
+        "checked_commit": "32ab60d865154cc5e912be584b8bc6777843bc33",
+        "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 321.6415464160091,
+        "setup_and_check_seconds": 321.67133404201013
+      },
+      "log_sha256": "9f7cd6a8110a6c686eaef3e5c7f16c01237eeb0fc38444ce2e89106587e62801"
+    },
+    {
+      "role": "optional312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1704 passed in 260.44s (0:04:20)",
+      "receipt": {
+        "role": "optional312",
+        "status": "passed",
+        "checked_commit": "32ab60d865154cc5e912be584b8bc6777843bc33",
+        "source_fingerprint": "81ea769018500d50c2dfcc48b0ced099d6fe424c8cff7f235540f14620da32ca",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Software fixtures and complete source qualification, not actual diagnostic data",
+        "check_seconds": 261.8757663750148,
+        "setup_and_check_seconds": 261.9032057079894
+      },
+      "log_sha256": "1760e1b25b73d64180ef4fda259dc81abae5b87686f16471e009c8b3fc3e7e98"
+    },
+    {
+      "role": "hosted311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-16T11:33:02.1783869Z 4801 passed, 65 skipped, 150 deselected, 1 warning in 1397.57s (0:23:17)",
+      "job_id": 133257401750,
+      "log_bytes": 48779,
+      "log_sha256": "e41093859a62de5bfe3b19b6f4ddd64c9554cf9905fec89dc8cc5a61939fcda7"
+    },
+    {
+      "role": "hosted312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-16T11:25:05.7498392Z 4801 passed, 65 skipped, 150 deselected, 1 warning in 922.57s (0:15:22)",
+      "job_id": 133257402366,
+      "log_bytes": 48780,
+      "log_sha256": "6cf886e294eb96d33b95bb6febb52ef9ea948d4e9c612aa677823cbaad7648e6"
+    }
+  ],
+  "scope": "Final software/data qualification, not production forecast or new poker training"
+}
