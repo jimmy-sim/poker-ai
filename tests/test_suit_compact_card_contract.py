@@ -2,8 +2,12 @@
 
 import json
 import shutil
+import sys
 from pathlib import Path
 from typing import Any
+
+# Private execution modules stay in scripts; allow direct single-file pytest.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import grouped_depth_support as fields
 import pytest

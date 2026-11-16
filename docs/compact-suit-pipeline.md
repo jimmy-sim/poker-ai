@@ -65,3 +65,21 @@ inside the same software budget.
 **Why keep the maximum-based forecast?** All three prescribed complete costs
 contribute, including unfavorable variation. A smaller diagnostic component is
 not a substitute for complete production costs or the original strict limits.
+
+
+November 15 — Premeasurement boundary review: the initial local cohort at
+`d6f0fa5` passes both full suites (4,660/65 skipped/150 deselected;
+971.48/944.20 seconds) and both optional suites (1,563; 549.18/483.40 seconds).
+It is retained as superseded local software evidence, without hosted checks or
+formal collection. Final execution-counter, role and restoration validation is
+now charged inside the child command before its final receipt write. A new
+regression rejects inconsistent final accounting before completion is written.
+Both focused revisions pass 76 tests (10.94/11.14 seconds); direct private-module
+pytest imports are explicit. All four local roles and both hosted roles must be
+repeated on the revised source before any formal proof or production cost.
+No scientific cap, seed, mathematical result or acceptance criterion changes.
+
+
+The [superseded local logs](../results/compact-suit-learning/qualification-history/superseded-d6f0fa5/manifest.json)
+remain byte-exact. They have no hosted cohort or formal collection. Revised
+qualification will use one new immutable head for every role.

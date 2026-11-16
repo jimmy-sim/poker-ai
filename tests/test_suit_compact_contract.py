@@ -9,6 +9,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
+# Private execution modules stay in scripts; allow direct single-file pytest.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
 import pytest
 from compact_suit import admission, cache, contract
 from compact_suit.normalization import Normalization

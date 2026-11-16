@@ -688,6 +688,10 @@ def child_main(root: Path, argv: list[str]) -> int:
                 saved["normalization"] = execution.normalization.summary()
                 if card_proof is not None:
                     saved["normalization_contract"] = card_proof
+                if primary is None:
+                    # Charge final typed counters, role/worker identities and
+                    # restoration validation to the whole child command too.
+                    check_execution(root, saved)
                 atomic(receipt, saved)
         except BaseException:
             if primary is None:

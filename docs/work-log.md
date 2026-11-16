@@ -5753,3 +5753,16 @@ Installed OpenSpiel2.0.2 Apache2.0 license read before optional comparison; pinn
 license and comparison-only scope preserved. All four immutable local roles plus
 both exact-source hosted jobs remain required before formal evidence. Journal125
 updated; source publication will wait for complete local checks as requested.
+
+
+November 15 — Premeasurement boundary review: the initial local cohort at
+`d6f0fa5` passes both full suites (4,660/65 skipped/150 deselected;
+971.48/944.20 seconds) and both optional suites (1,563; 549.18/483.40 seconds).
+It is retained as superseded local software evidence, without hosted checks or
+formal collection. Final execution-counter, role and restoration validation is
+now charged inside the child command before its final receipt write. A new
+regression rejects inconsistent final accounting before completion is written.
+Both focused revisions pass 76 tests (10.94/11.14 seconds); direct private-module
+pytest imports are explicit. All four local roles and both hosted roles must be
+repeated on the revised source before any formal proof or production cost.
+No scientific cap, seed, mathematical result or acceptance criterion changes.

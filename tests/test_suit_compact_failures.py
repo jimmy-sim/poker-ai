@@ -8,11 +8,15 @@ import time
 from pathlib import Path
 from typing import Any
 
+# Private execution modules stay in scripts; allow direct single-file pytest.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
 import pytest
 import suit_candidates_support as kernel
 from compact_suit import admission as gates
 from compact_suit import cli, clock
 from compact_suit.clock import atomic
+from compact_suit.contract import variant
 
 from poker_ai.abstraction import potential
 
@@ -81,7 +85,11 @@ def test_final_record_follows_scope_restoration(
     path = tmp_path / "fixture.json"
 
     def body(root: Path, argv: list[str], execution: Any) -> int:
-        cli.record(path, dict(status="fixture_only_not_a_run"), execution)
+        cli.record(
+            path,
+            dict(status="fixture_only_not_a_run", implementation_config=variant(ROOT)),
+            execution,
+        )
         assert json.loads(path.read_text())["normalization"]["active"] is True
         if failure:
             raise LookupError("primary fixture")
@@ -107,13 +115,38 @@ def test_existing_receipt_is_never_rewritten(tmp_path: Path) -> None:
     assert path.read_bytes() == b"EXACT ORIGINAL PARTIAL BYTES"
 
 
+def test_final_counter_validation_precedes_completion_write(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    path = tmp_path / "fixture.json"
+
+    def body(root: Path, argv: list[str], execution: Any) -> int:
+        cli.record(
+            path,
+            dict(status="fixture_only", implementation_config=variant(ROOT)),
+            execution,
+        )
+        execution.normalization.requests = 1  # Impossible accounting: no evaluation.
+        return 0
+
+    monkeypatch.setattr(cli, "_child_main", body)
+    with pytest.raises(ArithmeticError, match="normalization counters"):
+        cli.child_main(ROOT, ["replay", "--output", str(path)])
+    assert json.loads(path.read_text())["normalization"]["active"] is True
+    assert potential.canonical_cards is kernel.BASE
+
+
 def test_replaced_receipt_is_preserved(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     path = tmp_path / "fixture.json"
 
     def body(root: Path, argv: list[str], execution: Any) -> int:
-        cli.record(path, dict(status="fixture_only"), execution)
+        cli.record(
+            path,
+            dict(status="fixture_only", implementation_config=variant(ROOT)),
+            execution,
+        )
         path.write_bytes(b"OTHER WRITER BYTES")
         return 0
 
@@ -140,7 +173,11 @@ def test_final_save_error_preserves_primary(
         original(p, data)
 
     def body(root: Path, argv: list[str], execution: Any) -> int:
-        cli.record(path, dict(status="fixture_only"), execution)
+        cli.record(
+            path,
+            dict(status="fixture_only", implementation_config=variant(ROOT)),
+            execution,
+        )
         if primary:
             raise LookupError("primary fixture")
         return 0

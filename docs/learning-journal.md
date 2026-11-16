@@ -6284,3 +6284,13 @@ wrong process IDs. Full-project lint, formatting and strict types pass. Next is
 the immutable-source qualification: all four local roles and both hosted jobs
 must pass before collecting any formal production evidence. The old failed
 budget and accuracy results are unchanged.
+
+
+The initial full local checks passed. Review then found that the final counter
+and restoration validation should finish inside the timed command. That check
+now runs before the final receipt is written, and a regression test rejects
+impossible accounting at that boundary. The earlier logs remain in
+[qualification history](../results/compact-suit-learning/qualification-history/superseded-d6f0fa5/manifest.json);
+they do not qualify the revised implementation. Both environments pass 76 focused
+tests. Complete local and hosted checks must now pass on the revised source
+before any formal proof or cost run. No scientific budget or criterion changes.
