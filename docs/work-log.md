@@ -103,7 +103,7 @@ list of claims that every earlier “next step” is still pending.
   versus all4 original same-context full controls, both seats:1728 fixed targets.
   No training/policy edits or favorable subsets. Source study/audit still running.
 - **Independent audit:** all216+1728targets pass164.198028083s<900, maximum
-  2.0605739337042905e-13chips; included own replay0in41.213945417s. Own10df9be
+  2.0605739337042905e-13 chips; included own replay0in41.213945417s. Own10df9be
   published first. OpenSpiel2.0.2Apache2 comparison-only; no actions exported.
   Two actual-evidence metadata/byte checks pass each0.21/0.22s; source216 intact.
   Complete writeup/3interviewanswers/verifiedclaimdrafts/license/README/journal39
@@ -143,7 +143,7 @@ list of claims that every earlier “next step” is still pending.
   constructors blocked;480own/nativechain/3archivehashes/4numericfiles checked.
   Strict419/format512; finalartifactCIpending, scientificsource205unchanged.
 - **Independent audit:**169.194451625s under900; all480profiles pass,maximum
-  scalar/root error1.5631940186722204e-13chips. Ownpublished67c5894before native.
+  scalar/root error1.5631940186722204e-13 chips. Ownpublished67c5894before native.
   Nativeincludesownreplay115.699832292s; base312ownreplay0/113.263148750s,
   four numerical files byte-identical and native receipt validates data-only.
   Three interview answers/verified claim drafts/limits recorded; no global/default
@@ -2179,7 +2179,7 @@ AI-assisted execution/documentation; no human time or stronger-agent claim.
 After canonical GitHub observation of own profile commit6e245f628fee0e799d7b527e3d9ccd6e84fe9f91
 and tree0b7073a607e8b0db2847b9a8d47d1870229a0a87, all17 referenced own profiling
 files match committed bytes. The separate OpenSpiel audit checks every OLD
-432profile/1152fixed condition, maximum2.0605739337042905e-13chips disagreement.
+432profile/1152fixed condition, maximum2.0605739337042905e-13 chips disagreement.
 Whole native command341.493552959s; strict2*whole=682.987105918s<900 passes,
 including source/input setup, all independent work and final full own replay.
 No reference strategy is exported or loaded into learning. Own evidence was
@@ -2235,8 +2235,8 @@ unchanged favorable training retry. AI-assisted execution/reporting.
 
 Own studyccbffb91064c82df6de503033932c6e90f789968/tree55bc8e106c41e9a18d76f06b85a9bac1d100dfdc
 was canonically observed, with all16 study files hash-matched to committed bytes,
-BEFORE real-native construction17:38UTC. All432profiles/1152fixed conditions
-pass independent OpenSpiel checks, maximum2.0605739337042905e-13chips. Whole
+BEFORE real-native construction17:38UTC. All 432 profiles/1152fixed conditions
+pass independent OpenSpiel checks, maximum2.0605739337042905e-13 chips. Whole
 native639.711564250s<900 includes all required setup/admission checks, own
 archive/baseline reads, reference work and final full replay. Raw1596-message
 journal and exact child retained. A data-only replay with constructors blocked
@@ -2744,7 +2744,7 @@ pending; no real trajectory or strength/default/fresh/global admission.
 
 After own publication6c9c200, source4878eb9 native cost0/1/2 completes
 368.528307792/371.195141500/371.648972542s<900 each. Every repetition verifies
-all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+all 432 profiles/1152fixed, maxerror1.8474111129762605e-13 chips<1e-9, no exported
 actions or training. N=max371.648972542s. End-to-end clocks include own/source/
 publication checks, all reference construction/scalars and final own replay.
 Byte-identical canonical copies and SHA manifest retained at cost/native-publication.json;
@@ -2856,7 +2856,7 @@ native costs/forecast/persisted permit/real study remain pending.
 
 After own publicationc7930ad, complete native costs0/1/2 take356.133935375/
 357.755006833/358.878548334s<900 each. N=max358.8785483339998s. Each verifies
-all432profiles/1152fixed, maxerror1.8474111129762605e-13chips<1e-9, no exported
+all 432 profiles/1152fixed, maxerror1.8474111129762605e-13 chips<1e-9, no exported
 reference actions or training. Full command times include published-own/source
 preflight, reference construction/scalars and final own replay. Exact canonical
 copies/logs and SHA manifest retained in cost/native-publication.json; original
@@ -2918,7 +2918,7 @@ global admission. Issue4 remains open; source/seeds/caps/gates unchanged.
 
 After own publication691a7074af105b77eebbfc84b6debb2589d43217, the actual native
 audit completes358.570928584s<900. All432policies/1152fixed targets validate with
-maxerror1.8474111129762605e-13chips<1e-9; no exported reference actions/training.
+maxerror1.8474111129762605e-13 chips<1e-9; no exported reference actions/training.
 Own/source/permit/publication preflight, three native workers and closing own
 replay count inside the command. Pinned OpenSpiel2.0.2 Apache2 license verified;
 source SHA b0bc.../original runtime retained. Publish full native JSON/child/
@@ -2992,7 +2992,7 @@ learning/audit caps unchanged. Journal95 remains prospective until actual output
 PR50 source9bfe45c/fingerprint0927e4b runs the frozen complete read-only command
 in139.8018285s<900:24profiles/48responding traces/192cross conditions. Every owned
 row, street/group/root sum, reply fingerprint and diagonal source value checks;
-maximum trace discrepancy1.2273010890382813e-13chips<1e-9. Cross zero-sum/common-
+maximum trace discrepancy1.2273010890382813e-13 chips<1e-9. Cross zero-sum/common-
 opponent identities pass; no training/reference/default/fresh/global admission.
 All new off-diagonals remain own calculations, not a new native audit.
 
@@ -3481,7 +3481,7 @@ before constructing the real comparison reference; retain allcontrols/checkpoint
 ### November 12 — compact full-control admission passes
 
 All72real own policies were publicbb73102 before real OpenSpiel construction.
-Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13chips, complete
+Native72value/BOTH-BR comparisons pass, max1.3500311979441904e-13 chips, complete
 25.00606195799992s. Authenticated result/report passes all11 frozen full checks
 onboth known turn games. Candidate epsilon%pot2.5771334e-6/0.00017718449 and
 rows130/364 (35.7143%),1770/3336 (53.0576%). Allcontrols uniform coverage1.0;
@@ -3604,7 +3604,7 @@ use the maximum WHOLE-command time, not an interim pre-replay manifest timer.
 
 Allthree own fixtures d2efbdc were public before native cost construction. Each
 comparison checks324stand-in own values/BOTH-BR roots; complete clocks50.020953959/50.368202500/50.438742208s<900each.
-Maximum error across all repetitions 1.35003119794419e-13chips<1e-9. No reference
+Maximum error across all repetitions 1.35003119794419e-13 chips<1e-9. No reference
 strategy enters learning; no learner was constructed in any cost run. The source-
 bound software proof and ALLthree own/native costs are complete. Publish native
 cost evidence before the fixed deep forecast and checked admission; real sampled
@@ -3660,7 +3660,7 @@ whole average coverage includes warm mass; report post-warm support separately.
 ### November 12 — actual sampled scalar audit passes; quality failure retained
 
 ALLown9177081 was public before actual OpenSpiel construction. Native checks
-all324policy values/BOTH-BR roots, maximum error1.27897692436818e-13chips<1e-9. Complete
+all324policy values/BOTH-BR roots, maximum error 1.27897692436818e-13 chips<1e-9. Complete
 command41.155461709s<900, pinned OpenSpiel2.0.2/Apache2 license verified; no
 reference policy used in training. Numerical verification passes; the candidate
 medium LINEAR median2.389912005%pot still misses the preset1%limit. Do not
@@ -3821,7 +3821,7 @@ Independent scalar validation/report are pending; no remedy selected yet.
 
 All144real joint profiles/288player responses independently checked after own
 publicationcc53a93. Complete native clock 105.58452487500108s <900s; maximum
-raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13chips <1e-9.
+raw scalar/root/achieved-reply/metric agreement error 1.0658141036401503e-13 chips <1e-9.
 Both exact/restricted roots and achieved OWN exact/restricted/river-before replies
 are covered, not aggregate exploitability alone. Pinned OpenSpiel2.0.2 license
 verified; no reference policies returned/used for training. Fixed source2670f3f6
@@ -3943,7 +3943,7 @@ here before real tracing. No scientific caps/seeds/gates/admission changed.
 
 No-training own trace completes 117.1815822919998s <900s. All144fixed-opponent
 panels/288sourcealiases/133632owned decision rows replay, maximum accounting/
-root error 1.0658141036401503e-13chips <1e-9. All raw row/menu/R-prefix
+root error 1.0658141036401503e-13 chips <1e-9. All raw row/menu/R-prefix
 reach/conditional-value/group/street/alias detail files plus own/child manifests
 are published here BEFORE report rendering. Complete source/prospective/tiny
 proof gates precede this collection; old B/R scalar audit is reused only as
@@ -4443,7 +4443,7 @@ complete original guarded forecast remain unmeasured; no permit/new training.
 
 After ALLthree own costs were public atab02f25, fixed serial native0/1/2
 commands take402.320211541999,406.53780845800065,406.9446965840034s.
-Each compares432scores/1152fixed targets within1.8474111129762605e-13chips;
+Each compares432scores/1152fixed targets within1.8474111129762605e-13 chips;
 reference scalar-only, no new training. Parent8316requests/26original/8290reuse
 and each native worker1112/18/1094, no fallback/rejection. Whole clocks retain
 pre-own rereplay, worker startup/loading/scalars, and required final own rereplay.
@@ -5436,7 +5436,7 @@ family end-to-end proof or training admission. Journal122 updated.
 
 Single ORIGINAL-only audit after proof publication `ee4a639`: supervised whole
 child 432.06430320898653, registered shared 436.83444570799475, complete outer
-command 436.86079670800245seconds, below900/1800. Outer exits0, uninterrupted.
+command 436.86079670800245seconds, below 900/1800. Outer exits0, uninterrupted.
 All original432profiles/1152conditions/three computed reads, worker/card/source/
 scalar witnesses, restored hooks and184 pinned ORIGINAL field fingerprints pass.
 Five phases184each=920plus1538global=2458<4096. All32raw/admin files retained
@@ -5823,21 +5823,45 @@ hands-on time not recorded.
 ### All three complete independent costs — November 15, 2026
 
 The fixed native repetitions complete in 390.69778079201933,
-393.7666274170042 and 396.27123320801184 seconds, below their900-second caps.
-Supervised outer clocks are390.8178977500065,393.85517862500274 and
+393.7666274170042 and 396.27123320801184 seconds, below their 900-second caps.
+Supervised outer clocks are 390.8178977500065,393.85517862500274 and
 396.3754958329955 seconds. Each retains both complete own replays, original
-worker loads, source/publication/license checks and final writes. All432profiles
-and1,152fixed conditions agree with maximum error1.8474111129762605e-13chips.
-Each parent records918,104reduced calls, zero fallback/error and final restoration;
+worker loads, source/publication/license checks and final writes. All 432 profiles
+and 1,152 fixed conditions agree with maximum error 1.8474111129762605e-13 chips.
+Each parent records 918,104 reduced calls, zero fallback/error and final restoration;
 all three spawned workers retain original normalization. Outputs are comparison
 scalars only, with no training or exported reference actions.
 
-All three own grids were published together atd8d514e before any native cost.
-Their exact publication inventories pass again with a clean unchanged433-file
-source before retention. The33native raw/admin members, three manifests and
+All three own grids were published together at d8d514e before any native cost.
+Their exact publication inventories pass again with a clean unchanged 433-file
+source before retention. The 33 native raw/admin members, three manifests and
 ignored originals match. [Raw validation](../results/compact-suit-learning/native-cost-raw-verification.json)
 checks saved workers/scalars/journals/accounting/bytes and clocks; it is not an
 additional full own mathematical replay. Publish this complete batch before
 posthoc cost analysis or the fresh full forecast. No favorable retry, cap/seed
 change, new poker trajectory or admission. The original failed budget and quality
 results remain intact.
+
+
+### Complete forecast: independent budget still fails — November 15, 2026
+
+The full forecast command completes in 412.56740954099223 seconds (supervised
+outer 412.6018629579921), below its 900-second command cap. It replays the tiny proof
+and all three complete own archives, validates the independent records and all
+127 sealed inputs, and rebuilds the original kernel-geometry check. Its 11 raw/admin
+members and manifest match ignored originals; the 433-file source is unchanged.
+
+The unchanged maximum-based calculation yields T=610.943356249918,
+D=186.84964237501845 and N=396.27123320801184seconds. Own forecast
+`2*(2*T+D+600)=4017.472709749709 < 7200` passes. Independent forecast
+`2*(N+60)=912.5424664160237 < 900` **fails**. This is a completed calculation with
+a failed budget criterion, not a failed replay. No admission or new real
+trajectory is attempted. [Complete forecast](../results/compact-suit-learning/forecast.json)
+and [raw manifest](../results/compact-suit-learning/raw-forecast-manifest.json)
+retain the unfavorable result. The historical 933.889393168007/900 and
+2.390%-versus-1% failures remain intact. Different runs/sources do not establish
+a causal speedup or a playing-strength improvement.
+
+Next: finish the saved-data terminal report/plots, portability and final local
+and hosted checks, then investigate remaining validation cost using measured
+evidence. No changed cap, safety margin, seed, accuracy criterion or default.

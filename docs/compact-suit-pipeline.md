@@ -145,21 +145,45 @@ hands-on time not recorded.
 ### All three complete independent costs — November 15, 2026
 
 The fixed native repetitions complete in 390.69778079201933,
-393.7666274170042 and 396.27123320801184 seconds, below their900-second caps.
-Supervised outer clocks are390.8178977500065,393.85517862500274 and
+393.7666274170042 and 396.27123320801184 seconds, below their 900-second caps.
+Supervised outer clocks are 390.8178977500065,393.85517862500274 and
 396.3754958329955 seconds. Each retains both complete own replays, original
-worker loads, source/publication/license checks and final writes. All432profiles
-and1,152fixed conditions agree with maximum error1.8474111129762605e-13chips.
-Each parent records918,104reduced calls, zero fallback/error and final restoration;
+worker loads, source/publication/license checks and final writes. All 432 profiles
+and 1,152 fixed conditions agree with maximum error 1.8474111129762605e-13 chips.
+Each parent records 918,104 reduced calls, zero fallback/error and final restoration;
 all three spawned workers retain original normalization. Outputs are comparison
 scalars only, with no training or exported reference actions.
 
-All three own grids were published together atd8d514e before any native cost.
-Their exact publication inventories pass again with a clean unchanged433-file
-source before retention. The33native raw/admin members, three manifests and
+All three own grids were published together at d8d514e before any native cost.
+Their exact publication inventories pass again with a clean unchanged 433-file
+source before retention. The 33 native raw/admin members, three manifests and
 ignored originals match. [Raw validation](../results/compact-suit-learning/native-cost-raw-verification.json)
 checks saved workers/scalars/journals/accounting/bytes and clocks; it is not an
 additional full own mathematical replay. Publish this complete batch before
 posthoc cost analysis or the fresh full forecast. No favorable retry, cap/seed
 change, new poker trajectory or admission. The original failed budget and quality
 results remain intact.
+
+
+### Complete forecast: independent budget still fails — November 15, 2026
+
+The full forecast command completes in 412.56740954099223 seconds (supervised
+outer 412.6018629579921), below its 900-second command cap. It replays the tiny proof
+and all three complete own archives, validates the independent records and all
+127 sealed inputs, and rebuilds the original kernel-geometry check. Its 11 raw/admin
+members and manifest match ignored originals; the 433-file source is unchanged.
+
+The unchanged maximum-based calculation yields T=610.943356249918,
+D=186.84964237501845 and N=396.27123320801184seconds. Own forecast
+`2*(2*T+D+600)=4017.472709749709 < 7200` passes. Independent forecast
+`2*(N+60)=912.5424664160237 < 900` **fails**. This is a completed calculation with
+a failed budget criterion, not a failed replay. No admission or new real
+trajectory is attempted. [Complete forecast](../results/compact-suit-learning/forecast.json)
+and [raw manifest](../results/compact-suit-learning/raw-forecast-manifest.json)
+retain the unfavorable result. The historical 933.889393168007/900 and
+2.390%-versus-1% failures remain intact. Different runs/sources do not establish
+a causal speedup or a playing-strength improvement.
+
+Next: finish the saved-data terminal report/plots, portability and final local
+and hosted checks, then investigate remaining validation cost using measured
+evidence. No changed cap, safety margin, seed, accuracy criterion or default.
