@@ -5653,3 +5653,17 @@ Theseextrasnotformalproof/data; fullsuitescanexerciseTOY/fixturelearning,notactu
 completereal-audittarget/newrealtrajectory. Publishqualification/operatorsBEFORE
 ONE180sownproof. Noactualnewtiming/stronger/default/fresh/global/productionadmission;
 alloldforecast/accuracyfailuresretained. Journal124updated.
+
+
+ONEformal own proof afterqualificationd62b657passes: outer6.4555765409895685s,
+registered6.42996020798455, supervised3.901490958989598, under180/exits0/nointerrupt.
+All1248translation entries/2704geometryslots independentlymatch;5724valid+17fixed
+peroriginal/all/reduced;all5fullMatrixfieldseach=15witnessesmatch. Variantvalid/builder
+12296requests each,allwithdeclaredkernel,0fallback/errors. Originaldirectbaseline
+recordsactualowncalls/owner/fields,notexternalref/nofakekernelcounts; expected
+negativefixedcasesseparateprecisereceipts. No learner/reference/newtrajectory.
+[Proof](../results/suit-candidates/software/proof.json)SHA256
+1dee6b09d999df3b68c93c0e9b5e1ed07d8c08eef8ea02acc6a50da695c5e364.
+62raw/adminfiles+manifest63andignoredoriginalsretainedexact. PublishBEFOREactual
+ONEall/reducedpair. All418FP8fd/68pins/caps/seeds/gatesunchanged; noactualnewcost
+verdict/production/fresh/default/qualityadmission. Journal124updated.

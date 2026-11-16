@@ -158,3 +158,28 @@ Publish these records before the one formal own software proof. Full suites can
 exercise toy/fixture solvers; they do not invoke the actual complete-audit target
 or a new real trajectory study. No timing result or production admission exists
 at this qualification checkpoint.
+
+
+## Recorded own software proof — November 15, 2026
+
+After qualification publication `d62b657`, the one formal own proof passes.
+Complete outer time is **6.4555765409895685 seconds**, registered time
+6.42996020798455 and supervised child time 3.901490958989598, all under the
+complete 180-second budget. There is no interruption or retry.
+
+All 1,248 translation entries and 2,704 geometry slots pass the independent
+specification. Original/all/reduced each complete 5,724 valid cases and 17 fixed
+behavior cases, with exact output/type/input checks. All five complete matrix
+field vectors match across the three implementations: 15 witnesses total.
+Original direct records are own-code baselines, not external solver output and
+not invented private-kernel counters. The valid/builder scopes record 12,296
+requests per variant, all using its declared kernel, with zero fallbacks/errors.
+Expected negative fixed cases are retained separately from actual capture failure.
+
+[Proof](../results/suit-candidates/software/proof.json),
+[child](../results/suit-candidates/software/child/child.json) and
+[manifest](../results/suit-candidates/raw-software-manifest.json) retain all 62
+raw/administrative files plus exact ignored originals; the manifest is the 63rd.
+Publish them before the one actual all/reduced pair. No learner/reference/new
+trajectory is constructed, no production family is admitted, and there is no
+cost verdict yet. Scientific source, caps, seeds and previous failures stay fixed.

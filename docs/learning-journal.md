@@ -6178,3 +6178,11 @@ are retained before formal collection. The 5,724 fixed software inputs also have
 identical hashes across Python environments, and outer failure-routing checks
 pass. The next step is the single formal own proof; these software checks do not
 establish a runtime benefit, new strategy or training admission.
+
+
+The formal own software proof now passes in 6.46 seconds, under 180. All 5,724
+cases and 17 fixed behavior cases agree across original/all/reduced. Complete
+matrix fields match for all five builder encodings in all three implementations.
+[The 62 retained raw/admin files and original outputs](suit-candidates.md#recorded-own-software-proof--november-15-2026)
+are published before the actual pair. This validates the implementation; it is
+not yet a speed result, new trained strategy or production admission.
