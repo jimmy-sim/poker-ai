@@ -355,6 +355,9 @@ def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
         or type(measurement["returncode"]) is not int
         or measurement["returncode"] != 0
         or measurement["interrupted"] is not None
+        or type(measurement["cap_seconds"]) not in (int, float)
+        or not math.isfinite(measurement["cap_seconds"])
+        or measurement["cap_seconds"] != 180
         or type(measurement["seconds"]) not in (int, float)
         or not 0 < measurement["seconds"] < 180
         or measurement["child_sha256"] != digest(folder / "child.json")
@@ -362,9 +365,9 @@ def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
         or measurement["child_pid"] != child["pid"]
         or proof_data["status"]
         != "actual_archived_software_replay_and_separate_forwarding_fixtures"
-        or proof_data["actual_read_indices"] != [0]
-        or proof_data["root_forwarded_indices"] != [1, 2]
-        or proof_data["synthetic_read_indices"] != [1, 2]
+        or canonical(proof_data["actual_read_indices"]) != canonical([0])
+        or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+        or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
         or proof_data["real_cost_loader_coverage"] is not False
         or proof_data["independent_new_poker_math"] is not False
         or proof_data["reference_constructed"] is not False

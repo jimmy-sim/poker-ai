@@ -53,6 +53,16 @@ remain. A separate shared-cap fixture omitted the required arm order before it
 could reach the clock check; [that failure](../results/source-phase-cpu/qualification-history/shared-cap-fixture/manifest.json)
 is retained too. No runtime guard or scientific limit was relaxed.
 
+A later self-review found a genuine parser edge case: boolean read-number lists
+could compare equal to integer lists, and inner proof-cap metadata was not
+explicitly checked. Five coherently updated metadata fixtures reproduce those
+acceptances. The parser now rejects them while enforcing the original typed
+inventories and 180-second limit. [The failing regressions](../results/source-phase-cpu/qualification-history/proof-metadata/manifest.json)
+and [superseded partial checks](../results/source-phase-cpu/qualification-history/superseded-before-metadata-fix/manifest.json)
+remain. The earlier chat interruption's [partial records](../results/source-phase-cpu/qualification-history/interrupted-local/interruption.json)
+remain separate. Neither cohort completed a qualifying role or ran a scientific
+measurement. All 118 focused tests now pass on each runtime.
+
 Full source qualification, own-only proof, complete pair and final checks are
 still required. The own proof separates actual archived software replay from
 nested forwarding fixtures. Fixtures are not real source-loader timing or new

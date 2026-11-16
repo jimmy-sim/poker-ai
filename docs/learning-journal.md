@@ -6546,3 +6546,13 @@ runtime (61.36 / 60.62 seconds). Full strict typing passes 810 files. The retain
 failure cases now check complete/partial outcomes without retries, shared-clock
 exhaustion before a child, and refusal to leave failed diagnostic output eligible
 for ordinary admission. Full source qualification remains before formal use.
+
+
+Self-review then found a metadata validation bug: Python treats `True` like `1`
+in ordinary equality, so boolean read-number lists could pass the integer-list
+check. The parser also needed an explicit check of its recorded inner cap.
+Five regression cases reproduce the bug; all are now rejected without changing
+the declared 180-second limit. Both focused suites pass 118 tests (40.75 / 39.50s).
+The earlier software-check attempts are retained as interrupted or superseded,
+not completed qualification. No formal proof or source-loader measurement has
+run. The corrected source will receive complete new qualification.

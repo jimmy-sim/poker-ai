@@ -241,6 +241,7 @@ def own_publication_fixture(
         folder / "measurement.json",
         dict(
             returncode=0,
+            cap_seconds=180,
             interrupted=None,
             seconds=seconds,
             started_perf_counter=origin,
@@ -292,6 +293,11 @@ def test_complete_positive_own_publication(
         "matched_excess_error",
         "wrong_proof_command",
         "escaping_proof_clock",
+        "actual_read_bool",
+        "synthetic_read_bool",
+        "root_read_bool",
+        "proof_cap_bool",
+        "proof_cap_excess",
     ],
 )
 def test_own_publication_rejects_false_or_damaged_evidence(
@@ -314,6 +320,16 @@ def test_own_publication_rejects_false_or_damaged_evidence(
         proof["plain_computed_replays"][0]["unique_profiles"] = 431
     elif damage == "events":
         (folder / "read-1-events.jsonl").write_bytes(b"")
+    elif damage == "actual_read_bool":
+        proof["actual_read_indices"] = [False]
+    elif damage == "synthetic_read_bool":
+        proof["synthetic_read_indices"] = [True, 2]
+    elif damage == "root_read_bool":
+        proof["root_forwarded_indices"] = [True, 2]
+    elif damage == "proof_cap_bool":
+        measurement["cap_seconds"] = True
+    elif damage == "proof_cap_excess":
+        measurement["cap_seconds"] = 999
     elif damage == "source":
         child["source"] = dict(sha256=dict(changed="x"))
     elif damage == "clock":

@@ -1,0 +1,7 @@
+"""Two software qualification lanes; no scientific run or changed test selection."""
+import subprocess,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent
+minor=sys.argv[1];assert minor in ('311','312') and len(sys.argv)==2
+for role in ('base','optional'):
+ subprocess.run([sys.executable,str(w/'run-source-phases-source-checks.py'),role+minor],check=True)

@@ -6229,3 +6229,25 @@ owned-process launch cases, four exact-retention/refusal cases and ten synthetic
 publication-boundary cases pass. These are software fixtures, not scientific
 proofs or new timing. Source implementation now freezes for full qualification;
 no source-child formal capture has begun.
+
+
+November16 — Both initial base qualification logs stopped at27% around a chat
+interruption; sessions no longer existed and no completion receipts were present.
+All four original partial files/hash receipt retained, with termination signal
+unknown. The unchanged software lanes restarted; then self-review identified
+proof-parser metadata edge cases before source publication. Only owned software
+processes were interrupted with SIGINT, retaining the second partial cohort and
+operators. Neither cohort completed a qualification role or ran a scientific
+measurement. A five-case regression reproduces acceptance of boolean actual,
+synthetic and root read-index lists and invalid inner cap declarations.
+
+New parser uses canonical typed index comparisons and explicitly requires the
+already-declared finite numeric180second inner cap. Positive fixture now records
+that actual supervisor field. Five failures/59deselected5.03s before fix retained
+with exact code/log; after correction all118focused optional checks pass each
+40.75/39.50s. No mathematical code, scientific cap, seed, tolerance or historical
+input/result changed. [Regression](../results/source-phase-cpu/qualification-history/proof-metadata/manifest.json),
+[external interruption](../results/source-phase-cpu/qualification-history/interrupted-local/interruption.json)
+and [superseded checks](../results/source-phase-cpu/qualification-history/superseded-before-metadata-fix/manifest.json)
+remain distinct. Corrected source must complete every local/hosted source role
+before publication/own proof; no source-child formal collection has begun.
