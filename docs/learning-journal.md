@@ -6331,3 +6331,15 @@ forecast decide whether a new training comparison fits its budget.
 separate the experiment from a posthoc publication check that needed an import
 fix. The experiment was not repeated. The older failed budget and strategy
 accuracy results remain current; no personal practice or time is inferred.
+
+
+The three complete independent audits now pass correctness, taking about391,394
+and396seconds. Each compares every432profile and1,152fixed condition and finishes
+its final own-archive replay before stopping the clock. All raw outcomes are
+being published together before the budget calculation.
+
+This distinction matters: **correctness passing is not a budget pass**. The next
+forecast uses the slowest complete run, with the original safety margin and
+900-second limit. A result close to the limit still has to satisfy that rule.
+[The exact times and raw checks](compact-suit-pipeline.md#all-three-complete-independent-costs--november-15-2026)
+remain available. No new Hold’em training or personal learning time is recorded.

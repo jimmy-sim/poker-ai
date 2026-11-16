@@ -1,0 +1,110 @@
+"""Published fixed-stage operator; producer repeats all scientific gates in-cap.
+
+One fresh administrative directory per stage/repetition prevents a favorable
+retry. The save reserve only handles failure; it never extends successful work.
+"""
+import json,math,os,shutil,signal,subprocess,sys,time
+from pathlib import Path
+
+
+def launch(command,cwd,env,cap,reserve,out,err):
+    if type(cap) not in (int,float) or not math.isfinite(cap) or cap<=0 or type(reserve) not in (int,float) or not math.isfinite(reserve) or reserve<=0:
+        raise ValueError('positive command cap and failure-save reserve required')
+    interrupted=None
+    started=time.perf_counter()
+    env=dict(env,POKER_COMPACT_SUIT_COMMAND_STARTED=repr(started))
+    process=subprocess.Popen(command,cwd=cwd,env=env,stdout=out,stderr=err,start_new_session=True)
+    try:code=process.wait(timeout=cap)
+    except (subprocess.TimeoutExpired,KeyboardInterrupt) as error:
+        interrupted=type(error).__name__
+        try:os.killpg(process.pid,signal.SIGINT)
+        except ProcessLookupError:pass
+        try:process.wait(timeout=reserve)
+        except subprocess.TimeoutExpired:
+            try:os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+            process.wait()
+        code=130 if isinstance(error,KeyboardInterrupt) else 124
+    seconds=time.perf_counter()-started
+    within=interrupted is None and seconds<cap
+    if code==0 and not within:code=124
+    return dict(returncode=code,seconds=seconds,interrupted=interrupted,
+                complete_command_within_cap=within,cap=cap,
+                origin_before_python=True,started_perf_counter=started)
+
+
+def main():
+    w=Path(__file__).resolve().parent;r=w/'compact-suit'
+    operation=sys.argv[1]
+    caps={'software-own':180,'software-audit':180,'cost-own':900,'cost-audit':900,
+          'forecast':900,'admit':900,'study':7200,'audit':900}
+    assert operation in caps
+    repetition=int(sys.argv[2]) if operation.startswith('cost-') else None
+    assert (repetition in (0,1,2) and len(sys.argv)==3) if operation.startswith('cost-') else len(sys.argv)==2
+    stage=operation+(f'-{repetition}' if repetition is not None else '')
+    f=w/('compact-suit-execution-'+stage);f.mkdir(exist_ok=False)
+    shutil.copyfile(__file__,f/'operator_launch.py.txt')
+    qualified=r/'results/compact-suit-learning/checks'
+    assert Path(__file__).read_bytes()==(qualified/'operator_launch.py.txt').read_bytes()
+    allowed={'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE',
+             'UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}
+    env={k:v for k,v in os.environ.items() if k in allowed}
+    env['PYTHONPATH']=str(r/'src')+os.pathsep+str(r/'scripts')
+    python=str(w/'suit-source-optional311/bin/python')
+    metadata='''import json,sys,numpy,poker_ai
+from pathlib import Path
+from compact_suit.source import source
+from compact_suit.contract import variant
+from compact_suit.admission import require_checks
+from poker_ai.reproducibility import runtime_environment
+r=Path.cwd();assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'
+assert Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+s=source(r,clean=True);assert len(s['sha256'])==433 and s['fingerprint']=='7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78'
+q=require_checks(r)
+print(json.dumps(dict(source=s,config=variant(r),checks=q,environment=runtime_environment(),
+scope='Administrative inspection; producer repeats required source/proof/data work inside complete command cap'),indent=2))
+'''
+    with (f/'environment.json').open('x') as out,(f/'metadata-stderr.log').open('x') as err:
+        check=subprocess.run([python,'-c',metadata],cwd=r,env=env,stdout=out,stderr=err)
+    if check.returncode:
+        (f/'exit.json').write_text(json.dumps(dict(returncode=check.returncode,
+          phase='administrative_preflight_failed_no_collection_started'),indent=2)+'\n')
+        return check.returncode
+    namespace=r/'results/runs/compact-suit'
+    canonical=r/'results/compact-suit-learning'
+    if operation.startswith('software-'):
+        folder=namespace/'software';output=folder/('own.json' if operation=='software-own' else 'native.json')
+        own=canonical/'software/own.json'
+    elif operation.startswith('cost-'):
+        folder=namespace/'cost'/str(repetition);output=folder/('own.json' if operation=='cost-own' else 'native.json')
+        own=canonical/'cost'/str(repetition)/'own.json'
+    else:
+        output=namespace/({'study':'own','audit':'native','admit':'admission'}.get(operation,operation)+'.json')
+        own=canonical/'own.json'
+    assert not output.exists() and not output.is_symlink()
+    command=['/usr/bin/caffeinate','-i',python,'scripts/validate_suit_compact.py',operation,'--output',str(output)]
+    if repetition is not None:command.extend(['--repetition',str(repetition)])
+    if operation in ('software-audit','cost-audit','audit'):command.extend(['--own',str(own)])
+    if operation in ('software-own','cost-own','study'):
+        command.extend(['--scratch',str(r/'results/runs/compact-suit-scratch'/stage)])
+    (f/'invocation.json').write_text(json.dumps(dict(operation=operation,repetition=repetition,
+        stage=stage,command=command,cwd=str(r),output=str(output),PYTHONPATH=env['PYTHONPATH'],
+        administrative_python=sys.version,administrative_executable=sys.executable,
+        cap=caps[operation],save_reserve_seconds=120,
+        clock='Origin immediately before Popen, inherited before Python; all producer startup, validation, work and final restoration writes charged. Save reserve cannot admit success.'),indent=2)+'\n')
+    cap=caps[operation]
+    if operation=='software-audit':
+        old=json.loads(own.read_text())['complete_command']
+        cap=min(cap,180-(time.perf_counter()-old['started_perf_counter']))
+        if cap<=0:
+            (f/'exit.json').write_text(json.dumps(dict(returncode=124,phase='shared_software_clock_expired_no_new_collection_started'),indent=2)+'\n')
+            return 124
+    with (f/'stdout.log').open('x') as out,(f/'stderr.log').open('x') as err:
+        result=launch(command,r,env,cap,120,out,err)
+    result.update(operation=operation,repetition=repetition,stage=stage)
+    (f/'exit.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result))
+    return result['returncode']
+
+
+if __name__=='__main__':raise SystemExit(main())

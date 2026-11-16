@@ -5818,3 +5818,26 @@ Next: all three complete independent costs, then publish them before the origina
 maximum-based forecast. The old budget and accuracy failures remain current.
 Source, seeds, caps and acceptance criteria are unchanged. Codex-assisted; human
 hands-on time not recorded.
+
+
+### All three complete independent costs — November 15, 2026
+
+The fixed native repetitions complete in 390.69778079201933,
+393.7666274170042 and 396.27123320801184 seconds, below their900-second caps.
+Supervised outer clocks are390.8178977500065,393.85517862500274 and
+396.3754958329955 seconds. Each retains both complete own replays, original
+worker loads, source/publication/license checks and final writes. All432profiles
+and1,152fixed conditions agree with maximum error1.8474111129762605e-13chips.
+Each parent records918,104reduced calls, zero fallback/error and final restoration;
+all three spawned workers retain original normalization. Outputs are comparison
+scalars only, with no training or exported reference actions.
+
+All three own grids were published together atd8d514e before any native cost.
+Their exact publication inventories pass again with a clean unchanged433-file
+source before retention. The33native raw/admin members, three manifests and
+ignored originals match. [Raw validation](../results/compact-suit-learning/native-cost-raw-verification.json)
+checks saved workers/scalars/journals/accounting/bytes and clocks; it is not an
+additional full own mathematical replay. Publish this complete batch before
+posthoc cost analysis or the fresh full forecast. No favorable retry, cap/seed
+change, new poker trajectory or admission. The original failed budget and quality
+results remain intact.
