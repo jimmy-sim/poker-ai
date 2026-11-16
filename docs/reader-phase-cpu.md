@@ -7,7 +7,8 @@ own-policy stand-ins, and replaying the own archive. It does not change a poker
 decision or introduce a faster implementation.
 
 The [prospective plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6914870507)
-was published before implementation. No formal phase measurement has run.
+was published before implementation. The complete comparison now passes with
+identical calculated results; the largest measured phase is source loading.
 
 ## The boundaries
 
@@ -82,8 +83,8 @@ assertion failure in its partial log. One unchanged-source software retry passes
 in 1,115.64 test seconds. The original 3.12 pass takes 875.19 seconds; GitHub
 carries that success into the retry rather than running it again. Both executions,
 the cancellation, and the earlier test-isolation failures remain. This is source
-qualification, not a favorable retry of a scientific measurement. The fresh
-own-only proof and complete pair have not run.
+qualification, not a favorable retry of a scientific measurement. These checks
+preceded the fresh own-only proof and complete pair below.
 
 
 ## Own-only proof — November 16
@@ -97,8 +98,8 @@ seven selected calls are retained overall, with full restoration.
 
 These fixtures do not claim real cost-loader coverage or new independent poker
 math. Reference construction and poker-training flags remain false. This own
-publication precedes the fresh reference. Public-byte/source/clock verification
-still precedes the single complete audit pair.
+publication preceded the fresh reference. Public-byte/source/clock verification
+passed before the single complete audit pair.
 
 
 ## Complete raw pair — November 16
@@ -114,4 +115,63 @@ the complete outer clock, are retained before analysis. The ignored originals
 remain byte-identical. [Own-publication verification](../results/reader-phase-cpu/software-published-verification.json)
 records the earlier boundary. Raw publication and its verification precede
 phase analysis, saved-data export reproduction and final local/hosted checks.
-No phase breakdown or optimization is claimed in this publication.
+No phase breakdown or optimization was claimed in that raw publication.
+
+## Result
+
+The complete raw pair was published at `fb87f79` and verified before this analysis.
+The [saved-data report](../results/reader-phase-cpu/pair/report/summary.json)
+separates sequential, inclusive parent CPU seconds:
+
+| Read | Source loading | Saved-policy loading | Own replay | Remaining work | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Software archive | 0 | 0 | 1.563982 | 0.446218 | 2.010200 |
+| Cost before reference | 77.699410 | 2.214787 | 49.279233 | 0.586987 | 129.780417 |
+| Cost after reference | 78.599851 | 2.093312 | 49.743959 | 0.656897 | 131.094019 |
+
+Source loading is about 60% of each cost read. This includes constructing and
+checking historical scientific inputs; it is not a measurement of disk I/O alone.
+Own replay is about 38%. Loading saved policy values is a much smaller phase.
+The software read does not call either loader, so those zeros mean no call.
+The ordinary arm's selected zeros mean its timers were disabled.
+
+![Sequential phases of the three complete reads](../results/reader-phase-cpu/pair/report/reader-phases.png)
+
+Both arms retain all three reads, 432 profiles, 1,152 fixed conditions and three
+reference workers. Seven selected calls and complete restoration pass. Complete
+scalar results, calculated replays, worker outputs, normalization and cache
+inventories agree exactly. The two child clocks are 393.5271485419944 and
+395.7039985000156 seconds. Parent body CPU is 263.988770 and 266.671255 seconds;
+summed parallel worker body CPU is 370.331519 and 369.548862 seconds. These are
+different clocks: parallel CPU cannot be added to parent CPU to infer elapsed time.
+
+![Complete elapsed time and separate CPU clocks](../results/reader-phase-cpu/pair/report/complete-clocks.png)
+
+The report's three numerical exports reproduce byte for byte on actual
+Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4, with 40 game,
+replay, score and reference entry points blocked after static import setup.
+No forbidden call occurs and raw inputs stay unchanged. The
+[3.11 receipt](../results/reader-phase-cpu/report311.json) and
+[3.12 receipt](../results/reader-phase-cpu/report312.json) describe this saved-data
+check; it does not establish real-trajectory replay on the newer runtime.
+Both rendered figures were inspected. Final full local and hosted checks remain.
+
+The next question is which work *inside the current source-loader boundary*
+accounts for those 78–79 CPU seconds. Earlier isolated profiles do not answer
+that question for this complete reader. No optimizer or cache is introduced here.
+One ordered pair cannot establish stable overhead, causal speedup or a replacement
+production forecast. The existing budget and accuracy failures remain.
+
+## Explore the saved result
+
+From the repository, open `results/reader-phase-cpu/pair/report/reader-phases.png`
+or read `reads.csv` in the same folder. To regenerate the report in a fresh,
+separate ignored folder, using an environment with the locked research extra:
+
+```sh
+.venv/bin/python scripts/profile_reader_phases.py report \
+  --output results/reader-phase-cpu/pair \
+  --report-output results/runs/reader-phase-report-local
+```
+
+This authenticates and plots saved evidence; it does not run new training.

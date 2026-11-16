@@ -6146,3 +6146,28 @@ metadata/log and the earlier [own-publication verification](../results/reader-ph
 are retained in this raw-before-analysis batch. Ignored originals are untouched.
 No phase analysis, optimizer, new trajectory or admission claim is included.
 Public-boundary verification, report reproduction and final checks remain.
+
+
+November 16 — Raw pair publication `fb87f79` passes source/raw/clock and earlier
+own-proof publication verification before phase analysis. Saved report:
+source-load CPU 77.699410 / 78.599851s, stand-in-load 2.214787 / 2.093312s,
+own-replay 49.279233 / 49.743959s, remaining read 0.586987 / 0.656897s;
+complete cost-read CPU 129.780417 / 131.094019s. Actual software read CPU
+2.010200s, of which own replay 1.563982s. Seven calls, exact full result identity
+and restoration pass; full retained inventory remains 3 reads / 432 profiles /
+1,152 conditions / 3 reference workers. Complete child walls 393.5271485419944 /
+395.7039985000156s, parent body CPU 263.988770 / 266.671255s, summed parallel
+worker body CPU 370.331519 / 369.548862s; these clocks are not interchangeable.
+Both actual PNGs visually inspected.
+
+Actual 3.11.17/NumPy2.4.6 and 3.12.15/NumPy2.5.4 report reproduction passes with
+all 40 numerical paths blocked after static import setup: all three numerical
+exports byte-equal, zero forbidden calls, raw inputs unchanged. Guard execution
+10.826516333996551 / 11.016834832989844s, not trajectory replay or production
+costs. [Receipts](../results/reader-phase-cpu/report311.json) and
+[second runtime](../results/reader-phase-cpu/report312.json), logs and the
+[published-pair verification](../results/reader-phase-cpu/pair-published-verification.json)
+are retained with the report. Current source loading is the next target to
+investigate; no causal speedup or new optimizer follows this single ordered
+pair. Existing 912.54/900 budget and 2.390%/1% accuracy failures remain. Final
+four local roles and both same-head hosted jobs still precede merge.
