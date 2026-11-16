@@ -5766,3 +5766,15 @@ Both focused revisions pass 76 tests (10.94/11.14 seconds); direct private-modul
 pytest imports are explicit. All four local roles and both hosted roles must be
 repeated on the revised source before any formal proof or production cost.
 No scientific cap, seed, mathematical result or acceptance criterion changes.
+
+
+November 15, 2026 — All six source-check roles pass on `066f522` with the same
+433-file fingerprint. Both full local suites pass 4,661 tests (65 skipped,
+150 deselected; 988.95/963.24 seconds); optional suites pass 1,564 each
+(565.55/499.07 seconds). Both GitHub source jobs in run `43809812112` pass 4,661
+with the existing warning (1,284.07/866.26 seconds). Actual Python/NumPy, every uv
+selection, checkout and whole tested tree are verified. The earlier cohort stays
+superseded. The exact launch, retention and publication instructions and their
+19 subprocess/file checks plus four mocked publication-order cases are retained.
+Publish these receipts before the single fresh shared-180-second software proof.
+No formal proof, production cost or new registered Hold’em study has run yet.

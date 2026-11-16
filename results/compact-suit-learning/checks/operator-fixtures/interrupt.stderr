@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import os,signal,time;os.kill(os.getppid(),signal.SIGINT);time.sleep(10)
+                                                              ~~~~~~~~~~^^^^
+KeyboardInterrupt

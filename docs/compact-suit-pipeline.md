@@ -83,3 +83,20 @@ No scientific cap, seed, mathematical result or acceptance criterion changes.
 The [superseded local logs](../results/compact-suit-learning/qualification-history/superseded-d6f0fa5/manifest.json)
 remain byte-exact. They have no hosted cohort or formal collection. Revised
 qualification will use one new immutable head for every role.
+
+
+November 15, 2026 — All six source-check roles pass on `066f522` with the same
+433-file fingerprint. Both full local suites pass 4,661 tests (65 skipped,
+150 deselected; 988.95/963.24 seconds); optional suites pass 1,564 each
+(565.55/499.07 seconds). Both GitHub source jobs in run `43809812112` pass 4,661
+with the existing warning (1,284.07/866.26 seconds). Actual Python/NumPy, every uv
+selection, checkout and whole tested tree are verified. The earlier cohort stays
+superseded. The exact launch, retention and publication instructions and their
+19 subprocess/file checks plus four mocked publication-order cases are retained.
+Publish these receipts before the single fresh shared-180-second software proof.
+No formal proof, production cost or new registered Hold’em study has run yet.
+
+
+[Six-role qualification and raw logs](../results/compact-suit-learning/checks.json)
+include exact producer/publication instructions. Source qualification is software
+evidence, not acceptance of the old failed budget or the strategy-quality target.

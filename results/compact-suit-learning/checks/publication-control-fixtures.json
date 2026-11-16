@@ -1,0 +1,225 @@
+{
+  "checks": 4,
+  "operator_sha256": "4efee27c7b1f455df166ceb25c45f203f337b5ca501cb5afe5252031305ff139",
+  "rows": [
+    {
+      "case": "complete",
+      "commands": [
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/complete/run-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/complete/retain-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/software",
+          "results/compact-suit-learning/execution-software-own",
+          "results/compact-suit-learning/raw-software-own-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-own before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/complete/run-compact-suit-collection.py",
+          "software-audit"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/complete/retain-compact-suit-collection.py",
+          "software-audit"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/software",
+          "results/compact-suit-learning/execution-software-audit",
+          "results/compact-suit-learning/raw-software-audit-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-audit before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ]
+      ],
+      "result": "completed",
+      "status": "passed"
+    },
+    {
+      "case": "own_failure",
+      "commands": [
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/own_failure/run-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/own_failure/retain-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/execution-software-own",
+          "results/compact-suit-learning/raw-software-own-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-own before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ]
+      ],
+      "result": "exit_7",
+      "status": "passed"
+    },
+    {
+      "case": "native_failure",
+      "commands": [
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/native_failure/run-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/native_failure/retain-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/software",
+          "results/compact-suit-learning/execution-software-own",
+          "results/compact-suit-learning/raw-software-own-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-own before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/native_failure/run-compact-suit-collection.py",
+          "software-audit"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/native_failure/retain-compact-suit-collection.py",
+          "software-audit"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/execution-software-audit",
+          "results/compact-suit-learning/raw-software-audit-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-audit before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ]
+      ],
+      "result": "exit_7",
+      "status": "passed"
+    },
+    {
+      "case": "own_push_failure",
+      "commands": [
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/own_push_failure/run-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+          "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/compact-suit-publication-fixtures/own_push_failure/retain-compact-suit-collection.py",
+          "software-own"
+        ],
+        [
+          "git",
+          "add",
+          "results/compact-suit-learning/software",
+          "results/compact-suit-learning/execution-software-own",
+          "results/compact-suit-learning/raw-software-own-manifest.json",
+          "docs/compact-suit-pipeline.md",
+          "docs/learning-journal.md",
+          "docs/work-log.md"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "research: retain software-own before the next validation stage"
+        ],
+        [
+          "git",
+          "push",
+          "origin",
+          "research/compact-suit"
+        ]
+      ],
+      "result": "git_push_failure",
+      "status": "passed"
+    }
+  ],
+  "scope": "Four fictional publication-control cases; Git and stage producers mocked; no actual Git mutation, kernel/archive/game/learner/reference or registered target invoked."
+}

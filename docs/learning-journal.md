@@ -6294,3 +6294,12 @@ impossible accounting at that boundary. The earlier logs remain in
 they do not qualify the revised implementation. Both environments pass 76 focused
 tests. Complete local and hosted checks must now pass on the revised source
 before any formal proof or cost run. No scientific budget or criterion changes.
+
+
+All six source-check roles now pass on the same revision, including both hosted
+jobs with actual runtimes and whole source trees verified. [The raw receipts and
+run instructions](../results/compact-suit-learning/checks.json) preserve the details.
+The next step is the single fresh software proof: own card/learning records must
+be published before the independent comparison, all within the shared software
+budget. These checks do not replace the failed production budget or demonstrate
+a stronger strategy.

@@ -1,0 +1,45 @@
+"""Mocked Git and producer orchestration only; never scientific collection."""
+import hashlib,json,runpy,shutil,subprocess,sys
+from pathlib import Path
+from unittest.mock import patch
+from types import SimpleNamespace
+
+w=Path(__file__).resolve().parent;out=w/'compact-suit-publication-fixtures';out.mkdir(exist_ok=False)
+source=w/'publish-compact-suit-software.py';rows=[]
+for case in ('complete','own_failure','native_failure','own_push_failure'):
+ fake=out/case;fake.mkdir();r=fake/'compact-suit';q=r/'results/compact-suit-learning/checks';q.mkdir(parents=True)
+ operator=fake/source.name;shutil.copyfile(source,operator);shutil.copyfile(source,q/'operator_software_publication.py.txt')
+ (r/'docs').mkdir()
+ for name in ('compact-suit-pipeline.md','learning-journal.md','work-log.md'):(r/'docs'/name).write_text('FICTIONAL PUBLICATION CONTROL TEST ONLY\n')
+ events=[];pushed=False
+ def run(args,**kwargs):
+  global pushed
+  args=[str(x) for x in args];events.append(args)
+  if len(args)>1 and args[1].endswith('run-compact-suit-collection.py'):
+   phase=args[2]
+   if phase=='software-audit':assert pushed
+   bad=(case=='own_failure' and phase=='software-own') or (case=='native_failure' and phase=='software-audit')
+   f=r/'results/compact-suit-learning/software';f.mkdir(exist_ok=True)
+   (f/('own.json' if phase=='software-own' else 'native.json')).write_text(json.dumps(dict(scope='MOCKED_PUBLICATION_ONLY_NOT_PROOF',complete_command=dict(seconds=0.01))))
+   (r/f'results/compact-suit-learning/execution-{phase}').mkdir()
+   (r/f'results/compact-suit-learning/raw-{phase}-manifest.json').write_text(json.dumps(dict(status='partial_or_failed_retained_not_admitted' if bad else 'complete_raw_before_analysis')))
+   return SimpleNamespace(returncode=7 if bad else 0)
+  if args[:2]==['git','push']:
+   if case=='own_push_failure' and not pushed:raise subprocess.CalledProcessError(1,args)
+   pushed=True
+  return SimpleNamespace(returncode=0)
+ result='completed'
+ with patch('subprocess.check_output',return_value=''),patch('subprocess.run',side_effect=run):
+  try:runpy.run_path(str(operator),run_name='publication_fixture')
+  except SystemExit as error:result='exit_'+str(error.code)
+  except subprocess.CalledProcessError:result='git_push_failure'
+ audit=[x for x in events if len(x)>2 and x[1].endswith('run-compact-suit-collection.py') and x[2]=='software-audit']
+ if case in ('own_failure','own_push_failure'):assert not audit
+ else:assert len(audit)==1
+ assert result==dict(complete='completed',own_failure='exit_7',native_failure='exit_7',own_push_failure='git_push_failure')[case]
+ if audit:
+  index=events.index(audit[0]);assert any(x[:2]==['git','push'] for x in events[:index])
+ rows.append(dict(case=case,status='passed',result=result,commands=events))
+record=dict(scope='Four fictional publication-control cases; Git and stage producers mocked; no actual Git mutation, kernel/archive/game/learner/reference or registered target invoked.',checks=4,rows=rows,operator_sha256=hashlib.sha256(source.read_bytes()).hexdigest())
+(out/'checks.json').write_text(json.dumps(record,indent=2,sort_keys=True)+'\n')
+print(json.dumps(dict(status='passed_mock_publication_control_only',checks=4)))

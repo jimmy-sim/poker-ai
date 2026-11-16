@@ -1,0 +1,52 @@
+"""Own publication precedes native, without spending shared180s on chat latency.
+
+Administrative choreography only. The two published stage operators retain
+their complete clocks, prerequisites and no-retry directories. Do not execute
+until six qualifying receipts and these exact instructions are public.
+"""
+import json,os,subprocess,sys
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+w=Path(__file__).resolve().parent;r=w/'compact-suit'
+assert subprocess.check_output(['git','status','--porcelain'],cwd=r,text=True)==''
+assert Path(__file__).read_bytes()==(r/'results/compact-suit-learning/checks/operator_software_publication.py.txt').read_bytes()
+env=dict(os.environ,PYTHONPATH=str(r/'src')+os.pathsep+str(r/'scripts'))
+f=w/'compact-suit-software-publication';f.mkdir(exist_ok=False)
+
+
+def command(args,*,cwd=r,check=True):
+    with (f/'commands.log').open('a') as log:
+        log.write(json.dumps(dict(command=[str(x) for x in args],cwd=str(cwd)))+'\n');log.flush()
+        return subprocess.run([str(x) for x in args],cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT,check=check)
+
+
+for operation in ('software-own','software-audit'):
+    result=command([sys.executable,w/'run-compact-suit-collection.py',operation],cwd=w.parent,check=False)
+    command([sys.executable,w/'retain-compact-suit-collection.py',operation],cwd=w.parent)
+    manifest=r/f'results/compact-suit-learning/raw-{operation}-manifest.json'
+    record=json.loads(manifest.read_text())
+    complete=result.returncode==0 and record['status']=='complete_raw_before_analysis'
+    actual=r/'results/compact-suit-learning/software'/('own.json' if operation=='software-own' else 'native.json')
+    date=datetime.now(ZoneInfo('America/Los_Angeles')).strftime('%B %d, %Y')
+    note=f'\n\n{date} — {operation}: '+('complete raw capture' if complete else 'partial/failing capture retained; not admitted')+'. '
+    if complete:
+        saved=json.loads(actual.read_text())
+        note+='The complete command reports '+str(saved['complete_command']['seconds'])+' seconds. '
+        if operation=='software-own':note+='Own evidence is published before the independent constructor. '
+        else:note+='Independent output is comparison-only; complete proof verification still precedes costs. '
+    note+='This is software evidence, not new Hold’em training or strength admission.\n'
+    for name in ('docs/compact-suit-pipeline.md','docs/learning-journal.md','docs/work-log.md'):
+        with (r/name).open('a') as stream:stream.write(note)
+    # Source was qualified before collection. Only data/admin records and these
+    # actual-result notes are staged here; no other branch or user files touched.
+    data='results/compact-suit-learning/software' if complete else 'results/compact-suit-learning/failed'
+    stage_paths=([data] if (r/data).exists() else [])
+    command(['git','add',*stage_paths,f'results/compact-suit-learning/execution-{operation}',
+             str(manifest.relative_to(r)),'docs/compact-suit-pipeline.md',
+             'docs/learning-journal.md','docs/work-log.md'])
+    command(['git','commit','-m','research: retain '+operation+' before the next validation stage'])
+    command(['git','push','origin','research/compact-suit'])
+    if not complete:raise SystemExit(result.returncode or 1)
+print('Own software evidence was pushed before independent comparison; verify complete proof before costs.')

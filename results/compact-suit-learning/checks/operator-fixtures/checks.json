@@ -1,0 +1,132 @@
+{
+  "checks": 19,
+  "rows": [
+    {
+      "case": "success",
+      "record": {
+        "cap": 2.0,
+        "complete_command_within_cap": true,
+        "interrupted": null,
+        "origin_before_python": true,
+        "returncode": 0,
+        "seconds": 0.04675366700394079,
+        "started_perf_counter": 183308.798462083
+      },
+      "status": "passed"
+    },
+    {
+      "case": "nonzero",
+      "record": {
+        "cap": 2.0,
+        "complete_command_within_cap": true,
+        "interrupted": null,
+        "origin_before_python": true,
+        "returncode": 7,
+        "seconds": 0.04591883299872279,
+        "started_perf_counter": 183308.846042
+      },
+      "status": "passed"
+    },
+    {
+      "case": "timeout",
+      "record": {
+        "cap": 0.15,
+        "complete_command_within_cap": false,
+        "interrupted": "TimeoutExpired",
+        "origin_before_python": true,
+        "returncode": 124,
+        "seconds": 0.1767565000045579,
+        "started_perf_counter": 183308.89263775
+      },
+      "status": "passed"
+    },
+    {
+      "case": "interrupt",
+      "record": {
+        "cap": 2.0,
+        "complete_command_within_cap": false,
+        "interrupted": "KeyboardInterrupt",
+        "origin_before_python": true,
+        "returncode": 130,
+        "seconds": 0.30673970899078995,
+        "started_perf_counter": 183309.070247916
+      },
+      "status": "passed"
+    },
+    {
+      "case": "invalid_cap_True",
+      "status": "passed"
+    },
+    {
+      "case": "invalid_cap_0",
+      "status": "passed"
+    },
+    {
+      "case": "invalid_cap_-1",
+      "status": "passed"
+    },
+    {
+      "case": "invalid_cap_nan",
+      "status": "passed"
+    },
+    {
+      "case": "invalid_cap_inf",
+      "status": "passed"
+    },
+    {
+      "case": "retention_complete",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_nonzero",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_over_cap",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_wrong_status",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_bool_code",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_bool_within",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_no_invocation",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_same_destination",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_changed_destination",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    },
+    {
+      "case": "retention_symlink_destination",
+      "scope": "Mock producer status only; source/math/clock gates absent, never eligible proof",
+      "status": "passed"
+    }
+  ],
+  "scope": "Fictional subprocess supervision and administrative routing only. No archive reader/game/kernel/learner/reference or registered study/cost target executed.",
+  "scripts": {
+    "retain-compact-suit-collection.py": "a1443f9806564aa02ddd53ba86ccca8b3844eeea5fea51d4e04564d6a7d41eb6",
+    "run-compact-suit-collection.py": "7e32ab0bb1f3551f7588f56cacdb3157172e91821771cd70ddb584567c7d6f4a"
+  }
+}

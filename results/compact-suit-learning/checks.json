@@ -1,0 +1,112 @@
+{
+  "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "4661 passed, 65 skipped, 150 deselected in 988.95s (0:16:28)",
+      "log": {
+        "file": "results/compact-suit-learning/checks/base311.log",
+        "sha256": "bd9f098d1038302571dbfccb3a4b4a31752469acc2f9f86ec8a91f022de60e3a"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "4661 passed, 65 skipped, 150 deselected in 963.24s (0:16:03)",
+      "log": {
+        "file": "results/compact-suit-learning/checks/base312.log",
+        "sha256": "a29a7a66694c74322e0301184460e02868782f316ef5cb520927ee6bbd67bb89"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1564 passed in 565.55s (0:09:25)",
+      "log": {
+        "file": "results/compact-suit-learning/checks/optional311.log",
+        "sha256": "d02f76739f8f27207e86a1ca8e4a5c068a032d5793fdd2f84980b13e3d68774e"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1564 passed in 499.07s (0:08:19)",
+      "log": {
+        "file": "results/compact-suit-learning/checks/optional312.log",
+        "sha256": "6b6089b113f22c126680a34540314dee20bcfdc2dd3cbc04588922dd429b6eb7"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "result": "2026-11-16T05:44:38.2693097Z 4661 passed, 65 skipped, 150 deselected, 1 warning in 1284.07s (0:21:24)",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "run_id": 43809812112,
+      "job_id": 133108718053,
+      "head_sha": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "b8ffb9db3ce7a7e89ae4ae7617db7037c24f0443",
+      "actual_checkout_tree": "ad0789744c54f7237d24064951c7be81909bc2da",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/compact-suit-learning/checks/hosted311.log",
+        "sha256": "36e68ef1c5e7d5d441edd4e2c41b7d6acc6c10b68f4ff5ee22616f25ea8d81c8"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "result": "2026-11-16T05:37:49.2024636Z 4661 passed, 65 skipped, 150 deselected, 1 warning in 866.26s (0:14:26)",
+      "source_fingerprint": "7381900fbd120938875a51bbd32ddb0afa340527eba5db1e1c50824a859e3f78",
+      "checked_commit": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "run_id": 43809812112,
+      "job_id": 133108717655,
+      "head_sha": "066f5227a41613dde8e728936dac007b10f1e88f",
+      "conclusion": "success",
+      "runtime_verified_from_actual_guard": true,
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "b8ffb9db3ce7a7e89ae4ae7617db7037c24f0443",
+      "actual_checkout_tree": "ad0789744c54f7237d24064951c7be81909bc2da",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/compact-suit-learning/checks/hosted312.log",
+        "sha256": "9487f1e9b5eb321bea082e26efc50ca0ccdae7543b0d667884ef91e6dc01a92a"
+      }
+    }
+  ],
+  "scope": "Same-head433-source opt-in production-validation qualification; all418 predecessor source bytes preserved. Both full local bases, relevant all-extras suites and both hosted jobs bind actual runtime/all uv selections/complete tested trees. Suites may exercise toy/fixture own and reference solvers; they do not invoke this family's formal proof, complete real cost target or registered trajectory study. Superseded local cohort stays nonqualifying. Publish these six receipts and exact operators before the new complete shared180s own/native proof, all3 own costs before any native cost, full costs/forecast/checked admission. No default/fresh/global or playing-strength claim."
+}
