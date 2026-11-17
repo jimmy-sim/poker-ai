@@ -196,3 +196,43 @@ cover construction, numerical work, clones, caller hooks and captured aliases;
 all resolve and restore on both actual runtimes with zero forbidden calls.
 Six process, five preflight, four retention and ten synthetic-publication cases
 pass. Full immutable local and hosted source qualification remains required.
+
+
+## Complete source qualification — November 17
+
+Source `9ebd5900667674564751d806e5e0c9673f83da75` preserves all 447
+predecessor scientific files and binds 450 at
+`901415dc66139b48866bdf07dba9231e63fbaf3d0267d87af33b31028e4999a9`.
+[All six source roles and ten exact tested tools](../results/context-reuse/checks.json)
+are retained before any new formal proof or comparison:
+
+| Role | Python / NumPy | Actual pytest result | Pytest seconds |
+| --- | --- | --- | ---: |
+| Local base | 3.11.17 / 2.4.6 | 5,379 passed, 70 skipped, 150 deselected | 776.37 |
+| Local base | 3.12.15 / 2.5.4 | 5,379 passed, 70 skipped, 150 deselected | 737.41 |
+| Local optional | 3.11.17 / 2.4.6 | 2,287 passed | 470.71 |
+| Local optional | 3.12.15 / 2.5.4 | 2,287 passed | 407.94 |
+| Hosted base | 3.11.17 / 2.4.6 | 5,379 passed, 70 skipped, 150 deselected | 1,179.75 |
+| Hosted base | 3.12.15 / 2.5.4 | 5,379 passed, 70 skipped, 150 deselected | 1,174.25 |
+
+Both hosted logs confirm all uv-selected runtimes and actual checkout
+`25f98f4ed881e62c870888404a143c49c5fcb261`, whose complete tree
+`e05a6b116b1757cb0875c53a47654bd27907a5d4` equals the source checkpoint.
+[Hosted run](https://github.com/jimmy-sim/poker-ai/actions/runs/44103138056).
+The first Python 3.12 execution reached the unchanged 25-minute limit at 93%;
+its complete log, official timeout annotation and run/job metadata are retained.
+Only that unchanged-source software role was retried. The carried Python 3.11
+success keeps actual execution `134108220465`, attempt 1, with identical original
+timestamps and log bytes; logical job `134125639866` is not another execution.
+The successful Python 3.12 execution is `134125636021`, attempt 2.
+
+All fixture bytes, earlier 93-guard setup records, final 103-guard setup and
+operator hashes are archived. The complete installed OpenSpiel 2.0.2 Apache-2.0
+license was reread before fresh use; both environments match the existing
+[central license record](solver_validation.md#solvers-versions-and-licenses),
+11,358 bytes / SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+Reference outputs remain comparison-only. No source, seed, scientific cap or
+acceptance criterion changed for CI. Published qualification and exact tools must
+verify successfully before the formal own-only proof; no new proof/comparison or
+training has run at this publication boundary.

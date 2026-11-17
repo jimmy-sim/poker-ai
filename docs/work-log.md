@@ -6561,3 +6561,34 @@ No fresh formal proof, reference comparison, training or performance admission h
 started. Original caps/seeds/gates remain fixed. Codex-assisted implementation,
 execution and drafting; personal hands-on time not recorded. Journal step130
 explains the change and limits.
+
+
+### November 17: complete context-reuse source qualification
+
+[PR #86](https://github.com/jimmy-sim/poker-ai/pull/86), source `9ebd590`, now has
+[all six exact-source roles and ten tested tools](../results/context-reuse/checks.json).
+Local bases: 5,379 / 70 skipped / 150 deselected each (776.37 / 737.41 seconds
+pytest; complete checks 788.112850 / 750.677537). Optional: 2,287 each
+(470.71 / 407.94 pytest; complete checks 474.357324 / 411.847860). Hosted bases:
+5,379 each, 1,179.75 / 1,174.25 seconds pytest, actual patch/NumPy/all uv verified.
+Actual checkout `25f98f4` entire tree equals C0 `9ebd590`.
+
+Initial hosted 3.12 reached the unchanged 25-minute limit at 93%; full raw log,
+annotation/run/jobs were saved before the unchanged-source single-role retry.
+The successful 3.12 execution is job134125636021/attempt2. Carried logical
+3.11job134125639866 retains actual execution134108220465/attempt1, original
+matching timestamps and exact log bytes. No scientific run or source change
+occurred during that retry. All four local lanes exited zero and are finished.
+
+Six process / five preflight / four retention / ten synthetic-publication fixtures,
+103 final report guards and earlier 93-target receipts are retained. All exact
+operator bytes match the tested map. The full pinned Apache-2.0 OpenSpiel 2.0.2
+license was reread and matches both actual environments; comparison-only remains.
+Source/code/docs checks and synthetic layout review are archived. Synthetic plots
+are layout checks, not measured performance; actual figures still require review.
+
+This batch is before formal own proof/reference work. Public qualification/tools
+verification must actually exit zero; own raw publication and verification still
+precede the pair. Original 447 source bytes, 128 input pins, seeds, scientific
+work/limits and failed gates remain. Journal130 explains the status. Codex-assisted;
+human hours and new personal learning are not inferred.

@@ -1,0 +1,85 @@
+"""Archive complete exact-source roles and tested tools before formal collection."""
+import gzip,hashlib,io,json,re,runpy,shutil,subprocess,tarfile
+from pathlib import Path
+W=Path(__file__).resolve().parent;R=W/'context-reuse';F=W/'context-reuse-source-checks';H=W/'context-reuse-source-hosted'
+expected=json.loads((W/'context-reuse-source-expected.json').read_text());head=expected['git_commit'];fp=expected['fingerprint']
+OUT=R/'results/context-reuse/checks';assert not OUT.exists() and not (OUT.parent/'checks.json').exists()
+assert subprocess.check_output(['git','-C',str(R),'rev-parse','HEAD'],text=True).strip()==head
+assert not subprocess.check_output(['git','-C',str(R),'status','--porcelain'],text=True).strip()
+rows=[]
+for role in ('base','optional'):
+ for minor,version,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+  receipt=json.loads((F/f'{role}{minor}-receipt.json').read_text());log=(F/f'{role}{minor}.log').read_text()
+  assert receipt['status']=='passed' and receipt['checked_commit']==head and receipt['source_fingerprint']==fp
+  assert set(re.findall(r'ACTUAL_PYTHON=([0-9.]+)',log))=={version}
+  assert set(re.findall(r'ACTUAL_NUMPY=([0-9.]+)',log))=={np}
+  assert set(re.findall(r'CHECKED_COMMIT=([0-9a-f]+)',log))=={head}
+  assert set(re.findall(r'COLLECTOR_SOURCE=([0-9a-f]+)',log))=={fp}
+  result=next(line for line in log.splitlines() if re.match(r'^\d+ passed',line))
+  assert result.startswith('5379 passed, 70 skipped, 150 deselected' if role=='base' else '2287 passed'),result
+  if role=='base':
+   assert 'Success: no issues found in 820 source files' in log
+   assert 'Ruff lint (locked project environment)' in log and 'Ruff format check (locked project environment)' in log and log.count('Passed')>=2
+  rows.append(dict(role=role,minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python=version,numpy=np,result=result,check_seconds=receipt['check_seconds']))
+run=json.loads((H/'run.json').read_text());jobs=json.loads((H/'jobs-official.json').read_text())['jobs']
+assert run['head_sha']==head and run['status']=='completed' and run['conclusion']=='success' and run['event']=='pull_request'
+checkout=json.loads((H/'checkout-source.json').read_text());tree=subprocess.check_output(['git','-C',str(R),'rev-parse',head+'^{tree}'],text=True).strip()
+assert checkout['tree']['sha']==tree and head in [p['sha'] for p in checkout['parents']]
+parser=runpy.run_path(str(R/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='parse_actual_runtime')['parse']
+history=[]
+for path in H.glob('attempt*/jobs-official.json'):history.extend(json.loads(path.read_text())['jobs'])
+for minor,version,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+ job=next(j for j in jobs if j['name']=='Python '+version[:4])
+ assert job['head_sha']==head and job['run_id']==run['id'] and job['status']=='completed' and job['conclusion']=='success'
+ assert all(step['conclusion']=='success' for step in job['steps'])
+ candidates=[j for j in [*history,job] if j['name']==job['name'] and j['head_sha']==head and j['conclusion']=='success' and j['started_at']==job['started_at'] and j['completed_at']==job['completed_at']]
+ actual_job=min(candidates,key=lambda j:(j['run_attempt'],j['id']))
+ if actual_job['id']!=job['id']:
+  prior_log=H/f"attempt{actual_job['run_attempt']}"/f'hosted{minor}.log';assert prior_log.read_bytes()==(H/f'hosted{minor}.log').read_bytes()
+ text=(H/f'hosted{minor}.log').read_text(encoding='utf-8-sig');actual=parser(text)
+ assert actual['actual_python']==[version] and actual['all_uv_versions']==[version]
+ assert re.findall(r'ACTUAL_NUMPY=([0-9.]+)\s*$',text,re.M)==[np]
+ assert head in text and checkout['sha'] in text
+ result=next(line for line in text.splitlines() if '5379 passed, 70 skipped, 150 deselected' in line)
+ rows.append(dict(role='hosted',minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python=version,numpy=np,result=result,run_id=run['id'],job_id=job['id'],head_sha=head,conclusion='success',actual_uv_versions=actual['all_uv_versions'],actual_checkout_sha=checkout['sha'],actual_checkout_tree=tree,tested_tree_equals_pr_head=True,workflow_attempt=job['run_attempt'],actual_execution_job_id=actual_job['id'],actual_execution_attempt=actual_job['run_attempt'],reused_prior_success=actual_job['id']!=job['id']))
+operator_names=[('run-context-reuse-checks.py','run_checks.py.txt'),('run-context-reuse-collection.py','operator_launch.py.txt'),('retain-context-reuse-collection.py','operator_retention.py.txt'),('verify-context-reuse-publication.py','verify_publication.py.txt'),('check-context-reuse-operators.py','check_operators.py.txt'),('check-context-reuse-retention.py','check_retention.py.txt'),('check-context-reuse-publication.py','check_publication.py.txt'),('check-context-reuse-report.py','report_execution_guard.py.txt'),('check-context-reuse-guard-setup.py','check_report_guard_setup.py.txt'),('check-context-reuse-preflight.py','check_preflight.py.txt')]
+operator_map=json.loads((W/'context-reuse-final-operator-map.json').read_text());assert {n:hashlib.sha256((W/n).read_bytes()).hexdigest() for n,_ in operator_names}==operator_map
+for minor in ('311','312'):
+ v=json.loads((W/f'context-reuse-guard-setup-{minor}.json').read_text());assert len(v['targets'])==103 and v['attempts']==[]
+ assert v['report_guard_sha256']==operator_map['check-context-reuse-report.py']
+for folder,key,count in [('operator','fixtures',6),('preflight',None,5),('retention',None,4),('publication','cases',10)]:
+ plural='operators' if folder=='operator' else folder
+ path=W/f'context-reuse-{folder}-fixtures/checks.json';v=json.loads(path.read_text());assert len(v if key is None else v[key])==count
+OUT.mkdir(parents=True)
+for directory,prefix in [(F,'local'),(H,'hosted')]:
+ for p in directory.rglob('*'):
+  if p.is_file():q=OUT/prefix/p.relative_to(directory);q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+operators={}
+for name,destination in operator_names:
+ q=OUT/destination;shutil.copyfile(W/name,q);operators[name]=dict(file=str(q.relative_to(R)),sha256=hashlib.sha256(q.read_bytes()).hexdigest())
+for name in ('context-reuse-source-expected.json','context-reuse-final-operator-map.json'):shutil.copyfile(W/name,OUT/name)
+shutil.copyfile(__file__,OUT/'assemble_checks.py.txt')
+for minor in ('311','312'):
+ shutil.copyfile(W/f'context-reuse-license{minor}.json',OUT/f'license{minor}.json')
+ shutil.copyfile(W/f'context-reuse-guard-setup-{minor}.json',OUT/f'report-guard-setup-{minor}.json')
+ shutil.copyfile(W/f'context-reuse-guards-final{minor}.log',OUT/f'report-guard-setup-{minor}.log')
+for name,log in [('operators','operator-check'),('retention','retention-check'),('publication','publication-check'),('preflight','preflight-check')]:shutil.copyfile(W/f'context-reuse-{log}.log',OUT/f'{name}.log')
+
+def archive(folder,destination):
+ raw=io.BytesIO();members=[]
+ with tarfile.open(fileobj=raw,mode='w') as stream:
+  for p in sorted(folder.rglob('*')):
+   assert not p.is_symlink()
+   if not p.is_file():continue
+   data=p.read_bytes();name=str(p.relative_to(folder));info=tarfile.TarInfo(name);info.size=len(data);info.mode=0o644;stream.addfile(info,io.BytesIO(data));members.append(dict(file=name,sha256=hashlib.sha256(data).hexdigest(),bytes=len(data)))
+ destination.write_bytes(gzip.compress(raw.getvalue(),mtime=0))
+ with tarfile.open(fileobj=io.BytesIO(gzip.decompress(destination.read_bytes())),mode='r') as stream:
+  for row in members:assert hashlib.sha256(stream.extractfile(row['file']).read()).hexdigest()==row['sha256']
+ return members
+inventories={}
+for name in ('context-reuse-operator-fixtures','context-reuse-retention-fixtures','context-reuse-publication-fixtures','context-reuse-preflight-fixtures','context-reuse-guard-history'):inventories[name]=archive(W/name,OUT/(name+'.tar.gz'))
+(OUT/'fixture-archives.json').write_text(json.dumps(inventories,indent=2)+'\n')
+for row in rows:
+ p=OUT/('hosted' if row['role']=='hosted' else 'local')/f"{row['role']}{row['minor']}.log";row['log']=dict(file=str(p.relative_to(R)),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+(OUT.parent/'checks.json').write_text(json.dumps(dict(source_fingerprint=fp,checks=rows,operators=operators,scope='All six immutable450-file isolated-context source roles; all447 predecessor bytes and128 inputs unchanged. Actual runtime/all uv/entire tested tree verified; any retained retries record actual execution identities. Six process/five preflight/four retention/ten publication fixtures;103 data-only report guards resolve on both actual runtimes. Exact tested tools published before own proof. Own before reference, raw before analysis. Original caps/seeds/work/failed gates unchanged. No new training or strength admission.'),indent=2)+'\n')
+print(json.dumps(dict(status='all_six_source_roles_archived_before_formal_collection',head=head,source_fingerprint=fp,rows=[dict(role=r['role'],minor=r['minor'],result=r['result']) for r in rows])))

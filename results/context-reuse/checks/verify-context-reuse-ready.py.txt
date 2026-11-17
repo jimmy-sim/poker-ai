@@ -1,0 +1,19 @@
+"""Check public exact-source qualification and tested tools; no numerical work."""
+import hashlib,json,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import compare_context_reuse as runner
+from compact_suit.admission import published
+expected=json.loads((w/'context-reuse-source-expected.json').read_text())
+c,s=runner.binding(r,clean=True);runner.previous.runtime(c);runner.checked(r,s)
+assert len(s['sha256'])==450 and s['fingerprint']==expected['fingerprint'] and s['sha256']==expected['sha256']
+checks=json.loads((r/runner.FOLDER/'checks.json').read_text());assert len(checks['operators'])==10
+actual={}
+for name,row in checks['operators'].items():
+ original=w/name;copy=r/row['file'];assert original.read_bytes()==copy.read_bytes() and hashlib.sha256(original.read_bytes()).hexdigest()==row['sha256'];published(r,copy);actual[name]=row['sha256']
+for minor,py in [('311','3.11.17'),('312','3.12.15')]:
+ license=json.loads((r/runner.FOLDER/f'checks/license{minor}.json').read_text());assert license['version']=='2.0.2' and license['python']==py and license['license']=='Apache-2.0' and license['bytes']==11358 and license['sha256']=='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30' and license['comparison_only'] is True and license['strategy_outputs_used_in_training'] is False
+ published(r,r/runner.FOLDER/f'checks/license{minor}.json')
+assert 'pyspiel' not in sys.modules
+result=dict(status='all_six_source_roles_public_and_ten_tested_tools_match',source_commit=s['git_commit'],qualified_commit=expected['git_commit'],source_fingerprint=s['fingerprint'],source_files=len(s['sha256']),operators=actual,scope='Public source/tool verification only; no formal proof, reference, pair, training or admission constructed.')
+(w/'context-reuse-ready-verified.json').open('x').write(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

@@ -6843,3 +6843,19 @@ and ten publication cases pass. All 103 saved-report guards resolve and restore
 on both runtimes without numerical execution. Full immutable local/hosted source
 qualification comes next. These are correctness checks, not a measured speedup,
 new formal proof or evidence of a stronger strategy.
+
+
+**November 17 — complete source qualification passes.** Both local base suites
+pass 5,379 tests; both optional suites pass 2,287. Both exact-source hosted jobs
+also pass, with actual Python/NumPy versions and the full checkout tree checked.
+[All six records and tested tools](../results/context-reuse/checks.json) are
+retained. The first hosted Python 3.12 job ran out of its unchanged 25-minute
+allowance at 93%. Its records remain; only that software job was retried. The
+Python 3.11 success keeps its original execution identity, rather than being
+counted again because GitHub displays it in the newer attempt.
+
+This qualifies the implementation for its own-only proof. That proof must still
+be published and verified before the fixed reference comparison. A software pass
+does not tell us whether copying and checking contexts saves time; the measured
+comparison can still be slower or fail. The strategy and its failed strength/runtime
+targets remain unchanged.
