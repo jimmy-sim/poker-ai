@@ -1,0 +1,32 @@
+"""Copy every raw byte, including partial failures, without overwriting evidence."""
+import hashlib,json,shutil,sys,time
+from pathlib import Path
+W=Path(__file__).resolve().parent;R=W/'source-phase-cpu'
+stage=sys.argv[1];assert stage in ('proof','pair') and len(sys.argv)==2
+source=R/'results/runs'/('source-phases-20261116-'+stage)
+target=R/'results/source-phase-cpu'/('software' if stage=='proof' else 'pair')
+manifest=target.with_name(target.name+'-raw-manifest.json')
+outer=source.with_name(source.name+'-outer.json');log=source.with_name(source.name+'-outer.log')
+assert not target.exists() and not target.is_symlink() and not manifest.exists()
+start=time.perf_counter();raw=json.loads(outer.read_text())
+assert raw['cap_seconds']==(180 if stage=='proof' else 1800)
+assert hashlib.sha256(log.read_bytes()).hexdigest()==raw['command_log_sha256']
+# These inventories copy both success and failure; no selector can discard a
+# slower child, unfinished read, error or interrupted write.
+if source.exists():
+ assert not any(p.is_symlink() for p in source.rglob('*'))
+ shutil.copytree(source,target)
+else:target.mkdir(parents=True)
+rows=[]
+for p in sorted(target.rglob('*')):
+ if p.is_file():
+  original=source/p.relative_to(target);assert original.read_bytes()==p.read_bytes()
+  rows.append(dict(file=str(p.relative_to(R)),sha256=hashlib.sha256(p.read_bytes()).hexdigest(),bytes=p.stat().st_size))
+for p in (outer,log):
+ q=target.with_name(target.name+p.name[len(source.name):]);assert not q.exists();shutil.copyfile(p,q)
+ assert q.read_bytes()==p.read_bytes();rows.append(dict(file=str(q.relative_to(R)),sha256=hashlib.sha256(q.read_bytes()).hexdigest(),bytes=q.stat().st_size))
+with manifest.open('x') as out:
+ json.dump(dict(stage=stage,status=raw['status'],outer_seconds=raw['seconds'],files=rows,
+                original_ignored_output=str(source),administrative_copy_seconds=time.perf_counter()-start,
+                scope='Exact raw retention before analysis. Includes all partial/failing outcomes; no missing stage is inferred complete. A failure-save reserve cannot extend scientific caps.'),out,indent=2);out.write('\n')
+print(json.dumps(dict(stage=stage,status=raw['status'],files=len(rows))))

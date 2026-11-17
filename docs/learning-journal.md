@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Follow the stages inside source loading](#128-look-inside-the-input-loader)
+
 - [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
 
 - [Check the checkpoint measuring tool](#126-check-the-tool-before-timing-checkpoint-replay)
@@ -111,7 +113,10 @@ is **912.54 seconds against a 900-second limit**. The next training comparison
 remains blocked. The latest complete diagnostic separates loading from replay:
 about 78–79 CPU seconds per cost read load scientific inputs, while 49–50
 replay the saved strategy. Results stay identical with observation enabled.
-The next investigation follows the work inside that input-loading phase.
+The nested follow-up now locates most source CPU in sampled-parent archive
+validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
+The complete calculated results stay identical. The next question follows those
+checks without skipping any of them. See [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6496,9 +6501,178 @@ carried forward rather than rerun.
 
 The three report exports reproduce byte for byte on both actual runtimes with
 40 numerical execution paths blocked. No forbidden call occurs; raw inputs stay
-unchanged. Both figures were inspected. Final full local and hosted checks remain.
+unchanged. Both figures were inspected. All six final checks now pass; PR #83 is merged
+and main passes 223 focused checks with every unrelated local result preserved.
 The next question follows the largest phase inside the current source loader,
 without skipping verification. This diagnostic does not improve the strategy or
 replace the failed production budget and accuracy tests. Implementation,
 execution and explanation are Codex-assisted; personal practice and hours are
 not inferred.
+
+
+## 128. Look inside the input loader
+
+**November 16, 2026 — issue #4: nested observer under development.**
+
+The complete reader comparison identifies its largest phase, but “source
+loading” includes several jobs. This next question separates older scientific
+sources, compact game construction, sampled-parent archive validation, original
+contexts and original boundaries. [The plan and method](source-phase-cpu.md)
+were published before implementation; no new formal measurement has run.
+
+**Example:** a folder's label says “load inputs,” but the program may also build
+poker trees and check historical strategies while loading it. Timing only disk
+reads would miss that work. A nested observer times a source root and its named
+children. The children plus the root's remaining work must equal the root total;
+adding the total to the children would count work twice.
+
+Two temporary module proxies forward selected calls while leaving the original
+modules and defining functions intact. The observer passes 54 focused checks on
+each actual runtime, including errors, cleanup and ownership. An actual archived
+software replay stays identical and correctly records no source root. Separate
+fixture checks do not claim real cost-loader coverage or new poker mathematics.
+Runner tests caught assumptions carried over from the previous observer: empty
+software event streams and its older seven-call count. The corrected fixtures
+match this plan's fourteen calls; failed logs and code remain linked in the
+method. A separate cap fixture's missing order is retained too.
+
+Next: finish the complete runner/failure tests and qualify all source checks
+before any formal proof or pair. The preceding measurement now has all six final
+checks, a verified history merge and a protected-main check. This is diagnostic engineering toward a cheaper
+complete training comparison, with no new model-quality result. Implementation,
+checks and explanation are Codex-assisted; personal learning or hours are not
+inferred.
+
+
+The next observer and runner now pass all 113 focused checks on each optional
+runtime (61.36 / 60.62 seconds). Full strict typing passes 810 files. The retained
+failure cases now check complete/partial outcomes without retries, shared-clock
+exhaustion before a child, and refusal to leave failed diagnostic output eligible
+for ordinary admission. Full source qualification remains before formal use.
+
+
+Self-review then found a metadata validation bug: Python treats `True` like `1`
+in ordinary equality, so boolean read-number lists could pass the integer-list
+check. The parser also needed an explicit check of its recorded inner cap.
+Five regression cases reproduce the bug; all are now rejected without changing
+the declared 180-second limit. Both focused suites pass 118 tests (40.75 / 39.50s).
+The earlier software-check attempts are retained as interrupted or superseded,
+not completed qualification. No formal proof or source-loader measurement has
+run. The corrected source will receive complete new qualification.
+
+
+**November 16 — resumed after the saved checkpoint.** Both GitHub jobs pass,
+and their actual runtimes and complete source tree match the locally checked
+revision. All six source checks now qualify the tool: 5,004 base tests per local
+runtime, 1,909 optional tests per runtime, plus both hosted base suites.
+[The full record](../results/source-phase-cpu/checks.json) retains earlier failures
+and partial attempts. This establishes software readiness, not cheaper validation
+or a stronger strategy. Next is the own-only proof, published before fresh
+reference comparison. No source-loader timing result is claimed yet.
+
+
+November 16 — The fresh own-only proof follows verified public six-role source
+qualification. Its complete CLI finishes in 5.927510875000735 seconds, under
+the fixed 180-second cap. The actual archived software replay is identical
+before/during observation and records zero source roots. Two separately labeled
+synthetic forwarding reads give 14 selected root/child calls, with full restoration.
+[All raw proof files](../results/source-phase-cpu/software-raw-manifest.json)
+and source-publication verification are retained before fresh reference use.
+This does not claim real cost-loader coverage or new independent poker math.
+Public-boundary verification remains before the single complete audit pair.
+
+
+November 16 — Publication verification rejects the fresh proof: its parser
+incorrectly requires an inner cap exactly180s, while the supervisor correctly
+subtracts startup from the unchanged180s outer allowance (recorded inner cap
+179.9989877909975s). Calculations/restoration completed, but this proof is not
+accepted for admission. A mistakenly attempted pair was blocked by the same
+guard before any child measurement or reference construction; its complete
+failure is [retained](../results/source-phase-cpu/pair-raw-manifest.json). No
+source-child timing result follows. Correct the remaining-budget parser, retain
+negative cases, and fully qualify the corrected source before further collection.
+No scientific cap, seed, tolerance or earlier outcome is changed.
+
+
+## Startup-adjusted allowance correction — November 16
+
+The [prospective correction](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6941037776)
+keeps the rejected proof and blocked pair unchanged. A separate corrected entry
+and config use `results/source-phase-cpu-v2`; all 442 predecessor scientific
+files remain unchanged. The new parser accepts finite numeric inner allowances
+with `0 < cap <= 180` and requires the complete child duration below that cap.
+The fixed outer180-second limit remains. For example, startup can legitimately
+leave 179.9989877909975 seconds; requiring exactly180 rejects valid evidence.
+
+All78 corrected-runner tests pass on actual3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4
+(34.24/31.21s), including fractional/exact allowances, invalid/exhausted limits
+and a CLI-calculation/publication round-trip. Full strict typing passes812files.
+A launcher preflight verifies published own evidence inside the complete outer
+clock; rejected or interrupted checks start no child and retain their clock.
+These are software checks, not a new formal proof or real cost-loader result.
+Full new local/hosted qualification remains before any revised collection.
+No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
+
+
+**November 17, 2026 — the corrected tool passes complete qualification.** Both local
+base suites pass 5,081 tests and both optional suites pass 1,987. Both hosted
+base checks also pass on the exact revised source, with the actual runtimes and
+complete checkout trees verified. [The check record](../results/source-phase-cpu-v2/checks.json) keeps the logs
+and tested tools together.
+
+A launcher test also caught an edge case: verification could use the whole
+allowance and still attempt to start a child. The launcher now checks the clock
+immediately before launch. All six process tests and five preflight tests pass;
+the initial failure remains recorded. No poker strategy changed. Next is a new
+own-only proof under the original limit, published before reference comparison.
+
+
+**November 17 — new own-only evidence retained.** The complete corrected command
+finishes in 6.215336 seconds. Its recorded inner allowance is slightly
+below 180 seconds because startup uses part of the unchanged outer limit. The
+actual saved software replay stays identical; the 14 nested calls belong to
+separately labeled forwarding fixtures. [The raw proof](../results/source-phase-cpu-v2/software-raw-manifest.json)
+will be published and verified before fresh reference comparison. No training
+or real cost-loader timing result is claimed by these fixtures.
+
+
+**November 17 — the complete comparison finishes.** Published own-proof
+verification passes with the startup-adjusted allowance. Both ordinary and
+instrumented audit arms finish, and their complete calculated results agree
+exactly. [All raw records](../results/source-phase-cpu-v2/pair-raw-manifest.json)
+are being published before interpreting which source-loading stage is expensive.
+
+
+**November 17 — where the source-loading CPU goes.** The complete saved comparison
+puts about **37–39 CPU seconds** in sampled-parent archive validation and
+**33–34** in earlier scientific-source checks, per instrumented cost read.
+Together they account for roughly **87–88% of source CPU**. Compact game building
+is only about **2.3–2.6 seconds** here. [The table and two plots](source-phase-cpu.md#what-the-complete-comparison-found--november-17)
+show every component, including the smaller ones.
+
+**Example:** checking an old training archive may involve reconstructing and
+verifying its contents. That can take much more work than opening the file. This
+measurement identifies that stage, but does not yet identify an unnecessary
+calculation inside it. Removing checks just to make the timer smaller would
+answer a different question.
+
+Both complete arms agree exactly on calculated results. The raw pair was public
+before analysis. All three numerical exports reproduce on both actual runtimes
+with 50 numerical entry points blocked, zero forbidden calls and unchanged raw
+files; both figures were inspected. The next investigation follows the large
+validation stages. No strategy improved in this diagnostic, and the old budget
+and accuracy failures remain. Final software/report checks still precede merge.
+
+
+**November 17 — a final-check failure catches a local setup problem.** Both full
+local suites fail the archived software-replay test at its 180-second deadline,
+even though both hosted jobs pass. Those failures are retained, and merge waits.
+
+Git was repeatedly rescanning the linked checkout because it could not save its
+index's file-stat cache. Normal authorized Git access refreshes that cache while
+leaving source and research data unchanged. The same failing test then passes on
+both runtimes in 4.34 / 4.28 seconds, with the original limit intact. The [failure
+and recovery record](../results/source-phase-cpu-v2/qualification-history/final-index-refresh/manifest.json)
+explains the distinction: correcting the environment makes another full check
+possible; two focused passes do not replace complete qualification. No strategy
+or experiment is retrained or rerun.

@@ -1,0 +1,62 @@
+....F..                                                                  [100%]
+=================================== FAILURES ===================================
+_____________ test_exhausted_shared_clock_is_retained_before_child _____________
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-250/test_exhausted_shared_clock_is0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108656250>
+
+    def test_exhausted_shared_clock_is_retained_before_child(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        from types import SimpleNamespace
+    
+        root = tmp_path / "repository"
+        output = root / "results/runs/shared-cap-fixture"
+        ticks = iter([0.0, 1801.0, 1802.0])
+        monkeypatch.setattr(
+            runner, "time", SimpleNamespace(perf_counter=lambda: next(ticks))
+        )
+        monkeypatch.setattr(
+            runner, "binding", lambda *a, **k: (dict(caps=dict(shared_seconds=1800)), {})
+        )
+        monkeypatch.setattr(runner, "checked", lambda *a: None)
+        monkeypatch.setattr(runner, "own_published", lambda *a: {})
+        with pytest.raises(TimeoutError):
+>           runner.pair(root, output)
+
+tests/test_source_phase_cpu.py:819: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-250/test_exhausted_shared_clock_is0/repository')
+output = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-250/test_exhausted_shared_clock_is0/repository/results/runs/shared-cap-fixture')
+
+    def pair(root: Path, output: Path) -> int:
+        started = time.perf_counter()
+        if (
+            output.exists()
+            or output.is_symlink()
+            or not output.resolve().is_relative_to(root.resolve() / "results/runs")
+        ):
+            raise FileExistsError(
+                "fresh ignored pair destination required; retain every attempt"
+            )
+        output.mkdir(parents=True)
+        saved: dict[str, Any] = dict(
+            status="running",
+            order=["plain", "profiled"],
+            measurements=[],
+            admission_evidence=False,
+        )
+        atomic(output / "pair.json", saved)
+        try:
+            c, source = binding(root)
+            checked(root, source)
+            own_published(root, source)
+>           for mode in c["order"]:
+                        ^^^^^^^^^^
+E           KeyError: 'order'
+
+scripts/profile_source_phases.py:685: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_source_phase_cpu.py::test_exhausted_shared_clock_is_retained_before_child
+1 failed, 6 passed, 52 deselected in 0.20s

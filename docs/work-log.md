@@ -6171,3 +6171,229 @@ are retained with the report. Current source loading is the next target to
 investigate; no causal speedup or new optimizer follows this single ordered
 pair. Existing 912.54/900 budget and 2.390%/1% accuracy failures remain. Final
 four local roles and both same-head hosted jobs still precede merge.
+
+
+## November 16 — source-root children, prospective implementation
+
+[Plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6918554952)
+published before code/outcomes. PR83 final checks remain running; isolated
+implementation only, formal collection waits for its verified merge/main check.
+Preserve all439 preceding scientific files (fingerprint39b5f696...) and original
+scientific data/caps/seeds. New private entry/support/config only; no optimizer.
+Observe two source roots with six serial children each, fourteen calls/cap32,
+root/child/outside arithmetic without double counting. Two module-alias proxies
+leave original defining modules/functions unchanged. Complete audit180/900/1800
+and failure-save120 rules remain, own-before-reference/raw-before-analysis.
+
+Observer54 focused tests pass on each actual runtime36.51/35.41s during ongoing
+software checks, not scientific timing. Strict typing passes both new modules;
+Ruff passes. Initial runner unit suite3FAIL/48PASS/1SKIP76.82s caught three
+inherited test assumptions: two erased already-empty software event streams,
+one expected7 instead of14calls. Corrected runner suites51PASS/1SKIP63.69/63.38s.
+Separate lifecycle fixtures initially1FAIL/6PASS/52deselected0.20s because the
+shared-cap fixture omitted arm order; corrected7PASS/52deselected0.15/0.17s.
+[Both failure histories](source-phase-cpu.md) retain exact logs/code; no guard,
+source algorithm, compute limit or scientific result changed. These are unit
+fixtures, not qualified source or a formal own/source-loader proof. Full runner
+failure coverage, local/hosted qualification and documentation remain.
+
+
+November16 — PR83 all final six roles pass exact head2981f61 / source439 FP39b5.
+Bases4,887/66skip150deselect1,260.05/1,230.38s; optional1,791each809.88/747.76s.
+Hostedrun43880737350 jobs133345763483/133345764103 pass1,081.90/901.00s plus
+existing warning. Actual patch/NumPy/alluv and entire checkout903f893/tree
+cbfa7dd1f6be0accf041a07abb9a6d281376bb33 equal checked head. Administrative verifier
+first read connector-normalized jobs lacking head_sha; preserved that attempt
+and verified full official metadata instead, without rerunning tests/captures.
+History merge81ba6bf; fresh actual user snapshot before guarded FF. Main actual
+3.11.17/2.4.6 passes223focused51.90s, authenticates complete saved pair and all
+three numeric exports. User ten changed bytes/status/index entries/both patches
+preserved after checks. [All closing raw receipts](../results/reader-phase-cpu/final-ci/manifest.json)
+batched into this next substantive milestone, not a status-only commit.
+
+Source-child observer/runner focused optional113PASS each61.36/60.62s. Full strict
+typing810files passes after test-only explicit dynamic module-alias typing;
+Ruff passes. New lifecycle tests retain full/partial pair without retries,
+pre-child shared-cap failure and failed-receipt invalidation/error preservation.
+No formal source-child proof, pair or reference has run. Scientific439preceding
+bytes remain unchanged; next source442 qualification and tested operators remain.
+
+
+November16 — Prequalification self-review moves proxy bookkeeping to private
+fields so ordinary module attributes named selected/selected_name/delegate are
+forwarded too. Four focused proxy/late-alias/cleanup checks pass each0.09/0.10s;
+complete source qualification will include this final source. Both actual runtimes
+resolve, patch and restore all45 future report-guard entry points, with zero
+numerical calls; this is static setup only, not report reproduction. All six
+owned-process launch cases, four exact-retention/refusal cases and ten synthetic
+publication-boundary cases pass. These are software fixtures, not scientific
+proofs or new timing. Source implementation now freezes for full qualification;
+no source-child formal capture has begun.
+
+
+November16 — Both initial base qualification logs stopped at27% around a chat
+interruption; sessions no longer existed and no completion receipts were present.
+All four original partial files/hash receipt retained, with termination signal
+unknown. The unchanged software lanes restarted; then self-review identified
+proof-parser metadata edge cases before source publication. Only owned software
+processes were interrupted with SIGINT, retaining the second partial cohort and
+operators. Neither cohort completed a qualification role or ran a scientific
+measurement. A five-case regression reproduces acceptance of boolean actual,
+synthetic and root read-index lists and invalid inner cap declarations.
+
+New parser uses canonical typed index comparisons and explicitly requires the
+already-declared finite numeric180second inner cap. Positive fixture now records
+that actual supervisor field. Five failures/59deselected5.03s before fix retained
+with exact code/log; after correction all118focused optional checks pass each
+40.75/39.50s. No mathematical code, scientific cap, seed, tolerance or historical
+input/result changed. [Regression](../results/source-phase-cpu/qualification-history/proof-metadata/manifest.json),
+[external interruption](../results/source-phase-cpu/qualification-history/interrupted-local/interruption.json)
+and [superseded checks](../results/source-phase-cpu/qualification-history/superseded-before-metadata-fix/manifest.json)
+remain distinct. Corrected source must complete every local/hosted source role
+before publication/own proof; no source-child formal collection has begun.
+
+
+November16 — Resume authorized by the user after pause; PR84 source CI run
+43987653002 both passes. Actual jobs133719848627/133719848928: 5,004 passed,
+67 skipped,150 deselected plus existing historical warning,1,281.09/1,009.46s.
+Actual interpreter/NumPy/alluv and entire checkout35ea65e1e45285f2bba1b7c279dd90b45012b8a4
+match source headf784551 and all four prior immutable local roles.
+[Six-role qualification and nine tested operators](../results/source-phase-cpu/checks.json)
+archived before any formal own proof. All439 predecessor scientific bytes/128pins
+remain unchanged, source442 fingerprint e4cd4c0ec8fbd59f407f667eafe7fd6cae15a9bcd8890a8c1dd841207a0acfdc.
+No source-child proof/pair/new reference or trajectory has run. Next public-source
+verification, then the fixed180s own-only proof; old budget/accuracy failures remain.
+
+
+November 16 — The fresh own-only proof follows verified public six-role source
+qualification. Its complete CLI finishes in 5.927510875000735 seconds, under
+the fixed 180-second cap. The actual archived software replay is identical
+before/during observation and records zero source roots. Two separately labeled
+synthetic forwarding reads give 14 selected root/child calls, with full restoration.
+[All raw proof files](../results/source-phase-cpu/software-raw-manifest.json)
+and source-publication verification are retained before fresh reference use.
+This does not claim real cost-loader coverage or new independent poker math.
+Public-boundary verification remains before the single complete audit pair.
+
+
+November 16 — Publication verification rejects the fresh proof: its parser
+incorrectly requires an inner cap exactly180s, while the supervisor correctly
+subtracts startup from the unchanged180s outer allowance (recorded inner cap
+179.9989877909975s). Calculations/restoration completed, but this proof is not
+accepted for admission. A mistakenly attempted pair was blocked by the same
+guard before any child measurement or reference construction; its complete
+failure is [retained](../results/source-phase-cpu/pair-raw-manifest.json). No
+source-child timing result follows. Correct the remaining-budget parser, retain
+negative cases, and fully qualify the corrected source before further collection.
+No scientific cap, seed, tolerance or earlier outcome is changed.
+
+
+## Startup-adjusted allowance correction — November 16
+
+The [prospective correction](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6941037776)
+keeps the rejected proof and blocked pair unchanged. A separate corrected entry
+and config use `results/source-phase-cpu-v2`; all 442 predecessor scientific
+files remain unchanged. The new parser accepts finite numeric inner allowances
+with `0 < cap <= 180` and requires the complete child duration below that cap.
+The fixed outer180-second limit remains. For example, startup can legitimately
+leave 179.9989877909975 seconds; requiring exactly180 rejects valid evidence.
+
+All78 corrected-runner tests pass on actual3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4
+(34.24/31.21s), including fractional/exact allowances, invalid/exhausted limits
+and a CLI-calculation/publication round-trip. Full strict typing passes812files.
+A launcher preflight verifies published own evidence inside the complete outer
+clock; rejected or interrupted checks start no child and retain their clock.
+These are software checks, not a new formal proof or real cost-loader result.
+Full new local/hosted qualification remains before any revised collection.
+No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
+
+
+### November 17, 2026: startup-adjusted parser source requalified
+
+[PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) correction source
+`5496ef1`, 444-file fingerprint `5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9`:
+all six [qualification roles](../results/source-phase-cpu-v2/checks.json) pass. Local bases: 5,081 passed,
+68 skipped, 150 deselected (1,355.23 / 1,341.81 seconds); optional suites:
+1,987 each (927.39 / 853.82 seconds). Hosted run
+[44040643292](https://github.com/jimmy-sim/poker-ai/actions/runs/44040643292)
+passes both jobs; full logs verify actual patch/NumPy, every uv selection and
+the entire checkout tree. All 442 predecessor scientific files remain unchanged.
+
+Ten exact administrative tools and all fixture records are retained. The final
+launcher passes six process and five preflight cases, including refusal to
+launch after preflight exhausts the outer allowance. The initial tiny fixture
+attempted a late child, then received PermissionError during cleanup before its
+outer receipt; its exact script, partial output and traceback remain archived.
+The corrected fixture retains PID-null/124 with no child. Four retention and ten
+synthetic publication cases pass; report-guard setup resolves 50 entry points on
+each actual runtime without numerical execution. Installed OpenSpiel 2.0.2
+Apache-2.0 license bytes were read before fresh use; comparison stays scalar-only.
+
+All original rejected proof/blocked-pair evidence remains. This publication
+precedes any revised formal own proof or reference comparison. No scientific
+cap, seed, tolerance, policy, dependency or CI change, and no training or strength
+claim. Implementation, execution and documentation are Codex-assisted; personal
+practice and hours are not inferred.
+
+
+November 17 — Revised own-only proof after public qualification `01658dd`:
+complete outer 6.215336457997182 seconds / 180, inner 6.118413584001246 seconds against
+startup-adjusted allowance 179.9991310000005. All 13 raw files plus source-publication
+verification retained. Exact actual archived software replay, zero source roots,
+14 separately synthetic forwarding calls, full restoration; no reference or poker
+training constructed. Public-boundary verification remains before the one fixed
+complete pair; original rejected proof and blocked pair remain unchanged.
+
+
+November 17 — Corrected public own-proof verification passes before the one fixed
+complete ordinary/profiled pair. Both arms finish, exact complete scalar and
+computed-replay identity recorded; original caps and work retained. All 27
+raw pair members plus the prior own-publication verification are retained for
+publication before analysis. No retries or stage selection; no timing conclusion,
+new training or admission is claimed at this boundary.
+
+
+### November 17: nested source-loader report
+
+Raw pair `e931955` was public and verified before analysis. Ordinary/observed
+complete commands: 413.95887391699944 / 415.1078454160015 seconds; full outer CLI
+832.0623138330011 / 1,800. Every original read, 432 profiles, 1,152 conditions,
+three reference workers and all 14 selected calls retained; exact complete
+scalar/computed-replay identity and restoration. Independent maximum discrepancy
+1.8474111129762605e-13 chips < 1e-9, scalar comparison-only.
+
+[The generated report and limits](source-phase-cpu.md#what-the-complete-comparison-found--november-17)
+locate 39.248285 / 37.222540 parent CPU seconds in sampled-parent archive
+validation and 33.107687 / 34.100730 in earlier scientific sources. Source totals
+82.683827 / 81.157078; their combined shares 87.50921991068459% / 87.88299401316542%.
+No causal speedup or stable overhead inferred from one ordered pair.
+
+All three report exports match byte for byte on actual Python 3.11.17/NumPy 2.4.6
+and 3.12.15/2.5.4 with 50 numerical paths blocked, zero forbidden calls and every
+original raw member unchanged. Both PNGs inspected. Work log, method, journal128
+and current journal summary updated together; no README experiment update.
+Final four local roles and both same-head hosted jobs remain before merge.
+No training, failed-gate override, default/fresh/global or strength claim.
+
+
+### November 17: retain final local failures and correct linked-index access
+
+At report head `74087e2`, both hosted jobs pass actual patch/NumPy/all-uv and whole
+checkout checks (1,295.03 / 1,039.34 seconds). Both local bases instead retain one
+failed archived-software replay: **5,080 passed / one failed / 68 skipped /
+150 deselected**, 2,113.39 / 2,112.53 seconds. Optional roles did not start.
+[Full failure, hosted and recovery evidence](../results/source-phase-cpu-v2/qualification-history/final-index-refresh/manifest.json)
+is preserved before the next full qualification; no gate waiver.
+
+Git trace: restricted status scans all 6,680 contents without updating its linked
+index; ordinary authorized status writes only refreshed index metadata. The next
+restricted status scans zero contents. Diagnostic status wall times 5.485529 /
+3.576894 (refresh) / 0.036168 seconds are environment evidence, not production
+costs. Exact failing tests then pass 4.34 / 4.28 seconds with unchanged 180-second
+caps. All 444 scientific sources/128 input pins and staged/working-tree contents
+remain unchanged. No scientific pair retry, algorithm, dependency or CI change.
+
+Complete new final checks remain required on this coherent evidence/documentation
+revision. Use normal linked-index metadata access for local checks, preserving
+all earlier failures and exact runtimes. Journal128 records the explanation;
+Codex-assisted execution, no inferred human hours or mastery.

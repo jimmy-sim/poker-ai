@@ -1,0 +1,32 @@
+{
+  "status": "partial_software_qualification_no_completed_roles",
+  "checked_commit": "fd1cdd14fbbc8b3815f6c243ac63576bf2b30440",
+  "source_fingerprint": "9a206e511ee285d0bd396719c4860df6684b46e5c2803f6f139004b6238034c7",
+  "observed_at_utc": "2026-11-16T23:38:54Z",
+  "known": "After chat turn interruption both unified session IDs are unknown, no owned qualification processes remain, both logs end at27percent and no completion receipts exist.",
+  "termination_signal": "not recorded",
+  "assertion_failure_reported": false,
+  "scope": "Retain externally interrupted software checks. Same source/operator/selection are run again into fresh logs; no scientific proof/pair/timing was started or retried.",
+  "files": [
+    {
+      "file": "base311-install.log",
+      "bytes": 661,
+      "sha256": "8c2a9ec0b772fe21b89595276f7434ee22bdff5195feb0689b526c649fcced61"
+    },
+    {
+      "file": "base311.log",
+      "bytes": 3183,
+      "sha256": "b3aa8de38fb33d62d0d20de56e4fc2236a216e4040ee608fe66edd8293553d39"
+    },
+    {
+      "file": "base312-install.log",
+      "bytes": 365,
+      "sha256": "f6ab05c6199d4d4a04d51e8df2b447d9049d2853a2e28c3c55aa6fb878611f5a"
+    },
+    {
+      "file": "base312.log",
+      "bytes": 3183,
+      "sha256": "73cc43b1044f496978170d145529d10d68c42b26eaa1ff5b5102c7b4356555b9"
+    }
+  ]
+}

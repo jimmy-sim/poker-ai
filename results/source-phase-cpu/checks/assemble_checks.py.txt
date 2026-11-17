@@ -1,0 +1,97 @@
+"""Publish all six immutable-source roles and exact tested administrative tools."""
+import gzip,hashlib,io,json,re,runpy,shutil,subprocess,tarfile
+from pathlib import Path
+W=Path(__file__).resolve().parent;R=W/'source-phase-cpu';F=W/'source-phases-source-v2-checks'
+expected=json.loads((W/'source-phases-source-v2-expected.json').read_text())
+head=expected['git_commit'];fp=expected['fingerprint']
+OUT=R/'results/source-phase-cpu/checks'
+assert not OUT.exists() and not (OUT.parent/'checks.json').exists()
+assert subprocess.check_output(['git','-C',str(R),'rev-parse','HEAD'],text=True).strip()==head
+assert not subprocess.check_output(['git','-C',str(R),'status','--porcelain'],text=True).strip()
+rows=[]
+for role in ('base','optional'):
+ for minor,version,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+  receipt=json.loads((F/f'{role}{minor}-receipt.json').read_text());log=(F/f'{role}{minor}.log').read_text()
+  assert receipt['status']=='passed' and receipt['checked_commit']==head and receipt['source_fingerprint']==fp
+  assert set(re.findall(r'ACTUAL_PYTHON=([0-9.]+)',log))=={version}
+  assert set(re.findall(r'ACTUAL_NUMPY=([0-9.]+)',log))=={np}
+  assert set(re.findall(r'CHECKED_COMMIT=([0-9a-f]+)',log))=={head}
+  assert set(re.findall(r'COLLECTOR_SOURCE=([0-9a-f]+)',log))=={fp}
+  result=next(line for line in log.splitlines() if re.match(r'^\d+ passed',line))
+  assert result.startswith('5004 passed, 67 skipped, 150 deselected' if role=='base' else '1909 passed')
+  rows.append(dict(role=role,minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python=version,numpy=np,result=result,check_seconds=receipt['check_seconds']))
+run=json.loads((F/'run.json').read_text());jobs=json.loads((F/'jobs.json').read_text())['jobs']
+assert run['head_sha']==head and run['status']=='completed' and run['conclusion']=='success' and run['event']=='pull_request'
+checkout=json.loads((F/'checkout-source.json').read_text())
+tree=subprocess.check_output(['git','-C',str(R),'rev-parse',head+'^{tree}'],text=True).strip()
+assert checkout['tree']['sha']==tree and head in [p['sha'] for p in checkout['parents']]
+parser=runpy.run_path(str(R/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='parse_actual_runtime')['parse']
+for minor,version,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+ job=next(j for j in jobs if j['name']=='Python '+version[:4])
+ assert job['head_sha']==head and job['run_id']==run['id'] and job['status']=='completed' and job['conclusion']=='success'
+ assert all(step['conclusion']=='success' for step in job['steps'])
+ text=(F/f'hosted{minor}.log').read_text(encoding='utf-8-sig');actual=parser(text)
+ assert actual['actual_python']==[version] and actual['all_uv_versions']==[version]
+ assert re.findall(r'ACTUAL_NUMPY=([0-9.]+)\s*$',text,re.M)==[np]
+ assert head in text and checkout['sha'] in text
+ result=next(line for line in text.splitlines() if '5004 passed, 67 skipped, 150 deselected' in line)
+ rows.append(dict(role='hosted',minor=minor,status='passed',source_fingerprint=fp,checked_commit=head,python=version,numpy=np,result=result,run_id=run['id'],job_id=job['id'],head_sha=head,conclusion='success',actual_uv_versions=actual['all_uv_versions'],actual_checkout_sha=checkout['sha'],actual_checkout_tree=tree,tested_tree_equals_pr_head=True))
+# GitHub carries the successful 3.12 payload into the single-job retry with
+# a new logical job ID. Preserve the actual execution identity, not a new run claim.
+prior_path=F/'cancelled-attempt1/jobs.json'
+if prior_path.exists():
+ prior_jobs=json.loads(prior_path.read_text())['jobs']
+ for row in rows:
+  if row['role']!='hosted':continue
+  current=next(j for j in jobs if j['id']==row['job_id'])
+  row['workflow_attempt']=current['run_attempt']
+  row['actual_execution_job_id']=current['id'];row['actual_execution_attempt']=current['run_attempt'];row['reused_prior_success']=False
+  if row['minor']=='312':
+   old=next(j for j in prior_jobs if j['name']=='Python 3.12')
+   assert old['conclusion']=='success' and old['head_sha']==head
+   assert old['started_at']==current['started_at'] and old['completed_at']==current['completed_at']
+   assert (F/'hosted312.log').read_bytes()==(F/'cancelled-attempt1/hosted312.log').read_bytes()==(F/'retry-attempt2/hosted312-reused.log').read_bytes()
+   row.update(actual_execution_job_id=old['id'],actual_execution_attempt=old['run_attempt'],reused_prior_success=True)
+OUT.mkdir(parents=True)
+for p in F.rglob('*'):
+ if p.is_file():q=OUT/p.relative_to(F);q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+operators={}
+for name,destination in [
+ ('run-source-phases-source-v2-checks.py','run_checks.py.txt'),
+ ('run-source-phases-collection.py','operator_launch.py.txt'),
+ ('retain-source-phases-collection.py','operator_retention.py.txt'),
+ ('verify-source-phases-publication.py','verify_publication.py.txt'),
+ ('check-source-phases-operators.py','check_operators.py.txt'),
+ ('check-source-phases-retention.py','check_retention.py.txt'),
+ ('check-source-phases-publication.py','check_publication.py.txt'),
+ ('check-source-phases-report.py','report_execution_guard.py.txt'),
+ ('check-source-phase-guard-setup.py','check_report_guard_setup.py.txt')]:
+ q=OUT/destination;shutil.copyfile(W/name,q)
+ operators[name]=dict(file=str(q.relative_to(R)),sha256=hashlib.sha256(q.read_bytes()).hexdigest())
+shutil.copyfile(__file__,OUT/'assemble_checks.py.txt')
+shutil.copyfile(W/'source-phases-source-v2-expected.json',OUT/'source-phases-source-v2-expected.json')
+for minor in ('311','312'):shutil.copyfile(W/('source-phase-license'+minor+'.json'),OUT/('license'+minor+'.json'))
+for name in ('source-phases-operators-allowed.log','source-phases-retention.log','source-phases-publication.log'):shutil.copyfile(W/name,OUT/name)
+for minor in ('311','312'):
+ for suffix in ('.json','.log'):shutil.copyfile(W/('source-phase-guard-setup-'+minor+suffix),OUT/('report-guard-setup-'+minor+suffix))
+
+def archive(folder,destination):
+ raw=io.BytesIO();members=[]
+ with tarfile.open(fileobj=raw,mode='w') as stream:
+  for p in sorted(folder.rglob('*')):
+   assert not p.is_symlink()
+   if not p.is_file():continue
+   data=p.read_bytes();name=str(p.relative_to(folder));info=tarfile.TarInfo(name);info.size=len(data);info.mode=0o644;stream.addfile(info,io.BytesIO(data));members.append(dict(file=name,sha256=hashlib.sha256(data).hexdigest(),bytes=len(data)))
+ destination.write_bytes(gzip.compress(raw.getvalue(),mtime=0))
+ with tarfile.open(fileobj=io.BytesIO(gzip.decompress(destination.read_bytes())),mode='r') as stream:
+  for row in members:assert hashlib.sha256(stream.extractfile(row['file']).read()).hexdigest()==row['sha256']
+ return members
+
+fixture_inventories={}
+for name in ('source-phases-operator-fixtures','source-phases-retention-fixtures','source-phases-publication-fixtures'):
+ fixture_inventories[name]=archive(W/name,OUT/(name+'.tar.gz'))
+(OUT/'fixture-archives.json').write_text(json.dumps(fixture_inventories,indent=2)+'\n')
+for row in rows:
+ p=OUT/f"{row['role']}{row['minor']}.log";row['log']=dict(file=str(p.relative_to(R)),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+(OUT.parent/'checks.json').write_text(json.dumps(dict(source_fingerprint=fp,checks=rows,operators=operators,scope='All six roles on immutable442-file phase source; all439 predecessor scientific bytes and128 pins unchanged. Actual runtime/all uv/entire tested Git tree verified. Unit tests may exercise fictional and existing fixture solvers; no formal phase proof, fixed audit pair or new real trajectory has run. Publish these six roles and exact tested operators before fresh own-only proof, then publish own raw evidence before any new reference. The first two local base jobs ended during a chat interruption at27percent with no completion receipts; all partial logs are retained. The next software cohort was stopped to fix typed proof-metadata validation; all partial records and the five failing regression cases remain in qualification-history. Corrected-source roles qualify a new immutable checkout. No scientific measurement was started or retried. Retain any failed source-check attempts without changing scientific caps. No formal source-child proof or pair has run. Negative budget/strength results stay unchanged.'),indent=2)+'\n')
+print(json.dumps(dict(status='all_six_exact_source_roles_archived_before_formal_collection',head=head,source_fingerprint=fp,rows=[dict(role=r['role'],minor=r['minor'],result=r['result']) for r in rows])))

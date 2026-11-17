@@ -1,0 +1,156 @@
+{
+  "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5081 passed, 68 skipped, 150 deselected in 1355.23s (0:22:35)",
+      "check_seconds": 1411.3553462089985,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/base311.log",
+        "sha256": "f3b44f6b1f4a38593618ea4101f5b4f754870c4322555391cd8bd777bb9126d7"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5081 passed, 68 skipped, 150 deselected in 1341.81s (0:22:21)",
+      "check_seconds": 1399.7869104580022,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/base312.log",
+        "sha256": "ad40f18e1b133e7e80c6814d6723d197573230d84897ee825876248c43f9278a"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1987 passed in 927.39s (0:15:27)",
+      "check_seconds": 967.8448882500015,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/optional311.log",
+        "sha256": "cdfa1e77aa84ea377cddd87b30bfb69a51c37fdbcd2fc25a5ea77d08a51c9404"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1987 passed in 853.82s (0:14:13)",
+      "check_seconds": 895.1798830419975,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/optional312.log",
+        "sha256": "d2ea137f79786769e6e1e107685dc540029187f8ac31a5b2dfcccc8165bc65ca"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-17T08:02:19.1647675Z 5081 passed, 68 skipped, 150 deselected, 1 warning in 1202.81s (0:20:02)",
+      "run_id": 44040643292,
+      "job_id": 133894110820,
+      "head_sha": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "ad2c491064135e6ce6ad40f0b8f1d15b182d44a1",
+      "actual_checkout_tree": "b2512cea2c5c5f0f498aeb8bde7966b5964499fe",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/hosted311.log",
+        "sha256": "8f161857d3be3c0c7cae2feb605739c1c6fc7947f625f90e59e67c3bc1fc020f"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+      "checked_commit": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-17T07:59:30.0419222Z 5081 passed, 68 skipped, 150 deselected, 1 warning in 1034.17s (0:17:14)",
+      "run_id": 44040643292,
+      "job_id": 133894111205,
+      "head_sha": "5496ef14005320f0d13eb31976ffb99e542299fa",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "ad2c491064135e6ce6ad40f0b8f1d15b182d44a1",
+      "actual_checkout_tree": "b2512cea2c5c5f0f498aeb8bde7966b5964499fe",
+      "tested_tree_equals_pr_head": true,
+      "log": {
+        "file": "results/source-phase-cpu-v2/checks/hosted312.log",
+        "sha256": "0b09be7347a24384b923f0e953f1d59fde28d23d0e6418d5a3ffa69f600bb9b1"
+      }
+    }
+  ],
+  "operators": {
+    "run-source-budget-v2-checks.py": {
+      "file": "results/source-phase-cpu-v2/checks/run_checks.py.txt",
+      "sha256": "cc08e58469e796b72cbbc6ce007937067492991706a67b4a1e2406a4b77e400f"
+    },
+    "run-source-budget-v2-collection.py": {
+      "file": "results/source-phase-cpu-v2/checks/operator_launch.py.txt",
+      "sha256": "223e26f598c6fbc7ba8ec17e5970be8570945194a283164f1a9d38253b7c3db3"
+    },
+    "retain-source-budget-v2-collection.py": {
+      "file": "results/source-phase-cpu-v2/checks/operator_retention.py.txt",
+      "sha256": "a8b47cc5d5085500eea16d8e00cafc28d3e5c66556f60c6e28f8fc4f0a34ce90"
+    },
+    "verify-source-budget-v2-publication.py": {
+      "file": "results/source-phase-cpu-v2/checks/verify_publication.py.txt",
+      "sha256": "47616f4acc89cc90f90148463a11f45a9995fa3f63eaeaa4e0ea20b08f1a628d"
+    },
+    "check-source-budget-v2-operators.py": {
+      "file": "results/source-phase-cpu-v2/checks/check_operators.py.txt",
+      "sha256": "d830a609cf55fa8123577e67c1482ff57c8f06b25a77c8954e725a75c790ac84"
+    },
+    "check-source-budget-v2-retention.py": {
+      "file": "results/source-phase-cpu-v2/checks/check_retention.py.txt",
+      "sha256": "6c14d2806a917ba01c1fd76de75167661be7c617006bd8ba7e82c855f49186a1"
+    },
+    "check-source-budget-v2-publication.py": {
+      "file": "results/source-phase-cpu-v2/checks/check_publication.py.txt",
+      "sha256": "4d84ee6b455afad8af0c50c59d8e366bce1f39d3c76675b2f9a288502cad0d8c"
+    },
+    "check-source-budget-v2-report.py": {
+      "file": "results/source-phase-cpu-v2/checks/report_execution_guard.py.txt",
+      "sha256": "6aaeeeee05519a7880ed1b1e950361cd4b3849b77b43cf63b55c31e8bc2ee6b2"
+    },
+    "check-source-budget-v2-guard-setup.py": {
+      "file": "results/source-phase-cpu-v2/checks/check_report_guard_setup.py.txt",
+      "sha256": "d648b727aaa69de745723d212eee36b8148b46aafb61ec6da0d8eb6c69aedddd"
+    },
+    "check-source-budget-v2-preflight.py": {
+      "file": "results/source-phase-cpu-v2/checks/check_preflight.py.txt",
+      "sha256": "9f4bf9bfc6b5861d47d584fec034f0115d980c501f5afc783e5d3a5ad6183e36"
+    }
+  },
+  "scope": "All six immutable444-file revised source roles; all442 predecessor bytes and128 scientific inputs unchanged. Actual runtimes/all uv/whole tested tree verified. Fixed startup-adjusted parser and fail-closed outer-clock preflight; original rejected proof/blocked pair remain historical, no favorable retry. Publish all six plus ten exact operators before revised formal own proof. Own before reference, raw before analysis, all original caps/seeds/tolerances/work retained. No training or strength admission."
+}

@@ -1,0 +1,484 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+___ test_own_publication_rejects_false_or_damaged_evidence[actual_read_bool] ___
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-2/test_own_publication_rejects_f0'), {'sha256': {}})
+damage = 'actual_read_bool'
+
+    @pytest.mark.parametrize(
+        "damage",
+        [
+            "extra",
+            "reference",
+            "cost_claim",
+            "fixture_claim",
+            "scalars",
+            "events",
+            "source",
+            "clock",
+            "pid",
+            "missing",
+            "input",
+            "matched_wrong_inventory",
+            "matched_excess_error",
+            "wrong_proof_command",
+            "escaping_proof_clock",
+            "actual_read_bool",
+            "synthetic_read_bool",
+            "root_read_bool",
+            "proof_cap_bool",
+            "proof_cap_excess",
+        ],
+    )
+    def test_own_publication_rejects_false_or_damaged_evidence(
+        own_publication_fixture: tuple[Path, dict[str, Any]], damage: str
+    ) -> None:
+        root, source = own_publication_fixture
+        folder = root / runner.FOLDER / "software"
+        child = json.loads((folder / "child.json").read_text())
+        proof = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if damage == "extra":
+            (folder / "unlisted").write_bytes(b"extra")
+        elif damage == "reference":
+            child["reference_constructed"] = True
+        elif damage == "cost_claim":
+            proof["real_cost_loader_coverage"] = True
+        elif damage == "fixture_claim":
+            proof["synthetic_read_indices"] = []
+        elif damage == "scalars":
+            proof["plain_computed_replays"][0]["unique_profiles"] = 431
+        elif damage == "events":
+            (folder / "read-1-events.jsonl").write_bytes(b"")
+        elif damage == "actual_read_bool":
+            proof["actual_read_indices"] = [False]
+        elif damage == "synthetic_read_bool":
+            proof["synthetic_read_indices"] = [True, 2]
+        elif damage == "root_read_bool":
+            proof["root_forwarded_indices"] = [True, 2]
+        elif damage == "proof_cap_bool":
+            measurement["cap_seconds"] = True
+        elif damage == "proof_cap_excess":
+            measurement["cap_seconds"] = 999
+        elif damage == "source":
+            child["source"] = dict(sha256=dict(changed="x"))
+        elif damage == "clock":
+            measurement["seconds"] = True
+        elif damage == "pid":
+            measurement["child_pid"] += 1
+        elif damage == "missing":
+            (folder / "read-2.json").unlink()
+        elif damage in ("matched_wrong_inventory", "matched_excess_error"):
+            key = (
+                "unique_profiles"
+                if damage == "matched_wrong_inventory"
+                else "maximum_error"
+            )
+            for name in ("plain_computed_replays", "observed_computed_replays"):
+                proof[name][0][key] = 431 if key == "unique_profiles" else 100.0
+            observed = json.loads((folder / "observer.json").read_text())
+            observed["replays"][0]["computed"] = proof["plain_computed_replays"][0]
+            runner.atomic(folder / "observer.json", observed)
+        elif damage == "wrong_proof_command":
+            measurement["command"][1] = "wrong-proof-entry.py"
+        elif damage == "escaping_proof_clock":
+            child["started_perf_counter"] = proof["reads"][0]["before"]["wall"] + 1
+            measurement["started_perf_counter"] = child["started_perf_counter"]
+        else:
+            (root / proof["input"]["file"]).write_bytes(b"changed")
+        runner.atomic(folder / "proof.json", proof)
+        child["proof_sha256"] = runner.digest(folder / "proof.json")
+        runner.atomic(folder / "child.json", child)
+        measurement["child_sha256"] = runner.digest(folder / "child.json")
+        runner.atomic(folder / "measurement.json", measurement)
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+work/source-phase-cpu/tests/test_source_phase_cpu.py:364: Failed
+_ test_own_publication_rejects_false_or_damaged_evidence[synthetic_read_bool] __
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-2/test_own_publication_rejects_f1'), {'sha256': {}})
+damage = 'synthetic_read_bool'
+
+    @pytest.mark.parametrize(
+        "damage",
+        [
+            "extra",
+            "reference",
+            "cost_claim",
+            "fixture_claim",
+            "scalars",
+            "events",
+            "source",
+            "clock",
+            "pid",
+            "missing",
+            "input",
+            "matched_wrong_inventory",
+            "matched_excess_error",
+            "wrong_proof_command",
+            "escaping_proof_clock",
+            "actual_read_bool",
+            "synthetic_read_bool",
+            "root_read_bool",
+            "proof_cap_bool",
+            "proof_cap_excess",
+        ],
+    )
+    def test_own_publication_rejects_false_or_damaged_evidence(
+        own_publication_fixture: tuple[Path, dict[str, Any]], damage: str
+    ) -> None:
+        root, source = own_publication_fixture
+        folder = root / runner.FOLDER / "software"
+        child = json.loads((folder / "child.json").read_text())
+        proof = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if damage == "extra":
+            (folder / "unlisted").write_bytes(b"extra")
+        elif damage == "reference":
+            child["reference_constructed"] = True
+        elif damage == "cost_claim":
+            proof["real_cost_loader_coverage"] = True
+        elif damage == "fixture_claim":
+            proof["synthetic_read_indices"] = []
+        elif damage == "scalars":
+            proof["plain_computed_replays"][0]["unique_profiles"] = 431
+        elif damage == "events":
+            (folder / "read-1-events.jsonl").write_bytes(b"")
+        elif damage == "actual_read_bool":
+            proof["actual_read_indices"] = [False]
+        elif damage == "synthetic_read_bool":
+            proof["synthetic_read_indices"] = [True, 2]
+        elif damage == "root_read_bool":
+            proof["root_forwarded_indices"] = [True, 2]
+        elif damage == "proof_cap_bool":
+            measurement["cap_seconds"] = True
+        elif damage == "proof_cap_excess":
+            measurement["cap_seconds"] = 999
+        elif damage == "source":
+            child["source"] = dict(sha256=dict(changed="x"))
+        elif damage == "clock":
+            measurement["seconds"] = True
+        elif damage == "pid":
+            measurement["child_pid"] += 1
+        elif damage == "missing":
+            (folder / "read-2.json").unlink()
+        elif damage in ("matched_wrong_inventory", "matched_excess_error"):
+            key = (
+                "unique_profiles"
+                if damage == "matched_wrong_inventory"
+                else "maximum_error"
+            )
+            for name in ("plain_computed_replays", "observed_computed_replays"):
+                proof[name][0][key] = 431 if key == "unique_profiles" else 100.0
+            observed = json.loads((folder / "observer.json").read_text())
+            observed["replays"][0]["computed"] = proof["plain_computed_replays"][0]
+            runner.atomic(folder / "observer.json", observed)
+        elif damage == "wrong_proof_command":
+            measurement["command"][1] = "wrong-proof-entry.py"
+        elif damage == "escaping_proof_clock":
+            child["started_perf_counter"] = proof["reads"][0]["before"]["wall"] + 1
+            measurement["started_perf_counter"] = child["started_perf_counter"]
+        else:
+            (root / proof["input"]["file"]).write_bytes(b"changed")
+        runner.atomic(folder / "proof.json", proof)
+        child["proof_sha256"] = runner.digest(folder / "proof.json")
+        runner.atomic(folder / "child.json", child)
+        measurement["child_sha256"] = runner.digest(folder / "child.json")
+        runner.atomic(folder / "measurement.json", measurement)
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+work/source-phase-cpu/tests/test_source_phase_cpu.py:364: Failed
+____ test_own_publication_rejects_false_or_damaged_evidence[root_read_bool] ____
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-2/test_own_publication_rejects_f2'), {'sha256': {}})
+damage = 'root_read_bool'
+
+    @pytest.mark.parametrize(
+        "damage",
+        [
+            "extra",
+            "reference",
+            "cost_claim",
+            "fixture_claim",
+            "scalars",
+            "events",
+            "source",
+            "clock",
+            "pid",
+            "missing",
+            "input",
+            "matched_wrong_inventory",
+            "matched_excess_error",
+            "wrong_proof_command",
+            "escaping_proof_clock",
+            "actual_read_bool",
+            "synthetic_read_bool",
+            "root_read_bool",
+            "proof_cap_bool",
+            "proof_cap_excess",
+        ],
+    )
+    def test_own_publication_rejects_false_or_damaged_evidence(
+        own_publication_fixture: tuple[Path, dict[str, Any]], damage: str
+    ) -> None:
+        root, source = own_publication_fixture
+        folder = root / runner.FOLDER / "software"
+        child = json.loads((folder / "child.json").read_text())
+        proof = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if damage == "extra":
+            (folder / "unlisted").write_bytes(b"extra")
+        elif damage == "reference":
+            child["reference_constructed"] = True
+        elif damage == "cost_claim":
+            proof["real_cost_loader_coverage"] = True
+        elif damage == "fixture_claim":
+            proof["synthetic_read_indices"] = []
+        elif damage == "scalars":
+            proof["plain_computed_replays"][0]["unique_profiles"] = 431
+        elif damage == "events":
+            (folder / "read-1-events.jsonl").write_bytes(b"")
+        elif damage == "actual_read_bool":
+            proof["actual_read_indices"] = [False]
+        elif damage == "synthetic_read_bool":
+            proof["synthetic_read_indices"] = [True, 2]
+        elif damage == "root_read_bool":
+            proof["root_forwarded_indices"] = [True, 2]
+        elif damage == "proof_cap_bool":
+            measurement["cap_seconds"] = True
+        elif damage == "proof_cap_excess":
+            measurement["cap_seconds"] = 999
+        elif damage == "source":
+            child["source"] = dict(sha256=dict(changed="x"))
+        elif damage == "clock":
+            measurement["seconds"] = True
+        elif damage == "pid":
+            measurement["child_pid"] += 1
+        elif damage == "missing":
+            (folder / "read-2.json").unlink()
+        elif damage in ("matched_wrong_inventory", "matched_excess_error"):
+            key = (
+                "unique_profiles"
+                if damage == "matched_wrong_inventory"
+                else "maximum_error"
+            )
+            for name in ("plain_computed_replays", "observed_computed_replays"):
+                proof[name][0][key] = 431 if key == "unique_profiles" else 100.0
+            observed = json.loads((folder / "observer.json").read_text())
+            observed["replays"][0]["computed"] = proof["plain_computed_replays"][0]
+            runner.atomic(folder / "observer.json", observed)
+        elif damage == "wrong_proof_command":
+            measurement["command"][1] = "wrong-proof-entry.py"
+        elif damage == "escaping_proof_clock":
+            child["started_perf_counter"] = proof["reads"][0]["before"]["wall"] + 1
+            measurement["started_perf_counter"] = child["started_perf_counter"]
+        else:
+            (root / proof["input"]["file"]).write_bytes(b"changed")
+        runner.atomic(folder / "proof.json", proof)
+        child["proof_sha256"] = runner.digest(folder / "proof.json")
+        runner.atomic(folder / "child.json", child)
+        measurement["child_sha256"] = runner.digest(folder / "child.json")
+        runner.atomic(folder / "measurement.json", measurement)
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+work/source-phase-cpu/tests/test_source_phase_cpu.py:364: Failed
+____ test_own_publication_rejects_false_or_damaged_evidence[proof_cap_bool] ____
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-2/test_own_publication_rejects_f3'), {'sha256': {}})
+damage = 'proof_cap_bool'
+
+    @pytest.mark.parametrize(
+        "damage",
+        [
+            "extra",
+            "reference",
+            "cost_claim",
+            "fixture_claim",
+            "scalars",
+            "events",
+            "source",
+            "clock",
+            "pid",
+            "missing",
+            "input",
+            "matched_wrong_inventory",
+            "matched_excess_error",
+            "wrong_proof_command",
+            "escaping_proof_clock",
+            "actual_read_bool",
+            "synthetic_read_bool",
+            "root_read_bool",
+            "proof_cap_bool",
+            "proof_cap_excess",
+        ],
+    )
+    def test_own_publication_rejects_false_or_damaged_evidence(
+        own_publication_fixture: tuple[Path, dict[str, Any]], damage: str
+    ) -> None:
+        root, source = own_publication_fixture
+        folder = root / runner.FOLDER / "software"
+        child = json.loads((folder / "child.json").read_text())
+        proof = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if damage == "extra":
+            (folder / "unlisted").write_bytes(b"extra")
+        elif damage == "reference":
+            child["reference_constructed"] = True
+        elif damage == "cost_claim":
+            proof["real_cost_loader_coverage"] = True
+        elif damage == "fixture_claim":
+            proof["synthetic_read_indices"] = []
+        elif damage == "scalars":
+            proof["plain_computed_replays"][0]["unique_profiles"] = 431
+        elif damage == "events":
+            (folder / "read-1-events.jsonl").write_bytes(b"")
+        elif damage == "actual_read_bool":
+            proof["actual_read_indices"] = [False]
+        elif damage == "synthetic_read_bool":
+            proof["synthetic_read_indices"] = [True, 2]
+        elif damage == "root_read_bool":
+            proof["root_forwarded_indices"] = [True, 2]
+        elif damage == "proof_cap_bool":
+            measurement["cap_seconds"] = True
+        elif damage == "proof_cap_excess":
+            measurement["cap_seconds"] = 999
+        elif damage == "source":
+            child["source"] = dict(sha256=dict(changed="x"))
+        elif damage == "clock":
+            measurement["seconds"] = True
+        elif damage == "pid":
+            measurement["child_pid"] += 1
+        elif damage == "missing":
+            (folder / "read-2.json").unlink()
+        elif damage in ("matched_wrong_inventory", "matched_excess_error"):
+            key = (
+                "unique_profiles"
+                if damage == "matched_wrong_inventory"
+                else "maximum_error"
+            )
+            for name in ("plain_computed_replays", "observed_computed_replays"):
+                proof[name][0][key] = 431 if key == "unique_profiles" else 100.0
+            observed = json.loads((folder / "observer.json").read_text())
+            observed["replays"][0]["computed"] = proof["plain_computed_replays"][0]
+            runner.atomic(folder / "observer.json", observed)
+        elif damage == "wrong_proof_command":
+            measurement["command"][1] = "wrong-proof-entry.py"
+        elif damage == "escaping_proof_clock":
+            child["started_perf_counter"] = proof["reads"][0]["before"]["wall"] + 1
+            measurement["started_perf_counter"] = child["started_perf_counter"]
+        else:
+            (root / proof["input"]["file"]).write_bytes(b"changed")
+        runner.atomic(folder / "proof.json", proof)
+        child["proof_sha256"] = runner.digest(folder / "proof.json")
+        runner.atomic(folder / "child.json", child)
+        measurement["child_sha256"] = runner.digest(folder / "child.json")
+        runner.atomic(folder / "measurement.json", measurement)
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+work/source-phase-cpu/tests/test_source_phase_cpu.py:364: Failed
+___ test_own_publication_rejects_false_or_damaged_evidence[proof_cap_excess] ___
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-2/test_own_publication_rejects_f4'), {'sha256': {}})
+damage = 'proof_cap_excess'
+
+    @pytest.mark.parametrize(
+        "damage",
+        [
+            "extra",
+            "reference",
+            "cost_claim",
+            "fixture_claim",
+            "scalars",
+            "events",
+            "source",
+            "clock",
+            "pid",
+            "missing",
+            "input",
+            "matched_wrong_inventory",
+            "matched_excess_error",
+            "wrong_proof_command",
+            "escaping_proof_clock",
+            "actual_read_bool",
+            "synthetic_read_bool",
+            "root_read_bool",
+            "proof_cap_bool",
+            "proof_cap_excess",
+        ],
+    )
+    def test_own_publication_rejects_false_or_damaged_evidence(
+        own_publication_fixture: tuple[Path, dict[str, Any]], damage: str
+    ) -> None:
+        root, source = own_publication_fixture
+        folder = root / runner.FOLDER / "software"
+        child = json.loads((folder / "child.json").read_text())
+        proof = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if damage == "extra":
+            (folder / "unlisted").write_bytes(b"extra")
+        elif damage == "reference":
+            child["reference_constructed"] = True
+        elif damage == "cost_claim":
+            proof["real_cost_loader_coverage"] = True
+        elif damage == "fixture_claim":
+            proof["synthetic_read_indices"] = []
+        elif damage == "scalars":
+            proof["plain_computed_replays"][0]["unique_profiles"] = 431
+        elif damage == "events":
+            (folder / "read-1-events.jsonl").write_bytes(b"")
+        elif damage == "actual_read_bool":
+            proof["actual_read_indices"] = [False]
+        elif damage == "synthetic_read_bool":
+            proof["synthetic_read_indices"] = [True, 2]
+        elif damage == "root_read_bool":
+            proof["root_forwarded_indices"] = [True, 2]
+        elif damage == "proof_cap_bool":
+            measurement["cap_seconds"] = True
+        elif damage == "proof_cap_excess":
+            measurement["cap_seconds"] = 999
+        elif damage == "source":
+            child["source"] = dict(sha256=dict(changed="x"))
+        elif damage == "clock":
+            measurement["seconds"] = True
+        elif damage == "pid":
+            measurement["child_pid"] += 1
+        elif damage == "missing":
+            (folder / "read-2.json").unlink()
+        elif damage in ("matched_wrong_inventory", "matched_excess_error"):
+            key = (
+                "unique_profiles"
+                if damage == "matched_wrong_inventory"
+                else "maximum_error"
+            )
+            for name in ("plain_computed_replays", "observed_computed_replays"):
+                proof[name][0][key] = 431 if key == "unique_profiles" else 100.0
+            observed = json.loads((folder / "observer.json").read_text())
+            observed["replays"][0]["computed"] = proof["plain_computed_replays"][0]
+            runner.atomic(folder / "observer.json", observed)
+        elif damage == "wrong_proof_command":
+            measurement["command"][1] = "wrong-proof-entry.py"
+        elif damage == "escaping_proof_clock":
+            child["started_perf_counter"] = proof["reads"][0]["before"]["wall"] + 1
+            measurement["started_perf_counter"] = child["started_perf_counter"]
+        else:
+            (root / proof["input"]["file"]).write_bytes(b"changed")
+        runner.atomic(folder / "proof.json", proof)
+        child["proof_sha256"] = runner.digest(folder / "proof.json")
+        runner.atomic(folder / "child.json", child)
+        measurement["child_sha256"] = runner.digest(folder / "child.json")
+        runner.atomic(folder / "measurement.json", measurement)
+>       with pytest.raises(ArithmeticError):
+E       Failed: DID NOT RAISE ArithmeticError
+
+work/source-phase-cpu/tests/test_source_phase_cpu.py:364: Failed
+=========================== short test summary info ============================
+FAILED work/source-phase-cpu/tests/test_source_phase_cpu.py::test_own_publication_rejects_false_or_damaged_evidence[actual_read_bool]
+FAILED work/source-phase-cpu/tests/test_source_phase_cpu.py::test_own_publication_rejects_false_or_damaged_evidence[synthetic_read_bool]
+FAILED work/source-phase-cpu/tests/test_source_phase_cpu.py::test_own_publication_rejects_false_or_damaged_evidence[root_read_bool]
+FAILED work/source-phase-cpu/tests/test_source_phase_cpu.py::test_own_publication_rejects_false_or_damaged_evidence[proof_cap_bool]
+FAILED work/source-phase-cpu/tests/test_source_phase_cpu.py::test_own_publication_rejects_false_or_damaged_evidence[proof_cap_excess]
+5 failed, 59 deselected in 5.03s

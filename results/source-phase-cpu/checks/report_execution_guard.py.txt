@@ -1,0 +1,82 @@
+"""Recreate saved numerical exports with game construction/solving blocked."""
+import hashlib,json,os,sys,time,pkgutil
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+W=Path(__file__).resolve().parent;R=W/'source-phase-cpu'
+sys.path[:0]=[str(R/'src'),str(R/'scripts')]
+import numpy as np
+import profile_source_phases as runner
+from poker_ai.evaluation.compact_opponent_guard import isolated
+minor='311' if sys.version.split()[0]=='3.11.17' else '312'
+assert (sys.version.split()[0],np.__version__) in [('3.11.17','2.4.6'),('3.12.15','2.5.4')]
+source=R/runner.FOLDER/'pair';destination=R/'results/runs'/('source-phases-report-blocked-'+minor)
+receipt=W/('source-phases-report-'+minor+'.json')
+assert not destination.exists() and not receipt.exists()
+before={str(p.relative_to(source)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.is_file()}
+attempts=[]
+def forbidden(*args,**kwargs):
+ attempts.append('forbidden_numerical_execution')
+ raise AssertionError('saved report attempted to construct/replay/solve a game')
+blocked=[
+ 'poker_ai.postflop.matrix.MatrixTree.build',
+ 'poker_ai.postflop.tree.SpotTree.build',
+ 'poker_ai.postflop.controlled_scoring.ScoringContext.__init__',
+ 'poker_ai.postflop.controlled_scoring.ScoringContext.score',
+ 'poker_ai.evaluation.compact_opponent_sources.load',
+ 'poker_ai.evaluation.opponent_learning_contexts.software_context',
+ 'poker_ai.evaluation.opponent_learning_own.fixture',
+ 'poker_ai.evaluation.opponent_learning_own.replay',
+ 'poker_ai.evaluation.opponent_learning_own.replay_snapshot',
+ 'poker_ai.postflop.learning_training.replay_snapshot',
+ 'poker_ai.postflop.learning_training.replay_detail',
+ 'poker_ai.postflop.learning_artifacts.decode',
+ 'poker_ai.abstraction.potential.canonical_cards',
+ 'suit_candidates_support.reduced_cards',
+ 'compact_suit.cli.child_main',
+ 'compact_suit.cli.read',
+ 'compact_suit.cli.replay',
+ 'compact_suit.native.independent',
+ 'poker_ai.postflop.learning_training.decode',
+ 'poker_ai.postflop.controlled_checkpoints.unpack_policy',
+ 'poker_ai.finite.ArrayTree.edges',
+ 'poker_ai.finite.ArrayTree.values',
+ 'poker_ai.evaluator.evaluate_five',
+ 'poker_ai.evaluator.evaluate_best_reference',
+ 'poker_ai.evaluator.evaluate_best',
+ 'grouped_depth_support.BASE_FUNCTION',
+ 'grouped_depth_support.BASE_DESCRIPTOR',
+ 'grouped_depth_support.build',
+ 'suit_candidates_support.BASE',
+ 'suit_candidates_support.ALL',
+ 'suit_candidates_support.BASE_MASK',
+ 'suit_lookup_support.translated_cards',
+ 'suit_lookup_support.BASE',
+ 'suit_lookup_support.BASE_MASK',
+ 'profile_reader_phases.own_math',
+ 'profile_reader_phases.execute_child',
+ 'profile_reader_phases.proof',
+ 'profile_reader_phases.child',
+ 'profile_reader_phases.pair',
+ 'profile_source_phases.own_math',
+ 'profile_source_phases.execute_child',
+ 'profile_source_phases.proof',
+ 'profile_source_phases.child',
+ 'profile_source_phases.pair',
+ 'profile_checkpoint_cpu.supervise',
+]
+started=time.perf_counter()
+with isolated(worker=False),ExitStack() as stack:
+ # Import/static metadata setup precedes blocking; no game or learner is built.
+ # Captured original dispatch aliases are then blocked too.
+ for name in blocked:pkgutil.resolve_name(name)
+ descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+ for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+ runner.report(R,source,destination)
+assert not attempts
+names=['reads.csv','commands.csv','summary.json']
+for name in names:assert (destination/name).read_bytes()==(source/'report'/name).read_bytes()
+assert before=={str(p.relative_to(source)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.is_file()}
+actual=dict(status='three_numeric_exports_byte_equal_with_numerical_execution_blocked',python=sys.version.split()[0],numpy=np.__version__,seconds=time.perf_counter()-started,blocked=blocked,forbidden_attempts=attempts,static_import_setup_before_blocking=True,descriptor_types_preserved=True,numerical_sha256={n:hashlib.sha256((destination/n).read_bytes()).hexdigest() for n in names},source_inputs_unchanged=True,scope='Saved data and plotting only; not new trajectory replay or reference construction')
+with receipt.open('x') as out:json.dump(actual,out,indent=2);out.write('\n')
+print(json.dumps(actual))
