@@ -236,3 +236,103 @@ Reference outputs remain comparison-only. No source, seed, scientific cap or
 acceptance criterion changed for CI. Published qualification and exact tools must
 verify successfully before the formal own-only proof; no new proof/comparison or
 training has run at this publication boundary.
+
+
+## Rejected comparison and diagnosis — November 17
+
+**This experiment failed its preregistered complete-identity gate.** Both child
+commands completed, but the pair remains `failed_retained`. All
+[27 raw members](../results/context-reuse/pair-raw-manifest.json) were public at
+`00c93ad` and their bytes authenticated before the following diagnosis. The
+original scientific source, full identity check and failed result are unchanged.
+
+The complete context witness matches in both arms, as do all remaining result
+fields after separating four work counters. The original
+`profile_checkpoint_cpu.numerical_identity` deliberately includes these counters
+because earlier observation-only experiments required unchanged work. Reusing
+construction changes that work, so retaining its old complete identity requirement
+made this protocol overconstrained. This is a design error in the comparison
+contract, not a reason to silently accept the result afterward.
+
+| Changed field | Ordinary | Reuse |
+| --- | ---: | ---: |
+| Normalization requests | 918,104 | 602,980 |
+| Normalization reduced evaluations | 918,104 | 602,980 |
+| Validation-cache requests | 8,316 | 8,220 |
+| Validation-cache hits | 8,290 | 8,194 |
+
+The complete identity hashes differ (`ccd8e493…` versus `c9f2118d…`). Removing
+those four fields is a **post-outcome diagnostic projection**, not a prospective
+acceptance test. Its remaining fields match byte for byte, including every
+collected strategy/result record. Both children retain 432 profiles, 1,152 fixed
+conditions, three reference workers and maximum independent scalar discrepancy
+1.8474111129762605e-13 chips, below the unchanged 1e-9 tolerance.
+
+The timing observation is also unfavorable:
+
+| Clock, seconds | Ordinary | Reuse |
+| --- | ---: | ---: |
+| Complete child elapsed | 409.749993 | 486.746614 |
+| Parent body CPU | 278.772282 | 356.275704 |
+| Sum of parallel worker body CPU | 369.053525 | 367.353604 |
+
+The enclosing command takes 900.544028 seconds under 1,800; both children remain
+under 900. The failure is the identity comparison, not a deadline. Archive CPU
+is 43.217785 / 44.302908 seconds in ordinary reads versus 81.072654 /
+81.525714 in reuse. The request intervals include copying, full witnesses and
+input checks; the iterator also includes its consumer's decoding. This
+implementation does not demonstrate a runtime benefit. One ordered known-game
+pair cannot establish a stable causal slowdown or support production costs.
+
+![Rejected comparison: separate complete and CPU clocks](../results/context-reuse/rejected-report/rejected-clocks.png)
+
+![Rejected comparison: request and other archive CPU](../results/context-reuse/rejected-report/rejected-context-work.png)
+
+### Reproduce the failure diagnosis without another experiment
+
+```sh
+PYTHONPATH=src:scripts .venv/bin/python \
+  results/context-reuse/diagnosis/report-context-reuse-rejected.py.txt \
+  --root . --output results/runs/context-reuse-rejected-local
+```
+
+Use a fresh output folder and the locked research extra for plotting. This command
+requires the original failed status and original parser rejection, authenticates
+complete child/raw/source/journal/clock records, and blocks all 103 numerical,
+construction, clone and work entry points. It never constructs a game/reference
+or repeats the scientific pair. [Four numeric exports](../results/context-reuse/rejected-report/summary.json)
+(`reads.csv`, `commands.csv`, `differences.csv`, `summary.json`) reproduce byte for
+byte on actual Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4, with zero
+forbidden calls and unchanged raw data. [Code, actual-runtime receipts and visual review](../results/context-reuse/diagnosis/manifest.json)
+are retained. Both actual-data figures were inspected for labels, legends and
+clipping. The original valid-pair report still rejects this result.
+
+### Decision and limits
+
+Do not deploy this full-copy cache or reinterpret the failed gate as a pass.
+No unchanged-source scientific retry was run. A future construction-reuse study
+would need a corrected prospective distinction between poker-result identity and
+explicitly allowed work changes, with complete requalification before collection.
+This implementation also adds enough observed copy/check cost to make retrying it
+unjustified as a performance improvement. First examine a different measured
+validation cost, preserving original context/scoring work and every old gate.
+Any later optimizer needs its own prospective contract, correctness and full
+source qualification. No new Hold'em learning, default/fresh/global promotion or
+playing-strength result follows. The 912.54/900 forecast and 2.390%/1% accuracy
+gates remain failed. Human hands-on time is not recorded; implementation,
+execution and drafting were assisted by Codex.
+
+### Three questions to explain this result
+
+1. **Why can a consistency test fail when the poker results match?** Here the
+   identity included work counters. Eliminating repeated construction lowers
+   those counters. The original requirement stays failed; separating them after
+   seeing the data is diagnosis, not permission to revise an old outcome.
+2. **Did reuse help?** In this rejected run it took 486.75 versus 409.75 seconds.
+   Copying and checking the full context did not provide a benefit. One fixed
+   order is insufficient for a stable causal estimate, and there is no rollout.
+3. **What protects against a quiet change in decisions?** Complete context
+   witnesses match, every other collected result field matches, child native and
+   journal checks pass, and reporting reproduces on both actual runtimes with
+   constructors/replay blocked. These are bounded software/data checks, not
+   general Hold'em strength or a replacement for the failed identity gate.

@@ -1,0 +1,60 @@
+{
+  "status": "published_failed_pair_field_consistency_diagnosis",
+  "checks": {
+    "child_status": [
+      "complete_context_reuse_diagnostic",
+      "complete_context_reuse_diagnostic"
+    ],
+    "modes": [
+      "ordinary",
+      "reuse"
+    ],
+    "base_admission_rejected": [
+      true,
+      true
+    ],
+    "admission_evidence": [
+      false,
+      false
+    ],
+    "same_config": true,
+    "separate_typed_pid": true,
+    "same_source_map": true,
+    "same_numeric_identity": false,
+    "numeric_identity_sha256": [
+      "ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185",
+      "c9f2118dadb2a487f58bf2fbd5edda97496fa931b7eca253810015b1f3153f95"
+    ],
+    "same_context_witness": true,
+    "context_witness": [
+      "4a0aca0e735ec7fe6e458f599eaeed2806c61a66e83ee026dc8b7f0eb59e899c",
+      "4a0aca0e735ec7fe6e458f599eaeed2806c61a66e83ee026dc8b7f0eb59e899c"
+    ]
+  },
+  "numeric_difference_count": 4,
+  "numeric_differences": [
+    {
+      "path": "$.normalization.reduced_evaluations",
+      "ordinary": 918104,
+      "reuse": 602980
+    },
+    {
+      "path": "$.normalization.requests",
+      "ordinary": 918104,
+      "reuse": 602980
+    },
+    {
+      "path": "$.validation_cache.hits",
+      "ordinary": 8290,
+      "reuse": 8194
+    },
+    {
+      "path": "$.validation_cache.requests",
+      "ordinary": 8316,
+      "reuse": 8220
+    }
+  ],
+  "valid_pair": false,
+  "source_edited": false,
+  "new_reference_or_game_constructed": false
+}

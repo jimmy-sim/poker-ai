@@ -1,0 +1,21 @@
+"""Read-only checks of published rejected pair; no game or solver construction."""
+import hashlib,json,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import compare_context_reuse as t
+assert json.loads((w/'context-reuse-rejected-publication.json').read_text())['status']=='public_rejected_pair_all27raw_bytes_verified'
+p=r/t.FOLDER/'pair';children=[json.loads((p/m/'child.json').read_text()) for m in ('ordinary','reuse')]
+a,b=children;delta=[]
+def diff(x,y,path='$'):
+ if t.canonical(x)==t.canonical(y):return
+ if type(x) is dict and type(y) is dict:
+  for key in sorted(set(x)|set(y)):
+   if key not in x or key not in y:delta.append(dict(path=path+'.'+key,kind='missing'))
+   else:diff(x[key],y[key],path+'.'+key)
+ elif type(x) is list and type(y) is list and len(x)==len(y):
+  for index,(u,v) in enumerate(zip(x,y,strict=True)):diff(u,v,path+f'[{index}]')
+ else:delta.append(dict(path=path,ordinary=x,reuse=y))
+diff(a['identity'],b['identity'])
+checks=dict(child_status=[x['status'] for x in children],modes=[x['mode'] for x in children],base_admission_rejected=[x['base_admission_rejected'] for x in children],admission_evidence=[x['admission_evidence'] for x in children],same_config=all(x['config_sha256']==t.CONFIG_SHA for x in children),separate_typed_pid=type(a['pid']) is int and type(b['pid']) is int and a['pid']!=b['pid'],same_source_map=a['source']['sha256']==b['source']['sha256'],same_numeric_identity=t.canonical(a['identity'])==t.canonical(b['identity']),numeric_identity_sha256=[hashlib.sha256(t.canonical(x['identity'])).hexdigest() for x in children],same_context_witness=a['context_identity_sha256']==b['context_identity_sha256'],context_witness=[x['context_identity_sha256'] for x in children])
+v=dict(status='published_failed_pair_field_consistency_diagnosis',checks=checks,numeric_difference_count=len(delta),numeric_differences=delta,valid_pair=False,source_edited=False,new_reference_or_game_constructed=False)
+(w/'context-reuse-pair-field-diagnosis.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(dict(checks=checks,numeric_difference_count=len(delta),first_differences=delta[:10]),indent=2))

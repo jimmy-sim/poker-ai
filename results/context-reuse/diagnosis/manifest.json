@@ -1,0 +1,102 @@
+{
+  "status": "post_outcome_diagnosis_of_rejected_pair",
+  "original_gate_rejected": true,
+  "valid_pair": false,
+  "files": [
+    {
+      "file": "results/context-reuse/diagnosis/verify-context-reuse-rejected-publication.py.txt",
+      "sha256": "efd50a857d045baea7243cbab2e6391265df68a7c07636b9084b3d28290d8884",
+      "bytes": 2385
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-rejected-publication.json",
+      "sha256": "4cf442b31b949c5e5cb611b037dd283c99d08b1e116c6e014191fd3b5b09e661",
+      "bytes": 439
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-rejected-publication.log",
+      "sha256": "7e7020d77299746b7e0d30b5c83dbeeae41af334e5dc63929dde6d90161f327b",
+      "bytes": 413
+    },
+    {
+      "file": "results/context-reuse/diagnosis/diagnose-context-reuse-pair.py.txt",
+      "sha256": "7fb2a1dc9eaea23a3ea68aceb06542063e20edd14193b11c1a970a8f1afceeed",
+      "bytes": 2224
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-pair-field-diagnosis.json",
+      "sha256": "db32641c8e6f01fb765ad6fa9fd2789bc482750452c434db9f1438993a5d5ef0",
+      "bytes": 1475
+    },
+    {
+      "file": "results/context-reuse/diagnosis/report-context-reuse-rejected.py.txt",
+      "sha256": "306333c5726669a550abf6b91a86c4597fe884f39e7d244c6ae06d28f8628d04",
+      "bytes": 18820
+    },
+    {
+      "file": "results/context-reuse/diagnosis/reproduce-context-rejected-report.py.txt",
+      "sha256": "688d61389fae8f84345c7f648ae56b3878c5495ff4b872e509b9db9844c54437",
+      "bytes": 1458
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-negative-reproduction311.json",
+      "sha256": "61d9a2d01d8c9811ea2171885374fb10551885d3904b2d7637df870e4993cbb0",
+      "bytes": 863
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-negative-reproduction312.json",
+      "sha256": "9a033bedef357c79b6218f6eeba17f36a0eddeae32607fd0b44bc321dc7fd400",
+      "bytes": 863
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-negative-actual311.log",
+      "sha256": "c310c3171c953ebd91d8a2b7c21459b87e2f68877a4e0a4806ca99bfdbb58a7c",
+      "bytes": 2050
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-negative-actual312.log",
+      "sha256": "3a18f196a5dc03e51f641a5afc6f4775387fa8fdc0b02d465bef7e931ee90640",
+      "bytes": 2050
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-rejected-report-reproduction.json",
+      "sha256": "c87ad42e7ebb44eb3d05698a9dc66c8280a1f596f557ce339782dcd0bd61f7f5",
+      "bytes": 966
+    },
+    {
+      "file": "results/context-reuse/diagnosis/check-context-reuse-docs.py.txt",
+      "sha256": "629f253a86093c549ffd882558872900edb0e55d61ee852da01586979070e196",
+      "bytes": 1963
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-report-doc-review.json",
+      "sha256": "bc8f14e322c788dbc21996d25e2612788f28aff68705a6c6a4ba7bc505935386",
+      "bytes": 984
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-report-format.log",
+      "sha256": "60664986554a5f7c65aab721d16606e4c5b22cb48c9890be1eaf17404f16427e",
+      "bytes": 28
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-report-lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "file": "results/context-reuse/diagnosis/context-reuse-report-mypy.log",
+      "sha256": "e556d3b456356db8941bb48c3b58f670c6eb97bdd7ee2921faeba12ec09c2d53",
+      "bytes": 45
+    }
+  ],
+  "visual_review": {
+    "images": [
+      "rejected-clocks.png",
+      "rejected-context-work.png"
+    ],
+    "actual_data": true,
+    "titles_axes_legends_readable": true,
+    "clipping_observed": false
+  },
+  "scope": "All raw public at00c93ad before data-only diagnosis. Four exported numerical files byte-identical on both actual runtimes with103numerical/construction/clone paths blocked,0calls,rawunchanged. Original scientific source/gate/failing result remain untouched. No admission, stable speedup or stronger-agent claim."
+}

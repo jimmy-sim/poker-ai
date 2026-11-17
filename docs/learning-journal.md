@@ -121,8 +121,10 @@ The nested follow-up now locates most source CPU in sampled-parent archive
 validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
 The complete calculated results stay identical. The [nested archive check](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
 now separates context construction, state reconstruction/scoring and prior full
-verification. The next [prospective experiment](context-reuse.md) tests whether repeated
-contexts can be reused safely, without skipping validation. PR #85 is merged;
+verification. The [context-reuse experiment](context-reuse.md#rejected-comparison-and-diagnosis--november-17)
+now retains a rejected result: the poker-result records match, but four work
+counters change and the complete-identity requirement fails. Full copying and
+checking also takes more time in that run. It is not deployed. PR #85 is merged;
 its final checks and protected-main verification are complete. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
@@ -6883,3 +6885,26 @@ must satisfy every cross-arm consistency requirement before it is accepted.
 The next step is to publish and authenticate the failed raw evidence, then locate
 the exact discrepancy. No timing conclusion, source fix or favorable rerun is
 claimed here. The original caps, seeds and failed strength/runtime targets remain.
+
+
+**November 17 — the discrepancy is in work accounting.** All context witnesses
+and remaining result fields match. Only four counters differ: normalization
+requests/evaluations and validation-cache requests/hits. The acceptance check
+came from observation-only work and required those counts to stay fixed, while
+this experiment deliberately removed repeated construction. Those requirements
+conflict. The original result stays failed; a later protocol must make the
+intended distinction before collecting new data.
+
+There is also no timing benefit here: reuse takes 486.75 seconds versus 409.75
+for ordinary validation. The copy/check intervals use more CPU in both reads.
+This is one rejected ordered comparison, not a stable causal estimate or stronger
+agent. The [failure report](context-reuse.md#rejected-comparison-and-diagnosis--november-17)
+retains every raw file and explains the clocks. Its four numerical exports match
+exactly on both actual runtimes with 103 construction/numerical paths blocked,
+zero forbidden calls and unchanged raw data. Both figures are inspected.
+
+**Next decision:** do not deploy the full-copy cache or retry it for a nicer
+number. Finish the repository checks, then investigate another measured validation
+cost while preserving the poker-result and work requirements. The failed source,
+protocol and data remain available. This changes the research direction, not the
+agent's strategy. No personal practice or human hours are inferred.

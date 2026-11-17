@@ -1002,3 +1002,47 @@ def test_previous_calculated_identity_drift_rejected(saved_fixture: Path) -> Non
         child["identity"]["computed_replays"][0]["computed"]["maximum_error"] += 1e-15
     with pytest.raises(ArithmeticError, match="previous complete numerical identity"):
         runner.pair_identity(children)
+
+
+def test_published_rejected_pair_preserves_failure_and_all_other_result_fields() -> (
+    None
+):
+    """Real retained DATA regression; never relax the original pair gate."""
+    folder = ROOT / runner.FOLDER / "pair"
+    if not folder.exists():
+        pytest.skip("published rejected comparison not present at this checkpoint")
+    manifest = json.loads(folder.with_name("pair-raw-manifest.json").read_text())
+    assert manifest["status"] == "failed_retained" and len(manifest["files"]) == 27
+    for row in manifest["files"]:
+        path = ROOT / row["file"]
+        assert path.stat().st_size == row["bytes"]
+        assert runner.digest(path) == row["sha256"]
+    pair = json.loads((folder / "pair.json").read_text())
+    assert pair["status"] == "failed_retained"
+    children = [
+        json.loads((folder / mode / "child.json").read_text())
+        for mode in ("ordinary", "reuse")
+    ]
+    assert all(c["status"] == "complete_context_reuse_diagnostic" for c in children)
+    assert (
+        children[0]["context_identity_sha256"] == children[1]["context_identity_sha256"]
+    )
+    with pytest.raises(ArithmeticError):
+        runner.pair_identity(children)
+    with pytest.raises(ArithmeticError):
+        runner.saved_pair(ROOT, folder)
+    projected = [copy.deepcopy(c["identity"]) for c in children]
+    for category, key in (
+        ("normalization", "requests"),
+        ("normalization", "reduced_evaluations"),
+        ("validation_cache", "requests"),
+        ("validation_cache", "hits"),
+    ):
+        a, b = projected[0][category].pop(key), projected[1][category].pop(key)
+        assert type(a) is int and type(b) is int and 0 <= b < a
+    assert runner.canonical(projected[0]) == runner.canonical(projected[1])
+    summary = json.loads(
+        (ROOT / runner.FOLDER / "rejected-report/summary.json").read_text()
+    )
+    assert summary["original_gate_rejected"] is True and summary["valid_pair"] is False
+    assert summary["forbidden_attempts"] == [] and summary["raw_unchanged"] is True

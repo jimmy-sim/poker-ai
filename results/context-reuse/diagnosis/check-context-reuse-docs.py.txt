@@ -1,0 +1,25 @@
+"""Verify touched prose destinations, new anchors, fences and markers."""
+import json,re,subprocess,unicodedata
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';names=['docs/context-reuse.md','docs/learning-journal.md','docs/work-log.md'];n=0;images=[];anchors=[]
+def headings(p):
+ out=set();seen={};fenced=False
+ for line in p.read_text().splitlines():
+  if line.startswith('```'):fenced=not fenced;continue
+  m=re.match(r'^#+ (.+)$',line)
+  if fenced or not m:continue
+  text=re.sub(r'<[^>]+>','',m[1]).lower();slug=''.join(c for c in text if c in '-_ ' or unicodedata.category(c)[0] in 'LN').replace(' ','-');i=seen.get(slug,0);seen[slug]=i+1;out.add(slug+('-'+str(i) if i else ''))
+ out.update(re.findall(r'<a\s+(?:id|name)=["\']([^"\']+)',p.read_text()))
+ return out
+for name in names:
+ p=r/name;s=p.read_text();assert sum(l.startswith('```') for l in s.splitlines())%2==0
+ for m in re.finditer(r'(!?)\[[^\]]*\]\(([^)]+)\)',s):
+  image,d=m.groups()
+  if d.startswith(('http:','https:','mailto:')):continue
+  f,_,a=d.partition('#');q=p.parent/f if f else p;assert q.exists(),(name,d);n+=1
+  if image:images.append(d)
+  if a and (name=='docs/context-reuse.md' or '130-' in a or 'context-reuse.md#' in d):assert a in headings(q),(name,d);anchors.append(d)
+ before=subprocess.check_output(['git','-C',str(r),'show','9ebd590:'+name],text=True);assert re.findall(r'<!--.*?-->',before,re.S)==re.findall(r'<!--.*?-->',s,re.S)
+subprocess.run(['git','-C',str(r),'diff','--check','--','docs','tests'],check=True)
+v=dict(status='touched_docs_links_images_affected_anchors_fences_markers_verified',relative_destinations=n,images=images,affected_anchors=anchors,generated_markers_preserved=True,scope='New/touched local documentation links and anchors; existing unrelated/external anchors not re-audited. Raw logs remain verbatim.')
+(w/'context-reuse-report-doc-review.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(v))

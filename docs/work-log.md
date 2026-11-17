@@ -6621,3 +6621,32 @@ retained with this batch. No source/seeds/work/caps/gates changed or scientific
 retry occurred. Publish failed evidence before diagnosis or timing interpretation.
 No valid-pair, runtime saving, training/default or strength admission is claimed.
 Journal130 records the failure and next decision; Codex-assisted, human time unknown.
+
+
+### November 17: rejected-pair diagnosis and negative result
+
+All 27 raw bytes public at `00c93ad`; separate rejected-publication verification
+exits zero without waiving the original gate. Both children complete three reads,
+432 profiles / 1,152 conditions / three workers. Context witness matches; four
+work counters alone differ (normalization requests/evaluations 918104→602980,
+validation-cache requests 8316→8220 / hits8290→8194). All remaining identity fields
+match exactly; maximum native scalar discrepancy1.8474111129762605e-13chips each.
+The old complete identity includes those work counts, so the original gate stays
+FAILED. The post-outcome projection is explicitly diagnosis, not new admission.
+
+Observed ordinary/reuse complete wall409.749993/486.746614s; parent CPU
+278.772282/356.275704; parallel-worker CPU369.053525/367.353604. Enclosing failed
+command900.544028/1800s; no deadline failure. Archive CPU43.217785/44.302908
+versus81.072654/81.525714 in the two dependent reads. Full-copy/witness checking
+shows no benefit here; one ordered rejected pair is not stable causal evidence.
+No unchanged-source pair retry, source/gate/cap/seed modification or model change.
+
+[Failure report and two inspected figures](context-reuse.md#rejected-comparison-and-diagnosis--november-17),
+[scripted data-only diagnosis](../results/context-reuse/diagnosis/manifest.json),
+four exports byte-identical on BOTH actual runtimes under 103 blocked paths,
+zero forbidden calls/raw unchanged. Original valid-pair parser still rejects.
+New actual-data regression preserves that rejection and the four-field diagnosis.
+Source450fingerprint unchanged. Journal130/current status and three explanation
+questions record the lesson. Next: final checks and protected publication, then
+another measured cost; no full-copy rollout, gate waiver, new training/default/
+forecast/strength claim. Codex-assisted; human time unknown.
