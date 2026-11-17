@@ -1,0 +1,41 @@
+{
+  "scope": "SAVED_EARLIER_SOURCE_ELAPSED_CALLGRAPH_NOT_NEW_MEASUREMENT",
+  "prospective_issue": "https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6954063964",
+  "pair": "results/compact-native-wall-profile/pair",
+  "input_sha256": {
+    "results/compact-native-wall-profile/pair/profile/functions-callers.json.gz": "3eb88278f9f4e3cf014a46b33f643a5a1a34250fb89ab988f739d277096ba56f",
+    "results/compact-native-wall-profile/pair/pair.json": "b5daed2702d8f2bf5fe9eb8ad612858ae57091990ef0088a2041ac807b6d6dde",
+    "results/compact-native-wall-profile/pair/profile/child.json": "528afbdba655cf33f0039861965c8b6c88d2eb64283671af3a2ee0b31c4b20f1",
+    "results/compact-native-wall-profile/pair/plain/child.json": "c028741d87c11c13dd1952fe803165eb7aeaded2c9563a9d39f36bbf2377be0d",
+    "results/compact-native-wall-profile/report/render-manifest.json": "babd12834f5c0b2d61e17bf74f6705efdecada3284e5c22c15c7e6e6bbefa93e",
+    "results/compact-native-wall-profile/checks.json": "94ebf8c6556cc74f732a48b4c53c39fb874e3388ae48117e44218e0a7155de89"
+  },
+  "units": "elapsed_stack_seconds_including_blocked_waits",
+  "producer_source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+  "selected": [
+    [
+      "src/poker_ai/evaluation/opponent_learning_sources.py",
+      "load"
+    ],
+    [
+      "src/poker_ai/evaluation/opponent_learning_sources.py",
+      "build_game"
+    ],
+    [
+      "src/poker_ai/evaluation/opponent_learning_sources.py",
+      "frozen_opponent"
+    ],
+    [
+      "src/poker_ai/evaluation/opponent_learning_sources.py",
+      "boundaries"
+    ],
+    [
+      "src/poker_ai/evaluation/batch_current_inputs.py",
+      "load"
+    ]
+  ],
+  "absolute_accounting_tolerance_seconds": 1e-07,
+  "reference_constructed": false,
+  "poker_training_performed": false,
+  "admission_evidence": false
+}

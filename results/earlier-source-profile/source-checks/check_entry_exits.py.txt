@@ -1,0 +1,16 @@
+"""Test administrative runpy exit handling without reading historical results."""
+import ast,hashlib,json,runpy,sys,tempfile
+from pathlib import Path
+w=Path(__file__).resolve().parent;p=w/'context-reuse/results/earlier-source-profile/source-checks/guard.py.txt'
+node=next(n for n in ast.parse(p.read_text()).body if isinstance(n,ast.FunctionDef) and n.name=='execute_entry')
+namespace=dict(runpy=runpy,sys=sys);exec(compile(ast.Module(body=[node],type_ignores=[]),'exact_guard_function','exec'),namespace)
+rows=[]
+with tempfile.TemporaryDirectory(prefix='earlier-source-guard-') as raw:
+ folder=Path(raw)
+ for index,(code,expected) in enumerate([('raise SystemExit(0)\n',None),('raise SystemExit(None)\n',None),('raise SystemExit(3)\n','SystemExit'),('raise ValueError("retained fixture")\n','ValueError')]):
+  entry=folder/f'fixture-{index}.py';entry.write_text(code);original=sys.argv;got=None
+  try:namespace['execute_entry'](entry,folder/'never-created')
+  except BaseException as error:got=type(error).__name__;assert not isinstance(error,SystemExit) or error.code==3
+  assert got==expected and sys.argv is original and not (folder/'never-created').exists();rows.append(dict(fixture=index,expected=expected,observed=got,argv_restored=True))
+v=dict(status='four_exact_operator_entry_exit_fixtures_pass',operator_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),fixtures=rows,historical_results_read=False,reference_constructed=False)
+(w/'earlier-source-entry-exits.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(v))

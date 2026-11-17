@@ -1,0 +1,106 @@
+[
+  {
+    "pid": 81318,
+    "ppid": 928,
+    "state": "Ss",
+    "elapsed": "13:40",
+    "cpu": "0.0",
+    "command": "work/suit-source-base312/bin/python work/run-context-reuse-final-lane.py 312"
+  },
+  {
+    "pid": 81319,
+    "ppid": 81318,
+    "state": "S",
+    "elapsed": "13:40",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base312/bin/python /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-context-reuse-final-checks.py base312"
+  },
+  {
+    "pid": 81335,
+    "ppid": 928,
+    "state": "Ss",
+    "elapsed": "13:39",
+    "cpu": "0.0",
+    "command": "work/suit-source-base311/bin/python work/run-context-reuse-final-lane.py 311"
+  },
+  {
+    "pid": 81336,
+    "ppid": 81335,
+    "state": "S",
+    "elapsed": "13:39",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base311/bin/python /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/run-context-reuse-final-checks.py base311"
+  },
+  {
+    "pid": 81388,
+    "ppid": 81336,
+    "state": "S",
+    "elapsed": "13:37",
+    "cpu": "0.0",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/make check"
+  },
+  {
+    "pid": 81400,
+    "ppid": 81319,
+    "state": "S",
+    "elapsed": "13:37",
+    "cpu": "0.0",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/make check"
+  },
+  {
+    "pid": 81418,
+    "ppid": 81388,
+    "state": "S",
+    "elapsed": "13:30",
+    "cpu": "0.0",
+    "command": "uv run --locked pytest -q -m not slow"
+  },
+  {
+    "pid": 81419,
+    "ppid": 81418,
+    "state": "S",
+    "elapsed": "13:30",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base311/bin/python /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base311/bin/pytest -q -m not slow"
+  },
+  {
+    "pid": 81420,
+    "ppid": 81400,
+    "state": "S",
+    "elapsed": "13:29",
+    "cpu": "0.0",
+    "command": "uv run --locked pytest -q -m not slow"
+  },
+  {
+    "pid": 81421,
+    "ppid": 81420,
+    "state": "S",
+    "elapsed": "13:29",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base312/bin/python /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base312/bin/pytest -q -m not slow"
+  },
+  {
+    "pid": 81783,
+    "ppid": 81421,
+    "state": "S",
+    "elapsed": "12:56",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base312/bin/python -c from multiprocessing.resource_tracker import main;main(13)"
+  },
+  {
+    "pid": 81808,
+    "ppid": 81419,
+    "state": "S",
+    "elapsed": "12:53",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base311/bin/python -c from multiprocessing.resource_tracker import main;main(13)"
+  },
+  {
+    "pid": 85199,
+    "ppid": 81421,
+    "state": "S",
+    "elapsed": "06:03",
+    "cpu": "0.0",
+    "command": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/suit-source-base312/bin/python /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse-final-checkout/scripts/inspect_policy_swap.py --report /private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-49/policy-swap-software0/study.json --game dev_low_oop --seed 13"
+  }
+]

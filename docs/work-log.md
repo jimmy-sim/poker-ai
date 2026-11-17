@@ -6650,3 +6650,41 @@ Source450fingerprint unchanged. Journal130/current status and three explanation
 questions record the lesson. Next: final checks and protected publication, then
 another measured cost; no full-copy rollout, gate waiver, new training/default/
 forecast/strength claim. Codex-assisted; human time unknown.
+
+
+### November 17: close rejected context reuse; inspect saved source calls
+
+[PR #86](https://github.com/jimmy-sim/poker-ai/pull/86) is history-merged at
+`f5bde46daa540f89f4b8aafd313e100ca52b57be`. Both local base suites pass 5,380 tests
+with 70 skipped and 150 deselected; both optional suites pass 2,288. Both hosted
+jobs pass the same base inventory, each with one existing warning. Actual runtime,
+NumPy and uv selections match, and the entire tested and merged trees are equal.
+The initial hosted timeouts and interrupted local file reads remain in the
+[68-member closing archive](../results/context-reuse/final-ci/manifest.json).
+
+Main passes 720 focused tests in 178.56 seconds. All 27 raw members authenticate;
+four numerical exports match with 103 construction paths blocked and zero
+forbidden calls. The comparison remains rejected. All ten unrelated user result
+files, their status, changed-path index entries and both patches are preserved
+after verification. These receipts accompany the next substantive change.
+
+The [next plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6954063964)
+uses a saved lossless elapsed-stack graph to inspect five functions. Every direct
+incoming/outgoing edge retains its identity, so a shared helper's total is not
+assigned to just one caller. Original source, raw hashes, units and code positions
+are checked. Self time plus direct child times must recover each selected
+nonrecursive function's inclusive time; changed raw files or existing output
+folders reject.
+
+All 30 repository-focused graph, input/output and terminal tests pass on both
+actual supported runtimes in 7.34/7.12 seconds. Strict typing passes for 823 files;
+lint and formatting pass. All 450 earlier scientific files are unchanged. Full
+final checks and saved-data reproduction remain pending, and selected historical
+values are still unextracted. Publish this checked source before rendering, then
+reproduce its exports on both runtimes with construction and profiling blocked.
+Journal step131 explains the question and the caller-sharing example.
+
+No strategy, dependency, CI, seed, compute limit or research acceptance rule has
+changed. The 912.54/900-second forecast and 2.390%/1% accuracy targets remain failed.
+Codex assisted with implementation, checks and drafting; human hands-on time was
+not recorded.

@@ -1,0 +1,13 @@
+{
+  "pids": [
+    85351,
+    85352
+  ],
+  "reason": "Fresh lane script itself stalled before starting any child or uv/check role when read from synced Documents; moved administrative launcher bytes to private/tmp, no source change or check execution in this launch",
+  "action": "Terminate own pre-setup launcher only",
+  "correction": "Before parent termination took effect, both fresh drivers had advanced into child guards. They remain the sole attempt2 base roles (85368/85367); subsequent tmp launcher refuses existing exclusive logs and executes no duplicate checks. Preserve all logs; do not relaunch base roles while these children exist.",
+  "actual_check_children": [
+    85368,
+    85367
+  ]
+}
