@@ -6748,3 +6748,12 @@ replay is unchanged; the 802 selected calls belong to two explicitly synthetic
 trees, with all aliases restored. [All raw files](../results/parent-archive-cpu/software-raw-manifest.json)
 are retained before fresh reference use. Publication verification is the next
 step; these fixtures do not measure the real archive or show a stronger agent.
+
+
+**November 17 — complete pair retained before analysis.** Both original full
+arms finish with exact complete scalar/computed-replay identity, also matching
+the previous published numerical identity. All 802 selected calls are present
+and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-manifest.json)
+are retained for publication before timing analysis. The successful public own-
+proof verification preceded reference use; no training or new admission follows.
+The next step is to verify the published raw pair, then interpret its stages.
