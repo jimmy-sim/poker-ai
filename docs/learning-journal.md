@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Separate the work inside archive validation](#129-separate-the-work-inside-archive-validation)
+
 - [Follow the stages inside source loading](#128-look-inside-the-input-loader)
 
 - [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
@@ -6676,3 +6678,38 @@ and recovery record](../results/source-phase-cpu-v2/qualification-history/final-
 explains the distinction: correcting the environment makes another full check
 possible; two focused passes do not replace complete qualification. No strategy
 or experiment is retrained or rerun.
+
+
+**November 17 — the corrected measurement is fully verified and merged.** All
+four final local check sets and both same-head hosted checks pass. The local
+base suites each pass 5,081 tests; optional suites each pass 1,987. Main passes
+419 focused checks, authenticates the saved comparison and reproduces all three
+numerical exports exactly. The ten unrelated local result files remain intact.
+[Closing receipts](../results/source-phase-cpu-v2/final-ci/manifest.json) retain
+actual checks and the protected-main verification; the earlier failures remain.
+
+## 129. Separate the work inside archive validation
+
+November 17, 2026 — prospective diagnostic, with Codex assistance.
+
+**Question:** which work inside archive validation accounts for its 37–39 CPU
+seconds per measured read? The previous diagnostic identified a large boundary,
+but that boundary contains context construction, state reconstruction, scoring
+and checks on older full-control records.
+
+**Change planned:** [measure those parts together](parent-archive-cpu.md), with
+nested timers around existing caller-held functions. The original functions and
+all scientific work stay fixed. A parent timer includes its children; the report
+will separate their CPU from the parent's remaining work so it is counted once.
+
+**Example:** a 10-second archive check containing 6 seconds of decoding and
+2 seconds of scoring has 2 seconds left for its other work. Adding all three
+timers would incorrectly claim 18 seconds.
+
+**Checks and result:** the plan fixes 401 selected calls per cost read, 802 in
+the pair, before implementation. No new timing result exists yet. Forwarding,
+restoration, clock accounting, failure handling and complete source qualification
+must pass before collection. The original compute limits stay unchanged.
+
+**Next decision:** use a complete checked comparison to choose a specific exact
+optimization. This diagnostic does not improve a strategy or establish strength.

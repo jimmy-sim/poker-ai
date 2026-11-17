@@ -13,6 +13,25 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-17 — Close allowance correction; plan nested archive measurement
+
+- **Issue:** #4. [PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) merged at
+  b852436 after all six final roles passed on 49cb951. Local bases: 5,081 tests
+  each (900.69 / 880.55 seconds); optional: 1,987 each (745.01 / 527.81 seconds).
+  Hosted bases: 5,081 each (1187.64 / 1170.17 seconds), actual runtimes and full
+  checkout trees verified. Both retain 68 skips / 150 deselections; the hosted
+  historical warning remains. Earlier failures are preserved.
+- **Main:** 419 focused tests in 95.63 seconds; complete saved pair authenticates;
+  all three numerical exports match, 27 raw files and ten unrelated local changes
+  remain unchanged. [Closing receipts](../results/source-phase-cpu-v2/final-ci/manifest.json).
+- **Next question:** separate context building, sampled-state decoding/scoring,
+  direct full decoding and prior full verification inside archive validation.
+  [Prospective plan](parent-archive-cpu.md) published before implementation, with
+  401 calls per cost read / 802 per complete pair. Existing source, inputs,
+  seeds, scientific work and caps stay fixed. No optimizer or new training yet.
+- **Attribution:** AI-assisted implementation, execution and drafting. Human
+  hands-on time not recorded; no personal learning outcome inferred.
+
 ## 2026-11-10 — Full matched-update pipeline, prospective
 
 - **Issue:**#4; [detailed plan](matched-update-pipeline.md) and config published
