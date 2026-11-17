@@ -6351,3 +6351,26 @@ computed-replay identity recorded; original caps and work retained. All 27
 raw pair members plus the prior own-publication verification are retained for
 publication before analysis. No retries or stage selection; no timing conclusion,
 new training or admission is claimed at this boundary.
+
+
+### November 17: nested source-loader report
+
+Raw pair `e931955` was public and verified before analysis. Ordinary/observed
+complete commands: 413.95887391699944 / 415.1078454160015 seconds; full outer CLI
+832.0623138330011 / 1,800. Every original read, 432 profiles, 1,152 conditions,
+three reference workers and all 14 selected calls retained; exact complete
+scalar/computed-replay identity and restoration. Independent maximum discrepancy
+1.8474111129762605e-13 chips < 1e-9, scalar comparison-only.
+
+[The generated report and limits](source-phase-cpu.md#what-the-complete-comparison-found--november-17)
+locate 39.248285 / 37.222540 parent CPU seconds in sampled-parent archive
+validation and 33.107687 / 34.100730 in earlier scientific sources. Source totals
+82.683827 / 81.157078; their combined shares 87.50921991068459% / 87.88299401316542%.
+No causal speedup or stable overhead inferred from one ordered pair.
+
+All three report exports match byte for byte on actual Python 3.11.17/NumPy 2.4.6
+and 3.12.15/2.5.4 with 50 numerical paths blocked, zero forbidden calls and every
+original raw member unchanged. Both PNGs inspected. Work log, method, journal128
+and current journal summary updated together; no README experiment update.
+Final four local roles and both same-head hosted jobs remain before merge.
+No training, failed-gate override, default/fresh/global or strength claim.

@@ -113,7 +113,10 @@ is **912.54 seconds against a 900-second limit**. The next training comparison
 remains blocked. The latest complete diagnostic separates loading from replay:
 about 78–79 CPU seconds per cost read load scientific inputs, while 49–50
 replay the saved strategy. Results stay identical with observation enabled.
-The next investigation follows the work inside that input-loading phase.
+The nested follow-up now locates most source CPU in sampled-parent archive
+validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
+The complete calculated results stay identical. The next question follows those
+checks without skipping any of them. See [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6638,3 +6641,24 @@ verification passes with the startup-adjusted allowance. Both ordinary and
 instrumented audit arms finish, and their complete calculated results agree
 exactly. [All raw records](../results/source-phase-cpu-v2/pair-raw-manifest.json)
 are being published before interpreting which source-loading stage is expensive.
+
+
+**November 17 — where the source-loading CPU goes.** The complete saved comparison
+puts about **37–39 CPU seconds** in sampled-parent archive validation and
+**33–34** in earlier scientific-source checks, per instrumented cost read.
+Together they account for roughly **87–88% of source CPU**. Compact game building
+is only about **2.3–2.6 seconds** here. [The table and two plots](source-phase-cpu.md#what-the-complete-comparison-found--november-17)
+show every component, including the smaller ones.
+
+**Example:** checking an old training archive may involve reconstructing and
+verifying its contents. That can take much more work than opening the file. This
+measurement identifies that stage, but does not yet identify an unnecessary
+calculation inside it. Removing checks just to make the timer smaller would
+answer a different question.
+
+Both complete arms agree exactly on calculated results. The raw pair was public
+before analysis. All three numerical exports reproduce on both actual runtimes
+with 50 numerical entry points blocked, zero forbidden calls and unchanged raw
+files; both figures were inspected. The next investigation follows the large
+validation stages. No strategy improved in this diagnostic, and the old budget
+and accuracy failures remain. Final software/report checks still precede merge.

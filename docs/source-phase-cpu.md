@@ -6,9 +6,85 @@ scientific inputs, not just reading files. This follow-up asks which named stage
 inside that boundary account for the work.
 
 The [plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6918554952)
-was published before implementation. The preceding PR now has all six final checks, a history-preserving
-merge and a protected-main check. This follow-up still requires its own complete
-source qualification before formal collection. This page describes software under development, not a timing result.
+was published before implementation. The corrected collector completed all six
+source checks before the new own-only proof and complete comparison. The retained
+qualification history below includes the original rejected proof and parser fix.
+
+## What the complete comparison found — November 17
+
+Source loading spends most of its parent CPU in two places: validating the
+sampled-parent archive and checking earlier scientific sources. Together they
+account for 87.5% / 87.9% of source CPU in the two instrumented cost reads.
+These are checks and calculations, not simply reading bytes from disk.
+
+The table reports parent CPU seconds. Its rows are disjoint components of source
+loading; add them once to recover the source total.
+
+| Stage inside source loading | Before reference | After reference |
+| --- | ---: | ---: |
+| Earlier scientific sources | 33.108 | 34.101 |
+| Compact game construction (two calls) | 2.614 | 2.343 |
+| Sampled-parent archive validation | 39.248 | 37.223 |
+| Original contexts | 4.429 | 4.266 |
+| Original boundaries | 3.163 | 3.108 |
+| Remaining source work | 0.123 | 0.117 |
+
+The source totals are **82.684 / 81.157 CPU seconds**. Work outside the source
+root is **56.672 / 53.054**, giving complete-read parent CPU of **139.356 / 134.211**.
+The first software read correctly records no source root. Plain-arm selected
+zeros mean the timers were disabled, not that source work disappeared.
+
+![Disjoint work inside source loading](../results/source-phase-cpu-v2/pair/report/source-children.png)
+
+The complete ordinary/instrumented commands take **413.958874 / 415.107845 seconds**;
+the enclosing CLI takes **832.062314**, within the unchanged 900-second child and
+1,800-second outer limits. Parallel worker CPU is a separate quantity, not elapsed
+time to add to these values.
+
+![Complete elapsed and CPU clocks](../results/source-phase-cpu-v2/pair/report/complete-clocks.png)
+
+All three reads, 432 profiles, 1,152 fixed conditions and three reference workers
+remain. Complete scalar/calculated-replay results agree exactly; all 14 selected
+source calls are present and temporary aliases are restored. The maximum
+OpenSpiel scalar discrepancy is **1.8474111129762605e-13 chips**, below 1e-9.
+OpenSpiel 2.0.2 remains Apache-2.0 and comparison-only; no reference actions are
+exported or used in training.
+
+The [own proof](../results/source-phase-cpu-v2/software-raw-manifest.json) was
+public before fresh reference use, and the [27 raw pair files](../results/source-phase-cpu-v2/pair-raw-manifest.json)
+were public and [verified](../results/source-phase-cpu-v2/pair-published-verification.json)
+before analysis. [CSV and JSON exports](../results/source-phase-cpu-v2/pair/report/summary.json)
+reproduce byte for byte on both actual runtimes with 50 numerical entry points
+blocked: zero forbidden calls and all raw inputs unchanged. [Reproduction and
+visual-review receipts](../results/source-phase-cpu-v2/report-checks/raw-and-figure-review.json)
+retain those checks; both plots were inspected.
+
+One ordered pair does not establish stable observer overhead, a causal speedup
+or production costs. The two reads are dependent checks of the same known input
+family, not independent poker-strength samples. No training or strategy changes
+occurred. The failed 912.54/900-second forecast and 2.390%/1% accuracy result stay
+failed. The next question is which work inside archive validation and earlier
+source checking can be reduced while preserving every mathematical check.
+Final software/report checks remain before merge.
+
+## Explore the saved result
+
+From the project root, open the committed figure:
+
+```sh
+open results/source-phase-cpu-v2/pair/report/source-children.png
+```
+
+To recreate the saved report in a fresh ignored folder:
+
+```sh
+.venv/bin/python scripts/profile_source_phases_v2.py report \
+  --output results/source-phase-cpu-v2/pair \
+  --report-output results/runs/source-phase-local
+```
+
+Choose another report-output name if that folder already exists. This reads saved
+evidence and renders plots; it does not train or run a reference solver.
 
 ## What is measured
 
@@ -63,8 +139,8 @@ remain. The earlier chat interruption's [partial records](../results/source-phas
 remain separate. Neither cohort completed a qualifying role or ran a scientific
 measurement. All 118 focused tests now pass on each runtime.
 
-Full source qualification, own-only proof, complete pair and final checks are
-still required. The own proof separates actual archived software replay from
+Formal use requires full source qualification, an own-only proof, the complete
+pair and final checks. The own proof separates actual archived software replay from
 nested forwarding fixtures. Fixtures are not real source-loader timing or new
 independent poker mathematics.
 
