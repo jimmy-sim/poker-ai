@@ -1,0 +1,559 @@
+﻿2026-11-17T17:47:06.5780491Z Current runner version: '2.338.2'
+2026-11-17T17:47:06.5797742Z ##[group]Runner Image Provisioner
+2026-11-17T17:47:06.5798660Z Hosted Compute Agent
+2026-11-17T17:47:06.5799122Z Version: 20261103.629
+2026-11-17T17:47:06.5799621Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-17T17:47:06.5800164Z Build Date: 2026-11-03T17:26:59Z
+2026-11-17T17:47:06.5800655Z Worker ID: {e707aaa0-71c5-4a6d-94ee-472fcdf90d8b}
+2026-11-17T17:47:06.5801163Z Region: us-east-1
+2026-11-17T17:47:06.5801601Z Cloud: AWS
+2026-11-17T17:47:06.5802001Z ##[endgroup]
+2026-11-17T17:47:06.5803023Z ##[group]Operating System
+2026-11-17T17:47:06.5803458Z Ubuntu
+2026-11-17T17:47:06.5803822Z 24.04.5
+2026-11-17T17:47:06.5804196Z LTS
+2026-11-17T17:47:06.5804560Z ##[endgroup]
+2026-11-17T17:47:06.5804961Z ##[group]Runner Image
+2026-11-17T17:47:06.5805389Z Image: ubuntu-24.04
+2026-11-17T17:47:06.5805781Z Version: 20261111.127.1
+2026-11-17T17:47:06.5806743Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.127/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-17T17:47:06.5807821Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.127
+2026-11-17T17:47:06.5808836Z ##[endgroup]
+2026-11-17T17:47:06.5809685Z ##[group]GITHUB_TOKEN Permissions
+2026-11-17T17:47:06.5811516Z Contents: read
+2026-11-17T17:47:06.5811944Z Metadata: read
+2026-11-17T17:47:06.5812350Z ##[endgroup]
+2026-11-17T17:47:06.5813824Z Secret source: Actions
+2026-11-17T17:47:06.5814454Z Cache mode: write
+2026-11-17T17:47:06.5814971Z Prepare workflow directory
+2026-11-17T17:47:06.6282688Z Prepare all required actions
+2026-11-17T17:47:06.6334389Z Getting action download info
+2026-11-17T17:47:06.7925018Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-17T17:47:08.6670052Z Download action repository 'astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9' (SHA:c771a70e6277c0a99b617c7a806ffedaca235ff9)
+2026-11-17T17:47:08.9304376Z Complete job name: Python 3.12
+2026-11-17T17:47:08.9982984Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-17T17:47:08.9983818Z with:
+2026-11-17T17:47:08.9984314Z   persist-credentials: false
+2026-11-17T17:47:08.9984795Z   fetch-depth: 0
+2026-11-17T17:47:08.9985237Z   repository: jimmy-sim/poker-ai
+2026-11-17T17:47:08.9988675Z   token: ***
+2026-11-17T17:47:08.9989104Z   ssh-strict: true
+2026-11-17T17:47:08.9989541Z   ssh-user: git
+2026-11-17T17:47:08.9989956Z   clean: true
+2026-11-17T17:47:08.9990380Z   sparse-checkout-cone-mode: true
+2026-11-17T17:47:08.9990880Z   fetch-tags: false
+2026-11-17T17:47:08.9991323Z   show-progress: true
+2026-11-17T17:47:08.9991775Z   lfs: false
+2026-11-17T17:47:08.9992188Z   submodules: false
+2026-11-17T17:47:08.9992815Z   set-safe-directory: true
+2026-11-17T17:47:08.9993308Z   allow-unsafe-pr-checkout: false
+2026-11-17T17:47:08.9993950Z env:
+2026-11-17T17:47:08.9994350Z   UV_PYTHON: 3.12.15
+2026-11-17T17:47:08.9994802Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T17:47:08.9995337Z ##[endgroup]
+2026-11-17T17:47:11.9641390Z Syncing repository: jimmy-sim/poker-ai
+2026-11-17T17:47:11.9642895Z ##[group]Getting Git version info
+2026-11-17T17:47:11.9643242Z Working directory is '/home/runner/work/poker-ai/poker-ai'
+2026-11-17T17:47:11.9643831Z [command]/usr/bin/git version
+2026-11-17T17:47:12.2347095Z git version 2.56.1
+2026-11-17T17:47:12.2362870Z ##[endgroup]
+2026-11-17T17:47:12.2371327Z Temporarily overriding HOME='/home/runner/work/_temp/5fd3be77-ea75-4627-9788-7b61b0248708' before making global git config changes
+2026-11-17T17:47:12.2372012Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-17T17:47:12.2375160Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/poker-ai/poker-ai
+2026-11-17T17:47:12.2745562Z Deleting the contents of '/home/runner/work/poker-ai/poker-ai'
+2026-11-17T17:47:12.2748155Z ##[group]Determining repository object format
+2026-11-17T17:47:12.2749442Z ##[endgroup]
+2026-11-17T17:47:12.2750223Z ##[group]Initializing the repository
+2026-11-17T17:47:12.2753391Z [command]/usr/bin/git init /home/runner/work/poker-ai/poker-ai
+2026-11-17T17:47:12.2867649Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-17T17:47:12.2868333Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-17T17:47:12.2868698Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-17T17:47:12.2869025Z hint: call:
+2026-11-17T17:47:12.2869182Z hint:
+2026-11-17T17:47:12.2869408Z hint: 	git config --global init.defaultBranch <name>
+2026-11-17T17:47:12.2869631Z hint:
+2026-11-17T17:47:12.2869861Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-17T17:47:12.2870208Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-17T17:47:12.2870474Z hint:
+2026-11-17T17:47:12.2870636Z hint: 	git branch -m <name>
+2026-11-17T17:47:12.2870810Z hint:
+2026-11-17T17:47:12.2871099Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-17T17:47:12.2873265Z Initialized empty Git repository in /home/runner/work/poker-ai/poker-ai/.git/
+2026-11-17T17:47:12.2882267Z [command]/usr/bin/git remote add origin https://github.com/jimmy-sim/poker-ai
+2026-11-17T17:47:12.2928738Z ##[endgroup]
+2026-11-17T17:47:12.2929139Z ##[group]Disabling automatic garbage collection
+2026-11-17T17:47:12.2931463Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-17T17:47:12.2954178Z ##[endgroup]
+2026-11-17T17:47:12.2954549Z ##[group]Setting up auth
+2026-11-17T17:47:12.2954829Z Removing SSH command configuration
+2026-11-17T17:47:12.2959187Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T17:47:12.2987178Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T17:47:12.6426978Z Removing HTTP extra header
+2026-11-17T17:47:12.6430751Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T17:47:12.6458140Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T17:47:12.6606482Z Removing includeIf entries pointing to credentials config files
+2026-11-17T17:47:12.6611301Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-17T17:47:12.6634527Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-17T17:47:12.6783626Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-17T17:47:12.6811703Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path /home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:12.6833019Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:12.6855651Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:12.6877101Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:12.6896861Z ##[endgroup]
+2026-11-17T17:47:12.6897167Z ##[group]Fetching the repository
+2026-11-17T17:47:12.6902658Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +0dec0fc0f7b061386fb76d1fadf91e1a4224e18f:refs/remotes/pull/87/merge
+2026-11-17T17:47:20.6843530Z From https://github.com/jimmy-sim/poker-ai
+2026-11-17T17:47:20.6844220Z  * [new branch]      docs/daily-progress-cadence              -> origin/docs/daily-progress-cadence
+2026-11-17T17:47:20.6844772Z  * [new branch]      docs/learning-journal                    -> origin/docs/learning-journal
+2026-11-17T17:47:20.6845333Z  * [new branch]      docs/project-first-cadence               -> origin/docs/project-first-cadence
+2026-11-17T17:47:20.6845910Z  * [new branch]      docs/project-overview                    -> origin/docs/project-overview
+2026-11-17T17:47:20.6846409Z  * [new branch]      docs/project-voice                       -> origin/docs/project-voice
+2026-11-17T17:47:20.6846881Z  * [new branch]      main                                     -> origin/main
+2026-11-17T17:47:20.6847331Z  * [new branch]      research/averaging-history               -> origin/research/averaging-history
+2026-11-17T17:47:20.6848199Z  * [new branch]      research/batch-current-diagnosis         -> origin/research/batch-current-diagnosis
+2026-11-17T17:47:20.6848845Z  * [new branch]      research/batch-overhead                  -> origin/research/batch-overhead
+2026-11-17T17:47:20.6849477Z  * [new branch]      research/batch-reduction                 -> origin/research/batch-reduction
+2026-11-17T17:47:20.6850123Z  * [new branch]      research/board-collision-diagnosis       -> origin/research/board-collision-diagnosis
+2026-11-17T17:47:20.6850705Z  * [new branch]      research/cached-node-graph               -> origin/research/cached-node-graph
+2026-11-17T17:47:20.6851474Z  * [new branch]      research/candidate-best-response         -> origin/research/candidate-best-response
+2026-11-17T17:47:20.6852104Z  * [new branch]      research/card-audit-clock-trace          -> origin/research/card-audit-clock-trace
+2026-11-17T17:47:20.6853128Z  * [new branch]      research/card-computation-cache          -> origin/research/card-computation-cache
+2026-11-17T17:47:20.6853842Z  * [new branch]      research/checkpoint-observer             -> origin/research/checkpoint-observer
+2026-11-17T17:47:20.6854394Z  * [new branch]      research/coarse-reader-cpu               -> origin/research/coarse-reader-cpu
+2026-11-17T17:47:20.6855025Z  * [new branch]      research/compact-cached-pipeline         -> origin/research/compact-cached-pipeline
+2026-11-17T17:47:20.6855643Z  * [new branch]      research/compact-fixed-opponents         -> origin/research/compact-fixed-opponents
+2026-11-17T17:47:20.6856311Z  * [new branch]      research/compact-full-control            -> origin/research/compact-full-control
+2026-11-17T17:47:20.6857005Z  * [new branch]      research/compact-information-trace       -> origin/research/compact-information-trace
+2026-11-17T17:47:20.6857706Z  * [new branch]      research/compact-native-profile          -> origin/research/compact-native-profile
+2026-11-17T17:47:20.6858652Z  * [new branch]      research/compact-own-opponents           -> origin/research/compact-own-opponents
+2026-11-17T17:47:20.6859520Z  * [new branch]      research/compact-public-range            -> origin/research/compact-public-range
+2026-11-17T17:47:20.6860194Z  * [new branch]      research/compact-replay-profile          -> origin/research/compact-replay-profile
+2026-11-17T17:47:20.6860801Z  * [new branch]      research/compact-sampled                 -> origin/research/compact-sampled
+2026-11-17T17:47:20.6861376Z  * [new branch]      research/compact-suit                    -> origin/research/compact-suit
+2026-11-17T17:47:20.6861938Z  * [new branch]      research/context-reuse                   -> origin/research/context-reuse
+2026-11-17T17:47:20.6862674Z  * [new branch]      research/controlled-learning-comparison  -> origin/research/controlled-learning-comparison
+2026-11-17T17:47:20.6863417Z  * [new branch]      research/controlled-pipeline-check       -> origin/research/controlled-pipeline-check
+2026-11-17T17:47:20.6864099Z  * [new branch]      research/controlled-reply-diagnosis      -> origin/research/controlled-reply-diagnosis
+2026-11-17T17:47:20.6864999Z  * [new branch]      research/controlled-training-profile     -> origin/research/controlled-training-profile
+2026-11-17T17:47:20.6865665Z  * [new branch]      research/earlier-source-profile          -> origin/research/earlier-source-profile
+2026-11-17T17:47:20.6866292Z  * [new branch]      research/exact-opponent-views            -> origin/research/exact-opponent-views
+2026-11-17T17:47:20.6866889Z  * [new branch]      research/fresh-validation                -> origin/research/fresh-validation
+2026-11-17T17:47:20.6867503Z  * [new branch]      research/frozen-pass-batches             -> origin/research/frozen-pass-batches
+2026-11-17T17:47:20.6868423Z  * [new branch]      research/frozen-policy-swaps             -> origin/research/frozen-policy-swaps
+2026-11-17T17:47:20.6869050Z  * [new branch]      research/grouped-depth-check             -> origin/research/grouped-depth-check
+2026-11-17T17:47:20.6869703Z  * [new branch]      research/helper-call-accounting          -> origin/research/helper-call-accounting
+2026-11-17T17:47:20.6870420Z  * [new branch]      research/matched-prefix-capture          -> origin/research/matched-prefix-capture
+2026-11-17T17:47:20.6871125Z  * [new branch]      research/matched-update-foundation       -> origin/research/matched-update-foundation
+2026-11-17T17:47:20.6871857Z  * [new branch]      research/matched-update-pipeline         -> origin/research/matched-update-pipeline
+2026-11-17T17:47:20.6872572Z  * [new branch]      research/matched-update-viewer           -> origin/research/matched-update-viewer
+2026-11-17T17:47:20.6873203Z  * [new branch]      research/matrix-phases                   -> origin/research/matrix-phases
+2026-11-17T17:47:20.6873877Z  * [new branch]      research/opponent-gap-inspection         -> origin/research/opponent-gap-inspection
+2026-11-17T17:47:20.6874782Z  * [new branch]      research/original-audit-helpers          -> origin/research/original-audit-helpers
+2026-11-17T17:47:20.6875516Z  * [new branch]      research/parallel-cell-calibration       -> origin/research/parallel-cell-calibration
+2026-11-17T17:47:20.6876220Z  * [new branch]      research/parent-archive-cpu              -> origin/research/parent-archive-cpu
+2026-11-17T17:47:20.6876953Z  * [new branch]      research/private-prefix-continuations    -> origin/research/private-prefix-continuations
+2026-11-17T17:47:20.6877709Z  * [new branch]      research/private-prefix-decisions        -> origin/research/private-prefix-decisions
+2026-11-17T17:47:20.6878633Z  * [new branch]      research/private-prefix-diagnosis        -> origin/research/private-prefix-diagnosis
+2026-11-17T17:47:20.6879313Z  * [new branch]      research/private-prefix-pipeline         -> origin/research/private-prefix-pipeline
+2026-11-17T17:47:20.6879967Z  * [new branch]      research/private-prefix-stratification   -> origin/research/private-prefix-stratification
+2026-11-17T17:47:20.6880681Z  * [new branch]      research/public-board-comparison         -> origin/research/public-board-comparison
+2026-11-17T17:47:20.6881308Z  * [new branch]      research/public-board-keys               -> origin/research/public-board-keys
+2026-11-17T17:47:20.6881907Z  * [new branch]      research/range-mass-admission            -> origin/research/range-mass-admission
+2026-11-17T17:47:20.6882547Z  * [new branch]      research/range-mass-diagnosis            -> origin/research/range-mass-diagnosis
+2026-11-17T17:47:20.6883196Z  * [new branch]      research/range-mass-protocol             -> origin/research/range-mass-protocol
+2026-11-17T17:47:20.6883805Z  * [new branch]      research/range-mass-sampled              -> origin/research/range-mass-sampled
+2026-11-17T17:47:20.6884487Z  * [new branch]      research/reader-boundary-reconciliation  -> origin/research/reader-boundary-reconciliation
+2026-11-17T17:47:20.6885217Z  * [new branch]      research/reader-helper-trace             -> origin/research/reader-helper-trace
+2026-11-17T17:47:20.6886084Z  * [new branch]      research/reader-load-cpu                 -> origin/research/reader-load-cpu
+2026-11-17T17:47:20.6886722Z  * [new branch]      research/reader-phase-cpu                -> origin/research/reader-phase-cpu
+2026-11-17T17:47:20.6887377Z  * [new branch]      research/recall-proof-cache              -> origin/research/recall-proof-cache
+2026-11-17T17:47:20.6888288Z  * [new branch]      research/reduced-batch-study             -> origin/research/reduced-batch-study
+2026-11-17T17:47:20.6889066Z  * [new branch]      research/river-distinction-diagnosis     -> origin/research/river-distinction-diagnosis
+2026-11-17T17:47:20.6889799Z  * [new branch]      research/river-fixed-work                -> origin/research/river-fixed-work
+2026-11-17T17:47:20.6890364Z  * [new branch]      research/river-integration               -> origin/research/river-integration
+2026-11-17T17:47:20.6891018Z  * [new branch]      research/river-range-reweighting         -> origin/research/river-range-reweighting
+2026-11-17T17:47:20.6891736Z  * [new branch]      research/river-refinement-diagnosis      -> origin/research/river-refinement-diagnosis
+2026-11-17T17:47:20.6892426Z  * [new branch]      research/row-policy-cache                -> origin/research/row-policy-cache
+2026-11-17T17:47:20.6893023Z  * [new branch]      research/source-helper-trace             -> origin/research/source-helper-trace
+2026-11-17T17:47:20.6893623Z  * [new branch]      research/source-phase-cpu                -> origin/research/source-phase-cpu
+2026-11-17T17:47:20.6894227Z  * [new branch]      research/suit-candidates                 -> origin/research/suit-candidates
+2026-11-17T17:47:20.6894850Z  * [new branch]      research/suit-lookup                     -> origin/research/suit-lookup
+2026-11-17T17:47:20.6895496Z  * [new branch]      research/training-isolation              -> origin/research/training-isolation
+2026-11-17T17:47:20.6896142Z  * [new branch]      research/turn-continuations              -> origin/research/turn-continuations
+2026-11-17T17:47:20.6896967Z  * [new branch]      research/two-sided-blockers              -> origin/research/two-sided-blockers
+2026-11-17T17:47:20.6897601Z  * [new branch]      research/window-fallback                 -> origin/research/window-fallback
+2026-11-17T17:47:20.6898473Z  * [new branch]      tools/batch-strategy-viewer              -> origin/tools/batch-strategy-viewer
+2026-11-17T17:47:20.6899135Z  * [new branch]      workflow/github-progress                 -> origin/workflow/github-progress
+2026-11-17T17:47:20.6899692Z  * [new ref]         0dec0fc0f7b061386fb76d1fadf91e1a4224e18f -> pull/87/merge
+2026-11-17T17:47:20.6900877Z ##[endgroup]
+2026-11-17T17:47:20.6901282Z ##[group]Determining the checkout info
+2026-11-17T17:47:20.6901732Z ##[endgroup]
+2026-11-17T17:47:20.6902004Z [command]/usr/bin/git sparse-checkout disable
+2026-11-17T17:47:20.6916037Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-17T17:47:20.6938480Z ##[group]Checking out the ref
+2026-11-17T17:47:20.6941830Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/87/merge
+2026-11-17T17:47:21.8172930Z Updating files:  27% (1963/7195)
+2026-11-17T17:47:21.8200057Z Updating files:  28% (2015/7195)
+2026-11-17T17:47:21.8284953Z Updating files:  29% (2087/7195)
+2026-11-17T17:47:21.8426617Z Updating files:  30% (2159/7195)
+2026-11-17T17:47:21.8462323Z Updating files:  31% (2231/7195)
+2026-11-17T17:47:21.8530563Z Updating files:  32% (2303/7195)
+2026-11-17T17:47:21.8616304Z Updating files:  33% (2375/7195)
+2026-11-17T17:47:21.8675096Z Updating files:  34% (2447/7195)
+2026-11-17T17:47:21.8741772Z Updating files:  35% (2519/7195)
+2026-11-17T17:47:21.8784107Z Updating files:  36% (2591/7195)
+2026-11-17T17:47:21.8790617Z Updating files:  37% (2663/7195)
+2026-11-17T17:47:21.8814650Z Updating files:  38% (2735/7195)
+2026-11-17T17:47:22.1522674Z Updating files:  39% (2807/7195)
+2026-11-17T17:47:22.1540591Z Updating files:  40% (2878/7195)
+2026-11-17T17:47:22.1559359Z Updating files:  41% (2950/7195)
+2026-11-17T17:47:22.2110852Z Updating files:  42% (3022/7195)
+2026-11-17T17:47:22.2142869Z Updating files:  43% (3094/7195)
+2026-11-17T17:47:22.2164139Z Updating files:  44% (3166/7195)
+2026-11-17T17:47:22.2302373Z Updating files:  45% (3238/7195)
+2026-11-17T17:47:22.3190325Z Updating files:  46% (3310/7195)
+2026-11-17T17:47:22.3340043Z Updating files:  47% (3382/7195)
+2026-11-17T17:47:22.3435949Z Updating files:  48% (3454/7195)
+2026-11-17T17:47:22.3646073Z Updating files:  49% (3526/7195)
+2026-11-17T17:47:22.3807077Z Updating files:  50% (3598/7195)
+2026-11-17T17:47:22.4861481Z Updating files:  51% (3670/7195)
+2026-11-17T17:47:22.5575426Z Updating files:  52% (3742/7195)
+2026-11-17T17:47:22.5642631Z Updating files:  53% (3814/7195)
+2026-11-17T17:47:22.5808422Z Updating files:  54% (3886/7195)
+2026-11-17T17:47:22.5887693Z Updating files:  55% (3958/7195)
+2026-11-17T17:47:22.7109833Z Updating files:  56% (4030/7195)
+2026-11-17T17:47:22.9538516Z Updating files:  56% (4047/7195)
+2026-11-17T17:47:22.9999068Z Updating files:  57% (4102/7195)
+2026-11-17T17:47:23.2564815Z Updating files:  58% (4174/7195)
+2026-11-17T17:47:23.3555557Z Updating files:  59% (4246/7195)
+2026-11-17T17:47:23.3624854Z Updating files:  60% (4317/7195)
+2026-11-17T17:47:23.4190964Z Updating files:  61% (4389/7195)
+2026-11-17T17:47:23.4211808Z Updating files:  62% (4461/7195)
+2026-11-17T17:47:23.4375481Z Updating files:  63% (4533/7195)
+2026-11-17T17:47:23.4689028Z Updating files:  64% (4605/7195)
+2026-11-17T17:47:23.5793803Z Updating files:  65% (4677/7195)
+2026-11-17T17:47:23.7055646Z Updating files:  66% (4749/7195)
+2026-11-17T17:47:23.7107816Z Updating files:  66% (4809/7195)
+2026-11-17T17:47:23.7724139Z Updating files:  67% (4821/7195)
+2026-11-17T17:47:23.7776246Z Updating files:  68% (4893/7195)
+2026-11-17T17:47:23.7954871Z Updating files:  69% (4965/7195)
+2026-11-17T17:47:23.7995825Z Updating files:  70% (5037/7195)
+2026-11-17T17:47:23.8146956Z Updating files:  71% (5109/7195)
+2026-11-17T17:47:23.8175069Z Updating files:  72% (5181/7195)
+2026-11-17T17:47:23.8743951Z Updating files:  73% (5253/7195)
+2026-11-17T17:47:23.9543197Z Updating files:  74% (5325/7195)
+2026-11-17T17:47:24.0044297Z Updating files:  75% (5397/7195)
+2026-11-17T17:47:24.0197746Z Updating files:  76% (5469/7195)
+2026-11-17T17:47:24.0213574Z Updating files:  77% (5541/7195)
+2026-11-17T17:47:24.0320392Z Updating files:  78% (5613/7195)
+2026-11-17T17:47:24.0336597Z Updating files:  79% (5685/7195)
+2026-11-17T17:47:24.0354559Z Updating files:  80% (5756/7195)
+2026-11-17T17:47:24.0526638Z Updating files:  81% (5828/7195)
+2026-11-17T17:47:24.0567361Z Updating files:  82% (5900/7195)
+2026-11-17T17:47:24.0601829Z Updating files:  83% (5972/7195)
+2026-11-17T17:47:24.0804145Z Updating files:  84% (6044/7195)
+2026-11-17T17:47:24.0829847Z Updating files:  85% (6116/7195)
+2026-11-17T17:47:24.0865248Z Updating files:  86% (6188/7195)
+2026-11-17T17:47:24.0899727Z Updating files:  87% (6260/7195)
+2026-11-17T17:47:24.1348135Z Updating files:  88% (6332/7195)
+2026-11-17T17:47:24.1373523Z Updating files:  89% (6404/7195)
+2026-11-17T17:47:24.1404354Z Updating files:  90% (6476/7195)
+2026-11-17T17:47:24.1426885Z Updating files:  91% (6548/7195)
+2026-11-17T17:47:24.1453760Z Updating files:  92% (6620/7195)
+2026-11-17T17:47:24.1486673Z Updating files:  93% (6692/7195)
+2026-11-17T17:47:24.1519467Z Updating files:  94% (6764/7195)
+2026-11-17T17:47:24.1551160Z Updating files:  95% (6836/7195)
+2026-11-17T17:47:24.1575740Z Updating files:  96% (6908/7195)
+2026-11-17T17:47:24.1607009Z Updating files:  97% (6980/7195)
+2026-11-17T17:47:24.1638863Z Updating files:  98% (7052/7195)
+2026-11-17T17:47:24.1684591Z Updating files:  99% (7124/7195)
+2026-11-17T17:47:24.1684852Z Updating files: 100% (7195/7195)
+2026-11-17T17:47:24.1685104Z Updating files: 100% (7195/7195), done.
+2026-11-17T17:47:24.1765541Z Note: switching to 'refs/remotes/pull/87/merge'.
+2026-11-17T17:47:24.1765948Z 
+2026-11-17T17:47:24.1766303Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-17T17:47:24.1766927Z changes and commit them, and you can discard any commits you make in this
+2026-11-17T17:47:24.1767705Z state without impacting any branches by switching back to a branch.
+2026-11-17T17:47:24.1768340Z 
+2026-11-17T17:47:24.1768632Z If you want to create a new branch to retain commits you create, you may
+2026-11-17T17:47:24.1769262Z do so (now or later) by using -c with the switch command. Example:
+2026-11-17T17:47:24.1769654Z 
+2026-11-17T17:47:24.1769875Z   git switch -c <new-branch-name>
+2026-11-17T17:47:24.1770165Z 
+2026-11-17T17:47:24.1770369Z Or undo this operation with:
+2026-11-17T17:47:24.1770635Z 
+2026-11-17T17:47:24.1770811Z   git switch -
+2026-11-17T17:47:24.1771037Z 
+2026-11-17T17:47:24.1771354Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-17T17:47:24.1771786Z 
+2026-11-17T17:47:24.1772253Z HEAD is now at 0dec0fc Merge 03c70227daf483aa38212e47360a5052b30214f7 into f5bde46daa540f89f4b8aafd313e100ca52b57be
+2026-11-17T17:47:24.1837489Z ##[endgroup]
+2026-11-17T17:47:24.1872918Z [command]/usr/bin/git log -1 --format=%H
+2026-11-17T17:47:24.1893505Z 0dec0fc0f7b061386fb76d1fadf91e1a4224e18f
+2026-11-17T17:47:24.1900641Z ##[group]Removing auth
+2026-11-17T17:47:24.1900953Z Removing SSH command configuration
+2026-11-17T17:47:24.1903984Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T17:47:24.1927629Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T17:47:24.2088545Z Removing HTTP extra header
+2026-11-17T17:47:24.2091965Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T17:47:24.2115349Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T17:47:24.2271635Z Removing includeIf entries pointing to credentials config files
+2026-11-17T17:47:24.2273096Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-17T17:47:24.2291474Z includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path
+2026-11-17T17:47:24.2291914Z includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path
+2026-11-17T17:47:24.2292287Z includeif.gitdir:/github/workspace/.git.path
+2026-11-17T17:47:24.2292626Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-17T17:47:24.2297129Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path
+2026-11-17T17:47:24.2314862Z /home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:24.2321369Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-6654ed59\-fc02\-4f7d\-ba12\-c432c1c579b8\.config
+2026-11-17T17:47:24.2377014Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path
+2026-11-17T17:47:24.2395244Z /home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:24.2400290Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/poker-ai/poker-ai/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-6654ed59\-fc02\-4f7d\-ba12\-c432c1c579b8\.config
+2026-11-17T17:47:24.2849874Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-17T17:47:24.2873318Z /github/runner_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:24.2879143Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-6654ed59\-fc02\-4f7d\-ba12\-c432c1c579b8\.config
+2026-11-17T17:47:24.2949708Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-17T17:47:24.2966389Z /github/runner_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config
+2026-11-17T17:47:24.2971639Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-6654ed59\-fc02\-4f7d\-ba12\-c432c1c579b8\.config
+2026-11-17T17:47:24.3214764Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-17T17:47:24.3373071Z Removing credentials config '/home/runner/work/_temp/git-credentials-6654ed59-fc02-4f7d-ba12-c432c1c579b8.config'
+2026-11-17T17:47:24.3379370Z ##[endgroup]
+2026-11-17T17:47:24.3648959Z ##[group]Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+2026-11-17T17:47:24.3649314Z with:
+2026-11-17T17:47:24.3649470Z   version: 0.13.5
+2026-11-17T17:47:24.3649637Z   python-version: 3.12.15
+2026-11-17T17:47:24.3649821Z   enable-cache: true
+2026-11-17T17:47:24.3650010Z   activate-environment: false
+2026-11-17T17:47:24.3650240Z   no-project: false
+2026-11-17T17:47:24.3650475Z   working-directory: /home/runner/work/poker-ai/poker-ai
+2026-11-17T17:47:24.3652335Z   github-token: ***
+2026-11-17T17:47:24.3652747Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-17T17:47:24.3653184Z   restore-cache: true
+2026-11-17T17:47:24.3653342Z   save-cache: true
+2026-11-17T17:47:24.3653495Z   prune-cache: false
+2026-11-17T17:47:24.3653655Z   cache-python: false
+2026-11-17T17:47:24.3653827Z   ignore-nothing-to-cache: false
+2026-11-17T17:47:24.3654059Z   ignore-empty-workdir: false
+2026-11-17T17:47:24.3654257Z   download-from-astral-mirror: true
+2026-11-17T17:47:24.3654462Z   add-problem-matchers: true
+2026-11-17T17:47:24.3654633Z   quiet: false
+2026-11-17T17:47:24.3654794Z   resolution-strategy: highest
+2026-11-17T17:47:24.3654974Z env:
+2026-11-17T17:47:24.3655112Z   UV_PYTHON: 3.12.15
+2026-11-17T17:47:24.3655275Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T17:47:24.3655437Z ##[endgroup]
+2026-11-17T17:47:24.5659504Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-11-17T17:47:24.6823277Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-17T17:47:24.8312318Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c8cf981f-ad33-4839-9537-0207400c9d11 -f /home/runner/work/_temp/66e89571-54ff-4a15-98ea-635340b65109
+2026-11-17T17:47:25.4440021Z Added /home/runner/.local/bin to the path
+2026-11-17T17:47:25.4442580Z Added /opt/hostedtoolcache/uv/0.13.5/x86_64 to the path
+2026-11-17T17:47:25.4443145Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-11-17T17:47:25.4443589Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-11-17T17:47:25.4443894Z Set UV_PYTHON to 3.12.15
+2026-11-17T17:47:25.4463636Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-11-17T17:47:25.4464030Z Successfully installed uv version 0.13.5
+2026-11-17T17:47:25.4465168Z Searching files using cache dependency glob: /home/runner/work/poker-ai/poker-ai/**/*requirements*.txt,/home/runner/work/poker-ai/poker-ai/**/*requirements*.in,/home/runner/work/poker-ai/poker-ai/**/*constraints*.txt,/home/runner/work/poker-ai/poker-ai/**/*constraints*.in,/home/runner/work/poker-ai/poker-ai/**/pyproject.toml,/home/runner/work/poker-ai/poker-ai/**/uv.lock,/home/runner/work/poker-ai/poker-ai/**/*.py.lock
+2026-11-17T17:47:25.7046652Z /home/runner/work/poker-ai/poker-ai/pyproject.toml
+2026-11-17T17:47:26.1436143Z /home/runner/work/poker-ai/poker-ai/uv.lock
+2026-11-17T17:47:26.1446516Z Found 2 files to hash.
+2026-11-17T17:47:26.1503586Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.15-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-17T17:47:26.1922176Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.15-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-17T17:47:26.6204193Z Received 47977860 of 47977860 (100.0%), 118.8 MBs/sec
+2026-11-17T17:47:26.6204529Z Cache Size: ~46 MB (47977860 B)
+2026-11-17T17:47:26.6219888Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3874ccb4-883c-4326-affa-7a3c7e6726d5/cache.tzst -P -C /home/runner/work/poker-ai/poker-ai --use-compress-program unzstd
+2026-11-17T17:47:26.7995975Z Cache restored successfully
+2026-11-17T17:47:26.8013979Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.15-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697
+2026-11-17T17:47:26.9148544Z ##[group]Run make setup
+2026-11-17T17:47:26.9148849Z [36;1mmake setup[0m
+2026-11-17T17:47:27.2914277Z shell: /usr/bin/bash -e {0}
+2026-11-17T17:47:27.2914509Z env:
+2026-11-17T17:47:27.2914677Z   UV_PYTHON: 3.12.15
+2026-11-17T17:47:27.2914883Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T17:47:27.2915118Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-17T17:47:27.2915405Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-17T17:47:27.2915629Z ##[endgroup]
+2026-11-17T17:47:27.3330218Z uv sync --locked --dev
+2026-11-17T17:47:27.5028869Z Downloading cpython-3.12.15-linux-x86_64-gnu (download) (32.9MiB)
+2026-11-17T17:47:27.9053554Z  Downloaded cpython-3.12.15-linux-x86_64-gnu (download)
+2026-11-17T17:47:28.0161992Z Using CPython 3.12.15
+2026-11-17T17:47:28.0162313Z Creating virtual environment at: .venv
+2026-11-17T17:47:28.0184950Z Resolved 47 packages in 0.80ms
+2026-11-17T17:47:28.0226778Z    Building poker-ai @ file:///home/runner/work/poker-ai/poker-ai
+2026-11-17T17:47:28.6323133Z       Built poker-ai @ file:///home/runner/work/poker-ai/poker-ai
+2026-11-17T17:47:28.6334477Z Prepared 1 package in 613ms
+2026-11-17T17:47:28.6824283Z Installed 25 packages in 48ms
+2026-11-17T17:47:28.6824579Z  + cfgv==3.5.0
+2026-11-17T17:47:28.6824829Z  + distlib==0.4.4
+2026-11-17T17:47:28.6825022Z  + filelock==4.2.7
+2026-11-17T17:47:28.6825219Z  + hypothesis==6.170.14
+2026-11-17T17:47:28.6825420Z  + identify==2.6.20
+2026-11-17T17:47:28.6825584Z  + iniconfig==2.3.1
+2026-11-17T17:47:28.6825734Z  + librt==0.16.0
+2026-11-17T17:47:28.6825883Z  + mypy==1.20.2
+2026-11-17T17:47:28.6828341Z  + mypy-extensions==1.1.0
+2026-11-17T17:47:28.6832459Z  + nodeenv==1.12.0
+2026-11-17T17:47:28.6832912Z  + numpy==2.5.4
+2026-11-17T17:47:28.6833235Z  + packaging==26.3
+2026-11-17T17:47:28.6833435Z  + pathspec==1.1.1
+2026-11-17T17:47:28.6833638Z  + platformdirs==4.14.3
+2026-11-17T17:47:28.6833825Z  + pluggy==1.7.0
+2026-11-17T17:47:28.6834074Z  + poker-ai==0.1.0 (from file:///home/runner/work/poker-ai/poker-ai)
+2026-11-17T17:47:28.6834342Z  + pre-commit==4.7.0
+2026-11-17T17:47:28.6834521Z  + pygments==2.21.0
+2026-11-17T17:47:28.6834673Z  + pytest==9.2.0
+2026-11-17T17:47:28.6834838Z  + python-discovery==1.9.1
+2026-11-17T17:47:28.6835013Z  + pyyaml==6.0.3
+2026-11-17T17:47:28.6835170Z  + ruff==0.17.3
+2026-11-17T17:47:28.6835340Z  + sortedcontainers==2.4.0
+2026-11-17T17:47:28.6835526Z  + typing-extensions==4.16.0
+2026-11-17T17:47:28.6835712Z  + virtualenv==21.15.2
+2026-11-17T17:47:28.6901446Z ##[group]Run uv run --locked python -c 'import os, sys, numpy; actual = sys.version.split()[0]; assert actual == os.environ["UV_PYTHON"], (actual, os.environ["UV_PYTHON"]); assert numpy.__version__ == os.environ["EXPECTED_NUMPY"]; print("ACTUAL_PYTHON=" + actual); print("ACTUAL_NUMPY=" + numpy.__version__)'
+2026-11-17T17:47:28.6902805Z [36;1muv run --locked python -c 'import os, sys, numpy; actual = sys.version.split()[0]; assert actual == os.environ["UV_PYTHON"], (actual, os.environ["UV_PYTHON"]); assert numpy.__version__ == os.environ["EXPECTED_NUMPY"]; print("ACTUAL_PYTHON=" + actual); print("ACTUAL_NUMPY=" + numpy.__version__)'[0m
+2026-11-17T17:47:28.6929430Z shell: /usr/bin/bash -e {0}
+2026-11-17T17:47:28.6929638Z env:
+2026-11-17T17:47:28.6929795Z   UV_PYTHON: 3.12.15
+2026-11-17T17:47:28.6930093Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T17:47:28.6930344Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-17T17:47:28.6930689Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-17T17:47:28.6930922Z ##[endgroup]
+2026-11-17T17:47:28.9229926Z ACTUAL_PYTHON=3.12.15
+2026-11-17T17:47:28.9230202Z ACTUAL_NUMPY=2.5.4
+2026-11-17T17:47:28.9400296Z ##[group]Run make check
+2026-11-17T17:47:28.9400519Z [36;1mmake check[0m
+2026-11-17T17:47:28.9427208Z shell: /usr/bin/bash -e {0}
+2026-11-17T17:47:28.9427416Z env:
+2026-11-17T17:47:28.9427572Z   UV_PYTHON: 3.12.15
+2026-11-17T17:47:28.9427745Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T17:47:28.9428280Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-17T17:47:28.9428573Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-17T17:47:28.9428800Z ##[endgroup]
+2026-11-17T17:47:28.9483121Z uv run --locked ruff check .
+2026-11-17T17:47:29.0653048Z All checks passed!
+2026-11-17T17:47:29.0677346Z uv run --locked ruff format --check .
+2026-11-17T17:47:29.1929468Z 980 files already formatted
+2026-11-17T17:47:29.1951015Z uv run --locked mypy --strict src tests scripts
+2026-11-17T17:47:45.1888679Z Success: no issues found in 823 source files
+2026-11-17T17:47:45.2055755Z uv run --locked pytest -q -m "not slow"
+2026-11-17T17:47:51.9329969Z ........................................................................ [  1%]
+2026-11-17T17:47:53.2504037Z ........................................................................ [  2%]
+2026-11-17T17:47:55.6458296Z ........................................................................ [  3%]
+2026-11-17T17:47:56.2779056Z ........................................................................ [  5%]
+2026-11-17T17:47:58.2771728Z ........................................................................ [  6%]
+2026-11-17T17:47:59.0452408Z ........................................................................ [  7%]
+2026-11-17T17:47:59.9342184Z ........................................................................ [  9%]
+2026-11-17T17:48:14.2018498Z ........................................................................ [ 10%]
+2026-11-17T17:48:26.3239281Z ........................................................................ [ 11%]
+2026-11-17T17:48:33.7419563Z ........................................................................ [ 13%]
+2026-11-17T17:48:37.8413785Z ........................................................................ [ 14%]
+2026-11-17T17:48:38.1313104Z ........................................................................ [ 15%]
+2026-11-17T17:48:50.8149573Z ........................................................................ [ 17%]
+2026-11-17T17:49:19.4995017Z ........................................................................ [ 18%]
+2026-11-17T17:49:21.6821230Z ........................................................................ [ 19%]
+2026-11-17T17:49:29.5793568Z ........................................................................ [ 21%]
+2026-11-17T17:50:00.0859246Z ....................s................................................... [ 22%]
+2026-11-17T17:50:05.8396069Z ...............ss....................................................... [ 23%]
+2026-11-17T17:50:25.7030576Z .........s.............................................................. [ 24%]
+2026-11-17T17:50:55.6543165Z ........................................................................ [ 26%]
+2026-11-17T17:51:29.4248916Z ........................................................................ [ 27%]
+2026-11-17T17:51:30.0303521Z ........................................................................ [ 28%]
+2026-11-17T17:51:51.3892314Z ........................................................................ [ 30%]
+2026-11-17T17:52:09.4828126Z ........................................................................ [ 31%]
+2026-11-17T17:52:53.5999966Z ...........................................s............................ [ 32%]
+2026-11-17T17:53:00.6651413Z ........................................................................ [ 34%]
+2026-11-17T17:53:05.4288076Z ........................................................................ [ 35%]
+2026-11-17T17:53:06.1442874Z ........................................................................ [ 36%]
+2026-11-17T17:53:07.1577587Z ........................................................sss............. [ 38%]
+2026-11-17T17:53:07.3619510Z ........................................................................ [ 39%]
+2026-11-17T17:53:12.8820274Z ..............................................s......................... [ 40%]
+2026-11-17T17:53:23.8844807Z ........................................................................ [ 42%]
+2026-11-17T17:53:35.1534621Z ........................................................................ [ 43%]
+2026-11-17T17:53:37.5878497Z ........................................................................ [ 44%]
+2026-11-17T17:53:44.7618940Z ........................................................................ [ 46%]
+2026-11-17T17:53:51.8960525Z ............................ss..sss..................................... [ 47%]
+2026-11-17T17:53:52.5887097Z ...................................................................sssss [ 48%]
+2026-11-17T17:54:54.2743322Z ssssssssssss..............................................s............. [ 49%]
+2026-11-17T17:55:13.5483373Z ........................................................................ [ 51%]
+2026-11-17T17:55:25.6029579Z ........................................................................ [ 52%]
+2026-11-17T17:55:34.4845888Z ........................................................................ [ 53%]
+2026-11-17T17:55:40.5129040Z ........................................................ssssssssss...... [ 55%]
+2026-11-17T17:55:56.5130908Z ........................................................................ [ 56%]
+2026-11-17T17:56:05.1036186Z ........................................................................ [ 57%]
+2026-11-17T17:56:37.6259232Z ........................................................................ [ 59%]
+2026-11-17T17:56:54.2954947Z ..................................s..................................... [ 60%]
+2026-11-17T17:58:19.9260220Z ........................................................................ [ 61%]
+2026-11-17T17:58:40.6604439Z ......................ss...s............................................ [ 63%]
+2026-11-17T17:58:47.2550558Z ........................................................................ [ 64%]
+2026-11-17T17:58:48.6344880Z ....................................................s................... [ 65%]
+2026-11-17T17:58:55.0797388Z ..............................s......................................... [ 67%]
+2026-11-17T17:59:01.7455050Z ........................................................................ [ 68%]
+2026-11-17T17:59:17.7758538Z .......................................ss.......................ss...... [ 69%]
+2026-11-17T17:59:27.1704439Z ........................................................................ [ 70%]
+2026-11-17T18:00:23.9152112Z ...................................................................ss... [ 72%]
+2026-11-17T18:00:56.9448155Z ...................................ss................................... [ 73%]
+2026-11-17T18:00:57.4926888Z ........................................................................ [ 74%]
+2026-11-17T18:01:20.0592742Z ........................................................................ [ 76%]
+2026-11-17T18:01:39.1981197Z .............s.......................................................... [ 77%]
+2026-11-17T18:02:39.7168073Z ...................................................................s.... [ 78%]
+2026-11-17T18:03:08.2297245Z ................s....................................................... [ 80%]
+2026-11-17T18:03:21.2948382Z ..........................................................s............. [ 81%]
+2026-11-17T18:03:24.1781798Z ...................................................s.................... [ 82%]
+2026-11-17T18:03:33.7144869Z ..............................................ss..........s............. [ 84%]
+2026-11-17T18:03:45.8845926Z ........................................................................ [ 85%]
+2026-11-17T18:04:29.7795243Z ...................s.................................................... [ 86%]
+2026-11-17T18:04:40.9681984Z ...........s............................................................ [ 88%]
+2026-11-17T18:04:54.7159017Z ........................................................................ [ 89%]
+2026-11-17T18:05:35.1007304Z ........................................................................ [ 90%]
+2026-11-17T18:05:42.0224511Z ........................................................................ [ 92%]
+2026-11-17T18:05:54.2590128Z ......................................................................s. [ 93%]
+2026-11-17T18:06:09.4934073Z ........................................................................ [ 94%]
+2026-11-17T18:06:10.0939409Z ........................................................................ [ 95%]
+2026-11-17T18:06:21.5450211Z ........................................................................ [ 97%]
+2026-11-17T18:06:43.1245967Z ........................................................................ [ 98%]
+2026-11-17T18:06:48.1174900Z ........................................................................ [ 99%]
+2026-11-17T18:06:48.4600242Z ......                                                                   [100%]
+2026-11-17T18:06:48.4600735Z =============================== warnings summary ===============================
+2026-11-17T18:06:48.4601234Z tests/test_river_refinement_report.py::test_complete_actual_saved_data_receipt_replays_all_rows
+2026-11-17T18:06:48.4602009Z   /home/runner/work/poker-ai/poker-ai/tests/test_river_refinement_report.py:128: RuntimeWarning: Local cost replay roundoff 8.8817841970012523e-16 (limit 1e-12); archived bytes unchanged.
+2026-11-17T18:06:48.4602656Z     data = REPORT.checked(ROOT, ROOT / "results/river-refinement")
+2026-11-17T18:06:48.4602939Z 
+2026-11-17T18:06:48.4603151Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-17T18:06:48.4603611Z 5411 passed, 70 skipped, 150 deselected, 1 warning in 1142.24s (0:19:02)
+2026-11-17T18:06:48.7224702Z ##[group]Run uv run --locked pre-commit validate-config
+2026-11-17T18:06:48.7225105Z [36;1muv run --locked pre-commit validate-config[0m
+2026-11-17T18:06:48.7225443Z [36;1muv run --locked pre-commit run --all-files[0m
+2026-11-17T18:06:48.7251902Z shell: /usr/bin/bash -e {0}
+2026-11-17T18:06:48.7252256Z env:
+2026-11-17T18:06:48.7252528Z   UV_PYTHON: 3.12.15
+2026-11-17T18:06:48.7252798Z   EXPECTED_NUMPY: 2.5.4
+2026-11-17T18:06:48.7253108Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-17T18:06:48.7253460Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-17T18:06:48.7253760Z ##[endgroup]
+2026-11-17T18:06:49.1030985Z Ruff lint (locked project environment)...................................Passed
+2026-11-17T18:06:49.1375823Z Ruff format check (locked project environment)...........................Passed
+2026-11-17T18:06:49.1681562Z Post job cleanup.
+2026-11-17T18:06:49.2474480Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-11-17T18:06:49.2477728Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-11-17T18:06:49.2478830Z Cache hit occurred on key setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.15-7dfb47f92f209ff1e96a2b1c839184d3226d3d0cc7424c497d46b0be848fc697, not saving cache.
+2026-11-17T18:06:49.3591895Z Post job cleanup.
+2026-11-17T18:06:49.4224838Z [command]/usr/bin/git version
+2026-11-17T18:06:49.4252910Z git version 2.56.1
+2026-11-17T18:06:49.4276247Z Temporarily overriding HOME='/home/runner/work/_temp/bf5d5f31-cccb-46de-b56e-6c277fa59f94' before making global git config changes
+2026-11-17T18:06:49.4277384Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-17T18:06:49.4279275Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/poker-ai/poker-ai
+2026-11-17T18:06:49.4303593Z Removing SSH command configuration
+2026-11-17T18:06:49.4308067Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T18:06:49.4348917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T18:06:49.4525181Z Removing HTTP extra header
+2026-11-17T18:06:49.4529914Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T18:06:49.4554226Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T18:06:49.4769206Z Removing includeIf entries pointing to credentials config files
+2026-11-17T18:06:49.4769976Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-17T18:06:49.4788982Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-17T18:06:49.5057433Z Cleaning up orphan processes

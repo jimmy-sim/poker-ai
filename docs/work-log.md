@@ -6712,3 +6712,24 @@ The real saved-data regression blocks construction/profiling and checks all five
 output bytes. All 31 focused cases pass on both actual runtimes. Complete final
 local/optional/hosted checks still need to run. No new measurement, solver, training or gate change;
 Codex-assisted execution and documentation, human time not recorded.
+
+
+### November 17: isolate the saved-data regression from optional reference imports
+
+The full cohort on `03c7022` is not qualified. Both bases pass 5,411 tests with
+70 skipped and 150 deselected; both hosted base jobs pass. Both optional suites
+report one failed and 2,318 passed: the new regression enters an own-only guard
+after other valid tests have imported OpenSpiel in the same interpreter. The
+strict guard correctly rejects that state. [All failed local records and hosted
+logs](../results/earlier-source-profile/failed-qualification-03/manifest.json)
+are retained before another qualification attempt.
+
+The fix changes only that regression: a reference-loaded parent is explicitly
+refused, and a fresh child reads the saved data under all 104 blocks and checks
+the five output files exactly. With real OpenSpiel preloaded in each parent,
+31 focused cases pass on actual 3.11.17/NumPy 2.4.6 and 3.12.15/NumPy 2.5.4 in
+3.06/3.04 seconds. Reader/config, source453 fingerprint, all 450 historical
+scientific files and every reported numerical byte are unchanged. Complete
+local/optional/hosted checks must now pass on the corrected head. No scientific
+retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
+human hands-on time not recorded.

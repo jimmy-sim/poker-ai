@@ -1,0 +1,199 @@
+{
+  "status": "old_optional_cohort_failed_test_isolation_not_qualified",
+  "failed_head": "03c70227daf483aa38212e47360a5052b30214f7",
+  "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+  "bases": "5411 passed/70 skipped/150 deselected each",
+  "optional": "1 failed/2318 passed each",
+  "hosted_base_jobs": "both pass but insufficient with optional failure",
+  "fix": "Run only the new saved-data regression in a fresh Python process; retain strict guard and prove reference-loaded parent rejected",
+  "fixed_focus": "31 pass each with real pyspiel preimported in parent",
+  "research_gate_changed": false,
+  "data_changed": false,
+  "files": [
+    {
+      "file": "diagnosis.json",
+      "bytes": 564,
+      "sha256": "35dbd7c255a87a74149762e277233e061aeb4b280701ae3f370fd3b6529368c4"
+    },
+    {
+      "file": "earlier-source-final-expected.json",
+      "bytes": 53580,
+      "sha256": "749a0f323f4997d80ff32f7c9bc3b972a5f5c688088435e2f00b507c418864df"
+    },
+    {
+      "file": "earlier-source-isolation-doc-review.json",
+      "bytes": 733,
+      "sha256": "3cbfa7f364cf3e6bd3266b43c8143de240f7444ff95adebb472013386df56cb3"
+    },
+    {
+      "file": "earlier-source-isolation-format.log",
+      "bytes": 28,
+      "sha256": "fab48da6bdf9bc411dbc1e09b25f24b10f2d6ab0e075581b278181725a8ad22b"
+    },
+    {
+      "file": "earlier-source-isolation-lint-v2.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "file": "earlier-source-isolation-lint.log",
+      "bytes": 4190,
+      "sha256": "8337627fe071b0af667d3518e5856ca85dd83b3d8c19774342399c18b061e5e0"
+    },
+    {
+      "file": "earlier-source-isolation-mypy-v2.log",
+      "bytes": 45,
+      "sha256": "0c6f6aac1d4cdfbca39cda02a853688e20762c2ae8d330df2f125597a8542863"
+    },
+    {
+      "file": "earlier-source-reference-preloaded311-v2.log",
+      "bytes": 99,
+      "sha256": "5397d05d7cbbd5d1fdfe1543faba81aeeb9f4034b570834f4dbb0dbfd264080b"
+    },
+    {
+      "file": "earlier-source-reference-preloaded312-v2.log",
+      "bytes": 99,
+      "sha256": "5397d05d7cbbd5d1fdfe1543faba81aeeb9f4034b570834f4dbb0dbfd264080b"
+    },
+    {
+      "file": "fix-checks.json",
+      "bytes": 593,
+      "sha256": "b205a443e36e4ff1ea199280ee6e4ab26ee6cd674bbf93bf8b08b87c8f795743"
+    },
+    {
+      "file": "fixed-reference-preloaded311.log",
+      "bytes": 99,
+      "sha256": "464510e6f160701cdd31675062385f4703371561988ca5ce583d0edb07e6071f"
+    },
+    {
+      "file": "fixed-reference-preloaded312.log",
+      "bytes": 99,
+      "sha256": "ddcc0c87c522b605b5930047ad38f5004e6c08d0135fbb29950e0cd2d41427f0"
+    },
+    {
+      "file": "hosted/hosted311.log",
+      "bytes": 50588,
+      "sha256": "24718d6d322d5ea5d9400127f9a1a0781ae0dd20f08730c4a2338007c0ed5c02"
+    },
+    {
+      "file": "hosted/hosted312.log",
+      "bytes": 50517,
+      "sha256": "02b1236986f9002275f9846692b69135125844b4912591b7f54763cc17a8573b"
+    },
+    {
+      "file": "hosted/jobs-official.json",
+      "bytes": 5148,
+      "sha256": "51aaf1c354def345616bd26a4415595164075303004b09b7cca158169b61a8ab"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12936,
+      "sha256": "a4f14b5b7c01cfd9ca1bf6b0671735c695f9f7ca447cdb2fcda8bcd54b47356b"
+    },
+    {
+      "file": "lane311.log",
+      "bytes": 3192,
+      "sha256": "26701af57a1b94522c5386d851c9141d1d50cbcedada28adb1f4083a1415b391"
+    },
+    {
+      "file": "lane312.log",
+      "bytes": 3192,
+      "sha256": "d4ab738a27b03ebb52f636b7da8cfbbaf70c0dc3c7ee428bbe47894e0b49f443"
+    },
+    {
+      "file": "local/base311-install.log",
+      "bytes": 352,
+      "sha256": "d92a36d4d71945c622343b7145fc8ff857b2b4732031728e52c0e93da9c7b5ee"
+    },
+    {
+      "file": "local/base311-receipt.json",
+      "bytes": 443,
+      "sha256": "7ce1b8af848b5ecd948d4203fda8b815a3e923722430785d452df1b1ea1a0dec"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 10428,
+      "sha256": "4192d717826e3ddbe7a9c6916e811aab649187f01a6d260ab6e61b5148947036"
+    },
+    {
+      "file": "local/base312-install.log",
+      "bytes": 58,
+      "sha256": "83cb9f9d4d618153411bbc710b1caa4473339d7362d40d8a957cf0d09fbd3e12"
+    },
+    {
+      "file": "local/base312-receipt.json",
+      "bytes": 439,
+      "sha256": "9af6683a003193523069f36d2d607babdd3e0c8a5bc67d2fc06aa714da4c3327"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 10428,
+      "sha256": "a05f5eb25dea232728e47409d673c4c99514077482efb29efe3fcb16df75be35"
+    },
+    {
+      "file": "local/optional311-install.log",
+      "bytes": 58,
+      "sha256": "2a25df6330358f3229f22b1fd92a5eefff8f9f68b6f2e82c58a660e1a3763264"
+    },
+    {
+      "file": "local/optional311-receipt.json",
+      "bytes": 442,
+      "sha256": "36a058248ef88cea319171d33791511adda0b3a15497a0d8d93ae03ff03ecfe3"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 10046,
+      "sha256": "9224a12d2ee8b7d8d0a2657c6c8d5766efed88d5f29377f2a8d6254ff77aac4e"
+    },
+    {
+      "file": "local/optional312-install.log",
+      "bytes": 58,
+      "sha256": "0b10da81f6f9bc585d2c2cf30d0f693f899e120a46bf21a31982212c5c1dc65b"
+    },
+    {
+      "file": "local/optional312-receipt.json",
+      "bytes": 443,
+      "sha256": "9aad381c5c7d2e1055d493a8138331c35aceb126112abf4845e7f3e2d322dafb"
+    },
+    {
+      "file": "local/optional312.log",
+      "bytes": 10082,
+      "sha256": "22e9a02a70478240c03c205ee2ef622c6efe3d0a5fe821ad2382a38b6214e31b"
+    },
+    {
+      "file": "run-earlier-source-final-checks.py.txt",
+      "bytes": 6220,
+      "sha256": "aa6bf70130411921de5ca456b808917e3f3158d49b5afd7b79d27669bee521a4"
+    },
+    {
+      "file": "run-earlier-source-final-lane.py.txt",
+      "bytes": 456,
+      "sha256": "bf8236951ff003341aa0e848b117e83853bdc9730f52de5b56429c57685fc036"
+    },
+    {
+      "file": "superseded-source-head395/hosted311.log",
+      "bytes": 47055,
+      "sha256": "7dd164beb95f194beeb917543c2d5f063ca7adff48980f573b533b65b9a27503"
+    },
+    {
+      "file": "superseded-source-head395/hosted312.log",
+      "bytes": 47856,
+      "sha256": "72b9bbc278497dc0719c7fd49291c1c71adc1983998c99615da5778ef3a01456"
+    },
+    {
+      "file": "superseded-source-head395/jobs-official.json",
+      "bytes": 5156,
+      "sha256": "e051f47f0a2f687e13bdd40482e5fe89f7db3b9832be773a3f0e974c96536f83"
+    },
+    {
+      "file": "superseded-source-head395/run.json",
+      "bytes": 12941,
+      "sha256": "9cc099e6e44f9e2d16044618b399e0d63e7e4049fd16330059295f1fdf9439ae"
+    },
+    {
+      "file": "superseded-source-head395/scope.json",
+      "bytes": 291,
+      "sha256": "fbbb5bd539e6e71f0d5b2e10d50f6220a16fec74c32ceb9cad3e47d2946e2bf2"
+    }
+  ]
+}

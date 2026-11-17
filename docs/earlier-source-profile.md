@@ -142,3 +142,21 @@ regenerated after running the reader:
 
 Final repository checks remain pending. No figure is needed to read these five
 rows; the complete edge tables retain the detail behind the summary.
+
+
+### Optional-suite isolation correction
+
+The first full optional cohort on `03c7022` finds a test-isolation error: earlier
+valid tests import OpenSpiel, so the strict own-only guard refuses the new
+regression in their shared interpreter. Both optional suites report one failed
+and 2,318 passed; the base suites and base-only hosted CI pass. The [complete
+failed cohort](../results/earlier-source-profile/failed-qualification-03/manifest.json)
+is retained and is not counted as final qualification.
+
+Only the regression changes: it now proves the reference-loaded parent is refused
+and executes the saved-data read in a fresh child interpreter. All 31 focused
+cases pass on both runtimes with real OpenSpiel deliberately preloaded in the
+parent (3.06/3.04 seconds). The child retains all 104 construction/profiling blocks
+and five exact export checks. The runtime guard, reader code, config, raw data and
+reported numbers remain unchanged. Complete final checks must pass at the fixed
+new head before merge.

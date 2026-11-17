@@ -6979,3 +6979,19 @@ final repository checks remain pending.
 The real saved-data regression also passes: all 31 focused cases pass on both
 actual runtimes, including complete export reproduction with construction and
 profiling blocked. Full final local/optional/hosted checks still precede merge.
+
+
+**November 17 — check isolation as part of correctness.** The full optional suite
+finds something the focused run did not: earlier tests have already imported the
+reference library. The own-only guard correctly rejects that shared process.
+Both optional runs fail only the new saved-data regression; the earlier base and
+hosted base checks pass. This is a test integration error, not a different poker
+result.
+
+The regression now uses a fresh Python process. It deliberately preloads the real
+reference module in the parent and verifies that the guard still refuses that
+parent. The child starts clean, keeps all 104 construction/profiling blocks and
+checks all five exact exports. All 31 focused cases pass on both runtimes with
+that preloaded state. The [failed cohort](../results/earlier-source-profile/failed-qualification-03/manifest.json)
+remains available. Full requalification follows; no guard is relaxed and no
+scientific data or strategy changes.
