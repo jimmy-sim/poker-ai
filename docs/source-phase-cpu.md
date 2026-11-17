@@ -168,3 +168,12 @@ reproduction is still required after collection.
 This qualifies the corrected measuring tool. A fresh own-only proof must be
 published and verified before the single complete comparison. The original
 rejected proof and blocked pair remain unchanged.
+
+
+November 17 — The corrected own-only command completes in 6.215336457997182 seconds
+under the fixed 180-second outer cap. Its actual child allowance is
+179.9991310000005 seconds. The actual archived software replay agrees exactly
+before/during observation and has zero source roots; separately labeled forwarding
+fixtures record 14 selected calls and full restoration. [All 13 raw files](../results/source-phase-cpu-v2/software-raw-manifest.json)
+are retained before any fresh reference. Public-boundary verification is next;
+this is not real cost-loader coverage or new independent poker mathematics.

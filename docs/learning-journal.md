@@ -6622,3 +6622,12 @@ allowance and still attempt to start a child. The launcher now checks the clock
 immediately before launch. All six process tests and five preflight tests pass;
 the initial failure remains recorded. No poker strategy changed. Next is a new
 own-only proof under the original limit, published before reference comparison.
+
+
+**November 17 — new own-only evidence retained.** The complete corrected command
+finishes in 6.215336 seconds. Its recorded inner allowance is slightly
+below 180 seconds because startup uses part of the unchanged outer limit. The
+actual saved software replay stays identical; the 14 nested calls belong to
+separately labeled forwarding fixtures. [The raw proof](../results/source-phase-cpu-v2/software-raw-manifest.json)
+will be published and verified before fresh reference comparison. No training
+or real cost-loader timing result is claimed by these fixtures.

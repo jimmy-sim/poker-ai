@@ -6334,3 +6334,12 @@ precedes any revised formal own proof or reference comparison. No scientific
 cap, seed, tolerance, policy, dependency or CI change, and no training or strength
 claim. Implementation, execution and documentation are Codex-assisted; personal
 practice and hours are not inferred.
+
+
+November 17 — Revised own-only proof after public qualification `01658dd`:
+complete outer 6.215336457997182 seconds / 180, inner 6.118413584001246 seconds against
+startup-adjusted allowance 179.9991310000005. All 13 raw files plus source-publication
+verification retained. Exact actual archived software replay, zero source roots,
+14 separately synthetic forwarding calls, full restoration; no reference or poker
+training constructed. Public-boundary verification remains before the one fixed
+complete pair; original rejected proof and blocked pair remain unchanged.
