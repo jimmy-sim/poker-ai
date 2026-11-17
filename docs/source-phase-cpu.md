@@ -146,3 +146,25 @@ clock; rejected or interrupted checks start no child and retain their clock.
 These are software checks, not a new formal proof or real cost-loader result.
 Full new local/hosted qualification remains before any revised collection.
 No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
+
+
+## Corrected source qualified — November 17, 2026
+
+[All six corrected-source checks](../results/source-phase-cpu-v2/checks.json) qualify `5496ef1`: both local bases
+pass 5,081 tests (68 skipped, 150 deselected), both optional suites pass 1,987,
+and both hosted base suites pass. Actual Python/NumPy, all uv runtime choices
+and each complete tested checkout tree match. All 442 preceding scientific
+files remain unchanged; the revised source map contains 444 files.
+
+The ten tested administrative tools are published with the receipts. Six
+process cases, five preflight cases, four retention cases and ten synthetic
+publication cases pass. Preflight means checking the published own proof before
+starting a comparison. Exhausting that check's allowance now refuses launch;
+the initial late-launch/cleanup failure and corrected refusal remain in the
+[fixture archives](../results/source-phase-cpu-v2/checks/fixture-archives.json). Static report-guard
+setup covers 50 numerical entry points on each runtime; saved-data report
+reproduction is still required after collection.
+
+This qualifies the corrected measuring tool. A fresh own-only proof must be
+published and verified before the single complete comparison. The original
+rejected proof and blocked pair remain unchanged.

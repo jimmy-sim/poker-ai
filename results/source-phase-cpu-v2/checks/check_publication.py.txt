@@ -1,0 +1,39 @@
+"""Synthetic publication-boundary tests: no solver, training, proof or timing."""
+import hashlib,importlib.util,json,shutil,subprocess,sys
+from pathlib import Path
+W=Path(__file__).resolve().parent;F=W/'source-budget-v2-publication-fixtures';F.mkdir(exist_ok=False)
+spec=importlib.util.spec_from_file_location('observer_publication_fixtures',W/'verify-source-budget-v2-publication.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+rows=[]
+for kind in ('positive','failed','nan','bool_clock','bad_cap','bool_returncode','inventory','duplicate','original','command'):
+ folder=F/kind;folder.mkdir();script=folder/'retain.py';shutil.copyfile(W/'retain-source-budget-v2-collection.py',script)
+ root=folder/'source-phase-cpu';source=root/'results/runs/source-budget-v2-20261116-proof';source.mkdir(parents=True)
+ (source/'raw.partial').write_bytes(b'NOT AN EXPERIMENT; synthetic raw fixture\n')
+ log=source.with_name(source.name+'-outer.log');log.write_bytes(b'synthetic-boundary-fixture\n')
+ outer=source.with_name(source.name+'-outer.json')
+ original=dict(status='complete',command=['/usr/bin/caffeinate','-i',sys.executable,str(root/m.runner.ENTRY),'proof','--output',str(source)],pid=123,cap_seconds=180,started_perf_counter=100.0,seconds=.125,returncode=0,interrupted=None,command_log_sha256=hashlib.sha256(log.read_bytes()).hexdigest(),scope='Invented header for validation only; nothing executed')
+ if kind=='failed':original['status']='failed_retained'
+ if kind=='nan':original['seconds']=float('nan')
+ if kind=='bool_clock':original['seconds']=True
+ if kind=='bool_returncode':original['returncode']=False
+ if kind=='command':original['command'][-1]='elsewhere'
+ outer.write_text(json.dumps(original))
+ result=subprocess.run([sys.executable,str(script),'proof'],capture_output=True)
+ (folder/'retention.stdout').write_bytes(result.stdout);(folder/'retention.stderr').write_bytes(result.stderr);assert result.returncode==0
+ target=root/m.runner.FOLDER/'software';manifest_path=target.with_name(target.name+'-raw-manifest.json');manifest=json.loads(manifest_path.read_text())
+ if kind=='bad_cap':
+  o=target.with_name(target.name+'-outer.json');raw=json.loads(o.read_text());raw['cap_seconds']=181;o.write_text(json.dumps(raw))
+  source.with_name(source.name+'-outer.json').write_bytes(o.read_bytes())
+  for row in manifest['files']:
+   if row['file']==str(o.relative_to(root)):
+    row['bytes']=o.stat().st_size;row['sha256']=hashlib.sha256(o.read_bytes()).hexdigest()
+ if kind=='inventory':(target/'extra').write_bytes(b'extra')
+ if kind=='duplicate':manifest['files'].append(manifest['files'][0])
+ if kind=='original':(source/'raw.partial').write_bytes(b'changed after copy')
+ manifest_path.write_text(json.dumps(manifest))
+ try:m.raw(root,'proof',False)
+ except ArithmeticError as error:
+  assert kind!='positive';rows.append(dict(case=kind,rejected=type(error).__name__))
+ else:
+  assert kind=='positive';rows.append(dict(case=kind,accepted_synthetic_schema=True))
+(F/'checks.json').write_text(json.dumps(dict(status='all_ten_synthetic_boundary_fixtures_pass',scope='Schema and raw-copy checks only; invented clock headers do not represent measurements',cases=rows),indent=2)+'\n')
+print(json.dumps(rows))

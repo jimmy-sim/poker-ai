@@ -6306,3 +6306,31 @@ clock; rejected or interrupted checks start no child and retain their clock.
 These are software checks, not a new formal proof or real cost-loader result.
 Full new local/hosted qualification remains before any revised collection.
 No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
+
+
+### November 17, 2026: startup-adjusted parser source requalified
+
+[PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) correction source
+`5496ef1`, 444-file fingerprint `5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9`:
+all six [qualification roles](../results/source-phase-cpu-v2/checks.json) pass. Local bases: 5,081 passed,
+68 skipped, 150 deselected (1,355.23 / 1,341.81 seconds); optional suites:
+1,987 each (927.39 / 853.82 seconds). Hosted run
+[44040643292](https://github.com/jimmy-sim/poker-ai/actions/runs/44040643292)
+passes both jobs; full logs verify actual patch/NumPy, every uv selection and
+the entire checkout tree. All 442 predecessor scientific files remain unchanged.
+
+Ten exact administrative tools and all fixture records are retained. The final
+launcher passes six process and five preflight cases, including refusal to
+launch after preflight exhausts the outer allowance. The initial tiny fixture
+attempted a late child, then received PermissionError during cleanup before its
+outer receipt; its exact script, partial output and traceback remain archived.
+The corrected fixture retains PID-null/124 with no child. Four retention and ten
+synthetic publication cases pass; report-guard setup resolves 50 entry points on
+each actual runtime without numerical execution. Installed OpenSpiel 2.0.2
+Apache-2.0 license bytes were read before fresh use; comparison stays scalar-only.
+
+All original rejected proof/blocked-pair evidence remains. This publication
+precedes any revised formal own proof or reference comparison. No scientific
+cap, seed, tolerance, policy, dependency or CI change, and no training or strength
+claim. Implementation, execution and documentation are Codex-assisted; personal
+practice and hours are not inferred.

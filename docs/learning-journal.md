@@ -6609,3 +6609,16 @@ clock; rejected or interrupted checks start no child and retain their clock.
 These are software checks, not a new formal proof or real cost-loader result.
 Full new local/hosted qualification remains before any revised collection.
 No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
+
+
+**November 17, 2026 — the corrected tool passes complete qualification.** Both local
+base suites pass 5,081 tests and both optional suites pass 1,987. Both hosted
+base checks also pass on the exact revised source, with the actual runtimes and
+complete checkout trees verified. [The check record](../results/source-phase-cpu-v2/checks.json) keeps the logs
+and tested tools together.
+
+A launcher test also caught an edge case: verification could use the whole
+allowance and still attempt to start a child. The launcher now checks the clock
+immediately before launch. All six process tests and five preflight tests pass;
+the initial failure remains recorded. No poker strategy changed. Next is a new
+own-only proof under the original limit, published before reference comparison.
