@@ -1,0 +1,8 @@
+{
+  "failed_head": "03c70227daf483aa38212e47360a5052b30214f7",
+  "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+  "reason": "New real-data regression enters strict own-only guard in a shared optional-test interpreter where earlier valid tests already imported OpenSpiel. Guard correctly refuses. Standalone data reads and base suites pass. Move only this regression to a fresh interpreter and keep strict guard unchanged.",
+  "data_outputs_changed": false,
+  "research_gate_changed": false,
+  "scientific_retry": false
+}

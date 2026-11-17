@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Read the saved call graph before measuring again](#131-read-the-saved-call-graph-before-measuring-again)
+
 - [Test safe reuse of repeated contexts](#130-test-safe-reuse-of-repeated-contexts)
 
 - [Separate the work inside archive validation](#129-separate-the-work-inside-archive-validation)
@@ -124,8 +126,10 @@ now separates context construction, state reconstruction/scoring and prior full
 verification. The [context-reuse experiment](context-reuse.md#rejected-comparison-and-diagnosis--november-17)
 now retains a rejected result: the poker-result records match, but four work
 counters change and the complete-identity requirement fails. Full copying and
-checking also takes more time in that run. It is not deployed. PR #85 is merged;
-its final checks and protected-main verification are complete. Earlier source-stage details remain in
+checking also takes more time in that run. It is not deployed. PR #86 is merged;
+its six final checks and protected-main verification are complete. The next
+[saved call-graph investigation](earlier-source-profile.md) now points into an
+earlier archive reader using existing evidence, before adding another instrument. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6908,3 +6912,86 @@ number. Finish the repository checks, then investigate another measured validati
 cost while preserving the poker-result and work requirements. The failed source,
 protocol and data remain available. This changes the research direction, not the
 agent's strategy. No personal practice or human hours are inferred.
+
+
+## 131. Read the saved call graph before measuring again
+
+**Question — November 17, 2026:** what work is inside the earlier-source loader?
+Its name sounds like files, but the code also builds games and calculates replies
+to frozen own opponents. Git inventory checking is already batched. Another cache
+should follow evidence about those calculations rather than an assumption about
+file I/O.
+
+**Change:** a [saved-data reader and terminal view](earlier-source-profile.md),
+planned [before implementation](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6954063964).
+It reads the existing complete lossless elapsed-stack profile and shows every
+direct incoming/outgoing edge for five preselected functions. An edge records one
+caller's use of a helper; a helper's total can combine several callers. The
+original entries keep distinct identities even when their displayed labels match.
+
+**Example, not a new measurement:** in an independent test graph, a helper takes
+eight seconds overall. Five belong to one caller and three to another. The first
+caller should receive five seconds, not all eight. Inclusive totals at different
+depths overlap and should not be added. These historical profiler seconds include
+waits and profiling overhead; they are not current CPU measurements.
+
+**Checks so far:** all 30 independent graph, input/source, output-retention and
+terminal fixtures pass from the repository on actual Python 3.11.17/NumPy 2.4.6
+and Python 3.12.15/NumPy 2.5.4 (7.34/7.12 seconds). Full strict typing passes for
+823 files; lint and formatting pass. All 450 earlier scientific files are
+unchanged. Complete base/optional/hosted checks and actual saved-data reproduction
+remain pending; no selected historical values have been extracted. The source
+must be published before that extraction.
+
+The preceding context-reuse investigation is closed as a negative result:
+[all six final roles and protected main](../results/context-reuse/final-ci/manifest.json)
+are retained, including initial hosted timeouts and interrupted local file-read
+stalls. Main passes 720 focused tests and reproduces all four diagnostic exports
+with 103 construction/numerical paths blocked and zero forbidden calls. The
+original parser still rejects; ten unrelated local result files and their status,
+changed-path index entries and patches remain unchanged after checks.
+
+**Next decision:** see whether the existing graph answers the cost question. This
+reader does not run poker, a profiler or a reference solver, and it does not make
+the strategy stronger. Any later optimization still needs its own tests and
+prospective measurement. Codex assisted with implementation, checks and drafting;
+no personal practice, independent discovery or human hours are inferred.
+
+
+**November 17 — the saved graph points into the earlier archive.** Both actual
+reader runtimes reproduce all five numerical exports exactly. All 104
+construction/profiling targets are blocked, zero forbidden calls occur, and all
+15 raw producer files remain unchanged. No new profiler or solver ran.
+
+Across the historical profile's two earlier-source-loader calls, inclusive time
+is 138.044 elapsed-stack seconds. The direct earlier-archive-loader edge accounts
+for 125.609 seconds. Constructing frozen opponents from that caller accounts for
+0.861 seconds. Its aggregate includes 16 additional tiny-fixture calls; the
+caller edges keep those separate. These are nested historical elapsed values,
+not current CPU measurements or an estimate of savings.
+
+The next code path to inspect is the earlier archive reader. The saved evidence
+does not justify a frozen-opponent cache. The [full table and every edge](earlier-source-profile.md#historical-saved-data-result--november-17)
+show the evidence behind that decision. The original strategy is unchanged, and
+final repository checks remain pending.
+
+
+The real saved-data regression also passes: all 31 focused cases pass on both
+actual runtimes, including complete export reproduction with construction and
+profiling blocked. Full final local/optional/hosted checks still precede merge.
+
+
+**November 17 — check isolation as part of correctness.** The full optional suite
+finds something the focused run did not: earlier tests have already imported the
+reference library. The own-only guard correctly rejects that shared process.
+Both optional runs fail only the new saved-data regression; the earlier base and
+hosted base checks pass. This is a test integration error, not a different poker
+result.
+
+The regression now uses a fresh Python process. It deliberately preloads the real
+reference module in the parent and verifies that the guard still refuses that
+parent. The child starts clean, keeps all 104 construction/profiling blocks and
+checks all five exact exports. All 31 focused cases pass on both runtimes with
+that preloaded state. The [failed cohort](../results/earlier-source-profile/failed-qualification-03/manifest.json)
+remains available. Full requalification follows; no guard is relaxed and no
+scientific data or strategy changes.

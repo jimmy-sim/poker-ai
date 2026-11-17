@@ -6650,3 +6650,86 @@ Source450fingerprint unchanged. Journal130/current status and three explanation
 questions record the lesson. Next: final checks and protected publication, then
 another measured cost; no full-copy rollout, gate waiver, new training/default/
 forecast/strength claim. Codex-assisted; human time unknown.
+
+
+### November 17: close rejected context reuse; inspect saved source calls
+
+[PR #86](https://github.com/jimmy-sim/poker-ai/pull/86) is history-merged at
+`f5bde46daa540f89f4b8aafd313e100ca52b57be`. Both local base suites pass 5,380 tests
+with 70 skipped and 150 deselected; both optional suites pass 2,288. Both hosted
+jobs pass the same base inventory, each with one existing warning. Actual runtime,
+NumPy and uv selections match, and the entire tested and merged trees are equal.
+The initial hosted timeouts and interrupted local file reads remain in the
+[68-member closing archive](../results/context-reuse/final-ci/manifest.json).
+
+Main passes 720 focused tests in 178.56 seconds. All 27 raw members authenticate;
+four numerical exports match with 103 construction paths blocked and zero
+forbidden calls. The comparison remains rejected. All ten unrelated user result
+files, their status, changed-path index entries and both patches are preserved
+after verification. These receipts accompany the next substantive change.
+
+The [next plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6954063964)
+uses a saved lossless elapsed-stack graph to inspect five functions. Every direct
+incoming/outgoing edge retains its identity, so a shared helper's total is not
+assigned to just one caller. Original source, raw hashes, units and code positions
+are checked. Self time plus direct child times must recover each selected
+nonrecursive function's inclusive time; changed raw files or existing output
+folders reject.
+
+All 30 repository-focused graph, input/output and terminal tests pass on both
+actual supported runtimes in 7.34/7.12 seconds. Strict typing passes for 823 files;
+lint and formatting pass. All 450 earlier scientific files are unchanged. Full
+final checks and saved-data reproduction remain pending, and selected historical
+values are still unextracted. Publish this checked source before rendering, then
+reproduce its exports on both runtimes with construction and profiling blocked.
+Journal step131 explains the question and the caller-sharing example.
+
+No strategy, dependency, CI, seed, compute limit or research acceptance rule has
+changed. The 912.54/900-second forecast and 2.390%/1% accuracy targets remain failed.
+Codex assisted with implementation, checks and drafting; human hands-on time was
+not recorded.
+
+
+### November 17: historical caller costs reproduced without construction
+
+After source `395575b` was public, both guarded data-only executions complete.
+All five numerical exports match exactly across actual Python 3.11.17/NumPy 2.4.6
+and 3.12.15/NumPy 2.5.4. Each blocks 104 construction/profiling targets with zero
+calls and preserves all 15 raw producer files. The complete 2,354-frame /
+5,640-edge graph remains exported; all five selected functions conserve direct
+child/self time within the fixed tolerance.
+
+The historical earlier-source loader's two calls total 138.044 inclusive elapsed
+seconds. Its direct earlier-archive-loader edge is 125.609 seconds; that loader's
+`reduced_study_run.read_saved` edge is 125.552 seconds. The direct frozen-opponent
+edge is 0.860610 seconds for 32 calls; another 16 tiny-fixture calls belong to a
+separate caller. These nested profiled values include waits and instrumentation;
+they cannot be added together or substituted for current CPU or forecast costs.
+[All tables and receipts](earlier-source-profile.md#historical-saved-data-result--november-17)
+retain the full detail. Next inspect the earlier archive reader, not a reply cache.
+
+The real saved-data regression blocks construction/profiling and checks all five
+output bytes. All 31 focused cases pass on both actual runtimes. Complete final
+local/optional/hosted checks still need to run. No new measurement, solver, training or gate change;
+Codex-assisted execution and documentation, human time not recorded.
+
+
+### November 17: isolate the saved-data regression from optional reference imports
+
+The full cohort on `03c7022` is not qualified. Both bases pass 5,411 tests with
+70 skipped and 150 deselected; both hosted base jobs pass. Both optional suites
+report one failed and 2,318 passed: the new regression enters an own-only guard
+after other valid tests have imported OpenSpiel in the same interpreter. The
+strict guard correctly rejects that state. [All failed local records and hosted
+logs](../results/earlier-source-profile/failed-qualification-03/manifest.json)
+are retained before another qualification attempt.
+
+The fix changes only that regression: a reference-loaded parent is explicitly
+refused, and a fresh child reads the saved data under all 104 blocks and checks
+the five output files exactly. With real OpenSpiel preloaded in each parent,
+31 focused cases pass on actual 3.11.17/NumPy 2.4.6 and 3.12.15/NumPy 2.5.4 in
+3.06/3.04 seconds. Reader/config, source453 fingerprint, all 450 historical
+scientific files and every reported numerical byte are unchanged. Complete
+local/optional/hosted checks must now pass on the corrected head. No scientific
+retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
+human hands-on time not recorded.

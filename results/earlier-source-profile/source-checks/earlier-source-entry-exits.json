@@ -1,0 +1,32 @@
+{
+  "status": "four_exact_operator_entry_exit_fixtures_pass",
+  "operator_sha256": "2f1c19677410f03e880f0c54c28e85f61470f5ccf3d8718c64c03c02a6ef53e1",
+  "fixtures": [
+    {
+      "fixture": 0,
+      "expected": null,
+      "observed": null,
+      "argv_restored": true
+    },
+    {
+      "fixture": 1,
+      "expected": null,
+      "observed": null,
+      "argv_restored": true
+    },
+    {
+      "fixture": 2,
+      "expected": "SystemExit",
+      "observed": "SystemExit",
+      "argv_restored": true
+    },
+    {
+      "fixture": 3,
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "argv_restored": true
+    }
+  ],
+  "historical_results_read": false,
+  "reference_constructed": false
+}

@@ -1,0 +1,78 @@
+E501 Line too long (96 > 88)
+   --> tests/test_earlier_source_profile.py:451:89
+    |
+449 | assert sys.version.split()[0]==sys.argv[3] and numpy.__version__==sys.argv[4]
+450 | assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+451 | assert pathlib.Path(reader.__file__).resolve()==root/'scripts/earlier_source_profile_support.py'
+    |                                                                                         ^^^^^^^^
+452 | assert cli.ROOT==root and 'pyspiel' not in sys.modules
+453 | node=ast.parse((root/'results/context-reuse/checks/report_execution_guard.py.txt').read_text())
+    |
+
+E501 Line too long (178 > 88)
+   --> tests/test_earlier_source_profile.py:454:89
+    |
+452 | …
+453 | …_guard.py.txt').read_text())
+454 | …nce(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in n.targets)))+['cProfile.Profile']
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+455 | …
+456 | …
+    |
+
+E501 Line too long (108 > 88)
+   --> tests/test_earlier_source_profile.py:458:89
+    |
+456 | attempts=[]
+457 | def forbidden(*a,**k):
+458 |  attempts.append('forbidden');raise AssertionError('saved-data regression attempted construction/profiling')
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^
+459 | descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPT…
+460 | with isolated(worker=False),ExitStack() as stack:
+    |
+
+E501 Line too long (114 > 88)
+   --> tests/test_earlier_source_profile.py:462:89
+    |
+460 | with isolated(worker=False),ExitStack() as stack:
+461 |  for name in blocked:pkgutil.resolve_name(name)
+462 |  for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+463 |  summary=reader.write_report(root,output,cli.contract(root))
+464 | assert not attempts and 'pyspiel' not in sys.modules
+    |
+
+E501 Line too long (99 > 88)
+   --> tests/test_earlier_source_profile.py:465:89
+    |
+463 |  summary=reader.write_report(root,output,cli.contract(root))
+464 | assert not attempts and 'pyspiel' not in sys.modules
+465 | assert summary['frame_count']==2354 and summary['edge_count']==5640 and len(summary['selected'])==5
+    |                                                                                         ^^^^^^^^^^^
+466 | assert summary['units']==reader.UNITS and summary['reference_constructed'] is False
+467 | assert summary['poker_training_performed'] is False and summary['admission_evidence'] is False
+    |
+
+E501 Line too long (94 > 88)
+   --> tests/test_earlier_source_profile.py:467:89
+    |
+465 | assert summary['frame_count']==2354 and summary['edge_count']==5640 and len(summary['selected'])==5
+466 | assert summary['units']==reader.UNITS and summary['reference_constructed'] is False
+467 | assert summary['poker_training_performed'] is False and summary['admission_evidence'] is False
+    |                                                                                         ^^^^^^
+468 | expected=root/'results/earlier-source-profile/report'
+469 | for name in ('all-functions.csv','all-callers.csv','selected-functions.csv','selected-edges.csv','summary.json'):
+    |
+
+E501 Line too long (113 > 88)
+   --> tests/test_earlier_source_profile.py:469:89
+    |
+467 | assert summary['poker_training_performed'] is False and summary['admission_evidence'] is False
+468 | expected=root/'results/earlier-source-profile/report'
+469 | for name in ('all-functions.csv','all-callers.csv','selected-functions.csv','selected-edges.csv','summary.json'):
+    |                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+470 |  assert (output/name).read_bytes()==(expected/name).read_bytes()
+471 | print(json.dumps(dict(status='fresh_process_five_exports_exact',python=sys.version.split()[0],numpy=numpy.__version__,blocked_targets…
+    |
+
+Found 7 errors.
