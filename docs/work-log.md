@@ -6374,3 +6374,26 @@ original raw member unchanged. Both PNGs inspected. Work log, method, journal128
 and current journal summary updated together; no README experiment update.
 Final four local roles and both same-head hosted jobs remain before merge.
 No training, failed-gate override, default/fresh/global or strength claim.
+
+
+### November 17: retain final local failures and correct linked-index access
+
+At report head `74087e2`, both hosted jobs pass actual patch/NumPy/all-uv and whole
+checkout checks (1,295.03 / 1,039.34 seconds). Both local bases instead retain one
+failed archived-software replay: **5,080 passed / one failed / 68 skipped /
+150 deselected**, 2,113.39 / 2,112.53 seconds. Optional roles did not start.
+[Full failure, hosted and recovery evidence](../results/source-phase-cpu-v2/qualification-history/final-index-refresh/manifest.json)
+is preserved before the next full qualification; no gate waiver.
+
+Git trace: restricted status scans all 6,680 contents without updating its linked
+index; ordinary authorized status writes only refreshed index metadata. The next
+restricted status scans zero contents. Diagnostic status wall times 5.485529 /
+3.576894 (refresh) / 0.036168 seconds are environment evidence, not production
+costs. Exact failing tests then pass 4.34 / 4.28 seconds with unchanged 180-second
+caps. All 444 scientific sources/128 input pins and staged/working-tree contents
+remain unchanged. No scientific pair retry, algorithm, dependency or CI change.
+
+Complete new final checks remain required on this coherent evidence/documentation
+revision. Use normal linked-index metadata access for local checks, preserving
+all earlier failures and exact runtimes. Journal128 records the explanation;
+Codex-assisted execution, no inferred human hours or mastery.

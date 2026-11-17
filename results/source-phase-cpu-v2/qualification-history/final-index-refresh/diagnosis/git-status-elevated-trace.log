@@ -1,0 +1,59 @@
+01:14:08.858459 common-init.c:57             | d0 | main                     | version      |     |           |           |              | 2.54.0 (Apple Git-157)
+01:14:08.858719 common-init.c:58             | d0 | main                     | start        |     |  0.000676 |           |              | /Applications/Xcode.app/Contents/Developer/usr/bin/git -C /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-budget-v2-final-checkout status --porcelain
+01:14:08.858761 compat/darwin/procinfo.c:81  | d0 | main                     | cmd_ancestry |     |           |           |              | ancestry:[python3.11 codex ChatGPT launchd]
+01:14:08.858947 repository.c:262             | d0 | main                     | def_repo     | r1  |           |           |              | worktree:/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-budget-v2-final-checkout
+01:14:08.859086 git.c:503                    | d0 | main                     | cmd_name     |     |           |           |              | status (status)
+01:14:08.859336 read-cache.c:2360            | d0 | main                     | region_enter | r1  |  0.001296 |           | index        | label:do_read_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index
+01:14:08.859562 cache-tree.c:667             | d0 | main                     | region_enter | r1  |  0.001521 |           | cache_tree   | ..label:read
+01:14:08.859627 cache-tree.c:669             | d0 | main                     | region_leave | r1  |  0.001588 |  0.000067 | cache_tree   | ..label:read
+01:14:08.859636 read-cache.c:2313            | d0 | main                     | data         | r1  |  0.001597 |  0.000301 | index        | ..read/version:2
+01:14:08.859641 read-cache.c:2315            | d0 | main                     | data         | r1  |  0.001602 |  0.000306 | index        | ..read/cache_nr:6680
+01:14:08.859647 read-cache.c:2365            | d0 | main                     | region_leave | r1  |  0.001608 |  0.000312 | index        | label:do_read_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index
+01:14:08.859655 preload-index.c:127          | d0 | main                     | region_enter |     |  0.001616 |           | index        | label:preload
+01:14:08.864322 preload-index.c:177          | d0 | main                     | data         |     |  0.006283 |  0.004667 | index        | ..preload/sum_lstat:6680
+01:14:08.864335 preload-index.c:178          | d0 | main                     | region_leave |     |  0.006295 |  0.004679 | index        | label:preload
+01:14:08.864339 read-cache.c:1524            | d0 | main                     | region_enter |     |  0.006300 |           | index        | label:refresh
+01:14:12.410213 read-cache.c:1606            | d0 | main                     | data         |     |  3.552173 |  3.545873 | index        | ..refresh/sum_lstat:6680
+01:14:12.410296 read-cache.c:1607            | d0 | main                     | data         |     |  3.552257 |  3.545957 | index        | ..refresh/sum_scan:6680
+01:14:12.410304 read-cache.c:1608            | d0 | main                     | region_leave |     |  3.552264 |  3.545964 | index        | label:refresh
+01:14:12.411301 wt-status.c:865              | d0 | main                     | region_enter | r1  |  3.553262 |           | status       | label:worktrees
+01:14:12.411346 diffcore-rename.c:1407       | d0 | main                     | region_enter | r1  |  3.553307 |           | diff         | ..label:setup
+01:14:12.411351 diffcore-rename.c:1460       | d0 | main                     | region_leave | r1  |  3.553312 |  0.000005 | diff         | ..label:setup
+01:14:12.411356 diffcore-rename.c:1640       | d0 | main                     | region_enter | r1  |  3.553317 |           | diff         | ..label:write back to queue
+01:14:12.411359 diffcore-rename.c:1717       | d0 | main                     | region_leave | r1  |  3.553320 |  0.000003 | diff         | ..label:write back to queue
+01:14:12.411366 wt-status.c:867              | d0 | main                     | region_leave | r1  |  3.553327 |  0.000065 | status       | label:worktrees
+01:14:12.411375 wt-status.c:874              | d0 | main                     | region_enter | r1  |  3.553335 |           | status       | label:index
+01:14:12.411931 midx.c:221                   | d0 | main                     | data         | r1  |  3.553892 |  0.000557 | midx         | ..load/num_packs:3
+01:14:12.411937 midx.c:222                   | d0 | main                     | data         | r1  |  3.553897 |  0.000562 | midx         | ..load/num_objects:10815
+01:14:12.412067 unpack-trees.c:1906          | d0 | main                     | region_enter | r1  |  3.554028 |           | unpack_trees | ..label:unpack_trees
+01:14:12.412111 unpack-trees.c:2010          | d0 | main                     | region_enter | r1  |  3.554072 |           | unpack_trees | ....label:traverse_trees
+01:14:12.412121 unpack-trees.c:2012          | d0 | main                     | region_leave | r1  |  3.554082 |  0.000010 | unpack_trees | ....label:traverse_trees
+01:14:12.412131 unpack-trees.c:2109          | d0 | main                     | region_leave | r1  |  3.554091 |  0.000063 | unpack_trees | ..label:unpack_trees
+01:14:12.412134 diffcore-rename.c:1407       | d0 | main                     | region_enter | r1  |  3.554095 |           | diff         | ..label:setup
+01:14:12.412137 diffcore-rename.c:1460       | d0 | main                     | region_leave | r1  |  3.554098 |  0.000003 | diff         | ..label:setup
+01:14:12.412140 diffcore-rename.c:1640       | d0 | main                     | region_enter | r1  |  3.554101 |           | diff         | ..label:write back to queue
+01:14:12.412142 diffcore-rename.c:1717       | d0 | main                     | region_leave | r1  |  3.554103 |  0.000002 | diff         | ..label:write back to queue
+01:14:12.412146 wt-status.c:876              | d0 | main                     | region_leave | r1  |  3.554106 |  0.000771 | status       | label:index
+01:14:12.412149 wt-status.c:879              | d0 | main                     | region_enter | r1  |  3.554109 |           | status       | label:untracked
+01:14:12.412171 dir.c:3140                   | d0 | main                     | region_enter | r1  |  3.554132 |           | dir          | ..label:read_directory
+01:14:12.412199 name-hash.c:597              | d0 | main                     | region_enter | r1  |  3.554160 |           | index        | ....label:name-hash-init
+01:14:12.412453 name-hash.c:618              | d0 | main                     | region_leave | r1  |  3.554413 |  0.000253 | index        | ....label:name-hash-init
+01:14:12.425404 dir.c:3108                   | d0 | main                     | data         | r1  |  3.567364 |  0.013232 | read_directo | ....path:
+01:14:12.425413 dir.c:3117                   | d0 | main                     | data         | r1  |  3.567374 |  0.013242 | read_directo | ....directories-visited:580
+01:14:12.425417 dir.c:3119                   | d0 | main                     | data         | r1  |  3.567378 |  0.013246 | read_directo | ....paths-visited:5723
+01:14:12.425421 dir.c:3163                   | d0 | main                     | region_leave | r1  |  3.567382 |  0.013250 | dir          | ..label:read_directory
+01:14:12.425426 wt-status.c:881              | d0 | main                     | region_leave | r1  |  3.567387 |  0.013278 | status       | label:untracked
+01:14:12.425506 read-cache.c:3136            | d0 | main                     | region_enter | r1  |  3.567467 |           | index        | label:do_write_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index.lock
+01:14:12.426825 cache-tree.c:546             | d0 | main                     | region_enter | r1  |  3.568786 |           | cache_tree   | ..label:write
+01:14:12.426884 cache-tree.c:548             | d0 | main                     | region_leave | r1  |  3.568845 |  0.000059 | cache_tree   | ..label:write
+01:14:12.427022 read-cache.c:3092            | d0 | main                     | data         | r1  |  3.568983 |  0.001516 | index        | ..write/version:2
+01:14:12.427029 read-cache.c:3094            | d0 | main                     | data         | r1  |  3.568990 |  0.001523 | index        | ..write/cache_nr:6680
+01:14:12.427033 read-cache.c:3139            | d0 | main                     | region_leave | r1  |  3.568994 |  0.001527 | index        | label:do_write_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index.lock
+01:14:12.427447 wt-status.c:2595             | d0 | main                     | data         | r1  |  3.569408 |  3.569408 | status       | count/changed:0
+01:14:12.427460 wt-status.c:2597             | d0 | main                     | data         | r1  |  3.569421 |  3.569421 | status       | count/untracked:0
+01:14:12.427466 wt-status.c:2598             | d0 | main                     | data         | r1  |  3.569427 |  3.569427 | status       | count/ignored:0
+01:14:12.427471 wt-status.c:2600             | d0 | main                     | region_enter | r1  |  3.569431 |           | status       | label:print
+01:14:12.427476 wt-status.c:2621             | d0 | main                     | region_leave | r1  |  3.569437 |  0.000006 | status       | label:print
+01:14:12.427486 git.c:783                    | d0 | main                     | exit         |     |  3.569447 |           |              | code:0
+01:14:12.427493 tree-walk.c:187              | d0 | main                     | data_json    | r1  |  3.569453 |  3.569453 | traverse_tre | statistics:{"traverse_trees_count":1,"traverse_trees_max_depth":1}
+01:14:12.427500 trace2/tr2_tgt_perf.c:219    | d0 | main                     | atexit       |     |  3.569461 |           |              | code:0

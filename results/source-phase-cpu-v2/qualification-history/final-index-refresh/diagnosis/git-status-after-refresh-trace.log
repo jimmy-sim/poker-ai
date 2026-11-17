@@ -1,0 +1,53 @@
+01:15:50.771119 common-init.c:57             | d0 | main                     | version      |     |           |           |              | 2.54.0 (Apple Git-157)
+01:15:50.771239 common-init.c:58             | d0 | main                     | start        |     |  0.000673 |           |              | /Applications/Xcode.app/Contents/Developer/usr/bin/git -C /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-budget-v2-final-checkout status --porcelain
+01:15:50.771347 compat/darwin/procinfo.c:81  | d0 | main                     | cmd_ancestry |     |           |           |              | ancestry:[python3.11 codex ChatGPT launchd]
+01:15:50.771758 repository.c:262             | d0 | main                     | def_repo     | r1  |           |           |              | worktree:/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-budget-v2-final-checkout
+01:15:50.771979 git.c:503                    | d0 | main                     | cmd_name     |     |           |           |              | status (status)
+01:15:50.772333 read-cache.c:2360            | d0 | main                     | region_enter | r1  |  0.001769 |           | index        | label:do_read_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index
+01:15:50.772635 cache-tree.c:667             | d0 | main                     | region_enter | r1  |  0.002071 |           | cache_tree   | ..label:read
+01:15:50.772759 cache-tree.c:669             | d0 | main                     | region_leave | r1  |  0.002196 |  0.000125 | cache_tree   | ..label:read
+01:15:50.772827 read-cache.c:2313            | d0 | main                     | data         | r1  |  0.002264 |  0.000495 | index        | ..read/version:2
+01:15:50.772889 read-cache.c:2315            | d0 | main                     | data         | r1  |  0.002326 |  0.000557 | index        | ..read/cache_nr:6680
+01:15:50.772953 read-cache.c:2365            | d0 | main                     | region_leave | r1  |  0.002390 |  0.000621 | index        | label:do_read_index /Users/jimmysim/Projects/poker-ai/.git/worktrees/source-budget-v2-final-checkout/index
+01:15:50.773021 preload-index.c:127          | d0 | main                     | region_enter |     |  0.002458 |           | index        | label:preload
+01:15:50.779803 preload-index.c:177          | d0 | main                     | data         |     |  0.009239 |  0.006781 | index        | ..preload/sum_lstat:6680
+01:15:50.779916 preload-index.c:178          | d0 | main                     | region_leave |     |  0.009353 |  0.006895 | index        | label:preload
+01:15:50.779988 read-cache.c:1524            | d0 | main                     | region_enter |     |  0.009424 |           | index        | label:refresh
+01:15:50.780085 read-cache.c:1606            | d0 | main                     | data         |     |  0.009521 |  0.000097 | index        | ..refresh/sum_lstat:0
+01:15:50.780148 read-cache.c:1607            | d0 | main                     | data         |     |  0.009584 |  0.000160 | index        | ..refresh/sum_scan:0
+01:15:50.780211 read-cache.c:1608            | d0 | main                     | region_leave |     |  0.009647 |  0.000223 | index        | label:refresh
+01:15:50.780343 wt-status.c:865              | d0 | main                     | region_enter | r1  |  0.009780 |           | status       | label:worktrees
+01:15:50.780444 diffcore-rename.c:1407       | d0 | main                     | region_enter | r1  |  0.009881 |           | diff         | ..label:setup
+01:15:50.780507 diffcore-rename.c:1460       | d0 | main                     | region_leave | r1  |  0.009943 |  0.000062 | diff         | ..label:setup
+01:15:50.780567 diffcore-rename.c:1640       | d0 | main                     | region_enter | r1  |  0.010003 |           | diff         | ..label:write back to queue
+01:15:50.780628 diffcore-rename.c:1717       | d0 | main                     | region_leave | r1  |  0.010065 |  0.000062 | diff         | ..label:write back to queue
+01:15:50.780690 wt-status.c:867              | d0 | main                     | region_leave | r1  |  0.010127 |  0.000347 | status       | label:worktrees
+01:15:50.780763 wt-status.c:874              | d0 | main                     | region_enter | r1  |  0.010199 |           | status       | label:index
+01:15:50.781437 midx.c:221                   | d0 | main                     | data         | r1  |  0.010874 |  0.000675 | midx         | ..load/num_packs:3
+01:15:50.781500 midx.c:222                   | d0 | main                     | data         | r1  |  0.010937 |  0.000738 | midx         | ..load/num_objects:10815
+01:15:50.781710 unpack-trees.c:1906          | d0 | main                     | region_enter | r1  |  0.011146 |           | unpack_trees | ..label:unpack_trees
+01:15:50.781818 unpack-trees.c:2010          | d0 | main                     | region_enter | r1  |  0.011255 |           | unpack_trees | ....label:traverse_trees
+01:15:50.781884 unpack-trees.c:2012          | d0 | main                     | region_leave | r1  |  0.011321 |  0.000066 | unpack_trees | ....label:traverse_trees
+01:15:50.781951 unpack-trees.c:2109          | d0 | main                     | region_leave | r1  |  0.011388 |  0.000242 | unpack_trees | ..label:unpack_trees
+01:15:50.782010 diffcore-rename.c:1407       | d0 | main                     | region_enter | r1  |  0.011447 |           | diff         | ..label:setup
+01:15:50.782067 diffcore-rename.c:1460       | d0 | main                     | region_leave | r1  |  0.011504 |  0.000057 | diff         | ..label:setup
+01:15:50.782126 diffcore-rename.c:1640       | d0 | main                     | region_enter | r1  |  0.011562 |           | diff         | ..label:write back to queue
+01:15:50.782189 diffcore-rename.c:1717       | d0 | main                     | region_leave | r1  |  0.011626 |  0.000064 | diff         | ..label:write back to queue
+01:15:50.782255 wt-status.c:876              | d0 | main                     | region_leave | r1  |  0.011692 |  0.001493 | status       | label:index
+01:15:50.782321 wt-status.c:879              | d0 | main                     | region_enter | r1  |  0.011758 |           | status       | label:untracked
+01:15:50.782405 dir.c:3140                   | d0 | main                     | region_enter | r1  |  0.011842 |           | dir          | ..label:read_directory
+01:15:50.782490 name-hash.c:597              | d0 | main                     | region_enter | r1  |  0.011927 |           | index        | ....label:name-hash-init
+01:15:50.782781 name-hash.c:618              | d0 | main                     | region_leave | r1  |  0.012217 |  0.000290 | index        | ....label:name-hash-init
+01:15:50.796730 dir.c:3108                   | d0 | main                     | data         | r1  |  0.026167 |  0.014325 | read_directo | ....path:
+01:15:50.796803 dir.c:3117                   | d0 | main                     | data         | r1  |  0.026239 |  0.014397 | read_directo | ....directories-visited:580
+01:15:50.796861 dir.c:3119                   | d0 | main                     | data         | r1  |  0.026298 |  0.014456 | read_directo | ....paths-visited:5723
+01:15:50.796917 dir.c:3163                   | d0 | main                     | region_leave | r1  |  0.026353 |  0.014511 | dir          | ..label:read_directory
+01:15:50.796972 wt-status.c:881              | d0 | main                     | region_leave | r1  |  0.026409 |  0.014651 | status       | label:untracked
+01:15:50.797084 wt-status.c:2595             | d0 | main                     | data         | r1  |  0.026521 |  0.026521 | status       | count/changed:0
+01:15:50.797138 wt-status.c:2597             | d0 | main                     | data         | r1  |  0.026575 |  0.026575 | status       | count/untracked:0
+01:15:50.797192 wt-status.c:2598             | d0 | main                     | data         | r1  |  0.026629 |  0.026629 | status       | count/ignored:0
+01:15:50.797245 wt-status.c:2600             | d0 | main                     | region_enter | r1  |  0.026682 |           | status       | label:print
+01:15:50.797305 wt-status.c:2621             | d0 | main                     | region_leave | r1  |  0.026742 |  0.000060 | status       | label:print
+01:15:50.797361 git.c:783                    | d0 | main                     | exit         |     |  0.026797 |           |              | code:0
+01:15:50.797415 tree-walk.c:187              | d0 | main                     | data_json    | r1  |  0.026852 |  0.026852 | traverse_tre | statistics:{"traverse_trees_count":1,"traverse_trees_max_depth":1}
+01:15:50.797469 trace2/tr2_tgt_perf.c:219    | d0 | main                     | atexit       |     |  0.026906 |           |              | code:0

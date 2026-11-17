@@ -260,3 +260,27 @@ complete audit arms finish under the original limits and record exact complete
 scalar/calculated-replay identity. [Every raw pair file](../results/source-phase-cpu-v2/pair-raw-manifest.json)
 is retained for publication before timing analysis. No source-stage conclusion
 or production admission is drawn yet.
+
+
+## Final local checks: Git metadata correction — November 17
+
+Both initial final local bases fail one software test: the actual archived replay
+exceeds its unchanged 180-second deadline. Each retains **5,080 passed / one failed /
+68 skipped / 150 deselected**; the optional suites never start. Both hosted jobs
+pass separately on the same `74087e2` tree. [All failed logs, hosted results and
+recovery evidence](../results/source-phase-cpu-v2/qualification-history/final-index-refresh/manifest.json)
+remain; the passing hosted jobs do not waive the local failure.
+
+Git's trace identifies an environment problem. The linked worktree's index lives
+outside the default writable workspace. Read-only status repeatedly scans all
+6,680 tracked files instead of saving its refreshed stat cache. Ordinary authorized
+`git status --porcelain` refreshes that metadata; the subsequent default check scans
+zero file contents and takes 0.036 seconds in this diagnostic, versus 5.486 before.
+The working tree and staged contents remain unchanged; all 444 scientific sources
+and 128 pinned inputs still match. Independent content hashes are not skipped.
+
+The exact failing test then passes on both runtimes (4.34 / 4.28 seconds) under
+its original 180-second deadline. Complete final qualification will run again
+with normal linked-index metadata access. No cap, test, algorithm, dependency or
+CI rule changes. This repairs local qualification conditions, not the production
+forecast or poker strategy; no scientific pair is rerun.

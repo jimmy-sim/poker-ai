@@ -6662,3 +6662,17 @@ with 50 numerical entry points blocked, zero forbidden calls and unchanged raw
 files; both figures were inspected. The next investigation follows the large
 validation stages. No strategy improved in this diagnostic, and the old budget
 and accuracy failures remain. Final software/report checks still precede merge.
+
+
+**November 17 — a final-check failure catches a local setup problem.** Both full
+local suites fail the archived software-replay test at its 180-second deadline,
+even though both hosted jobs pass. Those failures are retained, and merge waits.
+
+Git was repeatedly rescanning the linked checkout because it could not save its
+index's file-stat cache. Normal authorized Git access refreshes that cache while
+leaving source and research data unchanged. The same failing test then passes on
+both runtimes in 4.34 / 4.28 seconds, with the original limit intact. The [failure
+and recovery record](../results/source-phase-cpu-v2/qualification-history/final-index-refresh/manifest.json)
+explains the distinction: correcting the environment makes another full check
+possible; two focused passes do not replace complete qualification. No strategy
+or experiment is retrained or rerun.
