@@ -415,3 +415,68 @@ def test_cli_invalid_selection_rejects_before_reading(
     with pytest.raises(SystemExit) as error:
         cli.main()
     assert error.value.code == 2
+
+
+def test_published_profile_reproduces_all_numeric_exports_without_construction(
+    tmp_path: Path,
+) -> None:
+    import ast
+    import pkgutil
+    from contextlib import ExitStack
+    from unittest.mock import patch
+
+    import inspect_earlier_source_profile as cli
+
+    from poker_ai.evaluation.compact_opponent_guard import isolated
+
+    root = Path(__file__).resolve().parents[1]
+    guard = root / "results/context-reuse/checks/report_execution_guard.py.txt"
+    tree = ast.parse(guard.read_text())
+    blocked: list[str] = ast.literal_eval(
+        next(
+            node.value
+            for node in tree.body
+            if isinstance(node, ast.Assign)
+            and any(isinstance(t, ast.Name) and t.id == "blocked" for t in node.targets)
+        )
+    )
+    blocked.append("cProfile.Profile")
+    assert len(set(blocked)) == 104
+    attempts: list[str] = []
+
+    def forbidden(*args: Any, **kwargs: Any) -> Any:
+        attempts.append("forbidden")
+        raise AssertionError("saved-data regression attempted construction/profiling")
+
+    output = tmp_path / "saved-data-only-report"
+    descriptors = {
+        "poker_ai.postflop.matrix.MatrixTree.build",
+        "poker_ai.postflop.tree.SpotTree.build",
+        "grouped_depth_support.BASE_DESCRIPTOR",
+    }
+    with isolated(worker=False), ExitStack() as stack:
+        for name in blocked:
+            pkgutil.resolve_name(name)
+        for name in blocked:
+            stack.enter_context(
+                patch(
+                    name, classmethod(forbidden) if name in descriptors else forbidden
+                )
+            )
+        summary = reader.write_report(root, output, cli.contract(root))
+    assert not attempts
+    assert summary["frame_count"] == 2354 and summary["edge_count"] == 5640
+    assert len(summary["selected"]) == 5
+    assert summary["units"] == reader.UNITS
+    assert summary["reference_constructed"] is False
+    assert summary["poker_training_performed"] is False
+    assert summary["admission_evidence"] is False
+    expected = root / "results/earlier-source-profile/report"
+    for name in (
+        "all-functions.csv",
+        "all-callers.csv",
+        "selected-functions.csv",
+        "selected-edges.csv",
+        "summary.json",
+    ):
+        assert (output / name).read_bytes() == (expected / name).read_bytes()

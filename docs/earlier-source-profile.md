@@ -77,9 +77,9 @@ numeric exports with numerical construction paths blocked. Applicable local and
 hosted checks precede a history-preserving merge. The prospective selection and
 six input hashes live in `configs/earlier-source-profile.json`.
 
-No selected historical values have been extracted at this protocol stage. The
-result will decide whether saved evidence identifies a useful bounded target or
-whether a narrow current measurement is still needed. Historical elapsed values
+The source was published before selected values were extracted. The result below
+decides which code path to inspect next and whether a narrow current measurement
+is still needed. Historical elapsed values
 cannot be subtracted from the newer 33–34 CPU seconds to estimate savings. This
 step cannot admit training, rescue the failed forecast or accuracy gates, or
 establish competitive full-game Hold'em strength. Codex assisted with the plan,
@@ -97,3 +97,48 @@ implementation and drafting; human hands-on hours were not recorded.
 3. **How does this help the model?** It can identify a more defensible target for
    reducing validation cost, which supports faster checked research iterations.
    Reading a saved profile itself changes neither the strategy nor its strength.
+
+
+## Historical saved-data result — November 17
+
+Source `395575b` was public before extraction. Both actual supported runtimes reproduce all five numerical exports exactly, with 104 construction/profiling targets blocked, zero forbidden calls and all 15 raw producer files unchanged. No new profiling, reference construction or poker training occurred.
+
+These are **aggregate elapsed-stack seconds from the historical instrumented command**, including waits and profiler overhead. They are not current CPU measurements or savings estimates. The two cost reads share their input, and nested rows overlap.
+
+| Preselected function | Calls | Self seconds | Inclusive seconds |
+| --- | ---: | ---: | ---: |
+| `opponent_learning_sources.load` | 2 | 0.000496088 | 138.044 |
+| `opponent_learning_sources.build_game` | 4 | 0.0001785 | 10.8936 |
+| `opponent_learning_sources.frozen_opponent` | 48 | 0.00395262 | 0.874028 |
+| `opponent_learning_sources.boundaries` | 2 | 0.000248531 | 0.00464088 |
+| `batch_current_inputs.load` | 2 | 0.000301291 | 125.609 |
+
+The earlier-source loader records 138.044 seconds across its two calls. Its direct `batch_current_inputs.load` edge accounts for 125.609 seconds; that function's direct `reduced_study_run.read_saved` edge accounts for 125.552. These are nested quantities, so they must not be added.
+
+The loader's direct frozen-opponent edge is 0.860610 seconds across 32 calls. The frozen-opponent function also serves the tiny proof fixture, which explains why its aggregate row shows more calls. The exact incoming edges are:
+
+| Caller of frozen opponent | Calls | Edge inclusive seconds |
+| --- | ---: | ---: |
+| `opponent_learning_sources.load` | 32 | 0.86061 |
+| `opponent_learning_own.fixture` | 16 | 0.0134178 |
+
+Every selected function recovers its inclusive time from self time plus all direct child times within the fixed 1e-7-second tolerance. The largest residual is 1.42109e-14 seconds. Every original frame and edge remains in the complete exports; rounded display values do not replace full-precision records.
+
+**Next decision:** inspect the earlier archive reader before considering a frozen-opponent cache or another profiling run. In this historical profile, archive checking is the large direct component; frozen-opponent construction is small. A current optimization still needs a prospective test and current measurements. This analysis does not rescue either failed research target or establish stronger play.
+
+
+Full-precision records: [selected functions](../results/earlier-source-profile/report/selected-functions.csv),
+[all selected edges](../results/earlier-source-profile/report/selected-edges.csv),
+[all original frames](../results/earlier-source-profile/report/all-functions.csv),
+[all original caller edges](../results/earlier-source-profile/report/all-callers.csv),
+and [summary](../results/earlier-source-profile/report/summary.json).
+The [two-runtime equality receipt](../results/earlier-source-profile/data-checks/earlier-source-numeric-equality.json)
+and constructor-guard records retain the actual executions. This table can be
+regenerated after running the reader:
+
+```sh
+.venv/bin/python results/earlier-source-profile/data-checks/summarize.py.txt --report results/earlier-source-profile/report --output results/runs/earlier-source-tables-local.md
+```
+
+Final repository checks remain pending. No figure is needed to read these five
+rows; the complete edge tables retain the detail behind the summary.

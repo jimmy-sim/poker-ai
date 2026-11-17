@@ -6688,3 +6688,27 @@ No strategy, dependency, CI, seed, compute limit or research acceptance rule has
 changed. The 912.54/900-second forecast and 2.390%/1% accuracy targets remain failed.
 Codex assisted with implementation, checks and drafting; human hands-on time was
 not recorded.
+
+
+### November 17: historical caller costs reproduced without construction
+
+After source `395575b` was public, both guarded data-only executions complete.
+All five numerical exports match exactly across actual Python 3.11.17/NumPy 2.4.6
+and 3.12.15/NumPy 2.5.4. Each blocks 104 construction/profiling targets with zero
+calls and preserves all 15 raw producer files. The complete 2,354-frame /
+5,640-edge graph remains exported; all five selected functions conserve direct
+child/self time within the fixed tolerance.
+
+The historical earlier-source loader's two calls total 138.044 inclusive elapsed
+seconds. Its direct earlier-archive-loader edge is 125.609 seconds; that loader's
+`reduced_study_run.read_saved` edge is 125.552 seconds. The direct frozen-opponent
+edge is 0.860610 seconds for 32 calls; another 16 tiny-fixture calls belong to a
+separate caller. These nested profiled values include waits and instrumentation;
+they cannot be added together or substituted for current CPU or forecast costs.
+[All tables and receipts](earlier-source-profile.md#historical-saved-data-result--november-17)
+retain the full detail. Next inspect the earlier archive reader, not a reply cache.
+
+The real saved-data regression blocks construction/profiling and checks all five
+output bytes. All 31 focused cases pass on both actual runtimes. Complete final
+local/optional/hosted checks still need to run. No new measurement, solver, training or gate change;
+Codex-assisted execution and documentation, human time not recorded.

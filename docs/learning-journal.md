@@ -128,8 +128,8 @@ now retains a rejected result: the poker-result records match, but four work
 counters change and the complete-identity requirement fails. Full copying and
 checking also takes more time in that run. It is not deployed. PR #86 is merged;
 its six final checks and protected-main verification are complete. The next
-[saved call-graph investigation](earlier-source-profile.md) uses existing evidence
-before adding another instrument. Earlier source-stage details remain in
+[saved call-graph investigation](earlier-source-profile.md) now points into an
+earlier archive reader using existing evidence, before adding another instrument. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6956,3 +6956,26 @@ reader does not run poker, a profiler or a reference solver, and it does not mak
 the strategy stronger. Any later optimization still needs its own tests and
 prospective measurement. Codex assisted with implementation, checks and drafting;
 no personal practice, independent discovery or human hours are inferred.
+
+
+**November 17 — the saved graph points into the earlier archive.** Both actual
+reader runtimes reproduce all five numerical exports exactly. All 104
+construction/profiling targets are blocked, zero forbidden calls occur, and all
+15 raw producer files remain unchanged. No new profiler or solver ran.
+
+Across the historical profile's two earlier-source-loader calls, inclusive time
+is 138.044 elapsed-stack seconds. The direct earlier-archive-loader edge accounts
+for 125.609 seconds. Constructing frozen opponents from that caller accounts for
+0.861 seconds. Its aggregate includes 16 additional tiny-fixture calls; the
+caller edges keep those separate. These are nested historical elapsed values,
+not current CPU measurements or an estimate of savings.
+
+The next code path to inspect is the earlier archive reader. The saved evidence
+does not justify a frozen-opponent cache. The [full table and every edge](earlier-source-profile.md#historical-saved-data-result--november-17)
+show the evidence behind that decision. The original strategy is unchanged, and
+final repository checks remain pending.
+
+
+The real saved-data regression also passes: all 31 focused cases pass on both
+actual runtimes, including complete export reproduction with construction and
+profiling blocked. Full final local/optional/hosted checks still precede merge.

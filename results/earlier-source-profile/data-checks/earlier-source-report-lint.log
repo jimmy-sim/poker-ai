@@ -1,0 +1,25 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/test_earlier_source_profile.py:423:5
+    |
+421 |       tmp_path: Path,
+422 |   ) -> None:
+423 | /     import ast
+424 | |     import pkgutil
+425 | |     from contextlib import ExitStack
+426 | |     from unittest.mock import patch
+427 | |
+428 | |     import inspect_earlier_source_profile as cli
+429 | |     from poker_ai.evaluation.compact_opponent_guard import isolated
+    | |___________________________________________________________________^
+430 |
+431 |       root = Path(__file__).resolve().parents[1]
+    |
+help: Organize imports
+    |
+428 |     import inspect_earlier_source_profile as cli
+429 +
+430 |     from poker_ai.evaluation.compact_opponent_guard import isolated
+    |
+
+Found 1 error.
+[*] 1 fixable with `--fix`.

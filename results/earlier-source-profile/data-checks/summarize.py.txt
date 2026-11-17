@@ -1,0 +1,22 @@
+"""Derive display tables from the five fixed, source-published selected pages."""
+import argparse,csv,hashlib,json
+from pathlib import Path
+parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--report',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args();folder=args.report;s=json.loads((folder/'summary.json').read_text());frames={r['id']:r for r in csv.DictReader((folder/'all-functions.csv').open())}
+assert len(s['selected'])==5 and s['units']=='elapsed_stack_seconds_including_blocked_waits'
+lines=['## Historical saved-data result — November 17','',
+'Source `395575b` was public before extraction. Both actual supported runtimes reproduce all five numerical exports exactly, with 104 construction/profiling targets blocked, zero forbidden calls and all 15 raw producer files unchanged. No new profiling, reference construction or poker training occurred.','',
+'These are **aggregate elapsed-stack seconds from the historical instrumented command**, including waits and profiler overhead. They are not current CPU measurements or savings estimates. The two cost reads share their input, and nested rows overlap.','',
+'| Preselected function | Calls | Self seconds | Inclusive seconds |',
+'| --- | ---: | ---: | ---: |']
+for page in s['selected']:
+ row=page['frame'];module=Path(row['file']).stem;lines.append(f"| `{module}.{row['qualname']}` | {row['total_calls']} | {row['self_seconds']:.6g} | {row['cumulative_seconds']:.6g} |")
+root=s['selected'][0];old=s['selected'][4];frozen=s['selected'][2]
+def edge(page,file,name):
+ rows=[r for r in page['outgoing'] if frames[r['callee']]['file']==file and frames[r['callee']]['qualname']==name];assert len(rows)==1;return rows[0]
+a=edge(root,'src/poker_ai/evaluation/batch_current_inputs.py','load');b=edge(old,'src/poker_ai/evaluation/reduced_study_run.py','read_saved');c=edge(root,'src/poker_ai/evaluation/opponent_learning_sources.py','frozen_opponent')
+lines+=['',f"The earlier-source loader records {root['frame']['cumulative_seconds']:.3f} seconds across its two calls. Its direct `batch_current_inputs.load` edge accounts for {a['cumulative_seconds']:.3f} seconds; that function's direct `reduced_study_run.read_saved` edge accounts for {b['cumulative_seconds']:.3f}. These are nested quantities, so they must not be added.",'',f"The loader's direct frozen-opponent edge is {c['cumulative_seconds']:.6f} seconds across {c['total_calls']} calls. The frozen-opponent function also serves the tiny proof fixture, which explains why its aggregate row shows more calls. The exact incoming edges are:",'','| Caller of frozen opponent | Calls | Edge inclusive seconds |','| --- | ---: | ---: |']
+for row in frozen['incoming']:
+ peer=frames[row['caller']];label=Path(peer['file']).stem+'.'+peer['qualname'];lines.append(f"| `{label}` | {row['total_calls']} | {row['cumulative_seconds']:.6g} |")
+lines+=['','Every selected function recovers its inclusive time from self time plus all direct child times within the fixed 1e-7-second tolerance. The largest residual is '+format(max(abs(p['residual_seconds']) for p in s['selected']),'.6g')+' seconds. Every original frame and edge remains in the complete exports; rounded display values do not replace full-precision records.','',
+'**Next decision:** inspect the earlier archive reader before considering a frozen-opponent cache or another profiling run. In this historical profile, archive checking is the large direct component; frozen-opponent construction is small. A current optimization still needs a prospective test and current measurements. This analysis does not rescue either failed research target or establish stronger play.']
+p=args.output;p.parent.mkdir(parents=True,exist_ok=True);p.open('x').write('\n'.join(lines)+'\n');print(p.read_text())
