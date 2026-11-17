@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-phase-cpu/scripts/profile_source_phases.py", line 1131, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-phase-cpu/scripts/profile_source_phases.py", line 1110, in main
+    return pair(ROOT, output)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-phase-cpu/scripts/profile_source_phases.py", line 687, in pair
+    own_published(root, source)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/source-phase-cpu/scripts/profile_source_phases.py", line 379, in own_published
+    raise ArithmeticError("publish complete source-bound own phase proof first")
+ArithmeticError: publish complete source-bound own phase proof first

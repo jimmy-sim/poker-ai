@@ -6577,3 +6577,15 @@ synthetic forwarding reads give 14 selected root/child calls, with full restorat
 and source-publication verification are retained before fresh reference use.
 This does not claim real cost-loader coverage or new independent poker math.
 Public-boundary verification remains before the single complete audit pair.
+
+
+November 16 — Publication verification rejects the fresh proof: its parser
+incorrectly requires an inner cap exactly180s, while the supervisor correctly
+subtracts startup from the unchanged180s outer allowance (recorded inner cap
+179.9989877909975s). Calculations/restoration completed, but this proof is not
+accepted for admission. A mistakenly attempted pair was blocked by the same
+guard before any child measurement or reference construction; its complete
+failure is [retained](../results/source-phase-cpu/pair-raw-manifest.json). No
+source-child timing result follows. Correct the remaining-budget parser, retain
+negative cases, and fully qualify the corrected source before further collection.
+No scientific cap, seed, tolerance or earlier outcome is changed.
