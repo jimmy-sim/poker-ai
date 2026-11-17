@@ -6739,3 +6739,12 @@ source and input pins are unchanged. This means the measuring tool is ready for
 its own-only proof; it does not yet tell us which archive stage is expensive.
 The proof must be published and verified before any fresh reference comparison.
 No new strategy or playing-strength result is claimed.
+
+
+**November 17 — the own-only proof finishes.** The complete command takes
+6.639983 seconds under its 180-second limit. Startup leaves a slightly
+smaller inner allowance, which the corrected parser accepts. The saved software
+replay is unchanged; the 802 selected calls belong to two explicitly synthetic
+trees, with all aliases restored. [All raw files](../results/parent-archive-cpu/software-raw-manifest.json)
+are retained before fresh reference use. Publication verification is the next
+step; these fixtures do not measure the real archive or show a stronger agent.

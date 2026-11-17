@@ -184,3 +184,22 @@ This publication precedes the formal own-only proof. After that proof's raw
 bytes are public and successful publication verification actually exits zero,
 the exact tested launcher may start the one fixed complete pair. Source
 qualification alone does not admit that comparison or any training.
+
+
+## Own-only proof retained — November 17
+
+The complete source-qualified command finishes in **6.639982541 seconds**
+under the unchanged 180-second outer cap. Its inner allowance is
+`179.9988875420022`, after startup; the complete child measurement takes
+`6.538012999997591` seconds. The corrected remaining-allowance parser accepts this
+finite remainder without extending the limit.
+
+The actual archived software replay stays exactly identical, with zero selected
+archive roots. Two separately labeled synthetic trees exercise all 802 selected
+calls and restore every selected binding. No reference or learner is constructed;
+this does not establish real cost-loader coverage or new independent poker math.
+[All 13 raw members](../results/parent-archive-cpu/software-raw-manifest.json)
+and the successful source-publication verifier are retained for publication
+before reference work. Own-publication verification must actually exit zero
+before the single complete comparison starts; the launcher repeats that preflight
+inside its outer clock.

@@ -6460,3 +6460,17 @@ proof and fresh reference work. Own proof before comparison and raw pair before
 analysis remain required. No training, stronger/default/fresh/global admission,
 human hours or personal mastery is inferred. Codex-assisted implementation,
 execution, checks and drafting.
+
+
+### November 17: own-only nested archive proof retained
+
+The published-source verifier exits zero with all six roles and ten exact tested
+tools matched. The complete own-only command then takes 6.639982541
+seconds / 180; inner measurement 6.538013000 against startup-adjusted
+allowance 179.9988875420022. Actual saved software replay is unchanged;
+two labeled synthetic trees give 802 calls and complete restoration. No reference,
+training, real cost-loader coverage or independent new poker math is claimed.
+[All 13 raw members](../results/parent-archive-cpu/software-raw-manifest.json) are
+retained before any fresh comparison. Publish and verify this boundary with an
+actual zero exit before launching the fixed pair. Caps, seeds, inputs and earlier
+failures stay unchanged.
