@@ -6767,3 +6767,29 @@ Selected values remain unextracted; full final checks and data reproduction wait
 for source publication.
 No new profiler, solver, trajectory, cache, dependency, CI or scientific-rule
 change. Codex assisted; human time not recorded.
+
+
+### November 17: fixed archive-reader selection reproduced on both runtimes
+
+After public source `b26374f`, both actual readers complete with 104 blocks,
+zero forbidden calls and 15 raw files unchanged. All five numerical exports are
+byte-identical. Every original frame/edge and selected source coordinate remains
+checked. [Full result and table generator](archive-reader-edges.md#historical-result--november-17)
+retain the output, hashes and caller scope.
+
+The historical reader's direct admission edge records 107.961533 seconds and
+its direct prerequisite edge 17.361320. Prerequisites receive two direct reader
+calls and twelve from receipt-profile checking. These are nested elapsed-stack
+aggregates including waits, not current CPU or savings. Small row/grid checks
+are not the large direct component. Next follow nested receipt/context checks;
+no cache, new measurement, new training or failed-rule waiver. The fresh-child
+real-data regression checks parent reference refusal and five exact exports.
+Complete final local/optional/hosted checks remain pending. Journal132 updated;
+Codex-assisted work, no human hours/practice inferred.
+
+
+Pre-final verification: all 54 focused cases pass with real OpenSpiel deliberately
+preloaded in the parent on both runtimes (1.31/1.29 seconds); the fresh children
+retain all 104 blocks and five exact exports. Strict typing covers 825 files,
+lint/format and 539 documentation destinations pass. Full final checks remain
+pending. These are software/data checks, not new training or strength evidence.

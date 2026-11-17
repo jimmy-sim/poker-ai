@@ -4,6 +4,7 @@ import copy
 import hashlib
 import json
 import runpy
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -221,3 +222,139 @@ def test_terminal_lists_or_shows_every_edge(
     if mode != "list":
         assert "incoming (all direct edges)" in text
         assert "5.000000s; 1 calls" in text and "3.000000s; 1 calls" in text
+
+
+def test_published_archive_query_reproduces_all_exports_in_fresh_child(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import os
+    import subprocess
+    from types import ModuleType
+
+    import numpy
+
+    from poker_ai.evaluation.compact_opponent_guard import isolated
+
+    # Optional tests legitimately import references. Keep the own-only runtime
+    # guard strict and prove this regression works even with that parent state.
+    if "pyspiel" not in sys.modules:
+        monkeypatch.setitem(sys.modules, "pyspiel", ModuleType("pyspiel"))
+    with pytest.raises(ArithmeticError, match="already imported a reference"):
+        with isolated(worker=False):
+            raise AssertionError("reference-loaded parent entered an own-only scope")
+
+    root = Path(__file__).resolve().parents[1]
+    output = tmp_path / "saved-data-only-report"
+    script = """import ast, json, pathlib, pkgutil, sys
+from contextlib import ExitStack
+from unittest.mock import patch
+import numpy, poker_ai
+import inspect_archive_reader as reader
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+root = pathlib.Path(sys.argv[1])
+output = pathlib.Path(sys.argv[2])
+assert sys.version.split()[0] == sys.argv[3] and numpy.__version__ == sys.argv[4]
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root / "src")
+assert (
+    pathlib.Path(reader.__file__).resolve()
+    == root / "scripts/inspect_archive_reader.py"
+)
+assert reader.ROOT == root and "pyspiel" not in sys.modules
+node = ast.parse(
+    (root / "results/context-reuse/checks/report_execution_guard.py.txt").read_text()
+)
+blocked = ast.literal_eval(
+    next(
+        n.value
+        for n in node.body
+        if isinstance(n, ast.Assign)
+        and any(isinstance(t, ast.Name) and t.id == "blocked" for t in n.targets)
+    )
+) + ["cProfile.Profile"]
+assert len(set(blocked)) == 104
+attempts = []
+
+
+def forbidden(*a, **k):
+    attempts.append("forbidden")
+    raise AssertionError("saved-data regression attempted construction/profiling")
+
+
+descriptors = {
+    "poker_ai.postflop.matrix.MatrixTree.build",
+    "poker_ai.postflop.tree.SpotTree.build",
+    "grouped_depth_support.BASE_DESCRIPTOR",
+}
+with isolated(worker=False), ExitStack() as stack:
+    for name in blocked:
+        pkgutil.resolve_name(name)
+    for name in blocked:
+        stack.enter_context(
+            patch(name, classmethod(forbidden) if name in descriptors else forbidden)
+        )
+    reader.write_report(root, output)
+    summary = json.loads((output / "summary.json").read_text())
+assert not attempts and "pyspiel" not in sys.modules
+assert (
+    summary["frame_count"] == 2354
+    and summary["edge_count"] == 5640
+    and len(summary["selected"]) == 7
+)
+assert summary["units"] == "elapsed_stack_seconds_including_blocked_waits"
+assert summary["reference_constructed"] is False
+assert (
+    summary["poker_training_performed"] is False
+    and summary["admission_evidence"] is False
+)
+expected = root / "results/archive-reader-edges/report"
+for name in (
+    "all-functions.csv",
+    "all-callers.csv",
+    "selected-functions.csv",
+    "selected-edges.csv",
+    "summary.json",
+):
+    assert (output / name).read_bytes() == (expected / name).read_bytes()
+print(
+    json.dumps(
+        dict(
+            status="fresh_process_five_exports_exact",
+            python=sys.version.split()[0],
+            numpy=numpy.__version__,
+            blocked_targets=len(blocked),
+            forbidden_calls=len(attempts),
+            reference_imported=False,
+        )
+    )
+)
+"""
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            script,
+            str(root),
+            str(output),
+            sys.version.split()[0],
+            numpy.__version__,
+        ],
+        cwd=root,
+        env=dict(
+            os.environ,
+            PYTHONPATH=os.pathsep.join((str(root / "src"), str(root / "scripts"))),
+        ),
+        capture_output=True,
+        text=True,
+        timeout=120,  # Software-test watchdog; no scientific compute cap changes.
+        check=False,
+    )
+    (tmp_path / "child.stdout.log").write_text(result.stdout)
+    (tmp_path / "child.stderr.log").write_text(result.stderr)
+    assert result.returncode == 0, result.stdout + result.stderr
+    receipt = json.loads(result.stdout.splitlines()[-1])
+    assert receipt["status"] == "fresh_process_five_exports_exact"
+    assert receipt["blocked_targets"] == 104 and receipt["forbidden_calls"] == 0
+    assert receipt["reference_imported"] is False
+    assert receipt["python"] == sys.version.split()[0]
+    assert receipt["numpy"] == numpy.__version__

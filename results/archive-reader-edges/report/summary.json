@@ -1,0 +1,822 @@
+{
+  "admission_evidence": false,
+  "edge_count": 5640,
+  "frame_count": 2354,
+  "input_sha256": {
+    "results/compact-native-wall-profile/checks.json": "94ebf8c6556cc74f732a48b4c53c39fb874e3388ae48117e44218e0a7155de89",
+    "results/compact-native-wall-profile/pair/pair.json": "b5daed2702d8f2bf5fe9eb8ad612858ae57091990ef0088a2041ac807b6d6dde",
+    "results/compact-native-wall-profile/pair/plain/child.json": "c028741d87c11c13dd1952fe803165eb7aeaded2c9563a9d39f36bbf2377be0d",
+    "results/compact-native-wall-profile/pair/profile/child.json": "528afbdba655cf33f0039861965c8b6c88d2eb64283671af3a2ee0b31c4b20f1",
+    "results/compact-native-wall-profile/pair/profile/functions-callers.json.gz": "3eb88278f9f4e3cf014a46b33f643a5a1a34250fb89ab988f739d277096ba56f",
+    "results/compact-native-wall-profile/report/render-manifest.json": "babd12834f5c0b2d61e17bf74f6705efdecada3284e5c22c15c7e6e6bbefa93e"
+  },
+  "limitations": "Dependent historical elapsed-stack aggregates include waits and profiler overhead. Nested pages overlap; shared grandchildren cannot be assigned to a caller. No current CPU, causal savings, optimization or strength admission. No new profiler, solver or trajectory.",
+  "poker_training_performed": false,
+  "producer_source_fingerprint": "7fdfe7db600b65c945fb93384e1eb30643474e547492202bf8436f880d2afa5c",
+  "prospective_issue": "https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6957605618",
+  "reference_constructed": false,
+  "scope": "Historical profiled elapsed values; no current CPU estimate, optimizer admission or training",
+  "selected": [
+    {
+      "accounted_seconds": 125.551543041,
+      "frame": {
+        "arguments": [
+          "root",
+          "path"
+        ],
+        "code_id": "7ab62e12fed04a9748ab577166552343e7b027c4fc6968bd574835791d9bd60d",
+        "code_sha256": "5bedf1675ab04d5a92e525d68352edb96b0c599716fee13d1c6f170d6016b48f",
+        "cumulative_seconds": 125.551543041,
+        "entry_index": 1976,
+        "file": "src/poker_ai/evaluation/reduced_study_run.py",
+        "id": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+        "line": 269,
+        "name": "read_saved",
+        "primitive_calls": 2,
+        "qualname": "read_saved",
+        "self_seconds": 0.00015862500000000002,
+        "total_calls": 2
+      },
+      "incoming": [
+        {
+          "callee": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "caller": "f6a1cf47c41f326e79f51ba75a00318d6e24d9b23b275bb45d6303c4e4797312",
+          "cumulative_seconds": 125.551543041,
+          "primitive_calls": 2,
+          "self_seconds": 0.00015862500000000002,
+          "total_calls": 2
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "172d1ce8ad0b7e5e3a6b42c9694fbe33c513e2d34c9b296d25ad9c51e49b32bd",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.007783375,
+          "primitive_calls": 2,
+          "self_seconds": 0.000381731,
+          "total_calls": 2
+        },
+        {
+          "callee": "2de0743e15ce410581b369eed419fc81a4959598bdceb716c0fb41cac8038f1c",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.011758792,
+          "primitive_calls": 2,
+          "self_seconds": 4.916e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "3259c3aae28b450d002b814dd648a680b3a6774e8d78df3c5d0c35ac8b75f8f6",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 1.2500000000000002e-07,
+          "primitive_calls": 2,
+          "self_seconds": 1.2500000000000002e-07,
+          "total_calls": 2
+        },
+        {
+          "callee": "4be4a4540cd627ad60381aacbb8f945825823c5c4b244f94553ea15b0c731e73",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 3.6670000000000002e-06,
+          "primitive_calls": 2,
+          "self_seconds": 3.542e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "62160227863fcef0f3f864c2db17ed6dd4213ead473004e9637885dabf97d2b3",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 3.1625e-05,
+          "primitive_calls": 2,
+          "self_seconds": 9.29e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "659f2988d2cf88ada5fc89be3260ffc9b2478b8d04bcce1a17cb22efe6f0b9b3",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.060262624,
+          "primitive_calls": 14,
+          "self_seconds": 2.6581000000000002e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "6aa07bc4ee96b3288f87da7c6906f94b26f12a8ec8570511c1d3f119da19f8c8",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.00043320800000000003,
+          "primitive_calls": 2,
+          "self_seconds": 2.249e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "7c7124cf3c8c400578081ce2d6ffaddd4aad9953f1c9988d350a3055bf9147db",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.025106709,
+          "primitive_calls": 2,
+          "self_seconds": 2.125e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.041549542,
+          "primitive_calls": 2,
+          "self_seconds": 0.0004573,
+          "total_calls": 2
+        },
+        {
+          "callee": "b1900c985a2706a057f9e44baea29d8054edae3363551128441dd6b51c1dcc7f",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.000722209,
+          "primitive_calls": 6,
+          "self_seconds": 7.292000000000001e-06,
+          "total_calls": 6
+        },
+        {
+          "callee": "be2f449e0ee0c6034179f5fc29bd79fc7c00d7f44e7f792920992d433ab4863a",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.023802083,
+          "primitive_calls": 2,
+          "self_seconds": 1.2457000000000001e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "c0c8fc7b76067596063fb18187132184acc1741802d7e721218edd5c9e6ba5a3",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.053868208,
+          "primitive_calls": 2,
+          "self_seconds": 1.5499000000000002e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 107.961533375,
+          "primitive_calls": 2,
+          "self_seconds": 0.000514667,
+          "total_calls": 2
+        },
+        {
+          "callee": "ce655dc98411c5f9e413518a025a80bb12997cb4d43d9f0b584e0e388b70ab91",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 5.04e-06,
+          "primitive_calls": 16,
+          "self_seconds": 5.04e-06,
+          "total_calls": 16
+        },
+        {
+          "callee": "d5d93d3c6386bfb8b9358aea31d434749a5deb4af537b935e33c43d0ea73e67f",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.0012336670000000001,
+          "primitive_calls": 2,
+          "self_seconds": 1.7100000000000001e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.0017256670000000002,
+          "primitive_calls": 4,
+          "self_seconds": 0.0013700750000000001,
+          "total_calls": 4
+        },
+        {
+          "callee": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 17.361319625,
+          "primitive_calls": 2,
+          "self_seconds": 0.000603708,
+          "total_calls": 2
+        },
+        {
+          "callee": "efb11745c6dd577456c6f4aa3a037e43356317fd716870eba6affc908f5bb3d0",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.00024487500000000003,
+          "primitive_calls": 2,
+          "self_seconds": 0.00024487500000000003,
+          "total_calls": 2
+        }
+      ],
+      "residual_seconds": 0.0
+    },
+    {
+      "accounted_seconds": 107.96153337500002,
+      "frame": {
+        "arguments": [
+          "root",
+          "clean"
+        ],
+        "code_id": "bd1940ac0a62d1f3c9996810fd902dbd8e64447bbdf37757900b408ab92dfac0",
+        "code_sha256": "857f33fe20330c161c12f847836d18d9815593f8a8d3486a0ff8a2faae1eff00",
+        "cumulative_seconds": 107.961533375,
+        "entry_index": 1655,
+        "file": "src/poker_ai/evaluation/reduced_study_protocol.py",
+        "id": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+        "line": 243,
+        "name": "require_admission",
+        "primitive_calls": 2,
+        "qualname": "require_admission",
+        "self_seconds": 0.000514667,
+        "total_calls": 2
+      },
+      "incoming": [
+        {
+          "callee": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 107.961533375,
+          "primitive_calls": 2,
+          "self_seconds": 0.000514667,
+          "total_calls": 2
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 107.96077562500001,
+          "primitive_calls": 2,
+          "self_seconds": 0.0008036250000000001,
+          "total_calls": 2
+        },
+        {
+          "callee": "659f2988d2cf88ada5fc89be3260ffc9b2478b8d04bcce1a17cb22efe6f0b9b3",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 2.8625e-05,
+          "primitive_calls": 2,
+          "self_seconds": 3.626e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "7c7124cf3c8c400578081ce2d6ffaddd4aad9953f1c9988d350a3055bf9147db",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 2.1041e-05,
+          "primitive_calls": 2,
+          "self_seconds": 2.2920000000000002e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "d5d93d3c6386bfb8b9358aea31d434749a5deb4af537b935e33c43d0ea73e67f",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 0.000185042,
+          "primitive_calls": 2,
+          "self_seconds": 2.6250000000000003e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "e578d56fcbb260a8419fcaf981a6d8cfc9edc75e26aaf10b03b5f677368288a5",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 8.375e-06,
+          "primitive_calls": 2,
+          "self_seconds": 3.34e-07,
+          "total_calls": 2
+        }
+      ],
+      "residual_seconds": -1.4210854715202004e-14
+    },
+    {
+      "accounted_seconds": 107.96077562500001,
+      "frame": {
+        "arguments": [
+          "root",
+          "clean"
+        ],
+        "code_id": "b12503e52611765250470ec0a40855d7d054d96715102da4781fd698aaba593e",
+        "code_sha256": "930da6a9bec114688d15f52f8f03c845f30e7cd2e07221f297648b2138bf9a35",
+        "cumulative_seconds": 107.96077562500001,
+        "entry_index": 2000,
+        "file": "src/poker_ai/evaluation/reduced_study_protocol.py",
+        "id": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+        "line": 198,
+        "name": "expected_admission",
+        "primitive_calls": 2,
+        "qualname": "expected_admission",
+        "self_seconds": 0.0008036250000000001,
+        "total_calls": 2
+      },
+      "incoming": [
+        {
+          "callee": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "caller": "c515f320770478143a2abf93bac9f7ef2029737182964a261bc739e734dd4de8",
+          "cumulative_seconds": 107.96077562500001,
+          "primitive_calls": 2,
+          "self_seconds": 0.0008036250000000001,
+          "total_calls": 2
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "069994e13decd0ab2f565eda29ac9907c0fd39d3c6c1622e7dd0e4f8b4287beb",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 0.001282916,
+          "primitive_calls": 2,
+          "self_seconds": 9.336e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "2de0743e15ce410581b369eed419fc81a4959598bdceb716c0fb41cac8038f1c",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 0.013135250000000001,
+          "primitive_calls": 2,
+          "self_seconds": 2.708e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "2e4515d9e469921411693d45226eb8358fcee1f8d63427313ffdc008ba445a4a",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 107.683863625,
+          "primitive_calls": 4,
+          "self_seconds": 0.0006640400000000001,
+          "total_calls": 4
+        },
+        {
+          "callee": "39bec872250327be17e78912062ba1e47eba05eeb7c255e49427ebc2ccf651c7",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 0.19076979200000002,
+          "primitive_calls": 2,
+          "self_seconds": 9.7544e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "be2f449e0ee0c6034179f5fc29bd79fc7c00d7f44e7f792920992d433ab4863a",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 0.023531625,
+          "primitive_calls": 2,
+          "self_seconds": 1.0039e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "c0c8fc7b76067596063fb18187132184acc1741802d7e721218edd5c9e6ba5a3",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 0.047352458,
+          "primitive_calls": 2,
+          "self_seconds": 1.0541000000000001e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "e578d56fcbb260a8419fcaf981a6d8cfc9edc75e26aaf10b03b5f677368288a5",
+          "caller": "4bb4f9964f9d7d34f70df3fb8bf304eb4042d26b989482301b3e211ddacd9600",
+          "cumulative_seconds": 3.6334e-05,
+          "primitive_calls": 4,
+          "self_seconds": 2.792e-06,
+          "total_calls": 4
+        }
+      ],
+      "residual_seconds": 0.0
+    },
+    {
+      "accounted_seconds": 121.85341724900002,
+      "frame": {
+        "arguments": [
+          "root"
+        ],
+        "code_id": "c04224831eebb9259f015b011de60ae88f98979c9ba2c894c9a2c0c49e3796d3",
+        "code_sha256": "444bc8bacf45e3d77eefc6e5f485111523ff38a3f8abbedde7e3839ae4d9c201",
+        "cumulative_seconds": 121.853417249,
+        "entry_index": 1394,
+        "file": "src/poker_ai/evaluation/frozen_batch_inputs.py",
+        "id": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+        "line": 89,
+        "name": "prerequisites",
+        "primitive_calls": 14,
+        "qualname": "prerequisites",
+        "self_seconds": 0.004032626,
+        "total_calls": 14
+      },
+      "incoming": [
+        {
+          "callee": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 17.361319625,
+          "primitive_calls": 2,
+          "self_seconds": 0.000603708,
+          "total_calls": 2
+        },
+        {
+          "callee": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "caller": "83f3e1bb6184d82fe2ce19c9825e263b57eed02dd37b0905ae27f4f00e3e8c44",
+          "cumulative_seconds": 104.49209762400001,
+          "primitive_calls": 12,
+          "self_seconds": 0.0034289180000000004,
+          "total_calls": 12
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "caller": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "cumulative_seconds": 121.68324633300001,
+          "primitive_calls": 14,
+          "self_seconds": 0.19381447200000002,
+          "total_calls": 14
+        },
+        {
+          "callee": "6dce86fe925f3011ad8e9e4f40f8feecd53821b8c0d084400eb3314cbe41e862",
+          "caller": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "cumulative_seconds": 0.16613829000000002,
+          "primitive_calls": 14,
+          "self_seconds": 6.320100000000001e-05,
+          "total_calls": 14
+        }
+      ],
+      "residual_seconds": -1.4210854715202004e-14
+    },
+    {
+      "accounted_seconds": 121.68324633300001,
+      "frame": {
+        "arguments": [
+          "root"
+        ],
+        "code_id": "d21e8b649328877182a541f1191a80edeaa3dc4cf328b0c81b83dfccf2b61595",
+        "code_sha256": "307d9448a7a3e72d3d92a58ca47b32ceb198c0c6784c03ef2f1f650d8c291b09",
+        "cumulative_seconds": 121.68324633300001,
+        "entry_index": 1965,
+        "file": "src/poker_ai/evaluation/averaging_history_inputs.py",
+        "id": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+        "line": 129,
+        "name": "load",
+        "primitive_calls": 14,
+        "qualname": "load",
+        "self_seconds": 0.19381447200000002,
+        "total_calls": 14
+      },
+      "incoming": [
+        {
+          "callee": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "caller": "eefb45e89b21a7c35963386c71d2e9479be924d824f448a6756954fe3b12a25c",
+          "cumulative_seconds": 121.68324633300001,
+          "primitive_calls": 14,
+          "self_seconds": 0.19381447200000002,
+          "total_calls": 14
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "10dd43237db7214753fbc76a69a94ca7e31cb716b3d824bb92fe8e975b714aac",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 17.299802922,
+          "primitive_calls": 2688,
+          "self_seconds": 0.046361400000000004,
+          "total_calls": 2688
+        },
+        {
+          "callee": "175ed15c62348d9bd5a08644f12d4ef0b74270ac9825feab604217040c2717a3",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.001216667,
+          "primitive_calls": 1,
+          "self_seconds": 7.417e-06,
+          "total_calls": 1
+        },
+        {
+          "callee": "2052ee9f49e487896387f30de6fdb3ca0ceae6b95a18feca1048cbb7372bc561",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.8111739710000001,
+          "primitive_calls": 11774,
+          "self_seconds": 0.011993987000000001,
+          "total_calls": 11774
+        },
+        {
+          "callee": "2de0743e15ce410581b369eed419fc81a4959598bdceb716c0fb41cac8038f1c",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.071002751,
+          "primitive_calls": 14,
+          "self_seconds": 1.579e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "3259c3aae28b450d002b814dd648a680b3a6774e8d78df3c5d0c35ac8b75f8f6",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 1.038e-06,
+          "primitive_calls": 28,
+          "self_seconds": 1.038e-06,
+          "total_calls": 28
+        },
+        {
+          "callee": "3596fe74079a011f5e2df913c253645c4842833215097837c213bf59b6555ec2",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 18.519533431000003,
+          "primitive_calls": 1806,
+          "self_seconds": 0.017874482,
+          "total_calls": 1806
+        },
+        {
+          "callee": "3ce4dbfa135f5d4bff319668d6d81d4577a38d1dbed78a1017b280acc6412139",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 84.48016687500001,
+          "primitive_calls": 14,
+          "self_seconds": 0.002537586,
+          "total_calls": 14
+        },
+        {
+          "callee": "427996cad627cb99d4cb9923c72f878606ee8fa5c26438f28b13cd0ae04d9bec",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 3.8416e-05,
+          "primitive_calls": 14,
+          "self_seconds": 2.4541e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "563c25b2ce7f8d9b275939f53b8fd628182328d1206da9b544c25eb560c56bee",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.044219281000000006,
+          "primitive_calls": 1232000,
+          "self_seconds": 0.044219281000000006,
+          "total_calls": 1232000
+        },
+        {
+          "callee": "659f2988d2cf88ada5fc89be3260ffc9b2478b8d04bcce1a17cb22efe6f0b9b3",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.047453705000000006,
+          "primitive_calls": 11760,
+          "self_seconds": 0.008935654000000001,
+          "total_calls": 11760
+        },
+        {
+          "callee": "6e4b85fc8c56067c0d61581ab3fd96178457fdd3e2aacc537a9358a59e742196",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 3.378e-06,
+          "primitive_calls": 56,
+          "self_seconds": 3.378e-06,
+          "total_calls": 56
+        },
+        {
+          "callee": "7c7124cf3c8c400578081ce2d6ffaddd4aad9953f1c9988d350a3055bf9147db",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.010221251,
+          "primitive_calls": 14,
+          "self_seconds": 1.1623e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "81e37e18458041f9bf44a5da2cdf46f27579b8f53eb0e93f5a85668d0153cda1",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.044077665,
+          "primitive_calls": 11760,
+          "self_seconds": 0.0056011970000000005,
+          "total_calls": 11760
+        },
+        {
+          "callee": "83f01d8de51a490528c77f755fd2de1a57a221be3415a273b0bc7d660acd9ff8",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.110243539,
+          "primitive_calls": 14,
+          "self_seconds": 8.691200000000001e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "95109bfd563cd6ef0da31278f3df0f7adfea79fb6ec79cbd32a05b1e48378961",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 1.9041000000000003e-05,
+          "primitive_calls": 14,
+          "self_seconds": 1.9041000000000003e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "bd93d4543215cb90fe52fa29082c50fcc4e6836987caf5aba2caa137a7f37dcf",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.0030423760000000003,
+          "primitive_calls": 14,
+          "self_seconds": 0.000168349,
+          "total_calls": 14
+        },
+        {
+          "callee": "c069fe1f8adbb77349f3800bec82fdecfc64e914e06fdd9e3d350193af79b6b7",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.0007654480000000001,
+          "primitive_calls": 2688,
+          "self_seconds": 0.0007654480000000001,
+          "total_calls": 2688
+        },
+        {
+          "callee": "c1f123f0af38e31145399c6df32d09f2ba643ff77eef6dabbc34cd6d480e213c",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.008149043,
+          "primitive_calls": 14,
+          "self_seconds": 0.000466135,
+          "total_calls": 14
+        },
+        {
+          "callee": "d291e7a32147fed8dd6dcb7cd7d0c09389dd3355fb8b1d79b40c8c2c41384589",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.0005302120000000001,
+          "primitive_calls": 1792,
+          "self_seconds": 0.0005302120000000001,
+          "total_calls": 1792
+        },
+        {
+          "callee": "d3b9e5458ccdcbef424a8c3115f12bfc21325d596018efd66f24c5a12c42544a",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.032815249000000005,
+          "primitive_calls": 14,
+          "self_seconds": 0.011113575,
+          "total_calls": 14
+        },
+        {
+          "callee": "d5d93d3c6386bfb8b9358aea31d434749a5deb4af537b935e33c43d0ea73e67f",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.002107126,
+          "primitive_calls": 14,
+          "self_seconds": 3.1959000000000004e-05,
+          "total_calls": 14
+        },
+        {
+          "callee": "e0844f07514ca6e5324af53752d1c6aedf8bda212abd693a30f3f192c14753ce",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.002430723,
+          "primitive_calls": 5376,
+          "self_seconds": 0.002430723,
+          "total_calls": 5376
+        },
+        {
+          "callee": "e578d56fcbb260a8419fcaf981a6d8cfc9edc75e26aaf10b03b5f677368288a5",
+          "caller": "2c9fe08a719359b18740d84bc0b7513799824143cba8c6a8a39fa453e19c5a57",
+          "cumulative_seconds": 0.00041775300000000004,
+          "primitive_calls": 42,
+          "self_seconds": 1.7670000000000002e-05,
+          "total_calls": 42
+        }
+      ],
+      "residual_seconds": 0.0
+    },
+    {
+      "accounted_seconds": 0.0017256670000000002,
+      "frame": {
+        "arguments": [
+          "batch",
+          "selected"
+        ],
+        "code_id": "d0ad160f99521b685a8f27b19961c61b71653bf03e028055de3f086a60130977",
+        "code_sha256": "7d57ba84521c13ee009b0d0853119417b910e721a507ab8c3dbb017ebd1f87de",
+        "cumulative_seconds": 0.0017256670000000002,
+        "entry_index": 1980,
+        "file": "src/poker_ai/evaluation/frozen_batch_validation.py",
+        "id": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+        "line": 183,
+        "name": "gather",
+        "primitive_calls": 4,
+        "qualname": "gather",
+        "self_seconds": 0.0013700750000000001,
+        "total_calls": 4
+      },
+      "incoming": [
+        {
+          "callee": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.0017256670000000002,
+          "primitive_calls": 4,
+          "self_seconds": 0.0013700750000000001,
+          "total_calls": 4
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "3259c3aae28b450d002b814dd648a680b3a6774e8d78df3c5d0c35ac8b75f8f6",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 3.7080000000000003e-06,
+          "primitive_calls": 102,
+          "self_seconds": 3.7080000000000003e-06,
+          "total_calls": 102
+        },
+        {
+          "callee": "415ee4fd4eb45abd68ff61ebeaadbdd0be000b34dbd672cd34b614b7d67315dc",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 0.00011616500000000001,
+          "primitive_calls": 12,
+          "self_seconds": 0.00011616500000000001,
+          "total_calls": 12
+        },
+        {
+          "callee": "4993e101133301d5594f16f9d1d975304dd2e8217ec32bd063baf1a6de37c4de",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 4.835e-06,
+          "primitive_calls": 12,
+          "self_seconds": 4.835e-06,
+          "total_calls": 12
+        },
+        {
+          "callee": "659f2988d2cf88ada5fc89be3260ffc9b2478b8d04bcce1a17cb22efe6f0b9b3",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 0.000143,
+          "primitive_calls": 40,
+          "self_seconds": 1.8927e-05,
+          "total_calls": 40
+        },
+        {
+          "callee": "7023b0a2f33e664ffa54aacbc1f417b4668fe51750a42eb683336fd912cf9848",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 7.5967e-05,
+          "primitive_calls": 2592,
+          "self_seconds": 7.5967e-05,
+          "total_calls": 2592
+        },
+        {
+          "callee": "8683d359c3bad658c4f8cdf5e1883bd070f67bfe2182fd731a60912850275d06",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 5.083e-06,
+          "primitive_calls": 4,
+          "self_seconds": 5.083e-06,
+          "total_calls": 4
+        },
+        {
+          "callee": "f2d2999b3cb1898a146c87516324a003a0699c944c46a70a55c2a83135adf493",
+          "caller": "de09ea5a3c85aff74289a8bc98ddc484eb4845c6658a7d94f747c9b37d6d2130",
+          "cumulative_seconds": 6.834e-06,
+          "primitive_calls": 4,
+          "self_seconds": 3.7930000000000004e-06,
+          "total_calls": 4
+        }
+      ],
+      "residual_seconds": 0.0
+    },
+    {
+      "accounted_seconds": 0.04154954200000001,
+      "frame": {
+        "arguments": [
+          "rows",
+          "data",
+          "config",
+          "binding"
+        ],
+        "code_id": "b571ae7b96f0594d623d2711438929ff3a142a3f9b8fbe2c2136ad5ed33521b2",
+        "code_sha256": "a8c67e94104b3957bc6cf42c85daec88cf6ab1de4c5f29d96b86ddd09f65fe0b",
+        "cumulative_seconds": 0.041549542,
+        "entry_index": 1988,
+        "file": "src/poker_ai/evaluation/frozen_batch_validation.py",
+        "id": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+        "line": 154,
+        "name": "grid",
+        "primitive_calls": 2,
+        "qualname": "grid",
+        "self_seconds": 0.0004573,
+        "total_calls": 2
+      },
+      "incoming": [
+        {
+          "callee": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "caller": "41afd142b0614f3180ff88b61091bd4dbf72be40c48494c043ac23a40f00b2ed",
+          "cumulative_seconds": 0.041549542,
+          "primitive_calls": 2,
+          "self_seconds": 0.0004573,
+          "total_calls": 2
+        }
+      ],
+      "outgoing": [
+        {
+          "callee": "3259c3aae28b450d002b814dd648a680b3a6774e8d78df3c5d0c35ac8b75f8f6",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 2.5000000000000004e-07,
+          "primitive_calls": 4,
+          "self_seconds": 2.5000000000000004e-07,
+          "total_calls": 4
+        },
+        {
+          "callee": "7023b0a2f33e664ffa54aacbc1f417b4668fe51750a42eb683336fd912cf9848",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 5.8121e-05,
+          "primitive_calls": 960,
+          "self_seconds": 5.8121e-05,
+          "total_calls": 960
+        },
+        {
+          "callee": "70adb7b63c99529260f28a69b99689c677e212567538e8c697998394a00ee27e",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 2.0833000000000002e-05,
+          "primitive_calls": 2,
+          "self_seconds": 2.125e-06,
+          "total_calls": 2
+        },
+        {
+          "callee": "7ac091f401238956099f558b8a9fc6f26d50634a6bf363d4759ceb79109e95a6",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 0.040944705000000005,
+          "primitive_calls": 960,
+          "self_seconds": 0.006746315,
+          "total_calls": 960
+        },
+        {
+          "callee": "8683d359c3bad658c4f8cdf5e1883bd070f67bfe2182fd731a60912850275d06",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 1.5542e-05,
+          "primitive_calls": 2,
+          "self_seconds": 1.5542e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "8fd793b2409f74ff177349820aec4f0ed69d259f29c377bb676a9b1909e7d32d",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 4.2416e-05,
+          "primitive_calls": 2,
+          "self_seconds": 4.2416e-05,
+          "total_calls": 2
+        },
+        {
+          "callee": "fef7c0c5f417f8aacd3acd10a0e63a46665fd06becc8dd8a4a91c236e9197c55",
+          "caller": "a45b4075d09ed08d47b2b9245b5e31369367ff75f4a2666feb9e9370f736f79c",
+          "cumulative_seconds": 1.0375000000000001e-05,
+          "primitive_calls": 2,
+          "self_seconds": 1.0375000000000001e-05,
+          "total_calls": 2
+        }
+      ],
+      "residual_seconds": -6.938893903907228e-18
+    }
+  ],
+  "selection_contract_sha256": "37c76231f408c323fac4f5341904fa1ec7b0ab1751ca4bb45adeedb515c8a8e2",
+  "tolerance_seconds": 1e-07,
+  "units": "elapsed_stack_seconds_including_blocked_waits"
+}

@@ -7029,3 +7029,22 @@ match across actual runtimes with construction/profiling blocked.
 historical elapsed time including waits, not current CPU or a demonstrated
 speedup. Both prior runtime and accuracy failures remain. There is no new claim
 about playing strength or personal learning; human hands-on time is not recorded.
+
+
+Step132 result, November 17: after source publication, both guarded reads produce
+five byte-identical exports without construction or raw changes. The historical
+reader records 125.552 inclusive elapsed seconds. Its direct admission-check edge
+is 107.962 and its direct prerequisite-load edge is 17.361. These nested values
+include waits; they are not current CPU or demonstrated savings. Prerequisites
+serve two direct reader calls and twelve receipt-profile-check calls. The
+[complete result](archive-reader-edges.md#historical-result--november-17) keeps all
+edges so that shared costs are not assigned to just one caller. Next inspect the
+nested receipt checks; no cache or stronger strategy has been admitted. Final
+software checks remain pending; human practice/time not recorded.
+
+
+Pre-final verification: all 54 focused cases pass with real OpenSpiel deliberately
+preloaded in the parent on both runtimes (1.31/1.29 seconds); the fresh children
+retain all 104 blocks and five exact exports. Strict typing covers 825 files,
+lint/format and 539 documentation destinations pass. Full final checks remain
+pending. These are software/data checks, not new training or strength evidence.
