@@ -1,0 +1,35 @@
+...................................F....................s............... [ 53%]
+...............................................................          [100%]
+=================================== FAILURES ===================================
+_________________________ test_saved_pair_is_data_only _________________________
+
+saved_fixture = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-24/test_saved_pair_is_data_only0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7bf2d0>
+
+    def test_saved_pair_is_data_only(
+        saved_fixture: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        from compact_suit import cli
+    
+        from poker_ai.postflop.controlled_scoring import ScoringContext
+    
+        def forbidden(*a: Any, **k: Any) -> Any:
+            raise AssertionError("numerical execution in saved parser")
+    
+        monkeypatch.setattr(cli, "read", forbidden)
+        monkeypatch.setattr(cli, "child_main", forbidden)
+        monkeypatch.setattr(ScoringContext, "score", forbidden)
+        saved = runner.saved_pair(ROOT, saved_fixture)
+        assert (
+            saved["pair"]["status"] == "exact_complete_scalar_and_computed_replay_identity"
+        )
+        reads, commands = runner.exports(saved)
+        assert len(reads) == 6 and len(commands) == 2
+>       assert sum(r["selected_calls"] for r in reads) == 14
+E       assert 802 == 14
+E        +  where 802 = sum(<generator object test_saved_pair_is_data_only.<locals>.<genexpr> at 0x10f774110>)
+
+work/parent-archive-cpu/tests/test_parent_archive_cpu.py:586: AssertionError
+=========================== short test summary info ============================
+FAILED work/parent-archive-cpu/tests/test_parent_archive_cpu.py::test_saved_pair_is_data_only
+1 failed, 133 passed, 1 skipped in 23.21s

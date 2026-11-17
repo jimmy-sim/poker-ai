@@ -6713,3 +6713,13 @@ must pass before collection. The original compute limits stay unchanged.
 
 **Next decision:** use a complete checked comparison to choose a specific exact
 optimization. This diagnostic does not improve a strategy or establish strength.
+
+
+**November 17 — the new measuring tool passes focused checks.** Both actual
+runtimes pass 139 tests, with one plotting test waiting for the optional
+environment. Full strict typing passes 816 files; lint and formatting pass.
+The tests exercise the 802-call synthetic tree, restoration after errors,
+publication checks and the startup-adjusted allowance. The actual saved software
+replay remains identical. An initial assertion still expected the old 14 calls;
+it was corrected to the already-published 802-call plan. Full source qualification
+comes next; none of these fixtures measures the real archive's cost.

@@ -29,6 +29,13 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   [Prospective plan](parent-archive-cpu.md) published before implementation, with
   401 calls per cost read / 802 per complete pair. Existing source, inputs,
   seeds, scientific work and caps stay fixed. No optimizer or new training yet.
+- **Implementation:** temporary nested caller aliases, strict saved-data tree
+  reconstruction, complete runner and data-only report, previous numerical
+  identity pinned separately from the original 128 scientific input pins.
+  Both focused suites: 139 passed / one plotting skip, 24.99 / 23.86 seconds.
+  Ruff/format pass; full strict typing passes 816 files. Initial stale 14-call
+  assertion retained below, corrected to the prospective 802-call design.
+  All six complete source qualification roles still precede formal collection.
 - **Attribution:** AI-assisted implementation, execution and drafting. Human
   hands-on time not recorded; no personal learning outcome inferred.
 

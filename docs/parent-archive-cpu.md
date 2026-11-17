@@ -111,3 +111,27 @@ global admission. The 912.54/900-second forecast and 2.390%/1% accuracy failures
 remain failed; this step cannot replace their required future gates.
 
 Published prospectively on November 17, 2026, in [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6945622230), before implementation or new timing outcomes.
+
+## Implementation and current verification
+
+The observer and runner are implemented in `scripts/parent_archive_support.py`
+and `scripts/profile_parent_archive.py`, with the fixed
+`configs/parent-archive-cpu.json`. Caller-held aliases are temporary; defining
+functions remain untouched. The saved-data reader independently reconstructs the
+three-level event tree and reconciles every parent's direct children and residual.
+The runner requires the previous complete numerical identity as well as equality
+between its new arms. Reports authenticate raw data without reconstructing games.
+
+On November 17, the focused tests pass on actual Python 3.11.17 / NumPy 2.4.6 and
+3.12.15 / NumPy 2.5.4: **139 passed, one optional plotting test skipped**, in
+24.99 / 23.86 seconds. Ruff and formatting pass; full strict typing passes
+816 files. Tests cover the actual archived software replay, synthetic 802-call
+trees, exact clock arithmetic, corrupted events, publication and startup-budget
+parsing, partial failures, aliases, cleanup and original exception identity.
+The skipped plotting check remains required in the upcoming optional roles.
+
+The initial new runner test still expected its predecessor's 14 calls; it caught
+the new 802-call result. The assertion was corrected to the published inventory;
+the diagnostic design and scientific work were unchanged. Complete source-bound
+local/hosted qualification and tested operator publication remain before any
+formal own proof or fresh reference comparison. No new measured result exists.
