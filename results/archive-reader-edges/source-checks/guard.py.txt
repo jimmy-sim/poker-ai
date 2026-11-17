@@ -1,0 +1,79 @@
+"""Execute a fixed saved-data reader with construction/profiling forbidden."""
+import argparse,ast,hashlib,json,pkgutil,runpy,subprocess,sys
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--root',type=Path,required=True)
+parser.add_argument('--minor',choices=('311','312'),required=True)
+parser.add_argument('--output',type=Path)
+parser.add_argument('--receipt',type=Path,required=True)
+parser.add_argument('--expected-commit')
+parser.add_argument('--setup-only',action='store_true')
+args=parser.parse_args();root=args.root.resolve();receipt=args.receipt.resolve()
+assert not receipt.exists();sys.path[:0]=[str(root/'src'),str(root/'scripts')]
+import numpy
+import poker_ai
+import compare_context_reuse as predecessor
+from compact_suit.admission import published
+from poker_ai.evaluation.compact_opponent_guard import isolated
+from poker_ai.postflop.learning_artifacts import sha
+expected=('3.11.17','2.4.6') if args.minor=='311' else ('3.12.15','2.5.4')
+assert (sys.version.split()[0],numpy.__version__)==expected
+assert Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+assert Path(predecessor.__file__).resolve()==root/'scripts/compare_context_reuse.py'
+_,source=predecessor.binding(root,clean=False)
+assert len(source['sha256'])==450 and source['fingerprint']=='901415dc66139b48866bdf07dba9231e63fbaf3d0267d87af33b31028e4999a9'
+new=('scripts/earlier_source_profile_support.py','scripts/inspect_earlier_source_profile.py','configs/earlier-source-profile.json','scripts/inspect_archive_reader.py','configs/archive-reader-edges.json')
+pins=dict(source['sha256']);pins.update({name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in new})
+assert len(pins)==455 and sha(pins)=='a1010763771b89787862a27a39daeabac0404079901281371e3ecc0f0182db25'
+if not args.setup_only:
+ assert args.output is not None and not args.output.exists()
+ assert args.expected_commit==source['git_commit'] and source['dirty'] is False
+ for name in new:published(root,root/name)
+ published(root,Path(__file__).resolve())
+assert 'pyspiel' not in sys.modules
+previous_guard=root/'results/context-reuse/checks/report_execution_guard.py.txt'
+tree=ast.parse(previous_guard.read_text())
+blocked=ast.literal_eval(next(node.value for node in tree.body if isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in node.targets)))
+assert len(blocked)==103 and 'cProfile.Profile' not in blocked
+blocked=[*blocked,'cProfile.Profile'];assert len(set(blocked))==104
+attempts=[]
+def forbidden(*a,**k):
+ attempts.append('forbidden');raise AssertionError('saved-data reader attempted construction or profiling')
+def execute_entry(entry,output):
+ previous=sys.argv
+ try:
+  sys.argv=[str(entry),'--output',str(output.resolve())]
+  try:runpy.run_path(str(entry),run_name='__main__')
+  except SystemExit as error:
+   if not (error.code is None or type(error.code) is int and error.code==0):raise
+ finally:sys.argv=previous
+def raw_hashes():
+ folder=root/'results/compact-native-wall-profile/pair'
+ return {str(p.relative_to(folder)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(folder.rglob('*')) if p.is_file()}
+base=dict(python=sys.version.split()[0],numpy=numpy.__version__,executable=sys.executable,checked_commit=source['git_commit'],source_fingerprint=sha(pins),source_files=len(pins),source_clean=source['dirty'] is False,operator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),blocked=blocked,reference_constructed=False,new_profiler_constructed=False,poker_training_performed=False,admission_evidence=False)
+before=None;status='failed_retained';failure=None
+try:
+ with isolated(worker=False),ExitStack() as stack:
+  for name in blocked:pkgutil.resolve_name(name)
+  descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+  for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+  if not args.setup_only:
+   before=raw_hashes()
+   entry=root/'scripts/inspect_archive_reader.py'
+   execute_entry(entry,args.output)
+  assert not attempts and 'pyspiel' not in sys.modules
+ assert before is None or raw_hashes()==before
+ _,after=predecessor.binding(root,clean=False)
+ assert after['sha256']==source['sha256'] and after['git_commit']==source['git_commit']
+ assert all(hashlib.sha256((root/name).read_bytes()).hexdigest()==pins[name] for name in new)
+ status='setup_only_104_guards_no_data_read' if args.setup_only else 'saved_data_only_report_complete_104_guards'
+except BaseException as error:
+ failure=dict(kind=type(error).__name__,message=str(error));raise
+finally:
+ value=dict(base,status=status,forbidden_calls=len(attempts),raw_unchanged=before is None or raw_hashes()==before,raw_files=None if before is None else len(before),failure=failure)
+ receipt.parent.mkdir(parents=True,exist_ok=True)
+ with receipt.open('x') as stream:stream.write(json.dumps(value,indent=2)+'\n')
+ print(json.dumps({k:v for k,v in value.items() if k!='blocked'}))

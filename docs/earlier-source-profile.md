@@ -140,7 +140,9 @@ regenerated after running the reader:
 .venv/bin/python results/earlier-source-profile/data-checks/summarize.py.txt --report results/earlier-source-profile/report --output results/runs/earlier-source-tables-local.md
 ```
 
-Final repository checks remain pending. No figure is needed to read these five
+Final corrected-head checks and protected-main reproduction now pass; see the
+[closing checks](../results/earlier-source-profile/final-ci/manifest.json) and
+[next archive-reader query](archive-reader-edges.md). No figure is needed for five
 rows; the complete edge tables retain the detail behind the summary.
 
 

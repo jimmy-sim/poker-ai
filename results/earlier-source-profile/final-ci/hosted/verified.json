@@ -1,0 +1,112 @@
+{
+  "status": "all_six_final_roles_pass_actual_runtime_and_entire_tested_tree",
+  "checked_commit": "b9213e327cc57733559033d84db605271fd8eb31",
+  "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+  "source_files": 453,
+  "tested_checkout": "0b242c05c5323f26d751a1b0d98fbf9ff17af55a",
+  "tested_tree": "c1c5eaf9473ec03de416bdadd716e0eb4328a57a",
+  "entire_tree_equals_head": true,
+  "run_id": 44147362228,
+  "workflow_attempt": 1,
+  "checks": [
+    {
+      "role": "base311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5411 passed, 70 skipped, 150 deselected in 758.71s (0:12:38)",
+      "receipt": {
+        "role": "base311",
+        "status": "passed",
+        "checked_commit": "b9213e327cc57733559033d84db605271fd8eb31",
+        "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Software fixtures and saved-data regressions; no new diagnostic measurement or real Holdem trajectory",
+        "check_seconds": 763.5080712500001,
+        "setup_and_check_seconds": 763.528368
+      },
+      "log_sha256": "00e68a47c19b50c2d186407e22f8505d310756ec9c27e45f9dbca2b1d7aa3eaa"
+    },
+    {
+      "role": "base312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5411 passed, 70 skipped, 150 deselected in 726.27s (0:12:06)",
+      "receipt": {
+        "role": "base312",
+        "status": "passed",
+        "checked_commit": "b9213e327cc57733559033d84db605271fd8eb31",
+        "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Software fixtures and saved-data regressions; no new diagnostic measurement or real Holdem trajectory",
+        "check_seconds": 731.502827667,
+        "setup_and_check_seconds": 731.519604208
+      },
+      "log_sha256": "4eff30f2c1dd38641c7e1e1883e4734735e209dbbb850133a91b2ab9630f7fcb"
+    },
+    {
+      "role": "optional311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2319 passed in 485.50s (0:08:05)",
+      "receipt": {
+        "role": "optional311",
+        "status": "passed",
+        "checked_commit": "b9213e327cc57733559033d84db605271fd8eb31",
+        "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Software fixtures and saved-data regressions; no new diagnostic measurement or real Holdem trajectory",
+        "check_seconds": 489.163178334,
+        "setup_and_check_seconds": 489.185870208
+      },
+      "log_sha256": "901c8189573034fcffe636b70b4e1399bfd8432235ec64b600f9402292f0f58b"
+    },
+    {
+      "role": "optional312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2319 passed in 423.26s (0:07:03)",
+      "receipt": {
+        "role": "optional312",
+        "status": "passed",
+        "checked_commit": "b9213e327cc57733559033d84db605271fd8eb31",
+        "source_fingerprint": "60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Software fixtures and saved-data regressions; no new diagnostic measurement or real Holdem trajectory",
+        "check_seconds": 427.23249454200004,
+        "setup_and_check_seconds": 427.25655350000005
+      },
+      "log_sha256": "280d914e41a3a237c88180450ea1a9d2b42717f074cb65907e48aac4b8bbfdd5"
+    },
+    {
+      "role": "hosted311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-17T18:42:35.0564259Z 5411 passed, 70 skipped, 150 deselected, 1 warning in 1093.67s (0:18:13)",
+      "job_id": 134266044256,
+      "actual_execution_job_id": 134266044256,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": false,
+      "log_bytes": 49775,
+      "log_sha256": "be0390d1529ee65886bb619f89cc350f05b4e1efba4a11772e479f3c1ecf189e"
+    },
+    {
+      "role": "hosted312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-17T18:43:58.7163894Z 5411 passed, 70 skipped, 150 deselected, 1 warning in 1164.38s (0:19:24)",
+      "job_id": 134266043890,
+      "actual_execution_job_id": 134266043890,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": false,
+      "log_bytes": 50579,
+      "log_sha256": "c87e36fa95b8c6c4a2c772d63fcc68d70f2f5dbcf86c9545060640caa742b7aa"
+    }
+  ],
+  "superseded_source_head_retained": true,
+  "failed_old_optional_cohort_retained": true,
+  "scope": "Final software and saved-data qualification; no new poker trajectory, profiler, solver construction, forecast or strength admission"
+}

@@ -6733,3 +6733,37 @@ scientific files and every reported numerical byte are unchanged. Complete
 local/optional/hosted checks must now pass on the corrected head. No scientific
 retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
 human hands-on time not recorded.
+
+
+### November 17: earlier-source reader fully qualified; follow its archive checks
+
+[PR #87](https://github.com/jimmy-sim/poker-ai/pull/87) is history-merged at
+`23848b7d523127c50e7a9105c23274f9f80c2552`. Exact corrected head `b9213e3` passes
+both local bases (5,411 passed, 70 skipped, 150 deselected; 758.71/726.27 seconds),
+both optional suites (2,319 each; 485.50/423.26 seconds) and both hosted base jobs
+(5,411 each; 1093.67/1164.38 seconds). Actual patch/NumPy and all hosted uv
+selections match, and the whole tested and merged trees agree. The earlier failed
+optional cohort remains retained, not counted. The fresh-child isolation fix
+changes no reader, guard, config or numerical result.
+
+Main passes 751 focused tests in 189.69 seconds, reproduces all five exports
+byte-for-byte with 104 blocks/zero calls and preserves all 15 raw files. The
+original context-reuse gate still rejects. All ten actual user edits, status,
+changed-path index entries and both patches are preserved after verification.
+The [39-member closing archive](../results/earlier-source-profile/final-ci/manifest.json)
+retains final checks and main proof with this next substantive milestone.
+
+The [prospective follow-up](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6957605618)
+fixes seven archive-check definitions before additional values are extracted.
+A thin query reuses the existing authenticated graph and direct-edge calculation;
+it retains every original identity/edge and checks producer source coordinates.
+The [method and terminal commands](archive-reader-edges.md) distinguish saved
+receipt checking from new training, imported names from defining identities and
+historical elapsed time from current CPU. Journal step132 explains the question.
+All 53 focused tests pass on both actual runtimes; strict typing covers 825
+files and lint/format pass. Both 104-target setups and four entry-exit fixtures
+pass. Initial import-mode, fixture and typing errors were corrected and retained.
+Selected values remain unextracted; full final checks and data reproduction wait
+for source publication.
+No new profiler, solver, trajectory, cache, dependency, CI or scientific-rule
+change. Codex assisted; human time not recorded.

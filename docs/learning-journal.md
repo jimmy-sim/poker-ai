@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
+
 - [Read the saved call graph before measuring again](#131-read-the-saved-call-graph-before-measuring-again)
 
 - [Test safe reuse of repeated contexts](#130-test-safe-reuse-of-repeated-contexts)
@@ -129,7 +131,8 @@ counters change and the complete-identity requirement fails. Full copying and
 checking also takes more time in that run. It is not deployed. PR #86 is merged;
 its six final checks and protected-main verification are complete. The next
 [saved call-graph investigation](earlier-source-profile.md) now points into an
-earlier archive reader using existing evidence, before adding another instrument. Earlier source-stage details remain in
+earlier archive reader using existing evidence. The [next query](archive-reader-edges.md)
+fixes seven archive-check functions before extracting their values. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6995,3 +6998,34 @@ checks all five exact exports. All 31 focused cases pass on both runtimes with
 that preloaded state. The [failed cohort](../results/earlier-source-profile/failed-qualification-03/manifest.json)
 remains available. Full requalification follows; no guard is relaxed and no
 scientific data or strategy changes.
+
+
+## 132. Follow the earlier archive checks
+
+November 17, 2026. Codex-assisted query, tests and explanation.
+
+**Question:** the saved profile points into an older archive reader. Is its work
+in checking prior admission receipts, loading saved contexts or checking worker
+rows? The [fixed seven-function query](archive-reader-edges.md) follows those
+paths using the same retained graph, before another measurement.
+
+**Change:** a thin terminal query reuses the authenticated reader and original
+caller-edge calculation. It checks the actual defining source of imported
+functions, retains all original frames/edges, and refuses changed inputs,
+ambiguous identities and unsupported recursion. No training or profiler starts.
+
+**Example:** an imported function can be called `inputs.prerequisites` in one
+file while its definition is in another. Looking under the importing file would
+miss it. The query pins the defining file instead of substituting a similar name.
+
+**Checks and outcome:** all 53 focused tests pass on both actual runtimes;
+strict typing passes for 825 files. Both 104-target guard setups and four
+entry-exit fixtures pass. Initial test-import, fixture and typing failures were
+corrected before publication and retained. Full final checks remain pending. Selected historical values remain unextracted until checked
+source is published. The data reproduction must preserve all raw inputs and
+match across actual runtimes with construction/profiling blocked.
+
+**Next decision:** inspect the direct costs before proposing a change. This is
+historical elapsed time including waits, not current CPU or a demonstrated
+speedup. Both prior runtime and accuracy failures remain. There is no new claim
+about playing strength or personal learning; human hands-on time is not recorded.
