@@ -6423,3 +6423,40 @@ Complete new final checks remain required on this coherent evidence/documentatio
 revision. Use normal linked-index metadata access for local checks, preserving
 all earlier failures and exact runtimes. Journal128 records the explanation;
 Codex-assisted execution, no inferred human hours or mastery.
+
+
+### November 17, 2026: nested archive observer source qualified
+
+[PR #85](https://github.com/jimmy-sim/poker-ai/pull/85), source `a9c672a`,
+447-file fingerprint `3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d`:
+all six [source roles](../results/parent-archive-cpu/checks.json) pass. Actual results:
+
+| Role | Actual pytest result |
+| --- | --- |
+| base 311 | 5220 passed, 69 skipped, 150 deselected in 724.62s (0:12:04) |
+| base 312 | 5220 passed, 69 skipped, 150 deselected in 695.25s (0:11:35) |
+| optional 311 | 2127 passed in 428.44s (0:07:08) |
+| optional 312 | 2127 passed in 361.94s (0:06:01) |
+| hosted 311 | 2026-11-17T11:41:24.3100421Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1213.39s (0:20:13) |
+| hosted 312 | 2026-11-17T11:12:41.0651154Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1092.97s (0:18:12) |
+
+[Hosted run 44068969082](https://github.com/jimmy-sim/poker-ai/actions/runs/44068969082)
+verifies actual patch/NumPy, all uv selections and the complete tested tree.
+The initial hosted 3.11 job was cancelled at its unchanged 25-minute limit,
+with the test log at 88%; full logs and official annotations remain. Only that
+unchanged-source software role was retried. The prior 3.12 success retains its
+actual attempt1 execution identity, not a new execution claim. No scientific
+pair was run or retried.
+Ten exact administrative tools, all fixture bytes and both license records are
+retained. Six process / five preflight / four retention / ten synthetic
+publication cases pass. All 73 numerical report guards resolve and restore on
+both runtimes without constructing a reference; report reproduction remains
+post-collection. The pinned OpenSpiel 2.0.2 Apache-2.0 license was read before
+fresh use; outputs remain comparison-only.
+
+All 444 prior scientific files, 128 original input pins, seeds, full work and
+180/900/1800-second caps remain fixed. This publication is before formal own
+proof and fresh reference work. Own proof before comparison and raw pair before
+analysis remain required. No training, stronger/default/fresh/global admission,
+human hours or personal mastery is inferred. Codex-assisted implementation,
+execution, checks and drafting.

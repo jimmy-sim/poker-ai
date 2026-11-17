@@ -1,0 +1,25 @@
+"""Check future saved-report guard setup only; no report/data/solver execution."""
+import ast,hashlib,json,pkgutil,sys
+from contextlib import ExitStack
+from pathlib import Path
+from unittest.mock import patch
+w=Path(__file__).resolve().parent;r=w/'parent-archive-cpu';sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import numpy as np
+from poker_ai.evaluation.compact_opponent_guard import isolated
+code=w/'check-parent-archive-report.py';tree=ast.parse(code.read_text());blocked=ast.literal_eval(next(n.value for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in n.targets)))
+assert len(blocked)==73
+attempts=[]
+def forbidden(*args,**kwargs):attempts.append('unexpected_call');raise AssertionError('guard setup executed numerical work')
+def identity(value):return getattr(value,'__func__',value)
+with isolated(worker=False):
+ # Static import setup before patching descriptors, as in the tested prior guard.
+ original={name:identity(pkgutil.resolve_name(name)) for name in blocked}
+ with ExitStack() as stack:
+  descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+  for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+  assert all(identity(pkgutil.resolve_name(name)) is forbidden for name in blocked)
+ assert all(identity(pkgutil.resolve_name(name)) is original[name] for name in blocked)
+assert not attempts and 'pyspiel' not in sys.modules
+minor='311' if sys.version.split()[0]=='3.11.17' else '312';assert (sys.version.split()[0],np.__version__) in [('3.11.17','2.4.6'),('3.12.15','2.5.4')]
+result=dict(status='all73_guard_targets_resolve_patch_and_restore',python=sys.version.split()[0],numpy=np.__version__,report_guard_sha256=hashlib.sha256(code.read_bytes()).hexdigest(),targets=blocked,attempts=attempts,scope='Static import/descriptor setup only; no actual or fixture report, game, learner, reference, or phase capture. Actual saved report export proof remains after raw pair publication.')
+(w/('parent-archive-guard-setup-'+minor+'.json')).open('x').write(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

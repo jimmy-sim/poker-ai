@@ -6723,3 +6723,19 @@ publication checks and the startup-adjusted allowance. The actual saved software
 replay remains identical. An initial assertion still expected the old 14 calls;
 it was corrected to the already-published 802-call plan. Full source qualification
 comes next; none of these fixtures measures the real archive's cost.
+
+
+**November 17, 2026 — the nested measuring tool passes complete qualification.** Both
+local base suites pass 5,220 tests; both optional suites pass 2,127, including the
+plotting check. Both exact-source hosted base jobs also pass. [All six records](../results/parent-archive-cpu/checks.json)
+verify the actual interpreters, NumPy versions and full checkout trees.
+The first hosted Python 3.11 job hit its unchanged 25-minute limit. That failure
+is retained; only that software job was retried. The successful Python 3.12 job
+is reused with its original execution identity. No research outcome was retried.
+
+The launcher, retention and publication tests pass, and 73 guards can block
+numerical execution during later saved-data reporting. The prior scientific
+source and input pins are unchanged. This means the measuring tool is ready for
+its own-only proof; it does not yet tell us which archive stage is expensive.
+The proof must be published and verified before any fresh reference comparison.
+No new strategy or playing-strength result is claimed.

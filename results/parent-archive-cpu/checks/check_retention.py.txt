@@ -1,0 +1,33 @@
+"""Test exact raw copying/refusal in disposable layouts; no scientific claims."""
+import hashlib,json,shutil,subprocess,sys
+from pathlib import Path
+W=Path(__file__).resolve().parent
+F=W/'parent-archive-retention-fixtures';F.mkdir(exist_ok=False)
+rows=[]
+for stage in ('proof','pair'):
+ for status in ('complete','failed_retained'):
+  folder=F/(stage+'-'+status);folder.mkdir()
+  script=folder/'retain.py';shutil.copyfile(W/'retain-parent-archive-collection.py',script)
+  root=folder/'parent-archive-cpu';source=root/'results/runs'/('parent-archive-20261117-'+stage);source.mkdir(parents=True)
+  (source/'partial.tmp').write_bytes(b'raw interrupted bytes\x00\n')
+  (source/'nested').mkdir();(source/'nested/failure.json').write_bytes(b'{invalid partial json')
+  unrelated=root/'unrelated-output.txt';unrelated.write_bytes(b'keep these bytes')
+  log=source.with_name(source.name+'-outer.log');log.write_bytes(b'SYNTHETIC RETENTION FIXTURE ONLY\n')
+  outer=source.with_name(source.name+'-outer.json');outer.write_text(json.dumps(dict(cap_seconds=180 if stage=='proof' else 1800, status=status,seconds=.125,command_log_sha256=hashlib.sha256(log.read_bytes()).hexdigest(),scope='Invented header tests copying, not a launch or measurement')))
+  command=[sys.executable,str(script),stage]
+  result=subprocess.run(command,capture_output=True)
+  (folder/'first.stdout').write_bytes(result.stdout);(folder/'first.stderr').write_bytes(result.stderr)
+  assert result.returncode==0
+  target=root/'results/parent-archive-cpu'/('software' if stage=='proof' else 'pair')
+  assert (target/'partial.tmp').read_bytes()==(source/'partial.tmp').read_bytes()
+  assert (target/'nested/failure.json').read_bytes()==(source/'nested/failure.json').read_bytes()
+  assert unrelated.read_bytes()==b'keep these bytes'
+  manifest=json.loads(target.with_name(target.name+'-raw-manifest.json').read_text());assert manifest['status']==status
+  prior={str(p.relative_to(target)):p.read_bytes() for p in target.rglob('*') if p.is_file()}
+  again=subprocess.run(command,capture_output=True)
+  (folder/'repeat.stdout').write_bytes(again.stdout);(folder/'repeat.stderr').write_bytes(again.stderr)
+  assert again.returncode!=0
+  assert prior=={str(p.relative_to(target)):p.read_bytes() for p in target.rglob('*') if p.is_file()}
+  rows.append(dict(stage=stage,status=status,exact_all_bytes=True,repeat_refused=True,unrelated_preserved=True))
+(F/'checks.json').write_text(json.dumps(dict(status='all_four_synthetic_retention_cases_pass',python=sys.version.split()[0],scope='Only filesystem behavior; synthetic headers and bytes never represent experimental results',cases=rows),indent=2)+'\n')
+print(json.dumps(rows))

@@ -135,3 +135,52 @@ the new 802-call result. The assertion was corrected to the published inventory;
 the diagnostic design and scientific work were unchanged. Complete source-bound
 local/hosted qualification and tested operator publication remain before any
 formal own proof or fresh reference comparison. No new measured result exists.
+
+
+## Complete source qualification — November 17, 2026
+
+[All six roles](../results/parent-archive-cpu/checks.json) pass on `a9c672a`, source fingerprint
+`3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d` (447 files). All 444
+previous scientific files and the original 128 scientific input pins remain
+unchanged. Logs verify actual Python/NumPy, every hosted uv choice and the
+entire tested checkout tree, rather than relying on a workflow's version label.
+
+| Role | Actual pytest result |
+| --- | --- |
+| base 311 | 5220 passed, 69 skipped, 150 deselected in 724.62s (0:12:04) |
+| base 312 | 5220 passed, 69 skipped, 150 deselected in 695.25s (0:11:35) |
+| optional 311 | 2127 passed in 428.44s (0:07:08) |
+| optional 312 | 2127 passed in 361.94s (0:06:01) |
+| hosted 311 | 2026-11-17T11:41:24.3100421Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1213.39s (0:20:13) |
+| hosted 312 | 2026-11-17T11:12:41.0651154Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1092.97s (0:18:12) |
+
+Before collection, the saved-report guard was expanded from 68 to 73 targets
+to cover directly imported state/context aliases and full-checkpoint capture and
+metric helpers. Both final setups pass; the earlier successful setup and an
+administrative filename/duplicate-output preparation failure remain archived.
+The scientific source and measurement workload did not change.
+
+The first hosted Python 3.11 job reached the unchanged 25-minute limit at
+88% of the test log. Its full log, official cancellation annotation and metadata
+remain in the check archive. Only that job was retried on unchanged source and
+workflow. The Python 3.12 success is carried forward with its original execution
+identity, not counted as a second execution. No formal scientific pair was run
+or retried during qualification.
+
+All ten tested administrative tools and complete fixture outputs are retained
+with the checks: six process, five preflight, four retention and ten synthetic
+publication cases pass. On both actual runtimes, all 73 saved-report guard targets
+resolve, patch and restore without numerical execution. Their actual saved-report
+reproduction check remains after raw pair publication.
+
+OpenSpiel 2.0.2 remains the pinned comparison-only reference under Apache-2.0.
+The full installed license was read before fresh use; both runtimes record its
+11,358 bytes and SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+This diagnostic exports scalar comparisons, with no reference strategy input to
+an agent or learner. Existing credits and license records remain intact.
+
+This publication precedes the formal own-only proof. After that proof's raw
+bytes are public and successful publication verification actually exits zero,
+the exact tested launcher may start the one fixed complete pair. Source
+qualification alone does not admit that comparison or any training.

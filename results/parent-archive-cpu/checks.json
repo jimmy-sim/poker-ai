@@ -1,0 +1,164 @@
+{
+  "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5220 passed, 69 skipped, 150 deselected in 724.62s (0:12:04)",
+      "check_seconds": 790.657765625001,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/local/base311.log",
+        "sha256": "05bbed7ac45917163a6f44efbbb8b23337aa96652958693fb4aa7a5cdc4b7237"
+      }
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5220 passed, 69 skipped, 150 deselected in 695.25s (0:11:35)",
+      "check_seconds": 782.5686870000063,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/local/base312.log",
+        "sha256": "e200720ba833c72b5aa8f0d12b80e316c654b68dbbfae242fbdeadcefc6796d2"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2127 passed in 428.44s (0:07:08)",
+      "check_seconds": 449.7396923329943,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/local/optional311.log",
+        "sha256": "b77fcde71229d2cade676d4357f3b3135b9e125a6fe31236f6d96ad01214b058"
+      }
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2127 passed in 361.94s (0:06:01)",
+      "check_seconds": 394.3031772079994,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/local/optional312.log",
+        "sha256": "75066d38d2e96bd9c1a733e925ab9faba64f6ad107fb6540b33f6cd3261f84f1"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-17T11:41:24.3100421Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1213.39s (0:20:13)",
+      "run_id": 44068969082,
+      "job_id": 134004069171,
+      "head_sha": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "18ab9db4bf50a25b24590a3babc1c2bdaa72567c",
+      "actual_checkout_tree": "f1a5ecad9177e70f9698b6988fcfb7ef88f9b4a0",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 2,
+      "actual_execution_job_id": 134004069171,
+      "actual_execution_attempt": 2,
+      "reused_prior_success": false,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/hosted/hosted311.log",
+        "sha256": "a5c1a4f41de6886fd5fb083bb45f818183e0fb3d3adc1f9b4d30b310a8de82c1"
+      }
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+      "checked_commit": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-17T11:12:41.0651154Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1092.97s (0:18:12)",
+      "run_id": 44068969082,
+      "job_id": 134004071902,
+      "head_sha": "a9c672a99c0435b0dfb5b43de5654e03678a09be",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "18ab9db4bf50a25b24590a3babc1c2bdaa72567c",
+      "actual_checkout_tree": "f1a5ecad9177e70f9698b6988fcfb7ef88f9b4a0",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 2,
+      "actual_execution_job_id": 133990100576,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": true,
+      "log": {
+        "file": "results/parent-archive-cpu/checks/hosted/hosted312.log",
+        "sha256": "729bab0e586edc864d72d556b0393c9e9570f395ea138c7407ece66e4435cfc8"
+      }
+    }
+  ],
+  "operators": {
+    "run-parent-archive-checks.py": {
+      "file": "results/parent-archive-cpu/checks/run_checks.py.txt",
+      "sha256": "7361a863cf6321142eff5f656d1badbd42581c78dc987a396dce2aff44ac5ea2"
+    },
+    "run-parent-archive-collection.py": {
+      "file": "results/parent-archive-cpu/checks/operator_launch.py.txt",
+      "sha256": "ec050fdaf95907ce8a3a9aaf353045e8951ba342d3d19854e9c66e0f6198abd0"
+    },
+    "retain-parent-archive-collection.py": {
+      "file": "results/parent-archive-cpu/checks/operator_retention.py.txt",
+      "sha256": "26687746a8551a75fb8e826aa655527cbe2cbcadeb8e349311377dd221faa52e"
+    },
+    "verify-parent-archive-publication.py": {
+      "file": "results/parent-archive-cpu/checks/verify_publication.py.txt",
+      "sha256": "bdd29e127ec095341c58bb62fff5d4c1c57b2fea913bc544c7751a617c07fd3b"
+    },
+    "check-parent-archive-operators.py": {
+      "file": "results/parent-archive-cpu/checks/check_operators.py.txt",
+      "sha256": "f349f1d50d93767ab6b5088c07d111de918e3af579dd99360d545702ff149ff9"
+    },
+    "check-parent-archive-retention.py": {
+      "file": "results/parent-archive-cpu/checks/check_retention.py.txt",
+      "sha256": "17293f8f6db41507906f5647d3ffeb22ce9fe4fbd37ce26b8c20a5f4e09c1618"
+    },
+    "check-parent-archive-publication.py": {
+      "file": "results/parent-archive-cpu/checks/check_publication.py.txt",
+      "sha256": "6c7f21251bdc5dc4a40ce648df8800cecaa6e5260293693fdad7d7496dcd97ee"
+    },
+    "check-parent-archive-report.py": {
+      "file": "results/parent-archive-cpu/checks/report_execution_guard.py.txt",
+      "sha256": "d4d91c5462cb4d6e569501327f9155a0f76772955b74bbcabee7fbf2e799bac5"
+    },
+    "check-parent-archive-guard-setup.py": {
+      "file": "results/parent-archive-cpu/checks/check_report_guard_setup.py.txt",
+      "sha256": "9e052acf512a483928a5422619100f639c0e19b520a7242006ba2bf3e54c4ad4"
+    },
+    "check-parent-archive-preflight.py": {
+      "file": "results/parent-archive-cpu/checks/check_preflight.py.txt",
+      "sha256": "e0c57ff40a8e511a250965025d79ff2d6729b5aed549864013aa9bd384e5ad84"
+    }
+  },
+  "scope": "All six immutable447-file nested archive source roles; initial hosted31125-minute cancellation retained, unchanged-source single-job retry; actual312success carried with original execution identity; all444 predecessor bytes and128 scientific inputs unchanged. Actual runtime/all uv/entire tested tree verified. Six process/five preflight/four retention/ten synthetic publication cases;73 data-only report guards resolve on both actual runtimes. Exact tested tools public before formal own proof. Own before reference, all raw before analysis. Original caps/seeds/tolerances/scientific work unchanged; no new training or strength admission."
+}
