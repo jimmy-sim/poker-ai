@@ -6483,3 +6483,29 @@ and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-
 are retained for publication before timing analysis. The successful public own-
 proof verification preceded reference use; no training or new admission follows.
 The next step is to verify the published raw pair, then interpret its stages.
+
+
+### November 17: nested archive report and data-only reproduction
+
+[All raw pair bytes](../results/parent-archive-cpu/pair-raw-manifest.json) public
+at `a9097f4`, then publication verification exits zero before analysis. Complete
+ordinary/profiled child wall: 394.975385875 /
+398.778299084 seconds; enclosing CLI
+797.198346292 / 1,800. All original work, 802 calls and restoration,
+exact previous complete numerical identity; independent error
+1.8474111129762605e-13 chips < 1e-9. No new training or admission.
+
+[Full inclusive/residual table](parent-archive-cpu.md#what-the-complete-comparison-found--november-17):
+archive 36.482965 / 36.735498 CPU seconds. Combined checkpoint decoding/checking
+16.292417 / 15.881237 (44.66% / 43.23% of archive CPU); two explicit materialized
+context calls 8.883226 / 8.748734 (about 24%). Other components and both complete
+clock families are reported, without adding inclusive parents to children.
+
+All three numerical exports reproduce byte for byte on both actual runtimes
+with 73 numerical entry points blocked, zero forbidden calls and every raw input
+unchanged; both PNGs inspected. Receipts and exact tested guards remain archived.
+One ordered pair is not stable overhead, causal speedup, production costs or
+strength. Next question: verify identical repeated contexts and safe reuse before
+an optimization; none deployed here. Final four local/two same-head hosted roles
+remain before merge. Existing failures, caps/seeds and AI-assistance attribution
+remain; human hands-on time not recorded.

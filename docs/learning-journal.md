@@ -117,8 +117,11 @@ about 78–79 CPU seconds per cost read load scientific inputs, while 49–50
 replay the saved strategy. Results stay identical with observation enabled.
 The nested follow-up now locates most source CPU in sampled-parent archive
 validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
-The complete calculated results stay identical. The next question follows those
-checks without skipping any of them. See [the source-loading report](source-phase-cpu.md).
+The complete calculated results stay identical. The [nested archive check](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
+now separates context construction, state reconstruction/scoring and prior full
+verification. The next question is whether repeated contexts can be reused safely,
+without skipping validation. Earlier source-stage details remain in
+[the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6757,3 +6760,25 @@ and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-
 are retained for publication before timing analysis. The successful public own-
 proof verification preceded reference use; no training or new admission follows.
 The next step is to verify the published raw pair, then interpret its stages.
+
+
+**November 17 — the archive cost is spread across several jobs.** The complete
+checked comparison preserves all calculated results exactly. Its two instrumented
+cost reads spend about 36.5–36.7 CPU seconds inside archive validation. Combined
+checkpoint reconstruction/checking accounts for 43–45% of that archive CPU;
+the two explicit context builds account for about 24%. Sampled scoring alone is
+about 3 seconds. Full-checkpoint decoding also recomputes metrics, so “decode”
+does not mean only opening or parsing a file.
+
+**Example:** building the same game description twice might be avoidable, but
+sharing an object that a caller changes could corrupt later checks. The next
+question is whether those contexts really have identical inputs/results and can
+be reused with mutation protection. This measurement has not tested that reuse.
+
+[The full table and figures](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
+show every component and distinguish inclusive timers from the work left inside
+each parent. All three numerical exports reproduce exactly on both actual
+runtimes with 73 numerical entry points blocked, zero forbidden calls and raw
+files unchanged. Both figures were inspected. One ordered pair is not a stable
+speedup estimate, a production forecast or a stronger-agent result. Final checks
+remain before merge; the old runtime and accuracy failures remain.

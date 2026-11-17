@@ -212,3 +212,114 @@ and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-
 are retained for publication before timing analysis. The successful public own-
 proof verification preceded reference use; no training or new admission follows.
 The next step is to verify the published raw pair, then interpret its stages.
+
+
+## What the complete comparison found — November 17
+
+The archived validation is several substantial jobs, rather than one dominant
+sampled-state score calculation. Its observed root takes **36.48 / 36.74 parent
+CPU seconds** in the two cost reads. Combined sampled/direct-full/prior-full
+checkpoint decoding takes **16.29 / 15.88 seconds**, or **44.66% / 43.23% of archive
+CPU**. The two explicitly materialized context calls take **8.88 / 8.75 seconds**,
+about **24%**. Sampled scoring takes about **3.01 / 3.07 seconds**.
+
+“Decode” includes validation and reconstruction; full-checkpoint decoding also
+recomputes strategy metrics. These are not measurements of JSON parsing alone.
+The remaining prior-full time includes context-generator iteration and other
+checks; it is not a pure context-building or hashing timer.
+
+[All 27 raw members](../results/parent-archive-cpu/pair-raw-manifest.json) were
+public at `a9097f4` before publication verification exited zero and analysis began.
+The complete scalar/calculated-replay identity is exactly the same in both arms
+and the preceding published comparison:
+`ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185`.
+All three original reads, 432 profiles, 1,152 conditions and three reference
+workers remain. The 802 selected calls have the declared order, parents and full
+restoration. Maximum independent scalar discrepancy is
+**1.8474111129762605e-13 chips**, below the unchanged 1e-9 tolerance.
+
+### Inclusive CPU and the work left inside each parent
+
+All numbers below are parent-process CPU seconds. “Before” and “after” are the
+two dependent cost reads in one instrumented command, on opposite sides of the
+reference work. Inclusive CPU contains a region's children; residual CPU is what
+remains after subtracting its direct children. Leaf regions have the same value
+in both columns. Add the residuals across all rows to recover archive-root CPU;
+never add inclusive parents to their children.
+
+| Region | Inclusive before | Inclusive after | Residual before | Residual after |
+| --- | ---: | ---: | ---: | ---: |
+| Archive root | 36.482965 | 36.735498 | 0.877017 | 1.144968 |
+| Sampled archive gather | 16.288997 | 16.574663 | 2.604198 | 2.272455 |
+| Sampled materialized contexts | 4.469436 | 4.477370 | 4.469436 | 4.477370 |
+| Sampled-state decode (warm + saved) | 6.201034 | 6.751928 | 6.201034 | 6.751928 |
+| Sampled-state scoring | 3.014329 | 3.072910 | 3.014329 | 3.072910 |
+| Direct full materialized contexts | 4.413790 | 4.271364 | 4.413790 | 4.271364 |
+| Direct full-checkpoint decode | 4.668811 | 4.549105 | 4.668811 | 4.549105 |
+| Prior full-control verification | 10.234350 | 10.195398 | 4.811778 | 5.615194 |
+| Prior full-checkpoint decode | 5.422572 | 4.580204 | 5.422572 | 4.580204 |
+
+Archive root plus outside-archive CPU equals each complete read:
+**36.482965 + 93.753431 = 130.236396**,
+and **36.735498 + 95.057322 = 131.792820**.
+The outside portion is not divided by this diagnostic. The software read has
+zero selected roots. Plain-arm selected zeros mean timers were disabled, not
+that validation was free. [All six reads](../results/parent-archive-cpu/pair/report/reads.csv)
+include these cases and every declared category.
+
+![Disjoint archive stages](../results/parent-archive-cpu/pair/report/archive-stages.png)
+
+### Complete commands and separate clocks
+
+| Arm | Complete child wall | Parent body CPU | Sum of worker body CPU | Longest worker body wall |
+| --- | ---: | ---: | ---: | ---: |
+| plain | 394.975386 | 264.119136 | 370.422635 | 124.528668 |
+| profiled | 398.778299 | 267.843327 | 371.006858 | 124.675314 |
+
+The complete enclosing CLI takes **797.198346 seconds / 1,800**; both
+complete children stay below 900 seconds. Source/publication preflight, startup,
+all original work, restoration and writes remain inside their applicable clocks.
+Parallel worker CPU is not elapsed time and must not be added to these wall
+clocks. [Command export](../results/parent-archive-cpu/pair/report/commands.csv).
+
+![Complete wall and CPU clocks](../results/parent-archive-cpu/pair/report/complete-clocks.png)
+
+### Reproduction and next decision
+
+All three [numerical exports](../results/parent-archive-cpu/pair/report/summary.json)
+reproduce byte for byte on actual 3.11.17 / NumPy 2.4.6 and 3.12.15 / NumPy 2.5.4,
+with all **73 numerical entry points blocked**, zero forbidden calls and every
+raw input unchanged. Both PNGs were visually inspected. The
+[3.11](../results/parent-archive-cpu/report-reproduction-311.json) and
+[3.12](../results/parent-archive-cpu/report-reproduction-312.json) receipts retain
+the exact guards and file hashes.
+
+A concrete next question is whether repeated materialized context construction
+has identical complete inputs/results and can be reused without permitting
+mutation or skipping validation. This pair does not establish interchangeability
+or test a cache. That needs a prospective design, independent correctness and
+mutation tests, complete qualification and a new checked comparison before any
+performance or admission claim. The measured source remains unchanged here.
+
+One ordered pair does not estimate stable instrumentation overhead, establish a
+causal speedup, replace the production forecast or measure playing strength.
+Residuals include unseparated bookkeeping, file work and timer/capture costs.
+The two cost reads share inputs and a process; they are not independent samples.
+No training or stronger/default/fresh/global promotion follows. The old
+912.54/900-second forecast and 2.390%/1% accuracy failures remain failed.
+Final local/hosted software and report checks still precede merge.
+
+To reproduce the report from committed raw data, choose a fresh destination:
+
+```sh
+.venv/bin/python scripts/profile_parent_archive.py report --output results/parent-archive-cpu/pair --report-output results/runs/parent-archive-local-report
+```
+
+### Questions to explain the result
+
+- **Why subtract child timers?** A parent already contains its children. Direct
+  children plus the parent's remaining work must equal its inclusive CPU.
+- **Can the 36 seconds simply be removed?** No. They contain required checks and
+  reconstruction. Reuse must prove identical inputs/results and reject mutation.
+- **Does exact identity mean a stronger agent?** It means the measuring tool kept
+  existing results unchanged. No new strategy was trained in this diagnostic.

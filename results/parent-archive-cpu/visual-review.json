@@ -1,0 +1,15 @@
+{
+  "status": "both_saved_figures_visually_inspected",
+  "figures": [
+    {
+      "file": "pair/report/archive-stages.png",
+      "sha256": "960138c0de47d441b199489c4dc15853856ab9dbcaf70dc9dc96d4b183976140"
+    },
+    {
+      "file": "pair/report/complete-clocks.png",
+      "sha256": "0bf7638ad93596bbf8c43b23a6d8771f2b22d88933b6f0265316365386297cde"
+    }
+  ],
+  "notes": "Axes, labels and all legend entries render without cropping. The first figure stacks disjoint leaf CPU and parent residuals, not inclusive parents plus children; exact values are in both CSV and the report table. The second separates whole child elapsed, parent body CPU and parallel worker CPU. Visual inspection does not establish statistical precision or strength.",
+  "admission_evidence": false
+}
