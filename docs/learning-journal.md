@@ -6566,3 +6566,14 @@ runtime, 1,909 optional tests per runtime, plus both hosted base suites.
 and partial attempts. This establishes software readiness, not cheaper validation
 or a stronger strategy. Next is the own-only proof, published before fresh
 reference comparison. No source-loader timing result is claimed yet.
+
+
+November 16 — The fresh own-only proof follows verified public six-role source
+qualification. Its complete CLI finishes in 5.927510875000735 seconds, under
+the fixed 180-second cap. The actual archived software replay is identical
+before/during observation and records zero source roots. Two separately labeled
+synthetic forwarding reads give 14 selected root/child calls, with full restoration.
+[All raw proof files](../results/source-phase-cpu/software-raw-manifest.json)
+and source-publication verification are retained before fresh reference use.
+This does not claim real cost-loader coverage or new independent poker math.
+Public-boundary verification remains before the single complete audit pair.
