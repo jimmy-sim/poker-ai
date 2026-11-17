@@ -13,6 +13,32 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-17 — Close allowance correction; plan nested archive measurement
+
+- **Issue:** #4. [PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) merged at
+  b852436 after all six final roles passed on 49cb951. Local bases: 5,081 tests
+  each (900.69 / 880.55 seconds); optional: 1,987 each (745.01 / 527.81 seconds).
+  Hosted bases: 5,081 each (1187.64 / 1170.17 seconds), actual runtimes and full
+  checkout trees verified. Both retain 68 skips / 150 deselections; the hosted
+  historical warning remains. Earlier failures are preserved.
+- **Main:** 419 focused tests in 95.63 seconds; complete saved pair authenticates;
+  all three numerical exports match, 27 raw files and ten unrelated local changes
+  remain unchanged. [Closing receipts](../results/source-phase-cpu-v2/final-ci/manifest.json).
+- **Next question:** separate context building, sampled-state decoding/scoring,
+  direct full decoding and prior full verification inside archive validation.
+  [Prospective plan](parent-archive-cpu.md) published before implementation, with
+  401 calls per cost read / 802 per complete pair. Existing source, inputs,
+  seeds, scientific work and caps stay fixed. No optimizer or new training yet.
+- **Implementation:** temporary nested caller aliases, strict saved-data tree
+  reconstruction, complete runner and data-only report, previous numerical
+  identity pinned separately from the original 128 scientific input pins.
+  Both focused suites: 139 passed / one plotting skip, 24.99 / 23.86 seconds.
+  Ruff/format pass; full strict typing passes 816 files. Initial stale 14-call
+  assertion retained below, corrected to the prospective 802-call design.
+  All six complete source qualification roles still precede formal collection.
+- **Attribution:** AI-assisted implementation, execution and drafting. Human
+  hands-on time not recorded; no personal learning outcome inferred.
+
 ## 2026-11-10 — Full matched-update pipeline, prospective
 
 - **Issue:**#4; [detailed plan](matched-update-pipeline.md) and config published
@@ -6397,3 +6423,89 @@ Complete new final checks remain required on this coherent evidence/documentatio
 revision. Use normal linked-index metadata access for local checks, preserving
 all earlier failures and exact runtimes. Journal128 records the explanation;
 Codex-assisted execution, no inferred human hours or mastery.
+
+
+### November 17, 2026: nested archive observer source qualified
+
+[PR #85](https://github.com/jimmy-sim/poker-ai/pull/85), source `a9c672a`,
+447-file fingerprint `3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d`:
+all six [source roles](../results/parent-archive-cpu/checks.json) pass. Actual results:
+
+| Role | Actual pytest result |
+| --- | --- |
+| base 311 | 5220 passed, 69 skipped, 150 deselected in 724.62s (0:12:04) |
+| base 312 | 5220 passed, 69 skipped, 150 deselected in 695.25s (0:11:35) |
+| optional 311 | 2127 passed in 428.44s (0:07:08) |
+| optional 312 | 2127 passed in 361.94s (0:06:01) |
+| hosted 311 | 2026-11-17T11:41:24.3100421Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1213.39s (0:20:13) |
+| hosted 312 | 2026-11-17T11:12:41.0651154Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1092.97s (0:18:12) |
+
+[Hosted run 44068969082](https://github.com/jimmy-sim/poker-ai/actions/runs/44068969082)
+verifies actual patch/NumPy, all uv selections and the complete tested tree.
+The initial hosted 3.11 job was cancelled at its unchanged 25-minute limit,
+with the test log at 88%; full logs and official annotations remain. Only that
+unchanged-source software role was retried. The prior 3.12 success retains its
+actual attempt1 execution identity, not a new execution claim. No scientific
+pair was run or retried.
+Ten exact administrative tools, all fixture bytes and both license records are
+retained. Six process / five preflight / four retention / ten synthetic
+publication cases pass. All 73 numerical report guards resolve and restore on
+both runtimes without constructing a reference; report reproduction remains
+post-collection. The pinned OpenSpiel 2.0.2 Apache-2.0 license was read before
+fresh use; outputs remain comparison-only.
+
+All 444 prior scientific files, 128 original input pins, seeds, full work and
+180/900/1800-second caps remain fixed. This publication is before formal own
+proof and fresh reference work. Own proof before comparison and raw pair before
+analysis remain required. No training, stronger/default/fresh/global admission,
+human hours or personal mastery is inferred. Codex-assisted implementation,
+execution, checks and drafting.
+
+
+### November 17: own-only nested archive proof retained
+
+The published-source verifier exits zero with all six roles and ten exact tested
+tools matched. The complete own-only command then takes 6.639982541
+seconds / 180; inner measurement 6.538013000 against startup-adjusted
+allowance 179.9988875420022. Actual saved software replay is unchanged;
+two labeled synthetic trees give 802 calls and complete restoration. No reference,
+training, real cost-loader coverage or independent new poker math is claimed.
+[All 13 raw members](../results/parent-archive-cpu/software-raw-manifest.json) are
+retained before any fresh comparison. Publish and verify this boundary with an
+actual zero exit before launching the fixed pair. Caps, seeds, inputs and earlier
+failures stay unchanged.
+
+
+**November 17 — complete pair retained before analysis.** Both original full
+arms finish with exact complete scalar/computed-replay identity, also matching
+the previous published numerical identity. All 802 selected calls are present
+and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-manifest.json)
+are retained for publication before timing analysis. The successful public own-
+proof verification preceded reference use; no training or new admission follows.
+The next step is to verify the published raw pair, then interpret its stages.
+
+
+### November 17: nested archive report and data-only reproduction
+
+[All raw pair bytes](../results/parent-archive-cpu/pair-raw-manifest.json) public
+at `a9097f4`, then publication verification exits zero before analysis. Complete
+ordinary/profiled child wall: 394.975385875 /
+398.778299084 seconds; enclosing CLI
+797.198346292 / 1,800. All original work, 802 calls and restoration,
+exact previous complete numerical identity; independent error
+1.8474111129762605e-13 chips < 1e-9. No new training or admission.
+
+[Full inclusive/residual table](parent-archive-cpu.md#what-the-complete-comparison-found--november-17):
+archive 36.482965 / 36.735498 CPU seconds. Combined checkpoint decoding/checking
+16.292417 / 15.881237 (44.66% / 43.23% of archive CPU); two explicit materialized
+context calls 8.883226 / 8.748734 (about 24%). Other components and both complete
+clock families are reported, without adding inclusive parents to children.
+
+All three numerical exports reproduce byte for byte on both actual runtimes
+with 73 numerical entry points blocked, zero forbidden calls and every raw input
+unchanged; both PNGs inspected. Receipts and exact tested guards remain archived.
+One ordered pair is not stable overhead, causal speedup, production costs or
+strength. Next question: verify identical repeated contexts and safe reuse before
+an optimization; none deployed here. Final four local/two same-head hosted roles
+remain before merge. Existing failures, caps/seeds and AI-assistance attribution
+remain; human hands-on time not recorded.

@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Separate the work inside archive validation](#129-separate-the-work-inside-archive-validation)
+
 - [Follow the stages inside source loading](#128-look-inside-the-input-loader)
 
 - [Separate current reader phases](#127-separate-loading-from-replaying-the-saved-strategy)
@@ -115,8 +117,11 @@ about 78–79 CPU seconds per cost read load scientific inputs, while 49–50
 replay the saved strategy. Results stay identical with observation enabled.
 The nested follow-up now locates most source CPU in sampled-parent archive
 validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
-The complete calculated results stay identical. The next question follows those
-checks without skipping any of them. See [the source-loading report](source-phase-cpu.md).
+The complete calculated results stay identical. The [nested archive check](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
+now separates context construction, state reconstruction/scoring and prior full
+verification. The next question is whether repeated contexts can be reused safely,
+without skipping validation. Earlier source-stage details remain in
+[the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -6676,3 +6681,104 @@ and recovery record](../results/source-phase-cpu-v2/qualification-history/final-
 explains the distinction: correcting the environment makes another full check
 possible; two focused passes do not replace complete qualification. No strategy
 or experiment is retrained or rerun.
+
+
+**November 17 — the corrected measurement is fully verified and merged.** All
+four final local check sets and both same-head hosted checks pass. The local
+base suites each pass 5,081 tests; optional suites each pass 1,987. Main passes
+419 focused checks, authenticates the saved comparison and reproduces all three
+numerical exports exactly. The ten unrelated local result files remain intact.
+[Closing receipts](../results/source-phase-cpu-v2/final-ci/manifest.json) retain
+actual checks and the protected-main verification; the earlier failures remain.
+
+## 129. Separate the work inside archive validation
+
+November 17, 2026 — prospective diagnostic, with Codex assistance.
+
+**Question:** which work inside archive validation accounts for its 37–39 CPU
+seconds per measured read? The previous diagnostic identified a large boundary,
+but that boundary contains context construction, state reconstruction, scoring
+and checks on older full-control records.
+
+**Change planned:** [measure those parts together](parent-archive-cpu.md), with
+nested timers around existing caller-held functions. The original functions and
+all scientific work stay fixed. A parent timer includes its children; the report
+will separate their CPU from the parent's remaining work so it is counted once.
+
+**Example:** a 10-second archive check containing 6 seconds of decoding and
+2 seconds of scoring has 2 seconds left for its other work. Adding all three
+timers would incorrectly claim 18 seconds.
+
+**Checks and result:** the plan fixes 401 selected calls per cost read, 802 in
+the pair, before implementation. No new timing result exists yet. Forwarding,
+restoration, clock accounting, failure handling and complete source qualification
+must pass before collection. The original compute limits stay unchanged.
+
+**Next decision:** use a complete checked comparison to choose a specific exact
+optimization. This diagnostic does not improve a strategy or establish strength.
+
+
+**November 17 — the new measuring tool passes focused checks.** Both actual
+runtimes pass 139 tests, with one plotting test waiting for the optional
+environment. Full strict typing passes 816 files; lint and formatting pass.
+The tests exercise the 802-call synthetic tree, restoration after errors,
+publication checks and the startup-adjusted allowance. The actual saved software
+replay remains identical. An initial assertion still expected the old 14 calls;
+it was corrected to the already-published 802-call plan. Full source qualification
+comes next; none of these fixtures measures the real archive's cost.
+
+
+**November 17, 2026 — the nested measuring tool passes complete qualification.** Both
+local base suites pass 5,220 tests; both optional suites pass 2,127, including the
+plotting check. Both exact-source hosted base jobs also pass. [All six records](../results/parent-archive-cpu/checks.json)
+verify the actual interpreters, NumPy versions and full checkout trees.
+The first hosted Python 3.11 job hit its unchanged 25-minute limit. That failure
+is retained; only that software job was retried. The successful Python 3.12 job
+is reused with its original execution identity. No research outcome was retried.
+
+The launcher, retention and publication tests pass, and 73 guards can block
+numerical execution during later saved-data reporting. The prior scientific
+source and input pins are unchanged. This means the measuring tool is ready for
+its own-only proof; it does not yet tell us which archive stage is expensive.
+The proof must be published and verified before any fresh reference comparison.
+No new strategy or playing-strength result is claimed.
+
+
+**November 17 — the own-only proof finishes.** The complete command takes
+6.639983 seconds under its 180-second limit. Startup leaves a slightly
+smaller inner allowance, which the corrected parser accepts. The saved software
+replay is unchanged; the 802 selected calls belong to two explicitly synthetic
+trees, with all aliases restored. [All raw files](../results/parent-archive-cpu/software-raw-manifest.json)
+are retained before fresh reference use. Publication verification is the next
+step; these fixtures do not measure the real archive or show a stronger agent.
+
+
+**November 17 — complete pair retained before analysis.** Both original full
+arms finish with exact complete scalar/computed-replay identity, also matching
+the previous published numerical identity. All 802 selected calls are present
+and bindings restore. [All 27 raw files](../results/parent-archive-cpu/pair-raw-manifest.json)
+are retained for publication before timing analysis. The successful public own-
+proof verification preceded reference use; no training or new admission follows.
+The next step is to verify the published raw pair, then interpret its stages.
+
+
+**November 17 — the archive cost is spread across several jobs.** The complete
+checked comparison preserves all calculated results exactly. Its two instrumented
+cost reads spend about 36.5–36.7 CPU seconds inside archive validation. Combined
+checkpoint reconstruction/checking accounts for 43–45% of that archive CPU;
+the two explicit context builds account for about 24%. Sampled scoring alone is
+about 3 seconds. Full-checkpoint decoding also recomputes metrics, so “decode”
+does not mean only opening or parsing a file.
+
+**Example:** building the same game description twice might be avoidable, but
+sharing an object that a caller changes could corrupt later checks. The next
+question is whether those contexts really have identical inputs/results and can
+be reused with mutation protection. This measurement has not tested that reuse.
+
+[The full table and figures](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
+show every component and distinguish inclusive timers from the work left inside
+each parent. All three numerical exports reproduce exactly on both actual
+runtimes with 73 numerical entry points blocked, zero forbidden calls and raw
+files unchanged. Both figures were inspected. One ordered pair is not a stable
+speedup estimate, a production forecast or a stronger-agent result. Final checks
+remain before merge; the old runtime and accuracy failures remain.

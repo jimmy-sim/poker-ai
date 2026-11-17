@@ -1,0 +1,38 @@
+"""Archive completed checks/main preservation in the next substantive milestone.
+
+Run only after all six final roles and merged-main checks actually pass. The
+checked PR head stays unchanged, avoiding a receipt/self-reference commit loop.
+"""
+import hashlib,json,shutil,subprocess,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent
+assert len(sys.argv)==4
+r=Path(sys.argv[1]).resolve();merge=sys.argv[2];snapshot=Path(sys.argv[3]).resolve()
+assert r.is_relative_to(w) and r!=w/'source-phase-cpu'
+assert subprocess.check_output(['git','-C',str(r),'symbolic-ref','--short','HEAD'],text=True).strip().startswith('research/')
+f=w/'source-budget-v2-requalified-final-checks';h=w/'source-budget-v2-requalified-final-hosted'
+e=json.loads((w/'source-budget-v2-requalified-final-expected.json').read_text())
+v=json.loads((h/'verified.json').read_text());m=json.loads((w/'source-budget-v2-main-verified.json').read_text())
+assert v['status']=='all_six_final_roles_pass_actual_runtime_and_entire_tested_tree' and v['checked_commit']==e['git_commit']
+assert m['status']=='merged_main_focused_fixtures_and_complete_saved_pair_verified_user_changes_preserved' and m['head']==merge
+assert m['bytes_status_changed_path_index_and_both_patches_preserved'] is True
+assert json.loads((snapshot/'verified-after-ff.json').read_text())['head']==merge
+parents=subprocess.check_output(['git','-C',str(r),'rev-list','--parents','-n','1',merge],text=True).split();assert e['git_commit'] in parents[1:]
+tree=subprocess.check_output(['git','-C',str(r),'rev-parse',merge+'^{tree}'],text=True).strip();assert tree==v['tested_tree']
+q=r/'results/source-phase-cpu-v2/final-ci';assert not q.exists();q.mkdir(parents=True)
+rows=[]
+def copy(p,dest):
+ t=q/dest;t.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,t);assert t.read_bytes()==p.read_bytes();rows.append(dict(file=str(t.relative_to(q)),bytes=t.stat().st_size,sha256=hashlib.sha256(t.read_bytes()).hexdigest()))
+for source,prefix in ((f,'local'),(h,'hosted')):
+ for p in sorted(source.iterdir()):
+  if p.is_file():copy(p,Path(prefix)/p.name)
+for name in ('run-source-budget-v2-requalified-final-checks.py','run-source-budget-v2-requalified-final-lane.py','verify-source-budget-v2-requalified-final.py','verify-source-budget-v2-main.py'):
+ copy(w/name,Path('operators')/(name+'.txt'))
+copy(w/'source-budget-v2-requalified-final-expected.json',Path('expected-source.json'))
+for name in ('source-budget-v2-main-tests.log','source-budget-v2-main-data.log','source-budget-v2-main-verified.json'):
+ copy(w/name,Path('main')/name)
+for name in ('verified-after-ff.json','fast-forward.log'):
+ copy(snapshot/name,Path('main')/name)
+copy(Path(__file__).resolve(),Path('operators/archive_final.py.txt'))
+(q/'manifest.json').write_text(json.dumps(dict(status='six_final_roles_and_merged_main_verified',checked_commit=e['git_commit'],source_fingerprint=e['fingerprint'],merge=merge,entire_merge_tree_equals_checked_head=True,files=rows,scope='Closing software/data verification with actual runtimes, full checkout tree and protected main. Initial failed final bases and metadata recovery remain under qualification-history/final-index-refresh. No new scientific pair, training, production-forecast replacement or strength admission.'),indent=2)+'\n')
+print(json.dumps(dict(files=len(rows),checked_commit=e['git_commit'],merge=merge,archived=str(q))))

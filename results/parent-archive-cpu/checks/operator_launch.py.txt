@@ -1,0 +1,160 @@
+"""Fixed complete CLI launch and retained interruptions; no favorable retries.
+
+The outer clock starts before launching the actual Python entry, including its
+startup and controller work. This controller does not change scientific caps.
+"""
+import hashlib
+import json
+import os
+import resource
+import signal
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+W = Path(__file__).resolve().parent
+R = W / 'parent-archive-cpu'
+CAPS = {'proof': 180, 'pair': 1800}
+
+
+def forest():
+    raw = subprocess.check_output(['ps', '-axo', 'pid=,ppid=,pgid=,lstart='], text=True)
+    return {int(p): (int(parent), int(group), started) for line in raw.splitlines()
+            for p, parent, group, started in [line.split(maxsplit=3)]}
+
+
+def descendants(pid):
+    rows = forest()
+    owned = {pid}
+    while True:
+        extended = owned | {p for p, (parent, _, _) in rows.items() if parent in owned}
+        if extended == owned:
+            break
+        owned = extended
+    # Only groups whose leaders are connected to this still-owned process tree.
+    return {p: rows[p] for p in owned if p in rows and rows[p][1] == p}
+
+
+def signal_owned(groups, kind):
+    current = forest()
+    for pid, (_, group, started) in groups.items():
+        if pid == group and current.get(pid, (None, None, None))[1:] == (group, started):
+            try:
+                os.killpg(group, kind)
+            except ProcessLookupError:
+                pass
+
+
+def run(command, destination, cap, preflight=None):
+    if type(cap) not in (int, float) or not 0 < cap <= 1800:
+        raise ValueError('positive explicit whole-command cap required')
+    destination = Path(destination)
+    # Outer logs sit beside the untouched backend destination. Backend itself
+    # must refuse any prior complete/partial proof or pair folder.
+    log_path = destination.with_name(destination.name + '-outer.log')
+    receipt = destination.with_name(destination.name + '-outer.json')
+    if destination.exists() or destination.is_symlink() or log_path.exists() or receipt.exists():
+        raise FileExistsError('retain every previous launch/partial result')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    before = resource.getrusage(resource.RUSAGE_CHILDREN)
+    started = time.perf_counter()
+    interrupt = None
+    groups = {}
+    with log_path.open('xb') as log:
+        process = None
+        try:
+            if preflight is not None:
+                preflight()
+            if time.perf_counter() - started >= cap:
+                raise subprocess.TimeoutExpired(command, cap)
+            process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT,
+                                       start_new_session=True)
+        except subprocess.TimeoutExpired as error:
+            interrupt = type(error).__name__
+            log.write(b"Prelaunch allowance exhausted; no child started\n")
+            code = 124
+        except KeyboardInterrupt as error:
+            interrupt = type(error).__name__
+            log.write(b"Prelaunch interrupted\n")
+            code = 130
+        except Exception as error:
+            interrupt = type(error).__name__
+            log.write(("Prelaunch failed: " + type(error).__name__ + "\n").encode())
+            code = 127 if isinstance(error, OSError) else 126
+        else:
+            try:
+                code = process.wait(timeout=max(.001, started + cap - time.perf_counter()))
+            except (subprocess.TimeoutExpired, KeyboardInterrupt) as error:
+                interrupt = type(error).__name__
+                groups = descendants(process.pid)
+                # Let the inner supervisors write their own failure receipts and reap
+                # their separately grouped children first. No more scientific work
+                # is admitted after this outer deadline.
+                try:
+                    os.killpg(process.pid, signal.SIGINT)
+                except ProcessLookupError:
+                    pass
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    signal_owned(groups, signal.SIGTERM)
+                    try:
+                        process.wait(timeout=2)
+                    except subprocess.TimeoutExpired:
+                        signal_owned(groups, signal.SIGKILL)
+                        process.wait(timeout=2)
+                signal_owned(groups, signal.SIGTERM)
+                for _ in range(20):
+                    current = forest()
+                    remaining = {p: row for p, row in groups.items()
+                                 if current.get(p, (None,None,None))[1:] == row[1:]}
+                    if not remaining:
+                        break
+                    time.sleep(.05)
+                signal_owned(remaining, signal.SIGKILL)
+                for _ in range(40):
+                    current = forest()
+                    remaining = {p: row for p, row in remaining.items()
+                                 if current.get(p, (None,None,None))[1:] == row[1:]}
+                    if not remaining:
+                        break
+                    time.sleep(.05)
+                if remaining:
+                    groups['cleanup_remaining'] = list(remaining)
+                code = 124 if isinstance(error, subprocess.TimeoutExpired) else 130
+    ended = time.perf_counter()
+    after = resource.getrusage(resource.RUSAGE_CHILDREN)
+    saved = dict(status='complete' if code == 0 and interrupt is None and ended-started < cap else 'failed_retained',
+                 command=command, pid=process.pid if process is not None else None, cap_seconds=cap,
+                 started_perf_counter=started, seconds=ended-started,
+                 returncode=code, interrupted=interrupt,
+                 reaped_user_seconds=after.ru_utime-before.ru_utime,
+                 reaped_system_seconds=after.ru_stime-before.ru_stime,
+                 failure_cleanup_groups=groups,
+                 command_log_sha256=hashlib.sha256(log_path.read_bytes()).hexdigest(),
+                 scope='Complete actual Python CLI startup, preflight, all inner children and writes. CPU is OS reaped process accounting. Administrative retention copies are separate; 120s failure-save reserve never permits scientific work.')
+    with receipt.open('x') as out:
+        json.dump(saved,out,indent=2);out.write('\n')
+    return saved
+
+
+def main():
+    stage = sys.argv[1]
+    if stage not in CAPS or len(sys.argv) != 2:
+        raise ValueError('choose fixed proof or pair stage')
+    output = R / 'results/runs' / ('parent-archive-20261117-' + stage)
+    command = ['/usr/bin/caffeinate', '-i', sys.executable,
+               str(R/'scripts/profile_parent_archive.py'), stage,
+               '--output', str(output)]
+    def preflight():
+        import runpy
+        verifier = runpy.run_path(str(W/'verify-parent-archive-publication.py'),run_name='verify_only')
+        verifier['verify'](R,'proof',True)
+    saved = run(command, output, CAPS[stage], preflight=preflight if stage=='pair' else None)
+    print(json.dumps(saved))
+    return 0 if saved['status'] == 'complete' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

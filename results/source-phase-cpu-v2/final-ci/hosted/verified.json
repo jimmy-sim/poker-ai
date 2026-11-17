@@ -1,0 +1,102 @@
+{
+  "status": "all_six_final_roles_pass_actual_runtime_and_entire_tested_tree",
+  "checked_commit": "49cb951983255b80804754d905119a5be0dfa946",
+  "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+  "tested_checkout": "a30b9cebf7f805f6e099e719ab2b3580f77c0e59",
+  "tested_tree": "8f1da55976224d8fb405317b407db838a7b69876",
+  "entire_tree_equals_head": true,
+  "run_id": 44055717608,
+  "checks": [
+    {
+      "role": "base311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5081 passed, 68 skipped, 150 deselected in 900.69s (0:15:00)",
+      "receipt": {
+        "role": "base311",
+        "status": "passed",
+        "checked_commit": "49cb951983255b80804754d905119a5be0dfa946",
+        "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Final software/data qualification with normal linked-index metadata access; initial local deadline failures retained; source/caps/tests unchanged",
+        "check_seconds": 1009.3830992920048,
+        "setup_and_check_seconds": 1022.1060318329983
+      },
+      "log_sha256": "f24ed0254f02f5f09d6a095c44405b06d1310cc5ef37f0c6e9b485754e485030"
+    },
+    {
+      "role": "base312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5081 passed, 68 skipped, 150 deselected in 880.55s (0:14:40)",
+      "receipt": {
+        "role": "base312",
+        "status": "passed",
+        "checked_commit": "49cb951983255b80804754d905119a5be0dfa946",
+        "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Final software/data qualification with normal linked-index metadata access; initial local deadline failures retained; source/caps/tests unchanged",
+        "check_seconds": 1009.3714096249969,
+        "setup_and_check_seconds": 1023.2484594589987
+      },
+      "log_sha256": "95b941ebed1a29cff0dd7d160ab43aa1096351f55fe61a97147307d3ce811fbe"
+    },
+    {
+      "role": "optional311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "1987 passed in 745.01s (0:12:25)",
+      "receipt": {
+        "role": "optional311",
+        "status": "passed",
+        "checked_commit": "49cb951983255b80804754d905119a5be0dfa946",
+        "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Final software/data qualification with normal linked-index metadata access; initial local deadline failures retained; source/caps/tests unchanged",
+        "check_seconds": 766.711258000003,
+        "setup_and_check_seconds": 766.769840042005
+      },
+      "log_sha256": "dd0bbb70d1dd2b2c634b45f378dde179f482131b60f9dbb63bf7aecbe641a749"
+    },
+    {
+      "role": "optional312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "1987 passed in 527.81s (0:08:47)",
+      "receipt": {
+        "role": "optional312",
+        "status": "passed",
+        "checked_commit": "49cb951983255b80804754d905119a5be0dfa946",
+        "source_fingerprint": "5b966422276208f50fff1fc4ab4126271cb4405f39edbcc7a982329c86829ee9",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Final software/data qualification with normal linked-index metadata access; initial local deadline failures retained; source/caps/tests unchanged",
+        "check_seconds": 689.3879548330005,
+        "setup_and_check_seconds": 691.0195305410016
+      },
+      "log_sha256": "219952a966bbf34d4e53a13720e5d480e8f94c7ce47657e4ac182b105803c4d7"
+    },
+    {
+      "role": "hosted311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-17T09:47:46.9897089Z 5081 passed, 68 skipped, 150 deselected, 1 warning in 1187.64s (0:19:47)",
+      "job_id": 133944440943,
+      "log_bytes": 49462,
+      "log_sha256": "c498f5ec931de623a3ee5f4a59474c973b558d145862b79d54944d8e588a5361"
+    },
+    {
+      "role": "hosted312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-17T09:47:32.4537207Z 5081 passed, 68 skipped, 150 deselected, 1 warning in 1170.17s (0:19:30)",
+      "job_id": 133944440487,
+      "log_bytes": 49463,
+      "log_sha256": "7fe5202f2a6c157219417e43adbf58312acbe496eae7a088cf820704b0bf9350"
+    }
+  ],
+  "scope": "Final software/data qualification, not production forecast or new poker training"
+}

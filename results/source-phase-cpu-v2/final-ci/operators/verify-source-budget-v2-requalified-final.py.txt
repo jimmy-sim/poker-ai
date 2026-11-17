@@ -1,0 +1,33 @@
+"""Verify final immutable local roles and the entire hosted checkout tree."""
+import hashlib,json,re,runpy,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'source-phase-cpu';f=w/'source-budget-v2-requalified-final-checks';h=w/'source-budget-v2-requalified-final-hosted'
+expected=json.loads((w/'source-budget-v2-requalified-final-expected.json').read_text());head=expected['git_commit'];fp=expected['fingerprint']
+rows=[]
+for role in ('base311','base312','optional311','optional312'):
+ receipt=json.loads((f/(role+'-receipt.json')).read_text());log=(f/(role+'.log')).read_text()
+ py,np=('3.11.17','2.4.6') if role.endswith('311') else ('3.12.15','2.5.4')
+ assert receipt['status']=='passed' and receipt['checked_commit']==head and receipt['source_fingerprint']==fp
+ for marker,value in [('ACTUAL_PYTHON',py),('ACTUAL_NUMPY',np),('CHECKED_COMMIT',head),('COLLECTOR_SOURCE',fp)]:
+  assert set(re.findall(marker+r'=([0-9a-f.]+)',log))=={value}
+ result=next(line for line in log.splitlines() if re.match(r'^\d+ passed',line))
+ assert result.startswith('5081 passed, 68 skipped, 150 deselected' if role.startswith('base') else '1987 passed')
+ if role.startswith('base'):
+  assert 'Success: no issues found in 812 source files' in log and 'Ruff lint (locked project environment)' in log and 'Ruff format check (locked project environment)' in log and log.count('Passed')>=2
+ rows.append(dict(role=role,python=py,numpy=np,result=result,receipt=receipt,log_sha256=hashlib.sha256((f/(role+'.log')).read_bytes()).hexdigest()))
+run=json.loads((h/'run.json').read_text());jobs=json.loads((h/'jobs-official.json').read_text())['jobs'];checkout=json.loads((h/'checkout-source.json').read_text())
+tree=subprocess.check_output(['git','-C',str(r),'rev-parse',head+'^{tree}'],text=True).strip()
+assert run['head_sha']==head and run['event']=='pull_request' and run['status']=='completed' and run['conclusion']=='success'
+assert checkout['tree']['sha']==tree and head in [p['sha'] for p in checkout['parents']]
+parser=runpy.run_path(str(r/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='actual_runtime_parser')['parse']
+for minor,py,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+ job=next(j for j in jobs if j['name']=='Python '+py[:4]);p=h/('hosted'+minor+'.log');raw=p.read_bytes();text=raw.decode('utf-8-sig');parsed=parser(text)
+ assert job['head_sha']==head and job['run_id']==run['id'] and job['status']=='completed' and job['conclusion']=='success'
+ assert all(s['conclusion']=='success' for s in job['steps'])
+ assert parsed['actual_python']==[py] and parsed['all_uv_versions']==[py]
+ assert re.findall(r'ACTUAL_NUMPY=([0-9.]+)\s*$',text,re.M)==[np]
+ assert head in text and checkout['sha'] in text
+ result=next(line for line in text.splitlines() if '5081 passed, 68 skipped, 150 deselected' in line)
+ rows.append(dict(role='hosted'+minor,python=py,numpy=np,result=result,job_id=job['id'],log_bytes=len(raw),log_sha256=hashlib.sha256(raw).hexdigest()))
+value=dict(status='all_six_final_roles_pass_actual_runtime_and_entire_tested_tree',checked_commit=head,source_fingerprint=fp,tested_checkout=checkout['sha'],tested_tree=tree,entire_tree_equals_head=True,run_id=run['id'],checks=rows,scope='Final software/data qualification, not production forecast or new poker training')
+(h/'verified.json').write_text(json.dumps(value,indent=2)+'\n');print(json.dumps(value,indent=2))
