@@ -8,9 +8,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
-import earlier_source_profile_support as original
-import inspect_archive_reader as reader
 import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import earlier_source_profile_support as original  # noqa: E402
+import inspect_archive_reader as reader  # noqa: E402
 
 
 def graph() -> dict[str, Any]:

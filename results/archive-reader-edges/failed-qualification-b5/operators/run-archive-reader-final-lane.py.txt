@@ -1,0 +1,8 @@
+"""Independent minor lane; optional checks start only after its base passes."""
+import subprocess,sys
+from pathlib import Path
+w=Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work')
+minor=sys.argv[1];assert minor in ('311','312')
+for role in ('base','optional'):
+ result=subprocess.run([sys.executable,'/private/tmp/run-archive-reader-final-checks.py',role+minor])
+ if result.returncode:raise SystemExit(result.returncode)

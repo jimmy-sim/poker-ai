@@ -1,0 +1,35 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport compare_context_reuse as t\nimport hashlib\nfrom poker_ai.postflop.learning_artifacts import sha\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='b5a58d459b2074ab7454b9b412520a25621ef193'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.12.15' and numpy.__version__=='2.5.4'\nc,s=t.binding(r,clean=True);assert len(s['sha256'])==450 and s['fingerprint']=='901415dc66139b48866bdf07dba9231e63fbaf3d0267d87af33b31028e4999a9' and s['dirty'] is False\nfor name in ('scripts/earlier_source_profile_support.py','scripts/inspect_earlier_source_profile.py','configs/earlier-source-profile.json','scripts/inspect_archive_reader.py','configs/archive-reader-edges.json'):s['sha256'][name]=hashlib.sha256((r/name).read_bytes()).hexdigest()\ns['fingerprint']=sha(s['sha256']);assert len(s['sha256'])==455 and s['fingerprint']=='a1010763771b89787862a27a39daeabac0404079901281371e3ecc0f0182db25'\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'b5a58d459b2074ab7454b9b412520a25621ef193');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked')\n"]}
+ACTUAL_PYTHON=3.12.15
+ACTUAL_NUMPY=2.5.4
+CHECKED_COMMIT=b5a58d459b2074ab7454b9b412520a25621ef193
+COLLECTOR_SOURCE=a1010763771b89787862a27a39daeabac0404079901281371e3ecc0f0182db25
+Software qualification only; unit tests may use toy/fixture solvers. No formal complete audit measurement or new real Holdem trajectory study invoked
+{"command": ["make", "check"]}
+uv run --locked ruff check .
+All checks passed!
+uv run --locked ruff format --check .
+984 files already formatted
+uv run --locked mypy --strict src tests scripts
+Success: no issues found in 825 source files
+uv run --locked pytest -q -m "not slow"
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  7%]
+........................................................................ [  9%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 17%]
+........................................................................ [ 18%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+...........................................s............................ [ 22%]
+......................................ss................................ [ 23%]
+................................s....................................... [ 24%]
+........................................................................ [ 26%]
+...........................................................make: *** [test] Error 143

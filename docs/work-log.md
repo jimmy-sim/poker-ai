@@ -6793,3 +6793,16 @@ preloaded in the parent on both runtimes (1.31/1.29 seconds); the fresh children
 retain all 104 blocks and five exact exports. Strict typing covers 825 files,
 lint/format and 539 documentation destinations pass. Full final checks remain
 pending. These are software/data checks, not new training or strength evidence.
+
+
+November 17 qualification correction: both hosted jobs at `b5a58d4` fail test
+collection because the new test imports scripts before establishing their path.
+The local launcher's extra `PYTHONPATH` masked this portability error. Both local
+base runs were stopped and retained; no final or optional success is counted.
+[Failed jobs and partial local checks](../results/archive-reader-edges/failed-qualification-b5/manifest.json)
+retain the evidence. The fix changes only the test's scripts-path setup, following
+existing repository tests. With `PYTHONPATH` absent, all 54 focused cases pass on
+both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
+reader/config/guard, all 455 scientific bytes and original five-export result
+remain unchanged. Full qualification must now pass on the corrected head without
+the masking path override. No CI, dependency or scientific-rule change.
