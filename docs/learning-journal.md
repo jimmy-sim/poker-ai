@@ -6859,3 +6859,15 @@ be published and verified before the fixed reference comparison. A software pass
 does not tell us whether copying and checking contexts saves time; the measured
 comparison can still be slower or fail. The strategy and its failed strength/runtime
 targets remain unchanged.
+
+
+**November 17 — the own-only proof completes.** The complete command takes
+9.022294 seconds under 180. Startup leaves an inner allowance of
+179.998911374998 seconds, correctly accepted by the parser. The actual
+saved software replay is unchanged and has zero archive roots. Two separately
+labeled factory fixtures produce two misses/four hits, with isolated caller
+mutations and full cleanup. Nested engine-state copying and independent tiny-game
+terminal/pure-reply checks pass. [All raw proof files](../results/context-reuse/software-raw-manifest.json)
+are retained before any fresh reference work. This is software evidence; it does
+not yet test the complete real cost loader or show a speedup/stronger strategy.
+Publication verification must actually pass before the fixed pair.

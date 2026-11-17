@@ -6592,3 +6592,19 @@ verification must actually exit zero; own raw publication and verification still
 precede the pair. Original 447 source bytes, 128 input pins, seeds, scientific
 work/limits and failed gates remain. Journal130 explains the status. Codex-assisted;
 human hours and new personal learning are not inferred.
+
+
+### November 17: own-only context-reuse proof retained
+
+Public six-role/source/tool verification exits zero before collection. Complete
+own-only command 9.022293542s / 180; child measurement
+8.925335792s against startup-adjusted allowance 179.998911374998.
+Actual archived software replay identical, zero archive roots. Separate actual
+software-factory fixtures have two roots/six requests/two misses/four hits with
+isolated template/return graphs, correct inventory, independent tiny terminal/
+pure-reply sums, nested MatrixTree/SpotTree/engine mutation isolation and cleanup.
+All 12 raw members, including complete outer clock/log, are
+[retained](../results/context-reuse/software-raw-manifest.json) before any fresh
+reference. No real cost-loader coverage, timing benefit, training or strength
+admission follows. Publish and verify own evidence with an actual zero exit
+before the pair; source450 fingerprint/caps/seeds/failed gates remain unchanged.
