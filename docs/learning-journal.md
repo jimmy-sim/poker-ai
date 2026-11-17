@@ -6589,3 +6589,23 @@ failure is [retained](../results/source-phase-cpu/pair-raw-manifest.json). No
 source-child timing result follows. Correct the remaining-budget parser, retain
 negative cases, and fully qualify the corrected source before further collection.
 No scientific cap, seed, tolerance or earlier outcome is changed.
+
+
+## Startup-adjusted allowance correction — November 16
+
+The [prospective correction](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6941037776)
+keeps the rejected proof and blocked pair unchanged. A separate corrected entry
+and config use `results/source-phase-cpu-v2`; all 442 predecessor scientific
+files remain unchanged. The new parser accepts finite numeric inner allowances
+with `0 < cap <= 180` and requires the complete child duration below that cap.
+The fixed outer180-second limit remains. For example, startup can legitimately
+leave 179.9989877909975 seconds; requiring exactly180 rejects valid evidence.
+
+All78 corrected-runner tests pass on actual3.11.17/NumPy2.4.6 and3.12.15/NumPy2.5.4
+(34.24/31.21s), including fractional/exact allowances, invalid/exhausted limits
+and a CLI-calculation/publication round-trip. Full strict typing passes812files.
+A launcher preflight verifies published own evidence inside the complete outer
+clock; rejected or interrupted checks start no child and retain their clock.
+These are software checks, not a new formal proof or real cost-loader result.
+Full new local/hosted qualification remains before any revised collection.
+No scientific cap, seed, tolerance, policy, dependency or CI behavior changes.
