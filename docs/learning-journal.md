@@ -6871,3 +6871,15 @@ terminal/pure-reply checks pass. [All raw proof files](../results/context-reuse/
 are retained before any fresh reference work. This is software evidence; it does
 not yet test the complete real cost loader or show a speedup/stronger strategy.
 Publication verification must actually pass before the fixed pair.
+
+
+**November 17 — the first complete pair is rejected.** Both ordinary and reuse
+arms finish their three reads, but the joint consistency check fails with
+`ArithmeticError`. [Every raw file](../results/context-reuse/pair-raw-manifest.json)
+is retained, including the failed outer result. The published-own verifier had
+actually exited zero before the run. A completed child is insufficient: the pair
+must satisfy every cross-arm consistency requirement before it is accepted.
+
+The next step is to publish and authenticate the failed raw evidence, then locate
+the exact discrepancy. No timing conclusion, source fix or favorable rerun is
+claimed here. The original caps, seeds and failed strength/runtime targets remain.

@@ -6608,3 +6608,16 @@ All 12 raw members, including complete outer clock/log, are
 reference. No real cost-loader coverage, timing benefit, training or strength
 admission follows. Publish and verify own evidence with an actual zero exit
 before the pair; source450 fingerprint/caps/seeds/failed gates remain unchanged.
+
+
+### November 17: complete context pair rejected; all raw retained
+
+Both source-qualified arms finish all three reads with child status
+`complete_context_reuse_diagnostic`, but the enclosing pair fails its joint
+consistency check (`ArithmeticError`). [All 27 raw members](../results/context-reuse/pair-raw-manifest.json)
+are retained unchanged, including the failed outer receipt/log. Public-own
+verification actually exited zero before collection; its exact receipt/log are
+retained with this batch. No source/seeds/work/caps/gates changed or scientific
+retry occurred. Publish failed evidence before diagnosis or timing interpretation.
+No valid-pair, runtime saving, training/default or strength admission is claimed.
+Journal130 records the failure and next decision; Codex-assisted, human time unknown.
