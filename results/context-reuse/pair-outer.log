@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 1344, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 1320, in main
+    return pair(ROOT, output)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 890, in pair
+    pair_identity(
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 832, in pair_identity
+    raise ArithmeticError(
+ArithmeticError: complete separate ordinary/reuse phase identity required

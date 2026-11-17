@@ -1,0 +1,31 @@
+"""Compare existing same-order CI progress timestamps; no tests or poker run."""
+from pathlib import Path
+from datetime import datetime
+import re,json,sys
+w=Path(__file__).resolve().parent
+root=Path(sys.argv[1]) if len(sys.argv)==2 else None
+source=(root/'results/parent-archive-cpu/checks/hosted') if root else w/'parent-archive-source-hosted'
+final=(root/'results/parent-archive-cpu/final-ci/hosted') if root else w/'parent-archive-final-hosted'
+paths={'qualified_source_311':source/'hosted311.log','final_attempt1_311':final/'attempt1/hosted311.log','final_attempt2_311':final/'attempt2/hosted311.log','final_completed_attempt3_311':final/'hosted311.log'}
+
+def rows(path):
+ result={}
+ for line in path.read_text(encoding='utf-8-sig').splitlines():
+  m=re.match(r'^(\d{4}-\d\d-\d\dT[0-9:.]+Z) ([.sFxX]+)\s+\[\s*(\d+)%\]',line)
+  if m:
+   pct=int(m[3]);assert pct not in result
+   result[pct]=(datetime.fromisoformat(m[1].replace('Z','+00:00')).timestamp(),m[2])
+ assert result,path
+ return result
+series={n:rows(p) for n,p in paths.items()};base=series['qualified_source_311'];common=sorted(set.intersection(*(set(v) for v in series.values())))
+assert all(all(series[n][k][1]==base[k][1] for k in common) for n in series)
+# Select existing progress boundaries nearest the declared quartiles; these are
+# ranges of unchanged ordered tests, not exact per-test CPU attribution.
+points=[min(common,key=lambda x:abs(x-target)) for target in (1,25,50,75,83)];assert len(set(points))==len(points)
+values=[]
+for lo,hi in zip(points,points[1:]):
+ timing={n:round(v[hi][0]-v[lo][0],6) for n,v in series.items()}
+ values.append(dict(from_percent=lo,to_percent=hi,wall_seconds=timing,ratios_to_source={n:timing[n]/timing['qualified_source_311'] for n in timing if n!='qualified_source_311'}))
+result=dict(scope='Read-only wall-clock progress comparison; same outcome characters/order at common printed boundaries. Includes the later completed same-image run as a counterexample to an image-only cause. No per-test names/CPU/resource attribution, no causal diagnosis, no rerun or scientific timing.',common_boundaries=common,matching_outcome_sequences=True,segments=values,inputs={n:str(p) for n,p in paths.items()})
+if not root:(w/'parent-archive-final-ci-timing.json').open('x').write(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

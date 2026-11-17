@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test safe reuse of repeated contexts](#130-test-safe-reuse-of-repeated-contexts)
+
 - [Separate the work inside archive validation](#129-separate-the-work-inside-archive-validation)
 
 - [Follow the stages inside source loading](#128-look-inside-the-input-loader)
@@ -119,8 +121,11 @@ The nested follow-up now locates most source CPU in sampled-parent archive
 validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
 The complete calculated results stay identical. The [nested archive check](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
 now separates context construction, state reconstruction/scoring and prior full
-verification. The next question is whether repeated contexts can be reused safely,
-without skipping validation. Earlier source-stage details remain in
+verification. The [context-reuse experiment](context-reuse.md#rejected-comparison-and-diagnosis--november-17)
+now retains a rejected result: the poker-result records match, but four work
+counters change and the complete-identity requirement fails. Full copying and
+checking also takes more time in that run. It is not deployed. PR #85 is merged;
+its final checks and protected-main verification are complete. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6782,3 +6787,124 @@ runtimes with 73 numerical entry points blocked, zero forbidden calls and raw
 files unchanged. Both figures were inspected. One ordered pair is not a stable
 speedup estimate, a production forecast or a stronger-agent result. Final checks
 remain before merge; the old runtime and accuracy failures remain.
+
+
+**November 17 — final checks and main are verified.** PR #85 is merged at
+`575c459` after all four local and both hosted roles pass on the full tested tree.
+The earlier hosted timeouts remain archived; the eventual successful Python 3.11
+job used the same image version as a failed job, so image version alone does not
+explain the slowdown. Main passes 559 focused tests in 116.33 seconds and
+reproduces all three numerical exports exactly. All 27 raw files and ten unrelated
+local result changes remain unchanged. [Closing receipts](../results/parent-archive-cpu/final-ci/manifest.json).
+
+## 130. Test safe reuse of repeated contexts
+
+November 17, 2026 — prospective experiment, with Codex assistance.
+
+**Question:** can one archive check build the same game description once and use
+separate copies for later requests, without changing any validation result?
+The last measurement found about 24% of archive CPU in two explicit context
+builds. That identifies repeated work; it does not measure a possible saving.
+
+**Change planned:** [reuse only within one archive check](context-reuse.md),
+check the actual input files on every request, and give each caller an isolated
+copy. A context describes the game tree, legal actions and information groups.
+The saved policies, scoring and independent comparison still run in full.
+
+**Example:** if a caller changes its copy of an array, the next caller must still
+receive the original values. A frozen dataclass does not prevent an array inside
+it from changing, so simply sharing the same object is insufficient.
+
+**Checks and result:** no cache or fresh result exists yet. The plan requires
+full object/array equality, mutation isolation, failure cleanup, the exact request
+inventory and complete source qualification before an own-only proof. Own proof
+must be published before the fixed comparison. Unsupported objects cause a
+retained failure rather than silently changing the experiment.
+
+**Next decision:** retain the complete measured outcome, including any lack of
+saving. Correct reuse could support a later runtime forecast; this experiment
+cannot establish a stronger agent or waive the existing runtime/accuracy targets.
+Human hands-on time is not recorded; no new personal practice is inferred.
+
+
+**November 17 — the local correctness implementation passes.** Both actual
+runtimes pass all 160 focused tests, including plotting (60.80 / 72.90 seconds).
+Strict typing passes 820 files; lint and formatting pass. The tests cover exact
+array bits/layouts, nested game states, isolated caller mutations, changed input
+bytes, partial iterators, reentrancy and restoration after failure. Independent
+terminal recursion and exhaustive pure replies agree on the tiny Kuhn fixture.
+A malformed-input test initially used a writer that correctly refused NaN before
+the reader could see it; the fixture now supplies deliberately invalid input to
+test rejection by the reader as intended.
+
+The whole runner keeps all prior source/input pins and full numerical work.
+Both arms must match complete context witnesses, not only scalar results.
+Root timing includes discarding the template; prior-iterator timing includes work
+done by its consumer between yields. Six launcher, five preflight, four retention
+and ten publication cases pass. All 103 saved-report guards resolve and restore
+on both runtimes without numerical execution. Full immutable local/hosted source
+qualification comes next. These are correctness checks, not a measured speedup,
+new formal proof or evidence of a stronger strategy.
+
+
+**November 17 — complete source qualification passes.** Both local base suites
+pass 5,379 tests; both optional suites pass 2,287. Both exact-source hosted jobs
+also pass, with actual Python/NumPy versions and the full checkout tree checked.
+[All six records and tested tools](../results/context-reuse/checks.json) are
+retained. The first hosted Python 3.12 job ran out of its unchanged 25-minute
+allowance at 93%. Its records remain; only that software job was retried. The
+Python 3.11 success keeps its original execution identity, rather than being
+counted again because GitHub displays it in the newer attempt.
+
+This qualifies the implementation for its own-only proof. That proof must still
+be published and verified before the fixed reference comparison. A software pass
+does not tell us whether copying and checking contexts saves time; the measured
+comparison can still be slower or fail. The strategy and its failed strength/runtime
+targets remain unchanged.
+
+
+**November 17 — the own-only proof completes.** The complete command takes
+9.022294 seconds under 180. Startup leaves an inner allowance of
+179.998911374998 seconds, correctly accepted by the parser. The actual
+saved software replay is unchanged and has zero archive roots. Two separately
+labeled factory fixtures produce two misses/four hits, with isolated caller
+mutations and full cleanup. Nested engine-state copying and independent tiny-game
+terminal/pure-reply checks pass. [All raw proof files](../results/context-reuse/software-raw-manifest.json)
+are retained before any fresh reference work. This is software evidence; it does
+not yet test the complete real cost loader or show a speedup/stronger strategy.
+Publication verification must actually pass before the fixed pair.
+
+
+**November 17 — the first complete pair is rejected.** Both ordinary and reuse
+arms finish their three reads, but the joint consistency check fails with
+`ArithmeticError`. [Every raw file](../results/context-reuse/pair-raw-manifest.json)
+is retained, including the failed outer result. The published-own verifier had
+actually exited zero before the run. A completed child is insufficient: the pair
+must satisfy every cross-arm consistency requirement before it is accepted.
+
+The next step is to publish and authenticate the failed raw evidence, then locate
+the exact discrepancy. No timing conclusion, source fix or favorable rerun is
+claimed here. The original caps, seeds and failed strength/runtime targets remain.
+
+
+**November 17 — the discrepancy is in work accounting.** All context witnesses
+and remaining result fields match. Only four counters differ: normalization
+requests/evaluations and validation-cache requests/hits. The acceptance check
+came from observation-only work and required those counts to stay fixed, while
+this experiment deliberately removed repeated construction. Those requirements
+conflict. The original result stays failed; a later protocol must make the
+intended distinction before collecting new data.
+
+There is also no timing benefit here: reuse takes 486.75 seconds versus 409.75
+for ordinary validation. The copy/check intervals use more CPU in both reads.
+This is one rejected ordered comparison, not a stable causal estimate or stronger
+agent. The [failure report](context-reuse.md#rejected-comparison-and-diagnosis--november-17)
+retains every raw file and explains the clocks. Its four numerical exports match
+exactly on both actual runtimes with 103 construction/numerical paths blocked,
+zero forbidden calls and unchanged raw data. Both figures are inspected.
+
+**Next decision:** do not deploy the full-copy cache or retry it for a nicer
+number. Finish the repository checks, then investigate another measured validation
+cost while preserving the poker-result and work requirements. The failed source,
+protocol and data remain available. This changes the research direction, not the
+agent's strategy. No personal practice or human hours are inferred.

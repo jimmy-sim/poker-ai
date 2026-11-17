@@ -1,0 +1,89 @@
+"""Verify raw public boundaries and conservative complete outer clocks, data only."""
+import hashlib,json,os,sys
+from pathlib import Path
+W=Path(__file__).resolve().parent;R=W/'context-reuse'
+sys.path[:0]=[str(R/'src'),str(R/'scripts')]
+import compare_context_reuse as runner
+from compact_suit.admission import published
+from poker_ai.postflop.compact_full_artifacts import commit_sources
+
+
+def raw(root, stage, publish):
+    name='software' if stage=='proof' else 'pair'
+    folder=root/runner.FOLDER/name
+    manifest_path=folder.with_name(name+'-raw-manifest.json')
+    manifest=json.loads(manifest_path.read_text())
+    outer_path=folder.with_name(name+'-outer.json')
+    outer=json.loads(outer_path.read_text())
+    log_path=folder.with_name(name+'-outer.log')
+    cap=180 if stage=='proof' else 1800
+    if (manifest['stage']!=stage or manifest['status']!='complete' or outer['status']!='complete'
+        or type(outer['returncode']) is not int or outer['returncode']!=0 or outer['interrupted'] is not None
+        or type(outer['cap_seconds']) is not int or outer['cap_seconds']!=cap
+        or type(outer['seconds']) not in (int,float) or not 0<outer['seconds']<cap
+        or type(manifest['outer_seconds']) not in (int,float)
+        or manifest['outer_seconds']!=outer['seconds']
+        or runner.digest(log_path)!=outer['command_log_sha256']):
+        raise ArithmeticError('complete original outer clock required; retained failure cannot qualify')
+    execution_output=Path(manifest['original_ignored_output'])
+    if not execution_output.is_relative_to(root/'results/runs'):
+        raise ArithmeticError('original fresh ignored output required')
+    if (outer['command'][:2]!=['/usr/bin/caffeinate','-i']
+        or outer['command'][3:]!=[str(root/runner.ENTRY),stage,'--output',str(execution_output)]):
+        raise ArithmeticError('complete fixed original launch required')
+    actual={str(p.relative_to(root)) for p in folder.rglob('*') if p.is_file()}
+    actual|={str(outer_path.relative_to(root)),str(log_path.relative_to(root))}
+    if len(manifest['files'])!=len(actual) or {x['file'] for x in manifest['files']}!=actual:
+        raise ArithmeticError('retain every complete/partial raw member exactly once')
+    for row in manifest['files']:
+        path=root/row['file']
+        if type(row['bytes']) is not int or path.is_symlink() or not path.resolve().is_relative_to(root.resolve()) or path.stat().st_size!=row['bytes'] or runner.digest(path)!=row['sha256']:
+            raise ArithmeticError('retained raw bytes changed')
+        relative=path.relative_to(folder) if path.is_relative_to(folder) else None
+        original=execution_output/relative if relative is not None else execution_output.with_name(execution_output.name+('-outer.json' if path==outer_path else '-outer.log'))
+        if path.read_bytes()!=original.read_bytes():
+            raise ArithmeticError('ignored original and publication bytes differ')
+        if publish:published(root,path)
+    if publish:published(root,manifest_path)
+    return folder,outer
+
+
+def verify(root,stage,publish=True):
+    c,source=runner.binding(root,clean=False)
+    if publish:runner.checked(root,source)
+    folder,outer=raw(root,stage,publish)
+    if stage=='proof':
+        # Core proof parser also verifies actual software replay/separate forwarding fixtures,
+        # typed results, producer PID and full restoration.
+        if publish:runner.own_published(root,source)
+        child=json.loads((folder/'child.json').read_text())
+        m=json.loads((folder/'measurement.json').read_text())
+        if child['source']['sha256']!=source['sha256'] or child['config_sha256']!=runner.CONFIG_SHA:
+            raise ArithmeticError('same complete observer source required')
+        measurement_rows=[m]
+    else:
+        data=runner.saved_pair(root,folder)
+        measurement_rows=data['pair']['measurements']
+        # The captured code revision must already contain the checked own proof.
+        own_path=root/runner.FOLDER/'software/child.json'
+        own_hash=runner.digest(own_path)
+        for child in data['children']:
+            if child['own_proof']['sha256']!=own_hash:
+                raise ArithmeticError('pair did not bind the earlier published own proof')
+            commit_sources(root,child['source']['git_commit'],{str(own_path.relative_to(root)):own_hash})
+    if any(not outer['started_perf_counter']<=m['started_perf_counter']<=m['started_perf_counter']+m['seconds']<=outer['started_perf_counter']+outer['seconds'] for m in measurement_rows):
+        raise ArithmeticError('inner complete clock outside outer actual command')
+    return dict(status='complete_published_raw_boundary_verified' if publish else 'unpublished_fixture_only',
+                stage=stage,source_fingerprint=source['fingerprint'],outer_seconds=outer['seconds'],
+                inner_seconds=[m['seconds'] for m in measurement_rows],admission_evidence=False,
+                scope='Source-bound data verification; no replay/training/reference constructors. Outer startup and all inner work stay inside fixed caps. Not production costs or strength admission.')
+
+
+if __name__=='__main__':
+    stage=sys.argv[1]
+    if stage not in ('proof','pair') or len(sys.argv)!=2:raise ValueError('choose proof or pair')
+    result=verify(R,stage)
+    destination=R/runner.FOLDER/(stage+'-published-verification.json')
+    if destination.exists():raise FileExistsError('retain existing boundary verification')
+    with destination.open('x') as out:json.dump(result,out,indent=2);out.write('\n')
+    print(json.dumps(result))

@@ -6509,3 +6509,144 @@ strength. Next question: verify identical repeated contexts and safe reuse befor
 an optimization; none deployed here. Final four local/two same-head hosted roles
 remain before merge. Existing failures, caps/seeds and AI-assistance attribution
 remain; human hands-on time not recorded.
+
+
+### November 17: close archive profiling and plan isolated context reuse
+
+PR #85 is history-merged at `575c4596bf49a7bf3047167f3ae3dd690ad4a273`.
+All six final roles pass the exact tested whole tree: bases 5,220 / 69 skipped /
+150 deselected each, optional 2,127 each; final hosted 3.11 takes 1005.47 seconds
+and 3.12 1053.37. Cancelled attempts and carried-success execution provenance
+remain in [the closing archive](../results/parent-archive-cpu/final-ci/manifest.json).
+A successful 3.11 run on the previously implicated image version refutes image
+version alone as the cause. Actual main passes 559 focused tests (116.33 seconds),
+authenticates all 27 raw files and regenerates three numerical exports exactly.
+Ten unrelated user result bytes/statuses/index entries/both patches remain intact.
+
+The next [prospective protocol](context-reuse.md) tests isolated root-local reuse
+of repeated contexts, preserving all 447 scientific files, 128 pins, seeds,
+180/900/1800-second caps and original complete scoring/reference work. No
+implementation or new collection exists at this boundary. Exact graph/array
+mutation isolation, six requests/two misses/four hits per reuse arm, cleanup,
+complete qualification, own-before-reference and raw-before-analysis are fixed.
+Journal step130 explains the question in plain English. One diagnostic pair
+cannot admit a production default, fresh trajectory or stronger agent. Prior
+912.54/900 runtime and 2.390%/1% accuracy gates remain failed. Codex-assisted
+planning/checking/drafting; human hands-on time not recorded.
+
+
+### November 17: isolated context reuse implementation and focused checks
+
+Draft [PR #86](https://github.com/jimmy-sim/poker-ai/pull/86) implements the
+prospectively specified root-local reuse without altering any of the 447 previous
+scientific files or 128 input pins. New helper/entry/config bind 450 files. Exact
+graph copying includes nested MatrixTree/SpotTree/engine state, array bits/layout/
+flags and internal aliases. Each caller gets isolated mutable objects; cache and
+aliases clear on exit, callback reentrancy rejects, and releasing the template is
+inside the root clock. Both arms must share their complete context witness and
+historical calculated-result identity. No policies or reference answers are cached.
+
+Both actual runtimes pass 160 focused tests (60.80 / 72.90 seconds), including
+saved-data plots, full receipt/clock/corruption tests and independent tiny-game
+terminal/pure-reply sums. Strict typing passes 820 files; lint/821-file format
+check pass. Initial malformed-NaN test failed in its strict writer rather than the
+reader; corrected fixture directly writes invalid input and now tests the reader.
+Six real tiny process, five preflight, four retention and ten synthetic publication
+cases pass. The 103 report guards resolve/patch/restore on both actual runtimes,
+zero forbidden calls. Earlier 93-target setup receipts remain retained as history.
+
+This source publication precedes full four-role immutable local/two-role hosted
+qualification, administrative-tool publication, formal own proof and comparison.
+No fresh formal proof, reference comparison, training or performance admission has
+started. Original caps/seeds/gates remain fixed. Codex-assisted implementation,
+execution and drafting; personal hands-on time not recorded. Journal step130
+explains the change and limits.
+
+
+### November 17: complete context-reuse source qualification
+
+[PR #86](https://github.com/jimmy-sim/poker-ai/pull/86), source `9ebd590`, now has
+[all six exact-source roles and ten tested tools](../results/context-reuse/checks.json).
+Local bases: 5,379 / 70 skipped / 150 deselected each (776.37 / 737.41 seconds
+pytest; complete checks 788.112850 / 750.677537). Optional: 2,287 each
+(470.71 / 407.94 pytest; complete checks 474.357324 / 411.847860). Hosted bases:
+5,379 each, 1,179.75 / 1,174.25 seconds pytest, actual patch/NumPy/all uv verified.
+Actual checkout `25f98f4` entire tree equals C0 `9ebd590`.
+
+Initial hosted 3.12 reached the unchanged 25-minute limit at 93%; full raw log,
+annotation/run/jobs were saved before the unchanged-source single-role retry.
+The successful 3.12 execution is job134125636021/attempt2. Carried logical
+3.11job134125639866 retains actual execution134108220465/attempt1, original
+matching timestamps and exact log bytes. No scientific run or source change
+occurred during that retry. All four local lanes exited zero and are finished.
+
+Six process / five preflight / four retention / ten synthetic-publication fixtures,
+103 final report guards and earlier 93-target receipts are retained. All exact
+operator bytes match the tested map. The full pinned Apache-2.0 OpenSpiel 2.0.2
+license was reread and matches both actual environments; comparison-only remains.
+Source/code/docs checks and synthetic layout review are archived. Synthetic plots
+are layout checks, not measured performance; actual figures still require review.
+
+This batch is before formal own proof/reference work. Public qualification/tools
+verification must actually exit zero; own raw publication and verification still
+precede the pair. Original 447 source bytes, 128 input pins, seeds, scientific
+work/limits and failed gates remain. Journal130 explains the status. Codex-assisted;
+human hours and new personal learning are not inferred.
+
+
+### November 17: own-only context-reuse proof retained
+
+Public six-role/source/tool verification exits zero before collection. Complete
+own-only command 9.022293542s / 180; child measurement
+8.925335792s against startup-adjusted allowance 179.998911374998.
+Actual archived software replay identical, zero archive roots. Separate actual
+software-factory fixtures have two roots/six requests/two misses/four hits with
+isolated template/return graphs, correct inventory, independent tiny terminal/
+pure-reply sums, nested MatrixTree/SpotTree/engine mutation isolation and cleanup.
+All 12 raw members, including complete outer clock/log, are
+[retained](../results/context-reuse/software-raw-manifest.json) before any fresh
+reference. No real cost-loader coverage, timing benefit, training or strength
+admission follows. Publish and verify own evidence with an actual zero exit
+before the pair; source450 fingerprint/caps/seeds/failed gates remain unchanged.
+
+
+### November 17: complete context pair rejected; all raw retained
+
+Both source-qualified arms finish all three reads with child status
+`complete_context_reuse_diagnostic`, but the enclosing pair fails its joint
+consistency check (`ArithmeticError`). [All 27 raw members](../results/context-reuse/pair-raw-manifest.json)
+are retained unchanged, including the failed outer receipt/log. Public-own
+verification actually exited zero before collection; its exact receipt/log are
+retained with this batch. No source/seeds/work/caps/gates changed or scientific
+retry occurred. Publish failed evidence before diagnosis or timing interpretation.
+No valid-pair, runtime saving, training/default or strength admission is claimed.
+Journal130 records the failure and next decision; Codex-assisted, human time unknown.
+
+
+### November 17: rejected-pair diagnosis and negative result
+
+All 27 raw bytes public at `00c93ad`; separate rejected-publication verification
+exits zero without waiving the original gate. Both children complete three reads,
+432 profiles / 1,152 conditions / three workers. Context witness matches; four
+work counters alone differ (normalization requests/evaluations 918104→602980,
+validation-cache requests 8316→8220 / hits8290→8194). All remaining identity fields
+match exactly; maximum native scalar discrepancy1.8474111129762605e-13chips each.
+The old complete identity includes those work counts, so the original gate stays
+FAILED. The post-outcome projection is explicitly diagnosis, not new admission.
+
+Observed ordinary/reuse complete wall409.749993/486.746614s; parent CPU
+278.772282/356.275704; parallel-worker CPU369.053525/367.353604. Enclosing failed
+command900.544028/1800s; no deadline failure. Archive CPU43.217785/44.302908
+versus81.072654/81.525714 in the two dependent reads. Full-copy/witness checking
+shows no benefit here; one ordered rejected pair is not stable causal evidence.
+No unchanged-source pair retry, source/gate/cap/seed modification or model change.
+
+[Failure report and two inspected figures](context-reuse.md#rejected-comparison-and-diagnosis--november-17),
+[scripted data-only diagnosis](../results/context-reuse/diagnosis/manifest.json),
+four exports byte-identical on BOTH actual runtimes under 103 blocked paths,
+zero forbidden calls/raw unchanged. Original valid-pair parser still rejects.
+New actual-data regression preserves that rejection and the four-field diagnosis.
+Source450fingerprint unchanged. Journal130/current status and three explanation
+questions record the lesson. Next: final checks and protected publication, then
+another measured cost; no full-copy rollout, gate waiver, new training/default/
+forecast/strength claim. Codex-assisted; human time unknown.

@@ -1,0 +1,12 @@
+"""Actual-runtime wrapper for the exact frozen data-only negative report."""
+import hashlib,json,runpy,sys
+from pathlib import Path
+import numpy as np
+w=Path(__file__).resolve().parent;minor=sys.argv[1];assert minor in ('311','312');expected=('3.11.17','2.4.6') if minor=='311' else ('3.12.15','2.5.4');assert (sys.version.split()[0],np.__version__)==expected
+script=w/'report-context-reuse-rejected.py';assert hashlib.sha256(script.read_bytes()).hexdigest()=='306333c5726669a550abf6b91a86c4597fe884f39e7d244c6ae06d28f8628d04'
+r=w/'context-reuse';destination=w/f'context-reuse-verified-negative{minor}';sys.argv=[str(script),'--root',str(r),'--output',str(destination)];runpy.run_path(str(script),run_name='__main__');assert 'pyspiel' not in sys.modules
+names=['reads.csv','commands.csv','differences.csv','summary.json'];hashes={}
+for n in names:
+ b=(destination/n).read_bytes();assert b==(w/'context-reuse-rejected-report311'/n).read_bytes();hashes[n]=hashlib.sha256(b).hexdigest()
+v=dict(status='actual_runtime_negative_report_four_exports_byte_equal',python=sys.version.split()[0],numpy=np.__version__,executable=sys.executable,report_script_sha256=hashlib.sha256(script.read_bytes()).hexdigest(),numerical_sha256=hashes,valid_pair=False,original_gate_rejected=True,blocked_targets=103,forbidden_calls=0,reference_constructed=False)
+(w/f'context-reuse-negative-reproduction{minor}.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(v))

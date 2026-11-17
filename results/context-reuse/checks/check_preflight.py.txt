@@ -1,0 +1,34 @@
+"""Prelaunch failures retain outer clocks and cannot start a child."""
+import importlib.util,json,sys,time
+from pathlib import Path
+w=Path(__file__).resolve().parent;f=w/'context-reuse-preflight-fixtures';f.mkdir(exist_ok=False)
+spec=importlib.util.spec_from_file_location('budget_operator',w/'run-context-reuse-collection.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+rows=[]
+for kind in ('pass','rejected','interrupt','exhausted'):
+ marker=f/(kind+'-child');destination=f/kind
+ def check():
+  if kind=='rejected':raise ArithmeticError('own publication not verified')
+  if kind=='interrupt':raise KeyboardInterrupt()
+  if kind=='exhausted':time.sleep(.03)
+ result=m.run([sys.executable,'-c','from pathlib import Path;import sys;Path(sys.argv[1]).write_text("ran")',str(marker)],destination,.01 if kind=='exhausted' else 10,preflight=check)
+ expected=0 if kind=='pass' else 126 if kind=='rejected' else 130 if kind=='interrupt' else 124
+ assert result['returncode']==expected and marker.exists()==(kind=='pass')
+ assert (destination.with_name(destination.name+'-outer.json')).exists()
+ assert result['seconds']<10 and (result['pid'] is None)==(kind!='pass')
+ if kind=='exhausted':assert result['seconds']>=result['cap_seconds'] and result['status']=='failed_retained'
+ rows.append(dict(case=kind,code=expected,child_started=marker.exists(),outer_clock_retained=True))
+# Exercise the copied real main() wiring in an isolated fake repository.
+# The stub verifier rejects; the backend script deliberately does not exist.
+import shutil,subprocess
+case=f/'main-wiring';case.mkdir()
+shutil.copyfile(w/'run-context-reuse-collection.py',case/'launch_fixture.py')
+(case/'verify-context-reuse-publication.py').write_text("def verify(*args, **kwargs):\n raise ArithmeticError('unit own publication is not verified')\n")
+result=subprocess.run([sys.executable,str(case/'launch_fixture.py'),'pair'],capture_output=True)
+(case/'stdout.log').write_bytes(result.stdout);(case/'stderr.log').write_bytes(result.stderr)
+assert result.returncode==1
+receipt=case/'context-reuse/results/runs/context-reuse-20261117-pair-outer.json'
+raw=json.loads(receipt.read_text())
+assert raw['returncode']==126 and raw['pid'] is None and raw['cap_seconds']==1800
+assert not receipt.with_name('context-reuse-20261117-pair').exists()
+rows.append(dict(case='main_pair_preflight_wiring',code=126,child_started=False,outer_clock_retained=True))
+(f/'checks.json').write_text(json.dumps(rows,indent=2)+'\n');print(json.dumps(rows))

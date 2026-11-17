@@ -1,0 +1,23 @@
+"""Authenticate rejected raw bytes as REJECTED; never waive pair admission."""
+import hashlib,json,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+from compact_suit.admission import published
+import compare_context_reuse as runner
+folder=r/runner.FOLDER/'pair';manifest_path=folder.with_name('pair-raw-manifest.json');manifest=json.loads(manifest_path.read_text());original=Path(manifest['original_ignored_output']);outer=folder.with_name('pair-outer.json');log=folder.with_name('pair-outer.log')
+assert manifest['stage']=='pair' and manifest['status']=='failed_retained'
+raw=json.loads(outer.read_text());assert raw['status']=='failed_retained' and raw['returncode']!=0
+assert runner.digest(log)==raw['command_log_sha256']
+actual={str(p.relative_to(r)) for p in folder.rglob('*') if p.is_file()}|{str(outer.relative_to(r)),str(log.relative_to(r))}
+assert len(manifest['files'])==27 and {x['file'] for x in manifest['files']}==actual
+for row in manifest['files']:
+ p=r/row['file'];assert not p.is_symlink() and p.resolve().is_relative_to(r.resolve());b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256']
+ source=original/p.relative_to(folder) if p.is_relative_to(folder) else original.with_name(original.name+('-outer.json' if p==outer else '-outer.log'))
+ assert b==source.read_bytes();published(r,p)
+published(r,manifest_path)
+v=json.loads((folder/'pair.json').read_text());assert v['status']=='failed_retained' and v['failure_kind']=='ArithmeticError' and len(v['measurements'])==2
+for mode in ('ordinary','reuse'):
+ c=json.loads((folder/mode/'child.json').read_text());assert c['status']=='complete_context_reuse_diagnostic' and c['admission_evidence'] is False
+ for name,sha in c['raw_sha256'].items():assert runner.digest(folder/mode/name)==sha
+out=dict(status='public_rejected_pair_all27raw_bytes_verified',admission_evidence=False,valid_pair=False,pair_failure_kind=v['failure_kind'],complete_children=['ordinary','reuse'],scope='Byte/publication verification of a FAILED pair only. Original valid-pair parser remains unchanged and must reject this outcome. No timing or strength conclusion, no numerical replay or reference constructed.')
+(w/'context-reuse-rejected-publication.json').open('x').write(json.dumps(out,indent=2)+'\n');print(json.dumps(out))

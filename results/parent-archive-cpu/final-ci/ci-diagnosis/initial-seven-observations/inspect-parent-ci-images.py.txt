@@ -1,0 +1,24 @@
+"""Associate retained CI outcomes with printed images; correlation, not cause."""
+from pathlib import Path
+import re,json,hashlib,sys
+w=Path(__file__).resolve().parent
+root=Path(sys.argv[1]) if len(sys.argv)==2 else None
+source=(root/'results/parent-archive-cpu/checks/hosted') if root else w/'parent-archive-source-hosted'
+final=(root/'results/parent-archive-cpu/final-ci/hosted') if root else w/'parent-archive-final-hosted'
+cases=[('source311attempt1',source/'attempt1/hosted311.log'),('source311complete',source/'hosted311.log'),('source312complete',source/'hosted312.log'),('final311attempt1',final/'attempt1/hosted311.log'),('final312attempt1',final/'attempt1/hosted312.log'),('final311attempt2',final/'attempt2/hosted311.log'),('final312attempt2',final/'attempt2/hosted312.log')]
+rows=[]
+for name,p in cases:
+ b=p.read_bytes();lines=b.decode('utf-8-sig').splitlines();image=None;version=None
+ for i,line in enumerate(lines[:65]):
+  if 'Image: ubuntu-' in line:
+   image=line.split('Image: ',1)[1];version=lines[i+1].split('Version: ',1)[1];break
+ assert image and version
+ matches=[line for line in lines if '5220 passed, 69 skipped, 150 deselected' in line]
+ cancelled=any('##[error]The operation was canceled.' in line for line in lines)
+ assert bool(matches)!=cancelled
+ percentages=[int(m[1]) for line in lines if (m:=re.search(r'\[\s*(\d+)%\]',line))]
+ rows.append(dict(case=name,image=image,image_version=version,status='complete_base_pass' if matches else 'cancelled_partial',maximum_printed_progress_percent=max(percentages),result=matches[-1] if matches else None,file=str(p),sha256=hashlib.sha256(b).hexdigest()))
+result=dict(scope='Read-only association in these seven retained job logs. Image version is correlated with completion here; these are not independent controlled image/hardware experiments and do not establish a root cause, numerical error or playing strength.',rows=rows)
+output=w/'parent-archive-ci-images.json'
+if root:print(json.dumps(result,indent=2))
+else:output.open('x').write(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

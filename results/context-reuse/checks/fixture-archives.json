@@ -1,0 +1,1002 @@
+{
+  "context-reuse-operator-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "400c77b516cebd77b28a995593ee9a68eb73a622a044cb5204762fb985117a2e",
+      "bytes": 783
+    },
+    {
+      "file": "interrupt-outer.json",
+      "sha256": "4321f0ca1d199f56ef6a522adfd464082aa29579caad4f7e1f04f9c5ba9b217a",
+      "bytes": 1039
+    },
+    {
+      "file": "interrupt-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "missing-command-outer.json",
+      "sha256": "7b41f4334527a3cf6d52f50615dc925e1ac741aef28e50630f4e79b7923d9b3e",
+      "bytes": 733
+    },
+    {
+      "file": "missing-command-outer.log",
+      "sha256": "75ebe039d4299dda1ffcdd5810109b8a524c17fa2a287a20bce62425935a6329",
+      "bytes": 36
+    },
+    {
+      "file": "nested-timeout/owned-child.pid",
+      "sha256": "89e72f192dc75272ecc56016137baadaa80ea41ea6a616ce86308535e71cbb2c",
+      "bytes": 5
+    },
+    {
+      "file": "nested-timeout-outer.json",
+      "sha256": "408a486449f3319afe25a6f7264a9e10c420d9ca619d5b1970c77daffd73516d",
+      "bytes": 1488
+    },
+    {
+      "file": "nested-timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    },
+    {
+      "file": "nonzero/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "nonzero-outer.json",
+      "sha256": "73e1e24fe4d3045a72deed871fc539e6f981c5f446f3ecb89ecdea178134976c",
+      "bytes": 1054
+    },
+    {
+      "file": "nonzero-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "success/raw.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "bytes": 7
+    },
+    {
+      "file": "success-outer.json",
+      "sha256": "f961d7ae9b28a69ef13363b105f713d1bbb673d99b80a55f9751f1c2990b8a9b",
+      "bytes": 1047
+    },
+    {
+      "file": "success-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "timeout/partial.bin",
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    {
+      "file": "timeout-outer.json",
+      "sha256": "2169172cc2e46f758e90f8de11d3efd3f07b33d02fdf1341d9c9c67fd308cd36",
+      "bytes": 1166
+    },
+    {
+      "file": "timeout-outer.log",
+      "sha256": "6a27f08d9dd454bf9d2e48fbf5819245a91066550ec43615b95cc631163f2b2c",
+      "bytes": 92
+    }
+  ],
+  "context-reuse-retention-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "05640539236b8233f74d81d8657cb7b0e399b8da8eb1ff91ee708bc7f483cae4",
+      "bytes": 855
+    },
+    {
+      "file": "pair-complete/context-reuse/results/context-reuse/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/context-reuse/results/context-reuse/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/context-reuse/results/context-reuse/pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/context-reuse/results/context-reuse/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/context-reuse/results/context-reuse/pair-raw-manifest.json",
+      "sha256": "ea2e99300aa693b4bbb11f7b6367ba9f1d62868892c0f0c85f6578b97d89e3c3",
+      "bytes": 1229
+    },
+    {
+      "file": "pair-complete/context-reuse/results/runs/context-reuse-20261117-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-complete/context-reuse/results/runs/context-reuse-20261117-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-complete/context-reuse/results/runs/context-reuse-20261117-pair-outer.json",
+      "sha256": "f9dd9d443c174482cea26338718cc9a98009fd25711fbbd0c9427d4b13cbc0bb",
+      "bytes": 222
+    },
+    {
+      "file": "pair-complete/context-reuse/results/runs/context-reuse-20261117-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-complete/context-reuse/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/first.stdout",
+      "sha256": "6b6c19b8f2268f98afe0f18e8f1738ff974d414a7ea0acf4daf72aa0567a5aa6",
+      "bytes": 52
+    },
+    {
+      "file": "pair-complete/repeat.stderr",
+      "sha256": "2c69c406589a41eec977a11c234e8b660cf31f49d0fa0b1a85080b2e6561b2be",
+      "bytes": 386
+    },
+    {
+      "file": "pair-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-complete/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/context-reuse/pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/context-reuse/pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/context-reuse/pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/context-reuse/pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/context-reuse/pair-raw-manifest.json",
+      "sha256": "293354db1908f5b9aa658a6fba3f697f80110196b07c6d9b8e81ca87d00eac1e",
+      "bytes": 1243
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/runs/context-reuse-20261117-pair/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/runs/context-reuse-20261117-pair/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/runs/context-reuse-20261117-pair-outer.json",
+      "sha256": "3acdc4751acf03c2101c1e329b3bd313ae6d1e19bd99d0603a2335468012f322",
+      "bytes": 229
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/results/runs/context-reuse-20261117-pair-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "pair-failed_retained/context-reuse/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "pair-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/first.stdout",
+      "sha256": "ea5fa7548c22f60f5230603a96455f1ebeabe001914545e582e3cc5f25c6c390",
+      "bytes": 59
+    },
+    {
+      "file": "pair-failed_retained/repeat.stderr",
+      "sha256": "7bbde8106613a44dc70e4607ac406b648cd2200bff8f920c4c2d8a016ba5c0cb",
+      "bytes": 393
+    },
+    {
+      "file": "pair-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "pair-failed_retained/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "proof-complete/context-reuse/results/context-reuse/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/context-reuse/results/context-reuse/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "bd18ac0ccf5df250895ca3e604ad835c5cd77cdfda34b2c2594eb78026758f3d",
+      "bytes": 1248
+    },
+    {
+      "file": "proof-complete/context-reuse/results/runs/context-reuse-20261117-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-complete/context-reuse/results/runs/context-reuse-20261117-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-complete/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "42781cc1edf0db22bde9e8e050b31a5dd30f87b08d09d29d6de6cfb47fdf9a64",
+      "bytes": 221
+    },
+    {
+      "file": "proof-complete/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-complete/context-reuse/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-complete/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/first.stdout",
+      "sha256": "c54e0d831704133c2289b52c99edbe31e7dac08d06d95fbf093be52f3f7a4d30",
+      "bytes": 53
+    },
+    {
+      "file": "proof-complete/repeat.stderr",
+      "sha256": "f05a48a62b936d7080ac0ced0ab658cc796fb9d70aa8fafbbbac1b006ee897ff",
+      "bytes": 387
+    },
+    {
+      "file": "proof-complete/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-complete/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/context-reuse/software/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/context-reuse/software/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "b5febd04a2503cc6bbfaa12a21804cdbfdf4e50886f084d95912539fa586b60a",
+      "bytes": 1263
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/runs/context-reuse-20261117-proof/nested/failure.json",
+      "sha256": "f9798620289eae2589ba662d7cf596f1daae0560205930f0329834aa20106879",
+      "bytes": 21
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/runs/context-reuse-20261117-proof/partial.tmp",
+      "sha256": "7e9cd9eca6918d49039358c7ac9ef9841c77b6895d68ec4b28ccc613af7d7401",
+      "bytes": 23
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "5f88b7950d832e2b94a2e51004489bed8ddff4453347d125b8cdd866f64b7427",
+      "bytes": 228
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "7d5d1db8e36a1f33aa253b2c0347289b149190023296dc53b790ec77a74c502d",
+      "bytes": 33
+    },
+    {
+      "file": "proof-failed_retained/context-reuse/unrelated-output.txt",
+      "sha256": "72343c373dae4ca85d045311aee039484560fd4b52a99953945710c166b43818",
+      "bytes": 16
+    },
+    {
+      "file": "proof-failed_retained/first.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/first.stdout",
+      "sha256": "b1cdf9ea63603e535c13f9665b127b59e429714d07e68486b8d7c0d78d86c299",
+      "bytes": 60
+    },
+    {
+      "file": "proof-failed_retained/repeat.stderr",
+      "sha256": "756d6333e7ab90486b8b883a4e7297c735c05cdbe062de4467a7d551456d7e24",
+      "bytes": 394
+    },
+    {
+      "file": "proof-failed_retained/repeat.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "proof-failed_retained/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    }
+  ],
+  "context-reuse-publication-fixtures": [
+    {
+      "file": "bad_cap/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "f84c3c18fc486f3922736cb74910f8a5d52423d4c33eba8a41c14c8296693c39",
+      "bytes": 823
+    },
+    {
+      "file": "bad_cap/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "e905b7581d7d376a687ab0ad9e9fb8dac68912e05cc617aa436c1564eb17ccb8",
+      "bytes": 956
+    },
+    {
+      "file": "bad_cap/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bad_cap/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "f84c3c18fc486f3922736cb74910f8a5d52423d4c33eba8a41c14c8296693c39",
+      "bytes": 823
+    },
+    {
+      "file": "bad_cap/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bad_cap/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "bad_cap/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bad_cap/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_clock/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "5c497a9d0b1cdeaf42226e13d68dab0c1a7566626f9a3b91a0b2189ade018be3",
+      "bytes": 828
+    },
+    {
+      "file": "bool_clock/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "82af5375dfef8aa32b6a728fb5a9706302b5c5d049112d8afa6a89d3218dcb02",
+      "bytes": 958
+    },
+    {
+      "file": "bool_clock/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_clock/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "5c497a9d0b1cdeaf42226e13d68dab0c1a7566626f9a3b91a0b2189ade018be3",
+      "bytes": 828
+    },
+    {
+      "file": "bool_clock/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_clock/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "bool_clock/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_clock/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "6fbb9a865ccb0dc857adf6dd21c74258f0d707c91a97f678ed297f1d318a165d",
+      "bytes": 843
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "f8f3200543ee20513b160dc527d24d840ee2074e4373bde58f4fe0269dd4dcd6",
+      "bytes": 964
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "6fbb9a865ccb0dc857adf6dd21c74258f0d707c91a97f678ed297f1d318a165d",
+      "bytes": 843
+    },
+    {
+      "file": "bool_returncode/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "bool_returncode/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "bool_returncode/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "bool_returncode/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "checks.json",
+      "sha256": "cc7180fdefdaf9482a9da0766de4954bcba60a917b4da4c3c8c82288957841b4",
+      "bytes": 932
+    },
+    {
+      "file": "command/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "b0a2d7869229c765be405aee449d8e37e24bee6e8190611a4bf00a3ec8d3635c",
+      "bytes": 656
+    },
+    {
+      "file": "command/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "2e5321d959edfd3c789fb2d4406ab2923e9d797def458e0a1ed252370ea66bb0",
+      "bytes": 956
+    },
+    {
+      "file": "command/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "command/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "b0a2d7869229c765be405aee449d8e37e24bee6e8190611a4bf00a3ec8d3635c",
+      "bytes": 656
+    },
+    {
+      "file": "command/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "command/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "command/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "command/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "duplicate/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "1d271e9f796379b550919f60c6c573cc60ba139ec177ec2373b59434f97cc61a",
+      "bytes": 827
+    },
+    {
+      "file": "duplicate/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "c7242a37c1a72452f8a101c9c18d9bb6873d65663339caf7edc1529be2492007",
+      "bytes": 1104
+    },
+    {
+      "file": "duplicate/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "duplicate/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "1d271e9f796379b550919f60c6c573cc60ba139ec177ec2373b59434f97cc61a",
+      "bytes": 827
+    },
+    {
+      "file": "duplicate/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "duplicate/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "duplicate/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "duplicate/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "failed/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "bde60b2e222c9959eb3341570a7e519b9b4908bbd7620ac82d0693634e6d0e58",
+      "bytes": 828
+    },
+    {
+      "file": "failed/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "3c907468f83314d385fd3eab99992dac248efe0acf7b6122ce58d780d2e71815",
+      "bytes": 962
+    },
+    {
+      "file": "failed/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "failed/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "bde60b2e222c9959eb3341570a7e519b9b4908bbd7620ac82d0693634e6d0e58",
+      "bytes": 828
+    },
+    {
+      "file": "failed/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "failed/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "failed/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "failed/retention.stdout",
+      "sha256": "c40a02afbe01a78d0701586c39c7a6498520cfa6aaf663629c36d68f868dea62",
+      "bytes": 60
+    },
+    {
+      "file": "inventory/context-reuse/results/context-reuse/software/extra",
+      "sha256": "c8dee78f8c7b466c881847accc196998bad00e2b96c5ef913dfbe454d3807c96",
+      "bytes": 5
+    },
+    {
+      "file": "inventory/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "65fb39a3ec7e62bddb1f007e65e1924df2d7fa54a5ffd4d85b2fd0fe5169d1ff",
+      "bytes": 827
+    },
+    {
+      "file": "inventory/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "7c370c1bc11d5c69188d41515cb254559b8d0c823b3ae818ab69412c1de4a2ea",
+      "bytes": 957
+    },
+    {
+      "file": "inventory/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "inventory/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "65fb39a3ec7e62bddb1f007e65e1924df2d7fa54a5ffd4d85b2fd0fe5169d1ff",
+      "bytes": 827
+    },
+    {
+      "file": "inventory/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "inventory/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "inventory/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "inventory/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "nan/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "3f9fc169c6ca482b19250b5c4e53d2d629ca4aca47d768700040a48355b4cbda",
+      "bytes": 813
+    },
+    {
+      "file": "nan/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "9070b4d0043f9211da839ad9dd0c16c38c193e074058375d65b12e0243f2ab3a",
+      "bytes": 950
+    },
+    {
+      "file": "nan/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "nan/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "3f9fc169c6ca482b19250b5c4e53d2d629ca4aca47d768700040a48355b4cbda",
+      "bytes": 813
+    },
+    {
+      "file": "nan/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "nan/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "nan/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "nan/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "original/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "original/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "9301a0ce537c5d0f0ca248ed04dd796e64b899b6c0306d1d6bfc07ccfb097ac0",
+      "bytes": 825
+    },
+    {
+      "file": "original/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "ddef46e3fe6c2d48c78af3d76f51609f56792c64042e86a2877231d778cb6e7b",
+      "bytes": 957
+    },
+    {
+      "file": "original/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "905a3fed9382cefa2f10194744547db818ac2f36bd92bac3cde65f94ba7717c9",
+      "bytes": 18
+    },
+    {
+      "file": "original/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "9301a0ce537c5d0f0ca248ed04dd796e64b899b6c0306d1d6bfc07ccfb097ac0",
+      "bytes": 825
+    },
+    {
+      "file": "original/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "original/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "original/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "original/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    },
+    {
+      "file": "positive/context-reuse/results/context-reuse/software/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/context-reuse/results/context-reuse/software-outer.json",
+      "sha256": "8f5b6f7977e6549723e71da470d1a49203a2a0eb7720950417a95330cba68004",
+      "bytes": 825
+    },
+    {
+      "file": "positive/context-reuse/results/context-reuse/software-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/context-reuse/results/context-reuse/software-raw-manifest.json",
+      "sha256": "5107e19abc12f9b934704fd157d505cdf9734b8906051c25b0e8ff6589fc57bf",
+      "bytes": 957
+    },
+    {
+      "file": "positive/context-reuse/results/runs/context-reuse-20261117-proof/raw.partial",
+      "sha256": "4571bf081f45bf6268da6ad12b18e6a3e29984ded7d3adc3885f45cbe1c61e5e",
+      "bytes": 41
+    },
+    {
+      "file": "positive/context-reuse/results/runs/context-reuse-20261117-proof-outer.json",
+      "sha256": "8f5b6f7977e6549723e71da470d1a49203a2a0eb7720950417a95330cba68004",
+      "bytes": 825
+    },
+    {
+      "file": "positive/context-reuse/results/runs/context-reuse-20261117-proof-outer.log",
+      "sha256": "1d9e1c90946a58f9df0a0dc5380b56eb1ee71f4aec0b04b950dadc0e4519ae45",
+      "bytes": 27
+    },
+    {
+      "file": "positive/retain.py",
+      "sha256": "d12c0838855b36f79f635ef9ea15bb807f55296b324a5965b067b7fa51848026",
+      "bytes": 2201
+    },
+    {
+      "file": "positive/retention.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "positive/retention.stdout",
+      "sha256": "5512f416034c307b323db80ca5a769a75d34b4e7a165f3002bcfc76640b0b72a",
+      "bytes": 53
+    }
+  ],
+  "context-reuse-preflight-fixtures": [
+    {
+      "file": "checks.json",
+      "sha256": "a5d79b36aaf0be6e7346171d77ca68c31cafd98af66895a6fa88e09ae424167a",
+      "bytes": 571
+    },
+    {
+      "file": "exhausted-outer.json",
+      "sha256": "eb5f641931768aa0a67ebf941fb8cecd99de7a5dd408dafe62a8308d6fdc0c13",
+      "bytes": 982
+    },
+    {
+      "file": "exhausted-outer.log",
+      "sha256": "4c918a0d62192fd60d9df2b11e893588754c31435b7c9503c0706df88005f0ce",
+      "bytes": 48
+    },
+    {
+      "file": "interrupt-outer.json",
+      "sha256": "4fef7f4e6e6a664d6f9f07584fb8e0991e7815d1b39b6dfca8eb75265169b6c3",
+      "bytes": 985
+    },
+    {
+      "file": "interrupt-outer.log",
+      "sha256": "a33a6e5a1873ff3f021d8377586e952f133f54741de47e90a23b45ee3d644e70",
+      "bytes": 22
+    },
+    {
+      "file": "main-wiring/context-reuse/results/runs/context-reuse-20261117-pair-outer.json",
+      "sha256": "1201263d78dafcc48abfc9df9d46b6a9778b572eb3730b5610c5c834ab9bb555",
+      "bytes": 1188
+    },
+    {
+      "file": "main-wiring/context-reuse/results/runs/context-reuse-20261117-pair-outer.log",
+      "sha256": "f20d3784324ddd9c27363ccbecdae9ec6018552adcca4ac396ef40b7f8d7700e",
+      "bytes": 34
+    },
+    {
+      "file": "main-wiring/launch_fixture.py",
+      "sha256": "3cb3f32179cae6535423767cdab7b7a897144f98f3155ad25cdc2b211adc4d49",
+      "bytes": 7195
+    },
+    {
+      "file": "main-wiring/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "main-wiring/stdout.log",
+      "sha256": "8e921559490980768abf753d8dbe5bddb65105a0ab631e2019e2f4db6c5669bd",
+      "bytes": 1128
+    },
+    {
+      "file": "main-wiring/verify-context-reuse-publication.py",
+      "sha256": "06bed07772cb4db4d2d19a2116240cad401c0f9b2ba8675b2d34c24e7c46b35f",
+      "bytes": 92
+    },
+    {
+      "file": "pass-child",
+      "sha256": "c8fc6bf296faa18d058b23f9a467243a6f0a176f8d2c407e9c9ea06165da95f6",
+      "bytes": 3
+    },
+    {
+      "file": "pass-outer.json",
+      "sha256": "fbc14a0d71160057e309a5acd97c6a8473a3d112c32962aa251632623143c21b",
+      "bytes": 990
+    },
+    {
+      "file": "pass-outer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "rejected-outer.json",
+      "sha256": "71c37c8b971016f8798a793401aa851fc1194cf8e130aa903b2cbb2323da0e4e",
+      "bytes": 984
+    },
+    {
+      "file": "rejected-outer.log",
+      "sha256": "f20d3784324ddd9c27363ccbecdae9ec6018552adcca4ac396ef40b7f8d7700e",
+      "bytes": 34
+    }
+  ],
+  "context-reuse-guard-history": [
+    {
+      "file": "93-targets/guard-setup-311.json",
+      "sha256": "7ae99fb7a7c39365b8f42d3d65daeede59592d22549a951e10db21a188fbb323",
+      "bytes": 4664
+    },
+    {
+      "file": "93-targets/guard-setup-312.json",
+      "sha256": "aaf08db6ef7b0acafc39a6604b959d81c25bc1a3d792d60dde6453fd1302f9a1",
+      "bytes": 4664
+    }
+  ]
+}
