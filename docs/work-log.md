@@ -6343,3 +6343,11 @@ verification retained. Exact actual archived software replay, zero source roots,
 14 separately synthetic forwarding calls, full restoration; no reference or poker
 training constructed. Public-boundary verification remains before the one fixed
 complete pair; original rejected proof and blocked pair remain unchanged.
+
+
+November 17 — Corrected public own-proof verification passes before the one fixed
+complete ordinary/profiled pair. Both arms finish, exact complete scalar and
+computed-replay identity recorded; original caps and work retained. All 27
+raw pair members plus the prior own-publication verification are retained for
+publication before analysis. No retries or stage selection; no timing conclusion,
+new training or admission is claimed at this boundary.

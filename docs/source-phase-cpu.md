@@ -177,3 +177,10 @@ before/during observation and has zero source roots; separately labeled forwardi
 fixtures record 14 selected calls and full restoration. [All 13 raw files](../results/source-phase-cpu-v2/software-raw-manifest.json)
 are retained before any fresh reference. Public-boundary verification is next;
 this is not real cost-loader coverage or new independent poker mathematics.
+
+
+November 17 — The revised published own proof passes the corrected parser. Both
+complete audit arms finish under the original limits and record exact complete
+scalar/calculated-replay identity. [Every raw pair file](../results/source-phase-cpu-v2/pair-raw-manifest.json)
+is retained for publication before timing analysis. No source-stage conclusion
+or production admission is drawn yet.

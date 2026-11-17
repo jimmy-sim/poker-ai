@@ -6631,3 +6631,10 @@ actual saved software replay stays identical; the 14 nested calls belong to
 separately labeled forwarding fixtures. [The raw proof](../results/source-phase-cpu-v2/software-raw-manifest.json)
 will be published and verified before fresh reference comparison. No training
 or real cost-loader timing result is claimed by these fixtures.
+
+
+**November 17 — the complete comparison finishes.** Published own-proof
+verification passes with the startup-adjusted allowance. Both ordinary and
+instrumented audit arms finish, and their complete calculated results agree
+exactly. [All raw records](../results/source-phase-cpu-v2/pair-raw-manifest.json)
+are being published before interpreting which source-loading stage is expensive.
