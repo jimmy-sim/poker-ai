@@ -1,0 +1,37 @@
+"""Real tiny process fixtures, never poker or formal data collection."""
+import importlib.util,json,subprocess,sys,tempfile,time
+from pathlib import Path
+W=Path(__file__).resolve().parent
+p=W/'run-source-phases-collection.py';spec=importlib.util.spec_from_file_location('observer_operator_fixture',p)
+m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+folder=W/'source-phases-operator-fixtures';folder.mkdir(exist_ok=False)
+rows=[]
+for kind,code in [('success',0),('nonzero',7)]:
+ dest=folder/kind
+ command=[sys.executable,'-c','import pathlib,sys; pathlib.Path(sys.argv[1]).mkdir(); (pathlib.Path(sys.argv[1])/"raw.txt").write_bytes(b"fixture"); sys.exit(int(sys.argv[2]))',str(dest),str(code)]
+ actual=m.run(command,dest,10);assert actual['returncode']==code
+ try:m.run(command,dest,10)
+ except FileExistsError:pass
+ else:raise AssertionError('existing output accepted')
+ rows.append(dict(case=kind,returncode=actual['returncode'],status=actual['status']))
+for kind,cap,command in [
+ ('timeout',.25,[sys.executable,'-c','import pathlib,sys,time; pathlib.Path(sys.argv[1]).mkdir(); (pathlib.Path(sys.argv[1])/"partial.bin").write_bytes(b"partial"); time.sleep(10)',str(folder/'timeout')]),
+ ('interrupt',10,[sys.executable,'-c','import pathlib,sys,signal,os; pathlib.Path(sys.argv[1]).mkdir(); os.kill(os.getppid(),signal.SIGINT)',str(folder/'interrupt')])]:
+ actual=m.run(command,folder/kind,cap)
+ assert actual['returncode']==(124 if kind=='timeout' else 130) and actual['status']=='failed_retained'
+ rows.append(dict(case=kind,returncode=actual['returncode'],status=actual['status']))
+assert (folder/'timeout/partial.bin').read_bytes()==b'partial'
+# A separately grouped grandchild ignores both graceful signals; the operator
+# must kill the original owned group without relying on its parent's survival.
+nested=folder/'nested-timeout'
+child_code='import os,pathlib,signal,sys,time; signal.signal(signal.SIGINT,signal.SIG_IGN); signal.signal(signal.SIGTERM,signal.SIG_IGN); pathlib.Path(sys.argv[1]).write_text(str(os.getpid())); time.sleep(10)'
+parent_code='import pathlib,subprocess,sys,time; p=pathlib.Path(sys.argv[1]); p.mkdir(); subprocess.Popen([sys.executable,"-c",sys.argv[2],str(p/"owned-child.pid")],start_new_session=True); time.sleep(10)'
+actual=m.run([sys.executable,'-c',parent_code,str(nested),child_code],nested,.4)
+assert actual['returncode']==124 and 'cleanup_remaining' not in actual['failure_cleanup_groups']
+owned_pid=int((nested/'owned-child.pid').read_text());assert owned_pid not in m.forest()
+rows.append(dict(case='separately_grouped_ignoring_grandchild',returncode=actual['returncode'],status=actual['status']))
+missing=m.run(['/definitely-missing-observer-fixture-command'],folder/'missing-command',10)
+assert missing['returncode']==127 and missing['status']=='failed_retained' and missing['pid'] is None
+rows.append(dict(case='launch_failure',returncode=missing['returncode'],status=missing['status']))
+(folder/'checks.json').write_text(json.dumps(dict(status='all_six_real_process_operator_fixtures_pass',fixtures=rows,scope='Tiny subprocess behavior only; fixture caps do not replace scientific caps.'),indent=2)+'\n')
+print(json.dumps(rows))

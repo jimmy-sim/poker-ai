@@ -6556,3 +6556,13 @@ the declared 180-second limit. Both focused suites pass 118 tests (40.75 / 39.50
 The earlier software-check attempts are retained as interrupted or superseded,
 not completed qualification. No formal proof or source-loader measurement has
 run. The corrected source will receive complete new qualification.
+
+
+**November 16 — resumed after the saved checkpoint.** Both GitHub jobs pass,
+and their actual runtimes and complete source tree match the locally checked
+revision. All six source checks now qualify the tool: 5,004 base tests per local
+runtime, 1,909 optional tests per runtime, plus both hosted base suites.
+[The full record](../results/source-phase-cpu/checks.json) retains earlier failures
+and partial attempts. This establishes software readiness, not cheaper validation
+or a stronger strategy. Next is the own-only proof, published before fresh
+reference comparison. No source-loader timing result is claimed yet.

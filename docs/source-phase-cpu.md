@@ -88,3 +88,18 @@ This step introduces no optimizer, cache or new trajectory. One ordered diagnost
 pair cannot replace the production forecast or establish stable overhead, causal
 speedup or playing strength. The 912.54/900-second budget and 2.390%/1% accuracy
 failures remain.
+
+
+## Qualified source — November 16
+
+[All six source checks and tested operators](../results/source-phase-cpu/checks.json)
+qualify revision `f784551`: local bases pass 5,004 tests each (67 skipped,
+150 deselected), local optional suites pass 1,909 each, and both hosted jobs pass
+the same base inventory. Actual Python 3.11.17/NumPy 2.4.6 and Python
+3.12.15/NumPy 2.5.4, every uv runtime choice and the entire tested checkout tree
+match. Hosted test times are 1,281.09 / 1,009.46 seconds; the existing historical
+rounding warning remains. No new source-child proof or measurement has run.
+
+The nine exact tested operators, installed reference-license receipts, partial
+qualification histories and report-guard setup checks are retained. The next
+step verifies this publication before the single own-only proof.
