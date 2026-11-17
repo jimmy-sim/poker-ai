@@ -1,0 +1,28 @@
+"""Archive actual prototype checks; these do not admit the formal measurement."""
+import hashlib,json,re,shutil,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+import profile_receipt_cpu as runner
+c,s=runner.binding(r,clean=False);assert len(s['sha256'])==458 and s['fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+old=json.loads((w/'archive-reader-final-v2-expected.json').read_text());assert len(old['sha256'])==455
+for n,h in old['sha256'].items():assert s['sha256'][n]==h==hashlib.sha256((r/n).read_bytes()).hexdigest()
+q=r/'results/receipt-source-cpu/source-checks';q.mkdir(parents=True);files=[]
+def copy(p,d):
+ t=q/d;t.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,t);assert t.read_bytes()==p.read_bytes();files.append(dict(file=str(t.relative_to(q)),bytes=t.stat().st_size,sha256=hashlib.sha256(t.read_bytes()).hexdigest()))
+roles=[]
+for role in ('base311','base312','optional311','optional312'):
+ p=w/'receipt-cpu-focused'/(role+'.log');v=json.loads(p.with_name(role+'-receipt.json').read_text());log=p.read_text();assert v['status']=='passed'
+ assert re.findall(r'SOURCE_FINGERPRINT=([0-9a-f]{64})',log)==[s['fingerprint']]*2
+ assert re.findall('ACTUAL_PYTHON=([0-9.]+)',log)==[v['python']]*2 and re.findall('ACTUAL_NUMPY=([0-9.]+)',log)==[v['numpy']]*2
+ result=next(l for l in log.splitlines() if re.match(r'^\d+ passed',l));assert result.startswith('130 passed, 1 skipped' if role.startswith('base') else '131 passed')
+ copy(p,Path('focused')/p.name);copy(p.with_name(role+'-receipt.json'),Path('focused')/(role+'-receipt.json'));roles.append(dict(**v,result=result))
+for p in sorted(w.glob('receipt-cpu-*.log')):
+ if p.is_file() and p.name!='receipt-cpu-source-assembly.log':copy(p,Path('iterations')/p.name)
+for n in ('receipt-cpu-license311.json','receipt-cpu-license312.json','receipt-cpu-source-doc-review-final.json'):
+ copy(w/n,Path(n))
+copy(w/'run-receipt-cpu-focused.py',Path('operators/run_focused.py.txt'))
+copy(w/'check-receipt-cpu-docs-final.py',Path('operators/check_docs.py.txt'))
+copy(Path(__file__).resolve(),Path('operators/assemble_source_checks.py.txt'))
+(q/'manifest.json').write_text(json.dumps(dict(status='prototype_fixtures_runtime_source_and_provenance_checks_pass_formal_qualification_pending',source=s,all455_predecessor_scientific_files_unchanged=True,roles=roles,files=files,layout='Synthetic schema-fixture plots visually checked; exclusive legend moved outside axes. These are not experiment results.',retained_failures='Initial lint/import sorting/typing corrections and seven positive fixture failures from a copied legacy status label were corrected before publication; no scientific measurement occurred. Initial obsolete copied config tree fields were corrected and explicit contract guards added before publication.',formal_own_proof_performed=False,new_complete_measurement_performed=False,poker_training_performed=False,scope='Prepublication software fixtures, source hashes, license check and layout review only; no source admission or stronger-agent claim.'),indent=2)+'\n')
+(w/'receipt-cpu-precommit-source.json').write_text(json.dumps(s,indent=2)+'\n')
+print(json.dumps(dict(files=len(files),source_files=458,fingerprint=s['fingerprint'],roles=roles)))

@@ -6806,3 +6806,49 @@ both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
 reader/config/guard, all 455 scientific bytes and original five-export result
 remain unchanged. Full qualification must now pass on the corrected head without
 the masking path override. No CI, dependency or scientific-rule change.
+
+
+### November 17: archive-reader investigation verified; measure current receipt CPU
+
+[PR #88](https://github.com/jimmy-sim/poker-ai/pull/88) is history-merged at
+`2ac57b4a3f1ea02073b280e5d115009115f648a0`, preserving the source-before-data
+commits. Corrected head `f078d2a` passes both bases (5,434 / 70 skipped / 150
+deselected; 772.20/741.54 seconds), both optional suites (2,342 each;
+488.81/423.50 seconds) and both hosted jobs (5,434 each, one existing warning;
+1329.88/1125.82 seconds). Actual patch/NumPy, all uv selections and the entire
+tested/merged tree match. Initial source/report CI import failures and interrupted
+local checks are retained, not counted. Corrected local checks use no extra
+`PYTHONPATH`.
+
+Main passes 774 focused tests in 179.23 seconds; five numerical exports match
+under 104 blocks/zero forbidden calls and all 15 raw files remain unchanged.
+The original context-reuse gate still rejects. All ten actual user file bytes,
+status, changed-path index entries and both patches remain preserved after
+verification. The [44-member closing archive](../results/archive-reader-edges/final-ci/manifest.json)
+accompanies this substantive next step.
+
+The [prospective current-receipt plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6958619644)
+fixes five caller boundaries and thirty selected calls/sixty events across the
+original three-read pipeline. The observer adapts the existing framework without
+changing its historical source, and adds elapsed/parent/reaped-child clock
+reconciliation. All checks still run; no cache or new training. The
+[method](receipt-source-cpu.md) and journal133 explain the difference between
+historical elapsed costs and current CPU. Full source qualification and formal
+proof remain pending; no complete comparison has started. Existing 900/1800/180/120
+limits, scientific inputs, seeds and acceptance rules are unchanged. Codex-assisted;
+human hands-on time not recorded.
+
+
+Receipt observer foundation: both actual base environments pass 130 focused
+cases with one plotting skip (23.65/23.54 seconds); both optional environments
+pass 131 with real OpenSpiel preloaded (35.66/35.86 seconds). Runtime/source
+checks bracket each run, with no extra launcher `PYTHONPATH`. Strict typing829,
+lint/format and prototype documentation checks pass. Initial copied fixture
+status, configuration metadata and typing issues were corrected before source
+publication and retained. Synthetic plot layouts were inspected and the
+exclusive-time legend moved outside the data. No plotted fixture values are
+experimental results. The installed OpenSpiel 2.0.2 licenses match the recorded
+Apache-2.0 hash in both environments. All 455 prior scientific bytes are
+unchanged; new458 fingerprint `b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d`.
+Full exact-head qualification and checked published own proof must precede the
+new complete comparison; no collection has started.

@@ -1,0 +1,22 @@
+{"command": ["uv", "sync", "--locked", "--dev"]}
+Resolved 47 packages in 9ms
+Uninstalled 1 package in 2ms
+Installed 1 package in 10ms
+ - poker-ai==0.1.0 (from file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse-final-checkout)
+ + poker-ai==0.1.0 (from file:///Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse)
+{"command": ["uv", "run", "--locked", "python", "-c", "import sys,pathlib,numpy,poker_ai\nsys.path.insert(0,str(pathlib.Path.cwd()/'scripts'))\nimport profile_receipt_cpu as reader\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(pathlib.Path.cwd()/'src')\nc,s=reader.binding(reader.ROOT,clean=False)\nassert len(s['sha256'])==458 and len(c['input_sha256'])==128\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('SOURCE_FINGERPRINT='+s['fingerprint']);print('DIRTY_PROTOTYPE='+str(s['dirty']))\nprint('Prototype fixtures only; formal published-source checks/proof/measurement pending')\n"]}
+ACTUAL_PYTHON=3.11.17
+ACTUAL_NUMPY=2.4.6
+SOURCE_FINGERPRINT=b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d
+DIRTY_PROTOTYPE=True
+Prototype fixtures only; formal published-source checks/proof/measurement pending
+{"command": ["uv", "run", "--locked", "pytest", "-q", "tests/test_receipt_cpu_support.py", "tests/test_receipt_cpu_runner.py"]}
+........................................................................ [ 54%]
+...................................s.......................              [100%]
+130 passed, 1 skipped in 23.65s
+{"command": ["uv", "run", "--locked", "python", "-c", "import sys,pathlib,numpy,poker_ai\nsys.path.insert(0,str(pathlib.Path.cwd()/'scripts'))\nimport profile_receipt_cpu as reader\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(pathlib.Path.cwd()/'src')\nc,s=reader.binding(reader.ROOT,clean=False)\nassert len(s['sha256'])==458 and len(c['input_sha256'])==128\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('SOURCE_FINGERPRINT='+s['fingerprint']);print('DIRTY_PROTOTYPE='+str(s['dirty']))\nprint('Prototype fixtures only; formal published-source checks/proof/measurement pending')\n"]}
+ACTUAL_PYTHON=3.11.17
+ACTUAL_NUMPY=2.4.6
+SOURCE_FINGERPRINT=b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d
+DIRTY_PROTOTYPE=True
+Prototype fixtures only; formal published-source checks/proof/measurement pending

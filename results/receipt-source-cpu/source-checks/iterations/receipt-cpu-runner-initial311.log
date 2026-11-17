@@ -1,0 +1,592 @@
+.................................................F...................... [ 62%]
+...................s.......FFFFF........F..                              [100%]
+=================================== FAILURES ===================================
+____________________ test_complete_positive_own_publication ____________________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_complete_positive_own_pub0'), {'sha256': {}})
+
+    def test_complete_positive_own_publication(
+        own_publication_fixture: tuple[Path, dict[str, Any]],
+    ) -> None:
+        root, source = own_publication_fixture
+        assert (
+>           runner.own_published(root, source)["file"]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            == runner.FOLDER + "/software/child.json"
+        )
+
+tests/test_receipt_cpu_runner.py:278: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_complete_positive_own_pub0')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+_____________ test_startup_adjusted_inner_allowance_accepted[180] ______________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al0'), {'sha256': {}})
+cap = 180
+
+    @pytest.mark.parametrize("cap", [180, 180.0, 179.9989877909975, 179.5, 100.0])
+    def test_startup_adjusted_inner_allowance_accepted(
+        own_publication_fixture: tuple[Path, dict[str, Any]], cap: float
+    ) -> None:
+        root, source = own_publication_fixture
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        assert measurement["seconds"] < cap
+        measurement["cap_seconds"] = cap
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:914: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al0')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+____________ test_startup_adjusted_inner_allowance_accepted[180.0] _____________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al1'), {'sha256': {}})
+cap = 180.0
+
+    @pytest.mark.parametrize("cap", [180, 180.0, 179.9989877909975, 179.5, 100.0])
+    def test_startup_adjusted_inner_allowance_accepted(
+        own_publication_fixture: tuple[Path, dict[str, Any]], cap: float
+    ) -> None:
+        root, source = own_publication_fixture
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        assert measurement["seconds"] < cap
+        measurement["cap_seconds"] = cap
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:914: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al1')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+______ test_startup_adjusted_inner_allowance_accepted[179.9989877909975] _______
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al2'), {'sha256': {}})
+cap = 179.9989877909975
+
+    @pytest.mark.parametrize("cap", [180, 180.0, 179.9989877909975, 179.5, 100.0])
+    def test_startup_adjusted_inner_allowance_accepted(
+        own_publication_fixture: tuple[Path, dict[str, Any]], cap: float
+    ) -> None:
+        root, source = own_publication_fixture
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        assert measurement["seconds"] < cap
+        measurement["cap_seconds"] = cap
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:914: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al2')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+____________ test_startup_adjusted_inner_allowance_accepted[179.5] _____________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al3'), {'sha256': {}})
+cap = 179.5
+
+    @pytest.mark.parametrize("cap", [180, 180.0, 179.9989877909975, 179.5, 100.0])
+    def test_startup_adjusted_inner_allowance_accepted(
+        own_publication_fixture: tuple[Path, dict[str, Any]], cap: float
+    ) -> None:
+        root, source = own_publication_fixture
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        assert measurement["seconds"] < cap
+        measurement["cap_seconds"] = cap
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:914: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al3')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+____________ test_startup_adjusted_inner_allowance_accepted[100.0] _____________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al4'), {'sha256': {}})
+cap = 100.0
+
+    @pytest.mark.parametrize("cap", [180, 180.0, 179.9989877909975, 179.5, 100.0])
+    def test_startup_adjusted_inner_allowance_accepted(
+        own_publication_fixture: tuple[Path, dict[str, Any]], cap: float
+    ) -> None:
+        root, source = own_publication_fixture
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        assert measurement["seconds"] < cap
+        measurement["cap_seconds"] = cap
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:914: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_startup_adjusted_inner_al4')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+_____________ test_cli_remaining_allowance_round_trips_publication _____________
+
+own_publication_fixture = (PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_cli_remaining_allowance_r0'), {'sha256': {}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d5ce5d0>
+
+    def test_cli_remaining_allowance_round_trips_publication(
+        own_publication_fixture: tuple[Path, dict[str, Any]],
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        from types import SimpleNamespace
+    
+        root, source = own_publication_fixture
+        ticks = iter((100.0, 100.0010122090025))
+        monkeypatch.setattr(
+            runner, "time", SimpleNamespace(perf_counter=lambda: next(ticks))
+        )
+        monkeypatch.setattr(
+            sys, "argv", ["unit", "proof", "--output", "results/runs/unit-budget"]
+        )
+        captured = []
+    
+        def supervise(command: Any, output: Path, cap: float) -> dict[str, Any]:
+            captured.append(cap)
+            return dict(returncode=0)
+    
+        monkeypatch.setattr(runner.previous, "supervise", supervise)
+        assert runner.main() == 0 and len(captured) == 1
+        assert 179 < captured[0] < 180
+        path = root / runner.FOLDER / "software/measurement.json"
+        measurement = json.loads(path.read_text())
+        measurement["cap_seconds"] = captured[0]
+        runner.atomic(path, measurement)
+>       assert runner.own_published(root, source)["file"].endswith("software/child.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_receipt_cpu_runner.py:973: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-100/test_cli_remaining_allowance_r0')
+source = {'sha256': {}}
+
+    def own_published(root: Path, source: dict[str, Any]) -> dict[str, Any]:
+        import receipt_cpu_support as support
+        from compact_suit.admission import published
+        from profile_compact_replay import authenticate_source
+    
+        folder = root / FOLDER / "software"
+        if any(p.is_symlink() for p in folder.rglob("*")) or {
+            str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()
+        } != {
+            "child.json",
+            "proof.json",
+            "measurement.json",
+            "command.log",
+            "observer.json",
+        } | {
+            f"read-{i}{suffix}" for i in range(3) for suffix in (".json", "-events.jsonl")
+        }:
+            raise ArithmeticError("complete explicit own phase proof inventory required")
+        child = json.loads((folder / "child.json").read_text())
+        proof_data = json.loads((folder / "proof.json").read_text())
+        measurement = json.loads((folder / "measurement.json").read_text())
+        if (
+            child["status"] != "complete_own_only_receipt_source_proof"
+            or child["config_sha256"] != CONFIG_SHA
+            or child["source"]["sha256"] != source["sha256"]
+            or child["proof_sha256"] != digest(folder / "proof.json")
+            or child["reference_constructed"] is not False
+            or child["poker_training_performed"] is not False
+            or child["admission_evidence"] is not False
+            or type(measurement["returncode"]) is not int
+            or measurement["returncode"] != 0
+            or measurement["interrupted"] is not None
+            or type(measurement["cap_seconds"]) not in (int, float)
+            or not math.isfinite(measurement["cap_seconds"])
+            or not 0 < measurement["cap_seconds"] <= 180
+            or type(measurement["seconds"]) not in (int, float)
+            or not 0 < measurement["seconds"] < measurement["cap_seconds"]
+            or measurement["child_sha256"] != digest(folder / "child.json")
+            or type(measurement["child_pid"]) is not int
+            or measurement["child_pid"] != child["pid"]
+            or proof_data["status"]
+            != "actual_archived_software_replay_and_separate_forwarding_fixtures"
+            or canonical(proof_data["actual_read_indices"]) != canonical([0])
+            or canonical(proof_data["root_forwarded_indices"]) != canonical([1, 2])
+            or canonical(proof_data["synthetic_read_indices"]) != canonical([1, 2])
+            or proof_data["real_cost_loader_coverage"] is not False
+            or proof_data["independent_new_poker_math"] is not False
+            or proof_data["reference_constructed"] is not False
+            or proof_data["poker_training_performed"] is not False
+            or canonical(proof_data["plain_computed_replays"])
+            != canonical(proof_data["observed_computed_replays"])
+            or len(proof_data["plain_computed_replays"]) != 1
+        ):
+>           raise ArithmeticError("publish complete source-bound own phase proof first")
+E           ArithmeticError: publish complete source-bound own phase proof first
+
+scripts/profile_receipt_cpu.py:392: ArithmeticError
+=========================== short test summary info ============================
+FAILED tests/test_receipt_cpu_runner.py::test_complete_positive_own_publication
+FAILED tests/test_receipt_cpu_runner.py::test_startup_adjusted_inner_allowance_accepted[180]
+FAILED tests/test_receipt_cpu_runner.py::test_startup_adjusted_inner_allowance_accepted[180.0]
+FAILED tests/test_receipt_cpu_runner.py::test_startup_adjusted_inner_allowance_accepted[179.9989877909975]
+FAILED tests/test_receipt_cpu_runner.py::test_startup_adjusted_inner_allowance_accepted[179.5]
+FAILED tests/test_receipt_cpu_runner.py::test_startup_adjusted_inner_allowance_accepted[100.0]
+FAILED tests/test_receipt_cpu_runner.py::test_cli_remaining_allowance_round_trips_publication
+7 failed, 107 passed, 1 skipped in 19.11s

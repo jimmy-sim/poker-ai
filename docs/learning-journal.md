@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
+
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
 
 - [Read the saved call graph before measuring again](#131-read-the-saved-call-graph-before-measuring-again)
@@ -132,7 +134,9 @@ checking also takes more time in that run. It is not deployed. PR #86 is merged;
 its six final checks and protected-main verification are complete. The next
 [saved call-graph investigation](earlier-source-profile.md) now points into an
 earlier archive reader using existing evidence. The [next query](archive-reader-edges.md)
-fixes seven archive-check functions before extracting their values. Earlier source-stage details remain in
+now traces the earlier archive into repeated receipt checks. The
+[current timer foundation](receipt-source-cpu.md) will test their present CPU
+cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -7061,3 +7065,48 @@ both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
 reader/config/guard, all 455 scientific bytes and original five-export result
 remain unchanged. Full qualification must now pass on the corrected head without
 the masking path override. No CI, dependency or scientific-rule change.
+
+
+## 133. Measure the repeated receipt checks
+
+November 17, 2026. Codex-assisted implementation, tests and explanation.
+
+**Question:** checking a saved experiment also checks its older evidence. The
+saved profile points toward repeated receipt and context checks. How much CPU
+do they use now, while every original check still runs?
+
+**Change:** the [new observer](receipt-source-cpu.md) follows five caller
+boundaries inside the complete reader. It records elapsed time, parent CPU and
+CPU accumulated for finished child processes. It preserves original calls and
+restores its hooks after failures. It does not cache a verdict or skip math.
+
+**Example:** a parent call's five CPU seconds can include four seconds in its
+children. Its remaining one second is exclusive time. Adding the parent's five
+to the children's four would count work twice. Child-process CPU is another
+separate clock, not a part to subtract from parent-process CPU.
+
+**Checks and outcome:** independent clocks and miniature module aliases test
+forwarding, thirty selected calls, sixty events and failure restoration. The
+complete-runner fixtures cover source/proof checks, retained failures and the
+startup-adjusted allowance parser. Formal source qualification and a new complete
+measurement remain pending; test clocks are not experimental results.
+
+**Next decision:** measure the current receipt paths before proposing reuse.
+The prior runtime and accuracy failures stay failed. No new stronger strategy,
+personal practice or human hours are claimed.
+
+PR88 is complete: both local bases pass 5,434 tests, optional suites 2,342 each,
+and both hosted jobs pass. Main passes 774 focused tests in 179.23 seconds and
+reproduces five exact exports under 104 blocks without raw changes. All ten
+unrelated edits remain preserved after verification. The [closing records](../results/archive-reader-edges/final-ci/manifest.json)
+retain the initial CI import failures and complete corrected-head qualification.
+
+
+Step133 foundation check: 130 focused cases pass in each base environment, with
+one optional plotting skip. Both optional environments pass 131 cases with a
+reference already loaded in the parent; the actual archived software fixture
+still runs in a fresh child. Strict typing covers 829 files and lint/format pass.
+Initial copied fixture status and typing errors were corrected and retained.
+All 455 earlier scientific files stay unchanged. Full published-source checks
+and a new complete measurement are still pending; this is not evidence of a
+faster or stronger agent.

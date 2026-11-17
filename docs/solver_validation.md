@@ -90,6 +90,12 @@ OpenSpiel's native library is a comparison reference, not a replacement for the
 own Python mechanics/training core. TexasSolver and postflop-solver were not used.
 No Gambit implementation is used; EFG is the interchange format only.
 
+November 17, 2026: the complete installed OpenSpiel 2.0.2 license was reread
+for the [current receipt-CPU diagnostic](receipt-source-cpu.md). Both actual
+optional environments retain the same 11,358-byte license and SHA256 above.
+No native measurement has run at this source-foundation stage; the reference
+remains comparison-only and no dependency or solver code changes.
+
 November 6, issue #4: the full installed OpenSpiel 2.0.2 Apache-2.0 license was
 read again before the [public-board comparison](public-board-comparison.md).
 Its native expected-return/best-response functions check frozen own policies and
