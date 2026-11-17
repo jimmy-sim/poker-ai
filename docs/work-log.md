@@ -6509,3 +6509,27 @@ strength. Next question: verify identical repeated contexts and safe reuse befor
 an optimization; none deployed here. Final four local/two same-head hosted roles
 remain before merge. Existing failures, caps/seeds and AI-assistance attribution
 remain; human hands-on time not recorded.
+
+
+### November 17: close archive profiling and plan isolated context reuse
+
+PR #85 is history-merged at `575c4596bf49a7bf3047167f3ae3dd690ad4a273`.
+All six final roles pass the exact tested whole tree: bases 5,220 / 69 skipped /
+150 deselected each, optional 2,127 each; final hosted 3.11 takes 1005.47 seconds
+and 3.12 1053.37. Cancelled attempts and carried-success execution provenance
+remain in [the closing archive](../results/parent-archive-cpu/final-ci/manifest.json).
+A successful 3.11 run on the previously implicated image version refutes image
+version alone as the cause. Actual main passes 559 focused tests (116.33 seconds),
+authenticates all 27 raw files and regenerates three numerical exports exactly.
+Ten unrelated user result bytes/statuses/index entries/both patches remain intact.
+
+The next [prospective protocol](context-reuse.md) tests isolated root-local reuse
+of repeated contexts, preserving all 447 scientific files, 128 pins, seeds,
+180/900/1800-second caps and original complete scoring/reference work. No
+implementation or new collection exists at this boundary. Exact graph/array
+mutation isolation, six requests/two misses/four hits per reuse arm, cleanup,
+complete qualification, own-before-reference and raw-before-analysis are fixed.
+Journal step130 explains the question in plain English. One diagnostic pair
+cannot admit a production default, fresh trajectory or stronger agent. Prior
+912.54/900 runtime and 2.390%/1% accuracy gates remain failed. Codex-assisted
+planning/checking/drafting; human hands-on time not recorded.

@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test safe reuse of repeated contexts](#130-test-safe-reuse-of-repeated-contexts)
+
 - [Separate the work inside archive validation](#129-separate-the-work-inside-archive-validation)
 
 - [Follow the stages inside source loading](#128-look-inside-the-input-loader)
@@ -119,8 +121,9 @@ The nested follow-up now locates most source CPU in sampled-parent archive
 validation (37–39 seconds) and earlier scientific-source checks (33–34 seconds).
 The complete calculated results stay identical. The [nested archive check](parent-archive-cpu.md#what-the-complete-comparison-found--november-17)
 now separates context construction, state reconstruction/scoring and prior full
-verification. The next question is whether repeated contexts can be reused safely,
-without skipping validation. Earlier source-stage details remain in
+verification. The next [prospective experiment](context-reuse.md) tests whether repeated
+contexts can be reused safely, without skipping validation. PR #85 is merged;
+its final checks and protected-main verification are complete. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6782,3 +6785,41 @@ runtimes with 73 numerical entry points blocked, zero forbidden calls and raw
 files unchanged. Both figures were inspected. One ordered pair is not a stable
 speedup estimate, a production forecast or a stronger-agent result. Final checks
 remain before merge; the old runtime and accuracy failures remain.
+
+
+**November 17 — final checks and main are verified.** PR #85 is merged at
+`575c459` after all four local and both hosted roles pass on the full tested tree.
+The earlier hosted timeouts remain archived; the eventual successful Python 3.11
+job used the same image version as a failed job, so image version alone does not
+explain the slowdown. Main passes 559 focused tests in 116.33 seconds and
+reproduces all three numerical exports exactly. All 27 raw files and ten unrelated
+local result changes remain unchanged. [Closing receipts](../results/parent-archive-cpu/final-ci/manifest.json).
+
+## 130. Test safe reuse of repeated contexts
+
+November 17, 2026 — prospective experiment, with Codex assistance.
+
+**Question:** can one archive check build the same game description once and use
+separate copies for later requests, without changing any validation result?
+The last measurement found about 24% of archive CPU in two explicit context
+builds. That identifies repeated work; it does not measure a possible saving.
+
+**Change planned:** [reuse only within one archive check](context-reuse.md),
+check the actual input files on every request, and give each caller an isolated
+copy. A context describes the game tree, legal actions and information groups.
+The saved policies, scoring and independent comparison still run in full.
+
+**Example:** if a caller changes its copy of an array, the next caller must still
+receive the original values. A frozen dataclass does not prevent an array inside
+it from changing, so simply sharing the same object is insufficient.
+
+**Checks and result:** no cache or fresh result exists yet. The plan requires
+full object/array equality, mutation isolation, failure cleanup, the exact request
+inventory and complete source qualification before an own-only proof. Own proof
+must be published before the fixed comparison. Unsupported objects cause a
+retained failure rather than silently changing the experiment.
+
+**Next decision:** retain the complete measured outcome, including any lack of
+saving. Correct reuse could support a later runtime forecast; this experiment
+cannot establish a stronger agent or waive the existing runtime/accuracy targets.
+Human hands-on time is not recorded; no new personal practice is inferred.

@@ -1,0 +1,33 @@
+"""Check affected documentation destinations, anchors, fences and markers."""
+import json,re,subprocess,unicodedata
+from pathlib import Path
+from urllib.parse import unquote
+w=Path(__file__).resolve().parent;r=w/'parent-archive-cpu';names=['README.md','docs/parent-archive-cpu.md','docs/learning-journal.md','docs/work-log.md'];files=[];anchors=[];images=[]
+def headings(path):
+ seen={};result=set();fenced=False
+ for line in path.read_text().splitlines():
+  if line.startswith('```'):fenced=not fenced;continue
+  m=re.match(r'^#{1,6}\s+(.+?)\s*#*$',line)
+  if fenced or not m:continue
+  text=re.sub(r'<[^>]+>','',m[1]).lower();slug=''.join(c for c in text if c in '-_ ' or unicodedata.category(c)[0] in 'LN');slug=slug.replace(' ','-');n=seen.get(slug,0);seen[slug]=n+1;result.add(slug+('-'+str(n) if n else ''))
+ result.update(re.findall(r'<a\s+(?:id|name)=["\']([^"\']+)',path.read_text()))
+ return result
+for name in names:
+ p=r/name;text=p.read_text();assert sum(line.startswith('```') for line in text.splitlines())%2==0,name
+ for match in re.finditer(r'(!?)\[[^\]]*\]\(([^)]+)\)',text):
+  image,dest=match.groups()
+  if dest.startswith(('https:','http:','mailto:')):continue
+  target,_,anchor=dest.partition('#');q=(p.parent/unquote(target)).resolve() if target else p
+  assert q.is_file() or q.is_dir(),(name,dest)
+  files.append(dict(source=name,destination=dest))
+  if image:images.append(dict(source=name,destination=dest))
+  affected=(name=='docs/parent-archive-cpu.md' or '129-' in anchor or 'parent-archive-cpu.md#' in dest)
+  if anchor and affected:
+   assert unquote(anchor) in headings(q),(name,dest)
+   anchors.append(dict(source=name,destination=dest))
+ if name!='docs/parent-archive-cpu.md':
+  before=subprocess.check_output(['git','-C',str(r),'show','b852436:'+name],text=True)
+  assert re.findall(r'<!--.*?-->',before,re.S)==re.findall(r'<!--.*?-->',text,re.S),name
+subprocess.run(['git','-C',str(r),'diff','--check','b852436..805b3ea','--','docs'],check=True)
+v=dict(status='affected_docs_files_images_anchors_fences_and_markers_verified',checked_commit=subprocess.check_output(['git','-C',str(r),'rev-parse','HEAD'],text=True).strip(),documents=names,relative_destinations=len(files),images=len(images),new_or_affected_anchors=anchors,fences_balanced=True,old_markers_preserved=True,scope='Affected README/journal/work log/new report local destinations; all new or affected local heading anchors. Historical unaffected/external anchors not re-audited.')
+(w/'parent-archive-doc-review.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(v))

@@ -1,0 +1,116 @@
+{
+  "status": "all_six_final_roles_pass_actual_runtime_and_entire_tested_tree",
+  "checked_commit": "805b3eaf27398ede2293e1347c2a50db5760d17f",
+  "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+  "tested_checkout": "ec6020dbb5f5bb89e460111872b0b6b2b5235e29",
+  "tested_tree": "2baa5a19de2bd288fc994320b1cbc6dedb8b41e8",
+  "entire_tree_equals_head": true,
+  "run_id": 44080893080,
+  "checks": [
+    {
+      "role": "base311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5220 passed, 69 skipped, 150 deselected in 722.13s (0:12:02)",
+      "receipt": {
+        "role": "base311",
+        "status": "passed",
+        "checked_commit": "805b3eaf27398ede2293e1347c2a50db5760d17f",
+        "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Final software and saved-data qualification, not a new scientific comparison",
+        "check_seconds": 735.5749487089997,
+        "setup_and_check_seconds": 736.8303998750052
+      },
+      "log_sha256": "15eeca9720be1f77342f9f4e63e875d777c4d7b721bbd26570adf840d8f6583b"
+    },
+    {
+      "role": "base312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5220 passed, 69 skipped, 150 deselected in 695.43s (0:11:35)",
+      "receipt": {
+        "role": "base312",
+        "status": "passed",
+        "checked_commit": "805b3eaf27398ede2293e1347c2a50db5760d17f",
+        "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Final software and saved-data qualification, not a new scientific comparison",
+        "check_seconds": 712.8700781250009,
+        "setup_and_check_seconds": 713.6210516249994
+      },
+      "log_sha256": "2471bf309055aa2abcbe9d17a499eeaa3a3c79784c196275ee5f9d6fa7440ae8"
+    },
+    {
+      "role": "optional311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2127 passed in 416.99s (0:06:56)",
+      "receipt": {
+        "role": "optional311",
+        "status": "passed",
+        "checked_commit": "805b3eaf27398ede2293e1347c2a50db5760d17f",
+        "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "scope": "Final software and saved-data qualification, not a new scientific comparison",
+        "check_seconds": 420.1411274159982,
+        "setup_and_check_seconds": 420.1665410839996
+      },
+      "log_sha256": "085181cbdd4641ab795598592c6a032532b7b6233f81c719dc1bf35688b0fe13"
+    },
+    {
+      "role": "optional312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2127 passed in 356.06s (0:05:56)",
+      "receipt": {
+        "role": "optional312",
+        "status": "passed",
+        "checked_commit": "805b3eaf27398ede2293e1347c2a50db5760d17f",
+        "source_fingerprint": "3c343e8f8963a4d73e0ea6a277db13d57f06918ba45cb1d5216be151e7089e5d",
+        "python": "3.12.15",
+        "numpy": "2.5.4",
+        "scope": "Final software and saved-data qualification, not a new scientific comparison",
+        "check_seconds": 359.5083588749985,
+        "setup_and_check_seconds": 359.53507129100035
+      },
+      "log_sha256": "1b5e6d903c3d6431e6b63a241f72b4fd29dec9ea60a5bc6b466e18b4825c2202"
+    },
+    {
+      "role": "hosted311",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-17T13:28:25.5841955Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1005.47s (0:16:45)",
+      "job_id": 134062922553,
+      "runner_image": "ubuntu-24.04",
+      "runner_image_version": "20261111.370.1",
+      "workflow_attempt": 3,
+      "actual_execution_job_id": 134062922553,
+      "actual_execution_attempt": 3,
+      "reused_prior_success": false,
+      "log_bytes": 49003,
+      "log_sha256": "225b59527f28a6945e1dc39ffb445e1e81a7a709887bd8394d353988ba2c7a4e"
+    },
+    {
+      "role": "hosted312",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-17T12:57:43.3336486Z 5220 passed, 69 skipped, 150 deselected, 1 warning in 1053.37s (0:17:33)",
+      "job_id": 134062925530,
+      "runner_image": "ubuntu-24.04",
+      "runner_image_version": "20261111.127.1",
+      "workflow_attempt": 3,
+      "actual_execution_job_id": 134045623062,
+      "actual_execution_attempt": 2,
+      "reused_prior_success": true,
+      "log_bytes": 49942,
+      "log_sha256": "c0a317af67294d5585647a7891f44f9dddbaa480a4990370ee59f8694a8c9bda"
+    }
+  ],
+  "initial_final_hosted_timeouts_retained": true,
+  "workflow_attempt": 3,
+  "scope": "Final software/data qualification after retained25-minute cancellations and unchanged-source software retries; carried3.12 retains actual execution identity; not production forecast or new poker training"
+}
