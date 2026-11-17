@@ -6823,3 +6823,23 @@ retained failure rather than silently changing the experiment.
 saving. Correct reuse could support a later runtime forecast; this experiment
 cannot establish a stronger agent or waive the existing runtime/accuracy targets.
 Human hands-on time is not recorded; no new personal practice is inferred.
+
+
+**November 17 — the local correctness implementation passes.** Both actual
+runtimes pass all 160 focused tests, including plotting (60.80 / 72.90 seconds).
+Strict typing passes 820 files; lint and formatting pass. The tests cover exact
+array bits/layouts, nested game states, isolated caller mutations, changed input
+bytes, partial iterators, reentrancy and restoration after failure. Independent
+terminal recursion and exhaustive pure replies agree on the tiny Kuhn fixture.
+A malformed-input test initially used a writer that correctly refused NaN before
+the reader could see it; the fixture now supplies deliberately invalid input to
+test rejection by the reader as intended.
+
+The whole runner keeps all prior source/input pins and full numerical work.
+Both arms must match complete context witnesses, not only scalar results.
+Root timing includes discarding the template; prior-iterator timing includes work
+done by its consumer between yields. Six launcher, five preflight, four retention
+and ten publication cases pass. All 103 saved-report guards resolve and restore
+on both runtimes without numerical execution. Full immutable local/hosted source
+qualification comes next. These are correctness checks, not a measured speedup,
+new formal proof or evidence of a stronger strategy.

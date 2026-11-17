@@ -6533,3 +6533,31 @@ Journal step130 explains the question in plain English. One diagnostic pair
 cannot admit a production default, fresh trajectory or stronger agent. Prior
 912.54/900 runtime and 2.390%/1% accuracy gates remain failed. Codex-assisted
 planning/checking/drafting; human hands-on time not recorded.
+
+
+### November 17: isolated context reuse implementation and focused checks
+
+Draft [PR #86](https://github.com/jimmy-sim/poker-ai/pull/86) implements the
+prospectively specified root-local reuse without altering any of the 447 previous
+scientific files or 128 input pins. New helper/entry/config bind 450 files. Exact
+graph copying includes nested MatrixTree/SpotTree/engine state, array bits/layout/
+flags and internal aliases. Each caller gets isolated mutable objects; cache and
+aliases clear on exit, callback reentrancy rejects, and releasing the template is
+inside the root clock. Both arms must share their complete context witness and
+historical calculated-result identity. No policies or reference answers are cached.
+
+Both actual runtimes pass 160 focused tests (60.80 / 72.90 seconds), including
+saved-data plots, full receipt/clock/corruption tests and independent tiny-game
+terminal/pure-reply sums. Strict typing passes 820 files; lint/821-file format
+check pass. Initial malformed-NaN test failed in its strict writer rather than the
+reader; corrected fixture directly writes invalid input and now tests the reader.
+Six real tiny process, five preflight, four retention and ten synthetic publication
+cases pass. The 103 report guards resolve/patch/restore on both actual runtimes,
+zero forbidden calls. Earlier 93-target setup receipts remain retained as history.
+
+This source publication precedes full four-role immutable local/two-role hosted
+qualification, administrative-tool publication, formal own proof and comparison.
+No fresh formal proof, reference comparison, training or performance admission has
+started. Original caps/seeds/gates remain fixed. Codex-assisted implementation,
+execution and drafting; personal hands-on time not recorded. Journal step130
+explains the change and limits.

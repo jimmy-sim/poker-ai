@@ -175,3 +175,24 @@ entry points are blocked, with zero forbidden calls and unchanged raw inputs.
 Inspect every figure. Final four local and two same-head hosted roles precede a
 history-preserving merge and protected-main checks. No production/default rollout
 or fresh Hold'em trajectory follows this diagnostic alone.
+
+
+## Implementation and review — November 17
+
+The isolated implementation uses a bounded graph copier and witnesses every
+supported field, array layout and internal alias. Only the declared caller-held
+module/function aliases are installed. Event-callback reentrancy rejects before
+construction, and the root clock includes releasing the cached template.
+The prior iterator clock includes decoding performed by its consumer between
+yields; it must not be described as pure context-construction time.
+
+The new config retains all 128 original input pins and binds 450 scientific files
+while preserving all 447 predecessor bytes. Both arms must produce identical
+full context witnesses as well as the complete historical numerical identity.
+The runner retains actual read boundaries, raw events and worker clocks, marks
+all output diagnostic-only, and authenticates the full saved pair before export.
+No fresh formal proof or comparison has run yet. The 103 saved-report guards
+cover construction, numerical work, clones, caller hooks and captured aliases;
+all resolve and restore on both actual runtimes with zero forbidden calls.
+Six process, five preflight, four retention and ten synthetic-publication cases
+pass. Full immutable local and hosted source qualification remains required.
