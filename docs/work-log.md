@@ -6733,3 +6733,76 @@ scientific files and every reported numerical byte are unchanged. Complete
 local/optional/hosted checks must now pass on the corrected head. No scientific
 retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
 human hands-on time not recorded.
+
+
+### November 17: earlier-source reader fully qualified; follow its archive checks
+
+[PR #87](https://github.com/jimmy-sim/poker-ai/pull/87) is history-merged at
+`23848b7d523127c50e7a9105c23274f9f80c2552`. Exact corrected head `b9213e3` passes
+both local bases (5,411 passed, 70 skipped, 150 deselected; 758.71/726.27 seconds),
+both optional suites (2,319 each; 485.50/423.26 seconds) and both hosted base jobs
+(5,411 each; 1093.67/1164.38 seconds). Actual patch/NumPy and all hosted uv
+selections match, and the whole tested and merged trees agree. The earlier failed
+optional cohort remains retained, not counted. The fresh-child isolation fix
+changes no reader, guard, config or numerical result.
+
+Main passes 751 focused tests in 189.69 seconds, reproduces all five exports
+byte-for-byte with 104 blocks/zero calls and preserves all 15 raw files. The
+original context-reuse gate still rejects. All ten actual user edits, status,
+changed-path index entries and both patches are preserved after verification.
+The [39-member closing archive](../results/earlier-source-profile/final-ci/manifest.json)
+retains final checks and main proof with this next substantive milestone.
+
+The [prospective follow-up](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6957605618)
+fixes seven archive-check definitions before additional values are extracted.
+A thin query reuses the existing authenticated graph and direct-edge calculation;
+it retains every original identity/edge and checks producer source coordinates.
+The [method and terminal commands](archive-reader-edges.md) distinguish saved
+receipt checking from new training, imported names from defining identities and
+historical elapsed time from current CPU. Journal step132 explains the question.
+All 53 focused tests pass on both actual runtimes; strict typing covers 825
+files and lint/format pass. Both 104-target setups and four entry-exit fixtures
+pass. Initial import-mode, fixture and typing errors were corrected and retained.
+Selected values remain unextracted; full final checks and data reproduction wait
+for source publication.
+No new profiler, solver, trajectory, cache, dependency, CI or scientific-rule
+change. Codex assisted; human time not recorded.
+
+
+### November 17: fixed archive-reader selection reproduced on both runtimes
+
+After public source `b26374f`, both actual readers complete with 104 blocks,
+zero forbidden calls and 15 raw files unchanged. All five numerical exports are
+byte-identical. Every original frame/edge and selected source coordinate remains
+checked. [Full result and table generator](archive-reader-edges.md#historical-result--november-17)
+retain the output, hashes and caller scope.
+
+The historical reader's direct admission edge records 107.961533 seconds and
+its direct prerequisite edge 17.361320. Prerequisites receive two direct reader
+calls and twelve from receipt-profile checking. These are nested elapsed-stack
+aggregates including waits, not current CPU or savings. Small row/grid checks
+are not the large direct component. Next follow nested receipt/context checks;
+no cache, new measurement, new training or failed-rule waiver. The fresh-child
+real-data regression checks parent reference refusal and five exact exports.
+Complete final local/optional/hosted checks remain pending. Journal132 updated;
+Codex-assisted work, no human hours/practice inferred.
+
+
+Pre-final verification: all 54 focused cases pass with real OpenSpiel deliberately
+preloaded in the parent on both runtimes (1.31/1.29 seconds); the fresh children
+retain all 104 blocks and five exact exports. Strict typing covers 825 files,
+lint/format and 539 documentation destinations pass. Full final checks remain
+pending. These are software/data checks, not new training or strength evidence.
+
+
+November 17 qualification correction: both hosted jobs at `b5a58d4` fail test
+collection because the new test imports scripts before establishing their path.
+The local launcher's extra `PYTHONPATH` masked this portability error. Both local
+base runs were stopped and retained; no final or optional success is counted.
+[Failed jobs and partial local checks](../results/archive-reader-edges/failed-qualification-b5/manifest.json)
+retain the evidence. The fix changes only the test's scripts-path setup, following
+existing repository tests. With `PYTHONPATH` absent, all 54 focused cases pass on
+both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
+reader/config/guard, all 455 scientific bytes and original five-export result
+remain unchanged. Full qualification must now pass on the corrected head without
+the masking path override. No CI, dependency or scientific-rule change.

@@ -1,0 +1,13 @@
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/test_archive_reader_edges.py ______________
+ImportError while importing test module '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/tests/test_archive_reader_edges.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/test_archive_reader_edges.py:11: in <module>
+    from test_earlier_source_profile import graph
+E   ModuleNotFoundError: No module named 'test_earlier_source_profile'
+=========================== short test summary info ============================
+ERROR tests/test_archive_reader_edges.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.13s

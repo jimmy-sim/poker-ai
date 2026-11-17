@@ -1,0 +1,10 @@
+"""History merge only after exact-head six-role and whole-tree verification."""
+import json,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;h=w/'earlier-source-final-v2-hosted';head='b9213e327cc57733559033d84db605271fd8eb31';base='f5bde46daa540f89f4b8aafd313e100ca52b57be'
+def api(path,*args):return subprocess.check_output(['gh','api',path,*args],text=True)
+v=json.loads((h/'verified.json').read_text());assert v['status']=='all_six_final_roles_pass_actual_runtime_and_entire_tested_tree' and v['checked_commit']==head and len(v['checks'])==6
+p=json.loads(api('repos/jimmy-sim/poker-ai/pulls/87'));(h/'premerge-pr.json').open('x').write(json.dumps(p,indent=2)+'\n');assert p['state']=='open' and p['draft'] is False and p['mergeable'] is True and p['mergeable_state']=='clean';assert p['head']['sha']==head and p['base']['sha']==base
+payload=h/'merge-request.json';payload.open('x').write(json.dumps(dict(sha=head,merge_method='merge'))+'\n')
+result=json.loads(api('repos/jimmy-sim/poker-ai/pulls/87/merge','--method','PUT','--input',str(payload)));(h/'merge.json').open('x').write(json.dumps(result,indent=2)+'\n');assert result['merged'] is True
+c=json.loads(api('repos/jimmy-sim/poker-ai/git/commits/'+result['sha']));(h/'merge-commit.json').open('x').write(json.dumps(c,indent=2)+'\n');assert [x['sha'] for x in c['parents']]==[base,head] and c['tree']['sha']==v['tested_tree'];print(json.dumps(dict(merged=result['sha'],entire_merge_tree_equals_checked_head=True,checked_head=head)))

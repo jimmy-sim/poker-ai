@@ -1,0 +1,9 @@
+Historical elapsed-stack seconds including waits; nested totals overlap.
+1: src/poker_ai/evaluation/reduced_study_run.py:269 read_saved; 2 calls; self 0.000159s; inclusive 125.551543s
+2: src/poker_ai/evaluation/reduced_study_protocol.py:243 require_admission; 2 calls; self 0.000515s; inclusive 107.961533s
+3: src/poker_ai/evaluation/reduced_study_protocol.py:198 expected_admission; 2 calls; self 0.000804s; inclusive 107.960776s
+4: src/poker_ai/evaluation/frozen_batch_inputs.py:89 prerequisites; 14 calls; self 0.004033s; inclusive 121.853417s
+5: src/poker_ai/evaluation/averaging_history_inputs.py:129 load; 14 calls; self 0.193814s; inclusive 121.683246s
+6: src/poker_ai/evaluation/frozen_batch_validation.py:183 gather; 4 calls; self 0.001370s; inclusive 0.001726s
+7: src/poker_ai/evaluation/frozen_batch_validation.py:154 grid; 2 calls; self 0.000457s; inclusive 0.041550s
+{"python": "3.12.15", "numpy": "2.5.4", "executable": "/private/tmp/poker-ai-context-reuse-final-20261117/base312/bin/python", "checked_commit": "b26374f71d1a85e9f4b58b919fe3c909c1c44e81", "source_fingerprint": "a1010763771b89787862a27a39daeabac0404079901281371e3ecc0f0182db25", "source_files": 455, "source_clean": true, "operator_sha256": "b0d467e80feed26df3f4e2c29b0e42631502618236b1aa650988bf451f2fb723", "reference_constructed": false, "new_profiler_constructed": false, "poker_training_performed": false, "admission_evidence": false, "status": "saved_data_only_report_complete_104_guards", "forbidden_calls": 0, "raw_unchanged": true, "raw_files": 15, "failure": null}

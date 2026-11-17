@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
+
 - [Read the saved call graph before measuring again](#131-read-the-saved-call-graph-before-measuring-again)
 
 - [Test safe reuse of repeated contexts](#130-test-safe-reuse-of-repeated-contexts)
@@ -129,7 +131,8 @@ counters change and the complete-identity requirement fails. Full copying and
 checking also takes more time in that run. It is not deployed. PR #86 is merged;
 its six final checks and protected-main verification are complete. The next
 [saved call-graph investigation](earlier-source-profile.md) now points into an
-earlier archive reader using existing evidence, before adding another instrument. Earlier source-stage details remain in
+earlier archive reader using existing evidence. The [next query](archive-reader-edges.md)
+fixes seven archive-check functions before extracting their values. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Earlier failures and their original conditions stay in the entries below.
 
@@ -6995,3 +6998,66 @@ checks all five exact exports. All 31 focused cases pass on both runtimes with
 that preloaded state. The [failed cohort](../results/earlier-source-profile/failed-qualification-03/manifest.json)
 remains available. Full requalification follows; no guard is relaxed and no
 scientific data or strategy changes.
+
+
+## 132. Follow the earlier archive checks
+
+November 17, 2026. Codex-assisted query, tests and explanation.
+
+**Question:** the saved profile points into an older archive reader. Is its work
+in checking prior admission receipts, loading saved contexts or checking worker
+rows? The [fixed seven-function query](archive-reader-edges.md) follows those
+paths using the same retained graph, before another measurement.
+
+**Change:** a thin terminal query reuses the authenticated reader and original
+caller-edge calculation. It checks the actual defining source of imported
+functions, retains all original frames/edges, and refuses changed inputs,
+ambiguous identities and unsupported recursion. No training or profiler starts.
+
+**Example:** an imported function can be called `inputs.prerequisites` in one
+file while its definition is in another. Looking under the importing file would
+miss it. The query pins the defining file instead of substituting a similar name.
+
+**Checks and outcome:** all 53 focused tests pass on both actual runtimes;
+strict typing passes for 825 files. Both 104-target guard setups and four
+entry-exit fixtures pass. Initial test-import, fixture and typing failures were
+corrected before publication and retained. Full final checks remain pending. Selected historical values remain unextracted until checked
+source is published. The data reproduction must preserve all raw inputs and
+match across actual runtimes with construction/profiling blocked.
+
+**Next decision:** inspect the direct costs before proposing a change. This is
+historical elapsed time including waits, not current CPU or a demonstrated
+speedup. Both prior runtime and accuracy failures remain. There is no new claim
+about playing strength or personal learning; human hands-on time is not recorded.
+
+
+Step132 result, November 17: after source publication, both guarded reads produce
+five byte-identical exports without construction or raw changes. The historical
+reader records 125.552 inclusive elapsed seconds. Its direct admission-check edge
+is 107.962 and its direct prerequisite-load edge is 17.361. These nested values
+include waits; they are not current CPU or demonstrated savings. Prerequisites
+serve two direct reader calls and twelve receipt-profile-check calls. The
+[complete result](archive-reader-edges.md#historical-result--november-17) keeps all
+edges so that shared costs are not assigned to just one caller. Next inspect the
+nested receipt checks; no cache or stronger strategy has been admitted. Final
+software checks remain pending; human practice/time not recorded.
+
+
+Pre-final verification: all 54 focused cases pass with real OpenSpiel deliberately
+preloaded in the parent on both runtimes (1.31/1.29 seconds); the fresh children
+retain all 104 blocks and five exact exports. Strict typing covers 825 files,
+lint/format and 539 documentation destinations pass. Full final checks remain
+pending. These are software/data checks, not new training or strength evidence.
+
+
+November 17 qualification correction: both hosted jobs at `b5a58d4` fail test
+collection because the new test imports scripts before establishing their path.
+The local launcher's extra `PYTHONPATH` masked this portability error. Both local
+base runs were stopped and retained; no final or optional success is counted.
+[Failed jobs and partial local checks](../results/archive-reader-edges/failed-qualification-b5/manifest.json)
+retain the evidence. The fix changes only the test's scripts-path setup, following
+existing repository tests. With `PYTHONPATH` absent, all 54 focused cases pass on
+both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
+reader/config/guard, all 455 scientific bytes and original five-export result
+remain unchanged. Full qualification must now pass on the corrected head without
+the masking path override. No CI, dependency or scientific-rule change.

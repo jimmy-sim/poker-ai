@@ -1,0 +1,101 @@
+{
+  "status": "b5_not_qualified_hosted_script_import_collection_failure_local_checks_interrupted",
+  "checked_commit": "b5a58d459b2074ab7454b9b412520a25621ef193",
+  "hosted_run": 44153675169,
+  "reason": "New test imported scripts before its path setup. Extra local PYTHONPATH masked collection error. Both hosted jobs failed; partial local groups stopped with SIGTERM/143, not counted as successful or mathematical failures. No optional roles started.",
+  "fix": "Test-only scripts directory setup; qualification rerun will remove the extra PYTHONPATH. No reader/config/guard/scientific changes.",
+  "source_files_455_unchanged": true,
+  "data_reproduction_at_b263_stays_valid": true,
+  "files": [
+    {
+      "file": "hosted/hosted311.log",
+      "bytes": 41445,
+      "sha256": "77d1c199ab6389358f6a06f2ef57d409c25004f8830ec5b63d1cba1f79266da4"
+    },
+    {
+      "file": "hosted/hosted312.log",
+      "bytes": 41568,
+      "sha256": "0c6ece13a0b66478aae455111f1f2c31a1200a5b7105128fb736a6407fa235d4"
+    },
+    {
+      "file": "hosted/jobs-official.json",
+      "bytes": 5144,
+      "sha256": "1d3ce6d4955608da773da25d4534eed00e43a356c8c76e8684401aedc928fa3a"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12675,
+      "sha256": "650ec9b8f487ca202f500cc722acb5103b25e2daec761cb80a92b5d09f50f9c9"
+    },
+    {
+      "file": "partial-local/base311-install.log",
+      "bytes": 350,
+      "sha256": "f4f46526c419247813135f6fd6cbf87414413eda3b7bee41903a1d21977fa0c7"
+    },
+    {
+      "file": "partial-local/base311.log",
+      "bytes": 3823,
+      "sha256": "92a017f6042fe0bc01c2b5b41d6388465943aae8a166ca85f84a99ad515fe50e"
+    },
+    {
+      "file": "partial-local/base312-install.log",
+      "bytes": 56,
+      "sha256": "c9f31cf88a54b9bdcedf221774797640a6e2e287f6e68d380e1ee74fe866614f"
+    },
+    {
+      "file": "partial-local/base312.log",
+      "bytes": 3847,
+      "sha256": "11cf5f39e69cf84d91685f24131666938e45b134bf822dcde6384c6f4c356151"
+    },
+    {
+      "file": "archive-reader-final-expected.json",
+      "bytes": 53760,
+      "sha256": "a6f85230a293270665546c91faa38f7bf128b337a41a2a670f3666ee86dd1ccf"
+    },
+    {
+      "file": "archive-reader-interrupted-local.json",
+      "bytes": 345,
+      "sha256": "30b6fb842a89b9315c0ea09391c511b6f4b9eec406729a3ce0d25b36d4c6831b"
+    },
+    {
+      "file": "archive-reader-final-lane311.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "archive-reader-final-lane312.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "archive-reader-corrected-no-path311.log",
+      "bytes": 99,
+      "sha256": "1d9806dc283dd681f5c60d6a8b1e263f7aa10396920bf34b9f32236166a156bd"
+    },
+    {
+      "file": "archive-reader-corrected-no-path312.log",
+      "bytes": 99,
+      "sha256": "4d4feb84b03edf12968d53c37ccc12b9b877ef0a0fc24c798066e4c0a10193a9"
+    },
+    {
+      "file": "archive-reader-corrected-mypy.log",
+      "bytes": 45,
+      "sha256": "0f7f343d145c24a84610e4b60ff1af37dda4b2575ad4203f498d51adf973538c"
+    },
+    {
+      "file": "operators/run-archive-reader-final-checks.py.txt",
+      "bytes": 6329,
+      "sha256": "0dfc1a14238ee9bf605b0953a6ffb67368e27957d4a507e276feeb2b549e829d"
+    },
+    {
+      "file": "operators/run-archive-reader-final-lane.py.txt",
+      "bytes": 456,
+      "sha256": "4a0e923cf811a41a1450b51c9ed271bb5e00090c99ec1f8614cd883e83dc05c1"
+    },
+    {
+      "file": "partial-local/software-processes.txt",
+      "bytes": 3016,
+      "sha256": "3afc01f8b19f13bcb7991f0128b6c6fe824917a47bf7e76b73d2e0fb071a822f"
+    }
+  ]
+}

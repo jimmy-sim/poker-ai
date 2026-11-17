@@ -1,0 +1,46 @@
+"""Verify merged own evidence and user-change preservation after actual checks."""
+import ast,csv,hashlib,io,json,os,subprocess,sys
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=Path('/Users/jimmysim/Projects/poker-ai');snapshot=Path(sys.argv[1]);expected=sys.argv[2];m=json.loads((snapshot/'manifest.json').read_text())
+env=dict(os.environ,PYTHONPATH=str(r/'src')+os.pathsep+str(r/'scripts'),MPLCONFIGDIR=str(w/'earlier-source-main-mpl'));py=str(r/'.venv/bin/python')
+guard="import sys,numpy,poker_ai,pathlib;assert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6';assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(pathlib.Path.cwd()/'src');print('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)"
+subprocess.run([py,'-c',guard],cwd=r,env=env,check=True)
+with (w/'earlier-source-main-tests.log').open('x') as log:subprocess.run([py,'-m','pytest','-q','tests/test_checkpoint_observer.py','tests/test_checkpoint_cpu.py','tests/test_reader_phase_observer.py','tests/test_reader_phase_cpu.py','tests/test_source_phase_observer.py','tests/test_source_phase_cpu.py','tests/test_source_phase_cpu_v2.py','tests/test_parent_archive_observer.py','tests/test_parent_archive_cpu.py','tests/test_context_reuse.py','tests/test_context_reuse_runner.py','tests/test_earlier_source_profile.py'],cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+script="""import ast,hashlib,json,pathlib,pkgutil,sys
+from contextlib import ExitStack
+from unittest.mock import patch
+import compare_context_reuse as predecessor
+import earlier_source_profile_support as reader
+import inspect_earlier_source_profile as cli
+from poker_ai.evaluation.compact_opponent_guard import isolated
+from poker_ai.postflop.learning_artifacts import sha
+r=pathlib.Path.cwd();_,source=predecessor.binding(r,clean=False)
+assert len(source['sha256'])==450 and source['fingerprint']=='901415dc66139b48866bdf07dba9231e63fbaf3d0267d87af33b31028e4999a9'
+assert pathlib.Path(reader.__file__).resolve()==r/'scripts/earlier_source_profile_support.py' and cli.ROOT==r
+for name in ('scripts/earlier_source_profile_support.py','scripts/inspect_earlier_source_profile.py','configs/earlier-source-profile.json'):source['sha256'][name]=hashlib.sha256((r/name).read_bytes()).hexdigest()
+assert len(source['sha256'])==453 and sha(source['sha256'])=='60fd4402b14c429f94370f02dc65eaac7792f831f6ecca01e668ddbfb6d95b53'
+tree=ast.parse((r/'results/context-reuse/checks/report_execution_guard.py.txt').read_text());blocked=ast.literal_eval(next(n.value for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in n.targets)))+['cProfile.Profile'];assert len(set(blocked))==104
+attempts=[]
+def forbidden(*a,**k):attempts.append('forbidden');raise AssertionError('main saved-data check attempted construction/profiling')
+folder=r/'results/compact-native-wall-profile/pair';before={str(p.relative_to(folder)):hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.rglob('*') if p.is_file()};assert len(before)==15
+out=pathlib.Path(sys.argv[1]);descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+with isolated(worker=False),ExitStack() as stack:
+ for name in blocked:pkgutil.resolve_name(name)
+ for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+ result=reader.write_report(r,out,cli.contract(r))
+ try:predecessor.saved_pair(r,r/predecessor.FOLDER/'pair')
+ except ArithmeticError:pass
+ else:raise AssertionError('historical context-reuse gate unexpectedly accepted')
+assert not attempts and 'pyspiel' not in sys.modules
+assert before=={str(p.relative_to(folder)):hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.rglob('*') if p.is_file()}
+hashes={}
+for name in ('all-functions.csv','all-callers.csv','selected-functions.csv','selected-edges.csv','summary.json'):
+ raw=(out/name).read_bytes();assert raw==(r/'results/earlier-source-profile/report'/name).read_bytes();hashes[name]=hashlib.sha256(raw).hexdigest()
+print(json.dumps(dict(status='earlier_source_saved_profile_five_exports_byte_equal_without_construction',source_fingerprint=sha(source['sha256']),source_files=453,numerical_sha256=hashes,original_frames=result['frame_count'],original_edges=result['edge_count'],raw_members=15,raw_unchanged=True,blocked_targets=104,forbidden_calls=0,original_context_reuse_gate_still_rejected=True,reference_constructed=False,new_profiler_constructed=False,poker_training_performed=False)))
+"""
+with (w/'earlier-source-main-data.log').open('x') as log:subprocess.run([py,'-c',script,str(w/'earlier-source-main-report')],cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+namespace=dict(snapshot=snapshot,m=m,root=r,hashlib=hashlib,subprocess=subprocess)
+parsed=ast.parse((w/'ff-main-session.py').read_text());exec(compile(ast.Module(body=[node for node in parsed.body if isinstance(node,ast.FunctionDef)],type_ignores=[]),'preservation_only','exec'),namespace);namespace['preserved']()
+head=subprocess.check_output(['git','-C',str(r),'rev-parse','HEAD'],text=True).strip();assert head==expected
+result=dict(status='merged_main_fixtures_and_saved_callgraph_verified_user_changes_preserved',head=head,actual_python='3.11.17',actual_numpy='2.4.6',focused_result=(w/'earlier-source-main-tests.log').read_text().splitlines()[-1],saved_data=json.loads((w/'earlier-source-main-data.log').read_text().splitlines()[-1]),user_changed_paths=len(m['files']),bytes_status_changed_path_index_and_both_patches_preserved=True,scope='Saved-data and software fixture verification; no new reference, training or admission')
+(w/'earlier-source-main-verified.json').open('x').write(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

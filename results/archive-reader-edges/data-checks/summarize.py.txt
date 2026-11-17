@@ -1,0 +1,14 @@
+"""Render all seven fixed rows and caller scope from the exported numeric tables."""
+import argparse,csv,json
+from pathlib import Path
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+s=json.loads((a.report/'summary.json').read_text());frames={r['id']:r for r in csv.DictReader((a.report/'all-functions.csv').open())};lines=['| Fixed function | Calls | Self seconds | Inclusive seconds |','| --- | ---: | ---: | ---: |']
+for page in s['selected']:
+ f=page['frame'];module=Path(f['file']).stem;lines.append(f"| `{module}.{f['qualname']}` | {f['total_calls']} | {f['self_seconds']:.9g} | {f['cumulative_seconds']:.9g} |")
+lines+=['','| Caller of prerequisites | Calls | Direct edge inclusive seconds |','| --- | ---: | ---: |']
+page=next(p for p in s['selected'] if p['frame']['name']=='prerequisites')
+for edge in page['incoming']:
+ f=frames[edge['caller']];lines.append(f"| `{Path(f['file']).stem}.{f['qualname']}` | {edge['total_calls']} | {edge['cumulative_seconds']:.9g} |")
+lines+=['',f"Largest absolute child/self residual: {max(abs(p['residual_seconds']) for p in s['selected']):.9g} seconds.",'']
+a.output.parent.mkdir(parents=True,exist_ok=True)
+with a.output.open('x') as out:out.write('\n'.join(lines))
