@@ -105,3 +105,18 @@ these lists directly with integers `432` and `1152`. That predicate rejects
 the complete ordinary child despite the correct lengths. The failed pair
 was not retried; complete ordinary/validated-share identity and any CPU
 saving remain unestablished. A data-only report and final checks are next.
+
+## Publication-gate erratum — November 18
+
+Hosted [CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+failed four report tests on **each** runtime: 5,621 passed, 72 skipped and
+150 deselected each. The 34-member source-check manifest listed
+`local/__pycache__/verify-local.py.cpython-313.pyc`, which was present in the
+local checkout but ignored by Git and absent from the tested normal clone.
+The [official failure archive](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+preserves both logs and the missing Git tree path. Thus the source-check
+record was not completely public before the pair, contrary to the earlier
+status and the raw pair manifest flag. The fixed pair is ineligible for
+admission even apart from its ordinary-child gate failure. Preserve those
+historical bytes; publish the exact missing evidence member later and
+correct the report without retrying the pair.

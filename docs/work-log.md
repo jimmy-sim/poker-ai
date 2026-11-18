@@ -7310,3 +7310,16 @@ native workers and failure before the validated-share child. Next: commit
 the data-only report, complete exact-report-head local, optional and hosted
 checks, then close the failed investigation. No retry or savings claim.
 Codex-assisted; human hands-on time not recorded.
+
+Hosted [CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+failed four report tests per runtime (5,621 passed/72 skipped/150 deselected
+each). The [official failed-run archive](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+shows the source-check manifest listed a Python 3.13 `.pyc` absent from the
+normal clone because Git ignored it. The local verifier saw the ignored file
+and passed. The source-check checkpoint was incomplete before the fixed
+pair, and the raw manifest's publication flag is historically inaccurate.
+This makes the pair ineligible for admission in addition to its actual
+ordinary-child failure. Next: publish the failed CI receipts, add the exact
+missing byte later without rewriting the manifest, correct the data-only
+report and repeat required checks. No pair retry. Codex-assisted; human
+hands-on time not recorded.

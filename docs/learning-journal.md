@@ -7655,3 +7655,17 @@ JSON SHA-256 `a69f851d4bb238f4aeee85ca70d2096fd3ab3ed62afae06c1721722c64a753bf`.
 checks, retain their evidence, then close this failed investigation. No
 retry or complete sharing identity. Codex assisted; human hands-on time
 was not recorded.
+
+Hosted [CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+failed four report tests on each runtime, despite local passes. The
+[retained official logs](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+show that the source-check manifest included a generated Python 3.13 bytecode
+file ignored by Git. **Example:** the local manifest listed that `.pyc` and
+its hash, but `git cat-file` at the pair head has no such path. The report
+tests copied the local ignored file, masking the omission locally. The
+source-check record was therefore incomplete in a normal clone before the
+pair, so this pair is ineligible for admission independent of the count-gate
+bug. **Next decision:** publish the failed CI record, then publish the exact
+missing byte later as a transparent repair and update the report. Do not
+rewrite the old manifest or rerun the fixed pair. Codex assisted with the
+audit; human hands-on time was not recorded.

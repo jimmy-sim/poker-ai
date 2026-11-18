@@ -1,5 +1,16 @@
 # Optional-runtime sharing pair: failed ordinary-child gate
 
+**Publication-gate correction (November 18):** hosted
+[CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+found that the source-check manifest at `c5697ef` listed an ignored generated
+bytecode file absent from a normal clone. Both report-head hosted jobs failed
+four archive-authentication tests. The [official failure record](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+retains both logs and the tested tree. The pair therefore did **not** meet
+its required fully public source-check gate, in addition to the ordinary
+child failure below. The original raw pair and manifests remain unchanged;
+the missing byte will be published separately for audit. No pair retry or
+admission is justified by that repair.
+
 The [prospective protocol](validated-sharing-runtime-preflight.md) fixed one
 ordinary-then-validated-share complete pair after the launcher and its six
 source-check roles were public. Source commit `0b9ae32` passed both local base
