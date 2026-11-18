@@ -7488,3 +7488,14 @@ corrected fixture has a separate graph object. This is no real archive or
 complete-pair result. Next: finish the own-proof and complete-pair runners
 before exact source qualification. Codex assisted with implementation and
 tests; human hands-on time was not recorded.
+
+The bounded own-proof and complete-pair runners are drafted. The proof
+refuses archived inputs without published complete source checks; the pair
+refuses to start without a published own proof. The pair retains the original
+three reads and all validation, and compares work counters as part of the
+full identity. Fifteen focused synthetic tests now pass on both locked
+runtimes, including an intentionally changed work counter and a failed
+first child that is not retried. These tests do not establish that the real
+archived comparison passes. Next: clean exact-source local, optional and
+hosted qualification before collection. Codex assisted with the runners and
+tests; human hands-on time was not recorded.

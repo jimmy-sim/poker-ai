@@ -10,11 +10,15 @@ from typing import Any, cast
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import compare_context_reuse as predecessor  # noqa: E402
+import compare_validated_prerequisite_sharing as comparison  # noqa: E402
+import profile_checkpoint_cpu as checkpoint_supervisor  # noqa: E402
 import receipt_consumer_mutation_support as subject  # noqa: E402
 import validated_prerequisite_sharing_support as sharing  # noqa: E402
 from prerequisite_identity_support import Observation  # noqa: E402
 
 from poker_ai.evaluation import batch_cost_inputs as cost
+from poker_ai.evaluation import batch_current_inputs as current
 from poker_ai.evaluation import batch_reduction_inputs as reduction
 from poker_ai.evaluation import frozen_batch_inputs as frozen_inputs
 from poker_ai.evaluation import frozen_batch_protocol as frozen
@@ -256,3 +260,112 @@ def test_validated_share_rejects_alias_conflict(
     assert len(capture.rows) == 1
     assert vars(frozen)["inputs"] is frozen_inputs
     assert vars(study)["inputs"] is study_inputs
+
+
+@pytest.mark.parametrize("mode", ["ordinary", "validated_share"])
+def test_complete_pair_archive_alias_runs_two_roots_and_restores(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, mode: str
+) -> None:
+    install_sharing_fakes(monkeypatch)
+    original = study.read_saved
+    monkeypatch.setattr(current, "read_saved", original)
+    with comparison.observed_archives(tmp_path, mode) as captures:
+        left = vars(current)["read_saved"](comparison.ROOT, comparison.OWN)
+        right = vars(current)["read_saved"](comparison.ROOT, comparison.OWN)
+    assert left[0]["status"] == right[0]["status"] == "synthetic"
+    assert len(captures) == 2
+    assert [len(capture.rows) for capture in captures] == [7, 7]
+    assert vars(current)["read_saved"] is original
+    assert (tmp_path / "archive-0.json").is_file()
+    assert (tmp_path / "archive-1.json").is_file()
+    if mode == "validated_share":
+        assert captures[0].objects[0] is not captures[1].objects[0]
+
+
+def test_complete_pair_archive_alias_restores_on_reader_failure(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    install_fake_reader(monkeypatch, mutate=True)
+    monkeypatch.setattr(sharing, "observe", fake_sharing_observe)
+    monkeypatch.setattr(sharing, "disjoint", lambda left, right: None)
+    original = study.read_saved
+    monkeypatch.setattr(current, "read_saved", original)
+    with pytest.raises(ArithmeticError, match="graph changed"):
+        with comparison.observed_archives(tmp_path, "validated_share"):
+            vars(current)["read_saved"](comparison.ROOT, comparison.OWN)
+    assert vars(current)["read_saved"] is original
+    assert (tmp_path / "archive-0.json").is_file()
+
+
+def test_complete_pair_identity_includes_work_counters(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    identity = {"work_counter": 10, "result": 3}
+    expected = hashlib.sha256(predecessor.canonical(identity)).hexdigest()
+    monkeypatch.setattr(comparison, "PREDECESSOR_IDENTITY", expected)
+    common = dict(
+        status="complete_validated_share_pair_child",
+        archive_roots=2,
+        original_loads=14,
+        input_sha256={"pin": "same"},
+        context_identity_sha256="same",
+    )
+    ordinary: dict[str, Any] = dict(
+        common,
+        mode="ordinary",
+        donor_substitutions=0,
+        pid=10,
+        result={"identity": identity},
+    )
+    shared: dict[str, Any] = dict(
+        common,
+        mode="validated_share",
+        donor_substitutions=12,
+        pid=11,
+        result={"identity": dict(identity)},
+    )
+    assert comparison.pair_identity([ordinary, shared])["identity_sha256"] == expected
+    shared["result"]["identity"]["work_counter"] = 9
+    with pytest.raises(ArithmeticError, match="identity failed"):
+        comparison.pair_identity([ordinary, shared])
+
+
+@pytest.mark.parametrize("fail_first", [False, True])
+def test_complete_pair_supervision_retains_failure_without_retry(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, fail_first: bool
+) -> None:
+    monkeypatch.setattr(comparison, "ROOT", tmp_path)
+    monkeypatch.setattr(comparison, "source_checks", lambda: {})
+    monkeypatch.setattr(comparison, "own_published", lambda: {})
+    monkeypatch.setattr(predecessor, "contract", lambda root: {"caps": comparison.CAPS})
+    monkeypatch.setattr(
+        comparison,
+        "pair_identity",
+        lambda children: {"status": "synthetic_complete_identity"},
+    )
+    calls: list[tuple[str, float]] = []
+
+    def supervise(command: list[str], output: Path, cap: float) -> dict[str, Any]:
+        output.mkdir()
+        mode = command[3]
+        calls.append((mode, cap))
+        (output / "child.json").write_text('{"status":"synthetic"}\n')
+        return {"returncode": 1 if fail_first else 0, "cap_seconds": cap}
+
+    monkeypatch.setattr(checkpoint_supervisor, "supervise", supervise)
+    output = tmp_path / "results/runs/synthetic-pair"
+    if fail_first:
+        with pytest.raises(ArithmeticError, match="retained failed complete child"):
+            comparison.pair(output)
+        assert calls == [("ordinary", 900)]
+        assert (
+            json.loads((output / "pair.json").read_text())["status"]
+            == "failed_retained"
+        )
+    else:
+        comparison.pair(output)
+        assert calls == [("ordinary", 900), ("validated_share", 900)]
+        assert (
+            json.loads((output / "pair.json").read_text())["status"]
+            == "synthetic_complete_identity"
+        )

@@ -67,3 +67,19 @@ strict typing pass on both locked runtimes. An initial synthetic fixture
 returned `None` as a fake graph and failed two wrapper tests; correcting that
 fixture made the intended graph contract explicit. These are software checks
 only. No archived proof or complete comparison has run.
+
+The bounded own runner and complete-pair adapter are now implemented locally.
+The own runner requires a committed, public six-role source-check manifest,
+clean locked runtime, exact new script bytes and unchanged pins before it
+can read archived inputs. Its fresh child and enclosing command retain
+partial receipts under the original 180-second cap. The pair adapter requires
+the public own proof and runs the original three-read cost audit using the
+old independent numerical identity, with two separately scoped archive
+captures per child. It binds the original 900/1,800/120-second caps, 432
+profiles, 1,152 fixed conditions, three native worker summaries and all
+work counters. Synthetic tests cover both pair modes, restoration on reader
+failure, work-counter rejection and no favorable retry after a failed first
+child. Fifteen focused tests pass on both locked runtimes with Ruff and
+strict typing. No real own proof, complete pair or reference construction
+has run on this branch. Full clean source qualification and hosted CI remain
+pending before any archived read.

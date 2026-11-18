@@ -7173,3 +7173,14 @@ tests failed; the corrected fixture passes without changing the candidate's
 source boundary. No archived proof, pair, or savings claim exists. Next:
 finish the source-bound proof and complete-pair runner before the first source
 push. Codex-assisted; human hands-on time not recorded.
+
+The bounded own-proof and complete-pair source is now drafted. The former
+requires public six-role source checks and an unchanged 180-second outer
+cap; the latter requires published own raw proof, two root-local archive
+captures per complete child, the original 900/1,800/120-second limits, all
+three reads, 432 profiles, 1,152 fixed conditions and three native workers.
+Its identity gate retains every work counter and the old complete identity
+hash. Fifteen focused tests pass on both locked runtimes; Ruff and strict
+typing pass. No archived proof or pair has run. Next: commit the coherent
+source locally and qualify clean exact-head local/optional/hosted roles before
+the first source push. Codex-assisted; human hands-on time not recorded.
