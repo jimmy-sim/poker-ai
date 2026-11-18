@@ -6932,3 +6932,23 @@ The [27 raw members](../results/receipt-source-cpu/pair-raw-manifest.json)
 and outer receipts are byte-exact. Next: publish raw evidence before data-only
 cost analysis and two-runtime exports. No training, forecast admission or
 stronger-play claim. Codex-assisted; human hands-on time not recorded.
+
+
+### November 18: report current nested receipt CPU from published raw evidence
+
+The [report](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
+uses only the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
+Both actual runtimes reproduce all five report files byte for byte with 109
+numerical execution paths blocked, zero calls, no reference import and 25 raw
+pair files unchanged. Both figures were inspected. In the observed cost reads,
+six nested receipt prerequisite loads use 25.227/25.360 parent CPU seconds
+inside 30.337/30.667 archive roots; one direct load uses 4.162/4.202. The
+five exclusive categories reconcile each root. Complete read parent CPU is
+136.472/137.320 seconds. Wall times 457.933/415.749 seconds for one ordered
+plain/observed pair do not establish timer overhead or a speedup. Parent,
+reaped-child and parallel worker clocks are reported separately. The
+[report checks](../results/receipt-source-cpu/report-manifest.json) retain
+actual versions and hashes. Next: assess identical contexts and mutation-safe
+reuse under a prospective protocol before any optimization. The failed
+forecast, accuracy and context-copy gates remain failed. Codex-assisted;
+human hands-on time not recorded.

@@ -139,8 +139,9 @@ now traces the earlier archive into repeated receipt checks. The
 cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
 Its six exact-head source checks and bounded own-only proof pass. The complete
-ordinary/observed pair now passes its original identity gate; cost analysis is
-pending publication of its raw evidence.
+ordinary/observed pair passes its original identity gate. Current timers locate
+about 25.2–25.4 parent CPU seconds per cost read in six nested receipt
+prerequisite loads; no reuse or stronger strategy is admitted.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7216,3 +7217,31 @@ for training. One ordered pair does not prove stable overhead or CPU savings.
 cost report and two-runtime export checks. The failed forecast, accuracy and
 context-copy gates are unchanged. Codex assisted with execution and writing;
 human hands-on time was not recorded.
+
+
+### November 18: locate current CPU in receipt prerequisites
+
+**Question:** within the earlier archive read, how much current parent CPU is
+spent reloading prerequisites for six saved report checks?
+
+**Change and example:** no gameplay or validation path changed. A data-only
+report reads the public raw pair and separates the six nested prerequisite
+loads from the one direct load. For example, the first cost read uses 25.227
+parent CPU seconds in the six nested loads and 4.162 in the direct load; these
+are separate exclusive pieces of a 30.337-second archive root. The 25.227 is
+not a promised saving, because a safe reuse has not been proved.
+
+**Checks and result:** the [report and both figures](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
+come from the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
+Both actual runtimes regenerate all five report files byte for byte with 109
+numerical execution paths blocked, zero forbidden calls and unchanged raw
+inputs. The second cost read uses 25.360 parent CPU seconds in nested loads and
+4.202 in the direct load, within a 30.667-second archive root. The complete
+cost reads use 136.472/137.320 parent CPU seconds; much work remains outside
+this selected root. Parent, reaped-child and worker clocks are kept separate.
+The single observed arm being quicker in wall time does not establish a speedup.
+
+**Next decision:** prospectively check identical inputs, mutation isolation and
+work-counter identity before considering reuse. The prior forecast, accuracy
+and full-context-copy gates remain failed. Codex assisted with the report,
+checks and figure inspection; human hands-on time was not recorded.

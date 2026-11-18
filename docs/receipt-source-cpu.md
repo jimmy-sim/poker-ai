@@ -216,3 +216,49 @@ scalar/computed-replay identity. The identity hash is
 No training or strength admission follows. One ordered pair does not establish
 stable observation overhead or savings. Publish and verify these raw files
 before rendering the data-only cost report.
+
+### November 18: what the current clocks show
+
+The [data-only report](../results/receipt-source-cpu/report/summary.json) reads
+the already published raw pair. On both actual runtimes, 109 game construction,
+replay and profiling paths are blocked, with zero forbidden calls; all three
+numerical exports and both figures reproduce byte for byte. The raw pair is
+unchanged. The [report checks](../results/receipt-source-cpu/report-manifest.json)
+retain versions, hashes and the runnable operator. Codex inspected both
+[archive stages](../results/receipt-source-cpu/report/archive-stages.png) and
+[separate clocks](../results/receipt-source-cpu/report/complete-clocks.png).
+
+The table reports **exclusive parent CPU seconds** inside the earlier-archive
+reader for the two observed cost reads. Each column sums to its archive root;
+inclusive parent and child times must not be added together.
+
+| Boundary | Cost before reference | Cost after reference |
+| --- | ---: | ---: |
+| Six nested receipt prerequisite loads | 25.227 | 25.360 |
+| One direct prerequisite load | 4.162 | 4.202 |
+| Admission outside those loads | 0.677 | 0.825 |
+| Six report checks outside their loads | 0.197 | 0.202 |
+| Archive reader outside selected calls | 0.074 | 0.079 |
+| **Earlier-archive parent CPU** | **30.337** | **30.667** |
+
+Nested receipt prerequisites account for 83.16% and 82.69% of the selected
+archive-root CPU. They account for about 18.5% of the respective complete
+cost-read parent CPU (136.472 and 137.320 seconds); 106.135 and 106.653 seconds
+per read lie outside the archive root. These prerequisite calls include input
+construction and validation, not just disk I/O. The six report-check wrappers
+themselves use about 0.20 parent CPU seconds outside their prerequisites.
+
+The complete ordinary and observed child wall times are 457.933 and 415.749
+seconds in this single ordered pair. The observed arm being faster here is not
+a measured speedup from timers. Parent body CPU is 275.886/279.789 seconds;
+the sums of three native worker body CPU clocks are 373.607/373.097 seconds,
+and the operating system's reaped-child body CPU is 383.450/382.780 seconds.
+These counters have different windows and parallel work; they are not additive
+elapsed totals. Historical elapsed-stack measurements include waits and cannot
+be subtracted from these current CPU clocks to forecast savings.
+
+The next research question is whether the repeated inputs are identical and
+whether reuse preserves mutation isolation and every work counter. No cache is
+admitted by this measurement. The 912.54/900 forecast, 2.390%/1% accuracy and
+full-context-copy failures remain failed; competitive full-game strength is
+unestablished.
