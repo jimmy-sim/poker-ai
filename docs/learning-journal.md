@@ -7479,3 +7479,12 @@ complete result and work identity in the eventual fixed pair. Because all
 original loaders run, do not claim a saving. The old forecast, accuracy and
 full-context-copy failures remain failed. Codex assisted with this protocol;
 human hands-on time was not recorded.
+
+The first wrapper implementation now has nine focused synthetic tests passing
+on both locked runtimes, with Ruff, formatting and strict typing. It runs all
+14 original loader calls in two fake roots and keeps each donor local. A first
+fixture failed two tests because it represented the graph with `None`; the
+corrected fixture has a separate graph object. This is no real archive or
+complete-pair result. Next: finish the own-proof and complete-pair runners
+before exact source qualification. Codex assisted with implementation and
+tests; human hands-on time was not recorded.

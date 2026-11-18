@@ -52,3 +52,18 @@ Reference outputs stay comparison-only and never enter agent strategy or
 training. The failed 912.54/900 forecast, 2.390%/1% known-game accuracy and
 rejected full-context-copy result remain failed. Codex assisted with this
 protocol; human hands-on time was not recorded.
+
+## Local wrapper implementation — November 18
+
+The first source step adds a root-local `ValidatedShare` capture. It calls
+each original loader, compares its fresh complete graph and semantic witness
+with the first donor, checks that donor and fresh graph share no mutable
+storage, then forwards the donor. The existing receipt-caller and complete
+archive checks run on that forwarded object. Five new synthetic cases cover
+14 original calls across two independent roots, consumer mutation, a changed
+fresh result, original-loader failure and alias conflict; the existing four
+consumer-audit cases still pass. The nine focused tests, Ruff, formatting and
+strict typing pass on both locked runtimes. An initial synthetic fixture
+returned `None` as a fake graph and failed two wrapper tests; correcting that
+fixture made the intended graph contract explicit. These are software checks
+only. No archived proof or complete comparison has run.

@@ -7164,3 +7164,12 @@ and a public own proof. No new candidate or archived result exists yet. All
 old forecast, accuracy and full-context-copy failures stay failed. Next:
 commit this protocol checkpoint, then implement its root-local boundary and
 synthetic tests. Codex-assisted; human hands-on time not recorded.
+
+The first local wrapper step has nine focused synthetic tests passing on both
+locked runtimes; Ruff, formatting and strict typing pass. It forwards the
+first validated graph only after all later original loader calls finish and
+match. The first test fixture used `None` in place of a graph, so two focused
+tests failed; the corrected fixture passes without changing the candidate's
+source boundary. No archived proof, pair, or savings claim exists. Next:
+finish the source-bound proof and complete-pair runner before the first source
+push. Codex-assisted; human hands-on time not recorded.
