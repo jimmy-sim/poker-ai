@@ -7326,3 +7326,17 @@ whole source tree. The [six-role source receipt](../results/prerequisite-identit
 retains versions, logs and hashes. The previous optional failure is still in
 the record. These checks qualify the audit tool; they do not yet answer
 whether actual archived outputs match or can be reused.
+
+The [raw seven-load audit](../results/prerequisite-identity/raw/manifest.json)
+now completes on both actual runtimes under its 180-second child cap. Each of
+the seven fresh outputs has the same exact graph witness and independent
+semantic inventory; the two runtimes also agree. The producer checks that
+fresh outputs do not share mutable storage. For example, two arrays can have
+the same numbers yet differ in alias relationships; the complete graph
+witness includes that relationship. Each output contains 148,034 mutable
+nodes and 148 arrays, so this audit also shows why a casual shared-object
+cache needs more proof. This does not test sharing inside the complete reader
+or change the failed compute and strength gates. Next: publish and reproduce
+a data-only report, then decide whether a separate complete-reader protocol
+is justified. Codex assisted with collection and writing; human hands-on time
+was not recorded.

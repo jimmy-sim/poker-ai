@@ -7023,3 +7023,16 @@ is retained, alongside the earlier failed optional cohort. Next: publish and
 verify this source evidence before running seven actual archived prerequisite
 loads. No caching, strength admission or forecast follows these software
 checks. Codex-assisted; human hands-on time not recorded.
+
+### November 18: publish fresh prerequisite identities before analysis
+
+The fixed seven-load command runs serially on the two locked runtimes after
+source qualification. Outer/parent CPU seconds are 47.721/46.936 on 3.11 and
+43.013/42.251 on 3.12, all under the 180-second child cap. Seven exact graph
+and semantic witnesses match within and across runtimes; each fresh result has
+148,034 mutable nodes and 148 arrays with cross-result storage disjointness
+checked. The [nine raw members](../results/prerequisite-identity/raw/manifest.json)
+and verifier were published at `76952fe` before a report, with original input
+pins unchanged. No complete-reader cache, saving forecast, trajectory or
+strength admission follows. Next: checked data-only two-runtime exports.
+Codex-assisted; human hands-on time not recorded.

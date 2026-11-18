@@ -39,3 +39,21 @@ whole source tree. The [six-role receipt and complete logs](../results/prerequis
 are retained. The first source head's optional failure remains failed. These
 are software checks; the seven actual archived loads have not run. Publication
 and a successful public-source guard precede that collection.
+
+## Raw identity audit — November 18
+
+The [raw seven-load receipts](../results/prerequisite-identity/raw/manifest.json)
+were published at `76952fe` before a report. Python 3.11.17 finishes its
+seven-load outer command in 47.721 seconds, with 46.936 parent CPU seconds;
+Python 3.12.15 finishes in 43.013 and 42.251 seconds respectively. Both are
+below the 180-second child limit. Each fresh output contains 148,034 mutable
+graph nodes and 148 arrays. All seven complete graph witnesses and independent
+semantic inventories match within each runtime, and the witnesses match
+exactly across runtimes. Each call executes the original archived checks; the
+producer verifies no mutable object or NumPy storage is shared across its seven
+fresh returned graphs. All fourteen pinned input files remain unchanged.
+
+These standalone calls do not establish that one result can be safely shared
+inside the complete reader. The observed run times are not estimated savings.
+The published verifier authenticates the raw members and source without
+executing a loader. A data-only two-runtime report is the next step.
