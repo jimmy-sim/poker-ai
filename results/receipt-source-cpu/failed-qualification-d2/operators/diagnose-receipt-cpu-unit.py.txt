@@ -1,0 +1,15 @@
+"""Fresh software-only diagnostic after the failed optional cohort; no admission."""
+import os,subprocess,sys,json
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse-final-checkout';out=w/'receipt-cpu-unit-diagnostic312';out.mkdir();env={k:v for k,v in os.environ.items() if k in {'PATH','HOME','TMPDIR','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_OFFLINE','PRE_COMMIT_HOME'}};env['PYTHONPATH']=str(r/'src')+os.pathsep+str(r/'scripts')
+code='''import json,pathlib,sys,time
+from poker_ai.evaluation.compact_opponent_guard import isolated
+import profile_receipt_cpu as runner
+print('DIAGNOSTIC_START',flush=True)
+with isolated(worker=False):
+ proof=runner.own_math(pathlib.Path(sys.argv[1]),pathlib.Path(sys.argv[2]))
+assert 'pyspiel' not in sys.modules
+runner.atomic(pathlib.Path(sys.argv[2])/'unit-proof.json',proof)
+print('DIAGNOSTIC_UNIT_ONLY_COMPLETE',flush=True)
+'''
+p=out/'output';p.mkdir();result=subprocess.run(['/private/tmp/poker-ai-context-reuse-final-20261117/optional312/bin/python','-c',code,str(r),str(p)],env=env,capture_output=True);(out/'stdout.log').write_bytes(result.stdout);(out/'stderr.log').write_bytes(result.stderr);(out/'execution.json').write_text(json.dumps(dict(returncode=result.returncode,scope='Unqualified fresh software-fixture diagnostic only; no formal proof or measurement'),indent=2)+'\n');print(result.returncode);print(result.stderr.decode(errors='replace')[-6000:])

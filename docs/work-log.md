@@ -6806,3 +6806,177 @@ both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
 reader/config/guard, all 455 scientific bytes and original five-export result
 remain unchanged. Full qualification must now pass on the corrected head without
 the masking path override. No CI, dependency or scientific-rule change.
+
+
+### November 17: archive-reader investigation verified; measure current receipt CPU
+
+[PR #88](https://github.com/jimmy-sim/poker-ai/pull/88) is history-merged at
+`2ac57b4a3f1ea02073b280e5d115009115f648a0`, preserving the source-before-data
+commits. Corrected head `f078d2a` passes both bases (5,434 / 70 skipped / 150
+deselected; 772.20/741.54 seconds), both optional suites (2,342 each;
+488.81/423.50 seconds) and both hosted jobs (5,434 each, one existing warning;
+1329.88/1125.82 seconds). Actual patch/NumPy, all uv selections and the entire
+tested/merged tree match. Initial source/report CI import failures and interrupted
+local checks are retained, not counted. Corrected local checks use no extra
+`PYTHONPATH`.
+
+Main passes 774 focused tests in 179.23 seconds; five numerical exports match
+under 104 blocks/zero forbidden calls and all 15 raw files remain unchanged.
+The original context-reuse gate still rejects. All ten actual user file bytes,
+status, changed-path index entries and both patches remain preserved after
+verification. The [44-member closing archive](../results/archive-reader-edges/final-ci/manifest.json)
+accompanies this substantive next step.
+
+The [prospective current-receipt plan](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6958619644)
+fixes five caller boundaries and thirty selected calls/sixty events across the
+original three-read pipeline. The observer adapts the existing framework without
+changing its historical source, and adds elapsed/parent/reaped-child clock
+reconciliation. All checks still run; no cache or new training. The
+[method](receipt-source-cpu.md) and journal133 explain the difference between
+historical elapsed costs and current CPU. Full source qualification and formal
+proof remain pending; no complete comparison has started. Existing 900/1800/180/120
+limits, scientific inputs, seeds and acceptance rules are unchanged. Codex-assisted;
+human hands-on time not recorded.
+
+
+Receipt observer foundation: both actual base environments pass 130 focused
+cases with one plotting skip (23.65/23.54 seconds); both optional environments
+pass 131 with real OpenSpiel preloaded (35.66/35.86 seconds). Runtime/source
+checks bracket each run, with no extra launcher `PYTHONPATH`. Strict typing829,
+lint/format and prototype documentation checks pass. Initial copied fixture
+status, configuration metadata and typing issues were corrected before source
+publication and retained. Synthetic plot layouts were inspected and the
+exclusive-time legend moved outside the data. No plotted fixture values are
+experimental results. The installed OpenSpiel 2.0.2 licenses match the recorded
+Apache-2.0 hash in both environments. All 455 prior scientific bytes are
+unchanged; new458 fingerprint `b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d`.
+Full exact-head qualification and checked published own proof must precede the
+new complete comparison; no collection has started.
+
+
+### November 17: retain the failed source qualification and child diagnostics
+
+The first full cohort at `d2cd3f7` is not qualified. Both base suites pass
+5,564 tests; the 3.11 optional suite passes 2,473. The 3.12 optional run has
+2,437 passed and 36 setup errors, all from one failed shared fixture child.
+Its original stderr was not retained, so the cause remains unknown. A fresh
+software-only run of that same fixture passes; that does not explain the failure
+or count as full qualification. GitHub's 3.12 job passes, while its 3.11 job hits
+the existing 25-minute limit. [The failed cohort and fresh diagnostic](../results/receipt-source-cpu/failed-qualification-d2/manifest.json)
+are retained together.
+
+The test now saves child stdout and stderr beside its fixture directory and
+still requires a zero exit code. Two regression cases check successful and
+failed children. No reader, clock, configuration, scientific cap or acceptance
+rule changes. Full qualification must be repeated on the new head before the
+formal own proof or complete comparison. No new strength or timing result is
+claimed. Codex-assisted work; human hands-on time is not recorded.
+
+
+Resumed checks on November 17 pass 133 focused tests in each actual optional
+environment (196.62/198.91 seconds), with strict typing829, lint and formatting
+passing. A live sample during this run shows a parent waiting in an OS file
+read; it does not establish the earlier child failure's cause. Temporary
+environments removed during the pause were rebuilt from the unchanged lockfile.
+Full exact-head qualification remains pending.
+
+
+### November 18: qualify the receipt observer source
+
+The first `00aae95` local rerun was interrupted near 15% of both bases, with
+partial logs and no completion receipts. A detached shell launch also produced
+no role results; both attempts remain retained and are not passes. A fresh
+isolated attempt and [hosted run #549](https://github.com/jimmy-sim/poker-ai/actions/runs/44260849905)
+pass all six required roles. Local bases: 5,566 passed / 71 skipped / 150
+deselected each (861.76/858.37 seconds pytest), with strict typing829,
+lint/format/hooks. Optional suites: 2,475 each (531.38/449.29 seconds).
+Hosted bases: 5,566 each (1,316.05/1,148.07 seconds, one warning each).
+Actual patch/NumPy, all uv selections, local source/import guards and the
+hosted tested tree equal to head `00aae95` were checked. The
+[six-role receipt](../results/receipt-source-cpu/checks.json) and
+[retained logs](../results/receipt-source-cpu/checks/manifest.json) record the
+exact evidence. Source fingerprint `b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d`
+is unchanged across all 458 scientific files. Next: publish this checked
+source gate, then bounded formal own proof before any complete comparison.
+No new timing, training, forecast admission or strength claim follows software
+checks. Codex-assisted checks and writing; human hands-on time not recorded.
+
+
+### November 18: bounded own proof after source publication
+
+The pushed-source guard passes at `d1987a2`. The first private controller's
+unsupported `--operation` flag failed before a proof child started (0.079
+seconds); exact outer records are retained. A corrected private controller
+changes only the CLI argument and fresh output name, with 180/1800-second caps
+unchanged. Its focused argument/cap fixtures pass. The actual 3.11.17/NumPy
+2.4.6 own-only proof completes in 8.070/180 outer seconds; the inner supervisor
+completes in 8.008 seconds under its startup-adjusted allowance. Archived
+fictional-game replay and two synthetic fifteen-call trees pass, with eleven raw
+members and no native reference or training. The
+[raw proof manifest](../results/receipt-source-cpu/software-raw-manifest.json)
+retains both launcher attempts. Next: publish and verify own evidence before
+the fixed ordinary/observed complete pair. No real cost-loader coverage,
+performance forecast or stronger-play claim follows this proof. Codex-assisted;
+human hands-on time not recorded.
+
+### November 18: complete and retain the fixed raw pair
+
+After the own-only checkpoint `181a400` was public and its publication verifier
+passed, the single ordinary/observed comparison completed. Outer command:
+879.144/1,800 seconds. Plain/observed children: 457.933/415.749 seconds, each
+under 900. Both retain three reads, 432 profiles, 1,152 fixed conditions and
+three native workers. The observed arm records thirty selected calls and sixty
+events. The saved-data authenticator accepts the original exact scalar and
+computed-replay identity `ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185`.
+The [27 raw members](../results/receipt-source-cpu/pair-raw-manifest.json)
+and outer receipts are byte-exact. Next: publish raw evidence before data-only
+cost analysis and two-runtime exports. No training, forecast admission or
+stronger-play claim. Codex-assisted; human hands-on time not recorded.
+
+
+### November 18: report current nested receipt CPU from published raw evidence
+
+The [report](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
+uses only the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
+Both actual runtimes reproduce all five report files byte for byte with 109
+numerical execution paths blocked, zero calls, no reference import and 25 raw
+pair files unchanged. Both figures were inspected. In the observed cost reads,
+six nested receipt prerequisite loads use 25.227/25.360 parent CPU seconds
+inside 30.337/30.667 archive roots; one direct load uses 4.162/4.202. The
+five exclusive categories reconcile each root. Complete read parent CPU is
+136.472/137.320 seconds. Wall times 457.933/415.749 seconds for one ordered
+plain/observed pair do not establish timer overhead or a speedup. Parent,
+reaped-child and parallel worker clocks are reported separately. The
+[report checks](../results/receipt-source-cpu/report-manifest.json) retain
+actual versions and hashes. Next: assess identical contexts and mutation-safe
+reuse under a prospective protocol before any optimization. The failed
+forecast, accuracy and context-copy gates remain failed. Codex-assisted;
+human hands-on time not recorded.
+
+
+### November 18: finish exact-head software checks after the report
+
+At `459c04d`, the first final local pair ran simultaneously and both base
+suites failed one archived fictional-game replay at the unchanged 180-second
+cap; each had 5,565 passes. The optional lanes were not started. An isolated
+replay passed in 6.23 seconds. The serial retry of the same head passes both
+base scopes (5,566 passed, 71 skipped, 150 deselected each), strict typing,
+Ruff, all-files hooks and clean source guards. Both optional scopes pass 2,475
+tests. Hosted CI [run #553](https://github.com/jimmy-sim/poker-ai/actions/runs/44271740130)
+passes Python 3.11.17 and 3.12.15 on the same whole tree. The
+[final archive](../results/receipt-source-cpu/final-checks/manifest.json)
+retains all six passing logs, failed parallel logs, exact versions, run metadata
+and verifier. Next: publish this record, verify documentation CI, then close
+the focused PR. Scientific failures and strength limits remain unchanged.
+Codex-assisted; human hands-on time not recorded.
+
+### November 18: retain hosted documentation-head cancellation
+
+On documentation/evidence head `33db2ae`, hosted [run #554](https://github.com/jimmy-sim/poker-ai/actions/runs/44285335607)
+passes Python 3.12 (5,566 passed, 71 skipped, 150 deselected). Python 3.11
+reaches 97% without a test failure before the 25-minute job allowance cancels
+it. The [exact run and job logs](../results/receipt-source-cpu/final-ci-retry/manifest.json)
+are retained. Raise only the workflow allowance to 35 minutes and rerun the
+same checks on a new head. No scientific cap, source or claim changes; merge
+remains gated on both successful hosted jobs. Codex-assisted; human hands-on
+time not recorded.

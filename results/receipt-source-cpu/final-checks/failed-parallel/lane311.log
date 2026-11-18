@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/receipt-cpu-final-459/checks.py", line 33, in <module>
+    log.write(json.dumps(dict(command=command))+'\n');log.flush();subprocess.run(command,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+                                                                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['make', 'check']' returned non-zero exit status 2.

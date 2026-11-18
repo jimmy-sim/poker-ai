@@ -1,0 +1,210 @@
+{
+  "status": "four_serial_local_and_two_hosted_pass; earlier_parallel_base_roles_failed_wall_cap",
+  "checked_commit": "459c04dbbfdfcb34243d783297cfec68881356ad",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "run_id": 44271740130,
+  "failed_parallel_test": "tests/test_source_phase_observer.py::test_actual_archived_software_read_has_no_source_root",
+  "failed_parallel_reason": "declared total river-study wall-time cap exceeded in both concurrent local base suites; no cap or source change",
+  "files": [
+    {
+      "file": "failed-parallel/base311-child-sample.txt",
+      "bytes": 75025,
+      "sha256": "a53e9d5a2dfa90d48c2939259cbeacde73c5b527f103e41052875aa24dccfe0b"
+    },
+    {
+      "file": "failed-parallel/base311-install.log",
+      "bytes": 917,
+      "sha256": "54acdf430e7944f7881c5558b813e371959c9870884be97e6923bb18a1603a5b"
+    },
+    {
+      "file": "failed-parallel/base311-receipt.json",
+      "bytes": 449,
+      "sha256": "ebd638aa8752ff9a69ac35a9be5eb8d7e28fd5de61f2b2bdd66e09e054123816"
+    },
+    {
+      "file": "failed-parallel/base311-sample.txt",
+      "bytes": 80385,
+      "sha256": "4cca41e45c6fb4e5567edc68ae42d6b1f195cee9f922387003871f4aa85342ba"
+    },
+    {
+      "file": "failed-parallel/base311.log",
+      "bytes": 11252,
+      "sha256": "5c1e209ef136b39fde2151b4732d8358f71414349c50c78685a0cdaee3edae68"
+    },
+    {
+      "file": "failed-parallel/base312-install.log",
+      "bytes": 917,
+      "sha256": "9db3c4c2eac0afe2df702985bc633bb3c61d5e1f9d952dc18125b8c92683d7e9"
+    },
+    {
+      "file": "failed-parallel/base312-receipt.json",
+      "bytes": 449,
+      "sha256": "ce3c5083ef6f02e8655de19bdf45a07dcccdd808c5dcadff73bc80bd9919a0d3"
+    },
+    {
+      "file": "failed-parallel/base312.log",
+      "bytes": 11252,
+      "sha256": "5c48442a150c0495ecdd5ab069afd2a689986bb31d9cbf0542fcd1b27c85df92"
+    },
+    {
+      "file": "failed-parallel/checks.py.txt",
+      "bytes": 5900,
+      "sha256": "97e0e1a6f058ff8ecab48b107832ce82983bd076c97a5cce259b7cf256369bf4"
+    },
+    {
+      "file": "failed-parallel/expected.json",
+      "bytes": 54117,
+      "sha256": "8c2867ed7394fc6e00ca3405f9ad8627381259ec2e855260fa8bf51c79e9db8f"
+    },
+    {
+      "file": "failed-parallel/lane.py.txt",
+      "bytes": 453,
+      "sha256": "d5143ea1f085b08add05150c28ee6fc5b34225a3609c24ec9c9b57a679435e76"
+    },
+    {
+      "file": "failed-parallel/lane311.log",
+      "bytes": 723,
+      "sha256": "74548be8d85fbd7e5037bb1a01626de30d478e463cf75e38ef7c994af9dbc5cd"
+    },
+    {
+      "file": "failed-parallel/lane312.log",
+      "bytes": 723,
+      "sha256": "74548be8d85fbd7e5037bb1a01626de30d478e463cf75e38ef7c994af9dbc5cd"
+    },
+    {
+      "file": "failed-parallel/launch311.sh.txt",
+      "bytes": 223,
+      "sha256": "d095a515cd22501fd81c8362703c9c3c98736bf3f18522e8ee95e21ce3c029d5"
+    },
+    {
+      "file": "failed-parallel/launch312.sh.txt",
+      "bytes": 223,
+      "sha256": "a51c968a906d9c5ed7c6b340042e1fa1e193e0104d7d2a23cf997220bb8d3bb7"
+    },
+    {
+      "file": "hosted/checkout-source.json",
+      "bytes": 2653,
+      "sha256": "5999d0ebfe1234b70b0a1a3e7f38a54b46d98104adc3db638d7eb37eb4813289"
+    },
+    {
+      "file": "hosted/jobs.json",
+      "bytes": 5140,
+      "sha256": "8bcc224a30d89b271d69a4b74baf4423ef5d369c33141fb465f9179eef7582b4"
+    },
+    {
+      "file": "hosted/python311.log",
+      "bytes": 50995,
+      "sha256": "39cfeb6c5b6d5a8a00e9121120e8ee1750f95a4fff320a173cdeaa8277a3d2aa"
+    },
+    {
+      "file": "hosted/python312.log",
+      "bytes": 51066,
+      "sha256": "29ff523cf7bfb0398799f544bcc95aeac6ebd5c352e3d08424ebead681a203a1"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12662,
+      "sha256": "fac6b8befebf5be6f63e6c38fb1ead92482c4bc508426be9859a88f3799150c7"
+    },
+    {
+      "file": "hosted/verified.json",
+      "bytes": 4685,
+      "sha256": "c04fc574e396a9c62103dbd3085ade7e26d1648d04aa0aa174292d9324a50f15"
+    },
+    {
+      "file": "local/base311-install.log",
+      "bytes": 55,
+      "sha256": "96f1ba2f3553089d41568cf9d6637394c40b095ca59cd6366ddbfb8424f19ace"
+    },
+    {
+      "file": "local/base311-receipt.json",
+      "bytes": 445,
+      "sha256": "baecff5e6a3816d642134717c1faafa00f9408bde4a690e20ee7e2dfe0fbe029"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 9856,
+      "sha256": "3a698d77ea228a012e7ad3bc434e6f1b20ab314c317dee25705d12fb9a38dd22"
+    },
+    {
+      "file": "local/base312-install.log",
+      "bytes": 55,
+      "sha256": "96df0b7dd57b7ebf1f8b9c6d3667c87cc3fd8bc47be564335a5bb46bb0b7f103"
+    },
+    {
+      "file": "local/base312-receipt.json",
+      "bytes": 447,
+      "sha256": "05de0c1c3e6692a93e66e4cff756bf4c321582562c445b46cacbc0874d13045f"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 9856,
+      "sha256": "f5e642237fa353646c3b022b6c86d42a7c171644f4c3b306c268e8d1d34eea95"
+    },
+    {
+      "file": "local/optional311-install.log",
+      "bytes": 1275,
+      "sha256": "b0a1331209dd0a887deff31075e6e451b7f328e0fb2840816a3da95a926a2834"
+    },
+    {
+      "file": "local/optional311-receipt.json",
+      "bytes": 451,
+      "sha256": "46b38b100bd1f44cbd51f5df0c56ca74e917268f54610f8e716273c3b4a81db5"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 8464,
+      "sha256": "7f0268ec16401a0cc24e6e63613b78e3e438ff5153975aa4ce962891adbcb3ba"
+    },
+    {
+      "file": "local/optional312-install.log",
+      "bytes": 1275,
+      "sha256": "67d915457a8ffde503bc6285a15db0223a1f99001bed427c0570efe1ae81bb21"
+    },
+    {
+      "file": "local/optional312-receipt.json",
+      "bytes": 451,
+      "sha256": "113fdce782efca15099aa527b99b27ff4424212495603bcddd603b961a0c9de9"
+    },
+    {
+      "file": "local/optional312.log",
+      "bytes": 8464,
+      "sha256": "331323165165ca195812a72bbb2045b2644c8ba1ebebdee14ccd5abcb0463632"
+    },
+    {
+      "file": "operator/checks.py.txt",
+      "bytes": 5914,
+      "sha256": "6a73c7099d86285375ca10c3bf7f5408b542dd9da3074298ff0346bfb9005e2e"
+    },
+    {
+      "file": "operator/expected.json",
+      "bytes": 54117,
+      "sha256": "8c2867ed7394fc6e00ca3405f9ad8627381259ec2e855260fa8bf51c79e9db8f"
+    },
+    {
+      "file": "operator/launch.sh.txt",
+      "bytes": 234,
+      "sha256": "dda353fe06c37f239958e5991d1fe4c35c94507899f55dfb2410776d341d36df"
+    },
+    {
+      "file": "operator/serial.log",
+      "bytes": 280,
+      "sha256": "29ff46a7c8685c66492b3f5209356d950b30bd90f819dbc4dee6921ff9df9f2c"
+    },
+    {
+      "file": "operator/serial.py.txt",
+      "bytes": 243,
+      "sha256": "839864b143918501689257bcb2cc0ad49ad5f0a6ae0ef82012d95a59abf76403"
+    },
+    {
+      "file": "operator/verify.log",
+      "bytes": 4685,
+      "sha256": "c04fc574e396a9c62103dbd3085ade7e26d1648d04aa0aa174292d9324a50f15"
+    },
+    {
+      "file": "operator/verify.py.txt",
+      "bytes": 4203,
+      "sha256": "a341783186c701b9a78cb6f5f14e46821c8562d6f32824b2c4f4f10c1d08df9b"
+    }
+  ]
+}

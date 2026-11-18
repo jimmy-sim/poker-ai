@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
+
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
 
 - [Read the saved call graph before measuring again](#131-read-the-saved-call-graph-before-measuring-again)
@@ -132,8 +134,17 @@ checking also takes more time in that run. It is not deployed. PR #86 is merged;
 its six final checks and protected-main verification are complete. The next
 [saved call-graph investigation](earlier-source-profile.md) now points into an
 earlier archive reader using existing evidence. The [next query](archive-reader-edges.md)
-fixes seven archive-check functions before extracting their values. Earlier source-stage details remain in
+now traces the earlier archive into repeated receipt checks. The
+[current timer foundation](receipt-source-cpu.md) will test their present CPU
+cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
+Its six exact-head source checks and bounded own-only proof pass. The complete
+ordinary/observed pair passes its original identity gate. Current timers locate
+about 25.2–25.4 parent CPU seconds per cost read in six nested receipt
+prerequisite loads; no reuse or stronger strategy is admitted.
+All six final source-head roles now pass. An earlier concurrent local attempt
+failed an unchanged 180-second archived replay cap in both base lanes; its
+records remain with the passing serial retry.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7061,3 +7072,211 @@ both actual runtimes (1.14/1.07 seconds); strict typing covers 825 files. The
 reader/config/guard, all 455 scientific bytes and original five-export result
 remain unchanged. Full qualification must now pass on the corrected head without
 the masking path override. No CI, dependency or scientific-rule change.
+
+
+## 133. Measure the repeated receipt checks
+
+November 17, 2026. Codex-assisted implementation, tests and explanation.
+
+**Question:** checking a saved experiment also checks its older evidence. The
+saved profile points toward repeated receipt and context checks. How much CPU
+do they use now, while every original check still runs?
+
+**Change:** the [new observer](receipt-source-cpu.md) follows five caller
+boundaries inside the complete reader. It records elapsed time, parent CPU and
+CPU accumulated for finished child processes. It preserves original calls and
+restores its hooks after failures. It does not cache a verdict or skip math.
+
+**Example:** a parent call's five CPU seconds can include four seconds in its
+children. Its remaining one second is exclusive time. Adding the parent's five
+to the children's four would count work twice. Child-process CPU is another
+separate clock, not a part to subtract from parent-process CPU.
+
+**Checks and outcome:** independent clocks and miniature module aliases test
+forwarding, thirty selected calls, sixty events and failure restoration. The
+complete-runner fixtures cover source/proof checks, retained failures and the
+startup-adjusted allowance parser. Formal source qualification and a new complete
+measurement remain pending; test clocks are not experimental results.
+
+**Next decision:** measure the current receipt paths before proposing reuse.
+The prior runtime and accuracy failures stay failed. No new stronger strategy,
+personal practice or human hours are claimed.
+
+PR88 is complete: both local bases pass 5,434 tests, optional suites 2,342 each,
+and both hosted jobs pass. Main passes 774 focused tests in 179.23 seconds and
+reproduces five exact exports under 104 blocks without raw changes. All ten
+unrelated edits remain preserved after verification. The [closing records](../results/archive-reader-edges/final-ci/manifest.json)
+retain the initial CI import failures and complete corrected-head qualification.
+
+
+Step133 foundation check: 130 focused cases pass in each base environment, with
+one optional plotting skip. Both optional environments pass 131 cases with a
+reference already loaded in the parent; the actual archived software fixture
+still runs in a fresh child. Strict typing covers 829 files and lint/format pass.
+Initial copied fixture status and typing errors were corrected and retained.
+All 455 earlier scientific files stay unchanged. Full published-source checks
+and a new complete measurement are still pending; this is not evidence of a
+faster or stronger agent.
+
+
+### November 17: retain the failed source qualification and child diagnostics
+
+The first full cohort at `d2cd3f7` is not qualified. Both base suites pass
+5,564 tests; the 3.11 optional suite passes 2,473. The 3.12 optional run has
+2,437 passed and 36 setup errors, all from one failed shared fixture child.
+Its original stderr was not retained, so the cause remains unknown. A fresh
+software-only run of that same fixture passes; that does not explain the failure
+or count as full qualification. GitHub's 3.12 job passes, while its 3.11 job hits
+the existing 25-minute limit. [The failed cohort and fresh diagnostic](../results/receipt-source-cpu/failed-qualification-d2/manifest.json)
+are retained together.
+
+The test now saves child stdout and stderr beside its fixture directory and
+still requires a zero exit code. Two regression cases check successful and
+failed children. No reader, clock, configuration, scientific cap or acceptance
+rule changes. Full qualification must be repeated on the new head before the
+formal own proof or complete comparison. No new strength or timing result is
+claimed. Codex-assisted work; human hands-on time is not recorded.
+
+
+Resumed checks on November 17 pass 133 focused tests in each actual optional
+environment (196.62/198.91 seconds), with strict typing829, lint and formatting
+passing. A live sample during this run shows a parent waiting in an OS file
+read; it does not establish the earlier child failure's cause. Temporary
+environments removed during the pause were rebuilt from the unchanged lockfile.
+Full exact-head qualification remains pending.
+
+
+### November 18: qualify the exact source before measuring
+
+**Question:** does the test-only child-diagnostics fix have a complete passing
+source cohort on both supported runtimes, including hosted CI?
+
+**Change and example:** the source fingerprint stays the same. The first local
+rerun was interrupted after partial base-test progress, so its dots were kept as
+partial logs. A detached launch wrote no role results. A fresh isolated attempt
+ran base before optional checks on each runtime. For example, a passing 3.12
+base does not qualify a failed or unfinished 3.12 optional role.
+
+**Checks and result:** [all six roles](../results/receipt-source-cpu/checks.json)
+pass on `00aae95`: both local bases 5,566 passed / 71 skipped / 150 deselected,
+both optional suites 2,475 passed, and both hosted bases 5,566 passed. Strict
+typing covers 829 files; lint, format and hooks pass. Actual interpreter,
+NumPy, import roots, clean 458-file source fingerprint and the full hosted
+checkout tree match. The [retained record](../results/receipt-source-cpu/checks/manifest.json)
+separates the interrupted attempts from successful evidence. This establishes
+the software source gate only; it measures no current receipt CPU and changes
+no strategy, cap, seed or acceptance rule.
+
+**Next decision:** publish the qualified source, then run and publish the
+bounded own-only proof before any reference comparison. The prior forecast,
+accuracy and context-copy failures remain failed. Codex assisted with the
+checks and writing; human hands-on time was not recorded.
+
+
+### November 18: check the own proof before a reference comparison
+
+**Question:** does the qualified source reproduce its archived software
+calculation and preserve the selected call tree before a native reference is
+constructed?
+
+**Change and example:** the first private controller passed an unsupported
+argument and stopped before starting a proof child. That failed launch remains
+saved. The corrected controller passes the required positional argument and
+starts a fresh bounded proof. Its two invented fifteen-call trees test forwarding;
+they are explicitly separate from the one real archived fictional-game read.
+
+**Checks and result:** the [eleven raw proof members and both launcher
+records](../results/receipt-source-cpu/software-raw-manifest.json) are retained.
+The complete outer command takes 8.070 of 180 seconds; the inner supervisor
+takes 8.008 seconds under its startup-adjusted allowance. Archived software
+replay, source identity, observer events and clock arithmetic pass. No OpenSpiel
+reference was loaded, and the proof does not cover real cost-loader timing.
+
+**Next decision:** publish and verify this own-only evidence before the fixed
+ordinary/observed complete comparison. These checks do not admit training or
+strength claims. Codex assisted with execution, diagnosis and writing; human
+hands-on time was not recorded.
+
+
+### November 18: keep complete raw timing evidence before explaining it
+
+**Question:** can one ordinary/observed complete comparison run under the
+original limits while preserving all scientific work and exact results?
+
+**Change and example:** no strategy or acceptance rule changed. Each arm still
+reads three saved contexts and checks 432 profiles, 1,152 conditions and three
+native workers. The ordinary arm leaves the new timers off; the observed arm
+records thirty selected calls and sixty start/end events.
+
+**Checks and result:** the [27 raw files](../results/receipt-source-cpu/pair-raw-manifest.json)
+are retained before any cost report. Plain/observed children finish in
+457.933/415.749 seconds under 900 seconds each; the enclosing command finishes
+in 879.144 under 1,800 seconds. The saved-data authenticator accepts the
+original exact identity hash and independently retained clocks, event streams,
+native rows and work. Reference outputs were used only for comparison, never
+for training. One ordered pair does not prove stable overhead or CPU savings.
+
+**Next decision:** publish and verify the raw pair, then produce a data-only
+cost report and two-runtime export checks. The failed forecast, accuracy and
+context-copy gates are unchanged. Codex assisted with execution and writing;
+human hands-on time was not recorded.
+
+
+### November 18: locate current CPU in receipt prerequisites
+
+**Question:** within the earlier archive read, how much current parent CPU is
+spent reloading prerequisites for six saved report checks?
+
+**Change and example:** no gameplay or validation path changed. A data-only
+report reads the public raw pair and separates the six nested prerequisite
+loads from the one direct load. For example, the first cost read uses 25.227
+parent CPU seconds in the six nested loads and 4.162 in the direct load; these
+are separate exclusive pieces of a 30.337-second archive root. The 25.227 is
+not a promised saving, because a safe reuse has not been proved.
+
+**Checks and result:** the [report and both figures](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
+come from the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
+Both actual runtimes regenerate all five report files byte for byte with 109
+numerical execution paths blocked, zero forbidden calls and unchanged raw
+inputs. The second cost read uses 25.360 parent CPU seconds in nested loads and
+4.202 in the direct load, within a 30.667-second archive root. The complete
+cost reads use 136.472/137.320 parent CPU seconds; much work remains outside
+this selected root. Parent, reaped-child and worker clocks are kept separate.
+The single observed arm being quicker in wall time does not establish a speedup.
+
+**Next decision:** prospectively check identical inputs, mutation isolation and
+work-counter identity before considering reuse. The prior forecast, accuracy
+and full-context-copy gates remain failed. Codex assisted with the report,
+checks and figure inspection; human hands-on time was not recorded.
+
+
+### November 18: finish the exact-head qualification
+
+**Question:** does the published source and report pass every required local and
+hosted software check on the same scientific files?
+
+**Change and example:** the first final local attempt ran both full suites at
+once. The archived fictional-game replay exceeded its existing 180-second wall
+cap in each lane; the test passed alone in 6.23 seconds. The subsequent retry
+ran roles serially, with the same source and cap. This separates a contention
+failure from an accepted software result without erasing the failure.
+
+**Checks and result:** the [retained final record](../results/receipt-source-cpu/final-checks/manifest.json)
+has both failed logs and the six verified passing roles. Each local base passes
+5,566 tests, 71 skips, 150 deselections, lint, format, strict mypy on 829 files,
+all-files hooks and clean source guards. Each optional suite passes 2,475 tests.
+Both hosted jobs pass on the same whole tree. This qualifies the software
+head, not the earlier failed 912.54/900 forecast or 2.390%/1% strategy result.
+
+**Next decision:** publish the retained qualification and close this focused
+measurement PR after its documentation CI passes. Then prospectively test
+whether repeated prerequisites can be reused without changing inputs, mutation
+isolation or work counters. Codex assisted with execution and writing; human
+hands-on time was not recorded.
+
+The first documentation-commit CI attempt did not finish: Python 3.12 passed,
+while Python 3.11 reached 97% of its tests and hit the 25-minute hosted job
+limit. Its [log and metadata](../results/receipt-source-cpu/final-ci-retry/manifest.json)
+remain public. The follow-up increases only that CI allowance to 35 minutes;
+the scientific limits and the failed research gates are unchanged. Hosted
+completion on the new head is pending.

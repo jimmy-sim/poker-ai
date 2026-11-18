@@ -1,0 +1,95 @@
+"""Assemble actual six-role qualification only after attempt 3 verifies."""
+import hashlib
+import json
+import shutil
+import sys
+from pathlib import Path
+
+w = Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work')
+r = w / 'context-reuse'
+a = Path('/private/tmp/receipt-cpu-requalification-attempt3')
+sys.path[:0] = [str(r / 'src'), str(r / 'scripts')]
+import profile_receipt_cpu as runner
+from poker_ai.evaluation.diagnostic_receipts import checks
+
+v = json.loads((a / 'verified.json').read_text())
+_, source = runner.binding(r, clean=True)
+head = '00aae9566a61b70d6dadf92dd5f5d084c94bcc8a'
+fp = 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+assert v['status'] == 'all_six_source_roles_pass_before_formal_proof_and_collection'
+assert v['checked_commit'] == head and v['source_fingerprint'] == source['fingerprint'] == fp
+assert len(source['sha256']) == 458 and len(v['checks']) == 6
+q = r / 'results/receipt-source-cpu/checks'
+assert not q.exists() and not (q.parent / 'checks.json').exists()
+q.mkdir()
+files = []
+
+def copy(p: Path, rel: Path) -> None:
+    t = q / rel
+    t.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(p, t)
+    assert p.read_bytes() == t.read_bytes()
+    files.append(dict(file=str(rel), bytes=t.stat().st_size, sha256=hashlib.sha256(t.read_bytes()).hexdigest()))
+
+for p in sorted(a.iterdir()):
+    if not p.is_file():
+        continue
+    if p.name.startswith(('base', 'optional', 'lane', 'launch')):
+        copy(p, Path('local') / p.name)
+    elif p.name.startswith('hosted') or p.name in ('run.json', 'jobs-official.json', 'checkout-source.json', 'checkout-merge.json'):
+        copy(p, Path('hosted') / p.name)
+    else:
+        copy(p, Path('operator-state') / p.name)
+for folder, rel in ((w / 'receipt-cpu-requalification-checks', 'interrupted-attempt1'), (Path('/private/tmp/receipt-cpu-requalification-attempt2'), 'failed-start-attempt2')):
+    for p in sorted(folder.iterdir()):
+        if p.is_file():
+            copy(p, Path(rel) / p.name)
+operators = [
+    (w / 'run-receipt-cpu-requalification-checks.py', 'original-checks.py'),
+    (w / 'run-receipt-cpu-requalification-lane.py', 'original-lane.py'),
+    (w / 'verify-receipt-cpu-requalification.py', 'original-verifier.py'),
+    (Path('/private/tmp/run-receipt-cpu-requalification-attempt3-checks.py'), 'attempt3-checks.py'),
+    (Path('/private/tmp/run-receipt-cpu-requalification-attempt3-lane.py'), 'attempt3-lane.py'),
+    (Path('/private/tmp/verify-receipt-cpu-requalification-attempt3.py'), 'attempt3-verifier.py'),
+    (w / 'run-receipt-cpu-collection.py', 'collection-controller.py'),
+    (w / 'verify-receipt-cpu-publication.py', 'publication-verifier.py'),
+    (w / 'check-receipt-cpu-preflight.py', 'preflight-fixtures.py'),
+    (Path(__file__), 'assembly.py'),
+]
+for p, name in operators:
+    copy(p, Path('operators') / (name + '.txt'))
+copy(w / 'receipt-cpu-requalification-expected.json', Path('expected-source.json'))
+for p in sorted((w / 'receipt-cpu-preflight-fixtures').rglob('*')):
+    if p.is_file():
+        copy(p, Path('preflight-fixtures') / p.relative_to(w / 'receipt-cpu-preflight-fixtures'))
+rows = []
+for item in v['checks']:
+    role = item['role']
+    minor = role[-3:]
+    kind = 'base' if role.startswith('base') else 'optional' if role.startswith('optional') else 'hosted'
+    log = q / kind.replace('base', 'local').replace('optional', 'local') / (role + '.log')
+    row = dict(role=kind, minor=minor, status='passed', source_fingerprint=fp,
+               checked_commit=head, python=item['python'], numpy=item['numpy'],
+               result=item['result'], log=dict(file=str(log.relative_to(r)), sha256=hashlib.sha256(log.read_bytes()).hexdigest()))
+    if kind == 'hosted':
+        row.update(run_id=v['run_id'], job_id=item['job_id'], head_sha=head,
+                   conclusion='success', actual_uv_versions=[item['python']],
+                   actual_checkout_sha=v['tested_checkout'], actual_checkout_tree=v['tested_tree'],
+                   tested_tree_equals_pr_head=True, workflow_attempt=v['workflow_attempt'],
+                   actual_execution_job_id=item['actual_execution_job_id'],
+                   actual_execution_attempt=item['actual_execution_attempt'],
+                   reused_prior_success=item['reused_prior_success'])
+    else:
+        row.update(check_seconds=item['receipt']['check_seconds'])
+    rows.append(row)
+p = q.parent / 'checks.json'
+p.write_text(json.dumps(dict(source_fingerprint=fp, checks=rows), indent=2) + '\n')
+checks(r, p, source)
+(q / 'manifest.json').write_text(json.dumps(dict(
+    status='six_actual_source_roles_verified_before_formal_proof', checked_commit=head,
+    source_fingerprint=fp, source_files=458, entire_tested_tree_equals_head=True,
+    files=files, formal_own_proof_performed=False, complete_measurement_performed=False,
+    new_poker_training_performed=False,
+    scope='Locked local and hosted source qualification; not scientific performance or stronger-agent admission.'
+), indent=2) + '\n')
+print(json.dumps(dict(status='assembled_not_yet_published', files=len(files), rows=len(rows))))

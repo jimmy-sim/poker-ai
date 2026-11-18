@@ -1,0 +1,20 @@
+{
+  "status": "failed_retained",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "-c",
+    "from pathlib import Path;import sys;Path(sys.argv[1]).write_text(\"ran\")",
+    "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/receipt-cpu-preflight-fixtures/exhausted-child"
+  ],
+  "pid": null,
+  "cap_seconds": 0.01,
+  "started_perf_counter": 74788.085738625,
+  "seconds": 0.04019545800110791,
+  "returncode": 124,
+  "interrupted": "TimeoutExpired",
+  "reaped_user_seconds": 0.0,
+  "reaped_system_seconds": 0.0,
+  "failure_cleanup_groups": {},
+  "command_log_sha256": "4c918a0d62192fd60d9df2b11e893588754c31435b7c9503c0706df88005f0ce",
+  "scope": "Complete actual Python CLI startup, preflight, all inner children and writes. CPU is OS reaped process accounting. Administrative retention copies are separate; 120s failure-save reserve never permits scientific work."
+}

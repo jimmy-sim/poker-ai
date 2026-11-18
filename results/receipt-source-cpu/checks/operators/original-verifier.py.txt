@@ -1,0 +1,32 @@
+"""Verify six complete final software roles and their actual whole checkout tree."""
+import hashlib,json,re,runpy,subprocess
+from pathlib import Path
+w=Path(__file__).resolve().parent;r=w/'context-reuse';f=w/'receipt-cpu-requalification-checks';h=w/'receipt-cpu-requalification-hosted'
+e=json.loads((w/'receipt-cpu-requalification-expected.json').read_text());head=e['git_commit'];fp=e['fingerprint'];rows=[]
+assert head=='00aae9566a61b70d6dadf92dd5f5d084c94bcc8a' and len(e['sha256'])==458
+for role in ('base311','base312','optional311','optional312'):
+ v=json.loads((f/(role+'-receipt.json')).read_text());log=(f/(role+'.log')).read_text();py,np=('3.11.17','2.4.6') if role.endswith('311') else ('3.12.15','2.5.4')
+ assert v['status']=='passed' and v['checked_commit']==head and v['source_fingerprint']==fp
+ for marker,value in [('ACTUAL_PYTHON',py),('ACTUAL_NUMPY',np),('CHECKED_COMMIT',head),('COLLECTOR_SOURCE',fp)]:assert re.findall(marker+r'=([0-9a-f.]+)\n',log)==[value,value]
+ assert "PYTHONPATH=str(r/'src')" not in (w/'run-receipt-cpu-requalification-checks.py').read_text()
+ result=next(line for line in log.splitlines() if re.match(r'^\d+ passed',line))
+ assert result.startswith('5566 passed, 71 skipped, 150 deselected' if role.startswith('base') else '2475 passed')
+ if role.startswith('base'):assert 'Success: no issues found in 829 source files' in log and 'Ruff lint (locked project environment)' in log and 'Ruff format check (locked project environment)' in log and log.count('Passed')>=2
+ rows.append(dict(role=role,python=py,numpy=np,result=result,receipt=v,log_sha256=hashlib.sha256((f/(role+'.log')).read_bytes()).hexdigest()))
+run=json.loads((h/'run.json').read_text());jobs=json.loads((h/'jobs-official.json').read_text())['jobs'];checkout=json.loads((h/'checkout-source.json').read_text());tree=subprocess.check_output(['git','-C',str(r),'rev-parse',head+'^{tree}'],text=True).strip()
+assert run['head_sha']==head and run['event']=='pull_request' and run['status']=='completed' and run['conclusion']=='success'
+assert checkout['tree']['sha']==tree and head in [p['sha'] for p in checkout['parents']]
+parse=runpy.run_path(str(r/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='actual_runtime_parser')['parse']
+for minor,py,np in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+ job=next(j for j in jobs if j['name']=='Python '+py[:4]);p=h/('hosted'+minor+'.log');raw=p.read_bytes();text=raw.decode('utf-8-sig');parsed=parse(text)
+ assert job['head_sha']==head and job['run_id']==run['id'] and job['conclusion']=='success' and job['status']=='completed' and all(s['conclusion']=='success' for s in job['steps'])
+ assert parsed['actual_python']==[py] and parsed['all_uv_versions']==[py] and re.findall(r'ACTUAL_NUMPY=([0-9.]+)\s*$',text,re.M)==[np]
+ lines=text.splitlines();tested=[re.search(r'\b[0-9a-f]{40}\b',lines[i+1]).group() for i,line in enumerate(lines) if 'git log -1 --format=%H' in line];assert tested==[checkout['sha']]
+ assert head in text
+ result=next(line for line in lines if '5566 passed, 71 skipped, 150 deselected' in line)
+ assert job['run_attempt']==run['run_attempt']
+ rows.append(dict(role='hosted'+minor,python=py,numpy=np,result=result,job_id=job['id'],actual_execution_job_id=job['id'],actual_execution_attempt=job['run_attempt'],reused_prior_success=False,log_bytes=len(raw),log_sha256=hashlib.sha256(raw).hexdigest()))
+assert run['run_attempt']==1,'Retain/review any actual retries and carried executions before adapting verifier'
+for name,digest in e['sha256'].items():assert hashlib.sha256((r/name).read_bytes()).hexdigest()==digest
+v=dict(status='all_six_source_roles_pass_before_formal_proof_and_collection',checked_commit=head,source_fingerprint=fp,source_files=458,tested_checkout=checkout['sha'],tested_tree=tree,entire_tree_equals_head=True,run_id=run['id'],workflow_attempt=run['run_attempt'],checks=rows,scope='Source qualification before formal own proof and complete measurement; no new real poker trajectory, native comparison, forecast or strength admission')
+(h/'verified.json').open('x').write(json.dumps(v,indent=2)+'\n');print(json.dumps(v,indent=2))

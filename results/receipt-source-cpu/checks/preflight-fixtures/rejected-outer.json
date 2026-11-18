@@ -1,0 +1,20 @@
+{
+  "status": "failed_retained",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "-c",
+    "from pathlib import Path;import sys;Path(sys.argv[1]).write_text(\"ran\")",
+    "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/receipt-cpu-preflight-fixtures/rejected-child"
+  ],
+  "pid": null,
+  "cap_seconds": 10,
+  "started_perf_counter": 74788.085266875,
+  "seconds": 7.758299761917442e-05,
+  "returncode": 126,
+  "interrupted": "ArithmeticError",
+  "reaped_user_seconds": 0.0,
+  "reaped_system_seconds": 0.0,
+  "failure_cleanup_groups": {},
+  "command_log_sha256": "f20d3784324ddd9c27363ccbecdae9ec6018552adcca4ac396ef40b7f8d7700e",
+  "scope": "Complete actual Python CLI startup, preflight, all inner children and writes. CPU is OS reaped process accounting. Administrative retention copies are separate; 120s failure-save reserve never permits scientific work."
+}

@@ -1,0 +1,54 @@
+"""Recreate saved numeric exports on each actual runtime with execution blocked."""
+import ast
+import hashlib
+import json
+import pathlib
+import pkgutil
+import sys
+import time
+from contextlib import ExitStack
+from unittest.mock import patch
+
+root=pathlib.Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse')
+sys.path[:0]=[str(root/'src'),str(root/'scripts')]
+import numpy
+import poker_ai
+import profile_receipt_cpu as runner
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+runtime=sys.version.split()[0]
+versions={'3.11.17':('311','2.4.6'),'3.12.15':('312','2.5.4')}
+minor,expected_numpy=versions[runtime]
+assert numpy.__version__==expected_numpy
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+assert pathlib.Path(runner.__file__).resolve()==root/'scripts/profile_receipt_cpu.py'
+assert 'pyspiel' not in sys.modules
+source=root/'results/receipt-source-cpu/pair-raw'
+destination=root/'results/runs'/('receipt-source-cpu-20261118-report'+minor)
+receipt=pathlib.Path('/private/tmp/receipt-cpu-requalification-attempt3')/('report'+minor+'.json')
+assert not destination.exists() and not receipt.exists()
+raw_before={str(p.relative_to(source)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.is_file()}
+node=ast.parse((root/'results/context-reuse/checks/report_execution_guard.py.txt').read_text())
+blocked=ast.literal_eval(next(n.value for n in node.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in n.targets)))
+blocked+=['cProfile.Profile']+[f'profile_receipt_cpu.{name}' for name in ('own_math','execute_child','proof','child','pair')]
+assert len(blocked)==len(set(blocked))==109
+attempts=[]
+def forbidden(*args,**kwargs):
+ attempts.append('forbidden_numerical_execution')
+ raise AssertionError('saved report attempted to construct/replay/solve a game')
+descriptors={'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+started=time.perf_counter()
+with isolated(worker=False),ExitStack() as stack:
+ for name in blocked:pkgutil.resolve_name(name)
+ for name in blocked:stack.enter_context(patch(name,classmethod(forbidden) if name in descriptors else forbidden))
+ runner.report(root,source,destination)
+assert not attempts and 'pyspiel' not in sys.modules
+names=('reads.csv','commands.csv','summary.json')
+summary=json.loads((destination/'summary.json').read_text())
+assert len(summary['reads'])==6 and len(summary['commands'])==2
+assert summary['identity_sha256']=='ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185'
+raw_after={str(p.relative_to(source)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.is_file()}
+assert raw_before==raw_after
+result=dict(status='saved_report_numeric_exports_with_109_execution_paths_blocked',python=runtime,numpy=numpy.__version__,seconds=time.perf_counter()-started,blocked_targets=len(blocked),forbidden_calls=len(attempts),reference_imported=False,raw_members=len(raw_before),raw_unchanged=True,reads=len(summary['reads']),commands=len(summary['commands']),identity_sha256=summary['identity_sha256'],numeric_sha256={n:hashlib.sha256((destination/n).read_bytes()).hexdigest() for n in names},report_files=sorted(p.name for p in destination.iterdir()),scope='Saved data and plotting only; no new trajectory or reference construction')
+receipt.write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))

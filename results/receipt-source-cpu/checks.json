@@ -1,0 +1,121 @@
+{
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "checks": [
+    {
+      "role": "base",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "5566 passed, 71 skipped, 150 deselected in 861.76s (0:14:21)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/local/base311.log",
+        "sha256": "26124108435893fbd072ccda2c8bf19c8ef011d5e4eb950e41924518aa8f46d0"
+      },
+      "check_seconds": 942.7765936249998
+    },
+    {
+      "role": "base",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "5566 passed, 71 skipped, 150 deselected in 858.37s (0:14:18)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/local/base312.log",
+        "sha256": "a38f9d1876ebdff3832f5ce2528bdba0e1f911035d86c01ffc3611f5f3c640b0"
+      },
+      "check_seconds": 942.7809870829988
+    },
+    {
+      "role": "optional",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2475 passed in 531.38s (0:08:51)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/local/optional311.log",
+        "sha256": "5c75970ee2cfb7e240379c539a789dd573cf94fa6e15e68e00a80231e0442322"
+      },
+      "check_seconds": 536.1368339580004
+    },
+    {
+      "role": "optional",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2475 passed in 449.29s (0:07:29)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/local/optional312.log",
+        "sha256": "583dc76e06d36fd08fd00a085ed088639c90e6709c2e91c6091fc5703f0d3af0"
+      },
+      "check_seconds": 454.2476662499994
+    },
+    {
+      "role": "hosted",
+      "minor": "311",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "result": "2026-11-18T08:04:09.8020802Z 5566 passed, 71 skipped, 150 deselected, 1 warning in 1316.05s (0:21:56)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/hosted/hosted311.log",
+        "sha256": "caaf153768fc4cf68d78475b3e8869502bb22d2271788b47aee10fcbafd7e356"
+      },
+      "run_id": 44260849905,
+      "job_id": 134653551676,
+      "head_sha": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.11.17"
+      ],
+      "actual_checkout_sha": "24aaddd7834f9b39782bbc56466f6af385664f7f",
+      "actual_checkout_tree": "e6ddc6d14ee4ee7f452e4dddeb3fd9f07e1c0751",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 1,
+      "actual_execution_job_id": 134653551676,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": false
+    },
+    {
+      "role": "hosted",
+      "minor": "312",
+      "status": "passed",
+      "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+      "checked_commit": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "result": "2026-11-18T08:01:17.4430493Z 5566 passed, 71 skipped, 150 deselected, 1 warning in 1148.07s (0:19:08)",
+      "log": {
+        "file": "results/receipt-source-cpu/checks/hosted/hosted312.log",
+        "sha256": "2ca2b9e3563c2831699d527b934ae624768453b625b6c204587171f8266fdd5c"
+      },
+      "run_id": 44260849905,
+      "job_id": 134653551223,
+      "head_sha": "00aae9566a61b70d6dadf92dd5f5d084c94bcc8a",
+      "conclusion": "success",
+      "actual_uv_versions": [
+        "3.12.15"
+      ],
+      "actual_checkout_sha": "24aaddd7834f9b39782bbc56466f6af385664f7f",
+      "actual_checkout_tree": "e6ddc6d14ee4ee7f452e4dddeb3fd9f07e1c0751",
+      "tested_tree_equals_pr_head": true,
+      "workflow_attempt": 1,
+      "actual_execution_job_id": 134653551223,
+      "actual_execution_attempt": 1,
+      "reused_prior_success": false
+    }
+  ]
+}
