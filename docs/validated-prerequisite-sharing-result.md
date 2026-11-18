@@ -63,3 +63,14 @@ metadata before starting the timed pair, followed by its own publication
 gates. The validated sharing behavior remains unadmitted. Codex assisted with
 implementation, collection and reporting; human hands-on time was not
 recorded.
+
+The report head `32d81ed` subsequently passed both clean local base roles
+(5,605 passed, 71 skipped, 150 deselected each), both complete 70-file
+optional roles (2,510 passed each), Ruff, format, strict mypy on 844 files,
+all-files hooks and exact source/runtime guards. Hosted
+[CI #576](https://github.com/jimmy-sim/poker-ai/actions/runs/44385401428)
+passed the same base count on both actual locked runtimes with a whole
+checkout tree equal to the report head. The [final-check archive](../results/validated-prerequisite-sharing/final-checks/manifest.json)
+retains the logs, guards, report rerenders and verifier. These software
+checks qualify the accuracy of this failed-gate report; they do not change
+the failed pair result.

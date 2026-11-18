@@ -1,0 +1,41 @@
+{
+  "status": "failed_before_validated_share_child",
+  "source_manifest_sha256": "fd9fee6a2c2578038b6d793d1919ec883904318394580f262df860d63e78ce8d",
+  "own_manifest_sha256": "73bac3e11ee43681f77cf1d960cecb351f49cc95db7dd129d2f4316e2ac2096e",
+  "failed_pair_manifest_sha256": "b44e390b84a53dfd195e063103a6fd76df3f3a2b5b9cf9bf2163eed3fc46e53c",
+  "own_proof": {
+    "runtime": [
+      "3.11.17",
+      "2.4.6"
+    ],
+    "outer_seconds": 95.85052312499465,
+    "original_loads": 7,
+    "donor_substitutions": 6,
+    "saved_rows": 480,
+    "maximum_error_chips": 0.0,
+    "maximum_error_unitless": 0.0
+  },
+  "complete_pair": {
+    "order": [
+      "ordinary",
+      "validated_share"
+    ],
+    "first_child": "ordinary",
+    "first_child_seconds": 100.20556437500636,
+    "pair_seconds": 100.70345879100205,
+    "first_child_returncode": 1,
+    "first_child_failure": {
+      "reason": "No package metadata was found for numba",
+      "type": "PackageNotFoundError"
+    },
+    "completed_archive_roots": 1,
+    "validated_share_child_started": false,
+    "complete_identity_established": false,
+    "cpu_savings_established": false,
+    "favorable_retry_performed": false
+  },
+  "post_failure_environment_check": {
+    "base311_numba": "missing",
+    "optional311_numba": "0.68.1"
+  }
+}

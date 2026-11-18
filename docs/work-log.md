@@ -6689,7 +6689,6 @@ changed. The 912.54/900-second forecast and 2.390%/1% accuracy targets remain fa
 Codex assisted with implementation, checks and drafting; human hands-on time was
 not recorded.
 
-
 ### November 17: historical caller costs reproduced without construction
 
 After source `395575b` was public, both guarded data-only executions complete.
@@ -7225,3 +7224,16 @@ tests pass on each. No favorable retry, complete identity or savings claim.
 Next: final checks and CI on this report head, then decide the separate
 prospective runtime-preflight protocol. Codex-assisted; human hands-on time
 not recorded.
+
+Final report head `32d81ed` passes both clean local base roles (5,605
+passed, 71 skipped, 150 deselected each), both 70-file optional roles (2,510
+passed each), strict mypy on 844 files, Ruff, format and all-files hooks.
+Hosted [CI #576](https://github.com/jimmy-sim/poker-ai/actions/runs/44385401428)
+passes both actual locked runtimes and an identical whole checkout tree.
+The [32-member final-check archive](../results/validated-prerequisite-sharing/final-checks/manifest.json)
+retains raw logs, guards, rerenders and verifiers. The first report commit
+hook attempt failed before commit because `uv` was absent from the shell
+`PATH`; the unchanged staged commit passed hooks after loading the documented
+environment. Next: publish this evidence-only checkpoint, verify its CI,
+then history-merge the failed experiment. No complete pair identity or
+savings admission. Codex-assisted; human hands-on time not recorded.

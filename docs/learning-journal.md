@@ -7550,3 +7550,18 @@ runtime preflight and fresh publication checkpoints. No CPU saving is
 claimed. The older forecast, accuracy and full-context-copy failures remain
 failed. Codex assisted with diagnosis and writing; human hands-on time was
 not recorded.
+
+**November 18 final report checks:** the failed-pair report head `32d81ed`
+passes both clean local base roles (5,605 tests each, 71 skipped, 150
+deselected), both complete 70-file optional roles (2,510 tests each), Ruff,
+format, strict mypy on 844 files, all-files hooks and exact source guards.
+Hosted [CI #576](https://github.com/jimmy-sim/poker-ai/actions/runs/44385401428)
+passes both actual locked runtimes with the same base count and an identical
+whole checkout tree. The [final-check record](../results/validated-prerequisite-sharing/final-checks/manifest.json)
+retains these logs and the byte-identical data-only rerenders. The first
+report commit hook attempt failed because `uv` was missing from that shell's
+`PATH`; rerunning the unchanged staged commit with the documented environment
+passed both hooks. Next: publish and verify the final-check record, check
+its evidence-only CI, then history-merge the failed experiment. The fixed
+pair remains failed with no shared child or savings conclusion. Codex
+assisted with verification and writing; human hands-on time was not recorded.

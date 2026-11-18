@@ -1,0 +1,63 @@
+"""Verify clean exact-report-head base, optional, hook and rerender receipts."""
+
+import hashlib
+import json
+import re
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = folder.parents[3]
+head = "32d81ed838b8c5755405ca8892bdbf2cc751198f"
+fingerprint = "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d"
+lock = "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+suite = json.loads((folder / "optional-suites.json").read_bytes())
+assert len(suite) == 70 and suite[-1] == "tests/test_validated_prerequisite_sharing_report.py"
+report = (root / "results/validated-prerequisite-sharing/report.json").read_bytes()
+assert hashlib.sha256(report).hexdigest() == "7977116722a8b2d928995330babd59bdf780447f5cab7a007c8179dcfd3c0c31"
+
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    base = (folder / f"base{minor}.log").read_text()
+    assert (folder / f"base{minor}.exit").read_text().strip() == "0"
+    assert "All checks passed!" in base
+    assert "1008 files already formatted" in base
+    assert "Success: no issues found in 844 source files" in base
+    assert re.search(r"5605 passed, 71 skipped, 150 deselected in [0-9.]+s", base)
+    for timing in ("pre", "post"):
+        guard = json.loads((folder / f"base{minor}-{timing}.json").read_bytes())
+        assert guard["head"] == head and guard["dirty"] is False
+        assert (guard["python"], guard["numpy"]) == (version, numpy)
+        assert guard["source_fingerprint"] == fingerprint and guard["source_files"] == 458
+        assert guard["lock_sha256"] == lock and guard["launcher_pythonpath_absent"] is True
+        assert guard["import_root"].endswith("/src/poker_ai/__init__.py")
+
+    optional = (folder / f"optional{minor}.log").read_text()
+    assert "2510 passed in " in optional
+    assert optional.count("ACTUAL_PYTHON=" + version) == 2
+    assert optional.count("ACTUAL_NUMPY=" + numpy) == 2
+    assert optional.count("CHECKED_COMMIT=" + head) == 2
+    assert optional.count("SOURCE_FINGERPRINT=" + fingerprint) == 2
+    receipt = json.loads((folder / f"optional{minor}.json").read_bytes())
+    assert receipt["status"] == "passed" and receipt["role"] == "optional" + minor
+    assert receipt["checked_commit"] == head and receipt["suite_count"] == 70
+    assert (receipt["python"], receipt["numpy"]) == (version, numpy)
+    assert receipt["source_fingerprint"] == fingerprint
+    assert receipt["no_launcher_PYTHONPATH"] is True
+    assert (folder / f"report{minor}.json").read_bytes() == report
+
+assert (folder / "hooks.exit").read_text().strip() == "0"
+assert (folder / "hooks.log").read_text().count("Passed") == 2
+retry = json.loads((folder / "commit-hook-retry.json").read_bytes())
+assert retry["report_commit"] == head and retry["status"] == "first_report_commit_invocation_failed_before_commit"
+result = {
+    "status": "four_clean_final_local_roles_and_hooks_passed",
+    "checked_commit": head,
+    "source_fingerprint": fingerprint,
+    "lock_sha256": lock,
+    "base_tests_each": 5605,
+    "optional_tests_each": 2510,
+    "optional_suite_files": len(suite),
+    "report_sha256": hashlib.sha256(report).hexdigest(),
+    "initial_commit_hook_path_failure_retained": True,
+}
+(folder / "verified.json").write_text(json.dumps(result, indent=2) + "\n")
+print(json.dumps(result, indent=2))
