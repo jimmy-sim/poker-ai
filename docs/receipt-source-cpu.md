@@ -262,3 +262,23 @@ whether reuse preserves mutation isolation and every work counter. No cache is
 admitted by this measurement. The 912.54/900 forecast, 2.390%/1% accuracy and
 full-context-copy failures remain failed; competitive full-game strength is
 unestablished.
+
+
+### November 18: final source-head qualification
+
+The [final check archive](../results/receipt-source-cpu/final-checks/manifest.json)
+retains both the failed parallel attempt and the complete serial retry at
+`459c04d`. In the parallel attempt, the two local base suites each passed
+5,565 tests but the same archived software replay exceeded its unchanged
+180-second wall cap. The isolated test then passed in 6.23 seconds. The failed
+results are not counted as qualification, and the optional lanes did not start.
+
+The serial retry changed no source, test, threshold or cap. Python 3.11.17 and
+3.12.15 base suites each pass 5,566 tests, skip 71 and deselect 150, followed
+by lint, format, strict typing of 829 files, commit hooks and clean source
+guards. The optional scopes pass 2,475 tests each. GitHub run
+[#553](https://github.com/jimmy-sim/poker-ai/actions/runs/44271740130) passes
+both hosted jobs on the same source head and whole tree, with the same actual
+Python and NumPy versions. The retained verifier checks all six role logs,
+source hashes and the hosted merge checkout. These are software qualifications;
+they do not reverse any failed research gate or establish stronger play.

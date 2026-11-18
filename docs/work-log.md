@@ -6952,3 +6952,20 @@ actual versions and hashes. Next: assess identical contexts and mutation-safe
 reuse under a prospective protocol before any optimization. The failed
 forecast, accuracy and context-copy gates remain failed. Codex-assisted;
 human hands-on time not recorded.
+
+
+### November 18: finish exact-head software checks after the report
+
+At `459c04d`, the first final local pair ran simultaneously and both base
+suites failed one archived fictional-game replay at the unchanged 180-second
+cap; each had 5,565 passes. The optional lanes were not started. An isolated
+replay passed in 6.23 seconds. The serial retry of the same head passes both
+base scopes (5,566 passed, 71 skipped, 150 deselected each), strict typing,
+Ruff, all-files hooks and clean source guards. Both optional scopes pass 2,475
+tests. Hosted CI [run #553](https://github.com/jimmy-sim/poker-ai/actions/runs/44271740130)
+passes Python 3.11.17 and 3.12.15 on the same whole tree. The
+[final archive](../results/receipt-source-cpu/final-checks/manifest.json)
+retains all six passing logs, failed parallel logs, exact versions, run metadata
+and verifier. Next: publish this record, verify documentation CI, then close
+the focused PR. Scientific failures and strength limits remain unchanged.
+Codex-assisted; human hands-on time not recorded.

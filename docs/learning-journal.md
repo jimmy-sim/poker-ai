@@ -142,6 +142,9 @@ Its six exact-head source checks and bounded own-only proof pass. The complete
 ordinary/observed pair passes its original identity gate. Current timers locate
 about 25.2–25.4 parent CPU seconds per cost read in six nested receipt
 prerequisite loads; no reuse or stronger strategy is admitted.
+All six final source-head roles now pass. An earlier concurrent local attempt
+failed an unchanged 180-second archived replay cap in both base lanes; its
+records remain with the passing serial retry.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7245,3 +7248,28 @@ The single observed arm being quicker in wall time does not establish a speedup.
 work-counter identity before considering reuse. The prior forecast, accuracy
 and full-context-copy gates remain failed. Codex assisted with the report,
 checks and figure inspection; human hands-on time was not recorded.
+
+
+### November 18: finish the exact-head qualification
+
+**Question:** does the published source and report pass every required local and
+hosted software check on the same scientific files?
+
+**Change and example:** the first final local attempt ran both full suites at
+once. The archived fictional-game replay exceeded its existing 180-second wall
+cap in each lane; the test passed alone in 6.23 seconds. The subsequent retry
+ran roles serially, with the same source and cap. This separates a contention
+failure from an accepted software result without erasing the failure.
+
+**Checks and result:** the [retained final record](../results/receipt-source-cpu/final-checks/manifest.json)
+has both failed logs and the six verified passing roles. Each local base passes
+5,566 tests, 71 skips, 150 deselections, lint, format, strict mypy on 829 files,
+all-files hooks and clean source guards. Each optional suite passes 2,475 tests.
+Both hosted jobs pass on the same whole tree. This qualifies the software
+head, not the earlier failed 912.54/900 forecast or 2.390%/1% strategy result.
+
+**Next decision:** publish the retained qualification and close this focused
+measurement PR after its documentation CI passes. Then prospectively test
+whether repeated prerequisites can be reused without changing inputs, mutation
+isolation or work counters. Codex assisted with execution and writing; human
+hands-on time was not recorded.

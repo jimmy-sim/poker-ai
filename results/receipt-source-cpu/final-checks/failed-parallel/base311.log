@@ -1,0 +1,143 @@
+{"command": ["uv", "run", "--locked", "python", "-c", "import pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\nimport profile_receipt_cpu as t\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='459c04dbbfdfcb34243d783297cfec68881356ad'\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src') and pathlib.Path(t.__file__).resolve()==r/t.ENTRY\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nc,s=t.binding(r,clean=True)\nassert len(s['sha256'])==458 and s['fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d' and s['dirty'] is False\nassert 'PYTHONPATH' not in __import__('os').environ\nprint('ACTUAL_PYTHON='+sys.version.split()[0]);print('ACTUAL_NUMPY='+numpy.__version__)\nprint('CHECKED_COMMIT='+'459c04dbbfdfcb34243d783297cfec68881356ad');print('COLLECTOR_SOURCE='+s['fingerprint'])\nprint('Software qualification only; unit tests may use toy/fixture solvers. No formal proof, complete audit measurement or new real Holdem trajectory study invoked')\n"]}
+ACTUAL_PYTHON=3.11.17
+ACTUAL_NUMPY=2.4.6
+CHECKED_COMMIT=459c04dbbfdfcb34243d783297cfec68881356ad
+COLLECTOR_SOURCE=b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d
+Software qualification only; unit tests may use toy/fixture solvers. No formal proof, complete audit measurement or new real Holdem trajectory study invoked
+{"command": ["make", "check"]}
+uv run --locked ruff check .
+All checks passed!
+uv run --locked ruff format --check .
+989 files already formatted
+uv run --locked mypy --strict src tests scripts
+Success: no issues found in 829 source files
+uv run --locked pytest -q -m "not slow"
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  7%]
+........................................................................ [  8%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+...........................................s............................ [ 21%]
+......................................ss................................ [ 23%]
+................................s....................................... [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 28%]
+........................................................................ [ 29%]
+........................................................................ [ 30%]
+..................................................................s..... [ 31%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+........................................................................ [ 35%]
+........................................................................ [ 37%]
+.......sss.............................................................. [ 38%]
+.....................................................................s.. [ 39%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+........................................................................ [ 43%]
+........................................................................ [ 44%]
+...................................................ss..sss.............. [ 46%]
+........................................................................ [ 47%]
+..................sssssssssssssssss..................................... [ 48%]
+.........s.............................................................. [ 49%]
+........................................................................ [ 51%]
+........................................................................ [ 52%]
+........................................................................ [ 53%]
+.......ssssssssss....................................................... [ 54%]
+........................................................................ [ 56%]
+........................................................................ [ 57%]
+.........................................................s.............. [ 58%]
+........................................................................ [ 60%]
+.............................................ss...s..................... [ 61%]
+........................................................................ [ 62%]
+........................................................................ [ 63%]
+...s.................................................s.................. [ 65%]
+........................................................................ [ 66%]
+..............................................................ss........ [ 67%]
+...............ss....................................................... [ 69%]
+........................................................................ [ 70%]
+..................ss......................................ss............ [ 71%]
+........................................................................ [ 72%]
+........................................................................ [ 74%]
+....................................s................................... [ 75%]
+........................................................................ [ 76%]
+................................s....................................... [ 77%]
+........................................................................ [ 79%]
+.......s....................s........................................... [ 80%]
+......................................................................s. [ 81%]
+...............................................................s........ [ 83%]
+..........................................................ss..........s. [ 84%]
+........................................................................ [ 85%]
+...............................s........................................ [ 86%]
+.......................s................................................ [ 88%]
+...................F.................................................... [ 89%]
+........................................................................ [ 90%]
+........................................................................ [ 92%]
+........................................................................ [ 93%]
+..........s............................................................. [ 94%]
+........................................................................ [ 95%]
+........................................................................ [ 97%]
+........................................................................ [ 98%]
+........................................................................ [ 99%]
+..................                                                       [100%]
+=================================== FAILURES ===================================
+____________ test_actual_archived_software_read_has_no_source_root _____________
+
+    def test_actual_archived_software_read_has_no_source_root() -> None:
+        program = """import sys
+    from pathlib import Path
+    r=Path.cwd();sys.path[:0]=[str(r/'src'),str(r/'scripts')]
+    from poker_ai.evaluation.compact_opponent_guard import isolated
+    with isolated(worker=False):
+     import source_phase_support as tool
+     from compact_suit.cli import read
+     from poker_ai.postflop.river_study import Deadline
+     path=r/'results/compact-suit-learning/software/own.json'
+     before=[];after=[]
+     a=read(r,path,Deadline(180),before)
+     observer=tool.Observer(enabled=True)
+     with observer.hooks(),observer.read(0): b=read(r,path,Deadline(180),after)
+     assert a==b and before==after and before[0]==a['own_replay']
+     result=tool.validate_read(observer.reads[0],0,enabled=True)
+     assert result['selected_calls']==0 and observer.state()['restored'] is True
+     assert 'pyspiel' not in sys.modules
+     print('actual archived software replay identical; zero source roots; '
+           'not real cost-loader coverage')
+    """
+        result = subprocess.run(
+            [sys.executable, "-c", program], cwd=ROOT, capture_output=True, text=True
+        )
+>       assert result.returncode == 0, result.stdout + result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<string>", line 11, in <module>
+E           File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 76, in read
+E             return _read(root, path, deadline, observed)
+E                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 134, in _read
+E             actual = replay(
+E                      ^^^^^^^
+E           File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/evaluation/opponent_learning_own.py", line 421, in replay
+E             deadline.check()
+E           File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/postflop/river_study.py", line 142, in check
+E             raise TimeoutError("declared total river-study wall-time cap exceeded")
+E         TimeoutError: declared total river-study wall-time cap exceeded
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/private/tmp/poker-ai-final-459/base311/bin/python', '-c', "import sys\nfrom pathlib import Pa...eclared total river-study wall-time cap exceeded")\nTimeoutError: declared total river-study wall-time cap exceeded\n').returncode
+
+tests/test_source_phase_observer.py:354: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_source_phase_observer.py::test_actual_archived_software_read_has_no_source_root
+1 failed, 5565 passed, 71 skipped, 150 deselected in 1626.02s (0:27:06)
+make: *** [test] Error 1
