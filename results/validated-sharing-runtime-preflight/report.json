@@ -1,0 +1,32 @@
+{
+  "status": "failed_before_validated_share_child",
+  "source_manifest_sha256": "8a4a297e0a45aef448ef9d6d08aeb2bbc6c4edf4e34933c1b16231adaf3c904f",
+  "old_own_manifest_sha256": "73bac3e11ee43681f77cf1d960cecb351f49cc95db7dd129d2f4316e2ac2096e",
+  "failed_pair_manifest_sha256": "a9d0fe46df0cbe34bf56d9d2103943059be585559982d8e20a9e6190e96ba036",
+  "complete_pair": {
+    "order": [
+      "ordinary",
+      "validated_share"
+    ],
+    "first_child": "ordinary",
+    "first_child_seconds": 527.357055374996,
+    "pair_seconds": 527.7366548330028,
+    "first_child_returncode": 1,
+    "first_child_failure": {
+      "reason": "complete reader scope, source or input changed",
+      "type": "ArithmeticError"
+    },
+    "completed_archive_roots": 2,
+    "original_loader_calls": 14,
+    "complete_reads": 3,
+    "reference_workers": 3,
+    "profile_count": 432,
+    "fixed_condition_count": 1152,
+    "profile_value_type": "list",
+    "condition_value_type": "list",
+    "validated_share_child_started": false,
+    "complete_identity_established": false,
+    "cpu_savings_established": false,
+    "favorable_retry_performed": false
+  }
+}

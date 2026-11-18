@@ -7298,3 +7298,15 @@ and verifier preserve exact bytes. No retry or complete identity/savings
 claim. Next: publish this raw checkpoint, render a data-only failed result,
 finish checks and update PR #93. Codex-assisted; human hands-on time not
 recorded.
+
+The [data-only failed-pair report](validated-sharing-runtime-preflight-result.md)
+authenticates the public 34-member source-check and 19-member raw-pair
+records plus the carried old own manifest, with poker reader, numerical and
+reference imports blocked. Nine tamper/import tests pass on each locked
+Python runtime; both render byte-identical JSON SHA-256
+`a69f851d4bb238f4aeee85ca70d2096fd3ab3ed62afae06c1721722c64a753bf`.
+The report records 14 ordinary loader calls, three complete reads, three
+native workers and failure before the validated-share child. Next: commit
+the data-only report, complete exact-report-head local, optional and hosted
+checks, then close the failed investigation. No retry or savings claim.
+Codex-assisted; human hands-on time not recorded.

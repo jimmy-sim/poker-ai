@@ -7640,3 +7640,18 @@ the outer failure. **Next decision:** publish this failure before a data-only
 report; do not retry the fixed pair. A corrected gate would need a new
 prospective question and fresh qualification. Codex assisted with diagnosis;
 human hands-on time was not recorded.
+
+The [data-only report](validated-sharing-runtime-preflight-result.md) now
+authenticates all 34 source-check and 19 failed-pair members plus the carried
+old own manifest, then records the failed ordinary-child gate without
+constructing another reader or reference output. **Example:** the report
+shows `profile_value_type: list` and `profile_count: 432`; the source's
+comparison with the integer `432` rejects that list. Nine focused tests
+pass on each locked Python runtime, including altered bytes, a rehashed
+changed failure, a rehashed changed profile shape and blocked reader,
+NumPy/Numba, OpenSpiel and Treys imports. Both runtimes render the same
+JSON SHA-256 `a69f851d4bb238f4aeee85ca70d2096fd3ab3ed62afae06c1721722c64a753bf`.
+**Next decision:** complete exact-report-head local, optional and hosted
+checks, retain their evidence, then close this failed investigation. No
+retry or complete sharing identity. Codex assisted; human hands-on time
+was not recorded.
