@@ -75,3 +75,18 @@ module/import/type findings were corrected before qualification. No new
 complete pair has run. Next: commit this source, finish clean exact-head
 local and hosted qualification, and publish its check record before any
 complete comparison.
+
+## Exact-source qualification — November 18
+
+The clean source head `0b9ae32` passed both locked base roles (5,616
+passed, 72 skipped, 150 deselected each), both 71-file optional roles
+(2,522 passed on Python 3.11; 2,521 passed and one expected real-runtime
+skip on Python 3.12), Ruff, format, strict mypy on 846 files and all-files
+hooks. A first optional 3.11 attempt stopped before tests on a sandbox uv
+cache-lock error; its raw log is retained with the successful same-suite
+attempt. Official [CI #580](https://github.com/jimmy-sim/poker-ai/actions/runs/44404463094)
+passed both actual locked runtimes and 5,616 tests each on a whole checkout
+tree identical to the source head. The [six-role record](../results/validated-sharing-runtime-preflight/source-checks/manifest.json)
+retains all 34 reviewed members and a portable verifier. The old public
+own proof still needs reauthentication after this record is published. No
+new complete pair has run.

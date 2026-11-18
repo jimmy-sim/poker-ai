@@ -7608,3 +7608,18 @@ findings were corrected during local iteration; no archived pair was run.
 Next: clean exact-source local, optional and hosted qualification before
 using the launcher. The PR #92 failure remains failed. Codex assisted with
 implementation and tests; human hands-on time was not recorded.
+
+At source commit `0b9ae32`, the two clean locked base roles pass 5,616 tests,
+72 skips and 150 deselections each, with Ruff, format and strict mypy (846
+files). The 71-file optional roles pass 2,522 tests on Python 3.11 and 2,521
+with one expected real-runtime skip on Python 3.12. All-files hooks pass.
+The first optional 3.11 attempt stopped before tests because sandbox access
+blocked a uv cache lock; its failure log is retained beside the successful
+same-suite run. Hosted [CI #580](https://github.com/jimmy-sim/poker-ai/actions/runs/44404463094)
+passes both jobs on the exact source tree, with 5,616 tests each and actual
+Python/NumPy versions checked. The [34-member source-check record](../results/validated-sharing-runtime-preflight/source-checks/manifest.json)
+retains local and official hosted logs, guards, the cache-lock failure and
+replay verifiers. **Next decision:** publish and verify this record, then
+reauthenticate the public old own proof before one fixed optional-runtime
+pair. No complete pair or CPU-saving conclusion exists yet. Codex assisted
+with qualification; human hands-on time was not recorded.

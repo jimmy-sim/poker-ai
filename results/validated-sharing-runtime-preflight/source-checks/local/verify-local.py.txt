@@ -1,0 +1,53 @@
+"""Recheck the exact source-head local qualification and retained failure."""
+
+import json
+import re
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+head = "0b9ae32b13959371952f8f853d5419d8708de8d1"
+fingerprint = "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d"
+lock = "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+suite = json.loads((folder / "optional-suites.json").read_bytes())
+assert len(suite) == 71 and suite[-1] == "tests/test_validated_sharing_runtime_preflight.py"
+
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    base = (folder / f"base{minor}.log").read_text()
+    assert (folder / f"base{minor}.exit").read_text().strip() == "0"
+    assert "All checks passed!" in base
+    assert "1011 files already formatted" in base
+    assert "Success: no issues found in 846 source files" in base
+    assert re.search(r"5616 passed, 72 skipped, 150 deselected in [0-9.]+s", base)
+    for side in ("pre", "post"):
+        guard = json.loads((folder / f"base{minor}-{side}.json").read_bytes())
+        assert guard["head"] == head and guard["dirty"] is False
+        assert (guard["python"], guard["numpy"]) == (version, numpy)
+        assert guard["source_fingerprint"] == fingerprint and guard["source_files"] == 458
+        assert guard["lock_sha256"] == lock and guard["launcher_pythonpath_absent"] is True
+        assert guard["import_root"].endswith("/src/poker_ai/__init__.py")
+
+    optional = (folder / f"optional{minor}-attempt2.log").read_text()
+    summary = "2522 passed in " if minor == "311" else "2521 passed, 1 skipped in "
+    assert summary in optional
+    for field, value in (("ACTUAL_PYTHON", version), ("ACTUAL_NUMPY", numpy),
+                         ("CHECKED_COMMIT", head), ("SOURCE_FINGERPRINT", fingerprint)):
+        assert optional.count(f"{field}={value}") == 2
+    receipt = json.loads((folder / f"optional{minor}-attempt2.json").read_bytes())
+    assert receipt["role"] == "optional" + minor and receipt["status"] == "passed"
+    assert receipt["checked_commit"] == head and receipt["suite_count"] == 71
+    assert (receipt["python"], receipt["numpy"]) == (version, numpy)
+    assert receipt["source_fingerprint"] == fingerprint
+    assert receipt["no_launcher_PYTHONPATH"] is True
+    license_receipt = json.loads((folder / f"optional{minor}-license.json").read_bytes())
+    assert license_receipt["license"] == "Apache-2.0"
+    assert license_receipt["version"] == "2.0.2"
+    assert license_receipt["license_bytes"] == 11358
+    assert license_receipt["license_sha256"] == "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+
+failed = json.loads((folder / "optional311.json").read_bytes())
+assert failed["status"] == "failed" and failed["checked_commit"] == head
+assert "Could not acquire lock" in (folder / "optional311.log").read_text()
+assert "Operation not permitted" in (folder / "optional311.log").read_text()
+assert (folder / "hooks.exit").read_text().strip() == "0"
+assert (folder / "hooks.log").read_text().count("Passed") == 2
+print("four local roles, hooks, guards, license receipts and initial cache-lock failure verified")

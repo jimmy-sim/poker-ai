@@ -7269,3 +7269,18 @@ pass. Initial line-length and duplicate mypy module/type findings were
 fixed before this source commit. No complete pair has run. Next: commit
 source and finish all six exact-head qualification roles before the first
 source push. Codex-assisted; human hands-on time not recorded.
+
+Source commit `0b9ae32` was published after both clean locked base roles
+passed 5,616 tests/72 skips/150 deselections, both 71-file optional roles
+passed (2,522 on Python 3.11; 2,521/one expected skip on Python 3.12),
+Ruff, format, strict mypy on 846 files and all-files hooks. A sandbox uv
+cache-lock failure before the first optional 3.11 test is retained; the
+unchanged suite passed with cache access. Official hosted
+[CI #580](https://github.com/jimmy-sim/poker-ai/actions/runs/44404463094)
+passes both jobs on the identical whole tree with actual locked runtimes
+and 5,616 tests each. The [34-member six-role source-check archive](../results/validated-sharing-runtime-preflight/source-checks/manifest.json)
+has verified local and hosted logs, guards, metadata and file hashes.
+Next: publish/verify this evidence checkpoint, reauthenticate the carried
+old own proof, then run one fixed complete pair in optional Python 3.11.
+No new complete pair, saving or strategy admission yet. Codex-assisted;
+human hands-on time not recorded.
