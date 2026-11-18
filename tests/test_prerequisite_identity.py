@@ -4,6 +4,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, cast
 
 import audit_receipt_prerequisites as audit
@@ -123,6 +124,10 @@ def test_outer_timeout_retains_partial_receipt(
 def test_seven_fresh_loads_complete_with_exact_receipt(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
+    monkeypatch.setattr(
+        "audit_receipt_prerequisites.sys",
+        SimpleNamespace(version=sys.version, modules={}),
+    )
     (tmp_path / "uv.lock").write_text("synthetic lock")
     monkeypatch.setattr(audit, "ROOT", tmp_path)
     monkeypatch.setattr(audit, "revision", lambda: ("synthetic-head", False))
@@ -139,6 +144,10 @@ def test_seven_fresh_loads_complete_with_exact_receipt(
 def test_failed_later_load_retains_earlier_observations(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
+    monkeypatch.setattr(
+        "audit_receipt_prerequisites.sys",
+        SimpleNamespace(version=sys.version, modules={}),
+    )
     (tmp_path / "uv.lock").write_text("synthetic lock")
     monkeypatch.setattr(audit, "ROOT", tmp_path)
     monkeypatch.setattr(audit, "revision", lambda: ("synthetic-head", False))
@@ -158,3 +167,16 @@ def test_failed_later_load_retains_earlier_observations(
     saved = json.loads((tmp_path / "child.json").read_text())
     assert saved["status"] == "running"
     assert len(saved["observations"]) == 3
+
+
+def test_real_child_guard_rejects_preloaded_reference(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    monkeypatch.setattr(
+        "audit_receipt_prerequisites.sys",
+        SimpleNamespace(version=sys.version, modules={"pyspiel": object()}),
+    )
+    monkeypatch.setattr(audit, "revision", lambda: ("synthetic-head", False))
+    with pytest.raises(ArithmeticError, match="reference-free"):
+        audit.child(tmp_path)
+    assert not (tmp_path / "child.json").exists()

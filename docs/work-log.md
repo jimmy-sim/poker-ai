@@ -6999,3 +6999,15 @@ before source or collection: compare seven fresh prerequisite outputs, complete
 graph identities and mutable isolation on both actual runtimes. No reuse or new
 trajectory is admitted by that audit alone. Codex-assisted; human hands-on
 time not recorded.
+
+### November 18: retain first prerequisite-audit source failure
+
+At `47852ff`, both local bases pass 5,574 tests each and both hosted CI #557
+jobs pass. Optional 3.11 has 2,481 passes and two new synthetic failures:
+its pytest parent had preloaded `pyspiel`, which the real audit child is
+supposed to reject. The [full failed cohort](../results/prerequisite-identity/failed-source-478/manifest.json)
+retains logs, receipts, source and CI metadata. No archived-input audit ran.
+The synthetic tests now model a fresh module view and add an explicit
+preloaded-reference refusal case. Nine focused cases pass on both optional
+runtimes. Next: full exact-head requalification; no scientific cap or reader
+changed. Codex-assisted; human hands-on time not recorded.

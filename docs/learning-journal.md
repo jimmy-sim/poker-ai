@@ -7310,3 +7310,12 @@ unrelated user edits. The new audit has no result yet.
 study on both actual runtimes, and retain negative outcomes. A passing audit
 still will not admit a cache or stronger play. Codex assisted with the PR,
 checks and drafting; human hands-on time was not recorded.
+
+The first published audit source passes both local base suites (5,574 tests
+each) and hosted CI, but its optional 3.11 scope fails two synthetic tests.
+The optional suite had loaded `pyspiel` into the shared pytest process; the
+audit's real child correctly refused that state. The [failed cohort](../results/prerequisite-identity/failed-source-478/manifest.json)
+is retained. The synthetic tests now model an isolated child and separately
+assert the real guard's refusal. Nine focused cases pass with a reference
+preloaded on both optional runtimes. No actual archived audit ran; complete
+qualification on a new head is pending.
