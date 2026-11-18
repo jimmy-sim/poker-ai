@@ -7273,3 +7273,10 @@ measurement PR after its documentation CI passes. Then prospectively test
 whether repeated prerequisites can be reused without changing inputs, mutation
 isolation or work counters. Codex assisted with execution and writing; human
 hands-on time was not recorded.
+
+The first documentation-commit CI attempt did not finish: Python 3.12 passed,
+while Python 3.11 reached 97% of its tests and hit the 25-minute hosted job
+limit. Its [log and metadata](../results/receipt-source-cpu/final-ci-retry/manifest.json)
+remain public. The follow-up increases only that CI allowance to 35 minutes;
+the scientific limits and the failed research gates are unchanged. Hosted
+completion on the new head is pending.

@@ -282,3 +282,11 @@ both hosted jobs on the same source head and whole tree, with the same actual
 Python and NumPy versions. The retained verifier checks all six role logs,
 source hashes and the hosted merge checkout. These are software qualifications;
 they do not reverse any failed research gate or establish stronger play.
+
+The later documentation/evidence head `33db2ae` did not pass its first hosted
+run. In [CI #554](https://github.com/jimmy-sim/poker-ai/actions/runs/44285335607),
+Python 3.12 passes the complete suite; Python 3.11 reaches 97% without a test
+failure and is cancelled by the workflow's 25-minute job limit. The
+[cancelled job log](../results/receipt-source-cpu/final-ci-retry/manifest.json)
+is retained. The workflow allowance is raised to 35 minutes for a complete
+rerun. This changes no scientific proof, measurement or child-time cap.

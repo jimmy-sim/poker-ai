@@ -6969,3 +6969,14 @@ retains all six passing logs, failed parallel logs, exact versions, run metadata
 and verifier. Next: publish this record, verify documentation CI, then close
 the focused PR. Scientific failures and strength limits remain unchanged.
 Codex-assisted; human hands-on time not recorded.
+
+### November 18: retain hosted documentation-head cancellation
+
+On documentation/evidence head `33db2ae`, hosted [run #554](https://github.com/jimmy-sim/poker-ai/actions/runs/44285335607)
+passes Python 3.12 (5,566 passed, 71 skipped, 150 deselected). Python 3.11
+reaches 97% without a test failure before the 25-minute job allowance cancels
+it. The [exact run and job logs](../results/receipt-source-cpu/final-ci-retry/manifest.json)
+are retained. Raise only the workflow allowance to 35 minutes and rerun the
+same checks on a new head. No scientific cap, source or claim changes; merge
+remains gated on both successful hosted jobs. Codex-assisted; human hands-on
+time not recorded.
