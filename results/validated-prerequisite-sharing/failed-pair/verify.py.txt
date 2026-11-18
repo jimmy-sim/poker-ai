@@ -1,0 +1,36 @@
+"""Check every retained byte and the first-child failure boundary."""
+
+import hashlib
+import json
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+manifest = json.loads((folder / "manifest.json").read_bytes())
+assert manifest["status"] == "failed_first_ordinary_child_retained"
+assert manifest["validated_share_child_started"] is False
+assert manifest["favorable_retry_performed"] is False
+assert manifest["complete_identity_established"] is False
+assert len(manifest["files"]) == len(set(manifest["files"]))
+for name, metadata in manifest["files"].items():
+    raw = (folder / name).read_bytes()
+    assert len(raw) == metadata["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == metadata["sha256"]
+raw = folder / "raw"
+pair = json.loads((raw / "pair.json").read_bytes())
+child = json.loads((raw / "ordinary/child.json").read_bytes())
+measurement = json.loads((raw / "ordinary/measurement.json").read_bytes())
+read = json.loads((raw / "ordinary/read-1.json").read_bytes())
+archive = json.loads((raw / "ordinary/archive-0.json").read_bytes())
+assert pair["status"] == "failed_retained" and pair["order"] == ["ordinary", "validated_share"]
+assert pair["failure_kind"] == "ArithmeticError" and len(pair["measurements"]) == 1
+assert pair["measurements"][0] == measurement
+assert child["status"] == "failed_retained" and child["mode"] == "ordinary"
+assert child["head"] == manifest["pair_head"] and child["dirty"] is False
+assert child["failure"] == {"type": "PackageNotFoundError", "reason": "No package metadata was found for numba"}
+assert measurement["returncode"] == 1 and measurement["cap_seconds"] == 900
+assert read["status"] == "failed" and read["failure_kind"] == "PackageNotFoundError"
+assert len(archive["rows"]) == 7 and [row["kind"] for row in archive["rows"]] == ["nested"] * 6 + ["direct"]
+assert not (raw / "validated_share").exists()
+assert (raw / "pair-command.exit").read_text().strip() == "1"
+assert "PackageNotFoundError: No package metadata was found for numba" in (raw / "ordinary/command.log").read_text()
+print(json.dumps({"status": "failed_pair_raw_verified", "members": len(manifest["files"]), "first_child_seconds": measurement["seconds"]}, indent=2))
