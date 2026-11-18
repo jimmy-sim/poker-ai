@@ -1,0 +1,253 @@
+{
+  "status": "d2_not_qualified_optional312_fixture_error_and_hosted311_timeout",
+  "checked_commit": "d2cd3f737612a932a08b12d1d13fd3887510049e",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "local_bases": "5564 passed, 71 skipped, 150 deselected each",
+  "optional311": "2473 passed in 844.92s",
+  "optional312": "2437 passed, 36 setup errors in 757.53s; all errors share one failed fixture child",
+  "original_child_stderr_retained": false,
+  "original_child_failure_cause": "unknown",
+  "fresh_software_only_diagnostic_returncode": 0,
+  "hosted_run": 44166661190,
+  "hosted311": "cancelled: official annotation confirms 25m0s limit",
+  "hosted312": "5564 passed, 71 skipped, 150 deselected, 1 warning in 1183.61s",
+  "formal_proof_performed": false,
+  "complete_measurement_performed": false,
+  "files": [
+    {
+      "file": "local/base311-install.log",
+      "bytes": 352,
+      "sha256": "0d5bdd2d548d1a6af31b9c807175d77cb1c92700fef40003cfd621dc179dff58"
+    },
+    {
+      "file": "local/base311-receipt.json",
+      "bytes": 447,
+      "sha256": "ef493974ff7dd2e0add74825c8fbe875de9ff2ad1eef563a083838f520d5a563"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 9856,
+      "sha256": "7250f5e147f816d1489154d52e1158aa9cceabd736a95aa3bab3a315c4bc190e"
+    },
+    {
+      "file": "local/base312-install.log",
+      "bytes": 352,
+      "sha256": "1176ee78613df4d5cb19a428b7df24a89c95f5b2e9c18f62d261a4947d249f2a"
+    },
+    {
+      "file": "local/base312-receipt.json",
+      "bytes": 447,
+      "sha256": "9d172935e34ac6ce1bb41babb97e705b1fa585cbb224de6ed3683d1c7e6a779e"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 9856,
+      "sha256": "fa99b99c7473173ac516b3e95c0bff98d3b110fb4ce92f2aa46b7a6e2381c159"
+    },
+    {
+      "file": "local/optional311-install.log",
+      "bytes": 355,
+      "sha256": "9c57afc75e62b1fe363be78e1e323a1adec81f85977b68e1ecc9c0e2dbe60035"
+    },
+    {
+      "file": "local/optional311-receipt.json",
+      "bytes": 451,
+      "sha256": "463807fa7c76d3e3ca761a2e46cdf69db8e504903447d134c972fae4e0cc148b"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 8464,
+      "sha256": "3a542a419c6e9d49d31b0a8686541f034920e0a2b013490a5d9623556bfc8224"
+    },
+    {
+      "file": "local/optional312-install.log",
+      "bytes": 352,
+      "sha256": "4b5453c034a78c13fd2bf18728ec1938c2260d5577a9e70e1a9450ff8b155490"
+    },
+    {
+      "file": "local/optional312-receipt.json",
+      "bytes": 451,
+      "sha256": "65be95dcf9805339635d2159c7c2dc60bb3ee8552229ed0e761c01b790c8edc4"
+    },
+    {
+      "file": "local/optional312.log",
+      "bytes": 233197,
+      "sha256": "4fec086aeb3f507bc8bcbe9f8966dfb1a4639b35a981df8f2493b5b91c6776c7"
+    },
+    {
+      "file": "hosted/annotations-134334432244.json",
+      "bytes": 608,
+      "sha256": "0b150f8065c39c6969823670fa6252ee06b87806a8cf30ecd93022766ee42517"
+    },
+    {
+      "file": "hosted/annotations-134334432710.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "hosted/checkout-source.json",
+      "bytes": 2653,
+      "sha256": "0a19d33aadd14d92d139e74a4481235c282245cf23d58432648eacd3d74b4754"
+    },
+    {
+      "file": "hosted/hosted311.log",
+      "bytes": 47491,
+      "sha256": "4133ae976ec27454b09e1a536efcc42a6bf5f37d8bd8ca8e79183c9e62007fc0"
+    },
+    {
+      "file": "hosted/hosted312.log",
+      "bytes": 51066,
+      "sha256": "02db5112a7d14bb53c60c3d92aca843f307e48cd9f2666ce493f04ec7e3a1b43"
+    },
+    {
+      "file": "hosted/jobs-official.json",
+      "bytes": 5144,
+      "sha256": "eb6fbcfa9e6c387d3dd94dd4dfcdf499f6cbcd4f0dc36d5676c6bebcac16335f"
+    },
+    {
+      "file": "hosted/jobs-start.json",
+      "bytes": 4490,
+      "sha256": "d8a104bbdeb5e52df1eb2b39867c33ae7f3fab5a5eab97b9ab080ef067e1d841"
+    },
+    {
+      "file": "hosted/run-start.json",
+      "bytes": 12673,
+      "sha256": "fdca5b9746d85732980fd80dec997186a6e91083e69efc9dfeab2d72ab576ff3"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12678,
+      "sha256": "80ba145e53be66afb8dbc73cf68fd0e962e545984320ddc64825ed93e0e6693d"
+    },
+    {
+      "file": "fresh-unit-diagnostic/execution.json",
+      "bytes": 119,
+      "sha256": "ed2e3f5bbe6cfd3b365355d932b9ede053b3a2a9790cd95f6cf97efc08c0b2e5"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/observer.json",
+      "bytes": 26381,
+      "sha256": "07c7062fea5defafd5285a15861a9243ad785d9b2c431f52cd18f4e76b19897c"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-0-events.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-0.json",
+      "bytes": 355,
+      "sha256": "86a310b020522fba2e59a28cd1246f5808c25e1b0297ce565dc96acb28fb0f0d"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-1-events.jsonl",
+      "bytes": 7600,
+      "sha256": "3cdb8a8fcc4d9272e88582ac501bca0fc21b6f41f0cea3a394a000aa9d7f7352"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-1.json",
+      "bytes": 12605,
+      "sha256": "4210b494e5d03a0879cbab3afe4a3507c713b815849c32d38c3f454a7a2e68a9"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-2-events.jsonl",
+      "bytes": 7608,
+      "sha256": "b348084f59d86746151aba0cb6756c6a7883fc4d2e5ef904df7fc0ef6a5fb756"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/read-2.json",
+      "bytes": 12616,
+      "sha256": "d86b5411e08cb3315a0556bf828ec6b714b083687fd96ed0041d23206f51f85e"
+    },
+    {
+      "file": "fresh-unit-diagnostic/output/unit-proof.json",
+      "bytes": 34984,
+      "sha256": "c3dd7bd6da1a0722e865414aa995e193f757fff728ec746cd6e205902c3e5cb7"
+    },
+    {
+      "file": "fresh-unit-diagnostic/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "fresh-unit-diagnostic/stdout.log",
+      "bytes": 47,
+      "sha256": "2db925bca99b7c80b51e8a69e28b996c4a7cc5efc79c08479db65e0465e7ef31"
+    },
+    {
+      "file": "operators/receipt-cpu-source-expected.json.txt",
+      "bytes": 54117,
+      "sha256": "340493da175676f9ede42e5a5a0827494c174d2e5a059da3578beb2d58226f46"
+    },
+    {
+      "file": "operators/diagnose-receipt-cpu-unit.py.txt",
+      "bytes": 1485,
+      "sha256": "85df5fccfefaf933f9af5668bf40e70c4bac728176fbdee4a4a245d04f3d83f2"
+    },
+    {
+      "file": "operators/run-receipt-cpu-source-checks.py.txt",
+      "bytes": 5901,
+      "sha256": "9840eb1289dc999cdfc31462f434658d6bf6c0b5c4566a4b2874d9d2297710b4"
+    },
+    {
+      "file": "operators/run-receipt-cpu-source-lane.py.txt",
+      "bytes": 454,
+      "sha256": "cd8174855d48c0689398b975375ea059435609db7acd939ef18d37b3af7b5709"
+    },
+    {
+      "file": "operators/verify-receipt-cpu-source.py.txt",
+      "bytes": 4108,
+      "sha256": "f44adfb96b7e6b9e7b76b643f744fa9e94eb884400634605346caa27e6797ccf"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-stream-fix-focused311-v2.log",
+      "bytes": 192,
+      "sha256": "244445d049df17cbc69442d9ce6ec61091511d41311d589a17d6f917cf3cf923"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-stream-fix-focused312-v2.log",
+      "bytes": 192,
+      "sha256": "ed577396cab29a3400e4f3b22615b8e4a403623af2cf0370ad57c25b086cbe66"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resume-runtime311.log",
+      "bytes": 14,
+      "sha256": "d4f43ec7c5d8f722634e0d29725ea86d2f3552123b3b8c7e60fdc63e19f7d197"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resume-runtime312.log",
+      "bytes": 14,
+      "sha256": "2c91291bd810435c9adefe309bb1e4dc499cf7b6858fcb819f961dbd6c35930e"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resumed-parent312.sample.txt",
+      "bytes": 78738,
+      "sha256": "bcd9acc59351abbc36f71aa332b7b8ef43327519826b473bb496f8b727ce680d"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resumed-parent312-sample.log",
+      "bytes": 218,
+      "sha256": "c61c04a21ba9c6681ebecb33a3aabe3267c5738378b7a683fdbe54b091faa45c"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resumed-mypy.log",
+      "bytes": 45,
+      "sha256": "3c3237e6de9378ca88ca68c16481cc5dfd2f812d129c1ce22a2d73c456d50e5f"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resumed-lint.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "file": "resume-diagnostics/receipt-cpu-resumed-format.log",
+      "bytes": 28,
+      "sha256": "48bc4859bfa243f69b0be8b1d866c74c7cc035f3e0aee9e4839e9dd1b0bd49ac"
+    }
+  ],
+  "resumed_focused": {
+    "311": "133 passed in 196.62s",
+    "312": "133 passed in 198.91s"
+  },
+  "live_sample": "Resumed parent sampled blocked in OS read; this does not establish the original child failure cause."
+}

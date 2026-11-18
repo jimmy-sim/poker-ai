@@ -186,16 +186,51 @@ with isolated(worker=False):
 assert 'pyspiel' not in sys.modules
 runner.atomic(pathlib.Path(sys.argv[2])/'unit-proof.json',proof)
 """
-    subprocess.run(
+    result = subprocess.run(
         [sys.executable, "-c", code, str(ROOT), str(folder)],
         env=dict(
             os.environ,
             PYTHONPATH=str(ROOT / "src") + os.pathsep + str(ROOT / "scripts"),
         ),
-        check=True,
+        check=False,
         capture_output=True,
     )
+    folder.with_name(folder.name + "-child.stdout.log").write_bytes(result.stdout)
+    folder.with_name(folder.name + "-child.stderr.log").write_bytes(result.stderr)
+    assert result.returncode == 0, result.stdout.decode(
+        errors="replace"
+    ) + result.stderr.decode(errors="replace")
     return folder
+
+
+@pytest.mark.parametrize("returncode", [0, 1])
+def test_software_fixture_retains_child_streams_without_weakening_success(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, returncode: int
+) -> None:
+    import inspect
+    from types import SimpleNamespace
+
+    folder = tmp_path / "fixture"
+    folder.mkdir()
+    result = SimpleNamespace(
+        returncode=returncode, stdout=b"fixture stdout\n", stderr=b"fixture stderr\n"
+    )
+    monkeypatch.setattr(subprocess, "run", lambda *args, **kwargs: result)
+    factory = SimpleNamespace(mktemp=lambda name: folder)
+    execute = inspect.unwrap(actual_software_proof)
+    if returncode:
+        with pytest.raises(AssertionError, match="fixture stderr"):
+            execute(factory)
+    else:
+        assert execute(factory) == folder
+    assert (
+        folder.with_name(folder.name + "-child.stdout.log").read_bytes()
+        == result.stdout
+    )
+    assert (
+        folder.with_name(folder.name + "-child.stderr.log").read_bytes()
+        == result.stderr
+    )
 
 
 def test_actual_proof_keeps_fixture_scope_explicit(actual_software_proof: Path) -> None:

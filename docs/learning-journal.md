@@ -7110,3 +7110,30 @@ Initial copied fixture status and typing errors were corrected and retained.
 All 455 earlier scientific files stay unchanged. Full published-source checks
 and a new complete measurement are still pending; this is not evidence of a
 faster or stronger agent.
+
+
+### November 17: retain the failed source qualification and child diagnostics
+
+The first full cohort at `d2cd3f7` is not qualified. Both base suites pass
+5,564 tests; the 3.11 optional suite passes 2,473. The 3.12 optional run has
+2,437 passed and 36 setup errors, all from one failed shared fixture child.
+Its original stderr was not retained, so the cause remains unknown. A fresh
+software-only run of that same fixture passes; that does not explain the failure
+or count as full qualification. GitHub's 3.12 job passes, while its 3.11 job hits
+the existing 25-minute limit. [The failed cohort and fresh diagnostic](../results/receipt-source-cpu/failed-qualification-d2/manifest.json)
+are retained together.
+
+The test now saves child stdout and stderr beside its fixture directory and
+still requires a zero exit code. Two regression cases check successful and
+failed children. No reader, clock, configuration, scientific cap or acceptance
+rule changes. Full qualification must be repeated on the new head before the
+formal own proof or complete comparison. No new strength or timing result is
+claimed. Codex-assisted work; human hands-on time is not recorded.
+
+
+Resumed checks on November 17 pass 133 focused tests in each actual optional
+environment (196.62/198.91 seconds), with strict typing829, lint and formatting
+passing. A live sample during this run shows a parent waiting in an OS file
+read; it does not establish the earlier child failure's cause. Temporary
+environments removed during the pause were rebuilt from the unchanged lockfile.
+Full exact-head qualification remains pending.
