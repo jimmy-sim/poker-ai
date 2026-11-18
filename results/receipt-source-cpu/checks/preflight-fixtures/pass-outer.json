@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "-c",
+    "from pathlib import Path;import sys;Path(sys.argv[1]).write_text(\"ran\")",
+    "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/receipt-cpu-preflight-fixtures/pass-child"
+  ],
+  "pid": 21995,
+  "cap_seconds": 10,
+  "started_perf_counter": 74788.060782708,
+  "seconds": 0.024094167005387135,
+  "returncode": 0,
+  "interrupted": null,
+  "reaped_user_seconds": 0.013493999999999999,
+  "reaped_system_seconds": 0.0049889999999999995,
+  "failure_cleanup_groups": {},
+  "command_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "Complete actual Python CLI startup, preflight, all inner children and writes. CPU is OS reaped process accounting. Administrative retention copies are separate; 120s failure-save reserve never permits scientific work."
+}

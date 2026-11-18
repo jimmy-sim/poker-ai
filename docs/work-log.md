@@ -6879,3 +6879,24 @@ passing. A live sample during this run shows a parent waiting in an OS file
 read; it does not establish the earlier child failure's cause. Temporary
 environments removed during the pause were rebuilt from the unchanged lockfile.
 Full exact-head qualification remains pending.
+
+
+### November 18: qualify the receipt observer source
+
+The first `00aae95` local rerun was interrupted near 15% of both bases, with
+partial logs and no completion receipts. A detached shell launch also produced
+no role results; both attempts remain retained and are not passes. A fresh
+isolated attempt and [hosted run #549](https://github.com/jimmy-sim/poker-ai/actions/runs/44260849905)
+pass all six required roles. Local bases: 5,566 passed / 71 skipped / 150
+deselected each (861.76/858.37 seconds pytest), with strict typing829,
+lint/format/hooks. Optional suites: 2,475 each (531.38/449.29 seconds).
+Hosted bases: 5,566 each (1,316.05/1,148.07 seconds, one warning each).
+Actual patch/NumPy, all uv selections, local source/import guards and the
+hosted tested tree equal to head `00aae95` were checked. The
+[six-role receipt](../results/receipt-source-cpu/checks.json) and
+[retained logs](../results/receipt-source-cpu/checks/manifest.json) record the
+exact evidence. Source fingerprint `b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d`
+is unchanged across all 458 scientific files. Next: publish this checked
+source gate, then bounded formal own proof before any complete comparison.
+No new timing, training, forecast admission or strength claim follows software
+checks. Codex-assisted checks and writing; human hands-on time not recorded.

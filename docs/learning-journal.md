@@ -138,6 +138,8 @@ now traces the earlier archive into repeated receipt checks. The
 [current timer foundation](receipt-source-cpu.md) will test their present CPU
 cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
+Its six exact-head source checks now pass; the formal own-only proof and complete
+timing comparison remain pending.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7137,3 +7139,30 @@ passing. A live sample during this run shows a parent waiting in an OS file
 read; it does not establish the earlier child failure's cause. Temporary
 environments removed during the pause were rebuilt from the unchanged lockfile.
 Full exact-head qualification remains pending.
+
+
+### November 18: qualify the exact source before measuring
+
+**Question:** does the test-only child-diagnostics fix have a complete passing
+source cohort on both supported runtimes, including hosted CI?
+
+**Change and example:** the source fingerprint stays the same. The first local
+rerun was interrupted after partial base-test progress, so its dots were kept as
+partial logs. A detached launch wrote no role results. A fresh isolated attempt
+ran base before optional checks on each runtime. For example, a passing 3.12
+base does not qualify a failed or unfinished 3.12 optional role.
+
+**Checks and result:** [all six roles](../results/receipt-source-cpu/checks.json)
+pass on `00aae95`: both local bases 5,566 passed / 71 skipped / 150 deselected,
+both optional suites 2,475 passed, and both hosted bases 5,566 passed. Strict
+typing covers 829 files; lint, format and hooks pass. Actual interpreter,
+NumPy, import roots, clean 458-file source fingerprint and the full hosted
+checkout tree match. The [retained record](../results/receipt-source-cpu/checks/manifest.json)
+separates the interrupted attempts from successful evidence. This establishes
+the software source gate only; it measures no current receipt CPU and changes
+no strategy, cap, seed or acceptance rule.
+
+**Next decision:** publish the qualified source, then run and publish the
+bounded own-only proof before any reference comparison. The prior forecast,
+accuracy and context-copy failures remain failed. Codex assisted with the
+checks and writing; human hands-on time was not recorded.

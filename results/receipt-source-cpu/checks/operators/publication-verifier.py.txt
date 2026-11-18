@@ -1,0 +1,24 @@
+"""Verify published source and own proof without constructing a reference."""
+import json,sys
+from pathlib import Path
+
+def verify(root, stage='proof', require_public=True):
+    root=Path(root).resolve();sys.path[:0]=[str(root/'src'),str(root/'scripts')]
+    import profile_receipt_cpu as runner
+    from compact_suit.admission import published
+    import numpy,poker_ai
+    assert Path(poker_ai.__file__).resolve().is_relative_to(root/'src')
+    c,s=runner.binding(root,clean=True)
+    assert s['fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d' and len(s['sha256'])==458
+    runner.previous.runtime(c);runner.checked(root,s)
+    if stage!='proof':raise ValueError('only own-proof prerequisite verification')
+    value=runner.own_published(root,s)
+    if require_public:
+        for name in (runner.CONFIG,runner.ENTRY,runner.SUPPORT):published(root,root/name)
+        for p in sorted((root/runner.FOLDER/'software').rglob('*')):
+            if p.is_file():published(root,p)
+    assert 'pyspiel' not in sys.modules
+    return dict(status='published_own_proof_and_checked_source_verified_before_native',source_fingerprint=s['fingerprint'],source_files=458,python=sys.version.split()[0],numpy=numpy.__version__,own=value,reference_constructed=False,new_poker_training_performed=False)
+
+if __name__=='__main__':
+    result=verify(Path(sys.argv[1]));print(json.dumps(result,indent=2))

@@ -152,3 +152,29 @@ passing. A live sample during this run shows a parent waiting in an OS file
 read; it does not establish the earlier child failure's cause. Temporary
 environments removed during the pause were rebuilt from the unchanged lockfile.
 Full exact-head qualification remains pending.
+
+### November 18: source checks qualified before collection
+
+The test-only `00aae95` head passes all six source roles. Both complete local
+bases pass 5,566 tests with 71 skipped and 150 deselected (861.76 and 858.37
+seconds of pytest); strict typing covers 829 files, and lint, formatting and
+commit hooks pass. Both optional suites pass 2,475 tests (531.38 and 449.29
+seconds). Every local role checks its actual Python, NumPy, clean 458-file source
+fingerprint and package import roots before and after, without a launcher
+`PYTHONPATH`.
+
+Both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/44260849905)
+pass the same 5,566-test base scope (1,316.05 and 1,148.07 seconds, with one
+warning each). Saved exact logs and official metadata verify Python 3.11.17 /
+NumPy 2.4.6 and Python 3.12.15 / NumPy 2.5.4, every uv selection, and that the
+tested merge commit's entire tree equals the source head. The
+[six-role receipt](../results/receipt-source-cpu/checks.json) and
+[retained records](../results/receipt-source-cpu/checks/manifest.json) include
+the earlier interrupted local attempt, the detached launch that produced no
+role results, and the successful new attempt. Neither partial attempt is counted
+as a pass. The earlier `d2cd3f7` failure remains failed.
+
+These are source and software checks, not a timing observation or evidence of
+stronger poker play. The formal own-only proof and complete ordinary/observed
+comparison have not run. Publication of this checked source evidence is the
+next gate before proof.
