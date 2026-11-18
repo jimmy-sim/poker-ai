@@ -7323,3 +7323,16 @@ ordinary-child failure. Next: publish the failed CI receipts, add the exact
 missing byte later without rewriting the manifest, correct the data-only
 report and repeat required checks. No pair retry. Codex-assisted; human
 hands-on time not recorded.
+
+Repair commit `97baaf2` force-published the exact 4,671-byte ignored member
+named by the old source-check manifest and a [late-publication receipt](../results/validated-sharing-runtime-preflight/source-check-repair.json).
+It does not retroactively satisfy the pair's source-publication gate. The
+corrected data-only report checks the member's absence at pair head
+`c5697ef` and presence at repair head `97baaf2`, and exports
+`source_archive_complete_at_pair_time: false` and `pair_admissible: false`.
+Ten focused tamper/import tests pass in each locked Python runtime; both
+render corrected JSON SHA-256
+`7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c`.
+Next: commit the corrected report and run full local, optional and hosted
+checks before closing this failed investigation. No pair retry or savings
+claim. Codex-assisted; human hands-on time not recorded.

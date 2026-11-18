@@ -8,8 +8,9 @@ four archive-authentication tests. The [official failure record](../results/vali
 retains both logs and the tested tree. The pair therefore did **not** meet
 its required fully public source-check gate, in addition to the ordinary
 child failure below. The original raw pair and manifests remain unchanged;
-the missing byte will be published separately for audit. No pair retry or
-admission is justified by that repair.
+the exact missing byte was [published later](../results/validated-sharing-runtime-preflight/source-check-repair.json)
+at `97baaf2` for audit. No pair retry or admission is justified by that
+repair. The corrected JSON report explicitly marks the pair ineligible.
 
 The [prospective protocol](validated-sharing-runtime-preflight.md) fixed one
 ordinary-then-validated-share complete pair after the launcher and its six
@@ -46,9 +47,11 @@ The paired behavior and any CPU saving remain unestablished.
 
 The [JSON report](../results/validated-sharing-runtime-preflight/report.json)
 is rendered by `scripts/report_validated_sharing_runtime_preflight.py` from
-the published source and raw manifests. It authenticates all 34 source-check
-members and 19 raw-pair members, checks the old own manifest hash, and
-blocks reader, numerical and reference imports. Run:
+the published source, raw and repair records. It authenticates all 34
+source-check members and 19 raw-pair members, checks the old own manifest,
+and confirms from Git history that the missing member was absent at the
+pair head and present only at the later repair commit. It blocks reader,
+numerical and reference imports. Run:
 
 ```sh
 python3 results/validated-sharing-runtime-preflight/source-checks/verify-all.py.txt
@@ -56,12 +59,15 @@ python3 results/validated-sharing-runtime-preflight/failed-pair/verify.py.txt
 python3 scripts/report_validated_sharing_runtime_preflight.py
 ```
 
-The nine focused tamper/import tests pass on both locked Python runtimes;
-both produce byte-identical JSON. The actual outer runtime and hardware,
+The ten focused tamper/import tests pass on both locked Python runtimes;
+both produce byte-identical corrected JSON SHA-256
+`7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c`.
+The actual outer runtime and hardware,
 source/input hashes, child clocks, work inventory and failure are retained
 in the raw preflight, child, native and supervisor receipts. These tests
-validate the report, not the failed scientific gate. Final local, optional
-and hosted checks for this report head remain the closing requirement.
+validate the report, not the failed scientific or publication gates. Final
+local, optional and hosted checks for this corrected report head remain the
+closing requirement.
 
 PR #92's missing-Numba failure, the 912.54/900 forecast failure, the
 2.390%/1% known-game accuracy failure and the rejected full-context-copy

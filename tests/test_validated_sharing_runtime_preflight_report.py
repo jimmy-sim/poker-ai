@@ -21,6 +21,7 @@ def run_report(evidence: Path) -> subprocess.CompletedProcess[str]:
         "s=importlib.util.spec_from_file_location('report',sys.argv[1]); "
         "m=importlib.util.module_from_spec(s); s.loader.exec_module(m); "
         "m.EVIDENCE=__import__('pathlib').Path(sys.argv[2]); "
+        "m.REPAIR=m.EVIDENCE/'source-check-repair.json'; "
         "print(__import__('json').dumps(m.verify()))"
     )
     return subprocess.run(
@@ -55,7 +56,9 @@ def test_published_failure_renders_without_reader_imports(evidence_copy: Path) -
     result = run_report(evidence_copy)
     assert result.returncode == 0
     report = json.loads(result.stdout)
-    assert report["status"] == "failed_before_validated_share_child"
+    assert report["status"] == "failed_pair_with_incomplete_publication_gate"
+    assert report["publication"]["source_archive_complete_at_pair_time"] is False
+    assert report["publication"]["pair_admissible"] is False
     assert report["complete_pair"]["original_loader_calls"] == 14
     assert report["complete_pair"]["validated_share_child_started"] is False
 
@@ -106,3 +109,13 @@ def test_changed_profile_shape_rejected_even_with_matching_hash(
     result = run_report(evidence_copy)
     assert result.returncode != 0
     assert "published failed pair changed" in result.stderr
+
+
+def test_changed_late_repair_receipt_rejected(evidence_copy: Path) -> None:
+    path = evidence_copy / "source-check-repair.json"
+    repair: dict[str, Any] = json.loads(path.read_bytes())
+    repair["pair_admissible"] = True
+    path.write_text(json.dumps(repair, indent=2) + "\n")
+    result = run_report(evidence_copy)
+    assert result.returncode != 0
+    assert "published gate sequence or outcome changed" in result.stderr

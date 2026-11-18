@@ -1,8 +1,15 @@
 {
-  "status": "failed_before_validated_share_child",
+  "status": "failed_pair_with_incomplete_publication_gate",
   "source_manifest_sha256": "8a4a297e0a45aef448ef9d6d08aeb2bbc6c4edf4e34933c1b16231adaf3c904f",
   "old_own_manifest_sha256": "73bac3e11ee43681f77cf1d960cecb351f49cc95db7dd129d2f4316e2ac2096e",
   "failed_pair_manifest_sha256": "a9d0fe46df0cbe34bf56d9d2103943059be585559982d8e20a9e6190e96ba036",
+  "source_check_repair_sha256": "b46f1539cfe9fe2dc2cb87640684a54ffd4c2da3234d888d783c4d4c7cd63b78",
+  "publication": {
+    "source_archive_complete_at_pair_time": false,
+    "missing_member": "results/validated-sharing-runtime-preflight/source-checks/local/__pycache__/verify-local.py.cpython-313.pyc",
+    "missing_member_published_later_at": "97baaf2fa9c472d66abb77d4ee7cb23ff39c9f98",
+    "pair_admissible": false
+  },
   "complete_pair": {
     "order": [
       "ordinary",

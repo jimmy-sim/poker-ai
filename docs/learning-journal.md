@@ -7669,3 +7669,17 @@ bug. **Next decision:** publish the failed CI record, then publish the exact
 missing byte later as a transparent repair and update the report. Do not
 rewrite the old manifest or rerun the fixed pair. Codex assisted with the
 audit; human hands-on time was not recorded.
+
+Repair commit `97baaf2` publishes the exact ignored byte listed in the old
+manifest plus a [nonretroactive receipt](../results/validated-sharing-runtime-preflight/source-check-repair.json).
+It leaves the pair and original manifest unchanged. The corrected data-only
+report checks Git history: that member is absent at the pair head and present
+only from the repair commit. **Example:** even though a new clone can now
+verify all 34 source-check members, the pair still has
+`source_archive_complete_at_pair_time: false` and `pair_admissible: false`.
+Ten focused tests pass on each locked runtime, including a changed repair
+receipt; both render corrected JSON SHA-256
+`7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c`.
+**Next decision:** rerun full local, optional and hosted checks on this
+corrected report, retain outcomes and close the ineligible experiment. No
+pair retry. Codex assisted; human hands-on time was not recorded.

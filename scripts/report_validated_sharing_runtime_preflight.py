@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import subprocess
 import sys
 from collections.abc import Iterator
 from contextlib import contextmanager
@@ -13,8 +14,14 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "results/validated-sharing-runtime-preflight"
 OLD_OWN = ROOT / "results/validated-prerequisite-sharing/own/manifest.json"
+REPAIR = ROOT / "results/validated-sharing-runtime-preflight/source-check-repair.json"
 SOURCE = "0b9ae32b13959371952f8f853d5419d8708de8d1"
 PAIR = "c5697efc0fb5d9564ed684e57a5a2bbb1904db5d"
+REPAIR_HEAD = "97baaf2fa9c472d66abb77d4ee7cb23ff39c9f98"
+MISSING = (
+    "results/validated-sharing-runtime-preflight/source-checks/"
+    "local/__pycache__/verify-local.py.cpython-313.pyc"
+)
 BLOCKED = ("poker_ai", "numpy", "numba", "pyspiel", "treys")
 
 
@@ -70,9 +77,11 @@ def render() -> dict[str, Any]:
     source_raw = (source_dir / "manifest.json").read_bytes()
     failed_raw = (failed_dir / "manifest.json").read_bytes()
     old_own_raw = OLD_OWN.read_bytes()
+    repair_raw = REPAIR.read_bytes()
     source: dict[str, Any] = json.loads(source_raw)
     failed: dict[str, Any] = json.loads(failed_raw)
     old_own: dict[str, Any] = json.loads(old_own_raw)
+    repair: dict[str, Any] = json.loads(repair_raw)
     if (
         source["status"] != "six_roles_qualified_before_optional_pair"
         or source["checked_commit"] != SOURCE
@@ -87,8 +96,38 @@ def render() -> dict[str, Any]:
         or old_own["status"] != "published_own_proof"
         or old_own["checked_source_commit"]
         != "04d19ed4c419d14cbe3fc41ccca1b1df8f3dd62b"
+        or repair["status"]
+        != "late_missing_source_check_member_published_without_retroactive_admission"
+        or repair["member"] != MISSING
+        or repair["source_check_manifest_sha256"]
+        != hashlib.sha256(source_raw).hexdigest()
+        or repair["absent_at_pair_head"] != PAIR
+        or repair["absent_at_failed_report_head"]
+        != "2066f2c4e16d7fcf185c936f98b42f7f3ac980b5"
+        or repair["pair_admissible"] is not False
+        or repair["pair_retried"] is not False
     ):
         raise ArithmeticError("published gate sequence or outcome changed")
+    missing_raw = (ROOT / MISSING).read_bytes()
+    if (
+        len(missing_raw) != repair["bytes"]
+        or hashlib.sha256(missing_raw).hexdigest() != repair["sha256"]
+        or subprocess.run(
+            ["git", "cat-file", "-e", PAIR + ":" + MISSING],
+            cwd=ROOT,
+            capture_output=True,
+            check=False,
+        ).returncode
+        == 0
+        or subprocess.run(
+            ["git", "cat-file", "-e", REPAIR_HEAD + ":" + MISSING],
+            cwd=ROOT,
+            capture_output=True,
+            check=False,
+        ).returncode
+        != 0
+    ):
+        raise ArithmeticError("late source-check member history changed")
     source_files = members(source_dir, source)
     failed_files = members(failed_dir, failed)
     if len(source_files) != 34 or len(failed_files) != 19:
@@ -148,10 +187,17 @@ def render() -> dict[str, Any]:
     ):
         raise ArithmeticError("published failed pair changed")
     return {
-        "status": "failed_before_validated_share_child",
+        "status": "failed_pair_with_incomplete_publication_gate",
         "source_manifest_sha256": hashlib.sha256(source_raw).hexdigest(),
         "old_own_manifest_sha256": hashlib.sha256(old_own_raw).hexdigest(),
         "failed_pair_manifest_sha256": hashlib.sha256(failed_raw).hexdigest(),
+        "source_check_repair_sha256": hashlib.sha256(repair_raw).hexdigest(),
+        "publication": {
+            "source_archive_complete_at_pair_time": False,
+            "missing_member": MISSING,
+            "missing_member_published_later_at": REPAIR_HEAD,
+            "pair_admissible": False,
+        },
         "complete_pair": {
             "order": pair["order"],
             "first_child": child["mode"],

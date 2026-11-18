@@ -118,5 +118,7 @@ preserves both logs and the missing Git tree path. Thus the source-check
 record was not completely public before the pair, contrary to the earlier
 status and the raw pair manifest flag. The fixed pair is ineligible for
 admission even apart from its ordinary-child gate failure. Preserve those
-historical bytes; publish the exact missing evidence member later and
-correct the report without retrying the pair.
+historical bytes. The exact missing evidence member was [published late](../results/validated-sharing-runtime-preflight/source-check-repair.json)
+at `97baaf2`, which makes the archive auditable in a new clone without
+retroactively admitting the pair. The corrected data-only report marks the
+source archive incomplete at pair time and does not retry the pair.
