@@ -178,3 +178,23 @@ These are source and software checks, not a timing observation or evidence of
 stronger poker play. The formal own-only proof and complete ordinary/observed
 comparison have not run. Publication of this checked source evidence is the
 next gate before proof.
+
+### November 18: bounded own-only proof before comparison
+
+The pushed-source guard passes on the six-role receipt. The first private
+launcher used an unsupported `--operation` flag and exited during argument
+parsing in 0.079 seconds; it started no proof child or reference. Its outer log
+and receipt are retained. A corrected private launcher passes the positional
+`proof` argument and uses a fresh output path. It changes no observer, source,
+input, acceptance rule or 180-second cap.
+
+The complete [own-only proof](../results/receipt-source-cpu/software-raw-manifest.json)
+takes 8.070 seconds for the enclosing command against 180 seconds. Its inner
+supervisor takes 8.008 seconds against the startup-adjusted 179.999-second
+allowance. All eleven raw members are copied byte for byte. The actual archived
+fictional-game software replay matches the saved calculation; two separately
+labelled fifteen-call forwarding trees test hook behavior. Full observer-state,
+event, arithmetic, source and command-inventory checks pass without loading
+OpenSpiel. The proof has no real cost-loader coverage, no new independent poker
+math and no training or native comparison. Its own evidence must be public and
+verified before the complete ordinary/observed pair starts.

@@ -1,0 +1,119 @@
+{
+  "status": "own_only_proof_raw_assembled_before_reference",
+  "checked_source_commit": "d1987a2bde7db035d12b2c62a81d5a4bd62ed904",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "raw_members": 11,
+  "files": [
+    {
+      "file": "results/receipt-source-cpu/software/child.json",
+      "bytes": 52116,
+      "sha256": "0e55bec0b5c4e33d4bebabe489c2dd94c7d7ee85298d79b06e09be46516d9664"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/command.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/measurement.json",
+      "bytes": 844,
+      "sha256": "803857e547d45b41c9870b654b7acd9bcacd6921ebf8bdb7c16bcbad1e434ffb"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/observer.json",
+      "bytes": 24067,
+      "sha256": "fa1782186872bd08c3796671379555369b1efe76cede63ee21633034a96fbd2b"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/proof.json",
+      "bytes": 32678,
+      "sha256": "1be27ec4259b14def18e8d906ef6b4b9fd0c9bc68ca941f802dd997041b22066"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-0-events.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-0.json",
+      "bytes": 324,
+      "sha256": "cd1599e2e4c0d1b4a0ba22c633c3827c098f8b23902a8686ea63ab63a58cffb8"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-1-events.jsonl",
+      "bytes": 6935,
+      "sha256": "c7971cc4a93a991553c5733a1e4a826ebe059e61f27d14f05e6d1acf13f38345"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-1.json",
+      "bytes": 11468,
+      "sha256": "ca17414064b1e631b793a91cdf7e2ce798acd478d9805a97be2089317819e726"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-2-events.jsonl",
+      "bytes": 6939,
+      "sha256": "6b2c0cf79fa12b46f9bcdf4bfe6c2ceaf584b70405570b9dd6f7684eaa21f213"
+    },
+    {
+      "file": "results/receipt-source-cpu/software/read-2.json",
+      "bytes": 11470,
+      "sha256": "0d56d28711e135a947845d1c0d530d5fa7504b4046bc027a55d27c09df108dd0"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/failed-original-outer.json",
+      "bytes": 1076,
+      "sha256": "cae1955bf9ef88da1b0a4bc4785903ecaa98dc4c7544bf19393828f679af5ece"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/failed-original-outer.log",
+      "bytes": 265,
+      "sha256": "d19225d40c5f59f7c7e4262a0798a4a0caecb9e82428a26710e83a8eb7fcdb39"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/complete-fixed-outer.json",
+      "bytes": 1047,
+      "sha256": "ab50a1881c1002f78ecba77464ea5aaa231123718dc35f9b76058e3ce67b899f"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/complete-fixed-outer.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/original-controller.py.txt",
+      "bytes": 7211,
+      "sha256": "417470e08af5f7efbd2c01221553d0a824331a65da55f43305ccc1edc9834592"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/fixed-controller.py.txt",
+      "bytes": 7250,
+      "sha256": "65014e2b55d7754544ab4d4e7b4fecc59908bee428142ef3c558caee6a45e85b"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/failed-controller.log",
+      "bytes": 1012,
+      "sha256": "142744a737a4f679d511645ef658e8e85fd0d4e3ac70c70b8344876254c9ee46"
+    },
+    {
+      "file": "results/receipt-source-cpu/proof-launch/complete-controller.log",
+      "bytes": 987,
+      "sha256": "8ac54a12262003dff8ba00fec3f39ab6e4b4e8a91d53df2dac2fa1db5e505cb3"
+    }
+  ],
+  "failed_prechild_attempt": {
+    "returncode": 2,
+    "seconds": 0.07858200000009674,
+    "reason": "private controller used an unsupported operation flag; no proof child or reference started"
+  },
+  "complete_proof": {
+    "outer_seconds": 8.06964195799992,
+    "outer_cap_seconds": 180,
+    "inner_seconds": 8.007969750000484,
+    "actual_archived_reads": 1,
+    "synthetic_forwarding_trees": 2
+  },
+  "reference_constructed": false,
+  "poker_training_performed": false,
+  "real_cost_loader_coverage": false,
+  "scope": "Own-only archived software replay and separately labelled synthetic forwarding trees. No real cost-loader coverage or stronger play."
+}

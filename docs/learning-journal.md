@@ -138,8 +138,8 @@ now traces the earlier archive into repeated receipt checks. The
 [current timer foundation](receipt-source-cpu.md) will test their present CPU
 cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
-Its six exact-head source checks now pass; the formal own-only proof and complete
-timing comparison remain pending.
+Its six exact-head source checks now pass, and its bounded own-only proof is
+complete. The complete timing comparison remains pending.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7166,3 +7166,28 @@ no strategy, cap, seed or acceptance rule.
 bounded own-only proof before any reference comparison. The prior forecast,
 accuracy and context-copy failures remain failed. Codex assisted with the
 checks and writing; human hands-on time was not recorded.
+
+
+### November 18: check the own proof before a reference comparison
+
+**Question:** does the qualified source reproduce its archived software
+calculation and preserve the selected call tree before a native reference is
+constructed?
+
+**Change and example:** the first private controller passed an unsupported
+argument and stopped before starting a proof child. That failed launch remains
+saved. The corrected controller passes the required positional argument and
+starts a fresh bounded proof. Its two invented fifteen-call trees test forwarding;
+they are explicitly separate from the one real archived fictional-game read.
+
+**Checks and result:** the [eleven raw proof members and both launcher
+records](../results/receipt-source-cpu/software-raw-manifest.json) are retained.
+The complete outer command takes 8.070 of 180 seconds; the inner supervisor
+takes 8.008 seconds under its startup-adjusted allowance. Archived software
+replay, source identity, observer events and clock arithmetic pass. No OpenSpiel
+reference was loaded, and the proof does not cover real cost-loader timing.
+
+**Next decision:** publish and verify this own-only evidence before the fixed
+ordinary/observed complete comparison. These checks do not admit training or
+strength claims. Codex assisted with execution, diagnosis and writing; human
+hands-on time was not recorded.

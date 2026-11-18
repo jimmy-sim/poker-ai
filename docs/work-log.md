@@ -6900,3 +6900,21 @@ is unchanged across all 458 scientific files. Next: publish this checked
 source gate, then bounded formal own proof before any complete comparison.
 No new timing, training, forecast admission or strength claim follows software
 checks. Codex-assisted checks and writing; human hands-on time not recorded.
+
+
+### November 18: bounded own proof after source publication
+
+The pushed-source guard passes at `d1987a2`. The first private controller's
+unsupported `--operation` flag failed before a proof child started (0.079
+seconds); exact outer records are retained. A corrected private controller
+changes only the CLI argument and fresh output name, with 180/1800-second caps
+unchanged. Its focused argument/cap fixtures pass. The actual 3.11.17/NumPy
+2.4.6 own-only proof completes in 8.070/180 outer seconds; the inner supervisor
+completes in 8.008 seconds under its startup-adjusted allowance. Archived
+fictional-game replay and two synthetic fifteen-call trees pass, with eleven raw
+members and no native reference or training. The
+[raw proof manifest](../results/receipt-source-cpu/software-raw-manifest.json)
+retains both launcher attempts. Next: publish and verify own evidence before
+the fixed ordinary/observed complete pair. No real cost-loader coverage,
+performance forecast or stronger-play claim follows this proof. Codex-assisted;
+human hands-on time not recorded.
