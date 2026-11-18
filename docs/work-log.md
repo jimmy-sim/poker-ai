@@ -7036,3 +7036,17 @@ and verifier were published at `76952fe` before a report, with original input
 pins unchanged. No complete-reader cache, saving forecast, trajectory or
 strength admission follows. Next: checked data-only two-runtime exports.
 Codex-assisted; human hands-on time not recorded.
+
+### November 18: reproduce prerequisite identity report without readers
+
+The [report](receipt-prerequisite-identity.md#data-only-report--november-18)
+uses the public raw receipts only. Its summary and fourteen-row CSV are
+byte-identical across Python 3.11.17 and 3.12.15. The
+[checks](../results/prerequisite-identity/report-manifest.json) retain actual
+versions, hashes and the operator: 114 reader/construction/profile entry points
+blocked, zero calls, no reference import and ten raw files unchanged. Fresh
+outputs are exactly identical and independently owned; reuse inside the
+complete reader, forecast improvement and stronger play remain unproved.
+Next: final exact-head local/optional/hosted qualification of this report
+checkpoint, then history-preserving merge. Codex-assisted; human hands-on
+time not recorded.

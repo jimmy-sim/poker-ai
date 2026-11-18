@@ -7340,3 +7340,14 @@ or change the failed compute and strength gates. Next: publish and reproduce
 a data-only report, then decide whether a separate complete-reader protocol
 is justified. Codex assisted with collection and writing; human hands-on time
 was not recorded.
+
+The [data-only report](receipt-prerequisite-identity.md#data-only-report--november-18)
+now reproduces its two exports byte for byte on both actual runtimes while 114
+reader and construction paths are blocked, with no forbidden calls. It confirms
+what the fresh-output audit found: seven identical complete graphs per runtime
+and no shared mutable storage between those fresh outputs. The 47.721/43.013
+second outer clocks include checking the graphs, so they are not proposed
+savings. The next decision is a separately preregistered complete-reader test
+of whether one output can be shared without changing validation, work counters
+or complete results. Nothing here admits a cache or stronger play. Codex
+assisted with analysis and writing; human hands-on time was not recorded.

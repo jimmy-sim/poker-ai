@@ -1,0 +1,51 @@
+{
+  "status": "seven_fresh_outputs_identical_and_disjoint_on_both_runtimes",
+  "source_commit": "f009c1d5896612adc14dd2694f04a97e9d248205",
+  "raw_manifest_sha256": "2421831e8c55d145d3417fb46bcd4b207dc228591f3dc17e854341752993dbab",
+  "runtime_count": 2,
+  "calls_per_runtime": 7,
+  "within_runtime_complete_graph_equal": true,
+  "cross_runtime_complete_graph_equal": true,
+  "fresh_mutable_storage_disjoint_verified_by_producer": true,
+  "reused_result_safety_in_complete_reader_proven": false,
+  "cost_saving_estimated": false,
+  "new_training_or_real_trajectory": false,
+  "runtimes": [
+    {
+      "python": "3.11.17",
+      "numpy": "2.4.6",
+      "hardware": {
+        "platform": "macOS-27.2.1-arm64-arm-64bit",
+        "machine": "arm64",
+        "cpus": 10
+      },
+      "source_commit": "f009c1d5896612adc14dd2694f04a97e9d248205",
+      "outer_elapsed_seconds": 47.72083787500014,
+      "child_elapsed_seconds": 47.321013084001606,
+      "child_parent_cpu_seconds": 46.936467,
+      "complete_witness": "5ddfac5c71c46fbc4895867b2de072e3bea45d16c84c9274b8eae044ca88c5bf",
+      "semantic_sha256": "04a485bdcbea8ea4f79be5ea1723602390282e3a59510812ef19bbe2d09e7053",
+      "mutable_nodes_per_fresh_graph": 148034,
+      "arrays_per_fresh_graph": 148,
+      "pinned_inputs": 14
+    },
+    {
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "hardware": {
+        "platform": "macOS-27.2.1-arm64-arm-64bit",
+        "machine": "arm64",
+        "cpus": 10
+      },
+      "source_commit": "f009c1d5896612adc14dd2694f04a97e9d248205",
+      "outer_elapsed_seconds": 43.01321983299931,
+      "child_elapsed_seconds": 42.62931229099922,
+      "child_parent_cpu_seconds": 42.250642,
+      "complete_witness": "5ddfac5c71c46fbc4895867b2de072e3bea45d16c84c9274b8eae044ca88c5bf",
+      "semantic_sha256": "04a485bdcbea8ea4f79be5ea1723602390282e3a59510812ef19bbe2d09e7053",
+      "mutable_nodes_per_fresh_graph": 148034,
+      "arrays_per_fresh_graph": 148,
+      "pinned_inputs": 14
+    }
+  ]
+}

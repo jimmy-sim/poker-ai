@@ -57,3 +57,28 @@ These standalone calls do not establish that one result can be safely shared
 inside the complete reader. The observed run times are not estimated savings.
 The published verifier authenticates the raw members and source without
 executing a loader. A data-only two-runtime report is the next step.
+
+## Data-only report — November 18
+
+The [saved-data summary](../results/prerequisite-identity/report/summary.json)
+and [all fourteen call rows](../results/prerequisite-identity/report/calls.csv)
+reproduce byte for byte on both actual runtimes. The
+[report receipts](../results/prerequisite-identity/report-manifest.json) retain
+the exact report operator and show 114 numerical/reader execution paths blocked,
+zero forbidden calls, no reference import and unchanged raw bytes. The report
+runs no archived loader. No plots are required for these two exact identity
+comparisons.
+
+| Actual runtime | Seven-load outer wall seconds | Child parent CPU seconds | Complete graph witness | Fresh nodes / arrays |
+| --- | ---: | ---: | --- | ---: |
+| Python 3.11.17 / NumPy 2.4.6 | 47.721 | 46.936 | `5ddfac5c…044ca88c5bf` | 148,034 / 148 |
+| Python 3.12.15 / NumPy 2.5.4 | 43.013 | 42.251 | `5ddfac5c…044ca88c5bf` | 148,034 / 148 |
+
+These whole-command clocks include graph witnessing and disjointness checks.
+They cannot be subtracted from the earlier complete-reader parent CPU clocks to
+predict an optimization. The audit establishes exact contents and separate
+mutable ownership for **fresh** outputs. It does not establish that a shared
+output can survive all complete-reader consumers, preserve each validation,
+or keep every work counter and final scalar/computed replay unchanged. A
+separate prospective complete-reader comparison is required before reuse. The
+failed forecast, known-game accuracy and full-context-copy gates stay failed.
