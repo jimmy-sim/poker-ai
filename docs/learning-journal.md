@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
+
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
 - [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
@@ -157,6 +159,11 @@ original receipt consumers and complete saved-archive read on both locked
 runtimes. The raw records were published before interpretation. This answers
 the mutation question for that observed read; a complete ordinary/reuse
 comparison is still required before sharing a graph.
+[PR #91](https://github.com/jimmy-sim/poker-ai/pull/91) is now history-merged
+after its final evidence-commit CI passed both runtimes. The next
+[prospective comparison](validated-prerequisite-sharing.md) tests whether one
+already validated graph can be handed to all consumers while every original
+loader still runs. It has no collected result yet.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7445,3 +7452,116 @@ retains logs, exact versions, rerenders and the PR merge-tree proof. The
 consumer-mutation question is complete for this bounded read; PR #91 still
 needs its evidence-checkpoint CI and history-preserving merge. Codex assisted
 with verification and writing; human hands-on time was not recorded.
+
+## 136. Test one shared prerequisite graph after every original validation
+
+**Question:** the seven fresh graphs were identical and their own readers did
+not change them. Does passing the first graph to all seven consumers preserve
+the complete reader's outputs and work when every original loader still runs?
+
+**Change and example:** [PR #91](https://github.com/jimmy-sim/poker-ai/pull/91)
+merged at `e22bdee` after both evidence-commit CI jobs passed. Main passed
+eight focused tests and reproduced the report JSON; ten unrelated user
+result edits, status, patches and index entries remained unchanged. The
+[new prospective protocol](validated-prerequisite-sharing.md) is public before
+implementation. **Example:** the second receipt still constructs and checks
+its own prerequisite graph; only after that complete result matches the first
+does its unchanged reader receive the first graph. This keeps the original
+validation work visible while testing shared-object behavior.
+
+**Checks and result:** protocol and previous evidence only; no candidate
+implementation, source qualification, own proof or complete pair has run.
+The prior nonmutation result is a prerequisite, not a result for sharing.
+
+**Next decision:** implement and test the fixed root-local boundary, then
+publish complete source qualification before any archived proof. Require exact
+complete result and work identity in the eventual fixed pair. Because all
+original loaders run, do not claim a saving. The old forecast, accuracy and
+full-context-copy failures remain failed. Codex assisted with this protocol;
+human hands-on time was not recorded.
+
+The first wrapper implementation now has nine focused synthetic tests passing
+on both locked runtimes, with Ruff, formatting and strict typing. It runs all
+14 original loader calls in two fake roots and keeps each donor local. A first
+fixture failed two tests because it represented the graph with `None`; the
+corrected fixture has a separate graph object. This is no real archive or
+complete-pair result. Next: finish the own-proof and complete-pair runners
+before exact source qualification. Codex assisted with implementation and
+tests; human hands-on time was not recorded.
+
+The bounded own-proof and complete-pair runners are drafted. The proof
+refuses archived inputs without published complete source checks; the pair
+refuses to start without a published own proof. The pair retains the original
+three reads and all validation, and compares work counters as part of the
+full identity. Fifteen focused synthetic tests now pass on both locked
+runtimes, including an intentionally changed work counter and a failed
+first child that is not retried. These tests do not establish that the real
+archived comparison passes. Next: clean exact-source local, optional and
+hosted qualification before collection. Codex assisted with the runners and
+tests; human hands-on time was not recorded.
+
+**November 18 source qualification:** exact source head `04d19ed` now passes
+all six roles in the [source-check archive](../results/validated-prerequisite-sharing/source-checks/manifest.json).
+Both clean local base roles pass Ruff, format, strict mypy on 842 files and
+5,597 tests each (71 skipped, 150 deselected). Both complete fixed 69-file
+optional roles pass 2,502 tests each; the all-files hooks, source/runtime
+guards and OpenSpiel license records pass. Hosted
+[CI #572](https://github.com/jimmy-sim/poker-ai/actions/runs/44370320685)
+passes the same base count on actual Python 3.11.17/NumPy 2.4.6 and Python
+3.12.15/NumPy 2.5.4, and its tested checkout tree equals the source tree.
+**Example:** the synthetic two-root test makes all 14 original loader calls
+while the shared arm passes a donor object to six consumers in each root;
+these checks qualify the implementation, not the real archived outcome.
+Next: publish and verify this exact source-check record, then run one
+reference-free saved-archive own proof under 180 seconds. No complete pair
+or CPU saving is established. The prior forecast, accuracy and
+full-context-copy failures remain failed. Codex assisted with checks and
+documentation; human hands-on time was not recorded.
+
+**November 18 reference-free own proof:** after the six-role record became
+public, the one fixed saved-archive read passed on actual locked Python
+3.11.17/NumPy 2.4.6. Its [raw receipt](../results/validated-prerequisite-sharing/own/manifest.json)
+records seven original prerequisite loads and six validated donor
+substitutions in 95.85 seconds for the whole command, below the 180-second
+cap. All six after-caller and seven after-archive graph witnesses match
+their original loads; the unchanged 480-row saved replay has zero chip and
+unitless error. **Example:** the direct final prerequisite still runs its
+own original loader and validation, then its consumer receives the first
+graph from that same archive root. No reference solver was constructed.
+Next: publish and verify these exact raw bytes before one fixed complete
+ordinary/validated-share pair. This proof alone does not establish complete
+result identity or savings. Codex assisted with collection and writing;
+human hands-on time was not recorded.
+
+**November 18 fixed-pair result:** the [published raw failure](../results/validated-prerequisite-sharing/failed-pair/manifest.json)
+and [data-only report](validated-prerequisite-sharing-result.md) show that the
+first ordinary child stopped after 100.21 seconds with missing Numba package
+metadata in the launched base environment. Its first archive root completed;
+the second read failed during original runtime validation. **Example:** a
+saved runtime record asks for the installed Numba version, and the base
+environment has no such distribution metadata. A post-failure read-only check
+found Numba 0.68.1 in the optional environment, but the pair was not rerun
+there. The validated-share child never started, so complete result and work
+identity cannot be assessed. The raw record was public before the report;
+the data-only JSON reproduces byte-for-byte on both locked runtimes, with
+eight tamper/import tests passing on each. Next decision: keep this fixed
+gate failed; any new pair needs a newly prospective protocol with an explicit
+runtime preflight and fresh publication checkpoints. No CPU saving is
+claimed. The older forecast, accuracy and full-context-copy failures remain
+failed. Codex assisted with diagnosis and writing; human hands-on time was
+not recorded.
+
+**November 18 final report checks:** the failed-pair report head `32d81ed`
+passes both clean local base roles (5,605 tests each, 71 skipped, 150
+deselected), both complete 70-file optional roles (2,510 tests each), Ruff,
+format, strict mypy on 844 files, all-files hooks and exact source guards.
+Hosted [CI #576](https://github.com/jimmy-sim/poker-ai/actions/runs/44385401428)
+passes both actual locked runtimes with the same base count and an identical
+whole checkout tree. The [final-check record](../results/validated-prerequisite-sharing/final-checks/manifest.json)
+retains these logs and the byte-identical data-only rerenders. The first
+report commit hook attempt failed because `uv` was missing from that shell's
+`PATH`; rerunning the unchanged staged commit with the documented environment
+passed both hooks. Next: publish and verify the final-check record, check
+its evidence-only CI, then history-merge the failed experiment. The fixed
+pair remains failed with no shared child or savings conclusion. Codex
+assisted with verification and writing; human hands-on time was not recorded.

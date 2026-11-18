@@ -1,0 +1,10 @@
+{
+  "status": "first_report_commit_invocation_failed_before_commit",
+  "cause": "uv executable absent from initial commit shell PATH",
+  "first_hook_results": [
+    "Ruff lint failed: Executable uv not found",
+    "Ruff format check failed: Executable uv not found"
+  ],
+  "resolution": "source ../poker-env.sh; exact same staged report commit then passed both hooks without content change",
+  "report_commit": "32d81ed838b8c5755405ca8892bdbf2cc751198f"
+}

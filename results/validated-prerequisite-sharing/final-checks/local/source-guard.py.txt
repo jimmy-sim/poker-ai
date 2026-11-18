@@ -1,0 +1,37 @@
+"""Check actual runtime and clean exact published source without a launcher path."""
+import hashlib
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+import numpy
+import poker_ai
+
+root = Path.cwd()
+sys.path.insert(0, str(root / 'scripts'))
+import profile_receipt_cpu
+
+expected = {'311': ('3.11.17', '2.4.6'), '312': ('3.12.15', '2.5.4')}[sys.argv[1]]
+head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+dirty = bool(subprocess.check_output(['git', 'status', '--porcelain']))
+_, source = profile_receipt_cpu.binding(root, clean=True)
+result = dict(
+    head=head,
+    dirty=dirty,
+    python=sys.version.split()[0],
+    numpy=numpy.__version__,
+    import_root=str(Path(poker_ai.__file__).resolve()),
+    source_fingerprint=source['fingerprint'],
+    source_files=len(source['sha256']),
+    lock_sha256=hashlib.sha256((root / 'uv.lock').read_bytes()).hexdigest(),
+    launcher_pythonpath_absent='PYTHONPATH' not in __import__('os').environ,
+)
+assert head == '32d81ed838b8c5755405ca8892bdbf2cc751198f'
+assert not dirty and source['dirty'] is False
+assert (result['python'], result['numpy']) == expected
+assert Path(result['import_root']).is_relative_to(root / 'src')
+assert result['source_files'] == 458
+assert result['source_fingerprint'] == 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+assert result['launcher_pythonpath_absent']
+print(json.dumps(result, indent=2))

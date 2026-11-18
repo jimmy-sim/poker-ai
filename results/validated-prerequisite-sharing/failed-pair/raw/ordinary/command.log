@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/importlib/metadata/__init__.py", line 563, in from_name
+    return next(cls.discover(name=name))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_validated_prerequisite_sharing.py", line 377, in <module>
+    main()
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_validated_prerequisite_sharing.py", line 369, in main
+    child(Path(sys.argv[3]).resolve(), sys.argv[2])
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_validated_prerequisite_sharing.py", line 220, in child
+    result = previous.execute_child(ROOT, output, c, enabled=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 664, in execute_child
+    code = cli.child_main(
+           ^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 672, in child_main
+    return _child_main(root, argv, execution)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 300, in _child_main
+    prepared_own = read(root, own_path, deadline)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_context_reuse.py", line 157, in read
+    saved = underlying(*args, observed=computed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 76, in read
+    return _read(root, path, deadline, observed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compact_suit/cli.py", line 124, in _read
+    sources = load(root, deadline)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/evaluation/compact_opponent_sources.py", line 53, in load
+    return _load(root, deadline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/evaluation/compact_opponent_sources.py", line 71, in _load
+    replay = sampled_parent.replay_sources(root, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/context_reuse_support.py", line 636, in selected
+    return original_root(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/evaluation/compact_fixed_inputs.py", line 159, in replay_sources
+    check_runtime(original["runtime"], real=not software)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/postflop/compact_full_run.py", line 51, in check_runtime
+    or saved["numba"] != version("numba")
+                         ^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/importlib/metadata/__init__.py", line 1009, in version
+    return distribution(distribution_name).version
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/importlib/metadata/__init__.py", line 982, in distribution
+    return Distribution.from_name(distribution_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/importlib/metadata/__init__.py", line 565, in from_name
+    raise PackageNotFoundError(name)
+importlib.metadata.PackageNotFoundError: No package metadata was found for numba

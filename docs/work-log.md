@@ -6689,7 +6689,6 @@ changed. The 912.54/900-second forecast and 2.390%/1% accuracy targets remain fa
 Codex assisted with implementation, checks and drafting; human hands-on time was
 not recorded.
 
-
 ### November 17: historical caller costs reproduced without construction
 
 After source `395575b` was public, both guarded data-only executions complete.
@@ -7144,3 +7143,97 @@ source is unchanged since its earlier complete optional checks. Next:
 publish this evidence checkpoint, verify its own CI, then history-merge PR
 #91. No shared graph or saving is admitted. Codex-assisted; human hands-on
 time not recorded.
+
+### November 18: merge the consumer audit and preregister validated sharing
+
+Evidence-only commit `3bf8a85` passes both jobs of
+[CI #569](https://github.com/jimmy-sim/poker-ai/actions/runs/44353064617)
+with 5,586 tests each, actual locked runtimes, strict typing and hooks. PR
+[#91](https://github.com/jimmy-sim/poker-ai/pull/91) is history-merged at
+`e22bdee`; its whole tree equals the checked head. The separate main checkout
+passes eight focused tests, reproduces the committed data-only report, and
+preserves all ten unrelated user result bytes, status, patches and index
+entries after its guarded fast-forward.
+
+The [new issue #4 protocol](validated-prerequisite-sharing.md) was published
+before source work. It tests one donor graph per earlier archive root while
+still running every original loader and validation, followed by a fixed
+complete ordinary/validated-share comparison only after source qualification
+and a public own proof. No new candidate or archived result exists yet. All
+old forecast, accuracy and full-context-copy failures stay failed. Next:
+commit this protocol checkpoint, then implement its root-local boundary and
+synthetic tests. Codex-assisted; human hands-on time not recorded.
+
+The first local wrapper step has nine focused synthetic tests passing on both
+locked runtimes; Ruff, formatting and strict typing pass. It forwards the
+first validated graph only after all later original loader calls finish and
+match. The first test fixture used `None` in place of a graph, so two focused
+tests failed; the corrected fixture passes without changing the candidate's
+source boundary. No archived proof, pair, or savings claim exists. Next:
+finish the source-bound proof and complete-pair runner before the first source
+push. Codex-assisted; human hands-on time not recorded.
+
+The bounded own-proof and complete-pair source is now drafted. The former
+requires public six-role source checks and an unchanged 180-second outer
+cap; the latter requires published own raw proof, two root-local archive
+captures per complete child, the original 900/1,800/120-second limits, all
+three reads, 432 profiles, 1,152 fixed conditions and three native workers.
+Its identity gate retains every work counter and the old complete identity
+hash. Fifteen focused tests pass on both locked runtimes; Ruff and strict
+typing pass. No archived proof or pair has run. Next: commit the coherent
+source locally and qualify clean exact-head local/optional/hosted roles before
+the first source push. Codex-assisted; human hands-on time not recorded.
+
+The source commits `c1eb75a` and `04d19ed` were pushed together after both
+clean local base roles (5,597 passed, 71 skipped, 150 deselected each), both
+complete 69-file optional roles (2,502 passed each), strict mypy on 842
+files, Ruff, format, all-files hooks, exact source/runtime guards and the
+comparison-only OpenSpiel license checks passed. Hosted
+[CI #572](https://github.com/jimmy-sim/poker-ai/actions/runs/44370320685)
+passes on both actual locked runtimes with 5,597 tests each and a tested
+whole tree equal to the source commit. The
+[source-check archive](../results/validated-prerequisite-sharing/source-checks/manifest.json)
+retains 29 hashed members, official job logs and a verifier. Next: publish
+this evidence-only checkpoint and verify its public bytes before the one
+bounded reference-free own proof. No real sharing outcome or savings claim
+exists yet. Old forecast, accuracy and full-context-copy gates remain failed.
+Codex-assisted; human hands-on time not recorded.
+
+After publication and byte verification of source-check commit `c9eb713`,
+the one fixed reference-free own archive proof passed under its original
+180-second cap. The full command took 95.85 seconds on locked Python
+3.11.17/NumPy 2.4.6; seven original loaders, six root-local donor
+substitutions, all post-consumer/archive witnesses and the original zero-error
+480-row replay passed. The [raw own receipt](../results/validated-prerequisite-sharing/own/manifest.json)
+records the clean proof head, input and lock hashes, runtime, hardware,
+elapsed time and exact child/outer bytes. No reference was constructed.
+Next: publish and verify these raw bytes before the fixed ordinary then
+validated-share complete pair; no saving or complete identity claim yet.
+Codex-assisted; human hands-on time not recorded.
+
+The one fixed complete pair failed in its first ordinary child. The child
+ran for 100.21 seconds and returned 1 when original runtime validation could
+not find Numba package metadata in the launched base Python 3.11 environment.
+The pair retained failure after 100.70 seconds; the first ordinary archive
+root completed and the validated-share child never started. All 16 raw and
+diagnostic members were [published at `09c760f`](../results/validated-prerequisite-sharing/failed-pair/manifest.json)
+before the [data-only report](validated-prerequisite-sharing-result.md).
+The report JSON reproduces byte-identically on both locked runtimes with
+reader/numerical/reference imports blocked; eight focused tamper and import
+tests pass on each. No favorable retry, complete identity or savings claim.
+Next: final checks and CI on this report head, then decide the separate
+prospective runtime-preflight protocol. Codex-assisted; human hands-on time
+not recorded.
+
+Final report head `32d81ed` passes both clean local base roles (5,605
+passed, 71 skipped, 150 deselected each), both 70-file optional roles (2,510
+passed each), strict mypy on 844 files, Ruff, format and all-files hooks.
+Hosted [CI #576](https://github.com/jimmy-sim/poker-ai/actions/runs/44385401428)
+passes both actual locked runtimes and an identical whole checkout tree.
+The [32-member final-check archive](../results/validated-prerequisite-sharing/final-checks/manifest.json)
+retains raw logs, guards, rerenders and verifiers. The first report commit
+hook attempt failed before commit because `uv` was absent from the shell
+`PATH`; the unchanged staged commit passed hooks after loading the documented
+environment. Next: publish this evidence-only checkpoint, verify its CI,
+then history-merge the failed experiment. No complete pair identity or
+savings admission. Codex-assisted; human hands-on time not recorded.
