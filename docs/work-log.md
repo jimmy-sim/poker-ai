@@ -7011,3 +7011,15 @@ The synthetic tests now model a fresh module view and add an explicit
 preloaded-reference refusal case. Nine focused cases pass on both optional
 runtimes. Next: full exact-head requalification; no scientific cap or reader
 changed. Codex-assisted; human hands-on time not recorded.
+
+### November 18: qualify corrected prerequisite-audit source
+
+At `4f040ff`, both local bases pass 5,575 tests, 71 skips, 150 deselections,
+strict typing of 832 files, Ruff, hooks and clean source checks. Both optional
+scopes pass 2,484 tests. Hosted [CI #558](https://github.com/jimmy-sim/poker-ai/actions/runs/44301595530)
+passes both exact runtimes and the whole-tree checkout check. The
+[complete six-role record](../results/prerequisite-identity/source-checks/manifest.json)
+is retained, alongside the earlier failed optional cohort. Next: publish and
+verify this source evidence before running seven actual archived prerequisite
+loads. No caching, strength admission or forecast follows these software
+checks. Codex-assisted; human hands-on time not recorded.

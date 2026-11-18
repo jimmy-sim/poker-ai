@@ -7319,3 +7319,10 @@ is retained. The synthetic tests now model an isolated child and separately
 assert the real guard's refusal. Nine focused cases pass with a reference
 preloaded on both optional runtimes. No actual archived audit ran; complete
 qualification on a new head is pending.
+
+The corrected audit source `4f040ff` now passes all four local roles (bases:
+5,575 tests each; optional scopes: 2,484 each) and both hosted jobs on the same
+whole source tree. The [six-role source receipt](../results/prerequisite-identity/source-checks/manifest.json)
+retains versions, logs and hashes. The previous optional failure is still in
+the record. These checks qualify the audit tool; they do not yet answer
+whether actual archived outputs match or can be reused.

@@ -26,3 +26,16 @@ supplies an isolated synthetic module view and independently checks that the
 real child guard rejects a preloaded reference. Nine focused tests pass with
 `pyspiel` preloaded in each optional environment. Full exact-head
 qualification must be repeated on the corrected commit.
+
+## Corrected source qualification — November 18
+
+At `4f040ff`, both local base suites pass 5,575 tests, 71 skips and 150
+deselections each, with Ruff, strict typing of 832 files, all-files hooks and
+clean source guards. Both optional suites pass 2,484 selected tests each,
+including the synthetic child isolation tests in their full suite order. Hosted
+[CI #558](https://github.com/jimmy-sim/poker-ai/actions/runs/44301595530)
+passes Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4 on the same
+whole source tree. The [six-role receipt and complete logs](../results/prerequisite-identity/source-checks/manifest.json)
+are retained. The first source head's optional failure remains failed. These
+are software checks; the seven actual archived loads have not run. Publication
+and a successful public-source guard precede that collection.
