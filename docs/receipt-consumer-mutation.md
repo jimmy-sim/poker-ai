@@ -41,3 +41,45 @@ This qualifies the audit software, not the mutation question on actual
 archived inputs. The checked source record must be public and verified before
 the two bounded reads begin. No cache, saving, new trajectory, reference
 strategy or stronger play is admitted here.
+
+## Archived consumer audit and data-only result — November 18
+
+The checked source was published at `9b40113` before the two archived reads.
+The [raw archive](../results/receipt-consumer-mutation/raw/manifest.json) was
+published separately at `1e9714f` before this report. The six raw files are
+byte-for-byte copies of the ignored originals in `/private/tmp`; the manifest
+records their hashes and sizes. Neither child loaded OpenSpiel. Each original
+`read_saved` returned `completed_own_native_pending` and replayed all 480
+profiles, 432 mass reconstructions and 216 current observations with zero
+reported chip or unitless error. The source, lock, own receipt and declared
+input pins matched the pre-read values after the read.
+
+| Runtime | Whole command, including startup | Nested receipt checks | Complete-read checks | Result |
+| --- | ---: | ---: | ---: | --- |
+| Python 3.11.17, NumPy 2.4.6 | 84.845 s / 180 s | 6 unchanged | 7 unchanged | Pass |
+| Python 3.12.15, NumPy 2.5.4 | 73.026 s / 180 s | 6 unchanged | 7 unchanged | Pass |
+
+Each of the seven fresh graphs has the same complete witness
+`5ddfac5c71c46fbc4895867b2de072e3bea45d16c84c9274b8eae044ca88c5bf`
+and semantic inventory hash
+`04a485bdcbea8ea4f79be5ea1723602390282e3a59510812ef19bbe2d09e7053`
+on both runtimes, covering 148,034 tracked mutable objects and 148 arrays per
+graph. Every nested graph matches at loader return, after its timing receipt
+returns, and after the entire archive read. The direct graph matches at loader
+return and after the archive read; it has no timing receipt caller.
+
+The [data-only report](../results/receipt-consumer-mutation/report.json) is
+reproduced byte-for-byte by `scripts/report_receipt_consumer_mutation.py` on
+both locked runtimes. The renderer blocks `poker_ai` imports and rejects
+any such module already imported. It verifies all raw member hashes, statuses,
+caps, stage equality, exact call order and cross-runtime semantic equality.
+Four focused tests cover an unmodified archive, blocked reader import, a
+changed raw byte and a changed stage with a correspondingly updated hash.
+
+This establishes nonmutation only for the observed graph, consumers and saved
+archive. It does not establish that a *shared* graph is safe, preserve a work
+counter under reuse, or save CPU. A separately preregistered complete
+ordinary/reuse comparison remains necessary before sharing can be admitted.
+The failed 912.54/900 forecast, 2.390%/1% known-game accuracy and rejected
+full-context-copy result remain failed. Codex assisted with the audit and
+report; human hands-on time was not recorded.

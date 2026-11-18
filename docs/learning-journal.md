@@ -24,6 +24,8 @@ not a record of completed practice.
 
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
+- [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
+
 - [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
 
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
@@ -149,6 +151,12 @@ local attempt failed an unchanged 180-second archived replay cap, and a hosted
 run hit its former 25-minute job allowance; both failures remain retained. The
 [next audit](receipt-prerequisite-identity.md) will check repeated prerequisite
 outputs before any reuse design.
+PR #90 is also history-merged. The [consumer audit](receipt-consumer-mutation.md)
+now finds that seven fresh prerequisite graphs stay unchanged through their
+original receipt consumers and complete saved-archive read on both locked
+runtimes. The raw records were published before interpretation. This answers
+the mutation question for that observed read; a complete ordinary/reuse
+comparison is still required before sharing a graph.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7406,3 +7414,25 @@ not erase them. Next: publish and verify this checked source before the two
 archived reads. Those reads can answer nonmutation only for their observed
 consumers, not safe sharing or a saving. Codex assisted with qualification
 and writing; human hands-on time was not recorded.
+
+**November 18 archived result:** After the qualified source and six-role
+record were public, the two original archive reads passed. The raw evidence
+was [published at `1e9714f`](../results/receipt-consumer-mutation/raw/manifest.json)
+before the [data-only report](receipt-consumer-mutation.md#archived-consumer-audit-and-data-only-result--november-18).
+The Python 3.11 whole command took 84.845 seconds and Python 3.12 took
+73.026 seconds, both below the unchanged 180-second limit. All six timing
+receipt callers and the complete archive reader left their observed graphs
+unchanged, and both original replays reported zero error. **Example:** if a
+receipt reader had edited one of the 148 arrays inside a prerequisite graph,
+its after-caller witness would differ from the loader witness and the audit
+would fail. Here all seven after-archive witnesses matched. The report script
+reproduced identical output on both locked runtimes with poker reader imports
+blocked; four focused report tests pass.
+
+**Next decision:** qualify the report commit locally and in hosted CI, then
+history-merge the focused PR if all gates stay green. A future shared-graph
+implementation needs a separate prospective ordinary/reuse protocol, including
+unchanged work counters and exact saved results. No speedup, forecast fix or
+stronger strategy follows from this mutation result. The prior forecast,
+accuracy and full-context-copy failures remain failed. Codex assisted with
+collection, checks and writing; human hands-on time was not recorded.

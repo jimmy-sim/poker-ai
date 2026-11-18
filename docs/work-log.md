@@ -7106,3 +7106,26 @@ retains local, hosted and failed/incomplete records. Next: publish and verify
 this source-check receipt before any actual archived consumer audit. No reuse,
 savings, forecast or strength claim follows from software qualification.
 Codex-assisted; human hands-on time not recorded.
+
+### November 18: archive the consumer reads and render their result
+
+The qualified source and exact six-role record were public at `9b40113`
+before collection. The original saved-archive read passed on locked Python
+3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4. Whole commands including
+startup took 84.845 and 73.026 seconds under the 180-second cap. Both original
+replays returned all 480 profiles with zero chip/unitless error. Six nested
+prerequisite graphs matched after their timing receipt callers; all seven
+matched after the complete reader. The direct graph had no timing caller.
+The [six original output files and hash manifest](../results/receipt-consumer-mutation/raw/manifest.json)
+were published at `1e9714f` before report rendering.
+
+The [data-only renderer](../scripts/report_receipt_consumer_mutation.py)
+reproduces the same [report JSON](../results/receipt-consumer-mutation/report.json)
+byte-for-byte on both actual locked runtimes with poker reader imports blocked.
+Four focused tests pass, including tampered bytes and a changed stage with
+updated hash. The result supports only nonmutation in this observed read; a
+future shared-graph candidate still needs a separately preregistered complete
+ordinary/reuse comparison. Next: qualify the report commit locally and in
+hosted CI, then history-merge PR #91 if gates pass. The failed 912.54/900
+forecast, 2.390%/1% accuracy and full-context-copy result remain failed.
+Codex-assisted; human hands-on time not recorded.
