@@ -7237,3 +7237,23 @@ hook attempt failed before commit because `uv` was absent from the shell
 environment. Next: publish this evidence-only checkpoint, verify its CI,
 then history-merge the failed experiment. No complete pair identity or
 savings admission. Codex-assisted; human hands-on time not recorded.
+
+### November 18: merge the failed sharing experiment and pin its runtime
+
+Evidence-only [CI #577](https://github.com/jimmy-sim/poker-ai/actions/runs/44390220790)
+passes both actual locked runtimes, 5,605 tests each, all steps and an
+identical whole tree. [PR #92](https://github.com/jimmy-sim/poker-ai/pull/92)
+is history-merged at `7d356cf`, preserving all research evidence commits.
+The separate main checkout fast-forwarded with all ten unrelated user file
+bytes, status, patches and index entries unchanged; its final-check and raw
+failure verifiers and data-only rerender pass.
+
+The [next prospective issue #4 protocol](validated-sharing-runtime-preflight.md)
+was public before new source. Read-only metadata confirms that both saved
+real own artifacts require Python 3.11.17, NumPy 2.4.6 and Numba 0.68.1;
+the installed optional environment has those versions, OpenSpiel 2.0.2 and
+the pinned Apache-2.0 license hash. No new pair or source implementation
+has run. Next: commit this protocol checkpoint and implement a fail-closed
+launcher, then qualify it before any complete comparison. The PR #92 pair
+and older forecast, accuracy and full-context-copy gates remain failed.
+Codex-assisted; human hands-on time not recorded.

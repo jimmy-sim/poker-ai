@@ -7565,3 +7565,32 @@ passed both hooks. Next: publish and verify the final-check record, check
 its evidence-only CI, then history-merge the failed experiment. The fixed
 pair remains failed with no shared child or savings conclusion. Codex
 assisted with verification and writing; human hands-on time was not recorded.
+
+## 137. Preflight the runtime needed by the complete sharing reader
+
+**Question:** can the existing root-local sharing candidate preserve the
+complete ordinary result and work when the launcher confirms the optional
+runtime required by the original saved artifacts before starting a pair?
+
+**Change and example:** [PR #92](https://github.com/jimmy-sim/poker-ai/pull/92)
+was history-merged at `7d356cf` after evidence-only CI #577 passed both
+actual locked runtimes with 5,605 tests each and an identical whole tree.
+The separate main checkout reproduced the failure report and both evidence
+verifiers while its ten unrelated user files, status, patches and index
+entries remained byte-identical. The [new prospective protocol](validated-sharing-runtime-preflight.md)
+is public before source work. **Example:** the original saved real own
+artifacts require Numba 0.68.1; a launcher in the base environment with no
+Numba metadata must stop before it creates a pair output. The pinned optional
+environment has Numba 0.68.1 and OpenSpiel 2.0.2 with the previously read
+Apache-2.0 license hash.
+
+**Checks and result:** protocol and read-only metadata checks only. No new
+launcher source qualification, own collection or complete pair has run. The
+PR #92 fixed pair remains failed, not retrospectively repaired.
+
+**Next decision:** implement the fail-closed preflight and synthetic tests,
+publish full source qualification, reauthenticate the unchanged public own
+proof, then attempt one newly fixed optional-runtime pair. All original
+loaders still run, so a pass would not show a CPU saving. Older forecast,
+accuracy and full-context-copy failures remain failed. Codex assisted with
+this protocol; human hands-on time was not recorded.
