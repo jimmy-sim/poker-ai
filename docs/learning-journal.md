@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
+
 - [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
 
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
@@ -142,9 +144,11 @@ Its six exact-head source checks and bounded own-only proof pass. The complete
 ordinary/observed pair passes its original identity gate. Current timers locate
 about 25.2–25.4 parent CPU seconds per cost read in six nested receipt
 prerequisite loads; no reuse or stronger strategy is admitted.
-All six final source-head roles now pass. An earlier concurrent local attempt
-failed an unchanged 180-second archived replay cap in both base lanes; its
-records remain with the passing serial retry.
+PR #89 is history-merged after all six final roles passed. An earlier concurrent
+local attempt failed an unchanged 180-second archived replay cap, and a hosted
+run hit its former 25-minute job allowance; both failures remain retained. The
+[next audit](receipt-prerequisite-identity.md) will check repeated prerequisite
+outputs before any reuse design.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7280,3 +7284,79 @@ limit. Its [log and metadata](../results/receipt-source-cpu/final-ci-retry/manif
 remain public. The follow-up increases only that CI allowance to 35 minutes;
 the scientific limits and the failed research gates are unchanged. Hosted
 completion on the new head is pending.
+
+
+## 134. Audit repeated prerequisite outputs
+
+**Question:** the latest report finds repeated prerequisite construction inside
+saved receipt checks. Are seven fresh outputs exactly identical and separately
+owned, or would even considering reuse be unsound?
+
+**Change and example:** [PR #89](https://github.com/jimmy-sim/poker-ai/pull/89)
+merged at `26a1bc4` after all required local and hosted checks passed. Its
+25.227/25.360 parent CPU seconds in six nested loads are measured current work,
+not promised savings. For the new [prospective audit](receipt-prerequisite-identity.md),
+seven original calls stand for one direct and six nested requests. A content
+witness will include array bytes and alias relationships; two arrays with equal
+numbers but different internal sharing are not the same complete graph.
+
+**Checks and result:** the prior PR's final local bases each pass 5,566 tests and
+optional suites each pass 2,475. Hosted [CI #555](https://github.com/jimmy-sim/poker-ai/actions/runs/44289638378)
+passes both exact runtimes and whole-tree checks. Earlier failed local and
+hosted attempts remain retained. The guarded main update preserved all ten
+unrelated user edits. The new audit has no result yet.
+
+**Next decision:** publish checked audit source, run the seven-load software
+study on both actual runtimes, and retain negative outcomes. A passing audit
+still will not admit a cache or stronger play. Codex assisted with the PR,
+checks and drafting; human hands-on time was not recorded.
+
+The first published audit source passes both local base suites (5,574 tests
+each) and hosted CI, but its optional 3.11 scope fails two synthetic tests.
+The optional suite had loaded `pyspiel` into the shared pytest process; the
+audit's real child correctly refused that state. The [failed cohort](../results/prerequisite-identity/failed-source-478/manifest.json)
+is retained. The synthetic tests now model an isolated child and separately
+assert the real guard's refusal. Nine focused cases pass with a reference
+preloaded on both optional runtimes. No actual archived audit ran; complete
+qualification on a new head is pending.
+
+The corrected audit source `4f040ff` now passes all four local roles (bases:
+5,575 tests each; optional scopes: 2,484 each) and both hosted jobs on the same
+whole source tree. The [six-role source receipt](../results/prerequisite-identity/source-checks/manifest.json)
+retains versions, logs and hashes. The previous optional failure is still in
+the record. These checks qualify the audit tool; they do not yet answer
+whether actual archived outputs match or can be reused.
+
+The [raw seven-load audit](../results/prerequisite-identity/raw/manifest.json)
+now completes on both actual runtimes under its 180-second child cap. Each of
+the seven fresh outputs has the same exact graph witness and independent
+semantic inventory; the two runtimes also agree. The producer checks that
+fresh outputs do not share mutable storage. For example, two arrays can have
+the same numbers yet differ in alias relationships; the complete graph
+witness includes that relationship. Each output contains 148,034 mutable
+nodes and 148 arrays, so this audit also shows why a casual shared-object
+cache needs more proof. This does not test sharing inside the complete reader
+or change the failed compute and strength gates. Next: publish and reproduce
+a data-only report, then decide whether a separate complete-reader protocol
+is justified. Codex assisted with collection and writing; human hands-on time
+was not recorded.
+
+The [data-only report](receipt-prerequisite-identity.md#data-only-report--november-18)
+now reproduces its two exports byte for byte on both actual runtimes while 114
+reader and construction paths are blocked, with no forbidden calls. It confirms
+what the fresh-output audit found: seven identical complete graphs per runtime
+and no shared mutable storage between those fresh outputs. The 47.721/43.013
+second outer clocks include checking the graphs, so they are not proposed
+savings. The next decision is a separately preregistered complete-reader test
+of whether one output can be shared without changing validation, work counters
+or complete results. Nothing here admits a cache or stronger play. Codex
+assisted with analysis and writing; human hands-on time was not recorded.
+
+The report head `6382cde` now passes all six final roles: each local base has
+5,578 passing tests and each optional scope 2,487; both hosted jobs pass on
+the same whole tree. The [final check archive](../results/prerequisite-identity/final-checks/manifest.json)
+retains the exact versions and logs. The first optional failure is preserved.
+This closes the bounded question about fresh prerequisite outputs, subject to
+the final documentation CI and merge. It does not answer whether sharing one
+output inside the complete reader preserves work or results. Codex assisted
+with checks and writing; human hands-on time was not recorded.

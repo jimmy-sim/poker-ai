@@ -6980,3 +6980,85 @@ are retained. Raise only the workflow allowance to 35 minutes and rerun the
 same checks on a new head. No scientific cap, source or claim changes; merge
 remains gated on both successful hosted jobs. Codex-assisted; human hands-on
 time not recorded.
+
+
+### November 18: merge PR #89; preregister prerequisite identity audit
+
+[PR #89](https://github.com/jimmy-sim/poker-ai/pull/89) is history-merged at
+`26a1bc4`. Final local source-head bases pass 5,566 tests each, optional
+suites 2,475 each, and hosted [CI #555](https://github.com/jimmy-sim/poker-ai/actions/runs/44289638378)
+passes both exact runtimes and whole-tree checks. A concurrent local timeout
+and an earlier hosted 25-minute cancellation remain in the evidence. The main
+checkout fast-forward preserves ten unrelated modified files, status, index
+entries and patches byte for byte. The result locates current nested receipt
+CPU without accepting a saving, training forecast or stronger strategy.
+
+The [next question](receipt-prerequisite-identity.md) was prospectively
+[published on issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6977198494)
+before source or collection: compare seven fresh prerequisite outputs, complete
+graph identities and mutable isolation on both actual runtimes. No reuse or new
+trajectory is admitted by that audit alone. Codex-assisted; human hands-on
+time not recorded.
+
+### November 18: retain first prerequisite-audit source failure
+
+At `47852ff`, both local bases pass 5,574 tests each and both hosted CI #557
+jobs pass. Optional 3.11 has 2,481 passes and two new synthetic failures:
+its pytest parent had preloaded `pyspiel`, which the real audit child is
+supposed to reject. The [full failed cohort](../results/prerequisite-identity/failed-source-478/manifest.json)
+retains logs, receipts, source and CI metadata. No archived-input audit ran.
+The synthetic tests now model a fresh module view and add an explicit
+preloaded-reference refusal case. Nine focused cases pass on both optional
+runtimes. Next: full exact-head requalification; no scientific cap or reader
+changed. Codex-assisted; human hands-on time not recorded.
+
+### November 18: qualify corrected prerequisite-audit source
+
+At `4f040ff`, both local bases pass 5,575 tests, 71 skips, 150 deselections,
+strict typing of 832 files, Ruff, hooks and clean source checks. Both optional
+scopes pass 2,484 tests. Hosted [CI #558](https://github.com/jimmy-sim/poker-ai/actions/runs/44301595530)
+passes both exact runtimes and the whole-tree checkout check. The
+[complete six-role record](../results/prerequisite-identity/source-checks/manifest.json)
+is retained, alongside the earlier failed optional cohort. Next: publish and
+verify this source evidence before running seven actual archived prerequisite
+loads. No caching, strength admission or forecast follows these software
+checks. Codex-assisted; human hands-on time not recorded.
+
+### November 18: publish fresh prerequisite identities before analysis
+
+The fixed seven-load command runs serially on the two locked runtimes after
+source qualification. Outer/parent CPU seconds are 47.721/46.936 on 3.11 and
+43.013/42.251 on 3.12, all under the 180-second child cap. Seven exact graph
+and semantic witnesses match within and across runtimes; each fresh result has
+148,034 mutable nodes and 148 arrays with cross-result storage disjointness
+checked. The [nine raw members](../results/prerequisite-identity/raw/manifest.json)
+and verifier were published at `76952fe` before a report, with original input
+pins unchanged. No complete-reader cache, saving forecast, trajectory or
+strength admission follows. Next: checked data-only two-runtime exports.
+Codex-assisted; human hands-on time not recorded.
+
+### November 18: reproduce prerequisite identity report without readers
+
+The [report](receipt-prerequisite-identity.md#data-only-report--november-18)
+uses the public raw receipts only. Its summary and fourteen-row CSV are
+byte-identical across Python 3.11.17 and 3.12.15. The
+[checks](../results/prerequisite-identity/report-manifest.json) retain actual
+versions, hashes and the operator: 114 reader/construction/profile entry points
+blocked, zero calls, no reference import and ten raw files unchanged. Fresh
+outputs are exactly identical and independently owned; reuse inside the
+complete reader, forecast improvement and stronger play remain unproved.
+Next: final exact-head local/optional/hosted qualification of this report
+checkpoint, then history-preserving merge. Codex-assisted; human hands-on
+time not recorded.
+
+### November 18: final prerequisite-report source checks
+
+At `6382cde`, both bases pass 5,578 tests, 71 skips, 150 deselections,
+strict mypy on 834 files, Ruff, hooks and clean guards. Both optional scopes
+pass 2,487 tests. Hosted [CI #562](https://github.com/jimmy-sim/poker-ai/actions/runs/44310335860)
+passes both exact runtimes and the whole-tree checkout check. The
+[final six-role record](../results/prerequisite-identity/final-checks/manifest.json)
+retains complete logs and hashes. Next: verify the documentation-commit CI
+before a history-preserving PR #90 merge and protected-main preservation.
+The earlier optional failure stays failed, and no reuse or strength claim is
+admitted. Codex-assisted; human hands-on time not recorded.

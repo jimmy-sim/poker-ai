@@ -1,0 +1,108 @@
+{
+  "status": "optional311_failed_two_synthetic_child_tests_after_pyspiel_preload; bases_and_hosted_passed",
+  "checked_commit": "47852ffcef88cf098c52ccb2f8a8073fae1fdd7b",
+  "run_id": 44295831372,
+  "failed_tests": [
+    "test_seven_fresh_loads_complete_with_exact_receipt",
+    "test_failed_later_load_retains_earlier_observations"
+  ],
+  "reason": "optional suite preloaded pyspiel in pytest parent; production child reference-free guard correctly rejected synthetic in-process tests",
+  "actual_archived_audit_started": false,
+  "files": [
+    {
+      "file": "hosted/jobs.json",
+      "bytes": 5156,
+      "sha256": "cf16861ff8e19b1adbe650a379aa52dfdc5f2e7e10f3f7b8fa39e851ce0c763d"
+    },
+    {
+      "file": "hosted/python311.log",
+      "bytes": 51259,
+      "sha256": "59239f7a17e809f8e3ceaa9262bae27149fca5c628155c8237dfe563f91841f1"
+    },
+    {
+      "file": "hosted/python312.log",
+      "bytes": 51334,
+      "sha256": "f71c9fc471106903dc10269b009b0749b5a88a0d43bbd4c06da4a2362c42eb30"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12675,
+      "sha256": "db61fd3980eb015044bfd29e4ecd73ef602a1342bf3cf47be8f2b0b701756b2e"
+    },
+    {
+      "file": "local/base311-install.log",
+      "bytes": 919,
+      "sha256": "054062da2bd62c10b2cac450b2cfbf684849125415a4a1598f905536a6f7641c"
+    },
+    {
+      "file": "local/base311-receipt.json",
+      "bytes": 447,
+      "sha256": "5fb059814c185087a649460890c66ed5640c2fc70b0b4b49e20f25d9dcec2586"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 9856,
+      "sha256": "f9bea9c30cf3d03a37e14ef8ffaa317d47dcfc8f41fc7f70f9d14c7b0d90f9ce"
+    },
+    {
+      "file": "local/base312-install.log",
+      "bytes": 919,
+      "sha256": "b9d3d4e79d2ece9d9d5baff0b66f8b71eee0332930cc134cb6ccf9a15e9441e8"
+    },
+    {
+      "file": "local/base312-receipt.json",
+      "bytes": 447,
+      "sha256": "f4b251fa82ffdc351f5fe9b123ef2654d6e131e1df18b81d6dda85ba017e1fb0"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 9856,
+      "sha256": "15aed4cbab7fa7f9ca5c0f948f62a64d0489ddc5eb39fa368906559612fc4564"
+    },
+    {
+      "file": "local/optional311-install.log",
+      "bytes": 1278,
+      "sha256": "707d030e0310318f1a828f6567f000a8c7742717635c0082e6091c23cbd0df5d"
+    },
+    {
+      "file": "local/optional311-receipt.json",
+      "bytes": 451,
+      "sha256": "bc1ff7a93c1e85bfb4799e6ba91affd81812d42f3fb7d65383f792745c531570"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 10359,
+      "sha256": "446ef0e4f6491c5ae7f556722a8a70a673abf500fdcb75b13a32ba6d385dc5a8"
+    },
+    {
+      "file": "operator/checks.py.txt",
+      "bytes": 5963,
+      "sha256": "92f59082d638861900486602c502348994386f57e1fe76934872414ae721ff2a"
+    },
+    {
+      "file": "operator/expected.json",
+      "bytes": 54117,
+      "sha256": "36e8897c1917d4688a969b588d1e564f451e2b958efc6193ac0eb7dd4e8958de"
+    },
+    {
+      "file": "operator/launch.sh.txt",
+      "bytes": 242,
+      "sha256": "a4fe1531d290ff2fd323e1d6859b9515987562f9a098560147503d3409215f66"
+    },
+    {
+      "file": "operator/serial.log",
+      "bytes": 3587,
+      "sha256": "8d18d17e4757fb519a3664b06dae5f52aea1bb2b746410ddda54c2b4c580b275"
+    },
+    {
+      "file": "operator/serial.py.txt",
+      "bytes": 247,
+      "sha256": "4a4e7cecde6700083867eafdaa083d297ce4650c7c88ec2f452ebd626bbe6a8b"
+    },
+    {
+      "file": "operator/test-prerequisite-identity-original.py.txt",
+      "bytes": 5795,
+      "sha256": "7e45380f9a61b17ffe08202b6fea547dc06578cff4562ed0240601a646872bad"
+    }
+  ]
+}

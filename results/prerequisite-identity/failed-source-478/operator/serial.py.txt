@@ -1,0 +1,4 @@
+import subprocess,sys
+for role in ('base311','base312','optional311','optional312'):
+ result=subprocess.run([sys.executable,'/private/tmp/prerequisite-identity-478-checks/checks.py',role])
+ if result.returncode:raise SystemExit(result.returncode)

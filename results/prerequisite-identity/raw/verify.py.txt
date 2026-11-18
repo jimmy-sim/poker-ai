@@ -1,0 +1,48 @@
+"""Authenticate published seven-load raw receipts without executing a loader."""
+import hashlib
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+
+def main() -> None:
+    root = Path.cwd()
+    raw = Path(sys.argv[1]) if len(sys.argv) == 2 else root / 'results/prerequisite-identity/raw'
+    manifest = json.loads((raw / 'manifest.json').read_text())
+    assert manifest['source_commit'] == 'f009c1d5896612adc14dd2694f04a97e9d248205'
+    for item in manifest['files']:
+        blob = (raw / item['file']).read_bytes()
+        assert len(blob) == item['bytes']
+        assert hashlib.sha256(blob).hexdigest() == item['sha256']
+    rows = []
+    for minor, python, numpy in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+        child = json.loads((raw / minor / 'child.json').read_text())
+        outer = json.loads((raw / minor / 'outer.json').read_text())
+        log = (raw / minor / 'child.log').read_text()
+        assert child['head'] == manifest['source_commit'] and child['dirty'] is False
+        assert child['python'] == python and child['numpy'] == numpy
+        assert child['status'] == 'seven_identical_fresh_disjoint_prerequisites'
+        assert child['expected_calls'] == len(child['observations']) == 7
+        assert [row['index'] for row in child['observations']] == list(range(7))
+        assert log.count('completed prerequisite load') == 7
+        assert len({row['witness'] for row in child['observations']}) == 1
+        assert len({row['semantic_sha256'] for row in child['observations']}) == 1
+        assert len(child['input_sha256']) == 14
+        assert outer['status'] == 'passed' and outer['returncode'] == 0
+        assert 0 < child['elapsed_seconds'] < outer['outer_elapsed_seconds'] < 180
+        assert child['lock_sha256'] == hashlib.sha256((root / 'uv.lock').read_bytes()).hexdigest()
+        for name, expected in child['input_sha256'].items():
+            assert hashlib.sha256((root / name).read_bytes()).hexdigest() == expected
+        rows.append(child)
+    assert rows[0]['input_sha256'] == rows[1]['input_sha256']
+    for field in ('witness','semantic_sha256','mutable_count','array_count'):
+        assert rows[0]['observations'][0][field] == rows[1]['observations'][0][field]
+    for name in ('scripts/audit_receipt_prerequisites.py','scripts/prerequisite_identity_support.py','scripts/context_reuse_support.py'):
+        expected = subprocess.check_output(['git','show',manifest['source_commit']+':'+name])
+        assert (root / name).read_bytes() == expected
+    print('published raw prerequisite identities and source authenticated')
+
+
+if __name__ == '__main__':
+    main()

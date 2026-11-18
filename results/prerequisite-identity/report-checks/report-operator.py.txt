@@ -1,0 +1,52 @@
+"""Run published data-only report under blocked numerical execution paths."""
+import ast
+import hashlib
+import json
+import pathlib
+import pkgutil
+import sys
+import time
+from contextlib import ExitStack
+from unittest.mock import patch
+
+root = pathlib.Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse')
+sys.path[:0] = [str(root/'src'), str(root/'scripts')]
+import numpy
+import report_prerequisite_identity as report
+from poker_ai.evaluation.compact_opponent_guard import isolated
+
+versions = {'3.11.17': ('311','2.4.6'), '3.12.15': ('312','2.5.4')}
+minor, expected_numpy = versions[sys.version.split()[0]]
+assert numpy.__version__ == expected_numpy
+assert pathlib.Path(report.__file__).resolve() == root/'scripts/report_prerequisite_identity.py'
+assert 'pyspiel' not in sys.modules
+raw = root/'results/prerequisite-identity/raw'
+output = root/'results/runs'/('prerequisite-identity-report-'+minor)
+receipt = pathlib.Path('/private/tmp')/('prerequisite-identity-report'+minor+'.json')
+assert not output.exists() and not receipt.exists()
+raw_before = {str(p.relative_to(raw)):hashlib.sha256(p.read_bytes()).hexdigest() for p in raw.rglob('*') if p.is_file()}
+node = ast.parse((root/'results/context-reuse/checks/report_execution_guard.py.txt').read_text())
+blocked = ast.literal_eval(next(n.value for n in node.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='blocked' for t in n.targets)))
+blocked += ['cProfile.Profile'] + [f'profile_receipt_cpu.{name}' for name in ('own_math','execute_child','proof','child','pair')]
+blocked += ['poker_ai.evaluation.frozen_batch_inputs.prerequisites','poker_ai.evaluation.averaging_history_inputs.load','prerequisite_identity_support.observe','audit_receipt_prerequisites.child','poker_ai.evaluation.controlled_reply_io.read_saved']
+assert len(blocked) == len(set(blocked)) == 114
+attempts = []
+def forbidden(*args, **kwargs):
+    attempts.append('forbidden_numerical_execution')
+    raise AssertionError('saved report attempted to execute a reader or game')
+descriptors = {'poker_ai.postflop.matrix.MatrixTree.build','poker_ai.postflop.tree.SpotTree.build','grouped_depth_support.BASE_DESCRIPTOR'}
+started = time.perf_counter()
+with isolated(worker=False), ExitStack() as stack:
+    for name in blocked:pkgutil.resolve_name(name)
+    for name in blocked:stack.enter_context(patch(name, classmethod(forbidden) if name in descriptors else forbidden))
+    report.report(output, raw)
+assert not attempts and 'pyspiel' not in sys.modules
+raw_after = {str(p.relative_to(raw)):hashlib.sha256(p.read_bytes()).hexdigest() for p in raw.rglob('*') if p.is_file()}
+assert raw_before == raw_after
+summary = json.loads((output/'summary.json').read_text())
+assert summary['status'] == 'seven_fresh_outputs_identical_and_disjoint_on_both_runtimes'
+assert summary['runtime_count'] == 2 and summary['calls_per_runtime'] == 7
+assert len((output/'calls.csv').read_text().splitlines()) == 15
+result = dict(status='saved_report_with_114_numerical_paths_blocked',python=sys.version.split()[0],numpy=numpy.__version__,seconds=time.perf_counter()-started,blocked_targets=len(blocked),forbidden_calls=len(attempts),reference_imported=False,raw_members=len(raw_before),raw_unchanged=True,summary_sha256=hashlib.sha256((output/'summary.json').read_bytes()).hexdigest(),calls_sha256=hashlib.sha256((output/'calls.csv').read_bytes()).hexdigest(),scope='Saved data only; no archived loader, native construction, new trajectory or training')
+receipt.write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
