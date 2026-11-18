@@ -83,3 +83,20 @@ ordinary/reuse comparison remains necessary before sharing can be admitted.
 The failed 912.54/900 forecast, 2.390%/1% known-game accuracy and rejected
 full-context-copy result remain failed. Codex assisted with the audit and
 report; human hands-on time was not recorded.
+
+## Final report-head qualification — November 18
+
+At report commit `ba5b183`, both clean local `make check` runs pass Ruff,
+formatting on 1,001 files, strict mypy on 839 files and 5,586 tests each
+(71 skipped, 150 deselected). The locked 3.11 and 3.12 runtimes reproduce the
+committed JSON byte-for-byte; all-files hooks pass. Hosted
+[CI #568](https://github.com/jimmy-sim/poker-ai/actions/runs/44347717628)
+passes both jobs on the same whole source tree, each with 5,586 tests passed,
+71 skipped, 150 deselected and one warning. The official PR merge checkout
+tree equals the report commit tree with the expected base and head parents.
+The [final-check archive](../results/receipt-consumer-mutation/final-checks/manifest.json)
+contains exact local logs and exit receipts, both original CI logs and API
+metadata, rerenders and a rerunnable verifier. The earlier complete optional
+source checks still apply because the audited loader and wrapper source did
+not change after their qualification; only the data-only report, tests and
+documentation were added.

@@ -1,0 +1,70 @@
+"""Verify archived local and hosted report-head checks without poker imports."""
+
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[2]
+HEAD = "ba5b183379b00c464e82d67a0f519d3b32869c3c"
+BASE = "826701ff3a247741afd640a9aa4d2e5474a0d846"
+RUN = 44347717628
+JOBS = {"311": 134954757650, "312": 134954758237}
+
+
+def git(*args: str) -> str:
+    return subprocess.check_output(["git", *args], cwd=ROOT, text=True).strip()
+
+
+def main() -> None:
+    manifest = json.loads((HERE / "manifest.json").read_bytes())
+    for name, expected in manifest["files"].items():
+        raw = (HERE / name).read_bytes()
+        assert len(raw) == expected["bytes"]
+        assert hashlib.sha256(raw).hexdigest() == expected["sha256"]
+    assert git("rev-parse", HEAD) == HEAD
+    assert git("rev-parse", f"{HEAD}^{{tree}}") == manifest["source_tree"]
+    assert not git(
+        "diff", "--name-only", "dd53e9904d8d31cb0407a9662f0880f851907b7a", HEAD,
+        "--", "scripts/audit_receipt_consumer_mutation.py",
+        "scripts/receipt_consumer_mutation_support.py",
+    )
+    expected_report = (ROOT / "results/receipt-consumer-mutation/report.json").read_bytes()
+    for version, python, numpy in (
+        ("311", "3.11.17", "2.4.6"),
+        ("312", "3.12.15", "2.5.4"),
+    ):
+        assert (HERE / f"local/base{version}.exit").read_text().strip() == "0"
+        local = (HERE / f"local/base{version}.log").read_text()
+        assert "All checks passed!" in local
+        assert "1001 files already formatted" in local
+        assert "Success: no issues found in 839 source files" in local
+        assert "5586 passed, 71 skipped, 150 deselected" in local
+        assert (HERE / f"local/render{version}.json").read_bytes() == expected_report
+        hosted = (HERE / f"hosted/python{version}.log").read_text()
+        assert f"ACTUAL_PYTHON={python}" in hosted
+        assert f"ACTUAL_NUMPY={numpy}" in hosted
+        assert "Success: no issues found in 839 source files" in hosted
+        assert "5586 passed, 71 skipped, 150 deselected, 1 warning" in hosted
+        assert "Ruff lint (locked project environment)...................................Passed" in hosted
+        assert "Ruff format check (locked project environment)...........................Passed" in hosted
+    assert (HERE / "local/hooks.exit").read_text().strip() == "0"
+    hooks = (HERE / "local/hooks.log").read_text()
+    assert hooks.count("Passed") == 2
+    run = json.loads((HERE / "hosted/run.json").read_bytes())
+    assert (run["id"], run["head_sha"], run["run_attempt"]) == (RUN, HEAD, 1)
+    assert (run["status"], run["conclusion"]) == ("completed", "success")
+    jobs = json.loads((HERE / "hosted/jobs.json").read_bytes())["jobs"]
+    assert {job["id"] for job in jobs} == set(JOBS.values())
+    assert all(job["status"] == "completed" and job["conclusion"] == "success" for job in jobs)
+    pr = json.loads((HERE / "hosted/pr.json").read_bytes())
+    assert (pr["head"]["sha"], pr["base"]["sha"]) == (HEAD, BASE)
+    checkout = json.loads((HERE / "hosted/checkout-commit.json").read_bytes())
+    assert checkout["tree"]["sha"] == manifest["source_tree"]
+    assert [parent["sha"] for parent in checkout["parents"]] == [BASE, HEAD]
+    print("final report-head checks verified")
+
+
+if __name__ == "__main__":
+    main()

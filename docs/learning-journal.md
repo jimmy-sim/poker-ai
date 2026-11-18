@@ -7436,3 +7436,12 @@ unchanged work counters and exact saved results. No speedup, forecast fix or
 stronger strategy follows from this mutation result. The prior forecast,
 accuracy and full-context-copy failures remain failed. Codex assisted with
 collection, checks and writing; human hands-on time was not recorded.
+
+The report head `ba5b183` now passes both final clean local bases (5,586
+tests each, 71 skips, 150 deselections) and hosted
+[CI #568](https://github.com/jimmy-sim/poker-ai/actions/runs/44347717628)
+on the same whole tree. The [final-check record](../results/receipt-consumer-mutation/final-checks/manifest.json)
+retains logs, exact versions, rerenders and the PR merge-tree proof. The
+consumer-mutation question is complete for this bounded read; PR #91 still
+needs its evidence-checkpoint CI and history-preserving merge. Codex assisted
+with verification and writing; human hands-on time was not recorded.

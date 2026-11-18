@@ -7129,3 +7129,18 @@ ordinary/reuse comparison. Next: qualify the report commit locally and in
 hosted CI, then history-merge PR #91 if gates pass. The failed 912.54/900
 forecast, 2.390%/1% accuracy and full-context-copy result remain failed.
 Codex-assisted; human hands-on time not recorded.
+
+### November 18: qualify the consumer-mutation report head
+
+At `ba5b183`, both clean local bases pass Ruff, formatting, strict mypy on
+839 files and 5,586 tests each, with 71 skipped and 150 deselected. The
+all-files hooks and exact JSON rerender pass. Hosted
+[CI #568](https://github.com/jimmy-sim/poker-ai/actions/runs/44347717628)
+passes both actual locked runtimes with 5,586 tests each, one warning and
+passing hooks. The PR merge checkout tree equals the report tree. The
+[final-check archive](../results/receipt-consumer-mutation/final-checks/manifest.json)
+retains 15 hashed members and rerunnable verification. The original audit
+source is unchanged since its earlier complete optional checks. Next:
+publish this evidence checkpoint, verify its own CI, then history-merge PR
+#91. No shared graph or saving is admitted. Codex-assisted; human hands-on
+time not recorded.
