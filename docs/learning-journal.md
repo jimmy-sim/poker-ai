@@ -24,6 +24,8 @@ not a record of completed practice.
 
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
+- [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
+
 - [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
 
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
@@ -149,6 +151,12 @@ local attempt failed an unchanged 180-second archived replay cap, and a hosted
 run hit its former 25-minute job allowance; both failures remain retained. The
 [next audit](receipt-prerequisite-identity.md) will check repeated prerequisite
 outputs before any reuse design.
+PR #90 is also history-merged. The [consumer audit](receipt-consumer-mutation.md)
+now finds that seven fresh prerequisite graphs stay unchanged through their
+original receipt consumers and complete saved-archive read on both locked
+runtimes. The raw records were published before interpretation. This answers
+the mutation question for that observed read; a complete ordinary/reuse
+comparison is still required before sharing a graph.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7360,3 +7368,80 @@ This closes the bounded question about fresh prerequisite outputs, subject to
 the final documentation CI and merge. It does not answer whether sharing one
 output inside the complete reader preserves work or results. Codex assisted
 with checks and writing; human hands-on time was not recorded.
+
+
+## 135. Check prerequisite objects after receipt readers use them
+
+**Question:** a fresh loader returns the same contents each time, but does a
+timing receipt reader change its returned graph before it finishes? If so,
+passing one graph to later consumers could carry hidden changes.
+
+**Change and example:** [PR #90](https://github.com/jimmy-sim/poker-ai/pull/90)
+merged at `826701f` after documentation-commit CI passed both actual runtimes.
+The next [prospective audit](receipt-consumer-mutation.md) wraps the six nested
+loads and one direct load in one original saved-archive read. It witnesses the
+same object at load return, after its reader and after the complete read. For
+example, a reader changing an array or a prefix dictionary would change the
+closed graph witness and fail the audit.
+
+**Checks and result:** the first four synthetic wrapper cases pass. They cover
+seven-call order, alias restoration, a deliberate mutation and a reader
+failure. This is an implementation check, not a result on archived inputs. The audit source is not
+yet fully qualified or published; no archived audit has run. A preliminary
+dirty-checkout `make check` attempt passes Ruff and strict typing on 837 files
+but fails nine existing tests that start fresh Python children: 5,573 pass,
+71 skip and 150 are deselected. The child errors include missing `poker_ai`
+imports after the local editable install path changed. Earlier attempts also
+failed on a stale mypy cache or at conftest import. Their logs and exact exit
+receipts are [retained](../results/receipt-consumer-mutation/failed-precommit/manifest.json);
+none qualifies the source.
+
+**Next decision:** complete exact source qualification and publish it before
+the two bounded archived reads. Even an unchanged result will require a
+separate complete ordinary/reuse comparison before sharing is admitted. The
+prior forecast, accuracy and full-context-copy failures stay failed. Codex
+assisted with implementation and tests; human hands-on time was not recorded.
+
+The clean source head `dd53e99` now passes full local and hosted software
+qualification. Each local base passes 5,582 tests, 71 skips and 150
+deselections; the two complete optional scopes pass 2,491 tests each. Hosted
+[CI #565](https://github.com/jimmy-sim/poker-ai/actions/runs/44339006308)
+passes the same 5,582-test base scope on both actual runtimes and an identical
+whole checkout tree. The [six-role record](../results/receipt-consumer-mutation/source-checks/manifest.json)
+retains raw logs, guards, license hashes and the omitted-scope first run. The
+dirty-checkout import failures remain failed; the clean exact-head result does
+not erase them. Next: publish and verify this checked source before the two
+archived reads. Those reads can answer nonmutation only for their observed
+consumers, not safe sharing or a saving. Codex assisted with qualification
+and writing; human hands-on time was not recorded.
+
+**November 18 archived result:** After the qualified source and six-role
+record were public, the two original archive reads passed. The raw evidence
+was [published at `1e9714f`](../results/receipt-consumer-mutation/raw/manifest.json)
+before the [data-only report](receipt-consumer-mutation.md#archived-consumer-audit-and-data-only-result--november-18).
+The Python 3.11 whole command took 84.845 seconds and Python 3.12 took
+73.026 seconds, both below the unchanged 180-second limit. All six timing
+receipt callers and the complete archive reader left their observed graphs
+unchanged, and both original replays reported zero error. **Example:** if a
+receipt reader had edited one of the 148 arrays inside a prerequisite graph,
+its after-caller witness would differ from the loader witness and the audit
+would fail. Here all seven after-archive witnesses matched. The report script
+reproduced identical output on both locked runtimes with poker reader imports
+blocked; four focused report tests pass.
+
+**Next decision:** qualify the report commit locally and in hosted CI, then
+history-merge the focused PR if all gates stay green. A future shared-graph
+implementation needs a separate prospective ordinary/reuse protocol, including
+unchanged work counters and exact saved results. No speedup, forecast fix or
+stronger strategy follows from this mutation result. The prior forecast,
+accuracy and full-context-copy failures remain failed. Codex assisted with
+collection, checks and writing; human hands-on time was not recorded.
+
+The report head `ba5b183` now passes both final clean local bases (5,586
+tests each, 71 skips, 150 deselections) and hosted
+[CI #568](https://github.com/jimmy-sim/poker-ai/actions/runs/44347717628)
+on the same whole tree. The [final-check record](../results/receipt-consumer-mutation/final-checks/manifest.json)
+retains logs, exact versions, rerenders and the PR merge-tree proof. The
+consumer-mutation question is complete for this bounded read; PR #91 still
+needs its evidence-checkpoint CI and history-preserving merge. Codex assisted
+with verification and writing; human hands-on time was not recorded.

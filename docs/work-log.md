@@ -7062,3 +7062,85 @@ retains complete logs and hashes. Next: verify the documentation-commit CI
 before a history-preserving PR #90 merge and protected-main preservation.
 The earlier optional failure stays failed, and no reuse or strength claim is
 admitted. Codex-assisted; human hands-on time not recorded.
+
+### November 18: merge PR #90; preregister consumer mutation audit
+
+[PR #90](https://github.com/jimmy-sim/poker-ai/pull/90) is history-merged at
+`826701f` after final documentation-commit CI #563 passed both exact
+runtimes and whole-tree checks. The guarded main update
+preserved ten unrelated user edits, status, index entries and patches. The
+fresh-output audit found identical, separately owned outputs; it did not
+establish safe sharing.
+
+The [next question](receipt-consumer-mutation.md) was prospectively
+[published on issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6981335805)
+before source or collection: inspect each of seven prerequisite graphs after
+its receipt consumer and the full original archive read. Four synthetic
+wrapper tests pass; full source checks and actual archived reads remain
+pending. No cache, saving, forecast or strategy claim is admitted.
+Codex-assisted; human hands-on time not recorded.
+
+Pre-commit full checks in the dirty working checkout do not qualify this
+source. The final preliminary attempt passes Ruff and strict mypy on 837 files,
+but nine existing fresh-child tests fail to import `poker_ai` after local
+editable-path changes (5,573 other tests pass; 71 skip, 150 deselect). Earlier
+attempts found a stale mypy cache or a missing package at conftest import.
+[Original logs and exit receipts](../results/receipt-consumer-mutation/failed-precommit/manifest.json)
+are retained.
+Next: commit the source and run exact-head checks in an isolated, clean
+environment before publishing any archived audit result.
+
+### November 18: qualify consumer-mutation audit source
+
+At `dd53e99`, both clean local bases pass 5,582 tests, 71 skips and 150
+deselections with Ruff, formatting, strict mypy on 837 files and all-files
+hooks. Both complete 69-file optional scopes pass 2,491 tests on the two
+actual locked runtimes. An initial 68-file optional pass omitted three newer
+report tests and is retained but excluded. The complete installed OpenSpiel
+2.0.2 license was reread before each optional scope and matches the pinned
+Apache-2.0 hash. Hosted [CI #565](https://github.com/jimmy-sim/poker-ai/actions/runs/44339006308)
+passes both jobs on the same whole source tree, with 5,582 tests each and
+actual Python/NumPy versions and uv selections verified. The
+[six-role archive](../results/receipt-consumer-mutation/source-checks/manifest.json)
+retains local, hosted and failed/incomplete records. Next: publish and verify
+this source-check receipt before any actual archived consumer audit. No reuse,
+savings, forecast or strength claim follows from software qualification.
+Codex-assisted; human hands-on time not recorded.
+
+### November 18: archive the consumer reads and render their result
+
+The qualified source and exact six-role record were public at `9b40113`
+before collection. The original saved-archive read passed on locked Python
+3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy 2.5.4. Whole commands including
+startup took 84.845 and 73.026 seconds under the 180-second cap. Both original
+replays returned all 480 profiles with zero chip/unitless error. Six nested
+prerequisite graphs matched after their timing receipt callers; all seven
+matched after the complete reader. The direct graph had no timing caller.
+The [six original output files and hash manifest](../results/receipt-consumer-mutation/raw/manifest.json)
+were published at `1e9714f` before report rendering.
+
+The [data-only renderer](../scripts/report_receipt_consumer_mutation.py)
+reproduces the same [report JSON](../results/receipt-consumer-mutation/report.json)
+byte-for-byte on both actual locked runtimes with poker reader imports blocked.
+Four focused tests pass, including tampered bytes and a changed stage with
+updated hash. The result supports only nonmutation in this observed read; a
+future shared-graph candidate still needs a separately preregistered complete
+ordinary/reuse comparison. Next: qualify the report commit locally and in
+hosted CI, then history-merge PR #91 if gates pass. The failed 912.54/900
+forecast, 2.390%/1% accuracy and full-context-copy result remain failed.
+Codex-assisted; human hands-on time not recorded.
+
+### November 18: qualify the consumer-mutation report head
+
+At `ba5b183`, both clean local bases pass Ruff, formatting, strict mypy on
+839 files and 5,586 tests each, with 71 skipped and 150 deselected. The
+all-files hooks and exact JSON rerender pass. Hosted
+[CI #568](https://github.com/jimmy-sim/poker-ai/actions/runs/44347717628)
+passes both actual locked runtimes with 5,586 tests each, one warning and
+passing hooks. The PR merge checkout tree equals the report tree. The
+[final-check archive](../results/receipt-consumer-mutation/final-checks/manifest.json)
+retains 15 hashed members and rerunnable verification. The original audit
+source is unchanged since its earlier complete optional checks. Next:
+publish this evidence checkpoint, verify its own CI, then history-merge PR
+#91. No shared graph or saving is admitted. Codex-assisted; human hands-on
+time not recorded.

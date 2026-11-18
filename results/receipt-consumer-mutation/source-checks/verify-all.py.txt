@@ -1,0 +1,39 @@
+"""Verify published six-role source-check member bytes and source identity."""
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = folder.parents[2]
+manifest = json.loads((folder / 'manifest.json').read_text())
+head = manifest['checked_commit']
+assert manifest['status'] == 'six_exact_source_roles_passed_before_archived_consumer_audit'
+assert manifest['actual_archived_audit_started'] is False
+assert manifest['source_fingerprint'] == 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+files = manifest['files']
+assert len(files) == len({row['file'] for row in files})
+for row in files:
+    data = (folder / row['file']).read_bytes()
+    assert len(data) == row['bytes']
+    assert hashlib.sha256(data).hexdigest() == row['sha256']
+def git(*args: str) -> bytes:
+    return subprocess.check_output(['git', *args], cwd=root)
+assert git('rev-parse', head + '^{tree}').decode().strip() == manifest['source_tree']
+for path in (
+    'scripts/audit_receipt_consumer_mutation.py',
+    'scripts/receipt_consumer_mutation_support.py',
+    'tests/test_receipt_consumer_mutation.py',
+):
+    assert git('show', head + ':' + path) == (root / path).read_bytes()
+local = json.loads((folder / 'local/verified-local.json').read_text())
+hosted = json.loads((folder / 'hosted/verified.json').read_text())
+assert local['checked_commit'] == hosted['head'] == head
+assert local['base'] == {'311': 5582, '312': 5582}
+assert local['optional'] == {'311': 2491, '312': 2491}
+assert local['incomplete_optional311'] == 2488
+assert hosted['run_id'] == 44339006308
+assert hosted['whole_tree_equal'] is True
+assert hosted['source_tree'] == manifest['source_tree']
+assert len(hosted['rows']) == 2
+print(json.dumps({'status': 'six_exact_source_roles_verified', 'commit': head, 'run_id': hosted['run_id'], 'files': len(files)}, indent=2))

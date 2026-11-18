@@ -1,0 +1,11 @@
+uv run --locked ruff check .
+All checks passed!
+uv run --locked ruff format --check .
+999 files already formatted
+uv run --locked mypy --strict src tests scripts
+scripts/card_cache_support.py:105: error: Module "poker_ai" has no attribute "cards"  [attr-defined]
+scripts/card_cache_support.py:105: error: Module "poker_ai" has no attribute "evaluator"  [attr-defined]
+scripts/card_cache_support.py:106: error: Module "poker_ai.abstraction" has no attribute "potential"  [attr-defined]
+scripts/profile_compact_replay.py:122: error: Module "poker_ai.evaluation" has no attribute "compact_opponent_cli"  [attr-defined]
+Found 4 errors in 2 files (checked 837 source files)
+make: *** [typecheck] Error 1

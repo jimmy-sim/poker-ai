@@ -1,0 +1,218 @@
+{
+  "status": "six_exact_source_roles_passed_before_archived_consumer_audit",
+  "checked_commit": "dd53e9904d8d31cb0407a9662f0880f851907b7a",
+  "source_tree": "ecd07a85c99c75a9e2a0443d639b99a81b99baa4",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "source_files": 458,
+  "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+  "run_id": 44339006308,
+  "workflow_attempt": 1,
+  "hosted_jobs": {
+    "Python 3.11": 134923469886,
+    "Python 3.12": 134923470289
+  },
+  "local_base": {
+    "311": 5582,
+    "312": 5582
+  },
+  "local_optional": {
+    "311": 2491,
+    "312": 2491
+  },
+  "incomplete_optional311_passes_retained": 2488,
+  "prior_failed_precommit": "results/receipt-consumer-mutation/failed-precommit/manifest.json",
+  "actual_archived_audit_started": false,
+  "scope": "Read-only consumer mutation audit source qualification only; no archived-input collection, reuse, training, native construction, forecast or strength admission",
+  "files": [
+    {
+      "file": "hosted/checkout-source.json",
+      "bytes": 2653,
+      "sha256": "1dd7625d3d732c1003b9cb2a112094ca5e666cbf86ba4a349bcfbff3e3b105e6"
+    },
+    {
+      "file": "hosted/jobs.json",
+      "bytes": 5154,
+      "sha256": "e9238cc75b4b0d679ba6832fddec12e319ea97b915062261ffa3b2b42efff5ab"
+    },
+    {
+      "file": "hosted/pr.json",
+      "bytes": 17205,
+      "sha256": "bbb0d5e291dce40437909ed16f165f8b44a9812074af6eec7c42df2b31bbe18d"
+    },
+    {
+      "file": "hosted/python311.log",
+      "bytes": 51482,
+      "sha256": "28ff8a1ec97fe6cd83a06c39f657d1e355d62e9edcf5e31337733491d88ef849"
+    },
+    {
+      "file": "hosted/python312.log",
+      "bytes": 51391,
+      "sha256": "b2e9f9d20b5cd4c020d98f13cc31aa9d32d793e8e5c7f9621b2eaa936aa380dd"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12678,
+      "sha256": "eab646a4a1e1fe431bf1715f0018ac4d1cab5f4cfc6e932d038b394d9c70417a"
+    },
+    {
+      "file": "hosted/verified.json",
+      "bytes": 928,
+      "sha256": "cc5b90434764deaad211167d9511520458ae7cccca1cf1fb4c82f1763d568f46"
+    },
+    {
+      "file": "local/files.json",
+      "bytes": 4388,
+      "sha256": "2f6ee64e60e88c3a7a59ef804ca77a912db644578d77ab7707743be90907d6c9"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-base311-guard.json",
+      "bytes": 514,
+      "sha256": "9f8b1e3b8afdbb5bcf5f1c80dc197eede4af41a4b202a92aeeff8f249af875e2"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-base312-guard.json",
+      "bytes": 514,
+      "sha256": "0933e7aef87d9c8eb97fc166354bc8e08a5ad43c63cebcd63bf7ad1c3e97eb7f"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-base312-install.log",
+      "bytes": 944,
+      "sha256": "27e71f88b46c38f454fce8c7496459b5e9e571e9deb310cc9a83673fda3e2bb3"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-clean-base311.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-clean-base311.log",
+      "bytes": 6628,
+      "sha256": "105cee0e7d54f3e33a5aa8843633783f7ca3d0992c006b9ea3a5e7b4995b24ae"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-clean-base312.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-clean-base312.log",
+      "bytes": 6628,
+      "sha256": "38dcc7191699bc5f7dd67cb25a395e07bb60d8299cf48eacf63bacb2f2e43fae"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-hooks.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-hooks.log",
+      "bytes": 160,
+      "sha256": "80ec352a545b198934fd9607543226ceb0fa2204341477390bbb9d7d89701f7e"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional-runner-incomplete.py.txt",
+      "bytes": 2716,
+      "sha256": "c34b935e007acb49d667bf75e515a9abc6fc29c1cc95fdb15913397dd44779ef"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional-runner.py.txt",
+      "bytes": 2725,
+      "sha256": "3f70d6e59bb69af5f43bf589134807d71a391c75de96532a0701cc76a11051c3"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional-suites-incomplete.json",
+      "bytes": 2859,
+      "sha256": "a54ddd819affd1b1e4459c14db3d42a2c35459057a62ab94e00a28721a218475"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional-suites.json",
+      "bytes": 2907,
+      "sha256": "1040c9278509d99b926b0dea77db7d291fae0c692783482f639d44c755b9cd61"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311-complete.json",
+      "bytes": 344,
+      "sha256": "ff200ea95d013067af0860ceabd4e9b3c51c6e6b39e1643bd6998d537ab8f7bf"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311-complete.log",
+      "bytes": 5105,
+      "sha256": "e7265e77e3811eab54d4875e2f3bef6f21fad647d89c6c78fb77637b82b4fc76"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311-install.log",
+      "bytes": 1303,
+      "sha256": "3a5b0fa1f03e500aef521b12ba86adecb29b6733db323b92071c99b7c473ba91"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311-license.json",
+      "bytes": 438,
+      "sha256": "b344fa62b36d561d0f6ea314fb8e8625518fe410921b5db3ef67de977093370a"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311.json",
+      "bytes": 345,
+      "sha256": "3075b856717ce02c77e7594b49bfcd0bb6445e8114a4e9903a77b4a82ed031f0"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional311.log",
+      "bytes": 5105,
+      "sha256": "181360a9fbb2209fa264cf5d73b5599db28b3df029fc549b2986646aae9b5eb7"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional312-complete.json",
+      "bytes": 344,
+      "sha256": "df52c243c05f4e58edb2712e8b504c04316f322b504ff82ff3c3d7a616014ade"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional312-complete.log",
+      "bytes": 5105,
+      "sha256": "1d485f0b31c83a1608b66377b7bbdcb3ead63f4b72422a0c94d3f1d14f383fe1"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional312-install.log",
+      "bytes": 1303,
+      "sha256": "9668f6a4cfa9a00a87d0da84c201244e708f402fa8f637a56f1e03f6bfdf19bf"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-optional312-license.json",
+      "bytes": 438,
+      "sha256": "b31f3a1ec616f0659668f4d8d6fa09585dde15397cdbe155aeb27d5ea2649f33"
+    },
+    {
+      "file": "local/receipt-consumer-mutation-source-guard.py.txt",
+      "bytes": 1433,
+      "sha256": "fba68c3d2c1fca0f7d36834ab8b5eda49ed31f41601194246491a2a416b99c1b"
+    },
+    {
+      "file": "local/verified-local.json",
+      "bytes": 407,
+      "sha256": "cc8c37e94c65695d649547187238be295c3c33ee584d5eda6d3aef0e2869d4ee"
+    },
+    {
+      "file": "local/verify-local.py.txt",
+      "bytes": 3713,
+      "sha256": "ee0417f1ac9fa7b8c5753b3eb42df3ee5174e7249b4ce3d2f475c34ede0f96fe"
+    },
+    {
+      "file": "merge-source.json",
+      "bytes": 434,
+      "sha256": "418a2e92fa2bf99a36ae150a03f5cb0fcbae07b4f315bbfae4c85df9dd3f74fa"
+    },
+    {
+      "file": "operator/collect-ci.py.txt",
+      "bytes": 2232,
+      "sha256": "6ad79873e8b12669dd3a1483e6d7d0442d589b2719b80258da8ae150f35e38f3"
+    },
+    {
+      "file": "operator/verify-hosted.py.txt",
+      "bytes": 2759,
+      "sha256": "07d40847e3cb8bccfbfda1ccc2d8482d177d8cf71b99382ae80393ae1cc0585e"
+    },
+    {
+      "file": "verify-all.py.txt",
+      "bytes": 1888,
+      "sha256": "0a0851d648330d5c2e61a1badc66a15b3eb5a7ad2ae0d79c4c1044dcbdc7d8b1"
+    }
+  ]
+}

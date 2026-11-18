@@ -1,0 +1,55 @@
+"""Verify all four exact-head local roles and retain preliminary failures."""
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+source = Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/receipt-consumer-mutation-checkout')
+head = 'dd53e9904d8d31cb0407a9662f0880f851907b7a'
+fingerprint = 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip() == head
+assert not subprocess.check_output(['git','status','--porcelain'],cwd=source)
+files = json.loads((folder/'files.json').read_text())
+assert len({row['file'] for row in files}) == len(files)
+for row in files:
+    data=(folder/row['file']).read_bytes()
+    assert len(data)==row['bytes'] and hashlib.sha256(data).hexdigest()==row['sha256']
+for minor, python, numpy in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+    log=(folder/f'receipt-consumer-mutation-clean-base{minor}.log').read_text()
+    assert (folder/f'receipt-consumer-mutation-clean-base{minor}.exit').read_text().strip()=='0'
+    assert 'All checks passed!' in log
+    assert '999 files already formatted' in log
+    assert 'Success: no issues found in 837 source files' in log
+    assert re.search(r'\b5582 passed, 71 skipped, 150 deselected in [0-9.]+s',log)
+    guard=json.loads((folder/f'receipt-consumer-mutation-base{minor}-guard.json').read_text())
+    assert guard['head']==head and guard['dirty'] is False
+    assert guard['python']==python and guard['numpy']==numpy
+    assert guard['source_files']==458 and guard['source_fingerprint']==fingerprint
+    assert guard['launcher_pythonpath_absent'] is True
+    assert Path(guard['import_root']).is_relative_to(source/'src')
+    optional=json.loads((folder/f'receipt-consumer-mutation-optional{minor}-complete.json').read_text())
+    assert optional['status']=='passed' and optional['checked_commit']==head
+    assert optional['suite_count']==69 and optional['no_launcher_PYTHONPATH'] is True
+    assert optional['python']==python and optional['numpy']==numpy
+    assert optional['source_fingerprint']==fingerprint
+    optional_log=(folder/f'receipt-consumer-mutation-optional{minor}-complete.log').read_text()
+    assert re.search(r'\b2491 passed in [0-9.]+s',optional_log)
+    assert optional_log.count('ACTUAL_PYTHON='+python)==2
+    assert optional_log.count('ACTUAL_NUMPY='+numpy)==2
+    assert optional_log.count('CHECKED_COMMIT='+head)==2
+    assert optional_log.count('SOURCE_FINGERPRINT='+fingerprint)==2
+    license=json.loads((folder/f'receipt-consumer-mutation-optional{minor}-license.json').read_text())
+    assert license['version']=='2.0.2' and license['license']=='Apache-2.0'
+    assert license['license_bytes']==11358
+    assert license['license_sha256']=='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+    assert license['full_license_read_before_optional_tests'] is True
+incomplete=json.loads((folder/'receipt-consumer-mutation-optional311.json').read_text())
+assert incomplete['suite_count']==68 and incomplete['status']=='passed'
+assert '2488 passed in ' in (folder/'receipt-consumer-mutation-optional311.log').read_text()
+assert (folder/'receipt-consumer-mutation-hooks.exit').read_text().strip()=='0'
+hooks=(folder/'receipt-consumer-mutation-hooks.log').read_text()
+assert hooks.count('Passed')==2
+result=dict(status='four_local_roles_passed_incomplete_optional_retained',checked_commit=head,source_fingerprint=fingerprint,base={'311':5582,'312':5582},optional={'311':2491,'312':2491},incomplete_optional311=2488,actual_archived_audit_started=False)
+print(json.dumps(result,indent=2))
