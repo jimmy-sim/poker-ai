@@ -7360,3 +7360,37 @@ This closes the bounded question about fresh prerequisite outputs, subject to
 the final documentation CI and merge. It does not answer whether sharing one
 output inside the complete reader preserves work or results. Codex assisted
 with checks and writing; human hands-on time was not recorded.
+
+
+## 135. Check prerequisite objects after receipt readers use them
+
+**Question:** a fresh loader returns the same contents each time, but does a
+timing receipt reader change its returned graph before it finishes? If so,
+passing one graph to later consumers could carry hidden changes.
+
+**Change and example:** [PR #90](https://github.com/jimmy-sim/poker-ai/pull/90)
+merged at `826701f` after documentation-commit CI passed both actual runtimes.
+The next [prospective audit](receipt-consumer-mutation.md) wraps the six nested
+loads and one direct load in one original saved-archive read. It witnesses the
+same object at load return, after its reader and after the complete read. For
+example, a reader changing an array or a prefix dictionary would change the
+closed graph witness and fail the audit.
+
+**Checks and result:** the first four synthetic wrapper cases pass. They cover
+seven-call order, alias restoration, a deliberate mutation and a reader
+failure. This is an
+implementation check, not a result on archived inputs. The audit source is not
+yet fully qualified or published; no archived audit has run. A preliminary
+dirty-checkout `make check` attempt passes Ruff and strict typing on 837 files
+but fails nine existing tests that start fresh Python children: 5,573 pass,
+71 skip and 150 are deselected. The child errors include missing `poker_ai`
+imports after the local editable install path changed. Earlier attempts also
+failed on a stale mypy cache or at conftest import. Their logs and exact exit
+receipts are [retained](../results/receipt-consumer-mutation/failed-precommit/manifest.json);
+none qualifies the source.
+
+**Next decision:** complete exact source qualification and publish it before
+the two bounded archived reads. Even an unchanged result will require a
+separate complete ordinary/reuse comparison before sharing is admitted. The
+prior forecast, accuracy and full-context-copy failures stay failed. Codex
+assisted with implementation and tests; human hands-on time was not recorded.

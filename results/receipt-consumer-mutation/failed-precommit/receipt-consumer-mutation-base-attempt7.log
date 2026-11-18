@@ -1,0 +1,771 @@
+/bin/zsh /private/tmp/uv-receipt-check.zsh run --locked ruff check .
+All checks passed!
+/bin/zsh /private/tmp/uv-receipt-check.zsh run --locked ruff format --check .
+999 files already formatted
+/bin/zsh /private/tmp/uv-receipt-check.zsh run --locked mypy --strict src tests scripts
+Success: no issues found in 837 source files
+/bin/zsh /private/tmp/uv-receipt-check.zsh run --locked pytest -q -m "not slow"
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  7%]
+........................................................................ [  8%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+...........................................s............................ [ 21%]
+......................................ss................................ [ 22%]
+................................s....................................F.. [ 24%]
+..........................................FF............................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 28%]
+........................................................................ [ 29%]
+........................................................................ [ 30%]
+..................................................................s..... [ 31%]
+.............................F.......................................... [ 33%]
+........................................................................ [ 34%]
+...........................................................F............ [ 35%]
+........................................................................ [ 36%]
+.......sss.............................................................. [ 38%]
+.....................................................................s.. [ 39%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+........................................................................ [ 43%]
+........................................................................ [ 44%]
+...................................................ss..sss.............. [ 45%]
+........................................................................ [ 47%]
+..................sssssssssssssssss..................................... [ 48%]
+.........s.............................................................. [ 49%]
+........................................................................ [ 50%]
+........................................................................ [ 52%]
+........................................................................ [ 53%]
+.......ssssssssss....................................................... [ 54%]
+........................................................................ [ 56%]
+........................................................................ [ 57%]
+.........................................................s.............. [ 58%]
+........................................................................ [ 59%]
+.............................................ss...s........F............ [ 61%]
+........................................................................ [ 62%]
+........................................................................ [ 63%]
+............s.................................................s......... [ 64%]
+....................F.................................F................. [ 66%]
+.......................................................................s [ 67%]
+s.......................ss.............................................. [ 68%]
+.............................F.......................................... [ 70%]
+...........................ss......................................ss... [ 71%]
+........................................................................ [ 72%]
+........................................................................ [ 73%]
+.............................................s.......................... [ 75%]
+........................................................................ [ 76%]
+.............................................s.......................... [ 77%]
+........................................................................ [ 79%]
+....................s.......................s........................... [ 80%]
+........................................................................ [ 81%]
+..............s......................................................... [ 82%]
+.......s................................................................ [ 84%]
+..ss..........s......................................................... [ 85%]
+...............................................s........................ [ 86%]
+.......................................s................................ [ 87%]
+........................................................................ [ 89%]
+........................................................................ [ 90%]
+........................................................................ [ 91%]
+........................................................................ [ 93%]
+..........................s............................................. [ 94%]
+........................................................................ [ 95%]
+........................................................................ [ 96%]
+........................................................................ [ 98%]
+........................................................................ [ 99%]
+..................................                                       [100%]
+=================================== FAILURES ===================================
+______ test_full_fictional_child_uses_three_workers_and_checked_archives _______
+
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_full_fictional_child_uses1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x112ee0910>
+
+    def test_full_fictional_child_uses_three_workers_and_checked_archives(
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        # This mocked gate is UNIT COVERAGE ONLY on draft source. It cannot be
+        # published as a clean-source proof, forecast or actual training admission.
+        root = Path(__file__).resolve().parents[1]
+        output = tmp_path / "draft-unit-own.json"
+        script = tmp_path / "unit_child.py"
+        script.write_text("""import os,sys,time
+    from pathlib import Path
+    if __name__ == "__main__":
+        from poker_ai.evaluation import compact_opponent_cli as cli
+        from poker_ai.evaluation import compact_opponent_admission as gates
+        from poker_ai.evaluation.compact_opponent_source import source
+        from poker_ai.evaluation.opponent_learning_report import write
+        root,output,scratch=map(Path,sys.argv[1:])
+        saved=dict(source(root),dirty=False)
+        cli.source=lambda r:saved
+        gates.require_checks=lambda r:{"UNIT_ONLY_NOT_ACTUAL_CHECKS":True}
+        cli.write_report=lambda p,s,d,scales:write(p,s,d,scales,no_plots=True)
+        os.environ["POKER_COMPACT_OPPONENT_STARTED"]=repr(time.perf_counter())
+        raise SystemExit(cli.child_main(root,["software-own","--output",str(output),
+                             "--scratch",str(scratch),"--_child"]))
+    """)
+>       subprocess.run(
+            [
+                sys.executable,
+                str(script),
+                str(root),
+                str(output),
+                str(tmp_path / "scratch"),
+            ],
+            cwd=root,
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=180,
+        )
+
+tests/test_compact_opponent_cli.py:273: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = 180, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/pr...ar/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_full_fictional_child_uses1/scratch'],)
+kwargs = {'cwd': PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse'), 'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_full_fictional_child_uses1/unit_child.py', '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse', '/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_full_fictional_child_uses1/draft-unit-own.json', '/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_full_fictional_child_uses1/scratch']' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+______ test_fresh_training_imports_and_runtime_forbid_reference_backends _______
+
+    def test_fresh_training_imports_and_runtime_forbid_reference_backends() -> None:
+        code = """
+    import sys
+    from poker_ai.evaluation.compact_opponent_workers import training
+    from poker_ai.evaluation.compact_opponent_guard import isolated,runtime
+    runtime(worker=True)
+    with isolated(worker=True):
+        names=('pyspiel','open_spiel.python.policy',
+               'poker_ai.solver_validation.reference')
+        for name in names:
+            try: __import__(name)
+            except AssertionError: pass
+            else: raise AssertionError('reference import was allowed')
+    runtime(worker=True)
+    print('fresh worker imports reference-free; all3 import attempts rejected')
+    """
+>       result = subprocess.run(
+            [sys.executable, "-c", code],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_compact_opponent_isolation.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c'... was allowed')\nruntime(worker=True)\nprint('fresh worker imports reference-free; all3 import attempts rejected')\n"],)
+kwargs = {'cwd': PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse'), 'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c', "\nimport sys\nfrom poker_ai.evaluation.compact_opponent_workers import training\nfrom poker_ai.evaluation.compact_opponent_guard import isolated,runtime\nruntime(worker=True)\nwith isolated(worker=True):\n    names=('pyspiel','open_spiel.python.policy',\n           'poker_ai.solver_validation.reference')\n    for name in names:\n        try: __import__(name)\n        except AssertionError: pass\n        else: raise AssertionError('reference import was allowed')\nruntime(worker=True)\nprint('fresh worker imports reference-free; all3 import attempts rejected')\n"]' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+_______________ test_read_only_parent_blocks_solver_construction _______________
+
+    def test_read_only_parent_blocks_solver_construction() -> None:
+        # Isolated subprocess: other optional tests may already have imported pyspiel.
+        code = """
+    from poker_ai.evaluation.compact_opponent_guard import isolated
+    with isolated(worker=False):
+        from poker_ai.solver_validation.reference import Reference
+        from poker_ai.solver_validation.matched_array_reference import ScalarReference
+        from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
+        for constructor in (Reference,ScalarReference,ReducedDispatchBatchTrainer):
+            try: constructor(None)
+            except AssertionError: pass
+            else: raise AssertionError('read-only parent constructed a solver')
+    print('all3 solver constructors rejected')
+    """
+>       result = subprocess.run(
+            [sys.executable, "-c", code],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_compact_opponent_isolation.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c'...  else: raise AssertionError('read-only parent constructed a solver')\nprint('all3 solver constructors rejected')\n"],)
+kwargs = {'cwd': PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse'), 'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c', "\nfrom poker_ai.evaluation.compact_opponent_guard import isolated\nwith isolated(worker=False):\n    from poker_ai.solver_validation.reference import Reference\n    from poker_ai.solver_validation.matched_array_reference import ScalarReference\n    from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer\n    for constructor in (Reference,ScalarReference,ReducedDispatchBatchTrainer):\n        try: constructor(None)\n        except AssertionError: pass\n        else: raise AssertionError('read-only parent constructed a solver')\nprint('all3 solver constructors rejected')\n"]' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+______________ test_pinned_legacy_cli_bridge_and_source_tampering ______________
+
+config = {'schema_version': 1, 'status': 'profile_only_no_strength_comparison', 'input_sha256': {'configs/training-isolation.js...8ac5a126a48aad8638f924cc8b531be617b4a100aa6333f8a7c5a41'}, 'comparison_config': 'configs/training-isolation.json', ...}
+tmp_path = PosixPath('/private/var/folders/fd/x9x3lgzj0gd66b9mpf_sv2vh0000gn/T/pytest-of-jimmysim/pytest-33/test_pinned_legacy_cli_bridge_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1133f3710>
+
+    def test_pinned_legacy_cli_bridge_and_source_tampering(
+        config: dict[str, Any],
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        path = ROOT / config["baseline_receipt"]
+        assert profile.replay_correctness(ROOT, path)["status"] == "passed_correctness_only"
+        before = path.read_bytes()
+>       result = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts/check_training_isolation.py"),
+                "--replay",
+                str(path),
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+
+tests/test_controlled_profile.py:181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/Us...ments/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/training-isolation/correctness.json'],)
+kwargs = {'cwd': PosixPath('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse'), 'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/check_training_isolation.py', '--replay', '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/training-isolation/correctness.json']' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+___________ test_fresh_process_blocks_learner_and_reference_imports ____________
+
+    def test_fresh_process_blocks_learner_and_reference_imports() -> None:
+        code = """
+    import importlib
+    from poker_ai.evaluation.compact_information_run import run
+    from poker_ai.evaluation.diagnostic_guard import own_only
+    assert callable(run)
+    with own_only():
+        from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
+        try:
+            ReducedDispatchBatchTrainer()
+        except AssertionError:
+            pass
+        else:
+            raise AssertionError("learner not blocked")
+        for name in (
+            "pyspiel", "open_spiel",
+            "poker_ai.solver_validation.matched_array_reference",
+        ):
+            try:
+                importlib.import_module(name)
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError("reference not blocked")
+    print("learners and every reference import blocked")
+    """
+>       result = subprocess.run(
+            [sys.executable, "-c", code], text=True, capture_output=True, check=True
+        )
+
+tests/test_diagnostic_receipts.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c'...\n            raise AssertionError("reference not blocked")\nprint("learners and every reference import blocked")\n'],)
+kwargs = {'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '-c', '\nimport importlib\nfrom poker_ai.evaluation.compact_information_run import run\nfrom poker_ai.evaluation.diagnostic_guard import own_only\nassert callable(run)\nwith own_only():\n    from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer\n    try:\n        ReducedDispatchBatchTrainer()\n    except AssertionError:\n        pass\n    else:\n        raise AssertionError("learner not blocked")\n    for name in (\n        "pyspiel", "open_spiel",\n        "poker_ai.solver_validation.matched_array_reference",\n    ):\n        try:\n            importlib.import_module(name)\n        except AssertionError:\n            pass\n        else:\n            raise AssertionError("reference not blocked")\nprint("learners and every reference import blocked")\n']' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+_________ test_cli_cannot_start_heldout_without_both_development_gates _________
+
+    def test_cli_cannot_start_heldout_without_both_development_gates() -> None:
+        import subprocess
+        import sys
+    
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/train_postflop.py"), "--phase", "heldout"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+>       assert result.returncode == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.v...module>\n    from poker_ai.postflop.learning import run_training\nModuleNotFoundError: No module named \'poker_ai\'\n').returncode
+
+tests/test_postflop_learning.py:259: AssertionError
+___ test_inspector_shows_observed_cards_and_prefixes_and_rejects_duplicates ____
+
+    def test_inspector_shows_observed_cards_and_prefixes_and_rejects_duplicates() -> None:
+        command = [sys.executable, str(ROOT / "scripts/inspect_public_board.py")]
+        result = subprocess.run(command + ["Ac", "Kc", "2d", "7c"], capture_output=True)
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: b'Traceback (most recent call last):
+E           File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role... in <module>
+E             from poker_ai.abstraction.public_board import (
+E         ModuleNotFoundError: No module named \'poker_ai\'
+E         '
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.v...in <module>\n    from poker_ai.abstraction.public_board import (\nModuleNotFoundError: No module named \'poker_ai\'\n').returncode
+
+tests/test_public_board.py:235: AssertionError
+________ test_cli_only_fixed_public_encoding_no_actual_hand_or_actions _________
+
+    def test_cli_only_fixed_public_encoding_no_actual_hand_or_actions() -> None:
+        cmd = [sys.executable, str(ROOT / "scripts/inspect_public_range_feature.py")]
+>       results = [
+            subprocess.run(cmd + [river], capture_output=True, text=True, check=True)
+            for river in ("9h", "9d")
+        ]
+
+tests/test_public_range.py:311: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_public_range.py:312: in <listcomp>
+    subprocess.run(cmd + [river], capture_output=True, text=True, check=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/Us...nts/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/inspect_public_range_feature.py', '9h'],)
+kwargs = {'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.venv/bin/python', '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/inspect_public_range_feature.py', '9h']' returned non-zero exit status 1.
+
+../python/cpython-3.11.17-macos-aarch64-none/lib/python3.11/subprocess.py:571: CalledProcessError
+___________ test_inspector_changes_feature_without_selecting_actions ___________
+
+    def test_inspector_changes_feature_without_selecting_actions() -> None:
+        command = [sys.executable, str(ROOT / "scripts/inspect_range_feature.py")]
+        a = subprocess.run(command + ["9h"], capture_output=True, text=True)
+        b = subprocess.run(command + ["9d"], capture_output=True, text=True)
+>       assert a.returncode == b.returncode == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/.v...om poker_ai.abstraction.range_mass import MASS_ORDER, river_mass\nModuleNotFoundError: No module named \'poker_ai\'\n').returncode
+
+tests/test_range_mass.py:326: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_compact_opponent_cli.py::test_full_fictional_child_uses_three_workers_and_checked_archives
+FAILED tests/test_compact_opponent_isolation.py::test_fresh_training_imports_and_runtime_forbid_reference_backends
+FAILED tests/test_compact_opponent_isolation.py::test_read_only_parent_blocks_solver_construction
+FAILED tests/test_controlled_profile.py::test_pinned_legacy_cli_bridge_and_source_tampering
+FAILED tests/test_diagnostic_receipts.py::test_fresh_process_blocks_learner_and_reference_imports
+FAILED tests/test_postflop_learning.py::test_cli_cannot_start_heldout_without_both_development_gates
+FAILED tests/test_public_board.py::test_inspector_shows_observed_cards_and_prefixes_and_rejects_duplicates
+FAILED tests/test_public_range.py::test_cli_only_fixed_public_encoding_no_actual_hand_or_actions
+FAILED tests/test_range_mass.py::test_inspector_changes_feature_without_selecting_actions
+9 failed, 5573 passed, 71 skipped, 150 deselected in 749.82s (0:12:29)
+make: *** [test] Error 1

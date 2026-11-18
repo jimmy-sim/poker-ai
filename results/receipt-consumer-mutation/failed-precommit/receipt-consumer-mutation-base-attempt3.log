@@ -1,0 +1,12 @@
+uv run --locked ruff check .
+All checks passed!
+uv run --locked ruff format --check .
+999 files already formatted
+uv run --locked mypy --strict src tests scripts
+Success: no issues found in 837 source files
+uv run --locked pytest -q -m "not slow"
+ImportError while loading conftest '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/tests/conftest.py'.
+tests/conftest.py:10: in <module>
+    from poker_ai.abstraction.model import CardAbstraction, Kind, fit_quantizer
+E   ModuleNotFoundError: No module named 'poker_ai'
+make: *** [test] Error 4

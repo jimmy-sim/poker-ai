@@ -7062,3 +7062,30 @@ retains complete logs and hashes. Next: verify the documentation-commit CI
 before a history-preserving PR #90 merge and protected-main preservation.
 The earlier optional failure stays failed, and no reuse or strength claim is
 admitted. Codex-assisted; human hands-on time not recorded.
+
+### November 18: merge PR #90; preregister consumer mutation audit
+
+[PR #90](https://github.com/jimmy-sim/poker-ai/pull/90) is history-merged at
+`826701f` after final documentation-commit CI #563 passed both exact
+runtimes and whole-tree checks. The guarded main update
+preserved ten unrelated user edits, status, index entries and patches. The
+fresh-output audit found identical, separately owned outputs; it did not
+establish safe sharing.
+
+The [next question](receipt-consumer-mutation.md) was prospectively
+[published on issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6981335805)
+before source or collection: inspect each of seven prerequisite graphs after
+its receipt consumer and the full original archive read. Four synthetic
+wrapper tests pass; full source checks and actual archived reads remain
+pending. No cache, saving, forecast or strategy claim is admitted.
+Codex-assisted; human hands-on time not recorded.
+
+Pre-commit full checks in the dirty working checkout do not qualify this
+source. The final preliminary attempt passes Ruff and strict mypy on 837 files,
+but nine existing fresh-child tests fail to import `poker_ai` after local
+editable-path changes (5,573 other tests pass; 71 skip, 150 deselect). Earlier
+attempts found a stale mypy cache or a missing package at conftest import.
+[Original logs and exit receipts](../results/receipt-consumer-mutation/failed-precommit/manifest.json)
+are retained.
+Next: commit the source and run exact-head checks in an isolated, clean
+environment before publishing any archived audit result.

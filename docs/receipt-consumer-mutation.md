@@ -1,0 +1,13 @@
+# Check whether receipt consumers mutate prerequisites
+
+The [prospective issue #4 protocol](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6981335805) fixes one read-only archive audit on each locked runtime. The preceding [fresh-output audit](receipt-prerequisite-identity.md) found seven identical, separately owned prerequisite graphs. It did not inspect what receipt readers do to one of those graphs after loading it.
+
+## Definition of done for this step
+
+- A fresh Python 3.11.17/NumPy 2.4.6 child and a fresh Python 3.12.15/NumPy 2.5.4 child each run the original `reduced_study_run.read_saved` on `results/reduced-batch-study/own.json`, including its six nested timing receipt loads and one direct prerequisite load. Each complete command, startup included, stays under 180 wall seconds. The exact seven-call order is required.
+- Preserve every original source, admission, saved scalar, work-grid and replay validation. The wrapper forwards the original arguments, result and exceptions. It observes each graph at loader return, after each timing receipt returns and after the archive read returns. All closed graph and semantic witnesses for an object must match its first observation. The original read must return the observed direct object. Input pins, own receipt bytes and clean source must match before and after. Unknown shapes, unexpected calls and failed/partial reads reject and remain in logs.
+- Publish exact audit source and local, optional and hosted qualification before actual archived reads. Publish raw receipts before any data-only report; reproduce that report on both actual runtimes with original readers blocked. Complete final local and hosted checks before a history-preserving merge.
+
+The audit does not share a prerequisite object between consumers. A pass establishes only that the seven objects in this read were not changed by their own consumers. It is not a cache admission or speed estimate. A later complete ordinary/reuse comparison needs its own prospective protocol and must preserve original validation, work counters, scalar and computed replay, context identity and the original 180/900/1800/120-second caps. The failed 912.54/900 forecast, 2.390%/1% known-game accuracy and rejected full-context-copy result remain failed.
+
+The tool writes partial `child.json` observations and `child.log` before finishing, plus `outer.json` after a child exit or timeout. A separate source checkpoint and actual check record will be added after qualification. Codex assisted with the audit source and synthetic tests; human hands-on time is not recorded.
