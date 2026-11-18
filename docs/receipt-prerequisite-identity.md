@@ -82,3 +82,15 @@ output can survive all complete-reader consumers, preserve each validation,
 or keep every work counter and final scalar/computed replay unchanged. A
 separate prospective complete-reader comparison is required before reuse. The
 failed forecast, known-game accuracy and full-context-copy gates stay failed.
+
+## Final report-head qualification — November 18
+
+At `6382cde`, both local base suites pass 5,578 tests, 71 skips and 150
+deselections each, with Ruff, strict typing on 834 files, all-files hooks and
+clean source guards. Both optional suites pass 2,487 selected tests each.
+Hosted [CI #562](https://github.com/jimmy-sim/poker-ai/actions/runs/44310335860)
+passes both actual locked versions on a merge checkout with the same whole
+tree. The [complete six-role verifier and logs](../results/prerequisite-identity/final-checks/manifest.json)
+are retained, alongside the first failed optional cohort. Documentation-commit
+CI must also pass before merge. No reuse, cost saving, new training or stronger
+strategy is admitted by this audit.

@@ -7050,3 +7050,15 @@ complete reader, forecast improvement and stronger play remain unproved.
 Next: final exact-head local/optional/hosted qualification of this report
 checkpoint, then history-preserving merge. Codex-assisted; human hands-on
 time not recorded.
+
+### November 18: final prerequisite-report source checks
+
+At `6382cde`, both bases pass 5,578 tests, 71 skips, 150 deselections,
+strict mypy on 834 files, Ruff, hooks and clean guards. Both optional scopes
+pass 2,487 tests. Hosted [CI #562](https://github.com/jimmy-sim/poker-ai/actions/runs/44310335860)
+passes both exact runtimes and the whole-tree checkout check. The
+[final six-role record](../results/prerequisite-identity/final-checks/manifest.json)
+retains complete logs and hashes. Next: verify the documentation-commit CI
+before a history-preserving PR #90 merge and protected-main preservation.
+The earlier optional failure stays failed, and no reuse or strength claim is
+admitted. Codex-assisted; human hands-on time not recorded.

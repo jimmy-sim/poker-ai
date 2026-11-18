@@ -7351,3 +7351,12 @@ savings. The next decision is a separately preregistered complete-reader test
 of whether one output can be shared without changing validation, work counters
 or complete results. Nothing here admits a cache or stronger play. Codex
 assisted with analysis and writing; human hands-on time was not recorded.
+
+The report head `6382cde` now passes all six final roles: each local base has
+5,578 passing tests and each optional scope 2,487; both hosted jobs pass on
+the same whole tree. The [final check archive](../results/prerequisite-identity/final-checks/manifest.json)
+retains the exact versions and logs. The first optional failure is preserved.
+This closes the bounded question about fresh prerequisite outputs, subject to
+the final documentation CI and merge. It does not answer whether sharing one
+output inside the complete reader preserves work or results. Codex assisted
+with checks and writing; human hands-on time was not recorded.
