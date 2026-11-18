@@ -7089,3 +7089,20 @@ attempts found a stale mypy cache or a missing package at conftest import.
 are retained.
 Next: commit the source and run exact-head checks in an isolated, clean
 environment before publishing any archived audit result.
+
+### November 18: qualify consumer-mutation audit source
+
+At `dd53e99`, both clean local bases pass 5,582 tests, 71 skips and 150
+deselections with Ruff, formatting, strict mypy on 837 files and all-files
+hooks. Both complete 69-file optional scopes pass 2,491 tests on the two
+actual locked runtimes. An initial 68-file optional pass omitted three newer
+report tests and is retained but excluded. The complete installed OpenSpiel
+2.0.2 license was reread before each optional scope and matches the pinned
+Apache-2.0 hash. Hosted [CI #565](https://github.com/jimmy-sim/poker-ai/actions/runs/44339006308)
+passes both jobs on the same whole source tree, with 5,582 tests each and
+actual Python/NumPy versions and uv selections verified. The
+[six-role archive](../results/receipt-consumer-mutation/source-checks/manifest.json)
+retains local, hosted and failed/incomplete records. Next: publish and verify
+this source-check receipt before any actual archived consumer audit. No reuse,
+savings, forecast or strength claim follows from software qualification.
+Codex-assisted; human hands-on time not recorded.

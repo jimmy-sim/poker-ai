@@ -7378,8 +7378,7 @@ closed graph witness and fail the audit.
 
 **Checks and result:** the first four synthetic wrapper cases pass. They cover
 seven-call order, alias restoration, a deliberate mutation and a reader
-failure. This is an
-implementation check, not a result on archived inputs. The audit source is not
+failure. This is an implementation check, not a result on archived inputs. The audit source is not
 yet fully qualified or published; no archived audit has run. A preliminary
 dirty-checkout `make check` attempt passes Ruff and strict typing on 837 files
 but fails nine existing tests that start fresh Python children: 5,573 pass,
@@ -7394,3 +7393,16 @@ the two bounded archived reads. Even an unchanged result will require a
 separate complete ordinary/reuse comparison before sharing is admitted. The
 prior forecast, accuracy and full-context-copy failures stay failed. Codex
 assisted with implementation and tests; human hands-on time was not recorded.
+
+The clean source head `dd53e99` now passes full local and hosted software
+qualification. Each local base passes 5,582 tests, 71 skips and 150
+deselections; the two complete optional scopes pass 2,491 tests each. Hosted
+[CI #565](https://github.com/jimmy-sim/poker-ai/actions/runs/44339006308)
+passes the same 5,582-test base scope on both actual runtimes and an identical
+whole checkout tree. The [six-role record](../results/receipt-consumer-mutation/source-checks/manifest.json)
+retains raw logs, guards, license hashes and the omitted-scope first run. The
+dirty-checkout import failures remain failed; the clean exact-head result does
+not erase them. Next: publish and verify this checked source before the two
+archived reads. Those reads can answer nonmutation only for their observed
+consumers, not safe sharing or a saving. Codex assisted with qualification
+and writing; human hands-on time was not recorded.

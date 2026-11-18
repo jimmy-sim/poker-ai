@@ -10,4 +10,34 @@ The [prospective issue #4 protocol](https://github.com/jimmy-sim/poker-ai/issues
 
 The audit does not share a prerequisite object between consumers. A pass establishes only that the seven objects in this read were not changed by their own consumers. It is not a cache admission or speed estimate. A later complete ordinary/reuse comparison needs its own prospective protocol and must preserve original validation, work counters, scalar and computed replay, context identity and the original 180/900/1800/120-second caps. The failed 912.54/900 forecast, 2.390%/1% known-game accuracy and rejected full-context-copy result remain failed.
 
-The tool writes partial `child.json` observations and `child.log` before finishing, plus `outer.json` after a child exit or timeout. A separate source checkpoint and actual check record will be added after qualification. Codex assisted with the audit source and synthetic tests; human hands-on time is not recorded.
+The tool writes partial `child.json` observations and `child.log` before finishing, plus `outer.json` after a child exit or timeout. Codex assisted with the audit source and synthetic tests; human hands-on time is not recorded.
+
+## Exact source qualification — November 18
+
+At source commit `dd53e99`, the two clean local base suites each pass 5,582
+tests, with 71 skipped and 150 deselected. Ruff, formatting, strict mypy on
+837 files, commit hook configuration and all-files hooks pass. Both complete
+69-file optional scopes pass 2,491 tests each on the pinned 3.11.17/NumPy
+2.4.6 and 3.12.15/NumPy 2.5.4 environments. The complete installed
+OpenSpiel 2.0.2 Apache-2.0 license was reread before optional tests in both
+environments: 11,358 bytes and SHA-256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+It remains a comparison-only validation dependency.
+
+Hosted [CI #565](https://github.com/jimmy-sim/poker-ai/actions/runs/44339006308)
+passes both jobs: each has 5,582 tests passed, 71 skipped, 150 deselected and
+one warning. The actual Python and NumPy selections, every uv interpreter
+selection, job IDs, raw logs and the PR merge checkout tree are verified. The
+entire merge tree equals the source commit tree. The prior 458-file scientific
+source fingerprint remains
+`b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d`.
+The [six-role archive](../results/receipt-consumer-mutation/source-checks/manifest.json)
+retains all source checks and operator receipts. An earlier dirty-checkout
+attempt failed nine fresh-child imports; an initial 68-file optional pass
+omitted three newer report tests. Both are retained and excluded from
+qualification.
+
+This qualifies the audit software, not the mutation question on actual
+archived inputs. The checked source record must be public and verified before
+the two bounded reads begin. No cache, saving, new trajectory, reference
+strategy or stronger play is admitted here.
