@@ -7184,3 +7184,18 @@ hash. Fifteen focused tests pass on both locked runtimes; Ruff and strict
 typing pass. No archived proof or pair has run. Next: commit the coherent
 source locally and qualify clean exact-head local/optional/hosted roles before
 the first source push. Codex-assisted; human hands-on time not recorded.
+
+The source commits `c1eb75a` and `04d19ed` were pushed together after both
+clean local base roles (5,597 passed, 71 skipped, 150 deselected each), both
+complete 69-file optional roles (2,502 passed each), strict mypy on 842
+files, Ruff, format, all-files hooks, exact source/runtime guards and the
+comparison-only OpenSpiel license checks passed. Hosted
+[CI #572](https://github.com/jimmy-sim/poker-ai/actions/runs/44370320685)
+passes on both actual locked runtimes with 5,597 tests each and a tested
+whole tree equal to the source commit. The
+[source-check archive](../results/validated-prerequisite-sharing/source-checks/manifest.json)
+retains 29 hashed members, official job logs and a verifier. Next: publish
+this evidence-only checkpoint and verify its public bytes before the one
+bounded reference-free own proof. No real sharing outcome or savings claim
+exists yet. Old forecast, accuracy and full-context-copy gates remain failed.
+Codex-assisted; human hands-on time not recorded.

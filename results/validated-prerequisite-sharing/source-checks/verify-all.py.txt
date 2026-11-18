@@ -1,0 +1,34 @@
+"""Check retained six-role source receipts and every archived member hash."""
+
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = folder.parents[2]
+manifest = json.loads((folder / "manifest.json").read_bytes())
+assert manifest["status"] == "six_roles_qualified_before_own_proof"
+assert manifest["actual_archived_own_proof_started"] is False
+checked = manifest["checked_commit"]
+assert subprocess.check_output(["git", "rev-parse", f"{checked}^{{tree}}"], cwd=root, text=True).strip() == manifest["source_tree"]
+assert hashlib.sha256((root / "uv.lock").read_bytes()).hexdigest() == manifest["lock_sha256"]
+for name, sha in manifest["source_files"].items():
+    raw = (root / name).read_bytes()
+    assert raw == subprocess.check_output(["git", "show", f"{checked}:{name}"], cwd=root)
+    assert hashlib.sha256(raw).hexdigest() == sha
+assert len(manifest["files"]) == len({row["file"] for row in manifest["files"]})
+for row in manifest["files"]:
+    raw = (folder / row["file"]).read_bytes()
+    assert len(raw) == row["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == row["sha256"]
+local = json.loads((folder / "local/verified.json").read_bytes())
+hosted = json.loads((folder / "hosted/verified.json").read_bytes())
+assert local["status"] == "four_clean_local_roles_and_hooks_passed"
+assert local["checked_commit"] == checked
+assert local["base_tests_each"] == 5597 and local["optional_tests_each"] == 2502
+assert hosted["status"] == "both_exact_hosted_jobs_pass"
+assert hosted["head"] == checked and hosted["source_tree"] == manifest["source_tree"]
+assert hosted["whole_tree_equal"] is True
+assert {row["role"] for row in hosted["rows"]} == {"hosted311", "hosted312"}
+print(json.dumps({"status": "six_source_roles_and_hashes_verified", "checked_commit": checked, "members": len(manifest["files"])}, indent=2))

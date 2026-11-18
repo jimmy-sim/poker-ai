@@ -7499,3 +7499,21 @@ first child that is not retried. These tests do not establish that the real
 archived comparison passes. Next: clean exact-source local, optional and
 hosted qualification before collection. Codex assisted with the runners and
 tests; human hands-on time was not recorded.
+
+**November 18 source qualification:** exact source head `04d19ed` now passes
+all six roles in the [source-check archive](../results/validated-prerequisite-sharing/source-checks/manifest.json).
+Both clean local base roles pass Ruff, format, strict mypy on 842 files and
+5,597 tests each (71 skipped, 150 deselected). Both complete fixed 69-file
+optional roles pass 2,502 tests each; the all-files hooks, source/runtime
+guards and OpenSpiel license records pass. Hosted
+[CI #572](https://github.com/jimmy-sim/poker-ai/actions/runs/44370320685)
+passes the same base count on actual Python 3.11.17/NumPy 2.4.6 and Python
+3.12.15/NumPy 2.5.4, and its tested checkout tree equals the source tree.
+**Example:** the synthetic two-root test makes all 14 original loader calls
+while the shared arm passes a donor object to six consumers in each root;
+these checks qualify the implementation, not the real archived outcome.
+Next: publish and verify this exact source-check record, then run one
+reference-free saved-archive own proof under 180 seconds. No complete pair
+or CPU saving is established. The prior forecast, accuracy and
+full-context-copy failures remain failed. Codex assisted with checks and
+documentation; human hands-on time was not recorded.

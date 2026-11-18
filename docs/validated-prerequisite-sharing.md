@@ -83,3 +83,22 @@ child. Fifteen focused tests pass on both locked runtimes with Ruff and
 strict typing. No real own proof, complete pair or reference construction
 has run on this branch. Full clean source qualification and hosted CI remain
 pending before any archived read.
+
+## Exact source qualification — November 18
+
+The checked implementation commit `04d19ed` has passed both clean local
+base roles on actual locked Python 3.11.17/NumPy 2.4.6 and Python
+3.12.15/NumPy 2.5.4. Each has 5,597 passed, 71 skipped and 150 deselected;
+Ruff, format and strict mypy on 842 files pass. Both complete fixed 69-file
+optional roles pass 2,502 tests each, as do the all-files hooks and exact
+source/runtime guards. The comparison-only OpenSpiel 2.0.2 Apache-2.0
+license was read before each optional run. Hosted
+[CI #572](https://github.com/jimmy-sim/poker-ai/actions/runs/44370320685)
+passes on both actual locked runtimes with the same base count and a whole
+checkout tree identical to the checked source tree. The
+[six-role record](../results/validated-prerequisite-sharing/source-checks/manifest.json)
+retains the raw logs, runtime and license receipts, official hosted metadata
+and a hash verifier. This is source qualification only. The real reference-free
+own proof and complete ordinary/shared pair have not run; a shared graph and
+savings are not admitted by these software checks. Next: publish and verify
+the six-role record before the bounded own proof.
