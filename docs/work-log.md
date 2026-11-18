@@ -7211,3 +7211,17 @@ elapsed time and exact child/outer bytes. No reference was constructed.
 Next: publish and verify these raw bytes before the fixed ordinary then
 validated-share complete pair; no saving or complete identity claim yet.
 Codex-assisted; human hands-on time not recorded.
+
+The one fixed complete pair failed in its first ordinary child. The child
+ran for 100.21 seconds and returned 1 when original runtime validation could
+not find Numba package metadata in the launched base Python 3.11 environment.
+The pair retained failure after 100.70 seconds; the first ordinary archive
+root completed and the validated-share child never started. All 16 raw and
+diagnostic members were [published at `09c760f`](../results/validated-prerequisite-sharing/failed-pair/manifest.json)
+before the [data-only report](validated-prerequisite-sharing-result.md).
+The report JSON reproduces byte-identically on both locked runtimes with
+reader/numerical/reference imports blocked; eight focused tamper and import
+tests pass on each. No favorable retry, complete identity or savings claim.
+Next: final checks and CI on this report head, then decide the separate
+prospective runtime-preflight protocol. Codex-assisted; human hands-on time
+not recorded.

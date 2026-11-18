@@ -7532,3 +7532,21 @@ Next: publish and verify these exact raw bytes before one fixed complete
 ordinary/validated-share pair. This proof alone does not establish complete
 result identity or savings. Codex assisted with collection and writing;
 human hands-on time was not recorded.
+
+**November 18 fixed-pair result:** the [published raw failure](../results/validated-prerequisite-sharing/failed-pair/manifest.json)
+and [data-only report](validated-prerequisite-sharing-result.md) show that the
+first ordinary child stopped after 100.21 seconds with missing Numba package
+metadata in the launched base environment. Its first archive root completed;
+the second read failed during original runtime validation. **Example:** a
+saved runtime record asks for the installed Numba version, and the base
+environment has no such distribution metadata. A post-failure read-only check
+found Numba 0.68.1 in the optional environment, but the pair was not rerun
+there. The validated-share child never started, so complete result and work
+identity cannot be assessed. The raw record was public before the report;
+the data-only JSON reproduces byte-for-byte on both locked runtimes, with
+eight tamper/import tests passing on each. Next decision: keep this fixed
+gate failed; any new pair needs a newly prospective protocol with an explicit
+runtime preflight and fresh publication checkpoints. No CPU saving is
+claimed. The older forecast, accuracy and full-context-copy failures remain
+failed. Codex assisted with diagnosis and writing; human hands-on time was
+not recorded.

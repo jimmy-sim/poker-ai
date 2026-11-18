@@ -117,3 +117,9 @@ constructed. The raw child and outer receipts are the evidence for this
 bounded read. They must be published and byte-verified before the one fixed
 complete ordinary/validated-share pair. This own proof cannot establish
 complete result identity or CPU savings.
+
+The fixed complete pair subsequently stopped in its first ordinary child
+because the launched base environment lacked Numba package metadata. Its
+[data-only failure report](validated-prerequisite-sharing-result.md) links
+the published raw bytes and records the failed gate; no validated-share
+child or favorable retry followed.
