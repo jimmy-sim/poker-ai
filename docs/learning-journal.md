@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
+
 - [Measure the repeated receipt checks](#133-measure-the-repeated-receipt-checks)
 
 - [Follow the earlier archive checks](#132-follow-the-earlier-archive-checks)
@@ -142,9 +144,11 @@ Its six exact-head source checks and bounded own-only proof pass. The complete
 ordinary/observed pair passes its original identity gate. Current timers locate
 about 25.2–25.4 parent CPU seconds per cost read in six nested receipt
 prerequisite loads; no reuse or stronger strategy is admitted.
-All six final source-head roles now pass. An earlier concurrent local attempt
-failed an unchanged 180-second archived replay cap in both base lanes; its
-records remain with the passing serial retry.
+PR #89 is history-merged after all six final roles passed. An earlier concurrent
+local attempt failed an unchanged 180-second archived replay cap, and a hosted
+run hit its former 25-minute job allowance; both failures remain retained. The
+[next audit](receipt-prerequisite-identity.md) will check repeated prerequisite
+outputs before any reuse design.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7280,3 +7284,29 @@ limit. Its [log and metadata](../results/receipt-source-cpu/final-ci-retry/manif
 remain public. The follow-up increases only that CI allowance to 35 minutes;
 the scientific limits and the failed research gates are unchanged. Hosted
 completion on the new head is pending.
+
+
+## 134. Audit repeated prerequisite outputs
+
+**Question:** the latest report finds repeated prerequisite construction inside
+saved receipt checks. Are seven fresh outputs exactly identical and separately
+owned, or would even considering reuse be unsound?
+
+**Change and example:** [PR #89](https://github.com/jimmy-sim/poker-ai/pull/89)
+merged at `26a1bc4` after all required local and hosted checks passed. Its
+25.227/25.360 parent CPU seconds in six nested loads are measured current work,
+not promised savings. For the new [prospective audit](receipt-prerequisite-identity.md),
+seven original calls stand for one direct and six nested requests. A content
+witness will include array bytes and alias relationships; two arrays with equal
+numbers but different internal sharing are not the same complete graph.
+
+**Checks and result:** the prior PR's final local bases each pass 5,566 tests and
+optional suites each pass 2,475. Hosted [CI #555](https://github.com/jimmy-sim/poker-ai/actions/runs/44289638378)
+passes both exact runtimes and whole-tree checks. Earlier failed local and
+hosted attempts remain retained. The guarded main update preserved all ten
+unrelated user edits. The new audit has no result yet.
+
+**Next decision:** publish checked audit source, run the seven-load software
+study on both actual runtimes, and retain negative outcomes. A passing audit
+still will not admit a cache or stronger play. Codex assisted with the PR,
+checks and drafting; human hands-on time was not recorded.

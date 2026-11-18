@@ -6980,3 +6980,22 @@ are retained. Raise only the workflow allowance to 35 minutes and rerun the
 same checks on a new head. No scientific cap, source or claim changes; merge
 remains gated on both successful hosted jobs. Codex-assisted; human hands-on
 time not recorded.
+
+
+### November 18: merge PR #89; preregister prerequisite identity audit
+
+[PR #89](https://github.com/jimmy-sim/poker-ai/pull/89) is history-merged at
+`26a1bc4`. Final local source-head bases pass 5,566 tests each, optional
+suites 2,475 each, and hosted [CI #555](https://github.com/jimmy-sim/poker-ai/actions/runs/44289638378)
+passes both exact runtimes and whole-tree checks. A concurrent local timeout
+and an earlier hosted 25-minute cancellation remain in the evidence. The main
+checkout fast-forward preserves ten unrelated modified files, status, index
+entries and patches byte for byte. The result locates current nested receipt
+CPU without accepting a saving, training forecast or stronger strategy.
+
+The [next question](receipt-prerequisite-identity.md) was prospectively
+[published on issue #4](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6977198494)
+before source or collection: compare seven fresh prerequisite outputs, complete
+graph identities and mutable isolation on both actual runtimes. No reuse or new
+trajectory is admitted by that audit alone. Codex-assisted; human hands-on
+time not recorded.
