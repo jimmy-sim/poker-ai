@@ -56,3 +56,22 @@ under one observed pair; it cannot establish CPU savings or a new strategy,
 default, fresh/global admission or real-money use. Reference outputs stay
 comparison-only and never enter training. Codex assisted with the protocol;
 human hands-on time was not recorded.
+
+## Local launcher implementation — November 18
+
+The thin launcher reads the two published real own runtime records, installed
+Python/NumPy/Numba/OpenSpiel metadata, the complete installed OpenSpiel
+license, and the existing public source and own-proof gates before creating
+pair output. It records the accepted preflight separately, then calls the
+unchanged PR #92 pair runner once in the same interpreter. Synthetic tests
+reject missing or changed package metadata, license bytes, saved Numba,
+launcher environment and `PYTHONPATH`; they confirm a failed preflight
+creates no pair output and an accepted preflight calls the old pair once.
+The actual optional Python 3.11 environment's saved-metadata check passes.
+Twelve focused tests pass there; each base role and optional Python 3.12
+passes eleven with one expected real-runtime skip. Ruff, formatting and
+strict typing pass on the two new files. Initial Ruff line-length and mypy
+module/import/type findings were corrected before qualification. No new
+complete pair has run. Next: commit this source, finish clean exact-head
+local and hosted qualification, and publish its check record before any
+complete comparison.

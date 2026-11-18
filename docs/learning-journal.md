@@ -7594,3 +7594,17 @@ proof, then attempt one newly fixed optional-runtime pair. All original
 loaders still run, so a pass would not show a CPU saving. Older forecast,
 accuracy and full-context-copy failures remain failed. Codex assisted with
 this protocol; human hands-on time was not recorded.
+
+The optional-runtime launcher now reads installed package and license
+metadata and both saved real runtime records before allowing the unchanged
+pair runner to create output. It also reauthenticates the published old own
+proof and requires a clean pushed source-check record. **Example:** synthetic
+missing Numba metadata raises before any pair call or output folder; the
+actual optional Python 3.11 metadata matches both saved records. Twelve
+focused tests pass in that optional environment; both base runtimes and
+optional Python 3.12 pass eleven with the expected real-runtime skip. Ruff,
+format and strict mypy pass. A first long line and duplicate module/type
+findings were corrected during local iteration; no archived pair was run.
+Next: clean exact-source local, optional and hosted qualification before
+using the launcher. The PR #92 failure remains failed. Codex assisted with
+implementation and tests; human hands-on time was not recorded.

@@ -7257,3 +7257,15 @@ has run. Next: commit this protocol checkpoint and implement a fail-closed
 launcher, then qualify it before any complete comparison. The PR #92 pair
 and older forecast, accuracy and full-context-copy gates remain failed.
 Codex-assisted; human hands-on time not recorded.
+
+The first launcher implementation calls the unchanged pair once only after
+installed and saved optional-runtime metadata, license bytes, clean public
+source and the carried-forward own proof pass. Focused tests reject missing
+Numba, changed packages/license/saved metadata, `PYTHONPATH` and wrong
+environment before any pair output. Twelve tests pass under the actual
+optional Python 3.11 runtime; both bases and optional Python 3.12 pass
+eleven with one expected real-runtime skip. Ruff, format and strict mypy
+pass. Initial line-length and duplicate mypy module/type findings were
+fixed before this source commit. No complete pair has run. Next: commit
+source and finish all six exact-head qualification roles before the first
+source push. Codex-assisted; human hands-on time not recorded.
