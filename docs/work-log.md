@@ -6733,7 +6733,6 @@ local/optional/hosted checks must now pass on the corrected head. No scientific
 retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
 human hands-on time not recorded.
 
-
 ### November 17: earlier-source reader fully qualified; follow its archive checks
 
 [PR #87](https://github.com/jimmy-sim/poker-ai/pull/87) is history-merged at
@@ -7284,3 +7283,18 @@ Next: publish/verify this evidence checkpoint, reauthenticate the carried
 old own proof, then run one fixed complete pair in optional Python 3.11.
 No new complete pair, saving or strategy admission yet. Codex-assisted;
 human hands-on time not recorded.
+
+The single fixed optional-runtime pair launched from clean `c5697ef` after
+the six-role source-check record was public. Preflight reauthenticated the
+old own proof and pinned Python/NumPy/Numba/OpenSpiel/license metadata.
+Its first ordinary child returned 1 after 525.99 seconds; the pair failed
+after 527.74 seconds, inside both original caps. Both independent archive
+roots (seven original loads each), three reads and three native workers
+completed. The validated-share child did not start. The unchanged source
+compares the 432-element profile and 1,152-element condition lists directly
+with integer counts, causing the retained scope/source/input gate failure.
+The [19-member raw failure](../results/validated-sharing-runtime-preflight/failed-pair/manifest.json)
+and verifier preserve exact bytes. No retry or complete identity/savings
+claim. Next: publish this raw checkpoint, render a data-only failed result,
+finish checks and update PR #93. Codex-assisted; human hands-on time not
+recorded.

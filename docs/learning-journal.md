@@ -7623,3 +7623,20 @@ replay verifiers. **Next decision:** publish and verify this record, then
 reauthenticate the public old own proof before one fixed optional-runtime
 pair. No complete pair or CPU-saving conclusion exists yet. Codex assisted
 with qualification; human hands-on time was not recorded.
+
+The single fixed optional-runtime pair at clean evidence head `c5697ef`
+passed preflight, then failed in its first ordinary child after 527.74
+seconds of pair wall time. The child completed both seven-loader archive
+roots, all three reads and three native workers within its 900-second cap;
+the validated-share child never started. Its saved native data has lists of
+432 profiles and 1,152 fixed conditions. The unchanged candidate gate
+compares those lists directly with integers `432` and `1152`, so its
+`complete reader scope, source or input changed` rejection is inevitable
+even though the list lengths are correct. This is a source-gate bug exposed
+by the run, not a successful identity comparison. The [19-member failed
+raw pair](../results/validated-sharing-runtime-preflight/failed-pair/manifest.json)
+preserves preflight, both roots, reads, native output, observer, clocks and
+the outer failure. **Next decision:** publish this failure before a data-only
+report; do not retry the fixed pair. A corrected gate would need a new
+prospective question and fresh qualification. Codex assisted with diagnosis;
+human hands-on time was not recorded.

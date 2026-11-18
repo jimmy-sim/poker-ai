@@ -90,3 +90,18 @@ tree identical to the source head. The [six-role record](../results/validated-sh
 retains all 34 reviewed members and a portable verifier. The old public
 own proof still needs reauthentication after this record is published. No
 new complete pair has run.
+
+## Fixed pair outcome — November 18
+
+The one fixed optional-runtime pair started from clean published head
+`c5697ef` after source and carried-own gates passed. Its ordinary child
+completed two seven-loader archives, three reads and three native workers,
+then failed at the unchanged scope/source/input gate after 525.99 seconds;
+the outer pair failed after 527.74 seconds. The validated-share child never
+started. The [raw failure archive](../results/validated-sharing-runtime-preflight/failed-pair/manifest.json)
+retains 19 members and a data-only verifier. The saved native result contains
+lists of 432 profiles and 1,152 fixed conditions; the candidate compares
+these lists directly with integers `432` and `1152`. That predicate rejects
+the complete ordinary child despite the correct lengths. The failed pair
+was not retried; complete ordinary/validated-share identity and any CPU
+saving remain unestablished. A data-only report and final checks are next.
