@@ -7517,3 +7517,18 @@ reference-free saved-archive own proof under 180 seconds. No complete pair
 or CPU saving is established. The prior forecast, accuracy and
 full-context-copy failures remain failed. Codex assisted with checks and
 documentation; human hands-on time was not recorded.
+
+**November 18 reference-free own proof:** after the six-role record became
+public, the one fixed saved-archive read passed on actual locked Python
+3.11.17/NumPy 2.4.6. Its [raw receipt](../results/validated-prerequisite-sharing/own/manifest.json)
+records seven original prerequisite loads and six validated donor
+substitutions in 95.85 seconds for the whole command, below the 180-second
+cap. All six after-caller and seven after-archive graph witnesses match
+their original loads; the unchanged 480-row saved replay has zero chip and
+unitless error. **Example:** the direct final prerequisite still runs its
+own original loader and validation, then its consumer receives the first
+graph from that same archive root. No reference solver was constructed.
+Next: publish and verify these exact raw bytes before one fixed complete
+ordinary/validated-share pair. This proof alone does not establish complete
+result identity or savings. Codex assisted with collection and writing;
+human hands-on time was not recorded.

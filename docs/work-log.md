@@ -7199,3 +7199,15 @@ this evidence-only checkpoint and verify its public bytes before the one
 bounded reference-free own proof. No real sharing outcome or savings claim
 exists yet. Old forecast, accuracy and full-context-copy gates remain failed.
 Codex-assisted; human hands-on time not recorded.
+
+After publication and byte verification of source-check commit `c9eb713`,
+the one fixed reference-free own archive proof passed under its original
+180-second cap. The full command took 95.85 seconds on locked Python
+3.11.17/NumPy 2.4.6; seven original loaders, six root-local donor
+substitutions, all post-consumer/archive witnesses and the original zero-error
+480-row replay passed. The [raw own receipt](../results/validated-prerequisite-sharing/own/manifest.json)
+records the clean proof head, input and lock hashes, runtime, hardware,
+elapsed time and exact child/outer bytes. No reference was constructed.
+Next: publish and verify these raw bytes before the fixed ordinary then
+validated-share complete pair; no saving or complete identity claim yet.
+Codex-assisted; human hands-on time not recorded.

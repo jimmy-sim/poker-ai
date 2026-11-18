@@ -102,3 +102,18 @@ and a hash verifier. This is source qualification only. The real reference-free
 own proof and complete ordinary/shared pair have not run; a shared graph and
 savings are not admitted by these software checks. Next: publish and verify
 the six-role record before the bounded own proof.
+
+## Reference-free own proof — November 18
+
+After the six-role record was public and its committed GitHub blob matched,
+the one fixed saved-archive proof passed on actual locked Python 3.11.17 and
+NumPy 2.4.6. The [raw receipt](../results/validated-prerequisite-sharing/own/manifest.json)
+shows a clean `c9eb713` proof head, seven original loader calls, six
+root-local donor substitutions, six unchanged after-caller witnesses and
+seven unchanged after-archive witnesses. The original 480-row saved replay
+has zero chip and unitless error. The complete command took 95.85 seconds,
+within the unchanged 180-second outer cap; no reference output was
+constructed. The raw child and outer receipts are the evidence for this
+bounded read. They must be published and byte-verified before the one fixed
+complete ordinary/validated-share pair. This own proof cannot establish
+complete result identity or CPU savings.
