@@ -7144,3 +7144,23 @@ source is unchanged since its earlier complete optional checks. Next:
 publish this evidence checkpoint, verify its own CI, then history-merge PR
 #91. No shared graph or saving is admitted. Codex-assisted; human hands-on
 time not recorded.
+
+### November 18: merge the consumer audit and preregister validated sharing
+
+Evidence-only commit `3bf8a85` passes both jobs of
+[CI #569](https://github.com/jimmy-sim/poker-ai/actions/runs/44353064617)
+with 5,586 tests each, actual locked runtimes, strict typing and hooks. PR
+[#91](https://github.com/jimmy-sim/poker-ai/pull/91) is history-merged at
+`e22bdee`; its whole tree equals the checked head. The separate main checkout
+passes eight focused tests, reproduces the committed data-only report, and
+preserves all ten unrelated user result bytes, status, patches and index
+entries after its guarded fast-forward.
+
+The [new issue #4 protocol](validated-prerequisite-sharing.md) was published
+before source work. It tests one donor graph per earlier archive root while
+still running every original loader and validation, followed by a fixed
+complete ordinary/validated-share comparison only after source qualification
+and a public own proof. No new candidate or archived result exists yet. All
+old forecast, accuracy and full-context-copy failures stay failed. Next:
+commit this protocol checkpoint, then implement its root-local boundary and
+synthetic tests. Codex-assisted; human hands-on time not recorded.

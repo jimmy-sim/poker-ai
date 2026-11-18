@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
+
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
 - [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
@@ -157,6 +159,11 @@ original receipt consumers and complete saved-archive read on both locked
 runtimes. The raw records were published before interpretation. This answers
 the mutation question for that observed read; a complete ordinary/reuse
 comparison is still required before sharing a graph.
+[PR #91](https://github.com/jimmy-sim/poker-ai/pull/91) is now history-merged
+after its final evidence-commit CI passed both runtimes. The next
+[prospective comparison](validated-prerequisite-sharing.md) tests whether one
+already validated graph can be handed to all consumers while every original
+loader still runs. It has no collected result yet.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7445,3 +7452,30 @@ retains logs, exact versions, rerenders and the PR merge-tree proof. The
 consumer-mutation question is complete for this bounded read; PR #91 still
 needs its evidence-checkpoint CI and history-preserving merge. Codex assisted
 with verification and writing; human hands-on time was not recorded.
+
+## 136. Test one shared prerequisite graph after every original validation
+
+**Question:** the seven fresh graphs were identical and their own readers did
+not change them. Does passing the first graph to all seven consumers preserve
+the complete reader's outputs and work when every original loader still runs?
+
+**Change and example:** [PR #91](https://github.com/jimmy-sim/poker-ai/pull/91)
+merged at `e22bdee` after both evidence-commit CI jobs passed. Main passed
+eight focused tests and reproduced the report JSON; ten unrelated user
+result edits, status, patches and index entries remained unchanged. The
+[new prospective protocol](validated-prerequisite-sharing.md) is public before
+implementation. **Example:** the second receipt still constructs and checks
+its own prerequisite graph; only after that complete result matches the first
+does its unchanged reader receive the first graph. This keeps the original
+validation work visible while testing shared-object behavior.
+
+**Checks and result:** protocol and previous evidence only; no candidate
+implementation, source qualification, own proof or complete pair has run.
+The prior nonmutation result is a prerequisite, not a result for sharing.
+
+**Next decision:** implement and test the fixed root-local boundary, then
+publish complete source qualification before any archived proof. Require exact
+complete result and work identity in the eventual fixed pair. Because all
+original loaders run, do not claim a saving. The old forecast, accuracy and
+full-context-copy failures remain failed. Codex assisted with this protocol;
+human hands-on time was not recorded.
