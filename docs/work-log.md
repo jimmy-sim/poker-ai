@@ -6918,3 +6918,17 @@ retains both launcher attempts. Next: publish and verify own evidence before
 the fixed ordinary/observed complete pair. No real cost-loader coverage,
 performance forecast or stronger-play claim follows this proof. Codex-assisted;
 human hands-on time not recorded.
+
+### November 18: complete and retain the fixed raw pair
+
+After the own-only checkpoint `181a400` was public and its publication verifier
+passed, the single ordinary/observed comparison completed. Outer command:
+879.144/1,800 seconds. Plain/observed children: 457.933/415.749 seconds, each
+under 900. Both retain three reads, 432 profiles, 1,152 fixed conditions and
+three native workers. The observed arm records thirty selected calls and sixty
+events. The saved-data authenticator accepts the original exact scalar and
+computed-replay identity `ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185`.
+The [27 raw members](../results/receipt-source-cpu/pair-raw-manifest.json)
+and outer receipts are byte-exact. Next: publish raw evidence before data-only
+cost analysis and two-runtime exports. No training, forecast admission or
+stronger-play claim. Codex-assisted; human hands-on time not recorded.

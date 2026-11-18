@@ -198,3 +198,21 @@ event, arithmetic, source and command-inventory checks pass without loading
 OpenSpiel. The proof has no real cost-loader coverage, no new independent poker
 math and no training or native comparison. Its own evidence must be public and
 verified before the complete ordinary/observed pair starts.
+
+### November 18: retain the complete pair before cost analysis
+
+The fixed ordinary/observed pair completes once, in that order. The outer
+command takes 879.144 of 1,800 seconds, including preflight and startup. Its
+plain and observed children take 457.933 and 415.749 seconds, each below the
+unchanged 900-second child cap. Both execute three reads, 432 profiles, 1,152
+fixed conditions and three native workers. The observed arm records the fixed
+thirty selected calls and sixty events; the ordinary arm has timers disabled.
+
+The [27 raw members](../results/receipt-source-cpu/pair-raw-manifest.json)
+are copied byte for byte before any report. The saved-pair authenticator checks
+source, child clocks, event streams, native rows, original work and exact
+scalar/computed-replay identity. The identity hash is
+`ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185`.
+No training or strength admission follows. One ordered pair does not establish
+stable observation overhead or savings. Publish and verify these raw files
+before rendering the data-only cost report.

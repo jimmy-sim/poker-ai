@@ -138,8 +138,9 @@ now traces the earlier archive into repeated receipt checks. The
 [current timer foundation](receipt-source-cpu.md) will test their present CPU
 cost before proposing reuse. Earlier source-stage details remain in
 [the source-loading report](source-phase-cpu.md).
-Its six exact-head source checks now pass, and its bounded own-only proof is
-complete. The complete timing comparison remains pending.
+Its six exact-head source checks and bounded own-only proof pass. The complete
+ordinary/observed pair now passes its original identity gate; cost analysis is
+pending publication of its raw evidence.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7191,3 +7192,27 @@ reference was loaded, and the proof does not cover real cost-loader timing.
 ordinary/observed complete comparison. These checks do not admit training or
 strength claims. Codex assisted with execution, diagnosis and writing; human
 hands-on time was not recorded.
+
+
+### November 18: keep complete raw timing evidence before explaining it
+
+**Question:** can one ordinary/observed complete comparison run under the
+original limits while preserving all scientific work and exact results?
+
+**Change and example:** no strategy or acceptance rule changed. Each arm still
+reads three saved contexts and checks 432 profiles, 1,152 conditions and three
+native workers. The ordinary arm leaves the new timers off; the observed arm
+records thirty selected calls and sixty start/end events.
+
+**Checks and result:** the [27 raw files](../results/receipt-source-cpu/pair-raw-manifest.json)
+are retained before any cost report. Plain/observed children finish in
+457.933/415.749 seconds under 900 seconds each; the enclosing command finishes
+in 879.144 under 1,800 seconds. The saved-data authenticator accepts the
+original exact identity hash and independently retained clocks, event streams,
+native rows and work. Reference outputs were used only for comparison, never
+for training. One ordered pair does not prove stable overhead or CPU savings.
+
+**Next decision:** publish and verify the raw pair, then produce a data-only
+cost report and two-runtime export checks. The failed forecast, accuracy and
+context-copy gates are unchanged. Codex assisted with execution and writing;
+human hands-on time was not recorded.
