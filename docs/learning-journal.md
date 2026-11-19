@@ -8056,3 +8056,14 @@ retains exact logs and runtime checks. **Next decision:** publish and verify
 the source receipt, then run the synthetic own proof before any 100k real
 profile. These checks establish software qualification, not poker strength.
 Codex assisted; human hands-on time was not recorded.
+
+**November 19 bounded own proof.** After the source receipt was published and
+GitHub-byte-verified, the fictional signal-game proof completed in 0.266
+seconds including startup, within the fixed 180-second cap. **Example:** its
+third crossing saved the current and two average policies after 726 actual
+node work for the 720 label; replay rechecked all snapshots and cumulative
+mass. The [own proof archive](../results/river-strength/own-proof/manifest.json)
+retains raw files and the runner receipt. **Next decision:** publish and verify
+this proof, then run the prescribed 36-path real profile and conservative
+forecast. The toy proof is not poker-strength evidence. Codex assisted;
+human hands-on time was not recorded.

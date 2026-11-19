@@ -166,6 +166,13 @@ recorded installed OpenSpiel license bytes. The complete
 retains logs, official hosted metadata, scope and hashes. No own measurement
 had started when this receipt was assembled.
 
+The bounded own proof on the published source completed in 0.266 seconds
+including startup, below its 180-second cap. Its fictional signal-game path
+saved and replayed all nine readouts at work labels 80, 240 and 720, ending
+at 726 node work. The complete [own proof archive](../results/river-strength/own-proof/manifest.json)
+retains its snapshots, masses, events, runner log and exact source binding.
+This is a synthetic software proof; it does not measure real river strength.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

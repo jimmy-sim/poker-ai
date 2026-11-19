@@ -7642,3 +7642,12 @@ push; its metadata and available log remain in the ignored run folder. Next:
 publish and GitHub-byte-verify this receipt, then run the small own proof.
 There is still no real river profile or trained candidate. Codex assisted;
 human hands-on time not recorded.
+
+The source-qualified bounded own proof completed on November 19 in 0.266
+seconds including startup, below the fixed 180-second cap. The fictional
+signal-game path saved nine readouts at work 80/240/720, finished at 726,
+and replayed its snapshots and cumulative masses. The
+[own proof archive](../results/river-strength/own-proof/manifest.json)
+preserves all 22 raw members plus a manifest. Next: publish and verify this
+own proof before launching the fixed 36-path, 100k profile. No real river
+trajectory yet. Codex assisted; human hands-on time not recorded.
