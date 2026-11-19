@@ -7393,3 +7393,17 @@ Python 3.11.17/NumPy 2.4.6: seven original loads, six substitutions,
 [three-member raw proof](../results/validated-sharing-count-gate/own/manifest.json)
 is prepared with exact hashes. Next: publish and GitHub-byte-verify it
 before any complete pair. Codex-assisted; human hands-on time not recorded.
+
+One fixed ordinary→validated-share pair at clean `bac111d` passed the
+original complete scientific/work/predecessor identity gate. Ordinary
+531.45 seconds and shared 542.31 seconds, each under 900; outer
+1,076.04/1,800 seconds. Each child retained two archive roots, 14
+original loads, three reads, 432 profiles, 1,152 conditions and three
+native workers; shared recorded 12 substitutions. No reference output
+entered training. The [32-member compressed raw archive](../results/validated-sharing-count-gate/pair-raw/manifest.json)
+verifies 17,200,261 original bytes from a 1,395,773-byte archive and
+matches exact result/work identity. The first verifier assumed an ordinary
+row substitution field and failed; only the verifier changed, then passed.
+Next: publish and byte-verify raw evidence before the data-only report.
+No CPU savings or new strategy claim. Codex-assisted; human hands-on time
+not recorded.

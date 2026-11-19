@@ -108,3 +108,25 @@ The child took 93.02 seconds and the full command 93.87 seconds under the
 unchanged 180-second cap. No reference was constructed. Three raw members
 are preserved with exact hashes. The raw proof must be committed, pushed
 and GitHub-byte-verified before the fixed reference-bearing pair.
+
+## One fixed complete pair — November 18
+
+The one ordinary-then-validated-share pair ran at clean `bac111d` after
+the new source and own-proof publication gates passed. The ordinary child
+completed in 531.45 seconds and the validated-share child in 542.31
+seconds, each below its original 900-second cap; the whole pair took
+1,076.04 seconds below 1,800. Each child retained two seven-loader
+archive roots, three complete reads, 432 profiles, 1,152 fixed conditions
+and three native reference workers. The shared child recorded 12
+substitutions across its two roots. The original complete scientific
+result, work counters, context and predecessor identity matched exactly;
+reference output was not used in training. The
+[compressed raw record](../results/validated-sharing-count-gate/pair-raw/manifest.json)
+preserves 32 exact members (17,200,261 raw bytes) in a deterministic
+1,395,773-byte archive with a data-only hash and identity verifier. The
+first verifier attempted to read a `substituted` key from ordinary rows;
+ordinary rows do not contain it. The verifier was corrected without
+changing any captured byte. The raw record must be published and
+GitHub-byte-verified before a report interprets the result. Because all
+original loaders still run, this behavior result cannot establish CPU
+savings or a stronger strategy.

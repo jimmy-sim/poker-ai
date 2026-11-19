@@ -7755,3 +7755,20 @@ consumers only after each fresh graph passed equality checks. The saved
 93.87 seconds, with no reference construction. **Next decision:** publish
 and verify these exact own bytes before starting the one fixed complete
 ordinary/shared pair. Codex assisted; human hands-on time was not recorded.
+
+The one [fixed complete pair](../results/validated-sharing-count-gate/pair-raw/manifest.json)
+then passed its original complete result and work identity gate at clean
+`bac111d`. Its ordinary and validated-share children took 531.45 and
+542.31 seconds; the pair took 1,076.04 seconds under the 1,800-second
+cap. **Example:** each child made 14 original loader calls across two
+archive roots, while the shared child handed the validated donor to 12
+later consumers. Both produced exactly 432 profiles, 1,152 conditions and
+three reference workers. The raw archive holds 32 members and verifies
+the same scientific and work identity. A first data-only verifier assumed
+ordinary rows had a substitution field; only shared rows do, so that
+verifier was corrected without altering the run. **Next decision:**
+publish and verify the raw bytes, then render the result on both locked
+runtimes without poker, numerical or reference imports. This is sharing
+behavior, with all original loaders still running; no CPU saving or new
+strategy is established. Codex assisted; human hands-on time was not
+recorded.
