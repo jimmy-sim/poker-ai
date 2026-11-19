@@ -7744,3 +7744,14 @@ found no ignored or missing byte. **Next decision:** publish and verify
 every source-check member on GitHub, then collect one reference-free own
 proof under the original cap. No complete pair has run. Codex assisted;
 human hands-on time was not recorded.
+
+The new source archive was pushed, and GitHub's tree matched the manifest
+and all 31 listed member blobs. The source gate passed from that public
+head. One [fresh reference-free own proof](../results/validated-sharing-count-gate/own/manifest.json)
+then passed under the original 180-second cap. **Example:** seven original
+loaders ran, while the first validated graph was substituted for six later
+consumers only after each fresh graph passed equality checks. The saved
+480-row replay had zero chip and unitless error; the whole command took
+93.87 seconds, with no reference construction. **Next decision:** publish
+and verify these exact own bytes before starting the one fixed complete
+ordinary/shared pair. Codex assisted; human hands-on time was not recorded.

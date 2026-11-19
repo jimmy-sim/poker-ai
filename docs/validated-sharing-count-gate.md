@@ -94,3 +94,17 @@ and archive verifier pass. This packaging correction changes no qualified
 source, check log or scientific result.
 This qualifies source only. The archive must be committed, pushed and
 GitHub-byte-verified before a fresh reference-free own read.
+
+## Fresh reference-free own proof — November 18
+
+After the 31-member source archive was pushed and all 32 GitHub blobs
+matched their local bytes, the new source gate passed in the optional
+Python 3.11 environment. One [fresh bounded own proof](../results/validated-sharing-count-gate/own/manifest.json)
+then passed on clean evidence head `f6b5ede` with actual Python 3.11.17
+and NumPy 2.4.6. All seven original loaders ran; six later consumers
+received the first validated graph after independent fresh equality
+checks. The 480-row saved replay retained zero chip and unitless error.
+The child took 93.02 seconds and the full command 93.87 seconds under the
+unchanged 180-second cap. No reference was constructed. Three raw members
+are preserved with exact hashes. The raw proof must be committed, pushed
+and GitHub-byte-verified before the fixed reference-bearing pair.

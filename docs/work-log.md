@@ -7383,3 +7383,13 @@ executed bytes, then the manifest and verifier passed. Next: publish and
 byte-verify this archive before the fresh
 reference-free own proof. No archived collection or pair yet.
 Codex-assisted; human hands-on time not recorded.
+
+The 31-member source archive at `f6b5ede` passed its in-repo gate; GitHub's
+PR head showed all 32 manifest/member blob hashes and sizes matched local
+bytes. One fresh reference-free own proof at clean `f6b5ede` passed on
+Python 3.11.17/NumPy 2.4.6: seven original loads, six substitutions,
+480-row saved replay with zero chip/unitless error and no reference. Child
+93.02 seconds; outer command 93.87/180 seconds. The
+[three-member raw proof](../results/validated-sharing-count-gate/own/manifest.json)
+is prepared with exact hashes. Next: publish and GitHub-byte-verify it
+before any complete pair. Codex-assisted; human hands-on time not recorded.
