@@ -7999,3 +7999,21 @@ failed source gate. There is no real river profile, admission or trained
 candidate, so the poker-strength question remains inconclusive. No favorable
 retry or new experiment was started. Codex assisted; human hands-on time was
 not recorded.
+
+**November 19 source-integration repair, after Jimmy resumed issue #4.** The
+question was why the candidate passed its own key tests while full
+qualification failed. The earliest direct failure authenticated a past
+archive's exact `matrix.py` bytes; `range_protocol.py` was also a changed
+historical dependency. Many of the 227 errors were dependent fixture setup
+failures rather than independent poker failures. The [official hosted CI
+failure](../results/river-strength/hosted-failure/manifest.json) now joins the
+unchanged earlier local failure archive. We restored both historical files
+byte for byte and placed the candidate refinement in a new adapter that
+builds the original q8 tree first. **Example:** a turn row still receives
+its original q8 key, while a river row receives the exact acting legal key;
+the shared old builder and its historical source hash are untouched. The
+same 19 focused river tests and strict typing on the new adapter passed.
+**Next decision:** run the representative historical source guards, then
+both locked local and hosted source qualifications before any own proof or
+real profile. No scientific seed, budget, criterion or measurement changed.
+Codex assisted; human hands-on time was not recorded.

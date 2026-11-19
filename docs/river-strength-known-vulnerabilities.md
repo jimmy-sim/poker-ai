@@ -117,9 +117,31 @@ exact river information improves or harms play. Work stops here under the
 prospective gate; no budget, acceptance criterion or scientific run was
 changed or retried.
 
+## Source integration repair after explicit resumption
+
+On November 19, the user authorized diagnosis and repair of the software
+source gate while retaining its failed evidence. The first direct failure
+was an older archive reader authenticating the changed `matrix.py` bytes.
+Other tests directly authenticated `range_protocol.py` or named historical
+source inventories. The 227 errors in each local role were mostly setup
+cascades: shared historical proof fixtures failed before their dependent
+tests ran. The [official hosted failure](../results/river-strength/hosted-failure/manifest.json)
+is retained separately from the earlier local failure archive.
+
+The candidate now lives in a new `river_strength_representation.py` adapter.
+It builds the original q8 tree through the unchanged historical builder and
+refines only acting river information rows with the existing exact legal
+observation. `matrix.py` and `range_protocol.py` are restored byte for byte
+to their pre-candidate versions. The candidate key, games, seeds, update,
+metrics, caps and acceptance rules in the published protocol are unchanged;
+this is a software integration repair, not a new scientific protocol or a
+retry of a scientific outcome. No real measurement has yet occurred. Source
+qualification and publication must pass again before the own proof.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation
 performance investigation is deferred unless it blocks correctness or this
 budget. Codex assisted with this prospective protocol; human hands-on time
-was not recorded. No candidate source, new trajectories or outcome exists yet.
+was not recorded. At prospective publication, no candidate source, new
+trajectories or outcome existed.

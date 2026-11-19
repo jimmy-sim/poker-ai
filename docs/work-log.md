@@ -7596,3 +7596,17 @@ no poker-strength claim. Next: publish the failed source and logs to PR #97,
 record hosted CI status, and leave the PR open at a safe milestone. No new
 investigation or budget change. Codex-assisted; human hands-on time not
 recorded.
+
+On November 19 Jimmy explicitly resumed issue #4 and authorized software
+source-pin repair. Hosted run [#44484159855](https://github.com/jimmy-sim/poker-ai/actions/runs/44484159855)
+concluded failure on the old `2e2f0fb` source; its official log and metadata
+are retained separately from the earlier local failure archive. The direct
+root cause is changed historically pinned `matrix.py` and `range_protocol.py`
+bytes. Many of the 227 per-runtime errors were fixture setup cascades. The
+implementation now restores those historical files byte for byte and moves
+only the candidate river refinement to a new adapter; the fixed scientific
+protocol is unchanged. Nineteen focused candidate tests and strict typing
+passed after this repair. Next: representative historical guards and complete
+new exact-source local/optional/hosted qualification before any real profile.
+No scientific run has been retried. Codex-assisted; human hands-on time not
+recorded.

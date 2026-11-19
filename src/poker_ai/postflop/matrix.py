@@ -17,14 +17,7 @@ from poker_ai.postflop.tree import Policy, SpotTree
 from poker_ai.training.holdem import exact_information
 from poker_ai.training.mccfr import SampleState
 
-Encoding = Literal[
-    "exact",
-    "legacy_b8",
-    "public_b8",
-    "canonical_b8",
-    "texture_b8",
-    "q8_turn_exact_river",
-]
+Encoding = Literal["exact", "legacy_b8", "public_b8", "canonical_b8", "texture_b8"]
 
 
 def observation_key(
@@ -32,12 +25,6 @@ def observation_key(
 ) -> str:
     if encoding == "exact":
         return exact_information(observation)
-    if encoding == "q8_turn_exact_river":
-        if observation.terminal or observation.actor != observation.seat:
-            raise ValueError("river key requires the acting player's observation")
-        if len(observation.board) == 5:
-            return exact_information(observation)
-        encoding = "texture_b8"
     if (
         encoding
         not in (

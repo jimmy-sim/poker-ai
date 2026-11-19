@@ -22,12 +22,12 @@ from poker_ai.postflop.controlled_training import Rules
 from poker_ai.postflop.frozen_batches import BatchPoint, observe
 from poker_ai.postflop.game import load_spot
 from poker_ai.postflop.matrix import MatrixTree, recall_violations
-from poker_ai.postflop.range_protocol import (
-    CANDIDATE,
-    RIVER_CANDIDATE,
-    build_representation_control,
-)
+from poker_ai.postflop.range_protocol import CANDIDATE, build_representation_control
 from poker_ai.postflop.river_distinctions import river_mask
+from poker_ai.postflop.river_strength_representation import (
+    RIVER_CANDIDATE,
+    build_river_candidate,
+)
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.postflop.tree import SpotTree
 
@@ -68,7 +68,11 @@ def context(root: Path, game: str, arm: str) -> ScoringContext:
     source = SpotTree.build(load_spot(root / f"configs/learning-spots/{game}.json"))
     model = CardAbstraction.load(root / "results/card-models/potential-8.json")
     exact = MatrixTree.build(source)
-    partition = build_representation_control(source, arm, model)
+    partition = (
+        build_river_candidate(source, model)
+        if arm == RIVER_CANDIDATE
+        else build_representation_control(source, arm, model)
+    )
     if recall_violations(partition):
         raise ArithmeticError("river candidate violates abstract recall")
     masks = river_mask(exact, 0), river_mask(exact, 1)

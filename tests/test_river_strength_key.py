@@ -9,11 +9,14 @@ import pytest
 from poker_ai.abstraction.model import CardAbstraction
 from poker_ai.abstraction.range_mass import RangeMassAbstraction
 from poker_ai.postflop.game import load_spot
-from poker_ai.postflop.matrix import MatrixTree, observation_key, recall_violations
+from poker_ai.postflop.matrix import MatrixTree, recall_violations
 from poker_ai.postflop.range_protocol import (
-    RIVER_CANDIDATE,
     build_representation_control,
     range_context,
+)
+from poker_ai.postflop.river_strength_representation import (
+    build_river_candidate,
+    river_information,
 )
 from poker_ai.postflop.tree import SpotTree
 from poker_ai.training.holdem import exact_information
@@ -27,7 +30,7 @@ def test_river_candidate_is_q8_before_river_and_exact_on_river(name: str) -> Non
     source = SpotTree.build(load_spot(ROOT / f"configs/learning-spots/{name}.json"))
     model = CardAbstraction.load(ROOT / "results/card-models/potential-8.json")
     control = build_representation_control(source, "texture_range_q8_b8", model)
-    candidate = build_representation_control(source, RIVER_CANDIDATE, model)
+    candidate = build_river_candidate(source, model)
     exact = MatrixTree.build(source)
     seen = {4: 0, 5: 0}
     for i, node in enumerate(source.representatives):
@@ -79,13 +82,9 @@ def test_river_key_uses_observation_not_hidden_opponent() -> None:
         and observed.history == own.history
         and observed.board != own.board
     )
-    assert observation_key(own, RIVER_CANDIDATE, encoder) == observation_key(
-        hidden, RIVER_CANDIDATE, encoder
-    )
-    assert observation_key(own, RIVER_CANDIDATE, encoder) != observation_key(
-        changed_river, RIVER_CANDIDATE, encoder
-    )
+    assert river_information(own, encoder) == river_information(hidden, encoder)
+    assert river_information(own, encoder) != river_information(changed_river, encoder)
     with pytest.raises(ValueError, match="acting player"):
-        observation_key(replace(own, seat=1 - own.seat), RIVER_CANDIDATE, encoder)
+        river_information(replace(own, seat=1 - own.seat), encoder)
     with pytest.raises(ValueError, match="acting player"):
-        observation_key(replace(own, terminal=True), RIVER_CANDIDATE, encoder)
+        river_information(replace(own, terminal=True), encoder)
