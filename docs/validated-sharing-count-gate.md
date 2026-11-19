@@ -1,0 +1,54 @@
+# Correct the complete sharing count gate and publication proof
+
+The [prospective issue #4 protocol](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6995942999)
+was published on November 18 before this branch's source change or new
+collection. [PR #93](validated-sharing-runtime-preflight-result.md) remains a
+failed and ineligible fixed pair. Its ordinary child produced lists of 432
+profiles and 1,152 fixed conditions, but the adapter compared each list to an
+integer. Its source-check archive also lacked one tracked member at pair
+time. Neither failure is repaired retroactively.
+
+## Question and definition of done
+
+Can one root-local validated prerequisite graph preserve the complete
+ordinary reader's scientific result **and work** after the count gate and
+evidence-publication gate are corrected?
+
+1. Accept only a list of 432 profiles and a list of 1,152 fixed conditions
+   at the complete adapter's scope gate. Reject wrong types or lengths.
+   Preserve the original seven loaders per archive root, six substitutions
+   per validated-share root, two roots per child, three reads, three native
+   reference workers, all original checks and work counters, the predecessor
+   identity, fixed seeds `[20261301, 20261302, 20261303]`, scientific
+   source/input/lock bytes, and the 180-second own, 900-second child,
+   1,800-second pair and 120-second failure-save caps.
+2. Bind changed adapter and launcher bytes to a new exact-source
+   qualification. Synthetic tests must reject wrong count shapes, source or
+   input drift, missing archive members, and ignored or unpublished members
+   in a normal clone. Pass both clean locked base roles, both full applicable
+   optional roles, Ruff, formatting, strict mypy, all-files hooks and both
+   hosted jobs. Check actual locked Python/NumPy and the whole tested tree.
+   Publish and byte-verify every source-check member on GitHub before
+   archived collection.
+3. Run one fresh reference-free saved-archive own proof under the original
+   180-second outer cap. Publish and GitHub-byte-verify its raw receipts
+   before the reference-bearing pair. The old PR #92 proof is historical
+   evidence, not a qualification for changed adapter source.
+4. Preflight the pinned optional Python 3.11.17/NumPy 2.4.6/Numba 0.68.1/
+   OpenSpiel 2.0.2 runtime, including the full installed Apache-2.0 license,
+   before starting one fresh ordinary-then-validated-share complete pair.
+   Stop and retain partial receipts on any failed gate; do not retry for a
+   favorable outcome. Require exact complete ordinary/shared/predecessor
+   result and work identity. Publish raw bytes before interpretation.
+5. Produce a data-only report on both locked runtimes with poker readers,
+   NumPy, Numba and reference imports blocked. Complete final local,
+   optional and hosted checks before a history-preserving merge.
+
+All original loaders and validators continue running, so this experiment
+tests sharing behavior and cannot establish CPU savings. It cannot admit a
+new strategy, training/default change or fresh/global result. Open-source
+reference outputs remain comparison-only and never enter training. The
+previous 912.54/900 forecast failure, 2.390%/1% known-game accuracy failure,
+full-context-copy rejection, missing-Numba pair and PR #93 count/publication
+failures remain failed. Codex assisted with this protocol; human hands-on
+time was not recorded.
