@@ -1,16 +1,19 @@
 """Comparison-only wrapper retains all tiny own scalars without solver targets."""
 
+import sys
 from pathlib import Path
 from typing import Any, cast
 
 import pytest
 
 from poker_ai.evaluation.opponent_learning_contexts import software_context
-from poker_ai.evaluation.river_strength_capture import capture_path
-from poker_ai.evaluation.river_strength_learning import PathSpec
 from poker_ai.postflop.river_study import Deadline
-from poker_ai.solver_validation import river_strength_native as native
 from poker_ai.solver_validation.matched_array_reference import ScalarReference
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength import native  # noqa: E402
+from river_strength.capture import capture_path  # noqa: E402
+from river_strength.learning import PathSpec  # noqa: E402
 
 
 def test_native_wrapper_uses_published_own_rows_and_retains_each(

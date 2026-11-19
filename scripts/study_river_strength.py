@@ -7,17 +7,16 @@ import time
 from pathlib import Path
 from typing import Any
 
-from poker_ai.evaluation.opponent_learning_contexts import software_context
-from poker_ai.evaluation.river_strength_capture import capture_path, replay_path
-from poker_ai.evaluation.river_strength_forecast import forecast
-from poker_ai.evaluation.river_strength_gate import (
+from river_strength.capture import capture_path, replay_path
+from river_strength.forecast import forecast
+from river_strength.gate import (
     PROFILE,
     clean_revision,
     require_admission,
     require_archive,
     source_fingerprint,
 )
-from poker_ai.evaluation.river_strength_learning import (
+from river_strength.learning import (
     CONFIG_SHA256,
     LABELS,
     PathSpec,
@@ -25,6 +24,8 @@ from poker_ai.evaluation.river_strength_learning import (
     contract,
     paths,
 )
+
+from poker_ai.evaluation.opponent_learning_contexts import software_context
 from poker_ai.postflop.cell_process import Send, run_batch
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.reproducibility import runtime_environment

@@ -13,8 +13,6 @@ from typing import Any
 
 import numpy as np
 
-from poker_ai.evaluation.river_strength_capture import replay_path
-from poker_ai.evaluation.river_strength_learning import PathSpec, context, paths
 from poker_ai.postflop.controlled_checkpoints import pack_policy, read_snapshot
 from poker_ai.postflop.controlled_scoring import ScoringContext
 from poker_ai.postflop.learning_training import score_data
@@ -24,6 +22,8 @@ from poker_ai.solver_validation.matched_array_reference import (
     ScalarReference,
     compare,
 )
+from river_strength.capture import replay_path
+from river_strength.learning import PathSpec, context, paths
 
 LICENSE_SHA256 = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
 

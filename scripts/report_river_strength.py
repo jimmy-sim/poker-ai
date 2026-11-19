@@ -7,12 +7,12 @@ import statistics
 from pathlib import Path
 from typing import Any
 
-from poker_ai.evaluation.river_strength_gate import (
+from river_strength.gate import (
     clean_revision,
     require_archive,
     source_fingerprint,
 )
-from poker_ai.evaluation.river_strength_learning import (
+from river_strength.learning import (
     ARMS,
     GAMES,
     LABELS,

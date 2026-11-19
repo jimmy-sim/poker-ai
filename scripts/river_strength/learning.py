@@ -24,12 +24,12 @@ from poker_ai.postflop.game import load_spot
 from poker_ai.postflop.matrix import MatrixTree, recall_violations
 from poker_ai.postflop.range_protocol import CANDIDATE, build_representation_control
 from poker_ai.postflop.river_distinctions import river_mask
-from poker_ai.postflop.river_strength_representation import (
+from poker_ai.postflop.river_study import Deadline
+from poker_ai.postflop.tree import SpotTree
+from river_strength.representation import (
     RIVER_CANDIDATE,
     build_river_candidate,
 )
-from poker_ai.postflop.river_study import Deadline
-from poker_ai.postflop.tree import SpotTree
 
 ARMS = (CANDIDATE, RIVER_CANDIDATE)
 GAMES = ("dev_low_oop", "dev_medium_oop")

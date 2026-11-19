@@ -1,6 +1,7 @@
 """Stage ordering and toy worker execution without new Hold'em training."""
 
 import importlib.util
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,7 @@ SPEC = importlib.util.spec_from_file_location(
 )
 assert SPEC is not None and SPEC.loader is not None
 runner = importlib.util.module_from_spec(SPEC)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 SPEC.loader.exec_module(runner)
 
 

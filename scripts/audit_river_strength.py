@@ -3,14 +3,15 @@
 import argparse
 from pathlib import Path
 
-from poker_ai.evaluation.river_strength_gate import (
+from river_strength.gate import (
     clean_revision,
     require_archive,
     source_fingerprint,
 )
-from poker_ai.evaluation.river_strength_learning import contract
+from river_strength.learning import contract
+from river_strength.native import audit_all
+
 from poker_ai.postflop.river_study import Deadline
-from poker_ai.solver_validation.river_strength_native import audit_all
 
 SOURCE = Path("results/river-strength/source-checks")
 OWN = Path("results/river-strength/own")

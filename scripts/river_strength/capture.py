@@ -9,11 +9,6 @@ import numpy as np
 
 from poker_ai.evaluation.averaging_history_artifacts import decode_mass, write_mass
 from poker_ai.evaluation.averaging_history_math import coverage, window_mass
-from poker_ai.evaluation.river_strength_learning import (
-    READOUTS,
-    PathSpec,
-    train,
-)
 from poker_ai.finite import FloatArray
 from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
 from poker_ai.postflop.controlled_checkpoints import read_snapshot, write_snapshot
@@ -25,6 +20,11 @@ from poker_ai.postflop.learning_training import score_data
 from poker_ai.postflop.parallel_profile import same
 from poker_ai.postflop.range_reply import compare
 from poker_ai.postflop.river_study import Deadline
+from river_strength.learning import (
+    READOUTS,
+    PathSpec,
+    train,
+)
 
 
 def _write(path: Path, row: dict[str, Any]) -> None:

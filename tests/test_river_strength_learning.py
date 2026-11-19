@@ -2,13 +2,20 @@
 
 import json
 import shutil
+import sys
 from pathlib import Path
 from typing import Any
 
 import pytest
 
 from poker_ai.evaluation.opponent_learning_contexts import software_context
-from poker_ai.evaluation.river_strength_learning import (
+from poker_ai.finite import FloatArray
+from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
+from poker_ai.postflop.frozen_batches import BatchPoint
+from poker_ai.postflop.river_study import Deadline
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength.learning import (  # noqa: E402
     ARMS,
     GAMES,
     LABELS,
@@ -19,10 +26,6 @@ from poker_ai.evaluation.river_strength_learning import (
     paths,
     train,
 )
-from poker_ai.finite import FloatArray
-from poker_ai.postflop.batch_reduction import ReducedDispatchBatchTrainer
-from poker_ai.postflop.frozen_batches import BatchPoint
-from poker_ai.postflop.river_study import Deadline
 
 ROOT = Path(__file__).resolve().parents[1]
 

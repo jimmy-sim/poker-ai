@@ -6,8 +6,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from poker_ai.evaluation.river_strength_forecast import forecast
-from poker_ai.evaluation.river_strength_learning import CONFIG, contract
+from river_strength.forecast import forecast
+from river_strength.learning import CONFIG, contract
 
 ORIGINAL_PROTOCOL_COMMIT = "492e419"
 PROTOCOL_COMMIT = "e1571df"
@@ -21,6 +21,10 @@ ADMISSION = Path("results/river-strength/admission")
 def source_files(root: Path) -> dict[str, str]:
     """Hash all own source, lock, protocol and thin entrypoint bytes."""
     paths = sorted((root / "src").rglob("*.py"))
+    adapters = sorted((root / "scripts/river_strength").rglob("*.py"))
+    if len(adapters) != 7:
+        raise ArithmeticError("closed river adapter package changed")
+    paths += adapters
     paths += [
         root / ENTRYPOINT,
         root / NATIVE_ENTRYPOINT,
@@ -29,6 +33,8 @@ def source_files(root: Path) -> dict[str, str]:
         root / "pyproject.toml",
         root / "uv.lock",
     ]
+    if any(path.is_symlink() for path in paths):
+        raise ArithmeticError("river source may not be symlinked")
     return {
         path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
         for path in paths

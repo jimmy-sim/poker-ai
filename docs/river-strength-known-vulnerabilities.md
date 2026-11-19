@@ -123,16 +123,21 @@ On November 19, the user authorized diagnosis and repair of the software
 source gate while retaining its failed evidence. The first direct failure
 was an older archive reader authenticating the changed `matrix.py` bytes.
 Other tests directly authenticated `range_protocol.py` or named historical
-source inventories. The 227 errors in each local role were mostly setup
+source inventories. A first focused repair restored those two files, but
+representative historical tests still failed: older provenance hashes every
+Python file under `src/`, so adding a new module there changed its aggregate.
+The 227 errors in each local role were mostly setup
 cascades: shared historical proof fixtures failed before their dependent
 tests ran. The [official hosted failure](../results/river-strength/hosted-failure/manifest.json)
 is retained separately from the earlier local failure archive.
 
-The candidate now lives in a new `river_strength_representation.py` adapter.
-It builds the original q8 tree through the unchanged historical builder and
+All new candidate adapters now live in an isolated `scripts/river_strength/`
+package, outside historical `src` provenance. The representation adapter
+builds the original q8 tree through the unchanged historical builder and
 refines only acting river information rows with the existing exact legal
 observation. `matrix.py` and `range_protocol.py` are restored byte for byte
-to their pre-candidate versions. The candidate key, games, seeds, update,
+to their pre-candidate versions. The new experiment explicitly fingerprints
+every member of its own closed adapter package. The candidate key, games, seeds, update,
 metrics, caps and acceptance rules in the published protocol are unchanged;
 this is a software integration repair, not a new scientific protocol or a
 retry of a scientific outcome. No real measurement has yet occurred. Source

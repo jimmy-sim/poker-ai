@@ -7603,10 +7603,13 @@ concluded failure on the old `2e2f0fb` source; its official log and metadata
 are retained separately from the earlier local failure archive. The direct
 root cause is changed historically pinned `matrix.py` and `range_protocol.py`
 bytes. Many of the 227 per-runtime errors were fixture setup cascades. The
-implementation now restores those historical files byte for byte and moves
-only the candidate river refinement to a new adapter; the fixed scientific
-protocol is unchanged. Nineteen focused candidate tests and strict typing
-passed after this repair. Next: representative historical guards and complete
+first repair restored those historical files byte for byte. Representative
+historical tests then revealed that old provenance hashes every `src` Python
+file; adding a new adapter there changed the pinned aggregate. All new
+candidate code now resides in a closed `scripts/river_strength/` package,
+explicitly bound by the new experiment's fingerprint. The fixed scientific
+protocol is unchanged. Nineteen focused candidate tests passed after this
+move. Next: representative historical guards and complete
 new exact-source local/optional/hosted qualification before any real profile.
 No scientific run has been retried. Codex-assisted; human hands-on time not
 recorded.

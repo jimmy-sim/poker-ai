@@ -1,5 +1,6 @@
 """River-exact candidate keeps q8 earlier and only acting legal information later."""
 
+import sys
 from dataclasses import replace
 from pathlib import Path
 
@@ -14,12 +15,14 @@ from poker_ai.postflop.range_protocol import (
     build_representation_control,
     range_context,
 )
-from poker_ai.postflop.river_strength_representation import (
+from poker_ai.postflop.tree import SpotTree
+from poker_ai.training.holdem import exact_information
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength.representation import (  # noqa: E402
     build_river_candidate,
     river_information,
 )
-from poker_ai.postflop.tree import SpotTree
-from poker_ai.training.holdem import exact_information
 
 ROOT = Path(__file__).resolve().parents[1]
 SPOTS = ("dev_low_oop", "dev_medium_oop")

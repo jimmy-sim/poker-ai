@@ -2,12 +2,14 @@
 
 import importlib.util
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
 import pytest
 
-from poker_ai.evaluation.river_strength_learning import LABELS, READOUTS, paths
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength.learning import LABELS, READOUTS, paths  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(

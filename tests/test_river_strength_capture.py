@@ -1,14 +1,17 @@
 """Retain toy B4 path evidence and reject tampered own replay."""
 
 import json
+import sys
 from pathlib import Path
 
 import pytest
 
 from poker_ai.evaluation.opponent_learning_contexts import software_context
-from poker_ai.evaluation.river_strength_capture import capture_path, replay_path
-from poker_ai.evaluation.river_strength_learning import SEEDS, PathSpec
 from poker_ai.postflop.river_study import Deadline
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength.capture import capture_path, replay_path  # noqa: E402
+from river_strength.learning import SEEDS, PathSpec  # noqa: E402
 
 BINDING = "a" * 64
 

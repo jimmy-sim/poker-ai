@@ -8012,7 +8012,12 @@ byte for byte and placed the candidate refinement in a new adapter that
 builds the original q8 tree first. **Example:** a turn row still receives
 its original q8 key, while a river row receives the exact acting legal key;
 the shared old builder and its historical source hash are untouched. The
-same 19 focused river tests and strict typing on the new adapter passed.
+same 19 focused river tests and strict typing on the first adapter passed.
+A representative historical guard exposed a second root cause: older
+provenance includes every `src` Python file, so even the new adapter's
+presence there changed its fingerprint. We moved all new candidate code to
+the closed `scripts/river_strength/` package and bound every member in this
+experiment's own source fingerprint. Nineteen focused tests passed again.
 **Next decision:** run the representative historical source guards, then
 both locked local and hosted source qualifications before any own proof or
 real profile. No scientific seed, budget, criterion or measurement changed.

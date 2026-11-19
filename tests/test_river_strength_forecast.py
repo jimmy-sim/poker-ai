@@ -1,12 +1,15 @@
 """Predeclared whole-path forecast arithmetic and complete-grid rejection."""
 
+import sys
 from copy import deepcopy
+from pathlib import Path
 from typing import Any
 
 import pytest
 
-from poker_ai.evaluation.river_strength_forecast import forecast
-from poker_ai.evaluation.river_strength_learning import paths
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from river_strength.forecast import forecast  # noqa: E402
+from river_strength.learning import paths  # noqa: E402
 
 
 def record(seconds: float) -> dict[str, Any]:

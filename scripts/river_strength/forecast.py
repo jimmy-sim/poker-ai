@@ -3,7 +3,7 @@
 import math
 from typing import Any
 
-from poker_ai.evaluation.river_strength_learning import paths
+from river_strength.learning import paths
 
 PROFILE_WORK = 100_000
 FINAL_WORK = 10_000_000
