@@ -1,0 +1,59 @@
+"""Verify the published final optional sharing failure report archive."""
+
+import hashlib
+import json
+import re
+import runpy
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = Path.cwd()
+manifest = json.loads((folder / "manifest.json").read_bytes())
+head = "e2825e3149c0a079dbf86e8d395dacaf497592a5"
+tree = "a5ccd4ff83a0a449314b8ecea6d6212770ee45e4"
+assert manifest["status"] == "final_optional_sharing_failure_report_qualified"
+assert manifest["checked_commit"] == head and manifest["source_tree"] == tree
+assert manifest["report_sha256"] == "7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c"
+assert manifest["pair_admissible"] is False
+for field, path in (
+    ("raw_pair_manifest_sha256", "results/validated-sharing-runtime-preflight/failed-pair/manifest.json"),
+    ("failed_ci_manifest_sha256", "results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json"),
+    ("source_check_repair_sha256", "results/validated-sharing-runtime-preflight/source-check-repair.json"),
+):
+    assert manifest[field] == hashlib.sha256((root / path).read_bytes()).hexdigest()
+assert subprocess.check_output(["git", "rev-parse", head + "^{tree}"], cwd=root, text=True).strip() == tree
+for row in manifest["files"]:
+    raw = (folder / row["file"]).read_bytes()
+    assert len(raw) == row["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == row["sha256"]
+runpy.run_path(str(folder / "local/verify-local.py.txt"), run_name="__main__")
+
+run = json.loads((folder / "hosted/run.json").read_bytes())
+jobs = json.loads((folder / "hosted/jobs.json").read_bytes())["jobs"]
+pr = json.loads((folder / "hosted/pr.json").read_bytes())
+checkout = json.loads((folder / "hosted/checkout-source.json").read_bytes())
+assert run["id"] == 44422838341 and run["run_number"] == 586
+assert run["head_sha"] == head and run["event"] == "pull_request"
+assert run["status"] == "completed" and run["conclusion"] == "success" and run["run_attempt"] == 1
+assert {j["name"] for j in jobs} == {"Python 3.11", "Python 3.12"}
+assert pr["head"]["sha"] == head and pr["merge_commit_sha"] == checkout["sha"]
+assert checkout["tree"]["sha"] == tree and head in [p["sha"] for p in checkout["parents"]]
+parse = runpy.run_path(str(root / "results/ci-runtime-correction/audit_checks.py.txt"),
+                       run_name="actual_runtime_parser")["parse"]
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    job = next(j for j in jobs if j["name"] == "Python " + version[:4])
+    assert job["head_sha"] == head and job["run_id"] == run["id"] and job["run_attempt"] == 1
+    assert job["status"] == "completed" and job["conclusion"] == "success"
+    assert all(step["conclusion"] == "success" for step in job["steps"])
+    log = (folder / f"hosted/python{minor}.log").read_text(encoding="utf-8-sig")
+    parsed = parse(log)
+    assert parsed["actual_python"] == [version] and parsed["all_uv_versions"] == [version]
+    assert re.findall(r"ACTUAL_NUMPY=([0-9.]+)\s*$", log, re.M) == [numpy]
+    assert "5626 passed, 72 skipped, 150 deselected" in log
+    lines = log.splitlines()
+    tested = [re.search(r"\b[0-9a-f]{40}\b", lines[i + 1]).group()
+              for i, line in enumerate(lines) if "git log -1 --format=%H" in line]
+    assert tested == [checkout["sha"]]
+    assert head in log
+print("six final exact-report roles and archived bytes verified")

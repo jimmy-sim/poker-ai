@@ -7336,3 +7336,16 @@ render corrected JSON SHA-256
 Next: commit the corrected report and run full local, optional and hosted
 checks before closing this failed investigation. No pair retry or savings
 claim. Codex-assisted; human hands-on time not recorded.
+
+Corrected report head `e2825e3` passed clean locked base checks twice
+(5,626 passed/72 skipped/150 deselected each), 72-file optional checks on
+Python 3.11 (2,532 passed) and 3.12 (2,531 passed/one expected skip),
+Ruff, formatting, strict mypy on 848 files and all-files hooks. Official
+[CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passed both jobs on the same whole tested tree, each with 5,626 tests. The
+[32-member final-check archive](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+verifies local/hosted logs, guards and identical data-only rerenders. The
+failed CI #583, late source-check member and failed ordinary child remain
+historical failures; `pair_admissible: false`. Next: publish this final
+evidence checkpoint and close PR #93 without a retry or savings claim.
+Codex-assisted; human hands-on time not recorded.

@@ -1,0 +1,46 @@
+"""Recheck four clean final local roles and the data-only report export."""
+
+import hashlib
+import json
+import re
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+head = "e2825e3149c0a079dbf86e8d395dacaf497592a5"
+fingerprint = "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d"
+lock = "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+report = "7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c"
+suite = json.loads((folder / "optional-suites.json").read_bytes())
+assert len(suite) == 72 and suite[-1] == "tests/test_validated_sharing_runtime_preflight_report.py"
+
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    base = (folder / f"base{minor}.log").read_text()
+    assert (folder / f"base{minor}.exit").read_text().strip() == "0"
+    assert "All checks passed!" in base and "1014 files already formatted" in base
+    assert "Success: no issues found in 848 source files" in base
+    assert re.search(r"5626 passed, 72 skipped, 150 deselected in [0-9.]+s", base)
+    for side in ("pre", "post"):
+        guard = json.loads((folder / f"base{minor}-{side}.json").read_bytes())
+        assert guard["head"] == head and guard["dirty"] is False
+        assert (guard["python"], guard["numpy"]) == (version, numpy)
+        assert guard["source_fingerprint"] == fingerprint and guard["source_files"] == 458
+        assert guard["lock_sha256"] == lock and guard["launcher_pythonpath_absent"] is True
+        assert guard["import_root"].endswith("/src/poker_ai/__init__.py")
+    optional = (folder / f"optional{minor}.log").read_text()
+    expected = "2532 passed in " if minor == "311" else "2531 passed, 1 skipped in "
+    assert expected in optional
+    for field, value in (("ACTUAL_PYTHON", version), ("ACTUAL_NUMPY", numpy),
+                         ("CHECKED_COMMIT", head), ("SOURCE_FINGERPRINT", fingerprint)):
+        assert optional.count(f"{field}={value}") == 2
+    receipt = json.loads((folder / f"optional{minor}.json").read_bytes())
+    assert receipt["status"] == "passed" and receipt["role"] == "optional" + minor
+    assert receipt["checked_commit"] == head and receipt["suite_count"] == 72
+    assert (receipt["python"], receipt["numpy"]) == (version, numpy)
+    assert receipt["source_fingerprint"] == fingerprint and receipt["no_launcher_PYTHONPATH"] is True
+    raw = (folder / f"report{minor}.json").read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == report
+
+assert (folder / "report311.json").read_bytes() == (folder / "report312.json").read_bytes()
+assert (folder / "hooks.exit").read_text().strip() == "0"
+assert (folder / "hooks.log").read_text().count("Passed") == 2
+print("four final local roles, hooks, guards and matching data-only report verified")

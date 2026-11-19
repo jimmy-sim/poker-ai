@@ -122,3 +122,15 @@ historical bytes. The exact missing evidence member was [published late](../resu
 at `97baaf2`, which makes the archive auditable in a new clone without
 retroactively admitting the pair. The corrected data-only report marks the
 source archive incomplete at pair time and does not retry the pair.
+
+## Corrected report qualification — November 18
+
+Corrected data-only report head `e2825e3` passes both clean locked base
+roles (5,626 passed, 72 skipped, 150 deselected each), both 72-file
+optional roles (2,532 passed on Python 3.11; 2,531 passed and one expected
+skip on Python 3.12), Ruff, formatting, strict mypy on 848 files and
+all-files hooks. Official [CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passes both actual locked runtimes with 5,626 tests each and an identical
+whole checkout tree. The [32-member final record](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+verifies these logs and the corrected report hash. It also records
+`pair_admissible: false`; no complete sharing identity or saving follows.

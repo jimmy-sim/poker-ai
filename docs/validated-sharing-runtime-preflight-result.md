@@ -66,8 +66,23 @@ The actual outer runtime and hardware,
 source/input hashes, child clocks, work inventory and failure are retained
 in the raw preflight, child, native and supervisor receipts. These tests
 validate the report, not the failed scientific or publication gates. Final
-local, optional and hosted checks for this corrected report head remain the
-closing requirement.
+local, optional and hosted checks for this corrected report head were
+completed as described below.
+
+## Closing verification
+
+Corrected report head `e2825e3` passes both clean locked base roles:
+5,626 tests passed, 72 skipped and 150 deselected each, with Ruff,
+formatting and strict mypy on 848 files. The 72-file optional roles pass
+2,532 tests on Python 3.11 and 2,531 with one expected real-runtime skip
+on Python 3.12. All-files hooks and both byte-identical data-only rerenders
+pass. Official [CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passes both jobs with 5,626 tests each, actual Python 3.11.17/NumPy 2.4.6
+and Python 3.12.15/NumPy 2.5.4, and a whole tested tree identical to the
+report head. The [32-member final-check archive](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+retains exact local and hosted logs, guards, rerenders and verifiers. The
+earlier failed CI #583 remains failed and retained; the pair remains
+ineligible and was not rerun.
 
 PR #92's missing-Numba failure, the 912.54/900 forecast failure, the
 2.390%/1% known-game accuracy failure and the rejected full-context-copy

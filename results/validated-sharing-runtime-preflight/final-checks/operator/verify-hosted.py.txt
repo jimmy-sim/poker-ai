@@ -1,0 +1,45 @@
+"""Verify official hosted CI source, runtime, jobs and full merge checkout tree."""
+import hashlib
+import json
+import re
+import runpy
+import subprocess
+from pathlib import Path
+
+repo = Path('/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse')
+folder = Path('/private/tmp/validated-sharing-preflight-corrected-evidence/hosted')
+head = 'e2825e3149c0a079dbf86e8d395dacaf497592a5'
+tree = 'a5ccd4ff83a0a449314b8ecea6d6212770ee45e4'
+run = json.loads((folder/'run.json').read_bytes())
+jobs = json.loads((folder/'jobs.json').read_bytes())['jobs']
+checkout = json.loads((folder/'checkout-source.json').read_bytes())
+pr = json.loads((folder/'pr.json').read_bytes())
+assert run['id']==44422838341
+assert run['head_sha']==head and run['event']=='pull_request'
+assert run['status']=='completed' and run['conclusion']=='success' and run['run_attempt']==1
+assert {j['name'] for j in jobs}=={'Python 3.11','Python 3.12'}
+assert pr['head']['sha']==head and pr['merge_commit_sha']==checkout['sha']
+assert checkout['tree']['sha']==tree and head in [p['sha'] for p in checkout['parents']]
+assert subprocess.check_output(['git','rev-parse',head+'^{tree}'],cwd=repo,text=True).strip()==tree
+parse = runpy.run_path(str(repo/'results/ci-runtime-correction/audit_checks.py.txt'),run_name='actual_runtime_parser')['parse']
+rows=[]
+for minor,version,numpy in [('311','3.11.17','2.4.6'),('312','3.12.15','2.5.4')]:
+    job=next(j for j in jobs if j['name']=='Python '+version[:4])
+    assert job['head_sha']==head and job['run_id']==run['id']
+    assert job['run_attempt']==1 and job['status']=='completed' and job['conclusion']=='success'
+    assert all(s['conclusion']=='success' for s in job['steps'])
+    raw=(folder/f'python{minor}.log').read_bytes()
+    log=raw.decode('utf-8-sig')
+    parsed=parse(log)
+    assert parsed['actual_python']==[version]
+    assert parsed['all_uv_versions']==[version]
+    assert re.findall(r'ACTUAL_NUMPY=([0-9.]+)\s*$',log,re.M)==[numpy]
+    assert '5626 passed, 72 skipped, 150 deselected' in log
+    lines=log.splitlines()
+    tested=[re.search(r'\b[0-9a-f]{40}\b',lines[i+1]).group() for i,line in enumerate(lines) if 'git log -1 --format=%H' in line]
+    assert tested==[checkout['sha']]
+    assert head in log
+    rows.append(dict(role='hosted'+minor,python=version,numpy=numpy,job_id=job['id'],run_attempt=1,result='5626 passed, 72 skipped, 150 deselected',log_bytes=len(raw),log_sha256=hashlib.sha256(raw).hexdigest()))
+result=dict(status='both_exact_hosted_jobs_pass',run_id=run['id'],run_number=run['run_number'],head=head,merge_checkout=checkout['sha'],source_tree=tree,whole_tree_equal=True,rows=rows)
+(folder/'verified.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

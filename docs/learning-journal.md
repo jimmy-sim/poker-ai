@@ -7683,3 +7683,21 @@ receipt; both render corrected JSON SHA-256
 **Next decision:** rerun full local, optional and hosted checks on this
 corrected report, retain outcomes and close the ineligible experiment. No
 pair retry. Codex assisted; human hands-on time was not recorded.
+
+Corrected report head `e2825e3` is now qualified as a **failed experiment
+report**, with no pair admission. Both clean locked base roles pass 5,626
+tests (72 skipped, 150 deselected); optional Python 3.11 passes 2,532 and
+optional Python 3.12 passes 2,531 with one expected skip. Ruff, formatting,
+strict mypy on 848 files and all-files hooks pass. Official
+[CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passes both jobs on the exact tested tree. The
+[32-member final-check archive](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+verifies local logs, actual hosted runtimes, guards and matching report bytes.
+**Example:** the source-check archive now verifies in a normal clone, but
+its missing byte was first published *after* the pair, so
+`pair_admissible: false` remains the only valid conclusion. Earlier failed
+CI #583 and the ordinary-child count-gate failure remain retained; no pair
+retry or savings claim occurred. **Next decision:** close this PR with its
+failed result, then frame any corrected count-gate attempt as a new
+prospective question with fresh checks. Codex assisted; human hands-on time
+was not recorded.
