@@ -1,0 +1,116 @@
+"""Verify the one retained failed pair from compressed raw bytes only."""
+import hashlib
+import json
+import tarfile
+from pathlib import Path
+from typing import Any
+
+root = Path.cwd()
+folder = Path(__file__).resolve().parent
+manifest = json.loads((folder / 'manifest.json').read_bytes())
+
+def digest(raw: bytes) -> str:
+    return hashlib.sha256(raw).hexdigest()
+
+def canonical(value: Any) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
+
+def differences(left: Any, right: Any, path: str = '') -> dict[str, tuple[Any, Any]]:
+    if isinstance(left, dict) and isinstance(right, dict):
+        result: dict[str, tuple[Any, Any]] = {}
+        assert set(left) == set(right), path
+        for key in sorted(left):
+            result.update(differences(left[key], right[key], path + '.' + key if path else key))
+        return result
+    if isinstance(left, list) and isinstance(right, list):
+        assert len(left) == len(right), path
+        result = {}
+        for index, (a, b) in enumerate(zip(left, right)):
+            result.update(differences(a, b, f'{path}[{index}]'))
+        return result
+    return {} if left == right else {path: (left, right)}
+
+verifier = Path(__file__).read_bytes()
+assert manifest['verifier'] == dict(bytes=len(verifier), sha256=digest(verifier))
+assert manifest['status'] == 'failed_pair_raw_retained_before_report'
+assert manifest['pair_head'] == 'e323279ee48d9d9d5d7c87913d29561d48497fda'
+assert manifest['checked_source_commit'] == '7fb8f8ae4d2f823c064a55ace78afded64db0d8d'
+for key, name in [('source_checks_sha256', 'source-checks'), ('own_proof_sha256', 'own')]:
+    path = root / 'results/guarded-prerequisite-skip' / name / 'manifest.json'
+    assert manifest[key] == digest(path.read_bytes())
+compressed = (folder / 'raw.tar.gz').read_bytes()
+assert manifest['archive'] == dict(bytes=len(compressed), sha256=digest(compressed))
+files: dict[str, bytes] = {}
+with tarfile.open(folder / 'raw.tar.gz', 'r:gz') as archive:
+    members = archive.getmembers()
+    assert len(members) == len(manifest['files']) == 31
+    assert {member.name for member in members} == set(manifest['files'])
+    for member in members:
+        assert member.isfile() and not member.name.startswith('/') and '..' not in Path(member.name).parts
+        stream = archive.extractfile(member)
+        assert stream is not None
+        raw = stream.read()
+        assert manifest['files'][member.name] == dict(bytes=len(raw), sha256=digest(raw))
+        assert member.size == len(raw)
+        files[member.name] = raw
+
+pair = json.loads(files['raw/pair.json'])
+preflight = json.loads(files['preflight.json'])
+assert pair['status'] == 'failed_retained' and pair['failure_kind'] == 'ArithmeticError'
+assert pair['order'] == ['ordinary', 'guarded_skip'] and len(pair['measurements']) == 2
+assert 0 < pair['seconds'] < 1800
+assert preflight['status'] == 'optional_runtime_preflight_passed_before_pair'
+assert preflight['head'] == manifest['pair_head']
+assert preflight['no_reference_constructed_in_preflight'] is True
+assert preflight['original_caps'] == dict(child_seconds=900, failure_save_seconds=120,
+                                         own_proof_seconds=180, shared_seconds=1800)
+assert preflight['installed']['license_sha256'] == 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+assert (preflight['installed']['python'], preflight['installed']['numpy'],
+        preflight['installed']['numba'], preflight['installed']['open_spiel']) == ('3.11.17', '2.4.6', '0.68.1', '2.0.2')
+assert b'complete ordinary/guarded-skip identity failed' in files['pair-command.log']
+
+children = []
+for mode in ('ordinary', 'guarded_skip'):
+    child = json.loads(files[f'raw/{mode}/child.json'])
+    children.append(child)
+    assert child['status'] == 'complete_guarded_skip_pair_child' and child['mode'] == mode
+    assert child['head'] == manifest['pair_head'] and child['dirty'] is False
+    assert child['archive_roots'] == 2
+    assert child['original_loads'] == (14 if mode == 'ordinary' else 2)
+    assert child['guarded_returns'] == (0 if mode == 'ordinary' else 12)
+    assert child['reference_output_used_in_training'] is False
+    assert child['new_postflop_training_performed'] is False
+    assert 0 < child['seconds'] < 900
+    identity = child['result']['identity']
+    assert type(identity['profiles']) is list and len(identity['profiles']) == 432
+    assert type(identity['fixed_conditions']) is list and len(identity['fixed_conditions']) == 1152
+    assert len(identity['worker_summaries']) == 3
+    for index in range(2):
+        saved = json.loads(files[f'raw/{mode}/archive-{index}.json'])
+        rows = saved['rows']
+        assert saved['mode'] == mode and saved['index'] == index and len(rows) == 7
+        assert [row['kind'] for row in rows] == ['nested'] * 6 + ['direct']
+        if mode == 'ordinary':
+            assert all('guarded_return' not in row for row in rows)
+        else:
+            assert [row['original_called'] for row in rows] == [True] + [False] * 6
+            assert [row['guarded_return'] for row in rows] == [False] + [True] * 6
+        assert all(row['after_archive'] == row['load'] for row in rows)
+    assert [json.loads(files[f'raw/{mode}/read-{index}.json'])['status'] for index in range(3)] == ['complete'] * 3
+    measurement = json.loads(files[f'raw/{mode}/measurement.json'])
+    assert measurement['returncode'] == 0 and measurement['cap_seconds'] == 900
+
+assert children[0]['pid'] != children[1]['pid']
+assert children[0]['input_sha256'] == children[1]['input_sha256']
+assert children[0]['context_identity_sha256'] == children[1]['context_identity_sha256']
+left, right = [child['result']['identity'] for child in children]
+assert digest(canonical(left)) == 'ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185'
+changed = differences(left, right)
+assert changed == {
+    'normalization.reduced_evaluations': (918104, 726200),
+    'normalization.requests': (918104, 726200),
+    'validation_cache.hits': (8290, 8194),
+    'validation_cache.requests': (8316, 8220),
+}
+assert manifest['work_identity_difference'] == {key: list(value) for key, value in changed.items()}
+print('31 raw members verified; both children complete; four work counters changed; pair failed as recorded')

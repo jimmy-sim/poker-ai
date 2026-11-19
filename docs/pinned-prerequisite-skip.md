@@ -140,3 +140,33 @@ witnesses matched the original donor. The exact
 must be published and GitHub-byte-verified before the fixed complete pair.
 This proves a local software boundary only; no CPU saving or stronger
 strategy is established.
+
+## Fixed complete pair — failed gate, November 18
+
+The own raw bytes were published and GitHub-byte-verified before the one
+reference-bearing pair. Its read-only preflight passed the pinned actual
+Python 3.11.17/NumPy 2.4.6/Numba 0.68.1/OpenSpiel 2.0.2 environment,
+full installed Apache-2.0 license, source and own-proof bindings, and
+unchanged 180/900/1800/120-second caps. The ordinary child took 557.21
+seconds; the guarded child took 602.25 seconds. Both completed under 900.
+The pair took 1,163.73 seconds under 1,800 and recorded `failed_retained`
+because the exact scientific **and work** identity did not match.
+
+Both children produced 432 profiles, 1,152 fixed conditions, three native
+workers and the same scientific result/context. Ordinary made 14 original
+loader calls. Guarded skip made two original calls and 12 guarded returns.
+Only four saved work counters differ:
+
+| Counter | Ordinary | Guarded skip |
+| --- | ---: | ---: |
+| Normalization requests | 918,104 | 726,200 |
+| Normalization reduced evaluations | 918,104 | 726,200 |
+| Validation-cache requests | 8,316 | 8,220 |
+| Validation-cache hits | 8,290 | 8,194 |
+
+The unchanged gate rejects this result; the pair will not be retried for
+a favorable outcome. The [31-member raw archive](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+verifies the exact failure, child output and preflight without altering the
+measurements. It must be public and GitHub-byte-verified before a data-only
+report. The slower guarded child in this one ordered pair supports no CPU
+saving, and no new strategy or strength admission follows.

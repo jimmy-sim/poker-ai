@@ -7505,3 +7505,24 @@ binds the exact child/outer/log bytes. Next: publish and GitHub-byte-verify
 the own record before the one fixed complete ordinary→guarded-skip pair.
 This saved read is not a CPU-saving or strength claim. Codex-assisted;
 human hands-on time not recorded.
+
+The single fixed complete pair then ran from clean `e323279` after the
+own-proof publication gate. Pinned Python 3.11.17/NumPy 2.4.6/Numba
+0.68.1/OpenSpiel 2.0.2 and the installed Apache-2.0 license passed
+read-only preflight. Ordinary finished in 557.21 seconds, guarded skip in
+602.25 seconds, both under 900; the pair ended after 1,163.73/1,800
+seconds with `failed_retained`. Ordinary made 14 original prerequisite
+loads; guarded made two and 12 explicit guarded returns across two
+archive roots. The scientific identity and context match, with 432
+profiles, 1,152 conditions and three native workers, but four saved work
+counters changed: normalization requests/reduced evaluations 918,104→
+726,200; validation-cache requests 8,316→8,220 and hits 8,290→8,194.
+The unchanged full-work gate rejects the pair; no favorable retry.
+The [31-member compressed raw failure](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+contains 17,357,388 raw bytes and verifies both complete children and
+the failed pair. Next: publish/byte-verify this raw record, render a
+data-only failure report on both locked runtimes, complete local/optional/
+hosted checks, and then move to a prospective bounded river-strength
+question. The guarded child was slower in this one observation; no CPU
+saving, training, default or strength admission. Codex-assisted; human
+hands-on time not recorded.

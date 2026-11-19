@@ -186,11 +186,12 @@ skipped-work optimizer would need to preserve. A separate
 before any changed source or new pair. Its local synthetic guard and
 adapters and all exact-source local and hosted checks now pass on both
 locked runtimes. The [source-check record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
-is now public. One fresh reference-free own proof
-passes under its original cap; its raw record is being published before any
-reference-bearing pair. No complete comparison or saving claim exists yet.
-The next research priority after this bounded check
-is a prospective river-strength experiment, as Jimmy directed on November 18.
+and fresh reference-free own proof are public. The one complete pair failed
+the unchanged work-identity gate although its poker results matched; its
+[raw failure](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+is being published before a data-only report. No saving claim follows. The
+next priority is a prospective river-strength experiment, as Jimmy directed
+on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7892,3 +7893,24 @@ were retained. **Next decision:** publish and GitHub-byte-verify the three
 raw proof files before the one fixed ordinary→guarded-skip complete pair.
 This one saved read is a software gate, not a timing, CPU-saving or strategy
 claim. Codex assisted; human hands-on time was not recorded.
+
+The one fixed complete ordinary→guarded-skip pair ran from clean `e323279`
+after the own proof was public. Both children completed within 900 seconds:
+ordinary 557.21 seconds with 14 original loads, guarded 602.25 seconds with
+two original loads and 12 guarded returns. The 1,163.73-second pair stayed
+within 1,800 seconds but **failed the unchanged exact-work identity gate**.
+The original scientific result and context match, including 432 profiles,
+1,152 conditions and three native workers. Four saved work counters differ:
+normalization requests and reduced evaluations each fell from 918,104 to
+726,200; validation-cache requests fell from 8,316 to 8,220 and hits from
+8,290 to 8,194. **Example:** skipping a repeated loader avoids counted
+normalization work, even when the final poker values agree; the existing
+admission rule deliberately checks that work too. The guarded child took
+longer in this one observation, so neither a CPU saving nor a stronger
+strategy is claimed. The [31-member raw record](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+verifies both complete children and the failed pair without retry. **Next
+decision:** publish and GitHub-byte-verify the raw failure, then produce a
+data-only report on both locked runtimes and finish required checks. After
+closing this bounded question, prioritize the prospectively declared
+river-strength experiment Jimmy requested. Codex assisted; human hands-on
+time was not recorded.
