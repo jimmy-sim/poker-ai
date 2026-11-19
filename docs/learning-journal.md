@@ -24,6 +24,8 @@ not a record of completed practice.
 
 - [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
 
+- [Correct the complete count gate](#138-correct-the-complete-sharing-count-gate)
+
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
 - [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
@@ -170,7 +172,9 @@ lists with integer counts and failed before the validated-share child. Its
 source-check archive also contained one ignored byte that was published only
 after the pair. The corrected report and its local and hosted checks pass,
 while `pair_admissible` remains false. A new complete comparison requires a
-prospective source correction and fresh qualification.
+prospective source correction and fresh qualification. That work is now
+registered in [PR #94](validated-sharing-count-gate.md); no new complete pair
+has started.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7708,3 +7712,85 @@ retry or savings claim occurred. **Next decision:** close this PR with its
 failed result, then frame any corrected count-gate attempt as a new
 prospective question with fresh checks. Codex assisted; human hands-on time
 was not recorded.
+
+## 138. Correct the complete sharing count gate
+
+**November 18, 2026.** The [new prospective protocol](validated-sharing-count-gate.md)
+asks whether a root-local validated graph preserves the complete reader's
+result and work after the failed count and publication gates are fixed. A
+**gate** is a condition that must pass before a result can be accepted. The
+adapter now requires a list of 432 profiles and a list of 1,152 fixed
+conditions. It also points to a new source-check record and fresh own proof;
+the launcher checks that every listed source-check byte exists in the pushed
+Git tree before any archived read. **Example:** a list with 432 items passes
+its count check, while the integer `432` does not describe the saved list
+and is rejected. Thirty focused tests pass in the locked optional Python
+3.11 environment, with Ruff and strict mypy on 848 files. One initial test
+run lacked the required venv variable and failed; the configured rerun
+passed. **Next decision:** complete both local base and optional roles and
+hosted source qualification, publish every check member, then collect one
+fresh reference-free own proof. PR #93's failed pair stays failed. Codex
+assisted; human hands-on time was not recorded.
+
+The exact source commit `182fd7c` has now passed two clean base roles
+(5,629 passed/72 skipped/150 deselected each), the optional Python 3.11
+role (2,535 passed), the optional Python 3.12 role (2,534 passed/one
+expected skip), Ruff, formatting, strict mypy and hooks. Official
+[CI #591](https://github.com/jimmy-sim/poker-ai/actions/runs/44437224485)
+passes both jobs on the matching source tree with actual locked runtimes.
+The [31-member source record](../results/validated-sharing-count-gate/source-checks/manifest.json)
+contains only explicitly selected files; its verifier and membership audit
+found no ignored or missing byte. **Next decision:** publish and verify
+every source-check member on GitHub, then collect one reference-free own
+proof under the original cap. No complete pair has run. Codex assisted;
+human hands-on time was not recorded.
+
+The new source archive was pushed, and GitHub's tree matched the manifest
+and all 31 listed member blobs. The source gate passed from that public
+head. One [fresh reference-free own proof](../results/validated-sharing-count-gate/own/manifest.json)
+then passed under the original 180-second cap. **Example:** seven original
+loaders ran, while the first validated graph was substituted for six later
+consumers only after each fresh graph passed equality checks. The saved
+480-row replay had zero chip and unitless error; the whole command took
+93.87 seconds, with no reference construction. **Next decision:** publish
+and verify these exact own bytes before starting the one fixed complete
+ordinary/shared pair. Codex assisted; human hands-on time was not recorded.
+
+The one [fixed complete pair](../results/validated-sharing-count-gate/pair-raw/manifest.json)
+then passed its original complete result and work identity gate at clean
+`bac111d`. Its ordinary and validated-share children took 531.45 and
+542.31 seconds; the pair took 1,076.04 seconds under the 1,800-second
+cap. **Example:** each child made 14 original loader calls across two
+archive roots, while the shared child handed the validated donor to 12
+later consumers. Both produced exactly 432 profiles, 1,152 conditions and
+three reference workers. The raw archive holds 32 members and verifies
+the same scientific and work identity. A first data-only verifier assumed
+ordinary rows had a substitution field; only shared rows do, so that
+verifier was corrected without altering the run. **Next decision:**
+publish and verify the raw bytes, then render the result on both locked
+runtimes without poker, numerical or reference imports. This is sharing
+behavior, with all original loaders still running; no CPU saving or new
+strategy is established. Codex assisted; human hands-on time was not
+recorded.
+
+The [data-only report](validated-sharing-count-gate-result.md) now
+authenticates the public source, fresh own and compressed pair records and
+their Git publication order. It reproduces the same complete result and
+work identity on both locked Python runtimes with identical JSON SHA-256
+`b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
+Ten focused tests reject changed bytes, a rehashed profile shape, a
+rehashed work counter and publication drift while blocking poker,
+numerical and reference imports. **Next decision:** complete both base,
+both optional and hosted final report checks, retain their logs, then
+close this behavior question. No CPU saving or stronger strategy follows.
+Codex assisted; human hands-on time was not recorded.
+
+The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+now preserves four clean local roles and both official hosted jobs for the
+same report tree. Both base roles passed 5,639 fast tests; optional Python
+3.11 passed 2,545 and Python 3.12 passed 2,544 with one expected skip.
+The complete [CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+tested the identical tree and passed both jobs. **Next decision:** publish
+this receipt, require green CI on its final commit, then close the bounded
+behavior question. The one observed pair still supports no CPU saving or
+new strategy. Codex assisted; human hands-on time was not recorded.

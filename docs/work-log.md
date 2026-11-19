@@ -7349,3 +7349,81 @@ failed CI #583, late source-check member and failed ordinary child remain
 historical failures; `pair_admissible: false`. Next: publish this final
 evidence checkpoint and close PR #93 without a retry or savings claim.
 Codex-assisted; human hands-on time not recorded.
+
+The [new issue #4 protocol](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6995942999)
+and [PR #94](https://github.com/jimmy-sim/poker-ai/pull/94) were opened after
+PR #93 merged. Protocol commit `70bdcd3` precedes source. The count adapter
+now checks list types and lengths 432/1,152; a new source/own gate requires
+all listed qualification members to be committed and pushed. The scientific
+core, shared-graph support, inputs, lock and caps are unchanged. Ruff and
+formatting pass on touched files; clean strict mypy passes on 848 files;
+30 focused optional Python 3.11 tests pass. An initial focused run missed
+`UV_PROJECT_ENVIRONMENT` and failed its actual-runtime test; the configured
+rerun passed. An incremental mypy attempt reported four unrelated cached
+attribute errors; a clean non-incremental strict run passed all 848 files.
+The ignored local venv needed a normal `.pth` path because its generated
+underscore-prefixed editable path was skipped by this Python installation.
+Next: complete source qualification locally and on GitHub,
+publish its exact receipts, then attempt a fresh bounded reference-free own
+proof. No archived read or complete pair has started. Codex-assisted;
+human hands-on time not recorded.
+
+Source commit `182fd7c` passed both clean locked base roles: 5,629 passed,
+72 skipped, 150 deselected each; optional 72-file roles: 2,535 passed on
+Python 3.11 and 2,534 passed/one expected skip on Python 3.12. Ruff,
+formatting, strict mypy on 848 files, all-files hooks, clean guards and
+full pinned OpenSpiel license checks passed. Official
+[CI #591](https://github.com/jimmy-sim/poker-ai/actions/runs/44437224485)
+passed both jobs with 5,629 tests each, actual locked runtimes and a whole
+tree equal to the source commit. The [31-member exact-source archive](../results/validated-sharing-count-gate/source-checks/manifest.json)
+verifies local and hosted logs; explicit membership has no missing, ignored
+or extra files. The first evidence-commit hook rejected two archived operator
+scripts named `.py`; they were renamed `.py.txt` without changing their
+executed bytes, then the manifest and verifier passed. Next: publish and
+byte-verify this archive before the fresh
+reference-free own proof. No archived collection or pair yet.
+Codex-assisted; human hands-on time not recorded.
+
+The 31-member source archive at `f6b5ede` passed its in-repo gate; GitHub's
+PR head showed all 32 manifest/member blob hashes and sizes matched local
+bytes. One fresh reference-free own proof at clean `f6b5ede` passed on
+Python 3.11.17/NumPy 2.4.6: seven original loads, six substitutions,
+480-row saved replay with zero chip/unitless error and no reference. Child
+93.02 seconds; outer command 93.87/180 seconds. The
+[three-member raw proof](../results/validated-sharing-count-gate/own/manifest.json)
+is prepared with exact hashes. Next: publish and GitHub-byte-verify it
+before any complete pair. Codex-assisted; human hands-on time not recorded.
+
+One fixed ordinary→validated-share pair at clean `bac111d` passed the
+original complete scientific/work/predecessor identity gate. Ordinary
+531.45 seconds and shared 542.31 seconds, each under 900; outer
+1,076.04/1,800 seconds. Each child retained two archive roots, 14
+original loads, three reads, 432 profiles, 1,152 conditions and three
+native workers; shared recorded 12 substitutions. No reference output
+entered training. The [32-member compressed raw archive](../results/validated-sharing-count-gate/pair-raw/manifest.json)
+verifies 17,200,261 original bytes from a 1,395,773-byte archive and
+matches exact result/work identity. The first verifier assumed an ordinary
+row substitution field and failed; only the verifier changed, then passed.
+Next: publish and byte-verify raw evidence before the data-only report.
+No CPU savings or new strategy claim. Codex-assisted; human hands-on time
+not recorded.
+
+The [data-only report](validated-sharing-count-gate-result.md) now
+authenticates source, own and the published compressed pair plus Git
+publication order. Ten focused tamper/import tests pass in the locked
+Python 3.11 base environment; both locked Python runtimes render identical
+JSON SHA-256 `b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
+Ruff and clean strict mypy on 850 files pass. Next: commit the report,
+complete final base/optional/hosted checks, retain evidence, then close
+the behavior question. No CPU saving or new strategy claim. Codex-assisted;
+human hands-on time not recorded.
+
+The [18-member final check record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+verifies exact report head `9f40bd4`: two clean base roles each passed
+5,639/72 skipped/150 deselected, optional roles passed 2,545 and 2,544
+with one expected skip, Ruff, formatting, strict mypy on 850 files and
+all-files hooks. Official [CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+passed both jobs on the actual locked runtimes and a whole merge tree
+identical to the report head. Next: publish this receipt, check CI on the
+final evidence commit, then close this behavior question. No savings or
+strategy claim. Codex-assisted; human hands-on time not recorded.

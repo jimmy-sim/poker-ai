@@ -1,0 +1,61 @@
+"""Verify retained exact report-head local and hosted check receipts."""
+
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = folder.parents[2]
+manifest = json.loads((folder / "manifest.json").read_bytes())
+verified = json.loads((folder / "verified.json").read_bytes())
+head = "9f40bd40f559a28a7195411948735bb9b330c934"
+assert manifest["status"] == "final_exact_report_head_checks_retained"
+assert manifest["report_head"] == head == verified["report_head"]
+assert manifest["hosted_run_id"] == 44447765358
+assert len(manifest["files"]) == 18
+assert {row["file"] for row in manifest["files"]} == {
+    str(path.relative_to(folder))
+    for path in folder.rglob("*")
+    if path.is_file() and path.name != "manifest.json"
+}
+for row in manifest["files"]:
+    path = folder / row["file"]
+    raw = path.read_bytes()
+    assert len(raw) == row["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == row["sha256"]
+report = (root / "results/validated-sharing-count-gate/report.json").read_bytes()
+assert hashlib.sha256(report).hexdigest() == manifest["report_json_sha256"]
+assert verified["status"] == "four_local_roles_and_two_hosted_jobs_pass"
+assert verified["whole_tree_equal"] is True
+assert subprocess.check_output(
+    ["git", "rev-parse", head + "^{tree}"], cwd=root, text=True
+).strip() == verified["report_tree"]
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    base = (folder / "local" / f"base{minor}.log").read_text()
+    optional = (folder / "local" / f"optional{minor}.log").read_text()
+    hosted = (folder / "hosted" / f"python{minor}.log").read_text(encoding="utf-8-sig")
+    assert "5639 passed, 72 skipped, 150 deselected" in base
+    assert "5639 passed, 72 skipped, 150 deselected" in hosted
+    assert "Success: no issues found in 850 source files" in base
+    assert "ACTUAL_PYTHON=" + version in hosted
+    assert "ACTUAL_NUMPY=" + numpy in hosted
+    assert ("2545 passed" if minor == "311" else "2544 passed, 1 skipped") in optional
+    for role in ("base", "optional"):
+        receipt = json.loads((folder / "local" / f"{role}{minor}.json").read_bytes())
+        assert receipt["status"] == "passed" and receipt["head"] == head
+        assert receipt["python"] == version and receipt["numpy"] == numpy
+        assert (folder / "local" / f"{role}{minor}.log").read_text().count('"dirty": false') == 2
+assert (folder / "local/hooks.exit").read_text().strip() == "0"
+assert (folder / "local/hooks.log").read_text().count("Passed") == 2
+run = json.loads((folder / "hosted/run.json").read_bytes())
+jobs = json.loads((folder / "hosted/jobs.json").read_bytes())["jobs"]
+checkout = json.loads((folder / "hosted/checkout.json").read_bytes())
+assert run["id"] == 44447765358 and run["head_sha"] == head
+assert run["status"] == "completed" and run["conclusion"] == "success"
+assert {job["name"] for job in jobs} == {"Python 3.11", "Python 3.12"}
+assert all(job["status"] == "completed" and job["conclusion"] == "success" for job in jobs)
+assert all(job["head_sha"] == head and job["run_id"] == run["id"] for job in jobs)
+assert checkout["tree"]["sha"] == verified["report_tree"]
+assert head in [parent["sha"] for parent in checkout["parents"]]
+print("four exact-head local roles, hooks and two hosted jobs verified")

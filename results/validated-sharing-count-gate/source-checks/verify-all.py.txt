@@ -1,0 +1,38 @@
+"""Verify all archived exact-source checks in a normal repository clone."""
+import hashlib
+import json
+import runpy
+import subprocess
+from pathlib import Path
+folder=Path(__file__).resolve().parent
+root=Path.cwd()
+manifest=json.loads((folder/'manifest.json').read_bytes())
+head='182fd7c44f3bccf2a987ec304a04a05219743e32'
+tree='059e8ec1a3985925fc4ba1a65f3536d884442471'
+assert manifest['status']=='six_roles_qualified_before_count_gate_proof'
+assert manifest['checked_commit']==head and manifest['source_tree']==tree
+assert manifest['source_fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+assert manifest['lock_sha256']=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'
+assert subprocess.check_output(['git','rev-parse',head+'^{tree}'],cwd=root,text=True).strip()==tree
+names=set()
+for row in manifest['files']:
+ name=row['file']
+ assert name not in names and not Path(name).is_absolute() and '..' not in Path(name).parts
+ path=folder/name
+ raw=path.read_bytes()
+ assert len(raw)==row['bytes'] and hashlib.sha256(raw).hexdigest()==row['sha256']
+ names.add(name)
+assert len(names)==31
+source=manifest['source_files']
+assert set(source)=={
+ 'scripts/validated_prerequisite_sharing_support.py',
+ 'scripts/prove_validated_prerequisite_sharing.py',
+ 'scripts/compare_validated_prerequisite_sharing.py',
+ 'scripts/launch_validated_sharing_optional.py',
+}
+for name,digest in source.items():
+ raw=subprocess.check_output(['git','show',head+':'+name],cwd=root)
+ assert hashlib.sha256(raw).hexdigest()==digest
+runpy.run_path(str(folder/'local/verify-local.py.txt'),run_name='__main__')
+runpy.run_path(str(folder/'operator/verify-hosted.py.txt'),run_name='__main__')
+print('six exact-source roles and 31 archived members verified')

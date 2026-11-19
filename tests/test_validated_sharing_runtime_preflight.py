@@ -12,8 +12,89 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import compare_validated_prerequisite_sharing as comparison  # noqa: E402
 import launch_validated_sharing_optional as launcher  # noqa: E402
+import prove_validated_prerequisite_sharing as proof  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def source_fixture(folder: Path) -> dict[str, Any]:
+    required = (
+        "hosted/python311.log",
+        "hosted/python312.log",
+        "local/base311.log",
+        "local/base312.log",
+        "local/optional311.log",
+        "local/optional312.log",
+        "local/hooks.log",
+        "verify-all.py.txt",
+    )
+    names = list(required) + [f"local/extra-{index}.txt" for index in range(22)]
+    files = []
+    for name in names:
+        path = folder / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        raw = name.encode()
+        path.write_bytes(raw)
+        files.append(
+            dict(file=name, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+        )
+    return {"files": files}
+
+
+def test_complete_counts_require_lists_at_original_sizes() -> None:
+    identity: dict[str, Any] = {
+        "profiles": list(range(432)),
+        "fixed_conditions": list(range(1152)),
+    }
+    assert comparison.complete_counts(identity)
+    for field, wrong in (
+        ("profiles", 432),
+        ("profiles", list(range(431))),
+        ("fixed_conditions", 1152),
+        ("fixed_conditions", list(range(1151))),
+    ):
+        altered = dict(identity, **{field: wrong})
+        assert not comparison.complete_counts(altered)
+
+
+def test_source_archive_requires_every_member_published(tmp_path: Path) -> None:
+    manifest = source_fixture(tmp_path)
+    seen: list[Path] = []
+
+    def published(_root: Path, path: Path) -> None:
+        seen.append(path)
+
+    proof.source_members(tmp_path, manifest, published)
+    assert len(seen) == 30
+    assert seen == [tmp_path / row["file"] for row in manifest["files"]]
+
+    def reject(_root: Path, path: Path) -> None:
+        if path == seen[-1]:
+            raise ArithmeticError("member absent from pushed Git tree")
+
+    with pytest.raises(ArithmeticError, match="absent from pushed Git tree"):
+        proof.source_members(tmp_path, manifest, reject)
+
+
+def test_source_archive_rejects_missing_changed_or_escaped_member(
+    tmp_path: Path,
+) -> None:
+    manifest = source_fixture(tmp_path)
+
+    def published(_root: Path, _path: Path) -> None:
+        pass
+
+    target = tmp_path / manifest["files"][-1]["file"]
+    target.write_bytes(b"changed")
+    with pytest.raises(ArithmeticError, match="member changed"):
+        proof.source_members(tmp_path, manifest, published)
+    target.unlink()
+    with pytest.raises(FileNotFoundError):
+        proof.source_members(tmp_path, manifest, published)
+    target.write_bytes(manifest["files"][-1]["file"].encode())
+    manifest["files"][-1]["file"] = "../escaped.txt"
+    with pytest.raises(ArithmeticError, match="member changed or escaped"):
+        proof.source_members(tmp_path, manifest, published)
 
 
 def matching(environment: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:

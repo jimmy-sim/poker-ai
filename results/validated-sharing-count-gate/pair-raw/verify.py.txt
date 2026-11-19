@@ -1,0 +1,70 @@
+"""Authenticate the one complete pair's compressed raw bytes without readers."""
+import hashlib
+import json
+import tarfile
+from pathlib import Path
+folder=Path(__file__).resolve().parent
+root=Path.cwd()
+manifest=json.loads((folder/'manifest.json').read_bytes())
+verifier=Path(__file__).read_bytes()
+assert len(verifier)==manifest['verifier']['bytes'] and hashlib.sha256(verifier).hexdigest()==manifest['verifier']['sha256']
+assert manifest['status']=='complete_pair_raw_retained_before_report'
+assert manifest['pair_head']=='bac111d3949343b4123cb24a6adf097da936ac3a'
+assert manifest['checked_source_commit']=='182fd7c44f3bccf2a987ec304a04a05219743e32'
+assert manifest['source_checks_sha256']==hashlib.sha256((root/'results/validated-sharing-count-gate/source-checks/manifest.json').read_bytes()).hexdigest()
+assert manifest['own_proof_sha256']==hashlib.sha256((root/'results/validated-sharing-count-gate/own/manifest.json').read_bytes()).hexdigest()
+compressed=(folder/'raw.tar.gz').read_bytes()
+assert len(compressed)==manifest['archive']['bytes'] and hashlib.sha256(compressed).hexdigest()==manifest['archive']['sha256']
+files={}
+with tarfile.open(folder/'raw.tar.gz','r:gz') as archive:
+ members=archive.getmembers()
+ assert len(members)==len(manifest['files'])==32
+ assert {m.name for m in members}==set(manifest['files'])
+ for member in members:
+  assert member.isfile() and not member.name.startswith('/') and '..' not in Path(member.name).parts
+  stream=archive.extractfile(member)
+  assert stream is not None
+  raw=stream.read()
+  expected=manifest['files'][member.name]
+  assert len(raw)==member.size==expected['bytes']
+  assert hashlib.sha256(raw).hexdigest()==expected['sha256']
+  files[member.name]=raw
+assert files['pair-command.exit'].strip()==b'0'
+pair=json.loads(files['raw/pair.json'])
+preflight=json.loads(files['preflight.json'])
+assert pair['status']=='exact_complete_result_and_work_identity'
+assert pair['identity_sha256']=='ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185'
+assert pair['order']==['ordinary','validated_share'] and len(pair['measurements'])==2
+assert 0<pair['seconds']<1800
+assert preflight['status']=='optional_runtime_preflight_passed_before_pair'
+assert preflight['head']==manifest['pair_head']
+assert preflight['no_reference_constructed_in_preflight'] is True
+children=[]
+for mode in ('ordinary','validated_share'):
+ child=json.loads(files[f'raw/{mode}/child.json']);children.append(child)
+ assert child['status']=='complete_validated_share_pair_child' and child['mode']==mode
+ assert child['head']==manifest['pair_head'] and child['dirty'] is False
+ assert child['archive_roots']==2 and child['original_loads']==14
+ assert child['donor_substitutions']==(0 if mode=='ordinary' else 12)
+ assert child['reference_output_used_in_training'] is False
+ assert 0<child['seconds']<900
+ identity=child['result']['identity']
+ assert type(identity['profiles']) is list and len(identity['profiles'])==432
+ assert type(identity['fixed_conditions']) is list and len(identity['fixed_conditions'])==1152
+ assert len(identity['worker_summaries'])==3
+ for index in range(2):
+  archive=json.loads(files[f'raw/{mode}/archive-{index}.json'])
+  assert len(archive['rows'])==7
+  if mode=='ordinary':
+   assert all('substituted' not in r for r in archive['rows'])
+  else:
+   assert [r['substituted'] for r in archive['rows']]==[False]+[True]*6
+ assert [json.loads(files[f'raw/{mode}/read-{i}.json'])['status'] for i in range(3)]==['complete']*3
+ measurement=json.loads(files[f'raw/{mode}/measurement.json'])
+ assert measurement['returncode']==0 and measurement['cap_seconds']==900
+assert children[0]['pid']!=children[1]['pid']
+assert children[0]['context_identity_sha256']==children[1]['context_identity_sha256']
+canonical=lambda value: json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
+left=canonical(children[0]['result']['identity']);right=canonical(children[1]['result']['identity'])
+assert left==right and hashlib.sha256(left).hexdigest()==pair['identity_sha256']
+print('32 complete raw members, source/own bindings and exact result/work identity verified')

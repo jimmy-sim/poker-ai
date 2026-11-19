@@ -26,7 +26,7 @@ from poker_ai.evaluation.averaging_history_inputs import HistoryInputs
 
 ROOT = Path(__file__).resolve().parents[1]
 OWN = ROOT / "results/reduced-batch-study/own.json"
-PROOF = ROOT / "results/validated-prerequisite-sharing/own/manifest.json"
+PROOF = ROOT / "results/validated-sharing-count-gate/own/manifest.json"
 PREDECESSOR_IDENTITY = (
     "ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185"
 )
@@ -119,6 +119,16 @@ def own_published() -> dict[str, Any]:
     ):
         raise ArithmeticError("published own proof failed original boundaries")
     return manifest
+
+
+def complete_counts(identity: dict[str, Any]) -> bool:
+    """Accept complete profile/condition lists only at their pinned sizes."""
+    return (
+        type(identity["profiles"]) is list
+        and len(identity["profiles"]) == 432
+        and type(identity["fixed_conditions"]) is list
+        and len(identity["fixed_conditions"]) == 1152
+    )
 
 
 @contextmanager
@@ -232,8 +242,7 @@ def child(output: Path, mode: str) -> None:
             len(captures) != 2
             or [len(capture.rows) for capture in captures] != [7, 7]
             or [r["scope"] for r in observed["replays"]] != c["expected"]["read_scopes"]
-            or identity["profiles"] != 432
-            or identity["fixed_conditions"] != 1152
+            or not complete_counts(identity)
             or len(identity["worker_summaries"]) != 3
             or identity["reference_actions_exported"] is not False
             or identity["training_performed"] is not False

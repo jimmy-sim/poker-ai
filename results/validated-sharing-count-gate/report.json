@@ -1,0 +1,40 @@
+{
+  "status": "complete_validated_sharing_behavior_identity",
+  "source_manifest_sha256": "a464c9a8fc67c3ae68545f81f0ae667780dcf44b0a5bbd749fce1b3063593110",
+  "own_manifest_sha256": "5292f9ff1ab17e8d085ec5d599150f57a3e70a4bd7389e2d2a257046863b8715",
+  "raw_pair_manifest_sha256": "721d076d19fbb04891ddf3507ec853f6bbd3908cf6dc21cdca34c4a6242ba42d",
+  "publication": {
+    "source_archive_complete_at_pair_time": true,
+    "fresh_own_proof_published_before_reference": true,
+    "raw_pair_published_before_report": true,
+    "behavior_pair_admissible": true
+  },
+  "complete_pair": {
+    "order": [
+      "ordinary",
+      "validated_share"
+    ],
+    "ordinary_child_seconds": 531.4507084999932,
+    "validated_share_child_seconds": 542.3119660420052,
+    "pair_seconds": 1076.036324708999,
+    "child_cap_seconds": 900,
+    "pair_cap_seconds": 1800,
+    "archive_roots_each": 2,
+    "original_loader_calls_each": 14,
+    "validated_substitutions": 12,
+    "complete_reads_each": 3,
+    "reference_workers_each": 3,
+    "profile_count": 432,
+    "fixed_condition_count": 1152,
+    "identity_sha256": "ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185",
+    "context_identity_sha256": "4a0aca0e735ec7fe6e458f599eaeed2806c61a66e83ee026dc8b7f0eb59e899c",
+    "exact_result_and_work_identity": true,
+    "reference_output_used_in_training": false
+  },
+  "limits": {
+    "one_ordered_pair_only": true,
+    "all_original_loaders_still_run": true,
+    "cpu_savings_established": false,
+    "new_strategy_or_training_admitted": false
+  }
+}
