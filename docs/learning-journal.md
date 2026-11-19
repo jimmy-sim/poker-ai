@@ -189,7 +189,8 @@ locked runtimes. The [source-check record](../results/guarded-prerequisite-skip/
 and fresh reference-free own proof are public. The one complete pair failed
 the unchanged work-identity gate although its poker results matched; its
 [raw failure](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
-is being published before a data-only report. No saving claim follows. The
+is public, and a [data-only report](pinned-prerequisite-skip-result.md) is in
+final qualification. No saving claim follows. The
 next priority is a prospective river-strength experiment, as Jimmy directed
 on November 18.
 Earlier failures and their original conditions stay in the entries below.
@@ -7914,3 +7915,20 @@ data-only report on both locked runtimes and finish required checks. After
 closing this bounded question, prioritize the prospectively declared
 river-strength experiment Jimmy requested. Codex assisted; human hands-on
 time was not recorded.
+
+The failed pair's 31 raw members were published at `aa3c9c2` and their
+manifest, compressed archive and verifier matched GitHub blob hashes and
+sizes. The [data-only report](pinned-prerequisite-skip-result.md) now
+rechecks source→own→pair→raw publication order and every evidence hash,
+while blocking poker, numerical and reference imports. It reproduces
+identical JSON on locked Python 3.11 and 3.12, SHA-256
+`aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81`.
+Eleven focused tests pass in the locked base runtime, including altered
+compressed bytes, a rehashed profile shape, a rehashed work counter and
+publication drift; Ruff and strict mypy pass on the new report and tests.
+**Example:** changing a guarded validation-cache hit from 8,194 to 8,195
+still fails even if the copied raw archive is rehashed. **Next decision:**
+complete both full base, both optional and hosted final report checks,
+then close this rejected optimization and frame the separate prospective
+river-strength question. No favorable pair retry or validation speed claim.
+Codex assisted; human hands-on time was not recorded.

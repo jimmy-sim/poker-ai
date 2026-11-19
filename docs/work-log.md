@@ -7526,3 +7526,19 @@ hosted checks, and then move to a prospective bounded river-strength
 question. The guarded child was slower in this one observation; no CPU
 saving, training, default or strength admission. Codex-assisted; human
 hands-on time not recorded.
+
+Raw failure commit `aa3c9c2` passed its 31-member verifier; GitHub's PR
+tree matched the manifest, compressed tarball and verifier bytes. The
+[data-only result](pinned-prerequisite-skip-result.md) authenticates all
+three public evidence stages and the failed pair without importing poker,
+NumPy, Numba, OpenSpiel or Treys. Both locked Python versions render the
+same 2,026-byte JSON, SHA-256
+`aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81`.
+Eleven focused tamper/import tests pass in the locked base runtime; Ruff,
+formatting and strict mypy pass for the new two files. An initial test
+invocation in the preexisting `.venv` failed at `conftest` import because
+that environment lacked the editable project; the exact locked base
+environment ran the suite successfully. Next: full base/optional/hosted
+report qualification, then close this failed optimization and publish a
+separate prospective bounded river-strength contract. No pair retry or
+saving claim. Codex-assisted; human hands-on time not recorded.
