@@ -7472,3 +7472,22 @@ were corrected before qualification. Next: commit all related source/tests/
 docs, run full clean local and hosted source checks, and publish the exact
 source archive before any archived read. No pair or savings claim.
 Codex-assisted; human hands-on time not recorded.
+
+### November 18: guarded skip exact-source qualification
+
+Source `7fb8f8a` passed clean base roles on both locked runtimes: 5,674
+passed/73 skipped/150 deselected each, including Ruff, formatting and
+strict mypy. Fixed 76-file optional suites passed 2,581 on Python 3.11 and
+2,579 with two expected skips on Python 3.12. Hooks, both installed
+OpenSpiel Apache-2.0 license hashes, pre/post clean guards and identical
+486-path snapshots passed. The first complete local logs were lost when a
+Mac restart cleared `/private/tmp`; the same unchanged source was fully
+requalified in persistent ignored `results/runs/guarded-skip-requalification-20261118/`.
+No partial dots are counted. Official [CI #601](https://github.com/jimmy-sim/poker-ai/actions/runs/44461179593)
+passed both jobs with actual locked runtimes and 5,674/73/150 counts;
+the tested merge checkout has the exact source tree. The
+[35-member source-check archive](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+now holds the durable local cohort, official hosted logs, byte inventories
+and verifiers. Next: commit, publish and GitHub-byte-verify all members
+before a fresh reference-free own proof. No archived read, pair, training
+or saving claim yet. Codex-assisted; human hands-on time not recorded.

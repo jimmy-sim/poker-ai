@@ -1,0 +1,45 @@
+{"index": 0, "command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'));import profile_receipt_cpu as p\nhead=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nassert head=='7fb8f8ae4d2f823c064a55ace78afded64db0d8d' and not subprocess.check_output(['git','status','--porcelain'])\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')\n_,s=p.binding(r,clean=True)\nassert len(s['sha256'])==458 and s['fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d' and s['dirty'] is False\nassert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nassert 'PYTHONPATH' not in __import__('os').environ\nfrom guarded_prerequisite_skip_support import complete_snapshot\nsnapshot=complete_snapshot(r)\nassert len(snapshot)==486\nprint(json.dumps(dict(head=head,python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=s['fingerprint'],source_files=len(s['sha256']),lock_sha256='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c',dirty=False,snapshot_files=len(snapshot))))\n"], "suite_count": 76}
+Using CPython 3.11.17
+Creating virtual environment at: results/runs/guarded-skip-requalification-20261118/envs/optional311
+Installed 43 packages in 1m 10s
+{"head": "7fb8f8ae4d2f823c064a55ace78afded64db0d8d", "python": "3.11.17", "numpy": "2.4.6", "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d", "source_files": 458, "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c", "dirty": false, "snapshot_files": 486}
+{"index": 1, "command": ["uv", "run", "--locked", "--all-extras", "pytest"], "suite_count": 76}
+........................................................................ [  2%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 19%]
+........................................................................ [ 22%]
+........................................................................ [ 25%]
+........................................................................ [ 27%]
+........................................................................ [ 30%]
+........................................................................ [ 33%]
+........................................................................ [ 36%]
+........................................................................ [ 39%]
+........................................................................ [ 41%]
+........................................................................ [ 44%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 55%]
+........................................................................ [ 58%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 66%]
+........................................................................ [ 69%]
+........................................................................ [ 72%]
+........................................................................ [ 75%]
+........................................................................ [ 78%]
+........................................................................ [ 80%]
+........................................................................ [ 83%]
+........................................................................ [ 86%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 94%]
+........................................................................ [ 97%]
+.............................................................            [100%]
+2581 passed in 639.30s (0:10:39)
+{"index": 2, "command": ["uv", "run", "--locked", "--all-extras", "python", "-c", "import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'));import profile_receipt_cpu as p\nhead=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nassert head=='7fb8f8ae4d2f823c064a55ace78afded64db0d8d' and not subprocess.check_output(['git','status','--porcelain'])\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')\n_,s=p.binding(r,clean=True)\nassert len(s['sha256'])==458 and s['fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d' and s['dirty'] is False\nassert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'\nassert sys.version.split()[0]=='3.11.17' and numpy.__version__=='2.4.6'\nassert 'PYTHONPATH' not in __import__('os').environ\nfrom guarded_prerequisite_skip_support import complete_snapshot\nsnapshot=complete_snapshot(r)\nassert len(snapshot)==486\nprint(json.dumps(dict(head=head,python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=s['fingerprint'],source_files=len(s['sha256']),lock_sha256='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c',dirty=False,snapshot_files=len(snapshot))))\n"], "suite_count": 76}
+{"head": "7fb8f8ae4d2f823c064a55ace78afded64db0d8d", "python": "3.11.17", "numpy": "2.4.6", "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d", "source_files": 458, "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c", "dirty": false, "snapshot_files": 486}

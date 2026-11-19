@@ -1,0 +1,56 @@
+"""Verify the guarded skip's exact-source local qualification receipts."""
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+root = Path.cwd()
+folder = Path(__file__).resolve().parent
+head = '7fb8f8ae4d2f823c064a55ace78afded64db0d8d'
+fingerprint = 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+lock = 'db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'
+assert subprocess.run(['git', 'merge-base', '--is-ancestor', head, 'HEAD'], cwd=root).returncode == 0
+assert subprocess.check_output(['git', 'status', '--porcelain'], cwd=root, text=True) == ''
+assert hashlib.sha256((root / 'uv.lock').read_bytes()).hexdigest() == lock
+suites = json.loads((folder / 'optional-suites.json').read_bytes())
+assert len(suites) == 76 and len(set(suites)) == 76
+assert all((root / path).is_file() for path in suites)
+for minor, version, numpy in [('311', '3.11.17', '2.4.6'), ('312', '3.12.15', '2.5.4')]:
+    for role in ('base', 'optional'):
+        name = role + minor
+        log = (folder / f'{name}.log').read_text()
+        receipt = json.loads((folder / f'{name}.json').read_bytes())
+        assert receipt['status'] == 'passed' and receipt['role'] == name
+        assert receipt['head'] == head and receipt['source_fingerprint'] == fingerprint
+        assert (receipt['python'], receipt['numpy'], receipt['lock_sha256']) == (version, numpy, lock)
+        assert receipt['suite_count'] == (76 if role == 'optional' else None)
+        guards = [json.loads(line) for line in log.splitlines() if line.startswith('{"head":')]
+        assert len(guards) == 2, (name, len(guards))
+        for stage, guard in zip(('pre', 'post'), guards):
+            assert guard == dict(head=head, python=version, numpy=numpy,
+                                 source_fingerprint=fingerprint, source_files=458,
+                                 lock_sha256=lock, dirty=False, snapshot_files=486)
+            assert json.loads((folder / f'{name}-{stage}.json').read_bytes()) == guard
+        if role == 'base':
+            assert 'All checks passed!' in log
+            assert 'Success: no issues found in ' in log
+            assert re.search(r'5674 passed, 73 skipped, 150 deselected in [0-9.]+s', log), name
+        else:
+            expected = '2581 passed in ' if minor == '311' else '2579 passed, 2 skipped in '
+            assert expected in log, name
+    license = json.loads((folder / f'optional{minor}-license.json').read_bytes())
+    assert license['python'] == version and license['license'] == 'Apache-2.0'
+    assert license['bytes'] == 11358
+    assert license['sha256'] == 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+assert (folder / 'hooks.exit').read_text().strip() == '0'
+assert (folder / 'hooks.log').read_text().count('Passed') == 2
+snapshots = [(folder / f'full-snapshot{minor}.json').read_bytes() for minor in ('311', '312')]
+assert snapshots[0] == snapshots[1]
+snapshot = json.loads(snapshots[0])
+assert len(snapshot) == 486 and all(len(digest) == 64 for digest in snapshot.values())
+for path in ('guarded_prerequisite_skip_support.py', 'prove_guarded_prerequisite_skip.py',
+             'compare_guarded_prerequisite_skip.py', 'launch_guarded_skip_optional.py'):
+    name = 'scripts/' + path
+    assert subprocess.check_output(['git', 'show', f'{head}:{name}'], cwd=root) == (root / name).read_bytes()
+print('four exact-source local roles, hooks, licenses, snapshots and source bytes verified')

@@ -1,0 +1,67 @@
+"""Recreate source qualification after Mac restart removed temporary receipts."""
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+OUT = Path(__file__).resolve().parent
+HEAD = "7fb8f8ae4d2f823c064a55ace78afded64db0d8d"
+FINGERPRINT = "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d"
+LOCK = "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+minor, role = sys.argv[1:]
+assert minor in ("311", "312") and role in ("base", "optional")
+version, numpy = {"311": ("3.11.17", "2.4.6"), "312": ("3.12.15", "2.5.4")}[minor]
+name = role + minor
+env = {k: v for k, v in os.environ.items() if k in {
+    "PATH", "HOME", "TMPDIR", "USER", "LOGNAME", "SHELL", "LANG", "LC_ALL",
+    "LC_CTYPE", "UV_CACHE_DIR", "UV_PYTHON_INSTALL_DIR", "UV_OFFLINE", "PRE_COMMIT_HOME",
+}}
+env.update(UV_PROJECT_ENVIRONMENT=str(OUT / "envs" / name), UV_PYTHON=version)
+assert "PYTHONPATH" not in env
+suites = json.loads((OUT / "optional-suites.json").read_bytes())
+assert len(suites) == 76 and len(set(suites)) == 76
+assert all((ROOT / path).is_file() for path in suites)
+guard = f'''import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai
+r=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'));import profile_receipt_cpu as p
+head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+assert head=={HEAD!r} and not subprocess.check_output(['git','status','--porcelain'])
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+_,s=p.binding(r,clean=True)
+assert len(s['sha256'])==458 and s['fingerprint']=={FINGERPRINT!r} and s['dirty'] is False
+assert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=={LOCK!r}
+assert sys.version.split()[0]=={version!r} and numpy.__version__=={numpy!r}
+assert 'PYTHONPATH' not in __import__('os').environ
+from guarded_prerequisite_skip_support import complete_snapshot
+snapshot=complete_snapshot(r)
+assert len(snapshot)==486
+print(json.dumps(dict(head=head,python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=s['fingerprint'],source_files=len(s['sha256']),lock_sha256={LOCK!r},dirty=False,snapshot_files=len(snapshot))))
+'''
+prefix = ["uv", "run", "--locked"]
+if role == "optional":
+    prefix.append("--all-extras")
+commands = [prefix + ["python", "-c", guard],
+            ["make", "check"] if role == "base" else prefix + ["pytest", "-q", *suites],
+            prefix + ["python", "-c", guard]]
+log = OUT / f"{name}.log"
+receipt = OUT / f"{name}.json"
+started = time.perf_counter()
+status, failure = "failed", None
+try:
+    with log.open("x") as stream:
+        for index, command in enumerate(commands):
+            stream.write(json.dumps(dict(index=index, command=command if len(command) < 10 else command[:5], suite_count=len(suites) if role == "optional" else None)) + "\n")
+            stream.flush()
+            subprocess.run(command, cwd=ROOT, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+    status = "passed"
+except BaseException as error:
+    failure = dict(type=type(error).__name__, reason=str(error))
+    raise
+finally:
+    receipt.write_text(json.dumps(dict(role=name, status=status, head=HEAD, python=version,
+        numpy=numpy, source_fingerprint=FINGERPRINT, lock_sha256=LOCK,
+        suite_count=len(suites) if role == "optional" else None,
+        elapsed_seconds=time.perf_counter() - started, failure=failure), indent=2) + "\n")
+print(name, status, log)

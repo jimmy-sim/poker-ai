@@ -184,8 +184,11 @@ does not establish CPU savings or a stronger strategy. The next
 skipped-work optimizer would need to preserve. A separate
 [prospective guard test](pinned-prerequisite-skip.md) now fixes the checks
 before any changed source or new pair. Its local synthetic guard and
-adapters pass focused tests on both locked runtimes; full source
-qualification and any archived read remain pending.
+adapters and all exact-source local and hosted checks now pass on both
+locked runtimes. The [source-check record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+is being published before any archived own read; no complete comparison or
+saving claim exists yet. The next research priority after this bounded check
+is a prospective river-strength experiment, as Jimmy directed on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7856,3 +7859,20 @@ test-typing errors were fixed before this milestone. **Next decision:**
 qualify and publish this exact source on both base, both optional and
 hosted roles before any archived own read. No saving or strategy result
 exists. Codex assisted; human hands-on time was not recorded.
+
+The exact source commit `7fb8f8a` now passes all six required roles. Both
+locked base runtimes pass 5,674 fast tests, with 73 skips and 150 deselections;
+the fixed 76-file optional suites pass 2,581 tests on Python 3.11 and 2,579
+with two expected skips on Python 3.12. Ruff, formatting, strict mypy,
+all-files hooks, pinned OpenSpiel license reads and the identical 486-path
+byte inventory pass. Hosted [CI #601](https://github.com/jimmy-sim/poker-ai/actions/runs/44461179593)
+passes both jobs; the actual runtime and tested whole tree match the source.
+**Example:** the 486-path inventory includes eleven historical files outside
+the current 458-file source fingerprint, so a changed historical receipt
+checker would stop a guarded return. A Mac restart removed the first set of
+temporary local receipts; the same source was requalified with new complete
+logs in durable ignored storage. The [35-member source record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+contains this second local cohort and the official CI bytes. **Next decision:**
+publish and verify every archive byte on GitHub before one fresh reference-free
+own proof. No archived read, complete pair, CPU saving or new strategy result
+has occurred. Codex assisted; human hands-on time was not recorded.

@@ -1,0 +1,38 @@
+"""Verify all archived exact-source checks in a normal repository clone."""
+import hashlib
+import json
+import runpy
+import subprocess
+from pathlib import Path
+folder=Path(__file__).resolve().parent
+root=Path.cwd()
+manifest=json.loads((folder/'manifest.json').read_bytes())
+head='7fb8f8ae4d2f823c064a55ace78afded64db0d8d'
+tree='34ad14864a62a85d3cb1fffbef30db9d05473f29'
+assert manifest['status']=='six_roles_qualified_before_guarded_skip_proof'
+assert manifest['checked_commit']==head and manifest['source_tree']==tree
+assert manifest['source_fingerprint']=='b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+assert manifest['lock_sha256']=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'
+assert subprocess.check_output(['git','rev-parse',head+'^{tree}'],cwd=root,text=True).strip()==tree
+names=set()
+for row in manifest['files']:
+ name=row['file']
+ assert name not in names and not Path(name).is_absolute() and '..' not in Path(name).parts
+ path=folder/name
+ raw=path.read_bytes()
+ assert len(raw)==row['bytes'] and hashlib.sha256(raw).hexdigest()==row['sha256']
+ names.add(name)
+assert len(names)==35
+source=manifest['source_files']
+assert set(source)=={
+ 'scripts/guarded_prerequisite_skip_support.py',
+ 'scripts/prove_guarded_prerequisite_skip.py',
+ 'scripts/compare_guarded_prerequisite_skip.py',
+ 'scripts/launch_guarded_skip_optional.py',
+}
+for name,digest in source.items():
+ raw=subprocess.check_output(['git','show',head+':'+name],cwd=root)
+ assert hashlib.sha256(raw).hexdigest()==digest
+runpy.run_path(str(folder/'local/verify-local.py.txt'),run_name='__main__')
+runpy.run_path(str(folder/'operator/verify-hosted.py.txt'),run_name='__main__')
+print('six exact-source roles and 35 archived members verified')

@@ -102,3 +102,24 @@ qualification. No archived read, complete pair, CPU saving or new strategy
 result exists. Next: commit the complete source, run both clean base and
 both optional roles plus hooks and hosted CI, and publish every check byte
 before a reference-free own proof.
+
+## Exact-source qualification — November 18
+
+The published source `7fb8f8a` passed both locked base roles (5,674 passed,
+73 skipped, 150 deselected each), both fixed 76-file optional roles (2,581
+passed on Python 3.11; 2,579 passed and two expected skips on Python 3.12),
+Ruff, formatting, strict mypy, all-files hooks and both pinned installed
+OpenSpiel license reads. Each role passed a clean exact-commit/source/runtime
+guard before and after its test suite. Both runtimes produced the same 486-path
+closed byte inventory. The initial local log cohort was lost from temporary
+storage during a Mac restart; all four roles were rerun against the unchanged
+source with complete receipts retained in ignored repository storage.
+
+Official [CI #601](https://github.com/jimmy-sim/poker-ai/actions/runs/44461179593)
+passed Python 3.11 and 3.12 with the expected 5,674/73/150 counts. Its actual
+runtime checks and full tested merge tree match the source commit. The
+[35-member source-check archive](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+retains the second local cohort and official hosted bytes. This is source
+qualification only. The archive must be committed, published, and byte-verified
+on GitHub before one fresh reference-free own proof; no archived proof or
+complete pair has run. No CPU saving or stronger strategy follows.
