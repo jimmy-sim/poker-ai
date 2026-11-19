@@ -31,6 +31,13 @@ must measure whether finite learning uses that separation effectively.
    100k-path profile prefixes three times under the 900-second whole-profile
    cap. Charge complete source/context setup and preserve every failed attempt.
    Publish a source-bound conservative forecast/admission before long learning.
+   The [prospective forecast amendment](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466)
+   fixes the calculation before any profile: for each of twelve paths, take
+   the maximum over three repeats of complete path seconds from construction
+   through replay times `10,000,000 / actual_final_node_work`. This scales
+   setup and scoring too. Sum those maxima in fixed path-index modulo-three
+   worker partitions and let `T` be the largest sum. Admit long learning only
+   if all 36 profiles finish within 900 seconds and `2*(2*T+600)<7200`.
    The 180-second proof, 600-second profile overhead, 7,200-second whole-own,
    900-second native and 120-second failure-save caps remain unchanged. A
    failed forecast stops long learning; no favorable retry.

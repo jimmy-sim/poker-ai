@@ -7567,6 +7567,10 @@ node-work labels. Primary final10m linear-average exploitability and all other
 readouts, historical gates, source/proof/forecast/own-before-native publication
 boundaries and caps are fixed. The cheaper initial stage is software checks and
 capped 100k profiling; the full gated workflow may take a few hours. No new
+real profile preceded the [forecast amendment](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466):
+three complete 100k repeats per path, whole-path seconds extrapolated to 10m
+including setup/scoring/replay, fixed three-worker sum `T`, and strict
+`2*(2*T+600)<7200` admission. A failed forecast stops long learning. No new
 measurement, learned candidate or fresh-case claim exists. Next: publish the
 protocol checkpoint, implement the candidate key and tests, then qualify exact
 source before learning. Codex-assisted; human hands-on time not recorded.

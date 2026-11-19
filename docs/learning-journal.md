@@ -7963,6 +7963,10 @@ The planned comparison has two known games, three seeds, two arms, three work
 labels and all readouts, with source, proof, forecast, own-before-native and
 final check gates. The cheaper first stage is synthetic software checks and
 capped 100k profiling; the complete gated workflow may take a few hours.
+Before any real profile, a [prospective amendment](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466)
+fixed the conservative three-repeat whole-path extrapolation and strict
+`2*(2*T+600)<7200` long-run admission formula; construction, scoring and
+replay are charged, so a slow profile stops the study.
 **Next decision:** publish this protocol, then implement and test the key and
 bounded learner without relaxing historical strength or compute limits. No
 new trajectory, validation saving or strength result exists. Codex assisted;
