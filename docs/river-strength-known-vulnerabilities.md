@@ -250,3 +250,23 @@ known games with only three dependent seeds. It does not admit a new default,
 fresh/global strength or unseen-game improvement; the earlier held-out miss
 and other failed research gates remain failures. The experiment stops after
 final source-bound checks, with no retry or next candidate.
+
+## Final reproducibility gate and stopping point
+
+The [final check receipt](../results/river-strength/final-checks/manifest.json)
+binds the published report commit `aae4d52` to the unchanged 370-file river
+source fingerprint. Both locked local base suites passed 5,704 tests each
+(73 skipped, 150 deselected) with Ruff, formatting and strict mypy. The fixed
+optional scopes passed 2,584 tests on Python 3.11 and 2,582 with two expected
+skips on Python 3.12. Local hooks passed. [Hosted run 44502509319](https://github.com/jimmy-sim/poker-ai/actions/runs/44502509319)
+passed both Python jobs, including checks and hooks. The final report digest
+is `f1e7fb5764433e3d23cc6b8f63b6ec33e30a2a57db4914f19332bad7c93b8022`.
+The positive known-panel result and failed control gates are preserved. No
+scientific retry, budget extension, protocol change or next experiment followed.
+
+A representative trained candidate pair can be inspected from
+`results/river-strength/own/study/path07/10000000-linear_average.json.gz`:
+rows 1009 and 1045 share `Qh Kh`, public history and the first four board
+cards, with river `9d` versus `9h`. The saved policy checks about 99.975% on
+`9d` and raises to 108 about 97.559% on `9h`. This is a policy example, not
+separate evidence of stronger play.

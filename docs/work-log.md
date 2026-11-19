@@ -7708,3 +7708,16 @@ The earlier held-out and other failed gates remain failed. Next: publish the
 report and run final exact-source local, optional and hosted checks; then stop.
 No scientific retry or next experiment. Codex assisted; human hands-on time
 not recorded.
+
+Final exact-head qualification on report commit `aae4d52` passed on November
+19. Both local base roles had 5,704 passes (73 skips, 150 deselections) plus
+lint, formatting and strict typing; optional 3.11/3.12 had 2,584 and 2,582
+passes (two expected 3.12 skips). Hooks passed. [Hosted run 44502509319](https://github.com/jimmy-sim/poker-ai/actions/runs/44502509319)
+passed both full-check and hook jobs. The
+[final check receipt](../results/river-strength/final-checks/manifest.json)
+retains local and official hosted logs, guards and report hash. Next: publish
+and verify this receipt, update PR #97 and the safe handoff, then stop. The
+fixed known-panel direction is positive; the control's failed medium gates,
+one unfavorable paired seed, dependence and lack of fresh validation prevent
+promotion. No new experiment is authorized from this result. Codex assisted;
+human hands-on time not recorded.

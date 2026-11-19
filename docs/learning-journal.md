@@ -8137,3 +8137,18 @@ publish this result, run final checks and stop the experiment. The direction
 is positive only on this fixed known panel; three dependent seeds and no
 fresh case cannot justify global strength or promotion. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 final reproducibility and stop.** The question was whether the
+published known-game conclusion survives all required checks on the exact
+report source. Both local base roles passed 5,704 fast tests, both optional
+roles passed their fixed scopes (2,584 and 2,582 plus two expected skips),
+and lint, formatting, strict typing and hooks passed. [Hosted run 44502509319](https://github.com/jimmy-sim/poker-ai/actions/runs/44502509319)
+passed both Python jobs. The [final receipt](../results/river-strength/final-checks/manifest.json)
+retains raw logs and the 108-row report hash. **Example:** the trained
+`Qh Kh` candidate policy has distinct saved decisions on river `9d` and `9h`
+at the same public history, while the fixed panel's independently audited
+exploitability supports only a known-game descriptive improvement. **Next
+decision:** stop safely after publishing this receipt. The control's
+medium-game gates failed and one paired seed worsened; there is no fresh or
+global admission, no scientific retry and no next experiment. Codex assisted;
+human hands-on time was not recorded.
