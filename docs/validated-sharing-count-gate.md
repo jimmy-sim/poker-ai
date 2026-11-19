@@ -71,3 +71,26 @@ files. A first focused run omitted the launcher environment variable and
 failed its actual-runtime test; rerunning with the pinned variable passed.
 Full source qualification and hosted CI remain pending. No new archived own
 read or complete pair has started.
+
+## Exact-source qualification — November 18
+
+Source commit `182fd7c` passed both clean locked base roles with 5,629
+passed, 72 skipped and 150 deselected each; Ruff, formatting, strict mypy
+on 848 files and clean pre/post source guards passed. Both fixed 72-file
+optional roles passed: 2,535 on Python 3.11 and 2,534 with one expected
+real-runtime skip on Python 3.12. All-files hooks passed, and the full
+installed OpenSpiel Apache-2.0 license matched its pinned 11,358-byte
+SHA-256 before optional checks. Official
+[CI #591](https://github.com/jimmy-sim/poker-ai/actions/runs/44437224485)
+passed both jobs with 5,629 tests each, actual Python 3.11.17/NumPy 2.4.6
+and Python 3.12.15/NumPy 2.5.4, and a whole tested tree identical to
+`182fd7c`. The [31-member source-check archive](../results/validated-sharing-count-gate/source-checks/manifest.json)
+retains the exact local and official hosted bytes, licenses and verifiers.
+Its explicit membership check found no missing, ignored or extra member.
+The first evidence-commit hook rejected two archived operator scripts with
+`.py` names because their historical formatting did not match Ruff. Their
+unchanged bytes are retained as `.py.txt` members; the updated manifest
+and archive verifier pass. This packaging correction changes no qualified
+source, check log or scientific result.
+This qualifies source only. The archive must be committed, pushed and
+GitHub-byte-verified before a fresh reference-free own read.

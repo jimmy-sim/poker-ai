@@ -1,0 +1,12 @@
+import hashlib
+import json
+import sys
+from importlib.metadata import distribution
+from pathlib import Path
+provider=distribution('open-spiel')
+licenses=[file for file in provider.files or () if str(file).endswith('licenses/LICENSE')]
+assert len(licenses)==1
+raw=Path(str(provider.locate_file(licenses[0]))).read_bytes()
+result=dict(python=sys.version.split()[0],license='Apache-2.0',bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),path=str(licenses[0]))
+assert result['bytes']==11358 and result['sha256']=='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+print(json.dumps(result,indent=2))

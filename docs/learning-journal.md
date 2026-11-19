@@ -7731,3 +7731,16 @@ passed. **Next decision:** complete both local base and optional roles and
 hosted source qualification, publish every check member, then collect one
 fresh reference-free own proof. PR #93's failed pair stays failed. Codex
 assisted; human hands-on time was not recorded.
+
+The exact source commit `182fd7c` has now passed two clean base roles
+(5,629 passed/72 skipped/150 deselected each), the optional Python 3.11
+role (2,535 passed), the optional Python 3.12 role (2,534 passed/one
+expected skip), Ruff, formatting, strict mypy and hooks. Official
+[CI #591](https://github.com/jimmy-sim/poker-ai/actions/runs/44437224485)
+passes both jobs on the matching source tree with actual locked runtimes.
+The [31-member source record](../results/validated-sharing-count-gate/source-checks/manifest.json)
+contains only explicitly selected files; its verifier and membership audit
+found no ignored or missing byte. **Next decision:** publish and verify
+every source-check member on GitHub, then collect one reference-free own
+proof under the original cap. No complete pair has run. Codex assisted;
+human hands-on time was not recorded.

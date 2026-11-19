@@ -7367,3 +7367,19 @@ Next: complete source qualification locally and on GitHub,
 publish its exact receipts, then attempt a fresh bounded reference-free own
 proof. No archived read or complete pair has started. Codex-assisted;
 human hands-on time not recorded.
+
+Source commit `182fd7c` passed both clean locked base roles: 5,629 passed,
+72 skipped, 150 deselected each; optional 72-file roles: 2,535 passed on
+Python 3.11 and 2,534 passed/one expected skip on Python 3.12. Ruff,
+formatting, strict mypy on 848 files, all-files hooks, clean guards and
+full pinned OpenSpiel license checks passed. Official
+[CI #591](https://github.com/jimmy-sim/poker-ai/actions/runs/44437224485)
+passed both jobs with 5,629 tests each, actual locked runtimes and a whole
+tree equal to the source commit. The [31-member exact-source archive](../results/validated-sharing-count-gate/source-checks/manifest.json)
+verifies local and hosted logs; explicit membership has no missing, ignored
+or extra files. The first evidence-commit hook rejected two archived operator
+scripts named `.py`; they were renamed `.py.txt` without changing their
+executed bytes, then the manifest and verifier passed. Next: publish and
+byte-verify this archive before the fresh
+reference-free own proof. No archived collection or pair yet.
+Codex-assisted; human hands-on time not recorded.
