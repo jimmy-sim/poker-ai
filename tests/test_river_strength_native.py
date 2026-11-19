@@ -1,7 +1,7 @@
 """Comparison-only wrapper retains all tiny own scalars without solver targets."""
 
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import pytest
 
@@ -10,6 +10,7 @@ from poker_ai.evaluation.river_strength_capture import capture_path
 from poker_ai.evaluation.river_strength_learning import PathSpec
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.solver_validation import river_strength_native as native
+from poker_ai.solver_validation.matched_array_reference import ScalarReference
 
 
 def test_native_wrapper_uses_published_own_rows_and_retains_each(
@@ -30,9 +31,10 @@ def test_native_wrapper_uses_published_own_rows_and_retains_each(
         return {"maximum_error_chips": 0.0}
 
     monkeypatch.setattr(native, "compare", scalar_check)
+    refs = cast(tuple[ScalarReference, ScalarReference], (None, None))
     rows = native.audit_path(
-        scoring, folder, spec, (None, None), Deadline(10), inspected.append
-    )  # type: ignore[arg-type]
+        scoring, folder, spec, refs, Deadline(10), inspected.append
+    )
     assert len(rows) == 3 and inspected == rows
     assert {row["readout"] for row in rows} == {
         "current",
@@ -44,7 +46,7 @@ def test_native_wrapper_uses_published_own_rows_and_retains_each(
             scoring,
             folder,
             PathSpec(1, spec.game, spec.seed, spec.arm),
-            (None, None),
+            refs,
             Deadline(10),
-            inspected.append,  # type: ignore[arg-type]
+            inspected.append,
         )
