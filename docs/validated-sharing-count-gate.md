@@ -130,3 +130,14 @@ changing any captured byte. The raw record must be published and
 GitHub-byte-verified before a report interprets the result. Because all
 original loaders still run, this behavior result cannot establish CPU
 savings or a stronger strategy.
+
+## Data-only result — November 18
+
+After raw evidence was public at `297c4f5` and its three GitHub blobs
+matched local bytes, a [separate report](validated-sharing-count-gate-result.md)
+authenticated source/own/raw bytes and their publication order without
+poker, numerical or reference imports. Ten focused tamper/import tests
+pass; both locked Python runtimes render the same JSON SHA-256
+`b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
+The bounded behavior identity passes, with all original loaders still
+running. Full final local, optional and hosted report checks remain.

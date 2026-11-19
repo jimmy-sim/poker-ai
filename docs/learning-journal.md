@@ -7772,3 +7772,15 @@ runtimes without poker, numerical or reference imports. This is sharing
 behavior, with all original loaders still running; no CPU saving or new
 strategy is established. Codex assisted; human hands-on time was not
 recorded.
+
+The [data-only report](validated-sharing-count-gate-result.md) now
+authenticates the public source, fresh own and compressed pair records and
+their Git publication order. It reproduces the same complete result and
+work identity on both locked Python runtimes with identical JSON SHA-256
+`b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
+Ten focused tests reject changed bytes, a rehashed profile shape, a
+rehashed work counter and publication drift while blocking poker,
+numerical and reference imports. **Next decision:** complete both base,
+both optional and hosted final report checks, retain their logs, then
+close this behavior question. No CPU saving or stronger strategy follows.
+Codex assisted; human hands-on time was not recorded.

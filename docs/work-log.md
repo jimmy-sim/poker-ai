@@ -7407,3 +7407,13 @@ row substitution field and failed; only the verifier changed, then passed.
 Next: publish and byte-verify raw evidence before the data-only report.
 No CPU savings or new strategy claim. Codex-assisted; human hands-on time
 not recorded.
+
+The [data-only report](validated-sharing-count-gate-result.md) now
+authenticates source, own and the published compressed pair plus Git
+publication order. Ten focused tamper/import tests pass in the locked
+Python 3.11 base environment; both locked Python runtimes render identical
+JSON SHA-256 `b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
+Ruff and clean strict mypy on 850 files pass. Next: commit the report,
+complete final base/optional/hosted checks, retain evidence, then close
+the behavior question. No CPU saving or new strategy claim. Codex-assisted;
+human hands-on time not recorded.
