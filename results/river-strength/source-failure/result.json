@@ -1,0 +1,41 @@
+{
+  "blocking_reason": "historical research source integrity checks reject changes to pinned matrix.py and range_protocol.py, including published archive replay and fixture setup",
+  "favorable_retry": false,
+  "local_base": {
+    "base311": {
+      "deselected": 150,
+      "errors": 227,
+      "failed": 53,
+      "passed": 5425,
+      "python": "3.11.17",
+      "skipped": 72
+    },
+    "base312": {
+      "deselected": 150,
+      "errors": 227,
+      "failed": 53,
+      "passed": 5425,
+      "python": "3.12.15",
+      "skipped": 72
+    }
+  },
+  "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+  "passing_checks": [
+    "19 focused river tests (Python 3.11 locked base)",
+    "Ruff lint and format",
+    "strict mypy on both full local base roles"
+  ],
+  "scientific_outcome": "inconclusive; no trained candidate or poker-strength comparison",
+  "source_fingerprint": "d15a1fb4d45b8ea9d43e79d2ebbf92b5070927cf4dbaaf9a4356c3f80fe98d91",
+  "status": "source_qualification_failed",
+  "tested_head": "b6946880e7713e2857fe52434c4ebec7d59acf63",
+  "unrun": [
+    "optional local qualification",
+    "own proof",
+    "36 real profile paths",
+    "compute admission",
+    "10m-node-work training comparison",
+    "native audit",
+    "strength report"
+  ]
+}

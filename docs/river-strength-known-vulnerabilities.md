@@ -96,6 +96,27 @@ These are source-development checks; the locked full local and hosted source
 qualification, own proof, real profile and candidate outcome are still
 pending at this checkpoint.
 
+## Source qualification outcome: stopped
+
+The committed candidate source at `b6946880e7713e2857fe52434c4ebec7d59acf63`
+failed a required source gate before any real river trajectory. Both locked
+base runtimes passed Ruff, format and strict mypy, but each complete fast
+suite reported **5,425 passed, 53 failed, 227 errors, 72 skipped and 150
+deselected**. The [retained source-failure archive](../results/river-strength/source-failure/manifest.json)
+contains both complete logs, earlier launcher and test-typing failures,
+source fingerprint and exact commands. A first failure authenticates an older
+published archive and rejects the changed pinned `matrix.py`; other historical
+source guards and their fixtures fail on the changed source as well. The
+candidate also changed `range_protocol.py`, another historically pinned file.
+The required optional local checks and hosted qualification of this source
+were not passed. No own proof, real 100k profile, forecast admission, 10m
+training, native audit or poker-strength report was run. **Scientific result:
+inconclusive**, because no trained candidate exists for the declared paired
+comparison. This is a failed source-qualification gate, not evidence that
+exact river information improves or harms play. Work stops here under the
+prospective gate; no budget, acceptance criterion or scientific run was
+changed or retried.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

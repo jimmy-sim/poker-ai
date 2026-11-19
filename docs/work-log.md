@@ -7582,3 +7582,17 @@ Python 3.11 tests passed; the full exact-source base/optional/hooks/hosted
 qualification remains pending. No new real profile or learned result has
 been run. Next: complete source qualification and publication before the
 small own proof. Codex-assisted; human hands-on time not recorded.
+
+Exact committed river source `b694688` failed full base qualification on both
+locked Python 3.11.17 and 3.12.15 after Ruff, format and strict mypy passed.
+Each fast suite had 5,425 passed, 53 failed, 227 errors, 72 skipped and 150
+deselected. [Raw retained logs](../results/river-strength/source-failure/manifest.json)
+show historical research source guards rejecting changed pinned modules,
+including `matrix.py`; the earlier local launcher-count and test-typing
+failures are also retained. The required source gate stops this experiment
+before optional qualification, own proof, real profiling, compute forecast,
+training comparison or native audit. Scientific outcome: **inconclusive**;
+no poker-strength claim. Next: publish the failed source and logs to PR #97,
+record hosted CI status, and leave the PR open at a safe milestone. No new
+investigation or budget change. Codex-assisted; human hands-on time not
+recorded.

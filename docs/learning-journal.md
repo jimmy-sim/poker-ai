@@ -7984,3 +7984,18 @@ stage ordering and signed paired reporting. This verifies software behavior,
 not poker strength. **Next decision:** qualify the exact source on both local
 runtimes and hosted CI before any real profile. Codex assisted; human
 hands-on time was not recorded.
+
+**November 18 source-qualification failure.** The exact candidate source
+passed 19 focused software tests and both full-run lint/format/strict mypy
+stages, then failed the required full fast suite on both Python versions:
+each had 5,425 passes, 53 failures, 227 errors, 72 skips and 150
+deselections. A [retained failure log](../results/river-strength/source-failure/manifest.json)
+shows an older published archive refusing the changed pinned `matrix.py`;
+historical source and fixture checks also reject the altered source. **Example:**
+a saved research result can be reproduced only against the exact source bytes
+it named, so a candidate edit to that module invalidates its source guard
+even if the new key's focused test passes. **Next decision:** stop at this
+failed source gate. There is no real river profile, admission or trained
+candidate, so the poker-strength question remains inconclusive. No favorable
+retry or new experiment was started. Codex assisted; human hands-on time was
+not recorded.
