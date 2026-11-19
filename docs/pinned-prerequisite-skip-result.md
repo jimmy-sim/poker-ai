@@ -54,9 +54,24 @@ Poker, numerical and reference imports are blocked while it renders the
 [machine-readable summary](../results/guarded-prerequisite-skip/report/summary.json).
 Python 3.11.17 and 3.12.15 produce byte-identical JSON, SHA-256
 `aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81`.
-The report source and tamper tests are qualified separately from the earlier
-source and pair commits; local and hosted final results are recorded below
-when complete.
+The report source and tamper tests were qualified separately from the earlier
+source and pair commits. On exact report head `4559b42`, both locked local base
+roles passed 5,685 tests, with 73 skips and 150 deselections each; the fixed
+77-file optional scopes passed 2,592 tests on Python 3.11 and 2,590 with two
+expected skips on Python 3.12. Ruff, formatting, strict mypy over 859 files,
+all-files hooks and clean before/after source and runtime guards passed. An
+initial copied local launcher asserted the former 76-file optional count and
+stopped before any tests; its four failure logs are retained. The corrected
+fresh attempt passed without changing the report source.
+
+Official [CI #605](https://github.com/jimmy-sim/poker-ai/actions/runs/44471843556)
+passed both jobs on actual Python 3.11.17/NumPy 2.4.6 and Python 3.12.15/NumPy
+2.5.4, each with 5,685 passed, 73 skipped and 150 deselected. The whole tested
+merge checkout tree equals the exact report source tree. The
+[final check receipt](../results/guarded-prerequisite-skip/final-checks/manifest.json)
+retains the local and official hosted logs, guards, failure receipts, data-only
+exports and verifier. These checks validate the failure report; they do not
+reverse the failed work-identity gate.
 
 From a normal clone with the committed lockfile, run:
 

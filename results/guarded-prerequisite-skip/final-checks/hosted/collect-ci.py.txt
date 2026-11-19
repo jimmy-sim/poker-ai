@@ -1,0 +1,46 @@
+"""Retain official PR #96 source CI metadata and logs after completion."""
+import json
+import subprocess
+from pathlib import Path
+
+repo = 'jimmy-sim/poker-ai'
+run_id = 44471843556
+head = '4559b42666363a96520b0571a76393ba73707d4b'
+folder = Path(__file__).resolve().parent / 'hosted'
+folder.mkdir(exist_ok=False)
+
+def api(path: str) -> bytes:
+    return subprocess.check_output(['gh', 'api', '--allow-escape-sequences', path])
+
+run_bytes = api(f'repos/{repo}/actions/runs/{run_id}')
+(folder/'run.json').write_bytes(run_bytes)
+run = json.loads(run_bytes)
+assert run['id'] == run_id and run['head_sha'] == head
+assert run['event'] == 'pull_request' and run['run_attempt'] == 1
+if run['status'] != 'completed':
+    raise RuntimeError('retain in-progress run; wait for final official conclusion')
+if run['conclusion'] != 'success':
+    raise RuntimeError('retain failed hosted result; investigate before proof')
+
+jobs_bytes = api(f'repos/{repo}/actions/runs/{run_id}/jobs?per_page=100')
+(folder/'jobs.json').write_bytes(jobs_bytes)
+jobs = json.loads(jobs_bytes)['jobs']
+assert {j['name'] for j in jobs} == {'Python 3.11', 'Python 3.12'}
+for job in jobs:
+    assert job['status'] == 'completed' and job['conclusion'] == 'success'
+    assert job['head_sha'] == head and job['run_id'] == run_id
+    assert job['run_attempt'] == 1
+    minor = '311' if job['name'] == 'Python 3.11' else '312'
+    (folder/f'python{minor}.log').write_bytes(api(f'repos/{repo}/actions/jobs/{job["id"]}/logs'))
+
+pr_bytes = api(f'repos/{repo}/pulls/96')
+(folder/'pr.json').write_bytes(pr_bytes)
+pr = json.loads(pr_bytes)
+assert pr['head']['sha'] == head and pr['base']['sha'] == '2571c5351e6c0bb1688b87bc863fb2cfb44c1e7d'
+merge = pr['merge_commit_sha']
+commit_bytes = api(f'repos/{repo}/git/commits/{merge}')
+(folder/'checkout-source.json').write_bytes(commit_bytes)
+commit = json.loads(commit_bytes)
+assert commit['sha'] == merge and head in [p['sha'] for p in commit['parents']]
+assert commit['tree']['sha'] == 'd271967e50abb0734fe32cf4e1aaf3ddd8a7e020'
+print(json.dumps({'status':'official_hosted_success_logs_retained','run_id':run_id,'head':head,'merge':merge,'tree':commit['tree']['sha'],'jobs':{j['name']:j['id'] for j in jobs}},indent=2))

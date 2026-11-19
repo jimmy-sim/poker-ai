@@ -1,0 +1,50 @@
+"""Check all exact report-head local role, hook and export receipts."""
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+root = Path.cwd()
+folder = Path(__file__).resolve().parent
+head = '4559b42666363a96520b0571a76393ba73707d4b'
+fingerprint = 'b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d'
+lock = 'db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'
+report_sha = 'aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81'
+assert subprocess.run(['git', 'merge-base', '--is-ancestor', head, 'HEAD'], cwd=root).returncode == 0
+assert subprocess.check_output(['git', 'status', '--porcelain'], cwd=root, text=True) == ''
+assert hashlib.sha256((root / 'uv.lock').read_bytes()).hexdigest() == lock
+suites = json.loads((folder / 'optional-suites.json').read_bytes())
+assert len(suites) == len(set(suites)) == 77
+assert all((root / path).is_file() for path in suites)
+for minor, version, numpy in [('311', '3.11.17', '2.4.6'), ('312', '3.12.15', '2.5.4')]:
+    for role in ('base', 'optional'):
+        name = role + minor
+        log = (folder / f'{name}.log').read_text()
+        receipt = json.loads((folder / f'{name}.json').read_bytes())
+        assert receipt['status'] == 'passed' and receipt['role'] == name
+        assert receipt['head'] == head and receipt['source_fingerprint'] == fingerprint
+        assert (receipt['python'], receipt['numpy'], receipt['lock_sha256']) == (version, numpy, lock)
+        assert receipt['suite_count'] == (77 if role == 'optional' else None)
+        guards = [json.loads(line) for line in log.splitlines() if line.startswith('{"head":')]
+        assert len(guards) == 2
+        for stage, guard in zip(('pre', 'post'), guards, strict=True):
+            assert guard == dict(head=head, python=version, numpy=numpy,
+                                 source_fingerprint=fingerprint, source_files=458,
+                                 lock_sha256=lock, dirty=False, snapshot_files=486)
+            assert json.loads((folder / f'{name}-{stage}.json').read_bytes()) == guard
+        if role == 'base':
+            assert 'All checks passed!' in log and '1030 files already formatted' in log
+            assert 'Success: no issues found in 859 source files' in log
+            assert re.search(r'5685 passed, 73 skipped, 150 deselected in [0-9.]+s', log)
+        else:
+            assert ('2592 passed in ' if minor == '311' else '2590 passed, 2 skipped in ') in log
+    raw = (folder / f'report{minor}.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == report_sha
+    assert raw == (root / 'results/guarded-prerequisite-skip/report/summary.json').read_bytes()
+assert (folder / 'report311.json').read_bytes() == (folder / 'report312.json').read_bytes()
+assert (folder / 'hooks.exit').read_text().strip() == '0'
+assert (folder / 'hooks.log').read_text().count('Passed') == 2
+for name in ('scripts/report_guarded_skip_failure.py', 'tests/test_guarded_skip_failure_report.py'):
+    assert subprocess.check_output(['git', 'show', f'{head}:{name}'], cwd=root) == (root / name).read_bytes()
+print('four exact report-head local roles, hooks, 77-suite scope and identical data-only exports verified')

@@ -7542,3 +7542,17 @@ environment ran the suite successfully. Next: full base/optional/hosted
 report qualification, then close this failed optimization and publish a
 separate prospective bounded river-strength contract. No pair retry or
 saving claim. Codex-assisted; human hands-on time not recorded.
+
+The exact `4559b42` failure-report source completed final qualification: both
+locked local base roles passed 5,685 tests with 73 skips and 150 deselections;
+the fixed 77-file optional scopes passed 2,592 on Python 3.11 and 2,590 with
+two expected skips on Python 3.12. Ruff, formatting, strict mypy, hooks,
+clean source/runtime guards and identical data-only exports passed. Official
+[CI #605](https://github.com/jimmy-sim/poker-ai/actions/runs/44471843556)
+passed both actual runtimes with the same base counts and exact tested tree.
+The [42-member final receipt](../results/guarded-prerequisite-skip/final-checks/manifest.json)
+retains every qualification log and the four earlier pretest launcher assertion
+failures. Next: publish/verify the receipt and history-preserving merge, then
+prospectively register the separate bounded river-strength question. The one
+failed work-identity pair is retained without retry or saving claim.
+Codex-assisted; human hands-on time not recorded.

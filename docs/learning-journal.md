@@ -7932,3 +7932,19 @@ complete both full base, both optional and hosted final report checks,
 then close this rejected optimization and frame the separate prospective
 river-strength question. No favorable pair retry or validation speed claim.
 Codex assisted; human hands-on time was not recorded.
+
+The exact report head `4559b42` completed its final qualification. Both
+locked local base roles passed 5,685 tests with 73 skips and 150 deselections;
+the 77-file optional scopes passed 2,592 on Python 3.11 and 2,590 with two
+expected skips on Python 3.12. Ruff, formatting, strict mypy, hooks, source
+guards and identical data-only exports passed. Official
+[CI #605](https://github.com/jimmy-sim/poker-ai/actions/runs/44471843556)
+passed both actual runtimes with the same base counts and an exact source tree.
+**Example:** the first local launcher still expected 76 optional files after
+the new report test made 77; all four launchers stopped before tests. Their
+failure logs remain in the [final check receipt](../results/guarded-prerequisite-skip/final-checks/manifest.json),
+alongside the corrected successful attempt. **Next decision:** close the
+guarded-skip study as a failed work-identity result and register a separate
+bounded river-strength learning test before implementation or measurement.
+The single pair is not rerun, and no CPU saving or stronger agent is claimed.
+Codex assisted; human hands-on time was not recorded.
