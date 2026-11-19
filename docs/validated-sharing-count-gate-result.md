@@ -77,7 +77,17 @@ focused tests cover blocked imports, changed compressed bytes, changed
 profile shape and work identity even after matching archive hashes, and
 publication drift. Both locked Python runtimes render byte-identical JSON
 SHA-256 `b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
-Full final local, optional and hosted checks remain pending.
+The [final exact-head check record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+retains 18 hashed files and a standalone verifier. Both locked base roles
+passed 5,639 tests, 72 skips and 150 deselections, Ruff, format and strict
+mypy on 850 files; Python 3.11 and 3.12 optional roles passed 2,545 and
+2,544 tests respectively, with one expected Python 3.12 skip, across 73
+fixed suites each. Clean pre/post guards and all-files hooks passed.
+[Hosted CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+passed both jobs with the same base counts on the actual locked runtimes.
+Its tested merge checkout tree `a87f017a2020718f9f408e71b09e17a44b3cd377`
+equals report head `9f40bd4`'s whole tree. These checks qualify the report
+commit; the final evidence commit needs its own hosted CI before merge.
 
 The old missing-Numba and incomplete-publication pairs remain failed.
 The 912.54/900 forecast, 2.390%/1% known-game accuracy and rejected

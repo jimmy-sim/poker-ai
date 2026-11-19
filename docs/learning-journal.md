@@ -7784,3 +7784,13 @@ numerical and reference imports. **Next decision:** complete both base,
 both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
+
+The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+now preserves four clean local roles and both official hosted jobs for the
+same report tree. Both base roles passed 5,639 fast tests; optional Python
+3.11 passed 2,545 and Python 3.12 passed 2,544 with one expected skip.
+The complete [CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+tested the identical tree and passed both jobs. **Next decision:** publish
+this receipt, require green CI on its final commit, then close the bounded
+behavior question. The one observed pair still supports no CPU saving or
+new strategy. Codex assisted; human hands-on time was not recorded.

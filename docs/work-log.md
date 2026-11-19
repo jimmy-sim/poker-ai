@@ -7417,3 +7417,13 @@ Ruff and clean strict mypy on 850 files pass. Next: commit the report,
 complete final base/optional/hosted checks, retain evidence, then close
 the behavior question. No CPU saving or new strategy claim. Codex-assisted;
 human hands-on time not recorded.
+
+The [18-member final check record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+verifies exact report head `9f40bd4`: two clean base roles each passed
+5,639/72 skipped/150 deselected, optional roles passed 2,545 and 2,544
+with one expected skip, Ruff, formatting, strict mypy on 850 files and
+all-files hooks. Official [CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+passed both jobs on the actual locked runtimes and a whole merge tree
+identical to the report head. Next: publish this receipt, check CI on the
+final evidence commit, then close this behavior question. No savings or
+strategy claim. Codex-assisted; human hands-on time not recorded.

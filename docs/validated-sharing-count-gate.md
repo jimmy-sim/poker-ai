@@ -140,4 +140,9 @@ poker, numerical or reference imports. Ten focused tamper/import tests
 pass; both locked Python runtimes render the same JSON SHA-256
 `b7eda7fc00ecef6e3176da8c0d2c9bf7589ad1897332bf5a4284a936fe82819d`.
 The bounded behavior identity passes, with all original loaders still
-running. Full final local, optional and hosted report checks remain.
+running. The [final check record](../results/validated-sharing-count-gate/final-checks/manifest.json)
+verifies both clean base roles (5,639 passed/72 skipped/150 deselected),
+both 73-suite optional roles (2,545 passed; 2,544 passed/one expected skip),
+all-files hooks, strict mypy on 850 files and [CI #595](https://github.com/jimmy-sim/poker-ai/actions/runs/44447765358)
+on the exact report tree. The evidence commit's own hosted CI remains the
+last merge gate.
