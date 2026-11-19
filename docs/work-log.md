@@ -7613,3 +7613,18 @@ move. Next: representative historical guards and complete
 new exact-source local/optional/hosted qualification before any real profile.
 No scientific run has been retried. Codex-assisted; human hands-on time not
 recorded.
+
+Before real measurements on November 19, exact source `147e624` passed four
+locked local roles: base Python 3.11 and 3.12 each had 5,704 passed, 73 skipped
+and 150 deselected, with lint, format and strict mypy passing; optional 3.11
+had 2,584 passed, and optional 3.12 had 2,582 passed and two expected skips.
+Hooks passed. Hosted run [#44492928520](https://github.com/jimmy-sim/poker-ai/actions/runs/44492928520)
+was still in progress at the last check. A premeasurement review then found
+that the report omitted saved whole-path time and counted three rather than
+four persistent float64 trainer tables. The source now binds both to the own
+record, checks zero recall and native scalar tolerance explicitly, and keeps
+data-only reporting independent of solver imports. Nineteen focused tests
+passed on this correction. The earlier local pass remains a historical
+intermediate check; the corrected exact source requires fresh complete
+qualification before proof/profile. No real scientific run started. Codex
+assisted; human hands-on time not recorded.

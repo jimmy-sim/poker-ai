@@ -6,16 +6,53 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from river_strength.forecast import forecast
-from river_strength.learning import CONFIG, contract
-
 ORIGINAL_PROTOCOL_COMMIT = "492e419"
 PROTOCOL_COMMIT = "e1571df"
+ARMS = ("texture_range_q8_b8", "q8_turn_exact_river")
+GAMES = ("dev_low_oop", "dev_medium_oop")
+SEEDS = (20261301, 20261302, 20261303)
+LABELS = (100_000, 1_000_000, 10_000_000)
+READOUTS = ("current", "uniform_average", "linear_average")
+CONFIG = "configs/river-strength-known-vulnerabilities.json"
+CONFIG_SHA256 = "af538bc3d73441c17672998cd3954b25d6eda3dd645407214d5ef18e3d695bff"
 ENTRYPOINT = "scripts/study_river_strength.py"
 NATIVE_ENTRYPOINT = "scripts/audit_river_strength.py"
 REPORT_ENTRYPOINT = "scripts/report_river_strength.py"
 PROFILE = Path("results/river-strength/profile")
 ADMISSION = Path("results/river-strength/admission")
+
+
+def config_grid(config: dict[str, Any]) -> None:
+    """Reject any departure from the published game, seed or readout grid."""
+    expected = [(g, s, a) for g in GAMES for s in SEEDS for a in ARMS]
+    actual = [
+        (game, seed, arm)
+        for game in config["games"]
+        for seed in config["seeds"]
+        for arm in config["arms"]
+    ]
+    if (
+        actual != expected
+        or config["training"]["node_work_labels"] != list(LABELS)
+        or config["training"]["readouts"] != list(READOUTS)
+        or config["training"]["paths"] != len(expected)
+        or config["training"]["logical_profiles"]
+        != len(expected) * len(LABELS) * len(READOUTS)
+    ):
+        raise ValueError("prospective river-strength grid changed")
+
+
+def contract(root: Path) -> dict[str, Any]:
+    """Check published protocol and all pinned inputs without poker imports."""
+    raw = (root / CONFIG).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != CONFIG_SHA256:
+        raise ArithmeticError("prospective river-strength contract changed")
+    config: dict[str, Any] = json.loads(raw)
+    config_grid(config)
+    for name, expected in config["input_sha256"].items():
+        if hashlib.sha256((root / name).read_bytes()).hexdigest() != expected:
+            raise ArithmeticError(f"pinned river-strength input changed: {name}")
+    return config
 
 
 def source_files(root: Path) -> dict[str, str]:
@@ -129,6 +166,8 @@ def require_archive(
 
 def require_admission(root: Path, fingerprint: str) -> dict[str, Any]:
     """Recompute the public profile forecast before permitting long learning."""
+    from river_strength.forecast import forecast
+
     require_archive(root, root / PROFILE, "profile_published", fingerprint)
     require_archive(root, root / ADMISSION, "admitted", fingerprint)
     profile: dict[str, Any] = json.loads((root / PROFILE / "result.json").read_bytes())

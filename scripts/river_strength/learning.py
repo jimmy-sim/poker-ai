@@ -5,12 +5,9 @@ signed/linear IID B4 updater, exact initialization and node-work crossings.
 The callback receives snapshots only; it may not change trainer state or RNG.
 """
 
-import hashlib
-import json
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
 from numpy.random import PCG64, Generator
 
@@ -26,18 +23,37 @@ from poker_ai.postflop.range_protocol import CANDIDATE, build_representation_con
 from poker_ai.postflop.river_distinctions import river_mask
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.postflop.tree import SpotTree
+from river_strength.gate import (
+    ARMS,
+    CONFIG_SHA256,
+    GAMES,
+    LABELS,
+    READOUTS,
+    SEEDS,
+    config_grid,
+    contract,
+)
 from river_strength.representation import (
     RIVER_CANDIDATE,
     build_river_candidate,
 )
 
-ARMS = (CANDIDATE, RIVER_CANDIDATE)
-GAMES = ("dev_low_oop", "dev_medium_oop")
-SEEDS = (20261301, 20261302, 20261303)
-LABELS = (100_000, 1_000_000, 10_000_000)
-READOUTS = ("current", "uniform_average", "linear_average")
-CONFIG = "configs/river-strength-known-vulnerabilities.json"
-CONFIG_SHA256 = "af538bc3d73441c17672998cd3954b25d6eda3dd645407214d5ef18e3d695bff"
+assert ARMS == (CANDIDATE, RIVER_CANDIDATE)
+__all__ = [
+    "ARMS",
+    "CONFIG_SHA256",
+    "GAMES",
+    "LABELS",
+    "READOUTS",
+    "SEEDS",
+    "config_grid",
+    "contract",
+    "PathSpec",
+    "paths",
+    "context",
+    "readouts",
+    "train",
+]
 Capture = Callable[
     [BatchPoint, ReducedDispatchBatchTrainer, dict[str, FloatArray]], None
 ]
@@ -120,36 +136,3 @@ def train(
 
     observe(solver, labels, at, deadline)
     return solver
-
-
-def config_grid(config: dict[str, Any]) -> None:
-    """Reject a changed prospective grid before source-bound work starts."""
-    expected = [(p.game, p.seed, p.arm) for p in paths()]
-    actual = [
-        (game, seed, arm)
-        for game in config["games"]
-        for seed in config["seeds"]
-        for arm in config["arms"]
-    ]
-    if (
-        actual != expected
-        or config["training"]["node_work_labels"] != list(LABELS)
-        or config["training"]["readouts"] != list(READOUTS)
-        or config["training"]["paths"] != len(expected)
-        or config["training"]["logical_profiles"]
-        != len(expected) * len(LABELS) * len(READOUTS)
-    ):
-        raise ValueError("prospective river-strength grid changed")
-
-
-def contract(root: Path) -> dict[str, Any]:
-    """Require the public prospective bytes and every pinned finite input."""
-    raw = (root / CONFIG).read_bytes()
-    if hashlib.sha256(raw).hexdigest() != CONFIG_SHA256:
-        raise ArithmeticError("prospective river-strength contract changed")
-    config: dict[str, Any] = json.loads(raw)
-    config_grid(config)
-    for name, expected in config["input_sha256"].items():
-        if hashlib.sha256((root / name).read_bytes()).hexdigest() != expected:
-            raise ArithmeticError(f"pinned river-strength input changed: {name}")
-    return config

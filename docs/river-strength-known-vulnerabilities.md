@@ -143,6 +143,17 @@ this is a software integration repair, not a new scientific protocol or a
 retry of a scientific outcome. No real measurement has yet occurred. Source
 qualification and publication must pass again before the own proof.
 
+Before measurement, the data-only report was corrected to read each complete
+path's construction-through-replay wall time from the own worker record and
+count all four persistent float64 trainer tables (regret, linear strategy,
+uniform and warm mass). It now verifies the saved zero structural-recall count
+and finite 1e-9-chip native scalar gate explicitly. The report imports only
+standard-library gate code, leaving the comparison-only reference outside the
+reporting process. These changes alter the experiment source fingerprint, so
+the earlier passing local checks on `147e624` are retained as an intermediate
+checkpoint and cannot qualify the corrected source. The frozen scientific
+contract, inputs, seeds, budgets, tolerances and gates are unchanged.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

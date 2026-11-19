@@ -117,12 +117,13 @@ def audit_all(
     root: Path, own: Path, output: Path, deadline: Deadline
 ) -> dict[str, Any]:
     """Retain every completed scalar row and a failure receipt on interruption."""
-    runtime = installed_reference()
     output.mkdir(parents=True, exist_ok=False)
     events = output / "events.jsonl"
     results: list[dict[str, Any]] = []
+    runtime: dict[str, Any] | None = None
     started = time.perf_counter()
     try:
+        runtime = installed_reference()
         for spec in paths():
             deadline.check()
             scoring = context(root, spec.game, spec.arm)

@@ -9,7 +9,7 @@ from typing import Any
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from river_strength.learning import LABELS, READOUTS, paths  # noqa: E402
+from river_strength.gate import LABELS, READOUTS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
@@ -24,7 +24,7 @@ def fixture(root: Path) -> tuple[Path, Path]:
     own, native = root / "own", root / "native"
     native.mkdir()
     audit: list[dict[str, Any]] = []
-    for spec in paths():
+    for spec in reporter.report_paths():
         captures = []
         for label in LABELS:
             for readout in READOUTS:
@@ -84,10 +84,48 @@ def fixture(root: Path) -> tuple[Path, Path]:
                         index=spec.index, game=spec.game, seed=spec.seed, arm=spec.arm
                     ),
                     labels=LABELS,
+                    recall_violations=0,
                     captures=captures,
                 )
             )
         )
+    own_record = dict(
+        status="completed",
+        stage="study",
+        worker_count=3,
+        assignments=[list(range(i, 12, 3)) for i in range(3)],
+        workers=[
+            dict(
+                exitcode=0,
+                messages=[
+                    dict(
+                        kind="done",
+                        summary=dict(
+                            summaries=[
+                                dict(
+                                    index=s.index,
+                                    repeat=0,
+                                    path=dict(
+                                        index=s.index,
+                                        game=s.game,
+                                        seed=s.seed,
+                                        arm=s.arm,
+                                    ),
+                                    captures=9,
+                                    final_work=10_000_004,
+                                    whole_path_seconds=float(s.index + 1),
+                                )
+                                for s in reporter.report_paths()
+                                if s.index % 3 == slot
+                            ]
+                        ),
+                    )
+                ],
+            )
+            for slot in range(3)
+        ],
+    )
+    (own / "result.json").write_text(json.dumps(own_record))
     (native / "result.json").write_text(
         json.dumps(dict(status="completed", rows=audit))
     )
@@ -105,7 +143,10 @@ def test_complete_report_retains_all_profiles_and_signed_contrast(
     assert [r["candidate_minus_control_chips"] for r in result["primary_paired"]] == (
         pytest.approx([-0.5] * 3)
     )
-    assert all(r["table_bytes"] == 7 * 3 * 3 * 8 for r in result["rows"])
+    assert all(r["table_bytes"] == 7 * 3 * 4 * 8 for r in result["rows"])
+    assert all(r["whole_path_seconds"] > 0 for r in result["rows"])
+    assert result["zero_recall_violations_pass"]
+    assert result["native_scalar_gate_pass"]
     assert all(
         r["initial_only_river_rows"] == 2
         for r in result["rows"]

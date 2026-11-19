@@ -7803,6 +7803,21 @@ both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
 
+**November 19 premeasurement report review.** The question was whether every
+predeclared resource and correctness metric could be reproduced from raw own
+records. A complete path's wall time was saved by the worker but omitted from
+the final table; table cost counted only three of four persistent float64
+arrays. **Example:** seven rows with width three occupy `7*3*4*8=672` bytes
+across regret, linear strategy, uniform and warm tables. The corrected report
+reads the twelve saved path times, checks zero structural-recall violations
+and a finite 1e-9-chip native scalar bound, and imports no learner or solver.
+Nineteen focused locked Python 3.11 tests passed; the exact corrected source
+still needs full local, optional and hosted qualification. The earlier source
+`147e624` had passed all four local roles, but those checks do not qualify new
+bytes. **Next decision:** requalify and publish the exact correction before
+the own proof. This is software validation, not poker-strength evidence.
+Codex assisted; human hands-on time was not recorded.
+
 The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
 now preserves four clean local roles and both official hosted jobs for the
 same report tree. Both base roles passed 5,639 fast tests; optional Python

@@ -4,27 +4,78 @@ import argparse
 import json
 import math
 import statistics
+from dataclasses import dataclass
+from itertools import product
 from pathlib import Path
 from typing import Any
 
 from river_strength.gate import (
-    clean_revision,
-    require_archive,
-    source_fingerprint,
-)
-from river_strength.learning import (
     ARMS,
     GAMES,
     LABELS,
     READOUTS,
     SEEDS,
+    clean_revision,
     contract,
-    paths,
+    require_archive,
+    source_fingerprint,
 )
 
 SOURCE = Path("results/river-strength/source-checks")
 OWN = Path("results/river-strength/own")
 NATIVE = Path("results/river-strength/native")
+
+
+@dataclass(frozen=True)
+class ReportPath:
+    index: int
+    game: str
+    seed: int
+    arm: str
+
+
+def report_paths() -> tuple[ReportPath, ...]:
+    return tuple(
+        ReportPath(index, game, seed, arm)
+        for index, (game, seed, arm) in enumerate(product(GAMES, SEEDS, ARMS))
+    )
+
+
+def path_times(own: Path) -> dict[int, float]:
+    """Bind the twelve complete construction-through-replay path timings."""
+    record = json.loads((own / "result.json").read_bytes())
+    if (
+        record.get("status") != "completed"
+        or record.get("stage") != "study"
+        or record.get("worker_count") != 3
+        or record.get("assignments") != [list(range(i, 12, 3)) for i in range(3)]
+    ):
+        raise ArithmeticError("complete fixed own study record required")
+    rows = []
+    for worker in record["workers"]:
+        done = [message for message in worker["messages"] if message["kind"] == "done"]
+        if len(done) != 1 or worker["exitcode"] != 0:
+            raise ArithmeticError("own study worker incomplete")
+        rows.extend(done[0]["summary"]["summaries"])
+    if len(rows) != 12 or {row["index"] for row in rows} != set(range(12)):
+        raise ArithmeticError("own path timing grid incomplete")
+    result = {}
+    for row in rows:
+        spec = report_paths()[row["index"]]
+        seconds = row["whole_path_seconds"]
+        if (
+            row["repeat"] != 0
+            or row["path"]
+            != dict(index=spec.index, game=spec.game, seed=spec.seed, arm=spec.arm)
+            or row["captures"] != 9
+            or row["final_work"] < LABELS[-1]
+            or type(seconds) not in (int, float)
+            or not math.isfinite(seconds)
+            or seconds <= 0
+        ):
+            raise ArithmeticError("own path timing or identity changed")
+        result[spec.index] = float(seconds)
+    return result
 
 
 def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
@@ -38,8 +89,9 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
     }
     if len(by_audit) != 108:
         raise ArithmeticError("duplicate independent scalar row")
+    seconds_by_path = path_times(own)
     result: list[dict[str, Any]] = []
-    for spec in paths():
+    for spec in report_paths():
         summary = json.loads(
             (own / "study" / f"path{spec.index:02d}" / "summary.json").read_bytes()
         )
@@ -49,6 +101,7 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
             != dict(index=spec.index, game=spec.game, seed=spec.seed, arm=spec.arm)
             or summary["labels"] != list(LABELS)
             or len(summary["captures"]) != 9
+            or summary.get("recall_violations") != 0
         ):
             raise ArithmeticError("own fixed path inventory changed")
         pot = json.loads(
@@ -62,6 +115,7 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
             native_row = by_audit[(spec.index, label, readout)]
             if (
                 native_row["own_policy_sha256"] != row["receipt"]["policy_sha256"]
+                or not math.isfinite(native_row["native"]["maximum_error_chips"])
                 or native_row["native"]["maximum_error_chips"] > 1e-9
             ):
                 raise ArithmeticError("independent scalar binding/tolerance changed")
@@ -82,6 +136,7 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
                     work_label=label,
                     readout=readout,
                     total_node_work=meta["total_work"],
+                    whole_path_seconds=seconds_by_path[spec.index],
                     overshoot=meta["overshoot"],
                     exploitability_chips=metrics["exact_exploitability_chips"],
                     exploitability_fraction_initial_pot=metrics[
@@ -98,7 +153,7 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
                     initial_only_river_rows=initial_only,
                     information_rows=row["information_rows"],
                     tree_nodes=row["tree_nodes"],
-                    table_bytes=row["information_rows"] * row["padded_width"] * 3 * 8,
+                    table_bytes=row["information_rows"] * row["padded_width"] * 4 * 8,
                     policy_sha256=row["receipt"]["policy_sha256"],
                     maximum_native_error_chips=native_row["native"][
                         "maximum_error_chips"
@@ -187,6 +242,9 @@ def report(root: Path, own: Path, native: Path) -> dict[str, Any]:
         if median > 0
         else "tie",
         native_maximum_error_chips=max(r["maximum_native_error_chips"] for r in result),
+        zero_recall_violations_pass=True,
+        native_scalar_tolerance_chips=1e-9,
+        native_scalar_gate_pass=True,
     )
 
 

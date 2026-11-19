@@ -17,6 +17,7 @@ from poker_ai.postflop.controlled_training import Weight
 from poker_ai.postflop.frozen_batches import BatchPoint
 from poker_ai.postflop.learning_artifacts import sha
 from poker_ai.postflop.learning_training import score_data
+from poker_ai.postflop.matrix import MatrixTree, recall_violations
 from poker_ai.postflop.parallel_profile import same
 from poker_ai.postflop.range_reply import compare
 from poker_ai.postflop.river_study import Deadline
@@ -68,6 +69,9 @@ def capture_path(
     first = np.unique(scoring.exact_to_partition, return_index=True)[1]
     river = (scoring.river_masks[0] | scoring.river_masks[1])[first]
     try:
+        violations = recall_violations(tree) if isinstance(tree, MatrixTree) else 0
+        if violations:
+            raise ArithmeticError("river path violates abstract recall")
 
         def at(
             point: BatchPoint,
@@ -151,6 +155,7 @@ def capture_path(
             labels=list(labels),
             final_work=solver.nodes_visited,
             final_iteration=solver.iteration,
+            recall_violations=0,
             warm=warm,
             captures=result,
         )
@@ -170,10 +175,13 @@ def replay_path(scoring: ScoringContext, folder: Path) -> dict[str, Any]:
     summary: dict[str, Any] = json.loads((folder / "summary.json").read_bytes())
     if summary["status"] != "completed":
         raise ArithmeticError("incomplete path cannot enter complete report")
+    tree = scoring.partition
+    violations = recall_violations(tree) if isinstance(tree, MatrixTree) else 0
+    if summary.get("recall_violations") != 0 or violations:
+        raise ArithmeticError("river path abstract recall changed")
     rows = summary["captures"]
     if len(rows) != len(summary["labels"]) * len(READOUTS):
         raise ArithmeticError("missing fixed readout")
-    tree = scoring.partition
     events = [
         json.loads(line) for line in (folder / "events.jsonl").read_text().splitlines()
     ]
