@@ -1,0 +1,61 @@
+{
+  "status": "failed_exact_work_identity",
+  "source_manifest_sha256": "0d78a1d41db1b2dd953a1d6c0b06217bbeaa3e9709f7c1813a76435df887f62d",
+  "own_manifest_sha256": "b2c442fa5f00509b4df029001597f9b2748483d358f2e032299ee1f71465cb0d",
+  "raw_pair_manifest_sha256": "e7ffecb52f588924af29d58c362f3a04ccb5b4627052828bec73956d4d82bc4a",
+  "publication": {
+    "source_archive_complete_at_pair_time": true,
+    "fresh_own_proof_published_before_reference": true,
+    "raw_pair_published_before_report": true,
+    "pair_admissible": false
+  },
+  "complete_pair": {
+    "order": [
+      "ordinary",
+      "guarded_skip"
+    ],
+    "ordinary_child_seconds": 557.2062772910003,
+    "guarded_child_seconds": 602.2506360419998,
+    "pair_seconds": 1163.7331979580003,
+    "child_cap_seconds": 900,
+    "pair_cap_seconds": 1800,
+    "archive_roots_each": 2,
+    "ordinary_original_loads": 14,
+    "guarded_original_loads": 2,
+    "guarded_returns": 12,
+    "complete_reads_each": 3,
+    "reference_workers_each": 3,
+    "profile_count": 432,
+    "fixed_condition_count": 1152,
+    "predecessor_identity_sha256": "ccd8e493a22a04dd0514c180d234b3ee4b62df68531eb1ddda516ea7175a7185",
+    "guarded_identity_sha256": "c8027ef54f60c40b244e8b278e7b8fb186f15f8d4c46894c139cbd28cc3b74b8",
+    "context_identity_sha256": "4a0aca0e735ec7fe6e458f599eaeed2806c61a66e83ee026dc8b7f0eb59e899c",
+    "scientific_fields_identical_except_work": true,
+    "exact_result_and_work_identity": false,
+    "work_counter_difference": {
+      "normalization.reduced_evaluations": [
+        918104,
+        726200
+      ],
+      "normalization.requests": [
+        918104,
+        726200
+      ],
+      "validation_cache.hits": [
+        8290,
+        8194
+      ],
+      "validation_cache.requests": [
+        8316,
+        8220
+      ]
+    },
+    "reference_output_used_in_training": false
+  },
+  "limits": {
+    "one_ordered_pair_only": true,
+    "no_favorable_retry": true,
+    "cpu_savings_established": false,
+    "new_strategy_or_training_admitted": false
+  }
+}

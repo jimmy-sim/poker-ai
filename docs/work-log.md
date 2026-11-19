@@ -7445,3 +7445,114 @@ pair, solver construction, training or saving claim. Next: review this
 contract, pass hosted docs checks, then decide whether a separately
 preregistered optimizer is safe and useful. Codex-assisted; human
 hands-on time not recorded.
+
+### November 18: guarded skip protocol published before source
+
+The [prospective issue #4 contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6999526861)
+and [protocol](pinned-prerequisite-skip.md) fix a scoped guard and unchanged
+complete result/work gate before implementation or new collection. One
+original full load per root, six later guarded returns, exact root/pins/
+source/donor checks and restoration are required. Both original caps and
+seeds remain; any failed or partial gate stops without a favorable retry.
+The first step is synthetic software only, then full exact-source local,
+optional and hosted qualification before an archived own proof. No new
+runtime or saving claim. Codex-assisted; human hands-on time not recorded.
+
+The guarded-skip source step adds a 486-path closed snapshot from 14 pinned
+files, 458 current scientific source files, archived historical source
+maps and four new operators; eleven historical-only paths would otherwise
+be missed. One original
+loader per archive root is retained in the wrapper, with six later guarded
+returns, exact alias restoration and failure checks. Own-proof, pair and
+optional preflight adapters retain the original caps and public evidence
+gates. Local focused checks pass on Python 3.11.17 and 3.12.15: 35 passed,
+one expected skip each; Ruff lint/format and strict mypy on seven touched
+source/test files pass. Initial import-order/format and test-typing failures
+were corrected before qualification. Next: commit all related source/tests/
+docs, run full clean local and hosted source checks, and publish the exact
+source archive before any archived read. No pair or savings claim.
+Codex-assisted; human hands-on time not recorded.
+
+### November 18: guarded skip exact-source qualification
+
+Source `7fb8f8a` passed clean base roles on both locked runtimes: 5,674
+passed/73 skipped/150 deselected each, including Ruff, formatting and
+strict mypy. Fixed 76-file optional suites passed 2,581 on Python 3.11 and
+2,579 with two expected skips on Python 3.12. Hooks, both installed
+OpenSpiel Apache-2.0 license hashes, pre/post clean guards and identical
+486-path snapshots passed. The first complete local logs were lost when a
+Mac restart cleared `/private/tmp`; the same unchanged source was fully
+requalified in persistent ignored `results/runs/guarded-skip-requalification-20261118/`.
+No partial dots are counted. Official [CI #601](https://github.com/jimmy-sim/poker-ai/actions/runs/44461179593)
+passed both jobs with actual locked runtimes and 5,674/73/150 counts;
+the tested merge checkout has the exact source tree. The
+[35-member source-check archive](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+now holds the durable local cohort, official hosted logs, byte inventories
+and verifiers. Next: commit, publish and GitHub-byte-verify all members
+before a fresh reference-free own proof. No archived read, pair, training
+or saving claim yet. Codex-assisted; human hands-on time not recorded.
+
+The source archive commit `316bfb3` passes its 35-member in-repo verifier;
+GitHub's PR tree contains the manifest and all 35 listed bytes at matching
+blob hashes/sizes. At clean `316bfb3`, one fresh reference-free own read
+completed under the original 180-second enclosing cap: child 97.72 seconds,
+outer 100.75 seconds. Seven consumer sites retained the fixed order: one
+original loader, six guarded returns. The donor witness stayed unchanged
+after callers and the archive root; 480 saved rows replayed with zero chip
+and unitless error, and no reference constructor or training ran. The
+[three-member own record](../results/guarded-prerequisite-skip/own/manifest.json)
+binds the exact child/outer/log bytes. Next: publish and GitHub-byte-verify
+the own record before the one fixed complete ordinary→guarded-skip pair.
+This saved read is not a CPU-saving or strength claim. Codex-assisted;
+human hands-on time not recorded.
+
+The single fixed complete pair then ran from clean `e323279` after the
+own-proof publication gate. Pinned Python 3.11.17/NumPy 2.4.6/Numba
+0.68.1/OpenSpiel 2.0.2 and the installed Apache-2.0 license passed
+read-only preflight. Ordinary finished in 557.21 seconds, guarded skip in
+602.25 seconds, both under 900; the pair ended after 1,163.73/1,800
+seconds with `failed_retained`. Ordinary made 14 original prerequisite
+loads; guarded made two and 12 explicit guarded returns across two
+archive roots. The scientific identity and context match, with 432
+profiles, 1,152 conditions and three native workers, but four saved work
+counters changed: normalization requests/reduced evaluations 918,104→
+726,200; validation-cache requests 8,316→8,220 and hits 8,290→8,194.
+The unchanged full-work gate rejects the pair; no favorable retry.
+The [31-member compressed raw failure](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+contains 17,357,388 raw bytes and verifies both complete children and
+the failed pair. Next: publish/byte-verify this raw record, render a
+data-only failure report on both locked runtimes, complete local/optional/
+hosted checks, and then move to a prospective bounded river-strength
+question. The guarded child was slower in this one observation; no CPU
+saving, training, default or strength admission. Codex-assisted; human
+hands-on time not recorded.
+
+Raw failure commit `aa3c9c2` passed its 31-member verifier; GitHub's PR
+tree matched the manifest, compressed tarball and verifier bytes. The
+[data-only result](pinned-prerequisite-skip-result.md) authenticates all
+three public evidence stages and the failed pair without importing poker,
+NumPy, Numba, OpenSpiel or Treys. Both locked Python versions render the
+same 2,026-byte JSON, SHA-256
+`aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81`.
+Eleven focused tamper/import tests pass in the locked base runtime; Ruff,
+formatting and strict mypy pass for the new two files. An initial test
+invocation in the preexisting `.venv` failed at `conftest` import because
+that environment lacked the editable project; the exact locked base
+environment ran the suite successfully. Next: full base/optional/hosted
+report qualification, then close this failed optimization and publish a
+separate prospective bounded river-strength contract. No pair retry or
+saving claim. Codex-assisted; human hands-on time not recorded.
+
+The exact `4559b42` failure-report source completed final qualification: both
+locked local base roles passed 5,685 tests with 73 skips and 150 deselections;
+the fixed 77-file optional scopes passed 2,592 on Python 3.11 and 2,590 with
+two expected skips on Python 3.12. Ruff, formatting, strict mypy, hooks,
+clean source/runtime guards and identical data-only exports passed. Official
+[CI #605](https://github.com/jimmy-sim/poker-ai/actions/runs/44471843556)
+passed both actual runtimes with the same base counts and exact tested tree.
+The [42-member final receipt](../results/guarded-prerequisite-skip/final-checks/manifest.json)
+retains every qualification log and the four earlier pretest launcher assertion
+failures. Next: publish/verify the receipt and history-preserving merge, then
+prospectively register the separate bounded river-strength question. The one
+failed work-identity pair is retained without retry or saving claim.
+Codex-assisted; human hands-on time not recorded.

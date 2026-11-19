@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test a guarded skip of repeated loads](#140-plan-a-guarded-skip-of-repeated-prerequisite-loads)
+
 - [Map the checks before skipping loads](#139-map-the-checks-before-skipping-prerequisite-loads)
 
 - [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
@@ -179,7 +181,18 @@ ordinary/validated-share result **and work** identity pair and merged after
 all local and hosted checks. Every original loader still ran, so the pair
 does not establish CPU savings or a stronger strategy. The next
 [source audit](prerequisite-skip-contract.md) maps validations a real
-skipped-work optimizer would need to preserve; it runs no new pair.
+skipped-work optimizer would need to preserve. A separate
+[prospective guard test](pinned-prerequisite-skip.md) now fixes the checks
+before any changed source or new pair. Its local synthetic guard and
+adapters and all exact-source local and hosted checks now pass on both
+locked runtimes. The [source-check record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+and fresh reference-free own proof are public. The one complete pair failed
+the unchanged work-identity gate although its poker results matched; its
+[raw failure](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+is public, and a [data-only report](pinned-prerequisite-skip-result.md) is in
+final qualification. No saving claim follows. The
+next priority is a prospective river-strength experiment, as Jimmy directed
+on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7819,3 +7832,119 @@ prospective skip contract that independently preserves every omitted
 validation and declares any expected work-counter changes before a new
 pair. No CPU saving, new strategy or training is established. Codex
 assisted with the source audit; human hands-on time was not recorded.
+
+## 140. Plan a guarded skip of repeated prerequisite loads
+
+**November 18, 2026.** The [prospective contract](pinned-prerequisite-skip.md)
+asks whether one fully validated graph can serve the six later consumers
+in an archive root while a separate guard detects changed source, input
+bytes and graph contents. **Example:** after the first nested loader
+validates its own and native receipts, a later nested site may receive the
+same graph only if the declared bytes and donor witness still match; a
+changed trace or consumer mutation must stop. The complete pair will still
+require exact scientific and downstream work identity, while explicitly
+recording fewer original loader calls. This is a plan before changed
+source or archived collection; no new tests or savings result exists yet.
+**Next decision:** build and challenge the guard with synthetic failures,
+then qualify that exact source before any archived read. The old failed
+gates and one-pair limits remain. Codex assisted with the protocol; human
+hands-on time was not recorded.
+
+The guarded-skip software now has a [closed 486-file byte snapshot](../scripts/guarded_prerequisite_skip_support.py)
+and a root-local wrapper that runs one original loader before six later
+guarded returns. It includes historical source files absent from the
+current 458-file scientific fingerprint. **Example:** a changed historical
+audit script is rejected even when the current source fingerprint remains
+the same. New own-proof, complete-pair and optional preflight adapters
+keep the original caps and exact result/work gate. Thirty-five synthetic
+and adapter tests pass on each locked runtime with one expected skip;
+Ruff and strict mypy pass on seven files. Early import-order/format and
+test-typing errors were fixed before this milestone. **Next decision:**
+qualify and publish this exact source on both base, both optional and
+hosted roles before any archived own read. No saving or strategy result
+exists. Codex assisted; human hands-on time was not recorded.
+
+The exact source commit `7fb8f8a` now passes all six required roles. Both
+locked base runtimes pass 5,674 fast tests, with 73 skips and 150 deselections;
+the fixed 76-file optional suites pass 2,581 tests on Python 3.11 and 2,579
+with two expected skips on Python 3.12. Ruff, formatting, strict mypy,
+all-files hooks, pinned OpenSpiel license reads and the identical 486-path
+byte inventory pass. Hosted [CI #601](https://github.com/jimmy-sim/poker-ai/actions/runs/44461179593)
+passes both jobs; the actual runtime and tested whole tree match the source.
+**Example:** the 486-path inventory includes eleven historical files outside
+the current 458-file source fingerprint, so a changed historical receipt
+checker would stop a guarded return. A Mac restart removed the first set of
+temporary local receipts; the same source was requalified with new complete
+logs in durable ignored storage. The [35-member source record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+contains this second local cohort and the official CI bytes. **Next decision:**
+publish and verify every archive byte on GitHub before one fresh reference-free
+own proof. No archived read, complete pair, CPU saving or new strategy result
+has occurred. Codex assisted; human hands-on time was not recorded.
+
+The public source archive at `316bfb3` matched the GitHub PR tree for its
+manifest and all 35 members. One [fresh own proof](../results/guarded-prerequisite-skip/own/manifest.json)
+then passed on the pinned Python 3.11.17/NumPy 2.4.6 runtime under the
+original 180-second enclosing cap: 100.75 seconds total. **Example:** the
+first nested consumer made one original full prerequisite load; the next
+five nested consumers and one direct consumer received the guarded donor.
+The donor's semantic witness stayed unchanged after each consumer and archive
+root. The saved 480-row replay had zero chip and unitless error, and no
+reference was constructed. The original 432 masses and 216 current values
+were retained. **Next decision:** publish and GitHub-byte-verify the three
+raw proof files before the one fixed ordinary→guarded-skip complete pair.
+This one saved read is a software gate, not a timing, CPU-saving or strategy
+claim. Codex assisted; human hands-on time was not recorded.
+
+The one fixed complete ordinary→guarded-skip pair ran from clean `e323279`
+after the own proof was public. Both children completed within 900 seconds:
+ordinary 557.21 seconds with 14 original loads, guarded 602.25 seconds with
+two original loads and 12 guarded returns. The 1,163.73-second pair stayed
+within 1,800 seconds but **failed the unchanged exact-work identity gate**.
+The original scientific result and context match, including 432 profiles,
+1,152 conditions and three native workers. Four saved work counters differ:
+normalization requests and reduced evaluations each fell from 918,104 to
+726,200; validation-cache requests fell from 8,316 to 8,220 and hits from
+8,290 to 8,194. **Example:** skipping a repeated loader avoids counted
+normalization work, even when the final poker values agree; the existing
+admission rule deliberately checks that work too. The guarded child took
+longer in this one observation, so neither a CPU saving nor a stronger
+strategy is claimed. The [31-member raw record](../results/guarded-prerequisite-skip/pair-raw/manifest.json)
+verifies both complete children and the failed pair without retry. **Next
+decision:** publish and GitHub-byte-verify the raw failure, then produce a
+data-only report on both locked runtimes and finish required checks. After
+closing this bounded question, prioritize the prospectively declared
+river-strength experiment Jimmy requested. Codex assisted; human hands-on
+time was not recorded.
+
+The failed pair's 31 raw members were published at `aa3c9c2` and their
+manifest, compressed archive and verifier matched GitHub blob hashes and
+sizes. The [data-only report](pinned-prerequisite-skip-result.md) now
+rechecks source→own→pair→raw publication order and every evidence hash,
+while blocking poker, numerical and reference imports. It reproduces
+identical JSON on locked Python 3.11 and 3.12, SHA-256
+`aa81c862946096a299f2673669f9848ea0b4d4239a088f2acd02b8d446d42f81`.
+Eleven focused tests pass in the locked base runtime, including altered
+compressed bytes, a rehashed profile shape, a rehashed work counter and
+publication drift; Ruff and strict mypy pass on the new report and tests.
+**Example:** changing a guarded validation-cache hit from 8,194 to 8,195
+still fails even if the copied raw archive is rehashed. **Next decision:**
+complete both full base, both optional and hosted final report checks,
+then close this rejected optimization and frame the separate prospective
+river-strength question. No favorable pair retry or validation speed claim.
+Codex assisted; human hands-on time was not recorded.
+
+The exact report head `4559b42` completed its final qualification. Both
+locked local base roles passed 5,685 tests with 73 skips and 150 deselections;
+the 77-file optional scopes passed 2,592 on Python 3.11 and 2,590 with two
+expected skips on Python 3.12. Ruff, formatting, strict mypy, hooks, source
+guards and identical data-only exports passed. Official
+[CI #605](https://github.com/jimmy-sim/poker-ai/actions/runs/44471843556)
+passed both actual runtimes with the same base counts and an exact source tree.
+**Example:** the first local launcher still expected 76 optional files after
+the new report test made 77; all four launchers stopped before tests. Their
+failure logs remain in the [final check receipt](../results/guarded-prerequisite-skip/final-checks/manifest.json),
+alongside the corrected successful attempt. **Next decision:** close the
+guarded-skip study as a failed work-identity result and register a separate
+bounded river-strength learning test before implementation or measurement.
+The single pair is not rerun, and no CPU saving or stronger agent is claimed.
+Codex assisted; human hands-on time was not recorded.

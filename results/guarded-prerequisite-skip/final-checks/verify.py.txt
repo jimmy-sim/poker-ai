@@ -1,0 +1,39 @@
+"""Verify all retained exact report-head qualification bytes and results."""
+import hashlib
+import json
+import runpy
+import subprocess
+from pathlib import Path
+
+repo = Path.cwd()
+folder = Path(__file__).resolve().parent
+manifest = json.loads((folder / 'manifest.json').read_bytes())
+assert manifest['status'] == 'final_exact_report_head_checks_retained'
+assert manifest['report_head'] == '4559b42666363a96520b0571a76393ba73707d4b'
+assert manifest['source_tree'] == subprocess.check_output(
+    ['git', 'rev-parse', manifest['report_head'] + '^{tree}'], text=True).strip()
+assert manifest['hosted_run_id'] == 44471843556
+assert manifest['initial_attempt'] == 'pretest_launcher_assertion_failed'
+assert manifest['report_json_sha256'] == hashlib.sha256(
+    (repo / 'results/guarded-prerequisite-skip/report/summary.json').read_bytes()).hexdigest()
+rows = manifest['files']
+assert len(rows) == len({row['file'] for row in rows})
+assert sorted(row['file'] for row in rows) == sorted(
+    path.relative_to(folder).as_posix() for path in folder.rglob('*')
+    if path.is_file() and path.name != 'manifest.json')
+for row in rows:
+    path = folder / row['file']
+    raw = path.read_bytes()
+    assert len(raw) == row['bytes'], row['file']
+    assert hashlib.sha256(raw).hexdigest() == row['sha256'], row['file']
+initial = json.loads((folder / 'local/initial-attempt.json').read_bytes())
+assert initial['status'] == 'pretest_launcher_assertion_failed'
+assert initial['source_commit'] == manifest['report_head']
+for role in ('base311', 'base312', 'optional311', 'optional312'):
+    raw = (folder / f'local/initial-{role}.launcher.log').read_bytes()
+    assert initial['roles'][role] == {'bytes': len(raw),
+        'sha256': hashlib.sha256(raw).hexdigest(), 'tests_started': False}
+    assert b'AssertionError' in raw and b'len(set(suites)) == 76' in raw
+runpy.run_path(str(folder / 'local/verify-local.py.txt'), run_name='__main__')
+runpy.run_path(str(folder / 'hosted/verify-hosted.py.txt'), run_name='__main__')
+print(f"final exact-head check receipt: {len(rows)} hashed members verified")
