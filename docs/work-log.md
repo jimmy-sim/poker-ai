@@ -7651,3 +7651,14 @@ and replayed its snapshots and cumulative masses. The
 preserves all 22 raw members plus a manifest. Next: publish and verify this
 own proof before launching the fixed 36-path, 100k profile. No real river
 trajectory yet. Codex assisted; human hands-on time not recorded.
+
+The fixed 36-path, three-repeat 100k profile completed on November 19:
+108 readouts, 35.806 seconds inside the stage and 36.057 seconds including
+startup, below the 900-second cap. The independently recomputed prospective
+max-of-three forecast has `T=1218.014` seconds and strict bound
+`6072.057<7200` seconds. The
+[profile archive](../results/river-strength/profile/manifest.json) retains
+all 293 raw members, including events, snapshots and complete path timings.
+Next: publish and GitHub-byte-verify this complete profile, then publish a
+separate data-only admission receipt before long learning. No 10m training or
+native audit has run. Codex assisted; human hands-on time not recorded.

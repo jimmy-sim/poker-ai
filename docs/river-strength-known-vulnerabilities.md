@@ -173,6 +173,16 @@ at 726 node work. The complete [own proof archive](../results/river-strength/own
 retains its snapshots, masses, events, runner log and exact source binding.
 This is a synthetic software proof; it does not measure real river strength.
 
+The fixed real 100k profile completed all 36 paths and 108 readouts in
+35.806 seconds inside the stage (36.057 seconds including startup), below
+900 seconds. The [raw profile archive](../results/river-strength/profile/manifest.json)
+retains every path, snapshot, mass, event, score, whole-path time and forecast.
+Recomputing the published rule gives fixed-worker sums 1218.014, 1209.015 and
+1199.947 seconds, so `T=1218.014` and `2*(2*T+600)=6072.057<7200` seconds.
+This is a compute admission only. Its three-repeat maxima and full-path costs
+are not a poker-strength result; the admission receipt must be published and
+verified separately before 10m learning.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

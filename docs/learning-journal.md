@@ -8067,3 +8067,18 @@ retains raw files and the runner receipt. **Next decision:** publish and verify
 this proof, then run the prescribed 36-path real profile and conservative
 forecast. The toy proof is not poker-strength evidence. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 fixed 100k profile.** The question was whether the published
+candidate could finish the complete 10m panel within the unchanged 7,200
+second budget. All 36 fixed paths and 108 readouts completed under the 900
+second cap: 35.806 seconds inside the stage and 36.057 including startup.
+The [raw profile archive](../results/river-strength/profile/manifest.json)
+retains all snapshots, masses, events, scores and whole-path times.
+**Example:** for each path, the longest of three complete 100k-to-10m
+extrapolations is used; fixed worker sums were 1218.014, 1209.015 and
+1199.947 seconds. Thus `T=1218.014` and the prospective strict bound is
+`2*(2*T+600)=6072.057<7200` seconds. The forecast was recomputed from raw
+records and is admitted. **Next decision:** publish and verify the complete
+profile, then publish a separate data-only admission before long learning.
+This is compute evidence, not a measured poker-strength improvement. Codex
+assisted; human hands-on time was not recorded.
