@@ -186,8 +186,10 @@ skipped-work optimizer would need to preserve. A separate
 before any changed source or new pair. Its local synthetic guard and
 adapters and all exact-source local and hosted checks now pass on both
 locked runtimes. The [source-check record](../results/guarded-prerequisite-skip/source-checks/manifest.json)
-is being published before any archived own read; no complete comparison or
-saving claim exists yet. The next research priority after this bounded check
+is now public. One fresh reference-free own proof
+passes under its original cap; its raw record is being published before any
+reference-bearing pair. No complete comparison or saving claim exists yet.
+The next research priority after this bounded check
 is a prospective river-strength experiment, as Jimmy directed on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
@@ -7876,3 +7878,17 @@ contains this second local cohort and the official CI bytes. **Next decision:**
 publish and verify every archive byte on GitHub before one fresh reference-free
 own proof. No archived read, complete pair, CPU saving or new strategy result
 has occurred. Codex assisted; human hands-on time was not recorded.
+
+The public source archive at `316bfb3` matched the GitHub PR tree for its
+manifest and all 35 members. One [fresh own proof](../results/guarded-prerequisite-skip/own/manifest.json)
+then passed on the pinned Python 3.11.17/NumPy 2.4.6 runtime under the
+original 180-second enclosing cap: 100.75 seconds total. **Example:** the
+first nested consumer made one original full prerequisite load; the next
+five nested consumers and one direct consumer received the guarded donor.
+The donor's semantic witness stayed unchanged after each consumer and archive
+root. The saved 480-row replay had zero chip and unitless error, and no
+reference was constructed. The original 432 masses and 216 current values
+were retained. **Next decision:** publish and GitHub-byte-verify the three
+raw proof files before the one fixed ordinary→guarded-skip complete pair.
+This one saved read is a software gate, not a timing, CPU-saving or strategy
+claim. Codex assisted; human hands-on time was not recorded.

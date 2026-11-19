@@ -7491,3 +7491,17 @@ now holds the durable local cohort, official hosted logs, byte inventories
 and verifiers. Next: commit, publish and GitHub-byte-verify all members
 before a fresh reference-free own proof. No archived read, pair, training
 or saving claim yet. Codex-assisted; human hands-on time not recorded.
+
+The source archive commit `316bfb3` passes its 35-member in-repo verifier;
+GitHub's PR tree contains the manifest and all 35 listed bytes at matching
+blob hashes/sizes. At clean `316bfb3`, one fresh reference-free own read
+completed under the original 180-second enclosing cap: child 97.72 seconds,
+outer 100.75 seconds. Seven consumer sites retained the fixed order: one
+original loader, six guarded returns. The donor witness stayed unchanged
+after callers and the archive root; 480 saved rows replayed with zero chip
+and unitless error, and no reference constructor or training ran. The
+[three-member own record](../results/guarded-prerequisite-skip/own/manifest.json)
+binds the exact child/outer/log bytes. Next: publish and GitHub-byte-verify
+the own record before the one fixed complete ordinary→guarded-skip pair.
+This saved read is not a CPU-saving or strength claim. Codex-assisted;
+human hands-on time not recorded.

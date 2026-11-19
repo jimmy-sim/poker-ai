@@ -123,3 +123,20 @@ retains the second local cohort and official hosted bytes. This is source
 qualification only. The archive must be committed, published, and byte-verified
 on GitHub before one fresh reference-free own proof; no archived proof or
 complete pair has run. No CPU saving or stronger strategy follows.
+
+## Fresh reference-free own proof — November 18
+
+The [source archive](../results/guarded-prerequisite-skip/source-checks/manifest.json)
+was published at `316bfb3`; GitHub's PR tree matched the manifest and every
+one of its 35 members by blob hash and size before the archived read. One
+fresh own proof then ran from that clean head on Python 3.11.17/NumPy 2.4.6,
+with no reference import or construction. The outer command took 100.75
+seconds under the unchanged 180-second cap. One original loader served the
+first nested call; six guarded returns served the five later nested and one
+direct calls. The complete saved replay retained 480 rows, 432 masses and
+216 currents with zero chip/unitless error. After-caller and after-archive
+witnesses matched the original donor. The exact
+[three-member raw record](../results/guarded-prerequisite-skip/own/manifest.json)
+must be published and GitHub-byte-verified before the fixed complete pair.
+This proves a local software boundary only; no CPU saving or stronger
+strategy is established.
