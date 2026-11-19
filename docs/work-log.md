@@ -7445,3 +7445,15 @@ pair, solver construction, training or saving claim. Next: review this
 contract, pass hosted docs checks, then decide whether a separately
 preregistered optimizer is safe and useful. Codex-assisted; human
 hands-on time not recorded.
+
+### November 18: guarded skip protocol published before source
+
+The [prospective issue #4 contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6999526861)
+and [protocol](pinned-prerequisite-skip.md) fix a scoped guard and unchanged
+complete result/work gate before implementation or new collection. One
+original full load per root, six later guarded returns, exact root/pins/
+source/donor checks and restoration are required. Both original caps and
+seeds remain; any failed or partial gate stops without a favorable retry.
+The first step is synthetic software only, then full exact-source local,
+optional and hosted qualification before an archived own proof. No new
+runtime or saving claim. Codex-assisted; human hands-on time not recorded.

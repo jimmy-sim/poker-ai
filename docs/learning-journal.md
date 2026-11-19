@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Test a guarded skip of repeated loads](#140-plan-a-guarded-skip-of-repeated-prerequisite-loads)
+
 - [Map the checks before skipping loads](#139-map-the-checks-before-skipping-prerequisite-loads)
 
 - [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
@@ -179,7 +181,9 @@ ordinary/validated-share result **and work** identity pair and merged after
 all local and hosted checks. Every original loader still ran, so the pair
 does not establish CPU savings or a stronger strategy. The next
 [source audit](prerequisite-skip-contract.md) maps validations a real
-skipped-work optimizer would need to preserve; it runs no new pair.
+skipped-work optimizer would need to preserve. A separate
+[prospective guard test](pinned-prerequisite-skip.md) now fixes the checks
+before any changed source or new pair.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7819,3 +7823,20 @@ prospective skip contract that independently preserves every omitted
 validation and declares any expected work-counter changes before a new
 pair. No CPU saving, new strategy or training is established. Codex
 assisted with the source audit; human hands-on time was not recorded.
+
+## 140. Plan a guarded skip of repeated prerequisite loads
+
+**November 18, 2026.** The [prospective contract](pinned-prerequisite-skip.md)
+asks whether one fully validated graph can serve the six later consumers
+in an archive root while a separate guard detects changed source, input
+bytes and graph contents. **Example:** after the first nested loader
+validates its own and native receipts, a later nested site may receive the
+same graph only if the declared bytes and donor witness still match; a
+changed trace or consumer mutation must stop. The complete pair will still
+require exact scientific and downstream work identity, while explicitly
+recording fewer original loader calls. This is a plan before changed
+source or archived collection; no new tests or savings result exists yet.
+**Next decision:** build and challenge the guard with synthetic failures,
+then qualify that exact source before any archived read. The old failed
+gates and one-pair limits remain. Codex assisted with the protocol; human
+hands-on time was not recorded.
