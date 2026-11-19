@@ -7692,3 +7692,19 @@ all rows and events. Next: publish and verify this separate audit, then
 reproduce the full report and run final source-bound local/optional/hosted
 checks. No final strength conclusion yet. Codex assisted; human hands-on
 time not recorded.
+
+The [fixed report](../results/river-strength/report/report.json) reproduced
+all 108 rows from published own and native evidence. On medium-OOP at final
+10m linear average, paired candidate-minus-control exploitability fractions
+were -0.025009, +0.002854 and -0.031549 across the three fixed seeds;
+median -0.025009. The candidate passed the 1% median and 2.5% worst gates
+(median 0.2924%, worst 0.6607%), while control failed both (median 2.7933%,
+worst 3.3495%). Both arms passed low-OOP gates; all final average coverages
+were 100%, recall violations zero and maximum native error 1.208e-13 chips.
+Medium candidate table cost was 4,697,088 bytes versus 2,340,096 control.
+**Conclusion: positive descriptive result on the two known games, with one
+unfavorable paired seed and a failed control gate; no fresh/global admission.**
+The earlier held-out and other failed gates remain failed. Next: publish the
+report and run final exact-source local, optional and hosted checks; then stop.
+No scientific retry or next experiment. Codex assisted; human hands-on time
+not recorded.

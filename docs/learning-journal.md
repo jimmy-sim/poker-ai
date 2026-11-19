@@ -8117,3 +8117,23 @@ rows, events and the installed Apache-2.0 license hash. **Next decision:**
 publish and verify the independent audit, then compute the all-readout report
 and final required checks. No stronger-play claim is drawn from scalar
 agreement alone. Codex assisted; human hands-on time was not recorded.
+
+**November 19 known-game strength result.** The question was whether exact
+acting river information improved the fixed q8 learner at equal 10m node
+work on two previously vulnerable games. The byte-replayed
+[report](../results/river-strength/report/report.json) kept all 108 readouts.
+**Example:** on medium-OOP the three candidate-minus-control final linear
+exploitability differences were -2.501, +0.285 and -3.155 percentage points
+of initial pot; the median was -2.501 points, so one seed worsened even
+though the median improved. Candidate median/worst exploitability were
+0.2924%/0.6607%, passing the 1%/2.5% gates; control 2.7933%/3.3495%
+failed both. Low-OOP gates passed for both arms. Average reach coverage was
+100%, recall violations zero and all 108 native scalars agreed within
+1e-9 chips (maximum 1.208e-13). Medium candidate persistent table cost
+roughly doubled to 4,697,088 bytes from 2,340,096; its river-only reply
+gain fell to zero in all seeds, a mechanism clue rather than the primary
+strength measure. **Next decision:** preserve the failed control gates,
+publish this result, run final checks and stop the experiment. The direction
+is positive only on this fixed known panel; three dependent seeds and no
+fresh case cannot justify global strength or promotion. Codex assisted;
+human hands-on time was not recorded.

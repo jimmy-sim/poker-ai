@@ -220,3 +220,33 @@ whole audit took 55.210 seconds including startup, below 900 seconds. Its
 rows, fsynced events, pinned runtime and installed Apache-2.0 license hash.
 No reference action, policy or output entered own training. The data-only
 all-readout strength report and final checks remain pending.
+
+## Fixed known-game result and limits
+
+The [data-only report](../results/river-strength/report/report.json) reproduced
+all 108 profiles byte-for-byte from the published own and native archives.
+The declared primary final-10m, linear-average medium-OOP paired
+candidate-minus-control exploitability differences (fraction of initial pot)
+were `-0.02500872`, `+0.00285404`, `-0.03154859` for seeds 20261301–03.
+The median was `-0.02500872` (a descriptive 2.501 percentage-point reduction),
+so the fixed known-game direction is **positive**, with one unfavorable seed.
+This is not a confidence interval or evidence for unseen games.
+
+At final 10m, the medium-OOP candidate's exploitability median/worst were
+`0.00292420`/`0.00660690` of initial pot; it passed the unchanged 1%/2.5%
+gates. The control's median/worst were `0.02793292`/`0.03349472`, failing
+both gates. Both arms passed those gates in the low-OOP game, and all final
+average reach coverages were 100% against the 95% gate. Structural-recall
+violations were zero and all 108 native scalars passed the 1e-9-chip gate
+(maximum error `1.2079226507921703e-13`). The medium-OOP candidate used
+3,336 information rows and 4,697,088 persistent-table bytes versus 1,662
+rows and 2,340,096 bytes for the control. Its exact-prefix river-only reply
+gain was zero across the three seeds, versus 0.245–1.415 chips for the
+control; that is a mechanism diagnostic, not the primary strength metric.
+
+The control's required historical medium-game median and worst gates failed.
+Retain that unfavorable result. This panel deliberately targets two previously
+known games with only three dependent seeds. It does not admit a new default,
+fresh/global strength or unseen-game improvement; the earlier held-out miss
+and other failed research gates remain failures. The experiment stops after
+final source-bound checks, with no retry or next candidate.
