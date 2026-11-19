@@ -52,3 +52,22 @@ previous 912.54/900 forecast failure, 2.390%/1% known-game accuracy failure,
 full-context-copy rejection, missing-Numba pair and PR #93 count/publication
 failures remain failed. Codex assisted with this protocol; human hands-on
 time was not recorded.
+
+## Local source step — November 18
+
+The adapter now checks that complete profile and condition values are lists
+of the pinned lengths, rather than comparing lists with integers. The proof
+and pair use new source and own-proof paths. The launcher delegates to that
+same new source gate and requires the new own proof. The source gate checks
+each listed qualification member's byte count, SHA-256 and presence in the
+pushed Git tree, including the role logs; an ignored byte cannot satisfy it.
+The scientific reader, shared-graph support, inputs, lock and caps are
+unchanged. **Example:** lists of lengths 432 and 1,152 pass the isolated
+predicate; either integer or a list one item short fails. Synthetic source
+tests reject a changed, absent, escaped or unpublished archive member.
+Thirty focused tests and strict mypy on 848 source files pass in the locked
+optional Python 3.11 environment; Ruff lint and formatting pass on touched
+files. A first focused run omitted the launcher environment variable and
+failed its actual-runtime test; rerunning with the pinned variable passed.
+Full source qualification and hosted CI remain pending. No new archived own
+read or complete pair has started.

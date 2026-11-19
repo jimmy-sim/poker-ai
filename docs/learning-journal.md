@@ -24,6 +24,8 @@ not a record of completed practice.
 
 - [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
 
+- [Correct the complete count gate](#138-correct-the-complete-sharing-count-gate)
+
 - [Audit repeated prerequisite outputs](#134-audit-repeated-prerequisite-outputs)
 
 - [Check receipt consumer mutation](#135-check-prerequisite-objects-after-receipt-readers-use-them)
@@ -170,7 +172,9 @@ lists with integer counts and failed before the validated-share child. Its
 source-check archive also contained one ignored byte that was published only
 after the pair. The corrected report and its local and hosted checks pass,
 while `pair_admissible` remains false. A new complete comparison requires a
-prospective source correction and fresh qualification.
+prospective source correction and fresh qualification. That work is now
+registered in [PR #94](validated-sharing-count-gate.md); no new complete pair
+has started.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7708,3 +7712,22 @@ retry or savings claim occurred. **Next decision:** close this PR with its
 failed result, then frame any corrected count-gate attempt as a new
 prospective question with fresh checks. Codex assisted; human hands-on time
 was not recorded.
+
+## 138. Correct the complete sharing count gate
+
+**November 18, 2026.** The [new prospective protocol](validated-sharing-count-gate.md)
+asks whether a root-local validated graph preserves the complete reader's
+result and work after the failed count and publication gates are fixed. A
+**gate** is a condition that must pass before a result can be accepted. The
+adapter now requires a list of 432 profiles and a list of 1,152 fixed
+conditions. It also points to a new source-check record and fresh own proof;
+the launcher checks that every listed source-check byte exists in the pushed
+Git tree before any archived read. **Example:** a list with 432 items passes
+its count check, while the integer `432` does not describe the saved list
+and is rejected. Thirty focused tests pass in the locked optional Python
+3.11 environment, with Ruff and strict mypy on 848 files. One initial test
+run lacked the required venv variable and failed; the configured rerun
+passed. **Next decision:** complete both local base and optional roles and
+hosted source qualification, publish every check member, then collect one
+fresh reference-free own proof. PR #93's failed pair stays failed. Codex
+assisted; human hands-on time was not recorded.

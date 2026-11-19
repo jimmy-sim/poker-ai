@@ -7,6 +7,7 @@ import platform
 import subprocess
 import sys
 import time
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -18,24 +19,27 @@ from validated_prerequisite_sharing_support import ValidatedShare, read
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 180
 OWN = "results/reduced-batch-study/own.json"
-CHECKS = "results/validated-prerequisite-sharing/source-checks/manifest.json"
+CHECKS = "results/validated-sharing-count-gate/source-checks/manifest.json"
 VERSIONS = {"3.11.17": "2.4.6", "3.12.15": "2.5.4"}
 SOURCE_FILES = (
     "scripts/validated_prerequisite_sharing_support.py",
     "scripts/prove_validated_prerequisite_sharing.py",
     "scripts/compare_validated_prerequisite_sharing.py",
+    "scripts/launch_validated_sharing_optional.py",
 )
 
 
 def source_checks() -> dict[str, Any]:
     from compact_suit.admission import published
 
-    published(ROOT, ROOT / CHECKS)
-    saved: dict[str, Any] = json.loads((ROOT / CHECKS).read_bytes())
-    if saved["status"] != "six_roles_qualified_before_own_proof" or set(
+    checks = ROOT / CHECKS
+    published(ROOT, checks)
+    saved: dict[str, Any] = json.loads(checks.read_bytes())
+    if saved["status"] != "six_roles_qualified_before_count_gate_proof" or set(
         saved["source_files"]
     ) != set(SOURCE_FILES):
         raise ArithmeticError("published complete source qualification required")
+    source_members(checks.parent, saved, published)
     checked = saved["checked_commit"]
     subprocess.run(
         ["git", "merge-base", "--is-ancestor", checked, "HEAD"],
@@ -53,6 +57,53 @@ def source_checks() -> dict[str, Any]:
         ):
             raise ArithmeticError("qualified sharing source changed")
     return saved
+
+
+def source_members(
+    folder: Path,
+    saved: dict[str, Any],
+    published: Callable[[Path, Path], None],
+) -> None:
+    """Require every archived qualification byte in the pushed Git tree.
+
+    The manifest itself is checked separately. A listed ignored file cannot
+    satisfy `published`, even if it exists in the collecting checkout.
+    """
+    files = saved["files"]
+    if not isinstance(files, list) or len(files) < 30:
+        raise ArithmeticError("complete source-check member list required")
+    names: set[str] = set()
+    for member in files:
+        name = member["file"]
+        if (
+            not isinstance(name, str)
+            or not name
+            or name in names
+            or Path(name).is_absolute()
+            or ".." in Path(name).parts
+        ):
+            raise ArithmeticError("source-check member changed or escaped")
+        path = folder / name
+        raw = path.read_bytes()
+        if (
+            len(raw) != member["bytes"]
+            or hashlib.sha256(raw).hexdigest() != member["sha256"]
+        ):
+            raise ArithmeticError("source-check member changed or escaped")
+        published(ROOT, path)
+        names.add(name)
+    required = {
+        "hosted/python311.log",
+        "hosted/python312.log",
+        "local/base311.log",
+        "local/base312.log",
+        "local/optional311.log",
+        "local/optional312.log",
+        "local/hooks.log",
+        "verify-all.py.txt",
+    }
+    if not required <= names:
+        raise ArithmeticError("source-check role evidence missing")
 
 
 def child(folder: Path) -> None:

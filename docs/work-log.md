@@ -7349,3 +7349,21 @@ failed CI #583, late source-check member and failed ordinary child remain
 historical failures; `pair_admissible: false`. Next: publish this final
 evidence checkpoint and close PR #93 without a retry or savings claim.
 Codex-assisted; human hands-on time not recorded.
+
+The [new issue #4 protocol](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-6995942999)
+and [PR #94](https://github.com/jimmy-sim/poker-ai/pull/94) were opened after
+PR #93 merged. Protocol commit `70bdcd3` precedes source. The count adapter
+now checks list types and lengths 432/1,152; a new source/own gate requires
+all listed qualification members to be committed and pushed. The scientific
+core, shared-graph support, inputs, lock and caps are unchanged. Ruff and
+formatting pass on touched files; clean strict mypy passes on 848 files;
+30 focused optional Python 3.11 tests pass. An initial focused run missed
+`UV_PROJECT_ENVIRONMENT` and failed its actual-runtime test; the configured
+rerun passed. An incremental mypy attempt reported four unrelated cached
+attribute errors; a clean non-incremental strict run passed all 848 files.
+The ignored local venv needed a normal `.pth` path because its generated
+underscore-prefixed editable path was skipped by this Python installation.
+Next: complete source qualification locally and on GitHub,
+publish its exact receipts, then attempt a fresh bounded reference-free own
+proof. No archived read or complete pair has started. Codex-assisted;
+human hands-on time not recorded.

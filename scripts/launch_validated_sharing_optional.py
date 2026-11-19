@@ -1,14 +1,9 @@
-"""Fail closed on the pinned optional runtime before one complete sharing pair.
-
-The PR #92 candidate and pair runner remain unchanged. This launcher checks
-saved and installed metadata only, then invokes that runner exactly once.
-"""
+"""Fail closed on the pinned optional runtime before a complete sharing pair."""
 
 import hashlib
 import json
 import os
 import platform
-import subprocess
 import sys
 from importlib.metadata import distribution, version
 from pathlib import Path
@@ -16,14 +11,12 @@ from typing import Any
 
 import compare_context_reuse as baseline
 import compare_validated_prerequisite_sharing as previous
+import prove_validated_prerequisite_sharing as proof
 from audit_receipt_consumer_mutation import revision
 from prerequisite_identity_support import pinned_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
-CHECKS = (
-    ROOT / "results/validated-sharing-runtime-preflight/source-checks/manifest.json"
-)
-SCRIPT = "scripts/launch_validated_sharing_optional.py"
+CHECKS = ROOT / "results/validated-sharing-count-gate/source-checks/manifest.json"
 SAVED = (
     "results/compact-sampled/real/own.json",
     "results/compact-full-control/own.json",
@@ -41,27 +34,8 @@ def digest(path: Path) -> str:
 
 
 def source_checks() -> dict[str, Any]:
-    """Require the public six-role qualification of these exact launcher bytes."""
-    from compact_suit.admission import published
-
-    published(ROOT, CHECKS)
-    saved: dict[str, Any] = json.loads(CHECKS.read_bytes())
-    if saved["status"] != "six_roles_qualified_before_optional_pair":
-        raise ArithmeticError("published optional launcher qualification required")
-    checked = saved["checked_commit"]
-    subprocess.run(
-        ["git", "merge-base", "--is-ancestor", checked, "HEAD"],
-        cwd=ROOT,
-        check=True,
-    )
-    current = (ROOT / SCRIPT).read_bytes()
-    original = subprocess.check_output(["git", "show", f"{checked}:{SCRIPT}"], cwd=ROOT)
-    if (
-        current != original
-        or hashlib.sha256(current).hexdigest() != saved["source_sha256"]
-    ):
-        raise ArithmeticError("qualified optional launcher source changed")
-    return saved
+    """Require new qualification of the corrected adapter and this launcher."""
+    return proof.source_checks()
 
 
 def installed(environment: Path) -> dict[str, Any]:
@@ -161,7 +135,7 @@ def preflight(output: Path, environment: Path) -> dict[str, Any]:
             shared_seconds=1800,
         )
         or config["caps"] != previous.CAPS
-        or own["checked_source_commit"] != "04d19ed4c419d14cbe3fc41ccca1b1df8f3dd62b"
+        or own["checked_source_commit"] != checked["checked_commit"]
         or revision() != (head, False)
         or source_checks() != checked
     ):
