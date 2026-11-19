@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/launch_validated_sharing_optional.py", line 206, in <module>
+    main()
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/launch_validated_sharing_optional.py", line 202, in main
+    run_once(Path(sys.argv[2]).resolve(), Path(sys.argv[4]).resolve())
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/launch_validated_sharing_optional.py", line 193, in run_once
+    previous.pair(output)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/compare_validated_prerequisite_sharing.py", line 339, in pair
+    raise ArithmeticError("retained failed complete child")
+ArithmeticError: retained failed complete child

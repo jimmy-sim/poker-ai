@@ -1,0 +1,198 @@
+{
+  "status": "final_optional_sharing_failure_report_qualified",
+  "checked_commit": "e2825e3149c0a079dbf86e8d395dacaf497592a5",
+  "source_tree": "a5ccd4ff83a0a449314b8ecea6d6212770ee45e4",
+  "report_sha256": "7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c",
+  "raw_pair_manifest_sha256": "a9d0fe46df0cbe34bf56d9d2103943059be585559982d8e20a9e6190e96ba036",
+  "failed_ci_manifest_sha256": "eee29585819ba2aba5cfdb1abb9c0fbd356f430cd9e1bc7ebb1dcce09dbdb7c0",
+  "source_check_repair_sha256": "b46f1539cfe9fe2dc2cb87640684a54ffd4c2da3234d888d783c4d4c7cd63b78",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "scientific_source_files": 458,
+  "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+  "hosted_run_id": 44422838341,
+  "hosted_run_number": 586,
+  "local_base_each": {
+    "passed": 5626,
+    "skipped": 72,
+    "deselected": 150
+  },
+  "local_optional_311": {
+    "passed": 2532,
+    "suite_files": 72
+  },
+  "local_optional_312": {
+    "passed": 2531,
+    "skipped": 1,
+    "suite_files": 72
+  },
+  "hosted_base_each": {
+    "passed": 5626,
+    "skipped": 72,
+    "deselected": 150
+  },
+  "complete_pair_status": "failed_first_ordinary_child_scope_gate",
+  "pair_admissible": false,
+  "scope": "Final exact-report qualification of failed pair and late source evidence; no complete identity, savings, training or admission",
+  "files": [
+    {
+      "file": "hosted/checkout-source.json",
+      "bytes": 2653,
+      "sha256": "312840fee0d4ef2a20ee974639db55d8ec069b31cc913e3743e9428449fc76cd"
+    },
+    {
+      "file": "hosted/jobs.json",
+      "bytes": 5174,
+      "sha256": "8d0e9499c317e1e17717e35d082ad74e56fb918898c80e9772dba0dff3f8f571"
+    },
+    {
+      "file": "hosted/pr.json",
+      "bytes": 18021,
+      "sha256": "12634ef85ccfb594f428692c06d8f956813d6fbd46b13eecf16a09dc5a25bc67"
+    },
+    {
+      "file": "hosted/python311.log",
+      "bytes": 51793,
+      "sha256": "19e9a78df039518fe51bf3229dadf8c81b4b5a7a81a13a49bc47e6b5682f1093"
+    },
+    {
+      "file": "hosted/python312.log",
+      "bytes": 51864,
+      "sha256": "03789795dbf799113257bda8d0667cb6e4bd00bafb7ff40457aec5eee60216a4"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12697,
+      "sha256": "101cf99308060d658d70dc03d0b1f282ca82d39e745faf555e0d043759bd6291"
+    },
+    {
+      "file": "hosted/verified.json",
+      "bytes": 949,
+      "sha256": "5a7ac043fbf612560441f2baf9da2aa4f69a351151f04014134cba7801aeaf31"
+    },
+    {
+      "file": "local/base311-post.json",
+      "bytes": 493,
+      "sha256": "054009bc31403caab28339ef4e9dd416f80189045e47915acaef266ea268c56e"
+    },
+    {
+      "file": "local/base311-pre.json",
+      "bytes": 493,
+      "sha256": "054009bc31403caab28339ef4e9dd416f80189045e47915acaef266ea268c56e"
+    },
+    {
+      "file": "local/base311.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 6709,
+      "sha256": "601bd719c098e3bf6491e99aea586d849b9c8bea7bc22e5d234e620d75c8ee41"
+    },
+    {
+      "file": "local/base312-post.json",
+      "bytes": 493,
+      "sha256": "8bf6ab1ac44dbcb727a57ef4aa5f30d78a6cfc64940d156a144004f61dcc331f"
+    },
+    {
+      "file": "local/base312-pre.json",
+      "bytes": 493,
+      "sha256": "8bf6ab1ac44dbcb727a57ef4aa5f30d78a6cfc64940d156a144004f61dcc331f"
+    },
+    {
+      "file": "local/base312.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 6709,
+      "sha256": "36b3b192c7d4cac5f5b9c75b0a345e7ba1d57568201d17862435df07920fdffa"
+    },
+    {
+      "file": "local/hooks.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/hooks.log",
+      "bytes": 160,
+      "sha256": "80ec352a545b198934fd9607543226ceb0fa2204341477390bbb9d7d89701f7e"
+    },
+    {
+      "file": "local/optional-runner.py.txt",
+      "bytes": 2750,
+      "sha256": "508c124aed5afda5b21ad1b2f536cb8386eab425fb05d547ebbce2b642bd9923"
+    },
+    {
+      "file": "local/optional-suites.json",
+      "bytes": 3081,
+      "sha256": "ed242338243f93cb87548896bb1b0bd726ced25eecd9f81a62a1c72b2b171ec1"
+    },
+    {
+      "file": "local/optional311-license.json",
+      "bytes": 438,
+      "sha256": "b344fa62b36d561d0f6ea314fb8e8625518fe410921b5db3ef67de977093370a"
+    },
+    {
+      "file": "local/optional311.json",
+      "bytes": 344,
+      "sha256": "b6a6443673385647c6eab7a26b1f86ff8127bd18fbeac359fcf85b063f277c41"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 5185,
+      "sha256": "2dfd56db4a1ed6c6ef12f72a10cbaa31f8e9aacbd3f10de63aea456d474cd3fc"
+    },
+    {
+      "file": "local/optional312-license.json",
+      "bytes": 438,
+      "sha256": "b31f3a1ec616f0659668f4d8d6fa09585dde15397cdbe155aeb27d5ea2649f33"
+    },
+    {
+      "file": "local/optional312.json",
+      "bytes": 344,
+      "sha256": "017c9ca7abdc526f7da2ad1e923c56d94e94c27657cd95e9e3169ff44699e0b1"
+    },
+    {
+      "file": "local/optional312.log",
+      "bytes": 5196,
+      "sha256": "03453287c27ba20fbad56e026d11a005a2854b791f7ad0a74a949dfe78a6bfcf"
+    },
+    {
+      "file": "local/report311.json",
+      "bytes": 1567,
+      "sha256": "7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c"
+    },
+    {
+      "file": "local/report312.json",
+      "bytes": 1567,
+      "sha256": "7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c"
+    },
+    {
+      "file": "local/source-guard.py.txt",
+      "bytes": 1433,
+      "sha256": "a373ceb2d156f53dcdcdf5819837b699f26a5013b436aab0ef0156b9052d497e"
+    },
+    {
+      "file": "local/verify-local.py.txt",
+      "bytes": 2791,
+      "sha256": "4f7239f9c756af7127dd348148d889b43be8e0425cb395ecf461959b8f370e9b"
+    },
+    {
+      "file": "operator/collect-ci.py.txt",
+      "bytes": 2247,
+      "sha256": "d4ee203a1893ec3b1ace8121a8a36dd8e8e510bb13815bf285c228b38abc3e85"
+    },
+    {
+      "file": "operator/verify-hosted.py.txt",
+      "bytes": 2769,
+      "sha256": "f8da9f6c244163f0c464b8f9866b22abd6b2bdb3a80d19d714a9e2b9ad73db7a"
+    },
+    {
+      "file": "verify-all.py.txt",
+      "bytes": 3415,
+      "sha256": "eabf5cc7b1c7dd31734373c30ab5a8378692dd018c1309d7f3299f9498715463"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "status": "six_roles_qualified_before_optional_pair",
+  "checked_commit": "0b9ae32b13959371952f8f853d5419d8708de8d1",
+  "source_tree": "49d08bce7b2ef971eeff9a2c6701e7f8379a871d",
+  "source_sha256": "a5614e83cf5166f42afef77a175de6e753ed8158503d8afe857db1b5679b30f6",
+  "source_fingerprint": "b475bfefb92963f25458d97260264743ff4d751b4513c307529742eaf10fc97d",
+  "scientific_source_files": 458,
+  "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+  "hosted_run_id": 44404463094,
+  "hosted_run_number": 580,
+  "local_base_each": {
+    "passed": 5616,
+    "skipped": 72,
+    "deselected": 150
+  },
+  "local_optional_311": {
+    "passed": 2522,
+    "suite_files": 71
+  },
+  "local_optional_312": {
+    "passed": 2521,
+    "skipped": 1,
+    "suite_files": 71
+  },
+  "hosted_base_each": {
+    "passed": 5616,
+    "skipped": 72,
+    "deselected": 150
+  },
+  "initial_optional_311_cache_lock_failure_retained": true,
+  "new_complete_pair_started": false,
+  "scope": "Exact-source optional launcher qualification only; no new pair, savings, training or admission",
+  "files": [
+    {
+      "file": "hosted/checkout-source.json",
+      "bytes": 2653,
+      "sha256": "d4923e26743aef7cb76f444194423af89c26906e204ae4521848ab11c5156653"
+    },
+    {
+      "file": "hosted/jobs.json",
+      "bytes": 5174,
+      "sha256": "ef12cb656e66c3e1d02ca7a3612666ef9385b9250c372dd48a529964d114fe62"
+    },
+    {
+      "file": "hosted/pr.json",
+      "bytes": 17641,
+      "sha256": "607435a34c4863764dc6e836594149174c63c9598dc8e3c1d176d9dc2d66e99f"
+    },
+    {
+      "file": "hosted/python311.log",
+      "bytes": 51755,
+      "sha256": "e688bb588b93eff1afa127cf88015fe808471274d01cb00dd025ba26bcb0327a"
+    },
+    {
+      "file": "hosted/python312.log",
+      "bytes": 51755,
+      "sha256": "1b4c6b2707d9e842b52ec1cd5ff63d07a8cb5fe6033cdf72c8d479bad6b71d36"
+    },
+    {
+      "file": "hosted/run.json",
+      "bytes": 12692,
+      "sha256": "621f1835c1685d2fb90b7f81e318f972886378f685fc39a93fb21c7017cce06f"
+    },
+    {
+      "file": "hosted/verified.json",
+      "bytes": 949,
+      "sha256": "ebe84ab0b22ae3596456d8a446e3f93451c470e78d4094c083ff2ac1381f012a"
+    },
+    {
+      "file": "local/__pycache__/verify-local.py.cpython-313.pyc",
+      "bytes": 4671,
+      "sha256": "45f1ee33a358aac17001854ad900d9bff6b2d648d7037d3e58cb67eff1fe4c29"
+    },
+    {
+      "file": "local/base311-post.json",
+      "bytes": 493,
+      "sha256": "546be2e91241745c982c8406cb13b1d7ae7025ac64734585854f7232a86cde8b"
+    },
+    {
+      "file": "local/base311-pre.json",
+      "bytes": 493,
+      "sha256": "546be2e91241745c982c8406cb13b1d7ae7025ac64734585854f7232a86cde8b"
+    },
+    {
+      "file": "local/base311.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/base311.log",
+      "bytes": 6629,
+      "sha256": "f03c103d60fe323452bd55e426da3ea0c791e4b56378fb4c5d0a1ac1607b4e90"
+    },
+    {
+      "file": "local/base312-post.json",
+      "bytes": 493,
+      "sha256": "9bb5acd807d1d2a6dee3c9061f39a6735a8026c1b23ce3fdb61240f2c89b2989"
+    },
+    {
+      "file": "local/base312-pre.json",
+      "bytes": 493,
+      "sha256": "9bb5acd807d1d2a6dee3c9061f39a6735a8026c1b23ce3fdb61240f2c89b2989"
+    },
+    {
+      "file": "local/base312.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/base312.log",
+      "bytes": 6629,
+      "sha256": "e159961bd2534d9084a6112f3c11b04119a174c720eea5d763ede05f4b009b9b"
+    },
+    {
+      "file": "local/hooks.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "local/hooks.log",
+      "bytes": 160,
+      "sha256": "80ec352a545b198934fd9607543226ceb0fa2204341477390bbb9d7d89701f7e"
+    },
+    {
+      "file": "local/optional-runner-attempt2.py.txt",
+      "bytes": 2732,
+      "sha256": "7f9ad60028026d7d9379d32ed045251279377d4393de69bc54b3ee67e76e64a6"
+    },
+    {
+      "file": "local/optional-runner.py.txt",
+      "bytes": 2723,
+      "sha256": "9b011e2ea9213e58ebf06502790d3407a532a34987e38811bcdf9e3b24e425ff"
+    },
+    {
+      "file": "local/optional-suites.json",
+      "bytes": 3019,
+      "sha256": "85105967ec2f1916c30a8fe7d177f7f913248e2bfb3ffac47f7573a386b2ef0c"
+    },
+    {
+      "file": "local/optional311-attempt2.json",
+      "bytes": 344,
+      "sha256": "1c28a1b78592bff771bdd07dc29dc41fec1fe73aee5823751aac1a9cbd74e2f2"
+    },
+    {
+      "file": "local/optional311-attempt2.log",
+      "bytes": 5185,
+      "sha256": "a9f05bdb393dfd41e9224a23cf2bfc81dec3f3aa67cea1d097262517411ec1ae"
+    },
+    {
+      "file": "local/optional311-license.json",
+      "bytes": 438,
+      "sha256": "b344fa62b36d561d0f6ea314fb8e8625518fe410921b5db3ef67de977093370a"
+    },
+    {
+      "file": "local/optional311.json",
+      "bytes": 347,
+      "sha256": "2627dd995958b5521d24b31adef37c8321ab7363b532edfcf63a54863dce5559"
+    },
+    {
+      "file": "local/optional311.log",
+      "bytes": 1135,
+      "sha256": "26862820da5c8c6acd3bd2e57fd6927a6c5bbe37d9930451222369c920339a02"
+    },
+    {
+      "file": "local/optional312-attempt2.json",
+      "bytes": 345,
+      "sha256": "08d7904067b4c3566047d46b7683a263ff8d84ba2ce8a44ae7fbca639cd17a74"
+    },
+    {
+      "file": "local/optional312-attempt2.log",
+      "bytes": 5196,
+      "sha256": "5742b05a13edfe8798b46e826f1ff8bdb75928955e5bde8446a3253f6fb99530"
+    },
+    {
+      "file": "local/optional312-license.json",
+      "bytes": 438,
+      "sha256": "b31f3a1ec616f0659668f4d8d6fa09585dde15397cdbe155aeb27d5ea2649f33"
+    },
+    {
+      "file": "local/source-guard.py.txt",
+      "bytes": 1433,
+      "sha256": "2094f9fd30c6a77f28876a0ed7a038a2beaf55b4ecc5705e950247d458a4f41a"
+    },
+    {
+      "file": "local/verify-local.py.txt",
+      "bytes": 3189,
+      "sha256": "3ae20fa95595ae9dcb42bc2ab28918005ea1f387b1ceacad4917a3f56663e608"
+    },
+    {
+      "file": "operator/collect-ci.py.txt",
+      "bytes": 2237,
+      "sha256": "92a925891a6b7a945c4fa0870a286bfaa22b96b75afde57462cbae2bf1fb6f03"
+    },
+    {
+      "file": "operator/verify-hosted.py.txt",
+      "bytes": 2759,
+      "sha256": "6f06b4be71bb4366ac725400c3eb158346604fe66af23e8b392d92def9160d0b"
+    },
+    {
+      "file": "verify-all.py.txt",
+      "bytes": 2924,
+      "sha256": "4300e288253526e6a4ea93bf6c448d0f8f69a109be9ebef80bbadb9903ed6d01"
+    }
+  ]
+}

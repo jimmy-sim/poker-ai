@@ -1,0 +1,53 @@
+"""Verify the single failed optional-runtime pair from archived data only."""
+
+import hashlib
+import json
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+manifest = json.loads((folder / "manifest.json").read_bytes())
+assert manifest["status"] == "failed_first_ordinary_child_retained"
+assert manifest["pair_head"] == "c5697efc0fb5d9564ed684e57a5a2bbb1904db5d"
+assert manifest["checked_source_commit"] == "0b9ae32b13959371952f8f853d5419d8708de8d1"
+assert manifest["validated_share_child_started"] is False
+assert manifest["favorable_retry_performed"] is False
+assert manifest["complete_identity_established"] is False
+for name, row in manifest["files"].items():
+    raw = (folder / name).read_bytes()
+    assert len(raw) == row["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == row["sha256"]
+
+preflight = json.loads((folder / "preflight.json").read_bytes())
+pair = json.loads((folder / "raw/pair.json").read_bytes())
+child = json.loads((folder / "raw/ordinary/child.json").read_bytes())
+measure = json.loads((folder / "raw/ordinary/measurement.json").read_bytes())
+native = json.loads((folder / "raw/ordinary/native.json").read_bytes())
+observer = json.loads((folder / "raw/ordinary/observer.json").read_bytes())
+assert preflight["status"] == "optional_runtime_preflight_passed_before_pair"
+assert preflight["head"] == manifest["pair_head"]
+assert preflight["checked_launcher_commit"] == manifest["checked_source_commit"]
+assert preflight["installed"]["python"] == "3.11.17"
+assert preflight["installed"]["numpy"] == "2.4.6"
+assert preflight["installed"]["numba"] == "0.68.1"
+assert preflight["installed"]["open_spiel"] == "2.0.2"
+assert preflight["installed"]["license_sha256"] == "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+assert pair["status"] == "failed_retained" and pair["order"] == ["ordinary", "validated_share"]
+assert pair["failure_kind"] == "ArithmeticError" and pair["measurements"] == [measure]
+assert pair["seconds"] < 1800
+assert measure["returncode"] == 1 and measure["cap_seconds"] == 900
+assert child["status"] == "failed_retained" and child["mode"] == "ordinary"
+assert child["head"] == manifest["pair_head"] and child["dirty"] is False
+assert child["failure"] == {"type": "ArithmeticError", "reason": "complete reader scope, source or input changed"}
+assert child["seconds"] < 900
+assert native["status"] == "completed_scalar_comparison" and native["failure"] is None
+assert len(native["profiles"]) == 432 and len(native["fixed_conditions"]) == 1152
+assert isinstance(native["profiles"], list) and isinstance(native["fixed_conditions"], list)
+assert len(native["native_batch"]["workers"]) == 3
+assert all(json.loads((folder / f"raw/ordinary/read-{i}.json").read_bytes())["status"] == "complete" for i in range(3))
+assert len(observer["reads"]) == len(observer["replays"]) == 3
+for i in range(2):
+    archive = json.loads((folder / f"raw/ordinary/archive-{i}.json").read_bytes())
+    assert len(archive["rows"]) == 7
+assert (folder / "raw/pair-command.exit").read_text().strip() == "1"
+assert not (folder / "raw/validated_share").exists()
+print("single failed ordinary child, complete raw reads, two roots, no shared child verified")

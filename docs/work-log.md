@@ -6733,7 +6733,6 @@ local/optional/hosted checks must now pass on the corrected head. No scientific
 retry, relaxed guard, compute change or stronger-agent claim. Codex-assisted;
 human hands-on time not recorded.
 
-
 ### November 17: earlier-source reader fully qualified; follow its archive checks
 
 [PR #87](https://github.com/jimmy-sim/poker-ai/pull/87) is history-merged at
@@ -7237,3 +7236,116 @@ hook attempt failed before commit because `uv` was absent from the shell
 environment. Next: publish this evidence-only checkpoint, verify its CI,
 then history-merge the failed experiment. No complete pair identity or
 savings admission. Codex-assisted; human hands-on time not recorded.
+
+### November 18: merge the failed sharing experiment and pin its runtime
+
+Evidence-only [CI #577](https://github.com/jimmy-sim/poker-ai/actions/runs/44390220790)
+passes both actual locked runtimes, 5,605 tests each, all steps and an
+identical whole tree. [PR #92](https://github.com/jimmy-sim/poker-ai/pull/92)
+is history-merged at `7d356cf`, preserving all research evidence commits.
+The separate main checkout fast-forwarded with all ten unrelated user file
+bytes, status, patches and index entries unchanged; its final-check and raw
+failure verifiers and data-only rerender pass.
+
+The [next prospective issue #4 protocol](validated-sharing-runtime-preflight.md)
+was public before new source. Read-only metadata confirms that both saved
+real own artifacts require Python 3.11.17, NumPy 2.4.6 and Numba 0.68.1;
+the installed optional environment has those versions, OpenSpiel 2.0.2 and
+the pinned Apache-2.0 license hash. No new pair or source implementation
+has run. Next: commit this protocol checkpoint and implement a fail-closed
+launcher, then qualify it before any complete comparison. The PR #92 pair
+and older forecast, accuracy and full-context-copy gates remain failed.
+Codex-assisted; human hands-on time not recorded.
+
+The first launcher implementation calls the unchanged pair once only after
+installed and saved optional-runtime metadata, license bytes, clean public
+source and the carried-forward own proof pass. Focused tests reject missing
+Numba, changed packages/license/saved metadata, `PYTHONPATH` and wrong
+environment before any pair output. Twelve tests pass under the actual
+optional Python 3.11 runtime; both bases and optional Python 3.12 pass
+eleven with one expected real-runtime skip. Ruff, format and strict mypy
+pass. Initial line-length and duplicate mypy module/type findings were
+fixed before this source commit. No complete pair has run. Next: commit
+source and finish all six exact-head qualification roles before the first
+source push. Codex-assisted; human hands-on time not recorded.
+
+Source commit `0b9ae32` was published after both clean locked base roles
+passed 5,616 tests/72 skips/150 deselections, both 71-file optional roles
+passed (2,522 on Python 3.11; 2,521/one expected skip on Python 3.12),
+Ruff, format, strict mypy on 846 files and all-files hooks. A sandbox uv
+cache-lock failure before the first optional 3.11 test is retained; the
+unchanged suite passed with cache access. Official hosted
+[CI #580](https://github.com/jimmy-sim/poker-ai/actions/runs/44404463094)
+passes both jobs on the identical whole tree with actual locked runtimes
+and 5,616 tests each. The [34-member six-role source-check archive](../results/validated-sharing-runtime-preflight/source-checks/manifest.json)
+has verified local and hosted logs, guards, metadata and file hashes.
+Next: publish/verify this evidence checkpoint, reauthenticate the carried
+old own proof, then run one fixed complete pair in optional Python 3.11.
+No new complete pair, saving or strategy admission yet. Codex-assisted;
+human hands-on time not recorded.
+
+The single fixed optional-runtime pair launched from clean `c5697ef` after
+the six-role source-check record was public. Preflight reauthenticated the
+old own proof and pinned Python/NumPy/Numba/OpenSpiel/license metadata.
+Its first ordinary child returned 1 after 525.99 seconds; the pair failed
+after 527.74 seconds, inside both original caps. Both independent archive
+roots (seven original loads each), three reads and three native workers
+completed. The validated-share child did not start. The unchanged source
+compares the 432-element profile and 1,152-element condition lists directly
+with integer counts, causing the retained scope/source/input gate failure.
+The [19-member raw failure](../results/validated-sharing-runtime-preflight/failed-pair/manifest.json)
+and verifier preserve exact bytes. No retry or complete identity/savings
+claim. Next: publish this raw checkpoint, render a data-only failed result,
+finish checks and update PR #93. Codex-assisted; human hands-on time not
+recorded.
+
+The [data-only failed-pair report](validated-sharing-runtime-preflight-result.md)
+authenticates the public 34-member source-check and 19-member raw-pair
+records plus the carried old own manifest, with poker reader, numerical and
+reference imports blocked. Nine tamper/import tests pass on each locked
+Python runtime; both render byte-identical JSON SHA-256
+`a69f851d4bb238f4aeee85ca70d2096fd3ab3ed62afae06c1721722c64a753bf`.
+The report records 14 ordinary loader calls, three complete reads, three
+native workers and failure before the validated-share child. Next: commit
+the data-only report, complete exact-report-head local, optional and hosted
+checks, then close the failed investigation. No retry or savings claim.
+Codex-assisted; human hands-on time not recorded.
+
+Hosted [CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+failed four report tests per runtime (5,621 passed/72 skipped/150 deselected
+each). The [official failed-run archive](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+shows the source-check manifest listed a Python 3.13 `.pyc` absent from the
+normal clone because Git ignored it. The local verifier saw the ignored file
+and passed. The source-check checkpoint was incomplete before the fixed
+pair, and the raw manifest's publication flag is historically inaccurate.
+This makes the pair ineligible for admission in addition to its actual
+ordinary-child failure. Next: publish the failed CI receipts, add the exact
+missing byte later without rewriting the manifest, correct the data-only
+report and repeat required checks. No pair retry. Codex-assisted; human
+hands-on time not recorded.
+
+Repair commit `97baaf2` force-published the exact 4,671-byte ignored member
+named by the old source-check manifest and a [late-publication receipt](../results/validated-sharing-runtime-preflight/source-check-repair.json).
+It does not retroactively satisfy the pair's source-publication gate. The
+corrected data-only report checks the member's absence at pair head
+`c5697ef` and presence at repair head `97baaf2`, and exports
+`source_archive_complete_at_pair_time: false` and `pair_admissible: false`.
+Ten focused tamper/import tests pass in each locked Python runtime; both
+render corrected JSON SHA-256
+`7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c`.
+Next: commit the corrected report and run full local, optional and hosted
+checks before closing this failed investigation. No pair retry or savings
+claim. Codex-assisted; human hands-on time not recorded.
+
+Corrected report head `e2825e3` passed clean locked base checks twice
+(5,626 passed/72 skipped/150 deselected each), 72-file optional checks on
+Python 3.11 (2,532 passed) and 3.12 (2,531 passed/one expected skip),
+Ruff, formatting, strict mypy on 848 files and all-files hooks. Official
+[CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passed both jobs on the same whole tested tree, each with 5,626 tests. The
+[32-member final-check archive](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+verifies local/hosted logs, guards and identical data-only rerenders. The
+failed CI #583, late source-check member and failed ordinary child remain
+historical failures; `pair_admissible: false`. Next: publish this final
+evidence checkpoint and close PR #93 without a retry or savings claim.
+Codex-assisted; human hands-on time not recorded.

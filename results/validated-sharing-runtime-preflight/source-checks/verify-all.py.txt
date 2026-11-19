@@ -1,0 +1,52 @@
+"""Verify the published six-role optional launcher qualification archive."""
+
+import hashlib
+import json
+import re
+import runpy
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = Path.cwd()
+manifest = json.loads((folder / "manifest.json").read_bytes())
+head = "0b9ae32b13959371952f8f853d5419d8708de8d1"
+tree = "49d08bce7b2ef971eeff9a2c6701e7f8379a871d"
+assert manifest["status"] == "six_roles_qualified_before_optional_pair"
+assert manifest["checked_commit"] == head and manifest["source_tree"] == tree
+assert manifest["source_sha256"] == "a5614e83cf5166f42afef77a175de6e753ed8158503d8afe857db1b5679b30f6"
+assert subprocess.check_output(["git", "rev-parse", head + "^{tree}"], cwd=root, text=True).strip() == tree
+for row in manifest["files"]:
+    raw = (folder / row["file"]).read_bytes()
+    assert len(raw) == row["bytes"]
+    assert hashlib.sha256(raw).hexdigest() == row["sha256"]
+runpy.run_path(str(folder / "local/verify-local.py.txt"), run_name="__main__")
+
+run = json.loads((folder / "hosted/run.json").read_bytes())
+jobs = json.loads((folder / "hosted/jobs.json").read_bytes())["jobs"]
+pr = json.loads((folder / "hosted/pr.json").read_bytes())
+checkout = json.loads((folder / "hosted/checkout-source.json").read_bytes())
+assert run["id"] == 44404463094 and run["run_number"] == 580
+assert run["head_sha"] == head and run["event"] == "pull_request"
+assert run["status"] == "completed" and run["conclusion"] == "success" and run["run_attempt"] == 1
+assert {j["name"] for j in jobs} == {"Python 3.11", "Python 3.12"}
+assert pr["head"]["sha"] == head and pr["merge_commit_sha"] == checkout["sha"]
+assert checkout["tree"]["sha"] == tree and head in [p["sha"] for p in checkout["parents"]]
+parse = runpy.run_path(str(root / "results/ci-runtime-correction/audit_checks.py.txt"),
+                       run_name="actual_runtime_parser")["parse"]
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    job = next(j for j in jobs if j["name"] == "Python " + version[:4])
+    assert job["head_sha"] == head and job["run_id"] == run["id"] and job["run_attempt"] == 1
+    assert job["status"] == "completed" and job["conclusion"] == "success"
+    assert all(step["conclusion"] == "success" for step in job["steps"])
+    log = (folder / f"hosted/python{minor}.log").read_text(encoding="utf-8-sig")
+    parsed = parse(log)
+    assert parsed["actual_python"] == [version] and parsed["all_uv_versions"] == [version]
+    assert re.findall(r"ACTUAL_NUMPY=([0-9.]+)\s*$", log, re.M) == [numpy]
+    assert "5616 passed, 72 skipped, 150 deselected" in log
+    lines = log.splitlines()
+    tested = [re.search(r"\b[0-9a-f]{40}\b", lines[i + 1]).group()
+              for i, line in enumerate(lines) if "git log -1 --format=%H" in line]
+    assert tested == [checkout["sha"]]
+    assert head in log
+print("six exact-source roles and archived bytes verified")

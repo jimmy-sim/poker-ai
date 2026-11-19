@@ -160,10 +160,17 @@ runtimes. The raw records were published before interpretation. This answers
 the mutation question for that observed read; a complete ordinary/reuse
 comparison is still required before sharing a graph.
 [PR #91](https://github.com/jimmy-sim/poker-ai/pull/91) is now history-merged
-after its final evidence-commit CI passed both runtimes. The next
-[prospective comparison](validated-prerequisite-sharing.md) tests whether one
-already validated graph can be handed to all consumers while every original
-loader still runs. It has no collected result yet.
+after its final evidence-commit CI passed both runtimes. The subsequent
+[validated-sharing comparison](validated-prerequisite-sharing.md) in PR #92
+failed before its pair because its pinned environment lacked Numba; no saving
+or sharing result was admitted. The
+[optional-runtime preflight](validated-sharing-runtime-preflight-result.md) in
+PR #93 then reached an ordinary child, but the unchanged source compared
+lists with integer counts and failed before the validated-share child. Its
+source-check archive also contained one ignored byte that was published only
+after the pair. The corrected report and its local and hosted checks pass,
+while `pair_admissible` remains false. A new complete comparison requires a
+prospective source correction and fresh qualification.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7565,3 +7572,139 @@ passed both hooks. Next: publish and verify the final-check record, check
 its evidence-only CI, then history-merge the failed experiment. The fixed
 pair remains failed with no shared child or savings conclusion. Codex
 assisted with verification and writing; human hands-on time was not recorded.
+
+## 137. Preflight the runtime needed by the complete sharing reader
+
+**Question:** can the existing root-local sharing candidate preserve the
+complete ordinary result and work when the launcher confirms the optional
+runtime required by the original saved artifacts before starting a pair?
+
+**Change and example:** [PR #92](https://github.com/jimmy-sim/poker-ai/pull/92)
+was history-merged at `7d356cf` after evidence-only CI #577 passed both
+actual locked runtimes with 5,605 tests each and an identical whole tree.
+The separate main checkout reproduced the failure report and both evidence
+verifiers while its ten unrelated user files, status, patches and index
+entries remained byte-identical. The [new prospective protocol](validated-sharing-runtime-preflight.md)
+is public before source work. **Example:** the original saved real own
+artifacts require Numba 0.68.1; a launcher in the base environment with no
+Numba metadata must stop before it creates a pair output. The pinned optional
+environment has Numba 0.68.1 and OpenSpiel 2.0.2 with the previously read
+Apache-2.0 license hash.
+
+**Checks and result:** protocol and read-only metadata checks only. No new
+launcher source qualification, own collection or complete pair has run. The
+PR #92 fixed pair remains failed, not retrospectively repaired.
+
+**Next decision:** implement the fail-closed preflight and synthetic tests,
+publish full source qualification, reauthenticate the unchanged public own
+proof, then attempt one newly fixed optional-runtime pair. All original
+loaders still run, so a pass would not show a CPU saving. Older forecast,
+accuracy and full-context-copy failures remain failed. Codex assisted with
+this protocol; human hands-on time was not recorded.
+
+The optional-runtime launcher now reads installed package and license
+metadata and both saved real runtime records before allowing the unchanged
+pair runner to create output. It also reauthenticates the published old own
+proof and requires a clean pushed source-check record. **Example:** synthetic
+missing Numba metadata raises before any pair call or output folder; the
+actual optional Python 3.11 metadata matches both saved records. Twelve
+focused tests pass in that optional environment; both base runtimes and
+optional Python 3.12 pass eleven with the expected real-runtime skip. Ruff,
+format and strict mypy pass. A first long line and duplicate module/type
+findings were corrected during local iteration; no archived pair was run.
+Next: clean exact-source local, optional and hosted qualification before
+using the launcher. The PR #92 failure remains failed. Codex assisted with
+implementation and tests; human hands-on time was not recorded.
+
+At source commit `0b9ae32`, the two clean locked base roles pass 5,616 tests,
+72 skips and 150 deselections each, with Ruff, format and strict mypy (846
+files). The 71-file optional roles pass 2,522 tests on Python 3.11 and 2,521
+with one expected real-runtime skip on Python 3.12. All-files hooks pass.
+The first optional 3.11 attempt stopped before tests because sandbox access
+blocked a uv cache lock; its failure log is retained beside the successful
+same-suite run. Hosted [CI #580](https://github.com/jimmy-sim/poker-ai/actions/runs/44404463094)
+passes both jobs on the exact source tree, with 5,616 tests each and actual
+Python/NumPy versions checked. The [34-member source-check record](../results/validated-sharing-runtime-preflight/source-checks/manifest.json)
+retains local and official hosted logs, guards, the cache-lock failure and
+replay verifiers. **Next decision:** publish and verify this record, then
+reauthenticate the public old own proof before one fixed optional-runtime
+pair. No complete pair or CPU-saving conclusion exists yet. Codex assisted
+with qualification; human hands-on time was not recorded.
+
+The single fixed optional-runtime pair at clean evidence head `c5697ef`
+passed preflight, then failed in its first ordinary child after 527.74
+seconds of pair wall time. The child completed both seven-loader archive
+roots, all three reads and three native workers within its 900-second cap;
+the validated-share child never started. Its saved native data has lists of
+432 profiles and 1,152 fixed conditions. The unchanged candidate gate
+compares those lists directly with integers `432` and `1152`, so its
+`complete reader scope, source or input changed` rejection is inevitable
+even though the list lengths are correct. This is a source-gate bug exposed
+by the run, not a successful identity comparison. The [19-member failed
+raw pair](../results/validated-sharing-runtime-preflight/failed-pair/manifest.json)
+preserves preflight, both roots, reads, native output, observer, clocks and
+the outer failure. **Next decision:** publish this failure before a data-only
+report; do not retry the fixed pair. A corrected gate would need a new
+prospective question and fresh qualification. Codex assisted with diagnosis;
+human hands-on time was not recorded.
+
+The [data-only report](validated-sharing-runtime-preflight-result.md) now
+authenticates all 34 source-check and 19 failed-pair members plus the carried
+old own manifest, then records the failed ordinary-child gate without
+constructing another reader or reference output. **Example:** the report
+shows `profile_value_type: list` and `profile_count: 432`; the source's
+comparison with the integer `432` rejects that list. Nine focused tests
+pass on each locked Python runtime, including altered bytes, a rehashed
+changed failure, a rehashed changed profile shape and blocked reader,
+NumPy/Numba, OpenSpiel and Treys imports. Both runtimes render the same
+JSON SHA-256 `a69f851d4bb238f4aeee85ca70d2096fd3ab3ed62afae06c1721722c64a753bf`.
+**Next decision:** complete exact-report-head local, optional and hosted
+checks, retain their evidence, then close this failed investigation. No
+retry or complete sharing identity. Codex assisted; human hands-on time
+was not recorded.
+
+Hosted [CI #583](https://github.com/jimmy-sim/poker-ai/actions/runs/44414936420)
+failed four report tests on each runtime, despite local passes. The
+[retained official logs](../results/validated-sharing-runtime-preflight/failed-report-ci/manifest.json)
+show that the source-check manifest included a generated Python 3.13 bytecode
+file ignored by Git. **Example:** the local manifest listed that `.pyc` and
+its hash, but `git cat-file` at the pair head has no such path. The report
+tests copied the local ignored file, masking the omission locally. The
+source-check record was therefore incomplete in a normal clone before the
+pair, so this pair is ineligible for admission independent of the count-gate
+bug. **Next decision:** publish the failed CI record, then publish the exact
+missing byte later as a transparent repair and update the report. Do not
+rewrite the old manifest or rerun the fixed pair. Codex assisted with the
+audit; human hands-on time was not recorded.
+
+Repair commit `97baaf2` publishes the exact ignored byte listed in the old
+manifest plus a [nonretroactive receipt](../results/validated-sharing-runtime-preflight/source-check-repair.json).
+It leaves the pair and original manifest unchanged. The corrected data-only
+report checks Git history: that member is absent at the pair head and present
+only from the repair commit. **Example:** even though a new clone can now
+verify all 34 source-check members, the pair still has
+`source_archive_complete_at_pair_time: false` and `pair_admissible: false`.
+Ten focused tests pass on each locked runtime, including a changed repair
+receipt; both render corrected JSON SHA-256
+`7f8ac9091a139708366bc402f8326b8eb5cb0d4c0cb18886c3351e5d413b702c`.
+**Next decision:** rerun full local, optional and hosted checks on this
+corrected report, retain outcomes and close the ineligible experiment. No
+pair retry. Codex assisted; human hands-on time was not recorded.
+
+Corrected report head `e2825e3` is now qualified as a **failed experiment
+report**, with no pair admission. Both clean locked base roles pass 5,626
+tests (72 skipped, 150 deselected); optional Python 3.11 passes 2,532 and
+optional Python 3.12 passes 2,531 with one expected skip. Ruff, formatting,
+strict mypy on 848 files and all-files hooks pass. Official
+[CI #586](https://github.com/jimmy-sim/poker-ai/actions/runs/44422838341)
+passes both jobs on the exact tested tree. The
+[32-member final-check archive](../results/validated-sharing-runtime-preflight/final-checks/manifest.json)
+verifies local logs, actual hosted runtimes, guards and matching report bytes.
+**Example:** the source-check archive now verifies in a normal clone, but
+its missing byte was first published *after* the pair, so
+`pair_admissible: false` remains the only valid conclusion. Earlier failed
+CI #583 and the ordinary-child count-gate failure remain retained; no pair
+retry or savings claim occurred. **Next decision:** close this PR with its
+failed result, then frame any corrected count-gate attempt as a new
+prospective question with fresh checks. Codex assisted; human hands-on time
+was not recorded.

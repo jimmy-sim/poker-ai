@@ -1,0 +1,48 @@
+"""Verify failed exact-report-head CI #583 and its missing archive member."""
+
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+root = Path.cwd()
+manifest = json.loads((folder / "manifest.json").read_bytes())
+head = "2066f2c4e16d7fcf185c936f98b42f7f3ac980b5"
+tree = "27263aac0392e4ef85c8975646be242df9dee628"
+missing = "results/validated-sharing-runtime-preflight/source-checks/local/__pycache__/verify-local.py.cpython-313.pyc"
+assert manifest["status"] == "both_hosted_jobs_failed_missing_manifest_member"
+assert manifest["checked_commit"] == head and manifest["source_tree"] == tree
+for name, row in manifest["files"].items():
+    raw = (folder / name).read_bytes()
+    assert len(raw) == row["bytes"] and hashlib.sha256(raw).hexdigest() == row["sha256"]
+run = json.loads((folder / "run.json").read_bytes())
+jobs = json.loads((folder / "jobs.json").read_bytes())["jobs"]
+pr = json.loads((folder / "pr.json").read_bytes())
+checkout = json.loads((folder / "checkout-source.json").read_bytes())
+assert run["id"] == 44414936420 and run["run_number"] == 583
+assert run["head_sha"] == head and run["event"] == "pull_request"
+assert run["status"] == "completed" and run["conclusion"] == "failure" and run["run_attempt"] == 1
+assert {j["name"] for j in jobs} == {"Python 3.11", "Python 3.12"}
+assert pr["head"]["sha"] == head and pr["merge_commit_sha"] == checkout["sha"]
+assert checkout["tree"]["sha"] == tree and head in [p["sha"] for p in checkout["parents"]]
+assert subprocess.check_output(["git", "rev-parse", head + "^{tree}"], cwd=root, text=True).strip() == tree
+listed = json.loads((root / "results/validated-sharing-runtime-preflight/source-checks/manifest.json").read_bytes())
+row = next(x for x in listed["files"] if x["file"] == "local/__pycache__/verify-local.py.cpython-313.pyc")
+assert row["bytes"] == 4671 and row["sha256"] == "45f1ee33a358aac17001854ad900d9bff6b2d648d7037d3e58cb67eff1fe4c29"
+assert subprocess.run(
+    ["git", "cat-file", "-e", head + ":" + missing],
+    cwd=root,
+    capture_output=True,
+).returncode != 0
+for minor, version, numpy in (("311", "3.11.17", "2.4.6"), ("312", "3.12.15", "2.5.4")):
+    job = next(j for j in jobs if j["name"] == "Python " + version[:4])
+    assert job["head_sha"] == head and job["run_id"] == run["id"] and job["run_attempt"] == 1
+    assert job["status"] == "completed" and job["conclusion"] == "failure"
+    log = (folder / f"python{minor}.log").read_text(encoding="utf-8-sig")
+    assert "ACTUAL_PYTHON=" + version in log and "ACTUAL_NUMPY=" + numpy in log
+    assert "4 failed, 5621 passed, 72 skipped, 150 deselected" in log
+    assert re.search(r"verify-local\.py\.cpython-313\.pyc", log)
+    assert head in log
+print("both official hosted failures and absent historical manifest member verified")
