@@ -7803,20 +7803,9 @@ both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
 
-**November 19 premeasurement report review.** The question was whether every
-predeclared resource and correctness metric could be reproduced from raw own
-records. A complete path's wall time was saved by the worker but omitted from
-the final table; table cost counted only three of four persistent float64
-arrays. **Example:** seven rows with width three occupy `7*3*4*8=672` bytes
-across regret, linear strategy, uniform and warm tables. The corrected report
-reads the twelve saved path times, checks zero structural-recall violations
-and a finite 1e-9-chip native scalar bound, and imports no learner or solver.
-Nineteen focused locked Python 3.11 tests passed; the exact corrected source
-still needs full local, optional and hosted qualification. The earlier source
-`147e624` had passed all four local roles, but those checks do not qualify new
-bytes. **Next decision:** requalify and publish the exact correction before
-the own proof. This is software validation, not poker-strength evidence.
-Codex assisted; human hands-on time was not recorded.
+
+
+
 
 The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
 now preserves four clean local roles and both official hosted jobs for the
@@ -8036,4 +8025,34 @@ experiment's own source fingerprint. Nineteen focused tests passed again.
 **Next decision:** run the representative historical source guards, then
 both locked local and hosted source qualifications before any own proof or
 real profile. No scientific seed, budget, criterion or measurement changed.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 premeasurement report review.** The question was whether every
+predeclared resource and correctness metric could be reproduced from raw own
+records. A complete path's wall time was saved by the worker but omitted from
+the final table; table cost counted only three of four persistent float64
+arrays. **Example:** seven rows with width three occupy `7*3*4*8=672` bytes
+across regret, linear strategy, uniform and warm tables. The corrected report
+reads the twelve saved path times, checks zero structural-recall violations
+and a finite 1e-9-chip native scalar bound, and imports no learner or solver.
+Nineteen focused locked Python 3.11 tests passed; the exact corrected source
+still needs full local, optional and hosted qualification. The earlier source
+`147e624` had passed all four local roles, but those checks do not qualify new
+bytes. **Next decision:** requalify and publish the exact correction before
+the own proof. This is software validation, not poker-strength evidence.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 corrected-source qualification.** The question was whether the
+reporting correction and isolated candidate preserve every old source-bound
+experiment. The exact corrected source `7d2cb37` passed both full local base
+suites (5,704 tests each), both fixed optional suites (2,584 and 2,582 plus
+two expected skips), lint, formatting, strict typing and hooks. Hosted
+[run 44494459961](https://github.com/jimmy-sim/poker-ai/actions/runs/44494459961)
+also passed both Python jobs. **Example:** the historical reader can still
+authenticate its original `src` bytes while this experiment fingerprints its
+own seven new script adapters. The
+[source receipt](../results/river-strength/source-checks/manifest.json)
+retains exact logs and runtime checks. **Next decision:** publish and verify
+the source receipt, then run the synthetic own proof before any 100k real
+profile. These checks establish software qualification, not poker strength.
 Codex assisted; human hands-on time was not recorded.

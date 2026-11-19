@@ -154,6 +154,18 @@ the earlier passing local checks on `147e624` are retained as an intermediate
 checkpoint and cannot qualify the corrected source. The frozen scientific
 contract, inputs, seeds, budgets, tolerances and gates are unchanged.
 
+Corrected source `7d2cb377fd8326557ebba4d83811c132368b0ec2` passed the
+full exact-source qualification. Both local base roles passed 5,704 tests
+(73 skipped, 150 deselected) plus lint, format and strict typing; optional
+Python 3.11 passed 2,584 tests and optional 3.12 passed 2,582 with two
+expected skips. Local hooks passed. [Hosted run 44494459961](https://github.com/jimmy-sim/poker-ai/actions/runs/44494459961)
+passed both Python jobs, including full tests and hooks. All four local roles
+recorded clean pre/post source, lock and runtime guards; optional roles also
+recorded installed OpenSpiel license bytes. The complete
+[qualification receipt](../results/river-strength/source-checks/manifest.json)
+retains logs, official hosted metadata, scope and hashes. No own measurement
+had started when this receipt was assembled.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

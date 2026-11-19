@@ -7628,3 +7628,17 @@ passed on this correction. The earlier local pass remains a historical
 intermediate check; the corrected exact source requires fresh complete
 qualification before proof/profile. No real scientific run started. Codex
 assisted; human hands-on time not recorded.
+
+Corrected source `7d2cb37` completed exact-source qualification on November
+19: both local base Python roles passed 5,704 tests (73 skipped, 150
+deselected), Ruff and strict mypy; optional Python 3.11 passed 2,584 and
+optional 3.12 passed 2,582 with two expected skips. Hooks passed. Hosted
+[run 44494459961](https://github.com/jimmy-sim/poker-ai/actions/runs/44494459961)
+passed both jobs, full checks and hooks. The
+[source receipt](../results/river-strength/source-checks/manifest.json)
+retains complete local and official hosted logs, runtime/license guards and
+fingerprint. The intermediate hosted run on `147e624` was cancelled by this
+push; its metadata and available log remain in the ignored run folder. Next:
+publish and GitHub-byte-verify this receipt, then run the small own proof.
+There is still no real river profile or trained candidate. Codex assisted;
+human hands-on time not recorded.
