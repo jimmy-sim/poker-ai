@@ -7662,3 +7662,11 @@ all 293 raw members, including events, snapshots and complete path timings.
 Next: publish and GitHub-byte-verify this complete profile, then publish a
 separate data-only admission receipt before long learning. No 10m training or
 native audit has run. Codex assisted; human hands-on time not recorded.
+
+The complete profile archive was published at `ea0d967` and all 294 members
+were GitHub-byte-verified. A separate data-only admission recomputed the
+same `T=1218.014` and strict `6072.057<7200` bound from the published
+profile. Its [receipt](../results/river-strength/admission/manifest.json)
+is ready for a distinct publication gate. Next: publish and verify admission,
+then start exactly one fixed 12-path 10m own study under the 7,200-second cap.
+Codex assisted; human hands-on time not recorded.

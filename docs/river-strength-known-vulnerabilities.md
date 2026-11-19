@@ -183,6 +183,13 @@ This is a compute admission only. Its three-repeat maxima and full-path costs
 are not a poker-strength result; the admission receipt must be published and
 verified separately before 10m learning.
 
+After the profile archive was published and all 294 blobs were GitHub-byte
+verified, the data-only admission independently recomputed the same
+`6072.057<7200` strict bound. Its separate
+[admission receipt](../results/river-strength/admission/manifest.json) binds
+the published profile and source. The fixed long study can start only after
+this receipt is itself published and verified.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

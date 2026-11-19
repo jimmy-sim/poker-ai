@@ -8082,3 +8082,13 @@ records and is admitted. **Next decision:** publish and verify the complete
 profile, then publish a separate data-only admission before long learning.
 This is compute evidence, not a measured poker-strength improvement. Codex
 assisted; human hands-on time was not recorded.
+
+**November 19 separate compute admission.** The complete 36-path profile
+was published and all 294 archive blobs were verified on GitHub before the
+admission reader ran. It recomputed the same `T=1218.014` and strict
+`6072.057<7200` seconds from the published data, without training or a
+comparison reference. The [admission receipt](../results/river-strength/admission/manifest.json)
+binds the exact source and profile. **Next decision:** publish and verify the
+receipt, then run one fixed 12-path 10m own study. The admitted forecast is a
+budget decision, not a claim that the candidate plays better. Codex assisted;
+human hands-on time was not recorded.
