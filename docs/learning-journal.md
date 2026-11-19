@@ -7971,3 +7971,16 @@ replay are charged, so a slow profile stops the study.
 bounded learner without relaxing historical strength or compute limits. No
 new trajectory, validation saving or strength result exists. Codex assisted;
 human hands-on time was not recorded.
+
+**November 18 source development.** The candidate now uses the same q8 key
+through the turn and exact acting information only on the river. Its fixed
+B4 runner saves each crossing durably, and the report keeps every one of the
+planned 108 readouts. **Example:** a five-card river observation with the
+same public betting history but a different observed river card gets a
+different candidate row; the control can still merge its q8 texture rows.
+Nineteen focused tests passed in the locked Python 3.11 base environment,
+covering key/recall, training callback purity, replay/tamper, forecast,
+stage ordering and signed paired reporting. This verifies software behavior,
+not poker strength. **Next decision:** qualify the exact source on both local
+runtimes and hosted CI before any real profile. Codex assisted; human
+hands-on time was not recorded.

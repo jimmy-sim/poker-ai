@@ -7574,3 +7574,11 @@ including setup/scoring/replay, fixed three-worker sum `T`, and strict
 measurement, learned candidate or fresh-case claim exists. Next: publish the
 protocol checkpoint, implement the candidate key and tests, then qualify exact
 source before learning. Codex-assisted; human hands-on time not recorded.
+
+The river-strength source now implements the exact river legal key, fixed
+B4 runner, durable own replay, predeclared forecast/admission, comparison-only
+native scalar audit and all-readout data-only report. Nineteen focused locked
+Python 3.11 tests passed; the full exact-source base/optional/hooks/hosted
+qualification remains pending. No new real profile or learned result has
+been run. Next: complete source qualification and publication before the
+small own proof. Codex-assisted; human hands-on time not recorded.

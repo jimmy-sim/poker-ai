@@ -76,6 +76,26 @@ The earlier medium-IP held-out 1.0153%/1% miss and the q8 B4 known-game
 general Hold'em strength claim follows even if this known panel improves.
 A new fresh cohort needs its own predeclared gate before any promotion.
 
+## Source checkpoint
+
+The candidate key falls back to the unchanged q8 key before a five-card
+board, then uses the existing exact legal observation at acting river nodes.
+The learner uses the existing IID B4 trainer with the fixed signed/linear
+rules. Each crossing saves three policies, cumulative average masses, exact
+own scores and an fsynced event trail; replay verifies policy and mass bytes,
+scores and river coverage. The fixed three-worker runner retains completed
+path files on failure. The comparison-only adapter reconstructs own reply
+policies from published snapshots, asks pinned OpenSpiel only for independent
+scalar values and saves each audited row. The data-only report retains all
+108 readouts and applies the historical gates separately to each arm.
+
+Focused software tests cover pre-river identity, legal/hidden observations,
+recall on both real game trees, frozen B4 callbacks, durable capture/replay,
+tampering, forecast arithmetic, stage ordering and all-row report pairing.
+These are source-development checks; the locked full local and hosted source
+qualification, own proof, real profile and candidate outcome are still
+pending at this checkpoint.
+
 The full gated workflow may take a few hours. The cheaper first stage is the
 synthetic key/update checks and capped 100k profiling; long learning starts
 only after its measured forecast and published admission. Further validation

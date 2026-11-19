@@ -5,7 +5,7 @@ import json
 import math
 import statistics
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from poker_ai.abstraction.model import CardAbstraction
 from poker_ai.abstraction.range_mass import (
@@ -22,6 +22,7 @@ from poker_ai.postflop.river_study import digest
 from poker_ai.postflop.tree import SpotTree
 
 CANDIDATE = "texture_range_q8_b8"
+RIVER_CANDIDATE: Literal["q8_turn_exact_river"] = "q8_turn_exact_river"
 CONTROLS = ["exact", "public_b8", "texture_b8", "texture_made_b8", CANDIDATE]
 
 
@@ -35,9 +36,13 @@ def range_context(spot: Spot) -> RangeContext:
 def build_representation_control(
     source: SpotTree, name: str, model: CardAbstraction
 ) -> MatrixTree:
-    if name == CANDIDATE:
+    if name in (CANDIDATE, RIVER_CANDIDATE):
         encoder = RangeMassAbstraction(model, range_context(source.spot))
-        return MatrixTree.build(source, "texture_b8", encoder)
+        return MatrixTree.build(
+            source,
+            "texture_b8" if name == CANDIDATE else "q8_turn_exact_river",
+            encoder,
+        )
     return build_representation(source, name, model)
 
 
