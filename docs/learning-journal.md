@@ -160,10 +160,17 @@ runtimes. The raw records were published before interpretation. This answers
 the mutation question for that observed read; a complete ordinary/reuse
 comparison is still required before sharing a graph.
 [PR #91](https://github.com/jimmy-sim/poker-ai/pull/91) is now history-merged
-after its final evidence-commit CI passed both runtimes. The next
-[prospective comparison](validated-prerequisite-sharing.md) tests whether one
-already validated graph can be handed to all consumers while every original
-loader still runs. It has no collected result yet.
+after its final evidence-commit CI passed both runtimes. The subsequent
+[validated-sharing comparison](validated-prerequisite-sharing.md) in PR #92
+failed before its pair because its pinned environment lacked Numba; no saving
+or sharing result was admitted. The
+[optional-runtime preflight](validated-sharing-runtime-preflight-result.md) in
+PR #93 then reached an ordinary child, but the unchanged source compared
+lists with integer counts and failed before the validated-share child. Its
+source-check archive also contained one ignored byte that was published only
+after the pair. The corrected report and its local and hosted checks pass,
+while `pair_admissible` remains false. A new complete comparison requires a
+prospective source correction and fresh qualification.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
