@@ -209,3 +209,14 @@ retains all snapshots, mass histories, events and own scores. These own values
 must be published and GitHub-byte-verified before any comparison-only native
 reference is constructed; no independent scalar or strength conclusion is
 claimed yet.
+
+## Independent scalar checkpoint
+
+After own raw publication, the pinned comparison-only OpenSpiel 2.0.2 audit
+reproduced all 108 saved own scalars. Maximum absolute discrepancy was
+`1.2079226507921703e-13` chips, below the fixed `1e-9`-chip tolerance. The
+whole audit took 55.210 seconds including startup, below 900 seconds. Its
+[raw archive](../results/river-strength/native/manifest.json) retains all
+rows, fsynced events, pinned runtime and installed Apache-2.0 license hash.
+No reference action, policy or output entered own training. The data-only
+all-readout strength report and final checks remain pending.

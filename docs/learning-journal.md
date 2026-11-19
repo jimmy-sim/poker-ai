@@ -8104,3 +8104,16 @@ full policy/mass/event/score evidence. **Next decision:** publish and verify
 these own values before asking the pinned comparison-only native reference
 to reproduce the 108 scalars. Own scores alone are not yet an independently
 audited strength result. Codex assisted; human hands-on time was not recorded.
+
+**November 19 independent scalar audit.** After publishing and verifying the
+own 108 profiles, pinned OpenSpiel 2.0.2 compared every saved own scalar.
+All 108 comparisons completed in 55.210 seconds including startup; the
+largest absolute difference was `1.2079226507921703e-13` chips, below the
+fixed `1e-9` tolerance. **Example:** each audit row names the saved own policy
+hash, work label and readout, so the native value is bound to an already
+published policy rather than influencing its training. The
+[native archive](../results/river-strength/native/manifest.json) retains
+rows, events and the installed Apache-2.0 license hash. **Next decision:**
+publish and verify the independent audit, then compute the all-readout report
+and final required checks. No stronger-play claim is drawn from scalar
+agreement alone. Codex assisted; human hands-on time was not recorded.

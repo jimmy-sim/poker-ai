@@ -7681,3 +7681,14 @@ members, including policies, masses, events and scores. Next: publish and
 GitHub-byte-verify own evidence before constructing the comparison-only
 OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
 time not recorded.
+
+After the own raw checkpoint, the pinned comparison-only native audit
+completed all 108 scalar comparisons on November 19 in 55.210 seconds
+including startup (<900). Maximum absolute discrepancy was
+`1.2079226507921703e-13` chips, below the fixed `1e-9`-chip tolerance.
+The installed OpenSpiel 2.0.2 Apache-2.0 license matched the pinned hash.
+The [native archive](../results/river-strength/native/manifest.json) retains
+all rows and events. Next: publish and verify this separate audit, then
+reproduce the full report and run final source-bound local/optional/hosted
+checks. No final strength conclusion yet. Codex assisted; human hands-on
+time not recorded.
