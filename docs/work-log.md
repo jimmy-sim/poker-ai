@@ -7556,3 +7556,17 @@ failures. Next: publish/verify the receipt and history-preserving merge, then
 prospectively register the separate bounded river-strength question. The one
 failed work-identity pair is retained without retry or saving claim.
 Codex-assisted; human hands-on time not recorded.
+
+The [prospective river-strength contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002496679)
+and [fixed protocol](river-strength-known-vulnerabilities.md) were written
+before any candidate source or new outcome. PR #96's failed guarded-skip result
+is merged at `434cb18`; the new focused branch starts there. The plan compares
+unchanged q8 against exact legal information only at river decisions, retaining
+q8 through the turn, across both known games, three seeds and fixed 100k/1m/10m
+node-work labels. Primary final10m linear-average exploitability and all other
+readouts, historical gates, source/proof/forecast/own-before-native publication
+boundaries and caps are fixed. The cheaper initial stage is software checks and
+capped 100k profiling; the full gated workflow may take a few hours. No new
+measurement, learned candidate or fresh-case claim exists. Next: publish the
+protocol checkpoint, implement the candidate key and tests, then qualify exact
+source before learning. Codex-assisted; human hands-on time not recorded.

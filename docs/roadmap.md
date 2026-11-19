@@ -9,8 +9,9 @@ Current [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) tests which c
 and range distinctions matter at fixed training work. The latest guarded
 prerequisite skip failed its unchanged work-identity gate; its
 [retained result](pinned-prerequisite-skip-result.md) admits no validation
-saving. Per the user's November 18 direction, the next priority is a
-prospectively bounded river-strength experiment targeting known vulnerabilities.
+saving. Per the user's November 18 direction, the active next priority is a
+[prospectively bounded river-strength experiment](river-strength-known-vulnerabilities.md)
+targeting known vulnerabilities.
 Further validation-performance work is deferred unless it blocks correctness
 or that experiment's stated budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

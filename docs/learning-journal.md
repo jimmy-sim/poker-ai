@@ -7948,3 +7948,22 @@ guarded-skip study as a failed work-identity result and register a separate
 bounded river-strength learning test before implementation or measurement.
 The single pair is not rerun, and no CPU saving or stronger agent is claimed.
 Codex assisted; human hands-on time was not recorded.
+
+## 141. Test exact legal information at river decisions
+
+**November 18, 2026, before implementation or new outcomes.** The
+[prospective issue contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002496679)
+and [protocol](river-strength-known-vulnerabilities.md) ask whether the q8
+learner improves at equal node work when its river rows retain exact own cards,
+observed board and public action history, while turn rows keep q8. **Example:**
+the saved `Qh Kh` river 9d/9h bluff-raise conflict survives a fixed compatible
+range prior because future responses differ; separating those observed river
+cards might help learning, but the diagnostic did not train this candidate.
+The planned comparison has two known games, three seeds, two arms, three work
+labels and all readouts, with source, proof, forecast, own-before-native and
+final check gates. The cheaper first stage is synthetic software checks and
+capped 100k profiling; the complete gated workflow may take a few hours.
+**Next decision:** publish this protocol, then implement and test the key and
+bounded learner without relaxing historical strength or compute limits. No
+new trajectory, validation saving or strength result exists. Codex assisted;
+human hands-on time was not recorded.
