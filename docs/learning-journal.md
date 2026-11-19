@@ -8092,3 +8092,15 @@ binds the exact source and profile. **Next decision:** publish and verify the
 receipt, then run one fixed 12-path 10m own study. The admitted forecast is a
 budget decision, not a claim that the candidate plays better. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 fixed own learning.** The one admitted 12-path study completed
+all 108 fixed profiles in 239.029 seconds including startup, inside the
+7,200-second cap. Each path reached 10m node work, and the final actual work
+range was 10,000,013–10,000,119; all recorded structural-recall counts were
+zero. **Example:** a 10m label is saved at its first complete crossing, so
+its recorded actual work can exceed the nominal label slightly. The
+[own raw archive](../results/river-strength/own/manifest.json) retains the
+full policy/mass/event/score evidence. **Next decision:** publish and verify
+these own values before asking the pinned comparison-only native reference
+to reproduce the 108 scalars. Own scores alone are not yet an independently
+audited strength result. Codex assisted; human hands-on time was not recorded.

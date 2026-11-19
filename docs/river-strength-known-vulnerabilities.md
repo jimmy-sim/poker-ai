@@ -197,3 +197,15 @@ performance investigation is deferred unless it blocks correctness or this
 budget. Codex assisted with this prospective protocol; human hands-on time
 was not recorded. At prospective publication, no candidate source, new
 trajectories or outcome existed.
+
+## Own raw learning checkpoint
+
+The single fixed own 12-path study completed all 108 readouts in 238.682
+seconds inside the stage (239.029 seconds including startup), below the
+7,200-second cap. Every path reached its 10m label, with final actual work
+between 10,000,013 and 10,000,119 and zero recorded structural-recall
+violations. The [own raw archive](../results/river-strength/own/manifest.json)
+retains all snapshots, mass histories, events and own scores. These own values
+must be published and GitHub-byte-verified before any comparison-only native
+reference is constructed; no independent scalar or strength conclusion is
+claimed yet.

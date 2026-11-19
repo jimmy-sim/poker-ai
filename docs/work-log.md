@@ -7670,3 +7670,14 @@ profile. Its [receipt](../results/river-strength/admission/manifest.json)
 is ready for a distinct publication gate. Next: publish and verify admission,
 then start exactly one fixed 12-path 10m own study under the 7,200-second cap.
 Codex assisted; human hands-on time not recorded.
+
+The single prospective own 12-path study completed on November 19 in
+238.682 seconds inside the stage and 239.029 including startup, within the
+7,200-second cap. All 108 fixed readouts were saved; each path reached 10m
+actual node work (final range 10,000,013–10,000,119) and recorded zero
+structural-recall violations. The
+[own raw archive](../results/river-strength/own/manifest.json) retains 220
+members, including policies, masses, events and scores. Next: publish and
+GitHub-byte-verify own evidence before constructing the comparison-only
+OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
+time not recorded.
