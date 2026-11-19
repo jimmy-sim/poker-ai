@@ -74,3 +74,31 @@ remain failed. This study will likely exceed a few hours across source
 checks and a complete pair; its cheaper first gate is synthetic software
 qualification, with no archived read before publication. Codex assisted
 with this protocol; human hands-on time was not recorded.
+
+## Local software implementation — November 18
+
+The [guarded wrapper](../scripts/guarded_prerequisite_skip_support.py) now
+builds a closed byte snapshot from 14 declared pins, the 458-file current
+scientific source, archived source maps in six pinned JSON receipts, and
+the four new qualified operator scripts. The union is 486 paths, including
+eleven historical files absent from the current scientific inventory.
+A first nested call runs the full original
+loader; later five nested and one direct site use the donor only after
+snapshot, alias and complete graph checks. The unchanged receipt callers
+still run. The new [own proof](../scripts/prove_guarded_prerequisite_skip.py),
+[complete pair](../scripts/compare_guarded_prerequisite_skip.py) and
+[optional preflight](../scripts/launch_guarded_skip_optional.py) retain the
+original caps and require new public source and own-proof records.
+
+**Example:** changing one historical audit script makes the byte snapshot
+reject even though that script is outside the current 458-file fingerprint.
+Changing a pin, source, receipt, archive, root, alias or donor in synthetic
+tests stops before a guarded return and restores the original importing
+aliases. Thirty-five focused tests pass with one expected optional-runtime
+skip on each locked Python version. Ruff lint/format and strict mypy on
+the seven new source/test files pass. The first focused iteration found
+import-order/format and test typing errors; these were corrected before
+qualification. No archived read, complete pair, CPU saving or new strategy
+result exists. Next: commit the complete source, run both clean base and
+both optional roles plus hooks and hosted CI, and publish every check byte
+before a reference-free own proof.

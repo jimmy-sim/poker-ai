@@ -7457,3 +7457,18 @@ seeds remain; any failed or partial gate stops without a favorable retry.
 The first step is synthetic software only, then full exact-source local,
 optional and hosted qualification before an archived own proof. No new
 runtime or saving claim. Codex-assisted; human hands-on time not recorded.
+
+The guarded-skip source step adds a 486-path closed snapshot from 14 pinned
+files, 458 current scientific source files, archived historical source
+maps and four new operators; eleven historical-only paths would otherwise
+be missed. One original
+loader per archive root is retained in the wrapper, with six later guarded
+returns, exact alias restoration and failure checks. Own-proof, pair and
+optional preflight adapters retain the original caps and public evidence
+gates. Local focused checks pass on Python 3.11.17 and 3.12.15: 35 passed,
+one expected skip each; Ruff lint/format and strict mypy on seven touched
+source/test files pass. Initial import-order/format and test-typing failures
+were corrected before qualification. Next: commit all related source/tests/
+docs, run full clean local and hosted source checks, and publish the exact
+source archive before any archived read. No pair or savings claim.
+Codex-assisted; human hands-on time not recorded.

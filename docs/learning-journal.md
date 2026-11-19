@@ -183,7 +183,9 @@ does not establish CPU savings or a stronger strategy. The next
 [source audit](prerequisite-skip-contract.md) maps validations a real
 skipped-work optimizer would need to preserve. A separate
 [prospective guard test](pinned-prerequisite-skip.md) now fixes the checks
-before any changed source or new pair.
+before any changed source or new pair. Its local synthetic guard and
+adapters pass focused tests on both locked runtimes; full source
+qualification and any archived read remain pending.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7840,3 +7842,17 @@ source or archived collection; no new tests or savings result exists yet.
 then qualify that exact source before any archived read. The old failed
 gates and one-pair limits remain. Codex assisted with the protocol; human
 hands-on time was not recorded.
+
+The guarded-skip software now has a [closed 486-file byte snapshot](../scripts/guarded_prerequisite_skip_support.py)
+and a root-local wrapper that runs one original loader before six later
+guarded returns. It includes historical source files absent from the
+current 458-file scientific fingerprint. **Example:** a changed historical
+audit script is rejected even when the current source fingerprint remains
+the same. New own-proof, complete-pair and optional preflight adapters
+keep the original caps and exact result/work gate. Thirty-five synthetic
+and adapter tests pass on each locked runtime with one expected skip;
+Ruff and strict mypy pass on seven files. Early import-order/format and
+test-typing errors were fixed before this milestone. **Next decision:**
+qualify and publish this exact source on both base, both optional and
+hosted roles before any archived own read. No saving or strategy result
+exists. Codex assisted; human hands-on time was not recorded.
