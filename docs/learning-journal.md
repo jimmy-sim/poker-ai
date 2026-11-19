@@ -22,6 +22,8 @@ not a record of completed practice.
 
 ## Quick navigation
 
+- [Map the checks before skipping loads](#139-map-the-checks-before-skipping-prerequisite-loads)
+
 - [Test validated sharing](#136-test-one-shared-prerequisite-graph-after-every-original-validation)
 
 - [Correct the complete count gate](#138-correct-the-complete-sharing-count-gate)
@@ -171,10 +173,13 @@ PR #93 then reached an ordinary child, but the unchanged source compared
 lists with integer counts and failed before the validated-share child. Its
 source-check archive also contained one ignored byte that was published only
 after the pair. The corrected report and its local and hosted checks pass,
-while `pair_admissible` remains false. A new complete comparison requires a
-prospective source correction and fresh qualification. That work is now
-registered in [PR #94](validated-sharing-count-gate.md); no new complete pair
-has started.
+while `pair_admissible` remains false. A separately preregistered correction
+in [PR #94](validated-sharing-count-gate-result.md) then passed one complete
+ordinary/validated-share result **and work** identity pair and merged after
+all local and hosted checks. Every original loader still ran, so the pair
+does not establish CPU savings or a stronger strategy. The next
+[source audit](prerequisite-skip-contract.md) maps validations a real
+skipped-work optimizer would need to preserve; it runs no new pair.
 Earlier failures and their original conditions stay in the entries below.
 
 Three useful reading paths:
@@ -7794,3 +7799,23 @@ tested the identical tree and passed both jobs. **Next decision:** publish
 this receipt, require green CI on its final commit, then close the bounded
 behavior question. The one observed pair still supports no CPU saving or
 new strategy. Codex assisted; human hands-on time was not recorded.
+
+## 139. Map the checks before skipping prerequisite loads
+
+**November 18, 2026.** The [prospective source audit](prerequisite-skip-contract.md)
+asks which original checks a future cache would skip. The just-merged
+validated-sharing pair proves that a donor graph can be handed to later
+consumers without changing the complete result or work, but it still runs
+all original loaders. I traced the saved reader's admission path: three
+reduction replays each cause two nested prerequisite loads, followed by
+one direct load. **Example:** replacing the second nested load with the
+first graph would also omit that call's input hash checks, controlled own
+and archived native receipt validation, trace checks and archive decode.
+The receipt caller's own checks would still run, but on the earlier graph.
+The seven-source-module map parses, its links resolve and 24 relevant tests
+pass on each locked runtime, with one expected skip each. No scientific
+source or archived result changed. **Next decision:** decide a separate
+prospective skip contract that independently preserves every omitted
+validation and declares any expected work-counter changes before a new
+pair. No CPU saving, new strategy or training is established. Codex
+assisted with the source audit; human hands-on time was not recorded.

@@ -7427,3 +7427,21 @@ passed both jobs on the actual locked runtimes and a whole merge tree
 identical to the report head. Next: publish this receipt, check CI on the
 final evidence commit, then close this behavior question. No savings or
 strategy claim. Codex-assisted; human hands-on time not recorded.
+
+### November 18: prerequisite skip boundary mapped
+
+[PR #94](https://github.com/jimmy-sim/poker-ai/pull/94) is history-merged at
+`5017f8a`; final [CI #596](https://github.com/jimmy-sim/poker-ai/actions/runs/44450847721)
+passes both actual locked runtimes with 5,639/72 skipped/150 deselected
+and a whole tree equal to the final head. The separate main checkout was
+fast-forwarded with ten unrelated user files, bytes, status, changed-path
+index entries and patches preserved; its merged report and verifier pass.
+The next [prospective static audit](prerequisite-skip-contract.md) maps
+three reduction replays × two nested prerequisite loads plus one direct
+load, and identifies checks a skip would bypass. Seven mapped source
+modules parse, the new relative links resolve, and 24 relevant tests pass
+with one expected skip on each locked runtime. No new archived read,
+pair, solver construction, training or saving claim. Next: review this
+contract, pass hosted docs checks, then decide whether a separately
+preregistered optimizer is safe and useful. Codex-assisted; human
+hands-on time not recorded.
