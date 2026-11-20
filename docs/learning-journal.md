@@ -8651,3 +8651,17 @@ decision improves. The [complete raw proof](../results/medium-dry-b1-updates/own
 also retains the launcher receipt. **Next decision:** publish/verify those
 bytes before the fixed 18-path Hold'em compute profile and strict admission.
 Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 compute profile.** The one fixed profile completed all
+18 path/repeat pairs at the 100k charged-work crossing and saved/replayed
+54 policy readouts. **Example:** the slowest measured medium/dry path
+extrapolates to 505.254 seconds at 10m work, while a low/wet path extrapolates
+to 115.069 seconds; the fixed three-worker assignment yields a largest
+worker sum `T=624.521` seconds. The frozen conservative rule therefore
+computes `2*(2*T+600)=3698.083` seconds, below the 7200-second own cap.
+The [raw profile](../results/medium-dry-b1-updates/profile/manifest.json)
+retains every repeat and memory observation. A forecast only admits a longer
+test; it says nothing yet about the candidate's poker choices. **Next
+decision:** publish/verify the complete profile, then issue a separate
+data-only admission receipt before any 10m run. Codex assisted; human
+hands-on time was not recorded.

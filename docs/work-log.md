@@ -8183,3 +8183,16 @@ launcher record](../results/medium-dry-b1-updates/own-proof/manifest.json)
 are retained. This checks software behavior, not poker strength. Next:
 publish and byte-verify the complete proof before the one fixed 18-path
 100k-work profile. Codex assisted; human hands-on time not recorded.
+
+The fixed PR #101 18-path, three-repeat, 100k-work profile completed once
+on November 20 (PST), after the fictional proof archive was byte-verified.
+All 18 paths and 54 current/uniform/linear readouts saved and replayed;
+final work ranged 100,000–100,034. Internal time was 18.597 seconds,
+launcher time 19.103 seconds (<900), and maximum worker high-water RSS was
+187,088,896 bytes. The predeclared slowest-repeat calculation gives fixed
+worker sums 617.162/615.439/624.521 seconds, `T=624.521`, and strict
+`2*(2*T+600)=3698.083<7200` seconds. The [complete raw profile](../results/medium-dry-b1-updates/profile/manifest.json)
+is retained. This is a compute forecast, not a poker-strength outcome or
+admission publication. Next: publish/byte-verify the profile and make a
+separate data-only admission decision. Codex assisted; human hands-on time
+not recorded.
