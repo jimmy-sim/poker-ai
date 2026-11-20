@@ -7822,3 +7822,19 @@ hash matched. The [native archive](../results/river-generalization/native/manife
 retains rows and events. Next: publish and verify the independent audit,
 then produce the fixed all-readout report. No final strength conclusion yet.
 Codex assisted; human hands-on time not recorded.
+
+The fixed all-readout report reproduced 108 rows from the published own and
+native archives. All six final paired seeds favored the candidate; low/wet/IP
+paired median was -0.005148597 initial pots, medium/dry/OOP -0.092425654,
+pooled -0.039914876. **The preregistered conclusion is negative:** the
+candidate's medium/dry median/worst absolute exploitability were
+3.566%/3.954%, failing the unchanged 1%/2.5% gates. Control also failed
+there (12.756%/13.065%). Both arms passed low/wet gates, all final average
+coverages were 100%, recall violations zero and max native scalar error
+5.684e-14 chips. The [full report](../results/river-generalization/report/report.json)
+retains every seed, readout, gain, work, memory and time. Deterministic
+first-river-row policy examples and a rerunnable inspection command are in
+the [study document](river-generalization-fixed-spots.md). Next: publish the
+negative report and complete final exact-source checks, then stop with no
+promotion or next experiment. Codex assisted; human hands-on time not
+recorded.

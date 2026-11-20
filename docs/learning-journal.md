@@ -8282,3 +8282,23 @@ The [archive](../results/river-generalization/native/manifest.json) retains
 all rows and events. **Next decision:** publish and verify this independent
 audit before computing the fixed report. Scalar agreement alone does not say
 which arm is stronger. Codex assisted; human hands-on time was not recorded.
+
+**November 19 additional-spot result: negative.** The question was whether
+exact acting river information helps the unchanged q8 learner at matched 10m
+work on two newly drawn card/range inputs. All six fixed paired seeds had
+lower candidate exploitability; the medium/dry paired median improved by
+0.092426 initial pots and the low/wet median by 0.005149. **The declared
+result is still negative:** the candidate missed the medium/dry absolute
+quality limits, with 3.566% median and 3.954% worst exploitability versus
+1% and 2.5% maximums. The control also missed those limits there. Both arms
+passed low/wet gates; all final reach coverages were 100%, recall violations
+zero and independent scalar agreement within 1e-9 chips. **Example:** at the
+first exact river row for the medium/dry spot, seed 20261371 candidate
+raises to 182 about 23.12% with `2c 8d` on `2s 6h Jc 3c 2d`, versus about
+0.0036% for control; this saved-action example is chosen by tree order and
+does not override the failed absolute gate. The [full report](../results/river-generalization/report/report.json)
+retains every seed, gain, coverage, memory and time, and the [study document](river-generalization-fixed-spots.md)
+provides a rerunnable decision command. **Next decision:** publish the
+negative report, run final reproducibility checks and stop this investigation.
+No case, candidate, threshold or budget is changed. Codex assisted; human
+hands-on time was not recorded.

@@ -169,3 +169,94 @@ bytes matched the pinned hash. The [native archive](../results/river-generalizat
 retains all rows and fsynced events. No reference policy or action entered
 training. Next: publish and verify this independent audit, then reproduce the
 all-readout report from published own and native evidence.
+
+## Fixed two-input result: negative
+
+The [data-only report](../results/river-generalization/report/report.json) reproduced
+all 108 readouts from published own and native evidence. At the declared
+final 10m linear-average endpoint, the candidate-minus-control exact
+restricted-game exploitability differences, as fractions of initial pot,
+were:
+
+| New card/range input | Seed 20261371 | Seed 20261372 | Seed 20261373 | Paired median |
+| --- | ---: | ---: | ---: | ---: |
+| Low/wet/IP | -0.005613362 | -0.005148597 | -0.003895194 | -0.005148597 |
+| Medium/dry/OOP | -0.094993262 | -0.074216391 | -0.092425654 | -0.092425654 |
+
+The pooled six-pair median was `-0.039914876`. All six paired seed contrasts
+favored the candidate descriptively. **The preregistered classification is
+negative** because the candidate failed the unchanged absolute quality gates
+on the new medium/dry input: median exploitability was `0.035655787`
+(3.566%) against ≤1%, and the worst seed was `0.039541661` (3.954%)
+against ≤2.5%. The medium/dry control also failed, with median/worst
+`0.127558135`/`0.130649050` (12.756%/13.065%). On low/wet/IP, candidate
+median/worst were `0.000945518`/`0.001146135` and control
+`0.006057871`/`0.006558881`, all within the absolute gates. Every final
+linear-average row had 100% positive-average uniform-reach coverage; saved
+structural-recall violations were zero. All 108 independent scalar checks
+agreed within 1e-9 chips (maximum `5.684e-14`).
+
+The report retains exact exploitability in chips, all within-partition and
+extra-information gains, exact-prefix river-only gain, post-initial river
+coverage and initial-only rows, each overshoot and path time. At final work,
+low/wet/IP persistent four-table cost was 368,896 bytes for control and
+523,776 for candidate; medium/dry/OOP was 3,252,480 versus 4,697,088
+bytes. Own whole-path times ranged about 65.976–67.266 seconds on low/wet/IP
+and 75.516–77.173 seconds on medium/dry/OOP. This fixed panel has two new
+card/range inputs on known betting templates, only three dependent training
+seeds, and no zero-shot or population inference. The favorable paired
+contrasts do not override failed absolute gates; no default is promoted and
+no case, budget, threshold or arm is changed.
+
+For a reproducible decision illustration, the first exact river information
+row in tree order was chosen for each spot, before inspecting its policy
+probabilities. Seed 20261371 at 10m linear average checks with `Qc Qd` on
+`9s 7d Jd 5d 2c` about 99.999945% (control) and 99.999991% (candidate).
+With `2c 8d` on `2s 6h Jc 3c 2d`, the saved control checks 82.693%, raises
+to 36 17.303% and raises to 182 0.0036%; the candidate checks 71.774%,
+raises to 36 5.105% and raises to 182 23.120%. These examples illustrate
+actual saved actions, not a favorable selection or evidence of stronger
+play. Inspect them from a normal clone after `make setup` with:
+
+```sh
+PYTHONPATH=src:scripts uv run --locked python - <<'PY'
+import json
+from pathlib import Path
+from poker_ai.cards import format_card
+from poker_ai.postflop.controlled_checkpoints import read_snapshot
+from poker_ai.training.no_limit import NoLimitState
+from river_generalization.gate import ARMS, GAMES
+from river_generalization.learning import context
+root = Path.cwd()
+for game_offset, game in enumerate(GAMES):
+    contexts = {arm: context(root, game, arm) for arm in ARMS}
+    source = contexts[ARMS[0]].exact.source
+    info, node = next((i, n) for i, n in enumerate(source.representatives)
+                      if source.states[n].dealer is not None
+                      and len(source.states[n].dealer.board) == 5)
+    state = source.states[node]
+    assert state.dealer is not None
+    obs = state.dealer.observe(state.actor)
+    print(game, info, obs.seat,
+          ' '.join(map(format_card, obs.hole_cards)),
+          ' '.join(map(format_card, obs.board)))
+    for arm_offset, arm in enumerate(ARMS):
+        scoring = contexts[arm]
+        folder = root / 'results/river-generalization/own/study' / f'path{6*game_offset+arm_offset:02d}'
+        summary = json.loads((folder / 'summary.json').read_bytes())
+        row = next(r for r in summary['captures']
+                   if r['metadata']['work_label'] == 10_000_000
+                   and r['metadata']['readout'] == 'linear_average')
+        policy = read_snapshot(folder / row['file'], scoring.partition,
+                               row['receipt'], row['metadata'])
+        abstract = int(scoring.exact_to_partition[info])
+        menu = scoring.partition.actions[abstract]
+        actions = [str(NoLimitState(state.dealer, source.spot.rules).decode(a))
+                   for a in menu]
+        print(arm, abstract, list(zip(actions, policy[abstract, :len(menu)].tolist())))
+PY
+```
+
+Next: publish and verify this negative report, then complete the required
+final exact-source local, optional and hosted reproducibility checks. A failed
+scientific quality gate ends this investigation; no next experiment follows.

@@ -1,0 +1,4468 @@
+{
+  "classification": "negative",
+  "gates": [
+    {
+      "arm": "texture_range_q8_b8",
+      "coverage": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "coverage_pass": true,
+      "game": "new_low_wet_ip",
+      "median": 0.006057871133532721,
+      "median_pass": true,
+      "worst": 0.006558880712561555,
+      "worst_pass": true
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "coverage": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "coverage_pass": true,
+      "game": "new_low_wet_ip",
+      "median": 0.0009455184632112969,
+      "median_pass": true,
+      "worst": 0.0011461346630434772,
+      "worst_pass": true
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "coverage": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "coverage_pass": true,
+      "game": "new_medium_dry_oop",
+      "median": 0.1275581354314736,
+      "median_pass": false,
+      "worst": 0.1306490495454142,
+      "worst_pass": false
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "coverage": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "coverage_pass": true,
+      "game": "new_medium_dry_oop",
+      "median": 0.03565578748906437,
+      "median_pass": false,
+      "worst": 0.03954166130670362,
+      "worst_pass": false
+    }
+  ],
+  "native_maximum_error_chips": 5.684341886080802e-14,
+  "native_scalar_gate_pass": true,
+  "native_scalar_tolerance_chips": 1e-09,
+  "primary_paired": [
+    {
+      "candidate_minus_control_chips": -1.8187293687894837,
+      "candidate_minus_control_fraction_initial_pot": -0.0056133622493502585,
+      "game": "new_low_wet_ip",
+      "seed": 20261371
+    },
+    {
+      "candidate_minus_control_chips": -1.6681455666590637,
+      "candidate_minus_control_fraction_initial_pot": -0.005148597427960073,
+      "game": "new_low_wet_ip",
+      "seed": 20261372
+    },
+    {
+      "candidate_minus_control_chips": -1.262043014950784,
+      "candidate_minus_control_fraction_initial_pot": -0.0038951944905888398,
+      "game": "new_low_wet_ip",
+      "seed": 20261373
+    },
+    {
+      "candidate_minus_control_chips": -3.419757434028594,
+      "candidate_minus_control_fraction_initial_pot": -0.09499326205634984,
+      "game": "new_medium_dry_oop",
+      "seed": 20261371
+    },
+    {
+      "candidate_minus_control_chips": -2.671790060995729,
+      "candidate_minus_control_fraction_initial_pot": -0.07421639058321469,
+      "game": "new_medium_dry_oop",
+      "seed": 20261372
+    },
+    {
+      "candidate_minus_control_chips": -3.327323556769428,
+      "candidate_minus_control_fraction_initial_pot": -0.09242565435470633,
+      "game": "new_medium_dry_oop",
+      "seed": 20261373
+    }
+  ],
+  "primary_pooled_six_pair_median": -0.039914876416282476,
+  "primary_spot_medians": {
+    "new_low_wet_ip": -0.005148597427960073,
+    "new_medium_dry_oop": -0.09242565435470633
+  },
+  "rows": [
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.3896564704480774,
+      "exploitability_chips": 7.470365907335879,
+      "exploitability_fraction_initial_pot": 0.02305668489918481,
+      "extra_information_gap_chips": 0.3896564704480774,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 30,
+      "policy_sha256": "e2b05e17e715de9647588b2dbef252ce4729d1932f60afeb3aecffc40cc2dda4",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 100030,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 7.080709436887801,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.6614012058749061,
+      "exploitability_chips": 4.202071463849382,
+      "exploitability_fraction_initial_pot": 0.0129693563699055,
+      "extra_information_gap_chips": 0.6614012058749061,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 30,
+      "policy_sha256": "1c22595b2ae05a93932fc90e48a50dd838614b20e583325ad549839c3a5cff36",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9996617965367965
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9992108585858586
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 100030,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 3.540670257974476,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.6112648901876483,
+      "exploitability_chips": 3.939020315622855,
+      "exploitability_fraction_initial_pot": 0.012157470109947085,
+      "extra_information_gap_chips": 0.6112648901876483,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 30,
+      "policy_sha256": "ae32b6f70c079fa0ce510168cdf92940d3c0d825e65b167bc937aff596d23806",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9996617965367965
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9992108585858586
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 100030,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 3.327755425435207,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.0260904098055832,
+      "exploitability_chips": 8.66034777198265,
+      "exploitability_fraction_initial_pot": 0.026729468432045215,
+      "extra_information_gap_chips": 1.0260904098055832,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 75,
+      "policy_sha256": "0d4ffd65d68d4a846861b0618cb6cd8e04c90441efacec35fb824207eec6b55c",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 1000075,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 7.634257362177067,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.9972945255446533,
+      "exploitability_chips": 1.8225036588110726,
+      "exploitability_fraction_initial_pot": 0.0056250112926267675,
+      "extra_information_gap_chips": 0.9972945255446533,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 5.684341886080802e-14,
+      "overshoot": 75,
+      "policy_sha256": "46e53738e9f7a262f4f564b38f9135b4fa2f78784c102ae3c1048d4cd1701879",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9999323593073594
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9998421717171717
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 1000075,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 0.8252091332664193,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.2031899394355747,
+      "exploitability_chips": 2.0104746953750308,
+      "exploitability_fraction_initial_pot": 0.006205168812885897,
+      "extra_information_gap_chips": 1.2031899394355747,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 75,
+      "policy_sha256": "da0d426a70183992403d7036256e744dc758c501a9cc08a14b6b91ce92d9ef39",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9999323593073594
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9998421717171717
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 1000075,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 0.807284755939456,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.17340369811701,
+      "exploitability_chips": 9.41537121836111,
+      "exploitability_fraction_initial_pot": 0.02905978771099108,
+      "extra_information_gap_chips": 1.17340369811701,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 3.552713678800501e-14,
+      "overshoot": 17,
+      "policy_sha256": "b3aca5ab2fc116e65804f2d2c611322f62c931376ba87ba2ae973a7ed8bbaa32",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 10000017,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 8.2419675202441,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.5339278945764931,
+      "exploitability_chips": 1.7913478889768442,
+      "exploitability_fraction_initial_pot": 0.0055288515091877904,
+      "extra_information_gap_chips": 1.5339278945764931,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 17,
+      "policy_sha256": "b3127ecdefacdfd2393c80900ea2b86fb9e6e2f9c5ffe979195536f14990a468",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9999323593073594
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9998421717171717
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 10000017,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 0.257419994400351,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.817206188727198,
+      "exploitability_chips": 2.125077350869944,
+      "exploitability_fraction_initial_pot": 0.006558880712561555,
+      "extra_information_gap_chips": 1.817206188727198,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 17,
+      "policy_sha256": "fe22e107719c0ad56022fb6140ca197c3d91e5d1f8a8df50c767e923ad5fe35b",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9999323593073594
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9998421717171717
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 368896,
+      "total_node_work": 10000017,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.26571937499102,
+      "within_partition_gain_chips": 0.3078711621427459,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 10.444021588559664,
+      "exploitability_fraction_initial_pot": 0.03223463453259156,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 61,
+      "policy_sha256": "f33742a4327f7f1c9fda08ff5ca2f63eea1ffe8b2d456294a56861d77d42260a",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 100061,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 10.444021588559664,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 5.177298072205588,
+      "exploitability_fraction_initial_pot": 0.015979315037671568,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 5,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 61,
+      "policy_sha256": "0177bf71e1eaeab9c82dcc99e7234769b3f7f8baf1fa6387e8379ae57129fcc2",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 367,
+          "row_fraction": 0.9865591397849462,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9990530303030303
+        },
+        "river": {
+          "positive_rows": 363,
+          "row_fraction": 0.9864130434782609,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9977904040404041
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 100061,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 5.177298072205588,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 4.404449209449822,
+      "exploitability_fraction_initial_pot": 0.013593979041511798,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 5,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 61,
+      "policy_sha256": "8ee0d3f08a778f294927ad681251ac13dedc5ade94cd3b5079cf3f2f28ab019e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 367,
+          "row_fraction": 0.9865591397849462,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9990530303030303
+        },
+        "river": {
+          "positive_rows": 363,
+          "row_fraction": 0.9864130434782609,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9977904040404041
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 100061,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 4.404449209449822,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 8.758057836994364,
+      "exploitability_fraction_initial_pot": 0.02703104270677273,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 6,
+      "policy_sha256": "cc89ddbbb79962091e6b0e5dc5ff8871c3e7a2ba0ecd1a749eefe7923cb67207",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 1000006,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 8.758057836994364,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.1073207967642347,
+      "exploitability_fraction_initial_pot": 0.003417656780136527,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 0.0,
+      "overshoot": 6,
+      "policy_sha256": "f49cd1b22e7a3539eb5bb805a3a4805fc8f109187f1b4d2e242963f5cccf4668",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9993235930735932
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.998421717171717
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 1000006,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 1.1073207967642347,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.0271729935464506,
+      "exploitability_fraction_initial_pot": 0.003170287017118675,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 6,
+      "policy_sha256": "babe7d04c5a2041f58555c08d88b908086a4da7e6c9dc95346f10b92fa6c061d",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9993235930735932
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.998421717171717
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 1000006,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 1.0271729935464506,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 9.121983932400383,
+      "exploitability_fraction_initial_pot": 0.02815427139629748,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 55,
+      "policy_sha256": "66bf23787939e3dd3d0cd13c1f82e8fdfa2353e922a7a374b18d7ea2b662ffda",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 10000055,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 9.121983932400383,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.30435851058927454,
+      "exploitability_fraction_initial_pot": 0.0009393781191026992,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 55,
+      "policy_sha256": "c635f7bd2cfe7f1164d3db03a0b751d301d246590bd55f1f6d9a707a6b2f2043",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9993235930735932
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.998421717171717
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 10000055,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 0.30435851058927454,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.3063479820804602,
+      "exploitability_fraction_initial_pot": 0.0009455184632112969,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 55,
+      "policy_sha256": "f76bc2e7cb28f445bcf24047556ab58560cd263a189b83568863d0a7290d3b5e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9993235930735932
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.998421717171717
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 523776,
+      "total_node_work": 10000055,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.71688012499362,
+      "within_partition_gain_chips": 0.3063479820804602,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.183941716568242,
+      "exploitability_chips": 7.3613798329945155,
+      "exploitability_fraction_initial_pot": 0.022720308126526284,
+      "extra_information_gap_chips": 1.183941716568242,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 47,
+      "policy_sha256": "fc5f3e0d4b155b23d88592c8e612594f13ce4147b4d31eca7cdc2fc12060a9ed",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 100047,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 6.1774381164262735,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.9440107661292352,
+      "exploitability_chips": 4.376825796126759,
+      "exploitability_fraction_initial_pot": 0.013508721592983825,
+      "extra_information_gap_chips": 0.9440107661292352,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 6,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 47,
+      "policy_sha256": "b516bfb148747053c0d81197ccebaa0bc5905fe6095b23b6cfc6a01f1fc8ed67",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 256,
+          "row_fraction": 0.9770992366412213,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9968208874458875
+        },
+        "river": {
+          "positive_rows": 252,
+          "row_fraction": 0.9767441860465116,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9925820707070707
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 100047,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 3.432815029997524,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.0566263880656273,
+      "exploitability_chips": 3.916376445399454,
+      "exploitability_fraction_initial_pot": 0.012087581621603253,
+      "extra_information_gap_chips": 1.0566263880656273,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 6,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 47,
+      "policy_sha256": "9583df6c9d2de3762977ecabfe68ecbeb2b809138323d4e845c616a0c0b63643",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 256,
+          "row_fraction": 0.9770992366412213,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9968208874458875
+        },
+        "river": {
+          "positive_rows": 252,
+          "row_fraction": 0.9767441860465116,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9925820707070707
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 100047,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 2.8597500573338266,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.4245715848068201,
+      "exploitability_chips": 8.935384944820086,
+      "exploitability_fraction_initial_pot": 0.027578348595123724,
+      "extra_information_gap_chips": 1.4245715848068201,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 8,
+      "policy_sha256": "2330fc211d3bc461d25eff0da002c21b8d2a4852ff781e39ecba6b54b6caa761",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 1000008,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 7.510813360013266,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.9607084542858573,
+      "exploitability_chips": 1.816070447278065,
+      "exploitability_fraction_initial_pot": 0.005605155701475509,
+      "extra_information_gap_chips": 0.9607084542858573,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 8,
+      "policy_sha256": "0553605ca0a020f1213cefc4b73a87c30bc6cc5a40d9a7d7925d1d95239c279c",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9981737012987013
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9957386363636362
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 1000008,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 0.8553619929922078,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.0885614983276852,
+      "exploitability_chips": 1.9661404584883257,
+      "exploitability_fraction_initial_pot": 0.006068334748420758,
+      "extra_information_gap_chips": 1.0885614983276852,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 8,
+      "policy_sha256": "8ed4eae69f95196c3a6d04e9bdba092c0fe80fd24542294a510f2505b4a770b0",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9981737012987013
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9957386363636362
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 1000008,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 0.8775789601606405,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.8271014350288048,
+      "exploitability_chips": 9.820932443527518,
+      "exploitability_fraction_initial_pot": 0.03031151988743061,
+      "extra_information_gap_chips": 0.8271014350288048,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 11,
+      "policy_sha256": "dea47cf3d7dfd353bcb69b1646aab173191a59e833802519d3f6f97068ee3925",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 10000011,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 8.993831008498713,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.5137820083577083,
+      "exploitability_chips": 1.7738321016366712,
+      "exploitability_fraction_initial_pot": 0.00547479043715022,
+      "extra_information_gap_chips": 1.5137820083577083,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 11,
+      "policy_sha256": "e102ea3049c12d16ab6478b129e631bb3adda5a73eb46fbe88d57041f8916e81",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9981737012987013
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9957386363636362
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 10000011,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 0.2600500932789629,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.6517078823764493,
+      "exploitability_chips": 1.9627502472646015,
+      "exploitability_fraction_initial_pot": 0.006057871133532721,
+      "extra_information_gap_chips": 1.6517078823764493,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 3,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 11,
+      "policy_sha256": "6781b33a50222788d58ed7007e0dafb48f02ca832de0179d993c97e75c517550",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 259,
+          "row_fraction": 0.9885496183206107,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9981737012987013
+        },
+        "river": {
+          "positive_rows": 255,
+          "row_fraction": 0.9883720930232558,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9957386363636362
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 368896,
+      "total_node_work": 10000011,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 65.97578829199483,
+      "within_partition_gain_chips": 0.3110423648881522,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 7.104945401303738,
+      "exploitability_fraction_initial_pot": 0.021928843831184375,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 72,
+      "policy_sha256": "563df98e8ca36baa5bdcb619f62865b75e4882e7159176a38e62038d10513050",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 100072,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 7.104945401303738,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 4.424823800217471,
+      "exploitability_fraction_initial_pot": 0.013656863580918121,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 7,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 72,
+      "policy_sha256": "3a9673f069becbee5c825452249c705f0116866f263fcd44452b790101968c9f",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 365,
+          "row_fraction": 0.9811827956989247,
+          "rows": 372,
+          "uniform_reach_fraction": 0.997835497835498
+        },
+        "river": {
+          "positive_rows": 361,
+          "row_fraction": 0.9809782608695652,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9949494949494948
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 100072,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 4.424823800217471,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 3.664901973001367,
+      "exploitability_fraction_initial_pot": 0.011311425842596812,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 7,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 72,
+      "policy_sha256": "d5925532883d852e92ba59fa01334a2175542cc3af3601aae0d3b494da04a9dc",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 365,
+          "row_fraction": 0.9811827956989247,
+          "rows": 372,
+          "uniform_reach_fraction": 0.997835497835498
+        },
+        "river": {
+          "positive_rows": 361,
+          "row_fraction": 0.9809782608695652,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9949494949494948
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 100072,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 3.664901973001367,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 8.680265003079725,
+      "exploitability_fraction_initial_pot": 0.026790941367530016,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.1316282072803006e-14,
+      "overshoot": 33,
+      "policy_sha256": "6df9b9dc4c839812fe9963962e7afbe70ad0ea14499ba024f4508ebd3e916cc9",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 1000033,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 8.680265003079725,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.0556372558157037,
+      "exploitability_fraction_initial_pot": 0.00325813967844353,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 33,
+      "policy_sha256": "d5d23229c18bb4bf62359f511b9c1413256df3301675f18e2850c91e1efcbbc9",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 1000033,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 1.0556372558157037,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.0427686685927569,
+      "exploitability_fraction_initial_pot": 0.003218421816644311,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 33,
+      "policy_sha256": "a68bbb3399e67ec1056dd227edb7bd56d1ed45c4843bcbc0842e4e1eebf01cc9",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 1000033,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 1.0427686685927569,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 8.032532207028122,
+      "exploitability_fraction_initial_pot": 0.02479176607107445,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 58,
+      "policy_sha256": "fb7a34930678d88f5292c6fdee284404b920c2dbcc62660badf5ce56338d6eb4",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 10000058,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 8.032532207028122,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.3064291730586888,
+      "exploitability_fraction_initial_pot": 0.000945769052650274,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 58,
+      "policy_sha256": "d3ad5e6e5581d445480b663ff20714deb97a514404b9223ceb868156641b07c3",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 10000058,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 0.3064291730586888,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.2946046806055378,
+      "exploitability_fraction_initial_pot": 0.0009092737055726476,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 4,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 58,
+      "policy_sha256": "5f8233101b36276e98395fe91f10fb4fb7795fb6ab321d7e81fedd59a338df11",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 368,
+          "row_fraction": 0.989247311827957,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 364,
+          "row_fraction": 0.9891304347826086,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 523776,
+      "total_node_work": 10000058,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 67.26596716599306,
+      "within_partition_gain_chips": 0.2946046806055378,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.5384896836834443,
+      "exploitability_chips": 7.6381559632238165,
+      "exploitability_fraction_initial_pot": 0.023574555442048815,
+      "extra_information_gap_chips": 0.5384896836834443,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 33,
+      "policy_sha256": "eeab0c40e1fb8b1c70a3e93620253e1e6fa30e3589d5a2264019bdf019ac0961",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 100033,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 7.099666279540372,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.9440821456084088,
+      "exploitability_chips": 4.090205698759224,
+      "exploitability_fraction_initial_pot": 0.01262409166283711,
+      "extra_information_gap_chips": 0.9440821456084088,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 2,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 33,
+      "policy_sha256": "ea8b3daf254669c9b385eef3883d441b98228d1d41291aea0759cefd8302a265",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 260,
+          "row_fraction": 0.9923664122137404,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9989177489177489
+        },
+        "river": {
+          "positive_rows": 256,
+          "row_fraction": 0.9922480620155039,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9974747474747474
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 100033,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 3.146123553150815,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.7368441835351973,
+      "exploitability_chips": 4.089293076413995,
+      "exploitability_fraction_initial_pot": 0.012621274927203687,
+      "extra_information_gap_chips": 0.7368441835351973,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 2,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 33,
+      "policy_sha256": "295f38aa4b9818c336511975292e23ae8d7ea082ab58c0684c51096614bf921a",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 260,
+          "row_fraction": 0.9923664122137404,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9989177489177489
+        },
+        "river": {
+          "positive_rows": 256,
+          "row_fraction": 0.9922480620155039,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9974747474747474
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 100033,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 3.3524488928787974,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.7041966759867506,
+      "exploitability_chips": 9.3785844186664,
+      "exploitability_fraction_initial_pot": 0.028946248205760493,
+      "extra_information_gap_chips": 0.7041966759867506,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 80,
+      "policy_sha256": "40eac6b5fa1abfdcb6acd4644b11af63bd7461ced0837ca1d83363db086d0eba",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 1000080,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 8.674387742679649,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.0114346334910067,
+      "exploitability_chips": 1.8266021902168745,
+      "exploitability_fraction_initial_pot": 0.005637661080916279,
+      "extra_information_gap_chips": 1.0114346334910067,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 80,
+      "policy_sha256": "09aeb07cbcd2058d640490d557081a74d2bfc58abf82abb0d39dcc4758d30b2b",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 1000080,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 0.8151675567258678,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.4711780945142223,
+      "exploitability_chips": 2.255031698822833,
+      "exploitability_fraction_initial_pot": 0.006959974379082819,
+      "extra_information_gap_chips": 1.4711780945142223,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 80,
+      "policy_sha256": "542a63d2d62d95c5459f8a95b01bb868904848e2ab36d3f5ffc84fce1ef25a4f",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 1000080,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 0.7838536043086108,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.150940579578311,
+      "exploitability_chips": 8.814111218595748,
+      "exploitability_fraction_initial_pot": 0.027204046970974533,
+      "extra_information_gap_chips": 1.150940579578311,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 52,
+      "policy_sha256": "6a49869d13cec935473c5ec73c2b84a77d36d02da364f480571c76ce289cfe92",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 10000052,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 7.663170639017437,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.192991657346397,
+      "exploitability_chips": 1.4493831816725873,
+      "exploitability_fraction_initial_pot": 0.004473404881705516,
+      "extra_information_gap_chips": 1.192991657346397,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 4.263256414560601e-14,
+      "overshoot": 52,
+      "policy_sha256": "54144936fd64fe73de2e86f0bb75781b4f9d44d81c5accf7b45b2f464ed6b70a",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 10000052,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 0.2563915243261903,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.3947280656839993,
+      "exploitability_chips": 1.6333906457768705,
+      "exploitability_fraction_initial_pot": 0.005041329153632317,
+      "extra_information_gap_chips": 1.3947280656839993,
+      "game": "new_low_wet_ip",
+      "information_rows": 262,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 52,
+      "policy_sha256": "5d08ef5d88831602db3fb6a87c1d3f3632646b67e225766522485a7cf8fa970e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 261,
+          "row_fraction": 0.9961832061068703,
+          "rows": 262,
+          "uniform_reach_fraction": 0.9991883116883118
+        },
+        "river": {
+          "positive_rows": 257,
+          "row_fraction": 0.9961240310077519,
+          "rows": 258,
+          "uniform_reach_fraction": 0.9981060606060606
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 368896,
+      "total_node_work": 10000052,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 262,
+          "row_fraction": 1.0,
+          "rows": 262,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 258,
+          "row_fraction": 1.0,
+          "rows": 258,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.5725379170035,
+      "within_partition_gain_chips": 0.23866258009287122,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 9.506515509771852,
+      "exploitability_fraction_initial_pot": 0.029341097252382257,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 49,
+      "policy_sha256": "e8d764c7f17be7bf769c53c2ba595ed50a31b648680f745b3d4904b548dac7c9",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 100049,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 9.506515509771852,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 4.8265345937328945,
+      "exploitability_fraction_initial_pot": 0.014896711709052143,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 49,
+      "policy_sha256": "ede7112dce016048ae85aec7ce6d199f84c6c645dbb292953ecd5f320918a7d2",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 371,
+          "row_fraction": 0.9973118279569892,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9997294372294373
+        },
+        "river": {
+          "positive_rows": 367,
+          "row_fraction": 0.9972826086956522,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9993686868686869
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 100049,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 4.8265345937328945,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 3.748013437052691,
+      "exploitability_fraction_initial_pot": 0.011567942706952751,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 1,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 49,
+      "policy_sha256": "f0b63e9b9a5b34993693f6ca4cea5e712d0cc1f1f49b3828d07116b3a0209358",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 371,
+          "row_fraction": 0.9973118279569892,
+          "rows": 372,
+          "uniform_reach_fraction": 0.9997294372294373
+        },
+        "river": {
+          "positive_rows": 367,
+          "row_fraction": 0.9972826086956522,
+          "rows": 368,
+          "uniform_reach_fraction": 0.9993686868686869
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 100049,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 3.748013437052691,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 7.845680021664595,
+      "exploitability_fraction_initial_pot": 0.024215061795261096,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 4,
+      "policy_sha256": "f51cfcf52f1165ca96326b260ce4dbdbd9660b1ea8e9f3fcdab65d764c86cc14",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 1000004,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 7.845680021664595,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.1482232574556122,
+      "exploitability_fraction_initial_pot": 0.003543898942764235,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 0,
+      "maximum_native_error_chips": 5.684341886080802e-14,
+      "overshoot": 4,
+      "policy_sha256": "c730269d2e009d0eadc43a00a0bb2a63c44fe47f7f149b4efea2a184aa4d6612",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 1000004,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 1.1482232574556122,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.1415589521080491,
+      "exploitability_fraction_initial_pot": 0.0035233300990989173,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 0,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 4,
+      "policy_sha256": "711d153cc90b2e188b84c87cadc18da921d736847d0eda1eec3e5466720511b8",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 1000004,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 1.1415589521080491,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 11.401157367214566,
+      "exploitability_fraction_initial_pot": 0.035188757306217795,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 19,
+      "policy_sha256": "23627cd70a0eff26a53b21dedd1724225793ee622b9200dc23f00c692dc342d3",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 10000019,
+      "tree_nodes": 2295,
+      "whole_coverage": null,
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 11.401157367214566,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.32093051454541666,
+      "exploitability_fraction_initial_pot": 0.0009905262794611626,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 0,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 19,
+      "policy_sha256": "11faf2e29b9af797045d2423322ef0c998c8991be763b73b3507069cee9075b5",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 10000019,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 0.32093051454541666,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 0.37134763082608657,
+      "exploitability_fraction_initial_pot": 0.0011461346630434772,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_low_wet_ip",
+      "information_rows": 372,
+      "initial_only_river_rows": 0,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 19,
+      "policy_sha256": "af0d15fb2d47143c5b1240f8abcb33e0402029ee5676dc793114c9a5dd1fc304",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 523776,
+      "total_node_work": 10000019,
+      "tree_nodes": 2295,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 372,
+          "row_fraction": 1.0,
+          "rows": 372,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 368,
+          "row_fraction": 1.0,
+          "rows": 368,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 66.83090695900319,
+      "within_partition_gain_chips": 0.37134763082608657,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.8425260695422203,
+      "exploitability_chips": 43.73442426493402,
+      "exploitability_fraction_initial_pot": 1.2148451184703895,
+      "extra_information_gap_chips": 2.8425260695422203,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 152,
+      "policy_sha256": "61c31e6d3a297477c51240e301bdab1a75e82c67d8d1bb03b0103f3c9784c8fe",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 100152,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 40.8918981953918,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.2594953286291,
+      "exploitability_chips": 24.99762712818693,
+      "exploitability_fraction_initial_pot": 0.6943785313385259,
+      "extra_information_gap_chips": 2.2594953286291,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 856,
+      "maximum_native_error_chips": 2.1316282072803006e-14,
+      "overshoot": 152,
+      "policy_sha256": "25bd50567891969e848d137a2901767b73f5d80264726de8b36f6ccf54477f86",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1454,
+          "row_fraction": 0.6294372294372295,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9715203493335742
+        },
+        "river": {
+          "positive_rows": 1430,
+          "row_fraction": 0.6255468066491688,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8579783370899075
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 100152,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 22.73813179955783,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.8604046420186986,
+      "exploitability_chips": 25.87873701623608,
+      "exploitability_fraction_initial_pot": 0.7188538060065578,
+      "extra_information_gap_chips": 2.8604046420186986,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 856,
+      "maximum_native_error_chips": 8.881784197001252e-15,
+      "overshoot": 152,
+      "policy_sha256": "134957d7b9e10cdde5c7a48d100b060e1754ed2ff15b6c31d9319ff7f1c079c1",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1454,
+          "row_fraction": 0.6294372294372295,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9715203493335742
+        },
+        "river": {
+          "positive_rows": 1430,
+          "row_fraction": 0.6255468066491688,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8579783370899075
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 100152,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 23.018332374217383,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 4.106657997533655,
+      "exploitability_chips": 19.787042160598958,
+      "exploitability_fraction_initial_pot": 0.5496400600166377,
+      "extra_information_gap_chips": 4.106657997533655,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 5.329070518200751e-15,
+      "overshoot": 92,
+      "policy_sha256": "cb9d6a5ab3f04b251c92b0a629e7e9874d98a765365b4345a58b83acb1139a67",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 1000092,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 15.680384163065302,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.9921676716201353,
+      "exploitability_chips": 6.42886139998701,
+      "exploitability_fraction_initial_pot": 0.1785794833329725,
+      "extra_information_gap_chips": 2.9092685007097505,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 630,
+      "maximum_native_error_chips": 1.0658141036401503e-14,
+      "overshoot": 92,
+      "policy_sha256": "4acdc514da4d75a26836c8715f96c55974d4d01ed7b0c9d5e6d52e10dfb0b931",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1680,
+          "row_fraction": 0.7272727272727273,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.975283871194544
+        },
+        "river": {
+          "positive_rows": 1656,
+          "row_fraction": 0.7244094488188977,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8767461808164289
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 1000092,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 3.5195928992772596,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.829853010864655,
+      "exploitability_chips": 7.321179065352597,
+      "exploitability_fraction_initial_pot": 0.20336608514868326,
+      "extra_information_gap_chips": 3.829853010864655,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 630,
+      "maximum_native_error_chips": 3.552713678800501e-15,
+      "overshoot": 92,
+      "policy_sha256": "0c54a0b21f3274db98ba745a683276ce5d3298feb1bde03f5c33fd124a88b937",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1680,
+          "row_fraction": 0.7272727272727273,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.975283871194544
+        },
+        "river": {
+          "positive_rows": 1656,
+          "row_fraction": 0.7244094488188977,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8767461808164289
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 1000092,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 3.491326054487942,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.673838149958284,
+      "exploitability_chips": 23.19924943421226,
+      "exploitability_fraction_initial_pot": 0.644423595394785,
+      "extra_information_gap_chips": 2.673838149958284,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 10,
+      "policy_sha256": "964d171c4df8444bffef70837f7bdeb70b6cda3f64df00786f1bb88e6dbfbfe1",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 10000010,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 20.525411284253977,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.179466713749047,
+      "exploitability_chips": 4.052561647195822,
+      "exploitability_fraction_initial_pot": 0.11257115686655061,
+      "extra_information_gap_chips": 3.179466713749047,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 444,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 10,
+      "policy_sha256": "6c01585f3c192c77e50444c3332d81fb7b9f424bbc35a10dd988d312a4209c5e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1866,
+          "row_fraction": 0.8077922077922078,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9881490995470114
+        },
+        "river": {
+          "positive_rows": 1842,
+          "row_fraction": 0.8057742782152231,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9409022038567494
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 10000010,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 0.8730949334467755,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.814401405701907,
+      "exploitability_chips": 4.703365783634911,
+      "exploitability_fraction_initial_pot": 0.1306490495454142,
+      "extra_information_gap_chips": 3.7042313789129713,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 444,
+      "maximum_native_error_chips": 3.552713678800501e-15,
+      "overshoot": 10,
+      "policy_sha256": "00fff6e59a77ca8733ebdb01e07a8514b2fe3a26f94265e1e594fe3004fe4a6c",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1866,
+          "row_fraction": 0.8077922077922078,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9881490995470114
+        },
+        "river": {
+          "positive_rows": 1842,
+          "row_fraction": 0.8057742782152231,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9409022038567494
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 3252480,
+      "total_node_work": 10000010,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.43952508400253,
+      "within_partition_gain_chips": 0.9991344047219402,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 56.84950533729132,
+      "exploitability_fraction_initial_pot": 1.5791529260358699,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 77,
+      "policy_sha256": "c07c4f13ec2bce317ec3ac931c6b05b3ce1fa5000c28437b19a0636160c56eb9",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 100077,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 56.84950533729132,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 28.12672161424321,
+      "exploitability_fraction_initial_pot": 0.781297822617867,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1338,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 77,
+      "policy_sha256": "47a9085a922b3b573fcf7327e6debfbb31f42748d61f19c9c1c404ef1c005c65",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1998,
+          "row_fraction": 0.5989208633093526,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9641537600064282
+        },
+        "river": {
+          "positive_rows": 1974,
+          "row_fraction": 0.5960144927536232,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8212427998998247
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 100077,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 28.12672161424321,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 32.234532982277,
+      "exploitability_fraction_initial_pot": 0.8954036939521389,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1338,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 77,
+      "policy_sha256": "2600f7edb174a91f65b163eb07e6b76f6c09c86b5a334017e813e472406c10ce",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1998,
+          "row_fraction": 0.5989208633093526,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9641537600064282
+        },
+        "river": {
+          "positive_rows": 1974,
+          "row_fraction": 0.5960144927536232,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8212427998998247
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 100077,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 32.234532982277,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 25.76832061788799,
+      "exploitability_fraction_initial_pot": 0.7157866838302219,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.6645352591003757e-15,
+      "overshoot": 76,
+      "policy_sha256": "92e862d536128a0c542910cc40ef7cca21248a8877762dfb92035f133447a083",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 1000076,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 25.76832061788799,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 5.499472322762262,
+      "exploitability_fraction_initial_pot": 0.1527631200767295,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 606,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 76,
+      "policy_sha256": "f3c012f7ccf8c7a47ff529f440aa9f4d72537ce9a9b0ec438fba09a13692e493",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2730,
+          "row_fraction": 0.8183453237410072,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.986197029961531
+        },
+        "river": {
+          "positive_rows": 2706,
+          "row_fraction": 0.8170289855072463,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9311676684197345
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 1000076,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 5.499472322762262,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 4.978014505268714,
+      "exploitability_fraction_initial_pot": 0.13827818070190873,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 606,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 76,
+      "policy_sha256": "5a8e590fe146c3ad100e54b5ebc5eee2102dbdc65ded33af033a4919f100b7e8",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2730,
+          "row_fraction": 0.8183453237410072,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.986197029961531
+        },
+        "river": {
+          "positive_rows": 2706,
+          "row_fraction": 0.8170289855072463,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9311676684197345
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 1000076,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 4.978014505268714,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 15.950356724238155,
+      "exploitability_fraction_initial_pot": 0.443065464562171,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 76,
+      "policy_sha256": "d7a17651b4ee9f9b4a8bff338b5a4c59b25b6e19112d9f13467e4799a3954dba",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 10000076,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 15.950356724238155,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.2153948663328418,
+      "exploitability_fraction_initial_pot": 0.033760968509245606,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 484,
+      "maximum_native_error_chips": 3.552713678800501e-15,
+      "overshoot": 76,
+      "policy_sha256": "6bb7f09bc26b1d0dc5812cf3a84f3eaa31d6dd72f92b0c3527ac03c35f3c0e29",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2852,
+          "row_fraction": 0.854916067146283,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9910714285714285
+        },
+        "river": {
+          "positive_rows": 2828,
+          "row_fraction": 0.8538647342995169,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9554752066115701
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 10000076,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 1.2153948663328418,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.2836083496063173,
+      "exploitability_fraction_initial_pot": 0.03565578748906437,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 484,
+      "maximum_native_error_chips": 3.552713678800501e-15,
+      "overshoot": 76,
+      "policy_sha256": "b0dd23721febd56390d498731eecb35463cb966b0c18eedd8d86a108fe356b9d",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2852,
+          "row_fraction": 0.854916067146283,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9910714285714285
+        },
+        "river": {
+          "positive_rows": 2828,
+          "row_fraction": 0.8538647342995169,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9554752066115701
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261371,
+      "table_bytes": 4697088,
+      "total_node_work": 10000076,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 77.1733295419981,
+      "within_partition_gain_chips": 1.2836083496063173,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.8651592250546329,
+      "exploitability_chips": 43.43024659427591,
+      "exploitability_fraction_initial_pot": 1.2063957387298863,
+      "extra_information_gap_chips": 0.8651592250546329,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 8.881784197001252e-15,
+      "overshoot": 71,
+      "policy_sha256": "9729ac240d6a29aeea160a21214654ca9acbddcda2dd75045db0286e55bbe6bf",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 100071,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 42.565087369221274,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.4949189055478032,
+      "exploitability_chips": 24.845567998090488,
+      "exploitability_fraction_initial_pot": 0.6901546666136247,
+      "extra_information_gap_chips": 1.4949189055478032,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 761,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 71,
+      "policy_sha256": "c388b18164a92d9567e9686e49eef6c0078510a8fc78c796cf60be9ad31b4f14",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1549,
+          "row_fraction": 0.6705627705627706,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9795104257691264
+        },
+        "river": {
+          "positive_rows": 1525,
+          "row_fraction": 0.6671041119860017,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8978230653643876
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 100071,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 23.350649092542685,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.052883619712956,
+      "exploitability_chips": 26.095813365168013,
+      "exploitability_fraction_initial_pot": 0.7248837045880003,
+      "extra_information_gap_chips": 2.052883619712956,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 761,
+      "maximum_native_error_chips": 2.842170943040401e-14,
+      "overshoot": 71,
+      "policy_sha256": "cf16cf03db460543cbc4ced07eea5275fa6ee4dd2dda0c6dbe52c8a72eedd761",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1549,
+          "row_fraction": 0.6705627705627706,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9795104257691264
+        },
+        "river": {
+          "positive_rows": 1525,
+          "row_fraction": 0.6671041119860017,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.8978230653643876
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 100071,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 24.042929745455055,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.0392935880043326,
+      "exploitability_chips": 19.1001029054331,
+      "exploitability_fraction_initial_pot": 0.5305584140398083,
+      "extra_information_gap_chips": 3.0392935880043326,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 68,
+      "policy_sha256": "6ddca12977561388a234aa4c4dba3714cfd4844f1b974dab8b2302cc889d5bec",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 1000068,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 16.06080931742877,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.377623086057011,
+      "exploitability_chips": 6.439294904072315,
+      "exploitability_fraction_initial_pot": 0.17886930289089764,
+      "extra_information_gap_chips": 2.377623086057011,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 307,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 68,
+      "policy_sha256": "986c101fa6846dc2cbd10b256d87786f95d310f9fe11b8bb4d85607a05292897",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2003,
+          "row_fraction": 0.8670995670995671,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9918601410190737
+        },
+        "river": {
+          "positive_rows": 1979,
+          "row_fraction": 0.8657042869641295,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.95940833959429
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 1000068,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 4.061671818015304,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.0590695209792487,
+      "exploitability_chips": 6.826616049996024,
+      "exploitability_fraction_initial_pot": 0.18962822361100065,
+      "extra_information_gap_chips": 3.0590695209792487,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 307,
+      "maximum_native_error_chips": 5.10702591327572e-15,
+      "overshoot": 68,
+      "policy_sha256": "0e2d55073a2c0e241de14f08d43774e0bec521f058675816e0cc69534b446946",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2003,
+          "row_fraction": 0.8670995670995671,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9918601410190737
+        },
+        "river": {
+          "positive_rows": 1979,
+          "row_fraction": 0.8657042869641295,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.95940833959429
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 1000068,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 3.7675465290167747,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.8174043269675173,
+      "exploitability_chips": 21.47781665860449,
+      "exploitability_fraction_initial_pot": 0.5966060182945692,
+      "extra_information_gap_chips": 1.8174043269675173,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 164,
+      "policy_sha256": "8661c4aa5002e5e08da2b6bb7c3064f595f04aae3b276373533db1abb5cec9be",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 10000164,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 19.66041233163697,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.020644415007553,
+      "exploitability_chips": 3.8284823314081655,
+      "exploitability_fraction_initial_pot": 0.1063467314280046,
+      "extra_information_gap_chips": 2.992075826752212,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 302,
+      "maximum_native_error_chips": 5.329070518200751e-15,
+      "overshoot": 164,
+      "policy_sha256": "a0a14be1dfd835655fc933e7fa45c9d1b9e8ad7e54219de949a203e824a23684",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2008,
+          "row_fraction": 0.8692640692640693,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9919384849489257
+        },
+        "river": {
+          "positive_rows": 1984,
+          "row_fraction": 0.8678915135608049,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9597990232907588
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 10000164,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 0.8364065046559537,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.4007139745243133,
+      "exploitability_chips": 4.095289868037059,
+      "exploitability_fraction_initial_pot": 0.11375805188991832,
+      "extra_information_gap_chips": 3.2211779642452267,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 302,
+      "maximum_native_error_chips": 9.769962616701378e-15,
+      "overshoot": 164,
+      "policy_sha256": "9c3ea3263c88a4b56cf5a7accd83fc82e319f90616185b986b3a35c6f0a90039",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2008,
+          "row_fraction": 0.8692640692640693,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9919384849489257
+        },
+        "river": {
+          "positive_rows": 1984,
+          "row_fraction": 0.8678915135608049,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9597990232907588
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 3252480,
+      "total_node_work": 10000164,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 75.51621137499751,
+      "within_partition_gain_chips": 0.8741119037918326,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 52.15361837740285,
+      "exploitability_fraction_initial_pot": 1.4487116215945237,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 114,
+      "policy_sha256": "ccca4fab9fd9bebdd76e980f653d5ee815214cb1ccb7d1d596edeb40d6ef0d61",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 100114,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 52.15361837740285,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 29.25963974665949,
+      "exploitability_fraction_initial_pot": 0.8127677707405414,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1320,
+      "maximum_native_error_chips": 1.0658141036401503e-14,
+      "overshoot": 114,
+      "policy_sha256": "1d4e5378799434198c77aa1dd91b0fc5ec334672ee854f5e851865fd78eca34e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2016,
+          "row_fraction": 0.60431654676259,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9632933578409215
+        },
+        "river": {
+          "positive_rows": 1992,
+          "row_fraction": 0.6014492753623188,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8169521662910092
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 100114,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 29.25963974665949,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 33.79507664701766,
+      "exploitability_fraction_initial_pot": 0.9387521290838239,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1320,
+      "maximum_native_error_chips": 1.0658141036401503e-14,
+      "overshoot": 114,
+      "policy_sha256": "ea8150e9ce373c0af662aa8921fdd23df62f1584b5a2f94174c20c0baa530d6e",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2016,
+          "row_fraction": 0.60431654676259,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9632933578409215
+        },
+        "river": {
+          "positive_rows": 1992,
+          "row_fraction": 0.6014492753623188,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8169521662910092
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 100114,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 33.79507664701766,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 24.724218781037216,
+      "exploitability_fraction_initial_pot": 0.6867838550288116,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 80,
+      "policy_sha256": "283a94ba3f8192e7aac3acb24b0695f5cf6c4ee40566cc71e434373f1c3c1973",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 1000080,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 24.724218781037216,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 5.229018381699552,
+      "exploitability_fraction_initial_pot": 0.14525051060276534,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 668,
+      "maximum_native_error_chips": 8.881784197001252e-15,
+      "overshoot": 80,
+      "policy_sha256": "1ff22fe4a006d75e4b72b114c9bed8001e43743371fb62679b27b68a73313aab",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2668,
+          "row_fraction": 0.7997601918465228,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9837880796697501
+        },
+        "river": {
+          "positive_rows": 2644,
+          "row_fraction": 0.7983091787439613,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9191547708489857
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 1000080,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 5.229018381699552,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 4.433661585056017,
+      "exploitability_fraction_initial_pot": 0.12315726625155603,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 668,
+      "maximum_native_error_chips": 8.881784197001252e-15,
+      "overshoot": 80,
+      "policy_sha256": "54571c99d842cbe04132372bf6a3db54cd307a79d621627c12fab3fa6c27ec58",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2668,
+          "row_fraction": 0.7997601918465228,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9837880796697501
+        },
+        "river": {
+          "positive_rows": 2644,
+          "row_fraction": 0.7983091787439613,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9191547708489857
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 1000080,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 4.433661585056017,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 19.049371020324962,
+      "exploitability_fraction_initial_pot": 0.5291491950090267,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 3.552713678800501e-15,
+      "overshoot": 82,
+      "policy_sha256": "cb650e37729f0077dd3d34b31fe14cf229d682041498629e06709ee079bb31b1",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 10000082,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 19.049371020324962,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.1972771658446577,
+      "exploitability_fraction_initial_pot": 0.03325769905124049,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 590,
+      "maximum_native_error_chips": 1.7763568394002505e-15,
+      "overshoot": 82,
+      "policy_sha256": "c815373a10b0a5015d6b65969835063fed9a9a40ae789d1d8dc05a1101b91761",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2746,
+          "row_fraction": 0.8231414868105515,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9867881248681712
+        },
+        "river": {
+          "positive_rows": 2722,
+          "row_fraction": 0.8218599033816425,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9341153268219384
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 10000082,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 1.1972771658446577,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.4234998070413303,
+      "exploitability_fraction_initial_pot": 0.03954166130670362,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 590,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 82,
+      "policy_sha256": "78bcb9c92fbb9c27e2371f703d357f9d94faa6f855f172b60776bf212d1f6d5d",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2746,
+          "row_fraction": 0.8231414868105515,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9867881248681712
+        },
+        "river": {
+          "positive_rows": 2722,
+          "row_fraction": 0.8218599033816425,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9341153268219384
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261372,
+      "table_bytes": 4697088,
+      "total_node_work": 10000082,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.74346345898812,
+      "within_partition_gain_chips": 1.4234998070413303,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.497398386788813,
+      "exploitability_chips": 43.91131242224715,
+      "exploitability_fraction_initial_pot": 1.2197586783957541,
+      "extra_information_gap_chips": 1.497398386788813,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 2.1316282072803006e-14,
+      "overshoot": 121,
+      "policy_sha256": "6b8690d0431daf7a31050b8f3f10e8138135240106b10757e2cc02b385bfe705",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 100121,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 42.41391403545833,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.304076996030476,
+      "exploitability_chips": 23.94962150945265,
+      "exploitability_fraction_initial_pot": 0.6652672641514625,
+      "extra_information_gap_chips": 1.304076996030476,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 834,
+      "maximum_native_error_chips": 1.5987211554602254e-14,
+      "overshoot": 121,
+      "policy_sha256": "9a86f9fd281ae0c4629d1e58ef387635b6c66da7deaa4d57babfe7c3bd1bbff5",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1476,
+          "row_fraction": 0.638961038961039,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9769534506483462
+        },
+        "river": {
+          "positive_rows": 1452,
+          "row_fraction": 0.6351706036745407,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.885072001001753
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 100121,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 22.645544513422173,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.0148776311260352,
+      "exploitability_chips": 25.885225189480078,
+      "exploitability_fraction_initial_pot": 0.7190340330411132,
+      "extra_information_gap_chips": 2.0148776311260352,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 834,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 121,
+      "policy_sha256": "8f7a33536bcb83c3de8f8d86ee858f11f5afe18d9db0e6cb4c68b441394feeb0",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1476,
+          "row_fraction": 0.638961038961039,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9769534506483462
+        },
+        "river": {
+          "positive_rows": 1452,
+          "row_fraction": 0.6351706036745407,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.885072001001753
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 100121,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 23.87034755835404,
+      "work_label": 100000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 0.38801068010214124,
+      "exploitability_chips": 20.850828103524755,
+      "exploitability_fraction_initial_pot": 0.5791896695423543,
+      "extra_information_gap_chips": 0.38801068010214124,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.7763568394002505e-14,
+      "overshoot": 57,
+      "policy_sha256": "da82c1a73661ba6768bc6f8aec8a17de3a0ecf0be9235fe67cde2d119cdef162",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 1000057,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 20.462817423422614,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 2.6053371440069935,
+      "exploitability_chips": 6.622257205825578,
+      "exploitability_fraction_initial_pot": 0.18395158905071052,
+      "extra_information_gap_chips": 2.6053371440069935,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 439,
+      "maximum_native_error_chips": 4.440892098500626e-15,
+      "overshoot": 57,
+      "policy_sha256": "596c731bab39d9bf9ac5edf85a516981c5f25eef20aa17a239078ab54a9d477c",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1871,
+          "row_fraction": 0.80995670995671,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.989388917347154
+        },
+        "river": {
+          "positive_rows": 1847,
+          "row_fraction": 0.8079615048118985,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9470848985725018
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 1000057,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 4.016920061818585,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.5601997293038234,
+      "exploitability_chips": 7.1349218123249365,
+      "exploitability_fraction_initial_pot": 0.19819227256458158,
+      "extra_information_gap_chips": 3.5601997293038234,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 439,
+      "maximum_native_error_chips": 1.554312234475219e-14,
+      "overshoot": 57,
+      "policy_sha256": "5abcde71efd1a24a0320f80955a1e86af7a86a578a2bd1e839c554952e8aa32b",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1871,
+          "row_fraction": 0.80995670995671,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.989388917347154
+        },
+        "river": {
+          "positive_rows": 1847,
+          "row_fraction": 0.8079615048118985,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9470848985725018
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 1000057,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 3.574722083021113,
+      "work_label": 1000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 1.768642772371578,
+      "exploitability_chips": 40.351025878627695,
+      "exploitability_fraction_initial_pot": 1.1208618299618804,
+      "extra_information_gap_chips": 1.768642772371578,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 71,
+      "policy_sha256": "17e96d86101e2c98a022d69ddd46d5d05f1202d57435df31e9ff64757ec3eced",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 10000071,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 38.58238310625612,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.1643167446511837,
+      "exploitability_chips": 4.060567025845334,
+      "exploitability_fraction_initial_pot": 0.11279352849570372,
+      "extra_information_gap_chips": 3.1643167446511837,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 388,
+      "maximum_native_error_chips": 5.329070518200751e-15,
+      "overshoot": 71,
+      "policy_sha256": "47e56358312cab629d8b28edde14519b4113c2e7278fe174d2759d347d931aff",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1922,
+          "row_fraction": 0.832034632034632,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9914887606592943
+        },
+        "river": {
+          "positive_rows": 1898,
+          "row_fraction": 0.8302712160979877,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9575563486100676
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 10000071,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 0.89625028119415,
+      "work_label": 10000000
+    },
+    {
+      "arm": "texture_range_q8_b8",
+      "exact_prefix_river_only_gain_chips": 3.5968413831195116,
+      "exploitability_chips": 4.59209287553305,
+      "exploitability_fraction_initial_pot": 0.1275581354314736,
+      "extra_information_gap_chips": 3.5968413831195116,
+      "game": "new_medium_dry_oop",
+      "information_rows": 2310,
+      "initial_only_river_rows": 388,
+      "maximum_native_error_chips": 5.329070518200751e-15,
+      "overshoot": 71,
+      "policy_sha256": "d1bef71ea8bde4525babc38a868e94bcd27af5f4a84fe1dea3ce23f1af62c2eb",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 1922,
+          "row_fraction": 0.832034632034632,
+          "rows": 2310,
+          "uniform_reach_fraction": 0.9914887606592943
+        },
+        "river": {
+          "positive_rows": 1898,
+          "row_fraction": 0.8302712160979877,
+          "rows": 2286,
+          "uniform_reach_fraction": 0.9575563486100676
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 3252480,
+      "total_node_work": 10000071,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 2310,
+          "row_fraction": 1.0,
+          "rows": 2310,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 2286,
+          "row_fraction": 1.0,
+          "rows": 2286,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.14073712499521,
+      "within_partition_gain_chips": 0.995251492413538,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 51.18634604468245,
+      "exploitability_fraction_initial_pot": 1.4218429456856236,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 79,
+      "policy_sha256": "fd795322eb2d797d0ded467de554cd2a20a2ab63e6dac8233b5d9d8623a86a54",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 100079,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 51.18634604468245,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 29.52082402904244,
+      "exploitability_fraction_initial_pot": 0.8200228896956233,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1233,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 79,
+      "policy_sha256": "a68cb360cb118d6f2f7553860b4cf3cfa12f40d82793713e08ba2a978f37dd86",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2103,
+          "row_fraction": 0.6303956834532374,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9698761312160383
+        },
+        "river": {
+          "positive_rows": 2079,
+          "row_fraction": 0.6277173913043478,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8497789882294015
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 100079,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 29.52082402904244,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 34.42681718612466,
+      "exploitability_fraction_initial_pot": 0.9563004773923516,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 1233,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 79,
+      "policy_sha256": "e92514071b70dbdb9a80a9c1976f56eecd8f440521566d74cd033733301d17eb",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2103,
+          "row_fraction": 0.6303956834532374,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9698761312160383
+        },
+        "river": {
+          "positive_rows": 2079,
+          "row_fraction": 0.6277173913043478,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.8497789882294015
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 100079,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 34.42681718612466,
+      "work_label": 100000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 24.94172286508808,
+      "exploitability_fraction_initial_pot": 0.6928256351413355,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 1.4210854715202004e-14,
+      "overshoot": 12,
+      "policy_sha256": "376c915cccbb7f1d99842b4d5ec52e3912d6eb1d0b2b2cc67277704f4b8664ec",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 1000012,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 24.94172286508808,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 5.263667640566345,
+      "exploitability_fraction_initial_pot": 0.1462129900157318,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 668,
+      "maximum_native_error_chips": 4.884981308350689e-15,
+      "overshoot": 12,
+      "policy_sha256": "e184f2b971799ad55a7c61cb662418c9f88a63b23e1081dbf4af49364a1dd90c",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2668,
+          "row_fraction": 0.7997601918465228,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9840722019666335
+        },
+        "river": {
+          "positive_rows": 2644,
+          "row_fraction": 0.7983091787439613,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9205716253443527
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 1000012,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 5.263667640566345,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 5.122787695403517,
+      "exploitability_fraction_initial_pot": 0.14229965820565324,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 668,
+      "maximum_native_error_chips": 7.993605777301127e-15,
+      "overshoot": 12,
+      "policy_sha256": "f6ffef2d8494eb85c7c9a095adb6bcdff1df9523418a2556d52626813e29d6c6",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2668,
+          "row_fraction": 0.7997601918465228,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.9840722019666335
+        },
+        "river": {
+          "positive_rows": 2644,
+          "row_fraction": 0.7983091787439613,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9205716253443527
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 1000012,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 5.122787695403517,
+      "work_label": 1000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 22.111831991866758,
+      "exploitability_fraction_initial_pot": 0.6142175553296322,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": null,
+      "maximum_native_error_chips": 7.105427357601002e-15,
+      "overshoot": 136,
+      "policy_sha256": "25a182fef2933b8d3a7b13570d686fa4885f6985d663316b587e982dc8cdd160",
+      "post_warm_coverage": null,
+      "readout": "current",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 10000136,
+      "tree_nodes": 21303,
+      "whole_coverage": null,
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 22.111831991866758,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.115702230354934,
+      "exploitability_fraction_initial_pot": 0.03099172862097039,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 494,
+      "maximum_native_error_chips": 5.329070518200751e-15,
+      "overshoot": 136,
+      "policy_sha256": "97b727945af5be430ab8a85c7d5a4e7297034ab03f035fa40283232589e357b0",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2842,
+          "row_fraction": 0.8519184652278178,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.989481699661514
+        },
+        "river": {
+          "positive_rows": 2818,
+          "row_fraction": 0.8508454106280193,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9475475832707236
+        }
+      },
+      "readout": "uniform_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 10000136,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 1.115702230354934,
+      "work_label": 10000000
+    },
+    {
+      "arm": "q8_turn_exact_river",
+      "exact_prefix_river_only_gain_chips": 0.0,
+      "exploitability_chips": 1.2647693187636215,
+      "exploitability_fraction_initial_pot": 0.035132481076767266,
+      "extra_information_gap_chips": 0.0,
+      "game": "new_medium_dry_oop",
+      "information_rows": 3336,
+      "initial_only_river_rows": 494,
+      "maximum_native_error_chips": 2.6645352591003757e-15,
+      "overshoot": 136,
+      "policy_sha256": "9c98a85be5f5afddd3e43e0238256e43de184c64a10009c270b5f8cdd4667b8f",
+      "post_warm_coverage": {
+        "all": {
+          "positive_rows": 2842,
+          "row_fraction": 0.8519184652278178,
+          "rows": 3336,
+          "uniform_reach_fraction": 0.989481699661514
+        },
+        "river": {
+          "positive_rows": 2818,
+          "row_fraction": 0.8508454106280193,
+          "rows": 3312,
+          "uniform_reach_fraction": 0.9475475832707236
+        }
+      },
+      "readout": "linear_average",
+      "seed": 20261373,
+      "table_bytes": 4697088,
+      "total_node_work": 10000136,
+      "tree_nodes": 21303,
+      "whole_coverage": {
+        "all": {
+          "positive_rows": 3336,
+          "row_fraction": 1.0,
+          "rows": 3336,
+          "uniform_reach_fraction": 1.0
+        },
+        "river": {
+          "positive_rows": 3312,
+          "row_fraction": 1.0,
+          "rows": 3312,
+          "uniform_reach_fraction": 1.0
+        }
+      },
+      "whole_path_seconds": 76.46402424998814,
+      "within_partition_gain_chips": 1.2647693187636215,
+      "work_label": 10000000
+    }
+  ],
+  "scope": "two new inputs on known betting templates; no global admission",
+  "status": "completed",
+  "zero_recall_violations_pass": true
+}
