@@ -57,11 +57,10 @@ core, subagents or scheduled tasks. Existing restrictions on real-money
 integration and default promotion also remain in force. Finish independent
 work and present a concrete proposal if one of those permissions is needed.
 
-**Current order (November 20, 2026):** PR #98's retained failed local logs
-and later successful serial requalification have been published; the PR was
-history-merged. Finish the separately
-[preregistered medium/dry training-budget study](medium-dry-training-budget.md)
-under its own gates before selecting another milestone. Its unchanged
-candidate and matched-work control have fixed overall exploitability and
-turn/river contribution readouts. Do not start a subsequent milestone until
-this one is classified and handed off.
+**Current order (November 20, 2026):** PR #98's failed acceptance gates remain
+negative. PR #99's longer-work compute admission was rejected, its 100m
+strength outcome is inconclusive, and both PRs were history-merged with
+retained evidence. The next distinct
+[clipped-regret protocol](medium-dry-clipped-regret.md) addresses the
+remaining known-spot convergence question at matched 10m work. Its full
+qualification and scientific gates apply before any result or further choice.

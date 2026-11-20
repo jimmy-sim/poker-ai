@@ -1,0 +1,68 @@
+"""Package exact-source checks, including the first cache-permission failure."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+FIRST = ROOT / 'results/runs/medium-dry-clipped-source-20261120'
+OUT = ROOT / 'results/medium-dry-clipped-regret/source-checks'
+HEAD = 'c996c0abd10830a0629fec78ec2a91cdc7859bfb'
+FINGERPRINT = '7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab'
+
+
+def copy(source: Path, target: Path) -> None:
+    assert source.is_file() and not target.exists(), (source, target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == '.log':
+        target = target.with_suffix('.log.gz')
+        assert not target.exists()
+        with target.open('wb') as raw_stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=raw_stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        target = target.with_name(target.name + '.txt')
+        shutil.copyfile(source, target)
+    else:
+        shutil.copyfile(source, target)
+
+
+if __name__ == '__main__':
+    assert not OUT.exists()
+    state = json.loads((RAW / 'driver-state.json').read_bytes())
+    assert state['head'] == HEAD and state['status'] == 'passed'
+    roles = ('base311', 'base312', 'optional311', 'optional312')
+    receipts = [json.loads((RAW / f'{role}.json').read_bytes()) for role in roles]
+    assert all(row['status'] == 'passed' and row['head'] == HEAD for row in receipts)
+    assert (RAW / 'hooks.exit').read_text().strip() == '0'
+    hosted = json.loads((RAW / 'hosted.json').read_bytes())
+    assert hosted['headSha'] == HEAD and hosted['conclusion'] == 'success'
+    assert {job['name'] for job in hosted['jobs']} == {'Python 3.11', 'Python 3.12'}
+    assert all(job['conclusion'] == 'success' for job in hosted['jobs'])
+    first = json.loads((FIRST / 'driver-state.json').read_bytes())
+    assert first['status'] == 'failed_retained'
+    assert json.loads((FIRST / 'base311.json').read_bytes())['status'] == 'failed'
+    OUT.mkdir(parents=True)
+    for name in ('driver-state.json', 'driver.log', 'driver.py', 'runner.py', 'optional-suites.json', 'package_source.py', 'package_stage.py', 'hooks.exit', 'hooks.log', 'hosted.json', 'hosted.log'):
+        copy(RAW / name, OUT / name)
+    for role in roles:
+        for ext in ('json', 'log'):
+            copy(RAW / f'{role}.{ext}', OUT / f'{role}.{ext}')
+    for name in ('driver-state.json', 'driver.log', 'driver.py', 'runner.py', 'optional-suites.json', 'base311.json', 'base311.log'):
+        copy(FIRST / name, OUT / 'first-cache-denial' / name)
+    result = dict(
+        status='source_qualified', tested_head=HEAD, source_fingerprint=FINGERPRINT,
+        historical_fingerprint='152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3',
+        local_roles=receipts, hooks='passed', hosted_run=hosted['databaseId'],
+        hosted_jobs=[{'name':j['name'], 'conclusion':j['conclusion']} for j in hosted['jobs']],
+        first_permission_failure='first-cache-denial/base311.json',
+        scientific_measurements_started=False,
+    )
+    (OUT / 'result.json').write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
+    files = []
+    for path in sorted(item for item in OUT.rglob('*') if item.is_file()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.relative_to(OUT).as_posix(), bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / 'manifest.json').write_text(json.dumps(dict(status='source_qualified', source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + '\n')

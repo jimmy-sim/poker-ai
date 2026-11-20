@@ -8471,3 +8471,132 @@ comparison. Its 100m poker-strength effect is inconclusive, while the
 compute admission failed. A separate research question would need a new
 prospective protocol; the prior 10m negative result is unchanged. Codex
 assisted; human hands-on time was not recorded.
+
+**November 20 next question, before outcomes.** PR #99
+[merged](https://github.com/jimmy-sim/poker-ai/pull/99) with the failed
+compute gate preserved; it did not test 100m poker strength. The next question
+is whether clipping the regret ledger changes the remaining medium/dry
+decision losses at the same 10m node work as the signed-rule control. A
+negative regret is past evidence that an action underperformed; clipping sets
+that accumulated value to zero after an update. **Example:** the previously
+saved medium/dry current policy is much more exploitable than its averages,
+so the learner may still be unstable, but that observation alone does not
+prove clipping helps. Earlier clipped-rule work on another known game was
+mixed. The [new prospective comparison](medium-dry-clipped-regret.md) uses
+the same exact-river representation on both already known spots and fixes
+the seeds, work, quality gates and caps before any new measurements.
+**Next decision:** qualify its isolated source and let its frozen compute
+and scientific gates decide whether training proceeds and what it shows.
+No new training outcome exists yet. Codex assisted; human hands-on time was
+not recorded.
+
+**November 20 clipped-rule source qualification.** The question remains
+whether changing the regret update helps the two known river spots at matched
+work. The new adapter leaves the historical card information key alone and
+uses the same seed, work counter and averaging for both rules. **Example:** a
+fictional signal game saves and replays all three policy readouts for both
+signed and clipped training; the signed path also matches the historical
+trainer's regret and average tables exactly. Seven focused tests, strict
+mypy, both complete base roles, both optional roles, pinned license guards,
+all-file hooks and both hosted source jobs passed. The first local launch
+could not acquire the shared uv cache under sandboxing and is preserved as a
+failed software attempt in the [qualification archive](../results/medium-dry-clipped-regret/source-checks/manifest.json);
+it is not a poker result. **Next decision:** publish/verify the qualified
+source evidence, then run only the prescribed fictional proof before compute
+profiling. No strength outcome exists yet. Codex assisted; human hands-on
+time was not recorded.
+
+**November 20 two-rule software proof.** The fixed fictional game exercised
+both signed and clipped regret updates through three work crossings. Each
+arm saved and replayed nine current and average strategies; signed reached
+720 work and clipped 728 because each stops at its first complete crossing.
+**Example:** this small game's policies show that the new capture path can
+retain and replay both update rules, but they say nothing about medium/dry
+poker decisions. The single launcher exited zero in 0.383 seconds, within
+the 180-second cap. Its [raw proof](../results/medium-dry-clipped-regret/own-proof/manifest.json)
+includes the launch receipt. **Next decision:** publish and verify these
+bytes before the fixed compute profile; do not infer a poker edge from the
+fictional example. Codex assisted; human hands-on time was not recorded.
+
+**November 20 fixed compute profile, before training.** All 36 preselected
+100k-work paths and 108 readouts completed under the 900-second cap. The
+conservative forecast uses each game/seed/rule path's slowest of three whole
+construction-through-replay times, scales to 10m charged work, and sums paths
+in the fixed three-worker assignment. **Example:** the largest worker sum
+was `T=1232.289s`; the frozen doubled bound with overhead is `6129.154s`,
+under the 7200-second limit. A separate calculation from the raw path rows
+matched exactly. The [full profile](../results/medium-dry-clipped-regret/profile/manifest.json)
+retains runtime and memory as well as the forecast. **Next decision:**
+publish/verify the profile, then issue a separate admission receipt before
+any matched 10m training. The profile does not show stronger poker play.
+Codex assisted; human hands-on time was not recorded.
+
+**November 20 conservative compute admission.** After the profile bytes were
+published and verified on GitHub, the separate data-only reader recomputed
+the frozen rule at clean `fb2e46f`: the largest fixed worker sum was
+`1232.2885391607078s`, giving a strict doubled bound of
+`6129.154156642831s < 7200s`. **Example:** the bound includes the slowest
+repeat for every path and the protocol's extra overhead; it admits a fixed
+training run, but says nothing about which regret rule plays better. The
+[admission receipt](../results/medium-dry-clipped-regret/admission/manifest.json)
+records the decision without starting a learner. **Next decision:** publish
+and verify this distinct checkpoint, then run the one prescribed 12-path
+matched-work comparison. Codex assisted; human hands-on time was not recorded.
+
+**November 20 matched-work clipped-rule outcome, before native audit.** The
+same exact-river learner trained signed and clipped updates at 10m charged
+node work on two already known spots, using the three fixed paired seeds.
+**Example:** on medium/dry seed 20261371, final linear-average exploitability
+was 0.035656 initial pots with signed regrets and 0.072249 with clipped
+regrets; lower means a best response gains less against the saved policy.
+Every medium/dry and low/wet pair worsened with clipping. The single run
+completed all 12 paths and 108 readouts in 288.118 launcher seconds, with
+100% candidate coverage and zero recall violations. The own scores miss the
+frozen medium/dry absolute gates and point to a **negative** result, subject
+to the required comparison-only scalar audit. The [raw own policies and
+scores](../results/medium-dry-clipped-regret/own/manifest.json) preserve the
+unfavorable evidence. **Next decision:** publish/verify these bytes first,
+then perform the pinned native audit and final report; do not retry or tune
+this failed scientific outcome. Codex assisted; human hands-on time was not
+recorded.
+
+**November 20 independent scalar check.** The own policy scores were already
+published before the pinned OpenSpiel reference compared scalar values on all
+108 fixed snapshots. **Example:** the largest discrepancy between the own
+and independent calculations was `7.11e-14` chips, far below the fixed
+`1e-9`-chip tolerance. The single audit exited zero in 55.452 launcher
+seconds under its 900-second cap; its [raw rows](../results/medium-dry-clipped-regret/native/manifest.json)
+are retained. This supports the saved exploitability measurements but cannot
+turn the clipped-rule regression into an improvement. **Next decision:**
+publish/verify the audit, then run the fixed report for exact paired gates
+and turn/river diagnostic interpretation. No reference strategy entered
+training. Codex assisted; human hands-on time was not recorded.
+
+**November 20 clipped-rule conclusion.** The fixed report replayed the
+published own policies after the pinned comparison-only audit. The candidate
+missed medium/dry absolute exploitability gates: median 0.074594 and worst
+0.075562 initial pots versus limits 0.01 and 0.025. Its paired median was
++0.036593; low/wet paired median was +0.001560. All six paired seeds worsened,
+so the [complete result](medium-dry-clipped-regret-result.md) is **negative**.
+**Example:** on medium/dry seed 20261371, the clipped final turn/river
+best-response-loss contributions were 0.829936/1.771019 chips versus signed
+0.264670/1.018938. At the preselected `3s 7h` turn decision, clipped's
+saved fold/call/raise probabilities and alternative-action values are in the
+report; those values assume the saved opponent and an optimal reply
+continuation, not universal poker advice. **Next decision:** complete final
+exact-source local and hosted checks, review/merge if eligible, then choose a
+distinct prospectively fixed strength question from the retained weaknesses.
+No unfavorable rerun or default promotion. Codex assisted; human hands-on
+time was not recorded.
+
+**November 20 final clipped-rule qualification.** The negative report commit
+passed all four exact-head local roles, all-file hooks, and both hosted CI
+jobs. **Example:** the optional Python 3.12 role passed 2,587 tests with two
+expected skips while checking the same historical/new source pins and the
+installed OpenSpiel license before and after. The [complete final check
+receipt](../results/medium-dry-clipped-regret/final-checks/manifest.json)
+retains every log; software qualification supports reproducibility but does
+not change the failed poker-strength gate. **Next decision:** publish/verify
+the receipt and review/merge PR #100 if eligible; a different learning
+hypothesis needs a new prospective protocol. Codex assisted; human hands-on
+time was not recorded.

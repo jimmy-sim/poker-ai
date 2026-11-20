@@ -1,0 +1,15 @@
+{
+  "role": "base311",
+  "status": "failed",
+  "head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+  "python": "3.11.17",
+  "numpy": "2.4.6",
+  "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+  "suite_count": null,
+  "elapsed_seconds": 0.007769083007588051,
+  "failure": {
+    "type": "CalledProcessError",
+    "reason": "Command '['uv', 'run', '--locked', 'python', '-c', 'import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/\"scripts\"))\\nfrom river_generalization.gate import source_fingerprint,source_files,clean_revision\\nhead=clean_revision(r)\\nassert head==\\'c996c0abd10830a0629fec78ec2a91cdc7859bfb\\' and source_fingerprint(r)==\\'152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3\\'\\nassert len(source_files(r))==384\\nfrom medium_dry_clipped.gate import fixed_contract, fingerprint, clean_head\\nassert clean_head(r)==\\'c996c0abd10830a0629fec78ec2a91cdc7859bfb\\'\\nassert fingerprint(r)==\"7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab\"\\nassert fixed_contract(r)[\"node_work_labels\"]==[100000,1000000,10000000]\\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/\\'src\\')\\nassert hashlib.sha256((r/\\'uv.lock\\').read_bytes()).hexdigest()==\\'db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c\\'\\nassert sys.version.split()[0]==\\'3.11.17\\' and numpy.__version__==\\'2.4.6\\'\\nassert \\'PYTHONPATH\\' not in __import__(\\'os\\').environ\\nprint(json.dumps(dict(head=head,python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=source_fingerprint(r),source_files=len(source_files(r)),lock_sha256=\\'db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c\\',dirty=False)))\\n']' returned non-zero exit status 2."
+  }
+}

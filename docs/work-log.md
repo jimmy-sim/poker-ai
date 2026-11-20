@@ -7995,3 +7995,135 @@ PR #98 10m negative result remains unchanged. Next: publish/verify the
 failed evidence and save a safe handoff; any distinct follow-up needs its
 own prospective question and protocol. Codex assisted; human hands-on time
 not recorded.
+
+PR #99 [merged](https://github.com/jimmy-sim/poker-ai/pull/99) on November 20
+after its final evidence-head CI 44727087971 passed both Python jobs/hooks,
+all 150 failed-profile archive blobs matched GitHub, and a documented
+self-review checked the source and gate decision. History-preserving merge
+`a29f989` retains each prospective/source/proof/failure checkpoint. Its
+compute admission is rejected and its 100m poker-strength effect remains
+inconclusive; no default changed. Issue #4 continues with a **different**
+question: can clipped accumulated regrets improve the unchanged exact-river
+learner at 10m matched work on the already known medium/dry spot without
+regressing the already known low/wet spot? The
+[prospective protocol](medium-dry-clipped-regret.md) fixes both arms, two
+known spots, three seeds, crossings, old absolute gates, paired criteria,
+resource caps and publication order. No new outcome was collected for it at
+this checkpoint. Codex assisted; human hands-on time not recorded.
+
+PR #100's isolated signed-versus-clipped source was checked on November 20
+at exact commit `c996c0a` before any formal proof or poker outcome. Historical
+384-file river fingerprint stayed unchanged; new adapter fingerprint is
+`7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab`.
+The seven focused tests include historical signed-rule equivalence, both-arm
+fictional capture/replay, fixed forecast/classification and turn-row identity.
+Serial exact-source base Python 3.11/3.12 each passed 5,731 tests/73 skipped/
+150 deselected with Ruff, format and strict mypy; optional 3.11 passed 2,589,
+optional 3.12 passed 2,587/2 expected skips. Source/runtime/lock and optional
+license guards plus all-file hooks passed. Protocol-head CI 44732250767 and
+source-head CI 44739782171 passed both jobs/hooks. The first launcher attempt
+failed before tests when sandboxing denied uv a shared-cache lock; its log and
+receipt are retained beside the successful roles in the [source qualification
+archive](../results/medium-dry-clipped-regret/source-checks/manifest.json).
+Next: publish and verify those bytes, then run the capped fictional proof.
+No poker-strength measurement yet. Codex assisted; human hands-on time not
+recorded.
+
+The one formal PR #100 fictional signal-game proof ran on November 20 (PST)
+after the published, GitHub-byte-verified source receipt. The signed and
+clipped arms each saved and replayed all nine fixed current/uniform/linear
+readouts at 80/240/720 charged work. Final work was 720/728 respectively;
+launcher exit 0, wall 0.382537s versus the 180-second cap. The [proof
+archive](../results/medium-dry-clipped-regret/own-proof/manifest.json)
+contains both arms' snapshots, mass, events, receipts and launch timing.
+This is a software proof only, not a Hold'em strength result. Next: publish
+and GitHub-byte-verify the proof, and complete the source-receipt-head hosted
+check before the one fixed 36-path 100k compute profile. Codex assisted;
+human hands-on time not recorded.
+
+The single fixed PR #100 36-path, three-repeat 100k-work compute profile ran
+on November 20 (PST) after the proof archive was GitHub-byte-verified. All
+12 game/seed/rule paths × three repeats completed 108 own captures/replays;
+three workers exited zero. Internal whole profile time was 36.867s (<900),
+launcher wall 37.145s, final charged work 100,027–100,114, and maximum
+recorded worker high-water RSS 232,325,120 bytes. The frozen slowest-repeat
+10m extrapolation gave fixed worker sums 1232.289/1231.593/1218.510s,
+`T=1232.289s` and strict `2*(2*T+600)=6129.154s`, below 7200s. An independent
+data-only recomputation matched the raw forecast exactly. The [full profile
+archive](../results/medium-dry-clipped-regret/profile/manifest.json) retains
+all 36 paths, snapshots, masses, events, timing, forecast and recheck.
+Next: publish/verify these bytes, then publish a separate data-only admission
+receipt before any 10m study. This is compute evidence, not poker strength.
+Codex assisted; human hands-on time not recorded.
+
+The PR #100 profile was published at `fb2e46f` on November 20 after
+proof-head CI 44750299015 passed both Python jobs/hooks. All 295 profile
+archive GitHub blobs matched the committed tree, and the clean reader passed.
+The separate data-only admission at that clean head recomputed the unchanged
+profile forecast: `T=1232.2885391607078s` and strict bound
+`6129.154156642831s < 7200s`; status **admitted**. Its [receipt and raw
+decision](../results/medium-dry-clipped-regret/admission/manifest.json) are
+retained separately from the profile. Next: publish and verify the admission
+bytes before the one fixed 12-path 10m matched-work run. No poker-strength
+result yet. Codex assisted; human hands-on time not recorded.
+
+The one admitted PR #100 own matched-work run finished on November 20 (PST)
+at published admission head `1912440`, with all 12 prescribed paths, all 108
+saved/replayed readouts, three workers exit zero, 287.779s internal and
+288.118s launcher wall (<7200). Final work crossed 10m on each path, with
+actual 10,000,014–10,000,169. The [complete own archive](../results/medium-dry-clipped-regret/own/manifest.json)
+retains all policies, masses, summaries, events, timing and launcher receipt.
+Own exact restricted-game final linear-average scores are provisionally
+**negative**, pending comparison-only native scalar audit: medium/dry clipped
+scores by seeds 20261371/72/73 are 0.072249/0.075562/0.074594 initial pots,
+versus signed 0.035656/0.039542/0.035132. Low/wet clipped scores are
+0.002512/0.002470/0.002447 versus signed 0.000946/0.000909/0.001146. All
+candidate coverages are 100%, recall violations zero. The medium/dry absolute
+1% median and 2.5% worst gates fail and both paired medians worsen. Next:
+publish and GitHub-byte-verify this own evidence before any OpenSpiel audit;
+retain the negative outcome, do not retry or tune it. Codex assisted; human
+hands-on time not recorded.
+
+After complete own raw policies were published and byte-verified, the single
+pinned OpenSpiel 2.0.2 comparison-only scalar audit ran on November 20 (PST).
+It checked all 108 fixed snapshots with 108 retained rows, exit zero,
+55.094s internal and 55.452s launcher wall (<900). Maximum independent
+own/native scalar error was `7.105427357601002e-14` chips, below the frozen
+`1e-9`-chip tolerance. The [raw audit archive](../results/medium-dry-clipped-regret/native/manifest.json)
+retains every row, runtime, launch receipt and log. No reference strategy
+entered training. Next: publish/verify native bytes, then run the frozen
+report and classify the already unfavorable own result with turn/river and
+fixed-row diagnostics. Codex assisted; human hands-on time not recorded.
+
+The frozen PR #100 report replayed all 108 own policy bytes after the
+comparison-only native archive was published and GitHub-byte-verified.
+Its [complete report](../results/medium-dry-clipped-regret/report/report.json)
+classified the fixed comparison **negative**: medium/dry clipped 10m
+linear-average median/worst 0.074594/0.075562 initial pots, failing 0.01/0.025;
+paired median +0.036593 (worse). Low/wet clipped median/worst
+0.002470/0.002512 pass absolute gates but paired median +0.001560 worsens
+beyond +0.001. Each of six paired seeds worsened. Candidate coverage 100%
+and recall zero; native maximum error `7.11e-14` chips. The
+[result explanation](medium-dry-clipped-regret-result.md) gives fixed
+turn/river loss decomposition, representative cards/actions/probabilities,
+assumptions, limitations and a Terminal inspection command. Next: finish
+exact-source local/optional/hosted qualification and review PR #100; do not
+retry this failed experiment or promote a default. Any next strength question
+requires its own prospective contract. Codex assisted; human hands-on time
+not recorded.
+
+Final PR #100 exact-head qualification at `16171aa` completed on November 20
+(PST), after the negative report was published. Serial base Python 3.11 and
+3.12 each passed 5,731 tests/73 skipped/150 deselected, Ruff, format,
+strict mypy and pre/post source/runtime/lock guards. Optional 3.11 passed
+2,589; optional 3.12 passed 2,587 with two expected skips; both passed the
+pinned OpenSpiel 2.0.2, Numba 0.68.1 and installed Apache-2.0 license guards
+before and after. All-file hooks passed. Hosted CI 44757177743 on exact
+`16171aa` passed both Python jobs/hooks. The [complete final qualification
+receipt](../results/medium-dry-clipped-regret/final-checks/manifest.json)
+retains raw local/hosted logs, role receipts and source pins. Self-review
+found only new isolated adapter/test/config code relative to main; historical
+source pins and negative outcome remain unchanged. Next: publish/verify this
+receipt, complete PR review and merge if eligible, then choose a distinct
+prospective strength question. Codex assisted; human hands-on time not
+recorded.

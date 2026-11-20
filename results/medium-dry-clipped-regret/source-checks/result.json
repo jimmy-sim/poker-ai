@@ -1,0 +1,70 @@
+{
+  "first_permission_failure": "first-cache-denial/base311.json",
+  "historical_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    }
+  ],
+  "hosted_run": 44739782171,
+  "local_roles": [
+    {
+      "elapsed_seconds": 817.0492118330003,
+      "failure": null,
+      "head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 744.3954039170058,
+      "failure": null,
+      "head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 484.6288452500012,
+      "failure": null,
+      "head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 80
+    },
+    {
+      "elapsed_seconds": 421.88704641700315,
+      "failure": null,
+      "head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 80
+    }
+  ],
+  "scientific_measurements_started": false,
+  "source_fingerprint": "7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab",
+  "status": "source_qualified",
+  "tested_head": "c996c0abd10830a0629fec78ec2a91cdc7859bfb"
+}
