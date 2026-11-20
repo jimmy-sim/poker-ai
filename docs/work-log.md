@@ -8083,3 +8083,14 @@ candidate coverages are 100%, recall violations zero. The medium/dry absolute
 publish and GitHub-byte-verify this own evidence before any OpenSpiel audit;
 retain the negative outcome, do not retry or tune it. Codex assisted; human
 hands-on time not recorded.
+
+After complete own raw policies were published and byte-verified, the single
+pinned OpenSpiel 2.0.2 comparison-only scalar audit ran on November 20 (PST).
+It checked all 108 fixed snapshots with 108 retained rows, exit zero,
+55.094s internal and 55.452s launcher wall (<900). Maximum independent
+own/native scalar error was `7.105427357601002e-14` chips, below the frozen
+`1e-9`-chip tolerance. The [raw audit archive](../results/medium-dry-clipped-regret/native/manifest.json)
+retains every row, runtime, launch receipt and log. No reference strategy
+entered training. Next: publish/verify native bytes, then run the frozen
+report and classify the already unfavorable own result with turn/river and
+fixed-row diagnostics. Codex assisted; human hands-on time not recorded.

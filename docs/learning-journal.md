@@ -8559,3 +8559,15 @@ unfavorable evidence. **Next decision:** publish/verify these bytes first,
 then perform the pinned native audit and final report; do not retry or tune
 this failed scientific outcome. Codex assisted; human hands-on time was not
 recorded.
+
+**November 20 independent scalar check.** The own policy scores were already
+published before the pinned OpenSpiel reference compared scalar values on all
+108 fixed snapshots. **Example:** the largest discrepancy between the own
+and independent calculations was `7.11e-14` chips, far below the fixed
+`1e-9`-chip tolerance. The single audit exited zero in 55.452 launcher
+seconds under its 900-second cap; its [raw rows](../results/medium-dry-clipped-regret/native/manifest.json)
+are retained. This supports the saved exploitability measurements but cannot
+turn the clipped-rule regression into an improvement. **Next decision:**
+publish/verify the audit, then run the fixed report for exact paired gates
+and turn/river diagnostic interpretation. No reference strategy entered
+training. Codex assisted; human hands-on time was not recorded.
