@@ -1,0 +1,71 @@
+{
+  "first_hook_environment_failure": "first-commit-hook-failure.json",
+  "historical_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    }
+  ],
+  "hosted_run": 44778469528,
+  "local_roles": [
+    {
+      "elapsed_seconds": 775.3566413749941,
+      "failure": null,
+      "head": "47f2e7402f4cb1c4bab21e8331857f8f6b10dc85",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 747.176979958007,
+      "failure": null,
+      "head": "47f2e7402f4cb1c4bab21e8331857f8f6b10dc85",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 492.977848584007,
+      "failure": null,
+      "head": "47f2e7402f4cb1c4bab21e8331857f8f6b10dc85",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "elapsed_seconds": 434.0722551670042,
+      "failure": null,
+      "head": "47f2e7402f4cb1c4bab21e8331857f8f6b10dc85",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "parent_fingerprint": "7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab",
+  "scientific_measurements_started": false,
+  "source_fingerprint": "64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd",
+  "status": "source_qualified",
+  "tested_head": "47f2e7402f4cb1c4bab21e8331857f8f6b10dc85"
+}

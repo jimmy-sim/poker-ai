@@ -8159,3 +8159,17 @@ full exact-source base/optional/hosted qualification, formal proof, profile,
 admission and poker training are pending. Next: publish tested source after
 protocol-head CI, then run complete serial qualification. Codex assisted;
 human hands-on time not recorded.
+
+The same PR #101 tested source `47f2e74` completed exact-source qualification
+on November 20 (PST). Serial base Python 3.11 and 3.12 each passed 5,739
+tests/73 skipped/150 deselected, Ruff, format, strict mypy and pre/post
+source/runtime/lock guards. Optional 3.11 passed 2,597; optional 3.12 passed
+2,595 with two expected skips; both also passed pinned OpenSpiel 2.0.2,
+Numba 0.68.1 and installed Apache-2.0 license guards. All-file hooks passed.
+Hosted CI [44778469528](https://github.com/jimmy-sim/poker-ai/actions/runs/44778469528)
+passed both Python jobs and hooks on exact `47f2e74`. The [complete source
+receipt](../results/medium-dry-b1-updates/source-checks/manifest.json) retains
+local/hosted logs, role receipts and the first pre-commit environment failure
+before any commit. No B1 proof, profile or poker training has run. Next:
+publish and byte-verify this receipt before the one fictional proof. Codex
+assisted; human hands-on time not recorded.

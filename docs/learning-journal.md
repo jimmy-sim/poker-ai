@@ -8629,3 +8629,15 @@ training or compute profile has run. **Next decision:** complete required
 exact-source local and hosted checks on this isolated tested source, then
 publish its receipt before the prescribed fictional proof. Codex assisted;
 human hands-on time was not recorded.
+
+**November 20 B1 source qualification.** The exact tested source passed both
+base Python versions (5,739 tests each), both optional versions (2,597 and
+2,595 tests, with two expected skips), all source/runtime/license guards,
+hooks and both hosted CI jobs. **Example:** a shell missing `uv` caused the
+first pre-commit attempt to fail before creating a commit. Sourcing the
+project environment let the unchanged staged code pass; the initial failure
+remains in the [source evidence](../results/medium-dry-b1-updates/source-checks/manifest.json).
+These checks establish software qualification, not stronger poker play.
+**Next decision:** publish and verify this receipt, then run the single
+fictional proof and fixed profile under their existing caps. Codex assisted;
+human hands-on time was not recorded.
