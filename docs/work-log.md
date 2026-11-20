@@ -8220,3 +8220,13 @@ Next: publish and byte-verify all own bytes before constructing the fixed
 comparison-only native audit. Admission-head CI 44789723277 was still
 running at this checkpoint. Codex assisted; human hands-on time not
 recorded.
+
+After the complete B1 own archive was published and all 113 GitHub blobs
+verified, the one pinned OpenSpiel 2.0.2 comparison-only scalar audit ran
+on November 20 (PST). It retained all 54 rows, finished in 27.038 seconds
+internally/27.438 seconds at the launcher (<900), and had maximum numerical
+error `4.973799150320701e-14` chips (<`1e-9`). The [raw native audit](../results/medium-dry-b1-updates/native/manifest.json)
+records the installed Apache-2.0 license hash, runtime and every row.
+Reference values did not enter training. Next: publish/verify this audit,
+then run the frozen report from published own, native and immutable B4
+control bytes. Codex assisted; human hands-on time not recorded.

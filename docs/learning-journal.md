@@ -8687,3 +8687,14 @@ is complete, including scores and partial checkpoints. **Next decision:**
 publish/verify these candidate bytes before the pinned comparison-only
 native audit and B1-vs-B4 report. No outcome has been selected or retried.
 Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 independent scalar audit.** After the candidate's own
+policies and scores were published, the pinned OpenSpiel 2.0.2 validator
+checked all 54 saved readouts. Its largest difference from the project's
+score was `4.97e-14` chips, below the predeclared `1e-9`-chip tolerance.
+**Example:** this close agreement checks arithmetic on the saved policies;
+it does not make the B1 policies strong, nor were reference outputs used to
+train them. The [raw audit](../results/medium-dry-b1-updates/native/manifest.json)
+retains each scalar comparison. **Next decision:** publish and verify the
+audit, then apply the frozen B1-vs-B4 gates to the published own and control
+policies. Codex assisted; human hands-on time was not recorded.
