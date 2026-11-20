@@ -195,6 +195,22 @@ next priority is a prospective river-strength experiment, as Jimmy directed
 on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
+The latest [medium/dry saved-policy diagnosis](river-generalization-diagnosis-report.md)
+in draft PR #98 is complete. The candidate comparison remains **negative**:
+the 3.566% median and 3.954% worst medium/dry exploitabilities missed the
+fixed 1%/2.5% gates, and the earlier final local qualification timeouts
+remain retained as failures; a later serial exact-head requalification passes.
+The diagnostic finds 3,336 exact and candidate information
+rows with no turn or river collisions on this finite spot. Three high-reach
+turn decisions account for 22.79% of remaining mean exploitability, while
+many smaller river decisions account for 75.51% in total. Saved checkpoints
+suggest continued training/convergence effects but cannot establish that
+more work reaches the gate. No new training or default promotion followed.
+The [issue #4 operating workflow](research-operating-workflow.md) now permits
+successive bounded research milestones while keeping prospective protocols,
+failed gates, compute admission and own-before-reference publication intact.
+The immediate task is PR #98 evidence publication, final CI and review.
+
 Three useful reading paths:
 
 - **What information is missing?** Start with the [river distinction example](river-distinction-diagnosis.md), then [the compact learning test](#101-test-the-smaller-description-at-the-same-learning-work).
@@ -7269,7 +7285,6 @@ cost report and two-runtime export checks. The failed forecast, accuracy and
 context-copy gates are unchanged. Codex assisted with execution and writing;
 human hands-on time was not recorded.
 
-
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
@@ -7803,6 +7818,29 @@ both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
 
+**November 19 structural selector checkpoint.** The question was whether
+the new board/range inputs can be chosen without seeing their poker outcomes.
+The isolated selector draws cards under the published texture and prior-rank
+rules, then uses only spot legality checks. **Example:** a known flop-rank and
+turn-rank combination is excluded even when its suits differ; a second call
+refuses to replace the written cohort. Three focused tests passed, as did
+Ruff and strict mypy; historical source bytes remain unchanged. **Next
+decision:** publish the selector, generate the fixed cases once and freeze
+their hashes before constructing any strategy or score. No strength result
+exists yet. Codex assisted; human hands-on time was not recorded.
+
+**November 19 fixed additional inputs.** The published selector produced
+the declared wet/IP board `9s 7d Jd 5d` and dry/OOP board `2s 6h Jc 3c`
+on attempt 3 for each, then drew two weighted private combos per seat.
+The [freeze](../configs/river-generalization-freeze.json) records the exact
+cards, hashes and prior exclusion inventory; both inputs passed legal spot
+loading. **Example:** the wet board has three distinct flop ranks within a
+four-rank span and exactly two flop suits. **Next decision:** publish this
+unchangeable input cohort before constructing trees, measuring policies or
+running the bounded comparison. These are new card/range inputs on known
+betting templates, not unseen betting games. Codex assisted; human hands-on
+time was not recorded.
+
 
 
 
@@ -8152,3 +8190,224 @@ decision:** stop safely after publishing this receipt. The control's
 medium-game gates failed and one paired seed worsened; there is no fresh or
 global admission, no scientific retry and no next experiment. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 additional-spot question, before selection.** After the
+history-preserving [PR #97 merge](https://github.com/jimmy-sim/poker-ai/pull/97),
+Jimmy asked whether its river information gain extends beyond the two known
+games. The earlier `heldout_*` and four `fresh_*` cases already have measured
+outcomes, so they cannot be relabeled unseen. The [prospective contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7027108691)
+fixes one low/wet/in-position and one medium/dry/out-of-position input from
+known public betting templates, with newly drawn boards and weighted ranges.
+**Example:** a board with a previously used sorted-flop/turn rank signature
+will be rejected before any policy or score is computed, regardless of its
+suits. Both unchanged representations will be retrained at the same 10m node
+work for three fixed seeds; every paired difference, coverage, table cost
+and time will be reported. **Next decision:** publish the protocol, then
+select and freeze cases without outcome inspection. A positive result would
+still be limited to two additional tiny finite spots, not a global agent.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 isolated comparison source.** The question was whether the
+fixed new inputs could use the original two representation arms without
+changing historical source dependencies. New adapters load the frozen spots,
+train independently at the declared work crossings, save replayable own
+snapshots and apply the predeclared two-spot decision rule. **Example:**
+synthetic report tests classify a worsening medium/dry candidate as negative
+and a medium/dry tie as inconclusive; neither test uses measured poker
+outcomes. Twelve focused tests passed, plus Ruff and strict mypy, and all four
+frozen arm/spot contexts built within the tree cap with zero abstract recall
+violations. **Next decision:** publish this tested source and qualify its exact
+bytes locally and on GitHub before any real trajectories. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 additional-spot source qualification.** The question was
+whether the frozen study source passes the same full local and hosted checks
+as the earlier river experiment before any new policy outcomes are measured.
+It did: base 3.11/3.12 each passed 5,717 tests plus lint, formatting and strict
+typing; optional 3.11/3.12 passed 2,589 and 2,587 tests (two expected skips
+on 3.12); hooks and both [hosted CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/44652668301)
+passed. **Example:** every optional role checked the installed OpenSpiel
+license bytes even though the reference is still barred from own training.
+The [source receipt](../results/river-generalization/source-checks/manifest.json)
+binds the exact source and raw logs. **Next decision:** publish and byte verify
+this qualification, then run the capped fictional-game own proof. There is
+no river-strength result yet. Codex assisted; human hands-on time was not
+recorded.
+
+**November 19 bounded own proof.** The question was whether the new isolated
+runner can save and replay all three policy readouts at each fixed crossing
+without a native reference or new poker spot. It completed nine fictional
+signal-game readouts at 80, 240 and 720 work, with final work 720 and 0.270
+seconds including startup, under the 180-second cap. **Example:** the saved
+warm, uniform and linear masses replayed with their snapshots; the proof
+checks the evidence path, not which representation plays better. The
+[archive](../results/river-generalization/own-proof/manifest.json) binds the
+qualified source. **Next decision:** publish and verify every proof blob, then
+run the 36-path fixed compute profile. Codex assisted; human hands-on time was
+not recorded.
+
+**November 19 complete compute profile.** The question was whether the
+predeclared full study fits the 7,200-second budget when estimated
+conservatively from every path, rather than from a favorable example.
+All 36 fixed 100k paths completed under 900 seconds and saved 108 readouts.
+**Example:** the three repeats for each path are scaled by 10m/actual work;
+the largest repeat is used, and the slowest fixed worker sum is 1221.884
+seconds. The strict `2*(2*T+600)` bound is 6087.536 seconds, below 7200.
+The [raw profile](../results/river-generalization/profile/manifest.json)
+retains paths and times. **Next decision:** publish and verify the profile,
+then recompute a separate admission before long own learning. Timing says
+nothing about which poker representation is stronger. Codex assisted; human
+hands-on time was not recorded.
+
+**November 19 separate compute admission.** The question was whether a reader
+of the already published complete profile would make the same conservative
+budget decision. It recomputed `T=1221.8841232260268` and
+`6087.536492904107<7200`, exactly matching the profile forecast. **Example:**
+the admission reader consumes the 36 saved path records and writes a decision
+receipt; it never constructs a new learner or comparison reference. The
+[admission archive](../results/river-generalization/admission/manifest.json)
+binds the published profile and source. **Next decision:** publish and byte
+verify this receipt, then run the single fixed 10m own study. This is compute
+admission, not a poker-strength conclusion. Codex assisted; human hands-on
+time was not recorded.
+
+**November 19 fixed own learning.** The question was whether both unchanged
+representation arms could complete the declared matched-work grid on the two
+frozen new inputs without a compute or recall failure. The single 12-path
+study saved all 108 readouts in 287.150 seconds including startup; every path
+crossed 10m node work and the final actual work range was
+10,000,010–10,000,164, with zero recorded structural recall violations.
+**Example:** a label is saved at its first complete iteration, so a 10m
+readout can have a small documented overshoot. The
+[own raw archive](../results/river-generalization/own/manifest.json)
+retains policies and scores. **Next decision:** publish and verify all own
+values before independent native scalar comparison. Own scores alone do not
+establish the preregistered result. Codex assisted; human hands-on time was
+not recorded.
+
+**November 19 independent scalar audit.** The question was whether an
+independent pinned reference reproduces the 108 already published own
+value/reply/exploitability scalars. OpenSpiel 2.0.2 agreed within the
+predeclared 1e-9-chip tolerance on every row; maximum difference was
+`5.684341886080802e-14` chips. The whole audit took 55.588 seconds including
+startup, below 900, and its installed Apache-2.0 license hash matched.
+**Example:** each native row binds a saved own policy hash and work label, so
+the reference checks an existing policy rather than influencing the learner.
+The [archive](../results/river-generalization/native/manifest.json) retains
+all rows and events. **Next decision:** publish and verify this independent
+audit before computing the fixed report. Scalar agreement alone does not say
+which arm is stronger. Codex assisted; human hands-on time was not recorded.
+
+**November 19 additional-spot result: negative.** The question was whether
+exact acting river information helps the unchanged q8 learner at matched 10m
+work on two newly drawn card/range inputs. All six fixed paired seeds had
+lower candidate exploitability; the medium/dry paired median improved by
+0.092426 initial pots and the low/wet median by 0.005149. **The declared
+result is still negative:** the candidate missed the medium/dry absolute
+quality limits, with 3.566% median and 3.954% worst exploitability versus
+1% and 2.5% maximums. The control also missed those limits there. Both arms
+passed low/wet gates; all final reach coverages were 100%, recall violations
+zero and independent scalar agreement within 1e-9 chips. **Example:** at the
+first exact river row for the medium/dry spot, seed 20261371 candidate
+raises to 182 about 23.12% with `2c 8d` on `2s 6h Jc 3c 2d`, versus about
+0.0036% for control; this saved-action example is chosen by tree order and
+does not override the failed absolute gate. The [full report](../results/river-generalization/report/report.json)
+retains every seed, gain, coverage, memory and time, and the [study document](river-generalization-fixed-spots.md)
+provides a rerunnable decision command. **Next decision:** publish the
+negative report, run final reproducibility checks and stop this investigation.
+No case, candidate, threshold or budget is changed. Codex assisted; human
+hands-on time was not recorded.
+
+**November 19 final reproducibility and stop.** The question was whether the
+published negative 108-row report passes every final exact-head check.
+Both hosted Python jobs, hooks and optional local roles passed, but the two
+local base suites failed on an existing spawned fixture exceeding its
+unchanged 20-second wall deadline during concurrent full runs: one case on
+3.11 and both parameterizations on 3.12. Ruff, formatting and strict mypy
+passed in both. **Example:** a 3.11 summary of 5,716 passes plus one timeout
+is still a failed check; the earlier successful premeasurement source
+qualification and hosted success cannot erase it. The
+[final archive](../results/river-generalization/final-checks/manifest.json)
+retains raw logs and report hash. **Next decision:** stop at the predeclared
+negative scientific result with incomplete final local reproducibility. No
+scientific rerun, validation-speed investigation, deadline change, default
+promotion or next experiment followed. Codex assisted; human hands-on time
+was not recorded.
+
+**November 19 prospective medium/dry diagnosis.** The question is which
+saved decisions account for most of the candidate's remaining best-response
+gain after its negative acceptance result. The [read-only plan](river-generalization-diagnosis.md)
+fixes three seeds, candidate linear-average 100k/1m/10m checkpoints, final
+control checkpoints, both responding seats and a 900-second cap before any
+new ranking. **Example:** an exact decision row's saved-prefix loss is divided
+by two to express its additive contribution to NashConv/2; a one-step
+saved-continuation action score is separately labeled as a local diagnostic.
+**Next decision:** publish the plan, then test isolated analysis code before
+one bounded run. The 1%/2.5% failed gates and final local qualification
+failures remain unresolved; no new training or default promotion is implied.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 diagnostic source checkpoint.** The question was whether a
+saved-policy diagnosis can attribute an exact best reply's gain without
+changing the trained representation or historical experiment source. The
+isolated adapter binds all 12 declared snapshot hashes and scores, decomposes
+both seats' gains by exact information row, and keeps saved-continuation
+action values separate from additive loss. **Example:** an unsupported
+row is counted but excluded from the top examples; its zero reach cannot
+be used as evidence of a high-impact mistake. Three focused tests passed,
+and the full Python 3.11 base check passed Ruff, formatting, strict mypy,
+and 5,720 tests (73 skipped, 150 deselected). The historical source
+fingerprint is unchanged. **Next decision:** publish this tested source,
+check hosted CI, then execute the single capped read-only run. The negative
+strength gate and incomplete earlier final local qualification persist.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 one saved-policy weakness diagnosis.** The question was which
+specific decisions explain the failed medium/dry absolute strength gate.
+The [read-only report](river-generalization-diagnosis-report.md) accounts for
+all 12 fixed policies and both responding seats in 7.170 seconds, with
+worst additive accounting error `1.16e-14` chips and independent scalar
+error `1.43e-14` chips, below `1e-9`. **Example:** with `3s 7h` on
+`2s 6h Jc 3c`, the seed-20261371 saved strategy folds about 65.20% facing
+a turn bet. Against its fixed saved opponent, calling has value `-17.270`
+chips with an optimized later reply versus `-18.000` for folding, yet the
+saved-continuation call value is `-18.909`. That distinction explains why a
+one-action local score is not the additive best-response loss. The three
+highest turn rows supply 22.79% of the final candidate's mean remaining
+exploitability; river rows collectively supply 75.51%. No candidate turn or
+river key collision exists in this finite spot. **Next decision:** stop and
+seek authorization for a separately preregistered, bounded unchanged-
+representation convergence test if desired. The parent negative gate and
+retained failed final local qualification do not change. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 operating workflow and requalification question.** Jimmy
+authorized Codex to choose successive bounded research questions for issue
+#4, while retaining the project's prospective scientific gates and stopping
+each experiment at its declared outcome. The
+[workflow](research-operating-workflow.md) makes that order explicit.
+**Example:** a failed 1% medium/dry exploitability gate remains a negative
+result even if another seed or a longer run might look better; a distinct
+test needs its own protocol before outcomes. The old concurrent local base
+failures remain preserved. Both parameterizations of the offending spawned
+fixture passed separately on Python 3.11 and 3.12 with the same 20-second
+deadline, supporting a scheduling explanation but not yet satisfying full
+qualification. **Next decision:** run all required exact-head roles serially,
+then review PR #98 before any new training-budget study. Codex assisted;
+human hands-on time was not recorded.
+
+**November 20 local requalification.** The question was whether the unchanged
+20-second spawned-fixture check still fails when PR #98's full local roles
+run one at a time. The [new receipt](../results/river-generalization/requalification/manifest.json)
+retains a single serial exact-head attempt with four passing local roles,
+clean pre/post guards, pinned optional license checks, all-file hooks and
+two passing hosted jobs. **Example:** the old Python 3.12 concurrent run
+failed both fixture parameterizations; the new serial Python 3.12 base run
+passed 5,720 tests including both, while the old failed log remains
+available. This supports a scheduling explanation without changing a
+deadline or claiming the old check passed. The candidate's 3.566%/3.954%
+medium/dry result still misses the fixed 1%/2.5% quality gates. **Next
+decision:** publish/verify this software receipt and review PR #98; only
+after its eligible merge may a separately preregistered unchanged-candidate
+training-budget study begin. Codex assisted; human hands-on time was not
+recorded.

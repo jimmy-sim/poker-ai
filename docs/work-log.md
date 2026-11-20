@@ -7629,6 +7629,7 @@ intermediate check; the corrected exact source requires fresh complete
 qualification before proof/profile. No real scientific run started. Codex
 assisted; human hands-on time not recorded.
 
+
 Corrected source `7d2cb37` completed exact-source qualification on November
 19: both local base Python roles passed 5,704 tests (73 skipped, 150
 deselected), Ruff and strict mypy; optional Python 3.11 passed 2,584 and
@@ -7721,3 +7722,213 @@ fixed known-panel direction is positive; the control's failed medium gates,
 one unfavorable paired seed, dependence and lack of fresh validation prevent
 promotion. No new experiment is authorized from this result. Codex assisted;
 human hands-on time not recorded.
+
+On November 19, [PR #97](https://github.com/jimmy-sim/poker-ai/pull/97)
+merged with research history preserved at `9707b993`. Its final source and
+hosted checks passed and all raw evidence is retained; the result is positive
+only on two known games, with a failed control gate and no promotion. Jimmy
+then requested one bounded comparison on additional spots. The
+[prospective issue #4 contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7027108691),
+[config](../configs/river-generalization-fixed-spots.json) and
+[protocol](river-generalization-fixed-spots.md) fix two structural strata,
+selection seed/rules, both arms, three training seeds, 10m matched-work
+endpoint, all metrics/thresholds, conservative profile forecast and original
+caps before generating new card/range inputs. Earlier held-out and fresh
+cases are explicitly known; the new cases reuse known betting templates.
+Next: publish this protocol, generate and freeze the fixed new inputs by
+structural rules only, then qualify exact source before any real profile.
+No new outcome or profile has been observed. Codex assisted; human hands-on
+time not recorded.
+
+The isolated structural selector for the additional-spot comparison passed
+three focused tests (determinism, rank-signature exclusion, legal fixed inputs
+and refusal to replace a cohort), focused Ruff and strict mypy on November 19.
+The historical `src/` and `scripts/river_strength/` bytes are unchanged.
+Next: publish this tested selection source, then run the declared one-shot
+selection from a clean published commit and freeze its exact outputs before
+any score or training profile. No outcomes have been inspected. Codex
+assisted; human hands-on time not recorded.
+
+One-shot structural selection from published commit `3fc07f9` froze
+`new_low_wet_ip` (board `9s 7d Jd 5d`, attempt 3) and
+`new_medium_dry_oop` (board `2s 6h Jc 3c`, attempt 3). The
+[freeze](../configs/river-generalization-freeze.json) binds both card/range
+files, all prior tracked spot inputs, source hashes and selection commit.
+Both loaded as legal spots. No tree, policy or outcome was constructed.
+Next: publish and GitHub-byte-verify this fixed cohort, then implement and
+qualify the exact-source experiment runner. Codex assisted; human hands-on
+time not recorded.
+
+The isolated generalization runner, native scalar auditor and all-readout
+report now bind the frozen cohort and the unchanged PR #97 representations.
+Twelve focused tests passed, including four legal tree/representation builds,
+recall, stage gates, replay, and positive/negative/inconclusive synthetic
+classifications. Ruff and strict mypy passed; `src/` and the historical river
+adapter/entrypoints are byte unchanged from `origin/main`. This is the tested
+source checkpoint, before real proof, profile or trained outcomes. Next:
+publish the source, then run all exact-source local, optional and hosted
+qualification roles. Codex assisted; human hands-on time not recorded.
+
+Exact-source qualification of `d78b525` passed on November 19 (PST).
+Both local base roles: 5,717 passes, 73 skips and 150 deselections with lint,
+format and strict typing; optional 3.11: 2,589 passes; optional 3.12: 2,587
+passes and two skips. All four clean pre/post source/lock/runtime guards,
+local hooks and both jobs in [hosted CI 44652668301](https://github.com/jimmy-sim/poker-ai/actions/runs/44652668301)
+passed. The [qualification receipt](../results/river-generalization/source-checks/manifest.json)
+retains logs and scope. Next: publish and GitHub-byte-verify this gate, then
+run a synthetic own proof; no real trajectories yet. Codex assisted; human
+hands-on time not recorded.
+
+The single qualified-source fictional-game own proof completed on November
+19 (PST): nine saved readouts at labels 80/240/720, final actual work 720,
+0.270 seconds including startup (<180). Capture/replay succeeded and the
+[raw proof archive](../results/river-generalization/own-proof/manifest.json)
+retains every policy, mass and event. No new-spot outcome yet. Next: publish
+and GitHub-byte-verify the proof before the 36-path 100k compute profile.
+Codex assisted; human hands-on time not recorded.
+
+The single 36-path 100k profile completed on November 19 (PST) in 36.669
+seconds including startup (<900), with all 108 readouts retained. The
+[raw profile](../results/river-generalization/profile/manifest.json) gives
+fixed worker extrapolation sums 1209.651, 1211.170 and 1221.884 seconds;
+`T=1221.884`, so the prescribed strict bound is `6087.536<7200`.
+Next: publish and GitHub-byte-verify all profile members, then make a
+separate admission decision from those published bytes. This timing gate is
+not a poker-strength result. Codex assisted; human hands-on time not
+recorded.
+
+After all 294 profile blobs were GitHub-byte-verified, the separate
+admission reader recomputed `T=1221.8841232260268` and
+`6087.536492904107<7200` seconds from the published profile, without
+constructing a learner or reference. The
+[admission receipt](../results/river-generalization/admission/manifest.json)
+records the decision. Next: publish and verify it before the single fixed
+12-path 10m own study. Codex assisted; human hands-on time not recorded.
+
+The one admitted 12-path fixed own study completed on November 19 (PST) in
+287.150 seconds including startup (<7200). All 108 readouts were saved;
+final actual node work ranged 10,000,010–10,000,164, and recorded recall
+violations were zero. The [own raw archive](../results/river-generalization/own/manifest.json)
+retains policies, masses, events, scores and path times. Next: publish and
+GitHub-byte-verify every own blob before constructing the comparison-only
+OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
+time not recorded.
+
+After all 221 own blobs were GitHub-byte-verified, the pinned comparison-only
+OpenSpiel 2.0.2 audit reproduced all 108 saved scalars on November 19 (PST).
+Maximum discrepancy was `5.684341886080802e-14` chips (<1e-9); whole audit
+55.588 seconds including startup (<900). The installed Apache-2.0 license
+hash matched. The [native archive](../results/river-generalization/native/manifest.json)
+retains rows and events. Next: publish and verify the independent audit,
+then produce the fixed all-readout report. No final strength conclusion yet.
+Codex assisted; human hands-on time not recorded.
+
+The fixed all-readout report reproduced 108 rows from the published own and
+native archives. All six final paired seeds favored the candidate; low/wet/IP
+paired median was -0.005148597 initial pots, medium/dry/OOP -0.092425654,
+pooled -0.039914876. **The preregistered conclusion is negative:** the
+candidate's medium/dry median/worst absolute exploitability were
+3.566%/3.954%, failing the unchanged 1%/2.5% gates. Control also failed
+there (12.756%/13.065%). Both arms passed low/wet gates, all final average
+coverages were 100%, recall violations zero and max native scalar error
+5.684e-14 chips. The [full report](../results/river-generalization/report/report.json)
+retains every seed, readout, gain, work, memory and time. Deterministic
+first-river-row policy examples and a rerunnable inspection command are in
+the [study document](river-generalization-fixed-spots.md). Next: publish the
+negative report and complete final exact-source checks, then stop with no
+promotion or next experiment. Codex assisted; human hands-on time not
+recorded.
+
+Final exact-report-head checks on `d7b3179` were mixed. Both local base roles
+passed Ruff, formatting and strict mypy but **failed** their full pytest
+suites: 3.11 had 1 failed/5,716 passed; 3.12 had 2 failed/5,715 passed,
+with 73 skips and 150 deselections each. The direct failures were unchanged
+20-second spawned fixture deadlines in the concurrent local runs. Optional
+3.11/3.12 passed 2,589/2,587 tests (two expected 3.12 skips), hooks passed,
+and both [hosted jobs 44657786167](https://github.com/jimmy-sim/poker-ai/actions/runs/44657786167)
+passed. The [final archive](../results/river-generalization/final-checks/manifest.json)
+retains every failed/passing log, guard, CI metadata and report hash. The
+premeasurement exact-source qualification had passed all roles; final local
+reproducibility is incomplete. The fixed scientific result remains negative
+because medium/dry candidate absolute quality gates failed. Stop here with
+no retry or next investigation. Codex assisted; human hands-on time not
+recorded.
+
+On November 19, after the final-receipt [hosted run 44660963477](https://github.com/jimmy-sim/poker-ai/actions/runs/44660963477)
+passed both jobs, Jimmy requested a read-only diagnosis of the remaining
+medium/dry weakness. The prior scientific classification stays negative and
+the final local base timeouts remain failed. The [prospective diagnostic
+plan](river-generalization-diagnosis.md) and
+[fixed config](../configs/river-generalization-diagnosis.json) pin the 12
+existing policies, three seeds/checkpoints, both responding seats, additive
+best-response-loss ranking, assumptions, 1e-9 accounting checks and 900-second
+wall cap before any new node ranking. Next: publish and verify the plan, then
+implement isolated read-only analysis with focused tests. No training,
+ablation or policy outcome analysis has started. Codex assisted; human
+hands-on time not recorded.
+
+The isolated read-only diagnostic source is ready on November 19 (PST).
+It adds the fixed 12-snapshot grid, exact information-row best-response
+accounting, saved-continuation action values, source/archive/hash checks,
+bounded output retention and a ranked-row inspection command without
+changing the historical river source fingerprint (`152b357b...`). Focused
+tests passed 3/3. Full local Python 3.11 base checks passed Ruff, format,
+strict mypy and 5,720 tests (73 skipped, 150 deselected) in 999.38 seconds.
+This is a source check, not a repair or repetition of the prior failed final
+qualification. Next: publish this tested source, require hosted CI, then run
+the one 900-second saved-policy diagnostic. No node ranking has started.
+Codex assisted; human hands-on time not recorded.
+
+The diagnostic source checkpoint `f2533eab52b6910313e23ab69430865fb2fc90f3`
+passed hosted [CI run 44680486302](https://github.com/jimmy-sim/poker-ai/actions/runs/44680486302)
+on Python 3.11 and 3.12 before measurement. The one fixed read-only run then
+completed all 12 saved policies and 24 seat traces in 7.170 seconds under its
+900-second whole-process cap. The [raw diagnosis](../results/river-generalization/diagnosis/manifest.json)
+retains 12 compressed full-row traces, events, report and launcher receipt.
+Worst exact additive accounting error was `1.155e-14` chips and native scalar
+error `1.421e-14` (<`1e-9`); all saved scores, hashes and source pins matched.
+The [interpretation](river-generalization-diagnosis-report.md) finds no
+candidate information collision on this 3,336-row finite spot. Three turn
+rows contribute 0.301718 of 1.323959 mean chips; river rows contribute
+0.999712 chips collectively. Candidate mean exploitability declined from
+33.4855 to 4.8448 to 1.3240 chips across the fixed 100k/1m/10m snapshots,
+consistent with but not proving unfinished convergence. The original
+medium/dry acceptance result stays negative and the earlier final local
+base qualification remains incomplete. Next: publish/verify this report,
+leave PR #98 draft, and stop without a new experiment or promotion. Codex
+assisted; human hands-on time not recorded.
+
+On November 19 (PST), Jimmy authorized an ongoing bounded issue #4 research
+cycle, with poker strength and reproducibility ahead of GitHub activity.
+The [operating workflow](research-operating-workflow.md) and updated
+[roadmap](roadmap.md) now record milestone selection, prospective publication,
+exact-source qualification, conservative compute admission, own-before-
+reference boundaries, failure retention, and durable handoffs without changing
+any frozen protocol. Live PR #98 and its final hosted CI were verified;
+the original local concurrent spawned-fixture failures remain failed. The
+two parameterizations passed in isolation on both locked Python versions
+with the unchanged 20-second deadline; raw focused logs and receipts are
+retained under ignored `results/runs/river-generalization-requalification-20261120/`.
+Next: publish this workflow, then complete all exact-head local roles
+serially before considering PR #98 merge. No new training or budget outcome
+has been collected. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), the original PR #98 final local base failures were
+investigated without changing the spawned fixture or its 20-second deadline.
+Both parameterizations passed alone on each locked Python minor. One new
+exact-head **serial** attempt at `3e77a50195372fca00868dcdbeb773c7afc75d14`
+then passed all four required local roles: base 3.11 and 3.12 each 5,720
+passed/73 skipped/150 deselected with Ruff, formatting and strict mypy;
+optional 3.11 2,589 passed; optional 3.12 2,587 passed/2 skipped. Each
+role's pre/post clean-source, runtime and lock guard passed, as did both
+optional installed-license checks and all-file hooks. Hosted
+[CI 44694112687](https://github.com/jimmy-sim/poker-ai/actions/runs/44694112687)
+passed both jobs/hooks; its PR merge tree matched the source tree. The
+[new receipt](../results/river-generalization/requalification/manifest.json)
+retains original failure hashes, focused and full logs, guards, CI and the
+serial driver. The old failed receipt remains failed; contention is supported
+as an explanation, not proven uniquely. The medium/dry scientific result
+stays negative at 3.566%/3.954% versus fixed 1%/2.5% limits. Next: publish
+and verify the new receipt, complete evidence-head CI and review, then
+history-preserving PR merge if eligible. No new training started. Codex
+assisted; human hands-on time not recorded.

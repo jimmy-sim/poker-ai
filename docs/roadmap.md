@@ -6,15 +6,28 @@ I want this to be an ongoing effort to improve the Hold'em agent and understand
 its weaknesses. The simulator and learning tools provide the foundation.
 
 Current [issue #4](https://github.com/jimmy-sim/poker-ai/issues/4) tests which card
-and range distinctions matter at fixed training work. The latest guarded
+and range distinctions matter at fixed training work. The guarded
 prerequisite skip failed its unchanged work-identity gate; its
 [retained result](pinned-prerequisite-skip-result.md) admits no validation
-saving. Per the user's November 18 direction, the active next priority is a
-[prospectively bounded river-strength experiment](river-strength-known-vulnerabilities.md)
-targeting known vulnerabilities.
-Further validation-performance work is deferred unless it blocks correctness
-or that experiment's stated budget. Follow the [learning journal](learning-journal.md)
+saving. The [known-game river study](river-strength-known-vulnerabilities.md)
+was history-merged in PR #97 with a positive descriptive result limited to
+its two preselected games and a failed control gate. The
+[additional-spot comparison](river-generalization-fixed-spots.md) finished
+**negative** under its fixed medium/dry absolute exploitability gates. Its
+[saved-policy diagnosis](river-generalization-diagnosis-report.md) found no
+candidate information collision on that finite spot; remaining turn and
+river best-response gains motivate a bounded unchanged-candidate
+training-budget test after PR #98's retained local qualification failures
+are resolved. A separate serial exact-head requalification now passes all
+four local roles and hooks; the original failed logs remain retained, and
+PR review/final evidence CI precede merge. Previous held-out and
+fresh-validation cases are known evidence.
+Further validation-performance work is deferred
+unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
+The [research operating workflow](research-operating-workflow.md) governs
+successive bounded issue #4 milestones while preserving every experiment's
+prospective contract and stop rule.
 
 The original phase plan follows below. Its order and acceptance rules remain:
 state the test before running it, validate the implementation and math, and

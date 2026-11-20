@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "parent_pr": 98,
+  "status": "prospective_read_only_diagnosis",
+  "spot": "new_medium_dry_oop",
+  "spot_file": "configs/river-generalization-spots/new_medium_dry_oop.json",
+  "input_sha256": {
+    "configs/river-generalization-spots/new_medium_dry_oop.json": "395727a4fa22d0d4aa6bd182740a5463ef97f7b90e37d6b42ac8a81916d4b51d",
+    "results/river-generalization/own/manifest.json": "352ea6c0ee20c6400428277e4b4e4f4f4eaa16448c151e2d26bf2ffb309c0196",
+    "results/river-generalization/native/manifest.json": "ef93a5f0f74d19391304a377a3d12beac85cfcfbc8c801f228cb8565343902d5",
+    "results/river-generalization/report/report.json": "e1a5793d1fa9e1ce666c4fba71f0bbd986d13dfd03faaece7de5d84814f245b0"
+  },
+  "candidate": "q8_turn_exact_river",
+  "control": "texture_range_q8_b8",
+  "seeds": [20261371, 20261372, 20261373],
+  "policy_grid": {
+    "candidate_linear_average_work": [100000, 1000000, 10000000],
+    "control_linear_average_work": [10000000],
+    "responding_seats": [0, 1],
+    "expected_saved_policies": 12,
+    "expected_seat_traces": 24,
+    "other_readouts": "read existing all-readout report only; no extra policy traces"
+  },
+  "ranking": {
+    "primary": "for candidate final 10m linear-average, sum each exact information row's saved-prefix additive unilateral best-response loss across both responding seats, divide by two for NashConv/2, average over all three seeds, descending; tie by exact information index",
+    "top_aggregate_exact_rows": 10,
+    "top_per_seed_and_seat": 5,
+    "zero_support": "retain and report counts but exclude zero saved-prefix reach from top examples",
+    "street": "TURN for four observed board cards, RIVER for five",
+    "collision": "count exact information rows mapping to each candidate abstract row by street; do not use collision count alone as a gain"
+  },
+  "estimands": {
+    "additive_contribution": "half of each trace_losses saved-prefix loss in chips; sums over exact rows and both responding seats to saved-policy exact restricted-game exploitability",
+    "alternative_action_values": "counterfactual action chips for the responding seat against the fixed saved opponent with own best-response continuation after the action; hidden histories combined before maximization",
+    "local_diagnostic": "saved-continuation counterfactual action values at selected rows only; no independent action interventions or additive game-loss claim",
+    "reach": "report both chance times opponent reach before maximization and full saved-prefix reach used in the additive contribution"
+  },
+  "checks": {
+    "policy_hashes_and_metadata": true,
+    "source_and_input_hashes": true,
+    "both_seat_gain_sum_equals_twice_saved_exploitability_chips": 1e-9,
+    "each_response_matches_saved_own_score_chips": 1e-9,
+    "all_trace_accounting_errors_chips": 1e-9,
+    "unchanged_native_audit_maximum_error_chips": 1e-9,
+    "no_new_reference_construction": true
+  },
+  "wall_cap_seconds_including_startup_and_report": 900,
+  "failure_rule": "retain partial output, stop; no training, scientific retry, cap change, spot swap or candidate change",
+  "publication": "publish this plan before running diagnostic ranking; publish tested isolated diagnostic source before the one read-only run; retain raw rows and a reproducible report; keep PR draft while failed acceptance and final local qualification remain unresolved"
+}
