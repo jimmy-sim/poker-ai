@@ -260,3 +260,44 @@ PY
 Next: publish and verify this negative report, then complete the required
 final exact-source local, optional and hosted reproducibility checks. A failed
 scientific quality gate ends this investigation; no next experiment follows.
+
+## Final reproducibility gate and stop
+
+The [final check archive](../results/river-generalization/final-checks/manifest.json)
+binds report SHA-256
+`e1a5793d1fa9e1ce666c4fba71f0bbd986d13dfd03faaece7de5d84814f245b0`
+to exact report commit `d7b317953b6d340550c7bd9e1b77c128b557eb88` and the
+unchanged 384-file source fingerprint. **Final local base checks failed.**
+Python 3.11 had 1 failed, 5,716 passed, 73 skipped and 150 deselected;
+Python 3.12 had 2 failed, 5,715 passed, 73 skipped and 150 deselected. The
+first direct failures were the two parameterizations of an existing spawned
+fixture test exceeding its unchanged 20-second `Deadline` during the
+concurrent local full-suite runs (only the `False` case failed on 3.11; both
+failed on 3.12). Ruff, formatting and strict mypy passed before pytest in
+both base roles. The final optional 3.11 and 3.12 scopes passed 2,589 and
+2,587 tests (two expected 3.12 skips), with clean pre/post source guards;
+local hooks passed. [Hosted CI run 44657786167](https://github.com/jimmy-sim/poker-ai/actions/runs/44657786167)
+passed both Python jobs and hooks. The earlier required premeasurement local
+and hosted qualification on the same source fingerprint passed in full.
+Retain the failed final local logs as failures; neither hosted success nor
+the earlier qualification relabels them. No retry, deadline adjustment,
+scientific rerun or new investigation was started. The fixed measured result
+is negative, and final local reproducibility is incomplete.
+
+Three review questions close this bounded research milestone:
+
+1. **Why is the classification negative when all six paired seeds favored the
+   candidate?** The prospective rule also required candidate median ≤1% and
+   worst ≤2.5% exploitability on each spot. Medium/dry was 3.566% and
+   3.954%, so those gates fail.
+2. **What does the independent native audit establish?** It reproduces the
+   108 saved own scalars within 1e-9 chips after own policies were published.
+   It does not make the failed absolute quality gates pass or prove global
+   poker strength.
+3. **What is learned from the final local failure?** An existing spawned
+   fixture exceeded its fixed 20-second wall cap in concurrent local suites.
+   The failure is retained; the separately successful hosted and
+   premeasurement checks do not turn that local final run into a pass.
+
+Stop at this negative, fully retained milestone. Do not promote a new default
+or start another experiment.

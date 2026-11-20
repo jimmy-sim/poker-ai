@@ -8302,3 +8302,19 @@ provides a rerunnable decision command. **Next decision:** publish the
 negative report, run final reproducibility checks and stop this investigation.
 No case, candidate, threshold or budget is changed. Codex assisted; human
 hands-on time was not recorded.
+
+**November 19 final reproducibility and stop.** The question was whether the
+published negative 108-row report passes every final exact-head check.
+Both hosted Python jobs, hooks and optional local roles passed, but the two
+local base suites failed on an existing spawned fixture exceeding its
+unchanged 20-second wall deadline during concurrent full runs: one case on
+3.11 and both parameterizations on 3.12. Ruff, formatting and strict mypy
+passed in both. **Example:** a 3.11 summary of 5,716 passes plus one timeout
+is still a failed check; the earlier successful premeasurement source
+qualification and hosted success cannot erase it. The
+[final archive](../results/river-generalization/final-checks/manifest.json)
+retains raw logs and report hash. **Next decision:** stop at the predeclared
+negative scientific result with incomplete final local reproducibility. No
+scientific rerun, validation-speed investigation, deadline change, default
+promotion or next experiment followed. Codex assisted; human hands-on time
+was not recorded.

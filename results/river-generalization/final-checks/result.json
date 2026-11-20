@@ -1,0 +1,49 @@
+{
+  "failure_root": "existing spawned fixture exceeded unchanged 20-second Deadline in concurrent final base roles; one case on 3.11, both parameterizations on 3.12",
+  "hooks": "passed",
+  "hosted_jobs": {
+    "Python 3.11": "success",
+    "Python 3.12": "success"
+  },
+  "hosted_run": 44657786167,
+  "hosted_url": "https://github.com/jimmy-sim/poker-ai/actions/runs/44657786167",
+  "local": {
+    "base311": {
+      "failure": {
+        "reason": "Command '['make', 'check']' returned non-zero exit status 2.",
+        "type": "CalledProcessError"
+      },
+      "seconds": 1154.0315801249963,
+      "status": "failed",
+      "summary": "1 failed, 5716 passed, 73 skipped, 150 deselected"
+    },
+    "base312": {
+      "failure": {
+        "reason": "Command '['make', 'check']' returned non-zero exit status 2.",
+        "type": "CalledProcessError"
+      },
+      "seconds": 1151.1279512500041,
+      "status": "failed",
+      "summary": "2 failed, 5715 passed, 73 skipped, 150 deselected"
+    },
+    "optional311": {
+      "failure": null,
+      "seconds": 870.5784107079962,
+      "status": "passed",
+      "summary": "2589 passed"
+    },
+    "optional312": {
+      "failure": null,
+      "seconds": 782.2849581250048,
+      "status": "passed",
+      "summary": "2587 passed, 2 skipped"
+    }
+  },
+  "no_scientific_retry": true,
+  "report_classification": "negative",
+  "report_sha256": "e1a5793d1fa9e1ce666c4fba71f0bbd986d13dfd03faaece7de5d84814f245b0",
+  "source_files": 384,
+  "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "status": "failed_final_local_gate_retained",
+  "tested_head": "d7b317953b6d340550c7bd9e1b77c128b557eb88"
+}

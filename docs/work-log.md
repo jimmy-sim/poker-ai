@@ -7838,3 +7838,18 @@ the [study document](river-generalization-fixed-spots.md). Next: publish the
 negative report and complete final exact-source checks, then stop with no
 promotion or next experiment. Codex assisted; human hands-on time not
 recorded.
+
+Final exact-report-head checks on `d7b3179` were mixed. Both local base roles
+passed Ruff, formatting and strict mypy but **failed** their full pytest
+suites: 3.11 had 1 failed/5,716 passed; 3.12 had 2 failed/5,715 passed,
+with 73 skips and 150 deselections each. The direct failures were unchanged
+20-second spawned fixture deadlines in the concurrent local runs. Optional
+3.11/3.12 passed 2,589/2,587 tests (two expected 3.12 skips), hooks passed,
+and both [hosted jobs 44657786167](https://github.com/jimmy-sim/poker-ai/actions/runs/44657786167)
+passed. The [final archive](../results/river-generalization/final-checks/manifest.json)
+retains every failed/passing log, guard, CI metadata and report hash. The
+premeasurement exact-source qualification had passed all roles; final local
+reproducibility is incomplete. The fixed scientific result remains negative
+because medium/dry candidate absolute quality gates failed. Stop here with
+no retry or next investigation. Codex assisted; human hands-on time not
+recorded.
