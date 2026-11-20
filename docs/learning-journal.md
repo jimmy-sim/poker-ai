@@ -8331,3 +8331,18 @@ saved-continuation action score is separately labeled as a local diagnostic.
 one bounded run. The 1%/2.5% failed gates and final local qualification
 failures remain unresolved; no new training or default promotion is implied.
 Codex assisted; human hands-on time was not recorded.
+
+**November 19 diagnostic source checkpoint.** The question was whether a
+saved-policy diagnosis can attribute an exact best reply's gain without
+changing the trained representation or historical experiment source. The
+isolated adapter binds all 12 declared snapshot hashes and scores, decomposes
+both seats' gains by exact information row, and keeps saved-continuation
+action values separate from additive loss. **Example:** an unsupported
+row is counted but excluded from the top examples; its zero reach cannot
+be used as evidence of a high-impact mistake. Three focused tests passed,
+and the full Python 3.11 base check passed Ruff, formatting, strict mypy,
+and 5,720 tests (73 skipped, 150 deselected). The historical source
+fingerprint is unchanged. **Next decision:** publish this tested source,
+check hosted CI, then execute the single capped read-only run. The negative
+strength gate and incomplete earlier final local qualification persist.
+Codex assisted; human hands-on time was not recorded.

@@ -7866,3 +7866,15 @@ wall cap before any new node ranking. Next: publish and verify the plan, then
 implement isolated read-only analysis with focused tests. No training,
 ablation or policy outcome analysis has started. Codex assisted; human
 hands-on time not recorded.
+
+The isolated read-only diagnostic source is ready on November 19 (PST).
+It adds the fixed 12-snapshot grid, exact information-row best-response
+accounting, saved-continuation action values, source/archive/hash checks,
+bounded output retention and a ranked-row inspection command without
+changing the historical river source fingerprint (`152b357b...`). Focused
+tests passed 3/3. Full local Python 3.11 base checks passed Ruff, format,
+strict mypy and 5,720 tests (73 skipped, 150 deselected) in 999.38 seconds.
+This is a source check, not a repair or repetition of the prior failed final
+qualification. Next: publish this tested source, require hosted CI, then run
+the one 900-second saved-policy diagnostic. No node ranking has started.
+Codex assisted; human hands-on time not recorded.
