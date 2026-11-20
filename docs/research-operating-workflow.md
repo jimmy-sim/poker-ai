@@ -57,11 +57,11 @@ core, subagents or scheduled tasks. Existing restrictions on real-money
 integration and default promotion also remain in force. Finish independent
 work and present a concrete proposal if one of those permissions is needed.
 
-**Current order (November 19, 2026):** retain PR #98's failed final local
-qualification logs; requalify its exact source without changing the 20-second
-fixture deadline, historical pins or scientific result; review and merge only
-if all required checks pass. Then publish a separate bounded unchanged-river-
-candidate medium/dry training-budget protocol before any new training, with
-overall exploitability and the previously identified turn/river contributions
-as fixed readouts and matched-work controls where needed. Do not start a
-subsequent milestone until that experiment is classified and handed off.
+**Current order (November 20, 2026):** PR #98's retained failed local logs
+and later successful serial requalification have been published; the PR was
+history-merged. Finish the separately
+[preregistered medium/dry training-budget study](medium-dry-training-budget.md)
+under its own gates before selecting another milestone. Its unchanged
+candidate and matched-work control have fixed overall exploitability and
+turn/river contribution readouts. Do not start a subsequent milestone until
+this one is classified and handed off.

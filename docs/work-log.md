@@ -7932,3 +7932,17 @@ stays negative at 3.566%/3.954% versus fixed 1%/2.5% limits. Next: publish
 and verify the new receipt, complete evidence-head CI and review, then
 history-preserving PR merge if eligible. No new training started. Codex
 assisted; human hands-on time not recorded.
+
+PR #98 final evidence-head [CI 44701038807](https://github.com/jimmy-sim/poker-ai/actions/runs/44701038807)
+passed both Python jobs and hooks on November 20. A recorded self-review
+checked the frozen config/cohort, nine stage archives, retained failed
+receipt, source pins, serial local roles and the negative scientific report;
+it is not independent review. The PR was history-merged as
+`702bce9658209b2cc653e31f5884e5ae8e2ef918`. The failed 1%/2.5%
+medium/dry gates and original concurrent fixture failures remain recorded.
+The [new prospective protocol](medium-dry-training-budget.md) asks whether
+the unchanged candidate reaches those limits with a fixed longer budget
+while still beating a matched-work control. It fixes the known spot, seeds,
+10m/30m/100m checkpoints, diagnostics, thresholds, compute caps and
+publication order before new measurements. No proof, profile or training
+has begun. Codex assisted; human hands-on time not recorded.

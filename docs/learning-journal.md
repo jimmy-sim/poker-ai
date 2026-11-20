@@ -8411,3 +8411,19 @@ decision:** publish/verify this software receipt and review PR #98; only
 after its eligible merge may a separately preregistered unchanged-candidate
 training-budget study begin. Codex assisted; human hands-on time was not
 recorded.
+
+**November 20 PR #98 merge and longer-work question.** The question is
+whether extra training work reduces the remaining medium/dry best-response
+gain enough for the unchanged river candidate to satisfy the historical
+absolute strength limits. Final hosted CI and a documented self-review
+supported a history-preserving merge of PR #98; its negative poker result and
+old failed concurrent fixture logs remain intact. **Example:** the saved
+policy's three leading turn decision rows explain 22.79% of its remaining
+mean exploitability, yet the river supplies 75.51% in aggregate. More work
+might reduce either, but those earlier checkpoints cannot establish that.
+The [prospective budget plan](medium-dry-training-budget.md) fixes both arms
+at matched 10m/30m/100m work, all three seeds, those turn rows and aggregate
+river readouts, plus conservative admission before longer training. **Next
+decision:** publish the plan, qualify isolated source, then follow its gates;
+no new strength outcome is available. Codex assisted; human hands-on time
+was not recorded.
