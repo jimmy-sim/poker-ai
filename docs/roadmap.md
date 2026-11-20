@@ -45,9 +45,11 @@ PR #100 B4 controls. Its one fixed 10m run on the two known spots is
 initial pots miss the unchanged 0.01/0.025 gates, with paired median
 +0.001098. Low/wet's absolute gate passes but paired median is slightly
 worse. Own raw policies preceded the pinned comparison-only audit. PR #101
-remains in final qualification; no default is promoted. The next research
-question should follow the completed review and be distinct from another
-B1 attempt on these outcomes.
+was history-merged after final local/hosted qualification and solo review;
+post-merge main CI remains separately tracked. No default is promoted. The
+next [prospective average-readout question](river-uniform-readout-spots.md)
+compares two policy averages of the same unchanged B4 signed path on a fixed
+structurally selected card/range cohort. It is distinct from another B1 attempt.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-20 — PR #101 merge and prospective average-readout panel
+
+- **Completed prior milestone:** [PR #101](https://github.com/jimmy-sim/poker-ai/pull/101)
+  history-merged as `0154696903dc50b97e137ffc552e44391ddfb7f6` after
+  final local/hosted qualification and solo review. Its fixed B1 result is
+  **negative**; [report](medium-dry-b1-updates-result.md) and failed gates
+  remain. Post-merge main CI 44802207887 is separately pending at this entry.
+- **Next question:** saved B4 policies show input-dependent uniform-versus-
+  linear average direction. The [prospective four-stratum contract](river-uniform-readout-spots.md)
+  fixes structural selection, same-path control/candidate, seeds, work,
+  thresholds, source checks, compute caps and publication order before any
+  new input or score. Earlier templates and outcomes remain known evidence.
+- **State:** protocol drafting only; no selection, profile or training job.
+  Codex assisted; human hands-on time not recorded.
+
 ## 2026-11-17 — Close allowance correction; plan nested archive measurement
 
 - **Issue:** #4. [PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) merged at
