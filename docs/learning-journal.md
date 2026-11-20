@@ -8713,3 +8713,16 @@ the finite game, not universal advice. **Next decision:** finish final
 qualification/review, retain the negative result, and select a distinct
 prospective strength question. No B1 rerun or default promotion. Codex
 assisted; human hands-on time was not recorded.
+
+**November 20 final B1 qualification.** The negative report commit passed
+both full local Python versions, both optional reference-enabled versions,
+all source/runtime/license guards and all-file hooks. Hosted CI also passed
+both Python jobs and hooks. **Example:** optional Python 3.12 passed 2,595
+tests with two expected skips while rechecking the same report archive and
+installed OpenSpiel license after the suite. The [complete check
+receipt](../results/medium-dry-b1-updates/final-checks/manifest.json)
+preserves each log. Software qualification makes the negative outcome
+reproducible; it does not turn it into a positive result. **Next decision:**
+publish/verify the receipt, review and merge PR #101 if eligible, then
+choose a distinct prospectively registered question. Codex assisted;
+human hands-on time was not recorded.

@@ -8244,3 +8244,15 @@ All six whole-coverage values are 100% and recall violations zero. This is
 Next: publish/verify report, complete required final exact-source
 local/optional/hosted checks and review PR #101. Codex assisted; human
 hands-on time not recorded.
+
+Final PR #101 exact negative-report-head qualification completed on
+November 20 (PST) at `583291c`: serial local base Python 3.11 and 3.12
+each passed 5,739 tests/73 skipped/150 deselected plus Ruff, format,
+strict mypy and pre/post source/runtime/lock/report guards. Optional 3.11
+passed 2,597; optional 3.12 passed 2,595 with two expected skips, both
+with pinned OpenSpiel, Numba and installed Apache-2.0 license guards.
+All-file hooks and hosted CI 44791539576 passed both jobs/hooks. The
+[complete check receipt](../results/medium-dry-b1-updates/final-checks/manifest.json)
+retains logs and exact pins. Next: publish/verify this receipt, complete
+PR review and receipt-head CI, then history-merge if eligible. The poker
+result remains negative. Codex assisted; human hands-on time not recorded.

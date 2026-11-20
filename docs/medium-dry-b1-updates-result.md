@@ -95,6 +95,20 @@ keeps every independent scalar row. The result JSON records seeds, work,
 policy hashes, coverage, memory, timing, per-street contributions and fixed
 turn decision details. Human hands-on time was not reported.
 
+### Final qualification
+
+On exact negative-report head `583291c`, local base Python 3.11 and 3.12
+each passed 5,739 tests, 73 skipped and 150 deselected, with Ruff, format,
+strict mypy and pre/post source/runtime/lock/report-archive guards. Local
+optional 3.11 passed 2,597 tests; optional 3.12 passed 2,595 with two
+expected skips. Both optional roles passed pinned OpenSpiel 2.0.2, Numba
+0.68.1 and installed Apache-2.0 license guards before and after. All-file
+hooks passed. Separately, hosted [CI run 44791539576](https://github.com/jimmy-sim/poker-ai/actions/runs/44791539576)
+passed both Python jobs and hooks on `583291c`. The [complete final check
+receipt](../results/medium-dry-b1-updates/final-checks/manifest.json)
+retains logs, receipts and checked source pins. These checks support the
+software and evidence record; they do not change the negative strength gate.
+
 From the repository root, inspect the same saved medium/dry turn decision
 at all work checkpoints for seed 20261371:
 
