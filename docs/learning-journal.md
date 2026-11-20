@@ -7803,6 +7803,10 @@ both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
 
+
+
+
+
 The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
 now preserves four clean local roles and both official hosted jobs for the
 same report tree. Both base roles passed 5,639 fast tests; optional Python
@@ -7948,3 +7952,203 @@ guarded-skip study as a failed work-identity result and register a separate
 bounded river-strength learning test before implementation or measurement.
 The single pair is not rerun, and no CPU saving or stronger agent is claimed.
 Codex assisted; human hands-on time was not recorded.
+
+## 141. Test exact legal information at river decisions
+
+**November 18, 2026, before implementation or new outcomes.** The
+[prospective issue contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002496679)
+and [protocol](river-strength-known-vulnerabilities.md) ask whether the q8
+learner improves at equal node work when its river rows retain exact own cards,
+observed board and public action history, while turn rows keep q8. **Example:**
+the saved `Qh Kh` river 9d/9h bluff-raise conflict survives a fixed compatible
+range prior because future responses differ; separating those observed river
+cards might help learning, but the diagnostic did not train this candidate.
+The planned comparison has two known games, three seeds, two arms, three work
+labels and all readouts, with source, proof, forecast, own-before-native and
+final check gates. The cheaper first stage is synthetic software checks and
+capped 100k profiling; the complete gated workflow may take a few hours.
+Before any real profile, a [prospective amendment](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466)
+fixed the conservative three-repeat whole-path extrapolation and strict
+`2*(2*T+600)<7200` long-run admission formula; construction, scoring and
+replay are charged, so a slow profile stops the study.
+**Next decision:** publish this protocol, then implement and test the key and
+bounded learner without relaxing historical strength or compute limits. No
+new trajectory, validation saving or strength result exists. Codex assisted;
+human hands-on time was not recorded.
+
+**November 18 source development.** The candidate now uses the same q8 key
+through the turn and exact acting information only on the river. Its fixed
+B4 runner saves each crossing durably, and the report keeps every one of the
+planned 108 readouts. **Example:** a five-card river observation with the
+same public betting history but a different observed river card gets a
+different candidate row; the control can still merge its q8 texture rows.
+Nineteen focused tests passed in the locked Python 3.11 base environment,
+covering key/recall, training callback purity, replay/tamper, forecast,
+stage ordering and signed paired reporting. This verifies software behavior,
+not poker strength. **Next decision:** qualify the exact source on both local
+runtimes and hosted CI before any real profile. Codex assisted; human
+hands-on time was not recorded.
+
+**November 18 source-qualification failure.** The exact candidate source
+passed 19 focused software tests and both full-run lint/format/strict mypy
+stages, then failed the required full fast suite on both Python versions:
+each had 5,425 passes, 53 failures, 227 errors, 72 skips and 150
+deselections. A [retained failure log](../results/river-strength/source-failure/manifest.json)
+shows an older published archive refusing the changed pinned `matrix.py`;
+historical source and fixture checks also reject the altered source. **Example:**
+a saved research result can be reproduced only against the exact source bytes
+it named, so a candidate edit to that module invalidates its source guard
+even if the new key's focused test passes. **Next decision:** stop at this
+failed source gate. There is no real river profile, admission or trained
+candidate, so the poker-strength question remains inconclusive. No favorable
+retry or new experiment was started. Codex assisted; human hands-on time was
+not recorded.
+
+**November 19 source-integration repair, after Jimmy resumed issue #4.** The
+question was why the candidate passed its own key tests while full
+qualification failed. The earliest direct failure authenticated a past
+archive's exact `matrix.py` bytes; `range_protocol.py` was also a changed
+historical dependency. Many of the 227 errors were dependent fixture setup
+failures rather than independent poker failures. The [official hosted CI
+failure](../results/river-strength/hosted-failure/manifest.json) now joins the
+unchanged earlier local failure archive. We restored both historical files
+byte for byte and placed the candidate refinement in a new adapter that
+builds the original q8 tree first. **Example:** a turn row still receives
+its original q8 key, while a river row receives the exact acting legal key;
+the shared old builder and its historical source hash are untouched. The
+same 19 focused river tests and strict typing on the first adapter passed.
+A representative historical guard exposed a second root cause: older
+provenance includes every `src` Python file, so even the new adapter's
+presence there changed its fingerprint. We moved all new candidate code to
+the closed `scripts/river_strength/` package and bound every member in this
+experiment's own source fingerprint. Nineteen focused tests passed again.
+**Next decision:** run the representative historical source guards, then
+both locked local and hosted source qualifications before any own proof or
+real profile. No scientific seed, budget, criterion or measurement changed.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 premeasurement report review.** The question was whether every
+predeclared resource and correctness metric could be reproduced from raw own
+records. A complete path's wall time was saved by the worker but omitted from
+the final table; table cost counted only three of four persistent float64
+arrays. **Example:** seven rows with width three occupy `7*3*4*8=672` bytes
+across regret, linear strategy, uniform and warm tables. The corrected report
+reads the twelve saved path times, checks zero structural-recall violations
+and a finite 1e-9-chip native scalar bound, and imports no learner or solver.
+Nineteen focused locked Python 3.11 tests passed; the exact corrected source
+still needs full local, optional and hosted qualification. The earlier source
+`147e624` had passed all four local roles, but those checks do not qualify new
+bytes. **Next decision:** requalify and publish the exact correction before
+the own proof. This is software validation, not poker-strength evidence.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 corrected-source qualification.** The question was whether the
+reporting correction and isolated candidate preserve every old source-bound
+experiment. The exact corrected source `7d2cb37` passed both full local base
+suites (5,704 tests each), both fixed optional suites (2,584 and 2,582 plus
+two expected skips), lint, formatting, strict typing and hooks. Hosted
+[run 44494459961](https://github.com/jimmy-sim/poker-ai/actions/runs/44494459961)
+also passed both Python jobs. **Example:** the historical reader can still
+authenticate its original `src` bytes while this experiment fingerprints its
+own seven new script adapters. The
+[source receipt](../results/river-strength/source-checks/manifest.json)
+retains exact logs and runtime checks. **Next decision:** publish and verify
+the source receipt, then run the synthetic own proof before any 100k real
+profile. These checks establish software qualification, not poker strength.
+Codex assisted; human hands-on time was not recorded.
+
+**November 19 bounded own proof.** After the source receipt was published and
+GitHub-byte-verified, the fictional signal-game proof completed in 0.266
+seconds including startup, within the fixed 180-second cap. **Example:** its
+third crossing saved the current and two average policies after 726 actual
+node work for the 720 label; replay rechecked all snapshots and cumulative
+mass. The [own proof archive](../results/river-strength/own-proof/manifest.json)
+retains raw files and the runner receipt. **Next decision:** publish and verify
+this proof, then run the prescribed 36-path real profile and conservative
+forecast. The toy proof is not poker-strength evidence. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 fixed 100k profile.** The question was whether the published
+candidate could finish the complete 10m panel within the unchanged 7,200
+second budget. All 36 fixed paths and 108 readouts completed under the 900
+second cap: 35.806 seconds inside the stage and 36.057 including startup.
+The [raw profile archive](../results/river-strength/profile/manifest.json)
+retains all snapshots, masses, events, scores and whole-path times.
+**Example:** for each path, the longest of three complete 100k-to-10m
+extrapolations is used; fixed worker sums were 1218.014, 1209.015 and
+1199.947 seconds. Thus `T=1218.014` and the prospective strict bound is
+`2*(2*T+600)=6072.057<7200` seconds. The forecast was recomputed from raw
+records and is admitted. **Next decision:** publish and verify the complete
+profile, then publish a separate data-only admission before long learning.
+This is compute evidence, not a measured poker-strength improvement. Codex
+assisted; human hands-on time was not recorded.
+
+**November 19 separate compute admission.** The complete 36-path profile
+was published and all 294 archive blobs were verified on GitHub before the
+admission reader ran. It recomputed the same `T=1218.014` and strict
+`6072.057<7200` seconds from the published data, without training or a
+comparison reference. The [admission receipt](../results/river-strength/admission/manifest.json)
+binds the exact source and profile. **Next decision:** publish and verify the
+receipt, then run one fixed 12-path 10m own study. The admitted forecast is a
+budget decision, not a claim that the candidate plays better. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 fixed own learning.** The one admitted 12-path study completed
+all 108 fixed profiles in 239.029 seconds including startup, inside the
+7,200-second cap. Each path reached 10m node work, and the final actual work
+range was 10,000,013–10,000,119; all recorded structural-recall counts were
+zero. **Example:** a 10m label is saved at its first complete crossing, so
+its recorded actual work can exceed the nominal label slightly. The
+[own raw archive](../results/river-strength/own/manifest.json) retains the
+full policy/mass/event/score evidence. **Next decision:** publish and verify
+these own values before asking the pinned comparison-only native reference
+to reproduce the 108 scalars. Own scores alone are not yet an independently
+audited strength result. Codex assisted; human hands-on time was not recorded.
+
+**November 19 independent scalar audit.** After publishing and verifying the
+own 108 profiles, pinned OpenSpiel 2.0.2 compared every saved own scalar.
+All 108 comparisons completed in 55.210 seconds including startup; the
+largest absolute difference was `1.2079226507921703e-13` chips, below the
+fixed `1e-9` tolerance. **Example:** each audit row names the saved own policy
+hash, work label and readout, so the native value is bound to an already
+published policy rather than influencing its training. The
+[native archive](../results/river-strength/native/manifest.json) retains
+rows, events and the installed Apache-2.0 license hash. **Next decision:**
+publish and verify the independent audit, then compute the all-readout report
+and final required checks. No stronger-play claim is drawn from scalar
+agreement alone. Codex assisted; human hands-on time was not recorded.
+
+**November 19 known-game strength result.** The question was whether exact
+acting river information improved the fixed q8 learner at equal 10m node
+work on two previously vulnerable games. The byte-replayed
+[report](../results/river-strength/report/report.json) kept all 108 readouts.
+**Example:** on medium-OOP the three candidate-minus-control final linear
+exploitability differences were -2.501, +0.285 and -3.155 percentage points
+of initial pot; the median was -2.501 points, so one seed worsened even
+though the median improved. Candidate median/worst exploitability were
+0.2924%/0.6607%, passing the 1%/2.5% gates; control 2.7933%/3.3495%
+failed both. Low-OOP gates passed for both arms. Average reach coverage was
+100%, recall violations zero and all 108 native scalars agreed within
+1e-9 chips (maximum 1.208e-13). Medium candidate persistent table cost
+roughly doubled to 4,697,088 bytes from 2,340,096; its river-only reply
+gain fell to zero in all seeds, a mechanism clue rather than the primary
+strength measure. **Next decision:** preserve the failed control gates,
+publish this result, run final checks and stop the experiment. The direction
+is positive only on this fixed known panel; three dependent seeds and no
+fresh case cannot justify global strength or promotion. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 final reproducibility and stop.** The question was whether the
+published known-game conclusion survives all required checks on the exact
+report source. Both local base roles passed 5,704 fast tests, both optional
+roles passed their fixed scopes (2,584 and 2,582 plus two expected skips),
+and lint, formatting, strict typing and hooks passed. [Hosted run 44502509319](https://github.com/jimmy-sim/poker-ai/actions/runs/44502509319)
+passed both Python jobs. The [final receipt](../results/river-strength/final-checks/manifest.json)
+retains raw logs and the 108-row report hash. **Example:** the trained
+`Qh Kh` candidate policy has distinct saved decisions on river `9d` and `9h`
+at the same public history, while the fixed panel's independently audited
+exploitability supports only a known-game descriptive improvement. **Next
+decision:** stop safely after publishing this receipt. The control's
+medium-game gates failed and one paired seed worsened; there is no fresh or
+global admission, no scientific retry and no next experiment. Codex assisted;
+human hands-on time was not recorded.

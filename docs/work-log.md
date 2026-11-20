@@ -7556,3 +7556,168 @@ failures. Next: publish/verify the receipt and history-preserving merge, then
 prospectively register the separate bounded river-strength question. The one
 failed work-identity pair is retained without retry or saving claim.
 Codex-assisted; human hands-on time not recorded.
+
+The [prospective river-strength contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002496679)
+and [fixed protocol](river-strength-known-vulnerabilities.md) were written
+before any candidate source or new outcome. PR #96's failed guarded-skip result
+is merged at `434cb18`; the new focused branch starts there. The plan compares
+unchanged q8 against exact legal information only at river decisions, retaining
+q8 through the turn, across both known games, three seeds and fixed 100k/1m/10m
+node-work labels. Primary final10m linear-average exploitability and all other
+readouts, historical gates, source/proof/forecast/own-before-native publication
+boundaries and caps are fixed. The cheaper initial stage is software checks and
+capped 100k profiling; the full gated workflow may take a few hours. No new
+real profile preceded the [forecast amendment](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466):
+three complete 100k repeats per path, whole-path seconds extrapolated to 10m
+including setup/scoring/replay, fixed three-worker sum `T`, and strict
+`2*(2*T+600)<7200` admission. A failed forecast stops long learning. No new
+measurement, learned candidate or fresh-case claim exists. Next: publish the
+protocol checkpoint, implement the candidate key and tests, then qualify exact
+source before learning. Codex-assisted; human hands-on time not recorded.
+
+The river-strength source now implements the exact river legal key, fixed
+B4 runner, durable own replay, predeclared forecast/admission, comparison-only
+native scalar audit and all-readout data-only report. Nineteen focused locked
+Python 3.11 tests passed; the full exact-source base/optional/hooks/hosted
+qualification remains pending. No new real profile or learned result has
+been run. Next: complete source qualification and publication before the
+small own proof. Codex-assisted; human hands-on time not recorded.
+
+Exact committed river source `b694688` failed full base qualification on both
+locked Python 3.11.17 and 3.12.15 after Ruff, format and strict mypy passed.
+Each fast suite had 5,425 passed, 53 failed, 227 errors, 72 skipped and 150
+deselected. [Raw retained logs](../results/river-strength/source-failure/manifest.json)
+show historical research source guards rejecting changed pinned modules,
+including `matrix.py`; the earlier local launcher-count and test-typing
+failures are also retained. The required source gate stops this experiment
+before optional qualification, own proof, real profiling, compute forecast,
+training comparison or native audit. Scientific outcome: **inconclusive**;
+no poker-strength claim. Next: publish the failed source and logs to PR #97,
+record hosted CI status, and leave the PR open at a safe milestone. No new
+investigation or budget change. Codex-assisted; human hands-on time not
+recorded.
+
+On November 19 Jimmy explicitly resumed issue #4 and authorized software
+source-pin repair. Hosted run [#44484159855](https://github.com/jimmy-sim/poker-ai/actions/runs/44484159855)
+concluded failure on the old `2e2f0fb` source; its official log and metadata
+are retained separately from the earlier local failure archive. The direct
+root cause is changed historically pinned `matrix.py` and `range_protocol.py`
+bytes. Many of the 227 per-runtime errors were fixture setup cascades. The
+first repair restored those historical files byte for byte. Representative
+historical tests then revealed that old provenance hashes every `src` Python
+file; adding a new adapter there changed the pinned aggregate. All new
+candidate code now resides in a closed `scripts/river_strength/` package,
+explicitly bound by the new experiment's fingerprint. The fixed scientific
+protocol is unchanged. Nineteen focused candidate tests passed after this
+move. Next: representative historical guards and complete
+new exact-source local/optional/hosted qualification before any real profile.
+No scientific run has been retried. Codex-assisted; human hands-on time not
+recorded.
+
+Before real measurements on November 19, exact source `147e624` passed four
+locked local roles: base Python 3.11 and 3.12 each had 5,704 passed, 73 skipped
+and 150 deselected, with lint, format and strict mypy passing; optional 3.11
+had 2,584 passed, and optional 3.12 had 2,582 passed and two expected skips.
+Hooks passed. Hosted run [#44492928520](https://github.com/jimmy-sim/poker-ai/actions/runs/44492928520)
+was still in progress at the last check. A premeasurement review then found
+that the report omitted saved whole-path time and counted three rather than
+four persistent float64 trainer tables. The source now binds both to the own
+record, checks zero recall and native scalar tolerance explicitly, and keeps
+data-only reporting independent of solver imports. Nineteen focused tests
+passed on this correction. The earlier local pass remains a historical
+intermediate check; the corrected exact source requires fresh complete
+qualification before proof/profile. No real scientific run started. Codex
+assisted; human hands-on time not recorded.
+
+Corrected source `7d2cb37` completed exact-source qualification on November
+19: both local base Python roles passed 5,704 tests (73 skipped, 150
+deselected), Ruff and strict mypy; optional Python 3.11 passed 2,584 and
+optional 3.12 passed 2,582 with two expected skips. Hooks passed. Hosted
+[run 44494459961](https://github.com/jimmy-sim/poker-ai/actions/runs/44494459961)
+passed both jobs, full checks and hooks. The
+[source receipt](../results/river-strength/source-checks/manifest.json)
+retains complete local and official hosted logs, runtime/license guards and
+fingerprint. The intermediate hosted run on `147e624` was cancelled by this
+push; its metadata and available log remain in the ignored run folder. Next:
+publish and GitHub-byte-verify this receipt, then run the small own proof.
+There is still no real river profile or trained candidate. Codex assisted;
+human hands-on time not recorded.
+
+The source-qualified bounded own proof completed on November 19 in 0.266
+seconds including startup, below the fixed 180-second cap. The fictional
+signal-game path saved nine readouts at work 80/240/720, finished at 726,
+and replayed its snapshots and cumulative masses. The
+[own proof archive](../results/river-strength/own-proof/manifest.json)
+preserves all 22 raw members plus a manifest. Next: publish and verify this
+own proof before launching the fixed 36-path, 100k profile. No real river
+trajectory yet. Codex assisted; human hands-on time not recorded.
+
+The fixed 36-path, three-repeat 100k profile completed on November 19:
+108 readouts, 35.806 seconds inside the stage and 36.057 seconds including
+startup, below the 900-second cap. The independently recomputed prospective
+max-of-three forecast has `T=1218.014` seconds and strict bound
+`6072.057<7200` seconds. The
+[profile archive](../results/river-strength/profile/manifest.json) retains
+all 293 raw members, including events, snapshots and complete path timings.
+Next: publish and GitHub-byte-verify this complete profile, then publish a
+separate data-only admission receipt before long learning. No 10m training or
+native audit has run. Codex assisted; human hands-on time not recorded.
+
+The complete profile archive was published at `ea0d967` and all 294 members
+were GitHub-byte-verified. A separate data-only admission recomputed the
+same `T=1218.014` and strict `6072.057<7200` bound from the published
+profile. Its [receipt](../results/river-strength/admission/manifest.json)
+is ready for a distinct publication gate. Next: publish and verify admission,
+then start exactly one fixed 12-path 10m own study under the 7,200-second cap.
+Codex assisted; human hands-on time not recorded.
+
+The single prospective own 12-path study completed on November 19 in
+238.682 seconds inside the stage and 239.029 including startup, within the
+7,200-second cap. All 108 fixed readouts were saved; each path reached 10m
+actual node work (final range 10,000,013–10,000,119) and recorded zero
+structural-recall violations. The
+[own raw archive](../results/river-strength/own/manifest.json) retains 220
+members, including policies, masses, events and scores. Next: publish and
+GitHub-byte-verify own evidence before constructing the comparison-only
+OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
+time not recorded.
+
+After the own raw checkpoint, the pinned comparison-only native audit
+completed all 108 scalar comparisons on November 19 in 55.210 seconds
+including startup (<900). Maximum absolute discrepancy was
+`1.2079226507921703e-13` chips, below the fixed `1e-9`-chip tolerance.
+The installed OpenSpiel 2.0.2 Apache-2.0 license matched the pinned hash.
+The [native archive](../results/river-strength/native/manifest.json) retains
+all rows and events. Next: publish and verify this separate audit, then
+reproduce the full report and run final source-bound local/optional/hosted
+checks. No final strength conclusion yet. Codex assisted; human hands-on
+time not recorded.
+
+The [fixed report](../results/river-strength/report/report.json) reproduced
+all 108 rows from published own and native evidence. On medium-OOP at final
+10m linear average, paired candidate-minus-control exploitability fractions
+were -0.025009, +0.002854 and -0.031549 across the three fixed seeds;
+median -0.025009. The candidate passed the 1% median and 2.5% worst gates
+(median 0.2924%, worst 0.6607%), while control failed both (median 2.7933%,
+worst 3.3495%). Both arms passed low-OOP gates; all final average coverages
+were 100%, recall violations zero and maximum native error 1.208e-13 chips.
+Medium candidate table cost was 4,697,088 bytes versus 2,340,096 control.
+**Conclusion: positive descriptive result on the two known games, with one
+unfavorable paired seed and a failed control gate; no fresh/global admission.**
+The earlier held-out and other failed gates remain failed. Next: publish the
+report and run final exact-source local, optional and hosted checks; then stop.
+No scientific retry or next experiment. Codex assisted; human hands-on time
+not recorded.
+
+Final exact-head qualification on report commit `aae4d52` passed on November
+19. Both local base roles had 5,704 passes (73 skips, 150 deselections) plus
+lint, formatting and strict typing; optional 3.11/3.12 had 2,584 and 2,582
+passes (two expected 3.12 skips). Hooks passed. [Hosted run 44502509319](https://github.com/jimmy-sim/poker-ai/actions/runs/44502509319)
+passed both full-check and hook jobs. The
+[final check receipt](../results/river-strength/final-checks/manifest.json)
+retains local and official hosted logs, guards and report hash. Next: publish
+and verify this receipt, update PR #97 and the safe handoff, then stop. The
+fixed known-panel direction is positive; the control's failed medium gates,
+one unfavorable paired seed, dependence and lack of fresh validation prevent
+promotion. No new experiment is authorized from this result. Codex assisted;
+human hands-on time not recorded.

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "prospective_known_game_strength_no_admission",
+  "issue_comment": "https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002496679",
+  "hypothesis": "Exact acting information only at river rows can reduce q8's known river vulnerability at fixed node work while the pre-river q8 key remains unchanged.",
+  "input_sha256": {
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "configs/own-opponent-learning.json": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "games": [
+    "dev_low_oop",
+    "dev_medium_oop"
+  ],
+  "seeds": [
+    20261301,
+    20261302,
+    20261303
+  ],
+  "arms": [
+    "texture_range_q8_b8",
+    "q8_turn_exact_river"
+  ],
+  "candidate_key": "unchanged q8 key before river; at river use exact acting own two cards, observed five-card board and public betting history, including seat and legal action recall; no opponent cards or future cards",
+  "training": {
+    "sampler": "IID B4 external sampling",
+    "batch_size": 4,
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "average_weight": "linear",
+    "initialization": "one existing exact uniform iteration charged in node work",
+    "target_order": [
+      0,
+      1
+    ],
+    "readouts": [
+      "current",
+      "uniform_average",
+      "linear_average"
+    ],
+    "primary_readout": "linear_average",
+    "node_work_labels": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "crossing": "first complete iteration at or above each label, including initialization and overshoot",
+    "paths": 12,
+    "logical_profiles": 108,
+    "worker_count": 3,
+    "start_method": "spawn",
+    "assignment": "config path order, index modulo three"
+  },
+  "metrics": [
+    "exact_restricted_game_exploitability_chips",
+    "exact_restricted_game_exploitability_fraction_initial_pot",
+    "within_partition_gain_chips",
+    "extra_information_gap_chips",
+    "exact_prefix_river_only_gain_chips",
+    "positive_average_coverage",
+    "post_initial_river_visit_coverage",
+    "initial_only_river_rows",
+    "information_rows",
+    "table_bytes",
+    "node_work",
+    "wall_seconds"
+  ],
+  "primary_contrast": "dev_medium_oop final10m linear-average three-seed median(candidate exploitability minus control exploitability), with all three signed paired differences; known-game descriptive result only",
+  "historical_quality_gates": {
+    "median_exploitability_fraction_initial_pot": 0.01,
+    "worst_exploitability_fraction_initial_pot": 0.025,
+    "minimum_positive_average_coverage": 0.95,
+    "maximum_recall_violations": 0
+  },
+  "tolerance_chips": 1e-09,
+  "tolerance_unitless": 1e-12,
+  "budgets_seconds": {
+    "small_own_proof": 180,
+    "complete_profile": 900,
+    "profile_overhead": 600,
+    "whole_own": 7200,
+    "native_audit": 900,
+    "failure_save": 120
+  },
+  "profile": {
+    "repetitions": 3,
+    "path_node_work_label": 100000,
+    "per_path_clock": "whole path from context construction through capture, own scoring and immediate replay; includes warm start and all source-bound work",
+    "extrapolation": "for each of 12 paths take maximum over three repeats of whole_path_seconds * (10000000 / actual_final_node_work); multiply all setup/scoring time too",
+    "worker_sum": "sum the 12 per-path maxima in fixed path-index modulo-three partitions; T is the maximum of the three sums",
+    "admission": "require 2 * (2 * T + 600) < 7200 seconds and all 36 complete profile paths inside the original 900-second whole-profile cap; no favorable retry",
+    "prospective_amendment": "https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7002846466"
+  },
+  "admission": "prospective protocol published; tested source, exact-source local base and optional checks, both hosted jobs, published and byte-verified small own proof, complete profile and source-bound forecast/admission before real long trajectories",
+  "publication": "publish and GitHub-byte-verify complete or failed own raw outcomes before comparison-only OpenSpiel 2.0.2 scalar audit; retain partial worker events and no favorable retry",
+  "reference": "OpenSpiel 2.0.2 Apache-2.0, installed license checked; scalar own value/reply/exploitability audit at 1e-9 chips only, no reference strategy/action/training target",
+  "limits": "two already known games and three dependent seeds; report every arm and readout; no fresh/global/default agent admission, no general strength, CPU saving or exploitability improvement claim beyond this finite known panel"
+}

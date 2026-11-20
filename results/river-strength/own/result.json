@@ -1,0 +1,441 @@
+{
+  "assignments": [
+    [
+      0,
+      3,
+      6,
+      9
+    ],
+    [
+      1,
+      4,
+      7,
+      10
+    ],
+    [
+      2,
+      5,
+      8,
+      11
+    ]
+  ],
+  "failure": null,
+  "head": "fd5a21e760b7a8bd5ce3dbd858efbca9f6136173",
+  "parent_cpu_seconds": 0.073198,
+  "reaped_children_cpu_seconds": 713.37,
+  "seconds": 238.68187520799984,
+  "source_fingerprint": "d9689ce4b24c7a3b7a2e0d759bc036ff2638716c702bf8ea705bf57ddb51a3ad",
+  "stage": "study",
+  "status": "completed",
+  "worker_count": 3,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 49335,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path00",
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path03",
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path06",
+          "index": 6,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path09",
+          "index": 9,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "cpu_seconds": 238.43047299999998,
+          "kind": "done",
+          "seconds": 238.436639208001,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000023,
+                "index": 0,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_low_oop",
+                  "index": 0,
+                  "seed": 20261301
+                },
+                "repeat": 0,
+                "whole_path_seconds": 46.00822695799798
+              },
+              {
+                "captures": 9,
+                "final_work": 10000026,
+                "index": 3,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_low_oop",
+                  "index": 3,
+                  "seed": 20261302
+                },
+                "repeat": 0,
+                "whole_path_seconds": 46.270034291999764
+              },
+              {
+                "captures": 9,
+                "final_work": 10000119,
+                "index": 6,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_medium_oop",
+                  "index": 6,
+                  "seed": 20261301
+                },
+                "repeat": 0,
+                "whole_path_seconds": 72.7555209159982
+              },
+              {
+                "captures": 9,
+                "final_work": 10000030,
+                "index": 9,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_medium_oop",
+                  "index": 9,
+                  "seed": 20261302
+                },
+                "repeat": 0,
+                "whole_path_seconds": 73.3971683330019
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 49335,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 49336,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path01",
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path04",
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path07",
+          "index": 7,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path10",
+          "index": 10,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "cpu_seconds": 236.09360700000002,
+          "kind": "done",
+          "seconds": 236.10053604199857,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000014,
+                "index": 1,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_low_oop",
+                  "index": 1,
+                  "seed": 20261301
+                },
+                "repeat": 0,
+                "whole_path_seconds": 45.924541874999704
+              },
+              {
+                "captures": 9,
+                "final_work": 10000026,
+                "index": 4,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_low_oop",
+                  "index": 4,
+                  "seed": 20261303
+                },
+                "repeat": 0,
+                "whole_path_seconds": 45.71115258300051
+              },
+              {
+                "captures": 9,
+                "final_work": 10000013,
+                "index": 7,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_medium_oop",
+                  "index": 7,
+                  "seed": 20261301
+                },
+                "repeat": 0,
+                "whole_path_seconds": 72.78087329199843
+              },
+              {
+                "captures": 9,
+                "final_work": 10000084,
+                "index": 10,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_medium_oop",
+                  "index": 10,
+                  "seed": 20261303
+                },
+                "repeat": 0,
+                "whole_path_seconds": 71.6781891669998
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 49336,
+      "slot": 1
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 49337,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path02",
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path05",
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path08",
+          "index": 8,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path11",
+          "index": 11,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0
+        },
+        {
+          "cpu_seconds": 238.583694,
+          "kind": "done",
+          "seconds": 238.5908420409978,
+          "summary": {
+            "slot": 2,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000026,
+                "index": 2,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_low_oop",
+                  "index": 2,
+                  "seed": 20261302
+                },
+                "repeat": 0,
+                "whole_path_seconds": 46.156405417001224
+              },
+              {
+                "captures": 9,
+                "final_work": 10000026,
+                "index": 5,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_low_oop",
+                  "index": 5,
+                  "seed": 20261303
+                },
+                "repeat": 0,
+                "whole_path_seconds": 46.47919016599917
+              },
+              {
+                "captures": 9,
+                "final_work": 10000051,
+                "index": 8,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "dev_medium_oop",
+                  "index": 8,
+                  "seed": 20261302
+                },
+                "repeat": 0,
+                "whole_path_seconds": 72.13930891700147
+              },
+              {
+                "captures": 9,
+                "final_work": 10000018,
+                "index": 11,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "dev_medium_oop",
+                  "index": 11,
+                  "seed": 20261303
+                },
+                "repeat": 0,
+                "whole_path_seconds": 73.81033291600033
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 49337,
+      "slot": 2
+    }
+  ]
+}
