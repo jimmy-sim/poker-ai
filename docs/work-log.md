@@ -7966,3 +7966,13 @@ binds the failed and passing attempts. Next: publish/verify that receipt,
 then one capped synthetic proof. No profile, long training, reference audit
 or new poker-strength outcome yet. Codex assisted; human hands-on time
 not recorded.
+
+The one PR #99 synthetic own proof on November 20 (PST) completed on the
+qualified and published source. Its fictional signal game reached 720 charged
+node work, captured/replayed nine fixed readouts at 80/240/720, and exited
+zero in 0.312 seconds command wall time versus the 180-second cap. The
+[21-member archive](../results/medium-dry-training-budget/own-proof/manifest.json)
+retains snapshots, mass, events, runtime and launcher measurement. This is a
+software proof only, not a new poker-strength result. Next: publish and
+byte-verify the proof before any 1m medium/dry profile. Codex assisted;
+human hands-on time not recorded.

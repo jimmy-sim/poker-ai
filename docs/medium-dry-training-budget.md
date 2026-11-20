@@ -125,3 +125,15 @@ binds both hosted attempts, all local roles, the first interrupted local
 attempt, guards and hook results. No scientific proof or policy measurement
 preceded this source qualification. Next: publish and byte-verify that
 archive, then run the fixed capped synthetic own proof.
+
+## Synthetic own proof
+
+The one fictional signal-game proof on published source fingerprint
+`60ee266a...` captured and replayed all nine fixed policy readouts at work
+labels 80, 240 and 720. It reached 720 charged node work and exited zero.
+The locked command wall time was 0.312 seconds, below the 180-second cap.
+The [proof archive](../results/medium-dry-training-budget/own-proof/manifest.json)
+contains the 21 raw and receipt members with hashes, including the runtime
+and command measurement method. This is a software proof, not medium/dry
+poker-strength evidence. Next: publish and GitHub-byte-verify every proof
+member before the fixed 18-path 1m profile.

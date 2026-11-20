@@ -8444,3 +8444,14 @@ requalification then passed both hosted Python jobs and hooks. The
 retains both outcomes. **Next decision:** publish and verify this qualification
 checkpoint before the synthetic proof; no new poker-strength conclusion is
 available. Codex assisted; human hands-on time was not recorded.
+
+**November 20 synthetic own proof.** The question was whether the fixed
+capture and replay path works on a small known-answer fictional game before
+spending the longer medium/dry training budget. All nine declared readouts
+were saved and replayed at 80, 240 and 720 charged node work; the command
+completed in 0.312 seconds, below its 180-second cap. **Example:** this
+fixture exercises saved current and both average policies without providing
+a Hold'em strength estimate. The [raw proof](../results/medium-dry-training-budget/own-proof/manifest.json)
+retains hashes and runtime provenance. **Next decision:** publish and verify
+those bytes, then run only the predeclared 18-path 1m compute profile. Codex
+assisted; human hands-on time was not recorded.
