@@ -8127,3 +8127,20 @@ source pins and negative outcome remain unchanged. Next: publish/verify this
 receipt, complete PR review and merge if eligible, then choose a distinct
 prospective strength question. Codex assisted; human hands-on time not
 recorded.
+
+PR #100 history-merged at `50f979c` on November 20 after final receipt-head
+CI 44764594652 passed both Python jobs/hooks and the solo self-review.
+The negative clipped-rule outcome and all exact-source ancestors remain in
+normal-clone history; issue #4 stays open. The next distinct question is
+whether batch-one signed external-sampling updates improve the unchanged
+exact-river learner over the published batch-four signed controls at the
+same 10m charged work on the two **known** spots. The
+[prospective B1 protocol](medium-dry-b1-updates.md) and machine contract fix
+six candidate paths, three existing paired control seeds, 100k/1m/10m
+crossings, historical absolute and paired gates, 18-path profile,
+conservative forecast and caps before any B1 outcome. The earlier different
+exact-game B1 advantage motivates a test but does not predict this spot.
+Only JSON syntax, local links and diff format have been checked at this
+planning stage; no B1 source, proof, profile or training exists. Next:
+publish the protocol and open the focused draft PR before implementing the
+isolated adapter. Codex assisted; human hands-on time not recorded.

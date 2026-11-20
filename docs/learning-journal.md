@@ -8600,3 +8600,19 @@ not change the failed poker-strength gate. **Next decision:** publish/verify
 the receipt and review/merge PR #100 if eligible; a different learning
 hypothesis needs a new prospective protocol. Codex assisted; human hands-on
 time was not recorded.
+
+**November 20 next question, before B1 outcomes.** PR #100 merged with the
+clipped-update regression preserved. The saved medium/dry policies have no
+information collision on this finite spot, while the latest signed policy is
+far weaker than its average. The next [prospective test](medium-dry-b1-updates.md)
+asks whether using one external sample per signed-regret update instead of
+four helps at the same visited-node work. **Example:** a smaller batch makes
+more, noisier updates; earlier B1 evidence came from a different exact game
+and cannot be treated as a medium/dry result. The immutable PR #100 B4
+policies provide matched seed/work controls. The two spots and seeds were
+used before and will be labeled known. JSON syntax, local links and diff
+format pass; no new scientific measurement has begun. **Next decision:**
+publish this fixed question, qualify isolated source, and let its unchanged
+absolute gates and conservative compute forecast decide whether training
+and any strength claim proceed. Codex assisted; human hands-on time was not
+recorded.

@@ -38,6 +38,11 @@ known medium/dry weakness without degrading the known low/wet spot. Its
 all three paired seeds worsened on both known spots, and medium/dry missed its
 unchanged absolute gates. Complete own policies preceded the pinned
 comparison-only scalar audit. Neither spot is unseen; no default was promoted.
+PR #100 was history-merged after all required checks. The next distinct
+[prospective batch-one comparison](medium-dry-b1-updates.md) tests whether
+more frequent signed-regret updates at the same 10m node work reduce the
+remaining medium/dry weakness without harming the known low/wet spot. It
+reuses the immutable PR #100 B4 controls; no B1 outcome exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
