@@ -8600,3 +8600,129 @@ not change the failed poker-strength gate. **Next decision:** publish/verify
 the receipt and review/merge PR #100 if eligible; a different learning
 hypothesis needs a new prospective protocol. Codex assisted; human hands-on
 time was not recorded.
+
+**November 20 next question, before B1 outcomes.** PR #100 merged with the
+clipped-update regression preserved. The saved medium/dry policies have no
+information collision on this finite spot, while the latest signed policy is
+far weaker than its average. The next [prospective test](medium-dry-b1-updates.md)
+asks whether using one external sample per signed-regret update instead of
+four helps at the same visited-node work. **Example:** a smaller batch makes
+more, noisier updates; earlier B1 evidence came from a different exact game
+and cannot be treated as a medium/dry result. The immutable PR #100 B4
+policies provide matched seed/work controls. The two spots and seeds were
+used before and will be labeled known. JSON syntax, local links and diff
+format pass; no new scientific measurement has begun. **Next decision:**
+publish this fixed question, qualify isolated source, and let its unchanged
+absolute gates and conservative compute forecast decide whether training
+and any strength claim proceed. Codex assisted; human hands-on time was not
+recorded.
+
+**November 20 B1 source implementation, before poker outcomes.** The new
+adapter changes the signed learner's batch size to one while keeping the
+exact-river key, regret/averaging rules, seeds and work counter fixed.
+**Example:** in the fictional signal game, the B1 path's regrets and both
+average ledgers match the existing frozen B1 trainer exactly, and saved
+policies replay without changing their scores. A separate test checks that
+each reused B4 control path corresponds to the declared game, seed and
+signed rule. Eight focused tests, Ruff and strict mypy passed; no B1 poker
+training or compute profile has run. **Next decision:** complete required
+exact-source local and hosted checks on this isolated tested source, then
+publish its receipt before the prescribed fictional proof. Codex assisted;
+human hands-on time was not recorded.
+
+**November 20 B1 source qualification.** The exact tested source passed both
+base Python versions (5,739 tests each), both optional versions (2,597 and
+2,595 tests, with two expected skips), all source/runtime/license guards,
+hooks and both hosted CI jobs. **Example:** a shell missing `uv` caused the
+first pre-commit attempt to fail before creating a commit. Sourcing the
+project environment let the unchanged staged code pass; the initial failure
+remains in the [source evidence](../results/medium-dry-b1-updates/source-checks/manifest.json).
+These checks establish software qualification, not stronger poker play.
+**Next decision:** publish and verify this receipt, then run the single
+fictional proof and fixed profile under their existing caps. Codex assisted;
+human hands-on time was not recorded.
+
+**November 20 B1 fictional proof.** The one formally capped software proof
+saved and replayed the B1 policy at all nine declared small-game readouts,
+with final charged work 728 at the 720 crossing and a 0.557-second launcher
+run. **Example:** this fictional signal game checks that the saved policy can
+be read back and scored consistently; it cannot show whether a river poker
+decision improves. The [complete raw proof](../results/medium-dry-b1-updates/own-proof/manifest.json)
+also retains the launcher receipt. **Next decision:** publish/verify those
+bytes before the fixed 18-path Hold'em compute profile and strict admission.
+Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 compute profile.** The one fixed profile completed all
+18 path/repeat pairs at the 100k charged-work crossing and saved/replayed
+54 policy readouts. **Example:** the slowest measured medium/dry path
+extrapolates to 505.254 seconds at 10m work, while a low/wet path extrapolates
+to 115.069 seconds; the fixed three-worker assignment yields a largest
+worker sum `T=624.521` seconds. The frozen conservative rule therefore
+computes `2*(2*T+600)=3698.083` seconds, below the 7200-second own cap.
+The [raw profile](../results/medium-dry-b1-updates/profile/manifest.json)
+retains every repeat and memory observation. A forecast only admits a longer
+test; it says nothing yet about the candidate's poker choices. **Next
+decision:** publish/verify the complete profile, then issue a separate
+data-only admission receipt before any 10m run. Codex assisted; human
+hands-on time was not recorded.
+
+**November 20 B1 admission.** A separate reader recomputed the conservative
+forecast from the published 18-path profile and returned **admitted**:
+`3698.083 < 7200` seconds under the frozen rule. **Example:** the rule
+doubles the fixed three-worker estimate and adds a 600-second allowance
+inside another factor of two, so a short observed profile alone is not the
+admission criterion. The [receipt](../results/medium-dry-b1-updates/admission/manifest.json)
+contains the full unrounded calculation. This authorizes the single fixed
+six-path 10m training run; it does not predict an exploitability improvement.
+**Next decision:** publish and verify admission before that run. Codex
+assisted; human hands-on time was not recorded.
+
+**November 20 B1 own 10m run.** The single admitted run completed all six
+preselected game/seed paths and 54 saved/replayed policy readouts, with final
+work just above 10m and a 143.139-second launcher time. **Example:** for
+each known spot and seed, the archive includes current, uniform-average and
+linear-average policies at 100k, 1m and 10m work; only the preselected final
+linear average will drive the strength decision. The [own raw archive](../results/medium-dry-b1-updates/own/manifest.json)
+is complete, including scores and partial checkpoints. **Next decision:**
+publish/verify these candidate bytes before the pinned comparison-only
+native audit and B1-vs-B4 report. No outcome has been selected or retried.
+Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 independent scalar audit.** After the candidate's own
+policies and scores were published, the pinned OpenSpiel 2.0.2 validator
+checked all 54 saved readouts. Its largest difference from the project's
+score was `4.97e-14` chips, below the predeclared `1e-9`-chip tolerance.
+**Example:** this close agreement checks arithmetic on the saved policies;
+it does not make the B1 policies strong, nor were reference outputs used to
+train them. The [raw audit](../results/medium-dry-b1-updates/native/manifest.json)
+retains each scalar comparison. **Next decision:** publish and verify the
+audit, then apply the frozen B1-vs-B4 gates to the published own and control
+policies. Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 poker-strength result.** The one fixed matched-work
+comparison is **negative**. B1's medium/dry final linear-average median
+exploitability is 0.040640 initial pots and worst is 0.042400, above the
+unchanged 0.01/0.025 limits; its paired median worsens by 0.001098.
+Low/wet absolute limits pass, but its paired median is slightly worse.
+**Example:** with `3s 7h` on `2s 6h Jc 3c`, the saved B1 policy folds about
+66.23% and calls about 33.77% at fixed turn row 2443; its conditional
+call value exceeds fold under the saved opponent and optimal reply
+continuation. This row's additive loss is 0.236439 chips versus B4's
+0.090857. These [decision traces](medium-dry-b1-updates-result.md) diagnose
+the finite game, not universal advice. **Next decision:** finish final
+qualification/review, retain the negative result, and select a distinct
+prospective strength question. No B1 rerun or default promotion. Codex
+assisted; human hands-on time was not recorded.
+
+**November 20 final B1 qualification.** The negative report commit passed
+both full local Python versions, both optional reference-enabled versions,
+all source/runtime/license guards and all-file hooks. Hosted CI also passed
+both Python jobs and hooks. **Example:** optional Python 3.12 passed 2,595
+tests with two expected skips while rechecking the same report archive and
+installed OpenSpiel license after the suite. The [complete check
+receipt](../results/medium-dry-b1-updates/final-checks/manifest.json)
+preserves each log. Software qualification makes the negative outcome
+reproducible; it does not turn it into a positive result. **Next decision:**
+publish/verify the receipt, review and merge PR #101 if eligible, then
+choose a distinct prospectively registered question. Codex assisted;
+human hands-on time was not recorded.

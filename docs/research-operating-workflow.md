@@ -58,9 +58,10 @@ integration and default promotion also remain in force. Finish independent
 work and present a concrete proposal if one of those permissions is needed.
 
 **Current order (November 20, 2026):** PR #98's failed acceptance gates remain
-negative. PR #99's longer-work compute admission was rejected, its 100m
-strength outcome is inconclusive, and both PRs were history-merged with
-retained evidence. The next distinct
-[clipped-regret protocol](medium-dry-clipped-regret.md) addresses the
-remaining known-spot convergence question at matched 10m work. Its full
-qualification and scientific gates apply before any result or further choice.
+negative; PR #99's 100m compute admission rejected the longer run; PR #100's
+clipped update worsened all paired seeds and was history-merged. The distinct
+[B1 update-frequency comparison](medium-dry-b1-updates-result.md) has a
+**negative** fixed 10m result on the two known spots. Complete own raw
+policies preceded the comparison-only audit. Finish PR #101's final exact-head
+qualification and review before selecting a new question. No failed gate is
+relabelled as a retry, and no default has changed.

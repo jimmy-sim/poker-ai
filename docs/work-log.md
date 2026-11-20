@@ -8127,3 +8127,132 @@ source pins and negative outcome remain unchanged. Next: publish/verify this
 receipt, complete PR review and merge if eligible, then choose a distinct
 prospective strength question. Codex assisted; human hands-on time not
 recorded.
+
+PR #100 history-merged at `50f979c` on November 20 after final receipt-head
+CI 44764594652 passed both Python jobs/hooks and the solo self-review.
+The negative clipped-rule outcome and all exact-source ancestors remain in
+normal-clone history; issue #4 stays open. The next distinct question is
+whether batch-one signed external-sampling updates improve the unchanged
+exact-river learner over the published batch-four signed controls at the
+same 10m charged work on the two **known** spots. The
+[prospective B1 protocol](medium-dry-b1-updates.md) and machine contract fix
+six candidate paths, three existing paired control seeds, 100k/1m/10m
+crossings, historical absolute and paired gates, 18-path profile,
+conservative forecast and caps before any B1 outcome. The earlier different
+exact-game B1 advantage motivates a test but does not predict this spot.
+Only JSON syntax, local links and diff format have been checked at this
+planning stage; no B1 source, proof, profile or training exists. Next:
+publish the protocol and open the focused draft PR before implementing the
+isolated adapter. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), draft PR #101's isolated B1 source was implemented
+after prospective protocol `9c8f613` was published. New
+`scripts/medium_dry_b1/` and `scripts/study_medium_dry_b1.py` change only
+batch size from four to one for the signed/linear/linear learner; historical
+source and PR #100 control archives remain untouched. The new source
+fingerprint is `64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd`.
+Eight focused tests passed in 8.16s, covering exact B1 frozen-trainer
+identity, same B4 information keys, published signed-control pairing,
+fictional capture/replay, forecast and classification. Ruff and strict mypy
+passed for ten new source/test files. These are focused software checks;
+full exact-source base/optional/hosted qualification, formal proof, profile,
+admission and poker training are pending. Next: publish tested source after
+protocol-head CI, then run complete serial qualification. Codex assisted;
+human hands-on time not recorded.
+
+The same PR #101 tested source `47f2e74` completed exact-source qualification
+on November 20 (PST). Serial base Python 3.11 and 3.12 each passed 5,739
+tests/73 skipped/150 deselected, Ruff, format, strict mypy and pre/post
+source/runtime/lock guards. Optional 3.11 passed 2,597; optional 3.12 passed
+2,595 with two expected skips; both also passed pinned OpenSpiel 2.0.2,
+Numba 0.68.1 and installed Apache-2.0 license guards. All-file hooks passed.
+Hosted CI [44778469528](https://github.com/jimmy-sim/poker-ai/actions/runs/44778469528)
+passed both Python jobs and hooks on exact `47f2e74`. The [complete source
+receipt](../results/medium-dry-b1-updates/source-checks/manifest.json) retains
+local/hosted logs, role receipts and the first pre-commit environment failure
+before any commit. No B1 proof, profile or poker training has run. Next:
+publish and byte-verify this receipt before the one fictional proof. Codex
+assisted; human hands-on time not recorded.
+
+After source-receipt CI 44782676606 passed both Python jobs/hooks, the one
+formal PR #101 B1 fictional signal-game proof ran on clean `9e93f6a` on
+November 20 (PST). It saved and replayed all nine fixed readouts at the
+80/240/720-work crossings, finishing at 728 work. The launcher exited zero
+in 0.557 seconds, under the 180-second internal cap; the [raw proof and
+launcher record](../results/medium-dry-b1-updates/own-proof/manifest.json)
+are retained. This checks software behavior, not poker strength. Next:
+publish and byte-verify the complete proof before the one fixed 18-path
+100k-work profile. Codex assisted; human hands-on time not recorded.
+
+The fixed PR #101 18-path, three-repeat, 100k-work profile completed once
+on November 20 (PST), after the fictional proof archive was byte-verified.
+All 18 paths and 54 current/uniform/linear readouts saved and replayed;
+final work ranged 100,000–100,034. Internal time was 18.597 seconds,
+launcher time 19.103 seconds (<900), and maximum worker high-water RSS was
+187,088,896 bytes. The predeclared slowest-repeat calculation gives fixed
+worker sums 617.162/615.439/624.521 seconds, `T=624.521`, and strict
+`2*(2*T+600)=3698.083<7200` seconds. The [complete raw profile](../results/medium-dry-b1-updates/profile/manifest.json)
+is retained. This is a compute forecast, not a poker-strength outcome or
+admission publication. Next: publish/byte-verify the profile and make a
+separate data-only admission decision. Codex assisted; human hands-on time
+not recorded.
+
+After all 150 profile archive blobs and the clean reader were verified,
+PR #101's separate data-only admission on November 20 recomputed the frozen
+forecast from those published bytes: `T=624.5207492535935s`, strict bound
+`3698.082997014374s < 7200s`, status **admitted**. The [admission
+receipt](../results/medium-dry-b1-updates/admission/manifest.json) records
+the exact input and command. Proof-head CI 44787891458 was cancelled by the
+subsequent profile push; tested-source and source-receipt CI both passed.
+No 10m B1 poker path has started. Next: publish/verify admission, then run
+the single fixed six-path own comparison within its 7200-second cap. Codex
+assisted; human hands-on time not recorded.
+
+The one admitted PR #101 B1 six-path 10m own run completed on November 20
+(PST) at clean `367a97f`, with all 54 fixed current/uniform/linear policy
+readouts and scores saved and replayed. Final charged work was
+10,000,012–10,000,037; internal time 142.760 seconds, launcher 143.139
+seconds (<7200), and maximum worker high-water RSS 192,643,072 bytes.
+The [complete own raw policies and scores](../results/medium-dry-b1-updates/own/manifest.json)
+retain the six paths, launcher record and partial checkpoints. No new
+OpenSpiel comparison or final B1-vs-B4 classification has occurred yet.
+Next: publish and byte-verify all own bytes before constructing the fixed
+comparison-only native audit. Admission-head CI 44789723277 was still
+running at this checkpoint. Codex assisted; human hands-on time not
+recorded.
+
+After the complete B1 own archive was published and all 113 GitHub blobs
+verified, the one pinned OpenSpiel 2.0.2 comparison-only scalar audit ran
+on November 20 (PST). It retained all 54 rows, finished in 27.038 seconds
+internally/27.438 seconds at the launcher (<900), and had maximum numerical
+error `4.973799150320701e-14` chips (<`1e-9`). The [raw native audit](../results/medium-dry-b1-updates/native/manifest.json)
+records the installed Apache-2.0 license hash, runtime and every row.
+Reference values did not enter training. Next: publish/verify this audit,
+then run the frozen report from published own, native and immutable B4
+control bytes. Codex assisted; human hands-on time not recorded.
+
+The fixed PR #101 report replayed the published B1 and immutable B4
+policies and their independent scalar audits on November 20 (PST): all
+108 cases complete, maximum combined native error `7.105427357601002e-14`
+chips. The [negative result](medium-dry-b1-updates-result.md) records each
+paired seed, memory/runtime/coverage, per-street contributions, fixed turn
+decisions and assumptions. B1 medium/dry median/worst are
+0.040639951/0.042400422 initial pots (limits 0.01/0.025), paired median
++0.001098290; low/wet absolute gates pass, paired median +0.000020953.
+All six whole-coverage values are 100% and recall violations zero. This is
+**negative** under the prospective rule; no retry or default promotion.
+Next: publish/verify report, complete required final exact-source
+local/optional/hosted checks and review PR #101. Codex assisted; human
+hands-on time not recorded.
+
+Final PR #101 exact negative-report-head qualification completed on
+November 20 (PST) at `583291c`: serial local base Python 3.11 and 3.12
+each passed 5,739 tests/73 skipped/150 deselected plus Ruff, format,
+strict mypy and pre/post source/runtime/lock/report guards. Optional 3.11
+passed 2,597; optional 3.12 passed 2,595 with two expected skips, both
+with pinned OpenSpiel, Numba and installed Apache-2.0 license guards.
+All-file hooks and hosted CI 44791539576 passed both jobs/hooks. The
+[complete check receipt](../results/medium-dry-b1-updates/final-checks/manifest.json)
+retains logs and exact pins. Next: publish/verify this receipt, complete
+PR review and receipt-head CI, then history-merge if eligible. The poker
+result remains negative. Codex assisted; human hands-on time not recorded.
