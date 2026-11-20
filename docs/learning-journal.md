@@ -8571,3 +8571,20 @@ turn the clipped-rule regression into an improvement. **Next decision:**
 publish/verify the audit, then run the fixed report for exact paired gates
 and turn/river diagnostic interpretation. No reference strategy entered
 training. Codex assisted; human hands-on time was not recorded.
+
+**November 20 clipped-rule conclusion.** The fixed report replayed the
+published own policies after the pinned comparison-only audit. The candidate
+missed medium/dry absolute exploitability gates: median 0.074594 and worst
+0.075562 initial pots versus limits 0.01 and 0.025. Its paired median was
++0.036593; low/wet paired median was +0.001560. All six paired seeds worsened,
+so the [complete result](medium-dry-clipped-regret-result.md) is **negative**.
+**Example:** on medium/dry seed 20261371, the clipped final turn/river
+best-response-loss contributions were 0.829936/1.771019 chips versus signed
+0.264670/1.018938. At the preselected `3s 7h` turn decision, clipped's
+saved fold/call/raise probabilities and alternative-action values are in the
+report; those values assume the saved opponent and an optimal reply
+continuation, not universal poker advice. **Next decision:** complete final
+exact-source local and hosted checks, review/merge if eligible, then choose a
+distinct prospectively fixed strength question from the retained weaknesses.
+No unfavorable rerun or default promotion. Codex assisted; human hands-on
+time was not recorded.

@@ -8094,3 +8094,20 @@ retains every row, runtime, launch receipt and log. No reference strategy
 entered training. Next: publish/verify native bytes, then run the frozen
 report and classify the already unfavorable own result with turn/river and
 fixed-row diagnostics. Codex assisted; human hands-on time not recorded.
+
+The frozen PR #100 report replayed all 108 own policy bytes after the
+comparison-only native archive was published and GitHub-byte-verified.
+Its [complete report](../results/medium-dry-clipped-regret/report/report.json)
+classified the fixed comparison **negative**: medium/dry clipped 10m
+linear-average median/worst 0.074594/0.075562 initial pots, failing 0.01/0.025;
+paired median +0.036593 (worse). Low/wet clipped median/worst
+0.002470/0.002512 pass absolute gates but paired median +0.001560 worsens
+beyond +0.001. Each of six paired seeds worsened. Candidate coverage 100%
+and recall zero; native maximum error `7.11e-14` chips. The
+[result explanation](medium-dry-clipped-regret-result.md) gives fixed
+turn/river loss decomposition, representative cards/actions/probabilities,
+assumptions, limitations and a Terminal inspection command. Next: finish
+exact-source local/optional/hosted qualification and review PR #100; do not
+retry this failed experiment or promote a default. Any next strength question
+requires its own prospective contract. Codex assisted; human hands-on time
+not recorded.

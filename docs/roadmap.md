@@ -31,10 +31,13 @@ longer-work study: its strict `10055.934`-second forecast exceeds the
 the candidate remains unpromoted and its poker-strength effect at 100m is
 unknown. PR #99 was history-merged with its [retained profile
 failure](medium-dry-training-budget.md), final checks and self-review. The
-next distinct [clipped-regret comparison](medium-dry-clipped-regret.md) asks
+next distinct [clipped-regret comparison](medium-dry-clipped-regret.md) asked
 whether changing the learning update at the old 10m work cap reduces the
 known medium/dry weakness without degrading the known low/wet spot. Its
-prospective protocol precedes any new outcome; neither spot is unseen.
+[fixed matched-work result](medium-dry-clipped-regret-result.md) is **negative**:
+all three paired seeds worsened on both known spots, and medium/dry missed its
+unchanged absolute gates. Complete own policies preceded the pinned
+comparison-only scalar audit. Neither spot is unseen; no default was promoted.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
