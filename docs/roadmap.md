@@ -50,6 +50,9 @@ post-merge main CI remains separately tracked. No default is promoted. The
 next [prospective average-readout question](river-uniform-readout-spots.md)
 compares two policy averages of the same unchanged B4 signed path on a fixed
 structurally selected card/range cohort. It is distinct from another B1 attempt.
+The [prospective diagnostic detail](river-uniform-readout-diagnostic-addendum.md)
+fixes control-only row ranking and a 900-second saved-policy trace cap before
+selection; it changes no outcome criterion.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

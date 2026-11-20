@@ -27,6 +27,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   new input or score. Earlier templates and outcomes remain known evidence.
 - **State:** protocol drafting only; no selection, profile or training job.
   Codex assisted; human hands-on time not recorded.
+- **Isolated source before selection:** added structural selector, same-path
+  B4 runner/capture, source/publication gates, conservative forecast,
+  comparison-only audit, fixed reporter and control-ranked decision trace.
+  The [prospective diagnostic addendum](river-uniform-readout-diagnostic-addendum.md)
+  fixes the pooled control ranking and 900-second trace cap without changing
+  the original protocol. Nine focused new/historical tests pass; Ruff,
+  formatting and strict mypy pass on 14 new source/test files. An initial
+  test fixture directory error was corrected; no scientific job ran.
+  Full exact-source qualification remains pending. Codex assisted; human
+  hands-on time not recorded.
 
 ## 2026-11-17 — Close allowance correction; plan nested archive measurement
 

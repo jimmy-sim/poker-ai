@@ -8715,6 +8715,21 @@ they are not its result. No new panel case or score exists at this entry.
 and scoring code before the one bounded experiment. Codex assisted; human
 hands-on time was not recorded.
 
+**November 20 isolated readout source, before spot selection.** The code
+freezes boards and ranges by the preregistered structural rule and uses the
+same signed B4 training path for both saved averages. **Example:** the
+reporter pairs the 10m uniform and linear rows with the same spot and seed;
+the candidate has no extra sampled work. The diagnostic ranks exact turn
+and river nodes using only the control's mean additive best-response gain,
+then shows both readouts at those nodes. Its
+[prospective detail](river-uniform-readout-diagnostic-addendum.md) was
+recorded before any cohort or score. Nine focused new/historical tests,
+Ruff, formatting and strict typing pass; an initial test fixture setup
+error was fixed. No new poker outcome, profile or training job exists.
+**Next decision:** publish the tested selection source, freeze the cohort
+once, then finish exact-source qualification before any real trajectory.
+Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
