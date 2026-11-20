@@ -8542,3 +8542,20 @@ training run, but says nothing about which regret rule plays better. The
 records the decision without starting a learner. **Next decision:** publish
 and verify this distinct checkpoint, then run the one prescribed 12-path
 matched-work comparison. Codex assisted; human hands-on time was not recorded.
+
+**November 20 matched-work clipped-rule outcome, before native audit.** The
+same exact-river learner trained signed and clipped updates at 10m charged
+node work on two already known spots, using the three fixed paired seeds.
+**Example:** on medium/dry seed 20261371, final linear-average exploitability
+was 0.035656 initial pots with signed regrets and 0.072249 with clipped
+regrets; lower means a best response gains less against the saved policy.
+Every medium/dry and low/wet pair worsened with clipping. The single run
+completed all 12 paths and 108 readouts in 288.118 launcher seconds, with
+100% candidate coverage and zero recall violations. The own scores miss the
+frozen medium/dry absolute gates and point to a **negative** result, subject
+to the required comparison-only scalar audit. The [raw own policies and
+scores](../results/medium-dry-clipped-regret/own/manifest.json) preserve the
+unfavorable evidence. **Next decision:** publish/verify these bytes first,
+then perform the pinned native audit and final report; do not retry or tune
+this failed scientific outcome. Codex assisted; human hands-on time was not
+recorded.

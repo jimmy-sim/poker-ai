@@ -8066,3 +8066,20 @@ decision](../results/medium-dry-clipped-regret/admission/manifest.json) are
 retained separately from the profile. Next: publish and verify the admission
 bytes before the one fixed 12-path 10m matched-work run. No poker-strength
 result yet. Codex assisted; human hands-on time not recorded.
+
+The one admitted PR #100 own matched-work run finished on November 20 (PST)
+at published admission head `1912440`, with all 12 prescribed paths, all 108
+saved/replayed readouts, three workers exit zero, 287.779s internal and
+288.118s launcher wall (<7200). Final work crossed 10m on each path, with
+actual 10,000,014–10,000,169. The [complete own archive](../results/medium-dry-clipped-regret/own/manifest.json)
+retains all policies, masses, summaries, events, timing and launcher receipt.
+Own exact restricted-game final linear-average scores are provisionally
+**negative**, pending comparison-only native scalar audit: medium/dry clipped
+scores by seeds 20261371/72/73 are 0.072249/0.075562/0.074594 initial pots,
+versus signed 0.035656/0.039542/0.035132. Low/wet clipped scores are
+0.002512/0.002470/0.002447 versus signed 0.000946/0.000909/0.001146. All
+candidate coverages are 100%, recall violations zero. The medium/dry absolute
+1% median and 2.5% worst gates fail and both paired medians worsen. Next:
+publish and GitHub-byte-verify this own evidence before any OpenSpiel audit;
+retain the negative outcome, do not retry or tune it. Codex assisted; human
+hands-on time not recorded.
