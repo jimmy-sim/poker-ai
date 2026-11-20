@@ -8173,3 +8173,13 @@ local/hosted logs, role receipts and the first pre-commit environment failure
 before any commit. No B1 proof, profile or poker training has run. Next:
 publish and byte-verify this receipt before the one fictional proof. Codex
 assisted; human hands-on time not recorded.
+
+After source-receipt CI 44782676606 passed both Python jobs/hooks, the one
+formal PR #101 B1 fictional signal-game proof ran on clean `9e93f6a` on
+November 20 (PST). It saved and replayed all nine fixed readouts at the
+80/240/720-work crossings, finishing at 728 work. The launcher exited zero
+in 0.557 seconds, under the 180-second internal cap; the [raw proof and
+launcher record](../results/medium-dry-b1-updates/own-proof/manifest.json)
+are retained. This checks software behavior, not poker strength. Next:
+publish and byte-verify the complete proof before the one fixed 18-path
+100k-work profile. Codex assisted; human hands-on time not recorded.

@@ -8641,3 +8641,13 @@ These checks establish software qualification, not stronger poker play.
 **Next decision:** publish and verify this receipt, then run the single
 fictional proof and fixed profile under their existing caps. Codex assisted;
 human hands-on time was not recorded.
+
+**November 20 B1 fictional proof.** The one formally capped software proof
+saved and replayed the B1 policy at all nine declared small-game readouts,
+with final charged work 728 at the 720 crossing and a 0.557-second launcher
+run. **Example:** this fictional signal game checks that the saved policy can
+be read back and scored consistently; it cannot show whether a river poker
+decision improves. The [complete raw proof](../results/medium-dry-b1-updates/own-proof/manifest.json)
+also retains the launcher receipt. **Next decision:** publish/verify those
+bytes before the fixed 18-path Hold'em compute profile and strict admission.
+Codex assisted; human hands-on time was not recorded.
