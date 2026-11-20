@@ -8196,3 +8196,14 @@ is retained. This is a compute forecast, not a poker-strength outcome or
 admission publication. Next: publish/byte-verify the profile and make a
 separate data-only admission decision. Codex assisted; human hands-on time
 not recorded.
+
+After all 150 profile archive blobs and the clean reader were verified,
+PR #101's separate data-only admission on November 20 recomputed the frozen
+forecast from those published bytes: `T=624.5207492535935s`, strict bound
+`3698.082997014374s < 7200s`, status **admitted**. The [admission
+receipt](../results/medium-dry-b1-updates/admission/manifest.json) records
+the exact input and command. Proof-head CI 44787891458 was cancelled by the
+subsequent profile push; tested-source and source-receipt CI both passed.
+No 10m B1 poker path has started. Next: publish/verify admission, then run
+the single fixed six-path own comparison within its 7200-second cap. Codex
+assisted; human hands-on time not recorded.

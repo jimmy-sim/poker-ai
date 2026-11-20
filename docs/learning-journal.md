@@ -8665,3 +8665,14 @@ test; it says nothing yet about the candidate's poker choices. **Next
 decision:** publish/verify the complete profile, then issue a separate
 data-only admission receipt before any 10m run. Codex assisted; human
 hands-on time was not recorded.
+
+**November 20 B1 admission.** A separate reader recomputed the conservative
+forecast from the published 18-path profile and returned **admitted**:
+`3698.083 < 7200` seconds under the frozen rule. **Example:** the rule
+doubles the fixed three-worker estimate and adds a 600-second allowance
+inside another factor of two, so a short observed profile alone is not the
+admission criterion. The [receipt](../results/medium-dry-b1-updates/admission/manifest.json)
+contains the full unrounded calculation. This authorizes the single fixed
+six-path 10m training run; it does not predict an exploitability improvement.
+**Next decision:** publish and verify admission before that run. Codex
+assisted; human hands-on time was not recorded.
