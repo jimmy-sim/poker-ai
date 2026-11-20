@@ -137,3 +137,13 @@ predeclared maximum-of-three extrapolation gives worker sums 1209.651,
 `2*(2*T+600)=6087.536<7200` seconds. This is a prospective compute budget
 filter, not a strength comparison. Next: publish and verify every profile
 member, then independently recompute and publish the separate admission.
+
+## Separate compute admission
+
+After all 294 raw profile blobs were published and GitHub-byte-verified, the
+data-only admission reader recomputed the same complete-profile forecast:
+`T=1221.8841232260268` and strict bound
+`6087.536492904107<7200` seconds. The
+[admission receipt](../results/river-generalization/admission/manifest.json)
+binds this decision to the published source and profile. Next: publish and
+verify this separate receipt before one fixed 12-path 10m own study.

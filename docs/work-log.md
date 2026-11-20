@@ -7796,3 +7796,11 @@ Next: publish and GitHub-byte-verify all profile members, then make a
 separate admission decision from those published bytes. This timing gate is
 not a poker-strength result. Codex assisted; human hands-on time not
 recorded.
+
+After all 294 profile blobs were GitHub-byte-verified, the separate
+admission reader recomputed `T=1221.8841232260268` and
+`6087.536492904107<7200` seconds from the published profile, without
+constructing a learner or reference. The
+[admission receipt](../results/river-generalization/admission/manifest.json)
+records the decision. Next: publish and verify it before the single fixed
+12-path 10m own study. Codex assisted; human hands-on time not recorded.

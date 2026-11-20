@@ -8243,3 +8243,15 @@ retains paths and times. **Next decision:** publish and verify the profile,
 then recompute a separate admission before long own learning. Timing says
 nothing about which poker representation is stronger. Codex assisted; human
 hands-on time was not recorded.
+
+**November 19 separate compute admission.** The question was whether a reader
+of the already published complete profile would make the same conservative
+budget decision. It recomputed `T=1221.8841232260268` and
+`6087.536492904107<7200`, exactly matching the profile forecast. **Example:**
+the admission reader consumes the 36 saved path records and writes a decision
+receipt; it never constructs a new learner or comparison reference. The
+[admission archive](../results/river-generalization/admission/manifest.json)
+binds the published profile and source. **Next decision:** publish and byte
+verify this receipt, then run the single fixed 10m own study. This is compute
+admission, not a poker-strength conclusion. Codex assisted; human hands-on
+time was not recorded.
