@@ -8588,3 +8588,15 @@ exact-source local and hosted checks, review/merge if eligible, then choose a
 distinct prospectively fixed strength question from the retained weaknesses.
 No unfavorable rerun or default promotion. Codex assisted; human hands-on
 time was not recorded.
+
+**November 20 final clipped-rule qualification.** The negative report commit
+passed all four exact-head local roles, all-file hooks, and both hosted CI
+jobs. **Example:** the optional Python 3.12 role passed 2,587 tests with two
+expected skips while checking the same historical/new source pins and the
+installed OpenSpiel license before and after. The [complete final check
+receipt](../results/medium-dry-clipped-regret/final-checks/manifest.json)
+retains every log; software qualification supports reproducibility but does
+not change the failed poker-strength gate. **Next decision:** publish/verify
+the receipt and review/merge PR #100 if eligible; a different learning
+hypothesis needs a new prospective protocol. Codex assisted; human hands-on
+time was not recorded.

@@ -8111,3 +8111,19 @@ exact-source local/optional/hosted qualification and review PR #100; do not
 retry this failed experiment or promote a default. Any next strength question
 requires its own prospective contract. Codex assisted; human hands-on time
 not recorded.
+
+Final PR #100 exact-head qualification at `16171aa` completed on November 20
+(PST), after the negative report was published. Serial base Python 3.11 and
+3.12 each passed 5,731 tests/73 skipped/150 deselected, Ruff, format,
+strict mypy and pre/post source/runtime/lock guards. Optional 3.11 passed
+2,589; optional 3.12 passed 2,587 with two expected skips; both passed the
+pinned OpenSpiel 2.0.2, Numba 0.68.1 and installed Apache-2.0 license guards
+before and after. All-file hooks passed. Hosted CI 44757177743 on exact
+`16171aa` passed both Python jobs/hooks. The [complete final qualification
+receipt](../results/medium-dry-clipped-regret/final-checks/manifest.json)
+retains raw local/hosted logs, role receipts and source pins. Self-review
+found only new isolated adapter/test/config code relative to main; historical
+source pins and negative outcome remain unchanged. Next: publish/verify this
+receipt, complete PR review and merge if eligible, then choose a distinct
+prospective strength question. Codex assisted; human hands-on time not
+recorded.

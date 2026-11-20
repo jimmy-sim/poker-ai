@@ -50,6 +50,15 @@ maximum scalar error `7.105427357601002e-14` chips, below `1e-9`; its
 separate from training. The [complete report](../results/medium-dry-clipped-regret/report/report.json)
 replays the own bytes and holds every paired seed, checkpoint and diagnostic.
 
+Final exact-report-head qualification at `16171aa` passed base Python
+3.11/3.12 (5,731 passed, 73 skipped, 150 deselected each, plus Ruff,
+format and strict mypy), optional 3.11 (2,589 passed) and optional 3.12
+(2,587 passed, two expected skips). Pre/post source, runtime, lock,
+OpenSpiel/Numba and installed-license guards passed, as did all-file hooks.
+Hosted CI run 44757177743 passed both Python jobs and hooks. The
+[final check receipt](../results/medium-dry-clipped-regret/final-checks/manifest.json)
+retains the role logs and official hosted log.
+
 ## What the saved decisions show
 
 At medium/dry seed 20261371 and final work, signed turn and river
