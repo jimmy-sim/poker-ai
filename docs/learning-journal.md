@@ -8517,3 +8517,16 @@ the 180-second cap. Its [raw proof](../results/medium-dry-clipped-regret/own-pro
 includes the launch receipt. **Next decision:** publish and verify these
 bytes before the fixed compute profile; do not infer a poker edge from the
 fictional example. Codex assisted; human hands-on time was not recorded.
+
+**November 20 fixed compute profile, before training.** All 36 preselected
+100k-work paths and 108 readouts completed under the 900-second cap. The
+conservative forecast uses each game/seed/rule path's slowest of three whole
+construction-through-replay times, scales to 10m charged work, and sums paths
+in the fixed three-worker assignment. **Example:** the largest worker sum
+was `T=1232.289s`; the frozen doubled bound with overhead is `6129.154s`,
+under the 7200-second limit. A separate calculation from the raw path rows
+matched exactly. The [full profile](../results/medium-dry-clipped-regret/profile/manifest.json)
+retains runtime and memory as well as the forecast. **Next decision:**
+publish/verify the profile, then issue a separate admission receipt before
+any matched 10m training. The profile does not show stronger poker play.
+Codex assisted; human hands-on time was not recorded.

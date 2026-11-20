@@ -8040,3 +8040,18 @@ This is a software proof only, not a Hold'em strength result. Next: publish
 and GitHub-byte-verify the proof, and complete the source-receipt-head hosted
 check before the one fixed 36-path 100k compute profile. Codex assisted;
 human hands-on time not recorded.
+
+The single fixed PR #100 36-path, three-repeat 100k-work compute profile ran
+on November 20 (PST) after the proof archive was GitHub-byte-verified. All
+12 game/seed/rule paths × three repeats completed 108 own captures/replays;
+three workers exited zero. Internal whole profile time was 36.867s (<900),
+launcher wall 37.145s, final charged work 100,027–100,114, and maximum
+recorded worker high-water RSS 232,325,120 bytes. The frozen slowest-repeat
+10m extrapolation gave fixed worker sums 1232.289/1231.593/1218.510s,
+`T=1232.289s` and strict `2*(2*T+600)=6129.154s`, below 7200s. An independent
+data-only recomputation matched the raw forecast exactly. The [full profile
+archive](../results/medium-dry-clipped-regret/profile/manifest.json) retains
+all 36 paths, snapshots, masses, events, timing, forecast and recheck.
+Next: publish/verify these bytes, then publish a separate data-only admission
+receipt before any 10m study. This is compute evidence, not poker strength.
+Codex assisted; human hands-on time not recorded.
