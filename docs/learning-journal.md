@@ -8530,3 +8530,15 @@ retains runtime and memory as well as the forecast. **Next decision:**
 publish/verify the profile, then issue a separate admission receipt before
 any matched 10m training. The profile does not show stronger poker play.
 Codex assisted; human hands-on time was not recorded.
+
+**November 20 conservative compute admission.** After the profile bytes were
+published and verified on GitHub, the separate data-only reader recomputed
+the frozen rule at clean `fb2e46f`: the largest fixed worker sum was
+`1232.2885391607078s`, giving a strict doubled bound of
+`6129.154156642831s < 7200s`. **Example:** the bound includes the slowest
+repeat for every path and the protocol's extra overhead; it admits a fixed
+training run, but says nothing about which regret rule plays better. The
+[admission receipt](../results/medium-dry-clipped-regret/admission/manifest.json)
+records the decision without starting a learner. **Next decision:** publish
+and verify this distinct checkpoint, then run the one prescribed 12-path
+matched-work comparison. Codex assisted; human hands-on time was not recorded.

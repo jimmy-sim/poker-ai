@@ -8055,3 +8055,14 @@ all 36 paths, snapshots, masses, events, timing, forecast and recheck.
 Next: publish/verify these bytes, then publish a separate data-only admission
 receipt before any 10m study. This is compute evidence, not poker strength.
 Codex assisted; human hands-on time not recorded.
+
+The PR #100 profile was published at `fb2e46f` on November 20 after
+proof-head CI 44750299015 passed both Python jobs/hooks. All 295 profile
+archive GitHub blobs matched the committed tree, and the clean reader passed.
+The separate data-only admission at that clean head recomputed the unchanged
+profile forecast: `T=1232.2885391607078s` and strict bound
+`6129.154156642831s < 7200s`; status **admitted**. Its [receipt and raw
+decision](../results/medium-dry-clipped-regret/admission/manifest.json) are
+retained separately from the profile. Next: publish and verify the admission
+bytes before the one fixed 12-path 10m matched-work run. No poker-strength
+result yet. Codex assisted; human hands-on time not recorded.
