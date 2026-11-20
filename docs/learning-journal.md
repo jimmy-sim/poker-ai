@@ -8505,3 +8505,15 @@ it is not a poker result. **Next decision:** publish/verify the qualified
 source evidence, then run only the prescribed fictional proof before compute
 profiling. No strength outcome exists yet. Codex assisted; human hands-on
 time was not recorded.
+
+**November 20 two-rule software proof.** The fixed fictional game exercised
+both signed and clipped regret updates through three work crossings. Each
+arm saved and replayed nine current and average strategies; signed reached
+720 work and clipped 728 because each stops at its first complete crossing.
+**Example:** this small game's policies show that the new capture path can
+retain and replay both update rules, but they say nothing about medium/dry
+poker decisions. The single launcher exited zero in 0.383 seconds, within
+the 180-second cap. Its [raw proof](../results/medium-dry-clipped-regret/own-proof/manifest.json)
+includes the launch receipt. **Next decision:** publish and verify these
+bytes before the fixed compute profile; do not infer a poker edge from the
+fictional example. Codex assisted; human hands-on time was not recorded.

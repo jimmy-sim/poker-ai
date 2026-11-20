@@ -8028,3 +8028,15 @@ archive](../results/medium-dry-clipped-regret/source-checks/manifest.json).
 Next: publish and verify those bytes, then run the capped fictional proof.
 No poker-strength measurement yet. Codex assisted; human hands-on time not
 recorded.
+
+The one formal PR #100 fictional signal-game proof ran on November 20 (PST)
+after the published, GitHub-byte-verified source receipt. The signed and
+clipped arms each saved and replayed all nine fixed current/uniform/linear
+readouts at 80/240/720 charged work. Final work was 720/728 respectively;
+launcher exit 0, wall 0.382537s versus the 180-second cap. The [proof
+archive](../results/medium-dry-clipped-regret/own-proof/manifest.json)
+contains both arms' snapshots, mass, events, receipts and launch timing.
+This is a software proof only, not a Hold'em strength result. Next: publish
+and GitHub-byte-verify the proof, and complete the source-receipt-head hosted
+check before the one fixed 36-path 100k compute profile. Codex assisted;
+human hands-on time not recorded.
