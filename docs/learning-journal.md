@@ -8152,3 +8152,19 @@ decision:** stop safely after publishing this receipt. The control's
 medium-game gates failed and one paired seed worsened; there is no fresh or
 global admission, no scientific retry and no next experiment. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 additional-spot question, before selection.** After the
+history-preserving [PR #97 merge](https://github.com/jimmy-sim/poker-ai/pull/97),
+Jimmy asked whether its river information gain extends beyond the two known
+games. The earlier `heldout_*` and four `fresh_*` cases already have measured
+outcomes, so they cannot be relabeled unseen. The [prospective contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7027108691)
+fixes one low/wet/in-position and one medium/dry/out-of-position input from
+known public betting templates, with newly drawn boards and weighted ranges.
+**Example:** a board with a previously used sorted-flop/turn rank signature
+will be rejected before any policy or score is computed, regardless of its
+suits. Both unchanged representations will be retrained at the same 10m node
+work for three fixed seeds; every paired difference, coverage, table cost
+and time will be reported. **Next decision:** publish the protocol, then
+select and freeze cases without outcome inspection. A positive result would
+still be limited to two additional tiny finite spots, not a global agent.
+Codex assisted; human hands-on time was not recorded.

@@ -7721,3 +7721,20 @@ fixed known-panel direction is positive; the control's failed medium gates,
 one unfavorable paired seed, dependence and lack of fresh validation prevent
 promotion. No new experiment is authorized from this result. Codex assisted;
 human hands-on time not recorded.
+
+On November 19, [PR #97](https://github.com/jimmy-sim/poker-ai/pull/97)
+merged with research history preserved at `9707b993`. Its final source and
+hosted checks passed and all raw evidence is retained; the result is positive
+only on two known games, with a failed control gate and no promotion. Jimmy
+then requested one bounded comparison on additional spots. The
+[prospective issue #4 contract](https://github.com/jimmy-sim/poker-ai/issues/4#issuecomment-7027108691),
+[config](../configs/river-generalization-fixed-spots.json) and
+[protocol](river-generalization-fixed-spots.md) fix two structural strata,
+selection seed/rules, both arms, three training seeds, 10m matched-work
+endpoint, all metrics/thresholds, conservative profile forecast and original
+caps before generating new card/range inputs. Earlier held-out and fresh
+cases are explicitly known; the new cases reuse known betting templates.
+Next: publish this protocol, generate and freeze the fixed new inputs by
+structural rules only, then qualify exact source before any real profile.
+No new outcome or profile has been observed. Codex assisted; human hands-on
+time not recorded.
