@@ -8489,3 +8489,19 @@ the seeds, work, quality gates and caps before any new measurements.
 and scientific gates decide whether training proceeds and what it shows.
 No new training outcome exists yet. Codex assisted; human hands-on time was
 not recorded.
+
+**November 20 clipped-rule source qualification.** The question remains
+whether changing the regret update helps the two known river spots at matched
+work. The new adapter leaves the historical card information key alone and
+uses the same seed, work counter and averaging for both rules. **Example:** a
+fictional signal game saves and replays all three policy readouts for both
+signed and clipped training; the signed path also matches the historical
+trainer's regret and average tables exactly. Seven focused tests, strict
+mypy, both complete base roles, both optional roles, pinned license guards,
+all-file hooks and both hosted source jobs passed. The first local launch
+could not acquire the shared uv cache under sandboxing and is preserved as a
+failed software attempt in the [qualification archive](../results/medium-dry-clipped-regret/source-checks/manifest.json);
+it is not a poker result. **Next decision:** publish/verify the qualified
+source evidence, then run only the prescribed fictional proof before compute
+profiling. No strength outcome exists yet. Codex assisted; human hands-on
+time was not recorded.

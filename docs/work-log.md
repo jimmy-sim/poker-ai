@@ -8010,3 +8010,21 @@ regressing the already known low/wet spot? The
 known spots, three seeds, crossings, old absolute gates, paired criteria,
 resource caps and publication order. No new outcome was collected for it at
 this checkpoint. Codex assisted; human hands-on time not recorded.
+
+PR #100's isolated signed-versus-clipped source was checked on November 20
+at exact commit `c996c0a` before any formal proof or poker outcome. Historical
+384-file river fingerprint stayed unchanged; new adapter fingerprint is
+`7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab`.
+The seven focused tests include historical signed-rule equivalence, both-arm
+fictional capture/replay, fixed forecast/classification and turn-row identity.
+Serial exact-source base Python 3.11/3.12 each passed 5,731 tests/73 skipped/
+150 deselected with Ruff, format and strict mypy; optional 3.11 passed 2,589,
+optional 3.12 passed 2,587/2 expected skips. Source/runtime/lock and optional
+license guards plus all-file hooks passed. Protocol-head CI 44732250767 and
+source-head CI 44739782171 passed both jobs/hooks. The first launcher attempt
+failed before tests when sandboxing denied uv a shared-cache lock; its log and
+receipt are retained beside the successful roles in the [source qualification
+archive](../results/medium-dry-clipped-regret/source-checks/manifest.json).
+Next: publish and verify those bytes, then run the capped fictional proof.
+No poker-strength measurement yet. Codex assisted; human hands-on time not
+recorded.
