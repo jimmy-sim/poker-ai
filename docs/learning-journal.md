@@ -8455,3 +8455,19 @@ a Hold'em strength estimate. The [raw proof](../results/medium-dry-training-budg
 retains hashes and runtime provenance. **Next decision:** publish and verify
 those bytes, then run only the predeclared 18-path 1m compute profile. Codex
 assisted; human hands-on time was not recorded.
+
+**November 20 longer-work compute gate: rejected.** The question was
+whether the unchanged river candidate could be tested at 100m matched work
+under the frozen conservative compute limit. All 18 predeclared 1m profile
+paths and 54 captures completed in 66.369 seconds, but the slowest-repeat
+forecast produced `T=2213.983` seconds and bound `10055.934`, above the
+`7200`-second cap. **Example:** the forecast deliberately scales complete
+construction-through-replay path time and then doubles its fixed-worker
+bound with overhead; a shorter observed profile does not waive that rule.
+The [raw failed gate](../results/medium-dry-training-budget/profile-failure/manifest.json)
+retains all worker outputs and the independently checked calculation.
+**Next decision:** stop this experiment without 100m training or a native
+comparison. Its 100m poker-strength effect is inconclusive, while the
+compute admission failed. A separate research question would need a new
+prospective protocol; the prior 10m negative result is unchanged. Codex
+assisted; human hands-on time was not recorded.

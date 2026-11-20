@@ -137,3 +137,33 @@ contains the 21 raw and receipt members with hashes, including the runtime
 and command measurement method. This is a software proof, not medium/dry
 poker-strength evidence. Next: publish and GitHub-byte-verify every proof
 member before the fixed 18-path 1m profile.
+
+## Fixed profile: compute admission rejected
+
+The one preregistered 18-path profile completed all six arm/seed paths three
+times at the first complete 1m-work crossing. All 54 own captures and
+replays finished; three workers exited zero. The whole profile took
+`66.369365708` seconds (<900), with actual final path work from 1,000,012
+to 1,000,092 and recorded maximum worker high-water RSS 239,075,328 bytes
+on this Mac. The [complete raw and failed-gate archive](../results/medium-dry-training-budget/profile-failure/manifest.json)
+retains the snapshots, mass, events, worker messages, per-path timing,
+forecast, launch traceback and decision.
+
+The fixed rule took the slowest of each path's three whole-time
+extrapolations to 100m work. The fixed worker sums were `2213.34556`,
+`2212.45011` and `2213.98349` seconds, so `T=2213.98349`. The prescribed
+strict bound was `2*(2*T+600)=10055.93398` seconds, **above 7,200**.
+An independent data-only recomputation matched the archived forecast.
+Thus the compute admission is **rejected** even though the 1m profile
+itself completed well within its 900-second cap. The actual 100m runtime
+is unknown; the conservative rule is the gate, not an estimate to waive.
+
+This experiment ends here. No separate admission receipt, 100m own study,
+native comparison or final paired poker-strength endpoint was run. The
+result is **inconclusive for poker strength because a required compute gate
+failed**, while the compute admission itself is a clear negative result.
+PR #98's historical 10m medium/dry strength result remains negative under
+its own frozen 1%/2.5% gates. No profile rerun, budget extension, looser
+forecast, changed seed or representation follows from this outcome. The
+profile contains fixed 1m software/compute readouts; they are not promoted
+as a post hoc strength comparison.

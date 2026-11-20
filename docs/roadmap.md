@@ -25,6 +25,12 @@ fresh-validation cases are known evidence.
 The longer-work study's isolated source passed serial local base/optional
 roles and both hosted jobs after a retained first hosted 3.11 timeout; its
 source receipt precedes the capped synthetic proof and compute profile.
+The synthetic proof passed, but the one fixed 18-path profile rejected the
+longer-work study: its strict `10055.934`-second forecast exceeds the
+`7200`-second cap. The 100m strength comparison therefore did not run;
+the candidate remains unpromoted and its poker-strength effect at 100m is
+unknown. The [retained profile failure](medium-dry-training-budget.md)
+governs the next research decision.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

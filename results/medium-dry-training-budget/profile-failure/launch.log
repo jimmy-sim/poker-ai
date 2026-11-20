@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/study_medium_dry_budget.py", line 22, in <module>
+    main(args.stage, args.output)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/medium_dry_budget/study.py", line 222, in main
+    run_stage(stage, root, output.resolve())
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/medium_dry_budget/study.py", line 174, in run_stage
+    raise ArithmeticError("predeclared conservative forecast failed")
+ArithmeticError: predeclared conservative forecast failed

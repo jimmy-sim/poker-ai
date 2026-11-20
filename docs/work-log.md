@@ -7976,3 +7976,22 @@ retains snapshots, mass, events, runtime and launcher measurement. This is a
 software proof only, not a new poker-strength result. Next: publish and
 byte-verify the proof before any 1m medium/dry profile. Codex assisted;
 human hands-on time not recorded.
+
+The one fixed PR #99 18-path 1m profile ran on November 20 (PST) after the
+published and GitHub-byte-verified proof. All six arm/seed paths × three
+repeats completed 54 captures/replays in 66.369 seconds (<900); all three
+workers exited zero. Actual final path work was 1,000,012–1,000,092;
+maximum recorded worker high-water RSS was 239,075,328 bytes. The
+predeclared maximum-of-three extrapolation gave fixed worker sums
+2213.346/2212.450/2213.983 seconds, `T=2213.983`, and strict bound
+`2*(2*T+600)=10055.934`, which **fails** the 7,200-second admission cap.
+An independent data-only calculation matched. The complete
+[failed-gate archive](../results/medium-dry-training-budget/profile-failure/manifest.json)
+retains every raw path, forecast, failure and log. Stop this experiment:
+no separate admission, 100m training, native audit or final paired strength
+result. Poker-strength classification is **inconclusive** because compute
+admission failed; the compute gate itself is a clear rejection. The older
+PR #98 10m negative result remains unchanged. Next: publish/verify the
+failed evidence and save a safe handoff; any distinct follow-up needs its
+own prospective question and protocol. Codex assisted; human hands-on time
+not recorded.
