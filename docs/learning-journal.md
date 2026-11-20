@@ -205,6 +205,10 @@ turn decisions account for 22.79% of remaining mean exploitability, while
 many smaller river decisions account for 75.51% in total. Saved checkpoints
 suggest continued training/convergence effects but cannot establish that
 more work reaches the gate. No new training or default promotion followed.
+The [issue #4 operating workflow](research-operating-workflow.md) now permits
+successive bounded research milestones while keeping prospective protocols,
+failed gates, compute admission and own-before-reference publication intact.
+The immediate task is exact-head local requalification of draft PR #98.
 
 Three useful reading paths:
 
@@ -7280,7 +7284,6 @@ cost report and two-runtime export checks. The failed forecast, accuracy and
 context-copy gates are unchanged. Codex assisted with execution and writing;
 human hands-on time was not recorded.
 
-
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
@@ -8375,4 +8378,19 @@ river key collision exists in this finite spot. **Next decision:** stop and
 seek authorization for a separately preregistered, bounded unchanged-
 representation convergence test if desired. The parent negative gate and
 retained failed final local qualification do not change. Codex assisted;
+human hands-on time was not recorded.
+
+**November 19 operating workflow and requalification question.** Jimmy
+authorized Codex to choose successive bounded research questions for issue
+#4, while retaining the project's prospective scientific gates and stopping
+each experiment at its declared outcome. The
+[workflow](research-operating-workflow.md) makes that order explicit.
+**Example:** a failed 1% medium/dry exploitability gate remains a negative
+result even if another seed or a longer run might look better; a distinct
+test needs its own protocol before outcomes. The old concurrent local base
+failures remain preserved. Both parameterizations of the offending spawned
+fixture passed separately on Python 3.11 and 3.12 with the same 20-second
+deadline, supporting a scheduling explanation but not yet satisfying full
+qualification. **Next decision:** run all required exact-head roles serially,
+then review PR #98 before any new training-budget study. Codex assisted;
 human hands-on time was not recorded.

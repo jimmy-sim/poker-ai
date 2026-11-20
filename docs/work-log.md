@@ -7897,3 +7897,18 @@ medium/dry acceptance result stays negative and the earlier final local
 base qualification remains incomplete. Next: publish/verify this report,
 leave PR #98 draft, and stop without a new experiment or promotion. Codex
 assisted; human hands-on time not recorded.
+
+On November 19 (PST), Jimmy authorized an ongoing bounded issue #4 research
+cycle, with poker strength and reproducibility ahead of GitHub activity.
+The [operating workflow](research-operating-workflow.md) and updated
+[roadmap](roadmap.md) now record milestone selection, prospective publication,
+exact-source qualification, conservative compute admission, own-before-
+reference boundaries, failure retention, and durable handoffs without changing
+any frozen protocol. Live PR #98 and its final hosted CI were verified;
+the original local concurrent spawned-fixture failures remain failed. The
+two parameterizations passed in isolation on both locked Python versions
+with the unchanged 20-second deadline; raw focused logs and receipts are
+retained under ignored `results/runs/river-generalization-requalification-20261120/`.
+Next: publish this workflow, then complete all exact-head local roles
+serially before considering PR #98 merge. No new training or budget outcome
+has been collected. Codex assisted; human hands-on time not recorded.

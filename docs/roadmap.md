@@ -11,12 +11,20 @@ prerequisite skip failed its unchanged work-identity gate; its
 [retained result](pinned-prerequisite-skip-result.md) admits no validation
 saving. The [known-game river study](river-strength-known-vulnerabilities.md)
 was history-merged in PR #97 with a positive descriptive result limited to
-its two preselected games and a failed control gate. The current bounded
-priority is a [prospective additional-spot comparison](river-generalization-fixed-spots.md)
-using newly selected card/range inputs; previous held-out and fresh-validation
-cases are known evidence. Further validation-performance work is deferred
+its two preselected games and a failed control gate. The
+[additional-spot comparison](river-generalization-fixed-spots.md) finished
+**negative** under its fixed medium/dry absolute exploitability gates. Its
+[saved-policy diagnosis](river-generalization-diagnosis-report.md) found no
+candidate information collision on that finite spot; remaining turn and
+river best-response gains motivate a bounded unchanged-candidate
+training-budget test after PR #98's retained local qualification failures
+are resolved. Previous held-out and fresh-validation cases are known evidence.
+Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
+The [research operating workflow](research-operating-workflow.md) governs
+successive bounded issue #4 milestones while preserving every experiment's
+prospective contract and stop rule.
 
 The original phase plan follows below. Its order and acceptance rules remain:
 state the test before running it, validate the implementation and math, and
