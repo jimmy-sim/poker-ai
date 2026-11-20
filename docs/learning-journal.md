@@ -7814,6 +7814,18 @@ decision:** publish the selector, generate the fixed cases once and freeze
 their hashes before constructing any strategy or score. No strength result
 exists yet. Codex assisted; human hands-on time was not recorded.
 
+**November 19 fixed additional inputs.** The published selector produced
+the declared wet/IP board `9s 7d Jd 5d` and dry/OOP board `2s 6h Jc 3c`
+on attempt 3 for each, then drew two weighted private combos per seat.
+The [freeze](../configs/river-generalization-freeze.json) records the exact
+cards, hashes and prior exclusion inventory; both inputs passed legal spot
+loading. **Example:** the wet board has three distinct flop ranks within a
+four-rank span and exactly two flop suits. **Next decision:** publish this
+unchangeable input cohort before constructing trees, measuring policies or
+running the bounded comparison. These are new card/range inputs on known
+betting templates, not unseen betting games. Codex assisted; human hands-on
+time was not recorded.
+
 
 
 

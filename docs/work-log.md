@@ -7629,6 +7629,7 @@ intermediate check; the corrected exact source requires fresh complete
 qualification before proof/profile. No real scientific run started. Codex
 assisted; human hands-on time not recorded.
 
+
 Corrected source `7d2cb37` completed exact-source qualification on November
 19: both local base Python roles passed 5,704 tests (73 skipped, 150
 deselected), Ruff and strict mypy; optional Python 3.11 passed 2,584 and
@@ -7747,3 +7748,13 @@ Next: publish this tested selection source, then run the declared one-shot
 selection from a clean published commit and freeze its exact outputs before
 any score or training profile. No outcomes have been inspected. Codex
 assisted; human hands-on time not recorded.
+
+One-shot structural selection from published commit `3fc07f9` froze
+`new_low_wet_ip` (board `9s 7d Jd 5d`, attempt 3) and
+`new_medium_dry_oop` (board `2s 6h Jc 3c`, attempt 3). The
+[freeze](../configs/river-generalization-freeze.json) binds both card/range
+files, all prior tracked spot inputs, source hashes and selection commit.
+Both loaded as legal spots. No tree, policy or outcome was constructed.
+Next: publish and GitHub-byte-verify this fixed cohort, then implement and
+qualify the exact-source experiment runner. Codex assisted; human hands-on
+time not recorded.
