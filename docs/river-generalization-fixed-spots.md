@@ -301,3 +301,27 @@ Three review questions close this bounded research milestone:
 
 Stop at this negative, fully retained milestone. Do not promote a new default
 or start another experiment.
+
+## Later software requalification — November 20, 2026
+
+The preceding failed final local receipt remains **failed** and unchanged.
+The [separate serial requalification archive](../results/river-generalization/requalification/manifest.json)
+binds its SHA-256 and the same frozen 384-file source fingerprint. On exact
+head `3e77a50195372fca00868dcdbeb773c7afc75d14`, the two parameterizations
+of the previously failing spawned fixture passed in isolation on each Python
+minor with the original 20-second deadline. Both full base roles then passed
+serially: 5,720 passed, 73 skipped, 150 deselected each, with Ruff,
+formatting, strict mypy, and clean pre/post source/runtime/lock guards.
+The fixed optional 3.11 role passed 2,589 tests; optional 3.12 passed
+2,587 with two expected skips. Both optional license guards and all-file
+hooks passed. [Hosted CI 44694112687](https://github.com/jimmy-sim/poker-ai/actions/runs/44694112687)
+passed both Python jobs and hooks on a PR merge checkout whose tree matched
+the source head. The retained local logs support contention as the cause
+of the earlier fixture timeouts, but do not erase those failures or prove
+that scheduling was the only possible cause.
+
+This resolves the software qualification on the new exact head, subject to
+the final evidence-commit hosted check and review before PR merge. It does
+**not** alter the preregistered negative poker-strength result: medium/dry
+candidate median/worst 3.566%/3.954% still fail 1%/2.5%. No policy was
+retrained, no threshold or timeout changed, and no default was promoted.

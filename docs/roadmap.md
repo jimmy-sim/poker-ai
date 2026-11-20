@@ -18,7 +18,10 @@ its two preselected games and a failed control gate. The
 candidate information collision on that finite spot; remaining turn and
 river best-response gains motivate a bounded unchanged-candidate
 training-budget test after PR #98's retained local qualification failures
-are resolved. Previous held-out and fresh-validation cases are known evidence.
+are resolved. A separate serial exact-head requalification now passes all
+four local roles and hooks; the original failed logs remain retained, and
+PR review/final evidence CI precede merge. Previous held-out and
+fresh-validation cases are known evidence.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -7912,3 +7912,23 @@ retained under ignored `results/runs/river-generalization-requalification-202611
 Next: publish this workflow, then complete all exact-head local roles
 serially before considering PR #98 merge. No new training or budget outcome
 has been collected. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), the original PR #98 final local base failures were
+investigated without changing the spawned fixture or its 20-second deadline.
+Both parameterizations passed alone on each locked Python minor. One new
+exact-head **serial** attempt at `3e77a50195372fca00868dcdbeb773c7afc75d14`
+then passed all four required local roles: base 3.11 and 3.12 each 5,720
+passed/73 skipped/150 deselected with Ruff, formatting and strict mypy;
+optional 3.11 2,589 passed; optional 3.12 2,587 passed/2 skipped. Each
+role's pre/post clean-source, runtime and lock guard passed, as did both
+optional installed-license checks and all-file hooks. Hosted
+[CI 44694112687](https://github.com/jimmy-sim/poker-ai/actions/runs/44694112687)
+passed both jobs/hooks; its PR merge tree matched the source tree. The
+[new receipt](../results/river-generalization/requalification/manifest.json)
+retains original failure hashes, focused and full logs, guards, CI and the
+serial driver. The old failed receipt remains failed; contention is supported
+as an explanation, not proven uniquely. The medium/dry scientific result
+stays negative at 3.566%/3.954% versus fixed 1%/2.5% limits. Next: publish
+and verify the new receipt, complete evidence-head CI and review, then
+history-preserving PR merge if eligible. No new training started. Codex
+assisted; human hands-on time not recorded.

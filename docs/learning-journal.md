@@ -199,7 +199,8 @@ The latest [medium/dry saved-policy diagnosis](river-generalization-diagnosis-re
 in draft PR #98 is complete. The candidate comparison remains **negative**:
 the 3.566% median and 3.954% worst medium/dry exploitabilities missed the
 fixed 1%/2.5% gates, and the earlier final local qualification timeouts
-remain unresolved. The diagnostic finds 3,336 exact and candidate information
+remain retained as failures; a later serial exact-head requalification passes.
+The diagnostic finds 3,336 exact and candidate information
 rows with no turn or river collisions on this finite spot. Three high-reach
 turn decisions account for 22.79% of remaining mean exploitability, while
 many smaller river decisions account for 75.51% in total. Saved checkpoints
@@ -208,7 +209,7 @@ more work reaches the gate. No new training or default promotion followed.
 The [issue #4 operating workflow](research-operating-workflow.md) now permits
 successive bounded research milestones while keeping prospective protocols,
 failed gates, compute admission and own-before-reference publication intact.
-The immediate task is exact-head local requalification of draft PR #98.
+The immediate task is PR #98 evidence publication, final CI and review.
 
 Three useful reading paths:
 
@@ -8394,3 +8395,19 @@ deadline, supporting a scheduling explanation but not yet satisfying full
 qualification. **Next decision:** run all required exact-head roles serially,
 then review PR #98 before any new training-budget study. Codex assisted;
 human hands-on time was not recorded.
+
+**November 20 local requalification.** The question was whether the unchanged
+20-second spawned-fixture check still fails when PR #98's full local roles
+run one at a time. The [new receipt](../results/river-generalization/requalification/manifest.json)
+retains a single serial exact-head attempt with four passing local roles,
+clean pre/post guards, pinned optional license checks, all-file hooks and
+two passing hosted jobs. **Example:** the old Python 3.12 concurrent run
+failed both fixture parameterizations; the new serial Python 3.12 base run
+passed 5,720 tests including both, while the old failed log remains
+available. This supports a scheduling explanation without changing a
+deadline or claiming the old check passed. The candidate's 3.566%/3.954%
+medium/dry result still misses the fixed 1%/2.5% quality gates. **Next
+decision:** publish/verify this software receipt and review PR #98; only
+after its eligible merge may a separately preregistered unchanged-candidate
+training-budget study begin. Codex assisted; human hands-on time was not
+recorded.
