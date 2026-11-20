@@ -7768,3 +7768,13 @@ adapter/entrypoints are byte unchanged from `origin/main`. This is the tested
 source checkpoint, before real proof, profile or trained outcomes. Next:
 publish the source, then run all exact-source local, optional and hosted
 qualification roles. Codex assisted; human hands-on time not recorded.
+
+Exact-source qualification of `d78b525` passed on November 19 (PST).
+Both local base roles: 5,717 passes, 73 skips and 150 deselections with lint,
+format and strict typing; optional 3.11: 2,589 passes; optional 3.12: 2,587
+passes and two skips. All four clean pre/post source/lock/runtime guards,
+local hooks and both jobs in [hosted CI 44652668301](https://github.com/jimmy-sim/poker-ai/actions/runs/44652668301)
+passed. The [qualification receipt](../results/river-generalization/source-checks/manifest.json)
+retains logs and scope. Next: publish and GitHub-byte-verify this gate, then
+run a synthetic own proof; no real trajectories yet. Codex assisted; human
+hands-on time not recorded.

@@ -8204,3 +8204,17 @@ frozen arm/spot contexts built within the tree cap with zero abstract recall
 violations. **Next decision:** publish this tested source and qualify its exact
 bytes locally and on GitHub before any real trajectories. Codex assisted;
 human hands-on time was not recorded.
+
+**November 19 additional-spot source qualification.** The question was
+whether the frozen study source passes the same full local and hosted checks
+as the earlier river experiment before any new policy outcomes are measured.
+It did: base 3.11/3.12 each passed 5,717 tests plus lint, formatting and strict
+typing; optional 3.11/3.12 passed 2,589 and 2,587 tests (two expected skips
+on 3.12); hooks and both [hosted CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/44652668301)
+passed. **Example:** every optional role checked the installed OpenSpiel
+license bytes even though the reference is still barred from own training.
+The [source receipt](../results/river-generalization/source-checks/manifest.json)
+binds the exact source and raw logs. **Next decision:** publish and byte verify
+this qualification, then run the capped fictional-game own proof. There is
+no river-strength result yet. Codex assisted; human hands-on time was not
+recorded.

@@ -100,3 +100,18 @@ threshold change, larger budget or next experiment.
 At this prospective publication there are no selected new cases, trained
 policies, profile times or outcome metrics. Codex assisted; human hands-on
 time was not recorded.
+
+## Exact-source qualification
+
+Isolated study source `d78b5253d687e8e929e47ee20b6c416200e54b47`
+(fingerprint `152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3`)
+passed clean pre/post guards and all required local roles. Base 3.11 and 3.12
+each passed 5,717 fast tests (73 skipped, 150 deselected) plus lint,
+formatting and strict typing. Optional 3.11 passed 2,589 tests; optional 3.12
+passed 2,587 with two expected skips. Both optional roles checked the pinned
+OpenSpiel 2.0.2 license. Hooks passed. [Hosted CI run 44652668301](https://github.com/jimmy-sim/poker-ai/actions/runs/44652668301)
+passed both Python jobs, including hooks. The
+[qualification archive](../results/river-generalization/source-checks/manifest.json)
+retains local logs, guards and official hosted metadata/logs. No real policy,
+profile or outcome has been collected. Next: publish and byte verify this
+receipt, then run the capped synthetic own proof.
