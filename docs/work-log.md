@@ -7995,3 +7995,18 @@ PR #98 10m negative result remains unchanged. Next: publish/verify the
 failed evidence and save a safe handoff; any distinct follow-up needs its
 own prospective question and protocol. Codex assisted; human hands-on time
 not recorded.
+
+PR #99 [merged](https://github.com/jimmy-sim/poker-ai/pull/99) on November 20
+after its final evidence-head CI 44727087971 passed both Python jobs/hooks,
+all 150 failed-profile archive blobs matched GitHub, and a documented
+self-review checked the source and gate decision. History-preserving merge
+`a29f989` retains each prospective/source/proof/failure checkpoint. Its
+compute admission is rejected and its 100m poker-strength effect remains
+inconclusive; no default changed. Issue #4 continues with a **different**
+question: can clipped accumulated regrets improve the unchanged exact-river
+learner at 10m matched work on the already known medium/dry spot without
+regressing the already known low/wet spot? The
+[prospective protocol](medium-dry-clipped-regret.md) fixes both arms, two
+known spots, three seeds, crossings, old absolute gates, paired criteria,
+resource caps and publication order. No new outcome was collected for it at
+this checkpoint. Codex assisted; human hands-on time not recorded.

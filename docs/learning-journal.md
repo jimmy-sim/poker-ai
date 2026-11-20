@@ -8471,3 +8471,21 @@ comparison. Its 100m poker-strength effect is inconclusive, while the
 compute admission failed. A separate research question would need a new
 prospective protocol; the prior 10m negative result is unchanged. Codex
 assisted; human hands-on time was not recorded.
+
+**November 20 next question, before outcomes.** PR #99
+[merged](https://github.com/jimmy-sim/poker-ai/pull/99) with the failed
+compute gate preserved; it did not test 100m poker strength. The next question
+is whether clipping the regret ledger changes the remaining medium/dry
+decision losses at the same 10m node work as the signed-rule control. A
+negative regret is past evidence that an action underperformed; clipping sets
+that accumulated value to zero after an update. **Example:** the previously
+saved medium/dry current policy is much more exploitable than its averages,
+so the learner may still be unstable, but that observation alone does not
+prove clipping helps. Earlier clipped-rule work on another known game was
+mixed. The [new prospective comparison](medium-dry-clipped-regret.md) uses
+the same exact-river representation on both already known spots and fixes
+the seeds, work, quality gates and caps before any new measurements.
+**Next decision:** qualify its isolated source and let its frozen compute
+and scientific gates decide whether training proceeds and what it shows.
+No new training outcome exists yet. Codex assisted; human hands-on time was
+not recorded.

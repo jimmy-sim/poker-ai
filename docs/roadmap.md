@@ -29,8 +29,12 @@ The synthetic proof passed, but the one fixed 18-path profile rejected the
 longer-work study: its strict `10055.934`-second forecast exceeds the
 `7200`-second cap. The 100m strength comparison therefore did not run;
 the candidate remains unpromoted and its poker-strength effect at 100m is
-unknown. The [retained profile failure](medium-dry-training-budget.md)
-governs the next research decision.
+unknown. PR #99 was history-merged with its [retained profile
+failure](medium-dry-training-budget.md), final checks and self-review. The
+next distinct [clipped-regret comparison](medium-dry-clipped-regret.md) asks
+whether changing the learning update at the old 10m work cap reduces the
+known medium/dry weakness without degrading the known low/wet spot. Its
+prospective protocol precedes any new outcome; neither spot is unseen.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
