@@ -8318,3 +8318,16 @@ negative scientific result with incomplete final local reproducibility. No
 scientific rerun, validation-speed investigation, deadline change, default
 promotion or next experiment followed. Codex assisted; human hands-on time
 was not recorded.
+
+**November 19 prospective medium/dry diagnosis.** The question is which
+saved decisions account for most of the candidate's remaining best-response
+gain after its negative acceptance result. The [read-only plan](river-generalization-diagnosis.md)
+fixes three seeds, candidate linear-average 100k/1m/10m checkpoints, final
+control checkpoints, both responding seats and a 900-second cap before any
+new ranking. **Example:** an exact decision row's saved-prefix loss is divided
+by two to express its additive contribution to NashConv/2; a one-step
+saved-continuation action score is separately labeled as a local diagnostic.
+**Next decision:** publish the plan, then test isolated analysis code before
+one bounded run. The 1%/2.5% failed gates and final local qualification
+failures remain unresolved; no new training or default promotion is implied.
+Codex assisted; human hands-on time was not recorded.

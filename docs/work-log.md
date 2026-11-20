@@ -7853,3 +7853,16 @@ reproducibility is incomplete. The fixed scientific result remains negative
 because medium/dry candidate absolute quality gates failed. Stop here with
 no retry or next investigation. Codex assisted; human hands-on time not
 recorded.
+
+On November 19, after the final-receipt [hosted run 44660963477](https://github.com/jimmy-sim/poker-ai/actions/runs/44660963477)
+passed both jobs, Jimmy requested a read-only diagnosis of the remaining
+medium/dry weakness. The prior scientific classification stays negative and
+the final local base timeouts remain failed. The [prospective diagnostic
+plan](river-generalization-diagnosis.md) and
+[fixed config](../configs/river-generalization-diagnosis.json) pin the 12
+existing policies, three seeds/checkpoints, both responding seats, additive
+best-response-loss ranking, assumptions, 1e-9 accounting checks and 900-second
+wall cap before any new node ranking. Next: publish and verify the plan, then
+implement isolated read-only analysis with focused tests. No training,
+ablation or policy outcome analysis has started. Codex assisted; human
+hands-on time not recorded.
