@@ -8230,3 +8230,16 @@ checks the evidence path, not which representation plays better. The
 qualified source. **Next decision:** publish and verify every proof blob, then
 run the 36-path fixed compute profile. Codex assisted; human hands-on time was
 not recorded.
+
+**November 19 complete compute profile.** The question was whether the
+predeclared full study fits the 7,200-second budget when estimated
+conservatively from every path, rather than from a favorable example.
+All 36 fixed 100k paths completed under 900 seconds and saved 108 readouts.
+**Example:** the three repeats for each path are scaled by 10m/actual work;
+the largest repeat is used, and the slowest fixed worker sum is 1221.884
+seconds. The strict `2*(2*T+600)` bound is 6087.536 seconds, below 7200.
+The [raw profile](../results/river-generalization/profile/manifest.json)
+retains paths and times. **Next decision:** publish and verify the profile,
+then recompute a separate admission before long own learning. Timing says
+nothing about which poker representation is stronger. Codex assisted; human
+hands-on time was not recorded.

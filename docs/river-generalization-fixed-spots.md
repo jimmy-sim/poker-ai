@@ -125,3 +125,15 @@ stage cap. The [own proof archive](../results/river-generalization/own-proof/man
 retains policy, mass, events and replay evidence bound to the qualified source.
 It is a software check, not a new-spot strength measurement. Next: publish
 and GitHub-byte-verify all proof members before the real 100k profile.
+
+## Complete compute profile
+
+The one fixed 36-path profile completed all three 100k-work repeats for each
+of the 12 paths, including capture, own scoring and replay, in 36.669 seconds
+including startup (<900). All 108 fixed profile readouts were retained in the
+[raw archive](../results/river-generalization/profile/manifest.json). The
+predeclared maximum-of-three extrapolation gives worker sums 1209.651,
+1211.170 and 1221.884 seconds; `T=1221.884` and
+`2*(2*T+600)=6087.536<7200` seconds. This is a prospective compute budget
+filter, not a strength comparison. Next: publish and verify every profile
+member, then independently recompute and publish the separate admission.

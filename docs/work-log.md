@@ -7786,3 +7786,13 @@ The single qualified-source fictional-game own proof completed on November
 retains every policy, mass and event. No new-spot outcome yet. Next: publish
 and GitHub-byte-verify the proof before the 36-path 100k compute profile.
 Codex assisted; human hands-on time not recorded.
+
+The single 36-path 100k profile completed on November 19 (PST) in 36.669
+seconds including startup (<900), with all 108 readouts retained. The
+[raw profile](../results/river-generalization/profile/manifest.json) gives
+fixed worker extrapolation sums 1209.651, 1211.170 and 1221.884 seconds;
+`T=1221.884`, so the prescribed strict bound is `6087.536<7200`.
+Next: publish and GitHub-byte-verify all profile members, then make a
+separate admission decision from those published bytes. This timing gate is
+not a poker-strength result. Codex assisted; human hands-on time not
+recorded.
