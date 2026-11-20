@@ -8207,3 +8207,16 @@ subsequent profile push; tested-source and source-receipt CI both passed.
 No 10m B1 poker path has started. Next: publish/verify admission, then run
 the single fixed six-path own comparison within its 7200-second cap. Codex
 assisted; human hands-on time not recorded.
+
+The one admitted PR #101 B1 six-path 10m own run completed on November 20
+(PST) at clean `367a97f`, with all 54 fixed current/uniform/linear policy
+readouts and scores saved and replayed. Final charged work was
+10,000,012–10,000,037; internal time 142.760 seconds, launcher 143.139
+seconds (<7200), and maximum worker high-water RSS 192,643,072 bytes.
+The [complete own raw policies and scores](../results/medium-dry-b1-updates/own/manifest.json)
+retain the six paths, launcher record and partial checkpoints. No new
+OpenSpiel comparison or final B1-vs-B4 classification has occurred yet.
+Next: publish and byte-verify all own bytes before constructing the fixed
+comparison-only native audit. Admission-head CI 44789723277 was still
+running at this checkpoint. Codex assisted; human hands-on time not
+recorded.

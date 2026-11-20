@@ -8676,3 +8676,14 @@ contains the full unrounded calculation. This authorizes the single fixed
 six-path 10m training run; it does not predict an exploitability improvement.
 **Next decision:** publish and verify admission before that run. Codex
 assisted; human hands-on time was not recorded.
+
+**November 20 B1 own 10m run.** The single admitted run completed all six
+preselected game/seed paths and 54 saved/replayed policy readouts, with final
+work just above 10m and a 143.139-second launcher time. **Example:** for
+each known spot and seed, the archive includes current, uniform-average and
+linear-average policies at 100k, 1m and 10m work; only the preselected final
+linear average will drive the strength decision. The [own raw archive](../results/medium-dry-b1-updates/own/manifest.json)
+is complete, including scores and partial checkpoints. **Next decision:**
+publish/verify these candidate bytes before the pinned comparison-only
+native audit and B1-vs-B4 report. No outcome has been selected or retried.
+Codex assisted; human hands-on time was not recorded.
