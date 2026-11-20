@@ -8191,3 +8191,16 @@ and time will be reported. **Next decision:** publish the protocol, then
 select and freeze cases without outcome inspection. A positive result would
 still be limited to two additional tiny finite spots, not a global agent.
 Codex assisted; human hands-on time was not recorded.
+
+**November 19 isolated comparison source.** The question was whether the
+fixed new inputs could use the original two representation arms without
+changing historical source dependencies. New adapters load the frozen spots,
+train independently at the declared work crossings, save replayable own
+snapshots and apply the predeclared two-spot decision rule. **Example:**
+synthetic report tests classify a worsening medium/dry candidate as negative
+and a medium/dry tie as inconclusive; neither test uses measured poker
+outcomes. Twelve focused tests passed, plus Ruff and strict mypy, and all four
+frozen arm/spot contexts built within the tree cap with zero abstract recall
+violations. **Next decision:** publish this tested source and qualify its exact
+bytes locally and on GitHub before any real trajectories. Codex assisted;
+human hands-on time was not recorded.

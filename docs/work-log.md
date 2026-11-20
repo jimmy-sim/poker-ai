@@ -7758,3 +7758,13 @@ Both loaded as legal spots. No tree, policy or outcome was constructed.
 Next: publish and GitHub-byte-verify this fixed cohort, then implement and
 qualify the exact-source experiment runner. Codex assisted; human hands-on
 time not recorded.
+
+The isolated generalization runner, native scalar auditor and all-readout
+report now bind the frozen cohort and the unchanged PR #97 representations.
+Twelve focused tests passed, including four legal tree/representation builds,
+recall, stage gates, replay, and positive/negative/inconclusive synthetic
+classifications. Ruff and strict mypy passed; `src/` and the historical river
+adapter/entrypoints are byte unchanged from `origin/main`. This is the tested
+source checkpoint, before real proof, profile or trained outcomes. Next:
+publish the source, then run all exact-source local, optional and hosted
+qualification roles. Codex assisted; human hands-on time not recorded.
