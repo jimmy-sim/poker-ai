@@ -8230,3 +8230,17 @@ records the installed Apache-2.0 license hash, runtime and every row.
 Reference values did not enter training. Next: publish/verify this audit,
 then run the frozen report from published own, native and immutable B4
 control bytes. Codex assisted; human hands-on time not recorded.
+
+The fixed PR #101 report replayed the published B1 and immutable B4
+policies and their independent scalar audits on November 20 (PST): all
+108 cases complete, maximum combined native error `7.105427357601002e-14`
+chips. The [negative result](medium-dry-b1-updates-result.md) records each
+paired seed, memory/runtime/coverage, per-street contributions, fixed turn
+decisions and assumptions. B1 medium/dry median/worst are
+0.040639951/0.042400422 initial pots (limits 0.01/0.025), paired median
++0.001098290; low/wet absolute gates pass, paired median +0.000020953.
+All six whole-coverage values are 100% and recall violations zero. This is
+**negative** under the prospective rule; no retry or default promotion.
+Next: publish/verify report, complete required final exact-source
+local/optional/hosted checks and review PR #101. Codex assisted; human
+hands-on time not recorded.

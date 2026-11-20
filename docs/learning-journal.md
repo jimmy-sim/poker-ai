@@ -8698,3 +8698,18 @@ train them. The [raw audit](../results/medium-dry-b1-updates/native/manifest.jso
 retains each scalar comparison. **Next decision:** publish and verify the
 audit, then apply the frozen B1-vs-B4 gates to the published own and control
 policies. Codex assisted; human hands-on time was not recorded.
+
+**November 20 B1 poker-strength result.** The one fixed matched-work
+comparison is **negative**. B1's medium/dry final linear-average median
+exploitability is 0.040640 initial pots and worst is 0.042400, above the
+unchanged 0.01/0.025 limits; its paired median worsens by 0.001098.
+Low/wet absolute limits pass, but its paired median is slightly worse.
+**Example:** with `3s 7h` on `2s 6h Jc 3c`, the saved B1 policy folds about
+66.23% and calls about 33.77% at fixed turn row 2443; its conditional
+call value exceeds fold under the saved opponent and optimal reply
+continuation. This row's additive loss is 0.236439 chips versus B4's
+0.090857. These [decision traces](medium-dry-b1-updates-result.md) diagnose
+the finite game, not universal advice. **Next decision:** finish final
+qualification/review, retain the negative result, and select a distinct
+prospective strength question. No B1 rerun or default promotion. Codex
+assisted; human hands-on time was not recorded.
