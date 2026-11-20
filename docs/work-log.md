@@ -7946,3 +7946,23 @@ while still beating a matched-work control. It fixes the known spot, seeds,
 10m/30m/100m checkpoints, diagnostics, thresholds, compute caps and
 publication order before new measurements. No proof, profile or training
 has begun. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), the isolated PR #99 source for the prospectively fixed
+medium/dry 10m/30m/100m training-budget study was tested at `7fe07e7`. The
+first local attempt at `1c3004d` stopped at base 3.11 test 22% after review
+found an unpinned historical decision helper; its partial log is retained.
+The decoder was moved into the isolated adapter, with a focused equality
+regression. Corrected exact-head serial base 3.11/3.12 each passed 5,724
+tests (73 skipped, 150 deselected) and Ruff/format/strict mypy. Optional
+3.11 passed 2,589; optional 3.12 passed 2,587 with two expected skips;
+all source/runtime/lock/license guards and hooks passed. Hosted
+[CI 44713065490](https://github.com/jimmy-sim/poker-ai/actions/runs/44713065490)
+first passed 3.12 but cancelled 3.11 at the unchanged 35-minute limit during
+pytest 98%, with no assertion failure. The full official failed log was
+retained. One documented same-source software requalification passed 3.11
+and hooks under the same limit; both hosted jobs now pass. The
+[source archive](../results/medium-dry-training-budget/source-checks/manifest.json)
+binds the failed and passing attempts. Next: publish/verify that receipt,
+then one capped synthetic proof. No profile, long training, reference audit
+or new poker-strength outcome yet. Codex assisted; human hands-on time
+not recorded.

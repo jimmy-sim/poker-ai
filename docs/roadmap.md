@@ -22,6 +22,9 @@ serial exact-head requalification passed all four local roles, hooks and
 final hosted CI, and PR #98 was history-merged. The original failed logs
 remain retained. Previous held-out and
 fresh-validation cases are known evidence.
+The longer-work study's isolated source passed serial local base/optional
+roles and both hosted jobs after a retained first hosted 3.11 timeout; its
+source receipt precedes the capped synthetic proof and compute profile.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

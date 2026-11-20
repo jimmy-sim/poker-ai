@@ -95,3 +95,33 @@ command will be published with the measured report.
 
 At this prospective checkpoint, no new training, profile, proof or outcome
 has been collected. Codex assisted; human hands-on time is unrecorded.
+
+## Tested source and retained qualification failure
+
+The isolated runner and decision report were committed at `1c3004d`. Before
+the first full local role finished, source review found that the report
+imported a decision-row helper from the earlier diagnosis without binding
+that helper in this study's new fingerprint. The first base 3.11 run was
+interrupted at 22%; its partial log and interruption receipt are retained,
+not counted as a pass. Commit `7fe07e7` moved the observable-row decoder
+into the new isolated module and added a focused equality check for all
+three preselected turn rows. The historical 384-file river fingerprint is
+unchanged.
+
+On corrected source `7fe07e7`, exact-head serial local base Python 3.11
+and 3.12 each passed 5,724 tests, with 73 skips and 150 deselections, plus
+Ruff, formatting and strict mypy. Optional 3.11 passed 2,589 and optional
+3.12 passed 2,587 with two expected skips; installed OpenSpiel/Numba/license
+guards and all-file hooks passed. The first hosted source run passed 3.12,
+but 3.11 was cancelled by the **unchanged 35-minute CI job limit** during
+pytest at 98%. Its official log is retained. Relative to the preceding
+passing hosted run, progress to 50% and 80% was about 1.5 times slower
+throughout the suite; no assertion failure was reported. One documented
+same-source rerun of only that cancelled software job completed within the
+unchanged limit: [hosted CI 44713065490](https://github.com/jimmy-sim/poker-ai/actions/runs/44713065490)
+now passes both Python jobs and hooks, each with 5,724 tests. The cancelled
+attempt remains failed. The [source qualification archive](../results/medium-dry-training-budget/source-checks/manifest.json)
+binds both hosted attempts, all local roles, the first interrupted local
+attempt, guards and hook results. No scientific proof or policy measurement
+preceded this source qualification. Next: publish and byte-verify that
+archive, then run the fixed capped synthetic own proof.

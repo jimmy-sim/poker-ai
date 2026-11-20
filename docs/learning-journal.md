@@ -8427,3 +8427,20 @@ river readouts, plus conservative admission before longer training. **Next
 decision:** publish the plan, qualify isolated source, then follow its gates;
 no new strength outcome is available. Codex assisted; human hands-on time
 was not recorded.
+
+**November 20 isolated longer-work source qualification.** The question was
+whether a new fixed-budget runner can reuse the unchanged river trainer while
+keeping historical source dependencies pinned. An initial report helper import
+left a source dependency outside the new fingerprint; it was corrected before
+any new policy measurement, and the interrupted local test log remains.
+**Example:** the report now decodes acting-seat cards, board and legal moves
+in its own module for the three preselected turn rows, with a focused
+comparison to the saved diagnosis. Corrected local base/optional suites,
+strict typing, hooks and pinned licenses passed. Hosted 3.11 first hit the
+unchanged 35-minute limit at pytest 98%; its retained log shows distributed
+slowdown, not an assertion failure. One documented same-source software
+requalification then passed both hosted Python jobs and hooks. The
+[source evidence](../results/medium-dry-training-budget/source-checks/manifest.json)
+retains both outcomes. **Next decision:** publish and verify this qualification
+checkpoint before the synthetic proof; no new poker-strength conclusion is
+available. Codex assisted; human hands-on time was not recorded.
