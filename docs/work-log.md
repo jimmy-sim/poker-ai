@@ -7813,3 +7813,12 @@ retains policies, masses, events, scores and path times. Next: publish and
 GitHub-byte-verify every own blob before constructing the comparison-only
 OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
 time not recorded.
+
+After all 221 own blobs were GitHub-byte-verified, the pinned comparison-only
+OpenSpiel 2.0.2 audit reproduced all 108 saved scalars on November 19 (PST).
+Maximum discrepancy was `5.684341886080802e-14` chips (<1e-9); whole audit
+55.588 seconds including startup (<900). The installed Apache-2.0 license
+hash matched. The [native archive](../results/river-generalization/native/manifest.json)
+retains rows and events. Next: publish and verify the independent audit,
+then produce the fixed all-readout report. No final strength conclusion yet.
+Codex assisted; human hands-on time not recorded.

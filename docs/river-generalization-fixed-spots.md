@@ -158,3 +158,14 @@ retains every policy snapshot, mass history, event, own score and whole-path
 time. Own scores have not entered a final comparison; no reference was
 constructed. Next: publish and GitHub-byte-verify all own raw blobs before
 the comparison-only pinned native scalar audit.
+
+## Independent scalar checkpoint
+
+After all 221 own raw blobs were GitHub-byte-verified, pinned OpenSpiel 2.0.2
+compared all 108 saved own scalars. The maximum absolute discrepancy was
+`5.684341886080802e-14` chips, below the fixed `1e-9` tolerance; whole audit
+time was 55.588 seconds including startup (<900). Installed Apache-2.0 license
+bytes matched the pinned hash. The [native archive](../results/river-generalization/native/manifest.json)
+retains all rows and fsynced events. No reference policy or action entered
+training. Next: publish and verify this independent audit, then reproduce the
+all-readout report from published own and native evidence.

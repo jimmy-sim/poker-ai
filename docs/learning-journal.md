@@ -8269,3 +8269,16 @@ retains policies and scores. **Next decision:** publish and verify all own
 values before independent native scalar comparison. Own scores alone do not
 establish the preregistered result. Codex assisted; human hands-on time was
 not recorded.
+
+**November 19 independent scalar audit.** The question was whether an
+independent pinned reference reproduces the 108 already published own
+value/reply/exploitability scalars. OpenSpiel 2.0.2 agreed within the
+predeclared 1e-9-chip tolerance on every row; maximum difference was
+`5.684341886080802e-14` chips. The whole audit took 55.588 seconds including
+startup, below 900, and its installed Apache-2.0 license hash matched.
+**Example:** each native row binds a saved own policy hash and work label, so
+the reference checks an existing policy rather than influencing the learner.
+The [archive](../results/river-generalization/native/manifest.json) retains
+all rows and events. **Next decision:** publish and verify this independent
+audit before computing the fixed report. Scalar agreement alone does not say
+which arm is stronger. Codex assisted; human hands-on time was not recorded.
