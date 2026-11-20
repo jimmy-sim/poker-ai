@@ -8616,3 +8616,16 @@ publish this fixed question, qualify isolated source, and let its unchanged
 absolute gates and conservative compute forecast decide whether training
 and any strength claim proceed. Codex assisted; human hands-on time was not
 recorded.
+
+**November 20 B1 source implementation, before poker outcomes.** The new
+adapter changes the signed learner's batch size to one while keeping the
+exact-river key, regret/averaging rules, seeds and work counter fixed.
+**Example:** in the fictional signal game, the B1 path's regrets and both
+average ledgers match the existing frozen B1 trainer exactly, and saved
+policies replay without changing their scores. A separate test checks that
+each reused B4 control path corresponds to the declared game, seed and
+signed rule. Eight focused tests, Ruff and strict mypy passed; no B1 poker
+training or compute profile has run. **Next decision:** complete required
+exact-source local and hosted checks on this isolated tested source, then
+publish its receipt before the prescribed fictional proof. Codex assisted;
+human hands-on time was not recorded.

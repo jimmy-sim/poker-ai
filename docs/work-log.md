@@ -8144,3 +8144,18 @@ Only JSON syntax, local links and diff format have been checked at this
 planning stage; no B1 source, proof, profile or training exists. Next:
 publish the protocol and open the focused draft PR before implementing the
 isolated adapter. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), draft PR #101's isolated B1 source was implemented
+after prospective protocol `9c8f613` was published. New
+`scripts/medium_dry_b1/` and `scripts/study_medium_dry_b1.py` change only
+batch size from four to one for the signed/linear/linear learner; historical
+source and PR #100 control archives remain untouched. The new source
+fingerprint is `64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd`.
+Eight focused tests passed in 8.16s, covering exact B1 frozen-trainer
+identity, same B4 information keys, published signed-control pairing,
+fictional capture/replay, forecast and classification. Ruff and strict mypy
+passed for ten new source/test files. These are focused software checks;
+full exact-source base/optional/hosted qualification, formal proof, profile,
+admission and poker training are pending. Next: publish tested source after
+protocol-head CI, then run complete serial qualification. Codex assisted;
+human hands-on time not recorded.
