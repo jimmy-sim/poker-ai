@@ -7803,6 +7803,17 @@ both optional and hosted final report checks, retain their logs, then
 close this behavior question. No CPU saving or stronger strategy follows.
 Codex assisted; human hands-on time was not recorded.
 
+**November 19 structural selector checkpoint.** The question was whether
+the new board/range inputs can be chosen without seeing their poker outcomes.
+The isolated selector draws cards under the published texture and prior-rank
+rules, then uses only spot legality checks. **Example:** a known flop-rank and
+turn-rank combination is excluded even when its suits differ; a second call
+refuses to replace the written cohort. Three focused tests passed, as did
+Ruff and strict mypy; historical source bytes remain unchanged. **Next
+decision:** publish the selector, generate the fixed cases once and freeze
+their hashes before constructing any strategy or score. No strength result
+exists yet. Codex assisted; human hands-on time was not recorded.
+
 
 
 

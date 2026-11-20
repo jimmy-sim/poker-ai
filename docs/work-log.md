@@ -7738,3 +7738,12 @@ Next: publish this protocol, generate and freeze the fixed new inputs by
 structural rules only, then qualify exact source before any real profile.
 No new outcome or profile has been observed. Codex assisted; human hands-on
 time not recorded.
+
+The isolated structural selector for the additional-spot comparison passed
+three focused tests (determinism, rank-signature exclusion, legal fixed inputs
+and refusal to replace a cohort), focused Ruff and strict mypy on November 19.
+The historical `src/` and `scripts/river_strength/` bytes are unchanged.
+Next: publish this tested selection source, then run the declared one-shot
+selection from a clean published commit and freeze its exact outputs before
+any score or training profile. No outcomes have been inspected. Codex
+assisted; human hands-on time not recorded.
