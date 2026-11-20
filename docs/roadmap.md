@@ -16,12 +16,21 @@ its two preselected games and a failed control gate. The
 **negative** under its fixed medium/dry absolute exploitability gates. Its
 [saved-policy diagnosis](river-generalization-diagnosis-report.md) found no
 candidate information collision on that finite spot; remaining turn and
-river best-response gains motivate a bounded unchanged-candidate
-training-budget test after PR #98's retained local qualification failures
-are resolved. A separate serial exact-head requalification now passes all
-four local roles and hooks; the original failed logs remain retained, and
-PR review/final evidence CI precede merge. Previous held-out and
+river best-response gains motivate the [prospectively fixed medium/dry
+training-budget test](medium-dry-training-budget.md). PR #98's separate
+serial exact-head requalification passed all four local roles, hooks and
+final hosted CI, and PR #98 was history-merged. The original failed logs
+remain retained. Previous held-out and
 fresh-validation cases are known evidence.
+The longer-work study's isolated source passed serial local base/optional
+roles and both hosted jobs after a retained first hosted 3.11 timeout; its
+source receipt precedes the capped synthetic proof and compute profile.
+The synthetic proof passed, but the one fixed 18-path profile rejected the
+longer-work study: its strict `10055.934`-second forecast exceeds the
+`7200`-second cap. The 100m strength comparison therefore did not run;
+the candidate remains unpromoted and its poker-strength effect at 100m is
+unknown. The [retained profile failure](medium-dry-training-budget.md)
+governs the next research decision.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

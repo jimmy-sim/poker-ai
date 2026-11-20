@@ -1,0 +1,61 @@
+"""Make one reviewed source receipt from the retained exact-head run."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+FAILED = ROOT / 'results/runs/medium-dry-budget-source-20261120'
+OUT = ROOT / 'results/medium-dry-training-budget/source-checks'
+FINGERPRINT = '60ee266a4d644e748008ab77812a413380a9bd1b3d67238b6bb69da46e029217'
+HEAD = '7fe07e763619806515505c2111180411821ab539'
+
+def copy_file(source: Path, target: Path) -> None:
+    assert source.is_file() and not target.exists(), (source, target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == '.log':
+        target = target.with_suffix('.log.gz')
+        assert not target.exists()
+        with target.open('wb') as raw_stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=raw_stream, mtime=0) as stream:
+                stream.write(source.read_bytes())
+    else:
+        if source.suffix == '.py':
+            target = target.with_name(target.name + '.txt')
+        assert not target.exists()
+        shutil.copyfile(source, target)
+
+if __name__ == '__main__':
+    assert not OUT.exists()
+    state = json.loads((RAW / 'driver-state.json').read_bytes())
+    assert state['head'] == HEAD and state['status'] == 'passed'
+    receipts = [json.loads((RAW / f'{role}.json').read_bytes()) for role in ('base311','base312','optional311','optional312')]
+    assert all(row['status'] == 'passed' and row['head'] == HEAD for row in receipts)
+    assert (RAW / 'hooks.exit').read_text().strip() == '0'
+    hosted = json.loads((RAW / 'hosted.json').read_bytes())
+    assert hosted['headSha'] == HEAD and hosted['conclusion'] == 'success'
+    assert all(job['conclusion'] == 'success' for job in hosted['jobs'])
+    OUT.mkdir(parents=True)
+    for name in ('driver-state.json','driver.log','driver.py','runner.py','package_source.py','package_stage.py','optional-suites.json','hooks.log','hooks.exit','hosted.json','hosted.log','hosted-failed.json','hosted-failed.log','packaging-failure.json'):
+        copy_file(RAW / name, OUT / name)
+    for role in ('base311','base312','optional311','optional312'):
+        for ext in ('json','log'):
+            copy_file(RAW / f'{role}.{ext}', OUT / f'{role}.{ext}')
+    for name in ('interrupted.json','driver-state.json','driver.log','driver.py','runner.py','base311.log'):
+        copy_file(FAILED / name, OUT / 'first-interrupted' / name)
+    result = dict(status='source_qualified', tested_head=HEAD, source_fingerprint=FINGERPRINT,
+                  historical_fingerprint='152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3',
+                  local_roles=receipts, hooks='passed', hosted_run=hosted['databaseId'],
+                  hosted_jobs=[{'name':j['name'],'conclusion':j['conclusion']} for j in hosted['jobs']],
+                  interrupted_first_attempt='first-interrupted/interrupted.json',
+                  failed_hosted_attempt='hosted-failed.json',
+                  first_archive_packaging_failure='packaging-failure.json',
+                  failed_hosted_status='cancelled_at_unchanged_35_minute_job_limit_during_pytest_98_percent',
+                  scientific_measurements_started=False)
+    (OUT / 'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+    files=[]
+    for path in sorted(p for p in OUT.rglob('*') if p.is_file()):
+        raw=path.read_bytes(); files.append(dict(file=path.relative_to(OUT).as_posix(),bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT/'manifest.json').write_text(json.dumps(dict(status='source_qualified',source_fingerprint=FINGERPRINT,files=files),sort_keys=True,indent=2)+'\n')

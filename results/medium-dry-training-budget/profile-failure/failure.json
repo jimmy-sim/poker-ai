@@ -1,0 +1,646 @@
+{
+  "assignments": [
+    [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15
+    ],
+    [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16
+    ],
+    [
+      2,
+      5,
+      8,
+      11,
+      14,
+      17
+    ]
+  ],
+  "failure": {
+    "reason": "predeclared conservative forecast failed",
+    "type": "ArithmeticError"
+  },
+  "parent_cpu_seconds": 0.037545999999999996,
+  "reaped_children_cpu_seconds": 198.69,
+  "seconds": 66.36936570800026,
+  "stage": "profile",
+  "status": "failed_retained",
+  "worker_count": 3,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 7417,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "repeat0/path00",
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "repeat0/path03",
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "folder": "repeat1/path00",
+          "index": 6,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "folder": "repeat1/path03",
+          "index": 9,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 12,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "folder": "repeat2/path00",
+          "index": 12,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 15,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "folder": "repeat2/path03",
+          "index": 15,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 66.10288800000001,
+          "kind": "done",
+          "seconds": 66.12069820800389,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 1000092,
+                "index": 0,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 10.840767624991713,
+                "worker_peak_rss_bytes": 183222272
+              },
+              {
+                "captures": 3,
+                "final_work": 1000080,
+                "index": 3,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 11.074373249997734,
+                "worker_peak_rss_bytes": 230080512
+              },
+              {
+                "captures": 3,
+                "final_work": 1000092,
+                "index": 6,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 1,
+                "whole_path_seconds": 10.95659808300843,
+                "worker_peak_rss_bytes": 237715456
+              },
+              {
+                "captures": 3,
+                "final_work": 1000080,
+                "index": 9,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261372
+                },
+                "repeat": 1,
+                "whole_path_seconds": 11.17875966700376,
+                "worker_peak_rss_bytes": 237715456
+              },
+              {
+                "captures": 3,
+                "final_work": 1000092,
+                "index": 12,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 2,
+                "whole_path_seconds": 10.915101375008817,
+                "worker_peak_rss_bytes": 237715456
+              },
+              {
+                "captures": 3,
+                "final_work": 1000080,
+                "index": 15,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261372
+                },
+                "repeat": 2,
+                "whole_path_seconds": 11.148765917008859,
+                "worker_peak_rss_bytes": 237731840
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 7417,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 7418,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "repeat0/path01",
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "repeat0/path04",
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "folder": "repeat1/path01",
+          "index": 7,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "folder": "repeat1/path04",
+          "index": 10,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 13,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "folder": "repeat2/path01",
+          "index": 13,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 16,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "folder": "repeat2/path04",
+          "index": 16,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 66.056519,
+          "kind": "done",
+          "seconds": 66.07210033299634,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 1000076,
+                "index": 1,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 1,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 11.05371891699906,
+                "worker_peak_rss_bytes": 186843136
+              },
+              {
+                "captures": 3,
+                "final_work": 1000057,
+                "index": 4,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 10.867787209004746,
+                "worker_peak_rss_bytes": 230440960
+              },
+              {
+                "captures": 3,
+                "final_work": 1000076,
+                "index": 7,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 1,
+                  "seed": 20261371
+                },
+                "repeat": 1,
+                "whole_path_seconds": 11.221015542003443,
+                "worker_peak_rss_bytes": 237895680
+              },
+              {
+                "captures": 3,
+                "final_work": 1000057,
+                "index": 10,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261373
+                },
+                "repeat": 1,
+                "whole_path_seconds": 10.90495979100524,
+                "worker_peak_rss_bytes": 238813184
+              },
+              {
+                "captures": 3,
+                "final_work": 1000076,
+                "index": 13,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 1,
+                  "seed": 20261371
+                },
+                "repeat": 2,
+                "whole_path_seconds": 11.163335290999385,
+                "worker_peak_rss_bytes": 238813184
+              },
+              {
+                "captures": 3,
+                "final_work": 1000057,
+                "index": 16,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261373
+                },
+                "repeat": 2,
+                "whole_path_seconds": 10.8535604159988,
+                "worker_peak_rss_bytes": 238813184
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 7418,
+      "slot": 1
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 7419,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "repeat0/path02",
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "repeat0/path05",
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "folder": "repeat1/path02",
+          "index": 8,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "folder": "repeat1/path05",
+          "index": 11,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "index": 14,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "folder": "repeat2/path02",
+          "index": 14,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "index": 17,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "folder": "repeat2/path05",
+          "index": 17,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "cpu_seconds": 66.260481,
+          "kind": "done",
+          "seconds": 66.27319912500388,
+          "summary": {
+            "slot": 2,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 1000068,
+                "index": 2,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 2,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 10.931774374999804,
+                "worker_peak_rss_bytes": 184598528
+              },
+              {
+                "captures": 3,
+                "final_work": 1000012,
+                "index": 5,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 11.10916120899492,
+                "worker_peak_rss_bytes": 231440384
+              },
+              {
+                "captures": 3,
+                "final_work": 1000068,
+                "index": 8,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 2,
+                  "seed": 20261372
+                },
+                "repeat": 1,
+                "whole_path_seconds": 10.979122332995757,
+                "worker_peak_rss_bytes": 239058944
+              },
+              {
+                "captures": 3,
+                "final_work": 1000012,
+                "index": 11,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 1,
+                "whole_path_seconds": 11.161593083001208,
+                "worker_peak_rss_bytes": 239075328
+              },
+              {
+                "captures": 3,
+                "final_work": 1000068,
+                "index": 14,
+                "path": {
+                  "arm": "texture_range_q8_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 2,
+                  "seed": 20261372
+                },
+                "repeat": 2,
+                "whole_path_seconds": 10.967877667004359,
+                "worker_peak_rss_bytes": 239075328
+              },
+              {
+                "captures": 3,
+                "final_work": 1000012,
+                "index": 17,
+                "path": {
+                  "arm": "q8_turn_exact_river",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 2,
+                "whole_path_seconds": 11.117913124995539,
+                "worker_peak_rss_bytes": 239075328
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 7419,
+      "slot": 2
+    }
+  ]
+}

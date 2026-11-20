@@ -7932,3 +7932,66 @@ stays negative at 3.566%/3.954% versus fixed 1%/2.5% limits. Next: publish
 and verify the new receipt, complete evidence-head CI and review, then
 history-preserving PR merge if eligible. No new training started. Codex
 assisted; human hands-on time not recorded.
+
+PR #98 final evidence-head [CI 44701038807](https://github.com/jimmy-sim/poker-ai/actions/runs/44701038807)
+passed both Python jobs and hooks on November 20. A recorded self-review
+checked the frozen config/cohort, nine stage archives, retained failed
+receipt, source pins, serial local roles and the negative scientific report;
+it is not independent review. The PR was history-merged as
+`702bce9658209b2cc653e31f5884e5ae8e2ef918`. The failed 1%/2.5%
+medium/dry gates and original concurrent fixture failures remain recorded.
+The [new prospective protocol](medium-dry-training-budget.md) asks whether
+the unchanged candidate reaches those limits with a fixed longer budget
+while still beating a matched-work control. It fixes the known spot, seeds,
+10m/30m/100m checkpoints, diagnostics, thresholds, compute caps and
+publication order before new measurements. No proof, profile or training
+has begun. Codex assisted; human hands-on time not recorded.
+
+On November 20 (PST), the isolated PR #99 source for the prospectively fixed
+medium/dry 10m/30m/100m training-budget study was tested at `7fe07e7`. The
+first local attempt at `1c3004d` stopped at base 3.11 test 22% after review
+found an unpinned historical decision helper; its partial log is retained.
+The decoder was moved into the isolated adapter, with a focused equality
+regression. Corrected exact-head serial base 3.11/3.12 each passed 5,724
+tests (73 skipped, 150 deselected) and Ruff/format/strict mypy. Optional
+3.11 passed 2,589; optional 3.12 passed 2,587 with two expected skips;
+all source/runtime/lock/license guards and hooks passed. Hosted
+[CI 44713065490](https://github.com/jimmy-sim/poker-ai/actions/runs/44713065490)
+first passed 3.12 but cancelled 3.11 at the unchanged 35-minute limit during
+pytest 98%, with no assertion failure. The full official failed log was
+retained. One documented same-source software requalification passed 3.11
+and hooks under the same limit; both hosted jobs now pass. The
+[source archive](../results/medium-dry-training-budget/source-checks/manifest.json)
+binds the failed and passing attempts. Next: publish/verify that receipt,
+then one capped synthetic proof. No profile, long training, reference audit
+or new poker-strength outcome yet. Codex assisted; human hands-on time
+not recorded.
+
+The one PR #99 synthetic own proof on November 20 (PST) completed on the
+qualified and published source. Its fictional signal game reached 720 charged
+node work, captured/replayed nine fixed readouts at 80/240/720, and exited
+zero in 0.312 seconds command wall time versus the 180-second cap. The
+[21-member archive](../results/medium-dry-training-budget/own-proof/manifest.json)
+retains snapshots, mass, events, runtime and launcher measurement. This is a
+software proof only, not a new poker-strength result. Next: publish and
+byte-verify the proof before any 1m medium/dry profile. Codex assisted;
+human hands-on time not recorded.
+
+The one fixed PR #99 18-path 1m profile ran on November 20 (PST) after the
+published and GitHub-byte-verified proof. All six arm/seed paths × three
+repeats completed 54 captures/replays in 66.369 seconds (<900); all three
+workers exited zero. Actual final path work was 1,000,012–1,000,092;
+maximum recorded worker high-water RSS was 239,075,328 bytes. The
+predeclared maximum-of-three extrapolation gave fixed worker sums
+2213.346/2212.450/2213.983 seconds, `T=2213.983`, and strict bound
+`2*(2*T+600)=10055.934`, which **fails** the 7,200-second admission cap.
+An independent data-only calculation matched. The complete
+[failed-gate archive](../results/medium-dry-training-budget/profile-failure/manifest.json)
+retains every raw path, forecast, failure and log. Stop this experiment:
+no separate admission, 100m training, native audit or final paired strength
+result. Poker-strength classification is **inconclusive** because compute
+admission failed; the compute gate itself is a clear rejection. The older
+PR #98 10m negative result remains unchanged. Next: publish/verify the
+failed evidence and save a safe handoff; any distinct follow-up needs its
+own prospective question and protocol. Codex assisted; human hands-on time
+not recorded.

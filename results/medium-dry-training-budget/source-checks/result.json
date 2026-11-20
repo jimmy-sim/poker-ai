@@ -1,0 +1,73 @@
+{
+  "failed_hosted_attempt": "hosted-failed.json",
+  "failed_hosted_status": "cancelled_at_unchanged_35_minute_job_limit_during_pytest_98_percent",
+  "first_archive_packaging_failure": "packaging-failure.json",
+  "historical_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    }
+  ],
+  "hosted_run": 44713065490,
+  "interrupted_first_attempt": "first-interrupted/interrupted.json",
+  "local_roles": [
+    {
+      "elapsed_seconds": 808.0231694579998,
+      "failure": null,
+      "head": "7fe07e763619806515505c2111180411821ab539",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 811.211705624999,
+      "failure": null,
+      "head": "7fe07e763619806515505c2111180411821ab539",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 528.9167969170085,
+      "failure": null,
+      "head": "7fe07e763619806515505c2111180411821ab539",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 80
+    },
+    {
+      "elapsed_seconds": 438.94283195899334,
+      "failure": null,
+      "head": "7fe07e763619806515505c2111180411821ab539",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 80
+    }
+  ],
+  "scientific_measurements_started": false,
+  "source_fingerprint": "60ee266a4d644e748008ab77812a413380a9bd1b3d67238b6bb69da46e029217",
+  "status": "source_qualified",
+  "tested_head": "7fe07e763619806515505c2111180411821ab539"
+}

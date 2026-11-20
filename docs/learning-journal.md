@@ -8411,3 +8411,63 @@ decision:** publish/verify this software receipt and review PR #98; only
 after its eligible merge may a separately preregistered unchanged-candidate
 training-budget study begin. Codex assisted; human hands-on time was not
 recorded.
+
+**November 20 PR #98 merge and longer-work question.** The question is
+whether extra training work reduces the remaining medium/dry best-response
+gain enough for the unchanged river candidate to satisfy the historical
+absolute strength limits. Final hosted CI and a documented self-review
+supported a history-preserving merge of PR #98; its negative poker result and
+old failed concurrent fixture logs remain intact. **Example:** the saved
+policy's three leading turn decision rows explain 22.79% of its remaining
+mean exploitability, yet the river supplies 75.51% in aggregate. More work
+might reduce either, but those earlier checkpoints cannot establish that.
+The [prospective budget plan](medium-dry-training-budget.md) fixes both arms
+at matched 10m/30m/100m work, all three seeds, those turn rows and aggregate
+river readouts, plus conservative admission before longer training. **Next
+decision:** publish the plan, qualify isolated source, then follow its gates;
+no new strength outcome is available. Codex assisted; human hands-on time
+was not recorded.
+
+**November 20 isolated longer-work source qualification.** The question was
+whether a new fixed-budget runner can reuse the unchanged river trainer while
+keeping historical source dependencies pinned. An initial report helper import
+left a source dependency outside the new fingerprint; it was corrected before
+any new policy measurement, and the interrupted local test log remains.
+**Example:** the report now decodes acting-seat cards, board and legal moves
+in its own module for the three preselected turn rows, with a focused
+comparison to the saved diagnosis. Corrected local base/optional suites,
+strict typing, hooks and pinned licenses passed. Hosted 3.11 first hit the
+unchanged 35-minute limit at pytest 98%; its retained log shows distributed
+slowdown, not an assertion failure. One documented same-source software
+requalification then passed both hosted Python jobs and hooks. The
+[source evidence](../results/medium-dry-training-budget/source-checks/manifest.json)
+retains both outcomes. **Next decision:** publish and verify this qualification
+checkpoint before the synthetic proof; no new poker-strength conclusion is
+available. Codex assisted; human hands-on time was not recorded.
+
+**November 20 synthetic own proof.** The question was whether the fixed
+capture and replay path works on a small known-answer fictional game before
+spending the longer medium/dry training budget. All nine declared readouts
+were saved and replayed at 80, 240 and 720 charged node work; the command
+completed in 0.312 seconds, below its 180-second cap. **Example:** this
+fixture exercises saved current and both average policies without providing
+a Hold'em strength estimate. The [raw proof](../results/medium-dry-training-budget/own-proof/manifest.json)
+retains hashes and runtime provenance. **Next decision:** publish and verify
+those bytes, then run only the predeclared 18-path 1m compute profile. Codex
+assisted; human hands-on time was not recorded.
+
+**November 20 longer-work compute gate: rejected.** The question was
+whether the unchanged river candidate could be tested at 100m matched work
+under the frozen conservative compute limit. All 18 predeclared 1m profile
+paths and 54 captures completed in 66.369 seconds, but the slowest-repeat
+forecast produced `T=2213.983` seconds and bound `10055.934`, above the
+`7200`-second cap. **Example:** the forecast deliberately scales complete
+construction-through-replay path time and then doubles its fixed-worker
+bound with overhead; a shorter observed profile does not waive that rule.
+The [raw failed gate](../results/medium-dry-training-budget/profile-failure/manifest.json)
+retains all worker outputs and the independently checked calculation.
+**Next decision:** stop this experiment without 100m training or a native
+comparison. Its 100m poker-strength effect is inconclusive, while the
+compute admission failed. A separate research question would need a new
+prospective protocol; the prior 10m negative result is unchanged. Codex
+assisted; human hands-on time was not recorded.
