@@ -7878,3 +7878,22 @@ This is a source check, not a repair or repetition of the prior failed final
 qualification. Next: publish this tested source, require hosted CI, then run
 the one 900-second saved-policy diagnostic. No node ranking has started.
 Codex assisted; human hands-on time not recorded.
+
+The diagnostic source checkpoint `f2533eab52b6910313e23ab69430865fb2fc90f3`
+passed hosted [CI run 44680486302](https://github.com/jimmy-sim/poker-ai/actions/runs/44680486302)
+on Python 3.11 and 3.12 before measurement. The one fixed read-only run then
+completed all 12 saved policies and 24 seat traces in 7.170 seconds under its
+900-second whole-process cap. The [raw diagnosis](../results/river-generalization/diagnosis/manifest.json)
+retains 12 compressed full-row traces, events, report and launcher receipt.
+Worst exact additive accounting error was `1.155e-14` chips and native scalar
+error `1.421e-14` (<`1e-9`); all saved scores, hashes and source pins matched.
+The [interpretation](river-generalization-diagnosis-report.md) finds no
+candidate information collision on this 3,336-row finite spot. Three turn
+rows contribute 0.301718 of 1.323959 mean chips; river rows contribute
+0.999712 chips collectively. Candidate mean exploitability declined from
+33.4855 to 4.8448 to 1.3240 chips across the fixed 100k/1m/10m snapshots,
+consistent with but not proving unfinished convergence. The original
+medium/dry acceptance result stays negative and the earlier final local
+base qualification remains incomplete. Next: publish/verify this report,
+leave PR #98 draft, and stop without a new experiment or promotion. Codex
+assisted; human hands-on time not recorded.

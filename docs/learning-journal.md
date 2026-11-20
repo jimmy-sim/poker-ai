@@ -195,6 +195,17 @@ next priority is a prospective river-strength experiment, as Jimmy directed
 on November 18.
 Earlier failures and their original conditions stay in the entries below.
 
+The latest [medium/dry saved-policy diagnosis](river-generalization-diagnosis-report.md)
+in draft PR #98 is complete. The candidate comparison remains **negative**:
+the 3.566% median and 3.954% worst medium/dry exploitabilities missed the
+fixed 1%/2.5% gates, and the earlier final local qualification timeouts
+remain unresolved. The diagnostic finds 3,336 exact and candidate information
+rows with no turn or river collisions on this finite spot. Three high-reach
+turn decisions account for 22.79% of remaining mean exploitability, while
+many smaller river decisions account for 75.51% in total. Saved checkpoints
+suggest continued training/convergence effects but cannot establish that
+more work reaches the gate. No new training or default promotion followed.
+
 Three useful reading paths:
 
 - **What information is missing?** Start with the [river distinction example](river-distinction-diagnosis.md), then [the compact learning test](#101-test-the-smaller-description-at-the-same-learning-work).
@@ -8346,3 +8357,22 @@ fingerprint is unchanged. **Next decision:** publish this tested source,
 check hosted CI, then execute the single capped read-only run. The negative
 strength gate and incomplete earlier final local qualification persist.
 Codex assisted; human hands-on time was not recorded.
+
+**November 19 one saved-policy weakness diagnosis.** The question was which
+specific decisions explain the failed medium/dry absolute strength gate.
+The [read-only report](river-generalization-diagnosis-report.md) accounts for
+all 12 fixed policies and both responding seats in 7.170 seconds, with
+worst additive accounting error `1.16e-14` chips and independent scalar
+error `1.43e-14` chips, below `1e-9`. **Example:** with `3s 7h` on
+`2s 6h Jc 3c`, the seed-20261371 saved strategy folds about 65.20% facing
+a turn bet. Against its fixed saved opponent, calling has value `-17.270`
+chips with an optimized later reply versus `-18.000` for folding, yet the
+saved-continuation call value is `-18.909`. That distinction explains why a
+one-action local score is not the additive best-response loss. The three
+highest turn rows supply 22.79% of the final candidate's mean remaining
+exploitability; river rows collectively supply 75.51%. No candidate turn or
+river key collision exists in this finite spot. **Next decision:** stop and
+seek authorization for a separately preregistered, bounded unchanged-
+representation convergence test if desired. The parent negative gate and
+retained failed final local qualification do not change. Codex assisted;
+human hands-on time was not recorded.
