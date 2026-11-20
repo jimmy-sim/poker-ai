@@ -9,7 +9,6 @@ from typing import Any
 import numpy as np
 from river_generalization.capture import replay_path
 from river_generalization.learning import context
-from river_generalization_diagnosis.analysis import row_identity
 
 from medium_dry_budget.gate import (
     GAME,
@@ -23,13 +22,39 @@ from medium_dry_budget.gate import (
     require_stage,
 )
 from medium_dry_budget.study import save
+from poker_ai.cards import format_card
 from poker_ai.postflop.controlled_checkpoints import read_snapshot
 from poker_ai.postflop.matrix import MatrixTree
 from poker_ai.postflop.reply_trace import trace_losses
+from poker_ai.training.no_limit import NoLimitState
 
 TOP_TURN = (2443, 1596, 14)
 READOUTS = ("current", "uniform_average", "linear_average")
 TOLERANCE = 1e-9
+
+
+def row_identity(tree: MatrixTree, info: int) -> dict[str, Any]:
+    """Describe an exact decision using only acting-seat visible information."""
+    state = tree.source.states[tree.source.representatives[info]]
+    if state.dealer is None:
+        raise ArithmeticError("exact decision lacks dealer state")
+    observation = state.dealer.observe(state.actor)
+    decoder = NoLimitState(state.dealer, tree.source.spot.rules)
+    actions = []
+    for action in tree.actions[info]:
+        move = decoder.decode(action)
+        actions.append(
+            move.kind.value + ("" if move.amount is None else f" {move.amount}")
+        )
+    return dict(
+        exact_info=info,
+        seat=observation.seat,
+        street="TURN" if len(observation.board) == 4 else "RIVER",
+        hole=[format_card(card) for card in observation.hole_cards],
+        board=[format_card(card) for card in observation.board],
+        pot_chips=observation.pot,
+        legal_actions=actions,
+    )
 
 
 def decision(cases: list[dict[str, Any]]) -> dict[str, Any]:

@@ -10,9 +10,15 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from medium_dry_budget.forecast import forecast  # noqa: E402
-from medium_dry_budget.gate import WORK, paths  # noqa: E402
-from medium_dry_budget.report import decision  # noqa: E402
+from medium_dry_budget.gate import GAME, WORK, paths  # noqa: E402
+from medium_dry_budget.report import TOP_TURN, decision, row_identity  # noqa: E402
 from medium_dry_budget.study import run_stage  # noqa: E402
+from river_generalization.learning import context  # noqa: E402
+from river_generalization_diagnosis.analysis import (  # noqa: E402
+    row_identity as historical_row_identity,
+)
+
+from poker_ai.postflop.matrix import MatrixTree  # noqa: E402
 
 
 def profile_record(slow: float = 2.0) -> dict[str, Any]:
@@ -114,3 +120,15 @@ def test_source_gate_precedes_toy_output(
     assert (output / "toy/summary.json").is_file()
     with pytest.raises(FileExistsError):
         run_stage("proof", tmp_path, output)
+
+
+def test_fixed_turn_rows_use_the_original_observable_decisions() -> None:
+    exact = context(
+        Path(__file__).resolve().parents[1], GAME, "texture_range_q8_b8"
+    ).exact
+    assert isinstance(exact, MatrixTree)
+    for info in TOP_TURN:
+        identity = row_identity(exact, info)
+        assert identity == historical_row_identity(exact, info)
+        assert identity["street"] == "TURN"
+        assert len(identity["board"]) == 4
