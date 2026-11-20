@@ -7804,3 +7804,12 @@ constructing a learner or reference. The
 [admission receipt](../results/river-generalization/admission/manifest.json)
 records the decision. Next: publish and verify it before the single fixed
 12-path 10m own study. Codex assisted; human hands-on time not recorded.
+
+The one admitted 12-path fixed own study completed on November 19 (PST) in
+287.150 seconds including startup (<7200). All 108 readouts were saved;
+final actual node work ranged 10,000,010–10,000,164, and recorded recall
+violations were zero. The [own raw archive](../results/river-generalization/own/manifest.json)
+retains policies, masses, events, scores and path times. Next: publish and
+GitHub-byte-verify every own blob before constructing the comparison-only
+OpenSpiel audit. No strength conclusion yet. Codex assisted; human hands-on
+time not recorded.

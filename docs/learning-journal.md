@@ -8255,3 +8255,17 @@ binds the published profile and source. **Next decision:** publish and byte
 verify this receipt, then run the single fixed 10m own study. This is compute
 admission, not a poker-strength conclusion. Codex assisted; human hands-on
 time was not recorded.
+
+**November 19 fixed own learning.** The question was whether both unchanged
+representation arms could complete the declared matched-work grid on the two
+frozen new inputs without a compute or recall failure. The single 12-path
+study saved all 108 readouts in 287.150 seconds including startup; every path
+crossed 10m node work and the final actual work range was
+10,000,010–10,000,164, with zero recorded structural recall violations.
+**Example:** a label is saved at its first complete iteration, so a 10m
+readout can have a small documented overshoot. The
+[own raw archive](../results/river-generalization/own/manifest.json)
+retains policies and scores. **Next decision:** publish and verify all own
+values before independent native scalar comparison. Own scores alone do not
+establish the preregistered result. Codex assisted; human hands-on time was
+not recorded.

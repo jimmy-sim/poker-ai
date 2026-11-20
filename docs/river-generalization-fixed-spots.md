@@ -147,3 +147,14 @@ data-only admission reader recomputed the same complete-profile forecast:
 [admission receipt](../results/river-generalization/admission/manifest.json)
 binds this decision to the published source and profile. Next: publish and
 verify this separate receipt before one fixed 12-path 10m own study.
+
+## Fixed own learning checkpoint
+
+The single admitted 12-path study completed all 108 fixed readouts in
+287.150 seconds including startup (<7200). Each path reached 10m node work;
+final actual work ranged from 10,000,010 to 10,000,164, with zero saved
+structural-recall violations. The [own raw archive](../results/river-generalization/own/manifest.json)
+retains every policy snapshot, mass history, event, own score and whole-path
+time. Own scores have not entered a final comparison; no reference was
+constructed. Next: publish and GitHub-byte-verify all own raw blobs before
+the comparison-only pinned native scalar audit.
