@@ -8218,3 +8218,15 @@ binds the exact source and raw logs. **Next decision:** publish and byte verify
 this qualification, then run the capped fictional-game own proof. There is
 no river-strength result yet. Codex assisted; human hands-on time was not
 recorded.
+
+**November 19 bounded own proof.** The question was whether the new isolated
+runner can save and replay all three policy readouts at each fixed crossing
+without a native reference or new poker spot. It completed nine fictional
+signal-game readouts at 80, 240 and 720 work, with final work 720 and 0.270
+seconds including startup, under the 180-second cap. **Example:** the saved
+warm, uniform and linear masses replayed with their snapshots; the proof
+checks the evidence path, not which representation plays better. The
+[archive](../results/river-generalization/own-proof/manifest.json) binds the
+qualified source. **Next decision:** publish and verify every proof blob, then
+run the 36-path fixed compute profile. Codex assisted; human hands-on time was
+not recorded.

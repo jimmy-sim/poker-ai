@@ -115,3 +115,13 @@ passed both Python jobs, including hooks. The
 retains local logs, guards and official hosted metadata/logs. No real policy,
 profile or outcome has been collected. Next: publish and byte verify this
 receipt, then run the capped synthetic own proof.
+
+## Synthetic own proof
+
+The one fictional signal-game proof completed and replayed all nine fixed
+capture/readout combinations at work labels 80, 240 and 720. It reached 720
+node work in 0.270 seconds including runner startup, below the 180-second
+stage cap. The [own proof archive](../results/river-generalization/own-proof/manifest.json)
+retains policy, mass, events and replay evidence bound to the qualified source.
+It is a software check, not a new-spot strength measurement. Next: publish
+and GitHub-byte-verify all proof members before the real 100k profile.

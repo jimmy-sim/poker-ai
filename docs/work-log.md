@@ -7778,3 +7778,11 @@ passed. The [qualification receipt](../results/river-generalization/source-check
 retains logs and scope. Next: publish and GitHub-byte-verify this gate, then
 run a synthetic own proof; no real trajectories yet. Codex assisted; human
 hands-on time not recorded.
+
+The single qualified-source fictional-game own proof completed on November
+19 (PST): nine saved readouts at labels 80/240/720, final actual work 720,
+0.270 seconds including startup (<180). Capture/replay succeeded and the
+[raw proof archive](../results/river-generalization/own-proof/manifest.json)
+retains every policy, mass and event. No new-spot outcome yet. Next: publish
+and GitHub-byte-verify the proof before the 36-path 100k compute profile.
+Codex assisted; human hands-on time not recorded.
