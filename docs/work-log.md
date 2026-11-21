@@ -37,6 +37,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   test fixture directory error was corrected; no scientific job ran.
   Full exact-source qualification remains pending. Codex assisted; human
   hands-on time not recorded.
+- **One frozen cohort, still before outcomes:** source checkpoint `984ba8a`
+  and its hosted Python 3.11/3.12 CI passed; full pre-cohort local base3.11
+  passed 5,746 tests/73 skips/150 deselections, Ruff, format and strict
+  mypy. The one fixed PCG64 selector wrote four legal
+  [spot inputs and hash freeze](../configs/river-uniform-readout-freeze.json)
+  with structural attempts 13/5/1/11. A read-only independent check passed
+  all file hashes, disjoint cards, weighted ranges, positions and exclusion
+  of all 15 prior rank signatures. No game tree, policy, score or profile was
+  built. Next: publish/verify this cohort, pin its commit and qualify exact
+  source. Codex assisted; human hands-on time not recorded.
 
 ## 2026-11-17 — Close allowance correction; plan nested archive measurement
 

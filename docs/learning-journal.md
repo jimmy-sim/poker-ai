@@ -8730,6 +8730,20 @@ error was fixed. No new poker outcome, profile or training job exists.
 once, then finish exact-source qualification before any real trajectory.
 Codex assisted; human hands-on time was not recorded.
 
+**November 20 one-time structural cohort.** The fixed PCG64 selection
+produced two dry medium/OOP, one wet medium/OOP and one wet low/IP board and
+range input, on public templates already known from prior work. **Example:**
+the first dry board is `Ad 4h 9c 3c`; its flop ranks are separated by at
+least three, and its signature differs from all tracked earlier spots.
+The [freeze](../configs/river-uniform-readout-freeze.json) records all four
+input bytes, structural attempts 13/5/1/11 and source hashes. A separate
+read-only check verified hashes, disjoint physical cards, weighted ranges,
+seat positions and novelty against 15 known signatures. These are new input
+cards, not unseen betting templates or evidence of stronger play. No game
+tree, policy or exploitability score was measured. **Next decision:** publish
+the cohort, then bind final source and complete exact-source qualification.
+Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
