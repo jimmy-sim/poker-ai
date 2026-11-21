@@ -46,6 +46,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   below its 180-second cap. This is a software proof, not poker evidence.
   Next: publish and GitHub-byte-verify the proof before the fixed profile.
   Codex assisted; human hands-on time was not recorded.
+- **Fixed profile and stop:** [proof archive](../results/river-uniform-readout/own-proof/manifest.json)
+  was pushed and all 28 GitHub files byte-verified. One profile completed all
+  36 fixed 100k-work paths/three repeats in 54.230126 seconds, below its
+  900-second cap. The predeclared conservative calculation gave
+  `T=1921.279151` and `2*(2*T+600)=8885.116605` seconds, above the strict
+  7200-second own-run cap by 1685.116605 seconds. The unchanged forecast was
+  reproduced from the complete raw record. The
+  [retained result](river-uniform-readout-result.md) is a **rejected compute
+  admission and inconclusive poker-strength comparison**. No separate
+  admission, 10m study, reference audit or default change; no scientific
+  retry. Next: publish raw failure and report, then complete appropriate
+  final qualification/review. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-20 — PR #101 merge and prospective average-readout panel
 

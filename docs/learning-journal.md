@@ -8785,6 +8785,22 @@ checks the program path, not whether either readout plays poker better.
 100k-work profile and separate compute admission. Codex assisted; human
 hands-on time was not recorded.
 
+**November 21 fixed profile rejected the long comparison.** The planned
+three repeats of every spot/seed path completed at 100k node work, with the
+same saved uniform and linear averages on each path. The conservative rule
+uses the slowest scaled repeat per path and the slowest fixed worker sum;
+that forecast was 8,885.12 seconds against a strict 7,200-second cap.
+**Example:** a 6-second 100k path becomes about 600 seconds when the rule
+scales its entire construction, learning, scoring and replay to 10m work.
+This is deliberately cautious, and the fixed cap rejects this long run.
+The [raw profile and report](river-uniform-readout-result.md) preserve all
+36 paths, the rejected forecast and the failure receipt. No 10m policy or
+paired exploitability result exists, so the poker-strength conclusion is
+**inconclusive**, not an improvement or regression. **Next decision:** close
+this experiment with its failed gate intact; a different question would
+need its own published protocol. Codex assisted; human hands-on time was not
+recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

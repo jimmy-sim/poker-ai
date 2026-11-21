@@ -54,8 +54,13 @@ The [prospective diagnostic detail](river-uniform-readout-diagnostic-addendum.md
 fixes control-only row ranking and a 900-second saved-policy trace cap before
 selection; it changes no outcome criterion.
 The one [structurally selected cohort](../configs/river-uniform-readout-freeze.json)
-is frozen before any game-tree, policy or score measurement; no poker-strength
-outcome is yet available.
+was frozen before any game-tree, policy or score measurement. Its
+[fixed profile](river-uniform-readout-result.md) completed all 36 prescribed
+100k-work paths, but the conservative 10m forecast was **8,885.117 seconds**
+against the **7,200-second** cap. The compute gate rejected the longer run;
+the uniform-versus-linear poker-strength comparison is **inconclusive**.
+No 10m study, reference audit or default promotion occurred. A next question
+requires a distinct prospective protocol supported by this failure.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
