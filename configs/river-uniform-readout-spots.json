@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "scope": "four structurally selected card/range inputs on known public templates; independent B4 paths; no unseen-template, zero-shot, global or default-agent claim",
+  "selection_seed": 20261410,
+  "maximum_selection_attempts_per_spot": 10000,
+  "known_spot_directories": [
+    "configs/learning-spots",
+    "configs/fresh-spots",
+    "configs/spots",
+    "configs/river-generalization-spots"
+  ],
+  "novelty_rule": "reject any existing or already selected (sorted flop ranks, turn rank) signature regardless of suits; never select by tree size, strategy, exploitability or reference value",
+  "board_rules": {
+    "wet": "four distinct board ranks; three distinct flop ranks within span four and exactly two flop suits",
+    "dry": "four distinct board ranks; three flop ranks pairwise separated by at least three and three distinct flop suits"
+  },
+  "range_rule": "after each accepted board draw eight distinct remaining cards without replacement for two physical combos per seat, then four independent integer weights 1..3",
+  "strata": [
+    {"name": "uniform_medium_dry_oop_a", "texture": "dry", "position": "oop", "template": "configs/learning-spots/dev_medium_oop.json"},
+    {"name": "uniform_medium_dry_oop_b", "texture": "dry", "position": "oop", "template": "configs/learning-spots/dev_medium_oop.json"},
+    {"name": "uniform_medium_wet_oop", "texture": "wet", "position": "oop", "template": "configs/fresh-spots/fresh_medium_wet_oop.json"},
+    {"name": "uniform_low_wet_ip", "texture": "wet", "position": "ip", "template": "configs/learning-spots/heldout_low_oop.json"}
+  ],
+  "spot_directory": "configs/river-uniform-readout-spots",
+  "freeze_file": "configs/river-uniform-readout-freeze.json",
+  "maximum_tree_nodes": 200000,
+  "input_sha256": {
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/fresh-spots/fresh_medium_wet_oop.json": "a36e1b1eba445c2d9e0a02ba591842ef4ae49634ae08828a01ec91dc9b221326",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "configs/own-opponent-learning.json": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "representation": "q8_turn_exact_river",
+  "seeds": [20261411, 20261412, 20261413],
+  "training": {
+    "sampler": "IID B4 external sampling",
+    "batch_size": 4,
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "average_weight": "linear",
+    "initialization": "one exact uniform iteration charged to node work",
+    "target_order": [0, 1],
+    "readouts": ["current", "uniform_average", "linear_average"],
+    "control": "linear_average",
+    "candidate": "uniform_average",
+    "node_work_labels": [100000, 1000000, 10000000],
+    "crossing": "first complete iteration at or above label, including initialization and overshoot",
+    "paths": 12,
+    "logical_profiles": 108,
+    "worker_count": 3,
+    "start_method": "spawn",
+    "assignment": "fixed path order, index modulo three"
+  },
+  "metrics": [
+    "exact_restricted_game_exploitability_chips_and_fraction_initial_pot",
+    "all_twelve_final_uniform_minus_linear_paired_seed_differences",
+    "per_stratum_median_and_worst",
+    "all_checkpoint_readout_scores",
+    "positive_average_uniform_reach_coverage",
+    "post_initial_river_visit_coverage",
+    "recall_violations",
+    "information_rows_and_four_float64_table_bytes",
+    "actual_node_work_and_overshoot",
+    "whole_path_wall_seconds_and_peak_rss",
+    "top_three_control_additive_best_response_contributions_per_turn_and_river_with_same_candidate_nodes"
+  ],
+  "historical_quality_gates": {
+    "median_exploitability_fraction_initial_pot": 0.01,
+    "worst_exploitability_fraction_initial_pot": 0.025,
+    "minimum_positive_average_coverage": 0.95,
+    "maximum_recall_violations": 0
+  },
+  "decision": {
+    "positive": "both medium/dry stratum paired medians <= -0.001 initial pots; each wet guard stratum paired median <= +0.001; candidate passes every historical absolute quality gate in every stratum",
+    "negative": "any candidate absolute gate fails, either medium/dry median >= +0.001, or either wet guard median > +0.001 initial pots",
+    "inconclusive": "all other complete outcomes; failed source, compute or numerical gate stops with retained evidence",
+    "control": "apply and report historical absolute quality gates separately"
+  },
+  "tolerance_chips": 1e-9,
+  "tolerance_unitless": 1e-12,
+  "budgets_seconds": {"small_own_proof": 180, "complete_profile": 900, "profile_overhead": 600, "whole_own": 7200, "native_audit": 900, "failure_save": 120},
+  "profile": {
+    "repetitions": 3,
+    "path_node_work_label": 100000,
+    "paths": 36,
+    "per_path_clock": "whole path from context construction through capture, own scoring and replay",
+    "extrapolation": "for each of 12 paths take maximum over three repeats of whole_path_seconds * (10000000 / actual_final_node_work)",
+    "worker_sum": "fixed path-index modulo-three sums, T=max of three",
+    "admission": "all 36 paths complete under 900s and strict 2*(2*T+600)<7200, no favorable retry"
+  },
+  "publication": "protocol before selection; cohort freeze before outcomes; qualified exact source and hosted checks before proof; published/verified proof before profile; published profile and separate admission before own; published/verified own raw before native audit; final exact-source local/optional/hosted checks",
+  "reference": "pinned OpenSpiel 2.0.2 Apache-2.0 license, scalar-only comparison after own publication, 1e-9 chips; no reference strategy or training input"
+}

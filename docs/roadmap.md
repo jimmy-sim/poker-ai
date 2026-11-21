@@ -45,9 +45,22 @@ PR #100 B4 controls. Its one fixed 10m run on the two known spots is
 initial pots miss the unchanged 0.01/0.025 gates, with paired median
 +0.001098. Low/wet's absolute gate passes but paired median is slightly
 worse. Own raw policies preceded the pinned comparison-only audit. PR #101
-remains in final qualification; no default is promoted. The next research
-question should follow the completed review and be distinct from another
-B1 attempt on these outcomes.
+was history-merged after final local/hosted qualification and solo review;
+post-merge main CI remains separately tracked. No default is promoted. The
+next [prospective average-readout question](river-uniform-readout-spots.md)
+compares two policy averages of the same unchanged B4 signed path on a fixed
+structurally selected card/range cohort. It is distinct from another B1 attempt.
+The [prospective diagnostic detail](river-uniform-readout-diagnostic-addendum.md)
+fixes control-only row ranking and a 900-second saved-policy trace cap before
+selection; it changes no outcome criterion.
+The one [structurally selected cohort](../configs/river-uniform-readout-freeze.json)
+was frozen before any game-tree, policy or score measurement. Its
+[fixed profile](river-uniform-readout-result.md) completed all 36 prescribed
+100k-work paths, but the conservative 10m forecast was **8,885.117 seconds**
+against the **7,200-second** cap. The compute gate rejected the longer run;
+the uniform-versus-linear poker-strength comparison is **inconclusive**.
+No 10m study, reference audit or default promotion occurred. A next question
+requires a distinct prospective protocol supported by this failure.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

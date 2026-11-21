@@ -1,0 +1,78 @@
+{
+  "b1_fingerprint": "64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd",
+  "clipped_fingerprint": "7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab",
+  "cohort_commit": "df8466783601d0e2885f05e12b019d91e6642b1f",
+  "first_optional312": "optional312-first-failed.json",
+  "historical_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "hook_setup_failures": [
+    "hooks.json",
+    "hooks-requalification.json"
+  ],
+  "hooks": "passed_after_two_setup_failures",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    }
+  ],
+  "hosted_run": 44882130314,
+  "local_roles": [
+    {
+      "elapsed_seconds": 806.7463790000184,
+      "failure": null,
+      "head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 786.3241462910082,
+      "failure": null,
+      "head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "elapsed_seconds": 529.2584167080058,
+      "failure": null,
+      "head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "elapsed_seconds": 717.498563125002,
+      "failure": null,
+      "head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "retained_first_guard_failure": "cohort-pin-first-failure.json",
+  "scientific_measurements_started": false,
+  "source_fingerprint": "a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6",
+  "status": "source_qualified",
+  "tested_head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9"
+}

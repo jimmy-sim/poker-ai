@@ -7285,32 +7285,6 @@ cost report and two-runtime export checks. The failed forecast, accuracy and
 context-copy gates are unchanged. Codex assisted with execution and writing;
 human hands-on time was not recorded.
 
-### November 18: locate current CPU in receipt prerequisites
-
-**Question:** within the earlier archive read, how much current parent CPU is
-spent reloading prerequisites for six saved report checks?
-
-**Change and example:** no gameplay or validation path changed. A data-only
-report reads the public raw pair and separates the six nested prerequisite
-loads from the one direct load. For example, the first cost read uses 25.227
-parent CPU seconds in the six nested loads and 4.162 in the direct load; these
-are separate exclusive pieces of a 30.337-second archive root. The 25.227 is
-not a promised saving, because a safe reuse has not been proved.
-
-**Checks and result:** the [report and both figures](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
-come from the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
-Both actual runtimes regenerate all five report files byte for byte with 109
-numerical execution paths blocked, zero forbidden calls and unchanged raw
-inputs. The second cost read uses 25.360 parent CPU seconds in nested loads and
-4.202 in the direct load, within a 30.667-second archive root. The complete
-cost reads use 136.472/137.320 parent CPU seconds; much work remains outside
-this selected root. Parent, reaped-child and worker clocks are kept separate.
-The single observed arm being quicker in wall time does not establish a speedup.
-
-**Next decision:** prospectively check identical inputs, mutation isolation and
-work-counter identity before considering reuse. The prior forecast, accuracy
-and full-context-copy gates remain failed. Codex assisted with the report,
-checks and figure inspection; human hands-on time was not recorded.
 
 
 ### November 18: finish the exact-head qualification
@@ -8726,3 +8700,142 @@ reproducible; it does not turn it into a positive result. **Next decision:**
 publish/verify the receipt, review and merge PR #101 if eligible, then
 choose a distinct prospectively registered question. Codex assisted;
 human hands-on time was not recorded.
+
+**November 20 PR #101 merge and next question.** The negative B1 test was
+history-merged after its required checks; it did not change the default.
+The next question is whether a different *readout* of an unchanged B4
+training path makes better decisions across structurally selected card/range
+inputs. A uniform average weights sampled iterations equally; a linear
+average weights later iterations more. **Example:** a saved policy can have
+both averages at the same 10m node-work checkpoint, so their comparison
+does not spend different training work. Earlier known inputs show mixed
+directions and only motivate the [prospective panel](river-uniform-readout-spots.md);
+they are not its result. No new panel case or score exists at this entry.
+**Next decision:** publish the fixed contract, then qualify isolated selection
+and scoring code before the one bounded experiment. Codex assisted; human
+hands-on time was not recorded.
+
+**November 20 isolated readout source, before spot selection.** The code
+freezes boards and ranges by the preregistered structural rule and uses the
+same signed B4 training path for both saved averages. **Example:** the
+reporter pairs the 10m uniform and linear rows with the same spot and seed;
+the candidate has no extra sampled work. The diagnostic ranks exact turn
+and river nodes using only the control's mean additive best-response gain,
+then shows both readouts at those nodes. Its
+[prospective detail](river-uniform-readout-diagnostic-addendum.md) was
+recorded before any cohort or score. Nine focused new/historical tests,
+Ruff, formatting and strict typing pass; an initial test fixture setup
+error was fixed. No new poker outcome, profile or training job exists.
+**Next decision:** publish the tested selection source, freeze the cohort
+once, then finish exact-source qualification before any real trajectory.
+Codex assisted; human hands-on time was not recorded.
+
+**November 20 one-time structural cohort.** The fixed PCG64 selection
+produced two dry medium/OOP, one wet medium/OOP and one wet low/IP board and
+range input, on public templates already known from prior work. **Example:**
+the first dry board is `Ad 4h 9c 3c`; its flop ranks are separated by at
+least three, and its signature differs from all tracked earlier spots.
+The [freeze](../configs/river-uniform-readout-freeze.json) records all four
+input bytes, structural attempts 13/5/1/11 and source hashes. A separate
+read-only check verified hashes, disjoint physical cards, weighted ranges,
+seat positions and novelty against 15 known signatures. These are new input
+cards, not unseen betting templates or evidence of stronger play. No game
+tree, policy or exploitability score was measured. **Next decision:** publish
+the cohort, then bind final source and complete exact-source qualification.
+Codex assisted; human hands-on time was not recorded.
+
+**November 20 frozen-cohort guard fix.** The first source guard rejected the
+published cohort even though its bytes were correct: it sorted frozen
+filenames but compared them with the unsorted planned order. This was a
+software bookkeeping error, before any poker outcome. **Example:** the
+alphabetical low/wet filename precedes the medium/dry names, while the
+protocol lists low/wet last. The isolated guard now sorts both sides; a
+regression test covers the fixed cohort. The failure receipt at
+`results/runs/river-uniform-readout-source-20261120/cohort-pin-first-failure.json`
+is retained locally. Each frozen tree constructed below the fixed 200,000
+node cap with zero abstract recall violations; no training or score ran.
+**Next decision:** publish the final source pin, then run exact-source
+qualification before proof. Codex assisted; human hands-on time was not
+recorded.
+
+**November 21 exact-source qualification.** The source checks cover the same
+frozen poker inputs before measuring any strategy. Both base Python versions,
+optional Python 3.11, and hosted Python 3.11/3.12 passed. The first optional
+Python 3.12 full suite timed out in a historical saved-profile child under
+its unchanged 120-second limit. A focused check passed, and one bounded full
+requalification passed all 2,595 tests with two expected skips at the same
+source and limit. **Example:** a passing repeat establishes that this suite
+can complete; it does not prove why the earlier child waited too long. The
+[source archive](../results/river-uniform-readout/source-checks/manifest.json)
+retains both full runs and the failed setup attempts before the all-file
+hooks passed. No candidate policy, score or poker-strength claim exists yet.
+**Next decision:** publish and verify the receipt, then run the fixed fictional
+proof and compute profile in protocol order. Codex assisted; human hands-on
+time was not recorded.
+
+**November 21 fictional readout proof.** A tiny fictional signal game ran the
+same capture and replay path as the planned poker comparison, recording both
+uniform and linear averages at three small work checkpoints. Nine captures
+replayed and 732 final node work finished in 9.28 seconds, inside the fixed
+180-second limit. The first launch had produced no game output because the
+sandbox denied uv-cache access; that setup log is retained in the [proof
+archive](../results/river-uniform-readout/own-proof/manifest.json). This
+checks the program path, not whether either readout plays poker better.
+**Next decision:** publish and verify the proof before the fixed 36-path
+100k-work profile and separate compute admission. Codex assisted; human
+hands-on time was not recorded.
+
+**November 21 fixed profile rejected the long comparison.** The planned
+three repeats of every spot/seed path completed at 100k node work, with the
+same saved uniform and linear averages on each path. The conservative rule
+uses the slowest scaled repeat per path and the slowest fixed worker sum;
+that forecast was 8,885.12 seconds against a strict 7,200-second cap.
+**Example:** a 6-second 100k path becomes about 600 seconds when the rule
+scales its entire construction, learning, scoring and replay to 10m work.
+This is deliberately cautious, and the fixed cap rejects this long run.
+The [raw profile and report](river-uniform-readout-result.md) preserve all
+36 paths, the rejected forecast and the failure receipt. No 10m policy or
+paired exploitability result exists, so the poker-strength conclusion is
+**inconclusive**, not an improvement or regression. **Next decision:** close
+this experiment with its failed gate intact; a different question would
+need its own published protocol. Codex assisted; human hands-on time was not
+recorded.
+
+**November 21 final rejected-result checks.** Both full base Python versions,
+both optional reference-enabled versions, all-file hooks and both hosted CI
+jobs passed at the report head. The final local guards also reread the
+published source, proof and rejected-profile archives and reproduced the
+same forecast. The [check receipt](../results/river-uniform-readout/final-checks/manifest.json)
+retains exact logs. **Example:** a passing optional Python 3.12 run verifies
+the report and source can still be checked with OpenSpiel installed; it does
+not turn an 8,885-second forecast into a run under the 7,200-second cap.
+**Next decision:** review and close PR #102 with its compute rejection and
+unknown poker-strength effect explicit. Codex assisted; human hands-on time
+was not recorded.
+
+### November 18: locate current CPU in receipt prerequisites
+
+**Question:** within the earlier archive read, how much current parent CPU is
+spent reloading prerequisites for six saved report checks?
+
+**Change and example:** no gameplay or validation path changed. A data-only
+report reads the public raw pair and separates the six nested prerequisite
+loads from the one direct load. For example, the first cost read uses 25.227
+parent CPU seconds in the six nested loads and 4.162 in the direct load; these
+are separate exclusive pieces of a 30.337-second archive root. The 25.227 is
+not a promised saving, because a safe reuse has not been proved.
+
+**Checks and result:** the [report and both figures](receipt-source-cpu.md#november-18-what-the-current-clocks-show)
+come from the [published raw pair](../results/receipt-source-cpu/pair-raw-manifest.json).
+Both actual runtimes regenerate all five report files byte for byte with 109
+numerical execution paths blocked, zero forbidden calls and unchanged raw
+inputs. The second cost read uses 25.360 parent CPU seconds in nested loads and
+4.202 in the direct load, within a 30.667-second archive root. The complete
+cost reads use 136.472/137.320 parent CPU seconds; much work remains outside
+this selected root. Parent, reaped-child and worker clocks are kept separate.
+The single observed arm being quicker in wall time does not establish a speedup.
+
+**Next decision:** prospectively check identical inputs, mutation isolation and
+work-counter identity before considering reuse. The prior forecast, accuracy
+and full-context-copy gates remain failed. Codex assisted with the report,
+checks and figure inspection; human hands-on time was not recorded.

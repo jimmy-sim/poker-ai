@@ -59,9 +59,9 @@ work and present a concrete proposal if one of those permissions is needed.
 
 **Current order (November 20, 2026):** PR #98's failed acceptance gates remain
 negative; PR #99's 100m compute admission rejected the longer run; PR #100's
-clipped update worsened all paired seeds and was history-merged. The distinct
-[B1 update-frequency comparison](medium-dry-b1-updates-result.md) has a
-**negative** fixed 10m result on the two known spots. Complete own raw
-policies preceded the comparison-only audit. Finish PR #101's final exact-head
-qualification and review before selecting a new question. No failed gate is
-relabelled as a retry, and no default has changed.
+clipped update worsened all paired seeds. The distinct
+[B1 update-frequency comparison](medium-dry-b1-updates-result.md) also has a
+**negative** fixed 10m result on the two known spots. PRs #100 and #101 were
+history-merged after their required checks. Verify post-merge CI, then assess
+the distinct [average-readout question](river-uniform-readout-spots.md) without
+repeating the failed B1 test. No default has changed.

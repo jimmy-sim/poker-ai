@@ -13,6 +13,112 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-21 — PR #102 exact-source qualification
+
+- **Tested source:** `3e837b7e56c238d522de33bff0cacd8abcd16cf9`,
+  source fingerprint `a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6`.
+  Base Python 3.11 and 3.12 each passed 5,747 tests, with 73 skips and 150
+  slow deselections, plus Ruff, format, strict mypy and exact pre/post guards.
+  Optional Python 3.11 passed 2,597 tests with pinned OpenSpiel 2.0.2 and
+  license checks. Tested-source [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44882130314)
+  passed both Python jobs.
+- **Retained qualification failure:** the first optional Python 3.12 suite
+  passed 2,594 tests and skipped two, but its unchanged historical
+  saved-profile child exceeded the 120-second watchdog. The full failed log
+  and receipt remain in the [source-check archive](../results/river-uniform-readout/source-checks/manifest.json).
+  The same historical test then passed in focused checks. One bounded full
+  software requalification at the identical source, suite and watchdog passed
+  2,595 tests/two skips in 704.45 seconds. The first timeout's exact cause is
+  unproven; no scientific work was retried or changed.
+- **Hooks and source receipt:** the first hook launch was denied an external
+  uv-cache lock by the sandbox; the second used an unavailable Python 3.11.14
+  in offline mode. Both setup failures are retained. With the installed
+  Python 3.11.17 and cache access, both all-file Ruff hooks passed in 326.38
+  seconds. The archive keeps all three attempts and exact local/hosted logs.
+  No poker proof, profile, training, reference audit or strength result has
+  started. Next: publish/verify this source receipt before the fictional proof.
+  Codex assisted; human hands-on time was not recorded.
+- **Fictional proof after source publication:** the first launch was blocked
+  by sandbox access to the uv cache before any output. Its log remains in the
+  [proof archive](../results/river-uniform-readout/own-proof/manifest.json).
+  With cache access, the prescribed same-path capture/replay on the fictional
+  signal game completed nine captures and 732 final node work in 9.28 seconds,
+  below its 180-second cap. This is a software proof, not poker evidence.
+  Next: publish and GitHub-byte-verify the proof before the fixed profile.
+  Codex assisted; human hands-on time was not recorded.
+- **Fixed profile and stop:** [proof archive](../results/river-uniform-readout/own-proof/manifest.json)
+  was pushed and all 28 GitHub files byte-verified. One profile completed all
+  36 fixed 100k-work paths/three repeats in 54.230126 seconds, below its
+  900-second cap. The predeclared conservative calculation gave
+  `T=1921.279151` and `2*(2*T+600)=8885.116605` seconds, above the strict
+  7200-second own-run cap by 1685.116605 seconds. The unchanged forecast was
+  reproduced from the complete raw record. The
+  [retained result](river-uniform-readout-result.md) is a **rejected compute
+  admission and inconclusive poker-strength comparison**. No separate
+  admission, 10m study, reference audit or default change; no scientific
+  retry. Next: publish raw failure and report, then complete appropriate
+  final qualification/review. Codex assisted; human hands-on time was not
+  recorded.
+- **Final publication qualification:** at report head `440b9a4`, both full
+  local Python bases passed 5,747 tests/73 skips/150 slow deselections plus
+  Ruff, format, strict mypy and pre/post exact-source, historical pin,
+  published-archive and rejected-forecast guards. Optional Python 3.11
+  passed 2,597 tests; optional 3.12 passed 2,595 with two skips. Both optional
+  roles rechecked pinned OpenSpiel 2.0.2 and its license. All-file hooks
+  passed. [Hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44893486953)
+  passed Python 3.11 and 3.12. The [final check receipt](../results/river-uniform-readout/final-checks/manifest.json)
+  preserves the exact logs. This qualifies the rejected report; it does not
+  admit the 10m study or change the inconclusive poker-strength result.
+  Codex assisted; human hands-on time was not recorded.
+
+## 2026-11-20 — PR #101 merge and prospective average-readout panel
+
+- **Completed prior milestone:** [PR #101](https://github.com/jimmy-sim/poker-ai/pull/101)
+  history-merged as `0154696903dc50b97e137ffc552e44391ddfb7f6` after
+  final local/hosted qualification and solo review. Its fixed B1 result is
+  **negative**; [report](medium-dry-b1-updates-result.md) and failed gates
+  remain. Post-merge main CI 44802207887 is separately pending at this entry.
+- **Next question:** saved B4 policies show input-dependent uniform-versus-
+  linear average direction. The [prospective four-stratum contract](river-uniform-readout-spots.md)
+  fixes structural selection, same-path control/candidate, seeds, work,
+  thresholds, source checks, compute caps and publication order before any
+  new input or score. Earlier templates and outcomes remain known evidence.
+- **State:** protocol drafting only; no selection, profile or training job.
+  Codex assisted; human hands-on time not recorded.
+- **Isolated source before selection:** added structural selector, same-path
+  B4 runner/capture, source/publication gates, conservative forecast,
+  comparison-only audit, fixed reporter and control-ranked decision trace.
+  The [prospective diagnostic addendum](river-uniform-readout-diagnostic-addendum.md)
+  fixes the pooled control ranking and 900-second trace cap without changing
+  the original protocol. Nine focused new/historical tests pass; Ruff,
+  formatting and strict mypy pass on 14 new source/test files. An initial
+  test fixture directory error was corrected; no scientific job ran.
+  Full exact-source qualification remains pending. Codex assisted; human
+  hands-on time not recorded.
+- **One frozen cohort, still before outcomes:** source checkpoint `984ba8a`
+  and its hosted Python 3.11/3.12 CI passed; full pre-cohort local base3.11
+  passed 5,746 tests/73 skips/150 deselections, Ruff, format and strict
+  mypy. The one fixed PCG64 selector wrote four legal
+  [spot inputs and hash freeze](../configs/river-uniform-readout-freeze.json)
+  with structural attempts 13/5/1/11. A read-only independent check passed
+  all file hashes, disjoint cards, weighted ranges, positions and exclusion
+  of all 15 prior rank signatures. No game tree, policy, score or profile was
+  built. Next: publish/verify this cohort, pin its commit and qualify exact
+  source. Codex assisted; human hands-on time not recorded.
+
+- **Post-freeze source guard and legality:** the first read of the frozen
+  cohort failed because the new guard compared sorted file keys with unsorted
+  stratum order. The ignored failure receipt at
+  `results/runs/river-uniform-readout-source-20261120/cohort-pin-first-failure.json`
+  preceded an isolated guard fix and regression test. Cohort and protocol
+  bytes did not change. The fixed guard checked four hashes and source
+  fingerprint. Frozen tree construction passed without training or scoring:
+  each medium input has 21,303 exact nodes/3,336 candidate rows; low/wet has
+  2,295/372; recall violations zero. The local log at
+  `results/runs/river-uniform-readout-source-20261120/cohort-tree-check.log`
+  is ignored. Next: publish tested source pin and complete all exact-source
+  checks before proof. Codex assisted; human hands-on time not recorded.
+
 ## 2026-11-17 — Close allowance correction; plan nested archive measurement
 
 - **Issue:** #4. [PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) merged at

@@ -1,0 +1,20 @@
+"""Retain exact-source all-file hook output and exit status once."""
+import json
+import subprocess
+import time
+from pathlib import Path
+
+out = Path(__file__).resolve().parent
+log, receipt = out / 'hooks.log', out / 'hooks.exit'
+if log.exists() or receipt.exists():
+    raise FileExistsError('retain existing hook check; do not relaunch')
+started = time.perf_counter()
+with log.open('x') as stream:
+    completed = subprocess.run(['uv', 'run', '--locked', 'pre-commit', 'run', '--all-files'],
+                               cwd=out.parents[2], stdout=stream, stderr=subprocess.STDOUT,
+                               check=False)
+receipt.write_text(str(completed.returncode) + '\n')
+(out / 'hooks.json').write_text(json.dumps(dict(head='440b9a4bd17ff140b64a0db410f736c49aa26d68',
+                                                exit_code=completed.returncode,
+                                                seconds=time.perf_counter()-started),indent=2)+'\n')
+raise SystemExit(completed.returncode)
