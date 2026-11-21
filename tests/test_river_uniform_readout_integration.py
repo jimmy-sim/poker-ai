@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from river_uniform_readout.diagnostics import _case, top_infos  # noqa: E402
 from river_uniform_readout.forecast import forecast  # noqa: E402
+from river_uniform_readout.gate import frozen_cohort  # noqa: E402
 from river_uniform_readout.learning import (  # noqa: E402
     GAMES,
     LABELS,
@@ -65,6 +66,14 @@ def test_profile_forecast_requires_all_fixed_repeats() -> None:
     assert {spec.seed for spec in paths()} == set(SEEDS)
     with pytest.raises(ArithmeticError, match="complete capped"):
         forecast(dict(status="completed", seconds=1.0, workers=[]))
+
+
+def test_published_cohort_inventory_matches_fixed_stratum_order() -> None:
+    frozen = frozen_cohort(ROOT)
+    assert len(frozen["spot_sha256"]) == len(GAMES)
+    assert sorted(frozen["spot_sha256"]) == sorted(
+        f"configs/river-uniform-readout-spots/{game}.json" for game in GAMES
+    )
 
 
 def test_conservative_profile_uses_slowest_repeat_and_rejects_over_cap() -> None:

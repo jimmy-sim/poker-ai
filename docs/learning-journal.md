@@ -8744,6 +8744,20 @@ tree, policy or exploitability score was measured. **Next decision:** publish
 the cohort, then bind final source and complete exact-source qualification.
 Codex assisted; human hands-on time was not recorded.
 
+**November 20 frozen-cohort guard fix.** The first source guard rejected the
+published cohort even though its bytes were correct: it sorted frozen
+filenames but compared them with the unsorted planned order. This was a
+software bookkeeping error, before any poker outcome. **Example:** the
+alphabetical low/wet filename precedes the medium/dry names, while the
+protocol lists low/wet last. The isolated guard now sorts both sides; a
+regression test covers the fixed cohort. The failure receipt at
+`results/runs/river-uniform-readout-source-20261120/cohort-pin-first-failure.json`
+is retained locally. Each frozen tree constructed below the fixed 200,000
+node cap with zero abstract recall violations; no training or score ran.
+**Next decision:** publish the final source pin, then run exact-source
+qualification before proof. Codex assisted; human hands-on time was not
+recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

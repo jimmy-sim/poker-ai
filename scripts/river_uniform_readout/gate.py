@@ -11,9 +11,7 @@ from river_generalization.gate import require_archive as require_archive
 from river_uniform_readout.learning import CONFIG, GAMES, contract
 
 PROTOCOL_COMMIT = "af73bd8e841b20c09504903905665f1169c54caf"
-# Set only after the one selected cohort is published. No own run is permitted
-# while this value is absent; the selector itself is source-pinned in its freeze.
-COHORT_COMMIT = ""
+COHORT_COMMIT = "df8466783601d0e2885f05e12b019d91e6642b1f"
 FREEZE = Path("configs/river-uniform-readout-freeze.json")
 PROFILE = Path("results/river-uniform-readout/profile")
 ADMISSION = Path("results/river-uniform-readout/admission")
@@ -34,7 +32,7 @@ def frozen_cohort(root: Path) -> dict[str, Any]:
         frozen.get("config_sha256")
         != hashlib.sha256((root / CONFIG).read_bytes()).hexdigest()
         or sorted(frozen.get("spot_sha256", {}))
-        != [f"configs/river-uniform-readout-spots/{game}.json" for game in GAMES]
+        != sorted(f"configs/river-uniform-readout-spots/{game}.json" for game in GAMES)
         or len(frozen.get("selection", [])) != len(GAMES)
     ):
         raise ArithmeticError("fixed uniform-readout cohort changed")

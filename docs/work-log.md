@@ -48,6 +48,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   built. Next: publish/verify this cohort, pin its commit and qualify exact
   source. Codex assisted; human hands-on time not recorded.
 
+- **Post-freeze source guard and legality:** the first read of the frozen
+  cohort failed because the new guard compared sorted file keys with unsorted
+  stratum order. The ignored failure receipt at
+  `results/runs/river-uniform-readout-source-20261120/cohort-pin-first-failure.json`
+  preceded an isolated guard fix and regression test. Cohort and protocol
+  bytes did not change. The fixed guard checked four hashes and source
+  fingerprint. Frozen tree construction passed without training or scoring:
+  each medium input has 21,303 exact nodes/3,336 candidate rows; low/wet has
+  2,295/372; recall violations zero. The local log at
+  `results/runs/river-uniform-readout-source-20261120/cohort-tree-check.log`
+  is ignored. Next: publish tested source pin and complete all exact-source
+  checks before proof. Codex assisted; human hands-on time not recorded.
+
 ## 2026-11-17 — Close allowance correction; plan nested archive measurement
 
 - **Issue:** #4. [PR #84](https://github.com/jimmy-sim/poker-ai/pull/84) merged at
