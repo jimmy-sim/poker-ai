@@ -59,6 +59,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   retry. Next: publish raw failure and report, then complete appropriate
   final qualification/review. Codex assisted; human hands-on time was not
   recorded.
+- **Final publication qualification:** at report head `440b9a4`, both full
+  local Python bases passed 5,747 tests/73 skips/150 slow deselections plus
+  Ruff, format, strict mypy and pre/post exact-source, historical pin,
+  published-archive and rejected-forecast guards. Optional Python 3.11
+  passed 2,597 tests; optional 3.12 passed 2,595 with two skips. Both optional
+  roles rechecked pinned OpenSpiel 2.0.2 and its license. All-file hooks
+  passed. [Hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44893486953)
+  passed Python 3.11 and 3.12. The [final check receipt](../results/river-uniform-readout/final-checks/manifest.json)
+  preserves the exact logs. This qualifies the rejected report; it does not
+  admit the 10m study or change the inconclusive poker-strength result.
+  Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-20 — PR #101 merge and prospective average-readout panel
 

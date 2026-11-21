@@ -8801,6 +8801,18 @@ this experiment with its failed gate intact; a different question would
 need its own published protocol. Codex assisted; human hands-on time was not
 recorded.
 
+**November 21 final rejected-result checks.** Both full base Python versions,
+both optional reference-enabled versions, all-file hooks and both hosted CI
+jobs passed at the report head. The final local guards also reread the
+published source, proof and rejected-profile archives and reproduced the
+same forecast. The [check receipt](../results/river-uniform-readout/final-checks/manifest.json)
+retains exact logs. **Example:** a passing optional Python 3.12 run verifies
+the report and source can still be checked with OpenSpiel installed; it does
+not turn an 8,885-second forecast into a run under the 7,200-second cap.
+**Next decision:** review and close PR #102 with its compute rejection and
+unknown poker-strength effect explicit. Codex assisted; human hands-on time
+was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

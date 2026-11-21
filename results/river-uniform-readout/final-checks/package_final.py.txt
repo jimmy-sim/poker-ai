@@ -1,0 +1,56 @@
+"""Package exact report-head local/hosted checks, without changing tested source."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / 'results/river-uniform-readout/final-checks'
+HEAD = '440b9a4bd17ff140b64a0db410f736c49aa26d68'
+FINGERPRINT = 'a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6'
+
+def copy(source: Path, target: Path) -> None:
+    assert source.is_file() and not target.exists(), (source, target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == '.log':
+        target = target.with_suffix('.log.gz')
+        with target.open('wb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, target.with_name(target.name + '.txt'))
+    else:
+        shutil.copyfile(source, target)
+
+if __name__ == '__main__':
+    assert not OUT.exists()
+    state = json.loads((RAW/'driver-state.json').read_bytes())
+    roles = ('base311','base312','optional311','optional312')
+    receipts = [json.loads((RAW/f'{role}.json').read_bytes()) for role in roles]
+    hosted = json.loads((RAW/'hosted.json').read_bytes())
+    assert state['head'] == HEAD and state['status'] == 'passed'
+    assert all(row['status'] == 'passed' and row['head'] == HEAD for row in receipts)
+    assert all(row['suite_count'] == 81 for row in receipts if row['role'].startswith('optional'))
+    assert (RAW/'hooks.exit').read_text().strip() == '0'
+    assert hosted['headSha'] == HEAD and hosted['conclusion'] == 'success'
+    assert {job['name'] for job in hosted['jobs']} == {'Python 3.11','Python 3.12'}
+    assert all(job['conclusion'] == 'success' for job in hosted['jobs'])
+    OUT.mkdir(parents=True)
+    names = ('driver-state.json','driver.log','driver.py','runner.py','optional-suites.json',
+             'package_final.py','run_hooks.py','hooks.exit','hooks.json','hooks.log','hosted.json','hosted.log')
+    for name in names: copy(RAW/name, OUT/name)
+    for role in roles:
+        for ext in ('json','log'): copy(RAW/f'{role}.{ext}', OUT/f'{role}.{ext}')
+    result = dict(status='final_qualified', report_head=HEAD,
+                  source_fingerprint=FINGERPRINT, local_roles=receipts,
+                  hooks='passed', hosted_run=hosted['databaseId'],
+                  hosted_jobs=[{'name':j['name'],'conclusion':j['conclusion']} for j in hosted['jobs']],
+                  scientific_classification='inconclusive_compute_rejected')
+    (OUT/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+    files=[]
+    for path in sorted(item for item in OUT.rglob('*') if item.is_file()):
+        raw=path.read_bytes()
+        files.append(dict(file=path.relative_to(OUT).as_posix(),bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT/'manifest.json').write_text(json.dumps(dict(status='final_qualified',source_fingerprint=FINGERPRINT,files=files),sort_keys=True,indent=2)+'\n')
