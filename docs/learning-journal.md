@@ -8773,6 +8773,18 @@ hooks passed. No candidate policy, score or poker-strength claim exists yet.
 proof and compute profile in protocol order. Codex assisted; human hands-on
 time was not recorded.
 
+**November 21 fictional readout proof.** A tiny fictional signal game ran the
+same capture and replay path as the planned poker comparison, recording both
+uniform and linear averages at three small work checkpoints. Nine captures
+replayed and 732 final node work finished in 9.28 seconds, inside the fixed
+180-second limit. The first launch had produced no game output because the
+sandbox denied uv-cache access; that setup log is retained in the [proof
+archive](../results/river-uniform-readout/own-proof/manifest.json). This
+checks the program path, not whether either readout plays poker better.
+**Next decision:** publish and verify the proof before the fixed 36-path
+100k-work profile and separate compute admission. Codex assisted; human
+hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

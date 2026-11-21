@@ -1,0 +1,50 @@
+"""One-shot protocol stage launcher with separate persistent process receipts."""
+
+import argparse
+import json
+import os
+import subprocess
+import time
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+logs = Path(__file__).resolve().parent
+folder = root / "results/river-uniform-readout"
+outputs = {
+    "proof": folder / "own-proof",
+    "profile": folder / "profile",
+    "admit": folder / "admission",
+    "study": folder / "own",
+}
+
+parser = argparse.ArgumentParser()
+parser.add_argument("stage", choices=outputs)
+parser.add_argument("--attempt", default="")
+args = parser.parse_args()
+stage = args.stage
+label = stage + (f"-{args.attempt}" if args.attempt else "")
+log = logs / f"{label}.log"
+receipt = logs / f"{label}.json"
+output = outputs[stage]
+if log.exists() or receipt.exists() or output.exists() or output.is_symlink():
+    raise FileExistsError(f"retain prior {stage} attempt")
+if subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=root):
+    raise RuntimeError("stage requires a clean checkout")
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+started = time.perf_counter()
+command = [
+    "uv", "run", "--locked", "python", "scripts/study_river_uniform_readout.py",
+    stage, "--output", str(output),
+]
+with log.open("x") as stream:
+    process = subprocess.Popen(command, cwd=root, stdout=stream,
+                               stderr=subprocess.STDOUT, env=os.environ.copy())
+    (logs / f"{label}-started.json").write_text(
+        json.dumps({"stage": stage, "head": head, "pid": process.pid,
+                    "command": command, "output": str(output)}, indent=2) + "\n"
+    )
+    code = process.wait()
+receipt.write_text(json.dumps({"stage": stage, "head": head,
+                               "exit_code": code, "seconds": time.perf_counter()-started,
+                               "output": str(output)}, indent=2) + "\n")
+raise SystemExit(code)

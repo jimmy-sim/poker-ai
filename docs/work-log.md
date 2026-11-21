@@ -38,6 +38,14 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   No poker proof, profile, training, reference audit or strength result has
   started. Next: publish/verify this source receipt before the fictional proof.
   Codex assisted; human hands-on time was not recorded.
+- **Fictional proof after source publication:** the first launch was blocked
+  by sandbox access to the uv cache before any output. Its log remains in the
+  [proof archive](../results/river-uniform-readout/own-proof/manifest.json).
+  With cache access, the prescribed same-path capture/replay on the fictional
+  signal game completed nine captures and 732 final node work in 9.28 seconds,
+  below its 180-second cap. This is a software proof, not poker evidence.
+  Next: publish and GitHub-byte-verify the proof before the fixed profile.
+  Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-20 — PR #101 merge and prospective average-readout panel
 
