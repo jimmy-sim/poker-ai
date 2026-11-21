@@ -13,6 +13,32 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-21 — PR #102 exact-source qualification
+
+- **Tested source:** `3e837b7e56c238d522de33bff0cacd8abcd16cf9`,
+  source fingerprint `a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6`.
+  Base Python 3.11 and 3.12 each passed 5,747 tests, with 73 skips and 150
+  slow deselections, plus Ruff, format, strict mypy and exact pre/post guards.
+  Optional Python 3.11 passed 2,597 tests with pinned OpenSpiel 2.0.2 and
+  license checks. Tested-source [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44882130314)
+  passed both Python jobs.
+- **Retained qualification failure:** the first optional Python 3.12 suite
+  passed 2,594 tests and skipped two, but its unchanged historical
+  saved-profile child exceeded the 120-second watchdog. The full failed log
+  and receipt remain in the [source-check archive](../results/river-uniform-readout/source-checks/manifest.json).
+  The same historical test then passed in focused checks. One bounded full
+  software requalification at the identical source, suite and watchdog passed
+  2,595 tests/two skips in 704.45 seconds. The first timeout's exact cause is
+  unproven; no scientific work was retried or changed.
+- **Hooks and source receipt:** the first hook launch was denied an external
+  uv-cache lock by the sandbox; the second used an unavailable Python 3.11.14
+  in offline mode. Both setup failures are retained. With the installed
+  Python 3.11.17 and cache access, both all-file Ruff hooks passed in 326.38
+  seconds. The archive keeps all three attempts and exact local/hosted logs.
+  No poker proof, profile, training, reference audit or strength result has
+  started. Next: publish/verify this source receipt before the fictional proof.
+  Codex assisted; human hands-on time was not recorded.
+
 ## 2026-11-20 — PR #101 merge and prospective average-readout panel
 
 - **Completed prior milestone:** [PR #101](https://github.com/jimmy-sim/poker-ai/pull/101)

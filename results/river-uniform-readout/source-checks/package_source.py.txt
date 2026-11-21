@@ -1,0 +1,95 @@
+"""Package exact source checks, original failed role, bounded requalification."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+REQUAL = ROOT / 'results/runs/river-uniform-readout-optional312-requalification-20261121'
+EARLIER = ROOT / 'results/runs/river-uniform-readout-source-20261120'
+OUT = ROOT / 'results/river-uniform-readout/source-checks'
+HEAD = '3e837b7e56c238d522de33bff0cacd8abcd16cf9'
+FINGERPRINT = 'a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6'
+
+
+def copy(source: Path, target: Path) -> None:
+    assert source.is_file() and not target.exists(), (source, target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == '.log':
+        target = target.with_suffix('.log.gz')
+        with target.open('wb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, target.with_name(target.name + '.txt'))
+    else:
+        shutil.copyfile(source, target)
+
+
+if __name__ == '__main__':
+    assert not OUT.exists()
+    state = json.loads((RAW / 'driver-state.json').read_bytes())
+    roles = ('base311', 'base312', 'optional311')
+    receipts = [json.loads((RAW / f'{role}.json').read_bytes()) for role in roles]
+    first_optional = json.loads((RAW / 'optional312.json').read_bytes())
+    second_optional = json.loads((REQUAL / 'optional312.json').read_bytes())
+    receipts.append(second_optional)
+    hosted = json.loads((RAW / 'hosted.json').read_bytes())
+    first_guard = json.loads((EARLIER / 'cohort-pin-first-failure.json').read_bytes())
+    pre = json.loads((EARLIER / 'precohort-base311-result.json').read_bytes())
+    assert state['head'] == HEAD and state['status'] == 'failed_retained'
+    assert [row['exit_code'] for row in state['completed']] == [0, 0, 0, 1]
+    assert first_optional['status'] == 'failed' and first_optional['head'] == HEAD
+    assert all(row['status'] == 'passed' and row['head'] == HEAD and row['source_fingerprint'] == FINGERPRINT for row in receipts)
+    assert all(row['suite_count'] == 81 for row in receipts if row['role'].startswith('optional'))
+    assert (RAW / 'hooks.exit').read_text().strip() == '2'
+    assert (RAW / 'hooks-requalification.exit').read_text().strip() == '2'
+    assert (RAW / 'hooks-corrected.exit').read_text().strip() == '0'
+    assert hosted['headSha'] == HEAD and hosted['conclusion'] == 'success'
+    assert {job['name'] for job in hosted['jobs']} == {'Python 3.11', 'Python 3.12'}
+    assert all(job['conclusion'] == 'success' for job in hosted['jobs'])
+    assert first_guard['status'] == 'failed_retained' and first_guard['scientific_jobs_started'] is False
+    assert pre['status'] == 'passed'
+    OUT.mkdir(parents=True)
+    for name in ('driver-state.json', 'driver.log', 'driver.py', 'runner.py',
+                 'optional-suites.json', 'package_source.py', 'run_hooks.py',
+                 'run_hooks_requalification.py', 'run_hooks_corrected.py',
+                 'hooks.exit', 'hooks.log', 'hooks.json',
+                 'hooks-requalification.exit', 'hooks-requalification.log',
+                 'hooks-requalification.json', 'hooks-corrected.exit',
+                 'hooks-corrected.log', 'hooks-corrected.json',
+                 'hosted.json', 'hosted.log',
+                 'optional312-focused-diagnosis.log', 'optional312-focused-with-scripts.log',
+                 'optional312-focused-reference-loaded.log'):
+        copy(RAW / name, OUT / name)
+    for role in roles:
+        for ext in ('json', 'log'):
+            copy(RAW / f'{role}.{ext}', OUT / f'{role}.{ext}')
+    for ext in ('json', 'log'):
+        copy(REQUAL / f'optional312.{ext}', OUT / f'optional312.{ext}')
+        copy(RAW / f'optional312.{ext}', OUT / f'optional312-first-failed.{ext}')
+    copy(REQUAL / 'launch.log', OUT / 'optional312-requalification-launch.log')
+    for name in ('cohort-pin-first-failure.json', 'cohort-tree-check.log',
+                 'selection.log', 'precohort-base311.log', 'precohort-base311-result.json'):
+        copy(EARLIER / name, OUT / name)
+    result = dict(status='source_qualified', tested_head=HEAD,
+                  source_fingerprint=FINGERPRINT,
+                  historical_fingerprint='152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3',
+                  clipped_fingerprint='7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab',
+                  b1_fingerprint='64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd',
+                  cohort_commit='df8466783601d0e2885f05e12b019d91e6642b1f',
+                  local_roles=receipts, first_optional312='optional312-first-failed.json',
+                  hooks='passed_after_two_setup_failures',
+                  hook_setup_failures=['hooks.json', 'hooks-requalification.json'],
+                  hosted_run=hosted['databaseId'],
+                  hosted_jobs=[{'name': j['name'], 'conclusion': j['conclusion']} for j in hosted['jobs']],
+                  retained_first_guard_failure='cohort-pin-first-failure.json',
+                  scientific_measurements_started=False)
+    (OUT / 'result.json').write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
+    files=[]
+    for path in sorted(item for item in OUT.rglob('*') if item.is_file()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.relative_to(OUT).as_posix(), bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / 'manifest.json').write_text(json.dumps(dict(status='source_qualified', source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + '\n')

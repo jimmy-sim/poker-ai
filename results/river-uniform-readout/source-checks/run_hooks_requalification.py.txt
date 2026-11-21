@@ -1,0 +1,36 @@
+"""Retain the sandbox-blocked hook attempt and run one access-corrected check."""
+
+import json
+import subprocess
+import time
+from pathlib import Path
+
+out = Path(__file__).resolve().parent
+root = out.parents[2]
+log = out / "hooks-requalification.log"
+receipt = out / "hooks-requalification.exit"
+if log.exists() or receipt.exists():
+    raise FileExistsError("retain the access-corrected hook check")
+started = time.perf_counter()
+with log.open("x") as stream:
+    completed = subprocess.run(
+        ["uv", "run", "--locked", "pre-commit", "run", "--all-files"],
+        cwd=root,
+        stdout=stream,
+        stderr=subprocess.STDOUT,
+        check=False,
+    )
+receipt.write_text(f"{completed.returncode}\n")
+(out / "hooks-requalification.json").write_text(
+    json.dumps(
+        {
+            "head": "3e837b7e56c238d522de33bff0cacd8abcd16cf9",
+            "exit_code": completed.returncode,
+            "seconds": time.perf_counter() - started,
+            "first_attempt": "hooks.json",
+        },
+        indent=2,
+    )
+    + "\n"
+)
+raise SystemExit(completed.returncode)

@@ -8758,6 +8758,21 @@ node cap with zero abstract recall violations; no training or score ran.
 qualification before proof. Codex assisted; human hands-on time was not
 recorded.
 
+**November 21 exact-source qualification.** The source checks cover the same
+frozen poker inputs before measuring any strategy. Both base Python versions,
+optional Python 3.11, and hosted Python 3.11/3.12 passed. The first optional
+Python 3.12 full suite timed out in a historical saved-profile child under
+its unchanged 120-second limit. A focused check passed, and one bounded full
+requalification passed all 2,595 tests with two expected skips at the same
+source and limit. **Example:** a passing repeat establishes that this suite
+can complete; it does not prove why the earlier child waited too long. The
+[source archive](../results/river-uniform-readout/source-checks/manifest.json)
+retains both full runs and the failed setup attempts before the all-file
+hooks passed. No candidate policy, score or poker-strength claim exists yet.
+**Next decision:** publish and verify the receipt, then run the fixed fictional
+proof and compute profile in protocol order. Codex assisted; human hands-on
+time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
