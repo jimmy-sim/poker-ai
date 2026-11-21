@@ -75,6 +75,27 @@ python3 -m json.tool results/river-uniform-readout/profile/verification.json
 python3 -m json.tool results/river-uniform-readout/profile/repeat0/path00/summary.json
 ```
 
+To recompute the forecast from the published failed record without editing it,
+install the committed lockfile (`make setup`), then run:
+
+```sh
+uv run --locked python - <<'PY'
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path.cwd() / "scripts"))
+from river_uniform_readout.forecast import forecast
+
+folder = Path("results/river-uniform-readout/profile")
+record = json.loads((folder / "failure.json").read_text())
+record["status"] = "completed"  # Restore the pre-gate worker status in memory only.
+calculated = forecast(record)
+assert calculated == json.loads((folder / "forecast.json").read_text())
+print(calculated["status"], calculated["strict_bound_seconds"])
+PY
+```
+
 Codex assisted with implementation, checks and this report. Human hands-on
 time was not reported. No independent full-game poker-strength claim follows
 from these finite restricted spots or from this rejected forecast.
