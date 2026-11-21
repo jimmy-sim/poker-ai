@@ -8813,6 +8813,25 @@ not turn an 8,885-second forecast into a run under the 7,200-second cap.
 unknown poker-strength effect explicit. Codex assisted; human hands-on time
 was not recorded.
 
+**November 21 prospective B8 question.** PR #102 history-merged and its
+[post-merge CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44900095409)
+passed both Python jobs. Its compute rejection and unknown strength effect
+remain. The [saved-policy diagnosis](river-generalization-diagnosis-report.md)
+showed no exact-to-abstract river collision on the medium/dry spot, while the
+current policy was weaker than its averages. The earlier B1 one-sample
+matched-work candidate worsened all three medium/dry paired seeds. These
+observations motivate one opposite-direction, lower-variance question:
+does batch-eight signed updating improve the same known spots over the
+immutable batch-four control at matched charged node work? **Example:** B8
+averages eight sampled returns before a signed-regret update, so at fixed
+work it makes fewer, potentially steadier updates than B4; neither the
+direction nor poker benefit is known. The [prospective protocol](medium-dry-b8-updates.md)
+fixes the control receipts, seeds, checkpoints, diagnostic rows, gates and
+compute cap before any B8 outcome. **Next decision:** publish this contract,
+then isolate and qualify source before a fictional proof or fixed profile.
+No B8 measurement or result exists. Codex assisted; human hands-on time was
+not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

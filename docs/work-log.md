@@ -15,6 +15,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-21 — PR #102 exact-source qualification
 
+- **Merge and next prospective question:** [PR #102](https://github.com/jimmy-sim/poker-ai/pull/102)
+  history-merged as `3bece9c19d99e68c3797fd4383679b8de6f012a5`;
+  [post-merge main CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44900095409)
+  passed both Python jobs. Its conservative compute gate remains rejected and
+  its poker-strength result inconclusive. The separate
+  [B8 protocol](medium-dry-b8-updates.md) fixes one matched-work signed-update
+  question against published B4 on two known spots. No B8 source, profile,
+  training or outcome exists at this prospective checkpoint. Codex assisted;
+  human hands-on time was not recorded.
+
 - **Tested source:** `3e837b7e56c238d522de33bff0cacd8abcd16cf9`,
   source fingerprint `a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6`.
   Base Python 3.11 and 3.12 each passed 5,747 tests, with 73 skips and 150
