@@ -59,10 +59,12 @@ work and present a concrete proposal if one of those permissions is needed.
 
 **Current order (November 23, 2026):** PR #98's medium/dry acceptance remains
 failed; PR #99's 100m forecast rejected longer training; PRs #100/#101/#103
-found negative clipped, batch-one and batch-eight results on the two known
-spots. PR #102's broader average-readout study stopped at its failed compute
-admission. All their failure evidence remains. PR #103 history-merged after
-final checks; post-merge main CI is pending at this update. The distinct
-[full-expectation matched-work protocol](medium-dry-full-expectation.md)
-tests whether complete expected signed passes improve the known river
-decisions under the existing hard cap. No new result or default change exists.
+found negative clipped, batch-one and batch-eight results on two known spots.
+PR #102's broader average-readout study stopped at its failed compute
+admission. PR #104's [full expected update](medium-dry-full-expectation-result.md)
+passed its frozen two-known-spot strength rule, then history-merged after
+local, hosted and solo review. Its improvement is not a default or broader
+strength claim. The next [prospective comparison](river-full-broader-spots.md)
+tests the unchanged candidate on structurally selected new card/range inputs
+against matched-work B4 paths under the same hard compute cap. Selection and
+outcomes have not begun at this update; all earlier failures remain.

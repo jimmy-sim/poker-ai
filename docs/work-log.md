@@ -13,6 +13,20 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #104 merge and next prospective question
+
+- [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as
+  `804c4ed258416083e8c704febfe84c9077b38bae` after both receipt-head
+  Python CI jobs passed. Its source, admission and own-before-reference commits
+  remain ancestors. The fixed two-known-spot result is positive only in that
+  scope; no default promotion. [Main CI 45186501720](https://github.com/jimmy-sim/poker-ai/actions/runs/45186501720)
+  was pending at this entry. The next
+  [prospective issue #4 protocol](river-full-broader-spots.md) fixes a
+  two-input matched-work full-versus-B4 comparison before case selection or
+  outcomes. The earlier four-input B4 forecast failure motivated the bounded
+  cohort; it is not a strength result. Codex assisted; human hands-on time was
+  not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

@@ -9125,6 +9125,22 @@ history-preserving merge if eligible, then register one distinct broader
 spot test without reusing inspected cases as unseen. Codex assisted; human
 hands-on time was not recorded.
 
+**November 23 PR #104 closure and next question.** The full expected learner's
+positive result on two known games passed final exact-source local and hosted
+checks, its receipt-head CI passed on Python 3.11 and 3.12, and
+[PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) was history-merged.
+**Question:** will the same signed full expected update improve decisions on
+new card/range inputs? The [next prospective protocol](river-full-broader-spots.md)
+fixes one dry OOP and one wet IP input selected by structure, three independent
+B4 controls per spot, matched work, historical strength gates and the same
+conservative compute cap before any case is drawn. **Example:** the prior
+medium/dry improvement was 0.006700 versus 0.035132–0.039542 initial pots at
+10m, but the candidate was worse at 100k and 1m; transfer cannot be assumed.
+The four-input B4 profile's failed 8,885-second forecast remains a warning,
+not an outcome for this new question. **Next decision:** publish the protocol,
+then freeze the one-time cohort and qualify isolated source before training.
+Codex assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

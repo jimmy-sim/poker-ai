@@ -104,10 +104,13 @@ median 0.035656, while low/wet also improves. The candidate was worse at
 earlier medium/dry work labels. Final report-head qualification and review
 passed all four local roles, all-file hooks and both hosted jobs; the
 [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
-binds those checks. Review and merge remain; no default changed or unseen-game
-claim follows. The next distinct
-question should test prospectively selected additional spots after this
-milestone closes.
+binds those checks. PR #104 was history-merged as `804c4ed` after receipt-head
+CI passed on both Python versions and solo review; main-branch CI is tracked
+separately. No default changed or unseen-game claim follows. The next distinct
+[prospective broader-input comparison](river-full-broader-spots.md) tests the
+unchanged full expected candidate against fresh B4 paths at matched work on
+two structurally selected card/range inputs. Its protocol precedes selection
+and outcomes; the public templates and prior spot inputs remain known.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

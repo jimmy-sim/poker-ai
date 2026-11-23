@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "selection_seed": 20261510,
+  "known_spot_directories": ["configs/learning-spots", "configs/fresh-spots", "configs/spots", "configs/river-generalization-spots", "configs/river-uniform-readout-spots"],
+  "known_spot_count": 19,
+  "maximum_selection_attempts_per_spot": 10000,
+  "maximum_tree_nodes": 200000,
+  "novelty_rule": "exclude any existing or already selected (sorted flop ranks, turn rank) signature irrespective of suits; selection cannot use tree size, policy, score or reference output",
+  "strata": [
+    {"name": "full_new_medium_dry_oop", "texture": "dry", "position": "oop", "template": "configs/learning-spots/dev_medium_oop.json"},
+    {"name": "full_new_low_wet_ip", "texture": "wet", "position": "ip", "template": "configs/learning-spots/heldout_low_oop.json"}
+  ],
+  "spot_directory": "configs/river-full-broader-spots",
+  "freeze_file": "configs/river-full-broader-freeze.json",
+  "input_sha256": {
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "configs/own-opponent-learning.json": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "representation": "q8_turn_exact_river",
+  "control": {"arm": "signed_external_b4", "seeds": [20261511, 20261512, 20261513], "batch_size": 4, "traversal": "IID external sampling"},
+  "candidate": {"arm": "signed_full_expectation", "seed": 0, "traversal": "full expected target passes; RNG state unchanged"},
+  "shared_training": {"regret_rule": "signed", "regret_weight": "linear", "average_weight": "linear", "initialization": "exact uniform charged", "target_order": [0, 1], "work_labels": [100000, 1000000, 10000000], "crossing": "first complete iteration at or above label", "readouts": ["current", "linear_average"]},
+  "path_order": "for each stratum: B4 seeds in order, then candidate",
+  "worker_count": 3,
+  "worker_assignment": "path index modulo three; spawn",
+  "paths": 8,
+  "saved_policy_cases": 48,
+  "primary_metric": "exact restricted-game NashConv/2 divided by initial pot, final linear average, lower better",
+  "report": ["all three dependent candidate-minus-B4 contrasts per spot and checkpoint", "whole and post-initial-river positive-average coverage", "recall violations", "information rows and table bytes", "actual node work and overshoot", "wall time, peak RSS and hardware", "control-only top-three additive best-response nodes per street and same candidate nodes with cards/actions/reach/values"],
+  "historical_quality_gates": {"maximum_final_candidate_exploitability_median_fraction_initial_pot": 0.01, "maximum_final_candidate_exploitability_worst_fraction_initial_pot": 0.025, "minimum_whole_coverage": 0.95, "maximum_recall_violations": 0},
+  "decision": {"positive": "all candidate absolute gates pass; medium/dry paired median <= -0.001; low/wet paired median <= +0.001 initial pots", "negative": "any candidate absolute gate fails; medium/dry paired median >= +0.001; or low/wet paired median > +0.001", "inconclusive": "all other complete outcomes"},
+  "profile": {"repeats": 3, "b4_work": 100000, "candidate_work": 1000000, "paths": 24, "clock": "context through capture, own scoring and replay", "estimate": "maximum of three whole_path_seconds * 10000000/actual_final_node_work for each path", "T": "maximum fixed-worker sum of path maxima", "strict_admission": "2*(2*T+600)<7200"},
+  "budgets_seconds": {"proof": 180, "profile": 900, "whole_own": 7200, "failure_save": 120, "native_audit": 900},
+  "native": {"version": "OpenSpiel 2.0.2", "license": "Apache-2.0", "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30", "tolerance_chips": 1e-9, "comparison_only": true},
+  "publication": "prospective protocol before selection; cohort freeze before outcomes; qualified source before proof; proof before profile; published profile and separate admission before own; own before reference; final exact-source checks"
+}
