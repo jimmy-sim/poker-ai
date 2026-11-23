@@ -201,6 +201,9 @@ then passed on one source revision; the complete
 [source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json)
 retains the interrupted wrapper and passing continuation. Publish and verify
 that receipt before the capped fictional proof; no poker outcome yet.
+The single [fictional proof](../results/known-turn-exact-mechanism/own-proof/manifest.json)
+then passed in 0.783 seconds/180 with both labels replayed; publish and
+verify it before the fixed six-path profile. No real policy or score exists.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

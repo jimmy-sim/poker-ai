@@ -9481,6 +9481,20 @@ and verify the complete [source receipt](../results/known-turn-exact-mechanism/s
 before the one fictional proof; no real-game policy or score exists yet.
 Codex assisted; no human time or personal learning was reported.
 
+**November 23 fictional known-case proof.** After the source-check
+receipt was published and verified, one 180-second-capped fictional
+signal-game proof saved and replayed both representation labels at three
+work checkpoints. **Example:** both toy paths reach 726 charged visits
+and produce the same saved scores, so the new two-path wrapper does not
+change the underlying fictional learner merely by choosing an arm label.
+The launcher exited zero in 0.783 seconds; 12 current/linear toy readouts
+and their mass/snapshot bytes are retained in the
+[proof archive](../results/known-turn-exact-mechanism/own-proof/manifest.json).
+**Next decision:** publish/verify this proof, then profile all six fixed
+real-game 1m paths under the registered cap before any longer study. This
+proof says nothing about the known medium/dry policy's strength. Codex
+assisted; no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

@@ -72,6 +72,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   publish and GitHub-byte-verify this receipt before the one capped
   fictional proof. Codex assisted; human time/learning not reported.
 
+- After the source receipt was published and GitHub-byte-verified,
+  PR #108's single [fictional own proof](../results/known-turn-exact-mechanism/own-proof/manifest.json)
+  ran from clean receipt HEAD `b227e4de` with the pinned base 3.11
+  environment. Both representation labels saved and replayed six fixed
+  readouts each at 80/240/720 work crossings, final charged work 726.
+  The whole launcher exited zero in 0.783 seconds under the 180-second
+  cap. The 32-member archive retains raw policies, mass, scores, events,
+  launcher PIDs, environment and logs. This is a software proof, not a
+  known medium/dry strength result. Next: publish/byte-verify proof, then
+  one fixed six-path, three-repeat 1m-work profile. Codex assisted;
+  human time/learning not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged
