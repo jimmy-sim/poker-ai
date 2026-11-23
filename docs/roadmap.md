@@ -144,7 +144,9 @@ was pending at this entry. The next
 [prospective saved-policy diagnosis](river-turn-loss-diagnosis.md) ranks the
 full candidate's largest turn losses and counts actual information-row
 collisions on the already evaluated, **known** medium/dry input before
-choosing another strength experiment. No new diagnostic outcome exists yet.
+choosing another strength experiment. No new diagnostic outcome exists yet. Isolated diagnostic source and
+five focused tests passed; full exact-source qualification, fictional proof
+and the one capped real-policy analysis remain pending.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -40,6 +40,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   Diagnostic source and measurements remain pending. Codex assisted; human
   hands-on time and personal learning were not reported.
 
+- Isolated PR #106 read-only trace/selection code and five focused tests
+  were implemented after protocol publication. The code checks exact
+  published plan and archive bytes, the unchanged parent source fingerprint,
+  snapshot/native/report identities, additive both-seat best-reply accounting,
+  recall and duplicate-output refusal. A fictional signal-game test verifies
+  additive gain against an independently computed own score. Ruff,
+  formatting and strict mypy passed on the new files; five focused tests
+  passed. Exact-source full local/optional/hosted qualification, fictional
+  proof and real saved-policy diagnosis remain pending. No new candidate node
+  ranking or collision count has been measured. Codex assisted; human time
+  was not reported.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as

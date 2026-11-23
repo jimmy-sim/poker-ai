@@ -9290,6 +9290,19 @@ decision:** publish this plan before measuring candidate-ranked rows; keep
 the evaluated inputs known and any new training separately registered.
 Codex assisted; human hands-on time and personal learning were not reported.
 
+**November 23 isolated read-only diagnosis source.** New
+[PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) source reads only
+published saved policies and pins their source and archive hashes. It ranks
+candidate exact turn rows first, then plans to show the same rows for all
+three B4 controls and earlier work checkpoints. **Example:** the fictional
+signal-game test confirms that both seats' additive best-reply gains divided
+by two equal the independent own exploitability score; this validates the
+accounting method without looking at a new real decision. Five focused tests,
+Ruff, formatting and strict mypy passed. **Next decision:** publish tested
+source and complete exact-source local/optional/hosted qualification before
+one fictional proof and the single capped saved-policy diagnosis. Codex
+assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
