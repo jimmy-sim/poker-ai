@@ -165,12 +165,14 @@ The isolated one-time selector and fictional/read-only focused tests passed;
 publish and verify that source before freezing the cohort. No selected
 board, tree or strength result exists at this checkpoint. The one-time
 cohort was then drawn by the published structural rule and its exact
-[freeze](../configs/turn-exact-transfer-freeze.json) is being published
+[freeze](../configs/turn-exact-transfer-freeze.json) was published
 before any tree, collision or decision measurement; no case was replaced.
-The isolated exact-turn adapter and fixed experiment runner have passed
-11 fictional or already known fixture tests and strict typing; complete
-exact-source local, optional and hosted qualification is next. The frozen
-selected trees, collision inventory and poker outcomes remain unmeasured.
+The isolated exact-turn adapter and fixed experiment runner passed
+11 fictional or already known fixture tests and strict typing. All four
+exact-source local roles, all-file hooks and both hosted jobs then passed;
+the [source receipt](../results/turn-exact-transfer/source-checks/manifest.json)
+is being published before the first frozen-tree collision inventory.
+No selected tree, collision count or poker outcome has yet been measured.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

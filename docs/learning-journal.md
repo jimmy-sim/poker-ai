@@ -124,19 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
-**Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
-history-merged its one prospectively fixed batch-eight versus batch-four
-comparison on two known river spots. The [result](medium-dry-b8-updates-result.md)
-is **negative**: final medium/dry B8 median/worst exploitability
-0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
-paired seed improves and two worsen. The low/wet gate passes. Own policies
-were published before pinned comparison-only checks, and all final local and
-hosted gates passed. No default changed. The next
-[prospective full-expectation question](medium-dry-full-expectation.md) has
-an isolated adapter with passing exact-source base, optional and hosted checks,
-but no new candidate outcome yet. PR #102's conservative compute gate rejected
-its longer study, so its poker-strength effect remains inconclusive. Earlier
-status paragraphs below preserve the sequence of prior investigations.
+**Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
+has a frozen prospective exact-turn comparison on one known mechanistic
+input and three new card/range inputs on known public templates. Its tested
+source passed all four exact-source local lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875).
+The selected trees, turn collisions, trained policies and strength outcomes
+remain unmeasured until the source receipt is published and verified. The
+prior [broader-input result](river-full-broader-spots-result.md) is negative;
+the [turn collision diagnosis](river-turn-loss-diagnosis-result.md) motivates
+the new question but does not prove an improvement. No default changed.
+Earlier status paragraphs below preserve the sequence of investigations.
 
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
@@ -9400,6 +9398,18 @@ failures were retained and corrected. **Next decision:** complete exact-
 source local and hosted qualification before counting collisions in the
 frozen selected cohort, then follow the prescribed proof/profile/admission
 order. Codex assisted; no human time or personal learning was reported.
+
+**November 23 exact-source qualification.** The four pinned local roles
+passed on the published isolated source, including both complete base suites
+and both optional suites. Both hosted Python jobs and all-file hooks passed.
+**Example:** the new exact turn key is checked alongside the historical
+source fingerprints, so a passing poker calculation cannot silently accept
+an altered older experiment. Two operator launcher/preflight mistakes were
+retained and corrected before the passing run; neither built a selected
+tree. **Next decision:** publish the complete source-check receipt before
+counting frozen turn collisions, then stop structurally if all three new
+inputs lack collisions. Codex assisted; no human time or personal learning
+was reported.
 
 ### November 18: locate current CPU in receipt prerequisites
 

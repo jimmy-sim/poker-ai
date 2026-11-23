@@ -76,6 +76,21 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   base/optional/hosted qualification remains before real inventory. Codex
   assisted; human time or personal learning was not reported.
 
+- Exact-source PR #107 qualification passed at published commit `99dff04`,
+  fingerprint `fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c`.
+  Base Python 3.11 and 3.12 each recorded 5,795 passed, 73 skipped and
+  150 slow deselected with source guards before and after. The 81-file
+  optional suites recorded 2,597 passed on 3.11 and 2,595 passed with two
+  expected skips on 3.12; pinned Numba/OpenSpiel versions and license hash
+  matched. All-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875)
+  passed, and all 24 closed source/input blobs matched GitHub. The first
+  two local launcher/preflight attempts failed before any selected tree and
+  remain in the source-check archive alongside software iteration failures.
+  No collision or strength outcome is known. Next: publish and verify the
+  [source receipt](../results/turn-exact-transfer/source-checks/manifest.json)
+  before the frozen inventory. Codex assisted; human time or personal
+  learning was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
