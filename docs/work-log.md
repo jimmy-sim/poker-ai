@@ -74,6 +74,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   result. Next: publish and GitHub-byte-verify the proof before the one fixed
   six-path real-game profile. Codex assisted; human hands-on time was not
   recorded.
+- **Fixed six-path full-expectation profile:** all 22 published fictional-proof
+  blobs matched GitHub and both offline source/proof gates passed. One serial
+  worker completed the preregistered two known spots × three repeats at first
+  1m charged-work crossings in 13.862620 seconds (<900); all paths, policies,
+  scores and work counts are retained in the [raw profile](../results/medium-dry-full-expectation/profile/manifest.json).
+  Low/wet finished at 1,000,620 work and medium/dry at 1,022,544 work in each
+  repeat. Maximum observed worker RSS was 181,911,552 bytes (cumulative
+  process peak). The required maximum scaled whole-path estimates were
+  10.979192 seconds for low/wet and 34.345882 for medium/dry, so
+  `T=45.325074` and `2*(2*T+600)=1381.300294<7200` seconds. This is a
+  profile-derived forecast, **not** separate admission or a 10m poker result.
+  Next: publish and byte-verify the complete profile, then recompute the
+  data-only gate. Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 

@@ -9037,6 +9037,18 @@ decision strength. **Next decision:** publish and verify the proof, then
 profile the two known river spots three times each under the fixed compute
 rule. Codex assisted; human hands-on time was not recorded.
 
+**November 23 full-pass compute profile.** The one registered profile ran
+each of the two known river spots three times to its first complete 1m-work
+crossing, with one serial worker. All six runs completed in 13.86 seconds
+and are in the [profile receipt](../results/medium-dry-full-expectation/profile/manifest.json).
+**Example:** the slowest scaled low/wet run estimated 10.98 seconds to 10m
+work, while the slowest medium/dry run estimated 34.35 seconds; adding those
+maxima gives `T=45.33`. The predeclared safety expression yields 1381.30
+seconds, below 7200. A profile measures cost and saved policy mechanics,
+not whether river decisions improve. **Next decision:** publish and verify
+every profile byte, then run a separate data-only admission before any 10m
+study. Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

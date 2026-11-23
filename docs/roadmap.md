@@ -85,8 +85,11 @@ The [source-check archive](../results/medium-dry-full-expectation/source-checks/
 retains those checks and earlier corrected failures. One
 [fictional proof](../results/medium-dry-full-expectation/own-proof/manifest.json)
 passed capture and replay within its cap; the fixed real-game profile and
-compute admission are next. No real candidate policy or strength result
-exists yet.
+compute admission are next. The one fixed six-path
+[profile](../results/medium-dry-full-expectation/profile/manifest.json)
+completed under its cap and forecasts `1381.300294 < 7200` seconds under the
+registered conservative rule. Separate admission and the 10m strength result
+remain pending; no default changed.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
