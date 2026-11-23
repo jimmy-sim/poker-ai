@@ -9224,6 +9224,18 @@ one fixed eight-path 10m own run, without predicting a favorable poker score.
 own policy and score before reference comparison. Codex assisted; human
 hands-on time and personal learning were not reported.
 
+**November 23 one broader-input own study.** After the separately published
+admission, the only authorized [fixed own study](../results/river-full-broader/own/manifest.json)
+completed all eight paths and 48 saved policy readouts in 140.096 launcher
+seconds. **Example:** each selected input has three independently seeded B4
+controls and one deterministic full expected candidate; each path saves
+current and linear-average policies at three charged-work crossings. A score
+from the learner's own evaluator is preliminary until the pinned reference
+scalar audit checks it. **Next decision:** publish and verify all own bytes,
+then run the comparison-only OpenSpiel audit without feeding reference
+strategies into training. Codex assisted; human hands-on time and personal
+learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

@@ -1,0 +1,50 @@
+"""Single capped fixed eight-path own-study launcher; retain every partial path."""
+import json
+import os
+import signal
+import subprocess
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+folder = Path(__file__).resolve().parent
+raw = folder / 'raw'
+log = folder / 'launch.log'
+state = folder / 'job-state.json'
+head = subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
+assert head == '78f5dedd3a85df7e1ee870b825b580585f4bd477'
+assert not raw.exists() and not log.exists() and not state.exists()
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+command = ['uv','run','--locked','python','scripts/study_river_full_broader.py','study','--output',str(raw)]
+env = os.environ.copy()
+env['UV_PYTHON'] = '3.11.17'
+env['UV_PROJECT_ENVIRONMENT'] = 'results/runs/guarded-skip-requalification-20261118/envs/base311'
+started = time.perf_counter()
+receipt = dict(status='starting',launcher_pid=os.getpid(),command=command,source_head=head,source_fingerprint='5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6',cap_seconds=7200,environment={k:env[k] for k in ('UV_PYTHON','UV_PROJECT_ENVIRONMENT')},log=str(log),output=str(raw),started_utc=datetime.now(timezone.utc).isoformat())
+def save() -> None:
+    with state.open('w') as stream:
+        json.dump(receipt,stream,indent=2,sort_keys=True)
+        stream.write('\n')
+        stream.flush()
+        os.fsync(stream.fileno())
+save()
+with log.open('xb') as stream:
+    process = subprocess.Popen(command,cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+    receipt.update(status='running',child_pid=process.pid,process_group_id=process.pid)
+    save()
+    try:
+        code = process.wait(timeout=7200)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid,signal.SIGTERM)
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid,signal.SIGKILL)
+            process.wait()
+        code = 124
+    receipt.update(status='passed' if code==0 else 'failed_retained',exit_code=code,observed_wall_seconds=time.perf_counter()-started,finished_utc=datetime.now(timezone.utc).isoformat())
+    save()
+    (folder/'launch.exit').write_text(f'{code}\n')
+print(json.dumps(receipt,sort_keys=True))
+raise SystemExit(code)

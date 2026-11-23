@@ -125,7 +125,10 @@ of that proof preceded the fixed real-game compute profile. The one
 the prescribed conservative bound 3,436.576 seconds under the 7,200-second
 cap. The separate [admission](../results/river-full-broader/admission/manifest.json)
 recomputed the identical bound; publish and verify its receipt before the
-single fixed 10m study. No poker-strength outcome yet exists for the new cohort.
+single fixed 10m study. That one eight-path study completed and its
+[own archive](../results/river-full-broader/own/manifest.json) must be
+published and verified before the pinned reference audit. No classified
+poker-strength outcome yet exists for the new cohort.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

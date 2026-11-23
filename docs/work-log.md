@@ -106,6 +106,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   or spot changed. Next: publish and byte-verify admission before the single
   fixed eight-path own study. Codex assisted; human time was not reported.
 
+- With admission published and all three receipt blobs verified on GitHub,
+  the one fixed eight-path 10m own study ran from clean `78f5ded`. All eight
+  paths completed with 48 saved policy readouts and their own scores at the
+  three charged-work crossings. Internal runtime was 139.545 seconds and
+  launcher runtime 140.096 seconds under the 7,200-second cap. The
+  [own archive](../results/river-full-broader/own/manifest.json) retains
+  policies, score events, work counts, launcher state and logs. Its publication
+  and GitHub byte verification are required before the pinned OpenSpiel
+  scalar audit; no reference comparison or final strength classification
+  exists at this checkpoint. Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
