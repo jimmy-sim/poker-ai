@@ -77,6 +77,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   failure; its publication and GitHub verification precede the fictional
   proof. No poker trajectory or strength measurement has run.
 
+- After the complete source receipt was published and all 24 GitHub blobs
+  verified, one [fictional proof](../results/river-full-broader/own-proof/manifest.json)
+  ran on clean source-receipt head `5e964607716b4257c41578b45b99abd2bd42c0d5`.
+  The 180-second launcher finished in 0.510 seconds, exiting zero. B4 and full
+  expected arms each saved/replayed six fixed readouts; their final charged
+  work was 720 and 726 toy nodes. The archive retains the launcher, source,
+  events, policies and logs. This is software proof on a fictional signal
+  game, not poker evidence. Next: publish/verify every proof byte, then run
+  the fixed real-game 24-path compute profile once.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

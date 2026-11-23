@@ -9191,6 +9191,18 @@ skipping a hook. **Next decision:** publish and verify the source receipt,
 then run one capped fictional proof and the preregistered compute profile.
 Codex assisted; human hands-on time and personal learning were not reported.
 
+**November 23 fictional broader-input proof.** After source publication, a
+single [toy proof](../results/river-full-broader/own-proof/manifest.json)
+exercised both paths through capture and replay. B4 recorded six readouts by
+720 charged nodes; the deterministic full pass recorded six by 726. The
+launcher finished in 0.510 seconds under its 180-second cap. **Example:** the
+two arms reach a work label at different actual node counts because each
+stops at its first complete update crossing. The fictional game is not a
+Hold'em strength result. **Next decision:** publish and verify the proof,
+then time the prespecified three repeats of all eight real paths without
+using their policy scores to choose a case. Codex assisted; human hands-on
+time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

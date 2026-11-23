@@ -117,7 +117,11 @@ post-merge main CI was canceled at the fixed 35-minute limit for Python 3.11
 after 3.12 passed; its receipt-head CI had passed both. The new exact-source
 qualification passed all four local roles, hooks and both hosted jobs; the
 [source receipt](../results/river-full-broader/source-checks/manifest.json)
-is the next publication checkpoint before the fictional proof.
+was published and GitHub-byte-verified. The one
+[fictional proof](../results/river-full-broader/own-proof/manifest.json)
+passed its capture/replay and 180-second cap; publication and byte verification
+of that proof precede the fixed real-game compute profile. No poker-strength
+outcome yet exists for the new cohort.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
