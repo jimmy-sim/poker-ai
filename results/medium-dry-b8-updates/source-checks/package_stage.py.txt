@@ -1,0 +1,30 @@
+"""Copy one completed raw study stage and create a reviewed hash inventory."""
+import argparse
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+FINGERPRINT = '666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad'
+
+
+def package(raw: Path, output: Path, status: str) -> None:
+    assert raw.is_dir() and not raw.is_symlink() and not output.exists()
+    assert all(not item.is_symlink() for item in raw.rglob('*'))
+    if status not in ('own_proof_passed','profile_published','admitted','own_published','native_audited','report_positive','report_negative','report_inconclusive','failed_retained'):
+        raise ValueError(status)
+    shutil.copytree(raw, output)
+    members=[]
+    for path in sorted(p for p in output.rglob('*') if p.is_file()):
+        data=path.read_bytes()
+        members.append(dict(file=path.relative_to(output).as_posix(),bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+    assert len(members)==len({row['file'] for row in members})
+    (output/'manifest.json').write_text(json.dumps(dict(status=status,source_fingerprint=FINGERPRINT,files=members),sort_keys=True,indent=2)+'\n')
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('raw',type=Path)
+    parser.add_argument('output',type=Path)
+    parser.add_argument('status')
+    args=parser.parse_args()
+    package(args.raw,args.output,args.status)

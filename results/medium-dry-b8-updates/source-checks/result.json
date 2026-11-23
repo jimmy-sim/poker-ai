@@ -1,0 +1,80 @@
+{
+  "first_all_file_hook_wrapper_failure": "hooks-first-shell-failure.json",
+  "first_hook_environment_failure": "first-commit-hook-failure.json",
+  "focused_optional_b8_tests": {
+    "Python 3.11": "8 passed",
+    "Python 3.12": "8 passed"
+  },
+  "historical_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    }
+  ],
+  "hosted_run": 45135404030,
+  "local_roles": [
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 819.170634375012,
+      "failure": null,
+      "head": "81ef11afffd2067e94b3c576e5d2cb3e76f733cc",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 771.8530132920132,
+      "failure": null,
+      "head": "81ef11afffd2067e94b3c576e5d2cb3e76f733cc",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 500.10688241699245,
+      "failure": null,
+      "head": "81ef11afffd2067e94b3c576e5d2cb3e76f733cc",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 434.71739229200466,
+      "failure": null,
+      "head": "81ef11afffd2067e94b3c576e5d2cb3e76f733cc",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "parent_fingerprint": "7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab",
+  "scientific_measurements_started": false,
+  "source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+  "status": "source_qualified",
+  "tested_head": "81ef11afffd2067e94b3c576e5d2cb3e76f733cc"
+}

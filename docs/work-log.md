@@ -13,6 +13,24 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #103 exact-source B8 qualification
+
+- **Tested source:** `81ef11afffd2067e94b3c576e5d2cb3e76f733cc`,
+  B8 fingerprint `666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad`.
+  Base Python 3.11 and 3.12 each passed 5,755 tests, with 73 skips and 150
+  slow deselections, plus Ruff, format, strict mypy and exact pre/post guards.
+  Optional 3.11 passed 2,597 tests; optional 3.12 passed 2,595 with two skips;
+  both checked OpenSpiel 2.0.2, its license, historical pins and the exact
+  B8 source. The new B8 focused tests passed eight times on each optional
+  runtime. All-file hooks passed; an earlier shell wrapper failed only while
+  trying to save its exit code after the hooks printed passes. The original
+  commit-hook PATH setup failure also remains retained. Source-head
+  [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45135404030)
+  passed Python 3.11/3.12. The [source archive](../results/medium-dry-b8-updates/source-checks/manifest.json)
+  retains logs, receipts and failures. No B8 scientific stage has run. Next:
+  publish and GitHub-byte-verify this receipt before fictional proof. Codex
+  assisted; human hands-on time was not recorded.
+
 ## 2026-11-22 — PR #103 isolated B8 source
 
 - **Resume and source implementation:** local/tracking/GitHub PR head `24103f9`

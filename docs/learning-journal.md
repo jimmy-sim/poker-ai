@@ -124,6 +124,16 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
+tests one prospectively fixed batch-eight signed updater against published
+batch-four controls on two known river spots. Its isolated source has passed
+full local base/optional and hosted checks; the
+[source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
+is being published before a fictional proof or fixed profile. No B8 poker
+result or default change exists. PR #102's conservative compute gate rejected
+its longer study, so its poker-strength effect remains inconclusive. Earlier
+status paragraphs below preserve the sequence of prior investigations.
+
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
 harder known game's median exploitability is **2.390% of the initial pot**, above
@@ -209,7 +219,8 @@ more work reaches the gate. No new training or default promotion followed.
 The [issue #4 operating workflow](research-operating-workflow.md) now permits
 successive bounded research milestones while keeping prospective protocols,
 failed gates, compute admission and own-before-reference publication intact.
-The immediate task is PR #98 evidence publication, final CI and review.
+At that earlier point, the immediate task was PR #98 evidence publication,
+final CI and review; subsequent entries record its completion.
 
 Three useful reading paths:
 
@@ -8846,6 +8857,22 @@ B8 trainer identity and capture/replay; Ruff lint and strict mypy passed.
 These are software checks, not poker-strength evidence. **Next decision:**
 publish and fully qualify the exact source before the fictional proof or
 fixed 100k profile. Codex assisted; human hands-on time was not recorded.
+
+**November 23 exact-source B8 qualification.** The isolated source at
+`81ef11a` passed both full base Python suites, both reference-enabled optional
+suites, all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45135404030).
+The base suites each passed 5,755 tests; the optional suites passed 2,597 and
+2,595 tests with two optional 3.12 skips. The new focused B8 tests also passed
+on both optional runtimes. The [source archive](../results/medium-dry-b8-updates/source-checks/manifest.json)
+keeps the exact logs and guards, plus two operational failures: the first
+commit-hook shell lacked `uv`, and a later wrapper used zsh's read-only
+`status` variable after the hooks themselves printed passes. The unchanged
+hooks then passed with a saved exit receipt. **Example:** passing a reference
+license check proves the optional validation environment is pinned; it says
+nothing yet about whether B8 chooses better river actions. **Next decision:**
+publish and verify the source archive, then run only the prospectively fixed
+fictional proof and compute profile. No B8 poker policy has been measured.
+Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
