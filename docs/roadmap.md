@@ -66,9 +66,9 @@ lower-variance batch-eight signed updates improve the two **known** river
 spots versus immutable published B4 controls. Its seeds, work, gates, fixed
 profile and strict compute admission are registered before B8 outcomes.
 Its isolated source at `81ef11a` passed full exact-source base and optional
-local checks, all-file hooks and both hosted CI jobs. The source receipt is
-retained for publication and byte verification before fictional proof or
-poker measurement. No B8 strength result exists yet.
+local checks, all-file hooks and both hosted CI jobs. Its source receipt is
+published and GitHub-byte-verified; the fictional proof passed and is being
+published before the fixed profile. No B8 poker-strength result exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

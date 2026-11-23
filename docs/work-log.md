@@ -30,6 +30,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   retains logs, receipts and failures. No B8 scientific stage has run. Next:
   publish and GitHub-byte-verify this receipt before fictional proof. Codex
   assisted; human hands-on time was not recorded.
+- **Fictional own proof after source publication:** all 26 source archive
+  GitHub blobs matched the local commit, and the offline publication guard
+  passed. The one capped B8 proof on the fictional signal game completed nine
+  captures and 784 charged node work with replay at receipt head `2ba208e`.
+  Its observed external command wall time was 0.2001 seconds, below the
+  180-second cap; the [proof archive](../results/medium-dry-b8-updates/own-proof/manifest.json)
+  retains snapshots, masses, events, command and exit evidence. This is a
+  software proof, not a poker result. Next: publish/verify proof before the
+  one fixed 18-path 100k profile. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-22 — PR #103 isolated B8 source
 

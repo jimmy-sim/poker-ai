@@ -129,7 +129,8 @@ tests one prospectively fixed batch-eight signed updater against published
 batch-four controls on two known river spots. Its isolated source has passed
 full local base/optional and hosted checks; the
 [source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
-is being published before a fictional proof or fixed profile. No B8 poker
+is published and a fictional proof has passed. Its proof bytes are being
+published before the fixed profile. No B8 poker
 result or default change exists. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8873,6 +8874,18 @@ nothing yet about whether B8 chooses better river actions. **Next decision:**
 publish and verify the source archive, then run only the prospectively fixed
 fictional proof and compute profile. No B8 poker policy has been measured.
 Codex assisted; human hands-on time was not recorded.
+
+**November 23 fictional B8 proof.** After the source receipt was published
+and its GitHub blobs matched, the one [fictional proof](../results/medium-dry-b8-updates/own-proof/manifest.json)
+used a small signal game to exercise B8 capture and replay. It saved nine
+policies at three work labels and finished with 784 charged node visits; the
+observed external command wall time was 0.2001 seconds against the 180-second
+cap. **Example:** replaying a saved fictional average checks that its score
+and support mass are the same as when it was written. The fixture is not a
+Hold'em game, so it provides no evidence that B8 improves poker decisions.
+**Next decision:** publish and verify these bytes, then run the single fixed
+100k-work B8 profile and apply its conservative compute gate. Codex assisted;
+human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
