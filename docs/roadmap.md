@@ -171,8 +171,15 @@ The isolated exact-turn adapter and fixed experiment runner passed
 11 fictional or already known fixture tests and strict typing. All four
 exact-source local roles, all-file hooks and both hosted jobs then passed;
 the [source receipt](../results/turn-exact-transfer/source-checks/manifest.json)
-is being published before the first frozen-tree collision inventory.
-No selected tree, collision count or poker outcome has yet been measured.
+was published and byte-verified before the first frozen-tree collision
+inventory. The [single fixed inventory](turn-exact-transfer-result.md)
+found **zero turn-key collisions on all three new inputs**, triggering the
+registered structural stop. PR #107 is **inconclusive for poker strength**;
+no training, reference audit, redraw or default change followed. The
+known diagnostic input retains 12 collided turn rows, so a separate
+prospective known-case matched-work question can test that mechanism
+without claiming unseen or broader strength. Final checks/review and
+publication of the raw structural-stop archive remain before PR closure.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

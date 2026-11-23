@@ -129,12 +129,12 @@ has a frozen prospective exact-turn comparison on one known mechanistic
 input and three new card/range inputs on known public templates. Its tested
 source passed all four exact-source local lanes, all-file hooks and both
 [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875).
-The selected trees, turn collisions, trained policies and strength outcomes
-remain unmeasured until the source receipt is published and verified. The
-prior [broader-input result](river-full-broader-spots-result.md) is negative;
-the [turn collision diagnosis](river-turn-loss-diagnosis-result.md) motivates
-the new question but does not prove an improvement. No default changed.
-Earlier status paragraphs below preserve the sequence of investigations.
+The [one frozen inventory](turn-exact-transfer-result.md) then met its
+registered structural stop: all three new inputs have zero turn-key
+collisions. This experiment is **inconclusive for poker strength**, and
+no training or default change followed. The prior [broader-input result](river-full-broader-spots-result.md)
+remains negative. Earlier status paragraphs below preserve the sequence of
+investigations.
 
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
@@ -9409,6 +9409,19 @@ retained and corrected before the passing run; neither built a selected
 tree. **Next decision:** publish the complete source-check receipt before
 counting frozen turn collisions, then stop structurally if all three new
 inputs lack collisions. Codex assisted; no human time or personal learning
+was reported.
+
+**November 23 frozen structural stop.** The [one-time inventory](turn-exact-transfer-result.md)
+found 12 collided turn rows in the known diagnostic input but none in any
+of the three new card/range inputs. **Example:** on the selected 6s Kc 2h
+Jd medium/dry turn, the q8 control already gives each of the 24 exact
+turn decision rows its own strategy row; exact turn keys add no split to
+that finite tree. No policy was trained or scored, so the candidate's
+poker strength here is unknown, not worse or better. The 900-second
+inventory cap passed and no case was replaced. **Next decision:** publish
+this inconclusive result and close PR #107, then preregister a distinct
+known-case matched-work mechanism test if it offers the best next poker
+decision evidence. Codex assisted; no human time or personal learning
 was reported.
 
 ### November 18: locate current CPU in receipt prerequisites

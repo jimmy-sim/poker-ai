@@ -91,6 +91,21 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   before the frozen inventory. Codex assisted; human time or personal
   learning was not reported.
 
+- The single source-qualified frozen [inventory](turn-exact-transfer-result.md)
+  ran from clean `8e2e792` and exited zero in about 7.06 launcher seconds,
+  below its 900-second cap. The known mechanistic input has 12 collided
+  exact turn rows in six q8 groups, but all three new card/range inputs
+  have zero turn collisions. Their trees have 21,303, 21,303 and 2,295
+  nodes, all below the 200,000-node limit. The registered
+  `structural_stop` ended the comparison **inconclusive for poker strength**.
+  No fictional proof, profile, admission, training, reference audit,
+  default change, redraw or retry occurred. Raw JSON, PIDs, command and
+  logs are preserved in the [inventory archive](../results/turn-exact-transfer/inventory/manifest.json).
+  Next: publish/verify the structural-stop evidence, finish final
+  documentation/source checks and PR review, then register a distinct
+  known-case mechanistic question if justified. Codex assisted; human
+  time or personal learning was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
