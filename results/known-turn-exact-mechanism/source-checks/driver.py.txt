@@ -1,0 +1,57 @@
+"""Run the unchanged guarded final roles serially and retain each receipt."""
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent
+ROOT = OUT.parents[2]
+EXPECTED = "0b89955430078e8e48e03bc82b929616738bba5d"
+ROLES = (("311", "base"), ("312", "base"), ("311", "optional"), ("312", "optional"))
+
+def record(data: dict[str, object]) -> None:
+    path = OUT / "driver-state.json"
+    with path.open("w") as stream:
+        json.dump(data, stream, indent=2)
+        stream.write("\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+
+if subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip() != EXPECTED:
+    raise RuntimeError("wrong source head")
+if subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT):
+    raise RuntimeError("dirty source")
+state: dict[str, object] = {"head": EXPECTED, "driver_pid": os.getpid(), "status": "running", "completed": []}
+record(state)
+for minor, role in ROLES:
+    name = role + minor
+    if (OUT / f"{name}.json").exists() or (OUT / f"{name}.log").exists():
+        raise FileExistsError("retain existing role; do not duplicate " + name)
+    child = subprocess.Popen([sys.executable, str(OUT / "runner.py"), minor, role], cwd=ROOT, start_new_session=True)
+    state.update(current=name, child_pid=child.pid, started_at=time.time(), deadline_at=time.time()+3600)
+    record(state)
+    try:
+        code = child.wait(timeout=3600)
+    except subprocess.TimeoutExpired:
+        os.killpg(child.pid, signal.SIGTERM)
+        try:
+            child.wait(timeout=20)
+        except subprocess.TimeoutExpired:
+            os.killpg(child.pid, signal.SIGKILL)
+            child.wait()
+        code = 124
+    completed = state["completed"]
+    assert isinstance(completed, list)
+    completed.append({"role": name, "exit_code": code})
+    state.update(current=None, child_pid=None, deadline_at=None)
+    record(state)
+    print(name, "exit", code, flush=True)
+    if code:
+        state["status"] = "failed_retained"
+        record(state)
+        raise SystemExit(code)
+state["status"] = "passed"
+record(state)

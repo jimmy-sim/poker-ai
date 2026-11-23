@@ -9468,6 +9468,19 @@ and hosted qualification, then publish the source receipt before the one
 fictional proof. The known medium/dry strength result is still unknown.
 Codex assisted; no human time or personal learning was reported.
 
+**November 23 known-case exact-source qualification.** The isolated
+source passed both complete local Python suites, both fixed optional
+suites, hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45285559652)
+on one exact source. **Example:** the optional checks confirm the installed
+OpenSpiel 2.0.2 license hash while the parent exact-turn and earlier
+experiment source fingerprints stay unchanged. A detached local wrapper
+stopped after base 3.11 passed; its full receipt was retained and the
+supervised continuation ran the remaining three roles only. This is an
+operational interruption, not a poker result. **Next decision:** publish
+and verify the complete [source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json)
+before the one fictional proof; no real-game policy or score exists yet.
+Codex assisted; no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

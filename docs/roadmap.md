@@ -196,6 +196,11 @@ policy or score exists at protocol publication; no default changed.
 Its isolated runner, source guards, forecast, audit and report now pass 28
 focused/inherited tests, Ruff/format and strict mypy; exact-source local
 and hosted qualification remains before any real trajectory.
+The four exact-source local base/optional roles, hooks and both hosted jobs
+then passed on one source revision; the complete
+[source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json)
+retains the interrupted wrapper and passing continuation. Publish and verify
+that receipt before the capped fictional proof; no poker outcome yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

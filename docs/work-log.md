@@ -55,6 +55,23 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   four exact-source local/optional roles, hooks and both hosted jobs before
   any real trajectory. Codex assisted; human time/learning not reported.
 
+- Exact-source PR #108 qualification on tested commit `0b899554` passed
+  base Python 3.11/3.12 with 5,799 passed, 73 skipped, 150 slow
+  deselected each; optional 3.11 passed 2,597 and optional 3.12 passed
+  2,595 with two expected skips across the fixed 81 suites. Pre/post
+  guards bound the new source fingerprint
+  `6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4`,
+  historical sources, lock, installed runtimes and OpenSpiel/Numba/license.
+  All-file hooks and both [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45285559652)
+  passed. The first detached local wrapper stopped after writing a passing
+  base 3.11 receipt but before updating its driver state; no worker
+  survived, and a supervised continuation accepted that receipt and ran
+  only the three remaining roles. The interruption and prior software
+  iteration failures remain in the [source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json),
+  32 hashed members. No real-game path, profile or score has run. Next:
+  publish and GitHub-byte-verify this receipt before the one capped
+  fictional proof. Codex assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged
