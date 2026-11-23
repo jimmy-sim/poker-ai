@@ -90,5 +90,7 @@ run canceled at its unchanged limit and a targeted same-SHA operational
 requalification passed. The next [read-only prospective diagnosis](river-turn-loss-diagnosis.md)
 uses only the saved, known medium/dry policies to test whether actual turn
 collisions align with the candidate's largest losses; no new diagnostic
-outcome or training exists at protocol publication. All earlier failures remain, including PR #104's
+outcome or training exists at protocol publication. Its isolated source passed
+all four exact-source local lanes, hooks and both hosted jobs; the source
+receipt precedes proof and real-policy analysis. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

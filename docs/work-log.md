@@ -52,6 +52,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   ranking or collision count has been measured. Codex assisted; human time
   was not reported.
 
+- Exact tested-source PR #106 `4400b52a87659ec543fa3c3eaf0f8785487d80c4`
+  passed local base Python 3.11/3.12 (5,784 passed, 73 skipped, 150 slow
+  deselected each; Ruff, format, strict mypy and source guards), optional
+  3.11 (2,597 passed) and optional 3.12 (2,595 passed, two expected skips).
+  Both optional roles checked the pinned OpenSpiel 2.0.2 license and Numba
+  0.68.1. All-file hooks and [hosted CI 45228243604](https://github.com/jimmy-sim/poker-ai/actions/runs/45228243604)
+  passed on the same head. The [source-check receipt](../results/river-turn-loss/source-checks/manifest.json)
+  retains exact local and hosted logs and the earlier system-Python import
+  failure. No real saved-policy diagnosis or fictional proof had run at this
+  publication checkpoint. Main post-PR #105 CI also passed both jobs.
+  Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as

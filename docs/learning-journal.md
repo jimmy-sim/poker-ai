@@ -9303,6 +9303,16 @@ source and complete exact-source local/optional/hosted qualification before
 one fictional proof and the single capped saved-policy diagnosis. Codex
 assisted; human hands-on time and personal learning were not reported.
 
+**November 23 source qualification.** The new diagnosis code passed four
+exact-source local lanes and both hosted Python lanes before it could read
+the saved real-game policies. The optional lanes covered the pinned solver
+license and JIT dependency; the [source receipt](../results/river-turn-loss/source-checks/manifest.json)
+keeps the logs. **Example:** the fictional test can reconcile two players'
+best-reply gains without saying anything about the medium/dry turn collision
+count. The scientific answer remains pending until the separately capped
+saved-policy run. Codex assisted; no human time or personal learning was
+reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
