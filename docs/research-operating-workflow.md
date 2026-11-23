@@ -104,4 +104,15 @@ receipt-head CI. The next [prospective exact-turn transfer test](turn-exact-tran
 keeps the diagnosed input known, selects three additional card/range inputs
 without outcome inspection, and compares exact turn keys with the unchanged
 q8 turn key at identical full expected charged work. Selection and training
-remain pending at protocol publication.
+remained pending at protocol publication. The one frozen inventory then
+found zero turn collisions on all three new inputs and triggered the
+prospective structural stop before training; poker strength is inconclusive.
+[PR #107](https://github.com/jimmy-sim/poker-ai/pull/107) history-merged
+at `e147802c` after all local/hosted checks and solo review. Its first
+receipt-head Python 3.11 job canceled at the unchanged limit; the retained
+failure and one passing same-SHA operational requalification are separate
+from the scientific result. The next [prospective known-case mechanism
+test](known-turn-exact-mechanism.md) fixes a two-path matched-work comparison
+on the already evaluated As Jc 5d 3h input with 12 diagnosed collisions.
+No new policy or score existed at protocol publication; broader transfer,
+default promotion and seed-based uncertainty remain unestablished.

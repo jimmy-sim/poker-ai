@@ -182,7 +182,17 @@ without claiming unseen or broader strength. The raw archive/report were
 published and GitHub-byte-verified. All four
 final exact-result local roles, hooks and both hosted jobs passed; the
 [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
-is being published. Solo review and history-preserving merge remain.
+was published and verified. Solo review and both receipt-head hosted jobs
+passed after retaining a first Python 3.11 timeout and one unchanged
+same-SHA operational requalification. [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
+was history-merged as `e147802c`; post-merge main CI is tracked separately.
+The next [prospective known-case exact-turn test](known-turn-exact-mechanism.md)
+asks whether splitting the **12 diagnosed collisions** improves the already
+evaluated As Jc 5d 3h medium/dry game at matched complete expected work.
+It is a one-known-input mechanism question, not new-input transfer. Its
+control, candidate, seed, three work checkpoints, absolute and paired gates,
+compute caps and publication boundaries are fixed before outcomes. No new
+policy or score exists at protocol publication; no default changed.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

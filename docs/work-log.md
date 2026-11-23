@@ -13,6 +13,35 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #107 closure and known-case turn protocol
+
+- [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107) was history-merged
+  as `e147802c8c2ecefbe7722a793d0c34169c118f6b` after solo review,
+  four exact-source local lanes, hooks and both receipt-head hosted jobs.
+  The first Python 3.11 job canceled at the unchanged 35-minute cap after
+  96% of pytest, without a preceding test failure. The failed metadata/log
+  remain under ignored persistent
+  `results/runs/turn-exact-transfer-receipt-ci-20261123/`; one targeted
+  same-SHA Python 3.11 operational requalification passed 5,795 tests,
+  73 skipped, 150 deselected and hooks in 24m24s. Python 3.12 passed.
+  [Post-merge main CI 45283536151](https://github.com/jimmy-sim/poker-ai/actions/runs/45283536151)
+  is separately pending at this entry. The one structural inventory ended
+  the scientific comparison **inconclusive for poker strength** before
+  training because all three selected new inputs had zero turn collisions.
+  No outcome, seed, input or cap was changed and no default promoted.
+  Codex assisted; human time or personal learning was not reported.
+
+- The distinct [known-case prospective protocol](known-turn-exact-mechanism.md)
+  fixes the already evaluated As Jc 5d 3h medium/dry input with 12 turn
+  collisions, a same-work q8 control and exact-turn candidate, deterministic
+  seed zero, 100k/1m/10m checkpoints, historical absolute and paired gates,
+  six-path profile, strict conservative admission, 7,200-second own cap and
+  own-before-reference boundary. It is a mechanism test on **one known
+  game**, not a new holdout or generalization test. The PR #107 source and
+  old result files remain pinned. No new game-tree, policy, profile or
+  score measurement existed at this protocol checkpoint. Codex assisted;
+  human time or personal learning was not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged

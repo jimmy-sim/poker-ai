@@ -1,0 +1,94 @@
+{
+  "absolute_candidate_gates": {
+    "final_median_max": 0.01,
+    "final_worst_max": 0.025,
+    "recall_violations_max": 0,
+    "whole_coverage_min": 0.95
+  },
+  "additional_decision_rule": "top three control final additive best-response gain rows on each street, exact-information-index tie break; show same rows for both arms and all checkpoints",
+  "candidate": "signed_full_exact_turn_river",
+  "caps_seconds": {
+    "failure_save_reserve": 120,
+    "native_audit": 900,
+    "profile": 900,
+    "proof": 180,
+    "whole_own": 7200
+  },
+  "classification": {
+    "inconclusive": "other complete outcomes",
+    "negative": "any absolute gate fails or candidate-control > +0.001",
+    "positive": "absolute gates pass and candidate-control <= -0.001"
+  },
+  "control": "signed_full_q8_turn_exact_river",
+  "date_pst": "2026-11-23",
+  "fixed_diagnostic_rows": [
+    2445,
+    30,
+    1
+  ],
+  "issue": 4,
+  "native": {
+    "comparison_only": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "saved_policy_cases": 12,
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "paired_improvement_min": 0.001,
+  "paired_worsening_limit": 0.001,
+  "parent_source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+  "parent_source_manifest_sha256": "af541362cdea019e33bca2385b83b79ebbed40b52fc926ba287243ccf2dc4071",
+  "path_order": [
+    "control",
+    "candidate"
+  ],
+  "primary_metric": "exact restricted-game NashConv/2 as fraction of initial pot, final linear average, lower better",
+  "profile": {
+    "T": "maximum fixed worker sum",
+    "assignment": "path index modulo two",
+    "estimate": "maximum across three whole_path_seconds*10000000/actual_final_work per path",
+    "repeats_per_path": 3,
+    "strict_admission": "2*(2*T+600)<7200",
+    "work": 1000000,
+    "worker_count": 2
+  },
+  "protocol": "docs/known-turn-exact-mechanism.md",
+  "question": "Does exact acting turn information improve the known diagnosed medium/dry finite game at matched full expected work?",
+  "readouts": [
+    "current",
+    "linear_average"
+  ],
+  "rng": "PCG64, no draws in complete passes",
+  "scope": "one previously evaluated known finite input; no unseen or population claim",
+  "seed_per_path": 0,
+  "source_checks": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312",
+    "all_file_hooks",
+    "hosted311",
+    "hosted312"
+  ],
+  "source_publication_order": [
+    "prospective_protocol",
+    "tested_source",
+    "source_receipt",
+    "fictional_proof",
+    "fixed_profile",
+    "separate_admission",
+    "own_policies_and_scores",
+    "comparison_only_native",
+    "fixed_report",
+    "final_receipt"
+  ],
+  "spot": "configs/river-full-broader-spots/full_new_medium_dry_oop.json",
+  "spot_sha256": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+  "stop": "a failed source, mathematical, publication, profile or admission gate stops; one admitted study only, retain partial/failure; no default promotion",
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ]
+}

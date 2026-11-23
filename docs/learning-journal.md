@@ -125,15 +125,15 @@ not a record of completed practice.
 ## Where the project stands
 
 **Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
-has a frozen prospective exact-turn comparison on one known mechanistic
-input and three new card/range inputs on known public templates. Its tested
-source passed all four exact-source local lanes, all-file hooks and both
-[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875).
-The [one frozen inventory](turn-exact-transfer-result.md) then met its
-registered structural stop: all three new inputs have zero turn-key
-collisions. This experiment is **inconclusive for poker strength**, and
-no training or default change followed. The prior [broader-input result](river-full-broader-spots-result.md)
-remains negative. Earlier status paragraphs below preserve the sequence of
+history-merged an **inconclusive** structural-stop comparison after all
+required checks. Its three selected new card/range inputs on known public
+templates had zero turn-key collisions, so no policy was trained or default
+changed. The prior [broader-input result](river-full-broader-spots-result.md)
+remains negative. The next [prospective known-case
+test](known-turn-exact-mechanism.md) asks whether separating 12 diagnosed
+turn collisions improves the already evaluated As Jc 5d 3h medium/dry
+game at identical charged work. No new policy or score exists at protocol
+publication. Earlier status paragraphs below preserve the sequence of
 investigations.
 
 The simulator and learning tools work. The open question is how to make the
@@ -9434,6 +9434,25 @@ retains the logs and exact head. **Next decision:** publish and verify this
 receipt, finish solo review and history-preserving merge, then register a
 separate known-case mechanism question if it is the best next poker
 decision test. Codex assisted; no human time or personal learning was
+reported.
+
+**November 23 PR #107 closure and next question.** The [structural-stop
+result](turn-exact-transfer-result.md) was history-merged after the final
+exact-source local/optional suites, hooks, solo review and both receipt-head
+hosted Python jobs passed. The first 3.11 hosted job timed out at 96%; its
+log remains saved, and one unchanged same-commit operational rerun passed.
+**Question:** on the *already known* As Jc 5d 3h medium/dry game, does
+separating the 12 diagnosed turn collisions improve poker decisions at
+matched full expected work? The new [prospective plan](known-turn-exact-mechanism.md)
+fixes the old q8 control, exact-turn candidate, deterministic seed, work,
+measurements, gates, compute admission and caps before any policy result.
+**Example:** the earlier saved Jh 9h and Qd Qh hands share one q8 row but
+have opposite local action preferences under the saved opposing policy;
+separate keys could help, but only the fixed training comparison can test
+that causal hypothesis on this known game. No claim of new-input transfer,
+seed uncertainty or default promotion follows. **Next decision:** publish
+and verify the protocol, then implement isolated tested source before any
+real training. Codex assisted; no human time or personal learning was
 reported.
 
 ### November 18: locate current CPU in receipt prerequisites
