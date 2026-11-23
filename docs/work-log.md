@@ -42,6 +42,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   score measurement existed at this protocol checkpoint. Codex assisted;
   human time or personal learning was not reported.
 
+- PR #108's isolated runner, source/archive guards, strict two-worker
+  forecast, comparison-only scalar audit, fixed report and synthetic
+  no-collision regression were implemented without changing PR #107 or
+  historical pinned files. Four new focused tests and 24 inherited full-pass
+  and exact-turn tests passed together (28 total); Ruff lint/format passed
+  all project files and strict mypy passed 1,004 source files. The first
+  unformatted source and missing test import/explicit export failures are
+  retained under ignored `results/runs/known-turn-source-20261123/` and were
+  corrected before source qualification. No new game-tree, profile, policy
+  or score measurement occurred. Next: publish tested source, then run all
+  four exact-source local/optional roles, hooks and both hosted jobs before
+  any real trajectory. Codex assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged

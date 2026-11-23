@@ -9455,6 +9455,19 @@ and verify the protocol, then implement isolated tested source before any
 real training. Codex assisted; no human time or personal learning was
 reported.
 
+**November 23 isolated known-case source.** The new PR #108 adapter
+reuses PR #107's unchanged exact-turn key and full expected learner, with a
+new two-path runner, evidence guards, strict forecast and fixed report.
+**Example:** a synthetic one-hand-per-seat turn game has a one-to-one q8
+mapping, so splitting turn keys cannot invent a new information choice.
+Four new tests and 24 inherited full-pass/representation tests passed;
+Ruff/format and strict mypy (1,004 files) passed. Early import, typing
+export and style failures were retained and fixed before any new real
+trajectory. **Next decision:** complete exact-source base/optional/hooks
+and hosted qualification, then publish the source receipt before the one
+fictional proof. The known medium/dry strength result is still unknown.
+Codex assisted; no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

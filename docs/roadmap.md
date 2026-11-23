@@ -193,6 +193,9 @@ It is a one-known-input mechanism question, not new-input transfer. Its
 control, candidate, seed, three work checkpoints, absolute and paired gates,
 compute caps and publication boundaries are fixed before outcomes. No new
 policy or score exists at protocol publication; no default changed.
+Its isolated runner, source guards, forecast, audit and report now pass 28
+focused/inherited tests, Ruff/format and strict mypy; exact-source local
+and hosted qualification remains before any real trajectory.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
