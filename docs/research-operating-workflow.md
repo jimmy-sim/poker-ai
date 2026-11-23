@@ -77,5 +77,8 @@ completed with a conservative 3,436.576-second bound; the separate
 [admission](../results/river-full-broader/admission/manifest.json)
 recomputed the bound and was published and verified before the single
 [own study](../results/river-full-broader/own/manifest.json). The study
-completed; publish and verify every own byte before reference comparison. All earlier failures remain, including PR #104's
+completed and all own bytes were verified before the one pinned
+[48-row comparison-only audit](../results/river-full-broader/native/manifest.json).
+The audit passed its numerical gate; publish and verify its raw bytes before
+the frozen report. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

@@ -117,6 +117,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   scalar audit; no reference comparison or final strength classification
   exists at this checkpoint. Codex assisted; human time was not reported.
 
+- After all 104 own archive blobs matched GitHub at `da58637`, the one
+  pinned OpenSpiel 2.0.2 comparison-only audit checked all 48 published
+  policy readouts. It passed the unchanged `1e-9`-chip scalar gate with
+  maximum error `1.1368683772161603e-13` chips; internal runtime was
+  26.930 seconds and launcher runtime 27.497 seconds under the 900-second cap.
+  The [native archive](../results/river-full-broader/native/manifest.json)
+  retains all row values, license/runtime evidence, launcher and logs. No
+  reference strategy entered training. Next: publish and byte-verify the
+  audit before the frozen report. Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

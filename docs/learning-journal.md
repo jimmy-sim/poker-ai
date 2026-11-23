@@ -9236,6 +9236,17 @@ then run the comparison-only OpenSpiel audit without feeding reference
 strategies into training. Codex assisted; human hands-on time and personal
 learning were not reported.
 
+**November 23 broader-input reference scalar audit.** The one
+[comparison-only audit](../results/river-full-broader/native/manifest.json)
+replayed all 48 published policies with pinned OpenSpiel 2.0.2 and found
+maximum scalar difference `1.1368683772161603e-13` chips, below `1e-9`.
+**Example:** this checks the value and best-reply calculations used for the
+saved policies; it does not create another trained policy or alter any
+checkpoint. **Next decision:** publish and verify the audit, then classify
+both new inputs from published own and reference bytes using the frozen
+thresholds. Codex assisted; human hands-on time and personal learning were
+not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

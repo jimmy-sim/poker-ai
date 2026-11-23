@@ -127,8 +127,10 @@ cap. The separate [admission](../results/river-full-broader/admission/manifest.j
 recomputed the identical bound; publish and verify its receipt before the
 single fixed 10m study. That one eight-path study completed and its
 [own archive](../results/river-full-broader/own/manifest.json) must be
-published and verified before the pinned reference audit. No classified
-poker-strength outcome yet exists for the new cohort.
+published and verified before the pinned reference audit. That
+[48-row audit](../results/river-full-broader/native/manifest.json) passed
+the `1e-9`-chip gate; publish and verify it before the fixed report. No
+classified poker-strength outcome yet exists for the new cohort.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
