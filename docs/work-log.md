@@ -51,6 +51,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   strict mypy and lint then passed. Source publication/verification precedes
   the one real selection. Codex assisted; human time was not reported.
 
+- The one registered PR #107 structural cohort was drawn once at clean,
+  published selector head `c036dd920dacd82a80e87d8886586e5f9d807d63`
+  with PCG64 seed 20261520. The [freeze](../configs/turn-exact-transfer-freeze.json)
+  records medium/dry OOP, medium/wet OOP and low/wet IP new card/range
+  inputs after 66, 31 and 2 board attempts respectively. All 21 prior
+  input hashes, three new input hashes, distinct rank signatures, fixed
+  texture/position rules and selected source hashes were checked without
+  building a game tree or reading a policy or score. No case was replaced;
+  no turn collision or strength outcome is known at freeze publication.
+  Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as

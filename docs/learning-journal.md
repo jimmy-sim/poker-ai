@@ -9377,6 +9377,17 @@ was retained and corrected; focused tests, lint and strict typing passed.
 cohort freeze. Codex assisted; no human time or personal learning was
 reported.
 
+**November 23 one-time cohort freeze.** The published selector used its
+fixed PCG64 seed exactly once and saved [three new card/range inputs](../configs/turn-exact-transfer-freeze.json)
+on two known public betting templates. **Example:** the medium/dry draw
+needed 66 ordered board attempts before the dry texture and prior-rank
+exclusion rules both held; no tree size, collision count or poker policy
+was consulted. All three input hashes and the 21 old input hashes were
+verified. The cases are new card/range combinations in this study, not
+unseen betting templates. **Next decision:** publish and verify the freeze
+before any tree or decision measurement. Codex assisted; no human time or
+personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

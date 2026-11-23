@@ -163,7 +163,10 @@ structurally selected new card/range inputs. Its selection and scientific
 outcomes remain pending at protocol publication.
 The isolated one-time selector and fictional/read-only focused tests passed;
 publish and verify that source before freezing the cohort. No selected
-board, tree or strength result exists at this checkpoint.
+board, tree or strength result exists at this checkpoint. The one-time
+cohort was then drawn by the published structural rule and its exact
+[freeze](../configs/turn-exact-transfer-freeze.json) is being published
+before any tree, collision or decision measurement; no case was replaced.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
