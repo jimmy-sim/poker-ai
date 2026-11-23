@@ -1,0 +1,645 @@
+{
+  "assignments": [
+    [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15
+    ],
+    [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16
+    ],
+    [
+      2,
+      5,
+      8,
+      11,
+      14,
+      17
+    ]
+  ],
+  "failure": null,
+  "head": "20053022dd0c84cdbd73d5e06158125ff6d50231",
+  "parent_cpu_seconds": 0.020815,
+  "reaped_children_cpu_seconds": 57.73,
+  "seconds": 19.407502083995496,
+  "source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+  "stage": "profile",
+  "status": "completed",
+  "worker_count": 3,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 28920,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "repeat0/path00",
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "repeat0/path03",
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "folder": "repeat1/path00",
+          "index": 6,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "folder": "repeat1/path03",
+          "index": 9,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 12,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "folder": "repeat2/path00",
+          "index": 12,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 15,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "folder": "repeat2/path03",
+          "index": 15,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 19.183945,
+          "kind": "done",
+          "seconds": 19.304209500012803,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 100021,
+                "index": 0,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 1.1685212909942493,
+                "worker_peak_rss_bytes": 60637184
+              },
+              {
+                "captures": 3,
+                "final_work": 100290,
+                "index": 3,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 5.233324790999177,
+                "worker_peak_rss_bytes": 189562880
+              },
+              {
+                "captures": 3,
+                "final_work": 100021,
+                "index": 6,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 1,
+                "whole_path_seconds": 1.211692791999667,
+                "worker_peak_rss_bytes": 189579264
+              },
+              {
+                "captures": 3,
+                "final_work": 100290,
+                "index": 9,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261371
+                },
+                "repeat": 1,
+                "whole_path_seconds": 5.175650083998335,
+                "worker_peak_rss_bytes": 189579264
+              },
+              {
+                "captures": 3,
+                "final_work": 100021,
+                "index": 12,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 2,
+                "whole_path_seconds": 1.125546209004824,
+                "worker_peak_rss_bytes": 189579264
+              },
+              {
+                "captures": 3,
+                "final_work": 100290,
+                "index": 15,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261371
+                },
+                "repeat": 2,
+                "whole_path_seconds": 5.383897292005713,
+                "worker_peak_rss_bytes": 190529536
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 28920,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 28921,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "repeat0/path01",
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "repeat0/path04",
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "folder": "repeat1/path01",
+          "index": 7,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "folder": "repeat1/path04",
+          "index": 10,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 13,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "folder": "repeat2/path01",
+          "index": 13,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 16,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "folder": "repeat2/path04",
+          "index": 16,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 19.131001,
+          "kind": "done",
+          "seconds": 19.2479559170024,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 100038,
+                "index": 1,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 1,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 1.1651881660072831,
+                "worker_peak_rss_bytes": 60293120
+              },
+              {
+                "captures": 3,
+                "final_work": 100143,
+                "index": 4,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 5.247577083995566,
+                "worker_peak_rss_bytes": 189169664
+              },
+              {
+                "captures": 3,
+                "final_work": 100038,
+                "index": 7,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 1,
+                  "seed": 20261372
+                },
+                "repeat": 1,
+                "whole_path_seconds": 1.193461250004475,
+                "worker_peak_rss_bytes": 189251584
+              },
+              {
+                "captures": 3,
+                "final_work": 100143,
+                "index": 10,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261372
+                },
+                "repeat": 1,
+                "whole_path_seconds": 5.182645374996355,
+                "worker_peak_rss_bytes": 189448192
+              },
+              {
+                "captures": 3,
+                "final_work": 100038,
+                "index": 13,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 1,
+                  "seed": 20261372
+                },
+                "repeat": 2,
+                "whole_path_seconds": 1.0952154590049759,
+                "worker_peak_rss_bytes": 189448192
+              },
+              {
+                "captures": 3,
+                "final_work": 100143,
+                "index": 16,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261372
+                },
+                "repeat": 2,
+                "whole_path_seconds": 5.357537167001283,
+                "worker_peak_rss_bytes": 191774720
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 28921,
+      "slot": 1
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 28922,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "repeat0/path02",
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "repeat0/path05",
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "folder": "repeat1/path02",
+          "index": 8,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "folder": "repeat1/path05",
+          "index": 11,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 2
+        },
+        {
+          "index": 14,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "folder": "repeat2/path02",
+          "index": 14,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "index": 17,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "folder": "repeat2/path05",
+          "index": 17,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 2
+        },
+        {
+          "cpu_seconds": 19.111316,
+          "kind": "done",
+          "seconds": 19.234048457990866,
+          "summary": {
+            "slot": 2,
+            "summaries": [
+              {
+                "captures": 3,
+                "final_work": 100134,
+                "index": 2,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 2,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 1.1685107919911388,
+                "worker_peak_rss_bytes": 60211200
+              },
+              {
+                "captures": 3,
+                "final_work": 100331,
+                "index": 5,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 5.241238374990644,
+                "worker_peak_rss_bytes": 189759488
+              },
+              {
+                "captures": 3,
+                "final_work": 100134,
+                "index": 8,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 2,
+                  "seed": 20261373
+                },
+                "repeat": 1,
+                "whole_path_seconds": 1.2077997500018682,
+                "worker_peak_rss_bytes": 189775872
+              },
+              {
+                "captures": 3,
+                "final_work": 100331,
+                "index": 11,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 1,
+                "whole_path_seconds": 5.119201749999775,
+                "worker_peak_rss_bytes": 189808640
+              },
+              {
+                "captures": 3,
+                "final_work": 100134,
+                "index": 14,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 2,
+                  "seed": 20261373
+                },
+                "repeat": 2,
+                "whole_path_seconds": 1.153963416989427,
+                "worker_peak_rss_bytes": 189808640
+              },
+              {
+                "captures": 3,
+                "final_work": 100331,
+                "index": 17,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 2,
+                "whole_path_seconds": 5.336336916006985,
+                "worker_peak_rss_bytes": 191102976
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 28922,
+      "slot": 2
+    }
+  ]
+}

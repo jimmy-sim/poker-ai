@@ -61,6 +61,21 @@ against the **7,200-second** cap. The compute gate rejected the longer run;
 the uniform-versus-linear poker-strength comparison is **inconclusive**.
 No 10m study, reference audit or default promotion occurred. A next question
 requires a distinct prospective protocol supported by this failure.
+The [prospective B8 matched-work test](medium-dry-b8-updates.md) completed its
+one admitted comparison on two **known** river spots. The
+[fixed report](medium-dry-b8-updates-result.md) is **negative**: medium/dry
+B8 final median/worst exploitability is 0.036102/0.042155 initial pots,
+missing the frozen 0.01/0.025 absolute gates. Its paired B8-minus-B4 median
+is +0.000447; one seed improves and two worsen. The low/wet absolute gate
+passes. The fixed 18-path profile passed its strict 3,831.907 < 7,200-second
+compute admission, and the single six-path 10m study completed within cap.
+Own policies were published before the comparison-only OpenSpiel audit, which
+passed all 54 saved policies within `6.395e-14` chips maximum error.
+Final report-head local base/optional, hooks and both hosted jobs passed;
+PR solo review and merge remain pending.
+Neither spot is unseen; no default was promoted. The next distinct question
+must address the observed widespread river best-reply gains under a new
+prospective contract, not retry B8 for a favorable outcome.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

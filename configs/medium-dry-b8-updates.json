@@ -1,0 +1,105 @@
+{
+  "absolute_gates": {
+    "low_wet_median_fraction_max": 0.01,
+    "low_wet_worst_fraction_max": 0.025,
+    "maximum_recall_violations": 0,
+    "medium_dry_median_fraction_max": 0.01,
+    "medium_dry_worst_fraction_max": 0.025,
+    "minimum_positive_average_coverage": 0.95
+  },
+  "budgets_seconds": {
+    "failure_save": 120,
+    "native_audit": 900,
+    "synthetic_own_proof": 180,
+    "whole_own": 7200
+  },
+  "candidate": {
+    "average_weight": "linear",
+    "batch_size": 8,
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "traversal": "IID external sampling",
+    "warm_start": "exact uniform initialization"
+  },
+  "candidate_arm": "signed_b8",
+  "control": {
+    "average_weight": "linear",
+    "batch_size": 4,
+    "native_commit": "804f35dd57c7b01f9d517ef2cf2ee90c957e4b81",
+    "native_manifest_sha256": "4a2d2e5b143872e2c168a7dd8f5c327227faab7b5f1ca175327417fedf375f0a",
+    "own_commit": "ef3ac5d03b87659fefc84206521412a289821786",
+    "own_manifest_sha256": "82ec824335129f41316d88103c8d07ce5bf8d496ad42e2b98e44daf84fe9333d",
+    "readout": "linear_average",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "source_commit": "c996c0abd10830a0629fec78ec2a91cdc7859bfb"
+  },
+  "control_arm": "signed_linear",
+  "crossing": "first complete target-0 then target-1 iteration at or above each label; charge exact uniform initialization and retain overshoot",
+  "decision": {
+    "inconclusive": "other complete outcome; failed source, compute or numerical gate stops with retained evidence",
+    "negative": "B8 fails any absolute gate, medium/dry paired median >= +0.001, or low/wet paired median > +0.001",
+    "positive": "at final 10m linear average B8 passes both spots' unchanged absolute gates, medium/dry paired median <= -0.001 initial pots and low/wet paired median <= +0.001"
+  },
+  "diagnostics": "both-seat additive saved-prefix best-response-loss contributions at preselected medium/dry exact turn rows 2443, 1596, 14 and river rows 1806, 640, plus aggregate turn/river rows; report saved probabilities, reach, alternative-action values, fixed opponent and optimal reply continuation assumptions; diagnostic only",
+  "issue": 4,
+  "known_spots": [
+    "new_low_wet_ip",
+    "new_medium_dry_oop"
+  ],
+  "node_work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "other_metrics": [
+    "positive-average uniform-reach coverage",
+    "post-initial river coverage",
+    "initial-only river rows",
+    "structural recall violations",
+    "information rows",
+    "four-float64 table bytes",
+    "actual node work and overshoot",
+    "whole-path seconds",
+    "peak resident memory"
+  ],
+  "other_readouts": [
+    "current",
+    "uniform_average"
+  ],
+  "paired_metric": "candidate B8 minus published control B4 at each matched work crossing for each seed; report all three final differences and median per known spot",
+  "parent_pr": 101,
+  "primary_metric": "exact restricted-game NashConv/2 exploitability divided by initial pot; lower is better",
+  "primary_readout": "linear_average",
+  "prior_compute_context": {
+    "B1_100k_profile_strict_bound_seconds": 3698.083,
+    "B1_six_path_10m_launcher_seconds": 143.139,
+    "interpretation": "planning context only, not a B8 timing or admission; fixed new three-repeat B8 profile and strict forecast decide admission"
+  },
+  "profile": {
+    "candidate_paths": 6,
+    "forecast": "for each of six candidate spot/seed paths take maximum of three complete construction-through-replay whole times scaled by 10m/actual work; sum these six maxima in fixed index-modulo-three worker partitions; T=max sum; require strict 2*(2*T+600)<7200",
+    "path_work_label": 100000,
+    "paths": 18,
+    "repeats": 3,
+    "whole_cap_seconds": 900
+  },
+  "publication": "prospective protocol before new B8 outcomes; isolated tested source with exact-source local base/optional/hooks/hosted qualification; publish and byte-verify synthetic proof, 18-path three-repeat 100k profile and separate compute admission before one own candidate run; publish own raw B8 policies before comparison-only native audit; final exact-source checks and solo review",
+  "question": "At matched 10m charged node work, does batch-eight signed external sampling reduce the known medium/dry turn/river exploitability versus the immutable published batch-four signed control without degrading the known low/wet spot?",
+  "reference": "pinned OpenSpiel 2.0.2 Apache-2.0 comparison-only scalar audit of new candidate policies; published control's prior audit is reused by exact receipt; no reference strategy enters training",
+  "representation": "q8_turn_exact_river",
+  "schema_version": 1,
+  "seeds": [
+    20261371,
+    20261372,
+    20261373
+  ],
+  "stop_rule": "one fixed six-path matched-work B8 candidate run against immutable published B4 controls; retain complete/partial/failing results; no seed search, unfavorable B8 retry, B16 follow-on as a favorable search, budget or threshold change, default promotion or unseen generalization claim",
+  "tolerance_chips": 1e-09,
+  "training": "six independent candidate paths, one per known spot and seed; same RNG seed within each control/candidate pair but batch sizes consume different random draws; no saved-policy warm start",
+  "workers": {
+    "assignment": "candidate path index modulo three",
+    "count": 3,
+    "start_method": "spawn"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "attempt": "git commit -m Implement isolated B8 signed-update experiment and focused tests",
+  "cause": "repository-local Ruff lint and Ruff format hooks could not find uv on PATH",
+  "commit_created": false,
+  "observed_output": [
+    "Ruff lint (locked project environment): Failed; Executable `uv` not found",
+    "Ruff format check (locked project environment): Failed; Executable `uv` not found"
+  ],
+  "resolution": "sourced ../poker-env.sh; unchanged hooks passed and source commit 81ef11afffd2067e94b3c576e5d2cb3e76f733cc was created",
+  "status": "failed_before_commit"
+}

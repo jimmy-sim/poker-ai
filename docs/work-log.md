@@ -13,7 +13,129 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #103 fixed B8 result
+
+- The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed
+  both published cohorts once and retained all 108 spot/arm/seed/work/readout
+  cases in the [raw report](../results/medium-dry-b8-updates/report/manifest.json).
+  Its classification is **negative**: medium/dry B8 final median/worst
+  0.036102/0.042155 initial pots exceeds the frozen 0.01/0.025 gates.
+  B8-minus-B4 paired differences are +0.000447, −0.004799, +0.007022
+  (median +0.000447); low/wet passes its absolute gate. Whole coverage is 1.0
+  with zero recall violations. Fixed river decomposition and representative
+  saved decisions are in the report. The combined native comparison maximum
+  difference is `7.105e-14` chips. No training was repeated, protocol changed,
+  budget extended or default promoted. Next: publish/verify the report, then
+  complete final report-head local/hosted checks and PR review. Codex assisted;
+  human hands-on time was not recorded.
+- **Final qualification:** on exact report head `9bcc83b`, base Python
+  3.11/3.12 each passed 5,755 tests, 73 skips and 150 slow deselections, plus
+  Ruff, formatting, strict mypy and pre/post guards. Optional 3.11 passed
+  2,597; optional 3.12 passed 2,595 with two skips, with pinned runtime and
+  license guards. All-file hooks passed. Hosted
+  [CI 45146235586](https://github.com/jimmy-sim/poker-ai/actions/runs/45146235586)
+  passed both Python jobs and hooks. The [final receipt](../results/medium-dry-b8-updates/final-checks/manifest.json)
+  retains exact logs and metadata. Scientific classification remains negative;
+  next: publish receipt, solo review and history-preserving merge if eligible.
+  Codex assisted; human hands-on time was not recorded.
+
+## 2026-11-23 — PR #103 exact-source B8 qualification
+
+- **Tested source:** `81ef11afffd2067e94b3c576e5d2cb3e76f733cc`,
+  B8 fingerprint `666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad`.
+  Base Python 3.11 and 3.12 each passed 5,755 tests, with 73 skips and 150
+  slow deselections, plus Ruff, format, strict mypy and exact pre/post guards.
+  Optional 3.11 passed 2,597 tests; optional 3.12 passed 2,595 with two skips;
+  both checked OpenSpiel 2.0.2, its license, historical pins and the exact
+  B8 source. The new B8 focused tests passed eight times on each optional
+  runtime. All-file hooks passed; an earlier shell wrapper failed only while
+  trying to save its exit code after the hooks printed passes. The original
+  commit-hook PATH setup failure also remains retained. Source-head
+  [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45135404030)
+  passed Python 3.11/3.12. The [source archive](../results/medium-dry-b8-updates/source-checks/manifest.json)
+  retains logs, receipts and failures. No B8 scientific stage has run. Next:
+  publish and GitHub-byte-verify this receipt before fictional proof. Codex
+  assisted; human hands-on time was not recorded.
+- **Fictional own proof after source publication:** all 26 source archive
+  GitHub blobs matched the local commit, and the offline publication guard
+  passed. The one capped B8 proof on the fictional signal game completed nine
+  captures and 784 charged node work with replay at receipt head `2ba208e`.
+  Its observed external command wall time was 0.2001 seconds, below the
+  180-second cap; the [proof archive](../results/medium-dry-b8-updates/own-proof/manifest.json)
+  retains snapshots, masses, events, command and exit evidence. This is a
+  software proof, not a poker result. Next: publish/verify proof before the
+  one fixed 18-path 100k profile. Codex assisted; human hands-on time was not
+  recorded.
+- **One fixed B8 profile:** all 18 predeclared 100k-work paths across three
+  repeats completed in 19.407502 seconds, below the 900-second cap; no path
+  failure. Maximum observed worker RSS was 191,774,720 bytes. The prescribed
+  maximum-per-path, fixed-partition calculation gave
+  `T=657.9767527444723` seconds and strict bound
+  `3831.907010977889<7200`. The [complete raw profile](../results/medium-dry-b8-updates/profile/manifest.json)
+  has 150 members with all snapshots, scores, events, work counts and timing.
+  This is a forecast from the profile, not the separate published compute
+  admission or a 10m strength result. Next: publish/verify every profile byte,
+  then recompute the separate gate. Codex assisted; human hands-on time was not
+  recorded.
+- **Separate compute admission:** all 151 published profile blobs matched the
+  local tree, and the offline source/proof/profile gates passed. The data-only
+  [admission decision](../results/medium-dry-b8-updates/admission/manifest.json)
+  recomputed the same `T=657.9767527444723` and strict
+  `3831.907010977889<7200` bound from the complete published profile, so
+  the fixed B8 10m study is **admitted**. No training or reference comparison
+  began during admission. Next: publish/verify this receipt before one capped
+  six-path own run. Codex assisted; human hands-on time was not recorded.
+- **One admitted own run:** six fixed B8 spot/seed paths each crossed 10m
+  charged node work once, with final work 10,000,007–10,000,313. The spawned
+  learner finished in 136.941730 seconds; the outer driver, including setup
+  and save, exited0 in 137.430354 seconds below the 7,200-second cap with
+  its 120-second failure-save reserve unused. Maximum worker RSS was
+  202,883,072 bytes. All six path summaries, nine captures per path, saved
+  policies, masses, RNG states, work counts and own scores are in the
+  [complete own archive](../results/medium-dry-b8-updates/own/manifest.json)
+  (114 members). No OpenSpiel output or comparison-only audit was used.
+  Next: publish/GitHub-byte-verify the own raw bytes before any reference
+  audit or strength classification. Codex assisted; human hands-on time was
+  not recorded.
+- **Pinned comparison-only audit:** after all 115 own-policy GitHub blobs
+  matched and the offline publication guard passed, the fixed OpenSpiel 2.0.2
+  scalar audit completed all 54 B8 saved policies in 28.124776 seconds under
+  its 900-second cap. Maximum own/reference value, best-reply and
+  exploitability error was `6.394884621840902e-14` chips, below `1e-9`.
+  The [native archive](../results/medium-dry-b8-updates/native/manifest.json)
+  retains raw comparison rows, events, runtime and Apache-2.0 license hash.
+  It was run after own publication and did not feed reference strategies into
+  training. Next: publish/verify the native archive, then replay the paired
+  report and fixed decision rows. Codex assisted; human hands-on time was not
+  recorded.
+
+## 2026-11-22 — PR #103 isolated B8 source
+
+- **Resume and source implementation:** local/tracking/GitHub PR head `24103f9`
+  matched with a clean worktree; no local research worker or B8 outcome existed.
+  Protocol [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44902543538)
+  passed Python 3.11 and 3.12. Added an isolated B8 runner, capture/replay,
+  source and stage guards, conservative forecast, comparison-only audit and
+  paired report against the immutable published B4 controls. The candidate
+  uses the existing signed batch-mean updater with `batch_size=8`; each saved
+  checkpoint records RNG state. The report covers the prespecified turn and
+  river rows. No historical pinned source or frozen protocol changed.
+  Eight focused tests passed; Ruff lint and strict mypy passed after one
+  formatting correction. Full exact-source qualification remains pending;
+  no fictional proof, profile or poker outcome has run. Codex assisted; human
+  hands-on time was not recorded.
+
 ## 2026-11-21 — PR #102 exact-source qualification
+
+- **Merge and next prospective question:** [PR #102](https://github.com/jimmy-sim/poker-ai/pull/102)
+  history-merged as `3bece9c19d99e68c3797fd4383679b8de6f012a5`;
+  [post-merge main CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44900095409)
+  passed both Python jobs. Its conservative compute gate remains rejected and
+  its poker-strength result inconclusive. The separate
+  [B8 protocol](medium-dry-b8-updates.md) fixes one matched-work signed-update
+  question against published B4 on two known spots. No B8 source, profile,
+  training or outcome exists at this prospective checkpoint. Codex assisted;
+  human hands-on time was not recorded.
 
 - **Tested source:** `3e837b7e56c238d522de33bff0cacd8abcd16cf9`,
   source fingerprint `a982d8c3537f9d50aa721001a0436766f34e862732b8e1b514fdc79355a963f6`.

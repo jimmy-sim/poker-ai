@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
+completed its one prospectively fixed batch-eight versus batch-four comparison
+on two known river spots. The [result](medium-dry-b8-updates-result.md) is
+**negative**: final medium/dry B8 median/worst exploitability
+0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
+paired seed improves and two worsen. The low/wet gate passes. Both own
+policies were published before pinned comparison-only reference checks. Final
+report-head checks passed; PR review and merge remain pending. No default changed. PR
+#102's conservative compute gate rejected
+its longer study, so its poker-strength effect remains inconclusive. Earlier
+status paragraphs below preserve the sequence of prior investigations.
+
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
 harder known game's median exploitability is **2.390% of the initial pot**, above
@@ -209,7 +221,8 @@ more work reaches the gate. No new training or default promotion followed.
 The [issue #4 operating workflow](research-operating-workflow.md) now permits
 successive bounded research milestones while keeping prospective protocols,
 failed gates, compute admission and own-before-reference publication intact.
-The immediate task is PR #98 evidence publication, final CI and review.
+At that earlier point, the immediate task was PR #98 evidence publication,
+final CI and review; subsequent entries record its completion.
 
 Three useful reading paths:
 
@@ -8812,6 +8825,155 @@ not turn an 8,885-second forecast into a run under the 7,200-second cap.
 **Next decision:** review and close PR #102 with its compute rejection and
 unknown poker-strength effect explicit. Codex assisted; human hands-on time
 was not recorded.
+
+**November 21 prospective B8 question.** PR #102 history-merged and its
+[post-merge CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44900095409)
+passed both Python jobs. Its compute rejection and unknown strength effect
+remain. The [saved-policy diagnosis](river-generalization-diagnosis-report.md)
+showed no exact-to-abstract river collision on the medium/dry spot, while the
+current policy was weaker than its averages. The earlier B1 one-sample
+matched-work candidate worsened all three medium/dry paired seeds. These
+observations motivate one opposite-direction, lower-variance question:
+does batch-eight signed updating improve the same known spots over the
+immutable batch-four control at matched charged node work? **Example:** B8
+averages eight sampled returns before a signed-regret update, so at fixed
+work it makes fewer, potentially steadier updates than B4; neither the
+direction nor poker benefit is known. The [prospective protocol](medium-dry-b8-updates.md)
+fixes the control receipts, seeds, checkpoints, diagnostic rows, gates and
+compute cap before any B8 outcome. **Next decision:** publish this contract,
+then isolate and qualify source before a fictional proof or fixed profile.
+No B8 measurement or result exists. Codex assisted; human hands-on time was
+not recorded.
+
+**November 22 isolated B8 implementation.** The [prospective B8 protocol](medium-dry-b8-updates.md)
+passed hosted CI at its published checkpoint. New `medium_dry_b8` modules
+call the already checked signed batch-mean learner with eight samples per
+update and leave historical source pins untouched. The captured policy
+metadata now includes the PCG64 random-generator state; the report will
+replay saved policies and show the five prespecified medium/dry turn/river
+decisions alongside full street contributions. **Example:** a 100k work
+crossing may overshoot because both seats finish an update before capture;
+the saved work total, overshoot and generator state make that checkpoint
+auditable. Eight focused tests passed, including an independent fictional
+B8 trainer identity and capture/replay; Ruff lint and strict mypy passed.
+These are software checks, not poker-strength evidence. **Next decision:**
+publish and fully qualify the exact source before the fictional proof or
+fixed 100k profile. Codex assisted; human hands-on time was not recorded.
+
+**November 23 exact-source B8 qualification.** The isolated source at
+`81ef11a` passed both full base Python suites, both reference-enabled optional
+suites, all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45135404030).
+The base suites each passed 5,755 tests; the optional suites passed 2,597 and
+2,595 tests with two optional 3.12 skips. The new focused B8 tests also passed
+on both optional runtimes. The [source archive](../results/medium-dry-b8-updates/source-checks/manifest.json)
+keeps the exact logs and guards, plus two operational failures: the first
+commit-hook shell lacked `uv`, and a later wrapper used zsh's read-only
+`status` variable after the hooks themselves printed passes. The unchanged
+hooks then passed with a saved exit receipt. **Example:** passing a reference
+license check proves the optional validation environment is pinned; it says
+nothing yet about whether B8 chooses better river actions. **Next decision:**
+publish and verify the source archive, then run only the prospectively fixed
+fictional proof and compute profile. No B8 poker policy has been measured.
+Codex assisted; human hands-on time was not recorded.
+
+**November 23 fictional B8 proof.** After the source receipt was published
+and its GitHub blobs matched, the one [fictional proof](../results/medium-dry-b8-updates/own-proof/manifest.json)
+used a small signal game to exercise B8 capture and replay. It saved nine
+policies at three work labels and finished with 784 charged node visits; the
+observed external command wall time was 0.2001 seconds against the 180-second
+cap. **Example:** replaying a saved fictional average checks that its score
+and support mass are the same as when it was written. The fixture is not a
+Hold'em game, so it provides no evidence that B8 improves poker decisions.
+**Next decision:** publish and verify these bytes, then run the single fixed
+100k-work B8 profile and apply its conservative compute gate. Codex assisted;
+human hands-on time was not recorded.
+
+**November 23 fixed B8 compute profile.** The one
+[preregistered profile](../results/medium-dry-b8-updates/profile/manifest.json)
+completed all 18 paths, three repeats of each of six known spot/seed paths,
+in 19.407502 seconds, with peak worker memory 191,774,720 bytes. Its frozen
+forecast takes each path's slowest scaled repeat, sums by the fixed worker
+partition and doubles the resulting conservative bound. This gave
+`T=657.976753` seconds and `3,831.907011<7,200` seconds. **Example:** the
+slowest medium/dry path estimate was 536.833 seconds after scaling one
+complete 100k path to 10m work; it is kept even though that repeat was
+unfavorable for runtime. No B8 candidate score was selected or used to
+change the protocol. **Next decision:** publish and verify the entire raw
+profile, then run a separate data-only compute admission from those bytes.
+Only an admitted run may proceed to fixed 10m learning. Codex assisted;
+human hands-on time was not recorded.
+
+**November 23 B8 compute admission.** The complete profile was published,
+all 151 GitHub blobs matched, and its offline source/proof/profile guards
+passed. The separate [data-only admission](../results/medium-dry-b8-updates/admission/manifest.json)
+recomputed the identical `T=657.976753` and strict
+`3,831.907011<7,200` bound, admitting one fixed 10m own study. **Example:**
+the gate uses the slowest scaled timing for every path and the slowest fixed
+worker partition, so a faster repeat cannot replace an unfavorable one.
+The admission does not show better poker decisions; no 10m B8 policy or
+reference output exists yet. **Next decision:** publish and verify the
+admission receipt before the single capped own run. Codex assisted; human
+hands-on time was not recorded.
+
+**November 23 one admitted B8 own run.** After the admission receipt was
+published and all six GitHub blobs matched, the single fixed
+[own run](../results/medium-dry-b8-updates/own/manifest.json) completed six
+spot/seed paths at their first 10m charged-work crossings. The parent study
+used 136.942 seconds; the outer guarded driver used 137.430 seconds, and
+maximum worker memory was 202,883,072 bytes. Each path saved all nine
+policies and complete scores, work and generator state, with no failed path.
+**Example:** seed 20261371 on the medium/dry spot ended at 10,000,313
+charged visits, keeping its 313-visit overshoot rather than forcing an exact
+10m stop. No OpenSpiel reference was loaded or used, and no strength result
+is classified from these unaudited own outputs. **Next decision:** publish
+and verify every own-policy byte before the pinned comparison-only scalar
+audit. Codex assisted; human hands-on time was not recorded.
+
+**November 23 comparison-only B8 audit.** After all 115 own-policy GitHub
+blobs matched and the publication guard passed, pinned OpenSpiel 2.0.2
+independently checked 54 saved B8 policies. The
+[audit](../results/medium-dry-b8-updates/native/manifest.json) completed in
+28.125 seconds, and its largest own/reference scalar difference was
+`6.395e-14` chips, below the frozen `1e-9` tolerance. The license hash and
+version are retained. **Example:** a best-reply value from OpenSpiel can
+check the arithmetic of a saved B8 policy, but the reference strategy never
+enters the B8 updater. This numerical agreement does not yet classify the
+paired poker improvement. **Next decision:** publish/verify the audit, then
+replay both published own cohorts into the fixed metric and river-decision
+report. Codex assisted; human hands-on time was not recorded.
+
+**November 23 fixed B8 poker result.** The one
+[prespecified report](medium-dry-b8-updates-result.md) compared the saved
+batch-eight policies against immutable batch-four controls at the same
+charged work on the two known spots. **Example:** on medium/dry at 10m work,
+seed 20261372 improved by 0.004799 initial pots, but seed 20261373 worsened
+by 0.007022; the three-seed median difference is +0.000447. The B8 median
+0.036102 and worst 0.042155 fail the registered 0.01/0.025 absolute gates,
+so the scientific result is **negative**, even though the paired median alone
+does not reach its separate regression threshold. The low/wet absolute gate
+passes. The [raw report](../results/medium-dry-b8-updates/report/manifest.json)
+retains all checkpoints, readouts, street contributions and example river
+decisions. At final work, 70.2–75.7% of B8 medium/dry best-reply gain remains
+on the river and is spread beyond the two previously selected river rows.
+These are best replies to each saved opponent in two known restricted games,
+not universal action advice or proof of full-game strength. **Next decision:**
+complete report-head checks and PR review, then assess a distinct
+prospectively registered question targeting the remaining river weakness.
+No B8 retry or default promotion is justified. Codex assisted; human
+hands-on time was not recorded.
+
+**November 23 final B8 software qualification.** The
+[final receipt](../results/medium-dry-b8-updates/final-checks/manifest.json)
+binds the exact negative-report commit to all four passing local roles,
+all-file hooks and passing hosted Python 3.11/3.12 CI. Base suites each
+passed 5,755 tests; optional suites passed 2,597 and 2,595 with two expected
+3.12 skips. **Example:** checking the installed OpenSpiel license before and
+after the optional suite supports source and reference reproducibility, but
+cannot turn a 3.61% medium/dry exploitability median into the required 1%.
+The negative scientific conclusion stands. **Next decision:** publish the
+receipt, conduct a solo diff/evidence review and history-preserving merge if
+eligible; then plan a distinct river-strength question under a new prospective
+contract. Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 

@@ -1,0 +1,76 @@
+"""Run one admitted B8 own study with 120 seconds reserved for failure saving."""
+import json
+import os
+import signal
+import subprocess
+import time
+from pathlib import Path
+
+RUN = Path(__file__).resolve().parent
+ROOT = RUN.parents[2]
+HEAD = "a4aad8858293bf097bdeb8d5d710478563707c04"
+OUTPUT = RUN / "raw"
+COMMAND = [
+    "uv", "run", "--locked", "python", "scripts/study_medium_dry_b8.py",
+    "study", "--output", str(OUTPUT),
+]
+LEARNING_LIMIT_SECONDS = 7080
+WHOLE_CAP_SECONDS = 7200
+
+
+def save(state: dict[str, object]) -> None:
+    path = RUN / "job-state.json"
+    with path.open("w") as stream:
+        json.dump(state, stream, sort_keys=True, indent=2)
+        stream.write("\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
+if subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip() != HEAD:
+    raise RuntimeError("wrong published admission head")
+if subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT):
+    raise RuntimeError("dirty source")
+if OUTPUT.exists() or not os.environ.get("UV_PYTHON") or not os.environ.get("UV_PROJECT_ENVIRONMENT"):
+    raise RuntimeError("existing output or missing locked runtime")
+start = time.perf_counter()
+state: dict[str, object] = {
+    "status": "starting", "driver_pid": os.getpid(), "head": HEAD,
+    "command": COMMAND, "learning_limit_seconds": LEARNING_LIMIT_SECONDS,
+    "whole_cap_seconds": WHOLE_CAP_SECONDS, "failure_save_reserve_seconds": 120,
+    "output": str(OUTPUT), "log": str(RUN / "launch.log"),
+    "uv_python": os.environ["UV_PYTHON"],
+    "uv_project_environment": os.environ["UV_PROJECT_ENVIRONMENT"],
+    "started_unix_seconds": time.time(),
+}
+save(state)
+with (RUN / "launch.log").open("x") as stream:
+    child = subprocess.Popen(COMMAND, cwd=ROOT, env=os.environ.copy(),
+                             stdout=stream, stderr=subprocess.STDOUT,
+                             start_new_session=True)
+    state.update(status="running", child_pid=child.pid, process_group=child.pid)
+    save(state)
+    interrupted = False
+    while child.poll() is None:
+        elapsed = time.perf_counter() - start
+        if elapsed >= LEARNING_LIMIT_SECONDS and not interrupted:
+            os.killpg(child.pid, signal.SIGINT)
+            interrupted = True
+            state.update(status="interrupting_for_save", interrupted_at_seconds=elapsed)
+            save(state)
+        if elapsed >= WHOLE_CAP_SECONDS:
+            os.killpg(child.pid, signal.SIGTERM)
+            try:
+                child.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                os.killpg(child.pid, signal.SIGKILL)
+            break
+        time.sleep(0.2)
+    code = child.wait()
+    elapsed = time.perf_counter() - start
+    state.update(status="completed" if code == 0 and (OUTPUT / "result.json").is_file()
+                 else "failed_retained", exit_code=code, elapsed_seconds=elapsed,
+                 child_pid=None)
+    save(state)
+    if code != 0 or state["status"] != "completed":
+        raise SystemExit(code or 1)

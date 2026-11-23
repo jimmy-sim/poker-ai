@@ -1,0 +1,9 @@
+{
+  "action": "retain first log and rerun unchanged hooks with hook_rc variable",
+  "cause": "zsh read-only variable `status` prevented saving hook exit receipt",
+  "observed_hook_output": [
+    "Ruff lint: Passed",
+    "Ruff format check: Passed"
+  ],
+  "status": "wrapper_failed_after_hooks"
+}

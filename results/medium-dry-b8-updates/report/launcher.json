@@ -1,0 +1,9 @@
+{
+  "classification_rule": "published configs/medium-dry-b8-updates.json",
+  "command": "source ../poker-env.sh && UV_PYTHON=3.11.17 UV_PROJECT_ENVIRONMENT=results/runs/guarded-skip-requalification-20261118/envs/optional311 uv run --locked --all-extras python scripts/study_medium_dry_b8.py report --output results/runs/medium-dry-b8-report-20261123/raw",
+  "data_bound": true,
+  "exit_code": 0,
+  "new_training": false,
+  "source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+  "source_head": "738104ba3ea98df23e49e941da9aed5ec68e7b59"
+}

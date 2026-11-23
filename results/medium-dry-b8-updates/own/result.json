@@ -1,0 +1,285 @@
+{
+  "assignments": [
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "failure": null,
+  "head": "a4aad8858293bf097bdeb8d5d710478563707c04",
+  "parent_cpu_seconds": 0.05801300000000001,
+  "reaped_children_cpu_seconds": 409.65,
+  "seconds": 136.94173029200465,
+  "source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+  "stage": "study",
+  "status": "completed",
+  "worker_count": 3,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 29171,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path00",
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path03",
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 136.066551,
+          "kind": "done",
+          "seconds": 136.2067928339966,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000053,
+                "index": 0,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 0,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 63.3612429999921,
+                "worker_peak_rss_bytes": 66928640
+              },
+              {
+                "captures": 9,
+                "final_work": 10000313,
+                "index": 3,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 20261371
+                },
+                "repeat": 0,
+                "whole_path_seconds": 72.83956141700037,
+                "worker_peak_rss_bytes": 197132288
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 29171,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 29172,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path01",
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "folder": "study/path04",
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 136.705387,
+          "kind": "done",
+          "seconds": 136.8467018329975,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000072,
+                "index": 1,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 1,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 63.34676837499137,
+                "worker_peak_rss_bytes": 66945024
+              },
+              {
+                "captures": 9,
+                "final_work": 10000177,
+                "index": 4,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 4,
+                  "seed": 20261372
+                },
+                "repeat": 0,
+                "whole_path_seconds": 73.49423537499388,
+                "worker_peak_rss_bytes": 198377472
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 29172,
+      "slot": 1
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 29173,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path02",
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "folder": "study/path05",
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 2
+        },
+        {
+          "cpu_seconds": 136.603581,
+          "kind": "done",
+          "seconds": 136.73933133399987,
+          "summary": {
+            "slot": 2,
+            "summaries": [
+              {
+                "captures": 9,
+                "final_work": 10000007,
+                "index": 2,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_low_wet_ip",
+                  "index": 2,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 63.425880708004115,
+                "worker_peak_rss_bytes": 66813952
+              },
+              {
+                "captures": 9,
+                "final_work": 10000096,
+                "index": 5,
+                "path": {
+                  "arm": "signed_b8",
+                  "game": "new_medium_dry_oop",
+                  "index": 5,
+                  "seed": 20261373
+                },
+                "repeat": 0,
+                "whole_path_seconds": 73.30760745800217,
+                "worker_peak_rss_bytes": 202883072
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 29173,
+      "slot": 2
+    }
+  ]
+}
