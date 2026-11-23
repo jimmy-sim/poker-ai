@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-22 — PR #103 isolated B8 source
+
+- **Resume and source implementation:** local/tracking/GitHub PR head `24103f9`
+  matched with a clean worktree; no local research worker or B8 outcome existed.
+  Protocol [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/44902543538)
+  passed Python 3.11 and 3.12. Added an isolated B8 runner, capture/replay,
+  source and stage guards, conservative forecast, comparison-only audit and
+  paired report against the immutable published B4 controls. The candidate
+  uses the existing signed batch-mean updater with `batch_size=8`; each saved
+  checkpoint records RNG state. The report covers the prespecified turn and
+  river rows. No historical pinned source or frozen protocol changed.
+  Eight focused tests passed; Ruff lint and strict mypy passed after one
+  formatting correction. Full exact-source qualification remains pending;
+  no fictional proof, profile or poker outcome has run. Codex assisted; human
+  hands-on time was not recorded.
+
 ## 2026-11-21 — PR #102 exact-source qualification
 
 - **Merge and next prospective question:** [PR #102](https://github.com/jimmy-sim/poker-ai/pull/102)

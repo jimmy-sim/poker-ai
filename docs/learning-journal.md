@@ -8832,6 +8832,21 @@ then isolate and qualify source before a fictional proof or fixed profile.
 No B8 measurement or result exists. Codex assisted; human hands-on time was
 not recorded.
 
+**November 22 isolated B8 implementation.** The [prospective B8 protocol](medium-dry-b8-updates.md)
+passed hosted CI at its published checkpoint. New `medium_dry_b8` modules
+call the already checked signed batch-mean learner with eight samples per
+update and leave historical source pins untouched. The captured policy
+metadata now includes the PCG64 random-generator state; the report will
+replay saved policies and show the five prespecified medium/dry turn/river
+decisions alongside full street contributions. **Example:** a 100k work
+crossing may overshoot because both seats finish an update before capture;
+the saved work total, overshoot and generator state make that checkpoint
+auditable. Eight focused tests passed, including an independent fictional
+B8 trainer identity and capture/replay; Ruff lint and strict mypy passed.
+These are software checks, not poker-strength evidence. **Next decision:**
+publish and fully qualify the exact source before the fictional proof or
+fixed 100k profile. Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
