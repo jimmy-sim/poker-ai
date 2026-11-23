@@ -147,8 +147,9 @@ collisions on the already evaluated, **known** medium/dry input before
 choosing another strength experiment. No new diagnostic outcome exists yet. Isolated diagnostic source and
 five focused tests passed; all four exact-source local lanes, hooks and both
 hosted jobs then passed. The source receipt is being published before the
-fictional proof and one capped real-policy analysis; no diagnostic outcome
-exists yet.
+fictional proof; its four toy rows reconcile the both-seat gain with the
+independent toy score. The proof receipt is being published before the one
+capped real-policy analysis; no diagnostic outcome exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

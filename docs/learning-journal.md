@@ -9313,6 +9313,16 @@ count. The scientific answer remains pending until the separately capped
 saved-policy run. Codex assisted; no human time or personal learning was
 reported.
 
+**November 23 fictional proof.** After publishing and checking the source
+receipt, one 180-second-capped toy run used four exact signal-game decisions.
+Both players' best-reply gain divided by two matched the independent 0.25-chip
+toy score exactly; the [proof archive](../results/river-turn-loss/proof/manifest.json)
+retains the launcher and raw values. This supports the diagnostic accounting
+and collision inventory code. It does not reveal whether the actual medium/dry
+turn decisions collide. **Next decision:** publish and verify this proof
+before the one fixed saved-policy run. Codex assisted; no human time or
+personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

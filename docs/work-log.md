@@ -64,6 +64,15 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   publication checkpoint. Main post-PR #105 CI also passed both jobs.
   Codex assisted; human time was not reported.
 
+- The separately capped fictional PR #106 proof passed at source-receipt
+  head `49aa13b66773adb4617ffdefa122bfec0623f2c1` in 0.495 launcher
+  seconds against 180. Its four toy exact rows all collide under the coarse
+  key; both-seat additive gain/2 equals 0.25 toy chips of independent
+  exploitability, with zero accounting error. The [proof archive](../results/river-turn-loss/proof/manifest.json)
+  retains the exact command, environment, launcher state and raw proof. This
+  is a fictional math check, not a medium/dry poker result. The single saved
+  real-policy diagnosis remains pending. Codex assisted; human time unknown.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as
