@@ -84,6 +84,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   one fixed six-path, three-repeat 1m-work profile. Codex assisted;
   human time/learning not reported.
 
+- The one fixed PR #108 six-path, three-repeat [profile](../results/known-turn-exact-mechanism/profile/manifest.json)
+  completed on clean proof HEAD `11a12d80` in 13.029 internal/13.771
+  launcher seconds (<900). Every path reached 1,022,544 charged visits,
+  saved/replayed current and linear-average policies, and retained all
+  timings; peak worker RSS was 223,363,072 bytes. Worst-repeat 10m
+  extrapolations are 42.752851 seconds for q8 control and 42.767612
+  seconds for exact-turn candidate. Fixed two-worker `T=42.767612`, giving
+  strict `2*(2*T+600)=1,371.070446 < 7,200` seconds. This is a forecast,
+  **not** admission or strength. All 45 raw/launcher members are sealed;
+  next: publish/byte-verify profile, then one separate data-only admission.
+  Codex assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged

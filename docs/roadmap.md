@@ -204,6 +204,11 @@ that receipt before the capped fictional proof; no poker outcome yet.
 The single [fictional proof](../results/known-turn-exact-mechanism/own-proof/manifest.json)
 then passed in 0.783 seconds/180 with both labels replayed; publish and
 verify it before the fixed six-path profile. No real policy or score exists.
+The single fixed [profile](../results/known-turn-exact-mechanism/profile/manifest.json)
+then completed all six 1m-work paths in 13.771 launcher seconds; its
+conservative strict bound is `1,371.070446 < 7,200` seconds. Publish and
+verify all profile bytes before a separate data-only admission. This is
+not yet admission or poker strength.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

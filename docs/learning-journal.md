@@ -9495,6 +9495,19 @@ real-game 1m paths under the registered cap before any longer study. This
 proof says nothing about the known medium/dry policy's strength. Codex
 assisted; no human time or personal learning was reported.
 
+**November 23 fixed known-case profile.** The one prescribed profile
+completed both paths three times each to the first 1m charged-work
+crossing. **Example:** the exact-turn candidate's slowest complete repeat
+scales to 42.767612 seconds at 10m work; the q8 control's slowest scales
+to 42.752851 seconds. The registered two-worker safety formula gives
+`1,371.070446 < 7,200` seconds. The maximum worker RSS was 223,363,072
+bytes and all six paths were retained in the
+[raw profile](../results/known-turn-exact-mechanism/profile/manifest.json).
+**Next decision:** publish/verify every profile byte, then recompute the
+strict admission separately before any 10m policy. A fast profile does
+not mean the new representation plays better. Codex assisted; no human
+time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
