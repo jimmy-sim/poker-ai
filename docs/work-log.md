@@ -29,6 +29,22 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   work, gates, profile, strict forecast and stop rule before new outcomes.
   No candidate policy or score has been measured. Codex assisted; human
   hands-on time was not recorded.
+- **Isolated full-pass implementation, local focused checks:** new
+  `scripts/medium_dry_full/` and thin study command use the existing
+  `ControlledTrainer` full expectation under unchanged signed/linear rules.
+  Capture/replay, strict source/archive guards, six-path forecast, staged
+  publication checks, comparison-only native scalar audit and fixed
+  candidate/control decision report are isolated from historical sources.
+  Sixteen focused tests passed, including enumerated tiny-game conditional
+  means for both players, adaptive signed-linear update, RNG nonconsumption,
+  first work crossings, replay, failure retention, fixed grid/forecast/
+  classification and known-game information-key identity. Ruff lint/format
+  and strict mypy passed on all 10 new source/test files. The first focused
+  lint/format iterations failed and their logs remain under ignored
+  `results/runs/medium-dry-full-source-20261123/`; corrected checks passed.
+  Full exact-source local/optional/hooks/hosted qualification is pending,
+  as are all scientific stages. No candidate real-game policy or score exists.
+  Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 

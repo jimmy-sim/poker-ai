@@ -78,7 +78,9 @@ Neither spot is unseen; no default was promoted. The next distinct question
 tests [full expected updates at matched work](medium-dry-full-expectation.md)
 under a new prospective contract. It asks whether eliminating trajectory
 sampling noise, while retaining signed linear update rules, improves known
-medium/dry river decisions. No new candidate measurement exists yet.
+medium/dry river decisions. Its isolated adapter has passed focused tiny-game
+math, replay and source checks; full exact-source qualification is pending.
+No new candidate measurement exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

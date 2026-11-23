@@ -133,8 +133,8 @@ paired seed improves and two worsen. The low/wet gate passes. Own policies
 were published before pinned comparison-only checks, and all final local and
 hosted gates passed. No default changed. The next
 [prospective full-expectation question](medium-dry-full-expectation.md) has
-no new candidate outcome yet. PR
-#102's conservative compute gate rejected
+an isolated adapter with focused tests but no new candidate outcome or full
+source qualification yet. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
 
@@ -7830,10 +7830,6 @@ running the bounded comparison. These are new card/range inputs on known
 betting templates, not unseen betting games. Codex assisted; human hands-on
 time was not recorded.
 
-
-
-
-
 The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
 now preserves four clean local roles and both official hosted jobs for the
 same report tree. Both base roles passed 5,639 fast tests; optional Python
@@ -8995,6 +8991,23 @@ and publication order before outcomes. **Next decision:** publish the plan,
 qualify an isolated adapter, then let its forecast decide whether 10m learning
 is admitted. No candidate result exists. Codex assisted; human hands-on
 time was not recorded.
+
+**November 23 isolated full-expectation adapter.** The
+[prospective contract](medium-dry-full-expectation.md) was published before
+this implementation. A new source module drives complete expected passes
+through the existing signed-linear updater without changing historical files.
+It also saves own policy/mass snapshots, replays them, computes the frozen
+forecast, checks reference scalars only after own publication, and reports
+the fixed decision rows. **Example:** a tiny game's random chance and
+opponent branches can be enumerated; the weighted mean of every external
+sample matches the full expected update for both players before adaptive
+training. A second test checks one signed-linear update after the exact warm
+start. Sixteen focused tests, Ruff and strict mypy pass. Initial lint and
+formatting failures were corrected and retained in ignored local logs.
+**Next decision:** finish exact-source qualification and hosted CI before
+any real spot trajectory; then let the fixed profile and admission decide
+whether a longer study is allowed. These tests show software identities,
+not improved poker play. Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
