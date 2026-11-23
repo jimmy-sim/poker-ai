@@ -91,7 +91,11 @@ completed under its cap and forecasts `1381.300294 < 7200` seconds under the
 registered conservative rule. The separate data-only
 [admission](../results/medium-dry-full-expectation/admission/manifest.json)
 recomputed that unchanged bound and passed; the one 10m own study is next
-after admission publication. No default changed.
+after admission publication. The single admitted
+[own study](../results/medium-dry-full-expectation/own/manifest.json)
+completed both known spots with full saved-average coverage and zero recall
+violations; its own scores await independent reference audit and the fixed
+B4 comparison before classification. No default changed.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

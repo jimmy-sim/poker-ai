@@ -97,6 +97,25 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   the one capped own study. Codex assisted; human hands-on time was not
   recorded.
 
+- **One admitted own full-pass study:** after all 10 admission files matched
+  GitHub and the offline source/proof/profile/admission guards passed, the
+  single fixed two-path 10m study completed from clean admission head
+  `1507453`. The outer driver took 19.435177 seconds (<7200) and did not
+  need its 120-second failure-save reserve. Low/wet crossed 10m at
+  10,001,610 charged nodes and medium/dry at 10,012,410. Each path saved
+  six current/linear-average policies across three work labels, cumulative
+  mass, exact own scores and RNG state; both have zero structural recall
+  violations and whole positive-average coverage 1.0. The final own linear
+  average exploitability is 0.0194244965 chips (low/wet) and 0.2412065218
+  chips (medium/dry). Maximum recorded worker RSS was 181,649,408 bytes.
+  The [own archive](../results/medium-dry-full-expectation/own/manifest.json)
+  retains complete/partial markers, source/environment/worker logs and all
+  policies. No OpenSpiel reference or B4 comparison entered training or this
+  publication. These own scores require the pinned independent audit and
+  fixed report before a strength classification. Next: publish and
+  GitHub-byte-verify every own byte before the comparison-only audit. Codex
+  assisted; human hands-on time was not recorded.
+
 ## 2026-11-23 — PR #103 fixed B8 result
 
 - The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed

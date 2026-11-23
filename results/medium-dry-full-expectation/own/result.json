@@ -1,0 +1,103 @@
+{
+  "assignments": [
+    [
+      0,
+      1
+    ]
+  ],
+  "failure": null,
+  "head": "15074539d84c10c9253609ce103e65f4b98baba1",
+  "parent_cpu_seconds": 0.009004000000000012,
+  "reaped_children_cpu_seconds": 19.060000000000002,
+  "seconds": 19.059773957997095,
+  "source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+  "stage": "study",
+  "status": "completed",
+  "worker_count": 1,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 47792,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path00",
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "folder": "study/path01",
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 18.971435,
+          "kind": "done",
+          "seconds": 18.97332458299934,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 6,
+                "final_work": 10001610,
+                "index": 0,
+                "path": {
+                  "arm": "signed_full_expectation",
+                  "game": "new_low_wet_ip",
+                  "index": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 7.349784958001692,
+                "worker_peak_rss_bytes": 58359808
+              },
+              {
+                "captures": 6,
+                "final_work": 10012410,
+                "index": 1,
+                "path": {
+                  "arm": "signed_full_expectation",
+                  "game": "new_medium_dry_oop",
+                  "index": 1
+                },
+                "repeat": 0,
+                "whole_path_seconds": 11.618642416986404,
+                "worker_peak_rss_bytes": 181649408
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 47792,
+      "slot": 0
+    }
+  ]
+}

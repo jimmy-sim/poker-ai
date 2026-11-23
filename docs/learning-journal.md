@@ -9062,6 +9062,21 @@ the admission, then run the single allowed two-path 10m own comparison and
 publish its policies before any reference audit. Codex assisted; human
 hands-on time was not recorded.
 
+**November 23 admitted full-pass own study.** After separate admission was
+published and all ten of its files matched GitHub, the one allowed serial
+run trained a full-expected-pass policy on each of the two known spots to
+10m charged node work. It completed in 19.44 outer seconds under the 7200
+cap, retained all six policy snapshots per spot, and did not use a reference
+solver or the B4 controls. The [own-policy archive](../results/medium-dry-full-expectation/own/manifest.json)
+records final own exploitability of 0.0194245 chips on low/wet and 0.241207
+chips on medium/dry, with complete positive-average coverage and zero recall
+violations. **Example:** a complete target pass visits the whole finite tree,
+so 10m node visits correspond to only 235 target-pair updates on the larger
+medium/dry tree; the protocol compares charged work, not update count.
+These are own, unaudited values on known games. **Next decision:** publish
+and verify the complete own policies before any OpenSpiel scalar audit or
+fixed B4 comparison. Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
