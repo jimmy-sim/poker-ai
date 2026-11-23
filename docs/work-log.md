@@ -127,6 +127,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   reference strategy entered training. Next: publish and byte-verify the
   audit before the frozen report. Codex assisted; human time was not reported.
 
+- The frozen PR #105 report rebuilt all 48 published policies and 12
+  control-ranked representative nodes from verified own/native bytes. The
+  [negative result](river-full-broader-spots-result.md) has medium/dry final
+  candidate 0.025118161 initial pots, above its 0.01 absolute gate and
+  +0.007973008 worse than the B4 median at matched 10m work. Low/wet passes
+  its absolute and +0.001 nondegradation gates, but does not reverse the
+  medium/dry failure. All whole-coverage values are 1.0 and recall errors
+  zero; native maximum error is `1.1368683772161603e-13` chips. This is a
+  **negative** two-input test, with no scientific retry or default change.
+  Next: publish/verify the report, complete required final exact-source
+  local/optional/hosted checks and review PR #105. Codex assisted; human
+  hands-on time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

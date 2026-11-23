@@ -9247,6 +9247,21 @@ both new inputs from published own and reference bytes using the frozen
 thresholds. Codex assisted; human hands-on time and personal learning were
 not reported.
 
+**November 23 broader-input strength result.** The fixed
+[negative report](river-full-broader-spots-result.md) compares the unchanged
+full expected learner with each independent B4 control at matched 10m charged
+work on two new card/range inputs using known betting templates. The
+medium/dry candidate ends at 0.025118 initial pots, failing its 0.01 absolute
+gate and landing +0.007973 above the B4 seed median; low/wet passes its
+absolute and nondegradation gates. **Example:** the candidate improves one
+control-ranked `9h Jh` turn node on `As Jc 5d 3h`, yet its whole-game turn
+gain remains 0.861096 chips. A favorable local decision cannot substitute
+for the prespecified overall exploitability rule. **Next decision:** publish
+and verify the report, finish final checks, and then consider a separate
+prospective question about turn information on newly selected inputs. These
+evaluated inputs are now known cases. Codex assisted; human hands-on time and
+personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

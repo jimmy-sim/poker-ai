@@ -79,6 +79,8 @@ recomputed the bound and was published and verified before the single
 [own study](../results/river-full-broader/own/manifest.json). The study
 completed and all own bytes were verified before the one pinned
 [48-row comparison-only audit](../results/river-full-broader/native/manifest.json).
-The audit passed its numerical gate; publish and verify its raw bytes before
-the frozen report. All earlier failures remain, including PR #104's
+The audit passed its numerical gate, was published and verified. The
+[frozen report](river-full-broader-spots-result.md) is **negative** on the
+medium/dry input; publish/verify it and finish final qualification before
+choosing a distinct prospective follow-up. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

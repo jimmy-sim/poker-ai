@@ -130,7 +130,11 @@ single fixed 10m study. That one eight-path study completed and its
 published and verified before the pinned reference audit. That
 [48-row audit](../results/river-full-broader/native/manifest.json) passed
 the `1e-9`-chip gate; publish and verify it before the fixed report. No
-classified poker-strength outcome yet exists for the new cohort.
+classified poker-strength outcome existed at that checkpoint. The
+[frozen report](river-full-broader-spots-result.md) now classifies the
+two-input test **negative**: medium/dry fails its absolute and paired gates,
+while low/wet passes its fixed rules. Final report publication and
+qualification remain pending. No default promotion or retry.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
