@@ -71,6 +71,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   Next: publish/GitHub-byte-verify the own raw bytes before any reference
   audit or strength classification. Codex assisted; human hands-on time was
   not recorded.
+- **Pinned comparison-only audit:** after all 115 own-policy GitHub blobs
+  matched and the offline publication guard passed, the fixed OpenSpiel 2.0.2
+  scalar audit completed all 54 B8 saved policies in 28.124776 seconds under
+  its 900-second cap. Maximum own/reference value, best-reply and
+  exploitability error was `6.394884621840902e-14` chips, below `1e-9`.
+  The [native archive](../results/medium-dry-b8-updates/native/manifest.json)
+  retains raw comparison rows, events, runtime and Apache-2.0 license hash.
+  It was run after own publication and did not feed reference strategies into
+  training. Next: publish/verify the native archive, then replay the paired
+  report and fixed decision rows. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-22 — PR #103 isolated B8 source
 

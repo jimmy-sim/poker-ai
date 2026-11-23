@@ -1,0 +1,10 @@
+{
+  "cap_seconds": 900,
+  "command": "source ../poker-env.sh && UV_PYTHON=3.11.17 UV_PROJECT_ENVIRONMENT=results/runs/guarded-skip-requalification-20261118/envs/optional311 uv run --locked --all-extras python scripts/study_medium_dry_b8.py native --output results/runs/medium-dry-b8-native-20261123/raw",
+  "exit_code": 0,
+  "reference_license": "Apache-2.0",
+  "reference_role": "comparison-only scalar audit",
+  "reference_version": "OpenSpiel 2.0.2",
+  "source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+  "source_head": "05db73c708fcb70789e864eef3a5524edb51c7f9"
+}

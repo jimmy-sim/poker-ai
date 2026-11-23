@@ -74,8 +74,11 @@ conservative bound is **3,831.907 seconds** against **7,200**. Its raw bytes
 were published and verified; the separate data-only compute admission passed.
 One fixed 10m B8 training comparison was admitted after publication of
 its admission receipt. The six-path own run completed within its cap; saved
-policies and scores are being published before comparison-only audit. No
-audited strength result or default change yet.
+policies and scores were published before comparison-only audit. No paired
+strength classification or default change yet.
+The one pinned OpenSpiel 2.0.2 scalar audit then checked all 54 B8 policies
+within `6.395e-14` chips maximum error, below the frozen `1e-9` tolerance;
+its evidence is being published before the paired strength report.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

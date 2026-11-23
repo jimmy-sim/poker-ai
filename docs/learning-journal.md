@@ -132,8 +132,10 @@ full local base/optional and hosted checks; the
 is published and a fictional proof has passed and been published. The fixed
 100k profile completed under its cap; its raw bytes were published and the
 separate conservative compute admission passed. The one fixed 10m B8 own run
-has completed, and its raw policies are being published before reference
-comparison. No audited B8 strength result or default change exists. PR #102's conservative compute gate rejected
+has completed, and its raw policies were published before reference
+comparison. The pinned scalar audit passed and is being published before the
+paired report. No B8 strength classification or default change exists. PR
+#102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
 
@@ -8929,6 +8931,19 @@ charged visits, keeping its 313-visit overshoot rather than forcing an exact
 is classified from these unaudited own outputs. **Next decision:** publish
 and verify every own-policy byte before the pinned comparison-only scalar
 audit. Codex assisted; human hands-on time was not recorded.
+
+**November 23 comparison-only B8 audit.** After all 115 own-policy GitHub
+blobs matched and the publication guard passed, pinned OpenSpiel 2.0.2
+independently checked 54 saved B8 policies. The
+[audit](../results/medium-dry-b8-updates/native/manifest.json) completed in
+28.125 seconds, and its largest own/reference scalar difference was
+`6.395e-14` chips, below the frozen `1e-9` tolerance. The license hash and
+version are retained. **Example:** a best-reply value from OpenSpiel can
+check the arithmetic of a saved B8 policy, but the reference strategy never
+enters the B8 updater. This numerical agreement does not yet classify the
+paired poker improvement. **Next decision:** publish/verify the audit, then
+replay both published own cohorts into the fixed metric and river-decision
+report. Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
