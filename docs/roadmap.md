@@ -72,10 +72,13 @@ compute admission, and the single six-path 10m study completed within cap.
 Own policies were published before the comparison-only OpenSpiel audit, which
 passed all 54 saved policies within `6.395e-14` chips maximum error.
 Final report-head local base/optional, hooks and both hosted jobs passed;
-PR solo review and merge remain pending.
+[PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) was history-merged
+as `79db2fb`. Post-merge main CI is pending separately.
 Neither spot is unseen; no default was promoted. The next distinct question
-must address the observed widespread river best-reply gains under a new
-prospective contract, not retry B8 for a favorable outcome.
+tests [full expected updates at matched work](medium-dry-full-expectation.md)
+under a new prospective contract. It asks whether eliminating trajectory
+sampling noise, while retaining signed linear update rules, improves known
+medium/dry river decisions. No new candidate measurement exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

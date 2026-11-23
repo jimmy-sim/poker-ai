@@ -125,13 +125,15 @@ not a record of completed practice.
 ## Where the project stands
 
 **Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
-completed its one prospectively fixed batch-eight versus batch-four comparison
-on two known river spots. The [result](medium-dry-b8-updates-result.md) is
-**negative**: final medium/dry B8 median/worst exploitability
+history-merged its one prospectively fixed batch-eight versus batch-four
+comparison on two known river spots. The [result](medium-dry-b8-updates-result.md)
+is **negative**: final medium/dry B8 median/worst exploitability
 0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
-paired seed improves and two worsen. The low/wet gate passes. Both own
-policies were published before pinned comparison-only reference checks. Final
-report-head checks passed; PR review and merge remain pending. No default changed. PR
+paired seed improves and two worsen. The low/wet gate passes. Own policies
+were published before pinned comparison-only checks, and all final local and
+hosted gates passed. No default changed. The next
+[prospective full-expectation question](medium-dry-full-expectation.md) has
+no new candidate outcome yet. PR
 #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8974,6 +8976,25 @@ The negative scientific conclusion stands. **Next decision:** publish the
 receipt, conduct a solo diff/evidence review and history-preserving merge if
 eligible; then plan a distinct river-strength question under a new prospective
 contract. Codex assisted; human hands-on time was not recorded.
+
+**November 23 B8 closure and full-expectation plan.** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
+history-merged after the receipt-head hosted CI passed both Python jobs.
+The scientific finding stays negative. **Question:** could the remaining
+medium/dry river weakness reflect noisy sampled passes rather than an
+information-key collision or simply the B4/B8 batch choice? The
+[prospective next protocol](medium-dry-full-expectation.md) fixes complete
+expected passes with the **same signed linear update** and matched charged
+node work on the two known spots. **Example:** a full pass evaluates every
+chance and opponent branch under a frozen policy, whereas a B4 pass samples
+one trajectory through those branches; full passes cost more work per update.
+The existing [earlier full-tree controls](river-fixed-work.md) used CFR+ on
+different games and did not answer this matched-work question. This plan
+fixes a single deterministic candidate path per spot, all three immutable
+B4 control seeds, absolute and contrast gates, profile, strict compute cap
+and publication order before outcomes. **Next decision:** publish the plan,
+qualify an isolated adapter, then let its forecast decide whether 10m learning
+is admitted. No candidate result exists. Codex assisted; human hands-on
+time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 

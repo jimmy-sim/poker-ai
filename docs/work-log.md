@@ -13,6 +13,23 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #103 merge and next prospective question
+
+- [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
+  `79db2fb59f7357f1042d395b9f05f8e5d89ae7c2` after final receipt-head
+  [CI 45152979600](https://github.com/jimmy-sim/poker-ai/actions/runs/45152979600)
+  passed Python 3.11/3.12 and the solo review found no material source or
+  evidence issue. The **negative** B8 scientific result and all checkpoint
+  commits remain intact; no default changed. Post-merge main CI
+  [45156767169](https://github.com/jimmy-sim/poker-ai/actions/runs/45156767169)
+  is pending at this entry. The [new prospective full-expectation question](medium-dry-full-expectation.md)
+  asks whether removing trajectory sampling, with signed linear rules and
+  matched charged work, improves the same two known spots against immutable
+  B4 control. It fixes one deterministic path per spot, three control seeds,
+  work, gates, profile, strict forecast and stop rule before new outcomes.
+  No candidate policy or score has been measured. Codex assisted; human
+  hands-on time was not recorded.
+
 ## 2026-11-23 — PR #103 fixed B8 result
 
 - The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed
