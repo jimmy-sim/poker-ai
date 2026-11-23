@@ -97,8 +97,14 @@ completed both known spots with full saved-average coverage and zero recall
 violations. The pinned comparison-only
 [scalar audit](../results/medium-dry-full-expectation/native/manifest.json)
 matched all 12 saved candidate policies within `5.684e-14` chips. The fixed
-B4 comparison and decision report remain before classification. No default
-changed.
+[B4 comparison and decision report](medium-dry-full-expectation-result.md)
+classifies the two-known-spot result **positive** under its frozen rule:
+medium/dry final exploitability 0.006700 initial pots versus the B4 control
+median 0.035656, while low/wet also improves. The candidate was worse at
+earlier medium/dry work labels. Final report-head qualification and review
+remain; no default changed or unseen-game claim follows. The next distinct
+question should test prospectively selected additional spots after this
+milestone closes.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

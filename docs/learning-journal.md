@@ -9091,6 +9091,26 @@ then run the one fixed report with all three immutable B4 seeds and the
 prespecified decision rows. Codex assisted; human hands-on time was not
 recorded.
 
+**November 23 fixed full-expectation result.** The one preregistered
+[report](medium-dry-full-expectation-result.md) replayed all 48 saved
+candidate/control cases and an independent grid check passed. At the fixed
+10m work endpoint, medium/dry restricted-game exploitability fell from the
+three B4 controls' 3.513%–3.954% initial pots to 0.670% for the one
+deterministic full-pass candidate; low/wet also improved. The frozen rule
+classifies this two-known-spot result **positive**, while the candidate was
+worse at the earlier medium/dry 100k and 1m checkpoints. **Example:** on
+the fixed `8c 9h` river row, the saved best-reply contribution falls from
+0.021797 chips for B4 seed 20261371 to 0.000211 chips for the candidate.
+The two policies face different saved opponents, so this does not prove
+that copying a local action probability causes the gain. The three paired
+contrasts reuse one candidate and do not give a population confidence
+interval. **Next decision:** publish and verify the full report, qualify
+its exact head locally and in hosted CI, and review/merge if eligible.
+Then prospectively test whether the improvement extends to structurally
+selected new spots without tuning on their outcomes. No default promotion
+or full-game strength claim follows. Codex assisted; human hands-on time
+was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

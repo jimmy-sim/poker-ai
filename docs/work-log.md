@@ -126,6 +126,26 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   No reference strategy entered training. Next: publish and byte-verify this
   audit, then replay the fixed candidate/B4 control report and prespecified
   river decisions. Codex assisted; human hands-on time was not recorded.
+- **Fixed full-expectation strength report:** after all 10 published native
+  files matched GitHub, the one frozen report replayed 48 candidate/control
+  work/readout cases and an independent data-only grid/arithmetic check
+  passed. The [report](medium-dry-full-expectation-result.md) and
+  [raw evidence](../results/medium-dry-full-expectation/report/manifest.json)
+  classify the two-known-spot result **positive** under the registered rule:
+  medium/dry candidate 0.006700181 initial pots versus B4 seed scores
+  0.035655787/0.039541661/0.035132481, with candidate-minus-control
+  differences −0.028955606/−0.032841480/−0.028432300; low/wet candidate
+  0.000059952 versus 0.000945518/0.000909274/0.001146135, with differences
+  −0.000885566/−0.000849322/−0.001086183. Whole coverage 1.0, zero
+  recall violations, and pinned scalar audit error below tolerance. At
+  medium/dry 100k and 1m, the candidate was worse than the B4 median;
+  only the fixed 10m endpoint passes. The three contrasts share one
+  deterministic candidate, and both games are known; no population or
+  full-game claim or default promotion follows. Fixed turn/river rows and
+  a Terminal inspection command are in the report. Next: publish/verify
+  the report, complete exact report-head local/optional/hooks and hosted
+  qualification, then solo review and history-preserving merge if eligible.
+  Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 
