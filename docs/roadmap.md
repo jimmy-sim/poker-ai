@@ -94,8 +94,11 @@ recomputed that unchanged bound and passed; the one 10m own study is next
 after admission publication. The single admitted
 [own study](../results/medium-dry-full-expectation/own/manifest.json)
 completed both known spots with full saved-average coverage and zero recall
-violations; its own scores await independent reference audit and the fixed
-B4 comparison before classification. No default changed.
+violations. The pinned comparison-only
+[scalar audit](../results/medium-dry-full-expectation/native/manifest.json)
+matched all 12 saved candidate policies within `5.684e-14` chips. The fixed
+B4 comparison and decision report remain before classification. No default
+changed.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

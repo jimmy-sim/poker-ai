@@ -9077,6 +9077,20 @@ These are own, unaudited values on known games. **Next decision:** publish
 and verify the complete own policies before any OpenSpiel scalar audit or
 fixed B4 comparison. Codex assisted; human hands-on time was not recorded.
 
+**November 23 independent full-pass scalar audit.** Only after the complete
+own policies were public and all 34 own files matched GitHub did the pinned
+OpenSpiel 2.0.2 reference check run. Its
+[audit](../results/medium-dry-full-expectation/native/manifest.json) compared
+value, best reply and exploitability scalars for all 12 saved candidate
+policies and found at most `5.684e-14` chips of difference, below the frozen
+`1e-9` tolerance. **Example:** two implementations agreeing on a saved
+policy's best-reply gain helps rule out a scoring mistake; it does not by
+itself show that the policy beats the B4 control. No reference strategy was
+used to train the candidate. **Next decision:** publish and verify the audit,
+then run the one fixed report with all three immutable B4 seeds and the
+prespecified decision rows. Codex assisted; human hands-on time was not
+recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

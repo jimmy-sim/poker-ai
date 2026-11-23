@@ -115,6 +115,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   fixed report before a strength classification. Next: publish and
   GitHub-byte-verify every own byte before the comparison-only audit. Codex
   assisted; human hands-on time was not recorded.
+- **Pinned comparison-only scalar audit:** all 34 published own-policy files
+  matched GitHub and the offline source/own guards passed before OpenSpiel was
+  loaded. The fixed OpenSpiel 2.0.2 Apache-2.0
+  [audit](../results/medium-dry-full-expectation/native/manifest.json)
+  checked every candidate saved value, best reply and exploitability scalar
+  across 12 policies in 6.548546 seconds (<900); maximum error was
+  `5.684341886080802e-14` chips (<`1e-9`). Installed license hash matched
+  `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+  No reference strategy entered training. Next: publish and byte-verify this
+  audit, then replay the fixed candidate/B4 control report and prespecified
+  river decisions. Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 
