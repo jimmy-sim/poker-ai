@@ -86,6 +86,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   overturn PR #105's negative strength classification or establish a
   causal gain. Codex assisted; human time and personal learning unknown.
 
+- Final exact PR #106 negative-parent diagnosis-report head `abef90e4fc532f20484ad7522f789942ca819eb9`
+  passed serial local base Python 3.11 and 3.12, each with 5,784 passed,
+  73 skipped and 150 slow deselected, plus Ruff, formatting, strict mypy,
+  pre/post historical/current source, archive, lock and runtime guards.
+  Optional 3.11 passed 2,597; optional 3.12 passed 2,595 with two expected
+  skips, both across 81 pinned suites and license guards. All-file hooks
+  and [report-head hosted CI 45237203341](https://github.com/jimmy-sim/poker-ai/actions/runs/45237203341)
+  passed both Python jobs. The [final receipt](../results/river-turn-loss/final-checks/manifest.json)
+  retains complete local/hosted logs and archive hashes. The diagnostic
+  signal remains a hypothesis, with no new poker-strength acceptance.
+  Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as

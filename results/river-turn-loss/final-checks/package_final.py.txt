@@ -1,0 +1,68 @@
+"""Retain exact report-head qualification after all local and hosted gates pass."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/river-turn-loss/final-checks"
+HEAD = "abef90e4fc532f20484ad7522f789942ca819eb9"
+FINGERPRINT = "5c33aa0cdfddefe33a69be2c93526223bde1df49eda2957f1f5de4d82901957f"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def copy(name: str) -> None:
+    source = RAW / name
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / name
+    if source.suffix == ".log":
+        with target.with_suffix(".log.gz").open("wb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == ".py":
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+if __name__ == "__main__":
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain prior final receipt")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    if state["head"] != HEAD or state["status"] != "passed" or [(r["role"], r["exit_code"]) for r in state["completed"]] != [(role, 0) for role in ROLES]:
+        raise ArithmeticError("local report-head driver incomplete")
+    if any(r["head"] != HEAD or r["status"] != "passed" for r in receipts):
+        raise ArithmeticError("local role mismatch")
+    if any(r["suite_count"] != 81 for r in receipts if r["role"].startswith("optional")):
+        raise ArithmeticError("optional suite count changed")
+    if (RAW / "hooks.exit").read_text().strip() != "0":
+        raise ArithmeticError("report-head hooks failed")
+    if hosted["headSha"] != HEAD or hosted["conclusion"] != "success":
+        raise ArithmeticError("hosted report-head failed")
+    if {j["name"] for j in hosted["jobs"]} != {"Python 3.11", "Python 3.12"} or any(j["conclusion"] != "success" for j in hosted["jobs"]):
+        raise ArithmeticError("hosted Python job failed")
+    verification = json.loads((RAW / "github-report-verify.json").read_bytes())
+    if verification["status"] != "verified" or verification["head"] != HEAD or verification["files"] != 23:
+        raise ArithmeticError("published report bytes not verified")
+    for stage in ("source-checks", "proof", "diagnosis"):
+        from_manifest = ROOT / "results/river-turn-loss" / stage / "manifest.json"
+        if not from_manifest.is_file():
+            raise FileNotFoundError(from_manifest)
+    OUT.mkdir(parents=True)
+    names = ["driver-state.json", "driver.log", "driver.py", "runner.py", "optional-suites.json", "package_final.py", "hooks.exit", "hooks.log", "hosted.json", "hosted.log", "github-report-verify.json"]
+    names += [f"{role}.{ext}" for role in ROLES for ext in ("json", "log")]
+    for name in names:
+        copy(name)
+    result = dict(status="final_qualified", report_head=HEAD, source_fingerprint=FINGERPRINT, local_roles=receipts, hooks="passed", hosted_run=hosted["databaseId"], hosted_jobs=[dict(name=j["name"], conclusion=j["conclusion"]) for j in hosted["jobs"]], source_manifest_sha256=digest(ROOT / "results/river-turn-loss/source-checks/manifest.json"), proof_manifest_sha256=digest(ROOT / "results/river-turn-loss/proof/manifest.json"), diagnosis_manifest_sha256=digest(ROOT / "results/river-turn-loss/diagnosis/manifest.json"), parent_classification="negative", diagnostic_signal="grouping_test_candidate", no_new_training=True)
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(x for x in OUT.iterdir() if x.is_file()):
+        data = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="final_qualified", source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + "\n")

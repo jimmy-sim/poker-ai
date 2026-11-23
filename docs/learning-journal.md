@@ -9339,6 +9339,16 @@ turn distinction on both known and newly selected inputs if a bounded
 compute plan passes. Codex assisted; no human time or personal learning was
 reported.
 
+**November 23 final diagnosis checks.** The published report was checked
+again on both locked Python versions with the full base and optional suites,
+all-file hooks and both hosted jobs. The [final receipt](../results/river-turn-loss/final-checks/manifest.json)
+binds the logs to the exact report commit. **Example:** these checks support
+recomputing the 0.746330-chip Jh 9h loss and its shared abstract row; they
+do not turn the proposed turn distinction into a tested stronger agent.
+**Next decision:** complete review and history-preserving merge, then
+register a separate fixed-work representation comparison. Codex assisted;
+no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
