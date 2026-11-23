@@ -59,6 +59,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   the fixed B8 10m study is **admitted**. No training or reference comparison
   began during admission. Next: publish/verify this receipt before one capped
   six-path own run. Codex assisted; human hands-on time was not recorded.
+- **One admitted own run:** six fixed B8 spot/seed paths each crossed 10m
+  charged node work once, with final work 10,000,007–10,000,313. The spawned
+  learner finished in 136.941730 seconds; the outer driver, including setup
+  and save, exited0 in 137.430354 seconds below the 7,200-second cap with
+  its 120-second failure-save reserve unused. Maximum worker RSS was
+  202,883,072 bytes. All six path summaries, nine captures per path, saved
+  policies, masses, RNG states, work counts and own scores are in the
+  [complete own archive](../results/medium-dry-b8-updates/own/manifest.json)
+  (114 members). No OpenSpiel output or comparison-only audit was used.
+  Next: publish/GitHub-byte-verify the own raw bytes before any reference
+  audit or strength classification. Codex assisted; human hands-on time was
+  not recorded.
 
 ## 2026-11-22 — PR #103 isolated B8 source
 

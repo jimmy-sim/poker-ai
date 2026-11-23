@@ -67,13 +67,15 @@ spots versus immutable published B4 controls. Its seeds, work, gates, fixed
 profile and strict compute admission are registered before B8 outcomes.
 Its isolated source at `81ef11a` passed full exact-source base and optional
 local checks, all-file hooks and both hosted CI jobs. Its source receipt is
-published and GitHub-byte-verified; the fictional proof passed and is being
+published and GitHub-byte-verified; the fictional proof passed and was
 published before the fixed profile. No B8 poker-strength result exists yet.
 The one fixed 18-path/three-repeat 100k profile completed under its cap; its
 conservative bound is **3,831.907 seconds** against **7,200**. Its raw bytes
 were published and verified; the separate data-only compute admission passed.
-One fixed 10m B8 training comparison is now admitted after publication of
-its admission receipt. No strength result or default change yet.
+One fixed 10m B8 training comparison was admitted after publication of
+its admission receipt. The six-path own run completed within its cap; saved
+policies and scores are being published before comparison-only audit. No
+audited strength result or default change yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

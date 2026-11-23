@@ -131,8 +131,9 @@ full local base/optional and hosted checks; the
 [source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
 is published and a fictional proof has passed and been published. The fixed
 100k profile completed under its cap; its raw bytes were published and the
-separate conservative compute admission passed. No 10m B8 poker
-result or default change exists. PR #102's conservative compute gate rejected
+separate conservative compute admission passed. The one fixed 10m B8 own run
+has completed, and its raw policies are being published before reference
+comparison. No audited B8 strength result or default change exists. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
 
@@ -8914,6 +8915,20 @@ The admission does not show better poker decisions; no 10m B8 policy or
 reference output exists yet. **Next decision:** publish and verify the
 admission receipt before the single capped own run. Codex assisted; human
 hands-on time was not recorded.
+
+**November 23 one admitted B8 own run.** After the admission receipt was
+published and all six GitHub blobs matched, the single fixed
+[own run](../results/medium-dry-b8-updates/own/manifest.json) completed six
+spot/seed paths at their first 10m charged-work crossings. The parent study
+used 136.942 seconds; the outer guarded driver used 137.430 seconds, and
+maximum worker memory was 202,883,072 bytes. Each path saved all nine
+policies and complete scores, work and generator state, with no failed path.
+**Example:** seed 20261371 on the medium/dry spot ended at 10,000,313
+charged visits, keeping its 313-visit overshoot rather than forcing an exact
+10m stop. No OpenSpiel reference was loaded or used, and no strength result
+is classified from these unaudited own outputs. **Next decision:** publish
+and verify every own-policy byte before the pinned comparison-only scalar
+audit. Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
