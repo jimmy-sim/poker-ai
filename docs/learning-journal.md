@@ -9141,6 +9141,20 @@ not an outcome for this new question. **Next decision:** publish the protocol,
 then freeze the one-time cohort and qualify isolated source before training.
 Codex assisted; human hands-on time and personal learning were not reported.
 
+**November 23 isolated broader-input adapter, before selection.** New source
+keeps the old full expected learner and B4 learning rules but binds each to the
+same future frozen game, exact work labels and two saved policy readouts. A toy
+capture/replay check passed for B4; the earlier full-pass tiny-game arithmetic
+tests remain the independent reference for that learner. **Example:** a slow
+100k B4 profile repeat must govern the 10m forecast even if its other two
+repeats are fast; the new synthetic forecast test rejects that record. Seven
+focused tests, including a fictional two-learner runner check, Ruff and strict
+mypy pass, and the historical full source hash
+is unchanged. This is software evidence only; no cards have been selected and
+no poker outcome exists. **Next decision:** publish and qualify the source,
+freeze the one-time cohort, then follow the protocol's staged gates. Codex
+assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

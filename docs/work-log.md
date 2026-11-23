@@ -27,6 +27,22 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   cohort; it is not a strength result. Codex assisted; human hands-on time was
   not reported.
 
+- The isolated PR #105 selector and B4/full adapters were implemented without
+  changing historical files, source pins or the lock. Before cohort selection,
+  seven focused tests passed for deterministic exclusion/refusal to replace,
+  toy B4 capture/replay, a fictional two-learner runner check, fixed path order,
+  conservative slowest-repeat forecast and the frozen strength rule. Ruff
+  lint/format and strict mypy passed on the
+  new source. The PR #104 historical source fingerprint still equals
+  `a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab`.
+  Full exact-source qualification, cohort freeze and all scientific stages are
+  pending; these focused checks make no poker-strength claim.
+  The first source commit hook attempt failed before Ruff ran because its shell
+  could not find `uv`; the retained ignored local log at
+  `results/runs/river-full-broader-source-20261123/first-hook-failure.log`
+  records it. The code was unchanged and the hooks will be rerun with the
+  repository's environment sourced, without bypassing them.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
