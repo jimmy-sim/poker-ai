@@ -106,6 +106,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   known-case mechanistic question if justified. Codex assisted; human
   time or personal learning was not reported.
 
+- PR #107's published `d41baac` structural-stop report and raw archive
+  passed final exact-result local requalification: base Python 3.11 and
+  3.12 each 5,795 passed, 73 skipped, 150 slow deselected; optional
+  Python 3.11 2,597 passed; optional 3.12 2,595 passed and two expected
+  skips. Each role checked the historical/source fingerprint and published
+  receipt, inventory and report hashes before and after; all-file hooks
+  passed. Both [result-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45265519612)
+  passed. The [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+  retains complete local/hosted logs, PIDs and exact pinned bytes; publish
+  and verify it before solo review and history-preserving merge. The
+  scientific result remains inconclusive and no training occurred. Codex
+  assisted; human time or personal learning was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as

@@ -178,8 +178,11 @@ registered structural stop. PR #107 is **inconclusive for poker strength**;
 no training, reference audit, redraw or default change followed. The
 known diagnostic input retains 12 collided turn rows, so a separate
 prospective known-case matched-work question can test that mechanism
-without claiming unseen or broader strength. Final checks/review and
-publication of the raw structural-stop archive remain before PR closure.
+without claiming unseen or broader strength. The raw archive/report were
+published and GitHub-byte-verified. All four
+final exact-result local roles, hooks and both hosted jobs passed; the
+[final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+is being published. Solo review and history-preserving merge remain.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

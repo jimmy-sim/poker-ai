@@ -9424,6 +9424,18 @@ known-case matched-work mechanism test if it offers the best next poker
 decision evidence. Codex assisted; no human time or personal learning
 was reported.
 
+**November 23 final structural-stop checks.** Both complete local Python
+versions, both optional suites, all-file hooks and both hosted jobs passed
+again on the published raw inventory and inconclusive report. **Example:**
+the final guard checks the inventory file's hash and the report's hash
+alongside the frozen source, so the stated zero collisions cannot be
+replaced by a later unqualified edit. The [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+retains the logs and exact head. **Next decision:** publish and verify this
+receipt, finish solo review and history-preserving merge, then register a
+separate known-case mechanism question if it is the best next poker
+decision test. Codex assisted; no human time or personal learning was
+reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
