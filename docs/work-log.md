@@ -87,6 +87,15 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   profile-derived forecast, **not** separate admission or a 10m poker result.
   Next: publish and byte-verify the complete profile, then recompute the
   data-only gate. Codex assisted; human hands-on time was not recorded.
+- **Separate conservative admission:** all 47 published profile blobs matched
+  GitHub, and the offline source/proof/profile guards passed. A data-only
+  [decision](../results/medium-dry-full-expectation/admission/manifest.json)
+  recomputed the frozen profile's `T=45.325073510810725` seconds and strict
+  `2*(2*T+600)=1381.300294043243<7200`, so the one two-path 10m own run is
+  **admitted**. No new policy was trained and no reference output used in this
+  step. Next: publish and GitHub-byte-verify the admission before launching
+  the one capped own study. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 

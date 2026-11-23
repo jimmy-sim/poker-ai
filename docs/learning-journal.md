@@ -9049,6 +9049,19 @@ not whether river decisions improve. **Next decision:** publish and verify
 every profile byte, then run a separate data-only admission before any 10m
 study. Codex assisted; human hands-on time was not recorded.
 
+**November 23 separate full-pass admission.** A data-only check read the
+published six-path profile after all 47 profile files matched GitHub. It
+recomputed the same `T=45.325073510810725` seconds and strict bound
+`1381.300294043243<7200` from the frozen maximum-per-spot rule, so the
+[admission receipt](../results/medium-dry-full-expectation/admission/manifest.json)
+says **admitted**. **Example:** the calculation uses the slowest of three
+repeats for each spot rather than choosing the favorable timing; this keeps
+the run cap separate from a claim about playing strength. No new policy or
+reference value entered this step. **Next decision:** publish and verify
+the admission, then run the single allowed two-path 10m own comparison and
+publish its policies before any reference audit. Codex assisted; human
+hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

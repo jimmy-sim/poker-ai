@@ -88,8 +88,10 @@ passed capture and replay within its cap; the fixed real-game profile and
 compute admission are next. The one fixed six-path
 [profile](../results/medium-dry-full-expectation/profile/manifest.json)
 completed under its cap and forecasts `1381.300294 < 7200` seconds under the
-registered conservative rule. Separate admission and the 10m strength result
-remain pending; no default changed.
+registered conservative rule. The separate data-only
+[admission](../results/medium-dry-full-expectation/admission/manifest.json)
+recomputed that unchanged bound and passed; the one 10m own study is next
+after admission publication. No default changed.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
