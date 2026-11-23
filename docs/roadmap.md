@@ -133,8 +133,10 @@ the `1e-9`-chip gate; publish and verify it before the fixed report. No
 classified poker-strength outcome existed at that checkpoint. The
 [frozen report](river-full-broader-spots-result.md) now classifies the
 two-input test **negative**: medium/dry fails its absolute and paired gates,
-while low/wet passes its fixed rules. Final report publication and
-qualification remain pending. No default promotion or retry.
+while low/wet passes its fixed rules. Final report publication, all four local base/optional roles, hooks and
+both hosted jobs passed; the [final receipt](../results/river-full-broader/final-checks/manifest.json)
+awaits publication/verification and solo review. No default promotion or
+retry.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

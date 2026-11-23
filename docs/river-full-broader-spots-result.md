@@ -88,8 +88,15 @@ verified before OpenSpiel 2.0.2 comparison. The reference maximum scalar
 error was `1.1368683772161603e-13` chips, below `1e-9`; the installed
 Apache-2.0 license hash was
 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
-The final report and required final exact-source checks remain to be
-published/completed at this report checkpoint.
+The exact negative-report head `f62373f` then passed final local base and
+optional Python 3.11/3.12 checks, all-file hooks and
+[hosted CI 45205774174](https://github.com/jimmy-sim/poker-ai/actions/runs/45205774174)
+on both versions. Base suites each passed 5,779 tests/73 skipped/150 slow
+deselected plus Ruff, format, strict mypy and pre/post source, lock and
+archive guards. Optional 3.11 passed 2,597; optional 3.12 passed 2,595 with
+two expected skips, both with pinned reference license/runtime guards. The
+[final check receipt](../results/river-full-broader/final-checks/manifest.json)
+retains the exact logs and source bindings.
 
 This experiment ends negative; no retraining or case substitution is
 justified. A distinct prospective follow-up could test a turn-information

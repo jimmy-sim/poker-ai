@@ -81,6 +81,8 @@ completed and all own bytes were verified before the one pinned
 [48-row comparison-only audit](../results/river-full-broader/native/manifest.json).
 The audit passed its numerical gate, was published and verified. The
 [frozen report](river-full-broader-spots-result.md) is **negative** on the
-medium/dry input; publish/verify it and finish final qualification before
-choosing a distinct prospective follow-up. All earlier failures remain, including PR #104's
+medium/dry input. The report was published/verified and final local and
+hosted checks passed; publish/verify the
+[final receipt](../results/river-full-broader/final-checks/manifest.json)
+and finish solo review before choosing a distinct prospective follow-up. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

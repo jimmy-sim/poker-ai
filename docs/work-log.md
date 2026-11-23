@@ -140,6 +140,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   local/optional/hosted checks and review PR #105. Codex assisted; human
   hands-on time was not reported.
 
+- Final exact PR #105 negative-report-head `f62373f` qualification passed:
+  serial local base Python 3.11/3.12 each passed 5,779 tests, 73 skipped,
+  150 slow deselected plus Ruff, format, strict mypy and pre/post guards;
+  optional 3.11 passed 2,597, optional 3.12 passed 2,595 with two expected
+  skips, both with pinned OpenSpiel/Numba/license and archive guards.
+  All-file hooks and [hosted CI 45205774174](https://github.com/jimmy-sim/poker-ai/actions/runs/45205774174)
+  passed both jobs. The [final receipt](../results/river-full-broader/final-checks/manifest.json)
+  retains exact logs and the negative classification. Next: publish/verify
+  this receipt and finish solo review before merge. Codex assisted; human
+  hands-on time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

@@ -9262,6 +9262,18 @@ prospective question about turn information on newly selected inputs. These
 evaluated inputs are now known cases. Codex assisted; human hands-on time and
 personal learning were not reported.
 
+**November 23 final broader-input qualification.** The negative report head
+passed all four local base/optional Python roles, all-file hooks and both
+[hosted CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45205774174).
+The [final receipt](../results/river-full-broader/final-checks/manifest.json)
+binds the logs, report, source and pinned reference license to that head.
+**Example:** passing software checks confirms the negative result can be
+recomputed on both runtimes; it does not change the failed medium/dry poker
+gates. **Next decision:** publish and verify the final receipt, complete solo
+review and history-preserving merge if eligible, then register a distinct
+prospective question on newly selected inputs. Codex assisted; human
+hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
