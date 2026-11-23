@@ -13,6 +13,144 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #104 merge and next prospective question
+
+- [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as
+  `804c4ed258416083e8c704febfe84c9077b38bae` after both receipt-head
+  Python CI jobs passed. Its source, admission and own-before-reference commits
+  remain ancestors. The fixed two-known-spot result is positive only in that
+  scope; no default promotion. [Main CI 45186501720](https://github.com/jimmy-sim/poker-ai/actions/runs/45186501720)
+  was pending at this entry. The next
+  [prospective issue #4 protocol](river-full-broader-spots.md) fixes a
+  two-input matched-work full-versus-B4 comparison before case selection or
+  outcomes. The earlier four-input B4 forecast failure motivated the bounded
+  cohort; it is not a strength result. Codex assisted; human hands-on time was
+  not reported.
+
+- The isolated PR #105 selector and B4/full adapters were implemented without
+  changing historical files, source pins or the lock. Before cohort selection,
+  seven focused tests passed for deterministic exclusion/refusal to replace,
+  toy B4 capture/replay, a fictional two-learner runner check, fixed path order,
+  conservative slowest-repeat forecast and the frozen strength rule. Ruff
+  lint/format and strict mypy passed on the
+  new source. The PR #104 historical source fingerprint still equals
+  `a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab`.
+  Full exact-source qualification, cohort freeze and all scientific stages are
+  pending; these focused checks make no poker-strength claim.
+  The first source commit hook attempt failed before Ruff ran because its shell
+  could not find `uv`; the retained ignored local log at
+  `results/runs/river-full-broader-source-20261123/first-hook-failure.log`
+  records it. The code was unchanged and the hooks will be rerun with the
+  repository's environment sourced, without bypassing them.
+
+- The one preregistered structural selection ran once from clean published
+  selector source `f40551562ed4b37204174f7e6a5e3dc7213524aa`.
+  `full_new_medium_dry_oop` took 41 attempts and rank signature
+  `((5, 11, 14), 3)`; `full_new_low_wet_ip` took 10 attempts and signature
+  `((12, 13, 14), 11)`. Both exact legal spot bytes and all 19 prior known
+  input hashes are in the [cohort freeze](../configs/river-full-broader-freeze.json).
+  Selection used no tree, policy, score or reference output. The known public
+  templates remain known; no strength measurement exists yet.
+
+- The PR #105 protocol-head [CI 45187285433](https://github.com/jimmy-sim/poker-ai/actions/runs/45187285433)
+  passed Python 3.11 and 3.12 before source publication. The frozen cohort
+  commit `190fde4ee2768857f4a24bda2170d0ec1ec14555` was pushed, and its
+  three GitHub blobs matched local bytes. The new source guard now pins that
+  exact freeze; full exact-source qualification is still pending. Separately,
+  PR #104's [post-merge main CI 45186501720](https://github.com/jimmy-sim/poker-ai/actions/runs/45186501720)
+  was canceled at its unchanged 35-minute limit with Python 3.11 around 97%
+  of `make check`; Python 3.12 passed. The canceled 3.11 log is retained locally
+  under `results/runs/river-full-broader-source-20261123/`. PR #104's earlier
+  receipt-head CI passed both versions and remains a distinct gate.
+
+- Exact PR #105 source `6ccf3a367ec06fe7f3ac4ca807a5d1d9111f75dd`
+  completed serial four-role local qualification: base Python 3.11 and 3.12
+  each passed 5,779 tests, 73 skipped and 150 slow deselected, plus Ruff,
+  formatting, strict mypy and pre/post source/lock/runtime guards. Optional
+  3.11 passed 2,597; optional 3.12 passed 2,595 with two expected skips,
+  both with pinned OpenSpiel 2.0.2, Numba 0.68.1 and installed Apache-2.0
+  license guards. All-file hooks and exact tested-source
+  [hosted CI 45193945715](https://github.com/jimmy-sim/poker-ai/actions/runs/45193945715)
+  passed both versions. All 17 source-bound files matched GitHub blobs. The
+  [source receipt](../results/river-full-broader/source-checks/manifest.json)
+  retains role/hosted logs, eight focused tests and the corrected first hook
+  failure; its publication and GitHub verification precede the fictional
+  proof. No poker trajectory or strength measurement has run.
+
+- After the complete source receipt was published and all 24 GitHub blobs
+  verified, one [fictional proof](../results/river-full-broader/own-proof/manifest.json)
+  ran on clean source-receipt head `5e964607716b4257c41578b45b99abd2bd42c0d5`.
+  The 180-second launcher finished in 0.510 seconds, exiting zero. B4 and full
+  expected arms each saved/replayed six fixed readouts; their final charged
+  work was 720 and 726 toy nodes. The archive retains the launcher, source,
+  events, policies and logs. This is software proof on a fictional signal
+  game, not poker evidence. Next: publish/verify every proof byte, then run
+  the fixed real-game 24-path compute profile once.
+
+- The single preregistered PR #105 profile completed all 24 paths (three
+  repeats of eight) from clean proof-receipt head `b8155e3` in 20.667 seconds
+  internally and 21.170 seconds at the launcher, below its 900-second cap.
+  Its [complete raw archive](../results/river-full-broader/profile/manifest.json)
+  retains every path, timing, score, event and launcher log. The fixed worker
+  sums are 559.144, 529.325 and 513.456 seconds, giving `T=559.144` and the
+  preregistered strict bound `2*(2*T+600)=3436.576<7200` seconds. Profile
+  scores were not used to select cases or change the candidate. The separate
+  data-only admission remains pending; no 10m trajectory or strength result
+  exists. Codex assisted; human hands-on time was not reported.
+
+- After the profile archive was published at `05ed5e8` and all 153 GitHub
+  blobs matched, the separate data-only admission recomputed the identical
+  `T=559.1438954659656` and strict bound `3436.575581863862<7200` seconds.
+  The [admission receipt](../results/river-full-broader/admission/manifest.json)
+  records the published profile and source head. No source, seed, work budget
+  or spot changed. Next: publish and byte-verify admission before the single
+  fixed eight-path own study. Codex assisted; human time was not reported.
+
+- With admission published and all three receipt blobs verified on GitHub,
+  the one fixed eight-path 10m own study ran from clean `78f5ded`. All eight
+  paths completed with 48 saved policy readouts and their own scores at the
+  three charged-work crossings. Internal runtime was 139.545 seconds and
+  launcher runtime 140.096 seconds under the 7,200-second cap. The
+  [own archive](../results/river-full-broader/own/manifest.json) retains
+  policies, score events, work counts, launcher state and logs. Its publication
+  and GitHub byte verification are required before the pinned OpenSpiel
+  scalar audit; no reference comparison or final strength classification
+  exists at this checkpoint. Codex assisted; human time was not reported.
+
+- After all 104 own archive blobs matched GitHub at `da58637`, the one
+  pinned OpenSpiel 2.0.2 comparison-only audit checked all 48 published
+  policy readouts. It passed the unchanged `1e-9`-chip scalar gate with
+  maximum error `1.1368683772161603e-13` chips; internal runtime was
+  26.930 seconds and launcher runtime 27.497 seconds under the 900-second cap.
+  The [native archive](../results/river-full-broader/native/manifest.json)
+  retains all row values, license/runtime evidence, launcher and logs. No
+  reference strategy entered training. Next: publish and byte-verify the
+  audit before the frozen report. Codex assisted; human time was not reported.
+
+- The frozen PR #105 report rebuilt all 48 published policies and 12
+  control-ranked representative nodes from verified own/native bytes. The
+  [negative result](river-full-broader-spots-result.md) has medium/dry final
+  candidate 0.025118161 initial pots, above its 0.01 absolute gate and
+  +0.007973008 worse than the B4 median at matched 10m work. Low/wet passes
+  its absolute and +0.001 nondegradation gates, but does not reverse the
+  medium/dry failure. All whole-coverage values are 1.0 and recall errors
+  zero; native maximum error is `1.1368683772161603e-13` chips. This is a
+  **negative** two-input test, with no scientific retry or default change.
+  Next: publish/verify the report, complete required final exact-source
+  local/optional/hosted checks and review PR #105. Codex assisted; human
+  hands-on time was not reported.
+
+- Final exact PR #105 negative-report-head `f62373f` qualification passed:
+  serial local base Python 3.11/3.12 each passed 5,779 tests, 73 skipped,
+  150 slow deselected plus Ruff, format, strict mypy and pre/post guards;
+  optional 3.11 passed 2,597, optional 3.12 passed 2,595 with two expected
+  skips, both with pinned OpenSpiel/Numba/license and archive guards.
+  All-file hooks and [hosted CI 45205774174](https://github.com/jimmy-sim/poker-ai/actions/runs/45205774174)
+  passed both jobs. The [final receipt](../results/river-full-broader/final-checks/manifest.json)
+  retains exact logs and the negative classification. Next: publish/verify
+  this receipt and finish solo review before merge. Codex assisted; human
+  hands-on time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

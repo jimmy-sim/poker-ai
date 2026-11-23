@@ -1,0 +1,68 @@
+{
+  "config_sha256": "b9138262ba01758ad0dae9e997420ba355343ff2a3b784e26612be8561d60290",
+  "format": "river-full-broader-cohort-v1",
+  "known_spot_sha256": {
+    "configs/fresh-spots/fresh_low_dry_oop.json": "b083875528b75f454752d75c43aa17c64caf092dfe3ba3413b5ef6da50d94eda",
+    "configs/fresh-spots/fresh_low_wet_ip.json": "dd6aa7a11b93b12e9d144698fef14bd4ff74d392ede1cf0d5546382095c523a5",
+    "configs/fresh-spots/fresh_medium_dry_ip.json": "b62121338cd26b5f1cb95dc27c19bc2fe15781edf063b44ff98b590decb99e0d",
+    "configs/fresh-spots/fresh_medium_wet_oop.json": "a36e1b1eba445c2d9e0a02ba591842ef4ae49634ae08828a01ec91dc9b221326",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "configs/learning-spots/heldout_medium_ip.json": "ebb6e3d2685f230738763a0f1ea5874ea3613c6821946dd27e5c3fcdfc921936",
+    "configs/river-generalization-spots/new_low_wet_ip.json": "817e0a007b757e71fb7860eb7ab46ee6a078a5f7de2588a31c31104c63d27d8f",
+    "configs/river-generalization-spots/new_medium_dry_oop.json": "395727a4fa22d0d4aa6bd182740a5463ef97f7b90e37d6b42ac8a81916d4b51d",
+    "configs/river-uniform-readout-spots/uniform_low_wet_ip.json": "627c02ff58a7cd3f9a2ce8696a676c4f011288d8952c264dce245c2867bfcf63",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_a.json": "4db23d866b322ca0dfc232d84b316b2ee9789581b3e4a6bd5a7c4053c8f478b4",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_b.json": "5a92acdb2a850ad929b299381a14829924bc79b7d0e7c68dd7f456d344610e3a",
+    "configs/river-uniform-readout-spots/uniform_medium_wet_oop.json": "74e602cea9d37ef34530945919bdda5abe919193f023e73464914d265dc9ee08",
+    "configs/spots/dry_high_oop.json": "616a0c161f44f8bc25a3feda8d391bb06166a4f9e2a963bd3cd29c56ca9e8aea",
+    "configs/spots/dry_low_oop.json": "83c6762f6b844bb1e5d7c238ad62e1ac498c13db63cb1b36560c31945405c465",
+    "configs/spots/dry_medium_ip.json": "325fa0a0cc9e8828b0690b97a54c869238f106bee0b02749d79d218d12da7ef5",
+    "configs/spots/wet_high_ip.json": "c011141588266d56c86deca8d174f071948cd90c121679196d539e8760375865",
+    "configs/spots/wet_medium_oop.json": "8c5ad66befed131f47527f799aa4bc30c750aa8df1bc7da226cd464c04a273e1"
+  },
+  "selection": [
+    {
+      "board_rank_signature": [
+        [
+          5,
+          11,
+          14
+        ],
+        3
+      ],
+      "position": "oop",
+      "selection_attempts": 41,
+      "spot_file": "configs/river-full-broader-spots/full_new_medium_dry_oop.json",
+      "template": "configs/learning-spots/dev_medium_oop.json"
+    },
+    {
+      "board_rank_signature": [
+        [
+          12,
+          13,
+          14
+        ],
+        11
+      ],
+      "position": "ip",
+      "selection_attempts": 10,
+      "spot_file": "configs/river-full-broader-spots/full_new_low_wet_ip.json",
+      "template": "configs/learning-spots/heldout_low_oop.json"
+    }
+  ],
+  "selection_source_commit": "f40551562ed4b37204174f7e6a5e3dc7213524aa",
+  "selection_source_sha256": {
+    "scripts/prepare_river_full_broader.py": "0e02df6eda2c23594aa85f920e9d3e5e1784ffbcf5630bf24b7298e1303c7138",
+    "scripts/river_full_broader_selection.py": "b6f7ea0e6c067f4fac82c8ef8a23471317383a6c35cb6e372c87c3f8a4c61e0b",
+    "scripts/river_generalization/selection.py": "74ace987da4f2a49c376f290c28833faeedd630ce3149f1a9140078fb97801e2",
+    "src/poker_ai/cards.py": "21db1eb80157fa07536c903fada5b3c4dcb26300a4e59e06660857234b254e89",
+    "src/poker_ai/postflop/game.py": "1708d499cde579a9bbaf37be53ef5f008fd676cb84b8c88c0c48991f78f51b0e",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "spot_sha256": {
+    "configs/river-full-broader-spots/full_new_low_wet_ip.json": "a0fa08d603341787beb064a6ca911418c9d2ded1ac8daf624aaef66616300674",
+    "configs/river-full-broader-spots/full_new_medium_dry_oop.json": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea"
+  }
+}

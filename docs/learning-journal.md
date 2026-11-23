@@ -9125,6 +9125,155 @@ history-preserving merge if eligible, then register one distinct broader
 spot test without reusing inspected cases as unseen. Codex assisted; human
 hands-on time was not recorded.
 
+**November 23 PR #104 closure and next question.** The full expected learner's
+positive result on two known games passed final exact-source local and hosted
+checks, its receipt-head CI passed on Python 3.11 and 3.12, and
+[PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) was history-merged.
+**Question:** will the same signed full expected update improve decisions on
+new card/range inputs? The [next prospective protocol](river-full-broader-spots.md)
+fixes one dry OOP and one wet IP input selected by structure, three independent
+B4 controls per spot, matched work, historical strength gates and the same
+conservative compute cap before any case is drawn. **Example:** the prior
+medium/dry improvement was 0.006700 versus 0.035132–0.039542 initial pots at
+10m, but the candidate was worse at 100k and 1m; transfer cannot be assumed.
+The four-input B4 profile's failed 8,885-second forecast remains a warning,
+not an outcome for this new question. **Next decision:** publish the protocol,
+then freeze the one-time cohort and qualify isolated source before training.
+Codex assisted; human hands-on time and personal learning were not reported.
+
+**November 23 isolated broader-input adapter, before selection.** New source
+keeps the old full expected learner and B4 learning rules but binds each to the
+same future frozen game, exact work labels and two saved policy readouts. A toy
+capture/replay check passed for B4; the earlier full-pass tiny-game arithmetic
+tests remain the independent reference for that learner. **Example:** a slow
+100k B4 profile repeat must govern the 10m forecast even if its other two
+repeats are fast; the new synthetic forecast test rejects that record. Seven
+focused tests, including a fictional two-learner runner check, Ruff and strict
+mypy pass, and the historical full source hash
+is unchanged. This is software evidence only; no cards have been selected and
+no poker outcome exists. **Next decision:** publish and qualify the source,
+freeze the one-time cohort, then follow the protocol's staged gates. Codex
+assisted; human hands-on time and personal learning were not reported.
+
+**November 23 one-time broader-input selection.** The published selector
+rejected old board-rank signatures before drawing private cards and range
+weights. The dry OOP input was accepted on structural attempt 41, and the wet
+IP input on attempt 10; the [frozen input record](../configs/river-full-broader-freeze.json)
+retains exact bytes and the prior 19-case inventory. **Example:** a turn board
+with ranks `(5, 11, 14)` on the flop and turn rank `3` was accepted by the
+dry rule, without constructing a game tree or checking its exploitability.
+These are new card/range inputs on known betting templates, not unseen
+templates or evidence of better decisions. **Next decision:** publish and
+verify the freeze, then qualify the exact source before any real trajectory.
+Codex assisted; human hands-on time and personal learning were not reported.
+
+**November 23 cohort publication and source binding.** The two selected
+spots and the [freeze](../configs/river-full-broader-freeze.json) were committed
+at `190fde4`; all three GitHub blobs matched local bytes. The new gate checks
+the published selector source, all 19 known inputs, both selected spot hashes
+and the immutable PR #104 source fingerprint. Eight focused tests now pass.
+This protects the one-time selection before qualification; it does not show
+that the candidate plays better. **Next decision:** pass all exact-source
+local, optional and hosted checks before the fictional proof and measured
+compute profile. Codex assisted; human hands-on time and personal learning
+were not reported.
+
+**November 23 exact broader-input source qualification.** The frozen source
+passed all four local Python roles, all-file hooks and both hosted CI jobs;
+the [source receipt](../results/river-full-broader/source-checks/manifest.json)
+binds those logs to the same code and spot bytes. **Example:** the source
+guard checked that all 19 previously used input files and the two selected
+spot hashes still match the freeze before the tests ran. This shows that a
+one-time cohort can be trained reproducibly; it does not show that the full
+expected learner improves play. The first commit-hook attempt's missing `uv`
+was retained and corrected by sourcing the repository environment, without
+skipping a hook. **Next decision:** publish and verify the source receipt,
+then run one capped fictional proof and the preregistered compute profile.
+Codex assisted; human hands-on time and personal learning were not reported.
+
+**November 23 fictional broader-input proof.** After source publication, a
+single [toy proof](../results/river-full-broader/own-proof/manifest.json)
+exercised both paths through capture and replay. B4 recorded six readouts by
+720 charged nodes; the deterministic full pass recorded six by 726. The
+launcher finished in 0.510 seconds under its 180-second cap. **Example:** the
+two arms reach a work label at different actual node counts because each
+stops at its first complete update crossing. The fictional game is not a
+Hold'em strength result. **Next decision:** publish and verify the proof,
+then time the prespecified three repeats of all eight real paths without
+using their policy scores to choose a case. Codex assisted; human hands-on
+time and personal learning were not reported.
+
+**November 23 fixed broader-input profile.** One run completed all three
+repeats of the eight frozen paths; the [raw timing archive](../results/river-full-broader/profile/manifest.json)
+shows the slowest-repeat estimate for each path. **Example:** summing those
+maxima by the fixed three-worker assignment gives a slowest worker estimate
+of 559.144 seconds. The conservative bound is 3,436.576 seconds, below the
+unchanged 7,200-second cap. This forecasts feasibility; the short checkpoint
+scores are not evidence that the candidate plays better. **Next decision:**
+publish and verify every profile byte, then independently recompute and
+publish the admission before any 10m training. Codex assisted; human
+hands-on time and personal learning were not reported.
+
+**November 23 broader-input compute admission.** The independent data-only
+[admission receipt](../results/river-full-broader/admission/manifest.json)
+recomputed the published profile's `T=559.1438954659656` and strict bound
+`3436.575581863862<7200` seconds. **Example:** the 600-second allowance is
+inside the formula, and the comparison is strict; this result permits exactly
+one fixed eight-path 10m own run, without predicting a favorable poker score.
+**Next decision:** publish and verify admission before training; retain every
+own policy and score before reference comparison. Codex assisted; human
+hands-on time and personal learning were not reported.
+
+**November 23 one broader-input own study.** After the separately published
+admission, the only authorized [fixed own study](../results/river-full-broader/own/manifest.json)
+completed all eight paths and 48 saved policy readouts in 140.096 launcher
+seconds. **Example:** each selected input has three independently seeded B4
+controls and one deterministic full expected candidate; each path saves
+current and linear-average policies at three charged-work crossings. A score
+from the learner's own evaluator is preliminary until the pinned reference
+scalar audit checks it. **Next decision:** publish and verify all own bytes,
+then run the comparison-only OpenSpiel audit without feeding reference
+strategies into training. Codex assisted; human hands-on time and personal
+learning were not reported.
+
+**November 23 broader-input reference scalar audit.** The one
+[comparison-only audit](../results/river-full-broader/native/manifest.json)
+replayed all 48 published policies with pinned OpenSpiel 2.0.2 and found
+maximum scalar difference `1.1368683772161603e-13` chips, below `1e-9`.
+**Example:** this checks the value and best-reply calculations used for the
+saved policies; it does not create another trained policy or alter any
+checkpoint. **Next decision:** publish and verify the audit, then classify
+both new inputs from published own and reference bytes using the frozen
+thresholds. Codex assisted; human hands-on time and personal learning were
+not reported.
+
+**November 23 broader-input strength result.** The fixed
+[negative report](river-full-broader-spots-result.md) compares the unchanged
+full expected learner with each independent B4 control at matched 10m charged
+work on two new card/range inputs using known betting templates. The
+medium/dry candidate ends at 0.025118 initial pots, failing its 0.01 absolute
+gate and landing +0.007973 above the B4 seed median; low/wet passes its
+absolute and nondegradation gates. **Example:** the candidate improves one
+control-ranked `9h Jh` turn node on `As Jc 5d 3h`, yet its whole-game turn
+gain remains 0.861096 chips. A favorable local decision cannot substitute
+for the prespecified overall exploitability rule. **Next decision:** publish
+and verify the report, finish final checks, and then consider a separate
+prospective question about turn information on newly selected inputs. These
+evaluated inputs are now known cases. Codex assisted; human hands-on time and
+personal learning were not reported.
+
+**November 23 final broader-input qualification.** The negative report head
+passed all four local base/optional Python roles, all-file hooks and both
+[hosted CI jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45205774174).
+The [final receipt](../results/river-full-broader/final-checks/manifest.json)
+binds the logs, report, source and pinned reference license to that head.
+**Example:** passing software checks confirms the negative result can be
+recomputed on both runtimes; it does not change the failed medium/dry poker
+gates. **Next decision:** publish and verify the final receipt, complete solo
+review and history-preserving merge if eligible, then register a distinct
+prospective question on newly selected inputs. Codex assisted; human
+hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

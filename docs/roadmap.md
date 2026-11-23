@@ -104,10 +104,39 @@ median 0.035656, while low/wet also improves. The candidate was worse at
 earlier medium/dry work labels. Final report-head qualification and review
 passed all four local roles, all-file hooks and both hosted jobs; the
 [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
-binds those checks. Review and merge remain; no default changed or unseen-game
-claim follows. The next distinct
-question should test prospectively selected additional spots after this
-milestone closes.
+binds those checks. PR #104 was history-merged as `804c4ed` after receipt-head
+CI passed on both Python versions and solo review; main-branch CI is tracked
+separately. No default changed or unseen-game claim follows. The next distinct
+[prospective broader-input comparison](river-full-broader-spots.md) tests the
+unchanged full expected candidate against fresh B4 paths at matched work on
+two structurally selected card/range inputs. Its protocol precedes selection
+and outcomes; the public templates and prior spot inputs remain known. The
+[one-time cohort](../configs/river-full-broader-freeze.json) is now frozen and
+GitHub-byte-verified, with no policy or score measurement. PR #104's separate
+post-merge main CI was canceled at the fixed 35-minute limit for Python 3.11
+after 3.12 passed; its receipt-head CI had passed both. The new exact-source
+qualification passed all four local roles, hooks and both hosted jobs; the
+[source receipt](../results/river-full-broader/source-checks/manifest.json)
+was published and GitHub-byte-verified. The one
+[fictional proof](../results/river-full-broader/own-proof/manifest.json)
+passed its capture/replay and 180-second cap; publication and byte verification
+of that proof preceded the fixed real-game compute profile. The one
+[complete profile](../results/river-full-broader/profile/manifest.json) gives
+the prescribed conservative bound 3,436.576 seconds under the 7,200-second
+cap. The separate [admission](../results/river-full-broader/admission/manifest.json)
+recomputed the identical bound; publish and verify its receipt before the
+single fixed 10m study. That one eight-path study completed and its
+[own archive](../results/river-full-broader/own/manifest.json) must be
+published and verified before the pinned reference audit. That
+[48-row audit](../results/river-full-broader/native/manifest.json) passed
+the `1e-9`-chip gate; publish and verify it before the fixed report. No
+classified poker-strength outcome existed at that checkpoint. The
+[frozen report](river-full-broader-spots-result.md) now classifies the
+two-input test **negative**: medium/dry fails its absolute and paired gates,
+while low/wet passes its fixed rules. Final report publication, all four local base/optional roles, hooks and
+both hosted jobs passed; the [final receipt](../results/river-full-broader/final-checks/manifest.json)
+awaits publication/verification and solo review. No default promotion or
+retry.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

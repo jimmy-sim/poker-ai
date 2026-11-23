@@ -59,10 +59,30 @@ work and present a concrete proposal if one of those permissions is needed.
 
 **Current order (November 23, 2026):** PR #98's medium/dry acceptance remains
 failed; PR #99's 100m forecast rejected longer training; PRs #100/#101/#103
-found negative clipped, batch-one and batch-eight results on the two known
-spots. PR #102's broader average-readout study stopped at its failed compute
-admission. All their failure evidence remains. PR #103 history-merged after
-final checks; post-merge main CI is pending at this update. The distinct
-[full-expectation matched-work protocol](medium-dry-full-expectation.md)
-tests whether complete expected signed passes improve the known river
-decisions under the existing hard cap. No new result or default change exists.
+found negative clipped, batch-one and batch-eight results on two known spots.
+PR #102's broader average-readout study stopped at its failed compute
+admission. PR #104's [full expected update](medium-dry-full-expectation-result.md)
+passed its frozen two-known-spot strength rule, then history-merged after
+local, hosted and solo review. Its improvement is not a default or broader
+strength claim. The next [prospective comparison](river-full-broader-spots.md)
+tests the unchanged candidate on structurally selected new card/range inputs
+against matched-work B4 paths under the same hard compute cap. Its one-time
+[cohort freeze](../configs/river-full-broader-freeze.json) is published before
+any tree or outcome measurement; source qualification and all scientific
+stages remained pending at selection. Exact-source local and hosted
+qualification has since passed; its [receipt](../results/river-full-broader/source-checks/manifest.json)
+was published and verified before the fictional proof. The proof was published
+and verified; the one fixed [profile](../results/river-full-broader/profile/manifest.json)
+completed with a conservative 3,436.576-second bound; the separate
+[admission](../results/river-full-broader/admission/manifest.json)
+recomputed the bound and was published and verified before the single
+[own study](../results/river-full-broader/own/manifest.json). The study
+completed and all own bytes were verified before the one pinned
+[48-row comparison-only audit](../results/river-full-broader/native/manifest.json).
+The audit passed its numerical gate, was published and verified. The
+[frozen report](river-full-broader-spots-result.md) is **negative** on the
+medium/dry input. The report was published/verified and final local and
+hosted checks passed; publish/verify the
+[final receipt](../results/river-full-broader/final-checks/manifest.json)
+and finish solo review before choosing a distinct prospective follow-up. All earlier failures remain, including PR #104's
+separate post-merge main Python 3.11 timeout (receipt-head CI passed both).
