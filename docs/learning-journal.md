@@ -9203,6 +9203,17 @@ then time the prespecified three repeats of all eight real paths without
 using their policy scores to choose a case. Codex assisted; human hands-on
 time and personal learning were not reported.
 
+**November 23 fixed broader-input profile.** One run completed all three
+repeats of the eight frozen paths; the [raw timing archive](../results/river-full-broader/profile/manifest.json)
+shows the slowest-repeat estimate for each path. **Example:** summing those
+maxima by the fixed three-worker assignment gives a slowest worker estimate
+of 559.144 seconds. The conservative bound is 3,436.576 seconds, below the
+unchanged 7,200-second cap. This forecasts feasibility; the short checkpoint
+scores are not evidence that the candidate plays better. **Next decision:**
+publish and verify every profile byte, then independently recompute and
+publish the admission before any 10m training. Codex assisted; human
+hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

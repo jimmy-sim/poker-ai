@@ -120,8 +120,11 @@ qualification passed all four local roles, hooks and both hosted jobs; the
 was published and GitHub-byte-verified. The one
 [fictional proof](../results/river-full-broader/own-proof/manifest.json)
 passed its capture/replay and 180-second cap; publication and byte verification
-of that proof precede the fixed real-game compute profile. No poker-strength
-outcome yet exists for the new cohort.
+of that proof preceded the fixed real-game compute profile. The one
+[complete profile](../results/river-full-broader/profile/manifest.json) gives
+the prescribed conservative bound 3,436.576 seconds under the 7,200-second
+cap. Profile publication and separate admission precede the 10m study. No
+poker-strength outcome yet exists for the new cohort.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

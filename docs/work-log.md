@@ -87,6 +87,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   game, not poker evidence. Next: publish/verify every proof byte, then run
   the fixed real-game 24-path compute profile once.
 
+- The single preregistered PR #105 profile completed all 24 paths (three
+  repeats of eight) from clean proof-receipt head `b8155e3` in 20.667 seconds
+  internally and 21.170 seconds at the launcher, below its 900-second cap.
+  Its [complete raw archive](../results/river-full-broader/profile/manifest.json)
+  retains every path, timing, score, event and launcher log. The fixed worker
+  sums are 559.144, 529.325 and 513.456 seconds, giving `T=559.144` and the
+  preregistered strict bound `2*(2*T+600)=3436.576<7200` seconds. Profile
+  scores were not used to select cases or change the candidate. The separate
+  data-only admission remains pending; no 10m trajectory or strength result
+  exists. Codex assisted; human hands-on time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
