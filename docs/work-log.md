@@ -147,6 +147,21 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   qualification, then solo review and history-preserving merge if eligible.
   Codex assisted; human hands-on time was not recorded.
 
+- **Final report-head qualification:** exact positive-report head `715637b`
+  passed clean pre/post historical/new-source, protocol, published-report,
+  lock/runtime and optional reference-license guards. Base Python 3.11 and
+  3.12 each passed 5,771 tests, with 73 skips and 150 slow deselections,
+  plus Ruff, formatting and strict mypy. Optional 3.11 passed 2,597;
+  optional 3.12 passed 2,595 with two expected skips. All-file hooks and
+  [hosted report-head CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45174852553)
+  passed on both versions. The [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+  binds the exact logs and metadata; earlier corrected source-check failures
+  remain in their separate archive. Scientific classification remains
+  **positive on two known games**, with no default change. Next: publish
+  and byte-verify the receipt, check receipt-head hosted CI, complete solo
+  review and history-preserving merge if eligible. Codex assisted; human
+  hands-on time was not recorded.
+
 ## 2026-11-23 — PR #103 fixed B8 result
 
 - The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed

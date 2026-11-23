@@ -102,7 +102,10 @@ classifies the two-known-spot result **positive** under its frozen rule:
 medium/dry final exploitability 0.006700 initial pots versus the B4 control
 median 0.035656, while low/wet also improves. The candidate was worse at
 earlier medium/dry work labels. Final report-head qualification and review
-remain; no default changed or unseen-game claim follows. The next distinct
+passed all four local roles, all-file hooks and both hosted jobs; the
+[final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+binds those checks. Review and merge remain; no default changed or unseen-game
+claim follows. The next distinct
 question should test prospectively selected additional spots after this
 milestone closes.
 Further validation-performance work is deferred

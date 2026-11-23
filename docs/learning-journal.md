@@ -9111,6 +9111,20 @@ selected new spots without tuning on their outcomes. No default promotion
 or full-game strength claim follows. Codex assisted; human hands-on time
 was not recorded.
 
+**November 23 final full-expectation qualification.** The exact positive
+report commit passed all four local base/optional Python roles, all-file
+hooks and both hosted jobs. Base 3.11/3.12 each passed 5,771 tests;
+optional 3.11 passed 2,597 and optional 3.12 passed 2,595 with two expected
+skips. The [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+binds report bytes, historical source pins and optional reference license
+to those checks. **Example:** a passing software gate confirms the frozen
+report can be validated on both runtimes; the favorable known-game outcome
+still needs new prospective spots before broader strength claims. **Next
+decision:** publish and verify the receipt, finish the solo review and
+history-preserving merge if eligible, then register one distinct broader
+spot test without reusing inspected cases as unseen. Codex assisted; human
+hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

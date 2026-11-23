@@ -46,7 +46,9 @@ strategy entered training. The one fixed [raw report](../results/medium-dry-full
 replays those archives and all immutable B4 own/native evidence into 48
 spot/arm/work/readout cases; an independent data-only grid and arithmetic
 check is retained alongside it. Exact report-head final local and hosted
-qualification remains a separate merge gate.
+qualification passed separately; the [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+binds all four local roles, hooks and both hosted jobs to the unchanged
+positive-report commit `715637b3265106046017b28da3c52ea5a5e6d25e`.
 
 ## Primary 10m result
 
