@@ -1,0 +1,112 @@
+{
+  "focused_tests": "11 passed on locked base311",
+  "full_strict_mypy": "994 source files",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    }
+  ],
+  "hosted_run": 45256396875,
+  "local_roles": [
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 853.322173624998,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "99dff043d08f51bd00a00acb39fa153822cd376e",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 772.1849168339977,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "99dff043d08f51bd00a00acb39fa153822cd376e",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 499.16094695799984,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "99dff043d08f51bd00a00acb39fa153822cd376e",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 436.02739129099064,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "99dff043d08f51bd00a00acb39fa153822cd376e",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "retained_failures": [
+    "failures/first-launcher/driver.exit",
+    "failures/first-launcher/driver.log.gz",
+    "failures/first-launcher/driver-state.json",
+    "failures/first-launcher/base311.json",
+    "failures/first-launcher/base311.log.gz",
+    "failures/first-launcher/driver.py.txt",
+    "failures/first-launcher/runner.py.txt",
+    "failures/first-guard/driver.exit",
+    "failures/first-guard/driver.log.gz",
+    "failures/first-guard/driver-state.json",
+    "failures/first-guard/base311.json",
+    "failures/first-guard/base311.log.gz",
+    "failures/first-guard/driver.py.txt",
+    "failures/first-guard/runner.py.txt",
+    "failures/iteration/first-adapter-lint-failure.exit",
+    "failures/iteration/first-adapter-lint-failure.log.gz",
+    "failures/iteration/first-adapter-test-lint-failure.exit",
+    "failures/iteration/first-adapter-test-lint-failure.log.gz",
+    "failures/iteration/first-capture-lint-failure.exit",
+    "failures/iteration/first-capture-lint-failure.log.gz",
+    "failures/iteration/first-pipeline-lint-failure.exit",
+    "failures/iteration/first-pipeline-lint-failure.log.gz",
+    "failures/iteration/first-pipeline-mypy-failure.exit",
+    "failures/iteration/first-pipeline-mypy-failure.log.gz",
+    "failures/iteration/first-pipeline-pytest-environment-failure.log.gz",
+    "failures/iteration/first-selection-commit-hook-failure.log.gz",
+    "failures/iteration/first-selection-lint-failure.exit",
+    "failures/iteration/first-selection-lint-failure.log.gz"
+  ],
+  "selected_tree_or_outcome_measured": false,
+  "source_fingerprint": "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c",
+  "status": "source_qualified",
+  "tested_head": "99dff043d08f51bd00a00acb39fa153822cd376e"
+}

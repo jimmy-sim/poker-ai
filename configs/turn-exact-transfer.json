@@ -1,0 +1,140 @@
+{
+  "arms": [
+    "signed_full_q8_turn_exact_river",
+    "signed_full_exact_turn_river"
+  ],
+  "budgets_seconds": {
+    "failure_save": 120,
+    "native_audit": 900,
+    "profile": 900,
+    "proof": 180,
+    "whole_own": 7200
+  },
+  "candidate_representation": "exact_turn_exact_river",
+  "candidate_river_key": "unchanged exact_information",
+  "candidate_turn_key": "exact_information acting observation",
+  "control_representation": "q8_turn_exact_river",
+  "crossing": "first complete target-pair iteration at or above each charged node-work label",
+  "decision": {
+    "inconclusive": "all other complete outcomes; zero-collision structural stop is inconclusive strength",
+    "negative": "any new candidate absolute gate fails or known or any new candidate worsens >0.001",
+    "positive": "all three new candidate absolute gates pass; known mechanistic improves >=0.001; at least one new medium improves >=0.001; other new medium worsens <=0.001; low/wet worsens <=0.001"
+  },
+  "freeze_file": "configs/turn-exact-transfer-freeze.json",
+  "historical_absolute_gates": {
+    "maximum_final_candidate_exploitability_median_fraction_initial_pot": 0.01,
+    "maximum_final_candidate_exploitability_worst_fraction_initial_pot": 0.025,
+    "maximum_recall_violations": 0,
+    "minimum_whole_coverage": 0.95
+  },
+  "issue": 4,
+  "known_mechanistic_spot": "configs/river-full-broader-spots/full_new_medium_dry_oop.json",
+  "known_spot_count": 21,
+  "known_spot_directories": [
+    "configs/learning-spots",
+    "configs/fresh-spots",
+    "configs/spots",
+    "configs/river-generalization-spots",
+    "configs/river-uniform-readout-spots",
+    "configs/river-full-broader-spots"
+  ],
+  "maximum_selection_attempts_per_spot": 10000,
+  "maximum_tree_nodes": 200000,
+  "native": {
+    "comparison_only": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "novelty_rule": "exclude every existing or selected (sorted flop ranks, turn rank) signature regardless of suits; no tree/collision/policy/score/reference/runtime selection",
+  "paired_difference_threshold_fraction_initial_pot": 0.001,
+  "parent_merge": "fe8ffb7021ee4a39f77de22aaf81990a1aeff047",
+  "path_order": "for each spot in path_spots: unchanged q8 control then exact-turn candidate",
+  "path_spots": [
+    "full_new_medium_dry_oop",
+    "turn_exact_new_medium_dry_oop",
+    "turn_exact_new_medium_wet_oop",
+    "turn_exact_new_low_wet_ip"
+  ],
+  "paths": 8,
+  "primary_metric": "final linear-average exact restricted-game NashConv/2 in chips and fraction initial pot, lower better",
+  "profile": {
+    "T": "maximum fixed-worker sum of path maxima",
+    "clock": "context through capture, own scoring and replay",
+    "estimate": "maximum of three whole_path_seconds*10000000/actual_final_node_work per path",
+    "paths": 24,
+    "repeats": 3,
+    "strict_admission": "2*(2*T+600)<7200",
+    "work": 1000000
+  },
+  "publication": "prospective protocol before selection; selection source before cohort freeze; frozen cohort before tree/collision/outcome; qualified source before proof; proof before profile; profile and separate admission before own; own before reference; final exact-source checks",
+  "question": "exact acting turn and river information versus unchanged q8 turn and exact river under matched full expected work",
+  "random_generator": "PCG64 state unchanged in both full expected paths",
+  "readouts": [
+    "current",
+    "linear_average"
+  ],
+  "report": [
+    "all four paired spot differences at each work label, no seed-based confidence interval",
+    "whole and post-initial-river coverage",
+    "recall, exact/abstract rows, table bytes, actual work and overshoot",
+    "wall time, hardware and peak RSS",
+    "control-final top three turn/river additive gain rows and same rows both arms/checkpoints with cards/actions/policy/reach/values",
+    "turn collision inventory for all four spots"
+  ],
+  "saved_policy_cases": 48,
+  "schema_version": 1,
+  "seed_per_arm": 0,
+  "selection_input_sha256": {
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "configs/own-opponent-learning.json": "e567981a76e2d1ec07d5828d8e36ed6cc4cc9207954c13cb1c181b900f8ea084",
+    "configs/river-full-broader-freeze.json": "31e0a930cc127b4e1548917c4194be1ff06e8d1959bd49a1394e91576ed0b2d2",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/river-full-broader/report/manifest.json": "af02d10250b1b1879b0d20babb90553defa8607ea844a50a37f3c710f906e4a5",
+    "results/river-turn-loss/diagnosis/manifest.json": "cdde93ad7d3ecd6285e725f7159cda1d58e7e35e420af0764a29771679ed363e",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "selection_seed": 20261520,
+  "shared_training": {
+    "average_weight": "linear",
+    "initialization": "exact uniform charged",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "target_order": [
+      0,
+      1
+    ],
+    "traversal": "full expected, all tree nodes charged including zero reach"
+  },
+  "spot_directory": "configs/turn-exact-transfer-spots",
+  "strata": [
+    {
+      "name": "turn_exact_new_medium_dry_oop",
+      "position": "oop",
+      "template": "configs/learning-spots/dev_medium_oop.json",
+      "texture": "dry"
+    },
+    {
+      "name": "turn_exact_new_medium_wet_oop",
+      "position": "oop",
+      "template": "configs/learning-spots/dev_medium_oop.json",
+      "texture": "wet"
+    },
+    {
+      "name": "turn_exact_new_low_wet_ip",
+      "position": "ip",
+      "template": "configs/learning-spots/heldout_low_oop.json",
+      "texture": "wet"
+    }
+  ],
+  "structural_stop": "if all three new inputs have zero turn collisions after source qualification, stop before training without replacements",
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "worker_assignment": "path index modulo three; spawn",
+  "worker_count": 3
+}

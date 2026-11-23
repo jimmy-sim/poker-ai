@@ -13,6 +13,112 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #106 closure and prospective exact-turn test
+
+- [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged
+  as `fe8ffb7021ee4a39f77de22aaf81990a1aeff047` after all exact
+  source/report local and hosted gates, the retained final receipt, and
+  solo review. Its receipt-head [CI 45244998632](https://github.com/jimmy-sim/poker-ai/actions/runs/45244998632)
+  passed both versions; official full logs are retained under ignored
+  `results/runs/river-turn-loss-final-20261123/`. Prospective, source,
+  proof, raw report and final receipt commits are all ancestors of main.
+  Post-merge main CI 45251041211 was still running at this entry. The
+  [known-input result](river-turn-loss-diagnosis-result.md) is a
+  **turn-grouping hypothesis**, not a poker-strength success: 92.8173%
+  of the candidate's final turn gain falls on collided rows. Parent
+  PR #105 remains negative, and no default was promoted. Codex assisted;
+  human time was not reported.
+
+- The distinct [prospective exact-turn comparison](turn-exact-transfer.md)
+  asks whether using exact acting turn information with unchanged exact
+  river information reduces exploitability under identical full expected
+  charged work. The diagnosed medium/dry case is labeled known; three
+  additional card/range inputs will be selected once by fixed structural
+  rules on known public templates. Control, candidate, deterministic seed,
+  checkpoints, absolute/paired gates, conservative forecast, caps and
+  publication boundaries are fixed in the machine contract before any new
+  selection or outcome. No new spot, training, profile or score exists at
+  this protocol checkpoint. Codex assisted; human time or personal learning
+  was not reported.
+
+- The isolated PR #107 one-time selection source checks the published
+  contract and 21 tracked known spots, pins the prior mechanistic input,
+  rejects duplicate output, and draws only by board/range structure.
+  Three focused tests use a separate fictional RNG stream and read-only
+  contract checks; no registered cohort was drawn. The first Ruff failure
+  (imports/line length) is retained in ignored
+  `results/runs/turn-exact-transfer-20261123/`; formatting, focused tests,
+  strict mypy and lint then passed. Source publication/verification precedes
+  the one real selection. Codex assisted; human time was not reported.
+
+- The one registered PR #107 structural cohort was drawn once at clean,
+  published selector head `c036dd920dacd82a80e87d8886586e5f9d807d63`
+  with PCG64 seed 20261520. The [freeze](../configs/turn-exact-transfer-freeze.json)
+  records medium/dry OOP, medium/wet OOP and low/wet IP new card/range
+  inputs after 66, 31 and 2 board attempts respectively. All 21 prior
+  input hashes, three new input hashes, distinct rank signatures, fixed
+  texture/position rules and selected source hashes were checked without
+  building a game tree or reading a policy or score. No case was replaced;
+  no turn collision or strength outcome is known at freeze publication.
+  Codex assisted; human time was not reported.
+
+- PR #107's isolated exact-turn adapter, fixed full-work capture/replay,
+  inventory, conservative forecast, admission, comparison-only audit and
+  report source were implemented after the freeze. Historical source files
+  and pinned inputs were not edited. Fictional and already known fixture
+  tests cover turn-key refinement, policy replay, strict forecast equality
+  and the fixed strength decision: 11 focused tests passed. Ruff and format
+  passed; strict mypy passed 994 project source files. Early style/typing
+  failures and an initial pytest import failure from the default environment
+  remain in ignored `results/runs/turn-exact-transfer-20261123/`; the test
+  rerun used the pinned Python 3.11 environment. The frozen selected trees,
+  collision counts and poker outcomes have not been read. Exact-source
+  base/optional/hosted qualification remains before real inventory. Codex
+  assisted; human time or personal learning was not reported.
+
+- Exact-source PR #107 qualification passed at published commit `99dff04`,
+  fingerprint `fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c`.
+  Base Python 3.11 and 3.12 each recorded 5,795 passed, 73 skipped and
+  150 slow deselected with source guards before and after. The 81-file
+  optional suites recorded 2,597 passed on 3.11 and 2,595 passed with two
+  expected skips on 3.12; pinned Numba/OpenSpiel versions and license hash
+  matched. All-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875)
+  passed, and all 24 closed source/input blobs matched GitHub. The first
+  two local launcher/preflight attempts failed before any selected tree and
+  remain in the source-check archive alongside software iteration failures.
+  No collision or strength outcome is known. Next: publish and verify the
+  [source receipt](../results/turn-exact-transfer/source-checks/manifest.json)
+  before the frozen inventory. Codex assisted; human time or personal
+  learning was not reported.
+
+- The single source-qualified frozen [inventory](turn-exact-transfer-result.md)
+  ran from clean `8e2e792` and exited zero in about 7.06 launcher seconds,
+  below its 900-second cap. The known mechanistic input has 12 collided
+  exact turn rows in six q8 groups, but all three new card/range inputs
+  have zero turn collisions. Their trees have 21,303, 21,303 and 2,295
+  nodes, all below the 200,000-node limit. The registered
+  `structural_stop` ended the comparison **inconclusive for poker strength**.
+  No fictional proof, profile, admission, training, reference audit,
+  default change, redraw or retry occurred. Raw JSON, PIDs, command and
+  logs are preserved in the [inventory archive](../results/turn-exact-transfer/inventory/manifest.json).
+  Next: publish/verify the structural-stop evidence, finish final
+  documentation/source checks and PR review, then register a distinct
+  known-case mechanistic question if justified. Codex assisted; human
+  time or personal learning was not reported.
+
+- PR #107's published `d41baac` structural-stop report and raw archive
+  passed final exact-result local requalification: base Python 3.11 and
+  3.12 each 5,795 passed, 73 skipped, 150 slow deselected; optional
+  Python 3.11 2,597 passed; optional 3.12 2,595 passed and two expected
+  skips. Each role checked the historical/source fingerprint and published
+  receipt, inventory and report hashes before and after; all-file hooks
+  passed. Both [result-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45265519612)
+  passed. The [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+  retains complete local/hosted logs, PIDs and exact pinned bytes; publish
+  and verify it before solo review and history-preserving merge. The
+  scientific result remains inconclusive and no training occurred. Codex
+  assisted; human time or personal learning was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as

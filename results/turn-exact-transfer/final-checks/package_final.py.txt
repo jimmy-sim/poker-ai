@@ -1,0 +1,109 @@
+"""Seal final exact-result local/hosted qualification and source pins."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/turn-exact-transfer/final-checks"
+HEAD = "d41baacbabc144ebd524e99bc9228f5673b1d8ee"
+FINGERPRINT = "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c"
+PINS = {
+    "results/turn-exact-transfer/source-checks/manifest.json": "af541362cdea019e33bca2385b83b79ebbed40b52fc926ba287243ccf2dc4071",
+    "results/turn-exact-transfer/inventory/manifest.json": "6ac4f627297c3008e765042ddbc6e34c227ee0dc354d5178226217baf85b9d48",
+    "docs/turn-exact-transfer-result.md": "15d265a1f35d7a56e98ef88799d80cae0cf222314bdd1b4be977b53d5f9673dd",
+}
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def copy(source: Path, destination: Path) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    if source.suffix == ".log":
+        with destination.with_name(destination.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == ".py":
+        shutil.copyfile(source, destination.with_name(destination.name + ".txt"))
+    else:
+        shutil.copyfile(source, destination)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain prior final receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("final result head changed or dirty")
+    for name, expected in PINS.items():
+        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+            raise ArithmeticError("final source/result bytes changed: " + name)
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    if state["status"] != "passed" or state["head"] != HEAD or state["completed"] != [
+        {"role": role, "exit_code": 0} for role in ROLES
+    ]:
+        raise ArithmeticError("final local roles incomplete")
+    if any(
+        row["status"] != "passed"
+        or row["head"] != HEAD
+        or row["source_fingerprint"] != FINGERPRINT
+        for row in receipts
+    ) or any(row["suite_count"] != 81 for row in receipts[2:]):
+        raise ArithmeticError("final exact-source or optional count changed")
+    if (
+        hosted["headSha"] != HEAD
+        or hosted["conclusion"] != "success"
+        or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"}
+        or any(row["conclusion"] != "success" for row in hosted["jobs"])
+    ):
+        raise ArithmeticError("both final hosted jobs required")
+    if (RAW / "driver.exit").read_text().strip() != "0" or (RAW / "hooks.exit").read_text().strip() != "0":
+        raise ArithmeticError("driver or hooks incomplete")
+    if (
+        "5795 passed, 73 skipped, 150 deselected" not in (RAW / "base311.log").read_text()
+        or "5795 passed, 73 skipped, 150 deselected" not in (RAW / "base312.log").read_text()
+        or "2597 passed" not in (RAW / "optional311.log").read_text()
+        or "2595 passed, 2 skipped" not in (RAW / "optional312.log").read_text()
+    ):
+        raise ArithmeticError("final test summary absent")
+    OUT.mkdir(parents=True)
+    names = [
+        "driver-state.json", "driver.exit", "driver.log", "driver.py", "runner.py",
+        "optional-suites.json", "package_final.py", "hooks.exit", "hooks.log",
+        "hosted.json", "hosted.log",
+    ]
+    names.extend(f"{role}.{extension}" for role in ROLES for extension in ("json", "log"))
+    for name in names:
+        copy(RAW / name, OUT / name)
+    result = dict(
+        status="final_qualified",
+        tested_head=HEAD,
+        source_fingerprint=FINGERPRINT,
+        pins=PINS,
+        local_roles=receipts,
+        hosted_run=hosted["databaseId"],
+        hosted_jobs=[{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        hooks="passed",
+        scientific_classification="inconclusive_structural_stop",
+        training_started=False,
+    )
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / "manifest.json").write_text(
+        json.dumps(dict(status="final_qualified", source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + "\n"
+    )
+    print("final_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

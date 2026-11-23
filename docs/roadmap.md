@@ -152,10 +152,37 @@ independent toy score. The one capped, read-only known-input
 [diagnosis](river-turn-loss-diagnosis-result.md) then found 92.8173% of
 the candidate's final turn gain on collided rows, with zero river
 collisions. This flags a prospective turn-key test but does not prove a
-causal improvement or revise the broader-input negative result. Complete
-the diagnosis's final exact-report checks passed all four local lanes,
-hooks and both hosted jobs; publish its final receipt and complete review
-before choosing a distinct fixed-work strength experiment.
+causal improvement or revise the broader-input negative result. The
+diagnosis's final exact-report checks passed all four local lanes,
+hooks and both hosted jobs, its final receipt was published, and
+[PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged.
+This is still a diagnostic hypothesis, so the next distinct
+[prospective exact-turn comparison](turn-exact-transfer.md) fixes a
+same-work control/candidate test on one known mechanistic and three
+structurally selected new card/range inputs. Its selection and scientific
+outcomes remain pending at protocol publication.
+The isolated one-time selector and fictional/read-only focused tests passed;
+publish and verify that source before freezing the cohort. No selected
+board, tree or strength result exists at this checkpoint. The one-time
+cohort was then drawn by the published structural rule and its exact
+[freeze](../configs/turn-exact-transfer-freeze.json) was published
+before any tree, collision or decision measurement; no case was replaced.
+The isolated exact-turn adapter and fixed experiment runner passed
+11 fictional or already known fixture tests and strict typing. All four
+exact-source local roles, all-file hooks and both hosted jobs then passed;
+the [source receipt](../results/turn-exact-transfer/source-checks/manifest.json)
+was published and byte-verified before the first frozen-tree collision
+inventory. The [single fixed inventory](turn-exact-transfer-result.md)
+found **zero turn-key collisions on all three new inputs**, triggering the
+registered structural stop. PR #107 is **inconclusive for poker strength**;
+no training, reference audit, redraw or default change followed. The
+known diagnostic input retains 12 collided turn rows, so a separate
+prospective known-case matched-work question can test that mechanism
+without claiming unseen or broader strength. The raw archive/report were
+published and GitHub-byte-verified. All four
+final exact-result local roles, hooks and both hosted jobs passed; the
+[final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+is being published. Solo review and history-preserving merge remain.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

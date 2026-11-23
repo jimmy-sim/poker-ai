@@ -124,19 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
-**Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
-history-merged its one prospectively fixed batch-eight versus batch-four
-comparison on two known river spots. The [result](medium-dry-b8-updates-result.md)
-is **negative**: final medium/dry B8 median/worst exploitability
-0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
-paired seed improves and two worsen. The low/wet gate passes. Own policies
-were published before pinned comparison-only checks, and all final local and
-hosted gates passed. No default changed. The next
-[prospective full-expectation question](medium-dry-full-expectation.md) has
-an isolated adapter with passing exact-source base, optional and hosted checks,
-but no new candidate outcome yet. PR #102's conservative compute gate rejected
-its longer study, so its poker-strength effect remains inconclusive. Earlier
-status paragraphs below preserve the sequence of prior investigations.
+**Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
+has a frozen prospective exact-turn comparison on one known mechanistic
+input and three new card/range inputs on known public templates. Its tested
+source passed all four exact-source local lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875).
+The [one frozen inventory](turn-exact-transfer-result.md) then met its
+registered structural stop: all three new inputs have zero turn-key
+collisions. This experiment is **inconclusive for poker strength**, and
+no training or default change followed. The prior [broader-input result](river-full-broader-spots-result.md)
+remains negative. Earlier status paragraphs below preserve the sequence of
+investigations.
 
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
@@ -9348,6 +9346,95 @@ do not turn the proposed turn distinction into a tested stronger agent.
 **Next decision:** complete review and history-preserving merge, then
 register a separate fixed-work representation comparison. Codex assisted;
 no human time or personal learning was reported.
+
+**November 23 next bounded question.** After [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106)
+merged with all gates, the [new prospective plan](turn-exact-transfer.md)
+asks whether splitting *all* acting turn information rows improves saved
+decisions at the same work, rather than splitting only the observed bad
+row. **Example:** the Jh 9h/Qd Qh shared action probabilities motivate
+the question, but that board is a known mechanistic check. Three newly
+drawn card/range inputs are frozen by structural rules before measuring
+their trees or policies. The same deterministic full expected updater
+trains both representations; any gain must be distinguished from
+different charged work, coverage or compute. The historical 0.01-pot
+absolute gate and 7,200-second own cap stay in place. **Next decision:**
+publish this protocol, then implement and freeze the one-time selection
+without inspecting outcomes. Codex assisted; no human time or personal
+learning was reported.
+
+**November 23 selector implementation.** The [exact-turn protocol](turn-exact-transfer.md)
+was published before the new selector. Its isolated code checks all 21
+tracked old inputs and their hashes, then would draw one fixed cohort by
+public board texture and a single RNG stream. **Example:** a rank signature
+already present in the known inventory is rejected even if its suits
+change; this prevents a superficially different board from being presented
+as a new rank pattern. Focused tests use seed 7, distinct from the fixed
+study seed, and never write the real cohort. The first formatting failure
+was retained and corrected; focused tests, lint and strict typing passed.
+**Next decision:** publish and verify the selector before its one-time
+cohort freeze. Codex assisted; no human time or personal learning was
+reported.
+
+**November 23 one-time cohort freeze.** The published selector used its
+fixed PCG64 seed exactly once and saved [three new card/range inputs](../configs/turn-exact-transfer-freeze.json)
+on two known public betting templates. **Example:** the medium/dry draw
+needed 66 ordered board attempts before the dry texture and prior-rank
+exclusion rules both held; no tree size, collision count or poker policy
+was consulted. All three input hashes and the 21 old input hashes were
+verified. The cases are new card/range combinations in this study, not
+unseen betting templates. **Next decision:** publish and verify the freeze
+before any tree or decision measurement. Codex assisted; no human time or
+personal learning was reported.
+
+**November 23 isolated turn-key implementation.** The candidate now uses
+the acting player's exact turn observation, while the control keeps the
+old eight-group turn description; both retain the same exact river and
+finite game. **Example:** a turn group can split Jh 9h from Qd Qh without
+changing which actions either player can take. This is a code property,
+not evidence that either policy plays better. Fictional capture/replay and
+already known input fixtures passed 11 focused tests; strict typing passed
+994 files, and lint/format passed. Initial style/typing and test-environment
+failures were retained and corrected. **Next decision:** complete exact-
+source local and hosted qualification before counting collisions in the
+frozen selected cohort, then follow the prescribed proof/profile/admission
+order. Codex assisted; no human time or personal learning was reported.
+
+**November 23 exact-source qualification.** The four pinned local roles
+passed on the published isolated source, including both complete base suites
+and both optional suites. Both hosted Python jobs and all-file hooks passed.
+**Example:** the new exact turn key is checked alongside the historical
+source fingerprints, so a passing poker calculation cannot silently accept
+an altered older experiment. Two operator launcher/preflight mistakes were
+retained and corrected before the passing run; neither built a selected
+tree. **Next decision:** publish the complete source-check receipt before
+counting frozen turn collisions, then stop structurally if all three new
+inputs lack collisions. Codex assisted; no human time or personal learning
+was reported.
+
+**November 23 frozen structural stop.** The [one-time inventory](turn-exact-transfer-result.md)
+found 12 collided turn rows in the known diagnostic input but none in any
+of the three new card/range inputs. **Example:** on the selected 6s Kc 2h
+Jd medium/dry turn, the q8 control already gives each of the 24 exact
+turn decision rows its own strategy row; exact turn keys add no split to
+that finite tree. No policy was trained or scored, so the candidate's
+poker strength here is unknown, not worse or better. The 900-second
+inventory cap passed and no case was replaced. **Next decision:** publish
+this inconclusive result and close PR #107, then preregister a distinct
+known-case matched-work mechanism test if it offers the best next poker
+decision evidence. Codex assisted; no human time or personal learning
+was reported.
+
+**November 23 final structural-stop checks.** Both complete local Python
+versions, both optional suites, all-file hooks and both hosted jobs passed
+again on the published raw inventory and inconclusive report. **Example:**
+the final guard checks the inventory file's hash and the report's hash
+alongside the frozen source, so the stated zero collisions cannot be
+replaced by a later unqualified edit. The [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
+retains the logs and exact head. **Next decision:** publish and verify this
+receipt, finish solo review and history-preserving merge, then register a
+separate known-case mechanism question if it is the best next poker
+decision test. Codex assisted; no human time or personal learning was
+reported.
 
 ### November 18: locate current CPU in receipt prerequisites
 

@@ -1,0 +1,45 @@
+"""Own exactly one frozen structural inventory and retain operator state."""
+import json
+import os
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+RAW = Path(__file__).resolve().parent
+ROOT = RAW.parents[2]
+HEAD = "8e2e792d60a3ca5cf8b29ac6e9eeff4789aff249"
+FINGERPRINT = "fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c"
+OUTPUT = RAW / "measurement"
+STATE = RAW / "job-state.json"
+LOG = RAW / "measurement.log"
+COMMAND = ["uv", "run", "--locked", "python", "scripts/study_turn_exact_transfer.py", "inventory", "--output", str(OUTPUT)]
+ENV = dict(os.environ)
+ENV.update(UV_PYTHON="3.11.17", UV_PROJECT_ENVIRONMENT=str(ROOT / "results/runs/guarded-skip-requalification-20261118/envs/base311"))
+ENV.pop("PYTHONPATH", None)
+
+def write(row):
+    temporary = STATE.with_suffix(".tmp")
+    temporary.write_text(json.dumps(row, sort_keys=True, indent=2) + "\n")
+    temporary.replace(STATE)
+
+if STATE.exists() or LOG.exists() or OUTPUT.exists():
+    raise FileExistsError("retain previous frozen inventory; never silently duplicate")
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+if head != HEAD or subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT):
+    raise RuntimeError("published source is not clean inventory head")
+row = dict(stage="inventory", status="starting", source_head=HEAD, source_fingerprint=FINGERPRINT,
+           owner="Codex active session", launcher_pid=os.getpid(), command=COMMAND,
+           python="3.11.17", environment=ENV["UV_PROJECT_ENVIRONMENT"], deadline_seconds=900,
+           output=str(OUTPUT), log=str(LOG), started_at=datetime.now(timezone.utc).isoformat())
+write(row)
+with LOG.open("x") as stream:
+    child = subprocess.Popen(COMMAND, cwd=ROOT, env=ENV, stdout=stream, stderr=subprocess.STDOUT)
+    row.update(status="running", child_pid=child.pid)
+    write(row)
+    code = child.wait()
+row.update(status="completed" if code == 0 else "failed_retained", exit_code=code,
+           finished_at=datetime.now(timezone.utc).isoformat(), child_pid=None)
+write(row)
+print(json.dumps(dict(status=row["status"], exit_code=code, output=str(OUTPUT))))
+sys.exit(code)
