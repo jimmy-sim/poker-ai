@@ -82,8 +82,11 @@ medium/dry river decisions. Its isolated adapter passed focused tiny-game
 math and replay checks, exact-source base and optional local suites, hooks,
 and [both hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45166698139).
 The [source-check archive](../results/medium-dry-full-expectation/source-checks/manifest.json)
-retains those checks and earlier corrected failures. No new candidate
-measurement exists yet.
+retains those checks and earlier corrected failures. One
+[fictional proof](../results/medium-dry-full-expectation/own-proof/manifest.json)
+passed capture and replay within its cap; the fixed real-game profile and
+compute admission are next. No real candidate policy or strength result
+exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

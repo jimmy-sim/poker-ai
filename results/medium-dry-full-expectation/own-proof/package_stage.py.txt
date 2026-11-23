@@ -1,0 +1,31 @@
+"""Copy one retained full-expectation stage with a complete hash inventory."""
+import argparse
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+FINGERPRINT = "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab"
+STATUSES = {"own_proof_passed", "profile_published", "admitted", "own_published", "native_audited", "report_positive", "report_negative", "report_inconclusive", "failed_retained"}
+
+def package(raw: Path, output: Path, status: str) -> None:
+    if not raw.is_dir() or raw.is_symlink() or output.exists() or status not in STATUSES:
+        raise ValueError("invalid or duplicate stage archive")
+    if any(item.is_symlink() for item in raw.rglob("*")):
+        raise ValueError("stage contains symlink")
+    shutil.copytree(raw, output)
+    members = []
+    for path in sorted(item for item in output.rglob("*") if item.is_file()):
+        data = path.read_bytes()
+        members.append(dict(file=path.relative_to(output).as_posix(), bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    if len(members) != len({row["file"] for row in members}):
+        raise ArithmeticError("duplicate archive path")
+    (output / "manifest.json").write_text(json.dumps(dict(status=status, source_fingerprint=FINGERPRINT, files=members), sort_keys=True, indent=2) + "\n")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("raw", type=Path)
+    parser.add_argument("output", type=Path)
+    parser.add_argument("status")
+    args = parser.parse_args()
+    package(args.raw, args.output, args.status)

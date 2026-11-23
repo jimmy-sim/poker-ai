@@ -63,6 +63,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   passed both jobs. No full-expectation proof, real policy, score or reference
   audit has run. Next: publish and byte-verify the source receipt before the
   one fictional proof. Codex assisted; human hands-on time was not recorded.
+- **One fictional full-pass proof:** all 41 published source-check blobs
+  matched GitHub's committed tree, and the offline source archive guard passed.
+  At clean receipt head `bcc932e`, one capped proof on the fictional signal
+  game saved and replayed six current/linear-average snapshots across three
+  first work crossings, finishing at 726 charged node visits in 0.366 outer
+  seconds under the fixed 180-second cap. The [proof archive](../results/medium-dry-full-expectation/own-proof/manifest.json)
+  retains snapshots, cumulative masses, events, source verification, launch
+  command, environment, PID and logs. This is a software proof, not a poker
+  result. Next: publish and GitHub-byte-verify the proof before the one fixed
+  six-path real-game profile. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 

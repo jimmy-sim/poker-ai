@@ -9024,6 +9024,19 @@ source receipt byte, then run one fictional proof before the fixed profile
 and separate compute admission. Codex assisted; human hands-on time was not
 recorded.
 
+**November 23 fictional full-pass proof.** After every published source
+receipt file matched GitHub and the offline source gate passed, one capped
+run on a fictional signal game saved and replayed six policies at three work
+crossings in 0.366 seconds, below its 180-second cap. The
+[proof receipt](../results/medium-dry-full-expectation/own-proof/manifest.json)
+includes the exact policies and logs. **Example:** a work label is crossed
+only after both players' complete expected passes finish; recording the
+actual 726 node visits prevents treating a partial player update as a
+checkpoint. This proves capture/replay mechanics in a tiny game, not river
+decision strength. **Next decision:** publish and verify the proof, then
+profile the two known river spots three times each under the fixed compute
+rule. Codex assisted; human hands-on time was not recorded.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
