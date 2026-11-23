@@ -9274,6 +9274,22 @@ review and history-preserving merge if eligible, then register a distinct
 prospective question on newly selected inputs. Codex assisted; human
 hands-on time and personal learning were not reported.
 
+**November 23 PR #105 closure and next question.** The negative
+[two-input result](river-full-broader-spots-result.md) passed final local
+and hosted qualification and [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105)
+was history-merged. The first receipt-head Python 3.11 CI canceled at its
+unchanged limit; the complete log was retained, and a targeted same-SHA
+operational requalification passed without repeating poker measurements.
+**Question:** does the new medium/dry candidate's larger turn loss occur in
+information rows that collide, or does the saved trajectory point elsewhere?
+The [prospective read-only plan](river-turn-loss-diagnosis.md) fixes the 12
+existing policies, 24 traces, ranking, checks and 900-second cap. **Example:**
+PR #98's different known medium/dry input had no turn collisions, so a
+turn-heavy loss cannot be assumed to require a finer turn key. **Next
+decision:** publish this plan before measuring candidate-ranked rows; keep
+the evaluated inputs known and any new training separately registered.
+Codex assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

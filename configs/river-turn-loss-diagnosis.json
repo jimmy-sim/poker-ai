@@ -1,0 +1,27 @@
+{
+  "protocol": 1,
+  "question": "candidate-ranked turn loss and information collisions on one known evaluated input",
+  "parent_merge": "c84302b58c8ee18220d39a2d8130abae803a779a",
+  "input": "full_new_medium_dry_oop",
+  "input_status": "known evaluated card/range input on known public template",
+  "archive_sha256": {
+    "results/river-full-broader/own/manifest.json": "5da9b3f32fe11f98a96f6cf4da957c79963cde95d9739695f970408ec7de9301",
+    "results/river-full-broader/native/manifest.json": "02818106bb103d7f69530b78730138f6915f11c7854a640ebcc4fc482d9c3a5e",
+    "results/river-full-broader/report/manifest.json": "af02d10250b1b1879b0d20babb90553defa8607ea844a50a37f3c710f906e4a5",
+    "configs/river-full-broader-freeze.json": "31e0a930cc127b4e1548917c4194be1ff06e8d1959bd49a1394e91576ed0b2d2"
+  },
+  "candidate": {"arm": "signed_full_expectation", "seed": 0},
+  "controls": {"arm": "signed_external_b4", "seeds": [20261511, 20261512, 20261513]},
+  "readout": "linear_average",
+  "charged_work_labels": [100000, 1000000, 10000000],
+  "saved_policies": 12,
+  "responding_seat_traces": 24,
+  "ranking": {"primary": "final candidate additive turn gain descending, exact information index tie break", "turn_top": 10, "river_top": 5},
+  "numeric_tolerance_chips": 1e-9,
+  "grouping_signal_turn_loss_share": 0.5,
+  "forecast_seconds": 180,
+  "whole_process_cap_seconds": 900,
+  "new_training": false,
+  "new_reference_comparison": false,
+  "stop_on_gate_failure": true
+}

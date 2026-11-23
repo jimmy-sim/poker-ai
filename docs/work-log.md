@@ -13,6 +13,33 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #105 negative result and next diagnostic
+
+- [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
+  `c84302b58c8ee18220d39a2d8130abae803a779a`; protocol, source,
+  admission, own-before-reference and final receipt commits are ancestors
+  of main. The [fixed two-input result](river-full-broader-spots-result.md)
+  is **negative** on the newly selected medium/dry card/range input on a
+  known public template. No default changed. Receipt-head
+  [CI 45213999919](https://github.com/jimmy-sim/poker-ai/actions/runs/45213999919)
+  first canceled Python 3.11 at the unchanged 35-minute limit at 97% of
+  `make check`; Python 3.12 passed. The complete canceled log is retained
+  under ignored `results/runs/river-full-broader-receipt-ci-20261123/`.
+  One same-SHA operational requalification of only the canceled 3.11 job
+  passed in 1,488 seconds; no scientific work, timeout or test selection was
+  changed. The post-merge main CI 45226018829 was pending at this entry.
+  Codex assisted; human hands-on time was not reported.
+
+- The [next prospective read-only diagnostic](river-turn-loss-diagnosis.md)
+  fixes the published PR #105 policies, seed/work grid, candidate-ranked
+  turn-node rule, collision accounting, numerical gates and 900-second cap
+  **before** any new node ranking or collision count. It uses the evaluated
+  medium/dry input as a known case and collects no training or new reference
+  output. The prior PR #98 known spot had zero turn collisions, so the new
+  turn-heavy loss alone is insufficient to choose a representation change.
+  Diagnostic source and measurements remain pending. Codex assisted; human
+  hands-on time and personal learning were not reported.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as
