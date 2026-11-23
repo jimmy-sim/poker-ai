@@ -40,6 +40,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   software proof, not a poker result. Next: publish/verify proof before the
   one fixed 18-path 100k profile. Codex assisted; human hands-on time was not
   recorded.
+- **One fixed B8 profile:** all 18 predeclared 100k-work paths across three
+  repeats completed in 19.407502 seconds, below the 900-second cap; no path
+  failure. Maximum observed worker RSS was 191,774,720 bytes. The prescribed
+  maximum-per-path, fixed-partition calculation gave
+  `T=657.9767527444723` seconds and strict bound
+  `3831.907010977889<7200`. The [complete raw profile](../results/medium-dry-b8-updates/profile/manifest.json)
+  has 150 members with all snapshots, scores, events, work counts and timing.
+  This is a forecast from the profile, not the separate published compute
+  admission or a 10m strength result. Next: publish/verify every profile byte,
+  then recompute the separate gate. Codex assisted; human hands-on time was not
+  recorded.
 
 ## 2026-11-22 — PR #103 isolated B8 source
 

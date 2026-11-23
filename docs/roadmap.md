@@ -69,6 +69,9 @@ Its isolated source at `81ef11a` passed full exact-source base and optional
 local checks, all-file hooks and both hosted CI jobs. Its source receipt is
 published and GitHub-byte-verified; the fictional proof passed and is being
 published before the fixed profile. No B8 poker-strength result exists yet.
+The one fixed 18-path/three-repeat 100k profile completed under its cap; its
+conservative bound is **3,831.907 seconds** against **7,200**. This awaits
+publication and a separate compute admission before 10m training.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -129,8 +129,9 @@ tests one prospectively fixed batch-eight signed updater against published
 batch-four controls on two known river spots. Its isolated source has passed
 full local base/optional and hosted checks; the
 [source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
-is published and a fictional proof has passed. Its proof bytes are being
-published before the fixed profile. No B8 poker
+is published and a fictional proof has passed and been published. The fixed
+100k profile completed under its cap; its raw bytes are being published
+before separate compute admission. No 10m B8 poker
 result or default change exists. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8885,6 +8886,21 @@ and support mass are the same as when it was written. The fixture is not a
 Hold'em game, so it provides no evidence that B8 improves poker decisions.
 **Next decision:** publish and verify these bytes, then run the single fixed
 100k-work B8 profile and apply its conservative compute gate. Codex assisted;
+human hands-on time was not recorded.
+
+**November 23 fixed B8 compute profile.** The one
+[preregistered profile](../results/medium-dry-b8-updates/profile/manifest.json)
+completed all 18 paths, three repeats of each of six known spot/seed paths,
+in 19.407502 seconds, with peak worker memory 191,774,720 bytes. Its frozen
+forecast takes each path's slowest scaled repeat, sums by the fixed worker
+partition and doubles the resulting conservative bound. This gave
+`T=657.976753` seconds and `3,831.907011<7,200` seconds. **Example:** the
+slowest medium/dry path estimate was 536.833 seconds after scaling one
+complete 100k path to 10m work; it is kept even though that repeat was
+unfavorable for runtime. No B8 candidate score was selected or used to
+change the protocol. **Next decision:** publish and verify the entire raw
+profile, then run a separate data-only compute admission from those bytes.
+Only an admitted run may proceed to fixed 10m learning. Codex assisted;
 human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
