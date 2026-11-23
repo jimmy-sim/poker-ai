@@ -63,6 +63,20 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   under `results/runs/river-full-broader-source-20261123/`. PR #104's earlier
   receipt-head CI passed both versions and remains a distinct gate.
 
+- Exact PR #105 source `6ccf3a367ec06fe7f3ac4ca807a5d1d9111f75dd`
+  completed serial four-role local qualification: base Python 3.11 and 3.12
+  each passed 5,779 tests, 73 skipped and 150 slow deselected, plus Ruff,
+  formatting, strict mypy and pre/post source/lock/runtime guards. Optional
+  3.11 passed 2,597; optional 3.12 passed 2,595 with two expected skips,
+  both with pinned OpenSpiel 2.0.2, Numba 0.68.1 and installed Apache-2.0
+  license guards. All-file hooks and exact tested-source
+  [hosted CI 45193945715](https://github.com/jimmy-sim/poker-ai/actions/runs/45193945715)
+  passed both versions. All 17 source-bound files matched GitHub blobs. The
+  [source receipt](../results/river-full-broader/source-checks/manifest.json)
+  retains role/hosted logs, eight focused tests and the corrected first hook
+  failure; its publication and GitHub verification precede the fictional
+  proof. No poker trajectory or strength measurement has run.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

@@ -69,5 +69,8 @@ tests the unchanged candidate on structurally selected new card/range inputs
 against matched-work B4 paths under the same hard compute cap. Its one-time
 [cohort freeze](../configs/river-full-broader-freeze.json) is published before
 any tree or outcome measurement; source qualification and all scientific
-stages remain pending. All earlier failures remain, including PR #104's
+stages remained pending at selection. Exact-source local and hosted
+qualification has since passed; its [receipt](../results/river-full-broader/source-checks/manifest.json)
+must be published and verified before the fictional proof. All earlier
+failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

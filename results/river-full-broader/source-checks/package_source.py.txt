@@ -1,0 +1,65 @@
+"""Retain exact frozen-source qualification and corrected hook failure."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / 'results/river-full-broader/source-checks'
+HEAD = '6ccf3a367ec06fe7f3ac4ca807a5d1d9111f75dd'
+FINGERPRINT = '5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6'
+
+
+def copy(name: str) -> None:
+    source = RAW / name
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / name
+    if source.suffix == '.log':
+        with target.with_suffix('.log.gz').open('wb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, target.with_name(target.name + '.txt'))
+    else:
+        shutil.copyfile(source, target)
+
+
+if __name__ == '__main__':
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError('retain prior source archive')
+    roles = ('base311', 'base312', 'optional311', 'optional312')
+    state = json.loads((RAW / 'driver-state.json').read_bytes())
+    receipts = [json.loads((RAW / f'{role}.json').read_bytes()) for role in roles]
+    hosted = json.loads((RAW / 'hosted.json').read_bytes())
+    if state['head'] != HEAD or state['status'] != 'passed':
+        raise ArithmeticError('exact local driver incomplete')
+    if any(row['status'] != 'passed' or row['head'] != HEAD or row['broader_source_fingerprint'] != FINGERPRINT for row in receipts):
+        raise ArithmeticError('local role/source mismatch')
+    if any(row['suite_count'] != 81 for row in receipts if row['role'].startswith('optional')):
+        raise ArithmeticError('optional suite count changed')
+    if (RAW / 'hooks.exit').read_text().strip() != '0':
+        raise ArithmeticError('all-file hooks failed')
+    if hosted['headSha'] != HEAD or hosted['conclusion'] != 'success':
+        raise ArithmeticError('tested-source hosted CI failed')
+    if {job['name'] for job in hosted['jobs']} != {'Python 3.11', 'Python 3.12'} or any(job['conclusion'] != 'success' for job in hosted['jobs']):
+        raise ArithmeticError('tested-source hosted jobs failed')
+    verification = json.loads((RAW / 'github-tree-verify.json').read_bytes())
+    if verification['status'] != 'verified' or verification['head'] != HEAD or verification['source_fingerprint'] != FINGERPRINT or verification['count'] != 17:
+        raise ArithmeticError('GitHub source byte verification missing')
+    if '8 passed' not in (RAW / 'focused.log').read_text():
+        raise ArithmeticError('focused source tests incomplete')
+    OUT.mkdir(parents=True)
+    names = ['driver-state.json', 'driver.log', 'driver.py', 'runner.py', 'optional-suites.json', 'package_source.py', 'hooks.exit', 'hooks.log', 'hosted.json', 'hosted.log', 'focused.log', 'first-hook-failure.log', 'selection.log', 'github-tree-verify.json']
+    names += [f'{role}.{ext}' for role in roles for ext in ('json', 'log')]
+    for name in names:
+        copy(name)
+    result = dict(status='source_qualified', tested_head=HEAD, source_fingerprint=FINGERPRINT, local_roles=receipts, hooks='passed', hosted_run=hosted['databaseId'], hosted_jobs=[{'name': job['name'], 'conclusion': job['conclusion']} for job in hosted['jobs']], focused_tests='8 passed on locked base311', retained_failures=['first-hook-failure.log.gz'], scientific_measurements_started=False)
+    (OUT / 'result.json').write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
+    files = []
+    for path in sorted(item for item in OUT.iterdir() if item.is_file()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / 'manifest.json').write_text(json.dumps(dict(status='source_qualified', source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + '\n')

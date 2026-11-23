@@ -115,7 +115,9 @@ and outcomes; the public templates and prior spot inputs remain known. The
 GitHub-byte-verified, with no policy or score measurement. PR #104's separate
 post-merge main CI was canceled at the fixed 35-minute limit for Python 3.11
 after 3.12 passed; its receipt-head CI had passed both. The new exact-source
-qualification is pending before the broader-input study.
+qualification passed all four local roles, hooks and both hosted jobs; the
+[source receipt](../results/river-full-broader/source-checks/manifest.json)
+is the next publication checkpoint before the fictional proof.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -9178,6 +9178,19 @@ local, optional and hosted checks before the fictional proof and measured
 compute profile. Codex assisted; human hands-on time and personal learning
 were not reported.
 
+**November 23 exact broader-input source qualification.** The frozen source
+passed all four local Python roles, all-file hooks and both hosted CI jobs;
+the [source receipt](../results/river-full-broader/source-checks/manifest.json)
+binds those logs to the same code and spot bytes. **Example:** the source
+guard checked that all 19 previously used input files and the two selected
+spot hashes still match the freeze before the tests ran. This shows that a
+one-time cohort can be trained reproducibly; it does not show that the full
+expected learner improves play. The first commit-hook attempt's missing `uv`
+was retained and corrected by sourcing the repository environment, without
+skipping a hook. **Next decision:** publish and verify the source receipt,
+then run one capped fictional proof and the preregistered compute profile.
+Codex assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is
