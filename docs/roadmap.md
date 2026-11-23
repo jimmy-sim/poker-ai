@@ -71,7 +71,8 @@ passes. The fixed 18-path profile passed its strict 3,831.907 < 7,200-second
 compute admission, and the single six-path 10m study completed within cap.
 Own policies were published before the comparison-only OpenSpiel audit, which
 passed all 54 saved policies within `6.395e-14` chips maximum error.
-Final report-head local and hosted checks and PR review remain pending.
+Final report-head local base/optional, hooks and both hosted jobs passed;
+PR solo review and merge remain pending.
 Neither spot is unseen; no default was promoted. The next distinct question
 must address the observed widespread river best-reply gains under a new
 prospective contract, not retry B8 for a favorable outcome.

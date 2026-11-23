@@ -1,0 +1,47 @@
+"""Run the unchanged guarded final roles serially and retain each receipt."""
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent
+ROOT = OUT.parents[2]
+EXPECTED = "9bcc83b2e28457e24d4dcfcda02a73ceef1c59ae"
+ROLES = (("311", "base"), ("312", "base"), ("311", "optional"), ("312", "optional"))
+
+def record(data: dict[str, object]) -> None:
+    path = OUT / "driver-state.json"
+    with path.open("w") as stream:
+        json.dump(data, stream, indent=2)
+        stream.write("\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+
+if subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip() != EXPECTED:
+    raise RuntimeError("wrong source head")
+if subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT):
+    raise RuntimeError("dirty source")
+state: dict[str, object] = {"head": EXPECTED, "driver_pid": os.getpid(), "status": "running", "completed": []}
+record(state)
+for minor, role in ROLES:
+    name = role + minor
+    if (OUT / f"{name}.json").exists() or (OUT / f"{name}.log").exists():
+        raise FileExistsError("retain existing role; do not duplicate " + name)
+    child = subprocess.Popen([sys.executable, str(OUT / "runner.py"), minor, role], cwd=ROOT)
+    state.update(current=name, child_pid=child.pid, started_at=time.time())
+    record(state)
+    code = child.wait()
+    completed = state["completed"]
+    assert isinstance(completed, list)
+    completed.append({"role": name, "exit_code": code})
+    state.update(current=None, child_pid=None)
+    record(state)
+    print(name, "exit", code, flush=True)
+    if code:
+        state["status"] = "failed_retained"
+        record(state)
+        raise SystemExit(code)
+state["status"] = "passed"
+record(state)

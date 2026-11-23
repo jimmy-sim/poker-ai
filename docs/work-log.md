@@ -28,6 +28,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   budget extended or default promoted. Next: publish/verify the report, then
   complete final report-head local/hosted checks and PR review. Codex assisted;
   human hands-on time was not recorded.
+- **Final qualification:** on exact report head `9bcc83b`, base Python
+  3.11/3.12 each passed 5,755 tests, 73 skips and 150 slow deselections, plus
+  Ruff, formatting, strict mypy and pre/post guards. Optional 3.11 passed
+  2,597; optional 3.12 passed 2,595 with two skips, with pinned runtime and
+  license guards. All-file hooks passed. Hosted
+  [CI 45146235586](https://github.com/jimmy-sim/poker-ai/actions/runs/45146235586)
+  passed both Python jobs and hooks. The [final receipt](../results/medium-dry-b8-updates/final-checks/manifest.json)
+  retains exact logs and metadata. Scientific classification remains negative;
+  next: publish receipt, solo review and history-preserving merge if eligible.
+  Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 exact-source B8 qualification
 

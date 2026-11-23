@@ -131,7 +131,7 @@ on two known river spots. The [result](medium-dry-b8-updates-result.md) is
 0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
 paired seed improves and two worsen. The low/wet gate passes. Both own
 policies were published before pinned comparison-only reference checks. Final
-report-head checks and PR review remain pending; no default changed. PR
+report-head checks passed; PR review and merge remain pending. No default changed. PR
 #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8961,6 +8961,19 @@ complete report-head checks and PR review, then assess a distinct
 prospectively registered question targeting the remaining river weakness.
 No B8 retry or default promotion is justified. Codex assisted; human
 hands-on time was not recorded.
+
+**November 23 final B8 software qualification.** The
+[final receipt](../results/medium-dry-b8-updates/final-checks/manifest.json)
+binds the exact negative-report commit to all four passing local roles,
+all-file hooks and passing hosted Python 3.11/3.12 CI. Base suites each
+passed 5,755 tests; optional suites passed 2,597 and 2,595 with two expected
+3.12 skips. **Example:** checking the installed OpenSpiel license before and
+after the optional suite supports source and reference reproducibility, but
+cannot turn a 3.61% medium/dry exploitability median into the required 1%.
+The negative scientific conclusion stands. **Next decision:** publish the
+receipt, conduct a solo diff/evidence review and history-preserving merge if
+eligible; then plan a distinct river-strength question under a new prospective
+contract. Codex assisted; human hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 

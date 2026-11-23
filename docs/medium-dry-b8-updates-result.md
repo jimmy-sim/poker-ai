@@ -172,8 +172,17 @@ passed eight each under both optional runtimes, all-file hooks passed, and
 [source-head CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45135404030)
 passed both Python jobs. The first commit-hook PATH failure and a later
 shell-wrapper failure after passing hooks remain in the source archive.
-**Final report-head local, optional, hook and hosted checks remain pending**
-at this report publication checkpoint.
+At exact negative-report head `9bcc83b`, final local base Python 3.11 and
+3.12 each passed 5,755 tests, 73 skipped and 150 slow deselected, plus Ruff,
+format, strict mypy and exact pre/post source/runtime/lock guards. Optional
+3.11 passed 2,597 tests; optional 3.12 passed 2,595 with two expected skips.
+Both optional roles passed pinned OpenSpiel 2.0.2, Numba 0.68.1 and installed
+license guards before and after. All-file hooks passed. Separately,
+[hosted CI run 45146235586](https://github.com/jimmy-sim/poker-ai/actions/runs/45146235586)
+passed both Python jobs and hooks on `9bcc83b`. The [complete final check
+receipt](../results/medium-dry-b8-updates/final-checks/manifest.json) retains
+logs, receipts and checked pins. These software checks do not reverse the
+negative scientific gate.
 
 The experiment isolates only batch size on two known restricted games. It
 cannot establish full-game quality, unseen-spot generalization, or a general
@@ -190,3 +199,15 @@ python3 -c 'import json; r=json.load(open("results/medium-dry-b8-updates/report/
 
 The [fixed report command](../scripts/study_medium_dry_b8.py) rebuilds
 `report.json` from committed own and native archives in a clean normal clone.
+
+## Review questions
+
+1. **Why does one improved medium/dry seed not accept B8?** The frozen rule
+   requires the candidate to pass both absolute gates and the paired median
+   improvement. Its final medium/dry median and worst miss the absolute gates.
+2. **Why is whole coverage 1.0 while river decisions remain weak?** Coverage
+   records whether positive average mass reaches a row; it does not measure
+   whether the saved action probabilities resist a best reply at that row.
+3. **What does the OpenSpiel agreement establish?** The pinned reference
+   reproduces scalar values for saved policies within 1e-9 chips. It neither
+   trained the agent nor establishes unseen or full-game poker strength.
