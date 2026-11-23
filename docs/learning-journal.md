@@ -9349,6 +9349,21 @@ do not turn the proposed turn distinction into a tested stronger agent.
 register a separate fixed-work representation comparison. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 next bounded question.** After [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106)
+merged with all gates, the [new prospective plan](turn-exact-transfer.md)
+asks whether splitting *all* acting turn information rows improves saved
+decisions at the same work, rather than splitting only the observed bad
+row. **Example:** the Jh 9h/Qd Qh shared action probabilities motivate
+the question, but that board is a known mechanistic check. Three newly
+drawn card/range inputs are frozen by structural rules before measuring
+their trees or policies. The same deterministic full expected updater
+trains both representations; any gain must be distinguished from
+different charged work, coverage or compute. The historical 0.01-pot
+absolute gate and 7,200-second own cap stay in place. **Next decision:**
+publish this protocol, then implement and freeze the one-time selection
+without inspecting outcomes. Codex assisted; no human time or personal
+learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

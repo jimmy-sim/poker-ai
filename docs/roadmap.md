@@ -154,8 +154,13 @@ the candidate's final turn gain on collided rows, with zero river
 collisions. This flags a prospective turn-key test but does not prove a
 causal improvement or revise the broader-input negative result. Complete
 the diagnosis's final exact-report checks passed all four local lanes,
-hooks and both hosted jobs; publish its final receipt and complete review
-before choosing a distinct fixed-work strength experiment.
+hooks and both hosted jobs, its final receipt was published, and
+[PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged.
+This is still a diagnostic hypothesis, so the next distinct
+[prospective exact-turn comparison](turn-exact-transfer.md) fixes a
+same-work control/candidate test on one known mechanistic and three
+structurally selected new card/range inputs. Its selection and scientific
+outcomes remain pending at protocol publication.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

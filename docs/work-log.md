@@ -13,6 +13,34 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #106 closure and prospective exact-turn test
+
+- [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged
+  as `fe8ffb7021ee4a39f77de22aaf81990a1aeff047` after all exact
+  source/report local and hosted gates, the retained final receipt, and
+  solo review. Its receipt-head [CI 45244998632](https://github.com/jimmy-sim/poker-ai/actions/runs/45244998632)
+  passed both versions; official full logs are retained under ignored
+  `results/runs/river-turn-loss-final-20261123/`. Prospective, source,
+  proof, raw report and final receipt commits are all ancestors of main.
+  Post-merge main CI 45251041211 was still running at this entry. The
+  [known-input result](river-turn-loss-diagnosis-result.md) is a
+  **turn-grouping hypothesis**, not a poker-strength success: 92.8173%
+  of the candidate's final turn gain falls on collided rows. Parent
+  PR #105 remains negative, and no default was promoted. Codex assisted;
+  human time was not reported.
+
+- The distinct [prospective exact-turn comparison](turn-exact-transfer.md)
+  asks whether using exact acting turn information with unchanged exact
+  river information reduces exploitability under identical full expected
+  charged work. The diagnosed medium/dry case is labeled known; three
+  additional card/range inputs will be selected once by fixed structural
+  rules on known public templates. Control, candidate, deterministic seed,
+  checkpoints, absolute/paired gates, conservative forecast, caps and
+  publication boundaries are fixed in the machine contract before any new
+  selection or outcome. No new spot, training, profile or score exists at
+  this protocol checkpoint. Codex assisted; human time or personal learning
+  was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
