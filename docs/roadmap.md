@@ -123,8 +123,9 @@ passed its capture/replay and 180-second cap; publication and byte verification
 of that proof preceded the fixed real-game compute profile. The one
 [complete profile](../results/river-full-broader/profile/manifest.json) gives
 the prescribed conservative bound 3,436.576 seconds under the 7,200-second
-cap. Profile publication and separate admission precede the 10m study. No
-poker-strength outcome yet exists for the new cohort.
+cap. The separate [admission](../results/river-full-broader/admission/manifest.json)
+recomputed the identical bound; publish and verify its receipt before the
+single fixed 10m study. No poker-strength outcome yet exists for the new cohort.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -9214,6 +9214,16 @@ publish and verify every profile byte, then independently recompute and
 publish the admission before any 10m training. Codex assisted; human
 hands-on time and personal learning were not reported.
 
+**November 23 broader-input compute admission.** The independent data-only
+[admission receipt](../results/river-full-broader/admission/manifest.json)
+recomputed the published profile's `T=559.1438954659656` and strict bound
+`3436.575581863862<7200` seconds. **Example:** the 600-second allowance is
+inside the formula, and the comparison is strict; this result permits exactly
+one fixed eight-path 10m own run, without predicting a favorable poker score.
+**Next decision:** publish and verify admission before training; retain every
+own policy and score before reference comparison. Codex assisted; human
+hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

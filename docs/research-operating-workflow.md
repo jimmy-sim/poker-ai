@@ -73,6 +73,7 @@ stages remained pending at selection. Exact-source local and hosted
 qualification has since passed; its [receipt](../results/river-full-broader/source-checks/manifest.json)
 was published and verified before the fictional proof. The proof was published
 and verified; the one fixed [profile](../results/river-full-broader/profile/manifest.json)
-completed with a conservative 3,436.576-second bound, pending its separate
-published admission. All earlier failures remain, including PR #104's
+completed with a conservative 3,436.576-second bound; the separate
+[admission](../results/river-full-broader/admission/manifest.json)
+recomputed the bound and must be published and verified before training. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).

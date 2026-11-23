@@ -1,0 +1,92 @@
+{
+  "T_seconds": 559.1438954659656,
+  "final_work": 10000000,
+  "fixed_worker_sums_seconds": [
+    559.1438954659656,
+    529.3247504709916,
+    513.4559857778946
+  ],
+  "per_path_maxima": [
+    {
+      "index": 0,
+      "maximum_seconds": 409.2521635087736,
+      "repeat_estimates_seconds": [
+        409.2521635087736,
+        379.03856082620763,
+        386.0532376700718
+      ]
+    },
+    {
+      "index": 1,
+      "maximum_seconds": 407.9548309235637,
+      "repeat_estimates_seconds": [
+        392.70859151407234,
+        407.9548309235637,
+        383.0373548037232
+      ]
+    },
+    {
+      "index": 2,
+      "maximum_seconds": 407.40483793035946,
+      "repeat_estimates_seconds": [
+        392.95701363787157,
+        376.98162250787124,
+        407.40483793035946
+      ]
+    },
+    {
+      "index": 3,
+      "maximum_seconds": 42.26419800033539,
+      "repeat_estimates_seconds": [
+        40.889846383175,
+        42.26419800033539,
+        41.564570815513676
+      ]
+    },
+    {
+      "index": 4,
+      "maximum_seconds": 109.09204557910375,
+      "repeat_estimates_seconds": [
+        109.09204557910375,
+        104.04699310513287,
+        106.33653593026213
+      ]
+    },
+    {
+      "index": 5,
+      "maximum_seconds": 106.05114784753512,
+      "repeat_estimates_seconds": [
+        103.91736727960652,
+        106.05114784753512,
+        103.4556855487349
+      ]
+    },
+    {
+      "index": 6,
+      "maximum_seconds": 107.62753395685655,
+      "repeat_estimates_seconds": [
+        107.62753395685655,
+        107.52175473465896,
+        106.52571915381782
+      ]
+    },
+    {
+      "index": 7,
+      "maximum_seconds": 12.277873968324116,
+      "repeat_estimates_seconds": [
+        12.206018108844999,
+        12.251374567993368,
+        12.277873968324116
+      ]
+    }
+  ],
+  "profile_seconds": 20.667184124991763,
+  "profile_work_by_arm": {
+    "signed_external_b4": 100000,
+    "signed_full_expectation": 1000000
+  },
+  "rule": "2*(2*T+600)<7200",
+  "status": "admitted",
+  "strict_bound_seconds": 3436.575581863862,
+  "whole_own_cap_seconds": 7200
+}

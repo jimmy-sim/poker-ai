@@ -98,6 +98,14 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   data-only admission remains pending; no 10m trajectory or strength result
   exists. Codex assisted; human hands-on time was not reported.
 
+- After the profile archive was published at `05ed5e8` and all 153 GitHub
+  blobs matched, the separate data-only admission recomputed the identical
+  `T=559.1438954659656` and strict bound `3436.575581863862<7200` seconds.
+  The [admission receipt](../results/river-full-broader/admission/manifest.json)
+  records the published profile and source head. No source, seed, work budget
+  or spot changed. Next: publish and byte-verify admission before the single
+  fixed eight-path own study. Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
