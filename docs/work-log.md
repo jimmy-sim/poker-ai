@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #103 fixed B8 result
+
+- The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed
+  both published cohorts once and retained all 108 spot/arm/seed/work/readout
+  cases in the [raw report](../results/medium-dry-b8-updates/report/manifest.json).
+  Its classification is **negative**: medium/dry B8 final median/worst
+  0.036102/0.042155 initial pots exceeds the frozen 0.01/0.025 gates.
+  B8-minus-B4 paired differences are +0.000447, −0.004799, +0.007022
+  (median +0.000447); low/wet passes its absolute gate. Whole coverage is 1.0
+  with zero recall violations. Fixed river decomposition and representative
+  saved decisions are in the report. The combined native comparison maximum
+  difference is `7.105e-14` chips. No training was repeated, protocol changed,
+  budget extended or default promoted. Next: publish/verify the report, then
+  complete final report-head local/hosted checks and PR review. Codex assisted;
+  human hands-on time was not recorded.
+
 ## 2026-11-23 — PR #103 exact-source B8 qualification
 
 - **Tested source:** `81ef11afffd2067e94b3c576e5d2cb3e76f733cc`,

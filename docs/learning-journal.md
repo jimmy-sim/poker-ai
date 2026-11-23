@@ -125,16 +125,13 @@ not a record of completed practice.
 ## Where the project stands
 
 **Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
-tests one prospectively fixed batch-eight signed updater against published
-batch-four controls on two known river spots. Its isolated source has passed
-full local base/optional and hosted checks; the
-[source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
-is published and a fictional proof has passed and been published. The fixed
-100k profile completed under its cap; its raw bytes were published and the
-separate conservative compute admission passed. The one fixed 10m B8 own run
-has completed, and its raw policies were published before reference
-comparison. The pinned scalar audit passed and is being published before the
-paired report. No B8 strength classification or default change exists. PR
+completed its one prospectively fixed batch-eight versus batch-four comparison
+on two known river spots. The [result](medium-dry-b8-updates-result.md) is
+**negative**: final medium/dry B8 median/worst exploitability
+0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
+paired seed improves and two worsen. The low/wet gate passes. Both own
+policies were published before pinned comparison-only reference checks. Final
+report-head checks and PR review remain pending; no default changed. PR
 #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8944,6 +8941,26 @@ enters the B8 updater. This numerical agreement does not yet classify the
 paired poker improvement. **Next decision:** publish/verify the audit, then
 replay both published own cohorts into the fixed metric and river-decision
 report. Codex assisted; human hands-on time was not recorded.
+
+**November 23 fixed B8 poker result.** The one
+[prespecified report](medium-dry-b8-updates-result.md) compared the saved
+batch-eight policies against immutable batch-four controls at the same
+charged work on the two known spots. **Example:** on medium/dry at 10m work,
+seed 20261372 improved by 0.004799 initial pots, but seed 20261373 worsened
+by 0.007022; the three-seed median difference is +0.000447. The B8 median
+0.036102 and worst 0.042155 fail the registered 0.01/0.025 absolute gates,
+so the scientific result is **negative**, even though the paired median alone
+does not reach its separate regression threshold. The low/wet absolute gate
+passes. The [raw report](../results/medium-dry-b8-updates/report/manifest.json)
+retains all checkpoints, readouts, street contributions and example river
+decisions. At final work, 70.2–75.7% of B8 medium/dry best-reply gain remains
+on the river and is spread beyond the two previously selected river rows.
+These are best replies to each saved opponent in two known restricted games,
+not universal action advice or proof of full-game strength. **Next decision:**
+complete report-head checks and PR review, then assess a distinct
+prospectively registered question targeting the remaining river weakness.
+No B8 retry or default promotion is justified. Codex assisted; human
+hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
