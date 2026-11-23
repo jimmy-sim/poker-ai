@@ -45,6 +45,24 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   Full exact-source local/optional/hooks/hosted qualification is pending,
   as are all scientific stages. No candidate real-game policy or score exists.
   Codex assisted; human hands-on time was not recorded.
+- **Exact-source qualification and tested-source publication:** prospective
+  protocol-head [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45157713793)
+  passed both Python jobs. The isolated tested source `fdcc438` with
+  fingerprint `a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab`
+  passed base Python 3.11 and 3.12, each with 5,771 tests, 73 skips and
+  150 slow deselections, plus Ruff, format, strict mypy and exact pre/post
+  source, historical-pin, runtime and lock guards. Optional 3.11 passed
+  2,597 tests; optional 3.12 passed 2,595 with two expected skips; both
+  checked pinned OpenSpiel 2.0.2 and its license. Sixteen focused new tests
+  passed on base and both optional runtimes. All-file hooks and tested-source
+  [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45166698139)
+  passed both Python jobs. The [source-check archive](../results/medium-dry-full-expectation/source-checks/manifest.json)
+  keeps exact logs, receipts and initial corrected focused-check and hook
+  PATH failures. Post-merge PR #103 main
+  [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45156767169)
+  passed both jobs. No full-expectation proof, real policy, score or reference
+  audit has run. Next: publish and byte-verify the source receipt before the
+  one fictional proof. Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-23 — PR #103 fixed B8 result
 

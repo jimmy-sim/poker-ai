@@ -73,14 +73,17 @@ Own policies were published before the comparison-only OpenSpiel audit, which
 passed all 54 saved policies within `6.395e-14` chips maximum error.
 Final report-head local base/optional, hooks and both hosted jobs passed;
 [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) was history-merged
-as `79db2fb`. Post-merge main CI is pending separately.
+as `79db2fb`. Post-merge main CI passed both Python versions.
 Neither spot is unseen; no default was promoted. The next distinct question
 tests [full expected updates at matched work](medium-dry-full-expectation.md)
 under a new prospective contract. It asks whether eliminating trajectory
 sampling noise, while retaining signed linear update rules, improves known
-medium/dry river decisions. Its isolated adapter has passed focused tiny-game
-math, replay and source checks; full exact-source qualification is pending.
-No new candidate measurement exists yet.
+medium/dry river decisions. Its isolated adapter passed focused tiny-game
+math and replay checks, exact-source base and optional local suites, hooks,
+and [both hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45166698139).
+The [source-check archive](../results/medium-dry-full-expectation/source-checks/manifest.json)
+retains those checks and earlier corrected failures. No new candidate
+measurement exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -133,8 +133,8 @@ paired seed improves and two worsen. The low/wet gate passes. Own policies
 were published before pinned comparison-only checks, and all final local and
 hosted gates passed. No default changed. The next
 [prospective full-expectation question](medium-dry-full-expectation.md) has
-an isolated adapter with focused tests but no new candidate outcome or full
-source qualification yet. PR #102's conservative compute gate rejected
+an isolated adapter with passing exact-source base, optional and hosted checks,
+but no new candidate outcome yet. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
 
@@ -9008,6 +9008,21 @@ formatting failures were corrected and retained in ignored local logs.
 any real spot trajectory; then let the fixed profile and admission decide
 whether a longer study is allowed. These tests show software identities,
 not improved poker play. Codex assisted; human hands-on time was not recorded.
+
+**November 23 full-expectation source qualification.** The same isolated
+tested source `fdcc438` passed local base Python 3.11/3.12 (5,771 tests
+each), optional 3.11/3.12 (2,597 and 2,595 tests, with two expected 3.12
+skips), all-file hooks and both hosted jobs. The
+[source receipt](../results/medium-dry-full-expectation/source-checks/manifest.json)
+retains exact source, runtime, historical-pin and license checks along with
+the corrected earlier focused lint/format and hook PATH failures. **Example:**
+the independent tiny-game enumeration shows why one full pass can replace a
+random trajectory with its conditional mean, but the local and hosted checks
+only establish the implementation's identities and reproducibility; they do
+not show a stronger river policy. **Next decision:** publish and verify every
+source receipt byte, then run one fictional proof before the fixed profile
+and separate compute admission. Codex assisted; human hands-on time was not
+recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 

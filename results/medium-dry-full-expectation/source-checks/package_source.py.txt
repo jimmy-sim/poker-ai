@@ -1,0 +1,59 @@
+"""Retain exact-source full-pass checks and every focused/commit-hook failure."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / 'results/medium-dry-full-expectation/source-checks'
+HEAD = 'fdcc438029752ec8e5183bce9146b73fa3894d05'
+FINGERPRINT = 'a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab'
+
+def copy(name):
+    source = RAW / name
+    assert source.is_file(), source
+    target = OUT / name
+    if source.suffix == '.log':
+        target = target.with_suffix('.log.gz')
+        with target.open('wb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, target.with_name(target.name + '.txt'))
+    else:
+        shutil.copyfile(source, target)
+
+if __name__ == '__main__':
+    assert not OUT.exists()
+    roles = ('base311','base312','optional311','optional312')
+    state=json.loads((RAW/'driver-state.json').read_bytes())
+    receipts=[json.loads((RAW/f'{role}.json').read_bytes()) for role in roles]
+    hosted=json.loads((RAW/'hosted.json').read_bytes())
+    first=json.loads((RAW/'first-commit-hook-failure.json').read_bytes())
+    assert state['head']==HEAD and state['status']=='passed'
+    assert all(row['status']=='passed' and row['head']==HEAD and row['full_source_fingerprint']==FINGERPRINT for row in receipts)
+    assert all(row['suite_count']==81 for row in receipts if row['role'].startswith('optional'))
+    assert (RAW/'hooks.exit').read_text().strip()=='0'
+    assert hosted['headSha']==HEAD and hosted['conclusion']=='success'
+    assert {job['name'] for job in hosted['jobs']}=={'Python 3.11','Python 3.12'}
+    assert all(job['conclusion']=='success' for job in hosted['jobs'])
+    assert first['status']=='failed_before_commit' and not first['commit_created']
+    assert '16 passed' in (RAW/'focused-5.log').read_text()
+    assert '16 passed' in (RAW/'focused-optional311.log').read_text()
+    assert '16 passed' in (RAW/'focused-optional312.log').read_text()
+    assert (RAW/'focused.exit').read_text().strip()=='1'
+    assert (RAW/'focused-2.exit').read_text().strip()=='1'
+    OUT.mkdir(parents=True)
+    names=['driver-state.json','driver.log','driver.py','runner.py','optional-suites.json','package_source.py','hooks.exit','hooks.log','hosted.json','hosted.log','first-commit-hook-failure.json']
+    names += [f'{role}.{ext}' for role in roles for ext in ('json','log')]
+    names += [f'focused{suffix}.{ext}' for suffix in ('','-corrected','-2','-3','-4','-5','-mypy','-mypy-2','-optional311','-optional312') for ext in ('exit','log')]
+    for name in names:copy(name)
+    result=dict(status='source_qualified',tested_head=HEAD,source_fingerprint=FINGERPRINT,local_roles=receipts,hooks='passed',hosted_run=hosted['databaseId'],hosted_jobs=[{'name':job['name'],'conclusion':job['conclusion']} for job in hosted['jobs']],focused_tests='16 passed on base311 and optional311/optional312',retained_failures=['focused.log.gz','focused-2.log.gz','first-commit-hook-failure.json'],scientific_measurements_started=False)
+    (OUT/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+    files=[]
+    for path in sorted(item for item in OUT.iterdir() if item.is_file()):
+        raw=path.read_bytes()
+        files.append(dict(file=path.name,bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT/'manifest.json').write_text(json.dumps(dict(status='source_qualified',source_fingerprint=FINGERPRINT,files=files),sort_keys=True,indent=2)+'\n')
