@@ -9388,6 +9388,19 @@ unseen betting templates. **Next decision:** publish and verify the freeze
 before any tree or decision measurement. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 isolated turn-key implementation.** The candidate now uses
+the acting player's exact turn observation, while the control keeps the
+old eight-group turn description; both retain the same exact river and
+finite game. **Example:** a turn group can split Jh 9h from Qd Qh without
+changing which actions either player can take. This is a code property,
+not evidence that either policy plays better. Fictional capture/replay and
+already known input fixtures passed 11 focused tests; strict typing passed
+994 files, and lint/format passed. Initial style/typing and test-environment
+failures were retained and corrected. **Next decision:** complete exact-
+source local and hosted qualification before counting collisions in the
+frozen selected cohort, then follow the prescribed proof/profile/admission
+order. Codex assisted; no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

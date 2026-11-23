@@ -167,6 +167,10 @@ board, tree or strength result exists at this checkpoint. The one-time
 cohort was then drawn by the published structural rule and its exact
 [freeze](../configs/turn-exact-transfer-freeze.json) is being published
 before any tree, collision or decision measurement; no case was replaced.
+The isolated exact-turn adapter and fixed experiment runner have passed
+11 fictional or already known fixture tests and strict typing; complete
+exact-source local, optional and hosted qualification is next. The frozen
+selected trees, collision inventory and poker outcomes remain unmeasured.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

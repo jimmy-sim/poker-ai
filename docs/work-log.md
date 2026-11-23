@@ -62,6 +62,20 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   no turn collision or strength outcome is known at freeze publication.
   Codex assisted; human time was not reported.
 
+- PR #107's isolated exact-turn adapter, fixed full-work capture/replay,
+  inventory, conservative forecast, admission, comparison-only audit and
+  report source were implemented after the freeze. Historical source files
+  and pinned inputs were not edited. Fictional and already known fixture
+  tests cover turn-key refinement, policy replay, strict forecast equality
+  and the fixed strength decision: 11 focused tests passed. Ruff and format
+  passed; strict mypy passed 994 project source files. Early style/typing
+  failures and an initial pytest import failure from the default environment
+  remain in ignored `results/runs/turn-exact-transfer-20261123/`; the test
+  rerun used the pinned Python 3.11 environment. The frozen selected trees,
+  collision counts and poker outcomes have not been read. Exact-source
+  base/optional/hosted qualification remains before real inventory. Codex
+  assisted; human time or personal learning was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
