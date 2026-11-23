@@ -51,6 +51,14 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   admission or a 10m strength result. Next: publish/verify every profile byte,
   then recompute the separate gate. Codex assisted; human hands-on time was not
   recorded.
+- **Separate compute admission:** all 151 published profile blobs matched the
+  local tree, and the offline source/proof/profile gates passed. The data-only
+  [admission decision](../results/medium-dry-b8-updates/admission/manifest.json)
+  recomputed the same `T=657.9767527444723` and strict
+  `3831.907010977889<7200` bound from the complete published profile, so
+  the fixed B8 10m study is **admitted**. No training or reference comparison
+  began during admission. Next: publish/verify this receipt before one capped
+  six-path own run. Codex assisted; human hands-on time was not recorded.
 
 ## 2026-11-22 — PR #103 isolated B8 source
 

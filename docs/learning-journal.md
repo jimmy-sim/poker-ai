@@ -130,8 +130,8 @@ batch-four controls on two known river spots. Its isolated source has passed
 full local base/optional and hosted checks; the
 [source receipt](../results/medium-dry-b8-updates/source-checks/manifest.json)
 is published and a fictional proof has passed and been published. The fixed
-100k profile completed under its cap; its raw bytes are being published
-before separate compute admission. No 10m B8 poker
+100k profile completed under its cap; its raw bytes were published and the
+separate conservative compute admission passed. No 10m B8 poker
 result or default change exists. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
@@ -8902,6 +8902,18 @@ change the protocol. **Next decision:** publish and verify the entire raw
 profile, then run a separate data-only compute admission from those bytes.
 Only an admitted run may proceed to fixed 10m learning. Codex assisted;
 human hands-on time was not recorded.
+
+**November 23 B8 compute admission.** The complete profile was published,
+all 151 GitHub blobs matched, and its offline source/proof/profile guards
+passed. The separate [data-only admission](../results/medium-dry-b8-updates/admission/manifest.json)
+recomputed the identical `T=657.976753` and strict
+`3,831.907011<7,200` bound, admitting one fixed 10m own study. **Example:**
+the gate uses the slowest scaled timing for every path and the slowest fixed
+worker partition, so a faster repeat cannot replace an unfavorable one.
+The admission does not show better poker decisions; no 10m B8 policy or
+reference output exists yet. **Next decision:** publish and verify the
+admission receipt before the single capped own run. Codex assisted; human
+hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 
