@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import study_river_full_broader as runner  # noqa: E402
 from river_full_broader.control_capture import capture_path, replay_path  # noqa: E402
 from river_full_broader.forecast import forecast  # noqa: E402
+from river_full_broader.gate import frozen_cohort, source_files, source_fingerprint  # noqa: E402
 from river_full_broader.learning import (  # noqa: E402
     CANDIDATE,
     CONTROL,
@@ -39,6 +40,17 @@ def test_published_path_order_and_contract() -> None:
     ]
     assert LABELS == (100_000, 1_000_000, 10_000_000)
     assert READOUTS == ("current", "linear_average")
+
+
+def test_one_time_cohort_and_isolated_source_are_bound() -> None:
+    frozen = frozen_cohort(ROOT)
+    assert (
+        frozen["selection_source_commit"] == "f40551562ed4b37204174f7e6a5e3dc7213524aa"
+    )
+    assert len(frozen["known_spot_sha256"]) == 19
+    assert len(frozen["spot_sha256"]) == 2
+    assert "historical_full_source_fingerprint" in source_files(ROOT)
+    assert len(source_fingerprint(ROOT)) == 64
 
 
 def test_toy_b4_capture_replay_and_refusal_to_replace(tmp_path: Path) -> None:

@@ -52,6 +52,17 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   Selection used no tree, policy, score or reference output. The known public
   templates remain known; no strength measurement exists yet.
 
+- The PR #105 protocol-head [CI 45187285433](https://github.com/jimmy-sim/poker-ai/actions/runs/45187285433)
+  passed Python 3.11 and 3.12 before source publication. The frozen cohort
+  commit `190fde4ee2768857f4a24bda2170d0ec1ec14555` was pushed, and its
+  three GitHub blobs matched local bytes. The new source guard now pins that
+  exact freeze; full exact-source qualification is still pending. Separately,
+  PR #104's [post-merge main CI 45186501720](https://github.com/jimmy-sim/poker-ai/actions/runs/45186501720)
+  was canceled at its unchanged 35-minute limit with Python 3.11 around 97%
+  of `make check`; Python 3.12 passed. The canceled 3.11 log is retained locally
+  under `results/runs/river-full-broader-source-20261123/`. PR #104's earlier
+  receipt-head CI passed both versions and remains a distinct gate.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as

@@ -14,7 +14,7 @@ from river_generalization.selection import tracked_known_spots
 from river_full_broader.learning import CONFIG, CONFIG_SHA256, FREEZE, GAMES, contract
 
 PROTOCOL_COMMIT = "ee822909e2836c5cd037a69ebc2c381dfc97c8cf"
-COHORT_COMMIT = ""  # Set to the one published freeze commit before qualification.
+COHORT_COMMIT = "190fde4ee2768857f4a24bda2170d0ec1ec14555"
 HISTORICAL_FINGERPRINT = (
     "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab"
 )

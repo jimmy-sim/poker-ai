@@ -9167,6 +9167,17 @@ templates or evidence of better decisions. **Next decision:** publish and
 verify the freeze, then qualify the exact source before any real trajectory.
 Codex assisted; human hands-on time and personal learning were not reported.
 
+**November 23 cohort publication and source binding.** The two selected
+spots and the [freeze](../configs/river-full-broader-freeze.json) were committed
+at `190fde4`; all three GitHub blobs matched local bytes. The new gate checks
+the published selector source, all 19 known inputs, both selected spot hashes
+and the immutable PR #104 source fingerprint. Eight focused tests now pass.
+This protects the one-time selection before qualification; it does not show
+that the candidate plays better. **Next decision:** pass all exact-source
+local, optional and hosted checks before the fictional proof and measured
+compute profile. Codex assisted; human hands-on time and personal learning
+were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

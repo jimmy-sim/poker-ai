@@ -66,5 +66,8 @@ passed its frozen two-known-spot strength rule, then history-merged after
 local, hosted and solo review. Its improvement is not a default or broader
 strength claim. The next [prospective comparison](river-full-broader-spots.md)
 tests the unchanged candidate on structurally selected new card/range inputs
-against matched-work B4 paths under the same hard compute cap. Selection and
-outcomes have not begun at this update; all earlier failures remain.
+against matched-work B4 paths under the same hard compute cap. Its one-time
+[cohort freeze](../configs/river-full-broader-freeze.json) is published before
+any tree or outcome measurement; source qualification and all scientific
+stages remain pending. All earlier failures remain, including PR #104's
+separate post-merge main Python 3.11 timeout (receipt-head CI passed both).
