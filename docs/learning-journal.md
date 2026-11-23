@@ -9155,6 +9155,18 @@ no poker outcome exists. **Next decision:** publish and qualify the source,
 freeze the one-time cohort, then follow the protocol's staged gates. Codex
 assisted; human hands-on time and personal learning were not reported.
 
+**November 23 one-time broader-input selection.** The published selector
+rejected old board-rank signatures before drawing private cards and range
+weights. The dry OOP input was accepted on structural attempt 41, and the wet
+IP input on attempt 10; the [frozen input record](../configs/river-full-broader-freeze.json)
+retains exact bytes and the prior 19-case inventory. **Example:** a turn board
+with ranks `(5, 11, 14)` on the flop and turn rank `3` was accepted by the
+dry rule, without constructing a game tree or checking its exploitability.
+These are new card/range inputs on known betting templates, not unseen
+templates or evidence of better decisions. **Next decision:** publish and
+verify the freeze, then qualify the exact source before any real trajectory.
+Codex assisted; human hands-on time and personal learning were not reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

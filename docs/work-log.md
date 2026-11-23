@@ -43,6 +43,15 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   records it. The code was unchanged and the hooks will be rerun with the
   repository's environment sourced, without bypassing them.
 
+- The one preregistered structural selection ran once from clean published
+  selector source `f40551562ed4b37204174f7e6a5e3dc7213524aa`.
+  `full_new_medium_dry_oop` took 41 attempts and rank signature
+  `((5, 11, 14), 3)`; `full_new_low_wet_ip` took 10 attempts and signature
+  `((12, 13, 14), 11)`. Both exact legal spot bytes and all 19 prior known
+  input hashes are in the [cohort freeze](../configs/river-full-broader-freeze.json).
+  Selection used no tree, policy, score or reference output. The known public
+  templates remain known; no strength measurement exists yet.
+
 ## 2026-11-23 — PR #103 merge and next prospective question
 
 - [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
