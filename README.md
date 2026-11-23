@@ -20,9 +20,10 @@ and how much from training?
 full house on two boards, yet the best reply to the same saved opponent switches
 between folding and calling. A hand-category label misses the distinction. The
 experiments test richer descriptions at fixed training work, then inspect the
-remaining mistakes. The [latest validation test](docs/compact-suit-pipeline.md)
-passes correctness checks but still misses its runtime budget, leaving the next
-training comparison on hold.
+remaining mistakes. The [latest fixed-work full-expectation study](docs/medium-dry-full-expectation-result.md)
+improves two already known river spots against its sampled control under the
+same charged work and frozen update rule. Its one deterministic candidate
+does not establish performance across unseen situations or full-game play.
 
 ## What currently works
 
@@ -61,6 +62,7 @@ these components to the original development plan and continuing research.
 | [Hand evaluation](docs/phase1-verification.md) | Zero disagreements with Treys across all 2,598,960 five-card hands and 2,000,000 seeded six/seven-card samples. The latter checks are sampled. |
 | [Toy-game solvers](docs/phase2-solvers.md) | Maximum matched-iteration exploitability disagreement with OpenSpiel: 1.39e-16 ante chips/hand on the configured Kuhn and Leduc runs. |
 | [Compact sampled representation](docs/compact-sampled.md) | Harder known game's median exploitability: 2.390% of the initial pot, exceeding the fixed 1% target. This candidate failed its accuracy test. |
+| [Full expected river updates](docs/medium-dry-full-expectation-result.md) | On the already known medium/dry spot at 10m charged work, exact restricted-game exploitability was 0.6700% of the initial pot versus 3.5656% for the fixed B4 control median. The frozen two-known-spot rule passed; generalization and full-game strength remain untested. |
 | [Duplicate-deal evaluation](docs/phase4-evaluation.md) | 36,000 simulated hands, 1,000 independent deck clusters, and no positive advantage confirmed across six opponents by the primary familywise test. Its low power leaves uncertainty. |
 
 Exploitability measures vulnerability to a best response in the specified game;

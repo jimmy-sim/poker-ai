@@ -125,14 +125,16 @@ not a record of completed practice.
 ## Where the project stands
 
 **Current as of November 23, 2026:** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
-completed its one prospectively fixed batch-eight versus batch-four comparison
-on two known river spots. The [result](medium-dry-b8-updates-result.md) is
-**negative**: final medium/dry B8 median/worst exploitability
+history-merged its one prospectively fixed batch-eight versus batch-four
+comparison on two known river spots. The [result](medium-dry-b8-updates-result.md)
+is **negative**: final medium/dry B8 median/worst exploitability
 0.036102/0.042155 initial pots misses the unchanged 0.01/0.025 gates; one
-paired seed improves and two worsen. The low/wet gate passes. Both own
-policies were published before pinned comparison-only reference checks. Final
-report-head checks passed; PR review and merge remain pending. No default changed. PR
-#102's conservative compute gate rejected
+paired seed improves and two worsen. The low/wet gate passes. Own policies
+were published before pinned comparison-only checks, and all final local and
+hosted gates passed. No default changed. The next
+[prospective full-expectation question](medium-dry-full-expectation.md) has
+an isolated adapter with passing exact-source base, optional and hosted checks,
+but no new candidate outcome yet. PR #102's conservative compute gate rejected
 its longer study, so its poker-strength effect remains inconclusive. Earlier
 status paragraphs below preserve the sequence of prior investigations.
 
@@ -7828,10 +7830,6 @@ running the bounded comparison. These are new card/range inputs on known
 betting templates, not unseen betting games. Codex assisted; human hands-on
 time was not recorded.
 
-
-
-
-
 The [final qualification record](../results/validated-sharing-count-gate/final-checks/manifest.json)
 now preserves four clean local roles and both official hosted jobs for the
 same report tree. Both base roles passed 5,639 fast tests; optional Python
@@ -8974,6 +8972,158 @@ The negative scientific conclusion stands. **Next decision:** publish the
 receipt, conduct a solo diff/evidence review and history-preserving merge if
 eligible; then plan a distinct river-strength question under a new prospective
 contract. Codex assisted; human hands-on time was not recorded.
+
+**November 23 B8 closure and full-expectation plan.** [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103)
+history-merged after the receipt-head hosted CI passed both Python jobs.
+The scientific finding stays negative. **Question:** could the remaining
+medium/dry river weakness reflect noisy sampled passes rather than an
+information-key collision or simply the B4/B8 batch choice? The
+[prospective next protocol](medium-dry-full-expectation.md) fixes complete
+expected passes with the **same signed linear update** and matched charged
+node work on the two known spots. **Example:** a full pass evaluates every
+chance and opponent branch under a frozen policy, whereas a B4 pass samples
+one trajectory through those branches; full passes cost more work per update.
+The existing [earlier full-tree controls](river-fixed-work.md) used CFR+ on
+different games and did not answer this matched-work question. This plan
+fixes a single deterministic candidate path per spot, all three immutable
+B4 control seeds, absolute and contrast gates, profile, strict compute cap
+and publication order before outcomes. **Next decision:** publish the plan,
+qualify an isolated adapter, then let its forecast decide whether 10m learning
+is admitted. No candidate result exists. Codex assisted; human hands-on
+time was not recorded.
+
+**November 23 isolated full-expectation adapter.** The
+[prospective contract](medium-dry-full-expectation.md) was published before
+this implementation. A new source module drives complete expected passes
+through the existing signed-linear updater without changing historical files.
+It also saves own policy/mass snapshots, replays them, computes the frozen
+forecast, checks reference scalars only after own publication, and reports
+the fixed decision rows. **Example:** a tiny game's random chance and
+opponent branches can be enumerated; the weighted mean of every external
+sample matches the full expected update for both players before adaptive
+training. A second test checks one signed-linear update after the exact warm
+start. Sixteen focused tests, Ruff and strict mypy pass. Initial lint and
+formatting failures were corrected and retained in ignored local logs.
+**Next decision:** finish exact-source qualification and hosted CI before
+any real spot trajectory; then let the fixed profile and admission decide
+whether a longer study is allowed. These tests show software identities,
+not improved poker play. Codex assisted; human hands-on time was not recorded.
+
+**November 23 full-expectation source qualification.** The same isolated
+tested source `fdcc438` passed local base Python 3.11/3.12 (5,771 tests
+each), optional 3.11/3.12 (2,597 and 2,595 tests, with two expected 3.12
+skips), all-file hooks and both hosted jobs. The
+[source receipt](../results/medium-dry-full-expectation/source-checks/manifest.json)
+retains exact source, runtime, historical-pin and license checks along with
+the corrected earlier focused lint/format and hook PATH failures. **Example:**
+the independent tiny-game enumeration shows why one full pass can replace a
+random trajectory with its conditional mean, but the local and hosted checks
+only establish the implementation's identities and reproducibility; they do
+not show a stronger river policy. **Next decision:** publish and verify every
+source receipt byte, then run one fictional proof before the fixed profile
+and separate compute admission. Codex assisted; human hands-on time was not
+recorded.
+
+**November 23 fictional full-pass proof.** After every published source
+receipt file matched GitHub and the offline source gate passed, one capped
+run on a fictional signal game saved and replayed six policies at three work
+crossings in 0.366 seconds, below its 180-second cap. The
+[proof receipt](../results/medium-dry-full-expectation/own-proof/manifest.json)
+includes the exact policies and logs. **Example:** a work label is crossed
+only after both players' complete expected passes finish; recording the
+actual 726 node visits prevents treating a partial player update as a
+checkpoint. This proves capture/replay mechanics in a tiny game, not river
+decision strength. **Next decision:** publish and verify the proof, then
+profile the two known river spots three times each under the fixed compute
+rule. Codex assisted; human hands-on time was not recorded.
+
+**November 23 full-pass compute profile.** The one registered profile ran
+each of the two known river spots three times to its first complete 1m-work
+crossing, with one serial worker. All six runs completed in 13.86 seconds
+and are in the [profile receipt](../results/medium-dry-full-expectation/profile/manifest.json).
+**Example:** the slowest scaled low/wet run estimated 10.98 seconds to 10m
+work, while the slowest medium/dry run estimated 34.35 seconds; adding those
+maxima gives `T=45.33`. The predeclared safety expression yields 1381.30
+seconds, below 7200. A profile measures cost and saved policy mechanics,
+not whether river decisions improve. **Next decision:** publish and verify
+every profile byte, then run a separate data-only admission before any 10m
+study. Codex assisted; human hands-on time was not recorded.
+
+**November 23 separate full-pass admission.** A data-only check read the
+published six-path profile after all 47 profile files matched GitHub. It
+recomputed the same `T=45.325073510810725` seconds and strict bound
+`1381.300294043243<7200` from the frozen maximum-per-spot rule, so the
+[admission receipt](../results/medium-dry-full-expectation/admission/manifest.json)
+says **admitted**. **Example:** the calculation uses the slowest of three
+repeats for each spot rather than choosing the favorable timing; this keeps
+the run cap separate from a claim about playing strength. No new policy or
+reference value entered this step. **Next decision:** publish and verify
+the admission, then run the single allowed two-path 10m own comparison and
+publish its policies before any reference audit. Codex assisted; human
+hands-on time was not recorded.
+
+**November 23 admitted full-pass own study.** After separate admission was
+published and all ten of its files matched GitHub, the one allowed serial
+run trained a full-expected-pass policy on each of the two known spots to
+10m charged node work. It completed in 19.44 outer seconds under the 7200
+cap, retained all six policy snapshots per spot, and did not use a reference
+solver or the B4 controls. The [own-policy archive](../results/medium-dry-full-expectation/own/manifest.json)
+records final own exploitability of 0.0194245 chips on low/wet and 0.241207
+chips on medium/dry, with complete positive-average coverage and zero recall
+violations. **Example:** a complete target pass visits the whole finite tree,
+so 10m node visits correspond to only 235 target-pair updates on the larger
+medium/dry tree; the protocol compares charged work, not update count.
+These are own, unaudited values on known games. **Next decision:** publish
+and verify the complete own policies before any OpenSpiel scalar audit or
+fixed B4 comparison. Codex assisted; human hands-on time was not recorded.
+
+**November 23 independent full-pass scalar audit.** Only after the complete
+own policies were public and all 34 own files matched GitHub did the pinned
+OpenSpiel 2.0.2 reference check run. Its
+[audit](../results/medium-dry-full-expectation/native/manifest.json) compared
+value, best reply and exploitability scalars for all 12 saved candidate
+policies and found at most `5.684e-14` chips of difference, below the frozen
+`1e-9` tolerance. **Example:** two implementations agreeing on a saved
+policy's best-reply gain helps rule out a scoring mistake; it does not by
+itself show that the policy beats the B4 control. No reference strategy was
+used to train the candidate. **Next decision:** publish and verify the audit,
+then run the one fixed report with all three immutable B4 seeds and the
+prespecified decision rows. Codex assisted; human hands-on time was not
+recorded.
+
+**November 23 fixed full-expectation result.** The one preregistered
+[report](medium-dry-full-expectation-result.md) replayed all 48 saved
+candidate/control cases and an independent grid check passed. At the fixed
+10m work endpoint, medium/dry restricted-game exploitability fell from the
+three B4 controls' 3.513%–3.954% initial pots to 0.670% for the one
+deterministic full-pass candidate; low/wet also improved. The frozen rule
+classifies this two-known-spot result **positive**, while the candidate was
+worse at the earlier medium/dry 100k and 1m checkpoints. **Example:** on
+the fixed `8c 9h` river row, the saved best-reply contribution falls from
+0.021797 chips for B4 seed 20261371 to 0.000211 chips for the candidate.
+The two policies face different saved opponents, so this does not prove
+that copying a local action probability causes the gain. The three paired
+contrasts reuse one candidate and do not give a population confidence
+interval. **Next decision:** publish and verify the full report, qualify
+its exact head locally and in hosted CI, and review/merge if eligible.
+Then prospectively test whether the improvement extends to structurally
+selected new spots without tuning on their outcomes. No default promotion
+or full-game strength claim follows. Codex assisted; human hands-on time
+was not recorded.
+
+**November 23 final full-expectation qualification.** The exact positive
+report commit passed all four local base/optional Python roles, all-file
+hooks and both hosted jobs. Base 3.11/3.12 each passed 5,771 tests;
+optional 3.11 passed 2,597 and optional 3.12 passed 2,595 with two expected
+skips. The [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+binds report bytes, historical source pins and optional reference license
+to those checks. **Example:** a passing software gate confirms the frozen
+report can be validated on both runtimes; the favorable known-game outcome
+still needs new prospective spots before broader strength claims. **Next
+decision:** publish and verify the receipt, finish the solo review and
+history-preserving merge if eligible, then register one distinct broader
+spot test without reusing inspected cases as unseen. Codex assisted; human
+hands-on time was not recorded.
 
 ### November 18: locate current CPU in receipt prerequisites
 

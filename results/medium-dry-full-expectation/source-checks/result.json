@@ -1,0 +1,82 @@
+{
+  "focused_tests": "16 passed on base311 and optional311/optional312",
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    }
+  ],
+  "hosted_run": 45166698139,
+  "local_roles": [
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 786.9168425839744,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "fdcc438029752ec8e5183bce9146b73fa3894d05",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 763.7144502500014,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "fdcc438029752ec8e5183bce9146b73fa3894d05",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 492.3708546250127,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "fdcc438029752ec8e5183bce9146b73fa3894d05",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "elapsed_seconds": 429.56219683398376,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "fdcc438029752ec8e5183bce9146b73fa3894d05",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "source_fingerprint": "152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "retained_failures": [
+    "focused.log.gz",
+    "focused-2.log.gz",
+    "first-commit-hook-failure.json"
+  ],
+  "scientific_measurements_started": false,
+  "source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+  "status": "source_qualified",
+  "tested_head": "fdcc438029752ec8e5183bce9146b73fa3894d05"
+}

@@ -72,10 +72,42 @@ compute admission, and the single six-path 10m study completed within cap.
 Own policies were published before the comparison-only OpenSpiel audit, which
 passed all 54 saved policies within `6.395e-14` chips maximum error.
 Final report-head local base/optional, hooks and both hosted jobs passed;
-PR solo review and merge remain pending.
+[PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) was history-merged
+as `79db2fb`. Post-merge main CI passed both Python versions.
 Neither spot is unseen; no default was promoted. The next distinct question
-must address the observed widespread river best-reply gains under a new
-prospective contract, not retry B8 for a favorable outcome.
+tests [full expected updates at matched work](medium-dry-full-expectation.md)
+under a new prospective contract. It asks whether eliminating trajectory
+sampling noise, while retaining signed linear update rules, improves known
+medium/dry river decisions. Its isolated adapter passed focused tiny-game
+math and replay checks, exact-source base and optional local suites, hooks,
+and [both hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45166698139).
+The [source-check archive](../results/medium-dry-full-expectation/source-checks/manifest.json)
+retains those checks and earlier corrected failures. One
+[fictional proof](../results/medium-dry-full-expectation/own-proof/manifest.json)
+passed capture and replay within its cap; the fixed real-game profile and
+compute admission are next. The one fixed six-path
+[profile](../results/medium-dry-full-expectation/profile/manifest.json)
+completed under its cap and forecasts `1381.300294 < 7200` seconds under the
+registered conservative rule. The separate data-only
+[admission](../results/medium-dry-full-expectation/admission/manifest.json)
+recomputed that unchanged bound and passed; the one 10m own study is next
+after admission publication. The single admitted
+[own study](../results/medium-dry-full-expectation/own/manifest.json)
+completed both known spots with full saved-average coverage and zero recall
+violations. The pinned comparison-only
+[scalar audit](../results/medium-dry-full-expectation/native/manifest.json)
+matched all 12 saved candidate policies within `5.684e-14` chips. The fixed
+[B4 comparison and decision report](medium-dry-full-expectation-result.md)
+classifies the two-known-spot result **positive** under its frozen rule:
+medium/dry final exploitability 0.006700 initial pots versus the B4 control
+median 0.035656, while low/wet also improves. The candidate was worse at
+earlier medium/dry work labels. Final report-head qualification and review
+passed all four local roles, all-file hooks and both hosted jobs; the
+[final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+binds those checks. Review and merge remain; no default changed or unseen-game
+claim follows. The next distinct
+question should test prospectively selected additional spots after this
+milestone closes.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

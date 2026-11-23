@@ -57,11 +57,12 @@ core, subagents or scheduled tasks. Existing restrictions on real-money
 integration and default promotion also remain in force. Finish independent
 work and present a concrete proposal if one of those permissions is needed.
 
-**Current order (November 20, 2026):** PR #98's failed acceptance gates remain
-negative; PR #99's 100m compute admission rejected the longer run; PR #100's
-clipped update worsened all paired seeds. The distinct
-[B1 update-frequency comparison](medium-dry-b1-updates-result.md) also has a
-**negative** fixed 10m result on the two known spots. PRs #100 and #101 were
-history-merged after their required checks. Verify post-merge CI, then assess
-the distinct [average-readout question](river-uniform-readout-spots.md) without
-repeating the failed B1 test. No default has changed.
+**Current order (November 23, 2026):** PR #98's medium/dry acceptance remains
+failed; PR #99's 100m forecast rejected longer training; PRs #100/#101/#103
+found negative clipped, batch-one and batch-eight results on the two known
+spots. PR #102's broader average-readout study stopped at its failed compute
+admission. All their failure evidence remains. PR #103 history-merged after
+final checks; post-merge main CI is pending at this update. The distinct
+[full-expectation matched-work protocol](medium-dry-full-expectation.md)
+tests whether complete expected signed passes improve the known river
+decisions under the existing hard cap. No new result or default change exists.

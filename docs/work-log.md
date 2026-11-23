@@ -13,6 +13,155 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #103 merge and next prospective question
+
+- [PR #103](https://github.com/jimmy-sim/poker-ai/pull/103) history-merged as
+  `79db2fb59f7357f1042d395b9f05f8e5d89ae7c2` after final receipt-head
+  [CI 45152979600](https://github.com/jimmy-sim/poker-ai/actions/runs/45152979600)
+  passed Python 3.11/3.12 and the solo review found no material source or
+  evidence issue. The **negative** B8 scientific result and all checkpoint
+  commits remain intact; no default changed. Post-merge main CI
+  [45156767169](https://github.com/jimmy-sim/poker-ai/actions/runs/45156767169)
+  is pending at this entry. The [new prospective full-expectation question](medium-dry-full-expectation.md)
+  asks whether removing trajectory sampling, with signed linear rules and
+  matched charged work, improves the same two known spots against immutable
+  B4 control. It fixes one deterministic path per spot, three control seeds,
+  work, gates, profile, strict forecast and stop rule before new outcomes.
+  No candidate policy or score has been measured. Codex assisted; human
+  hands-on time was not recorded.
+- **Isolated full-pass implementation, local focused checks:** new
+  `scripts/medium_dry_full/` and thin study command use the existing
+  `ControlledTrainer` full expectation under unchanged signed/linear rules.
+  Capture/replay, strict source/archive guards, six-path forecast, staged
+  publication checks, comparison-only native scalar audit and fixed
+  candidate/control decision report are isolated from historical sources.
+  Sixteen focused tests passed, including enumerated tiny-game conditional
+  means for both players, adaptive signed-linear update, RNG nonconsumption,
+  first work crossings, replay, failure retention, fixed grid/forecast/
+  classification and known-game information-key identity. Ruff lint/format
+  and strict mypy passed on all 10 new source/test files. The first focused
+  lint/format iterations failed and their logs remain under ignored
+  `results/runs/medium-dry-full-source-20261123/`; corrected checks passed.
+  Full exact-source local/optional/hooks/hosted qualification is pending,
+  as are all scientific stages. No candidate real-game policy or score exists.
+  Codex assisted; human hands-on time was not recorded.
+- **Exact-source qualification and tested-source publication:** prospective
+  protocol-head [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45157713793)
+  passed both Python jobs. The isolated tested source `fdcc438` with
+  fingerprint `a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab`
+  passed base Python 3.11 and 3.12, each with 5,771 tests, 73 skips and
+  150 slow deselections, plus Ruff, format, strict mypy and exact pre/post
+  source, historical-pin, runtime and lock guards. Optional 3.11 passed
+  2,597 tests; optional 3.12 passed 2,595 with two expected skips; both
+  checked pinned OpenSpiel 2.0.2 and its license. Sixteen focused new tests
+  passed on base and both optional runtimes. All-file hooks and tested-source
+  [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45166698139)
+  passed both Python jobs. The [source-check archive](../results/medium-dry-full-expectation/source-checks/manifest.json)
+  keeps exact logs, receipts and initial corrected focused-check and hook
+  PATH failures. Post-merge PR #103 main
+  [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45156767169)
+  passed both jobs. No full-expectation proof, real policy, score or reference
+  audit has run. Next: publish and byte-verify the source receipt before the
+  one fictional proof. Codex assisted; human hands-on time was not recorded.
+- **One fictional full-pass proof:** all 41 published source-check blobs
+  matched GitHub's committed tree, and the offline source archive guard passed.
+  At clean receipt head `bcc932e`, one capped proof on the fictional signal
+  game saved and replayed six current/linear-average snapshots across three
+  first work crossings, finishing at 726 charged node visits in 0.366 outer
+  seconds under the fixed 180-second cap. The [proof archive](../results/medium-dry-full-expectation/own-proof/manifest.json)
+  retains snapshots, cumulative masses, events, source verification, launch
+  command, environment, PID and logs. This is a software proof, not a poker
+  result. Next: publish and GitHub-byte-verify the proof before the one fixed
+  six-path real-game profile. Codex assisted; human hands-on time was not
+  recorded.
+- **Fixed six-path full-expectation profile:** all 22 published fictional-proof
+  blobs matched GitHub and both offline source/proof gates passed. One serial
+  worker completed the preregistered two known spots × three repeats at first
+  1m charged-work crossings in 13.862620 seconds (<900); all paths, policies,
+  scores and work counts are retained in the [raw profile](../results/medium-dry-full-expectation/profile/manifest.json).
+  Low/wet finished at 1,000,620 work and medium/dry at 1,022,544 work in each
+  repeat. Maximum observed worker RSS was 181,911,552 bytes (cumulative
+  process peak). The required maximum scaled whole-path estimates were
+  10.979192 seconds for low/wet and 34.345882 for medium/dry, so
+  `T=45.325074` and `2*(2*T+600)=1381.300294<7200` seconds. This is a
+  profile-derived forecast, **not** separate admission or a 10m poker result.
+  Next: publish and byte-verify the complete profile, then recompute the
+  data-only gate. Codex assisted; human hands-on time was not recorded.
+- **Separate conservative admission:** all 47 published profile blobs matched
+  GitHub, and the offline source/proof/profile guards passed. A data-only
+  [decision](../results/medium-dry-full-expectation/admission/manifest.json)
+  recomputed the frozen profile's `T=45.325073510810725` seconds and strict
+  `2*(2*T+600)=1381.300294043243<7200`, so the one two-path 10m own run is
+  **admitted**. No new policy was trained and no reference output used in this
+  step. Next: publish and GitHub-byte-verify the admission before launching
+  the one capped own study. Codex assisted; human hands-on time was not
+  recorded.
+
+- **One admitted own full-pass study:** after all 10 admission files matched
+  GitHub and the offline source/proof/profile/admission guards passed, the
+  single fixed two-path 10m study completed from clean admission head
+  `1507453`. The outer driver took 19.435177 seconds (<7200) and did not
+  need its 120-second failure-save reserve. Low/wet crossed 10m at
+  10,001,610 charged nodes and medium/dry at 10,012,410. Each path saved
+  six current/linear-average policies across three work labels, cumulative
+  mass, exact own scores and RNG state; both have zero structural recall
+  violations and whole positive-average coverage 1.0. The final own linear
+  average exploitability is 0.0194244965 chips (low/wet) and 0.2412065218
+  chips (medium/dry). Maximum recorded worker RSS was 181,649,408 bytes.
+  The [own archive](../results/medium-dry-full-expectation/own/manifest.json)
+  retains complete/partial markers, source/environment/worker logs and all
+  policies. No OpenSpiel reference or B4 comparison entered training or this
+  publication. These own scores require the pinned independent audit and
+  fixed report before a strength classification. Next: publish and
+  GitHub-byte-verify every own byte before the comparison-only audit. Codex
+  assisted; human hands-on time was not recorded.
+- **Pinned comparison-only scalar audit:** all 34 published own-policy files
+  matched GitHub and the offline source/own guards passed before OpenSpiel was
+  loaded. The fixed OpenSpiel 2.0.2 Apache-2.0
+  [audit](../results/medium-dry-full-expectation/native/manifest.json)
+  checked every candidate saved value, best reply and exploitability scalar
+  across 12 policies in 6.548546 seconds (<900); maximum error was
+  `5.684341886080802e-14` chips (<`1e-9`). Installed license hash matched
+  `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+  No reference strategy entered training. Next: publish and byte-verify this
+  audit, then replay the fixed candidate/B4 control report and prespecified
+  river decisions. Codex assisted; human hands-on time was not recorded.
+- **Fixed full-expectation strength report:** after all 10 published native
+  files matched GitHub, the one frozen report replayed 48 candidate/control
+  work/readout cases and an independent data-only grid/arithmetic check
+  passed. The [report](medium-dry-full-expectation-result.md) and
+  [raw evidence](../results/medium-dry-full-expectation/report/manifest.json)
+  classify the two-known-spot result **positive** under the registered rule:
+  medium/dry candidate 0.006700181 initial pots versus B4 seed scores
+  0.035655787/0.039541661/0.035132481, with candidate-minus-control
+  differences −0.028955606/−0.032841480/−0.028432300; low/wet candidate
+  0.000059952 versus 0.000945518/0.000909274/0.001146135, with differences
+  −0.000885566/−0.000849322/−0.001086183. Whole coverage 1.0, zero
+  recall violations, and pinned scalar audit error below tolerance. At
+  medium/dry 100k and 1m, the candidate was worse than the B4 median;
+  only the fixed 10m endpoint passes. The three contrasts share one
+  deterministic candidate, and both games are known; no population or
+  full-game claim or default promotion follows. Fixed turn/river rows and
+  a Terminal inspection command are in the report. Next: publish/verify
+  the report, complete exact report-head local/optional/hooks and hosted
+  qualification, then solo review and history-preserving merge if eligible.
+  Codex assisted; human hands-on time was not recorded.
+
+- **Final report-head qualification:** exact positive-report head `715637b`
+  passed clean pre/post historical/new-source, protocol, published-report,
+  lock/runtime and optional reference-license guards. Base Python 3.11 and
+  3.12 each passed 5,771 tests, with 73 skips and 150 slow deselections,
+  plus Ruff, formatting and strict mypy. Optional 3.11 passed 2,597;
+  optional 3.12 passed 2,595 with two expected skips. All-file hooks and
+  [hosted report-head CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45174852553)
+  passed on both versions. The [final receipt](../results/medium-dry-full-expectation/final-checks/manifest.json)
+  binds the exact logs and metadata; earlier corrected source-check failures
+  remain in their separate archive. Scientific classification remains
+  **positive on two known games**, with no default change. Next: publish
+  and byte-verify the receipt, check receipt-head hosted CI, complete solo
+  review and history-preserving merge if eligible. Codex assisted; human
+  hands-on time was not recorded.
+
 ## 2026-11-23 — PR #103 fixed B8 result
 
 - The one preregistered [paired report](medium-dry-b8-updates-result.md) replayed

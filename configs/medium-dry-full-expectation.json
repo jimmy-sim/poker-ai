@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "question": "At matched charged node work on two known restricted river spots, does replacing B4 external-sampling passes with full-tree expected passes under the same signed linear update reduce medium/dry exploitability without degrading low/wet?",
+  "spot_selection": "Exactly the already inspected new_low_wet_ip and new_medium_dry_oop from the frozen PR #98 cohort; medium/dry is the known failure and low/wet is the known nondegradation check. No spot is unseen or selected after new candidate outcomes.",
+  "known_spots": ["new_low_wet_ip", "new_medium_dry_oop"],
+  "representation": "q8_turn_exact_river",
+  "control": {
+    "arm": "signed_linear",
+    "source_commit": "c996c0abd10830a0629fec78ec2a91cdc7859bfb",
+    "own_commit": "ef3ac5d03b87659fefc84206521412a289821786",
+    "own_manifest_sha256": "82ec824335129f41316d88103c8d07ce5bf8d496ad42e2b98e44daf84fe9333d",
+    "native_commit": "804f35dd57c7b01f9d517ef2cf2ee90c957e4b81",
+    "native_manifest_sha256": "4a2d2e5b143872e2c168a7dd8f5c327227faab7b5f1ca175327417fedf375f0a",
+    "seeds": [20261371, 20261372, 20261373],
+    "traversal": "IID external sampling, batch size four",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "average_weight": "linear"
+  },
+  "candidate": {
+    "arm": "signed_full_expectation",
+    "paths": 2,
+    "traversal": "complete expected_pass for target 0 then target 1",
+    "average_phase": "opponent_pass",
+    "average_mass": "chance_own_reach",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "average_weight": "linear",
+    "warm_start": "same exact simultaneous uniform expectation charged as two complete tree traversals",
+    "rng": "explicit PCG64(0) object required by ControlledTrainer; full traversal must consume zero random draws and its state must remain unchanged",
+    "stochastic_replicates": 0
+  },
+  "node_work_labels": [100000, 1000000, 10000000],
+  "crossing": "first complete target-0 then target-1 iteration at or above each charged node-work label; every full pass charges all tree nodes including terminal/chance/zero-reach; retain overshoot",
+  "primary_readout": "linear_average",
+  "other_readout": "current",
+  "primary_metric": "exact restricted-game NashConv/2 exploitability divided by initial pot, lower is better",
+  "contrast": "one deterministic candidate score minus each of the three immutable B4 seed scores at every checkpoint; report all three contrasts and their median, explicitly dependent because candidate is shared",
+  "absolute_gates": {
+    "median_fraction_max": 0.01,
+    "worst_fraction_max": 0.025,
+    "minimum_positive_average_coverage": 0.95,
+    "maximum_recall_violations": 0
+  },
+  "decision": {
+    "positive": "both deterministic candidate spot scores pass unchanged absolute gates; final medium/dry candidate minus B4 control median <= -0.001 initial pots; final low/wet candidate minus B4 control median <= +0.001",
+    "negative": "candidate fails any absolute gate, final medium/dry candidate minus B4 control median >= +0.001, or final low/wet candidate minus B4 control median > +0.001",
+    "inconclusive": "other complete outcome; any failed source, compute, numerical or publication gate stops with retained evidence"
+  },
+  "diagnostics": "both-seat additive saved-prefix best-response gain at prespecified medium/dry exact turn rows 2443/1596/14 and river rows 1806/640, plus whole turn/river totals, all checkpoints; report board/hole/actions/probabilities/reach/conditional alternative-action values with fixed saved opponent and optimal reply continuation assumptions; diagnostic only",
+  "other_metrics": [
+    "positive-average uniform-reach coverage",
+    "post-initial river coverage",
+    "initial-only river rows",
+    "structural recall violations",
+    "information rows and actual trainable table bytes",
+    "charged work and overshoot",
+    "whole-path wall seconds and peak worker resident bytes"
+  ],
+  "profile": {
+    "candidate_paths": 2,
+    "path_work_label": 1000000,
+    "repeats": 3,
+    "paths": 6,
+    "whole_cap_seconds": 900,
+    "workers": 1,
+    "forecast": "for each game take the maximum of three complete construction-through-replay whole times multiplied by 10m/actual final charged work; T is the sum of the two maxima for the serial candidate run; require strict 2*(2*T+600)<7200"
+  },
+  "budgets_seconds": {
+    "fictional_own_proof": 180,
+    "whole_own": 7200,
+    "failure_save": 120,
+    "native_audit": 900
+  },
+  "tolerance_chips": 1e-09,
+  "reference": "pinned OpenSpiel 2.0.2 Apache-2.0 comparison-only scalar audit after complete candidate own policies are published and GitHub-byte-verified; immutable B4 prior audit reused; no reference strategy enters training",
+  "publication": "publish this protocol before any candidate proof/profile/score; isolated tested source with exact-source base/optional/hooks/hosted checks; publish and byte-verify fictional proof, all six 1m profiles and separate conservative admission before one two-path own run; publish own raw policies before reference audit; final report-head checks, solo review and history-preserving merge",
+  "stop_rule": "one deterministic full-expectation candidate path per known spot; retain complete, partial and failed results; no B8 retry, new seeds, extra candidate path, changed spot, budget extension, threshold change or default promotion from this experiment"
+}

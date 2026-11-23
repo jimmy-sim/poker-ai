@@ -1,0 +1,49 @@
+"""Independently check the frozen 48-case report grid and final decision arithmetic."""
+import json
+import math
+from pathlib import Path
+from statistics import median
+
+folder = Path(__file__).resolve().parent
+report = json.loads((folder / "raw/report.json").read_bytes())
+plan = json.loads((folder.parents[2] / "configs/medium-dry-full-expectation.json").read_bytes())
+cases = report["cases"]
+games = tuple(plan["known_spots"])
+seeds = tuple(plan["control"]["seeds"])
+works = tuple(plan["node_work_labels"])
+readouts = ("current", "linear_average")
+assert report["status"] == "completed" and len(cases) == 48
+assert len({(r["game"], r["arm"], r["seed"], r["work_label"], r["readout"]) for r in cases}) == 48
+assert report["native_maximum_error_chips"] <= plan["tolerance_chips"]
+for game in games:
+    for work in works:
+        for readout in readouts:
+            rows = [r for r in cases if r["game"] == game and r["work_label"] == work and r["readout"] == readout]
+            assert len(rows) == 4
+            assert sorted(r["seed"] for r in rows if r["arm"] == plan["control"]["arm"]) == list(seeds)
+            assert sum(r["arm"] == plan["candidate"]["arm"] and r["seed"] is None for r in rows) == 1
+            for row in rows:
+                assert row["actual_node_work"] >= work and row["recall_violations"] == 0
+                if readout == "linear_average":
+                    assert row["whole_coverage"] >= plan["absolute_gates"]["minimum_positive_average_coverage"]
+                    assert math.isclose(row["turn_contribution_chips"] + row["river_contribution_chips"], row["exploitability_chips"], abs_tol=1e-9)
+                else:
+                    assert row["whole_coverage"] is None
+final = {}
+for game in games:
+    rows = [r for r in cases if r["game"] == game and r["work_label"] == works[-1] and r["readout"] == "linear_average"]
+    candidate = next(r for r in rows if r["arm"] == plan["candidate"]["arm"])
+    controls = sorted((r for r in rows if r["arm"] == plan["control"]["arm"]), key=lambda r: r["seed"])
+    value = candidate["exploitability_fraction_initial_pot"]
+    control = [r["exploitability_fraction_initial_pot"] for r in controls]
+    contrasts = [value - x for x in control]
+    published = report["primary"]["by_game"][game]
+    assert math.isclose(value, published["candidate"], abs_tol=1e-12)
+    assert all(math.isclose(a, b, abs_tol=1e-12) for a,b in zip(contrasts,published["candidate_minus_each_control"],strict=True))
+    assert math.isclose(median(control), published["control_median"], abs_tol=1e-12)
+    final[game] = {"candidate": value, "control_by_seed": control, "candidate_minus_each_control": contrasts, "contrast_median": median(contrasts), "absolute_pass": value <= plan["absolute_gates"]["median_fraction_max"] and value <= plan["absolute_gates"]["worst_fraction_max"] and candidate["whole_coverage"] >= plan["absolute_gates"]["minimum_positive_average_coverage"] and candidate["recall_violations"] == 0}
+medium, low = final["new_medium_dry_oop"], final["new_low_wet_ip"]
+positive = medium["absolute_pass"] and low["absolute_pass"] and medium["contrast_median"] <= -0.001 and low["contrast_median"] <= 0.001
+assert positive and report["primary"]["classification"] == "positive"
+(folder / "raw/independent-check.json").write_text(json.dumps({"status":"passed","case_count":len(cases),"classification":"positive","final":final,"native_maximum_error_chips":report["native_maximum_error_chips"]},sort_keys=True,indent=2)+"\n")
+print(json.dumps({"status":"passed","case_count":len(cases),"classification":"positive","medium_contrast_median":medium["contrast_median"],"low_contrast_median":low["contrast_median"]},sort_keys=True))
