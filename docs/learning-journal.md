@@ -9274,6 +9274,81 @@ review and history-preserving merge if eligible, then register a distinct
 prospective question on newly selected inputs. Codex assisted; human
 hands-on time and personal learning were not reported.
 
+**November 23 PR #105 closure and next question.** The negative
+[two-input result](river-full-broader-spots-result.md) passed final local
+and hosted qualification and [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105)
+was history-merged. The first receipt-head Python 3.11 CI canceled at its
+unchanged limit; the complete log was retained, and a targeted same-SHA
+operational requalification passed without repeating poker measurements.
+**Question:** does the new medium/dry candidate's larger turn loss occur in
+information rows that collide, or does the saved trajectory point elsewhere?
+The [prospective read-only plan](river-turn-loss-diagnosis.md) fixes the 12
+existing policies, 24 traces, ranking, checks and 900-second cap. **Example:**
+PR #98's different known medium/dry input had no turn collisions, so a
+turn-heavy loss cannot be assumed to require a finer turn key. **Next
+decision:** publish this plan before measuring candidate-ranked rows; keep
+the evaluated inputs known and any new training separately registered.
+Codex assisted; human hands-on time and personal learning were not reported.
+
+**November 23 isolated read-only diagnosis source.** New
+[PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) source reads only
+published saved policies and pins their source and archive hashes. It ranks
+candidate exact turn rows first, then plans to show the same rows for all
+three B4 controls and earlier work checkpoints. **Example:** the fictional
+signal-game test confirms that both seats' additive best-reply gains divided
+by two equal the independent own exploitability score; this validates the
+accounting method without looking at a new real decision. Five focused tests,
+Ruff, formatting and strict mypy passed. **Next decision:** publish tested
+source and complete exact-source local/optional/hosted qualification before
+one fictional proof and the single capped saved-policy diagnosis. Codex
+assisted; human hands-on time and personal learning were not reported.
+
+**November 23 source qualification.** The new diagnosis code passed four
+exact-source local lanes and both hosted Python lanes before it could read
+the saved real-game policies. The optional lanes covered the pinned solver
+license and JIT dependency; the [source receipt](../results/river-turn-loss/source-checks/manifest.json)
+keeps the logs. **Example:** the fictional test can reconcile two players'
+best-reply gains without saying anything about the medium/dry turn collision
+count. The scientific answer remains pending until the separately capped
+saved-policy run. Codex assisted; no human time or personal learning was
+reported.
+
+**November 23 fictional proof.** After publishing and checking the source
+receipt, one 180-second-capped toy run used four exact signal-game decisions.
+Both players' best-reply gain divided by two matched the independent 0.25-chip
+toy score exactly; the [proof archive](../results/river-turn-loss/proof/manifest.json)
+retains the launcher and raw values. This supports the diagnostic accounting
+and collision inventory code. It does not reveal whether the actual medium/dry
+turn decisions collide. **Next decision:** publish and verify this proof
+before the one fixed saved-policy run. Codex assisted; no human time or
+personal learning was reported.
+
+**November 23 known medium/dry turn diagnosis.** The
+[single fixed read-only report](river-turn-loss-diagnosis-result.md) found
+that 92.8173% of the full candidate's final turn best-reply gain lies on
+exact decisions that share an abstract key. **Example:** Jh 9h and Qd Qh
+on As Jc 5d 3h face the same call/fold choice and receive the same saved
+probabilities, though the fixed-opponent reply values favor different
+actions. The Jh 9h row alone accounts for 0.746330 chips of additive loss.
+The three B4 controls also mostly fold there, and their reaches and gains
+differ, so a finer turn key is a hypothesis rather than a measured fix.
+All 12 saved policies and 24 responding-seat traces completed within the
+cap, with the required numerical identities and no new training. **Next
+decision:** publish and qualify this diagnosis, then prospectively test a
+turn distinction on both known and newly selected inputs if a bounded
+compute plan passes. Codex assisted; no human time or personal learning was
+reported.
+
+**November 23 final diagnosis checks.** The published report was checked
+again on both locked Python versions with the full base and optional suites,
+all-file hooks and both hosted jobs. The [final receipt](../results/river-turn-loss/final-checks/manifest.json)
+binds the logs to the exact report commit. **Example:** these checks support
+recomputing the 0.746330-chip Jh 9h loss and its shared abstract row; they
+do not turn the proposed turn distinction into a tested stronger agent.
+**Next decision:** complete review and history-preserving merge, then
+register a separate fixed-work representation comparison. Codex assisted;
+no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

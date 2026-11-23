@@ -136,7 +136,26 @@ two-input test **negative**: medium/dry fails its absolute and paired gates,
 while low/wet passes its fixed rules. Final report publication, all four local base/optional roles, hooks and
 both hosted jobs passed; the [final receipt](../results/river-full-broader/final-checks/manifest.json)
 awaits publication/verification and solo review. No default promotion or
-retry.
+retry. [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) was
+history-merged after the negative result and required checks; its first
+receipt-head Python 3.11 CI canceled at the unchanged time limit, and one
+targeted same-SHA operational requalification passed. Main post-merge CI
+was pending at this entry. The next
+[prospective saved-policy diagnosis](river-turn-loss-diagnosis.md) ranks the
+full candidate's largest turn losses and counts actual information-row
+collisions on the already evaluated, **known** medium/dry input before
+choosing another strength experiment. No new diagnostic outcome exists yet. Isolated diagnostic source and
+five focused tests passed; all four exact-source local lanes, hooks and both
+hosted jobs then passed. The source receipt is being published before the
+fictional proof; its four toy rows reconcile the both-seat gain with the
+independent toy score. The one capped, read-only known-input
+[diagnosis](river-turn-loss-diagnosis-result.md) then found 92.8173% of
+the candidate's final turn gain on collided rows, with zero river
+collisions. This flags a prospective turn-key test but does not prove a
+causal improvement or revise the broader-input negative result. Complete
+the diagnosis's final exact-report checks passed all four local lanes,
+hooks and both hosted jobs; publish its final receipt and complete review
+before choosing a distinct fixed-work strength experiment.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

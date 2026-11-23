@@ -13,6 +13,91 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #105 negative result and next diagnostic
+
+- [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as
+  `c84302b58c8ee18220d39a2d8130abae803a779a`; protocol, source,
+  admission, own-before-reference and final receipt commits are ancestors
+  of main. The [fixed two-input result](river-full-broader-spots-result.md)
+  is **negative** on the newly selected medium/dry card/range input on a
+  known public template. No default changed. Receipt-head
+  [CI 45213999919](https://github.com/jimmy-sim/poker-ai/actions/runs/45213999919)
+  first canceled Python 3.11 at the unchanged 35-minute limit at 97% of
+  `make check`; Python 3.12 passed. The complete canceled log is retained
+  under ignored `results/runs/river-full-broader-receipt-ci-20261123/`.
+  One same-SHA operational requalification of only the canceled 3.11 job
+  passed in 1,488 seconds; no scientific work, timeout or test selection was
+  changed. The post-merge main CI 45226018829 was pending at this entry.
+  Codex assisted; human hands-on time was not reported.
+
+- The [next prospective read-only diagnostic](river-turn-loss-diagnosis.md)
+  fixes the published PR #105 policies, seed/work grid, candidate-ranked
+  turn-node rule, collision accounting, numerical gates and 900-second cap
+  **before** any new node ranking or collision count. It uses the evaluated
+  medium/dry input as a known case and collects no training or new reference
+  output. The prior PR #98 known spot had zero turn collisions, so the new
+  turn-heavy loss alone is insufficient to choose a representation change.
+  Diagnostic source and measurements remain pending. Codex assisted; human
+  hands-on time and personal learning were not reported.
+
+- Isolated PR #106 read-only trace/selection code and five focused tests
+  were implemented after protocol publication. The code checks exact
+  published plan and archive bytes, the unchanged parent source fingerprint,
+  snapshot/native/report identities, additive both-seat best-reply accounting,
+  recall and duplicate-output refusal. A fictional signal-game test verifies
+  additive gain against an independently computed own score. Ruff,
+  formatting and strict mypy passed on the new files; five focused tests
+  passed. Exact-source full local/optional/hosted qualification, fictional
+  proof and real saved-policy diagnosis remain pending. No new candidate node
+  ranking or collision count has been measured. Codex assisted; human time
+  was not reported.
+
+- Exact tested-source PR #106 `4400b52a87659ec543fa3c3eaf0f8785487d80c4`
+  passed local base Python 3.11/3.12 (5,784 passed, 73 skipped, 150 slow
+  deselected each; Ruff, format, strict mypy and source guards), optional
+  3.11 (2,597 passed) and optional 3.12 (2,595 passed, two expected skips).
+  Both optional roles checked the pinned OpenSpiel 2.0.2 license and Numba
+  0.68.1. All-file hooks and [hosted CI 45228243604](https://github.com/jimmy-sim/poker-ai/actions/runs/45228243604)
+  passed on the same head. The [source-check receipt](../results/river-turn-loss/source-checks/manifest.json)
+  retains exact local and hosted logs and the earlier system-Python import
+  failure. No real saved-policy diagnosis or fictional proof had run at this
+  publication checkpoint. Main post-PR #105 CI also passed both jobs.
+  Codex assisted; human time was not reported.
+
+- The separately capped fictional PR #106 proof passed at source-receipt
+  head `49aa13b66773adb4617ffdefa122bfec0623f2c1` in 0.495 launcher
+  seconds against 180. Its four toy exact rows all collide under the coarse
+  key; both-seat additive gain/2 equals 0.25 toy chips of independent
+  exploitability, with zero accounting error. The [proof archive](../results/river-turn-loss/proof/manifest.json)
+  retains the exact command, environment, launcher state and raw proof. This
+  is a fictional math check, not a medium/dry poker result. The single saved
+  real-policy diagnosis remains pending. Codex assisted; human time unknown.
+
+- The one fixed, read-only PR #106 saved-policy diagnosis completed all 12
+  cases and 24 best-reply traces in 24.886 launcher seconds under 900. The
+  [raw archive](../results/river-turn-loss/diagnosis/manifest.json) and
+  [interpretation](river-turn-loss-diagnosis-result.md) show 12 collided
+  turn exact rows in six groups, zero river collisions, and 92.8173% of
+  final candidate turn gain on collided rows. The leading Jh 9h turn row
+  contributes 0.746330 chips, 86.6721% of turn gain; it shares its saved
+  probabilities with Qd Qh despite opposite local call/fold values. Two-seat
+  accounting and native scalar errors remain far below 1e−9 chips. This
+  flags a future representation test under the frozen rule; it does not
+  overturn PR #105's negative strength classification or establish a
+  causal gain. Codex assisted; human time and personal learning unknown.
+
+- Final exact PR #106 negative-parent diagnosis-report head `abef90e4fc532f20484ad7522f789942ca819eb9`
+  passed serial local base Python 3.11 and 3.12, each with 5,784 passed,
+  73 skipped and 150 slow deselected, plus Ruff, formatting, strict mypy,
+  pre/post historical/current source, archive, lock and runtime guards.
+  Optional 3.11 passed 2,597; optional 3.12 passed 2,595 with two expected
+  skips, both across 81 pinned suites and license guards. All-file hooks
+  and [report-head hosted CI 45237203341](https://github.com/jimmy-sim/poker-ai/actions/runs/45237203341)
+  passed both Python jobs. The [final receipt](../results/river-turn-loss/final-checks/manifest.json)
+  retains complete local/hosted logs and archive hashes. The diagnostic
+  signal remains a hypothesis, with no new poker-strength acceptance.
+  Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as
