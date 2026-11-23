@@ -9364,6 +9364,19 @@ publish this protocol, then implement and freeze the one-time selection
 without inspecting outcomes. Codex assisted; no human time or personal
 learning was reported.
 
+**November 23 selector implementation.** The [exact-turn protocol](turn-exact-transfer.md)
+was published before the new selector. Its isolated code checks all 21
+tracked old inputs and their hashes, then would draw one fixed cohort by
+public board texture and a single RNG stream. **Example:** a rank signature
+already present in the known inventory is rejected even if its suits
+change; this prevents a superficially different board from being presented
+as a new rank pattern. Focused tests use seed 7, distinct from the fixed
+study seed, and never write the real cohort. The first formatting failure
+was retained and corrected; focused tests, lint and strict typing passed.
+**Next decision:** publish and verify the selector before its one-time
+cohort freeze. Codex assisted; no human time or personal learning was
+reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

@@ -41,6 +41,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   this protocol checkpoint. Codex assisted; human time or personal learning
   was not reported.
 
+- The isolated PR #107 one-time selection source checks the published
+  contract and 21 tracked known spots, pins the prior mechanistic input,
+  rejects duplicate output, and draws only by board/range structure.
+  Three focused tests use a separate fictional RNG stream and read-only
+  contract checks; no registered cohort was drawn. The first Ruff failure
+  (imports/line length) is retained in ignored
+  `results/runs/turn-exact-transfer-20261123/`; formatting, focused tests,
+  strict mypy and lint then passed. Source publication/verification precedes
+  the one real selection. Codex assisted; human time was not reported.
+
 ## 2026-11-23 — PR #105 negative result and next diagnostic
 
 - [PR #105](https://github.com/jimmy-sim/poker-ai/pull/105) history-merged as

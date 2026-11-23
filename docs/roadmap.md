@@ -152,8 +152,8 @@ independent toy score. The one capped, read-only known-input
 [diagnosis](river-turn-loss-diagnosis-result.md) then found 92.8173% of
 the candidate's final turn gain on collided rows, with zero river
 collisions. This flags a prospective turn-key test but does not prove a
-causal improvement or revise the broader-input negative result. Complete
-the diagnosis's final exact-report checks passed all four local lanes,
+causal improvement or revise the broader-input negative result. The
+diagnosis's final exact-report checks passed all four local lanes,
 hooks and both hosted jobs, its final receipt was published, and
 [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged.
 This is still a diagnostic hypothesis, so the next distinct
@@ -161,6 +161,9 @@ This is still a diagnostic hypothesis, so the next distinct
 same-work control/candidate test on one known mechanistic and three
 structurally selected new card/range inputs. Its selection and scientific
 outcomes remain pending at protocol publication.
+The isolated one-time selector and fictional/read-only focused tests passed;
+publish and verify that source before freezing the cohort. No selected
+board, tree or strength result exists at this checkpoint.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
