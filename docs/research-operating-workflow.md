@@ -94,3 +94,8 @@ outcome or training exists at protocol publication. Its isolated source passed
 all four exact-source local lanes, hooks and both hosted jobs; the source
 receipt precedes proof and real-policy analysis. All earlier failures remain, including PR #104's
 separate post-merge main Python 3.11 timeout (receipt-head CI passed both).
+The single saved-policy [diagnosis](river-turn-loss-diagnosis-result.md)
+completed under its cap: the candidate's largest turn loss shares a key
+with an opposite-preference hand, and collided rows carry 92.8173% of
+final turn gain. This is a hypothesis for a separate prospective
+representation test, not an accepted strength gain; PR #105 remains negative.

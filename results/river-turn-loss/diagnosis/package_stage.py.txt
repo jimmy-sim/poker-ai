@@ -1,0 +1,43 @@
+"""Archive one bounded diagnosis stage, retaining raw and launcher records."""
+import argparse
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+SOURCE = "5c33aa0cdfddefe33a69be2c93526223bde1df49eda2957f1f5de4d82901957f"
+STAGES = {"proof": ("proof.json", "passed", "proof_passed"), "diagnosis": ("report.json", "complete_read_only_diagnosis", "diagnosis_complete")}
+
+def package(folder: Path, output: Path, stage: str) -> None:
+    if stage not in STAGES or output.exists() or output.is_symlink():
+        raise ValueError("invalid or duplicate stage archive")
+    result_file, result_status, archive_status = STAGES[stage]
+    state = json.loads((folder / "job-state.json").read_bytes())
+    result = json.loads((folder / "raw" / result_file).read_bytes())
+    if state["status"] != "passed" or state["exit_code"] != 0 or result["status"] != result_status:
+        raise ArithmeticError("stage did not pass")
+    if state["source_fingerprint"] != SOURCE or result["source_fingerprint"] != SOURCE:
+        raise ArithmeticError("source mismatch")
+    if result["head"] != state["source_head"]:
+        raise ArithmeticError("head mismatch")
+    if (folder / "launch.exit").read_text().strip() != "0":
+        raise ArithmeticError("launcher exit mismatch")
+    if any(p.is_symlink() for p in (folder / "raw").rglob("*")):
+        raise ValueError("raw symlink")
+    shutil.copytree(folder / "raw", output)
+    for name in ("job-state.json", "launch.exit", "launch.log", "launcher.py"):
+        source = folder / name
+        shutil.copyfile(source, output / (name + ".txt" if name == "launcher.py" else name))
+    members = []
+    for p in sorted(x for x in output.rglob("*") if x.is_file()):
+        data = p.read_bytes()
+        members.append(dict(file=p.relative_to(output).as_posix(), bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (output / "manifest.json").write_text(json.dumps(dict(status=archive_status, source_fingerprint=SOURCE, files=members), sort_keys=True, indent=2) + "\n")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("folder", type=Path)
+    parser.add_argument("output", type=Path)
+    parser.add_argument("stage", choices=STAGES)
+    args = parser.parse_args()
+    package(args.folder, args.output, args.stage)

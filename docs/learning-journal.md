@@ -9323,6 +9323,22 @@ turn decisions collide. **Next decision:** publish and verify this proof
 before the one fixed saved-policy run. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 known medium/dry turn diagnosis.** The
+[single fixed read-only report](river-turn-loss-diagnosis-result.md) found
+that 92.8173% of the full candidate's final turn best-reply gain lies on
+exact decisions that share an abstract key. **Example:** Jh 9h and Qd Qh
+on As Jc 5d 3h face the same call/fold choice and receive the same saved
+probabilities, though the fixed-opponent reply values favor different
+actions. The Jh 9h row alone accounts for 0.746330 chips of additive loss.
+The three B4 controls also mostly fold there, and their reaches and gains
+differ, so a finer turn key is a hypothesis rather than a measured fix.
+All 12 saved policies and 24 responding-seat traces completed within the
+cap, with the required numerical identities and no new training. **Next
+decision:** publish and qualify this diagnosis, then prospectively test a
+turn distinction on both known and newly selected inputs if a bounded
+compute plan passes. Codex assisted; no human time or personal learning was
+reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

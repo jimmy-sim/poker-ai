@@ -73,6 +73,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   is a fictional math check, not a medium/dry poker result. The single saved
   real-policy diagnosis remains pending. Codex assisted; human time unknown.
 
+- The one fixed, read-only PR #106 saved-policy diagnosis completed all 12
+  cases and 24 best-reply traces in 24.886 launcher seconds under 900. The
+  [raw archive](../results/river-turn-loss/diagnosis/manifest.json) and
+  [interpretation](river-turn-loss-diagnosis-result.md) show 12 collided
+  turn exact rows in six groups, zero river collisions, and 92.8173% of
+  final candidate turn gain on collided rows. The leading Jh 9h turn row
+  contributes 0.746330 chips, 86.6721% of turn gain; it shares its saved
+  probabilities with Qd Qh despite opposite local call/fold values. Two-seat
+  accounting and native scalar errors remain far below 1e−9 chips. This
+  flags a future representation test under the frozen rule; it does not
+  overturn PR #105's negative strength classification or establish a
+  causal gain. Codex assisted; human time and personal learning unknown.
+
 ## 2026-11-23 — PR #104 merge and next prospective question
 
 - [PR #104](https://github.com/jimmy-sim/poker-ai/pull/104) history-merged as

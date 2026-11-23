@@ -148,8 +148,13 @@ choosing another strength experiment. No new diagnostic outcome exists yet. Isol
 five focused tests passed; all four exact-source local lanes, hooks and both
 hosted jobs then passed. The source receipt is being published before the
 fictional proof; its four toy rows reconcile the both-seat gain with the
-independent toy score. The proof receipt is being published before the one
-capped real-policy analysis; no diagnostic outcome exists yet.
+independent toy score. The one capped, read-only known-input
+[diagnosis](river-turn-loss-diagnosis-result.md) then found 92.8173% of
+the candidate's final turn gain on collided rows, with zero river
+collisions. This flags a prospective turn-key test but does not prove a
+causal improvement or revise the broader-input negative result. Complete
+the diagnosis's final exact-report checks and review before choosing a
+distinct fixed-work strength experiment.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
