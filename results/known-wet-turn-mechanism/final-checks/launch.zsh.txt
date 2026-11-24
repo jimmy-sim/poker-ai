@@ -1,0 +1,5 @@
+#!/bin/zsh
+set -e
+cd /Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse
+source ../poker-env.sh
+exec python3 results/runs/known-wet-final-20261123/driver.py

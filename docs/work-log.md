@@ -13,6 +13,25 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #110 exact-report qualification
+
+- The [final check receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+  binds report HEAD `690723db`, unchanged source fingerprint, seven prior
+  evidence stages, four exact-head local lanes, all-file hooks and both
+  [report-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
+  Base Python 3.11/3.12 each passed 5,812 tests, skipped 73 and deselected
+  150 slow tests; optional Python 3.11 passed 2,597, and optional Python
+  3.12 passed 2,595 with two skips. All pre/post source, archive, runtime,
+  lock and license guards passed. The final receipt has 19 hashed files;
+  its manifest SHA-256 is
+  `d95cba42bfc9ee90974572b31e450bcdac6f8f8229b205ad20de6fb57c7b3aca`.
+  The independent scientific classification remains **negative** because
+  the candidate missed both frozen absolute exploitability gates despite
+  its paired improvement. Next: publish and byte-verify this receipt,
+  require receipt-head hosted CI, then solo review and history-preserving
+  merge if eligible. Codex assisted; human time and personal learning were
+  not reported.
+
 ## 2026-11-23 — PR #110 fixed report: negative acceptance
 
 - The [fixed report](known-wet-turn-mechanism-result.md) and

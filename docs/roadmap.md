@@ -309,8 +309,13 @@ that known game but **failed both candidate absolute exploitability
 gates** (0.029805 initial pots versus ≤0.01 final/≤0.025 worst).
 Pinned independent scalar comparison passed all 12 cases. This is a
 negative acceptance result with no unseen transfer or default claim;
-finish PR #110's report/final qualification and review before a distinct
-prospectively registered follow-up. Do not extend or relabel this run.
+PR #110's exact negative report passed all four final local base/optional
+lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
+Its [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+retains those checks. Publish and verify that receipt, then require its
+hosted CI and complete solo review before a distinct prospectively
+registered follow-up. Do not extend or relabel this run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

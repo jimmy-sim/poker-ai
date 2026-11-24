@@ -9606,6 +9606,18 @@ distinct evidence-backed follow-up; do not extend this negative
 experiment. Codex assisted; human time and personal learning were not
 reported.
 
+**November 24 exact-report checks.** The four local Python base/optional
+lanes and both hosted Python jobs passed against the saved negative
+report. **Example:** optional Python 3.12 passed 2,595 tests with two
+skips; the [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+also records the guards that checked source and earlier evidence before
+and after each lane. This establishes software qualification of the
+reported calculation, while the frozen absolute strength gates still
+classify the candidate **negative** on this one known game. **Next
+decision:** publish and review the receipt, then choose a distinct
+prospective question from the remaining turn and river weaknesses.
+Codex assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
