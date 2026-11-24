@@ -403,8 +403,10 @@ raw archive](../results/known-turn-loss-attribution/diagnosis/manifest.json)
 was published before the [inconclusive report](known-turn-loss-attribution-result.md).
 The wet partial is descriptive; the dry candidate and fixed two-game
 classification are absent. No rerun is permitted under that one-shot
-protocol. Finish PR #113 failure-report checks and review, then choose
-a distinct prospective strength question. The PR #112
+protocol. PR #113 exact failure-report local base/optional checks, hooks and hosted
+Python 3.11/3.12 passed. Publish and verify its [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json),
+then complete solo review and history-preserving merge if eligible. Choose
+a distinct prospective strength question afterward. The PR #112
 post-merge main run was canceled by the next branch's workflow and its
 official logs were retained; this does not alter the passed PR #112
 report/receipt-head gates or its negative result.

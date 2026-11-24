@@ -1,0 +1,37 @@
+"""Recompute report claims from the published failed raw archive."""
+import hashlib
+import json
+import math
+import re
+import subprocess
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+report = root / "docs/known-turn-loss-attribution-result.md"
+raw = root / "results/known-turn-loss-attribution/diagnosis"
+assert subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip() == "5d9f972b191f9c34cbbd1c8b0c3942c9edd265ec"
+assert not subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=root)
+assert hashlib.sha256(report.read_bytes()).hexdigest() == "3f0989918a80bad24884dcd9ea9c745851d4fd4e74237cf61952270cd68362c1"
+manifest = json.loads((raw / "manifest.json").read_bytes())
+assert manifest["status"] == "failed_binding" and len(manifest["files"]) == 13
+for row in manifest["files"]:
+    blob = (raw / row["file"]).read_bytes()
+    assert len(blob) == row["bytes"] and hashlib.sha256(blob).hexdigest() == row["sha256"]
+for target in re.findall(r"\]\(([^)]+)\)", report.read_text()):
+    if not target.startswith("http"):
+        assert (report.parent / target.split("#")[0]).exists(), target
+wet = json.loads((raw / "partial/collision_medium_wet_oop-02-report.json").read_bytes())
+assert wet["full_row_count"] == 8340 and len(wet["cases"]) == 2
+assert math.isclose(wet["candidate_minus_control_chips"], 0.635010281274127, abs_tol=1e-9)
+for street, count, net, share in (("TURN", 60, 0.4115772615684755, 0.830559627837146), ("RIVER", 8280, 0.22343301970565668, 0.03918754432557213)):
+    value = wet["streets"][street]
+    assert value["row_count"] == count
+    assert math.isclose(value["net_change_chips"], net, abs_tol=1e-9)
+    assert math.isclose(value["top_ten_positive_share"], share, abs_tol=1e-12)
+assert not (raw / "partial/full_new_medium_dry_oop-signed_full_exact_turn_regret_recency.json").exists()
+source = (root / "scripts/known_turn_loss_attribution/analysis.py").read_text()
+assert '(GAMES[1], CANDIDATE): Path("results/known-turn-regret-recency/own/study/path00")' in source
+for name, game in (("path00", "collision_medium_wet_oop-02"), ("path01", "full_new_medium_dry_oop")):
+    summary = json.loads((root / f"results/known-turn-regret-recency/own/study/{name}/summary.json").read_bytes())
+    assert summary["path"]["game"] == game
+print("report audit passed: exact head, clean tree, archive hashes, links, wet arithmetic, missing dry, source defect")
