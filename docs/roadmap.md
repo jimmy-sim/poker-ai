@@ -464,9 +464,13 @@ The [fixed negative report](known-turn-work-budget-result.md) reconciles
 all 24 own/native cases and exact turn/river contribution vectors.
 At 40m, wet exact-turn improves over q8 but remains at 0.010044 pots,
 strictly above the 0.01 absolute target; dry exact-turn passes. Both
-paired gates and the descriptive wet decline pass. Finish final exact-report
-qualification and review, then stop PR #114. Do not start another experiment
-or promote a default.
+paired gates and the descriptive wet decline pass. The final exact-report local
+base and optional Python 3.11/3.12 lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45490979968)
+passed; their [receipt](../results/known-turn-work-budget/final-checks/manifest.json)
+preserves logs and intermediate cancellations. The strength result remains
+negative. Review and history-merge PR #114 if eligible, then stop. Do not
+start another experiment or promote a default.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
