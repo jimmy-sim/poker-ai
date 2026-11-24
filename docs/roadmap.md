@@ -358,8 +358,11 @@ old import-order failure and interrupted/canceled old-source checks
 remain retained. The one fixed six-path 1m-work
 [profile](../results/known-turn-regret-recency/profile/manifest.json)
 completed under its cap and projects a `1,972.992 < 7,200` second
-conservative bound. The separate admission must recompute the forecast
-after profile publication before any 10m training. Do not
+conservative bound. The separate data-only
+[admission](../results/known-turn-regret-recency/admission/manifest.json)
+recomputed the identical bound from published bytes and passed strictly;
+its archive must be published and byte-verified before any 10m training.
+Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)

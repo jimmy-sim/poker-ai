@@ -1,0 +1,37 @@
+{
+  "T_seconds": 193.2480089348044,
+  "final_work": 10000000,
+  "fixed_worker_sums_seconds": [
+    193.2480089348044,
+    42.52804810376318
+  ],
+  "per_path_maxima": [
+    {
+      "index": 0,
+      "maximum_seconds": 193.2480089348044,
+      "repeat_estimates_seconds": [
+        192.2784739936144,
+        193.2480089348044,
+        191.45172877647875
+      ]
+    },
+    {
+      "index": 1,
+      "maximum_seconds": 42.52804810376318,
+      "repeat_estimates_seconds": [
+        38.29180741380616,
+        39.72561898563602,
+        42.52804810376318
+      ]
+    }
+  ],
+  "profile_seconds": 61.57941225002287,
+  "profile_work_by_game": {
+    "collision_medium_wet_oop-02": 1000000,
+    "full_new_medium_dry_oop": 1000000
+  },
+  "rule": "2*(2*T+600)<7200",
+  "status": "admitted",
+  "strict_bound_seconds": 1972.9920357392175,
+  "whole_own_cap_seconds": 7200
+}

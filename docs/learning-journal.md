@@ -9801,6 +9801,18 @@ not a poker-strength result and does not itself authorize the long run.
 recompute the strict bound in a separate data-only admission. Codex
 assisted; no human time or personal learning was reported.
 
+**November 24 apply the separate compute gate.** After all six profile
+repeats were published and verified, the data-only admission read their
+saved timings and recomputed the unchanged worst-repeat rule. It took
+0.796 operational seconds and returned the same strict
+`1,972.992 < 7,200`-second bound. **Example:** the slower wet repeat,
+not the faster dry path or a selected favorable repeat, sets `T`.
+The [admission archive](../results/known-turn-regret-recency/admission/manifest.json)
+retains that decision separately from the profile. **Next decision:**
+publish and byte-verify admission, then make the one fixed two-path
+10m-work own study. The gate admits compute; it predicts no poker gain.
+Codex assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
