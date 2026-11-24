@@ -9896,6 +9896,21 @@ the protocol, qualify isolated tracing code, then make the one admitted
 saved-policy report. No new strategy is trained at this checkpoint.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 prepare isolated loss attribution.** The change is a
+read-only tracer for the four already saved final-average policies,
+with signed per-row score differences and their positive worsening and
+negative offset masses. **Example:** a fictional eleven-row vector
+with exactly representable ties checks that the ranking breaks ties by
+exact row index; it never reads a poker policy. Six focused tests,
+Ruff/format and strict mypy passed, including separate invocation of
+each test module. Early formatting, source-path mypy, synthetic-tie and
+environment-invocation failures are retained in ignored logs. **Next
+decision:** qualify the committed source on both local base/optional
+Python versions and hosted CI before any fictional proof or real saved
+policy trace. PR #112's canceled post-merge main run is separate from
+its passed merge gates and negative result. Codex assisted; no human
+time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

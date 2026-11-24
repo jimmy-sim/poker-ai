@@ -390,6 +390,13 @@ asks where the failed recency update moved exact-row weakness across
 the same two **known** games. It fixes all four final-average policies,
 all-row ranking rules and a strict read-only cap before collecting any
 new trace. It is diagnostic, with no new training or strength claim.
+Its isolated saved-policy tracer, rank/decomposition arithmetic,
+publication guards and separate data-only forecast have been prepared
+with fictional focused tests; exact-source local/optional/hosted
+qualification and all scientific stages remain pending. The PR #112
+post-merge main run was canceled by the next branch's workflow and its
+official logs were retained; this does not alter the passed PR #112
+report/receipt-head gates or its negative result.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

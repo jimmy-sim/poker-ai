@@ -15,6 +15,21 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective saved-policy loss attribution
 
+- The isolated PR #113 source now implements read-only replay of four
+  pinned final-average policies, complete exact-row contribution vectors,
+  fixed row rankings, partial/failure saves, old-source/archive guards,
+  fictional proof and separate data-only admission. Focused Ruff,
+  formatting and strict mypy passed; the two new test modules passed
+  independently (four/two tests) and together (six), all fictional or
+  pin-only. Initial formatting errors, a direct mypy invocation without
+  the repository source path, a synthetic floating-point tie failure,
+  and one mis-scoped environment invocation are retained in ignored
+  iteration logs; no saved-policy trace was run. PR #112's separate
+  post-merge main CI was canceled by the next workflow; its official
+  logs are retained, while PR #112's report/receipt-head gates passed.
+  Protocol-head CI for PR #113 is in progress. Next: complete full
+  exact-source local/optional/hooks/hosted qualification before proof.
+  Codex assisted; human time and personal learning were not reported.
 - [PR #112](https://github.com/jimmy-sim/poker-ai/pull/112) history-merged
   as `4c26fbea` after both receipt-head hosted jobs passed and solo
   review; all evidence commits remain on main. Post-merge main CI is
