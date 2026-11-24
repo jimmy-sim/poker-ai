@@ -393,7 +393,7 @@ new trace. It is diagnostic, with no new training or strength claim.
 Its isolated saved-policy tracer, rank/decomposition arithmetic,
 publication guards and separate data-only forecast have been prepared
 with fictional focused tests; exact-source local/optional/hosted
-qualification and all scientific stages remain pending. The PR #112
+qualification now passed on all four guarded local lanes and both hosted Python versions, including one retained 35-minute first-attempt cancellation and targeted same-SHA pass for Python 3.11 at each of protocol and source heads. The [source check receipt](../results/known-turn-loss-attribution/source-checks/manifest.json) is ready for publication; fictional proof, separate admission and the one real diagnostic remain pending. The PR #112
 post-merge main run was canceled by the next branch's workflow and its
 official logs were retained; this does not alter the passed PR #112
 report/receipt-head gates or its negative result.

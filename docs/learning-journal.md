@@ -9896,6 +9896,8 @@ the protocol, qualify isolated tracing code, then make the one admitted
 saved-policy report. No new strategy is trained at this checkpoint.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 qualify the saved-policy tracer.** The four exact-source local lanes and all-file hooks passed. Both protocol-head and source-head Python 3.11 hosted first attempts stopped at the fixed 35-minute limit at 96% of tests; one same-source targeted rerun for each passed tests and hooks. Python 3.12 passed both first attempts. **Example:** the source receipt keeps both canceled logs and successful logs, so a timing cancellation is visible alongside complete qualification. This is software qualification, not evidence that a poker decision improved. **Next decision:** publish and verify the [source receipt](../results/known-turn-loss-attribution/source-checks/manifest.json), then run only the fictional proof and separately forecast the one fixed read-only trace. Codex assisted; no human time or personal learning was reported.
+
 **November 24 prepare isolated loss attribution.** The change is a
 read-only tracer for the four already saved final-average policies,
 with signed per-row score differences and their positive worsening and

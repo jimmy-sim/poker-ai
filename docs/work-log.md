@@ -15,6 +15,7 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective saved-policy loss attribution
 
+- The exact PR #113 source `5aa76bcd` passed all four guarded local lanes: base 3.11/3.12 each 5,832 pass/73 skip/150 deselected; optional 3.11 2,601 pass; optional 3.12 2,599 pass/2 skip, plus all-file hooks. Hosted protocol and source-head Python 3.11 first attempts each reached 96% then hit the unchanged 35-minute limit; each passed one targeted same-SHA rerun, while Python 3.12 passed first attempts. Full failed and successful logs are in the [source receipt](../results/known-turn-loss-attribution/source-checks/manifest.json); no timeout or source pin changed. Next: publish/verify that receipt before the fictional proof, then perform separate admission. No real saved-policy trace has run. Codex assisted; human time and personal learning were not reported.
 - The isolated PR #113 source now implements read-only replay of four
   pinned final-average policies, complete exact-row contribution vectors,
   fixed row rankings, partial/failure saves, old-source/archive guards,
