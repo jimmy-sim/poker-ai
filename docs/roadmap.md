@@ -460,6 +460,13 @@ All 66 own/archive blobs were remotely byte-verified before the single
 All 24 checks passed with maximum error `6.750155989720952e-14` chips
 against the frozen `1e-9` tolerance. Publish/verify the audit before the
 fixed exact-row report; the wet own absolute threshold is still missed.
+The [fixed negative report](known-turn-work-budget-result.md) reconciles
+all 24 own/native cases and exact turn/river contribution vectors.
+At 40m, wet exact-turn improves over q8 but remains at 0.010044 pots,
+strictly above the 0.01 absolute target; dry exact-turn passes. Both
+paired gates and the descriptive wet decline pass. Finish final exact-report
+qualification and review, then stop PR #114. Do not start another experiment
+or promote a default.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
