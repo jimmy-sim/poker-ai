@@ -9585,6 +9585,18 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 separate known-wet compute admission.** The profile
+forecast became a decision only after a separate process read the
+published profile and recomputed the worst-repeat formula. **Example:**
+with `T=209.06137525266` seconds, doubling two workers' estimated
+work and allowing 600 seconds per worker gives a strict bound of
+2,036.2455 seconds, below the frozen 7,200-second own cap. The
+[admission receipt](../results/known-wet-turn-mechanism/admission/manifest.json)
+records the check; it does not say the candidate plays better. **Next
+decision:** publish/verify admission, then run the one fixed matched-work
+own pair with no additional seed or budget. Codex assisted; human time
+and personal learning were not reported.
+
 **November 23 bounded known-wet timing profile.** The fixed six
 1m-work paths completed and replayed under the profile cap. **Example:**
 all six first complete target-pair crossings overshot 1m to 1,065,048

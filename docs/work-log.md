@@ -13,6 +13,19 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 strict compute admission
+
+- The separate data-only gate recomputed the published profile exactly,
+  using the larger of both three-repeat maxima `T=209.06137525266`
+  seconds. Its strict bound `2*(2*T+600)=2,036.24550101064<7,200`
+  seconds **admitted** one fixed two-path 10m-work own comparison;
+  the [eight-file admission receipt](../results/known-wet-turn-mechanism/admission/manifest.json)
+  binds the published profile, source and 0.73-second launcher. This is
+  compute admission, not a strength claim. No own long policy or reference
+  comparison has started. Next: publish and GitHub-byte-verify the
+  admission before one capped own pair. Codex assisted; human time and
+  personal learning were not reported.
+
 ## 2026-11-23 — PR #110 fixed six-path profile
 
 - The one published-proof profile ran both fixed arms three times each to
