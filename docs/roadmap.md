@@ -255,6 +255,12 @@ focused tests, Ruff/format and strict mypy pass; the first software
 iteration failures are retained. No registered board, tree, collision or
 policy measurement exists yet. Publish/verify this source and complete
 exact-source qualification before its one-time screen.
+The first published selector source failed hosted Python 3.12 strict
+typing in a synthetic test-only NumPy expression; the partial local check
+and official hosted failure are retained. The test-only correction passes
+focused tests and strict typing on both pinned versions. Full
+exact-source qualification must restart on the corrected commit before
+any one-time structural screen; no new board or score exists.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

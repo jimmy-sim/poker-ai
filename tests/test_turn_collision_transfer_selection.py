@@ -118,8 +118,8 @@ def test_candidate_has_disjoint_five_combo_ranges_and_declared_actor(
 
 def test_collision_summary_matches_independent_group_reference() -> None:
     mapping = np.asarray([0, 1, 0, 2, 1, 3, 4])
-    turn = np.asarray([True, True, True, True, True, False, False])
-    river = ~turn
+    turn = np.asarray([True, True, True, True, True, False, False], dtype=np.bool_)
+    river = np.logical_not(turn)
     result = collision_summary(mapping, turn, river, 5)
     groups: dict[int, list[int]] = {}
     for index, abstract in enumerate(mapping):

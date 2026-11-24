@@ -9519,6 +9519,16 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 selector typing correction.** The first published source
+failed hosted Python 3.12 typing because NumPy 2.5 inferred the synthetic
+Boolean mask's `~` operation differently. **Example:** the test now builds
+an explicit Boolean array and uses `np.logical_not`, which passes under
+both pinned Python versions; the poker selector itself did not change.
+The partial local check and failed hosted log are retained, and no real
+selection ran. **Next decision:** fully requalify the corrected source
+before using the one-time RNG stream. Codex assisted; no human time or
+personal learning was reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded

@@ -13,6 +13,20 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 source qualification correction
+
+- First published selector source `437190f` failed hosted Python 3.12
+  strict mypy on a **synthetic test-only** NumPy `~turn` expression; no
+  selector, tree, policy or score ran. The existing local base311 role was
+  stopped early and its partial log/driver state retained. A new test-only
+  explicit Boolean array plus `np.logical_not` passes all seven focused
+  tests and strict mypy under pinned Python 3.11/3.12. The failed hosted
+  log and partial local check remain in ignored persistent
+  `results/runs/turn-collision-transfer-source-20261123/` for the source
+  receipt. Next: publish the corrected tested source, run all required
+  exact-source roles and hosted jobs again, and do not screen a cohort
+  until they pass. Codex assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #109 isolated one-time selector source
 
 - An isolated score-free selector now binds the published protocol, all 24
