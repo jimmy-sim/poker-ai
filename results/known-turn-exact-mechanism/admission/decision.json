@@ -1,0 +1,37 @@
+{
+  "T_seconds": 42.76761154532882,
+  "final_work": 10000000,
+  "fixed_worker_sums_seconds": [
+    42.75285057653351,
+    42.76761154532882
+  ],
+  "per_path_maxima": [
+    {
+      "index": 0,
+      "maximum_seconds": 42.75285057653351,
+      "repeat_estimates_seconds": [
+        41.300953797409115,
+        42.75285057653351,
+        42.38578119859683
+      ]
+    },
+    {
+      "index": 1,
+      "maximum_seconds": 42.76761154532882,
+      "repeat_estimates_seconds": [
+        41.23920339840148,
+        42.76761154532882,
+        42.3619105874761
+      ]
+    }
+  ],
+  "profile_seconds": 13.02894312501303,
+  "profile_work_by_arm": {
+    "signed_full_exact_turn_river": 1000000,
+    "signed_full_q8_turn_exact_river": 1000000
+  },
+  "rule": "2*(2*T+600)<7200",
+  "status": "admitted",
+  "strict_bound_seconds": 1371.0704461813152,
+  "whole_own_cap_seconds": 7200
+}

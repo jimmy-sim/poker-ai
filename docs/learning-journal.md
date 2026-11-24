@@ -9508,6 +9508,17 @@ strict admission separately before any 10m policy. A fast profile does
 not mean the new representation plays better. Codex assisted; no human
 time or personal learning was reported.
 
+**November 23 separate known-case admission.** From the published
+profile, a separate data-only reader recomputed the strict bound
+`1,371.070446 < 7,200` seconds and marked the fixed two-path comparison
+**admitted**. **Example:** each path's worst of three observed profile
+repeats, not its fastest repeat, determines the two-worker forecast.
+The [admission receipt](../results/known-turn-exact-mechanism/admission/manifest.json)
+retains the exact profile pin and decision. **Next decision:** publish
+and verify admission, then run the one allowed 10m own comparison. No
+poker-strength claim follows from a compute forecast. Codex assisted;
+no human time or personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

@@ -96,6 +96,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   next: publish/byte-verify profile, then one separate data-only admission.
   Codex assisted; human time/learning not reported.
 
+- After all 45 profile members and 49 changed blobs were published and
+  verified, PR #108's separate data-only
+  [admission](../results/known-turn-exact-mechanism/admission/manifest.json)
+  recomputed the six unselected profile repeats from clean `4ce972d2`.
+  Fixed two-worker `T=42.7676115453` seconds gives strict bound
+  `1,371.0704461813 < 7,200` seconds, so status **admitted**. The
+  launcher exited zero in 0.722 seconds; eight raw/launcher members are
+  retained. No 10m policy has started. Next: publish/byte-verify admission,
+  then run the single fixed two-path own study within 7,200 seconds with
+  120 seconds reserved for failure save. Codex assisted; human time/
+  learning not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged
