@@ -1,0 +1,89 @@
+{
+  "first_hosted_python312_failed": true,
+  "first_local_base311_interrupted": true,
+  "first_optional312_watchdog_failed": true,
+  "hooks": "passed",
+  "hosted_jobs": [
+    {
+      "conclusion": "success",
+      "name": "Python 3.12"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python 3.11"
+    }
+  ],
+  "hosted_run": 45306928141,
+  "local_roles": [
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 820.0003240410006,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "base311",
+      "selection_source_fingerprint": "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73",
+      "source_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 793.5775807080208,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "base312",
+      "selection_source_fingerprint": "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73",
+      "source_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+      "status": "passed",
+      "suite_count": null
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 513.2335258750245,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.4.6",
+      "python": "3.11.17",
+      "role": "optional311",
+      "selection_source_fingerprint": "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73",
+      "source_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+      "status": "passed",
+      "suite_count": 81
+    },
+    {
+      "b8_source_fingerprint": "666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad",
+      "broader_source_fingerprint": "5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6",
+      "elapsed_seconds": 746.4199792090221,
+      "failure": null,
+      "full_source_fingerprint": "a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab",
+      "head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2",
+      "lock_sha256": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c",
+      "numpy": "2.5.4",
+      "python": "3.12.15",
+      "role": "optional312",
+      "selection_source_fingerprint": "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73",
+      "source_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+      "status": "passed",
+      "suite_count": 81
+    }
+  ],
+  "optional312_exact_source_recheck_passed": true,
+  "qualified_parent_source_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+  "selection_started": false,
+  "source_fingerprint": "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73",
+  "status": "selection_source_qualified",
+  "tested_head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2"
+}

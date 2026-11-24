@@ -116,3 +116,32 @@ test](known-turn-exact-mechanism.md) fixes a two-path matched-work comparison
 on the already evaluated As Jc 5d 3h input with 12 diagnosed collisions.
 No new policy or score existed at protocol publication; broader transfer,
 default promotion and seed-based uncertainty remain unestablished.
+
+PR #108 then completed its one known medium/dry mechanism test and was
+history-merged at `71ab64fa`. The exact-turn candidate met its absolute
+and paired gates there at equal work, but one previously evaluated game
+and deterministic seed cannot establish transfer. The next
+[prospective collision-conditioned test](turn-collision-transfer.md)
+selects new card/range combinations on varied known templates by a frozen
+structural opportunity rule, with every screened candidate retained and
+no score-based case selection. No new board/tree/policy measurement existed
+at this plan checkpoint. Post-merge main CI remains separately tracked.
+The first selector source failed hosted Python 3.12 typing and was corrected
+only in a synthetic test. The corrected exact-source base/optional and hosted
+qualification passed, with one retained optional Python 3.12 watchdog
+failure followed by a complete same-source operational recheck. The
+[source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+must be published and verified before the one-time structural screen. No
+registered board, collision or policy outcome has been collected yet.
+The single published-source structural screen subsequently retained 25
+attempts and stopped at the frozen low/wet IP cap: its maximum two
+collided acting turn rows did not meet the four-row minimum. The
+[result](turn-collision-transfer-result.md) is inconclusive for poker
+strength; no policy, score or reference comparison ran. The two medium
+inputs are now structurally inspected, known cases. Finish PR #109's
+evidence/checks/review and choose a distinct prospective strength
+question; do not remove the failed third stratum inside this study.
+The exact-report final local base/optional lanes, hooks and both hosted
+jobs then passed, with the intermediate canceled CI retained. Publish
+and verify the [final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+and complete solo review/history merge before the next prospective plan.

@@ -1,0 +1,150 @@
+"""Run exact-source locked local exact-turn qualification with retained logs."""
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+OUT = Path(__file__).resolve().parent
+ENVROOT = ROOT / "results/runs/guarded-skip-requalification-20261118/envs"
+HEAD = "cc8a310f8f1e8b0f7a616bc914d744046178ae0a"
+FINGERPRINT = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+LOCK = "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+minor, role = sys.argv[1:]
+assert minor in ("311", "312") and role in ("base", "optional")
+version, numpy = {"311": ("3.11.17", "2.4.6"), "312": ("3.12.15", "2.5.4")}[minor]
+name = role + minor
+env = {k: v for k, v in os.environ.items() if k in {
+    "PATH", "HOME", "TMPDIR", "USER", "LOGNAME", "SHELL", "LANG", "LC_ALL",
+    "LC_CTYPE", "UV_CACHE_DIR", "UV_PYTHON_INSTALL_DIR", "UV_OFFLINE", "PRE_COMMIT_HOME",
+}}
+env.update(UV_PROJECT_ENVIRONMENT=str(ENVROOT / name), UV_PYTHON=version)
+assert "PYTHONPATH" not in env
+suites = json.loads((OUT / "optional-suites.json").read_bytes())
+assert len(suites) == 81 and len(set(suites)) == 81
+assert all((ROOT / path).is_file() for path in suites)
+guard = f'''import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai
+r=pathlib.Path.cwd();sys.path.insert(0,str(r/"scripts"))
+from river_generalization.gate import source_fingerprint,source_files,clean_revision
+head=clean_revision(r)
+assert head=={HEAD!r} and source_fingerprint(r)=='152b357b6942d065e402c84abc14ca3631b29d54551ead71bb668729ccbc81d3'
+assert len(source_files(r))==384
+from medium_dry_clipped.gate import fixed_contract, fingerprint, clean_head
+assert clean_head(r)=={HEAD!r}
+assert fingerprint(r)=="7c2312727903a44a347be5ea1bf5c6d1d2c1ed17c447bac7e3605fa8773320ab"
+assert fixed_contract(r)["node_work_labels"]==[100000,1000000,10000000]
+from medium_dry_b1.gate import fixed_contract as b1_contract, fingerprint as b1_fingerprint, clean_head as b1_clean
+assert b1_clean(r)=={HEAD!r}
+assert b1_fingerprint(r)=="64e92a742f865b6f19a87ad98e4b2ac3e94b2bf5ce8b26128fb2459a676669bd"
+assert b1_contract(r)["node_work_labels"]==[100000,1000000,10000000]
+from medium_dry_b8.gate import fixed_contract as b8_contract, fingerprint as b8_fingerprint, clean_head as b8_clean
+assert b8_clean(r)=={HEAD!r}
+assert b8_fingerprint(r)=="666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad"
+assert b8_contract(r)["candidate"]["batch_size"]==8
+from medium_dry_full.gate import fixed_contract as full_contract, fingerprint as full_fingerprint, clean_head as full_clean
+assert full_clean(r)=={HEAD!r}
+assert full_fingerprint(r)=="a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab"
+assert full_contract(r)["profile"]["paths"]==6
+from river_full_broader.gate import clean_revision as broader_clean, source_fingerprint as broader_fingerprint, source_files as broader_files, frozen_cohort as broader_cohort
+assert broader_clean(r)=={HEAD!r}
+assert broader_fingerprint(r)=="5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6"
+assert len(broader_files(r))==18 and len(broader_cohort(r)["spot_sha256"])==2
+from river_generalization.gate import require_archive as check_archive
+for rel,status in (("source-checks","source_qualified"),("own-proof","own_proof_passed"),("profile","profile_published"),("admission","admitted"),("own","own_published"),("native","native_audited"),("report","report_negative")):
+    check_archive(r,r/"results/river-full-broader"/rel,status,broader_fingerprint(r))
+assert json.loads((r/"results/river-full-broader/report/report.json").read_bytes())["primary"]["classification"]=="negative"
+from river_turn_loss.analysis import verify as turn_verify, fingerprint as turn_fingerprint
+plan,diagnosis_head=turn_verify(r)
+assert diagnosis_head==head and plan["saved_policies"]==12
+assert turn_fingerprint(r)=="5c33aa0cdfddefe33a69be2c93526223bde1df49eda2957f1f5de4d82901957f"
+
+from turn_exact_transfer.gate import clean_revision as turn_clean, source_fingerprint as turn_source, source_files as turn_files
+from turn_exact_transfer.learning import contract as turn_contract
+assert turn_clean(r)=={HEAD!r} and turn_source(r)=="fb9006517142ee23076f2c0b6d581475dfdaed8127cb2c146a60731af901b09c"
+assert len(turn_files(r))==26 and len(turn_contract(r)[1]["spot_sha256"])==3
+from turn_exact_transfer.gate import require_archive as turn_archive, SOURCE as turn_source_dir, INVENTORY as turn_inventory_dir
+turn_archive(r,r/turn_source_dir,"source_qualified",turn_source(r))
+turn_archive(r,r/turn_inventory_dir,"structural_stop",turn_source(r))
+inventory=json.loads((r/turn_inventory_dir/"result.json").read_bytes())
+assert inventory["selected_turn_collided_exact_rows"]==0 and all(row["turn_collided_exact_rows"]==0 for row in inventory["spots"][1:])
+assert hashlib.sha256((r/"results/turn-exact-transfer/inventory/result.json").read_bytes()).hexdigest()=="475b8b21d7f32c0d564c40c279cebcc6bf90724e5f5730a4a0a75a916f74105c"
+assert hashlib.sha256((r/"docs/turn-exact-transfer-result.md").read_bytes()).hexdigest()=="15d265a1f35d7a56e98ef88799d80cae0cf222314bdd1b4be977b53d5f9673dd"
+check_archive(r,r/"results/turn-exact-transfer/final-checks","final_qualified",turn_source(r))
+from known_turn_mechanism.gate import clean_revision as known_clean, source_fingerprint as known_source, source_files as known_files
+from known_turn_mechanism.plan import contract as known_contract
+assert known_clean(r)=={HEAD!r} and known_source(r)=={FINGERPRINT!r}
+assert len(known_files(r))==15 and known_contract(r)["work_labels"]==[100000,1000000,10000000]
+
+from known_turn_mechanism.gate import SOURCE as known_source_dir, PROOF as known_proof_dir, PROFILE as known_profile_dir, ADMISSION as known_admission_dir, OWN as known_own_dir, NATIVE as known_native_dir
+for rel,status in ((known_source_dir,"source_qualified"),(known_proof_dir,"proof_passed"),(known_profile_dir,"profile_published"),(known_admission_dir,"admitted"),(known_own_dir,"own_published"),(known_native_dir,"native_audited")):
+    check_archive(r,r/rel,status,known_source(r))
+check_archive(r,r/"results/known-turn-exact-mechanism/report","reported",known_source(r))
+report=json.loads((r/"results/known-turn-exact-mechanism/report/report.json").read_bytes())
+assert report["primary"]["classification"]=="positive" and len(report["cases"])==12 and len(report["diagnostics"])==7
+assert report["native_maximum_error_chips"] <= 1e-9
+check_archive(r,r/"results/known-turn-exact-mechanism/final-checks","final_qualified",known_source(r))
+from turn_collision_transfer_selection import contract as selector_contract, clean_source as selector_clean, SELECTION_SOURCES as selector_files, digest as selector_digest, CONFIG as selector_config, PARENT_SOURCE as selector_parent
+plan,prior=selector_contract(r)
+assert selector_clean(r)=={HEAD!r} and len(prior)==24 and selector_parent==known_source(r)
+selector_hashes=dict((name,selector_digest(r/name)) for name in selector_files)
+selector_hashes[selector_config.as_posix()]=selector_digest(r/selector_config)
+selector_hashes["qualified_parent_source_fingerprint"]=selector_parent
+selector_fingerprint=hashlib.sha256(json.dumps(selector_hashes,sort_keys=True,separators=(",",":")).encode()).hexdigest()
+assert selector_fingerprint=="62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73"
+screen=r/"results/turn-collision-transfer/screen"
+screen_manifest=json.loads((screen/"manifest.json").read_bytes())
+assert screen_manifest["status"]=="structural_stop" and screen_manifest["source_head"]=="5019cf1eb2533785660d4ed2ec94c9820c368ed9"
+assert len(screen_manifest["files"])==33
+for entry in screen_manifest["files"]:
+    data=(screen/entry["file"]).read_bytes()
+    assert len(data)==entry["bytes"] and hashlib.sha256(data).hexdigest()==entry["sha256"]
+screen_result=json.loads((screen/"result.json").read_bytes())
+assert screen_result["status"]=="structural_stop" and screen_result["exhausted_stratum"]=="collision_low_wet_ip" and len(screen_result["attempts"])==25 and len(screen_result["selected"])==2
+assert max(row["turn_collided_exact_rows"] for row in screen_result["attempts"] if row["stratum"]=="collision_low_wet_ip") == 2
+assert hashlib.sha256((r/"docs/turn-collision-transfer-result.md").read_bytes()).hexdigest()=="d9d108e103f5b185e914306ac9e84680ad48611472f78699d682565c69bbd66b"
+assert not (r/plan["freeze_file"]).exists() and not (r/plan["spot_directory"]).exists()
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+assert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=={LOCK!r}
+assert sys.version.split()[0]=={version!r} and numpy.__version__=={numpy!r}
+assert 'PYTHONPATH' not in __import__('os').environ
+print(json.dumps(dict(head=head,python=sys.version.split()[0],numpy=numpy.__version__,source_fingerprint=source_fingerprint(r),source_files=len(source_files(r)),lock_sha256={LOCK!r},dirty=False)))
+'''
+if role == "optional":
+    guard += '''from importlib.metadata import distribution,version
+provider=distribution("open-spiel")
+licenses=[f for f in provider.files or () if str(f).endswith("licenses/LICENSE")]
+assert len(licenses)==1
+raw=pathlib.Path(str(provider.locate_file(licenses[0]))).read_bytes()
+assert version("numba")=="0.68.1" and version("open-spiel")=="2.0.2"
+assert len(raw)==11358 and hashlib.sha256(raw).hexdigest()=="cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+print(json.dumps(dict(numba=version("numba"),open_spiel=version("open-spiel"),license_bytes=len(raw),license_sha256=hashlib.sha256(raw).hexdigest())))
+'''
+prefix = ["uv", "run", "--locked"]
+if role == "optional":
+    prefix.append("--all-extras")
+commands = [prefix + ["python", "-c", guard],
+            ["make", "check"] if role == "base" else prefix + ["pytest", "-q", *suites],
+            prefix + ["python", "-c", guard]]
+log = OUT / f"{name}.log"
+receipt = OUT / f"{name}.json"
+started = time.perf_counter()
+status, failure = "failed", None
+try:
+    with log.open("x") as stream:
+        for index, command in enumerate(commands):
+            stream.write(json.dumps(dict(index=index, command=command if len(command) < 10 else command[:5], suite_count=len(suites) if role == "optional" else None)) + "\n")
+            stream.flush()
+            subprocess.run(command, cwd=ROOT, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
+    status = "passed"
+except BaseException as error:
+    failure = dict(type=type(error).__name__, reason=str(error))
+    raise
+finally:
+    receipt.write_text(json.dumps(dict(role=name, status=status, head=HEAD, python=version,
+        numpy=numpy, source_fingerprint=FINGERPRINT, b8_source_fingerprint="666ac9e4322ca84f93ad43acf972e8a758125f1aa1276da2847a6025049b40ad", full_source_fingerprint="a549976f0811872dcc9057e112f40def8af5d2f3e16b81d1a678fdcf8bc62aab", broader_source_fingerprint="5aafb939fdc4ac75b06480dbd8203efddbd0e1f1b02170ab086ff8bf61668ac6", selection_source_fingerprint="62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73", lock_sha256=LOCK,
+        suite_count=len(suites) if role == "optional" else None,
+        elapsed_seconds=time.perf_counter() - started, failure=failure), indent=2) + "\n")
+print(name, status, log)

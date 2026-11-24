@@ -1,0 +1,15 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--all-extras",
+    "pytest",
+    "-q",
+    "tests/test_earlier_source_profile.py::test_published_profile_reproduces_all_numeric_exports_without_construction"
+  ],
+  "exit_code": 4,
+  "head": "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2",
+  "seconds": 74.6804470840143,
+  "watchdog_seconds_unchanged": 120
+}

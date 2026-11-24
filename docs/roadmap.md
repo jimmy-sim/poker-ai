@@ -237,6 +237,56 @@ passed, with the initial wrapper status mistake retained in the
 [final receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
 PR #108 awaits receipt publication and solo review/history merge. The
 positive known-game result remains limited to this pre-evaluated input.
+[PR #108](https://github.com/jimmy-sim/poker-ai/pull/108) then history-merged
+at `71ab64fa` after both receipt-head hosted jobs passed; post-merge main
+CI is tracked separately. Its known-game result remains positive only for
+the evaluated As Jc 5d 3h input. The next [prospective collision-conditioned
+transfer test](turn-collision-transfer.md) asks whether the **unchanged**
+exact-turn candidate helps on three newly drawn card/range combinations
+across dry/wet and OOP/IP strata **when the structural split exists**. It
+predeclares a one-time bounded structural screen, exclusions for all 24
+prior inspected inputs, matched control/work, one deterministic seed, gates
+and caps before any new board or collision measurement. This conditional
+cohort is not a population sample; no new outcome existed at protocol
+publication and no default is promoted.
+PR #109's isolated one-time structural selector and synthetic tests have
+been implemented without changing PR #108 or earlier pinned source. Seven
+focused tests, Ruff/format and strict mypy pass; the first software
+iteration failures are retained. No registered board, tree, collision or
+policy measurement exists yet. Publish/verify this source and complete
+exact-source qualification before its one-time screen.
+The first published selector source failed hosted Python 3.12 strict
+typing in a synthetic test-only NumPy expression; the partial local check
+and official hosted failure are retained. The test-only correction passes
+focused tests and strict typing on both pinned versions. The corrected
+source then passed both base local lanes, optional Python 3.11, both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45306928141)
+and all-file hooks. Optional Python 3.12 first failed an older saved-profile
+test's unchanged 120-second watchdog; the failure is retained. One complete
+same-source optional recheck passed 2,595 tests with two skips and the
+pre/post guards. Its [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+retains both outcomes. Publish and byte-verify that receipt before the
+one-time structural screen; no registered board, tree, collision, policy
+or score exists yet.
+The one-time screen then ran on published qualified source and
+[stopped structurally](turn-collision-transfer-result.md): medium/dry OOP
+qualified on attempt 3 with 12 collided exact turn rows, medium/wet OOP on
+attempt 2 with 12, but low/wet IP exhausted 20 fixed attempts with at most
+two against the four-row minimum. All 25 raw candidates and 50 events are
+retained in the [screen archive](../results/turn-collision-transfer/screen/manifest.json).
+The frozen three-stratum gate therefore ends this comparison before
+training; strength is inconclusive, and there is no default change.
+Publish/verify the raw stop, finish PR #109 final checks/review, then use
+the structural evidence and saved policy weaknesses to register a
+**distinct** bounded poker-strength question. The two medium inputs are
+now known structurally inspected cases, not unseen validation.
+The exact structural-stop report then passed all four final local
+base/optional lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45317245286).
+The [final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+retains those checks and the canceled intermediate CI separately. Publish
+and verify that receipt, then finish solo review and history-preserving
+merge; the scientific classification stays inconclusive.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

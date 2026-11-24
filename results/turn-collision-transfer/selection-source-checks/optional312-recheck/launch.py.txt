@@ -1,0 +1,32 @@
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+out = Path(__file__).resolve().parent
+head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
+assert head == '6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2'
+assert not subprocess.check_output(['git', 'status', '--porcelain=v1'], cwd=root)
+assert json.loads((root / 'results/runs/turn-collision-transfer-source-requal-20261123/driver-state.json').read_bytes())['status'] == 'failed_retained'
+assert not (out / 'status.json').exists()
+with (out / 'launch.log').open('x') as stream:
+    child = subprocess.Popen([sys.executable, '-u', str(out / 'runner.py'), '312', 'optional'], cwd=root, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+    start = time.time()
+    (out / 'status.json').write_text(json.dumps({'head': head, 'status': 'running', 'owner_pid': os.getpid(), 'child_pid': child.pid, 'child_pgid': child.pid, 'started_at': start, 'deadline_at': start + 3600, 'command': [sys.executable, '-u', str(out / 'runner.py'), '312', 'optional']}, indent=2) + '\n')
+    try:
+        code = child.wait(timeout=3600)
+    except subprocess.TimeoutExpired:
+        os.killpg(child.pid, signal.SIGTERM)
+        try:
+            child.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            os.killpg(child.pid, signal.SIGKILL)
+            child.wait()
+        code = 124
+    (out / 'status.json').write_text(json.dumps({'head': head, 'status': 'passed' if code == 0 else 'failed_retained', 'owner_pid': os.getpid(), 'child_pid': child.pid, 'child_pgid': child.pid, 'started_at': start, 'finished_at': time.time(), 'exit_code': code, 'command': [sys.executable, '-u', str(out / 'runner.py'), '312', 'optional']}, indent=2) + '\n')
+print('optional312_recheck_exit', code)
+raise SystemExit(code)

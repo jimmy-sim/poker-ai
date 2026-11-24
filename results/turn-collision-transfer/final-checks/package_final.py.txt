@@ -1,0 +1,70 @@
+"""Seal final exact-report qualification for the structural-stop experiment."""
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+SOURCE = ROOT / 'results/turn-collision-transfer/selection-source-checks'
+SCREEN = ROOT / 'results/turn-collision-transfer/screen'
+OUT = ROOT / 'results/turn-collision-transfer/final-checks'
+HEAD = 'cc8a310f8f1e8b0f7a616bc914d744046178ae0a'
+SELECTOR = '62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73'
+ROLES = ('base311', 'base312', 'optional311', 'optional312')
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def copy(source: Path, destination: Path) -> None:
+    assert source.is_file(), source
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == '.log':
+        with destination.with_name(destination.name + '.gz').open('xb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, destination.with_name(destination.name + '.txt'))
+    else:
+        shutil.copyfile(source, destination)
+
+def main() -> None:
+    assert not OUT.exists() and not OUT.is_symlink()
+    assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip() == HEAD
+    assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=ROOT)
+    state=json.loads((RAW/'driver-state.json').read_bytes())
+    hosted=json.loads((RAW/'hosted.json').read_bytes())
+    canceled=json.loads((RAW/'receipt-head-canceled.json').read_bytes())
+    receipts=[json.loads((RAW/f'{name}.json').read_bytes()) for name in ROLES]
+    assert state['head']==HEAD and state['status']=='passed'
+    assert [(item['role'],item['exit_code']) for item in state['completed']] == [(name,0) for name in ROLES]
+    assert all(item['head']==HEAD and item['status']=='passed' and item['selection_source_fingerprint']==SELECTOR for item in receipts)
+    assert all(item['suite_count']==81 for item in receipts[2:])
+    assert (RAW/'hooks.exit').read_text().strip()=='0'
+    assert hosted['headSha']==HEAD and hosted['conclusion']=='success' and {row['name'] for row in hosted['jobs']}=={'Python 3.11','Python 3.12'} and all(row['conclusion']=='success' for row in hosted['jobs'])
+    assert canceled['headSha']=='5019cf1eb2533785660d4ed2ec94c9820c368ed9' and canceled['conclusion']=='cancelled'
+    assert digest(SOURCE/'manifest.json')=='3ee1b6f745c870e3c27483665cc8b73474ca0d57310352c0fce1a08cad928000'
+    assert digest(SCREEN/'manifest.json')=='14167279d1fa3c137a8075a4397ed32d28b788279eabf530dc9fc191ac4e6df7'
+    assert digest(SCREEN/'result.json')=='51c0d468ca6a9aa63c1d9a6f5a1d86b6a5514a7c871188b98e4a7f2e666778a9'
+    assert json.loads((SCREEN/'result.json').read_bytes())['status']=='structural_stop'
+    assert not (ROOT/'configs/turn-collision-transfer-freeze.json').exists() and not (ROOT/'configs/turn-collision-transfer-spots').exists()
+    for name,phrase in (('base311','5806 passed, 73 skipped, 150 deselected'),('base312','5806 passed, 73 skipped, 150 deselected'),('optional311','2597 passed'),('optional312','2595 passed, 2 skipped')):
+        assert phrase in (RAW/f'{name}.log').read_text(),name
+    OUT.mkdir(parents=True)
+    names=['driver-state.json','driver.log','driver.py','runner.py','optional-suites.json','package_final.py','hooks.exit','hooks.log','hosted.json','hosted.log','receipt-head-canceled.json','receipt-head-canceled.log']
+    names += [f'{name}.{suffix}' for name in ROLES for suffix in ('json','log')]
+    for name in names:
+        copy(RAW/name,OUT/name)
+    result={'status':'final_qualified_structural_stop','tested_head':HEAD,'selector_fingerprint':SELECTOR,'source_receipt_sha256':digest(SOURCE/'manifest.json'),'screen_receipt_sha256':digest(SCREEN/'manifest.json'),'screen_result_sha256':digest(SCREEN/'result.json'),'report_sha256':digest(ROOT/'docs/turn-collision-transfer-result.md'),'local_roles':receipts,'hosted_run':hosted['databaseId'],'hosted_jobs':[{k:row[k] for k in ('name','conclusion')} for row in hosted['jobs']],'intermediate_receipt_ci_cancelled':True,'hooks':'passed','no_training_or_reference':True}
+    (OUT/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+    files=[]
+    for path in sorted(p for p in OUT.rglob('*') if p.is_file()):
+        data=path.read_bytes()
+        files.append({'file':path.relative_to(OUT).as_posix(),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+    (OUT/'manifest.json').write_text(json.dumps({'status':'final_qualified_structural_stop','tested_head':HEAD,'files':files},sort_keys=True,indent=2)+'\n')
+    print('final_qualified_structural_stop',len(files),digest(OUT/'manifest.json'))
+
+if __name__=='__main__':
+    main()

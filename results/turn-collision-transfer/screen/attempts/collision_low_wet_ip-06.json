@@ -1,0 +1,145 @@
+{
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_all_in": true,
+    "include_minimum": false
+  },
+  "actor": 1,
+  "blinds": [
+    1,
+    2
+  ],
+  "board": [
+    "7c",
+    "3d",
+    "5c",
+    "9s"
+  ],
+  "button": 1,
+  "hero": 1,
+  "max_tree_nodes": 200000,
+  "name": "collision_low_wet_ip",
+  "pot": 324,
+  "prefix_actions": [
+    {
+      "amount": 6,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 18,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 54,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 162,
+      "kind": "raise_to"
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "range_conditioning": "product_weights_conditioned_on_card_removal",
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Qs",
+          "Jh"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "8s",
+          "5d"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "9h",
+          "7h"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "Td",
+          "7s"
+        ],
+        "weight": 3
+      },
+      {
+        "cards": [
+          "Tc",
+          "Ks"
+        ],
+        "weight": 2
+      }
+    ],
+    [
+      {
+        "cards": [
+          "5h",
+          "Ah"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "4h",
+          "Jc"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "5s",
+          "2d"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "3c",
+          "Js"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "Kh",
+          "8h"
+        ],
+        "weight": 2
+      }
+    ]
+  ],
+  "schema_version": 1,
+  "stacks": [
+    38,
+    38
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "texture": "wet"
+}

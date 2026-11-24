@@ -13,6 +13,111 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 final exact-report qualification
+
+- On the published structural-stop report HEAD `cc8a310f`, exact-source
+  local base Python 3.11/3.12 each passed 5,806 tests (73 skipped, 150
+  slow deselected) with lint, format, strict typing and pre/post historical
+  source/archive/runtime/lock guards. Optional 3.11 passed 2,597;
+  optional 3.12 passed 2,595 with two expected skips and pinned
+  OpenSpiel/Numba/license guards. Exact-head all-file hooks and both
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45317245286)
+  passed. The earlier intermediate receipt-head CI was canceled by the
+  report push and its official logs are retained separately. The
+  [21-file final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+  binds the unchanged source, full raw structural stop, report and exact
+  check logs. No policy or score was collected. Next: publish/verify the
+  final receipt, await receipt-head hosted CI, finish solo review and
+  history-preserving merge if eligible. Codex assisted; human time or
+  personal learning were not reported.
+
+## 2026-11-23 — PR #109 one-time structural stop
+
+- On published qualified selector HEAD `5019cf1e`, the one permitted
+  PCG64(20261624) score-free screen saved all 25 candidate inputs and 50
+  ordered draw/screen events. Medium/dry OOP first qualified at attempt 3
+  with 12 collided exact turn rows; medium/wet OOP at attempt 2 with 12.
+  Low/wet IP exhausted all 20 attempts, maximum two collided rows versus
+  the frozen minimum four. The [audited raw archive](../results/turn-collision-transfer/screen/manifest.json)
+  binds the clean source, every input and event, predeclared caps, and
+  launcher. Internal selection took 78.6751 seconds; whole launcher
+  123.2653/900 seconds on Apple M4. The first unpublished archive verifier
+  had a relative-root path mistake; its partial package and correction are
+  retained ignored under `results/runs/turn-collision-transfer-screen-launch-20261123/`.
+  The [result report](turn-collision-transfer-result.md) classifies poker
+  strength **inconclusive by structural stop**: no freeze, training,
+  exploitability score, reference comparison or default change. Next:
+  publish/verify the complete raw stop, finish applicable final checks and
+  review, then design a distinct prospective question without changing this
+  failed three-stratum rule. Codex assisted; human time/personal learning
+  were not reported.
+
+## 2026-11-23 — PR #109 corrected selector source qualified
+
+- Corrected selector HEAD `6d43f62a` passed exact-source base Python 3.11/3.12
+  (5,806 tests each, 73 skipped, 150 slow deselected), optional 3.11
+  (2,597 passed), and [hosted Python 3.11/3.12](https://github.com/jimmy-sim/poker-ai/actions/runs/45306928141).
+  Optional 3.12 first failed one **existing** saved-profile regression's
+  unchanged 120-second child watchdog after 2,594 passed/two skipped. Its
+  focused same-environment test passed in 5.35 seconds; one full same-source
+  operational recheck passed 2,595/two skipped with pre/post guards. The first
+  failure, collection-only diagnostic, and complete recheck remain separately
+  in the [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json).
+  All-file hooks passed. A first receipt packager attempt stopped on a
+  misnamed ignored diagnostic script before manifest creation; that partial
+  attempt is retained under ignored `results/runs/turn-collision-transfer-source-requal-20261123/`.
+  No cohort board, tree, collision, policy or score has been measured. Next:
+  publish and byte-verify the source receipt, then run the one registered
+  structural screen within its cap. Codex assisted; human time or personal
+  learning was not reported.
+
+## 2026-11-23 — PR #109 source qualification correction
+
+- First published selector source `437190f` failed hosted Python 3.12
+  strict mypy on a **synthetic test-only** NumPy `~turn` expression; no
+  selector, tree, policy or score ran. The existing local base311 role was
+  stopped early and its partial log/driver state retained. A new test-only
+  explicit Boolean array plus `np.logical_not` passes all seven focused
+  tests and strict mypy under pinned Python 3.11/3.12. The failed hosted
+  log and partial local check remain in ignored persistent
+  `results/runs/turn-collision-transfer-source-20261123/` for the source
+  receipt. Next: publish the corrected tested source, run all required
+  exact-source roles and hosted jobs again, and do not screen a cohort
+  until they pass. Codex assisted; human time/learning not reported.
+
+## 2026-11-23 — PR #109 isolated one-time selector source
+
+- An isolated score-free selector now binds the published protocol, all 24
+  prior spot hashes, parent source and one-time output paths. It draws five
+  private combos per seat, counts only structural turn-key collisions,
+  flushes each raw candidate before inspecting its tree, and retains every
+  screened attempt. Its freeze reader checks every saved candidate and
+  first-eligible order; source pin, timeout and no-replacement guards
+  remain. Seven synthetic/contract tests, focused Ruff/format and strict
+  mypy passed. Initial test import and style/type iteration failures are
+  retained under ignored `results/runs/turn-collision-transfer-source-20261123/`.
+  No registered board, tree, collision, policy or score has been measured.
+  Next: publish/byte-verify tested selector source, then complete exact-source
+  qualification before the one-time screen. Codex assisted; human time or
+  learning was not reported.
+
+## 2026-11-23 — PR #108 merge and next prospective question
+
+- [PR #108](https://github.com/jimmy-sim/poker-ai/pull/108) was
+  history-merged at `71ab64fa` after both exact receipt-head hosted jobs
+  passed, solo review and clean merge status. All research checkpoint
+  commits remain ancestors of main; post-merge main CI is tracked
+  separately. The positive result is restricted to one known finite game,
+  with no default promotion. The next [prospective protocol](turn-collision-transfer.md)
+  asks whether the unchanged exact-turn representation improves new
+  collision-conditioned card/range inputs under matched work. It fixes a
+  first-eligible, bounded structural screen across three varied strata and
+  excludes 24 prior inputs; screening uses no policy score. The protocol
+  and machine contract were written before any new board, tree, collision,
+  policy or score measurement. Next: publish/verify the plan, then build
+  and check isolated selection source before its one-time screen. Codex
+  assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #108 final exact-report qualification
 
 - On report commit `d9df778a`, serial local base 3.11/3.12 each passed

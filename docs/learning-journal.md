@@ -9519,6 +9519,86 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 selector typing correction.** The first published source
+failed hosted Python 3.12 typing because NumPy 2.5 inferred the synthetic
+Boolean mask's `~` operation differently. **Example:** the test now builds
+an explicit Boolean array and uses `np.logical_not`, which passes under
+both pinned Python versions; the poker selector itself did not change.
+The partial local check and failed hosted log are retained, and no real
+selection ran. **Next decision:** fully requalify the corrected source
+before using the one-time RNG stream. Codex assisted; no human time or
+personal learning was reported.
+
+**November 23 selector qualification.** The corrected one-time selector
+passed both base Python versions, both hosted jobs, and all-file hooks.
+The optional Python 3.12 suite first timed out in an older saved-profile
+test's 120-second child watchdog; that result remains failed evidence.
+**Example:** the same test passed alone in 5.35 seconds, and one full
+same-source optional recheck then passed 2,595 tests with two skips. This
+supports an operational timing failure in the first suite run, without
+erasing it or claiming a poker improvement. The [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+retains both full outcomes and the diagnostic. **Next decision:** publish
+and verify the qualified selector evidence, then draw the single registered
+structural cohort without looking at scores. Codex assisted; no human
+time or personal learning was reported.
+
+**November 23 conditional transfer stopped structurally.** The fixed
+screen found two medium, out-of-position games where exact turn keys
+separate 12 acting rows, but none of the 20 low/wet in-position draws
+met the required four-row minimum. **Example:** the strongest low/IP
+draw separated only two rows, while the first eligible medium/dry draw
+used `2s Th 5c 9h` and separated 12. A collision means distinct exact
+turn decisions share one q8 information key; it is an opportunity for
+different choices, not proof that either learned policy is better. The
+[raw archive](../results/turn-collision-transfer/screen/manifest.json) and
+[result](turn-collision-transfer-result.md) retain every attempted board
+and range. No policy was trained or scored; the result is **inconclusive
+for poker strength**, not a favorable two-spot comparison. **Next
+decision:** finish publication and checks, then ask a different bounded
+question that does not quietly remove the failed third stratum. Codex
+assisted; no human time or personal learning was reported.
+
+**November 23 final stop checks.** The structural result was checked on
+the exact report commit by both base Python versions, both optional
+versions, all-file hooks and both hosted jobs. **Example:** the final
+optional Python 3.12 suite passed 2,595 tests with two skips, while the
+earlier source-head optional watchdog failure remains visible in its
+separate receipt. The [final check receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+binds the raw stop, report and checks; a software pass does not turn the
+untrained two-spot partial selection into a strength gain. **Next
+decision:** publish/verify the receipt and complete PR review, then
+register a different bounded question. Codex assisted; no human time or
+personal learning was reported.
+
+**November 23 isolated selector source.** The next test needs inputs where
+exact-turn keys can actually separate hands, while avoiding score-based
+case selection. The new selector fixes the RNG stream and checks a bounded
+sequence of structural candidates, saving each before building its tree;
+the freeze reader verifies the first eligible choice. **Example:** a q8
+turn key shared by distinct exact acting rows counts as a collision, while
+river keys must stay exact. Seven synthetic tests and focused style/type
+checks pass; earlier import and formatting failures were retained. No
+registered card/range draw or poker score occurred. **Next decision:**
+publish/verify this source and finish exact-source checks before running
+the one-time structural screen. Codex assisted; no human time or personal
+learning was reported.
+
+**November 23 known-game closure and next question.** PR #108's
+history-preserving merge keeps every protocol and evidence commit available
+on main. Its one known game's exact-turn gain is real under the frozen
+restricted-game metric, but says little about different card/range inputs.
+**Example:** three earlier newly drawn two-combo inputs had no turn-key
+collisions, so there was nothing for an exact-turn split to fix; the known
+As Jc 5d 3h input did have collisions and improved. The next
+[prospective test](turn-collision-transfer.md) therefore fixes a structural
+screen for new card/range combinations **before** measuring scores, then
+compares the same unchanged representations at matched work. It will report
+all screening attempts and stops if none qualify. **Next decision:**
+publish and verify this plan, qualify isolated selection code, and draw
+only the one registered cohort. Selection on collisions describes a
+conditional mechanism test, not general poker strength. Codex assisted;
+no human time or personal learning was reported.
+
 **November 23 final known-game qualification.** Both base Python versions
 passed the complete fast suite, both optional versions passed their pinned
 81-suite check, and the report-head hosted jobs and hooks passed. The

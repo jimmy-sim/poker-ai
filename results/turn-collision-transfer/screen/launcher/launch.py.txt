@@ -1,0 +1,58 @@
+"""Bound the only prospective score-free structural screen as one process group."""
+import hashlib
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+launch = Path(__file__).resolve().parent
+output = root / 'results/runs/turn-collision-transfer-screen-20261123'
+head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
+assert head == '5019cf1eb2533785660d4ed2ec94c9820c368ed9'
+assert not subprocess.check_output(['git', 'status', '--porcelain=v1'], cwd=root)
+assert not output.exists() and not output.is_symlink()
+assert not (root / 'configs/turn-collision-transfer-freeze.json').exists()
+assert not (root / 'configs/turn-collision-transfer-spots').exists()
+receipt = json.loads((root / 'results/turn-collision-transfer/selection-source-checks/result.json').read_bytes())
+assert receipt['status'] == 'selection_source_qualified' and receipt['selection_started'] is False
+assert receipt['source_fingerprint'] == '62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73'
+assert not (launch / 'status.json').exists()
+env = {k: v for k, v in os.environ.items() if k in {'PATH', 'HOME', 'TMPDIR', 'USER', 'LOGNAME', 'SHELL', 'LANG', 'LC_ALL', 'LC_CTYPE', 'UV_CACHE_DIR', 'UV_PYTHON_INSTALL_DIR', 'UV_OFFLINE', 'PRE_COMMIT_HOME'}}
+env.update(UV_PROJECT_ENVIRONMENT=str(root / 'results/runs/guarded-skip-requalification-20261118/envs/base311'), UV_PYTHON='3.11.17')
+command = ['uv', 'run', '--locked', 'python', 'scripts/prepare_turn_collision_transfer.py', 'screen', '--output', str(output)]
+started = time.time()
+monotonic = time.monotonic()
+with (launch / 'worker.log').open('x') as stream:
+    stream.write(json.dumps({'head': head, 'command': command, 'max_whole_seconds': 900, 'python': '3.11.17', 'env': 'locked pinned base311'}) + '\n')
+    stream.flush()
+    child = subprocess.Popen(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+    state = {'head': head, 'status': 'running', 'owner_pid': os.getpid(), 'child_pid': child.pid, 'child_pgid': child.pid, 'started_at': started, 'deadline_at': started + 900, 'command': command, 'output': str(output)}
+    (launch / 'status.json').write_text(json.dumps(state, sort_keys=True, indent=2) + '\n')
+    try:
+        code = child.wait(timeout=max(0.001, 900 - (time.monotonic() - monotonic)))
+    except subprocess.TimeoutExpired:
+        os.killpg(child.pid, signal.SIGTERM)
+        try:
+            child.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            os.killpg(child.pid, signal.SIGKILL)
+            child.wait()
+        code = 124
+    elapsed = time.monotonic() - monotonic
+result_path = output / 'result.json'
+failure_path = output / 'failure.json'
+if result_path.exists():
+    result = json.loads(result_path.read_bytes())
+    status = result['status'] if code == 0 else 'failed_retained'
+elif failure_path.exists() or code != 0:
+    status = 'failed_retained'
+else:
+    status = 'missing_result'
+state.update(status=status, finished_at=time.time(), elapsed_seconds=elapsed, exit_code=code, result_sha256=hashlib.sha256(result_path.read_bytes()).hexdigest() if result_path.exists() else None, failure_present=failure_path.exists())
+(launch / 'status.json').write_text(json.dumps(state, sort_keys=True, indent=2) + '\n')
+print(json.dumps(state, sort_keys=True))
+raise SystemExit(code if code != 0 else (0 if status in {'selected', 'structural_stop'} else 1))
