@@ -1,10 +1,20 @@
 """Frozen two-game acceptance gates and complete matched-work grid."""
 
+import sys
+from pathlib import Path
 from typing import Any
 
 import pytest
-from known_turn_regret_recency.plan import ARM, GAMES, LABELS, READOUTS
-from known_turn_regret_recency.report import CONTROL, contrasts, decision
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from known_turn_regret_recency.plan import ARM, GAMES, LABELS, READOUTS  # noqa: E402
+from known_turn_regret_recency.report import (  # noqa: E402
+    CONTROL,
+    contrasts,
+    decision,
+)
 
 
 def cases(wet: float, dry: float) -> list[dict[str, Any]]:

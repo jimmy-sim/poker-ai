@@ -9748,10 +9748,14 @@ padding, strategy sum and random state stay unchanged. Ten focused tests
 passed with Ruff, formatting and strict typing. The separate report code
 requires immutable control policies, equal charged work and all twelve
 candidate reference scalar checks before classifying either known game.
-No candidate poker trajectory or score exists yet. **Next decision:**
-finish protocol-head CI and exact-source local/hosted qualification before
-the registered fictional proof and capped profile. Codex assisted; no
-human time or personal learning was reported.
+An independent run of the report test then failed to import the new
+package: another test had silently added `scripts/` during the earlier
+bundle. The old qualification lane was stopped with its partial log,
+and the report test now sets its own import path; each of the three
+new test modules passes alone. No candidate poker trajectory or score
+exists yet. **Next decision:** requalify the corrected exact source on
+all local/hosted lanes before the registered fictional proof and capped
+profile. Codex assisted; no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

@@ -23,8 +23,13 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   readouts and every matched-work contrast. These checks establish code
   behavior, not poker strength; no new known-game candidate was trained
   or scored. Protocol-head hosted CI and full exact-source qualification
-  remain separate gates. Codex assisted; human time and personal learning
-  were not reported.
+  remain separate gates. An independent report-test invocation then exposed
+  an import-order defect masked by the ten-test bundle. The exact-source
+  base 3.11 lane was interrupted with its partial log retained. The test
+  now imports the isolated script path itself; all three new test modules
+  pass independently and together. Full source qualification must restart
+  on the corrected commit. Codex assisted; human time and personal
+  learning were not reported.
 - [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged as
   `ec9c0d2f` after its diagnostic checks and solo review. Receipt-head
   hosted Python 3.11 first timed out at the unchanged 35-minute limit
