@@ -410,6 +410,22 @@ a distinct prospective strength question afterward. The PR #112
 post-merge main run was canceled by the next branch's workflow and its
 official logs were retained; this does not alter the passed PR #112
 report/receipt-head gates or its negative result.
+[PR #113](https://github.com/jimmy-sim/poker-ai/pull/113) was
+history-merged as `91260be0` after final-receipt Python 3.11/3.12 CI
+and solo review. All eight publication commits remain on main. The
+one-shot two-game question is **inconclusive** because the isolated tracer
+pointed the dry candidate at a wet saved path; its failed raw archive and
+complete wet partial remain published. Post-merge main CI is tracked
+separately. The next [prospective matched-work question](known-turn-work-budget.md)
+asks whether the unchanged exact-turn learner's known wet residual falls
+with 20m/40m charged visits, paired to the unchanged q8 control on the
+same known wet and dry games. It does not retry PR #113 or call either
+case unseen. **Definition of done:** publish the frozen protocol, qualify
+isolated source, pass fictional proof and conservative repeated-profile
+admission, run at most one admitted fixed comparison, publish own before
+reference, complete the fixed report and exact-source final checks, and
+classify against the preregistered known-game gates. No policy outcome
+exists at protocol publication and no default is promoted.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -13,6 +13,10 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective matched-work exact-turn budget
+
+- [PR #113](https://github.com/jimmy-sim/poker-ai/pull/113) history-merged as `91260be0` after both final-receipt hosted jobs passed and solo review; all eight evidence commits remain on main. Its one-shot result remains **inconclusive** and the dry saved-path defect is retained. Post-merge main CI is separately pending. The next [prospective protocol](known-turn-work-budget.md) fixes the original q8 and exact-turn learner, two already known games, PCG64(0) deterministic paths, 10m/20m/40m matched work, frozen known-game gates, source qualification, profile/admission caps and own-before-reference boundaries. No new policy or profile outcome exists at this planning checkpoint. Next: publish/verify the protocol after main CI, then implement isolated source. Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — Prospective saved-policy loss attribution
 
 - Exact report-head `5d9f972b` final qualification passed: local base Python 3.11/3.12 each 5,832 pass/73 skip/150 deselected; optional 3.11 2,601 pass; optional 3.12 2,599 pass/2 skip, with pre/post source/archive/report/runtime/lock/license guards. All-file hooks and [hosted CI45459055154](https://github.com/jimmy-sim/poker-ai/actions/runs/45459055154) passed both versions. One zsh wrapper tried to assign the read-only `status` parameter *after* hooks passed; its failed invocation is retained and the same-head `hook_code` capture exited zero. Intermediate source/proof/admission/raw-head CI was canceled by subsequent mandatory pushes, with official logs retained in the [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json). Next: publish/verify final receipt, solo review and history-preserving merge if eligible. The scientific classification stays inconclusive. Codex assisted; human time and personal learning were not reported.
