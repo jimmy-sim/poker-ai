@@ -27,8 +27,13 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   also passed but is retained separately as superseded by the report
   correction. No proof, profile, training, score or reference comparison
   has run. Next: publish and byte-verify the source receipt, then run the
-  frozen fictional proof. Codex assisted; human time and personal learning
-  were not reported.
+  frozen fictional proof. The one published-source fictional proof then
+  passed at HEAD `1b719048`: 0.80 seconds under the 180-second cap,
+  six readouts per arm, identical paired scores and final charged work
+  726. Its [32-file archive](../results/known-wet-turn-mechanism/own-proof/manifest.json)
+  is a software/math check, not a poker-strength result; profile and
+  compute admission remain pending. Codex assisted; human time and
+  personal learning were not reported.
 
 ## 2026-11-23 — PR #110 report readout correction before policies
 

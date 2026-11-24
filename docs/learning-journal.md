@@ -9596,8 +9596,12 @@ records four passing local lanes, hooks and both passing hosted jobs;
 the first source run remains retained as superseded. No policy outcome
 exists yet. **Next decision:** publish and verify the receipt, then run
 the fictional proof and fixed profile before conservative compute
-admission. Codex assisted; human time and personal learning were not
-reported.
+admission. The one [fictional proof](../results/known-wet-turn-mechanism/own-proof/manifest.json)
+subsequently passed in 0.80 seconds under its 180-second cap: both
+representations returned the same six scores and 726 final charged work
+on a toy game with no meaningful turn collision. This checks the
+pipeline; it gives no evidence about the wet poker game. Codex assisted;
+human time and personal learning were not reported.
 
 **November 23 both saved readouts in the known-wet report.** A
 source review caught a gap before training: the first report would have
