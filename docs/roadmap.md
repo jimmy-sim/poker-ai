@@ -426,6 +426,14 @@ admission, run at most one admitted fixed comparison, publish own before
 reference, complete the fixed report and exact-source final checks, and
 classify against the preregistered known-game gates. No policy outcome
 exists at protocol publication and no default is promoted.
+The [draft PR #114](https://github.com/jimmy-sim/poker-ai/pull/114) published
+and byte-verified its prospective protocol and isolated source at distinct
+checkpoints. Both protocol-head and source-head hosted Python jobs passed;
+the exact-source local base 3.11/3.12 and optional 3.11/3.12 suites and
+all-file hooks passed. The [source receipt](../results/known-turn-work-budget/source-checks/manifest.json)
+retains logs and pins. Fictional proof, 12-path profile, separate compute
+admission and any real policy comparison remain pending; the result is not
+yet a poker-strength conclusion.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
