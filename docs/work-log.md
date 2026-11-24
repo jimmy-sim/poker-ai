@@ -13,6 +13,24 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 exact-source qualification
+
+- The [20-member source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
+  binds isolated tracer commit `b86a992e`, fingerprint
+  `4901950e9b49d2f8e383152e67dba06f82b70a486db19905b9e810fdd67ff2d3`,
+  four complete local lanes, exact-head all-file hooks and both passing
+  [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45370824410).
+  Base Python 3.11/3.12 each passed 5,816 tests, skipped 73 and deselected
+  150 slow tests; optional 3.11 passed 2,601 and optional 3.12 passed 2,599
+  with two skips. Pre/post historical archive, source, lock, runtime and
+  installed license guards passed. The manifest SHA-256 is
+  `b3c9618f1a959fd3c756f9a18ba8798d09bfd4bd60fc6c2c5ede00df29ef0920`.
+  Source and all ten changed GitHub blobs were verified before the hosted
+  check. No real saved-policy trace or proof was run. Next: publish and
+  byte-verify this receipt, then run the single fictional proof and
+  separate data-only admission before any real diagnosis. Codex assisted;
+  human time and personal learning were not reported.
+
 ## 2026-11-24 — PR #111 isolated residual tracer under qualification
 
 - The new `known_wet_residual` adapters replay only the 12 pinned

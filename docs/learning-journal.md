@@ -124,17 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
-**Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
-history-merged an **inconclusive** structural-stop comparison after all
-required checks. Its three selected new card/range inputs on known public
-templates had zero turn-key collisions, so no policy was trained or default
-changed. The prior [broader-input result](river-full-broader-spots-result.md)
-remains negative. The next [prospective known-case
-test](known-turn-exact-mechanism.md) asks whether separating 12 diagnosed
-turn collisions improves the already evaluated As Jc 5d 3h medium/dry
-game at identical charged work. No new policy or score exists at protocol
-publication. Earlier status paragraphs below preserve the sequence of
-investigations.
+**Current as of November 24, 2026:** [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+history-merged after full checks with a **negative absolute acceptance**
+result on one already known medium/wet turn-start game. Exact acting turn
+keys reduced the final linear-average best-response gain at matched work,
+but the candidate remained above both frozen absolute strength limits.
+The distinct [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111)
+has a prospectively fixed read-only question about which exact turn and
+river decisions account for the residual gain. Its isolated tracing
+source has passed local and hosted qualification; no new saved-policy
+ranking or diagnosis has begun. Older status paragraphs below preserve
+the sequence of investigations.
 
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
@@ -9645,6 +9645,19 @@ is retained. **Next decision:** qualify the exact committed source in
 all required local, optional and hosted lanes before even the fictional
 proof, then admit and run at most one saved-policy diagnosis. Codex
 assisted; no human time or personal learning was reported.
+
+**November 24 exact-source tracer checks.** The isolated code now has
+the same tested source on both locked Python versions and the optional
+validation environment. **Example:** each base fast suite passed 5,816
+tests; the optional suites passed 2,601 and 2,599 tests, and the hosted
+checks passed on the exact source commit. The [source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
+also records historical source and license guards, so later decision
+traces can be linked to the code that passed those checks. This is a
+software qualification result, not evidence that the poker agent got
+stronger. **Next decision:** publish the receipt, prove the row arithmetic
+on fictional data, and separately admit the capped read-only diagnosis
+before inspecting any saved candidate-ranked decision. Codex assisted;
+no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

@@ -1,0 +1,7 @@
+# Prepublication focused iteration failures, November 24, 2026
+
+The first focused Python 3.11 pass formatted six new files. Ruff then reported import grouping in the new analysis, gate and fictional proof modules, one unused `DIAGNOSIS` import, and two overlong report strings. Strict mypy reported three `attr-defined` errors because the new gate did not explicitly re-export the historical `require_archive` helper. The focused pytest still passed 3/3. These are source integration failures before any saved-policy diagnosis, proof or admission. They were corrected without changing the prospective protocol, old source or any scientific output.
+
+A second focused pass after adding the independent fictional score/street reconciliation test failed: Ruff flagged two long test lines, and pytest reported `KeyError: 'seat'` because the synthetic identity fixture omitted the acting seat required by the real `row_identity` contract. This is a test-fixture defect before source publication or saved-policy work. The fixture was corrected and the lines wrapped; no production math or frozen protocol changed.
+
+The first ignored qualification-wrapper preparation stopped before launch because its own `NEW_FINGERPRINT` occurrence-count assertion expected four references, while the intended constant/guard/receipt require three. It wrote only an unused draft `driver.py`; no local qualification, policy trace or measurement started. The wrapper generator assertion was corrected before launch.
