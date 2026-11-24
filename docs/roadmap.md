@@ -368,6 +368,10 @@ show a **preliminary negative** result: wet final average is 0.047444
 initial pots, worse than the 0.029805 control and above the 0.01/0.025
 absolute gates, while dry improves. The own archive must be published
 before the pinned comparison-only scalar audit and fixed final report.
+It was published first; the [OpenSpiel audit](../results/known-turn-regret-recency/native/manifest.json)
+then matched all 12 candidate saved scores within `4.263e−14` chips
+maximum error versus the fixed `1e−9` threshold. The fixed card/action
+report and final qualification remain.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

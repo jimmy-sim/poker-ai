@@ -1,0 +1,86 @@
+"""Seal the comparison-only 12-policy scalar audit after own publication."""
+
+import hashlib
+import json
+import shutil
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-turn-regret-recency/native"
+SOURCE = "133a5a77c19431bf1c220bc89d000c6a146cf53161532bcf26eab0499aa2cf10"
+LICENSE = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier native audit")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from known_turn_regret_recency.gate import OWN, clean_head, require_archive, source_fingerprint
+    from known_turn_regret_recency.plan import LABELS, READOUTS, paths
+
+    head = clean_head(ROOT)
+    if source_fingerprint(ROOT) != SOURCE:
+        raise ArithmeticError("tested source changed")
+    require_archive(ROOT, ROOT / OWN, "own_published", SOURCE)
+    state = json.loads((RAW / "job-state.json").read_bytes())
+    result = json.loads((RAW / "raw/result.json").read_bytes())
+    events = [json.loads(line) for line in (RAW / "raw/events.jsonl").read_text().splitlines()]
+    expected = {
+        (spec.index, work, readout)
+        for spec in paths()
+        for work in LABELS
+        for readout in READOUTS
+    }
+    cases = {
+        (row["path_index"], row["work_label"], row["readout"])
+        for row in result["rows"]
+    }
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["cap_seconds"] != 900
+        or not 0 < state["observed_wall_seconds"] < 900
+        or state["source_head"] != head
+        or state["source_fingerprint"] != SOURCE
+        or result["status"] != "completed"
+        or result["head"] != head
+        or result["source_fingerprint"] != SOURCE
+        or len(result["rows"]) != 12
+        or cases != expected
+        or events != result["rows"]
+        or result["maximum_error_chips"] > 1e-9
+        or any(row["native"]["maximum_error_chips"] > 1e-9 for row in result["rows"])
+        or result["runtime"]["open_spiel"] != "2.0.2"
+        or result["runtime"]["license_sha256"] != LICENSE
+        or (RAW / "launch.exit").read_text().strip() != "0"
+    ):
+        raise ArithmeticError("pinned native scalar audit changed")
+    shutil.copytree(RAW / "raw", OUT)
+    for name in (
+        "job-state.json",
+        "launch.exit",
+        "launch.log",
+        "launcher.log",
+        "launcher.py",
+        "package_stage.py",
+    ):
+        source = RAW / name
+        target = OUT / (name + ".txt" if name.endswith(".py") else name)
+        shutil.copyfile(source, target)
+    files = []
+    for path in sorted(path for path in OUT.rglob("*") if path.is_file()):
+        raw = path.read_bytes()
+        files.append(
+            dict(file=path.relative_to(OUT).as_posix(), bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+        )
+    (OUT / "manifest.json").write_text(
+        json.dumps(dict(status="native_audited", source_fingerprint=SOURCE, files=files), sort_keys=True, indent=2)
+        + "\n"
+    )
+    print("native_audited", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

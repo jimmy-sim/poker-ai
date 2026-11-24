@@ -15,6 +15,18 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The complete own archive was published at `b956d838`; all 37 changed
+  GitHub blobs and the publication guard passed **before** any reference
+  work. The one comparison-only OpenSpiel 2.0.2 scalar audit then checked
+  all 12 candidate saved policies in 49.102/900 whole seconds. Maximum
+  independent difference was `4.263256414560601e−14` chips versus the
+  fixed `1e−9` gate; installed Apache-2.0 license SHA-256 matched the
+  pin. The [eight-member native archive](../results/known-turn-regret-recency/native/manifest.json)
+  has SHA-256 `2843cb7c32fa1d8a0c753b7a35e2e1567804bb7b1002e0ff743b3368e6341abf`.
+  This validates the unfavorable wet own score numerically, without
+  changing the frozen negative criterion. Next: publish/byte-verify
+  native evidence, then build the fixed 24-policy/card-action report.
+  Codex assisted; human time and personal learning were not reported.
 - The one admitted two-path own study completed in 45.139/7,200 whole
   seconds on the fixed seed zero. Both paths matched the archived
   controls' final charged work (wet 10,117,956; dry 10,012,410), saved

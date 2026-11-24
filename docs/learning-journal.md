@@ -9829,6 +9829,20 @@ comparison-only numerical audit; do not retry or tune the discount to
 these outcomes. Codex assisted; no human time or personal learning was
 reported.
 
+**November 24 independently check the unfavorable saved scores.** All
+twelve candidate policies were committed and byte-verified before the
+pinned OpenSpiel 2.0.2 audit ran. Its largest scalar difference from
+the own scorer was `4.263e−14` chips, far inside the fixed `1e−9` gate;
+the installed Apache-2.0 license hash also matched. **Example:** the
+wet game's 0.047444-pot final average is an accurately computed score
+under this restricted game, even though the dry policy improved. The
+[native audit](../results/known-turn-regret-recency/native/manifest.json)
+validates arithmetic, not general poker strength or a preferred action.
+**Next decision:** publish the audit and make the fixed report with
+the same preregistered card/action rows across checkpoints. The wet
+acceptance failure remains negative; no retry follows it. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
