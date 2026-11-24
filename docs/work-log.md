@@ -13,6 +13,25 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 corrected selector source qualified
+
+- Corrected selector HEAD `6d43f62a` passed exact-source base Python 3.11/3.12
+  (5,806 tests each, 73 skipped, 150 slow deselected), optional 3.11
+  (2,597 passed), and [hosted Python 3.11/3.12](https://github.com/jimmy-sim/poker-ai/actions/runs/45306928141).
+  Optional 3.12 first failed one **existing** saved-profile regression's
+  unchanged 120-second child watchdog after 2,594 passed/two skipped. Its
+  focused same-environment test passed in 5.35 seconds; one full same-source
+  operational recheck passed 2,595/two skipped with pre/post guards. The first
+  failure, collection-only diagnostic, and complete recheck remain separately
+  in the [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json).
+  All-file hooks passed. A first receipt packager attempt stopped on a
+  misnamed ignored diagnostic script before manifest creation; that partial
+  attempt is retained under ignored `results/runs/turn-collision-transfer-source-requal-20261123/`.
+  No cohort board, tree, collision, policy or score has been measured. Next:
+  publish and byte-verify the source receipt, then run the one registered
+  structural screen within its cap. Codex assisted; human time or personal
+  learning was not reported.
+
 ## 2026-11-23 — PR #109 source qualification correction
 
 - First published selector source `437190f` failed hosted Python 3.12

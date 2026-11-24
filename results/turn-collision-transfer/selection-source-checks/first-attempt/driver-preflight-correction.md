@@ -1,0 +1,1 @@
+A copied exact-source driver preflight edit asserted two old HEAD literals in the runner, but that file contained one. The preparation script stopped before modifying either runner or driver and before launching any qualification role. The assertion was corrected to the actual one occurrence; no scientific or check job was duplicated.

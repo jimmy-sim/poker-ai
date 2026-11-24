@@ -9529,6 +9529,19 @@ selection ran. **Next decision:** fully requalify the corrected source
 before using the one-time RNG stream. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 selector qualification.** The corrected one-time selector
+passed both base Python versions, both hosted jobs, and all-file hooks.
+The optional Python 3.12 suite first timed out in an older saved-profile
+test's 120-second child watchdog; that result remains failed evidence.
+**Example:** the same test passed alone in 5.35 seconds, and one full
+same-source optional recheck then passed 2,595 tests with two skips. This
+supports an operational timing failure in the first suite run, without
+erasing it or claiming a poker improvement. The [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+retains both full outcomes and the diagnostic. **Next decision:** publish
+and verify the qualified selector evidence, then draw the single registered
+structural cohort without looking at scores. Codex assisted; no human
+time or personal learning was reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded

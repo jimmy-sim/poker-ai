@@ -126,3 +126,10 @@ selects new card/range combinations on varied known templates by a frozen
 structural opportunity rule, with every screened candidate retained and
 no score-based case selection. No new board/tree/policy measurement existed
 at this plan checkpoint. Post-merge main CI remains separately tracked.
+The first selector source failed hosted Python 3.12 typing and was corrected
+only in a synthetic test. The corrected exact-source base/optional and hosted
+qualification passed, with one retained optional Python 3.12 watchdog
+failure followed by a complete same-source operational recheck. The
+[source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+must be published and verified before the one-time structural screen. No
+registered board, collision or policy outcome has been collected yet.

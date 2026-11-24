@@ -1,0 +1,129 @@
+"""Seal corrected selector qualification with the failed first source retained."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OLD = ROOT / "results/runs/turn-collision-transfer-source-20261123"
+RECHECK = ROOT / "results/runs/turn-collision-transfer-optional312-recheck-20261123"
+OUT = ROOT / "results/turn-collision-transfer/selection-source-checks"
+HEAD = "6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2"
+OLD_HEAD = "437190f101b6ba114685882c3f2d10454ae19dc6"
+SOURCE = "62cb0370d158efb1d620b785594f62d51021e1280db36e2a0bcb33d43cd2dc73"
+PARENT = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def copy(source: Path, destination: Path) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == ".log":
+        with destination.with_name(destination.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == ".py":
+        shutil.copyfile(source, destination.with_name(destination.name + ".txt"))
+    else:
+        shutil.copyfile(source, destination)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier selector source receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("corrected selector source HEAD changed or dirty")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    recheck_state = json.loads((RECHECK / "status.json").read_bytes())
+    old_state = json.loads((OLD / "driver-state.json").read_bytes())
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    old_hosted = json.loads((OLD / "hosted-failed-complete.json").read_bytes())
+    receipts = [json.loads((RAW / f"{name}.json").read_bytes()) for name in ROLES[:-1]]
+    receipts.append(json.loads((RECHECK / "optional312.json").read_bytes()))
+    failed_optional = json.loads((RAW / "optional312.json").read_bytes())
+    focused = json.loads((RAW / "diagnose-optional312-imports.json").read_bytes())
+    if (
+        state["status"] != "failed_retained"
+        or state["head"] != HEAD
+        or [(row["role"], row["exit_code"]) for row in state["completed"]]
+        != [(name, 0) for name in ROLES[:-1]] + [("optional312", 1)]
+        or recheck_state["status"] != "passed"
+        or recheck_state["head"] != HEAD
+        or recheck_state["exit_code"] != 0
+        or failed_optional["status"] != "failed"
+        or failed_optional["head"] != HEAD
+        or focused["head"] != HEAD or focused["exit_code"] != 0
+        or any(row["status"] != "passed" or row["head"] != HEAD
+               or row["selection_source_fingerprint"] != SOURCE
+               or row["source_fingerprint"] != PARENT for row in receipts)
+        or any(row["suite_count"] != 81 for row in receipts[2:])
+        or (RAW / "hooks.exit").read_text().strip() != "0"
+        or hosted["headSha"] != HEAD or hosted["conclusion"] != "success"
+        or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"}
+        or any(row["conclusion"] != "success" for row in hosted["jobs"])
+        or old_state["head"] != OLD_HEAD
+        or old_state["status"] != "failed_retained"
+        or old_state["completed"] != [{"role": "base311", "exit_code": -15}]
+        or old_hosted["headSha"] != OLD_HEAD
+        or not any(row["name"] == "Python 3.12" and row["conclusion"] == "failure" for row in old_hosted["jobs"])
+    ):
+        raise ArithmeticError("source qualification or retained initial failure incomplete")
+    for name, phrase in (("base311", "5806 passed, 73 skipped, 150 deselected"),
+                         ("base312", "5806 passed, 73 skipped, 150 deselected"),
+                         ("optional311", "2597 passed"),
+                         ("optional312", "2595 passed, 2 skipped")):
+        source_dir = RECHECK if name == "optional312" else RAW
+        if phrase not in (source_dir / f"{name}.log").read_text():
+            raise ArithmeticError("complete exact-source test summary absent: " + name)
+    failed_log = (RAW / "optional312.log").read_text()
+    if "1 failed, 2594 passed, 2 skipped" not in failed_log or "timed out after 120 seconds" not in failed_log:
+        raise ArithmeticError("original optional312 watchdog failure missing")
+    if (ROOT / "configs/turn-collision-transfer-freeze.json").exists() or (ROOT / "configs/turn-collision-transfer-spots").exists():
+        raise ArithmeticError("one-time selection occurred before source qualification")
+    OUT.mkdir(parents=True)
+    current = ["driver-state.json", "driver.log", "driver.py", "runner.py", "optional-suites.json", "package_source.py", "hooks.exit", "hooks.log", "hosted.json", "hosted.log"]
+    current += [f"{name}.{suffix}" for name in ROLES[:-1] for suffix in ("json", "log")]
+    for name in current:
+        copy(RAW / name, OUT / name)
+    for suffix in ("json", "log"):
+        copy(RECHECK / f"optional312.{suffix}", OUT / f"optional312.{suffix}")
+    for name in ("launch.py", "launch.log", "runner.py", "optional-suites.json", "status.json"):
+        copy(RECHECK / name, OUT / "optional312-recheck" / name)
+    for name in ("optional312.json", "optional312.log", "diagnose_optional312.py",
+                 "diagnose-optional312.json", "diagnose-optional312.log",
+                 "diagnose_optional312_imports.py", "diagnose-optional312-imports.json",
+                 "diagnose-optional312-imports.log"):
+        copy(RAW / name, OUT / "failed-optional312" / name)
+    old = ["driver-state.json", "driver.log", "driver.py", "runner.py", "base311.log", "iteration-failures.md", "driver-preflight-correction.md", "hosted-failed-complete.json", "hosted-failed-complete.log", "hosted-python312-failed.log", "protocol-head-canceled.json", "protocol-head-canceled.log", "focused.log", "focused-final.log", "mypy.log", "mypy-final.log", "ruff.log", "format.log"]
+    for name in old:
+        copy(OLD / name, OUT / "first-attempt" / name)
+    result = dict(status="selection_source_qualified", tested_head=HEAD,
+                  source_fingerprint=SOURCE, qualified_parent_source_fingerprint=PARENT,
+                  local_roles=receipts, hosted_run=hosted["databaseId"],
+                  hosted_jobs=[dict(name=row["name"], conclusion=row["conclusion"]) for row in hosted["jobs"]],
+                  first_hosted_python312_failed=True, first_local_base311_interrupted=True,
+                  first_optional312_watchdog_failed=True,
+                  optional312_exact_source_recheck_passed=True,
+                  hooks="passed", selection_started=False)
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(p for p in OUT.rglob("*") if p.is_file()):
+        data = path.read_bytes()
+        files.append(dict(file=path.relative_to(OUT).as_posix(), bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="selection_source_qualified", source_fingerprint=SOURCE, files=files), sort_keys=True, indent=2) + "\n")
+    print("selection_source_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

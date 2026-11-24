@@ -1,0 +1,24 @@
+import json
+import os
+import subprocess
+import time
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+out = Path(__file__).resolve().parent
+head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
+assert head == '6d43f62adfa52c1c32eb4e21ec5599a40fd48ea2'
+assert not subprocess.check_output(['git', 'status', '--porcelain=v1'], cwd=root)
+assert json.loads((out / 'driver-state.json').read_bytes())['status'] == 'failed_retained'
+env = {k: v for k, v in os.environ.items() if k in {'PATH', 'HOME', 'TMPDIR', 'USER', 'LOGNAME', 'SHELL', 'LANG', 'LC_ALL', 'LC_CTYPE', 'UV_CACHE_DIR', 'UV_PYTHON_INSTALL_DIR', 'UV_OFFLINE', 'PRE_COMMIT_HOME'}}
+env.update(UV_PROJECT_ENVIRONMENT=str(root / 'results/runs/guarded-skip-requalification-20261118/envs/optional312'), UV_PYTHON='3.12.15')
+command = ['uv', 'run', '--locked', '--all-extras', 'pytest', '-q', 'tests/test_earlier_source_profile.py::test_published_profile_reproduces_all_numeric_exports_without_construction']
+started = time.perf_counter()
+with (out / 'diagnose-optional312.log').open('x') as stream:
+    stream.write(json.dumps({'head': head, 'command': command, 'original_optional312_exit': 1, 'watchdog_seconds_unchanged': 120}) + '\n')
+    stream.flush()
+    result = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, check=False, timeout=180)
+receipt = {'head': head, 'command': command, 'exit_code': result.returncode, 'seconds': time.perf_counter() - started, 'watchdog_seconds_unchanged': 120}
+(out / 'diagnose-optional312.json').write_text(json.dumps(receipt, sort_keys=True, indent=2) + '\n')
+print(json.dumps(receipt))
+raise SystemExit(result.returncode)

@@ -258,9 +258,16 @@ exact-source qualification before its one-time screen.
 The first published selector source failed hosted Python 3.12 strict
 typing in a synthetic test-only NumPy expression; the partial local check
 and official hosted failure are retained. The test-only correction passes
-focused tests and strict typing on both pinned versions. Full
-exact-source qualification must restart on the corrected commit before
-any one-time structural screen; no new board or score exists.
+focused tests and strict typing on both pinned versions. The corrected
+source then passed both base local lanes, optional Python 3.11, both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45306928141)
+and all-file hooks. Optional Python 3.12 first failed an older saved-profile
+test's unchanged 120-second watchdog; the failure is retained. One complete
+same-source optional recheck passed 2,595 tests with two skips and the
+pre/post guards. Its [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
+retains both outcomes. Publish and byte-verify that receipt before the
+one-time structural screen; no registered board, tree, collision, policy
+or score exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
