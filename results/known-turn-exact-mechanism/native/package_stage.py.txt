@@ -1,0 +1,58 @@
+"""Publish the one completed comparison-only native audit."""
+
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+SOURCE = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+HEAD = "d73090744f9683db4eccd11ce4966f08694ac5fc"
+
+
+def package(folder: Path, output: Path) -> None:
+    if output.exists() or output.is_symlink():
+        raise FileExistsError("retain existing native audit")
+    state = json.loads((folder / "job-state.json").read_bytes())
+    result = json.loads((folder / "raw/result.json").read_bytes())
+    rows = result["rows"]
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["source_head"] != HEAD
+        or state["source_fingerprint"] != SOURCE
+        or state["cap_seconds"] != 900
+        or not 0 < state["observed_wall_seconds"] < 900
+        or result["head"] != HEAD
+        or result["source_fingerprint"] != SOURCE
+        or result["status"] != "completed"
+        or len(rows) != 12
+        or result["maximum_error_chips"] > 1e-9
+        or result["runtime"]["open_spiel"] != "2.0.2"
+        or result["runtime"]["license_sha256"]
+        != "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        or (folder / "launch.exit").read_text().strip() != "0"
+        or any(path.is_symlink() for path in (folder / "raw").rglob("*"))
+    ):
+        raise ArithmeticError("native audit identity or scalar gate failed")
+    grid = {(r["path_index"], r["work_label"], r["readout"]) for r in rows}
+    if grid != {
+        (i, work, readout)
+        for i in (0, 1)
+        for work in (100000, 1000000, 10000000)
+        for readout in ("current", "linear_average")
+    }:
+        raise ArithmeticError("fixed 12-policy grid changed")
+    shutil.copytree(folder / "raw", output)
+    for name in ("job-state.json", "launch.exit", "launch.log", "launcher.log", "launcher.py", "package_stage.py", "preflight-correction.md"):
+        shutil.copyfile(folder / name, output / (name + ".txt" if name.endswith(".py") else name))
+    files = []
+    for path in sorted(p for p in output.rglob("*") if p.is_file()):
+        data = path.read_bytes()
+        files.append(dict(file=path.relative_to(output).as_posix(), bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (output / "manifest.json").write_text(json.dumps(dict(status="native_audited", source_fingerprint=SOURCE, files=files), sort_keys=True, indent=2) + "\n")
+    print("native_audited", len(files), output)
+
+
+if __name__ == "__main__":
+    root = Path(__file__).resolve().parents[3]
+    package(Path(__file__).resolve().parent, root / "results/known-turn-exact-mechanism/native")

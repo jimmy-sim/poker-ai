@@ -9519,6 +9519,18 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 independent scalar audit.** The single pinned OpenSpiel
+2.0.2 comparison checked both saved policies at each registered work
+checkpoint, with both current and linear-average readouts. Its largest
+independent numerical difference was `4.263256414560601e-14` chips, below
+the fixed `1e-9`-chip gate. **Example:** this validates the final reported
+score calculation independently; it does not show whether the one known
+board generalizes to another board. The [complete audit](../results/known-turn-exact-mechanism/native/manifest.json)
+retains all 12 rows and the installed license hash. **Next decision:**
+publish the audit before building the fixed card/action report; no reference
+strategy was loaded into training. Codex assisted; no human time or personal
+learning was reported.
+
 **November 23 one known-case own pair.** The single admitted
 control/candidate comparison trained each representation from scratch to
 the same 10,012,410 charged visits and retained all 12 policies. The own

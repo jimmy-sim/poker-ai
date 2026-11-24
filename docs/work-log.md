@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #108 pinned scalar audit
+
+- After the complete own archive was published and byte-verified, the one
+  registered comparison-only OpenSpiel 2.0.2 audit checked all 12 saved
+  policies at 100k/1m/10m work, current and linear average. Maximum
+  independent scalar error was `4.263256414560601e-14` chips versus the
+  `1e-9` gate. Internal time was 12.185 seconds; the launcher took 12.902
+  seconds under the 900-second cap. Installed Apache-2.0 license hash and
+  every row, PID and log are retained in the [native archive](../results/known-turn-exact-mechanism/native/manifest.json).
+  A prelaunch expected-HEAD typo was corrected before any audit worker or
+  output existed and is recorded there. Reference strategies did not enter
+  training. Next: publish/verify this audit, then run the fixed decision
+  report from published bytes. Codex assisted; human time or learning was
+  not reported.
+
 ## 2026-11-23 — PR #107 closure and known-case turn protocol
 
 - [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107) was history-merged
