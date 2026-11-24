@@ -1,0 +1,48 @@
+"""Package exact PR114 source qualification only after all gates pass."""
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+root=Path(__file__).resolve().parents[3]
+raw=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/source-checks'
+head='674d7836f953b4f52e36cd4940351072dbdd384a'
+fingerprint='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+roles=('base311','base312','optional311','optional312')
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier source receipt')
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==head
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+receipts=[json.loads((raw/f'{role}.json').read_bytes()) for role in roles]
+assert all(row['status']=='passed' and row['head']==head and row['source_fingerprint']==fingerprint and row['failure'] is None for row in receipts)
+assert (raw/'exact-hooks.exit').read_text().strip()=='0'
+assert (raw/'exact-hooks.log').is_file()
+hosted=json.loads((raw/'hosted.json').read_bytes())
+protocol=json.loads((root/'results/runs/known-turn-work-budget-protocol-20261124/hosted.json').read_bytes())
+for item,revision in ((hosted,head),(protocol,'01b50a3e590143a7653bcfbe1e724fc25868d26b')):
+ assert item['headSha']==revision and item['conclusion']=='success'
+ assert {job['name']:job['conclusion'] for job in item['jobs']}=={'Python 3.11':'success','Python 3.12':'success'}
+assert all((raw/f'{role}.log').is_file() for role in roles)
+out.mkdir(parents=True)
+def copy(source,label):
+ target=out/label
+ if source.suffix=='.log':
+  with target.with_name(target.name+'.gz').open('xb') as stream:
+   with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as zipped:zipped.write(source.read_bytes())
+ elif source.suffix=='.py':shutil.copyfile(source,target.with_name(target.name+'.txt'))
+ else:shutil.copyfile(source,target)
+for name in ('runner.py','package_source.py','optional-suites.json','exact-hooks.log','exact-hooks.exit','iteration-failures.md','hosted.json','hosted.log'):
+ copy(raw/name,name)
+for role in roles:
+ for suffix in ('json','log'):copy(raw/f'{role}.{suffix}',f'{role}.{suffix}')
+for suffix in ('json','log'):
+ copy(root/f'results/runs/known-turn-work-budget-protocol-20261124/hosted.{suffix}',f'protocol-hosted.{suffix}')
+result=dict(status='source_qualified',tested_head=head,source_fingerprint=fingerprint,local_roles=receipts,hosted_run=hosted['databaseId'],protocol_hosted_run=protocol['databaseId'],hooks='passed',proof_started=False,profile_started=False,training_started=False)
+(out/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+files=[]
+for path in sorted(out.iterdir()):
+ blob=path.read_bytes();files.append(dict(file=path.name,bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='source_qualified',source_fingerprint=fingerprint,files=files),sort_keys=True,indent=2)+'\n')
+print('source_qualified',len(files),out)

@@ -1,0 +1,32 @@
+"""Archive one fixed negative matched-work report and complete row vectors."""
+import hashlib
+import json
+import math
+import shutil
+from pathlib import Path
+root=Path(__file__).resolve().parents[3]
+folder=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/report'
+source='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+head='adf6897ef3516cd74c614d3c790499304a27c8d5'
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier report')
+state=json.loads((folder/'job-state.json').read_bytes())
+report=json.loads((folder/'raw/report.json').read_bytes())
+assert state['status']=='passed' and state['exit_code']==0 and 0<state['observed_wall_seconds']<state['operational_cap_seconds']==3600
+assert state['source_head']==head and state['source_fingerprint']==source and (folder/'launch.exit').read_text().strip()=='0'
+assert report['status']=='completed' and report['head']==head and report['source_fingerprint']==source
+assert report['primary']['classification']=='negative' and report['primary']['wet_trend']=='continuing decline'
+assert len(report['cases'])==24 and len(report['checkpoint_contrasts'])==12 and len(report['diagnostics'])==42
+assert report['native_maximum_error_chips']<=1e-9
+for row in report['cases']:
+ assert abs(math.fsum(row['turn_row_contributions_chips'])+math.fsum(row['river_row_contributions_chips'])-row['exploitability_chips'])<=1e-9
+ assert all(value>=-1e-12 for value in row['turn_row_contributions_chips']+row['river_row_contributions_chips'])
+assert not any(path.is_symlink() for path in (folder/'raw').rglob('*'))
+shutil.copytree(folder/'raw',out)
+for name in ('job-state.json','launch.exit','launch.log','launcher.log','launcher.py','package_stage.py'):
+ shutil.copyfile(folder/name,out/(name+'.txt' if name.endswith('.py') else name))
+files=[]
+for path in sorted(p for p in out.rglob('*') if p.is_file()):
+ blob=path.read_bytes();files.append(dict(file=path.relative_to(out).as_posix(),bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='report_negative',source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print('report_negative',len(files),out)

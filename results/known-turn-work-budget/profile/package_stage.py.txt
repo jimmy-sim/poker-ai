@@ -1,0 +1,30 @@
+"""Archive all twelve complete registered profile paths before admission."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+from known_turn_work_budget.forecast import forecast
+
+root=Path(__file__).resolve().parents[3]
+folder=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/profile'
+source='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+head='29a28978fa49120b7611d13e848af6e9e53da80a'
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier profile')
+state=json.loads((folder/'job-state.json').read_bytes())
+result=json.loads((folder/'raw/result.json').read_bytes())
+projected=json.loads((folder/'raw/forecast.json').read_bytes())
+assert state['status']=='passed' and state['exit_code']==0 and state['cap_seconds']==900 and state['reserve_within_cap_seconds']==120 and 0<state['observed_wall_seconds']<900
+assert state['source_head']==head and state['source_fingerprint']==source
+assert result['status']=='completed' and result['stage']=='profile' and result['head']==head and result['source_fingerprint']==source
+assert forecast(result)==projected
+assert (folder/'launch.exit').read_text().strip()=='0'
+assert not any(path.is_symlink() for path in (folder/'raw').rglob('*'))
+shutil.copytree(folder/'raw',out)
+for name in ('job-state.json','launch.exit','launch.log','launcher.log','launcher.py','package_stage.py'):
+ shutil.copyfile(folder/name,out/(name+'.txt' if name.endswith('.py') else name))
+files=[]
+for path in sorted(p for p in out.rglob('*') if p.is_file()):
+ blob=path.read_bytes();files.append(dict(file=path.relative_to(out).as_posix(),bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='profile_published',source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print('profile_published',len(files),out)

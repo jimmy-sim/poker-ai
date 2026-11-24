@@ -410,6 +410,67 @@ a distinct prospective strength question afterward. The PR #112
 post-merge main run was canceled by the next branch's workflow and its
 official logs were retained; this does not alter the passed PR #112
 report/receipt-head gates or its negative result.
+[PR #113](https://github.com/jimmy-sim/poker-ai/pull/113) was
+history-merged as `91260be0` after final-receipt Python 3.11/3.12 CI
+and solo review. All eight publication commits remain on main. The
+one-shot two-game question is **inconclusive** because the isolated tracer
+pointed the dry candidate at a wet saved path; its failed raw archive and
+complete wet partial remain published. Post-merge main CI is tracked
+separately. The next [prospective matched-work question](known-turn-work-budget.md)
+asks whether the unchanged exact-turn learner's known wet residual falls
+with 20m/40m charged visits, paired to the unchanged q8 control on the
+same known wet and dry games. It does not retry PR #113 or call either
+case unseen. **Definition of done:** publish the frozen protocol, qualify
+isolated source, pass fictional proof and conservative repeated-profile
+admission, run at most one admitted fixed comparison, publish own before
+reference, complete the fixed report and exact-source final checks, and
+classify against the preregistered known-game gates. No policy outcome
+exists at protocol publication and no default is promoted.
+The [draft PR #114](https://github.com/jimmy-sim/poker-ai/pull/114) published
+and byte-verified its prospective protocol and isolated source at distinct
+checkpoints. Both protocol-head and source-head hosted Python jobs passed;
+the exact-source local base 3.11/3.12 and optional 3.11/3.12 suites and
+all-file hooks passed. The [source receipt](../results/known-turn-work-budget/source-checks/manifest.json)
+retains logs and pins. Fictional proof, 12-path profile, separate compute
+admission and any real policy comparison remain pending; the result is not
+yet a poker-strength conclusion.
+The source receipt was published and its normal-clone guard passed; one
+fictional-only [proof](../results/known-turn-work-budget/own-proof/manifest.json)
+then passed inside 180 seconds. Publish and verify the proof before the
+fixed real-path profile. No real policy outcome has yet been collected.
+The single fixed [twelve-path profile](../results/known-turn-work-budget/profile/manifest.json)
+completed in 80.961 whole seconds with all repeated paths and memory under
+cap; its provisional conservative bound is 5273.267 seconds, below 7200.
+Publish/verify the profile before the separate data-only admission; this
+is not yet a poker-strength result.
+All 85 profile/checkpoint blobs were remotely byte-verified. Separate
+[data-only admission](../results/known-turn-work-budget/admission/manifest.json)
+recomputed the frozen strict bound `5273.267051859777 < 7200` seconds
+and admitted the one fixed four-path study. Publish/verify admission before
+the own comparison; no poker-strength outcome exists yet.
+The one admitted fixed four-path [own comparison](../results/known-turn-work-budget/own/manifest.json)
+completed under cap, reproduced all historical 10m hashes and saved all 24
+policies with matched work. At 40m, exact-turn linear averages beat their
+matched q8 controls on both already known games, but the wet candidate's
+own score is 0.010044 initial pots, just above the frozen 0.01 absolute
+limit. Publish/verify all own bytes before the independent comparison-only
+audit and final classification. No retry or default promotion.
+All 66 own/archive blobs were remotely byte-verified before the single
+[pinned OpenSpiel scalar audit](../results/known-turn-work-budget/native/manifest.json).
+All 24 checks passed with maximum error `6.750155989720952e-14` chips
+against the frozen `1e-9` tolerance. Publish/verify the audit before the
+fixed exact-row report; the wet own absolute threshold is still missed.
+The [fixed negative report](known-turn-work-budget-result.md) reconciles
+all 24 own/native cases and exact turn/river contribution vectors.
+At 40m, wet exact-turn improves over q8 but remains at 0.010044 pots,
+strictly above the 0.01 absolute target; dry exact-turn passes. Both
+paired gates and the descriptive wet decline pass. The final exact-report local
+base and optional Python 3.11/3.12 lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45490979968)
+passed; their [receipt](../results/known-turn-work-budget/final-checks/manifest.json)
+preserves logs and intermediate cancellations. The strength result remains
+negative. Review and history-merge PR #114 if eligible, then stop. Do not
+start another experiment or promote a default.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -1,0 +1,51 @@
+"""Seal exact negative report-head qualification with all retained logs."""
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+root=Path(__file__).resolve().parents[3]
+raw=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/final-checks'
+head='73f11326236d4af0ec6c03fbed9d066ca6618ba5'
+source='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+roles=('base311','base312','optional311','optional312')
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier final receipt')
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==head
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+receipts=[json.loads((raw/f'{role}.json').read_bytes()) for role in roles]
+assert all(r['status']=='passed' and r['head']==head and r['source_fingerprint']==source and r['failure'] is None for r in receipts)
+assert (raw/'exact-hooks.exit').read_text().strip()=='0'
+for role,phrase in (('base311','5841 passed, 73 skipped, 150 deselected'),('base312','5841 passed, 73 skipped, 150 deselected'),('optional311','2601 passed'),('optional312','2599 passed, 2 skipped')):
+ assert phrase in (raw/f'{role}.log').read_text(),role
+hosted=json.loads((raw/'hosted.json').read_bytes())
+assert hosted['headSha']==head and hosted['conclusion']=='success'
+assert {j['name']:j['conclusion'] for j in hosted['jobs']}=={'Python 3.11':'success','Python 3.12':'success'}
+report=json.loads((root/'results/known-turn-work-budget/report/report.json').read_bytes())
+assert report['primary']['classification']=='negative' and len(report['cases'])==24 and len(report['diagnostics'])==42
+assert report['source_fingerprint']==source and report['native_maximum_error_chips']<=1e-9
+assert hashlib.sha256((root/'results/known-turn-work-budget/report/report.json').read_bytes()).hexdigest()=='498c945e1e1ac5d3cf5a42ccf8e2bc9c3d78f7ecd2bb4b2805c8fec72a6a602b'
+assert hashlib.sha256((root/'docs/known-turn-work-budget-result.md').read_bytes()).hexdigest()=='ae714cb389827eee57a5bfbf856aa7f58634333416c69314eaeb945b6f2e095a'
+out.mkdir(parents=True)
+def copy_file(path,label):
+ target=out/label
+ if path.suffix=='.log':
+  with target.with_name(target.name+'.gz').open('xb') as stream:
+   with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as zipped:zipped.write(path.read_bytes())
+ elif path.suffix=='.py':shutil.copyfile(path,target.with_name(target.name+'.txt'))
+ else:shutil.copyfile(path,target)
+for name in ('runner.py','package_final.py','optional-suites.json','exact-hooks.exit','exact-hooks.log','hosted.json','hosted.log'):
+ copy_file(raw/name,name)
+for role in roles:
+ for suffix in ('json','log'):copy_file(raw/f'{role}.{suffix}',f'{role}.{suffix}')
+for stage in ('admission','own','native'):
+ for suffix in ('json','log'):copy_file(raw/f'{stage}-head-canceled.{suffix}',f'{stage}-head-canceled.{suffix}')
+result=dict(status='final_qualified',tested_head=head,source_fingerprint=source,report_classification='negative',local_roles=receipts,hosted_run=hosted['databaseId'],hosted_jobs=[dict(name=j['name'],conclusion=j['conclusion']) for j in hosted['jobs']],hooks='passed',all_intermediate_cancellations_retained=True)
+(out/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+files=[]
+for path in sorted(out.iterdir()):
+ blob=path.read_bytes();files.append(dict(file=path.name,bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='final_qualified',source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print('final_qualified',len(files),out)

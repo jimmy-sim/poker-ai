@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "parent_merge": "91260be0132412ac58cf7bf045adc9684cf098a0",
+  "question": "Does unchanged exact-turn learning continue to reduce the known wet game's residual exploitability at matched additional charged work?",
+  "spot_selection_rule": "exactly the two previously outcome-inspected known games: PR110 wet primary, PR108 dry fixed contrast; no substitution or unseen claim",
+  "games": [
+    {
+      "name": "collision_medium_wet_oop-02",
+      "role": "known_primary",
+      "spot": "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-02.json",
+      "spot_sha256": "cea60f6a69d07904078f6930238c7dcbbbb2dba6b36eceb215198b329564a616",
+      "initial_pot_chips": 36,
+      "fixed_decision_rows": [1611, 4041, 7506, 1679, 1406]
+    },
+    {
+      "name": "full_new_medium_dry_oop",
+      "role": "known_contrast",
+      "spot": "configs/river-full-broader-spots/full_new_medium_dry_oop.json",
+      "spot_sha256": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+      "initial_pot_chips": 36,
+      "fixed_decision_rows": [2445]
+    }
+  ],
+  "control": "signed_full_q8_turn_exact_river",
+  "candidate": "signed_full_exact_turn_river",
+  "seeds": [0],
+  "rng": "PCG64; full expected traversal consumes no random draws",
+  "start": "exact uniform current and average; no checkpoint warm start",
+  "charged_work_labels": [10000000, 20000000, 40000000],
+  "historical_10m_actual_work": {
+    "wet": 10117956,
+    "dry": 10012410
+  },
+  "target_order": [0, 1],
+  "readouts": ["current", "linear_average"],
+  "historical_10m_policy_sha256": {
+    "wet_control_current": "61d49bd5ac1b4ba827155ea0ad165e2790765bc9d7cb623af6a37ae0e974aa28",
+    "wet_control_linear_average": "85e24089545e31bf86a51af5e17f8e02f3d3d9ccd81d1388b2277c23d58d641e",
+    "wet_candidate_current": "c5ca6c0033adf081c10e6d1eb5497b0bf6ba448ff43359c983811bd3c7c9d735",
+    "wet_candidate_linear_average": "4ff5982da7f0c307090d9dfa5cffeff678893fed41142cfc9ca8138f1ce3608b",
+    "dry_control_current": "f905da4e22c445137c2bc1d14eb72118d223225895ca139a63b633edb588c4ed",
+    "dry_control_linear_average": "62f03dab94130d3182405a26b7175ba7d18060c49b1ef864d695e5fc8585e7e5",
+    "dry_candidate_current": "25eb2bc536ba22a8e596d69cbe72feb6ecea84794db462379b082d2555bd996d",
+    "dry_candidate_linear_average": "575522d6e7cc168818c2319443f86bc2dfc244f14152c5a171a3c79c2f301c1c"
+  },
+  "primary_readout": "final linear_average at first complete 40000000 crossing",
+  "primary_metric": "exact restricted NashConv/2 divided by each loaded game's 36-chip initial pot; lower is better",
+  "secondary": ["each paired game at each checkpoint", "turn and river additive best-response gains", "fixed saved decisions", "whole and post-initial-river coverage", "recall violations", "memory", "runtime", "actual charged work and overshoot"],
+  "known_game_strength_positive_rule": "at 40m both candidate games <=0.01 initial pots, worst <=0.025, both candidate-minus-matched-control <=-0.001 initial pots, both whole coverages >=0.95 and zero recall violations; otherwise negative unless a required gate fails, then inconclusive",
+  "wet_budget_response_readout": "wet candidate 40m minus 10m <=-0.005 pots and 40m minus 20m <=-0.001 pots is a descriptive continuing-decline signal, not acceptance or convergence proof",
+  "profile_work_label": 1000000,
+  "profile_repeats_per_path": 3,
+  "profile_paths": 4,
+  "workers": 2,
+  "worker_partition": {
+    "0": ["wet_control", "dry_control"],
+    "1": ["wet_candidate", "dry_candidate"]
+  },
+  "forecast_rule": "for each path take maximum of three complete whole_path_seconds*40000000/actual_profile_work; sum per fixed worker, T=max worker sum; admit only 2*(2*T+600)<7200",
+  "planning_prior_seconds": {
+    "wet_control_10m": 47.216592958022375,
+    "wet_candidate_10m": 47.42878362501506,
+    "dry_control_10m": 13.60059004201321,
+    "dry_candidate_10m": 13.644469541992294
+  },
+  "planning_bound_seconds_not_admission": 2295.1234893363435,
+  "fictional_proof_cap_seconds": 180,
+  "profile_whole_cap_seconds": 900,
+  "own_whole_cap_seconds": 7200,
+  "failure_save_reserve_seconds_within_caps": 120,
+  "reference_audit_cap_seconds": 900,
+  "max_worker_peak_rss_bytes": 1500000000,
+  "native_scalar_tolerance_chips": 1e-9,
+  "nonnegative_row_gain_slack_chips": 1e-12,
+  "reference": "OpenSpiel 2.0.2, installed Apache-2.0 license SHA256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30; comparison-only after own publication",
+  "default_promotion": false,
+  "interruption_rule": "retain every partial and failure; no silent restart, replacement spot, seed change, budget extension or scientific retry",
+  "historical_source_fingerprints": {
+    "wet_exact_turn_study": "5e29c490f3b05cf7b98dc016628a9765ab76b7a920965590e0d086abcda16b12",
+    "dry_exact_turn_study": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+    "recency_negative_report": "133a5a77c19431bf1c220bc89d000c6a146cf53161532bcf26eab0499aa2cf10"
+  },
+  "prerequisite_sha256": {
+    "results/known-wet-turn-mechanism/own/manifest.json": "2fc52b5836c43a94bd5b8006866fc48e6ab8c424e584f84f5dedf3bcfc2ac3cb",
+    "results/known-turn-exact-mechanism/own/manifest.json": "1ee82759e06cc15576ec4291e72616655dd82d3100857fe20b382a5b378052d7",
+    "results/known-turn-regret-recency/report/manifest.json": "f35d43fcef68ad1f16f9f943cc5f5747e89f5d9d3242456d65160213bc40155d",
+    "results/known-turn-loss-attribution/diagnosis/manifest.json": "dad6f14a8ce757d9404de4ec66e0892bc7feabe0545b3b96a5f70d726633b2c5",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  }
+}
