@@ -9738,6 +9738,21 @@ games and qualify its exact source. The two games were previously
 outcome-inspected, so a favorable result would remain known-case evidence.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 test the isolated recency rule before poker measurement.**
+The new adapter keeps exact acting turn and river information and the old
+linear average, but discounts each player's accumulated signed regrets
+after that player's complete update. **Example:** in a fictional decision,
+positive regret 3 is multiplied by `2^1.5/(1+2^1.5)` at iteration two,
+while negative regret −4 becomes −2; the other player's row, unused
+padding, strategy sum and random state stay unchanged. Ten focused tests
+passed with Ruff, formatting and strict typing. The separate report code
+requires immutable control policies, equal charged work and all twelve
+candidate reference scalar checks before classifying either known game.
+No candidate poker trajectory or score exists yet. **Next decision:**
+finish protocol-head CI and exact-source local/hosted qualification before
+the registered fictional proof and capped profile. Codex assisted; no
+human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

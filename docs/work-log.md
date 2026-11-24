@@ -15,12 +15,23 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The isolated PR #112 source now implements the fixed signed-regret
+  discount, full-work capture/replay, historical-control guards, strict
+  profile forecast, comparison-only scalar audit and 24-policy report.
+  Fictional/synthetic focused checks passed: Ruff, format, strict mypy and
+  ten tests. The report preserves the fixed wet/dry rows, both saved
+  readouts and every matched-work contrast. These checks establish code
+  behavior, not poker strength; no new known-game candidate was trained
+  or scored. Protocol-head hosted CI and full exact-source qualification
+  remain separate gates. Codex assisted; human time and personal learning
+  were not reported.
 - [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged as
   `ec9c0d2f` after its diagnostic checks and solo review. Receipt-head
   hosted Python 3.11 first timed out at the unchanged 35-minute limit
   after 96% of tests; its official log is retained, and one targeted
   same-SHA rerun passed. Python 3.12 passed. Separate post-merge main
-  CI is tracked independently. The diagnostic gives no strength gain.
+  [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45395070401)
+  passed both Python versions. The diagnostic gives no strength gain.
 - The next [prospective protocol](known-turn-regret-recency.md) fixes one
   asymmetric signed-regret discount on the unchanged exact-turn learner.
   It reuses PR #108/#110's already published controls, trains only one

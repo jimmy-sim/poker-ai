@@ -343,11 +343,14 @@ hosted jobs on the published result, plus the independent additive audit.
 Its first receipt-head Python 3.11 CI timed out under the unchanged limit;
 one targeted same-SHA requalification passed, as did Python 3.12.
 [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged
-as `ec9c0d2f` after solo review. Separate post-merge main CI remains
-tracked. The next distinct [prospective regret-recency question](known-turn-regret-recency.md)
+as `ec9c0d2f` after solo review. Separate post-merge main CI passed both
+Python jobs. The next distinct [prospective regret-recency question](known-turn-regret-recency.md)
 uses the same exact acting turn/river keys and immutable prior known-game
 controls to test one fixed learning update at matched work. Its candidate
-policy, scores and admission do not yet exist. Do not
+policy, scores and admission do not yet exist. Its isolated source passed
+fictional/synthetic focused lint, format, strict typing and ten tests;
+full exact-source local/optional and hosted qualification is still
+required. Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
