@@ -133,3 +133,11 @@ failure followed by a complete same-source operational recheck. The
 [source receipt](../results/turn-collision-transfer/selection-source-checks/manifest.json)
 must be published and verified before the one-time structural screen. No
 registered board, collision or policy outcome has been collected yet.
+The single published-source structural screen subsequently retained 25
+attempts and stopped at the frozen low/wet IP cap: its maximum two
+collided acting turn rows did not meet the four-row minimum. The
+[result](turn-collision-transfer-result.md) is inconclusive for poker
+strength; no policy, score or reference comparison ran. The two medium
+inputs are now structurally inspected, known cases. Finish PR #109's
+evidence/checks/review and choose a distinct prospective strength
+question; do not remove the failed third stratum inside this study.

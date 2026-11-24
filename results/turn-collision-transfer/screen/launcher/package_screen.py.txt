@@ -1,0 +1,144 @@
+"""Audit and archive the single prospective structural-stop screen."""
+import gzip
+import hashlib
+import json
+import shutil
+import sys
+from pathlib import Path
+from typing import Any
+
+ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / 'pyproject.toml').is_file())
+sys.path.insert(0, str(ROOT / 'scripts'))
+from river_generalization.selection import rank_signature, texture_matches, tracked_known_spots
+from poker_ai.cards import parse_card
+
+RAW = ROOT / 'results/runs/turn-collision-transfer-screen-20261123'
+LAUNCH = ROOT / 'results/runs/turn-collision-transfer-screen-launch-20261123'
+OUT = ROOT / 'results/turn-collision-transfer/screen'
+HEAD = '5019cf1eb2533785660d4ed2ec94c9820c368ed9'
+CONFIG_SHA = '96e131328164f0e8ca9c4e25613aeb058df6d559f6bd3c1f11ab392a02856165'
+SOURCE_RECEIPT_SHA = '3ee1b6f745c870e3c27483665cc8b73474ca0d57310352c0fce1a08cad928000'
+
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_bytes())
+
+
+def audit(folder: Path, launch_status: Path) -> dict[str, Any]:
+    config = read(ROOT / 'configs/turn-collision-transfer.json')
+    result = read(folder / 'result.json')
+    started = read(folder / 'started.json')
+    launcher = read(launch_status)
+    assert digest(ROOT / 'configs/turn-collision-transfer.json') == CONFIG_SHA
+    assert digest(ROOT / 'results/turn-collision-transfer/selection-source-checks/manifest.json') == SOURCE_RECEIPT_SHA
+    assert started['head'] == result['head'] == launcher['head'] == HEAD
+    assert started['config_sha256'] == result['config_sha256'] == CONFIG_SHA
+    assert started['no_policy_or_score_read'] is result['no_policy_or_score_read'] is True
+    assert result['status'] == launcher['status'] == 'structural_stop'
+    assert result['exhausted_stratum'] == config['strata'][-1]['name']
+    assert launcher['exit_code'] == 0 and not launcher['failure_present']
+    assert launcher['result_sha256'] == digest(folder / 'result.json')
+    assert 0 < result['seconds'] <= launcher['elapsed_seconds'] < config['budgets_seconds']['selection']
+    assert len(result['selected']) == len(config['strata']) - 1
+    assert not (folder / 'failure.json').exists()
+    assert not (ROOT / config['freeze_file']).exists()
+    assert not (ROOT / config['spot_directory']).exists()
+    known = tracked_known_spots(ROOT, config['known_directories'])
+    assert {p.relative_to(ROOT).as_posix(): digest(p) for p in known} == config['known_spot_sha256']
+    forbidden = {rank_signature([parse_card(card) for card in read(path)['board']]) for path in known}
+    assert len(known) == 24
+    attempts = result['attempts']
+    events = [json.loads(line) for line in (folder / 'events.jsonl').read_text().splitlines()]
+    assert len(events) == 2 * len(attempts)
+    assert len(attempts) <= len(config['strata']) * config['selection']['max_candidates_per_stratum']
+    consumed = 0
+    per_stratum = []
+    for stratum in config['strata']:
+        group = [item for item in attempts if item['stratum'] == stratum['name']]
+        assert attempts[consumed:consumed+len(group)] == group
+        assert 1 <= len(group) <= config['selection']['max_candidates_per_stratum']
+        assert [item['attempt'] for item in group] == list(range(1, len(group)+1))
+        eligible = [item for item in group if item['turn_collided_exact_rows'] >= config['selection']['minimum_collided_turn_exact_rows']]
+        if stratum['name'] == result['exhausted_stratum']:
+            assert len(group) == config['selection']['max_candidates_per_stratum'] and not eligible
+        else:
+            assert eligible == [group[-1]] and group[-1] in result['selected']
+        for item in group:
+            path = folder / item['file']
+            assert path.is_file() and not path.is_symlink() and digest(path) == item['sha256']
+            raw = read(path)
+            assert raw['name'] == stratum['name'] and raw['texture'] == stratum['texture']
+            assert raw['max_tree_nodes'] == config['selection']['max_tree_nodes']
+            board = [parse_card(card) for card in raw['board']]
+            signature = rank_signature(board)
+            assert texture_matches(board, stratum['texture'])
+            assert [list(signature[0]), signature[1]] == item['board_signature']
+            assert signature not in forbidden
+            forbidden.add(signature)
+            assert len(raw['ranges']) == 2 and all(len(seat) == 5 for seat in raw['ranges'])
+            private = [parse_card(card) for seat in raw['ranges'] for pair in seat for card in pair['cards']]
+            assert len(private) == len(set(private)) == 20 and not (set(private) & set(board))
+            assert all(pair['weight'] in (1,2,3) for seat in raw['ranges'] for pair in seat)
+            desired = raw['button'] if stratum['position'] == 'ip' else 1-raw['button']
+            assert raw['actor'] == raw['hero'] == desired
+            assert 0 < item['board_draws'] <= config['selection']['max_board_draws_per_candidate']
+            assert item['tree_nodes'] <= config['selection']['max_tree_nodes']
+            assert item['river_collided_exact_rows'] == 0
+            assert 0 <= item['turn_collided_exact_rows'] <= item['turn_exact_rows']
+            drawn, screened = events[2*consumed], events[2*consumed+1]
+            assert drawn.pop('kind') == 'drawn' and screened.pop('kind') == 'screened'
+            assert screened == item and drawn == {key: item[key] for key in drawn}
+            consumed += 1
+        per_stratum.append({'name': stratum['name'], 'attempts': len(group), 'maximum_collided_exact_rows': max(item['turn_collided_exact_rows'] for item in group), 'selected_attempt': group[-1]['attempt'] if eligible else None})
+    assert consumed == len(attempts)
+    assert len(list((folder / 'attempts').glob('*.json'))) == len(attempts)
+    return {'status': 'structural_stop', 'source_head': HEAD, 'result_sha256': digest(folder / 'result.json'), 'selected_count': len(result['selected']), 'attempt_count': len(attempts), 'exhausted_stratum': result['exhausted_stratum'], 'selector_seconds': result['seconds'], 'launcher_seconds': launcher['elapsed_seconds'], 'per_stratum': per_stratum, 'no_policy_or_score_read': True, 'poker_strength': 'inconclusive_no_training'}
+
+
+def package() -> None:
+    assert not OUT.exists() and not OUT.is_symlink()
+    summary = audit(RAW, LAUNCH / 'status.json')
+    OUT.mkdir(parents=True)
+    for path in sorted(RAW.rglob('*')):
+        if path.is_file():
+            target = OUT / path.relative_to(RAW)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(path, target)
+    for name in ('status.json', 'launch.py', 'package_screen.py', 'worker.log'):
+        path = LAUNCH / name
+        dest = OUT / 'launcher' / (name + '.txt' if name.endswith('.py') else name + '.gz' if name.endswith('.log') else name)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if name.endswith('.log'):
+            with dest.open('xb') as stream:
+                with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                    zipped.write(path.read_bytes())
+        else:
+            shutil.copyfile(path, dest)
+    (OUT / 'summary.json').write_text(json.dumps(summary, sort_keys=True, indent=2) + '\n')
+    assert audit(OUT, OUT / 'launcher/status.json') == summary
+    files = []
+    for path in sorted(p for p in OUT.rglob('*') if p.is_file()):
+        data = path.read_bytes()
+        files.append({'file': path.relative_to(OUT).as_posix(), 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
+    (OUT / 'manifest.json').write_text(json.dumps({'status': 'structural_stop', 'source_head': HEAD, 'result_sha256': summary['result_sha256'], 'files': files}, sort_keys=True, indent=2) + '\n')
+    print(json.dumps(summary, sort_keys=True))
+    print('manifest_files', len(files), digest(OUT / 'manifest.json'))
+
+
+if __name__ == '__main__':
+    if sys.argv[1:] == ['package']:
+        package()
+    elif sys.argv[1:] == ['verify']:
+        summary = audit(OUT, OUT / 'launcher/status.json')
+        manifest = read(OUT / 'manifest.json')
+        assert manifest['status'] == summary['status'] and manifest['result_sha256'] == summary['result_sha256']
+        for row in manifest['files']:
+            path = OUT / row['file']
+            assert len(path.read_bytes()) == row['bytes'] and digest(path) == row['sha256']
+        print(json.dumps(summary, sort_keys=True))
+    else:
+        raise SystemExit('use package or verify')

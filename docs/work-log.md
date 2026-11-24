@@ -13,6 +13,27 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 one-time structural stop
+
+- On published qualified selector HEAD `5019cf1e`, the one permitted
+  PCG64(20261624) score-free screen saved all 25 candidate inputs and 50
+  ordered draw/screen events. Medium/dry OOP first qualified at attempt 3
+  with 12 collided exact turn rows; medium/wet OOP at attempt 2 with 12.
+  Low/wet IP exhausted all 20 attempts, maximum two collided rows versus
+  the frozen minimum four. The [audited raw archive](../results/turn-collision-transfer/screen/manifest.json)
+  binds the clean source, every input and event, predeclared caps, and
+  launcher. Internal selection took 78.6751 seconds; whole launcher
+  123.2653/900 seconds on Apple M4. The first unpublished archive verifier
+  had a relative-root path mistake; its partial package and correction are
+  retained ignored under `results/runs/turn-collision-transfer-screen-launch-20261123/`.
+  The [result report](turn-collision-transfer-result.md) classifies poker
+  strength **inconclusive by structural stop**: no freeze, training,
+  exploitability score, reference comparison or default change. Next:
+  publish/verify the complete raw stop, finish applicable final checks and
+  review, then design a distinct prospective question without changing this
+  failed three-stratum rule. Codex assisted; human time/personal learning
+  were not reported.
+
 ## 2026-11-23 — PR #109 corrected selector source qualified
 
 - Corrected selector HEAD `6d43f62a` passed exact-source base Python 3.11/3.12

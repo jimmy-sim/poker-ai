@@ -268,6 +268,18 @@ pre/post guards. Its [source receipt](../results/turn-collision-transfer/selecti
 retains both outcomes. Publish and byte-verify that receipt before the
 one-time structural screen; no registered board, tree, collision, policy
 or score exists yet.
+The one-time screen then ran on published qualified source and
+[stopped structurally](turn-collision-transfer-result.md): medium/dry OOP
+qualified on attempt 3 with 12 collided exact turn rows, medium/wet OOP on
+attempt 2 with 12, but low/wet IP exhausted 20 fixed attempts with at most
+two against the four-row minimum. All 25 raw candidates and 50 events are
+retained in the [screen archive](../results/turn-collision-transfer/screen/manifest.json).
+The frozen three-stratum gate therefore ends this comparison before
+training; strength is inconclusive, and there is no default change.
+Publish/verify the raw stop, finish PR #109 final checks/review, then use
+the structural evidence and saved policy weaknesses to register a
+**distinct** bounded poker-strength question. The two medium inputs are
+now known structurally inspected cases, not unseen validation.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

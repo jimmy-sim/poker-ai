@@ -9542,6 +9542,22 @@ and verify the qualified selector evidence, then draw the single registered
 structural cohort without looking at scores. Codex assisted; no human
 time or personal learning was reported.
 
+**November 23 conditional transfer stopped structurally.** The fixed
+screen found two medium, out-of-position games where exact turn keys
+separate 12 acting rows, but none of the 20 low/wet in-position draws
+met the required four-row minimum. **Example:** the strongest low/IP
+draw separated only two rows, while the first eligible medium/dry draw
+used `2s Th 5c 9h` and separated 12. A collision means distinct exact
+turn decisions share one q8 information key; it is an opportunity for
+different choices, not proof that either learned policy is better. The
+[raw archive](../results/turn-collision-transfer/screen/manifest.json) and
+[result](turn-collision-transfer-result.md) retain every attempted board
+and range. No policy was trained or scored; the result is **inconclusive
+for poker strength**, not a favorable two-spot comparison. **Next
+decision:** finish publication and checks, then ask a different bounded
+question that does not quietly remove the failed third stratum. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded
