@@ -13,6 +13,25 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective known-turn regret-recency question
+
+- [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged as
+  `ec9c0d2f` after its diagnostic checks and solo review. Receipt-head
+  hosted Python 3.11 first timed out at the unchanged 35-minute limit
+  after 96% of tests; its official log is retained, and one targeted
+  same-SHA rerun passed. Python 3.12 passed. Separate post-merge main
+  CI is tracked independently. The diagnostic gives no strength gain.
+- The next [prospective protocol](known-turn-regret-recency.md) fixes one
+  asymmetric signed-regret discount on the unchanged exact-turn learner.
+  It reuses PR #108/#110's already published controls, trains only one
+  new candidate path on each of two **known** games, and fixes work,
+  readouts, absolute and paired gates, source qualification, profile,
+  strict admission, and own-before-reference order before outcomes.
+  No new candidate policy or score exists at this checkpoint. Next:
+  publish and byte-verify the protocol, then implement the isolated
+  adapter and fictional tests. Codex assisted; human time and personal
+  learning were not reported.
+
 ## 2026-11-24 — PR #111 final diagnostic qualification
 
 - The [final 30-file receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)

@@ -135,7 +135,11 @@ river decisions account for the residual gain. Its isolated tracing
 source has passed local and hosted qualification. Its one capped replay
 found concentrated turn loss and diffuse river loss on that already
 known game; no new strategy was trained. Final report-head local, optional,
-hooks and hosted checks passed; receipt-head CI and review remain pending.
+hooks and hosted checks passed. Receipt-head Python 3.11 first timed out
+at the unchanged limit, then passed in one targeted same-SHA rerun;
+Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
+The next [prospective learning-rule test](known-turn-regret-recency.md)
+has no new candidate outcome yet.
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9719,6 +9723,20 @@ then complete receipt-head CI and solo review before history merge. This
 qualification does not make the known-case diagnostic a poker-strength
 improvement. Codex assisted; no human time or personal learning was
 reported.
+
+**November 24 ask whether stale regrets explain known turn losses.**
+PR #111's two largest wet turn rows account for 71.38% of that game's
+remaining turn best-response gain, even with exact acting cards. **Example:**
+the saved final average folds `3d 5c` on `Qs Kd As 3c` 76.05% under a
+fixed saved opponent; its latest policy folds 100%. This difference does
+not prove that newer training is better. The [new protocol](known-turn-regret-recency.md)
+tests a fixed positive/negative regret discount at the same charged work,
+with immutable earlier controls and a known medium/dry guard. It changes
+no card representation or old budget. **Next decision:** publish the plan
+before any candidate outcome, then test the isolated update on fictional
+games and qualify its exact source. The two games were previously
+outcome-inspected, so a favorable result would remain known-case evidence.
+Codex assisted; no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

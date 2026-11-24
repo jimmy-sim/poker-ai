@@ -340,9 +340,14 @@ vectors are [retained](../results/known-wet-residual-diagnosis/diagnosis/manifes
 The [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
 records passing serial base/optional local lanes, hooks and both report-head
 hosted jobs on the published result, plus the independent additive audit.
-Publish and byte-verify that receipt, then require receipt-head CI and solo
-review before history merge. Afterward draw a distinct
-prospective training/readout question from this diagnosis. Do not
+Its first receipt-head Python 3.11 CI timed out under the unchanged limit;
+one targeted same-SHA requalification passed, as did Python 3.12.
+[PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged
+as `ec9c0d2f` after solo review. Separate post-merge main CI remains
+tracked. The next distinct [prospective regret-recency question](known-turn-regret-recency.md)
+uses the same exact acting turn/river keys and immutable prior known-game
+controls to test one fixed learning update at matched work. Its candidate
+policy, scores and admission do not yet exist. Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
