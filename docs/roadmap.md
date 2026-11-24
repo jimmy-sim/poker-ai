@@ -390,10 +390,21 @@ asks where the failed recency update moved exact-row weakness across
 the same two **known** games. It fixes all four final-average policies,
 all-row ranking rules and a strict read-only cap before collecting any
 new trace. It is diagnostic, with no new training or strength claim.
-Its isolated saved-policy tracer, rank/decomposition arithmetic,
-publication guards and separate data-only forecast have been prepared
-with fictional focused tests; exact-source local/optional/hosted
-qualification now passed on all four guarded local lanes and both hosted Python versions, including one retained 35-minute first-attempt cancellation and targeted same-SHA pass for Python 3.11 at each of protocol and source heads. The [source check receipt](../results/known-turn-loss-attribution/source-checks/manifest.json) is ready for publication; the fictional-only proof passed under its 180-second cap and its [archive](../results/known-turn-loss-attribution/proof/manifest.json) is ready for publication. The separate data-only [admission](../results/known-turn-loss-attribution/admission/manifest.json) passed at a conservative 353.535-second bound under the 900-second cap; its publication is next, then one capped read-only diagnostic. The PR #112
+Its isolated tracer and fixed arithmetic passed focused tests and all four
+exact-source local lanes. Both protocol and source heads passed hosted Python
+3.11/3.12 after one retained 35-minute first-attempt cancellation and
+same-SHA pass for Python 3.11. The [source receipt](../results/known-turn-loss-attribution/source-checks/manifest.json),
+[fictional proof](../results/known-turn-loss-attribution/proof/manifest.json)
+and separate [data-only admission](../results/known-turn-loss-attribution/admission/manifest.json)
+were published in order. The conservative bound was 353.535 seconds under
+the 900-second cap. The one admitted read-only diagnostic stopped after
+43.258 seconds at a dry-candidate saved-path binding error. Its [failed
+raw archive](../results/known-turn-loss-attribution/diagnosis/manifest.json)
+was published before the [inconclusive report](known-turn-loss-attribution-result.md).
+The wet partial is descriptive; the dry candidate and fixed two-game
+classification are absent. No rerun is permitted under that one-shot
+protocol. Finish PR #113 failure-report checks and review, then choose
+a distinct prospective strength question. The PR #112
 post-merge main run was canceled by the next branch's workflow and its
 official logs were retained; this does not alter the passed PR #112
 report/receipt-head gates or its negative result.

@@ -144,7 +144,7 @@ limits. Exact-report local/optional/hooks/hosted checks passed; the final
 receipt was published and verified. PR #112 history-merged as `4c26fbea` after receipt-head CI and
 solo review; post-merge main CI is separate. A distinct
 [prospective saved-policy attribution](known-turn-loss-attribution.md)
-is being published before any new row trace.
+was published before the one capped trace; that trace stopped at a dry saved-path binding error. Its wet partial and failed raw evidence are retained in the [inconclusive report](known-turn-loss-attribution-result.md).
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9895,6 +9895,8 @@ change or improve play by itself. **Next decision:** publish and verify
 the protocol, qualify isolated tracing code, then make the one admitted
 saved-policy report. No new strategy is trained at this checkpoint.
 Codex assisted; no human time or personal learning was reported.
+
+**November 24 retain a failed four-policy trace.** The one admitted run stopped after 43.258 seconds when the dry candidate path mistakenly pointed to the wet policy. The source-binding guard correctly stopped the replay. The [failed raw archive](../results/known-turn-loss-attribution/diagnosis/manifest.json) was published and remote-byte checked before the [inconclusive interpretation](known-turn-loss-attribution-result.md). **Example:** the complete wet partial has turn worsening concentrated in ten rows (83.056% of positive mass), but the dry candidate is missing, so it cannot answer the fixed two-game question. **Next decision:** complete failure-report qualification and PR review; a later measurement must have a distinct prospective protocol and preflight path/game/arm checks. Codex assisted; no human time or personal learning was reported.
 
 **November 24 admit one bounded read-only trace.** After the fictional proof was published and byte-verified, a separate data-only calculation used two pinned earlier whole-process clocks to make the conservative forecast `353.5350115839974 < 900` seconds, including a 120-second failure-save reserve. **Example:** the bound is a planned upper allowance from retained runtimes, not a measured runtime or a strength result. The [admission archive](../results/known-turn-loss-attribution/admission/manifest.json) records the exact inputs and arithmetic. **Next decision:** publish/verify admission, then run exactly one four-policy diagnostic under the fixed cap. Codex assisted; no human time or personal learning was reported.
 
