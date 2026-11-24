@@ -15,6 +15,19 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The single fixed six-path 1m-work profile completed in 62.400/900
+  whole launcher seconds (worker record 61.579 seconds), with wet/dry
+  charged crossings 1,065,048/1,022,544 on every repeat. All six saved
+  paths replayed and the [46-member archive](../results/known-turn-regret-recency/profile/manifest.json)
+  contains their policies, events, state guards, timings and forecast.
+  The wet repeat maximum extrapolates to `T = 193.248009` seconds; the
+  registered conservative bound is `1,972.992036 < 7,200` seconds.
+  This is not admission until the separate data-only step recomputes it
+  from published bytes. Manifest SHA-256 is
+  `a231a6d8910ead53df36ca7176ccdffd8113bec0c014dac11022ade4c208f282`.
+  Next: publish and byte-verify every repeat, then apply the unchanged
+  admission rule. Codex assisted; human time and personal learning were
+  not reported.
 - After the source receipt was committed and all 30 changed GitHub blobs
   verified, its archive publication guard passed. The one registered
   fictional proof then saved six current/linear-average policies at

@@ -9787,6 +9787,20 @@ publish and verify the proof, then run the one fixed six-path 1m-work
 profile before considering the conservative 10m admission. Codex
 assisted; no human time or personal learning was reported.
 
+**November 24 forecast the fixed known-game work.** The one registered
+profile ran each candidate to its first 1m charged-work crossing three
+times on both **known** games. Every saved path replayed, and all six
+work counts matched the archived controls. The whole run took 62.400
+seconds within its 900-second cap. **Example:** the slowest wet repeat
+scaled to 10m work gives `T = 193.248` seconds; applying the frozen
+`2*(2*T+600)` rule gives `1,972.992`, below the 7,200-second own cap.
+The [profile archive](../results/known-turn-regret-recency/profile/manifest.json)
+preserves all repeats, including slower ones. This timing forecast is
+not a poker-strength result and does not itself authorize the long run.
+**Next decision:** publish and byte-verify the complete profile, then
+recompute the strict bound in a separate data-only admission. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
