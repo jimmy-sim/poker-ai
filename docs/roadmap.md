@@ -237,6 +237,18 @@ passed, with the initial wrapper status mistake retained in the
 [final receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
 PR #108 awaits receipt publication and solo review/history merge. The
 positive known-game result remains limited to this pre-evaluated input.
+[PR #108](https://github.com/jimmy-sim/poker-ai/pull/108) then history-merged
+at `71ab64fa` after both receipt-head hosted jobs passed; post-merge main
+CI is tracked separately. Its known-game result remains positive only for
+the evaluated As Jc 5d 3h input. The next [prospective collision-conditioned
+transfer test](turn-collision-transfer.md) asks whether the **unchanged**
+exact-turn candidate helps on three newly drawn card/range combinations
+across dry/wet and OOP/IP strata **when the structural split exists**. It
+predeclares a one-time bounded structural screen, exclusions for all 24
+prior inspected inputs, matched control/work, one deterministic seed, gates
+and caps before any new board or collision measurement. This conditional
+cohort is not a population sample; no new outcome existed at protocol
+publication and no default is promoted.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

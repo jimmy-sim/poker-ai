@@ -116,3 +116,13 @@ test](known-turn-exact-mechanism.md) fixes a two-path matched-work comparison
 on the already evaluated As Jc 5d 3h input with 12 diagnosed collisions.
 No new policy or score existed at protocol publication; broader transfer,
 default promotion and seed-based uncertainty remain unestablished.
+
+PR #108 then completed its one known medium/dry mechanism test and was
+history-merged at `71ab64fa`. The exact-turn candidate met its absolute
+and paired gates there at equal work, but one previously evaluated game
+and deterministic seed cannot establish transfer. The next
+[prospective collision-conditioned test](turn-collision-transfer.md)
+selects new card/range combinations on varied known templates by a frozen
+structural opportunity rule, with every screened candidate retained and
+no score-based case selection. No new board/tree/policy measurement existed
+at this plan checkpoint. Post-merge main CI remains separately tracked.

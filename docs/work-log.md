@@ -13,6 +13,23 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #108 merge and next prospective question
+
+- [PR #108](https://github.com/jimmy-sim/poker-ai/pull/108) was
+  history-merged at `71ab64fa` after both exact receipt-head hosted jobs
+  passed, solo review and clean merge status. All research checkpoint
+  commits remain ancestors of main; post-merge main CI is tracked
+  separately. The positive result is restricted to one known finite game,
+  with no default promotion. The next [prospective protocol](turn-collision-transfer.md)
+  asks whether the unchanged exact-turn representation improves new
+  collision-conditioned card/range inputs under matched work. It fixes a
+  first-eligible, bounded structural screen across three varied strata and
+  excludes 24 prior inputs; screening uses no policy score. The protocol
+  and machine contract were written before any new board, tree, collision,
+  policy or score measurement. Next: publish/verify the plan, then build
+  and check isolated selection source before its one-time screen. Codex
+  assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #108 final exact-report qualification
 
 - On report commit `d9df778a`, serial local base 3.11/3.12 each passed

@@ -9519,6 +9519,22 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 known-game closure and next question.** PR #108's
+history-preserving merge keeps every protocol and evidence commit available
+on main. Its one known game's exact-turn gain is real under the frozen
+restricted-game metric, but says little about different card/range inputs.
+**Example:** three earlier newly drawn two-combo inputs had no turn-key
+collisions, so there was nothing for an exact-turn split to fix; the known
+As Jc 5d 3h input did have collisions and improved. The next
+[prospective test](turn-collision-transfer.md) therefore fixes a structural
+screen for new card/range combinations **before** measuring scores, then
+compares the same unchanged representations at matched work. It will report
+all screening attempts and stops if none qualify. **Next decision:**
+publish and verify this plan, qualify isolated selection code, and draw
+only the one registered cohort. Selection on collisions describes a
+conditional mechanism test, not general poker strength. Codex assisted;
+no human time or personal learning was reported.
+
 **November 23 final known-game qualification.** Both base Python versions
 passed the complete fast suite, both optional versions passed their pinned
 81-suite check, and the report-head hosted jobs and hooks passed. The

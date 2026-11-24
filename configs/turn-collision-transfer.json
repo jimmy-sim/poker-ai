@@ -1,0 +1,169 @@
+{
+  "arms": [
+    "signed_full_q8_turn_exact_river",
+    "signed_full_exact_turn_river"
+  ],
+  "budgets_seconds": {
+    "failure_save": 120,
+    "native_audit": 900,
+    "profile": 900,
+    "proof": 180,
+    "selection": 900,
+    "whole_own": 7200
+  },
+  "crossing": "first complete target-pair iteration at or above each charged node-work label",
+  "decision": {
+    "inconclusive": "all other complete outcomes or structural screen stop",
+    "negative": "any candidate absolute gate fails or any candidate-minus-control final difference > +0.001 pot",
+    "positive": "all three candidates pass absolute gates, at least two candidate-minus-control final differences <= -0.001 pot, and no third difference > +0.001 pot"
+  },
+  "default_promotion": false,
+  "freeze_file": "configs/turn-collision-transfer-freeze.json",
+  "historical_absolute_gates": {
+    "maximum_final_candidate_exploitability_median_fraction_initial_pot": 0.01,
+    "maximum_final_candidate_exploitability_worst_fraction_initial_pot": 0.025,
+    "maximum_recall_violations": 0,
+    "minimum_whole_coverage": 0.95
+  },
+  "issue": 4,
+  "known_directories": [
+    "configs/learning-spots",
+    "configs/fresh-spots",
+    "configs/spots",
+    "configs/river-generalization-spots",
+    "configs/river-uniform-readout-spots",
+    "configs/river-full-broader-spots",
+    "configs/turn-exact-transfer-spots"
+  ],
+  "known_spot_sha256": {
+    "configs/fresh-spots/fresh_low_dry_oop.json": "b083875528b75f454752d75c43aa17c64caf092dfe3ba3413b5ef6da50d94eda",
+    "configs/fresh-spots/fresh_low_wet_ip.json": "dd6aa7a11b93b12e9d144698fef14bd4ff74d392ede1cf0d5546382095c523a5",
+    "configs/fresh-spots/fresh_medium_dry_ip.json": "b62121338cd26b5f1cb95dc27c19bc2fe15781edf063b44ff98b590decb99e0d",
+    "configs/fresh-spots/fresh_medium_wet_oop.json": "a36e1b1eba445c2d9e0a02ba591842ef4ae49634ae08828a01ec91dc9b221326",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "configs/learning-spots/heldout_medium_ip.json": "ebb6e3d2685f230738763a0f1ea5874ea3613c6821946dd27e5c3fcdfc921936",
+    "configs/river-full-broader-spots/full_new_low_wet_ip.json": "a0fa08d603341787beb064a6ca911418c9d2ded1ac8daf624aaef66616300674",
+    "configs/river-full-broader-spots/full_new_medium_dry_oop.json": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+    "configs/river-generalization-spots/new_low_wet_ip.json": "817e0a007b757e71fb7860eb7ab46ee6a078a5f7de2588a31c31104c63d27d8f",
+    "configs/river-generalization-spots/new_medium_dry_oop.json": "395727a4fa22d0d4aa6bd182740a5463ef97f7b90e37d6b42ac8a81916d4b51d",
+    "configs/river-uniform-readout-spots/uniform_low_wet_ip.json": "627c02ff58a7cd3f9a2ce8696a676c4f011288d8952c264dce245c2867bfcf63",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_a.json": "4db23d866b322ca0dfc232d84b316b2ee9789581b3e4a6bd5a7c4053c8f478b4",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_b.json": "5a92acdb2a850ad929b299381a14829924bc79b7d0e7c68dd7f456d344610e3a",
+    "configs/river-uniform-readout-spots/uniform_medium_wet_oop.json": "74e602cea9d37ef34530945919bdda5abe919193f023e73464914d265dc9ee08",
+    "configs/spots/dry_high_oop.json": "616a0c161f44f8bc25a3feda8d391bb06166a4f9e2a963bd3cd29c56ca9e8aea",
+    "configs/spots/dry_low_oop.json": "83c6762f6b844bb1e5d7c238ad62e1ac498c13db63cb1b36560c31945405c465",
+    "configs/spots/dry_medium_ip.json": "325fa0a0cc9e8828b0690b97a54c869238f106bee0b02749d79d218d12da7ef5",
+    "configs/spots/wet_high_ip.json": "c011141588266d56c86deca8d174f071948cd90c121679196d539e8760375865",
+    "configs/spots/wet_medium_oop.json": "8c5ad66befed131f47527f799aa4bc30c750aa8df1bc7da226cd464c04a273e1",
+    "configs/turn-exact-transfer-spots/turn_exact_new_low_wet_ip.json": "6aabbf8a79ea222bc411b020a977e5c97a945abba38bd6b24464b3f765251402",
+    "configs/turn-exact-transfer-spots/turn_exact_new_medium_dry_oop.json": "93e8da353f329f78abcfbcc25cb54adc5ac12335226039c44a9ab520de26555e",
+    "configs/turn-exact-transfer-spots/turn_exact_new_medium_wet_oop.json": "e1a5faab91fcfaf23821d17c0e0497f0e9191a0e89e9e145148e82e13e80f255"
+  },
+  "metrics": [
+    "all three paired spot differences at every work label",
+    "whole and post-initial-river uniform-reach coverage",
+    "recall violations, turn collision inventory, exact/abstract information rows, table bytes, actual work and overshoot",
+    "whole path wall time, hardware and peak worker RSS",
+    "control-final top three turn and river additive gain rows plus top three collided turn rows; same rows for both arms/all work labels with cards, board, legal actions, saved probabilities, reach, alternative-action values, additive contributions"
+  ],
+  "native": {
+    "comparison_only": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "paired_threshold_fraction_initial_pot": 0.001,
+  "parent_merge": "71ab64fa5e9a76eb7c94cc42942024fc8db622b1",
+  "path_order": "for each selected spot in stratum order, control then candidate",
+  "paths": 6,
+  "prerequisite_sha256": {
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "configs/turn-exact-transfer-freeze.json": "b62040a4746504a9f14377305fc31c8882c0cbfe2a720157a4bd5006ecacc3a9",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/known-turn-exact-mechanism/final-checks/manifest.json": "c940e7e997e282454774240615a1a8525389bad013b04253793a02ac88586c56",
+    "results/known-turn-exact-mechanism/report/manifest.json": "aac1f266e41ba4f1b1b82dfe36ef10a6775a9384d57040c416de107c80dbf13b",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "primary_metric": "final linear-average exact restricted-game NashConv/2 in chips and fraction of initial pot; lower better",
+  "profile": {
+    "T": "maximum fixed three-worker sum of path maxima",
+    "estimate": "max of three whole_path_seconds*10000000/actual_final_node_work for each path",
+    "paths": 18,
+    "repeats": 3,
+    "strict_admission": "2*(2*T+600)<7200",
+    "work": 1000000
+  },
+  "publication": "prospective protocol before screen; tested isolated screen source before one-time selection; every screen attempt and frozen cohort before training source checks; exact-source local/optional/hosted before proof; proof before profile; profile before separate admission; own before reference; fixed report before final exact-source checks and review; history-preserving merge",
+  "question": "Does unchanged exact acting turn representation improve fixed-work policies on three newly drawn collision-conditioned card/range inputs on known public templates?",
+  "random_generator": "PCG64 state unused by full expected traversal, so this is one deterministic path per arm, not a seed replicate",
+  "readouts": [
+    "current",
+    "linear_average"
+  ],
+  "saved_policy_cases": 36,
+  "schema_version": 1,
+  "scope": "conditional finite-game mechanism transfer; not unseen templates or population inference",
+  "seed_per_arm": 0,
+  "selection": {
+    "distinct_physical_private_cards": 20,
+    "max_board_draws_per_candidate": 10000,
+    "max_candidates_per_stratum": 20,
+    "max_seconds": 900,
+    "max_tree_nodes": 200000,
+    "minimum_collided_turn_exact_rows": 4,
+    "novelty": "exclude sorted flop-rank plus turn-rank signatures from 24 pinned prior spots and all earlier screened candidates; suits do not restore novelty",
+    "private_combos_per_seat": 5,
+    "range_weight_values": [
+      1,
+      2,
+      3
+    ],
+    "screen": "Every drawn board/range candidate must pass input syntax; syntax failure, oversized tree, timeout or board-draw exhaustion stops with retained evidence. For valid candidates, select the first per stratum with at least four collided exact acting turn rows; retain all screened candidates and stop inconclusive after 20 without eligibility. No policy score or reference result is used."
+  },
+  "selection_generator": "PCG64 single stream, fixed stratum/candidate order",
+  "selection_seed": 20261624,
+  "shared_training": {
+    "average_weight": "linear",
+    "initialization": "exact uniform charged",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "target_order": [
+      0,
+      1
+    ],
+    "traversal": "full expected; every visited tree node charged including zero reach"
+  },
+  "source_parent_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+  "spot_directory": "configs/turn-collision-transfer-spots",
+  "strata": [
+    {
+      "name": "collision_medium_dry_oop",
+      "position": "oop",
+      "template": "configs/learning-spots/dev_medium_oop.json",
+      "texture": "dry"
+    },
+    {
+      "name": "collision_medium_wet_oop",
+      "position": "oop",
+      "template": "configs/learning-spots/dev_medium_oop.json",
+      "texture": "wet"
+    },
+    {
+      "name": "collision_low_wet_ip",
+      "position": "ip",
+      "template": "configs/learning-spots/heldout_low_oop.json",
+      "texture": "wet"
+    }
+  ],
+  "work_labels": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "worker_assignment": "path index modulo three",
+  "worker_count": 3
+}
