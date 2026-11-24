@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/diagnose_known_turn_loss_attribution.py", line 17, in <module>
+    main()
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/diagnose_known_turn_loss_attribution.py", line 13, in main
+    run(Path(__file__).resolve().parents[1], args.output)
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/known_turn_loss_attribution/analysis.py", line 155, in run
+    summary = replay_path(scoring, folder)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/scripts/turn_exact_transfer/capture.py", line 205, in replay_path
+    warm = decode_mass(
+           ^^^^^^^^^^^^
+  File "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/src/poker_ai/evaluation/averaging_history_artifacts.py", line 97, in decode_mass
+    raise ArithmeticError("cumulative mass schema/menu/source binding changed")
+ArithmeticError: cumulative mass schema/menu/source binding changed
