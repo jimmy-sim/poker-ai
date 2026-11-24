@@ -330,9 +330,16 @@ retained preflight `uv` mismatch; it read no saved policy outcome.
 The proof was published and byte-verified before the
 [separate data-only admission](../results/known-wet-residual-diagnosis/admission/manifest.json),
 which recomputed a conservative ≈256.607-second bound against the fixed
-900-second cap from the parent report job record. Publish and verify it
-before the one read-only diagnostic. Do not extend or relabel the
-negative PR #110 run.
+900-second cap from the parent report job record. After its publication
+and byte verification, the [one fixed read-only diagnosis](known-wet-residual-diagnosis-result.md)
+finished all 12 saved cases in 59.30/900 seconds. Its candidate-final
+top ten turn rows account for 95.23% of turn gain, while the top ten
+river rows account for 5.16% of river gain: concentrated turn weakness,
+diffuse river weakness on this **known** game. The complete raw row
+vectors are [retained](../results/known-wet-residual-diagnosis/diagnosis/manifest.json).
+Finish exact-report qualification and review before drawing a distinct
+prospective training/readout question from this diagnosis. Do not
+extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

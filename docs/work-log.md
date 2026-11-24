@@ -13,6 +13,27 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 one saved-policy residual diagnosis
+
+- The single admitted read-only replay completed all 12 fixed policies
+  and selected 20 exact decision rows in 59.30/900 seconds at clean
+  admission HEAD `b55dce91`; its [raw archive](../results/known-wet-residual-diagnosis/diagnosis/manifest.json)
+  and [report](known-wet-residual-diagnosis-result.md) retain every case,
+  event and contribution vector. Candidate final-average top-ten turn
+  rows account for 0.766113/0.804478 chips (95.23%) of turn gain:
+  **concentrated** under the fixed 50% rule. Top-ten river rows account
+  for 0.013856/0.268508 chips (5.16%): **diffuse**. Two seat-one turn
+  hands, `3d 5c` and `2d 5d` on `Qs Kd As 3c`, account for 71.38% of
+  candidate turn gain; their local action values assume their saved
+  opponent and optimized continuation. All 12 exact sums agree with
+  saved scores within 7.11e−14 chips; prior native scalar difference
+  is at most 1.95e−14 versus the 1e−9 gate. This is a diagnosis on one
+  already known game, not a stronger policy or unseen result. PR #110
+  remains negative. Next: publish/byte-verify raw and report, then full
+  exact-report local/optional/hooks/hosted qualification, review and
+  history merge. Codex assisted; human time and personal learning were
+  not reported.
+
 ## 2026-11-24 — PR #111 separate read-only compute admission
 
 - After the fictional proof was published and its 15 changed GitHub

@@ -132,8 +132,10 @@ but the candidate remained above both frozen absolute strength limits.
 The distinct [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111)
 has a prospectively fixed read-only question about which exact turn and
 river decisions account for the residual gain. Its isolated tracing
-source has passed local and hosted qualification; no new saved-policy
-ranking or diagnosis has begun. Older status paragraphs below preserve
+source has passed local and hosted qualification. Its one capped replay
+found concentrated turn loss and diffuse river loss on that already
+known game; no new strategy was trained. Final report checks and review
+remain pending. Older status paragraphs below preserve
 the sequence of investigations.
 
 The simulator and learning tools work. The open question is how to make the
@@ -9684,6 +9686,25 @@ became stronger. **Next decision:** publish and verify the admission
 bytes, then run the single fixed candidate-ranked trace and retain all
 selected rows and failures. Codex assisted; no human time or personal
 learning was reported.
+
+**November 24 residual turn and river decisions.** The one admitted
+replay used all 12 already published saved policies on the known wet
+turn-start game. **Example:** seat one holds `3d 5c` on `Qs Kd As 3c`;
+the final candidate average folds 76.05%, even though call has the
+highest local value under its fixed saved opponent and optimized reply
+continuation. That exact row alone contributes 0.43046 chips, 53.51%
+of the candidate's remaining turn gain. The fixed top ten turn rows
+contribute 95.23% of turn gain, while the top ten river rows contribute
+only 5.16% of river gain. The [full report](known-wet-residual-diagnosis-result.md)
+shows the same selected rows across checkpoints and both readouts with
+reach and legal actions. These local values do not prescribe a universal
+call or prove that more training will pass the old gate. The candidate
+has no acting turn/river collision in this finite game; flop grouping
+is untestable because the game starts on the turn. **Next decision:**
+finish exact-report qualification and review, then preregister a
+distinct matched-work test of an evidence-backed turn learning/readout
+hypothesis. PR #110 stays negative and no default changes. Codex
+assisted; no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
