@@ -287,6 +287,35 @@ The [final receipt](../results/turn-collision-transfer/final-checks/manifest.jso
 retains those checks and the canceled intermediate CI separately. Publish
 and verify that receipt, then finish solo review and history-preserving
 merge; the scientific classification stays inconclusive.
+[PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) then
+history-merged at `66ec5a9d` after receipt-head Python 3.11/3.12 CI
+passed and solo review; all six checkpoint commits remain on main.
+Post-merge main CI is tracked separately. The next
+[prospective known-wet decision test](known-wet-turn-mechanism.md) asks
+whether the unchanged exact-turn candidate improves the already
+structurally inspected first-eligible medium/wet OOP input at matched
+work. This is one **known** game with no policy outcome yet, not a
+replacement for the failed PR #109 third stratum or default promotion.
+Its protocol fixes the single input, seed, metrics, acceptance,
+forecast/caps and publication gates before training. The isolated source
+then passed all corrected exact-source local base/optional lanes, hooks
+and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45339987008)
+after a pre-outcome report readout correction. The first source and its
+passing hosted run remain retained as superseded evidence. Publish and
+verify the [source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+before fictional proof. The one fixed [known-wet result](known-wet-turn-mechanism-result.md)
+then produced a paired final-average improvement of 1.1535 chips on
+that known game but **failed both candidate absolute exploitability
+gates** (0.029805 initial pots versus ≤0.01 final/≤0.025 worst).
+Pinned independent scalar comparison passed all 12 cases. This is a
+negative acceptance result with no unseen transfer or default claim;
+PR #110's exact negative report passed all four final local base/optional
+lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
+Its [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+retains those checks. Publish and verify that receipt, then require its
+hosted CI and complete solo review before a distinct prospectively
+registered follow-up. Do not extend or relabel this run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -1,0 +1,77 @@
+"""Seal exact tested-source local and hosted qualification for PR #110."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-wet-turn-mechanism/source-checks"
+HEAD = "c137d8282e91caa4cbd1e841e4f522744f9d1642"
+FINGERPRINT = "5e29c490f3b05cf7b98dc016628a9765ab76b7a920965590e0d086abcda16b12"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def copy(name: str) -> None:
+    source = RAW / name
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / name
+    if source.suffix == ".log":
+        with target.with_name(target.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix in (".py", ".zsh"):
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain prior source receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("tested source head changed or dirty")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["head"] != HEAD
+        or state["completed"] != [{"role": role, "exit_code": 0} for role in ROLES]
+    ):
+        raise ArithmeticError("source local roles incomplete")
+    if any(row["status"] != "passed" or row["head"] != HEAD or row["source_fingerprint"] != FINGERPRINT for row in receipts):
+        raise ArithmeticError("source fingerprints or role results changed")
+    if any(row["suite_count"] != 81 for row in receipts[2:]):
+        raise ArithmeticError("optional suite count changed")
+    if hosted["headSha"] != HEAD or hosted["conclusion"] != "success" or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"} or any(row["conclusion"] != "success" for row in hosted["jobs"]):
+        raise ArithmeticError("both exact-source hosted jobs required")
+    if (RAW / "hooks.exit").read_text().strip() != "0":
+        raise ArithmeticError("all-file hooks incomplete")
+    OUT.mkdir(parents=True)
+    for name in ("driver-state.json", "driver.py", "runner.py", "launch.zsh", "optional-suites.json", "package_source.py", "hooks.exit", "hooks.log", "hosted.json", "hosted.log", "iteration-failures.md"):
+        copy(name)
+    for role in ROLES:
+        for suffix in ("json", "log"):
+            copy(f"{role}.{suffix}")
+    result = dict(status="source_qualified", tested_head=HEAD, source_fingerprint=FINGERPRINT,
+        local_roles=receipts, hosted_run=hosted["databaseId"],
+        hosted_jobs=[{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        hooks="passed", training_started=False)
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="source_qualified", source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + "\n")
+    print("source_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

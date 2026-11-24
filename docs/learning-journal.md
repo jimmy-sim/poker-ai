@@ -9570,6 +9570,159 @@ decision:** publish/verify the receipt and complete PR review, then
 register a different bounded question. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 next known wet decision question.** PR #109 history-merged
+without a strength measurement because its low/wet IP opportunity gate
+failed. The medium/wet OOP input was fixed by the earlier score-free
+screen and has 12 turn rows sharing six q8 keys; it has **no trained
+policy outcome**. **Example:** its `Qs Kd As 3c` turn board and five
+private combos per seat differ from the earlier positive `As Jc 5d 3h`
+known game, so a gain here would show one more finite-game example,
+not isolate the effect of wet texture or prove population transfer.
+The new [prospective protocol](known-wet-turn-mechanism.md) fixes this
+one known input, unchanged arms and matched work before any policy run;
+the failed three-stratum result stays failed. **Next decision:** publish
+and verify the plan, qualify isolated source, then run only if the
+conservative compute gate admits it. Codex assisted; no human time or
+personal learning was reported.
+
+**November 23 known-wet strength conclusion.** The one fixed
+comparison produced a sizable paired gain, and the independent scalar
+audit supports its arithmetic. **Example:** at the final average, the
+control's turn best-response gain is 1.6819 chips and the candidate's
+is 0.8045, while the candidate still leaves 1.073 chips total gain
+against an optimized reply. On the 36-chip initial pot that is 0.02981
+pots, above both frozen absolute thresholds. The
+[reproducible report](known-wet-turn-mechanism-result.md) therefore says
+**negative acceptance**, despite improvement relative to control.
+Its top control turn row is seat one's `2d 5d` on `Qs Kd As 3c` facing
+fold/call/raises; the saved q8 strategy folds about 97.3%, but its
+local call value is higher under that fixed saved opponent and optimized
+continuation. The candidate reduces the row's additive gain, yet its
+remaining weakness and different opponent policy prevent a universal
+action recommendation. Both readouts and all checkpoints are retained,
+with no seed confidence interval or unseen claim. **Next decision:**
+complete report software qualification and review, then register a
+distinct evidence-backed follow-up; do not extend this negative
+experiment. Codex assisted; human time and personal learning were not
+reported.
+
+**November 24 exact-report checks.** The four local Python base/optional
+lanes and both hosted Python jobs passed against the saved negative
+report. **Example:** optional Python 3.12 passed 2,595 tests with two
+skips; the [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+also records the guards that checked source and earlier evidence before
+and after each lane. This establishes software qualification of the
+reported calculation, while the frozen absolute strength gates still
+classify the candidate **negative** on this one known game. **Next
+decision:** publish and review the receipt, then choose a distinct
+prospective question from the remaining turn and river weaknesses.
+Codex assisted; no human time or personal learning was reported.
+
+**November 23 independent scalar check of the known-wet result.**
+The saved own scores were published before any OpenSpiel comparison.
+**Example:** across all 12 current/average policy checkpoints, the
+largest difference between the own exact restricted-game scalar and
+pinned OpenSpiel 2.0.2 was about `1.95e−14` chips, below the registered
+`1e−9` tolerance. The [native audit](../results/known-wet-turn-mechanism/native/manifest.json)
+retains its full grid and Apache-2.0 license pin. This supports the
+accuracy of the unfavorable own absolute result; a comparison-only
+reference cannot change the frozen acceptance threshold. **Next
+decision:** publish the audit and build the fixed report with turn/river
+contributions and representative decisions. Codex assisted; human time
+and personal learning were not reported.
+
+**November 23 one known-wet own comparison.** The exact-turn key
+separated six q8 turn groups, and both representations saw the same
+10,117,956 charged work. **Example:** with a 36-chip initial pot, the
+control's final average exploitability is 2.22649 chips, while the
+candidate's is 1.07299 chips. Lower means an optimized opponent can gain
+less against that saved strategy in this restricted game. The paired
+improvement is 1.15351 chips, but the candidate still leaves about
+0.02981 initial pots exploitable, above both frozen 0.01 final and
+0.025 worst gates. Thus the [own policies and scores](../results/known-wet-turn-mechanism/own/manifest.json)
+point to a **negative** acceptance result, pending the independent
+comparison-only scalar check. Whole positive-average coverage is 1.0;
+post-initial-river coverage is lower for the candidate (0.85546 versus
+0.90390), a separate readout rather than a new threshold. One known
+case and deterministic seed give no confidence interval or transfer
+claim. **Next decision:** publish all own bytes before reading any
+OpenSpiel reference result, then complete the prescribed audit and
+fixed decision report. Codex assisted; no human time or personal
+learning was reported.
+
+**November 23 separate known-wet compute admission.** The profile
+forecast became a decision only after a separate process read the
+published profile and recomputed the worst-repeat formula. **Example:**
+with `T=209.06137525266` seconds, doubling two workers' estimated
+work and allowing 600 seconds per worker gives a strict bound of
+2,036.2455 seconds, below the frozen 7,200-second own cap. The
+[admission receipt](../results/known-wet-turn-mechanism/admission/manifest.json)
+records the check; it does not say the candidate plays better. **Next
+decision:** publish/verify admission, then run the one fixed matched-work
+own pair with no additional seed or budget. Codex assisted; human time
+and personal learning were not reported.
+
+**November 23 bounded known-wet timing profile.** The fixed six
+1m-work paths completed and replayed under the profile cap. **Example:**
+all six first complete target-pair crossings overshot 1m to 1,065,048
+charged nodes, so the forecast divides each path's whole wall time by
+that actual work before scaling to 10m. The slowest of three estimates
+for each arm was 209.06 and 207.41 seconds; the conservative two-worker
+formula yields 2,036.25 seconds under the 7,200-second own cap. The
+[profile archive](../results/known-wet-turn-mechanism/profile/manifest.json)
+retains every repeat and peak worker memory; a distinct published
+admission still has to recompute this bound before longer training.
+These 1m captures are partial evidence, not an accepted final poker
+result. **Next decision:** publish/verify the profile, then run the
+separate strict admission. Codex assisted; human time and personal
+learning were not reported.
+
+**November 23 known-wet corrected source gate.** The new report can
+show the same selected turn and river mistakes in the current and
+accumulated-average policy, but that claim required exact-source checks
+before any poker score. **Example:** a 100k work decision is paired by
+arm and readout with the other arm at the same charged work, while the
+final ranking remains fixed from the control average. The corrected
+[source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+records four passing local lanes, hooks and both passing hosted jobs;
+the first source run remains retained as superseded. No policy outcome
+exists yet. **Next decision:** publish and verify the receipt, then run
+the fictional proof and fixed profile before conservative compute
+admission. The one [fictional proof](../results/known-wet-turn-mechanism/own-proof/manifest.json)
+subsequently passed in 0.80 seconds under its 180-second cap: both
+representations returned the same six scores and 726 final charged work
+on a toy game with no meaningful turn collision. This checks the
+pipeline; it gives no evidence about the wet poker game. Codex assisted;
+human time and personal learning were not reported.
+
+**November 23 both saved readouts in the known-wet report.** A
+source review caught a gap before training: the first report would have
+shown representative decisions only for the linear average, although
+both the current and average policy are saved at each work crossing.
+**Example:** a hand may choose different turn actions in the current
+strategy and its accumulated average; seeing both helps distinguish
+training fluctuation from a stable decision. The isolated report now
+uses the same control-final ranked rows for both arms, three work labels
+and both readouts. Six focused tests and targeted style/type checks pass;
+the earlier exact-source local passes remain retained but are superseded
+by this source change. **Next decision:** requalify the corrected source
+fully before proof or policy measurement. Codex assisted; no human time
+or personal learning was reported.
+
+**November 23 isolated known-wet runner.** The question stays fixed to the
+already structurally inspected `Qs Kd As 3c` game. A q8 turn key can group
+multiple exact acting observations; the candidate splits those observations
+while retaining the same exact game, chance and river keys. **Example:** the
+fixed input has six shared turn groups covering 12 exact decision rows.
+The new runner and source guard live in separate modules so older experiments
+keep their pinned code. Five focused tests, targeted style and strict typing
+pass after correcting a copied parent receipt hash and a test-only street
+parser; these early failures remain visible in local tool output. No policy
+score has been collected. **Next decision:** complete all exact-source
+qualification before the fictional proof, prescribed profile and conservative
+compute admission. Codex assisted; no human time or personal learning was
+reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded

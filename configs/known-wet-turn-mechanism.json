@@ -1,0 +1,92 @@
+{
+  "arms": [
+    "signed_full_q8_turn_exact_river",
+    "signed_full_exact_turn_river"
+  ],
+  "budgets_seconds": {
+    "failure_save": 120,
+    "native_audit": 900,
+    "profile": 900,
+    "proof": 180,
+    "whole_own": 7200
+  },
+  "classification": {
+    "inconclusive": "all other complete outcomes",
+    "negative": "any candidate absolute gate fails or final candidate-minus-control > +0.001 initial pots",
+    "positive": "candidate passes all absolute gates and final candidate-minus-control <= -0.001 initial pots"
+  },
+  "control_then_candidate": true,
+  "crossing": "first complete target-pair iteration at or above each charged node-work label",
+  "default_promotion": false,
+  "historical_candidate_absolute_gates": {
+    "maximum_final_exploitability_fraction_initial_pot": 0.01,
+    "maximum_worst_exploitability_fraction_initial_pot": 0.025,
+    "maximum_recall_violations": 0,
+    "minimum_whole_coverage": 0.95
+  },
+  "input": {
+    "board": ["Qs", "Kd", "As", "3c"],
+    "file": "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-02.json",
+    "sha256": "cea60f6a69d07904078f6930238c7dcbbbb2dba6b36eceb215198b329564a616",
+    "status": "structurally inspected known case; no policy outcome at publication",
+    "turn_collided_abstract_groups": 6,
+    "turn_collided_exact_rows": 12,
+    "tree_nodes": 133131
+  },
+  "issue": 4,
+  "metrics": [
+    "exact restricted-game NashConv/2 at current and linear average in chips and fraction of initial pot",
+    "candidate-minus-control paired difference at every work label",
+    "whole and post-initial-river positive-average uniform-reach coverage",
+    "recall violations, turn collision inventory, exact/abstract rows, table bytes, actual work and overshoot",
+    "whole path runtime, hardware and peak RSS",
+    "control-final top three turn and river additive gain rows plus top three collided turn rows, same rows both arms/all work labels with cards, board, legal actions, saved probabilities, reach, alternative-action values and additive contributions"
+  ],
+  "native": {
+    "comparison_only": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "saved_policy_cases": 12,
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "paired_threshold_fraction_initial_pot": 0.001,
+  "parent_merge": "66ec5a9d5ebc62e7e1d7a3dc4fc2ef36d0e86cd5",
+  "paths": 2,
+  "prerequisite_sha256": {
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/known-turn-exact-mechanism/final-checks/manifest.json": "c940e7e997e282454774240615a1a8525389bad013b04253793a02ac88586c56",
+    "results/turn-collision-transfer/final-checks/manifest.json": "4cdfac31e05f3ecafc62c9696d95650d76b23e67a9a857bf7ae3b88004c1cb0a",
+    "results/turn-collision-transfer/screen/manifest.json": "14167279d1fa3c137a8075a4397ed32d28b788279eabf530dc9fc191ac4e6df7",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "primary_metric": "final linear-average exact restricted-game NashConv/2 in chips and fraction of initial pot; lower better",
+  "profile": {
+    "estimate": "maximum of three complete whole_path_seconds * 10000000 / actual_final_node_work for each path",
+    "paths": 6,
+    "repeats_per_path": 3,
+    "strict_admission": "2*(2*T+600)<7200",
+    "T": "larger of two fixed one-path worker maxima",
+    "work": 1000000
+  },
+  "publication": "prospective protocol before any new policy outcome; isolated tested source and exact-source local/optional/hosted before proof; proof before profile; profile before separate admission; own before comparison-only reference; report before final exact-source checks/review/history merge",
+  "question": "On one already structurally inspected known medium/wet OOP game, does unchanged exact acting-turn information improve fixed-work poker decisions relative to unchanged q8 turn information?",
+  "random_generator": "PCG64 state unused by full expected traversal; one deterministic path per arm, not seed replication",
+  "readouts": ["current", "linear_average"],
+  "schema_version": 1,
+  "seed_per_arm": [0],
+  "shared_training": {
+    "average_weight": "linear",
+    "initialization": "exact uniform charged",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "target_order": [0, 1],
+    "traversal": "full expected; every visited tree node charged including zero reach"
+  },
+  "source_parent_fingerprint": "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4",
+  "spot_selection": "none; use fixed first-eligible PR #109 wet structural input as known case, no redraw or substitute",
+  "stop_rule": "one admitted two-path study only; failed correctness, publication, numerical or compute gate ends this experiment; no favorable scientific retry",
+  "work_labels": [100000, 1000000, 10000000],
+  "worker_assignment": "control worker zero, candidate worker one",
+  "worker_count": 2
+}

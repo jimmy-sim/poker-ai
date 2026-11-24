@@ -13,6 +13,188 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #110 exact-report qualification
+
+- The [final check receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
+  binds report HEAD `690723db`, unchanged source fingerprint, seven prior
+  evidence stages, four exact-head local lanes, all-file hooks and both
+  [report-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
+  Base Python 3.11/3.12 each passed 5,812 tests, skipped 73 and deselected
+  150 slow tests; optional Python 3.11 passed 2,597, and optional Python
+  3.12 passed 2,595 with two skips. All pre/post source, archive, runtime,
+  lock and license guards passed. The final receipt has 19 hashed files;
+  its manifest SHA-256 is
+  `d95cba42bfc9ee90974572b31e450bcdac6f8f8229b205ad20de6fb57c7b3aca`.
+  The independent scientific classification remains **negative** because
+  the candidate missed both frozen absolute exploitability gates despite
+  its paired improvement. Next: publish and byte-verify this receipt,
+  require receipt-head hosted CI, then solo review and history-preserving
+  merge if eligible. Codex assisted; human time and personal learning were
+  not reported.
+
+## 2026-11-23 — PR #110 fixed report: negative acceptance
+
+- The [fixed report](known-wet-turn-mechanism-result.md) and
+  [machine evidence](../results/known-wet-turn-mechanism/report/report.json)
+  classify the one known medium/wet game **negative** under the frozen
+  absolute gates. The candidate's final average is 1.0729866053 chips
+  (0.0298051835 initial pots) versus control 2.2264918915 chips
+  (0.061846997 pots); the −1.1535052863-chip paired gain is real within
+  this restricted game, but candidate misses ≤0.01 final and ≤0.025
+  worst gates. Final additive turn/river gains fall from
+  1.681914/0.544578 control to 0.804478/0.268508 candidate chips.
+  The report retains six both-readout paired contrasts and eight fixed
+  exact decision rows, including turn `2d 5d` on `Qs Kd As 3c` and
+  river `3d 5c` on `Qs Kd As 3c 3h`. Each local action value uses its
+  saved opponent and optimized continuation; it is not general advice.
+  Native scalar error was ≤1.9539925233402755e−14 chips. One known
+  input/seed gives no transfer or confidence claim; no default change.
+  The report archive is built; final exact-report local/optional/hosted
+  qualification remains pending before review/merge. Codex assisted;
+  human time and personal learning were not reported.
+
+## 2026-11-23 — PR #110 pinned scalar audit
+
+- After own policies/scores were published and all 35 changed GitHub
+  blobs verified, the single comparison-only OpenSpiel 2.0.2 audit
+  checked all 12 saved scalar cases in 85.16/900 seconds. Its maximum
+  absolute own/reference error was `1.9539925233402755e−14` chips,
+  below the fixed `1e−9` tolerance. Installed Apache-2.0 license SHA
+  `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`
+  matched the pin. The [eight-file native archive](../results/known-wet-turn-mechanism/native/manifest.json)
+  retains every scalar and runtime record; reference policies never
+  entered training. This validates the saved own scores but does not
+  reverse the candidate's negative absolute gate. Next: publish/verify
+  native evidence, then build the fixed report and representative
+  decisions from published bytes. Codex assisted; human time and
+  personal learning were not reported.
+
+## 2026-11-23 — PR #110 one fixed own policy pair
+
+- The sole admitted two-worker control/candidate run completed in
+  48.32/7,200 seconds from published admission `a3974b40`, deterministic
+  seed zero, both paths at 10,117,956 charged nodes with all six
+  captures/path and zero recall violations. The complete
+  [own archive](../results/known-wet-turn-mechanism/own/manifest.json)
+  retains policies, own scores, positive-average reach masses, events,
+  timing and worker peak RSS. Final linear-average exact restricted-game
+  exploitability was 2.2264918915 chips (0.061846997 initial pots) for
+  q8 control and 1.0729866053 chips (0.0298051835 pots) for exact-turn
+  candidate, a paired candidate-minus-control difference of
+  −1.1535052863 chips (−0.0320418135 pots). Both paths have whole
+  positive-average coverage 1.0; candidate post-initial-river coverage
+  is 0.8554558 versus control 0.9038961. The candidate **fails** its
+  frozen final ≤0.01-pot and worst ≤0.025-pot absolute gates despite
+  the paired gain: provisional classification **negative**, pending
+  independent scalar audit of all 12 saved policies. This one known
+  game/seed does not establish generalization or confidence. No reference
+  output has been read or loaded. Next: publish and GitHub-byte-verify
+  all own bytes before comparison-only OpenSpiel. Codex assisted; human
+  time and personal learning were not reported.
+
+## 2026-11-23 — PR #110 strict compute admission
+
+- The separate data-only gate recomputed the published profile exactly,
+  using the larger of both three-repeat maxima `T=209.06137525266`
+  seconds. Its strict bound `2*(2*T+600)=2,036.24550101064<7,200`
+  seconds **admitted** one fixed two-path 10m-work own comparison;
+  the [eight-file admission receipt](../results/known-wet-turn-mechanism/admission/manifest.json)
+  binds the published profile, source and 0.73-second launcher. This is
+  compute admission, not a strength claim. No own long policy or reference
+  comparison has started. Next: publish and GitHub-byte-verify the
+  admission before one capped own pair. Codex assisted; human time and
+  personal learning were not reported.
+
+## 2026-11-23 — PR #110 fixed six-path profile
+
+- The one published-proof profile ran both fixed arms three times each to
+  first complete 1m-work crossing: every path reached 1,065,048 charged
+  work, and the whole launcher took 66.32/900 seconds. The six complete
+  own captures/replays and raw worker logs are in the
+  [45-file profile archive](../results/known-wet-turn-mechanism/profile/manifest.json).
+  Worst per-arm `whole_path_seconds × 10m / actual_work` estimates were
+  209.06 seconds (q8 control) and 207.41 seconds (exact-turn candidate),
+  with worker peak RSS up to 1,079,164,928 bytes. The recorded formula
+  computes `2*(2*T+600)=2,036.25<7,200` seconds; **separate data-only
+  admission remains pending**. The profile's 1m policies are prescribed
+  partial evidence, not final acceptance or a seed replication. Next:
+  publish/verify the profile and run the independent strict admission.
+  Codex assisted; human time and personal learning were not reported.
+
+## 2026-11-23 — PR #110 corrected exact source qualified
+
+- Corrected source `c137d828` passed exact-source local base Python
+  3.11/3.12 (each 5,812 passed, 73 skipped, 150 slow deselected), optional
+  3.11 (2,597 passed), optional 3.12 (2,595 passed, two expected skips),
+  all pre/post historical source/archive/runtime/lock/license guards and
+  all-file hooks. Both corrected source-head
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45339987008)
+  passed. The [20-file source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+  binds tested HEAD, fingerprint, local and hosted evidence. The first
+  source-head [CI run](https://github.com/jimmy-sim/poker-ai/actions/runs/45333730045)
+  also passed but is retained separately as superseded by the report
+  correction. No proof, profile, training, score or reference comparison
+  has run. Next: publish and byte-verify the source receipt, then run the
+  frozen fictional proof. The one published-source fictional proof then
+  passed at HEAD `1b719048`: 0.80 seconds under the 180-second cap,
+  six readouts per arm, identical paired scores and final charged work
+  726. Its [32-file archive](../results/known-wet-turn-mechanism/own-proof/manifest.json)
+  is a software/math check, not a poker-strength result; profile and
+  compute admission remain pending. Codex assisted; human time and
+  personal learning were not reported.
+
+## 2026-11-23 — PR #110 report readout correction before policies
+
+- The first tested source `2b937eaa` passed all four exact-source local
+  base/optional lanes and hooks; its hosted source-head run was still active.
+  A read-only source review then found that the copied decision report
+  displayed ranked rows only for linear-average policies, although the
+  protocol saves both current and average readouts at every crossing.
+  Before any proof, profile or policy run, the isolated report now computes
+  street contributions, matched-work contrasts and the same ranked decision
+  rows for **both** readouts. A focused duplicate/missing pair regression
+  was added. Six focused tests and targeted Ruff, formatting and strict
+  mypy passed. The first source check is retained as superseded; the
+  corrected source requires all local/optional/hosted checks again before
+  admission. No scientific outcome has been collected. Codex assisted;
+  human time and personal learning were not reported.
+
+## 2026-11-23 — PR #110 isolated known-wet source under qualification
+
+- Added an isolated one-game runner, source guard, compute forecast, comparison-only
+  audit, report and regression tests for the published
+  [known-wet protocol](known-wet-turn-mechanism.md). Historical source modules,
+  pins, policies and results are unchanged. The first focused test run exposed an
+  incorrect copied parent receipt hash in the new adapter; that implementation
+  defect was corrected using the published source receipt. A second focused run
+  exposed a test-only street parser error; it was corrected without measuring
+  a policy outcome. Focused five tests now pass, including exact game/chance
+  identity and six collided q8 turn groups covering 12 exact rows; targeted
+  Ruff and strict mypy pass. Full exact-source local/optional/hosted
+  qualification remains pending. No PR #110 proof, profile, admission or
+  policy trajectory has started. Codex assisted; human time and personal
+  learning were not reported.
+
+## 2026-11-23 — PR #109 merged; one known wet-game question registered
+
+- [PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) was
+  history-merged at `66ec5a9d` after both receipt-head hosted jobs passed
+  and the solo diff/evidence review. All six research checkpoint commits
+  remain ancestors of main; post-merge main CI is tracked separately.
+  Its three-stratum collision-conditioned comparison remains
+  **inconclusive by structural stop**, with no policy or default change.
+- The distinct [prospective known-wet protocol](known-wet-turn-mechanism.md)
+  fixes PR #109's already structurally inspected first-eligible
+  `Qs Kd As 3c` medium/wet OOP input, unchanged q8/exact-turn arms,
+  deterministic seed zero, 100k/1m/10m matched charged work, historical
+  absolute and paired gates, proof/profile/separate strict compute
+  admission, own-before-reference publication and hard caps. The question
+  is whether this one known wet game's decisions improve; it does not
+  replace the failed third stratum or establish population transfer. No
+  policy outcome for this input exists at protocol publication. Next:
+  publish/verify the plan before isolated implementation or any training.
+  Codex assisted; human time/personal learning were not reported.
+
 ## 2026-11-23 — PR #109 final exact-report qualification
 
 - On the published structural-stop report HEAD `cc8a310f`, exact-source
