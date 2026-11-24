@@ -370,8 +370,12 @@ absolute gates, while dry improves. The own archive must be published
 before the pinned comparison-only scalar audit and fixed final report.
 It was published first; the [OpenSpiel audit](../results/known-turn-regret-recency/native/manifest.json)
 then matched all 12 candidate saved scores within `4.263e−14` chips
-maximum error versus the fixed `1e−9` threshold. The fixed card/action
-report and final qualification remain.
+maximum error versus the fixed `1e−9` threshold. The
+[fixed card/action report](known-turn-regret-recency-result.md) is
+**negative** under the frozen rule: wet final exploitability is 0.047444
+initial pots versus 0.029805 control, while dry improves to 0.002055
+versus 0.006423. It retains all 24 policy cases and fixed decisions;
+final exact-report qualification remains.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -15,6 +15,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The fixed 24-policy/12-contrast/23-row report completed once in
+  57.467/3,600 launcher seconds from published own and native bytes. Its
+  [negative report](known-turn-regret-recency-result.md) and
+  [raw archive](../results/known-turn-regret-recency/report/manifest.json)
+  show wet final candidate 0.047444358 pots versus 0.029805183 control
+  (paired +0.017639174), failing both absolute limits and paired
+  worsening tolerance. Dry improves to 0.002055024 versus 0.006422763
+  (paired −0.004367739). All fixed decisions/readouts are retained.
+  Final exact-report qualification remains. No retry or default promotion.
+  Codex assisted; human time and personal learning were not reported.
 - The complete own archive was published at `b956d838`; all 37 changed
   GitHub blobs and the publication guard passed **before** any reference
   work. The one comparison-only OpenSpiel 2.0.2 scalar audit then checked

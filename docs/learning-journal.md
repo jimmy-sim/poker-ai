@@ -138,8 +138,9 @@ known game; no new strategy was trained. Final report-head local, optional,
 hooks and hosted checks passed. Receipt-head Python 3.11 first timed out
 at the unchanged limit, then passed in one targeted same-SHA rerun;
 Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
-The next [prospective learning-rule test](known-turn-regret-recency.md)
-has no new candidate outcome yet.
+The [fixed learning-rule result](known-turn-regret-recency-result.md) is
+negative on its two known games: dry improves, wet worsens beyond frozen
+limits. Final exact-report qualification remains.
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9842,6 +9843,25 @@ validates arithmetic, not general poker strength or a preferred action.
 the same preregistered card/action rows across checkpoints. The wet
 acceptance failure remains negative; no retry follows it. Codex
 assisted; no human time or personal learning was reported.
+
+**November 24 fixed recency decision report.** The question was whether
+a fixed signed-regret discount reduced the known wet turn weakness at
+matched work while preserving the known dry result. The one candidate
+path per game, independent audit and [fixed report](known-turn-regret-recency-result.md)
+give a negative answer under the frozen gates: wet final exploitability
+rises from 0.029805 to 0.047444 initial pots; dry falls from 0.006423
+to 0.002055. **Example:** with `3d 5c` on wet `Qs Kd As 3c`, the
+candidate places less fold probability and more call/raise probability
+than the control, and this row's additive best-response gain rises from
+0.430463 to 0.520564 chips. Its local action values depend on each
+arm's saved opponent and optimized reply continuation, so this is a
+bounded diagnostic, not general advice or a causal action swap. The
+report contains all 23 fixed rows at three work checkpoints and both
+readouts. Whole coverage is 100%, recall violations zero and the native
+scalar error below `1e−9` chip. **Next decision:** finish exact-report
+qualification and review, then choose a distinct prospective question
+from the retained wet/dry contrast. No retry or default promotion.
+Codex assisted; no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

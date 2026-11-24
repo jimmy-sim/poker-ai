@@ -1,0 +1,76 @@
+"""Seal the fixed negative report and its completed launcher record."""
+
+import hashlib
+import json
+import shutil
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-turn-regret-recency/report"
+SOURCE = "133a5a77c19431bf1c220bc89d000c6a146cf53161532bcf26eab0499aa2cf10"
+WET = "collision_medium_wet_oop-02"
+DRY = "full_new_medium_dry_oop"
+ROWS = {WET: {1611, 4041, 7506, 1618, 4824, 1619, 40, 0, 5838, 1596, 1679, 1697, 1821, 1839, 2, 2361, 1152, 7974, 7507, 1689}, DRY: {2445, 30, 1}}
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier report")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from known_turn_regret_recency.gate import NATIVE, clean_head, require_archive, source_fingerprint
+
+    head = clean_head(ROOT)
+    if source_fingerprint(ROOT) != SOURCE:
+        raise ArithmeticError("tested source changed")
+    require_archive(ROOT, ROOT / NATIVE, "native_audited", SOURCE)
+    state = json.loads((RAW / "job-state.json").read_bytes())
+    report = json.loads((RAW / "raw/report.json").read_bytes())
+    cases = {(r["game"], r["arm"], r["work_label"], r["readout"]) for r in report["cases"]}
+    contrasts = {(r["game"], r["work_label"], r["readout"]) for r in report["checkpoint_contrasts"]}
+    expected_contrasts = {(g, w, a) for g in ROWS for w in (100000, 1000000, 10000000) for a in ("current", "linear_average")}
+    expected_cases = {(g, a, w, r) for g, w, r in expected_contrasts for a in ("signed_full_exact_turn_river", "signed_full_exact_turn_regret_recency")}
+    diagnostics = {(r["game"], r["exact_info"]) for r in report["diagnostics"]}
+    expected_diagnostics = {(g, row) for g, rows in ROWS.items() for row in rows}
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["cap_seconds"] != 3600
+        or not 0 < state["observed_wall_seconds"] < 3600
+        or state["source_head"] != head
+        or state["source_fingerprint"] != SOURCE
+        or report["status"] != "completed"
+        or report["head"] != head
+        or report["source_fingerprint"] != SOURCE
+        or report["primary"]["classification"] != "negative"
+        or len(report["cases"]) != 24
+        or cases != expected_cases
+        or len(report["checkpoint_contrasts"]) != 12
+        or contrasts != expected_contrasts
+        or len(report["diagnostics"]) != 23
+        or diagnostics != expected_diagnostics
+        or any(len(r["observations"]) != 12 for r in report["diagnostics"])
+        or any(r["native_maximum_error_chips"] > 1e-9 for r in report["cases"])
+        or any(r["whole_coverage"] < 0.95 or r["recall_violations"] != 0 for r in report["cases"] if r["readout"] == "linear_average" and r["work_label"] == 10000000)
+        or (RAW / "launch.exit").read_text().strip() != "0"
+    ):
+        raise ArithmeticError("fixed report changed or incomplete")
+    for game, rows in ROWS.items():
+        for row in report["diagnostics"]:
+            if row["game"] == game and row["exact_info"] in rows and len(row["observations"]) != 12:
+                raise ArithmeticError("fixed observations incomplete")
+    shutil.copytree(RAW / "raw", OUT)
+    for name in ("job-state.json", "launch.exit", "launch.log", "launcher.log", "launcher.py", "package_stage.py"):
+        target = name + ".txt" if name.endswith(".py") else name
+        shutil.copyfile(RAW / name, OUT / target)
+    files = []
+    for path in sorted(p for p in OUT.rglob("*") if p.is_file()):
+        blob = path.read_bytes()
+        files.append({"file": path.relative_to(OUT).as_posix(), "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
+    (OUT / "manifest.json").write_text(json.dumps({"status": "report_negative", "source_fingerprint": SOURCE, "files": files}, sort_keys=True, indent=2) + "\n")
+    print("report_negative", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()
