@@ -141,7 +141,10 @@ Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
 The [fixed learning-rule result](known-turn-regret-recency-result.md) is
 negative on its two known games: dry improves, wet worsens beyond frozen
 limits. Exact-report local/optional/hooks/hosted checks passed; the final
-receipt awaits publication and review.
+receipt was published and verified. PR #112 history-merged as `4c26fbea` after receipt-head CI and
+solo review; post-merge main CI is separate. A distinct
+[prospective saved-policy attribution](known-turn-loss-attribution.md)
+was published before the one capped trace; that trace stopped at a dry saved-path binding error. Its wet partial and failed raw evidence are retained in the [inconclusive report](known-turn-loss-attribution-result.md).
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9877,6 +9880,46 @@ change. **Next decision:** publish/verify the receipt, complete solo
 review and history merge if eligible, then choose a distinct bounded
 research question. The poker conclusion stays negative. Codex assisted;
 no human time or personal learning was reported.
+
+**November 24 locate the wet recency regression before another learner.**
+PR #112's final report already shows that wet turn loss increased by
+0.411577 chips, while the two previously dominant turn rows increased
+by only 0.016565 chips. That leaves about 96% of the turn increase
+outside those two rows. **Question:** is the new positive worsening mass
+concentrated elsewhere, or spread over many decisions? The
+[prospective protocol](known-turn-loss-attribution.md) fixes a read-only
+all-row decomposition of four saved final-average policies on the same
+two known games, with ranked rows, thresholds and compute cap before
+new traces. This will locate a weakness, not prove a causal action
+change or improve play by itself. **Next decision:** publish and verify
+the protocol, qualify isolated tracing code, then make the one admitted
+saved-policy report. No new strategy is trained at this checkpoint.
+Codex assisted; no human time or personal learning was reported.
+
+**November 24 qualify the failed-result report.** Both full local base suites, both pinned optional suites, all-file hooks and hosted Python 3.11/3.12 passed on the exact report head. A shell wrapper failed only when it tried to store the hook exit in zsh's read-only `status` variable after both hooks had passed; the original log and the corrected same-head exit receipt are retained. **Example:** every final pre/post guard reads the failed raw archive and confirms exactly three saved policy cases, the 8,340-row wet partial, absent dry candidate, and unchanged source/report bytes. The [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json) also retains canceled intermediate workflows. **Next decision:** publish/verify the receipt and review/merge the inconclusive PR if eligible; the one-shot trace remains failed. Codex assisted; no human time or personal learning was reported.
+
+**November 24 retain a failed four-policy trace.** The one admitted run stopped after 43.258 seconds when the dry candidate path mistakenly pointed to the wet policy. The source-binding guard correctly stopped the replay. The [failed raw archive](../results/known-turn-loss-attribution/diagnosis/manifest.json) was published and remote-byte checked before the [inconclusive interpretation](known-turn-loss-attribution-result.md). **Example:** the complete wet partial has turn worsening concentrated in ten rows (83.056% of positive mass), but the dry candidate is missing, so it cannot answer the fixed two-game question. **Next decision:** complete failure-report qualification and PR review; a later measurement must have a distinct prospective protocol and preflight path/game/arm checks. Codex assisted; no human time or personal learning was reported.
+
+**November 24 admit one bounded read-only trace.** After the fictional proof was published and byte-verified, a separate data-only calculation used two pinned earlier whole-process clocks to make the conservative forecast `353.5350115839974 < 900` seconds, including a 120-second failure-save reserve. **Example:** the bound is a planned upper allowance from retained runtimes, not a measured runtime or a strength result. The [admission archive](../results/known-turn-loss-attribution/admission/manifest.json) records the exact inputs and arithmetic. **Next decision:** publish/verify admission, then run exactly one four-policy diagnostic under the fixed cap. Codex assisted; no human time or personal learning was reported.
+
+**November 24 prove the attribution arithmetic without poker data.** The published source receipt passed its ancestry and hash guard; all 27 GitHub archive blobs matched local bytes. One fictional eleven-row proof finished in 0.385 seconds within the 180-second cap and saved/reloaded its numeric vector. **Example:** positive and negative row differences reconcile to the net synthetic change while ties use exact row index. This verifies the arithmetic and file round trip, not real-game correctness or poker strength. **Next decision:** publish/verify the [fictional proof](../results/known-turn-loss-attribution/proof/manifest.json), then compute the separate pinned-clock admission before one read-only policy trace. Codex assisted; no human time or personal learning was reported.
+
+**November 24 qualify the saved-policy tracer.** The four exact-source local lanes and all-file hooks passed. Both protocol-head and source-head Python 3.11 hosted first attempts stopped at the fixed 35-minute limit at 96% of tests; one same-source targeted rerun for each passed tests and hooks. Python 3.12 passed both first attempts. **Example:** the source receipt keeps both canceled logs and successful logs, so a timing cancellation is visible alongside complete qualification. This is software qualification, not evidence that a poker decision improved. **Next decision:** publish and verify the [source receipt](../results/known-turn-loss-attribution/source-checks/manifest.json), then run only the fictional proof and separately forecast the one fixed read-only trace. Codex assisted; no human time or personal learning was reported.
+
+**November 24 prepare isolated loss attribution.** The change is a
+read-only tracer for the four already saved final-average policies,
+with signed per-row score differences and their positive worsening and
+negative offset masses. **Example:** a fictional eleven-row vector
+with exactly representable ties checks that the ranking breaks ties by
+exact row index; it never reads a poker policy. Six focused tests,
+Ruff/format and strict mypy passed, including separate invocation of
+each test module. Early formatting, source-path mypy, synthetic-tie and
+environment-invocation failures are retained in ignored logs. **Next
+decision:** qualify the committed source on both local base/optional
+Python versions and hosted CI before any fictional proof or real saved
+policy trace. PR #112's canceled post-merge main run is separate from
+its passed merge gates and negative result. Codex assisted; no human
+time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

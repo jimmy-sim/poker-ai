@@ -13,6 +13,41 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective saved-policy loss attribution
+
+- Exact report-head `5d9f972b` final qualification passed: local base Python 3.11/3.12 each 5,832 pass/73 skip/150 deselected; optional 3.11 2,601 pass; optional 3.12 2,599 pass/2 skip, with pre/post source/archive/report/runtime/lock/license guards. All-file hooks and [hosted CI45459055154](https://github.com/jimmy-sim/poker-ai/actions/runs/45459055154) passed both versions. One zsh wrapper tried to assign the read-only `status` parameter *after* hooks passed; its failed invocation is retained and the same-head `hook_code` capture exited zero. Intermediate source/proof/admission/raw-head CI was canceled by subsequent mandatory pushes, with official logs retained in the [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json). Next: publish/verify final receipt, solo review and history-preserving merge if eligible. The scientific classification stays inconclusive. Codex assisted; human time and personal learning were not reported.
+- The one admitted read-only PR #113 trace stopped in 43.258 seconds after three of four saved policies. Its immutable [failed raw archive](../results/known-turn-loss-attribution/diagnosis/manifest.json) was published and all 14 GitHub blobs byte-verified before interpretation. The dry candidate was incorrectly mapped to the wet candidate `path00`; the existing mass/source guard rejected it. The [inconclusive report](known-turn-loss-attribution-result.md) retains the complete wet-pair row decomposition and the missing dry result. The protocol stops after this one failed binding gate; no retry or poker-strength conclusion. Next: qualify the failure report, review and close PR #113, then choose a distinct prospective question. Codex assisted; human time and personal learning were not reported.
+- A separate data-only [admission](../results/known-turn-loss-attribution/admission/manifest.json) recomputed the pinned conservative bound `2*(59.30096229200717+57.46654349999153)+120 = 353.5350115839974 < 900` seconds and passed in 0.381 whole-process seconds. It read no saved policy and changed no cap. Next: publish/verify its bytes, then run one capped four-policy read-only trace with partial/failure retention. Codex assisted; human time and personal learning were not reported.
+- After the published `9dc61036` source archive passed its normal-clone guard and all 27 archive members matched GitHub bytes, the one fictional-only proof passed in 0.385 whole-process seconds (<180) on that clean head. It saved/reloaded an eleven-row synthetic NPZ and checked exact decomposition, positive mass and stable ranking; no poker policy was loaded. The [proof archive](../results/known-turn-loss-attribution/proof/manifest.json) retains inputs, output, process record and log. Next: publish/verify this proof before the separate data-only compute admission. Codex assisted; human time and personal learning were not reported.
+- The exact PR #113 source `5aa76bcd` passed all four guarded local lanes: base 3.11/3.12 each 5,832 pass/73 skip/150 deselected; optional 3.11 2,601 pass; optional 3.12 2,599 pass/2 skip, plus all-file hooks. Hosted protocol and source-head Python 3.11 first attempts each reached 96% then hit the unchanged 35-minute limit; each passed one targeted same-SHA rerun, while Python 3.12 passed first attempts. Full failed and successful logs are in the [source receipt](../results/known-turn-loss-attribution/source-checks/manifest.json); no timeout or source pin changed. Next: publish/verify that receipt before the fictional proof, then perform separate admission. No real saved-policy trace has run. Codex assisted; human time and personal learning were not reported.
+- The isolated PR #113 source now implements read-only replay of four
+  pinned final-average policies, complete exact-row contribution vectors,
+  fixed row rankings, partial/failure saves, old-source/archive guards,
+  fictional proof and separate data-only admission. Focused Ruff,
+  formatting and strict mypy passed; the two new test modules passed
+  independently (four/two tests) and together (six), all fictional or
+  pin-only. Initial formatting errors, a direct mypy invocation without
+  the repository source path, a synthetic floating-point tie failure,
+  and one mis-scoped environment invocation are retained in ignored
+  iteration logs; no saved-policy trace was run. PR #112's separate
+  post-merge main CI was canceled by the next workflow; its official
+  logs are retained, while PR #112's report/receipt-head gates passed.
+  Protocol-head CI for PR #113 is in progress. Next: complete full
+  exact-source local/optional/hooks/hosted qualification before proof.
+  Codex assisted; human time and personal learning were not reported.
+- [PR #112](https://github.com/jimmy-sim/poker-ai/pull/112) history-merged
+  as `4c26fbea` after both receipt-head hosted jobs passed and solo
+  review; all evidence commits remain on main. Post-merge main CI is
+  running separately. The frozen negative wet/dry result is unchanged.
+  The next [prospective diagnostic protocol](known-turn-loss-attribution.md)
+  fixes four already published final-average policies at matched work,
+  complete exact-row attribution/ranking, a 900-second cap and separate
+  data-only admission. It asks whether the wet loss shifted beyond the
+  previously diagnosed rows; it starts no training or new outcome at
+  protocol publication. Next: publish/verify protocol and hosted CI,
+  then isolate source and qualify it. Codex assisted; human time and
+  personal learning were not reported.
+
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
 - Final exact-report local qualification at `19fb8e49` passed four

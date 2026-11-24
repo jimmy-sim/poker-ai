@@ -1,0 +1,22 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "scripts/diagnose_known_turn_loss_attribution.py",
+    "--output",
+    "results/runs/known-turn-loss-attribution-diagnosis-20261124/diagnosis"
+  ],
+  "source_head": "b5973bbbb00aa56015d5f581344cc1cc11363ed2",
+  "started_epoch": 1795544308.1789062,
+  "work_deadline_seconds": 780,
+  "whole_cap_seconds": 900,
+  "failure_save_reserve_seconds": 120,
+  "pid": 21062,
+  "pgid": 21062,
+  "status": "failed",
+  "exit_code": 1,
+  "completed_epoch": 1795544351.4366531,
+  "elapsed_seconds": 43.25774693489075
+}

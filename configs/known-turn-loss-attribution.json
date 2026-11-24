@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "parent_merge": "4c26fbea5e1249474d72d64a05d907825d118e9e",
+  "question": "Where did signed-regret recency move exact-turn best-response weakness relative to the unchanged learner at matched work on two known games?",
+  "scope": "two already outcome-inspected development games only; no unseen or broad poker-strength claim",
+  "games": [
+    {
+      "name": "collision_medium_wet_oop-02",
+      "spot": "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-02.json",
+      "spot_sha256": "cea60f6a69d07904078f6930238c7dcbbbb2dba6b36eceb215198b329564a616",
+      "board": ["Qs", "Kd", "As", "3c"],
+      "actual_node_work": 10117956,
+      "previously_inspected_turn_rows": [1611, 4041, 7506, 1618, 4824, 1619, 40, 0, 5838, 1596],
+      "previously_inspected_river_rows": [1679, 1697, 1821, 1839, 2, 2361, 1152, 7974, 7507, 1689]
+    },
+    {
+      "name": "full_new_medium_dry_oop",
+      "spot": "configs/river-full-broader-spots/full_new_medium_dry_oop.json",
+      "spot_sha256": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+      "board": ["As", "Jc", "5d", "3h"],
+      "actual_node_work": 10012410,
+      "previously_inspected_turn_rows": [2445, 30, 1],
+      "previously_inspected_river_rows": []
+    }
+  ],
+  "arms": ["signed_full_exact_turn_river", "signed_full_exact_turn_regret_recency"],
+  "control": "signed_full_exact_turn_river",
+  "candidate": "signed_full_exact_turn_regret_recency",
+  "seed": 0,
+  "work_label": 10000000,
+  "readout": "linear_average",
+  "saved_policy_cases": 4,
+  "responding_seat_traces": 8,
+  "ranking": "for each game and street rank all exact rows by candidate-minus-control additive contribution descending, exact information index ascending tie; keep top ten even when gain or reach is zero",
+  "secondary_ranking": "for each game and street rank candidate absolute additive gain descending, same tie rule and top ten",
+  "concentration_threshold_positive_worsening_mass": 0.5,
+  "known_row_share_threshold_positive_worsening_mass": 0.5,
+  "tolerances_chips": {
+    "trace_score_identity": 1e-9,
+    "native_scalar": 1e-9,
+    "negative_gain_slack": 1e-12,
+    "paired_delta_identity": 1e-9
+  },
+  "initial_pot_chips": 36,
+  "prior_wet_diagnosis_wall_seconds": 59.30096229200717,
+  "prior_recency_report_wall_seconds": 57.46654349999153,
+  "forecast": "2*(prior_wet_diagnosis_wall_seconds+prior_recency_report_wall_seconds)+120 < 900",
+  "forecast_bound_seconds": 353.5350115839974,
+  "hard_cap_seconds": 900,
+  "failure_save_reserve_seconds": 120,
+  "publication": "protocol before any new full-row trace; isolated exact-source qualification before fictional proof; proof before separate data-only admission; admission before one capped saved-policy diagnostic; complete raw result before final checks/review/history merge",
+  "stop_rule": "one read-only diagnostic; failed source, arithmetic, archive, admission or time gate ends the milestone with partials; no training or favorable retry",
+  "reference": "reuse published OpenSpiel 2.0.2 scalar audits only as comparison checks; no new reference run or strategy input",
+  "default_promotion": false,
+  "prerequisite_sha256": {
+    "results/known-wet-turn-mechanism/own/manifest.json": "2fc52b5836c43a94bd5b8006866fc48e6ab8c424e584f84f5dedf3bcfc2ac3cb",
+    "results/known-wet-turn-mechanism/native/manifest.json": "0951e6c7286135b3a3d79b350f7f72c9071f776ba3927fdcdad804f3d67d6c6f",
+    "results/known-wet-turn-mechanism/report/manifest.json": "6623f0aadf10d4be3e0f283d13cb2d10b7fab7e21b9acbff611aef1e9573d645",
+    "results/known-turn-exact-mechanism/own/manifest.json": "1ee82759e06cc15576ec4291e72616655dd82d3100857fe20b382a5b378052d7",
+    "results/known-turn-exact-mechanism/native/manifest.json": "df7c2fcebe34e81c6e7b6510a4f8d3704df43d6f76499103f668ba0cd8da605e",
+    "results/known-turn-exact-mechanism/report/manifest.json": "aac1f266e41ba4f1b1b82dfe36ef10a6775a9384d57040c416de107c80dbf13b",
+    "results/known-turn-regret-recency/own/manifest.json": "8b7d3a327d67f5b1c6b2b78e9b819676d86bfb9ec7613477450170caa482c7a9",
+    "results/known-turn-regret-recency/native/manifest.json": "2843cb7c32fa1d8a0c753b7a35e2e1567804bb7b1002e0ff743b3368e6341abf",
+    "results/known-turn-regret-recency/report/manifest.json": "f35d43fcef68ad1f16f9f943cc5f5747e89f5d9d3242456d65160213bc40155d",
+    "results/known-turn-regret-recency/final-checks/manifest.json": "b78c445556244a80d32f0db814098dd5406c45b714b29e0a7cecc71908e4bbcb",
+    "results/known-wet-residual-diagnosis/diagnosis/manifest.json": "c2e483554baa8f5d4904baa90ea9e6fefb1d9c8babba8cc9b8004949bdeab3d9",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  }
+}

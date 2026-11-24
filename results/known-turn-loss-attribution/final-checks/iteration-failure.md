@@ -1,0 +1,1 @@
+First hook wrapper ran hooks successfully but zsh rejected its status assignment because status is a read-only special parameter; no exit receipt was written. The unchanged-head invocation below captures exit using hook_code.

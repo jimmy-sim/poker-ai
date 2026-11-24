@@ -1,0 +1,104 @@
+"""Seal PR #113 exact-source checks and retained protocol-head timeout."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+PROTOCOL = ROOT / "results/runs/known-turn-loss-attribution-protocol-20261124"
+OUT = ROOT / "results/known-turn-loss-attribution/source-checks"
+HEAD = "5aa76bcd4e3e8c62102e09297ccb29dec57e2fc1"
+SOURCE = "11125bcb2b866b409d9e3bfd4d7f51c3c6fde53c1fc80575c14d8f526516ed68"
+PROTOCOL_HEAD = "1ce9300e143546d9c85879ac5515f577bcc8fa0d"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def copy(source: Path, label: str) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / label
+    if source.suffix == ".log":
+        with target.with_name(target.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix in (".py", ".zsh"):
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier source receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("tested source changed or dirty")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    hosted_first = json.loads((RAW / "hosted-first.json").read_bytes())
+    first = json.loads((PROTOCOL / "protocol-hosted-first.json").read_bytes())
+    second = json.loads((PROTOCOL / "protocol-hosted-second.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["head"] != HEAD
+        or state["completed"] != [{"role": role, "exit_code": 0} for role in ROLES]
+        or any(row["status"] != "passed" or row["head"] != HEAD or row["source_fingerprint"] != SOURCE for row in receipts)
+        or any(row["suite_count"] != 82 for row in receipts[2:])
+        or hosted["headSha"] != HEAD
+        or hosted["attempt"] != 2
+        or hosted["conclusion"] != "success"
+        or {row["name"]: row["conclusion"] for row in hosted["jobs"]} != {"Python 3.11": "success", "Python 3.12": "success"}
+        or hosted_first["headSha"] != HEAD
+        or hosted_first["attempt"] != 1
+        or {row["name"]: row["conclusion"] for row in hosted_first["jobs"]} != {"Python 3.11": "cancelled", "Python 3.12": "success"}
+        or first["headSha"] != PROTOCOL_HEAD
+        or {row["name"]: row["conclusion"] for row in first["jobs"]} != {"Python 3.11": "cancelled", "Python 3.12": "success"}
+        or second["headSha"] != PROTOCOL_HEAD
+        or second["attempt"] != 2
+        or {row["name"]: row["conclusion"] for row in second["jobs"]} != {"Python 3.11": "success", "Python 3.12": "success"}
+        or (RAW / "exact-hooks.exit").read_text().strip() != "0"
+    ):
+        raise ArithmeticError("exact source or protocol requalification incomplete")
+    for role, phrase in (("base311", "5832 passed, 73 skipped, 150 deselected"), ("base312", "5832 passed, 73 skipped, 150 deselected"), ("optional311", "2601 passed"), ("optional312", "2599 passed, 2 skipped")):
+        if phrase not in (RAW / f"{role}.log").read_text():
+            raise ArithmeticError("local source test summary missing: " + role)
+    OUT.mkdir(parents=True)
+    for name in ("driver-state.json", "driver.py", "runner.py", "launch.zsh", "optional-suites.json", "package_source.py", "exact-hooks.exit", "exact-hooks.log", "hosted-first.json", "hosted-first.log", "hosted.json", "hosted.log", "iteration-failures.md"):
+        copy(RAW / name, name)
+    for role in ROLES:
+        for suffix in ("json", "log"):
+            name = f"{role}.{suffix}"
+            copy(RAW / name, name)
+    for label in ("protocol-hosted-first", "protocol-hosted-second"):
+        for suffix in ("json", "log"):
+            name = f"{label}.{suffix}"
+            copy(PROTOCOL / name, name)
+    result = {
+        "status": "source_qualified", "tested_head": HEAD,
+        "source_fingerprint": SOURCE, "protocol_head": PROTOCOL_HEAD,
+        "local_roles": receipts, "hosted_run": hosted["databaseId"],
+        "hosted_jobs": [{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        "protocol_first_python311_canceled_retained": True,
+        "protocol_same_sha_targeted_requalification": "passed",
+        "source_first_python311_canceled_retained": True,
+        "source_same_sha_targeted_requalification": "passed",
+        "hooks": "passed", "proof_started": False,
+        "real_policy_trace_started": False,
+    }
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        blob = path.read_bytes()
+        files.append({"file": path.name, "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
+    (OUT / "manifest.json").write_text(json.dumps({"status": "source_qualified", "source_fingerprint": SOURCE, "files": files}, sort_keys=True, indent=2) + "\n")
+    print("source_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

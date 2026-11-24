@@ -1,0 +1,2144 @@
+{
+  "actual_node_work": 10117956,
+  "candidate_minus_control_chips": 0.635010281274127,
+  "cases": [
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 1.0729866052800023,
+      "exploitability_fraction_initial_pot": 0.029805183480000066,
+      "game": "collision_medium_wet_oop-02",
+      "native_maximum_error_chips": 3.552713678800501e-15,
+      "policy_sha256": "4ff5982da7f0c307090d9dfa5cffeff678893fed41142cfc9ca8138f1ce3608b",
+      "post_initial_river_coverage": 0.8554558326722113,
+      "raw_contribution": "collision_medium_wet_oop-02-signed_full_exact_turn_river-contribution.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street_contribution_chips": {
+        "RIVER": 0.26850812174483196,
+        "TURN": 0.8044784835351706
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_exact_turn_regret_recency",
+      "exploitability_chips": 1.7079968865541293,
+      "exploitability_fraction_initial_pot": 0.047444357959836925,
+      "game": "collision_medium_wet_oop-02",
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "policy_sha256": "4f58c566f6ad9c22025e7fc60e307856a5c2129bfa8695451a79d5b32ffc7a05",
+      "post_initial_river_coverage": 0.9869017064828485,
+      "raw_contribution": "collision_medium_wet_oop-02-signed_full_exact_turn_regret_recency-contribution.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street_contribution_chips": {
+        "RIVER": 0.4919411414504887,
+        "TURN": 1.216055745103646
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 44.12008320799214,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 650379264
+    }
+  ],
+  "diagnostics": [
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.08020032396426077,
+        "alternative_action_values_chips": [
+          6.7378718685336265,
+          9.321453025210594,
+          1.7805626485007477
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.07101475804178761,
+          0.8753227036990279,
+          0.05366253825918442
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0655621189174097,
+      "control": {
+        "additive_contribution_chips": 0.014638205046851071,
+        "alternative_action_values_chips": [
+          10.813767238694028,
+          14.364317829650394,
+          11.622575630891252
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.026302537102980823,
+          0.9686064122643527,
+          0.00509105063266653
+        ]
+      },
+      "exact_info": 0,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "2c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0002936274306396566,
+        "alternative_action_values_chips": [
+          -13.13717279629908,
+          -19.263778974533007,
+          -14.211873447721944
+        ],
+        "counterfactual_reach": 0.005965896563032594,
+        "saved_prefix_reach": 0.0004236667009260919,
+        "saved_probabilities": [
+          0.5446231281783616,
+          0.17750348522602186,
+          0.2778733865956166
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.0010345125866936858,
+      "control": {
+        "additive_contribution_chips": 0.0013281400173333424,
+        "alternative_action_values_chips": [
+          -12.587127261536812,
+          5.091208518698723,
+          12.906625709035879
+        ],
+        "counterfactual_reach": 0.006096685281374332,
+        "saved_prefix_reach": 0.00016035829081854545,
+        "saved_probabilities": [
+          0.6065810583457484,
+          0.14082793077342676,
+          0.25259101088082475
+        ]
+      },
+      "exact_info": 2,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.02740642329073207,
+        "alternative_action_values_chips": [
+          -17.99999999999998,
+          -34.18172473815725,
+          -43.697614139805246,
+          -53.19852366319201
+        ],
+        "counterfactual_reach": 0.12380801546674478,
+        "saved_prefix_reach": 0.12380801546674478,
+        "saved_probabilities": [
+          0.9833534435773152,
+          0.002946501680684448,
+          0.009175610068678071,
+          0.004524444673322188
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.026261292454301716,
+      "control": {
+        "additive_contribution_chips": 0.0011451308364303543,
+        "alternative_action_values_chips": [
+          -18.00000000000001,
+          -28.76865586433969,
+          -21.89658750106022,
+          -33.780149870451154
+        ],
+        "counterfactual_reach": 0.13589501412269825,
+        "saved_prefix_reach": 0.13589501412269825,
+        "saved_probabilities": [
+          0.9985707831719717,
+          0.0003373819163292848,
+          0.0003373819163292848,
+          0.0007544529953698538
+        ]
+      },
+      "exact_info": 31,
+      "hole": [
+        "4h",
+        "6d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.036491351801799146,
+        "alternative_action_values_chips": [
+          -54.00000000000044,
+          -88.87948193879468,
+          -97.86400464564355
+        ],
+        "counterfactual_reach": 0.014614601671802719,
+        "saved_prefix_reach": 0.012792492648846732,
+        "saved_probabilities": [
+          0.8631310046624109,
+          0.03322406964559999,
+          0.10364492569198906
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.016107479984294844,
+      "control": {
+        "additive_contribution_chips": 0.0203838718175043,
+        "alternative_action_values_chips": [
+          -54.00000000000001,
+          -45.383147387691544,
+          -108.00476525415351
+        ],
+        "counterfactual_reach": 0.004798215272304467,
+        "saved_prefix_reach": 0.004647582080178845,
+        "saved_probabilities": [
+          0.9961312961152959,
+          0.0008617338472732619,
+          0.0030069700374307706
+        ]
+      },
+      "exact_info": 40,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 182"
+      ],
+      "pot_chips": 216,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012080168172291243,
+        "alternative_action_values_chips": [
+          0.3140140965195091,
+          -7.992358930823129,
+          -21.24158391773941
+        ],
+        "counterfactual_reach": 0.005965896563032594,
+        "saved_prefix_reach": 0.0004236667009260919,
+        "saved_probabilities": [
+          0.6042955426644034,
+          0.21336877507493987,
+          0.18233568226065647
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010916036100372167,
+      "control": {
+        "additive_contribution_chips": 0.00011641320719190763,
+        "alternative_action_values_chips": [
+          1.0980472729875947,
+          2.420184666927771,
+          -0.5605042186498037
+        ],
+        "counterfactual_reach": 0.006096685281374332,
+        "saved_prefix_reach": 0.00016035829081854545,
+        "saved_probabilities": [
+          0.5971935365740338,
+          0.1805954534662889,
+          0.22221100995967727
+        ]
+      },
+      "exact_info": 480,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "6h"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013009921741097144,
+        "alternative_action_values_chips": [
+          -49.59967059984887,
+          -88.86640887003007,
+          -84.58066559912866
+        ],
+        "counterfactual_reach": 0.0003771982168438095,
+        "saved_prefix_reach": 0.0003301701629981755,
+        "saved_probabilities": [
+          0.7864253662979939,
+          0.09559233240116252,
+          0.11798230130084363
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0004999553954678494,
+      "control": {
+        "additive_contribution_chips": 0.000801036778641865,
+        "alternative_action_values_chips": [
+          -50.10514914395635,
+          -81.0901776095401,
+          -83.6544081673753
+        ],
+        "counterfactual_reach": 0.00023964188541116972,
+        "saved_prefix_reach": 0.00023211866685637818,
+        "saved_probabilities": [
+          0.7883480533361683,
+          0.07753079295538076,
+          0.13412115370845093
+        ]
+      },
+      "exact_info": 576,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Jc"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013510002248011718,
+        "alternative_action_values_chips": [
+          -45.15023709317537,
+          -65.3946068649595,
+          -65.8216954543378
+        ],
+        "counterfactual_reach": 0.00037968890483095364,
+        "saved_prefix_reach": 0.00033235031874115324,
+        "saved_probabilities": [
+          0.6033225917420703,
+          0.16372135068454857,
+          0.2329560575733812
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.00012169915538989742,
+      "control": {
+        "additive_contribution_chips": 0.0012293010694112744,
+        "alternative_action_values_chips": [
+          -45.970289091977904,
+          -70.49443865365201,
+          -62.33494314104199
+        ],
+        "counterfactual_reach": 0.00023996361006119765,
+        "saved_prefix_reach": 0.00023243029141537875,
+        "saved_probabilities": [
+          0.46227350010469903,
+          0.2179174148284645,
+          0.31980908506683653
+        ]
+      },
+      "exact_info": 1152,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kc"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012226267854120385,
+        "alternative_action_values_chips": [
+          -51.19861389016826,
+          -115.04451122171864,
+          -130.12499310768996
+        ],
+        "counterfactual_reach": 0.00037968890483095364,
+        "saved_prefix_reach": 0.00033235031874115324,
+        "saved_probabilities": [
+          0.8961383851341488,
+          0.05569868580276431,
+          0.04816292906308687
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010815433829696728,
+      "control": {
+        "additive_contribution_chips": 0.0001410834024423657,
+        "alternative_action_values_chips": [
+          -53.01484949974795,
+          -97.17526501235628,
+          -105.86224170669318
+        ],
+        "counterfactual_reach": 0.00023996361006119765,
+        "saved_prefix_reach": 0.00023243029141537875,
+        "saved_probabilities": [
+          0.9741282305146721,
+          0.017643756758565037,
+          0.008228012726762844
+        ]
+      },
+      "exact_info": 1404,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kc"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013864745637468302,
+        "alternative_action_values_chips": [
+          -54.00000000000001,
+          -107.00450650549575,
+          -125.64316674793865
+        ],
+        "counterfactual_reach": 0.00019701017126878275,
+        "saved_prefix_reach": 0.00015453680245806296,
+        "saved_probabilities": [
+          0.7069315846588738,
+          0.16378499047508502,
+          0.1292834248660412
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0012425603598503166,
+      "control": {
+        "additive_contribution_chips": 0.0001439142038965135,
+        "alternative_action_values_chips": [
+          -54.0,
+          -84.78049643871886,
+          -84.53841798058991
+        ],
+        "counterfactual_reach": 0.00010501540926217517,
+        "saved_prefix_reach": 9.908695865743811e-05,
+        "saved_probabilities": [
+          0.9055008361697989,
+          0.07828534338632807,
+          0.016213820443873088
+        ]
+      },
+      "exact_info": 1406,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 146"
+      ],
+      "pot_chips": 216,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kh"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012226267854120385,
+        "alternative_action_values_chips": [
+          -51.19861389016826,
+          -115.04451122171864,
+          -130.12499310768996
+        ],
+        "counterfactual_reach": 0.00037968890483095364,
+        "saved_prefix_reach": 0.00033235031874115324,
+        "saved_probabilities": [
+          0.8961383851341488,
+          0.05569868580276431,
+          0.04816292906308687
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010815433829696728,
+      "control": {
+        "additive_contribution_chips": 0.0001410834024423657,
+        "alternative_action_values_chips": [
+          -53.01484949974795,
+          -97.17526501235628,
+          -105.86224170669318
+        ],
+        "counterfactual_reach": 0.00023996361006119765,
+        "saved_prefix_reach": 0.00023243029141537875,
+        "saved_probabilities": [
+          0.9741282305146721,
+          0.017643756758565037,
+          0.008228012726762844
+        ]
+      },
+      "exact_info": 1440,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kh"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013864745637468302,
+        "alternative_action_values_chips": [
+          -54.00000000000001,
+          -107.00450650549575,
+          -125.64316674793865
+        ],
+        "counterfactual_reach": 0.00019701017126878275,
+        "saved_prefix_reach": 0.00015453680245806296,
+        "saved_probabilities": [
+          0.7069315846588738,
+          0.16378499047508502,
+          0.1292834248660412
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0012425603598503166,
+      "control": {
+        "additive_contribution_chips": 0.0001439142038965135,
+        "alternative_action_values_chips": [
+          -54.0,
+          -84.78049643871886,
+          -84.53841798058991
+        ],
+        "counterfactual_reach": 0.00010501540926217517,
+        "saved_prefix_reach": 9.908695865743811e-05,
+        "saved_probabilities": [
+          0.9055008361697989,
+          0.07828534338632807,
+          0.016213820443873088
+        ]
+      },
+      "exact_info": 1442,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 146"
+      ],
+      "pot_chips": 216,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.03142194360260398,
+        "alternative_action_values_chips": [
+          -3.0498909253743913,
+          -30.713780943322043,
+          -56.356193841628595
+        ],
+        "counterfactual_reach": 0.016862077856983144,
+        "saved_prefix_reach": 0.016862077856983144,
+        "saved_probabilities": [
+          0.9095665316833145,
+          0.042653463596221616,
+          0.04778000472046409
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.01991885246958365,
+      "control": {
+        "additive_contribution_chips": 0.011503091133020333,
+        "alternative_action_values_chips": [
+          -12.016068380124182,
+          -37.22230254352612,
+          -107.54695016836496
+        ],
+        "counterfactual_reach": 0.010624365433325084,
+        "saved_prefix_reach": 0.010624365433325084,
+        "saved_probabilities": [
+          0.948471288388899,
+          0.03920625670877146,
+          0.012322454902329442
+        ]
+      },
+      "exact_info": 1596,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.5205642092018495,
+        "alternative_action_values_chips": [
+          -18.000000000000107,
+          -12.00788823010324,
+          -20.71804072918097,
+          -21.44290468174236
+        ],
+        "counterfactual_reach": 0.18571202320011648,
+        "saved_prefix_reach": 0.18571202320011648,
+        "saved_probabilities": [
+          0.4857600490619603,
+          0.2134798980156013,
+          0.1962577345575375,
+          0.10450231836490091
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.09010130547080408,
+      "control": {
+        "additive_contribution_chips": 0.43046290373104545,
+        "alternative_action_values_chips": [
+          -17.999999999999964,
+          -13.835167199632844,
+          -21.76328753365303,
+          -27.20184024482757
+        ],
+        "counterfactual_reach": 0.20384252118404844,
+        "saved_prefix_reach": 0.20384252118404844,
+        "saved_probabilities": [
+          0.7604534506523725,
+          0.13414238459318248,
+          0.06482967334394016,
+          0.04057449141050493
+        ]
+      },
+      "exact_info": 1611,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0053231138975284534,
+        "alternative_action_values_chips": [
+          -162.00000000000102,
+          -119.54090559323585
+        ],
+        "counterfactual_reach": 0.07942733213880714,
+        "saved_prefix_reach": 0.015588228267511483,
+        "saved_probabilities": [
+          0.016085266868321457,
+          0.9839147331316784
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.02865930893029181,
+      "control": {
+        "additive_contribution_chips": 0.03398242282782026,
+        "alternative_action_values_chips": [
+          -161.99999999999915,
+          -176.85222136607848
+        ],
+        "counterfactual_reach": 0.07077023258289658,
+        "saved_prefix_reach": 0.004588011060823843,
+        "saved_probabilities": [
+          0.002602063984954673,
+          0.9973979360150453
+        ]
+      },
+      "exact_info": 1618,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "pot_chips": 362,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.03403478232440795,
+        "alternative_action_values_chips": [
+          -17.99999999999997,
+          -23.59518624786912
+        ],
+        "counterfactual_reach": 0.02819512971213044,
+        "saved_prefix_reach": 0.02819512971213044,
+        "saved_probabilities": [
+          0.5685163651928654,
+          0.43148363480713464
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.005004166685613969,
+      "control": {
+        "additive_contribution_chips": 0.029030615638793982,
+        "alternative_action_values_chips": [
+          -18.000000000000018,
+          -38.88104742924241
+        ],
+        "counterfactual_reach": 0.016302344151858144,
+        "saved_prefix_reach": 0.016302344151858144,
+        "saved_probabilities": [
+          0.8294373619451526,
+          0.1705626380548474
+        ]
+      },
+      "exact_info": 1619,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3h"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0009296807469385215,
+        "alternative_action_values_chips": [
+          -17.999999999999996,
+          48.38835917121978
+        ],
+        "counterfactual_reach": 7.821894038741672e-05,
+        "saved_prefix_reach": 7.114533032012654e-05,
+        "saved_probabilities": [
+          0.393663815756989,
+          0.606336184243011
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.0010107614736637282,
+      "control": {
+        "additive_contribution_chips": 0.0019404422206022497,
+        "alternative_action_values_chips": [
+          -17.999999999999996,
+          -136.23389366324255
+        ],
+        "counterfactual_reach": 7.729902527005397e-05,
+        "saved_prefix_reach": 7.331590608909413e-05,
+        "saved_probabilities": [
+          0.5522964758484531,
+          0.44770352415154685
+        ]
+      },
+      "exact_info": 1679,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3h"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0008741769775077007,
+        "alternative_action_values_chips": [
+          -54.0,
+          -15.649634163738
+        ],
+        "counterfactual_reach": 0.0006773771005853772,
+        "saved_prefix_reach": 0.00014460639435107,
+        "saved_probabilities": [
+          0.31526252651782893,
+          0.6847374734821711
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.00020041831971745981,
+      "control": {
+        "additive_contribution_chips": 0.0010745952972251605,
+        "alternative_action_values_chips": [
+          -53.99999999999999,
+          -100.59419872620104
+        ],
+        "counterfactual_reach": 0.0005727799509624296,
+        "saved_prefix_reach": 7.683406846926642e-05,
+        "saved_probabilities": [
+          0.3996710966082824,
+          0.6003289033917176
+        ]
+      },
+      "exact_info": 1689,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "pot_chips": 254,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0009296807469385215,
+        "alternative_action_values_chips": [
+          -17.999999999999996,
+          48.38835917121978
+        ],
+        "counterfactual_reach": 7.821894038741672e-05,
+        "saved_prefix_reach": 7.114533032012654e-05,
+        "saved_probabilities": [
+          0.393663815756989,
+          0.606336184243011
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.0010107614736637282,
+      "control": {
+        "additive_contribution_chips": 0.0019404422206022497,
+        "alternative_action_values_chips": [
+          -17.999999999999996,
+          -136.23389366324255
+        ],
+        "counterfactual_reach": 7.729902527005397e-05,
+        "saved_prefix_reach": 7.331590608909413e-05,
+        "saved_probabilities": [
+          0.5522964758484531,
+          0.44770352415154685
+        ]
+      },
+      "exact_info": 1697,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5h"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.00048812975703534957,
+        "alternative_action_values_chips": [
+          -18.000000000000004,
+          16.569577689022683,
+          1.4839684410408087,
+          1.6608990187913126
+        ],
+        "counterfactual_reach": 9.657642078856711e-05,
+        "saved_prefix_reach": 8.784268009904533e-05,
+        "saved_probabilities": [
+          0.20469145684290443,
+          0.52513671016681,
+          0.05496025874445801,
+          0.21521157424582754
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.000923219465237856,
+      "control": {
+        "additive_contribution_chips": 0.0014113492222732056,
+        "alternative_action_values_chips": [
+          -18.0,
+          -34.09661513030128,
+          -124.75298146354633,
+          -138.9272537252655
+        ],
+        "counterfactual_reach": 0.0001040945046633978,
+        "saved_prefix_reach": 9.873064895229717e-05,
+        "saved_probabilities": [
+          0.4584639459309762,
+          0.35074669258505764,
+          0.00900064005715463,
+          0.18178872142681157
+        ]
+      },
+      "exact_info": 1821,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0004879270452396853,
+        "alternative_action_values_chips": [
+          -18.0,
+          12.520642342420869,
+          -4.012424761049085,
+          -10.581555789484744
+        ],
+        "counterfactual_reach": 8.720273150422764e-05,
+        "saved_prefix_reach": 7.931668604761163e-05,
+        "saved_probabilities": [
+          0.23058598127182986,
+          0.5119517464962862,
+          0.10386657822418782,
+          0.1535956940076962
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.000880521296738579,
+      "control": {
+        "additive_contribution_chips": 0.0013684483419782643,
+        "alternative_action_values_chips": [
+          -18.0,
+          -33.10151117850538,
+          -122.78239241766731,
+          -135.58979037740465
+        ],
+        "counterfactual_reach": 9.059753011648196e-05,
+        "saved_prefix_reach": 8.592915611443171e-05,
+        "saved_probabilities": [
+          0.4641976581818662,
+          0.3032952504370411,
+          0.0054702170195595435,
+          0.2270368743615332
+        ]
+      },
+      "exact_info": 1839,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "6d"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013588538846091701,
+        "alternative_action_values_chips": [
+          -49.914831252202816,
+          -90.44018391226214,
+          -88.58252468535659
+        ],
+        "counterfactual_reach": 0.00037687914480487186,
+        "saved_prefix_reach": 0.00032989087199837786,
+        "saved_probabilities": [
+          0.7912788843885683,
+          0.09013401021233071,
+          0.11858710539910096
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0005578171059673051,
+      "control": {
+        "additive_contribution_chips": 0.000801036778641865,
+        "alternative_action_values_chips": [
+          -50.10514914395635,
+          -81.0901776095401,
+          -83.6544081673753
+        ],
+        "counterfactual_reach": 0.00023964188541116972,
+        "saved_prefix_reach": 0.00023211866685637818,
+        "saved_probabilities": [
+          0.7883480533361683,
+          0.07753079295538076,
+          0.13412115370845093
+        ]
+      },
+      "exact_info": 1896,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kc"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012606486273721781,
+        "alternative_action_values_chips": [
+          43.885625635112866,
+          60.93366383608952,
+          54.284197787462794
+        ],
+        "counterfactual_reach": 0.002738602283278695,
+        "saved_prefix_reach": 0.0005846365361396287,
+        "saved_probabilities": [
+          0.11780486715055201,
+          0.535663940515541,
+          0.346531192333907
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010747141120522616,
+      "control": {
+        "additive_contribution_chips": 0.00018593451531991658,
+        "alternative_action_values_chips": [
+          46.669397736548596,
+          45.27812679006832,
+          47.06961795299377
+        ],
+        "counterfactual_reach": 0.0032180894313126158,
+        "saved_prefix_reach": 0.0004316821901503928,
+        "saved_probabilities": [
+          0.2864061271793182,
+          0.4168684569351509,
+          0.2967254158855308
+        ]
+      },
+      "exact_info": 2334,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kh"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012606486273721781,
+        "alternative_action_values_chips": [
+          43.885625635112866,
+          60.93366383608952,
+          54.284197787462794
+        ],
+        "counterfactual_reach": 0.002738602283278695,
+        "saved_prefix_reach": 0.0005846365361396287,
+        "saved_probabilities": [
+          0.11780486715055201,
+          0.535663940515541,
+          0.346531192333907
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010747141120522616,
+      "control": {
+        "additive_contribution_chips": 0.00018593451531991658,
+        "alternative_action_values_chips": [
+          46.669397736548596,
+          45.27812679006832,
+          47.06961795299377
+        ],
+        "counterfactual_reach": 0.0032180894313126158,
+        "saved_prefix_reach": 0.0004316821901503928,
+        "saved_probabilities": [
+          0.2864061271793182,
+          0.4168684569351509,
+          0.2967254158855308
+        ]
+      },
+      "exact_info": 2352,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Ks"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0008052905044224427,
+        "alternative_action_values_chips": [
+          -17.999999999999996,
+          14.242054670406814,
+          9.079186888401047,
+          -7.051041236915428
+        ],
+        "counterfactual_reach": 0.00014367587395634914,
+        "saved_prefix_reach": 0.00013068276636104555,
+        "saved_probabilities": [
+          0.2717793663238738,
+          0.39988733925856285,
+          0.2126194948101439,
+          0.11571379960741957
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.00047276920870581885,
+      "control": {
+        "additive_contribution_chips": 0.0012780597131282615,
+        "alternative_action_values_chips": [
+          -18.000000000000004,
+          -18.809328485759,
+          -87.3638502702502,
+          -87.96831519556004
+        ],
+        "counterfactual_reach": 0.00017209574966017398,
+        "saved_prefix_reach": 0.00016322787740643866,
+        "saved_probabilities": [
+          0.25127395151362736,
+          0.5300626700576624,
+          0.11362361171734918,
+          0.1050397667113611
+        ]
+      },
+      "exact_info": 2361,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.027306652872223745,
+        "alternative_action_values_chips": [
+          -17.99999999999998,
+          -37.30251153147503,
+          -43.66133905364005,
+          -51.946608885669505
+        ],
+        "counterfactual_reach": 0.12380801546674478,
+        "saved_prefix_reach": 0.12380801546674478,
+        "saved_probabilities": [
+          0.9836922146338062,
+          0.0026119014691851536,
+          0.008959542691810323,
+          0.00473634120519835
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.026039235630705638,
+      "control": {
+        "additive_contribution_chips": 0.001267417241518108,
+        "alternative_action_values_chips": [
+          -18.00000000000001,
+          -31.50544108295225,
+          -21.902520934123537,
+          -33.63691335894237
+        ],
+        "counterfactual_reach": 0.13589501412269825,
+        "saved_prefix_reach": 0.13589501412269825,
+        "saved_probabilities": [
+          0.9985079548946502,
+          0.0003373819163292848,
+          0.0003373819163292848,
+          0.0008172812726912959
+        ]
+      },
+      "exact_info": 2445,
+      "hole": [
+        "2h",
+        "6h"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.040887850456448896,
+        "alternative_action_values_chips": [
+          -18.000000000000107,
+          -37.93251090612231,
+          -43.789006228844116,
+          -52.52370271159179
+        ],
+        "counterfactual_reach": 0.18571202320011648,
+        "saved_prefix_reach": 0.18571202320011648,
+        "saved_probabilities": [
+          0.9839481013059047,
+          0.0022937787975725096,
+          0.00920077194438546,
+          0.00455734795213728
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.03909161637060577,
+      "control": {
+        "additive_contribution_chips": 0.0017962340858431226,
+        "alternative_action_values_chips": [
+          -17.999999999999964,
+          -31.905406819124433,
+          -21.90705861401521,
+          -33.64924353461914
+        ],
+        "counterfactual_reach": 0.20384252118404844,
+        "saved_prefix_reach": 0.20384252118404844,
+        "saved_probabilities": [
+          0.9985830827792574,
+          0.0003373819163292847,
+          0.0003373819163292847,
+          0.0007421533880839371
+        ]
+      },
+      "exact_info": 3243,
+      "hole": [
+        "2s",
+        "7c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.07026625737628862,
+        "alternative_action_values_chips": [
+          -18.000000000000107,
+          -22.180302816577523,
+          -36.64381449319186,
+          -37.0953110599287
+        ],
+        "counterfactual_reach": 0.18571202320011648,
+        "saved_prefix_reach": 0.18571202320011648,
+        "saved_probabilities": [
+          0.9241218255772786,
+          0.045965453219842044,
+          0.01466117377639609,
+          0.015251547426483323
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.07353641509999083,
+      "control": {
+        "additive_contribution_chips": 0.14380267247627945,
+        "alternative_action_values_chips": [
+          -17.999999999999964,
+          -16.600676200331538,
+          -21.58823309394359,
+          -21.080813854990822
+        ],
+        "counterfactual_reach": 0.20384252118404844,
+        "saved_prefix_reach": 0.20384252118404844,
+        "saved_probabilities": [
+          0.9502416728059018,
+          0.032831616991499786,
+          0.01062141151124018,
+          0.006305298691358316
+        ]
+      },
+      "exact_info": 4041,
+      "hole": [
+        "2d",
+        "5d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.07662140865664196,
+        "alternative_action_values_chips": [
+          37.42416911911549,
+          38.83855933088792,
+          36.21111724463151
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.08491706745646913,
+          0.7469405162228373,
+          0.16814241632069354
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.04392822313701074,
+      "control": {
+        "additive_contribution_chips": 0.03269318551963123,
+        "alternative_action_values_chips": [
+          26.89029203075112,
+          26.823102168889477,
+          25.2524353810354
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.09815733617445427,
+          0.7877794235979251,
+          0.1140632402276207
+        ]
+      },
+      "exact_info": 4824,
+      "hole": [
+        "Kc",
+        "Kh"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5d"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.001317197543863423,
+        "alternative_action_values_chips": [
+          76.25637124962186,
+          134.18845530555475,
+          140.71185295265113
+        ],
+        "counterfactual_reach": 0.0003139404815985032,
+        "saved_prefix_reach": 0.00023449486538843213,
+        "saved_probabilities": [
+          0.1519705209573068,
+          0.22059164912346826,
+          0.627437829919225
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0009192763514945716,
+      "control": {
+        "additive_contribution_chips": 0.00039792119236885145,
+        "alternative_action_values_chips": [
+          80.2722867845101,
+          123.3320858012439,
+          130.56295883636093
+        ],
+        "counterfactual_reach": 0.00019300166585848021,
+        "saved_prefix_reach": 0.00015204274108343287,
+        "saved_probabilities": [
+          0.040534095503711,
+          0.4419724138623155,
+          0.5174934906339737
+        ]
+      },
+      "exact_info": 5040,
+      "hole": [
+        "Kc",
+        "Kh"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.001287472901401225,
+        "alternative_action_values_chips": [
+          41.07253631488308,
+          43.10399314204266,
+          50.80334276365945
+        ],
+        "counterfactual_reach": 0.005965896563032594,
+        "saved_prefix_reach": 0.0005066064408813561,
+        "saved_probabilities": [
+          0.30416443365804907,
+          0.2757335247112606,
+          0.4201020416306904
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0011572532161794394,
+      "control": {
+        "additive_contribution_chips": 0.00013021968522178545,
+        "alternative_action_values_chips": [
+          32.96431208238424,
+          34.22014878128887,
+          33.53658579512247
+        ],
+        "counterfactual_reach": 0.006096685281374332,
+        "saved_prefix_reach": 0.0005984343867137076,
+        "saved_probabilities": [
+          0.1876165942686084,
+          0.5204053265998033,
+          0.2919780791315883
+        ]
+      },
+      "exact_info": 5064,
+      "hole": [
+        "Kc",
+        "Kh"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.017912783702976675,
+        "alternative_action_values_chips": [
+          33.94558951970332,
+          34.609187387437494,
+          31.685065131269972
+        ],
+        "counterfactual_reach": 0.09090909090909052,
+        "saved_prefix_reach": 0.09090909090909052,
+        "saved_probabilities": [
+          0.09631227113658207,
+          0.790775683887792,
+          0.11291204497562594
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.003895476959099014,
+      "control": {
+        "additive_contribution_chips": 0.014017306743877661,
+        "alternative_action_values_chips": [
+          25.28528882784048,
+          25.027190356876545,
+          23.463316800040513
+        ],
+        "counterfactual_reach": 0.09090909090909052,
+        "saved_prefix_reach": 0.09090909090909052,
+        "saved_probabilities": [
+          0.0332079766202145,
+          0.9291590541837592,
+          0.037632969196026385
+        ]
+      },
+      "exact_info": 5838,
+      "hole": [
+        "9h",
+        "Ks"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.02826960062226479,
+        "alternative_action_values_chips": [
+          5.513923572164542,
+          9.206102538212061,
+          2.5812554565339902
+        ],
+        "counterfactual_reach": 0.09090909090909052,
+        "saved_prefix_reach": 0.09090909090909052,
+        "saved_probabilities": [
+          0.06965052945395968,
+          0.8752887288611999,
+          0.05506074168484037
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.026599415481831392,
+      "control": {
+        "additive_contribution_chips": 0.0016701851404333974,
+        "alternative_action_values_chips": [
+          12.750266707856726,
+          14.270065744488019,
+          11.875881732451177
+        ],
+        "counterfactual_reach": 0.09090909090909052,
+        "saved_prefix_reach": 0.09090909090909052,
+        "saved_probabilities": [
+          0.015630927831781355,
+          0.9789441741804952,
+          0.005424897987723321
+        ]
+      },
+      "exact_info": 6672,
+      "hole": [
+        "4d",
+        "5s"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.11820246467840799,
+        "alternative_action_values_chips": [
+          8.039220694349686,
+          9.88158539170967,
+          5.401876202010022
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.05666692247696225,
+          0.7731396777858885,
+          0.17019339973714923
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0826036704011763,
+      "control": {
+        "additive_contribution_chips": 0.03559879427723169,
+        "alternative_action_values_chips": [
+          12.17542425885295,
+          14.593427879689859,
+          13.054342358507224
+        ],
+        "counterfactual_reach": 0.27272727272727254,
+        "saved_prefix_reach": 0.27272727272727254,
+        "saved_probabilities": [
+          0.02806985379028685,
+          0.8464109246072815,
+          0.12551922160243156
+        ]
+      },
+      "exact_info": 7506,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "2c"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0001976545555012039,
+        "alternative_action_values_chips": [
+          -13.13717279629908,
+          -19.263778974533007,
+          -14.211873447721944
+        ],
+        "counterfactual_reach": 0.005965896563032594,
+        "saved_prefix_reach": 0.0003380689980429435,
+        "saved_probabilities": [
+          0.5253628136629696,
+          0.13048976994533618,
+          0.3441474163916943
+        ]
+      },
+      "candidate_minus_control_contribution_chips": -0.0009429838351650904,
+      "control": {
+        "additive_contribution_chips": 0.0011406383906662943,
+        "alternative_action_values_chips": [
+          -12.587127261536812,
+          5.091208518698723,
+          12.906625709035879
+        ],
+        "counterfactual_reach": 0.006096685281374332,
+        "saved_prefix_reach": 0.00017113306445357135,
+        "saved_probabilities": [
+          0.4913671882569953,
+          0.1028266337893118,
+          0.4058061779536928
+        ]
+      },
+      "exact_info": 7507,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0012387376695478021,
+        "alternative_action_values_chips": [
+          0.3140140965195091,
+          -7.992358930823129,
+          -21.24158391773941
+        ],
+        "counterfactual_reach": 0.005965896563032594,
+        "saved_prefix_reach": 0.0003380689980429435,
+        "saved_probabilities": [
+          0.53652088803191,
+          0.2009367873773988,
+          0.26254232459069127
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0011145869416353733,
+      "control": {
+        "additive_contribution_chips": 0.0001241507279124289,
+        "alternative_action_values_chips": [
+          1.0980472729875947,
+          2.420184666927771,
+          -0.5605042186498037
+        ],
+        "counterfactual_reach": 0.006096685281374332,
+        "saved_prefix_reach": 0.00017113306445357135,
+        "saved_probabilities": [
+          0.6331766422247767,
+          0.16090460541733212,
+          0.2059187523578913
+        ]
+      },
+      "exact_info": 7728,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "7s"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0013861976069256296,
+        "alternative_action_values_chips": [
+          -46.55927431161404,
+          -69.27093405884213,
+          -66.58546938860901
+        ],
+        "counterfactual_reach": 0.00037968890483095364,
+        "saved_prefix_reach": 0.0002935525575398804,
+        "saved_probabilities": [
+          0.5529510889028195,
+          0.18305970798386784,
+          0.26398920311331264
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.00039000863624378233,
+      "control": {
+        "additive_contribution_chips": 0.0009961889706818472,
+        "alternative_action_values_chips": [
+          -43.639780926607386,
+          -64.59215151400849,
+          -58.58017592974574
+        ],
+        "counterfactual_reach": 0.00023996361006119765,
+        "saved_prefix_reach": 0.00020310782106399943,
+        "saved_probabilities": [
+          0.4407338259148783,
+          0.24181767036166207,
+          0.31744850372345956
+        ]
+      },
+      "exact_info": 7866,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "9d"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.0014152549056134433,
+        "alternative_action_values_chips": [
+          -45.49874708381975,
+          -70.16497424837881,
+          -65.74886977604724
+        ],
+        "counterfactual_reach": 0.00037968890483095364,
+        "saved_prefix_reach": 0.0002935525575398804,
+        "saved_probabilities": [
+          0.5586348546110462,
+          0.15954349151510047,
+          0.2818216538738533
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0002702638039612981,
+      "control": {
+        "additive_contribution_chips": 0.0011449911016521452,
+        "alternative_action_values_chips": [
+          -44.25814662614338,
+          -65.85265758065552,
+          -61.56826885729369
+        ],
+        "counterfactual_reach": 0.00023996361006119765,
+        "saved_prefix_reach": 0.00020310782106399943,
+        "saved_probabilities": [
+          0.41242098746311706,
+          0.257597436151722,
+          0.3299815763851609
+        ]
+      },
+      "exact_info": 7974,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Kc"
+      ],
+      "candidate": {
+        "additive_contribution_chips": 0.001178839359643898,
+        "alternative_action_values_chips": [
+          -54.00000000000001,
+          -107.00450650549575,
+          -125.64316674793865
+        ],
+        "counterfactual_reach": 0.00019701017126878275,
+        "saved_prefix_reach": 0.0001359556785307715,
+        "saved_probabilities": [
+          0.7170087672330503,
+          0.15735378074999037,
+          0.12563745201695936
+        ]
+      },
+      "candidate_minus_control_contribution_chips": 0.0010568460578584667,
+      "control": {
+        "additive_contribution_chips": 0.00012199330178543134,
+        "alternative_action_values_chips": [
+          -54.0,
+          -84.78049643871886,
+          -84.53841798058991
+        ],
+        "counterfactual_reach": 0.00010501540926217517,
+        "saved_prefix_reach": 8.695441221594719e-05,
+        "saved_probabilities": [
+          0.9087124627929285,
+          0.07492217058242431,
+          0.016365366624647226
+        ]
+      },
+      "exact_info": 8209,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 146"
+      ],
+      "pot_chips": 216,
+      "seat": 0,
+      "street": "RIVER"
+    }
+  ],
+  "full_row_count": 8340,
+  "game": "collision_medium_wet_oop-02",
+  "readout": "linear_average",
+  "seed": 0,
+  "streets": {
+    "RIVER": {
+      "known_positive_share": 0.0013692429848113088,
+      "known_row_role": "nondominant",
+      "location": "distributed",
+      "negative_offset_chips": 0.06282950907787457,
+      "negative_row_count": 1835,
+      "net_change_chips": 0.22343301970565668,
+      "positive_row_count": 6444,
+      "positive_worsening_chips": 0.28626252878353126,
+      "row_count": 8280,
+      "top_ten_by_candidate_gain": [
+        7974,
+        1406,
+        1442,
+        7866,
+        1896,
+        1152,
+        5040,
+        576,
+        5064,
+        2334
+      ],
+      "top_ten_by_delta": [
+        1406,
+        1442,
+        5064,
+        7728,
+        480,
+        1404,
+        1440,
+        2334,
+        2352,
+        8209
+      ],
+      "top_ten_positive_share": 0.03918754432557213
+    },
+    "TURN": {
+      "known_positive_share": 0.6228461995112667,
+      "known_row_role": "dominant",
+      "location": "concentrated",
+      "negative_offset_chips": 0.1136267041644404,
+      "negative_row_count": 11,
+      "net_change_chips": 0.4115772615684755,
+      "positive_row_count": 49,
+      "positive_worsening_chips": 0.525203965732916,
+      "row_count": 60,
+      "top_ten_by_candidate_gain": [
+        1611,
+        7506,
+        0,
+        4824,
+        4041,
+        3243,
+        40,
+        1619,
+        1596,
+        6672
+      ],
+      "top_ten_by_delta": [
+        1611,
+        7506,
+        0,
+        4824,
+        3243,
+        6672,
+        31,
+        2445,
+        1596,
+        40
+      ],
+      "top_ten_positive_share": 0.830559627837146
+    }
+  },
+  "work_label": 10000000
+}
