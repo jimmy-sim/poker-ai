@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 report readout correction before policies
+
+- The first tested source `2b937eaa` passed all four exact-source local
+  base/optional lanes and hooks; its hosted source-head run was still active.
+  A read-only source review then found that the copied decision report
+  displayed ranked rows only for linear-average policies, although the
+  protocol saves both current and average readouts at every crossing.
+  Before any proof, profile or policy run, the isolated report now computes
+  street contributions, matched-work contrasts and the same ranked decision
+  rows for **both** readouts. A focused duplicate/missing pair regression
+  was added. Six focused tests and targeted Ruff, formatting and strict
+  mypy passed. The first source check is retained as superseded; the
+  corrected source requires all local/optional/hosted checks again before
+  admission. No scientific outcome has been collected. Codex assisted;
+  human time and personal learning were not reported.
+
 ## 2026-11-23 — PR #110 isolated known-wet source under qualification
 
 - Added an isolated one-game runner, source guard, compute forecast, comparison-only

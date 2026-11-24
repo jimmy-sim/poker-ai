@@ -9585,6 +9585,20 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 both saved readouts in the known-wet report.** A
+source review caught a gap before training: the first report would have
+shown representative decisions only for the linear average, although
+both the current and average policy are saved at each work crossing.
+**Example:** a hand may choose different turn actions in the current
+strategy and its accumulated average; seeing both helps distinguish
+training fluctuation from a stable decision. The isolated report now
+uses the same control-final ranked rows for both arms, three work labels
+and both readouts. Six focused tests and targeted style/type checks pass;
+the earlier exact-source local passes remain retained but are superseded
+by this source change. **Next decision:** requalify the corrected source
+fully before proof or policy measurement. Codex assisted; no human time
+or personal learning was reported.
+
 **November 23 isolated known-wet runner.** The question stays fixed to the
 already structurally inspected `Qs Kd As 3c` game. A q8 turn key can group
 multiple exact acting observations; the candidate splits those observations

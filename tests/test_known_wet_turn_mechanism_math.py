@@ -18,7 +18,7 @@ from known_wet_turn_mechanism.plan import (  # noqa: E402
     contract,
     paths,
 )
-from known_wet_turn_mechanism.report import decision  # noqa: E402
+from known_wet_turn_mechanism.report import decision, paired_contrasts  # noqa: E402
 
 
 def profile_record(
@@ -111,6 +111,28 @@ def test_fixed_strength_gates_do_not_relabel_partial_improvement() -> None:
         ]
         == "negative"
     )
+
+
+def test_paired_contrasts_cover_current_and_average_without_duplicates() -> None:
+    rows = [
+        dict(
+            work_label=work,
+            readout=readout,
+            arm=arm,
+            exploitability_fraction_initial_pot=(0.02 if arm == CONTROL else 0.01),
+        )
+        for work in LABELS
+        for readout in ("current", "linear_average")
+        for arm in (CONTROL, CANDIDATE)
+    ]
+    contrasts = paired_contrasts(rows)
+    assert len(contrasts) == 6
+    assert {row["readout"] for row in contrasts} == {"current", "linear_average"}
+    assert all(
+        row["candidate_minus_control"] == pytest.approx(-0.01) for row in contrasts
+    )
+    with pytest.raises(ArithmeticError, match="fixed checkpoint pair"):
+        paired_contrasts(rows + [rows[0]])
 
 
 def test_fictional_no_collision_representation_is_bijective(tmp_path: Path) -> None:

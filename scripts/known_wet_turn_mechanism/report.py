@@ -113,6 +113,36 @@ def timing(record: dict[str, Any]) -> dict[int, dict[str, Any]]:
     return result
 
 
+def paired_contrasts(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Report both saved readouts at every fixed matched-work crossing."""
+    contrasts = []
+    for work in LABELS:
+        for readout in READOUTS:
+            pair = [
+                row
+                for row in cases
+                if row["work_label"] == work and row["readout"] == readout
+            ]
+            if len(pair) != 2 or {row["arm"] for row in pair} != {CONTROL, CANDIDATE}:
+                raise ArithmeticError("fixed checkpoint pair changed")
+            selected = {row["arm"]: row for row in pair}
+            a, b = (
+                selected[CONTROL]["exploitability_fraction_initial_pot"],
+                selected[CANDIDATE]["exploitability_fraction_initial_pot"],
+            )
+            contrasts.append(
+                dict(
+                    work_label=work,
+                    readout=readout,
+                    seed=0,
+                    control=a,
+                    candidate=b,
+                    candidate_minus_control=b - a,
+                )
+            )
+    return contrasts
+
+
 def report(root: Path, output: Path) -> None:
     """Build fixed report only from published own and independent audit bytes."""
     contract(root)
@@ -139,7 +169,7 @@ def report(root: Path, output: Path) -> None:
     if pot != 36:
         raise ArithmeticError("registered initial pot changed")
     cases: list[dict[str, Any]] = []
-    traced: dict[tuple[int, int], dict[str, Any]] = {}
+    traced: dict[tuple[int, int, str], dict[str, Any]] = {}
     for spec in paths():
         scoring = context(root, GAME, spec.arm)
         folder = root / OWN / "study" / f"path{spec.index:02d}"
@@ -198,54 +228,32 @@ def report(root: Path, output: Path) -> None:
                 native_maximum_error_chips=audit["native"]["maximum_error_chips"],
             )
             cases.append(case)
-            if readout == "linear_average":
-                detail = trace(scoring, folder, capture)
-                traced[(spec.index, work)] = detail
-                for street in ("TURN", "RIVER"):
-                    case[f"{street.lower()}_contribution_chips"] = math.fsum(
-                        float(detail["contribution"][i])
-                        for i, label in enumerate(streets)
-                        if label == street
-                    )
-                if (
-                    abs(
-                        case["turn_contribution_chips"]
-                        + case["river_contribution_chips"]
-                        - score
-                    )
-                    > TOLERANCE
-                ):
-                    raise ArithmeticError("street contributions do not sum")
-    if len(cases) != 12 or len(traced) != 6:
+            detail = trace(scoring, folder, capture)
+            traced[(spec.index, work, readout)] = detail
+            for street in ("TURN", "RIVER"):
+                case[f"{street.lower()}_contribution_chips"] = math.fsum(
+                    float(detail["contribution"][i])
+                    for i, label in enumerate(streets)
+                    if label == street
+                )
+            if (
+                abs(
+                    case["turn_contribution_chips"]
+                    + case["river_contribution_chips"]
+                    - score
+                )
+                > TOLERANCE
+            ):
+                raise ArithmeticError("street contributions do not sum")
+    if len(cases) != 12 or len(traced) != 12:
         raise ArithmeticError("fixed own comparison grid incomplete")
-    contrasts = []
-    for work in LABELS:
-        selected = {
-            row["arm"]: row
-            for row in cases
-            if row["work_label"] == work and row["readout"] == "linear_average"
-        }
-        if set(selected) != {CONTROL, CANDIDATE}:
-            raise ArithmeticError("fixed checkpoint pair changed")
-        a, b = (
-            selected[CONTROL]["exploitability_fraction_initial_pot"],
-            selected[CANDIDATE]["exploitability_fraction_initial_pot"],
-        )
-        contrasts.append(
-            dict(
-                work_label=work,
-                seed=0,
-                control=a,
-                candidate=b,
-                candidate_minus_control=b - a,
-            )
-        )
+    contrasts = paired_contrasts(cases)
     scoring = context(root, GAME, CONTROL)
     tree = scoring.exact
     if not isinstance(tree, MatrixTree):
         raise ArithmeticError("exact decision tree required")
     identities = [row_identity(tree, i) for i in range(len(tree.keys))]
-    contribution = traced[(0, LABELS[-1])]["contribution"]
+    contribution = traced[(0, LABELS[-1], "linear_average")]["contribution"]
     control_partition = scoring.partition
     if not isinstance(control_partition, MatrixTree):
         raise ArithmeticError("control partition must be a matrix tree")
@@ -288,23 +296,27 @@ def report(root: Path, output: Path) -> None:
         observations = []
         for spec in paths():
             for work in LABELS:
-                detail = traced[(spec.index, work)]
-                seat = detail["traces"][owner]
-                count = len(identity["legal_actions"])
-                observations.append(
-                    dict(
-                        arm=spec.arm,
-                        seed=0,
-                        work_label=work,
-                        saved_probabilities=detail["expanded"][info, :count].tolist(),
-                        counterfactual_reach=float(seat.counterfactual_mass[info]),
-                        saved_prefix_reach=float(seat.saved_reach_mass[info]),
-                        alternative_action_values_chips=seat.conditional_values[
-                            info, :count
-                        ].tolist(),
-                        additive_contribution_chips=float(seat.losses[info] / 2),
+                for readout in READOUTS:
+                    detail = traced[(spec.index, work, readout)]
+                    seat = detail["traces"][owner]
+                    count = len(identity["legal_actions"])
+                    observations.append(
+                        dict(
+                            arm=spec.arm,
+                            seed=0,
+                            work_label=work,
+                            readout=readout,
+                            saved_probabilities=detail["expanded"][
+                                info, :count
+                            ].tolist(),
+                            counterfactual_reach=float(seat.counterfactual_mass[info]),
+                            saved_prefix_reach=float(seat.saved_reach_mass[info]),
+                            alternative_action_values_chips=seat.conditional_values[
+                                info, :count
+                            ].tolist(),
+                            additive_contribution_chips=float(seat.losses[info] / 2),
+                        )
                     )
-                )
         diagnostics.append(
             dict(
                 **identity,
