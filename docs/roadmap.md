@@ -347,10 +347,13 @@ as `ec9c0d2f` after solo review. Separate post-merge main CI passed both
 Python jobs. The next distinct [prospective regret-recency question](known-turn-regret-recency.md)
 uses the same exact acting turn/river keys and immutable prior known-game
 controls to test one fixed learning update at matched work. Its candidate
-policy, scores and admission do not yet exist. Its isolated source passed
-fictional/synthetic focused lint, format, strict typing and ten tests;
-full exact-source local/optional and hosted qualification is still
-required. Do not
+policy, scores and admission do not yet exist. The corrected isolated
+source passed fictional/synthetic focused checks and all four exact-source
+local base/optional lanes, hooks and both hosted jobs; its
+[receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+must be published and byte-verified before the fictional proof. The
+old import-order failure and interrupted/canceled old-source checks
+remain retained. Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)

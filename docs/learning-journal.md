@@ -9757,6 +9757,22 @@ exists yet. **Next decision:** requalify the corrected exact source on
 all local/hosted lanes before the registered fictional proof and capped
 profile. Codex assisted; no human time or personal learning was reported.
 
+**November 24 qualify the corrected recency source.** The test import
+fix changed no learning rule. Both full Python versions passed 5,826
+tests each, both optional versions passed their fixed suites, and the
+exact-source hosted jobs and hooks passed. The [source receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+contains the earlier standalone import failure, interrupted lane and
+canceled old-source CI logs alongside the passing corrected checks.
+**Example:** a bundled test can hide missing import setup when another
+test runs first; running each new module alone exposed the defect before
+any candidate poker training. A prepublication archive guard then
+rejected the untracked receipt as designed; its members passed direct
+hash verification, and the publication guard must pass after the receipt
+is committed. **Next decision:** publish and byte-verify the source
+receipt, then run the one fictional proof under its fixed 180-second cap.
+No poker-strength claim follows from source qualification. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

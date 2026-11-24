@@ -15,6 +15,20 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The corrected `3ff86f18` source passed exact-head base Python
+  3.11/3.12 (each 5,826 passed, 73 skipped, 150 slow deselected),
+  optional 3.11 (2,601 passed), optional 3.12 (2,599 passed, two
+  expected skips), pre/post source/archive/runtime/lock/license guards,
+  all-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45402269115).
+  The [26-member source receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+  retains old-source interrupted/canceled evidence and has manifest
+  SHA-256 `b5a54226afda37018a4ee18f7b35e064e6b8e2900d7ded252cd7126cc120e6b8`.
+  Its prepublication archive reader correctly refused to count untracked
+  files as published; the raw members were verified separately. Next:
+  commit, push and byte-verify the receipt, then rerun the publication
+  guard before the fictional proof. No candidate poker policy or score
+  exists. Codex assisted; human time and personal learning were not
+  reported.
 - The isolated PR #112 source now implements the fixed signed-regret
   discount, full-work capture/replay, historical-control guards, strict
   profile forecast, comparison-only scalar audit and 24-policy report.
