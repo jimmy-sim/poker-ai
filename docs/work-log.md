@@ -13,6 +13,124 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 final diagnostic qualification
+
+- The [final 30-file receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+  binds the unchanged published diagnostic report to exact commit `70fc7db0`.
+  Serial base Python 3.11/3.12 each passed 5,816 tests, 73 skipped and
+  150 slow deselected; optional 3.11 passed 2,601 and optional 3.12 passed
+  2,599 with two expected skips. All pre/post source, archive, runtime,
+  lock and optional license guards, all-file hooks, and both
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45377664083)
+  passed. The receipt includes the independent 12-case/8,340-row audit
+  and retained intermediate CI cancellations and check iterations.
+  Manifest SHA-256 is `8ceca76ac92bc02e481cac7564d92ab04e4328573d0569590229324fee13ecee`.
+  Next: publish and byte-verify this receipt, require receipt-head CI,
+  then solo review and history merge. The one known-game result is
+  diagnostic only; PR #110's absolute acceptance remains negative.
+  Codex assisted; human time and personal learning were not reported.
+
+## 2026-11-24 — PR #111 one saved-policy residual diagnosis
+
+- The single admitted read-only replay completed all 12 fixed policies
+  and selected 20 exact decision rows in 59.30/900 seconds at clean
+  admission HEAD `b55dce91`; its [raw archive](../results/known-wet-residual-diagnosis/diagnosis/manifest.json)
+  and [report](known-wet-residual-diagnosis-result.md) retain every case,
+  event and contribution vector. Candidate final-average top-ten turn
+  rows account for 0.766113/0.804478 chips (95.23%) of turn gain:
+  **concentrated** under the fixed 50% rule. Top-ten river rows account
+  for 0.013856/0.268508 chips (5.16%): **diffuse**. Two seat-one turn
+  hands, `3d 5c` and `2d 5d` on `Qs Kd As 3c`, account for 71.38% of
+  candidate turn gain; their local action values assume their saved
+  opponent and optimized continuation. All 12 exact sums agree with
+  saved scores within 7.11e−14 chips; prior native scalar difference
+  is at most 1.95e−14 versus the 1e−9 gate. This is a diagnosis on one
+  already known game, not a stronger policy or unseen result. PR #110
+  remains negative. Next: publish/byte-verify raw and report, then full
+  exact-report local/optional/hooks/hosted qualification, review and
+  history merge. Codex assisted; human time and personal learning were
+  not reported.
+
+## 2026-11-24 — PR #111 separate read-only compute admission
+
+- After the fictional proof was published and its 15 changed GitHub
+  blobs verified, the [six-member admission archive](../results/known-wet-residual-diagnosis/admission/manifest.json)
+  recomputed `2 × 68.30351770902053 + 120 ≈ 256.607` seconds from the
+  pinned parent report job state, strictly below the unchanged 900-second
+  whole-diagnostic cap. The data-only run took 1.25 seconds under its
+  own 180-second launcher cap, used pinned `uv` 0.13.5 and read no
+  saved policy decision. Its manifest SHA-256 is
+  `36df155246d35043e4427a05c9a308a8a0f23fe7b07f37d61e9d05e1d6e2b071`.
+  The intermediate source-receipt-head CI was canceled by proof
+  publication; its official metadata/logs are retained separately, while
+  both required exact-source-head hosted jobs passed. Next: publish and
+  byte-verify admission before the one 900-second read-only diagnosis.
+  Codex assisted; human time and personal learning were not reported.
+
+## 2026-11-24 — PR #111 fictional proof before diagnosis
+
+- The [11-member fictional proof archive](../results/known-wet-residual-diagnosis/proof/manifest.json)
+  contains a synthetic 24-row ranking/additivity result, the guarded
+  1.13-second run under its 180-second cap, and the first retained
+  preflight failure. That first launcher exited before the proof because
+  it found `uv` 0.13.9 rather than required 0.13.5. The corrected
+  launcher used the pinned toolchain; neither attempt read saved poker
+  policy outcomes. The proof manifest SHA-256 is
+  `b5b054f554eaa5277231761aa68c5dcda028681af968dec198875aab5c8fe401`.
+  Next: publish and byte-verify the proof archive, then separately
+  compute and publish the fixed conservative admission before any real
+  candidate-ranked trace. Codex assisted; human time and personal
+  learning were not reported.
+
+## 2026-11-24 — PR #111 exact-source qualification
+
+- The [20-member source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
+  binds isolated tracer commit `b86a992e`, fingerprint
+  `4901950e9b49d2f8e383152e67dba06f82b70a486db19905b9e810fdd67ff2d3`,
+  four complete local lanes, exact-head all-file hooks and both passing
+  [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45370824410).
+  Base Python 3.11/3.12 each passed 5,816 tests, skipped 73 and deselected
+  150 slow tests; optional 3.11 passed 2,601 and optional 3.12 passed 2,599
+  with two skips. Pre/post historical archive, source, lock, runtime and
+  installed license guards passed. The manifest SHA-256 is
+  `b3c9618f1a959fd3c756f9a18ba8798d09bfd4bd60fc6c2c5ede00df29ef0920`.
+  Source and all ten changed GitHub blobs were verified before the hosted
+  check. No real saved-policy trace or proof was run. Next: publish and
+  byte-verify this receipt, then run the single fictional proof and
+  separate data-only admission before any real diagnosis. Codex assisted;
+  human time and personal learning were not reported.
+
+## 2026-11-24 — PR #111 isolated residual tracer under qualification
+
+- The new `known_wet_residual` adapters replay only the 12 pinned
+  [PR #110 policies](../results/known-wet-turn-mechanism/own/manifest.json).
+  They select candidate-final-average top-ten exact rows per street
+  before loading the control trace, retain each case and event, and
+  reconcile full additive gains to the published scalar and street
+  totals. A separate fictional proof and data-only admission precede
+  any real saved-policy diagnosis. Four focused Python 3.11 tests,
+  Ruff and strict mypy pass. The first lint/type iteration and a
+  synthetic-fixture test failure are retained in ignored
+  `results/runs/known-wet-residual-source-20261124/iteration-failures.md`;
+  neither involved a policy outcome. Full exact-source local/optional,
+  hooks and hosted qualification remain pending. Codex assisted;
+  human time and personal learning were not reported.
+
+## 2026-11-24 — Prospective known-wet residual diagnosis
+
+- After [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+  history-merged with negative absolute acceptance and both receipt-head
+  hosted jobs passing, the next [prospective protocol](known-wet-residual-diagnosis.md)
+  fixes one read-only question before any new candidate-ranked trace.
+  It binds all 12 published known-game policies, both readouts, all three
+  work labels, candidate-final-average top-ten turn and top-ten river row
+  rules, exact trace identities, a separate conservative forecast and
+  one 900-second cap. The candidate has exact acting turn and river keys
+  on a turn-start game, so this cannot test flop grouping or unseen
+  transfer. No new ranking, training or reference work has occurred at
+  publication. Post-merge main CI for PR #110 is tracked separately.
+  Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — PR #110 exact-report qualification
 
 - The [final check receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)

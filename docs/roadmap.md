@@ -313,9 +313,37 @@ PR #110's exact negative report passed all four final local base/optional
 lanes, all-file hooks and both
 [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
 Its [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
-retains those checks. Publish and verify that receipt, then require its
-hosted CI and complete solo review before a distinct prospectively
-registered follow-up. Do not extend or relabel this run.
+retains those checks. [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+history-merged at `8b43f94d` after receipt-head hosted CI and solo review;
+post-merge main Python 3.11/3.12 CI also passed. The next [prospective saved-policy
+diagnosis](known-wet-residual-diagnosis.md) fixes the already known wet
+game's 12 published policies and asks whether residual exact-turn/river
+best-response gain is concentrated in a few decisions or diffuse. It
+collects no new policy, score or reference strategy, and cannot revise
+PR #110's negative gates. Its isolated tracing source passed all four
+exact-head local base/optional lanes, all-file hooks and both
+[source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45370824410);
+the [source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
+records the exact pins. The [fictional proof](../results/known-wet-residual-diagnosis/proof/manifest.json)
+then passed its fixed-row arithmetic under a 180-second cap after a
+retained preflight `uv` mismatch; it read no saved policy outcome.
+The proof was published and byte-verified before the
+[separate data-only admission](../results/known-wet-residual-diagnosis/admission/manifest.json),
+which recomputed a conservative ≈256.607-second bound against the fixed
+900-second cap from the parent report job record. After its publication
+and byte verification, the [one fixed read-only diagnosis](known-wet-residual-diagnosis-result.md)
+finished all 12 saved cases in 59.30/900 seconds. Its candidate-final
+top ten turn rows account for 95.23% of turn gain, while the top ten
+river rows account for 5.16% of river gain: concentrated turn weakness,
+diffuse river weakness on this **known** game. The complete raw row
+vectors are [retained](../results/known-wet-residual-diagnosis/diagnosis/manifest.json).
+The [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+records passing serial base/optional local lanes, hooks and both report-head
+hosted jobs on the published result, plus the independent additive audit.
+Publish and byte-verify that receipt, then require receipt-head CI and solo
+review before history merge. Afterward draw a distinct
+prospective training/readout question from this diagnosis. Do not
+extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -124,17 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
-**Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
-history-merged an **inconclusive** structural-stop comparison after all
-required checks. Its three selected new card/range inputs on known public
-templates had zero turn-key collisions, so no policy was trained or default
-changed. The prior [broader-input result](river-full-broader-spots-result.md)
-remains negative. The next [prospective known-case
-test](known-turn-exact-mechanism.md) asks whether separating 12 diagnosed
-turn collisions improves the already evaluated As Jc 5d 3h medium/dry
-game at identical charged work. No new policy or score exists at protocol
-publication. Earlier status paragraphs below preserve the sequence of
-investigations.
+**Current as of November 24, 2026:** [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+history-merged after full checks with a **negative absolute acceptance**
+result on one already known medium/wet turn-start game. Exact acting turn
+keys reduced the final linear-average best-response gain at matched work,
+but the candidate remained above both frozen absolute strength limits.
+The distinct [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111)
+has a prospectively fixed read-only question about which exact turn and
+river decisions account for the residual gain. Its isolated tracing
+source has passed local and hosted qualification. Its one capped replay
+found concentrated turn loss and diffuse river loss on that already
+known game; no new strategy was trained. Final report-head local, optional,
+hooks and hosted checks passed; receipt-head CI and review remain pending.
+Older status paragraphs below preserve
+the sequence of investigations.
 
 The simulator and learning tools work. The open question is how to make the
 Hold'em strategies stronger. In the latest compact-representation study, the
@@ -9617,6 +9620,105 @@ classify the candidate **negative** on this one known game. **Next
 decision:** publish and review the receipt, then choose a distinct
 prospective question from the remaining turn and river weaknesses.
 Codex assisted; no human time or personal learning was reported.
+
+**November 24 next residual-loss question.** Exact acting turn keys helped
+the known wet game, yet its final average still left 0.8045 chips of
+turn and 0.2685 chips of river best-response gain. **Example:** the
+saved final *current* policy has a smaller river gain (0.1263 chips) but
+a much larger turn gain (3.1719 chips) than the final linear average;
+choosing one readout after seeing that would tune on this known result.
+The [prospective read-only plan](known-wet-residual-diagnosis.md) instead
+fixes the candidate-average top-ten rows per street before comparing
+their saved probabilities, reaches and values across all 12 already
+published policies. It can show whether residual losses are concentrated
+and whether the two readouts describe the same vulnerable rows; it
+cannot prove a new training fix. **Next decision:** publish the plan,
+qualify isolated tracing code, then run the one admitted capped diagnosis.
+Codex assisted; no human time or personal learning was reported.
+
+**November 24 isolated residual tracer.** The new code reads the
+published own policies, then checks that its decision-level best-reply
+gains add back to each saved exploitability. **Example:** a fictional
+24-row trace with one deliberately larger turn and river gain tests
+the fixed top-ten rank and chip sum without reading a real candidate
+decision. The initial focused test failed because that synthetic row
+omitted an acting-seat field; the fixture was corrected and the four
+focused tests, Ruff and strict mypy then passed. The failed iteration
+is retained. **Next decision:** qualify the exact committed source in
+all required local, optional and hosted lanes before even the fictional
+proof, then admit and run at most one saved-policy diagnosis. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 exact-source tracer checks.** The isolated code now has
+the same tested source on both locked Python versions and the optional
+validation environment. **Example:** each base fast suite passed 5,816
+tests; the optional suites passed 2,601 and 2,599 tests, and the hosted
+checks passed on the exact source commit. The [source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
+also records historical source and license guards, so later decision
+traces can be linked to the code that passed those checks. This is a
+software qualification result, not evidence that the poker agent got
+stronger. **Next decision:** publish the receipt, prove the row arithmetic
+on fictional data, and separately admit the capped read-only diagnosis
+before inspecting any saved candidate-ranked decision. Codex assisted;
+no human time or personal learning was reported.
+
+**November 24 fictional row proof.** A saved policy was still off limits
+at this checkpoint. **Example:** the synthetic 24-row fixture deliberately
+puts a larger gain at turn row 2 and river row 14, then verifies the
+fixed top-ten order and that street contributions sum to the total.
+The first launcher stopped at a `uv` version mismatch before running the
+fixture; its failure is retained with the [passing proof](../results/known-wet-residual-diagnosis/proof/manifest.json).
+The corrected run used pinned `uv` 0.13.5 and completed in 1.13 seconds
+under its 180-second cap. This confirms the ranking arithmetic on
+fictional data, not a poker-strength change. **Next decision:** publish
+the proof, separately admit the conservative compute bound, and only
+then read the fixed saved policies once. Codex assisted; no human time
+or personal learning was reported.
+
+**November 24 separate compute admission.** The known parent report
+needed 68.3035 seconds to replay the same 12 policy cases. **Example:**
+doubling that observed time and adding 120 seconds produces a
+conservative bound of about 256.607 seconds, below the fixed 900-second
+diagnostic cap. The [published admission](../results/known-wet-residual-diagnosis/admission/manifest.json)
+recomputed that formula from the pinned job record after the fictional
+proof was public. No saved strategy was inspected in this step. Admission
+authorizes one read-only diagnosis; it does not show that the candidate
+became stronger. **Next decision:** publish and verify the admission
+bytes, then run the single fixed candidate-ranked trace and retain all
+selected rows and failures. Codex assisted; no human time or personal
+learning was reported.
+
+**November 24 residual turn and river decisions.** The one admitted
+replay used all 12 already published saved policies on the known wet
+turn-start game. **Example:** seat one holds `3d 5c` on `Qs Kd As 3c`;
+the final candidate average folds 76.05%, even though call has the
+highest local value under its fixed saved opponent and optimized reply
+continuation. That exact row alone contributes 0.43046 chips, 53.51%
+of the candidate's remaining turn gain. The fixed top ten turn rows
+contribute 95.23% of turn gain, while the top ten river rows contribute
+only 5.16% of river gain. The [full report](known-wet-residual-diagnosis-result.md)
+shows the same selected rows across checkpoints and both readouts with
+reach and legal actions. These local values do not prescribe a universal
+call or prove that more training will pass the old gate. The candidate
+has no acting turn/river collision in this finite game; flop grouping
+is untestable because the game starts on the turn. **Next decision:**
+finish exact-report qualification and review, then preregister a
+distinct matched-work test of an evidence-backed turn learning/readout
+hypothesis. PR #110 stays negative and no default changes. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 checked residual diagnosis.** The saved-policy trace now has
+a [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+on its published report. **Example:** the 8,340 exact-row contributions
+across all 12 saved policies re-sum to their whole-policy scores within
+`7.11e−14` chips; this checks accounting, while the four local test lanes,
+hooks and both hosted jobs check the exact source and environment. The
+first proof preflight tool-version failure and intermediate canceled CI
+remain in the receipt. **Next decision:** publish and verify the receipt,
+then complete receipt-head CI and solo review before history merge. This
+qualification does not make the known-case diagnostic a poker-strength
+improvement. Codex assisted; no human time or personal learning was
+reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

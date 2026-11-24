@@ -1,0 +1,5486 @@
+{
+  "assumption": "fixed saved opponent and optimized best-reply continuation; local values are not universal advice or causal action swaps",
+  "cases": [
+    {
+      "actual_node_work": 266262,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 55.99370059034597,
+      "native_maximum_error_chips": 1.9539925233402755e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 88,
+        "TURN": 16
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path00-100000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0,
+          "selected_share": 0.0,
+          "total_chips": 0.015596624852731387
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 50.541786962020126,
+          "selected_share": 0.902884938603417,
+          "total_chips": 55.97810396549332
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 100000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 266262,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 44.316190017894556,
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.0,
+      "raw_contribution": "path00-100000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0384674248310612,
+          "selected_share": 0.0035565893641378776,
+          "total_chips": 10.815818440818443
+        },
+        "TURN": {
+          "concentration": "diffuse",
+          "selected_chips": 9.407741704143206,
+          "selected_share": 0.28082499570186276,
+          "total_chips": 33.500371577076116
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 100000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 1065048,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 23.488823912865417,
+      "native_maximum_error_chips": 7.105427357601002e-15,
+      "positive_saved_prefix_rows": {
+        "RIVER": 2059,
+        "TURN": 35
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path00-1000000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.15621242862781068,
+          "selected_share": 0.011992753865495195,
+          "total_chips": 13.025567803676465
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 6.327277453793884,
+          "selected_share": 0.6047139999026869,
+          "total_chips": 10.463256109188965
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 1000000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 1065048,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 31.343428220448473,
+      "native_maximum_error_chips": 8.43769498715119e-15,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.8077755827943657,
+      "raw_contribution": "path00-1000000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0255429466378585,
+          "selected_share": 0.0033700670195873504,
+          "total_chips": 7.579358656489306
+        },
+        "TURN": {
+          "concentration": "diffuse",
+          "selected_chips": 11.866778691790646,
+          "selected_share": 0.499358018619333,
+          "total_chips": 23.76406956395917
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 1000000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 10.476637195239798,
+      "native_maximum_error_chips": 1.0658141036401503e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 1367,
+        "TURN": 20
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path00-10000000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.03586605690038834,
+          "selected_share": 0.005685251582894928,
+          "total_chips": 6.3086138541867935
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 3.8162884358266402,
+          "selected_share": 0.9156110999278856,
+          "total_chips": 4.1680233410530025
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_q8_turn_exact_river",
+      "exploitability_chips": 2.2264918915312473,
+      "native_maximum_error_chips": 3.552713678800501e-15,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.903896066367892,
+      "raw_contribution": "path00-10000000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.016787106652198396,
+          "selected_share": 0.030825903600475428,
+          "total_chips": 0.5445779260770636
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 1.608809179540998,
+          "selected_share": 0.9565347649078798,
+          "total_chips": 1.6819139654541841
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.216592958022375,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 758923264
+    },
+    {
+      "actual_node_work": 266262,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 56.13888148905738,
+      "native_maximum_error_chips": 1.9539925233402755e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 88,
+        "TURN": 16
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path01-100000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0,
+          "selected_share": 0.0,
+          "total_chips": 0.015596624852731387
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 50.62474548181195,
+          "selected_share": 0.9020274847472495,
+          "total_chips": 56.123284864204706
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 100000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 266262,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 44.316190017894556,
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.0,
+      "raw_contribution": "path01-100000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0384674248310612,
+          "selected_share": 0.0035565893641378776,
+          "total_chips": 10.815818440818443
+        },
+        "TURN": {
+          "concentration": "diffuse",
+          "selected_chips": 9.407741704143206,
+          "selected_share": 0.28082499570186276,
+          "total_chips": 33.500371577076116
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 100000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 1065048,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 22.601825592873833,
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 1983,
+        "TURN": 35
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path01-1000000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.17072877584234175,
+          "selected_share": 0.013594391968069611,
+          "total_chips": 12.558765132221287
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 5.822392524372931,
+          "selected_share": 0.579742853006246,
+          "total_chips": 10.043060460652548
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 1000000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 1065048,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 31.246443941905937,
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.77627605302286,
+      "raw_contribution": "path01-1000000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.025510696993725497,
+          "selected_share": 0.0032971751548088084,
+          "total_chips": 7.737137336037209
+        },
+        "TURN": {
+          "concentration": "diffuse",
+          "selected_chips": 11.421038226236016,
+          "selected_share": 0.4858092336668465,
+          "total_chips": 23.509306605868723
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 1000000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 3.298219873527696,
+      "native_maximum_error_chips": 1.4210854715202004e-14,
+      "positive_saved_prefix_rows": {
+        "RIVER": 635,
+        "TURN": 15
+      },
+      "post_initial_river_coverage": null,
+      "raw_contribution": "path01-10000000-current.npz",
+      "readout": "current",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.0008830074094127889,
+          "selected_share": 0.006991322698108876,
+          "total_chips": 0.1263004795432542
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 3.171919393984441,
+          "selected_share": 1.0,
+          "total_chips": 3.171919393984441
+        }
+      },
+      "whole_coverage": null,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 650543104
+    },
+    {
+      "actual_node_work": 10117956,
+      "arm": "signed_full_exact_turn_river",
+      "exploitability_chips": 1.0729866052800023,
+      "native_maximum_error_chips": 3.552713678800501e-15,
+      "positive_saved_prefix_rows": {
+        "RIVER": 8280,
+        "TURN": 60
+      },
+      "post_initial_river_coverage": 0.8554558326722113,
+      "raw_contribution": "path01-10000000-linear_average.npz",
+      "readout": "linear_average",
+      "seed": 0,
+      "street": {
+        "RIVER": {
+          "concentration": "diffuse",
+          "selected_chips": 0.013856407594872448,
+          "selected_share": 0.051605171213556206,
+          "total_chips": 0.26850812174483196
+        },
+        "TURN": {
+          "concentration": "concentrated",
+          "selected_chips": 0.7661130692120555,
+          "selected_share": 0.95231020455075,
+          "total_chips": 0.8044784835351706
+        }
+      },
+      "whole_coverage": 1.0,
+      "whole_path_seconds": 47.42878362501506,
+      "work_label": 10000000,
+      "worker_peak_rss_bytes": 650543104
+    }
+  ],
+  "diagnostics": [
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 1,
+      "exact_info": 1611,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 1.098210689559693,
+          "alternative_action_values_chips": [
+            -18.0,
+            159.59090909090904,
+            136.36363636363635,
+            54.00000000000001
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.020979020979020973,
+          "saved_probabilities": [
+            0.0,
+            0.008474435541743168,
+            0.0,
+            0.9915255644582568
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.7907263191354104,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            45.686868686868806,
+            39.21349862258965,
+            33.611570247934004
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.351232329117754,
+          "alternative_action_values_chips": [
+            -17.99999999999996,
+            45.23891662567278,
+            -22.93281873202807,
+            -33.15829359865184
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.059506098056379284,
+          "readout": "current",
+          "saved_prefix_reach": 0.059506098056379284,
+          "saved_probabilities": [
+            0.0,
+            0.3545645366466941,
+            0.5071080009703128,
+            0.13832746238299312
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.1720615511062193,
+          "alternative_action_values_chips": [
+            -18.000000000000025,
+            69.1292482711446,
+            44.417533627148416,
+            27.46605226804319
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07096558007215496,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07096558007215496,
+          "saved_probabilities": [
+            0.02500000000000008,
+            0.11223624708611593,
+            0.3003805197687846,
+            0.5623832331450993
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.7112447278955751,
+          "alternative_action_values_chips": [
+            -18.00000000000009,
+            0.00032303104050882724,
+            -18.533735189385965,
+            -27.457027146253438
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.21701091439967393,
+          "readout": "current",
+          "saved_prefix_reach": 0.21701091439967393,
+          "saved_probabilities": [
+            0.8761535862498746,
+            0.12384641375012533,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.4013934521954515,
+          "alternative_action_values_chips": [
+            -18.00000000000007,
+            -13.181813734258123,
+            -26.336329812890035,
+            -28.271342931837793
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.19484104515743225,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.19484104515743225,
+          "saved_probabilities": [
+            0.5977845321449572,
+            0.3114998192197032,
+            0.06660374795805653,
+            0.024111900677283124
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 1.098210689559693,
+          "alternative_action_values_chips": [
+            -18.0,
+            159.59090909090904,
+            136.36363636363635,
+            54.00000000000001
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.020979020979020973,
+          "saved_probabilities": [
+            0.0,
+            0.008474435541743168,
+            0.0,
+            0.9915255644582568
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.7907263191354104,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            45.686868686868806,
+            39.21349862258965,
+            33.611570247934004
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.2980948456467618,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            44.702042117849466,
+            -24.994373445039756,
+            -35.65722209941528
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.05567288825170214,
+          "readout": "current",
+          "saved_prefix_reach": 0.05567288825170214,
+          "saved_probabilities": [
+            0.0,
+            0.35303345274065506,
+            0.502382585241719,
+            0.144583962017626
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.1136473343086684,
+          "alternative_action_values_chips": [
+            -18.000000000000057,
+            67.61279950724894,
+            42.6639147491913,
+            25.607923912673485
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.06712549813999956,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.06712549813999956,
+          "saved_probabilities": [
+            0.025000000000000064,
+            0.11560485497832047,
+            0.2965558452306466,
+            0.5628392997910329
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.8616339902288372,
+          "alternative_action_values_chips": [
+            -18.00000000000002,
+            -0.9473168103069648,
+            -25.04865581049162,
+            -34.58788337768866
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.21833912816184323,
+          "readout": "current",
+          "saved_prefix_reach": 0.21833912816184323,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.43046290373104545,
+          "alternative_action_values_chips": [
+            -17.999999999999964,
+            -13.835167199632844,
+            -21.76328753365303,
+            -27.20184024482757
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.20384252118404844,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.20384252118404844,
+          "saved_probabilities": [
+            0.7604534506523725,
+            0.13414238459318248,
+            0.06482967334394016,
+            0.04057449141050493
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 2,
+      "exact_info": 4041,
+      "hole": [
+        "2d",
+        "5d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.5847888621081747,
+          "alternative_action_values_chips": [
+            -18.0,
+            9.954545454545459,
+            1.3230157710116452e-15,
+            54.00000000000001
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.020979020979020973,
+          "saved_probabilities": [
+            0.7743037711247134,
+            0.0,
+            0.0,
+            0.22569622887528676
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6165633608815442,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            -5.5587695133149895,
+            -32.774104683195574,
+            -30.02479338842979
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.17256207414076052,
+          "alternative_action_values_chips": [
+            -17.99999999999996,
+            -12.200188559590487,
+            -56.66883409720164,
+            -52.19716812029178
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.059506098056379284,
+          "readout": "current",
+          "saved_prefix_reach": 0.059506098056379284,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.3947728150170826,
+          "alternative_action_values_chips": [
+            -18.000000000000025,
+            -10.657822782630724,
+            -73.12148468090363,
+            -58.67587608584362
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07096558007215496,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07096558007215496,
+          "saved_probabilities": [
+            0.843920385247307,
+            0.06094036897763602,
+            0.024999999999999873,
+            0.07013924577505719
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.6915655244996888,
+          "alternative_action_values_chips": [
+            -18.00000000000009,
+            2.2906932754033673,
+            -18.533735189385965,
+            -19.083233183244953
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.21701091439967393,
+          "readout": "current",
+          "saved_prefix_reach": 0.21701091439967393,
+          "saved_probabilities": [
+            0.7683168505543483,
+            0.23168314944565171,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.9624583243607138,
+          "alternative_action_values_chips": [
+            -18.00000000000007,
+            -7.949077162841409,
+            -25.784279885391204,
+            -20.534485935705085
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.19484104515743225,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.19484104515743225,
+          "saved_probabilities": [
+            0.9730445527865108,
+            0.021102183962443687,
+            0.004906714725066458,
+            0.0009465485259791831
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.5204429238524447,
+          "alternative_action_values_chips": [
+            -18.0,
+            9.954545454545459,
+            1.3230157710116452e-15,
+            54.00000000000001
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.020979020979020973,
+          "saved_probabilities": [
+            0.6891049825083297,
+            0.0,
+            0.0,
+            0.31089501749167026
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6165633608815442,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            -5.5587695133149895,
+            -32.774104683195574,
+            -30.02479338842979
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.15121465028392475,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            -12.567745449085786,
+            -56.870346682998296,
+            -51.918996444566304
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.05567288825170214,
+          "readout": "current",
+          "saved_prefix_reach": 0.05567288825170214,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.36797626465200695,
+          "alternative_action_values_chips": [
+            -18.000000000000057,
+            -11.034947768197574,
+            -72.80022120199823,
+            -58.54329901128219
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.06712549813999956,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.06712549813999956,
+          "saved_probabilities": [
+            0.7577785430611483,
+            0.13004245344051749,
+            0.025000000000000057,
+            0.08717900349833418
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.9031027819765974,
+          "alternative_action_values_chips": [
+            -18.00000000000002,
+            -9.643400762893952,
+            -25.04865581049162,
+            -25.647509263601417
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.21833912816184323,
+          "readout": "current",
+          "saved_prefix_reach": 0.21833912816184323,
+          "saved_probabilities": [
+            0.9899335176047751,
+            0.010066482395224846,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.14380267247627945,
+          "alternative_action_values_chips": [
+            -17.999999999999964,
+            -16.600676200331538,
+            -21.58823309394359,
+            -21.080813854990822
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.20384252118404844,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.20384252118404844,
+          "saved_probabilities": [
+            0.9502416728059018,
+            0.032831616991499786,
+            0.01062141151124018,
+            0.006305298691358316
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 3,
+      "exact_info": 7506,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 13.006495220462696,
+          "alternative_action_values_chips": [
+            84.05229362138846,
+            5.603105210702332,
+            -11.328671328671277
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.2192275317275338,
+          "alternative_action_values_chips": [
+            71.10963804713813,
+            70.03263403263416,
+            45.363636363636374
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.2158805771820648,
+          "alternative_action_values_chips": [
+            20.327189994130325,
+            7.674304290435433,
+            -11.328671328671277
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.8748803814606361,
+            0.12511961853936399,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 2.77461387154373,
+          "alternative_action_values_chips": [
+            44.854218668005906,
+            2.5942169706977,
+            -5.659440559440594
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.548641451849185,
+            0.29715353349819323,
+            0.15420501465262176
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0611437736114844,
+          "alternative_action_values_chips": [
+            17.517616497788072,
+            26.90042189142662,
+            16.50791327319078
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.9568547220288955,
+            0.04314527797110441
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.07806885186028134,
+          "alternative_action_values_chips": [
+            11.14996678211147,
+            13.50839758748292,
+            10.736431781261254
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.027642103908895137,
+            0.7893423180780639,
+            0.18301557801304108
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 13.051175414863843,
+          "alternative_action_values_chips": [
+            84.37994838033005,
+            5.315635806392159,
+            -11.328671328671277
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.2192275317275338,
+          "alternative_action_values_chips": [
+            71.10963804713813,
+            70.03263403263416,
+            45.363636363636374
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.18123347862225192,
+          "alternative_action_values_chips": [
+            17.88783407528566,
+            7.675747736270215,
+            -11.328671328671277
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.8819828916735435,
+            0.11150048659955168,
+            0.006516621726904842
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 2.6823296607276843,
+          "alternative_action_values_chips": [
+            44.336239744962796,
+            2.8859109109149736,
+            -5.659440559440594
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.5586836388452366,
+            0.28009312451293916,
+            0.16122323664182428
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.004331709481835663,
+          "alternative_action_values_chips": [
+            16.606267351290104,
+            18.237476897828365,
+            18.00000000000002
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.8662359588492422,
+            0.1337640411507578
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.03559879427723169,
+          "alternative_action_values_chips": [
+            12.17542425885295,
+            14.593427879689859,
+            13.054342358507224
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.02806985379028685,
+            0.8464109246072815,
+            0.12551922160243156
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 4,
+      "exact_info": 1618,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -162.0000000000002,
+            136.36363636363635
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.28080631489722363,
+          "alternative_action_values_chips": [
+            -162.00000000000176,
+            13.223140495867822
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.025641025641025533,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.006410256410256383,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -161.99999999999952,
+            -49.962104493932635
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.027447474882175617,
+          "readout": "current",
+          "saved_prefix_reach": 0.013918834119182924,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.061124988571798045,
+          "alternative_action_values_chips": [
+            -162.00000000000023,
+            54.28075408316438
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.04521899423250141,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.013582904990980513,
+          "saved_probabilities": [
+            0.04161388364871933,
+            0.9583861163512807
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -161.99999999999966,
+            -188.572891326372
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07287320462163169,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 1.6691207774355734e-05,
+          "alternative_action_values_chips": [
+            -161.99999999999892,
+            -159.2779740942974
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07269988098146055,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.004842084549469894,
+          "saved_probabilities": [
+            0.0025327547373291287,
+            0.9974672452626709
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -162.0000000000002,
+            136.36363636363635
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.020979020979020973,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.28080631489722363,
+          "alternative_action_values_chips": [
+            -162.00000000000176,
+            13.223140495867822
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.025641025641025533,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.006410256410256383,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -161.99999999999915,
+            -52.389570987292736
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.02578708348491412,
+          "readout": "current",
+          "saved_prefix_reach": 0.012954981666995071,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.057255642037370734,
+          "alternative_action_values_chips": [
+            -161.99999999999946,
+            52.398568624261515
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.042728376335543564,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.012671349759520209,
+          "saved_probabilities": [
+            0.04215057703643692,
+            0.957849422963563
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -162.00000000000048,
+            -188.0658847818278
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07990469718531609,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.03398242282782026,
+          "alternative_action_values_chips": [
+            -161.99999999999915,
+            -176.85222136607848
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07077023258289658,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.004588011060823843,
+          "saved_probabilities": [
+            0.002602063984954673,
+            0.9973979360150453
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 362,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 5,
+      "exact_info": 4824,
+      "hole": [
+        "Kc",
+        "Kh"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 16.32851334809498,
+          "alternative_action_values_chips": [
+            179.7424312193637,
+            86.36970015420597,
+            60.00000000000036
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 2.801997245179051,
+          "alternative_action_values_chips": [
+            149.03175990676033,
+            131.6153846153847,
+            104.80419580419588
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.4546431431651061,
+          "alternative_action_values_chips": [
+            79.89789215913852,
+            60.00000000000036,
+            60.00000000000036
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.4638938152562893,
+            0.2935950657008084,
+            0.24251111904290232
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 2.5513213970504673,
+          "alternative_action_values_chips": [
+            118.53642719196274,
+            74.63216530408542,
+            64.48041958041948
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.6135139089447701,
+            0.21495857896767218,
+            0.17152751208755776
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.26375900909368166,
+          "alternative_action_values_chips": [
+            22.029952713110276,
+            35.064865461219114,
+            20.136736500051605
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.028713355913309743,
+            0.8667888434328916,
+            0.10449780065379863
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.043929438250956916,
+          "alternative_action_values_chips": [
+            30.58430119764635,
+            30.546117519733173,
+            28.5717894408683
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.07709779301905657,
+            0.77758217821014,
+            0.14532002877080347
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 16.401298541357065,
+          "alternative_action_values_chips": [
+            180.27618930328495,
+            86.05250166579845,
+            60.00000000000036
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 2.801997245179051,
+          "alternative_action_values_chips": [
+            149.03175990676033,
+            131.6153846153847,
+            104.80419580419588
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.3288247616861097,
+          "alternative_action_values_chips": [
+            79.0676926065681,
+            60.00000000000036,
+            60.00000000000036
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.488941052276305,
+            0.2810237462202716,
+            0.23003520150342333
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 2.4762296643097637,
+          "alternative_action_values_chips": [
+            118.84146312152069,
+            75.23455458761063,
+            64.48041958041948
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.6246465292523766,
+            0.20881166424280465,
+            0.16654180650481876
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.14224283643864133,
+          "alternative_action_values_chips": [
+            19.32109287868813,
+            18.29690224844764,
+            18.00000000000002
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.9362635219444696,
+            0.06373647805553034
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.03269318551963123,
+          "alternative_action_values_chips": [
+            26.89029203075112,
+            26.823102168889477,
+            25.2524353810354
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.09815733617445427,
+            0.7877794235979251,
+            0.1140632402276207
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 6,
+      "exact_info": 1619,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.000000000000068,
+            0.9090909090908788
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.20979020979021015,
+          "readout": "current",
+          "saved_prefix_reach": 0.20979020979021015,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6004450095359186,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            13.223140495867817
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.1614653228400909,
+          "alternative_action_values_chips": [
+            -17.999999999999964,
+            -116.27841012560648
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.023636225318575066,
+          "readout": "current",
+          "saved_prefix_reach": 0.023636225318575066,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.02721626003172887,
+          "alternative_action_values_chips": [
+            -18.000000000000057,
+            11.55660988741871
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.036832722203792224,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.036832722203792224,
+          "saved_probabilities": [
+            0.049999999999999996,
+            0.95
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0216692411245783,
+          "alternative_action_values_chips": [
+            -18.00000000000006,
+            -109.67532433437567
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.00929222173163724,
+          "readout": "current",
+          "saved_prefix_reach": 0.00929222173163724,
+          "saved_probabilities": [
+            0.9491253214273425,
+            0.050874678572657525
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.03576742120426292,
+          "alternative_action_values_chips": [
+            -18.000000000000018,
+            -30.103021291558946
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.02368035230620037,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.02368035230620037,
+          "saved_probabilities": [
+            0.7504051224253214,
+            0.24959487757467844
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.000000000000068,
+            0.9090909090908788
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.20979020979021015,
+          "readout": "current",
+          "saved_prefix_reach": 0.20979020979021015,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6004450095359186,
+          "alternative_action_values_chips": [
+            -18.000000000000053,
+            13.223140495867817
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.0510881519212356,
+          "alternative_action_values_chips": [
+            -18.00000000000008,
+            -110.14347530911758
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.022814163420581006,
+          "readout": "current",
+          "saved_prefix_reach": 0.022814163420581006,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.03214548659634807,
+          "alternative_action_values_chips": [
+            -18.000000000000057,
+            16.536431882292685
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.037230813774748316,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.037230813774748316,
+          "saved_probabilities": [
+            0.049999999999999996,
+            0.95
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.16993493456906866,
+          "alternative_action_values_chips": [
+            -18.00000000000005,
+            9.34248299254664
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.012430102607388747,
+          "readout": "current",
+          "saved_prefix_reach": 0.012430102607388747,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.029030615638793982,
+          "alternative_action_values_chips": [
+            -18.000000000000018,
+            -38.88104742924241
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.016302344151858144,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.016302344151858144,
+          "saved_probabilities": [
+            0.8294373619451526,
+            0.1705626380548474
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 7,
+      "exact_info": 40,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.19862565445026184,
+            0.8013743455497382
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6318870523415983,
+          "alternative_action_values_chips": [
+            -54.0000000000002,
+            112.81818181818178,
+            112.81818181818178
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.06818181818181814,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.02272727272727263,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.11218414770891837,
+          "alternative_action_values_chips": [
+            -54.00000000000006,
+            -112.63636363636378,
+            -145.45454545454558
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.03191588817295673,
+          "readout": "current",
+          "saved_prefix_reach": 0.006631421213873082,
+          "saved_probabilities": [
+            0.6016516657761635,
+            0.07912219858438115,
+            0.3192261356394553
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.06844437889024467,
+          "alternative_action_values_chips": [
+            -53.99999999999944,
+            -72.53680941675016,
+            -72.53680941675016
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.02414982292251097,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.008860618234332112,
+          "saved_probabilities": [
+            0.16657068447695986,
+            0.18379383992045614,
+            0.6496354756025841
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.018012523208964005,
+          "alternative_action_values_chips": [
+            -53.999999999999574,
+            -46.23317742306656,
+            -103.99910006057169
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.004837784473214402,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.004542550738116532,
+          "saved_probabilities": [
+            0.9956051164879964,
+            0.0009691913898748622,
+            0.003425692122128676
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.19862565445026184,
+            0.8013743455497382
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.6318870523415983,
+          "alternative_action_values_chips": [
+            -54.0000000000002,
+            112.81818181818178,
+            112.81818181818178
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.06818181818181814,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.02272727272727263,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.09563412618020259,
+          "alternative_action_values_chips": [
+            -54.00000000000006,
+            -112.63636363636373,
+            -145.45454545454558
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.03161848438584244,
+          "readout": "current",
+          "saved_prefix_reach": 0.005574603145668686,
+          "saved_probabilities": [
+            0.5960412075298225,
+            0.08023657952532649,
+            0.32372221294485093
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.059094886053609075,
+          "alternative_action_values_chips": [
+            -53.9999999999995,
+            -71.80268319221099,
+            -71.80268319221099
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.023909109140390402,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.007909545935482692,
+          "saved_probabilities": [
+            0.16065041657021653,
+            0.18696079288877684,
+            0.6523887905410066
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0203838718175043,
+          "alternative_action_values_chips": [
+            -54.00000000000001,
+            -45.383147387691544,
+            -108.00476525415351
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.004798215272304467,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.004647582080178845,
+          "saved_probabilities": [
+            0.9961312961152959,
+            0.0008617338472732619,
+            0.0030069700374307706
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 216,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 8,
+      "exact_info": 0,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 14.080914657042012,
+          "alternative_action_values_chips": [
+            83.53976109802834,
+            -2.6972942025112165,
+            -19.720279720279734
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.128136699159426,
+          "alternative_action_values_chips": [
+            65.08542152292162,
+            65.36130536130551,
+            40.81818181818181
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.3220045067811942,
+          "alternative_action_values_chips": [
+            18.349463566869257,
+            6.984613863230517,
+            -19.720279720279734
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.7922219435681545,
+            0.2077780564318456,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 3.0767738929932302,
+          "alternative_action_values_chips": [
+            40.403419685894534,
+            -0.5231528531459384,
+            -13.666433566433609
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.49351990379806465,
+            0.3669019960420833,
+            0.13957810015985214
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            15.22526784848542,
+            27.082515135167817,
+            16.080992893560094
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.034116891731007355,
+          "alternative_action_values_chips": [
+            8.706244005599116,
+            12.790490320156747,
+            8.641457449283052
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.04647567802265247,
+            0.9389733592448151,
+            0.01455096273253247
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 14.086490410584638,
+          "alternative_action_values_chips": [
+            83.58064995734075,
+            -3.4812438567446544,
+            -19.720279720279734
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.128136699159426,
+          "alternative_action_values_chips": [
+            65.08542152292162,
+            65.36130536130551,
+            40.81818181818181
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.21994122744696357,
+          "alternative_action_values_chips": [
+            16.14150815330486,
+            6.993318416711247,
+            -19.720279720279734
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.8236916394333946,
+            0.1763083605666053,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 2.885508116938618,
+          "alternative_action_values_chips": [
+            39.88973526046992,
+            -0.2447262415303891,
+            -13.666433566433609
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.5219873669468252,
+            0.33081725835283615,
+            0.14719537470033855
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            15.869152226754466,
+            18.226072910779227,
+            18.00000000000002
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "current",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.014638205046851071,
+          "alternative_action_values_chips": [
+            10.813767238694028,
+            14.364317829650394,
+            11.622575630891252
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.27272727272727254,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.27272727272727254,
+          "saved_probabilities": [
+            0.026302537102980823,
+            0.9686064122643527,
+            0.00509105063266653
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 9,
+      "exact_info": 5838,
+      "hole": [
+        "9h",
+        "Ks"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 5.442864184752568,
+          "alternative_action_values_chips": [
+            169.25350157504693,
+            75.9126354930813,
+            49.510489510489904
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.8845162973950809,
+          "alternative_action_values_chips": [
+            142.03606578606644,
+            126.13461538461554,
+            99.55944055944083
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.34780761303420166,
+          "alternative_action_values_chips": [
+            72.142723894575,
+            51.37333548218456,
+            49.510489510489904
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.6438941649386029,
+            0.21886041255819644,
+            0.1372454225032006
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.7073890547932822,
+          "alternative_action_values_chips": [
+            109.97309826663381,
+            64.70258306400446,
+            54.51538461538504
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.6850275555724308,
+            0.18700847296284395,
+            0.1279639714647252
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.06690615960163185,
+          "alternative_action_values_chips": [
+            22.7923884962413,
+            34.405862151020145,
+            19.603086025513335
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.1267437766675624,
+            0.8732562233324377,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.02576210896305233,
+          "alternative_action_values_chips": [
+            28.488925803051206,
+            28.086967324998493,
+            25.953661354420667
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.0767900059352423,
+            0.831486483350215,
+            0.09172351071454281
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 5.467127501594266,
+          "alternative_action_values_chips": [
+            169.78729454556435,
+            75.59543700467336,
+            49.510489510489904
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.8845162973950809,
+          "alternative_action_values_chips": [
+            142.03606578606644,
+            126.13461538461554,
+            99.55944055944083
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.28708474205505424,
+          "alternative_action_values_chips": [
+            70.0988232828457,
+            51.36276457183574,
+            49.510489510489904
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.6749371201380988,
+            0.20333845131788708,
+            0.12172442854401405
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.6747193684757518,
+          "alternative_action_values_chips": [
+            110.19140232774184,
+            65.3064536083393,
+            54.51538461538504
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.6985648479765022,
+            0.1796747623415795,
+            0.12176038968191827
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.09067314128946052,
+          "alternative_action_values_chips": [
+            20.295815729683657,
+            18.3010066213155,
+            18.00000000000007
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "current",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.014017306743877661,
+          "alternative_action_values_chips": [
+            25.28528882784048,
+            25.027190356876545,
+            23.463316800040513
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.09090909090909052,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.09090909090909052,
+          "saved_probabilities": [
+            0.0332079766202145,
+            0.9291590541837592,
+            0.037632969196026385
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c"
+      ],
+      "candidate_rank": 10,
+      "exact_info": 1596,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.45343587389041967,
+          "alternative_action_values_chips": [
+            31.28122130394864,
+            41.13039485766773,
+            15.611570247933933
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.1894977398237934,
+          "alternative_action_values_chips": [
+            53.433518832740354,
+            52.40688350096344,
+            24.574945327947237
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.14762690739427614,
+          "readout": "current",
+          "saved_prefix_reach": 0.14762690739427614,
+          "saved_probabilities": [
+            0.4415899382437126,
+            0.0,
+            0.5584100617562874
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.0330604817928626,
+          "alternative_action_values_chips": [
+            12.907442361290599,
+            -4.32589367088848,
+            -25.323409102048654
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.12297092849328335,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.12297092849328335,
+          "saved_probabilities": [
+            0.3429996199324182,
+            0.3960459709117749,
+            0.26095440915580687
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -9.532895220577773,
+            -53.999999999999936,
+            -172.9379146940391
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.004466094637919407,
+          "readout": "current",
+          "saved_prefix_reach": 0.004466094637919407,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.009283476558533557,
+          "alternative_action_values_chips": [
+            -7.958173415122354,
+            -25.664301295929455,
+            -80.47184390459431
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.012247833305598243,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.012247833305598243,
+          "saved_probabilities": [
+            0.9519508966615614,
+            0.03591255842580478,
+            0.012136544912633735
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.45343587389041967,
+          "alternative_action_values_chips": [
+            31.28122130394864,
+            41.13039485766773,
+            15.611570247933933
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.07692307692307668,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.07692307692307668,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 1.2092765405304264,
+          "alternative_action_values_chips": [
+            50.99992714568456,
+            51.06894854444077,
+            21.980759874236764
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.15228217909694736,
+          "readout": "current",
+          "saved_prefix_reach": 0.15228217909694736,
+          "saved_probabilities": [
+            0.45508333209474844,
+            0.0,
+            0.5449166679052515
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 1.0721318021361945,
+          "alternative_action_values_chips": [
+            13.494822300728428,
+            -2.9263375359597315,
+            -24.541496596614483
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.1264129188544829,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.1264129188544829,
+          "saved_probabilities": [
+            0.32346367379792124,
+            0.4057603411582246,
+            0.2707759850438542
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.011503091133020333,
+          "alternative_action_values_chips": [
+            -12.016068380124182,
+            -37.22230254352612,
+            -107.54695016836496
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.010624365433325084,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.010624365433325084,
+          "saved_probabilities": [
+            0.948471288388899,
+            0.03920625670877146,
+            0.012322454902329442
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 1,
+      "street": "TURN"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3h"
+      ],
+      "candidate_rank": 1,
+      "exact_info": 1679,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005288903016175743,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            90.9090909090909
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005191802224587281,
+          "alternative_action_values_chips": [
+            -18.0,
+            -172.84157844817025
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0004192760797324559,
+          "readout": "current",
+          "saved_prefix_reach": 0.0001851480981561211,
+          "saved_probabilities": [
+            0.6378059674496974,
+            0.3621940325503025
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.00039400752712831673,
+          "alternative_action_values_chips": [
+            -18.0,
+            -20.724246125080725
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0008863948849162272,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00030403310863630546,
+          "saved_probabilities": [
+            0.04859091875947424,
+            0.9514090812405257
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.0,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 1.6261154085413197e-05,
+          "readout": "current",
+          "saved_prefix_reach": 1.6261154085413197e-05,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0006154499500702522,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            -72.46728677776987
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 3.592526002540734e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 3.419908349398626e-05,
+          "saved_probabilities": [
+            0.33919620723856,
+            0.66080379276144
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005288903016175743,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            90.9090909090909
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0048694618983394855,
+          "alternative_action_values_chips": [
+            -18.0,
+            -53.34092059401305
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0006055390847964932,
+          "readout": "current",
+          "saved_prefix_reach": 0.00027557074442279255,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.00011356306345015101,
+          "alternative_action_values_chips": [
+            -18.0,
+            -4.25692691857645
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0009915953683196504,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.000320745080757677,
+          "saved_probabilities": [
+            0.05152562101016307,
+            0.9484743789898369
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0019404422206022497,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            -136.23389366324255
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 7.729902527005397e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 7.331590608909413e-05,
+          "saved_probabilities": [
+            0.5522964758484531,
+            0.44770352415154685
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3s"
+      ],
+      "candidate_rank": 2,
+      "exact_info": 1697,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005288903016175743,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            90.9090909090909
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005191802224587281,
+          "alternative_action_values_chips": [
+            -18.0,
+            -172.84157844817025
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0004192760797324559,
+          "readout": "current",
+          "saved_prefix_reach": 0.0001851480981561211,
+          "saved_probabilities": [
+            0.6378059674496974,
+            0.3621940325503025
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.00039400752712831673,
+          "alternative_action_values_chips": [
+            -18.0,
+            -20.724246125080725
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0008863948849162272,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00030403310863630546,
+          "saved_probabilities": [
+            0.04859091875947424,
+            0.9514090812405257
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.0,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 1.6261154085413197e-05,
+          "readout": "current",
+          "saved_prefix_reach": 1.6261154085413197e-05,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0006154499500702522,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            -72.46728677776987
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 3.592526002540734e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 3.419908349398626e-05,
+          "saved_probabilities": [
+            0.33919620723856,
+            0.66080379276144
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005288903016175743,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            90.9090909090909
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0048694618983394855,
+          "alternative_action_values_chips": [
+            -18.0,
+            -53.34092059401305
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0006055390847964932,
+          "readout": "current",
+          "saved_prefix_reach": 0.00027557074442279255,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.00011356306345015101,
+          "alternative_action_values_chips": [
+            -18.0,
+            -4.25692691857645
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0009915953683196504,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.000320745080757677,
+          "saved_probabilities": [
+            0.05152562101016307,
+            0.9484743789898369
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0019404422206022497,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            -136.23389366324255
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 7.729902527005397e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 7.331590608909413e-05,
+          "saved_probabilities": [
+            0.5522964758484531,
+            0.44770352415154685
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 218,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5h"
+      ],
+      "candidate_rank": 3,
+      "exact_info": 1821,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.06775407779171894,
+            0.9322459222082812
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.003388341456523276,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            24.54545454545455,
+            72.84848484848486,
+            72.45454545454547
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            44.010862747448606,
+            59.53591505427125,
+            36.7632731782977
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0011047456967351716,
+          "readout": "current",
+          "saved_prefix_reach": 0.00048784458399629157,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0021111761698017232,
+          "alternative_action_values_chips": [
+            -18.0,
+            39.980130039974156,
+            75.3517754725073,
+            43.630073629077074
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0006492227091110304,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0002226831424765783,
+          "saved_probabilities": [
+            0.02429545937973712,
+            0.02429545937973712,
+            0.4522598666483598,
+            0.4991492145921658
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0004067656935305423,
+          "alternative_action_values_chips": [
+            -18.0,
+            -1.7444867200811573,
+            -18.114149079172982,
+            -77.10277432315384
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 7.957187363212414e-05,
+          "readout": "current",
+          "saved_prefix_reach": 7.957187363212414e-05,
+          "saved_probabilities": [
+            0.6289469881404816,
+            0.3710530118595185,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0007010013988382178,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            -21.63334387016199,
+            -98.96321924713818,
+            -105.76383239122961
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 8.139680429667489e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 7.748576083560529e-05,
+          "saved_probabilities": [
+            0.316275897338535,
+            0.49764736865558284,
+            0.006653555744751444,
+            0.1794231782611308
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.06775407779171894,
+            0.9322459222082812
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.003388341456523276,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            24.54545454545455,
+            72.84848484848486,
+            72.45454545454547
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00019425019425019425,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            48.80093571097097,
+            76.91252316173782,
+            45.04483558254164
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0011755147540132072,
+          "readout": "current",
+          "saved_prefix_reach": 0.0005349571711828691,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0022227244231124493,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            42.22743644097189,
+            76.93688600022446,
+            47.94030200797686
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0006306364787753167,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00020398799225564867,
+          "saved_probabilities": [
+            0.025762810505081536,
+            0.025762810505081536,
+            0.31210132577571353,
+            0.6363730532141232
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0014113492222732056,
+          "alternative_action_values_chips": [
+            -18.0,
+            -34.09661513030128,
+            -124.75298146354633,
+            -138.9272537252655
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0001040945046633978,
+          "readout": "linear_average",
+          "saved_prefix_reach": 9.873064895229717e-05,
+          "saved_probabilities": [
+            0.4584639459309762,
+            0.35074669258505764,
+            0.00900064005715463,
+            0.18178872142681157
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "5s"
+      ],
+      "candidate_rank": 4,
+      "exact_info": 1839,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.04029850746268656,
+            0.9597014925373134
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.002894622212804031,
+          "alternative_action_values_chips": [
+            -18.0,
+            21.6,
+            66.26666666666668,
+            67.00000000000001
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005297732570459843,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001765910856819948,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -18.0,
+            36.933878866548525,
+            38.42429549113752,
+            13.863011408364121
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0009629573783767897,
+          "readout": "current",
+          "saved_prefix_reach": 0.000425232289248734,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.002003347391699907,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            33.98507358871524,
+            60.19618912926265,
+            26.098661525181694
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005901011584909079,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00020240447308406107,
+          "saved_probabilities": [
+            0.024295459379737126,
+            0.024295459379737126,
+            0.445247399103494,
+            0.5061616821370318
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0020526278757576877,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            18.02746894579427,
+            52.91544480863479,
+            -30.602063775632008
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 6.898053632241106e-05,
+          "readout": "current",
+          "saved_prefix_reach": 6.898053632241106e-05,
+          "saved_probabilities": [
+            0.6835137925997754,
+            0.31648620740022454,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.000602086596494429,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            -22.950876087526726,
+            -105.90526989684312,
+            -109.71345652633248
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 7.122825165592142e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 6.780579803148975e-05,
+          "saved_probabilities": [
+            0.36543107799095526,
+            0.46581987837658584,
+            0.006204190223381875,
+            0.16254485340907712
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.04029850746268656,
+            0.9597014925373134
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.002894622212804031,
+          "alternative_action_values_chips": [
+            -18.0,
+            21.6,
+            66.26666666666668,
+            67.00000000000001
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005297732570459843,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001765910856819948,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -17.999999999999993,
+            43.410637792817255,
+            61.801710937025426,
+            29.095388883107255
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.001052674918381152,
+          "readout": "current",
+          "saved_prefix_reach": 0.0004790548094694619,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.002008036248587265,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            36.74286449965908,
+            62.70445394993215,
+            33.30449245133267
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005782660857395602,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00018704807252606186,
+          "saved_probabilities": [
+            0.02576281050508154,
+            0.02576281050508154,
+            0.31164405857920213,
+            0.6368303204106347
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0013684483419782643,
+          "alternative_action_values_chips": [
+            -18.0,
+            -33.10151117850538,
+            -122.78239241766731,
+            -135.58979037740465
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 9.059753011648196e-05,
+          "readout": "linear_average",
+          "saved_prefix_reach": 8.592915611443171e-05,
+          "saved_probabilities": [
+            0.4641976581818662,
+            0.3032952504370411,
+            0.0054702170195595435,
+            0.2270368743615332
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "2c"
+      ],
+      "candidate_rank": 5,
+      "exact_info": 2,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -9.152276922573877,
+            -35.153137828222434,
+            -146.42212136447515
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005297786650384247,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.39643652561247233,
+            0.6035634743875277,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005231510913329095,
+          "alternative_action_values_chips": [
+            -16.153846153846157,
+            -15.403846153846155,
+            -60.23076923076922
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.002066115702479339,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006887052341597797,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.061395553742798564,
+          "alternative_action_values_chips": [
+            -8.981824410576282,
+            -6.721417713804292,
+            -102.81533811623233
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.005399604171041548,
+          "readout": "current",
+          "saved_prefix_reach": 0.004277684910881248,
+          "saved_probabilities": [
+            0.7181749871917398,
+            0.0,
+            0.2818250128082602
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.003580601349266805,
+          "alternative_action_values_chips": [
+            -14.557115515091478,
+            -26.356008310352646,
+            -28.888295701496112
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.003175014241855872,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.001566932723198195,
+          "saved_probabilities": [
+            0.6735183768311495,
+            0.042910868233791276,
+            0.2835707549350593
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -12.46153846153846,
+            17.999999999999996,
+            17.999999999999996
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.006198347107438018,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.002231080121601624,
+          "alternative_action_values_chips": [
+            -12.570910022702314,
+            -7.23347550029212,
+            11.495546740436438
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.00610149993611398,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00028357134648606796,
+          "saved_probabilities": [
+            0.42992797889541157,
+            0.28772132651683535,
+            0.28235069458775314
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -8.475045916073665,
+            -33.71054301300622,
+            -142.32111138066827
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0004921110253432615,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.39643652561247233,
+            0.6035634743875277,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005231510913329095,
+          "alternative_action_values_chips": [
+            -16.153846153846157,
+            -15.403846153846155,
+            -60.23076923076922
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.002066115702479339,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006887052341597797,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.07096311079311111,
+          "alternative_action_values_chips": [
+            -8.985474485556528,
+            -6.2380980388912395,
+            -107.51337030532012
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00541890495690603,
+          "readout": "current",
+          "saved_prefix_reach": 0.0044635067078876755,
+          "saved_probabilities": [
+            0.7051632388401621,
+            0.0,
+            0.2948367611598379
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.004233843604965641,
+          "alternative_action_values_chips": [
+            -14.574013944890977,
+            -27.01837747609528,
+            -29.958267722468204
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0031591140665615095,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00164901763348912,
+          "saved_probabilities": [
+            0.656985315221442,
+            0.048313395653440755,
+            0.29470128912511706
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -12.46153846153846,
+            17.999999999999996,
+            17.999999999999996
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.006198347107438018,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0013281400173333424,
+          "alternative_action_values_chips": [
+            -12.587127261536812,
+            5.091208518698723,
+            12.906625709035879
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.006096685281374332,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00016035829081854545,
+          "saved_probabilities": [
+            0.6065810583457484,
+            0.14082793077342676,
+            0.25259101088082475
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Ks"
+      ],
+      "candidate_rank": 6,
+      "exact_info": 2361,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise_to 144",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.04029850746268656,
+            0.9597014925373134
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.002894622212804031,
+          "alternative_action_values_chips": [
+            -18.0,
+            21.6,
+            66.26666666666668,
+            67.00000000000001
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005297732570459843,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001765910856819948,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0074566577540250145,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            33.073077152702965,
+            122.49287834334432,
+            122.49287834334432
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0029577122190855847,
+          "readout": "current",
+          "saved_prefix_reach": 0.0013060959561686776,
+          "saved_probabilities": [
+            0.0,
+            0.12769250922421646,
+            0.4529433885062814,
+            0.41936410226950205
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.008976405609632589,
+          "alternative_action_values_chips": [
+            -18.0,
+            17.168317365512607,
+            62.81830029225119,
+            57.10392979803193
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.00191344922432151,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006563123567022583,
+          "saved_probabilities": [
+            0.19444505748924953,
+            0.2424715872109377,
+            0.46324336826502993,
+            0.09983998703478279
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0004892596847505561,
+          "alternative_action_values_chips": [
+            -18.0,
+            -54.0,
+            -162.0,
+            -200.00000000000003
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 2.7181093597253116e-05,
+          "readout": "current",
+          "saved_prefix_reach": 2.7181093597253116e-05,
+          "saved_probabilities": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.001273083278235975,
+          "alternative_action_values_chips": [
+            -18.0,
+            3.083848467244998,
+            -38.900467999356835,
+            -39.03413686656901
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.000187885937427005,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00017885818660373542,
+          "saved_probabilities": [
+            0.0009454918552449534,
+            0.6609942662513351,
+            0.1696616749468758,
+            0.16839856694654406
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            0.04029850746268656,
+            0.9597014925373134
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.002894622212804031,
+          "alternative_action_values_chips": [
+            -18.0,
+            21.6,
+            66.26666666666668,
+            67.00000000000001
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005297732570459843,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001765910856819948,
+          "saved_probabilities": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.006265682253332371,
+          "alternative_action_values_chips": [
+            -18.0,
+            31.423703839890507,
+            116.38408829589079,
+            116.38408829589079
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0030845748824024294,
+          "readout": "current",
+          "saved_prefix_reach": 0.0014037386155794644,
+          "saved_probabilities": [
+            0.0,
+            0.10507409221775442,
+            0.4656067948070643,
+            0.42931911297518127
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.007949929110610335,
+          "alternative_action_values_chips": [
+            -17.999999999999996,
+            16.98712025469151,
+            62.17449019364568,
+            56.659477780618374
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0019874823720305436,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006428783496656065,
+          "saved_probabilities": [
+            0.16959661879383814,
+            0.23352556655603657,
+            0.4912446355613476,
+            0.10563317908877765
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.5180585011405682,
+            0.4819414988594317,
+            0.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0012780597131282615,
+          "alternative_action_values_chips": [
+            -18.000000000000004,
+            -18.809328485759,
+            -87.3638502702502,
+            -87.96831519556004
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00017209574966017398,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00016322787740643866,
+          "saved_probabilities": [
+            0.25127395151362736,
+            0.5300626700576624,
+            0.11362361171734918,
+            0.1050397667113611
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 72,
+      "seat": 1,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "Jc"
+      ],
+      "candidate_rank": 7,
+      "exact_info": 1152,
+      "hole": [
+        "7s",
+        "9d"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            -161.99999999999997,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 1.2121729160153929e-05,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0014855725082997817,
+          "alternative_action_values_chips": [
+            90.53846153846153,
+            82.97435897435899,
+            80.84615384615384
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0015495867768595044,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0005165289256198347,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005726701469486896,
+          "alternative_action_values_chips": [
+            -54.0,
+            -162.0,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005071647854132624,
+          "readout": "current",
+          "saved_prefix_reach": 0.0001053777134038417,
+          "saved_probabilities": [
+            0.08532394955901879,
+            0.6540436649354803,
+            0.26063238550550105
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0011619687635133786,
+          "alternative_action_values_chips": [
+            4.499478107651398,
+            17.83085116033139,
+            -17.97476355055094
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0003825576709110763,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00014036117305848432,
+          "saved_probabilities": [
+            0.08916382968888667,
+            0.48162516107726555,
+            0.42921100923384775
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.02294037095047672,
+          "alternative_action_values_chips": [
+            116.44440354553088,
+            33.204626348638904,
+            53.99999999999999
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.000839941896658115,
+          "readout": "current",
+          "saved_prefix_reach": 0.000839941896658115,
+          "saved_probabilities": [
+            0.25787605375318373,
+            0.3982723345243106,
+            0.3438516117225056
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0025808280694034655,
+          "alternative_action_values_chips": [
+            -52.471663176968676,
+            -73.98979383286975,
+            -76.47772472671612
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005065776012869147,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0004756628719985548,
+          "saved_probabilities": [
+            0.5270604160122135,
+            0.2017402282666721,
+            0.2711993557211143
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            -161.99999999999997,
+            -200.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 1.2121729160153929e-05,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0014855725082997817,
+          "alternative_action_values_chips": [
+            90.53846153846153,
+            82.97435897435899,
+            80.84615384615384
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0015495867768595044,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0005165289256198347,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.004763493450239477,
+          "alternative_action_values_chips": [
+            -54.0,
+            -162.0,
+            -200.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005049747416824374,
+          "readout": "current",
+          "saved_prefix_reach": 8.903126883357554e-05,
+          "saved_probabilities": [
+            0.08041559112719363,
+            0.7171611173214562,
+            0.20242329155135028
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0013424456762108324,
+          "alternative_action_values_chips": [
+            8.720953108256227,
+            29.96351317502656,
+            -12.14006640446359
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00043481019958193604,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001438427181295456,
+          "saved_probabilities": [
+            0.08738629910942064,
+            0.5133802538675435,
+            0.39923344702303587
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.00046532415569912924,
+          "alternative_action_values_chips": [
+            162.0,
+            53.99999999999999,
+            53.99999999999999
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 1.4398973546888688e-05,
+          "readout": "current",
+          "saved_prefix_reach": 1.4398973546888688e-05,
+          "saved_probabilities": [
+            0.40154664731012757,
+            0.1044204609305922,
+            0.4940328917592803
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0012293010694112744,
+          "alternative_action_values_chips": [
+            -45.970289091977904,
+            -70.49443865365201,
+            -62.33494314104199
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00023996361006119765,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00023243029141537875,
+          "saved_probabilities": [
+            0.46227350010469903,
+            0.2179174148284645,
+            0.31980908506683653
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "9d"
+      ],
+      "candidate_rank": 8,
+      "exact_info": 7974,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 108",
+        "raise_to 146"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            -161.99999999999997,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 1.2121729160153929e-05,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0014855725082997839,
+          "alternative_action_values_chips": [
+            90.53846153846153,
+            82.97435897435898,
+            80.84615384615384
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0015495867768595044,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0005165289256198347,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.003448500364551471,
+          "alternative_action_values_chips": [
+            -54.0,
+            -162.0,
+            -200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005071647854132624,
+          "readout": "current",
+          "saved_prefix_reach": 6.345626448750579e-05,
+          "saved_probabilities": [
+            0.08532394955901874,
+            0.6540436649354803,
+            0.26063238550550105
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0010132448597632087,
+          "alternative_action_values_chips": [
+            4.499478107651393,
+            17.83085116033139,
+            -17.974763550550932
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0003825576709110763,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001136783636780653,
+          "saved_probabilities": [
+            0.0906010391020083,
+            0.4452626871278684,
+            0.46413627377012334
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.009977032695872832,
+          "alternative_action_values_chips": [
+            80.63171284657165,
+            31.982791407974236,
+            53.99999999999999
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.000839941896658115,
+          "readout": "current",
+          "saved_prefix_reach": 0.000803702370047224,
+          "saved_probabilities": [
+            0.338320347371271,
+            0.3272902479940672,
+            0.3343894046346619
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.002740215371838312,
+          "alternative_action_values_chips": [
+            -51.81530826583945,
+            -74.97443480443965,
+            -77.3158112118578
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005065776012869147,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0003998631380862384,
+          "saved_probabilities": [
+            0.44185550272785423,
+            0.2251662921856215,
+            0.33297820508652426
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            -161.99999999999997,
+            -200.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 1.2121729160153929e-05,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0014855725082997839,
+          "alternative_action_values_chips": [
+            90.53846153846153,
+            82.97435897435898,
+            80.84615384615384
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0015495867768595044,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0005165289256198347,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.003012516456443536,
+          "alternative_action_values_chips": [
+            -54.0,
+            -162.0,
+            -200.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005049747416824374,
+          "readout": "current",
+          "saved_prefix_reach": 5.630492941807468e-05,
+          "saved_probabilities": [
+            0.08041559112719353,
+            0.7171611173214562,
+            0.20242329155135028
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0012314496149384178,
+          "alternative_action_values_chips": [
+            8.720953108256227,
+            29.96351317502656,
+            -12.140066404463568
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00043481019958193604,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00012178734737099914,
+          "saved_probabilities": [
+            0.08857293805985865,
+            0.4758006251992661,
+            0.43562643674087537
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0004176832537136597,
+          "alternative_action_values_chips": [
+            162.0,
+            53.99999999999999,
+            53.99999999999999
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 1.4398973546888688e-05,
+          "readout": "current",
+          "saved_prefix_reach": 1.2472908656833995e-05,
+          "saved_probabilities": [
+            0.3798659734003999,
+            0.21814240562248718,
+            0.40199162097711283
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0011449911016521452,
+          "alternative_action_values_chips": [
+            -44.25814662614338,
+            -65.85265758065552,
+            -61.56826885729369
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00023996361006119765,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00020310782106399943,
+          "saved_probabilities": [
+            0.41242098746311706,
+            0.257597436151722,
+            0.3299815763851609
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 108,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "2c"
+      ],
+      "candidate_rank": 9,
+      "exact_info": 7507,
+      "hole": [
+        "4s",
+        "Jc"
+      ],
+      "legal_actions": [
+        "check",
+        "raise_to 36",
+        "raise_to 182"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -9.152276922573877,
+            -35.153137828222434,
+            -146.42212136447515
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005297786650384247,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.39643652561247233,
+            0.6035634743875277,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005231510913329095,
+          "alternative_action_values_chips": [
+            -16.153846153846157,
+            -15.403846153846155,
+            -60.23076923076922
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.002066115702479339,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006887052341597797,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.06780141084777416,
+          "alternative_action_values_chips": [
+            -8.981824410576282,
+            -6.721417713804292,
+            -102.81533811623233
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.005399604171041548,
+          "readout": "current",
+          "saved_prefix_reach": 0.004724007756897271,
+          "saved_probabilities": [
+            0.7181749871917398,
+            0.0,
+            0.2818250128082602
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.004155575357740104,
+          "alternative_action_values_chips": [
+            -14.557115515091478,
+            -26.356008310352646,
+            -28.888295701496112
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.003175014241855872,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.001741944423293645,
+          "saved_probabilities": [
+            0.6602947276706332,
+            0.03837866196346277,
+            0.3013266103659041
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -12.46153846153846,
+            17.999999999999996,
+            17.999999999999996
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.006198347107438018,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.001206881441676023,
+          "alternative_action_values_chips": [
+            -12.570910022702314,
+            -7.23347550029212,
+            11.495546740436438
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.00610149993611398,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00016865829523417966,
+          "saved_probabilities": [
+            0.5123277670972515,
+            0.10580602549041304,
+            0.3818662074123354
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -8.475045916073665,
+            -33.71054301300622,
+            -142.32111138066827
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0004921110253432615,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.39643652561247233,
+            0.6035634743875277,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.005231510913329095,
+          "alternative_action_values_chips": [
+            -16.153846153846157,
+            -15.403846153846155,
+            -60.23076923076922
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.002066115702479339,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0006887052341597797,
+          "saved_probabilities": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.07598504909253628,
+          "alternative_action_values_chips": [
+            -8.985474485556528,
+            -6.2380980388912395,
+            -107.51337030532012
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.00541890495690603,
+          "readout": "current",
+          "saved_prefix_reach": 0.004779381463596078,
+          "saved_probabilities": [
+            0.7051632388401621,
+            0.0,
+            0.2948367611598379
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.004653726282687951,
+          "alternative_action_values_chips": [
+            -14.574013944890977,
+            -27.01837747609528,
+            -29.958267722468204
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0031591140665615095,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0017649453422337574,
+          "saved_probabilities": [
+            0.6487392164800532,
+            0.04434774343643362,
+            0.30691304008351317
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -12.46153846153846,
+            17.999999999999996,
+            17.999999999999996
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.006198347107438018,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0011406383906662943,
+          "alternative_action_values_chips": [
+            -12.587127261536812,
+            5.091208518698723,
+            12.906625709035879
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.006096685281374332,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00017113306445357135,
+          "saved_probabilities": [
+            0.4913671882569953,
+            0.1028266337893118,
+            0.4058061779536928
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 36,
+      "seat": 0,
+      "street": "RIVER"
+    },
+    {
+      "board": [
+        "Qs",
+        "Kd",
+        "As",
+        "3c",
+        "3h"
+      ],
+      "candidate_rank": 10,
+      "exact_info": 1689,
+      "hole": [
+        "3d",
+        "5c"
+      ],
+      "legal_actions": [
+        "fold",
+        "call"
+      ],
+      "observations": [
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0004767959313413859,
+          "readout": "current",
+          "saved_prefix_reach": 4.040576386717976e-06,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0052778660733206195,
+          "alternative_action_values_chips": [
+            -54.00000000000001,
+            90.9090909090909
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001456876456876457,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            163.34900662760273
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0009298873696350896,
+          "readout": "current",
+          "saved_prefix_reach": 0.00032970508434827865,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0017526120821841499,
+          "alternative_action_values_chips": [
+            -53.99999999999999,
+            157.27033609141773
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0013272943960676315,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001489705417930637,
+          "saved_probabilities": [
+            0.11137221997817764,
+            0.8886277800218223
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            200.0
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0016081813468639323,
+          "readout": "current",
+          "saved_prefix_reach": 0.00019916749246894435,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.004221030473969846,
+          "alternative_action_values_chips": [
+            -54.0,
+            34.317011424170616
+          ],
+          "arm": "signed_full_q8_turn_exact_river",
+          "counterfactual_reach": 0.0006764500473631697,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00021071406746478704,
+          "saved_probabilities": [
+            0.4536392129752002,
+            0.5463607870247997
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            200.0
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0004767959313413859,
+          "readout": "current",
+          "saved_prefix_reach": 4.040576386717976e-06,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0052778660733206195,
+          "alternative_action_values_chips": [
+            -54.00000000000001,
+            90.9090909090909
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005827505827505828,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.0001456876456876457,
+          "saved_probabilities": [
+            0.5,
+            0.5
+          ],
+          "seed": 0,
+          "work_label": 100000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -54.0,
+            173.51572757977414
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0008321323098850974,
+          "readout": "current",
+          "saved_prefix_reach": 0.0002937705424957927,
+          "saved_probabilities": [
+            0.0,
+            1.0
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0016414159057123031,
+          "alternative_action_values_chips": [
+            -54.0,
+            158.52140509754994
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0012357651446611665,
+          "readout": "linear_average",
+          "saved_prefix_reach": 0.00014286045033581738,
+          "saved_probabilities": [
+            0.10812694676485825,
+            0.8918730532351417
+          ],
+          "seed": 0,
+          "work_label": 1000000
+        },
+        {
+          "additive_contribution_chips": 0.0,
+          "alternative_action_values_chips": [
+            -53.99999999999999,
+            132.1635174652849
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.001091106456969106,
+          "readout": "current",
+          "saved_prefix_reach": 0.0,
+          "saved_probabilities": [
+            1.0,
+            0.0
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        },
+        {
+          "additive_contribution_chips": 0.0010745952972251605,
+          "alternative_action_values_chips": [
+            -53.99999999999999,
+            -100.59419872620104
+          ],
+          "arm": "signed_full_exact_turn_river",
+          "counterfactual_reach": 0.0005727799509624296,
+          "readout": "linear_average",
+          "saved_prefix_reach": 7.683406846926642e-05,
+          "saved_probabilities": [
+            0.3996710966082824,
+            0.6003289033917176
+          ],
+          "seed": 0,
+          "work_label": 10000000
+        }
+      ],
+      "pot_chips": 254,
+      "seat": 1,
+      "street": "RIVER"
+    }
+  ],
+  "final_candidate_concentration": {
+    "RIVER": {
+      "concentration": "diffuse",
+      "selected_chips": 0.013856407594872448,
+      "selected_share": 0.051605171213556206,
+      "total_chips": 0.26850812174483196
+    },
+    "TURN": {
+      "concentration": "concentrated",
+      "selected_chips": 0.7661130692120555,
+      "selected_share": 0.95231020455075,
+      "total_chips": 0.8044784835351706
+    }
+  },
+  "limitation": "one deterministic known game; no new training, convergence proof, unseen transfer or default promotion",
+  "scope": "one already known outcome-inspected turn-start medium/wet game",
+  "selection": {
+    "RIVER": [
+      1679,
+      1697,
+      1821,
+      1839,
+      2,
+      2361,
+      1152,
+      7974,
+      7507,
+      1689
+    ],
+    "TURN": [
+      1611,
+      4041,
+      7506,
+      1618,
+      4824,
+      1619,
+      40,
+      0,
+      5838,
+      1596
+    ]
+  },
+  "source_fingerprint": "4901950e9b49d2f8e383152e67dba06f82b70a486db19905b9e810fdd67ff2d3",
+  "source_head": "b55dce91f371d76c1d16f0a5143e9facff686d3f",
+  "status": "completed"
+}

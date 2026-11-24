@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "issue": 4,
+  "parent_merge": "8b43f94ded36e09538a4d62d227cb560b8c184e6",
+  "question": "Are the exact-turn candidate's saved residual turn and river best-response gains concentrated in a few decisions, and which fixed rows describe the current-versus-average river difference?",
+  "scope": "one already structurally and outcome-inspected known medium/wet OOP turn-start game; no unseen, population or full-game claim",
+  "input": {
+    "file": "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-02.json",
+    "sha256": "cea60f6a69d07904078f6930238c7dcbbbb2dba6b36eceb215198b329564a616"
+  },
+  "arms": ["signed_full_q8_turn_exact_river", "signed_full_exact_turn_river"],
+  "candidate": "signed_full_exact_turn_river",
+  "seed_per_arm": [0],
+  "work_labels": [100000, 1000000, 10000000],
+  "readouts": ["current", "linear_average"],
+  "saved_policy_cases": 12,
+  "responding_seat_traces": 24,
+  "ranking": "final candidate linear_average additive gain descending, exact info ascending tie; independently top ten TURN and top ten RIVER; same 20 rows all 12 policies",
+  "concentrated_street_share": 0.5,
+  "tolerances_chips": {
+    "trace_score_identity": 1e-9,
+    "native_scalar": 1e-9,
+    "negative_gain_slack": 1e-12
+  },
+  "parent_report_wall_seconds": 68.30351770902053,
+  "forecast": "2*parent_report_wall_seconds+120 < 900",
+  "forecast_bound_seconds": 256.60703541804106,
+  "hard_cap_seconds": 900,
+  "publication": "protocol before new ranking; isolated qualified source before fictional proof; proof before separate data-only admission; admission before one diagnostic; own diagnostic before final checks/review/history merge",
+  "stop_rule": "one capped read-only diagnosis; failed source, trace identity, archive, admission or time gate ends the milestone with partials; no new training or favorable retry",
+  "historical_source_fingerprint": "5e29c490f3b05cf7b98dc016628a9765ab76b7a920965590e0d086abcda16b12",
+  "prerequisite_sha256": {
+    "results/known-wet-turn-mechanism/own/manifest.json": "2fc52b5836c43a94bd5b8006866fc48e6ab8c424e584f84f5dedf3bcfc2ac3cb",
+    "results/known-wet-turn-mechanism/native/manifest.json": "0951e6c7286135b3a3d79b350f7f72c9071f776ba3927fdcdad804f3d67d6c6f",
+    "results/known-wet-turn-mechanism/report/manifest.json": "6623f0aadf10d4be3e0f283d13cb2d10b7fab7e21b9acbff611aef1e9573d645",
+    "results/known-wet-turn-mechanism/final-checks/manifest.json": "d95cba42bfc9ee90974572b31e450bcdac6f8f8229b205ad20de6fb57c7b3aca",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "reference": "existing pinned OpenSpiel 2.0.2 scalar audit only; comparison-only, no new reference run or strategy input",
+  "default_promotion": false
+}

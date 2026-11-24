@@ -1,0 +1,52 @@
+"""Independent arithmetic and fixed-selection audit of the one saved report."""
+import hashlib
+import json
+import math
+import sys
+from pathlib import Path
+
+import numpy as np
+
+ROOT = Path.cwd()
+sys.path.insert(0, str(ROOT / 'scripts'))
+from known_wet_turn_mechanism.plan import CANDIDATE, GAME, context  # noqa: E402
+from medium_dry_b8.report import row_identity  # noqa: E402
+
+folder = ROOT / 'results/known-wet-residual-diagnosis/diagnosis'
+report = json.loads((folder / 'report.json').read_bytes())
+selection = json.loads((folder / 'selection.json').read_bytes())
+assert report['status'] == 'completed' and selection['status'] == 'selected'
+scoring = context(ROOT, GAME, CANDIDATE)
+identities = [row_identity(scoring.exact, i) for i in range(len(scoring.exact.keys))]
+assert np.array_equal(scoring.partition.exact_to_abstract, np.arange(len(identities)))
+case_ids = set()
+max_sum_error = 0.0
+max_street_error = 0.0
+min_contribution = 0.0
+max_native_error = 0.0
+for case in report['cases']:
+    key = (case['arm'], case['work_label'], case['readout'])
+    assert key not in case_ids
+    case_ids.add(key)
+    vector = np.load(folder / case['raw_contribution'])['contribution']
+    assert vector.shape == (len(identities),) and np.isfinite(vector).all()
+    min_contribution = min(min_contribution, float(vector.min()))
+    max_sum_error = max(max_sum_error, abs(math.fsum(map(float, vector)) - case['exploitability_chips']))
+    max_native_error = max(max_native_error, case['native_maximum_error_chips'])
+    for street in ('TURN', 'RIVER'):
+        total = math.fsum(float(vector[i]) for i, row in enumerate(identities) if row['street'] == street)
+        max_street_error = max(max_street_error, abs(total - case['street'][street]['total_chips']))
+        fixed = math.fsum(float(vector[i]) for i in selection['selected'][street])
+        assert abs(fixed - case['street'][street]['selected_chips']) <= 1e-9
+assert len(case_ids) == 12
+candidate = next(case for case in report['cases'] if case['arm'] == CANDIDATE and case['work_label'] == 10000000 and case['readout'] == 'linear_average')
+vector = np.load(folder / candidate['raw_contribution'])['contribution']
+for street in ('TURN', 'RIVER'):
+    indices = [i for i, row in enumerate(identities) if row['street'] == street]
+    ranked = sorted(indices, key=lambda i: (-float(vector[i]), i))[:10]
+    assert ranked == selection['selected'][street] == report['selection'][street]
+assert max_sum_error <= 1e-9 and max_street_error <= 1e-9 and min_contribution >= -1e-12
+assert max_native_error <= 1e-9
+result = dict(status='passed', head=report['source_head'], manifest_sha256=hashlib.sha256((folder / 'manifest.json').read_bytes()).hexdigest(), cases=len(case_ids), exact_rows=len(identities), selected_turn=selection['selected']['TURN'], selected_river=selection['selected']['RIVER'], max_sum_error_chips=max_sum_error, max_street_error_chips=max_street_error, min_contribution_chips=min_contribution, max_parent_native_error_chips=max_native_error)
+(ROOT / 'results/runs/known-wet-residual-diagnosis-20261124/report-audit.json').write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
+print(json.dumps(result, sort_keys=True))

@@ -1,0 +1,77 @@
+"""Run the one source-qualified data-only residual compute admission under a 180s cap."""
+
+import json
+import os
+import signal
+import subprocess
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+FOLDER = Path(__file__).resolve().parent
+RAW = FOLDER / "raw"
+LOG = FOLDER / "launch.log"
+STATE = FOLDER / "job-state.json"
+SOURCE = "4901950e9b49d2f8e383152e67dba06f82b70a486db19905b9e810fdd67ff2d3"
+CAP = 180
+STARTED = time.perf_counter()
+UV = ROOT.parent / "bootstrap/bin/uv"
+
+
+def record(value: dict[str, object]) -> None:
+    with STATE.open("w") as stream:
+        json.dump(value, stream, sort_keys=True, indent=2)
+        stream.write("\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
+if RAW.exists() or LOG.exists() or STATE.exists():
+    raise FileExistsError("retain existing admission or partial; never duplicate")
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+if subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT):
+    raise RuntimeError("admission requires clean published proof")
+uv_version = subprocess.check_output([str(UV), "--version"], text=True).strip()
+if not uv_version.startswith("uv 0.13.5 "):
+    raise RuntimeError("repository requires pinned uv 0.13.5")
+command = [
+    str(UV), "run", "--locked", "python", "scripts/admit_known_wet_residual.py",
+    "--output", str(RAW),
+]
+env = os.environ.copy()
+env["UV_PYTHON"] = "3.11.17"
+env["UV_PROJECT_ENVIRONMENT"] = "results/runs/guarded-skip-requalification-20261118/envs/base311"
+state: dict[str, object] = dict(
+    status="starting", launcher_pid=os.getpid(), source_head=head,
+    source_fingerprint=SOURCE, cap_seconds=CAP, command=command, uv_version=uv_version,
+    environment={key: env[key] for key in ("UV_PYTHON", "UV_PROJECT_ENVIRONMENT")},
+    log=str(LOG), output=str(RAW), started_utc=datetime.now(UTC).isoformat(),
+)
+record(state)
+with LOG.open("wb") as stream:
+    child = subprocess.Popen(
+        command, cwd=ROOT, env=env, stdout=stream, stderr=subprocess.STDOUT,
+        start_new_session=True,
+    )
+    state.update(status="running", child_pid=child.pid)
+    record(state)
+    try:
+        code = child.wait(timeout=max(0.01, CAP - (time.perf_counter() - STARTED)))
+    except subprocess.TimeoutExpired:
+        os.killpg(child.pid, signal.SIGTERM)
+        try:
+            child.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            os.killpg(child.pid, signal.SIGKILL)
+            child.wait()
+        code = 124
+    state.update(
+        status="passed" if code == 0 else "failed_retained", exit_code=code,
+        observed_wall_seconds=time.perf_counter() - STARTED,
+        finished_utc=datetime.now(UTC).isoformat(),
+    )
+    record(state)
+    (FOLDER / "launch.exit").write_text(f"{code}\n")
+print(json.dumps(state, sort_keys=True))
+raise SystemExit(code)
