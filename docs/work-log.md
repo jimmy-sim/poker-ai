@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 isolated residual tracer under qualification
+
+- The new `known_wet_residual` adapters replay only the 12 pinned
+  [PR #110 policies](../results/known-wet-turn-mechanism/own/manifest.json).
+  They select candidate-final-average top-ten exact rows per street
+  before loading the control trace, retain each case and event, and
+  reconcile full additive gains to the published scalar and street
+  totals. A separate fictional proof and data-only admission precede
+  any real saved-policy diagnosis. Four focused Python 3.11 tests,
+  Ruff and strict mypy pass. The first lint/type iteration and a
+  synthetic-fixture test failure are retained in ignored
+  `results/runs/known-wet-residual-source-20261124/iteration-failures.md`;
+  neither involved a policy outcome. Full exact-source local/optional,
+  hooks and hosted qualification remain pending. Codex assisted;
+  human time and personal learning were not reported.
+
 ## 2026-11-24 — Prospective known-wet residual diagnosis
 
 - After [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)

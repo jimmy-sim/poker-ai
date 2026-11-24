@@ -9633,6 +9633,19 @@ cannot prove a new training fix. **Next decision:** publish the plan,
 qualify isolated tracing code, then run the one admitted capped diagnosis.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 isolated residual tracer.** The new code reads the
+published own policies, then checks that its decision-level best-reply
+gains add back to each saved exploitability. **Example:** a fictional
+24-row trace with one deliberately larger turn and river gain tests
+the fixed top-ten rank and chip sum without reading a real candidate
+decision. The initial focused test failed because that synthetic row
+omitted an acting-seat field; the fixture was corrected and the four
+focused tests, Ruff and strict mypy then passed. The failed iteration
+is retained. **Next decision:** qualify the exact committed source in
+all required local, optional and hosted lanes before even the fictional
+proof, then admit and run at most one saved-policy diagnosis. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
