@@ -9585,6 +9585,27 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 known-wet strength conclusion.** The one fixed
+comparison produced a sizable paired gain, and the independent scalar
+audit supports its arithmetic. **Example:** at the final average, the
+control's turn best-response gain is 1.6819 chips and the candidate's
+is 0.8045, while the candidate still leaves 1.073 chips total gain
+against an optimized reply. On the 36-chip initial pot that is 0.02981
+pots, above both frozen absolute thresholds. The
+[reproducible report](known-wet-turn-mechanism-result.md) therefore says
+**negative acceptance**, despite improvement relative to control.
+Its top control turn row is seat one's `2d 5d` on `Qs Kd As 3c` facing
+fold/call/raises; the saved q8 strategy folds about 97.3%, but its
+local call value is higher under that fixed saved opponent and optimized
+continuation. The candidate reduces the row's additive gain, yet its
+remaining weakness and different opponent policy prevent a universal
+action recommendation. Both readouts and all checkpoints are retained,
+with no seed confidence interval or unseen claim. **Next decision:**
+complete report software qualification and review, then register a
+distinct evidence-backed follow-up; do not extend this negative
+experiment. Codex assisted; human time and personal learning were not
+reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

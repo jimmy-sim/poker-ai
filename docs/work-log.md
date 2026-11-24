@@ -13,6 +13,27 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 fixed report: negative acceptance
+
+- The [fixed report](known-wet-turn-mechanism-result.md) and
+  [machine evidence](../results/known-wet-turn-mechanism/report/report.json)
+  classify the one known medium/wet game **negative** under the frozen
+  absolute gates. The candidate's final average is 1.0729866053 chips
+  (0.0298051835 initial pots) versus control 2.2264918915 chips
+  (0.061846997 pots); the −1.1535052863-chip paired gain is real within
+  this restricted game, but candidate misses ≤0.01 final and ≤0.025
+  worst gates. Final additive turn/river gains fall from
+  1.681914/0.544578 control to 0.804478/0.268508 candidate chips.
+  The report retains six both-readout paired contrasts and eight fixed
+  exact decision rows, including turn `2d 5d` on `Qs Kd As 3c` and
+  river `3d 5c` on `Qs Kd As 3c 3h`. Each local action value uses its
+  saved opponent and optimized continuation; it is not general advice.
+  Native scalar error was ≤1.9539925233402755e−14 chips. One known
+  input/seed gives no transfer or confidence claim; no default change.
+  The report archive is built; final exact-report local/optional/hosted
+  qualification remains pending before review/merge. Codex assisted;
+  human time and personal learning were not reported.
+
 ## 2026-11-23 — PR #110 pinned scalar audit
 
 - After own policies/scores were published and all 35 changed GitHub

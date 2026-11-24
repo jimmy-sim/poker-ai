@@ -303,7 +303,14 @@ and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/453399
 after a pre-outcome report readout correction. The first source and its
 passing hosted run remain retained as superseded evidence. Publish and
 verify the [source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
-before fictional proof; no policy outcome exists yet.
+before fictional proof. The one fixed [known-wet result](known-wet-turn-mechanism-result.md)
+then produced a paired final-average improvement of 1.1535 chips on
+that known game but **failed both candidate absolute exploitability
+gates** (0.029805 initial pots versus ≤0.01 final/≤0.025 worst).
+Pinned independent scalar comparison passed all 12 cases. This is a
+negative acceptance result with no unseen transfer or default claim;
+finish PR #110's report/final qualification and review before a distinct
+prospectively registered follow-up. Do not extend or relabel this run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
