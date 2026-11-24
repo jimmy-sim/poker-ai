@@ -1,0 +1,97 @@
+"""Seal fixed known-turn tested-source local/hosted qualification."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+ITER = ROOT / "results/runs/known-turn-source-20261123"
+OUT = ROOT / "results/known-turn-exact-mechanism/source-checks"
+HEAD = "0b89955430078e8e48e03bc82b929616738bba5d"
+FINGERPRINT = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+PINS = {
+    "configs/known-turn-exact-mechanism.json": "00d714f87a2b990c3b2dccf5421f5926d9e3a1b34b0721781ae9b49900f88cd5",
+    "docs/known-turn-exact-mechanism.md": "f38ee26d4dc7764ea3cfea7935e30d9cc7ec282763fedd65d655eba2d7f169cf",
+    "configs/river-full-broader-spots/full_new_medium_dry_oop.json": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+    "results/turn-exact-transfer/source-checks/manifest.json": "af541362cdea019e33bca2385b83b79ebbed40b52fc926ba287243ccf2dc4071",
+}
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def copy(source: Path, destination: Path) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    if source.suffix == ".log":
+        with destination.with_name(destination.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix in (".py", ".zsh"):
+        shutil.copyfile(source, destination.with_name(destination.name + ".txt"))
+    else:
+        shutil.copyfile(source, destination)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain prior source receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("tested source head changed or dirty")
+    for name, expected in PINS.items():
+        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+            raise ArithmeticError("pinned source input changed: " + name)
+    state = json.loads((RAW / "resume-state.json").read_bytes())
+    interrupted = json.loads((RAW / "interrupted-driver.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["head"] != HEAD
+        or state["accepted_prior_role"] != "base311"
+        or state["completed"] != [{"role": role, "exit_code": 0} for role in ROLES[1:]]
+        or interrupted["status"] != "wrapper_interrupted_after_base311_receipt"
+        or interrupted["completed_role"]["status"] != "passed"
+    ):
+        raise ArithmeticError("source local roles or interruption record incomplete")
+    if any(row["status"] != "passed" or row["head"] != HEAD or row["source_fingerprint"] != FINGERPRINT for row in receipts) or any(row["suite_count"] != 81 for row in receipts[2:]):
+        raise ArithmeticError("source fingerprint or optional suite count changed")
+    if hosted["headSha"] != HEAD or hosted["conclusion"] != "success" or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"} or any(row["conclusion"] != "success" for row in hosted["jobs"]):
+        raise ArithmeticError("both exact-source hosted jobs required")
+    if (RAW / "resume.exit").read_text().strip() != "0" or (RAW / "hooks.exit").read_text().strip() != "0":
+        raise ArithmeticError("driver or hooks incomplete")
+    if (
+        "5799 passed, 73 skipped, 150 deselected" not in (RAW / "base311.log").read_text()
+        or "5799 passed, 73 skipped, 150 deselected" not in (RAW / "base312.log").read_text()
+        or "2597 passed" not in (RAW / "optional311.log").read_text()
+        or "2595 passed, 2 skipped" not in (RAW / "optional312.log").read_text()
+    ):
+        raise ArithmeticError("full source test summary absent")
+    OUT.mkdir(parents=True)
+    for name in ("driver-state.json", "driver.log", "driver.py", "interrupted-driver.json", "driver-resume.py", "resume-state.json", "driver-resume.log", "resume.exit", "runner.py", "launch.zsh", "launch.log", "launcher.pid", "optional-suites.json", "package_source.py", "hooks.exit", "hooks.log", "hosted.json", "hosted.log"):
+        copy(RAW / name, OUT / name)
+    for role in ROLES:
+        for suffix in ("json", "log"):
+            name = f"{role}.{suffix}"
+            copy(RAW / name, OUT / name)
+    for name in ("iteration-failures.md", "focused.log", "mypy.log", "protocol-head-canceled.json", "protocol-head-canceled.log"):
+        copy(ITER / name, OUT / name)
+    result = dict(status="source_qualified", tested_head=HEAD, source_fingerprint=FINGERPRINT,
+        pins=PINS, local_roles=receipts, hosted_run=hosted["databaseId"],
+        hosted_jobs=[{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        hooks="passed", original_driver_interrupted=True, completed_base311_reused=True, training_started=False)
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="source_qualified", source_fingerprint=FINGERPRINT, files=files), sort_keys=True, indent=2) + "\n")
+    print("source_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

@@ -182,7 +182,61 @@ without claiming unseen or broader strength. The raw archive/report were
 published and GitHub-byte-verified. All four
 final exact-result local roles, hooks and both hosted jobs passed; the
 [final receipt](../results/turn-exact-transfer/final-checks/manifest.json)
-is being published. Solo review and history-preserving merge remain.
+was published and verified. Solo review and both receipt-head hosted jobs
+passed after retaining a first Python 3.11 timeout and one unchanged
+same-SHA operational requalification. [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
+was history-merged as `e147802c`; post-merge main CI is tracked separately.
+The next [prospective known-case exact-turn test](known-turn-exact-mechanism.md)
+asks whether splitting the **12 diagnosed collisions** improves the already
+evaluated As Jc 5d 3h medium/dry game at matched complete expected work.
+It is a one-known-input mechanism question, not new-input transfer. Its
+control, candidate, seed, three work checkpoints, absolute and paired gates,
+compute caps and publication boundaries are fixed before outcomes. No new
+policy or score exists at protocol publication; no default changed.
+Its isolated runner, source guards, forecast, audit and report now pass 28
+focused/inherited tests, Ruff/format and strict mypy; exact-source local
+and hosted qualification remains before any real trajectory.
+The four exact-source local base/optional roles, hooks and both hosted jobs
+then passed on one source revision; the complete
+[source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json)
+retains the interrupted wrapper and passing continuation. Publish and verify
+that receipt before the capped fictional proof; no poker outcome yet.
+The single [fictional proof](../results/known-turn-exact-mechanism/own-proof/manifest.json)
+then passed in 0.783 seconds/180 with both labels replayed; publish and
+verify it before the fixed six-path profile. No real policy or score exists.
+The single fixed [profile](../results/known-turn-exact-mechanism/profile/manifest.json)
+then completed all six 1m-work paths in 13.771 launcher seconds; its
+conservative strict bound is `1,371.070446 < 7,200` seconds. Publish and
+verify all profile bytes before a separate data-only admission. This is
+not yet admission or poker strength.
+A separate data-only [admission](../results/known-turn-exact-mechanism/admission/manifest.json)
+recomputed that strict bound from published profile bytes and passed;
+publish/verify its receipt before the one 10m own pair. No poker-strength
+result yet.
+The single admitted [own pair](../results/known-turn-exact-mechanism/own/manifest.json)
+then completed both fixed 10m-work paths once. Preliminary own scoring on
+the **known** input is 0.006423 versus 0.025118 initial pots for exact turn
+and q8 control, with full whole coverage and zero recall violations. Own
+policies and scores must be published/verified before the pinned scalar
+audit; no accepted strength or default claim yet.
+The [independent scalar audit](../results/known-turn-exact-mechanism/native/manifest.json)
+then passed all 12 saved policies with maximum error `4.263256414560601e-14`
+chips under the `1e-9` gate. The [fixed known-case result](known-turn-exact-mechanism-result.md)
+classifies the matched 10m pair **positive on this one known finite game**:
+exact-turn 0.006423 versus q8 control 0.025118 initial pots, paired
+−0.018695 pots, whole coverage 1.000, recall zero. The gain is chiefly
+turn-side; candidate river loss is slightly higher. One seed and a known
+input establish neither uncertainty across seeds nor transfer. Final exact
+report-head local/optional/hosted qualification and review remain pending;
+no default is promoted. The next poker-strength question, once this PR is
+fully qualified and merged, should test prospective board/range transfer
+without using already inspected inputs as unseen validation.
+Final exact report-head local base/optional checks, all-file hooks and
+[both hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45294831863)
+passed, with the initial wrapper status mistake retained in the
+[final receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
+PR #108 awaits receipt publication and solo review/history merge. The
+positive known-game result remains limited to this pre-evaluated input.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -1,0 +1,60 @@
+"""Archive the single admitted known-case own pair before reference work."""
+
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+SOURCE = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+HEAD = "a5f1bb5d3d8ff029a696b0c9629d3b7fcf29264d"
+ARMS = ("signed_full_q8_turn_exact_river", "signed_full_exact_turn_river")
+
+
+def package(folder: Path, output: Path) -> None:
+    if output.exists() or output.is_symlink():
+        raise FileExistsError("retain earlier own pair")
+    state = json.loads((folder / "job-state.json").read_bytes())
+    result = json.loads((folder / "raw/result.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["cap_seconds"] != 7200
+        or not 0 < state["observed_wall_seconds"] < 7200
+        or state["source_head"] != HEAD
+        or state["source_fingerprint"] != SOURCE
+        or result["status"] != "completed"
+        or result["stage"] != "study"
+        or result["head"] != HEAD
+        or result["source_fingerprint"] != SOURCE
+        or result["assignments"] != [[0], [1]]
+        or result["worker_count"] != 2
+    ):
+        raise ArithmeticError("fixed own pair identity, grid or cap failed")
+    for index, arm in enumerate(ARMS):
+        summary = json.loads((folder / "raw/study" / f"path{index:02d}" / "summary.json").read_bytes())
+        if (
+            summary["path"] != dict(index=index, game="full_new_medium_dry_oop", arm=arm, seed=0)
+            or summary["labels"] != [100000, 1000000, 10000000]
+            or summary["final_work"] < 10000000
+            or len(summary["captures"]) != 6
+            or summary["recall_violations"] != 0
+        ):
+            raise ArithmeticError("own path, work or readouts changed")
+    if (folder / "launch.exit").read_text().strip() != "0":
+        raise ArithmeticError("own launcher exit changed")
+    if any(path.is_symlink() for path in (folder / "raw").rglob("*")):
+        raise ValueError("raw own symlink")
+    shutil.copytree(folder / "raw", output)
+    for name in ("job-state.json", "launch.exit", "launch.log", "launcher.log", "launcher.py", "package_stage.py"):
+        shutil.copyfile(folder / name, output / (name + ".txt" if name.endswith(".py") else name))
+    files = []
+    for path in sorted(p for p in output.rglob("*") if p.is_file()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.relative_to(output).as_posix(), bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (output / "manifest.json").write_text(json.dumps(dict(status="own_published", source_fingerprint=SOURCE, files=files),sort_keys=True,indent=2)+"\n")
+    print("own_published",len(files),output)
+
+
+if __name__ == "__main__":
+    root = Path(__file__).resolve().parents[3]
+    package(Path(__file__).resolve().parent, root / "results/known-turn-exact-mechanism/own")

@@ -125,15 +125,15 @@ not a record of completed practice.
 ## Where the project stands
 
 **Current as of November 23, 2026:** [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107)
-has a frozen prospective exact-turn comparison on one known mechanistic
-input and three new card/range inputs on known public templates. Its tested
-source passed all four exact-source local lanes, all-file hooks and both
-[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45256396875).
-The [one frozen inventory](turn-exact-transfer-result.md) then met its
-registered structural stop: all three new inputs have zero turn-key
-collisions. This experiment is **inconclusive for poker strength**, and
-no training or default change followed. The prior [broader-input result](river-full-broader-spots-result.md)
-remains negative. Earlier status paragraphs below preserve the sequence of
+history-merged an **inconclusive** structural-stop comparison after all
+required checks. Its three selected new card/range inputs on known public
+templates had zero turn-key collisions, so no policy was trained or default
+changed. The prior [broader-input result](river-full-broader-spots-result.md)
+remains negative. The next [prospective known-case
+test](known-turn-exact-mechanism.md) asks whether separating 12 diagnosed
+turn collisions improves the already evaluated As Jc 5d 3h medium/dry
+game at identical charged work. No new policy or score exists at protocol
+publication. Earlier status paragraphs below preserve the sequence of
 investigations.
 
 The simulator and learning tools work. The open question is how to make the
@@ -9435,6 +9435,149 @@ receipt, finish solo review and history-preserving merge, then register a
 separate known-case mechanism question if it is the best next poker
 decision test. Codex assisted; no human time or personal learning was
 reported.
+
+**November 23 PR #107 closure and next question.** The [structural-stop
+result](turn-exact-transfer-result.md) was history-merged after the final
+exact-source local/optional suites, hooks, solo review and both receipt-head
+hosted Python jobs passed. The first 3.11 hosted job timed out at 96%; its
+log remains saved, and one unchanged same-commit operational rerun passed.
+**Question:** on the *already known* As Jc 5d 3h medium/dry game, does
+separating the 12 diagnosed turn collisions improve poker decisions at
+matched full expected work? The new [prospective plan](known-turn-exact-mechanism.md)
+fixes the old q8 control, exact-turn candidate, deterministic seed, work,
+measurements, gates, compute admission and caps before any policy result.
+**Example:** the earlier saved Jh 9h and Qd Qh hands share one q8 row but
+have opposite local action preferences under the saved opposing policy;
+separate keys could help, but only the fixed training comparison can test
+that causal hypothesis on this known game. No claim of new-input transfer,
+seed uncertainty or default promotion follows. **Next decision:** publish
+and verify the protocol, then implement isolated tested source before any
+real training. Codex assisted; no human time or personal learning was
+reported.
+
+**November 23 isolated known-case source.** The new PR #108 adapter
+reuses PR #107's unchanged exact-turn key and full expected learner, with a
+new two-path runner, evidence guards, strict forecast and fixed report.
+**Example:** a synthetic one-hand-per-seat turn game has a one-to-one q8
+mapping, so splitting turn keys cannot invent a new information choice.
+Four new tests and 24 inherited full-pass/representation tests passed;
+Ruff/format and strict mypy (1,004 files) passed. Early import, typing
+export and style failures were retained and fixed before any new real
+trajectory. **Next decision:** complete exact-source base/optional/hooks
+and hosted qualification, then publish the source receipt before the one
+fictional proof. The known medium/dry strength result is still unknown.
+Codex assisted; no human time or personal learning was reported.
+
+**November 23 known-case exact-source qualification.** The isolated
+source passed both complete local Python suites, both fixed optional
+suites, hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45285559652)
+on one exact source. **Example:** the optional checks confirm the installed
+OpenSpiel 2.0.2 license hash while the parent exact-turn and earlier
+experiment source fingerprints stay unchanged. A detached local wrapper
+stopped after base 3.11 passed; its full receipt was retained and the
+supervised continuation ran the remaining three roles only. This is an
+operational interruption, not a poker result. **Next decision:** publish
+and verify the complete [source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json)
+before the one fictional proof; no real-game policy or score exists yet.
+Codex assisted; no human time or personal learning was reported.
+
+**November 23 fictional known-case proof.** After the source-check
+receipt was published and verified, one 180-second-capped fictional
+signal-game proof saved and replayed both representation labels at three
+work checkpoints. **Example:** both toy paths reach 726 charged visits
+and produce the same saved scores, so the new two-path wrapper does not
+change the underlying fictional learner merely by choosing an arm label.
+The launcher exited zero in 0.783 seconds; 12 current/linear toy readouts
+and their mass/snapshot bytes are retained in the
+[proof archive](../results/known-turn-exact-mechanism/own-proof/manifest.json).
+**Next decision:** publish/verify this proof, then profile all six fixed
+real-game 1m paths under the registered cap before any longer study. This
+proof says nothing about the known medium/dry policy's strength. Codex
+assisted; no human time or personal learning was reported.
+
+**November 23 fixed known-case profile.** The one prescribed profile
+completed both paths three times each to the first 1m charged-work
+crossing. **Example:** the exact-turn candidate's slowest complete repeat
+scales to 42.767612 seconds at 10m work; the q8 control's slowest scales
+to 42.752851 seconds. The registered two-worker safety formula gives
+`1,371.070446 < 7,200` seconds. The maximum worker RSS was 223,363,072
+bytes and all six paths were retained in the
+[raw profile](../results/known-turn-exact-mechanism/profile/manifest.json).
+**Next decision:** publish/verify every profile byte, then recompute the
+strict admission separately before any 10m policy. A fast profile does
+not mean the new representation plays better. Codex assisted; no human
+time or personal learning was reported.
+
+**November 23 separate known-case admission.** From the published
+profile, a separate data-only reader recomputed the strict bound
+`1,371.070446 < 7,200` seconds and marked the fixed two-path comparison
+**admitted**. **Example:** each path's worst of three observed profile
+repeats, not its fastest repeat, determines the two-worker forecast.
+The [admission receipt](../results/known-turn-exact-mechanism/admission/manifest.json)
+retains the exact profile pin and decision. **Next decision:** publish
+and verify admission, then run the one allowed 10m own comparison. No
+poker-strength claim follows from a compute forecast. Codex assisted;
+no human time or personal learning was reported.
+
+**November 23 final known-game qualification.** Both base Python versions
+passed the complete fast suite, both optional versions passed their pinned
+81-suite check, and the report-head hosted jobs and hooks passed. The
+[retained receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json)
+includes an initial wrapper failure before any test: the wrapper used the
+wrong status label for an already published proof, then was corrected and
+all four roles reran. **Example:** a failing evidence reader can be a
+software wiring problem without implying a poker score changed; retaining
+both runs makes that distinction reviewable. **Next decision:** review the
+qualified known-game result, then ask a separate prospective transfer
+question. No default promotion follows from this one board. Codex
+assisted; no human time or personal learning was reported.
+
+**November 23 fixed known-game decision report.** The exact-turn learner
+improved the previously examined medium/dry game at the same charged work:
+final exploitability fell from 0.025118 to 0.006423 initial pots, passing
+the prospectively fixed candidate and paired gates. **Example:** for the
+Jh 9h turn fold/call row on As Jc 5d 3h, the control's contribution to
+best-response gain is 0.746330 chips at the final checkpoint; the
+[fixed report](known-turn-exact-mechanism-result.md) shows both arms'
+saved action probabilities and alternative values at all three budgets.
+The aggregate turn weakness shrank, while the candidate's river weakness
+rose slightly. These values assume a fixed saved opponent and optimized
+best-reply continuation, so they are not universal action advice.
+**Next decision:** finish final source qualification and review, then
+consider a separately preregistered transfer test on genuinely uninspected
+inputs. This one known board and deterministic seed cannot establish
+uncertainty across seeds or transfer. No default was promoted. Codex
+assisted; no human time or personal learning was reported.
+
+**November 23 independent scalar audit.** The single pinned OpenSpiel
+2.0.2 comparison checked both saved policies at each registered work
+checkpoint, with both current and linear-average readouts. Its largest
+independent numerical difference was `4.263256414560601e-14` chips, below
+the fixed `1e-9`-chip gate. **Example:** this validates the final reported
+score calculation independently; it does not show whether the one known
+board generalizes to another board. The [complete audit](../results/known-turn-exact-mechanism/native/manifest.json)
+retains all 12 rows and the installed license hash. **Next decision:**
+publish the audit before building the fixed card/action report; no reference
+strategy was loaded into training. Codex assisted; no human time or personal
+learning was reported.
+
+**November 23 one known-case own pair.** The single admitted
+control/candidate comparison trained each representation from scratch to
+the same 10,012,410 charged visits and retained all 12 policies. The own
+scorer's final linear-average candidate is 0.231219 chips versus
+0.904254 chips for q8 control, or 0.006423 versus 0.025118 of the 36-
+chip initial pot. **Example:** finer turn keys can let the previously
+shared Jh 9h and Qd Qh situations take separate action probabilities;
+the actual [own archive](../results/known-turn-exact-mechanism/own/manifest.json)
+contains both saved policies and earlier checkpoints for checking the
+specific decisions. That example is a hypothesis until the fixed report
+shows those rows. Both paths have whole coverage 1.000 and zero recall
+violations; candidate post-initial-river coverage is 0.969010. This is
+one deterministic **known-game** pair with no seed-based uncertainty or
+transfer claim. **Next decision:** publish/verify own bytes before the
+pinned scalar audit and fixed decision report. Do not call the apparent
+gain accepted until those gates pass. Codex assisted; no human time or
+personal learning was reported.
 
 ### November 18: locate current CPU in receipt prerequisites
 

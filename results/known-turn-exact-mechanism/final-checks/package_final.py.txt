@@ -1,0 +1,79 @@
+"""Seal final exact-report qualification with retained failed wrapper attempt."""
+
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-turn-exact-mechanism/final-checks"
+HEAD = "d9df778a4058feaa7ab81106b8b237e2473c8980"
+SOURCE = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def copy(source: Path, destination: Path) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix == ".log":
+        with destination.with_name(destination.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == ".py":
+        shutil.copyfile(source, destination.with_name(destination.name + ".txt"))
+    else:
+        shutil.copyfile(source, destination)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier final receipt")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    first = json.loads((RAW / "first-attempt/base311.json").read_bytes())
+    if (
+        state["head"] != HEAD
+        or state["status"] != "passed"
+        or [(row["role"], row["exit_code"]) for row in state["completed"]]
+        != [(role, 0) for role in ROLES]
+        or any(row["head"] != HEAD or row["status"] != "passed" or row["source_fingerprint"] != SOURCE for row in receipts)
+        or any(row["suite_count"] != 81 for row in receipts[2:])
+        or first["status"] != "failed"
+        or first["head"] != HEAD
+        or first["source_fingerprint"] != SOURCE
+        or (RAW / "hooks.exit").read_text().strip() != "0"
+        or hosted["headSha"] != HEAD
+        or hosted["conclusion"] != "success"
+        or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"}
+        or any(row["conclusion"] != "success" for row in hosted["jobs"])
+    ):
+        raise ArithmeticError("final qualification or retained wrapper failure mismatch")
+    for stage in ("source-checks", "own-proof", "profile", "admission", "own", "native", "report"):
+        if not (ROOT / "results/known-turn-exact-mechanism" / stage / "manifest.json").is_file():
+            raise FileNotFoundError(stage)
+    for role, phrase in (("base311", "5799 passed, 73 skipped, 150 deselected"), ("base312", "5799 passed, 73 skipped, 150 deselected"), ("optional311", "2597 passed"), ("optional312", "2595 passed, 2 skipped")):
+        if phrase not in (RAW / f"{role}.log").read_text():
+            raise ArithmeticError("final test summary missing: " + role)
+    OUT.mkdir(parents=True)
+    names = ["driver-state.json", "driver.log", "driver.py", "runner.py", "optional-suites.json", "package_final.py", "hooks.exit", "hooks.log", "hosted.json", "hosted.log"]
+    names += [f"{role}.{ext}" for role in ROLES for ext in ("json", "log")]
+    for name in names:
+        copy(RAW / name, OUT / name)
+    for name in ("base311.json", "base311.log", "driver.log", "driver-state.json", "runner.py"):
+        copy(RAW / "first-attempt" / name, OUT / "first-attempt" / name)
+    result = dict(status="final_qualified", report_head=HEAD, source_fingerprint=SOURCE, local_roles=receipts, first_wrapper_attempt_failed_before_tests=True, hooks="passed", hosted_run=hosted["databaseId"], hosted_jobs=[dict(name=row["name"], conclusion=row["conclusion"]) for row in hosted["jobs"]], classification="positive_known_game", no_new_training=True)
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(p for p in OUT.rglob("*") if p.is_file()):
+        data = path.read_bytes()
+        files.append(dict(file=path.relative_to(OUT).as_posix(), bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="final_qualified", source_fingerprint=SOURCE, files=files), sort_keys=True, indent=2) + "\n")
+    print("final_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

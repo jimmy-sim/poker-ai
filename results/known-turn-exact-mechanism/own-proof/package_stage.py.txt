@@ -1,0 +1,51 @@
+"""Archive the single source-qualified, capped fictional known-turn proof."""
+
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+SOURCE = "6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4"
+HEAD = "b227e4de0fe7cb2cad5549a99a4795a8831add3d"
+
+
+def package(folder: Path, output: Path) -> None:
+    if output.exists() or output.is_symlink():
+        raise FileExistsError("retain earlier proof archive")
+    state = json.loads((folder / "job-state.json").read_bytes())
+    result = json.loads((folder / "raw/result.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["cap_seconds"] != 180
+        or not 0 < state["observed_wall_seconds"] < 180
+        or state["source_head"] != HEAD
+        or state["source_fingerprint"] != SOURCE
+        or result["status"] != "completed"
+        or result["stage"] != "proof"
+        or result["head"] != HEAD
+        or result["source_fingerprint"] != SOURCE
+        or result["fixture"] != "fictional signal game"
+        or result["captures_per_arm"] != 6
+        or result["final_work"] < 720
+    ):
+        raise ArithmeticError("fictional proof identity, work or cap failed")
+    if (folder / "launch.exit").read_text().strip() != "0":
+        raise ArithmeticError("proof launcher exit changed")
+    if any(path.is_symlink() for path in (folder / "raw").rglob("*")):
+        raise ValueError("raw proof symlink")
+    shutil.copytree(folder / "raw", output)
+    for name in ("job-state.json", "launch.exit", "launch.log", "launcher.log", "launcher.py", "package_stage.py"):
+        source = folder / name
+        shutil.copyfile(source, output / (name + ".txt" if name.endswith(".py") else name))
+    files = []
+    for path in sorted(p for p in output.rglob("*") if p.is_file()):
+        raw = path.read_bytes()
+        files.append(dict(file=path.relative_to(output).as_posix(), bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest()))
+    (output / "manifest.json").write_text(json.dumps(dict(status="proof_passed", source_fingerprint=SOURCE, files=files),sort_keys=True,indent=2)+"\n")
+    print("proof_passed",len(files),output)
+
+
+if __name__ == "__main__":
+    root = Path(__file__).resolve().parents[3]
+    package(Path(__file__).resolve().parent, root / "results/known-turn-exact-mechanism/own-proof")

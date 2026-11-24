@@ -13,6 +13,166 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #108 final exact-report qualification
+
+- On report commit `d9df778a`, serial local base 3.11/3.12 each passed
+  5,799 tests, 73 skipped and 150 slow deselected with lint, format,
+  strict mypy and pre/post source/archive/runtime/lock guards. Optional
+  3.11 passed 2,597 and optional 3.12 passed 2,595 with two expected
+  skips; both pinned OpenSpiel, Numba and license guards passed.
+  All-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45294831863)
+  passed. The first local wrapper failed before tests on a mistaken proof
+  status string; its failed log/receipt/wrapper are retained with the
+  corrected full run in the [final check receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
+  No scientific code, protocol or outcome changed. Next: publish/verify
+  this receipt, solo review and history merge if eligible. Codex assisted;
+  human time or learning was not reported.
+
+## 2026-11-23 — PR #108 fixed known-game report
+
+- The fixed [decision report](known-turn-exact-mechanism-result.md) replayed
+  all 12 published own policies and the published independent scalar audit.
+  The frozen rule classifies the one known As Jc 5d 3h seed-zero pair
+  **positive**: candidate 0.006422763 versus control 0.025118161 initial
+  pots at matched 10,012,410 charged work, paired −0.018695397 pots;
+  candidate passes both absolute gates, whole coverage 1.000 and recall
+  zero. Final additive turn loss is 0.151366 versus control 0.861096 chips;
+  candidate river loss is 0.079854 versus control 0.043158 chips. Seven
+  fixed/control-ranked decision rows retain cards, actions, probabilities,
+  reach and local values. One known input/seed has no transfer or seed
+  uncertainty claim. The first report invocation stopped at shell
+  redirection before Python started; its preflight correction is retained.
+  Next: publish/verify report, run final exact-source local/optional/hooks
+  and hosted checks, then review PR #108. No default promotion. Codex
+  assisted; human time/learning not reported.
+
+## 2026-11-23 — PR #108 pinned scalar audit
+
+- After the complete own archive was published and byte-verified, the one
+  registered comparison-only OpenSpiel 2.0.2 audit checked all 12 saved
+  policies at 100k/1m/10m work, current and linear average. Maximum
+  independent scalar error was `4.263256414560601e-14` chips versus the
+  `1e-9` gate. Internal time was 12.185 seconds; the launcher took 12.902
+  seconds under the 900-second cap. Installed Apache-2.0 license hash and
+  every row, PID and log are retained in the [native archive](../results/known-turn-exact-mechanism/native/manifest.json).
+  A prelaunch expected-HEAD typo was corrected before any audit worker or
+  output existed and is recorded there. Reference strategies did not enter
+  training. Next: publish/verify this audit, then run the fixed decision
+  report from published bytes. Codex assisted; human time or learning was
+  not reported.
+
+## 2026-11-23 — PR #107 closure and known-case turn protocol
+
+- [PR #107](https://github.com/jimmy-sim/poker-ai/pull/107) was history-merged
+  as `e147802c8c2ecefbe7722a793d0c34169c118f6b` after solo review,
+  four exact-source local lanes, hooks and both receipt-head hosted jobs.
+  The first Python 3.11 job canceled at the unchanged 35-minute cap after
+  96% of pytest, without a preceding test failure. The failed metadata/log
+  remain under ignored persistent
+  `results/runs/turn-exact-transfer-receipt-ci-20261123/`; one targeted
+  same-SHA Python 3.11 operational requalification passed 5,795 tests,
+  73 skipped, 150 deselected and hooks in 24m24s. Python 3.12 passed.
+  [Post-merge main CI 45283536151](https://github.com/jimmy-sim/poker-ai/actions/runs/45283536151)
+  is separately pending at this entry. The one structural inventory ended
+  the scientific comparison **inconclusive for poker strength** before
+  training because all three selected new inputs had zero turn collisions.
+  No outcome, seed, input or cap was changed and no default promoted.
+  Codex assisted; human time or personal learning was not reported.
+
+- The distinct [known-case prospective protocol](known-turn-exact-mechanism.md)
+  fixes the already evaluated As Jc 5d 3h medium/dry input with 12 turn
+  collisions, a same-work q8 control and exact-turn candidate, deterministic
+  seed zero, 100k/1m/10m checkpoints, historical absolute and paired gates,
+  six-path profile, strict conservative admission, 7,200-second own cap and
+  own-before-reference boundary. It is a mechanism test on **one known
+  game**, not a new holdout or generalization test. The PR #107 source and
+  old result files remain pinned. No new game-tree, policy, profile or
+  score measurement existed at this protocol checkpoint. Codex assisted;
+  human time or personal learning was not reported.
+
+- PR #108's isolated runner, source/archive guards, strict two-worker
+  forecast, comparison-only scalar audit, fixed report and synthetic
+  no-collision regression were implemented without changing PR #107 or
+  historical pinned files. Four new focused tests and 24 inherited full-pass
+  and exact-turn tests passed together (28 total); Ruff lint/format passed
+  all project files and strict mypy passed 1,004 source files. The first
+  unformatted source and missing test import/explicit export failures are
+  retained under ignored `results/runs/known-turn-source-20261123/` and were
+  corrected before source qualification. No new game-tree, profile, policy
+  or score measurement occurred. Next: publish tested source, then run all
+  four exact-source local/optional roles, hooks and both hosted jobs before
+  any real trajectory. Codex assisted; human time/learning not reported.
+
+- Exact-source PR #108 qualification on tested commit `0b899554` passed
+  base Python 3.11/3.12 with 5,799 passed, 73 skipped, 150 slow
+  deselected each; optional 3.11 passed 2,597 and optional 3.12 passed
+  2,595 with two expected skips across the fixed 81 suites. Pre/post
+  guards bound the new source fingerprint
+  `6e09c02673ca596e6082ea8d0a57ba12cd2533acfaf2c777991c4d29f395e0f4`,
+  historical sources, lock, installed runtimes and OpenSpiel/Numba/license.
+  All-file hooks and both [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45285559652)
+  passed. The first detached local wrapper stopped after writing a passing
+  base 3.11 receipt but before updating its driver state; no worker
+  survived, and a supervised continuation accepted that receipt and ran
+  only the three remaining roles. The interruption and prior software
+  iteration failures remain in the [source receipt](../results/known-turn-exact-mechanism/source-checks/manifest.json),
+  32 hashed members. No real-game path, profile or score has run. Next:
+  publish and GitHub-byte-verify this receipt before the one capped
+  fictional proof. Codex assisted; human time/learning not reported.
+
+- After the source receipt was published and GitHub-byte-verified,
+  PR #108's single [fictional own proof](../results/known-turn-exact-mechanism/own-proof/manifest.json)
+  ran from clean receipt HEAD `b227e4de` with the pinned base 3.11
+  environment. Both representation labels saved and replayed six fixed
+  readouts each at 80/240/720 work crossings, final charged work 726.
+  The whole launcher exited zero in 0.783 seconds under the 180-second
+  cap. The 32-member archive retains raw policies, mass, scores, events,
+  launcher PIDs, environment and logs. This is a software proof, not a
+  known medium/dry strength result. Next: publish/byte-verify proof, then
+  one fixed six-path, three-repeat 1m-work profile. Codex assisted;
+  human time/learning not reported.
+
+- The one fixed PR #108 six-path, three-repeat [profile](../results/known-turn-exact-mechanism/profile/manifest.json)
+  completed on clean proof HEAD `11a12d80` in 13.029 internal/13.771
+  launcher seconds (<900). Every path reached 1,022,544 charged visits,
+  saved/replayed current and linear-average policies, and retained all
+  timings; peak worker RSS was 223,363,072 bytes. Worst-repeat 10m
+  extrapolations are 42.752851 seconds for q8 control and 42.767612
+  seconds for exact-turn candidate. Fixed two-worker `T=42.767612`, giving
+  strict `2*(2*T+600)=1,371.070446 < 7,200` seconds. This is a forecast,
+  **not** admission or strength. All 45 raw/launcher members are sealed;
+  next: publish/byte-verify profile, then one separate data-only admission.
+  Codex assisted; human time/learning not reported.
+
+- After all 45 profile members and 49 changed blobs were published and
+  verified, PR #108's separate data-only
+  [admission](../results/known-turn-exact-mechanism/admission/manifest.json)
+  recomputed the six unselected profile repeats from clean `4ce972d2`.
+  Fixed two-worker `T=42.7676115453` seconds gives strict bound
+  `1,371.0704461813 < 7,200` seconds, so status **admitted**. The
+  launcher exited zero in 0.722 seconds; eight raw/launcher members are
+  retained. No 10m policy has started. Next: publish/byte-verify admission,
+  then run the single fixed two-path own study within 7,200 seconds with
+  120 seconds reserved for failure save. Codex assisted; human time/
+  learning not reported.
+
+- The one admitted PR #108 matched-work [own pair](../results/known-turn-exact-mechanism/own/manifest.json)
+  completed once from clean admission HEAD `a5f1bb5d` under its 7,200-
+  second cap: 13.740 internal/14.516 launcher seconds, both arms at
+  10,012,410 charged visits, six saved current/linear-average policies
+  each, whole coverage 1.000 and zero recall violations. Final own-only
+  exact exploitability is 0.904254 chips (0.025118 initial pots) for the
+  q8 control and 0.231219 chips (0.006423 pots) for the exact-turn
+  candidate, paired difference −0.018695 pots. At 100k/1m the paired
+  differences are −0.003080/−0.026396 pots. Final post-initial-river
+  coverage is 0.994179/0.969010 respectively; peak worker RSS
+  173,735,936/156,663,808 bytes. All 32 raw/launcher members are sealed.
+  These are preliminary own calculations on one **known** game, not an
+  accepted strength claim or seed-based uncertainty estimate. Next:
+  publish/GitHub-byte-verify every own policy/score before the one pinned
+  comparison-only OpenSpiel audit. Codex assisted; human time/learning
+  not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged

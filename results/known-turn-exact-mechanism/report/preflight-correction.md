@@ -1,0 +1,1 @@
+First report invocation did not start Python because the output log parent directory had not been created; zsh redirection failed. No report output existed. The parent directory was created before the same registered report invocation.

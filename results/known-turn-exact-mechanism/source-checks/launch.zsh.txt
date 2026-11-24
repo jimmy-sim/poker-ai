@@ -1,0 +1,7 @@
+#!/bin/zsh
+cd '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse' || exit 1
+source ../poker-env.sh || exit 1
+python3 -u '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-exact-source-20261123/driver.py' > '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-exact-source-20261123/driver.log' 2>&1
+code=$?
+print -r -- "$code" > '/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-exact-source-20261123/driver.exit'
+exit "$code"
