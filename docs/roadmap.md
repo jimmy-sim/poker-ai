@@ -382,6 +382,14 @@ passed, all-file hooks and both hosted report-head jobs passed. The
 retains two preflight-only wrapper failures separately. Publish and
 verify this receipt, then complete solo review and history-preserving
 merge if eligible. The negative poker result stays negative.
+[PR #112](https://github.com/jimmy-sim/poker-ai/pull/112) then
+history-merged as `4c26fbea` after both receipt-head hosted jobs passed
+and solo review. Post-merge main CI is tracked separately. The next
+[prospective saved-policy attribution](known-turn-loss-attribution.md)
+asks where the failed recency update moved exact-row weakness across
+the same two **known** games. It fixes all four final-average policies,
+all-row ranking rules and a strict read-only cap before collecting any
+new trace. It is diagnostic, with no new training or strength claim.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -141,7 +141,10 @@ Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
 The [fixed learning-rule result](known-turn-regret-recency-result.md) is
 negative on its two known games: dry improves, wet worsens beyond frozen
 limits. Exact-report local/optional/hooks/hosted checks passed; the final
-receipt awaits publication and review.
+receipt was published and verified. PR #112 history-merged as `4c26fbea` after receipt-head CI and
+solo review; post-merge main CI is separate. A distinct
+[prospective saved-policy attribution](known-turn-loss-attribution.md)
+is being published before any new row trace.
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9877,6 +9880,21 @@ change. **Next decision:** publish/verify the receipt, complete solo
 review and history merge if eligible, then choose a distinct bounded
 research question. The poker conclusion stays negative. Codex assisted;
 no human time or personal learning was reported.
+
+**November 24 locate the wet recency regression before another learner.**
+PR #112's final report already shows that wet turn loss increased by
+0.411577 chips, while the two previously dominant turn rows increased
+by only 0.016565 chips. That leaves about 96% of the turn increase
+outside those two rows. **Question:** is the new positive worsening mass
+concentrated elsewhere, or spread over many decisions? The
+[prospective protocol](known-turn-loss-attribution.md) fixes a read-only
+all-row decomposition of four saved final-average policies on the same
+two known games, with ranked rows, thresholds and compute cap before
+new traces. This will locate a weakness, not prove a causal action
+change or improve play by itself. **Next decision:** publish and verify
+the protocol, qualify isolated tracing code, then make the one admitted
+saved-policy report. No new strategy is trained at this checkpoint.
+Codex assisted; no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

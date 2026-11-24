@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective saved-policy loss attribution
+
+- [PR #112](https://github.com/jimmy-sim/poker-ai/pull/112) history-merged
+  as `4c26fbea` after both receipt-head hosted jobs passed and solo
+  review; all evidence commits remain on main. Post-merge main CI is
+  running separately. The frozen negative wet/dry result is unchanged.
+  The next [prospective diagnostic protocol](known-turn-loss-attribution.md)
+  fixes four already published final-average policies at matched work,
+  complete exact-row attribution/ranking, a 900-second cap and separate
+  data-only admission. It asks whether the wet loss shifted beyond the
+  previously diagnosed rows; it starts no training or new outcome at
+  protocol publication. Next: publish/verify protocol and hosted CI,
+  then isolate source and qualify it. Codex assisted; human time and
+  personal learning were not reported.
+
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
 - Final exact-report local qualification at `19fb8e49` passed four
