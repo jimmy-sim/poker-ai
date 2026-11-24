@@ -9585,6 +9585,25 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 one known-wet own comparison.** The exact-turn key
+separated six q8 turn groups, and both representations saw the same
+10,117,956 charged work. **Example:** with a 36-chip initial pot, the
+control's final average exploitability is 2.22649 chips, while the
+candidate's is 1.07299 chips. Lower means an optimized opponent can gain
+less against that saved strategy in this restricted game. The paired
+improvement is 1.15351 chips, but the candidate still leaves about
+0.02981 initial pots exploitable, above both frozen 0.01 final and
+0.025 worst gates. Thus the [own policies and scores](../results/known-wet-turn-mechanism/own/manifest.json)
+point to a **negative** acceptance result, pending the independent
+comparison-only scalar check. Whole positive-average coverage is 1.0;
+post-initial-river coverage is lower for the candidate (0.85546 versus
+0.90390), a separate readout rather than a new threshold. One known
+case and deterministic seed give no confidence interval or transfer
+claim. **Next decision:** publish all own bytes before reading any
+OpenSpiel reference result, then complete the prescribed audit and
+fixed decision report. Codex assisted; no human time or personal
+learning was reported.
+
 **November 23 separate known-wet compute admission.** The profile
 forecast became a decision only after a separate process read the
 published profile and recomputed the worst-repeat formula. **Example:**

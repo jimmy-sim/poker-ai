@@ -13,6 +13,29 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 one fixed own policy pair
+
+- The sole admitted two-worker control/candidate run completed in
+  48.32/7,200 seconds from published admission `a3974b40`, deterministic
+  seed zero, both paths at 10,117,956 charged nodes with all six
+  captures/path and zero recall violations. The complete
+  [own archive](../results/known-wet-turn-mechanism/own/manifest.json)
+  retains policies, own scores, positive-average reach masses, events,
+  timing and worker peak RSS. Final linear-average exact restricted-game
+  exploitability was 2.2264918915 chips (0.061846997 initial pots) for
+  q8 control and 1.0729866053 chips (0.0298051835 pots) for exact-turn
+  candidate, a paired candidate-minus-control difference of
+  −1.1535052863 chips (−0.0320418135 pots). Both paths have whole
+  positive-average coverage 1.0; candidate post-initial-river coverage
+  is 0.8554558 versus control 0.9038961. The candidate **fails** its
+  frozen final ≤0.01-pot and worst ≤0.025-pot absolute gates despite
+  the paired gain: provisional classification **negative**, pending
+  independent scalar audit of all 12 saved policies. This one known
+  game/seed does not establish generalization or confidence. No reference
+  output has been read or loaded. Next: publish and GitHub-byte-verify
+  all own bytes before comparison-only OpenSpiel. Codex assisted; human
+  time and personal learning were not reported.
+
 ## 2026-11-23 — PR #110 strict compute admission
 
 - The separate data-only gate recomputed the published profile exactly,
