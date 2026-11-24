@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 fictional proof before diagnosis
+
+- The [11-member fictional proof archive](../results/known-wet-residual-diagnosis/proof/manifest.json)
+  contains a synthetic 24-row ranking/additivity result, the guarded
+  1.13-second run under its 180-second cap, and the first retained
+  preflight failure. That first launcher exited before the proof because
+  it found `uv` 0.13.9 rather than required 0.13.5. The corrected
+  launcher used the pinned toolchain; neither attempt read saved poker
+  policy outcomes. The proof manifest SHA-256 is
+  `b5b054f554eaa5277231761aa68c5dcda028681af968dec198875aab5c8fe401`.
+  Next: publish and byte-verify the proof archive, then separately
+  compute and publish the fixed conservative admission before any real
+  candidate-ranked trace. Codex assisted; human time and personal
+  learning were not reported.
+
 ## 2026-11-24 — PR #111 exact-source qualification
 
 - The [20-member source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)

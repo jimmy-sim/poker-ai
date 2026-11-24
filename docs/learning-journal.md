@@ -9659,6 +9659,19 @@ on fictional data, and separately admit the capped read-only diagnosis
 before inspecting any saved candidate-ranked decision. Codex assisted;
 no human time or personal learning was reported.
 
+**November 24 fictional row proof.** A saved policy was still off limits
+at this checkpoint. **Example:** the synthetic 24-row fixture deliberately
+puts a larger gain at turn row 2 and river row 14, then verifies the
+fixed top-ten order and that street contributions sum to the total.
+The first launcher stopped at a `uv` version mismatch before running the
+fixture; its failure is retained with the [passing proof](../results/known-wet-residual-diagnosis/proof/manifest.json).
+The corrected run used pinned `uv` 0.13.5 and completed in 1.13 seconds
+under its 180-second cap. This confirms the ranking arithmetic on
+fictional data, not a poker-strength change. **Next decision:** publish
+the proof, separately admit the conservative compute bound, and only
+then read the fixed saved policies once. Codex assisted; no human time
+or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

@@ -324,9 +324,12 @@ PR #110's negative gates. Its isolated tracing source passed all four
 exact-head local base/optional lanes, all-file hooks and both
 [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45370824410);
 the [source receipt](../results/known-wet-residual-diagnosis/source-checks/manifest.json)
-records the exact pins. Publish and verify the receipt before fictional
-proof, separate compute admission and the one capped saved-policy
-diagnosis. Do not extend or relabel the negative PR #110 run.
+records the exact pins. The [fictional proof](../results/known-wet-residual-diagnosis/proof/manifest.json)
+then passed its fixed-row arithmetic under a 180-second cap after a
+retained preflight `uv` mismatch; it read no saved policy outcome.
+Publish and verify this proof before separate compute admission and the
+one capped saved-policy diagnosis. Do not extend or relabel the negative
+PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
