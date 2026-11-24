@@ -15,6 +15,20 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- Final exact-report local qualification at `19fb8e49` passed four
+  serial lanes with pre/post source/archive/runtime/lock and optional
+  OpenSpiel license guards: base Python 3.11/3.12 each 5,826 passed,
+  73 skipped, 150 slow deselected; optional 3.11 2,601 passed;
+  optional 3.12 2,599 passed and two expected skipped. All-file hooks,
+  independent 24-case/12-contrast/23-row report audit and both
+  [hosted report-head jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45414979807)
+  passed. The [37-member final receipt](../results/known-turn-regret-recency/final-checks/manifest.json)
+  retains official logs and two failed preflight wrappers (wrong new
+  proof status, then an overbroad wrapper edit of an unchanged historical
+  proof status) before tests; neither changed source or scientific
+  results. Next: publish and byte-verify receipt, then solo review and
+  history-preserving merge if eligible. Negative classification remains.
+  Codex assisted; human time and personal learning were not reported.
 - The fixed 24-policy/12-contrast/23-row report completed once in
   57.467/3,600 launcher seconds from published own and native bytes. Its
   [negative report](known-turn-regret-recency-result.md) and

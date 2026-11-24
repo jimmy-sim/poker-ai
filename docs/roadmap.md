@@ -375,7 +375,13 @@ maximum error versus the fixed `1e−9` threshold. The
 **negative** under the frozen rule: wet final exploitability is 0.047444
 initial pots versus 0.029805 control, while dry improves to 0.002055
 versus 0.006423. It retains all 24 policy cases and fixed decisions;
-final exact-report qualification remains.
+final exact-report qualification subsequently passed: both local base
+Python versions each ran 5,826 passing fast tests, both optional suites
+passed, all-file hooks and both hosted report-head jobs passed. The
+[final receipt](../results/known-turn-regret-recency/final-checks/manifest.json)
+retains two preflight-only wrapper failures separately. Publish and
+verify this receipt, then complete solo review and history-preserving
+merge if eligible. The negative poker result stays negative.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

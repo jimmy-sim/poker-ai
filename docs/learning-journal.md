@@ -140,7 +140,8 @@ at the unchanged limit, then passed in one targeted same-SHA rerun;
 Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
 The [fixed learning-rule result](known-turn-regret-recency-result.md) is
 negative on its two known games: dry improves, wet worsens beyond frozen
-limits. Final exact-report qualification remains.
+limits. Exact-report local/optional/hooks/hosted checks passed; the final
+receipt awaits publication and review.
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9862,6 +9863,20 @@ scalar error below `1e−9` chip. **Next decision:** finish exact-report
 qualification and review, then choose a distinct prospective question
 from the retained wet/dry contrast. No retry or default promotion.
 Codex assisted; no human time or personal learning was reported.
+
+**November 24 qualify the negative report exactly.** Both local base
+Python versions passed 5,826 tests each, both optional versions passed
+their fixed suites, and exact-head hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45414979807)
+passed. **Example:** the independent audit reconciled each of the 24
+saved scores with its turn/river additive gains, all 12 matched-work
+contrasts, all 23 fixed decision rows and the archived hashes. Two
+operational preflight wrappers failed on proof-status strings before
+tests; their logs are retained in the [final receipt](../results/known-turn-regret-recency/final-checks/manifest.json),
+and the corrected serial driver passed without a source or scientific
+change. **Next decision:** publish/verify the receipt, complete solo
+review and history merge if eligible, then choose a distinct bounded
+research question. The poker conclusion stays negative. Codex assisted;
+no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
