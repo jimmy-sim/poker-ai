@@ -134,8 +134,9 @@ has a prospectively fixed read-only question about which exact turn and
 river decisions account for the residual gain. Its isolated tracing
 source has passed local and hosted qualification. Its one capped replay
 found concentrated turn loss and diffuse river loss on that already
-known game; no new strategy was trained. Final report checks and review
-remain pending. Older status paragraphs below preserve
+known game; no new strategy was trained. Final report-head local, optional,
+hooks and hosted checks passed; receipt-head CI and review remain pending.
+Older status paragraphs below preserve
 the sequence of investigations.
 
 The simulator and learning tools work. The open question is how to make the
@@ -9705,6 +9706,19 @@ finish exact-report qualification and review, then preregister a
 distinct matched-work test of an evidence-backed turn learning/readout
 hypothesis. PR #110 stays negative and no default changes. Codex
 assisted; no human time or personal learning was reported.
+
+**November 24 checked residual diagnosis.** The saved-policy trace now has
+a [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+on its published report. **Example:** the 8,340 exact-row contributions
+across all 12 saved policies re-sum to their whole-policy scores within
+`7.11e−14` chips; this checks accounting, while the four local test lanes,
+hooks and both hosted jobs check the exact source and environment. The
+first proof preflight tool-version failure and intermediate canceled CI
+remain in the receipt. **Next decision:** publish and verify the receipt,
+then complete receipt-head CI and solo review before history merge. This
+qualification does not make the known-case diagnostic a poker-strength
+improvement. Codex assisted; no human time or personal learning was
+reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

@@ -13,6 +13,23 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 final diagnostic qualification
+
+- The [final 30-file receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+  binds the unchanged published diagnostic report to exact commit `70fc7db0`.
+  Serial base Python 3.11/3.12 each passed 5,816 tests, 73 skipped and
+  150 slow deselected; optional 3.11 passed 2,601 and optional 3.12 passed
+  2,599 with two expected skips. All pre/post source, archive, runtime,
+  lock and optional license guards, all-file hooks, and both
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45377664083)
+  passed. The receipt includes the independent 12-case/8,340-row audit
+  and retained intermediate CI cancellations and check iterations.
+  Manifest SHA-256 is `8ceca76ac92bc02e481cac7564d92ab04e4328573d0569590229324fee13ecee`.
+  Next: publish and byte-verify this receipt, require receipt-head CI,
+  then solo review and history merge. The one known-game result is
+  diagnostic only; PR #110's absolute acceptance remains negative.
+  Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — PR #111 one saved-policy residual diagnosis
 
 - The single admitted read-only replay completed all 12 fixed policies

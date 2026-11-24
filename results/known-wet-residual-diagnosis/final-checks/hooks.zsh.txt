@@ -1,0 +1,8 @@
+#!/bin/zsh
+source ../poker-env.sh
+export UV_PROJECT_ENVIRONMENT=results/runs/guarded-skip-requalification-20261118/envs/base311
+export UV_PYTHON=3.11.17
+uv run --locked pre-commit run --all-files > results/runs/known-wet-residual-final-20261124/exact-hooks.log 2>&1
+code=$?
+print -r -- "$code" > results/runs/known-wet-residual-final-20261124/exact-hooks.exit
+exit "$code"

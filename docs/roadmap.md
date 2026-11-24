@@ -337,7 +337,11 @@ top ten turn rows account for 95.23% of turn gain, while the top ten
 river rows account for 5.16% of river gain: concentrated turn weakness,
 diffuse river weakness on this **known** game. The complete raw row
 vectors are [retained](../results/known-wet-residual-diagnosis/diagnosis/manifest.json).
-Finish exact-report qualification and review before drawing a distinct
+The [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
+records passing serial base/optional local lanes, hooks and both report-head
+hosted jobs on the published result, plus the independent additive audit.
+Publish and byte-verify that receipt, then require receipt-head CI and solo
+review before history merge. Afterward draw a distinct
 prospective training/readout question from this diagnosis. Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

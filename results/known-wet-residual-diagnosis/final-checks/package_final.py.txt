@@ -1,0 +1,114 @@
+"""Seal exact-report local, optional, hooks, hosted and retained diagnostics."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-wet-residual-diagnosis/final-checks"
+HEAD = "70fc7db02c1a49eaeba66a476e486f6bf7ad47ca"
+SOURCE = "4901950e9b49d2f8e383152e67dba06f82b70a486db19905b9e810fdd67ff2d3"
+REPORT_SHA = "7c9349f12937acc578f2c8d7093178ce98c9ea9786e886caf180c6dcac0b12b5"
+HUMAN_SHA = "20d13892ab4fed9b7e15b5bb09cfeb7f2031e15a343b344325f90a99e15e4f3e"
+DIAGNOSIS_MANIFEST_SHA = "c2e483554baa8f5d4904baa90ea9e6fefb1d9c8babba8cc9b8004949bdeab3d9"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def copy(source: Path, name: str) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / name
+    if source.suffix == ".log":
+        with target.with_name(target.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix in (".py", ".zsh"):
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain prior final receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("exact report head changed or dirty")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    audit_folder = ROOT / "results/runs/known-wet-residual-diagnosis-20261124"
+    audit = json.loads((audit_folder / "report-audit.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["head"] != HEAD
+        or state["completed"] != [{"role": role, "exit_code": 0} for role in ROLES]
+        or any(row["status"] != "passed" or row["head"] != HEAD or row["source_fingerprint"] != SOURCE for row in receipts)
+        or any(row["suite_count"] != 82 for row in receipts[2:])
+        or hosted["headSha"] != HEAD
+        or hosted["conclusion"] != "success"
+        or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"}
+        or any(row["conclusion"] != "success" for row in hosted["jobs"])
+        or (RAW / "exact-hooks.exit").read_text().strip() != "0"
+        or audit["status"] != "passed"
+        or audit["head"] != "b55dce91f371d76c1d16f0a5143e9facff686d3f"
+        or audit["cases"] != 12
+        or audit["exact_rows"] != 8340
+        or audit["manifest_sha256"] != DIAGNOSIS_MANIFEST_SHA
+        or audit["max_sum_error_chips"] > 1e-9
+        or audit["max_parent_native_error_chips"] > 1e-9
+        or audit["min_contribution_chips"] < -1e-12
+        or sha(ROOT / "results/known-wet-residual-diagnosis/diagnosis/report.json") != REPORT_SHA
+        or sha(ROOT / "results/known-wet-residual-diagnosis/diagnosis/manifest.json") != DIAGNOSIS_MANIFEST_SHA
+        or sha(ROOT / "docs/known-wet-residual-diagnosis-result.md") != HUMAN_SHA
+    ):
+        raise ArithmeticError("final report, check, audit or source pin changed")
+    for role, phrase in (("base311", "5816 passed, 73 skipped, 150 deselected"), ("base312", "5816 passed, 73 skipped, 150 deselected"), ("optional311", "2601 passed"), ("optional312", "2599 passed, 2 skipped")):
+        if phrase not in (RAW / f"{role}.log").read_text():
+            raise ArithmeticError("final test summary missing: " + role)
+    OUT.mkdir(parents=True)
+    for name in ("driver-state.json", "driver.py", "runner.py", "launch.zsh", "hooks.zsh", "optional-suites.json", "package_final.py", "exact-hooks.exit", "exact-hooks.log", "hosted.json", "hosted.log"):
+        copy(RAW / name, name)
+    for role in ROLES:
+        for suffix in ("json", "log"):
+            name = f"{role}.{suffix}"
+            copy(RAW / name, name)
+    for name in ("audit_report.py", "report-audit.json", "report-audit.log", "report-check-iteration.md"):
+        copy(audit_folder / name, name)
+    for folder, label, stem in (
+        (ROOT / "results/runs/known-wet-residual-source-20261124", "source-receipt", "receipt-head-canceled"),
+        (ROOT / "results/runs/known-wet-residual-proof-envfix-20261124", "proof", "proof-head-canceled"),
+        (ROOT / "results/runs/known-wet-residual-admission-20261124", "admission", "admission-head-canceled"),
+    ):
+        for suffix in ("json", "log"):
+            copy(folder / f"{stem}.{suffix}", f"{label}-head-canceled.{suffix}")
+    result = dict(
+        status="final_qualified", tested_head=HEAD, source_fingerprint=SOURCE,
+        report_sha256=REPORT_SHA, human_report_sha256=HUMAN_SHA,
+        diagnostic_manifest_sha256=DIAGNOSIS_MANIFEST_SHA,
+        local_roles=receipts, hosted_run=hosted["databaseId"],
+        hosted_jobs=[{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        hooks="passed", independent_audit=audit,
+        scientific_result="turn_concentrated_river_diffuse_known_game_no_strength_change",
+        new_training_started=False, default_promoted=False,
+    )
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        data = path.read_bytes()
+        files.append(dict(file=path.name, bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    (OUT / "manifest.json").write_text(json.dumps(dict(status="final_qualified", source_fingerprint=SOURCE, files=files), sort_keys=True, indent=2) + "\n")
+    print("final_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()
