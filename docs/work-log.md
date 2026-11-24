@@ -15,6 +15,22 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- The one admitted two-path own study completed in 45.139/7,200 whole
+  seconds on the fixed seed zero. Both paths matched the archived
+  controls' final charged work (wet 10,117,956; dry 10,012,410), saved
+  all six policies each, replayed, had full whole-average coverage and
+  zero recall violations. Wet final linear-average exploitability is
+  1.707996887 chips / 0.047444358 initial pots, versus the immutable
+  0.029805183 control: paired **+0.017639174 pots** and both frozen
+  absolute limits fail. Dry is 0.073980859 chips / 0.002055024 pots
+  versus 0.006422763 control, paired −0.004367739 pots. Thus the own
+  outcome is **preliminarily negative** despite dry improvement; the
+  required pinned scalar audit and fixed report remain. The
+  [33-member own archive](../results/known-turn-regret-recency/own/manifest.json)
+  SHA-256 is `8b7d3a327d67f5b1c6b2b78e9b819676d86bfb9ec7613477450170caa482c7a9`.
+  Next: publish/byte-verify all own bytes **before** comparison-only
+  reference work. No retry, new representation or default promotion.
+  Codex assisted; human time and personal learning were not reported.
 - The [profile archive](../results/known-turn-regret-recency/profile/manifest.json)
   was committed and all 50 changed GitHub blobs and the publication
   guard passed. A **separate data-only admission** recomputed the same

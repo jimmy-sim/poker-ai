@@ -361,7 +361,13 @@ completed under its cap and projects a `1,972.992 < 7,200` second
 conservative bound. The separate data-only
 [admission](../results/known-turn-regret-recency/admission/manifest.json)
 recomputed the identical bound from published bytes and passed strictly;
-its archive must be published and byte-verified before any 10m training.
+its archive was published and byte-verified before any 10m training.
+The one admitted two-path own study completed at exactly matched work
+on both known games. Its [retained policies](../results/known-turn-regret-recency/own/manifest.json)
+show a **preliminary negative** result: wet final average is 0.047444
+initial pots, worse than the 0.029805 control and above the 0.01/0.025
+absolute gates, while dry improves. The own archive must be published
+before the pinned comparison-only scalar audit and fixed final report.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

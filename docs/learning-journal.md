@@ -9813,6 +9813,22 @@ publish and byte-verify admission, then make the one fixed two-path
 10m-work own study. The gate admits compute; it predicts no poker gain.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 compare the unchanged learner at fixed work.** The sole
+admitted candidate path on each known game completed with exactly the
+old controls' charged work, full saved-average coverage and zero recall
+violations. **Example:** on the wet `Qs Kd As 3c` game, final average
+exploitability rose from 0.029805 to 0.047444 initial pots, a paired
+regression of +0.017639 and above both frozen absolute limits. On the
+known dry game it fell from 0.006423 to 0.002055. The wet failure makes
+the own result **preliminarily negative** despite the dry benefit; this
+one deterministic seed per development case cannot estimate transfer
+or confidence. The [complete own archive](../results/known-turn-regret-recency/own/manifest.json)
+retains all twelve readouts and intermediate checkpoints. **Next
+decision:** publish and byte-verify the own bytes before the pinned
+comparison-only numerical audit; do not retry or tune the discount to
+these outcomes. Codex assisted; no human time or personal learning was
+reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
