@@ -9585,6 +9585,20 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 known-wet corrected source gate.** The new report can
+show the same selected turn and river mistakes in the current and
+accumulated-average policy, but that claim required exact-source checks
+before any poker score. **Example:** a 100k work decision is paired by
+arm and readout with the other arm at the same charged work, while the
+final ranking remains fixed from the control average. The corrected
+[source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+records four passing local lanes, hooks and both passing hosted jobs;
+the first source run remains retained as superseded. No policy outcome
+exists yet. **Next decision:** publish and verify the receipt, then run
+the fictional proof and fixed profile before conservative compute
+admission. Codex assisted; human time and personal learning were not
+reported.
+
 **November 23 both saved readouts in the known-wet report.** A
 source review caught a gap before training: the first report would have
 shown representative decisions only for the linear average, although

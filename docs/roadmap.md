@@ -297,7 +297,13 @@ structurally inspected first-eligible medium/wet OOP input at matched
 work. This is one **known** game with no policy outcome yet, not a
 replacement for the failed PR #109 third stratum or default promotion.
 Its protocol fixes the single input, seed, metrics, acceptance,
-forecast/caps and publication gates before training.
+forecast/caps and publication gates before training. The isolated source
+then passed all corrected exact-source local base/optional lanes, hooks
+and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45339987008)
+after a pre-outcome report readout correction. The first source and its
+passing hosted run remain retained as superseded evidence. Publish and
+verify the [source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+before fictional proof; no policy outcome exists yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

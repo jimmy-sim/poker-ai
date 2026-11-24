@@ -13,6 +13,23 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 corrected exact source qualified
+
+- Corrected source `c137d828` passed exact-source local base Python
+  3.11/3.12 (each 5,812 passed, 73 skipped, 150 slow deselected), optional
+  3.11 (2,597 passed), optional 3.12 (2,595 passed, two expected skips),
+  all pre/post historical source/archive/runtime/lock/license guards and
+  all-file hooks. Both corrected source-head
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45339987008)
+  passed. The [20-file source receipt](../results/known-wet-turn-mechanism/source-checks/manifest.json)
+  binds tested HEAD, fingerprint, local and hosted evidence. The first
+  source-head [CI run](https://github.com/jimmy-sim/poker-ai/actions/runs/45333730045)
+  also passed but is retained separately as superseded by the report
+  correction. No proof, profile, training, score or reference comparison
+  has run. Next: publish and byte-verify the source receipt, then run the
+  frozen fictional proof. Codex assisted; human time and personal learning
+  were not reported.
+
 ## 2026-11-23 — PR #110 report readout correction before policies
 
 - The first tested source `2b937eaa` passed all four exact-source local

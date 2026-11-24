@@ -1,0 +1,3 @@
+# Corrected source requalification — November 23, 2026 PST
+
+The first published source `2b937eaa` passed all four local lanes and hooks, but pre-outcome review found its decision report omitted current-policy decision rows and contrasts. All first-source raw logs/receipts remain in ignored `results/runs/known-wet-source-20261123/`, and its hosted CI run 45333730045 is retained separately. The isolated report and a focused regression were corrected at local commit `c137d828`; no proof, profile, poker policy or scientific outcome had run. This directory contains a new full qualification of the corrected exact source, not a scientific retry.
