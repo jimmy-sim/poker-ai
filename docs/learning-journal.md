@@ -135,7 +135,13 @@ river decisions account for the residual gain. Its isolated tracing
 source has passed local and hosted qualification. Its one capped replay
 found concentrated turn loss and diffuse river loss on that already
 known game; no new strategy was trained. Final report-head local, optional,
-hooks and hosted checks passed; receipt-head CI and review remain pending.
+hooks and hosted checks passed. Receipt-head Python 3.11 first timed out
+at the unchanged limit, then passed in one targeted same-SHA rerun;
+Python 3.12 passed. PR #111 history-merged as `ec9c0d2f` after solo review.
+The [fixed learning-rule result](known-turn-regret-recency-result.md) is
+negative on its two known games: dry improves, wet worsens beyond frozen
+limits. Exact-report local/optional/hooks/hosted checks passed; the final
+receipt awaits publication and review.
 Older status paragraphs below preserve
 the sequence of investigations.
 
@@ -9719,6 +9725,158 @@ then complete receipt-head CI and solo review before history merge. This
 qualification does not make the known-case diagnostic a poker-strength
 improvement. Codex assisted; no human time or personal learning was
 reported.
+
+**November 24 ask whether stale regrets explain known turn losses.**
+PR #111's two largest wet turn rows account for 71.38% of that game's
+remaining turn best-response gain, even with exact acting cards. **Example:**
+the saved final average folds `3d 5c` on `Qs Kd As 3c` 76.05% under a
+fixed saved opponent; its latest policy folds 100%. This difference does
+not prove that newer training is better. The [new protocol](known-turn-regret-recency.md)
+tests a fixed positive/negative regret discount at the same charged work,
+with immutable earlier controls and a known medium/dry guard. It changes
+no card representation or old budget. **Next decision:** publish the plan
+before any candidate outcome, then test the isolated update on fictional
+games and qualify its exact source. The two games were previously
+outcome-inspected, so a favorable result would remain known-case evidence.
+Codex assisted; no human time or personal learning was reported.
+
+**November 24 test the isolated recency rule before poker measurement.**
+The new adapter keeps exact acting turn and river information and the old
+linear average, but discounts each player's accumulated signed regrets
+after that player's complete update. **Example:** in a fictional decision,
+positive regret 3 is multiplied by `2^1.5/(1+2^1.5)` at iteration two,
+while negative regret −4 becomes −2; the other player's row, unused
+padding, strategy sum and random state stay unchanged. Ten focused tests
+passed with Ruff, formatting and strict typing. The separate report code
+requires immutable control policies, equal charged work and all twelve
+candidate reference scalar checks before classifying either known game.
+An independent run of the report test then failed to import the new
+package: another test had silently added `scripts/` during the earlier
+bundle. The old qualification lane was stopped with its partial log,
+and the report test now sets its own import path; each of the three
+new test modules passes alone. No candidate poker trajectory or score
+exists yet. **Next decision:** requalify the corrected exact source on
+all local/hosted lanes before the registered fictional proof and capped
+profile. Codex assisted; no human time or personal learning was reported.
+
+**November 24 qualify the corrected recency source.** The test import
+fix changed no learning rule. Both full Python versions passed 5,826
+tests each, both optional versions passed their fixed suites, and the
+exact-source hosted jobs and hooks passed. The [source receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+contains the earlier standalone import failure, interrupted lane and
+canceled old-source CI logs alongside the passing corrected checks.
+**Example:** a bundled test can hide missing import setup when another
+test runs first; running each new module alone exposed the defect before
+any candidate poker training. A prepublication archive guard then
+rejected the untracked receipt as designed; its members passed direct
+hash verification, and the publication guard must pass after the receipt
+is committed. **Next decision:** publish and byte-verify the source
+receipt, then run the one fictional proof under its fixed 180-second cap.
+No poker-strength claim follows from source qualification. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 prove capture before known-game training.** After the
+corrected source receipt was published and verified, the fixed fictional
+signal game saved six current and linear-average readouts and replayed
+them all from disk. Its final charged work was 726 and the whole process
+used 0.790 seconds against the 180-second cap. **Example:** the same
+snapshot metadata carries the source fingerprint, work crossing and
+random state that the later poker paths must retain; this checks the
+recording path without looking at either known game's outcome. The
+[proof archive](../results/known-turn-regret-recency/own-proof/manifest.json)
+includes the launcher cap and complete saved bytes. **Next decision:**
+publish and verify the proof, then run the one fixed six-path 1m-work
+profile before considering the conservative 10m admission. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 forecast the fixed known-game work.** The one registered
+profile ran each candidate to its first 1m charged-work crossing three
+times on both **known** games. Every saved path replayed, and all six
+work counts matched the archived controls. The whole run took 62.400
+seconds within its 900-second cap. **Example:** the slowest wet repeat
+scaled to 10m work gives `T = 193.248` seconds; applying the frozen
+`2*(2*T+600)` rule gives `1,972.992`, below the 7,200-second own cap.
+The [profile archive](../results/known-turn-regret-recency/profile/manifest.json)
+preserves all repeats, including slower ones. This timing forecast is
+not a poker-strength result and does not itself authorize the long run.
+**Next decision:** publish and byte-verify the complete profile, then
+recompute the strict bound in a separate data-only admission. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 apply the separate compute gate.** After all six profile
+repeats were published and verified, the data-only admission read their
+saved timings and recomputed the unchanged worst-repeat rule. It took
+0.796 operational seconds and returned the same strict
+`1,972.992 < 7,200`-second bound. **Example:** the slower wet repeat,
+not the faster dry path or a selected favorable repeat, sets `T`.
+The [admission archive](../results/known-turn-regret-recency/admission/manifest.json)
+retains that decision separately from the profile. **Next decision:**
+publish and byte-verify admission, then make the one fixed two-path
+10m-work own study. The gate admits compute; it predicts no poker gain.
+Codex assisted; no human time or personal learning was reported.
+
+**November 24 compare the unchanged learner at fixed work.** The sole
+admitted candidate path on each known game completed with exactly the
+old controls' charged work, full saved-average coverage and zero recall
+violations. **Example:** on the wet `Qs Kd As 3c` game, final average
+exploitability rose from 0.029805 to 0.047444 initial pots, a paired
+regression of +0.017639 and above both frozen absolute limits. On the
+known dry game it fell from 0.006423 to 0.002055. The wet failure makes
+the own result **preliminarily negative** despite the dry benefit; this
+one deterministic seed per development case cannot estimate transfer
+or confidence. The [complete own archive](../results/known-turn-regret-recency/own/manifest.json)
+retains all twelve readouts and intermediate checkpoints. **Next
+decision:** publish and byte-verify the own bytes before the pinned
+comparison-only numerical audit; do not retry or tune the discount to
+these outcomes. Codex assisted; no human time or personal learning was
+reported.
+
+**November 24 independently check the unfavorable saved scores.** All
+twelve candidate policies were committed and byte-verified before the
+pinned OpenSpiel 2.0.2 audit ran. Its largest scalar difference from
+the own scorer was `4.263e−14` chips, far inside the fixed `1e−9` gate;
+the installed Apache-2.0 license hash also matched. **Example:** the
+wet game's 0.047444-pot final average is an accurately computed score
+under this restricted game, even though the dry policy improved. The
+[native audit](../results/known-turn-regret-recency/native/manifest.json)
+validates arithmetic, not general poker strength or a preferred action.
+**Next decision:** publish the audit and make the fixed report with
+the same preregistered card/action rows across checkpoints. The wet
+acceptance failure remains negative; no retry follows it. Codex
+assisted; no human time or personal learning was reported.
+
+**November 24 fixed recency decision report.** The question was whether
+a fixed signed-regret discount reduced the known wet turn weakness at
+matched work while preserving the known dry result. The one candidate
+path per game, independent audit and [fixed report](known-turn-regret-recency-result.md)
+give a negative answer under the frozen gates: wet final exploitability
+rises from 0.029805 to 0.047444 initial pots; dry falls from 0.006423
+to 0.002055. **Example:** with `3d 5c` on wet `Qs Kd As 3c`, the
+candidate places less fold probability and more call/raise probability
+than the control, and this row's additive best-response gain rises from
+0.430463 to 0.520564 chips. Its local action values depend on each
+arm's saved opponent and optimized reply continuation, so this is a
+bounded diagnostic, not general advice or a causal action swap. The
+report contains all 23 fixed rows at three work checkpoints and both
+readouts. Whole coverage is 100%, recall violations zero and the native
+scalar error below `1e−9` chip. **Next decision:** finish exact-report
+qualification and review, then choose a distinct prospective question
+from the retained wet/dry contrast. No retry or default promotion.
+Codex assisted; no human time or personal learning was reported.
+
+**November 24 qualify the negative report exactly.** Both local base
+Python versions passed 5,826 tests each, both optional versions passed
+their fixed suites, and exact-head hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45414979807)
+passed. **Example:** the independent audit reconciled each of the 24
+saved scores with its turn/river additive gains, all 12 matched-work
+contrasts, all 23 fixed decision rows and the archived hashes. Two
+operational preflight wrappers failed on proof-status strings before
+tests; their logs are retained in the [final receipt](../results/known-turn-regret-recency/final-checks/manifest.json),
+and the corrected serial driver passed without a source or scientific
+change. **Next decision:** publish/verify the receipt, complete solo
+review and history merge if eligible, then choose a distinct bounded
+research question. The poker conclusion stays negative. Codex assisted;
+no human time or personal learning was reported.
 
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.

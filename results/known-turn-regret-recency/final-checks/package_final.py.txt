@@ -1,0 +1,117 @@
+"""Seal exact negative-report qualification and retained preflight failures."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-turn-regret-recency/final-checks"
+HEAD = "19fb8e49fe3ff4622787bc824c91f6b4ea130b1b"
+SOURCE = "133a5a77c19431bf1c220bc89d000c6a146cf53161532bcf26eab0499aa2cf10"
+REPORT_SHA = "3661f931575d6d4df45a15dce8552b2f278c192757d0d943c54dfe250b651a8b"
+REPORT_MANIFEST_SHA = "f35d43fcef68ad1f16f9f943cc5f5747e89f5d9d3242456d65160213bc40155d"
+HUMAN_SHA = "93766400d14cbbda52d11cc526d7e0e6962a4ec7ffd858c03f6c811174738748"
+ROLES = ("base311", "base312", "optional311", "optional312")
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def copy(source: Path, name: str) -> None:
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    target = OUT / name
+    if source.suffix == ".log":
+        with target.with_name(target.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix in (".py", ".zsh"):
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier final receipt")
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT)
+    if head != HEAD or dirty:
+        raise ArithmeticError("exact report head changed or dirty")
+    state = json.loads((RAW / "driver-state.json").read_bytes())
+    receipts = [json.loads((RAW / f"{role}.json").read_bytes()) for role in ROLES]
+    hosted = json.loads((RAW / "hosted.json").read_bytes())
+    report = json.loads((ROOT / "results/known-turn-regret-recency/report/report.json").read_bytes())
+    failed = [ROOT / f"results/runs/known-turn-regret-recency-{name}-20261124" for name in ("final", "final-requal")]
+    failures = [json.loads((folder / "driver-state.json").read_bytes()) for folder in failed]
+    if (
+        state["status"] != "passed"
+        or state["head"] != HEAD
+        or state["completed"] != [{"role": role, "exit_code": 0} for role in ROLES]
+        or any(row["status"] != "passed" or row["head"] != HEAD or row["source_fingerprint"] != SOURCE for row in receipts)
+        or any(row["suite_count"] != 82 for row in receipts[2:])
+        or hosted["headSha"] != HEAD
+        or hosted["conclusion"] != "success"
+        or {row["name"] for row in hosted["jobs"]} != {"Python 3.11", "Python 3.12"}
+        or any(row["conclusion"] != "success" for row in hosted["jobs"])
+        or (RAW / "exact-hooks.exit").read_text().strip() != "0"
+        or any(row["status"] != "failed_retained" or row["completed"] != [{"role": "base311", "exit_code": 1}] for row in failures)
+        or sha(ROOT / "results/known-turn-regret-recency/report/report.json") != REPORT_SHA
+        or sha(ROOT / "results/known-turn-regret-recency/report/manifest.json") != REPORT_MANIFEST_SHA
+        or sha(ROOT / "docs/known-turn-regret-recency-result.md") != HUMAN_SHA
+        or report["primary"]["classification"] != "negative"
+        or len(report["cases"]) != 24
+        or len(report["checkpoint_contrasts"]) != 12
+        or len(report["diagnostics"]) != 23
+    ):
+        raise ArithmeticError("final report, checks, failures or source pin changed")
+    for role, phrase in (("base311", "5826 passed, 73 skipped, 150 deselected"), ("base312", "5826 passed, 73 skipped, 150 deselected"), ("optional311", "2601 passed"), ("optional312", "2599 passed, 2 skipped")):
+        if phrase not in (RAW / f"{role}.log").read_text():
+            raise ArithmeticError("final test summary missing: " + role)
+    if "passed independent report audit" not in (RAW / "report-independent-audit.log").read_text() or "passed changed-document relative links" not in (RAW / "docs-link-audit.log").read_text():
+        raise ArithmeticError("independent report or link audit missing")
+    OUT.mkdir(parents=True)
+    for name in ("driver-state.json", "driver.py", "runner.py", "launch.zsh", "optional-suites.json", "package_final.py", "exact-hooks.exit", "exact-hooks.log", "hosted.json", "hosted.log", "report-independent-audit.log", "docs-link-audit.log"):
+        copy(RAW / name, name)
+    for role in ROLES:
+        for suffix in ("json", "log"):
+            name = f"{role}.{suffix}"
+            copy(RAW / name, name)
+    for index, folder in enumerate(failed, 1):
+        for name in ("driver-state.json", "driver.py", "runner.py", "launch.zsh", "base311.json", "base311.log", "iteration-failures.md"):
+            copy(folder / name, f"preflight{index}-{name}")
+    canceled = ROOT / "results/runs/known-turn-regret-recency-report-20261124"
+    for suffix in ("json", "log"):
+        copy(canceled / f"native-head-canceled.{suffix}", f"native-head-canceled.{suffix}")
+    result = {
+        "status": "final_qualified",
+        "tested_head": HEAD,
+        "source_fingerprint": SOURCE,
+        "report_sha256": REPORT_SHA,
+        "report_manifest_sha256": REPORT_MANIFEST_SHA,
+        "human_report_sha256": HUMAN_SHA,
+        "local_roles": receipts,
+        "hosted_run": hosted["databaseId"],
+        "hosted_jobs": [{"name": row["name"], "conclusion": row["conclusion"]} for row in hosted["jobs"]],
+        "hooks": "passed",
+        "scientific_result": "negative_two_known_games_wet_worse_dry_better",
+        "preflight_failures_retained": 2,
+        "scientific_retry": False,
+        "default_promoted": False,
+    }
+    (OUT / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    files = []
+    for path in sorted(OUT.iterdir()):
+        blob = path.read_bytes()
+        files.append({"file": path.name, "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
+    (OUT / "manifest.json").write_text(json.dumps({"status": "final_qualified", "source_fingerprint": SOURCE, "files": files}, sort_keys=True, indent=2) + "\n")
+    print("final_qualified", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

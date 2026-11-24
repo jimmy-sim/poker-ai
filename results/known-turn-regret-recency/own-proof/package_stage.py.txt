@@ -1,0 +1,100 @@
+"""Seal the one fictional regret-recency proof after source publication."""
+
+import hashlib
+import json
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+RAW = Path(__file__).resolve().parent
+OUT = ROOT / "results/known-turn-regret-recency/own-proof"
+SOURCE = "133a5a77c19431bf1c220bc89d000c6a146cf53161532bcf26eab0499aa2cf10"
+
+
+def main() -> None:
+    if OUT.exists() or OUT.is_symlink():
+        raise FileExistsError("retain earlier fictional proof")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from known_turn_regret_recency.gate import SOURCE as SOURCE_STAGE
+    from known_turn_regret_recency.gate import clean_head, require_archive, source_fingerprint
+    from poker_ai.evaluation.opponent_learning_contexts import software_context
+    from turn_exact_transfer.capture import replay_path
+
+    head = clean_head(ROOT)
+    if source_fingerprint(ROOT) != SOURCE:
+        raise ArithmeticError("tested source changed")
+    require_archive(ROOT, ROOT / SOURCE_STAGE, "source_qualified", SOURCE)
+    state = json.loads((RAW / "job-state.json").read_bytes())
+    result = json.loads((RAW / "raw/result.json").read_bytes())
+    started = json.loads((RAW / "raw/started.json").read_bytes())
+    if (
+        state["status"] != "passed"
+        or state["exit_code"] != 0
+        or state["cap_seconds"] != 180
+        or not 0 < state["observed_wall_seconds"] < 180
+        or state["source_head"] != head
+        or state["source_fingerprint"] != SOURCE
+        or result["status"] != "completed"
+        or result["head"] != head
+        or result["source_fingerprint"] != SOURCE
+        or result["stage"] != "proof"
+        or result["fixture"] != "fictional signal game"
+        or result["captures"] != 6
+        or result["final_work"] != 726
+        or started["source_fingerprint"] != SOURCE
+        or (RAW / "launch.exit").read_text().strip() != "0"
+    ):
+        raise ArithmeticError("fictional proof identity or cap failed")
+    scoring = software_context(0).scoring["coarse"]
+    summary = replay_path(scoring, RAW / "raw/toy/path00")
+    if (
+        summary["path"] != dict(
+            index=0,
+            game="FICTIONAL_SIGNAL_GAME",
+            arm="signed_full_exact_turn_regret_recency",
+            seed=0,
+        )
+        or summary["labels"] != [80, 240, 720]
+        or len(summary["captures"]) != 6
+        or summary["final_work"] != result["final_work"]
+    ):
+        raise ArithmeticError("fictional replay changed")
+    if any(path.is_symlink() for path in (RAW / "raw").rglob("*")):
+        raise ValueError("proof raw symlink")
+    shutil.copytree(RAW / "raw", OUT)
+    for name in (
+        "job-state.json",
+        "launch.exit",
+        "launch.log",
+        "launcher.log",
+        "launcher.py",
+        "package_stage.py",
+    ):
+        source = RAW / name
+        target = OUT / (name + ".txt" if name.endswith(".py") else name)
+        shutil.copyfile(source, target)
+    files = []
+    for path in sorted(path for path in OUT.rglob("*") if path.is_file()):
+        data = path.read_bytes()
+        files.append(
+            dict(
+                file=path.relative_to(OUT).as_posix(),
+                bytes=len(data),
+                sha256=hashlib.sha256(data).hexdigest(),
+            )
+        )
+    (OUT / "manifest.json").write_text(
+        json.dumps(
+            dict(status="proof_passed", source_fingerprint=SOURCE, files=files),
+            sort_keys=True,
+            indent=2,
+        )
+        + "\n"
+    )
+    print("proof_passed", len(files), OUT)
+
+
+if __name__ == "__main__":
+    main()

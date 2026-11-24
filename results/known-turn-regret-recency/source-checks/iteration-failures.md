@@ -1,0 +1,1 @@
+2026-11-24: corrected exact-source requalification; the prior 4526fc2 report-test isolation failure, interrupted base311 role, and all partial logs are retained separately in results/runs/known-turn-regret-recency-source-20261124/. No scientific candidate run occurred.

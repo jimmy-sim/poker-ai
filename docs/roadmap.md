@@ -340,9 +340,49 @@ vectors are [retained](../results/known-wet-residual-diagnosis/diagnosis/manifes
 The [final check receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
 records passing serial base/optional local lanes, hooks and both report-head
 hosted jobs on the published result, plus the independent additive audit.
-Publish and byte-verify that receipt, then require receipt-head CI and solo
-review before history merge. Afterward draw a distinct
-prospective training/readout question from this diagnosis. Do not
+Its first receipt-head Python 3.11 CI timed out under the unchanged limit;
+one targeted same-SHA requalification passed, as did Python 3.12.
+[PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged
+as `ec9c0d2f` after solo review. Separate post-merge main CI passed both
+Python jobs. The next distinct [prospective regret-recency question](known-turn-regret-recency.md)
+uses the same exact acting turn/river keys and immutable prior known-game
+controls to test one fixed learning update at matched work. Its candidate
+policy, scores and admission do not yet exist. The corrected isolated
+source passed fictional/synthetic focused checks and all four exact-source
+local base/optional lanes, hooks and both hosted jobs; its
+[receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+was published and byte-verified before the one capped fictional
+[proof](../results/known-turn-regret-recency/own-proof/manifest.json),
+which passed six saved/replayed readouts within its 180-second cap. The
+old import-order failure and interrupted/canceled old-source checks
+remain retained. The one fixed six-path 1m-work
+[profile](../results/known-turn-regret-recency/profile/manifest.json)
+completed under its cap and projects a `1,972.992 < 7,200` second
+conservative bound. The separate data-only
+[admission](../results/known-turn-regret-recency/admission/manifest.json)
+recomputed the identical bound from published bytes and passed strictly;
+its archive was published and byte-verified before any 10m training.
+The one admitted two-path own study completed at exactly matched work
+on both known games. Its [retained policies](../results/known-turn-regret-recency/own/manifest.json)
+show a **preliminary negative** result: wet final average is 0.047444
+initial pots, worse than the 0.029805 control and above the 0.01/0.025
+absolute gates, while dry improves. The own archive must be published
+before the pinned comparison-only scalar audit and fixed final report.
+It was published first; the [OpenSpiel audit](../results/known-turn-regret-recency/native/manifest.json)
+then matched all 12 candidate saved scores within `4.263e−14` chips
+maximum error versus the fixed `1e−9` threshold. The
+[fixed card/action report](known-turn-regret-recency-result.md) is
+**negative** under the frozen rule: wet final exploitability is 0.047444
+initial pots versus 0.029805 control, while dry improves to 0.002055
+versus 0.006423. It retains all 24 policy cases and fixed decisions;
+final exact-report qualification subsequently passed: both local base
+Python versions each ran 5,826 passing fast tests, both optional suites
+passed, all-file hooks and both hosted report-head jobs passed. The
+[final receipt](../results/known-turn-regret-recency/final-checks/manifest.json)
+retains two preflight-only wrapper failures separately. Publish and
+verify this receipt, then complete solo review and history-preserving
+merge if eligible. The negative poker result stays negative.
+Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)

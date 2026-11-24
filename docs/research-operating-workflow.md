@@ -153,3 +153,13 @@ whether the unchanged representation improves **that one finite game's**
 decisions. It does not reclassify the failed three-stratum screen or
 claim an unseen input, texture-isolated effect or default promotion.
 No new policy outcome existed at this plan checkpoint.
+
+PR #110 subsequently found a paired exact-turn gain on one already known
+wet game but failed its frozen absolute strength gates. PR #111's
+[read-only residual diagnosis](known-wet-residual-diagnosis-result.md)
+found concentrated turn and diffuse river gain there, then history-merged
+after full qualification and a retained first receipt-head Python 3.11
+timeout followed by one passing same-SHA requalification. The next
+[prospective known-case regret-recency test](known-turn-regret-recency.md)
+reuses immutable PR #108/#110 controls and changes only the new candidate's
+regret update; no new policy outcome existed at protocol publication.

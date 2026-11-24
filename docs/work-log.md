@@ -13,6 +13,141 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective known-turn regret-recency question
+
+- Final exact-report local qualification at `19fb8e49` passed four
+  serial lanes with pre/post source/archive/runtime/lock and optional
+  OpenSpiel license guards: base Python 3.11/3.12 each 5,826 passed,
+  73 skipped, 150 slow deselected; optional 3.11 2,601 passed;
+  optional 3.12 2,599 passed and two expected skipped. All-file hooks,
+  independent 24-case/12-contrast/23-row report audit and both
+  [hosted report-head jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45414979807)
+  passed. The [37-member final receipt](../results/known-turn-regret-recency/final-checks/manifest.json)
+  retains official logs and two failed preflight wrappers (wrong new
+  proof status, then an overbroad wrapper edit of an unchanged historical
+  proof status) before tests; neither changed source or scientific
+  results. Next: publish and byte-verify receipt, then solo review and
+  history-preserving merge if eligible. Negative classification remains.
+  Codex assisted; human time and personal learning were not reported.
+- The fixed 24-policy/12-contrast/23-row report completed once in
+  57.467/3,600 launcher seconds from published own and native bytes. Its
+  [negative report](known-turn-regret-recency-result.md) and
+  [raw archive](../results/known-turn-regret-recency/report/manifest.json)
+  show wet final candidate 0.047444358 pots versus 0.029805183 control
+  (paired +0.017639174), failing both absolute limits and paired
+  worsening tolerance. Dry improves to 0.002055024 versus 0.006422763
+  (paired −0.004367739). All fixed decisions/readouts are retained.
+  Final exact-report qualification remains. No retry or default promotion.
+  Codex assisted; human time and personal learning were not reported.
+- The complete own archive was published at `b956d838`; all 37 changed
+  GitHub blobs and the publication guard passed **before** any reference
+  work. The one comparison-only OpenSpiel 2.0.2 scalar audit then checked
+  all 12 candidate saved policies in 49.102/900 whole seconds. Maximum
+  independent difference was `4.263256414560601e−14` chips versus the
+  fixed `1e−9` gate; installed Apache-2.0 license SHA-256 matched the
+  pin. The [eight-member native archive](../results/known-turn-regret-recency/native/manifest.json)
+  has SHA-256 `2843cb7c32fa1d8a0c753b7a35e2e1567804bb7b1002e0ff743b3368e6341abf`.
+  This validates the unfavorable wet own score numerically, without
+  changing the frozen negative criterion. Next: publish/byte-verify
+  native evidence, then build the fixed 24-policy/card-action report.
+  Codex assisted; human time and personal learning were not reported.
+- The one admitted two-path own study completed in 45.139/7,200 whole
+  seconds on the fixed seed zero. Both paths matched the archived
+  controls' final charged work (wet 10,117,956; dry 10,012,410), saved
+  all six policies each, replayed, had full whole-average coverage and
+  zero recall violations. Wet final linear-average exploitability is
+  1.707996887 chips / 0.047444358 initial pots, versus the immutable
+  0.029805183 control: paired **+0.017639174 pots** and both frozen
+  absolute limits fail. Dry is 0.073980859 chips / 0.002055024 pots
+  versus 0.006422763 control, paired −0.004367739 pots. Thus the own
+  outcome is **preliminarily negative** despite dry improvement; the
+  required pinned scalar audit and fixed report remain. The
+  [33-member own archive](../results/known-turn-regret-recency/own/manifest.json)
+  SHA-256 is `8b7d3a327d67f5b1c6b2b78e9b819676d86bfb9ec7613477450170caa482c7a9`.
+  Next: publish/byte-verify all own bytes **before** comparison-only
+  reference work. No retry, new representation or default promotion.
+  Codex assisted; human time and personal learning were not reported.
+- The [profile archive](../results/known-turn-regret-recency/profile/manifest.json)
+  was committed and all 50 changed GitHub blobs and the publication
+  guard passed. A **separate data-only admission** recomputed the same
+  six-repeat maximum from published bytes in 0.796/180 operational
+  seconds: `T = 193.248009`, strict bound `1,972.992036 < 7,200`.
+  The [eight-member admission archive](../results/known-turn-regret-recency/admission/manifest.json)
+  has manifest SHA-256 `b3bdbd6d1694501c439230fa942577085a6b240c5cbe482e9eb86264d240d3a8`.
+  Next: publish and byte-verify admission before the single fixed
+  two-path 10m own study. No reference comparison or default decision
+  exists. Codex assisted; human time and personal learning were not
+  reported.
+- The single fixed six-path 1m-work profile completed in 62.400/900
+  whole launcher seconds (worker record 61.579 seconds), with wet/dry
+  charged crossings 1,065,048/1,022,544 on every repeat. All six saved
+  paths replayed and the [46-member archive](../results/known-turn-regret-recency/profile/manifest.json)
+  contains their policies, events, state guards, timings and forecast.
+  The wet repeat maximum extrapolates to `T = 193.248009` seconds; the
+  registered conservative bound is `1,972.992036 < 7,200` seconds.
+  This is not admission until the separate data-only step recomputes it
+  from published bytes. Manifest SHA-256 is
+  `a231a6d8910ead53df36ca7176ccdffd8113bec0c014dac11022ade4c208f282`.
+  Next: publish and byte-verify every repeat, then apply the unchanged
+  admission rule. Codex assisted; human time and personal learning were
+  not reported.
+- After the source receipt was committed and all 30 changed GitHub blobs
+  verified, its archive publication guard passed. The one registered
+  fictional proof then saved six current/linear-average policies at
+  80/240/720 visits, final work 726, and replayed every snapshot. Its
+  whole launcher used 0.790/180 seconds on the recorded Apple M4.
+  The [20-member proof archive](../results/known-turn-regret-recency/own-proof/manifest.json)
+  has manifest SHA-256 `3dcb79da6acd30cab61d3d72f8053eb753a44a66dc6b1485c7beba964dd1fc5b`.
+  No known-game candidate score exists. Next: publish and byte-verify the
+  proof before the six fixed 1m-work profile paths. Codex assisted;
+  human time and personal learning were not reported.
+- The corrected `3ff86f18` source passed exact-head base Python
+  3.11/3.12 (each 5,826 passed, 73 skipped, 150 slow deselected),
+  optional 3.11 (2,601 passed), optional 3.12 (2,599 passed, two
+  expected skips), pre/post source/archive/runtime/lock/license guards,
+  all-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45402269115).
+  The [26-member source receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
+  retains old-source interrupted/canceled evidence and has manifest
+  SHA-256 `b5a54226afda37018a4ee18f7b35e064e6b8e2900d7ded252cd7126cc120e6b8`.
+  Its prepublication archive reader correctly refused to count untracked
+  files as published; the raw members were verified separately. Next:
+  commit, push and byte-verify the receipt, then rerun the publication
+  guard before the fictional proof. No candidate poker policy or score
+  exists. Codex assisted; human time and personal learning were not
+  reported.
+- The isolated PR #112 source now implements the fixed signed-regret
+  discount, full-work capture/replay, historical-control guards, strict
+  profile forecast, comparison-only scalar audit and 24-policy report.
+  Fictional/synthetic focused checks passed: Ruff, format, strict mypy and
+  ten tests. The report preserves the fixed wet/dry rows, both saved
+  readouts and every matched-work contrast. These checks establish code
+  behavior, not poker strength; no new known-game candidate was trained
+  or scored. Protocol-head hosted CI and full exact-source qualification
+  remain separate gates. An independent report-test invocation then exposed
+  an import-order defect masked by the ten-test bundle. The exact-source
+  base 3.11 lane was interrupted with its partial log retained. The test
+  now imports the isolated script path itself; all three new test modules
+  pass independently and together. Full source qualification must restart
+  on the corrected commit. Codex assisted; human time and personal
+  learning were not reported.
+- [PR #111](https://github.com/jimmy-sim/poker-ai/pull/111) history-merged as
+  `ec9c0d2f` after its diagnostic checks and solo review. Receipt-head
+  hosted Python 3.11 first timed out at the unchanged 35-minute limit
+  after 96% of tests; its official log is retained, and one targeted
+  same-SHA rerun passed. Python 3.12 passed. Separate post-merge main
+  [CI](https://github.com/jimmy-sim/poker-ai/actions/runs/45395070401)
+  passed both Python versions. The diagnostic gives no strength gain.
+- The next [prospective protocol](known-turn-regret-recency.md) fixes one
+  asymmetric signed-regret discount on the unchanged exact-turn learner.
+  It reuses PR #108/#110's already published controls, trains only one
+  new candidate path on each of two **known** games, and fixes work,
+  readouts, absolute and paired gates, source qualification, profile,
+  strict admission, and own-before-reference order before outcomes.
+  No new candidate policy or score exists at this checkpoint. Next:
+  publish and byte-verify the protocol, then implement the isolated
+  adapter and fictional tests. Codex assisted; human time and personal
+  learning were not reported.
+
 ## 2026-11-24 — PR #111 final diagnostic qualification
 
 - The [final 30-file receipt](../results/known-wet-residual-diagnosis/final-checks/manifest.json)
