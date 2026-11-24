@@ -434,6 +434,10 @@ all-file hooks passed. The [source receipt](../results/known-turn-work-budget/so
 retains logs and pins. Fictional proof, 12-path profile, separate compute
 admission and any real policy comparison remain pending; the result is not
 yet a poker-strength conclusion.
+The source receipt was published and its normal-clone guard passed; one
+fictional-only [proof](../results/known-turn-work-budget/own-proof/manifest.json)
+then passed inside 180 seconds. Publish and verify the proof before the
+fixed real-path profile. No real policy outcome has yet been collected.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
