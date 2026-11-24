@@ -438,6 +438,11 @@ The source receipt was published and its normal-clone guard passed; one
 fictional-only [proof](../results/known-turn-work-budget/own-proof/manifest.json)
 then passed inside 180 seconds. Publish and verify the proof before the
 fixed real-path profile. No real policy outcome has yet been collected.
+The single fixed [twelve-path profile](../results/known-turn-work-budget/profile/manifest.json)
+completed in 80.961 whole seconds with all repeated paths and memory under
+cap; its provisional conservative bound is 5273.267 seconds, below 7200.
+Publish/verify the profile before the separate data-only admission; this
+is not yet a poker-strength result.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
