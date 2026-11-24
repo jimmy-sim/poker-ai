@@ -9585,6 +9585,21 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 bounded known-wet timing profile.** The fixed six
+1m-work paths completed and replayed under the profile cap. **Example:**
+all six first complete target-pair crossings overshot 1m to 1,065,048
+charged nodes, so the forecast divides each path's whole wall time by
+that actual work before scaling to 10m. The slowest of three estimates
+for each arm was 209.06 and 207.41 seconds; the conservative two-worker
+formula yields 2,036.25 seconds under the 7,200-second own cap. The
+[profile archive](../results/known-wet-turn-mechanism/profile/manifest.json)
+retains every repeat and peak worker memory; a distinct published
+admission still has to recompute this bound before longer training.
+These 1m captures are partial evidence, not an accepted final poker
+result. **Next decision:** publish/verify the profile, then run the
+separate strict admission. Codex assisted; human time and personal
+learning were not reported.
+
 **November 23 known-wet corrected source gate.** The new report can
 show the same selected turn and river mistakes in the current and
 accumulated-average policy, but that claim required exact-source checks

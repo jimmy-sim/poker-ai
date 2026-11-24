@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 fixed six-path profile
+
+- The one published-proof profile ran both fixed arms three times each to
+  first complete 1m-work crossing: every path reached 1,065,048 charged
+  work, and the whole launcher took 66.32/900 seconds. The six complete
+  own captures/replays and raw worker logs are in the
+  [45-file profile archive](../results/known-wet-turn-mechanism/profile/manifest.json).
+  Worst per-arm `whole_path_seconds × 10m / actual_work` estimates were
+  209.06 seconds (q8 control) and 207.41 seconds (exact-turn candidate),
+  with worker peak RSS up to 1,079,164,928 bytes. The recorded formula
+  computes `2*(2*T+600)=2,036.25<7,200` seconds; **separate data-only
+  admission remains pending**. The profile's 1m policies are prescribed
+  partial evidence, not final acceptance or a seed replication. Next:
+  publish/verify the profile and run the independent strict admission.
+  Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-23 — PR #110 corrected exact source qualified
 
 - Corrected source `c137d828` passed exact-source local base Python

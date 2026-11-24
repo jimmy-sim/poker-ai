@@ -1,0 +1,43 @@
+"""Single retained 900-second fixed known-turn mechanism profile launcher."""
+import json
+import os
+import signal
+import subprocess
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+folder = Path(__file__).resolve().parent
+raw = folder / "raw"
+log = folder / "launch.log"
+state = folder / "job-state.json"
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+assert head == "6e69187ee3103221438155e44accbd3094d154e0"
+assert not raw.exists() and not log.exists() and not state.exists()
+command = ["uv", "run", "--locked", "python", "scripts/study_known_wet_turn_mechanism.py", "profile", "--output", str(raw)]
+env = os.environ.copy()
+env["UV_PYTHON"] = "3.11.17"
+env["UV_PROJECT_ENVIRONMENT"] = "results/runs/guarded-skip-requalification-20261118/envs/base311"
+started = time.perf_counter()
+receipt = {"status": "starting", "launcher_pid": os.getpid(), "command": command, "source_head": head, "source_fingerprint": "5e29c490f3b05cf7b98dc016628a9765ab76b7a920965590e0d086abcda16b12", "cap_seconds": 900, "environment": {k: env[k] for k in ("UV_PYTHON", "UV_PROJECT_ENVIRONMENT")}, "log": str(log), "output": str(raw), "started_utc": datetime.now(timezone.utc).isoformat()}
+state.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n")
+with log.open("wb") as stream:
+    process = subprocess.Popen(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+    receipt.update(status="running", child_pid=process.pid)
+    state.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n")
+    try:
+        code = process.wait(timeout=max(0.01, 900 - (time.perf_counter() - started)))
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGTERM)
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid, signal.SIGKILL)
+            process.wait()
+        code = 124
+    receipt.update(status="passed" if code == 0 else "failed_retained", exit_code=code, observed_wall_seconds=time.perf_counter() - started, finished_utc=datetime.now(timezone.utc).isoformat())
+    state.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n")
+    (folder / "launch.exit").write_text(f"{code}\n")
+print(json.dumps(receipt, sort_keys=True))
+raise SystemExit(code)
