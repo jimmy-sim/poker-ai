@@ -231,6 +231,12 @@ report-head local/optional/hosted qualification and review remain pending;
 no default is promoted. The next poker-strength question, once this PR is
 fully qualified and merged, should test prospective board/range transfer
 without using already inspected inputs as unseen validation.
+Final exact report-head local base/optional checks, all-file hooks and
+[both hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45294831863)
+passed, with the initial wrapper status mistake retained in the
+[final receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
+PR #108 awaits receipt publication and solo review/history merge. The
+positive known-game result remains limited to this pre-evaluated input.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #108 final exact-report qualification
+
+- On report commit `d9df778a`, serial local base 3.11/3.12 each passed
+  5,799 tests, 73 skipped and 150 slow deselected with lint, format,
+  strict mypy and pre/post source/archive/runtime/lock guards. Optional
+  3.11 passed 2,597 and optional 3.12 passed 2,595 with two expected
+  skips; both pinned OpenSpiel, Numba and license guards passed.
+  All-file hooks and both [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45294831863)
+  passed. The first local wrapper failed before tests on a mistaken proof
+  status string; its failed log/receipt/wrapper are retained with the
+  corrected full run in the [final check receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json).
+  No scientific code, protocol or outcome changed. Next: publish/verify
+  this receipt, solo review and history merge if eligible. Codex assisted;
+  human time or learning was not reported.
+
 ## 2026-11-23 — PR #108 fixed known-game report
 
 - The fixed [decision report](known-turn-exact-mechanism-result.md) replayed

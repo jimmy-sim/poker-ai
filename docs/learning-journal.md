@@ -9519,6 +9519,19 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 final known-game qualification.** Both base Python versions
+passed the complete fast suite, both optional versions passed their pinned
+81-suite check, and the report-head hosted jobs and hooks passed. The
+[retained receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json)
+includes an initial wrapper failure before any test: the wrapper used the
+wrong status label for an already published proof, then was corrected and
+all four roles reran. **Example:** a failing evidence reader can be a
+software wiring problem without implying a poker score changed; retaining
+both runs makes that distinction reviewable. **Next decision:** review the
+qualified known-game result, then ask a separate prospective transfer
+question. No default promotion follows from this one board. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 fixed known-game decision report.** The exact-turn learner
 improved the previously examined medium/dry game at the same charged work:
 final exploitability fell from 0.025118 to 0.006423 initial pots, passing

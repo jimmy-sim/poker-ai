@@ -27,3 +27,7 @@ PY
 ```
 
 The only supported next inference is that resolving these known turn collisions helped this finite game at the fixed budget. Whether it helps new boards and ranges remains unresolved; previously inspected inputs remain known cases. No new experiment or policy tuning was part of this result.
+
+## Final qualification
+
+The exact report-head `d9df778a4058feaa7ab81106b8b237e2473c8980` passed serial local base Python 3.11 and 3.12 (5,799 passed, 73 skipped, 150 slow deselected each), optional 3.11 (2,597 passed) and optional 3.12 (2,595 passed, two expected skips), all with pre/post source, archive, runtime, lock and applicable license guards. Ruff, format, strict mypy and all-file hooks passed. Both [hosted report-head jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45294831863) passed. The [full final receipt](../results/known-turn-exact-mechanism/final-checks/manifest.json) retains role logs and official hosted logs. The first local wrapper attempt failed before tests because it expected the wrong proof status string; its failed log and wrapper are preserved in the receipt. The corrected wrapper completed all four roles without changing source, protocol or scientific outcomes.
