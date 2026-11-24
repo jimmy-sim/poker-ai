@@ -9672,6 +9672,19 @@ the proof, separately admit the conservative compute bound, and only
 then read the fixed saved policies once. Codex assisted; no human time
 or personal learning was reported.
 
+**November 24 separate compute admission.** The known parent report
+needed 68.3035 seconds to replay the same 12 policy cases. **Example:**
+doubling that observed time and adding 120 seconds produces a
+conservative bound of about 256.607 seconds, below the fixed 900-second
+diagnostic cap. The [published admission](../results/known-wet-residual-diagnosis/admission/manifest.json)
+recomputed that formula from the pinned job record after the fictional
+proof was public. No saved strategy was inspected in this step. Admission
+authorizes one read-only diagnosis; it does not show that the candidate
+became stronger. **Next decision:** publish and verify the admission
+bytes, then run the single fixed candidate-ranked trace and retain all
+selected rows and failures. Codex assisted; no human time or personal
+learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

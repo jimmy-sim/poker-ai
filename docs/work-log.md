@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — PR #111 separate read-only compute admission
+
+- After the fictional proof was published and its 15 changed GitHub
+  blobs verified, the [six-member admission archive](../results/known-wet-residual-diagnosis/admission/manifest.json)
+  recomputed `2 × 68.30351770902053 + 120 ≈ 256.607` seconds from the
+  pinned parent report job state, strictly below the unchanged 900-second
+  whole-diagnostic cap. The data-only run took 1.25 seconds under its
+  own 180-second launcher cap, used pinned `uv` 0.13.5 and read no
+  saved policy decision. Its manifest SHA-256 is
+  `36df155246d35043e4427a05c9a308a8a0f23fe7b07f37d61e9d05e1d6e2b071`.
+  The intermediate source-receipt-head CI was canceled by proof
+  publication; its official metadata/logs are retained separately, while
+  both required exact-source-head hosted jobs passed. Next: publish and
+  byte-verify admission before the one 900-second read-only diagnosis.
+  Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — PR #111 fictional proof before diagnosis
 
 - The [11-member fictional proof archive](../results/known-wet-residual-diagnosis/proof/manifest.json)

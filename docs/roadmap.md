@@ -327,9 +327,12 @@ the [source receipt](../results/known-wet-residual-diagnosis/source-checks/manif
 records the exact pins. The [fictional proof](../results/known-wet-residual-diagnosis/proof/manifest.json)
 then passed its fixed-row arithmetic under a 180-second cap after a
 retained preflight `uv` mismatch; it read no saved policy outcome.
-Publish and verify this proof before separate compute admission and the
-one capped saved-policy diagnosis. Do not extend or relabel the negative
-PR #110 run.
+The proof was published and byte-verified before the
+[separate data-only admission](../results/known-wet-residual-diagnosis/admission/manifest.json),
+which recomputed a conservative ≈256.607-second bound against the fixed
+900-second cap from the parent report job record. Publish and verify it
+before the one read-only diagnostic. Do not extend or relabel the
+negative PR #110 run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
