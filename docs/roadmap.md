@@ -455,6 +455,11 @@ matched q8 controls on both already known games, but the wet candidate's
 own score is 0.010044 initial pots, just above the frozen 0.01 absolute
 limit. Publish/verify all own bytes before the independent comparison-only
 audit and final classification. No retry or default promotion.
+All 66 own/archive blobs were remotely byte-verified before the single
+[pinned OpenSpiel scalar audit](../results/known-turn-work-budget/native/manifest.json).
+All 24 checks passed with maximum error `6.750155989720952e-14` chips
+against the frozen `1e-9` tolerance. Publish/verify the audit before the
+fixed exact-row report; the wet own absolute threshold is still missed.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

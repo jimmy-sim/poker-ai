@@ -1,0 +1,28 @@
+"""Archive one pinned comparison-only 24-case scalar audit."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+root=Path(__file__).resolve().parents[3]
+folder=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/native'
+source='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+head='1f42904468e2758557f225d3fa180d518a204725'
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier native audit')
+state=json.loads((folder/'job-state.json').read_bytes())
+result=json.loads((folder/'raw/result.json').read_bytes())
+assert state['status']=='passed' and state['exit_code']==0 and state['cap_seconds']==900 and state['reserve_within_cap_seconds']==120 and 0<state['observed_wall_seconds']<900
+assert state['source_head']==head and state['source_fingerprint']==source and (folder/'launch.exit').read_text().strip()=='0'
+assert result['status']=='completed' and result['head']==head and result['source_fingerprint']==source and len(result['rows'])==24
+assert 0<=result['maximum_error_chips']<=1e-9
+assert result['runtime']['open_spiel']=='2.0.2' and result['runtime']['license_sha256']=='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+assert len((folder/'raw/events.jsonl').read_text().splitlines())==24
+assert not any(path.is_symlink() for path in (folder/'raw').rglob('*'))
+shutil.copytree(folder/'raw',out)
+for name in ('job-state.json','launch.exit','launch.log','launcher.log','launcher.py','package_stage.py'):
+ shutil.copyfile(folder/name,out/(name+'.txt' if name.endswith('.py') else name))
+files=[]
+for path in sorted(p for p in out.rglob('*') if p.is_file()):
+ blob=path.read_bytes();files.append(dict(file=path.relative_to(out).as_posix(),bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='native_audited',source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print('native_audited',len(files),out)
