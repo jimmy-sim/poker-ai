@@ -9585,6 +9585,20 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 isolated known-wet runner.** The question stays fixed to the
+already structurally inspected `Qs Kd As 3c` game. A q8 turn key can group
+multiple exact acting observations; the candidate splits those observations
+while retaining the same exact game, chance and river keys. **Example:** the
+fixed input has six shared turn groups covering 12 exact decision rows.
+The new runner and source guard live in separate modules so older experiments
+keep their pinned code. Five focused tests, targeted style and strict typing
+pass after correcting a copied parent receipt hash and a test-only street
+parser; these early failures remain visible in local tool output. No policy
+score has been collected. **Next decision:** complete all exact-source
+qualification before the fictional proof, prescribed profile and conservative
+compute admission. Codex assisted; no human time or personal learning was
+reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded

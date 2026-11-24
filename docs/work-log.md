@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 isolated known-wet source under qualification
+
+- Added an isolated one-game runner, source guard, compute forecast, comparison-only
+  audit, report and regression tests for the published
+  [known-wet protocol](known-wet-turn-mechanism.md). Historical source modules,
+  pins, policies and results are unchanged. The first focused test run exposed an
+  incorrect copied parent receipt hash in the new adapter; that implementation
+  defect was corrected using the published source receipt. A second focused run
+  exposed a test-only street parser error; it was corrected without measuring
+  a policy outcome. Focused five tests now pass, including exact game/chance
+  identity and six collided q8 turn groups covering 12 exact rows; targeted
+  Ruff and strict mypy pass. Full exact-source local/optional/hosted
+  qualification remains pending. No PR #110 proof, profile, admission or
+  policy trajectory has started. Codex assisted; human time and personal
+  learning were not reported.
+
 ## 2026-11-23 — PR #109 merged; one known wet-game question registered
 
 - [PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) was
