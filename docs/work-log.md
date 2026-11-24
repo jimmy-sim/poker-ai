@@ -13,6 +13,24 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #108 fixed known-game report
+
+- The fixed [decision report](known-turn-exact-mechanism-result.md) replayed
+  all 12 published own policies and the published independent scalar audit.
+  The frozen rule classifies the one known As Jc 5d 3h seed-zero pair
+  **positive**: candidate 0.006422763 versus control 0.025118161 initial
+  pots at matched 10,012,410 charged work, paired −0.018695397 pots;
+  candidate passes both absolute gates, whole coverage 1.000 and recall
+  zero. Final additive turn loss is 0.151366 versus control 0.861096 chips;
+  candidate river loss is 0.079854 versus control 0.043158 chips. Seven
+  fixed/control-ranked decision rows retain cards, actions, probabilities,
+  reach and local values. One known input/seed has no transfer or seed
+  uncertainty claim. The first report invocation stopped at shell
+  redirection before Python started; its preflight correction is retained.
+  Next: publish/verify report, run final exact-source local/optional/hooks
+  and hosted checks, then review PR #108. No default promotion. Codex
+  assisted; human time/learning not reported.
+
 ## 2026-11-23 — PR #108 pinned scalar audit
 
 - After the complete own archive was published and byte-verified, the one

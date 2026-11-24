@@ -9519,6 +9519,23 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 fixed known-game decision report.** The exact-turn learner
+improved the previously examined medium/dry game at the same charged work:
+final exploitability fell from 0.025118 to 0.006423 initial pots, passing
+the prospectively fixed candidate and paired gates. **Example:** for the
+Jh 9h turn fold/call row on As Jc 5d 3h, the control's contribution to
+best-response gain is 0.746330 chips at the final checkpoint; the
+[fixed report](known-turn-exact-mechanism-result.md) shows both arms'
+saved action probabilities and alternative values at all three budgets.
+The aggregate turn weakness shrank, while the candidate's river weakness
+rose slightly. These values assume a fixed saved opponent and optimized
+best-reply continuation, so they are not universal action advice.
+**Next decision:** finish final source qualification and review, then
+consider a separately preregistered transfer test on genuinely uninspected
+inputs. This one known board and deterministic seed cannot establish
+uncertainty across seeds or transfer. No default was promoted. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar audit.** The single pinned OpenSpiel
 2.0.2 comparison checked both saved policies at each registered work
 checkpoint, with both current and linear-average readouts. Its largest

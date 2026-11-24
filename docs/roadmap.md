@@ -219,6 +219,18 @@ the **known** input is 0.006423 versus 0.025118 initial pots for exact turn
 and q8 control, with full whole coverage and zero recall violations. Own
 policies and scores must be published/verified before the pinned scalar
 audit; no accepted strength or default claim yet.
+The [independent scalar audit](../results/known-turn-exact-mechanism/native/manifest.json)
+then passed all 12 saved policies with maximum error `4.263256414560601e-14`
+chips under the `1e-9` gate. The [fixed known-case result](known-turn-exact-mechanism-result.md)
+classifies the matched 10m pair **positive on this one known finite game**:
+exact-turn 0.006423 versus q8 control 0.025118 initial pots, paired
+−0.018695 pots, whole coverage 1.000, recall zero. The gain is chiefly
+turn-side; candidate river loss is slightly higher. One seed and a known
+input establish neither uncertainty across seeds nor transfer. Final exact
+report-head local/optional/hosted qualification and review remain pending;
+no default is promoted. The next poker-strength question, once this PR is
+fully qualified and merged, should test prospective board/range transfer
+without using already inspected inputs as unseen validation.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
