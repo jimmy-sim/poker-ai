@@ -13,6 +13,24 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 final exact-report qualification
+
+- On the published structural-stop report HEAD `cc8a310f`, exact-source
+  local base Python 3.11/3.12 each passed 5,806 tests (73 skipped, 150
+  slow deselected) with lint, format, strict typing and pre/post historical
+  source/archive/runtime/lock guards. Optional 3.11 passed 2,597;
+  optional 3.12 passed 2,595 with two expected skips and pinned
+  OpenSpiel/Numba/license guards. Exact-head all-file hooks and both
+  [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45317245286)
+  passed. The earlier intermediate receipt-head CI was canceled by the
+  report push and its official logs are retained separately. The
+  [21-file final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+  binds the unchanged source, full raw structural stop, report and exact
+  check logs. No policy or score was collected. Next: publish/verify the
+  final receipt, await receipt-head hosted CI, finish solo review and
+  history-preserving merge if eligible. Codex assisted; human time or
+  personal learning were not reported.
+
 ## 2026-11-23 — PR #109 one-time structural stop
 
 - On published qualified selector HEAD `5019cf1e`, the one permitted

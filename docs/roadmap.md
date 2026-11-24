@@ -280,6 +280,13 @@ Publish/verify the raw stop, finish PR #109 final checks/review, then use
 the structural evidence and saved policy weaknesses to register a
 **distinct** bounded poker-strength question. The two medium inputs are
 now known structurally inspected cases, not unseen validation.
+The exact structural-stop report then passed all four final local
+base/optional lanes, all-file hooks and both
+[hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45317245286).
+The [final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+retains those checks and the canceled intermediate CI separately. Publish
+and verify that receipt, then finish solo review and history-preserving
+merge; the scientific classification stays inconclusive.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

@@ -141,3 +141,7 @@ strength; no policy, score or reference comparison ran. The two medium
 inputs are now structurally inspected, known cases. Finish PR #109's
 evidence/checks/review and choose a distinct prospective strength
 question; do not remove the failed third stratum inside this study.
+The exact-report final local base/optional lanes, hooks and both hosted
+jobs then passed, with the intermediate canceled CI retained. Publish
+and verify the [final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+and complete solo review/history merge before the next prospective plan.

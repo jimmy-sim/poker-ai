@@ -9558,6 +9558,18 @@ decision:** finish publication and checks, then ask a different bounded
 question that does not quietly remove the failed third stratum. Codex
 assisted; no human time or personal learning was reported.
 
+**November 23 final stop checks.** The structural result was checked on
+the exact report commit by both base Python versions, both optional
+versions, all-file hooks and both hosted jobs. **Example:** the final
+optional Python 3.12 suite passed 2,595 tests with two skips, while the
+earlier source-head optional watchdog failure remains visible in its
+separate receipt. The [final check receipt](../results/turn-collision-transfer/final-checks/manifest.json)
+binds the raw stop, report and checks; a software pass does not turn the
+untrained two-spot partial selection into a strength gain. **Next
+decision:** publish/verify the receipt and complete PR review, then
+register a different bounded question. Codex assisted; no human time or
+personal learning was reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded
