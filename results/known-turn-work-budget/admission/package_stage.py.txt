@@ -1,0 +1,32 @@
+"""Seal separate admission after published complete profile recomputation."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+from known_turn_work_budget.forecast import forecast
+from known_turn_work_budget.gate import PROFILE,require_archive,source_fingerprint
+
+root=Path(__file__).resolve().parents[3]
+folder=Path(__file__).resolve().parent
+out=root/'results/known-turn-work-budget/admission'
+source='2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a'
+head='2c7a5f3d5675bba3a53942e01f087bf66753f3be'
+if out.exists() or out.is_symlink():raise FileExistsError('retain earlier admission')
+assert source_fingerprint(root)==source
+require_archive(root,root/PROFILE,'profile_published',source)
+state=json.loads((folder/'job-state.json').read_bytes())
+profile=json.loads((root/PROFILE/'result.json').read_bytes())
+decision=json.loads((folder/'raw/decision.json').read_bytes())
+receipt=json.loads((folder/'raw/receipt.json').read_bytes())
+assert state['status']=='passed' and state['exit_code']==0 and state['source_head']==head and state['source_fingerprint']==source
+assert (folder/'launch.exit').read_text().strip()=='0'
+assert decision==forecast(profile) and decision['status']=='admitted' and decision['strict_bound_seconds']<7200
+assert receipt==dict(head=head,source_fingerprint=source,profile=PROFILE.as_posix(),decision_status='admitted')
+shutil.copytree(folder/'raw',out)
+for name in ('job-state.json','launch.exit','launch.log','launcher.log','launcher.py','package_stage.py'):
+ shutil.copyfile(folder/name,out/(name+'.txt' if name.endswith('.py') else name))
+files=[]
+for path in sorted(p for p in out.rglob('*') if p.is_file()):
+ blob=path.read_bytes();files.append(dict(file=path.relative_to(out).as_posix(),bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+(out/'manifest.json').write_text(json.dumps(dict(status='admitted',source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print('admitted',len(files),out)

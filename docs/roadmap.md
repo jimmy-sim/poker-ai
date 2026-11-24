@@ -443,6 +443,11 @@ completed in 80.961 whole seconds with all repeated paths and memory under
 cap; its provisional conservative bound is 5273.267 seconds, below 7200.
 Publish/verify the profile before the separate data-only admission; this
 is not yet a poker-strength result.
+All 85 profile/checkpoint blobs were remotely byte-verified. Separate
+[data-only admission](../results/known-turn-work-budget/admission/manifest.json)
+recomputed the frozen strict bound `5273.267051859777 < 7200` seconds
+and admitted the one fixed four-path study. Publish/verify admission before
+the own comparison; no poker-strength outcome exists yet.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
