@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 isolated one-time selector source
+
+- An isolated score-free selector now binds the published protocol, all 24
+  prior spot hashes, parent source and one-time output paths. It draws five
+  private combos per seat, counts only structural turn-key collisions,
+  flushes each raw candidate before inspecting its tree, and retains every
+  screened attempt. Its freeze reader checks every saved candidate and
+  first-eligible order; source pin, timeout and no-replacement guards
+  remain. Seven synthetic/contract tests, focused Ruff/format and strict
+  mypy passed. Initial test import and style/type iteration failures are
+  retained under ignored `results/runs/turn-collision-transfer-source-20261123/`.
+  No registered board, tree, collision, policy or score has been measured.
+  Next: publish/byte-verify tested selector source, then complete exact-source
+  qualification before the one-time screen. Codex assisted; human time or
+  learning was not reported.
+
 ## 2026-11-23 — PR #108 merge and next prospective question
 
 - [PR #108](https://github.com/jimmy-sim/poker-ai/pull/108) was

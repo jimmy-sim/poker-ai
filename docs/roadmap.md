@@ -249,6 +249,12 @@ prior inspected inputs, matched control/work, one deterministic seed, gates
 and caps before any new board or collision measurement. This conditional
 cohort is not a population sample; no new outcome existed at protocol
 publication and no default is promoted.
+PR #109's isolated one-time structural selector and synthetic tests have
+been implemented without changing PR #108 or earlier pinned source. Seven
+focused tests, Ruff/format and strict mypy pass; the first software
+iteration failures are retained. No registered board, tree, collision or
+policy measurement exists yet. Publish/verify this source and complete
+exact-source qualification before its one-time screen.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

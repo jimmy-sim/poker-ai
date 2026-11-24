@@ -9519,6 +9519,19 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 isolated selector source.** The next test needs inputs where
+exact-turn keys can actually separate hands, while avoiding score-based
+case selection. The new selector fixes the RNG stream and checks a bounded
+sequence of structural candidates, saving each before building its tree;
+the freeze reader verifies the first eligible choice. **Example:** a q8
+turn key shared by distinct exact acting rows counts as a collision, while
+river keys must stay exact. Seven synthetic tests and focused style/type
+checks pass; earlier import and formatting failures were retained. No
+registered card/range draw or poker score occurred. **Next decision:**
+publish/verify this source and finish exact-source checks before running
+the one-time structural screen. Codex assisted; no human time or personal
+learning was reported.
+
 **November 23 known-game closure and next question.** PR #108's
 history-preserving merge keeps every protocol and evidence commit available
 on main. Its one known game's exact-turn gain is real under the frozen
