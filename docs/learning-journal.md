@@ -9519,6 +9519,24 @@ and verify admission, then run the one allowed 10m own comparison. No
 poker-strength claim follows from a compute forecast. Codex assisted;
 no human time or personal learning was reported.
 
+**November 23 one known-case own pair.** The single admitted
+control/candidate comparison trained each representation from scratch to
+the same 10,012,410 charged visits and retained all 12 policies. The own
+scorer's final linear-average candidate is 0.231219 chips versus
+0.904254 chips for q8 control, or 0.006423 versus 0.025118 of the 36-
+chip initial pot. **Example:** finer turn keys can let the previously
+shared Jh 9h and Qd Qh situations take separate action probabilities;
+the actual [own archive](../results/known-turn-exact-mechanism/own/manifest.json)
+contains both saved policies and earlier checkpoints for checking the
+specific decisions. That example is a hypothesis until the fixed report
+shows those rows. Both paths have whole coverage 1.000 and zero recall
+violations; candidate post-initial-river coverage is 0.969010. This is
+one deterministic **known-game** pair with no seed-based uncertainty or
+transfer claim. **Next decision:** publish/verify own bytes before the
+pinned scalar audit and fixed decision report. Do not call the apparent
+gain accepted until those gates pass. Codex assisted; no human time or
+personal learning was reported.
+
 ### November 18: locate current CPU in receipt prerequisites
 
 **Question:** within the earlier archive read, how much current parent CPU is

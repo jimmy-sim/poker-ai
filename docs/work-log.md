@@ -108,6 +108,23 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
   120 seconds reserved for failure save. Codex assisted; human time/
   learning not reported.
 
+- The one admitted PR #108 matched-work [own pair](../results/known-turn-exact-mechanism/own/manifest.json)
+  completed once from clean admission HEAD `a5f1bb5d` under its 7,200-
+  second cap: 13.740 internal/14.516 launcher seconds, both arms at
+  10,012,410 charged visits, six saved current/linear-average policies
+  each, whole coverage 1.000 and zero recall violations. Final own-only
+  exact exploitability is 0.904254 chips (0.025118 initial pots) for the
+  q8 control and 0.231219 chips (0.006423 pots) for the exact-turn
+  candidate, paired difference −0.018695 pots. At 100k/1m the paired
+  differences are −0.003080/−0.026396 pots. Final post-initial-river
+  coverage is 0.994179/0.969010 respectively; peak worker RSS
+  173,735,936/156,663,808 bytes. All 32 raw/launcher members are sealed.
+  These are preliminary own calculations on one **known** game, not an
+  accepted strength claim or seed-based uncertainty estimate. Next:
+  publish/GitHub-byte-verify every own policy/score before the one pinned
+  comparison-only OpenSpiel audit. Codex assisted; human time/learning
+  not reported.
+
 ## 2026-11-23 — PR #106 closure and prospective exact-turn test
 
 - [PR #106](https://github.com/jimmy-sim/poker-ai/pull/106) was history-merged

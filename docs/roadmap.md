@@ -213,6 +213,12 @@ A separate data-only [admission](../results/known-turn-exact-mechanism/admission
 recomputed that strict bound from published profile bytes and passed;
 publish/verify its receipt before the one 10m own pair. No poker-strength
 result yet.
+The single admitted [own pair](../results/known-turn-exact-mechanism/own/manifest.json)
+then completed both fixed 10m-work paths once. Preliminary own scoring on
+the **known** input is 0.006423 versus 0.025118 initial pots for exact turn
+and q8 control, with full whole coverage and zero recall violations. Own
+policies and scores must be published/verified before the pinned scalar
+audit; no accepted strength or default claim yet.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.
