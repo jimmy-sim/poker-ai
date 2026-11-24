@@ -13,6 +13,22 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #110 pinned scalar audit
+
+- After own policies/scores were published and all 35 changed GitHub
+  blobs verified, the single comparison-only OpenSpiel 2.0.2 audit
+  checked all 12 saved scalar cases in 85.16/900 seconds. Its maximum
+  absolute own/reference error was `1.9539925233402755e−14` chips,
+  below the fixed `1e−9` tolerance. Installed Apache-2.0 license SHA
+  `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`
+  matched the pin. The [eight-file native archive](../results/known-wet-turn-mechanism/native/manifest.json)
+  retains every scalar and runtime record; reference policies never
+  entered training. This validates the saved own scores but does not
+  reverse the candidate's negative absolute gate. Next: publish/verify
+  native evidence, then build the fixed report and representative
+  decisions from published bytes. Codex assisted; human time and
+  personal learning were not reported.
+
 ## 2026-11-23 — PR #110 one fixed own policy pair
 
 - The sole admitted two-worker control/candidate run completed in

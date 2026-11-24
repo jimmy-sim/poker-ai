@@ -9585,6 +9585,19 @@ and verify the plan, qualify isolated source, then run only if the
 conservative compute gate admits it. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 independent scalar check of the known-wet result.**
+The saved own scores were published before any OpenSpiel comparison.
+**Example:** across all 12 current/average policy checkpoints, the
+largest difference between the own exact restricted-game scalar and
+pinned OpenSpiel 2.0.2 was about `1.95e−14` chips, below the registered
+`1e−9` tolerance. The [native audit](../results/known-wet-turn-mechanism/native/manifest.json)
+retains its full grid and Apache-2.0 license pin. This supports the
+accuracy of the unfavorable own absolute result; a comparison-only
+reference cannot change the frozen acceptance threshold. **Next
+decision:** publish the audit and build the fixed report with turn/river
+contributions and representative decisions. Codex assisted; human time
+and personal learning were not reported.
+
 **November 23 one known-wet own comparison.** The exact-turn key
 separated six q8 turn groups, and both representations saw the same
 10,117,956 charged work. **Example:** with a 36-chip initial pot, the
