@@ -287,6 +287,17 @@ The [final receipt](../results/turn-collision-transfer/final-checks/manifest.jso
 retains those checks and the canceled intermediate CI separately. Publish
 and verify that receipt, then finish solo review and history-preserving
 merge; the scientific classification stays inconclusive.
+[PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) then
+history-merged at `66ec5a9d` after receipt-head Python 3.11/3.12 CI
+passed and solo review; all six checkpoint commits remain on main.
+Post-merge main CI is tracked separately. The next
+[prospective known-wet decision test](known-wet-turn-mechanism.md) asks
+whether the unchanged exact-turn candidate improves the already
+structurally inspected first-eligible medium/wet OOP input at matched
+work. This is one **known** game with no policy outcome yet, not a
+replacement for the failed PR #109 third stratum or default promotion.
+Its protocol fixes the single input, seed, metrics, acceptance,
+forecast/caps and publication gates before training.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

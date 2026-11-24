@@ -145,3 +145,11 @@ The exact-report final local base/optional lanes, hooks and both hosted
 jobs then passed, with the intermediate canceled CI retained. Publish
 and verify the [final receipt](../results/turn-collision-transfer/final-checks/manifest.json)
 and complete solo review/history merge before the next prospective plan.
+[PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) history-merged
+at `66ec5a9d` after both receipt-head hosted jobs passed. The next
+[prospective known-wet question](known-wet-turn-mechanism.md) fixes the
+already structurally inspected first-eligible wet OOP input and asks
+whether the unchanged representation improves **that one finite game's**
+decisions. It does not reclassify the failed three-stratum screen or
+claim an unseen input, texture-isolated effect or default promotion.
+No new policy outcome existed at this plan checkpoint.

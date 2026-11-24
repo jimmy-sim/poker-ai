@@ -13,6 +13,26 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-23 — PR #109 merged; one known wet-game question registered
+
+- [PR #109](https://github.com/jimmy-sim/poker-ai/pull/109) was
+  history-merged at `66ec5a9d` after both receipt-head hosted jobs passed
+  and the solo diff/evidence review. All six research checkpoint commits
+  remain ancestors of main; post-merge main CI is tracked separately.
+  Its three-stratum collision-conditioned comparison remains
+  **inconclusive by structural stop**, with no policy or default change.
+- The distinct [prospective known-wet protocol](known-wet-turn-mechanism.md)
+  fixes PR #109's already structurally inspected first-eligible
+  `Qs Kd As 3c` medium/wet OOP input, unchanged q8/exact-turn arms,
+  deterministic seed zero, 100k/1m/10m matched charged work, historical
+  absolute and paired gates, proof/profile/separate strict compute
+  admission, own-before-reference publication and hard caps. The question
+  is whether this one known wet game's decisions improve; it does not
+  replace the failed third stratum or establish population transfer. No
+  policy outcome for this input exists at protocol publication. Next:
+  publish/verify the plan before isolated implementation or any training.
+  Codex assisted; human time/personal learning were not reported.
+
 ## 2026-11-23 — PR #109 final exact-report qualification
 
 - On the published structural-stop report HEAD `cc8a310f`, exact-source

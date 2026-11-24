@@ -9570,6 +9570,21 @@ decision:** publish/verify the receipt and complete PR review, then
 register a different bounded question. Codex assisted; no human time or
 personal learning was reported.
 
+**November 23 next known wet decision question.** PR #109 history-merged
+without a strength measurement because its low/wet IP opportunity gate
+failed. The medium/wet OOP input was fixed by the earlier score-free
+screen and has 12 turn rows sharing six q8 keys; it has **no trained
+policy outcome**. **Example:** its `Qs Kd As 3c` turn board and five
+private combos per seat differ from the earlier positive `As Jc 5d 3h`
+known game, so a gain here would show one more finite-game example,
+not isolate the effect of wet texture or prove population transfer.
+The new [prospective protocol](known-wet-turn-mechanism.md) fixes this
+one known input, unchanged arms and matched work before any policy run;
+the failed three-stratum result stays failed. **Next decision:** publish
+and verify the plan, qualify isolated source, then run only if the
+conservative compute gate admits it. Codex assisted; no human time or
+personal learning was reported.
+
 **November 23 isolated selector source.** The next test needs inputs where
 exact-turn keys can actually separate hands, while avoiding score-based
 case selection. The new selector fixes the RNG stream and checks a bounded
