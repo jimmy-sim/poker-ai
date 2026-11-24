@@ -313,9 +313,14 @@ PR #110's exact negative report passed all four final local base/optional
 lanes, all-file hooks and both
 [hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45345593711).
 Its [final receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
-retains those checks. Publish and verify that receipt, then require its
-hosted CI and complete solo review before a distinct prospectively
-registered follow-up. Do not extend or relabel this run.
+retains those checks. [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+history-merged at `8b43f94d` after receipt-head hosted CI and solo review;
+post-merge main CI is tracked separately. The next [prospective saved-policy
+diagnosis](known-wet-residual-diagnosis.md) fixes the already known wet
+game's 12 published policies and asks whether residual exact-turn/river
+best-response gain is concentrated in a few decisions or diffuse. It
+collects no new policy, score or reference strategy, and cannot revise
+PR #110's negative gates. Do not extend or relabel that run.
 Further validation-performance work is deferred
 unless it blocks correctness or the prescribed experiment budget. Follow the [learning journal](learning-journal.md)
 for the reasoning and the [work log](work-log.md) for experiments and checks.

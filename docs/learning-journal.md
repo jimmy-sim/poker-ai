@@ -9618,6 +9618,21 @@ decision:** publish and review the receipt, then choose a distinct
 prospective question from the remaining turn and river weaknesses.
 Codex assisted; no human time or personal learning was reported.
 
+**November 24 next residual-loss question.** Exact acting turn keys helped
+the known wet game, yet its final average still left 0.8045 chips of
+turn and 0.2685 chips of river best-response gain. **Example:** the
+saved final *current* policy has a smaller river gain (0.1263 chips) but
+a much larger turn gain (3.1719 chips) than the final linear average;
+choosing one readout after seeing that would tune on this known result.
+The [prospective read-only plan](known-wet-residual-diagnosis.md) instead
+fixes the candidate-average top-ten rows per street before comparing
+their saved probabilities, reaches and values across all 12 already
+published policies. It can show whether residual losses are concentrated
+and whether the two readouts describe the same vulnerable rows; it
+cannot prove a new training fix. **Next decision:** publish the plan,
+qualify isolated tracing code, then run the one admitted capped diagnosis.
+Codex assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the

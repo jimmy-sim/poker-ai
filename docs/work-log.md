@@ -13,6 +13,21 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Prospective known-wet residual diagnosis
+
+- After [PR #110](https://github.com/jimmy-sim/poker-ai/pull/110)
+  history-merged with negative absolute acceptance and both receipt-head
+  hosted jobs passing, the next [prospective protocol](known-wet-residual-diagnosis.md)
+  fixes one read-only question before any new candidate-ranked trace.
+  It binds all 12 published known-game policies, both readouts, all three
+  work labels, candidate-final-average top-ten turn and top-ten river row
+  rules, exact trace identities, a separate conservative forecast and
+  one 900-second cap. The candidate has exact acting turn and river keys
+  on a turn-start game, so this cannot test flop grouping or unseen
+  transfer. No new ranking, training or reference work has occurred at
+  publication. Post-merge main CI for PR #110 is tracked separately.
+  Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — PR #110 exact-report qualification
 
 - The [final check receipt](../results/known-wet-turn-mechanism/final-checks/manifest.json)
