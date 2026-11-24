@@ -15,6 +15,16 @@ The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
 ## 2026-11-24 — Prospective known-turn regret-recency question
 
+- After the source receipt was committed and all 30 changed GitHub blobs
+  verified, its archive publication guard passed. The one registered
+  fictional proof then saved six current/linear-average policies at
+  80/240/720 visits, final work 726, and replayed every snapshot. Its
+  whole launcher used 0.790/180 seconds on the recorded Apple M4.
+  The [20-member proof archive](../results/known-turn-regret-recency/own-proof/manifest.json)
+  has manifest SHA-256 `3dcb79da6acd30cab61d3d72f8053eb753a44a66dc6b1485c7beba964dd1fc5b`.
+  No known-game candidate score exists. Next: publish and byte-verify the
+  proof before the six fixed 1m-work profile paths. Codex assisted;
+  human time and personal learning were not reported.
 - The corrected `3ff86f18` source passed exact-head base Python
   3.11/3.12 (each 5,826 passed, 73 skipped, 150 slow deselected),
   optional 3.11 (2,601 passed), optional 3.12 (2,599 passed, two

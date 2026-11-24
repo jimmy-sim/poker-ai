@@ -351,7 +351,9 @@ policy, scores and admission do not yet exist. The corrected isolated
 source passed fictional/synthetic focused checks and all four exact-source
 local base/optional lanes, hooks and both hosted jobs; its
 [receipt](../results/known-turn-regret-recency/source-checks/manifest.json)
-must be published and byte-verified before the fictional proof. The
+was published and byte-verified before the one capped fictional
+[proof](../results/known-turn-regret-recency/own-proof/manifest.json),
+which passed six saved/replayed readouts within its 180-second cap. The
 old import-order failure and interrupted/canceled old-source checks
 remain retained. Do not
 extend or relabel the negative PR #110 run.

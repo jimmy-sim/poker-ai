@@ -9773,6 +9773,20 @@ receipt, then run the one fictional proof under its fixed 180-second cap.
 No poker-strength claim follows from source qualification. Codex
 assisted; no human time or personal learning was reported.
 
+**November 24 prove capture before known-game training.** After the
+corrected source receipt was published and verified, the fixed fictional
+signal game saved six current and linear-average readouts and replayed
+them all from disk. Its final charged work was 726 and the whole process
+used 0.790 seconds against the 180-second cap. **Example:** the same
+snapshot metadata carries the source fingerprint, work crossing and
+random state that the later poker paths must retain; this checks the
+recording path without looking at either known game's outcome. The
+[proof archive](../results/known-turn-regret-recency/own-proof/manifest.json)
+includes the launcher cap and complete saved bytes. **Next decision:**
+publish and verify the proof, then run the one fixed six-path 1m-work
+profile before considering the conservative 10m admission. Codex
+assisted; no human time or personal learning was reported.
+
 **November 23 independent scalar check of the known-wet result.**
 The saved own scores were published before any OpenSpiel comparison.
 **Example:** across all 12 current/average policy checkpoints, the
