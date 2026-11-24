@@ -448,6 +448,13 @@ All 85 profile/checkpoint blobs were remotely byte-verified. Separate
 recomputed the frozen strict bound `5273.267051859777 < 7200` seconds
 and admitted the one fixed four-path study. Publish/verify admission before
 the own comparison; no poker-strength outcome exists yet.
+The one admitted fixed four-path [own comparison](../results/known-turn-work-budget/own/manifest.json)
+completed under cap, reproduced all historical 10m hashes and saved all 24
+policies with matched work. At 40m, exact-turn linear averages beat their
+matched q8 controls on both already known games, but the wet candidate's
+own score is 0.010044 initial pots, just above the frozen 0.01 absolute
+limit. Publish/verify all own bytes before the independent comparison-only
+audit and final classification. No retry or default promotion.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

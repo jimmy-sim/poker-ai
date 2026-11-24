@@ -1,0 +1,191 @@
+{
+  "assignments": [
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "failure": null,
+  "head": "e3855f7fa579cf78abe53b55ac7df8381895ad2d",
+  "parent_cpu_seconds": 0.071606,
+  "reaped_children_cpu_seconds": 208.07999999999998,
+  "seconds": 104.12722850000137,
+  "source_fingerprint": "2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a",
+  "stage": "study",
+  "status": "completed",
+  "worker_count": 2,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 49543,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 103.805367,
+          "kind": "done",
+          "seconds": 104.02898162498605,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 6,
+                "final_work": 40205562,
+                "index": 0,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop-02",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 66.24798162499792,
+                "worker_peak_rss_bytes": 759119872
+              },
+              {
+                "captures": 6,
+                "final_work": 40007034,
+                "index": 2,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "full_new_medium_dry_oop",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 37.774971375009045,
+                "worker_peak_rss_bytes": 786169856
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 49543,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 49544,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 103.731617,
+          "kind": "done",
+          "seconds": 104.02425479202066,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 6,
+                "final_work": 40205562,
+                "index": 1,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop-02",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 66.16521187499166,
+                "worker_peak_rss_bytes": 650461184
+              },
+              {
+                "captures": 6,
+                "final_work": 40007034,
+                "index": 3,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "full_new_medium_dry_oop",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 37.85289300000295,
+                "worker_peak_rss_bytes": 676429824
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 49544,
+      "slot": 1
+    }
+  ]
+}
