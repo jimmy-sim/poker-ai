@@ -2858,6 +2858,14 @@ saved 40m decisions will improve. Next: publish the complete profile, then
 make the separate admission decision. Codex assisted; no human time or
 personal learning was reported.
 
+The separately published [compute admission](../results/known-turn-collision-medium-transfer/admission/manifest.json)
+recomputed the strict 4,403.465-second bound from those saved profile bytes
+and admitted one 40m matched-work study under the 7,200-second cap. An
+admission is a resource decision, not evidence that finer turn information
+helps. Next: publish and verify the admission receipt before starting the
+fixed eight real-game paths. Codex assisted; no human time or personal
+learning was reported.
+
 ## 53. Measure the work around training too — November 10
 
 The first real timing attempt passed its own checks. Three short runs in each

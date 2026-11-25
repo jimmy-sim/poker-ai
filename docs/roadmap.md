@@ -514,6 +514,10 @@ The complete [24-path profile](../results/known-turn-collision-medium-transfer/p
 fit its cap and produced a provisional strict 4,403.465-second forecast;
 publish/verify all profile bytes before the separate admission. No 40m
 comparison has begun.
+The separately computed [admission](../results/known-turn-collision-medium-transfer/admission/manifest.json)
+passed the unchanged strict 7,200-second bound from the published profile.
+It permits one fixed eight-path own comparison after the admission bytes are
+published and verified; it does not establish strength.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
