@@ -165,6 +165,14 @@ unconditioned boards. Next: verify the frozen bytes on GitHub, then run the
 fictional software proof. Codex assisted; no human time or personal learning
 was reported.
 
+The [fictional proof](../results/known-turn-collision-medium-transfer/own-proof/manifest.json)
+then captured and replayed six saved policies in each arm under the same
+charged work, with identical fictional scores. This checks that the saved
+checkpoint path can reproduce its own values before using a real selected
+input. It says nothing about which representation plays better. Next:
+publish the proof before profiling the real four-input grid. Codex assisted;
+no human time or personal learning was reported.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)

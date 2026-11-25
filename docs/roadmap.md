@@ -506,6 +506,10 @@ archive must be published and verified before freezing the selected cohort.
 The [freeze](../configs/known-turn-collision-medium-transfer-freeze.json)
 then copied only those four first-eligible raw inputs, with byte-equal
 selected hashes; publish/verify it before proof or real profiling.
+The frozen cohort was published and verified; its single fictional
+[capture/replay proof](../results/known-turn-collision-medium-transfer/own-proof/manifest.json)
+passed under 180 seconds. The repeated 5m real-input profile and separate
+compute admission remain pending before any 40m comparison.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
