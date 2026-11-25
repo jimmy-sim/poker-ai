@@ -492,6 +492,12 @@ selection requires turn collisions, any strength conclusion applies only to
 collision-containing medium OOP restricted games, with no default promotion.
 At this protocol checkpoint no new board, collision, policy or score has
 been measured.
+PR #116's isolated source then passed all four exact-source local roles,
+both protocol-head hosted jobs and both source-head hosted jobs; the first
+source-head Python 3.11 attempt hit its unchanged 35-minute limit at 97%
+and remains retained separately from the passing same-SHA requalification.
+The [source receipt](../results/known-turn-collision-medium-transfer/source-checks/manifest.json)
+precedes the one-time screen. No new card/range input has yet been drawn.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -1,0 +1,58 @@
+"""Seal exact-source qualification after all local and hosted gates pass."""
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+raw = Path(__file__).resolve().parent
+old = root / 'results/runs/known-turn-collision-medium-transfer-source-20261124'
+out = root / 'results/known-turn-collision-medium-transfer/source-checks'
+head = 'a96e37fdfb7766ca039d68227a3821dbaf218864'
+fingerprint = '4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0'
+protocol = '682b5431e1ec7e2af7eb39d57a0dafa9a5e67e34'
+roles = ('base311', 'base312', 'optional311', 'optional312')
+if out.exists() or out.is_symlink():
+    raise FileExistsError('retain earlier source receipt')
+assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip() == head
+assert not subprocess.check_output(['git', 'status', '--porcelain=v1'], cwd=root)
+receipts = [json.loads((raw / f'{role}.json').read_bytes()) for role in roles]
+assert all(row['status'] == 'passed' and row['head'] == head and row['source_fingerprint'] == fingerprint and row['failure'] is None for row in receipts)
+assert (raw / 'exact-hooks.exit').read_text().strip() == '0'
+checks = []
+for prefix, revision in (('protocol-hosted', protocol), ('source-hosted', head)):
+    row = json.loads((raw / f'{prefix}.json').read_bytes())
+    assert row['headSha'] == revision and row['conclusion'] == 'success'
+    assert {job['name']: job['conclusion'] for job in row['jobs']} == {'Python 3.11': 'success', 'Python 3.12': 'success'}
+    checks.append(row)
+assert all((raw / f'{role}.log').is_file() for role in roles)
+out.mkdir(parents=True)
+
+def copy(source, label):
+    target = out / label
+    if source.suffix == '.log':
+        with target.with_name(target.name + '.gz').open('xb') as stream:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == '.py':
+        shutil.copyfile(source, target.with_name(target.name + '.txt'))
+    else:
+        shutil.copyfile(source, target)
+
+for name in ('runner.py', 'package_source.py', 'optional-suites.json', 'exact-hooks.log', 'exact-hooks.exit', 'launcher.log', 'protocol-hosted.json', 'protocol-hosted.log', 'source-hosted.json', 'source-hosted.log', 'source-hosted-first.json', 'source-hosted-first.log', 'source-remote-tree.json'):
+    copy(raw / name, name)
+for role in roles:
+    for suffix in ('json', 'log'):
+        copy(raw / f'{role}.{suffix}', f'{role}.{suffix}')
+for name in ('iteration-failures.md', 'base311.json', 'base311.log', 'launcher.log'):
+    copy(old / name, 'interrupted-' + name)
+result = dict(status='source_qualified', tested_head=head, source_fingerprint=fingerprint, local_roles=receipts, protocol_hosted_run=checks[0]['databaseId'], source_hosted_run=checks[1]['databaseId'], hooks='passed', screen_started=False, proof_started=False, profile_started=False, training_started=False)
+(out / 'result.json').write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
+files = []
+for path in sorted(out.iterdir()):
+    blob = path.read_bytes()
+    files.append(dict(file=path.name, bytes=len(blob), sha256=hashlib.sha256(blob).hexdigest()))
+(out / 'manifest.json').write_text(json.dumps(dict(status='source_qualified', source_fingerprint=fingerprint, files=files), sort_keys=True, indent=2) + '\n')
+print('source_qualified', len(files), out)

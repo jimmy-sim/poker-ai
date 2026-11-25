@@ -130,6 +130,20 @@ four-input cohort before drawing cards. It follows the deterministic-seed
 stop and preserves PR #114's negative wet gate. A failed selection or compute
 gate will stop it; no new outcome exists at protocol publication.
 
+**Source checkpoint, November 24:** [PR #116](https://github.com/jimmy-sim/poker-ai/pull/116)
+now has isolated, qualified code for selecting physical card/range inputs and
+comparing the unchanged q8-turn and exact-turn representations. **Example:**
+the screen must keep the first medium board/range input with at least four
+collided turn decision rows; a synthetic test rejects skipping that input for
+a later one. All four exact-source local suites and both hosted Python jobs
+passed. The first hosted Python 3.11 attempt hit its fixed time limit at 97%
+of tests; its log remains in the [source receipt](../results/known-turn-collision-medium-transfer/source-checks/manifest.json),
+and one targeted check of the same commit passed. This verifies the software
+and publication order, **not better poker decisions**. No new input has been
+drawn. Next: publish and verify the source receipt, then run the single
+score-free input screen. Codex assisted; no human time or personal learning
+was reported.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)
