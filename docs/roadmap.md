@@ -552,6 +552,20 @@ disjoint shards under the same time limit, each retaining lint, typing and
 hooks. The aggregate `Python 3.11` gate requires every shard and the full
 3.12 job. Verify the shard collection and new hosted result before merge;
 this changes no poker protocol, candidate, threshold or source pin.
+PR #116 subsequently passed both 3.11 shards, full 3.12 and aggregate on
+its final head, then history-merged as `0c0f3a2c` with post-merge main CI
+passing all four jobs. Its four-input strength result remains **negative**.
+The separate PR #117 read-only row diagnosis stopped at exact-source
+qualification and closed unmerged, with no row result. From the fully
+checked PR #116 parent policies, the next distinct [prospective 50:50
+mixture](known-turn-half-policy-mixture.md) asks whether averaging their
+legal-action probabilities improves exact decisions on the same four known
+games. **Definition of done:** publish the fixed eight snapshot inputs,
+weight, q8 comparator, absolute/paired gates and resource limits before any
+mixture score; qualify isolated source, pass fictional proof and data-only
+admission, run one own four-game score, publish own bytes before the pinned
+comparison-only reference, then report and complete final checks. No default
+promotion or unseen-game claim is available from these known inputs.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

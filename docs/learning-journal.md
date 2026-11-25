@@ -124,6 +124,25 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Next registered strength question, November 25:** PR #117 closed unmerged
+at its source gate and supplied no location evidence. The fully checked
+PR #116 policies suggest a different experiment: average the q8 and
+exact-turn saved action probabilities with a fixed 50:50 weight on each
+of the same four known games. A *behavior-policy mixture* picks an action
+using an averaged probability at each decision; its opponent's best response
+must be calculated anew because the mixed sequence of actions can differ
+from either parent's play. **Example:** if the two saved policies choose
+check with probabilities 0.2 and 0.6 at one exact row, the mixture chooses
+check with probability 0.4 there. That arithmetic does not imply an
+intermediate exploitability. The [prospective protocol](known-turn-half-policy-mixture.md)
+fixes the weight, eight snapshots, q8 comparator, thresholds, resource
+caps and gates before any mixture score. The four inputs are already
+outcome-inspected; this cannot establish generalization or promote a
+default. Next: publish and byte-verify the protocol, then qualify the
+isolated scorer. Codex assisted; no human time or personal learning was
+reported.
+
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,
