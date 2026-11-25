@@ -1,0 +1,184 @@
+{
+  "arms": [
+    "signed_full_q8_turn_exact_river",
+    "signed_full_exact_turn_river"
+  ],
+  "caps": {
+    "audit_whole_seconds": 900,
+    "failure_save_reserve_within_caps_seconds": 120,
+    "max_worker_peak_rss_bytes": 1500000000,
+    "own_whole_seconds": 7200,
+    "profile_whole_seconds": 900,
+    "proof_whole_seconds": 180
+  },
+  "default_promotion": false,
+  "gates": {
+    "inconclusive": "other complete outcomes, or any required selection/correctness/compute/publication/audit gate fails",
+    "max_candidate_final_absolute_fraction_initial_pot": 0.01,
+    "max_candidate_final_worst_fraction_initial_pot": 0.025,
+    "max_non_degradation_fraction_initial_pot": 0.001,
+    "max_recall_violations": 0,
+    "min_whole_coverage": 0.95,
+    "negative": "any candidate absolute/coverage/recall fails or any paired difference > +0.001",
+    "paired_improvement_fraction_initial_pot": -0.001,
+    "positive": "all four candidate absolute/coverage/recall pass; at least three paired differences <= -0.001 including one dry and one wet; remaining difference <= +0.001"
+  },
+  "historical_source_fingerprints": {
+    "pr114_work_budget": "2a64f9e0e5cc620d50d43e595ab3e4e1e4b3414a729b5d487048f7a33e410d7a"
+  },
+  "issue": 4,
+  "matched_work_labels": [
+    10000000,
+    20000000,
+    40000000
+  ],
+  "metrics": [
+    "NashConv/2 chips and fraction of 36-chip initial pot, final linear average primary",
+    "each paired candidate-minus-control at each work and readout",
+    "turn and river additive best-response gains",
+    "whole and post-initial-river coverage and recall",
+    "exact/abstract rows, table bytes, actual work, runtime, hardware, peak worker RSS",
+    "control-ranked top three turn and river rows and top three collided turn rows, same rows for both arms/checkpoints, with cards, legal actions, probabilities, reaches, alternative values and contributions"
+  ],
+  "native": {
+    "comparison_only": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "parent_merge": "436db1655f02f809f04231555a381f64ef346c70",
+  "prerequisite_sha256": {
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/turn-collision-transfer/screen/manifest.json": "14167279d1fa3c137a8075a4397ed32d28b788279eabf530dc9fc191ac4e6df7",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "prior_inspected_input_sha256": {
+    "configs/fresh-spots/fresh_low_dry_oop.json": "b083875528b75f454752d75c43aa17c64caf092dfe3ba3413b5ef6da50d94eda",
+    "configs/fresh-spots/fresh_low_wet_ip.json": "dd6aa7a11b93b12e9d144698fef14bd4ff74d392ede1cf0d5546382095c523a5",
+    "configs/fresh-spots/fresh_medium_dry_ip.json": "b62121338cd26b5f1cb95dc27c19bc2fe15781edf063b44ff98b590decb99e0d",
+    "configs/fresh-spots/fresh_medium_wet_oop.json": "a36e1b1eba445c2d9e0a02ba591842ef4ae49634ae08828a01ec91dc9b221326",
+    "configs/learning-spots/dev_low_oop.json": "f1b7d0c30a2e1e4216bd1f8b9aa5e2a92e29ffc5b214945b86bddbe897c4121a",
+    "configs/learning-spots/dev_medium_oop.json": "22b41495f3f6536e672dd4757bb33f21470f1e6665ba681ee71360ed717f7fad",
+    "configs/learning-spots/heldout_low_oop.json": "8ac7aa9ab62a007dd0ef9fda6064ce2bf8706adb757a4384d526bd1316ff467c",
+    "configs/learning-spots/heldout_medium_ip.json": "ebb6e3d2685f230738763a0f1ea5874ea3613c6821946dd27e5c3fcdfc921936",
+    "configs/river-full-broader-spots/full_new_low_wet_ip.json": "a0fa08d603341787beb064a6ca911418c9d2ded1ac8daf624aaef66616300674",
+    "configs/river-full-broader-spots/full_new_medium_dry_oop.json": "b7c74e0de96e9949f8eb0e359d085b4e3281ea3172b9979f8a23f394bb642dea",
+    "configs/river-generalization-spots/new_low_wet_ip.json": "817e0a007b757e71fb7860eb7ab46ee6a078a5f7de2588a31c31104c63d27d8f",
+    "configs/river-generalization-spots/new_medium_dry_oop.json": "395727a4fa22d0d4aa6bd182740a5463ef97f7b90e37d6b42ac8a81916d4b51d",
+    "configs/river-uniform-readout-spots/uniform_low_wet_ip.json": "627c02ff58a7cd3f9a2ce8696a676c4f011288d8952c264dce245c2867bfcf63",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_a.json": "4db23d866b322ca0dfc232d84b316b2ee9789581b3e4a6bd5a7c4053c8f478b4",
+    "configs/river-uniform-readout-spots/uniform_medium_dry_oop_b.json": "5a92acdb2a850ad929b299381a14829924bc79b7d0e7c68dd7f456d344610e3a",
+    "configs/river-uniform-readout-spots/uniform_medium_wet_oop.json": "74e602cea9d37ef34530945919bdda5abe919193f023e73464914d265dc9ee08",
+    "configs/spots/dry_high_oop.json": "616a0c161f44f8bc25a3feda8d391bb06166a4f9e2a963bd3cd29c56ca9e8aea",
+    "configs/spots/dry_low_oop.json": "83c6762f6b844bb1e5d7c238ad62e1ac498c13db63cb1b36560c31945405c465",
+    "configs/spots/dry_medium_ip.json": "325fa0a0cc9e8828b0690b97a54c869238f106bee0b02749d79d218d12da7ef5",
+    "configs/spots/wet_high_ip.json": "c011141588266d56c86deca8d174f071948cd90c121679196d539e8760375865",
+    "configs/spots/wet_medium_oop.json": "8c5ad66befed131f47527f799aa4bc30c750aa8df1bc7da226cd464c04a273e1",
+    "configs/turn-exact-transfer-spots/turn_exact_new_low_wet_ip.json": "6aabbf8a79ea222bc411b020a977e5c97a945abba38bd6b24464b3f765251402",
+    "configs/turn-exact-transfer-spots/turn_exact_new_medium_dry_oop.json": "93e8da353f329f78abcfbcc25cb54adc5ac12335226039c44a9ab520de26555e",
+    "configs/turn-exact-transfer-spots/turn_exact_new_medium_wet_oop.json": "e1a5faab91fcfaf23821d17c0e0497f0e9191a0e89e9e145148e82e13e80f255",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-01.json": "ec49eca712de21a4d3fcb94547567551b384687e7546468f26b7b8bd0e47a84b",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-02.json": "815abb5e772c6871540ae1637133c85f08893215db16f190747d748d2ca43359",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-03.json": "7ff64163c707089d99db4937088da3c9efbab625877d54e18a719d408668073f",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-04.json": "83e41c53d7f32c912830bc75be776ffaa222e7561c18ace5de3b25de6961e9f9",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-05.json": "0827408e1e6f8f8ad41fd7b946e203dec3802e2cfeea609f5de5165d3b6e9aec",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-06.json": "e1d7aa48cb9439163a1f87debc5ece5427e513014053225fb8c3ca4cd80bc0ac",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-07.json": "e6aa963b5302ce4e1015e15230a12108d3fe85429ed890398bb747627bf7f8cc",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-08.json": "1f85ae22666d6f3bfbba2a1888d4d1ca19f2d64b8b3707638c20939543bea8f5",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-09.json": "13e021e17c62f2107cb78dec0d793edce97e9df963043e9e40c12888b93061c6",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-10.json": "730003c6ffa781b65738ba30b63fb236371499b1ea8082ac8be04095f490fb9d",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-11.json": "463afcc2e54a0458dfcfc58996e4d3e61c3c64034ae0f73a6aee53b844790202",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-12.json": "e472d26ad921eabcf704fc21de78c8e0a8d672f3fc7dffd79847bd567d16d569",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-13.json": "28a47814996e5ae80511312a378c42fa860dcdb63be4a49e92ea4e9ea366c78a",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-14.json": "79d737ef55e1a6bad3dd572af457c203fc5103b9a1edbc60859c9ad716c8bb9f",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-15.json": "61f53bcc22341dc9a540ab91332cdf37d113aec49fe94fd7df68802f6713644d",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-16.json": "5b6ec4014fec0783b4f2276375f11ad8250727520ad3cf2de3cd887a59691b5d",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-17.json": "b0e1bdf524f86a1422c43009c9ac637e5a99ccee980cee66de1efa54e5ca40fa",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-18.json": "44dbd5d1b5caf8314d518ead4b304c887c07d2dbbe5763c7614516d239e127fd",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-19.json": "c7c88e01baf9684bfdafad2724b51ccb991266fde3d952adab887d805f4a3767",
+    "results/turn-collision-transfer/screen/attempts/collision_low_wet_ip-20.json": "c5317a4aa9ece8a66d435f5d7847d51853b519397c10dfa23e063da381ffe2b6",
+    "results/turn-collision-transfer/screen/attempts/collision_medium_dry_oop-01.json": "615a7544f31776ad7eef88a518039402a7c50e2fe216d75d89619db804971755",
+    "results/turn-collision-transfer/screen/attempts/collision_medium_dry_oop-02.json": "0568cc05ab65b9f7431f9de45e1c604fb90074fa5fbb009ee6fe1ed801301f3f",
+    "results/turn-collision-transfer/screen/attempts/collision_medium_dry_oop-03.json": "60c75364455564e4c49720684105f4ce67feb8366dd30e33c1394a60ac6f336e",
+    "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-01.json": "ef08dd8f1f270c3b4a6f70484565995caab48b5b06fa1b108153e670ddf69e74",
+    "results/turn-collision-transfer/screen/attempts/collision_medium_wet_oop-02.json": "cea60f6a69d07904078f6930238c7dcbbbb2dba6b36eceb215198b329564a616"
+  },
+  "profile": {
+    "conservative_estimate": "max of three whole_path_seconds*40000000/actual_profile_work for each path, summed by worker, T=max(worker sums)",
+    "paths": 24,
+    "repeats_per_path": 3,
+    "strict_admission": "2*(2*T+600)<7200",
+    "work_label": 5000000,
+    "worker_partition": "control paths in fixed stratum order on worker 0; candidate paths in fixed stratum order on worker 1",
+    "workers": 2
+  },
+  "publication": "protocol before source/screen; qualified isolated source before first screen; publish every screened candidate/freeze before proof/profile/own; proof before profile; complete profile before separate published admission; own before native comparison; final report then exact-source local/optional/hosted checks and review",
+  "question": "On four newly drawn medium OOP collision-containing card/range inputs, does unchanged exact acting-turn/river representation improve fixed-work full-expected play over unchanged q8-turn/exact-river control?",
+  "readouts": [
+    "current",
+    "linear_average"
+  ],
+  "schema_version": 1,
+  "scope": "conditional medium OOP collision-containing restricted games only; known public template; no seed, population, unseen-template or default-promotion inference",
+  "selection": {
+    "exclude_all_prior_rank_signatures": true,
+    "exclude_prior_exact_input_bytes": true,
+    "failure_save_reserve_within_cap_seconds": 120,
+    "generator": "PCG64 single stream",
+    "max_board_draws_per_candidate": 10000,
+    "max_candidates_per_stratum": 20,
+    "max_tree_nodes": 200000,
+    "minimum_collided_exact_turn_rows": 4,
+    "private_combos_per_seat": 5,
+    "range_weight_values": [
+      1,
+      2,
+      3
+    ],
+    "require_zero_river_collisions": true,
+    "seed": 20261625,
+    "strata": [
+      {
+        "name": "collision_medium_dry_oop_a",
+        "position": "oop",
+        "template": "configs/learning-spots/dev_medium_oop.json",
+        "texture": "dry"
+      },
+      {
+        "name": "collision_medium_wet_oop_a",
+        "position": "oop",
+        "template": "configs/learning-spots/dev_medium_oop.json",
+        "texture": "wet"
+      },
+      {
+        "name": "collision_medium_dry_oop_b",
+        "position": "oop",
+        "template": "configs/learning-spots/dev_medium_oop.json",
+        "texture": "dry"
+      },
+      {
+        "name": "collision_medium_wet_oop_b",
+        "position": "oop",
+        "template": "configs/learning-spots/dev_medium_oop.json",
+        "texture": "wet"
+      }
+    ],
+    "whole_cap_seconds": 900
+  },
+  "training": {
+    "average_weight": "linear",
+    "initialization": "exact uniform charged",
+    "regret_rule": "signed",
+    "regret_weight": "linear",
+    "target_order": [
+      0,
+      1
+    ],
+    "traversal": "full expected",
+    "warm_start": false
+  },
+  "training_seed_is_unused": true,
+  "training_seed_label": 0
+}

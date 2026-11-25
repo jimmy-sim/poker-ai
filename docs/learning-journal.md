@@ -124,6 +124,12 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Next registered question, November 24:** the [conditional medium-input
+protocol](known-turn-collision-medium-transfer.md) fixes a new score-blind
+four-input cohort before drawing cards. It follows the deterministic-seed
+stop and preserves PR #114's negative wet gate. A failed selection or compute
+gate will stop it; no new outcome exists at protocol publication.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)
@@ -9922,6 +9928,8 @@ Codex assisted; no human time or personal learning was reported.
 **November 24 qualify the negative report.** The exact report-head base and optional checks passed on both Python versions, along with all-file hooks and both hosted jobs. **Example:** the final source and report guards confirm the same 24 readouts, 12 contrasts and 42 decision traces that showed the wet candidate missing the strict 0.01-pot threshold; passing software checks does not turn that result positive. The [final receipt](../results/known-turn-work-budget/final-checks/manifest.json) retains the four local logs, hosted run and canceled intermediate workflows. **Next decision:** publish and review this qualified negative result, history-merge PR #114 if eligible, then stop. No retry, new experiment or default promotion. Codex assisted; no human time or personal learning was reported.
 
 **November 24 check whether seeds can replicate the exact-turn gain.** Before planning new training, a [read-only preflight](known-turn-seed-replication-preflight.md) followed the real capture call: it records a seed label but invokes a trainer that fixes `PCG64(0)` and uses exact expected passes. The random-choice branch is reserved for a different sampling algorithm. **Example:** all 24 saved PR #114 checkpoint RNG states match a fresh, untouched `PCG64(0)` state; changing a label cannot create an independent policy. **Next decision:** stop the proposed seed study without spending its budget. A separate future comparison could vary prospectively selected game inputs under matched work, but those cases would measure input sensitivity rather than seed variability. PR #114's wet absolute gate remains failed; no default promotion. Codex assisted; no human time or personal learning was reported.
+
+**November 24 preregister input variation instead of unused seeds.** The [fixed protocol](known-turn-collision-medium-transfer.md) asks whether exact turn keys help at equal 40m work on four new board/range inputs, all selected by a score-free turn-collision rule. **Example:** PR #107's two-combo inputs had no turn grouping to split; PR #109's five-combo medium inputs did, but its low/wet stratum failed and cannot be quietly reused. This separate question excludes all 49 previously inspected physical inputs and fixes two dry/two wet medium OOP cases, controls, caps and acceptance before drawing anything. **Next decision:** publish the protocol, qualify source, and run its one-time structural screen. A positive result would be conditional on selected collision-containing inputs, not a claim about all poker games. PR #114 remains negative. Codex assisted; no human time or personal learning was reported.
 
 **November 24 qualify the failed-result report.** Both full local base suites, both pinned optional suites, all-file hooks and hosted Python 3.11/3.12 passed on the exact report head. A shell wrapper failed only when it tried to store the hook exit in zsh's read-only `status` variable after both hooks had passed; the original log and the corrected same-head exit receipt are retained. **Example:** every final pre/post guard reads the failed raw archive and confirms exactly three saved policy cases, the 8,340-row wet partial, absent dry candidate, and unchanged source/report bytes. The [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json) also retains canceled intermediate workflows. **Next decision:** publish/verify the receipt and review/merge the inconclusive PR if eligible; the one-shot trace remains failed. Codex assisted; no human time or personal learning was reported.
 

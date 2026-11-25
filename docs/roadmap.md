@@ -479,6 +479,19 @@ draws. Seed labels cannot vary its policy trajectory, so the proposed
 multi-seed 40m study stopped **before training**. A separately preregistered
 input-diversity comparison is proposed in that note, with no new experiment
 started and no change to PR #114's negative gate.
+The next [prospective collision-conditioned medium-input comparison](known-turn-collision-medium-transfer.md)
+fixes four newly drawn dry/wet OOP board/range inputs on a known public
+template, with all 49 prior config/screened physical inputs excluded before
+selection. **Definition of done:** publish/verify protocol, qualify isolated
+source, run one score-free first-eligible structural screen, freeze every
+selected input, pass fictional proof and strict repeated-profile admission,
+publish at most one matched-work 40m own study before independent reference
+audit, then fixed report/final exact-source checks and review. A failed
+selection or scientific gate stops the study with its raw evidence. Because
+selection requires turn collisions, any strength conclusion applies only to
+collision-containing medium OOP restricted games, with no default promotion.
+At this protocol checkpoint no new board, collision, policy or score has
+been measured.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
