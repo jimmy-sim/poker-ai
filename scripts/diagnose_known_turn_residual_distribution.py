@@ -3,7 +3,7 @@
 import argparse
 from pathlib import Path
 
-from poker_ai.evaluation.residual_distribution_workflow import execute
+from known_turn_residual_distribution.workflow import execute
 
 
 def main() -> None:

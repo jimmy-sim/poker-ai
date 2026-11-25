@@ -2,11 +2,14 @@
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 
-from poker_ai.evaluation import residual_distribution_workflow as workflow
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from known_turn_residual_distribution import workflow  # noqa: E402
 
 
 def test_pinned_report_clock_recomputes_conservative_admission(

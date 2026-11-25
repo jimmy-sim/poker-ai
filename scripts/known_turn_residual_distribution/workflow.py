@@ -15,7 +15,7 @@ from pathlib import Path
 from types import FrameType
 from typing import Any
 
-from poker_ai.evaluation.residual_distribution import analyze_report, summarize_street
+from known_turn_residual_distribution.analysis import analyze_report, summarize_street
 
 PROTOCOL_COMMIT = "05fe22324a36739ddfb0bd609983a7c91d940707"
 PROTOCOL = Path("docs/known-turn-residual-distribution.md")
@@ -24,8 +24,9 @@ PRIOR_JOB = Path("results/known-turn-collision-medium-transfer/report/job-state.
 PRIOR_JOB_SHA256 = "6f7cf51e810a00a14dfd040b19c86e22fc3c779d35d0afde291dd1935dd51414"
 ARCHIVE = Path("results/known-turn-residual-distribution")
 SOURCE_FILES = (
-    "src/poker_ai/evaluation/residual_distribution.py",
-    "src/poker_ai/evaluation/residual_distribution_workflow.py",
+    "scripts/known_turn_residual_distribution/__init__.py",
+    "scripts/known_turn_residual_distribution/analysis.py",
+    "scripts/known_turn_residual_distribution/workflow.py",
     "scripts/diagnose_known_turn_residual_distribution.py",
     "tests/test_residual_distribution.py",
     "tests/test_residual_distribution_workflow.py",

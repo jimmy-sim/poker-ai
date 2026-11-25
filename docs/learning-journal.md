@@ -153,6 +153,20 @@ was analyzed. Next: qualify the exact committed source, then run the formal
 fictional proof. Codex assisted; no human time or personal learning was
 reported.
 
+**Source correction, November 25:** the first full qualification exposed a
+packaging error. Historical validation pins the complete `src/` inventory,
+so placing a read-only diagnostic there made unrelated historical source
+checks fail. The repaired checkout also had unreadable files; its full fast
+suite recorded 39 failures, 184 errors and 5,728 passes, with 150 slow tests
+deselected. The diagnostic now lives in an isolated `scripts/` package, and
+three representative historical inventory checks and all 12 new focused
+tests pass. A separate clean-clone check of the original source is being
+retained to distinguish source errors from checkout errors. **Example:**
+moving the diagnostic changes where Python imports it, but does not change
+the fixed eight policies, ranking rule or strength gate. Next: qualify the
+corrected exact source before any proof or row analysis. Codex assisted; no
+human time or personal learning was reported.
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,

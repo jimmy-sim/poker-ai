@@ -1,11 +1,18 @@
 """Fictional arithmetic and fixed-grid guards for read-only row diagnosis."""
 
+import sys
 from copy import deepcopy
+from pathlib import Path
 from typing import Any
 
 import pytest
 
-from poker_ai.evaluation.residual_distribution import analyze_report, summarize_street
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from known_turn_residual_distribution.analysis import (  # noqa: E402
+    analyze_report,
+    summarize_street,
+)
 
 
 def test_signed_masses_ties_and_zero_denominators() -> None:
