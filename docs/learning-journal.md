@@ -124,6 +124,92 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
+is **negative** on its four newly selected, collision-containing medium OOP
+inputs. At equal 40m work the exact-turn candidate improved three pairs,
+but all four final values exceeded the unchanged 0.01-pot absolute limit;
+wet A worsened slightly. The independent scalar audit passed. This is
+evidence about these selected restricted games, with no seed uncertainty or
+unseen-template claim. At the report checkpoint, final qualification and
+review remained; the qualification update below records their later state.
+
+**Qualification update, November 25:** the [final check receipt](../results/known-turn-collision-medium-transfer/final-checks/manifest.json)
+records both base and optional Python versions, all-file hooks and both
+hosted jobs passing on the exact negative report. Two local launcher mistakes
+stopped before tests and remain in the receipt; correcting them did not
+change a poker policy or the protocol. **Example:** the candidate's wet A
+score remains 0.017677 pots above the fixed 0.01 limit even though every
+software check passed. Passing software checks supports the measurement; it
+does not turn a failed strength target into a win. Next: publish the check
+receipt, review the PR, and preserve the negative result. Codex assisted;
+no human time or personal learning was reported.
+
+**Hosted CI layout, November 25:** publishing the final receipt triggered
+another exact-commit check. Python 3.12 passed, but the full Python 3.11
+job hit its unchanged 35-minute limit twice, first at 93% of tests and then
+at 88% on one targeted same-source recheck. Both partial logs are preserved
+in the [CI-layout evidence](../results/known-turn-collision-medium-transfer/ci-layout/manifest.json).
+**Example:** a timing cancellation before the final test and hooks does not
+mean those checks passed, even though the earlier report-head jobs and full
+local suites did. The proposed operational fix divides the same 302 test
+files into two disjoint 151-file hosted jobs and makes the named Python 3.11
+gate depend on both, with every job retaining lint, typing, hooks and the
+same timeout. Collection-only verification found the two shards disjoint
+and their 5,924 selected tests exactly equal to the normal directory
+discovery on this checkout. The strategy, scientific score and negative acceptance stay
+unchanged. Next: publish the CI change and wait for all hosted jobs before
+merge. Codex assisted; no human time or
+personal learning was reported.
+
+**Next registered question, November 24:** the [conditional medium-input
+protocol](known-turn-collision-medium-transfer.md) fixes a new score-blind
+four-input cohort before drawing cards. It follows the deterministic-seed
+stop and preserves PR #114's negative wet gate. A failed selection or compute
+gate will stop it; no new outcome exists at protocol publication.
+
+**Source checkpoint, November 24:** [PR #116](https://github.com/jimmy-sim/poker-ai/pull/116)
+now has isolated, qualified code for selecting physical card/range inputs and
+comparing the unchanged q8-turn and exact-turn representations. **Example:**
+the screen must keep the first medium board/range input with at least four
+collided turn decision rows; a synthetic test rejects skipping that input for
+a later one. All four exact-source local suites and both hosted Python jobs
+passed. The first hosted Python 3.11 attempt hit its fixed time limit at 97%
+of tests; its log remains in the [source receipt](../results/known-turn-collision-medium-transfer/source-checks/manifest.json),
+and one targeted check of the same commit passed. This verifies the software
+and publication order, **not better poker decisions**. No new input has been
+drawn. Next: publish and verify the source receipt, then run the single
+score-free input screen. Codex assisted; no human time or personal learning
+was reported.
+
+**Input checkpoint, November 24:** the [one-time structural screen](../results/known-turn-collision-medium-transfer/screen/manifest.json)
+kept all 34 new physical board/range attempts. Its fixed dry/wet/dry/wet
+strata first met the four-collision rule at attempts 3, 15, 1 and 15.
+**Example:** dry A's first eligible input has 18 exact acting-turn rows
+sharing q8 decision groups; the candidate's existing exact-turn keys can
+separate them without changing the river keys. This says where the two
+representations differ, **not whether either plays better**. No policy or
+best response was read during selection. Next: publish every screened record,
+then freeze the selected inputs before proof, profiling or training. Codex
+assisted; no human time or personal learning was reported.
+
+The four [frozen spots](../configs/known-turn-collision-medium-transfer-freeze.json)
+were copied byte for byte from those first eligible attempts only after every
+screen record was published and checked against GitHub. **Example:** dry A's
+board is `4c Ks 9d Ts`, while wet B's is `Ad Kc Jd 9s`; the associated
+five-combo ranges and weights also differ. These are selected structural
+inputs, not evidence of a win or a test of the collision frequency among
+unconditioned boards. Next: verify the frozen bytes on GitHub, then run the
+fictional software proof. Codex assisted; no human time or personal learning
+was reported.
+
+The [fictional proof](../results/known-turn-collision-medium-transfer/own-proof/manifest.json)
+then captured and replayed six saved policies in each arm under the same
+charged work, with identical fictional scores. This checks that the saved
+checkpoint path can reproduce its own values before using a real selected
+input. It says nothing about which representation plays better. Next:
+publish the proof before profiling the real four-input grid. Codex assisted;
+no human time or personal learning was reported.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)
@@ -2797,6 +2883,64 @@ and the full reporting overhead on old saved policies. The forecast and overhead
 must pass before the larger comparison starts. This is software correctness,
 not a stronger-agent result. AI-assisted execution; no new human practice/time
 was reported.
+
+The [complete fixed profile](../results/known-turn-collision-medium-transfer/profile/manifest.json)
+measured all 24 short paths, three for each of the eight spot/representation
+pairs. The forecast takes each path's **slowest** observed whole-path time,
+scales it from about 5m to 40m charged work, and sums the fixed worker
+assignments. Its provisional bound is 4,403.465 seconds under the 7,200-second
+limit, with peak worker RSS below 1.5 billion bytes. This checks whether a
+longer comparison fits the declared budget; it does not tell us whether the
+saved 40m decisions will improve. Next: publish the complete profile, then
+make the separate admission decision. Codex assisted; no human time or
+personal learning was reported.
+
+The separately published [compute admission](../results/known-turn-collision-medium-transfer/admission/manifest.json)
+recomputed the strict 4,403.465-second bound from those saved profile bytes
+and admitted one 40m matched-work study under the 7,200-second cap. An
+admission is a resource decision, not evidence that finer turn information
+helps. Next: publish and verify the admission receipt before starting the
+fixed eight real-game paths. Codex assisted; no human time or personal
+learning was reported.
+
+The one [admitted own comparison](../results/known-turn-collision-medium-transfer/own/manifest.json)
+saved all 48 policies at matched 10m/20m/40m work. At final linear average,
+the finer-turn candidate improves dry A, dry B and wet B relative to q8 but
+worsens wet A slightly. **All four** candidate values are above the unchanged
+one-percent-of-pot absolute target. **Example:** on wet A, the candidate's
+saved best-response gain is 0.017677 pots versus 0.017125 for q8; splitting
+known turn collisions did not guarantee a better policy there. This is an
+own-only negative signal, subject to the independent scalar check and fixed
+decision report. Next: publish every saved policy and own score before the
+comparison-only reference audit; do not retry or tune. Codex assisted; no
+human time or personal learning was reported.
+
+The [independent scalar audit](../results/known-turn-collision-medium-transfer/native/manifest.json)
+checked all 48 saved policies against the pinned open-source OpenSpiel
+reference, after their own scores were already published. The largest
+numerical difference was about `1.24e-14` chips, far below the fixed
+`1e-9` chip limit. This supports that the saved exploitability numbers are
+computed correctly in these restricted games; it does not turn the failed
+absolute strength threshold into a pass. Next: publish the audit, then use
+the fixed report to compare each pair and inspect the predeclared decision
+rows. Codex assisted; no human time or personal learning was reported.
+
+**November 24 fixed conditional-input decision.** The [complete report](known-turn-collision-medium-transfer-result.md)
+applied the preregistered 40m linear-average and absolute tests once. The
+candidate scored 0.013575, 0.017677, 0.020657 and 0.016752 initial pots,
+all above 0.01; three same-input relative differences favored it and wet A
+did not. **Example:** on dry A's `4c Ks 9d Ts` turn with `2s 9s`, q8 put
+96.76% on a 36-chip raise while its optimized-reply value for checking was
+higher; that exact row's additive best-response gain fell from 0.179374 to
+0.014943 chips with the finer turn keys. This row is measured against each
+saved opponent and optimized continuation, so it is neither a causal
+one-action fix nor general poker advice. Wet A's total turn and river gains
+rose despite a small improvement in its top control turn row. The broad
+scientific answer is **negative under the frozen acceptance rule**; the
+local gains explain why the representation remains interesting but do not
+permit a retry or default promotion. Next: complete report-head checks and
+review this one PR, then stop. Codex assisted; no human time or personal
+learning was reported.
 
 ## 53. Measure the work around training too — November 10
 
@@ -9922,6 +10066,8 @@ Codex assisted; no human time or personal learning was reported.
 **November 24 qualify the negative report.** The exact report-head base and optional checks passed on both Python versions, along with all-file hooks and both hosted jobs. **Example:** the final source and report guards confirm the same 24 readouts, 12 contrasts and 42 decision traces that showed the wet candidate missing the strict 0.01-pot threshold; passing software checks does not turn that result positive. The [final receipt](../results/known-turn-work-budget/final-checks/manifest.json) retains the four local logs, hosted run and canceled intermediate workflows. **Next decision:** publish and review this qualified negative result, history-merge PR #114 if eligible, then stop. No retry, new experiment or default promotion. Codex assisted; no human time or personal learning was reported.
 
 **November 24 check whether seeds can replicate the exact-turn gain.** Before planning new training, a [read-only preflight](known-turn-seed-replication-preflight.md) followed the real capture call: it records a seed label but invokes a trainer that fixes `PCG64(0)` and uses exact expected passes. The random-choice branch is reserved for a different sampling algorithm. **Example:** all 24 saved PR #114 checkpoint RNG states match a fresh, untouched `PCG64(0)` state; changing a label cannot create an independent policy. **Next decision:** stop the proposed seed study without spending its budget. A separate future comparison could vary prospectively selected game inputs under matched work, but those cases would measure input sensitivity rather than seed variability. PR #114's wet absolute gate remains failed; no default promotion. Codex assisted; no human time or personal learning was reported.
+
+**November 24 preregister input variation instead of unused seeds.** The [fixed protocol](known-turn-collision-medium-transfer.md) asks whether exact turn keys help at equal 40m work on four new board/range inputs, all selected by a score-free turn-collision rule. **Example:** PR #107's two-combo inputs had no turn grouping to split; PR #109's five-combo medium inputs did, but its low/wet stratum failed and cannot be quietly reused. This separate question excludes all 49 previously inspected physical inputs and fixes two dry/two wet medium OOP cases, controls, caps and acceptance before drawing anything. **Next decision:** publish the protocol, qualify source, and run its one-time structural screen. A positive result would be conditional on selected collision-containing inputs, not a claim about all poker games. PR #114 remains negative. Codex assisted; no human time or personal learning was reported.
 
 **November 24 qualify the failed-result report.** Both full local base suites, both pinned optional suites, all-file hooks and hosted Python 3.11/3.12 passed on the exact report head. A shell wrapper failed only when it tried to store the hook exit in zsh's read-only `status` variable after both hooks had passed; the original log and the corrected same-head exit receipt are retained. **Example:** every final pre/post guard reads the failed raw archive and confirms exactly three saved policy cases, the 8,340-row wet partial, absent dry candidate, and unchanged source/report bytes. The [final receipt](../results/known-turn-loss-attribution/final-checks/manifest.json) also retains canceled intermediate workflows. **Next decision:** publish/verify the receipt and review/merge the inconclusive PR if eligible; the one-shot trace remains failed. Codex assisted; no human time or personal learning was reported.
 

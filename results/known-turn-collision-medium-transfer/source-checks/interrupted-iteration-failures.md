@@ -1,0 +1,5 @@
+# Source iteration failures (2026-11-24 PST)
+
+- First isolated-source commit attempt failed at the Ruff pre-commit hooks because the shell resolved uv 0.13.9 while the project requires uv 0.13.5. The code was not committed. Focused local checks under the pinned uv 0.13.5/base311 environment had passed (30 tests, Ruff, mypy). This is an environment invocation failure; retained here before rerunning the unchanged source commit with `source ../poker-env.sh`.
+
+- Initial exact-source base311 qualification at commit `a7d2ca907910fad25e63924c66395da165ee64b3` was deliberately interrupted after 123.188s to add a missing direct synthetic first-eligible selector regression. Partial pytest log, `base311.json` (`KeyboardInterrupt`, SHA256 of log `13d310b4f58fb287aa63817ba0bcfce3aa4fdc9be809753023493f2b2859dc3f`) and launcher log retained. Process group 68989 exited, no scientific work was running. New focused set: 31 passed, Ruff and strict mypy passed. This is source iteration, not a scientific retry.

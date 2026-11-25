@@ -1,0 +1,771 @@
+{
+  "assignments": [
+    [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ]
+  ],
+  "failure": null,
+  "head": "a72c4dd72efa8baf2e0a400602e51096d295322b",
+  "parent_cpu_seconds": 0.16623099999999996,
+  "reaped_children_cpu_seconds": 599.83,
+  "seconds": 300.4303444160032,
+  "source_fingerprint": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+  "stage": "profile",
+  "status": "completed",
+  "worker_count": 2,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 81838,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 12,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 12,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 14,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 14,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 16,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 16,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 18,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 18,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 20,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 20,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 22,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 22,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 300.018232,
+          "kind": "done",
+          "seconds": 300.32281804201193,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 0,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.079118583991658,
+                "worker_peak_rss_bytes": 756203520
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 2,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 25.128707666997798,
+                "worker_peak_rss_bytes": 1065992192
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 4,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 4,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.677560709009413,
+                "worker_peak_rss_bytes": 1099579392
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 6,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 6,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.641466709028464,
+                "worker_peak_rss_bytes": 1104822272
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 8,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.94495991698932,
+                "worker_peak_rss_bytes": 1105690624
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 10,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 25.087522582965903,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 12,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 4,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 25.418648958031554,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 14,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 6,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 25.19830045796698,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 16,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.19265608402202,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 18,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.14762670901837,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 20,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 4,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.242692832951434,
+                "worker_peak_rss_bytes": 1105739776
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 22,
+                "path": {
+                  "arm": "signed_full_q8_turn_exact_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 6,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.5301754999673,
+                "worker_peak_rss_bytes": 1105739776
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 81838,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 81839,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 13,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 13,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 15,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 15,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 17,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 17,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 19,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 19,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 21,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 21,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 23,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 23,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 299.620316,
+          "kind": "done",
+          "seconds": 299.9379664589651,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 1,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.021512542036362,
+                "worker_peak_rss_bytes": 651509760
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 3,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 25.092468457994983,
+                "worker_peak_rss_bytes": 955482112
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 5,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 5,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.678149665996898,
+                "worker_peak_rss_bytes": 961527808
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 7,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 7,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.664762291009538,
+                "worker_peak_rss_bytes": 961527808
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 9,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.914191749994643,
+                "worker_peak_rss_bytes": 968425472
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 11,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.960273917007726,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 13,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 5,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 25.524135084007867,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 15,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 7,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 25.119172790960874,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 17,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.098087374994066,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 19,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.077690750011243,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 21,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 5,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.263992166961543,
+                "worker_peak_rss_bytes": 968441856
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 23,
+                "path": {
+                  "arm": "signed_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 7,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.48810591700021,
+                "worker_peak_rss_bytes": 968441856
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 81839,
+      "slot": 1
+    }
+  ]
+}

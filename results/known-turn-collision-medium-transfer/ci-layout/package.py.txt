@@ -1,0 +1,46 @@
+"""Retain failed hosted receipts and disjoint exact fast-test discovery."""
+import gzip
+import hashlib
+import json
+import shutil
+from pathlib import Path
+root=Path(__file__).resolve().parents[3]
+raw=Path(__file__).resolve().parent
+prior=root/'results/runs/known-turn-collision-medium-transfer-final-20261124-exact'
+out=root/'results/known-turn-collision-medium-transfer/ci-layout'
+assert not out.exists() and not out.is_symlink()
+first=json.loads((prior/'receipt-hosted-first.json').read_text())
+second=json.loads((prior/'receipt-hosted-attempt2.json').read_text())
+head='da1fd7d79ed4e963f85e782a146bf400dd40be17'
+assert first['headSha']==second['headSha']==head
+assert {j['name']:j['conclusion'] for j in first['jobs']}=={'Python 3.11':'cancelled','Python 3.12':'success'}
+assert {j['name']:j['conclusion'] for j in second['jobs']}=={'Python 3.11':'cancelled','Python 3.12':'success'}
+def nodes(name):
+    lines=(raw/f'collect-{name}.log').read_text().splitlines()
+    return {line for line in lines if line.startswith('tests/') and '::' in line}
+a,b,d=nodes('A'),nodes('B'),nodes('make-default')
+assert len(a)==3096 and len(b)==2828 and len(d)==5924
+assert a.isdisjoint(b) and a|b==d
+assert '150 deselected' in (raw/'collect-make-default.log').read_text()
+assert (raw/'collect-directory.exit').read_text().strip()=='0'
+assert '##[error]The operation was canceled.' in (prior/'receipt-hosted-first.log').read_text()
+assert '##[error]The operation was canceled.' in (prior/'receipt-hosted-attempt2.log').read_text()
+out.mkdir(parents=True)
+def copy(path,label):
+    if path.suffix=='.log':
+        with (out/(label+'.gz')).open('xb') as f:
+            with gzip.GzipFile(filename='',mode='wb',fileobj=f,mtime=0) as g:g.write(path.read_bytes())
+    elif path.suffix=='.py':shutil.copyfile(path,out/(label+'.txt'))
+    else:shutil.copyfile(path,out/label)
+for name in ('receipt-hosted-first.json','receipt-hosted-first.log','receipt-hosted-attempt2.json','receipt-hosted-attempt2.log','receipt-rerun-operation.md'):
+    copy(prior/name,name)
+for name in ('collect-all.log','collect-A.log','collect-B.log','collect-directory.log','collect-directory.exit','collect-make-default.log','result.json','result-directory.json','verify-collections.py','package.py'):
+    copy(raw/name,name)
+copy(root/'.github/workflows/ci.yml','workflow-ci.yml')
+result={'status':'ci_layout_proposed','scientific_source_fingerprint':'4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0','failed_receipt_head':head,'run_id':45583412257,'attempts':[{'attempt':1,'python311':'cancelled_at_fixed_35m_93pct','python312':'success'},{'attempt':2,'python311':'cancelled_at_fixed_35m_88pct','python312':'carried_forward_success'}],'all_test_files':302,'shard_test_files':[151,151],'collected_selected_nodes':{'all':5924,'A':3096,'B':2828},'shards_disjoint_and_complete':True,'workflow_sha256':hashlib.sha256((root/'.github/workflows/ci.yml').read_bytes()).hexdigest(),'timeout_minutes_unchanged':35,'science_unchanged':True}
+(out/'ci-layout-result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+files=[]
+for p in sorted(out.iterdir()):
+    blob=p.read_bytes();files.append({'file':p.name,'bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest()})
+(out/'manifest.json').write_text(json.dumps({'status':'ci_layout_proposed','source_fingerprint':result['scientific_source_fingerprint'],'files':files},sort_keys=True,indent=2)+'\n')
+print('ci_layout_proposed',len(files),'members',out)

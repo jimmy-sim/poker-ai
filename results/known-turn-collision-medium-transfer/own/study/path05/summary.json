@@ -1,0 +1,593 @@
+{
+  "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+  "captures": [
+    {
+      "file": "10000000-current.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "ddc96117106abd6a2e1f9e8e84769902d0daba8fe2e15bc3c8108f82e520cadb",
+        "iteration": 38,
+        "overshoot": 117956,
+        "path_index": 5,
+        "previous_work": 9851694,
+        "readout": "current",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 10117956,
+        "work_label": 10000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 25650,
+        "policy_sha256": "9a2024b2c8df80e1acf77304460854b4d7ebab8d1a24977f7d7c62e79fddebe7",
+        "sha256": "810704fb71c89d1fea258e747effacf55550c75e807f318a05eb9b0ec6f5b13a"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 14.195709884163769,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 4.035925897371362,
+          "within_partition_gain_chips": 14.195709884163769
+        },
+        "reply_sha256": [
+          {
+            "exact": "b9bb63708e166bf4c2f7849e0e9766f2ca598b6b41966d25eea03872b23e6905",
+            "restricted": "b9bb63708e166bf4c2f7849e0e9766f2ca598b6b41966d25eea03872b23e6905",
+            "river_before": "b9bb63708e166bf4c2f7849e0e9766f2ca598b6b41966d25eea03872b23e6905"
+          },
+          {
+            "exact": "8923eda166faf61e19d03c29333bb0858251737117fb90cc1754274220003b82",
+            "restricted": "8923eda166faf61e19d03c29333bb0858251737117fb90cc1754274220003b82",
+            "river_before": "8923eda166faf61e19d03c29333bb0858251737117fb90cc1754274220003b82"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 4.035925897371362,
+            "exact_reply_value_chips": 18.907426107728394,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 18.907426107728394,
+            "river_before_value_chips": 18.907426107728394,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 14.871500210357032
+          },
+          {
+            "baseline_value_chips": -4.035925897371362,
+            "exact_reply_value_chips": 9.483993660599142,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 9.483993660599142,
+            "river_before_value_chips": 9.483993660599142,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 13.519919557970503
+          }
+        ]
+      },
+      "support": null,
+      "tree_nodes": 133131
+    },
+    {
+      "file": "10000000-linear_average.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "ddc96117106abd6a2e1f9e8e84769902d0daba8fe2e15bc3c8108f82e520cadb",
+        "iteration": 38,
+        "overshoot": 117956,
+        "path_index": 5,
+        "previous_work": 9851694,
+        "readout": "linear_average",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 10117956,
+        "work_label": 10000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 91464,
+        "policy_sha256": "c889998b123b5ff03c35b2089c1d254d6986e737f5845779eefda933d9bb662e",
+        "sha256": "f8c42b259e68a4cb279d872f2ec009123894fdb4dde86712e844565301909465"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 2.503399073277749,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 4.209065921494078,
+          "within_partition_gain_chips": 2.503399073277749
+        },
+        "reply_sha256": [
+          {
+            "exact": "73e1593b6bcfea79ea6aac928fca3e48c5f39a9bc0839078077ee968662f71a6",
+            "restricted": "73e1593b6bcfea79ea6aac928fca3e48c5f39a9bc0839078077ee968662f71a6",
+            "river_before": "73e1593b6bcfea79ea6aac928fca3e48c5f39a9bc0839078077ee968662f71a6"
+          },
+          {
+            "exact": "faeded3e4749aeec27a75159519b23421f7aa0bf4e4f8b2f94a912670ceb5144",
+            "restricted": "faeded3e4749aeec27a75159519b23421f7aa0bf4e4f8b2f94a912670ceb5144",
+            "river_before": "faeded3e4749aeec27a75159519b23421f7aa0bf4e4f8b2f94a912670ceb5144"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 4.209065921494078,
+            "exact_reply_value_chips": 7.190294739488154,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 7.190294739488154,
+            "river_before_value_chips": 7.190294739488154,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 2.981228817994076
+          },
+          {
+            "baseline_value_chips": -4.209065921494078,
+            "exact_reply_value_chips": -2.1834965929326557,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": -2.1834965929326557,
+            "river_before_value_chips": -2.1834965929326557,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 2.0255693285614225
+          }
+        ]
+      },
+      "support": {
+        "post_warm": {
+          "all": {
+            "positive_rows": 7602,
+            "row_fraction": 0.9115107913669065,
+            "rows": 8340,
+            "uniform_reach_fraction": 0.9835910145538916
+          },
+          "river": {
+            "positive_rows": 7543,
+            "row_fraction": 0.9109903381642512,
+            "rows": 8280,
+            "uniform_reach_fraction": 0.9315604808414727
+          }
+        },
+        "whole": {
+          "all": {
+            "positive_rows": 8340,
+            "row_fraction": 1.0,
+            "rows": 8340,
+            "uniform_reach_fraction": 1.0
+          },
+          "river": {
+            "positive_rows": 8280,
+            "row_fraction": 1.0,
+            "rows": 8280,
+            "uniform_reach_fraction": 1.0
+          }
+        }
+      },
+      "tree_nodes": 133131
+    },
+    {
+      "file": "20000000-current.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "4d315d09f29fc87392e3e019f33978db34697a4e41948e48a281553e0b222808",
+        "iteration": 76,
+        "overshoot": 235912,
+        "path_index": 5,
+        "previous_work": 19969650,
+        "readout": "current",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 20235912,
+        "work_label": 20000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 24122,
+        "policy_sha256": "27a5aa6d05f592ca22bb4577cf27f372fbd70b8eb4cfd5beaea2a00b4d05b145",
+        "sha256": "69b5e76d9f37a28618bedf4ea32b8c75303f974167ce0946aa68ec6499a42683"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 15.686990346661169,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 1.7408557254122936,
+          "within_partition_gain_chips": 15.686990346661169
+        },
+        "reply_sha256": [
+          {
+            "exact": "ddaeca2fde5691d7d53afb3df490eb56693d10d860ca93c1b99b837ee3b09105",
+            "restricted": "ddaeca2fde5691d7d53afb3df490eb56693d10d860ca93c1b99b837ee3b09105",
+            "river_before": "ddaeca2fde5691d7d53afb3df490eb56693d10d860ca93c1b99b837ee3b09105"
+          },
+          {
+            "exact": "52f6eea0899cc3a7ac94a77b5180a55584e3e6d2f27fb4de8e676d110636dbbf",
+            "restricted": "52f6eea0899cc3a7ac94a77b5180a55584e3e6d2f27fb4de8e676d110636dbbf",
+            "river_before": "52f6eea0899cc3a7ac94a77b5180a55584e3e6d2f27fb4de8e676d110636dbbf"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 1.7408557254122936,
+            "exact_reply_value_chips": 20.447199663603353,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 20.447199663603353,
+            "river_before_value_chips": 20.447199663603353,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 18.70634393819106
+          },
+          {
+            "baseline_value_chips": -1.7408557254122936,
+            "exact_reply_value_chips": 10.926781029718985,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 10.926781029718985,
+            "river_before_value_chips": 10.926781029718985,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 12.667636755131278
+          }
+        ]
+      },
+      "support": null,
+      "tree_nodes": 133131
+    },
+    {
+      "file": "20000000-linear_average.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "4d315d09f29fc87392e3e019f33978db34697a4e41948e48a281553e0b222808",
+        "iteration": 76,
+        "overshoot": 235912,
+        "path_index": 5,
+        "previous_work": 19969650,
+        "readout": "linear_average",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 20235912,
+        "work_label": 20000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 93155,
+        "policy_sha256": "7646f916794c8924b2e2775de17b6bbbb7194ee85c8c9d16f66e2dbd6ff91537",
+        "sha256": "0321f8fbedf3902924a0d469bc51527361a4c6f0a0fcb8ce9abaa556b97bcb83"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 1.4227490478915699,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 4.441369426365255,
+          "within_partition_gain_chips": 1.4227490478915699
+        },
+        "reply_sha256": [
+          {
+            "exact": "b6f3e6360b40c5266d79feb213d49c7605373993f840a642795fbbfa08233dc9",
+            "restricted": "b6f3e6360b40c5266d79feb213d49c7605373993f840a642795fbbfa08233dc9",
+            "river_before": "b6f3e6360b40c5266d79feb213d49c7605373993f840a642795fbbfa08233dc9"
+          },
+          {
+            "exact": "3f400926f090dd4c37c48e137c8e56ca54aa3c0fd2b86467c936bf28d0897372",
+            "restricted": "3f400926f090dd4c37c48e137c8e56ca54aa3c0fd2b86467c936bf28d0897372",
+            "river_before": "3f400926f090dd4c37c48e137c8e56ca54aa3c0fd2b86467c936bf28d0897372"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 4.441369426365255,
+            "exact_reply_value_chips": 6.070665411912227,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 6.070665411912227,
+            "river_before_value_chips": 6.070665411912227,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 1.629295985546972
+          },
+          {
+            "baseline_value_chips": -4.441369426365255,
+            "exact_reply_value_chips": -3.2251673161290872,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": -3.2251673161290872,
+            "river_before_value_chips": -3.2251673161290872,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 1.2162021102361678
+          }
+        ]
+      },
+      "support": {
+        "post_warm": {
+          "all": {
+            "positive_rows": 7626,
+            "row_fraction": 0.9143884892086331,
+            "rows": 8340,
+            "uniform_reach_fraction": 0.9837227867839817
+          },
+          "river": {
+            "positive_rows": 7567,
+            "row_fraction": 0.9138888888888889,
+            "rows": 8280,
+            "uniform_reach_fraction": 0.9322175995492112
+          }
+        },
+        "whole": {
+          "all": {
+            "positive_rows": 8340,
+            "row_fraction": 1.0,
+            "rows": 8340,
+            "uniform_reach_fraction": 1.0
+          },
+          "river": {
+            "positive_rows": 8280,
+            "row_fraction": 1.0,
+            "rows": 8280,
+            "uniform_reach_fraction": 1.0
+          }
+        }
+      },
+      "tree_nodes": 133131
+    },
+    {
+      "file": "40000000-current.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "1a2fbccd01b1bc70ab820a66b859e0b9a68aa742529c381c397afc77aa8f03eb",
+        "iteration": 151,
+        "overshoot": 205562,
+        "path_index": 5,
+        "previous_work": 39939300,
+        "readout": "current",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 40205562,
+        "work_label": 40000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 24939,
+        "policy_sha256": "4f99cd5529d3b64a9cd2d5d6b20a545d752f87d94fac89b5c70b90323189de08",
+        "sha256": "b34e2c29dc4f11e46375baa390656b841c16d771817e68c379c7ec65df452215"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 11.374942609022789,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 3.9102154774143423,
+          "within_partition_gain_chips": 11.374942609022789
+        },
+        "reply_sha256": [
+          {
+            "exact": "746efc1b0e9fae021fa775b2d3bb123499192e5146483255c6ada921ea76de6c",
+            "restricted": "746efc1b0e9fae021fa775b2d3bb123499192e5146483255c6ada921ea76de6c",
+            "river_before": "746efc1b0e9fae021fa775b2d3bb123499192e5146483255c6ada921ea76de6c"
+          },
+          {
+            "exact": "3e2ca9964b4e7971329f4b963acbbda36a57ae1b9d947e00190aa39e6acf7550",
+            "restricted": "3e2ca9964b4e7971329f4b963acbbda36a57ae1b9d947e00190aa39e6acf7550",
+            "river_before": "3e2ca9964b4e7971329f4b963acbbda36a57ae1b9d947e00190aa39e6acf7550"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 3.9102154774143423,
+            "exact_reply_value_chips": 18.899176388421033,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 18.899176388421033,
+            "river_before_value_chips": 18.899176388421033,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 14.988960911006691
+          },
+          {
+            "baseline_value_chips": -3.9102154774143423,
+            "exact_reply_value_chips": 3.8507088296245424,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 3.8507088296245424,
+            "river_before_value_chips": 3.8507088296245424,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 7.760924307038884
+          }
+        ]
+      },
+      "support": null,
+      "tree_nodes": 133131
+    },
+    {
+      "file": "40000000-linear_average.json.gz",
+      "information_rows": 8340,
+      "metadata": {
+        "arm": "signed_full_exact_turn_river",
+        "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+        "game": "collision_medium_dry_oop_b",
+        "guard_sha256": "1a2fbccd01b1bc70ab820a66b859e0b9a68aa742529c381c397afc77aa8f03eb",
+        "iteration": 151,
+        "overshoot": 205562,
+        "path_index": 5,
+        "previous_work": 39939300,
+        "readout": "linear_average",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 35399562948360463058890781895381311971
+          },
+          "uinteger": 0
+        },
+        "seed": 0,
+        "total_work": 40205562,
+        "work_label": 40000000
+      },
+      "padded_width": 44,
+      "receipt": {
+        "bytes": 94494,
+        "policy_sha256": "30cb873a1b71d3afee6c8e359ee8a62d75164dfcf9f6b4ce716d8c30aff4dcd1",
+        "sha256": "52b2d523c69f6a1ce58ac9de5e59e2dbcdff6bc933110698c1aa9b39b386eba2"
+      },
+      "score": {
+        "maximum_accounting_error": 0.0,
+        "metrics": {
+          "exact_exploitability_chips": 0.7436452043097497,
+          "extra_information_gap_chips": 0.0,
+          "river_only_gain_exact_prefix_chips": 0.0,
+          "value_player_zero_chips": 4.4805964423205165,
+          "within_partition_gain_chips": 0.7436452043097497
+        },
+        "reply_sha256": [
+          {
+            "exact": "20abbecfca9511129433d914b852cca263c42242f99006950f268664f0501957",
+            "restricted": "20abbecfca9511129433d914b852cca263c42242f99006950f268664f0501957",
+            "river_before": "20abbecfca9511129433d914b852cca263c42242f99006950f268664f0501957"
+          },
+          {
+            "exact": "adfa80dabefe6ca48449539c274cb4126873c2d6d0aeb4e8237d838a8ea53ab2",
+            "restricted": "adfa80dabefe6ca48449539c274cb4126873c2d6d0aeb4e8237d838a8ea53ab2",
+            "river_before": "adfa80dabefe6ca48449539c274cb4126873c2d6d0aeb4e8237d838a8ea53ab2"
+          }
+        ],
+        "responses": [
+          {
+            "baseline_value_chips": 4.4805964423205165,
+            "exact_reply_value_chips": 5.270661009076024,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": 5.270661009076024,
+            "river_before_value_chips": 5.270661009076024,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 0,
+            "within_partition_gain_chips": 0.7900645667555075
+          },
+          {
+            "baseline_value_chips": -4.4805964423205165,
+            "exact_reply_value_chips": -3.7833706004565246,
+            "extra_information_gap_chips": 0.0,
+            "restricted_reply_value_chips": -3.7833706004565246,
+            "river_before_value_chips": -3.7833706004565246,
+            "river_only_gain_exact_prefix_chips": 0.0,
+            "target": 1,
+            "within_partition_gain_chips": 0.6972258418639918
+          }
+        ]
+      },
+      "support": {
+        "post_warm": {
+          "all": {
+            "positive_rows": 7637,
+            "row_fraction": 0.9157074340527578,
+            "rows": 8340,
+            "uniform_reach_fraction": 0.9837725050471571
+          },
+          "river": {
+            "positive_rows": 7578,
+            "row_fraction": 0.9152173913043479,
+            "rows": 8280,
+            "uniform_reach_fraction": 0.9324655334335088
+          }
+        },
+        "whole": {
+          "all": {
+            "positive_rows": 8340,
+            "row_fraction": 1.0,
+            "rows": 8340,
+            "uniform_reach_fraction": 1.0
+          },
+          "river": {
+            "positive_rows": 8280,
+            "row_fraction": 1.0,
+            "rows": 8280,
+            "uniform_reach_fraction": 1.0
+          }
+        }
+      },
+      "tree_nodes": 133131
+    }
+  ],
+  "final_iteration": 151,
+  "final_work": 40205562,
+  "labels": [
+    10000000,
+    20000000,
+    40000000
+  ],
+  "path": {
+    "arm": "signed_full_exact_turn_river",
+    "game": "collision_medium_dry_oop_b",
+    "index": 5,
+    "seed": 0
+  },
+  "recall_violations": 0,
+  "status": "completed",
+  "warm": {
+    "metadata": {
+      "binding": "4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0",
+      "origin": "warm",
+      "path_index": 5
+    },
+    "receipt": {
+      "bytes": 7826,
+      "mass_sha256": "2471bdd5d9010fafddcf14801d1c4f97a27b4fc3cde6a1d75ba6a7287319d67a",
+      "sha256": "77d2129b6a3acd928257812d3774236db8d05d09f4a029a628202fb26bcae40d"
+    }
+  }
+}

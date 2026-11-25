@@ -1,0 +1,134 @@
+{
+  "action_abstraction": {
+    "fractions": [
+      [
+        1,
+        1
+      ]
+    ],
+    "include_all_in": true,
+    "include_minimum": false
+  },
+  "actor": 0,
+  "blinds": [
+    1,
+    2
+  ],
+  "board": [
+    "Jd",
+    "9s",
+    "7d",
+    "Qh"
+  ],
+  "button": 1,
+  "hero": 0,
+  "max_tree_nodes": 200000,
+  "name": "collision_medium_wet_oop_b",
+  "pot": 36,
+  "prefix_actions": [
+    {
+      "amount": 6,
+      "kind": "raise_to"
+    },
+    {
+      "amount": 18,
+      "kind": "raise_to"
+    },
+    {
+      "kind": "call"
+    },
+    {
+      "kind": "check"
+    },
+    {
+      "kind": "check"
+    }
+  ],
+  "range_conditioning": "product_weights_conditioned_on_card_removal",
+  "ranges": [
+    [
+      {
+        "cards": [
+          "Kh",
+          "Th"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "3h",
+          "Ks"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "3s",
+          "Tc"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "Kc",
+          "Ts"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "6c",
+          "2c"
+        ],
+        "weight": 2
+      }
+    ],
+    [
+      {
+        "cards": [
+          "3d",
+          "3c"
+        ],
+        "weight": 1
+      },
+      {
+        "cards": [
+          "5d",
+          "Td"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "Qd",
+          "Ah"
+        ],
+        "weight": 2
+      },
+      {
+        "cards": [
+          "4s",
+          "2h"
+        ],
+        "weight": 3
+      },
+      {
+        "cards": [
+          "8h",
+          "9d"
+        ],
+        "weight": 2
+      }
+    ]
+  ],
+  "schema_version": 1,
+  "stacks": [
+    182,
+    182
+  ],
+  "starting_stacks": [
+    200,
+    200
+  ],
+  "texture": "wet"
+}

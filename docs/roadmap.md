@@ -479,6 +479,79 @@ draws. Seed labels cannot vary its policy trajectory, so the proposed
 multi-seed 40m study stopped **before training**. A separately preregistered
 input-diversity comparison is proposed in that note, with no new experiment
 started and no change to PR #114's negative gate.
+The next [prospective collision-conditioned medium-input comparison](known-turn-collision-medium-transfer.md)
+fixes four newly drawn dry/wet OOP board/range inputs on a known public
+template, with all 49 prior config/screened physical inputs excluded before
+selection. **Definition of done:** publish/verify protocol, qualify isolated
+source, run one score-free first-eligible structural screen, freeze every
+selected input, pass fictional proof and strict repeated-profile admission,
+publish at most one matched-work 40m own study before independent reference
+audit, then fixed report/final exact-source checks and review. A failed
+selection or scientific gate stops the study with its raw evidence. Because
+selection requires turn collisions, any strength conclusion applies only to
+collision-containing medium OOP restricted games, with no default promotion.
+At this protocol checkpoint no new board, collision, policy or score has
+been measured.
+PR #116's isolated source then passed all four exact-source local roles,
+both protocol-head hosted jobs and both source-head hosted jobs; the first
+source-head Python 3.11 attempt hit its unchanged 35-minute limit at 97%
+and remains retained separately from the passing same-SHA requalification.
+The [source receipt](../results/known-turn-collision-medium-transfer/source-checks/manifest.json)
+precedes the one-time screen. At that source checkpoint, no new card/range
+input had yet been drawn.
+The [one registered score-free screen](../results/known-turn-collision-medium-transfer/screen/manifest.json)
+then selected the first eligible dry/wet/dry/wet inputs at attempts 3/15/1/15
+out of 34 retained draws; no strength outcome was inspected. Its complete
+archive must be published and verified before freezing the selected cohort.
+The [freeze](../configs/known-turn-collision-medium-transfer-freeze.json)
+then copied only those four first-eligible raw inputs, with byte-equal
+selected hashes; publish/verify it before proof or real profiling.
+The frozen cohort was published and verified; its single fictional
+[capture/replay proof](../results/known-turn-collision-medium-transfer/own-proof/manifest.json)
+passed under 180 seconds. The repeated 5m real-input profile and separate
+compute admission remain pending before any 40m comparison.
+The complete [24-path profile](../results/known-turn-collision-medium-transfer/profile/manifest.json)
+fit its cap and produced a provisional strict 4,403.465-second forecast;
+publish/verify all profile bytes before the separate admission. No 40m
+comparison has begun.
+The separately computed [admission](../results/known-turn-collision-medium-transfer/admission/manifest.json)
+passed the unchanged strict 7,200-second bound from the published profile.
+It permits one fixed eight-path own comparison after the admission bytes are
+published and verified; it does not establish strength.
+The one admitted [own archive](../results/known-turn-collision-medium-transfer/own/manifest.json)
+then retained all eight 40m paths and 48 saved policies. Its provisional
+final candidate averages exceed the unchanged 0.01-pot absolute gate on all
+four selected inputs, despite relative gains on three; wet A slightly worsens.
+Publish/verify every own byte before the independent comparison-only scalar
+audit and fixed report. No retry or default promotion.
+The [48-case independent audit](../results/known-turn-collision-medium-transfer/native/manifest.json)
+then passed the pinned `1e-9`-chip scalar tolerance with maximum error
+`1.2434497875801753e-14` chips after own publication. Publish/verify it
+before the fixed final decision report.
+The [fixed final report](known-turn-collision-medium-transfer-result.md) is
+**negative** under the unchanged protocol: all four candidate final averages
+miss the `≤0.01`-pot absolute gate, though three improve against matched-work
+control and wet A slightly regresses. The report retains all 24 paired
+checkpoint contrasts, exact additive turn/river accounting and 32 selected
+decision rows. Conclusions are conditional on selected turn collisions and
+the known medium OOP template. Publish/verify the report, complete exact
+report-head local/optional/hosted qualification and review PR #116; do not
+retry or promote a default.
+The exact negative-report-head [final qualification receipt](../results/known-turn-collision-medium-transfer/final-checks/manifest.json)
+then passed base and optional Python 3.11/3.12 local suites, all-file hooks
+and both hosted CI jobs. The two pre-test local launcher errors are retained
+as operational failures. Publish/verify the receipt, complete solo review
+and history-preserving merge if eligible. The negative scientific result and
+unchanged gates stand.
+After that receipt was published, its first hosted Python 3.11 run canceled
+at the fixed 35-minute limit at 93% of tests; one targeted same-source run
+also canceled at 88%. Python 3.12 passed. PR #116 remains open: do not count
+the passed report-head checks as a receipt-head pass. A CI-only qualification
+change splits the unchanged 3.11 fast-test files into two complete,
+disjoint shards under the same time limit, each retaining lint, typing and
+hooks. The aggregate `Python 3.11` gate requires every shard and the full
+3.12 job. Verify the shard collection and new hosted result before merge;
+this changes no poker protocol, candidate, threshold or source pin.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
