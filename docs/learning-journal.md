@@ -2847,6 +2847,17 @@ must pass before the larger comparison starts. This is software correctness,
 not a stronger-agent result. AI-assisted execution; no new human practice/time
 was reported.
 
+The [complete fixed profile](../results/known-turn-collision-medium-transfer/profile/manifest.json)
+measured all 24 short paths, three for each of the eight spot/representation
+pairs. The forecast takes each path's **slowest** observed whole-path time,
+scales it from about 5m to 40m charged work, and sums the fixed worker
+assignments. Its provisional bound is 4,403.465 seconds under the 7,200-second
+limit, with peak worker RSS below 1.5 billion bytes. This checks whether a
+longer comparison fits the declared budget; it does not tell us whether the
+saved 40m decisions will improve. Next: publish the complete profile, then
+make the separate admission decision. Codex assisted; no human time or
+personal learning was reported.
+
 ## 53. Measure the work around training too — November 10
 
 The first real timing attempt passed its own checks. Three short runs in each

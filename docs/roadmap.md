@@ -510,6 +510,10 @@ The frozen cohort was published and verified; its single fictional
 [capture/replay proof](../results/known-turn-collision-medium-transfer/own-proof/manifest.json)
 passed under 180 seconds. The repeated 5m real-input profile and separate
 compute admission remain pending before any 40m comparison.
+The complete [24-path profile](../results/known-turn-collision-medium-transfer/profile/manifest.json)
+fit its cap and produced a provisional strict 4,403.465-second forecast;
+publish/verify all profile bytes before the separate admission. No 40m
+comparison has begun.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
