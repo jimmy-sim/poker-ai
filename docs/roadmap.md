@@ -543,6 +543,15 @@ and both hosted CI jobs. The two pre-test local launcher errors are retained
 as operational failures. Publish/verify the receipt, complete solo review
 and history-preserving merge if eligible. The negative scientific result and
 unchanged gates stand.
+After that receipt was published, its first hosted Python 3.11 run canceled
+at the fixed 35-minute limit at 93% of tests; one targeted same-source run
+also canceled at 88%. Python 3.12 passed. PR #116 remains open: do not count
+the passed report-head checks as a receipt-head pass. A CI-only qualification
+change splits the unchanged 3.11 fast-test files into two complete,
+disjoint shards under the same time limit, each retaining lint, typing and
+hooks. The aggregate `Python 3.11` gate requires every shard and the full
+3.12 job. Verify the shard collection and new hosted result before merge;
+this changes no poker protocol, candidate, threshold or source pin.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

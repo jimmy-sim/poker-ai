@@ -144,6 +144,23 @@ does not turn a failed strength target into a win. Next: publish the check
 receipt, review the PR, and preserve the negative result. Codex assisted;
 no human time or personal learning was reported.
 
+**Hosted CI layout, November 25:** publishing the final receipt triggered
+another exact-commit check. Python 3.12 passed, but the full Python 3.11
+job hit its unchanged 35-minute limit twice, first at 93% of tests and then
+at 88% on one targeted same-source recheck. Both partial logs are preserved
+in the [CI-layout evidence](../results/known-turn-collision-medium-transfer/ci-layout/manifest.json).
+**Example:** a timing cancellation before the final test and hooks does not
+mean those checks passed, even though the earlier report-head jobs and full
+local suites did. The proposed operational fix divides the same 302 test
+files into two disjoint 151-file hosted jobs and makes the named Python 3.11
+gate depend on both, with every job retaining lint, typing, hooks and the
+same timeout. Collection-only verification found the two shards disjoint
+and their 5,924 selected tests exactly equal to the normal directory
+discovery on this checkout. The strategy, scientific score and negative acceptance stay
+unchanged. Next: publish the CI change and wait for all hosted jobs before
+merge. Codex assisted; no human time or
+personal learning was reported.
+
 **Next registered question, November 24:** the [conditional medium-input
 protocol](known-turn-collision-medium-transfer.md) fixes a new score-blind
 four-input cohort before drawing cards. It follows the deterministic-seed

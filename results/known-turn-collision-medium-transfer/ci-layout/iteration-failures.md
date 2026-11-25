@@ -1,0 +1,1 @@
+A quick workflow-parse command using the system Python failed before parsing because that interpreter does not have PyYAML (`ModuleNotFoundError: yaml`). The same unchanged workflow parsed and its matrix/cap/aggregate assertions passed in the locked project base311 environment. This was an environment selection error, not a CI workflow or scientific failure.

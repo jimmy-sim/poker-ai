@@ -1,0 +1,27 @@
+"""Prove the exact fast-test node collection is partitioned without omission."""
+import json
+import os
+import subprocess
+from pathlib import Path
+root=Path(__file__).resolve().parents[3]
+out=Path(__file__).resolve().parent
+files=sorted({*Path('tests').rglob('test_*.py'),*Path('tests').rglob('*_test.py')})
+assert len(files)==302 and len(files[::2])==len(files[1::2])==151
+collections={}
+for name,selection in [('all',files),('A',files[::2]),('B',files[1::2])]:
+    log=out/f'collect-{name}.log'
+    assert not log.exists()
+    cmd=['uv','run','--locked','pytest','--collect-only','-q','-m','not slow',*(str(p) for p in selection)]
+    with log.open('x') as stream:
+        done=subprocess.run(cmd,cwd=root,stdout=stream,stderr=subprocess.STDOUT,check=False)
+    if done.returncode:
+        raise RuntimeError(f'{name} collection failed: {done.returncode}; {log}')
+    lines=log.read_text().splitlines()
+    nodes={line for line in lines if line.startswith('tests/') and '::' in line}
+    assert nodes and len(nodes)==sum(line.startswith('tests/') and '::' in line for line in lines),(name,len(nodes))
+    collections[name]=nodes
+    print(name,len(selection),'files',len(nodes),'selected nodes',flush=True)
+assert collections['A'].isdisjoint(collections['B'])
+assert collections['A']|collections['B']==collections['all']
+(out/'result.json').write_text(json.dumps({'status':'passed','file_count':len(files),'shard_file_counts':[len(files[::2]),len(files[1::2])],'selected_nodes':{key:len(value) for key,value in collections.items()},'disjoint':True,'complete':True},indent=2)+'\n')
+print('complete disjoint fast-test collection',flush=True)
