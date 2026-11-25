@@ -537,6 +537,12 @@ decision rows. Conclusions are conditional on selected turn collisions and
 the known medium OOP template. Publish/verify the report, complete exact
 report-head local/optional/hosted qualification and review PR #116; do not
 retry or promote a default.
+The exact negative-report-head [final qualification receipt](../results/known-turn-collision-medium-transfer/final-checks/manifest.json)
+then passed base and optional Python 3.11/3.12 local suites, all-file hooks
+and both hosted CI jobs. The two pre-test local launcher errors are retained
+as operational failures. Publish/verify the receipt, complete solo review
+and history-preserving merge if eligible. The negative scientific result and
+unchanged gates stand.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

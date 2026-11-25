@@ -130,7 +130,19 @@ inputs. At equal 40m work the exact-turn candidate improved three pairs,
 but all four final values exceeded the unchanged 0.01-pot absolute limit;
 wet A worsened slightly. The independent scalar audit passed. This is
 evidence about these selected restricted games, with no seed uncertainty or
-unseen-template claim. Final report-head qualification and review remain.
+unseen-template claim. At the report checkpoint, final qualification and
+review remained; the qualification update below records their later state.
+
+**Qualification update, November 25:** the [final check receipt](../results/known-turn-collision-medium-transfer/final-checks/manifest.json)
+records both base and optional Python versions, all-file hooks and both
+hosted jobs passing on the exact negative report. Two local launcher mistakes
+stopped before tests and remain in the receipt; correcting them did not
+change a poker policy or the protocol. **Example:** the candidate's wet A
+score remains 0.017677 pots above the fixed 0.01 limit even though every
+software check passed. Passing software checks supports the measurement; it
+does not turn a failed strength target into a win. Next: publish the check
+receipt, review the PR, and preserve the negative result. Codex assisted;
+no human time or personal learning was reported.
 
 **Next registered question, November 24:** the [conditional medium-input
 protocol](known-turn-collision-medium-transfer.md) fixes a new score-blind
