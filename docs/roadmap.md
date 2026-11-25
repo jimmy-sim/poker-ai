@@ -518,6 +518,12 @@ The separately computed [admission](../results/known-turn-collision-medium-trans
 passed the unchanged strict 7,200-second bound from the published profile.
 It permits one fixed eight-path own comparison after the admission bytes are
 published and verified; it does not establish strength.
+The one admitted [own archive](../results/known-turn-collision-medium-transfer/own/manifest.json)
+then retained all eight 40m paths and 48 saved policies. Its provisional
+final candidate averages exceed the unchanged 0.01-pot absolute gate on all
+four selected inputs, despite relative gains on three; wet A slightly worsens.
+Publish/verify every own byte before the independent comparison-only scalar
+audit and fixed report. No retry or default promotion.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

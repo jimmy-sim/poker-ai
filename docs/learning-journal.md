@@ -2866,6 +2866,18 @@ helps. Next: publish and verify the admission receipt before starting the
 fixed eight real-game paths. Codex assisted; no human time or personal
 learning was reported.
 
+The one [admitted own comparison](../results/known-turn-collision-medium-transfer/own/manifest.json)
+saved all 48 policies at matched 10m/20m/40m work. At final linear average,
+the finer-turn candidate improves dry A, dry B and wet B relative to q8 but
+worsens wet A slightly. **All four** candidate values are above the unchanged
+one-percent-of-pot absolute target. **Example:** on wet A, the candidate's
+saved best-response gain is 0.017677 pots versus 0.017125 for q8; splitting
+known turn collisions did not guarantee a better policy there. This is an
+own-only negative signal, subject to the independent scalar check and fixed
+decision report. Next: publish every saved policy and own score before the
+comparison-only reference audit; do not retry or tune. Codex assisted; no
+human time or personal learning was reported.
+
 ## 53. Measure the work around training too — November 10
 
 The first real timing attempt passed its own checks. Three short runs in each
