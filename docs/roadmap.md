@@ -471,6 +471,14 @@ passed; their [receipt](../results/known-turn-work-budget/final-checks/manifest.
 preserves logs and intermediate cancellations. The strength result remains
 negative. Review and history-merge PR #114 if eligible, then stop. Do not
 start another experiment or promote a default.
+PR #114 was subsequently history-merged as `1f1d4895`; both receipt-head
+and post-merge main Python 3.11/3.12 CI passed. The [seed-replication
+preflight](known-turn-seed-replication-preflight.md) then found that the
+unchanged full expected trainer hardcodes `PCG64(0)` and consumes no random
+draws. Seed labels cannot vary its policy trajectory, so the proposed
+multi-seed 40m study stopped **before training**. A separately preregistered
+input-diversity comparison is proposed in that note, with no new experiment
+started and no change to PR #114's negative gate.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
