@@ -13,6 +13,10 @@ only when reported, separately from experiment runtime. Entries retain their
 original context and attribution; an earlier next step may already be complete.
 The [contribution workflow](../CONTRIBUTING.md) describes publication.
 
+## 2026-11-24 — Stop deterministic seed replication before training
+
+- [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114) history-merged as `1f1d4895`; receipt-head and post-merge main CI both passed Python 3.11/3.12 and hooks. No issue #4 worker remained. A read-only [seed preflight](known-turn-seed-replication-preflight.md) traced the unchanged capture path to `medium_dry_full.learning.train`, which fixes `PCG64(0)` and uses full expected traversal. Its only random draw belongs to unused external sampling. All 24 saved checkpoint RNG states equal the unconsumed initial state. Therefore seed labels cannot change the policies; no replication protocol, 40m training or new poker outcome was started. PR #114 remains **negative** because its wet candidate exceeds the frozen 0.01-pot absolute limit. Next: stop; a distinct input-diversity question would require its own prospective protocol and compute gate. Codex assisted; human time and personal learning were not reported.
+
 ## 2026-11-24 — Prospective matched-work exact-turn budget
 
 - Final exact-negative-report-head qualification at `73f11326` passed: base Python 3.11/3.12 each 5,841 passed/73 skipped/150 deselected with Ruff, format, strict mypy and pre/post guards; optional 3.11 passed 2,601, optional 3.12 passed 2,599/two skipped with installed reference-license guards. All-file hooks and both [hosted report-head jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/45490979968) passed. The [final receipt](../results/known-turn-work-budget/final-checks/manifest.json) retains all four local logs, hosted log, pins and canceled intermediate CI logs. This qualifies the software and preserves the **negative** wet absolute strength gate; no default promotion or scientific retry. Next: publish/verify this receipt, review PR #114, and history-merge if eligible, then stop. Codex assisted; human time and personal learning were not reported.
