@@ -1,0 +1,152 @@
+"""Serial exact-head local qualification with durable, exclusive role logs."""
+
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path("/private/tmp/poker-ai-117-source-checkout")
+OUT = Path(__file__).resolve().parent
+HEAD = "e0d61b2ed3a90f6969e2472d6bee3a4a2e56e6a4"
+FINGERPRINT = "03ebd026d00fd7669005a4c57d4b7b8ef7805a6866d2ed310a328136c038135a"
+ROLES = ("base311", "base312", "optional311", "optional312")
+ENVS = Path("/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/guarded-skip-requalification-20261118/envs")
+ENV_MAP = {
+    "base311": Path("/private/tmp/poker-ai-117-clone-base311"),
+    "base312": ENVS / "base312",
+    "optional311": Path("/private/tmp/poker-ai-117-clone-venv"),
+    "optional312": ENVS / "optional312",
+}
+SUITES = json.loads((OUT / "optional-suites.json").read_text())
+assert len(SUITES) == len(set(SUITES)) == 82
+
+
+def guard(role: str) -> str:
+    expected_python = "3.11.17" if role.endswith("311") else "3.12.15"
+    expected_numpy = "2.4.6" if role.endswith("311") else "2.5.4"
+    code = f'''import hashlib,json,os,pathlib,sys,numpy,poker_ai
+from poker_ai.evaluation.residual_distribution_workflow import clean_head,contract,source_fingerprint
+r=pathlib.Path.cwd()
+assert clean_head(r)=={HEAD!r}
+assert source_fingerprint(r)=={FINGERPRINT!r}
+assert contract(r)['prior_result']=='negative'
+assert sys.version.split()[0]=={expected_python!r}
+assert numpy.__version__=={expected_numpy!r}
+assert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')
+assert os.environ.get('PYTHONPATH') == ({str(ROOT / "src") + ":" + str(ROOT / "scripts")!r} if {role.endswith("312")!r} else None)
+print(json.dumps(dict(head={HEAD!r},source_fingerprint={FINGERPRINT!r},python=sys.version.split()[0],numpy=numpy.__version__,dirty=False)))
+'''
+    if role.startswith("optional"):
+        code += '''from importlib.metadata import distribution,version
+provider=distribution('open-spiel')
+licenses=[f for f in provider.files or () if str(f).endswith('licenses/LICENSE')]
+assert len(licenses)==1
+raw=pathlib.Path(str(provider.locate_file(licenses[0]))).read_bytes()
+assert version('numba')=='0.68.1' and version('open-spiel')=='2.0.2'
+assert len(raw)==11358 and hashlib.sha256(raw).hexdigest()=='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
+'''
+    return code
+
+
+def run_role(role: str) -> bool:
+    env = {
+        key: value
+        for key, value in os.environ.items()
+        if key
+        in {
+            "PATH",
+            "HOME",
+            "TMPDIR",
+            "USER",
+            "LOGNAME",
+            "SHELL",
+            "LANG",
+            "LC_ALL",
+            "LC_CTYPE",
+            "UV_PYTHON_INSTALL_DIR",
+            "UV_OFFLINE",
+        }
+    }
+    env.update(
+        UV_CACHE_DIR="/private/tmp/poker-ai-uv-cache",
+        PRE_COMMIT_HOME="/private/tmp/poker-ai-precommit-117",
+        UV_PROJECT_ENVIRONMENT=str(ENV_MAP[role]),
+        UV_PYTHON="3.11.17" if role.endswith("311") else "3.12.15",
+        UV_NO_SYNC="1",
+    )
+    if role.endswith("312"):
+        env["PYTHONPATH"] = str(ROOT / "src") + ":" + str(ROOT / "scripts")
+    prefix = ["uv", "run", "--locked"] + (["--all-extras"] if role.startswith("optional") else [])
+    commands = [
+        prefix + ["python", "-c", guard(role)],
+        ["make", "check"] if role.startswith("base") else prefix + ["pytest", "-q", *SUITES],
+        prefix + ["python", "-c", guard(role)],
+    ]
+    log = OUT / f"{role}.log"
+    receipt = OUT / f"{role}.json"
+    if log.exists() or receipt.exists():
+        raise FileExistsError(f"prior role evidence exists: {role}")
+    started = time.perf_counter()
+    failure = None
+    with log.open("x") as stream:
+        for index, command in enumerate(commands):
+            stream.write(json.dumps({"command_index": index, "command": command[:5]}) + "\n")
+            stream.flush()
+            try:
+                subprocess.run(
+                    command,
+                    cwd=ROOT,
+                    env=env,
+                    stdout=stream,
+                    stderr=subprocess.STDOUT,
+                    check=True,
+                )
+            except BaseException as error:
+                failure = {"type": type(error).__name__, "reason": str(error)}
+                break
+    receipt.write_text(
+        json.dumps(
+            {
+                "role": role,
+                "environment": str(ENV_MAP[role]),
+                "uv_no_sync": True,
+                "head": HEAD,
+                "source_fingerprint": FINGERPRINT,
+                "status": "passed" if failure is None else "failed",
+                "failure": failure,
+                "elapsed_seconds": time.perf_counter() - started,
+                "log_sha256": hashlib.sha256(log.read_bytes()).hexdigest(),
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+    print(role, "passed" if failure is None else "failed", flush=True)
+    return failure is None
+
+
+def main() -> None:
+    (OUT / "runner-state.json").write_text(
+        json.dumps(
+            {
+                "pid": os.getpid(),
+                "head": HEAD,
+                "source_fingerprint": FINGERPRINT,
+                "started_utc": datetime.now(timezone.utc).isoformat(),
+                "roles": ROLES,
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+    for role in ROLES:
+        if not run_role(role):
+            sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

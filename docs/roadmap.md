@@ -562,6 +562,12 @@ qualify isolated vector-analysis source, pass fictional proof and separate
 data-only admission, run one capped analysis, publish raw output before
 interpretation, then finish exact-source checks and review. The four inputs
 are known and no training, reference audit or default promotion is planned.
+Its [exact source qualification failed](known-turn-residual-distribution-result.md)
+because a diagnostic under `src/` changed historical source inventories.
+The protocol stops there: no proof, admission or row analysis was run.
+The fully checked PR #116 negative result remains the latest poker-strength
+evidence. A distinct future question needs a new prospective plan; the
+failed diagnostic offers no row-location evidence.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

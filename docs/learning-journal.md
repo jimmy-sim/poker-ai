@@ -167,6 +167,20 @@ the fixed eight policies, ranking rule or strength gate. Next: qualify the
 corrected exact source before any proof or row analysis. Codex assisted; no
 human time or personal learning was reported.
 
+**Stopped source gate, November 25:** an independent clean checkout of the
+original source completed the base Python 3.11 fast suite with 37 failures,
+184 errors, 5,646 passes and 72 skips (150 slow tests deselected). That
+confirms the historical source-inventory problem outside the original
+checkout; the fixture errors were not individually root-caused. The
+[failure report](known-turn-residual-distribution-result.md)
+records the exact attempts. The prospective protocol says a failed source
+check stops this question, so no fictional proof, admission or real row
+ranking follows the correction. **Example:** passing 12 new tests does not
+replace a full repository qualification that failed. The known four-game
+strength result stays negative; there is no new location claim. Next:
+publish the failure evidence and choose a distinct registered strength
+question. Codex assisted; no human time or personal learning was reported.
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,
