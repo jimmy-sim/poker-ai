@@ -144,6 +144,17 @@ drawn. Next: publish and verify the source receipt, then run the single
 score-free input screen. Codex assisted; no human time or personal learning
 was reported.
 
+**Input checkpoint, November 24:** the [one-time structural screen](../results/known-turn-collision-medium-transfer/screen/manifest.json)
+kept all 34 new physical board/range attempts. Its fixed dry/wet/dry/wet
+strata first met the four-collision rule at attempts 3, 15, 1 and 15.
+**Example:** dry A's first eligible input has 18 exact acting-turn rows
+sharing q8 decision groups; the candidate's existing exact-turn keys can
+separate them without changing the river keys. This says where the two
+representations differ, **not whether either plays better**. No policy or
+best response was read during selection. Next: publish every screened record,
+then freeze the selected inputs before proof, profiling or training. Codex
+assisted; no human time or personal learning was reported.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)

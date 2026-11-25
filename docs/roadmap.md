@@ -497,7 +497,12 @@ both protocol-head hosted jobs and both source-head hosted jobs; the first
 source-head Python 3.11 attempt hit its unchanged 35-minute limit at 97%
 and remains retained separately from the passing same-SHA requalification.
 The [source receipt](../results/known-turn-collision-medium-transfer/source-checks/manifest.json)
-precedes the one-time screen. No new card/range input has yet been drawn.
+precedes the one-time screen. At that source checkpoint, no new card/range
+input had yet been drawn.
+The [one registered score-free screen](../results/known-turn-collision-medium-transfer/screen/manifest.json)
+then selected the first eligible dry/wet/dry/wet inputs at attempts 3/15/1/15
+out of 34 retained draws; no strength outcome was inspected. Its complete
+archive must be published and verified before freezing the selected cohort.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
