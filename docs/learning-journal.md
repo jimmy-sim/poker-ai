@@ -155,6 +155,16 @@ best response was read during selection. Next: publish every screened record,
 then freeze the selected inputs before proof, profiling or training. Codex
 assisted; no human time or personal learning was reported.
 
+The four [frozen spots](../configs/known-turn-collision-medium-transfer-freeze.json)
+were copied byte for byte from those first eligible attempts only after every
+screen record was published and checked against GitHub. **Example:** dry A's
+board is `4c Ks 9d Ts`, while wet B's is `Ad Kc Jd 9s`; the associated
+five-combo ranges and weights also differ. These are selected structural
+inputs, not evidence of a win or a test of the collision frequency among
+unconditioned boards. Next: verify the frozen bytes on GitHub, then run the
+fictional software proof. Codex assisted; no human time or personal learning
+was reported.
+
 **Latest, November 24:** [PR #114](https://github.com/jimmy-sim/poker-ai/pull/114)
 history-merged after complete checks with a **negative** known-game
 40m strength result. A [read-only seed preflight](known-turn-seed-replication-preflight.md)

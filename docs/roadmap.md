@@ -503,6 +503,9 @@ The [one registered score-free screen](../results/known-turn-collision-medium-tr
 then selected the first eligible dry/wet/dry/wet inputs at attempts 3/15/1/15
 out of 34 retained draws; no strength outcome was inspected. Its complete
 archive must be published and verified before freezing the selected cohort.
+The [freeze](../configs/known-turn-collision-medium-transfer-freeze.json)
+then copied only those four first-eligible raw inputs, with byte-equal
+selected hashes; publish/verify it before proof or real profiling.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
