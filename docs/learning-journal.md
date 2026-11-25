@@ -139,6 +139,20 @@ training exists at this checkpoint. Next: publish and verify the protocol,
 then qualify a read-only analyzer. Codex assisted; no human time or personal
 learning was reported.
 
+**Source step, November 25:** the new read-only analyzer checks that all
+eight saved final policies and their row vectors still match the published
+report before ranking any row. A fictional test with four rows makes one
+decision worse by 0.3 chips and another better by 0.3, so the net change is
+zero; this demonstrates why a net score alone can hide movement between
+decisions. Twelve fictional and guard tests, focused Ruff and strict mypy
+pass. Full local/optional and hosted checks, the formal proof and admission
+are pending. The first check attempt stopped before collection because this
+checkout's installed environment metadata could not be read; the passing
+focused tests used another existing read-only locked runtime. No real input
+was analyzed. Next: qualify the exact committed source, then run the formal
+fictional proof. Codex assisted; no human time or personal learning was
+reported.
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,
