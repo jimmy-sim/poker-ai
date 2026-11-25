@@ -124,6 +124,14 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
+is **negative** on its four newly selected, collision-containing medium OOP
+inputs. At equal 40m work the exact-turn candidate improved three pairs,
+but all four final values exceeded the unchanged 0.01-pot absolute limit;
+wet A worsened slightly. The independent scalar audit passed. This is
+evidence about these selected restricted games, with no seed uncertainty or
+unseen-template claim. Final report-head qualification and review remain.
+
 **Next registered question, November 24:** the [conditional medium-input
 protocol](known-turn-collision-medium-transfer.md) fixes a new score-blind
 four-input cohort before drawing cards. It follows the deterministic-seed
@@ -2887,6 +2895,23 @@ computed correctly in these restricted games; it does not turn the failed
 absolute strength threshold into a pass. Next: publish the audit, then use
 the fixed report to compare each pair and inspect the predeclared decision
 rows. Codex assisted; no human time or personal learning was reported.
+
+**November 24 fixed conditional-input decision.** The [complete report](known-turn-collision-medium-transfer-result.md)
+applied the preregistered 40m linear-average and absolute tests once. The
+candidate scored 0.013575, 0.017677, 0.020657 and 0.016752 initial pots,
+all above 0.01; three same-input relative differences favored it and wet A
+did not. **Example:** on dry A's `4c Ks 9d Ts` turn with `2s 9s`, q8 put
+96.76% on a 36-chip raise while its optimized-reply value for checking was
+higher; that exact row's additive best-response gain fell from 0.179374 to
+0.014943 chips with the finer turn keys. This row is measured against each
+saved opponent and optimized continuation, so it is neither a causal
+one-action fix nor general poker advice. Wet A's total turn and river gains
+rose despite a small improvement in its top control turn row. The broad
+scientific answer is **negative under the frozen acceptance rule**; the
+local gains explain why the representation remains interesting but do not
+permit a retry or default promotion. Next: complete report-head checks and
+review this one PR, then stop. Codex assisted; no human time or personal
+learning was reported.
 
 ## 53. Measure the work around training too — November 10
 

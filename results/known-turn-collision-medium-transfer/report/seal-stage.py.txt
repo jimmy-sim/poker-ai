@@ -1,0 +1,82 @@
+"""Seal one complete PR116 stage without changing its raw scientific bytes."""
+import argparse
+import hashlib
+import json
+import shutil
+import sys
+from pathlib import Path
+from typing import Any
+
+parser=argparse.ArgumentParser()
+parser.add_argument('stage',choices=('screen','proof','profile','admit','study','audit','report'))
+parser.add_argument('--workdir',type=Path,required=True)
+args=parser.parse_args()
+root=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(root/'scripts'))
+from known_turn_collision_medium_transfer.forecast import forecast
+from known_turn_collision_medium_transfer.gate import ADMISSION,NATIVE,OWN,PROFILE,PROOF,SCREEN,REPORT,source_fingerprint
+from known_turn_collision_medium_transfer.plan import LABELS,paths
+from known_turn_collision_medium_transfer.selection import validate_screen
+
+source='4ab36412d18231aada57b9cc4a4e96c9491f3e37418f8794e7768d3d19073eb0'
+assert source_fingerprint(root)==source
+folder=args.workdir.resolve()
+raw=root/SCREEN if args.stage=='screen' else folder/'raw'
+out=root/{'screen':SCREEN,'proof':PROOF,'profile':PROFILE,'admit':ADMISSION,'study':OWN,'audit':NATIVE,'report':REPORT}[args.stage]
+state:dict[str,Any]=json.loads((folder/'job-state.json').read_bytes())
+assert state['status']=='passed' and state['exit_code']==0 and (folder/'launch.exit').read_text().strip()=='0'
+assert state['source_fingerprint']==source and 0<state['observed_wall_seconds']<state['cap_seconds']
+assert state['cap_seconds']=={'screen':900,'proof':180,'profile':900,'admit':180,'study':7200,'audit':900,'report':3600}[args.stage]
+assert raw.is_dir() and not raw.is_symlink()
+if args.stage=='report':
+    result=json.loads((raw/'report.json').read_bytes())
+    assert result['status']=='completed' and result['head']==state['source_head'] and result['source_fingerprint']==source
+    assert len(result['cases'])==48 and len(result['checkpoint_contrasts'])==24 and result['primary']['classification'] in ('positive','negative','inconclusive')
+    status='report_'+result['primary']['classification']
+elif args.stage=='admit':
+    result=json.loads((raw/'decision.json').read_bytes())
+    assert result['status']=='admitted' and forecast(json.loads((root/PROFILE/'result.json').read_bytes()))==result
+    status='admitted'
+else:
+    result=json.loads((raw/'result.json').read_bytes())
+    assert result['head']==state['source_head'] and result['source_fingerprint']==source
+    if args.stage=='screen':
+        assert result['status'] in ('selected','structural_stop') and result['no_policy_or_score_read'] is True
+        if result['status']=='selected':validate_screen(root,result)
+        status='screen_selected' if result['status']=='selected' else 'screen_structural_stop'
+    elif args.stage=='proof':
+        assert result['status']=='completed' and result['stage']=='proof' and result['captures_per_arm']==6
+        status='proof_passed'
+    elif args.stage=='profile':
+        assert result['status']=='completed' and result['stage']=='profile' and forecast(result)==json.loads((raw/'forecast.json').read_bytes())
+        status='profile_published'
+    elif args.stage=='study':
+        assert result['status']=='completed' and result['stage']=='study' and result['assignments']==[list(range(0,8,2)),list(range(1,8,2))]
+        for spec in paths():
+            saved=json.loads((raw/'study'/f'path{spec.index:02d}'/'summary.json').read_bytes())
+            assert saved['status']=='completed' and saved['path']==dict(index=spec.index,game=spec.game,arm=spec.arm,seed=0)
+            assert saved['labels']==list(LABELS) and len(saved['captures'])==6 and saved['recall_violations']==0
+        for first in range(0,8,2):
+            left=json.loads((raw/'study'/f'path{first:02d}'/'summary.json').read_bytes())
+            right=json.loads((raw/'study'/f'path{first+1:02d}'/'summary.json').read_bytes())
+            for label in LABELS:
+                assert {c['metadata']['total_work'] for c in left['captures'] if c['metadata']['work_label']==label}=={c['metadata']['total_work'] for c in right['captures'] if c['metadata']['work_label']==label}
+        status='own_published'
+    else:
+        assert result['status']=='completed' and len(result['rows'])==48 and result['maximum_error_chips']<=1e-9
+        status='native_audited'
+if args.stage!='screen':
+    assert not out.exists() and not out.is_symlink()
+    shutil.copytree(raw,out)
+for name in ('job-state.json','launch.exit','launch.log'):
+    shutil.copyfile(folder/name,out/name)
+shutil.copyfile(Path(__file__),out/'seal-stage.py.txt')
+shutil.copyfile(root/'results/runs/known-turn-collision-medium-transfer-stage-launcher.py',out/'stage-launcher.py.txt')
+files=[]
+for path in sorted(p for p in out.rglob('*') if p.is_file() and p.name!='manifest.json'):
+    assert not path.is_symlink()
+    blob=path.read_bytes()
+    files.append(dict(file=path.relative_to(out).as_posix(),bytes=len(blob),sha256=hashlib.sha256(blob).hexdigest()))
+assert not (out/'manifest.json').exists()
+(out/'manifest.json').write_text(json.dumps(dict(status=status,source_fingerprint=source,files=files),sort_keys=True,indent=2)+'\n')
+print(status,len(files),out)

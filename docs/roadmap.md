@@ -528,6 +528,15 @@ The [48-case independent audit](../results/known-turn-collision-medium-transfer/
 then passed the pinned `1e-9`-chip scalar tolerance with maximum error
 `1.2434497875801753e-14` chips after own publication. Publish/verify it
 before the fixed final decision report.
+The [fixed final report](known-turn-collision-medium-transfer-result.md) is
+**negative** under the unchanged protocol: all four candidate final averages
+miss the `≤0.01`-pot absolute gate, though three improve against matched-work
+control and wet A slightly regresses. The report retains all 24 paired
+checkpoint contrasts, exact additive turn/river accounting and 32 selected
+decision rows. Conclusions are conditional on selected turn collisions and
+the known medium OOP template. Publish/verify the report, complete exact
+report-head local/optional/hosted qualification and review PR #116; do not
+retry or promote a default.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
