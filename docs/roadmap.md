@@ -524,6 +524,10 @@ final candidate averages exceed the unchanged 0.01-pot absolute gate on all
 four selected inputs, despite relative gains on three; wet A slightly worsens.
 Publish/verify every own byte before the independent comparison-only scalar
 audit and fixed report. No retry or default promotion.
+The [48-case independent audit](../results/known-turn-collision-medium-transfer/native/manifest.json)
+then passed the pinned `1e-9`-chip scalar tolerance with maximum error
+`1.2434497875801753e-14` chips after own publication. Publish/verify it
+before the fixed final decision report.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -2878,6 +2878,16 @@ decision report. Next: publish every saved policy and own score before the
 comparison-only reference audit; do not retry or tune. Codex assisted; no
 human time or personal learning was reported.
 
+The [independent scalar audit](../results/known-turn-collision-medium-transfer/native/manifest.json)
+checked all 48 saved policies against the pinned open-source OpenSpiel
+reference, after their own scores were already published. The largest
+numerical difference was about `1.24e-14` chips, far below the fixed
+`1e-9` chip limit. This supports that the saved exploitability numbers are
+computed correctly in these restricted games; it does not turn the failed
+absolute strength threshold into a pass. Next: publish the audit, then use
+the fixed report to compare each pair and inspect the predeclared decision
+rows. Codex assisted; no human time or personal learning was reported.
+
 ## 53. Measure the work around training too — November 10
 
 The first real timing attempt passed its own checks. Three short runs in each
