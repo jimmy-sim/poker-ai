@@ -124,6 +124,21 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Current question, November 25:** PR #116 is history-merged, with its final
+hosted and post-merge checks passing. Its four-input result remains negative.
+The [new prospective diagnosis](known-turn-residual-distribution.md) asks
+whether the remaining exact-turn losses on those **known** inputs are carried
+by a few turn or river decision rows, using already published contribution
+vectors. A *best-response contribution* is one row's share of the gain an
+optimal opponent can obtain against the saved policy. **Example:** a high
+turn contribution points to a decision worth investigating, but changing
+that one action has not been tested. The protocol fixes all eight final
+policies, row ordering, arithmetic checks, descriptive thresholds and
+resource caps before calculating any new ranking. No new row result or
+training exists at this checkpoint. Next: publish and verify the protocol,
+then qualify a read-only analyzer. Codex assisted; no human time or personal
+learning was reported.
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,

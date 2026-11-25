@@ -552,6 +552,16 @@ disjoint shards under the same time limit, each retaining lint, typing and
 hooks. The aggregate `Python 3.11` gate requires every shard and the full
 3.12 job. Verify the shard collection and new hosted result before merge;
 this changes no poker protocol, candidate, threshold or source pin.
+PR #116 subsequently passed both 3.11 shards, full 3.12 and aggregate on
+its final head, then history-merged as `0c0f3a2c` with post-merge main CI
+passing all four jobs. Its four-input strength result remains **negative**.
+The next [prospective read-only diagnosis](known-turn-residual-distribution.md)
+fixes its eight published 40m final-average policy vectors before any new
+row ranking. **Definition of done:** publish and verify the protocol,
+qualify isolated vector-analysis source, pass fictional proof and separate
+data-only admission, run one capped analysis, publish raw output before
+interpretation, then finish exact-source checks and review. The four inputs
+are known and no training, reference audit or default promotion is planned.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
