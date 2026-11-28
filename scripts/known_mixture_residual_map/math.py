@@ -46,7 +46,7 @@ def summarize(
         by_street[street] = {
             "gain_chips": street_sum,
             "share_of_total": street_sum / total,
-            "positive_rows": sum(gains[i] > 0 for i in indices),
+            "positive_rows": sum(bool(gains[i] > 0) for i in indices),
             "top_ten_positive_share": None if positive == 0 else top_ten / positive,
             "concentration": "none"
             if positive == 0

@@ -154,6 +154,20 @@ finish exact-source qualification before the fictional proof, data-only
 compute admission and one real four-game map. Codex assisted; no human time
 or personal learning was reported.
 
+**PR #119 serialization correction, November 27:** a fictional four-row
+summary passed its arithmetic assertions but failed when written as JSON:
+NumPy returned a `numpy.int64` count of positive rows, which Python's JSON
+writer rejected. **Example:** the value looked like the integer 2, but its
+array-library type made the durable result impossible to save. The first
+exact-source base3.11 suite passed; base3.12 was interrupted once this
+software defect was reproduced, and its partial tests and failed role receipt
+remain. The correction casts each row predicate to a plain Boolean before
+counting and adds a JSON round-trip regression check. **Next decision:** run
+focused checks, publish the corrected source, then redo all required
+exact-source lanes and hosted checks before any proof, admission or real row
+trace. This failure is about saving results, not poker strength. Codex
+assisted; no human time or personal learning was reported.
+
 **PR #118 final qualification, November 27:** the negative report's exact
 source passed both local base Python versions, both optional suites,
 all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).

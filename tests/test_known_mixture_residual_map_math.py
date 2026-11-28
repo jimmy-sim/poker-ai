@@ -1,5 +1,7 @@
 """Independent synthetic checks for frozen row accounting and labels."""
 
+import json
+
 import numpy as np
 import pytest
 from known_mixture_residual_map.math import summarize
@@ -12,6 +14,7 @@ def test_turn_concentration_and_deterministic_ranking() -> None:
     assert result["streets"]["TURN"]["top_five_indices"] == [0, 1]
     assert result["streets"]["RIVER"]["top_five_indices"] == [3, 2]
     assert result["streets"]["RIVER"]["positive_rows"] == 1
+    assert json.loads(json.dumps(result, allow_nan=False)) == result
 
 
 @pytest.mark.parametrize(
