@@ -705,6 +705,10 @@ profile paths completed below their time and memory caps; the
 shows a provisional strict 2,772.106-second own-run bound. Publish and
 verify the profile before a separate data-only admission. No strength
 outcome has been collected.
+The separate [admission](../results/known-turn-clipped-transfer/admission/manifest.json)
+recomputed the complete published profile and returned **admitted** at
+2,772.105923 < 7,200 seconds. Publish and verify that decision before
+the one fixed four-path own candidate run.
 **Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths

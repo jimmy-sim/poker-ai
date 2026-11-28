@@ -124,6 +124,15 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #121 compute admission, November 28:** a separate
+[decision](../results/known-turn-clipped-transfer/admission/manifest.json)
+recomputed the twelve published timing paths. The rule takes the
+slowest repeat for each game and doubles the larger worker sum plus the
+fixed reserve: `2*(2*393.026481+600)=2,772.105923` seconds, strictly
+below the 7,200-second cap. This admits one fixed four-game candidate
+run; it does not say whether clipping improves poker decisions. Codex
+assisted; no human time or personal learning was reported.
+
 **PR #121 profile, November 28:** all twelve fixed 5m timing paths
 completed in [147.903 whole seconds](../results/known-turn-clipped-transfer/profile/manifest.json).
 The largest worker memory readings were 973,144,064 and 971,554,816
