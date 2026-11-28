@@ -669,6 +669,14 @@ optional suites, pinned hooks and all four hosted source jobs. Its
 retains an earlier runner-only precheck failure as well as the complete
 passing checks. Publish/verify that receipt before the fictional proof;
 no candidate strength outcome has been collected.
+The complete [fixed PR #120 report](known-turn-uniform-regret-transfer-result.md)
+now classifies the uniform-regret candidate **negative** on all four
+known games at matched 40m work, with independent scalar audit passed.
+The candidate regresses despite its earlier favorable 10m result on a
+different old game. Complete final exact-report local/optional/hosted
+qualification and review before merge. A later milestone, if justified,
+must be distinct and prospectively registered; do not retry this rule
+on favorable seeds or selected cases.
 **Definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths

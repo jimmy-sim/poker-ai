@@ -124,6 +124,23 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 fixed negative report, November 28:** the [published comparison](known-turn-uniform-regret-transfer-result.md)
+keeps every fixed checkpoint and all 42 preselected decision rows. All
+four 40m uniform-regret candidates leave more exact best-response gain
+than the matched linear-regret controls. The dry B candidate leaves
+1.189667 chips on the turn and 0.585414 on the river, versus 0.594281
+and 0.149364 for its control. **Example:** on the dry B `5c 8s Jh 9c`
+turn with `Kd Ks`, both saved policies raise to 36 most of the time,
+yet the candidate's additive best-response contribution is much larger
+(0.356839 versus 0.049351 chips). The opponent and optimized reply
+continuation differ between saved policies, so this row is a diagnostic,
+not proof that a small local probability change caused the regression
+or advice for a live hand. The negative result is conditional on four
+dependent known games; no seed interval or unseen transfer is claimed.
+Final exact-report qualification and PR review remain. No retry or
+default promotion. Codex assisted; no human time or personal learning
+was reported.
+
 **PR #120 independent scalar audit, November 28:** the 24 saved
 candidate policies were compared with pinned open-source OpenSpiel
 2.0.2 only after own results were public. The largest scalar difference
