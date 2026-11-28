@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 source gate, November 28:** corrected source `3bb3366e`
+passed both complete local base suites, both optional suites, hooks and
+all four hosted CI jobs. The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)
+keeps the earlier failed serialization probe and interrupted checks beside
+the passing exact-source logs. **Example:** a passing poker arithmetic test
+did not prove the report was writable; the new JSON round-trip assertion
+catches that missing step. The four saved mixed policies have still not been
+traced. **Next decision:** publish and verify the receipt, then run the
+separate fictional proof and data-only conservative admission before the
+single bounded real trace. Codex assisted; no human time or personal
+learning was reported.
+
 **Next bounded question, November 27:** [PR #118](https://github.com/jimmy-sim/poker-ai/pull/118)
 has history-merged with a negative fixed strength result. Its mixtures
 reduced exploitability relative to q8 on each known game but remained above

@@ -601,6 +601,13 @@ source-qualified, pinned, reconciled read-only traces, published own evidence,
 a fixed decision report, final local/hosted checks and review. It does not
 repeat PR #117's failed parent-policy diagnosis, change the already failed
 mixture, claim unseen transfer or promote a default.
+The prospective [PR #119](https://github.com/jimmy-sim/poker-ai/pull/119)
+protocol and source were published before any mixed-row trace. Corrected
+source `3bb3366e` passed both full local base suites, both optional suites,
+all-file hooks and all four [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/46122565044).
+An earlier source's NumPy-integer JSON save defect and interrupted checks
+remain retained separately. Publish and verify the complete source receipt
+before its fictional proof, data-only admission or first real trace.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

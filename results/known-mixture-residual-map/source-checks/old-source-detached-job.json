@@ -1,0 +1,20 @@
+{
+  "owner": "active Codex issue #4 session",
+  "source_head": "8bf2c666a2200b6757bdae8495a8471dac48f3b3",
+  "source_fingerprint": "092510c8b4d3efd8a6def80b722c363478890f71ffd6eee9242d2af713024cc7",
+  "command": "python3 results/runs/known-mixture-residual-map-20261127/runner.py",
+  "roles": [
+    "base311",
+    "base312",
+    "optional311",
+    "optional312"
+  ],
+  "started_utc": "2026-11-28T07:21:41.544169+00:00",
+  "log_dir": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-mixture-residual-map-20261127",
+  "environment": "pinned uv 0.13.5; existing base/optional Python 3.11/3.12 environments",
+  "status": "interrupted_before_receipt",
+  "launcher_pid": 14206,
+  "last_complete_step": "base311 pre-guard and Ruff lint/format",
+  "partial_log": "base311.log",
+  "reason": "detached runner PID exited during mypy without receipt or surviving child; exact cause unobserved"
+}
