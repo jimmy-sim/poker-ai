@@ -1,0 +1,58 @@
+{
+  "classification": "negative",
+  "hooks": "passed",
+  "local_roles": [
+    {
+      "elapsed_seconds": 1215.2610651670002,
+      "failure": null,
+      "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+      "log_sha256": "03189dd04595b271ac105b205b5d8e2eafd4a13d3651f43592ef156b5b1d4e14",
+      "role": "base311",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 989.9686792090001,
+      "failure": null,
+      "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+      "log_sha256": "38efc23d039bbd262d98f08ec92c20e42bc94df444d19ccc73d3064880ce7069",
+      "role": "base312",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 648.835881125,
+      "failure": null,
+      "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+      "log_sha256": "348c2683f66b7006a3fad75afdc6988ab13f118353be6f4a4950e53708f07148",
+      "role": "optional311",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 442.4300996249999,
+      "failure": null,
+      "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+      "log_sha256": "89a5aea7b2d40feef24ba176b217c33c2d3b5490845fdec2188a7b0ad4a807d1",
+      "role": "optional312",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    }
+  ],
+  "report_head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+  "report_hosted_run": 46112526107,
+  "retained_pretest_failure": {
+    "elapsed_seconds": 0.011587541000153578,
+    "failure": {
+      "reason": "Command '['uv', 'run', '--locked', 'python', '-c', \"import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\\nfrom known_turn_half_policy_mixture.gate import clean_head,source_fingerprint,source_files\\nfrom known_turn_half_policy_mixture.plan import contract\\nassert clean_head(r)=='71b0c62b824720c2ff715c6dd6e422a4acd78cc6' and source_fingerprint(r)=='4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007'\\nassert len(source_files(r))>=16\\nassert contract(r)['question']=='equal_weight_lifted_behavior_policy_mixture'\\nfrom known_turn_half_policy_mixture.gate import require_own,NATIVE,REPORT\\nfrom river_generalization.gate import require_archive\\nrequire_own(r,'4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nrequire_archive(r,r/NATIVE,'native_audited','4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nrequire_archive(r,r/REPORT,'report_published','4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nreport=json.loads((r/REPORT/'report.json').read_bytes())\\nassert report['classification']['classification']=='negative' and len(report['cases'])==4 and not report['default_promoted']\\n\\nassert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'\\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')\\nassert 'PYTHONPATH' not in __import__('os').environ\\nprint(json.dumps(dict(head='71b0c62b824720c2ff715c6dd6e422a4acd78cc6',source_fingerprint='4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007',python=sys.version.split()[0],numpy=numpy.__version__,dirty=False)))\\n\"]' returned non-zero exit status 2.",
+      "type": "CalledProcessError"
+    },
+    "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+    "log_sha256": "014ed6c22b33be9d13cb7555db59f2da1903dd6ee2e5a0ce0f397e2963581552",
+    "role": "base311",
+    "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+    "status": "failed"
+  },
+  "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+  "status": "final_qualified"
+}

@@ -48,3 +48,7 @@ PY
 ```
 
 These four deterministic inputs have no seed-sampling interval or valid independence claim. The result says that this particular mixture reduces q8 exploitability on these already known games but remains above the absolute strength target. It does not test unseen boards/ranges, a full Hold'em game, or a human opponent. A distinct future question must be registered before any new outcome or training; this failed absolute gate remains unchanged.
+
+## Final source and report qualification
+
+The exact negative-report head `71b0c62b` passed [final local and hosted qualification](../results/known-turn-half-policy-mixture/final-checks/manifest.json). Base Python 3.11 and 3.12 each passed 5,864 fast tests, with 73 skips and 150 marked slow tests deselected, plus Ruff, formatting and strict mypy. Optional Python 3.11 passed 2,601 tests; optional 3.12 passed 2,599 with two skips. Every lane passed clean pre/post exact-source, published-evidence, runtime and lock guards; optional lanes also checked the installed OpenSpiel license. All-file hooks and report-head hosted CI passed both 3.11 shards, full 3.12 and aggregate. The receipt retains two pre-test operational launch failures: one background attempt did not start a process, and one guard stopped on ambient uv 0.13.9 before tests because 0.13.5 is required. The corrected pinned run passed without changing source, protocol, thresholds or scientific data. Receipt-head CI and solo review are tracked separately before merge.

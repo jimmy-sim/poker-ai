@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 final qualification, November 27:** the negative report's exact
+source passed both local base Python versions, both optional suites,
+all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).
+The [final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
+preserves two launch problems before tests, including a wrong ambient uv
+version; the unchanged pinned run passed. **Example:** the first optional
+Python 3.12 failure during source qualification and these pre-test final
+launch problems are separately visible, while the final optional lane
+passed 2,599 tests with two skips. Software qualification supports the
+calculation; it does not turn the failed absolute poker gate into a pass.
+**Next decision:** publish and verify the receipt, check receipt-head CI,
+then complete solo review before history-preserving merge if eligible.
+Codex assisted; no human time or personal learning was reported.
+
 **PR #118 fixed result, November 27:** the [four-game report](known-turn-half-policy-mixture-result.md)
 classifies the 50:50 saved-policy mixture as **negative** under the rule
 written before its scores existed. All four mixtures improve on the q8

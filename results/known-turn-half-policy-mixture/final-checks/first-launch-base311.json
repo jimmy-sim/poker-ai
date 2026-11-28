@@ -1,0 +1,12 @@
+{
+  "role": "base311",
+  "head": "71b0c62b824720c2ff715c6dd6e422a4acd78cc6",
+  "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+  "status": "failed",
+  "failure": {
+    "type": "CalledProcessError",
+    "reason": "Command '['uv', 'run', '--locked', 'python', '-c', \"import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\\nfrom known_turn_half_policy_mixture.gate import clean_head,source_fingerprint,source_files\\nfrom known_turn_half_policy_mixture.plan import contract\\nassert clean_head(r)=='71b0c62b824720c2ff715c6dd6e422a4acd78cc6' and source_fingerprint(r)=='4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007'\\nassert len(source_files(r))>=16\\nassert contract(r)['question']=='equal_weight_lifted_behavior_policy_mixture'\\nfrom known_turn_half_policy_mixture.gate import require_own,NATIVE,REPORT\\nfrom river_generalization.gate import require_archive\\nrequire_own(r,'4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nrequire_archive(r,r/NATIVE,'native_audited','4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nrequire_archive(r,r/REPORT,'report_published','4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007')\\nreport=json.loads((r/REPORT/'report.json').read_bytes())\\nassert report['classification']['classification']=='negative' and len(report['cases'])==4 and not report['default_promoted']\\n\\nassert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'\\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')\\nassert 'PYTHONPATH' not in __import__('os').environ\\nprint(json.dumps(dict(head='71b0c62b824720c2ff715c6dd6e422a4acd78cc6',source_fingerprint='4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007',python=sys.version.split()[0],numpy=numpy.__version__,dirty=False)))\\n\"]' returned non-zero exit status 2."
+  },
+  "elapsed_seconds": 0.011587541000153578,
+  "log_sha256": "014ed6c22b33be9d13cb7555db59f2da1903dd6ee2e5a0ce0f397e2963581552"
+}

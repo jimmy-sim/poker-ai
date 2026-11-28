@@ -588,8 +588,12 @@ before the pinned OpenSpiel 2.0.2
 which passed all four scalars within `7.11e-15` chips maximum error. PR #118
 then produced the [fixed negative report](known-turn-half-policy-mixture-result.md):
 all four paired q8 contrasts improve, but all four fail the unchanged
-`0.01`-pot absolute gate. It remains draft until the report is published and
-verified and final checks/review pass. The next distinct research question
+`0.01`-pot absolute gate. The report is published and verified; PR #118
+remains draft pending final receipt publication and review. Its exact-report
+[final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
+now records passed local base/optional suites, hooks and all four report-head
+hosted jobs, with pre-test launcher failures retained. Publish/verify that
+receipt and check receipt-head CI before solo review/history merge. The next distinct research question
 should target the remaining turn/river decision weaknesses without tuning
 this already failed mixture. No unseen-input or default promotion claim follows.
 Do not
