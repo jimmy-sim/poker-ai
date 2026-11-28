@@ -124,6 +124,21 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 isolated source, November 28:** the new adapter asks the existing
+full expected trainer to weight each signed regret increment by `1` while
+leaving linear strategy averaging in place. The same four known exact-turn
+games and PR #116 saved controls remain fixed. On a fictional two-seat tree,
+the focused tests confirm identical initialization, a `1` versus `t=2`
+increment, identical average mass and charged work, normalized legal
+policies, unchanged RNG state and replayable snapshots. A conservative
+timing test rejects incomplete or over-cap profiles. Thirteen focused
+tests, targeted Ruff and strict mypy passed; full local/optional/hosted
+source qualification is next. No candidate poker outcome has been read.
+The first synthetic forecast fixture used a duration that still satisfied
+the fixed bound; its expected result was corrected without changing any
+scientific gate. [Protocol and limits](known-turn-uniform-regret-transfer.md).
+Codex assisted; no human time or personal learning was reported.
+
 **Next strength question, November 28:** [PR #119](https://github.com/jimmy-sim/poker-ai/pull/119)
 merged after all checks, but its row map only explains where a saved
 mixture is vulnerable on known games. A prior [controlled-learning grid](controlled-learning-comparison.md)

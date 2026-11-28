@@ -660,6 +660,9 @@ apart from the passed PR checks. The next [prospective uniform-regret
 transfer test](known-turn-uniform-regret-transfer.md) asks whether the
 previously measured uniform regret time weight improves exact-turn play
 across **all four** already known PR #116 games at matched 40m work.
+Its protocol-head hosted CI passed all four jobs. Isolated source and
+fictional tests are prepared; full exact-source qualification remains
+before any real candidate work.
 **Definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
