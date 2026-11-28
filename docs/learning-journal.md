@@ -124,6 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #121 fictional proof, November 28:** the
+[proof archive](../results/known-turn-clipped-transfer/own-proof/manifest.json)
+shows that a forced negative advantage leaves two signed regret entries
+negative and zero clipped entries negative. All six saved readouts match
+the independent arithmetic to zero reported error; both arms charge the
+same work and consume the same random stream. This checks the intended
+learning-rule switch on a fictional game. It is not evidence that any
+real poker decision improved. Publish and verify this proof before the
+fixed real-game timing profile. Codex assisted; no human time or personal
+learning was reported.
+
 **PR #121 source qualified, November 28:** the [published protocol](known-turn-clipped-transfer.md)
 now has a new adapter that selects clipped/linear/linear rules without
 editing historical learners. A fictional test forces a negative legal

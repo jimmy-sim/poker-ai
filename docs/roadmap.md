@@ -695,8 +695,10 @@ outcome. Isolated clipped-regret source and 13 focused fictional/contract
 tests passed. Exact-source local base/optional, Ruff, format, strict mypy,
 hooks and all four hosted jobs passed at `9138bc96`; the
 [source receipt](../results/known-turn-clipped-transfer/source-checks/manifest.json)
-retains official logs. Publish and verify the receipt before the separate
-proof or any real candidate path.
+retains official logs and passed its committed source guard. The single
+[fictional proof](../results/known-turn-clipped-transfer/own-proof/manifest.json)
+passed under its 180-second cap without opening a real policy. Publish
+and verify that proof before the fixed twelve-path real-game profile.
 **Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
