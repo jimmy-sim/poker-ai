@@ -124,6 +124,22 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 own mixture score, November 27:** the one admitted run built all
+four fixed 50:50 policies and checked their exact exploitability, which
+measures how much an ideal best reply could gain against each saved
+strategy in the restricted game. The [own archive](../results/known-turn-half-policy-mixture/own/manifest.json)
+has every mixed policy and score. Each mixture improved on its q8 control
+by 0.00166–0.00600 initial pots, yet all four still exceed the required
+0.01-pot absolute limit (0.01495, 0.01547, 0.02401, 0.01569).
+**Example:** dry B falls from q8's 0.03001 to the mixture's 0.02401, but
+that is still too exploitable for the fixed acceptance rule. The run took
+99.004 whole seconds, stayed below 1.5 GB peak RSS, and found zero
+perfect-recall violations. **Next decision:** publish every own policy
+and score before an independent licensed scalar audit, then apply the
+frozen final classification. This is a negative own-only signal on four
+known games, not a broader poker claim. Codex assisted; no human time or
+personal learning was reported.
+
 **PR #118 compute admission, November 27:** a separate data-only check
 verified the published proof and both old timing receipts before any real
 policy score. Its [admission record](../results/known-turn-half-policy-mixture/admission/manifest.json)

@@ -579,9 +579,13 @@ the active session without changing the scientific caps. The
 passed on the unchanged qualified source, with no real saved policy opened.
 The separate data-only [admission](../results/known-turn-half-policy-mixture/admission/manifest.json)
 recomputed strict own/reference bounds of 688.326/886.088 seconds below their
-fixed 900-second caps. Mixed-policy score and reference audit have not run;
-this question has **no poker-strength result** yet and PR #118 remains draft.
-Publish and verify admission before the one fixed own comparison.
+fixed 900-second caps. The one [own comparison](../results/known-turn-half-policy-mixture/own/manifest.json)
+then completed all four fixed policies under time/memory limits: all four
+mixes improved on q8 but failed the `0.01`-pot absolute gate. This is a
+**negative own-only signal**; PR #118 remains draft until own bytes are
+published and verified, the pinned independent comparison-only audit and
+fixed report complete, and final checks pass. No unseen-input or default
+promotion claim follows.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

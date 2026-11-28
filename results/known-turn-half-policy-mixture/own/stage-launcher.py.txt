@@ -1,0 +1,49 @@
+"""Run one registered PR118 stage with persistent job state and hard whole cap."""
+import argparse
+import json
+import os
+import signal
+import subprocess
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+parser = argparse.ArgumentParser()
+parser.add_argument('stage', choices=('proof', 'admit', 'study', 'audit', 'report'))
+parser.add_argument('--head', required=True)
+parser.add_argument('--workdir', type=Path, required=True)
+args = parser.parse_args()
+root = Path(__file__).resolve().parents[2]
+folder = args.workdir.resolve()
+raw = folder / 'raw'
+cap = {'proof':180,'admit':180,'study':900,'audit':900,'report':3600}[args.stage]
+source = '4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip() == args.head
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+assert not any(path.exists() or path.is_symlink() for path in (folder,raw))
+scripts={'proof':'prove_known_turn_half_policy_mixture.py','admit':'admit_known_turn_half_policy_mixture.py','study':'study_known_turn_half_policy_mixture.py','audit':'audit_known_turn_half_policy_mixture.py','report':'report_known_turn_half_policy_mixture.py'}
+cmd=['uv','run','--locked']+(['--all-extras'] if args.stage in ('audit','report') else [])+['python','scripts/'+scripts[args.stage],'--output',str(raw)]
+folder.mkdir(parents=True, exist_ok=False)
+log = folder / 'launch.log'
+state = folder / 'job-state.json'
+env = os.environ.copy(); env.pop('PYTHONPATH',None)
+env['UV_PYTHON'] = '3.11.17'
+env['UV_PROJECT_ENVIRONMENT'] = str(root/'results/runs/guarded-skip-requalification-20261118/envs'/('optional311' if args.stage in ('audit','report') else 'base311'))
+started=time.perf_counter()
+receipt=dict(status='starting',launcher_pid=os.getpid(),command=cmd,source_head=args.head,source_fingerprint=source,cap_seconds=cap,reserve_within_cap_seconds=120 if args.stage!='admit' else 0,environment={key:env[key] for key in ('UV_PYTHON','UV_PROJECT_ENVIRONMENT')},log=str(log),output=str(raw),started_utc=datetime.now(timezone.utc).isoformat())
+state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+with log.open('xb') as stream:
+    process=subprocess.Popen(cmd,cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+    receipt.update(status='running',child_pid=process.pid)
+    state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+    try: code=process.wait(timeout=max(0.01,cap-(time.perf_counter()-started)))
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid,signal.SIGTERM)
+        try: process.wait(timeout=5)
+        except subprocess.TimeoutExpired: os.killpg(process.pid,signal.SIGKILL); process.wait()
+        code=124
+receipt.update(status='passed' if code==0 else 'failed_retained',exit_code=code,observed_wall_seconds=time.perf_counter()-started,finished_utc=datetime.now(timezone.utc).isoformat())
+state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+(folder/'launch.exit').write_text(f'{code}\n')
+print(json.dumps(receipt,sort_keys=True))
+raise SystemExit(code)
