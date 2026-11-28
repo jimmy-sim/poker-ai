@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 compute admission, November 27:** a separate data-only check
+verified the published proof and both old timing receipts before any real
+policy score. Its [admission record](../results/known-turn-half-policy-mixture/admission/manifest.json)
+recomputed conservative bounds of 688.326 seconds for the own score and
+886.088 seconds for the licensed reference audit, each strictly under its
+900-second cap. **Example:** the larger reference estimate still leaves
+13.912 seconds below the cap after its fixed failure-saving reserve; it is
+an admission estimate, not an observed runtime or a claim of stronger play.
+**Next decision:** publish and verify admission, then run the one fixed
+four-game own comparison. Codex assisted; no human time or personal learning
+was reported.
+
 **PR #118 fictional proof, November 27:** the unchanged source passed a
 [fictional-only check](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
 of all 8,340 exact rows and the fixed equal probability average. For

@@ -577,9 +577,11 @@ qualification finished. Jimmy then explicitly superseded that cutoff for
 the active session without changing the scientific caps. The
 [fictional proof](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
 passed on the unchanged qualified source, with no real saved policy opened.
-Admission, mixed-policy score and reference audit have not run; this question
-has **no poker-strength result** yet and PR #118 remains draft. Publish and
-verify the proof before the separate data-only admission decision.
+The separate data-only [admission](../results/known-turn-half-policy-mixture/admission/manifest.json)
+recomputed strict own/reference bounds of 688.326/886.088 seconds below their
+fixed 900-second caps. Mixed-policy score and reference audit have not run;
+this question has **no poker-strength result** yet and PR #118 remains draft.
+Publish and verify admission before the one fixed own comparison.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
