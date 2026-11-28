@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 fictional proof, November 28:** after the tested-source receipt
+was published and verified, a 1.086-second invented-row proof checked the
+same accounting and row selection rules that the read-only trace will use.
+It rejected a deliberately wrong scalar and recorded
+`real_policy_opened=false`. **Example:** a four-row vector totaling one chip
+cannot silently be reported as 0.9 chips. This checks the software path,
+not whether any poker decision is stronger. **Next decision:** publish the
+[proof receipt](../results/known-mixture-residual-map/proof/manifest.json),
+then recompute the conservative forecast from pinned historical clock bytes
+before opening the four real mixed policies. Codex assisted; no human time
+or personal learning was reported.
+
 **PR #119 source gate, November 28:** corrected source `3bb3366e`
 passed both complete local base suites, both optional suites, hooks and
 all four hosted CI jobs. The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)

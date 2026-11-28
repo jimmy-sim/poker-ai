@@ -608,6 +608,11 @@ all-file hooks and all four [source-head hosted jobs](https://github.com/jimmy-s
 An earlier source's NumPy-integer JSON save defect and interrupted checks
 remain retained separately. Publish and verify the complete source receipt
 before its fictional proof, data-only admission or first real trace.
+The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)
+was published and all changed GitHub blobs verified; its publication guard
+passed. The one [fictional proof](../results/known-mixture-residual-map/proof/manifest.json)
+then passed under its 180-second cap without opening a real policy. Publish
+and verify that proof before the separate data-only compute admission.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
