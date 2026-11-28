@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 implementation, November 27:** the previously registered 50:50
+behavior-policy mixture now has isolated code and fictional tests. The code
+checks that the saved q8 policy is lifted onto the same exact information
+rows as the exact-turn parent before averaging their legal-action
+probabilities. **Example:** fictional parent probabilities 0.2 and 0.6
+produce 0.4 at an exact row; this remains an arithmetic check, not a poker
+strength result. Ten focused tests, targeted Ruff, formatting and strict
+typing passed. The full exact-source, optional and hosted gates, proof,
+admission, real-game scores and independent audit remain pending. The
+prospective issue comment was not posted because the available write tool
+addresses a pull request number; PR and repository documentation carry the
+status. Codex assisted; no human time or personal learning was reported.
+
+
 **Next registered strength question, November 25:** PR #117 closed unmerged
 at its source gate and supplied no location evidence. The fully checked
 PR #116 policies suggest a different experiment: average the q8 and
