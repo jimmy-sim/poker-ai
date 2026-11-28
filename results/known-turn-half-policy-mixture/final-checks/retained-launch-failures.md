@@ -1,0 +1,1 @@
+First background launcher returned a PID without starting. Second detached runner reached only the pre-test guard and failed because ambient uv 0.13.9 differed from required 0.13.5. Both logs/receipts remain in ../known-turn-half-policy-mixture-final-20261127/. No test or scientific result was run.

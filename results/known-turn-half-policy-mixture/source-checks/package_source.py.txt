@@ -1,0 +1,66 @@
+"""Seal the exact PR #118 source only after four local roles, hooks and CI pass."""
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+raw = Path(__file__).resolve().parent
+out = root / 'results/known-turn-half-policy-mixture/source-checks'
+head = '73b5e117301cc9b31e778a9301c21432ccdedfa0'
+fingerprint = '4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007'
+roles = ('base311', 'base312', 'optional311', 'optional312')
+requal = root / 'results/runs/known-turn-half-policy-mixture-source-20261127-requal'
+if out.exists() or out.is_symlink():
+    raise FileExistsError('retain earlier source receipt')
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==head
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+receipts=[json.loads(((requal if role=='optional312' else raw)/f'{role}.json').read_bytes()) for role in roles]
+failed_optional=json.loads((raw/'optional312.json').read_bytes())
+assert failed_optional['status']=='failed' and failed_optional['head']==head
+assert all(row['status']=='passed' and row['head']==head and row['source_fingerprint']==fingerprint and row['failure'] is None for row in receipts)
+assert (raw/'exact-hooks.exit').read_text().strip()=='0'
+ci=json.loads((raw/'source-hosted.json').read_bytes())
+assert ci['headSha']==head and ci['conclusion']=='success'
+assert {job['name']:job['conclusion'] for job in ci['jobs']} == {
+ 'Python 3.11 shard A':'success','Python 3.11 shard B':'success',
+ 'Python 3.12':'success','Python 3.11':'success'}
+for role in roles:
+    assert ((requal if role=='optional312' else raw)/f'{role}.log').is_file()
+out.mkdir(parents=True)
+
+def copy(source,label):
+    target=out/label
+    if source.suffix=='.log':
+        with target.with_name(target.name+'.gz').open('xb') as stream:
+            with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix=='.py':
+        shutil.copyfile(source,target.with_name(target.name+'.txt'))
+    else:
+        shutil.copyfile(source,target)
+
+for name in ('runner.py','package_source.py','optional-suites.json','ownership.json','iteration-failures.md','exact-hooks.log','exact-hooks.exit','launcher.log','source-hosted.json','source-hosted.log'):
+    copy(raw/name,name)
+for role in roles:
+    for suffix in ('json','log'):
+        copy((requal if role=='optional312' else raw)/f'{role}.{suffix}',f'{role}.{suffix}')
+for name in ('optional312.json','optional312.log','optional312-targeted-diagnostic.log','optional312-targeted-diagnostic.exit','optional312-targeted-with-path.log','optional312-targeted-with-path.exit','clean-guard-sample.txt'):
+    copy(raw/name,'failed-'+name)
+for name in ('runner.py','launcher.log','ownership.json'):
+    copy(requal/name,'requalification-'+name)
+if (raw/'optional312-sample.txt').exists():
+    copy(raw/'optional312-sample.txt','optional312-sample.txt')
+old = root / 'results/runs/known-turn-half-policy-mixture-source-20261127'
+for name in ('interrupted.json','base311.log','source-hosted.json','source-hosted.log'):
+    copy(old/name,'first-attempt-'+name)
+result={'status':'source_qualified','tested_head':head,'source_fingerprint':fingerprint,'local_roles':receipts,'retained_failed_optional312':failed_optional,'source_hosted_run':ci['databaseId'],'hooks':'passed','proof_started':False,'admission_started':False,'own_started':False,'native_started':False}
+(out/'result.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+files=[]
+for path in sorted(out.iterdir()):
+    blob=path.read_bytes()
+    files.append({'file':path.name,'bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest()})
+(out/'manifest.json').write_text(json.dumps({'status':'source_qualified','source_fingerprint':fingerprint,'files':files},sort_keys=True,indent=2)+'\n')
+print('source_qualified',len(files),out)

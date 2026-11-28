@@ -1,0 +1,100 @@
+"""Seal PR #118's exact negative-report-head qualification after every gate."""
+
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[3]
+raw = Path(__file__).resolve().parent
+first = root / "results/runs/known-turn-half-policy-mixture-final-20261127"
+out = root / "results/known-turn-half-policy-mixture/final-checks"
+head = "71b0c62b824720c2ff715c6dd6e422a4acd78cc6"
+fingerprint = "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007"
+roles = ("base311", "base312", "optional311", "optional312")
+
+if out.exists() or out.is_symlink():
+    raise FileExistsError("retain existing final receipt")
+assert subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip() == head
+assert not subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=root)
+receipts = [json.loads((raw / f"{role}.json").read_bytes()) for role in roles]
+assert all(
+    r["role"] == role
+    and r["head"] == head
+    and r["source_fingerprint"] == fingerprint
+    and r["status"] == "passed"
+    and r["failure"] is None
+    for role, r in zip(roles, receipts, strict=True)
+)
+assert (raw / "exact-hooks.exit").read_text().strip() == "0"
+ci = json.loads((raw / "report-hosted.json").read_bytes())
+assert ci["headSha"] == head and ci["status"] == "completed" and ci["conclusion"] == "success"
+assert {j["name"]: j["conclusion"] for j in ci["jobs"]} == {
+    "Python 3.11 shard A": "success",
+    "Python 3.11 shard B": "success",
+    "Python 3.12": "success",
+    "Python 3.11": "success",
+}
+failed = json.loads((first / "base311.json").read_bytes())
+assert failed["status"] == "failed" and failed["head"] == head
+assert "Required uv version" in (first / "base311.log").read_text()
+assert (first / "launcher-attempts.md").is_file()
+report = json.loads((root / "results/known-turn-half-policy-mixture/report/report.json").read_bytes())
+assert report["classification"]["classification"] == "negative" and not report["default_promoted"]
+
+out.mkdir(parents=True)
+
+
+def copy(source: Path, label: str) -> None:
+    assert source.is_file()
+    target = out / label
+    if source.suffix == ".log":
+        with target.with_name(target.name + ".gz").open("xb") as stream:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=stream, mtime=0) as zipped:
+                zipped.write(source.read_bytes())
+    elif source.suffix == ".py":
+        shutil.copyfile(source, target.with_name(target.name + ".txt"))
+    else:
+        shutil.copyfile(source, target)
+
+
+for name in (
+    "runner.py",
+    "package_final.py",
+    "optional-suites.json",
+    "retained-launch-failures.md",
+    "launcher.log",
+    "launcher.pid",
+    "exact-hooks.log",
+    "exact-hooks.exit",
+    "report-hosted.json",
+    "report-hosted.log",
+    "report-remote-verification.json",
+):
+    copy(raw / name, name)
+for role in roles:
+    for suffix in ("json", "log"):
+        copy(raw / f"{role}.{suffix}", f"{role}.{suffix}")
+for name in ("launcher-attempts.md", "launcher.log", "launcher.pid", "base311.json", "base311.log"):
+    copy(first / name, "first-launch-" + name)
+result = {
+    "status": "final_qualified",
+    "report_head": head,
+    "source_fingerprint": fingerprint,
+    "local_roles": receipts,
+    "retained_pretest_failure": failed,
+    "hooks": "passed",
+    "report_hosted_run": ci["databaseId"],
+    "classification": "negative",
+}
+(out / "result.json").write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+files = []
+for path in sorted(out.iterdir()):
+    blob = path.read_bytes()
+    files.append({"file": path.name, "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
+(out / "manifest.json").write_text(
+    json.dumps({"status": "final_qualified", "source_fingerprint": fingerprint, "files": files}, sort_keys=True, indent=2) + "\n"
+)
+print("final_qualified", len(files), out)

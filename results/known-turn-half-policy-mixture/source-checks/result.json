@@ -1,0 +1,61 @@
+{
+  "admission_started": false,
+  "hooks": "passed",
+  "local_roles": [
+    {
+      "elapsed_seconds": 914.9173409169307,
+      "failure": null,
+      "head": "73b5e117301cc9b31e778a9301c21432ccdedfa0",
+      "log_sha256": "f02e4381bc7ef6f103cc1c655bf1b0f2a68e0dc42ccbc9cb19e78297a72bd61d",
+      "role": "base311",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 810.9971186670009,
+      "failure": null,
+      "head": "73b5e117301cc9b31e778a9301c21432ccdedfa0",
+      "log_sha256": "27b548cc0790225f09e30dcb551993adfc2b363b8bf5216e3f6fff4936570b26",
+      "role": "base312",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 502.9185694580665,
+      "failure": null,
+      "head": "73b5e117301cc9b31e778a9301c21432ccdedfa0",
+      "log_sha256": "c3aa017b418b1087c6a361c4a12051cd1844601b2ba4cac8a28206963e5af4b2",
+      "role": "optional311",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 658.5371292500058,
+      "failure": null,
+      "head": "73b5e117301cc9b31e778a9301c21432ccdedfa0",
+      "log_sha256": "d0d80e55a8b961ae9594da87c2db1f95e9ac0a564b2dd15105bf3692705453be",
+      "role": "optional312",
+      "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+      "status": "passed"
+    }
+  ],
+  "native_started": false,
+  "own_started": false,
+  "proof_started": false,
+  "retained_failed_optional312": {
+    "elapsed_seconds": 1044.8248689579777,
+    "failure": {
+      "reason": "Command '['uv', 'run', '--locked', '--all-extras', 'pytest', '-q', 'tests/test_cached_compact_cli.py', 'tests/test_cached_compact_contract.py', 'tests/test_cached_compact_parity.py', 'tests/test_cached_native_wall_profile.py', 'tests/test_card_audit_clock_trace.py', 'tests/test_card_cache_report.py', 'tests/test_card_clock_report.py', 'tests/test_card_computation_cache.py', 'tests/test_coarse_reader_cpu.py', 'tests/test_compact_opponent_admission.py', 'tests/test_compact_opponent_cli.py', 'tests/test_compact_opponent_clock.py', 'tests/test_compact_opponent_foundation.py', 'tests/test_compact_opponent_isolation.py', 'tests/test_compact_opponent_native.py', 'tests/test_compact_opponent_permit_roundtrip.py', 'tests/test_compact_opponent_sources.py', 'tests/test_complete_reader_helper_trace.py', 'tests/test_grouped_depth_comparison.py', 'tests/test_grouped_depth_support.py', 'tests/test_helper_call_accounting.py', 'tests/test_matrix_phase_collection.py', 'tests/test_matrix_phase_support.py', 'tests/test_opponent_learning_admission.py', 'tests/test_opponent_learning_capture.py', 'tests/test_opponent_learning_cli.py', 'tests/test_opponent_learning_clock.py', 'tests/test_opponent_learning_cost.py', 'tests/test_opponent_learning_design.py', 'tests/test_opponent_learning_gate.py', 'tests/test_opponent_learning_native.py', 'tests/test_opponent_learning_permit_roundtrip.py', 'tests/test_opponent_learning_pipeline.py', 'tests/test_opponent_learning_sources.py', 'tests/test_opponent_learning_workers.py', 'tests/test_original_audit_helpers.py', 'tests/test_reader_boundary_reconciliation.py', 'tests/test_reader_helper_trace.py', 'tests/test_reader_load_cpu.py', 'tests/test_recall_proof_cache.py', 'tests/test_source_helper_trace.py', 'tests/test_suit_candidates_comparison.py', 'tests/test_suit_candidates_support.py', 'tests/test_suit_compact_card_contract.py', 'tests/test_suit_compact_contract.py', 'tests/test_suit_compact_failures.py', 'tests/test_suit_compact_integration.py', 'tests/test_suit_compact_normalization.py', 'tests/test_suit_lookup_comparison.py', 'tests/test_suit_lookup_support.py', 'tests/test_suit_pipeline_report.py', 'tests/test_checkpoint_observer.py', 'tests/test_checkpoint_cpu.py', 'tests/test_reader_phase_observer.py', 'tests/test_reader_phase_cpu.py', 'tests/test_source_phase_observer.py', 'tests/test_source_phase_cpu.py', 'tests/test_source_phase_cpu_v2.py', 'tests/test_parent_archive_observer.py', 'tests/test_parent_archive_cpu.py', 'tests/test_context_reuse.py', 'tests/test_context_reuse_runner.py', 'tests/test_earlier_source_profile.py', 'tests/test_archive_reader_edges.py', 'tests/test_receipt_cpu_support.py', 'tests/test_receipt_cpu_runner.py', 'tests/test_prerequisite_identity.py', 'tests/test_report_prerequisite_identity.py', 'tests/test_receipt_consumer_mutation.py', 'tests/test_validated_prerequisite_sharing_report.py', 'tests/test_validated_sharing_runtime_preflight.py', 'tests/test_validated_sharing_runtime_preflight_report.py', 'tests/test_validated_sharing_count_gate_report.py', 'tests/test_guarded_prerequisite_skip.py', 'tests/test_guarded_skip_pair.py', 'tests/test_guarded_skip_runtime_preflight.py', 'tests/test_river_strength_native.py', 'tests/test_river_strength_report.py', 'tests/test_river_generalization_native.py', 'tests/test_river_generalization_report.py', 'tests/test_medium_dry_b1.py', 'tests/test_known_wet_residual_math.py']' returned non-zero exit status 1.",
+      "type": "CalledProcessError"
+    },
+    "head": "73b5e117301cc9b31e778a9301c21432ccdedfa0",
+    "log_sha256": "0d344d8533bdd61185585c0996b88a24c70f4f3c84d3d6e31f2e410d9d443031",
+    "role": "optional312",
+    "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+    "status": "failed"
+  },
+  "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+  "source_hosted_run": 46103378029,
+  "status": "source_qualified",
+  "tested_head": "73b5e117301cc9b31e778a9301c21432ccdedfa0"
+}

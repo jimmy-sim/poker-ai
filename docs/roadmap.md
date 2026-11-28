@@ -552,6 +552,50 @@ disjoint shards under the same time limit, each retaining lint, typing and
 hooks. The aggregate `Python 3.11` gate requires every shard and the full
 3.12 job. Verify the shard collection and new hosted result before merge;
 this changes no poker protocol, candidate, threshold or source pin.
+PR #116 subsequently passed both 3.11 shards, full 3.12 and aggregate on
+its final head, then history-merged as `0c0f3a2c` with post-merge main CI
+passing all four jobs. Its four-input strength result remains **negative**.
+The separate PR #117 read-only row diagnosis stopped at exact-source
+qualification and closed unmerged, with no row result. From the fully
+checked PR #116 parent policies, the next distinct [prospective 50:50
+mixture](known-turn-half-policy-mixture.md) asks whether averaging their
+legal-action probabilities improves exact decisions on the same four known
+games. **Definition of done:** publish the fixed eight snapshot inputs,
+weight, q8 comparator, absolute/paired gates and resource limits before any
+mixture score; qualify isolated source, pass fictional proof and data-only
+admission, run one own four-game score, publish own bytes before the pinned
+comparison-only reference, then report and complete final checks. No default
+promotion or unseen-game claim is available from these known inputs.
+PR #118's corrected isolated source passed the
+[exact-source receipt](../results/known-turn-half-policy-mixture/source-checks/manifest.json):
+base and optional Python 3.11/3.12 local checks, all-file hooks and all four
+hosted jobs. The first full optional3.12 run timed out in one historical
+saved-data export subprocess; its failure remains in the receipt alongside
+one passing same-source full requalification. The original Friday November
+27 20:00 PST target to stop starting scientific jobs passed before source
+qualification finished. Jimmy then explicitly superseded that cutoff for
+the active session without changing the scientific caps. The
+[fictional proof](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
+passed on the unchanged qualified source, with no real saved policy opened.
+The separate data-only [admission](../results/known-turn-half-policy-mixture/admission/manifest.json)
+recomputed strict own/reference bounds of 688.326/886.088 seconds below their
+fixed 900-second caps. The one [own comparison](../results/known-turn-half-policy-mixture/own/manifest.json)
+then completed all four fixed policies under time/memory limits: all four
+mixes improved on q8 but failed the `0.01`-pot absolute gate. This is a
+**negative own-only signal**. All own bytes were published and verified
+before the pinned OpenSpiel 2.0.2
+[comparison-only audit](../results/known-turn-half-policy-mixture/native/manifest.json),
+which passed all four scalars within `7.11e-15` chips maximum error. PR #118
+then produced the [fixed negative report](known-turn-half-policy-mixture-result.md):
+all four paired q8 contrasts improve, but all four fail the unchanged
+`0.01`-pot absolute gate. The report is published and verified; PR #118
+remains draft pending final receipt publication and review. Its exact-report
+[final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
+now records passed local base/optional suites, hooks and all four report-head
+hosted jobs, with pre-test launcher failures retained. Publish/verify that
+receipt and check receipt-head CI before solo review/history merge. The next distinct research question
+should target the remaining turn/river decision weaknesses without tuning
+this already failed mixture. No unseen-input or default promotion claim follows.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

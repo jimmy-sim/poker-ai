@@ -1,0 +1,54 @@
+"""Copy one completed PR #118 stage and seal every byte before publication."""
+import argparse
+import gzip
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+parser=argparse.ArgumentParser()
+parser.add_argument('stage',choices=('proof','admit','study','audit','report'))
+parser.add_argument('--workdir',type=Path,required=True)
+args=parser.parse_args()
+root=Path(__file__).resolve().parents[2]
+raw=args.workdir.resolve()
+folder={'proof':'own-proof','admit':'admission','study':'own','audit':'native','report':'report'}[args.stage]
+status={'proof':'proof_passed','admit':'admitted','study':'own_published','audit':'native_audited','report':'report_published'}[args.stage]
+out=root/'results/known-turn-half-policy-mixture'/folder
+if out.exists() or out.is_symlink():
+ raise FileExistsError('retain prior stage archive')
+job=json.loads((raw/'job-state.json').read_bytes())
+assert job['status']=='passed' and job['exit_code']==0
+assert job['source_fingerprint']=='4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==job['source_head']
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+assert (raw/'launch.exit').read_text().strip()=='0'
+assert (raw/'raw'/'result.json').exists() if args.stage in ('proof','study','audit') else True
+if args.stage=='admit':
+ assert json.loads((raw/'raw'/'decision.json').read_bytes())['status']=='admitted'
+if args.stage=='report':
+ assert json.loads((raw/'raw'/'report.json').read_bytes())['status']=='completed'
+out.mkdir(parents=True)
+for source in [raw/'job-state.json',raw/'launch.exit',raw/'launch.log',*sorted((raw/'raw').rglob('*'))]:
+ if not source.is_file(): continue
+ name=source.name if source.parent==raw else source.relative_to(raw/'raw').as_posix()
+ if source.parent==raw: name='launcher-'+name
+ target=out/name
+ target.parent.mkdir(parents=True,exist_ok=True)
+ if source.suffix=='.log':
+  with target.with_name(target.name+'.gz').open('xb') as stream:
+   with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as zipped:
+    zipped.write(source.read_bytes())
+ else: shutil.copyfile(source,target)
+shutil.copyfile(Path(__file__),out/'seal-stage.py.txt')
+shutil.copyfile(root/'results/runs/known-turn-half-policy-mixture-stage-launcher.py',out/'stage-launcher.py.txt')
+result={'status':status,'stage':args.stage,'source_fingerprint':job['source_fingerprint'],'source_head':job['source_head'],'seconds':job['observed_wall_seconds'],'exit_code':job['exit_code']}
+(out/'stage.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+files=[]
+for path in sorted(out.rglob('*')):
+ if not path.is_file():continue
+ blob=path.read_bytes()
+ files.append({'file':path.relative_to(out).as_posix(),'bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest()})
+(out/'manifest.json').write_text(json.dumps({'status':status,'source_fingerprint':job['source_fingerprint'],'files':files},sort_keys=True,indent=2)+'\n')
+print(status,len(files),out)

@@ -124,6 +124,142 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 final qualification, November 27:** the negative report's exact
+source passed both local base Python versions, both optional suites,
+all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).
+The [final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
+preserves two launch problems before tests, including a wrong ambient uv
+version; the unchanged pinned run passed. **Example:** the first optional
+Python 3.12 failure during source qualification and these pre-test final
+launch problems are separately visible, while the final optional lane
+passed 2,599 tests with two skips. Software qualification supports the
+calculation; it does not turn the failed absolute poker gate into a pass.
+**Next decision:** publish and verify the receipt, check receipt-head CI,
+then complete solo review before history-preserving merge if eligible.
+Codex assisted; no human time or personal learning was reported.
+
+**PR #118 fixed result, November 27:** the [four-game report](known-turn-half-policy-mixture-result.md)
+classifies the 50:50 saved-policy mixture as **negative** under the rule
+written before its scores existed. All four mixtures improve on the q8
+control, but every one exceeds the `0.01` initial-pot absolute strength
+target. **Example:** on dry B, exploitability falls from 0.030012 to
+0.024008 initial pots, still above the target. On wet A and wet B, the
+mixture even beats both parents, but that does not repair the absolute
+failure. The independent scalar audit passed; the known games remain
+dependent and deterministic. **Next decision:** publish this result and
+complete final exact-source checks and review. A different representation
+or training question needs its own prospective protocol; do not retune this
+mixture or treat the already inspected cases as unseen. Codex assisted;
+no human time or personal learning was reported.
+
+**PR #118 independent audit, November 27:** after every own policy and
+score was published, the pinned OpenSpiel 2.0.2 checker compared the four
+saved mixed strategies. Its largest scalar difference was
+`7.105427357601002e-15` chips, far below the fixed `1e-9`-chip tolerance;
+the installed Apache-2.0 license hash matched. The [audit receipt](../results/known-turn-half-policy-mixture/native/manifest.json)
+retains all rows, runtime, memory and license evidence. **Example:** this
+checks the mixed score independently; it does not make the mixed policies
+strong enough to pass the absolute target. **Next decision:** publish and
+verify the audit, then apply the frozen report classification to the four
+known games. Codex assisted; no human time or personal learning was reported.
+
+**PR #118 own mixture score, November 27:** the one admitted run built all
+four fixed 50:50 policies and checked their exact exploitability, which
+measures how much an ideal best reply could gain against each saved
+strategy in the restricted game. The [own archive](../results/known-turn-half-policy-mixture/own/manifest.json)
+has every mixed policy and score. Each mixture improved on its q8 control
+by 0.00166–0.00600 initial pots, yet all four still exceed the required
+0.01-pot absolute limit (0.01495, 0.01547, 0.02401, 0.01569).
+**Example:** dry B falls from q8's 0.03001 to the mixture's 0.02401, but
+that is still too exploitable for the fixed acceptance rule. The run took
+99.004 whole seconds, stayed below 1.5 GB peak RSS, and found zero
+perfect-recall violations. **Next decision:** publish every own policy
+and score before an independent licensed scalar audit, then apply the
+frozen final classification. This is a negative own-only signal on four
+known games, not a broader poker claim. Codex assisted; no human time or
+personal learning was reported.
+
+**PR #118 compute admission, November 27:** a separate data-only check
+verified the published proof and both old timing receipts before any real
+policy score. Its [admission record](../results/known-turn-half-policy-mixture/admission/manifest.json)
+recomputed conservative bounds of 688.326 seconds for the own score and
+886.088 seconds for the licensed reference audit, each strictly under its
+900-second cap. **Example:** the larger reference estimate still leaves
+13.912 seconds below the cap after its fixed failure-saving reserve; it is
+an admission estimate, not an observed runtime or a claim of stronger play.
+**Next decision:** publish and verify admission, then run the one fixed
+four-game own comparison. Codex assisted; no human time or personal learning
+was reported.
+
+**PR #118 fictional proof, November 27:** the unchanged source passed a
+[fictional-only check](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
+of all 8,340 exact rows and the fixed equal probability average. For
+example, abstract 0.2 and exact 0.6 produce 0.4 in one synthetic row;
+an invalid parent's probabilities are rejected. The receipt confirms that
+no real saved poker policy was opened. The first launcher failed before
+Python could start because the sandbox could not write the pinned uv cache;
+that failure is retained separately, and the successful unchanged proof
+took 4.056 seconds under its 180-second cap. **Next decision:** publish
+and verify this proof, then make the separate data-only compute admission
+decision before any real mixture score. The source proof says nothing yet
+about poker strength. Codex assisted; no human time or personal learning
+was reported.
+
+**PR #118 source qualification, November 27:** the corrected, isolated
+mixture source passed both base Python versions, both optional versions,
+all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46103378029).
+The [source receipt](../results/known-turn-half-policy-mixture/source-checks/manifest.json)
+also keeps a failed first optional Python 3.12 run: an older saved-data
+export test exceeded its unchanged 120-second subprocess watchdog. A
+standalone same-source check passed in 5.11 seconds, and one full same-source
+optional requalification passed; the first failure is still recorded.
+**Example:** passing the isolated test did not count as passing all 2,601
+optional tests, so the complete lane ran again with the same guard.
+The 20:00 Pacific target to stop starting scientific jobs arrived before
+qualification finished. No fictional proof, real mixed policy, poker score
+or reference audit was started. The result is **unmeasured**, and PR #118
+remains draft. The issue comment is pending because no available write tool
+was verified to target issue #4. Codex assisted; no human time or personal
+learning was reported.
+
+
+**PR #118 implementation, November 27:** the previously registered 50:50
+behavior-policy mixture now has isolated code and fictional tests. The code
+checks that the saved q8 policy is lifted onto the same exact information
+rows as the exact-turn parent before averaging their legal-action
+probabilities. **Example:** fictional parent probabilities 0.2 and 0.6
+produce 0.4 at an exact row; this remains an arithmetic check, not a poker
+strength result. Ten focused tests, targeted Ruff, formatting and strict
+typing passed. The full exact-source, optional and hosted gates, proof,
+admission, real-game scores and independent audit remain pending. The
+first full local source check was interrupted after review found two missing
+receipt guards: an explicit perfect-recall violation count and the audit's
+peak memory cap. The partial test log is retained; the corrected source
+must pass qualification again. No poker outcome was collected. The
+prospective issue comment was not posted because the available write tool
+addresses a pull request number; PR and repository documentation carry the
+status. Codex assisted; no human time or personal learning was reported.
+
+
+**Next registered strength question, November 25:** PR #117 closed unmerged
+at its source gate and supplied no location evidence. The fully checked
+PR #116 policies suggest a different experiment: average the q8 and
+exact-turn saved action probabilities with a fixed 50:50 weight on each
+of the same four known games. A *behavior-policy mixture* picks an action
+using an averaged probability at each decision; its opponent's best response
+must be calculated anew because the mixed sequence of actions can differ
+from either parent's play. **Example:** if the two saved policies choose
+check with probabilities 0.2 and 0.6 at one exact row, the mixture chooses
+check with probability 0.4 there. That arithmetic does not imply an
+intermediate exploitability. The [prospective protocol](known-turn-half-policy-mixture.md)
+fixes the weight, eight snapshots, q8 comparator, thresholds, resource
+caps and gates before any mixture score. The four inputs are already
+outcome-inspected; this cannot establish generalization or promote a
+default. Next: publish and byte-verify the protocol, then qualify the
+isolated scorer. Codex assisted; no human time or personal learning was
+reported.
+
+
 **Current result, November 24:** the [fixed PR #116 report](known-turn-collision-medium-transfer-result.md)
 is **negative** on its four newly selected, collision-containing medium OOP
 inputs. At equal 40m work the exact-turn candidate improved three pairs,
