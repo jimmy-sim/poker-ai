@@ -629,6 +629,12 @@ A report-only schema correction and regression test must pass full new
 exact-source local/optional/hosted qualification. Its report may read the
 old published own archive only with the **original** measurement-source
 fingerprint pinned; do not rerun the four scientific traces.
+The first correction's base 3.11 check passed 5,874 tests, but its report
+gate still pointed at the immutable old source receipt; base 3.12 was
+interrupted after this defect was identified. Retain both logs. Qualify a
+second report-only correction with a distinct report-source receipt before
+running the fixed interpretation; keep the old measurement-source receipt
+unchanged.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

@@ -138,6 +138,14 @@ corrected report can run. This failure does not overturn or improve the
 negative PR #118 strength result. Codex assisted; no human time or personal
 learning was reported.
 
+**PR #119 report receipt isolation, November 28:** review found that the first corrected report
+still asked the new source fingerprint to match the immutable old source
+receipt. Base Python 3.11 passed 5,874 tests; base 3.12 was intentionally
+interrupted and both logs remain. A separate report-source receipt is now
+required, with the old scientific archives checked against their original
+fingerprint. No row trace was repeated. Codex assisted; no human time or
+personal learning was reported.
+
 **PR #119 own row map, November 28:** the one admitted read-only run saved
 every exact mixed-policy row for all four already known games under its
 time and memory limits. The [own archive](../results/known-mixture-residual-map/own/manifest.json)

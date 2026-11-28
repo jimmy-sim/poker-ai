@@ -11,9 +11,9 @@ from known_mixture_residual_map.gate import (
     ADMISSION,
     OWN,
     PROOF,
+    REPORT_SOURCE,
     SOURCE,
     clean_head,
-    require_source,
     source_fingerprint,
 )
 from known_mixture_residual_map.own import save
@@ -33,7 +33,7 @@ def report(root: Path, output: Path) -> None:
     data = contract(root)
     head = clean_head(root)
     fingerprint = source_fingerprint(root)
-    require_source(root, fingerprint)
+    require_archive(root, root / REPORT_SOURCE, "source_qualified", fingerprint)
     for stage, status in (
         (SOURCE, "source_qualified"),
         (PROOF, "proof_passed"),

@@ -12,6 +12,7 @@ from known_mixture_residual_map.plan import PROTOCOL_COMMIT, contract, digest
 
 OUTPUT = Path("results/known-mixture-residual-map")
 SOURCE = OUTPUT / "source-checks"
+REPORT_SOURCE = OUTPUT / "report-source-checks"
 PROOF = OUTPUT / "proof"
 ADMISSION = OUTPUT / "admission"
 OWN = OUTPUT / "own"
