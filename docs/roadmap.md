@@ -691,10 +691,12 @@ caps and own-before-reference publication before candidate outcomes. No
 unseen transfer or default promotion is claimed.
 Draft [PR #121](https://github.com/jimmy-sim/poker-ai/pull/121) published
 and GitHub-byte-verified its prospective protocol before any candidate
-outcome. Isolated clipped-regret source and fictional tests passed 13
-focused cases, targeted Ruff/format and strict mypy; the pinned contract
-passed. Complete all exact-source local base/optional, hooks and hosted
-qualification before the separate proof or any real candidate path.
+outcome. Isolated clipped-regret source and 13 focused fictional/contract
+tests passed. Exact-source local base/optional, Ruff, format, strict mypy,
+hooks and all four hosted jobs passed at `9138bc96`; the
+[source receipt](../results/known-turn-clipped-transfer/source-checks/manifest.json)
+retains official logs. Publish and verify the receipt before the separate
+proof or any real candidate path.
 **Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths

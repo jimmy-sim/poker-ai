@@ -1,0 +1,22 @@
+{
+  "failures": [
+    {
+      "cause": "two newly copied files needed formatting; one test line exceeded 88 characters",
+      "check": "targeted Ruff/format",
+      "resolution": "formatted only new isolated files, then targeted Ruff and format passed"
+    },
+    {
+      "cause": "ad hoc uv invocation did not set PYTHONPATH for src package",
+      "check": "first focused pytest",
+      "resolution": "used pinned base311 interpreter with PYTHONPATH=src:scripts; 13 tests passed"
+    },
+    {
+      "cause": "ad hoc invocation lacked MYPYPATH and reported import-not-found cascades",
+      "check": "first targeted mypy",
+      "resolution": "used pinned base311 interpreter with MYPYPATH=src:scripts; strict typing passed for 15 new files"
+    }
+  ],
+  "scientific_outcome": false,
+  "source_head_at_qualification": "9138bc968ad2be088d4b627104dbdaefaebcb6dc",
+  "stage": "prequalification_focused_iteration"
+}

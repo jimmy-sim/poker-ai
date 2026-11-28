@@ -124,16 +124,19 @@ not a record of completed practice.
 
 ## Where the project stands
 
-**PR #121 isolated source, November 28:** the [published protocol](known-turn-clipped-transfer.md)
+**PR #121 source qualified, November 28:** the [published protocol](known-turn-clipped-transfer.md)
 now has a new adapter that selects clipped/linear/linear rules without
 editing historical learners. A fictional test forces a negative legal
 regret: the signed ledger retains it, while the clipped ledger sets it
 to zero; charged work, chance treatment and linear strategy-average
 mass remain the same. Thirteen focused tests, targeted lint/format and
-strict typing passed. This demonstrates a software distinction, **not**
-a poker-strength gain. Full exact-source and hosted qualification must
-pass before the separate fictional proof, real profile or candidate
-training. Codex assisted; no human time or personal learning was reported.
+strict typing passed. Full exact-source base and optional suites, pinned
+hooks and all four hosted jobs also passed at the isolated source commit;
+the [qualification receipt](../results/known-turn-clipped-transfer/source-checks/manifest.json)
+binds their logs. This demonstrates a software distinction, **not** a
+poker-strength gain. Publish and verify the receipt before the separate
+fictional proof, real profile or candidate training. Codex assisted; no
+human time or personal learning was reported.
 
 **Next prospective known-game question, November 28:** after PR #120's
 negative history merge, the [clipped-regret protocol](known-turn-clipped-transfer.md)
