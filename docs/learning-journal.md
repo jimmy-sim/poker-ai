@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 capped profile, November 28:** twelve complete, fixed 5m
+candidate paths across all four known games and three repeats finished
+within the 900-second profile cap. Each worker stayed below 1.5 GB.
+Taking the slowest repeat for each game and summing within the fixed
+dry/wet workers gives `T=392.931` seconds. The conservative formula
+`2*(2T+600)=2,771.724` is below 7,200. The [profile archive](../results/known-turn-uniform-regret-transfer/profile/manifest.json)
+keeps all twelve paths and the calculation, including timing variation.
+This predicts feasible compute; it says nothing about whether the new
+strategy plays better. Publish this profile before a separate admission
+decision and any 40m training. Codex assisted; no human time or personal
+learning was reported.
+
 **PR #120 fictional proof, November 28:** the published source produced
 six replayable policies on a synthetic two-seat signal game. At iteration
 two, the candidate's signed regret increment used weight `1` and the
