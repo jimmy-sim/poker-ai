@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 independent scalar audit, November 28:** the 24 saved
+candidate policies were compared with pinned open-source OpenSpiel
+2.0.2 only after own results were public. The largest scalar difference
+was `1.07e-14` chips, far below the frozen `1e-9` check; the
+[audit archive](../results/known-turn-uniform-regret-transfer/native/manifest.json)
+retains all rows and the installed Apache-2.0 license hash. This says
+the saved own exploitability numbers are independently consistent;
+it does not make the unfavorable candidate stronger. The fixed report
+still needs to combine every paired checkpoint and the preregistered
+decision rows. Codex assisted; no human time or personal learning was
+reported.
+
 **PR #120 reference-audit admission, November 28:** only after every
 unfavorable own policy was public, a data-only reader used the pinned
 older 48-case native clock. Rounding its 383.043403 seconds up to
