@@ -141,6 +141,19 @@ isolated tracing code before opening any new row outcome. Post-merge main CI
 is tracked separately from PR #118's passed checks. Codex assisted; no human
 time or personal learning was reported.
 
+**PR #119 isolated reader, November 27:** the published protocol was checked
+byte for byte on GitHub before source work. The new adapter is designed to
+replay each saved mixture against its own optimized opponent, then account
+for every exact turn and river information row. **Example:** a fictional
+four-row vector totaling one chip must reconcile with a one-chip scalar;
+claiming 0.9 chips triggers an arithmetic failure. The focused synthetic and
+pin-only checks passed before a further fixed-row selection test was added;
+Ruff, formatting and strict typing passed the then-current code. No actual
+mixed row has been traced, so the answer remains unknown. **Next decision:**
+finish exact-source qualification before the fictional proof, data-only
+compute admission and one real four-game map. Codex assisted; no human time
+or personal learning was reported.
+
 **PR #118 final qualification, November 27:** the negative report's exact
 source passed both local base Python versions, both optional suites,
 all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).
