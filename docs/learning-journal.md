@@ -124,6 +124,16 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 final checks, November 28:** the diagnostic report's exact
+published head passed both full local base suites, both fixed optional
+suites, pinned all-file hooks and all four hosted jobs. The [final
+receipt](../results/known-mixture-residual-map/final-checks/manifest.json)
+binds those results to the same original scientific rows and the separately
+qualified report reader. This checks reproducibility of the interpretation;
+it does not convert the negative mixture into a stronger policy. The
+remaining task is publication verification and solo review before merge.
+Codex assisted; no human time or personal learning was reported.
+
 **PR #119 fixed residual report, November 28:** the published mixed-policy
 row map and prior parent vectors now have a reconciled [fixed report](known-mixture-residual-map-result.md).
 **Example:** dry B's mixture allows 0.864300 chips of best-response gain,

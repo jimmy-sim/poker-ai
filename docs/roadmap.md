@@ -648,6 +648,10 @@ is informative diagnostic, with PR #118's negative strength result intact.
 Publish and verify the complete [report archive](../results/known-mixture-residual-map/report/manifest.json),
 then finish exact-report local/optional/hosted checks, review and merge
 before choosing a separately preregistered next strength question.
+The exact report-head local base/optional suites, pinned hooks and all
+four hosted jobs passed. The [final receipt](../results/known-mixture-residual-map/final-checks/manifest.json)
+retains those logs and original evidence lineage. Publish/verify it,
+then complete solo review and history-preserving merge if eligible.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
