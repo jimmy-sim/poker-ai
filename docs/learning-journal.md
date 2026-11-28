@@ -124,6 +124,15 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 compute admission, November 28:** a separate data-only reader
+checked the published twelve-path profile and recomputed the strict
+`2,771.724<7,200` second forecast. Its [admitted decision](../results/known-turn-uniform-regret-transfer/admission/manifest.json)
+was made before any 40m candidate training. This authorizes exactly
+the four already declared paths within their existing caps; it is a
+runtime gate, not evidence of better poker play. Publish and verify
+the decision before the one own comparison. Codex assisted; no human
+time or personal learning was reported.
+
 **PR #120 capped profile, November 28:** twelve complete, fixed 5m
 candidate paths across all four known games and three repeats finished
 within the 900-second profile cap. Each worker stayed below 1.5 GB.
