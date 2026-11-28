@@ -124,6 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 compute gate, November 28:** a separate data-only reader checked
+the historical 284.163-second report clock and recomputed the fixed
+`688.326 < 900`-second forecast. It passed without opening a saved policy.
+**Example:** the twofold historical timing allowance and 120-second
+failure-save reserve stay inside the original 900-second limit; they are
+not extra time added to it. The [admission receipt](../results/known-mixture-residual-map/admission/manifest.json)
+is a permission to run one bounded row map after publication, not evidence
+that poker decisions improved. **Next decision:** publish/verify admission,
+then run the sole four-game trace with every partial result retained.
+Codex assisted; no human time or personal learning was reported.
+
 **PR #119 fictional proof, November 28:** after the tested-source receipt
 was published and verified, a 1.086-second invented-row proof checked the
 same accounting and row selection rules that the read-only trace will use.

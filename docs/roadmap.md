@@ -611,8 +611,12 @@ before its fictional proof, data-only admission or first real trace.
 The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)
 was published and all changed GitHub blobs verified; its publication guard
 passed. The one [fictional proof](../results/known-mixture-residual-map/proof/manifest.json)
-then passed under its 180-second cap without opening a real policy. Publish
-and verify that proof before the separate data-only compute admission.
+then passed under its 180-second cap without opening a real policy. The proof
+was published and byte-verified. Separate [data-only admission](../results/known-mixture-residual-map/admission/manifest.json)
+rehashed the frozen prior report clock and recomputed the strict bound
+`688.326 < 900` seconds, with 120 seconds reserved inside the cap for
+failure saving. Publish and verify admission before the single four-policy
+read-only row trace; it says nothing yet about residual poker decisions.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
