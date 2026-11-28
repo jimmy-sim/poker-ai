@@ -146,6 +146,17 @@ required, with the old scientific archives checked against their original
 fingerprint. No row trace was repeated. Codex assisted; no human time or
 personal learning was reported.
 
+**PR #119 separate report source gate, November 28:** the corrected reader
+now has its own source receipt, leaving the originally qualified measurement
+receipt untouched. Both full base suites passed 5,875 tests with 73 skips;
+both fixed optional suites passed (2,601 on Python 3.11; 2,599 plus two
+skips on 3.12), as did pinned hooks and all four hosted jobs. The new
+[receipt](../results/known-mixture-residual-map/report-source-checks/manifest.json)
+also retains the failed first report and interrupted earlier correction.
+This verifies the reader's source, not the interpretation's conclusion.
+The fixed report must wait for receipt publication and byte verification.
+Codex assisted; no human time or personal learning was reported.
+
 **PR #119 own row map, November 28:** the one admitted read-only run saved
 every exact mixed-policy row for all four already known games under its
 time and memory limits. The [own archive](../results/known-mixture-residual-map/own/manifest.json)

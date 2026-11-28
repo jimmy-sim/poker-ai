@@ -635,6 +635,12 @@ interrupted after this defect was identified. Retain both logs. Qualify a
 second report-only correction with a distinct report-source receipt before
 running the fixed interpretation; keep the old measurement-source receipt
 unchanged.
+The corrected `1a505951` report source passed both full base suites,
+both optional suites, pinned hooks and all four hosted jobs. Its distinct
+[report-source receipt](../results/known-mixture-residual-map/report-source-checks/manifest.json)
+retains the old report failure and interrupted prior correction. Publish
+and byte-verify this receipt before the one fixed report; the four
+scientific traces remain single-run evidence.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
