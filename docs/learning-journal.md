@@ -124,6 +124,146 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 fixed negative report, November 28:** the [published comparison](known-turn-uniform-regret-transfer-result.md)
+keeps every fixed checkpoint and all 42 preselected decision rows. All
+four 40m uniform-regret candidates leave more exact best-response gain
+than the matched linear-regret controls. The dry B candidate leaves
+1.189667 chips on the turn and 0.585414 on the river, versus 0.594281
+and 0.149364 for its control. **Example:** on the dry B `5c 8s Jh 9c`
+turn with `Kd Ks`, both saved policies raise to 36 most of the time,
+yet the candidate's additive best-response contribution is much larger
+(0.356839 versus 0.049351 chips). The opponent and optimized reply
+continuation differ between saved policies, so this row is a diagnostic,
+not proof that a small local probability change caused the regression
+or advice for a live hand. The negative result is conditional on four
+dependent known games; no seed interval or unseen transfer is claimed.
+Final exact-report base and optional Python 3.11/3.12 lanes, hooks and
+all four hosted jobs passed on the published negative report. The
+[source-bound receipt](../results/known-turn-uniform-regret-transfer/final-checks/manifest.json)
+retains their logs; receipt-head CI and solo review remain separate.
+No retry or default promotion. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #120 independent scalar audit, November 28:** the 24 saved
+candidate policies were compared with pinned open-source OpenSpiel
+2.0.2 only after own results were public. The largest scalar difference
+was `1.07e-14` chips, far below the frozen `1e-9` check; the
+[audit archive](../results/known-turn-uniform-regret-transfer/native/manifest.json)
+retains all rows and the installed Apache-2.0 license hash. This says
+the saved own exploitability numbers are independently consistent;
+it does not make the unfavorable candidate stronger. The fixed report
+still needs to combine every paired checkpoint and the preregistered
+decision rows. Codex assisted; no human time or personal learning was
+reported.
+
+**PR #120 reference-audit admission, November 28:** only after every
+unfavorable own policy was public, a data-only reader used the pinned
+older 48-case native clock. Rounding its 383.043403 seconds up to
+383.044 and adding the frozen safety margin gives
+`2*383.044+120=886.088<900`. The [decision](../results/known-turn-uniform-regret-transfer/audit-admission/manifest.json)
+admits exactly the 24 candidate scalar checks; no solver strategy is
+used to teach the agent. This admission does not soften the negative
+own scores. Publish it before the comparison-only reference run.
+Codex assisted; no human time or personal learning was reported.
+
+**PR #120 own comparison, November 28:** after the separate compute
+admission, the unchanged four known games each received one complete
+deterministic 40m candidate path. The [saved own policies](../results/known-turn-uniform-regret-transfer/own/manifest.json)
+show final average fractions of the initial pot `0.034280`, `0.046310`,
+`0.049308`, `0.052628` in dry A, wet A, dry B, wet B order. Against the
+reused exact-turn control, all four paired changes are positive
+(`+0.020704`, `+0.028633`, `+0.028651`, `+0.035877`), meaning more
+best-response gain remains. The fixed absolute strength limit is 0.01,
+and a positive paired change above +0.001 is a regression. These own
+results therefore point to a **negative** outcome, pending the pinned
+independent scalar audit and fixed report. All four paths had exact
+matched work, full whole-tree coverage and zero recall violations.
+**Example:** if an opponent can gain more by best-responding to the
+saved wet B candidate than to the old wet B control, the new weighting
+did not help that known restricted game; this is a measured exploitability
+comparison, not a recommendation for any live poker hand. No failed
+game or seed will be rerun. Publish own bytes before opening any
+reference calculation. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #120 compute admission, November 28:** a separate data-only reader
+checked the published twelve-path profile and recomputed the strict
+`2,771.724<7,200` second forecast. Its [admitted decision](../results/known-turn-uniform-regret-transfer/admission/manifest.json)
+was made before any 40m candidate training. This authorizes exactly
+the four already declared paths within their existing caps; it is a
+runtime gate, not evidence of better poker play. Publish and verify
+the decision before the one own comparison. Codex assisted; no human
+time or personal learning was reported.
+
+**PR #120 capped profile, November 28:** twelve complete, fixed 5m
+candidate paths across all four known games and three repeats finished
+within the 900-second profile cap. Each worker stayed below 1.5 GB.
+Taking the slowest repeat for each game and summing within the fixed
+dry/wet workers gives `T=392.931` seconds. The conservative formula
+`2*(2T+600)=2,771.724` is below 7,200. The [profile archive](../results/known-turn-uniform-regret-transfer/profile/manifest.json)
+keeps all twelve paths and the calculation, including timing variation.
+This predicts feasible compute; it says nothing about whether the new
+strategy plays better. Publish this profile before a separate admission
+decision and any 40m training. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #120 fictional proof, November 28:** the published source produced
+six replayable policies on a synthetic two-seat signal game. At iteration
+two, the candidate's signed regret increment used weight `1` and the
+historical control used `t=2`; three arithmetic/average comparisons were
+exact to the recorded precision, with identical charged work and RNG
+state. The proof finished in 0.963 whole seconds under 180 and opened no
+real poker policy. Its [raw archive](../results/known-turn-uniform-regret-transfer/own-proof/manifest.json)
+keeps the snapshots and job record. Publish and verify this checkpoint
+before the registered real profile; it says the rule is implemented as
+specified, not that the new rule improves play. Codex assisted; no human
+time or personal learning was reported.
+
+**PR #120 source gate, November 28:** the isolated adapter and its fixed
+runner passed both complete base suites (5,888 tests each), both pinned
+optional suites (2,601 and 2,599 tests), Ruff, strict mypy, hooks and
+all four [hosted source jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/46142453607).
+The [receipt](../results/known-turn-uniform-regret-transfer/source-checks/manifest.json)
+also keeps an initial runner-only failure: its precheck mislabeled the
+older PR #116 report as published instead of negative. The manifest
+really says negative; correcting that guard, without touching game code
+or old evidence, let the exact same source pass. This confirms the
+software qualification, **not** a poker-strength result. Publish and
+verify the receipt before the fictional proof, then follow the fixed
+profile and admission gates. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #120 isolated source, November 28:** the new adapter asks the existing
+full expected trainer to weight each signed regret increment by `1` while
+leaving linear strategy averaging in place. The same four known exact-turn
+games and PR #116 saved controls remain fixed. On a fictional two-seat tree,
+the focused tests confirm identical initialization, a `1` versus `t=2`
+increment, identical average mass and charged work, normalized legal
+policies, unchanged RNG state and replayable snapshots. A conservative
+timing test rejects incomplete or over-cap profiles. Thirteen focused
+tests, targeted Ruff and strict mypy passed; full local/optional/hosted
+source qualification is next. No candidate poker outcome has been read.
+The first synthetic forecast fixture used a duration that still satisfied
+the fixed bound; its expected result was corrected without changing any
+scientific gate. [Protocol and limits](known-turn-uniform-regret-transfer.md).
+Codex assisted; no human time or personal learning was reported.
+
+**Next strength question, November 28:** [PR #119](https://github.com/jimmy-sim/poker-ai/pull/119)
+merged after all checks, but its row map only explains where a saved
+mixture is vulnerable on known games. A prior [controlled-learning grid](controlled-learning-comparison.md)
+measured a smaller exploitability on a different medium game when it gave
+each signed regret increment equal time weight instead of multiplying by
+iteration number, with linear strategy averaging unchanged. A **regret**
+records how much an alternative action would have helped against the
+training opponent; its time weight changes how strongly earlier versus
+later evidence shapes future choices. The [new prospective test](known-turn-uniform-regret-transfer.md)
+asks whether that one existing rule change transfers to all four known
+PR #116 exact-turn games at equal charged work. It reuses the old audited
+control snapshots and fixes strict gates/caps before any candidate run.
+The old 10m observation is a reason to test, not a claim of improvement
+on these four games. Codex assisted; no human time or personal learning
+was reported.
+
 **PR #119 final checks, November 28:** the diagnostic report's exact
 published head passed both full local base suites, both fixed optional
 suites, pinned all-file hooks and all four hosted jobs. The [final

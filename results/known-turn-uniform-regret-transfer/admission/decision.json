@@ -1,0 +1,51 @@
+{
+  "T_seconds": 392.93102052630286,
+  "final_work": 40000000,
+  "fixed_worker_sums_seconds": [
+    389.1632298776661,
+    392.93102052630286
+  ],
+  "per_path_maxima": [
+    {
+      "index": 0,
+      "maximum_seconds": 193.74130276114718,
+      "repeat_estimates_seconds": [
+        187.39561725708097,
+        192.36144138204875,
+        193.74130276114718
+      ]
+    },
+    {
+      "index": 1,
+      "maximum_seconds": 197.45385826941092,
+      "repeat_estimates_seconds": [
+        186.95058896875852,
+        193.40657572340902,
+        197.45385826941092
+      ]
+    },
+    {
+      "index": 2,
+      "maximum_seconds": 195.4219271165189,
+      "repeat_estimates_seconds": [
+        195.4219271165189,
+        193.76450606427454,
+        195.3670042921814
+      ]
+    },
+    {
+      "index": 3,
+      "maximum_seconds": 195.47716225689194,
+      "repeat_estimates_seconds": [
+        195.47716225689194,
+        193.63053993909205,
+        193.98453765957007
+      ]
+    }
+  ],
+  "profile_seconds": 146.95085495899912,
+  "rule": "2*(2*T+600)<7200",
+  "status": "admitted",
+  "strict_bound_seconds": 2771.7240821052114,
+  "whole_own_cap_seconds": 7200
+}
