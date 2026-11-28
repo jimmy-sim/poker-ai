@@ -14,7 +14,7 @@ from known_turn_half_policy_mixture.gate import (
     require_own,
     source_fingerprint,
 )
-from known_turn_half_policy_mixture.own import _event, _save
+from known_turn_half_policy_mixture.own import _event, _rss_bytes, _save
 from known_turn_half_policy_mixture.plan import ARMS, GAMES, contract, parent_context
 from poker_ai.postflop.controlled_checkpoints import pack_policy, read_snapshot
 from poker_ai.postflop.learning_training import score_data
@@ -89,11 +89,18 @@ def audit(root: Path, output: Path) -> None:
                 "game": game,
                 "own_policy_sha256": saved["receipt"]["policy_sha256"],
                 "native": native,
+                "peak_rss_bytes": _rss_bytes(),
             }
             _event(output / "events.jsonl", {"kind": "case", "row": row})
             rows.append(row)
+            if _rss_bytes() >= data["peak_rss_bytes_exclusive"]:
+                raise MemoryError("half-mixture native RSS cap reached")
         elapsed = time.perf_counter() - started
-        if len(rows) != 4 or elapsed >= data["native_cap_seconds"]:
+        if (
+            len(rows) != 4
+            or elapsed >= data["native_cap_seconds"]
+            or _rss_bytes() >= data["peak_rss_bytes_exclusive"]
+        ):
             raise ArithmeticError("half-mixture reference grid/cap failed")
         _save(
             output / "result.json",
@@ -103,6 +110,7 @@ def audit(root: Path, output: Path) -> None:
                 "source_fingerprint": fingerprint,
                 "seconds": elapsed,
                 "reference_runtime": runtime,
+                "peak_rss_bytes": _rss_bytes(),
                 "rows": rows,
                 "maximum_error_chips": max(
                     row["native"]["maximum_error_chips"] for row in rows

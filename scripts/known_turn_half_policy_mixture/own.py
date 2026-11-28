@@ -26,6 +26,7 @@ from known_turn_half_policy_mixture.plan import (
 )
 from poker_ai.postflop.controlled_checkpoints import write_snapshot
 from poker_ai.postflop.learning_training import score_data
+from poker_ai.postflop.matrix import MatrixTree, recall_violations
 from poker_ai.postflop.river_study import Deadline
 from poker_ai.reproducibility import runtime_environment
 
@@ -104,6 +105,11 @@ def run(root: Path, output: Path) -> None:
             _same_exact_game(q8.exact, exact.exact)
             if len(exact.exact.keys) != 8340 or len(exact.partition.keys) != 8340:
                 raise ArithmeticError("fixed exact information row count changed")
+            if not isinstance(exact.partition, MatrixTree):
+                raise ArithmeticError("fixed exact MatrixTree required")
+            recall_count = recall_violations(exact.partition)
+            if recall_count:
+                raise ArithmeticError("mixed exact game violates perfect recall")
             control = parent_policy(root, data["inputs"][2 * index], q8)
             other = parent_policy(root, data["inputs"][2 * index + 1], exact)
             lifted = q8.expand(control)
@@ -137,6 +143,7 @@ def run(root: Path, output: Path) -> None:
                 "metadata": metadata,
                 "receipt": receipt,
                 "score": score,
+                "recall_violations": recall_count,
                 "exploitability_fraction_initial_pot": value / 36,
                 "peak_rss_bytes": _rss_bytes(),
                 "elapsed_seconds": time.perf_counter() - started,
@@ -146,7 +153,11 @@ def run(root: Path, output: Path) -> None:
             if _rss_bytes() >= data["peak_rss_bytes_exclusive"]:
                 raise MemoryError("half-mixture RSS cap reached")
         elapsed = time.perf_counter() - started
-        if len(rows) != 4 or elapsed >= data["own_cap_seconds"]:
+        if (
+            len(rows) != 4
+            or elapsed >= data["own_cap_seconds"]
+            or _rss_bytes() >= data["peak_rss_bytes_exclusive"]
+        ):
             raise ArithmeticError("half-mixture fixed own grid/cap failed")
         _save(
             output / "result.json",

@@ -57,6 +57,8 @@ def report(root: Path, output: Path) -> None:
             or audit["own_policy_sha256"] != measured["receipt"]["policy_sha256"]
             or audit["native"]["maximum_error_chips"]
             > data["reference_tolerance_chips"]
+            or measured["recall_violations"] != 0
+            or audit["peak_rss_bytes"] >= data["peak_rss_bytes_exclusive"]
         ):
             raise ArithmeticError("mixed policy/native case identity changed")
         control = cases[(game, ARMS[0])]
