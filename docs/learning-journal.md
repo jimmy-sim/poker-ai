@@ -124,6 +124,18 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 fictional proof, November 28:** the published source produced
+six replayable policies on a synthetic two-seat signal game. At iteration
+two, the candidate's signed regret increment used weight `1` and the
+historical control used `t=2`; three arithmetic/average comparisons were
+exact to the recorded precision, with identical charged work and RNG
+state. The proof finished in 0.963 whole seconds under 180 and opened no
+real poker policy. Its [raw archive](../results/known-turn-uniform-regret-transfer/own-proof/manifest.json)
+keeps the snapshots and job record. Publish and verify this checkpoint
+before the registered real profile; it says the rule is implemented as
+specified, not that the new rule improves play. Codex assisted; no human
+time or personal learning was reported.
+
 **PR #120 source gate, November 28:** the isolated adapter and its fixed
 runner passed both complete base suites (5,888 tests each), both pinned
 optional suites (2,601 and 2,599 tests), Ruff, strict mypy, hooks and
