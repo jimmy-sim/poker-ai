@@ -689,6 +689,12 @@ extends to the same four **known** PR #116 exact-turn games, despite PR
 one candidate rule, matched work, absolute/paired gates, profile/own/audit
 caps and own-before-reference publication before candidate outcomes. No
 unseen transfer or default promotion is claimed.
+Draft [PR #121](https://github.com/jimmy-sim/poker-ai/pull/121) published
+and GitHub-byte-verified its prospective protocol before any candidate
+outcome. Isolated clipped-regret source and fictional tests passed 13
+focused cases, targeted Ruff/format and strict mypy; the pinned contract
+passed. Complete all exact-source local base/optional, hooks and hosted
+qualification before the separate proof or any real candidate path.
 **Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
