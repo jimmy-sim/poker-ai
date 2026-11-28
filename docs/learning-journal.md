@@ -124,6 +124,23 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Next bounded question, November 27:** [PR #118](https://github.com/jimmy-sim/poker-ai/pull/118)
+has history-merged with a negative fixed strength result. Its mixtures
+reduced exploitability relative to q8 on each known game but remained above
+the absolute target; dry B was weakest. The [new prospective map](known-mixture-residual-map.md)
+asks whether the remaining *mixed-policy* best-response gain lies mostly
+on turn or river and whether it is concentrated in a few decisions. **Example:**
+if dry B's mixed turn share is high, a later experiment could target turn
+decisions, but this has not been measured and would need its own protocol.
+A best response is the strongest reply within the fixed restricted game
+against the saved opponent, so row gain describes vulnerability under that
+opponent and continuation, not a generally correct move. PR #117's failed
+parent-policy source gate and missing row result remain unchanged.
+**Next decision:** publish the frozen four-policy input list and qualify
+isolated tracing code before opening any new row outcome. Post-merge main CI
+is tracked separately from PR #118's passed checks. Codex assisted; no human
+time or personal learning was reported.
+
 **PR #118 final qualification, November 27:** the negative report's exact
 source passed both local base Python versions, both optional suites,
 all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).

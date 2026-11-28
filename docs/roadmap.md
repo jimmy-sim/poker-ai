@@ -588,14 +588,19 @@ before the pinned OpenSpiel 2.0.2
 which passed all four scalars within `7.11e-15` chips maximum error. PR #118
 then produced the [fixed negative report](known-turn-half-policy-mixture-result.md):
 all four paired q8 contrasts improve, but all four fail the unchanged
-`0.01`-pot absolute gate. The report is published and verified; PR #118
-remains draft pending final receipt publication and review. Its exact-report
+`0.01`-pot absolute gate. The report is published and verified. Its exact-report
 [final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
-now records passed local base/optional suites, hooks and all four report-head
-hosted jobs, with pre-test launcher failures retained. Publish/verify that
-receipt and check receipt-head CI before solo review/history merge. The next distinct research question
-should target the remaining turn/river decision weaknesses without tuning
-this already failed mixture. No unseen-input or default promotion claim follows.
+records passed local base/optional suites, hooks and all four report-head
+hosted jobs, with pre-test launcher failures retained. Its receipt-head CI
+passed all four jobs, solo review was recorded, and [PR #118](https://github.com/jimmy-sim/poker-ai/pull/118)
+history-merged as `8145b661`; post-merge main CI is tracked separately.
+The next [prospective saved-mixture residual map](known-mixture-residual-map.md)
+asks where the **new mixed policy's** remaining turn and river best-response
+gains arise on those same four known games. Its definition of done is four
+source-qualified, pinned, reconciled read-only traces, published own evidence,
+a fixed decision report, final local/hosted checks and review. It does not
+repeat PR #117's failed parent-policy diagnosis, change the already failed
+mixture, claim unseen transfer or promote a default.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
