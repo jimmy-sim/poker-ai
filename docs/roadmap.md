@@ -617,6 +617,10 @@ rehashed the frozen prior report clock and recomputed the strict bound
 `688.326 < 900` seconds, with 120 seconds reserved inside the cap for
 failure saving. Publish and verify admission before the single four-policy
 read-only row trace; it says nothing yet about residual poker decisions.
+The admission was published and verified. The sole [own row trace](../results/known-mixture-residual-map/own/manifest.json)
+then completed all four pinned mixtures under time and memory caps. Its
+own-only map puts the largest residual on dry B's turn; publish and verify
+every raw vector before the fixed parent comparison and final interpretation.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

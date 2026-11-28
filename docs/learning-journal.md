@@ -124,6 +124,19 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 own row map, November 28:** the one admitted read-only run saved
+every exact mixed-policy row for all four already known games under its
+time and memory limits. The [own archive](../results/known-mixture-residual-map/own/manifest.json)
+shows dry B has the largest remaining vulnerability, with about 0.708
+chips of additive turn gain and 0.156 river gain; the other three games
+have split turn and river gains. **Example:** a turn-dominant label tells
+us where a best reply gains most *against that saved opponent*; it does
+not say changing one turn action would causally recover that amount.
+This is a diagnostic of an already negative mixture, not an improved
+policy. **Next decision:** publish and verify the full row vectors before
+the fixed comparison to the already published parent reports. Codex
+assisted; no human time or personal learning was reported.
+
 **PR #119 compute gate, November 28:** a separate data-only reader checked
 the historical 284.163-second report clock and recomputed the fixed
 `688.326 < 900`-second forecast. It passed without opening a saved policy.
