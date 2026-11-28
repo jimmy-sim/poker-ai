@@ -1,0 +1,29 @@
+{
+  "cap_seconds": 900,
+  "child_pid": 2918,
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--all-extras",
+    "python",
+    "scripts/audit_known_turn_half_policy_mixture.py",
+    "--output",
+    "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-half-policy-mixture-audit-20261127/raw"
+  ],
+  "environment": {
+    "UV_PROJECT_ENVIRONMENT": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/guarded-skip-requalification-20261118/envs/optional311",
+    "UV_PYTHON": "3.11.17"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-11-28T05:28:17.838900+00:00",
+  "launcher_pid": 2909,
+  "log": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-half-policy-mixture-audit-20261127/launch.log",
+  "observed_wall_seconds": 103.16151379199994,
+  "output": "/Users/jimmysim/Documents/Codex/2026-11-02/files-pasted-by-the-user-role/work/context-reuse/results/runs/known-turn-half-policy-mixture-audit-20261127/raw",
+  "reserve_within_cap_seconds": 120,
+  "source_fingerprint": "4084261e6d5009d09d23c326782e91b421ed345eef611e8c955884c1f4061007",
+  "source_head": "05df9b956ab940207be329006de99cdb6394f05a",
+  "started_utc": "2026-11-28T05:26:34.677321+00:00",
+  "status": "passed"
+}

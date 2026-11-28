@@ -124,6 +124,17 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 independent audit, November 27:** after every own policy and
+score was published, the pinned OpenSpiel 2.0.2 checker compared the four
+saved mixed strategies. Its largest scalar difference was
+`7.105427357601002e-15` chips, far below the fixed `1e-9`-chip tolerance;
+the installed Apache-2.0 license hash matched. The [audit receipt](../results/known-turn-half-policy-mixture/native/manifest.json)
+retains all rows, runtime, memory and license evidence. **Example:** this
+checks the mixed score independently; it does not make the mixed policies
+strong enough to pass the absolute target. **Next decision:** publish and
+verify the audit, then apply the frozen report classification to the four
+known games. Codex assisted; no human time or personal learning was reported.
+
 **PR #118 own mixture score, November 27:** the one admitted run built all
 four fixed 50:50 policies and checked their exact exploitability, which
 measures how much an ideal best reply could gain against each saved

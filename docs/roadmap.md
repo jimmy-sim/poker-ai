@@ -582,10 +582,12 @@ recomputed strict own/reference bounds of 688.326/886.088 seconds below their
 fixed 900-second caps. The one [own comparison](../results/known-turn-half-policy-mixture/own/manifest.json)
 then completed all four fixed policies under time/memory limits: all four
 mixes improved on q8 but failed the `0.01`-pot absolute gate. This is a
-**negative own-only signal**; PR #118 remains draft until own bytes are
-published and verified, the pinned independent comparison-only audit and
-fixed report complete, and final checks pass. No unseen-input or default
-promotion claim follows.
+**negative own-only signal**. All own bytes were published and verified
+before the pinned OpenSpiel 2.0.2
+[comparison-only audit](../results/known-turn-half-policy-mixture/native/manifest.json),
+which passed all four scalars within `7.11e-15` chips maximum error. PR #118
+remains draft until the fixed report and final checks pass. No unseen-input
+or default promotion claim follows.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
