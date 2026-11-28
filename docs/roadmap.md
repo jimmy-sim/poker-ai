@@ -641,6 +641,13 @@ both optional suites, pinned hooks and all four hosted jobs. Its distinct
 retains the old report failure and interrupted prior correction. Publish
 and byte-verify this receipt before the one fixed report; the four
 scientific traces remain single-run evidence.
+The [fixed residual-map report](known-mixture-residual-map-result.md)
+reconciled all four prior own scalars and identifies dry B's 0.708274-chip
+turn contribution as the largest mixed-policy weakness. Its classification
+is informative diagnostic, with PR #118's negative strength result intact.
+Publish and verify the complete [report archive](../results/known-mixture-residual-map/report/manifest.json),
+then finish exact-report local/optional/hosted checks, review and merge
+before choosing a separately preregistered next strength question.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

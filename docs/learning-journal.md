@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 fixed residual report, November 28:** the published mixed-policy
+row map and prior parent vectors now have a reconciled [fixed report](known-mixture-residual-map-result.md).
+**Example:** dry B's mixture allows 0.864300 chips of best-response gain,
+with 0.708274 on the turn. Its highest-ranked turn row has `7h Kc` on
+`5c 8s Jh 9c`; the saved mixture folds about 51.5% and calls about 23.5%
+against its fixed opponent/continuation. This is a restricted-game
+diagnostic, not a universally correct poker action. The report passed in
+1.100 seconds, all four totals reconcile within `8.33e-17` chips, and the
+source receipt had passed full local/optional/hosted checks. The old failed
+report and interrupted correction remain in the receipt. The next decision
+is a separate prospective test of a turn-focused strength change after
+final report checks and review; no new policy has been tested here. Codex
+assisted; no human time or personal learning was reported.
+
 **PR #119 report reader correction, November 28:** after the complete own
 row vectors were published, the first report stopped on a software schema
 mistake. It looked for the literal string `"negative"`, while PR #118's

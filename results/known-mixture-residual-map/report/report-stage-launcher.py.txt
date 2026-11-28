@@ -1,0 +1,48 @@
+"""Run one PR119 stage with a persistent state file and hard whole-process cap."""
+import argparse
+import json
+import os
+import signal
+import subprocess
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+parser=argparse.ArgumentParser()
+parser.add_argument('stage',choices=('proof','admission','own','report'))
+parser.add_argument('--head',required=True)
+parser.add_argument('--workdir',type=Path,required=True)
+args=parser.parse_args()
+root=Path(__file__).resolve().parents[3]
+folder=args.workdir.resolve()
+raw=folder/'raw'
+cap={'proof':180,'admission':180,'own':900,'report':900}[args.stage]
+source='8660b58c76329fa9a4df719ba534fe8915c0c0d92a9b18cc2bb46b738c1cf7d4'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==args.head
+assert not subprocess.check_output(['git','status','--porcelain=v1'],cwd=root)
+assert not folder.exists() and not folder.is_symlink()
+cmd=['uv','run','--locked','python','scripts/run_known_mixture_residual_map.py',args.stage,'--output',str(raw)]
+folder.mkdir(parents=True,exist_ok=False)
+log=folder/'launch.log'
+state=folder/'job-state.json'
+env=os.environ.copy();env.pop('PYTHONPATH',None)
+env['UV_PYTHON']='3.11.17'
+env['UV_PROJECT_ENVIRONMENT']=str(root/'results/runs/guarded-skip-requalification-20261118/envs/base311')
+started=time.perf_counter()
+receipt={'status':'starting','launcher_pid':os.getpid(),'command':cmd,'source_head':args.head,'source_fingerprint':source,'cap_seconds':cap,'reserve_within_cap_seconds':120 if args.stage=='own' else 0,'environment':{key:env[key] for key in ('UV_PYTHON','UV_PROJECT_ENVIRONMENT')},'log':str(log),'output':str(raw),'started_utc':datetime.now(timezone.utc).isoformat()}
+state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+with log.open('xb') as stream:
+ process=subprocess.Popen(cmd,cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+ receipt.update(status='running',child_pid=process.pid)
+ state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+ try:code=process.wait(timeout=max(0.01,cap-(time.perf_counter()-started)))
+ except subprocess.TimeoutExpired:
+  os.killpg(process.pid,signal.SIGTERM)
+  try:process.wait(timeout=5)
+  except subprocess.TimeoutExpired:os.killpg(process.pid,signal.SIGKILL);process.wait()
+  code=124
+receipt.update(status='passed' if code==0 else 'failed_retained',exit_code=code,observed_wall_seconds=time.perf_counter()-started,finished_utc=datetime.now(timezone.utc).isoformat())
+state.write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+(folder/'launch.exit').write_text(f'{code}\n')
+print(json.dumps(receipt,sort_keys=True))
+raise SystemExit(code)
