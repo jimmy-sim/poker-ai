@@ -699,6 +699,12 @@ retains official logs and passed its committed source guard. The single
 [fictional proof](../results/known-turn-clipped-transfer/own-proof/manifest.json)
 passed under its 180-second cap without opening a real policy. Publish
 and verify that proof before the fixed twelve-path real-game profile.
+The proof is published and its committed guard passed. All twelve fixed
+profile paths completed below their time and memory caps; the
+[profile archive](../results/known-turn-clipped-transfer/profile/manifest.json)
+shows a provisional strict 2,772.106-second own-run bound. Publish and
+verify the profile before a separate data-only admission. No strength
+outcome has been collected.
 **Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths

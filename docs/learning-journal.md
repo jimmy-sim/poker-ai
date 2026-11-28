@@ -124,6 +124,16 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #121 profile, November 28:** all twelve fixed 5m timing paths
+completed in [147.903 whole seconds](../results/known-turn-clipped-transfer/profile/manifest.json).
+The largest worker memory readings were 973,144,064 and 971,554,816
+bytes, below the published cap. Using the slowest of three repeats for
+each game gives a conservative provisional 2,772.106-second bound for
+the planned own run, below 7,200 seconds. A separate published admission
+must still recompute this rule before any 40m path. Timing does not
+answer whether the clipped strategy plays better. Codex assisted; no
+human time or personal learning was reported.
+
 **PR #121 fictional proof, November 28:** the
 [proof archive](../results/known-turn-clipped-transfer/own-proof/manifest.json)
 shows that a forced negative advantage leaves two signed regret entries
