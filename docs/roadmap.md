@@ -573,10 +573,13 @@ hosted jobs. The first full optional3.12 run timed out in one historical
 saved-data export subprocess; its failure remains in the receipt alongside
 one passing same-source full requalification. The original Friday November
 27 20:00 PST target to stop starting scientific jobs passed before source
-qualification finished. Proof, admission, mixed-policy score and reference
-audit did not run; this question has **no poker-strength result** yet and
-PR #118 remains draft. Resume only under a future authorized window after
-verifying this exact source and the frozen prospective checkpoints.
+qualification finished. Jimmy then explicitly superseded that cutoff for
+the active session without changing the scientific caps. The
+[fictional proof](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
+passed on the unchanged qualified source, with no real saved policy opened.
+Admission, mixed-policy score and reference audit have not run; this question
+has **no poker-strength result** yet and PR #118 remains draft. Publish and
+verify the proof before the separate data-only admission decision.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

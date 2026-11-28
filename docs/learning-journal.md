@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 fictional proof, November 27:** the unchanged source passed a
+[fictional-only check](../results/known-turn-half-policy-mixture/own-proof/manifest.json)
+of all 8,340 exact rows and the fixed equal probability average. For
+example, abstract 0.2 and exact 0.6 produce 0.4 in one synthetic row;
+an invalid parent's probabilities are rejected. The receipt confirms that
+no real saved poker policy was opened. The first launcher failed before
+Python could start because the sandbox could not write the pinned uv cache;
+that failure is retained separately, and the successful unchanged proof
+took 4.056 seconds under its 180-second cap. **Next decision:** publish
+and verify this proof, then make the separate data-only compute admission
+decision before any real mixture score. The source proof says nothing yet
+about poker strength. Codex assisted; no human time or personal learning
+was reported.
+
 **PR #118 source qualification, November 27:** the corrected, isolated
 mixture source passed both base Python versions, both optional versions,
 all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46103378029).
