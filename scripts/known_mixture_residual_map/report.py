@@ -5,15 +5,27 @@ from pathlib import Path
 from typing import Any
 
 from known_turn_half_policy_mixture.plan import ARMS, GAMES
+from river_generalization.gate import require_archive
 
 from known_mixture_residual_map.gate import (
+    ADMISSION,
     OWN,
+    PROOF,
+    SOURCE,
     clean_head,
-    require_own,
+    require_source,
     source_fingerprint,
 )
 from known_mixture_residual_map.own import save
 from known_mixture_residual_map.plan import contract
+
+MEASUREMENT_SOURCE = "4eba834da858694d40ac1ce87fddb68bd47efb43f5dabcb4db6f29b223d9f57c"
+
+
+def negative_mixture(record: dict[str, Any]) -> bool:
+    """Read PR #118's published nested decision without changing its schema."""
+    decision = record.get("classification")
+    return isinstance(decision, dict) and decision.get("classification") == "negative"
 
 
 def report(root: Path, output: Path) -> None:
@@ -21,7 +33,14 @@ def report(root: Path, output: Path) -> None:
     data = contract(root)
     head = clean_head(root)
     fingerprint = source_fingerprint(root)
-    require_own(root, fingerprint)
+    require_source(root, fingerprint)
+    for stage, status in (
+        (SOURCE, "source_qualified"),
+        (PROOF, "proof_passed"),
+        (ADMISSION, "admitted"),
+        (OWN, "own_published"),
+    ):
+        require_archive(root, root / stage, status, MEASUREMENT_SOURCE)
     own: dict[str, Any] = json.loads((root / OWN / "result.json").read_bytes())
     parent: dict[str, Any] = json.loads(
         (
@@ -37,7 +56,7 @@ def report(root: Path, output: Path) -> None:
         own["status"] != "completed"
         or own["games"] != list(GAMES)
         or parent["status"] != "completed"
-        or mixed["classification"] != "negative"
+        or not negative_mixture(mixed)
     ):
         raise ArithmeticError("fixed published input grid incomplete")
     parent_cases = {

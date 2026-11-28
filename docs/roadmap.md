@@ -621,6 +621,14 @@ The admission was published and verified. The sole [own row trace](../results/kn
 then completed all four pinned mixtures under time and memory caps. Its
 own-only map puts the largest residual on dry B's turn; publish and verify
 every raw vector before the fixed parent comparison and final interpretation.
+All four own vectors were published and GitHub-byte-verified. The first fixed
+report stopped before any comparison because its reader expected a string
+for PR #118's nested `classification` record. The failed launcher log is
+retained; the prior own trace and negative PR #118 result remain unchanged.
+A report-only schema correction and regression test must pass full new
+exact-source local/optional/hosted qualification. Its report may read the
+old published own archive only with the **original** measurement-source
+fingerprint pinned; do not rerun the four scientific traces.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

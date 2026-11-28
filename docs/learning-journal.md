@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 report reader correction, November 28:** after the complete own
+row vectors were published, the first report stopped on a software schema
+mistake. It looked for the literal string `"negative"`, while PR #118's
+published result stores a small object containing that label. **Example:**
+the four underlying policy scores and row vectors still matched; the report
+could not pass its own input guard and produced no comparison. The failed
+job log is retained. A report-only correction reads the nested label and
+pins the earlier qualified measurement source when opening its immutable
+own archive, so the one scientific trace is not repeated. Focused tests
+passed; all new-source local, optional and hosted checks remain before a
+corrected report can run. This failure does not overturn or improve the
+negative PR #118 strength result. Codex assisted; no human time or personal
+learning was reported.
+
 **PR #119 own row map, November 28:** the one admitted read-only run saved
 every exact mixed-policy row for all four already known games under its
 time and memory limits. The [own archive](../results/known-mixture-residual-map/own/manifest.json)
