@@ -124,6 +124,16 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 reference-audit admission, November 28:** only after every
+unfavorable own policy was public, a data-only reader used the pinned
+older 48-case native clock. Rounding its 383.043403 seconds up to
+383.044 and adding the frozen safety margin gives
+`2*383.044+120=886.088<900`. The [decision](../results/known-turn-uniform-regret-transfer/audit-admission/manifest.json)
+admits exactly the 24 candidate scalar checks; no solver strategy is
+used to teach the agent. This admission does not soften the negative
+own scores. Publish it before the comparison-only reference run.
+Codex assisted; no human time or personal learning was reported.
+
 **PR #120 own comparison, November 28:** after the separate compute
 admission, the unchanged four known games each received one complete
 deterministic 40m candidate path. The [saved own policies](../results/known-turn-uniform-regret-transfer/own/manifest.json)
