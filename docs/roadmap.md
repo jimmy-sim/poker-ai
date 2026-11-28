@@ -679,7 +679,17 @@ binds their logs. Publish and verify the receipt, then review before merge.
 A later milestone, if justified,
 must be distinct and prospectively registered; do not retry this rule
 on favorable seeds or selected cases.
-**Definition of done:** publish its frozen protocol before candidate
+PR #120 then passed all four receipt-head CI jobs and history-merged as
+`f4a8322d` after a solo review. Its four-game uniform-regret regression
+remains negative. Separate post-merge main CI46154173445 passed all four jobs and its official metadata/log are retained independently.
+The next [prospective clipped-regret transfer test](known-turn-clipped-transfer.md)
+asks whether the older controlled-learning exact/full clipped advantage
+extends to the same four **known** PR #116 exact-turn games, despite PR
+#100's negative B4/q8 clipping result. It fixes immutable controls,
+one candidate rule, matched work, absolute/paired gates, profile/own/audit
+caps and own-before-reference publication before candidate outcomes. No
+unseen transfer or default promotion is claimed.
+**Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
 with the 24 immutable PR #116 control snapshots, publish own before a

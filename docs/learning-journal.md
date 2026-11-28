@@ -124,6 +124,19 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Next prospective known-game question, November 28:** after PR #120's
+negative history merge, the [clipped-regret protocol](known-turn-clipped-transfer.md)
+asks whether discarding negative accumulated regret helps the exact-turn,
+full expected learner at matched 40m work. In the older controlled grid,
+that rule helped one different known exact/full game at 10m, while PR #100
+found it harmful under B4/q8 conditions. **Example:** a negative regret
+for calling can influence later signed-regret updates, whereas clipping
+sets it to zero before later updates; neither choice changes which cards
+or actions exist. All four PR #116 inputs here are previously inspected
+development games, and the unchanged absolute gates still apply. No new
+candidate score or independent validation claim exists at protocol
+publication. Codex assisted; no human time or personal learning was reported.
+
 **PR #120 fixed negative report, November 28:** the [published comparison](known-turn-uniform-regret-transfer-result.md)
 keeps every fixed checkpoint and all 42 preselected decision rows. All
 four 40m uniform-regret candidates leave more exact best-response gain
