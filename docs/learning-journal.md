@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 source gate, November 28:** the isolated adapter and its fixed
+runner passed both complete base suites (5,888 tests each), both pinned
+optional suites (2,601 and 2,599 tests), Ruff, strict mypy, hooks and
+all four [hosted source jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/46142453607).
+The [receipt](../results/known-turn-uniform-regret-transfer/source-checks/manifest.json)
+also keeps an initial runner-only failure: its precheck mislabeled the
+older PR #116 report as published instead of negative. The manifest
+really says negative; correcting that guard, without touching game code
+or old evidence, let the exact same source pass. This confirms the
+software qualification, **not** a poker-strength result. Publish and
+verify the receipt before the fictional proof, then follow the fixed
+profile and admission gates. Codex assisted; no human time or personal
+learning was reported.
+
 **PR #120 isolated source, November 28:** the new adapter asks the existing
 full expected trainer to weight each signed regret increment by `1` while
 leaving linear strategy averaging in place. The same four known exact-turn

@@ -1,0 +1,12 @@
+{
+  "role": "base311",
+  "head": "bcd433320caee9863dbca8196e3c2389240168ac",
+  "source_fingerprint": "124b32f99236d22165c15a6ad9266a7caeb2316af47162cef1b166974761f942",
+  "status": "failed",
+  "failure": {
+    "type": "CalledProcessError",
+    "reason": "Command '['uv', 'run', '--locked', 'python', '-c', \"import hashlib,json,pathlib,subprocess,sys,numpy,poker_ai\\nr=pathlib.Path.cwd();sys.path.insert(0,str(r/'scripts'))\\nfrom known_turn_uniform_regret_transfer.gate import clean_head,source_fingerprint,source_files,PRIOR_FINGERPRINT\\nfrom known_turn_uniform_regret_transfer.plan import contract\\nfrom known_turn_collision_medium_transfer.gate import require_archive as prior_archive, OWN as PRIOR_OWN, NATIVE as PRIOR_NATIVE, REPORT as PRIOR_REPORT\\nassert clean_head(r)=='bcd433320caee9863dbca8196e3c2389240168ac' and source_fingerprint(r)=='124b32f99236d22165c15a6ad9266a7caeb2316af47162cef1b166974761f942' and len(source_files(r))==19\\nassert contract(r)['issue']==4\\nfor stage,status in ((PRIOR_OWN,'own_published'),(PRIOR_NATIVE,'native_audited'),(PRIOR_REPORT,'report_published')): prior_archive(r,r/stage,status,PRIOR_FINGERPRINT)\\nassert hashlib.sha256((r/'uv.lock').read_bytes()).hexdigest()=='db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c'\\nassert pathlib.Path(poker_ai.__file__).resolve().is_relative_to(r/'src')\\nassert 'PYTHONPATH' not in __import__('os').environ\\nprint(json.dumps(dict(head='bcd433320caee9863dbca8196e3c2389240168ac',source_fingerprint='124b32f99236d22165c15a6ad9266a7caeb2316af47162cef1b166974761f942',python=sys.version.split()[0],numpy=numpy.__version__,dirty=False)))\\n\"]' returned non-zero exit status 1."
+  },
+  "elapsed_seconds": 9.434316916998796,
+  "log_sha256": "cdbf9883ccc611b208917b200ab25cc343bf8b94fbbfeaa6b679b58454c9f846"
+}

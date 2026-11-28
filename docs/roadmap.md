@@ -663,6 +663,12 @@ across **all four** already known PR #116 games at matched 40m work.
 Its protocol-head hosted CI passed all four jobs. Isolated source and
 fictional tests are prepared; full exact-source qualification remains
 before any real candidate work.
+The isolated source then passed both complete local base suites, both
+optional suites, pinned hooks and all four hosted source jobs. Its
+[source receipt](../results/known-turn-uniform-regret-transfer/source-checks/manifest.json)
+retains an earlier runner-only precheck failure as well as the complete
+passing checks. Publish/verify that receipt before the fictional proof;
+no candidate strength outcome has been collected.
 **Definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
