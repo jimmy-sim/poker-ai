@@ -124,6 +124,24 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 source qualification, November 27:** the corrected, isolated
+mixture source passed both base Python versions, both optional versions,
+all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46103378029).
+The [source receipt](../results/known-turn-half-policy-mixture/source-checks/manifest.json)
+also keeps a failed first optional Python 3.12 run: an older saved-data
+export test exceeded its unchanged 120-second subprocess watchdog. A
+standalone same-source check passed in 5.11 seconds, and one full same-source
+optional requalification passed; the first failure is still recorded.
+**Example:** passing the isolated test did not count as passing all 2,601
+optional tests, so the complete lane ran again with the same guard.
+The 20:00 Pacific target to stop starting scientific jobs arrived before
+qualification finished. No fictional proof, real mixed policy, poker score
+or reference audit was started. The result is **unmeasured**, and PR #118
+remains draft. The issue comment is pending because no available write tool
+was verified to target issue #4. Codex assisted; no human time or personal
+learning was reported.
+
+
 **PR #118 implementation, November 27:** the previously registered 50:50
 behavior-policy mixture now has isolated code and fictional tests. The code
 checks that the saved q8 policy is lifted onto the same exact information

@@ -566,6 +566,17 @@ mixture score; qualify isolated source, pass fictional proof and data-only
 admission, run one own four-game score, publish own bytes before the pinned
 comparison-only reference, then report and complete final checks. No default
 promotion or unseen-game claim is available from these known inputs.
+PR #118's corrected isolated source passed the
+[exact-source receipt](../results/known-turn-half-policy-mixture/source-checks/manifest.json):
+base and optional Python 3.11/3.12 local checks, all-file hooks and all four
+hosted jobs. The first full optional3.12 run timed out in one historical
+saved-data export subprocess; its failure remains in the receipt alongside
+one passing same-source full requalification. The original Friday November
+27 20:00 PST target to stop starting scientific jobs passed before source
+qualification finished. Proof, admission, mixed-policy score and reference
+audit did not run; this question has **no poker-strength result** yet and
+PR #118 remains draft. Resume only under a future authorized window after
+verifying this exact source and the frozen prospective checkpoints.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
