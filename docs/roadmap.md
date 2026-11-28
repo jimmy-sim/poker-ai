@@ -673,8 +673,10 @@ The complete [fixed PR #120 report](known-turn-uniform-regret-transfer-result.md
 now classifies the uniform-regret candidate **negative** on all four
 known games at matched 40m work, with independent scalar audit passed.
 The candidate regresses despite its earlier favorable 10m result on a
-different old game. Complete final exact-report local/optional/hosted
-qualification and review before merge. A later milestone, if justified,
+different old game. Final exact-report local base/optional lanes, hooks
+and all four hosted jobs passed at `de1a992f`; the [receipt](../results/known-turn-uniform-regret-transfer/final-checks/manifest.json)
+binds their logs. Publish and verify the receipt, then review before merge.
+A later milestone, if justified,
 must be distinct and prospectively registered; do not retry this rule
 on favorable seeds or selected cases.
 **Definition of done:** publish its frozen protocol before candidate

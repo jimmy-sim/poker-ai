@@ -137,9 +137,12 @@ continuation differ between saved policies, so this row is a diagnostic,
 not proof that a small local probability change caused the regression
 or advice for a live hand. The negative result is conditional on four
 dependent known games; no seed interval or unseen transfer is claimed.
-Final exact-report qualification and PR review remain. No retry or
-default promotion. Codex assisted; no human time or personal learning
-was reported.
+Final exact-report base and optional Python 3.11/3.12 lanes, hooks and
+all four hosted jobs passed on the published negative report. The
+[source-bound receipt](../results/known-turn-uniform-regret-transfer/final-checks/manifest.json)
+retains their logs; receipt-head CI and solo review remain separate.
+No retry or default promotion. Codex assisted; no human time or personal
+learning was reported.
 
 **PR #120 independent scalar audit, November 28:** the 24 saved
 candidate policies were compared with pinned open-source OpenSpiel
