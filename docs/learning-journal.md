@@ -124,6 +124,22 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**Next strength question, November 28:** [PR #119](https://github.com/jimmy-sim/poker-ai/pull/119)
+merged after all checks, but its row map only explains where a saved
+mixture is vulnerable on known games. A prior [controlled-learning grid](controlled-learning-comparison.md)
+measured a smaller exploitability on a different medium game when it gave
+each signed regret increment equal time weight instead of multiplying by
+iteration number, with linear strategy averaging unchanged. A **regret**
+records how much an alternative action would have helped against the
+training opponent; its time weight changes how strongly earlier versus
+later evidence shapes future choices. The [new prospective test](known-turn-uniform-regret-transfer.md)
+asks whether that one existing rule change transfers to all four known
+PR #116 exact-turn games at equal charged work. It reuses the old audited
+control snapshots and fixes strict gates/caps before any candidate run.
+The old 10m observation is a reason to test, not a claim of improvement
+on these four games. Codex assisted; no human time or personal learning
+was reported.
+
 **PR #119 final checks, November 28:** the diagnostic report's exact
 published head passed both full local base suites, both fixed optional
 suites, pinned all-file hooks and all four hosted jobs. The [final

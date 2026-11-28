@@ -1,0 +1,171 @@
+{
+  "candidate": {
+    "arm": "signed_full_exact_turn_uniform_regret",
+    "only_change": "regret increment time multiplier is 1 instead of iteration t; all other training, representation, action, chance, payoff, averaging and target-order choices fixed",
+    "paths": 4,
+    "rules": {
+      "average_weight": "linear",
+      "regret_rule": "signed",
+      "regret_weight": "uniform"
+    }
+  },
+  "compute": {
+    "audit_forecast": "2*ceil_millis(383.04340299998876)+120=886.088<900 from pinned PR116 48-case native job clock; new audit has 24 candidate cases",
+    "caps_seconds": {
+      "native_audit_whole": 900,
+      "own_whole": 7200,
+      "profile_whole": 900,
+      "proof_whole": 180
+    },
+    "failure_save_reserve_within_caps_seconds": 120,
+    "max_worker_peak_rss_bytes_exclusive": 1500000000,
+    "prior_pr116_profile_forecast_seconds_context_only": 4403.465,
+    "profile_estimator": "T=max over workers of sum over assigned games of max across 3 repeats (whole_path_seconds*40000000/actual_profile_work); admit own only if 2*(2*T+600)<7200",
+    "profile_paths": 12,
+    "profile_repeats_per_candidate_path": 3,
+    "profile_work_label": 5000000,
+    "worker_partition": "worker 0 dry A/B; worker 1 wet A/B; fixed order",
+    "workers": 2
+  },
+  "control": {
+    "arm": "signed_full_exact_turn_river",
+    "report_path": "results/known-turn-collision-medium-transfer/report/report.json",
+    "rules": {
+      "average_weight": "linear",
+      "regret_rule": "signed",
+      "regret_weight": "linear"
+    },
+    "source": "published PR116 immutable exact-turn path, no retraining"
+  },
+  "default_promotion": false,
+  "diagnostic_rows": {
+    "counts_in_game_order": [
+      10,
+      10,
+      12,
+      10
+    ],
+    "rule": "all published selected_decisions exact_info rows per game, in fixed game order; never substitute a row after candidate outcomes",
+    "source": "results/known-mixture-residual-map/report/report.json"
+  },
+  "gates": {
+    "absolute_fraction_initial_pot_max": 0.01,
+    "inconclusive": "other complete outcomes or any required correctness, source, compute, publication or audit gate fails",
+    "minimum_improved_pairs": 3,
+    "negative": "any candidate final absolute/coverage/recall gate fails or any paired final delta >+0.001",
+    "paired_improvement_fraction_initial_pot_max": -0.001,
+    "positive": "all four candidate final linear averages <=0.01 pot fraction, whole coverage >=0.95 and recall violations 0; at least three paired deltas <=-0.001 including one dry and one wet; remaining delta <=+0.001; worst <=0.025",
+    "recall_violations_max": 0,
+    "remaining_pair_non_degradation_max": 0.001,
+    "require_improved_dry_and_wet": true,
+    "whole_coverage_min": 0.95,
+    "worst_fraction_initial_pot_max": 0.025
+  },
+  "issue": 4,
+  "metrics": [
+    "exact restricted-game NashConv/2 chips and fraction of 36-chip initial pot; 40m linear average primary",
+    "each of four paired candidate-minus-control final fractions and all 10m/20m/40m readouts",
+    "turn/river additive best-response gains, fixed PR119-ranked row diagnostics with cards/actions/probabilities/reaches/alternative values",
+    "whole and post-initial-river coverage, recall, actual charged work and overshoot, runtime, hardware, peak worker RSS, table bytes",
+    "all per-game deterministic values, range and worst; no seed confidence interval"
+  ],
+  "native": {
+    "candidate_cases": 24,
+    "comparison_only": true,
+    "control_prior_audit_reused": true,
+    "installed_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license": "Apache-2.0",
+    "tolerance_chips": 1e-09,
+    "version": "OpenSpiel 2.0.2"
+  },
+  "parent_merge": "75e7e1f5e330dcf3e6bb280e5c98ea96261d13d9",
+  "pinned_inputs_sha256": {
+    "configs/known-turn-collision-medium-transfer-freeze.json": "5caae8d044d4df7a097b7527e50cdf37523f9240df122f8e0d5f58503fd0347b",
+    "configs/known-turn-collision-medium-transfer.json": "22dd4920162ffaa4edced960f9f4ec2a00784b5319041195c3899b8c1f428fde",
+    "results/card-models/potential-8.json": "f13a72668b9bb6f1f7d24fa60a4cc507b7ea40dcef969d7a35e30c0ffcbe1d55",
+    "results/controlled-learning/report/checkpoints.csv": "00320fa7f27959e119f7dffcbbefc690facb5560a90eb94adc1a3ad89d929df3",
+    "results/known-mixture-residual-map/own/manifest.json": "3f811c3926afeb114aa9d5b86219c70f7dfcbf8c37daee1e1a2e64d09d1234a3",
+    "results/known-mixture-residual-map/report/manifest.json": "c7e73d7df48d6a6be10432ddc59cacb40a355b5e102a3bd543ee7ff30448d87f",
+    "results/known-mixture-residual-map/report/report.json": "acfb5d9dde3af27d390901177619002ea8a1b009750ce0c5d9d8555148043caf",
+    "results/known-turn-collision-medium-transfer/native/job-state.json": "f13d2bc709aeca1b8de8c36cc558c3d0e120537bbf88bab2971e7d84a7a44ac6",
+    "results/known-turn-collision-medium-transfer/native/manifest.json": "ab5f03fd39fb724244eb0603d19fde13a91df076f1eb4c2dddc6dd31f42f409d",
+    "results/known-turn-collision-medium-transfer/own/manifest.json": "97c5bb7e2ca749cbb91262d4f73faa392ee4e63cf469efae18801b018f5ba533",
+    "results/known-turn-collision-medium-transfer/report/manifest.json": "47e19c4903c47c4116adfad46607046811b94ab0eddfa0e6732a437c0a509130",
+    "results/known-turn-collision-medium-transfer/report/report.json": "971ee4049f1696e9b1e979aafc0885e4707928fb4312c2677fd97c72d3631589",
+    "uv.lock": "db5529861ae56225daaf8a18513013e52bee88ef667227855b719a7e1364250c"
+  },
+  "prior_basis": {
+    "old_average_weight": "linear",
+    "old_game": "configs/learning-spots/dev_medium_oop.json",
+    "old_linear_regret_percent_pot": 0.2890218798613533,
+    "old_regret_rule": "signed",
+    "old_representation": "exact",
+    "old_traversal": "full",
+    "old_uniform_regret_percent_pot": 0.17970431725763525,
+    "old_work_label": 10000000,
+    "path": "results/controlled-learning/report/checkpoints.csv",
+    "sha256": "00320fa7f27959e119f7dffcbbefc690facb5560a90eb94adc1a3ad89d929df3"
+  },
+  "publication": "protocol before outcomes; isolated source exact local/optional/hosted and receipt; fictional proof before real profile; complete profile then separate data-only admission; one candidate own training and published policies/scores before reference audit; fixed report then final exact-source local/optional/hosted, review and history merge",
+  "question": "Does uniform rather than linear regret time weighting improve exact-turn play at matched work across all four known collision-containing medium OOP games?",
+  "schema_version": 1,
+  "scope": "four already inspected, dependent medium OOP restricted games selected in PR116; no unseen transfer, population confidence interval, full-game claim or default promotion",
+  "selection": {
+    "games": [
+      {
+        "name": "collision_medium_dry_oop_a",
+        "path": "configs/known-turn-collision-medium-transfer-spots/collision_medium_dry_oop_a.json",
+        "sha256": "ef6d85948f38e73cc6203f49cfcbd311c4d5f6b96e76a11ae95704b653c801e5"
+      },
+      {
+        "name": "collision_medium_wet_oop_a",
+        "path": "configs/known-turn-collision-medium-transfer-spots/collision_medium_wet_oop_a.json",
+        "sha256": "b220c7c91ddfbefa8333b6ca27db81c94151421f966042f06c81d1b3ae6ac7ad"
+      },
+      {
+        "name": "collision_medium_dry_oop_b",
+        "path": "configs/known-turn-collision-medium-transfer-spots/collision_medium_dry_oop_b.json",
+        "sha256": "c715d5148ad37baa7ada61408522d6ca7b7f65e155ee503a21c70bbefb35947d"
+      },
+      {
+        "name": "collision_medium_wet_oop_b",
+        "path": "configs/known-turn-collision-medium-transfer-spots/collision_medium_wet_oop_b.json",
+        "sha256": "34abd09c0d5817f410f8e344c2057ab9a2b82c64821d46e2c4cb65ce2037dba9"
+      }
+    ],
+    "previously_inspected": true,
+    "requires_turn_collisions": true,
+    "rule": "use all four PR116 frozen first-eligible dry/wet/dry/wet inputs in fixed order; no new screen or redraw"
+  },
+  "stopping": "a scientific or admission gate failure ends this study; preserve all partials, no retry or budget extension; software defects require retained failure and full requalification; no restart of interrupted candidate path without a prospectively declared resumable complete state (none exists)",
+  "training": {
+    "average_mass": "chance_own_reach",
+    "average_phase": "opponent_pass",
+    "candidate_policy_cases": 24,
+    "control_policy_cases_reused": 24,
+    "deterministic_paths_per_game": 1,
+    "expected_actual_work_by_label": {
+      "10000000": 10117956,
+      "20000000": 20235912,
+      "40000000": 40205562
+    },
+    "initial_pot_chips": 36,
+    "matched_work_labels": [
+      10000000,
+      20000000,
+      40000000
+    ],
+    "readouts": [
+      "current",
+      "linear_average"
+    ],
+    "seed_metadata": 0,
+    "stochastic_rng_used": false,
+    "target_order": [
+      0,
+      1
+    ],
+    "traversal": "full expected",
+    "warm_start": "exact uniform initialization"
+  }
+}

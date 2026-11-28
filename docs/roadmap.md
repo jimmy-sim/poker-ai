@@ -652,6 +652,20 @@ The exact report-head local base/optional suites, pinned hooks and all
 four hosted jobs passed. The [final receipt](../results/known-mixture-residual-map/final-checks/manifest.json)
 retains those logs and original evidence lineage. Publish/verify it,
 then complete solo review and history-preserving merge if eligible.
+[PR #119](https://github.com/jimmy-sim/poker-ai/pull/119) then passed
+receipt-head CI and history-merged as `75e7e1f5` after a solo review.
+Its map is an informative **known-game diagnostic**; PR #118's negative
+strength gate remains failed. Separate post-merge main CI is tracked
+apart from the passed PR checks. The next [prospective uniform-regret
+transfer test](known-turn-uniform-regret-transfer.md) asks whether the
+previously measured uniform regret time weight improves exact-turn play
+across **all four** already known PR #116 games at matched 40m work.
+**Definition of done:** publish its frozen protocol before candidate
+outcomes, qualify isolated source, prove the tiny-game update, profile
+and admit a conservative capped run, compare four new candidate paths
+with the 24 immutable PR #116 control snapshots, publish own before a
+candidate-only reference audit, then fixed report/final checks and
+review. No prior control path is retrained and no default is promoted.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred
