@@ -1,0 +1,423 @@
+{
+  "assignments": [
+    [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ]
+  ],
+  "failure": null,
+  "head": "feac8f4a04e1319f82f81734147e5d4bce0789f9",
+  "parent_cpu_seconds": 0.08127200000000001,
+  "reaped_children_cpu_seconds": 293.53000000000003,
+  "seconds": 146.8703265410004,
+  "source_fingerprint": "97db9310f7f0941111bce2c982fce455b94af3d1413f83703fde958bf9a21af8",
+  "stage": "profile",
+  "status": "completed",
+  "worker_count": 2,
+  "workers": [
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 87263,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 0,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 2,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 0
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 4,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 6,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 0
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 8,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "index": 10,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 0
+        },
+        {
+          "cpu_seconds": 146.66242300000002,
+          "kind": "done",
+          "seconds": 146.77499754200107,
+          "summary": {
+            "slot": 0,
+            "summaries": [
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 0,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 23.556845708000765,
+                "worker_peak_rss_bytes": 662028288
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 2,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.669346458998916,
+                "worker_peak_rss_bytes": 966688768
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 4,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.453219249997346,
+                "worker_peak_rss_bytes": 973144064
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 6,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.54255595900031,
+                "worker_peak_rss_bytes": 973144064
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 8,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_a",
+                  "index": 0,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 24.796451542002615,
+                "worker_peak_rss_bytes": 973144064
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 10,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_dry_oop_b",
+                  "index": 2,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 24.726426792003622,
+                "worker_peak_rss_bytes": 973144064
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 87263,
+      "slot": 0
+    },
+    {
+      "exitcode": 0,
+      "messages": [
+        {
+          "kind": "started",
+          "pid": 87264,
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          }
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 1,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 3,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 0,
+          "slot": 1
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 5,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 7,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 1,
+          "slot": 1
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 9,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "started",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "index": 11,
+          "kind": "cell",
+          "phase": "completed",
+          "repeat": 2,
+          "slot": 1
+        },
+        {
+          "cpu_seconds": 146.493127,
+          "kind": "done",
+          "seconds": 146.61511370800145,
+          "summary": {
+            "slot": 1,
+            "summaries": [
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 1,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 23.507202290995338,
+                "worker_peak_rss_bytes": 662306816
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 3,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 0,
+                "whole_path_seconds": 24.636282250001386,
+                "worker_peak_rss_bytes": 966033408
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 5,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.452670499995293,
+                "worker_peak_rss_bytes": 971554816
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 7,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 1,
+                "whole_path_seconds": 24.356172458996298,
+                "worker_peak_rss_bytes": 971554816
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 9,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_a",
+                  "index": 1,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 25.071525749997818,
+                "worker_peak_rss_bytes": 971554816
+              },
+              {
+                "captures": 2,
+                "final_work": 5058978,
+                "index": 11,
+                "path": {
+                  "arm": "clipped_full_exact_turn_river",
+                  "game": "collision_medium_wet_oop_b",
+                  "index": 3,
+                  "seed": 0
+                },
+                "repeat": 2,
+                "whole_path_seconds": 24.556388332995994,
+                "worker_peak_rss_bytes": 971554816
+              }
+            ]
+          }
+        }
+      ],
+      "pid": 87264,
+      "slot": 1
+    }
+  ]
+}

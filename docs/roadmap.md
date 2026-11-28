@@ -679,7 +679,37 @@ binds their logs. Publish and verify the receipt, then review before merge.
 A later milestone, if justified,
 must be distinct and prospectively registered; do not retry this rule
 on favorable seeds or selected cases.
-**Definition of done:** publish its frozen protocol before candidate
+PR #120 then passed all four receipt-head CI jobs and history-merged as
+`f4a8322d` after a solo review. Its four-game uniform-regret regression
+remains negative. Separate post-merge main CI46154173445 passed all four jobs and its official metadata/log are retained independently.
+The next [prospective clipped-regret transfer test](known-turn-clipped-transfer.md)
+asks whether the older controlled-learning exact/full clipped advantage
+extends to the same four **known** PR #116 exact-turn games, despite PR
+#100's negative B4/q8 clipping result. It fixes immutable controls,
+one candidate rule, matched work, absolute/paired gates, profile/own/audit
+caps and own-before-reference publication before candidate outcomes. No
+unseen transfer or default promotion is claimed.
+Draft [PR #121](https://github.com/jimmy-sim/poker-ai/pull/121) published
+and GitHub-byte-verified its prospective protocol before any candidate
+outcome. Isolated clipped-regret source and 13 focused fictional/contract
+tests passed. Exact-source local base/optional, Ruff, format, strict mypy,
+hooks and all four hosted jobs passed at `9138bc96`; the
+[source receipt](../results/known-turn-clipped-transfer/source-checks/manifest.json)
+retains official logs and passed its committed source guard. The single
+[fictional proof](../results/known-turn-clipped-transfer/own-proof/manifest.json)
+passed under its 180-second cap without opening a real policy. Publish
+and verify that proof before the fixed twelve-path real-game profile.
+The proof is published and its committed guard passed. All twelve fixed
+profile paths completed below their time and memory caps; the
+[profile archive](../results/known-turn-clipped-transfer/profile/manifest.json)
+shows a provisional strict 2,772.106-second own-run bound. Publish and
+verify the profile before a separate data-only admission. No strength
+outcome has been collected.
+The separate [admission](../results/known-turn-clipped-transfer/admission/manifest.json)
+recomputed the complete published profile and returned **admitted** at
+2,772.105923 < 7,200 seconds. Publish and verify that decision before
+the one fixed four-path own candidate run.
+**Clipped-transfer definition of done:** publish its frozen protocol before candidate
 outcomes, qualify isolated source, prove the tiny-game update, profile
 and admit a conservative capped run, compare four new candidate paths
 with the 24 immutable PR #116 control snapshots, publish own before a

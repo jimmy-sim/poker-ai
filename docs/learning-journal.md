@@ -124,6 +124,63 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #121 compute admission, November 28:** a separate
+[decision](../results/known-turn-clipped-transfer/admission/manifest.json)
+recomputed the twelve published timing paths. The rule takes the
+slowest repeat for each game and doubles the larger worker sum plus the
+fixed reserve: `2*(2*393.026481+600)=2,772.105923` seconds, strictly
+below the 7,200-second cap. This admits one fixed four-game candidate
+run; it does not say whether clipping improves poker decisions. Codex
+assisted; no human time or personal learning was reported.
+
+**PR #121 profile, November 28:** all twelve fixed 5m timing paths
+completed in [147.903 whole seconds](../results/known-turn-clipped-transfer/profile/manifest.json).
+The largest worker memory readings were 973,144,064 and 971,554,816
+bytes, below the published cap. Using the slowest of three repeats for
+each game gives a conservative provisional 2,772.106-second bound for
+the planned own run, below 7,200 seconds. A separate published admission
+must still recompute this rule before any 40m path. Timing does not
+answer whether the clipped strategy plays better. Codex assisted; no
+human time or personal learning was reported.
+
+**PR #121 fictional proof, November 28:** the
+[proof archive](../results/known-turn-clipped-transfer/own-proof/manifest.json)
+shows that a forced negative advantage leaves two signed regret entries
+negative and zero clipped entries negative. All six saved readouts match
+the independent arithmetic to zero reported error; both arms charge the
+same work and consume the same random stream. This checks the intended
+learning-rule switch on a fictional game. It is not evidence that any
+real poker decision improved. Publish and verify this proof before the
+fixed real-game timing profile. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #121 source qualified, November 28:** the [published protocol](known-turn-clipped-transfer.md)
+now has a new adapter that selects clipped/linear/linear rules without
+editing historical learners. A fictional test forces a negative legal
+regret: the signed ledger retains it, while the clipped ledger sets it
+to zero; charged work, chance treatment and linear strategy-average
+mass remain the same. Thirteen focused tests, targeted lint/format and
+strict typing passed. Full exact-source base and optional suites, pinned
+hooks and all four hosted jobs also passed at the isolated source commit;
+the [qualification receipt](../results/known-turn-clipped-transfer/source-checks/manifest.json)
+binds their logs. This demonstrates a software distinction, **not** a
+poker-strength gain. Publish and verify the receipt before the separate
+fictional proof, real profile or candidate training. Codex assisted; no
+human time or personal learning was reported.
+
+**Next prospective known-game question, November 28:** after PR #120's
+negative history merge, the [clipped-regret protocol](known-turn-clipped-transfer.md)
+asks whether discarding negative accumulated regret helps the exact-turn,
+full expected learner at matched 40m work. In the older controlled grid,
+that rule helped one different known exact/full game at 10m, while PR #100
+found it harmful under B4/q8 conditions. **Example:** a negative regret
+for calling can influence later signed-regret updates, whereas clipping
+sets it to zero before later updates; neither choice changes which cards
+or actions exist. All four PR #116 inputs here are previously inspected
+development games, and the unchanged absolute gates still apply. No new
+candidate score or independent validation claim exists at protocol
+publication. Codex assisted; no human time or personal learning was reported.
+
 **PR #120 fixed negative report, November 28:** the [published comparison](known-turn-uniform-regret-transfer-result.md)
 keeps every fixed checkpoint and all 42 preselected decision rows. All
 four 40m uniform-regret candidates leave more exact best-response gain
