@@ -586,8 +586,12 @@ mixes improved on q8 but failed the `0.01`-pot absolute gate. This is a
 before the pinned OpenSpiel 2.0.2
 [comparison-only audit](../results/known-turn-half-policy-mixture/native/manifest.json),
 which passed all four scalars within `7.11e-15` chips maximum error. PR #118
-remains draft until the fixed report and final checks pass. No unseen-input
-or default promotion claim follows.
+then produced the [fixed negative report](known-turn-half-policy-mixture-result.md):
+all four paired q8 contrasts improve, but all four fail the unchanged
+`0.01`-pot absolute gate. It remains draft until the report is published and
+verified and final checks/review pass. The next distinct research question
+should target the remaining turn/river decision weaknesses without tuning
+this already failed mixture. No unseen-input or default promotion claim follows.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

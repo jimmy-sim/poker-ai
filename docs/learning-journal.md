@@ -124,6 +124,20 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #118 fixed result, November 27:** the [four-game report](known-turn-half-policy-mixture-result.md)
+classifies the 50:50 saved-policy mixture as **negative** under the rule
+written before its scores existed. All four mixtures improve on the q8
+control, but every one exceeds the `0.01` initial-pot absolute strength
+target. **Example:** on dry B, exploitability falls from 0.030012 to
+0.024008 initial pots, still above the target. On wet A and wet B, the
+mixture even beats both parents, but that does not repair the absolute
+failure. The independent scalar audit passed; the known games remain
+dependent and deterministic. **Next decision:** publish this result and
+complete final exact-source checks and review. A different representation
+or training question needs its own prospective protocol; do not retune this
+mixture or treat the already inspected cases as unseen. Codex assisted;
+no human time or personal learning was reported.
+
 **PR #118 independent audit, November 27:** after every own policy and
 score was published, the pinned OpenSpiel 2.0.2 checker compared the four
 saved mixed strategies. Its largest scalar difference was
