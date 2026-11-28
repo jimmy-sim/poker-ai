@@ -124,6 +124,26 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #120 own comparison, November 28:** after the separate compute
+admission, the unchanged four known games each received one complete
+deterministic 40m candidate path. The [saved own policies](../results/known-turn-uniform-regret-transfer/own/manifest.json)
+show final average fractions of the initial pot `0.034280`, `0.046310`,
+`0.049308`, `0.052628` in dry A, wet A, dry B, wet B order. Against the
+reused exact-turn control, all four paired changes are positive
+(`+0.020704`, `+0.028633`, `+0.028651`, `+0.035877`), meaning more
+best-response gain remains. The fixed absolute strength limit is 0.01,
+and a positive paired change above +0.001 is a regression. These own
+results therefore point to a **negative** outcome, pending the pinned
+independent scalar audit and fixed report. All four paths had exact
+matched work, full whole-tree coverage and zero recall violations.
+**Example:** if an opponent can gain more by best-responding to the
+saved wet B candidate than to the old wet B control, the new weighting
+did not help that known restricted game; this is a measured exploitability
+comparison, not a recommendation for any live poker hand. No failed
+game or seed will be rerun. Publish own bytes before opening any
+reference calculation. Codex assisted; no human time or personal
+learning was reported.
+
 **PR #120 compute admission, November 28:** a separate data-only reader
 checked the published twelve-path profile and recomputed the strict
 `2,771.724<7,200` second forecast. Its [admitted decision](../results/known-turn-uniform-regret-transfer/admission/manifest.json)
