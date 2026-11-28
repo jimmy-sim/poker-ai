@@ -1,0 +1,59 @@
+"""Seal exact-source PR119 qualification and retained failures."""
+import gzip
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+root=Path(__file__).resolve().parents[3]
+sys.path.insert(0,str(root/'scripts'))
+from known_mixture_residual_map.gate import clean_head,source_files,source_fingerprint
+head='3bb3366ec3624a78520b4f3deef2572fa600a5ae'
+fingerprint='4eba834da858694d40ac1ce87fddb68bd47efb43f5dabcb4db6f29b223d9f57c'
+assert clean_head(root)==head and source_fingerprint(root)==fingerprint
+current=root/'results/runs/known-mixture-residual-map-source-20261127-corrected'
+first=root/'results/runs/known-mixture-residual-map-20261127'
+old=root/'results/runs/known-mixture-residual-map-source-20261127-foreground'
+out=root/'results/known-mixture-residual-map/source-checks'
+if out.exists():raise FileExistsError(out)
+out.mkdir(parents=True)
+def write(name,raw):
+ p=out/name
+ if p.exists():raise FileExistsError(p)
+ p.write_bytes(raw)
+def copy(name,path):write(name,path.read_bytes())
+def compress(name,path):write(name+'.gz',gzip.compress(path.read_bytes(),mtime=0))
+roles={}
+for role in ('base311','base312','optional311','optional312'):
+ d=json.loads((current/f'{role}.json').read_bytes())
+ assert d['status']=='passed' and d['head']==head and d['source_fingerprint']==fingerprint
+ assert hashlib.sha256((current/f'{role}.log').read_bytes()).hexdigest()==d['log_sha256']
+ roles[role]=d['elapsed_seconds']
+ copy(f'{role}.json',current/f'{role}.json')
+ compress(f'{role}.log',current/f'{role}.log')
+assert (current/'hooks.exit').read_text().strip()=='0'
+copy('hooks.exit',current/'hooks.exit');compress('hooks.log',current/'hooks.log')
+copy('runner.py.txt',current/'runner.py');copy('optional-suites.json',current/'optional-suites.json')
+copy('current-job.json',current/'job.json')
+copy('source-hosted.json',current/'source-hosted.json');compress('source-hosted.log',current/'source-hosted.log')
+hosted=json.loads((current/'source-hosted.json').read_bytes())
+assert hosted['status']=='completed' and hosted['conclusion']=='success' and len(hosted['jobs'])==4
+assert all(x['conclusion']=='success' for x in hosted['jobs'])
+copy('old-source-hosted.json',first/'old-source-hosted.json');compress('old-source-hosted.log',first/'old-source-hosted.log')
+copy('old-source-precommit-failure.md',first/'precommit-failure.md')
+copy('old-source-detached-job.json',first/'source-job.json')
+compress('old-source-detached-base311.log',first/'base311.log')
+copy('old-source-serialization-defect.log',first/'serialization-defect.log')
+copy('old-source-foreground-base311.json',old/'base311.json')
+compress('old-source-foreground-base311.log',old/'base311.log')
+copy('old-source-foreground-base312.json',old/'base312.json')
+compress('old-source-foreground-base312.log',old/'base312.log')
+copy('old-source-prior-failures.md',current/'prior-failures.md')
+write('source-files.json',(json.dumps(source_files(root),sort_keys=True,indent=2)+'\n').encode())
+write('result.json',(json.dumps({'status':'source_qualified','head':head,'source_fingerprint':fingerprint,'local_roles_seconds':roles,'hosted_run_id':46122565044,'hosted_status':'success','hooks_exit':0,'retained_old_source_head':'8bf2c666a2200b6757bdae8495a8471dac48f3b3','retained_old_source_hosted_conclusion':'cancelled','real_policy_row_trace_started':False},sort_keys=True,indent=2)+'\n').encode())
+files=[]
+for p in sorted(out.rglob('*')):
+ if p.is_file() and p.name!='manifest.json':
+  b=p.read_bytes();files.append({'file':p.relative_to(out).as_posix(),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
+write('manifest.json',(json.dumps({'status':'source_qualified','source_fingerprint':fingerprint,'files':files},sort_keys=True,indent=2)+'\n').encode())
+print('source receipt files',len(files),'manifest_sha256',hashlib.sha256((out/'manifest.json').read_bytes()).hexdigest())

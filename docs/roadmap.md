@@ -588,14 +588,70 @@ before the pinned OpenSpiel 2.0.2
 which passed all four scalars within `7.11e-15` chips maximum error. PR #118
 then produced the [fixed negative report](known-turn-half-policy-mixture-result.md):
 all four paired q8 contrasts improve, but all four fail the unchanged
-`0.01`-pot absolute gate. The report is published and verified; PR #118
-remains draft pending final receipt publication and review. Its exact-report
+`0.01`-pot absolute gate. The report is published and verified. Its exact-report
 [final receipt](../results/known-turn-half-policy-mixture/final-checks/manifest.json)
-now records passed local base/optional suites, hooks and all four report-head
-hosted jobs, with pre-test launcher failures retained. Publish/verify that
-receipt and check receipt-head CI before solo review/history merge. The next distinct research question
-should target the remaining turn/river decision weaknesses without tuning
-this already failed mixture. No unseen-input or default promotion claim follows.
+records passed local base/optional suites, hooks and all four report-head
+hosted jobs, with pre-test launcher failures retained. Its receipt-head CI
+passed all four jobs, solo review was recorded, and [PR #118](https://github.com/jimmy-sim/poker-ai/pull/118)
+history-merged as `8145b661`; post-merge main CI is tracked separately.
+The next [prospective saved-mixture residual map](known-mixture-residual-map.md)
+asks where the **new mixed policy's** remaining turn and river best-response
+gains arise on those same four known games. Its definition of done is four
+source-qualified, pinned, reconciled read-only traces, published own evidence,
+a fixed decision report, final local/hosted checks and review. It does not
+repeat PR #117's failed parent-policy diagnosis, change the already failed
+mixture, claim unseen transfer or promote a default.
+The prospective [PR #119](https://github.com/jimmy-sim/poker-ai/pull/119)
+protocol and source were published before any mixed-row trace. Corrected
+source `3bb3366e` passed both full local base suites, both optional suites,
+all-file hooks and all four [source-head hosted jobs](https://github.com/jimmy-sim/poker-ai/actions/runs/46122565044).
+An earlier source's NumPy-integer JSON save defect and interrupted checks
+remain retained separately. Publish and verify the complete source receipt
+before its fictional proof, data-only admission or first real trace.
+The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)
+was published and all changed GitHub blobs verified; its publication guard
+passed. The one [fictional proof](../results/known-mixture-residual-map/proof/manifest.json)
+then passed under its 180-second cap without opening a real policy. The proof
+was published and byte-verified. Separate [data-only admission](../results/known-mixture-residual-map/admission/manifest.json)
+rehashed the frozen prior report clock and recomputed the strict bound
+`688.326 < 900` seconds, with 120 seconds reserved inside the cap for
+failure saving. Publish and verify admission before the single four-policy
+read-only row trace; it says nothing yet about residual poker decisions.
+The admission was published and verified. The sole [own row trace](../results/known-mixture-residual-map/own/manifest.json)
+then completed all four pinned mixtures under time and memory caps. Its
+own-only map puts the largest residual on dry B's turn; publish and verify
+every raw vector before the fixed parent comparison and final interpretation.
+All four own vectors were published and GitHub-byte-verified. The first fixed
+report stopped before any comparison because its reader expected a string
+for PR #118's nested `classification` record. The failed launcher log is
+retained; the prior own trace and negative PR #118 result remain unchanged.
+A report-only schema correction and regression test must pass full new
+exact-source local/optional/hosted qualification. Its report may read the
+old published own archive only with the **original** measurement-source
+fingerprint pinned; do not rerun the four scientific traces.
+The first correction's base 3.11 check passed 5,874 tests, but its report
+gate still pointed at the immutable old source receipt; base 3.12 was
+interrupted after this defect was identified. Retain both logs. Qualify a
+second report-only correction with a distinct report-source receipt before
+running the fixed interpretation; keep the old measurement-source receipt
+unchanged.
+The corrected `1a505951` report source passed both full base suites,
+both optional suites, pinned hooks and all four hosted jobs. Its distinct
+[report-source receipt](../results/known-mixture-residual-map/report-source-checks/manifest.json)
+retains the old report failure and interrupted prior correction. Publish
+and byte-verify this receipt before the one fixed report; the four
+scientific traces remain single-run evidence.
+The [fixed residual-map report](known-mixture-residual-map-result.md)
+reconciled all four prior own scalars and identifies dry B's 0.708274-chip
+turn contribution as the largest mixed-policy weakness. Its classification
+is informative diagnostic, with PR #118's negative strength result intact.
+Publish and verify the complete [report archive](../results/known-mixture-residual-map/report/manifest.json),
+then finish exact-report local/optional/hosted checks, review and merge
+before choosing a separately preregistered next strength question.
+The exact report-head local base/optional suites, pinned hooks and all
+four hosted jobs passed. The [final receipt](../results/known-mixture-residual-map/final-checks/manifest.json)
+retains those logs and original evidence lineage. Publish/verify it,
+then complete solo review and history-preserving merge if eligible.
 Do not
 extend or relabel the negative PR #110 run.
 Further validation-performance work is deferred

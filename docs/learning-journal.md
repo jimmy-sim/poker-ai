@@ -124,6 +124,155 @@ not a record of completed practice.
 
 ## Where the project stands
 
+**PR #119 final checks, November 28:** the diagnostic report's exact
+published head passed both full local base suites, both fixed optional
+suites, pinned all-file hooks and all four hosted jobs. The [final
+receipt](../results/known-mixture-residual-map/final-checks/manifest.json)
+binds those results to the same original scientific rows and the separately
+qualified report reader. This checks reproducibility of the interpretation;
+it does not convert the negative mixture into a stronger policy. The
+remaining task is publication verification and solo review before merge.
+Codex assisted; no human time or personal learning was reported.
+
+**PR #119 fixed residual report, November 28:** the published mixed-policy
+row map and prior parent vectors now have a reconciled [fixed report](known-mixture-residual-map-result.md).
+**Example:** dry B's mixture allows 0.864300 chips of best-response gain,
+with 0.708274 on the turn. Its highest-ranked turn row has `7h Kc` on
+`5c 8s Jh 9c`; the saved mixture folds about 51.5% and calls about 23.5%
+against its fixed opponent/continuation. This is a restricted-game
+diagnostic, not a universally correct poker action. The report passed in
+1.100 seconds, all four totals reconcile within `8.33e-17` chips, and the
+source receipt had passed full local/optional/hosted checks. The old failed
+report and interrupted correction remain in the receipt. The next decision
+is a separate prospective test of a turn-focused strength change after
+final report checks and review; no new policy has been tested here. Codex
+assisted; no human time or personal learning was reported.
+
+**PR #119 report reader correction, November 28:** after the complete own
+row vectors were published, the first report stopped on a software schema
+mistake. It looked for the literal string `"negative"`, while PR #118's
+published result stores a small object containing that label. **Example:**
+the four underlying policy scores and row vectors still matched; the report
+could not pass its own input guard and produced no comparison. The failed
+job log is retained. A report-only correction reads the nested label and
+pins the earlier qualified measurement source when opening its immutable
+own archive, so the one scientific trace is not repeated. Focused tests
+passed; all new-source local, optional and hosted checks remain before a
+corrected report can run. This failure does not overturn or improve the
+negative PR #118 strength result. Codex assisted; no human time or personal
+learning was reported.
+
+**PR #119 report receipt isolation, November 28:** review found that the first corrected report
+still asked the new source fingerprint to match the immutable old source
+receipt. Base Python 3.11 passed 5,874 tests; base 3.12 was intentionally
+interrupted and both logs remain. A separate report-source receipt is now
+required, with the old scientific archives checked against their original
+fingerprint. No row trace was repeated. Codex assisted; no human time or
+personal learning was reported.
+
+**PR #119 separate report source gate, November 28:** the corrected reader
+now has its own source receipt, leaving the originally qualified measurement
+receipt untouched. Both full base suites passed 5,875 tests with 73 skips;
+both fixed optional suites passed (2,601 on Python 3.11; 2,599 plus two
+skips on 3.12), as did pinned hooks and all four hosted jobs. The new
+[receipt](../results/known-mixture-residual-map/report-source-checks/manifest.json)
+also retains the failed first report and interrupted earlier correction.
+This verifies the reader's source, not the interpretation's conclusion.
+The fixed report must wait for receipt publication and byte verification.
+Codex assisted; no human time or personal learning was reported.
+
+**PR #119 own row map, November 28:** the one admitted read-only run saved
+every exact mixed-policy row for all four already known games under its
+time and memory limits. The [own archive](../results/known-mixture-residual-map/own/manifest.json)
+shows dry B has the largest remaining vulnerability, with about 0.708
+chips of additive turn gain and 0.156 river gain; the other three games
+have split turn and river gains. **Example:** a turn-dominant label tells
+us where a best reply gains most *against that saved opponent*; it does
+not say changing one turn action would causally recover that amount.
+This is a diagnostic of an already negative mixture, not an improved
+policy. **Next decision:** publish and verify the full row vectors before
+the fixed comparison to the already published parent reports. Codex
+assisted; no human time or personal learning was reported.
+
+**PR #119 compute gate, November 28:** a separate data-only reader checked
+the historical 284.163-second report clock and recomputed the fixed
+`688.326 < 900`-second forecast. It passed without opening a saved policy.
+**Example:** the twofold historical timing allowance and 120-second
+failure-save reserve stay inside the original 900-second limit; they are
+not extra time added to it. The [admission receipt](../results/known-mixture-residual-map/admission/manifest.json)
+is a permission to run one bounded row map after publication, not evidence
+that poker decisions improved. **Next decision:** publish/verify admission,
+then run the sole four-game trace with every partial result retained.
+Codex assisted; no human time or personal learning was reported.
+
+**PR #119 fictional proof, November 28:** after the tested-source receipt
+was published and verified, a 1.086-second invented-row proof checked the
+same accounting and row selection rules that the read-only trace will use.
+It rejected a deliberately wrong scalar and recorded
+`real_policy_opened=false`. **Example:** a four-row vector totaling one chip
+cannot silently be reported as 0.9 chips. This checks the software path,
+not whether any poker decision is stronger. **Next decision:** publish the
+[proof receipt](../results/known-mixture-residual-map/proof/manifest.json),
+then recompute the conservative forecast from pinned historical clock bytes
+before opening the four real mixed policies. Codex assisted; no human time
+or personal learning was reported.
+
+**PR #119 source gate, November 28:** corrected source `3bb3366e`
+passed both complete local base suites, both optional suites, hooks and
+all four hosted CI jobs. The [source receipt](../results/known-mixture-residual-map/source-checks/manifest.json)
+keeps the earlier failed serialization probe and interrupted checks beside
+the passing exact-source logs. **Example:** a passing poker arithmetic test
+did not prove the report was writable; the new JSON round-trip assertion
+catches that missing step. The four saved mixed policies have still not been
+traced. **Next decision:** publish and verify the receipt, then run the
+separate fictional proof and data-only conservative admission before the
+single bounded real trace. Codex assisted; no human time or personal
+learning was reported.
+
+**Next bounded question, November 27:** [PR #118](https://github.com/jimmy-sim/poker-ai/pull/118)
+has history-merged with a negative fixed strength result. Its mixtures
+reduced exploitability relative to q8 on each known game but remained above
+the absolute target; dry B was weakest. The [new prospective map](known-mixture-residual-map.md)
+asks whether the remaining *mixed-policy* best-response gain lies mostly
+on turn or river and whether it is concentrated in a few decisions. **Example:**
+if dry B's mixed turn share is high, a later experiment could target turn
+decisions, but this has not been measured and would need its own protocol.
+A best response is the strongest reply within the fixed restricted game
+against the saved opponent, so row gain describes vulnerability under that
+opponent and continuation, not a generally correct move. PR #117's failed
+parent-policy source gate and missing row result remain unchanged.
+**Next decision:** publish the frozen four-policy input list and qualify
+isolated tracing code before opening any new row outcome. Post-merge main CI
+is tracked separately from PR #118's passed checks. Codex assisted; no human
+time or personal learning was reported.
+
+**PR #119 isolated reader, November 27:** the published protocol was checked
+byte for byte on GitHub before source work. The new adapter is designed to
+replay each saved mixture against its own optimized opponent, then account
+for every exact turn and river information row. **Example:** a fictional
+four-row vector totaling one chip must reconcile with a one-chip scalar;
+claiming 0.9 chips triggers an arithmetic failure. The focused synthetic and
+pin-only checks passed before a further fixed-row selection test was added;
+Ruff, formatting and strict typing passed the then-current code. No actual
+mixed row has been traced, so the answer remains unknown. **Next decision:**
+finish exact-source qualification before the fictional proof, data-only
+compute admission and one real four-game map. Codex assisted; no human time
+or personal learning was reported.
+
+**PR #119 serialization correction, November 27:** a fictional four-row
+summary passed its arithmetic assertions but failed when written as JSON:
+NumPy returned a `numpy.int64` count of positive rows, which Python's JSON
+writer rejected. **Example:** the value looked like the integer 2, but its
+array-library type made the durable result impossible to save. The first
+exact-source base3.11 suite passed; base3.12 was interrupted once this
+software defect was reproduced, and its partial tests and failed role receipt
+remain. The correction casts each row predicate to a plain Boolean before
+counting and adds a JSON round-trip regression check. **Next decision:** run
+focused checks, publish the corrected source, then redo all required
+exact-source lanes and hosted checks before any proof, admission or real row
+trace. This failure is about saving results, not poker strength. Codex
+assisted; no human time or personal learning was reported.
+
 **PR #118 final qualification, November 27:** the negative report's exact
 source passed both local base Python versions, both optional suites,
 all-file hooks and [hosted CI](https://github.com/jimmy-sim/poker-ai/actions/runs/46112526107).
